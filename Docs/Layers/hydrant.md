@@ -2,19 +2,9 @@
 
 # hydrant
 
-
-
-
 Map layer to show fire hydrants.
 
-
-
-
-
-
  - This layer is shown at zoomlevel **14** and higher
-
-
 
 ## Table of contents
 
@@ -35,12 +25,8 @@ Map layer to show fire hydrants.
 
 ## Themes using this layer
 
-
-
  - [hailhydrant](https://mapcomplete.org/hailhydrant)
  - [personal](https://mapcomplete.org/personal)
-
-
 
 ## Basic tags for this layer
 
@@ -62,118 +48,75 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/couplings:type#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/couplings%3Atype/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [couplings:type](https://wiki.openstreetmap.org/wiki/Key:couplings:type) | [string](../SpecialInputElements.md#string) | [Storz](https://wiki.openstreetmap.org/wiki/Tag:couplings:type%3DStorz) [UNI](https://wiki.openstreetmap.org/wiki/Tag:couplings:type%3DUNI) [Barcelona](https://wiki.openstreetmap.org/wiki/Tag:couplings:type%3DBarcelona) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/couplings:diameters#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/couplings%3Adiameters/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [couplings:diameters](https://wiki.openstreetmap.org/wiki/Key:couplings:diameters) | [string](../SpecialInputElements.md#string) |  |
 
-
-
-
 ### hydrant-color
 
 The question is `What color is the hydrant?`
 *The hydrant color is {colour}* is shown if `colour` is set
 
-
  -  *The hydrant color is yellow.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dyellow' target='_blank'>yellow</a>
  -  *The hydrant color is red.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dred' target='_blank'>red</a>
-
-
-
-
 
 ### hydrant-type
 
 The question is `What type of hydrant is it?`
 * Hydrant type: {fire_hydrant:type}* is shown if `fire_hydrant:type` is set
 
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/hailhydrant/hydrant_pillar.svg' style='width: 3rem; height: 3rem'> *Pillar type.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fire_hydrant:type' target='_blank'>fire_hydrant:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fire_hydrant:type%3Dpillar' target='_blank'>pillar</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/hailhydrant/hydrant_unknown.svg' style='width: 3rem; height: 3rem'> *Pipe type.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fire_hydrant:type' target='_blank'>fire_hydrant:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fire_hydrant:type%3Dpipe' target='_blank'>pipe</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/hailhydrant/hydrant_unknown.svg' style='width: 3rem; height: 3rem'> *Wall type.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fire_hydrant:type' target='_blank'>fire_hydrant:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fire_hydrant:type%3Dwall' target='_blank'>wall</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/hailhydrant/hydrant_underground.svg' style='width: 3rem; height: 3rem'> *Underground type.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fire_hydrant:type' target='_blank'>fire_hydrant:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fire_hydrant:type%3Dunderground' target='_blank'>underground</a>
 
-
-
-
-
 ### hydrant-state
 
 The question is `Is this hydrant still working?`
 
-
-
  -  *The hydrant is (fully or partially) working* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:emergency' target='_blank'>emergency</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:emergency%3Dfire_hydrant' target='_blank'>fire_hydrant</a>
  -  *The hydrant is unavailable* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:disused:emergency' target='_blank'>disused:emergency</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:disused:emergency%3Dfire_hydrant' target='_blank'>fire_hydrant</a> & emergency=
  -  *The hydrant has been removed* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:removed:emergency' target='_blank'>removed:emergency</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:removed:emergency%3Dfire_hydrant' target='_blank'>fire_hydrant</a> & emergency=
-
-
-
-
 
 ### hydrant-diameter
 
 The question is `What is the pipe diameter of this hydrant?`
 *Pipe diameter: {canonical(fire_hydrant:diameter)}* is shown if `fire_hydrant:diameter` is set
 
-
-
-
 ### hydrant-number-of-couplings
 
 The question is `How many couplings does this fire hydrant have?`
 *Number of couplings: {couplings}* is shown if `couplings` is set
-
-
-
 
 ### hydrant-couplings
 
 The question is `What kind of couplings does this hydrant have?`
 *Couplings: {couplings:type}* is shown if `couplings:type` is set
 
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/hydrant/storz.jpg' style='width: 3rem; height: 3rem'> *Storz coupling* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:couplings:type' target='_blank'>couplings:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:couplings:type%3DStorz' target='_blank'>Storz</a>
  -  *UNI coupling* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:couplings:type' target='_blank'>couplings:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:couplings:type%3DUNI' target='_blank'>UNI</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/hydrant/barcelona.jpg' style='width: 3rem; height: 3rem'> *Barcelona coupling* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:couplings:type' target='_blank'>couplings:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:couplings:type%3DBarcelona' target='_blank'>Barcelona</a>
-
-
-
-
 
 ### hydrant-couplings-diameters
 
 The question is `What diameter are the couplings of this hydrant?`
 *Coupling diameters: {couplings:diameters}* is shown if `couplings:diameters` is set
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
-
-
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### move-button
 
 _This tagrendering has no question and is thus read-only_
 *{move_button()}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

@@ -6,8 +6,11 @@
     },
     "delete": {
         "cancel": "Prekliči",
+        "cannotBeDeleted": "Tega elementa ni možno izbrisati",
         "delete": "Izbriši",
-        "loginToDelete": "Za dodajanje novih elemntov morate biti vpisani"
+        "loginToDelete": "Za dodajanje novih elemntov morate biti vpisani",
+        "partOfOthers": "Ta element je del neke poti ali relacije, zato ga ni mogoče enostavno izbrisati.",
+        "useSomethingElse": "Če ga želite izbrisati, uporabite nek drug urejevalnik OpenStreetMap"
     },
     "favouritePoi": {
         "button": {
@@ -119,9 +122,11 @@
         "title": "Dobrodošli na MapComplete"
     },
     "move": {
+        "cannotBeMoved": "Tega elementa ni možno premakniti.",
         "inviteToMove": {
             "generic": "Premakni ta element"
         },
+        "partOfRelation": "Ta element je del relacije. Premaknete ga lahko z drugim urejevalnikom.",
         "whyMove": "Zakaj želite premakniti ta element?"
     }
 }

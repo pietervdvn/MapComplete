@@ -82,7 +82,11 @@ class ParseLayer extends Conversion<
         const fixed = this._prepareLayer.convert(parsed, context.inOperation("PrepareLayer"))
 
         if (!fixed.source && fixed.presets?.length < 1) {
-            context.enter("source").err("No source is configured. (Tags might be automatically derived if presets are given)")
+            context
+                .enter("source")
+                .err(
+                    "No source is configured. (Tags might be automatically derived if presets are given)"
+                )
             return undefined
         }
 

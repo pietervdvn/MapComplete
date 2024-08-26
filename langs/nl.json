@@ -703,6 +703,7 @@
         },
         "tooLong": "Deze tekst is te lang. De tekst heeft {count} lettertekens, er mogen maximaal 255 letters zijn",
         "url": {
+            "aggregator": "{host} is een aggregator-website. Gebruik de officiele website indien mogelijk.",
             "description": "een link naar een webpagina",
             "feedback": "Dit is geen geldige link"
         },

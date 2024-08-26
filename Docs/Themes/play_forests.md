@@ -8,15 +8,11 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [play_forest](../Layers/play_forest.md)
-
 
 Available languages:
 
-
  - nl
-
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

@@ -1,7 +1,25 @@
 import { Validator } from "../Validator"
+import { Translation } from "../../i18n/Translation"
+import Translations from "../../i18n/Translations"
 
 export default class UrlValidator extends Validator {
     private readonly _forceHttps: boolean
+
+    private static readonly spamWebsites = new Set<string>([
+        "booking.com",
+        "hotel-details-guide.com",
+        "tripingguide.com",
+        "tripadvisor.com",
+        "tripadvisor.co.uk",
+        "tripadvisor.com.au",
+        "katestravelexperience.eu",
+        "hoteldetails.eu"
+    ])
+
+    private static readonly discouragedWebsites = new Set<string>([
+        "facebook.com"
+    ])
+
     constructor(name?: string, explanation?: string, forceHttps?: boolean) {
         super(
             name ?? "url",
@@ -11,6 +29,11 @@ export default class UrlValidator extends Validator {
         )
         this._forceHttps = forceHttps ?? false
     }
+
+    /**
+     *
+     * new UrlValidator().reformat("https://example.com/page?fbclid=123456&utm_source=mastodon") // => "https://example.com/page"
+     */
     reformat(str: string): string {
         try {
             let url: URL
@@ -63,7 +86,52 @@ export default class UrlValidator extends Validator {
         }
     }
 
+    /**
+     *
+     * const v = new UrlValidator()
+     * v.getFeedback("example.").textFor("en") // => "This is not a valid web address"
+     * v.getFeedback("https://booking.com/some-hotel.html").textFor("en") // => Translations.t.validation.url.spamSite.Subs({host: "booking.com"}).textFor("en")
+     */
+    getFeedback(s: string, getCountry?: () => string): Translation | undefined {
+        if (
+            !s.startsWith("http://") &&
+            !s.startsWith("https://") &&
+            !s.startsWith("http:")
+        ) {
+            s = "https://" + s
+        }
+        try{
+            const url = new URL(s)
+            let host = url.host.toLowerCase()
+            if (host.startsWith("www.")) {
+                host = host.slice(4)
+            }
+            if (UrlValidator.spamWebsites.has(host)) {
+                return Translations.t.validation.url.spamSite.Subs({ host })
+            }
+            if (UrlValidator.discouragedWebsites.has(host)) {
+                return Translations.t.validation.url.aggregator.Subs({ host })
+            }
+
+
+        }catch (e) {
+            // pass
+        }
+        const upstream = super.getFeedback(s, getCountry)
+        if (upstream) {
+            return upstream
+        }
+
+
+        return undefined
+    }
+
+    /**
+     * const v = new UrlValidator()
+     * v.isValid("https://booking.com/some-hotel.html") // => false
+     */
     isValid(str: string): boolean {
+
         try {
             if (
                 !str.startsWith("http://") &&
@@ -73,6 +141,15 @@ export default class UrlValidator extends Validator {
                 str = "https://" + str
             }
             const url = new URL(str)
+
+            let host = url.host.toLowerCase()
+            if (host.startsWith("www.")) {
+                host = host.slice(4)
+            }
+            if (UrlValidator.spamWebsites.has(host)) {
+                return false
+            }
+
             const dotIndex = url.host.indexOf(".")
             return dotIndex > 0 && url.host[url.host.length - 1] !== "."
         } catch (e) {

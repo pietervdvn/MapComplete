@@ -33,6 +33,8 @@ This document gives an overview of which URL-parameters can be used to influence
 24. [overpassMaxZoom](#overpassmaxzoom)
 25. [osmApiTileSize](#osmapitilesize)
 26. [background](#background)
+    + [Selecting a category](#selecting-a-category)
+    + [Selecting a specific layer](#selecting-a-specific-layer)
 27. [z](#z)
 28. [lat](#lat)
 29. [lon](#lon)
@@ -52,20 +54,14 @@ This document gives an overview of which URL-parameters can be used to influence
 
 For example, if the url is `https://mapcomplete.org/cyclofix?lat=51.0&lon=4.3&z=5&test=true#node/1234`, the URL-parameters are stated in the part between the `?` and the `#`. There are multiple, all separated by `&`, namely: 
 
-
-
  - The url-parameter `lat` is `51.0` in this instance
  - The url-parameter `lon` is `4.3` in this instance
  - The url-parameter `z` is `5` in this instance
  - The url-parameter `test` is `true` in this instance
 
-
-
 Finally, the URL-hash is the part after the `#`. It is `node/1234` in this case.
 
 The URL-hash can contain multiple values:
-
-
 
 - The id of the currently selected object, e.g. `node/1234`
 
@@ -73,15 +69,9 @@ The URL-hash can contain multiple values:
 
 - The base64-encoded JSON-file specifying a custom theme (only when loading)
 
-
-
 ### Possible hashes to open a menu
 
-
-
 The possible hashes are:
-
-
 
 `menu:about`,`menu:settings`,`menu:favourites`,`menu:community`,`menu:privacy`,`menu:advanced`
 
@@ -105,8 +95,6 @@ Translations are never complete. If a translation in a certain language is missi
 
 This documentation is defined in the source code at [Locale.ts](/src/UI/i18n/Locale.ts#L53)
 
-
-
 No default value set
 
 ## fs-translation-mode
@@ -115,17 +103,13 @@ If set, will show a translation button next to every string.
 
 This documentation is defined in the source code at [Locale.ts](/src/UI/i18n/Locale.ts#L92)
 
-
-
 The default value is _false_
 
 ## fake-user
 
 If true, 'dryrun' mode is activated and a fake user account is loaded
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L37)
-
-
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L40)
 
 The default value is _false_
 
@@ -133,9 +117,7 @@ The default value is _false_
 
 Disables/Enables logging in and thus disables editing all together. This effectively puts MapComplete into read-only mode.
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L101)
-
-
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L104)
 
 The default value is _true_
 
@@ -143,9 +125,7 @@ The default value is _true_
 
 Disables/Enables the search bar
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L116)
-
-
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L119)
 
 The default value is _true_
 
@@ -153,9 +133,7 @@ The default value is _true_
 
 Disables/Enables the background layer control where a user can enable e.g. aerial imagery
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L121)
-
-
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L124)
 
 The default value is _true_
 
@@ -163,9 +141,7 @@ The default value is _true_
 
 Disables/Enables the filter view where a user can enable/disable MapComplete-layers or filter for certain properties
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L127)
-
-
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L130)
 
 The default value is _true_
 
@@ -173,9 +149,7 @@ The default value is _true_
 
 Disables/enables the help menu or welcome message
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L133)
-
-
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L136)
 
 The default value is _true_
 
@@ -183,9 +157,7 @@ The default value is _true_
 
 Disables/enables the button to get in touch with the community
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L138)
-
-
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L141)
 
 The default value is _true_
 
@@ -193,9 +165,7 @@ The default value is _true_
 
 Disables/Enables the extraLink button. By default, if in iframe mode and the welcome message is hidden, a popout button to the full mapcomplete instance is shown instead (unless disabled with this switch or another extraLink button is enabled)
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L143)
-
-
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L146)
 
 The default value is _true_
 
@@ -203,9 +173,7 @@ The default value is _true_
 
 Disables/Enables the various links which go back to the index page with the theme overview
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L148)
-
-
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L151)
 
 The default value is _true_
 
@@ -213,9 +181,7 @@ The default value is _true_
 
 Disables/Enables the 'Share-screen'-tab in the welcome message
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L153)
-
-
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L156)
 
 The default value is _true_
 
@@ -223,9 +189,7 @@ The default value is _true_
 
 Disables/Enables the geolocation button
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L158)
-
-
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L161)
 
 The default value is _true_
 
@@ -233,9 +197,7 @@ The default value is _true_
 
 If set to false, all layers will be disabled - except the explicitly enabled layers
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L164)
-
-
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L167)
 
 The default value is _true_
 
@@ -243,9 +205,7 @@ The default value is _true_
 
 Always show all questions
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L169)
-
-
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L172)
 
 The default value is _false_
 
@@ -253,9 +213,7 @@ The default value is _false_
 
 Enable the export as GeoJSON and CSV button
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L175)
-
-
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L178)
 
 The default value is _true_
 
@@ -263,9 +221,7 @@ The default value is _true_
 
 Enable/disable caching from localStorage
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L181)
-
-
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L184)
 
 The default value is _true_
 
@@ -273,9 +229,7 @@ The default value is _true_
 
 If true, 'dryrun' mode is activated. The app will behave as normal, except that changes to OSM will be printed onto the console instead of actually uploaded to osm.org
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L196)
-
-
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L199)
 
 The default value is _false_
 
@@ -283,9 +237,7 @@ The default value is _false_
 
 If true, shows some extra debugging help such as all the available tags on every object
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L202)
-
-
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L205)
 
 The default value is _false_
 
@@ -293,9 +245,7 @@ The default value is _false_
 
 If true, the location distance indication will not be written to the changeset and other privacy enhancing measures might be taken.
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L208)
-
-
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L211)
 
 The default value is _false_
 
@@ -303,9 +253,7 @@ The default value is _false_
 
 Point mapcomplete to a different overpass-instance. Example: https://overpass-api.de/api/interpreter
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L214)
-
-
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L217)
 
 The default value is _https://overpass-api.de/api/interpreter,https://overpass.kumi.systems/api/interpreter,https://overpass.openstreetmap.ru/cgi/interpreter_
 
@@ -313,9 +261,7 @@ The default value is _https://overpass-api.de/api/interpreter,https://overpass.k
 
 Set a different timeout (in seconds) for queries in overpass
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L225)
-
-
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L228)
 
 The default value is _30_
 
@@ -323,9 +269,7 @@ The default value is _30_
 
  point to switch between OSM-api and overpass
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L233)
-
-
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L236)
 
 The default value is _16_
 
@@ -333,19 +277,57 @@ The default value is _16_
 
 Tilesize when the OSM-API is used to fetch data within a BBOX
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L241)
-
-
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L244)
 
 The default value is _17_
 
 ## background
 
-The id of the background layer to start with
+When set, load this raster layer (or a layer of this category) as background layer instead of using the default background. This is as if the user opened the background selection menu and selected the layer with the given id or category.
 
-This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L248)
+Most raster layers are based on the [editor layer index](https://github.com/osmlab/editor-layer-index)
 
+#### Selecting a category
 
+If one of the following values is used, this parameter will be interpreted as a _category_ instead of the id of a specific layer. The best layer of this category will be used. Supported categories are those from the editor layer index and are:
+
+- photo
+- map
+- historicmap
+- osmbasedmap
+- historicphoto
+- qa
+- elevation
+- other
+
+#### Selecting a specific layer
+
+One can use the [ID of an ELI-layer](./ELI-overview.md) or use one of the global, builtin layers:
+
+ - protomaps.sunny ⭐
+ - protomaps.white
+ - protomaps.light
+ - protomaps.grayscale
+ - protomaps.dark
+ - protomaps.black
+ - protomaps.sunny_unlabeled
+ - americana
+ - maptiler
+ - maptiler.carto
+ - alidade.smooth
+ - alidade.smooth_dark
+ - stamen.terrain
+ - stamen.toner
+ - stamen.watercolor
+ - stadia.bright
+ - carto.positron
+ - carto.dark_matter
+ - carto.voyager
+ - carto.positron_no_labels
+ - carto.dark_matter_no_labels
+ - carto.voyager_no_labels
+
+This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L251)
 
 No default value set
 
@@ -355,8 +337,6 @@ The initial/current zoom level
 
 This documentation is defined in the source code at [InitialMapPositioning.ts](/src/Logic/Actors/InitialMapPositioning.ts#L37)
 
-
-
 The default value is _1_
 
 ## lat
@@ -364,8 +344,6 @@ The default value is _1_
 The initial/current latitude
 
 This documentation is defined in the source code at [InitialMapPositioning.ts](/src/Logic/Actors/InitialMapPositioning.ts#L37)
-
-
 
 The default value is _0_
 
@@ -375,8 +353,6 @@ The initial/current longitude of the app
 
 This documentation is defined in the source code at [InitialMapPositioning.ts](/src/Logic/Actors/InitialMapPositioning.ts#L37)
 
-
-
 The default value is _0_
 
 ## oauth_token
@@ -384,8 +360,6 @@ The default value is _0_
 Used to complete the login
 
 This documentation is defined in the source code at [ThemeViewState.ts](/src/Models/ThemeViewState.ts#L177)
-
-
 
 No default value set
 
@@ -395,8 +369,6 @@ Whether or not layer public_bookcase is shown
 
 This documentation is defined in the source code at [FilteredLayer.ts](/src/Models/FilteredLayer.ts#L110)
 
-
-
 The default value is _true_
 
 ## filter-public_bookcase-kid-books
@@ -404,8 +376,6 @@ The default value is _true_
 State of filter kid-books
 
 This documentation is defined in the source code at [FilterConfig.ts](/src/Models/ThemeConfig/FilterConfig.ts#L167)
-
-
 
 The default value is _false_
 
@@ -415,8 +385,6 @@ State of filter adult-books
 
 This documentation is defined in the source code at [FilterConfig.ts](/src/Models/ThemeConfig/FilterConfig.ts#L167)
 
-
-
 The default value is _false_
 
 ## filter-public_bookcase-inside
@@ -424,8 +392,6 @@ The default value is _false_
 State of filter inside
 
 This documentation is defined in the source code at [FilterConfig.ts](/src/Models/ThemeConfig/FilterConfig.ts#L167)
-
-
 
 The default value is _0_
 
@@ -435,8 +401,6 @@ State of filter has_image
 
 This documentation is defined in the source code at [FilterConfig.ts](/src/Models/ThemeConfig/FilterConfig.ts#L167)
 
-
-
 The default value is _0_
 
 ## layer-note_import_public_bookcase
@@ -445,17 +409,13 @@ Whether or not layer note_import_public_bookcase is shown
 
 This documentation is defined in the source code at [FilteredLayer.ts](/src/Models/FilteredLayer.ts#L110)
 
-
-
 The default value is _true_
 
 ## mode
 
 The mode the application starts in, e.g. 'map', 'dashboard' or 'statistics'
 
-This documentation is defined in the source code at [generateDocs.ts](ervdvn/git2/MapComplete/scripts/generateDocs.ts#L415)
-
-
+This documentation is defined in the source code at [generateDocs.ts](ervdvn/git2/MapComplete/scripts/generateDocs.ts#L434)
 
 The default value is _map_
 
@@ -464,8 +424,6 @@ The default value is _map_
 Whether the layer with id <layer-id> is shown
 
 This documentation is defined in the source code at [QueryParameterDocumentation.ts](/src/UI/QueryParameterDocumentation.ts#L58)
-
-
 
 The default value is _true_
 

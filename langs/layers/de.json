@@ -10515,6 +10515,34 @@
         }
     },
     "tourism_accomodation": {
+        "description": "Verschiedene Arten von Unterkünften",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Alle Arten"
+                    },
+                    "1": {
+                        "question": "Hotels"
+                    },
+                    "2": {
+                        "question": "Hostels / Herbergen"
+                    },
+                    "3": {
+                        "question": "Gasthäuser und Bed & Breakfasts"
+                    },
+                    "4": {
+                        "question": "Motels"
+                    },
+                    "5": {
+                        "question": "Ferienhaus"
+                    },
+                    "6": {
+                        "question": "Ferienwohnung"
+                    }
+                }
+            }
+        },
         "name": "Touristische Unterkunft",
         "presets": {
             "0": {
@@ -10524,6 +10552,25 @@
             "1": {
                 "description": "Ein Hostel ist eine Art von Touristenherberge, in der man in einem Zimmer schlafen kann, das man mit Fremden teilt",
                 "title": "Ein Hostel"
+            },
+            "2": {
+                "description": "Ein möbliertes Appartement oder eine Wohnung mit Kochgelegenheit und Bad in einem Gemeinschaftsgebäude, das für Ferienzwecke gemietet werden kann, normalerweise ohne Frühstück oder Rezeption",
+                "title": "eine Ferienwohnung"
+            },
+            "3": {
+                "description": "Ein Ferienhaus oder eine Ferienwohnung mit Kochgelegenheit und Bad, das bzw. die für Ferienaufenthalte gemietet werden kann, in der Regel ohne Frühstück oder Rezeption",
+                "title": "ein Ferienchalet"
+            },
+            "4": {
+                "description": "Ein Motel ist eine Einrichtung, die eine bezahlte Unterkunft anbietet, in der Regel für kurze Zeit, mit bequemen Parkplätzen für Kraftfahrzeuge am oder in der Nähe des Zimmers. Sie sind in der Regel billiger als ein Hotel",
+                "title": "ein Motel"
+            },
+            "5": {
+                "description": "Ein Bed-and-Breakfast in einem Gästehaus ist ein kleiner Beherbergungsbetrieb. Oft handelt es sich um einige Zimmer in einem Privathaus, in dem die Eigentümer auch die Gäste beherbergen. Es gibt keine Rezeption und es ist auch nicht ständig Personal anwesend. In einigen Fällen erfolgt das Einchecken aus der Ferne, indem ein Zugangscode mitgeteilt wird.",
+                "title": "eine Frühstückspension"
+            },
+            "6": {
+                "title": "eine kleine Beherbergungseinrichtung, die in der Regel vom Eigentümer betrieben wird"
             }
         },
         "tagRenderings": {
@@ -10539,6 +10586,21 @@
                 },
                 "1": {
                     "then": "Hostel {name}"
+                },
+                "2": {
+                    "then": "B&B {name}"
+                },
+                "3": {
+                    "then": "Ferienhaus {name}"
+                },
+                "4": {
+                    "then": "Motel {name}"
+                },
+                "5": {
+                    "then": "Ferienwohnung {name}"
+                },
+                "6": {
+                    "then": "Ferienhaus {name}"
                 }
             },
             "render": "Touristenunterkunft {name}"

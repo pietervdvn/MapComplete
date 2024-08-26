@@ -2,19 +2,9 @@
 
 # climbing_gym
 
-
-
-
 A climbing gym
 
-
-
-
-
-
  - This layer is shown at zoomlevel **10** and higher
-
-
 
 ## Table of contents
 
@@ -26,19 +16,22 @@ A climbing gym
   - [website](#website)
   - [phone](#phone)
   - [email](#email)
+  - [fee](#fee)
   - [payment-options](#payment-options)
   - [opening_hours](#opening_hours)
   - [Opening hours](#opening-hours)
   - [reviews](#reviews)
-  - [climbingbouldering](#climbingbouldering)
-  - [climbingsportclimbing](#climbingsportclimbing)
-  - [climbingtoprope](#climbingtoprope)
+  - [bouldering](#bouldering)
+  - [sportclimbing](#sportclimbing)
+  - [toprope](#toprope)
   - [shoe_rental](#shoe_rental)
   - [harness_rental](#harness_rental)
   - [belay_device_rental](#belay_device_rental)
   - [rope_rental](#rope_rental)
-  - [climbingmindifficulty](#climbingmindifficulty)
-  - [climbingmaxdifficulty](#climbingmaxdifficulty)
+  - [average_length](#average_length)
+  - [min_difficulty](#min_difficulty)
+  - [max_difficulty](#max_difficulty)
+  - [max_bolts](#max_bolts)
   - [Speed climbing?](#speed-climbing)
   - [shower](#shower)
   - [internet](#internet)
@@ -49,12 +42,8 @@ A climbing gym
 
 ## Themes using this layer
 
-
-
  - [climbing](https://mapcomplete.org/climbing)
  - [personal](https://mapcomplete.org/personal)
-
-
 
 ## Basic tags for this layer
 
@@ -75,44 +64,40 @@ Elements must match **all** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/website#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/website/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [website](https://wiki.openstreetmap.org/wiki/Key:website) | [url](../SpecialInputElements.md#url) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/phone#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/phone/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [phone](https://wiki.openstreetmap.org/wiki/Key:phone) | [phone](../SpecialInputElements.md#phone) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/email#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/email/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [email](https://wiki.openstreetmap.org/wiki/Key:email) | [email](../SpecialInputElements.md#email) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/charge#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/charge/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [charge](https://wiki.openstreetmap.org/wiki/Key:charge) | [string](../SpecialInputElements.md#string) | [](https://wiki.openstreetmap.org/wiki/Tag:charge%3D) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/opening_hours#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/opening_hours/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/climbing:boulder#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/climbing%3Aboulder/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [climbing:boulder](https://wiki.openstreetmap.org/wiki/Key:climbing:boulder) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dno) [limited](https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dlimited) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/climbing:sport#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/climbing%3Asport/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [climbing:sport](https://wiki.openstreetmap.org/wiki/Key:climbing:sport) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:climbing:sport%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:climbing:sport%3Dno) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/climbing:toprope#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/climbing%3Atoprope/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [climbing:toprope](https://wiki.openstreetmap.org/wiki/Key:climbing:toprope) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:climbing:toprope%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:climbing:toprope%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:climbing_shoes:rental#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/service%3Aclimbing_shoes%3Arental/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [service:climbing_shoes:rental](https://wiki.openstreetmap.org/wiki/Key:service:climbing_shoes:rental) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:climbing_shoes:rental%3Dyes) [yes](https://wiki.openstreetmap.org/wiki/Tag:service:climbing_shoes:rental%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:climbing_shoes:rental%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:climbing_harness:rental#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/service%3Aclimbing_harness%3Arental/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [service:climbing_harness:rental](https://wiki.openstreetmap.org/wiki/Key:service:climbing_harness:rental) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:climbing_harness:rental%3Dyes) [yes](https://wiki.openstreetmap.org/wiki/Tag:service:climbing_harness:rental%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:climbing_harness:rental%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:climbing_rope:rental#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/service%3Aclimbing_rope%3Arental/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [service:climbing_rope:rental](https://wiki.openstreetmap.org/wiki/Key:service:climbing_rope:rental) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:climbing_rope:rental%3Dyes) [yes](https://wiki.openstreetmap.org/wiki/Tag:service:climbing_rope:rental%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:climbing_rope:rental%3Dno) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/climbing:length#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/climbing%3Alength/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [climbing:length](https://wiki.openstreetmap.org/wiki/Key:climbing:length) | [pfloat](../SpecialInputElements.md#pfloat) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/climbing:grade:french:min#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/climbing%3Agrade%3Afrench%3Amin/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [climbing:grade:french:min](https://wiki.openstreetmap.org/wiki/Key:climbing:grade:french:min) | [string](../SpecialInputElements.md#string) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/climbing:grade:french:max#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/climbing%3Agrade%3Afrench%3Amax/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [climbing:grade:french:max](https://wiki.openstreetmap.org/wiki/Key:climbing:grade:french:max) | [string](../SpecialInputElements.md#string) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/climbing:bolts:max#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/climbing%3Abolts%3Amax/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [climbing:bolts:max](https://wiki.openstreetmap.org/wiki/Key:climbing:bolts:max) | [pnat](../SpecialInputElements.md#pnat) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/climbing:speed#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/climbing%3Aspeed/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [climbing:speed](https://wiki.openstreetmap.org/wiki/Key:climbing:speed) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:climbing:speed%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:climbing:speed%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/shower#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/shower/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [shower](https://wiki.openstreetmap.org/wiki/Key:shower) | Multiple choice | [hot](https://wiki.openstreetmap.org/wiki/Tag:shower%3Dhot) [cold](https://wiki.openstreetmap.org/wiki/Tag:shower%3Dcold) [yes](https://wiki.openstreetmap.org/wiki/Tag:shower%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:shower%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/internet_access#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/internet_access/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [internet_access](https://wiki.openstreetmap.org/wiki/Key:internet_access) | Multiple choice | [wlan](https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwlan) [no](https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dno) [terminal](https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dterminal) [wired](https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwired) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/internet_access:fee#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/internet_access%3Afee/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [internet_access:fee](https://wiki.openstreetmap.org/wiki/Key:internet_access:fee) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dno) [customers](https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dcustomers) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/internet_access:ssid#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/internet_access%3Assid/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [internet_access:ssid](https://wiki.openstreetmap.org/wiki/Key:internet_access:ssid) | [string](../SpecialInputElements.md#string) | [Telekom](https://wiki.openstreetmap.org/wiki/Tag:internet_access:ssid%3DTelekom) |
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
-
-
-
 
 ### name
 
 The question is `What is the name of this climbing gym?`
 *<strong>{name}</strong>* is shown if `name` is set
 
-
-
-
 ### website
 
 The question is `What is the website of {title()}?`
 *<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>* is shown if `website` is set
 
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/icons/website.svg' style='width: 3rem; height: 3rem'> *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>* is shown if with contact:website~.+. _This option cannot be chosen as answer_
-
-
 
 This tagrendering has labels 
 `contact`
@@ -122,10 +107,7 @@ This tagrendering has labels
 The question is `What is the phone number of {title()}?`
 *<a href='tel:{phone}'>{phone}</a>* is shown if `phone` is set
 
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/phone.svg' style='width: 3rem; height: 3rem'> *<a href='tel:{contact:phone}'>{contact:phone}</a>* is shown if with contact:phone~.+. _This option cannot be chosen as answer_
-
-
 
 This tagrendering has labels 
 `contact`
@@ -135,108 +117,86 @@ This tagrendering has labels
 The question is `What is the email address of {title()}?`
 *<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>* is shown if `email` is set
 
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/envelope.svg' style='width: 3rem; height: 3rem'> *<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>* is shown if with contact:email~.+. _This option cannot be chosen as answer_
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/envelope.svg' style='width: 3rem; height: 3rem'> *<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>* is shown if with operator:email~.+. _This option cannot be chosen as answer_
 
-
-
 This tagrendering has labels 
 `contact`
+
+### fee
+
+The question is `Is a fee required to climb here?`
+*A fee of {charge} should be paid for climbing here* is shown if `charge` is set
+
+ -  *Climbing here is free of charge* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a>
+ -  *Paying a fee is required to climb here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a> & charge=
 
 ### payment-options
 
 The question is `Which methods of payment are accepted here?`
 
-
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/cash.svg' style='width: 3rem; height: 3rem'> *Cash is accepted here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dno' target='_blank'>no</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/payment_card.svg' style='width: 3rem; height: 3rem'> *Payment cards are accepted here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dno' target='_blank'>no</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/qrcode.svg' style='width: 3rem; height: 3rem'> *Payment by QR-code is possible here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dno' target='_blank'>no</a>
-
-
-
-
 
 ### opening_hours
 
 The question is `What are the opening hours of {title()}?`
 *<h3>Opening hours</h3>{opening_hours_table(opening_hours)}* is shown if `opening_hours` is set
 
-
  -  *Marked as closed for an unspecified time* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>. _This option cannot be chosen as answer_
-
-
-
-
 
 ### reviews
 Shows the reviews module (including the possibility to leave a review)
 _This tagrendering has no question and is thus read-only_
 *{create_review()}{list_reviews()}*
 
+### bouldering
 
+The question is `Is bouldering possible here?`
 
+ -  *Bouldering is possible here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:boulder' target='_blank'>climbing:boulder</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dyes' target='_blank'>yes</a>
+ -  *Bouldering is not possible here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:boulder' target='_blank'>climbing:boulder</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dno' target='_blank'>no</a>
+ -  *Bouldering is possible, although there are only a few problems* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:boulder' target='_blank'>climbing:boulder</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dlimited' target='_blank'>limited</a>
+ -  *There are {climbing:boulder} boulder problems* is shown if with climbing:boulder~.+. _This option cannot be chosen as answer_
 
-### climbingbouldering
+### sportclimbing
 
-_This tagrendering has no question and is thus read-only_
-*climbing.bouldering*
+The question is `Is sport climbing possible here on fixed anchors?`
 
+ -  *Sport climbing is possible here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:sport' target='_blank'>climbing:sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:sport%3Dyes' target='_blank'>yes</a>
+ -  *Sport climbing is not possible here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:sport' target='_blank'>climbing:sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:sport%3Dno' target='_blank'>no</a>
+ -  *There are {climbing:sport} sport climbing routes* is shown if with climbing:sport~.+. _This option cannot be chosen as answer_
 
+### toprope
 
+The question is `Is toprope climbing possible here?`
 
-### climbingsportclimbing
-
-_This tagrendering has no question and is thus read-only_
-*climbing.sportclimbing*
-
-
-
-
-### climbingtoprope
-
-_This tagrendering has no question and is thus read-only_
-*climbing.toprope*
-
-
-
+ -  *Toprope climbing is possible here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:toprope' target='_blank'>climbing:toprope</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:toprope%3Dyes' target='_blank'>yes</a>
+ -  *Toprope climbing is not possible here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:toprope' target='_blank'>climbing:toprope</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:toprope%3Dno' target='_blank'>no</a>
+ -  *There are {climbing:toprope} toprope routes* is shown if with climbing:toprope~.+. _This option cannot be chosen as answer_
 
 ### shoe_rental
 
 The question is `Can one rent climbing shoes here?`
-
-
 
  -  *Climbing shoes can be borrowed for free here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_shoes:rental' target='_blank'>service:climbing_shoes:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_shoes:rental%3Dyes' target='_blank'>yes</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_shoes:rental:fee' target='_blank'>service:climbing_shoes:rental:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_shoes:rental:fee%3Dno' target='_blank'>no</a>
  -  *Climbing shoes can be rented here for {service:climbing_shoes:rental:charge}* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_shoes:rental' target='_blank'>service:climbing_shoes:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_shoes:rental%3Dyes' target='_blank'>yes</a> & service:climbing_shoes:rental:charge~.+. _This option cannot be chosen as answer_
  -  *Climbing shoes can be rented here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_shoes:rental' target='_blank'>service:climbing_shoes:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_shoes:rental%3Dyes' target='_blank'>yes</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_shoes:rental:fee' target='_blank'>service:climbing_shoes:rental:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_shoes:rental:fee%3Dyes' target='_blank'>yes</a>
  -  *Climbing shoes can <b>not</b> be rented here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_shoes:rental' target='_blank'>service:climbing_shoes:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_shoes:rental%3Dno' target='_blank'>no</a>
 
-
-
-
-
 ### harness_rental
 
 The question is `Can one rent a climbing harness here?`
-
-
 
  -  *A climbing harness can be borrowed for free here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_harness:rental' target='_blank'>service:climbing_harness:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_harness:rental%3Dyes' target='_blank'>yes</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_harness:rental:fee' target='_blank'>service:climbing_harness:rental:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_harness:rental:fee%3Dno' target='_blank'>no</a>
  -  *A climbing harness can be rented here for {service:climbing_harness:rental:charge}* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_harness:rental' target='_blank'>service:climbing_harness:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_harness:rental%3Dyes' target='_blank'>yes</a> & service:climbing_harness:rental:charge~.+. _This option cannot be chosen as answer_
  -  *A climbing harness can be rented here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_harness:rental' target='_blank'>service:climbing_harness:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_harness:rental%3Dyes' target='_blank'>yes</a>
  -  *A climbing harness can <b>not</b> be rented here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_harness:rental' target='_blank'>service:climbing_harness:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_harness:rental%3Dno' target='_blank'>no</a>
 
-
-
-
-
 ### belay_device_rental
 
 The question is `Can one rent a belay device here?`
-
-
 
  -  *Belay devices are provided at each rope* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_belay_device:provided_at_each_rope' target='_blank'>service:climbing_belay_device:provided_at_each_rope</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_belay_device:provided_at_each_rope%3Dyes' target='_blank'>yes</a>
  -  *A belay device can be borrowed for free here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_belay_device:rental' target='_blank'>service:climbing_belay_device:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_belay_device:rental%3Dyes' target='_blank'>yes</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_belay_device:rental:fee' target='_blank'>service:climbing_belay_device:rental:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_belay_device:rental:fee%3Dno' target='_blank'>no</a>
@@ -244,83 +204,63 @@ The question is `Can one rent a belay device here?`
  -  *A belay device can be rented here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_belay_device:rental' target='_blank'>service:climbing_belay_device:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_belay_device:rental%3Dyes' target='_blank'>yes</a>
  -  *A belay device can <b>not</b> be rented here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_belay_device:rental' target='_blank'>service:climbing_belay_device:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_belay_device:rental%3Dno' target='_blank'>no</a>
 
-
-
-
-
 ### rope_rental
 
 The question is `Can one rent a climbing rope here?`
-
-
 
  -  *A climbing rope can be borrowed for free here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_rope:rental' target='_blank'>service:climbing_rope:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_rope:rental%3Dyes' target='_blank'>yes</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_rope:rental:fee' target='_blank'>service:climbing_rope:rental:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_rope:rental:fee%3Dno' target='_blank'>no</a>
  -  *A climbing rope can be rented here for {service:climbing_rope:rental:charge}* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_rope:rental' target='_blank'>service:climbing_rope:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_rope:rental%3Dyes' target='_blank'>yes</a> & service:climbing_rope:rental:charge~.+. _This option cannot be chosen as answer_
  -  *A climbing rope can be rented here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_rope:rental' target='_blank'>service:climbing_rope:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_rope:rental%3Dyes' target='_blank'>yes</a>
  -  *A climbing rope can <b>not</b> be rented here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_rope:rental' target='_blank'>service:climbing_rope:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_rope:rental%3Dno' target='_blank'>no</a>
 
+### average_length
 
+The question is `What is the (average) length of the routes in meters?`
+*The routes are <b>{canonical(climbing:length)}</b> long on average* is shown if `climbing:length` is set
 
+### min_difficulty
 
+The question is `What is the grade of the easiest route here, according to the french classification system?`
+*The lowest grade is {climbing:grade:french:min} according to the french/belgian system* is shown if `climbing:grade:french:min` is set
 
-### climbingmindifficulty
+### max_difficulty
 
-_This tagrendering has no question and is thus read-only_
-*climbing.min_difficulty*
+The question is `What is the highest grade route here, according to the french classification system?`
+*The highest grade is {climbing:grade:french:max} according to the french/belgian system* is shown if `climbing:grade:french:max` is set
 
+This tagrendering is only visible in the popup if the following condition is met: club= & office= & (<a href='https://wiki.openstreetmap.org/wiki/Key:climbing:sport' target='_blank'>climbing:sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:sport%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dclimbing' target='_blank'>climbing</a>) & climbing!~^(route)$
 
+### max_bolts
 
-
-### climbingmaxdifficulty
-
-_This tagrendering has no question and is thus read-only_
-*climbing.max_difficulty*
-
-
-
+The question is `How many bolts do routes in {title()} have at most?`
+*The sport climbing routes here have at most {climbing:bolts:max} bolts.<div class='subtle'>This is without relays and indicates how much quickdraws a climber needs</div>* is shown if `climbing:bolts:max` is set
 
 ### Speed climbing?
 
 The question is `Is there a speed climbing wall?`
 
-
-
  -  *There is a speed climbing wall* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:speed' target='_blank'>climbing:speed</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:speed%3Dyes' target='_blank'>yes</a>
  -  *There is no speed climbing wall* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:climbing:speed' target='_blank'>climbing:speed</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:speed%3Dno' target='_blank'>no</a>
  -  *There are {climbing:speed} speed climbing walls* is shown if with climbing:speed~.+. _This option cannot be chosen as answer_
 
-
-
-
-
 ### shower
 
 The question is `Does this facility offer showers?`
-
-
 
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/shower/shower.svg' style='width: 3rem; height: 3rem'> *This facility does have showers with warm water* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shower' target='_blank'>shower</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shower%3Dhot' target='_blank'>hot</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/shower/shower.svg' style='width: 3rem; height: 3rem'> *This facility does have showers, but the water is not heated* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shower' target='_blank'>shower</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shower%3Dcold' target='_blank'>cold</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/shower/shower.svg' style='width: 3rem; height: 3rem'> *This facility does have showers* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shower' target='_blank'>shower</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shower%3Dyes' target='_blank'>yes</a>
  -  *This facility does not offer a shower* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shower' target='_blank'>shower</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shower%3Dno' target='_blank'>no</a>
 
-
-
-
-
 ### internet
 
 The question is `Does this place offer internet access?`
-
-
 
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/wifi' style='width: 3rem; height: 3rem'> *This place offers wireless internet access* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwlan' target='_blank'>wlan</a>
  -  *This place <b>does not</b> offer internet access* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dno' target='_blank'>no</a>
  -  *This place offers internet access* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dyes' target='_blank'>yes</a>. _This option cannot be chosen as answer_
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/computer' style='width: 3rem; height: 3rem'> *This place offers internet access via a terminal or computer* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dterminal' target='_blank'>terminal</a>
  -  *This place offers wired internet access* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwired' target='_blank'>wired</a>
-
-
 
 This tagrendering has labels 
 `internet-all`
@@ -329,12 +269,9 @@ This tagrendering has labels
 
 The question is `Is there a fee for internet access?`
 
-
-
  -  *There is a fee for the internet access at this place* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:fee' target='_blank'>internet_access:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dyes' target='_blank'>yes</a>
  -  *Internet access is free at this place* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:fee' target='_blank'>internet_access:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dno' target='_blank'>no</a>
  -  *Internet access is free at this place, for customers only* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:fee' target='_blank'>internet_access:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dcustomers' target='_blank'>customers</a>
-
 
 This tagrendering is only visible in the popup if the following condition is met: internet_access!=no & internet_access~.+
 This tagrendering has labels 
@@ -345,9 +282,7 @@ This tagrendering has labels
 The question is `What is the network name for the wireless internet access?`
 *The network name is <b>{internet_access:ssid}</b>* is shown if `internet_access:ssid` is set
 
-
  -  *Telekom* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:ssid' target='_blank'>internet_access:ssid</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:ssid%3DTelekom' target='_blank'>Telekom</a>
-
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwlan' target='_blank'>wlan</a>
 This tagrendering has labels 
@@ -358,14 +293,10 @@ This tagrendering has labels
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

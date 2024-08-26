@@ -2,15 +2,7 @@
 
 # named_streets
 
-
-
-
 Hidden layer with all streets which have a name. Useful to detect addresses
-
-
-
-
-
 
  - This layer is shown at zoomlevel **18** and higher
  - This layer is not visible by default and must be enabled in the filter by the user. 
@@ -20,8 +12,6 @@ Hidden layer with all streets which have a name. Useful to detect addresses
  - Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`
  - This layer is needed as dependency for layer [address](#address)
 
-
-
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
@@ -30,12 +20,8 @@ Hidden layer with all streets which have a name. Useful to detect addresses
 
 ## Themes using this layer
 
-
-
  - [grb](https://mapcomplete.org/grb)
  - [uk_addresses](https://mapcomplete.org/uk_addresses)
-
-
 
 ## Basic tags for this layer
 

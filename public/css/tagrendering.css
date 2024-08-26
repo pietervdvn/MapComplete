@@ -39,10 +39,10 @@
 
 .mapping-icon-small {
     /* A mapping icon type */
-    width: 1.5rem;
+    width: 2rem;
     height: fit-content;
 
-    max-height: 1.5rem;
+    max-height: 2rem;
     margin-right: 0.5rem;
 }
 

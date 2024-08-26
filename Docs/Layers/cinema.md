@@ -2,19 +2,9 @@
 
 # cinema
 
-
-
-
  A place showing movies (films), generally open to the public for a fee. Commonly referred to as a movie theater in the US
 
-
-
-
-
-
  - This layer is shown at zoomlevel **10** and higher
-
-
 
 ## Table of contents
 
@@ -33,11 +23,7 @@
 
 ## Themes using this layer
 
-
-
  - [openlovemap](https://mapcomplete.org/openlovemap)
-
-
 
 ## Basic tags for this layer
 
@@ -57,34 +43,22 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/wikidata#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/wikidata/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [wikidata](https://wiki.openstreetmap.org/wiki/Key:wikidata) | [wikidata](../SpecialInputElements.md#wikidata) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/cinema#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/cinema/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [cinema](https://wiki.openstreetmap.org/wiki/Key:cinema) | Multiple choice | [](https://wiki.openstreetmap.org/wiki/Tag:cinema%3D) [erotic](https://wiki.openstreetmap.org/wiki/Tag:cinema%3Derotic) |
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
-
-
-
 
 ### reviews
 Shows the reviews module (including the possibility to leave a review)
 _This tagrendering has no question and is thus read-only_
 *{create_review()}{list_reviews()}*
 
-
-
-
 ### phone
 
 The question is `What is the phone number of {title()}?`
 *<a href='tel:{phone}'>{phone}</a>* is shown if `phone` is set
 
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/phone.svg' style='width: 3rem; height: 3rem'> *<a href='tel:{contact:phone}'>{contact:phone}</a>* is shown if with contact:phone~.+. _This option cannot be chosen as answer_
-
-
 
 This tagrendering has labels 
 `contact`
@@ -94,11 +68,8 @@ This tagrendering has labels
 The question is `What is the email address of {title()}?`
 *<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>* is shown if `email` is set
 
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/envelope.svg' style='width: 3rem; height: 3rem'> *<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>* is shown if with contact:email~.+. _This option cannot be chosen as answer_
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/envelope.svg' style='width: 3rem; height: 3rem'> *<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>* is shown if with operator:email~.+. _This option cannot be chosen as answer_
-
-
 
 This tagrendering has labels 
 `contact`
@@ -108,10 +79,7 @@ This tagrendering has labels
 The question is `What is the website of {title()}?`
 *<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>* is shown if `website` is set
 
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/icons/website.svg' style='width: 3rem; height: 3rem'> *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>* is shown if with contact:website~.+. _This option cannot be chosen as answer_
-
-
 
 This tagrendering has labels 
 `contact`
@@ -121,40 +89,25 @@ Shows a wikipedia box with the corresponding wikipedia article; the wikidata-ite
 The question is `What is the corresponding Wikidata entity?`
 *{wikipedia():max-height:25rem}* is shown if `wikidata` is set
 
-
  -  *{wikipedia():max-height:25rem}* is shown if with wikipedia~.+. _This option cannot be chosen as answer_
  -  *No Wikipedia page has been linked yet* is shown if with wikidata=. _This option cannot be chosen as answer_
-
-
-
-
 
 ### cinema_type
 
 The question is `What type of cinema is this?`
 
-
-
  -  *This is a normal cinema showing movies for all ages* is shown if with cinema=
  -  *This is an erotic cinema showing adult movies* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:cinema' target='_blank'>cinema</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cinema%3Derotic' target='_blank'>erotic</a>
-
-
-
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

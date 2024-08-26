@@ -85,13 +85,12 @@
       feedback?.setData(undefined)
       return
     }
+    feedback?.setData(validator?.getFeedback(v, getCountry))
     if (!validator?.isValid(v, getCountry)) {
-      feedback?.setData(validator?.getFeedback(v, getCountry))
       value.setData(undefined)
       return
     }
 
-    feedback?.setData(undefined)
     if (selectedUnit.data) {
       value.setData(unit.toOsm(v, selectedUnit.data))
     } else {

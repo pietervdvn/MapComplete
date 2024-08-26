@@ -2,20 +2,12 @@
 
 # all_vending_machine
 
-
 This layer is based on [vending_machine](../Layers/vending_machine.md)
 
 Layer showing vending machines
 
-
-
-
-
-
  - This layer is shown at zoomlevel **18** and higher
  - Not visible in the layer selection by default. If you want to make this layer toggable, override `name`
-
-
 
 ## Table of contents
 
@@ -48,11 +40,7 @@ Layer showing vending machines
 
 ## Themes using this layer
 
-
-
  - [vending_machine](https://mapcomplete.org/vending_machine)
-
-
 
 ## Basic tags for this layer
 
@@ -84,16 +72,10 @@ Elements must match **all** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/charge#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/charge/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [charge](https://wiki.openstreetmap.org/wiki/Key:charge) | [currency](../SpecialInputElements.md#currency) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/operational_status#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/operational_status/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [operational_status](https://wiki.openstreetmap.org/wiki/Key:operational_status) | Multiple choice | [](https://wiki.openstreetmap.org/wiki/Tag:operational_status%3D) [broken](https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dbroken) [closed](https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dclosed) |
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
-
-
-
 
 ### repeated
 
@@ -109,14 +91,11 @@ This tagrendering has labels
 The question is `On what level is this feature located?`
 *Located on the {level}th floor* is shown if `level` is set
 
-
  -  *Located underground* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>. _This option cannot be chosen as answer_
  -  *Located on the ground floor* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D0' target='_blank'>0</a>
  -  *Located on the ground floor* is shown if with level=. _This option cannot be chosen as answer_
  -  *Located on the first floor* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>
  -  *Located on the first basement level* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D-1' target='_blank'>-1</a>
-
-
 
 This tagrendering has labels 
 `level`
@@ -125,7 +104,6 @@ This tagrendering has labels
 
 The question is `What does this vending machine sell?`
 *This vending machine sells {vending}* is shown if `vending` is set
-
 
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-bottles.svg' style='width: 3rem; height: 3rem'> *Drinks are sold* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Ddrinks' target='_blank'>drinks</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/maki-confectionery.svg' style='width: 3rem; height: 3rem'> *Sweets are sold* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Dsweets' target='_blank'>sweets</a>
@@ -155,41 +133,27 @@ The question is `What does this vending machine sell?`
  -  *Bicycle pumps are sold* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Dbicycle_pump' target='_blank'>bicycle_pump</a>
  -  *Bicycle locks are sold* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Dbicycle_lock' target='_blank'>bicycle_lock</a>
 
-
-
-
-
 ### bicycle_tube_vending_machine-brand
 
 The question is `Which brand of tubes are sold here?`
 *{brand} tubes are sold here* is shown if `brand` is set
 
-
  -  *Continental tubes are sold here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:brand' target='_blank'>brand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:brand%3DContinental' target='_blank'>Continental</a>
  -  *Schwalbe tubes are sold here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:brand' target='_blank'>brand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:brand%3DSchwalbe' target='_blank'>Schwalbe</a>
 
-
 This tagrendering is only visible in the popup if the following condition is met: vending~^(.*bicycle_tube.*)$
-
 
 ### opening_hours_24_7
 
 The question is `What are the opening hours of {title()}?`
 *<h3>Opening hours</h3>{opening_hours_table(opening_hours)}* is shown if `opening_hours` is set
 
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/open24_7.svg' style='width: 3rem; height: 3rem'> *24/7 opened (including holidays)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
  -  *Marked as closed for an unspecified time* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>. _This option cannot be chosen as answer_
-
-
-
-
 
 ### payment-options-split
 
 The question is `Which methods of payment are accepted here?`
-
-
 
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/cash.svg' style='width: 3rem; height: 3rem'> *Cash is accepted here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dyes' target='_blank'>yes</a>. _This option cannot be chosen as answer_. Unselecting this answer will add payment:cash=
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/payment_card.svg' style='width: 3rem; height: 3rem'> *Payment cards are accepted here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dyes' target='_blank'>yes</a>. _This option cannot be chosen as answer_. Unselecting this answer will add payment:cards=
@@ -199,15 +163,9 @@ The question is `Which methods of payment are accepted here?`
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/payment_card.svg' style='width: 3rem; height: 3rem'> *Debit cards are accepted here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:debit_cards' target='_blank'>payment:debit_cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:debit_cards%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:debit_cards' target='_blank'>payment:debit_cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:debit_cards%3Dno' target='_blank'>no</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/payment_card.svg' style='width: 3rem; height: 3rem'> *Credit cards are accepted here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:credit_cards' target='_blank'>payment:credit_cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:credit_cards%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:credit_cards' target='_blank'>payment:credit_cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:credit_cards%3Dno' target='_blank'>no</a>
 
-
-
-
-
 ### denominations-coins
 
 The question is `What coins can you use to pay here?`
-
-
 
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/denominations/eur/1cent.svg' style='width: 3rem; height: 3rem'> *1 cent coins are accepted* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.01 EUR' target='_blank'>0.01 EUR</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/denominations/eur/2cent.svg' style='width: 3rem; height: 3rem'> *2 cent coins are accepted* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.02 EUR' target='_blank'>0.02 EUR</a>
@@ -225,15 +183,11 @@ The question is `What coins can you use to pay here?`
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/denominations/chf/2fr-2019-800px.png' style='width: 3rem; height: 3rem'> *2 francs coins are accepted* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D2 CHF' target='_blank'>2 CHF</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/denominations/chf/5fr-2019-800px.png' style='width: 3rem; height: 3rem'> *5 francs coins are accepted* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D5 CHF' target='_blank'>5 CHF</a>
 
-
 This tagrendering is only visible in the popup if the following condition is met: (<a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins' target='_blank'>payment:coins</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins%3Dyes' target='_blank'>yes</a>) & (_currency~^(.*EUR.*)$ | _currency~^(.*CHF.*)$)
-
 
 ### denominations-notes
 
 The question is `what notes can you use to pay here?`
-
-
 
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/denominations/eur/5euro.svg' style='width: 3rem; height: 3rem'> *5 euro notes are accepted* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes:denominations' target='_blank'>payment:notes:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D5 EUR' target='_blank'>5 EUR</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/denominations/eur/10euro.svg' style='width: 3rem; height: 3rem'> *10 euro notes are accepted* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes:denominations' target='_blank'>payment:notes:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D10 EUR' target='_blank'>10 EUR</a>
@@ -249,41 +203,27 @@ The question is `what notes can you use to pay here?`
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/denominations/chf/200chf.svg' style='width: 3rem; height: 3rem'> *200 francs notes are accepted* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes:denominations' target='_blank'>payment:notes:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D200 CHF' target='_blank'>200 CHF</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/denominations/chf/1000chf.svg' style='width: 3rem; height: 3rem'> *1000 francs notes are accepted* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes:denominations' target='_blank'>payment:notes:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D1000 CHF' target='_blank'>1000 CHF</a>
 
-
 This tagrendering is only visible in the popup if the following condition is met: (<a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes' target='_blank'>payment:notes</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes%3Dyes' target='_blank'>yes</a>) & (_currency~^(.*EUR.*)$ | _currency~^(.*CHF.*)$)
-
 
 ### operator
 
 The question is `Who operates this vending machine?`
 *This vending machine is operated by {operator}* is shown if `operator` is set
 
-
-
-
 ### indoor
 
 The question is `Is this vending machine indoors?`
 
-
-
  -  *This vending machine is outdoors* is shown if with indoor=. _This option cannot be chosen as answer_
  -  *This vending machine is indoors* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dyes' target='_blank'>yes</a>
  -  *This vending machine is outdoors* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dno' target='_blank'>no</a>
-
-
-
-
 
 ### phone
 
 The question is `What is the phone number of the operator of this vending machine?`
 *<a href='tel:{phone}'>{phone}</a>* is shown if `phone` is set
 
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/phone.svg' style='width: 3rem; height: 3rem'> *<a href='tel:{contact:phone}'>{contact:phone}</a>* is shown if with contact:phone~.+. _This option cannot be chosen as answer_
-
-
 
 This tagrendering has labels 
 `contact`
@@ -293,10 +233,7 @@ This tagrendering has labels
 The question is `What is the website of {title()}?`
 *<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>* is shown if `website` is set
 
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/icons/website.svg' style='width: 3rem; height: 3rem'> *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>* is shown if with contact:website~.+. _This option cannot be chosen as answer_
-
-
 
 This tagrendering has labels 
 `contact`
@@ -308,14 +245,12 @@ The question is `How much does a a bicycle tube cost?`
 
 This tagrendering is only visible in the popup if the following condition is met: vending~^(.*bicycle_tube.*)$
 
-
 ### charge_bicycle_light
 
 The question is `How much does a bicycle light cost?`
 *bicycle light costs {charge:bicycle_light}* is shown if `charge` is set
 
 This tagrendering is only visible in the popup if the following condition is met: vending~^(.*bicycle_light.*)$
-
 
 ### charge_condom
 
@@ -324,67 +259,43 @@ The question is `How much does a a condom cost?`
 
 This tagrendering is only visible in the popup if the following condition is met: vending~^(.*condom.*)$
 
-
 ### operational_status
 
 The question is `Is this vending machine still operational?`
-
-
 
  -  *This vending machine works* is shown if with operational_status=
  -  *This vending machine is broken* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:operational_status' target='_blank'>operational_status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dbroken' target='_blank'>broken</a>
  -  *This vending machine is closed* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:operational_status' target='_blank'>operational_status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dclosed' target='_blank'>closed</a>
  -  *The operational status is <i>{operational_status}</i>* is shown if with operational_status~.+. _This option cannot be chosen as answer_
 
-
-
-
-
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
-
-
-
 
 ### move-button
 
 _This tagrendering has no question and is thus read-only_
 *{move_button()}*
 
-
-
-
 ### delete-button
 
 _This tagrendering has no question and is thus read-only_
 *{delete_button()}*
-
-
-
 
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
 
-
 This tagrendering has labels 
 `added_by_default`
 
 ## Filters
 
-
-
 | id | question | osmTags |
 -----|-----|----- |
 | open_now.0 | Open now | _isOpen=yes |
-
-
-
-
-
 
 | id | question | osmTags |
 -----|-----|----- |
@@ -417,6 +328,13 @@ This tagrendering has labels
 | vending.26 | Sale of bicycle pumps | vending=bicycle_pump |
 | vending.27 | Sale of bicycle locks | vending=bicycle_lock |
 
+| id | question | osmTags |
+-----|-----|----- |
+| accepts_cash.0 | Accepts cash | payment:cash=yes |
+
+| id | question | osmTags |
+-----|-----|----- |
+| accepts_cards.0 | Accepts payment cards | payment:cards=yes |
 
 
 

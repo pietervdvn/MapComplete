@@ -2,19 +2,9 @@
 
 # public_bookcase
 
-
-
-
 A streetside cabinet with books, accessible to anyone
 
-
-
-
-
-
  - This layer is shown at zoomlevel **7** and higher
-
-
 
 ## Table of contents
 
@@ -40,13 +30,9 @@ A streetside cabinet with books, accessible to anyone
 
 ## Themes using this layer
 
-
-
  - [bookcases](https://mapcomplete.org/bookcases)
  - [circular_economy](https://mapcomplete.org/circular_economy)
  - [personal](https://mapcomplete.org/personal)
-
-
 
 ## Basic tags for this layer
 
@@ -71,179 +57,111 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/start_date#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/start_date/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [start_date](https://wiki.openstreetmap.org/wiki/Key:start_date) | [date](../SpecialInputElements.md#date) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/website#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/website/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [website](https://wiki.openstreetmap.org/wiki/Key:website) | [url](../SpecialInputElements.md#url) |  |
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
-
-
-
 
 ### public_bookcase-name
 
 The question is `What is the name of this public bookcase?`
 *The name of this bookcase is {name}* is shown if `name` is set
 
-
  -  *This bookcase doesn't have a name* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:noname' target='_blank'>noname</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:noname%3Dyes' target='_blank'>yes</a> & name=
-
-
-
-
 
 ### public_bookcase-capacity
 
 The question is `How many books fit into this public bookcase?`
 *{capacity} books fit in this bookcase* is shown if `capacity` is set
 
-
-
-
 ### bookcase-booktypes
 
 The question is `What kind of books can be found in this public bookcase?`
 *This place mostly serves {books}* is shown if `books` is set
 
-
  -  *Mostly children books* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:books' target='_blank'>books</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:books%3Dchildren' target='_blank'>children</a>
  -  *Mostly books for adults* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:books' target='_blank'>books</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:books%3Dadults' target='_blank'>adults</a>
-
-
-
-
 
 ### bookcase-is-indoors
 
 The question is `Is this bookcase located outdoors?`
 
-
-
  -  *This bookcase is located indoors* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dyes' target='_blank'>yes</a>
  -  *This bookcase is located outdoors* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dno' target='_blank'>no</a>
  -  *This bookcase is located outdoors* is shown if with indoor=. _This option cannot be chosen as answer_
-
-
-
-
 
 ### bookcase-is-accessible
 
 The question is `Is this public bookcase freely accessible?`
 
-
-
  -  *Publicly accessible* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
  -  *Only accessible to customers* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers' target='_blank'>customers</a>
 
-
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dyes' target='_blank'>yes</a>
-
 
 ### public_bookcase-operator
 
 The question is `Who maintains this public bookcase?`
 *Operated by {operator}* is shown if `operator` is set
 
-
-
-
 ### public_bookcase-brand
 
 The question is `Is this public bookcase part of a bigger network?`
 *This public bookcase is part of {brand}* is shown if `brand` is set
 
-
  -  *This public bookcase is not part of a bigger network* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:nobrand' target='_blank'>nobrand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:nobrand%3Dyes' target='_blank'>yes</a>
-
-
-
-
 
 ### public_bookcase-ref
 
 The question is `What is the reference number of this public bookcase?`
 *The reference number of this public bookcase within {brand} is {ref}* is shown if `ref` is set
 
-
  -  *This bookcase is not part of a bigger network* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:nobrand' target='_blank'>nobrand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:nobrand%3Dyes' target='_blank'>yes</a> & brand= & ref=
 
-
 This tagrendering is only visible in the popup if the following condition is met: brand~.+
-
 
 ### public_bookcase-start_date
 
 The question is `When was this public bookcase installed?`
 *Installed on {start_date}* is shown if `start_date` is set
 
-
-
-
 ### public_bookcase-website
 
 The question is `Is there a website with more information about this public bookcase?`
 *{link(More info on the website,&LBRACEwebsite&RBRACE,,,,)}* is shown if `website` is set
-
-
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### move-button
 
 _This tagrendering has no question and is thus read-only_
 *{move_button()}*
-
-
-
 
 ### delete-button
 
 _This tagrendering has no question and is thus read-only_
 *{delete_button()}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`
 
 ## Filters
 
-
-
 | id | question | osmTags |
 -----|-----|----- |
 | kid-books.0 | Has children books | books~^(.*children.*)$ |
 
-
-
-
-
-
 | id | question | osmTags |
 -----|-----|----- |
 | adult-books.0 | Has books for adults | books~^(.*adults.*)$ |
-
-
-
-
-
 
 | id | question | osmTags |
 -----|-----|----- |
@@ -251,17 +169,11 @@ This tagrendering has labels
 | inside.1 | Located indoors | indoor=yes |
 | inside.2 | Located outdoors | indoor=no | indoor= |
 
-
-
-
-
-
 | id | question | osmTags |
 -----|-----|----- |
 | has_image.0 | *With and without images* (default) |  |
 | has_image.1 | Has at least one image | image~.+ | image:0~.+ | image:1~.+ | image:2~.+ | image:3~.+ | mapillary~.+ |
 | has_image.2 | Probably does not have an image | image= & image:0= & image:1= & image:2= & image:3= & mapillary= |
-
 
 
 

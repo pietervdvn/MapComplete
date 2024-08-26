@@ -64,7 +64,10 @@
     {
       "builtin": [
         "bench",
-        "picnic_table"
+        "picnic_table",
+        "waste_basket",
+        "toilet",
+        "bbq"
       ],
       "override": {
         "minzoom": 16

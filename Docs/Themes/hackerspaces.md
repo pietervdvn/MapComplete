@@ -8,12 +8,9 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [hackerspace](../Layers/hackerspace.md)
 
-
 Available languages:
-
 
  - en
  - de
@@ -30,7 +27,6 @@ Available languages:
  - es
  - eu
  - pl
-
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

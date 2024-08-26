@@ -234,6 +234,16 @@ export class TagUtils {
         return properties
     }
 
+    static asProperties(
+        tags: TagsFilter | TagsFilter[],
+        baseproperties: Record<string, string> = {}
+    ) {
+        if (Array.isArray(tags)) {
+            tags = new And(tags)
+        }
+        return TagUtils.changeAsProperties(tags.asChange(baseproperties))
+    }
+
     static changeAsProperties(kvs: { k: string; v: string }[]): Record<string, string> {
         const tags: Record<string, string> = {}
         for (const kv of kvs) {
@@ -675,7 +685,7 @@ export class TagUtils {
      * TagUtils.containsEquivalents([new Tag("key","value")],  [ new Tag("other_key","value")]) // => false
      * TagUtils.containsEquivalents([new Tag("key","value")],  [ new Tag("key","other_value")]) // => false
      */
-    public static containsEquivalents(guards: TagsFilter[], listToFilter: TagsFilter[]): boolean {
+    public static containsEquivalents(guards: ReadonlyArray<TagsFilter>, listToFilter: ReadonlyArray<TagsFilter>): boolean {
         return listToFilter.some((tf) => guards.some((guard) => guard.shadows(tf)))
     }
 
@@ -731,7 +741,7 @@ export class TagUtils {
         }
         if (typeof json != "string") {
             if (json["and"] !== undefined && json["or"] !== undefined) {
-                throw `${context}: Error while parsing a TagConfig: got an object where both 'and' and 'or' are defined. Did you override a value? Perhaps use \`"=parent": { ... }\` instead of \"parent": {...}\` to trigger a replacement and not a fuse of values. The value is ${JSON.stringify(
+                throw `${context}: Error while parsing a TagConfig: got an object where both 'and' and 'or' are defined. Did you override a value? Perhaps use \`"=parent": { ... }\` instead of "parent": {...}\` to trigger a replacement and not a fuse of values. The value is ${JSON.stringify(
                     json
                 )}`
             }
@@ -925,7 +935,7 @@ export class TagUtils {
         return 0
     }
 
-    private static joinL(tfs: TagsFilter[], seperator: string, toplevel: boolean) {
+    private static joinL(tfs: ReadonlyArray<TagsFilter>, seperator: string, toplevel: boolean) {
         const joined = tfs.map((e) => TagUtils.toString(e, false)).join(seperator)
         if (toplevel) {
             return joined

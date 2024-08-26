@@ -2,19 +2,9 @@
 
 # slow_roads
 
-
-
-
 All carfree roads
 
-
-
-
-
-
  - This layer is shown at zoomlevel **16** and higher
-
-
 
 ## Table of contents
 
@@ -30,11 +20,7 @@ All carfree roads
 
 ## Themes using this layer
 
-
-
  - [speelplekken](https://mapcomplete.org/speelplekken)
-
-
 
 ## Basic tags for this layer
 
@@ -56,22 +42,14 @@ Elements must match **all** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/surface#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/surface/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [surface](https://wiki.openstreetmap.org/wiki/Key:surface) | [string](../SpecialInputElements.md#string) | [grass](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dgrass) [ground](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dground) [sand](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dsand) [paving_stones](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dpaving_stones) [asphalt](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dasphalt) [concrete](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dconcrete) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/lit#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/lit/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [lit](https://wiki.openstreetmap.org/wiki/Key:lit) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:lit%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:lit%3Dno) |
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
 
-
-
-
 ### explanation
 
 _This tagrendering has no question and is thus read-only_
-
-
 
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/slow_roads/woonerf.svg' style='width: 3rem; height: 3rem'> *This is a living street* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dliving_street' target='_blank'>living_street</a>
  -  *This is a wide, carfree street* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dpedestrian' target='_blank'>pedestrian</a>
@@ -80,15 +58,10 @@ _This tagrendering has no question and is thus read-only_
  -  *This is a bridleway* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dbridleway' target='_blank'>bridleway</a>
  -  *This is a land access road* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dtrack' target='_blank'>track</a>
 
-
-
-
-
 ### slow_roads-surface
 
 The question is `What surface does this road have?`
 *The surface is <b>{surface}</b>* is shown if `surface` is set
-
 
  -  *The surface is <b>grass</b>* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dgrass' target='_blank'>grass</a>
  -  *The surface is <b>ground</b>* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dground' target='_blank'>ground</a>
@@ -99,36 +72,22 @@ The question is `What surface does this road have?`
  -  *The surface is <b>concrete</b>* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dconcrete' target='_blank'>concrete</a>
  -  *The surface is <b>paved</b>* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dpaved' target='_blank'>paved</a>. _This option cannot be chosen as answer_
 
-
-
-
-
 ### slow_road_is_lit
 
 The question is `Is this road lit at night?`
 
-
-
  -  *'s nachts verlicht* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:lit' target='_blank'>lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lit%3Dyes' target='_blank'>yes</a>
  -  *Not lit* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:lit' target='_blank'>lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lit%3Dno' target='_blank'>no</a>
-
-
-
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

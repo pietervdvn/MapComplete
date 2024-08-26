@@ -8,14 +8,11 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [advertising](../Layers/advertising.md)
  - [shelter](../Layers/shelter.md)
  - [walls_and_buildings](../Layers/walls_and_buildings.md)
 
-
 Available languages:
-
 
  - en
  - ca
@@ -30,7 +27,6 @@ Available languages:
  - it
  - da
  - zh_Hans
-
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

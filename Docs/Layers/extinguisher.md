@@ -2,19 +2,9 @@
 
 # extinguisher
 
-
-
-
 Map layer to show fire extinguishers.
 
-
-
-
-
-
  - This layer is shown at zoomlevel **14** and higher
-
-
 
 ## Table of contents
 
@@ -28,12 +18,8 @@ Map layer to show fire extinguishers.
 
 ## Themes using this layer
 
-
-
  - [hailhydrant](https://mapcomplete.org/hailhydrant)
  - [personal](https://mapcomplete.org/personal)
-
-
 
 ## Basic tags for this layer
 
@@ -49,43 +35,28 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 -----|-----|----- |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/location#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/location/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [location](https://wiki.openstreetmap.org/wiki/Key:location) | [string](../SpecialInputElements.md#string) | [indoor](https://wiki.openstreetmap.org/wiki/Tag:location%3Dindoor) [outdoor](https://wiki.openstreetmap.org/wiki/Tag:location%3Doutdoor) |
 
-
-
-
 ### extinguisher-location
 
 The question is `Where is it positioned?`
 *Location: {location}* is shown if `location` is set
 
-
  -  *Found indoors.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dindoor' target='_blank'>indoor</a>
  -  *Found outdoors.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Doutdoor' target='_blank'>outdoor</a>
-
-
-
-
 
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
 
-
-
-
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

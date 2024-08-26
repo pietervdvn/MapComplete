@@ -365,6 +365,30 @@
       "value": "closed"
     },
     {
+      "key": "coin:design_count",
+      "description": "Layer 'Souvenir Coin Machines' shows and asks freeform values for key 'coin:design_count' (in the mapcomplete.org theme 'Penny Presses')"
+    },
+    {
+      "key": "coin:design_count",
+      "description": "Layer 'Souvenir Coin Machines' shows coin:design_count=1 with a fixed text, namely 'This machine has one design available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses')",
+      "value": "1"
+    },
+    {
+      "key": "coin:design_count",
+      "description": "Layer 'Souvenir Coin Machines' shows coin:design_count=2 with a fixed text, namely 'This machine has two designs available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses')",
+      "value": "2"
+    },
+    {
+      "key": "coin:design_count",
+      "description": "Layer 'Souvenir Coin Machines' shows coin:design_count=3 with a fixed text, namely 'This machine has three designs available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses')",
+      "value": "3"
+    },
+    {
+      "key": "coin:design_count",
+      "description": "Layer 'Souvenir Coin Machines' shows coin:design_count=4 with a fixed text, namely 'This machine has four designs available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Penny Presses')",
+      "value": "4"
+    },
+    {
       "key": "payment:cash",
       "description": "Layer 'Souvenir Coin Machines' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' (in the mapcomplete.org theme 'Penny Presses')",
       "value": "yes"

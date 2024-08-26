@@ -8,18 +8,14 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [nature_reserve_buurtnatuur (defined in this theme)](#nature_reserve_buurtnatuur)
  - [parks (defined in this theme)](#parks)
  - [forest (defined in this theme)](#forest)
  - [viewpoint](../Layers/viewpoint.md)
 
-
 Available languages:
 
-
  - nl
-
 
 # Table of contents
 
@@ -66,19 +62,9 @@ Available languages:
 These layers can not be reused in different themes.
 # nature_reserve_buurtnatuur
 
-
-
-
 Een natuurgebied is een gebied waar actief ruimte gemaakt word voor de natuur. Typisch zijn deze in beheer van Natuurpunt of het Agentschap Natuur en Bos of zijn deze erkend door de overheid.
 
-
-
-
-
-
  - This layer is shown at zoomlevel **12** and higher
-
-
 
 No themes use this layer
 
@@ -104,22 +90,15 @@ Elements must match **any** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/name:nl#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/name%3Anl/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [name:nl](https://wiki.openstreetmap.org/wiki/Key:name:nl) | [string](../SpecialInputElements.md#string) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/name#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/name/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [name](https://wiki.openstreetmap.org/wiki/Key:name) | [string](../SpecialInputElements.md#string) | [](https://wiki.openstreetmap.org/wiki/Tag:name%3D) |
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
 
-
-
-
 ### Access tag
 
 The question is `Is dit gebied toegankelijk?`
 *De toegankelijkheid van dit gebied is: {access:description}* is shown if `access:description` is set
-
 
  -  *Dit gebied is vrij toegankelijk* is shown if with access:description= & access= & <a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dpark' target='_blank'>park</a>. _This option cannot be chosen as answer_
  -  *Vrij toegankelijk* is shown if with access:description= & <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a> & fee=
@@ -129,15 +108,10 @@ The question is `Is dit gebied toegankelijk?`
  -  *Enkel toegankelijk met een gids of tijdens een activiteit* is shown if with access:description= & <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dguided' target='_blank'>guided</a> & fee=
  -  *Toegankelijk mits betaling* is shown if with access:description= & <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>
 
-
-
-
-
 ### Operator tag
 
 The question is `Wie beheert dit gebied?`
 *Beheer door {operator}* is shown if `operator` is set
-
 
  -  *Beheer door de gemeente* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dpark' target='_blank'>park</a> & operator=. _This option cannot be chosen as answer_
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/buurtnatuur/Natuurpunt.jpg' style='width: 3rem; height: 3rem'> *Dit gebied wordt beheerd door Natuurpunt* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:operator' target='_blank'>operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator%3DNatuurpunt' target='_blank'>Natuurpunt</a>
@@ -145,25 +119,15 @@ The question is `Wie beheert dit gebied?`
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/buurtnatuur/ANB.jpg' style='width: 3rem; height: 3rem'> *Dit gebied wordt beheerd door het Agentschap Natuur en Bos* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:operator' target='_blank'>operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator%3DAgentschap Natuur en Bos' target='_blank'>Agentschap Natuur en Bos</a>
  -  *Beheer door een privépersoon* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:operator:type' target='_blank'>operator:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator:type%3Dprivate' target='_blank'>private</a>
 
-
-
-
-
 ### Non-editable description
 
 _This tagrendering has no question and is thus read-only_
 *Extra info: <i>{description}</i>* is shown if `description` is set
 
-
-
-
 ### Editable description
 
 The question is `Is er extra info die je kwijt wil?`
 *Extra info via buurtnatuur.be: <i>{description:0}</i>* is shown if `description:0` is set
-
-
-
 
 ### Name:nl-tag
 
@@ -172,50 +136,30 @@ The question is `Wat is de Nederlandstalige naam van dit gebied?`
 
 This tagrendering is only visible in the popup if the following condition is met: name:nl~.+ & viewpoint!~^(tourism)$
 
-
 ### Name tag
 
 The question is `Wat is de naam van dit gebied?`
 *Dit gebied heet {name}* is shown if `name` is set
 
-
  -  *Dit gebied heeft geen naam* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:noname' target='_blank'>noname</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:noname%3Dyes' target='_blank'>yes</a> & name=
-
-
-
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
 
-
 This tagrendering has labels 
 `added_by_default`
 # parks
 
-
-
-
 Een park is een publiek toegankelijke, groene ruimte binnen de stad. Ze is typisch ingericht voor recreatief gebruik, met (verharde) wandelpaden, zitbanken, vuilnisbakken, een gezellig vijvertje, ...
 
-
-
-
-
-
  - This layer is shown at zoomlevel **12** and higher
-
-
 
 No themes use this layer
 
@@ -241,22 +185,15 @@ Elements must match **any** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/name:nl#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/name%3Anl/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [name:nl](https://wiki.openstreetmap.org/wiki/Key:name:nl) | [string](../SpecialInputElements.md#string) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/name#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/name/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [name](https://wiki.openstreetmap.org/wiki/Key:name) | [string](../SpecialInputElements.md#string) | [](https://wiki.openstreetmap.org/wiki/Tag:name%3D) |
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
 
-
-
-
 ### Access tag
 
 The question is `Is dit gebied toegankelijk?`
 *De toegankelijkheid van dit gebied is: {access:description}* is shown if `access:description` is set
-
 
  -  *Dit gebied is vrij toegankelijk* is shown if with access:description= & access= & <a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dpark' target='_blank'>park</a>. _This option cannot be chosen as answer_
  -  *Vrij toegankelijk* is shown if with access:description= & <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a> & fee=
@@ -266,15 +203,10 @@ The question is `Is dit gebied toegankelijk?`
  -  *Enkel toegankelijk met een gids of tijdens een activiteit* is shown if with access:description= & <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dguided' target='_blank'>guided</a> & fee=
  -  *Toegankelijk mits betaling* is shown if with access:description= & <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>
 
-
-
-
-
 ### Operator tag
 
 The question is `Wie beheert dit gebied?`
 *Beheer door {operator}* is shown if `operator` is set
-
 
  -  *Beheer door de gemeente* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dpark' target='_blank'>park</a> & operator=. _This option cannot be chosen as answer_
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/buurtnatuur/Natuurpunt.jpg' style='width: 3rem; height: 3rem'> *Dit gebied wordt beheerd door Natuurpunt* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:operator' target='_blank'>operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator%3DNatuurpunt' target='_blank'>Natuurpunt</a>
@@ -282,25 +214,15 @@ The question is `Wie beheert dit gebied?`
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/buurtnatuur/ANB.jpg' style='width: 3rem; height: 3rem'> *Dit gebied wordt beheerd door het Agentschap Natuur en Bos* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:operator' target='_blank'>operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator%3DAgentschap Natuur en Bos' target='_blank'>Agentschap Natuur en Bos</a>
  -  *Beheer door een privépersoon* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:operator:type' target='_blank'>operator:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator:type%3Dprivate' target='_blank'>private</a>
 
-
-
-
-
 ### Non-editable description
 
 _This tagrendering has no question and is thus read-only_
 *Extra info: <i>{description}</i>* is shown if `description` is set
 
-
-
-
 ### Editable description
 
 The question is `Is er extra info die je kwijt wil?`
 *Extra info via buurtnatuur.be: <i>{description:0}</i>* is shown if `description:0` is set
-
-
-
 
 ### Name:nl-tag
 
@@ -309,50 +231,30 @@ The question is `Wat is de Nederlandstalige naam van dit gebied?`
 
 This tagrendering is only visible in the popup if the following condition is met: name:nl~.+ & viewpoint!~^(tourism)$
 
-
 ### Name tag
 
 The question is `Wat is de naam van dit gebied?`
 *Dit gebied heet {name}* is shown if `name` is set
 
-
  -  *Dit gebied heeft geen naam* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:noname' target='_blank'>noname</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:noname%3Dyes' target='_blank'>yes</a> & name=
-
-
-
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
 
-
 This tagrendering has labels 
 `added_by_default`
 # forest
 
-
-
-
 Een bos is een verzameling bomen, al dan niet als productiehout.
 
-
-
-
-
-
  - This layer is shown at zoomlevel **12** and higher
-
-
 
 No themes use this layer
 
@@ -379,22 +281,15 @@ Elements must match **any** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/name:nl#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/name%3Anl/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [name:nl](https://wiki.openstreetmap.org/wiki/Key:name:nl) | [string](../SpecialInputElements.md#string) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/name#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/name/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [name](https://wiki.openstreetmap.org/wiki/Key:name) | [string](../SpecialInputElements.md#string) | [](https://wiki.openstreetmap.org/wiki/Tag:name%3D) |
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
 
-
-
-
 ### Access tag
 
 The question is `Is dit gebied toegankelijk?`
 *De toegankelijkheid van dit gebied is: {access:description}* is shown if `access:description` is set
-
 
  -  *Dit gebied is vrij toegankelijk* is shown if with access:description= & access= & <a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dpark' target='_blank'>park</a>. _This option cannot be chosen as answer_
  -  *Vrij toegankelijk* is shown if with access:description= & <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a> & fee=
@@ -404,15 +299,10 @@ The question is `Is dit gebied toegankelijk?`
  -  *Enkel toegankelijk met een gids of tijdens een activiteit* is shown if with access:description= & <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dguided' target='_blank'>guided</a> & fee=
  -  *Toegankelijk mits betaling* is shown if with access:description= & <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>
 
-
-
-
-
 ### Operator tag
 
 The question is `Wie beheert dit gebied?`
 *Beheer door {operator}* is shown if `operator` is set
-
 
  -  *Beheer door de gemeente* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dpark' target='_blank'>park</a> & operator=. _This option cannot be chosen as answer_
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/buurtnatuur/Natuurpunt.jpg' style='width: 3rem; height: 3rem'> *Dit gebied wordt beheerd door Natuurpunt* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:operator' target='_blank'>operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator%3DNatuurpunt' target='_blank'>Natuurpunt</a>
@@ -420,25 +310,15 @@ The question is `Wie beheert dit gebied?`
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/buurtnatuur/ANB.jpg' style='width: 3rem; height: 3rem'> *Dit gebied wordt beheerd door het Agentschap Natuur en Bos* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:operator' target='_blank'>operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator%3DAgentschap Natuur en Bos' target='_blank'>Agentschap Natuur en Bos</a>
  -  *Beheer door een privépersoon* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:operator:type' target='_blank'>operator:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator:type%3Dprivate' target='_blank'>private</a>
 
-
-
-
-
 ### Non-editable description
 
 _This tagrendering has no question and is thus read-only_
 *Extra info: <i>{description}</i>* is shown if `description` is set
 
-
-
-
 ### Editable description
 
 The question is `Is er extra info die je kwijt wil?`
 *Extra info via buurtnatuur.be: <i>{description:0}</i>* is shown if `description:0` is set
-
-
-
 
 ### Name:nl-tag
 
@@ -447,32 +327,22 @@ The question is `Wat is de Nederlandstalige naam van dit gebied?`
 
 This tagrendering is only visible in the popup if the following condition is met: name:nl~.+ & viewpoint!~^(tourism)$
 
-
 ### Name tag
 
 The question is `Wat is de naam van dit gebied?`
 *Dit gebied heet {name}* is shown if `name` is set
 
-
  -  *Dit gebied heeft geen naam* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:noname' target='_blank'>noname</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:noname%3Dyes' target='_blank'>yes</a> & name=
-
-
-
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

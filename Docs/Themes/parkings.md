@@ -8,15 +8,12 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [parking](../Layers/parking.md)
  - [parking_spaces](../Layers/parking_spaces.md)
  - [parking_ticket_machine](../Layers/parking_ticket_machine.md)
  - [charging_station](../Layers/charging_station.md)
 
-
 Available languages:
-
 
  - en
  - nl
@@ -35,7 +32,6 @@ Available languages:
  - cs
  - eu
  - pl
-
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

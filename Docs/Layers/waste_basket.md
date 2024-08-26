@@ -2,19 +2,9 @@
 
 # waste_basket
 
-
-
-
 This is a public waste basket, thrash can, where you can throw away your thrash.
 
-
-
-
-
-
  - This layer is shown at zoomlevel **17** and higher
-
-
 
 ## Table of contents
 
@@ -32,16 +22,13 @@ This is a public waste basket, thrash can, where you can throw away your thrash.
 
 ## Themes using this layer
 
-
-
  - [personal](https://mapcomplete.org/personal)
  - [pets](https://mapcomplete.org/pets)
+ - [playgrounds](https://mapcomplete.org/playgrounds)
  - [stations](https://mapcomplete.org/stations)
  - [waste](https://mapcomplete.org/waste)
  - [waste_assen](https://mapcomplete.org/waste_assen)
  - [waste_basket](https://mapcomplete.org/waste_basket)
-
-
 
 ## Basic tags for this layer
 
@@ -58,22 +45,14 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/waste#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/waste/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [waste](https://wiki.openstreetmap.org/wiki/Key:waste) | Multiple choice | [trash](https://wiki.openstreetmap.org/wiki/Tag:waste%3Dtrash) [dog_excrement](https://wiki.openstreetmap.org/wiki/Tag:waste%3Ddog_excrement) [cigarettes](https://wiki.openstreetmap.org/wiki/Tag:waste%3Dcigarettes) [drugs](https://wiki.openstreetmap.org/wiki/Tag:waste%3Ddrugs) [sharps](https://wiki.openstreetmap.org/wiki/Tag:waste%3Dsharps) [plastic](https://wiki.openstreetmap.org/wiki/Tag:waste%3Dplastic) [pmd](https://wiki.openstreetmap.org/wiki/Tag:waste%3Dpmd) [paper](https://wiki.openstreetmap.org/wiki/Tag:waste%3Dpaper) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/vending#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/vending/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [vending](https://wiki.openstreetmap.org/wiki/Key:vending) | Multiple choice | [excrement_bags](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dexcrement_bags) [](https://wiki.openstreetmap.org/wiki/Tag:vending%3D) |
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
 
-
-
-
 ### waste-basket-waste-types
 
 The question is `What kind of waste basket is this?`
-
-
 
  -  *A waste basket for general waste* is shown if with waste=. _This option cannot be chosen as answer_
  -  *A waste basket for general waste* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:waste' target='_blank'>waste</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:waste%3Dtrash' target='_blank'>trash</a>
@@ -85,60 +64,38 @@ The question is `What kind of waste basket is this?`
  -  *A waste basket for plastic packaging, metal packaging and drink cartons (PMD)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:waste' target='_blank'>waste</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:waste%3Dpmd' target='_blank'>pmd</a>
  -  *A waste basket for paper* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:waste' target='_blank'>waste</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:waste%3Dpaper' target='_blank'>paper</a>
 
-
-
-
-
 ### dispensing_dog_bags
 
 The question is `Does this waste basket have a dispenser for dog excrement bags?`
 
-
-
  -  *This waste basket has a dispenser for (dog) excrement bags* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Dexcrement_bags' target='_blank'>excrement_bags</a> & not:vending=
  -  *This waste basket <b>does not</b> have a dispenser for (dog) excrement bags* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:not:vending' target='_blank'>not:vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:not:vending%3Dexcrement_bags' target='_blank'>excrement_bags</a> & vending=
  -  *This waste basket <b>does not</b> have a dispenser for (dog) excrement bags* is shown if with vending=. _This option cannot be chosen as answer_
-
-
-
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### move-button
 
 _This tagrendering has no question and is thus read-only_
 *{move_button()}*
-
-
-
 
 ### delete-button
 
 _This tagrendering has no question and is thus read-only_
 *{delete_button()}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
 
-
 This tagrendering has labels 
 `added_by_default`
 
 ## Filters
-
-
 
 | id | question | osmTags |
 -----|-----|----- |
@@ -152,15 +109,9 @@ This tagrendering has labels
 | waste-type.7 | Waste basket for plastic packaging, metal packaging and drink cartons (PMD) | waste~^(.*pmd.*)$ |
 | waste-type.8 | Waste basket for paper | waste~^(.*paper.*)$ |
 
-
-
-
-
-
 | id | question | osmTags |
 -----|-----|----- |
 | waste-vending.0 | Waste basket with dispenser for (dog) excrement bags | vending=dog_excrement_bag |
-
 
 
 

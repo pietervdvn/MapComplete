@@ -2,19 +2,11 @@
 
 # banks_with_atm
 
-
 This layer is based on [bank](../Layers/bank.md)
 
 A financial institution to deposit money
 
-
-
-
-
-
  - This layer is shown at zoomlevel **14** and higher
-
-
 
 ## Table of contents
 
@@ -30,11 +22,7 @@ A financial institution to deposit money
 
 ## Themes using this layer
 
-
-
  - [atm](https://mapcomplete.org/atm)
-
-
 
 ## Basic tags for this layer
 
@@ -53,73 +41,46 @@ Elements must match **all** of the following expressions:
 -----|-----|----- |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/atm#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/atm/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [atm](https://wiki.openstreetmap.org/wiki/Key:atm) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:atm%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:atm%3Dno) [separate](https://wiki.openstreetmap.org/wiki/Tag:atm%3Dseparate) |
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
 
-
-
-
 ### has_atm
 
 The question is `Does this bank have an ATM?`
 
-
-
  -  *This bank has an ATM* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:atm' target='_blank'>atm</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:atm%3Dyes' target='_blank'>yes</a>
  -  *This bank does <b>not</b> have an ATM* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:atm' target='_blank'>atm</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:atm%3Dno' target='_blank'>no</a>
  -  *This bank does have an ATM, but it is mapped as a different icon* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:atm' target='_blank'>atm</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:atm%3Dseparate' target='_blank'>separate</a>
-
-
-
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### delete-button
 
 _This tagrendering has no question and is thus read-only_
 *{delete_button()}*
-
-
-
 
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
 
-
 This tagrendering has labels 
 `added_by_default`
 
 ## Filters
 
-
-
 | id | question | osmTags |
 -----|-----|----- |
 | open_now.0 | Open now | _isOpen=yes |
 
-
-
-
-
-
 | id | question | osmTags |
 -----|-----|----- |
 | has_atm.0 | With an ATM | atm=yes |
-
 
 
 

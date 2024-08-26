@@ -9,23 +9,27 @@ import ComparingTag from "./ComparingTag"
 import { FlatTag, OptimizedTag, TagsFilterClosed, TagTypes } from "./TagTypes"
 
 export class And extends TagsFilter {
-    public and: TagsFilter[]
+    public and: ReadonlyArray<TagsFilter>
 
-    constructor(and: TagsFilter[]) {
+    constructor(and: ReadonlyArray<TagsFilter>) {
         super()
         this.and = and
+        if (and.some((p) => typeof p === "string")) {
+            console.error("Assertion failed: invalid subtags:", and)
+            throw "Assertion failed: invalid subtags found"
+        }
     }
 
-    public static construct(and: TagsFilter[]): TagsFilter
-    public static construct(and: (FlatTag | (Or & OptimizedTag))[]): TagsFilterClosed & OptimizedTag
-    public static construct(and: TagsFilter[]): TagsFilter {
+    public static construct(and: ReadonlyArray<TagsFilter>): TagsFilter
+    public static construct(and: ReadonlyArray<(FlatTag | (Or & OptimizedTag))>): TagsFilterClosed & OptimizedTag
+    public static construct(and: ReadonlyArray< TagsFilter>): TagsFilter {
         if (and.length === 1) {
             return and[0]
         }
         return new And(and)
     }
 
-    private static combine(filter: string, choices: string[]): string[] {
+    private static combine(filter: string, choices: ReadonlyArray< string>): string[] {
         const values = []
         for (const or of choices) {
             values.push(filter + or)
@@ -443,7 +447,7 @@ export class And extends TagsFilter {
         if (containedOrs.length === 1) {
             newAnds.push(containedOrs[0])
         } else if (containedOrs.length > 1) {
-            let commonValues: TagsFilter[] = containedOrs[0].or
+            let commonValues: TagsFilter[] = [...(containedOrs[0].or)]
             for (let i = 1; i < containedOrs.length && commonValues.length > 0; i++) {
                 const containedOr = containedOrs[i]
                 commonValues = commonValues.filter((cv) =>

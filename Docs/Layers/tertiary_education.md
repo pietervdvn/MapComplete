@@ -2,19 +2,9 @@
 
 # tertiary_education
 
-
-
-
 Layer with all tertiary education institutes (ISCED:2011 levels 6,7 and 8)
 
-
-
-
-
-
  - This layer is shown at zoomlevel **0** and higher
-
-
 
 ## Table of contents
 
@@ -23,6 +13,8 @@ Layer with all tertiary education institutes (ISCED:2011 levels 6,7 and 8)
 3. [Supported attributes](#supported-attributes)
   - [institution-kind](#institution-kind)
   - [isced](#isced)
+  - [capacity](#capacity)
+  - [gender](#gender)
   - [website](#website)
   - [email](#email)
   - [phone](#phone)
@@ -32,12 +24,8 @@ Layer with all tertiary education institutes (ISCED:2011 levels 6,7 and 8)
 
 ## Themes using this layer
 
-
-
  - [education](https://mapcomplete.org/education)
  - [personal](https://mapcomplete.org/personal)
-
-
 
 ## Basic tags for this layer
 
@@ -57,49 +45,49 @@ Elements must match **any** of the following expressions:
 -----|-----|----- |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/amenity#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/amenity/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [amenity](https://wiki.openstreetmap.org/wiki/Key:amenity) | Multiple choice | [college](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcollege) [university](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Duniversity) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/isced:2011:level#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/isced%3A2011%3Alevel/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [isced:2011:level](https://wiki.openstreetmap.org/wiki/Key:isced:2011:level) | Multiple choice | [bachelor](https://wiki.openstreetmap.org/wiki/Tag:isced:2011:level%3Dbachelor) [master](https://wiki.openstreetmap.org/wiki/Tag:isced:2011:level%3Dmaster) [doctorate](https://wiki.openstreetmap.org/wiki/Tag:isced:2011:level%3Ddoctorate) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/capacity#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/capacity/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [capacity](https://wiki.openstreetmap.org/wiki/Key:capacity) | [pnat](../SpecialInputElements.md#pnat) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/school:gender#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/school%3Agender/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [school:gender](https://wiki.openstreetmap.org/wiki/Key:school:gender) | Multiple choice | [mixed](https://wiki.openstreetmap.org/wiki/Tag:school:gender%3Dmixed) [separated](https://wiki.openstreetmap.org/wiki/Tag:school:gender%3Dseparated) [male](https://wiki.openstreetmap.org/wiki/Tag:school:gender%3Dmale) [female](https://wiki.openstreetmap.org/wiki/Tag:school:gender%3Dfemale) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/website#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/website/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [website](https://wiki.openstreetmap.org/wiki/Key:website) | [url](../SpecialInputElements.md#url) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/email#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/email/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [email](https://wiki.openstreetmap.org/wiki/Key:email) | [email](../SpecialInputElements.md#email) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/phone#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/phone/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [phone](https://wiki.openstreetmap.org/wiki/Key:phone) | [phone](../SpecialInputElements.md#phone) |  |
-
-
-
 
 ### institution-kind
 
 The question is `What kind of institution is this?`
 
-
-
  -  *This is an institution of post-secondary, non-tertiary education. One has to have completed secondary education to enroll here, but no bachelor (or higher) degrees are awarded here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcollege' target='_blank'>college</a>
  -  *This is a university, an institution of tertiary education where bachelor degrees or higher are awarded.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Duniversity' target='_blank'>university</a>
-
-
-
-
 
 ### isced
 
 The question is `What level of education is given here?`
 
-
-
  -  *Bachelor degrees are awarded here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:isced:2011:level' target='_blank'>isced:2011:level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:isced:2011:level%3Dbachelor' target='_blank'>bachelor</a>
  -  *Master degrees are awarded here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:isced:2011:level' target='_blank'>isced:2011:level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:isced:2011:level%3Dmaster' target='_blank'>master</a>
  -  *Doctorate degrees are awarded here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:isced:2011:level' target='_blank'>isced:2011:level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:isced:2011:level%3Ddoctorate' target='_blank'>doctorate</a>
 
-
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Duniversity' target='_blank'>university</a>
 
+### capacity
+
+The question is `How much students can at most enroll in this school?`
+*This school can enroll at most {capacity} students* is shown if `capacity` is set
+
+### gender
+
+The question is `Which genders can enroll at this school?`
+
+ -  *Both boys and girls can enroll here and have classes together* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:school:gender' target='_blank'>school:gender</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:gender%3Dmixed' target='_blank'>mixed</a>
+ -  *Both boys and girls can enroll here but they are separated (e.g. they have lessons in different classrooms or at different times)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:school:gender' target='_blank'>school:gender</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:gender%3Dseparated' target='_blank'>separated</a>
+ -  *This is a boys only-school* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:school:gender' target='_blank'>school:gender</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:gender%3Dmale' target='_blank'>male</a>
+ -  *This is a girls-only school* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:school:gender' target='_blank'>school:gender</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:gender%3Dfemale' target='_blank'>female</a>
 
 ### website
 
 The question is `What is the website of {title()}?`
 *<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>* is shown if `website` is set
 
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/icons/website.svg' style='width: 3rem; height: 3rem'> *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>* is shown if with contact:website~.+. _This option cannot be chosen as answer_
-
-
 
 This tagrendering has labels 
 `contact`
@@ -109,11 +97,8 @@ This tagrendering has labels
 The question is `What is the email address of {title()}?`
 *<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>* is shown if `email` is set
 
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/envelope.svg' style='width: 3rem; height: 3rem'> *<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>* is shown if with contact:email~.+. _This option cannot be chosen as answer_
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/envelope.svg' style='width: 3rem; height: 3rem'> *<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>* is shown if with operator:email~.+. _This option cannot be chosen as answer_
-
-
 
 This tagrendering has labels 
 `contact`
@@ -123,10 +108,7 @@ This tagrendering has labels
 The question is `What is the phone number of {title()}?`
 *<a href='tel:{phone}'>{phone}</a>* is shown if `phone` is set
 
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/phone.svg' style='width: 3rem; height: 3rem'> *<a href='tel:{contact:phone}'>{contact:phone}</a>* is shown if with contact:phone~.+. _This option cannot be chosen as answer_
-
-
 
 This tagrendering has labels 
 `contact`
@@ -136,22 +118,15 @@ This tagrendering has labels
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### move-button
 
 _This tagrendering has no question and is thus read-only_
 *{move_button()}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

@@ -2,19 +2,9 @@
 
 # item_with_image
 
-
-
-
 All items with an image. All alone, not a layer which is relevant for any MapComplete theme, as it is a random collection of items. However, when put into the databank, this allows to quickly fetch (the URL of) pictures nearby a different object, to quickly link this
 
-
-
-
-
-
  - This layer is shown at zoomlevel **14** and higher
-
-
 
 ## Table of contents
 
@@ -27,11 +17,7 @@ All items with an image. All alone, not a layer which is relevant for any MapCom
 
 ## Themes using this layer
 
-
-
  - [items_with_image](https://mapcomplete.org/items_with_image)
-
-
 
 ## Basic tags for this layer
 
@@ -54,29 +40,20 @@ Elements must match **any** of the following expressions:
 
 ## Supported attributes
 
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
-
-
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

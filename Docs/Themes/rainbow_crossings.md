@@ -8,14 +8,11 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [rainbow_crossing_high_zoom (defined in this theme)](#rainbow_crossing_high_zoom)
  - [rainbow_crossings](../Layers/rainbow_crossings.md)
  - [cycleways_and_roads](../Layers/cycleways_and_roads.md)
 
-
 Available languages:
-
 
  - en
  - de
@@ -28,7 +25,6 @@ Available languages:
  - cs
  - zh_Hant
  - pl
-
 
 # Table of contents
 
@@ -46,20 +42,12 @@ Available languages:
 These layers can not be reused in different themes.
 # rainbow_crossing_high_zoom
 
-
 This layer is based on [rainbow_crossings](../Layers/rainbow_crossings.md)
 
 A layer showing pedestrian crossings with rainbow paintings
 
-
-
-
-
-
  - This layer is shown at zoomlevel **10** and higher
  - Not visible in the layer selection by default. If you want to make this layer toggable, override `name`
-
-
 
 No themes use this layer
 
@@ -71,43 +59,28 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 
 ## Supported attributes
 
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
 
-
-
-
 ### crossing-with-rainbow
 
 The question is `Does this crossing has rainbow paintings?`
 
-
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/rainbow_crossings/logo.svg' style='width: 3rem; height: 3rem'> *This crossing has rainbow paintings* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:surface:colour' target='_blank'>surface:colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface:colour%3Drainbow' target='_blank'>rainbow</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/rainbow_crossings/crossing.svg' style='width: 3rem; height: 3rem'> *No rainbow paintings here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:not:surface:colour' target='_blank'>not:surface:colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:not:surface:colour%3Drainbow' target='_blank'>rainbow</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/rainbow_crossings/crossing.svg' style='width: 3rem; height: 3rem'> *No rainbow paintings here* is shown if with surface:colour!=rainbow. _This option cannot be chosen as answer_
-
-
-
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

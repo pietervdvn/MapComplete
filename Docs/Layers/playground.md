@@ -2,19 +2,9 @@
 
 # playground
 
-
-
-
 Playgrounds
 
-
-
-
-
-
  - This layer is shown at zoomlevel **13** and higher
-
-
 
 ## Table of contents
 
@@ -42,14 +32,10 @@ Playgrounds
 
 ## Themes using this layer
 
-
-
  - [personal](https://mapcomplete.org/personal)
  - [playgrounds](https://mapcomplete.org/playgrounds)
  - [speelplekken](https://mapcomplete.org/speelplekken)
  - [toerisme_vlaanderen](https://mapcomplete.org/toerisme_vlaanderen)
-
-
 
 ## Basic tags for this layer
 
@@ -78,30 +64,20 @@ Elements must match **all** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/opening_hours#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/opening_hours/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | [sunrise-sunset](https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dsunrise-sunset) [24/7](https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/check_date#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/check_date/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [check_date](https://wiki.openstreetmap.org/wiki/Key:check_date) | [date](../SpecialInputElements.md#date) | [](https://wiki.openstreetmap.org/wiki/Tag:check_date%3D) |
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
-
-
-
 
 ### reviews
 Shows the reviews module (including the possibility to leave a review)
 _This tagrendering has no question and is thus read-only_
 *{create_review()}{list_reviews()}*
 
-
-
-
 ### playground-surface
 
 The question is `Which is the surface of this playground?`
 *The surface is <b>{surface}</b>* is shown if `surface` is set
-
 
  -  *The surface is <b>grass</b>* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dgrass' target='_blank'>grass</a>
  -  *The surface is <b>sand</b>* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dsand' target='_blank'>sand</a>
@@ -115,20 +91,12 @@ The question is `Which is the surface of this playground?`
  -  *The surface is made from rubber, such as rubber tiles, rubber mulch or a big rubber area* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Drubber' target='_blank'>rubber</a>
  -  *The surface is <b>fine gravel</b> (less then 2 cm per stone)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dfine_gravel' target='_blank'>fine_gravel</a>
 
-
-
-
-
 ### playground-lit
 
 The question is `Is this playground lit at night?`
 
-
-
  -  *This playground is lit at night* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:lit' target='_blank'>lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lit%3Dyes' target='_blank'>yes</a>
  -  *This playground is not lit at night* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:lit' target='_blank'>lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lit%3Dno' target='_blank'>no</a>
-
-
 
 This tagrendering has labels 
 `extra`
@@ -138,7 +106,6 @@ This tagrendering has labels
 The question is `What is the minimum age required to access this playground?`
 *Accessible to kids older than {min_age} years* is shown if `min_age` is set
 
-
 This tagrendering has labels 
 `extra`
 
@@ -146,7 +113,6 @@ This tagrendering has labels
 
 The question is `What is the maximum age allowed to access this playground?`
 *Accessible to kids of at most {max_age}* is shown if `max_age` is set
-
 
 This tagrendering has labels 
 `extra`
@@ -156,14 +122,9 @@ This tagrendering has labels
 The question is `Who operates this playground?`
 *Operated by {operator}* is shown if `operator` is set
 
-
-
-
 ### playground-access
 
 The question is `Is this playground accessible to the general public?`
-
-
 
  -  *Accessible to the general public* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
  -  *This is a <b>paid</b> playground* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>
@@ -172,19 +133,12 @@ The question is `Is this playground accessible to the general public?`
  -  *Not accessible* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate' target='_blank'>private</a>
  -  *This is a schoolyard - an outdoor area where the pupils can play during their breaks; but it is not accessible to the general public* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dschoolyard' target='_blank'>schoolyard</a>
 
-
-
-
-
 ### website
 
 The question is `What is the website of {title()}?`
 *<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>* is shown if `website` is set
 
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/icons/website.svg' style='width: 3rem; height: 3rem'> *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>* is shown if with contact:website~.+. _This option cannot be chosen as answer_
-
-
 
 This tagrendering has labels 
 `contact`
@@ -194,85 +148,53 @@ This tagrendering has labels
 The question is `What is the email address of the playground maintainer?`
 *<a href='mailto:{email}'>{email}</a>* is shown if `email` is set
 
-
-
-
 ### playground-phone
 
 The question is `What is the phone number of the playground maintainer?`
 *<a href='tel:{phone}'>{phone}</a>* is shown if `phone` is set
 
-
-
-
 ### Playground-wheelchair
 
 The question is `Is this playground accessible to wheelchair users?`
 
-
-
  -  *Completely accessible for wheelchair users* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes' target='_blank'>yes</a>
  -  *Limited accessibility for wheelchair users* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dlimited' target='_blank'>limited</a>
  -  *Not accessible for wheelchair users* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno' target='_blank'>no</a>
-
-
-
-
 
 ### playground-opening_hours
 
 The question is `When is this playground accessible?`
 *{opening_hours_table(opening_hours)}* is shown if `opening_hours` is set
 
-
  -  *Accessible from sunrise till sunset* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dsunrise-sunset' target='_blank'>sunrise-sunset</a>
  -  *Always accessible* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
-
-
-
-
 
 ### check_date
 
 The question is `When was this object last checked?`
 *This object was last checked on <b>{check_date}</b>* is shown if `check_date` is set
 
-
  -  *This object was last checked today* is shown if with check_date=
-
-
-
-
 
 ### questions
 Show the questions block at this location
 _This tagrendering has no question and is thus read-only_
 *{questions()}*
 
-
-
-
 ### playground-reviews
 
 _This tagrendering has no question and is thus read-only_
 *{reviews(name, playground)}*
-
-
-
 
 ### delete-button
 
 _This tagrendering has no question and is thus read-only_
 *{delete_button()}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

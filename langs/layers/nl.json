@@ -8339,15 +8339,68 @@
         }
     },
     "tourism_accomodation": {
+        "description": "Verschillende soorten overnachtingsmogelijkheden voor toeristen",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Alle types"
+                    },
+                    "1": {
+                        "question": "Hotels"
+                    },
+                    "2": {
+                        "question": "Hostels"
+                    },
+                    "3": {
+                        "question": "Gastenkamers en bed-en-breakfasts"
+                    },
+                    "4": {
+                        "question": "Motels"
+                    },
+                    "5": {
+                        "question": "Vakantiehuisje"
+                    },
+                    "6": {
+                        "question": "Vakantie-appartement"
+                    }
+                }
+            }
+        },
+        "name": "Accomodatie voor toeristen",
         "presets": {
             "0": {
+                "description": "En hotel is een gebouw waar je tegen betaling kan overnachten voor een korte periode. Je krijgt je eigen kamer.",
                 "title": "een hotel"
+            },
+            "1": {
+                "description": "Een herberg is een gebouw waar je enkele dagen kan blijven. Je deelt een kamer met onbekenden.",
+                "title": "een herberg"
+            },
+            "2": {
+                "description": "Een bemeubeld apparement met kookgelegenheid en een badkamer in een groter gebouw. Het appartement kan gehuurd worden voor vakanties. Er is geen receptie of ontbijt voorzien.",
+                "title": "een vakantie-appartement"
+            },
+            "4": {
+                "title": "een motel"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "question": "Wat is de naam van deze {title()}",
+                "render": "{name}"
             }
         },
         "title": {
             "mappings": {
                 "0": {
                     "then": "Hotel {name}"
+                },
+                "1": {
+                    "then": "Herberg {name}"
+                },
+                "2": {
+                    "then": "B&B {name}"
                 }
             }
         }
@@ -8828,7 +8881,7 @@
                         "then": "Gebruik luchtfoto's als standaard achtergrondlaag"
                     },
                     "3": {
-                        "then": "Gebruik altijd een kaart di niet op OpenStreetMap gebaseerd is als achtergrond"
+                        "then": "Gebruik altijd een kaart die niet op OpenStreetMap gebaseerd is als achtergrond"
                     },
                     "4": {
                         "then": "Gebruik altijd <span class='code'>{__current_background}</span> als achtergrondlaag. Dit is de huidige achtergrond."

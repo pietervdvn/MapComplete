@@ -8,7 +8,6 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [shadow (defined in this theme)](#shadow)
  - [play_forest](../Layers/play_forest.md)
  - [playground](../Layers/playground.md)
@@ -17,12 +16,9 @@ This theme contains the following layers:
  - [slow_roads](../Layers/slow_roads.md)
  - [walking_routes (defined in this theme)](#walking_routes)
 
-
 Available languages:
 
-
  - nl
-
 
 # Table of contents
 
@@ -52,16 +48,6 @@ Available languages:
 These layers can not be reused in different themes.
 # shadow
 
-
-
-
-
-
-
-
-
-
-
  - This layer is shown at zoomlevel **0** and higher
  - Elements don't have a title set and cannot be toggled nor will they show up in the dashboard. If you import this layer in your theme, override `title` to make this toggleable.
  - Not visible in the layer selection by default. If you want to make this layer toggable, override `name`
@@ -71,8 +57,6 @@ These layers can not be reused in different themes.
 This layer is loaded from an external source, namely 
 
 `https://raw.githubusercontent.com/pietervdvn/MapComplete/master/assets/themes/speelplekken/shadow.geojson`
-
-
 
 No themes use this layer
 
@@ -90,49 +74,29 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 -----|-----|----- |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/_video:id#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/_video%3Aid/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [_video:id](https://wiki.openstreetmap.org/wiki/Key:_video:id) | [string](../SpecialInputElements.md#string) |  |
 
-
-
-
 ### has-video
 
 _This tagrendering has no question and is thus read-only_
 *<iframe style='width: 100%; height: 300px' src="https://www.youtube-nocookie.com/embed/{_video:id}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>* is shown if `_video:id` is set
-
-
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
 
-
 This tagrendering has labels 
 `added_by_default`
 # walking_routes
 
-
-
-
 Walking routes by 'provincie Antwerpen'
-
-
-
-
-
 
  - This layer is shown at zoomlevel **0** and higher
  - Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`
-
-
 
 No themes use this layer
 
@@ -158,85 +122,54 @@ Elements must match **all** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/operator#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/operator/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [operator](https://wiki.openstreetmap.org/wiki/Key:operator) | [string](../SpecialInputElements.md#string) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/operator:email#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/operator%3Aemail/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [operator:email](https://wiki.openstreetmap.org/wiki/Key:operator:email) | [email](../SpecialInputElements.md#email) |  |
 
-
-
-
 ### has-video
 
 _This tagrendering has no question and is thus read-only_
 *<iframe style='width: 100%; height: 300px' src="https://www.youtube-nocookie.com/embed/{_video:id}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>* is shown if `_video:id` is set
-
-
-
 
 ### walk-length
 
 _This tagrendering has no question and is thus read-only_
 *Deze wandeling is <b>{_length:km}km</b> lang*
 
-
-
-
 ### walk-type
 
 _This tagrendering has no question and is thus read-only_
-
-
 
  -  *Dit is een internationale wandelroute* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:route' target='_blank'>route</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:route%3Diwn' target='_blank'>iwn</a>
  -  *Dit is een nationale wandelroute* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:route' target='_blank'>route</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:route%3Dnwn' target='_blank'>nwn</a>
  -  *Dit is een regionale wandelroute* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:route' target='_blank'>route</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:route%3Drwn' target='_blank'>rwn</a>
  -  *Dit is een lokale wandelroute* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:route' target='_blank'>route</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:route%3Dlwn' target='_blank'>lwn</a>
 
-
-
-
-
 ### walk-description
 
 The question is `Geef een korte beschrijving van de wandeling (max 255 tekens)`
 *<h3>Korte beschrijving:</h3>{description}* is shown if `description` is set
-
-
-
 
 ### walk-operator
 
 The question is `Wie beheert deze wandeling en plaatst dus de signalisatiebordjes?`
 *Signalisatie geplaatst door {operator}* is shown if `operator` is set
 
-
-
-
 ### walk-operator-email
 
 The question is `Naar wie kan men emailen bij problemen rond signalisatie?`
 *Bij problemen met signalisatie kan men emailen naar <a href='mailto:{operator:email}'>{operator:email}</a>* is shown if `operator:email` is set
-
-
-
 
 ### questions
 Show the questions block at this location
 _This tagrendering has no question and is thus read-only_
 *{questions()}*
 
-
-
-
 ### reviews
 Shows the reviews module (including the possibility to leave a review)
 _This tagrendering has no question and is thus read-only_
 *{create_review()}{list_reviews()}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

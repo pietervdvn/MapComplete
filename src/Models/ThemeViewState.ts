@@ -658,14 +658,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                     }
                 }
             )
-            Hotkeys.RegisterHotkey(
-                { shift: "O" },
-                Translations.t.hotkeyDocumentation.selectMapnik,
-                () => {
-                    this.mapProperties.rasterLayer.setData(AvailableRasterLayers.osmCarto)
-                }
-            )
-            const setLayerCategory = (category: EliCategory) => {
+            const setLayerCategory = (category: EliCategory, skipLayers: number = 0) => {
                 const timeOfCall = new Date()
                 this.availableLayers.store.addCallbackAndRunD((available) => {
                     const now = new Date()
@@ -677,9 +670,13 @@ export default class ThemeViewState implements SpecialVisualizationState {
                     const best = RasterLayerUtils.SelectBestLayerAccordingTo(
                         available,
                         category,
-                        current.data
+                        current.data,
+                        skipLayers,
                     )
-                    console.log("Best layer for category", category, "is", best.properties.id)
+                    if (!best) {
+                        return
+                    }
+                    console.log("Best layer for category", category, "is", best?.properties?.id)
                     current.setData(best)
                 })
             }
@@ -700,6 +697,23 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 { nomod: "P" },
                 Translations.t.hotkeyDocumentation.selectAerial,
                 () => setLayerCategory("photo")
+            )
+            Hotkeys.RegisterHotkey(
+                { shift: "O" },
+                Translations.t.hotkeyDocumentation.selectOsmbasedmap,
+                () => setLayerCategory("osmbasedmap", 2)
+            )
+
+            Hotkeys.RegisterHotkey(
+                { shift: "M" },
+                Translations.t.hotkeyDocumentation.selectMap,
+                () => setLayerCategory("map", 2)
+            )
+
+            Hotkeys.RegisterHotkey(
+                { shift: "P" },
+                Translations.t.hotkeyDocumentation.selectAerial,
+                () => setLayerCategory("photo", 2)
             )
             Hotkeys.RegisterHotkey(
                 { nomod: "L" },
@@ -943,7 +957,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
         return this.layout.getMatchingLayer(properties)
     }
 
-    public async reportError(message: string | Error | XMLHttpRequest) {
+    public async reportError(message: string | Error | XMLHttpRequest, extramessage:string = "") {
         const isTesting = this.featureSwitchIsTesting.data
         console.log(
             isTesting
@@ -958,7 +972,17 @@ export default class ThemeViewState implements SpecialVisualizationState {
 
         if ("" + message === "[object XMLHttpRequest]") {
             const req = <XMLHttpRequest>message
-            message = "XMLHttpRequest with status code " + req.status + ", " + req.statusText
+            let body = ""
+            try {
+                body = req.responseText
+            } catch (e) {
+                // pass
+            }
+            message = "XMLHttpRequest with status code " + req.status + ", " + req.statusText + ", received: " + body
+        }
+
+        if (extramessage) {
+            message += "(" + extramessage + ")"
         }
 
         const stacktrace: string = new Error().stack

@@ -2,19 +2,9 @@
 
 # ski_piste
 
-
-
-
 Ski and snowboard pistes
 
-
-
-
-
-
  - This layer is shown at zoomlevel **11** and higher
-
-
 
 ## Table of contents
 
@@ -29,12 +19,8 @@ Ski and snowboard pistes
 
 ## Themes using this layer
 
-
-
  - [personal](https://mapcomplete.org/personal)
  - [ski](https://mapcomplete.org/ski)
-
-
 
 ## Basic tags for this layer
 
@@ -53,22 +39,14 @@ Elements must match **all** of the following expressions:
 -----|-----|----- |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/piste:difficulty#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/piste%3Adifficulty/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [piste:difficulty](https://wiki.openstreetmap.org/wiki/Key:piste:difficulty) | Multiple choice | [novice](https://wiki.openstreetmap.org/wiki/Tag:piste:difficulty%3Dnovice) [easy](https://wiki.openstreetmap.org/wiki/Tag:piste:difficulty%3Deasy) [intermediate](https://wiki.openstreetmap.org/wiki/Tag:piste:difficulty%3Dintermediate) [advanced](https://wiki.openstreetmap.org/wiki/Tag:piste:difficulty%3Dadvanced) [expert](https://wiki.openstreetmap.org/wiki/Tag:piste:difficulty%3Dexpert) [freeride](https://wiki.openstreetmap.org/wiki/Tag:piste:difficulty%3Dfreeride) |
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
 
-
-
-
 ### piste_difficulty
 
 The question is `What is the difficulty of this piste?`
-
-
 
  -  *Novice (green)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:piste:difficulty' target='_blank'>piste:difficulty</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:piste:difficulty%3Dnovice' target='_blank'>novice</a>
  -  *Easy (blue)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:piste:difficulty' target='_blank'>piste:difficulty</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:piste:difficulty%3Deasy' target='_blank'>easy</a>
@@ -77,31 +55,20 @@ The question is `What is the difficulty of this piste?`
  -  *Expert (orange/double black)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:piste:difficulty' target='_blank'>piste:difficulty</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:piste:difficulty%3Dexpert' target='_blank'>expert</a>
  -  *Freeride* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:piste:difficulty' target='_blank'>piste:difficulty</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:piste:difficulty%3Dfreeride' target='_blank'>freeride</a>
 
-
-
-
-
 ### length
 
 _This tagrendering has no question and is thus read-only_
 *This part of the ski piste is {_length:km} kilometer long*
-
-
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

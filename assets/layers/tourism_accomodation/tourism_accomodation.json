@@ -2,10 +2,13 @@
   "id": "tourism_accomodation",
   "name": {
     "en": "Tourism accomodation",
-    "de": "Touristische Unterkunft"
+    "de": "Touristische Unterkunft",
+    "nl": "Accomodatie voor toeristen"
   },
   "description": {
-    "en": "Various types of lodging facilities"
+    "en": "Various types of lodging facilities",
+    "de": "Verschiedene Arten von Unterkünften",
+    "nl": "Verschillende soorten overnachtingsmogelijkheden voor toeristen"
   },
   "minzoom": 12,
   "title": {
@@ -26,37 +29,44 @@
         "if": "tourism=hostel",
         "then": {
           "en": "Hostel {name}",
-          "de": "Hostel {name}"
+          "de": "Hostel {name}",
+          "nl": "Herberg {name}"
         }
       },
       {
         "if": "guest_house=bed_and_breakfast",
         "then": {
-          "en": "B&B {name}"
+          "en": "B&B {name}",
+          "de": "B&B {name}",
+          "nl": "B&B {name}"
         }
       },
       {
         "if": "tourism=guest_house",
         "then": {
-          "en": "Guest house {name}"
+          "en": "Guest house {name}",
+          "de": "Ferienhaus {name}"
         }
       },
       {
         "if": "tourism=motel",
         "then": {
-          "en": "Motel {name}"
+          "en": "Motel {name}",
+          "de": "Motel {name}"
         }
       },
       {
         "if": "tourism=apartment",
         "then": {
-          "en": "Apartment {name}"
+          "en": "Apartment {name}",
+          "de": "Ferienwohnung {name}"
         }
       },
       {
         "if": "tourism=chalet",
         "then": {
-          "en": "Vacation home {name}"
+          "en": "Vacation home {name}",
+          "de": "Ferienhaus {name}"
         }
       }
     ],
@@ -131,7 +141,8 @@
       },
       "description": {
         "en": "A  hotel is an establishment that provides paid lodging, usually on a short-term basis. Rooms are not shared with strangers.",
-        "de": "Ein Hotel ist eine Einrichtung, die eine bezahlte Unterkunft anbietet, in der Regel für einen kurzen Zeitraum. Die Zimmer werden nicht mit Fremden geteilt."
+        "de": "Ein Hotel ist eine Einrichtung, die eine bezahlte Unterkunft anbietet, in der Regel für einen kurzen Zeitraum. Die Zimmer werden nicht mit Fremden geteilt.",
+        "nl": "En hotel is een gebouw waar je tegen betaling kan overnachten voor een korte periode. Je krijgt je eigen kamer."
       },
       "tags": [
         "tourism=hotel"
@@ -143,11 +154,13 @@
       ],
       "title": {
         "en": "a hostel",
-        "de": "Ein Hostel"
+        "de": "Ein Hostel",
+        "nl": "een herberg"
       },
       "description": {
         "en": "A hostel is a type of tourist accommodation where people can sleep in a room shared with strangers",
-        "de": "Ein Hostel ist eine Art von Touristenherberge, in der man in einem Zimmer schlafen kann, das man mit Fremden teilt"
+        "de": "Ein Hostel ist eine Art von Touristenherberge, in der man in einem Zimmer schlafen kann, das man mit Fremden teilt",
+        "nl": "Een herberg is een gebouw waar je enkele dagen kan blijven. Je deelt een kamer met onbekenden."
       }
     },
     {
@@ -155,10 +168,14 @@
         "tourism=apartment"
       ],
       "title": {
-        "en": "a vacation apartment"
+        "en": "a vacation apartment",
+        "de": "eine Ferienwohnung",
+        "nl": "een vakantie-appartement"
       },
       "description": {
-        "en": "A furnished apartment or flat with cooking and bathroom facilities in a shared building that can be rented for vacations, typically without breakfast or reception desk"
+        "en": "A furnished apartment or flat with cooking and bathroom facilities in a shared building that can be rented for vacations, typically without breakfast or reception desk",
+        "de": "Ein möbliertes Appartement oder eine Wohnung mit Kochgelegenheit und Bad in einem Gemeinschaftsgebäude, das für Ferienzwecke gemietet werden kann, normalerweise ohne Frühstück oder Rezeption",
+        "nl": "Een bemeubeld apparement met kookgelegenheid en een badkamer in een groter gebouw. Het appartement kan gehuurd worden voor vakanties. Er is geen receptie of ontbijt voorzien."
       }
     },
     {
@@ -166,10 +183,12 @@
         "tourism=chalet"
       ],
       "title": {
-        "en": "a vacation chalet"
+        "en": "a vacation chalet",
+        "de": "ein Ferienchalet"
       },
       "description": {
-        "en": "A holiday cottage or vacation home with cooking and bathroom facilities that can be rented for holiday vacations, typically without breakfast or reception desk"
+        "en": "A holiday cottage or vacation home with cooking and bathroom facilities that can be rented for holiday vacations, typically without breakfast or reception desk",
+        "de": "Ein Ferienhaus oder eine Ferienwohnung mit Kochgelegenheit und Bad, das bzw. die für Ferienaufenthalte gemietet werden kann, in der Regel ohne Frühstück oder Rezeption"
       }
     },
     {
@@ -177,10 +196,13 @@
         "tourism=motel"
       ],
       "title": {
-        "en": "a motel"
+        "en": "a motel",
+        "de": "ein Motel",
+        "nl": "een motel"
       },
       "description": {
-        "en": "A motel is an establishment that provides paid lodging, usually on a short-term basis, with convenient parking for motor cars at or close to the room. They are typically cheaper then a hotel"
+        "en": "A motel is an establishment that provides paid lodging, usually on a short-term basis, with convenient parking for motor cars at or close to the room. They are typically cheaper then a hotel",
+        "de": "Ein Motel ist eine Einrichtung, die eine bezahlte Unterkunft anbietet, in der Regel für kurze Zeit, mit bequemen Parkplätzen für Kraftfahrzeuge am oder in der Nähe des Zimmers. Sie sind in der Regel billiger als ein Hotel"
       }
     },
     {
@@ -189,10 +211,12 @@
         "guest_house=bed_and_breakfast"
       ],
       "title": {
-        "en": "a bed-and-breakfast"
+        "en": "a bed-and-breakfast",
+        "de": "eine Frühstückspension"
       },
       "description": {
-        "en": "A bed-and-breakfast in a guesthouse is a small lodging establishment. These are often a few rooms within a private family home where the owners also accommodate the guests. There is no reception desk, nor is there staff at all times. In some cases, check-in happens remotely by sharing a code to get in."
+        "en": "A bed-and-breakfast in a guesthouse is a small lodging establishment. These are often a few rooms within a private family home where the owners also accommodate the guests. There is no reception desk, nor is there staff at all times. In some cases, check-in happens remotely by sharing a code to get in.",
+        "de": "Ein Bed-and-Breakfast in einem Gästehaus ist ein kleiner Beherbergungsbetrieb. Oft handelt es sich um einige Zimmer in einem Privathaus, in dem die Eigentümer auch die Gäste beherbergen. Es gibt keine Rezeption und es ist auch nicht ständig Personal anwesend. In einigen Fällen erfolgt das Einchecken aus der Ferne, indem ein Zugangscode mitgeteilt wird."
       }
     },
     {
@@ -200,7 +224,8 @@
         "tourism=guest_house"
       ],
       "title": {
-        "en": "a small-scale lodging facility, typically operated by the owner"
+        "en": "a small-scale lodging facility, typically operated by the owner",
+        "de": "eine kleine Beherbergungseinrichtung, die in der Regel vom Eigentümer betrieben wird"
       }
     }
   ],
@@ -211,11 +236,13 @@
       "id": "name",
       "question": {
         "en": "What is the name of this {title()}?",
-        "de": "Wie lautet der Name von {title()}?"
+        "de": "Wie lautet der Name von {title()}?",
+        "nl": "Wat is de naam van deze {title()}"
       },
       "render": {
         "en": "{name}",
-        "de": "{name}"
+        "de": "{name}",
+        "nl": "{name}"
       },
       "freeform": {
         "key": "name"
@@ -234,47 +261,64 @@
       "options": [
         {
           "question": {
-            "en": "All types"
+            "en": "All types",
+            "de": "Alle Arten",
+            "nl": "Alle types"
           }
         },
         {
           "osmTags": "tourism=hotel",
           "question": {
-            "en": "Hotels"
+            "en": "Hotels",
+            "de": "Hotels",
+            "nl": "Hotels"
           }
         },
         {
           "osmTags": "tourism=hostel",
           "question": {
-            "en": "Hostels"
+            "en": "Hostels",
+            "de": "Hostels / Herbergen",
+            "nl": "Hostels"
           }
         },
         {
           "osmTags": "tourism=guest_house",
           "question": {
-            "en": "Guest houses and Bed&Breakfasts"
+            "en": "Guest houses and Bed&Breakfasts",
+            "de": "Gasthäuser und Bed & Breakfasts",
+            "nl": "Gastenkamers en bed-en-breakfasts"
           }
         },
         {
           "osmTags": "tourism=motel",
           "question": {
-            "en": "Motels"
+            "en": "Motels",
+            "de": "Motels",
+            "nl": "Motels"
           }
         },
         {
           "osmTags": "tourism=chalet",
           "question": {
-            "en": "Vacation home"
+            "en": "Vacation home",
+            "de": "Ferienhaus",
+            "nl": "Vakantiehuisje"
           }
         },
         {
           "osmTags": "tourism=apartment",
           "question": {
-            "en": "Vacation apartment"
+            "en": "Vacation apartment",
+            "de": "Ferienwohnung",
+            "nl": "Vakantie-appartement"
           }
         }
       ]
     }
   ],
+  "deletion": {
+    "softDeletionTags": "disused:tourism:={tourism}"
+  },
   "allowMove": true
 }

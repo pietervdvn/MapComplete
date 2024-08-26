@@ -2,19 +2,9 @@
 
 # nature_reserve
 
-
-
-
 A nature reserve is an area where nature can take its course
 
-
-
-
-
-
  - This layer is shown at zoomlevel **12** and higher
-
-
 
 ## Table of contents
 
@@ -40,12 +30,8 @@ A nature reserve is an area where nature can take its course
 
 ## Themes using this layer
 
-
-
  - [nature](https://mapcomplete.org/nature)
  - [personal](https://mapcomplete.org/personal)
-
-
 
 ## Basic tags for this layer
 
@@ -74,22 +60,15 @@ Elements must match **any** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/description:0#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/description%3A0/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [description:0](https://wiki.openstreetmap.org/wiki/Key:description:0) | [string](../SpecialInputElements.md#string) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/wikidata#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/wikidata/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [wikidata](https://wiki.openstreetmap.org/wiki/Key:wikidata) | [wikidata](../SpecialInputElements.md#wikidata) |  |
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
 
-
-
-
 ### Access tag
 
 The question is `Is this nature reserve accessible to the public?`
 *Accessin this nature reserve: {access:description}* is shown if `access:description` is set
-
 
  -  *Publicly accessible* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a> & fee=
  -  *Not accessible* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dno' target='_blank'>no</a> & fee=
@@ -98,59 +77,38 @@ The question is `Is this nature reserve accessible to the public?`
  -  *Only accessible with a guide or during organised activities* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dguided' target='_blank'>guided</a> & fee=
  -  *Accessible with fee* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>
 
-
-
-
-
 ### Operator tag
 
 The question is `Who operates this area?`
 *Operated by {operator}* is shown if `operator` is set
 
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/nature_reserve/Natuurpunt.jpg' style='width: 3rem; height: 3rem'> *Operated by Natuurpunt* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:operator' target='_blank'>operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator%3DNatuurpunt' target='_blank'>Natuurpunt</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/nature_reserve/Natuurpunt.jpg' style='width: 3rem; height: 3rem'> *Operated by {operator}* is shown if with operator~^((n|N)atuurpunt.*)$. _This option cannot be chosen as answer_
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/nature_reserve/ANB.jpg' style='width: 3rem; height: 3rem'> *Operated by <i>Agentschap Natuur en Bos</i>* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:operator' target='_blank'>operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator%3DAgentschap Natuur en Bos' target='_blank'>Agentschap Natuur en Bos</a>
-
-
-
-
 
 ### Name tag
 
 The question is `What is the name of this area?`
 *This area is named {name}* is shown if `name` is set
 
-
  -  *This area doesn't have a name* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:noname' target='_blank'>noname</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:noname%3Dyes' target='_blank'>yes</a> & name=
-
-
-
-
 
 ### Dogs?
 
 The question is `Are dogs allowed in this nature reserve?`
 
-
-
  -  *Dogs have to be leashed* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Dleashed' target='_blank'>leashed</a>
  -  *No dogs allowed* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Dno' target='_blank'>no</a>
  -  *Dogs are allowed to roam freely* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Dyes' target='_blank'>yes</a>
 
-
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dpermissive' target='_blank'>permissive</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dguided' target='_blank'>guided</a>
-
 
 ### website
 
 The question is `What is the website of {title()}?`
 *<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>* is shown if `website` is set
 
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/icons/website.svg' style='width: 3rem; height: 3rem'> *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>* is shown if with contact:website~.+. _This option cannot be chosen as answer_
-
-
 
 This tagrendering has labels 
 `contact`
@@ -160,98 +118,63 @@ This tagrendering has labels
 The question is `Whom is the curator of this nature reserve?`
 *{curator} is the curator of this nature reserve* is shown if `curator` is set
 
-
-
-
 ### Email
 
 The question is `What email address can one send to with questions and problems with this nature reserve?`
 *<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>* is shown if `email` is set
-
-
-
 
 ### phone
 
 The question is `What phone number can one call to with questions and problems with this nature reserve?`
 *<a href='tel:{phone}' target='_blank' rel='noopener'>{phone}</a>* is shown if `phone` is set
 
-
-
-
 ### Non-editable description
 
 _This tagrendering has no question and is thus read-only_
 *Extra information: <i>{description}</i>* is shown if `description` is set
-
-
-
 
 ### Editable description
 
 The question is `Is there some extra info?`
 *Extra info: <i>{description:0}</i>* is shown if `description:0` is set
 
-
-
-
 ### Surface area
 
 _This tagrendering has no question and is thus read-only_
 *Surface area: {_surface:ha}Ha*
-
-
-
 
 ### wikipedia
 Shows a wikipedia box with the corresponding wikipedia article; the wikidata-item link can be changed by a contributor
 The question is `What is the corresponding Wikidata entity?`
 *{wikipedia():max-height:25rem}* is shown if `wikidata` is set
 
-
  -  *{wikipedia():max-height:25rem}* is shown if with wikipedia~.+. _This option cannot be chosen as answer_
  -  *No Wikipedia page has been linked yet* is shown if with wikidata=. _This option cannot be chosen as answer_
-
-
-
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`
 
 ## Filters
 
-
-
 | id | question | osmTags |
 -----|-----|----- |
 | access.0 | Freely accesible | access=yes |
-
-
-
-
-
 
 | id | question | osmTags |
 -----|-----|----- |
 | dogs.0 | *All nature reserves* (default) |  |
 | dogs.1 | Dogs are allowed to roam freely | dog=yes |
 | dogs.2 | Dogs are allowed if they are leashed | dog=yes | dog=leashed |
-
 
 
 

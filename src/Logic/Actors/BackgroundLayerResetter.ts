@@ -19,13 +19,14 @@ export default class BackgroundLayerResetter {
             return
         }
 
-        currentBackgroundLayer.addCallbackAndRunD((l) => {
+        currentBackgroundLayer.addCallbackAndRunD(async (l) => {
             if (
                 l.geometry !== undefined &&
                 AvailableRasterLayers.globalLayers.find(
                     (global) => global.properties.id !== l.properties.id
                 )
             ) {
+                await AvailableRasterLayers.editorLayerIndex()
                 BackgroundLayerResetter.installHandler(
                     currentBackgroundLayer,
                     availableLayers.store

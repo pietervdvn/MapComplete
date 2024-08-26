@@ -82,14 +82,14 @@ export default class LayerConfig extends WithContextLoader {
         }
 
         this.syncSelection = json.syncSelection ?? "no"
-        if(!json.source){
+        if(!json.source) {
             if(json.presets === undefined){
                 throw "Error while parsing "+json.id+" in "+context+"; no source given"
             }
             this.source = new SourceConfig({
-                osmTags: TagUtils.Tag({or: json.presets.map(pr => ({and:pr.tags}))})
+                osmTags: TagUtils.Tag({or: json.presets.map(pr => ({and:pr.tags}))}),
             })
-        }else if (typeof json.source !== "string") {
+        } else if (typeof json.source !== "string") {
             this.maxAgeOfCache = json.source["maxCacheAge"] ?? 24 * 60 * 60 * 30
             this.source = new SourceConfig(
                 {
@@ -101,7 +101,7 @@ export default class LayerConfig extends WithContextLoader {
                     mercatorCrs: json.source["mercatorCrs"],
                     idKey: json.source["idKey"],
                 },
-                json.id,
+                json.id
             )
         }
 
@@ -350,7 +350,7 @@ export default class LayerConfig extends WithContextLoader {
         this.popupInFloatover = json.popupInFloatover ?? false
     }
 
-    public defaultIcon(tags?: Record<string, string>): BaseUIElement | undefined {
+    public defaultIcon(properties?: Record<string, string>): BaseUIElement | undefined {
         if (this.mapRendering === undefined || this.mapRendering === null) {
             return undefined
         }
@@ -359,7 +359,7 @@ export default class LayerConfig extends WithContextLoader {
             return undefined
         }
         return new Combine(mapRenderings.map(
-            mr => mr.GetBaseIcon(tags ?? this.GetBaseTags()).SetClass("absolute left-0 top-0 w-full h-full"))
+            mr => mr.GetBaseIcon(properties ?? this.GetBaseTags()).SetClass("absolute left-0 top-0 w-full h-full"))
         ).SetClass("relative block w-full h-full")
     }
 

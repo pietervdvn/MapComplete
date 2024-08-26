@@ -212,6 +212,195 @@
       "description": "Layer 'Indoors' shows and asks freeform values for key 'capacity' (in the mapcomplete.org theme 'Indoors') (This is only shown if room=waiting | room=restaurant | room=office | room=nursery | room=conference | room=auditorium | room=chapel | room=bedroom | room=classroom)"
     },
     {
+      "key": "name:etymology:wikidata",
+      "description": "Layer 'Indoors' shows and asks freeform values for key 'name:etymology:wikidata' (in the mapcomplete.org theme 'Indoors') (This is only shown if name:etymology!=unknown & name~.+)"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Indoors' shows and asks freeform values for key 'access' (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets)"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Indoors' shows access=yes with a fixed text, namely 'Public access' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets)",
+      "value": "yes"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Indoors' shows access=customers with a fixed text, namely 'Only access to customers' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets)",
+      "value": "customers"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Indoors' shows access=no with a fixed text, namely 'Not accessible' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets)",
+      "value": "no"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Indoors' shows access=key with a fixed text, namely 'Accessible, but one has to ask a key to enter' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets)",
+      "value": "key"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Indoors' shows access=public with a fixed text, namely 'Public access' (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets)",
+      "value": "public"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Indoors' shows fee=yes with a fixed text, namely 'These are paid toilets' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets & access!=no)",
+      "value": "yes"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Indoors' shows fee=no with a fixed text, namely 'Free to use' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets & access!=no)",
+      "value": "no"
+    },
+    {
+      "key": "charge",
+      "description": "Layer 'Indoors' shows and asks freeform values for key 'charge' (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets & fee=yes)"
+    },
+    {
+      "key": "payment:cash",
+      "description": "Layer 'Indoors' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets & fee=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:cards",
+      "description": "Layer 'Indoors' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets & fee=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:qr_code",
+      "description": "Layer 'Indoors' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets & fee=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:coins",
+      "description": "Layer 'Indoors' shows payment:coins=yes with a fixed text, namely 'Coins are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets & fee=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:notes",
+      "description": "Layer 'Indoors' shows payment:notes=yes with a fixed text, namely 'Bank notes are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets & fee=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:debit_cards",
+      "description": "Layer 'Indoors' shows payment:debit_cards=yes with a fixed text, namely 'Debit cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets & fee=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:credit_cards",
+      "description": "Layer 'Indoors' shows payment:credit_cards=yes with a fixed text, namely 'Credit cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets & fee=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Indoors' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets & access!=no)"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Indoors' shows opening_hours=24/7 with a fixed text, namely '24/7 opened (including holidays)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets & access!=no)",
+      "value": "24/7"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Indoors' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets & access!=no)",
+      "value": "closed"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Indoors' shows wheelchair=yes with a fixed text, namely 'There is a dedicated toilet for wheelchair users' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets)",
+      "value": "yes"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Indoors' shows wheelchair=no with a fixed text, namely 'No wheelchair access' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets)",
+      "value": "no"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Indoors' shows wheelchair=designated with a fixed text, namely 'There is only a dedicated toilet for wheelchair users' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets)",
+      "value": "designated"
+    },
+    {
+      "key": "door:width",
+      "description": "Layer 'Indoors' shows and asks freeform values for key 'door:width' (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets & (wheelchair=yes | wheelchair=designated))"
+    },
+    {
+      "key": "toilets:position",
+      "description": "Layer 'Indoors' shows toilets:position=seated with a fixed text, namely 'There are only seated toilets' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets)",
+      "value": "seated"
+    },
+    {
+      "key": "toilets:position",
+      "description": "Layer 'Indoors' shows toilets:position=urinal with a fixed text, namely 'There are only urinals here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets)",
+      "value": "urinal"
+    },
+    {
+      "key": "toilets:position",
+      "description": "Layer 'Indoors' shows toilets:position=squat with a fixed text, namely 'There are only squat toilets here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets)",
+      "value": "squat"
+    },
+    {
+      "key": "toilets:position",
+      "description": "Layer 'Indoors' shows toilets:position=seated;urinal with a fixed text, namely 'Both seated toilets and urinals are available here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets)",
+      "value": "seated;urinal"
+    },
+    {
+      "key": "changing_table",
+      "description": "Layer 'Indoors' shows changing_table=yes with a fixed text, namely 'A changing table is available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets)",
+      "value": "yes"
+    },
+    {
+      "key": "changing_table",
+      "description": "Layer 'Indoors' shows changing_table=no with a fixed text, namely 'No changing table is available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets)",
+      "value": "no"
+    },
+    {
+      "key": "changing_table:location",
+      "description": "Layer 'Indoors' shows and asks freeform values for key 'changing_table:location' (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets & changing_table=yes)"
+    },
+    {
+      "key": "changing_table:location",
+      "description": "Layer 'Indoors' shows changing_table:location=female_toilet with a fixed text, namely 'A changing table is in the toilet for women' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets & changing_table=yes)",
+      "value": "female_toilet"
+    },
+    {
+      "key": "changing_table:location",
+      "description": "Layer 'Indoors' shows changing_table:location=male_toilet with a fixed text, namely 'A changing table is in the toilet for men' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets & changing_table=yes)",
+      "value": "male_toilet"
+    },
+    {
+      "key": "changing_table:location",
+      "description": "Layer 'Indoors' shows changing_table:location=wheelchair_toilet with a fixed text, namely 'A changing table is in the toilet for wheelchair users' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets & changing_table=yes)",
+      "value": "wheelchair_toilet"
+    },
+    {
+      "key": "changing_table:location",
+      "description": "Layer 'Indoors' shows changing_table:location=dedicated_room with a fixed text, namely 'A changing table is in a dedicated room' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets & changing_table=yes)",
+      "value": "dedicated_room"
+    },
+    {
+      "key": "toilets:handwashing",
+      "description": "Layer 'Indoors' shows toilets:handwashing=yes with a fixed text, namely 'These toilets have a sink to wash your hands' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets)",
+      "value": "yes"
+    },
+    {
+      "key": "toilets:handwashing",
+      "description": "Layer 'Indoors' shows toilets:handwashing=no with a fixed text, namely 'These toilets <b>don't</b> have a sink to wash your hands' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets)",
+      "value": "no"
+    },
+    {
+      "key": "toilets:paper_supplied",
+      "description": "Layer 'Indoors' shows toilets:paper_supplied=yes with a fixed text, namely 'This toilet is equipped with toilet paper' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets & toilets:position!=urinal)",
+      "value": "yes"
+    },
+    {
+      "key": "toilets:paper_supplied",
+      "description": "Layer 'Indoors' shows toilets:paper_supplied=no with a fixed text, namely 'You have to bring your own toilet paper to this toilet' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets & toilets:position!=urinal)",
+      "value": "no"
+    },
+    {
       "key": "highway",
       "description": "The MapComplete theme Indoors has a layer Pedestrian paths showing features with this tag",
       "value": "footway"

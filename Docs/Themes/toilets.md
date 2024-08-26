@@ -8,14 +8,11 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [toilet](../Layers/toilet.md)
  - [toilet_at_amenity](../Layers/toilet_at_amenity.md)
  - [shower](../Layers/shower.md)
 
-
 Available languages:
-
 
  - en
  - de
@@ -32,7 +29,6 @@ Available languages:
  - da
  - es
  - cs
-
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

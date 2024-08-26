@@ -8,14 +8,11 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [hospital](../Layers/hospital.md)
  - [assembly_point](../Layers/assembly_point.md)
  - [disaster_response](../Layers/disaster_response.md)
 
-
 Available languages:
-
 
  - en
  - it
@@ -23,7 +20,6 @@ Available languages:
  - es
  - ca
  - da
-
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

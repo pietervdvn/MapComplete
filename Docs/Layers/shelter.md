@@ -2,20 +2,10 @@
 
 # shelter
 
-
-
-
 Layer showing shelter structures
-
-
-
-
-
 
  - This layer is shown at zoomlevel **13** and higher
  - This layer is needed as dependency for layer [advertising](#advertising)
-
-
 
 ## Table of contents
 
@@ -30,13 +20,9 @@ Layer showing shelter structures
 
 ## Themes using this layer
 
-
-
  - [advertising](https://mapcomplete.org/advertising)
  - [nature](https://mapcomplete.org/nature)
  - [personal](https://mapcomplete.org/personal)
-
-
 
 ## Basic tags for this layer
 
@@ -52,22 +38,15 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 -----|-----|----- |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/shelter_type#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/shelter_type/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [shelter_type](https://wiki.openstreetmap.org/wiki/Key:shelter_type) | [string](../SpecialInputElements.md#string) | [public_transport](https://wiki.openstreetmap.org/wiki/Tag:shelter_type%3Dpublic_transport) [picnic_shelter](https://wiki.openstreetmap.org/wiki/Tag:shelter_type%3Dpicnic_shelter) [gazebo](https://wiki.openstreetmap.org/wiki/Tag:shelter_type%3Dgazebo) [weather_shelter](https://wiki.openstreetmap.org/wiki/Tag:shelter_type%3Dweather_shelter) [lean_to](https://wiki.openstreetmap.org/wiki/Tag:shelter_type%3Dlean_to) [pavilion](https://wiki.openstreetmap.org/wiki/Tag:shelter_type%3Dpavilion) [basic_hut](https://wiki.openstreetmap.org/wiki/Tag:shelter_type%3Dbasic_hut) |
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
 
-
-
-
 ### shelter-type
 
 The question is `What kind of shelter is this?`
 *Shelter type: {shelter_type}* is shown if `shelter_type` is set
-
 
  -  *This is a shelter at a public transport stop.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shelter_type' target='_blank'>shelter_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shelter_type%3Dpublic_transport' target='_blank'>public_transport</a>
  -  *This is a shelter protecting from rain at a picnic site.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shelter_type' target='_blank'>shelter_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shelter_type%3Dpicnic_shelter' target='_blank'>picnic_shelter</a>
@@ -77,31 +56,20 @@ The question is `What kind of shelter is this?`
  -  *This is a pavilion* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shelter_type' target='_blank'>shelter_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shelter_type%3Dpavilion' target='_blank'>pavilion</a>
  -  *This is a basic hut, providing basic shelter and sleeping facilities.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shelter_type' target='_blank'>shelter_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shelter_type%3Dbasic_hut' target='_blank'>basic_hut</a>
 
-
-
-
-
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
-
-
-
 
 ### move-button
 
 _This tagrendering has no question and is thus read-only_
 *{move_button()}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

@@ -93,6 +93,15 @@
       {#each availableLayers as availableLayer}
         <option value={availableLayer.properties.id}>
           {availableLayer.properties.name}
+          {#if availableLayer.properties.category.startsWith("historic")}
+            ⏱️
+          {/if}
+          {#if availableLayer.properties.category.endsWith("elevation")}
+            ⛰
+          {/if}
+          {#if availableLayer.properties.best}
+            ⭐
+          {/if}
         </option>
       {/each}
     </select>

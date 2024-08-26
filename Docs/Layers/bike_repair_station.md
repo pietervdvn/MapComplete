@@ -2,19 +2,9 @@
 
 # bike_repair_station
 
-
-
-
 A layer showing bicycle pumps and bicycle repair tool stands
 
-
-
-
-
-
  - This layer is shown at zoomlevel **13** and higher
-
-
 
 ## Table of contents
 
@@ -45,15 +35,11 @@ A layer showing bicycle pumps and bicycle repair tool stands
 
 ## Themes using this layer
 
-
-
  - [circular_economy](https://mapcomplete.org/circular_economy)
  - [cyclofix](https://mapcomplete.org/cyclofix)
  - [personal](https://mapcomplete.org/personal)
  - [toerisme_vlaanderen](https://mapcomplete.org/toerisme_vlaanderen)
  - [velopark](https://mapcomplete.org/velopark)
-
-
 
 ## Basic tags for this layer
 
@@ -81,62 +67,39 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/manometer#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/manometer/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [manometer](https://wiki.openstreetmap.org/wiki/Key:manometer) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:manometer%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:manometer%3Dno) [broken](https://wiki.openstreetmap.org/wiki/Tag:manometer%3Dbroken) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/level#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/level/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [level](https://wiki.openstreetmap.org/wiki/Key:level) | [float](../SpecialInputElements.md#float) | [0](https://wiki.openstreetmap.org/wiki/Tag:level%3D0) [1](https://wiki.openstreetmap.org/wiki/Tag:level%3D1) [-1](https://wiki.openstreetmap.org/wiki/Tag:level%3D-1) |
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
 
-
-
-
 ### bike_repair_station-available-services
 
 The question is `Which services are available at this location?`
-
-
 
  -  *There is only a pump present* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:tools' target='_blank'>service:bicycle:tools</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:tools%3Dno' target='_blank'>no</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump' target='_blank'>service:bicycle:pump</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dyes' target='_blank'>yes</a>
  -  *There are only tools (screwdrivers, pliers, …) present* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:tools' target='_blank'>service:bicycle:tools</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:tools%3Dyes' target='_blank'>yes</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump' target='_blank'>service:bicycle:pump</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dno' target='_blank'>no</a>
  -  *There are both tools and a pump present* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:tools' target='_blank'>service:bicycle:tools</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:tools%3Dyes' target='_blank'>yes</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump' target='_blank'>service:bicycle:pump</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dyes' target='_blank'>yes</a>
 
-
-
-
-
 ### Operational status
 
 The question is `Is the bike pump still operational?`
 
-
-
  -  *The bike pump is broken* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump:operational_status' target='_blank'>service:bicycle:pump:operational_status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump:operational_status%3Dbroken' target='_blank'>broken</a>
  -  *The bike pump is operational* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump:operational_status' target='_blank'>service:bicycle:pump:operational_status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump:operational_status%3Doperational' target='_blank'>operational</a>
 
-
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump' target='_blank'>service:bicycle:pump</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dyes' target='_blank'>yes</a>
-
 
 ### opening_hours_24_7
 
 The question is `When is this bicycle repair point open?`
 *<h3>Opening hours</h3>{opening_hours_table(opening_hours)}* is shown if `opening_hours` is set
 
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/open24_7.svg' style='width: 3rem; height: 3rem'> *24/7 opened (including holidays)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
  -  *Marked as closed for an unspecified time* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>. _This option cannot be chosen as answer_
-
-
-
-
 
 ### access
 
 The question is `Who is allowed to use this repair station?`
-
-
 
  -  *Publicly accessible* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
  -  *Publicly accessible* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dpublic' target='_blank'>public</a>. _This option cannot be chosen as answer_
@@ -144,15 +107,10 @@ The question is `Who is allowed to use this repair station?`
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/invalid.svg' style='width: 3rem; height: 3rem'> *Not accessible to the general public* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate' target='_blank'>private</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/invalid.svg' style='width: 3rem; height: 3rem'> *Not accessible to the general public* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dno' target='_blank'>no</a>. _This option cannot be chosen as answer_
 
-
-
-
-
 ### bike_repair_station-operator
 
 The question is `Who maintains this cycle pump?`
 *Maintained by {operator}* is shown if `operator` is set
-
 
 This tagrendering has labels 
 `operator-info`
@@ -162,7 +120,6 @@ This tagrendering has labels
 The question is `What is the email address of the maintainer?`
 *<a href='mailto:{email}'>{email}</a>* is shown if `email` is set
 
-
 This tagrendering has labels 
 `operator-info`
 
@@ -171,7 +128,6 @@ This tagrendering has labels
 The question is `What is the phone number of the maintainer?`
 *<a href='tel:{phone}'>{phone}</a>* is shown if `phone` is set
 
-
 This tagrendering has labels 
 `operator-info`
 
@@ -179,27 +135,19 @@ This tagrendering has labels
 
 The question is `Does this bike repair station have a special tool to repair your bike chain?`
 
-
-
  -  *There is a chain tool* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:chain_tool' target='_blank'>service:bicycle:chain_tool</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:chain_tool%3Dyes' target='_blank'>yes</a>
  -  *There is no chain tool* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:chain_tool' target='_blank'>service:bicycle:chain_tool</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:chain_tool%3Dno' target='_blank'>no</a>
 
-
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:tools' target='_blank'>service:bicycle:tools</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:tools%3Dyes' target='_blank'>yes</a>
-
 
 ### bike_repair_station-bike-stand
 
 The question is `Does this bike station have a hook to hang your bike on or a stand to raise it?`
 
-
-
  -  *There is a hook or stand* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:stand' target='_blank'>service:bicycle:stand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:stand%3Dyes' target='_blank'>yes</a>
  -  *There is no hook or stand* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:stand' target='_blank'>service:bicycle:stand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:stand%3Dno' target='_blank'>no</a>
 
-
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:tools' target='_blank'>service:bicycle:tools</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:tools%3Dyes' target='_blank'>yes</a>
-
 
 ### send_email_about_broken_pump
 
@@ -212,47 +160,33 @@ With this email&COMMA I'd like to inform you that the bicycle pump located at ht
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump:operational_status' target='_blank'>service:bicycle:pump:operational_status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump:operational_status%3Dbroken' target='_blank'>broken</a> & email~.+
 
-
 ### bike_repair_station-valves
 
 The question is `What valves are supported?`
 *This pump supports the following valves: {valves}* is shown if `valves` is set
 
-
  -  *Sclaverand/Presta (narrow-width bike tires)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:valves' target='_blank'>valves</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:valves%3Dsclaverand' target='_blank'>sclaverand</a>
  -  *Dunlop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:valves' target='_blank'>valves</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:valves%3Ddunlop' target='_blank'>dunlop</a>
  -  *Schrader (cars and mountainbikes)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:valves' target='_blank'>valves</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:valves%3Dschrader' target='_blank'>schrader</a>
-
-
-
-
 
 ### bike_repair_station-electrical_pump
 
 The question is `Is this an electric bike pump?`
 
-
-
  -  *Manual pump* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:manual' target='_blank'>manual</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:manual%3Dyes' target='_blank'>yes</a>
  -  *Electrical pump* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:manual' target='_blank'>manual</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:manual%3Dno' target='_blank'>no</a>
 
-
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump' target='_blank'>service:bicycle:pump</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dyes' target='_blank'>yes</a>
-
 
 ### bike_repair_station-manometer
 
 The question is `Does the pump have a pressure indicator or manometer?`
 
-
-
  -  *There is a manometer* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:manometer' target='_blank'>manometer</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:manometer%3Dyes' target='_blank'>yes</a>
  -  *There is no manometer* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:manometer' target='_blank'>manometer</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:manometer%3Dno' target='_blank'>no</a>
  -  *There is manometer but it is broken* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:manometer' target='_blank'>manometer</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:manometer%3Dbroken' target='_blank'>broken</a>
 
-
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump' target='_blank'>service:bicycle:pump</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dyes' target='_blank'>yes</a>
-
 
 ### repeated
 
@@ -268,14 +202,11 @@ This tagrendering has labels
 The question is `On what level is this feature located?`
 *Located on the {level}th floor* is shown if `level` is set
 
-
  -  *Located underground* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>. _This option cannot be chosen as answer_
  -  *Located on the ground floor* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D0' target='_blank'>0</a>
  -  *Located on the ground floor* is shown if with level=. _This option cannot be chosen as answer_
  -  *Located on the first floor* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>
  -  *Located on the first basement level* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D-1' target='_blank'>-1</a>
-
-
 
 This tagrendering has labels 
 `level`
@@ -285,30 +216,20 @@ This tagrendering has labels
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### move-button
 
 _This tagrendering has no question and is thus read-only_
 *{move_button()}*
-
-
-
 
 ### delete-button
 
 _This tagrendering has no question and is thus read-only_
 *{delete_button()}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

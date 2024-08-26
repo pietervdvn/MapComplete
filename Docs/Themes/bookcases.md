@@ -8,12 +8,9 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [public_bookcase](../Layers/public_bookcase.md)
 
-
 Available languages:
-
 
  - en
  - nl
@@ -34,7 +31,6 @@ Available languages:
  - pl
  - da
  - zh_Hans
-
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

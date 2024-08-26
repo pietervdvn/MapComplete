@@ -2,19 +2,11 @@
 
 # bicycle_rental_non_docking
 
-
 This layer is based on [bicycle_rental](../Layers/bicycle_rental.md)
 
 Bicycle rental stations
 
-
-
-
-
-
  - This layer is shown at zoomlevel **14** and higher
-
-
 
 ## Table of contents
 
@@ -45,12 +37,8 @@ Bicycle rental stations
 
 ## Themes using this layer
 
-
-
  - [cyclofix](https://mapcomplete.org/cyclofix)
  - [toerisme_vlaanderen](https://mapcomplete.org/toerisme_vlaanderen)
-
-
 
 ## Basic tags for this layer
 
@@ -80,22 +68,14 @@ Elements must match **all** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/capacity:bicycle_pannier#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/capacity%3Abicycle_pannier/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [capacity:bicycle_pannier](https://wiki.openstreetmap.org/wiki/Key:capacity:bicycle_pannier) | [pnat](../SpecialInputElements.md#pnat) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/capacity:tandem_bicycle#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/capacity%3Atandem_bicycle/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [capacity:tandem_bicycle](https://wiki.openstreetmap.org/wiki/Key:capacity:tandem_bicycle) | [pnat](../SpecialInputElements.md#pnat) |  |
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
 
-
-
-
 ### bicycle_rental_type
 
 The question is `What kind of bicycle rental is this?`
-
-
 
  -  *This is a shop whose main focus is bicycle rental* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Drental' target='_blank'>rental</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_rental' target='_blank'>bicycle_rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_rental%3Dshop' target='_blank'>shop</a>
  -  *This is a rental business which rents out various objects and/or vehicles. It rents out bicycles too, but this is not the main focus* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Drental' target='_blank'>rental</a>
@@ -104,19 +84,14 @@ The question is `What kind of bicycle rental is this?`
  -  *A machine is present which dispenses and accepts keys, eventually after authentication and/or payment. The bicycles are parked nearby* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_rental' target='_blank'>bicycle_rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_rental%3Dkey_dispensing_machine' target='_blank'>key_dispensing_machine</a>
  -  *This is a dropoff point, e.g. a reserved parking to place the bicycles clearly marked as being for the rental service only* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_rental' target='_blank'>bicycle_rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_rental%3Ddropoff_point' target='_blank'>dropoff_point</a>
 
-
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbicycle_rental' target='_blank'>bicycle_rental</a>
-
 
 ### website
 
 The question is `What is the website of {title()}?`
 *<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>* is shown if `website` is set
 
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/icons/website.svg' style='width: 3rem; height: 3rem'> *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>* is shown if with contact:website~.+. _This option cannot be chosen as answer_
-
-
 
 This tagrendering has labels 
 `contact`
@@ -126,11 +101,8 @@ This tagrendering has labels
 The question is `What is the email address of {title()}?`
 *<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>* is shown if `email` is set
 
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/envelope.svg' style='width: 3rem; height: 3rem'> *<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>* is shown if with contact:email~.+. _This option cannot be chosen as answer_
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/envelope.svg' style='width: 3rem; height: 3rem'> *<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>* is shown if with operator:email~.+. _This option cannot be chosen as answer_
-
-
 
 This tagrendering has labels 
 `contact`
@@ -140,10 +112,7 @@ This tagrendering has labels
 The question is `What is the phone number of {title()}?`
 *<a href='tel:{phone}'>{phone}</a>* is shown if `phone` is set
 
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/phone.svg' style='width: 3rem; height: 3rem'> *<a href='tel:{contact:phone}'>{contact:phone}</a>* is shown if with contact:phone~.+. _This option cannot be chosen as answer_
-
-
 
 This tagrendering has labels 
 `contact`
@@ -153,32 +122,23 @@ This tagrendering has labels
 The question is `What are the opening hours of {title()}?`
 *<h3>Opening hours</h3>{opening_hours_table(opening_hours)}* is shown if `opening_hours` is set
 
-
  -  *Marked as closed for an unspecified time* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>. _This option cannot be chosen as answer_
 
-
 This tagrendering is only visible in the popup if the following condition is met: opening_hours~.+ | shop~.+
-
 
 ### payment-options
 
 The question is `Which methods of payment are accepted here?`
 
-
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/cash.svg' style='width: 3rem; height: 3rem'> *Cash is accepted here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dno' target='_blank'>no</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/payment_card.svg' style='width: 3rem; height: 3rem'> *Payment cards are accepted here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dno' target='_blank'>no</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/qrcode.svg' style='width: 3rem; height: 3rem'> *Payment by QR-code is possible here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dno' target='_blank'>no</a>
 
-
 This tagrendering is only visible in the popup if the following condition is met: shop~.+
-
 
 ### payment-options-advanced
 
 The question is `Which methods of payment are accepted here?`
-
-
 
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/cash.svg' style='width: 3rem; height: 3rem'> *Cash is accepted here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dno' target='_blank'>no</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/payment_card.svg' style='width: 3rem; height: 3rem'> *Payment cards are accepted here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dno' target='_blank'>no</a>
@@ -186,15 +146,10 @@ The question is `Which methods of payment are accepted here?`
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/smartphone.svg' style='width: 3rem; height: 3rem'> *Payment is done using a dedicated app* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:app' target='_blank'>payment:app</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:app%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:app' target='_blank'>payment:app</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:app%3Dno' target='_blank'>no</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/nfc_card.svg' style='width: 3rem; height: 3rem'> *Payment is done using a membership card* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:membership_card' target='_blank'>payment:membership_card</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:membership_card%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:membership_card' target='_blank'>payment:membership_card</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:membership_card%3Dno' target='_blank'>no</a>
 
-
-
-
-
 ### bicycle-types
 
 The question is `What kind of bicycles and accessories are rented here?`
 *{rental} is rented here* is shown if `rental` is set
-
 
  -  *Normal city bikes can be rented here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dcity_bike' target='_blank'>city_bike</a>
  -  *Electrical bikes can be rented here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Debike' target='_blank'>ebike</a>
@@ -205,8 +160,6 @@ The question is `What kind of bicycles and accessories are rented here?`
  -  *Race bicycles can be rented here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dracebike' target='_blank'>racebike</a>
  -  *Bike helmets can be rented here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dbike_helmet' target='_blank'>bike_helmet</a>
  -  *Cargo bikes can be rented here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dcargo_bike' target='_blank'>cargo_bike</a>
-
-
 
 This tagrendering has labels 
 `bicycle_rental`
@@ -279,30 +232,20 @@ This tagrendering has labels
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### move-button
 
 _This tagrendering has no question and is thus read-only_
 *{move_button()}*
-
-
-
 
 ### delete-button
 
 _This tagrendering has no question and is thus read-only_
 *{delete_button()}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

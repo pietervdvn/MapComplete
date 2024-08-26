@@ -4,8 +4,6 @@
 
 You might encounter the following metatags on a changeset:
 
-
-
 | key | value | explanation | source |
 -----|-----|-----|----- |
 | comment |  | The changeset comment. Will be a fixed string, mentioning the theme
@@ -38,7 +36,6 @@ You might encounter the following metatags on a changeset:
 This might give a reason per modified node or way | ChangeLocation |
 | deletion |  | Will appear if the object was deleted
 This might give a reason per modified node or way | DeleteAction |
-
 
 
 

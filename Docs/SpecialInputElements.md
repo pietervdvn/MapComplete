@@ -77,8 +77,6 @@ options | A JSON-object of type `{ removePrefixes: string[], removePostfixes: st
 \| notInstanceof \| A list of Q-identifiers which indicates that the search results _must not_ be an entity of this type, e.g. [`Q79007`](https://www.wikidata.org/wiki/Q79007) to filter away all streets from the search results \|
 \| multiple \| If 'yes' or 'true', will allow to select multiple values at once \|
 
-
-
  
 
 ### Example usage 
@@ -211,7 +209,6 @@ subarg \| doc
 -------- \| -----
 main \| The main tag to give suggestions for, e.g. `amenity=restaurant`.
 addExtraTags \| Extra tags to add to the suggestions, e.g. `nobrand=yes`.
-
 
 ### currency
 Validates monetary amounts

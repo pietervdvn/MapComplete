@@ -43,13 +43,9 @@ The following values are always calculated, by default, by MapComplete and are a
 
 The latitude and longitude of the point (or centerpoint in the case of a way/area)
 
-
-
 ### _layer
 
 The layer-id to which this feature belongs. Note that this might be return any applicable if `passAllFeatures` is defined.
-
-
 
 ### _surface
 
@@ -67,19 +63,13 @@ This is a lazy metatag and is only calculated when needed
 
 The total length of a feature in meters (and in kilometers, rounded to one decimal for '_length:km'). For a surface, the length of the perimeter
 
-
-
 ### Theme-defined keys
 
 If 'units' is defined in the layoutConfig, then this metatagger will rewrite the specified keys to have the canonical form (e.g. `1meter` will be rewritten to `1m`; `1` will be rewritten to `1m` as well)
 
-
-
 ### _country
 
 The country codes of the of the country/countries that the feature is located in (with latlon2country). Might contain _multiple_ countries, separated by a `;`
-
-
 
 ### _isOpen
 
@@ -91,8 +81,6 @@ This is a lazy metatag and is only calculated when needed
 
 _direction:numerical is a normalized, numerical direction based on 'camera:direction' or on 'direction'; it is only present if a valid direction is found (e.g. 38.5 or NE). _direction:leftright is either 'left' or 'right', which is left-looking on the map or 'right-looking' on the map
 
-
-
 ### _direction:centerpoint
 
 _direction:centerpoint is the direction of the linestring (in degrees) if one were standing at the projected centerpoint.
@@ -103,31 +91,21 @@ This is a lazy metatag and is only calculated when needed
 
 Adds the time that the data got loaded - pretty much the time of downloading from overpass. The format is YYYY-MM-DD hh:mm, aka 'sortable' aka ISO-8601-but-not-entirely
 
-
-
 ### _last_edit:contributor, _last_edit:contributor:uid, _last_edit:changeset, _last_edit:timestamp, _version_number, _backend
 
 Information about the last edit of this object. This object will actually _rewrite_ some tags for features coming from overpass
-
-
 
 ### sidewalk:left, sidewalk:right, generic_key:left:property, generic_key:right:property
 
 Rewrites tags from 'generic_key:both:property' as 'generic_key:left:property' and 'generic_key:right:property' (and similar for sidewalk tagging). Note that this rewritten tags _will be reuploaded on a change_. To prevent to much unrelated retagging, this is only enabled if the layer has at least some lineRenderings with offset defined
 
-
-
 ### _geometry:type
 
 Adds the geometry type as property. This is identical to the GoeJson geometry type and is one of `Point`,`LineString`, `Polygon` and exceptionally `MultiPolygon` or `MultiLineString`
 
-
-
 ### _level
 
 Extract the 'level'-tag into a normalized, ';'-separated value called '_level' (which also includes 'repeat_on'). The `level` tag (without underscore) will be normalized with only the value of `level`.
-
-
 
 ### _referencing_ways
 
@@ -147,26 +125,18 @@ Adds the currency valid for the object, based on country or explicit tagging. Ca
 
 This is a lazy metatag and is only calculated when needed
 
-
  Calculating tags with Javascript 
 ----------------------------------
-
-
 
 In some cases, it is useful to have some tags calculated based on other properties. Some useful tags are available by default (e.g. `lat`, `lon`, `_country`), as detailed above.
 
 It is also possible to calculate your own tags - but this requires some javascript knowledge.
 
-
-
 Before proceeding, some warnings:
-
-
 
   - DO NOT DO THIS AS BEGINNER
   - **Only do this if all other techniques fail**  This should _not_ be done to create a rendering effect, only to calculate a specific value
   - **THIS MIGHT BE DISABLED WITHOUT ANY NOTICE ON UNOFFICIAL THEMES** As unofficial themes might be loaded from the internet, this is the equivalent of injecting arbitrary code into the client. It'll be disabled if abuse occurs.
-
 
 To enable this feature,  add a field `calculatedTags` in the layer object, e.g.:
 
@@ -186,24 +156,16 @@ To enable this feature,  add a field `calculatedTags` in the layer object, e.g.:
 
 ````
 
-
-
 By using `:=` as separator, the attribute will be calculated as soon as the data is loaded (strict evaluation)
 
 The default behaviour, using `=` as separator, is lazy loading
 
-
-
 The above code will be executed for every feature in the layer. The feature is accessible as `feat` and is an amended geojson object:
-
-
 
   - `area` contains the surface area (in square meters) of the object
   - `lat` and `lon` contain the latitude and longitude
 
-
 Some advanced functions are available as well. Due to technical reasons, they should be used as `funcname(feat)(arguments)`.
-
 
  - [distanceTo](#distanceTo)
  - [overlapWith](#overlapWith)
@@ -213,14 +175,11 @@ Some advanced functions are available as well. Due to technical reasons, they sh
  - [closestn](#closestn)
  - [get](#get)
 
-
 ### distanceTo
 Calculates the distance between the feature and a specified point in meter. The input should either be a pair of coordinates, a geojson feature or the ID of an object
 
-
  - feature OR featureID OR longitude
  - undefined OR latitude
-
 
 ### overlapWith
 Gives a list of features from the specified layer which this feature (partly) overlaps with. A point which is embedded in the feature is detected as well.
@@ -233,9 +192,7 @@ For example to get all objects which overlap or embed from a layer, use `_contai
 
 Also see [enclosingFeatures](#enclosingFeatures) which can be used to get all objects which fully contain this feature
 
-
  - ...layerIds - one or more layer ids of the layer from which every feature is checked for overlap)
-
 
 ### enclosingFeatures
 Gives a list of all features in the specified layers which fully contain this object. Returned features will always be (multi)polygons. (LineStrings and Points from the other layers are ignored)
@@ -243,9 +200,7 @@ Gives a list of all features in the specified layers which fully contain this ob
 The result is a list of features: `{feat: Polygon}[]`
 This function will never return the feature itself.
 
-
  - ...layerIds - one or more layer ids of the layer from which every feature is checked for overlap)
-
 
 ### intersectionsWith
 Gives the intersection points with selected features. Only works with (Multi)Polygons and LineStrings.
@@ -255,32 +210,25 @@ Returns a `{feat: GeoJson, intersections: [number,number][]}` where `feat` is th
 If the current feature is a point, this function will return an empty list.
 Points from other layers are ignored - even if the points are parts of the current linestring.
 
-
  - ...layerIds - one or more layer ids of the layer from which every feature is checked for intersection)
-
 
 ### closest
 Given either a list of geojson features or a single layer name, gives the single object which is nearest to the feature. In the case of ways/polygons, only the centerpoint is considered. Returns a single geojson feature or undefined if nothing is found (or not yet loaded)
 
-
  - list of features or a layer name or '*' to get all features
-
 
 ### closestn
 Given either a list of geojson features or a single layer name, gives the n closest objects which are nearest to the feature (excluding the feature itself). In the case of ways/polygons, only the centerpoint is considered. Returns a list of `{feat: geojson, distance:number}` the empty list if nothing is found (or not yet loaded)
 
 If a 'unique tag key' is given, the tag with this key will only appear once (e.g. if 'name' is given, all features will have a different name)
 
-
  - list of features or layer name or '*' to get all features
  - amount of features
  - unique tag key (optional)
  - maxDistanceInMeters (optional)
 
-
 ### get
 Gets the property of the feature, parses it (as JSON) and returns it. Might return 'undefined' if not defined, null, ...
-
 
  - key
 

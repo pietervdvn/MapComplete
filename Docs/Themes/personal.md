@@ -8,7 +8,6 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [advertising](../Layers/advertising.md)
  - [aerialway](../Layers/aerialway.md)
  - [ambulancestation](../Layers/ambulancestation.md)
@@ -133,9 +132,7 @@ This theme contains the following layers:
  - [waste_disposal](../Layers/waste_disposal.md)
  - [windturbine](../Layers/windturbine.md)
 
-
 Available languages:
-
 
  - en
  - nl
@@ -153,7 +150,6 @@ Available languages:
  - pa_PK
  - cs
  - pl
-
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

@@ -707,6 +707,10 @@
           "then": "<b>current_view</b> (builtin) - A meta-layer which contains one single feature, namely the bounding box of the current map view. This can be used to trigger special actions. If a popup is defined for this layer, this popup will be accessible via an extra button on screen.\n\nThe icon on the button is the default icon of the layer, but can be customized by detecting 'button=yes'."
         },
         {
+          "if": "value=cycle_highways",
+          "then": "<b>cycle_highways</b> (builtin) - undefined"
+        },
+        {
           "if": "value=cycleways_and_roads",
           "then": "<b>cycleways_and_roads</b> (builtin) - All infrastructure that someone can cycle over, accompanied with questions about this infrastructure"
         },
@@ -1120,7 +1124,7 @@
         },
         {
           "if": "value=tourism_accomodation",
-          "then": "<b>tourism_accomodation</b> (builtin) - undefined"
+          "then": "<b>tourism_accomodation</b> (builtin) - Various types of lodging facilities"
         },
         {
           "if": "value=trail",
@@ -1221,7 +1225,7 @@
             ]
           },
           "source": {
-            "description": "Question: Where should the data be fetched from?\ntitle: Data Source\n\nThis determines where the data for the layer is fetched: from OSM or from an external geojson dataset.\n\nIf no 'geojson' is defined, data will be fetched from overpass and the OSM-API.\n\nEvery source _must_ define which tags _must_ be present in order to be picked up.\n\nNote: a source must always be defined. 'special' is only allowed if this is a builtin-layer\n\ntypes: Load data with specific tags from OpenStreetMap ; Load data from an external geojson source ;\ntypesdefault: 0\ngroup: Basic",
+            "description": "Question: Where should the data be fetched from?\ntitle: Data Source\n\nThis determines where the data for the layer is fetched: from OSM or from an external geojson dataset.\n\nIf no 'geojson' is defined, data will be fetched from overpass and the OSM-API.\n\nEvery source _must_ define which tags _must_ be present in order to be picked up.\n\nNote: a source must always be defined. 'special' is only allowed if this is a builtin-layer\n\ntypes: Load data with specific tags from OpenStreetMap ; Load data from an external geojson source ;\ntypesdefault: 0\nifunset: Determine the tags automatically based on the presets\ngroup: Basic",
             "anyOf": [
               {
                 "type": "object",
@@ -2149,8 +2153,7 @@
         },
         "required": [
           "id",
-          "pointRendering",
-          "source"
+          "pointRendering"
         ],
         "additionalProperties": false
       },
@@ -2252,12 +2255,13 @@
       "layers",
       "source"
     ],
-    "required": true,
+    "required": false,
     "hints": {
       "types": "Load data with specific tags from OpenStreetMap ; Load data from an external geojson source ;",
       "typesdefault": "0",
       "group": "Basic",
       "question": "Where should the data be fetched from?",
+      "ifunset": "Determine the tags automatically based on the presets",
       "title": "Data Source"
     },
     "type": [
@@ -13006,6 +13010,10 @@
           "then": "current_view - A meta-layer which contains one single feature, namely the bounding box of the current map view. This can be used to trigger special actions. If a popup is defined for this layer, this popup will be accessible via an extra button on screen.\n\nThe icon on the button is the default icon of the layer, but can be customized by detecting 'button=yes'."
         },
         {
+          "if": "value=cycle_highways",
+          "then": "cycle_highways - undefined"
+        },
+        {
           "if": "value=cycleways_and_roads",
           "then": "cycleways_and_roads - All infrastructure that someone can cycle over, accompanied with questions about this infrastructure"
         },
@@ -13419,7 +13427,7 @@
         },
         {
           "if": "value=tourism_accomodation",
-          "then": "tourism_accomodation - undefined"
+          "then": "tourism_accomodation - Various types of lodging facilities"
         },
         {
           "if": "value=trail",
@@ -23152,6 +23160,7 @@
       "typesdefault": "0",
       "group": "Basic",
       "question": "Where should the data be fetched from?",
+      "ifunset": "Determine the tags automatically based on the presets",
       "title": "Data Source"
     },
     "type": [
@@ -34239,6 +34248,10 @@
           "then": "current_view - A meta-layer which contains one single feature, namely the bounding box of the current map view. This can be used to trigger special actions. If a popup is defined for this layer, this popup will be accessible via an extra button on screen.\n\nThe icon on the button is the default icon of the layer, but can be customized by detecting 'button=yes'."
         },
         {
+          "if": "value=cycle_highways",
+          "then": "cycle_highways - undefined"
+        },
+        {
           "if": "value=cycleways_and_roads",
           "then": "cycleways_and_roads - All infrastructure that someone can cycle over, accompanied with questions about this infrastructure"
         },
@@ -34652,7 +34665,7 @@
         },
         {
           "if": "value=tourism_accomodation",
-          "then": "tourism_accomodation - undefined"
+          "then": "tourism_accomodation - Various types of lodging facilities"
         },
         {
           "if": "value=trail",

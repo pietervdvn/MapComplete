@@ -2,19 +2,9 @@
 
 # stairs
 
-
-
-
 Layer showing stairs and escalators
 
-
-
-
-
-
  - This layer is shown at zoomlevel **17** and higher
-
-
 
 ## Table of contents
 
@@ -34,13 +24,9 @@ Layer showing stairs and escalators
 
 ## Themes using this layer
 
-
-
  - [blind_osm](https://mapcomplete.org/blind_osm)
  - [personal](https://mapcomplete.org/personal)
  - [stations](https://mapcomplete.org/stations)
-
-
 
 ## Basic tags for this layer
 
@@ -60,22 +46,15 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/tactile_writing#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/tactile_writing/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [tactile_writing](https://wiki.openstreetmap.org/wiki/Key:tactile_writing) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:tactile_writing%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:tactile_writing%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/incline#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/incline/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [incline](https://wiki.openstreetmap.org/wiki/Key:incline) | [slope](../SpecialInputElements.md#slope) |  |
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
 
-
-
-
 ### multilevels
 
 The question is `Between which levels are these stairs?`
 *These stairs are between the levels {level}* is shown if `level` is set
-
 
  -  *Located underground* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>. _This option cannot be chosen as answer_
  -  *Located on the ground floor* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D0' target='_blank'>0</a>
@@ -83,49 +62,29 @@ The question is `Between which levels are these stairs?`
  -  *Located on the first floor* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>
  -  *Located on the first basement level* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D-1' target='_blank'>-1</a>
 
-
-
-
-
 ### conveying
 
 _This tagrendering has no question and is thus read-only_
-
-
 
  -  *This is an escalator* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:conveying' target='_blank'>conveying</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:conveying%3Dyes' target='_blank'>yes</a>
  -  *This is not an escalator* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:conveying' target='_blank'>conveying</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:conveying%3Dno' target='_blank'>no</a>
  -  *This is not an escalator* is shown if with conveying=. _This option cannot be chosen as answer_
 
-
-
-
-
 ### handrail
 
 The question is `Does this stair have a handrail?`
 
-
-
  -  *These stairs have a handrail* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:handrail' target='_blank'>handrail</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:handrail%3Dyes' target='_blank'>yes</a>
  -  *These stairs do <b>not</b> have a handrail* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:handrail' target='_blank'>handrail</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:handrail%3Dno' target='_blank'>no</a>
-
-
-
-
 
 ### tactile_writing
 
 The question is `Do these stairs have tactile writing on the handrail?`
 
-
-
  -  *There is tactile writing on the handrail* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:tactile_writing' target='_blank'>tactile_writing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_writing%3Dyes' target='_blank'>yes</a>
  -  *There is no tactile writing on the handrail* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:tactile_writing' target='_blank'>tactile_writing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_writing%3Dno' target='_blank'>no</a>
 
-
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:handrail' target='_blank'>handrail</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:handrail%3Dyes' target='_blank'>yes</a> & conveying!=yes
-
 
 ### tactile_writing_language
 
@@ -134,12 +93,9 @@ _This tagrendering has no question and is thus read-only_
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:tactile_writing' target='_blank'>tactile_writing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_writing%3Dyes' target='_blank'>yes</a>
 
-
 ### ramp
 
 The question is `Is there a ramp at these stairs?`
-
-
 
  -  *There is a ramp for bicycles here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:ramp:bicycle' target='_blank'>ramp:bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:ramp:bicycle%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:ramp:bicycle' target='_blank'>ramp:bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:ramp:bicycle%3Dno' target='_blank'>no</a>
  -  *There is a ramp for wheelchairs here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:ramp:wheelchair' target='_blank'>ramp:wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:ramp:wheelchair%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:ramp:wheelchair' target='_blank'>ramp:wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:ramp:wheelchair%3Dno' target='_blank'>no</a>
@@ -147,36 +103,23 @@ The question is `Is there a ramp at these stairs?`
  -  *There is a ramp for strollers here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:ramp:stroller' target='_blank'>ramp:stroller</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:ramp:stroller%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:ramp:stroller' target='_blank'>ramp:stroller</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:ramp:stroller%3Dno' target='_blank'>no</a>
  -  *There is no ramp at these stairs* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:ramp' target='_blank'>ramp</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:ramp%3Dno' target='_blank'>no</a>. Unselecting this answer will add ramp=
 
-
-
-
-
 ### incline
 
 The question is `What is the incline of these stairs?`
 *These stairs have an incline of {incline}* is shown if `incline` is set
 
-
  -  *The upward direction is {direction_absolute()}* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:incline' target='_blank'>incline</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:incline%3Dup' target='_blank'>up</a>. _This option cannot be chosen as answer_
  -  *The downward direction is {direction_absolute()}* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:incline' target='_blank'>incline</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:incline%3Ddown' target='_blank'>down</a>. _This option cannot be chosen as answer_
-
-
-
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

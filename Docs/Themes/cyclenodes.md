@@ -8,16 +8,13 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [node2node_bicycle (defined in this theme)](#node2node_bicycle)
  - [node_bicycle (defined in this theme)](#node_bicycle)
  - [bicycle_guidepost (defined in this theme)](#bicycle_guidepost)
  - [route_marker](../Layers/route_marker.md)
  - [cycleways_and_roads](../Layers/cycleways_and_roads.md)
 
-
 Available languages:
-
 
  - en
  - de
@@ -28,7 +25,6 @@ Available languages:
  - ca
  - cs
  - pl
-
 
 # Table of contents
 
@@ -63,20 +59,8 @@ Available languages:
 These layers can not be reused in different themes.
 # node2node_bicycle
 
-
-
-
-
-
-
-
-
-
-
  - This layer is shown at zoomlevel **12** and higher
  - Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`
-
-
 
 No themes use this layer
 
@@ -98,60 +82,33 @@ Elements must match **all** of the following expressions:
 -----|-----|----- |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/survey:date#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/survey%3Adate/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [survey:date](https://wiki.openstreetmap.org/wiki/Key:survey:date) | [date](../SpecialInputElements.md#date) | [](https://wiki.openstreetmap.org/wiki/Tag:survey:date%3D) |
 
-
-
-
 ### node2node-survey:date
 
 The question is `When was this node to node link last surveyed?`
 *This node to node link was last surveyed on {survey:date}* is shown if `survey:date` is set
 
-
  -  *This object was last surveyed today* is shown if with survey:date=
-
-
-
-
 
 ### export_as_gpx
 Shows a button to export this feature as GPX. Especially useful for route relations
 _This tagrendering has no question and is thus read-only_
 *{export_as_gpx()}*
 
-
-
-
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
-
-
-
 
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
 
-
 This tagrendering has labels 
 `added_by_default`
 # node_bicycle
 
-
-
-
-
-
-
-
-
-
-
  - This layer is shown at zoomlevel **12** and higher
-
-
 
 No themes use this layer
 
@@ -174,9 +131,6 @@ Elements must match **any** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/survey:date#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/survey%3Adate/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [survey:date](https://wiki.openstreetmap.org/wiki/Key:survey:date) | [date](../SpecialInputElements.md#date) | [](https://wiki.openstreetmap.org/wiki/Tag:survey:date%3D) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/expected_rcn_route_relations#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/expected_rcn_route_relations/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [expected_rcn_route_relations](https://wiki.openstreetmap.org/wiki/Key:expected_rcn_route_relations) | [int](../SpecialInputElements.md#int) |  |
 
-
-
-
 ### node-rxn_ref
 
 The question is `What is the reference number of this cycling node?`
@@ -184,66 +138,42 @@ The question is `What is the reference number of this cycling node?`
 
 This tagrendering is only visible in the popup if the following condition is met: rcn_ref~.+
 
-
 ### node-survey:date
 
 The question is `When was this cycle node last surveyed?`
 *This cycle node was last surveyed on {survey:date}* is shown if `survey:date` is set
 
-
  -  *This object was last surveyed today* is shown if with survey:date=
-
-
-
-
 
 ### node-expected_rcn_route_relations
 
 The question is `How many other cycle nodes does this node link to?`
 *This node links to {expected_rcn_route_relations} other cycle nodes.* is shown if `expected_rcn_route_relations` is set
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
-
-
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
 
-
 This tagrendering has labels 
 `added_by_default`
 # bicycle_guidepost
-
 
 This layer is based on [guidepost](../Layers/guidepost.md)
 
 Guideposts (also known as fingerposts or finger posts) are often found along official hiking/cycling/riding/skiing routes to indicate the directions to different destinations
 
-
-
-
-
-
  - This layer is shown at zoomlevel **16** and higher
-
-
 
 No themes use this layer
 
@@ -258,45 +188,30 @@ Elements must match **all** of the following expressions:
 
 ## Supported attributes
 
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
-
-
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### move-button
 
 _This tagrendering has no question and is thus read-only_
 *{move_button()}*
-
-
-
 
 ### delete-button
 
 _This tagrendering has no question and is thus read-only_
 *{delete_button()}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

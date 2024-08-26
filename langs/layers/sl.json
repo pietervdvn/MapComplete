@@ -133,6 +133,55 @@
             "render": "Defibrilator"
         }
     },
+    "memorial": {
+        "tagRenderings": {
+            "inscription": {
+                "mappings": {
+                    "0": {
+                        "then": "Ta spomenik nima napisa"
+                    }
+                },
+                "question": "Kakšen je napis na tem spomeniku?",
+                "render": "Napis na tem spomeniku je: <p><i>{inscription}<i></p>"
+            },
+            "memorial-type": {
+                "mappings": {
+                    "0": {
+                        "then": "To je kip"
+                    },
+                    "1": {
+                        "then": "To je plošča"
+                    },
+                    "6": {
+                        "then": "To je spominski kamen"
+                    },
+                    "7": {
+                        "then": "To je doprsni kip"
+                    },
+                    "8": {
+                        "then": "To je skulptura"
+                    },
+                    "9": {
+                        "then": "To je obelisk"
+                    },
+                    "10": {
+                        "then": "To je križ"
+                    },
+                    "12": {
+                        "then": "To je zgodovinski tank, ki je stalno postavljen v spomin na javnem kraju"
+                    },
+                    "13": {
+                        "then": "To je spominsko drevo"
+                    },
+                    "14": {
+                        "then": "To je nagrobni kamen; oseba je pokopana tu"
+                    }
+                },
+                "question": "Kakšne vrste spomenik je to?",
+                "render": "To je {memorial}"
+            }
+        }
+    },
     "questions": {
         "tagRenderings": {
             "description": {
@@ -454,6 +503,11 @@
                     "then": "Stranišče v {name}"
                 }
             }
+        }
+    },
+    "usersettings": {
+        "title": {
+            "render": "Nastavitve"
         }
     },
     "windturbine": {

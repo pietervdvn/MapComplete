@@ -2,15 +2,7 @@
 
 # maproulette_challenge
 
-
-
-
 Layer showing tasks of a single MapRoulette challenge. This layer is intended to be reused and extended in themes; refer to [the documentation](https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Integrating_Maproulette.md) on how to do this.
-
-
-
-
-
 
  - This layer is shown at zoomlevel **0** and higher
  - Not visible in the layer selection by default. If you want to make this layer toggable, override `name`
@@ -19,8 +11,6 @@ Layer showing tasks of a single MapRoulette challenge. This layer is intended to
 This layer is loaded from an external source, namely 
 
 `https://maproulette.org/api/v2/challenge/view/27971`
-
-
 
 ## Table of contents
 
@@ -35,14 +25,10 @@ This layer is loaded from an external source, namely
 
 ## Themes using this layer
 
-
-
  - [atm](https://mapcomplete.org/atm)
  - [onwheels](https://mapcomplete.org/onwheels)
  - [personal](https://mapcomplete.org/personal)
  - [street_lighting_assen](https://mapcomplete.org/street_lighting_assen)
-
-
 
 ## Basic tags for this layer
 
@@ -58,22 +44,14 @@ Elements must match the expression **mr_taskId~.+**
 -----|-----|----- |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/mr_taskStatus#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/mr_taskStatus/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [mr_taskStatus](https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus) | Multiple choice | [Created](https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DCreated) [Fixed](https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DFixed) [False positive](https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DFalse positive) [Skipped](https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DSkipped) [Deleted](https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DDeleted) [Already fixed](https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DAlready fixed) [Too hard](https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DToo hard) [Disabled](https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DDisabled) |
 
-
-
-
 ### details
 
 _This tagrendering has no question and is thus read-only_
 *{maproulette_task()}*
 
-
-
-
 ### status
 
 _This tagrendering has no question and is thus read-only_
-
-
 
  -  *Task is created* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus' target='_blank'>mr_taskStatus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DCreated' target='_blank'>Created</a>
  -  *Task is fixed* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus' target='_blank'>mr_taskStatus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DFixed' target='_blank'>Fixed</a>
@@ -84,30 +62,20 @@ _This tagrendering has no question and is thus read-only_
  -  *Task is marked as too hard* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus' target='_blank'>mr_taskStatus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DToo hard' target='_blank'>Too hard</a>
  -  *Task is disabled* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus' target='_blank'>mr_taskStatus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DDisabled' target='_blank'>Disabled</a>
 
-
-
-
-
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
-
-
-
 
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
 
-
 This tagrendering has labels 
 `added_by_default`
 
 ## Filters
-
-
 
 | id | question | osmTags |
 -----|-----|----- |
@@ -120,7 +88,6 @@ This tagrendering has labels
 | status.6 | Show tasks that are already fixed | mr_taskStatus=Already fixed |
 | status.7 | Show tasks that are marked as too hard | mr_taskStatus=Too hard |
 | status.8 | Show tasks that are disabled | mr_taskStatus=Disabled |
-
 
 
 

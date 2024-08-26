@@ -8,14 +8,11 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [elongated_coin](../Layers/elongated_coin.md)
  - [souvenir_coin](../Layers/souvenir_coin.md)
  - [souvenir_note](../Layers/souvenir_note.md)
 
-
 Available languages:
-
 
  - en
  - de
@@ -23,7 +20,6 @@ Available languages:
  - ca
  - cs
  - pl
-
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

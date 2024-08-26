@@ -8,14 +8,11 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [cycle_highways_no_highway (defined in this theme)](#cycle_highways_no_highway)
  - [cycle_highways_under-construction (defined in this theme)](#cycle_highways_under-construction)
  - [cycle_highways](../Layers/cycle_highways.md)
 
-
 Available languages:
-
 
  - en
  - de
@@ -30,7 +27,6 @@ Available languages:
  - cs
  - pl
  - zh_Hant
-
 
 # Table of contents
 
@@ -65,20 +61,10 @@ Available languages:
 These layers can not be reused in different themes.
 # cycle_highways_no_highway
 
-
 This layer is based on [cycle_highways](../Layers/cycle_highways.md)
-
-
-
-
-
-
-
 
  - This layer is shown at zoomlevel **6** and higher
  - Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`
-
-
 
 No themes use this layer
 
@@ -102,30 +88,20 @@ Elements must match **all** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/state#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/state/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [state](https://wiki.openstreetmap.org/wiki/Key:state) | [string](../SpecialInputElements.md#string) | [proposed](https://wiki.openstreetmap.org/wiki/Tag:state%3Dproposed) [proposed](https://wiki.openstreetmap.org/wiki/Tag:state%3Dproposed) [proposed](https://wiki.openstreetmap.org/wiki/Tag:state%3Dproposed) [temporary](https://wiki.openstreetmap.org/wiki/Tag:state%3Dtemporary) [](https://wiki.openstreetmap.org/wiki/Tag:state%3D) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/website#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/website/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [website](https://wiki.openstreetmap.org/wiki/Key:website) | [url](../SpecialInputElements.md#url) |  |
 
-
-
-
 ### cycle_highways-name
 
 The question is `What is the name of this cycle highway?`
 *The name is <b>{name}</b>* is shown if `name` is set
-
-
-
 
 ### cycle_highways-ref
 
 The question is `What is the reference number of this cycle highway?`
 *Referentienummer is <b>{ref}</b>* is shown if `ref` is set
 
-
-
-
 ### cycle_highways-state
 
 The question is `What is the state of this link?`
 *The current state of this link is {state}* is shown if `state` is set
-
 
  -  *This is a proposed route which can be cycled* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:state' target='_blank'>state</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:state%3Dproposed' target='_blank'>proposed</a> & note:state=
  -  *This is a proposed route which has missing links (thus: some parts don't even have a building permit yet)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:state' target='_blank'>state</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:state%3Dproposed' target='_blank'>proposed</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:note:state' target='_blank'>note:state</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:note:state%3Dhas_highway_no' target='_blank'>has_highway_no</a>
@@ -133,27 +109,17 @@ The question is `What is the state of this link?`
  -  *This is a temporary deviation* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:state' target='_blank'>state</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:state%3Dtemporary' target='_blank'>temporary</a>
  -  *This link is operational and signposted* is shown if with state=
 
-
-
-
-
 ### cycle-highway-length
 
 _This tagrendering has no question and is thus read-only_
 *This part is {_length:km}km long*
-
-
-
 
 ### website
 
 The question is `What is the website of {title()}?`
 *<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>* is shown if `website` is set
 
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/icons/website.svg' style='width: 3rem; height: 3rem'> *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>* is shown if with contact:website~.+. _This option cannot be chosen as answer_
-
-
 
 This tagrendering has labels 
 `contact`
@@ -163,65 +129,36 @@ Shows a table with all the tags of the feature
 _This tagrendering has no question and is thus read-only_
 *{all_tags()}*
 
-
-
-
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
-
-
-
 
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
 
-
 This tagrendering has labels 
 `added_by_default`
 
 ## Filters
 
-
-
 | id | question | osmTags |
 -----|-----|----- |
 | name-alt.0 | Name contains 'alt' | name~^(.*alt.*)$ |
-
-
-
-
-
 
 | id | question | osmTags |
 -----|-----|----- |
 | name-wenslijn.0 | Name contains 'wenslijn' | name~^(.*wenslijn.*)$ |
 
-
-
-
-
-
 | id | question | osmTags |
 -----|-----|----- |
 | name-omleiding.0 | Name contains 'omleiding' | name~^(.*omleiding.*)$ |
 
-
-
-
-
-
 | id | question | osmTags |
 -----|-----|----- |
 | ref-alt.0 | Reference contains 'alt' | ref~^(.*aAlt.*)$ |
-
-
-
-
-
 
 | id | question | osmTags |
 -----|-----|----- |
@@ -229,11 +166,6 @@ This tagrendering has labels
 | missing_link.1 | Has missing links (note:state=has_highway_no) | note:state=has_highway_no |
 | missing_link.2 | Has links which are under construction (note:state=has_highway_under_construction) | note:state=has_highway_under_construction |
 | missing_link.3 | Has links which are proposed (note:state=has_highway_proposed) | note:state=has_highway_proposed |
-
-
-
-
-
 
 | id | question | osmTags |
 -----|-----|----- |
@@ -243,24 +175,12 @@ This tagrendering has labels
 | proposed.3 | state unset | state= |
 | proposed.4 | Other state | state~.+ & state!=proposed & state!=temporary |
 
-
-
 # cycle_highways_under-construction
-
 
 This layer is based on [cycle_highways](../Layers/cycle_highways.md)
 
-
-
-
-
-
-
-
  - This layer is shown at zoomlevel **6** and higher
  - Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`
-
-
 
 No themes use this layer
 
@@ -284,30 +204,20 @@ Elements must match **all** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/state#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/state/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [state](https://wiki.openstreetmap.org/wiki/Key:state) | [string](../SpecialInputElements.md#string) | [proposed](https://wiki.openstreetmap.org/wiki/Tag:state%3Dproposed) [proposed](https://wiki.openstreetmap.org/wiki/Tag:state%3Dproposed) [proposed](https://wiki.openstreetmap.org/wiki/Tag:state%3Dproposed) [temporary](https://wiki.openstreetmap.org/wiki/Tag:state%3Dtemporary) [](https://wiki.openstreetmap.org/wiki/Tag:state%3D) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/website#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/website/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [website](https://wiki.openstreetmap.org/wiki/Key:website) | [url](../SpecialInputElements.md#url) |  |
 
-
-
-
 ### cycle_highways-name
 
 The question is `What is the name of this cycle highway?`
 *The name is <b>{name}</b>* is shown if `name` is set
-
-
-
 
 ### cycle_highways-ref
 
 The question is `What is the reference number of this cycle highway?`
 *Referentienummer is <b>{ref}</b>* is shown if `ref` is set
 
-
-
-
 ### cycle_highways-state
 
 The question is `What is the state of this link?`
 *The current state of this link is {state}* is shown if `state` is set
-
 
  -  *This is a proposed route which can be cycled* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:state' target='_blank'>state</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:state%3Dproposed' target='_blank'>proposed</a> & note:state=
  -  *This is a proposed route which has missing links (thus: some parts don't even have a building permit yet)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:state' target='_blank'>state</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:state%3Dproposed' target='_blank'>proposed</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:note:state' target='_blank'>note:state</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:note:state%3Dhas_highway_no' target='_blank'>has_highway_no</a>
@@ -315,27 +225,17 @@ The question is `What is the state of this link?`
  -  *This is a temporary deviation* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:state' target='_blank'>state</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:state%3Dtemporary' target='_blank'>temporary</a>
  -  *This link is operational and signposted* is shown if with state=
 
-
-
-
-
 ### cycle-highway-length
 
 _This tagrendering has no question and is thus read-only_
 *This part is {_length:km}km long*
-
-
-
 
 ### website
 
 The question is `What is the website of {title()}?`
 *<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>* is shown if `website` is set
 
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/icons/website.svg' style='width: 3rem; height: 3rem'> *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>* is shown if with contact:website~.+. _This option cannot be chosen as answer_
-
-
 
 This tagrendering has labels 
 `contact`
@@ -345,65 +245,36 @@ Shows a table with all the tags of the feature
 _This tagrendering has no question and is thus read-only_
 *{all_tags()}*
 
-
-
-
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
-
-
-
 
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
 
-
 This tagrendering has labels 
 `added_by_default`
 
 ## Filters
 
-
-
 | id | question | osmTags |
 -----|-----|----- |
 | name-alt.0 | Name contains 'alt' | name~^(.*alt.*)$ |
-
-
-
-
-
 
 | id | question | osmTags |
 -----|-----|----- |
 | name-wenslijn.0 | Name contains 'wenslijn' | name~^(.*wenslijn.*)$ |
 
-
-
-
-
-
 | id | question | osmTags |
 -----|-----|----- |
 | name-omleiding.0 | Name contains 'omleiding' | name~^(.*omleiding.*)$ |
 
-
-
-
-
-
 | id | question | osmTags |
 -----|-----|----- |
 | ref-alt.0 | Reference contains 'alt' | ref~^(.*aAlt.*)$ |
-
-
-
-
-
 
 | id | question | osmTags |
 -----|-----|----- |
@@ -412,11 +283,6 @@ This tagrendering has labels
 | missing_link.2 | Has links which are under construction (note:state=has_highway_under_construction) | note:state=has_highway_under_construction |
 | missing_link.3 | Has links which are proposed (note:state=has_highway_proposed) | note:state=has_highway_proposed |
 
-
-
-
-
-
 | id | question | osmTags |
 -----|-----|----- |
 | proposed.0 | *No filter* (default) |  |
@@ -424,7 +290,6 @@ This tagrendering has labels
 | proposed.2 | state=temporary | state=temporary |
 | proposed.3 | state unset | state= |
 | proposed.4 | Other state | state~.+ & state!=proposed & state!=temporary |
-
 
 
 

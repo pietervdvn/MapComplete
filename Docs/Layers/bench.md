@@ -2,19 +2,9 @@
 
 # bench
 
-
-
-
 A bench is a wooden, metal, stone, … surface where a human can sit. This layers visualises them and asks a few questions about them.
 
-
-
-
-
-
  - This layer is shown at zoomlevel **14** and higher
-
-
 
 ## Table of contents
 
@@ -32,6 +22,11 @@ A bench is a wooden, metal, stone, … surface where a human can sit. This layer
   - [bench-inscription](#bench-inscription)
   - [bench-artwork](#bench-artwork)
   - [bench-memorial](#bench-memorial)
+  - [artwork-artwork_type](#artwork-artwork_type)
+  - [artwork-artist-wikidata](#artwork-artist-wikidata)
+  - [artwork-artist_name](#artwork-artist_name)
+  - [artwork-website](#artwork-website)
+  - [artwork_subject](#artwork_subject)
   - [leftover-questions](#leftover-questions)
   - [move-button](#move-button)
   - [delete-button](#delete-button)
@@ -39,8 +34,6 @@ A bench is a wooden, metal, stone, … surface where a human can sit. This layer
 4. [Filters](#filters)
 
 ## Themes using this layer
-
-
 
  - [artwork](https://mapcomplete.org/artwork)
  - [benches](https://mapcomplete.org/benches)
@@ -50,8 +43,6 @@ A bench is a wooden, metal, stone, … surface where a human can sit. This layer
  - [playgrounds](https://mapcomplete.org/playgrounds)
  - [stations](https://mapcomplete.org/stations)
  - [toerisme_vlaanderen](https://mapcomplete.org/toerisme_vlaanderen)
-
-
 
 ## Basic tags for this layer
 
@@ -74,29 +65,24 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/survey:date#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/survey%3Adate/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [survey:date](https://wiki.openstreetmap.org/wiki/Key:survey:date) | [date](../SpecialInputElements.md#date) | [](https://wiki.openstreetmap.org/wiki/Tag:survey:date%3D) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/inscription#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/inscription/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [inscription](https://wiki.openstreetmap.org/wiki/Key:inscription) | [text](../SpecialInputElements.md#text) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/historic#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/historic/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [historic](https://wiki.openstreetmap.org/wiki/Key:historic) | Multiple choice | [memorial](https://wiki.openstreetmap.org/wiki/Tag:historic%3Dmemorial) [](https://wiki.openstreetmap.org/wiki/Tag:historic%3D) |
-
-
-
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/artwork_type#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/artwork_type/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [artwork_type](https://wiki.openstreetmap.org/wiki/Key:artwork_type) | [string](../SpecialInputElements.md#string) | [architecture](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Darchitecture) [mural](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dmural) [painting](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dpainting) [sculpture](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dsculpture) [statue](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dstatue) [bust](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dbust) [stone](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dstone) [installation](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dinstallation) [graffiti](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dgraffiti) [relief](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Drelief) [azulejo](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dazulejo) [tilework](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dtilework) [woodcarving](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dwoodcarving) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/artist:wikidata#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/artist%3Awikidata/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [artist:wikidata](https://wiki.openstreetmap.org/wiki/Key:artist:wikidata) | [wikidata](../SpecialInputElements.md#wikidata) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/artist_name#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/artist_name/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [artist_name](https://wiki.openstreetmap.org/wiki/Key:artist_name) | [string](../SpecialInputElements.md#string) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/website#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/website/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [website](https://wiki.openstreetmap.org/wiki/Key:website) | [url](../SpecialInputElements.md#url) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/subject:wikidata#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/subject%3Awikidata/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [subject:wikidata](https://wiki.openstreetmap.org/wiki/Key:subject:wikidata) | [wikidata](../SpecialInputElements.md#wikidata) |  |
 
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
 
-
-
-
 ### bench-backrest
 
 The question is `Does this bench have a backrest?`
 
-
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/bench/two_sided.svg' style='width: 3rem; height: 3rem'> *This bench is two-sided and shares the backrest* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:backrest' target='_blank'>backrest</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:backrest%3Dyes' target='_blank'>yes</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:two_sided' target='_blank'>two_sided</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:two_sided%3Dyes' target='_blank'>yes</a>
  -  *This bench does have a backrest* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:backrest' target='_blank'>backrest</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:backrest%3Dyes' target='_blank'>yes</a>
  -  *This bench does <b>not</b> have a backrest* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:backrest' target='_blank'>backrest</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:backrest%3Dno' target='_blank'>no</a>
-
-
 
 This tagrendering has labels 
 `bench-questions`
@@ -105,12 +91,8 @@ This tagrendering has labels
 
 The question is `Does this bench have one or more armrests?`
 
-
-
  -  *This bench does have one or more armrests* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:armrest' target='_blank'>armrest</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:armrest%3Dyes' target='_blank'>yes</a>
  -  *This bench does <b>not</b> have any armrests* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:armrest' target='_blank'>armrest</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:armrest%3Dno' target='_blank'>no</a>
-
-
 
 This tagrendering has labels 
 `bench-questions`
@@ -120,10 +102,7 @@ This tagrendering has labels
 The question is `How many seats does this bench have?`
 *This bench has {seats} seats* is shown if `seats` is set
 
-
  -  *This bench does not have separated seats* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:seats:separated' target='_blank'>seats:separated</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:seats:separated%3Dno' target='_blank'>no</a>
-
-
 
 This tagrendering has labels 
 `bench-questions`
@@ -133,15 +112,12 @@ This tagrendering has labels
 The question is `What is the bench (seating) made from?`
 *Material: {material}* is shown if `material` is set
 
-
  -  *The seating is made from wood* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:material' target='_blank'>material</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:material%3Dwood' target='_blank'>wood</a>
  -  *The seating is made from metal* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:material' target='_blank'>material</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:material%3Dmetal' target='_blank'>metal</a>
  -  *The seating is made from stone* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:material' target='_blank'>material</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:material%3Dstone' target='_blank'>stone</a>
  -  *The seating is made from concrete* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:material' target='_blank'>material</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:material%3Dconcrete' target='_blank'>concrete</a>
  -  *The seating is made from plastic* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:material' target='_blank'>material</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:material%3Dplastic' target='_blank'>plastic</a>
  -  *The seating is made from steel* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:material' target='_blank'>material</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:material%3Dsteel' target='_blank'>steel</a>
-
-
 
 This tagrendering has labels 
 `bench-questions`
@@ -151,7 +127,6 @@ This tagrendering has labels
 The question is `In which direction are you looking when sitting on the bench?`
 *When sitting on the bench, one looks towards {direction}°.* is shown if `direction` is set
 
-
 This tagrendering has labels 
 `bench-questions`
 
@@ -159,7 +134,6 @@ This tagrendering has labels
 
 The question is `Which colour does this bench have?`
 *Colour: {colour}* is shown if `colour` is set
-
 
  -  *Colour: brown* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dbrown' target='_blank'>brown</a>
  -  *Colour: green* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dgreen' target='_blank'>green</a>
@@ -170,8 +144,6 @@ The question is `Which colour does this bench have?`
  -  *Colour: blue* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dblue' target='_blank'>blue</a>
  -  *Colour: yellow* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dyellow' target='_blank'>yellow</a>
 
-
-
 This tagrendering has labels 
 `bench-questions`
 
@@ -180,10 +152,7 @@ This tagrendering has labels
 The question is `When was this bench last surveyed?`
 *This bench was last surveyed on {survey:date}* is shown if `survey:date` is set
 
-
  -  *Surveyed today!* is shown if with survey:date=
-
-
 
 This tagrendering has labels 
 `bench-questions`
@@ -193,11 +162,8 @@ This tagrendering has labels
 The question is `Does this bench have an inscription?`
 *This bench has the following inscription:<br/><p><i>{inscription}</i></p>* is shown if `inscription` is set
 
-
  -  *This bench does not have an inscription* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:not:inscription' target='_blank'>not:inscription</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:not:inscription%3Dyes' target='_blank'>yes</a>
  -  *This bench <span class='subtle'>probably</span> does not not have an inscription* is shown if with inscription=. _This option cannot be chosen as answer_
-
-
 
 This tagrendering has labels 
 `bench-questions`
@@ -206,75 +172,108 @@ This tagrendering has labels
 
 The question is `Does this bench have an artistic element?`
 
-
-
  -  *This bench has an integrated artwork* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:tourism' target='_blank'>tourism</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dartwork' target='_blank'>artwork</a>
  -  *This bench does not have an integrated artwork* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:not:tourism:artwork' target='_blank'>not:tourism:artwork</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:not:tourism:artwork%3Dyes' target='_blank'>yes</a>
  -  *This bench <span class="subtle">probably</span> doesn't have an integrated artwork* is shown if with tourism=. _This option cannot be chosen as answer_
-
-
-
-
 
 ### bench-memorial
 
 The question is `Does this bench act as memorial for someone or something?`
 
-
-
  -  *This bench is a memorial for someone or something* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:historic' target='_blank'>historic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:historic%3Dmemorial' target='_blank'>memorial</a>
  -  *This bench is a <b>not</b> a memorial for someone or something* is shown if with historic= & <a href='https://wiki.openstreetmap.org/wiki/Key:not:historic' target='_blank'>not:historic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:not:historic%3Dmemorial' target='_blank'>memorial</a>
-
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:historic' target='_blank'>historic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:historic%3Dmemorial' target='_blank'>memorial</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:memorial' target='_blank'>memorial</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dbench' target='_blank'>bench</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:tourism' target='_blank'>tourism</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dartwork' target='_blank'>artwork</a> | inscription~.+
 This tagrendering has labels 
 `bench-questions`
+
+### artwork-artwork_type
+
+The question is `What is the type of this artwork?`
+*This is a {artwork_type}* is shown if `artwork_type` is set
+
+ -  *Architecture* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Darchitecture' target='_blank'>architecture</a>
+ -  *Mural* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dmural' target='_blank'>mural</a>
+ -  *Painting* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dpainting' target='_blank'>painting</a>
+ -  *Sculpture* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dsculpture' target='_blank'>sculpture</a>
+ -  *Statue* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dstatue' target='_blank'>statue</a>
+ -  *Bust* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dbust' target='_blank'>bust</a>
+ -  *Stone* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dstone' target='_blank'>stone</a>
+ -  *Installation* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dinstallation' target='_blank'>installation</a>
+ -  *Graffiti* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dgraffiti' target='_blank'>graffiti</a>
+ -  *Relief* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Drelief' target='_blank'>relief</a>
+ -  *Azulejo (Spanish decorative tilework)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dazulejo' target='_blank'>azulejo</a>
+ -  *Tilework* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dtilework' target='_blank'>tilework</a>
+ -  *Woodcarving* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dwoodcarving' target='_blank'>woodcarving</a>
+
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:tourism' target='_blank'>tourism</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dartwork' target='_blank'>artwork</a>
+This tagrendering has labels 
+`artwork-question`
+
+### artwork-artist-wikidata
+
+The question is `Who made this artwork?`
+*This artwork was made by {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}* is shown if `artist:wikidata` is set
+
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:tourism' target='_blank'>tourism</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dartwork' target='_blank'>artwork</a>
+This tagrendering has labels 
+`artwork-question`
+
+### artwork-artist_name
+
+The question is `Which artist created this?`
+*Created by {artist_name}* is shown if `artist_name` is set
+
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:tourism' target='_blank'>tourism</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dartwork' target='_blank'>artwork</a>
+This tagrendering has labels 
+`artwork-question`
+
+### artwork-website
+
+The question is `Is there a website with more information about this artwork?`
+*{link(More information on this website,&LBRACEwebsite&RBRACE,,,,)}* is shown if `website` is set
+
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:tourism' target='_blank'>tourism</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dartwork' target='_blank'>artwork</a>
+This tagrendering has labels 
+`artwork-question`
+
+### artwork_subject
+
+The question is `What does this artwork depict?`
+*This artwork depicts {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}* is shown if `subject:wikidata` is set
+
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:tourism' target='_blank'>tourism</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dartwork' target='_blank'>artwork</a>
+This tagrendering has labels 
+`artwork-question`
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### move-button
 
 _This tagrendering has no question and is thus read-only_
 *{move_button()}*
-
-
-
 
 ### delete-button
 
 _This tagrendering has no question and is thus read-only_
 *{delete_button()}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`
 
 ## Filters
 
-
-
 | id | question | osmTags |
 -----|-----|----- |
 | bench_is_memorial.0 | is a memorial | historic=memorial | memorial=bench |
-
-
-
-
-
 
 | id | question | osmTags |
 -----|-----|----- |
@@ -282,17 +281,11 @@ This tagrendering has labels
 | has_backrest.1 | Has a backrest | backrest=yes |
 | has_backrest.2 | Has no backrest | backrest=no |
 
-
-
-
-
-
 | id | question | osmTags |
 -----|-----|----- |
 | has_image.0 | *With and without images* (default) |  |
 | has_image.1 | Has at least one image | image~.+ | image:0~.+ | image:1~.+ | image:2~.+ | image:3~.+ | mapillary~.+ |
 | has_image.2 | Probably does not have an image | image= & image:0= & image:1= & image:2= & image:3= & mapillary= |
-
 
 
 

@@ -7,6 +7,14 @@
   import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
   import { twJoin } from "tailwind-merge"
   import Marker from "../../Map/Marker.svelte"
+  import ToSvelte from "../../Base/ToSvelte.svelte"
+  import { And } from "../../../Logic/Tags/And"
+  import { TagUtils } from "../../../Logic/Tags/TagUtils"
+  import BaseUIElement from "../../BaseUIElement"
+  import type { Mapping } from "../../../Models/ThemeConfig/TagRenderingConfig"
+  import SvelteUIElement from "../../Base/SvelteUIElement"
+  import Icon from "../../Map/Icon.svelte"
+  import { TagsFilter } from "../../../Logic/Tags/TagsFilter"
 
   export let selectedElement: Feature
   export let tags: UIEventSource<Record<string, string>>
@@ -31,20 +39,44 @@
       | "large-height"
       | string
   }
+
+  const emojiHeights = {
+    small: "2rem",
+    medium: "3rem",
+    large: "5rem",
+  }
+
+  function getAutoIcon(mapping: { if?: TagsFilter }): BaseUIElement {
+    for (const preset of layer.presets) {
+      if (!new And(preset.tags).shadows(mapping.if)) {
+        continue
+      }
+
+      return layer.defaultIcon(TagUtils.asProperties(preset.tags))
+    }
+    return undefined
+  }
 </script>
 
 {#if mapping.icon !== undefined && !noIcons}
   <div class="inline-flex items-center">
-    <Marker
-      icons={mapping.icon}
-      size={twJoin(
-        `mapping-icon-${mapping.iconClass ?? "small"}-height mapping-icon-${
-          mapping.iconClass ?? "small"
-        }-width`,
-        "shrink-0"
-      )}
-      clss={`mapping-icon-${mapping.iconClass ?? "small"}`}
-    />
+    {#if mapping.icon === "auto"}
+      <div class="mr-2 h-8 w-8 shrink-0">
+        <ToSvelte construct={() => getAutoIcon(mapping)} />
+      </div>
+    {:else}
+      <Marker
+        icons={mapping.icon}
+        size={twJoin(
+          "shrink-0",
+          `mapping-icon-${mapping.iconClass ?? "small"}-height mapping-icon-${
+            mapping.iconClass ?? "small"
+          }-width`
+        )}
+        emojiHeight={emojiHeights[mapping.iconClass] ?? "2rem"}
+        clss={`mapping-icon-${mapping.iconClass ?? "small"}`}
+      />
+    {/if}
     <SpecialTranslation t={mapping.then} {tags} {state} {layer} feature={selectedElement} {clss} />
   </div>
 {:else if mapping.then !== undefined}

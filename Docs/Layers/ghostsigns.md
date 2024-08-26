@@ -2,20 +2,10 @@
 
 # ghostsigns
 
-
-
-
 Layer showing disused signs on buildings
-
-
-
-
-
 
  - This layer is shown at zoomlevel **10** and higher
  - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  preset `a ghost sign` snaps to this layer (ghostsigns.presets[0])
-
-
 
 ## Table of contents
 
@@ -32,11 +22,7 @@ Layer showing disused signs on buildings
 
 ## Themes using this layer
 
-
-
  - [ghostsigns](https://mapcomplete.org/ghostsigns)
-
-
 
 ## Basic tags for this layer
 
@@ -57,29 +43,17 @@ Elements must match **all** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/inscription#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/inscription/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [inscription](https://wiki.openstreetmap.org/wiki/Key:inscription) | [string](../SpecialInputElements.md#string) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/brand#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/brand/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [brand](https://wiki.openstreetmap.org/wiki/Key:brand) | [string](../SpecialInputElements.md#string) |  |
 
-
-
-
 ### historic
 
 The question is `Is this a ghost sign?`
 
-
-
  -  *This is a ghost sign* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:historic' target='_blank'>historic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:historic%3Dadvertising' target='_blank'>advertising</a>
  -  *This is not a ghost sign, answering this will hide the sign from the map* is shown if with historic=
-
-
-
-
 
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
-
-
-
 
 ### name
 
@@ -88,36 +62,25 @@ _This tagrendering has no question and is thus read-only_
 
 This tagrendering is only visible in the popup if the following condition is met: name~.+
 
-
 ### inscription
 
 The question is `What is the text on the sign?`
 *The text on the sign is: {inscription}* is shown if `inscription` is set
-
-
-
 
 ### brand
 
 The question is `For what business was this sign made?`
 *This sign was made for: {brand}* is shown if `brand` is set
 
-
-
-
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

@@ -2,19 +2,9 @@
 
 # visitor_information_centre
 
-
-
-
 A visitor center offers information about a specific attraction or place of interest where it is located.
 
-
-
-
-
-
  - This layer is shown at zoomlevel **12** and higher
-
-
 
 No themes use this layer
 
@@ -36,21 +26,15 @@ Elements must match **any** of the following expressions:
 
 ## Supported attributes
 
-
-
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

@@ -8,14 +8,11 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [cycleways_and_roads](../Layers/cycleways_and_roads.md)
  - [barrier](../Layers/barrier.md)
  - [crossings](../Layers/crossings.md)
 
-
 Available languages:
-
 
  - en
  - nl
@@ -32,7 +29,6 @@ Available languages:
  - pa_PK
  - cs
  - pl
-
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

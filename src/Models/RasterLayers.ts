@@ -5,7 +5,7 @@ import * as bingJson from "../assets/bing.json"
 import { BBox } from "../Logic/BBox"
 import { Store, Stores, UIEventSource } from "../Logic/UIEventSource"
 import { GeoOperations } from "../Logic/GeoOperations"
-import { RasterLayerProperties } from "./RasterLayerProperties"
+import { EliCategory, RasterLayerProperties } from "./RasterLayerProperties"
 import { Utils } from "../Utils"
 
 export type EditorLayerIndex = (Feature<Polygon, EditorLayerIndexProperties> & RasterLayerPolygon)[]
@@ -28,7 +28,7 @@ export class AvailableRasterLayers {
         return this._editorLayerIndex
     }
 
-    public static globalLayers: RasterLayerPolygon[] = globallayers.layers
+    public static globalLayers: ReadonlyArray<RasterLayerPolygon> = globallayers.layers
         .filter(
             (properties) =>
                 properties.id !== "osm.carto" && properties.id !== "Bing" /*Added separately*/
@@ -38,7 +38,7 @@ export class AvailableRasterLayers {
                 <RasterLayerPolygon>{
                     type: "Feature",
                     properties,
-                    geometry: BBox.global.asGeometry(),
+                    geometry: BBox.global.asGeometry()
                 }
         )
     public static bing = <RasterLayerPolygon>bingJson
@@ -48,18 +48,18 @@ export class AvailableRasterLayers {
         url: "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
         attribution: {
             text: "OpenStreetMap",
-            url: "https://openStreetMap.org/copyright",
+            url: "https://openStreetMap.org/copyright"
         },
         best: true,
         max_zoom: 19,
         min_zoom: 0,
-        category: "osmbasedmap",
+        category: "osmbasedmap"
     }
 
     public static readonly osmCarto: RasterLayerPolygon = {
         type: "Feature",
         properties: AvailableRasterLayers.osmCartoProperties,
-        geometry: BBox.global.asGeometry(),
+        geometry: BBox.global.asGeometry()
     }
 
     /**
@@ -140,28 +140,27 @@ export class RasterLayerUtils {
      * @param available
      * @param preferredCategory
      * @param ignoreLayer
+     * @param skipLayers Skip the first N layers
      */
     public static SelectBestLayerAccordingTo(
         available: RasterLayerPolygon[],
         preferredCategory: string,
-        ignoreLayer?: RasterLayerPolygon
+        ignoreLayer?: RasterLayerPolygon,
+        skipLayers: number = 0
     ): RasterLayerPolygon {
-        let secondBest: RasterLayerPolygon = undefined
-        for (const rasterLayer of available) {
-            if (rasterLayer === ignoreLayer) {
-                continue
-            }
-            const p = rasterLayer.properties
-            if (p.category === preferredCategory) {
-                if (p.best) {
-                    return rasterLayer
-                }
-                if (!secondBest) {
-                    secondBest = rasterLayer
-                }
-            }
+        const inCategory = available.filter((l) => l.properties.category === preferredCategory)
+        const best: RasterLayerPolygon[] = inCategory.filter((l) => l.properties.best)
+        const others: RasterLayerPolygon[] = inCategory.filter((l) => !l.properties.best)
+        let all = best.concat(others)
+        console.log(
+            "Selected layers are:",
+            all.map((l) => l.properties.id)
+        )
+        if (others.length > skipLayers) {
+            all = all.slice(skipLayers)
         }
-        return secondBest
+
+        return all.find((l) => l !== ignoreLayer)
     }
 }
 
@@ -193,19 +192,12 @@ export interface EditorLayerIndexProperties extends RasterLayerProperties {
     /**
      * A rough categorisation of different types of layers. See https://github.com/osmlab/editor-layer-index/blob/gh-pages/CONTRIBUTING.md#categories for a description of the individual categories.
      */
-    readonly category?:
-        | "photo"
-        | "map"
-        | "historicmap"
-        | "osmbasedmap"
-        | "historicphoto"
-        | "qa"
-        | "elevation"
-        | "other"
+    readonly category?: EliCategory
+
     /**
      * A URL template for imagery tiles
      */
-    readonly url: string
+    readonly    url: string
     readonly min_zoom?: number
     readonly max_zoom?: number
     /**

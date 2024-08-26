@@ -1,5 +1,61 @@
 {
   "id": "cycle_highways",
+  "name": {
+    "en": "cycle highways",
+    "de": "Radschnellwege",
+    "ca": "vies ciclistes",
+    "fr": "Aménagements cyclables",
+    "nl": "fietssnelwegen",
+    "es": "autovías ciclistas",
+    "nb_NO": "sykkelmotorveier",
+    "da": "cykelmotorveje",
+    "pa_PK": "سائیکل‌وے",
+    "cs": "cyklodálnice",
+    "pl": "ścieżki rowerowe",
+    "it": "strade per biciclette",
+    "zh_Hant": "單車高速公路"
+  },
+  "source": {
+    "osmTags": "cycle_network=BE-VLG:cycle_highway"
+  },
+  "isCounted": false,
+  "minzoom": 6,
+  "title": {
+    "render": {
+      "en": "cycle highway",
+      "de": "Radschnellweg",
+      "ca": "via ciclista",
+      "fr": "Aménagement cyclable",
+      "nl": "fietssnelweg",
+      "es": "autovía ciclista",
+      "nb_NO": "sykkelmotorvei",
+      "da": "cykelmotorvej",
+      "pa_PK": "سائیکل‌وے",
+      "cs": "cyklodálnice",
+      "pl": "ścieżka rowerowa",
+      "it": "strada per bicilette",
+      "zh_Hant": "單車高速公路"
+    }
+  },
+  "pointRendering": null,
+  "lineRendering": [
+    {
+      "color": {
+        "render": "#ff7392",
+        "mappings": [
+          {
+            "if": "state=",
+            "then": "#00acfc"
+          },
+          {
+            "if": "state=temporary",
+            "then": "#00acfc"
+          }
+        ]
+      },
+      "width": "4"
+    }
+  ],
   "tagRenderings": [
     {
       "render": "The name is <b>{name}</b>",
@@ -69,42 +125,6 @@
     "website",
     "all_tags"
   ],
-  "name": {
-    "en": "cycle highways",
-    "de": "Radschnellwege",
-    "ca": "vies ciclistes",
-    "fr": "Aménagements cyclables",
-    "nl": "fietssnelwegen",
-    "es": "autovías ciclistas",
-    "nb_NO": "sykkelmotorveier",
-    "da": "cykelmotorveje",
-    "pa_PK": "سائیکل‌وے",
-    "cs": "cyklodálnice",
-    "pl": "ścieżki rowerowe",
-    "it": "strade per biciclette",
-    "zh_Hant": "單車高速公路"
-  },
-  "source": {
-    "osmTags": "cycle_network=BE-VLG:cycle_highway"
-  },
-  "minzoom": 6,
-  "title": {
-    "render": {
-      "en": "cycle highway",
-      "de": "Radschnellweg",
-      "ca": "via ciclista",
-      "fr": "Aménagement cyclable",
-      "nl": "fietssnelweg",
-      "es": "autovía ciclista",
-      "nb_NO": "sykkelmotorvei",
-      "da": "cykelmotorvej",
-      "pa_PK": "سائیکل‌وے",
-      "cs": "cyklodálnice",
-      "pl": "ścieżka rowerowa",
-      "it": "strada per bicilette",
-      "zh_Hant": "單車高速公路"
-    }
-  },
   "filter": [
     {
       "id": "name-alt",
@@ -191,26 +211,6 @@
           }
         }
       ]
-    }
-  ],
-  "pointRendering": null,
-  "isCounted": false,
-  "lineRendering": [
-    {
-      "color": {
-        "render": "#ff7392",
-        "mappings": [
-          {
-            "if": "state=",
-            "then": "#00acfc"
-          },
-          {
-            "if": "state=temporary",
-            "then": "#00acfc"
-          }
-        ]
-      },
-      "width": "4"
     }
   ]
 }

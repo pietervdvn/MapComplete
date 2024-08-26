@@ -8,15 +8,12 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [shops](../Layers/shops.md)
  - [pharmacy](../Layers/pharmacy.md)
  - [ice_cream](../Layers/ice_cream.md)
  - [trolley_bay](../Layers/trolley_bay.md)
 
-
 Available languages:
-
 
  - en
  - fr
@@ -34,7 +31,6 @@ Available languages:
  - cs
  - eu
  - pl
-
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

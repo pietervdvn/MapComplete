@@ -2,19 +2,9 @@
 
 # trail
 
-
-
-
 Waymarked trails
 
-
-
-
-
-
  - This layer is shown at zoomlevel **12** and higher
-
-
 
 No themes use this layer
 
@@ -55,100 +45,62 @@ Elements must match **any** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/wheelchair#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/wheelchair/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [wheelchair](https://wiki.openstreetmap.org/wiki/Key:wheelchair) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/pushchair#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/pushchair/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [pushchair](https://wiki.openstreetmap.org/wiki/Key:pushchair) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:pushchair%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:pushchair%3Dno) |
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
-
-
-
 
 ### trail-length
 
 _This tagrendering has no question and is thus read-only_
 *The trail is {_length:km} kilometers long*
 
-
-
-
 ### Name
 
 The question is `What is the name of this trail?`
 *This trail is called <b>{name}</b>* is shown if `name` is set
-
-
-
 
 ### Operator tag
 
 The question is `Who maintains this trail?`
 *This trail is maintained by {operator}* is shown if `operator` is set
 
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/buurtnatuur/Natuurpunt.jpg' style='width: 3rem; height: 3rem'> *This trail is maintained by Natuurpunt* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:operator' target='_blank'>operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator%3DNatuurpunt' target='_blank'>Natuurpunt</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/buurtnatuur/Natuurpunt.jpg' style='width: 3rem; height: 3rem'> *This trail is maintained by {operator}* is shown if with operator~^((n|N)atuurpunt.*)$. _This option cannot be chosen as answer_
-
-
-
-
 
 ### Color
 
 The question is `What is the reference colour of this trail?`
 *The reference colour is {colour}* is shown if `colour` is set
 
-
  -  *Blue trail* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dblue' target='_blank'>blue</a>
  -  *Red trail* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dred' target='_blank'>red</a>
  -  *Green trail* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dgreen' target='_blank'>green</a>
  -  *Yellow trail* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dyellow' target='_blank'>yellow</a>
 
-
-
-
-
 ### Wheelchair access
 
 The question is `Is this trail wheelchair accessible?`
 
-
-
  -  *This trail is wheelchair-accessible* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes' target='_blank'>yes</a>
  -  *This trail is not wheelchair accessible* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno' target='_blank'>no</a>
-
-
-
-
 
 ### pushchair access
 
 The question is `Is this trail accessible with a pushchair?`
 
-
-
  -  *This trail is accessible with a pushchair* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:pushchair' target='_blank'>pushchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:pushchair%3Dyes' target='_blank'>yes</a>
  -  *This trail is not accessible with a pushchair* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:pushchair' target='_blank'>pushchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:pushchair%3Dno' target='_blank'>no</a>
-
-
-
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

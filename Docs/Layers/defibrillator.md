@@ -2,20 +2,10 @@
 
 # defibrillator
 
-
-
-
 A layer showing defibrillators which can be used in case of emergency. This contains public defibrillators, but also defibrillators which might need staff to fetch the actual device
-
-
-
-
-
 
  - This layer is shown at zoomlevel **12** and higher
  - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  preset `a defibrillator mounted on a wall` snaps to this layer (defibrillator.presets[1])
-
-
 
 ## Table of contents
 
@@ -47,12 +37,8 @@ A layer showing defibrillators which can be used in case of emergency. This cont
 
 ## Themes using this layer
 
-
-
  - [aed](https://mapcomplete.org/aed)
  - [personal](https://mapcomplete.org/personal)
-
-
 
 ## Basic tags for this layer
 
@@ -82,35 +68,22 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/survey:date#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/survey%3Adate/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [survey:date](https://wiki.openstreetmap.org/wiki/Key:survey:date) | [date](../SpecialInputElements.md#date) | [](https://wiki.openstreetmap.org/wiki/Tag:survey:date%3D) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/fixme#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/fixme/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [fixme](https://wiki.openstreetmap.org/wiki/Key:fixme) | [text](../SpecialInputElements.md#text) |  |
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
 
-
-
-
 ### defibrillator-indoors
 
 The question is `Is this defibrillator located indoors?`
 
-
-
  -  *This defibrillator is located indoors* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dyes' target='_blank'>yes</a>
  -  *This defibrillator is located outdoors* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dno' target='_blank'>no</a>
-
-
-
-
 
 ### defibrillator-access
 
 The question is `Is this defibrillator freely accessible?`
 *Access is {access}* is shown if `access` is set
-
 
  -  *Publicly accessible* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
  -  *Publicly accessible* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dpublic' target='_blank'>public</a>. _This option cannot be chosen as answer_
@@ -118,53 +91,36 @@ The question is `Is this defibrillator freely accessible?`
  -  *Not accessible to the general public (e.g. only accesible to staff, the owners, …)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate' target='_blank'>private</a>
  -  *Not accessible, possibly only for professional use* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dno' target='_blank'>no</a>
 
-
-
-
-
 ### defibrillator-defibrillator
 
 The question is `Is this a a regular automatic defibrillator or a manual defibrillator for professionals only?`
-
-
 
  -  *There is no info about the type of device* is shown if with defibrillator=. _This option cannot be chosen as answer_
  -  *This is a manual defibrillator for professionals* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:defibrillator' target='_blank'>defibrillator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:defibrillator%3Dmanual' target='_blank'>manual</a>
  -  *This is a normal automatic defibrillator* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:defibrillator' target='_blank'>defibrillator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:defibrillator%3Dautomatic' target='_blank'>automatic</a>
  -  *This is a special type of defibrillator: {defibrillator}* is shown if with defibrillator~.+. _This option cannot be chosen as answer_
 
-
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dno' target='_blank'>no</a>
-
 
 ### defibrillator-level
 
 The question is `On which floor is this defibrillator located?`
 *This defibrillator is on floor {level}* is shown if `level` is set
 
-
  -  *This defibrillator is on the <b>ground floor</b>* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D0' target='_blank'>0</a>
  -  *This defibrillator is on the <b>first floor</b>* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>
 
-
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dyes' target='_blank'>yes</a>
-
 
 ### defibrillator-defibrillator:location
 
 The question is `Please give some explanation on where the defibrillator can be found (in the local language)`
 *<i>Extra information about the location (in the local language):</i><br/>{defibrillator:location}* is shown if `defibrillator:location` is set
 
-
-
-
 ### defibrillator-defibrillator:location:en
 
 The question is `Please give some explanation on where the defibrillator can be found (in English)`
 *<i>Extra information about the location (in English):</i><br/>{defibrillator:location:en}* is shown if `defibrillator:location:en` is set
-
-
-
 
 ### defibrillator-defibrillator:location:fr
 
@@ -173,123 +129,79 @@ The question is `Please give some explanation on where the defibrillator can be 
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:_country' target='_blank'>_country</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_country%3Dbe' target='_blank'>be</a> | defibrillator:location:fr~.+
 
-
 ### wheelchair-access
 
 The question is `Is this place accessible with a wheelchair?`
-
-
 
  -  *This place is specially adapted for wheelchair users* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Ddesignated' target='_blank'>designated</a>
  -  *This place is easily reachable with a wheelchair* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes' target='_blank'>yes</a>
  -  *It is possible to reach this place in a wheelchair, but it is not easy* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dlimited' target='_blank'>limited</a>
  -  *This place is not reachable with a wheelchair* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno' target='_blank'>no</a>
 
-
-
-
-
 ### defibrillator-ref
 
 The question is `What is the official identification number of the device? (if visible on device)`
 *Official identification number of the device: <i>{ref}</i>* is shown if `ref` is set
-
-
-
 
 ### defibrillator-email
 
 The question is `What is the email for questions about this defibrillator?`
 *Email for questions about this defibrillator: <a href='mailto:{email}'>{email}</a>* is shown if `email` is set
 
-
-
-
 ### defibrillator-phone
 
 The question is `What is the phone number for questions about this defibrillator?`
 *Telephone for questions about this defibrillator: <a href='tel:{phone}'>{phone}</a>* is shown if `phone` is set
-
-
-
 
 ### opening_hours_24_7
 
 The question is `At what times is this defibrillator available?`
 *<h3>Opening hours</h3>{opening_hours_table(opening_hours)}* is shown if `opening_hours` is set
 
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/open24_7.svg' style='width: 3rem; height: 3rem'> *24/7 opened (including holidays)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
  -  *Marked as closed for an unspecified time* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>. _This option cannot be chosen as answer_
-
-
-
-
 
 ### defibrillator-description
 
 The question is `Is there any useful information for users that you haven't been able to describe above? (leave blank if no)`
 *Additional information: {description}* is shown if `description` is set
 
-
-
-
 ### defibrillator-survey:date
 
 The question is `When was this defibrillator last surveyed?`
 *This defibrillator was last surveyed on {survey:date}* is shown if `survey:date` is set
 
-
  -  *Checked today!* is shown if with survey:date=
-
-
-
-
 
 ### defibrillator-fixme
 
 The question is `Is there something wrong with how this is mapped, that you weren't able to fix here? (leave a note to OpenStreetMap experts)`
 *Extra information for OpenStreetMap experts: {fixme}* is shown if `fixme` is set
 
-
-
-
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
-
-
-
 
 ### move-button
 
 _This tagrendering has no question and is thus read-only_
 *{move_button()}*
 
-
-
-
 ### delete-button
 
 _This tagrendering has no question and is thus read-only_
 *{delete_button()}*
-
-
-
 
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
 
-
 This tagrendering has labels 
 `added_by_default`
 
 ## Filters
-
-
 
 | id | question | osmTags |
 -----|-----|----- |
@@ -297,15 +209,9 @@ This tagrendering has labels
 | has_image.1 | Has at least one image | image~.+ | image:0~.+ | image:1~.+ | image:2~.+ | image:3~.+ | mapillary~.+ |
 | has_image.2 | Probably does not have an image | image= & image:0= & image:1= & image:2= & image:3= & mapillary= |
 
-
-
-
-
-
 | id | question | osmTags |
 -----|-----|----- |
 | open_now.0 | Open now | _isOpen=yes |
-
 
 
 

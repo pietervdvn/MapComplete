@@ -8,7 +8,6 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [indoors](../Layers/indoors.md)
  - [stairs](../Layers/stairs.md)
  - [pedestrian_path](../Layers/pedestrian_path.md)
@@ -33,9 +32,7 @@ This theme contains the following layers:
  - [departures_board (defined in this theme)](#departures_board)
  - [walls_and_buildings](../Layers/walls_and_buildings.md)
 
-
 Available languages:
-
 
  - en
  - de
@@ -49,7 +46,6 @@ Available languages:
  - pl
  - da
  - it
-
 
 # Table of contents
 
@@ -72,20 +68,10 @@ Available languages:
 These layers can not be reused in different themes.
 # train_station
 
-
-
-
 Layer showing train stations
-
-
-
-
-
 
  - This layer is shown at zoomlevel **8** and higher
  - Elements don't have a title set and cannot be toggled nor will they show up in the dashboard. If you import this layer in your theme, override `title` to make this toggleable.
-
-
 
 No themes use this layer
 
@@ -100,22 +86,11 @@ Elements must match **any** of the following expressions:
 
 ## Supported attributes
 
-
 # departures_board
-
-
-
 
 Displays showing the trains that will leave from this station
 
-
-
-
-
-
  - This layer is shown at zoomlevel **18** and higher
-
-
 
 No themes use this layer
 
@@ -138,31 +113,19 @@ Elements must match **all** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/departures_board#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/departures_board/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [departures_board](https://wiki.openstreetmap.org/wiki/Key:departures_board) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:departures_board%3Dyes) [realtime](https://wiki.openstreetmap.org/wiki/Tag:departures_board%3Drealtime) [timetable](https://wiki.openstreetmap.org/wiki/Tag:departures_board%3Dtimetable) [delay](https://wiki.openstreetmap.org/wiki/Tag:departures_board%3Ddelay) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/level#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/level/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [level](https://wiki.openstreetmap.org/wiki/Key:level) | [float](../SpecialInputElements.md#float) | [0](https://wiki.openstreetmap.org/wiki/Tag:level%3D0) [1](https://wiki.openstreetmap.org/wiki/Tag:level%3D1) [-1](https://wiki.openstreetmap.org/wiki/Tag:level%3D-1) |
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
 
-
-
-
 ### type
 
 The question is `What kind of departures board is this?`
-
-
 
  -  *This is a departures board of an unknown type* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:departures_board' target='_blank'>departures_board</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:departures_board%3Dyes' target='_blank'>yes</a>
  -  *This is an electronic board, showing the next departures in realtime* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:departures_board' target='_blank'>departures_board</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:departures_board%3Drealtime' target='_blank'>realtime</a>
  -  *This is a paper timetable* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:departures_board' target='_blank'>departures_board</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:departures_board%3Dtimetable' target='_blank'>timetable</a>
  -  *There is a sign showing the frequency of the trains* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:departures_board' target='_blank'>departures_board</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:departures_board%3Ddelay' target='_blank'>delay</a>
-
-
-
-
 
 ### repeated
 
@@ -178,14 +141,11 @@ This tagrendering has labels
 The question is `On what level is this feature located?`
 *Located on the {level}th floor* is shown if `level` is set
 
-
  -  *Located underground* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>. _This option cannot be chosen as answer_
  -  *Located on the ground floor* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D0' target='_blank'>0</a>
  -  *Located on the ground floor* is shown if with level=. _This option cannot be chosen as answer_
  -  *Located on the first floor* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>
  -  *Located on the first basement level* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D-1' target='_blank'>-1</a>
-
-
 
 This tagrendering has labels 
 `level`
@@ -195,14 +155,10 @@ This tagrendering has labels
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

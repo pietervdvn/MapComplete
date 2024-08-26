@@ -8,7 +8,6 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [cycleways_and_roads](../Layers/cycleways_and_roads.md)
  - [crossings](../Layers/crossings.md)
  - [kerbs](../Layers/kerbs.md)
@@ -16,9 +15,7 @@ This theme contains the following layers:
  - [elevator](../Layers/elevator.md)
  - [stairs](../Layers/stairs.md)
 
-
 Available languages:
-
 
  - en
  - de
@@ -34,7 +31,6 @@ Available languages:
  - pl
  - da
  - zh_Hans
-
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

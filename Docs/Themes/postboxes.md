@@ -8,15 +8,12 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [postboxes](../Layers/postboxes.md)
  - [postoffices](../Layers/postoffices.md)
  - [parcel_lockers](../Layers/parcel_lockers.md)
  - [shops](../Layers/shops.md)
 
-
 Available languages:
-
 
  - en
  - de
@@ -31,7 +28,6 @@ Available languages:
  - es
  - cs
  - pl
-
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

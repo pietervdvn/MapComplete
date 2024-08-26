@@ -43,6 +43,8 @@
   import Train from "../../assets/svg/Train.svelte"
   import Airport from "../../assets/svg/Airport.svelte"
   import BuildingStorefront from "@babeard/svelte-heroicons/outline/BuildingStorefront"
+  import LockClosed from "@babeard/svelte-heroicons/solid/LockClosed"
+  import Key from "@babeard/svelte-heroicons/solid/Key"
 
   /**
    * Renders a single icon.
@@ -54,7 +56,7 @@
   export let color: string | undefined = undefined
   export let clss: string | undefined = ""
   clss ??= ""
-  export let emojiHeight = 40
+  export let emojiHeight = "40px"
 </script>
 
 {#if icon}
@@ -150,6 +152,10 @@
     <PencilIcon class={clss} {color} />
   {:else if icon === "user_circle"}
     <UserCircleIcon class={clss} {color} />
+  {:else if icon === "lock"}
+    <LockClosed class={clss} {color} />
+  {:else if icon === "key"}
+    <Key class={clss} {color} />
     {:else if icon==="globe_alt"}
     <GlobeAltIcon class={clss} {color} />
   {:else if icon === "building_office_2"}
@@ -163,10 +169,9 @@
   {:else if icon === "building_storefront"}
     <BuildingStorefront {color} class={clss}/>
   {:else if Utils.isEmoji(icon)}
-    <span style={`font-size: ${emojiHeight}px; line-height: ${emojiHeight}px`}>
+    <span style={`font-size: ${emojiHeight}; line-height: ${emojiHeight}`}>
       {icon}
     </span>
-
   {:else}
     <img class={clss ?? "h-full w-full"} src={icon} aria-hidden="true" alt="" />
   {/if}
