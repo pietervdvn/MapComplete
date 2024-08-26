@@ -4979,6 +4979,18 @@
                     },
                     "14": {
                         "then": "Thai dishes are served here"
+                    },
+                    "15": {
+                        "then": "Mexican dishes are served here"
+                    },
+                    "16": {
+                        "then": "Japanese dishes are served here"
+                    },
+                    "17": {
+                        "then": "Chicken based dishes are served here"
+                    },
+                    "18": {
+                        "then": "Seafood dishes are served here"
                     }
                 },
                 "question": "What kind of food is served here?",

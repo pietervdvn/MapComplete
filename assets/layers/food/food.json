@@ -421,7 +421,7 @@
         },
         {
           "if": "cuisine=sushi",
-          "icon": "\uD83C\uDF63",
+          "icon": "🍣",
           "then": {
             "en": "Sushi is served here",
             "nl": "Dit is een sushirestaurant",
@@ -473,7 +473,7 @@
         },
         {
           "if": "cuisine=chinese",
-          "icon":"🇨🇳",
+          "icon": "🇨🇳",
           "then": {
             "en": "Chinese dishes are served here",
             "nl": "Dit is een Chinees restaurant",
@@ -537,7 +537,7 @@
         },
         {
           "if": "cuisine=mexican  ",
-          "icon": "\uD83D\uDC14",
+          "icon": "\uD83C\uDDF2\uD83C\uDDFD",
           "then": {
             "en": "Mexican dishes are served here",
             "nl": "Dit is een mexicaans restaurant"
@@ -553,7 +553,7 @@
         },
         {
           "if": "cuisine=chicken  ",
-          "icon": "\uD83D\uDC14",
+          "icon": "🐔",
           "then": {
             "en": "Chicken based dishes are served here",
             "nl": "Dit is een kiprestaurant"
@@ -561,7 +561,7 @@
         },
         {
           "if": "cuisine=seafood  ",
-          "icon": "\uD83D\uDC1F",
+          "icon": "🐟",
           "then": {
             "en": "Seafood dishes are served here",
             "nl": "Dit is een vis- en zeerestaurant"

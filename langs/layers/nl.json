@@ -4127,6 +4127,18 @@
                     },
                     "14": {
                         "then": "Dit is een Thaïs restaurant"
+                    },
+                    "15": {
+                        "then": "Dit is een mexicaans restaurant"
+                    },
+                    "16": {
+                        "then": "Dit is een japans restaurant"
+                    },
+                    "17": {
+                        "then": "Dit is een kiprestaurant"
+                    },
+                    "18": {
+                        "then": "Dit is een vis- en zeerestaurant"
                     }
                 },
                 "question": "Welk soort gerechten worden hier geserveerd?",
