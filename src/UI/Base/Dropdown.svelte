@@ -7,7 +7,7 @@
     if (!htmlElement) {
       return
     }
-    const v = value.data
+    const v = "" + value.data
     for (let option of htmlElement.getElementsByTagName("option")) {
       if (option.value === v) {
         option.selected = true
