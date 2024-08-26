@@ -3796,22 +3796,6 @@
             }
         },
         "description": "Una tienda",
-        "filter": {
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Solo mostrar tiendas que vendan {search}"
-                    }
-                }
-            },
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "Solo mostrar tiendas con nombre {search}"
-                    }
-                }
-            }
-        },
         "name": "Tienda",
         "presets": {
             "0": {

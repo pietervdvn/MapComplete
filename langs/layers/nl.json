@@ -4664,6 +4664,13 @@
                                 "arialabel": "Bekijk op openstreetmap.org"
                             }
                         }
+                    },
+                    "2": {
+                        "then": {
+                            "special": {
+                                "arialabel": "Bekijk op openstreetmap.org"
+                            }
+                        }
                     }
                 },
                 "render": {
@@ -7120,22 +7127,6 @@
             }
         },
         "description": "Een winkel",
-        "filter": {
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Toon enkel winkels die {search} verkopen"
-                    }
-                }
-            },
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "Toon enkel winkels met naam {search}"
-                    }
-                }
-            }
-        },
         "name": "Winkel",
         "presets": {
             "0": {

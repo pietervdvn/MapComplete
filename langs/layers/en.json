@@ -5673,6 +5673,13 @@
                                 "arialabel": "Open on openstreetmap.org"
                             }
                         }
+                    },
+                    "2": {
+                        "then": {
+                            "special": {
+                                "arialabel": "Open on openstreetmap.org"
+                            }
+                        }
                     }
                 },
                 "render": {
@@ -8809,6 +8816,14 @@
             "render": "School <i>{name}</i>"
         }
     },
+    "search": {
+        "description": "Priviliged layer showing the search results",
+        "tagRenderings": {
+            "intro": {
+                "render": "Search result"
+            }
+        }
+    },
     "selected_element": {
         "description": "Highlights the currently selected element. Override this layer to have different colors"
     },
@@ -8855,21 +8870,7 @@
         },
         "description": "A shop",
         "filter": {
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Only show shops selling {search}"
-                    }
-                }
-            },
             "2": {
-                "options": {
-                    "0": {
-                        "question": "Only show shops with name {search}"
-                    }
-                }
-            },
-            "3": {
                 "options": {
                     "0": {
                         "question": "Only show shops selling second-hand items"

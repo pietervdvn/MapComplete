@@ -1,4 +1,4 @@
-import GeocodingProvider, { GeoCodeResult } from "./GeocodingProvider"
+import GeocodingProvider, { SearchResult } from "./GeocodingProvider"
 import { Utils } from "../../Utils"
 import { ImmutableStore, Store } from "../UIEventSource"
 
@@ -52,9 +52,9 @@ export default class CoordinateSearch implements GeocodingProvider {
      * results.length // => 1
      * results[0] // => {lat: -57.5802905, lon: -12.7202538, display_name: "lon: -12.7202538, lat: -57.5802905",  "category": "coordinate", "source": "coordinate:latlon"}
      */
-    private directSearch(query: string): GeoCodeResult[] {
+    private directSearch(query: string): SearchResult[] {
 
-        const matches = Utils.NoNull(CoordinateSearch.latLonRegexes.map(r => query.match(r))).map(m => <GeoCodeResult>{
+        const matches = Utils.NoNull(CoordinateSearch.latLonRegexes.map(r => query.match(r))).map(m => <SearchResult>{
             lat: Number(m[1]),
             lon: Number(m[2]),
             display_name: "lon: " + m[2] + ", lat: " + m[1],
@@ -64,7 +64,7 @@ export default class CoordinateSearch implements GeocodingProvider {
 
 
         const matchesLonLat = Utils.NoNull(CoordinateSearch.lonLatRegexes.map(r => query.match(r)))
-            .map(m => <GeoCodeResult>{
+            .map(m => <SearchResult>{
                 lat: Number(m[2]),
                 lon: Number(m[1]),
                 display_name: "lon: " + m[1] + ", lat: " + m[2],
@@ -74,11 +74,11 @@ export default class CoordinateSearch implements GeocodingProvider {
         return matches.concat(matchesLonLat)
     }
 
-    suggest(query: string): Store<GeoCodeResult[]> {
+    suggest(query: string): Store<SearchResult[]> {
         return new ImmutableStore(this.directSearch(query))
     }
 
-    async search (query: string): Promise<GeoCodeResult[]> {
+    async search (query: string): Promise<SearchResult[]> {
         return this.directSearch(query)
     }
 

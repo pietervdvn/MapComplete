@@ -1,4 +1,4 @@
-import GeocodingProvider, { GeoCodeResult, GeocodingOptions } from "./GeocodingProvider"
+import GeocodingProvider, { SearchResult, GeocodingOptions } from "./GeocodingProvider"
 import ThemeViewState from "../../Models/ThemeViewState"
 import { Utils } from "../../Utils"
 import { Feature } from "geojson"
@@ -27,7 +27,7 @@ export default class LocalElementSearch implements GeocodingProvider {
 
     }
 
-    async search(query: string, options?: GeocodingOptions): Promise<GeoCodeResult[]> {
+    async search(query: string, options?: GeocodingOptions): Promise<SearchResult[]> {
         return this.searchEntries(query, options, false).data
     }
 
@@ -41,7 +41,6 @@ export default class LocalElementSearch implements GeocodingProvider {
                     props["addr:street"] + props["addr:number"] : undefined])
 
             let levehnsteinD: number
-            console.log("Comparing nearby:", candidateId, props.id)
             if (candidateId === props.id) {
                 levehnsteinD = 0
             } else {
@@ -54,7 +53,7 @@ export default class LocalElementSearch implements GeocodingProvider {
                 }))
             }
             const center = GeoOperations.centerpointCoordinates(feature)
-            if (levehnsteinD <= 2) {
+            if ((levehnsteinD / query.length) <= 0.3) {
 
                 let description = ""
                 if (feature.properties["addr:street"]) {
@@ -76,7 +75,7 @@ export default class LocalElementSearch implements GeocodingProvider {
         return results
     }
 
-    searchEntries(query: string, options?: GeocodingOptions, matchStart?: boolean): Store<GeoCodeResult[]> {
+    searchEntries(query: string, options?: GeocodingOptions, matchStart?: boolean): Store<SearchResult[]> {
         if (query.length < 3) {
             return new ImmutableStore([])
         }
@@ -101,7 +100,7 @@ export default class LocalElementSearch implements GeocodingProvider {
             }
             return results.map(entry => {
                 const [osm_type, osm_id] = entry.feature.properties.id.split("/")
-                return <GeoCodeResult>{
+                return <SearchResult>{
                     lon: entry.center[0],
                     lat: entry.center[1],
                     osm_type,
@@ -118,7 +117,7 @@ export default class LocalElementSearch implements GeocodingProvider {
 
     }
 
-    suggest(query: string, options?: GeocodingOptions): Store<GeoCodeResult[]> {
+    suggest(query: string, options?: GeocodingOptions): Store<SearchResult[]> {
         return this.searchEntries(query, options, true)
     }
 

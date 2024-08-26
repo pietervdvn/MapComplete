@@ -5,9 +5,22 @@ import { Store } from "../UIEventSource"
 import * as search from "../../assets/generated/layers/search.json"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
 import { LayerConfigJson } from "../../Models/ThemeConfig/Json/LayerConfigJson"
-export type GeocodingCategory = "coordinate" | "city" | "house" | "street" | "locality" | "country" | "train_station" | "county" | "airport" | "shop"
+import FilterConfig, { FilterConfigOption } from "../../Models/ThemeConfig/FilterConfig"
+import { MinimalLayoutInformation } from "../../Models/ThemeConfig/LayoutConfig"
 
-export type GeoCodeResult = {
+export type GeocodingCategory =
+    "coordinate"
+    | "city"
+    | "house"
+    | "street"
+    | "locality"
+    | "country"
+    | "train_station"
+    | "county"
+    | "airport"
+    | "shop"
+
+export type GeocodeResult =  {
     /**
      * The name of the feature being displayed
      */
@@ -25,11 +38,16 @@ export type GeoCodeResult = {
      */
     boundingbox?: number[]
     osm_type?: "node" | "way" | "relation"
-    osm_id?: string,
+    osm_id: string,
     category?: GeocodingCategory,
     payload?: object,
     source?: string
 }
+export type FilterPayload = { option: FilterConfigOption, filter: FilterConfig, layer: LayerConfig, index: number }
+export type SearchResult =
+    | { category: "filter", osm_id: string, payload:  FilterPayload }
+    | { category: "theme", osm_id: string, payload: MinimalLayoutInformation }
+    | GeocodeResult
 
 export interface GeocodingOptions {
     bbox?: BBox,
@@ -40,16 +58,16 @@ export interface GeocodingOptions {
 export default interface GeocodingProvider {
 
 
-    search(query: string, options?: GeocodingOptions): Promise<GeoCodeResult[]>
+    search(query: string, options?: GeocodingOptions): Promise<SearchResult[]>
 
     /**
      * @param query
      * @param options
      */
-    suggest?(query: string, options?: GeocodingOptions): Store<GeoCodeResult[]>
+    suggest?(query: string, options?: GeocodingOptions): Store<SearchResult[]>
 }
 
-export type ReverseGeocodingResult = Feature<Geometry,{
+export type ReverseGeocodingResult = Feature<Geometry, {
     osm_id: number,
     osm_type: "node" | "way" | "relation",
     country: string,
@@ -57,25 +75,26 @@ export type ReverseGeocodingResult = Feature<Geometry,{
     countrycode: string,
     type: GeocodingCategory,
     street: string
-} >
+}>
 
 export interface ReverseGeocodingProvider {
     reverseSearch(
         coordinate: { lon: number; lat: number },
         zoom: number,
-        language?: string
-    ): Promise<ReverseGeocodingResult[]> ;
+        language?: string,
+    ): Promise<ReverseGeocodingResult[]>;
 }
 
 export class GeocodingUtils {
 
-    public static searchLayer =  GeocodingUtils.initSearchLayer()
-    private static initSearchLayer():LayerConfig{
-        if(search["id"] === undefined){
+    public static searchLayer = GeocodingUtils.initSearchLayer()
+
+    private static initSearchLayer(): LayerConfig {
+        if (search["id"] === undefined) {
             // We are resetting the layeroverview; trying to parse is useless
             return undefined
         }
-        return new LayerConfig(<LayerConfigJson> search, "search")
+        return new LayerConfig(<LayerConfigJson>search, "search")
     }
 
     public static categoryToZoomLevel: Record<GeocodingCategory, number> = {
@@ -88,7 +107,7 @@ export class GeocodingUtils {
         street: 15,
         train_station: 14,
         airport: 13,
-        shop:16
+        shop: 16,
 
     }
 
@@ -103,7 +122,7 @@ export class GeocodingUtils {
         train_station: "train",
         county: "building_office_2",
         airport: "airport",
-        shop: "building_storefront"
+        shop: "building_storefront",
 
     }
 

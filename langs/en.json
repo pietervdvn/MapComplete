@@ -260,6 +260,7 @@
         "examples": "Examples",
         "fewChangesBefore": "Please, answer a few questions of existing features before adding a new feature.",
         "filterPanel": {
+            "allTypes": "All types",
             "disableAll": "Disable all",
             "enableAll": "Enable all"
         },

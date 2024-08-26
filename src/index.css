@@ -279,12 +279,12 @@ button.as-link {
     padding: 0;
 }
 
-button.unstyled {
+button.unstyled, .button-unstyled button {
     background-color: unset;
     display: inline-flex;
     justify-content: start;
     border: none;
-    box-shadow: none;
+    box-shadow: none !important;
     margin: 0;
     padding: 0;
 }

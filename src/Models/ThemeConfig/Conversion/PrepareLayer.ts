@@ -33,6 +33,7 @@ import LineRenderingConfigJson from "../Json/LineRenderingConfigJson"
 import { ConversionContext } from "./ConversionContext"
 import { ExpandRewrite } from "./ExpandRewrite"
 import { TagUtils } from "../../../Logic/Tags/TagUtils"
+import { Translatable } from "../Json/Translatable"
 
 class ExpandFilter extends DesugaringStep<LayerConfigJson> {
     private static readonly predefinedFilters = ExpandFilter.load_filters()
@@ -40,7 +41,7 @@ class ExpandFilter extends DesugaringStep<LayerConfigJson> {
 
     constructor(state: DesugaringContext) {
         super(
-            "Expands filters: replaces a shorthand by the value found in 'filters.json'. If the string is formatted 'layername.filtername, it will be looked up into that layer instead",
+            "Expands filters: replaces a shorthand by the value found in 'filters.json'. If the string is formatted 'layername.filtername, it will be looked up into that layer instead. If a tagRendering sets 'filter', this filter will also be included",
             ["filter"],
             "ExpandFilter",
         )
@@ -67,6 +68,9 @@ class ExpandFilter extends DesugaringStep<LayerConfigJson> {
         const newFilters: FilterConfigJson[] = []
         const filters = <(FilterConfigJson | string)[]>json.filter
 
+        /**
+         * Checks all tagRendering. If a tagrendering has 'filter' set, add this filter to the layer config
+         */
         for (let i = 0; i < json.tagRenderings?.length; i++) {
             const tagRendering = <TagRenderingConfigJson>json.tagRenderings[i]
             if (!tagRendering?.filter) {
@@ -94,6 +98,9 @@ class ExpandFilter extends DesugaringStep<LayerConfigJson> {
             }
         }
 
+        /**
+         * Create filters based on builtin filters
+         */
         for (let i = 0; i < filters.length; i++) {
             const filter = filters[i]
             if (filter === undefined) {
@@ -115,15 +122,16 @@ class ExpandFilter extends DesugaringStep<LayerConfigJson> {
                             "Found a matching tagRendering to base a filter on, but this tagRendering does not contain any mappings",
                         )
                 }
-                const options = matchingTr.mappings.map((mapping) => ({
+                const options = (<QuestionableTagRenderingConfigJson> matchingTr).mappings.map((mapping) => ({
                     question: mapping.then,
                     osmTags: mapping.if,
+                    searchTerms: mapping.searchTerms
+
                 }))
                 options.unshift({
-                    question: matchingTr["question"] ?? {
-                        en: "All types",
-                    },
+                    question: matchingTr["question"] ?? Translations.t.general.filterPanel.allTypes,
                     osmTags: undefined,
+                    searchTerms: undefined
                 })
                 newFilters.push({
                     id: filter,

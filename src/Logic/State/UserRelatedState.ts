@@ -207,7 +207,6 @@ export default class UserRelatedState {
         isOfficial: boolean
     }
         | undefined {
-        console.log("GETTING UNOFFICIAL THEME")
         const pref = this.osmConnection.GetLongPreference("unofficial-theme-" + id)
         const str = pref.data
 
@@ -351,10 +350,8 @@ export default class UserRelatedState {
                     const key = k.substring(0, k.length - "length".length)
                     let combined = ""
                     for (let i = 0; i < l; i++) {
-                        console.log("Building preference:",key,i,">>>", newPrefs[key + i], "<<<", newPrefs, )
                         combined += (newPrefs[key + i])
                     }
-                    console.log("Combined",key,">>>",combined)
                     amendedPrefs.data[key.substring(0, key.length - "-combined-".length)] = combined
                 } else {
                     amendedPrefs.data[k] = newPrefs[k]

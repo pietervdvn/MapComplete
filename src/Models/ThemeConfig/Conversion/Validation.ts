@@ -103,6 +103,10 @@ export class DoesImageExist extends DesugaringStep<string> {
             return image
         }
 
+        if(Utils.isEmoji(image)){
+            return image
+        }
+
         if (!this._knownImagePaths.has(image)) {
             if (this.doesPathExist === undefined) {
                 context.err(

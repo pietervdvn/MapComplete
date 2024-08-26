@@ -1,5 +1,5 @@
 import { Store, UIEventSource } from "../UIEventSource"
-import GeocodingProvider, { GeoCodeResult, GeocodingOptions } from "./GeocodingProvider"
+import GeocodingProvider, { SearchResult, GeocodingOptions } from "./GeocodingProvider"
 import { OsmId } from "../../Models/OsmFeature"
 import { SpecialVisualizationState } from "../../UI/SpecialVisualization"
 
@@ -30,7 +30,7 @@ export default class OpenStreetMapIdSearch implements GeocodingProvider {
         return undefined
     }
 
-    async search(query: string, options?: GeocodingOptions): Promise<GeoCodeResult[]> {
+    async search(query: string, options?: GeocodingOptions): Promise<SearchResult[]> {
         const id = OpenStreetMapIdSearch.extractId(query)
         if (!id) {
             return []
@@ -59,7 +59,7 @@ export default class OpenStreetMapIdSearch implements GeocodingProvider {
         }]
     }
 
-    suggest?(query: string, options?: GeocodingOptions): Store<GeoCodeResult[]> {
+    suggest?(query: string, options?: GeocodingOptions): Store<SearchResult[]> {
         return UIEventSource.FromPromise(this.search(query, options))
     }
 

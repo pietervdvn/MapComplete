@@ -1,5 +1,4 @@
 import DOMPurify from "dompurify"
-
 export class Utils {
     /**
      * In the 'deploy'-step, some code needs to be run by ts-node.

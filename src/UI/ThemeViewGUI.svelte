@@ -11,7 +11,7 @@
   import LayerConfig from "../Models/ThemeConfig/LayerConfig"
   import ThemeViewState from "../Models/ThemeViewState"
   import type { MapProperties } from "../Models/MapProperties"
-  import Geosearch from "./BigComponents/Geosearch.svelte"
+  import Geosearch from "./Search/Geosearch.svelte"
   import Translations from "./i18n/Translations"
   import usersettings from "../assets/generated/layers/usersettings.json"
   import {

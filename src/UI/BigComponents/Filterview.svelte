@@ -13,6 +13,7 @@
   import FilterviewWithFields from "./FilterviewWithFields.svelte"
   import Tr from "../Base/Tr.svelte"
   import Translations from "../i18n/Translations"
+  import { Utils } from "../../Utils"
 
   export let filteredLayer: FilteredLayer
   export let highlightedLayer: Store<string | undefined> = new ImmutableStore(undefined)
@@ -28,7 +29,7 @@
     return state.sync(
       (f) => f === 0,
       [],
-      (b) => (b ? 0 : undefined)
+      (b) => (b ? 0 : undefined),
     )
   }
 
@@ -75,6 +76,9 @@
               <Dropdown value={getStateFor(filter)}>
                 {#each filter.options as option, i}
                   <option value={i}>
+                    {#if Utils.isEmoji(option.icon)}
+                      {option.icon}
+                    {/if}
                     <Tr t={option.question} />
                   </option>
                 {/each}

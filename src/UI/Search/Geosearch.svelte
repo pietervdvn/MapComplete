@@ -13,18 +13,16 @@
   import { GeoLocationState } from "../../Logic/State/GeoLocationState"
   import { NominatimGeocoding } from "../../Logic/Geocoding/NominatimGeocoding"
   import { GeocodingUtils } from "../../Logic/Geocoding/GeocodingProvider"
-  import type { GeoCodeResult } from "../../Logic/Geocoding/GeocodingProvider"
+  import type { SearchResult } from "../../Logic/Geocoding/GeocodingProvider"
   import type GeocodingProvider from "../../Logic/Geocoding/GeocodingProvider"
 
   import SearchResults from "./SearchResults.svelte"
-  import MoreScreen from "./MoreScreen"
   import type { MinimalLayoutInformation } from "../../Models/ThemeConfig/LayoutConfig"
   import { focusWithArrows } from "../../Utils/focusWithArrows"
   import ShowDataLayer from "../Map/ShowDataLayer"
   import ThemeViewState from "../../Models/ThemeViewState"
-  import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
   import GeocodingFeatureSource from "../../Logic/Geocoding/GeocodingFeatureSource"
-  import type { LayerConfigJson } from "../../Models/ThemeConfig/Json/LayerConfigJson.js"
+  import MoreScreen from "../BigComponents/MoreScreen"
 
   export let perLayer: ReadonlyMap<string, GeoIndexedStoreForLayer> | undefined = undefined
   export let bounds: UIEventSource<BBox>
@@ -90,14 +88,16 @@
         return
       }
       const poi = result[0]
-      if (poi.payload !== undefined) {
-        // This is a theme
+      if (poi.category === "theme") {
         const theme = <MinimalLayoutInformation>poi.payload
         const url = MoreScreen.createUrlFor(theme, false)
         console.log("Found a theme, going to", url)
         // @ts-ignore
         window.location = url
         return
+      }
+      if(poi.category === "filter"){
+        return  // Should not happen
       }
       if (poi.boundingbox) {
 
@@ -139,13 +139,14 @@
     }
   }
 
-  let suggestions: Store<GeoCodeResult[]> = searchContents.stabilized(250).bindD(search => {
+  let suggestions: Store<SearchResult[]> = searchContents.stabilized(250).bindD(search => {
       if (search.length === 0) {
         return undefined
       }
       return Stores.holdDefined(bounds.bindD(bbox => searcher.suggest(search, { bbox, limit: 15 })))
     }
   )
+  suggestions.addCallbackAndRun(suggestions => console.log(">>> suggestions are", suggestions))
   let geocededFeatures=  new GeocodingFeatureSource(suggestions.stabilized(250))
   state.featureProperties.trackFeatureSource(geocededFeatures)
 

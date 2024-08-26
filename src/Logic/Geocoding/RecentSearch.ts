@@ -1,36 +1,41 @@
 import { Store, UIEventSource } from "../UIEventSource"
 import { Feature } from "geojson"
 import { OsmConnection } from "../Osm/OsmConnection"
-import { GeoCodeResult } from "./GeocodingProvider"
+import { GeocodeResult } from "./GeocodingProvider"
 import { GeoOperations } from "../GeoOperations"
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 
 export class RecentSearch {
 
 
-    private readonly _seenThisSession: UIEventSource<GeoCodeResult[]>
-    public readonly seenThisSession: Store<GeoCodeResult[]>
+    private readonly _seenThisSession: UIEventSource<GeocodeResult[]>
+    public readonly seenThisSession: Store<GeocodeResult[]>
 
     constructor(state: { layout: LayoutConfig, osmConnection: OsmConnection, selectedElement: Store<Feature> }) {
         const prefs = state.osmConnection.preferencesHandler.GetLongPreference("previous-searches")
-        prefs.addCallbackAndRunD(prev => console.trace("Previous searches are:", prev))
         prefs.set(null)
-        this._seenThisSession =  new UIEventSource<GeoCodeResult[]>([])//UIEventSource.asObject<GeoCodeResult[]>(prefs, [])
+        this._seenThisSession = new UIEventSource<GeocodeResult[]>([])//UIEventSource.asObject<GeoCodeResult[]>(prefs, [])
         this.seenThisSession = this._seenThisSession
 
-        prefs.addCallbackAndRunD(prefs => {
-            if(prefs === ""){
+        prefs.addCallbackAndRunD(pref => {
+            if (pref === "") {
                 return
             }
-            const simpleArr = <GeoCodeResult[]> JSON.parse(prefs)
-            if(simpleArr.length > 0){
-                this._seenThisSession.set(simpleArr)
-                return true
+            try {
+
+                const simpleArr = <GeocodeResult[]>JSON.parse(pref)
+                if (simpleArr.length > 0) {
+                    this._seenThisSession.set(simpleArr)
+                    return true
+                }
+            } catch (e) {
+                console.error(e, pref)
+                prefs.setData("")
             }
         })
 
         this.seenThisSession.stabilized(2500).addCallbackAndRunD(seen => {
-            const results=  []
+            const results = []
             for (let i = 0; i < Math.min(3, seen.length); i++) {
                 const gc = seen[i]
                 const simple = {
@@ -39,7 +44,7 @@ export class RecentSearch {
                     display_name: gc.display_name,
                     lat: gc.lat, lon: gc.lon,
                     osm_id: gc.osm_id,
-                    osm_type: gc.osm_type
+                    osm_type: gc.osm_type,
                 }
                 results.push(simple)
             }
@@ -51,25 +56,25 @@ export class RecentSearch {
         state.selectedElement.addCallbackAndRunD(selected => {
 
             const [osm_type, osm_id] = selected.properties.id.split("/")
-            if(!osm_id){
+            if (!osm_id) {
                 return
             }
             console.log("Selected element is", selected)
-            if(["node","way","relation"].indexOf(osm_type) < 0){
+            if (["node", "way", "relation"].indexOf(osm_type) < 0) {
                 return
             }
             const [lon, lat] = GeoOperations.centerpointCoordinates(selected)
-            const entry = <GeoCodeResult>{
+            const entry = <GeocodeResult>{
                 feature: selected,
                 osm_id, osm_type,
-                lon, lat
+                lon, lat,
             }
             this.addSelected(entry)
 
         })
     }
 
-    addSelected(entry: GeoCodeResult) {
+    addSelected(entry: GeocodeResult) {
         const arr = [...(this.seenThisSession.data ?? []).slice(0, 20), entry]
 
         const seenIds = new Set<string>()
@@ -81,7 +86,7 @@ export class RecentSearch {
                 seenIds.add(id)
             }
         }
-        console.log(">>>",arr)
+        console.log(">>>", arr)
         this._seenThisSession.set(arr)
     }
 }

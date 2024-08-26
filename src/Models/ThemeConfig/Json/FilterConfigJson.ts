@@ -1,4 +1,5 @@
 import { TagConfigJson } from "./TagConfigJson"
+import { Translatable } from "./Translatable"
 
 export default interface FilterConfigJson {
     /**
@@ -34,7 +35,9 @@ export default interface FilterConfigJson {
      *     ```
      */
     options: {
-        question: string | any
+        question: Translatable
+        searchTerms?: Record<string, string[]>
+        icon?: string
         osmTags?: TagConfigJson
         default?: boolean
         fields?: {

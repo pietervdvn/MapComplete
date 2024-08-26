@@ -1,10 +1,10 @@
 import Constants from "../../Models/Constants"
 import GeocodingProvider, {
-    GeoCodeResult,
+    GeocodeResult,
     GeocodingCategory,
     GeocodingOptions,
     ReverseGeocodingProvider,
-    ReverseGeocodingResult
+    ReverseGeocodingResult,
 } from "./GeocodingProvider"
 import { Utils } from "../../Utils"
 import { Feature, FeatureCollection } from "geojson"
@@ -18,7 +18,7 @@ export default class PhotonSearch implements GeocodingProvider, ReverseGeocoding
     private static readonly types = {
         "R": "relation",
         "W": "way",
-        "N": "node"
+        "N": "node",
     }
 
 
@@ -54,7 +54,7 @@ export default class PhotonSearch implements GeocodingProvider, ReverseGeocoding
 
     }
 
-    suggest(query: string, options?: GeocodingOptions): Store<GeoCodeResult[]> {
+    suggest(query: string, options?: GeocodingOptions): Store<GeocodeResult[]> {
         return Stores.FromPromise(this.search(query, options))
     }
 
@@ -95,7 +95,7 @@ export default class PhotonSearch implements GeocodingProvider, ReverseGeocoding
 
     private getCategory(entry: Feature) {
         const p = entry.properties
-        if(p.osm_key === "shop"){
+        if (p.osm_key === "shop") {
             return "shop"
         }
         if (p.osm_value === "train_station" || p.osm_key === "railway") {
@@ -107,7 +107,7 @@ export default class PhotonSearch implements GeocodingProvider, ReverseGeocoding
         return p.type
     }
 
-    async search(query: string, options?: GeocodingOptions): Promise<GeoCodeResult[]> {
+    async search(query: string, options?: GeocodingOptions): Promise<GeocodeResult[]> {
         if (query.length < 3) {
             return []
         }
@@ -126,7 +126,7 @@ export default class PhotonSearch implements GeocodingProvider, ReverseGeocoding
                 const [lon0, lat0, lon1, lat1] = f.properties.extent
                 boundingbox = [lat0, lat1, lon0, lon1]
             }
-            return <GeoCodeResult>{
+            return <GeocodeResult>{
                 feature: f,
                 osm_id: f.properties.osm_id,
                 display_name: f.properties.name,
@@ -135,7 +135,7 @@ export default class PhotonSearch implements GeocodingProvider, ReverseGeocoding
                 category: this.getCategory(f),
                 boundingbox,
                 lon, lat,
-                source: this._endpoint
+                source: this._endpoint,
             }
         })
     }

@@ -2,7 +2,7 @@
   import Translations from "../i18n/Translations"
   import Tr from "../Base/Tr.svelte"
   import NextButton from "../Base/NextButton.svelte"
-  import Geosearch from "./Geosearch.svelte"
+  import Geosearch from "../Search/Geosearch.svelte"
   import ThemeViewState from "../../Models/ThemeViewState"
   import { Store, UIEventSource } from "../../Logic/UIEventSource"
   import { SearchIcon } from "@rgossiaux/svelte-heroicons/solid"

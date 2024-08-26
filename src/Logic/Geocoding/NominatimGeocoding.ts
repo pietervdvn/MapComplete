@@ -3,7 +3,7 @@ import { BBox } from "../BBox"
 import Constants from "../../Models/Constants"
 import { FeatureCollection } from "geojson"
 import Locale from "../../UI/i18n/Locale"
-import GeocodingProvider, { GeoCodeResult } from "./GeocodingProvider"
+import GeocodingProvider, { SearchResult } from "./GeocodingProvider"
 
 export class NominatimGeocoding implements GeocodingProvider {
 
@@ -13,7 +13,7 @@ export class NominatimGeocoding implements GeocodingProvider {
         this._host = host
     }
 
-    public search(query: string, options?: { bbox?: BBox; limit?: number }): Promise<GeoCodeResult[]> {
+    public search(query: string, options?: { bbox?: BBox; limit?: number }): Promise<SearchResult[]> {
         const b = options?.bbox ?? BBox.global
         const url = `${
             this._host

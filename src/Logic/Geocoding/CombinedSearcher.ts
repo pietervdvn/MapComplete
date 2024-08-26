@@ -1,4 +1,4 @@
-import GeocodingProvider, { GeoCodeResult, GeocodingOptions } from "./GeocodingProvider"
+import GeocodingProvider, { SearchResult, GeocodingOptions } from "./GeocodingProvider"
 import { Utils } from "../../Utils"
 import { Store, Stores } from "../UIEventSource"
 
@@ -17,12 +17,17 @@ export default class CombinedSearcher implements GeocodingProvider {
      * @param geocoded
      * @private
      */
-    private merge(geocoded: GeoCodeResult[][]): GeoCodeResult[] {
-        const results: GeoCodeResult[] = []
+    private merge(geocoded: SearchResult[][]): SearchResult[] {
+        const results: SearchResult[] = []
         const seenIds = new Set<string>()
         for (const geocodedElement of geocoded) {
             for (const entry of geocodedElement) {
-                const id = entry.osm_type + entry.osm_id
+
+
+                if (entry.osm_id === undefined) {
+                    throw "Invalid search result: a search result always must have an osm_id to be able to merge results from different sources"
+                }
+                const id = (entry["osm_type"] ?? "") + entry.osm_id
                 if (seenIds.has(id)) {
                     continue
                 }
@@ -33,13 +38,14 @@ export default class CombinedSearcher implements GeocodingProvider {
         return results
     }
 
-    async search(query: string, options?: GeocodingOptions): Promise<GeoCodeResult[]> {
+    async search(query: string, options?: GeocodingOptions): Promise<SearchResult[]> {
         const results = (await Promise.all(this._providers.map(pr => pr.search(query, options))))
-        return results.flatMap(x => x)
+        return this.merge(results)
     }
 
-    suggest(query: string, options?: GeocodingOptions): Store<GeoCodeResult[]> {
-        return Stores.concat(this._providersWithSuggest.map(pr => pr.suggest(query, options)))
+    suggest(query: string, options?: GeocodingOptions): Store<SearchResult[]> {
+        return Stores.concat(
+            this._providersWithSuggest.map(pr => pr.suggest(query, options)))
             .map(gcrss => this.merge(gcrss))
 
     }

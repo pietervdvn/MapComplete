@@ -1419,6 +1419,13 @@
                                 "arialabel": "Åbn på openstreetmap.org"
                             }
                         }
+                    },
+                    "2": {
+                        "then": {
+                            "special": {
+                                "arialabel": "Åbn på openstreetmap.org"
+                            }
+                        }
                     }
                 },
                 "render": {

@@ -953,6 +953,11 @@ video {
   margin-right: 1rem;
 }
 
+.my-8 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
 .-my-1\.5 {
   margin-top: -0.375rem;
   margin-bottom: -0.375rem;
@@ -978,11 +983,6 @@ video {
   margin-right: -0.25rem;
 }
 
-.my-8 {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-
 .mx-12 {
   margin-left: 3rem;
   margin-right: 3rem;
@@ -991,10 +991,6 @@ video {
 .mx-16 {
   margin-left: 4rem;
   margin-right: 4rem;
-}
-
-.mb-4 {
-  margin-bottom: 1rem;
 }
 
 .mt-4 {
@@ -1027,6 +1023,10 @@ video {
 
 .mr-1 {
   margin-right: 0.25rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
 }
 
 .ml-1 {
@@ -1440,16 +1440,16 @@ video {
   max-height: 3rem;
 }
 
-.max-h-96 {
-  max-height: 24rem;
-}
-
 .max-h-24 {
   max-height: 6rem;
 }
 
 .max-h-64 {
   max-height: 16rem;
+}
+
+.max-h-96 {
+  max-height: 24rem;
 }
 
 .max-h-full {
@@ -4623,12 +4623,12 @@ button.as-link {
   padding: 0;
 }
 
-button.unstyled {
+button.unstyled, .button-unstyled button {
   background-color: unset;
   display: inline-flex;
   justify-content: start;
   border: none;
-  box-shadow: none;
+  box-shadow: none !important;
   margin: 0;
   padding: 0;
 }
@@ -7234,12 +7234,12 @@ svg.apply-fill path {
     width: 50%;
   }
 
-  .sm\:w-96 {
-    width: 24rem;
-  }
-
   .sm\:w-11 {
     width: 2.75rem;
+  }
+
+  .sm\:w-96 {
+    width: 24rem;
   }
 
   .sm\:w-auto {

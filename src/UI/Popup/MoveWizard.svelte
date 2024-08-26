@@ -12,7 +12,7 @@
   import { GeoOperations } from "../../Logic/GeoOperations"
   import LocationInput from "../InputElement/Helpers/LocationInput.svelte"
   import OpenBackgroundSelectorButton from "../BigComponents/OpenBackgroundSelectorButton.svelte"
-  import Geosearch from "../BigComponents/Geosearch.svelte"
+  import Geosearch from "../Search/Geosearch.svelte"
   import If from "../Base/If.svelte"
   import Constants from "../../Models/Constants"
   import LoginToggle from "../Base/LoginToggle.svelte"

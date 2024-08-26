@@ -76,6 +76,7 @@ import { RecentSearch } from "../Logic/Geocoding/RecentSearch"
 import PhotonSearch from "../Logic/Geocoding/PhotonSearch"
 import ThemeSearch from "../Logic/Geocoding/ThemeSearch"
 import OpenStreetMapIdSearch from "../Logic/Geocoding/OpenStreetMapIdSearch"
+import FilterSearch from "../Logic/Geocoding/FilterSearch"
 
 /**
  *
@@ -385,9 +386,10 @@ export default class ThemeViewState implements SpecialVisualizationState {
 
         this.geosearch = new CombinedSearcher(
             new CoordinateSearch(),
-            new LocalElementSearch(this, 5),
-            new OpenStreetMapIdSearch(this),
-            new PhotonSearch(), // new NominatimGeocoding(),
+            new FilterSearch(this),
+            //new LocalElementSearch(this, 5),
+            //new OpenStreetMapIdSearch(this),
+           // new PhotonSearch(), // new NominatimGeocoding(),
             this.featureSwitches.featureSwitchBackToThemeOverview.data ? new ThemeSearch(this) : undefined
         )
 
