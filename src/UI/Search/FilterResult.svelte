@@ -24,9 +24,8 @@
   <div class="flex flex-col items-start">
 
     <div class="flex items-center gap-x-1">
-      <Icon icon={option.icon ?? option.emoji} clss="w-12 h-12 mr-2" emojiHeight="14px" />
+      <Icon icon={option.icon ?? option.emoji} clss="w-4 h-4" emojiHeight="14px" />
       <Tr cls="whitespace-nowrap" t={option.question} />
     </div>
   </div>
 </button>
-
