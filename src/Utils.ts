@@ -1,4 +1,5 @@
 import DOMPurify from "dompurify"
+
 export class Utils {
     /**
      * In the 'deploy'-step, some code needs to be run by ts-node.
@@ -1771,22 +1772,26 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
 
     }
 
-    static NoNullInplace(layers: any[]): void {
-        for (let i = layers.length - 1; i >= 0; i--) {
-            if (layers[i] === null || layers[i] === undefined) {
-                layers.splice(i, 1)
+    static NoNullInplace<T>(items: T[]): T[] {
+        for (let i = items.length - 1; i >= 0; i--) {
+            if (items[i] === null || items[i] === undefined) {
+                items.splice(i, 1)
             }
         }
+        return items
     }
 
-    private static emojiRegex = /[\p{Extended_Pictographic}🛰️]$/u
+    private static emojiRegex = /[\p{Extended_Pictographic}🛰️]/u
 
     /**
      * Returns 'true' if the given string contains at least one and only emoji characters
      *
      * Utils.isEmoji("⛰\uFE0F") // => true
+     * Utils.isEmoji("🇧🇪") // => true
+     * Utils.isEmoji("🍕") // => true
      */
     public static isEmoji(string: string) {
-        return Utils.emojiRegex.test(string)
+        return Utils.emojiRegex.test(string) ||
+           /[🇦-🇿]{2}/u.test(string) // flags, see https://stackoverflow.com/questions/53360006/detect-with-regex-if-emoji-is-country-flag
     }
 }

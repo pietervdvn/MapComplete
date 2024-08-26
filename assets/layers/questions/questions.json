@@ -569,7 +569,7 @@
         },
         {
           "if": "dog=no",
-          "icon": "\uD83D\uDC15 ⃠",
+          "icon": "./assets/layers/questions/no_dogs.svg",
           "then": {
             "en": "Dogs are <b>not</b> allowed",
             "nl": "honden zijn <b>niet</b> toegelaten",

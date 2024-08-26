@@ -8,14 +8,16 @@
   import MoreScreen from "../BigComponents/MoreScreen"
   import type { GeocodeResult, SearchResult } from "../../Logic/Geocoding/GeocodingProvider"
   import ActiveFilters from "./ActiveFilters.svelte"
+  import Constants from "../../Models/Constants"
+  import type { ActiveFilter } from "../../Logic/State/LayerState"
 
   export let state: SpecialVisualizationState
   export let results: SearchResult[]
   export let searchTerm: Store<string>
   export let isFocused: UIEventSource<boolean>
-  let hasActiveFilters = state.layerState.activeFilters.map(af => af.length > 0)
+  let activeFilters: Store<ActiveFilter[]> = state.layerState.activeFilters.map(fs => fs.filter(f => Constants.priviliged_layers.indexOf(<any>f.layer.id) < 0))
 
-  console.log("Results are", results)
+  let hasActiveFilters = activeFilters.map(afs => afs.length > 0)
 
   let recentlySeen: Store<GeocodeResult[]> = state.recentlySearched.seenThisSession
   let recentThemes = state.userRelatedState.recentlyVisitedThemes.mapD(thms => thms.filter(th => th !== state.layout.id).slice(0, 3))
@@ -24,7 +26,7 @@
 
 <div class="relative w-full h-full collapsable " class:collapsed={!$isFocused && !$hasActiveFilters}>
   <div class="searchbox normal-background">
-    <ActiveFilters {state} />
+    <ActiveFilters activeFilters={$activeFilters} />
     {#if $isFocused}
       {#if $searchTerm.length > 0 && results === undefined}
         <div class="flex justify-center m-4 my-8">
@@ -64,7 +66,7 @@
               </h3>
               {#each $recentThemes as themeId (themeId)}
                 <SearchResultSvelte
-                  entry={{payload: MoreScreen.officialThemesById.get(themeId), display_name: themeId, lat: 0, lon: 0}}
+                  entry={{payload: MoreScreen.officialThemesById.get(themeId), osm_id: themeId, category: "theme"}}
                   {state}
                   on:select />
               {/each}

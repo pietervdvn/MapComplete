@@ -11,10 +11,9 @@
 </script>
 
 {#if entry.category === "theme"}
-  <ThemeResult {entry} />
+  <ThemeResult {entry} on:select  />
 {:else if entry.category === "filter"}
-  <FilterResult {entry} {state} />
+  <FilterResult {entry} {state} on:select />
 {:else}
-
-  <GeocodeResult {entry} {state} />
+  <GeocodeResult {entry} {state} on:select />
 {/if}

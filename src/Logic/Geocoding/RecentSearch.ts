@@ -48,7 +48,6 @@ export class RecentSearch {
                 }
                 results.push(simple)
             }
-            console.log("Setting", results)
             prefs.setData(JSON.stringify(results))
 
         })
@@ -59,7 +58,6 @@ export class RecentSearch {
             if (!osm_id) {
                 return
             }
-            console.log("Selected element is", selected)
             if (["node", "way", "relation"].indexOf(osm_type) < 0) {
                 return
             }
@@ -86,7 +84,6 @@ export class RecentSearch {
                 seenIds.add(id)
             }
         }
-        console.log(">>>", arr)
         this._seenThisSession.set(arr)
     }
 }

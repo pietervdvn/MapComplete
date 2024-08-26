@@ -382,6 +382,17 @@ h2.group {
     background-color: #58cd2722;
 }
 
+.badge {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    border-radius: 999rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border: 1px solid var(--subtle-detail-color-light-contrast);
+    background-color: var(--low-interaction-background);
+}
+
 .alert {
     /* The class to convey important information, e.g. 'invalid', 'something went wrong', 'warning: testmode', ... */
     background-color: var(--alert-color);

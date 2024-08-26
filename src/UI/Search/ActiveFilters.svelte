@@ -1,17 +1,24 @@
 <script lang="ts">
-  import type { SpecialVisualizationState } from "../SpecialVisualization"
-  import { Badge } from "flowbite-svelte"
-  import ActiveFilter from "./ActiveFilter.svelte"
+  import { default as ActiveFilterSvelte } from "./ActiveFilter.svelte"
+  import type { ActiveFilter } from "../../Logic/State/LayerState"
 
-  export let state: SpecialVisualizationState
+  export let activeFilters: ActiveFilter[]
 
-  let activeFilters = state.layerState.activeFilters
-
-
+  function clear() {
+    for (const activeFilter of activeFilters) {
+      activeFilter.control.setData(undefined)
+    }
+  }
 </script>
-<div class="flex flex-wrap gap-y-1 gap-x-1 button-unstyled">
+{#if activeFilters.length > 0}
+  <div class="flex flex-wrap gap-y-1 gap-x-1 button-unstyled">
+    {#each activeFilters as activeFilter (activeFilter)}
+      <ActiveFilterSvelte {activeFilter} />
+    {/each}
 
-  {#each $activeFilters as activeFilter (activeFilter)}
-    <ActiveFilter {activeFilter} {state} />
-  {/each}
-</div>
+    <button class="as-link subtle" on:click={() => clear()}>
+      Clear filters
+    </button>
+  </div>
+
+{/if}

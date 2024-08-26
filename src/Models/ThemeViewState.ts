@@ -385,11 +385,11 @@ export default class ThemeViewState implements SpecialVisualizationState {
         this.toCacheSavers = layout.enableCache ? this.initSaveToLocalStorage() : undefined
 
         this.geosearch = new CombinedSearcher(
-            new CoordinateSearch(),
             new FilterSearch(this),
-            //new LocalElementSearch(this, 5),
-            //new OpenStreetMapIdSearch(this),
-           // new PhotonSearch(), // new NominatimGeocoding(),
+            new LocalElementSearch(this, 5),
+            new CoordinateSearch(),
+            new OpenStreetMapIdSearch(this),
+            new PhotonSearch(), // new NominatimGeocoding(),
             this.featureSwitches.featureSwitchBackToThemeOverview.data ? new ThemeSearch(this) : undefined
         )
 
@@ -652,7 +652,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 },
                 Translations.t.hotkeyDocumentation.openFilterPanel,
                 () => {
-                    console.log("S pressed")
                     if (this.featureSwitches.featureSwitchFilter.data) {
                         this.guistate.openFilterView()
                     }

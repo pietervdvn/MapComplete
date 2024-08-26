@@ -1,20 +1,20 @@
 <script lang="ts">
   import type { ActiveFilter } from "../../Logic/State/LayerState"
-  import { Badge } from "flowbite-svelte"
-  import type { SpecialVisualizationState } from "../SpecialVisualization"
   import Tr from "../Base/Tr.svelte"
+  import Icon from "../Map/Icon.svelte"
+  import { Badge } from "flowbite-svelte"
+  import FilterOption from "./FilterOption.svelte"
+  import { XMarkIcon } from "@babeard/svelte-heroicons/mini"
 
-  export let state: SpecialVisualizationState
 
   export let activeFilter: ActiveFilter
   let { control, layer, filter } = activeFilter
-  let option = control.map(c => {
-    if (typeof c === "number") {
-      return filter.options[c]
-    }
-    return filter.options[0]
-  })
+  let option = control.map(c => filter.options[c] ?? filter.options[0])
 </script>
-<Badge dismissable large border rounded color="dark" on:close={() =>{  console.log( "dismiss"); return control.setData(undefined) }}>
-  <Tr cls="whitespace-nowrap" t={$option.question} />
-</Badge>
+<div class="badge">
+  <FilterOption option={$option} />
+  <button on:click={() => control.setData(undefined)}>
+
+    <XMarkIcon class="w-5 h-5 pl-1" color="gray" />
+  </button>
+</div>

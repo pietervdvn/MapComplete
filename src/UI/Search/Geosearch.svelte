@@ -23,6 +23,7 @@
   import ThemeViewState from "../../Models/ThemeViewState"
   import GeocodingFeatureSource from "../../Logic/Geocoding/GeocodingFeatureSource"
   import MoreScreen from "../BigComponents/MoreScreen"
+  import SearchResultUtils from "./SearchResultUtils"
 
   export let perLayer: ReadonlyMap<string, GeoIndexedStoreForLayer> | undefined = undefined
   export let bounds: UIEventSource<BBox>
@@ -81,7 +82,6 @@
         return
       }
       const result = await searcher.search(searchContentsData, { bbox: bounds.data, limit: 10 })
-      console.log("Results are", result)
       if (result.length == 0) {
         feedback = Translations.t.general.search.nothing.txt
         focusOnSearch()
@@ -91,10 +91,12 @@
       if (poi.category === "theme") {
         const theme = <MinimalLayoutInformation>poi.payload
         const url = MoreScreen.createUrlFor(theme, false)
-        console.log("Found a theme, going to", url)
         // @ts-ignore
         window.location = url
         return
+      }
+      if(poi.category === "filter"){
+        SearchResultUtils.apply(poi.payload, state)
       }
       if(poi.category === "filter"){
         return  // Should not happen
@@ -120,7 +122,6 @@
             continue
           }
           selectedElement?.setData(found)
-          console.log("Found an element that probably matches:", selectedElement?.data)
           break
         }
       }
@@ -146,7 +147,6 @@
       return Stores.holdDefined(bounds.bindD(bbox => searcher.suggest(search, { bbox, limit: 15 })))
     }
   )
-  suggestions.addCallbackAndRun(suggestions => console.log(">>> suggestions are", suggestions))
   let geocededFeatures=  new GeocodingFeatureSource(suggestions.stabilized(250))
   state.featureProperties.trackFeatureSource(geocededFeatures)
 
