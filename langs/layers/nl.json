@@ -4647,11 +4647,27 @@
         }
     },
     "ice_cream": {
+        "description": "Een plaats waar voornamelijk ijsjes verkocht worden, bedoeld voor onmiddelijke consumptie",
+        "name": "IJssalon",
+        "presets": {
+            "0": {
+                "description": "Een plaats waar men voornamelijk ijsjes koopt, meestal met de hand geschept en bedoeld om onmiddellijk op te eten.",
+                "title": "een ijssalon"
+            }
+        },
         "tagRenderings": {
             "1": {
                 "question": "Wat is de naam van dit ijssalon?",
                 "render": "Dit ijssalon heet <b>{name}</b>"
             }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
+            "render": "IJssalon"
         }
     },
     "icons": {
