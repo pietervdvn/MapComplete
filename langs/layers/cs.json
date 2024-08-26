@@ -6979,7 +6979,7 @@
         },
         "description": "Obchod",
         "filter": {
-            "2": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Zobrazit pouze obchody prodávající použité zboží"

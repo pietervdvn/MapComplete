@@ -8882,7 +8882,7 @@
         },
         "description": "A shop",
         "filter": {
-            "2": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Only show shops selling second-hand items"
