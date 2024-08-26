@@ -257,7 +257,6 @@
     {
       "builtin": "id_presets.shop_types",
       "override": {
-        "id": "shop_types",
         "labels": [
           "description"
         ],
@@ -308,7 +307,8 @@
           }
         ],
         "condition": "craft=",
-        "invalidValues": "shop=yes"
+        "invalidValues": "shop=yes",
+        "filter": true
       }
     },
     {
@@ -1175,7 +1175,6 @@
   ],
   "filter": [
     "open_now",
-    "shop_types",
     {
       "id": "second_hand",
       "options": [

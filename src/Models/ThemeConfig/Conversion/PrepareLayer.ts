@@ -62,9 +62,9 @@ class ExpandFilter extends DesugaringStep<LayerConfigJson> {
             )
         }
         const options = (<QuestionableTagRenderingConfigJson>tr).mappings.map((mapping) => {
-            let icon : string= mapping.icon?.["path"] ?? mapping.icon
+            let icon: string = mapping.icon?.["path"] ?? mapping.icon
             let emoji: string = undefined
-            if(Utils.isEmoji(icon)){
+            if (Utils.isEmoji(icon)) {
                 emoji = icon
                 icon = undefined
             }
@@ -72,7 +72,7 @@ class ExpandFilter extends DesugaringStep<LayerConfigJson> {
                 question: mapping.then,
                 osmTags: mapping.if,
                 searchTerms: mapping.searchTerms,
-                icon, emoji
+                icon, emoji,
             })
         })
         // Add default option
@@ -99,8 +99,8 @@ class ExpandFilter extends DesugaringStep<LayerConfigJson> {
         const newFilters: FilterConfigJson[] = []
         const filters = <(FilterConfigJson | string)[]>json.filter
 
-        function filterExists(filterName: string): boolean{
-           return filters.some((existing) => {
+        function filterExists(filterName: string): boolean {
+            return filters.some((existing) => {
                 const id: string = existing["id"] ?? existing
                 return (
                     filterName === id ||
@@ -118,10 +118,10 @@ class ExpandFilter extends DesugaringStep<LayerConfigJson> {
                 continue
             }
             if (tagRendering.filter === true) {
-                if(filterExists(tagRendering["id"])){
-                continue
+                if (filterExists(tagRendering["id"])) {
+                    continue
                 }
-                    filters.push(ExpandFilter.buildFilterFromTagRendering(tagRendering, context.enters("tagRenderings", i, "filter")))
+                filters.push(ExpandFilter.buildFilterFromTagRendering(tagRendering, context.enters("tagRenderings", i, "filter")))
                 continue
             }
             for (const filterName of tagRendering.filter ?? []) {
@@ -129,6 +129,7 @@ class ExpandFilter extends DesugaringStep<LayerConfigJson> {
                     context.enters("tagRenderings", i, "filter").err("Not a string: " + filterName)
                 }
                 if (filterExists(filterName)) {
+                    // This filter has already been added
                     continue
                 }
                 if (!filterName) {
