@@ -41,13 +41,21 @@ export interface LayerConfigJson {
     name?: Translatable
 
     /**
+     * question: How would you describe the features that are shown on this layer?
+     *
      * A description for the features shown in this layer.
      * This often resembles the introduction of the wiki.osm.org-page for this feature.
      *
      * group: Basic
-     * question: How would you describe the features that are shown on this layer?
      */
     description?: Translatable
+
+    /**
+     * question: What are some other terms used to describe these objects?
+     *
+     * This is used in the search functionality
+     */
+    searchTerms?: Record<string, string[]>
 
     /**
      * Question: Where should the data be fetched from?

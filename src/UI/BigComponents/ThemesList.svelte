@@ -4,12 +4,12 @@
   import { OsmConnection } from "../../Logic/Osm/OsmConnection"
   import { UIEventSource } from "../../Logic/UIEventSource"
   import ThemeButton from "./ThemeButton.svelte"
-  import { LayoutInformation } from "../../Models/ThemeConfig/LayoutConfig"
+  import { LayoutInformation, MinimalLayoutInformation } from "../../Models/ThemeConfig/LayoutConfig"
   import MoreScreen from "./MoreScreen"
   import themeOverview from "../../assets/generated/theme_overview.json"
 
   export let search: UIEventSource<string>
-  export let themes: LayoutInformation[]
+  export let themes: MinimalLayoutInformation[]
   export let state: { osmConnection: OsmConnection }
   export let isCustom: boolean = false
   export let hideThemes: boolean = true

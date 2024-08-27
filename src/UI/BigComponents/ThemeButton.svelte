@@ -3,13 +3,13 @@
   import { ImmutableStore, Store, UIEventSource } from "../../Logic/UIEventSource"
   import UserDetails, { OsmConnection } from "../../Logic/Osm/OsmConnection"
   import Constants from "../../Models/Constants"
-  import type { LayoutInformation } from "../../Models/ThemeConfig/LayoutConfig"
+  import type { MinimalLayoutInformation } from "../../Models/ThemeConfig/LayoutConfig"
   import Tr from "../Base/Tr.svelte"
   import Translations from "../i18n/Translations"
   import { LocalStorageSource } from "../../Logic/Web/LocalStorageSource"
   import Marker from "../Map/Marker.svelte"
 
-  export let theme: LayoutInformation
+  export let theme: MinimalLayoutInformation
   export let isCustom: boolean = false
   export let userDetails: UIEventSource<UserDetails>
   export let state: { layoutToUse?: { id: string }; osmConnection: OsmConnection }

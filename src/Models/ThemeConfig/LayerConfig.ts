@@ -29,6 +29,7 @@ export default class LayerConfig extends WithContextLoader {
     public readonly id: string
     public readonly name: Translation
     public readonly description: Translation
+    public readonly searchTerms: Record<string, string[]>
     /**
      * Only 'null' for special, privileged layers
      */
@@ -113,8 +114,8 @@ export default class LayerConfig extends WithContextLoader {
                 json.description = undefined
             }
         }
-
         this.description = Translations.T(json.description, translationContext + ".description")
+        this.searchTerms = json.searchTerms ?? {}
 
         this.calculatedTags = undefined
         if (json.calculatedTags !== undefined) {

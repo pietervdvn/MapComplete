@@ -1602,6 +1602,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      * @constructor
      *
      * Utils.RemoveDiacritics("bâtiments") // => "batiments"
+     * Utils.RemoveDiacritics(undefined) // => undefined
      */
     public static RemoveDiacritics(str?: string): string {
         // See #1729
@@ -1616,9 +1617,10 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      * @param str
      * Utils.simplifyStringForSearch("abc def; ghi 564") // => "abcdefghi564"
      * Utils.simplifyStringForSearch("âbc déf; ghi 564") // => "abcdefghi564"
+     * Utils.simplifyStringForSearch(undefined) // => undefined
      */
     public static simplifyStringForSearch(str: string): string {
-        return Utils.RemoveDiacritics(str).toLowerCase().replace(/[^a-z0-9]/g, "")
+        return Utils.RemoveDiacritics(str)?.toLowerCase()?.replace(/[^a-z0-9]/g, "")
     }
 
     public static randomString(length: number): string {

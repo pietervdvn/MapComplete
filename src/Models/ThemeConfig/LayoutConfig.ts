@@ -25,7 +25,7 @@ export class MinimalLayoutInformation {
     definition?: Translatable
     mustHaveLanguage?: boolean
     hideFromOverview?: boolean
-    keywords?: (Translatable | TagRenderingConfigJson)[]
+    keywords?: Record<string, string[]>
 }
 /**
  * Minimal information about a theme

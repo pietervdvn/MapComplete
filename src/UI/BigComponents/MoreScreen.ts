@@ -15,6 +15,7 @@ export default class MoreScreen {
             MoreScreen.officialThemesById.set(th.id, th)
         }
     }
+
     public static applySearch(searchTerm: string) {
         searchTerm = searchTerm.toLowerCase()
         if (!searchTerm) {
@@ -43,13 +44,13 @@ export default class MoreScreen {
             (th) =>
                 th.hideFromOverview == false &&
                 th.id !== "personal" &&
-                MoreScreen.MatchesLayout(th, searchTerm)
+                MoreScreen.MatchesLayout(th, searchTerm),
         )
         if (publicTheme !== undefined) {
             window.location.href = MoreScreen.createUrlFor(publicTheme, false)
         }
         const hiddenTheme = MoreScreen.officialThemes.find(
-            (th) => th.id !== "personal" && MoreScreen.MatchesLayout(th, searchTerm)
+            (th) => th.id !== "personal" && MoreScreen.MatchesLayout(th, searchTerm),
         )
         if (hiddenTheme !== undefined) {
             window.location.href = MoreScreen.createUrlFor(hiddenTheme, false)
@@ -57,34 +58,47 @@ export default class MoreScreen {
     }
 
     public static MatchesLayout(
-        layout: {
-            id: string
-            title: Translatable
-            shortDescription: Translatable
-            keywords?: (Translatable | TagRenderingConfigJson)[]
-        },
-        search: string
+        layout: MinimalLayoutInformation,
+        search: string,
+        language?: string,
     ): boolean {
         if (search === undefined) {
             return true
         }
-        search = Utils.RemoveDiacritics(search.toLocaleLowerCase()) // See #1729
+        search = Utils.simplifyStringForSearch(search.toLocaleLowerCase()) // See #1729
         if (search.length > 3 && layout.id.toLowerCase().indexOf(search) >= 0) {
             return true
         }
         if (layout.id === "personal") {
             return false
         }
-        if(Utils.simplifyStringForSearch(layout.id) === Utils.simplifyStringForSearch(search)){
+        if (Utils.simplifyStringForSearch(layout.id) === Utils.simplifyStringForSearch(search)) {
             return true
         }
-        const entitiesToSearch = [layout.shortDescription, layout.title, ...(layout.keywords ?? [])]
+        language ??= Locale.language.data
+
+        const entitiesToSearch: (string | Record<string, string> | Record<string, string[]>)[] = [layout.shortDescription, layout.title, layout.keywords]
         for (const entity of entitiesToSearch) {
             if (entity === undefined) {
                 continue
             }
-            const term: string = entity["*"] ?? entity[Locale.language.data]
-            if (Utils.RemoveDiacritics(term?.toLowerCase())?.indexOf(search) >= 0) {
+
+            let term: string[]
+            if (typeof entity === "string") {
+                term = [entity]
+            } else {
+                const terms = [].concat(entity["*"], entity[language])
+                if (Array.isArray(terms)) {
+                    term = terms
+                } else {
+                    term = [terms]
+                }
+            }
+
+            const minLevehnstein = Math.min(...Utils.NoNull(term).map(t => Utils.levenshteinDistance(search,
+                Utils.simplifyStringForSearch(t).slice(0, search.length))))
+
+            if (minLevehnstein < 1 || minLevehnstein / search.length < 0.2) {
                 return true
             }
         }
@@ -95,7 +109,7 @@ export default class MoreScreen {
     public static createUrlFor(
         layout: { id: string },
         isCustom: boolean,
-        state?: { layoutToUse?: { id } }
+        state?: { layoutToUse?: { id } },
     ): string {
         if (layout === undefined) {
             return undefined
@@ -141,7 +155,7 @@ export default class MoreScreen {
             new Set<string>(
                 Object.keys(preferences)
                     .filter((key) => key.startsWith(prefix))
-                    .map((key) => key.substring(prefix.length, key.length - "-enabled".length))
+                    .map((key) => key.substring(prefix.length, key.length - "-enabled".length)),
             ))
     }
 }
