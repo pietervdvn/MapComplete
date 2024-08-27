@@ -55,8 +55,13 @@
     },
     "favouritePoi": {
         "button": {
+            "isFavourite": "Deze locatie is momenteel gemarkeerd als favoriet en zal getoond worden op alle thematische kaarten van MapComplete.",
             "isMarkedShort": "Als favoriet gemarkeerd",
-            "isNotMarkedShort": "Niet als favoriet gemarkeerd"
+            "isNotMarkedShort": "Niet als favoriet gemarkeerd",
+            "markAsFavouriteTitle": "Markeer als favoriet",
+            "markDescription": "Voeg deze locatie toe aan je persoonlijke lijst van favorieten",
+            "unmark": "Verwijder van je persoonlijke lijst van favorieten",
+            "unmarkNotDeleted": "Dit item wordt niet verwijderd en is nog steeds zichtbaar op de gepaste kaarten voor jou en anderen"
         },
         "tab": "Jouw favorieten en beoordelingen"
     },
@@ -477,7 +482,7 @@
         "isDeleted": "Verwijderd",
         "nearby": {
             "link": "Deze afbeelding toont het object",
-            "seeNearby": "Bekijk en link foto's van in de buurt",
+            "seeNearby": "Bekijk foto's in de buurt",
             "title": "Straatafbeeldingen uit de buurt"
         },
         "pleaseLogin": "Gelieve je aan te melden om een foto toe te voegen",
@@ -617,6 +622,7 @@
         "i_am_affiliated": "<span>Ik ben persoonlijk betrokken</span><br/><span class='subtle'>Vink aan indien je de oprichter, maker, werknemer, ... of dergelijke bent</span>",
         "name_required": "De naam van dit object moet gekend zijn om een review te kunnen maken",
         "no_reviews_yet": "Er zijn nog geen beoordelingen. Wees de eerste!",
+        "question": "Welke score geef je aan {title()}?",
         "save": "Opslaan",
         "saved": "Bedankt om je beoordeling te delen!",
         "saving_review": "Opslaan...",
