@@ -95,8 +95,8 @@ export default class LocalElementSearch implements GeocodingProvider {
         const listed: Store<IntermediateResult[]> = Stores.concat(partials).map(l => l.flatMap(x => x))
         return listed.mapD(results => {
             results.sort((a, b) => (a.physicalDistance + a.levehnsteinD * 25) - (b.physicalDistance + b.levehnsteinD * 25))
-            if (this._limit || options?.limit) {
-                results = results.slice(0, Math.min(this._limit ?? options?.limit, options?.limit ?? this._limit))
+            if (this._limit) {
+                results = results.slice(0, this._limit)
             }
             return results.map(entry => {
                 const [osm_type, osm_id] = entry.feature.properties.id.split("/")

@@ -3,21 +3,23 @@ import { BBox } from "../BBox"
 import Constants from "../../Models/Constants"
 import { FeatureCollection } from "geojson"
 import Locale from "../../UI/i18n/Locale"
-import GeocodingProvider, { SearchResult } from "./GeocodingProvider"
+import GeocodingProvider, { GeocodingOptions, SearchResult } from "./GeocodingProvider"
 
 export class NominatimGeocoding implements GeocodingProvider {
 
     private readonly _host ;
+    private readonly limit: number
 
-    constructor(host: string =  Constants.nominatimEndpoint) {
+    constructor(limit: number = 3, host: string =  Constants.nominatimEndpoint) {
+        this.limit = limit
         this._host = host
     }
 
-    public search(query: string, options?: { bbox?: BBox; limit?: number }): Promise<SearchResult[]> {
+    public search(query: string, options?:GeocodingOptions): Promise<SearchResult[]> {
         const b = options?.bbox ?? BBox.global
         const url = `${
             this._host
-        }search?format=json&limit=${options?.limit ?? 1}&viewbox=${b.getEast()},${b.getNorth()},${b.getWest()},${b.getSouth()}&accept-language=${
+        }search?format=json&limit=${this.limit}&viewbox=${b.getEast()},${b.getNorth()},${b.getWest()},${b.getSouth()}&accept-language=${
             Locale.language.data
         }&q=${query}`
         return Utils.downloadJson(url)

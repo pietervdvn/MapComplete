@@ -7,6 +7,7 @@ import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
 import { LayerConfigJson } from "../../Models/ThemeConfig/Json/LayerConfigJson"
 import FilterConfig, { FilterConfigOption } from "../../Models/ThemeConfig/FilterConfig"
 import { MinimalLayoutInformation } from "../../Models/ThemeConfig/LayoutConfig"
+import { GeoOperations } from "../GeoOperations"
 
 export type GeocodingCategory =
     "coordinate"
@@ -50,8 +51,7 @@ export type SearchResult =
     | GeocodeResult
 
 export interface GeocodingOptions {
-    bbox?: BBox,
-    limit?: number
+    bbox?: BBox
 }
 
 
@@ -109,6 +109,36 @@ export class GeocodingUtils {
         airport: 13,
         shop: 16,
 
+    }
+
+    public static mergeSimilarResults(results: GeocodeResult[]){
+        const byName: Record<string, GeocodeResult[]> = {}
+
+
+        for (const result of results) {
+            const nm = result.display_name
+            if(!byName[nm]) {
+                byName[nm] = []
+            }
+            byName[nm].push(result)
+        }
+
+        const merged: GeocodeResult[] = []
+        for (const nm in byName) {
+            const options = byName[nm]
+            const added = options[0]
+            merged.push(added)
+            const centers: [number,number][] = [[added.lon, added.lat]]
+            for (const other of options) {
+                const otherCenter:[number,number] = [other.lon, other.lat]
+                const nearbyFound= centers.some(center => GeoOperations.distanceBetween(center, otherCenter) < 500)
+                if(!nearbyFound){
+                    merged.push(other)
+                    centers.push(otherCenter)
+                }
+            }
+        }
+        return merged
     }
 
 

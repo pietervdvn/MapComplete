@@ -12,7 +12,7 @@ export default class FilterSearch implements GeocodingProvider {
 
     }
 
-    async search(query: string, options?: GeocodingOptions): Promise<SearchResult[]> {
+    async search(query: string): Promise<SearchResult[]> {
         return this.searchDirectly(query)
     }
 

@@ -2,7 +2,7 @@ import Constants from "../../Models/Constants"
 import GeocodingProvider, {
     GeocodeResult,
     GeocodingCategory,
-    GeocodingOptions,
+    GeocodingOptions, GeocodingUtils,
     ReverseGeocodingProvider,
     ReverseGeocodingResult,
 } from "./GeocodingProvider"
@@ -20,9 +20,13 @@ export default class PhotonSearch implements GeocodingProvider, ReverseGeocoding
         "W": "way",
         "N": "node",
     }
+    private readonly suggestionLimit: number = 5
+    private readonly searchLimit: number = 1
 
 
-    constructor(endpoint?: string) {
+    constructor(suggestionLimit:number = 5, searchLimit:number = 1, endpoint?: string) {
+        this.suggestionLimit = suggestionLimit
+        this.searchLimit = searchLimit
         this._endpoint = endpoint ?? Constants.photonEndpoint ?? "https://photon.komoot.io/"
     }
 
@@ -55,7 +59,7 @@ export default class PhotonSearch implements GeocodingProvider, ReverseGeocoding
     }
 
     suggest(query: string, options?: GeocodingOptions): Store<GeocodeResult[]> {
-        return Stores.FromPromise(this.search(query, options))
+        return Stores.FromPromise(this.search(query, options, this.suggestionLimit))
     }
 
     private buildDescription(entry: Feature) {
@@ -107,11 +111,11 @@ export default class PhotonSearch implements GeocodingProvider, ReverseGeocoding
         return p.type
     }
 
-    async search(query: string, options?: GeocodingOptions): Promise<GeocodeResult[]> {
+    async search(query: string, options?: GeocodingOptions, limit?: number): Promise<GeocodeResult[]> {
         if (query.length < 3) {
             return []
         }
-        const limit = options?.limit ?? 5
+        limit ??= this.searchLimit
         let bbox = ""
         if (options?.bbox) {
             const [lon, lat] = options.bbox.center()
@@ -119,7 +123,7 @@ export default class PhotonSearch implements GeocodingProvider, ReverseGeocoding
         }
         const url = `${this._endpoint}/api/?q=${encodeURIComponent(query)}&limit=${limit}${this.getLanguage()}${bbox}`
         const results = await Utils.downloadJsonCached<FeatureCollection>(url, 1000 * 60 * 60)
-        return results.features.map(f => {
+        const encoded=  results.features.map(f => {
             const [lon, lat] = GeoOperations.centerpointCoordinates(f)
             let boundingbox: number[] = undefined
             if (f.properties.extent) {
@@ -138,6 +142,7 @@ export default class PhotonSearch implements GeocodingProvider, ReverseGeocoding
                 source: this._endpoint,
             }
         })
+        return GeocodingUtils.mergeSimilarResults(encoded)
     }
 
 }

@@ -388,9 +388,9 @@ export default class ThemeViewState implements SpecialVisualizationState {
             new FilterSearch(this),
             new LocalElementSearch(this, 5),
             new CoordinateSearch(),
+            this.featureSwitches.featureSwitchBackToThemeOverview.data ? new ThemeSearch(this, 3) : undefined,
             new OpenStreetMapIdSearch(this),
             new PhotonSearch(), // new NominatimGeocoding(),
-            this.featureSwitches.featureSwitchBackToThemeOverview.data ? new ThemeSearch(this) : undefined
         )
 
         this.recentlySearched = new RecentSearch(this)
