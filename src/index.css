@@ -538,6 +538,10 @@ a.link-underline {
   background-color: #f2f2f2;
 }
 
+.no-bold b {
+    font-weight: normal;
+}
+
 /************************* MISC ELEMENTS *************************/
 
 .selected svg:not(.noselect *) path.selectable {
