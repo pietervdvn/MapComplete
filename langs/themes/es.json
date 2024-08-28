@@ -635,7 +635,7 @@
         "title": "Ciclocalles"
     },
     "cyclofix": {
-        "description": "El objetivo de este mapa es presentar a los ciclistas con una solución fácil de utilizar para encontrar la infraestructura apropiada para sus necesidades. <br><br>Puedes seguir tu localización precisa (móvil solo) y seleccionar las capas que son relevantes para ti en la esquina inferior izquierda. Tgambién puedes utilizar esta herramienta para editar o añadir pines (puntos de interés) al mapa y proveer más datos respondiendo a preguntas.<br><br>Todos los cambios que hagas se guardarán de manera automática en la base de datos global de OpenStreetMap y podrán ser utilizados libremente por otros. <br><br>Para más información sobre el proyecto cyclofix, ve a <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
+        "description": "Un mapa para que los ciclistas encuentren la infraestructura adecuada a sus necesidades, como bombas de bicicleta, agua potable, tiendas de bicicletas, reparación o aparcamientos.",
         "title": "Cyclofix - un mapa para ciclistas"
     },
     "disaster_response": {
