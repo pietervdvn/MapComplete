@@ -60,7 +60,7 @@
       <Tr t={Translations.t.image.nearby.noNearbyImages} cls="alert" />
     {/if}
   {:else}
-    <div class="flex w-full space-x-1 overflow-x-auto" style="scroll-snap-type: x proximity">
+    <div class="flex w-full space-x-4 overflow-x-auto" style="scroll-snap-type: x proximity">
       {#each $result as image (image.pictureUrl)}
         <span class="w-fit shrink-0" style="scroll-snap-align: start">
           <LinkableImage {tags} {image} {state} {feature} {layer} {linkable} />
