@@ -635,7 +635,7 @@
         "title": "Cyclestreets"
     },
     "cyclofix": {
-        "description": "The goal of this map is to present cyclists with an easy-to-use solution to find the appropriate infrastructure for their needs.<br><br>You can track your precise location (mobile only) and select layers that are relevant for you in the bottom left corner. You can also use this tool to add or edit pins (points of interest) to the map and provide more data by answering the questions.<br><br>All changes you make will automatically be saved in the global database of OpenStreetMap and can be freely re-used by others.<br><br>For more information about the cyclofix project, go to <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
+        "description": "A map for cyclists to find the appropriate infrastructure for their needs, such as bicycle pumps, drinking water, bicycle shops, repair stations or parkings.",
         "title": "Cyclofix - a map for cyclists"
     },
     "disaster_response": {
