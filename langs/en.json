@@ -573,7 +573,7 @@
             "failed": "Fetching images from {service} failed",
             "link": "This picture shows the object",
             "noNearbyImages": "No nearby images were found",
-            "seeNearby": "Browse and link nearby pictures",
+            "seeNearby": "Browse nearby pictures",
             "title": "Nearby streetview imagery"
         },
         "pleaseLogin": "Please log in to add a picture",
