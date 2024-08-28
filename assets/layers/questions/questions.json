@@ -175,17 +175,17 @@
         "cs": "Jaké je telefonní číslo {title()}?"
       },
       "render": {
-          "special": {
-            "type": "link",
-            "href": "tel:{phone}",
-            "text": "{phone}"
-          }
+        "special": {
+          "type": "link",
+          "href": "tel:{phone}",
+          "text": "{phone}"
+        }
       },
       "icon": "./assets/layers/questions/phone.svg",
       "mappings": [
         {
           "if": "contact:phone~*",
-          "then":{
+          "then": {
             "special": {
               "type": "link",
               "href": "tel:{contact:phone}",
