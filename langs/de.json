@@ -567,7 +567,7 @@
             "failed": "Abruf von Bildern von {service} fehlgeschlagen",
             "link": "Dieses Bild zeigt das Objekt",
             "noNearbyImages": "Keine nahegelegenen Bilder gefunden",
-            "seeNearby": "Bilder in der Nähe durchsuchen und verlinken",
+            "seeNearby": "Bilder in der Nähe durchsuchen",
             "title": "Straßenbilder in der Nähe"
         },
         "pleaseLogin": "Bitte anmelden, um ein Bild hinzuzufügen",
