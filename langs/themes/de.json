@@ -635,7 +635,7 @@
         "title": "Fahrradstraßen"
     },
     "cyclofix": {
-        "description": "Mit dieser Karte wird Radfahrern eine einfache Lösung bereitgestellt, um die passende Fahrradinfrastruktur zu finden.<br><br>Weitere Informationen über Cyclofix finden Sie unter <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
+        "description": "Eine Karte, die Radfahrern hilft, die für ihre Bedürfnisse geeignete Infrastruktur zu finden, z. B. Fahrradpumpen, Trinkwasser, Fahrradläden, Reparaturstationen oder Parkmöglichkeiten.",
         "title": "Cyclofix - eine Karte für Radfahrer"
     },
     "disaster_response": {
