@@ -62,7 +62,6 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         if (!MapLibreAdaptor.pmtilesInited) {
             maplibregl.addProtocol("pmtiles", new Protocol().tile)
             MapLibreAdaptor.pmtilesInited = true
-            console.log("PM-tiles protocol added" + "")
         }
         this._maplibreMap = maplibreMap
 

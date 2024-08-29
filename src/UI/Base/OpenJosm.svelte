@@ -35,8 +35,8 @@
 
 {#if $showButton}
   <div class="flex flex-col">
-    <button class="as-link" on:click={openJosm}>
-      <Josm_logo class="h-6 w-6 pr-2" />
+    <button class="as-link sidebar-button" on:click={openJosm}>
+      <Josm_logo class="h-6 w-6" />
       <Tr t={t.editJosm} />
     </button>
 

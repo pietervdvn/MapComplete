@@ -485,8 +485,16 @@ code {
     color: var(--background-color);
 }
 
+.h-full-child > div {
+    height: 100%;
+}
+
 .bg-black-transparent {
     background-color: #00000088;
+}
+
+.bg-black-light-transparent {
+    background-color: #00000044;
 }
 
 .block-ruby {
@@ -653,6 +661,10 @@ svg.apply-fill path {
 
 .max-w-full {
     max-width: 100%;
+}
+
+.max-w-screen {
+    max-width: 100vw;
 }
 
 /************************* Experimental support for foldable devices ********************************/
