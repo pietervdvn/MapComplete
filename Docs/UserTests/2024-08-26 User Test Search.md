@@ -1,4 +1,4 @@
-# User Test of the new (WIP) search functionality
+[# User Test of the new (WIP) search functionality
 
 ## Background info
 
@@ -14,16 +14,17 @@ For this, the following tasks were given:
 [MapComplete was opened with the 'food' theme, showing the province]
 
 1. Search the business
-(2. Give a review and update information)
+2. Give a review and update information
 3. Search vegetarian pizzeria's in a city
 4. Bonus: Use the search function to search pizzeria's _without_ typing a number 
 5. Switch to the map of _toilets_ using the search function
+6. Ad hoc: link a mapillary streetview image
 
 In between the tasks, time was given to explore and surface more issues.
 
 # Interactions and surfaced issues
 
-## Searching for 'Saladette'
+## Searching for 'Saladette' and others
 
 The user was asked to search 'Saladette' in Roeselare. 
 
@@ -42,6 +43,18 @@ Failure: bar shows up if there are no results (was using private navigation)
 > User searches for 'Roeselare', but the results are mostly 'Kanaal Roeselare'
 
 Failure: maybe dedup some results, and place e.g. cities higher? Is there a relevancy-metric included?
+(Fixed now)
+
+(In a different part of the user test, the user was asked to go to Ghent)
+> User types 'Gent' and presses enter
+> Gentstraat in Brugge pops up
+
+Failure: cities should have more priority
+
+> User swipes "back" to go to the previous location
+
+Failure: Should this work? TBD
+
 
 > "Fuck it, let's just type 'Saladette'
 
@@ -83,7 +96,11 @@ Failure: error message should be closer to the login form. See https://github.co
 > In the end, the observators OSM-account was used
 
 
-## Actually Updating information
+## Actually using and updating information
+
+> THe user notices that complex opening hours are displayed a bit sloppily
+
+Coincidentally, an issue was opened about precisely this at the same time: https://github.com/pietervdvn/MapComplete/issues/2100
 
 > At first, the user changed the classification from 'restaurant' to 'fastfood' after thoroughly reading through the descriptions
 
@@ -91,6 +108,7 @@ Failure: error message should be closer to the login form. See https://github.co
 
 Failure: how to properly explain this? Move the 'vegetarian' question up? Should some options, such as 'chicken restaurant' be hidden if `vegetarian=only`?
 
+UI: issue: the emojis (especially flags) slightly overlaps with the text on this browser
 
 > The user left the 'cuisine' question open and moved on to other questions
 > Whenever they answered a question, the UI would jump back to the first open question
@@ -98,6 +116,16 @@ Failure: how to properly explain this? Move the 'vegetarian' question up? Should
 Failure: maybe simply remove this?
 
 > User gets confused by having some bold options: "I thought someone already selected option "Lactose free offering"
+
+
+> (In the popup for a different restaurant)
+> User wants to scroll down, but the opening hours picker intercepts the swipe event
+
+Failure: move OH-picker into separate popup
+
+> User wants to remove selected OH
+
+Failure: trash bin is too small, maybe provide a 'clear all' button?
 
 ![](./2024-08-26%20Usertest-bold-question.png)
 
@@ -108,6 +136,31 @@ Failure: don't show bold (fixed in b79835074fe5f954bd4b64ecdb713ca13503495e)
 
 browser-specific-bug: phone links should not contain spaces in blink-based browsers, fixed in 4168ef01e333784f738fafa15d1eb7d7c4c527c7
 
+## Using filters through the search menu
+
+> When instructed to search for filters, the user didn't realise that is possible through the search
+
+Failure: search results should show some example filters, cities, layers and other thematic maps when nothing has been shown before
+Failure: default text should be changed and broadened and mention more then just 'locations'
+
+> The user attempts to search, but often 'fat-fingers' and presses a shop behind the search bar, opening this
+
+Solution: on mobile, a 'no-touch' buffer should be added; Maybe even a top bar?  --> Fixed in feature/menu-drawer
+
+> The user was tasked to search a 'vegetarian pizzeria'
+> User literally types "vegetarian pizza", but no filters pop up as the goal was to search for 'pizza' and "vegetarian" separately
+> Same for "vegetarisch frietkot"
+
+Failure: filter-search should be split on word
+
+> Suggested filters shows up as "This is a pizzeria"
+
+Failure: Unclear text, to be changed
+Unclear that this is a filter that can be added: subheadings are needed
+
+> User clears the filter, MC hangs as it is re-rendering all items
+
+Failure: show a loading bar
 
 ## Switching theme
 
@@ -119,6 +172,42 @@ Failure:  only 'toilet' is known, fixed in cdc1e05499ffc41d093503ccd24defa347eea
 
 Reorder this, so that slow-loading and fast-loading search queries don't overlap
 
-> The user sees 'no results found', which gets replaced by resuts a few ms later
+> The user sees 'no results found', which gets replaced by results a few ms later
 
 Have a 'loading-indicator'
+
+> User switches to 'toilets' theme
+
+## Exploring the toilets theme
+
+> User sees different types of icons, many of which are standing-urinals
+> "Tiens, those are mostly men toilets. Good to know"
+> User notices a "lock"-icon and wonders if this is a non-useable toilet
+> User presses toilet and confirms that this is not open to the public
+
+Success: the icons are clear :)
+
+## Using and linking nearby pictures
+
+> The user was pointed to the "See and link nearby images"
+> "Wow, linking sounds intimidating"
+
+Note: "and link" also doesn't work if the user isn't logged in
+Remove this wording, fixed in weblate
+
+> Mapillary-pictures popup, some images are made by 'Teddy73'
+> "What is this 'Teddy73' and this 'CC-BY-SA'-thing?
+
+Failure: attribution is unclear and irritating, made smaller in link-preview and more explicit in image preview
+
+> User wants a bigger version of the picture and zooms in onto the low-quality picture
+
+Failure: user doesn't realize that tapping the picture will open up a pannable, big screen and HD version
+Fix: add a 'zoom-in' icon, fixed in 8465b59c7f4ece18b830899e9cc7b680ae100c13
+
+> User finds the zoomed-in version, but is confused by the download-button. How to link?
+
+Failure: move download-button behind "extra"-dot?
+Failure: should some of the tools (e.g. linking and unlinking) be hidden behind a dot?
+
+
