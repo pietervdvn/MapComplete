@@ -469,6 +469,10 @@ code {
   background-color: #00000088;
 }
 
+.bg-black-light-transparent {
+    background-color: #00000044;
+}
+
 .block-ruby {
   display: block ruby;
 }

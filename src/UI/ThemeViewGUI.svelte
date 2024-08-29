@@ -46,7 +46,7 @@
   import SelectedElementPanel from "./Base/SelectedElementPanel.svelte"
   import MenuDrawer from "./BigComponents/MenuDrawer.svelte"
   import DrawerLeft from "./Base/DrawerLeft.svelte"
-
+  import { ariaLabel, ariaLabelStore } from "../Utils/ariaLabel"
   export let state: ThemeViewState
   let layout = state.layout
   let maplibremap: UIEventSource<MlMap> = state.map
@@ -146,7 +146,6 @@
   let debug = state.featureSwitches.featureSwitchIsDebugging
 
 
-
   debug.addCallbackAndRun((dbg) => {
     if (dbg) {
       document.body.classList.add("debug")
@@ -166,7 +165,6 @@
     const animation = mlmap.keyboard?.keydown(e)
     animation?.cameraAnimation(mlmap)
   }
-
 
 </script>
 
@@ -190,28 +188,18 @@
   <div class="pointer-events-none absolute top-0 left-0 w-full">
     <!-- Top components -->
 
-    <div class="pointer-events-auto float-right mt-1 flex flex-col px-1 max-[480px]:w-full sm:m-2">
-      <If condition={state.visualFeedback}>
-        {#if $selectedElement === undefined}
-          <div class="w-fit">
-            <VisualFeedbackPanel {state} />
-          </div>
-        {/if}
-      </If>
-      <If condition={state.featureSwitches.featureSwitchSearch}>
-        <Geosearch
-          bounds={state.mapProperties.bounds}
-          on:searchCompleted={() => {
-            state.map?.data?.getCanvas()?.focus()
-          }}
-          perLayer={state.perLayer}
-          selectedElement={state.selectedElement}
-          geolocationState={state.geolocation.geolocationState}
-        />
-      </If>
-    </div>
-    <div class="float-left m-1 flex flex-col sm:mt-2">
-      <If condition={state.featureSwitches.featureSwitchWelcomeMessage}>
+    <div class="flex bg-black-light-transparent pointer-events-auto items-center justify-between px-4 py-2 flex-wrap-reverse">
+      <!-- Top bar with tools -->
+      <div class="flex items-center">
+
+        <MapControlButton
+         arialabel={Translations.t.general.labels.menu}
+          on:click={() => {console.log("Opening...."); state.guistate.menuIsOpened.setData(true)}}
+          on:keydown={forwardEventToMap}
+        >
+          <MenuIcon class="h-8 w-8 cursor-pointer" />
+        </MapControlButton>
+
         <MapControlButton
           on:click={() => state.guistate.pageStates.about_theme.set(true)}
           on:keydown={forwardEventToMap}
@@ -225,14 +213,40 @@
             </b>
           </div>
         </MapControlButton>
+      </div>
 
-        <MapControlButton
-          arialabel={Translations.t.general.labels.menu}
-          on:click={() => {console.log("Opening...."); state.guistate.menuIsOpened.setData(true)}}
-          on:keydown={forwardEventToMap}
-        >
-          <MenuIcon class="h-8 w-8 cursor-pointer" />
-        </MapControlButton>
+
+      <If condition={state.featureSwitches.featureSwitchSearch}>
+        <div class="w-full sm:w-64 my-2 sm:mt-0">
+
+          <Geosearch
+            bounds={state.mapProperties.bounds}
+            on:searchCompleted={() => {
+            state.map?.data?.getCanvas()?.focus()
+          }}
+            perLayer={state.perLayer}
+            selectedElement={state.selectedElement}
+            geolocationState={state.geolocation.geolocationState}
+          />
+        </div>
+      </If>
+
+    </div>
+
+    <div class="pointer-events-auto float-right mt-1 flex flex-col px-1 max-[480px]:w-full sm:m-2">
+      <If condition={state.visualFeedback}>
+        {#if $selectedElement === undefined}
+          <div class="w-fit">
+            <VisualFeedbackPanel {state} />
+          </div>
+        {/if}
+      </If>
+
+    </div>
+    <div class="float-left m-1 flex flex-col sm:mt-2">
+      <If condition={state.featureSwitches.featureSwitchWelcomeMessage}>
+
+
       </If>
       {#if currentViewLayer?.tagRenderings && currentViewLayer.defaultIcon()}
         <MapControlButton
@@ -310,7 +324,8 @@
             />
           </If>
           <button
-            class="as-link bg-black-transparent pointer-events-auto ml-1 h-fit max-h-12 cursor-pointer self-end self-center overflow-hidden rounded-2xl px-1 text-white opacity-50 hover:opacity-100"
+            class="unstyled bg-black-transparent pointer-events-auto ml-1 h-fit max-h-12 cursor-pointer overflow-hidden rounded-2xl px-1 text-white opacity-50 hover:opacity-100"
+            style="background: #00000088; padding: 0.25rem; border-radius: 2rem;"
             on:click={() => {state.guistate.pageStates.copyright.set(true)}}
           >
             © <span class="hidden sm:inline sm:pr-2">
@@ -387,7 +402,7 @@
     <svelte:fragment slot="error" />
   </LoginToggle>
 
-  <DrawerLeft shown={state.guistate.menuIsOpened} >
+  <DrawerLeft shown={state.guistate.menuIsOpened}>
     <MenuDrawer onlyLink={true} {state} />
   </DrawerLeft>
   <MenuDrawer onlyLink={false} {state} />
