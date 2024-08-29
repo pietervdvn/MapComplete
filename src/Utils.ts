@@ -960,9 +960,13 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             if (!result["error"]) {
                 return result
             }
-            console.log(result)
-            if(result["error"]?.statuscode === 410){
+            const error = result.error
+            if (error.statuscode === 410) {
                 // Gone permanently is not recoverable
+                return result
+            }
+            if (error.statuscode === 429 || error.statuscode === 509) {
+                // rate limited
                 return result
             }
             console.log(
@@ -1774,7 +1778,8 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
 
     }
 
-    static NoNullInplace<T>(items: T[]): T[] {
+
+    public static NoNullInplace<T>(items: T[]): T[] {
         for (let i = items.length - 1; i >= 0; i--) {
             if (items[i] === null || items[i] === undefined) {
                 items.splice(i, 1)
@@ -1782,6 +1787,27 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         }
         return items
     }
+
+    /**
+     * Removes or rewrites some characters in links, as some blink/chromium based browsers are picky about them
+     *
+     * Utils.prepareHref("tel:+32 123 456") // => "tel:+32123456"
+     * Utils.prepareHref("https://osm.org/user/User Name") // => "https://osm.org/user/User%20Name"
+     */
+    static prepareHref(href: string): string {
+        if (href.startsWith("tel:")) {
+            // Telephone numbers are not allowed to contain spaces in chromium-based browsers
+            href = "tel:" + href.replaceAll(/[^+0-9]/g, "")
+        }
+
+        /* Chromium based browsers eat the spaces */
+        href = href.replaceAll(
+            / /g,
+            "%20"
+        )
+        return href
+    }
+
 
     private static emojiRegex = /[\p{Extended_Pictographic}🛰️]/u
 
@@ -1793,7 +1819,15 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      * Utils.isEmoji("🍕") // => true
      */
     public static isEmoji(string: string) {
-        return Utils.emojiRegex.test(string) ||
-           /[🇦-🇿]{2}/u.test(string) // flags, see https://stackoverflow.com/questions/53360006/detect-with-regex-if-emoji-is-country-flag
+        return Utils.emojiRegex.test(string) || Utils.isEmojiFlag(string)
+    }
+
+    /**
+     * Utils.isEmoji("🍕") // => false
+     * Utils.isEmojiFlag("🇧🇪") // => true
+     */
+    public static isEmojiFlag(string: string) {
+        return /[🇦-🇿]{2}/u.test(string) // flags, see https://stackoverflow.com/questions/53360006/detect-with-regex-if-emoji-is-country-flag
+
     }
 }

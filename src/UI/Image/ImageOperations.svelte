@@ -38,9 +38,9 @@
     class="pointer-events-none absolute bottom-0 left-0 flex w-full flex-wrap items-end justify-between"
   >
     <div
-      class="pointer-events-auto m-1 w-fit opacity-50 transition-colors duration-200 hover:opacity-100"
+      class="pointer-events-auto m-1 w-fit transition-colors duration-200"
     >
-      <ImageAttribution {image} />
+      <ImageAttribution {image} attributionFormat="large"/>
     </div>
 
     <button
