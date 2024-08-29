@@ -9,10 +9,20 @@
     duration: 200,
     easing: sineIn
   };
+  let hidden = !shown.data
+  $: {
+    shown.setData(!hidden)
+  }
+  shown.addCallback(sh => {
+    hidden = !sh
+  })
 </script>
 
 
-<Drawer placement="left" transitionType="fly" transitionParams={transitionParams} hidden={!$shown} on:close={() => shown.set(false)}>
+<Drawer placement="left"
+        transitionType="fly" {transitionParams}
+        divClass = "overflow-y-auto z-50 "
+        bind:hidden={hidden}>
   <slot>
     CONTENTS
   </slot>

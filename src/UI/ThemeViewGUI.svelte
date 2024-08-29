@@ -42,7 +42,6 @@
   import { BBox } from "../Logic/BBox"
   import ExtraLinkButton from "./BigComponents/ExtraLinkButton.svelte"
   import { LastClickFeatureSource } from "../Logic/FeatureSource/Sources/LastClickFeatureSource"
-  import ChevronRight from "@babeard/svelte-heroicons/solid/ChevronRight"
   import Marker from "./Map/Marker.svelte"
   import SelectedElementPanel from "./Base/SelectedElementPanel.svelte"
   import MenuDrawer from "./BigComponents/MenuDrawer.svelte"
@@ -224,7 +223,6 @@
             <b class="mr-1">
               <Tr t={layout.title} />
             </b>
-            <ChevronRight class="h-4 w-4" />
           </div>
         </MapControlButton>
 
@@ -389,7 +387,7 @@
     <svelte:fragment slot="error" />
   </LoginToggle>
 
-  <DrawerLeft shown={state.guistate.menuIsOpened}>
+  <DrawerLeft shown={state.guistate.menuIsOpened} >
     <MenuDrawer onlyLink={true} {state} />
   </DrawerLeft>
   <MenuDrawer onlyLink={false} {state} />

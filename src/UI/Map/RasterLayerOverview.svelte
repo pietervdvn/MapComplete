@@ -11,6 +11,7 @@
   import Loading from "../Base/Loading.svelte"
   import Page from "../Base/Page.svelte"
   import ThemeViewState from "../../Models/ThemeViewState"
+  import { Square3Stack3dIcon } from "@babeard/svelte-heroicons/solid"
 
   export let state: ThemeViewState
 
@@ -54,7 +55,11 @@
 </script>
 
 <Page {onlyLink} shown={shown} fullscreen={true}>
-  <Tr slot="header" t={Translations.t.general.backgroundMap} />
+  <div slot="header" class="flex" >
+    <Square3Stack3dIcon class="h-6 w-6" />
+
+  <Tr t={Translations.t.general.backgroundMap} />
+  </div>
   {#if $_availableLayers?.length < 1}
     <Loading />
   {:else}

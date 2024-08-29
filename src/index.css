@@ -630,6 +630,10 @@ svg.apply-fill path {
   max-width: 100%;
 }
 
+.max-w-screen {
+    max-width: 100vw;
+}
+
 /************************* Experimental support for foldable devices ********************************/
 @media (horizontal-viewport-segments: 2) {
   .theme-list {

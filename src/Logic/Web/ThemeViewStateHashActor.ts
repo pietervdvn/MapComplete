@@ -1,10 +1,10 @@
 import ThemeViewState from "../../Models/ThemeViewState"
 import Hash from "./Hash"
 import { MenuState } from "../../Models/MenuState"
-import hash from "svelte/types/compiler/compile/utils/hash"
 
 export default class ThemeViewStateHashActor {
     private readonly _state: ThemeViewState
+    private isUpdatingHash = false
 
     public static readonly documentation = [
         "The URL-hash can contain multiple values:",
@@ -49,11 +49,13 @@ export default class ThemeViewStateHashActor {
 
         // Register a hash change listener to correctly handle the back button
         Hash.hash.addCallback((hash) => {
-                console.trace("Going back with hash", hash)
+            if(this.isUpdatingHash){
+                return
+            }
             if (!hash) {
                 this.back()
-            }else{
-                if(!this.loadStateFromHash(hash)){
+            } else {
+                if (!this.loadStateFromHash(hash)) {
                     this.loadSelectedElementFromHash(hash)
                 }
             }
@@ -121,25 +123,30 @@ export default class ThemeViewStateHashActor {
      * returns 'true' if a hash was set
      */
     private setHash(): boolean {
-        const selectedElement = this._state.selectedElement.data
-        if(selectedElement){
-            Hash.hash.set(selectedElement.properties.id)
-            return true
-        }
-        for (const page in this._state.guistate.pageStates) {
-            const toggle = this._state.guistate.pageStates[page]
-            if (toggle.data) {
-                Hash.hash.set(page)
+        this.isUpdatingHash = true
+        try {
+
+            const selectedElement = this._state.selectedElement.data
+            if (selectedElement) {
+                Hash.hash.set(selectedElement.properties.id)
                 return true
             }
+            for (const page in this._state.guistate.pageStates) {
+                const toggle = this._state.guistate.pageStates[page]
+                if (toggle.data) {
+                    Hash.hash.set(page)
+                    return true
+                }
+            }
+            Hash.hash.set(undefined)
+            return false
+        } finally {
+            this.isUpdatingHash = false
         }
-        Hash.hash.set(undefined)
-        return false
     }
 
     private back() {
         const state = this._state
-        console.log("Got a 'back' event")
         if (state.previewedImage.data) {
             state.previewedImage.setData(undefined)
             return

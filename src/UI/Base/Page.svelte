@@ -16,16 +16,20 @@
   if (fullscreen) {
     defaultClass = shared
   }
-  let dialogClass = "fixed top-0 start-0 end-0 h-modal inset-0 z-50 w-full p-4 flex";
-  if(fullscreen){
+  let dialogClass = "fixed top-0 start-0 end-0 h-modal inset-0 z-50 w-full p-4 flex"
+  if (fullscreen) {
     dialogClass += " h-full-child"
   }
   let bodyClass = "h-full p-4 md:p-5 space-y-4 flex-1 overflow-y-auto overscroll-contain"
+  let headerClass = "flex justify-between items-center p-2 px-4 md:px-5 rounded-t-lg";
 </script>
 
 {#if !onlyLink}
-  <Modal open={_shown} on:close={() => shown.set(false)} size="xl" {defaultClass} {bodyClass} {dialogClass} color="none">
-    <slot name="header" slot="header" />
+  <Modal open={_shown} on:close={() => shown.set(false)} size="xl" {defaultClass} {bodyClass} {dialogClass} {headerClass}
+         color="none">
+    <h1 slot="header" class="w-full">
+      <slot name="header" />
+    </h1>
     <slot />
     {#if $$slots.footer}
       <slot name="footer" />
@@ -33,6 +37,8 @@
   </Modal>
 {:else}
   <button class="as-link" on:click={() => shown.setData(true)}>
+    <slot name="link">
     <slot name="header" />
+    </slot>
   </button>
 {/if}

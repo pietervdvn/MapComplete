@@ -11,7 +11,7 @@
   import CommunityIndexView from "./CommunityIndexView.svelte"
   import Community from "../../assets/svg/Community.svelte"
   import LoginToggle from "../Base/LoginToggle.svelte"
-  import { Avatar, Sidebar, SidebarWrapper } from "flowbite-svelte"
+  import {  Sidebar, SidebarWrapper } from "flowbite-svelte"
   import HotkeyTable from "./HotkeyTable.svelte"
   import { Utils } from "../../Utils"
   import Constants from "../../Models/Constants"
@@ -45,6 +45,7 @@
   import ThemeIntroPanel from "./ThemeIntroPanel.svelte"
   import Marker from "../Map/Marker.svelte"
   import LogoutButton from "../Base/LogoutButton.svelte"
+  import { LanguageIcon } from "@babeard/svelte-heroicons/solid"
 
   export let state: ThemeViewState
   let userdetails = state.osmConnection.userDetails
@@ -58,239 +59,297 @@
   export let onlyLink: boolean
 </script>
 
-<Sidebar>
-  <SidebarWrapper divClass="link-underline">
+<Sidebar asideClass="max-w-screen p-0 low-interaction p-6 link-underline">
+<h2>Menu</h2>
+    <div class="flex flex-col">
 
-    <!-- User related: avatar, settings, favourits, logout -->
-    <div>
-      <LoginToggle {state} >
-        <LoginButton osmConnection={state.osmConnection} slot="not-logged-in"></LoginButton>
-        <div class="flex">
-
-          <Avatar src={$userdetails.img} rounded />
-          Welcome <b>{$userdetails.name}</b>
-        </div>
-        <LogoutButton osmConnection={state.osmConnection}/>
-      </LoginToggle>
-
-
-      <Page {onlyLink} shown={pg.usersettings}>
-        <div class="flex" slot="header">
-          <CogIcon class="h-6 w-6" />
-          <Tr t={UserRelatedState.usersettingsConfig.title.GetRenderValue({})} />
-        </div>
-
-        <!-- All shown components are set by 'usersettings.json', which happily uses some special visualisations created specifically for it -->
+      <!-- User related: avatar, settings, favourits, logout -->
+      <div class="sidebar-unit">
         <LoginToggle {state}>
-          <div class="flex flex-col" slot="not-logged-in">
-            <LanguagePicker availableLanguages={layout.language} />
-            <Tr cls="alert" t={Translations.t.userinfo.notLoggedIn} />
-            <LoginButton clss="primary" osmConnection={state.osmConnection} />
+          <LoginButton osmConnection={state.osmConnection} slot="not-logged-in"></LoginButton>
+          <div class="flex gap-x-2">
+            {#if $userdetails.img}
+              <img src={$userdetails.img} class="rounded-full w-14 h-14" />
+            {/if}
+            <div class="flex flex-col justify-between">
+              <b>{$userdetails.name}</b>
+
+            </div>
           </div>
-          <SelectedElementView
-            highlightedRendering={state.guistate.highlightedUserSetting}
-            layer={usersettingslayer}
-            selectedElement={{
+        </LoginToggle>
+
+
+        <Page {onlyLink} shown={pg.usersettings}>
+          <div class="flex" slot="header">
+            <CogIcon class="h-6 w-6" />
+            <Tr t={UserRelatedState.usersettingsConfig.title.GetRenderValue({})} />
+          </div>
+
+          <!-- All shown components are set by 'usersettings.json', which happily uses some special visualisations created specifically for it -->
+          <LoginToggle {state}>
+            <div class="flex flex-col" slot="not-logged-in">
+              <LanguagePicker availableLanguages={layout.language} />
+              <Tr cls="alert" t={Translations.t.userinfo.notLoggedIn} />
+              <LoginButton clss="primary" osmConnection={state.osmConnection} />
+            </div>
+            <SelectedElementView
+              highlightedRendering={state.guistate.highlightedUserSetting}
+              layer={usersettingslayer}
+              selectedElement={{
                 type: "Feature",
                 properties: { id: "settings" },
                 geometry: { type: "Point", coordinates: [0, 0] },
               }}
 
-            {state}
-            tags={state.userRelatedState.preferencesAsTags}
-          />
+              {state}
+              tags={state.userRelatedState.preferencesAsTags}
+            />
+          </LoginToggle>
+
+
+        </Page>
+
+        <LoginToggle {state}>
+          <Page {onlyLink} shown={pg.favourites}>
+
+            <div class="flex" slot="header">
+              <HeartIcon class="h-6 w-6" />
+              <Tr t={Translations.t.favouritePoi.tab} />
+            </div>
+            <h3>
+
+              <Tr t={Translations.t.favouritePoi.title} />
+            </h3>
+            <div>
+              <Favourites {state} />
+              <h3>
+                <Tr t={Translations.t.reviews.your_reviews} />
+              </h3>
+              <ReviewsOverview {state} />
+            </div>
+          </Page>
+          <div class="self-end">
+            <LogoutButton osmConnection={state.osmConnection}  />
+          </div>
         </LoginToggle>
 
 
-      </Page>
+        <LanguagePicker/>
 
-      <LoginToggle {state}>
-      <Page {onlyLink} shown={pg.favourites}>
+      </div>
 
-        <div class="flex" slot="header">
-          <HeartIcon class="h-6 w-6" />
-          <Tr t={Translations.t.favouritePoi.tab} />
-        </div>
+
+      <!-- Theme related: documentation links, download, ... -->
+      <div class="sidebar-unit">
         <h3>
-
-          <Tr t={Translations.t.favouritePoi.title} />
+          About this map
         </h3>
-        <div>
-          <Favourites {state} />
-          <h3>
-            <Tr t={Translations.t.reviews.your_reviews} />
-          </h3>
-          <ReviewsOverview {state} />
-        </div>
-      </Page>
-      </LoginToggle>
 
-
-
-    </div>
-
-
-    <!-- Theme related: documentation links, download, ... -->
-    <div>
-      <h3>
-        About {layout.id}
-      </h3>
-
-      <Page {onlyLink} shown={pg.about_theme}>
-        <div class="flex" slot="header">
-          <Marker icons={layout.icon} size="h-4 w-4" />
-          <Tr t={layout.title} />
-        </div>
-        <ThemeIntroPanel {state} />
-      </Page>
-
-      <FilterPage {onlyLink} {state} />
-
-      <RasterLayerOverview {onlyLink} {state} />
-
-      <Page {onlyLink} shown={pg.share}>
-        <div class="flex" slot="header">
-          <Share class="h-4 w-4" />
-          <Tr t={Translations.t.general.sharescreen.title} />
-        </div>
-        <ShareScreen {state} />
-      </Page>
-
-
-      {#if state.featureSwitches.featureSwitchEnableExport}
-        <Page {onlyLink} shown={pg.download}>
-          <div slot="header" class="flex">
-            <ArrowDownTray class="h-4 w-4" />
-            <Tr t={Translations.t.general.download.title} />
+        <Page {onlyLink} shown={pg.about_theme}>
+          <dic slot="link">
+            Show introduction
+          </dic>
+          <div class="flex" slot="header">
+            <Marker icons={layout.icon} size="h-4 w-4" />
+            <Tr t={layout.title} />
           </div>
-          <DownloadPanel {state} />
+          <ThemeIntroPanel {state} />
         </Page>
-      {/if}
 
-      {#if layout.official}
-        <a
-          class="flex"
-          href={"https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Themes/" +
+        <FilterPage {onlyLink} {state} />
+
+        <RasterLayerOverview {onlyLink} {state} />
+
+        <Page {onlyLink} shown={pg.share}>
+          <div class="flex" slot="header">
+            <Share class="h-4 w-4" />
+            <Tr t={Translations.t.general.sharescreen.title} />
+          </div>
+          <ShareScreen {state} />
+        </Page>
+
+
+        {#if state.featureSwitches.featureSwitchEnableExport}
+          <Page {onlyLink} shown={pg.download}>
+            <div slot="header" class="flex">
+              <ArrowDownTray class="h-4 w-4" />
+              <Tr t={Translations.t.general.download.title} />
+            </div>
+            <DownloadPanel {state} />
+          </Page>
+        {/if}
+
+        {#if layout.official}
+          <a
+            class="flex"
+            href={"https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Themes/" +
         layout.id +
         ".md"}
-          target="_blank"
-        >
-          <DocumentMagnifyingGlass class="h-6 w-6" />
-          <Tr
-            t={Translations.t.general.attribution.openThemeDocumentation.Subs({
+            target="_blank"
+          >
+            <DocumentMagnifyingGlass class="h-6 w-6" />
+            <Tr
+              t={Translations.t.general.attribution.openThemeDocumentation.Subs({
           name: layout.title,
         })}
-          />
+            />
+          </a>
+
+          <a class="flex" href={Utils.OsmChaLinkFor(31, layout.id)} target="_blank">
+            <DocumentChartBar class="h-6 w-6" />
+            <Tr t={Translations.t.general.attribution.openOsmcha.Subs({ theme: layout.title })} />
+          </a>
+        {/if}
+      </div>
+
+
+      <!-- Other links and tools for the given location: open iD/JOSM; community index, ... -->
+      <div class="sidebar-unit">
+
+        <h3>
+          Discover more
+        </h3>
+
+        <Page {onlyLink} shown={pg.community_index}>
+          <div class="flex gap-x-2" slot="header">
+            <Community class="h-6 w-6" />
+            <Tr t={Translations.t.communityIndex.title} />
+          </div>
+          <CommunityIndexView location={state.mapProperties.location} />
+        </Page>
+
+
+        <If condition={featureSwitches.featureSwitchEnableLogin}>
+          <OpenIdEditor mapProperties={state.mapProperties} />
+          <OpenJosm {state} />
+          <MapillaryLink large={false} mapProperties={state.mapProperties} />
+        </If>
+
+      </div>
+
+
+      <!-- About MC: various outward links, legal info, ... -->
+      <div class="sidebar-unit">
+
+        <h3>
+          <Tr t={Translations.t.general.menu.aboutMapComplete} />
+        </h3>
+
+        {#if $showHome}
+          <a class="flex" href={Utils.HomepageLink()}>
+            <Add class="h-6 w-6" />
+            {#if Utils.isIframe}
+              <Tr t={Translations.t.general.seeIndex} />
+            {:else}
+              <Tr t={Translations.t.general.backToIndex} />
+            {/if}
+          </a>
+        {/if}
+
+
+        <Page {onlyLink} shown={pg.hotkeys}>
+          <Tr t={ Translations.t.hotkeyDocumentation.title} slot="header" />
+          <HotkeyTable />
+        </Page>
+
+        <a class="flex" href="https://github.com/pietervdvn/MapComplete/" target="_blank">
+          <Github class="h-6 w-6" />
+          <Tr t={Translations.t.general.attribution.gotoSourceCode} />
         </a>
 
-        <a class="flex" href={Utils.OsmChaLinkFor(31, layout.id)} target="_blank">
-          <DocumentChartBar class="h-6 w-6" />
-          <Tr t={Translations.t.general.attribution.openOsmcha.Subs({ theme: layout.title })} />
+        <a class="flex" href="https://github.com/pietervdvn/MapComplete/issues" target="_blank">
+          <Bug class="h-6 w-6" />
+          <Tr t={Translations.t.general.attribution.openIssueTracker} />
         </a>
-      {/if}
-    </div>
-
-    <!-- Legal info: privacy policy, map attribution, icon attribution -->
-    <div>
-      <h3>Legal</h3>
-
-      <Page {onlyLink} shown={pg.copyright}>
-        <Tr slot="header" t={Translations.t.general.attribution.attributionTitle} />
-        <CopyrightPanel {state} />
-      </Page>
 
 
-      <Page {onlyLink} shown={pg.copyright_icons}>
-        <div slot="header">
-          <Tr t={ Translations.t.general.attribution.iconAttribution.title} />
-        </div>
-        <CopyrightAllIcons {state} />
-
-      </Page>
-
-
-      <Page {onlyLink} shown={pg.privacy}>
-        <div class="flex gap-x-2" slot="header">
-          <EyeIcon class="w-6 pr-2" />
-          <Tr t={Translations.t.privacy.title} />
-        </div>
-        <PrivacyPolicy {state} />
-      </Page>
-
-    </div>
-
-    <!-- Other links and tools for the given location: open iD/JOSM; community index, ... -->
-    <div>
-
-      <h3>
-        Discover more
-      </h3>
-
-      <Page {onlyLink} shown={pg.community_index}>
-        <div class="flex gap-x-2" slot="header">
-          <Community class="h-6 w-6" />
-          <Tr t={Translations.t.communityIndex.title} />
-        </div>
-        <CommunityIndexView location={state.mapProperties.location} />
-      </Page>
-
-
-      <If condition={featureSwitches.featureSwitchEnableLogin}>
-        <OpenIdEditor mapProperties={state.mapProperties} />
-        <OpenJosm {state} />
-        <MapillaryLink large={false} mapProperties={state.mapProperties} />
-      </If>
-
-    </div>
-    <!-- About MC: various hints -->
-    <div>
-
-      <h3>
-        <Tr t={Translations.t.general.menu.aboutMapComplete} />
-      </h3>
-
-      {#if $showHome}
-        <a class="flex" href={Utils.HomepageLink()}>
-          <Add class="h-6 w-6" />
-          {#if Utils.isIframe}
-            <Tr t={Translations.t.general.seeIndex} />
-          {:else}
-            <Tr t={Translations.t.general.backToIndex} />
-          {/if}
+        <a class="flex" href="https://en.osm.town/@MapComplete" target="_blank">
+          <Mastodon class="h-6 w-6" />
+          <Tr t={Translations.t.general.attribution.followOnMastodon} />
         </a>
-      {/if}
+
+        <a class="flex" href="https://liberapay.com/pietervdvn/" target="_blank">
+          <Liberapay class="h-6 w-6" />
+          <Tr t={Translations.t.general.attribution.donate} />
+        </a>
 
 
-      <Page {onlyLink} shown={pg.hotkeys}>
-        <Tr t={ Translations.t.hotkeyDocumentation.title} slot="header" />
-        <HotkeyTable />
-      </Page>
-
-      <a class="flex" href="https://github.com/pietervdvn/MapComplete/" target="_blank">
-        <Github class="h-6 w-6" />
-        <Tr t={Translations.t.general.attribution.gotoSourceCode} />
-      </a>
-
-      <a class="flex" href="https://github.com/pietervdvn/MapComplete/issues" target="_blank">
-        <Bug class="h-6 w-6" />
-        <Tr t={Translations.t.general.attribution.openIssueTracker} />
-      </a>
+        <Page {onlyLink} shown={pg.copyright}>
+          <Tr slot="header" t={Translations.t.general.attribution.attributionTitle} />
+          <CopyrightPanel {state} />
+        </Page>
 
 
-      <a class="flex" href="https://en.osm.town/@MapComplete" target="_blank">
-        <Mastodon class="h-6 w-6" />
-        <Tr t={Translations.t.general.attribution.followOnMastodon} />
-      </a>
+        <Page {onlyLink} shown={pg.copyright_icons}>
+          <div slot="header">
+            <Tr t={ Translations.t.general.attribution.iconAttribution.title} />
+          </div>
+          <CopyrightAllIcons {state} />
 
-      <a class="flex" href="https://liberapay.com/pietervdvn/" target="_blank">
-        <Liberapay class="h-6 w-6" />
-        <Tr t={Translations.t.general.attribution.donate} />
-      </a>
+        </Page>
 
-      <div class="subtle">
-        {Constants.vNumber}
+
+        <Page {onlyLink} shown={pg.privacy}>
+          <div class="flex gap-x-2" slot="header">
+            <EyeIcon class="w-6 pr-2" />
+            <Tr t={Translations.t.privacy.title} />
+          </div>
+          <PrivacyPolicy {state} />
+        </Page>
+
+
+        <div class="subtle self-end">
+          {Constants.vNumber}
+        </div>
       </div>
     </div>
 
-  </SidebarWrapper>
 </Sidebar>
+
+
+<style>
+    :global(.sidebar-unit) {
+        width: calc(100% + 1rem);
+        margin-top: 0.75rem;
+        margin-left: -0.5rem;
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.25rem;
+        background: var(--background-color);
+        padding: 1rem;
+        border-radius: 0.5rem;
+    }
+    :global(.sidebar-unit > h3) {
+        margin-top: 0;
+        margin-bottom: 0.5rem
+    }
+    :global(.sidebar-unit svg) {
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-right: 0.5rem;
+        margin-left: 0.5rem;
+        flex-shrink: 0;
+    }
+
+    :global(.sidebar-unit img) {
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-right: 0.5rem;
+        flex-shrink: 0;
+
+    }
+
+
+    :global(.sidebar-unit  a) {
+        display: flex;
+        align-items: center;
+        margin-left: 1rem;
+    }
+
+    :global(.sidebar-unit button) {
+        display: flex;
+        align-items: center;
+        margin-left: 0.5rem;
+    }
+
+</style>
