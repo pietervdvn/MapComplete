@@ -11,7 +11,7 @@
   })
   export let fullscreen: boolean = false
 
-  const shared = "defaultClass normal-background dark:bg-gray-800 rounded-lg border-gray-200 dark:border-gray-700 border-gray-200 dark:border-gray-700 divide-gray-200 dark:divide-gray-700 shadow-md"
+  const shared = "in-page normal-background dark:bg-gray-800 rounded-lg border-gray-200 dark:border-gray-700 border-gray-200 dark:border-gray-700 divide-gray-200 dark:divide-gray-700 shadow-md"
   let defaultClass = "relative flex flex-col mx-auto w-full divide-y " + shared
   if (fullscreen) {
     defaultClass = shared
@@ -25,7 +25,9 @@
 </script>
 
 {#if !onlyLink}
-  <Modal open={_shown} on:close={() => shown.set(false)} size="xl" {defaultClass} {bodyClass} {dialogClass} {headerClass}
+  <Modal open={_shown} on:close={() => shown.set(false)} outsideclose
+         size="xl"
+         {defaultClass} {bodyClass} {dialogClass} {headerClass}
          color="none">
     <h1 slot="header" class="w-full">
       <slot name="header" />
@@ -36,7 +38,7 @@
     {/if}
   </Modal>
 {:else}
-  <button class="as-link" on:click={() => shown.setData(true)}>
+  <button class="as-link sidebar-button" on:click={() => shown.setData(true)}>
     <slot name="link">
     <slot name="header" />
     </slot>

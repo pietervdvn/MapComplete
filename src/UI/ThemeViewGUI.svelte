@@ -46,7 +46,6 @@
   import SelectedElementPanel from "./Base/SelectedElementPanel.svelte"
   import MenuDrawer from "./BigComponents/MenuDrawer.svelte"
   import DrawerLeft from "./Base/DrawerLeft.svelte"
-  import { ariaLabel, ariaLabelStore } from "../Utils/ariaLabel"
 
   export let state: ThemeViewState
   let layout = state.layout
@@ -406,7 +405,9 @@
   </LoginToggle>
 
   <DrawerLeft shown={state.guistate.menuIsOpened}>
-    <MenuDrawer onlyLink={true} {state} />
+    <div class="h-screen overflow-y-auto">
+      <MenuDrawer onlyLink={true} {state} />
+    </div>
   </DrawerLeft>
   <MenuDrawer onlyLink={false} {state} />
 

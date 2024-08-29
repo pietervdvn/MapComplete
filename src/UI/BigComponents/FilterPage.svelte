@@ -51,7 +51,7 @@
 
 <Page {onlyLink} shown={state.guistate.pageStates.filter}>
   <div class="flex" slot="link">
-    <Filter class="h-6 w-6 pr-2" />
+    <Filter class="h-6 w-6" />
     <Tr t={Translations.t.general.menu.filter} />
   </div>
   <div class="mr-16 flex w-full flex-wrap items-center justify-between" slot="header">
