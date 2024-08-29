@@ -2,7 +2,8 @@
   "id": "ghostsigns",
   "title": {
     "en": "Ghost Signs",
-    "de": "Geisterzeichen"
+    "de": "Geisterzeichen",
+    "es": "Señales fantasma"
   },
   "description": {
     "en": "A map showing disused signs on buildings",
@@ -176,25 +177,29 @@
         "name": {
           "en": "All advertentie wall paintings",
           "nl": "Alle adverterende muurschilderingen",
-          "de": "Alle Werbe-Wandbilder"
+          "de": "Alle Werbe-Wandbilder",
+          "es": "Todos los murales promocionales"
         },
         "+tagRenderings": [
           {
             "id": "historic",
             "question": {
               "en": "Is this a ghost sign?",
-              "de": "Ist das ein Geisterzeichen?"
+              "de": "Ist das ein Geisterzeichen?",
+              "es": "¿Es una señal fantasma?"
             },
             "questionHint": {
               "en": "Is this sign for a business that no longer exists or no longer being maintained?",
-              "de": "Ist dieses Schild für ein Geschäft, das nicht mehr existiert oder nicht mehr gepflegt wird?"
+              "de": "Ist dieses Schild für ein Geschäft, das nicht mehr existiert oder nicht mehr gepflegt wird?",
+              "es": "¿Es este rótulo de un negocio que ya no existe o que ya no se mantiene?"
             },
             "mappings": [
               {
                 "if": "historic=advertising",
                 "then": {
                   "en": "This is a ghost sign",
-                  "de": "Das ist ein Geisterzeichen"
+                  "de": "Das ist ein Geisterzeichen",
+                  "es": "Esta es una señal fantasma"
                 },
                 "alsoShowIf": "historic=yes"
               },
@@ -202,7 +207,8 @@
                 "if": "historic=",
                 "then": {
                   "en": "This is not a ghost sign",
-                  "de": "Das ist kein Geisterzeichen"
+                  "de": "Das ist kein Geisterzeichen",
+                  "es": "Esta no es una señal fantasma"
                 }
               }
             ]
@@ -227,7 +233,9 @@
           {
             "id": "historic_or_not",
             "question": {
-              "en": "Is this artwork a historic advertisement?"
+              "en": "Is this artwork a historic advertisement?",
+              "de": "Ist dieses Kunstwerk eine historische Werbung?",
+              "es": "¿Es esta obra de arte un anuncio histórico?"
             },
             "mappings": [
               {
@@ -236,7 +244,9 @@
                   "advertising=wall_painting"
                 ],
                 "then": {
-                  "en": "This artwork is a historic advertisement"
+                  "en": "This artwork is a historic advertisement",
+                  "de": "Dieses Kunstwerk ist eine historische Werbung",
+                  "es": "Esta obra de arte es un anuncio histórico"
                 }
               },
               {
@@ -245,7 +255,9 @@
                   "advertising="
                 ],
                 "then": {
-                  "en": "This artwork is not a historic advertisement"
+                  "en": "This artwork is not a historic advertisement",
+                  "de": "Dieses Kunstwerk ist keine historische Werbung",
+                  "es": "Esta obra de arte no es un anuncio histórico"
                 }
               }
             ]

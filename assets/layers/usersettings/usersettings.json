@@ -376,7 +376,8 @@
         "da": "Hvilket baggrundslag skal vises som standard?"
       },
       "questionHint": {
-        "en": "To set a specific background as default, select it in the background menu first after which it will appear here."
+        "en": "To set a specific background as default, select it in the background menu first after which it will appear here.",
+        "de": "Um einen bestimmten Hintergrund als Standard festzulegen, wähle ihn zuerst im Hintergrundmenü aus, danach wird er hier angezeigt."
       },
       "condition": "_theme:backgroundLayer=",
       "mappings": [
