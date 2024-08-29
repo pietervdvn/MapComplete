@@ -401,6 +401,7 @@
               >
                 <input
                   type="radio"
+                  class="self-center mr-1"
                   bind:group={selectedMapping}
                   name={"mappings-radio-" + config.id}
                   value={i}
@@ -412,6 +413,7 @@
               <label class="flex gap-x-1">
                 <input
                   type="radio"
+                  class="self-center mr-1"
                   bind:group={selectedMapping}
                   name={"mappings-radio-" + config.id}
                   value={config.mappings?.length}
@@ -448,6 +450,7 @@
               >
                 <input
                   type="checkbox"
+                  class="self-center mr-1"
                   name={"mappings-checkbox-" + config.id + "-" + i}
                   bind:checked={checkedMappings[i]}
                   on:keypress={(e) => onInputKeypress(e)}
@@ -458,6 +461,7 @@
               <label class="flex gap-x-1">
                 <input
                   type="checkbox"
+                  class="self-center mr-1"
                   name={"mappings-checkbox-" + config.id + "-" + config.mappings?.length}
                   bind:checked={checkedMappings[config.mappings.length]}
                   on:keypress={(e) => onInputKeypress(e)}

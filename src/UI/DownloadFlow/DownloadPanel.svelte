@@ -65,10 +65,6 @@
   <Tr cls="alert" t={Translations.t.general.download.toMuch} />
 {:else}
   <div class="flex w-full flex-col" />
-  <h3>
-    <Tr t={t.title} />
-  </h3>
-
   <DownloadButton
     {state}
     extension="geojson"
