@@ -47,6 +47,7 @@
   import MenuDrawer from "./BigComponents/MenuDrawer.svelte"
   import DrawerLeft from "./Base/DrawerLeft.svelte"
   import { ariaLabel, ariaLabelStore } from "../Utils/ariaLabel"
+
   export let state: ThemeViewState
   let layout = state.layout
   let maplibremap: UIEventSource<MlMap> = state.map
@@ -188,12 +189,14 @@
   <div class="pointer-events-none absolute top-0 left-0 w-full">
     <!-- Top components -->
 
-    <div class="flex bg-black-light-transparent pointer-events-auto items-center justify-between px-4 py-2 flex-wrap-reverse">
+    <div
+      class="flex bg-black-light-transparent pointer-events-auto items-center justify-between px-4 py-2 flex-wrap-reverse">
       <!-- Top bar with tools -->
       <div class="flex items-center">
 
         <MapControlButton
-         arialabel={Translations.t.general.labels.menu}
+          cls="m-0.5 p-0.5 sm:p-1"
+          arialabel={Translations.t.general.labels.menu}
           on:click={() => {console.log("Opening...."); state.guistate.menuIsOpened.setData(true)}}
           on:keydown={forwardEventToMap}
         >
@@ -205,9 +208,9 @@
           on:keydown={forwardEventToMap}
         >
           <div
-            class="m-0.5 mx-1 flex cursor-pointer items-center max-[480px]:w-full sm:mx-1 md:mx-2"
+            class="m-0.5 mx-1 flex cursor-pointer items-center max-[480px]:w-full sm:mx-1 mr-2"
           >
-            <Marker icons={layout.icon} size="h-4 w-4 md:h-8 md:w-8 mr-0.5 sm:mr-1 md:mr-2" />
+            <Marker icons={layout.icon} size="h-6 w-6 shrink-0 md:h-8 md:w-8 mr-0.5 sm:mr-1 md:mr-2" />
             <b class="mr-1">
               <Tr t={layout.title} />
             </b>
