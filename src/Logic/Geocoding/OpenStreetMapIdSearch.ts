@@ -4,7 +4,13 @@ import { OsmId } from "../../Models/OsmFeature"
 import { SpecialVisualizationState } from "../../UI/SpecialVisualization"
 
 export default class OpenStreetMapIdSearch implements GeocodingProvider {
-    private static regex = /((https?:\/\/)?(www.)?(osm|openstreetmap).org\/)?(node|way|relation)\/([0-9]+)/
+    private static readonly regex = /((https?:\/\/)?(www.)?(osm|openstreetmap).org\/)?(n|node|w|way|r|relation)[\/ ]?([0-9]+)/
+
+    private static readonly types: Readonly<Record<string, "node" | "way" | "relation">> = {
+        "n":"node",
+        "w":"way",
+        "r":"relation",
+    }
 
     private readonly _state: SpecialVisualizationState
 
@@ -18,13 +24,22 @@ export default class OpenStreetMapIdSearch implements GeocodingProvider {
      * OpenStreetMapIdSearch.extractId("https://openstreetmap.org/node/42#map=19/51.204245/3.212731") // => "node/42"
      * OpenStreetMapIdSearch.extractId("node/42") // => "node/42"
      * OpenStreetMapIdSearch.extractId("way/42") // => "way/42"
+     * OpenStreetMapIdSearch.extractId("n123456789") // => "node/123456789"
+     * OpenStreetMapIdSearch.extractId("node123456789") // => "node/123456789"
+     * OpenStreetMapIdSearch.extractId("node 123456789") // => "node/123456789"
+     * OpenStreetMapIdSearch.extractId("w123456789") // => "way/123456789"
+     * OpenStreetMapIdSearch.extractId("way123456789") // => "way/123456789"
+     * OpenStreetMapIdSearch.extractId("way 123456789") // => "way/123456789"
      * OpenStreetMapIdSearch.extractId("https://www.openstreetmap.org/node/5212733638") // => "node/5212733638"
      */
     public static extractId(query: string): OsmId | undefined {
         const match = query.match(OpenStreetMapIdSearch.regex)
         if (match) {
-            const type = match.at(-2)
+            let type = match.at(-2)
             const id = match.at(-1)
+            if(type.length === 1){
+               type = OpenStreetMapIdSearch.types[type]
+            }
             return <OsmId>(type + "/" + id)
         }
         return undefined

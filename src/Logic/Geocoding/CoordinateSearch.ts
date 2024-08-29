@@ -7,7 +7,7 @@ import { ImmutableStore, Store } from "../UIEventSource"
  */
 export default class CoordinateSearch implements GeocodingProvider {
     private static readonly latLonRegexes: ReadonlyArray<RegExp> = [
-        /(-?[0-9]+\.[0-9]+)[ ,;]+(-?[0-9]+\.[0-9]+)/,
+        /^(-?[0-9]+\.[0-9]+)[ ,;/\\]+(-?[0-9]+\.[0-9]+)/,
         /lat[:=]? *['"]?(-?[0-9]+\.[0-9]+)['"]?[ ,;&]+lon[:=]? *['"]?(-?[0-9]+\.[0-9]+)['"]?/,
         /lat[:=]? *['"]?(-?[0-9]+\.[0-9]+)['"]?[ ,;&]+lng[:=]? *['"]?(-?[0-9]+\.[0-9]+)['"]?/,
 
@@ -16,7 +16,7 @@ export default class CoordinateSearch implements GeocodingProvider {
     ]
 
     private static readonly lonLatRegexes: ReadonlyArray<RegExp> = [
-        /(-?[0-9]+\.[0-9]+)[ ,;]+(-?[0-9]+\.[0-9]+)/,
+        /^(-?[0-9]+\.[0-9]+)[ ,;/\\]+(-?[0-9]+\.[0-9]+)/,
         /lon[:=]? *['"]?(-?[0-9]+\.[0-9]+)['"]?[ ,;&]+lat[:=]? *['"]?(-?[0-9]+\.[0-9]+)['"]?/,
         /lng[:=]? *['"]?(-?[0-9]+\.[0-9]+)['"]?[ ,;&]+lat[:=]? *['"]?(-?[0-9]+\.[0-9]+)['"]?/,
 
@@ -36,6 +36,13 @@ export default class CoordinateSearch implements GeocodingProvider {
      *
      * const ls = new CoordinateSearch()
      * const results = ls.directSearch("51.2611 3.2217")
+     * results.length // => 2
+     * results[0] // => {lat: 51.2611, lon: 3.2217, display_name: "lon: 3.2217, lat: 51.2611",  "category": "coordinate", "source": "coordinate:latlon"}
+     * results[1] // => {lon: 51.2611, lat: 3.2217, display_name: "lon: 51.2611, lat: 3.2217",  "category": "coordinate", "source": "coordinate:lonlat"}
+     *
+     * // Test format mentioned in 1599
+     * const ls = new CoordinateSearch()
+     * const results = ls.directSearch("51.2611/3.2217")
      * results.length // => 2
      * results[0] // => {lat: 51.2611, lon: 3.2217, display_name: "lon: 3.2217, lat: 51.2611",  "category": "coordinate", "source": "coordinate:latlon"}
      * results[1] // => {lon: 51.2611, lat: 3.2217, display_name: "lon: 51.2611, lat: 3.2217",  "category": "coordinate", "source": "coordinate:lonlat"}
