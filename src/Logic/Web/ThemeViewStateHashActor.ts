@@ -35,7 +35,7 @@ export default class ThemeViewStateHashActor {
         const hashOnLoad = Hash.hash.data
         const containsMenu = this.loadStateFromHash(hashOnLoad)
         // First of all, try to recover the selected element
-        if (!containsMenu && hashOnLoad.length > 0) {
+        if (!containsMenu && hashOnLoad?.length > 0) {
             state.indexedFeatures.featuresById.addCallbackAndRunD(() => {
                 // once that we have found a matching element, we can be sure the indexedFeaturesource was popuplated and that the job is done
                 return this.loadSelectedElementFromHash(hashOnLoad)
