@@ -467,10 +467,12 @@
         "walls_and_buildings"
       ],
       "title": {
-        "en": "a billboard mounted to a wall"
+        "en": "a billboard mounted to a wall",
+        "de": "Eine an einer Wand montierte Werbetafel"
       },
       "description": {
-        "en": "A large outdoor advertising structure, typically found in high-traffic areas such as alongside busy roads mounted on a wall"
+        "en": "A large outdoor advertising structure, typically found in high-traffic areas such as alongside busy roads mounted on a wall",
+        "de": "Eine große Außenwerbestruktur, die typischerweise in stark frequentierten Bereichen wie an vielbefahrenen Straßen auf einer Wand montiert zu finden ist"
       },
       "exampleImages": [
         "./assets/themes/advertising/billboard_wall.jpg"

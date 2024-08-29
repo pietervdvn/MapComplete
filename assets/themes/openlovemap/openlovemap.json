@@ -51,42 +51,48 @@
             "id": "fetish",
             "multiAnswer": true,
             "question": {
-              "en": "Does this shop offer fetish gear?"
+              "en": "Does this shop offer fetish gear?",
+              "de": "Bietet dieser Laden Fetischkleidung an?"
             },
             "mappings": [
               {
                 "if": "fetish:bdsm:soft=yes",
                 "ifnot": "fetish:bdsm:soft=no",
                 "then": {
-                  "en": "This shop offers <b>soft BDSM-gear</b>, such as fluffy handcuffs, a 'fifty-shade-of-grey'-starterset, ..."
+                  "en": "This shop offers <b>soft BDSM-gear</b>, such as fluffy handcuffs, a 'fifty-shade-of-grey'-starterset, ...",
+                  "de": "Dieser Laden bietet <b>weiches BDSM-Zubehör</b> an, wie zum Beispiel flauschige Handschellen, ein \"Fifty Shades of Grey\"-Starterset, ..."
                 }
               },
               {
                 "if": "fetish:bdsm:specialized=yes",
                 "ifnot": "fetish:bdsm:specialized=no",
                 "then": {
-                  "en": "This shop offers <b>specialized BDSM-gear</b>, such as spreader bars, supplies for needle play, medical bondage supplies, impact tools, shackles, metal colors, cuffs, nipple clamps, shibari accessories, ..."
+                  "en": "This shop offers <b>specialized BDSM-gear</b>, such as spreader bars, supplies for needle play, medical bondage supplies, impact tools, shackles, metal colors, cuffs, nipple clamps, shibari accessories, ...",
+                  "de": "Dieser Laden bietet <b>spezialisiertes BDSM-Zubehör</b> an, wie zum Beispiel Spreizstangen, Utensilien für Nadelfolter, medizinische Bondage-Ausrüstung, Schlagwerkzeuge, Fesseln, Metallhalsbänder, Handschellen, Nippelklemmen, Shibari-Zubehör, ..."
                 }
               },
               {
                 "if": "fetish:pet_play=yes",
                 "ifnot": "fetish:pet_play=no",
                 "then": {
-                  "en": "This shop offers <b>pet play</b> accessories, such as puppy masks, animal masks, pony play, tails, hoof shoes, ..."
+                  "en": "This shop offers <b>pet play</b> accessories, such as puppy masks, animal masks, pony play, tails, hoof shoes, ...",
+                  "de": "Dieser Laden bietet <b>Petplay</b>-Zubehör an, wie zum Beispiel Hundemasken, Tiermasken, Ponyplay-Ausrüstung, Schwänze, Hufschuhe, ..."
                 }
               },
               {
                 "if": "fetish:leather=yes",
                 "ifnot": "fetish:leather=no",
                 "then": {
-                  "en": "This shop offers <b>leather gear</b>, including pants and shirts usable in daily life up till leather harnesses"
+                  "en": "This shop offers <b>leather gear</b>, including pants and shirts usable in daily life up till leather harnesses",
+                  "de": "Dieser Laden bietet <b>Lederkleidung</b> an, darunter Hosen und Hemden für den Alltag bis hin zu Lederharnissen"
                 }
               },
               {
                 "if": "fetish:uniform=yes",
                 "ifnot": "fetish:uniform=no",
                 "then": {
-                  "en": "This shop offers <b>uniforms</b> for roleplay, such nurse uniforms, military uniforms, police, school girl, french maid, ..."
+                  "en": "This shop offers <b>uniforms</b> for roleplay, such nurse uniforms, military uniforms, police, school girl, french maid, ...",
+                  "de": "Dieser Laden bietet <b>Uniformen</b> für Rollenspiele an, wie Krankenschwester-Uniformen, Militäruniformen, Polizei-, Schulmädchen- und Dienstmädchen-Outfits, ..."
                 }
               }
             ]

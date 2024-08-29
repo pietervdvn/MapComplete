@@ -2,11 +2,13 @@
   "id": "ice_cream",
   "name": {
     "en": "Ice cream parlors",
-    "de": "Eisdielen"
+    "de": "Eisdielen",
+    "nl": "IJssalon"
   },
   "description": {
     "en": "A place where ice cream is sold over the counter",
-    "de": "Ein Ort, an dem Eiscreme an der Theke verkauft wird"
+    "de": "Ein Ort, an dem Eiscreme an der Theke verkauft wird",
+    "nl": "Een plaats waar voornamelijk ijsjes verkocht worden, bedoeld voor onmiddelijke consumptie"
   },
   "source": {
     "osmTags": "amenity=ice_cream"
@@ -15,7 +17,8 @@
   "title": {
     "render": {
       "en": "Ice cream parlor",
-      "de": "Eisdiele"
+      "de": "Eisdiele",
+      "nl": "IJssalon"
     },
     "mappings": [
       {
@@ -23,7 +26,8 @@
         "then": {
           "en": "{name}",
           "de": "{name}",
-          "pl": "{name}"
+          "pl": "{name}",
+          "nl": "{name}"
         }
       }
     ]
@@ -56,14 +60,16 @@
       "title": {
         "en": "an ice cream parlor",
         "de": "eine Eisdiele",
-        "fr": "un glacier"
+        "fr": "un glacier",
+        "nl": "een ijssalon"
       },
       "tags": [
         "amenity=ice_cream"
       ],
       "description": {
         "en": "A shop where one can buy only icecream and related items. Ice cream is normally hand-scooped.",
-        "de": "Ein Geschäft, in dem man nur Eiscreme und damit verbundene Artikel kaufen kann. Normalerweise wird das Eis mit der Hand portioniert."
+        "de": "Ein Geschäft, in dem man nur Eiscreme und damit verbundene Artikel kaufen kann. Normalerweise wird das Eis mit der Hand portioniert.",
+        "nl": "Een plaats waar men voornamelijk ijsjes koopt, meestal met de hand geschept en bedoeld om onmiddellijk op te eten."
       }
     }
   ],
