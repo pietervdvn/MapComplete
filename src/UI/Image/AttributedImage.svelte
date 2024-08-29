@@ -19,12 +19,14 @@
   export let previewedImage: UIEventSource<ProvidedImage> = undefined
   export let attributionFormat: "minimal" | "medium" | "large" = "medium"
   let canZoom = previewedImage !== undefined // We check if there is a SOURCE, not if there is data in it!
+  let loaded = false
 </script>
 
 <div class="relative shrink-0">
   <div class="relative w-fit">
     <img
       bind:this={imgEl}
+      on:load={() => loaded = true}
       class={imgClass ?? ""}
       class:cursor-zoom-in={previewedImage !== undefined}
       on:click={() => {
@@ -38,7 +40,7 @@
       src={image.url}
     />
 
-    {#if canZoom}
+    {#if canZoom && loaded}
       <div class="absolute right-0 top-0 bg-black-transparent rounded-bl-full">
       <MagnifyingGlassPlusIcon class="w-8 h-8 pl-3 pb-3 cursor-zoom-in" color="white" />
       </div>
