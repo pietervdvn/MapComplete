@@ -190,7 +190,7 @@
     <!-- Top components -->
 
     <div
-      class="flex bg-black-light-transparent pointer-events-auto items-center justify-between px-4 py-2 flex-wrap-reverse">
+      class="flex bg-black-light-transparent pointer-events-auto items-center justify-between px-4 py-1 flex-wrap-reverse">
       <!-- Top bar with tools -->
       <div class="flex items-center">
 
@@ -200,7 +200,7 @@
           on:click={() => {console.log("Opening...."); state.guistate.menuIsOpened.setData(true)}}
           on:keydown={forwardEventToMap}
         >
-          <MenuIcon class="h-8 w-8 cursor-pointer" />
+          <MenuIcon class="h-6 w-6 cursor-pointer" />
         </MapControlButton>
 
         <MapControlButton
@@ -210,7 +210,7 @@
           <div
             class="m-0.5 mx-1 flex cursor-pointer items-center max-[480px]:w-full sm:mx-1 mr-2"
           >
-            <Marker icons={layout.icon} size="h-6 w-6 shrink-0 md:h-8 md:w-8 mr-0.5 sm:mr-1 md:mr-2" />
+            <Marker icons={layout.icon} size="h-6 w-6 shrink-0 mr-0.5 sm:mr-1 md:mr-2" />
             <b class="mr-1">
               <Tr t={layout.title} />
             </b>
