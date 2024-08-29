@@ -9,9 +9,11 @@
   import Translations from "../i18n/Translations"
   import Tr from "../Base/Tr.svelte"
   import Filter from "../../assets/svg/Filter.svelte"
-  import TitledPanel from "../Base/TitledPanel.svelte"
+  import Page from "../Base/Page.svelte"
 
   export let state: ThemeViewState
+  export let onlyLink: boolean
+
   let layout = state.layout
 
   let allEnabled: boolean
@@ -47,8 +49,8 @@
   }
 </script>
 
-<TitledPanel>
-  <div class="mr-10 flex w-full flex-wrap items-center justify-between" slot="title">
+<Page {onlyLink} shown={state.guistate.pageStates.filter}>
+  <div class="mr-10 flex w-full flex-wrap items-center justify-between" slot="header">
     <div class="flex">
       <Filter class="h-6 w-6 pr-2" />
       <Tr t={Translations.t.general.menu.filter} />
@@ -80,4 +82,4 @@
       zoomlevel={state.mapProperties.zoom}
     />
   {/each}
-</TitledPanel>
+</Page>

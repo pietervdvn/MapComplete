@@ -1,6 +1,7 @@
 import ThemeViewState from "../../Models/ThemeViewState"
 import Hash from "./Hash"
 import { MenuState } from "../../Models/MenuState"
+import hash from "svelte/types/compiler/compile/utils/hash"
 
 export default class ThemeViewStateHashActor {
     private readonly _state: ThemeViewState
@@ -10,18 +11,16 @@ export default class ThemeViewStateHashActor {
         "",
         "- The id of the currently selected object, e.g. `node/1234`",
         "- The currently opened menu view",
-        "- The base64-encoded JSON-file specifying a custom theme (only when loading)",
         "",
         "### Possible hashes to open a menu",
         "",
         "The possible hashes are:",
         "",
-        MenuState._menuviewTabs.map((tab) => "`menu:" + tab + "`").join(","),
-        MenuState._themeviewTabs.map((tab) => "`theme-menu:" + tab + "`").join(","),
+        MenuState.pageNames.map((tab) => "`" + tab + "`").join(",")
     ]
 
     /**
-     * Converts the hash to the appropriate themeview state and, vice versa, sets the hash.
+     * Converts the hash to the appropriate theme-view state and, vice versa, sets the hash.
      *
      * As the navigator-back-button changes the hash first, this class thus also handles the 'back'-button events.
      *
@@ -33,45 +32,37 @@ export default class ThemeViewStateHashActor {
     constructor(state: ThemeViewState) {
         this._state = state
 
+        const hashOnLoad = Hash.hash.data
+        const containsMenu = this.loadStateFromHash(hashOnLoad)
         // First of all, try to recover the selected element
-        if (Hash.hash.data) {
-            const hash = Hash.hash.data
-            this.loadStateFromHash(hash)
-            Hash.hash.setData(hash) // reapply the previous hash
-            state.indexedFeatures.featuresById.addCallbackAndRunD((_) => {
-                let unregister = this.loadSelectedElementFromHash(hash)
+        if (!containsMenu && hashOnLoad.length > 0) {
+            state.indexedFeatures.featuresById.addCallbackAndRunD(() => {
                 // once that we have found a matching element, we can be sure the indexedFeaturesource was popuplated and that the job is done
-                return unregister
+                return this.loadSelectedElementFromHash(hashOnLoad)
             })
         }
 
-        // Register a hash change listener to correctly handle the back button
-        Hash.hash.addCallback((hash) => {
-            if (!!hash) {
-                // There is still a hash
-                // We _only_ have to (at most) close the overlays in this case
-                if (state.previewedImage.data) {
-                    state.previewedImage.setData(undefined)
-                    return
-                }
-
-                const parts = hash.split(";")
-                if (parts.indexOf("background") < 0) {
-                    state.guistate.backgroundLayerSelectionIsOpened.setData(false)
-                }
-                this.loadSelectedElementFromHash(hash)
-            } else {
-                this.back()
-            }
-        })
 
         // At last, register callbacks on the state to update the hash when they change.
         // Note: these should use 'addCallback', not 'addCallbackAndRun'
-        state.selectedElement.addCallback((_) => this.setHash())
-        state.guistate.allToggles.forEach(({ toggle, submenu }) => {
-            submenu?.addCallback((_) => this.setHash())
-            toggle.addCallback((_) => this.setHash())
+        state.selectedElement.addCallback(() => this.setHash())
+
+        // Register a hash change listener to correctly handle the back button
+        Hash.hash.addCallback((hash) => {
+                console.trace("Going back with hash", hash)
+            if (!hash) {
+                this.back()
+            }else{
+                if(!this.loadStateFromHash(hash)){
+                    this.loadSelectedElementFromHash(hash)
+                }
+            }
         })
+
+        for (const key in state.guistate.pageStates) {
+            const toggle = state.guistate.pageStates[key]
+            toggle.addCallback(() => this.setHash())
+        }
 
         // When all is done, set the hash. This must happen last to give the code above correct info
         this.setHash()
@@ -80,15 +71,10 @@ export default class ThemeViewStateHashActor {
     /**
      * Selects the appropriate element
      * Returns true if this method can be unregistered for the first run
-     * @param hash
-     * @private
      */
     private loadSelectedElementFromHash(hash: string): boolean {
         const state = this._state
         const selectedElement = state.selectedElement
-        // state.indexedFeatures.featuresById.stabilized(250)
-
-        hash = hash.split(";")[0] // The 'selectedElement' is always the _first_ item in the hash (if any)
 
         // Set the hash based on the selected element...
         // ... search and select an element based on the hash
@@ -101,7 +87,7 @@ export default class ThemeViewStateHashActor {
         if (!found) {
             return false
         }
-        if (found.properties.id === "last_click") {
+        if (found.properties.id.startsWith("last_click")) {
             return true
         }
         console.log(
@@ -114,82 +100,53 @@ export default class ThemeViewStateHashActor {
         return true
     }
 
-    private loadStateFromHash(hash: string) {
-        const state = this._state
-        for (const superpart of hash.split(";")) {
-            const parts = superpart.at(-1)?.split(":") ?? []
-
-            outer: for (const { toggle, name, submenu } of state.guistate.allToggles) {
-                for (const part of parts) {
-                    if (part.indexOf(":") < 0) {
-                        if (part === name) {
-                            toggle.setData(true)
-                            continue outer
-                        }
-                        continue
-                    }
-                    const [main, submenuValue] = part.split(":")
-                    if (part !== main) {
-                        continue
-                    }
-                    toggle.setData(true)
-                    submenu?.setData(submenuValue)
-                    continue outer
-                }
-
-                // If we arrive here, the loop above has not found any match
-                toggle.setData(false)
+    private loadStateFromHash(hash: string): boolean {
+        for (const page in this._state.guistate.pageStates) {
+            if (page === hash) {
+                const toggle = this._state.guistate.pageStates[page]
+                toggle.set(true)
+                console.log("Loading menu view from hash:", page)
+                return true
             }
         }
+        return false
     }
 
-    private setHash() {
-        const s = this._state
-        let h = ""
-
-        for (const { toggle, showOverOthers, name, submenu } of s.guistate.allToggles) {
-            if (showOverOthers || !toggle.data) {
-                continue
-            }
-            h = name
-            if (submenu?.data) {
-                h += ":" + submenu.data
+    /**
+     * Sets the hash based on:
+     *
+     * 1. Selected element ID
+     * 2. A selected 'page' from the menu
+     *
+     * returns 'true' if a hash was set
+     */
+    private setHash(): boolean {
+        const selectedElement = this._state.selectedElement.data
+        if(selectedElement){
+            Hash.hash.set(selectedElement.properties.id)
+            return true
+        }
+        for (const page in this._state.guistate.pageStates) {
+            const toggle = this._state.guistate.pageStates[page]
+            if (toggle.data) {
+                Hash.hash.set(page)
+                return true
             }
         }
-
-        if (s.selectedElement.data !== undefined) {
-            h = s.selectedElement.data.properties.id
-        }
-
-        for (const { toggle, showOverOthers, name, submenu } of s.guistate.allToggles) {
-            if (!showOverOthers || !toggle.data) {
-                continue
-            }
-            if (h) {
-                h += ";" + name
-            } else {
-                h = name
-            }
-            if (submenu?.data) {
-                h += ":" + submenu.data
-            }
-        }
-        Hash.hash.setData(h)
+        Hash.hash.set(undefined)
+        return false
     }
 
     private back() {
         const state = this._state
+        console.log("Got a 'back' event")
         if (state.previewedImage.data) {
             state.previewedImage.setData(undefined)
-            return
-        }
-        // history.pushState(null, null, window.location.pathname);
-        if (state.selectedElement.data) {
-            state.selectedElement.setData(undefined)
             return
         }
         if (state.guistate.closeAll()) {
             return
         }
+        state.selectedElement.setData(undefined)
     }
 }

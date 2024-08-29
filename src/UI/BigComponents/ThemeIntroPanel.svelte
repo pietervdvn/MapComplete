@@ -12,8 +12,6 @@
   import { GeoLocationState } from "../../Logic/State/GeoLocationState"
   import If from "../Base/If.svelte"
   import { ExclamationTriangleIcon } from "@babeard/svelte-heroicons/mini"
-  import Location_refused from "../../assets/svg/Location_refused.svelte"
-  import Location from "../../assets/svg/Location.svelte"
   import ChevronDoubleLeft from "@babeard/svelte-heroicons/solid/ChevronDoubleLeft"
   import GeolocationIndicator from "./GeolocationIndicator.svelte"
 
@@ -38,7 +36,7 @@
     const glstate = state.geolocation.geolocationState
     if (glstate.currentGPSLocation.data !== undefined) {
       const c: GeolocationCoordinates = glstate.currentGPSLocation.data
-      state.guistate.themeIsOpened.setData(false)
+      state.guistate.pageStates.about_theme.setData(false)
       const coor = { lon: c.longitude, lat: c.latitude }
       state.mapProperties.location.setData(coor)
     }
@@ -65,7 +63,7 @@
     <Tr t={layout.descriptionTail} />
 
     <!-- Buttons: open map, go to location, search -->
-    <NextButton clss="primary w-full" on:click={() => state.guistate.themeIsOpened.setData(false)}>
+    <NextButton clss="primary w-full" on:click={() => state.guistate.pageStates.about_theme.setData(false)}>
       <div class="flex w-full flex-col items-center">
         <div class="flex w-full justify-center text-2xl">
           <Tr t={Translations.t.general.openTheMap} />
@@ -96,7 +94,7 @@
           <div style="min-width: 16rem; " class="grow">
             <Geosearch
               bounds={state.mapProperties.bounds}
-              on:searchCompleted={() => state.guistate.themeIsOpened.setData(false)}
+              on:searchCompleted={() => state.guistate.pageStates.about_theme.setData(false)}
               on:searchIsValid={(event) => {
                 searchEnabled = event.detail
               }}
@@ -138,20 +136,10 @@
     {/if}
   </div>
 
-  {#if Utils.isIframe}
-    <div class="link-underline flex justify-end">
-      <a href="https://mapcomplete.org" target="_blank">
-        <Tr t={Translations.t.general.poweredByMapComplete} />
-      </a>
-    </div>
-  {:else}
-    <If condition={state.featureSwitches.featureSwitchBackToThemeOverview}>
-      <div class="link-underline m-2 mx-4 flex w-full">
-        <a class="flex w-fit items-center justify-end" href={Utils.HomepageLink()}>
-          <ChevronDoubleLeft class="h-4 w-4" />
-          <Tr t={Translations.t.general.backToIndex} />
-        </a>
-      </div>
-    </If>
-  {/if}
+  <div class="link-underline flex justify-end text-sm mt-8">
+    <a href="https://mapcomplete.org" target="_blank">
+      <Tr t={Translations.t.general.poweredByMapComplete} />
+    </a>
+  </div>
+
 </div>

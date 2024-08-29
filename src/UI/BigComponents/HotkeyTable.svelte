@@ -15,10 +15,6 @@
   }
 </script>
 
-<AccordionSingle>
-  <div slot="header">
-    <Tr t={t.title} />
-  </div>
   <Tr t={t.intro} />
   <table>
     <tr>
@@ -47,4 +43,3 @@
       </tr>
     {/each}
   </table>
-</AccordionSingle>

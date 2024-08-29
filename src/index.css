@@ -461,6 +461,10 @@ code {
   color: var(--background-color);
 }
 
+.h-full-child > div {
+    height: 100%;
+}
+
 .bg-black-transparent {
   background-color: #00000088;
 }
