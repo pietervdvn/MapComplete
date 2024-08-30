@@ -20,30 +20,32 @@ export default class ThemeSearch implements GeocodingProvider {
     }
 
     async search(query: string): Promise<SearchResult[]> {
-        return this.searchDirect(query, 99)
+        return this.searchWrapped(query, 99)
     }
 
     suggest(query: string, options?: GeocodingOptions): Store<SearchResult[]> {
-        return new ImmutableStore(this.searchDirect(query, this._suggestionLimit ?? 4))
+        return new ImmutableStore(this.searchWrapped(query, this._suggestionLimit ?? 4))
     }
 
-    private searchDirect(query: string, limit: number): SearchResult[] {
-        if(query.length < 1){
-            return []
-        }
-        query = Utils.simplifyStringForSearch(query)
-        const withMatch = ThemeSearch.allThemes
-            .filter(th => !th.hideFromOverview || this._knownHiddenThemes.data.has(th.id))
-            .filter(th => th.id !== this._state.layout.id)
-            .filter(th => MoreScreen.MatchesLayout(th, query))
-            .slice(0, limit)
-        console.log("Matched", withMatch, limit)
 
-        return withMatch.map(match => <SearchResult> {
+    private searchWrapped(query: string, limit: number): SearchResult[] {
+        return this.searchDirect(query, limit).map(match => <SearchResult>{
             payload: match,
             category: "theme",
             osm_id: match.id
         })
+    }
+
+    public searchDirect(query: string, limit: number): MinimalLayoutInformation[] {
+        if (query.length < 1) {
+            return []
+        }
+        query = Utils.simplifyStringForSearch(query)
+        return ThemeSearch.allThemes
+            .filter(th => !th.hideFromOverview || this._knownHiddenThemes.data.has(th.id))
+            .filter(th => th.id !== this._state.layout.id)
+            .filter(th => MoreScreen.MatchesLayout(th, query))
+            .slice(0, limit)
     }
 
 

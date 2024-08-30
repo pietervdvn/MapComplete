@@ -11,9 +11,9 @@
 </script>
 
 {#if entry.category === "theme"}
-  <ThemeResult {entry} on:select  />
+  <ThemeResult entry={entry.payload} on:select  />
 {:else if entry.category === "filter"}
-  <FilterResult {entry} {state} on:select />
+  <FilterResult entry={entry.payload} {state} on:select />
 {:else}
   <GeocodeResult {entry} {state} on:select />
 {/if}

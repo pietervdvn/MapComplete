@@ -238,8 +238,8 @@ export abstract class Store<T> implements Readable<T> {
      * src.setData(0)
      * lastValue // => "def"
      */
-    public bind<X>(f: (t: T) => Store<X>): Store<X> {
-        const mapped = this.map(f)
+    public bind<X>(f: (t: T) => Store<X>, extraSources: Store<object>[] = []): Store<X> {
+        const mapped = this.map(f, extraSources)
         const sink = new UIEventSource<X>(undefined)
         const seenEventSources = new Set<Store<X>>()
         mapped.addCallbackAndRun((newEventSource) => {
@@ -270,7 +270,7 @@ export abstract class Store<T> implements Readable<T> {
         return sink
     }
 
-    public bindD<X>(f: (t: Exclude<T, undefined | null>) => Store<X>): Store<X> {
+    public bindD<X>(f: (t: Exclude<T, undefined | null>) => Store<X>, extraSources: UIEventSource<object>[] =[]): Store<X> {
         return this.bind((t) => {
             if (t === null) {
                 return null
@@ -279,7 +279,7 @@ export abstract class Store<T> implements Readable<T> {
                 return undefined
             }
             return f(<Exclude<T, undefined | null>>t)
-        })
+        }, extraSources)
     }
 
     public stabilized(millisToStabilize): Store<T> {

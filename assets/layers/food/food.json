@@ -537,7 +537,7 @@
         },
         {
           "if": "cuisine=mexican  ",
-          "icon": "\uD83C\uDDF2\uD83C\uDDFD",
+          "icon": "🇲🇽",
           "then": {
             "en": "Mexican dishes are served here",
             "nl": "Dit is een mexicaans restaurant"

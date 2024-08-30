@@ -83,6 +83,7 @@ import PhotonSearch from "../Logic/Geocoding/PhotonSearch"
 import ThemeSearch from "../Logic/Geocoding/ThemeSearch"
 import OpenStreetMapIdSearch from "../Logic/Geocoding/OpenStreetMapIdSearch"
 import FilterSearch from "../Logic/Geocoding/FilterSearch"
+import SearchState from "../Logic/State/SearchState"
 
 /**
  *
@@ -164,8 +165,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
 
     public readonly nearbyImageSearcher: CombinedFetcher
 
-    public readonly geosearch: GeocodingProvider
-    public readonly recentlySearched: RecentSearch
+    public readonly searchState: SearchState
 
     constructor(layout: LayoutConfig, mvtAvailableLayers: Set<string>) {
         Utils.initDomPurify()
@@ -390,16 +390,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
         this.featureSummary = this.setupSummaryLayer()
         this.toCacheSavers = layout.enableCache ? this.initSaveToLocalStorage() : undefined
 
-        this.geosearch = new CombinedSearcher(
-            new FilterSearch(this),
-            new LocalElementSearch(this, 5),
-            new CoordinateSearch(),
-            this.featureSwitches.featureSwitchBackToThemeOverview.data ? new ThemeSearch(this, 3) : undefined,
-            new OpenStreetMapIdSearch(this),
-            new PhotonSearch(), // new NominatimGeocoding(),
-        )
-
-        this.recentlySearched = new RecentSearch(this)
+        this.searchState = new SearchState(this)
 
         this.initActors()
         this.drawSpecialLayers()
@@ -931,7 +922,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
 
     /**
      * Searches the appropriate layer - will first try if a special layer matches; if not, a normal layer will be used by delegating to the layout
-     * @param tags
      */
     public getMatchingLayer(properties: Record<string, string>){
 

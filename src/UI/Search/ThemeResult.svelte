@@ -5,8 +5,8 @@
   import Icon from "../Map/Icon.svelte"
   import Tr from "../Base/Tr.svelte"
 
-  export let entry:  { category: "theme", payload: MinimalLayoutInformation }
-  let otherTheme = entry.payload
+  export let entry:   MinimalLayoutInformation
+  let otherTheme = entry
 </script>
 
 <a href={MoreScreen.createUrlFor(otherTheme, false)}

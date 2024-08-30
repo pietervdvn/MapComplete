@@ -13,9 +13,7 @@
   import type { MapProperties } from "../Models/MapProperties"
   import Geosearch from "./Search/Geosearch.svelte"
   import Translations from "./i18n/Translations"
-  import {
-    MenuIcon
-  } from "@rgossiaux/svelte-heroicons/solid"
+  import { MenuIcon } from "@rgossiaux/svelte-heroicons/solid"
   import Tr from "./Base/Tr.svelte"
   import FloatOver from "./Base/FloatOver.svelte"
   import Constants from "../Models/Constants"
@@ -41,13 +39,13 @@
   import ReverseGeocoding from "./BigComponents/ReverseGeocoding.svelte"
   import { BBox } from "../Logic/BBox"
   import ExtraLinkButton from "./BigComponents/ExtraLinkButton.svelte"
-  import { LastClickFeatureSource } from "../Logic/FeatureSource/Sources/LastClickFeatureSource"
   import Marker from "./Map/Marker.svelte"
   import SelectedElementPanel from "./Base/SelectedElementPanel.svelte"
   import MenuDrawer from "./BigComponents/MenuDrawer.svelte"
   import DrawerLeft from "./Base/DrawerLeft.svelte"
-  import type { LayerConfigJson } from "../Models/ThemeConfig/Json/LayerConfigJson"
-  import { GeocodingUtils } from "../Logic/Geocoding/GeocodingProvider"
+  import DrawerRight from "./Base/DrawerRight.svelte"
+  import SearchResults from "./Search/SearchResults.svelte"
+  import { CloseButton } from "flowbite-svelte"
 
   export let state: ThemeViewState
   let layout = state.layout
@@ -174,107 +172,6 @@
       />
     </div>
   {/if}
-
-  <div class="pointer-events-none absolute top-0 left-0 w-full">
-    <!-- Top components -->
-
-    <div
-      class="flex bg-black-light-transparent pointer-events-auto items-center justify-between px-4 py-1 flex-wrap-reverse">
-      <!-- Top bar with tools -->
-      <div class="flex items-center">
-
-        <MapControlButton
-          cls="m-0.5 p-0.5 sm:p-1"
-          arialabel={Translations.t.general.labels.menu}
-          on:click={() => {console.log("Opening...."); state.guistate.menuIsOpened.setData(true)}}
-          on:keydown={forwardEventToMap}
-        >
-          <MenuIcon class="h-6 w-6 cursor-pointer" />
-        </MapControlButton>
-
-        <MapControlButton
-          on:click={() => state.guistate.pageStates.about_theme.set(true)}
-          on:keydown={forwardEventToMap}
-        >
-          <div
-            class="m-0.5 mx-1 flex cursor-pointer items-center max-[480px]:w-full sm:mx-1 mr-2"
-          >
-            <Marker icons={layout.icon} size="h-6 w-6 shrink-0 mr-0.5 sm:mr-1 md:mr-2" />
-            <b class="mr-1">
-              <Tr t={layout.title} />
-            </b>
-          </div>
-        </MapControlButton>
-      </div>
-
-
-      <If condition={state.featureSwitches.featureSwitchSearch}>
-        <div class="w-full sm:w-64 my-2 sm:mt-0">
-
-          <Geosearch
-            bounds={state.mapProperties.bounds}
-            on:searchCompleted={() => {
-            state.map?.data?.getCanvas()?.focus()
-          }}
-            perLayer={state.perLayer}
-            selectedElement={state.selectedElement}
-            geolocationState={state.geolocation.geolocationState}
-            searcher={state.geosearch}
-            {state}
-          />
-        </div>
-      </If>
-
-    </div>
-
-    <div class="pointer-events-auto float-right mt-1 flex flex-col px-1 max-[480px]:w-full sm:m-2">
-      <If condition={state.visualFeedback}>
-        {#if $selectedElement === undefined}
-          <div class="w-fit">
-            <VisualFeedbackPanel {state} />
-          </div>
-        {/if}
-      </If>
-
-    </div>
-    <div class="float-left m-1 flex flex-col sm:mt-2">
-      <If condition={state.featureSwitches.featureSwitchWelcomeMessage}>
-
-
-      </If>
-      {#if currentViewLayer?.tagRenderings && currentViewLayer.defaultIcon()}
-        <MapControlButton
-          on:click={() => {
-            state.selectCurrentView()
-          }}
-          on:keydown={forwardEventToMap}
-        >
-          <div class="h-8 w-8 cursor-pointer">
-            <ToSvelte construct={() => currentViewLayer.defaultIcon()} />
-          </div>
-        </MapControlButton>
-      {/if}
-      <ExtraLinkButton {state} />
-      <UploadingImageCounter featureId="*" showThankYou={false} {state} />
-      <PendingChangesIndicator {state} />
-      <If condition={state.featureSwitchIsTesting}>
-        <div class="alert w-fit">Testmode</div>
-      </If>
-      {#if state.osmConnection.Backend().startsWith("https://master.apis.dev.openstreetmap.org")}
-        <div class="thanks">Testserver</div>
-      {/if}
-      <If condition={state.featureSwitches.featureSwitchFakeUser}>
-        <div class="alert w-fit">Faking a user (Testmode)</div>
-      </If>
-    </div>
-    <div class="flex w-full flex-col items-center justify-center">
-      <!-- Flex and w-full are needed for the positioning -->
-      <!-- Centermessage -->
-      <StateIndicator {state} />
-      <ReverseGeocoding {state} />
-    </div>
-  </div>
-
   <div class="pointer-events-none absolute bottom-0 left-0 mb-4 w-screen">
     <!-- bottom controls -->
     <div class="flex w-full items-end justify-between px-4">
@@ -380,7 +277,109 @@
         </If>
       </div>
     </div>
+
   </div>
+
+
+  <DrawerRight shown={state.searchState.showSearchDrawer} }>
+    <div class="relative">
+      <div class="absolute right-0 top-0 ">
+        <div class="mr-4 mt-4">
+          <CloseButton on:click={() => state.searchState.showSearchDrawer.set(false)} />
+        </div>
+      </div>
+      <SearchResults {state} />
+    </div>
+  </DrawerRight>
+
+
+  <div class="pointer-events-none absolute top-0 left-0 w-full">
+    <!-- Top components -->
+    <div
+      id="top-bar"
+      class="flex bg-black-light-transparent pointer-events-auto items-center justify-between px-4 py-1 flex-wrap-reverse">
+      <!-- Top bar with tools -->
+      <div class="flex items-center">
+
+        <MapControlButton
+          cls="m-0.5 p-0.5 sm:p-1"
+          arialabel={Translations.t.general.labels.menu}
+          on:click={() => {state.guistate.menuIsOpened.setData(true)}}
+          on:keydown={forwardEventToMap}
+        >
+          <MenuIcon class="h-6 w-6 cursor-pointer" />
+        </MapControlButton>
+
+        <MapControlButton
+          on:click={() => state.guistate.pageStates.about_theme.set(true)}
+          on:keydown={forwardEventToMap}
+        >
+          <div
+            class="m-0.5 mx-1 flex cursor-pointer items-center max-[480px]:w-full sm:mx-1 mr-2"
+          >
+            <Marker icons={layout.icon} size="h-6 w-6 shrink-0 mr-0.5 sm:mr-1 md:mr-2" />
+            <b class="mr-1">
+              <Tr t={layout.title} />
+            </b>
+          </div>
+        </MapControlButton>
+      </div>
+
+
+      <If condition={state.featureSwitches.featureSwitchSearch}>
+        <div class="w-full sm:w-80 md:w-96 my-2 sm:mt-0">
+          <Geosearch {state} isFocused={state.searchState.searchIsFocused}
+                     searchContents={state.searchState.searchTerm} />
+        </div>
+      </If>
+
+    </div>
+
+    <div class="pointer-events-auto float-right mt-1 flex flex-col px-1 max-[480px]:w-full sm:m-2">
+      <If condition={state.visualFeedback}>
+        {#if $selectedElement === undefined}
+          <div class="w-fit">
+            <VisualFeedbackPanel {state} />
+          </div>
+        {/if}
+      </If>
+
+    </div>
+    <div class="float-left m-1 flex flex-col sm:mt-2">
+
+      {#if currentViewLayer?.tagRenderings && currentViewLayer.defaultIcon()}
+        <MapControlButton
+          on:click={() => {
+            state.selectCurrentView()
+          }}
+          on:keydown={forwardEventToMap}
+        >
+          <div class="h-8 w-8 cursor-pointer">
+            <ToSvelte construct={() => currentViewLayer.defaultIcon()} />
+          </div>
+        </MapControlButton>
+      {/if}
+      <ExtraLinkButton {state} />
+      <UploadingImageCounter featureId="*" showThankYou={false} {state} />
+      <PendingChangesIndicator {state} />
+      <If condition={state.featureSwitchIsTesting}>
+        <div class="alert w-fit">Testmode</div>
+      </If>
+      {#if state.osmConnection.Backend().startsWith("https://master.apis.dev.openstreetmap.org")}
+        <div class="thanks">Testserver</div>
+      {/if}
+      <If condition={state.featureSwitches.featureSwitchFakeUser}>
+        <div class="alert w-fit">Faking a user (Testmode)</div>
+      </If>
+    </div>
+    <div class="flex w-full flex-col items-center justify-center">
+      <!-- Flex and w-full are needed for the positioning -->
+      <!-- Centermessage -->
+      <StateIndicator {state} />
+      <ReverseGeocoding {state} />
+    </div>
+  </div>
+
 
   <LoginToggle ignoreLoading={true} {state}>
     {#if ($showCrosshair === "yes" && $currentZoom >= 17) || $showCrosshair === "always" || $visualFeedback}

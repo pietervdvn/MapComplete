@@ -29,7 +29,7 @@ import LayoutSource from "../Logic/FeatureSource/Sources/LayoutSource"
 import { Map as MlMap } from "maplibre-gl"
 import ShowDataLayer from "./Map/ShowDataLayer"
 import { CombinedFetcher } from "../Logic/Web/NearbyImagesSearch"
-import { RecentSearch } from "../Logic/Geocoding/RecentSearch"
+import SearchState from "../Logic/State/SearchState"
 
 /**
  * The state needed to render a special Visualisation.
@@ -95,7 +95,7 @@ export interface SpecialVisualizationState {
     readonly previewedImage: UIEventSource<ProvidedImage>
     readonly nearbyImageSearcher: CombinedFetcher
     readonly geolocation: GeoLocationHandler
-    readonly recentlySearched: RecentSearch
+    readonly searchState: SearchState
 
     getMatchingLayer(properties: Record<string, string>);
 

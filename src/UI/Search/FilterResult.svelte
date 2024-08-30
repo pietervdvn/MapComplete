@@ -4,19 +4,15 @@
   import type { FilterPayload } from "../../Logic/Geocoding/GeocodingProvider"
   import { createEventDispatcher } from "svelte"
   import Icon from "../Map/Icon.svelte"
-  import SearchResultUtils from "./SearchResultUtils"
 
-  export let entry: {
-    category: "filter",
-    payload: FilterPayload
-  }
-  let { option, filter, layer, index } = entry.payload
+  export let entry: FilterPayload
+  let { option } = entry
   export let state: SpecialVisualizationState
   let dispatch = createEventDispatcher<{ select }>()
 
 
   function apply() {
-    SearchResultUtils.apply(entry.payload, state)
+    state.searchState.apply(entry)
     dispatch("select")
   }
 </script>

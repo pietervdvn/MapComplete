@@ -340,7 +340,7 @@ export default class LayoutConfig implements LayoutInformation {
                 }
             }
         }
-        console.trace("Fallthrough: could not find the appropraite layer for an object with tags", tags, "within layout", this)
+        console.trace("Fallthrough: could not find the appropriate layer for an object with tags", tags, "within layout", this)
         return undefined
     }
 

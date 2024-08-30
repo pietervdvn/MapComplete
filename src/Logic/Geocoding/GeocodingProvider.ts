@@ -45,8 +45,9 @@ export type GeocodeResult =  {
     source?: string
 }
 export type FilterPayload = { option: FilterConfigOption, filter: FilterConfig, layer: LayerConfig, index: number }
+export type FilterResult =  { category: "filter", osm_id: string, payload:  FilterPayload }
 export type SearchResult =
-    | { category: "filter", osm_id: string, payload:  FilterPayload }
+    | FilterResult
     | { category: "theme", osm_id: string, payload: MinimalLayoutInformation }
     | GeocodeResult
 
