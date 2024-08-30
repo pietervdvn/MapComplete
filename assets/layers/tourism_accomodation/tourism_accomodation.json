@@ -227,6 +227,15 @@
         "en": "a small-scale lodging facility, typically operated by the owner",
         "de": "eine kleine Beherbergungseinrichtung, die in der Regel vom Eigentümer betrieben wird"
       }
+    },
+    {
+      "tags": [
+        "tourism=camp_site"
+      ],
+      "title": {
+        "en": "a camp site or camp ground",
+        "de": "een kempeerterrein"
+      }
     }
   ],
   "tagRenderings": [
