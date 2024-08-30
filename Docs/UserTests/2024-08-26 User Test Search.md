@@ -32,14 +32,16 @@ The user was asked to search 'Saladette' in Roeselare.
 > "Oh, a hamburger menu! Maybe the search is there"
 
 Failure: Search bar isn't very visible and rather hidden/low contrast: the white searchbar on a yellow basemap with many white-on-black indicators is hidden
+    Fixed (see #2113)
 Failure: the 'theme overview menu' where a search functionality is (again) not considered a button!
-
+    Fixed (see #2113)
 Observator hinted to the location of the search button
 
 > User clicks search button, an empty result bar appears
 
 Failure: bar shows up if there are no results (was using private navigation)
-
+    Search suggestions should be shown!
+    
 > User searches for 'Roeselare', but the results are mostly 'Kanaal Roeselare'
 
 Failure: maybe dedup some results, and place e.g. cities higher? Is there a relevancy-metric included?
@@ -146,12 +148,14 @@ Failure: default text should be changed and broadened and mention more then just
 > The user attempts to search, but often 'fat-fingers' and presses a shop behind the search bar, opening this
 
 Solution: on mobile, a 'no-touch' buffer should be added; Maybe even a top bar?  --> Fixed in feature/menu-drawer
+    Fixed by #2113
 
 > The user was tasked to search a 'vegetarian pizzeria'
 > User literally types "vegetarian pizza", but no filters pop up as the goal was to search for 'pizza' and "vegetarian" separately
 > Same for "vegetarisch frietkot"
 
 Failure: filter-search should be split on word
+    Fixed
 
 > Suggested filters shows up as "This is a pizzeria"
 
@@ -160,7 +164,8 @@ Unclear that this is a filter that can be added: subheadings are needed
 
 > User clears the filter, MC hangs as it is re-rendering all items
 
-Failure: show a loading bar
+Failure: show a loading icon
+    Fixed
 
 ## Switching theme
 
@@ -171,6 +176,7 @@ Failure:  only 'toilet' is known, fixed in cdc1e05499ffc41d093503ccd24defa347eea
 > The user sees the 'WC'-theme button, but after a second, it is replaced by other search results
 
 Reorder this, so that slow-loading and fast-loading search queries don't overlap
+    Fixed by having separate titles
 
 > The user sees 'no results found', which gets replaced by results a few ms later
 
@@ -199,6 +205,7 @@ Remove this wording, fixed in weblate
 > "What is this 'Teddy73' and this 'CC-BY-SA'-thing?
 
 Failure: attribution is unclear and irritating, made smaller in link-preview and more explicit in image preview
+    Fixed
 
 > User wants a bigger version of the picture and zooms in onto the low-quality picture
 
