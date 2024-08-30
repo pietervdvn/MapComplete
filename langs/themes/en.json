@@ -635,7 +635,7 @@
         "title": "Cyclestreets"
     },
     "cyclofix": {
-        "description": "The goal of this map is to present cyclists with an easy-to-use solution to find the appropriate infrastructure for their needs.<br><br>You can track your precise location (mobile only) and select layers that are relevant for you in the bottom left corner. You can also use this tool to add or edit pins (points of interest) to the map and provide more data by answering the questions.<br><br>All changes you make will automatically be saved in the global database of OpenStreetMap and can be freely re-used by others.<br><br>For more information about the cyclofix project, go to <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
+        "description": "A map for cyclists to find the appropriate infrastructure for their needs, such as bicycle pumps, drinking water, bicycle shops, repair stations or parkings.",
         "title": "Cyclofix - a map for cyclists"
     },
     "disaster_response": {
@@ -1031,6 +1031,13 @@
                             }
                         }
                     },
+                    "10": {
+                        "options": {
+                            "0": {
+                                "question": "Exclude etymology theme"
+                            }
+                        }
+                    },
                     "2": {
                         "options": {
                             "0": {
@@ -1084,13 +1091,6 @@
                         "options": {
                             "0": {
                                 "question": "Exclude GRB theme"
-                            }
-                        }
-                    },
-                    "10": {
-                        "options": {
-                            "0": {
-                                "question": "Exclude etymology theme"
                             }
                         }
                     }
@@ -1173,6 +1173,33 @@
     "onwheels": {
         "description": "On this map, publicly weelchair accessible places are shown and can be easily added",
         "layers": {
+            "19": {
+                "override": {
+                    "=title": {
+                        "render": "Statistics"
+                    }
+                }
+            },
+            "20": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Import"
+                                }
+                            }
+                        },
+                        "1": {
+                            "render": {
+                                "special": {
+                                    "message": "Add all the suggested tags"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "4": {
                 "override": {
                     "filter": {
@@ -1214,33 +1241,6 @@
             "8": {
                 "override": {
                     "name": "Disabled parking spaces"
-                }
-            },
-            "19": {
-                "override": {
-                    "=title": {
-                        "render": "Statistics"
-                    }
-                }
-            },
-            "20": {
-                "override": {
-                    "+tagRenderings": {
-                        "0": {
-                            "render": {
-                                "special": {
-                                    "text": "Import"
-                                }
-                            }
-                        },
-                        "1": {
-                            "render": {
-                                "special": {
-                                    "message": "Add all the suggested tags"
-                                }
-                            }
-                        }
-                    }
                 }
             }
         },
@@ -1464,10 +1464,6 @@
     "stations": {
         "description": "View, edit and add details to a train station",
         "layers": {
-            "3": {
-                "description": "Layer showing train stations",
-                "name": "Train Stations"
-            },
             "16": {
                 "description": "Displays showing the trains that will leave from this station",
                 "name": "Departures boards",
@@ -1499,6 +1495,10 @@
                 "title": {
                     "render": "Departures board"
                 }
+            },
+            "3": {
+                "description": "Layer showing train stations",
+                "name": "Train Stations"
             }
         },
         "title": "Train Stations"

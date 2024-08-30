@@ -41,6 +41,8 @@ export default class UserRelatedState {
     public readonly showAllQuestionsAtOnce: UIEventSource<boolean>
     public readonly showTags: UIEventSource<"no" | undefined | "always" | "yes" | "full">
     public readonly showCrosshair: UIEventSource<"yes" | "always" | "no" | undefined>
+    public readonly translationMode: UIEventSource<"false" | "true" | "mobile" | undefined | string>
+
     public readonly fixateNorth: UIEventSource<undefined | "yes">
     public readonly a11y: UIEventSource<undefined | "always" | "never" | "default">
     public readonly homeLocation: FeatureSource
@@ -90,25 +92,6 @@ export default class UserRelatedState {
     ) {
         this.osmConnection = osmConnection
         this._mapProperties = mapProperties
-        {
-            const translationMode: UIEventSource<undefined | "true" | "false" | "mobile" | string> =
-                this.osmConnection.GetPreference("translation-mode", "false")
-            translationMode.addCallbackAndRunD((mode) => {
-                mode = mode.toLowerCase()
-                if (mode === "true" || mode === "yes") {
-                    Locale.showLinkOnMobile.setData(false)
-                    Locale.showLinkToWeblate.setData(true)
-                } else if (mode === "false" || mode === "no") {
-                    Locale.showLinkToWeblate.setData(false)
-                } else if (mode === "mobile") {
-                    Locale.showLinkOnMobile.setData(true)
-                    Locale.showLinkToWeblate.setData(true)
-                } else {
-                    Locale.showLinkOnMobile.setData(false)
-                    Locale.showLinkToWeblate.setData(false)
-                }
-            })
-        }
 
         this.showAllQuestionsAtOnce = UIEventSource.asBoolean(
             this.osmConnection.GetPreference("show-all-questions", "false", {
@@ -149,7 +132,7 @@ export default class UserRelatedState {
             documentation: "The license under which new images are uploaded"
         })
         this.installedUserThemes = this.InitInstalledUserThemes()
-
+        this.translationMode = this.initTranslationMode()
         this.homeLocation = this.initHomeLocation()
 
         this.preferencesAsTags = this.initAmendedPrefs(layout, featureSwitches)
@@ -187,6 +170,29 @@ export default class UserRelatedState {
         }
 
         this.language.syncWith(Locale.language)
+    }
+
+
+    private initTranslationMode(): UIEventSource<"false" | "true" | "mobile" | undefined | string> {
+        const translationMode: UIEventSource<undefined | "true" | "false" | "mobile" | string> =
+            this.osmConnection.GetPreference("translation-mode", "false")
+        translationMode.addCallbackAndRunD((mode) => {
+            mode = mode.toLowerCase()
+            if (mode === "true" || mode === "yes") {
+                Locale.showLinkOnMobile.setData(false)
+                Locale.showLinkToWeblate.setData(true)
+            } else if (mode === "false" || mode === "no") {
+                Locale.showLinkToWeblate.setData(false)
+            } else if (mode === "mobile") {
+                Locale.showLinkOnMobile.setData(true)
+                Locale.showLinkToWeblate.setData(true)
+            } else {
+                Locale.showLinkOnMobile.setData(false)
+                Locale.showLinkToWeblate.setData(false)
+            }
+        })
+        return translationMode
+
     }
 
     private static initUserSettingsState(): LayerConfig {
@@ -360,12 +366,10 @@ export default class UserRelatedState {
 
             amendedPrefs.ping()
         })
-        const translationMode = osmConnection.GetPreference("translation-mode")
-
         Locale.language.mapD(
             (language) => {
                 amendedPrefs.data["_language"] = language
-                const trmode = translationMode.data
+                const trmode = this.translationMode.data
                 if ((trmode === "true" || trmode === "mobile") && layout !== undefined) {
                     const extraInspection = UserRelatedState.usersettingsConfig
                     const missing = layout.missingTranslations(extraInspection)
@@ -405,7 +409,7 @@ export default class UserRelatedState {
                 }
                 amendedPrefs.ping()
             },
-            [translationMode]
+            [this.translationMode]
         )
 
         this.mangroveIdentity.getKeyId().addCallbackAndRun((kid) => {

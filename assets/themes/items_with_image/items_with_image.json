@@ -2,11 +2,13 @@
   "id": "items_with_image",
   "title": {
     "en": "All items with images",
-    "de": "Alle Elemente mit Bildern"
+    "de": "Alle Elemente mit Bildern",
+    "es": "Todos los elementos con imágenes"
   },
   "description": {
     "en": "A map showing all items on OSM which have an image. This theme is a very bad fit for MapComplete as someone is not able to directly add a picture. However, this theme is mostly here to include this all into the database, which'll allow this to quickly fetch images nearby for other features",
-    "de": "Eine Karte, die alle Objekte auf OSM zeigt, die ein Bild haben. Dieses Thema ist sehr schlecht für MapComplete geeignet, da man nicht direkt ein Bild hinzufügen kann. Dieses Thema ist jedoch hauptsächlich dazu da, um alles in die Datenbank aufzunehmen, was es ermöglicht, Bilder in der Nähe für andere Funktionen schnell zu finden"
+    "de": "Eine Karte, die alle Objekte auf OSM zeigt, die ein Bild haben. Dieses Thema ist sehr schlecht für MapComplete geeignet, da man nicht direkt ein Bild hinzufügen kann. Dieses Thema ist jedoch hauptsächlich dazu da, um alles in die Datenbank aufzunehmen, was es ermöglicht, Bilder in der Nähe für andere Funktionen schnell zu finden",
+    "es": "Un mapa que muestra todos los objetos en OSM que tienen una imagen. Este tema no es muy adecuado para MapComplete porque no se puede agregar una imagen directamente. Sin embargo, este tema está ahí principalmente para poner todo en la base de datos, lo que permite encontrar rápidamente imágenes cercanas para otras funciones"
   },
   "icon": "./assets/layers/item_with_image/camera.svg",
   "hideFromOverview": true,

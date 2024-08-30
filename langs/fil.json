@@ -57,58 +57,101 @@
             "intro": "Nag-klik ka kung saan wala pang nababatid na datos.<br>",
             "layerNotEnabled": "Ang layer {layer} ay hindi gumagana. Paganahin ang layer na ito upang makapag-dagdag ng tampók"
         },
-        "apply_button": {},
+        "apply_button": {
+        },
         "attribution": {
-            "iconAttribution": {}
+            "iconAttribution": {
+            }
         },
-        "download": {},
-        "histogram": {},
-        "layerSelection": {},
-        "levelSelection": {},
-        "morescreen": {},
-        "opening_hours": {},
-        "pdf": {},
-        "questions": {},
-        "search": {},
-        "sharescreen": {},
+        "download": {
+        },
+        "histogram": {
+        },
+        "layerSelection": {
+        },
+        "levelSelection": {
+        },
+        "morescreen": {
+        },
+        "opening_hours": {
+        },
+        "pdf": {
+        },
+        "questions": {
+        },
+        "search": {
+        },
+        "sharescreen": {
+        },
         "weekdays": {
-            "abbreviations": {}
+            "abbreviations": {
+            }
         },
-        "welcomeExplanation": {},
+        "welcomeExplanation": {
+        },
         "wikipedia": {
-            "previewbox": {}
+            "previewbox": {
+            }
         }
     },
-    "image": {},
-    "importInspector": {},
-    "importLayer": {},
-    "index": {},
-    "move": {
-        "inviteToMove": {},
-        "reasons": {}
+    "image": {
     },
-    "multi_apply": {},
-    "notes": {},
-    "privacy": {},
-    "reviews": {},
-    "split": {},
-    "translations": {},
+    "importInspector": {
+    },
+    "importLayer": {
+    },
+    "index": {
+    },
+    "move": {
+        "inviteToMove": {
+        },
+        "reasons": {
+        }
+    },
+    "multi_apply": {
+    },
+    "notes": {
+    },
+    "privacy": {
+    },
+    "reviews": {
+    },
+    "split": {
+    },
+    "translations": {
+    },
     "validation": {
-        "color": {},
-        "date": {},
-        "direction": {},
-        "distance": {},
-        "email": {},
-        "float": {},
-        "int": {},
-        "nat": {},
-        "opening_hours": {},
-        "pfloat": {},
-        "phone": {},
-        "pnat": {},
-        "string": {},
-        "text": {},
-        "url": {},
-        "wikidata": {}
+        "color": {
+        },
+        "date": {
+        },
+        "direction": {
+        },
+        "distance": {
+        },
+        "email": {
+        },
+        "float": {
+        },
+        "int": {
+        },
+        "nat": {
+        },
+        "opening_hours": {
+        },
+        "pfloat": {
+        },
+        "phone": {
+        },
+        "pnat": {
+        },
+        "string": {
+        },
+        "text": {
+        },
+        "url": {
+        },
+        "wikidata": {
+        }
     }
 }

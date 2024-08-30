@@ -32,14 +32,14 @@
                 "description": "Atari zabaleko publizitate-egitura handia, trafiko handiko eremuetan egon ohi dena, adibidez errepideen ondoan",
                 "title": "iragarki panela"
             },
-            "12": {
+            "13": {
                 "description": "Iragarki publizitarioetarako, neon-karteletarako, logotipoetarako eta erakundeen sarrera-seinaleetarako erabiltzen da",
                 "title": "letrero bat"
             },
-            "13": {
+            "14": {
                 "title": "eskultura bat"
             },
-            "14": {
+            "15": {
                 "title": "pareta margotu bat"
             }
         },
@@ -101,6 +101,12 @@
                     "1": {
                         "then": "Murala"
                     },
+                    "11": {
+                        "then": "Keramika"
+                    },
+                    "12": {
+                        "then": "Egur taila"
+                    },
                     "2": {
                         "then": "Margolana"
                     },
@@ -124,12 +130,6 @@
                     },
                     "9": {
                         "then": "Erliebea"
-                    },
-                    "11": {
-                        "then": "Keramika"
-                    },
-                    "12": {
-                        "then": "Egur taila"
                     }
                 }
             }

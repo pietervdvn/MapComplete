@@ -358,6 +358,17 @@
         "shortDescription": "Eine weltweite Karte mit Ladestationen",
         "title": "Ladestationen"
     },
+    "circular_economy": {
+        "description": "Verschiedene Gegenstände, die den Menschen helfen, zu teilen, wiederzuverwenden oder zu recyceln.",
+        "layers": {
+            "5": {
+                "override": {
+                    "=name": "Second-Hand-Läden"
+                }
+            }
+        },
+        "title": "Kreislaufwirtschaft"
+    },
     "climbing": {
         "description": "Eine Karte mit Klettermöglichkeiten wie Kletterhallen, Kletterparks oder Felsen.",
         "descriptionTail": "<p><strong>kletterspots.de</strong> wird betrieben von <a href='https://utopicode.de/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Bitte <a href='https://utopicode.de/kontakt/?project=kletterspots&ref=kletterspots' target='blank'>melden Sie sich</a>, wenn Sie Feedback oder Fragen haben.</p><p>Das Projekt nutzt <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a> Daten und basiert auf der freien Software <a href='https://github.com/pietervdvn/MapComplete' target='_blank'>MapComplete</a>.</p>",
@@ -624,7 +635,7 @@
         "title": "Fahrradstraßen"
     },
     "cyclofix": {
-        "description": "Mit dieser Karte wird Radfahrern eine einfache Lösung bereitgestellt, um die passende Fahrradinfrastruktur zu finden.<br><br>Weitere Informationen über Cyclofix finden Sie unter <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
+        "description": "Eine Karte, die Radfahrern hilft, die für ihre Bedürfnisse geeignete Infrastruktur zu finden, z. B. Fahrradpumpen, Trinkwasser, Fahrradläden, Reparaturstationen oder Parkmöglichkeiten.",
         "title": "Cyclofix - eine Karte für Radfahrer"
     },
     "disaster_response": {
@@ -871,6 +882,23 @@
                     },
                     "name": "Alle Werbe-Wandbilder"
                 }
+            },
+            "2": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "Dieses Kunstwerk ist eine historische Werbung"
+                                },
+                                "1": {
+                                    "then": "Dieses Kunstwerk ist keine historische Werbung"
+                                }
+                            },
+                            "question": "Ist dieses Kunstwerk eine historische Werbung?"
+                        }
+                    }
+                }
             }
         },
         "title": "Geisterzeichen"
@@ -975,9 +1003,140 @@
         },
         "title": "Bordsteine und Überwege"
     },
+    "lactosefree": {
+        "description": "Eine Crowdsourcing-Karte mit laktosefreien Geschäften und Restaurants",
+        "title": "Laktosefreie Geschäfte und Restaurants"
+    },
     "lighthouses": {
         "description": "Leuchttürme sind hohe Gebäude mit einem Licht an der Spitze, das den Schiffsverkehr leitet.",
         "title": "Leuchttürme"
+    },
+    "mapcomplete-changes": {
+        "description": "Diese Karte zeigt alle mit MapComplete vorgenommenen Änderungen",
+        "layers": {
+            "0": {
+                "description": "Zeigt alle MapComplete-Änderungen",
+                "filter": {
+                    "0": {
+                        "options": {
+                            "0": {
+                                "question": "Themename enthält {search}"
+                            }
+                        }
+                    },
+                    "1": {
+                        "options": {
+                            "0": {
+                                "question": "Themenname enthält <b>nicht</b> {search}"
+                            }
+                        }
+                    },
+                    "10": {
+                        "options": {
+                            "0": {
+                                "question": "Etymologie-Thema ausschließen"
+                            }
+                        }
+                    },
+                    "2": {
+                        "options": {
+                            "0": {
+                                "question": "Der Name enthält <b>nicht</b> {search}"
+                            }
+                        }
+                    },
+                    "3": {
+                        "options": {
+                            "0": {
+                                "question": "<b>Nicht</b> erstellt von Mitwirkendem {search}"
+                            }
+                        }
+                    },
+                    "4": {
+                        "options": {
+                            "0": {
+                                "question": "Erstellt nach {search}"
+                            }
+                        }
+                    },
+                    "5": {
+                        "options": {
+                            "0": {
+                                "question": "Erstellt nach {search}"
+                            }
+                        }
+                    },
+                    "6": {
+                        "options": {
+                            "0": {
+                                "question": "Benutzersprache (ISO-Code) {search}"
+                            }
+                        }
+                    },
+                    "7": {
+                        "options": {
+                            "0": {
+                                "question": "Erstellt mit Host {search}"
+                            }
+                        }
+                    },
+                    "8": {
+                        "options": {
+                            "0": {
+                                "question": "Änderungssatz fügte mindestens ein Bild hinzu"
+                            }
+                        }
+                    },
+                    "9": {
+                        "options": {
+                            "0": {
+                                "question": "GRB-Thema ausschließen"
+                            }
+                        }
+                    }
+                },
+                "name": "Zentrum der Änderungssätze",
+                "tagRenderings": {
+                    "contributor": {
+                        "question": "Wer hat diese Änderung vorgenommen?",
+                        "render": "Änderung von <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>"
+                    },
+                    "host": {
+                        "question": "Mit welchem Host (Website) wurde diese Änderung vorgenommen?",
+                        "render": "Änderung mit <a href='{host}'>{host}</a>"
+                    },
+                    "locale": {
+                        "question": "In welcher Benutzersprache wurde die Änderung vorgenommen?",
+                        "render": "Benutzersprache ist {locale}"
+                    },
+                    "show_changeset_id": {
+                        "render": "Änderungssatz <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
+                    },
+                    "theme-id": {
+                        "question": "Welches Thema wurde für die Änderung verwendet?",
+                        "render": "Änderung mit Thema <a href='https://mapcomplete.org/{theme}'>{theme}</a>"
+                    },
+                    "version": {
+                        "question": "Welche Version von MapComplete wurde für diese Änderung verwendet?",
+                        "render": "Erstellt mit {editor}"
+                    }
+                },
+                "title": {
+                    "render": "Änderungssatz für {theme}"
+                }
+            },
+            "1": {
+                "override": {
+                    "tagRenderings+": {
+                        "0": {
+                            "render": "Weitere Statistiken findest du <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>hier</a>"
+                        }
+                    }
+                }
+            }
+        },
+        "shortDescription": "Änderungen von MapComplete anzeigen",
+        "title": "Änderungen mit MapComplete vorgenommen"
     },
     "maproulette": {
         "description": "Thema mit MapRoulette-Aufgaben, die Sie suchen, filtern und beheben können.",
@@ -1014,6 +1173,33 @@
     "onwheels": {
         "description": "Auf dieser Karte können Sie öffentlich zugängliche Orte für Rollstuhlfahrer ansehen, bearbeiten oder hinzufügen",
         "layers": {
+            "19": {
+                "override": {
+                    "=title": {
+                        "render": "Statistik"
+                    }
+                }
+            },
+            "20": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Import"
+                                }
+                            }
+                        },
+                        "1": {
+                            "render": {
+                                "special": {
+                                    "message": "Alle vorgeschlagenen Tags hinzufügen"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "4": {
                 "override": {
                     "filter": {
@@ -1056,33 +1242,6 @@
                 "override": {
                     "name": "Barrierefreie Parkplätze"
                 }
-            },
-            "19": {
-                "override": {
-                    "=title": {
-                        "render": "Statistik"
-                    }
-                }
-            },
-            "20": {
-                "override": {
-                    "+tagRenderings": {
-                        "0": {
-                            "render": {
-                                "special": {
-                                    "text": "Import"
-                                }
-                            }
-                        },
-                        "1": {
-                            "render": {
-                                "special": {
-                                    "message": "Alle vorgeschlagenen Tags hinzufügen"
-                                }
-                            }
-                        }
-                    }
-                }
             }
         },
         "title": "Auf Rädern"
@@ -1097,7 +1256,29 @@
                             "title": "ein Erotikgeschäft"
                         }
                     },
-                    "name": "Erotikgeschäfte"
+                    "name": "Erotikgeschäfte",
+                    "tagRenderings+": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "Dieser Laden bietet <b>weiches BDSM-Zubehör</b> an, wie zum Beispiel flauschige Handschellen, ein \"Fifty Shades of Grey\"-Starterset, ..."
+                                },
+                                "1": {
+                                    "then": "Dieser Laden bietet <b>spezialisiertes BDSM-Zubehör</b> an, wie zum Beispiel Spreizstangen, Utensilien für Nadelfolter, medizinische Bondage-Ausrüstung, Schlagwerkzeuge, Fesseln, Metallhalsbänder, Handschellen, Nippelklemmen, Shibari-Zubehör, ..."
+                                },
+                                "2": {
+                                    "then": "Dieser Laden bietet <b>Petplay</b>-Zubehör an, wie zum Beispiel Hundemasken, Tiermasken, Ponyplay-Ausrüstung, Schwänze, Hufschuhe, ..."
+                                },
+                                "3": {
+                                    "then": "Dieser Laden bietet <b>Lederkleidung</b> an, darunter Hosen und Hemden für den Alltag bis hin zu Lederharnissen"
+                                },
+                                "4": {
+                                    "then": "Dieser Laden bietet <b>Uniformen</b> für Rollenspiele an, wie Krankenschwester-Uniformen, Militäruniformen, Polizei-, Schulmädchen- und Dienstmädchen-Outfits, ..."
+                                }
+                            },
+                            "question": "Bietet dieser Laden Fetischkleidung an?"
+                        }
+                    }
                 }
             },
             "4": {
@@ -1283,10 +1464,6 @@
     "stations": {
         "description": "Bahnhofsdetails ansehen, bearbeiten und hinzufügen",
         "layers": {
-            "3": {
-                "description": "Ebene mit Bahnhöfen",
-                "name": "Bahnhöfe"
-            },
             "16": {
                 "description": "Anzeigen der Züge, die von diesem Bahnhof abfahren",
                 "name": "Abfahrtstafeln",
@@ -1318,6 +1495,10 @@
                 "title": {
                     "render": "Abfahrtstafel"
                 }
+            },
+            "3": {
+                "description": "Ebene mit Bahnhöfen",
+                "name": "Bahnhöfe"
             }
         },
         "title": "Bahnhöfe"
