@@ -447,6 +447,10 @@
     "plantDetection": {
         "loadingWikidata": "Cargando información sobre {species}…"
     },
+    "preset_type": {
+        "typeDescription": "Esto es <b>{title}</b>. <div class='subtle'>{description}</div>",
+        "typeTitle": "Esto es <b>{title}</b>"
+    },
     "privacy": {
         "editingIntro": "Cuando efectúas un cambio al mapa, este cambio se graba en OpenStreetMap y está disponible públicamente a cualquiera. Un conjunto de cambios hecho con MapComplete incluye los siguientes datos:",
         "editingOutro": "Por favor consulte <a href='https://wiki.osmfoundation.org/wiki/Privacy_Policy' target='_blank'> la política de privacidad en OpenStreetMap.org</a> para información detallada. Te queremos recordar que puedes utilizar un nombre ficticio al inscribirte.",

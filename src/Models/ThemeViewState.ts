@@ -704,7 +704,12 @@ export default class ThemeViewState implements SpecialVisualizationState {
             },
             Translations.t.hotkeyDocumentation.translationMode,
             () => {
-                Locale.showLinkToWeblate.setData(!Locale.showLinkToWeblate.data)
+                const tm = this.userRelatedState.translationMode
+                if(tm.data === "false"){
+                    tm.setData("true")
+                } else {
+                    tm.setData("false")
+                }
             }
         )
     }

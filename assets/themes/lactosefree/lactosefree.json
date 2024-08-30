@@ -1,10 +1,14 @@
 {
   "id": "lactosefree",
   "title": {
-    "en": "Lactose free shops and restaurants"
+    "en": "Lactose free shops and restaurants",
+    "de": "Laktosefreie Geschäfte und Restaurants",
+    "es": "Tiendas y restaurantes con productos sin lactosa"
   },
   "description": {
-    "en": "A crowdsourced map with lactose free shops and restaurants"
+    "en": "A crowdsourced map with lactose free shops and restaurants",
+    "de": "Eine Crowdsourcing-Karte mit laktosefreien Geschäften und Restaurants",
+    "es": "Un mapa en que colaborar con tiendas y restaurantes con productos sin lactosa"
   },
   "icon": "./assets/layers/questions/lactose_free.svg",
   "layers": [

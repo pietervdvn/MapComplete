@@ -635,7 +635,7 @@
         "title": "Ciclocalles"
     },
     "cyclofix": {
-        "description": "El objetivo de este mapa es presentar a los ciclistas con una solución fácil de utilizar para encontrar la infraestructura apropiada para sus necesidades. <br><br>Puedes seguir tu localización precisa (móvil solo) y seleccionar las capas que son relevantes para ti en la esquina inferior izquierda. Tgambién puedes utilizar esta herramienta para editar o añadir pines (puntos de interés) al mapa y proveer más datos respondiendo a preguntas.<br><br>Todos los cambios que hagas se guardarán de manera automática en la base de datos global de OpenStreetMap y podrán ser utilizados libremente por otros. <br><br>Para más información sobre el proyecto cyclofix, ve a <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
+        "description": "Un mapa para que los ciclistas encuentren la infraestructura adecuada a sus necesidades, como bombas de bicicleta, agua potable, tiendas de bicicletas, reparación o aparcamientos.",
         "title": "Cyclofix - un mapa para ciclistas"
     },
     "disaster_response": {
@@ -862,8 +862,49 @@
                 "title": {
                     "render": "Publicidad en una fachada"
                 }
+            },
+            "1": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "Esta es una señal fantasma"
+                                },
+                                "1": {
+                                    "then": "Esta no es una señal fantasma"
+                                }
+                            },
+                            "question": "¿Es una señal fantasma?",
+                            "questionHint": "¿Es este rótulo de un negocio que ya no existe o que ya no se mantiene?"
+                        }
+                    },
+                    "name": "Todos los murales promocionales"
+                }
+            },
+            "2": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "Esta obra de arte es un anuncio histórico"
+                                },
+                                "1": {
+                                    "then": "Esta obra de arte no es un anuncio histórico"
+                                }
+                            },
+                            "question": "¿Es esta obra de arte un anuncio histórico?"
+                        }
+                    }
+                }
             }
-        }
+        },
+        "title": "Señales fantasma"
+    },
+    "glutenfree": {
+        "description": "Un menú compartido con productos sin gluten",
+        "title": "Sin gluten"
     },
     "grb": {
         "description": "Este tema es un intento de automatizar la importación GRB.",
@@ -941,6 +982,10 @@
         "description": "En este mapa se muestran los lugares cubiertos de acceso público",
         "title": "En interiores"
     },
+    "items_with_image": {
+        "description": "Un mapa que muestra todos los objetos en OSM que tienen una imagen. Este tema no es muy adecuado para MapComplete porque no se puede agregar una imagen directamente. Sin embargo, este tema está ahí principalmente para poner todo en la base de datos, lo que permite encontrar rápidamente imágenes cercanas para otras funciones",
+        "title": "Todos los elementos con imágenes"
+    },
     "kerbs_and_crossings": {
         "description": "Un mapa que muestra bordillos y cruces.",
         "layers": {
@@ -956,6 +1001,10 @@
             }
         },
         "title": "Bordillos y cruces"
+    },
+    "lactosefree": {
+        "description": "Un mapa en que colaborar con tiendas y restaurantes con productos sin lactosa",
+        "title": "Tiendas y restaurantes con productos sin lactosa"
     },
     "maproulette": {
         "description": "Tema que muestra las tareas de MapRoulette, permitiendo buscarlas, filtrarlas y arreglarlas.",
@@ -988,6 +1037,33 @@
     "onwheels": {
         "description": "En este mapa se muestran los lugares accesibles al público en silla de ruedas, que pueden añadirse fácilmente",
         "layers": {
+            "19": {
+                "override": {
+                    "=title": {
+                        "render": "Estadísticas"
+                    }
+                }
+            },
+            "20": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Importar"
+                                }
+                            }
+                        },
+                        "1": {
+                            "render": {
+                                "special": {
+                                    "message": "Añadir todas las etiquetas sugeridas"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "4": {
                 "override": {
                     "filter": {
@@ -1029,33 +1105,6 @@
             "8": {
                 "override": {
                     "name": "Plazas de aparcamiento para discapacitados"
-                }
-            },
-            "19": {
-                "override": {
-                    "=title": {
-                        "render": "Estadísticas"
-                    }
-                }
-            },
-            "20": {
-                "override": {
-                    "+tagRenderings": {
-                        "0": {
-                            "render": {
-                                "special": {
-                                    "text": "Importar"
-                                }
-                            }
-                        },
-                        "1": {
-                            "render": {
-                                "special": {
-                                    "message": "Añadir todas las etiquetas sugeridas"
-                                }
-                            }
-                        }
-                    }
                 }
             }
         },
@@ -1231,10 +1280,6 @@
     "stations": {
         "description": "Ver, editar y añadir detalles a una estación de tren",
         "layers": {
-            "3": {
-                "description": "Capa que muestra las estaciones de tren",
-                "name": "Estación de Tren"
-            },
             "16": {
                 "description": "Pantallas que muestran los trenes que saldrán de esta estación",
                 "name": "Tableros de salidas",
@@ -1266,6 +1311,10 @@
                 "title": {
                     "render": "Tablero de salidas"
                 }
+            },
+            "3": {
+                "description": "Capa que muestra las estaciones de tren",
+                "name": "Estación de Tren"
             }
         },
         "title": "Estaciones de tren"

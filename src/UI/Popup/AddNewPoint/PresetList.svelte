@@ -55,6 +55,9 @@
 
     for (const preset of layer.presets) {
       const tags = TagUtils.KVtoProperties(preset.tags ?? [])
+      if(preset.preciseInput.snapToLayers){
+        tags["_referencing_ways"] = '["way/-1"]'
+      }
 
       const markers = layer.mapRendering.map((mr, i) =>
         mr
