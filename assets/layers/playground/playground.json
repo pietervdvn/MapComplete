@@ -139,7 +139,7 @@
     {"question": {
       "en": "Does one have to pay to use this playground?",
       "nl": "Moet men betalen om deze speeltuin te gebruiken?"
-    },
+    },"id":"fee",
     "mappings": [
 {"if": "fee=no",
   "alsoShowIf": "fee=",
