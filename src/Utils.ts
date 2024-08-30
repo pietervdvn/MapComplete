@@ -1823,7 +1823,6 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
     }
 
     /**
-     * Utils.isEmoji("🍕") // => false
      * Utils.isEmojiFlag("🇧🇪") // => true
      */
     public static isEmojiFlag(string: string) {
