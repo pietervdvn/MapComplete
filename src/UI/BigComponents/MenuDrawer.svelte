@@ -62,6 +62,21 @@
 </script>
 
 <div class="flex flex-col p-2 sm:p-3 low-interaction gap-y-2 sm:gap-y-3 h-screen overflow-y-auto">
+<div class="flex justify-between">
+<h2>Menu<h2>
+<button on:click={() => {}}>Close</button/>
+</div>
+{#if $showHome}
+      <a class="flex button primary" href={Utils.HomepageLink()}>
+        <Add class="h-6 w-6" />
+        {#if Utils.isIframe}
+          <Tr t={Translations.t.general.seeIndex} />
+        {:else}
+          <Tr t={Translations.t.general.backToIndex} />
+        {/if}
+      </a>
+    {/if}
+
 
   <!-- User related: avatar, settings, favourits, logout -->
   <div class="sidebar-unit">
@@ -206,16 +221,7 @@
     <h3>
       <Tr t={t.moreUtilsTitle} />
     </h3>
-    {#if $showHome}
-      <a class="flex" href={Utils.HomepageLink()}>
-        <Add class="h-6 w-6" />
-        {#if Utils.isIframe}
-          <Tr t={Translations.t.general.seeIndex} />
-        {:else}
-          <Tr t={Translations.t.general.backToIndex} />
-        {/if}
-      </a>
-    {/if}
+    
 
     <Page {onlyLink} shown={pg.community_index}>
       <div class="flex" slot="header">
