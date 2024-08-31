@@ -38,7 +38,7 @@ export class MenuState {
             states[pageName] = toggle
         }
         this.pageStates = <Record<PageType, UIEventSource<boolean>>>states
-this.menuOsOpened = this.pageStates.menu
+this.menuIsOpened = this.pageStates.menu
 
  for (const pageName of MenuState.pageNames) {
             
