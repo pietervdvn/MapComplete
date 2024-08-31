@@ -5026,7 +5026,7 @@
                         "then": "Hier werden ausschließlich Gerichte zum Mitnehmen angeboten"
                     },
                     "1": {
-                        "then": "Hier werden unter anderem Gerichte zum Mitnehmen angeboten"
+                        "then": "Hier werden auch Gerichte zum Mitnehmen angeboten"
                     },
                     "2": {
                         "then": "Hier werden keine Gerichte zum Mitnehmen angeboten"
@@ -5196,7 +5196,7 @@
                         "then": "Nur biologische Produkte sind erhältlich"
                     }
                 },
-                "question": "Bietet dieses Restaurant biologische Speisen an?"
+                "question": "Bietet das Restaurant biologische Speisen an?"
             }
         },
         "title": {
