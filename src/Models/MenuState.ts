@@ -36,15 +36,19 @@ export class MenuState {
         for (const pageName of MenuState.pageNames) {
             const toggle = new UIEventSource(false)
             states[pageName] = toggle
+        }
+        this.pageStates = <Record<PageType, UIEventSource<boolean>>>states
+this.menuOsOpened = this.pageStates.menu
 
-            toggle.addCallback(enabled => {
+ for (const pageName of MenuState.pageNames) {
+            
+            thise.pageStates[pageName].addCallback(enabled => {
                 if (enabled) {
                     this.menuIsOpened.set(false)
                 }
             })
         }
-        this.pageStates = <Record<PageType, UIEventSource<boolean>>>states
-this.menuOsOpened = this.pageStates.menu
+        
         const visitedBefore = LocalStorageSource.GetParsed<boolean>(
             themeid + "thememenuisopened", false
         )
