@@ -89,8 +89,8 @@
         "intro": "Du hast {length} Orte als Favorit markiert.",
         "introPrivacy": "Diese Liste ist nur für dich sichtbar",
         "loginToSeeList": "Anmelden, um die Liste der Orte zu sehen, die du als Favoriten markiert hast",
-        "tab": "Deine Favoriten und Bewertungen",
-        "title": "Ausgewählte Orte"
+        "tab": "Favoriten und Bewertungen",
+        "title": "Favorisierte Orte"
     },
     "flyer": {
         "aerial": "Diese Karte verwendet einen anderen Hintergrund, nämlich Luftaufnahmen der Agentschap Informatie Vlaanderen",
@@ -137,7 +137,7 @@
         "404": "Diese Seite existiert nicht",
         "about": "OpenStreetMap für ein bestimmtes Thema einfach bearbeiten und hinzufügen",
         "aboutMapComplete": {
-            "intro": "Nutze MapComplete, um Daten zu <b>einem bestimmten Thema</b> auf OpenStreetMap einzutragen. Beantworte Fragen, und in wenigen Minuten sind deine Beiträge überall verfügbar. In den meisten Themen kannst Du Bilder hinzufügen oder sogar eine Bewertung hinterlassen. Die <b>Themen-Verwalter</b> definieren Objekte, Fragen und Begriffe für das jeweilige Thema."
+            "intro": "Nutze MapComplete, um Daten zu <b>einem bestimmten Thema</b> auf OpenStreetMap einzutragen. Beantworte Fragen, und in wenigen Minuten sind deine Beiträge überall verfügbar. In den meisten Themen kannst du Bilder hinzufügen oder eine Bewertung hinterlassen. Der <b>Themen-Verwalter</b> definiert Objekte, Fragen und Begriffe für das jeweilige Thema."
         },
         "add": {
             "addNew": "{category} hinzufügen",
@@ -208,7 +208,7 @@
             "translatedBy": "MapComplete wurde übersetzt von {contributors} und <a href='https://github.com/pietervdvn/MapComplete/graphs/contributors' target='_blank'>{hiddenCount} weiteren Personen</a>"
         },
         "back": "Zurück",
-        "backToIndex": "Zur Übersicht aller Themenkarten",
+        "backToIndex": "Alle Themenkarten anzeigen",
         "backToMap": "Zurück zur Karte",
         "backgroundMap": "Hintergrundkarte auswählen",
         "backgroundSwitch": "Hintergrund wechseln",
@@ -414,7 +414,7 @@
             "options": "Optionen teilen",
             "stateIsIncluded": "Die aktuelle Ebenen- und Filterauswahl ist im geteilten Link und iFrame enthalten.",
             "thanksForSharing": "Danke für das Teilen!",
-            "title": "Diese Karte teilen"
+            "title": "Karte teilen"
         },
         "skip": "Frage überspringen",
         "testing": "Testen - Änderungen werden nicht gespeichert",
@@ -754,8 +754,8 @@
         "too_long": "Maximal {max} Zeichen sind erlaubt. Ihre Bewertung hat {amount} Zeichen.",
         "tos": "Mit der Bewertung stimmen Sie den <a href=\"https://mangrove.reviews/terms\" target=\"_blank\">AGB und den Datenschutzrichtlinien von Mangrove.reviews zu</a>",
         "write_a_comment": "Bewertung schreiben…",
-        "your_reviews": "Deine vorherigen Bewertungen",
-        "your_reviews_empty": "Wir konnten keine deiner vorherigen Bewertungen finden"
+        "your_reviews": "Deine Bewertungen",
+        "your_reviews_empty": "Keine vorherigen Bewertungen gefunden"
     },
     "split": {
         "cancel": "Abbrechen",
