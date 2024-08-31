@@ -22,7 +22,7 @@ export class MenuState {
         "usersettings", "share", "menu"
     ] as const
 
-    public readonly menuIsOpened = new UIEventSource(false)
+    public readonly menuIsOpened 
     public readonly pageStates: Record<PageType, UIEventSource<boolean>>
 
     public readonly highlightedLayerInFilters: UIEventSource<string> = new UIEventSource<string>(
@@ -44,7 +44,7 @@ export class MenuState {
             })
         }
         this.pageStates = <Record<PageType, UIEventSource<boolean>>>states
-
+this.menuOsOpened = this.pageStates.menu
         const visitedBefore = LocalStorageSource.GetParsed<boolean>(
             themeid + "thememenuisopened", false
         )
