@@ -42,7 +42,7 @@ this.menuOsOpened = this.pageStates.menu
 
  for (const pageName of MenuState.pageNames) {
             
-            thise.pageStates[pageName].addCallback(enabled => {
+            this.pageStates[pageName].addCallback(enabled => {
                 if (enabled) {
                     this.menuIsOpened.set(false)
                 }
