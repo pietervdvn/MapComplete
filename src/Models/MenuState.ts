@@ -19,7 +19,7 @@ export class MenuState {
     public static readonly pageNames = [
         "copyright", "copyright_icons", "community_index", "hotkeys",
         "privacy", "filter", "background", "about_theme", "download", "favourites",
-        "usersettings", "share"
+        "usersettings", "share", "menu"
     ] as const
 
     public readonly menuIsOpened = new UIEventSource(false)
