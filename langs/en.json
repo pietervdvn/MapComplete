@@ -209,7 +209,7 @@
             "translatedBy": "MapComplete has been translated by {contributors} and <a href='https://github.com/pietervdvn/MapComplete/graphs/contributors' target='_blank'>{hiddenCount} more contributors</a>"
         },
         "back": "Back",
-        "backToIndex": "Go back to the overview with all thematic maps",
+        "backToIndex": "See all thematic maps",
         "backToMap": "Back to the map",
         "backgroundMap": "Select a background layer",
         "backgroundSwitch": "Switch background",
