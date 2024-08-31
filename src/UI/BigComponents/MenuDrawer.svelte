@@ -64,7 +64,7 @@
 <div class="flex flex-col p-2 sm:p-3 low-interaction gap-y-2 sm:gap-y-3 h-screen overflow-y-auto">
 <div class="flex justify-between">
 <h2>Menu<h2>
-<button on:click={() => {}}>Close</button>
+<button on:click={() => {pg.menu.set(false)}}>Close</button>
 </div>
 {#if $showHome}
       <a class="flex button primary" href={Utils.HomepageLink()}>
