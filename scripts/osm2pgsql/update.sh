@@ -20,7 +20,10 @@ osm2pgsql -O flex -S build_db.lua -s --flat-nodes=import-help-file -d postgresql
 # To see the progress
 # tail -f seeddb.log
 
+cd ~/git/MapComplete || exit
 npm run delete:database:old
+nohup npm run server:summary >> summary_server.log &
+cd - || exit
 
 # Restart tileserver
 export DATABASE_URL=postgresql://user:password@localhost:5444/osm-poi.${DATE}
