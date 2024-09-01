@@ -1,6 +1,7 @@
 #! /bin/bash
 
-# Full database update. DOwnload latest from planet.osm.org, build update script, setup and seed it
+# Full database update. Downloads the latest from planet.osm.org, build update script, setup and seed it
+# Meant to be run with 'nohup'
 nvm use
 npm run init # contains a 'npm run generate, which builds the layers'
 npm run generate:buildDbScript
