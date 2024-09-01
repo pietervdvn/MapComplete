@@ -11,6 +11,8 @@
   import { twMerge } from "tailwind-merge"
   import { UIEventSource } from "../../Logic/UIEventSource"
   import Loading from "../Base/Loading.svelte"
+  import Tr from "../Base/Tr.svelte"
+  import Translations from "../i18n/Translations"
 
   export let image: ProvidedImage
   export let clss: string = undefined
@@ -48,7 +50,7 @@
       on:click={() => download()}
     >
       <DownloadIcon class="h-6 w-6 px-2 opacity-100" />
-      Download
+      <Tr t={Translations.t.general.download.downloadImage}/>
     </button>
   </div>
 </div>

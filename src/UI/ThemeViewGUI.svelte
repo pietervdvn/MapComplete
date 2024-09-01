@@ -196,7 +196,7 @@
         <MapControlButton
           cls="m-0.5 p-0.5 sm:p-1"
           arialabel={Translations.t.general.labels.menu}
-          on:click={() => {console.log("Opening...."); state.guistate.menuIsOpened.setData(true)}}
+          on:click={() => {console.log("Opening...."); state.guistate.pageStates.menu.setData(true)}}
           on:keydown={forwardEventToMap}
         >
           <MenuIcon class="h-6 w-6 cursor-pointer" />
@@ -404,7 +404,7 @@
     <svelte:fragment slot="error" />
   </LoginToggle>
 
-  <DrawerLeft shown={state.guistate.menuIsOpened}>
+  <DrawerLeft shown={state.guistate.pageStates.menu}>
     <div class="h-screen overflow-y-auto">
       <MenuDrawer onlyLink={true} {state} />
     </div>

@@ -242,6 +242,7 @@
             "downloadGeojson": "Download visible data as GeoJSON",
             "downloadGpx": "Download as GPX-file",
             "downloadGpxHelper": "A GPX-file can be used with most navigation devices and applications",
+            "downloadImage": "Download image",
             "exporting": "Exporting…",
             "includeMetaData": "Include metadata (last editor, calculated values, …)",
             "licenseInfo": "<h3>Copyright notice</h3>The provided data is available under ODbL. Reusing it is gratis for any purpose, but <ul><li>the attribution <b>© OpenStreetMap contributors</b> must be shown<li><li>Any change must be published under the same license</li></ul> Please read the full <a href='https://www.openstreetmap.org/copyright' target='_blank'>copyright notice</a> for details.",
@@ -304,7 +305,8 @@
             "aboutMapComplete": "About MapComplete",
             "filter": "Filter data",
             "moreUtilsTitle": "Discover more",
-            "showIntroduction": "Show introduction"
+            "showIntroduction": "Show introduction",
+            "title": "Menu"
         },
         "morescreen": {
             "createYourOwnTheme": "Create your own MapComplete theme from scratch",

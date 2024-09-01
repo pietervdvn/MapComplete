@@ -19,14 +19,13 @@ export class MenuState {
     public static readonly pageNames = [
         "copyright", "copyright_icons", "community_index", "hotkeys",
         "privacy", "filter", "background", "about_theme", "download", "favourites",
-        "usersettings", "share", "menu"
+        "usersettings", "share", "menu",
     ] as const
 
-    public readonly menuIsOpened 
     public readonly pageStates: Record<PageType, UIEventSource<boolean>>
 
     public readonly highlightedLayerInFilters: UIEventSource<string> = new UIEventSource<string>(
-        undefined
+        undefined,
     )
     public highlightedUserSetting: UIEventSource<string> = new UIEventSource<string>(undefined)
 
@@ -38,19 +37,20 @@ export class MenuState {
             states[pageName] = toggle
         }
         this.pageStates = <Record<PageType, UIEventSource<boolean>>>states
-this.menuIsOpened = this.pageStates.menu
 
- for (const pageName of MenuState.pageNames) {
-            
+        for (const pageName of MenuState.pageNames) {
+            if(pageName === "menu"){
+                continue
+            }
             this.pageStates[pageName].addCallback(enabled => {
                 if (enabled) {
-                    this.menuIsOpened.set(false)
+                    this.pageStates.menu.set(false)
                 }
             })
         }
-        
+
         const visitedBefore = LocalStorageSource.GetParsed<boolean>(
-            themeid + "thememenuisopened", false
+            themeid + "thememenuisopened", false,
         )
         if (!visitedBefore.data && shouldShowWelcomeMessage) {
             this.pageStates.about_theme.set(true)
@@ -85,8 +85,8 @@ this.menuIsOpened = this.pageStates.menu
                 Utils.sortedByLevenshteinDistance(
                     highlightTagRendering,
                     UserRelatedState.availableUserSettingsIds,
-                    (x) => x
-                )
+                    (x) => x,
+                ),
             )
         }
         this.highlightedUserSetting.setData(highlightTagRendering)
@@ -101,16 +101,17 @@ this.menuIsOpened = this.pageStates.menu
      * Returns 'true' if at least one menu was opened
      */
     public closeAll(): boolean {
-        for (const key in this.pageStates) {
-            const toggle = this.pageStates[key]
+        const ps = this.pageStates
+        for (const key in ps) {
+            const toggle = ps[key]
             const wasOpen = toggle.data
             toggle.setData(false)
             if (wasOpen) {
                 return true
             }
         }
-        if (this.menuIsOpened.data) {
-            this.menuIsOpened.set(false)
+        if (ps.menu.data) {
+            ps.menu.set(false)
             return true
         }
     }

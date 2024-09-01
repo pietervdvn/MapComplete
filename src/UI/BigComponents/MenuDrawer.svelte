@@ -11,7 +11,7 @@
   import CommunityIndexView from "./CommunityIndexView.svelte"
   import Community from "../../assets/svg/Community.svelte"
   import LoginToggle from "../Base/LoginToggle.svelte"
-  import { Sidebar } from "flowbite-svelte"
+  import { CloseButton, Sidebar } from "flowbite-svelte"
   import HotkeyTable from "./HotkeyTable.svelte"
   import { Utils } from "../../Utils"
   import Constants from "../../Models/Constants"
@@ -47,6 +47,8 @@
   import LogoutButton from "../Base/LogoutButton.svelte"
   import { BoltIcon } from "@babeard/svelte-heroicons/mini"
   import Copyright from "../../assets/svg/Copyright.svelte"
+  import Pencil from "../../assets/svg/Pencil.svelte"
+  import Squares2x2 from "@babeard/svelte-heroicons/mini/Squares2x2"
 
   export let state: ThemeViewState
   let userdetails = state.osmConnection.userDetails
@@ -62,20 +64,22 @@
 </script>
 
 <div class="flex flex-col p-2 sm:p-3 low-interaction gap-y-2 sm:gap-y-3 h-screen overflow-y-auto">
-<div class="flex justify-between">
-<h2>Menu<h2>
-<button on:click={() => {pg.menu.set(false)}}>Close</button>
-</div>
-{#if $showHome}
-      <a class="flex button primary" href={Utils.HomepageLink()}>
-        <Add class="h-6 w-6" />
-        {#if Utils.isIframe}
-          <Tr t={Translations.t.general.seeIndex} />
-        {:else}
-          <Tr t={Translations.t.general.backToIndex} />
-        {/if}
-      </a>
-    {/if}
+  <div class="flex justify-between">
+    <h2>
+      <Tr t={t.title}/>
+    </h2>
+    <CloseButton on:click={() => {pg.menu.set(false)}} />
+  </div>
+  {#if $showHome}
+    <a class="flex button primary" href={Utils.HomepageLink()}>
+      <Squares2x2 class="h-10 w-10" />
+      {#if Utils.isIframe}
+        <Tr t={Translations.t.general.seeIndex} />
+      {:else}
+        <Tr t={Translations.t.general.backToIndex} />
+      {/if}
+    </a>
+  {/if}
 
 
   <!-- User related: avatar, settings, favourits, logout -->
@@ -128,6 +132,8 @@
           <HeartIcon class="h-6 w-6" />
           <Tr t={Translations.t.favouritePoi.tab} />
         </div>
+
+
         <h3>
 
           <Tr t={Translations.t.favouritePoi.title} />
@@ -221,7 +227,7 @@
     <h3>
       <Tr t={t.moreUtilsTitle} />
     </h3>
-    
+
 
     <Page {onlyLink} shown={pg.community_index}>
       <div class="flex" slot="header">
@@ -248,8 +254,15 @@
       <Tr t={Translations.t.general.menu.aboutMapComplete} />
     </h3>
 
-    <div class="hidden-on-mobile">
+    <a
+      class="flex"
+      href={window.location.protocol + "//" + window.location.host + "/studio.html"}
+    >
+      <Pencil class="mr-2 h-6 w-6" />
+      <Tr t={Translations.t.general.morescreen.createYourOwnTheme} />
+    </a>
 
+    <div class="hidden-on-mobile w-full">
       <Page {onlyLink} shown={pg.hotkeys}>
         <div class="flex" slot="header">
           <BoltIcon class="w-6 h-6" />
@@ -346,12 +359,14 @@
     }
 
 
-    :global(.sidebar-button, .sidebar-button, .sidebar-unit > a) {
+    :global(.sidebar-button, .sidebar-unit > a) {
         display: flex;
         align-items: center;
         border-radius: 0.25rem !important;
         padding: 0.4rem 0.75rem !important;
         text-decoration: none !important;
+        width: 100%;
+        text-align: start;
     }
 
     :global(.sidebar-button > svg , .sidebar-button > img, .sidebar-unit a > img, .sidebar-unit > a svg) {
