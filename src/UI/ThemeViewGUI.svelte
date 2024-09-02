@@ -14,7 +14,7 @@
   import Geosearch from "./BigComponents/Geosearch.svelte"
   import Translations from "./i18n/Translations"
   import {
-    MenuIcon
+    MenuIcon,
   } from "@rgossiaux/svelte-heroicons/solid"
   import Tr from "./Base/Tr.svelte"
   import FloatOver from "./Base/FloatOver.svelte"
@@ -46,10 +46,12 @@
   import SelectedElementPanel from "./Base/SelectedElementPanel.svelte"
   import MenuDrawer from "./BigComponents/MenuDrawer.svelte"
   import DrawerLeft from "./Base/DrawerLeft.svelte"
+  import Hash from "../Logic/Web/Hash"
 
   export let state: ThemeViewState
   let layout = state.layout
   let maplibremap: UIEventSource<MlMap> = state.map
+  let state_selectedElement = state.selectedElement
   let selectedElement: UIEventSource<Feature> = new UIEventSource<Feature>(undefined)
   let compass = Orientation.singleton.alpha
   let compassLoaded = Orientation.singleton.gotMeasurement
@@ -70,6 +72,7 @@
       selectedElement.setData(selected)
     })
   })
+
 
   let selectedLayer: Store<LayerConfig> = state.selectedElement.mapD((element) => {
     const id = element.properties.id
@@ -97,11 +100,11 @@
   state.mapProperties.installCustomKeyboardHandler(viewport)
   let canZoomIn = mapproperties.maxzoom.map(
     (mz) => mapproperties.zoom.data < mz,
-    [mapproperties.zoom]
+    [mapproperties.zoom],
   )
   let canZoomOut = mapproperties.minzoom.map(
     (mz) => mapproperties.zoom.data > mz,
-    [mapproperties.zoom]
+    [mapproperties.zoom],
   )
 
   function updateViewport() {
@@ -117,7 +120,7 @@
     const bottomRight = mlmap.unproject([rect.right, rect.bottom])
     const bbox = new BBox([
       [topLeft.lng, topLeft.lat],
-      [bottomRight.lng, bottomRight.lat]
+      [bottomRight.lng, bottomRight.lat],
     ])
     state.visualFeedbackViewportBounds.setData(bbox)
   }
@@ -137,7 +140,7 @@
   onDestroy(
     rasterLayer.addCallbackAndRunD((l) => {
       rasterLayerName = l.properties.name
-    })
+    }),
   )
   let previewedImage = state.previewedImage
   let addNewFeatureMode = state.userRelatedState.addNewFeatureMode
@@ -166,6 +169,7 @@
     animation?.cameraAnimation(mlmap)
   }
 
+  let hash = Hash.hash
 </script>
 
 <main>
@@ -217,6 +221,11 @@
         </MapControlButton>
       </div>
 
+      {#if $debug && $hash}
+        <div class="alert">
+          {$hash}
+        </div>
+      {/if}
 
       <If condition={state.featureSwitches.featureSwitchSearch}>
         <div class="w-full sm:w-64 my-2 sm:mt-0">
@@ -415,11 +424,11 @@
     <!-- right modal with the selected element view -->
     <ModalRight
       on:close={() => {
-        selectedElement.setData(undefined)
+        state.selectedElement.setData(undefined)
       }}
     >
       <div slot="close-button" />
-      <SelectedElementPanel {state} selected={$selectedElement} />
+      <SelectedElementPanel {state} selected={$state_selectedElement} />
     </ModalRight>
   {/if}
 
@@ -433,7 +442,7 @@
         }}
       >
         <span slot="close-button" />
-        <SelectedElementPanel absolute={false} {state} selected={$selectedElement} />
+        <SelectedElementPanel absolute={false} {state} selected={$state_selectedElement} />
       </FloatOver>
     {:else}
       <FloatOver
@@ -441,7 +450,7 @@
           state.selectedElement.setData(undefined)
         }}
       >
-        <SelectedElementView {state} layer={$selectedLayer} selectedElement={$selectedElement} />
+        <SelectedElementView {state} layer={$selectedLayer} selectedElement={$state_selectedElement} />
       </FloatOver>
     {/if}
   {/if}
