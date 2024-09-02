@@ -125,7 +125,6 @@
     "generate:summaryCache": "vite-node scripts/generateSummaryTileCache.ts",
     "create:database": "vite-node scripts/osm2pgsql/createNewDatabase.ts",
     "delete:database:old": "vite-node scripts/osm2pgsql/deleteOldDbs.ts"
-
   },
   "keywords": [
     "OpenStreetMap",
