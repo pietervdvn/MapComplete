@@ -90,6 +90,7 @@ export class MenuState {
             )
         }
         this.highlightedUserSetting.setData(highlightTagRendering)
+        this.pageStates.usersettings.set(true)
     }
 
     public isSomethingOpen(): boolean {
