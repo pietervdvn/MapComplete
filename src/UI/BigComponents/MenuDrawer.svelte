@@ -156,12 +156,12 @@
     </h3>
 
     <Page {onlyLink} shown={pg.about_theme}>
-      <div slot="link" class="flex">
-        <Marker icons={layout.icon} size="h-6 w-6 mr-2" />
-        <Tr t={t.showIntroduction} />
-      </div>
-      <svelte:fragment slot="header">
+      <svelte:fragment slot="link">
         <Marker icons={layout.icon} />
+        <Tr t={t.showIntroduction} />
+      </svelte:fragment>
+      <svelte:fragment slot="header">
+        <Marker size="h-6 w-6 mr-2"  icons={layout.icon} />
         <Tr t={layout.title} />
       </svelte:fragment>
       <ThemeIntroPanel {state} />
