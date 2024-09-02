@@ -193,7 +193,7 @@
             },
             "josmNotOpened": "JOSM could not be reached. Make sure it is opened and remote control is enabled",
             "josmOpened": "JOSM is opened",
-            "madeBy": "Mady by <b>{author}</b>",
+            "madeBy": "Made by <b>{author}</b>",
             "mapContributionsBy": "The current visible data has edits made by {contributors}",
             "mapContributionsByAndHidden": "The current visible data has edits made by {contributors} and {hiddenCount} more contributors",
             "mapDataByOsm": "Map data: OpenStreetMap",
