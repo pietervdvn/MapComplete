@@ -2061,6 +2061,118 @@
             "render": "Autovermietung"
         }
     },
+    "caravansites": {
+        "description": "Wohnmobilstellplätze",
+        "name": "Wohnmobilstellplätze",
+        "presets": {
+            "0": {
+                "description": "Fügen Sie einen neuen offiziellen Wohnmobilstellplatz hinzu. Dies sind ausgewiesene Plätze, an denen Sie in Ihrem Wohnmobil übernachten können. Sie können wie ein richtiger Campingplatz oder nur wie ein Parkplatz aussehen. Möglicherweise sind sie gar nicht ausgeschildert, sondern nur in einem Gemeindebeschluss festgelegt. Ein normaler Parkplatz für Wohnmobile, auf dem übernachten nicht zulässig ist, zählt nicht als Wohnmobilstellplatz. ",
+                "title": "ein Wohnmobilstellplatz"
+            }
+        },
+        "tagRenderings": {
+            "caravansites-capacity": {
+                "question": "Wie viele Wohnmobile können hier parken? (Überspringen, wenn es keine offensichtliche Anzahl von Stellplätzen oder erlaubten Fahrzeugen gibt)",
+                "render": "{capacity} Wohnmobile können diesen Platz gleichzeitig nutzen"
+            },
+            "caravansites-charge": {
+                "question": "Wie hoch sind die Gebühren hier?",
+                "render": "Die Gebühr beträgt {charge}"
+            },
+            "caravansites-description": {
+                "question": "Möchten Sie eine allgemeine Beschreibung für diesen Ort hinzufügen? (Bitte wiederholen Sie keine Informationen, die Sie bereits zuvor angegeben haben. Bitte bleiben Sie objektiv - Meinungen gehen in die Bewertungen ein)",
+                "render": "Mehr Details über diesen Ort: {description}"
+            },
+            "caravansites-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Sie müssen für die Nutzung bezahlen"
+                    },
+                    "1": {
+                        "then": "Nutzung kostenlos"
+                    }
+                },
+                "question": "Wird hier eine Gebühr erhoben?"
+            },
+            "caravansites-internet": {
+                "mappings": {
+                    "0": {
+                        "then": "Internetzugang ist vorhanden"
+                    },
+                    "1": {
+                        "then": "Internetzugang ist vorhanden"
+                    },
+                    "2": {
+                        "then": "Kein Internetzugang vorhanden"
+                    }
+                },
+                "question": "Ist an diesem Ort ein Internetzugang vorhanden?"
+            },
+            "caravansites-internet-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Der Internetzugang ist gebührenpflichtig"
+                    },
+                    "1": {
+                        "then": "Der Internetzugang ist kostenlos"
+                    }
+                },
+                "question": "Ist der Internetzugang gebührenpflichtig?"
+            },
+            "caravansites-long-term": {
+                "mappings": {
+                    "0": {
+                        "then": "Es gibt einige Plätze für Langzeitmieten, aber auch eine tageweise Anmietung ist möglich"
+                    },
+                    "1": {
+                        "then": "Hier gibt es keine Dauergäste"
+                    },
+                    "2": {
+                        "then": "Es sind nur Plätze für Dauercamper vorhanden (wenn Sie diese Antwort auswählen, verschwindet der Ort von der Karte)"
+                    }
+                },
+                "question": "Gibt es a diesem Ort Plätze für Dauercamper?"
+            },
+            "caravansites-name": {
+                "question": "Wie heißt dieser Ort?",
+                "render": "Dieser Ort heißt {name}"
+            },
+            "caravansites-sanitary-dump": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieser Ort hat eine sanitäre Entsorgungsstation"
+                    },
+                    "1": {
+                        "then": "Dieser Ort hat keine sanitäre Entsorgungsstation"
+                    }
+                },
+                "question": "Hat dieser Ort eine sanitäre Entsorgungsstation?"
+            },
+            "caravansites-toilets": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieser Ort verfügt über Toiletten"
+                    },
+                    "1": {
+                        "then": "Dieser Ort verfügt nicht über Toiletten"
+                    }
+                },
+                "question": "Verfügt dieser Ort über Toiletten?"
+            },
+            "caravansites-website": {
+                "question": "Hat dieser Ort eine Webseite?",
+                "render": "Offizielle Webseite: <a href='{website}'>{website}</a>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Unbenannter Wohnmobilstellplatz"
+                }
+            },
+            "render": "Wohnmobilstellplatz {name}"
+        }
+    },
     "charging_station": {
         "description": "Eine Ladestation",
         "filter": {
@@ -4071,6 +4183,95 @@
         },
         "title": {
             "render": "Trinkwasserstelle"
+        }
+    },
+    "dumpstations": {
+        "description": "Sanitäre Entsorgungsstationen",
+        "name": "Sanitäre Entsorgungsstationen",
+        "presets": {
+            "0": {
+                "description": "Fügen Sie eine neue sanitäre Entsorgungsstation hinzu. Hier können Camper Abwasser oder chemischen Toilettenabfälle entsorgen. Oft gibt es auch Trinkwasser und Strom.",
+                "title": "eine sanitäre Entsorgungsstation"
+            }
+        },
+        "tagRenderings": {
+            "dumpstations-access": {
+                "mappings": {
+                    "0": {
+                        "then": "Sie benötigen einen Schlüssel/Code zur Benutzung"
+                    },
+                    "1": {
+                        "then": "Sie müssen Kunde des Campingplatzes sein, um diesen Ort nutzen zu können"
+                    },
+                    "2": {
+                        "then": "Jeder darf diese sanitäre Entsorgungsstation nutzen"
+                    },
+                    "3": {
+                        "then": "Jeder darf diese sanitäre Entsorgungsstation nutzen"
+                    }
+                },
+                "question": "Wer darf diese sanitäre Entsorgungsstation nutzen?"
+            },
+            "dumpstations-charge": {
+                "question": "Wie hoch ist die Gebühr an diesem Ort?",
+                "render": "Die Gebühr beträgt {charge}"
+            },
+            "dumpstations-chemical-waste": {
+                "mappings": {
+                    "0": {
+                        "then": "Hier können Sie chemische Toilettenabfälle entsorgen"
+                    },
+                    "1": {
+                        "then": "Hier können Sie keine chemischen Toilettenabfälle entsorgen"
+                    }
+                },
+                "question": "Können Sie hier chemische Toilettenabfälle entsorgen?"
+            },
+            "dumpstations-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Sie müssen für die Nutzung bezahlen"
+                    },
+                    "1": {
+                        "then": "Nutzung kostenlos"
+                    }
+                },
+                "question": "Wird hier eine Gebühr erhoben?"
+            },
+            "dumpstations-grey-water": {
+                "mappings": {
+                    "0": {
+                        "then": "Hier können Sie Brauch-/Grauwasser entsorgen"
+                    },
+                    "1": {
+                        "then": "Hier können Sie kein Brauch-/Grauwasser entsorgen"
+                    }
+                },
+                "question": "Können Sie hier Brauch-/Grauwasser entsorgen?"
+            },
+            "dumpstations-network": {
+                "question": "Zu welchem Verbund/Netzwerk gehört dieser Ort? (Überspringen, wenn nicht zutreffend)",
+                "render": "Diese Station gehört zum Verbund/Netzwerk {network}"
+            },
+            "dumpstations-waterpoint": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieser Ort hat eine Wasserzapfstelle"
+                    },
+                    "1": {
+                        "then": "Dieser Ort hat keine Wasserzapfstelle"
+                    }
+                },
+                "question": "Hat dieser Ort eine Wasserzapfstelle?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Entsorgungsstation"
+                }
+            },
+            "render": "Entsorgungsstation {name}"
         }
     },
     "elevator": {

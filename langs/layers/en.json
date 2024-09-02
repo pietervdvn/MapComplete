@@ -2061,6 +2061,118 @@
             "render": "Car Rental"
         }
     },
+    "caravansites": {
+        "description": "camper sites",
+        "name": "Camper sites",
+        "presets": {
+            "0": {
+                "description": "Add a new official camper site. These are designated places to stay overnight with your camper. They might look like a real camping or just look like a parking. They might not be signposted at all, but just be defined in a municipal decision. A regular parking intended for campers where it is not expected to spend the night, is -not- a camper site ",
+                "title": "a camper site"
+            }
+        },
+        "tagRenderings": {
+            "caravansites-capacity": {
+                "question": "How many campers can stay here? (skip if there is no obvious number of spaces or allowed vehicles)",
+                "render": "{capacity} campers can use this place at the same time"
+            },
+            "caravansites-charge": {
+                "question": "How much does this place charge?",
+                "render": "This place charges {charge}"
+            },
+            "caravansites-description": {
+                "question": "Would you like to add a general description of this place? (Do not repeat information previously asked or shown above. Please keep it objective - opinions go into the reviews)",
+                "render": "More details about this place: {description}"
+            },
+            "caravansites-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "You need to pay for use"
+                    },
+                    "1": {
+                        "then": "Can be used for free"
+                    }
+                },
+                "question": "Does this place charge a fee?"
+            },
+            "caravansites-internet": {
+                "mappings": {
+                    "0": {
+                        "then": "There is internet access"
+                    },
+                    "1": {
+                        "then": "There is internet access"
+                    },
+                    "2": {
+                        "then": "There is no internet access"
+                    }
+                },
+                "question": "Does this place provide internet access?"
+            },
+            "caravansites-internet-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "You need to pay extra for internet access"
+                    },
+                    "1": {
+                        "then": "You do not need to pay extra for internet access"
+                    }
+                },
+                "question": "Do you have to pay for the internet access?"
+            },
+            "caravansites-long-term": {
+                "mappings": {
+                    "0": {
+                        "then": "There are some spots for long term rental, but you can also stay on a daily basis"
+                    },
+                    "1": {
+                        "then": "There are no permanent guests here"
+                    },
+                    "2": {
+                        "then": "It is only possible to stay here if you have a long term contract (this place disappears from this map if you choose this)"
+                    }
+                },
+                "question": "Does this place offer spots for long term rental?"
+            },
+            "caravansites-name": {
+                "question": "What is this place called?",
+                "render": "This place is called {name}"
+            },
+            "caravansites-sanitary-dump": {
+                "mappings": {
+                    "0": {
+                        "then": "This place has a sanitary dump station"
+                    },
+                    "1": {
+                        "then": "This place does not have a sanitary dump station"
+                    }
+                },
+                "question": "Does this place have a sanitary dump station?"
+            },
+            "caravansites-toilets": {
+                "mappings": {
+                    "0": {
+                        "then": "This place has toilets"
+                    },
+                    "1": {
+                        "then": "This place does not have toilets"
+                    }
+                },
+                "question": "Does this place have toilets?"
+            },
+            "caravansites-website": {
+                "question": "Does this place have a website?",
+                "render": "Official website: <a href='{website}'>{website}</a>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Unnamed camper site"
+                }
+            },
+            "render": "Camper site {name}"
+        }
+    },
     "charging_station": {
         "description": "A charging station",
         "filter": {
@@ -4071,6 +4183,95 @@
         },
         "title": {
             "render": "Drinking water"
+        }
+    },
+    "dumpstations": {
+        "description": "Sanitary dump stations",
+        "name": "Sanitary dump stations",
+        "presets": {
+            "0": {
+                "description": "Add a new sanitary dump station. This is a place where camper drivers can dump waste water or chemical toilet waste. Often there's also drinking water and electricity.",
+                "title": "a sanitary dump station"
+            }
+        },
+        "tagRenderings": {
+            "dumpstations-access": {
+                "mappings": {
+                    "0": {
+                        "then": "You need a network key/code to use this"
+                    },
+                    "1": {
+                        "then": "You need to be a customer of camping/campersite to use this place"
+                    },
+                    "2": {
+                        "then": "Anyone can use this dump station"
+                    },
+                    "3": {
+                        "then": "Anyone can use this dump station"
+                    }
+                },
+                "question": "Who can use this dump station?"
+            },
+            "dumpstations-charge": {
+                "question": "How much does this place charge?",
+                "render": "This place charges {charge}"
+            },
+            "dumpstations-chemical-waste": {
+                "mappings": {
+                    "0": {
+                        "then": "You can dispose of chemical toilet waste here"
+                    },
+                    "1": {
+                        "then": "You cannot dispose of chemical toilet waste here"
+                    }
+                },
+                "question": "Can you dispose of chemical toilet waste here?"
+            },
+            "dumpstations-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "You need to pay for use"
+                    },
+                    "1": {
+                        "then": "Can be used for free"
+                    }
+                },
+                "question": "Does this place charge a fee?"
+            },
+            "dumpstations-grey-water": {
+                "mappings": {
+                    "0": {
+                        "then": "You can dispose of grey water here"
+                    },
+                    "1": {
+                        "then": "You cannot dispose of gray water here"
+                    }
+                },
+                "question": "Can you dispose of grey water here?"
+            },
+            "dumpstations-network": {
+                "question": "What network is this place a part of? (skip if none)",
+                "render": "This station is part of network {network}"
+            },
+            "dumpstations-waterpoint": {
+                "mappings": {
+                    "0": {
+                        "then": "This place has a water point"
+                    },
+                    "1": {
+                        "then": "This place does not have a water point"
+                    }
+                },
+                "question": "Does this place have a water point?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Dump station"
+                }
+            },
+            "render": "Dump station {name}"
         }
     },
     "elevator": {

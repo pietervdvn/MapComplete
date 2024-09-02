@@ -30,51 +30,6 @@
     },
     "campersite": {
         "description": "Ez az oldal az összes olyan hivatalos lakóautós megállóhelyet és helyet gyűjti össze, ahol szürke és fekete szennyvizet lehet üríteni. Hozzáadhat részleteket a nyújtott szolgáltatásokról és a költségekről, valamint képeket és értékeléseket. Ez egyszerre egy weboldal és egy webes alkalmazás. Az adatokat az OpenStreetMapen tároljuk, így mindig ingyenesek lesznek, és bármelyik alkalmazás újra felhasználhatja őket.",
-        "layers": {
-            "0": {
-                "description": "Lakóautós megállóhelyek",
-                "name": "Lakóautós megállóhely",
-                "presets": {
-                    "0": {
-                        "description": "Új hivatalos lakóautóhely hozzáadása. Ez arra vannak kijelölve, hogy lakóautóval ott éjszakázzunk. Lehet, hogy úgy néz ki, mint egy igazi kemping, de az is lehet, hogy csak olyan, mint egy parkoló. Előfordulhat, hogy egyáltalán nem jelzik őket, hanem csak egy önkormányzati határozatban vannak kijelölve. A lakóautósoknak szánt olyan hagyományos parkolók, ahol nem várhatóan nem fognak éjszakázni, -nem minősül- lakóautóhelynek. ",
-                        "title": "lakóautós megállóhely"
-                    }
-                },
-                "tagRenderings": {
-                    "caravansites-toilets": {
-                        "mappings": {
-                            "0": {
-                                "then": "Itt van WC"
-                            },
-                            "1": {
-                                "then": "Itt nincs WC"
-                            }
-                        },
-                        "question": "Van-e itt WC?"
-                    }
-                }
-            },
-            "1": {
-                "presets": {
-                    "0": {
-                        "description": "Új egészségügyihulldék-lerakó hozzáadása. Ez egy olyan hely, ahol a lakókocsisok a szennyvizet vagy a vegyi WC hulladékát kiüríthetik. Gyakran van ivóvíz és áram is."
-                    }
-                },
-                "tagRenderings": {
-                    "dumpstations-chemical-waste": {
-                        "mappings": {
-                            "0": {
-                                "then": "Itt ártalmatlanítható a vegyi WC hulladéka"
-                            },
-                            "1": {
-                                "then": "Itt nem ártalmatlanítható a vegyi WC hulladéka"
-                            }
-                        },
-                        "question": "Elhelyezhető-e itt a vegyi WC hulladéka?"
-                    }
-                }
-            }
-        },
         "overrideAll": {
             "tagRenderings+": {
                 "1": {

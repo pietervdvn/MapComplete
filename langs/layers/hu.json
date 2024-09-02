@@ -443,6 +443,29 @@
             }
         }
     },
+    "caravansites": {
+        "description": "Lakóautós megállóhelyek",
+        "name": "Lakóautós megállóhely",
+        "presets": {
+            "0": {
+                "description": "Új hivatalos lakóautóhely hozzáadása. Ez arra vannak kijelölve, hogy lakóautóval ott éjszakázzunk. Lehet, hogy úgy néz ki, mint egy igazi kemping, de az is lehet, hogy csak olyan, mint egy parkoló. Előfordulhat, hogy egyáltalán nem jelzik őket, hanem csak egy önkormányzati határozatban vannak kijelölve. A lakóautósoknak szánt olyan hagyományos parkolók, ahol nem várhatóan nem fognak éjszakázni, -nem minősül- lakóautóhelynek. ",
+                "title": "lakóautós megállóhely"
+            }
+        },
+        "tagRenderings": {
+            "caravansites-toilets": {
+                "mappings": {
+                    "0": {
+                        "then": "Itt van WC"
+                    },
+                    "1": {
+                        "then": "Itt nincs WC"
+                    }
+                },
+                "question": "Van-e itt WC?"
+            }
+        }
+    },
     "climbing": {
         "tagRenderings": {
             "sportclimbing": {
@@ -525,6 +548,26 @@
         },
         "title": {
             "render": "Ivóvíz"
+        }
+    },
+    "dumpstations": {
+        "presets": {
+            "0": {
+                "description": "Új egészségügyihulldék-lerakó hozzáadása. Ez egy olyan hely, ahol a lakókocsisok a szennyvizet vagy a vegyi WC hulladékát kiüríthetik. Gyakran van ivóvíz és áram is."
+            }
+        },
+        "tagRenderings": {
+            "dumpstations-chemical-waste": {
+                "mappings": {
+                    "0": {
+                        "then": "Itt ártalmatlanítható a vegyi WC hulladéka"
+                    },
+                    "1": {
+                        "then": "Itt nem ártalmatlanítható a vegyi WC hulladéka"
+                    }
+                },
+                "question": "Elhelyezhető-e itt a vegyi WC hulladéka?"
+            }
         }
     },
     "etymology": {

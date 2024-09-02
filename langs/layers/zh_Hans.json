@@ -542,6 +542,65 @@
             "render": "自行车咖啡"
         }
     },
+    "caravansites": {
+        "description": "露营地",
+        "name": "露营地",
+        "presets": {
+            "0": {
+                "description": "添加一个新的官方露营车场地。这些是专门设置的供露营车过夜的地点。它们可能看起来像真正的露营地，也可能只是看起来像一个停车场。它们可能没有任何标识，仅在市政决策中定义。普通的停车场，尽管可能供露营车使用，但不期望在其中过夜的，不算作露营车场地 ",
+                "title": "露营地"
+            }
+        },
+        "tagRenderings": {
+            "caravansites-capacity": {
+                "question": "这里可以容纳多少辆露营车？（如果没有明显的车位数量或允许的车辆数，请跳过）",
+                "render": "{capacity} 名露营者可以同时使用这个地方"
+            },
+            "caravansites-charge": {
+                "question": "这个地方的收费是多少？",
+                "render": "这个地方收费 {charge}"
+            },
+            "caravansites-description": {
+                "question": "您想添加一个关于此地的一般描述吗？（请勿重复之前询问或显示的信息。请保持客观——意见和评价请在评论中提供）",
+                "render": "关于此地的更多细节：{description}"
+            },
+            "caravansites-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "需要付费使用"
+                    },
+                    "1": {
+                        "then": "可免费使用"
+                    }
+                },
+                "question": "这个地方是否收费？"
+            },
+            "caravansites-internet": {
+                "mappings": {
+                    "0": {
+                        "then": "这里有网络连接"
+                    },
+                    "1": {
+                        "then": "这里有网络连接"
+                    },
+                    "2": {
+                        "then": "这里没有网络连接"
+                    }
+                },
+                "question": "这里有网络连接吗？"
+            },
+            "caravansites-internet-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "互联网访问需要额外付费"
+                    },
+                    "1": {
+                        "then": "互联网访问无需额外付费"
+                    }
+                }
+            }
+        }
+    },
     "questions": {
         "tagRenderings": {
             "dog-access": {

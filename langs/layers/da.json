@@ -1143,6 +1143,118 @@
             "render": "Pub"
         }
     },
+    "caravansites": {
+        "description": "autocamperpladser",
+        "name": "Campingpladser",
+        "presets": {
+            "0": {
+                "description": "Tilføj en ny officiel campingplads. Disse er udpegede steder at overnatte med din autocamper. De kan ligne en rigtig campingplads eller bare ligne en parkeringsplads. De er måske slet ikke skiltet, men er blot defineret i en kommunal beslutning. En almindelig parkering beregnet til campister, hvor det ikke forventes at overnatte, er -ikke- en autocamperplads ",
+                "title": "en autocamperplads"
+            }
+        },
+        "tagRenderings": {
+            "caravansites-capacity": {
+                "question": "Hvor mange campister kan bo her? (spring over, hvis der ikke er noget åbenlyst antal pladser eller tilladte køretøjer)",
+                "render": "{capacity} campister kan bruge dette sted på samme tid"
+            },
+            "caravansites-charge": {
+                "question": "Hvor meget koster dette sted?",
+                "render": "Dette sted koster {charge}"
+            },
+            "caravansites-description": {
+                "question": "Vil du tilføje en generel beskrivelse af dette sted? (Gentag ikke oplysninger, der tidligere er blevet spurgt eller vist ovenfor. Hold dem venligst objektive - udtalelser går ind i anmeldelserne)",
+                "render": "Flere oplysninger om dette sted: {description}"
+            },
+            "caravansites-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Du skal betale for brug"
+                    },
+                    "1": {
+                        "then": "Kan bruges gratis"
+                    }
+                },
+                "question": "Opkræver dette sted et gebyr?"
+            },
+            "caravansites-internet": {
+                "mappings": {
+                    "0": {
+                        "then": "Der er internetadgang"
+                    },
+                    "1": {
+                        "then": "Der er internetadgang"
+                    },
+                    "2": {
+                        "then": "Der er ingen internetadgang"
+                    }
+                },
+                "question": "Er der internetadgang på dette sted?"
+            },
+            "caravansites-internet-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Man skal betale ekstra for internetadgang"
+                    },
+                    "1": {
+                        "then": "Man behøver ikke at betale ekstra for internetadgang"
+                    }
+                },
+                "question": "Skal man betale for internetadgang?"
+            },
+            "caravansites-long-term": {
+                "mappings": {
+                    "0": {
+                        "then": "Der er nogle pladser til langtidsleje, men du kan også bo på daglig basis"
+                    },
+                    "1": {
+                        "then": "Nej, der er ingen faste gæster her"
+                    },
+                    "2": {
+                        "then": "Det er kun muligt at bo her, hvis du har en langtidskontrakt (dette sted forsvinder fra kortet, hvis du vælger dette)"
+                    }
+                },
+                "question": "Tilbyder dette sted pladser til langtidsleje?"
+            },
+            "caravansites-name": {
+                "question": "Hvad hedder dette sted?",
+                "render": "Dette sted hedder {name}"
+            },
+            "caravansites-sanitary-dump": {
+                "mappings": {
+                    "0": {
+                        "then": "Dette sted har en sanitær afleveringsplads"
+                    },
+                    "1": {
+                        "then": "Dette sted har ikke en sanitær afleveringsplads"
+                    }
+                },
+                "question": "Har dette sted en sanitær afleveringsplads?"
+            },
+            "caravansites-toilets": {
+                "mappings": {
+                    "0": {
+                        "then": "Dette sted har toiletter"
+                    },
+                    "1": {
+                        "then": "Dette sted har ikke toiletter"
+                    }
+                },
+                "question": "Har dette sted toiletter?"
+            },
+            "caravansites-website": {
+                "question": "Har dette sted et websted?",
+                "render": "Officiel hjemmeside: <a href='{website}'>{website}</a>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Unavngiven autocamperplads"
+                }
+            },
+            "render": "Camperplads {name}"
+        }
+    },
     "charging_station": {
         "tagRenderings": {
             "rewritten-questions": {
@@ -1319,6 +1431,87 @@
         },
         "title": {
             "render": "hundeskov"
+        }
+    },
+    "dumpstations": {
+        "description": "Sanitære afleveringspladser",
+        "name": "Sanitære afleveringspladser",
+        "presets": {
+            "0": {
+                "description": "Tilføj en ny sanitær afleveringsplads. Dette er et sted, hvor autocamperchauffører kan dumpe spildevand eller kemisk toiletaffald. Ofte er der også drikkevand og el.",
+                "title": "en sanitær afleveringsplads"
+            }
+        },
+        "tagRenderings": {
+            "dumpstations-access": {
+                "mappings": {
+                    "0": {
+                        "then": "Du skal bruge en netværksnøgle/-kode for at bruge dette"
+                    },
+                    "1": {
+                        "then": "Du skal være kunde hos camping/campingplads for at bruge dette sted"
+                    },
+                    "2": {
+                        "then": "Alle kan bruge denne losseplads"
+                    },
+                    "3": {
+                        "then": "Alle kan bruge denne losseplads"
+                    }
+                },
+                "question": "Hvem kan bruge denne losseplads?"
+            },
+            "dumpstations-charge": {
+                "question": "Hvor meget koster det at bruge dette sted?",
+                "render": "Dette sted opkræver {charge}"
+            },
+            "dumpstations-chemical-waste": {
+                "mappings": {
+                    "0": {
+                        "then": "Her kan du bortskaffe kemisk toiletaffald"
+                    },
+                    "1": {
+                        "then": "Du kan ikke bortskaffe kemisk toiletaffald her"
+                    }
+                },
+                "question": "Kan man bortskaffe kemisk toiletaffald her?"
+            },
+            "dumpstations-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Du skal betale for brug"
+                    },
+                    "1": {
+                        "then": "Kan bruges gratis"
+                    }
+                },
+                "question": "Opkræver dette sted et gebyr?"
+            },
+            "dumpstations-grey-water": {
+                "mappings": {
+                    "0": {
+                        "then": "Du kan bortskaffe gråt vand her"
+                    },
+                    "1": {
+                        "then": "Du kan ikke bortskaffe gråt vand her"
+                    }
+                },
+                "question": "Kan du komme af med gråt vand her?"
+            },
+            "dumpstations-network": {
+                "question": "Hvilket netværk er dette sted en del af? (spring over hvis ingen)",
+                "render": "Denne station er en del af netværket {network}"
+            },
+            "dumpstations-waterpoint": {
+                "mappings": {
+                    "0": {
+                        "then": "Dette sted har et vandpost"
+                    },
+                    "1": {
+                        "then": "Dette sted har ikke et vandpost"
+                    }
+                },
+                "question": "Har dette sted et vandpost?"
+            }
         }
     },
     "entrance": {
