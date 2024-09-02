@@ -702,7 +702,8 @@
         "*": "{description}"
       },
       "freeform": {
-        "key": "description"
+        "key": "description",
+        "type": "text"
       },
       "questionHint": {
         "nl": "Herhaal geen antwoorden die je reeds gaf",
