@@ -369,6 +369,9 @@ The question is `What kind of shop is this?`
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-window.svg' style='width: 3rem; height: 3rem'> *Window Blind Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dwindow_blind' target='_blank'>window_blind</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/maki-alcohol-shop.svg' style='width: 3rem; height: 3rem'> *Wine Shop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dwine' target='_blank'>wine</a>
 
+This tagrendering has labels 
+`description`
+
 ### brand
 
 The question is `What is the brand of this shop?`
@@ -799,6 +802,174 @@ This tagrendering has labels
 | id | question | osmTags |
 -----|-----|----- |
 | accepts_cards.0 | Accepts payment cards | payment:cards=yes |
+
+| id | question | osmTags |
+-----|-----|----- |
+| shop_types.0 | *What kind of shop is this?* (default) |  |
+| shop_types.1 | Bicycle rental shop | shop=bicycle_rental |
+| shop_types.2 | Farm Supply Shop | shop=agrarian |
+| shop_types.3 | Liquor Store | shop=alcohol |
+| shop_types.4 | Anime / Manga Shop | shop=anime |
+| shop_types.5 | Antique Shop | shop=antiques |
+| shop_types.6 | Appliance Store | shop=appliance |
+| shop_types.7 | Art Store | shop=art |
+| shop_types.8 | Baby Goods Store | shop=baby_goods |
+| shop_types.9 | Bag/Luggage Store | shop=bag |
+| shop_types.10 | Bakery | shop=bakery |
+| shop_types.11 | Bathroom Furnishing Store | shop=bathroom_furnishing |
+| shop_types.12 | Beauty Shop | shop=beauty |
+| shop_types.13 | Bedding/Mattress Store | shop=bed |
+| shop_types.14 | Beverage Store | shop=beverages |
+| shop_types.15 | Bicycle Shop | shop=bicycle |
+| shop_types.16 | Boat Store | shop=boat |
+| shop_types.17 | Bookmaker | shop=bookmaker |
+| shop_types.18 | Bookstore | shop=books |
+| shop_types.19 | Brewing Supply Store | shop=brewing_supplies |
+| shop_types.20 | Butcher | shop=butcher |
+| shop_types.21 | Camera Equipment Store | shop=camera |
+| shop_types.22 | Candle Shop | shop=candles |
+| shop_types.23 | Cannabis Shop | shop=cannabis |
+| shop_types.24 | Car Dealership | shop=car |
+| shop_types.25 | Car Parts Store | shop=car_parts |
+| shop_types.26 | Car Repair Shop | shop=car_repair |
+| shop_types.27 | RV Dealership | shop=caravan |
+| shop_types.28 | Carpet Store | shop=carpet |
+| shop_types.29 | Catalog Shop | shop=catalogue |
+| shop_types.30 | Charity Store | shop=charity |
+| shop_types.31 | Cheese Store | shop=cheese |
+| shop_types.32 | Drugstore | shop=chemist |
+| shop_types.33 | Chocolate Store | shop=chocolate |
+| shop_types.34 | Clothing Store | shop=clothes |
+| shop_types.35 | Coffee Store | shop=coffee |
+| shop_types.36 | Collectibles Shop | shop=collector |
+| shop_types.37 | Computer Store | shop=computer |
+| shop_types.38 | Candy Store | shop=confectionery |
+| shop_types.39 | Convenience Store | shop=convenience |
+| shop_types.40 | Copy Store | shop=copyshop |
+| shop_types.41 | Cosmetics Store | shop=cosmetics |
+| shop_types.42 | Rural Supplies Store | shop=country_store |
+| shop_types.43 | Arts & Crafts Store | shop=craft |
+| shop_types.44 | Curtain Store | shop=curtain |
+| shop_types.45 | Dairy Store | shop=dairy |
+| shop_types.46 | Delicatessen | shop=deli |
+| shop_types.47 | Department Store | shop=department_store |
+| shop_types.48 | DIY Store | shop=doityourself |
+| shop_types.49 | Door Shop | shop=doors |
+| shop_types.50 | Dry Cleaner | shop=dry_cleaning |
+| shop_types.51 | E-Cigarette Shop | shop=e-cigarette |
+| shop_types.52 | Electrical Equipment Store | shop=electrical |
+| shop_types.53 | Electronics Store | shop=electronics |
+| shop_types.54 | Erotic Store | shop=erotic |
+| shop_types.55 | Fabric Store | shop=fabric |
+| shop_types.56 | Produce Stand | shop=farm |
+| shop_types.57 | Fashion Accessories Store | shop=fashion_accessories |
+| shop_types.58 | Fireplace Store | shop=fireplace |
+| shop_types.59 | Fishing Shop | shop=fishing |
+| shop_types.60 | Flooring Supply Shop | shop=flooring |
+| shop_types.61 | Florist | shop=florist |
+| shop_types.62 | Framing Shop | shop=frame |
+| shop_types.63 | Frozen Food Store | shop=frozen_food |
+| shop_types.64 | Fuel Shop | shop=fuel |
+| shop_types.65 | Funeral Home | shop=funeral_directors |
+| shop_types.66 | Furniture Store | shop=furniture |
+| shop_types.67 | Tabletop Game Store | shop=games |
+| shop_types.68 | Garden Center | shop=garden_centre |
+| shop_types.69 | Bottled Gas Shop | shop=gas |
+| shop_types.70 | General Store | shop=general |
+| shop_types.71 | Gift Shop | shop=gift |
+| shop_types.72 | Greengrocer | shop=greengrocer |
+| shop_types.73 | Hairdresser | shop=hairdresser |
+| shop_types.74 | Hairdresser Supply Store | shop=hairdresser_supply |
+| shop_types.75 | Hardware Store | shop=hardware |
+| shop_types.76 | Health Food Store | shop=health_food |
+| shop_types.77 | Hearing Aids Store | shop=hearing_aids |
+| shop_types.78 | Herbalist | shop=herbalist |
+| shop_types.79 | Hifi Store | shop=hifi |
+| shop_types.80 | Honey Store | shop=honey |
+| shop_types.81 | Household Linen Shop | shop=household_linen |
+| shop_types.82 | Houseware Store | shop=houseware |
+| shop_types.83 | Hunting Shop | shop=hunting |
+| shop_types.84 | Interior Decoration Store | shop=interior_decoration |
+| shop_types.85 | Jewelry Store | shop=jewelry |
+| shop_types.86 | Kiosk | shop=kiosk |
+| shop_types.87 | Kitchen Design Store | shop=kitchen |
+| shop_types.88 | Laundry | shop=laundry |
+| shop_types.89 | Leather Store | shop=leather |
+| shop_types.90 | Lighting Store | shop=lighting |
+| shop_types.91 | Locksmith | shop=locksmith |
+| shop_types.92 | Lottery Shop | shop=lottery |
+| shop_types.93 | Mall | shop=mall |
+| shop_types.94 | Massage Shop | shop=massage |
+| shop_types.95 | Medical Supply Store | shop=medical_supply |
+| shop_types.96 | Military Surplus Store | shop=military_surplus |
+| shop_types.97 | Mobile Phone Store | shop=mobile_phone |
+| shop_types.98 | Model Shop | shop=model |
+| shop_types.99 | Money Lender | shop=money_lender |
+| shop_types.100 | Motorcycle Dealership | shop=motorcycle |
+| shop_types.101 | Motorcycle Repair Shop | shop=motorcycle_repair |
+| shop_types.102 | Music Store | shop=music |
+| shop_types.103 | Musical Instrument Store | shop=musical_instrument |
+| shop_types.104 | Newsstand | shop=newsagent |
+| shop_types.105 | Nutrition Supplements Store | shop=nutrition_supplements |
+| shop_types.106 | Nuts Shop | shop=nuts |
+| shop_types.107 | Optician | shop=optician |
+| shop_types.108 | Outdoors Store | shop=outdoor |
+| shop_types.109 | Online Retailer Outpost | shop=outpost |
+| shop_types.110 | Paint Store | shop=paint |
+| shop_types.111 | Party Supply Store | shop=party |
+| shop_types.112 | Pasta Store | shop=pasta |
+| shop_types.113 | Pastry Shop | shop=pastry |
+| shop_types.114 | Pawnshop | shop=pawnbroker |
+| shop_types.115 | Perfume Store | shop=perfumery |
+| shop_types.116 | Pet Store | shop=pet |
+| shop_types.117 | Pet Groomer | shop=pet_grooming |
+| shop_types.118 | Photography Store | shop=photo |
+| shop_types.119 | Pottery Store | shop=pottery |
+| shop_types.120 | Printer Ink Store | shop=printer_ink |
+| shop_types.121 | Psychic | shop=psychic |
+| shop_types.122 | Fireworks Store | shop=pyrotechnics |
+| shop_types.123 | Radio/Electronic Component Store | shop=radiotechnics |
+| shop_types.124 | Religious Store | shop=religion |
+| shop_types.125 | Rental Shop | shop=rental |
+| shop_types.126 | Repair Shop | shop=repair |
+| shop_types.127 | Rice Store | shop=rice |
+| shop_types.128 | Scuba Diving Shop | shop=scuba_diving |
+| shop_types.129 | Seafood Shop | shop=seafood |
+| shop_types.130 | Thrift Store | shop=second_hand |
+| shop_types.131 | Sewing Supply Shop | shop=sewing |
+| shop_types.132 | Shoe Repair Shop | shop=shoe_repair |
+| shop_types.133 | Shoe Store | shop=shoes |
+| shop_types.134 | Spice Shop | shop=spices |
+| shop_types.135 | Sporting Goods Store | shop=sports |
+| shop_types.136 | Stationery Store | shop=stationery |
+| shop_types.137 | Storage Rental | shop=storage_rental |
+| shop_types.138 | Supermarket | shop=supermarket |
+| shop_types.139 | Pool Supply Store | shop=swimming_pool |
+| shop_types.140 | Tailor | shop=tailor |
+| shop_types.141 | Tattoo Parlor | shop=tattoo |
+| shop_types.142 | Tea Store | shop=tea |
+| shop_types.143 | Telecom Retail Store | shop=telecommunication |
+| shop_types.144 | Ticket Seller | shop=ticket |
+| shop_types.145 | Tile Shop | shop=tiles |
+| shop_types.146 | Tobacco Shop | shop=tobacco |
+| shop_types.147 | Tool Rental | shop=tool_hire |
+| shop_types.148 | Toy Store | shop=toys |
+| shop_types.149 | Trade Shop | shop=trade |
+| shop_types.150 | Travel Agency | shop=travel_agency |
+| shop_types.151 | Trophy Shop | shop=trophy |
+| shop_types.152 | Tire Store | shop=tyres |
+| shop_types.153 | Vacuum Cleaner Store | shop=vacuum_cleaner |
+| shop_types.154 | Discount Store | shop=variety_store |
+| shop_types.155 | Video Store | shop=video |
+| shop_types.156 | Video Game Store | shop=video_games |
+| shop_types.157 | Watches Shop | shop=watches |
+| shop_types.158 | Drinking Water Shop | shop=water |
+| shop_types.159 | Watersport/Swim Shop | shop=water_sports |
+| shop_types.160 | Weapon Shop | shop=weapons |
+| shop_types.161 | Wholesale Store | shop=wholesale |
+| shop_types.162 | Wig Shop | shop=wigs |
+| shop_types.163 | Window Blind Store | shop=window_blind |
+| shop_types.164 | Wine Shop | shop=wine |
 
 | id | question | osmTags |
 -----|-----|----- |
