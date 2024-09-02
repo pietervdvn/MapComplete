@@ -29,7 +29,7 @@
          size="xl"
          {defaultClass} {bodyClass} {dialogClass} {headerClass}
          color="none">
-    <h1 slot="header" class="w-full">
+    <h1 slot="header" class="page-header w-full">
       <slot name="header" />
     </h1>
     <slot />
@@ -44,3 +44,16 @@
     </slot>
   </button>
 {/if}
+
+<style>
+    :global(.page-header) {
+        display: flex;
+        align-items: center;
+    }
+
+  :global(.page-header svg) {
+      width: 2rem;
+      height: 2rem;
+      margin-right: 0.75rem;
+  }
+</style>
