@@ -107,13 +107,14 @@
 </script>
 
 <div class="normal-background flex justify-between rounded-full pl-2">
-  <form class="flex w-full flex-wrap">
+  <form class="flex w-full flex-wrap items-center ">
     {#if isRunning}
       <Loading>{Translations.t.general.search.searching}</Loading>
     {:else}
       <input
         type="search"
-        class="w-full outline-none"
+        style="border: none !important;"
+        class="w-full outline-none border-none mx-2"
         bind:this={inputElement}
         on:keypress={(keypr) => {
           feedback = undefined
@@ -131,5 +132,5 @@
       {/if}
     {/if}
   </form>
-  <SearchIcon aria-hidden="true" class="h-6 w-6 self-end" on:click={performSearch} />
+  <SearchIcon aria-hidden="true" class="h-6 w-6 mx-2 self-center" on:click={performSearch} />
 </div>

@@ -113,6 +113,10 @@
       }
     }
   ],
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": false
+  },
   "units": [
     {
       "maxspeed": {

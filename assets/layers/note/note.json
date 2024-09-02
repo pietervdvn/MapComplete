@@ -407,5 +407,6 @@
         }
       ]
     }
-  ]
+  ],
+  "allowMove": false
 }

@@ -17,5 +17,6 @@
       "color": "#ccc",
       "width": "3"
     }
-  ]
+  ],
+  "allowMove": false
 }

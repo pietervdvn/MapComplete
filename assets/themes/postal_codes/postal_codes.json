@@ -144,7 +144,8 @@
           "fill": "no",
           "dashArray": "8 8"
         }
-      ]
+      ],
+      "allowMove": false
     },
     {
       "id": "wrong_postal_code",
@@ -163,7 +164,9 @@
           "color": "#f00",
           "width": 1
         }
-      ]
+      ],
+      "allowMove": false
+
     },
     {
       "id": "town_hall",
@@ -233,7 +236,8 @@
           ],
           "anchor": "center"
         }
-      ]
+      ],
+      "allowMove": false
     }
   ],
   "overpassTimeout": 180,

@@ -1912,5 +1912,6 @@
       ]
     }
   ],
+  "allowMove": false,
   "allowSplit": true
 }

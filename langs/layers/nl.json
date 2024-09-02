@@ -6049,6 +6049,9 @@
                     },
                     "2": {
                         "then": "Deze picknictafel is gemaakt uit (gerecycleerd) plastiek"
+                    },
+                    "3": {
+                        "then": "Deze picnictafel is gemaakt uit metaal"
                     }
                 },
                 "question": "Van welk materiaal is deze picknicktafel gemaakt?",
@@ -6103,6 +6106,17 @@
                     }
                 },
                 "question": "Is deze speeltuin toegankelijk voor rolstoelgebruikers?"
+            },
+            "fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Gratis te gebruiken"
+                    },
+                    "1": {
+                        "then": "Betalend"
+                    }
+                },
+                "question": "Moet men betalen om deze speeltuin te gebruiken?"
             },
             "playground-access": {
                 "mappings": {

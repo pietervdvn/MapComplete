@@ -32,7 +32,7 @@
     {
       "builtin": "shops",
       "override": {
-        "minzoom": 10,
+        "minzoom": 6,
         "id": "shops_second_hand",
         "=name": {
           "en": "Second hand shops",

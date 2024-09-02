@@ -175,13 +175,23 @@
         "cs": "Jaké je telefonní číslo {title()}?"
       },
       "render": {
-        "*": "<a href='tel:{phone}'>{phone}</a>"
+        "special": {
+          "type": "link",
+          "href": "tel:{phone}",
+          "text": "{phone}"
+        }
       },
       "icon": "./assets/layers/questions/phone.svg",
       "mappings": [
         {
           "if": "contact:phone~*",
-          "then": "<a href='tel:{contact:phone}'>{contact:phone}</a>",
+          "then": {
+            "special": {
+              "type": "link",
+              "href": "tel:{contact:phone}",
+              "text": "{contact:phone}"
+            }
+          },
           "hideInAnswer": true,
           "icon": "./assets/layers/questions/phone.svg"
         }
@@ -2933,5 +2943,6 @@
         }
       ]
     }
-  ]
+  ],
+  "allowMove": false
 }

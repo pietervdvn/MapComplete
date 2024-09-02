@@ -14,15 +14,10 @@
   export let arialabel: Translation = undefined
   export let arialabelDynamic: Store<Translation> = new ImmutableStore(arialabel)
   let arialabelString = arialabelDynamic.bind((tr) => tr?.current)
-  export let htmlElem: UIEventSource<HTMLElement> = undefined
-  let _htmlElem: HTMLElement
-  $: {
-    htmlElem?.setData(_htmlElem)
-  }
+
 </script>
 
 <button
-  bind:this={_htmlElem}
   on:click={(e) => dispatch("click", e)}
   on:keydown
   use:ariaLabelStore={arialabelString}

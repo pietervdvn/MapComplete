@@ -78,5 +78,9 @@
     "website",
     "phone",
     "smoking"
-  ]
+  ],
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": false
+  }
 }

@@ -186,5 +186,9 @@
       }
     },
     "images"
-  ]
+  ],
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": false
+  }
 }

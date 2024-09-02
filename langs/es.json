@@ -238,7 +238,6 @@
         "morescreen": {
             "createYourOwnTheme": "Crea tu propia petición completa de MapComplete desde cero",
             "hiddenExplanation": "Estos temas solo son visibles para aquellos con el enlace. Has descubierto {hidden_discovered} de {total_hidden} temas ocultos.",
-            "intro": "<h3>Más peticiones</h3>Te gusta captar datos? <br/>Hay más capas disponibles.",
             "noMatchingThemes": "Ningún tema coincide con tus criterios de búsqueda",
             "noSearch": "Mostrar todos los temas",
             "previouslyHiddenTitle": "Temas ocultos previamente visitados",

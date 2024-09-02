@@ -821,5 +821,9 @@
       ]
     },
     "open_now"
-  ]
+  ],
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": false
+  }
 }

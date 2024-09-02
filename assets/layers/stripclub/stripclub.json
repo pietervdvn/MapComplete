@@ -88,5 +88,6 @@
     "opening_hours",
     "contact"
   ],
+  "allowMove": true,
   "enableMorePrivacy": true
 }

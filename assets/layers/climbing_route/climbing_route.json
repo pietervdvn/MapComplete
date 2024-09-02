@@ -282,5 +282,9 @@
         "key": "_embedding_features_with_rock:rock"
       }
     }
-  ]
+  ],
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": false
+  }
 }

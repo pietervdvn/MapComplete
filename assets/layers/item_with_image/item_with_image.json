@@ -54,5 +54,6 @@
   "lineRendering": [],
   "tagRenderings": [
     "images"
-  ]
+  ],
+  "allowMove": false
 }

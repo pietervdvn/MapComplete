@@ -8,6 +8,7 @@
   import Tr from "../Base/Tr.svelte"
   import { XCircleIcon } from "@rgossiaux/svelte-heroicons/solid"
   import { ariaLabel } from "../../Utils/ariaLabel"
+  import { CloseButton } from "flowbite-svelte"
 
   export let state: SpecialVisualizationState
   export let layer: LayerConfig
@@ -72,14 +73,10 @@
     {/if}
   </div>
   <slot name="close-button">
-    <button
-      class="mt-2 h-fit shrink-0 cursor-pointer self-center rounded-full border-none p-0"
-      on:click={() => state.selectedElement.setData(undefined)}
-      style="border: 0 !important; padding: 0 !important;"
-      use:ariaLabel={Translations.t.general.backToMap}
-    >
-      <XCircleIcon aria-hidden={true} class="h-8 w-8" />
-    </button>
+    <div class="mt-4">
+    <CloseButton  on:click={() => state.selectedElement.setData(undefined)}/>
+    </div>
+
   </slot>
 </div>
 

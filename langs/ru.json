@@ -72,7 +72,6 @@
         "loginWithOpenStreetMap": "Войти с помощью OpenStreetMap",
         "morescreen": {
             "createYourOwnTheme": "Создать собственную тему MapComplete с чистого листа",
-            "intro": "<h3>Больше тематических карт?</h3>Нравится собирать геоданные? <br> Можете посмотреть другие темы.",
             "requestATheme": "Если вам нужен особенный квест, запросите его в issue-трекере",
             "streetcomplete": "Другое, похожее приложение — <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>."
         },

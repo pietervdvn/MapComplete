@@ -544,5 +544,6 @@
     "internet",
     "internet-fee",
     "internet-ssid"
-  ]
+  ],
+  "allowMove": true
 }

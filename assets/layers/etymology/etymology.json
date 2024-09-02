@@ -367,5 +367,6 @@
       "condition": "wikidata~*"
     }
   ],
+  "allowMove": false,
   "#": "A layer showing all objects having etymology info (either via `name:etymology:wikidata` or `name:etymology`. The intention is that this layer is reused for a certain category to also _ask_ for information"
 }

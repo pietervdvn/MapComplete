@@ -726,5 +726,9 @@
   ],
   "filter": [
     "tactile_paving_advanced"
-  ]
+  ],
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": false
+  }
 }

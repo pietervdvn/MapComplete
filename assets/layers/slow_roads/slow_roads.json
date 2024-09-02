@@ -331,5 +331,6 @@
         }
       ]
     }
-  ]
+  ],
+  "allowMove": false
 }

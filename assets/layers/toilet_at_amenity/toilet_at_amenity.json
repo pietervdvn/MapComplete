@@ -502,6 +502,7 @@
     },
     "neededChangesets": 1
   },
+  "allowMove": false,
   "units": [
     {
       "toilets:door:width": {

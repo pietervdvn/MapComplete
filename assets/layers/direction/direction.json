@@ -56,5 +56,6 @@
   "doNotDownload": true,
   "presets": [],
   "tagRenderings": [],
+  "allowMove": false,
   "stroke": "0"
 }

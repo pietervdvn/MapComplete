@@ -202,5 +202,6 @@
     "email",
     "phone",
     "opening_hours"
-  ]
+  ],
+  "allowMove": true
 }

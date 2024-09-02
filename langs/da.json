@@ -222,7 +222,6 @@
         "morescreen": {
             "createYourOwnTheme": "Lave dit eget MapComplete tema fra bunden af",
             "hiddenExplanation": "Disse temaer er kun tilgængelige med linket. Du har opdaget {hidden_discovered} af {total_hidden} skjulte temaer.",
-            "intro": "<h3>Flere tematiske kort?</h3>Nød du at indsamle geodata? <br>Der er flere temaer til rådighed.",
             "noMatchingThemes": "Ingen temaer matchede dine søgekriterier",
             "noSearch": "Vis alle temaer",
             "previouslyHiddenTitle": "Tidligere besøgte skjulte temaer",

@@ -127,5 +127,6 @@
   ],
   "filter": [
     "open_now"
-  ]
+  ],
+  "allowMove": true
 }

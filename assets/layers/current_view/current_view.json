@@ -11,5 +11,6 @@
       "color": "#cccc0088"
     }
   ],
-  "tagRenderings": []
+  "tagRenderings": [],
+  "allowMove": false
 }

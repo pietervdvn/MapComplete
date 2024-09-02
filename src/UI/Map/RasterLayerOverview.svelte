@@ -4,32 +4,30 @@
    */
   import { Store, UIEventSource } from "../../Logic/UIEventSource"
   import type { RasterLayerPolygon } from "../../Models/RasterLayers"
-  import type { MapProperties } from "../../Models/MapProperties"
-  import { Map as MlMap } from "maplibre-gl"
   import RasterLayerPicker from "./RasterLayerPicker.svelte"
   import type { EliCategory } from "../../Models/RasterLayerProperties"
-  import UserRelatedState from "../../Logic/State/UserRelatedState"
   import Translations from "../i18n/Translations"
   import Tr from "../Base/Tr.svelte"
-  import TitledPanel from "../Base/TitledPanel.svelte"
   import Loading from "../Base/Loading.svelte"
+  import Page from "../Base/Page.svelte"
+  import ThemeViewState from "../../Models/ThemeViewState"
+  import { Square3Stack3dIcon } from "@babeard/svelte-heroicons/solid"
 
-  export let availableLayers: { store: Store<RasterLayerPolygon[]> }
-  export let mapproperties: MapProperties
-  export let userstate: UserRelatedState
-  export let map: Store<MlMap>
+  export let state: ThemeViewState
+
+  let map = state.map
+  let mapproperties = state.mapProperties
+  let userstate = state.userRelatedState
+  let shown = state.guistate.pageStates.background
+  let availableLayers: { store: Store<RasterLayerPolygon[]> } = state.availableLayers
   let _availableLayers = availableLayers.store
-  /**
-   * Used to toggle the background layers on/off
-   */
-  export let visible: UIEventSource<boolean> = undefined
 
   type CategoryType = "photo" | "map" | "other" | "osmbasedmap"
   const categories: Record<CategoryType, EliCategory[]> = {
     photo: ["photo", "historicphoto"],
     map: ["map", "historicmap"],
     other: ["other", "elevation"],
-    osmbasedmap: ["osmbasedmap"],
+    osmbasedmap: ["osmbasedmap"]
   }
 
   function availableForCategory(type: CategoryType): Store<RasterLayerPolygon[]> {
@@ -45,27 +43,35 @@
   const otherLayers = availableForCategory("other")
 
   function onApply() {
-    visible.setData(false)
+    shown.setData(false)
   }
 
   function getPref(type: CategoryType): undefined | UIEventSource<string> {
     return userstate?.osmConnection?.GetPreference("preferred-layer-" + type)
   }
+
+  export let onlyLink: boolean
+
 </script>
 
-<TitledPanel>
-  <Tr slot="title" t={Translations.t.general.backgroundMap} />
+<Page {onlyLink} shown={shown} fullscreen={true}>
+  <div slot="header" class="flex" >
+    <Square3Stack3dIcon class="h-6 w-6" />
+
+  <Tr t={Translations.t.general.backgroundMap} />
+  </div>
   {#if $_availableLayers?.length < 1}
     <Loading />
   {:else}
-    <div class="grid h-full w-full grid-cols-1 gap-2 md:grid-cols-2">
+
+    <div class="flex gap-x-2 flex-col sm:flex-row gap-y-2" style="height: calc( 100% - 5rem)">
       <RasterLayerPicker
         availableLayers={$photoLayers}
         favourite={getPref("photo")}
         {map}
         {mapproperties}
         on:appliedLayer={onApply}
-        {visible}
+        {shown}
       />
       <RasterLayerPicker
         availableLayers={$mapLayers}
@@ -73,7 +79,7 @@
         {map}
         {mapproperties}
         on:appliedLayer={onApply}
-        {visible}
+        {shown}
       />
       <RasterLayerPicker
         availableLayers={$osmbasedmapLayers}
@@ -81,7 +87,7 @@
         {map}
         {mapproperties}
         on:appliedLayer={onApply}
-        {visible}
+        {shown}
       />
       <RasterLayerPicker
         availableLayers={$otherLayers}
@@ -89,8 +95,8 @@
         {map}
         {mapproperties}
         on:appliedLayer={onApply}
-        {visible}
+        {shown}
       />
     </div>
   {/if}
-</TitledPanel>
+</Page>

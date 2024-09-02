@@ -23684,5 +23684,6 @@
       ]
     }
   ],
+  "allowMove": false,
   "#dont-translate": "*"
 }

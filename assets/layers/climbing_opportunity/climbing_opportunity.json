@@ -148,5 +148,6 @@
       ]
     }
   ],
+  "allowMove": false,
   "doCount": false
 }

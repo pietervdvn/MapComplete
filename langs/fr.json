@@ -214,7 +214,6 @@
             "createYourOwnTheme": "Créez votre propre thème MapComplete à partir de zéro",
             "enterToOpen": "Appuyez sur Entrée pour ouvrir le thème",
             "hiddenExplanation": "Ces thèmes sont seulement accessibles par lien. Vous avez découvert {hidden_discovered} des {total_hidden} thèmes cachés.",
-            "intro": "<h3>Plus de thèmes ?</h3>Vous aimez collecter des données géographiques ?<br>Il y a plus de thèmes disponibles.",
             "noMatchingThemes": "Aucun thème ne correspond à vos critères de recherche",
             "noSearch": "Afficher tous les thèmes",
             "previouslyHiddenTitle": "Thèmes précédemment utilisés",

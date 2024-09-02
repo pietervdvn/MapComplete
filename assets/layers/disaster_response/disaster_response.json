@@ -77,5 +77,6 @@
       }
     }
   ],
+  "allowMove": true,
   "docs": "https://wiki.openstreetmap.org/wiki/Tag:emergency%3Ddisaster_response"
 }

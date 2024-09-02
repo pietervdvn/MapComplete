@@ -178,6 +178,10 @@ input[type="text"] {
   border-radius: 0.5rem;
 }
 
+.box-shadow {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
 /******************* Styling of input elements **********************/
 
 /**
@@ -461,8 +465,16 @@ code {
   color: var(--background-color);
 }
 
+.h-full-child > div {
+    height: 100%;
+}
+
 .bg-black-transparent {
   background-color: #00000088;
+}
+
+.bg-black-light-transparent {
+    background-color: #00000044;
 }
 
 .block-ruby {
@@ -536,6 +548,10 @@ a.link-underline {
 
 .zebra-table tr:nth-child(even) {
   background-color: #f2f2f2;
+}
+
+.no-bold b {
+    font-weight: normal;
 }
 
 /************************* MISC ELEMENTS *************************/
@@ -620,6 +636,10 @@ svg.apply-fill path {
 
 .max-w-full {
   max-width: 100%;
+}
+
+.max-w-screen {
+    max-width: 100vw;
 }
 
 /************************* Experimental support for foldable devices ********************************/

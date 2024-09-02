@@ -206,6 +206,7 @@
         },
         {
           "if": "access=customers",
+          "icon": "key",
           "then": {
             "en": "Only access to customers",
             "de": "Der Zugang ist nur für Kunden",
@@ -220,6 +221,7 @@
         },
         {
           "if": "access=no",
+          "icon": "lock",
           "alsoShowIf": "access=private",
           "then": {
             "en": "Not accessible",
@@ -236,6 +238,7 @@
         },
         {
           "if": "access=key",
+          "icon": "key",
           "then": {
             "en": "Accessible, but one has to ask a key to enter",
             "de": "Der Zugang ist möglich, aber man muss nach einen Schlüssel fragen",

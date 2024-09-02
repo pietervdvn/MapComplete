@@ -68,6 +68,10 @@
       "id": "lighthouse-height"
     }
   ],
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": false
+  },
   "units": [
     {
       "height": {

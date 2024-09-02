@@ -681,7 +681,12 @@
           },
           "width": "3"
         }
-      ]
+      ],
+      "allowMove": {
+        "enableImproveAccuraccy": true,
+        "enableRelocation": false
+      }
+
     },
     "named_streets"
   ],

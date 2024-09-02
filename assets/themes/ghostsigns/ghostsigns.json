@@ -92,7 +92,7 @@
           },
           "freeform": {
             "key": "inscription",
-            "type": "string",
+            "type": "text",
             "placeholder": {
               "en": "Text on the sign",
               "de": "Text auf dem Schild",

@@ -14,6 +14,9 @@
   },
   "icon": "./assets/svg/logo.svg",
   "hideFromOverview": true,
+  "startLat": 0,
+  "startLon": 0,
+  "startZoom": 1,
   "layers": [
     {
       "id": "mapcomplete-changes",

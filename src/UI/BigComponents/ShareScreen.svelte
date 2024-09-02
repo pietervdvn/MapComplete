@@ -35,6 +35,8 @@
   let enableBackground = true
   let enableGeolocation = true
 
+  let location = state.mapProperties.location
+
   function calculateLinkToShare(
     showWelcomeMessage: boolean,
     enableLogin: boolean,
@@ -116,10 +118,12 @@
   )
 </script>
 
-<div class="flex flex-col">
+<div class="flex flex-col link-underline">
+
+  <a href="geo:{$location.lat},{$location.lon}">Open the current location in other applications</a>
+
   <div class="flex flex-col">
     <Tr t={tr.intro} />
-
     <Copyable {state} text={linkToShare} />
   </div>
   <div class="flex justify-center">

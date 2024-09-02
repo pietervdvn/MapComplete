@@ -7388,6 +7388,9 @@
                     },
                     "2": {
                         "then": "This picnic table is made from (recycled) plastic"
+                    },
+                    "3": {
+                        "then": "This picnic table is made from metal"
                     }
                 },
                 "question": "What material is this picnic table made of?",
@@ -7427,6 +7430,17 @@
                     }
                 },
                 "question": "Is this playground accessible to wheelchair users?"
+            },
+            "fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Free to use"
+                    },
+                    "1": {
+                        "then": "Paid playground"
+                    }
+                },
+                "question": "Does one have to pay to use this playground?"
             },
             "playground-access": {
                 "mappings": {
@@ -10783,6 +10797,9 @@
             },
             "6": {
                 "title": "a small-scale lodging facility, typically operated by the owner"
+            },
+            "7": {
+                "title": "a camp site or camp ground"
             }
         },
         "tagRenderings": {

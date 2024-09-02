@@ -96,6 +96,10 @@
     },
     "induction-loop"
   ],
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": false
+  },
   "units": [
     {
       "desk:height": {

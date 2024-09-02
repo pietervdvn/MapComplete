@@ -335,5 +335,6 @@
       ]
     },
     "images"
-  ]
+  ],
+  "allowMove": true
 }

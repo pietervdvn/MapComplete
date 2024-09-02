@@ -103,5 +103,9 @@
         "razed:amenity=post_box"
       ]
     }
+  },
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": false
   }
 }

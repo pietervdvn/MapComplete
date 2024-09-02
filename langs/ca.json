@@ -234,7 +234,6 @@
             "createYourOwnTheme": "Crea la teva pròpia petició completa de MapComplete des de zero",
             "enterToOpen": "Premeu Intro per obrir el tema",
             "hiddenExplanation": "Aquestes peticions només funcionen amb l'enllaç. Has descobert {hidden_discovered} de {total_hidden} peticions amagades.",
-            "intro": "<h3>Més mapes temàtics?</h3>T'agrada captar dades? <br/>Hi ha més temes disponibles.",
             "noMatchingThemes": "Cap tema coincideix amb els teus criteris de cerca",
             "noSearch": "Mostra tots els temes",
             "previouslyHiddenTitle": "Peticions visitades i amagades",

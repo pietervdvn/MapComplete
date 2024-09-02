@@ -352,6 +352,7 @@
           {/if}
         </legend>
 
+        <!-- Search menu -->
         {#if config.mappings?.length >= 8 || hideMappingsUnlessSearchedFor}
           <div class="sticky flex w-full" aria-hidden="true">
             <Search class="h-6 w-6" />
@@ -369,6 +370,7 @@
           {/if}
         {/if}
 
+        <!-- Actual options-->
         {#if config?.freeform?.key && !(config?.mappings?.filter((m) => m.hideInAnswer != true)?.length > 0)}
           <!-- There are no options to choose from, simply show the input element: fill out the text field -->
           <FreeformInput
@@ -384,7 +386,7 @@
           />
         {:else if config.mappings !== undefined && !config.multiAnswer}
           <!-- Simple radiobuttons as mapping -->
-          <div class="flex flex-col">
+          <div class="flex flex-col no-bold">
             {#each config.mappings as mapping, i (mapping.then)}
               <!-- Even though we have a list of 'mappings' already, we still iterate over the list as to keep the original indices-->
               <TagRenderingMappingInput
@@ -399,6 +401,7 @@
               >
                 <input
                   type="radio"
+                  class="self-center mr-1"
                   bind:group={selectedMapping}
                   name={"mappings-radio-" + config.id}
                   value={i}
@@ -410,6 +413,7 @@
               <label class="flex gap-x-1">
                 <input
                   type="radio"
+                  class="self-center mr-1"
                   bind:group={selectedMapping}
                   name={"mappings-radio-" + config.id}
                   value={config.mappings?.length}
@@ -432,7 +436,7 @@
           </div>
         {:else if config.mappings !== undefined && config.multiAnswer}
           <!-- Multiple answers can be chosen: checkboxes -->
-          <div class="flex flex-col">
+          <div class="flex flex-col no-bold">
             {#each config.mappings as mapping, i (mapping.then)}
               <TagRenderingMappingInput
                 {mapping}
@@ -446,6 +450,7 @@
               >
                 <input
                   type="checkbox"
+                  class="self-center mr-1"
                   name={"mappings-checkbox-" + config.id + "-" + i}
                   bind:checked={checkedMappings[i]}
                   on:keypress={(e) => onInputKeypress(e)}
@@ -456,6 +461,7 @@
               <label class="flex gap-x-1">
                 <input
                   type="checkbox"
+                  class="self-center mr-1"
                   name={"mappings-checkbox-" + config.id + "-" + config.mappings?.length}
                   bind:checked={checkedMappings[config.mappings.length]}
                   on:keypress={(e) => onInputKeypress(e)}
@@ -475,6 +481,8 @@
             {/if}
           </div>
         {/if}
+
+        <!-- Save and cancel buttons, in a logintoggle -->
         <LoginToggle {state}>
           <Loading slot="loading" />
           <SubtleButton slot="not-logged-in" on:click={() => state?.osmConnection?.AttemptLogin()}>
