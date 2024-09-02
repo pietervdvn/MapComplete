@@ -149,7 +149,8 @@
             ]
           }
         }
-      ]
+      ],
+      "allowMove": false
     },
     {
       "id": "osm_adresses",
@@ -187,7 +188,8 @@
             "render": 1
           }
         }
-      ]
+      ],
+      "allowMove": false
     },
     {
       "id": "bag_pand",
@@ -394,7 +396,8 @@
             "render": 1
           }
         }
-      ]
+      ],
+      "allowMove": false
     },
     {
       "id": "bag_verblijfsobject",
@@ -452,7 +455,8 @@
             "render": 1
           }
         }
-      ]
+      ],
+      "allowMove": false
     }
   ]
 }
