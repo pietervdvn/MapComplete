@@ -153,7 +153,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Cafés and pubs' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Cafés and pubs')"
+      "description": "Layer 'Cafés and pubs' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Cafés and pubs')"
     },
     {
       "key": "payment:cash",
@@ -567,7 +567,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Food Courts' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Cafés and pubs')"
+      "description": "Layer 'Food Courts' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Cafés and pubs')"
     },
     {
       "key": "smoking",

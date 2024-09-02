@@ -1809,6 +1809,11 @@
           "icon": "home"
         },
         {
+          "if": "value=key",
+          "then": "key",
+          "icon": "key"
+        },
+        {
           "if": "value=invalid",
           "then": "invalid",
           "icon": "invalid"
@@ -1837,6 +1842,11 @@
           "if": "value=location_locked",
           "then": "location_locked",
           "icon": "location_locked"
+        },
+        {
+          "if": "value=lock",
+          "then": "lock",
+          "icon": "lock"
         },
         {
           "if": "value=mastodon",
@@ -10426,6 +10436,10 @@
           "then": "car_rental - Places where you can rent a car"
         },
         {
+          "if": "value=caravansites",
+          "then": "caravansites - camper sites"
+        },
+        {
           "if": "value=charging_station",
           "then": "charging_station - A charging station"
         },
@@ -10512,6 +10526,10 @@
         {
           "if": "value=drinking_water",
           "then": "drinking_water - A layer showing drinking water fountains"
+        },
+        {
+          "if": "value=dumpstations",
+          "then": "dumpstations - Sanitary dump stations"
         },
         {
           "if": "value=elevator",

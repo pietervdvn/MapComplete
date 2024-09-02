@@ -89,7 +89,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Restaurants and fast food' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Restaurants and fast food')"
+      "description": "Layer 'Restaurants and fast food' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Restaurants and fast food')"
     },
     {
       "key": "payment:cash",
@@ -683,7 +683,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Ice cream parlors' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Restaurants and fast food')"
+      "description": "Layer 'Ice cream parlors' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Restaurants and fast food')"
     },
     {
       "key": "email",
@@ -1088,7 +1088,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Food Courts' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Restaurants and fast food')"
+      "description": "Layer 'Food Courts' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Restaurants and fast food')"
     },
     {
       "key": "smoking",

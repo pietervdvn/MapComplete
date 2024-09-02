@@ -19,6 +19,7 @@ A layer showing kerbs.
   - [tactile-paving](#tactile-paving)
   - [kerb-height](#kerb-height)
   - [leftover-questions](#leftover-questions)
+  - [move-button](#move-button)
   - [lod](#lod)
 4. [Filters](#filters)
 
@@ -83,6 +84,11 @@ The question is `What is the height of this kerb?`
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
+
+### move-button
+
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
 
 ### lod
 

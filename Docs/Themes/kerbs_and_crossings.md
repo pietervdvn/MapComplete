@@ -47,6 +47,7 @@ Available languages:
     + [crossing-right-turn-through-red](#crossing-right-turn-through-red)
     + [crossing-continue-through-red](#crossing-continue-through-red)
     + [leftover-questions](#leftover-questions)
+    + [move-button](#move-button)
     + [lod](#lod)
   - [Filters](#filters)
 
@@ -211,6 +212,11 @@ This tagrendering is only visible in the popup if the following condition is met
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
+
+### move-button
+
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
 
 ### lod
 

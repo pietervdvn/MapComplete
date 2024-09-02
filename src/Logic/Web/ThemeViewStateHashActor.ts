@@ -16,7 +16,7 @@ export default class ThemeViewStateHashActor {
         "",
         "The possible hashes are:",
         "",
-        MenuState.pageNames.map((tab) => "`" + tab + "`").join(",")
+        MenuState.pageNames.map((tab) => "`" + tab + "`").join(","),
     ]
 
     /**
@@ -41,14 +41,13 @@ export default class ThemeViewStateHashActor {
             })
         }
 
-
         // At last, register callbacks on the state to update the hash when they change.
         // Note: these should use 'addCallback', not 'addCallbackAndRun'
         state.selectedElement.addCallback(() => this.setHash())
 
         // Register a hash change listener to correctly handle the back button
         Hash.hash.addCallback((hash) => {
-            if(this.isUpdatingHash){
+            if (this.isUpdatingHash) {
                 return
             }
             if (!hash) {
@@ -91,12 +90,7 @@ export default class ThemeViewStateHashActor {
         if (found.properties.id.startsWith("last_click")) {
             return true
         }
-        console.log(
-            "Setting selected element based on hash",
-            hash,
-            "; found",
-            found
-        )
+        console.log("Setting selected element based on hash", hash, "; found", found)
         selectedElement.setData(found)
         return true
     }

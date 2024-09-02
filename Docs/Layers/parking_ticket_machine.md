@@ -17,6 +17,7 @@ Layer with parking ticket machines to pay for parking.
   - [denominations-notes](#denominations-notes)
   - [ref](#ref)
   - [leftover-questions](#leftover-questions)
+  - [move-button](#move-button)
   - [lod](#lod)
 
 ## Themes using this layer
@@ -114,6 +115,11 @@ The question is `What is the reference number of this parking ticket machine?`
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
+
+### move-button
+
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
 
 ### lod
 

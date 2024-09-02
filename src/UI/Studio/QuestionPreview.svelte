@@ -28,8 +28,8 @@
   }
 
   let configJson: Store<QuestionableTagRenderingConfigJson[]> = value.map((x) => {
-    if(x === undefined){
-      console.log("No config found for ",path)
+    if (x === undefined) {
+      console.log("No config found for ", path)
       return []
     }
     if (typeof x === "string") {

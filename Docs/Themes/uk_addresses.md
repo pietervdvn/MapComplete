@@ -48,6 +48,7 @@ Available languages:
     + [uk_addresses_parentstreet](#uk_addresses_parentstreet)
     + [fixme](#fixme)
     + [address-sign-image](#address-sign-image)
+    + [move-button](#move-button)
     + [lod](#lod)
 
 # Layers defined in this theme configuration file
@@ -289,6 +290,11 @@ The question is `Please explain what the address is so that someone else can loo
 
 _This tagrendering has no question and is thus read-only_
 *{image_carousel(image:address)}<br/>{image_upload(image:address, Too complex? Add a photo of the address)}*
+
+### move-button
+
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
 
 ### lod
 

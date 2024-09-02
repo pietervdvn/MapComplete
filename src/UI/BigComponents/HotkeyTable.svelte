@@ -15,31 +15,31 @@
   }
 </script>
 
-  <Tr t={t.intro} />
-  <table>
+<Tr t={t.intro} />
+<table>
+  <tr>
+    <th>
+      <Tr t={t.key} />
+    </th>
+    <th>
+      <Tr t={t.action} />
+    </th>
+  </tr>
+  {#each byKey as [key, doc, alsoTriggeredBy]}
     <tr>
-      <th>
-        <Tr t={t.key} />
-      </th>
-      <th>
-        <Tr t={t.action} />
-      </th>
+      <td class="flex items-center justify-center">
+        {#if alsoTriggeredBy}
+          <div class="flex items-center justify-center gap-x-1">
+            <div class="literal-code h-fit w-fit">{key}</div>
+            <div class="literal-code h-fit w-fit">{alsoTriggeredBy}</div>
+          </div>
+        {:else}
+          <div class="literal-code flex h-fit w-fit w-full items-center">{key}</div>
+        {/if}
+      </td>
+      <td>
+        <Tr t={doc} />
+      </td>
     </tr>
-    {#each byKey as [key, doc, alsoTriggeredBy]}
-      <tr>
-        <td class="flex items-center justify-center">
-          {#if alsoTriggeredBy}
-            <div class="flex items-center justify-center gap-x-1">
-              <div class="literal-code h-fit w-fit">{key}</div>
-              <div class="literal-code h-fit w-fit">{alsoTriggeredBy}</div>
-            </div>
-          {:else}
-            <div class="literal-code flex h-fit w-fit w-full items-center">{key}</div>
-          {/if}
-        </td>
-        <td>
-          <Tr t={doc} />
-        </td>
-      </tr>
-    {/each}
-  </table>
+  {/each}
+</table>

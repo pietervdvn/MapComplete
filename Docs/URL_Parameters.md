@@ -67,15 +67,11 @@ The URL-hash can contain multiple values:
 
 - The currently opened menu view
 
-- The base64-encoded JSON-file specifying a custom theme (only when loading)
-
 ### Possible hashes to open a menu
 
 The possible hashes are:
 
-`menu:about`,`menu:settings`,`menu:favourites`,`menu:community`,`menu:privacy`,`menu:advanced`
-
-`theme-menu:intro`,`theme-menu:download`,`theme-menu:copyright`,`theme-menu:share`
+`copyright`,`copyright_icons`,`community_index`,`hotkeys`,`privacy`,`filter`,`background`,`about_theme`,`download`,`favourites`,`usersettings`,`share`,`menu`
 
 ## language
 

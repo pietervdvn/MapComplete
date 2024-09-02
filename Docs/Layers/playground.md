@@ -13,6 +13,7 @@ Playgrounds
 3. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [reviews](#reviews)
+  - [fee](#fee)
   - [playground-surface](#playground-surface)
   - [playground-lit](#playground-lit)
   - [playground-min_age](#playground-min_age)
@@ -27,6 +28,7 @@ Playgrounds
   - [check_date](#check_date)
   - [questions](#questions)
   - [playground-reviews](#playground-reviews)
+  - [move-button](#move-button)
   - [delete-button](#delete-button)
   - [lod](#lod)
 
@@ -52,6 +54,7 @@ Elements must match **all** of the following expressions:
 
 | attribute | type | values which are supported by this layer |
 -----|-----|----- |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/fee#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/fee/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [fee](https://wiki.openstreetmap.org/wiki/Key:fee) | Multiple choice | [no](https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno) [yes](https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/surface#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/surface/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [surface](https://wiki.openstreetmap.org/wiki/Key:surface) | [string](../SpecialInputElements.md#string) | [grass](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dgrass) [sand](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dsand) [woodchips](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dwoodchips) [paving_stones](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dpaving_stones) [asphalt](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dasphalt) [concrete](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dconcrete) [tartan](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dtartan) [rubber](https://wiki.openstreetmap.org/wiki/Tag:surface%3Drubber) [fine_gravel](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dfine_gravel) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/lit#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/lit/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [lit](https://wiki.openstreetmap.org/wiki/Key:lit) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:lit%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:lit%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/min_age#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/min_age/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [min_age](https://wiki.openstreetmap.org/wiki/Key:min_age) | [nat](../SpecialInputElements.md#nat) |  |
@@ -73,6 +76,13 @@ _This tagrendering has no question and is thus read-only_
 Shows the reviews module (including the possibility to leave a review)
 _This tagrendering has no question and is thus read-only_
 *{create_review()}{list_reviews()}*
+
+### fee
+
+The question is `Does one have to pay to use this playground?`
+
+ -  *Free to use* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a>
+ -  *Paid playground* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>
 
 ### playground-surface
 
@@ -185,6 +195,11 @@ _This tagrendering has no question and is thus read-only_
 
 _This tagrendering has no question and is thus read-only_
 *{reviews(name, playground)}*
+
+### move-button
+
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
 
 ### delete-button
 

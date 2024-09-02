@@ -18,6 +18,7 @@ Een speelbos is een vrij toegankelijke zone in een bos
   - [play_forest-phone](#play_forest-phone)
   - [questions](#questions)
   - [play_forest-reviews](#play_forest-reviews)
+  - [move-button](#move-button)
   - [lod](#lod)
 
 ## Themes using this layer
@@ -81,6 +82,11 @@ _This tagrendering has no question and is thus read-only_
 
 _This tagrendering has no question and is thus read-only_
 *{reviews(name, play_forest)}*
+
+### move-button
+
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
 
 ### lod
 

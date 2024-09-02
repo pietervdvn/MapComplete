@@ -7,6 +7,5 @@
     <slot />
   </div>
 
-
-  <slot class="border-t-gray-300 mt-1" name="footer" />
+  <slot class="mt-1 border-t-gray-300" name="footer" />
 </div>

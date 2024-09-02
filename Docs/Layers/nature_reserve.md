@@ -25,6 +25,7 @@ A nature reserve is an area where nature can take its course
   - [Surface area](#surface-area)
   - [wikipedia](#wikipedia)
   - [leftover-questions](#leftover-questions)
+  - [move-button](#move-button)
   - [lod](#lod)
 4. [Filters](#filters)
 
@@ -155,6 +156,11 @@ The question is `What is the corresponding Wikidata entity?`
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
+
+### move-button
+
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
 
 ### lod
 

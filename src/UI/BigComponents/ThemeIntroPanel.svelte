@@ -63,7 +63,10 @@
     <Tr t={layout.descriptionTail} />
 
     <!-- Buttons: open map, go to location, search -->
-    <NextButton clss="primary w-full" on:click={() => state.guistate.pageStates.about_theme.setData(false)}>
+    <NextButton
+      clss="primary w-full"
+      on:click={() => state.guistate.pageStates.about_theme.setData(false)}
+    >
       <div class="flex w-full flex-col items-center">
         <div class="flex w-full justify-center text-2xl">
           <Tr t={Translations.t.general.openTheMap} />
@@ -136,10 +139,9 @@
     {/if}
   </div>
 
-  <div class="link-underline flex justify-end text-sm mt-8">
+  <div class="link-underline mt-8 flex justify-end text-sm">
     <a href="https://mapcomplete.org" target="_blank">
       <Tr t={Translations.t.general.poweredByMapComplete} />
     </a>
   </div>
-
 </div>

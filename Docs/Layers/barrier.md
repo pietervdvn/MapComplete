@@ -23,6 +23,7 @@ Obstacles while cycling, such as bollards and cycle barriers
   - [Width of opening (cyclebarrier)](#width-of-opening-(cyclebarrier))
   - [Overlap (cyclebarrier)](#overlap-(cyclebarrier))
   - [leftover-questions](#leftover-questions)
+  - [move-button](#move-button)
   - [delete-button](#delete-button)
   - [lod](#lod)
 
@@ -131,6 +132,11 @@ This tagrendering is only visible in the popup if the following condition is met
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
+
+### move-button
+
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
 
 ### delete-button
 

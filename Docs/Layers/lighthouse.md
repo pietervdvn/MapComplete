@@ -13,6 +13,7 @@
   - [wikipedia](#wikipedia)
   - [lighthouse-height](#lighthouse-height)
   - [leftover-questions](#leftover-questions)
+  - [move-button](#move-button)
   - [lod](#lod)
 
 ## Themes using this layer
@@ -57,6 +58,11 @@ The question is `What is the height of this lighthouse, in metres?`
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
+
+### move-button
+
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
 
 ### lod
 

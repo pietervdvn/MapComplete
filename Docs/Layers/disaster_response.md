@@ -15,6 +15,7 @@ This layer contains organizations that have the main objective to help the civil
   - [website](#website)
   - [disaster_response_name](#disaster_response_name)
   - [leftover-questions](#leftover-questions)
+  - [move-button](#move-button)
   - [lod](#lod)
 
 ## Themes using this layer
@@ -61,6 +62,11 @@ The question is `What is the name of this organization?`
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
+
+### move-button
+
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
 
 ### lod
 

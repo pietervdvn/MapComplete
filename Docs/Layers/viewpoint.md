@@ -14,6 +14,7 @@ A nice viewpoint or nice view. Ideal to add an image if no other category fits
   - [images](#images)
   - [viewpoint-description](#viewpoint-description)
   - [leftover-questions](#leftover-questions)
+  - [move-button](#move-button)
   - [lod](#lod)
 
 ## Themes using this layer
@@ -50,6 +51,11 @@ The question is `Do you want to add a description?`
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
+
+### move-button
+
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
 
 ### lod
 

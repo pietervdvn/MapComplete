@@ -113,7 +113,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Restaurants and fast food' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Glutenfree')"
+      "description": "Layer 'Restaurants and fast food' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Glutenfree')"
     },
     {
       "key": "payment:cash",
@@ -711,7 +711,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Ice cream parlors' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Glutenfree')"
+      "description": "Layer 'Ice cream parlors' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Glutenfree')"
     },
     {
       "key": "email",
@@ -1773,7 +1773,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Shop' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Glutenfree')"
+      "description": "Layer 'Shop' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Glutenfree')"
     },
     {
       "key": "payment:cash",

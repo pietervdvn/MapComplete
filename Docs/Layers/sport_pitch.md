@@ -22,6 +22,7 @@ A sport pitch
   - [sport_pitch-opening_hours](#sport_pitch-opening_hours)
   - [questions](#questions)
   - [sport-pitch-reviews](#sport-pitch-reviews)
+  - [move-button](#move-button)
   - [lod](#lod)
 4. [Filters](#filters)
 
@@ -143,6 +144,11 @@ _This tagrendering has no question and is thus read-only_
 
 _This tagrendering has no question and is thus read-only_
 *{reviews(name, sportpitch)}*
+
+### move-button
+
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
 
 ### lod
 

@@ -15,6 +15,7 @@ A layer showing pedestrian crossings with rainbow paintings
   - [images](#images)
   - [crossing-with-rainbow](#crossing-with-rainbow)
   - [leftover-questions](#leftover-questions)
+  - [move-button](#move-button)
   - [lod](#lod)
 
 ## Themes using this layer
@@ -51,6 +52,11 @@ The question is `Does this crossing has rainbow paintings?`
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
+
+### move-button
+
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
 
 ### lod
 

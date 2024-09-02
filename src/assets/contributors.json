@@ -1,7 +1,7 @@
 {
   "contributors": [
     {
-      "commits": 7993,
+      "commits": 8118,
       "contributor": "Pieter Vander Vennet"
     },
     {
@@ -13,12 +13,12 @@
       "contributor": "Tobias"
     },
     {
-      "commits": 38,
-      "contributor": "Win Olario"
+      "commits": 39,
+      "contributor": "dependabot[bot]"
     },
     {
-      "commits": 37,
-      "contributor": "dependabot[bot]"
+      "commits": 38,
+      "contributor": "Win Olario"
     },
     {
       "commits": 33,

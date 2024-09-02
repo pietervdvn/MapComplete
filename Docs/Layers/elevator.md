@@ -25,6 +25,7 @@ This layer show elevators and asks for operational status and elevator dimension
   - [speech_output_available](#speech_output_available)
   - [speech_output](#speech_output)
   - [leftover-questions](#leftover-questions)
+  - [move-button](#move-button)
   - [lod](#lod)
 
 ## Themes using this layer
@@ -151,6 +152,11 @@ This tagrendering is only visible in the popup if the following condition is met
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
+
+### move-button
+
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
 
 ### lod
 

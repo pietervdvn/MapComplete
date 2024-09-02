@@ -31,12 +31,18 @@ class HandleErrors extends Script {
 
     private readonly ignoreUsers = new Set<string>([])
 
-    private async handleError(parsed: ErrorMessage, changesObj: Changes, downloader: OsmObjectDownloader, createdChangesets: Set<string>, refusedFiles: Set<string>) {
+    private async handleError(
+        parsed: ErrorMessage,
+        changesObj: Changes,
+        downloader: OsmObjectDownloader,
+        createdChangesets: Set<string>,
+        refusedFiles: Set<string>
+    ) {
         console.log(
             parsed.message.username,
             parsed.message.layout,
             parsed.message.message,
-            parsed.date,
+            parsed.date
         )
 
         const e = parsed.message
@@ -48,12 +54,11 @@ class HandleErrors extends Script {
         }>(
             neededIds.map(async (id) => {
                 try {
-
                     const osmObj = await downloader.DownloadObjectAsync(id)
-                    return ({
+                    return {
                         id,
                         osmObj,
-                    })
+                    }
                 } catch (e) {
                     console.error("COULD NOT DOWNLOAD OBJECT", id)
                     return {
@@ -61,7 +66,7 @@ class HandleErrors extends Script {
                         osmObj: "deleted",
                     }
                 }
-            }),
+            })
         )
 
         const objects = osmObjects
@@ -77,8 +82,7 @@ class HandleErrors extends Script {
         } = changesObj.CreateChangesetObjects(toUpload, objects, true)
 
         const changeset = Changes.buildChangesetXML("", changes)
-        const path =
-            "error_changeset_" + parsed.index + "_" + e.layout + "_" + e.username + ".osc"
+        const path = "error_changeset_" + parsed.index + "_" + e.layout + "_" + e.username + ".osc"
         if (
             changeset ===
             `<osmChange version='0.6' generator='Mapcomplete ${Constants.vNumber}'></osmChange>`
@@ -130,7 +134,7 @@ ${changeset}`
                 osmConnection,
             },
             false,
-            (err) => console.error(err),
+            (err) => console.error(err)
         )
 
         const all: ErrorMessage[] = []
@@ -152,7 +156,7 @@ ${changeset}`
                     console.log(
                         "\t https://osm.org/" + pendingChange.type + "/" + pendingChange.id,
                         pendingChange.meta.changeType,
-                        pendingChange.doDelete ? "DELETE" : "",
+                        pendingChange.doDelete ? "DELETE" : ""
                     )
                 }
                 all.push(parsed)
@@ -163,10 +167,20 @@ ${changeset}`
 
         for (const parsed of all) {
             try {
-                await this.handleError(parsed, changesObj, downloader, createdChangesets, refusedFiles)
+                await this.handleError(
+                    parsed,
+                    changesObj,
+                    downloader,
+                    createdChangesets,
+                    refusedFiles
+                )
             } catch (e) {
                 console.error("ERROR: could not handle ", parsed, " due to", e)
-                writeFileSync("ERRORS."+parsed.index, "ERROR: due to " + e + ": could not handle\n" + JSON.stringify(parsed), "utf8")
+                writeFileSync(
+                    "ERRORS." + parsed.index,
+                    "ERROR: due to " + e + ": could not handle\n" + JSON.stringify(parsed),
+                    "utf8"
+                )
             }
         }
     }

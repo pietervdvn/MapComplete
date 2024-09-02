@@ -153,7 +153,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Cafés and pubs' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'OnWheels')"
+      "description": "Layer 'Cafés and pubs' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'OnWheels')"
     },
     {
       "key": "payment:cash",
@@ -613,7 +613,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Restaurants and fast food' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'OnWheels')"
+      "description": "Layer 'Restaurants and fast food' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'OnWheels')"
     },
     {
       "key": "payment:cash",
@@ -2310,7 +2310,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Shop' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'OnWheels')"
+      "description": "Layer 'Shop' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'OnWheels')"
     },
     {
       "key": "payment:cash",
@@ -3066,7 +3066,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Pharmacies' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'OnWheels')"
+      "description": "Layer 'Pharmacies' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'OnWheels')"
     },
     {
       "key": "email",
@@ -3156,7 +3156,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Doctors' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'OnWheels')"
+      "description": "Layer 'Doctors' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'OnWheels')"
     },
     {
       "key": "email",
@@ -3236,7 +3236,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Hospitals' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'OnWheels')"
+      "description": "Layer 'Hospitals' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'OnWheels')"
     },
     {
       "key": "email",
@@ -3491,6 +3491,11 @@
       "value": "guest_house"
     },
     {
+      "key": "tourism",
+      "description": "The MapComplete theme OnWheels has a layer Tourism accomodation showing features with this tag",
+      "value": "camp_site"
+    },
+    {
       "key": "id",
       "description": "Layer 'Tourism accomodation' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'OnWheels') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
     },
@@ -3529,7 +3534,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Tourism accomodation' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'OnWheels')"
+      "description": "Layer 'Tourism accomodation' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'OnWheels')"
     },
     {
       "key": "email",
@@ -3676,7 +3681,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'governments' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'OnWheels')"
+      "description": "Layer 'governments' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'OnWheels')"
     },
     {
       "key": "email",

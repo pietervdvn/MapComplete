@@ -13,12 +13,10 @@ export default class UrlValidator extends Validator {
         "tripadvisor.co.uk",
         "tripadvisor.com.au",
         "katestravelexperience.eu",
-        "hoteldetails.eu"
+        "hoteldetails.eu",
     ])
 
-    private static readonly discouragedWebsites = new Set<string>([
-        "facebook.com"
-    ])
+    private static readonly discouragedWebsites = new Set<string>(["facebook.com"])
 
     constructor(name?: string, explanation?: string, forceHttps?: boolean) {
         super(
@@ -93,14 +91,10 @@ export default class UrlValidator extends Validator {
      * v.getFeedback("https://booking.com/some-hotel.html").textFor("en") // => Translations.t.validation.url.spamSite.Subs({host: "booking.com"}).textFor("en")
      */
     getFeedback(s: string, getCountry?: () => string): Translation | undefined {
-        if (
-            !s.startsWith("http://") &&
-            !s.startsWith("https://") &&
-            !s.startsWith("http:")
-        ) {
+        if (!s.startsWith("http://") && !s.startsWith("https://") && !s.startsWith("http:")) {
             s = "https://" + s
         }
-        try{
+        try {
             const url = new URL(s)
             let host = url.host.toLowerCase()
             if (host.startsWith("www.")) {
@@ -112,16 +106,13 @@ export default class UrlValidator extends Validator {
             if (UrlValidator.discouragedWebsites.has(host)) {
                 return Translations.t.validation.url.aggregator.Subs({ host })
             }
-
-
-        }catch (e) {
+        } catch (e) {
             // pass
         }
         const upstream = super.getFeedback(s, getCountry)
         if (upstream) {
             return upstream
         }
-
 
         return undefined
     }
@@ -131,7 +122,6 @@ export default class UrlValidator extends Validator {
      * v.isValid("https://booking.com/some-hotel.html") // => false
      */
     isValid(str: string): boolean {
-
         try {
             if (
                 !str.startsWith("http://") &&

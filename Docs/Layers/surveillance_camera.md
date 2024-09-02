@@ -24,6 +24,7 @@ This layer shows surveillance cameras and allows a contributor to update informa
   - [Surveillance:zone](#surveillancezone)
   - [camera:mount](#cameramount)
   - [leftover-questions](#leftover-questions)
+  - [move-button](#move-button)
   - [delete-button](#delete-button)
   - [lod](#lod)
 
@@ -141,6 +142,11 @@ The question is `How is this camera placed?`
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
+
+### move-button
+
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
 
 ### delete-button
 

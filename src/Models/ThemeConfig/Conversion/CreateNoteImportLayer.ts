@@ -203,7 +203,7 @@ export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, L
                     anchor: "center",
                 },
             ],
-            allowMove: false
+            allowMove: false,
         }
     }
 }

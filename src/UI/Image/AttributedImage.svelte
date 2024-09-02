@@ -26,26 +26,28 @@
   <div class="relative w-fit">
     <img
       bind:this={imgEl}
-      on:load={() => loaded = true}
+      on:load={() => (loaded = true)}
       class={imgClass ?? ""}
       class:cursor-zoom-in={previewedImage !== undefined}
       on:click={() => {
-      previewedImage?.setData(image)
-    }}
+        previewedImage?.setData(image)
+      }}
       on:error={() => {
-      if (fallbackImage) {
-        imgEl.src = fallbackImage
-      }
-    }}
+        if (fallbackImage) {
+          imgEl.src = fallbackImage
+        }
+      }}
       src={image.url}
     />
 
     {#if canZoom && loaded}
-      <div class="absolute right-0 top-0 bg-black-transparent rounded-bl-full" on:click={() => previewedImage.set(image)}>
-      <MagnifyingGlassPlusIcon class="w-8 h-8 pl-3 pb-3 cursor-zoom-in" color="white" />
+      <div
+        class="bg-black-transparent absolute right-0 top-0 rounded-bl-full"
+        on:click={() => previewedImage.set(image)}
+      >
+        <MagnifyingGlassPlusIcon class="h-8 w-8 cursor-zoom-in pl-3 pb-3" color="white" />
       </div>
     {/if}
-
   </div>
   <div class="absolute bottom-0 left-0">
     <ImageAttribution {image} {attributionFormat} />

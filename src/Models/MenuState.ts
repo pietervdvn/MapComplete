@@ -14,18 +14,26 @@ export type PageType = (typeof MenuState.pageNames)[number]
  * Some convenience methods are provided for this as well
  */
 export class MenuState {
-
-
     public static readonly pageNames = [
-        "copyright", "copyright_icons", "community_index", "hotkeys",
-        "privacy", "filter", "background", "about_theme", "download", "favourites",
-        "usersettings", "share", "menu",
+        "copyright",
+        "copyright_icons",
+        "community_index",
+        "hotkeys",
+        "privacy",
+        "filter",
+        "background",
+        "about_theme",
+        "download",
+        "favourites",
+        "usersettings",
+        "share",
+        "menu",
     ] as const
 
     public readonly pageStates: Record<PageType, UIEventSource<boolean>>
 
     public readonly highlightedLayerInFilters: UIEventSource<string> = new UIEventSource<string>(
-        undefined,
+        undefined
     )
     public highlightedUserSetting: UIEventSource<string> = new UIEventSource<string>(undefined)
 
@@ -39,10 +47,10 @@ export class MenuState {
         this.pageStates = <Record<PageType, UIEventSource<boolean>>>states
 
         for (const pageName of MenuState.pageNames) {
-            if(pageName === "menu"){
+            if (pageName === "menu") {
                 continue
             }
-            this.pageStates[pageName].addCallback(enabled => {
+            this.pageStates[pageName].addCallback((enabled) => {
                 if (enabled) {
                     this.pageStates.menu.set(false)
                 }
@@ -50,7 +58,8 @@ export class MenuState {
         }
 
         const visitedBefore = LocalStorageSource.GetParsed<boolean>(
-            themeid + "thememenuisopened", false,
+            themeid + "thememenuisopened",
+            false
         )
         if (!visitedBefore.data && shouldShowWelcomeMessage) {
             this.pageStates.about_theme.set(true)
@@ -85,8 +94,8 @@ export class MenuState {
                 Utils.sortedByLevenshteinDistance(
                     highlightTagRendering,
                     UserRelatedState.availableUserSettingsIds,
-                    (x) => x,
-                ),
+                    (x) => x
+                )
             )
         }
         this.highlightedUserSetting.setData(highlightTagRendering)
@@ -116,5 +125,4 @@ export class MenuState {
             return true
         }
     }
-
 }

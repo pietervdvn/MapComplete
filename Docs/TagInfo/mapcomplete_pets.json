@@ -185,7 +185,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Dog friendly eateries' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
+      "description": "Layer 'Dog friendly eateries' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
     },
     {
       "key": "payment:cash",
@@ -1661,7 +1661,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Dog-friendly shops' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
+      "description": "Layer 'Dog-friendly shops' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
     },
     {
       "key": "payment:cash",
@@ -2109,7 +2109,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'veterinary' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
+      "description": "Layer 'veterinary' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
     },
     {
       "key": "opening_hours",
@@ -2167,7 +2167,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Animal shelters' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
+      "description": "Layer 'Animal shelters' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')"
     },
     {
       "key": "email",

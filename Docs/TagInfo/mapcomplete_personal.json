@@ -435,7 +435,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Animal shelters' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'Animal shelters' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "email",
@@ -1007,7 +1007,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Repair cafés and assisted repair workshops' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'Repair cafés and assisted repair workshops' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "email",
@@ -1806,7 +1806,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Bicycle library' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'Bicycle library' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "email",
@@ -1976,7 +1976,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Bicycle rental' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'Bicycle rental' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "opening_hours",
@@ -2212,7 +2212,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Bike cafe' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'Bike cafe' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "email",
@@ -3679,7 +3679,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Bike repair/shop' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'Bike repair/shop' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "payment:cash",
@@ -4199,7 +4199,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Bike-related object' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'Bike-related object' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "opening_hours",
@@ -4510,7 +4510,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Cafés and pubs' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'Cafés and pubs' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "payment:cash",
@@ -4655,6 +4655,126 @@
       "key": "internet_access:ssid",
       "description": "Layer 'Cafés and pubs' shows internet_access:ssid=Telekom with a fixed text, namely 'Telekom' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if internet_access=wlan)",
       "value": "Telekom"
+    },
+    {
+      "key": "tourism",
+      "description": "The MapComplete theme Personal theme has a layer Camper sites showing features with this tag",
+      "value": "caravan_site"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Camper sites' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Personal theme') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Camper sites allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Camper sites allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Camper sites allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Camper sites allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Camper sites' shows and asks freeform values for key 'name' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Camper sites' shows fee=yes with a fixed text, namely 'You need to pay for use' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Camper sites' shows fee=no with a fixed text, namely 'Can be used for free' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "charge",
+      "description": "Layer 'Camper sites' shows and asks freeform values for key 'charge' (in the mapcomplete.org theme 'Personal theme') (This is only shown if fee=yes)"
+    },
+    {
+      "key": "sanitary_dump_station",
+      "description": "Layer 'Camper sites' shows sanitary_dump_station=yes with a fixed text, namely 'This place has a sanitary dump station' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "sanitary_dump_station",
+      "description": "Layer 'Camper sites' shows sanitary_dump_station=no with a fixed text, namely 'This place does not have a sanitary dump station' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "capacity",
+      "description": "Layer 'Camper sites' shows and asks freeform values for key 'capacity' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "internet_access",
+      "description": "Layer 'Camper sites' shows internet_access=yes with a fixed text, namely 'There is internet access' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "internet_access",
+      "description": "Layer 'Camper sites' shows internet_access=wifi | internet_access=wlan with a fixed text, namely 'There is internet access' (in the mapcomplete.org theme 'Personal theme')",
+      "value": "wifi"
+    },
+    {
+      "key": "internet_access",
+      "description": "Layer 'Camper sites' shows internet_access=wifi | internet_access=wlan with a fixed text, namely 'There is internet access' (in the mapcomplete.org theme 'Personal theme')",
+      "value": "wlan"
+    },
+    {
+      "key": "internet_access",
+      "description": "Layer 'Camper sites' shows internet_access=no with a fixed text, namely 'There is no internet access' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "internet_access:fee",
+      "description": "Layer 'Camper sites' shows internet_access:fee=yes with a fixed text, namely 'You need to pay extra for internet access' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if internet_access=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "internet_access:fee",
+      "description": "Layer 'Camper sites' shows internet_access:fee=no with a fixed text, namely 'You do not need to pay extra for internet access' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if internet_access=yes)",
+      "value": "no"
+    },
+    {
+      "key": "toilets",
+      "description": "Layer 'Camper sites' shows toilets=yes with a fixed text, namely 'This place has toilets' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "toilets",
+      "description": "Layer 'Camper sites' shows toilets=no with a fixed text, namely 'This place does not have toilets' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Camper sites' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "permanent_camping",
+      "description": "Layer 'Camper sites' shows permanent_camping=yes with a fixed text, namely 'There are some spots for long term rental, but you can also stay on a daily basis' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "permanent_camping",
+      "description": "Layer 'Camper sites' shows permanent_camping=no with a fixed text, namely 'There are no permanent guests here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "permanent_camping",
+      "description": "Layer 'Camper sites' shows permanent_camping=only with a fixed text, namely 'It is only possible to stay here if you have a long term contract (this place disappears from this map if you choose this)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "only"
+    },
+    {
+      "key": "description",
+      "description": "Layer 'Camper sites' shows and asks freeform values for key 'description' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "amenity",
@@ -6285,7 +6405,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Climbing club' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'Climbing club' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "opening_hours",
@@ -6344,7 +6464,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Climbing gyms' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'Climbing gyms' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "email",
@@ -7935,7 +8055,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Dentist' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'Dentist' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "email",
@@ -8051,7 +8171,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Doctors' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'Doctors' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "email",
@@ -8399,6 +8519,99 @@
     {
       "key": "subject:wikidata",
       "description": "Layer 'Drinking water' shows and asks freeform values for key 'subject:wikidata' (in the mapcomplete.org theme 'Personal theme') (This is only shown if tourism=artwork)"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Personal theme has a layer Sanitary dump stations showing features with this tag",
+      "value": "sanitary_dump_station"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Sanitary dump stations' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Personal theme') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Sanitary dump stations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Sanitary dump stations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Sanitary dump stations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Sanitary dump stations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Sanitary dump stations' shows fee=yes with a fixed text, namely 'You need to pay for use' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Sanitary dump stations' shows fee=no with a fixed text, namely 'Can be used for free' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "charge",
+      "description": "Layer 'Sanitary dump stations' shows and asks freeform values for key 'charge' (in the mapcomplete.org theme 'Personal theme') (This is only shown if fee=yes)"
+    },
+    {
+      "key": "water_point",
+      "description": "Layer 'Sanitary dump stations' shows water_point=yes with a fixed text, namely 'This place has a water point' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "water_point",
+      "description": "Layer 'Sanitary dump stations' shows water_point=no with a fixed text, namely 'This place does not have a water point' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "sanitary_dump_station:grey_water",
+      "description": "Layer 'Sanitary dump stations' shows sanitary_dump_station:grey_water=yes with a fixed text, namely 'You can dispose of grey water here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "sanitary_dump_station:grey_water",
+      "description": "Layer 'Sanitary dump stations' shows sanitary_dump_station:grey_water=no with a fixed text, namely 'You cannot dispose of gray water here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "sanitary_dump_station:chemical_toilet",
+      "description": "Layer 'Sanitary dump stations' shows sanitary_dump_station:chemical_toilet=yes with a fixed text, namely 'You can dispose of chemical toilet waste here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "sanitary_dump_station:chemical_toilet",
+      "description": "Layer 'Sanitary dump stations' shows sanitary_dump_station:chemical_toilet=no with a fixed text, namely 'You cannot dispose of chemical toilet waste here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Sanitary dump stations' shows access=network with a fixed text, namely 'You need a network key/code to use this' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "network"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Sanitary dump stations' shows access=customers with a fixed text, namely 'You need to be a customer of camping/campersite to use this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "customers"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Sanitary dump stations' shows access=public with a fixed text, namely 'Anyone can use this dump station' (in the mapcomplete.org theme 'Personal theme')",
+      "value": "public"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Sanitary dump stations' shows access=yes with a fixed text, namely 'Anyone can use this dump station' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "network",
+      "description": "Layer 'Sanitary dump stations' shows and asks freeform values for key 'network' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "highway",
@@ -9357,7 +9570,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Fitness Centres' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'Fitness Centres' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "email",
@@ -9714,7 +9927,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Restaurants and fast food' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'Restaurants and fast food' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "payment:cash",
@@ -10336,7 +10549,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Food Courts' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'Food Courts' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "smoking",
@@ -10434,7 +10647,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'governments' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'governments' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "email",
@@ -10637,7 +10850,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Hackerspace' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'Hackerspace' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "contact:mastodon",
@@ -10909,7 +11122,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Hospitals' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'Hospitals' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "email",
@@ -11098,7 +11311,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Ice cream parlors' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'Ice cream parlors' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "email",
@@ -11783,7 +11996,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Kindergartens and childcare' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'Kindergartens and childcare' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "opening_hours",
@@ -11875,7 +12088,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Love hotels' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'Love hotels' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "email",
@@ -13507,7 +13720,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Pharmacies' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'Pharmacies' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "email",
@@ -13597,7 +13810,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Physiotherapist' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'Physiotherapist' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "email",
@@ -13693,6 +13906,11 @@
       "value": "plastic"
     },
     {
+      "key": "material",
+      "description": "Layer 'Picnic tables' shows material=metal with a fixed text, namely 'This picnic table is made from metal' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "metal"
+    },
+    {
       "key": "leisure",
       "description": "The MapComplete theme Personal theme has a layer Playgrounds showing features with this tag",
       "value": "playground"
@@ -13716,6 +13934,16 @@
     {
       "key": "wikipedia",
       "description": "The layer 'Playgrounds allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Playgrounds' shows fee=no with a fixed text, namely 'Free to use' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Playgrounds' shows fee=yes with a fixed text, namely 'Paid playground' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
     },
     {
       "key": "surface",
@@ -14721,7 +14949,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Recycling' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Personal theme') (This is only shown if recycling_type=centre)"
+      "description": "Layer 'Recycling' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Personal theme') (This is only shown if recycling_type=centre)"
     },
     {
       "key": "opening_hours",
@@ -14949,7 +15177,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Primary and secondary schools' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'Primary and secondary schools' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "email",
@@ -15948,7 +16176,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Shop' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'Shop' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "payment:cash",
@@ -17343,7 +17571,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Sports centres' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'Sports centres' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "website",
@@ -17985,7 +18213,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Colleges and universities' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'Colleges and universities' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "amenity",
@@ -18785,7 +19013,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Tool libraries' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'Tool libraries' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "email",
@@ -18904,6 +19132,11 @@
       "value": "guest_house"
     },
     {
+      "key": "tourism",
+      "description": "The MapComplete theme Personal theme has a layer Tourism accomodation showing features with this tag",
+      "value": "camp_site"
+    },
+    {
       "key": "id",
       "description": "Layer 'Tourism accomodation' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Personal theme') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
     },
@@ -18942,7 +19175,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Tourism accomodation' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'Tourism accomodation' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "email",
@@ -19917,7 +20150,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Vending Machines' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'Vending Machines' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "website",
@@ -19981,7 +20214,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'veterinary' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Personal theme')"
+      "description": "Layer 'veterinary' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "opening_hours",

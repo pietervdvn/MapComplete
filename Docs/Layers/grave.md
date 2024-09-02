@@ -15,6 +15,7 @@ Tombstones (and graves) indicate where a person was buried. On this map, those c
   - [buried:wikidata](#buriedwikidata)
   - [name](#name)
   - [leftover-questions](#leftover-questions)
+  - [move-button](#move-button)
   - [lod](#lod)
 4. [Filters](#filters)
 
@@ -57,6 +58,11 @@ The question is `What is the name of the person buried here?`
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
+
+### move-button
+
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
 
 ### lod
 

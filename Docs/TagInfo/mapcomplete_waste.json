@@ -339,7 +339,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Recycling' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Waste') (This is only shown if recycling_type=centre)"
+      "description": "Layer 'Recycling' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Waste') (This is only shown if recycling_type=centre)"
     },
     {
       "key": "opening_hours",

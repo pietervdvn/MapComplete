@@ -62,6 +62,7 @@ Available languages:
     + [repeated](#repeated)
     + [single_level](#single_level)
     + [leftover-questions](#leftover-questions)
+    + [move-button](#move-button)
     + [lod](#lod)
 
 # Layers defined in this theme configuration file
@@ -154,6 +155,11 @@ This tagrendering has labels
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
+
+### move-button
+
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
 
 ### lod
 

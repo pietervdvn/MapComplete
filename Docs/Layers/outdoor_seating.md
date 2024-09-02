@@ -25,6 +25,7 @@ Outdoor seating areas, usually located near cafes and restaurants.
   - [covered](#covered)
   - [smoking](#smoking)
   - [leftover-questions](#leftover-questions)
+  - [move-button](#move-button)
   - [lod](#lod)
 
 ## Themes using this layer
@@ -170,6 +171,11 @@ The question is `Is smoking allowed at {title()}?`
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
+
+### move-button
+
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
 
 ### lod
 

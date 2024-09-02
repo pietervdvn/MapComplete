@@ -14,6 +14,7 @@ Available languages:
 
  - en
  - de
+ - es
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

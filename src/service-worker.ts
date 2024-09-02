@@ -41,42 +41,29 @@ async function cacheFirst(event: ServiceWorkerFetchEvent, attemptUpdate: boolean
         fetchAndCache(event)
     }
     return cacheResponse
-
 }
 
-const neverCache: RegExp[] = [
-    /\.html$/,
-    /service-worker/
-]
-const neverCacheHost : RegExp[] = [
-    /127\.0\.0\.[0-9]+/,
-    /\.local/,
-    /\.gitpod\.io/,
-    /localhost/
-]
+const neverCache: RegExp[] = [/\.html$/, /service-worker/]
+const neverCacheHost: RegExp[] = [/127\.0\.0\.[0-9]+/, /\.local/, /\.gitpod\.io/, /localhost/]
 
 async function handleRequest(event: ServiceWorkerFetchEvent) {
     const origin = new URL(self.origin)
     const requestUrl = new URL(event.request.url)
     if (requestUrl.pathname.endsWith("service-worker-version")) {
         console.log("Sending version number...")
-        await event.respondWith(
-            new Response(JSON.stringify({ "service-worker-version": version })),
-        )
+        await event.respondWith(new Response(JSON.stringify({ "service-worker-version": version })))
         return
     }
     if (requestUrl.pathname.endsWith("/service-worker-clear")) {
         await clearCaches()
-        await event.respondWith(
-            new Response(JSON.stringify({ "cache-cleared": true })),
-        )
+        await event.respondWith(new Response(JSON.stringify({ "cache-cleared": true })))
         return
     }
 
     const shouldBeCached =
         origin.host === requestUrl.host &&
-        !neverCacheHost.some(blacklisted => origin.host.match(blacklisted)) &&
-        !neverCache.some(blacklisted => event.request.url.match(blacklisted))
+        !neverCacheHost.some((blacklisted) => origin.host.match(blacklisted)) &&
+        !neverCache.some((blacklisted) => event.request.url.match(blacklisted))
     if (!shouldBeCached) {
         console.debug("Not intercepting ", requestUrl.toString(), origin.host, requestUrl.host)
         // We return _without_ calling event.respondWith, which signals the browser that it'll have to handle it himself

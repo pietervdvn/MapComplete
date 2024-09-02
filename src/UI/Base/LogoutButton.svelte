@@ -14,6 +14,6 @@
     osmConnection.LogOut()
   }}
 >
-  <ArrowRightOnRectangle class="h-6 w-6 max-h-full" />
+  <ArrowRightOnRectangle class="h-6 max-h-full w-6" />
   <Tr t={Translations.t.general.logout} />
 </button>

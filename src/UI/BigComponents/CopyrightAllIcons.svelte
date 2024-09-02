@@ -14,7 +14,6 @@
     const license: SmallLicense = licenses[key]
     allLicenses[license.path] = license
   }
-
 </script>
 
 {#each iconAttributions as iconAttribution}

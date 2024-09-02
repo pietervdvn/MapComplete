@@ -14,6 +14,7 @@ Layer showing speed displays that alert drivers of their speed.
   - [maxspeed](#maxspeed)
   - [inscription](#inscription)
   - [leftover-questions](#leftover-questions)
+  - [move-button](#move-button)
   - [lod](#lod)
 
 ## Themes using this layer
@@ -50,6 +51,11 @@ The question is `What is the text on this speed display?`
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
+
+### move-button
+
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
 
 ### lod
 

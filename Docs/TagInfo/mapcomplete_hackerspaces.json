@@ -104,7 +104,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Hackerspace' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Hackerspaces and makerspaces')"
+      "description": "Layer 'Hackerspace' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Hackerspaces and makerspaces')"
     },
     {
       "key": "contact:mastodon",
