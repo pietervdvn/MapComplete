@@ -324,7 +324,7 @@
       class="relative flex flex-col overflow-y-auto px-2"
       style="max-height: 75vh"
       on:submit|preventDefault={() => {
-        /*onSave(); This submit is not needed and triggers to early, causing bugs: see #1808*/
+        /*onSave(); This submit is not needed and triggers too early, causing bugs: see #1808*/
       }}
     >
       <fieldset>
