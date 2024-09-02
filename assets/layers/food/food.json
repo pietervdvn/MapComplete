@@ -654,7 +654,7 @@
           "then": {
             "en": "Take-away is possible here",
             "nl": "Eten kan hier afgehaald worden",
-            "de": "Hier werden unter anderem Gerichte zum Mitnehmen angeboten",
+            "de": "Hier werden auch Gerichte zum Mitnehmen angeboten",
             "es": "Aquí es posible pedir para llevar",
             "fr": "La vente à emporter est possible ici",
             "ca": "Aquí és possible demanar per emportar",
@@ -930,7 +930,7 @@
       "id": "organic (no friture)",
       "question": {
         "en": "Does this restaurant offer organic food?",
-        "de": "Bietet dieses Restaurant biologische Speisen an?",
+        "de": "Bietet das Restaurant biologische Speisen an?",
         "nl": "Biedt dit restaurant biologisch eten?",
         "fr": "Ce restaurant propose-t-il de la nourriture bio ?",
         "ca": "Aquest restaurant ofereix menjar ecològic?",
