@@ -541,6 +541,13 @@ class DetectInline extends DesugaringStep<QuestionableTagRenderingConfigJson> {
             context.err("'freeform' is a string, but should be an object")
             return json
         }
+
+        if(!Object.values(json.render).some(render => render !== "{"+json.freeform.key+"}")){
+            // We only render the current value, without anything more. Not worth inlining
+            return json
+        }
+
+
         json.freeform.inline ??= true
         return json
     }
