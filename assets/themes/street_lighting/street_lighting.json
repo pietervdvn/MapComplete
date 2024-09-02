@@ -196,7 +196,8 @@
         {
           "color": "#ff0"
         }
-      ]
+      ],
+      "allowMove": false
     },
     {
       "id": "all_streets",
@@ -367,7 +368,9 @@
             ]
           }
         }
-      ]
+      ],
+      "allowMove": false
+
     }
   ]
 }

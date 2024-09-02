@@ -628,5 +628,9 @@
       "color": "#00f",
       "width": "8"
     }
-  ]
+  ],
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": false
+  }
 }

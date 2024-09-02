@@ -930,5 +930,6 @@
       "color": "#00f",
       "width": "8"
     }
-  ]
+  ],
+  "allowMove": true
 }

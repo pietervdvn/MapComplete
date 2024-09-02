@@ -115,7 +115,8 @@
         {
           "color": "green"
         }
-      ]
+      ],
+      "allowMove": false
     },
     {
       "builtin": [
@@ -454,7 +455,11 @@
       ],
       "lineRendering": [
         {}
-      ]
+      ],
+      "allowMove": {
+        "enableImproveAccuracy": true,
+        "enableRelocation": false
+      }
     }
   ]
 }

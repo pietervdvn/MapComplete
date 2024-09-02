@@ -200,6 +200,7 @@
           "anchor": "center"
         }
       ],
+      "allowMove": false,
       "lineRendering": [
         {
           "width": "4",

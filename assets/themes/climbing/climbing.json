@@ -63,10 +63,6 @@
         "climbing_opportunity"
       ],
       "override": {
-        "allowMove": {
-          "enableRelocation": false,
-          "enableImproveAccuracy": true
-        },
         "+titleIcons": [
           {
             "id": "climbing_length",
