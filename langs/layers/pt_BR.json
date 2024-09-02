@@ -1350,6 +1350,153 @@
             "render": "Reparo/loja de bicicletas"
         }
     },
+    "caravansites": {
+        "description": "Locais de acampamento",
+        "name": "Locais de acampamento",
+        "presets": {
+            "0": {
+                "title": "uma local de acampamento"
+            }
+        },
+        "tagRenderings": {
+            "caravansites-capacity": {
+                "question": "Quantos campistas podem ficar aqui? (pule se não houver um número óbvio de vagas ou veículos permitidos)",
+                "render": "{capacity} campistas podem usar este lugar ao mesmo tempo"
+            },
+            "caravansites-charge": {
+                "question": "Quanto este lugar cobra?",
+                "render": "Este lugar cobra {charge}"
+            },
+            "caravansites-description": {
+                "render": "Mais detalhes sobre este lugar: {description}"
+            },
+            "caravansites-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Você precisa pagar para usar"
+                    },
+                    "1": {
+                        "then": "Pode ser usado de graça"
+                    }
+                },
+                "question": "Este lugar cobra alguma taxa?"
+            },
+            "caravansites-internet": {
+                "mappings": {
+                    "0": {
+                        "then": "Há acesso à internet"
+                    },
+                    "1": {
+                        "then": "Há acesso à Internet"
+                    },
+                    "2": {
+                        "then": "Não há acesso à internet"
+                    }
+                },
+                "question": "Este lugar fornece acesso a internet?"
+            },
+            "caravansites-internet-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Você precisa pagar um extra pelo acesso à internet"
+                    },
+                    "1": {
+                        "then": "Você não precisa pagar um extra pelo acesso à internet"
+                    }
+                },
+                "question": "Você tem que pagar pelo acesso à internet?"
+            },
+            "caravansites-long-term": {
+                "mappings": {
+                    "0": {
+                        "then": "Sim, há alguns pontos para aluguel a longo prazo, mas você também pode ficar em uma base diária"
+                    },
+                    "1": {
+                        "then": "Não, não há hóspedes permanentes aqui"
+                    }
+                },
+                "question": "Este lugar oferece vagas para aluguel a longo prazo?"
+            },
+            "caravansites-name": {
+                "question": "Qual o nome deste lugar?",
+                "render": "Este lugar é chamado de {name}"
+            },
+            "caravansites-sanitary-dump": {
+                "mappings": {
+                    "0": {
+                        "then": "Este local tem uma estação de aterro sanitário"
+                    },
+                    "1": {
+                        "then": "Este local não tem uma estação de aterro sanitário"
+                    }
+                },
+                "question": "Este local tem uma estação de aterro sanitário?"
+            },
+            "caravansites-toilets": {
+                "mappings": {
+                    "0": {
+                        "then": "Este lugar tem banheiros"
+                    },
+                    "1": {
+                        "then": "Este lugar não tem banheiros"
+                    }
+                },
+                "question": "Este lugar tem banheiros?"
+            },
+            "caravansites-website": {
+                "question": "Este lugar tem um website?",
+                "render": "Site oficial: <a href='{website}'>{website}</a>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Locais de acampamento sem nome"
+                }
+            },
+            "render": "Local de acampamento {name}"
+        }
+    },
+    "dumpstations": {
+        "description": "Estações de despejo sanitário",
+        "name": "Estações de despejo sanitário",
+        "tagRenderings": {
+            "dumpstations-charge": {
+                "question": "Quanto este lugar cobra?",
+                "render": "Este lugar cobra {charge}"
+            },
+            "dumpstations-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Você precisa pagar pelo uso"
+                    },
+                    "1": {
+                        "then": "Pode ser usado gratuitamente"
+                    }
+                },
+                "question": "Este lugar cobra alguma taxa?"
+            },
+            "dumpstations-waterpoint": {
+                "mappings": {
+                    "0": {
+                        "then": "Este lugar tem um ponto de água"
+                    },
+                    "1": {
+                        "then": "Este lugar não tem um ponto de água"
+                    }
+                },
+                "question": "Este lugar tem um ponto de água?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Estação de despejo"
+                }
+            },
+            "render": "Estação de despejo {name}"
+        }
+    },
     "ghost_bike": {
         "name": "Bicicleta fantasma",
         "presets": {

@@ -144,6 +144,68 @@
             }
         }
     },
+    "caravansites": {
+        "description": "Tempat camping",
+        "name": "Tempat camping",
+        "tagRenderings": {
+            "caravansites-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Anda perlu membayar untuk menggunakannya"
+                    },
+                    "1": {
+                        "then": "Boleh digunakan tanpa bayaran"
+                    }
+                }
+            },
+            "caravansites-internet": {
+                "mappings": {
+                    "0": {
+                        "then": "Akses Web tersedia"
+                    },
+                    "1": {
+                        "then": "Akses Web tersedia"
+                    },
+                    "2": {
+                        "then": "Tiada akses Web"
+                    }
+                },
+                "question": "Tempat ini berbagi akses Web?"
+            },
+            "caravansites-name": {
+                "question": "Apakah nama tempat ini?",
+                "render": "Tempat ini disebut {name}"
+            },
+            "caravansites-sanitary-dump": {
+                "mappings": {
+                    "0": {
+                        "then": "Tempat ini memiliki tempat pembuangan sanitasi"
+                    },
+                    "1": {
+                        "then": "Tempat ini tidak memiliki tempat pembuangan sampah sanitasi"
+                    }
+                },
+                "question": "Apakah tempat ini memiliki tempat pembuangan sanitasi?"
+            },
+            "caravansites-toilets": {
+                "mappings": {
+                    "0": {
+                        "then": "Tempat sini ada tandas"
+                    },
+                    "1": {
+                        "then": "Tempat sini tiada tandas"
+                    }
+                }
+            },
+            "caravansites-website": {
+                "question": "Tempat sini terada situs web?",
+                "render": "Situs resmi: <a href='{website}'>{website}</a>"
+            }
+        },
+        "title": {
+            "render": "Tempat kemping {name}"
+        }
+    },
     "climbing_area": {
         "tagRenderings": {
             "name": {
@@ -327,6 +389,10 @@
         "title": {
             "render": "Air minum"
         }
+    },
+    "dumpstations": {
+        "description": "Tempat pembuangan sanitasi",
+        "name": "Tempat pembuangan sanitasi"
     },
     "filters": {
         "filter": {

@@ -469,6 +469,118 @@
     "cafe_pub": {
         "name": "咖啡廳與酒吧"
     },
+    "caravansites": {
+        "description": "露營地",
+        "name": "露營地",
+        "presets": {
+            "0": {
+                "description": "新增正式露營地點，通常是設計給過夜的露營者的地點。看起來像是真的露營地或是一般的停車場，而且也許沒有任何指標，但在城鎮被定議地點。如果一般給露營者的停車場並不是用來過夜，則不是露營地點 ",
+                "title": "露營地"
+            }
+        },
+        "tagRenderings": {
+            "caravansites-capacity": {
+                "question": "多少露營者能夠待在這裡？(如果沒有明顯的空間數字或是允許車輛則可以跳過)",
+                "render": "{capacity} 露營者能夠同時使用這個地方"
+            },
+            "caravansites-charge": {
+                "question": "這個地方收多少費用？",
+                "render": "這個地方收費 {charge}"
+            },
+            "caravansites-description": {
+                "question": "你想要為這個地方加一般的敘述嗎？(不要重覆加先前問過或提供的資訊，請保持敘述性-請將意見留在評價)",
+                "render": "這個地方更詳細的資訊： {description}"
+            },
+            "caravansites-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "你要付費才能使用"
+                    },
+                    "1": {
+                        "then": "可以免費使用"
+                    }
+                },
+                "question": "這個地方收費嗎？"
+            },
+            "caravansites-internet": {
+                "mappings": {
+                    "0": {
+                        "then": "這裡有網路連線"
+                    },
+                    "1": {
+                        "then": "這裡有網路連線"
+                    },
+                    "2": {
+                        "then": "這裡沒有網路連線"
+                    }
+                },
+                "question": "這個地方有提網路連線嗎？"
+            },
+            "caravansites-internet-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "你需要額外付費來使用網路連線"
+                    },
+                    "1": {
+                        "then": "你不需要額外付費來使用網路連線"
+                    }
+                },
+                "question": "你需要為網路連線付費嗎？"
+            },
+            "caravansites-long-term": {
+                "mappings": {
+                    "0": {
+                        "then": "有些地方提供長期租用，但你也可以用天計算費用"
+                    },
+                    "1": {
+                        "then": "這裏沒有永久的客人"
+                    },
+                    "2": {
+                        "then": "如果有長期租用合約才有可能待下來(如果你選擇這個地方則會在這份地圖消失)"
+                    }
+                },
+                "question": "這個地方有提供長期租用嗎？"
+            },
+            "caravansites-name": {
+                "question": "這個地方叫做什麼？",
+                "render": "這個地方叫做 {name}"
+            },
+            "caravansites-sanitary-dump": {
+                "mappings": {
+                    "0": {
+                        "then": "這個地方有衛生設施"
+                    },
+                    "1": {
+                        "then": "這個地方沒有衛生設施"
+                    }
+                },
+                "question": "這個地方有衛生設施嗎？"
+            },
+            "caravansites-toilets": {
+                "mappings": {
+                    "0": {
+                        "then": "這個地方有廁所"
+                    },
+                    "1": {
+                        "then": "這個地方並沒有廁所"
+                    }
+                },
+                "question": "這個地方有廁所嗎？"
+            },
+            "caravansites-website": {
+                "question": "這個地方有網站嗎？",
+                "render": "官方網站：<a href='{website}'>{website}</a>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "沒有名稱的露營地"
+                }
+            },
+            "render": "露營地 {name}"
+        }
+    },
     "climbing_club": {
         "description": "攀岩社團或組織",
         "name": "攀岩社團",
@@ -490,6 +602,95 @@
         "name": "單車高速公路",
         "title": {
             "render": "單車高速公路"
+        }
+    },
+    "dumpstations": {
+        "description": "垃圾處理站",
+        "name": "垃圾處理站",
+        "presets": {
+            "0": {
+                "description": "新增垃圾站，這通常是提供露營駕駛丟棄廢水與化學性廁所廢水的地方，也會有飲用水與電力。",
+                "title": "垃圾丟棄站"
+            }
+        },
+        "tagRenderings": {
+            "dumpstations-access": {
+                "mappings": {
+                    "0": {
+                        "then": "你需要網路鑰匙/密碼來使用這個設施"
+                    },
+                    "1": {
+                        "then": "你需要是露營/露營地的客戶才能使用這一地方"
+                    },
+                    "2": {
+                        "then": "任何人都可以使用這個衛生廢棄物站"
+                    },
+                    "3": {
+                        "then": "任何人都可以使用這個垃圾站"
+                    }
+                },
+                "question": "誰可以使用這個垃圾站？"
+            },
+            "dumpstations-charge": {
+                "question": "這個地方收費多少？",
+                "render": "這個地方收費 {charge}"
+            },
+            "dumpstations-chemical-waste": {
+                "mappings": {
+                    "0": {
+                        "then": "你可以在這邊丟棄廁所化學廢棄物"
+                    },
+                    "1": {
+                        "then": "你不能在這邊丟棄廁所化學廢棄物"
+                    }
+                },
+                "question": "你能在這裡丟棄廁所化學廢棄物嗎？"
+            },
+            "dumpstations-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "你需要付費才能使用"
+                    },
+                    "1": {
+                        "then": "這裡可以免費使用"
+                    }
+                },
+                "question": "這個地方需要付費嗎？"
+            },
+            "dumpstations-grey-water": {
+                "mappings": {
+                    "0": {
+                        "then": "你可以在這裡排放洗滌水"
+                    },
+                    "1": {
+                        "then": "你無法在這裡排放洗滌水"
+                    }
+                },
+                "question": "你能在這裡排放洗滌水嗎？"
+            },
+            "dumpstations-network": {
+                "question": "這裡是屬於那個網路的？ (沒有則跳過)",
+                "render": "這車站是屬於 {network} 網路的一部分"
+            },
+            "dumpstations-waterpoint": {
+                "mappings": {
+                    "0": {
+                        "then": "這個地方有取水點"
+                    },
+                    "1": {
+                        "then": "這個地方沒有取水點"
+                    }
+                },
+                "question": "這個地方有取水點嗎？"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "垃圾站"
+                }
+            },
+            "render": "{name} 垃圾站"
         }
     },
     "extinguisher": {

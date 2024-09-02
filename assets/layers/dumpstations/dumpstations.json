@@ -1,0 +1,632 @@
+{
+  "id": "dumpstations",
+  "name": {
+    "en": "Sanitary dump stations",
+    "ru": "Места для слива отходов из туалетных резервуаров",
+    "ja": "衛生ゴミ捨て場",
+    "it": "Luoghi di sversamento delle acque reflue",
+    "fr": "Sites de vidange sanitaire",
+    "pt_BR": "Estações de despejo sanitário",
+    "de": "Sanitäre Entsorgungsstationen",
+    "zh_Hant": "垃圾處理站",
+    "id": "Tempat pembuangan sanitasi",
+    "nl": "Loostplaatsen",
+    "ca": "Estacions d'abocament sanitari",
+    "da": "Sanitære afleveringspladser",
+    "cs": "Sanitární skládky",
+    "es": "Estaciones sanitarias",
+    "pl": "Stacje zrzutów sanitarnych",
+    "pt": "Estações de despejo sanitário"
+  },
+  "minzoom": 7,
+  "source": {
+    "osmTags": {
+      "and": [
+        "amenity=sanitary_dump_station",
+        "vehicle!~no"
+      ]
+    }
+  },
+  "title": {
+    "render": {
+      "en": "Dump station {name}",
+      "ru": "Ассенизационная сливная станция {name}",
+      "ja": "ゴミ捨て場 {name}",
+      "it": "Luogo di sversamento {name}",
+      "fr": "Site de vidange {name}",
+      "pt_BR": "Estação de despejo {name}",
+      "de": "Entsorgungsstation {name}",
+      "zh_Hant": "{name} 垃圾站",
+      "nl": "Loosplaats {name}",
+      "ca": "Estació d'abocament {name}",
+      "es": "Vertedero {name}",
+      "cs": "Odpadní stanice {name}",
+      "pl": "Stacja zrzutów {name}",
+      "pt": "Estação de despejo {name}"
+    },
+    "mappings": [
+      {
+        "if": {
+          "and": [
+            "name="
+          ]
+        },
+        "then": {
+          "en": "Dump station",
+          "ru": "Ассенизационная сливная станция",
+          "ja": "ゴミ捨て場",
+          "it": "Luogo di sversamento",
+          "fr": "Site de vidange",
+          "pt_BR": "Estação de despejo",
+          "de": "Entsorgungsstation",
+          "zh_Hant": "垃圾站",
+          "nl": "Loosplaats",
+          "ca": "Estació d'abocament",
+          "es": "Vertedero",
+          "cs": "Odpadní stanice",
+          "pl": "Stacja zrzutowa",
+          "pt": "Estação de despejo"
+        }
+      }
+    ]
+  },
+  "description": {
+    "en": "Sanitary dump stations",
+    "ru": "Ассенизационные сливные станции",
+    "ja": "衛生ゴミ捨て場",
+    "it": "Luoghi di sversamento delle acque reflue",
+    "fr": "Site de vidange sanitaire",
+    "pt_BR": "Estações de despejo sanitário",
+    "de": "Sanitäre Entsorgungsstationen",
+    "zh_Hant": "垃圾處理站",
+    "id": "Tempat pembuangan sanitasi",
+    "nl": "Loosplaatsen",
+    "ca": "Estacions d'abocament sanitari",
+    "da": "Sanitære afleveringspladser",
+    "cs": "Sanitární skládky",
+    "es": "Vertederos Sanitarios",
+    "pl": "Stacje zrzutów sanitarnych",
+    "pt": "Estações de despejo sanitário"
+  },
+  "tagRenderings": [
+    "images",
+    {
+      "id": "dumpstations-fee",
+      "question": {
+        "en": "Does this place charge a fee?",
+        "ru": "Взимается ли в этом месте плата?",
+        "ja": "ここは有料ですか?",
+        "it": "Questo luogo è a pagamento?",
+        "fr": "Ce site est-il payant ?",
+        "pt_BR": "Este lugar cobra alguma taxa?",
+        "de": "Wird hier eine Gebühr erhoben?",
+        "zh_Hant": "這個地方需要付費嗎？",
+        "nl": "Vraagt deze plaats een vergoeding?",
+        "es": "¿Este lugar cobra una tasa?",
+        "da": "Opkræver dette sted et gebyr?",
+        "ca": "Aquest lloc cobra una taxa?",
+        "cs": "Účtuje si toto místo poplatek?",
+        "nb_NO": "Krever dette stedet et gebyr?",
+        "eu": "Leku horrek tasa bat kobratzen du?",
+        "pl": "Czy to miejsce pobiera opłatę?",
+        "pt": "Este lugar cobra alguma taxa?"
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "fee=yes"
+            ]
+          },
+          "then": {
+            "en": "You need to pay for use",
+            "ru": "За использование нужно платить",
+            "ja": "使用料を支払う必要がある",
+            "it": "A pagamento",
+            "fr": "Ce site demande un paiement",
+            "pt_BR": "Você precisa pagar pelo uso",
+            "de": "Sie müssen für die Nutzung bezahlen",
+            "zh_Hant": "你需要付費才能使用",
+            "nb_NO": "Man må betale for bruk",
+            "nl": "Je moet betalen voor het gebruik",
+            "es": "Tienes que pagar por el uso",
+            "da": "Du skal betale for brug",
+            "ca": "Has de pagar per a utilitzar-ho",
+            "cs": "Použití je zpoplatněno",
+            "eu": "Erabiltzeko ordaindu behar duzu",
+            "pl": "Trzeba zapłacić, aby użyć",
+            "pt": "Deve pagar pelo uso"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "fee=no"
+            ]
+          },
+          "then": {
+            "en": "Can be used for free",
+            "ru": "Можно использовать бесплатно",
+            "ja": "無料で使用可能",
+            "it": "È gratuito",
+            "fr": "Ce site ne demande pas de paiement",
+            "pt_BR": "Pode ser usado gratuitamente",
+            "de": "Nutzung kostenlos",
+            "zh_Hant": "這裡可以免費使用",
+            "nl": "Kan gratis gebruikt worden",
+            "nb_NO": "Kan brukes gratis",
+            "es": "Se puede utilizar gratis",
+            "da": "Kan bruges gratis",
+            "ca": "Es pot utilitzar gratuïtament",
+            "cs": "Lze použít zdarma",
+            "pl": "Może być użyte za darmo",
+            "pt": "Pode ser usado gratuitamente"
+          }
+        }
+      ]
+    },
+    {
+      "render": {
+        "en": "This place charges {charge}",
+        "ru": "Это место взимает {charge}",
+        "ja": "この場所は{charge} が必要",
+        "it": "Ha una tariffa di {charge}",
+        "fr": "Ce site fait payer {charge}",
+        "pt_BR": "Este lugar cobra {charge}",
+        "de": "Die Gebühr beträgt {charge}",
+        "zh_Hant": "這個地方收費 {charge}",
+        "nb_NO": "Dette stedet tar {charge}",
+        "nl": "Deze loosplaats rekent {charge} aan",
+        "es": "Este lugar cobra {charge}",
+        "ca": "Aquest lloc costa {charge}",
+        "da": "Dette sted opkræver {charge}",
+        "cs": "Toto místo si účtuje {charge}",
+        "pl": "To miejsce pobiera opłatę w wysokości {charge}",
+        "pt": "Este lugar cobra {charge}"
+      },
+      "question": {
+        "en": "How much does this place charge?",
+        "ru": "Сколько это место взимает?",
+        "ja": "ここはいくらかかりますか？",
+        "it": "Qual è la tariffa di questo luogo?",
+        "fr": "Combien ce site demande t’il de payer ?",
+        "pt_BR": "Quanto este lugar cobra?",
+        "de": "Wie hoch ist die Gebühr an diesem Ort?",
+        "zh_Hant": "這個地方收費多少？",
+        "nl": "Hoeveel kost het gebruik van deze loosplaats?",
+        "es": "¿Cuánto cobra este lugar?",
+        "ca": "Quant costa aquest lloc?",
+        "da": "Hvor meget koster det at bruge dette sted?",
+        "cs": "Kolik si toto místo účtuje?",
+        "nb_NO": "Hvor mye koster det å bruke dette stedet?",
+        "eu": "Zenbat kobratzen dute toki honetan?",
+        "pl": "Ile kosztuje to miejsce?",
+        "pt": "Quanto este lugar cobra?"
+      },
+      "freeform": {
+        "key": "charge"
+      },
+      "condition": {
+        "and": [
+          "fee=yes"
+        ]
+      },
+      "id": "dumpstations-charge"
+    },
+    {
+      "id": "dumpstations-waterpoint",
+      "question": {
+        "en": "Does this place have a water point?",
+        "ru": "Есть ли в этом месте водоснабжение?",
+        "ja": "この場所には給水所がありますか?",
+        "it": "Questo luogo ha un punto per l'approvvigionamento di acqua?",
+        "fr": "Ce site dispose-t’il d’un point d’eau ?",
+        "pt_BR": "Este lugar tem um ponto de água?",
+        "de": "Hat dieser Ort eine Wasserzapfstelle?",
+        "zh_Hant": "這個地方有取水點嗎？",
+        "nl": "Heeft deze loosplaats een waterkraan om je camper bij te vullen?",
+        "nb_NO": "Har dette stedet et vannkranssted?",
+        "da": "Har dette sted et vandpost?",
+        "ca": "Aquest lloc té un punt d'aigua?",
+        "cs": "Má toto místo vodní zdroj?",
+        "es": "¿Este lugar tiene toma de agua?",
+        "pl": "Czy to miejsce ma punkt z wodą?",
+        "pt": "Este lugar tem um ponto de água?"
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "water_point=yes"
+            ]
+          },
+          "then": {
+            "en": "This place has a water point",
+            "ru": "В этом месте есть водоснабжение",
+            "ja": "この場所には給水所がある",
+            "it": "Questo luogo ha un punto per l'approvvigionamento di acqua",
+            "fr": "Ce site a un point d’eau",
+            "pt_BR": "Este lugar tem um ponto de água",
+            "de": "Dieser Ort hat eine Wasserzapfstelle",
+            "zh_Hant": "這個地方有取水點",
+            "nl": "Deze loosplaats heeft een waterkraan om je camper bij te vullen",
+            "da": "Dette sted har et vandpost",
+            "ca": "Aquest lloc té un punt d'aigua",
+            "cs": "Na tomto místě se nachází vodní zdroj",
+            "nb_NO": "Dette stedet har en vannpost",
+            "es": "Este lugar tiene una toma de agua",
+            "eu": "Leku honek ur-hartune bat du",
+            "pl": "To miejsce ma punkt poboru wody",
+            "pt": "Este lugar tem um ponto de água"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "water_point=no"
+            ]
+          },
+          "then": {
+            "en": "This place does not have a water point",
+            "ru": "В этом месте нет водоснабжения",
+            "ja": "この場所には給水所がない",
+            "it": "Questo luogo non ha un punto per l'approvvigionamento di acqua",
+            "fr": "Ce site n’a pas de point d’eau",
+            "pt_BR": "Este lugar não tem um ponto de água",
+            "de": "Dieser Ort hat keine Wasserzapfstelle",
+            "zh_Hant": "這個地方沒有取水點",
+            "nl": "Deze loosplaats heeft geen waterkraan om je camper bij te vullen",
+            "da": "Dette sted har ikke et vandpost",
+            "ca": "Aquest lloc no té un punt d'aigua",
+            "cs": "Toto místo nemá vodní zdroj",
+            "nb_NO": "Dette stedet har ikke en vannpost",
+            "es": "Este lugar no tiene toma de agua",
+            "pl": "To miejsce nie ma punktu poboru wody",
+            "pt": "Este lugar não tem um ponto de água"
+          }
+        }
+      ]
+    },
+    {
+      "id": "dumpstations-grey-water",
+      "question": {
+        "en": "Can you dispose of grey water here?",
+        "ru": "Можно ли здесь утилизировать серую воду?",
+        "ja": "汚水(雑排水)はこちらで処分できますか?",
+        "it": "Si possono smaltire le acque grigie qui?",
+        "fr": "Est-il possible d’y faire sa vidange des eaux usées ?",
+        "de": "Können Sie hier Brauch-/Grauwasser entsorgen?",
+        "zh_Hant": "你能在這裡排放洗滌水嗎？",
+        "nl": "Mag je hier grijs water lozen?",
+        "da": "Kan du komme af med gråt vand her?",
+        "ca": "Aquí pots desfer-te de les aigües grises?",
+        "cs": "Lze na tomto místě likvidovat šedou vodu?",
+        "nb_NO": "Kan du kvitte deg med gråvann her?",
+        "es": "¿Puede desechar las aguas grises aquí?",
+        "pl": "Czy można tutaj pozbyć się szarej wody?"
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "sanitary_dump_station:grey_water=yes"
+            ]
+          },
+          "then": {
+            "en": "You can dispose of grey water here",
+            "ru": "Вы можете утилизировать серую воду здесь",
+            "ja": "ここで汚水(雑排水)を捨てることができます",
+            "it": "Si possono smaltire le acque grigie qui",
+            "fr": "Il est possible d’y vidanger ses eaux usées",
+            "de": "Hier können Sie Brauch-/Grauwasser entsorgen",
+            "zh_Hant": "你可以在這裡排放洗滌水",
+            "nl": "Je kan hier grijs water lozen",
+            "ca": "Es pot desfer de les aigües grises aquí",
+            "da": "Du kan bortskaffe gråt vand her",
+            "cs": "Zde můžete likvidovat šedou vodu",
+            "nb_NO": "Du kan kvitte deg med gråvann her",
+            "es": "Las aguas grises pueden eliminarse aquí",
+            "pl": "Tutaj możesz pozbyć się szarej wody"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "sanitary_dump_station:grey_water=no"
+            ]
+          },
+          "then": {
+            "en": "You cannot dispose of gray water here",
+            "ru": "Здесь нельзя утилизировать серую воду",
+            "ja": "ここでは汚水(雑排水)を捨てることはできない",
+            "it": "Non si possono smaltire le acque grigie qui",
+            "fr": "Il n’est pas possible d’y vidanger ses eaux usées",
+            "de": "Hier können Sie kein Brauch-/Grauwasser entsorgen",
+            "zh_Hant": "你無法在這裡排放洗滌水",
+            "nl": "Je kan hier geen grijs water lozen",
+            "da": "Du kan ikke bortskaffe gråt vand her",
+            "ca": "Aquí no pots desfer-te de les aigües grises",
+            "cs": "Zde nelze likvidovat šedou vodu",
+            "nb_NO": "Du kan ikke kvitte deg med gråvann her",
+            "es": "No se pueden eliminar las aguas grises aquí",
+            "pl": "Nie można tu wylewać szarej wody"
+          }
+        }
+      ]
+    },
+    {
+      "id": "dumpstations-chemical-waste",
+      "question": {
+        "en": "Can you dispose of chemical toilet waste here?",
+        "ru": "Можно ли здесь утилизировать отходы химических туалетов?",
+        "ja": "携帯トイレのゴミはこちらで処分できますか?",
+        "zh_Hant": "你能在這裡丟棄廁所化學廢棄物嗎？",
+        "it": "È possibile smaltire le acque del WC chimico qui?",
+        "fr": "Est-il possible d’y vidanger ses toilettes chimiques ?",
+        "de": "Können Sie hier chemische Toilettenabfälle entsorgen?",
+        "hu": "Elhelyezhető-e itt a vegyi WC hulladéka?",
+        "nl": "Mag je hier je chemisch toilet lozen?",
+        "da": "Kan man bortskaffe kemisk toiletaffald her?",
+        "ca": "Aquí pots depositar els residus del vàter químic?",
+        "cs": "Lze na tomto místě likvidovat chemický toaletní odpad?",
+        "es": "¿Se pueden tirar aquí los residuos químicos de los aseos?",
+        "pl": "Czy można tutaj wyrzucać odpady chemiczne z toalet?"
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "sanitary_dump_station:chemical_toilet=yes"
+            ]
+          },
+          "then": {
+            "en": "You can dispose of chemical toilet waste here",
+            "ru": "Вы можете утилизировать отходы химических туалетов здесь",
+            "ja": "携帯トイレのゴミはここで処分できます",
+            "zh_Hant": "你可以在這邊丟棄廁所化學廢棄物",
+            "it": "È possibile smaltire le acque del WC chimico qui",
+            "fr": "Il est possible d’y vidanger ses toilettes chimiques",
+            "de": "Hier können Sie chemische Toilettenabfälle entsorgen",
+            "hu": "Itt ártalmatlanítható a vegyi WC hulladéka",
+            "nl": "Je kan hier een chemisch toilet lozen",
+            "da": "Her kan du bortskaffe kemisk toiletaffald",
+            "ca": "Aquí pots depositar els residus del vàter químic",
+            "cs": "Zde můžete likvidovat chemický toaletní odpad",
+            "es": "Puede eliminar aquí los residuos químicos de los aseos",
+            "pl": "Tutaj możesz wyrzucić odpady chemiczne z toalet"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "sanitary_dump_station:chemical_toilet=no"
+            ]
+          },
+          "then": {
+            "en": "You cannot dispose of chemical toilet waste here",
+            "ru": "Здесь нельзя утилизировать отходы химических туалетов",
+            "ja": "ここでは携帯トイレの廃棄物を処分することはできません",
+            "zh_Hant": "你不能在這邊丟棄廁所化學廢棄物",
+            "it": "Non è possibile smaltire le acque del WC chimico qui",
+            "fr": "Il n’est pas possible d’y vidanger ses toilettes chimiques",
+            "de": "Hier können Sie keine chemischen Toilettenabfälle entsorgen",
+            "hu": "Itt nem ártalmatlanítható a vegyi WC hulladéka",
+            "nl": "Je kan hier geen chemisch toilet lozen",
+            "da": "Du kan ikke bortskaffe kemisk toiletaffald her",
+            "ca": "Aquí no pots depositar els residus del vàter químic",
+            "cs": "Zde nemůžete likvidovat chemický toaletní odpad",
+            "es": "Aquí no se pueden tirar los residuos químicos de los aseos",
+            "pl": "Nie można tutaj wyrzucać odpadów chemicznych z toalet"
+          }
+        }
+      ]
+    },
+    {
+      "id": "dumpstations-access",
+      "question": {
+        "en": "Who can use this dump station?",
+        "ja": "このゴミ捨て場は誰が使えるんですか?",
+        "it": "Chi può utilizzare questo luogo di sversamento?",
+        "ru": "Кто может использовать эту станцию утилизации?",
+        "fr": "Qui peut utiliser le site de vidange ?",
+        "de": "Wer darf diese sanitäre Entsorgungsstation nutzen?",
+        "zh_Hant": "誰可以使用這個垃圾站？",
+        "nl": "Wie mag deze loosplaats gebruiken?",
+        "ca": "Qui pot utilitzar aquesta estació d'abocament?",
+        "da": "Hvem kan bruge denne losseplads?",
+        "cs": "Kdo může použít tuto skládku?",
+        "es": "¿Quien puede usar el vertedero?",
+        "eu": "Nork erabil dezake hondakindegia?",
+        "pl": "Kto może korzystać z tej stacji zrzutów?"
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "access=network"
+            ]
+          },
+          "then": {
+            "en": "You need a network key/code to use this",
+            "ja": "これを使用するには、ネットワークキー/コードが必要です",
+            "it": "Servono una chiave o un codice di accesso",
+            "fr": "Un code est nécessaire",
+            "de": "Sie benötigen einen Schlüssel/Code zur Benutzung",
+            "zh_Hant": "你需要網路鑰匙/密碼來使用這個設施",
+            "nl": "Netwerksleutel of -code nodig om dit te gebruiken",
+            "nb_NO": "Du trenger en nettverksnøkkel/kode for å bruke dette",
+            "da": "Du skal bruge en netværksnøgle/-kode for at bruge dette",
+            "ca": "Necessites un codi/clau de xarxa per usar-lo",
+            "cs": "K použití potřebujete síťový klíč/kód",
+            "es": "Necesitas una clave/código de red para usarlo",
+            "pl": "Aby z tego skorzystać, potrzebny jest klucz/kod sieci"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "access=customers"
+            ]
+          },
+          "then": {
+            "en": "You need to be a customer of camping/campersite to use this place",
+            "ja": "この場所を使用するには、キャンプ/キャンプサイトのお客様である必要があります",
+            "it": "È obbligatorio essere un cliente di questo campeggio o di questa area camper",
+            "fr": "Le site est réservés aux clients",
+            "de": "Sie müssen Kunde des Campingplatzes sein, um diesen Ort nutzen zu können",
+            "zh_Hant": "你需要是露營/露營地的客戶才能使用這一地方",
+            "nl": "Je moet een klant van de kampeerplaats zijn om dit te gebruiken",
+            "ca": "Heu de ser client del càmping/lloc d'acampada per utilitzar aquest lloc",
+            "da": "Du skal være kunde hos camping/campingplads for at bruge dette sted",
+            "cs": "Abyste mohli toto místo používat, musíte být zákazníkem kempu/kempovacího místa",
+            "es": "Necesitas ser cliente del camping para usar este lugar",
+            "pl": "Aby korzystać z tego miejsca, musisz być klientem kempingu/miejsca dla kamperów"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "access=public"
+            ]
+          },
+          "then": {
+            "en": "Anyone can use this dump station",
+            "ja": "誰でもこのゴミ捨て場を使用できます",
+            "it": "Chiunque può farne uso",
+            "ru": "Любой может воспользоваться этой станцией утилизации",
+            "fr": "Le site est en libre-service",
+            "de": "Jeder darf diese sanitäre Entsorgungsstation nutzen",
+            "zh_Hant": "任何人都可以使用這個衛生廢棄物站",
+            "nl": "Deze loosplaats is voor iedereen toegankelijk",
+            "ca": "Qualsevol pot utilitzar aquesta estació d'abocament",
+            "da": "Alle kan bruge denne losseplads",
+            "cs": "Tuto skládku může použít kdokoli",
+            "es": "Cualquiera puede utilizar este vertedero",
+            "eu": "Edonork erabil dezake hondakindegi hau",
+            "pl": "Każdy może korzystać z tej stacji zrzutu"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": {
+            "and": [
+              "access=yes"
+            ]
+          },
+          "then": {
+            "en": "Anyone can use this dump station",
+            "ja": "誰でもこのゴミ捨て場を使用できます",
+            "it": "Chiunque può farne uso",
+            "ru": "Любой может воспользоваться этой станцией утилизации",
+            "fr": "Le site est en libre-service",
+            "de": "Jeder darf diese sanitäre Entsorgungsstation nutzen",
+            "zh_Hant": "任何人都可以使用這個垃圾站",
+            "nl": "Deze loosplaats is toegankelijk voor iedereen",
+            "ca": "Qualsevol pot utilitzar aquesta estació d'abocament",
+            "da": "Alle kan bruge denne losseplads",
+            "cs": "Tuto skládku může použít kdokoli",
+            "es": "Cualquiera puede usar este vertedero",
+            "eu": "Edonork erabil dezake hondakindegi hau",
+            "pl": "Każdy może korzystać z tej stacji zrzutu"
+          }
+        }
+      ]
+    },
+    {
+      "render": {
+        "en": "This station is part of network {network}",
+        "ja": "このステーションはネットワーク{network}の一部です",
+        "it": "Questo luogo è parte della rete {network}",
+        "ru": "Эта станция - часть сети {network}",
+        "fr": "Cette station fait parte d’un réseau {network}",
+        "de": "Diese Station gehört zum Verbund/Netzwerk {network}",
+        "zh_Hant": "這車站是屬於 {network} 網路的一部分",
+        "nl": "Deze loosplaats is deel van het {network} netwerk",
+        "es": "Esta estación forma parte de la red {network}",
+        "da": "Denne station er en del af netværket {network}",
+        "ca": "Aquesta estació forma part de la xarxa {network}",
+        "cs": "Tato stanice je součástí sítě {network}",
+        "pl": "Ta stacja jest częścią sieci {network}"
+      },
+      "question": {
+        "en": "What network is this place a part of? (skip if none)",
+        "ja": "ここは何のネットワークの一部ですか?(なければスキップ)",
+        "it": "Di quale rete fa parte questo luogo? (se non fa parte di nessuna rete, salta)",
+        "ru": "К какой сети относится эта станция? (пропустите, если неприменимо)",
+        "fr": "De quel réseau fait-elle partie ? (Passer si aucun)",
+        "de": "Zu welchem Verbund/Netzwerk gehört dieser Ort? (Überspringen, wenn nicht zutreffend)",
+        "zh_Hant": "這裡是屬於那個網路的？ (沒有則跳過)",
+        "nl": "Van welk netwerk vormt deze plaats een deel? (Sla over als het geen deel uitmaakt van een netwerk)",
+        "es": "¿A qué red forma parte este lugar? (saltar si a ninguna)",
+        "da": "Hvilket netværk er dette sted en del af? (spring over hvis ingen)",
+        "ca": "A quina xarxa forma part aquest lloc? (Salta si a cap)",
+        "cs": "Jaké sítě je toto místo součástí? (přeskočte, pokud žádné)",
+        "pl": "Do jakiej sieci należy to miejsce? (pomiń, jeśli nie ma)"
+      },
+      "freeform": {
+        "key": "network"
+      },
+      "id": "dumpstations-network"
+    }
+  ],
+  "presets": [
+    {
+      "tags": [
+        "amenity=sanitary_dump_station"
+      ],
+      "title": {
+        "en": "a sanitary dump station",
+        "ja": "衛生ゴミ捨て場",
+        "it": "una luogo di sversamento delle acque reflue",
+        "fr": "une site de vidange",
+        "de": "eine sanitäre Entsorgungsstation",
+        "zh_Hant": "垃圾丟棄站",
+        "nl": "een loosplaats",
+        "da": "en sanitær afleveringsplads",
+        "ca": "una estació d'abocament sanitari",
+        "cs": "sanitární skládka",
+        "es": "un vertedero sanitario",
+        "pl": "stacja zrzutu sanitarnego"
+      },
+      "description": {
+        "en": "Add a new sanitary dump station. This is a place where camper drivers can dump waste water or chemical toilet waste. Often there's also drinking water and electricity.",
+        "ja": "新しい衛生ゴミ捨て場を追加します。ここは、キャンピングカーの運転手が排水や携帯トイレの廃棄物を捨てることができる場所です。飲料水や電気もあることが多いです。",
+        "it": "Aggiungi un nuovo luogo di sversamento delle acque reflue. Si tratta di luoghi dove chi viaggia in camper può smaltire le acque grigie o le acque nere. Spesso forniscono anche acqua ed elettricità.",
+        "fr": "Ajouter un nouveau site de vidange. Un espace où évacuer ses eaux usées (grises et/ou noires). Généralement alimenté en eau potable et électricité.",
+        "de": "Fügen Sie eine neue sanitäre Entsorgungsstation hinzu. Hier können Camper Abwasser oder chemischen Toilettenabfälle entsorgen. Oft gibt es auch Trinkwasser und Strom.",
+        "zh_Hant": "新增垃圾站，這通常是提供露營駕駛丟棄廢水與化學性廁所廢水的地方，也會有飲用水與電力。",
+        "hu": "Új egészségügyihulldék-lerakó hozzáadása. Ez egy olyan hely, ahol a lakókocsisok a szennyvizet vagy a vegyi WC hulladékát kiüríthetik. Gyakran van ivóvíz és áram is.",
+        "nl": "Voeg een nieuwe loosplaats toe. Dat is een plaats waar campers hun grijs water en toiletten kunnen lozen. Vaak is er ook een kraan om water te tanken en een stopcontact.",
+        "da": "Tilføj en ny sanitær afleveringsplads. Dette er et sted, hvor autocamperchauffører kan dumpe spildevand eller kemisk toiletaffald. Ofte er der også drikkevand og el.",
+        "cs": "Přidejte novou sanitární skládku. Toto je místo, kam mohou řidiči obytných vozů vypouštět odpadní vodu nebo odpad z chemických toalet. Často je zde také dostupná pitná voda a elektřina.",
+        "es": "Añadir un nuevo vertedero sanitario. Se trata de un lugar donde los autocaravanistas pueden verter las aguas residuales o los residuos químicos de los aseos. A menudo también hay agua potable y electricidad.",
+        "ca": "Afegir una nova estació d'abocador sanitari. Aquest és un lloc on els conductors de campers poden abocar aigües residuals o residus de vàter químic. Sovint també hi ha aigua potable i electricitat.",
+        "pl": "Dodaj nową stację zrzutu sanitarnego. To miejsce, w którym kierowcy kamperów mogą wyrzucać ścieki lub odpady z toalet chemicznych. Często jest tam też woda pitna i prąd."
+      }
+    }
+  ],
+  "pointRendering": [
+    {
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/themes/campersite/sanitary_dump_station.svg"
+        }
+      ],
+      "iconSize": "32,32",
+      "location": [
+        "point"
+      ],
+      "anchor": "center"
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#00f",
+      "width": "8"
+    }
+  ]
+}

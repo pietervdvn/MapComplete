@@ -362,6 +362,87 @@
             }
         }
     },
+    "caravansites": {
+        "tagRenderings": {
+            "caravansites-charge": {
+                "question": "pø",
+                "render": "Dette stedet tar {charge}"
+            },
+            "caravansites-description": {
+                "question": "Vil du legge til en generell beskrivelse av dette stedet? (Ikke gjenta info det har blitt spurt om eller som vises ovenfor. Hold det objektivt. Meninger henvises til vurderingene.)",
+                "render": "Flere detaljer om dette stedet: {description}"
+            },
+            "caravansites-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Man må betale for bruk"
+                    },
+                    "1": {
+                        "then": "Kan brukes gratis"
+                    }
+                },
+                "question": "Tar dette stedet en avgift?"
+            },
+            "caravansites-internet": {
+                "mappings": {
+                    "0": {
+                        "then": "Det finnes tilgang til Internett"
+                    },
+                    "1": {
+                        "then": "Det finnes tilgang til Internett"
+                    },
+                    "2": {
+                        "then": "Det finnes ingen tilgang til Internett"
+                    }
+                },
+                "question": "Tilbyr stedet tilgang til Internett?"
+            },
+            "caravansites-internet-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Tilgang til Internett koster ekstra"
+                    },
+                    "1": {
+                        "then": "Man må ikke betale ekstra for tilgang til Internett"
+                    }
+                },
+                "question": "Må man betale for tilgang til Internett?"
+            },
+            "caravansites-long-term": {
+                "mappings": {
+                    "0": {
+                        "then": "Det finnes noen plasser for langtidsleie, men man kan også bruke dem på dagsbasis"
+                    },
+                    "1": {
+                        "then": "Det er ingen permanente gjester her"
+                    },
+                    "2": {
+                        "then": "Det er kun mulig å bo her hvis man har en langtidskontrakt (dette stedet vil forsvinne fra kartet hvis du velger dette)"
+                    }
+                },
+                "question": "Tilbyr dette stedet plasser for langtidsleie?"
+            },
+            "caravansites-name": {
+                "question": "Hva heter dette stedet?",
+                "render": "Dette stedet heter {name}"
+            },
+            "caravansites-toilets": {
+                "mappings": {
+                    "0": {
+                        "then": "Dette stedet har toalettfasiliteter"
+                    },
+                    "1": {
+                        "then": "Dette stedet har ikke toalettfasiliteter"
+                    }
+                },
+                "question": "Har dette stedet toaletter?"
+            },
+            "caravansites-website": {
+                "question": "Har dette stedet en nettside?",
+                "render": "Offisiell nettside: <a href='{website}'>{website}</a>"
+            }
+        }
+    },
     "climbing": {
         "tagRenderings": {
             "bouldering": {
@@ -448,6 +529,54 @@
         "name": "sykkelmotorveier",
         "title": {
             "render": "sykkelmotorvei"
+        }
+    },
+    "dumpstations": {
+        "tagRenderings": {
+            "dumpstations-access": {
+                "mappings": {
+                    "0": {
+                        "then": "Du trenger en nettverksnøkkel/kode for å bruke dette"
+                    }
+                }
+            },
+            "dumpstations-charge": {
+                "question": "Hvor mye koster det å bruke dette stedet?",
+                "render": "Dette stedet tar {charge}"
+            },
+            "dumpstations-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Man må betale for bruk"
+                    },
+                    "1": {
+                        "then": "Kan brukes gratis"
+                    }
+                },
+                "question": "Krever dette stedet et gebyr?"
+            },
+            "dumpstations-grey-water": {
+                "mappings": {
+                    "0": {
+                        "then": "Du kan kvitte deg med gråvann her"
+                    },
+                    "1": {
+                        "then": "Du kan ikke kvitte deg med gråvann her"
+                    }
+                },
+                "question": "Kan du kvitte deg med gråvann her?"
+            },
+            "dumpstations-waterpoint": {
+                "mappings": {
+                    "0": {
+                        "then": "Dette stedet har en vannpost"
+                    },
+                    "1": {
+                        "then": "Dette stedet har ikke en vannpost"
+                    }
+                },
+                "question": "Har dette stedet et vannkranssted?"
+            }
         }
     },
     "extinguisher": {

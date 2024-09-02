@@ -1625,6 +1625,118 @@
             "render": "Autoverhuur"
         }
     },
+    "caravansites": {
+        "description": "camperplaatsen",
+        "name": "Camperplaatsen",
+        "presets": {
+            "0": {
+                "description": "Voeg een nieuwe officiële camperplaats toe. Dit zijn speciaal aangeduide plaatsen waar het toegestaan is om te overnachten met een camper. Ze kunnen er uitzien als een parking, of soms eerder als een camping. Soms staan ze niet ter plaatse aangeduid, maar heeft de gemeente wel degelijk beslist dat dit een camperplaats is. Een parking voor campers waar je niet mag overnachten is géén camperplaats. ",
+                "title": "een camperplaats"
+            }
+        },
+        "tagRenderings": {
+            "caravansites-capacity": {
+                "question": "Hoeveel campers kunnen hier overnachten? (sla dit over als er geen duidelijk aantal plaatsen of aangeduid maximum is)",
+                "render": "{capacity} campers kunnen deze plaats tegelijk gebruiken"
+            },
+            "caravansites-charge": {
+                "question": "Hoeveel kost deze plaats?",
+                "render": "Deze plaats vraagt {charge}"
+            },
+            "caravansites-description": {
+                "question": "Wil je graag een algemene beschrijving toevoegen van deze plaats? (Herhaal hier niet de antwoorden op de vragen die reeds gesteld zijn. Hou het objectief - je kan je mening geven via een review)",
+                "render": "Meer details over deze plaats: {description}"
+            },
+            "caravansites-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Gebruik is betalend"
+                    },
+                    "1": {
+                        "then": "Kan gratis gebruikt worden"
+                    }
+                },
+                "question": "Moet men betalen om deze camperplaats te gebruiken?"
+            },
+            "caravansites-internet": {
+                "mappings": {
+                    "0": {
+                        "then": "Er is internettoegang"
+                    },
+                    "1": {
+                        "then": "Er is internettoegang"
+                    },
+                    "2": {
+                        "then": "Er is geen internettoegang"
+                    }
+                },
+                "question": "Biedt deze plaats internettoegang?"
+            },
+            "caravansites-internet-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Je moet extra betalen voor internettoegang"
+                    },
+                    "1": {
+                        "then": "Je hoeft niet extra te betalen voor internettoegang"
+                    }
+                },
+                "question": "Moet je betalen voor internettoegang?"
+            },
+            "caravansites-long-term": {
+                "mappings": {
+                    "0": {
+                        "then": "Er zijn enkele plaatsen om op lange termijn te huren, maar je kan ook enkele dagen blijven"
+                    },
+                    "1": {
+                        "then": "Hier wonen geen permanente gasten"
+                    },
+                    "2": {
+                        "then": "Hier kan je enkel verblijven met een langetermijnscontract (deze plaats verdwijnt van deze kaart als je dit kiest)"
+                    }
+                },
+                "question": "Kan men hier plekken huren voor langere termijn?"
+            },
+            "caravansites-name": {
+                "question": "Wat is de naam van deze plaats?",
+                "render": "Deze plaats heet {name}"
+            },
+            "caravansites-sanitary-dump": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze plaats heeft een loosplaats"
+                    },
+                    "1": {
+                        "then": "Deze plaats heeft geen loosplaats"
+                    }
+                },
+                "question": "Heeft deze plaats een loosplaats?"
+            },
+            "caravansites-toilets": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze plaats heeft toiletten"
+                    },
+                    "1": {
+                        "then": "Deze plaats heeft geen toiletten"
+                    }
+                },
+                "question": "Heeft deze plaats toiletten?"
+            },
+            "caravansites-website": {
+                "question": "Heeft deze plaats een website?",
+                "render": "Officiële website: : <a href='{website}'>{website}</a>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Camper site"
+                }
+            },
+            "render": "Camperplaats {name}"
+        }
+    },
     "charging_station": {
         "description": "Oplaadpunten",
         "filter": {
@@ -3569,6 +3681,95 @@
         },
         "title": {
             "render": "Drinkbaar water"
+        }
+    },
+    "dumpstations": {
+        "description": "Loosplaatsen",
+        "name": "Loostplaatsen",
+        "presets": {
+            "0": {
+                "description": "Voeg een nieuwe loosplaats toe. Dat is een plaats waar campers hun grijs water en toiletten kunnen lozen. Vaak is er ook een kraan om water te tanken en een stopcontact.",
+                "title": "een loosplaats"
+            }
+        },
+        "tagRenderings": {
+            "dumpstations-access": {
+                "mappings": {
+                    "0": {
+                        "then": "Netwerksleutel of -code nodig om dit te gebruiken"
+                    },
+                    "1": {
+                        "then": "Je moet een klant van de kampeerplaats zijn om dit te gebruiken"
+                    },
+                    "2": {
+                        "then": "Deze loosplaats is voor iedereen toegankelijk"
+                    },
+                    "3": {
+                        "then": "Deze loosplaats is toegankelijk voor iedereen"
+                    }
+                },
+                "question": "Wie mag deze loosplaats gebruiken?"
+            },
+            "dumpstations-charge": {
+                "question": "Hoeveel kost het gebruik van deze loosplaats?",
+                "render": "Deze loosplaats rekent {charge} aan"
+            },
+            "dumpstations-chemical-waste": {
+                "mappings": {
+                    "0": {
+                        "then": "Je kan hier een chemisch toilet lozen"
+                    },
+                    "1": {
+                        "then": "Je kan hier geen chemisch toilet lozen"
+                    }
+                },
+                "question": "Mag je hier je chemisch toilet lozen?"
+            },
+            "dumpstations-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Je moet betalen voor het gebruik"
+                    },
+                    "1": {
+                        "then": "Kan gratis gebruikt worden"
+                    }
+                },
+                "question": "Vraagt deze plaats een vergoeding?"
+            },
+            "dumpstations-grey-water": {
+                "mappings": {
+                    "0": {
+                        "then": "Je kan hier grijs water lozen"
+                    },
+                    "1": {
+                        "then": "Je kan hier geen grijs water lozen"
+                    }
+                },
+                "question": "Mag je hier grijs water lozen?"
+            },
+            "dumpstations-network": {
+                "question": "Van welk netwerk vormt deze plaats een deel? (Sla over als het geen deel uitmaakt van een netwerk)",
+                "render": "Deze loosplaats is deel van het {network} netwerk"
+            },
+            "dumpstations-waterpoint": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze loosplaats heeft een waterkraan om je camper bij te vullen"
+                    },
+                    "1": {
+                        "then": "Deze loosplaats heeft geen waterkraan om je camper bij te vullen"
+                    }
+                },
+                "question": "Heeft deze loosplaats een waterkraan om je camper bij te vullen?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Loosplaats"
+                }
+            },
+            "render": "Loosplaats {name}"
         }
     },
     "elevator": {

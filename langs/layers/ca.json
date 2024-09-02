@@ -1696,6 +1696,118 @@
             "render": "Lloguer de cotxes"
         }
     },
+    "caravansites": {
+        "description": "llocs d'acampada",
+        "name": "Llocs d'acampada",
+        "presets": {
+            "0": {
+                "description": "Afig un nou lloc d'acampada oficial. Són llocs designats per a passar la nit amb la teua caravana. Poden semblar-se a un càmping real o simplement a un aparcament. Pot ser que no estiguen senyalitzats en absolut, sinó que simplement estiguen definits per una decisió municipal. Un aparcament normal destinat als acampadors en el qual no s'espera que es passe la nit, no és un càmping. ",
+                "title": "un lloc d'acampada"
+            }
+        },
+        "tagRenderings": {
+            "caravansites-capacity": {
+                "question": "Quants acampadors poden allotjar-se ací? (ometre si no hi ha un nombre evident de places o vehicles permesos)",
+                "render": "{capacity} els acampadors poden utilitzar aquest lloc al mateix temps"
+            },
+            "caravansites-charge": {
+                "question": "Quant cobra aquest lloc?",
+                "render": "Aquest lloc cobra {charge}"
+            },
+            "caravansites-description": {
+                "question": "T'agradaria afegir una descripció general d'aquest lloc? (No repeteixis informació prèviament preguntada o mostrada a dalt. Si us plau mantín-la objectiva - les opinions van en les «reviews»)",
+                "render": "Més detalls sobre aquest lloc: {description}"
+            },
+            "caravansites-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Heu de pagar per l'ús"
+                    },
+                    "1": {
+                        "then": "Es pot utilitzar gratuïtament"
+                    }
+                },
+                "question": "Aquest lloc cobra una taxa?"
+            },
+            "caravansites-internet": {
+                "mappings": {
+                    "0": {
+                        "then": "Hi ha accés a internet"
+                    },
+                    "1": {
+                        "then": "Hi ha accés a Internet"
+                    },
+                    "2": {
+                        "then": "No hi ha accés a Internet"
+                    }
+                },
+                "question": "Aquest lloc proporciona accés a Internet?"
+            },
+            "caravansites-internet-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Heu de pagar un extra per accedir a Internet"
+                    },
+                    "1": {
+                        "then": "No cal pagar extra per l'accés a Internet"
+                    }
+                },
+                "question": "Has de pagar per l'accés a Internet?"
+            },
+            "caravansites-long-term": {
+                "mappings": {
+                    "0": {
+                        "then": "Hi ha alguns punts per al lloguer a llarg termini, però també es pot romandre diàriament"
+                    },
+                    "1": {
+                        "then": "No hi han hostes permanents aquí"
+                    },
+                    "2": {
+                        "then": "Només és possible romandre aquí si teniu un contracte a llarg termini (aquest lloc desapareixerà d'aquest mapa si trieu això)"
+                    }
+                },
+                "question": "Aquest lloc ofereix llocs de lloguer a llarg termini?"
+            },
+            "caravansites-name": {
+                "question": "Com es diu aquest lloc?",
+                "render": "Aquest lloc s'anomena {name}"
+            },
+            "caravansites-sanitary-dump": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest lloc té una estació d'abocament sanitari"
+                    },
+                    "1": {
+                        "then": "Aquest lloc no té una estació d'abocament sanitari"
+                    }
+                },
+                "question": "Aquest lloc té una estació d'abocament sanitari?"
+            },
+            "caravansites-toilets": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest lloc té lavabos"
+                    },
+                    "1": {
+                        "then": "Aquest lloc no té lavabos"
+                    }
+                },
+                "question": "Aquest lloc té lavabos?"
+            },
+            "caravansites-website": {
+                "question": "Aquest lloc té un lloc web?",
+                "render": "Lloc web oficial: <a href='{website}'>{website}</a>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Lloc d'acampada sense nom"
+                }
+            },
+            "render": "Lloc d'acampada {name}"
+        }
+    },
     "charging_station": {
         "description": "Una estació de càrrega",
         "filter": {
@@ -3011,6 +3123,95 @@
         },
         "title": {
             "render": "Aigua potable"
+        }
+    },
+    "dumpstations": {
+        "description": "Estacions d'abocament sanitari",
+        "name": "Estacions d'abocament sanitari",
+        "presets": {
+            "0": {
+                "description": "Afegir una nova estació d'abocador sanitari. Aquest és un lloc on els conductors de campers poden abocar aigües residuals o residus de vàter químic. Sovint també hi ha aigua potable i electricitat.",
+                "title": "una estació d'abocament sanitari"
+            }
+        },
+        "tagRenderings": {
+            "dumpstations-access": {
+                "mappings": {
+                    "0": {
+                        "then": "Necessites un codi/clau de xarxa per usar-lo"
+                    },
+                    "1": {
+                        "then": "Heu de ser client del càmping/lloc d'acampada per utilitzar aquest lloc"
+                    },
+                    "2": {
+                        "then": "Qualsevol pot utilitzar aquesta estació d'abocament"
+                    },
+                    "3": {
+                        "then": "Qualsevol pot utilitzar aquesta estació d'abocament"
+                    }
+                },
+                "question": "Qui pot utilitzar aquesta estació d'abocament?"
+            },
+            "dumpstations-charge": {
+                "question": "Quant costa aquest lloc?",
+                "render": "Aquest lloc costa {charge}"
+            },
+            "dumpstations-chemical-waste": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquí pots depositar els residus del vàter químic"
+                    },
+                    "1": {
+                        "then": "Aquí no pots depositar els residus del vàter químic"
+                    }
+                },
+                "question": "Aquí pots depositar els residus del vàter químic?"
+            },
+            "dumpstations-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Has de pagar per a utilitzar-ho"
+                    },
+                    "1": {
+                        "then": "Es pot utilitzar gratuïtament"
+                    }
+                },
+                "question": "Aquest lloc cobra una taxa?"
+            },
+            "dumpstations-grey-water": {
+                "mappings": {
+                    "0": {
+                        "then": "Es pot desfer de les aigües grises aquí"
+                    },
+                    "1": {
+                        "then": "Aquí no pots desfer-te de les aigües grises"
+                    }
+                },
+                "question": "Aquí pots desfer-te de les aigües grises?"
+            },
+            "dumpstations-network": {
+                "question": "A quina xarxa forma part aquest lloc? (Salta si a cap)",
+                "render": "Aquesta estació forma part de la xarxa {network}"
+            },
+            "dumpstations-waterpoint": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest lloc té un punt d'aigua"
+                    },
+                    "1": {
+                        "then": "Aquest lloc no té un punt d'aigua"
+                    }
+                },
+                "question": "Aquest lloc té un punt d'aigua?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Estació d'abocament"
+                }
+            },
+            "render": "Estació d'abocament {name}"
         }
     },
     "elevator": {

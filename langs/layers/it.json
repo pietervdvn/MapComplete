@@ -886,6 +886,118 @@
             "render": "Oggetto relativo alle bici"
         }
     },
+    "caravansites": {
+        "description": "Aree camper",
+        "name": "Aree camper",
+        "presets": {
+            "0": {
+                "description": "Aggiungi una nuova area di sosta ufficiale per camper. Si tratta di aree destinate alla sosta notturna dei camper. Potrebbe trattarsi di luoghi di campeggio o semplici parcheggi. Potrebbero anche non essere segnalati sul posto, ma semplicemente indicati in una delibera comunale. Un parcheggio destinato ai camper in cui non è però consentito trascorrere la notte -non- va considerato un'area di sosta per camper. ",
+                "title": "una luogo di campeggio"
+            }
+        },
+        "tagRenderings": {
+            "caravansites-capacity": {
+                "question": "Quanti camper possono stare qua? (non rispondere se non c’è un numero chario di spazi o veicoli ammessi)",
+                "render": "{capacity} camper possono usare questo luogo al contempo"
+            },
+            "caravansites-charge": {
+                "question": "Quanto costa questo luogo?",
+                "render": "Questo luogo costa {charge}"
+            },
+            "caravansites-description": {
+                "question": "Desideri aggiungere una descrizione del luogo? (Non vanno ripetute informazioni già richieste e mostrate precedentemente. Si prega di attenersi a dati oggettivi - le opinioni vanno nelle recensioni)",
+                "render": "Maggiori dettagli su questo luogo: {description}"
+            },
+            "caravansites-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Devi pagare per usarlo"
+                    },
+                    "1": {
+                        "then": "Può essere usato gratuitamente"
+                    }
+                },
+                "question": "Ha una tariffa questo luogo?"
+            },
+            "caravansites-internet": {
+                "mappings": {
+                    "0": {
+                        "then": "C’è l’accesso a internet"
+                    },
+                    "1": {
+                        "then": "C’è l’accesso a internet"
+                    },
+                    "2": {
+                        "then": "Non c’è l’accesso a internet"
+                    }
+                },
+                "question": "Questo luogo fornisce l’accesso a internet?"
+            },
+            "caravansites-internet-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Occorre pagare un extra per avere l’accesso a internet"
+                    },
+                    "1": {
+                        "then": "Non occorre pagare per l’accesso a internet"
+                    }
+                },
+                "question": "Occorre pagare per avere l’accesso a internet?"
+            },
+            "caravansites-long-term": {
+                "mappings": {
+                    "0": {
+                        "then": "Ci sono spazi per il noleggio a lungo termine, ma puoi anche pagare per singola giornata"
+                    },
+                    "1": {
+                        "then": "Non ci sono ospiti a lungo termine qui"
+                    },
+                    "2": {
+                        "then": "Puoi soggiornare qui solo se hai un contratto a lungo termine (se selezioni questa opzione, questo luogo sarà rimosso da questa mappa)"
+                    }
+                },
+                "question": "Questo luogo offre spazi per il noleggio a lungo termine?"
+            },
+            "caravansites-name": {
+                "question": "Come viene chiamato questo luogo?",
+                "render": "Questo luogo è chiamato {name}"
+            },
+            "caravansites-sanitary-dump": {
+                "mappings": {
+                    "0": {
+                        "then": "Questo luogo ha una stazione per lo scarico delle acque"
+                    },
+                    "1": {
+                        "then": "Questo luogo non ha una stazione per lo scarico delle acque"
+                    }
+                },
+                "question": "Questo luogo ha una stazione per lo scarico delle acque?"
+            },
+            "caravansites-toilets": {
+                "mappings": {
+                    "0": {
+                        "then": "Questo luogo ha i servizi igienici"
+                    },
+                    "1": {
+                        "then": "Questo luogo non ha i servizi igienici"
+                    }
+                },
+                "question": "Questo luogo dispone di servizi igienici?"
+            },
+            "caravansites-website": {
+                "question": "Questo luogo ha un sito web?",
+                "render": "Sito web ufficiale: <a href='{website}'>{website}</a>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Area camper senza nome"
+                }
+            },
+            "render": "Area camper {name}"
+        }
+    },
     "charging_station": {
         "filter": {
             "0": {
@@ -1376,6 +1488,95 @@
         },
         "title": {
             "render": "Acqua potabile"
+        }
+    },
+    "dumpstations": {
+        "description": "Luoghi di sversamento delle acque reflue",
+        "name": "Luoghi di sversamento delle acque reflue",
+        "presets": {
+            "0": {
+                "description": "Aggiungi un nuovo luogo di sversamento delle acque reflue. Si tratta di luoghi dove chi viaggia in camper può smaltire le acque grigie o le acque nere. Spesso forniscono anche acqua ed elettricità.",
+                "title": "una luogo di sversamento delle acque reflue"
+            }
+        },
+        "tagRenderings": {
+            "dumpstations-access": {
+                "mappings": {
+                    "0": {
+                        "then": "Servono una chiave o un codice di accesso"
+                    },
+                    "1": {
+                        "then": "È obbligatorio essere un cliente di questo campeggio o di questa area camper"
+                    },
+                    "2": {
+                        "then": "Chiunque può farne uso"
+                    },
+                    "3": {
+                        "then": "Chiunque può farne uso"
+                    }
+                },
+                "question": "Chi può utilizzare questo luogo di sversamento?"
+            },
+            "dumpstations-charge": {
+                "question": "Qual è la tariffa di questo luogo?",
+                "render": "Ha una tariffa di {charge}"
+            },
+            "dumpstations-chemical-waste": {
+                "mappings": {
+                    "0": {
+                        "then": "È possibile smaltire le acque del WC chimico qui"
+                    },
+                    "1": {
+                        "then": "Non è possibile smaltire le acque del WC chimico qui"
+                    }
+                },
+                "question": "È possibile smaltire le acque del WC chimico qui?"
+            },
+            "dumpstations-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "A pagamento"
+                    },
+                    "1": {
+                        "then": "È gratuito"
+                    }
+                },
+                "question": "Questo luogo è a pagamento?"
+            },
+            "dumpstations-grey-water": {
+                "mappings": {
+                    "0": {
+                        "then": "Si possono smaltire le acque grigie qui"
+                    },
+                    "1": {
+                        "then": "Non si possono smaltire le acque grigie qui"
+                    }
+                },
+                "question": "Si possono smaltire le acque grigie qui?"
+            },
+            "dumpstations-network": {
+                "question": "Di quale rete fa parte questo luogo? (se non fa parte di nessuna rete, salta)",
+                "render": "Questo luogo è parte della rete {network}"
+            },
+            "dumpstations-waterpoint": {
+                "mappings": {
+                    "0": {
+                        "then": "Questo luogo ha un punto per l'approvvigionamento di acqua"
+                    },
+                    "1": {
+                        "then": "Questo luogo non ha un punto per l'approvvigionamento di acqua"
+                    }
+                },
+                "question": "Questo luogo ha un punto per l'approvvigionamento di acqua?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Luogo di sversamento"
+                }
+            },
+            "render": "Luogo di sversamento {name}"
         }
     },
     "extinguisher": {
