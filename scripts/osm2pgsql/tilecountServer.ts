@@ -3,7 +3,6 @@ import { Server } from "../server"
 import Script from "../Script"
 import { OsmPoiDatabase } from "./osmPoiDatabase"
 
-
 class CachedSqlCount {
     private readonly _cache: Record<
         string,
