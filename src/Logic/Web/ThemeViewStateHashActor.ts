@@ -27,7 +27,6 @@ export default class ThemeViewStateHashActor {
      * Note that there is no "real" way to intercept the back button, we can only detect the removal of the hash.
      * As such, we use a change in the hash to close the appropriate windows
      *
-     * @param state
      */
     constructor(state: ThemeViewState) {
         this._state = state
@@ -120,26 +119,25 @@ export default class ThemeViewStateHashActor {
      * 1. Selected element ID
      * 2. A selected 'page' from the menu
      *
-     * returns 'true' if a hash was set
      */
-    private setHash(): boolean {
+    private setHash(): void {
+        // Important ! This function is called by 'addCallback' and might thus never return 'true' or it will be unregistered
         this.isUpdatingHash = true
         try {
-
             const selectedElement = this._state.selectedElement.data
             if (selectedElement) {
                 Hash.hash.set(selectedElement.properties.id)
-                return true
+                return
             }
             for (const page in this._state.guistate.pageStates) {
                 const toggle = this._state.guistate.pageStates[page]
                 if (toggle.data) {
                     Hash.hash.set(page)
-                    return true
+                    return
                 }
             }
             Hash.hash.set(undefined)
-            return false
+            return
         } finally {
             this.isUpdatingHash = false
         }

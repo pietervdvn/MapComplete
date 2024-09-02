@@ -405,5 +405,6 @@
       ],
       "render": "{direction_indicator()}"
     }
-  ]
+  ],
+  "allowMove": false
 }

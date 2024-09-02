@@ -91,5 +91,6 @@
       },
       "id": "name"
     }
-  ]
+  ],
+  "allowMove": true
 }

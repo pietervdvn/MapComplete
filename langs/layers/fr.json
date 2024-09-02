@@ -1652,6 +1652,118 @@
             "render": "Société de location de véhicules"
         }
     },
+    "caravansites": {
+        "description": "campings",
+        "name": "Campings",
+        "presets": {
+            "0": {
+                "description": "Ajouter une nouvelle aire officielle pour campings-cars, destinée à y passer la nuit avec un camping-car. Elle ne nécessite pas d’infrastructures particulières et peut être simplement désignée sous arrêté municipal, un simple parking pour camping-cars non destiné au stationnement de nuit ne rentre pas dans cette catégorie ",
+                "title": "une aire de camping"
+            }
+        },
+        "tagRenderings": {
+            "caravansites-capacity": {
+                "question": "Combien de personnes peuvent camper ici ? (Passez s’il n’y a pas de places délimitées)",
+                "render": "{capacity} personnes peuvent utiliser cet espace en même temps"
+            },
+            "caravansites-charge": {
+                "question": "Combien coûte cet endroit ?",
+                "render": "Ce site fait payer {charge}"
+            },
+            "caravansites-description": {
+                "question": "Souhaitez-vous ajouter une description générale du lieu ? (Ne pas répéter les informations précédentes et rester neutre, les opinions vont dans les avis)",
+                "render": "Plus de détails à propos du site : {description}"
+            },
+            "caravansites-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "L’utilisation est payante"
+                    },
+                    "1": {
+                        "then": "Peut être utilisé gratuitement"
+                    }
+                },
+                "question": "Cet endroit est-il payant ?"
+            },
+            "caravansites-internet": {
+                "mappings": {
+                    "0": {
+                        "then": "Il y a un accès internet"
+                    },
+                    "1": {
+                        "then": "Il y a un accès internet"
+                    },
+                    "2": {
+                        "then": "Il n’y a pas d’accès internet"
+                    }
+                },
+                "question": "Cet endroit offre-t-il un accès à Internet ?"
+            },
+            "caravansites-internet-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "L’accès internet est en supplément"
+                    },
+                    "1": {
+                        "then": "L’accès internet est inclus"
+                    }
+                },
+                "question": "L’accès internet est-il payant ?"
+            },
+            "caravansites-long-term": {
+                "mappings": {
+                    "0": {
+                        "then": "Il est possible d’y passer seulement une nuit"
+                    },
+                    "1": {
+                        "then": "Il n’y a pas de résidents permanents"
+                    },
+                    "2": {
+                        "then": "C’est possible sous contrat (Cette option fera disparaître le site de la carte)"
+                    }
+                },
+                "question": "Ce site permet-il la location longue durée ?"
+            },
+            "caravansites-name": {
+                "question": "Comment s'appelle cet endroit ?",
+                "render": "Cet endroit s'appelle {name}"
+            },
+            "caravansites-sanitary-dump": {
+                "mappings": {
+                    "0": {
+                        "then": "Cet endroit a une station de vidange sanitaire"
+                    },
+                    "1": {
+                        "then": "Ce site ne possède pas de lieu de vidange"
+                    }
+                },
+                "question": "Ce site possède-t’il un lieu de vidange ?"
+            },
+            "caravansites-toilets": {
+                "mappings": {
+                    "0": {
+                        "then": "Ce site a des toilettes"
+                    },
+                    "1": {
+                        "then": "Ce site n’a pas de toilettes"
+                    }
+                },
+                "question": "Y-a-t’il des toilettes sur le site ?"
+            },
+            "caravansites-website": {
+                "question": "Ce lieu a-t’il un site internet ?",
+                "render": "Site officiel : <a href='{website}'>{website}</a>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Site pour camping-cars sans nom"
+                }
+            },
+            "render": "Site pour camping-cars {name}"
+        }
+    },
     "charging_station": {
         "description": "Une station de recharge",
         "filter": {
@@ -2924,6 +3036,95 @@
         },
         "title": {
             "render": "Eau potable"
+        }
+    },
+    "dumpstations": {
+        "description": "Site de vidange sanitaire",
+        "name": "Sites de vidange sanitaire",
+        "presets": {
+            "0": {
+                "description": "Ajouter un nouveau site de vidange. Un espace où évacuer ses eaux usées (grises et/ou noires). Généralement alimenté en eau potable et électricité.",
+                "title": "une site de vidange"
+            }
+        },
+        "tagRenderings": {
+            "dumpstations-access": {
+                "mappings": {
+                    "0": {
+                        "then": "Un code est nécessaire"
+                    },
+                    "1": {
+                        "then": "Le site est réservés aux clients"
+                    },
+                    "2": {
+                        "then": "Le site est en libre-service"
+                    },
+                    "3": {
+                        "then": "Le site est en libre-service"
+                    }
+                },
+                "question": "Qui peut utiliser le site de vidange ?"
+            },
+            "dumpstations-charge": {
+                "question": "Combien ce site demande t’il de payer ?",
+                "render": "Ce site fait payer {charge}"
+            },
+            "dumpstations-chemical-waste": {
+                "mappings": {
+                    "0": {
+                        "then": "Il est possible d’y vidanger ses toilettes chimiques"
+                    },
+                    "1": {
+                        "then": "Il n’est pas possible d’y vidanger ses toilettes chimiques"
+                    }
+                },
+                "question": "Est-il possible d’y vidanger ses toilettes chimiques ?"
+            },
+            "dumpstations-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Ce site demande un paiement"
+                    },
+                    "1": {
+                        "then": "Ce site ne demande pas de paiement"
+                    }
+                },
+                "question": "Ce site est-il payant ?"
+            },
+            "dumpstations-grey-water": {
+                "mappings": {
+                    "0": {
+                        "then": "Il est possible d’y vidanger ses eaux usées"
+                    },
+                    "1": {
+                        "then": "Il n’est pas possible d’y vidanger ses eaux usées"
+                    }
+                },
+                "question": "Est-il possible d’y faire sa vidange des eaux usées ?"
+            },
+            "dumpstations-network": {
+                "question": "De quel réseau fait-elle partie ? (Passer si aucun)",
+                "render": "Cette station fait parte d’un réseau {network}"
+            },
+            "dumpstations-waterpoint": {
+                "mappings": {
+                    "0": {
+                        "then": "Ce site a un point d’eau"
+                    },
+                    "1": {
+                        "then": "Ce site n’a pas de point d’eau"
+                    }
+                },
+                "question": "Ce site dispose-t’il d’un point d’eau ?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Site de vidange"
+                }
+            },
+            "render": "Site de vidange {name}"
         }
     },
     "elevator": {

@@ -226,7 +226,6 @@
             "createYourOwnTheme": "Utwórz od podstaw własny temat MapComplete",
             "enterToOpen": "Naciśnij Enter, aby otworzyć temat",
             "hiddenExplanation": "Te tematy są dostępne tylko dla osób mających odnośnik. Odkryłeś {hidden_discovered} z {total_hidden} ukrytych tematów.",
-            "intro": "<h3>Więcej map tematycznych?</h3>Czy lubisz zbierać dane geograficzne? <br/>Dostępnych jest więcej tematów.",
             "noMatchingThemes": "Żaden temat nie spełnia kryteriów wyszukiwania",
             "noSearch": "Pokaż wszystkie tematy",
             "previouslyHiddenTitle": "Wcześniej odwiedzane ukryte tematy",

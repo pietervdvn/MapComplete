@@ -1498,8 +1498,16 @@ input[type="range"].range-lg::-moz-range-thumb {
   margin-left: 0.25rem;
 }
 
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
 .ml-2 {
   margin-left: 0.5rem;
+}
+
+.ml-4 {
+  margin-left: 1rem;
 }
 
 .mb-2 {
@@ -1516,14 +1524,6 @@ input[type="range"].range-lg::-moz-range-thumb {
 
 .mb-1 {
   margin-bottom: 0.25rem;
-}
-
-.ml-4 {
-  margin-left: 1rem;
-}
-
-.mt-2 {
-  margin-top: 0.5rem;
 }
 
 .mt-8 {
@@ -1753,6 +1753,10 @@ input[type="range"].range-lg::-moz-range-thumb {
   height: 1.25rem;
 }
 
+.h-10 {
+  height: 2.5rem;
+}
+
 .h-14 {
   height: 3.5rem;
 }
@@ -1775,10 +1779,6 @@ input[type="range"].range-lg::-moz-range-thumb {
 
 .h-80 {
   height: 20rem;
-}
-
-.h-10 {
-  height: 2.5rem;
 }
 
 .h-20 {
@@ -2011,6 +2011,10 @@ input[type="range"].range-lg::-moz-range-thumb {
   width: 1.25rem;
 }
 
+.w-10 {
+  width: 2.5rem;
+}
+
 .w-14 {
   width: 3.5rem;
 }
@@ -2031,10 +2035,6 @@ input[type="range"].range-lg::-moz-range-thumb {
 .w-min {
   width: -webkit-min-content;
   width: min-content;
-}
-
-.w-10 {
-  width: 2.5rem;
 }
 
 .w-20 {
@@ -2953,10 +2953,6 @@ input[type="range"].range-lg::-moz-range-thumb {
   border-width: 2px;
 }
 
-.border-0 {
-  border-width: 0px;
-}
-
 .\!border-0 {
   border-width: 0px !important;
 }
@@ -2975,6 +2971,10 @@ input[type="range"].range-lg::-moz-range-thumb {
 
 .border-\[10px\] {
   border-width: 10px;
+}
+
+.border-0 {
+  border-width: 0px;
 }
 
 .border-x {
@@ -3023,11 +3023,6 @@ input[type="range"].range-lg::-moz-range-thumb {
   border-style: none;
 }
 
-.border-black {
-  --tw-border-opacity: 1;
-  border-color: rgb(0 0 0 / var(--tw-border-opacity));
-}
-
 .border-gray-500 {
   --tw-border-opacity: 1;
   border-color: rgb(107 114 128 / var(--tw-border-opacity));
@@ -3036,6 +3031,11 @@ input[type="range"].range-lg::-moz-range-thumb {
 .border-subtle {
   --tw-border-opacity: 1;
   border-color: rgb(219 234 254 / var(--tw-border-opacity));
+}
+
+.border-black {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
 
 .border-gray-200 {
@@ -4004,6 +4004,10 @@ input[type="range"].range-lg::-moz-range-thumb {
   padding-left: 0.5rem;
 }
 
+.pl-1 {
+  padding-left: 0.25rem;
+}
+
 .pr-1 {
   padding-right: 0.25rem;
 }
@@ -4030,10 +4034,6 @@ input[type="range"].range-lg::-moz-range-thumb {
 
 .pr-4 {
   padding-right: 1rem;
-}
-
-.pl-1 {
-  padding-left: 0.25rem;
 }
 
 .pb-1\.5 {
@@ -5147,6 +5147,10 @@ input[type="text"] {
 .border-region {
   border: 2px dashed var(--interactive-background);
   border-radius: 0.5rem;
+}
+
+.box-shadow {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 /******************* Styling of input elements **********************/

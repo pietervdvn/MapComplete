@@ -301,6 +301,7 @@
     },
     "images"
   ],
+  "allowMove": false,
   "units": [
     {
       "generator:output:electricity": "power",

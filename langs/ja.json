@@ -49,7 +49,6 @@
         "loginWithOpenStreetMap": "OpenStreetMapからログインする",
         "morescreen": {
             "createYourOwnTheme": "独自のMapCompleteテーマを最初から作成する",
-            "intro": "<h3>より多くの主題図</h3>ジオデータの収集は楽しいですか?<br>他にも使用可能なテーマがあります。",
             "requestATheme": "カスタムビルドのクエストが必要な場合は、問題追跡ツールで要請してください",
             "streetcomplete": "別に、同様のアプリケーションには、<a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>があります。"
         },

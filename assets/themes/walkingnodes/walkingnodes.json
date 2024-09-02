@@ -91,6 +91,7 @@
         }
       ],
       "pointRendering": null,
+      "allowMove": false,
       "tagRenderings": [
         {
           "builtin": "survey_date",
@@ -195,6 +196,7 @@
           }
         ]
       },
+      "allowMove": false,
       "tagRenderings": [
         {
           "id": "node-rwn_ref",

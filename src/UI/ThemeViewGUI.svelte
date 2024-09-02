@@ -46,10 +46,12 @@
   import DrawerRight from "./Base/DrawerRight.svelte"
   import SearchResults from "./Search/SearchResults.svelte"
   import { CloseButton } from "flowbite-svelte"
+  import Hash from "../Logic/Web/Hash"
 
   export let state: ThemeViewState
   let layout = state.layout
   let maplibremap: UIEventSource<MlMap> = state.map
+  let state_selectedElement = state.selectedElement
   let selectedElement: UIEventSource<Feature> = new UIEventSource<Feature>(undefined)
   let compass = Orientation.singleton.alpha
   let compassLoaded = Orientation.singleton.gotMeasurement
@@ -71,6 +73,7 @@
     })
   })
 
+
   let selectedLayer: Store<LayerConfig> = state.selectedElement.mapD((element) => {
     if (element.properties.id.startsWith("current_view")) {
       return currentViewLayer
@@ -85,11 +88,11 @@
   state.mapProperties.installCustomKeyboardHandler(viewport)
   let canZoomIn = mapproperties.maxzoom.map(
     (mz) => mapproperties.zoom.data < mz,
-    [mapproperties.zoom]
+    [mapproperties.zoom],
   )
   let canZoomOut = mapproperties.minzoom.map(
     (mz) => mapproperties.zoom.data > mz,
-    [mapproperties.zoom]
+    [mapproperties.zoom],
   )
 
   function updateViewport() {
@@ -105,7 +108,7 @@
     const bottomRight = mlmap.unproject([rect.right, rect.bottom])
     const bbox = new BBox([
       [topLeft.lng, topLeft.lat],
-      [bottomRight.lng, bottomRight.lat]
+      [bottomRight.lng, bottomRight.lat],
     ])
     state.visualFeedbackViewportBounds.setData(bbox)
   }
@@ -125,7 +128,7 @@
   onDestroy(
     rasterLayer.addCallbackAndRunD((l) => {
       rasterLayerName = l.properties.name
-    })
+    }),
   )
   let previewedImage = state.previewedImage
   let addNewFeatureMode = state.userRelatedState.addNewFeatureMode
@@ -154,6 +157,7 @@
     animation?.cameraAnimation(mlmap)
   }
 
+  let hash = Hash.hash
 </script>
 
 <main>
@@ -172,6 +176,110 @@
       />
     </div>
   {/if}
+
+  <div class="pointer-events-none absolute top-0 left-0 w-full">
+    <!-- Top components -->
+
+    <div
+      class="flex bg-black-light-transparent pointer-events-auto items-center justify-between px-4 py-1 flex-wrap-reverse">
+      <!-- Top bar with tools -->
+      <div class="flex items-center">
+
+        <MapControlButton
+          cls="m-0.5 p-0.5 sm:p-1"
+          arialabel={Translations.t.general.labels.menu}
+          on:click={() => {console.log("Opening...."); state.guistate.pageStates.menu.setData(true)}}
+          on:keydown={forwardEventToMap}
+        >
+          <MenuIcon class="h-6 w-6 cursor-pointer" />
+        </MapControlButton>
+
+        <MapControlButton
+          on:click={() => state.guistate.pageStates.about_theme.set(true)}
+          on:keydown={forwardEventToMap}
+        >
+          <div
+            class="m-0.5 mx-1 flex cursor-pointer items-center max-[480px]:w-full sm:mx-1 mr-2"
+          >
+            <Marker icons={layout.icon} size="h-6 w-6 shrink-0 mr-0.5 sm:mr-1 md:mr-2" />
+            <b class="mr-1">
+              <Tr t={layout.title} />
+            </b>
+          </div>
+        </MapControlButton>
+      </div>
+
+      {#if $debug && $hash}
+        <div class="alert">
+          {$hash}
+        </div>
+      {/if}
+
+      <If condition={state.featureSwitches.featureSwitchSearch}>
+        <div class="w-full sm:w-64 my-2 sm:mt-0">
+
+          <Geosearch
+            bounds={state.mapProperties.bounds}
+            on:searchCompleted={() => {
+            state.map?.data?.getCanvas()?.focus()
+          }}
+            perLayer={state.perLayer}
+            selectedElement={state.selectedElement}
+            geolocationState={state.geolocation.geolocationState}
+          />
+        </div>
+      </If>
+
+    </div>
+
+    <div class="pointer-events-auto float-right mt-1 flex flex-col px-1 max-[480px]:w-full sm:m-2">
+      <If condition={state.visualFeedback}>
+        {#if $selectedElement === undefined}
+          <div class="w-fit">
+            <VisualFeedbackPanel {state} />
+          </div>
+        {/if}
+      </If>
+
+    </div>
+    <div class="float-left m-1 flex flex-col sm:mt-2">
+      <If condition={state.featureSwitches.featureSwitchWelcomeMessage}>
+
+
+      </If>
+      {#if currentViewLayer?.tagRenderings && currentViewLayer.defaultIcon()}
+        <MapControlButton
+          on:click={() => {
+            state.selectCurrentView()
+          }}
+          on:keydown={forwardEventToMap}
+        >
+          <div class="h-8 w-8 cursor-pointer">
+            <ToSvelte construct={() => currentViewLayer.defaultIcon()} />
+          </div>
+        </MapControlButton>
+      {/if}
+      <ExtraLinkButton {state} />
+      <UploadingImageCounter featureId="*" showThankYou={false} {state} />
+      <PendingChangesIndicator {state} />
+      <If condition={state.featureSwitchIsTesting}>
+        <div class="alert w-fit">Testmode</div>
+      </If>
+      {#if state.osmConnection.Backend().startsWith("https://master.apis.dev.openstreetmap.org")}
+        <div class="thanks">Testserver</div>
+      {/if}
+      <If condition={state.featureSwitches.featureSwitchFakeUser}>
+        <div class="alert w-fit">Faking a user (Testmode)</div>
+      </If>
+    </div>
+    <div class="flex w-full flex-col items-center justify-center">
+      <!-- Flex and w-full are needed for the positioning -->
+      <!-- Centermessage -->
+      <StateIndicator {state} />
+      <ReverseGeocoding {state} />
+    </div>
+  </div>
+
   <div class="pointer-events-none absolute bottom-0 left-0 mb-4 w-screen">
     <!-- bottom controls -->
     <div class="flex w-full items-end justify-between px-4">
@@ -395,7 +503,7 @@
     <svelte:fragment slot="error" />
   </LoginToggle>
 
-  <DrawerLeft shown={state.guistate.menuIsOpened}>
+  <DrawerLeft shown={state.guistate.pageStates.menu}>
     <div class="h-screen overflow-y-auto">
       <MenuDrawer onlyLink={true} {state} />
     </div>
@@ -406,11 +514,11 @@
     <!-- right modal with the selected element view -->
     <ModalRight
       on:close={() => {
-        selectedElement.setData(undefined)
+        state.selectedElement.setData(undefined)
       }}
     >
       <div slot="close-button" />
-      <SelectedElementPanel {state} selected={$selectedElement} />
+      <SelectedElementPanel {state} selected={$state_selectedElement} />
     </ModalRight>
   {/if}
 
@@ -424,7 +532,7 @@
         }}
       >
         <span slot="close-button" />
-        <SelectedElementPanel absolute={false} {state} selected={$selectedElement} />
+        <SelectedElementPanel absolute={false} {state} selected={$state_selectedElement} />
       </FloatOver>
     {:else}
       <FloatOver
@@ -432,7 +540,7 @@
           state.selectedElement.setData(undefined)
         }}
       >
-        <SelectedElementView {state} layer={$selectedLayer} selectedElement={$selectedElement} />
+        <SelectedElementView {state} layer={$selectedLayer} selectedElement={$state_selectedElement} />
       </FloatOver>
     {/if}
   {/if}

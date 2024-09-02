@@ -163,6 +163,7 @@
       "id": "maxspeed-maxspeed"
     }
   ],
+  "allowMove": false,
   "allowSplit": true,
   "units": [
     {

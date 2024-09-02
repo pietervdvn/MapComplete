@@ -138,7 +138,6 @@
         "morescreen": {
             "createYourOwnTheme": "Készítsd el saját MapComplete témád a semmiből",
             "hiddenExplanation": "Ezeket a témákat csak az érheti el, akik ismeri a linket. {total_hidden} rejtett téma közül {hidden_discovered} témát ismersz.",
-            "intro": "<h3>Kíváncsi vagy más tematikus térképekre is?</h3>Szeretsz földrajzi adatokat gyűjteni? <br>További témák is elérhetők.",
             "noMatchingThemes": "Nincs olyan téma, amely megfelelt volna a keresési feltételeknek",
             "noSearch": "Minden téma megjelenítése",
             "previouslyHiddenTitle": "Korábban megnézett rejtett témák",

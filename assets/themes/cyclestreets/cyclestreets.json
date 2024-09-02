@@ -172,7 +172,8 @@
           "color": "#0000ff",
           "width": "10"
         }
-      ]
+      ],
+      "allowMove": false
     },
     {
       "id": "toekomstige_fietsstraat",
@@ -290,7 +291,8 @@
           "color": "#09f9dd",
           "width": "5"
         }
-      ]
+      ],
+      "allowMove": false
     },
     {
       "id": "not_cyclestreets",
@@ -410,7 +412,8 @@
           "width": "5"
         }
       ],
-      "isCounted": false
+      "isCounted": false,
+      "allowMove": false
     }
   ],
   "overrideAll": {

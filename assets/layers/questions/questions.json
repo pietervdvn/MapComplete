@@ -2943,5 +2943,6 @@
         }
       ]
     }
-  ]
+  ],
+  "allowMove": false
 }

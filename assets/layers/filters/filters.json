@@ -394,5 +394,6 @@
         }
       ]
     }
-  ]
+  ],
+  "allowMove": false
 }

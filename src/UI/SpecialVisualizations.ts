@@ -1996,6 +1996,9 @@ export default class SpecialVisualizations {
                 ): BaseUIElement {
                     const translation = tagSource.map((tags) => {
                         const presets = state.layout.getMatchingLayer(tags)?.presets
+                        if(!presets){
+                            return undefined
+                        }
                         const matchingPresets = presets
                             .filter((pr) => pr.description !== undefined)
                             .filter((pr) => new And(pr.tags).matchesProperties(tags))

@@ -33,5 +33,6 @@
       "id": "render_crab",
       "render": "Volgens het CRAB ligt hier <b>{STRAATNM}</b> {HUISNR} (label: {HNRLABEL})"
     }
-  ]
+  ],
+  "allowMove": false
 }

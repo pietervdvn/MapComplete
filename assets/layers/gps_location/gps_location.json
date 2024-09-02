@@ -66,5 +66,6 @@
       "anchor": "center"
     }
   ],
-  "lineRendering": []
+  "lineRendering": [],
+  "allowMove": false
 }

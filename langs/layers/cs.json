@@ -1667,6 +1667,118 @@
             "render": "Půjčovna aut"
         }
     },
+    "caravansites": {
+        "description": "kempovací místa",
+        "name": "Kempovací místa",
+        "presets": {
+            "0": {
+                "description": "Přidejte nové oficiální kempovací místo. Jedná se o místa, určená pro přenocování s karavanem. Mohou vypadat jako skutečný kemp nebo jen jako parkoviště. Takováto místa nemusí být označena, ale stačí, pokud jsou pouze definována v rozhodnutí obce. Běžné parkoviště určené pro táborníky, kde se nepovažuje za kempovací místo. ",
+                "title": "kempovací místa"
+            }
+        },
+        "tagRenderings": {
+            "caravansites-capacity": {
+                "question": "Kolik táborníků zde může zůstat? (přeskočte, pokud není zjevný počet míst nebo povolených vozidel)",
+                "render": "{capacity} táborníků může toto místo využívat současně"
+            },
+            "caravansites-charge": {
+                "question": "Kolik si toto místo účtuje?",
+                "render": "Toto místo si účtuje {charge}"
+            },
+            "caravansites-description": {
+                "question": "Chcete přidat obecný popis tohoto místa? (Neopakujte informace, na které jsme se ptali dříve, nebo které byly uvedeny výše. Zachovejte prosím objektivitu - názory patří do hodnocení)",
+                "render": "Další podrobnosti o tomto místě: {description}"
+            },
+            "caravansites-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Použití je zpoplatněno"
+                    },
+                    "1": {
+                        "then": "Lze použít zdarma"
+                    }
+                },
+                "question": "Účtuje si toto místo poplatek?"
+            },
+            "caravansites-internet": {
+                "mappings": {
+                    "0": {
+                        "then": "Připojení k internetu je k dispozici"
+                    },
+                    "1": {
+                        "then": "Připojení k internetu je k dispozici"
+                    },
+                    "2": {
+                        "then": "Připojení k internetu není k dispozici"
+                    }
+                },
+                "question": "Poskytuje toto místo připojení k internetu?"
+            },
+            "caravansites-internet-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Přístup k internetu je možný za poplatek"
+                    },
+                    "1": {
+                        "then": "Přístup k internetu je možný bez poplatku"
+                    }
+                },
+                "question": "Musíte platit za přístup k internetu?"
+            },
+            "caravansites-long-term": {
+                "mappings": {
+                    "0": {
+                        "then": "K dispozici jsou místa k dlouhodobému pronájmu, ale je také možné zde zůstat na denní bázi"
+                    },
+                    "1": {
+                        "then": "Nejsou zde žádní trvalí hosté"
+                    },
+                    "2": {
+                        "then": "Pobyt zde je možný pouze v případě, že máte dlouhodobou smlouvu (pokud se pro tuto možnost rozhodnete, toto místo z mapy zmizí)"
+                    }
+                },
+                "question": "Nabízí zde místa k dlouhodobému pronájmu?"
+            },
+            "caravansites-name": {
+                "question": "Jak se toto místo jmenuje?",
+                "render": "Toto místo se jmenuje {name}"
+            },
+            "caravansites-sanitary-dump": {
+                "mappings": {
+                    "0": {
+                        "then": "Toto místo má sanitární skládku"
+                    },
+                    "1": {
+                        "then": "Toto místo nemá sanitární skládku"
+                    }
+                },
+                "question": "Má toto místo sanitární skládku?"
+            },
+            "caravansites-toilets": {
+                "mappings": {
+                    "0": {
+                        "then": "Toto místo má toalety"
+                    },
+                    "1": {
+                        "then": "Toto místo nemá toalety"
+                    }
+                },
+                "question": "Má toto místo toalety?"
+            },
+            "caravansites-website": {
+                "question": "Má toto místo webové stránky?",
+                "render": "Oficiální webové stránky: <a href='{website}'>{website}</a>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Nepojmenované kempovací místo"
+                }
+            },
+            "render": "Kempovací místo {name}"
+        }
+    },
     "charging_station": {
         "tagRenderings": {
             "rewritten-questions": {
@@ -3038,6 +3150,95 @@
         },
         "title": {
             "render": "Pitná voda"
+        }
+    },
+    "dumpstations": {
+        "description": "Sanitární skládky",
+        "name": "Sanitární skládky",
+        "presets": {
+            "0": {
+                "description": "Přidejte novou sanitární skládku. Toto je místo, kam mohou řidiči obytných vozů vypouštět odpadní vodu nebo odpad z chemických toalet. Často je zde také dostupná pitná voda a elektřina.",
+                "title": "sanitární skládka"
+            }
+        },
+        "tagRenderings": {
+            "dumpstations-access": {
+                "mappings": {
+                    "0": {
+                        "then": "K použití potřebujete síťový klíč/kód"
+                    },
+                    "1": {
+                        "then": "Abyste mohli toto místo používat, musíte být zákazníkem kempu/kempovacího místa"
+                    },
+                    "2": {
+                        "then": "Tuto skládku může použít kdokoli"
+                    },
+                    "3": {
+                        "then": "Tuto skládku může použít kdokoli"
+                    }
+                },
+                "question": "Kdo může použít tuto skládku?"
+            },
+            "dumpstations-charge": {
+                "question": "Kolik si toto místo účtuje?",
+                "render": "Toto místo si účtuje {charge}"
+            },
+            "dumpstations-chemical-waste": {
+                "mappings": {
+                    "0": {
+                        "then": "Zde můžete likvidovat chemický toaletní odpad"
+                    },
+                    "1": {
+                        "then": "Zde nemůžete likvidovat chemický toaletní odpad"
+                    }
+                },
+                "question": "Lze na tomto místě likvidovat chemický toaletní odpad?"
+            },
+            "dumpstations-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Použití je zpoplatněno"
+                    },
+                    "1": {
+                        "then": "Lze použít zdarma"
+                    }
+                },
+                "question": "Účtuje si toto místo poplatek?"
+            },
+            "dumpstations-grey-water": {
+                "mappings": {
+                    "0": {
+                        "then": "Zde můžete likvidovat šedou vodu"
+                    },
+                    "1": {
+                        "then": "Zde nelze likvidovat šedou vodu"
+                    }
+                },
+                "question": "Lze na tomto místě likvidovat šedou vodu?"
+            },
+            "dumpstations-network": {
+                "question": "Jaké sítě je toto místo součástí? (přeskočte, pokud žádné)",
+                "render": "Tato stanice je součástí sítě {network}"
+            },
+            "dumpstations-waterpoint": {
+                "mappings": {
+                    "0": {
+                        "then": "Na tomto místě se nachází vodní zdroj"
+                    },
+                    "1": {
+                        "then": "Toto místo nemá vodní zdroj"
+                    }
+                },
+                "question": "Má toto místo vodní zdroj?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Odpadní stanice"
+                }
+            },
+            "render": "Odpadní stanice {name}"
         }
     },
     "elevator": {

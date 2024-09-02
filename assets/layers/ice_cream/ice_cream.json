@@ -98,6 +98,7 @@
     "payment-options",
     "wheelchair-access"
   ],
+  "allowMove": true,
   "credits": [
     "Pieter Vander Vennet"
   ]

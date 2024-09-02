@@ -99,5 +99,6 @@
     },
     "all_tags"
   ],
+  "allowMove": false,
   "syncSelection": "theme-only"
 }

@@ -41,7 +41,7 @@
     />
 
     {#if canZoom && loaded}
-      <div class="absolute right-0 top-0 bg-black-transparent rounded-bl-full">
+      <div class="absolute right-0 top-0 bg-black-transparent rounded-bl-full" on:click={() => previewedImage.set(image)}>
       <MagnifyingGlassPlusIcon class="w-8 h-8 pl-3 pb-3 cursor-zoom-in" color="white" />
       </div>
     {/if}

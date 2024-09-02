@@ -214,5 +214,9 @@
       },
       "condition": "_surface:ha!=0"
     }
-  ]
+  ],
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": false
+  }
 }

@@ -72,6 +72,22 @@
             "render": "پب"
         }
     },
+    "caravansites": {
+        "description": "کیمب‌سائیٹاں",
+        "name": "کیمب‌سائیٹاں",
+        "presets": {
+            "0": {
+                "title": "اِک کیمپ‌سائیٹ"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "بے نام کیمپ‌سائیٹ"
+                }
+            }
+        }
+    },
     "climbing_area": {
         "tagRenderings": {
             "Rock type (crag/rock/cliff only)": {

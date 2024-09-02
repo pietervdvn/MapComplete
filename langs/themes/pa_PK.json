@@ -22,24 +22,6 @@
         "title": "کیفے یا پب"
     },
     "campersite": {
-        "layers": {
-            "0": {
-                "description": "کیمب‌سائیٹاں",
-                "name": "کیمب‌سائیٹاں",
-                "presets": {
-                    "0": {
-                        "title": "اِک کیمپ‌سائیٹ"
-                    }
-                },
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "بے نام کیمپ‌سائیٹ"
-                        }
-                    }
-                }
-            }
-        },
         "title": "کیمپ‌سایٹاں"
     },
     "charging_stations": {

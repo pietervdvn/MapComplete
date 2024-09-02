@@ -27,6 +27,7 @@
   import Github from "../assets/svg/Github.svelte"
   import { Utils } from "../Utils"
   import { ArrowTrendingUp } from "@babeard/svelte-heroicons/solid/ArrowTrendingUp"
+  import Searchbar from "./Base/Searchbar.svelte"
 
   const featureSwitches = new OsmConnectionFeatureSwitches()
   const osmConnection = new OsmConnection({
@@ -42,7 +43,7 @@
   const tr = Translations.t.general.morescreen
 
   let userLanguages = osmConnection.userDetails.map((ud) => ud.languages)
-  let themeSearchText: UIEventSource<string | undefined> = new UIEventSource<string>(undefined)
+  let themeSearchText: UIEventSource<string | undefined> = new UIEventSource<string>("")
 
   document.addEventListener("keydown", function(event) {
     if (event.ctrlKey && event.code === "KeyF") {
@@ -91,24 +92,7 @@
       </div>
     </div>
 
-    <form
-      class="flex justify-center"
-      on:submit|preventDefault={() => MoreScreen.applySearch(themeSearchText.data)}
-    >
-      <label
-        class="neutral-label my-2 flex w-full items-center rounded-full border-2 border-black sm:w-1/2"
-      >
-        <SearchIcon aria-hidden="true" class="h-8 w-8" />
-        <input
-          autofocus
-          bind:value={$themeSearchText}
-          class="mr-4 w-full outline-none"
-          id="theme-search"
-          type="search"
-          use:placeholder={tr.searchForATheme}
-        />
-      </label>
-    </form>
+    <Searchbar value={themeSearchText} placeholder={tr.searchForATheme} on:search={() => MoreScreen.applySearch(themeSearchText.data)}/>
 
     <ThemesList search={themeSearchText} {state} themes={MoreScreen.officialThemes} />
 

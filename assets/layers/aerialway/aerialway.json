@@ -249,5 +249,6 @@
         "fr": "Cette voie aérienne fait {_length:km} kilomètre de long"
       }
     }
-  ]
+  ],
+  "allowMove": false
 }

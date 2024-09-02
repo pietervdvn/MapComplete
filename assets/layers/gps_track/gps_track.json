@@ -69,5 +69,6 @@
       "render": "{clear_location_history()}"
     }
   ],
+  "allowMove": false,
   "syncSelection": "global"
 }

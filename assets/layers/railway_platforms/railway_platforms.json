@@ -111,5 +111,6 @@
       }
     },
     "level"
-  ]
+  ],
+  "allowMove": false
 }

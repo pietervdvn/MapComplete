@@ -104,5 +104,9 @@
       "id": "viewpoint-description"
     }
   ],
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": false
+  },
   "wayhandling": 2
 }

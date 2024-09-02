@@ -123,7 +123,8 @@
           }
         }
       ],
-      "pointRendering": null
+      "pointRendering": null,
+      "allowMove": false
     },
     {
       "id": "node_bicycle",
@@ -324,7 +325,8 @@
             "cycleways_and_roads"
           ]
         }
-      ]
+      ],
+      "allowMove": false
     },
     {
       "builtin": [

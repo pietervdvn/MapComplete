@@ -1586,6 +1586,118 @@
             "render": "Bar"
         }
     },
+    "caravansites": {
+        "description": "Sitios de acampada",
+        "name": "Sitios de Acampada",
+        "presets": {
+            "0": {
+                "description": "Añade un nuevo sitio de acampada oficial. Son lugares designados para pasar la noche con tu caravana. Pueden parecerse a un camping real o simplemente a un aparcamiento. Puede que no estén señalizados en absoluto, sino que simplemente estén definidos en una decisión municipal. Un aparcamiento normal destinado a los campistas en el que no se espera que se pase la noche, no es un camping. ",
+                "title": "Un camping"
+            }
+        },
+        "tagRenderings": {
+            "caravansites-capacity": {
+                "question": "¿Cuántos campistas pueden alojarse aquí? (omitir si no hay un número evidente de plazas o vehículos permitidos)",
+                "render": "{capacity} los campistas pueden utilizar este lugar al mismo tiempo"
+            },
+            "caravansites-charge": {
+                "question": "¿Cuánto cobra este lugar?",
+                "render": "Este lugar cobra {charge}"
+            },
+            "caravansites-description": {
+                "question": "¿Te gustaría añadir una descripción general de este lugar? (No repitas información previamente preguntada o mostrada arriba. Por favor mantenla objetiva - las opiniones van en la de opiniones)",
+                "render": "Más detalles sobre este lugar:{description}"
+            },
+            "caravansites-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Necesitas pagar por su uso"
+                    },
+                    "1": {
+                        "then": "Se puede usar de manera gratuita"
+                    }
+                },
+                "question": "¿Este lugar cobra una tarifa?"
+            },
+            "caravansites-internet": {
+                "mappings": {
+                    "0": {
+                        "then": "Hay acceso a internet"
+                    },
+                    "1": {
+                        "then": "Hay acceso a internet"
+                    },
+                    "2": {
+                        "then": "No hay acceso a internet"
+                    }
+                },
+                "question": "¿Este lugar tiene acceso a internet?"
+            },
+            "caravansites-internet-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Tienes que pagar a mayores por el acceso a internet"
+                    },
+                    "1": {
+                        "then": "No tienes que pagar a mayores por el acceso a internet"
+                    }
+                },
+                "question": "¿Tienes que pagar por el acceso a internet?"
+            },
+            "caravansites-long-term": {
+                "mappings": {
+                    "0": {
+                        "then": "Hay algunas plazas de alquiler a largo plazo, pero también puedes alojarte por días"
+                    },
+                    "1": {
+                        "then": "No hay huéspedes permanentes aquí"
+                    },
+                    "2": {
+                        "then": "Solo es posible permanecer aquí si tienes un contrato a largo plazo (este lugar desaparecerá de este mapa si escoges esto)"
+                    }
+                },
+                "question": "¿Este lugar ofrece huecos para alquilar a largo plazo?"
+            },
+            "caravansites-name": {
+                "question": "¿Cómo se llama este lugar?",
+                "render": "Este lugar se llama {name}"
+            },
+            "caravansites-sanitary-dump": {
+                "mappings": {
+                    "0": {
+                        "then": "Este lugar tiene un vertedero sanitario"
+                    },
+                    "1": {
+                        "then": "Este lugar no tiene vertedero sanitario"
+                    }
+                },
+                "question": "¿Este lugar tiene un vertedero sanitario?"
+            },
+            "caravansites-toilets": {
+                "mappings": {
+                    "0": {
+                        "then": "Este lugar cuenta con sanitarios"
+                    },
+                    "1": {
+                        "then": "Este lugar no tiene sanitarios"
+                    }
+                },
+                "question": "¿Este lugar tiene baños?"
+            },
+            "caravansites-website": {
+                "question": "¿Este lugar tiene un sitio web?",
+                "render": "Sitio web oficial: <a href='{website}'>{website}</a>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Camping sin nombre"
+                }
+            },
+            "render": "Sitio de camping {name}"
+        }
+    },
     "climbing": {
         "tagRenderings": {
             "average_length": {
@@ -2180,6 +2292,95 @@
         },
         "title": {
             "render": "Agua potable"
+        }
+    },
+    "dumpstations": {
+        "description": "Vertederos Sanitarios",
+        "name": "Estaciones sanitarias",
+        "presets": {
+            "0": {
+                "description": "Añadir un nuevo vertedero sanitario. Se trata de un lugar donde los autocaravanistas pueden verter las aguas residuales o los residuos químicos de los aseos. A menudo también hay agua potable y electricidad.",
+                "title": "un vertedero sanitario"
+            }
+        },
+        "tagRenderings": {
+            "dumpstations-access": {
+                "mappings": {
+                    "0": {
+                        "then": "Necesitas una clave/código de red para usarlo"
+                    },
+                    "1": {
+                        "then": "Necesitas ser cliente del camping para usar este lugar"
+                    },
+                    "2": {
+                        "then": "Cualquiera puede utilizar este vertedero"
+                    },
+                    "3": {
+                        "then": "Cualquiera puede usar este vertedero"
+                    }
+                },
+                "question": "¿Quien puede usar el vertedero?"
+            },
+            "dumpstations-charge": {
+                "question": "¿Cuánto cobra este lugar?",
+                "render": "Este lugar cobra {charge}"
+            },
+            "dumpstations-chemical-waste": {
+                "mappings": {
+                    "0": {
+                        "then": "Puede eliminar aquí los residuos químicos de los aseos"
+                    },
+                    "1": {
+                        "then": "Aquí no se pueden tirar los residuos químicos de los aseos"
+                    }
+                },
+                "question": "¿Se pueden tirar aquí los residuos químicos de los aseos?"
+            },
+            "dumpstations-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Tienes que pagar por el uso"
+                    },
+                    "1": {
+                        "then": "Se puede utilizar gratis"
+                    }
+                },
+                "question": "¿Este lugar cobra una tasa?"
+            },
+            "dumpstations-grey-water": {
+                "mappings": {
+                    "0": {
+                        "then": "Las aguas grises pueden eliminarse aquí"
+                    },
+                    "1": {
+                        "then": "No se pueden eliminar las aguas grises aquí"
+                    }
+                },
+                "question": "¿Puede desechar las aguas grises aquí?"
+            },
+            "dumpstations-network": {
+                "question": "¿A qué red forma parte este lugar? (saltar si a ninguna)",
+                "render": "Esta estación forma parte de la red {network}"
+            },
+            "dumpstations-waterpoint": {
+                "mappings": {
+                    "0": {
+                        "then": "Este lugar tiene una toma de agua"
+                    },
+                    "1": {
+                        "then": "Este lugar no tiene toma de agua"
+                    }
+                },
+                "question": "¿Este lugar tiene toma de agua?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Vertedero"
+                }
+            },
+            "render": "Vertedero {name}"
         }
     },
     "elongated_coin": {

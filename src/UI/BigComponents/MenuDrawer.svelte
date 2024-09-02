@@ -11,7 +11,7 @@
   import CommunityIndexView from "./CommunityIndexView.svelte"
   import Community from "../../assets/svg/Community.svelte"
   import LoginToggle from "../Base/LoginToggle.svelte"
-  import { Sidebar } from "flowbite-svelte"
+  import { CloseButton, Sidebar } from "flowbite-svelte"
   import HotkeyTable from "./HotkeyTable.svelte"
   import { Utils } from "../../Utils"
   import Constants from "../../Models/Constants"
@@ -47,6 +47,8 @@
   import LogoutButton from "../Base/LogoutButton.svelte"
   import { BoltIcon } from "@babeard/svelte-heroicons/mini"
   import Copyright from "../../assets/svg/Copyright.svelte"
+  import Pencil from "../../assets/svg/Pencil.svelte"
+  import Squares2x2 from "@babeard/svelte-heroicons/mini/Squares2x2"
 
   export let state: ThemeViewState
   let userdetails = state.osmConnection.userDetails
@@ -62,6 +64,23 @@
 </script>
 
 <div class="flex flex-col p-2 sm:p-3 low-interaction gap-y-2 sm:gap-y-3 h-screen overflow-y-auto">
+  <div class="flex justify-between">
+    <h2>
+      <Tr t={t.title}/>
+    </h2>
+    <CloseButton on:click={() => {pg.menu.set(false)}} />
+  </div>
+  {#if $showHome}
+    <a class="flex button primary" href={Utils.HomepageLink()}>
+      <Squares2x2 class="h-10 w-10" />
+      {#if Utils.isIframe}
+        <Tr t={Translations.t.general.seeIndex} />
+      {:else}
+        <Tr t={Translations.t.general.backToIndex} />
+      {/if}
+    </a>
+  {/if}
+
 
   <!-- User related: avatar, settings, favourits, logout -->
   <div class="sidebar-unit">
@@ -77,10 +96,10 @@
 
 
     <Page {onlyLink} shown={pg.usersettings}>
-      <div class="flex" slot="header">
-        <CogIcon class="h-6 w-6" />
+      <svelte:fragment slot="header">
+        <CogIcon/>
         <Tr t={UserRelatedState.usersettingsConfig.title.GetRenderValue({})} />
-      </div>
+      </svelte:fragment>
 
       <!-- All shown components are set by 'usersettings.json', which happily uses some special visualisations created specifically for it -->
       <LoginToggle {state}>
@@ -109,10 +128,12 @@
     <LoginToggle {state}>
       <Page {onlyLink} shown={pg.favourites}>
 
-        <div class="flex" slot="header">
-          <HeartIcon class="h-6 w-6" />
+        <svelte:fragment slot="header">
+          <HeartIcon />
           <Tr t={Translations.t.favouritePoi.tab} />
-        </div>
+        </svelte:fragment>
+
+
         <h3>
 
           <Tr t={Translations.t.favouritePoi.title} />
@@ -146,10 +167,10 @@
         <Marker icons={layout.icon} size="h-6 w-6 mr-2" />
         <Tr t={t.showIntroduction} />
       </div>
-      <div class="flex" slot="header">
-        <Marker icons={layout.icon} size="h-8 w-8 mr-4" />
+      <svelte:fragment  slot="header">
+        <Marker icons={layout.icon} />
         <Tr t={layout.title} />
-      </div>
+      </svelte:fragment>
       <ThemeIntroPanel {state} />
     </Page>
 
@@ -158,20 +179,20 @@
     <RasterLayerOverview {onlyLink} {state} />
 
     <Page {onlyLink} shown={pg.share}>
-      <div class="flex" slot="header">
-        <Share class="h-4 w-4" />
+      <svelte:fragment slot="header">
+        <Share/>
         <Tr t={Translations.t.general.sharescreen.title} />
-      </div>
+      </svelte:fragment>
       <ShareScreen {state} />
     </Page>
 
 
     {#if state.featureSwitches.featureSwitchEnableExport}
       <Page {onlyLink} shown={pg.download}>
-        <div slot="header" class="flex">
-          <ArrowDownTray class="h-4 w-4" />
+        <svelte:fragment slot="header">
+          <ArrowDownTray  />
           <Tr t={Translations.t.general.download.title} />
-        </div>
+        </svelte:fragment>
         <DownloadPanel {state} />
       </Page>
     {/if}
@@ -206,22 +227,13 @@
     <h3>
       <Tr t={t.moreUtilsTitle} />
     </h3>
-    {#if $showHome}
-      <a class="flex" href={Utils.HomepageLink()}>
-        <Add class="h-6 w-6" />
-        {#if Utils.isIframe}
-          <Tr t={Translations.t.general.seeIndex} />
-        {:else}
-          <Tr t={Translations.t.general.backToIndex} />
-        {/if}
-      </a>
-    {/if}
+
 
     <Page {onlyLink} shown={pg.community_index}>
-      <div class="flex" slot="header">
-        <Community class="h-6 w-6" />
+      <svelte:fragment slot="header">
+        <Community/>
         <Tr t={Translations.t.communityIndex.title} />
-      </div>
+      </svelte:fragment>
       <CommunityIndexView location={state.mapProperties.location} />
     </Page>
 
@@ -242,13 +254,20 @@
       <Tr t={Translations.t.general.menu.aboutMapComplete} />
     </h3>
 
-    <div class="hidden-on-mobile">
+    <a
+      class="flex"
+      href={window.location.protocol + "//" + window.location.host + "/studio.html"}
+    >
+      <Pencil class="mr-2 h-6 w-6" />
+      <Tr t={Translations.t.general.morescreen.createYourOwnTheme} />
+    </a>
 
+    <div class="hidden-on-mobile w-full">
       <Page {onlyLink} shown={pg.hotkeys}>
-        <div class="flex" slot="header">
-          <BoltIcon class="w-6 h-6" />
+        <svelte:fragment  slot="header">
+          <BoltIcon />
           <Tr t={ Translations.t.hotkeyDocumentation.title} />
-        </div>
+        </svelte:fragment>
         <HotkeyTable />
       </Page>
     </div>
@@ -276,29 +295,29 @@
 
 
     <Page {onlyLink} shown={pg.copyright}>
-      <div slot="header" class="flex">
-        <Copyright class="w-8 h-8" />
+      <svelte:fragment slot="header">
+        <Copyright />
         <Tr t={Translations.t.general.attribution.attributionTitle} />
-      </div>
+      </svelte:fragment>
       <CopyrightPanel {state} />
     </Page>
 
 
     <Page {onlyLink} shown={pg.copyright_icons}>
-      <div slot="header" class="flex">
-        <Copyright class="w-8 h-8" />
+      <svelte:fragment slot="header" >
+        <Copyright/>
         <Tr t={ Translations.t.general.attribution.iconAttribution.title} />
-      </div>
+      </svelte:fragment>
       <CopyrightAllIcons {state} />
 
     </Page>
 
 
     <Page {onlyLink} shown={pg.privacy}>
-      <div class="flex" slot="header">
-        <EyeIcon class="w-8 h-8" />
+      <svelte:fragment slot="header">
+        <EyeIcon />
         <Tr t={Translations.t.privacy.title} />
-      </div>
+      </svelte:fragment>
       <PrivacyPolicy {state} />
     </Page>
 
@@ -340,12 +359,14 @@
     }
 
 
-    :global(.sidebar-button, .sidebar-button, .sidebar-unit > a) {
+    :global(.sidebar-button, .sidebar-unit > a) {
         display: flex;
         align-items: center;
         border-radius: 0.25rem !important;
         padding: 0.4rem 0.75rem !important;
         text-decoration: none !important;
+        width: 100%;
+        text-align: start;
     }
 
     :global(.sidebar-button > svg , .sidebar-button > img, .sidebar-unit a > img, .sidebar-unit > a svg) {

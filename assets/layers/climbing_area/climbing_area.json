@@ -352,5 +352,6 @@
         "climbing.bouldering"
       ]
     }
-  ]
+  ],
+  "allowMove": false
 }

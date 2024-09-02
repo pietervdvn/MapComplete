@@ -121,6 +121,118 @@
             "render": "アートワーク"
         }
     },
+    "caravansites": {
+        "description": "キャンプサイト",
+        "name": "キャンプサイト",
+        "presets": {
+            "0": {
+                "description": "新しい公式キャンプサイトを追加します。お客様のキャンピングカーで一泊する指定の場所です。本物のキャンプのように見えるかもしれないし、単なる駐車場のように見えるかもしれない。それらは全く署名されていないかもしれませんが、自治体の決定で定義されているだけです。夜を過ごすことが予想されないキャンパー向けの通常の駐車場は、キャンプサイトではない ",
+                "title": "キャンプサイト"
+            }
+        },
+        "tagRenderings": {
+            "caravansites-capacity": {
+                "question": "ここには何人のキャンパーが泊まれますか?(許可された車両の数や駐車スペースが明らかでない場合は省略)",
+                "render": "{capacity} 人が同時に使用できます"
+            },
+            "caravansites-charge": {
+                "question": "ここはいくらかかりますか？",
+                "render": "この場所は{charge} が必要"
+            },
+            "caravansites-description": {
+                "question": "この場所の一般的な説明を追加しますか?(前に問い合わせた情報や上記の情報を繰り返し入力しないでください。客観的な意見はレビューに反映されます)",
+                "render": "この場所の詳細:{description}"
+            },
+            "caravansites-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "使用料を支払う必要がある"
+                    },
+                    "1": {
+                        "then": "無料で使用可能"
+                    }
+                },
+                "question": "ここは有料ですか?"
+            },
+            "caravansites-internet": {
+                "mappings": {
+                    "0": {
+                        "then": "インターネットアクセスがある"
+                    },
+                    "1": {
+                        "then": "インターネットアクセスがある"
+                    },
+                    "2": {
+                        "then": "インターネットにアクセスできない"
+                    }
+                },
+                "question": "この場所はインターネットにアクセスできますか?"
+            },
+            "caravansites-internet-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "インターネット接続には別途料金が必要です"
+                    },
+                    "1": {
+                        "then": "インターネット接続に追加料金を支払う必要はありません"
+                    }
+                },
+                "question": "インターネット接続にお金はかかりますか?"
+            },
+            "caravansites-long-term": {
+                "mappings": {
+                    "0": {
+                        "then": "はい、長期レンタルのスポットもあり、日常的に滞在することもできます"
+                    },
+                    "1": {
+                        "then": "いいえ、ここには長期滞在者はいません"
+                    },
+                    "2": {
+                        "then": "長期契約をしている場合のみ宿泊可能です(これを選択すると、この場所はこの地図から消えます)"
+                    }
+                },
+                "question": "ここには長期レンタルのスポットがありますか?"
+            },
+            "caravansites-name": {
+                "question": "ここは何というところですか?",
+                "render": "この場所は {name} と呼ばれています"
+            },
+            "caravansites-sanitary-dump": {
+                "mappings": {
+                    "0": {
+                        "then": "この場所には衛生的なゴミ捨て場がある"
+                    },
+                    "1": {
+                        "then": "この場所には衛生的なゴミ捨て場がない"
+                    }
+                },
+                "question": "この場所に衛生的なゴミ捨て場はありますか?"
+            },
+            "caravansites-toilets": {
+                "mappings": {
+                    "0": {
+                        "then": "ここにはトイレがある"
+                    },
+                    "1": {
+                        "then": "ここにはトイレがない"
+                    }
+                },
+                "question": "ここにトイレはありますか?"
+            },
+            "caravansites-website": {
+                "question": "ここにはウェブサイトがありますか?",
+                "render": "公式Webサイト: <a href='{website}'>{website}</a>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "無名のキャンプサイト"
+                }
+            },
+            "render": "キャンプサイト {name}"
+        }
+    },
     "climbing": {
         "tagRenderings": {
             "average_length": {
@@ -333,6 +445,95 @@
                 }
             },
             "render": "登坂ルート"
+        }
+    },
+    "dumpstations": {
+        "description": "衛生ゴミ捨て場",
+        "name": "衛生ゴミ捨て場",
+        "presets": {
+            "0": {
+                "description": "新しい衛生ゴミ捨て場を追加します。ここは、キャンピングカーの運転手が排水や携帯トイレの廃棄物を捨てることができる場所です。飲料水や電気もあることが多いです。",
+                "title": "衛生ゴミ捨て場"
+            }
+        },
+        "tagRenderings": {
+            "dumpstations-access": {
+                "mappings": {
+                    "0": {
+                        "then": "これを使用するには、ネットワークキー/コードが必要です"
+                    },
+                    "1": {
+                        "then": "この場所を使用するには、キャンプ/キャンプサイトのお客様である必要があります"
+                    },
+                    "2": {
+                        "then": "誰でもこのゴミ捨て場を使用できます"
+                    },
+                    "3": {
+                        "then": "誰でもこのゴミ捨て場を使用できます"
+                    }
+                },
+                "question": "このゴミ捨て場は誰が使えるんですか?"
+            },
+            "dumpstations-charge": {
+                "question": "ここはいくらかかりますか？",
+                "render": "この場所は{charge} が必要"
+            },
+            "dumpstations-chemical-waste": {
+                "mappings": {
+                    "0": {
+                        "then": "携帯トイレのゴミはここで処分できます"
+                    },
+                    "1": {
+                        "then": "ここでは携帯トイレの廃棄物を処分することはできません"
+                    }
+                },
+                "question": "携帯トイレのゴミはこちらで処分できますか?"
+            },
+            "dumpstations-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "使用料を支払う必要がある"
+                    },
+                    "1": {
+                        "then": "無料で使用可能"
+                    }
+                },
+                "question": "ここは有料ですか?"
+            },
+            "dumpstations-grey-water": {
+                "mappings": {
+                    "0": {
+                        "then": "ここで汚水(雑排水)を捨てることができます"
+                    },
+                    "1": {
+                        "then": "ここでは汚水(雑排水)を捨てることはできない"
+                    }
+                },
+                "question": "汚水(雑排水)はこちらで処分できますか?"
+            },
+            "dumpstations-network": {
+                "question": "ここは何のネットワークの一部ですか?(なければスキップ)",
+                "render": "このステーションはネットワーク{network}の一部です"
+            },
+            "dumpstations-waterpoint": {
+                "mappings": {
+                    "0": {
+                        "then": "この場所には給水所がある"
+                    },
+                    "1": {
+                        "then": "この場所には給水所がない"
+                    }
+                },
+                "question": "この場所には給水所がありますか?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "ゴミ捨て場"
+                }
+            },
+            "render": "ゴミ捨て場 {name}"
         }
     },
     "extinguisher": {

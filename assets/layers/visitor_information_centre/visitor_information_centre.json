@@ -97,5 +97,6 @@
   ],
   "lineRendering": [],
   "presets": [],
-  "tagRenderings": []
+  "tagRenderings": [],
+  "allowMove": true
 }

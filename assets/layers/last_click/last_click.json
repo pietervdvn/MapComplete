@@ -218,5 +218,6 @@
         }
       ]
     }
-  ]
+  ],
+  "allowMove": false
 }

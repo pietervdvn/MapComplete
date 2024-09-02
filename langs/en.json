@@ -209,7 +209,7 @@
             "translatedBy": "MapComplete has been translated by {contributors} and <a href='https://github.com/pietervdvn/MapComplete/graphs/contributors' target='_blank'>{hiddenCount} more contributors</a>"
         },
         "back": "Back",
-        "backToIndex": "Go back to the overview with all thematic maps",
+        "backToIndex": "See all thematic maps",
         "backToMap": "Back to the map",
         "backgroundMap": "Select a background layer",
         "backgroundSwitch": "Switch background",
@@ -242,6 +242,7 @@
             "downloadGeojson": "Download visible data as GeoJSON",
             "downloadGpx": "Download as GPX-file",
             "downloadGpxHelper": "A GPX-file can be used with most navigation devices and applications",
+            "downloadImage": "Download image",
             "exporting": "Exporting…",
             "includeMetaData": "Include metadata (last editor, calculated values, …)",
             "licenseInfo": "<h3>Copyright notice</h3>The provided data is available under ODbL. Reusing it is gratis for any purpose, but <ul><li>the attribution <b>© OpenStreetMap contributors</b> must be shown<li><li>Any change must be published under the same license</li></ul> Please read the full <a href='https://www.openstreetmap.org/copyright' target='_blank'>copyright notice</a> for details.",
@@ -305,13 +306,13 @@
             "aboutMapComplete": "About MapComplete",
             "filter": "Filter data",
             "moreUtilsTitle": "Discover more",
-            "showIntroduction": "Show introduction"
+            "showIntroduction": "Show introduction",
+            "title": "Menu"
         },
         "morescreen": {
             "createYourOwnTheme": "Create your own MapComplete theme from scratch",
             "enterToOpen": "Press enter to open theme",
             "hiddenExplanation": "These themes are only accessible to those with the link. You have discovered {hidden_discovered} of {total_hidden} hidden themes.",
-            "intro": "<h3>More thematic maps?</h3>Do you enjoy collecting geodata? <br/>There are more themes available.",
             "noMatchingThemes": "No themes matched your search criteria",
             "noSearch": "Show all themes",
             "previouslyHiddenTitle": "Previously visited hidden themes",
@@ -418,6 +419,7 @@
             "fsUserbadge": "Enable the login button and thus the possibility to make changes",
             "fsWelcomeMessage": "Show the welcome message popup and associated tabs",
             "intro": "<h3>Share this map</h3> Share this map by copying the link below and sending it to friends and family:",
+            "openInOtherApplications": "Open the current location with another map application",
             "openLayers": "Open the layers and filters menu",
             "options": "Sharing options",
             "stateIsIncluded": "The current state of the layers and filters is included in the shared link and iframe.",

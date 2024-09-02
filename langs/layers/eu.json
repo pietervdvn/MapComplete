@@ -252,6 +252,57 @@
             "render": "Edaritegia"
         }
     },
+    "caravansites": {
+        "description": "Kanpatzeko tokiak",
+        "name": "Akanpatzeko tokiak",
+        "presets": {
+            "0": {
+                "description": "Kanpaleku ofizialeko beste leku bat gehitu du. Gaua zure karabanarekin igarotzeko lekuak dira. Benetako kanpin baten edo, besterik gabe, aparkaleku baten itxura izan dezakete. Baliteke ez egotea inola ere seinaleztatuta, baizik eta udal erabaki batean definitzea. Kanpinlarientzako aparkaleku arrunt bat ez da kanpin bat, gaua bertan pasatzea espero ez bada ere. ",
+                "title": "Kanpin bat"
+            }
+        },
+        "tagRenderings": {
+            "caravansites-capacity": {
+                "question": "Zenbat kanpinlari gera daitezke hemen? (jauzi egin leku edo ibilgailu kopuru nabaririk ez badago)",
+                "render": "{capacity} kanpinlariek aldi berean erabil dezakete leku hau"
+            },
+            "caravansites-charge": {
+                "question": "Zenbat kobratzen du leku honek?",
+                "render": "Leku honek {charge} kobratzen du"
+            },
+            "caravansites-description": {
+                "question": "Gustatuko litzaizuke toki honen deskribapen orokorra gehitzea? (Ez errepikatu aurretik eskatutako edo adierazitako informazioa. Mesedez, eutsi helburuari - berrikuspenetarako iritziak)"
+            },
+            "caravansites-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Erabiltzeko ordaindu behar duzu"
+                    }
+                },
+                "question": "Leku horrek kuota bat kobratzen du?"
+            },
+            "caravansites-internet": {
+                "question": "Leku honek Interneterako sarbidea eskaintzen du?"
+            },
+            "caravansites-long-term": {
+                "mappings": {
+                    "1": {
+                        "then": "Ez dago bezero iraunkorrik hemen"
+                    }
+                }
+            },
+            "caravansites-toilets": {
+                "mappings": {
+                    "1": {
+                        "then": "Toki honek ez dauka komunik"
+                    }
+                }
+            },
+            "caravansites-website": {
+                "question": "Toki honek webgunerik ba al du?"
+            }
+        }
+    },
     "climbing_area": {
         "tagRenderings": {
             "Rock type (crag/rock/cliff only)": {
@@ -263,6 +314,39 @@
             },
             "name": {
                 "render": "<strong>{name}</strong>"
+            }
+        }
+    },
+    "dumpstations": {
+        "tagRenderings": {
+            "dumpstations-access": {
+                "mappings": {
+                    "2": {
+                        "then": "Edonork erabil dezake hondakindegi hau"
+                    },
+                    "3": {
+                        "then": "Edonork erabil dezake hondakindegi hau"
+                    }
+                },
+                "question": "Nork erabil dezake hondakindegia?"
+            },
+            "dumpstations-charge": {
+                "question": "Zenbat kobratzen dute toki honetan?"
+            },
+            "dumpstations-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Erabiltzeko ordaindu behar duzu"
+                    }
+                },
+                "question": "Leku horrek tasa bat kobratzen du?"
+            },
+            "dumpstations-waterpoint": {
+                "mappings": {
+                    "0": {
+                        "then": "Leku honek ur-hartune bat du"
+                    }
+                }
             }
         }
     },

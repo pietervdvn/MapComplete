@@ -1035,6 +1035,118 @@
             "render": "Wypożyczalnia samochodów"
         }
     },
+    "caravansites": {
+        "description": "miejsca dla kamperów",
+        "name": "Miejsca kamperowe",
+        "presets": {
+            "0": {
+                "description": "Dodaj nowe oficjalne miejsce dla kamperów. Są to wyznaczone miejsca, w których można przenocować w swoim kamperze. Mogą wyglądać jak prawdziwy kemping lub po prostu wyglądać jak parking. Mogą one w ogóle nie być oznakowane, a jedynie określone w decyzji gminy. Zwykły parking przeznaczony dla kamperów, na którym nie przewiduje się nocowania, nie jest miejscem dla kamperów ",
+                "title": "miejsce dla kampera"
+            }
+        },
+        "tagRenderings": {
+            "caravansites-capacity": {
+                "question": "Ile kamperów może tu przebywać? (pomiń, jeśli nie ma oczywistej liczby miejsc lub dozwolonych pojazdów)",
+                "render": "{capacity} kamperów może z tego miejsca korzystać jednocześnie"
+            },
+            "caravansites-charge": {
+                "question": "Ile kosztuje to miejsce?",
+                "render": "To miejsce pobiera opłatę w wysokości {charge}"
+            },
+            "caravansites-description": {
+                "question": "Chcesz dodać ogólny opis tego miejsca? (Nie powtarzaj informacji zadanych wcześniej lub pokazanych powyżej. Zachowaj obiektywizm – opinie trafiają do recenzji)",
+                "render": "Więcej szczegółów o tym miejscu: {description}"
+            },
+            "caravansites-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Wymagana jest opłata, aby skorzystać"
+                    },
+                    "1": {
+                        "then": "Można skorzystać za darmo"
+                    }
+                },
+                "question": "Czy to miejsce pobiera opłatę?"
+            },
+            "caravansites-internet": {
+                "mappings": {
+                    "0": {
+                        "then": "Jest dostęp do internetu"
+                    },
+                    "1": {
+                        "then": "Jest dostęp do internetu"
+                    },
+                    "2": {
+                        "then": "Nie ma dostępu do internetu"
+                    }
+                },
+                "question": "Czy to miejsce oferuje dostęp do internetu?"
+            },
+            "caravansites-internet-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Dostęp do internetu jest dodatkowo płatny"
+                    },
+                    "1": {
+                        "then": "Dostęp do internetu nie jest dodatkowo płatny"
+                    }
+                },
+                "question": "Czy trzeba płacić za dostęp do internetu?"
+            },
+            "caravansites-long-term": {
+                "mappings": {
+                    "0": {
+                        "then": "Są miejsca na wynajem długoterminowy, ale można też wynajmować na co dzień"
+                    },
+                    "1": {
+                        "then": "Nie ma tu stałych gości"
+                    },
+                    "2": {
+                        "then": "Zakwaterowanie tutaj jest możliwe tylko jeśli masz umowę długoterminową (jeśli wybierzesz tę opcję, to miejsce zniknie z mapy)"
+                    }
+                },
+                "question": "Czy to miejsce oferuje miejsca do wynajęcia długoterminowego?"
+            },
+            "caravansites-name": {
+                "question": "Jak nazywa się to miejsce?",
+                "render": "To miejsce nazywa się {name}"
+            },
+            "caravansites-sanitary-dump": {
+                "mappings": {
+                    "0": {
+                        "then": "W tym miejscu znajduje się stacja zrzutu ścieków sanitarnych"
+                    },
+                    "1": {
+                        "then": "Miejsce to nie posiada stacji zrzutu ścieków sanitarnych"
+                    }
+                },
+                "question": "Czy w tym miejscu znajduje się stacja zrzutu ścieków sanitarnych?"
+            },
+            "caravansites-toilets": {
+                "mappings": {
+                    "0": {
+                        "then": "To miejsce ma toalety"
+                    },
+                    "1": {
+                        "then": "To miejsce nie ma toalet"
+                    }
+                },
+                "question": "Czy to miejsce ma toalety?"
+            },
+            "caravansites-website": {
+                "question": "Czy to miejsce ma stronę internetową?",
+                "render": "Official website: <a href='{website}'>{website}</a>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Nienazwane miejsce dla kamperów"
+                }
+            },
+            "render": "Pole kamperowe {name}"
+        }
+    },
     "charging_station": {
         "tagRenderings": {
             "Network": {
@@ -1459,6 +1571,95 @@
                 "question": "W czym specjalizuje się ten lekarz?",
                 "render": "Ten lekarz specjalizuje się w {healthcare:speciality}"
             }
+        }
+    },
+    "dumpstations": {
+        "description": "Stacje zrzutów sanitarnych",
+        "name": "Stacje zrzutów sanitarnych",
+        "presets": {
+            "0": {
+                "description": "Dodaj nową stację zrzutu sanitarnego. To miejsce, w którym kierowcy kamperów mogą wyrzucać ścieki lub odpady z toalet chemicznych. Często jest tam też woda pitna i prąd.",
+                "title": "stacja zrzutu sanitarnego"
+            }
+        },
+        "tagRenderings": {
+            "dumpstations-access": {
+                "mappings": {
+                    "0": {
+                        "then": "Aby z tego skorzystać, potrzebny jest klucz/kod sieci"
+                    },
+                    "1": {
+                        "then": "Aby korzystać z tego miejsca, musisz być klientem kempingu/miejsca dla kamperów"
+                    },
+                    "2": {
+                        "then": "Każdy może korzystać z tej stacji zrzutu"
+                    },
+                    "3": {
+                        "then": "Każdy może korzystać z tej stacji zrzutu"
+                    }
+                },
+                "question": "Kto może korzystać z tej stacji zrzutów?"
+            },
+            "dumpstations-charge": {
+                "question": "Ile kosztuje to miejsce?",
+                "render": "To miejsce pobiera opłatę w wysokości {charge}"
+            },
+            "dumpstations-chemical-waste": {
+                "mappings": {
+                    "0": {
+                        "then": "Tutaj możesz wyrzucić odpady chemiczne z toalet"
+                    },
+                    "1": {
+                        "then": "Nie można tutaj wyrzucać odpadów chemicznych z toalet"
+                    }
+                },
+                "question": "Czy można tutaj wyrzucać odpady chemiczne z toalet?"
+            },
+            "dumpstations-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Trzeba zapłacić, aby użyć"
+                    },
+                    "1": {
+                        "then": "Może być użyte za darmo"
+                    }
+                },
+                "question": "Czy to miejsce pobiera opłatę?"
+            },
+            "dumpstations-grey-water": {
+                "mappings": {
+                    "0": {
+                        "then": "Tutaj możesz pozbyć się szarej wody"
+                    },
+                    "1": {
+                        "then": "Nie można tu wylewać szarej wody"
+                    }
+                },
+                "question": "Czy można tutaj pozbyć się szarej wody?"
+            },
+            "dumpstations-network": {
+                "question": "Do jakiej sieci należy to miejsce? (pomiń, jeśli nie ma)",
+                "render": "Ta stacja jest częścią sieci {network}"
+            },
+            "dumpstations-waterpoint": {
+                "mappings": {
+                    "0": {
+                        "then": "To miejsce ma punkt poboru wody"
+                    },
+                    "1": {
+                        "then": "To miejsce nie ma punktu poboru wody"
+                    }
+                },
+                "question": "Czy to miejsce ma punkt z wodą?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Stacja zrzutowa"
+                }
+            },
+            "render": "Stacja zrzutów {name}"
         }
     },
     "elevator": {

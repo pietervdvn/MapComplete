@@ -138,6 +138,31 @@
     "reviews",
     {
       "question": {
+        "en": "Does one have to pay to use this playground?",
+        "nl": "Moet men betalen om deze speeltuin te gebruiken?"
+      },
+      "id": "fee",
+      "mappings": [
+        {
+          "if": "fee=no",
+          "alsoShowIf": "fee=",
+          "then": {
+            "en": "Free to use",
+            "nl": "Gratis te gebruiken"
+          }
+        },
+        {
+          "if": "fee=yes",
+          "then": {
+            "en": "Paid playground",
+            "nl": "Betalend"
+          }
+        }
+      ],
+      "filter": true
+    },
+    {
+      "question": {
         "nl": "Wat is de ondergrond van deze speeltuin?",
         "en": "Which is the surface of this playground?",
         "it": "Qual è la superficie di questo parco giochi?",
@@ -740,5 +765,9 @@
         "leisure="
       ]
     }
+  },
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": false
   }
 }

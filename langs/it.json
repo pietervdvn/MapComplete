@@ -253,7 +253,6 @@
         "morescreen": {
             "createYourOwnTheme": "Crea il tuo tema di MapComplete personalizzato da zero",
             "hiddenExplanation": "Questi temi sono solo accessibili se si dispone del collegamento. Hai scoperto {hidden_discovered} su {total_hidden} temi nascosti.",
-            "intro": "<h3>Altre mappe tematiche?</h3>Ti diverti a raccogliere dati geografici?<br/>Sono disponibili altri temi.",
             "noMatchingThemes": "Nessun argomento corrisponde ai tuoi criteri di ricerca",
             "noSearch": "Mostra tutti gli argomenti",
             "previouslyHiddenTitle": "Temi nascosti precedentemente visitati",

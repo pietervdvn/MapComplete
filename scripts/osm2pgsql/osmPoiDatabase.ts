@@ -94,7 +94,7 @@ export class OsmPoiDatabase {
         let latestDate: Date = undefined
         for (const name of dbs) {
             const date = new Date(name)
-            if (latestDate.getTime() < date.getTime()) {
+            if (latestDate === undefined || latestDate.getTime() < date.getTime()) {
                 latest = name
                 latestDate = date
             }
@@ -104,7 +104,7 @@ export class OsmPoiDatabase {
         }
 
         console.log("Latest database is:", latest)
-        return latest
+        return "osm-poi."+latest
     }
 
     async createNew(date: string) {

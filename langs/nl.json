@@ -178,7 +178,7 @@
             "translatedBy": "MapComplete werd vertaald door {contributors} en <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} meer vertalers</a>"
         },
         "back": "Vorige",
-        "backToIndex": "Keer terug naar het overzicht met alle thematische kaarten",
+        "backToIndex": "Bekijk alle thematische kaarten",
         "backToMap": "Ga terug naar de kaart",
         "backgroundMap": "Selecteer een achtergrondlaag",
         "backgroundSwitch": "Verander achtergrond",
@@ -251,7 +251,6 @@
             "createYourOwnTheme": "Maak je eigen MapComplete-kaart",
             "enterToOpen": "Druk op enter om thema te openen",
             "hiddenExplanation": "Deze thema's zijn enkel zichtbaar indien je de link kent. Je hebt {hidden_discovered} van {total_hidden} verborgen thema's ontdekt.",
-            "intro": "<h3>Meer thematische kaarten?</h3>Vind je het leuk om geodata te verzamelen? <br> Hier vind je meer kaartthema's.",
             "noMatchingThemes": "Geen enkel thema beantwoordt je zoekopdracht",
             "noSearch": "Toon alle thema's",
             "previouslyHiddenTitle": "Eerder bezochte verborgen themas",

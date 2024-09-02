@@ -154,5 +154,6 @@
         "cs": "<h3>Otevírací doba pro návštěvníky</h3>Běžným návštěvníkům je vstup povolen v následujících časech: {opening_hours_table(opening_hours:visitors)}<p class='subtle'>Některá oddělení mohou mít jinou otevírací dobu. Mnohé nemocnice povolují návštěvy i v době pohotovosti.</p>"
       }
     }
-  ]
+  ],
+  "allowMove": true
 }

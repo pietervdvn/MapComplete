@@ -27,5 +27,6 @@
       ]
     }
   ],
-  "lineRendering": []
+  "lineRendering": [],
+  "allowMove": false
 }

@@ -7,6 +7,7 @@
   "source": "special:library",
   "pointRendering": null,
   "lineRendering": null,
+  "allowMove": false,
   "units": [
     {
       "quantity": "power",

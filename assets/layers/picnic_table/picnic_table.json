@@ -146,6 +146,13 @@
             "ca": "Açò és una taula de pícnic feta de plàstic reciclat",
             "cs": "Tento piknikový stůl je vyroben z plastu (recyklované)"
           }
+        },
+        {
+          "if": "material=metal",
+          "then": {
+            "en": "This picnic table is made from metal",
+            "nl": "Deze picnictafel is gemaakt uit metaal"
+          }
         }
       ],
       "id": "picnic_table-material"
