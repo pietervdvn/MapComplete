@@ -2,11 +2,7 @@ import LayoutConfig from "./ThemeConfig/LayoutConfig"
 import { SpecialVisualizationState } from "../UI/SpecialVisualization"
 import { Changes } from "../Logic/Osm/Changes"
 import { Store, UIEventSource } from "../Logic/UIEventSource"
-import {
-    FeatureSource,
-    IndexedFeatureSource,
-    WritableFeatureSource
-} from "../Logic/FeatureSource/FeatureSource"
+import { FeatureSource, IndexedFeatureSource, WritableFeatureSource } from "../Logic/FeatureSource/FeatureSource"
 import { OsmConnection } from "../Logic/Osm/OsmConnection"
 import { ExportableMap, MapProperties } from "./MapProperties"
 import LayerState from "../Logic/State/LayerState"
@@ -50,9 +46,7 @@ import BackgroundLayerResetter from "../Logic/Actors/BackgroundLayerResetter"
 import SaveFeatureSourceToLocalStorage from "../Logic/FeatureSource/Actors/SaveFeatureSourceToLocalStorage"
 import BBoxFeatureSource from "../Logic/FeatureSource/Sources/TouchesBboxFeatureSource"
 import ThemeViewStateHashActor from "../Logic/Web/ThemeViewStateHashActor"
-import NoElementsInViewDetector, {
-    FeatureViewState
-} from "../Logic/Actors/NoElementsInViewDetector"
+import NoElementsInViewDetector, { FeatureViewState } from "../Logic/Actors/NoElementsInViewDetector"
 import FilteredLayer from "./FilteredLayer"
 import { PreferredRasterLayerSelector } from "../Logic/Actors/PreferredRasterLayerSelector"
 import { ImageUploadManager } from "../Logic/ImageProviders/ImageUploadManager"
@@ -70,19 +64,10 @@ import summaryLayer from "../assets/generated/layers/summary.json"
 import last_click_layerconfig from "../assets/generated/layers/last_click.json"
 
 import { LayerConfigJson } from "./ThemeConfig/Json/LayerConfigJson"
-import Locale from "../UI/i18n/Locale"
 import Hash from "../Logic/Web/Hash"
 import { GeoOperations } from "../Logic/GeoOperations"
 import { CombinedFetcher } from "../Logic/Web/NearbyImagesSearch"
-import GeocodingProvider, { GeocodingUtils } from "../Logic/Geocoding/GeocodingProvider"
-import CombinedSearcher from "../Logic/Geocoding/CombinedSearcher"
-import CoordinateSearch from "../Logic/Geocoding/CoordinateSearch"
-import LocalElementSearch from "../Logic/Geocoding/LocalElementSearch"
-import { RecentSearch } from "../Logic/Geocoding/RecentSearch"
-import PhotonSearch from "../Logic/Geocoding/PhotonSearch"
-import ThemeSearch from "../Logic/Geocoding/ThemeSearch"
-import OpenStreetMapIdSearch from "../Logic/Geocoding/OpenStreetMapIdSearch"
-import FilterSearch from "../Logic/Geocoding/FilterSearch"
+import { GeocodingUtils } from "../Logic/Geocoding/GeocodingProvider"
 import SearchState from "../Logic/State/SearchState"
 
 /**
@@ -569,6 +554,10 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 this.previewedImage.setData(undefined)
                 return
             }
+            if(this.searchState.showSearchDrawer.data){
+                this.searchState.showSearchDrawer.set(false)
+                return
+            }
             if(this.guistate.closeAll()){
                return
             }
@@ -622,6 +611,12 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 () => this.selectClosestAtCenter(i - 1)
             )
         }
+
+
+        Hotkeys.RegisterHotkey({ ctrl: "F" }, Translations.t.hotkeyDocumentation.selectSearch, () => {
+            this.searchState.feedback.set(undefined)
+            this.searchState.searchIsFocused.set(true)
+        })
 
         this.featureSwitches.featureSwitchBackgroundSelection.addCallbackAndRun((enable) => {
             if (!enable) {

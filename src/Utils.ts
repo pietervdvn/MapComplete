@@ -1808,6 +1808,18 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return href
     }
 
+    /** Randomize array in-place using Durstenfeld shuffle algorithm
+     * Source: https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+     * */
+    static shuffle(array: any[]) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1))
+            const temp = array[i]
+            array[i] = array[j]
+            array[j] = temp
+        }
+    }
+
 
     private static emojiRegex = /[\p{Extended_Pictographic}🛰️]/u
 

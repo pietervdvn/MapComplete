@@ -56,16 +56,16 @@ export interface GeocodingOptions {
 }
 
 
-export default interface GeocodingProvider {
+export default interface GeocodingProvider<T extends SearchResult = SearchResult> {
 
 
-    search(query: string, options?: GeocodingOptions): Promise<SearchResult[]>
+    search(query: string, options?: GeocodingOptions): Promise<T[]>
 
     /**
      * @param query
      * @param options
      */
-    suggest?(query: string, options?: GeocodingOptions): Store<SearchResult[]>
+    suggest?(query: string, options?: GeocodingOptions): Store<T[]>
 }
 
 export type ReverseGeocodingResult = Feature<Geometry, {

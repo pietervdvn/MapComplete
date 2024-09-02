@@ -1,10 +1,10 @@
 import { Store, UIEventSource } from "../UIEventSource"
-import GeocodingProvider, { SearchResult, GeocodingOptions } from "./GeocodingProvider"
+import GeocodingProvider, { GeocodingOptions, GeocodeResult } from "./GeocodingProvider"
 import { OsmId } from "../../Models/OsmFeature"
 import { SpecialVisualizationState } from "../../UI/SpecialVisualization"
 
-export default class OpenStreetMapIdSearch implements GeocodingProvider {
-    private static readonly regex = /((https?:\/\/)?(www.)?(osm|openstreetmap).org\/)?(n|node|w|way|r|relation)[\/ ]?([0-9]+)/
+export default class OpenStreetMapIdSearch implements GeocodingProvider<GeocodeResult> {
+    private static readonly regex = /((https?:\/\/)?(www.)?(osm|openstreetmap).org\/)?(n|node|w|way|r|relation)[/ ]?([0-9]+)/
 
     private static readonly types: Readonly<Record<string, "node" | "way" | "relation">> = {
         "n":"node",
@@ -45,7 +45,7 @@ export default class OpenStreetMapIdSearch implements GeocodingProvider {
         return undefined
     }
 
-    async search(query: string, options?: GeocodingOptions): Promise<SearchResult[]> {
+    async search(query: string, options?: GeocodingOptions): Promise<GeocodeResult[]> {
         const id = OpenStreetMapIdSearch.extractId(query)
         if (!id) {
             return []
@@ -74,7 +74,7 @@ export default class OpenStreetMapIdSearch implements GeocodingProvider {
         }]
     }
 
-    suggest?(query: string, options?: GeocodingOptions): Store<SearchResult[]> {
+    suggest?(query: string, options?: GeocodingOptions): Store<GeocodeResult[]> {
         return UIEventSource.FromPromise(this.search(query, options))
     }
 

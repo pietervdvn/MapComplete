@@ -5161,6 +5161,18 @@
                     "14": {
                         "then": "Thai dishes are served here"
                     },
+                    "15": {
+                        "then": "Mexican dishes are served here"
+                    },
+                    "16": {
+                        "then": "Japanese dishes are served here"
+                    },
+                    "17": {
+                        "then": "Chicken based dishes are served here"
+                    },
+                    "18": {
+                        "then": "Seafood dishes are served here"
+                    },
                     "2": {
                         "then": "Mainly serves pasta"
                     },
@@ -5184,33 +5196,6 @@
                     },
                     "9": {
                         "then": "French dishes are served here"
-                    },
-                    "10": {
-                        "then": "Chinese dishes are served here"
-                    },
-                    "11": {
-                        "then": "Greek dishes are served here"
-                    },
-                    "12": {
-                        "then": "Indian dishes are served here"
-                    },
-                    "13": {
-                        "then": "Turkish dishes are served here"
-                    },
-                    "14": {
-                        "then": "Thai dishes are served here"
-                    },
-                    "15": {
-                        "then": "Mexican dishes are served here"
-                    },
-                    "16": {
-                        "then": "Japanese dishes are served here"
-                    },
-                    "17": {
-                        "then": "Chicken based dishes are served here"
-                    },
-                    "18": {
-                        "then": "Seafood dishes are served here"
                     }
                 },
                 "question": "What kind of food is served here?",

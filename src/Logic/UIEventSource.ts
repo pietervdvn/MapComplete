@@ -41,17 +41,16 @@ export class Stores {
         return src
     }
 
-    public static concat<T>(stores: Store<T[]>[]): Store<T[][]> {
-        const newStore = new UIEventSource<T[][]>([])
-        function update(){
-            if(newStore._callbacks.isDestroyed){
+    public static concat<T>(stores: Store<T[] | undefined>[]): Store<(T[] | undefined)[]> {
+        const newStore = new UIEventSource<(T[] | undefined)[]>([])
+
+        function update() {
+            if (newStore._callbacks.isDestroyed) {
                 return true // unregister
             }
-            const results: T[][] = []
+            const results: (T[] | undefined)[] = []
             for (const store of stores) {
-                if(store.data){
-                    results.push(store.data)
-                }
+                results.push(store.data)
             }
             newStore.setData(results)
         }
@@ -261,7 +260,7 @@ export abstract class Store<T> implements Readable<T> {
                 if (mapped.data === newEventSource) {
                     sink.setData(resultData)
                 }
-                if(sink._callbacks.isDestroyed){
+                if (sink._callbacks.isDestroyed) {
                     return true // unregister
                 }
             })
@@ -270,7 +269,7 @@ export abstract class Store<T> implements Readable<T> {
         return sink
     }
 
-    public bindD<X>(f: (t: Exclude<T, undefined | null>) => Store<X>, extraSources: UIEventSource<object>[] =[]): Store<X> {
+    public bindD<X>(f: (t: Exclude<T, undefined | null>) => Store<X>, extraSources: UIEventSource<object>[] = []): Store<X> {
         return this.bind((t) => {
             if (t === null) {
                 return null
@@ -408,7 +407,8 @@ export class ImmutableStore<T> extends Store<T> {
 class ListenerTracker<T> {
     public pingCount = 0
     private readonly _callbacks: ((t: T) => boolean | void | any)[] = []
-public isDestroyed = false
+    public isDestroyed = false
+
     /**
      * Adds a callback which can be called; a function to unregister is returned
      */
@@ -469,8 +469,8 @@ public isDestroyed = false
         return this._callbacks.length
     }
 
-    public destroy(){
-        this.isDestroyed=  true
+    public destroy() {
+        this.isDestroyed = true
         this._callbacks.splice(0, this._callbacks.length)
     }
 }
@@ -635,7 +635,8 @@ class MappedStore<TIn, T> extends Store<T> {
 }
 
 export class UIEventSource<T> extends Store<T> implements Writable<T> {
-    private static readonly pass: (() => void) = () => {};
+    private static readonly pass: (() => void) = () => {
+    }
     public data: T
     _callbacks: ListenerTracker<T> = new ListenerTracker<T>()
 
@@ -644,7 +645,7 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
         this.data = data
     }
 
-    public destroy(){
+    public destroy() {
         this._callbacks.destroy()
     }
 
@@ -782,9 +783,9 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
                     return defaultV
                 }
                 try {
-                    return <T> JSON.parse(str)
+                    return <T>JSON.parse(str)
                 } catch (e) {
-                    console.error("Could not parse value", str,"due to",e)
+                    console.error("Could not parse value", str, "due to", e)
                     return defaultV
                 }
             },

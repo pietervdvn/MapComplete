@@ -21,7 +21,7 @@
 {#if loading}
   <Loading />
 {:else }
-  <div class="badge">
+  <div class="badge button-unstyled w-fit">
     <FilterOption option={$option} />
     <button on:click={() => clear()}>
       <XMarkIcon class="w-5 h-5 pl-1" color="gray" />

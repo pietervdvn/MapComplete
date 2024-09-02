@@ -15,18 +15,35 @@
   $: value.set(_value)
 
   const dispatch = createEventDispatcher<{ search }>()
-  export let placeholder: Translation =  Translations.t.general.search.search
+  export let placeholder: Translation = Translations.t.general.search.search
+  export let isFocused: UIEventSource<boolean> = undefined
+  let inputElement: HTMLInputElement
+
+  isFocused?.addCallback(focussed => {
+    if (focussed) {
+      requestAnimationFrame(() => {
+        if (document.activeElement !== inputElement) {
+          inputElement.focus()
+          inputElement.select()
+        }
+      })
+    }
+  })
+
 </script>
 
 
 <form
-  class="flex justify-center"
+  class="w-full"
   on:submit|preventDefault={() => dispatch("search")}
 >
   <label
-    class="neutral-label my-2 flex w-full items-center rounded-full border-2 border-black sm:w-1/2  box-shadow"
+    class="neutral-label normal-background flex w-full items-center rounded-full border-2 border-black box-shadow"
   >
     <input
+      bind:this={inputElement}
+      on:focus={() => {isFocused?.setData(true)}}
+      on:blur={() => {isFocused?.setData(false)}}
       type="search"
       style=" --tw-ring-color: rgb(0 0 0 / 0) !important;"
       class="ml-4 pl-1 w-full outline-none border-none"
@@ -35,9 +52,9 @@
         }}
       bind:value={_value}
       use:set_placeholder={placeholder}
-      use:ariaLabel={Translations.t.general.search.search}
+      use:ariaLabel={placeholder}
     />
-    <SearchIcon aria-hidden="true" class="h-8 w-8 mx-2" />
+    <SearchIcon aria-hidden="true" class="h-8 w-8 mx-3" />
 
   </label>
 </form>

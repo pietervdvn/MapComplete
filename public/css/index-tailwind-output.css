@@ -1160,12 +1160,12 @@ input[type="range"].range-lg::-moz-range-thumb {
   left: 0px;
 }
 
-.right-1\/3 {
-  right: 33.333333%;
-}
-
 .right-0 {
   right: 0px;
+}
+
+.right-1\/3 {
+  right: 33.333333%;
 }
 
 .right-10 {
@@ -1413,6 +1413,11 @@ input[type="range"].range-lg::-moz-range-thumb {
   margin-right: auto;
 }
 
+.mx-3 {
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+}
+
 .my-4 {
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -1474,6 +1479,14 @@ input[type="range"].range-lg::-moz-range-thumb {
   margin-bottom: 4rem;
 }
 
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.ml-1 {
+  margin-left: 0.25rem;
+}
+
 .mr-0\.5 {
   margin-right: 0.125rem;
 }
@@ -1488,14 +1501,6 @@ input[type="range"].range-lg::-moz-range-thumb {
 
 .mt-1 {
   margin-top: 0.25rem;
-}
-
-.mb-4 {
-  margin-bottom: 1rem;
-}
-
-.ml-1 {
-  margin-left: 0.25rem;
 }
 
 .mt-2 {
@@ -1911,10 +1916,6 @@ input[type="range"].range-lg::-moz-range-thumb {
 
 .max-h-12 {
   max-height: 3rem;
-}
-
-.max-h-screen {
-  max-height: 100vh;
 }
 
 .max-h-full {
@@ -8090,12 +8091,12 @@ svg.apply-fill path {
     order: 9999;
   }
 
-  .sm\:m-2 {
-    margin: 0.5rem;
-  }
-
   .sm\:m-1 {
     margin: 0.25rem;
+  }
+
+  .sm\:m-2 {
+    margin: 0.5rem;
   }
 
   .sm\:mx-1 {

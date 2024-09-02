@@ -1,12 +1,12 @@
-import GeocodingProvider, { SearchResult, GeocodingOptions } from "./GeocodingProvider"
+import GeocodingProvider, { SearchResult, GeocodingOptions, GeocodeResult } from "./GeocodingProvider"
 import { Utils } from "../../Utils"
 import { Store, Stores } from "../UIEventSource"
 
-export default class CombinedSearcher implements GeocodingProvider {
-    private _providers: ReadonlyArray<GeocodingProvider>
-    private _providersWithSuggest: ReadonlyArray<GeocodingProvider>
+export default class CombinedSearcher implements GeocodingProvider <GeocodeResult> {
+    private _providers: ReadonlyArray<GeocodingProvider<GeocodeResult>>
+    private _providersWithSuggest: ReadonlyArray<GeocodingProvider<GeocodeResult>>
 
-    constructor(...providers: ReadonlyArray<GeocodingProvider>) {
+    constructor(...providers: ReadonlyArray<GeocodingProvider<GeocodeResult>>) {
         this._providers = Utils.NoNull(providers)
         this._providersWithSuggest = this._providers.filter(pr => pr.suggest !== undefined)
     }
@@ -17,10 +17,13 @@ export default class CombinedSearcher implements GeocodingProvider {
      * @param geocoded
      * @private
      */
-    private merge(geocoded: SearchResult[][]): SearchResult[] {
-        const results: SearchResult[] = []
+    public static merge(geocoded: GeocodeResult[][]): GeocodeResult[] {
+        const results: GeocodeResult[] = []
         const seenIds = new Set<string>()
         for (const geocodedElement of geocoded) {
+            if(geocodedElement === undefined){
+                continue
+            }
             for (const entry of geocodedElement) {
 
 
@@ -40,13 +43,13 @@ export default class CombinedSearcher implements GeocodingProvider {
 
     async search(query: string, options?: GeocodingOptions): Promise<SearchResult[]> {
         const results = (await Promise.all(this._providers.map(pr => pr.search(query, options))))
-        return this.merge(results)
+        return CombinedSearcher.merge(results)
     }
 
     suggest(query: string, options?: GeocodingOptions): Store<SearchResult[]> {
         return Stores.concat(
             this._providersWithSuggest.map(pr => pr.suggest(query, options)))
-            .map(gcrss => this.merge(gcrss))
+            .map(gcrss => CombinedSearcher.merge(gcrss))
 
     }
 }

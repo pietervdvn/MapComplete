@@ -11,7 +11,6 @@
   import LayerConfig from "../Models/ThemeConfig/LayerConfig"
   import ThemeViewState from "../Models/ThemeViewState"
   import type { MapProperties } from "../Models/MapProperties"
-  import Geosearch from "./Search/Geosearch.svelte"
   import Translations from "./i18n/Translations"
   import { MenuIcon } from "@rgossiaux/svelte-heroicons/solid"
   import Tr from "./Base/Tr.svelte"
@@ -47,6 +46,7 @@
   import SearchResults from "./Search/SearchResults.svelte"
   import { CloseButton } from "flowbite-svelte"
   import Hash from "../Logic/Web/Hash"
+  import Searchbar from "./Base/Searchbar.svelte"
 
   export let state: ThemeViewState
   let layout = state.layout
@@ -161,9 +161,24 @@
 </script>
 
 <main>
+  <!-- Main map -->
   <div class="absolute top-0 left-0 h-screen w-screen overflow-hidden">
     <MaplibreMap map={maplibremap} mapProperties={mapproperties} autorecovery={true} />
   </div>
+
+  <LoginToggle ignoreLoading={true} {state}>
+    {#if ($showCrosshair === "yes" && $currentZoom >= 17) || $showCrosshair === "always" || $visualFeedback}
+      <!-- Don't use h-full: h-full does _not_ include the area under the URL-bar, which offsets the crosshair a bit -->
+      <div
+        class="pointer-events-none absolute top-0 left-0 flex w-full items-center justify-center"
+        style="height: 100vh"
+      >
+        <Cross class="h-4 w-4" />
+      </div>
+    {/if}
+    <!-- Add in an empty container to remove error messages if login fails -->
+    <svelte:fragment slot="error" />
+  </LoginToggle>
 
   {#if $visualFeedback}
     <div
@@ -177,108 +192,6 @@
     </div>
   {/if}
 
-  <div class="pointer-events-none absolute top-0 left-0 w-full">
-    <!-- Top components -->
-
-    <div
-      class="flex bg-black-light-transparent pointer-events-auto items-center justify-between px-4 py-1 flex-wrap-reverse">
-      <!-- Top bar with tools -->
-      <div class="flex items-center">
-
-        <MapControlButton
-          cls="m-0.5 p-0.5 sm:p-1"
-          arialabel={Translations.t.general.labels.menu}
-          on:click={() => {console.log("Opening...."); state.guistate.pageStates.menu.setData(true)}}
-          on:keydown={forwardEventToMap}
-        >
-          <MenuIcon class="h-6 w-6 cursor-pointer" />
-        </MapControlButton>
-
-        <MapControlButton
-          on:click={() => state.guistate.pageStates.about_theme.set(true)}
-          on:keydown={forwardEventToMap}
-        >
-          <div
-            class="m-0.5 mx-1 flex cursor-pointer items-center max-[480px]:w-full sm:mx-1 mr-2"
-          >
-            <Marker icons={layout.icon} size="h-6 w-6 shrink-0 mr-0.5 sm:mr-1 md:mr-2" />
-            <b class="mr-1">
-              <Tr t={layout.title} />
-            </b>
-          </div>
-        </MapControlButton>
-      </div>
-
-      {#if $debug && $hash}
-        <div class="alert">
-          {$hash}
-        </div>
-      {/if}
-
-      <If condition={state.featureSwitches.featureSwitchSearch}>
-        <div class="w-full sm:w-64 my-2 sm:mt-0">
-
-          <Geosearch
-            bounds={state.mapProperties.bounds}
-            on:searchCompleted={() => {
-            state.map?.data?.getCanvas()?.focus()
-          }}
-            perLayer={state.perLayer}
-            selectedElement={state.selectedElement}
-            geolocationState={state.geolocation.geolocationState}
-          />
-        </div>
-      </If>
-
-    </div>
-
-    <div class="pointer-events-auto float-right mt-1 flex flex-col px-1 max-[480px]:w-full sm:m-2">
-      <If condition={state.visualFeedback}>
-        {#if $selectedElement === undefined}
-          <div class="w-fit">
-            <VisualFeedbackPanel {state} />
-          </div>
-        {/if}
-      </If>
-
-    </div>
-    <div class="float-left m-1 flex flex-col sm:mt-2">
-      <If condition={state.featureSwitches.featureSwitchWelcomeMessage}>
-
-
-      </If>
-      {#if currentViewLayer?.tagRenderings && currentViewLayer.defaultIcon()}
-        <MapControlButton
-          on:click={() => {
-            state.selectCurrentView()
-          }}
-          on:keydown={forwardEventToMap}
-        >
-          <div class="h-8 w-8 cursor-pointer">
-            <ToSvelte construct={() => currentViewLayer.defaultIcon()} />
-          </div>
-        </MapControlButton>
-      {/if}
-      <ExtraLinkButton {state} />
-      <UploadingImageCounter featureId="*" showThankYou={false} {state} />
-      <PendingChangesIndicator {state} />
-      <If condition={state.featureSwitchIsTesting}>
-        <div class="alert w-fit">Testmode</div>
-      </If>
-      {#if state.osmConnection.Backend().startsWith("https://master.apis.dev.openstreetmap.org")}
-        <div class="thanks">Testserver</div>
-      {/if}
-      <If condition={state.featureSwitches.featureSwitchFakeUser}>
-        <div class="alert w-fit">Faking a user (Testmode)</div>
-      </If>
-    </div>
-    <div class="flex w-full flex-col items-center justify-center">
-      <!-- Flex and w-full are needed for the positioning -->
-      <!-- Centermessage -->
-      <StateIndicator {state} />
-      <ReverseGeocoding {state} />
-    </div>
-  </div>
 
   <div class="pointer-events-none absolute bottom-0 left-0 mb-4 w-screen">
     <!-- bottom controls -->
@@ -389,7 +302,7 @@
   </div>
 
 
-  <DrawerRight shown={state.searchState.showSearchDrawer} }>
+  <DrawerRight shown={state.searchState.showSearchDrawer}>
     <div class="relative">
       <div class="absolute right-0 top-0 ">
         <div class="mr-4 mt-4">
@@ -401,8 +314,11 @@
   </DrawerRight>
 
 
-  <div class="pointer-events-none absolute top-0 left-0 w-full">
+
+
     <!-- Top components -->
+  <div class="pointer-events-none absolute top-0 left-0 w-full">
+
     <div
       id="top-bar"
       class="flex bg-black-light-transparent pointer-events-auto items-center justify-between px-4 py-1 flex-wrap-reverse">
@@ -412,7 +328,7 @@
         <MapControlButton
           cls="m-0.5 p-0.5 sm:p-1"
           arialabel={Translations.t.general.labels.menu}
-          on:click={() => {state.guistate.menuIsOpened.setData(true)}}
+          on:click={() => {console.log("Opening...."); state.guistate.pageStates.menu.setData(true)}}
           on:keydown={forwardEventToMap}
         >
           <MenuIcon class="h-6 w-6 cursor-pointer" />
@@ -433,11 +349,15 @@
         </MapControlButton>
       </div>
 
+      {#if $debug && $hash}
+        <div class="alert">
+          {$hash}
+        </div>
+      {/if}
 
       <If condition={state.featureSwitches.featureSwitchSearch}>
-        <div class="w-full sm:w-80 md:w-96 my-2 sm:mt-0">
-          <Geosearch {state} isFocused={state.searchState.searchIsFocused}
-                     searchContents={state.searchState.searchTerm} />
+        <div class="w-full sm:w-64">
+          <Searchbar value={state.searchState.searchTerm} isFocused={state.searchState.searchIsFocused}/>
         </div>
       </If>
 
@@ -453,8 +373,9 @@
       </If>
 
     </div>
-    <div class="float-left m-1 flex flex-col sm:mt-2">
 
+    <div class="float-left m-1 flex flex-col sm:mt-2">
+      <!-- Current view tools -->
       {#if currentViewLayer?.tagRenderings && currentViewLayer.defaultIcon()}
         <MapControlButton
           on:click={() => {
@@ -467,6 +388,7 @@
           </div>
         </MapControlButton>
       {/if}
+
       <ExtraLinkButton {state} />
       <UploadingImageCounter featureId="*" showThankYou={false} {state} />
       <PendingChangesIndicator {state} />
@@ -480,7 +402,8 @@
         <div class="alert w-fit">Faking a user (Testmode)</div>
       </If>
     </div>
-    <div class="flex w-full flex-col items-center justify-center" >
+
+    <div class="flex w-full flex-col items-center justify-center">
       <!-- Flex and w-full are needed for the positioning -->
       <!-- Centermessage -->
       <StateIndicator {state} />
@@ -488,20 +411,6 @@
     </div>
   </div>
 
-
-  <LoginToggle ignoreLoading={true} {state}>
-    {#if ($showCrosshair === "yes" && $currentZoom >= 17) || $showCrosshair === "always" || $visualFeedback}
-      <!-- Don't use h-full: h-full does _not_ include the area under the URL-bar, which offsets the crosshair a bit -->
-      <div
-        class="pointer-events-none absolute top-0 left-0 flex w-full items-center justify-center"
-        style="height: 100vh"
-      >
-        <Cross class="h-4 w-4" />
-      </div>
-    {/if}
-    <!-- Add in an empty container to remove error messages if login fails -->
-    <svelte:fragment slot="error" />
-  </LoginToggle>
 
   <DrawerLeft shown={state.guistate.pageStates.menu}>
     <div class="h-screen overflow-y-auto">

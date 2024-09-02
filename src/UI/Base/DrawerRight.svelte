@@ -33,7 +33,7 @@
         rightOffset="inset-y-0 right-0"
         bind:hidden={hidden}>
 
-  <div class="normal-background h-screen">
+  <div class="low-interaction h-screen">
     <div class="h-full" style={`padding-top: ${height}px`}>
       <div class="flex flex-col h-full overflow-y-auto">
         <slot />

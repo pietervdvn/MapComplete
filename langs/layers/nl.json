@@ -4028,6 +4028,19 @@
                     }
                 }
             },
+            "10": {
+                "options": {
+                    "0": {
+                        "question": "Geen voorkeur voor honden"
+                    },
+                    "1": {
+                        "question": "Honden toegelaten"
+                    },
+                    "2": {
+                        "question": "Geen honden toegelaten"
+                    }
+                }
+            },
             "2": {
                 "options": {
                     "0": {
@@ -4082,19 +4095,6 @@
                 "options": {
                     "0": {
                         "question": "Gratis toegankelijk"
-                    }
-                }
-            },
-            "10": {
-                "options": {
-                    "0": {
-                        "question": "Geen voorkeur voor honden"
-                    },
-                    "1": {
-                        "question": "Honden toegelaten"
-                    },
-                    "2": {
-                        "question": "Geen honden toegelaten"
                     }
                 }
             }
@@ -4305,6 +4305,18 @@
                     "14": {
                         "then": "Dit is een Thaïs restaurant"
                     },
+                    "15": {
+                        "then": "Dit is een mexicaans restaurant"
+                    },
+                    "16": {
+                        "then": "Dit is een japans restaurant"
+                    },
+                    "17": {
+                        "then": "Dit is een kiprestaurant"
+                    },
+                    "18": {
+                        "then": "Dit is een vis- en zeerestaurant"
+                    },
                     "2": {
                         "then": "Dit is een pastazaak"
                     },
@@ -4328,33 +4340,6 @@
                     },
                     "9": {
                         "then": "Dit is een Frans restaurant"
-                    },
-                    "10": {
-                        "then": "Dit is een Chinees restaurant"
-                    },
-                    "11": {
-                        "then": "Dit is een Grieks restaurant"
-                    },
-                    "12": {
-                        "then": "Dit is een Indisch restaurant"
-                    },
-                    "13": {
-                        "then": "Dit is een Turks restaurant (dat meer dan enkel kebab verkoopt)"
-                    },
-                    "14": {
-                        "then": "Dit is een Thaïs restaurant"
-                    },
-                    "15": {
-                        "then": "Dit is een mexicaans restaurant"
-                    },
-                    "16": {
-                        "then": "Dit is een japans restaurant"
-                    },
-                    "17": {
-                        "then": "Dit is een kiprestaurant"
-                    },
-                    "18": {
-                        "then": "Dit is een vis- en zeerestaurant"
                     }
                 },
                 "question": "Welk soort gerechten worden hier geserveerd?",

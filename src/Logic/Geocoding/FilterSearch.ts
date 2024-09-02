@@ -3,13 +3,15 @@ import GeocodingProvider, { FilterPayload, FilterResult, GeocodingOptions, Searc
 import { SpecialVisualizationState } from "../../UI/SpecialVisualization"
 import { Utils } from "../../Utils"
 import Locale from "../../UI/i18n/Locale"
+import Constants from "../../Models/Constants"
 
 export default class FilterSearch implements GeocodingProvider {
     private readonly _state: SpecialVisualizationState
+    private readonly suggestions
 
     constructor(state: SpecialVisualizationState) {
         this._state = state
-
+        this.suggestions = this.getSuggestions()
     }
 
     async search(query: string): Promise<SearchResult[]> {
@@ -34,7 +36,6 @@ export default class FilterSearch implements GeocodingProvider {
             }
             return query
         }).filter(q => q.length > 0)
-        console.log("Queries:",queries)
         const possibleFilters: FilterPayload[] = []
         for (const layer of this._state.layout.layers) {
             if (!Array.isArray(layer.filters)) {
@@ -55,9 +56,9 @@ export default class FilterSearch implements GeocodingProvider {
                     terms = terms.map(t => Utils.simplifyStringForSearch(t))
                     terms.push(option.emoji)
                     Utils.NoNullInplace(terms)
-                    const distances =    queries.flatMap(query => terms.map(entry => {
+                    const distances = queries.flatMap(query => terms.map(entry => {
                         const d = Utils.levenshteinDistance(query, entry.slice(0, query.length))
-                        console.log(query,"?  +",terms, "=",d)
+                        console.log(query, "?  +", terms, "=", d)
                         const dRelative = d / query.length
                         return dRelative
                     }))
@@ -78,4 +79,37 @@ export default class FilterSearch implements GeocodingProvider {
     }
 
 
+    getSuggestions(): FilterPayload[] {
+        if (this.suggestions) {
+       //     return this.suggestions
+        }
+        const result: FilterPayload[] = []
+        for (const [id, filteredLayer] of this._state.layerState.filteredLayers) {
+            if (!Array.isArray(filteredLayer.layerDef.filters)) {
+                continue
+            }
+            if (Constants.priviliged_layers.indexOf(id) >= 0) {
+                continue
+            }
+            for (const filter of filteredLayer.layerDef.filters) {
+                const singleFilterResults: FilterPayload[] = []
+                for (let i = 0; i < Math.min(filter.options.length, 5); i++) {
+                    const option = filter.options[i]
+                    if (option.osmTags === undefined) {
+                        continue
+                    }
+                    singleFilterResults.push({
+                        option,
+                        filter,
+                        index: i,
+                        layer: filteredLayer.layerDef
+                    })
+                }
+                Utils.shuffle(singleFilterResults)
+                result.push(...singleFilterResults.slice(0,3))
+            }
+        }
+        Utils.shuffle(result)
+        return result.slice(0,6)
+    }
 }
