@@ -665,5 +665,6 @@
         }
       ]
     }
-  ]
+  ],
+  "allowMove": true
 }

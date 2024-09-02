@@ -566,6 +566,10 @@
       ]
     }
   ],
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": false
+  },
   "units": [
     {
       "kerb:height": {

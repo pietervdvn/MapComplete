@@ -147,5 +147,9 @@
         "fr": "Ce tronçon de piste de ski mesure {_length:km} kilomètres de long"
       }
     }
-  ]
+  ],
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": false
+  }
 }

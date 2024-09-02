@@ -109,5 +109,9 @@
       ]
     }
   ],
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": false
+  },
   "credits": "Built for Wegspotter on the meetup"
 }

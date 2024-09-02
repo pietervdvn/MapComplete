@@ -292,5 +292,6 @@
         }
       ]
     }
-  ]
+  ],
+  "allowMove": false
 }

@@ -765,5 +765,9 @@
         "leisure="
       ]
     }
+  },
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": false
   }
 }

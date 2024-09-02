@@ -133,5 +133,6 @@
       },
       "id": "vetName"
     }
-  ]
+  ],
+  "allowMove": true
 }

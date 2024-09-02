@@ -237,6 +237,7 @@
       }
     }
   ],
+  "allowMove": false,
   "cs": {
     "0": {
       "color": {

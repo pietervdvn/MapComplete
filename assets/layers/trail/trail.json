@@ -295,5 +295,6 @@
       ],
       "id": "pushchair access"
     }
-  ]
+  ],
+  "allowMove": false
 }

@@ -858,5 +858,9 @@
     }
   ],
   "deletion": true,
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": false
+  },
   "enableMorePrivacy": true
 }

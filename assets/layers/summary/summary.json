@@ -30,5 +30,6 @@
   ],
   "tagRenderings": [
     "all_tags"
-  ]
+  ],
+  "allowMove": false
 }

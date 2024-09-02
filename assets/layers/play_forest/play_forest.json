@@ -126,5 +126,9 @@
       "render": "{reviews(name, play_forest)}"
     }
   ],
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": false
+  },
   "hideFromOverview": false
 }

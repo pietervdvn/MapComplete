@@ -102,5 +102,6 @@
     "email",
     "phone",
     "opening_hours"
-  ]
+  ],
+  "allowMove": false
 }

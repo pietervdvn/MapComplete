@@ -1108,5 +1108,6 @@
       "condition": "mapcomplete-show_debug=yes",
       "render": "{all_tags()}"
     }
-  ]
+  ],
+  "allowMove": false
 }

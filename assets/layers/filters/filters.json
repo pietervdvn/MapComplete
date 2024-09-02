@@ -384,5 +384,6 @@
         }
       ]
     }
-  ]
+  ],
+  "allowMove": false
 }
