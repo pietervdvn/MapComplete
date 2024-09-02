@@ -306,7 +306,6 @@
             "createYourOwnTheme": "Ein eigenes MapComplete-Thema von Grund auf neu erstellen",
             "enterToOpen": "Drücke Enter um Theme zu öffnen",
             "hiddenExplanation": "Diese Themen sind nur für Personen zugänglich, die einen Link erhalten haben. Sie haben {hidden_discovered} von {total_hidden} versteckten Themen entdeckt.",
-            "intro": "<h3>Mehr thematische Karten?</h3>Sammeln Sie gerne Geodaten? <br/>Es sind weitere Themen verfügbar.",
             "noMatchingThemes": "Keine Themen, die Ihren Suchkriterien entsprechen",
             "noSearch": "Alle Themen anzeigen",
             "previouslyHiddenTitle": "Zuvor besuchte versteckte Themen",

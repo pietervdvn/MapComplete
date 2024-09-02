@@ -304,7 +304,6 @@
             "createYourOwnTheme": "從零開始建立你的 MapComplete 主題",
             "enterToOpen": "請按輸入來開啟主題",
             "hiddenExplanation": "這些主題只能透過連結來打開，你已經發現 {total_hidden} 當中 {hidden_discovered} 的隱藏主題。",
-            "intro": "<h3>看更多主題地圖？</h3>您喜歡蒐集地理資料嗎？<br/>還有更多主題。",
             "noMatchingThemes": "沒有找到符合的主題",
             "noSearch": "顯示所有主題",
             "previouslyHiddenTitle": "先前看過隱藏的主題",

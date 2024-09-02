@@ -49,7 +49,6 @@
         "loginWithOpenStreetMap": "Inicia a sesión no OpenStreetMap",
         "morescreen": {
             "createYourOwnTheme": "Crea o teu propio tema completo do MapComplete dende cero.",
-            "intro": "<h3>Máis tarefas</h3>Góstache captar datos? <br/>Hai máis capas dispoñíbeis.",
             "requestATheme": "Se queres unha tarefa personalizada, solicítaa no seguimento de problemas.",
             "streetcomplete": "Outra aplicación semellante é <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' class='underline hover:text-blue-800' target='_blank'>StreetComplete</a>."
         },

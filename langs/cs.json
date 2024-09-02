@@ -306,7 +306,6 @@
             "createYourOwnTheme": "Vytvořte si vlastní téma MapComplete",
             "enterToOpen": "Stisknutím klávesy Enter otevřete objekt",
             "hiddenExplanation": "Tato témata jsou přístupná pouze těm, kteří mají odkaz. Objevili jste {hidden_discovered} ze {total_hidden} skrytých témat.",
-            "intro": "<h3>Více tematických map?</h3>Baví vás sbírat geodata? <br/>K dispozici jsou další tematické mapy.",
             "noMatchingThemes": "Vašim vyhledávacím kritériím neodpovídají žádná témata",
             "noSearch": "Zobrazit všechna témata",
             "previouslyHiddenTitle": "Dříve navštívená skrytá témata",

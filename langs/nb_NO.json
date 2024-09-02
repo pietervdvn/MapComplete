@@ -175,7 +175,6 @@
         "morescreen": {
             "createYourOwnTheme": "Opprett ditt eget MapComplete-tema fra grunnen av",
             "hiddenExplanation": "Disse temaene er kun tilgjengelige hvis du kjenner lenken. Du har oppdaget {hidden_discovered} av {total_hidden} hidden tema.",
-            "intro": "<h3>Flere temakart?</h3>Liker du å samle inn geodata? <br/>Det er flere tilgjengelige temaer.",
             "noSearch": "Vis alle temaer",
             "previouslyHiddenTitle": "Tidligere besøkte skjulte tema",
             "requestATheme": "Hvis du ønsker et brukerdefinert tema kan du forespørre det i feilsporeren",
