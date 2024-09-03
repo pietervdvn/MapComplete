@@ -20,7 +20,6 @@
   import FloatOver from "./Base/FloatOver.svelte"
   import Constants from "../Models/Constants"
   import LoginToggle from "./Base/LoginToggle.svelte"
-  import ModalRight from "./Base/ModalRight.svelte"
   import LevelSelector from "./BigComponents/LevelSelector.svelte"
   import type { RasterLayerPolygon } from "../Models/RasterLayers"
   import { AvailableRasterLayers } from "../Models/RasterLayers"
@@ -47,6 +46,8 @@
   import MenuDrawer from "./BigComponents/MenuDrawer.svelte"
   import DrawerLeft from "./Base/DrawerLeft.svelte"
   import Hash from "../Logic/Web/Hash"
+  import { Drawer } from "flowbite-svelte"
+  import { sineIn } from "svelte/easing"
 
   export let state: ThemeViewState
   let layout = state.layout
@@ -422,14 +423,27 @@
 
   {#if $selectedElement !== undefined && $selectedLayer !== undefined && !$selectedLayer.popupInFloatover}
     <!-- right modal with the selected element view -->
-    <ModalRight
-      on:close={() => {
-        state.selectedElement.setData(undefined)
-      }}
-    >
+    <Drawer
+      placement="right"
+      transitionType="fly"
+      activateClickOutside={false}
+      backdrop={false}
+      id="drawer-right"
+      width="w-full md:w-6/12 lg:w-5/12 xl:w-4/12"
+      rightOffset="inset-y-0 right-0"
+      transitionParams={ {
+    x: 640,
+    duration: 200,
+    easing: sineIn
+  }}
+      divClass="overflow-y-auto z-50 "
+      hidden={$selectedElement === undefined}
+      on:close={() => {      state.selectedElement.setData(undefined)
+    }}
+      >
       <div slot="close-button" />
       <SelectedElementPanel {state} selected={$state_selectedElement} />
-    </ModalRight>
+    </Drawer>
   {/if}
 
   {#if $selectedElement !== undefined && $selectedLayer !== undefined && $selectedLayer.popupInFloatover}
