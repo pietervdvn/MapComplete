@@ -95,7 +95,7 @@
     </LoginToggle>
 
 
-    <Page {onlyLink} shown={pg.usersettings}>
+    <Page {onlyLink} shown={pg.usersettings} bodyPadding="p-0">
       <svelte:fragment slot="header">
         <CogIcon/>
         <Tr t={UserRelatedState.usersettingsConfig.title.GetRenderValue({})} />

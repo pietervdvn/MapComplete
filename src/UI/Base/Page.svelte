@@ -20,8 +20,12 @@
   if (fullscreen) {
     dialogClass += " h-full-child"
   }
-  let bodyClass = "h-full p-4 md:p-5 space-y-4 flex-1 overflow-y-auto overscroll-contain"
+  export let bodyPadding = "p-4 md:p-5 "
+  let bodyClass = bodyPadding+" h-full space-y-4 flex-1 overflow-y-auto overscroll-contain"
+
   let headerClass = "flex justify-between items-center p-2 px-4 md:px-5 rounded-t-lg";
+
+
 </script>
 
 {#if !onlyLink}
