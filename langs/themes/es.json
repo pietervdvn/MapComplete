@@ -1207,13 +1207,13 @@
                                     "then": "Esta tienda no está asociada a ninguna agencia de transporte"
                                 }
                             },
-                            "question": "¿Es esta tienda un puesto asociado?"
+                            "question": "¿Es esta tienda un puesto de recogida de paquetes?"
                         }
                     },
                     "=presets": {
                         "0": {
-                            "description": "Si una tienda aún no está en el mapa y es socia de alguna empresa, puedes añadirla aquí.",
-                            "title": "Una tienda desaparecida que era un punto de recogida"
+                            "description": "Si una tienda aún no está en el mapa y es un puntode recogida de paquetes, puedes añadirla aquí.",
+                            "title": "Una tienda desaparecida que era un punto de recogida de paquetes"
                         }
                     },
                     "description": "Agregar un nuevo punto de recogida al mapa en una tienda existente"
@@ -1470,7 +1470,7 @@
         "title": "Basura y reciclaje"
     },
     "waste_basket": {
-        "description": "En este mapa, encontrará las papeleras cercanas a usted. Si falta una papelera en el mapa, puede añadirla usted mismo",
+        "description": "En este mapa, encontrarás las papeleras cercanas a ti. Si falta alguna en el mapa, puedes añadirla tu mismo.",
         "shortDescription": "Un mapa con papeleras",
         "title": "Papeleras"
     }
