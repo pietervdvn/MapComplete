@@ -2080,6 +2080,7 @@
         "ca": "Aquest lloc ofereix accés a internet?",
         "pl": "Czy to miejsce oferuje dostęp do Internetu?"
       },
+      "multiAnswer": true,
       "mappings": [
         {
           "if": "internet_access=wlan",
@@ -2259,7 +2260,7 @@
       "labels": [
         "internet-all"
       ],
-      "condition": "internet_access=wlan",
+      "condition": "internet_access~.*wlan.*",
       "question": {
         "en": "What is the network name for the wireless internet access?",
         "nl": "Wat is de netwerknaam voor de draadloze internettoegang?",
