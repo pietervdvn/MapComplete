@@ -10,8 +10,9 @@ Facade gardens
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [facadegardens-direction](#facadegardens-direction)
   - [facadegardens-sunshine](#facadegardens-sunshine)
@@ -28,6 +29,12 @@ Facade gardens
 ## Themes using this layer
 
  - [facadegardens](https://mapcomplete.org/facadegardens)
+
+## Presets
+
+The following options to create new points are included:
+
+**a facade garden** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dgarden' target='_blank'>garden</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:garden:type' target='_blank'>garden:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:garden:type%3Dfacade_garden' target='_blank'>facade_garden</a> (snaps to layers `walls_and_buildings`)
 
 ## Basic tags for this layer
 

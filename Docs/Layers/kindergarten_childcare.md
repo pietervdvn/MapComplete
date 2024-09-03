@@ -9,8 +9,9 @@ Shows kindergartens and preschools. Both are grouped in one layer, as they are r
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [childcare-type](#childcare-type)
   - [name](#name)
   - [website](#website)
@@ -28,6 +29,14 @@ Shows kindergartens and preschools. Both are grouped in one layer, as they are r
 
  - [education](https://mapcomplete.org/education)
  - [personal](https://mapcomplete.org/personal)
+
+## Presets
+
+The following options to create new points are included:
+
+**a kindergarten** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dkindergarten' target='_blank'>kindergarten</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:isced:level' target='_blank'>isced:level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:isced:level%3D0' target='_blank'>0</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:isced:2011:level' target='_blank'>isced:2011:level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:isced:2011:level%3Dearly_childhood' target='_blank'>early_childhood</a>
+
+**a childcare** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dkindergarten' target='_blank'>kindergarten</a>
 
 ## Basic tags for this layer
 
@@ -89,9 +98,9 @@ This tagrendering has labels
 ### phone
 
 The question is `What is the phone number of {title()}?`
-*<a href='tel:{phone}'>{phone}</a>* is shown if `phone` is set
+*{link(&LBRACEphone&RBRACE,tel:&LBRACEphone&RBRACE,,,,)}* is shown if `phone` is set
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/phone.svg' style='width: 3rem; height: 3rem'> *<a href='tel:{contact:phone}'>{contact:phone}</a>* is shown if with contact:phone~.+. _This option cannot be chosen as answer_
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/phone.svg' style='width: 3rem; height: 3rem'> *{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}* is shown if with contact:phone~.+. _This option cannot be chosen as answer_
 
 This tagrendering has labels 
 `contact`

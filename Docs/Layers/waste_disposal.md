@@ -9,8 +9,9 @@ Waste Disposal Bin, medium to large bin for disposal of (household) waste
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [type](#type)
   - [access](#access)
@@ -19,13 +20,19 @@ Waste Disposal Bin, medium to large bin for disposal of (household) waste
   - [move-button](#move-button)
   - [delete-button](#delete-button)
   - [lod](#lod)
-4. [Filters](#filters)
+5. [Filters](#filters)
 
 ## Themes using this layer
 
  - [personal](https://mapcomplete.org/personal)
  - [waste](https://mapcomplete.org/waste)
  - [waste_assen](https://mapcomplete.org/waste_assen)
+
+## Presets
+
+The following options to create new points are included:
+
+**a waste disposal bin** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dwaste_disposal' target='_blank'>waste_disposal</a>
 
 ## Basic tags for this layer
 

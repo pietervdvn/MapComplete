@@ -11,8 +11,9 @@ This layer shows surveillance cameras and allows a contributor to update informa
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [has_alpr](#has_alpr)
   - [Camera type: fixed; panning; dome](#camera-type-fixed;-panning;-dome)
@@ -24,6 +25,7 @@ This layer shows surveillance cameras and allows a contributor to update informa
   - [Surveillance:zone](#surveillancezone)
   - [camera:mount](#cameramount)
   - [leftover-questions](#leftover-questions)
+  - [move-button](#move-button)
   - [delete-button](#delete-button)
   - [lod](#lod)
 
@@ -31,6 +33,18 @@ This layer shows surveillance cameras and allows a contributor to update informa
 
  - [personal](https://mapcomplete.org/personal)
  - [surveillance](https://mapcomplete.org/surveillance)
+
+## Presets
+
+The following options to create new points are included:
+
+**a surveillance camera** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:man_made' target='_blank'>man_made</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:man_made%3Dsurveillance' target='_blank'>surveillance</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:surveillance:type' target='_blank'>surveillance:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surveillance:type%3Dcamera' target='_blank'>camera</a>
+
+**a surveillance camera mounted on a wall** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:man_made' target='_blank'>man_made</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:man_made%3Dsurveillance' target='_blank'>surveillance</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:surveillance:type' target='_blank'>surveillance:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surveillance:type%3Dcamera' target='_blank'>camera</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:camera:mount' target='_blank'>camera:mount</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:camera:mount%3Dwall' target='_blank'>wall</a> (snaps to layers `walls_and_buildings`)
+
+**an ALPR camera (Automatic Number Plate Reader)** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:man_made' target='_blank'>man_made</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:man_made%3Dsurveillance' target='_blank'>surveillance</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:surveillance:type' target='_blank'>surveillance:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surveillance:type%3DALPR' target='_blank'>ALPR</a>
+
+**an ALPR camera (Automatic Number Plate Reader) mounted on a wall** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:man_made' target='_blank'>man_made</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:man_made%3Dsurveillance' target='_blank'>surveillance</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:surveillance:type' target='_blank'>surveillance:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surveillance:type%3DALPR' target='_blank'>ALPR</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:camera:mount' target='_blank'>camera:mount</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:camera:mount%3Dwall' target='_blank'>wall</a> (snaps to layers `walls_and_buildings`)
 
 ## Basic tags for this layer
 
@@ -141,6 +155,11 @@ The question is `How is this camera placed?`
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
+
+### move-button
+
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
 
 ### delete-button
 

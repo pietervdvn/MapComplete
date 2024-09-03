@@ -9,8 +9,9 @@ A charging station
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [Type](#type)
   - [access](#access)
@@ -124,7 +125,7 @@ A charging station
   - [move-button](#move-button)
   - [delete-button](#delete-button)
   - [lod](#lod)
-4. [Filters](#filters)
+5. [Filters](#filters)
 
 ## Themes using this layer
 
@@ -133,6 +134,14 @@ A charging station
  - [parkings](https://mapcomplete.org/parkings)
  - [personal](https://mapcomplete.org/personal)
  - [toerisme_vlaanderen](https://mapcomplete.org/toerisme_vlaanderen)
+
+## Presets
+
+The following options to create new points are included:
+
+**charging station for electrical bikes** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcharging_station' target='_blank'>charging_station</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:motorcar' target='_blank'>motorcar</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:motorcar%3Dno' target='_blank'>no</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle' target='_blank'>bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle%3Dyes' target='_blank'>yes</a>
+
+**charging station for cars** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcharging_station' target='_blank'>charging_station</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:motorcar' target='_blank'>motorcar</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:motorcar%3Dyes' target='_blank'>yes</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle' target='_blank'>bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle%3Dno' target='_blank'>no</a>
 
 ## Basic tags for this layer
 

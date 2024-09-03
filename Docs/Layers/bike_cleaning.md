@@ -9,8 +9,9 @@ A layer showing facilities where one can clean their bike
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [bike_cleaning-service_bicycle_cleaning_charge](#bike_cleaning-service_bicycle_cleaning_charge)
   - [bike_cleaning-charge](#bike_cleaning-charge)
@@ -23,6 +24,12 @@ A layer showing facilities where one can clean their bike
 
  - [cyclofix](https://mapcomplete.org/cyclofix)
  - [personal](https://mapcomplete.org/personal)
+
+## Presets
+
+The following options to create new points are included:
+
+**a bike cleaning service** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbicycle_wash' target='_blank'>bicycle_wash</a>
 
 ## Basic tags for this layer
 

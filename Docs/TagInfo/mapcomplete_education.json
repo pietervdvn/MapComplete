@@ -112,7 +112,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Colleges and universities' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Education')"
+      "description": "Layer 'Colleges and universities' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Education')"
     },
     {
       "key": "amenity",
@@ -298,7 +298,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Primary and secondary schools' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Education')"
+      "description": "Layer 'Primary and secondary schools' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Education')"
     },
     {
       "key": "email",
@@ -371,7 +371,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Kindergartens and childcare' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Education')"
+      "description": "Layer 'Kindergartens and childcare' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Education')"
     },
     {
       "key": "opening_hours",

@@ -22,6 +22,7 @@ Available languages:
   - [Breng jouw buurtnatuur in kaart ( buurtnatuur )](#breng-jouw-buurtnatuur-in-kaart-(-buurtnatuur-))
 1. [Layers defined in this theme configuration file](#layers-defined-in-this-theme-configuration-file)
 2. [nature_reserve_buurtnatuur](#nature_reserve_buurtnatuur)
+  - [Presets](#presets)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
     + [images](#images)
@@ -34,6 +35,7 @@ Available languages:
     + [leftover-questions](#leftover-questions)
     + [lod](#lod)
 3. [parks](#parks)
+  - [Presets](#presets)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
     + [images](#images)
@@ -46,6 +48,7 @@ Available languages:
     + [leftover-questions](#leftover-questions)
     + [lod](#lod)
 4. [forest](#forest)
+  - [Presets](#presets)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
     + [images](#images)
@@ -67,6 +70,12 @@ Een natuurgebied is een gebied waar actief ruimte gemaakt word voor de natuur. T
  - This layer is shown at zoomlevel **12** and higher
 
 No themes use this layer
+
+## Presets
+
+The following options to create new points are included:
+
+**een natuurreservaat** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dnature_reserve' target='_blank'>nature_reserve</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:fixme' target='_blank'>fixme</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fixme%3DToegevoegd met MapComplete, geometry nog uit te tekenen' target='_blank'>Toegevoegd met MapComplete, geometry nog uit te tekenen</a>
 
 ## Basic tags for this layer
 
@@ -163,6 +172,12 @@ Een park is een publiek toegankelijke, groene ruimte binnen de stad. Ze is typis
 
 No themes use this layer
 
+## Presets
+
+The following options to create new points are included:
+
+**een park** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dpark' target='_blank'>park</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:fixme' target='_blank'>fixme</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fixme%3DToegevoegd met MapComplete, geometry nog uit te tekenen' target='_blank'>Toegevoegd met MapComplete, geometry nog uit te tekenen</a>
+
 ## Basic tags for this layer
 
 Elements must match **any** of the following expressions:
@@ -257,6 +272,12 @@ Een bos is een verzameling bomen, al dan niet als productiehout.
  - This layer is shown at zoomlevel **12** and higher
 
 No themes use this layer
+
+## Presets
+
+The following options to create new points are included:
+
+**een bos** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:landuse' target='_blank'>landuse</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:landuse%3Dforest' target='_blank'>forest</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:fixme' target='_blank'>fixme</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fixme%3DToegevoegd met MapComplete, geometry nog uit te tekenen' target='_blank'>Toegevoegd met MapComplete, geometry nog uit te tekenen</a>
 
 ## Basic tags for this layer
 

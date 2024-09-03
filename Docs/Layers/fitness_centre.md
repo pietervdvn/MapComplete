@@ -9,8 +9,9 @@ Layer showing fitness centres
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [name](#name)
   - [images](#images)
   - [phone](#phone)
@@ -23,13 +24,20 @@ Layer showing fitness centres
   - [single_level](#single_level)
   - [reviews](#reviews)
   - [leftover-questions](#leftover-questions)
+  - [move-button](#move-button)
   - [lod](#lod)
-4. [Filters](#filters)
+5. [Filters](#filters)
 
 ## Themes using this layer
 
  - [personal](https://mapcomplete.org/personal)
  - [sports](https://mapcomplete.org/sports)
+
+## Presets
+
+The following options to create new points are included:
+
+**a fitness centre** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dfitness_centre' target='_blank'>fitness_centre</a>
 
 ## Basic tags for this layer
 
@@ -66,9 +74,9 @@ _This tagrendering has no question and is thus read-only_
 ### phone
 
 The question is `What is the phone number of {title()}?`
-*<a href='tel:{phone}'>{phone}</a>* is shown if `phone` is set
+*{link(&LBRACEphone&RBRACE,tel:&LBRACEphone&RBRACE,,,,)}* is shown if `phone` is set
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/phone.svg' style='width: 3rem; height: 3rem'> *<a href='tel:{contact:phone}'>{contact:phone}</a>* is shown if with contact:phone~.+. _This option cannot be chosen as answer_
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/phone.svg' style='width: 3rem; height: 3rem'> *{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}* is shown if with contact:phone~.+. _This option cannot be chosen as answer_
 
 This tagrendering has labels 
 `contact`
@@ -142,6 +150,11 @@ _This tagrendering has no question and is thus read-only_
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
+
+### move-button
+
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
 
 ### lod
 

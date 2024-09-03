@@ -9,8 +9,9 @@ A layer showing (public) showers
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [repeated](#repeated)
   - [single_level](#single_level)
@@ -25,12 +26,18 @@ A layer showing (public) showers
   - [move-button](#move-button)
   - [delete-button](#delete-button)
   - [lod](#lod)
-4. [Filters](#filters)
+5. [Filters](#filters)
 
 ## Themes using this layer
 
  - [personal](https://mapcomplete.org/personal)
  - [toilets](https://mapcomplete.org/toilets)
+
+## Presets
+
+The following options to create new points are included:
+
+**a shower** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dshower' target='_blank'>shower</a>
 
 ## Basic tags for this layer
 

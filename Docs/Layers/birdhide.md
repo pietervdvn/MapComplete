@@ -9,8 +9,9 @@ A birdhide
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [bird-hide-shelter-or-wall](#bird-hide-shelter-or-wall)
   - [bird-hide-wheelchair](#bird-hide-wheelchair)
@@ -19,12 +20,20 @@ A birdhide
   - [move-button](#move-button)
   - [delete-button](#delete-button)
   - [lod](#lod)
-4. [Filters](#filters)
+5. [Filters](#filters)
 
 ## Themes using this layer
 
  - [nature](https://mapcomplete.org/nature)
  - [personal](https://mapcomplete.org/personal)
+
+## Presets
+
+The following options to create new points are included:
+
+**a birdhide** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dbird_hide' target='_blank'>bird_hide</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:building' target='_blank'>building</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:building%3Dyes' target='_blank'>yes</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:shelter' target='_blank'>shelter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shelter%3Dyes' target='_blank'>yes</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dshelter' target='_blank'>shelter</a>
+
+**a bird blind** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dbird_hide' target='_blank'>bird_hide</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:building' target='_blank'>building</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:building%3Dno' target='_blank'>no</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:shelter' target='_blank'>shelter</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shelter%3Dno' target='_blank'>no</a>
 
 ## Basic tags for this layer
 

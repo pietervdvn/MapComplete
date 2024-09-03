@@ -9,14 +9,16 @@ Layer with parking ticket machines to pay for parking.
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [payment-options-split](#payment-options-split)
   - [denominations-coins](#denominations-coins)
   - [denominations-notes](#denominations-notes)
   - [ref](#ref)
   - [leftover-questions](#leftover-questions)
+  - [move-button](#move-button)
   - [lod](#lod)
 
 ## Themes using this layer
@@ -24,6 +26,12 @@ Layer with parking ticket machines to pay for parking.
  - [parkings](https://mapcomplete.org/parkings)
  - [personal](https://mapcomplete.org/personal)
  - [vending_machine](https://mapcomplete.org/vending_machine)
+
+## Presets
+
+The following options to create new points are included:
+
+**a parking ticket machine** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dvending_machine' target='_blank'>vending_machine</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Dparking_tickets' target='_blank'>parking_tickets</a>
 
 ## Basic tags for this layer
 
@@ -114,6 +122,11 @@ The question is `What is the reference number of this parking ticket machine?`
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
+
+### move-button
+
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
 
 ### lod
 

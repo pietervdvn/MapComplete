@@ -11,8 +11,9 @@ Obstacles while cycling, such as bollards and cycle barriers
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [bicycle=yes/no](#bicycle=yesno)
   - [barrier_type](#barrier_type)
@@ -23,6 +24,7 @@ Obstacles while cycling, such as bollards and cycle barriers
   - [Width of opening (cyclebarrier)](#width-of-opening-(cyclebarrier))
   - [Overlap (cyclebarrier)](#overlap-(cyclebarrier))
   - [leftover-questions](#leftover-questions)
+  - [move-button](#move-button)
   - [delete-button](#delete-button)
   - [lod](#lod)
 
@@ -30,6 +32,14 @@ Obstacles while cycling, such as bollards and cycle barriers
 
  - [cycle_infra](https://mapcomplete.org/cycle_infra)
  - [personal](https://mapcomplete.org/personal)
+
+## Presets
+
+The following options to create new points are included:
+
+**a bollard** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:barrier' target='_blank'>barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dbollard' target='_blank'>bollard</a> (snaps to layers `cycleways_and_roads`)
+
+**a cycle barrier** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:barrier' target='_blank'>barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dcycle_barrier' target='_blank'>cycle_barrier</a> (snaps to layers `cycleways_and_roads`)
 
 ## Basic tags for this layer
 
@@ -131,6 +141,11 @@ This tagrendering is only visible in the popup if the following condition is met
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
+
+### move-button
+
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
 
 ### delete-button
 

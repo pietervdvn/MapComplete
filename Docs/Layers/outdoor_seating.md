@@ -25,6 +25,7 @@ Outdoor seating areas, usually located near cafes and restaurants.
   - [covered](#covered)
   - [smoking](#smoking)
   - [leftover-questions](#leftover-questions)
+  - [move-button](#move-button)
   - [lod](#lod)
 
 ## Themes using this layer
@@ -131,7 +132,7 @@ The question is `What is the network name for the wireless internet access?`
 
  -  *Telekom* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:ssid' target='_blank'>internet_access:ssid</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:ssid%3DTelekom' target='_blank'>Telekom</a>
 
-This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwlan' target='_blank'>wlan</a>
+This tagrendering is only visible in the popup if the following condition is met: internet_access~^(.*wlan.*)$
 This tagrendering has labels 
 `internet-all`
 
@@ -170,6 +171,11 @@ The question is `Is smoking allowed at {title()}?`
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
+
+### move-button
+
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
 
 ### lod
 

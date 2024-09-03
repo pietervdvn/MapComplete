@@ -9,8 +9,9 @@ Layer with all tertiary education institutes (ISCED:2011 levels 6,7 and 8)
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [institution-kind](#institution-kind)
   - [isced](#isced)
   - [capacity](#capacity)
@@ -26,6 +27,12 @@ Layer with all tertiary education institutes (ISCED:2011 levels 6,7 and 8)
 
  - [education](https://mapcomplete.org/education)
  - [personal](https://mapcomplete.org/personal)
+
+## Presets
+
+The following options to create new points are included:
+
+**a university** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Duniversity' target='_blank'>university</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:fixme' target='_blank'>fixme</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fixme%3DAdded with MapComplete, geometry to be drawn' target='_blank'>Added with MapComplete, geometry to be drawn</a>
 
 ## Basic tags for this layer
 
@@ -106,9 +113,9 @@ This tagrendering has labels
 ### phone
 
 The question is `What is the phone number of {title()}?`
-*<a href='tel:{phone}'>{phone}</a>* is shown if `phone` is set
+*{link(&LBRACEphone&RBRACE,tel:&LBRACEphone&RBRACE,,,,)}* is shown if `phone` is set
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/phone.svg' style='width: 3rem; height: 3rem'> *<a href='tel:{contact:phone}'>{contact:phone}</a>* is shown if with contact:phone~.+. _This option cannot be chosen as answer_
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/phone.svg' style='width: 3rem; height: 3rem'> *{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}* is shown if with contact:phone~.+. _This option cannot be chosen as answer_
 
 This tagrendering has labels 
 `contact`

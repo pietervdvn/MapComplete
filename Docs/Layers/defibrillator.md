@@ -10,8 +10,9 @@ A layer showing defibrillators which can be used in case of emergency. This cont
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [defibrillator-indoors](#defibrillator-indoors)
   - [defibrillator-access](#defibrillator-access)
@@ -33,12 +34,20 @@ A layer showing defibrillators which can be used in case of emergency. This cont
   - [move-button](#move-button)
   - [delete-button](#delete-button)
   - [lod](#lod)
-4. [Filters](#filters)
+5. [Filters](#filters)
 
 ## Themes using this layer
 
  - [aed](https://mapcomplete.org/aed)
  - [personal](https://mapcomplete.org/personal)
+
+## Presets
+
+The following options to create new points are included:
+
+**a defibrillator** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:emergency' target='_blank'>emergency</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:emergency%3Ddefibrillator' target='_blank'>defibrillator</a>
+
+**a defibrillator mounted on a wall** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:emergency' target='_blank'>emergency</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:emergency%3Ddefibrillator' target='_blank'>defibrillator</a> (snaps to layers `walls_and_buildings`)
 
 ## Basic tags for this layer
 

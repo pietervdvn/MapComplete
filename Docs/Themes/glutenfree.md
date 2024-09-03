@@ -20,6 +20,7 @@ Available languages:
  - en
  - de
  - it
+ - es
 
 # Table of contents
 
@@ -89,6 +90,7 @@ Available languages:
     + [payment-options](#payment-options)
     + [wheelchair-access](#wheelchair-access)
     + [leftover-questions](#leftover-questions)
+    + [move-button](#move-button)
     + [lod](#lod)
 4. [shops_glutenfree](#shops_glutenfree)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
@@ -265,9 +267,9 @@ This tagrendering has labels
 ### phone
 
 The question is `What is the phone number of {title()}?`
-*<a href='tel:{phone}'>{phone}</a>* is shown if `phone` is set
+*{link(&LBRACEphone&RBRACE,tel:&LBRACEphone&RBRACE,,,,)}* is shown if `phone` is set
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/phone.svg' style='width: 3rem; height: 3rem'> *<a href='tel:{contact:phone}'>{contact:phone}</a>* is shown if with contact:phone~.+. _This option cannot be chosen as answer_
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/phone.svg' style='width: 3rem; height: 3rem'> *{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}* is shown if with contact:phone~.+. _This option cannot be chosen as answer_
 
 This tagrendering has labels 
 `contact`
@@ -541,7 +543,7 @@ The question is `What is the network name for the wireless internet access?`
 
  -  *Telekom* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:ssid' target='_blank'>internet_access:ssid</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:ssid%3DTelekom' target='_blank'>Telekom</a>
 
-This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwlan' target='_blank'>wlan</a>
+This tagrendering is only visible in the popup if the following condition is met: internet_access~^(.*wlan.*)$
 This tagrendering has labels 
 `internet-all`
 
@@ -704,9 +706,9 @@ The question is `What are the opening hours of {title()}?`
 ### phone
 
 The question is `What is the phone number of {title()}?`
-*<a href='tel:{phone}'>{phone}</a>* is shown if `phone` is set
+*{link(&LBRACEphone&RBRACE,tel:&LBRACEphone&RBRACE,,,,)}* is shown if `phone` is set
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/phone.svg' style='width: 3rem; height: 3rem'> *<a href='tel:{contact:phone}'>{contact:phone}</a>* is shown if with contact:phone~.+. _This option cannot be chosen as answer_
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/phone.svg' style='width: 3rem; height: 3rem'> *{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}* is shown if with contact:phone~.+. _This option cannot be chosen as answer_
 
 This tagrendering has labels 
 `contact`
@@ -790,6 +792,11 @@ The question is `Is this place accessible with a wheelchair?`
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
+### move-button
+
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
+
 ### lod
 
 _This tagrendering has no question and is thus read-only_
@@ -857,7 +864,7 @@ Elements must match **all** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/organic#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/organic/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [organic](https://wiki.openstreetmap.org/wiki/Key:organic) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:organic%3Dyes) [only](https://wiki.openstreetmap.org/wiki/Tag:organic%3Donly) [no](https://wiki.openstreetmap.org/wiki/Tag:organic%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/diet:sugar_free#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/diet%3Asugar_free/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [diet:sugar_free](https://wiki.openstreetmap.org/wiki/Key:diet:sugar_free) | Multiple choice | [only](https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Donly) [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/diet:lactose_free#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/diet%3Alactose_free/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [diet:lactose_free](https://wiki.openstreetmap.org/wiki/Key:diet:lactose_free) | Multiple choice | [only](https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Donly) [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dno) |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/description#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/description/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [description](https://wiki.openstreetmap.org/wiki/Key:description) | [string](../SpecialInputElements.md#string) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/description#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/description/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [description](https://wiki.openstreetmap.org/wiki/Key:description) | [text](../SpecialInputElements.md#text) |  |
 
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
@@ -1104,9 +1111,9 @@ This tagrendering has labels
 ### phone
 
 The question is `What is the phone number of {title()}?`
-*<a href='tel:{phone}'>{phone}</a>* is shown if `phone` is set
+*{link(&LBRACEphone&RBRACE,tel:&LBRACEphone&RBRACE,,,,)}* is shown if `phone` is set
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/phone.svg' style='width: 3rem; height: 3rem'> *<a href='tel:{contact:phone}'>{contact:phone}</a>* is shown if with contact:phone~.+. _This option cannot be chosen as answer_
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/phone.svg' style='width: 3rem; height: 3rem'> *{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}* is shown if with contact:phone~.+. _This option cannot be chosen as answer_
 
 This tagrendering has labels 
 `contact`
@@ -1366,7 +1373,7 @@ The question is `What is the network name for the wireless internet access?`
 
  -  *Telekom* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:ssid' target='_blank'>internet_access:ssid</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:ssid%3DTelekom' target='_blank'>Telekom</a>
 
-This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwlan' target='_blank'>wlan</a>
+This tagrendering is only visible in the popup if the following condition is met: internet_access~^(.*wlan.*)$
 This tagrendering has labels 
 `internet-all`
 

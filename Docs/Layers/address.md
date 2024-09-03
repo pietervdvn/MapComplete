@@ -16,6 +16,7 @@ Addresses
   - [street](#street)
   - [fixme](#fixme)
   - [leftover-questions](#leftover-questions)
+  - [move-button](#move-button)
   - [lod](#lod)
 
 ## Themes using this layer
@@ -69,6 +70,11 @@ The question is `What should be fixed here? Please explain`
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
+
+### move-button
+
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
 
 ### lod
 

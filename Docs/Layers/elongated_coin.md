@@ -9,8 +9,9 @@ Layer showing penny presses.
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [opening_hours_24_7](#opening_hours_24_7)
   - [Opening hours](#opening-hours)
@@ -29,13 +30,19 @@ Layer showing penny presses.
   - [move-button](#move-button)
   - [delete-button](#delete-button)
   - [lod](#lod)
-4. [Filters](#filters)
+5. [Filters](#filters)
 
 ## Themes using this layer
 
  - [elongated_coin](https://mapcomplete.org/elongated_coin)
  - [personal](https://mapcomplete.org/personal)
  - [vending_machine](https://mapcomplete.org/vending_machine)
+
+## Presets
+
+The following options to create new points are included:
+
+**a penny press** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dvending_machine' target='_blank'>vending_machine</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Delongated_coin' target='_blank'>elongated_coin</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins' target='_blank'>payment:coins</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins%3Dyes' target='_blank'>yes</a>
 
 ## Basic tags for this layer
 

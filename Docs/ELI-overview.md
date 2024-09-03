@@ -160,10 +160,6 @@ This table gives a summary of ids, names and other metainformation. [See the onl
 | PrahaIPRlatestorthophoto | Praha IPR latest orthophoto | photo |  |  |
 | PrahaIPRlow-vegetationorthophoto | Praha IPR low-vegetation orthophoto | photo | ⭐ | IPR Praha |
 | AktuelleLuftbilderDerLandeshauptstadtMuenchen20cm | Aktuelle Luftbilder der Landeshauptstadt München 20cm | photo |  | Datenquelle: dl-de/by-2-0: Landeshauptstadt München – Kommunalreferat – GeodatenService – www.geodatenservice-muenchen.de |
-| BY_DOP20C | Bayern Orthophoto 20cm (Farbe) | photo | ⭐ | Bayerische Vermessungsverwaltung |
-| BY_DOP20CIR | Bayern Orthophoto 20cm (Colorinfrarot) | photo |  | Bayerische Vermessungsverwaltung |
-| BY_Relief | Bayern Geländerelief | elevation |  | Bayerische Vermessungsverwaltung |
-| BY_Webkarte | Bayern Webkarte | map |  | Bayerische Vermessungsverwaltung |
 | Berlin-2020-TrueDOP | Berlin/Geoportal TrueDOP20RGB (2020) | photo |  | Geoportal Berlin/Digitale farbige TrueOrthophotos 2020 (TrueDOP20RGB) (codefor.de mirror) |
 | Berlin-Alkis | Berlin/Geoportal ALKIS | other |  | Geoportal Berlin/ALKIS Berlin (Amtliches Liegenschaftskatasterinformationssystem) (codefor.de proxy) |
 | Berlin-Baumbestand_Alkis | Berlin/Geoportal Baumbestand, Alkis s/w | other |  | Geoportal Berlin/Straßen- und Anlagenbaumbestand Berlin, ALKIS s/w (codefor.de proxy) |
@@ -278,6 +274,8 @@ This table gives a summary of ids, names and other metainformation. [See the onl
 | Mulhouse_2018 | Mulhouse - 2018 | photo |  | Mulhouse Alsace Agglomération 2018 |
 | GrandNancy_Orthophotographie_2016 | Nancy - Orthophoto - 2016 | photo |  | GrandNancy Orthophotographie 2016 |
 | GrandNancy_Orthophotographie | Nancy - Orthophoto | photo | ⭐ | GrandNancy Orthophotographie 2016 |
+| fr.ign.orthoexpress.2023 | Ortho Express 2023 (20 cm) | photo |  | IGN |
+| fr.ign.orthoexpress.2024 | Ortho Express 2024 (20 cm) | photo |  | IGN |
 | fr.orthohr | Ortho HR | photo |  | IGN, CRAIG, Mégalis Bretagne |
 | fr.orthohr.2013 | Ortho HR 2013 | historicphoto |  | IGN, CRAIG, Mégalis Bretagne |
 | fr.orthohr.2014 | Ortho HR 2014 | historicphoto |  | IGN, Mégalis Bretagne |
@@ -309,7 +307,6 @@ This table gives a summary of ids, names and other metainformation. [See the onl
 | Tours-Orthophoto-2008_2010 | Tours - Orthophotos 2008-2010 | historicphoto |  | Orthophoto Tour(s) Plus 2008 |
 | fr.dpt.84.2010 | Vaucluse 2010 | historicphoto |  | ORTHO 2010 © PACA-04-05-84 |
 | Vercors-Orthophotos-1999 | Vercors (Réserve naturelle des Hauts-Plateaux du Vercors) - Orthophoto - 1999 - 1 m | historicphoto |  | Parc Naturel Régional du Vercors |
-| fr.ign.orthoexpress.2023 | Ortho Express IGN 2023 (20 cm) | photo |  | IGN |
 | Hampshire-Aerial-FCIR | Hampshire Aerial FCIR | photo |  |  |
 | Hampshire-Aerial-RGB | Hampshire Aerial RGB | photo |  |  |
 | NLS-OS-NatGrid-11250-1940-60 | NLS - OS 1:1,250 National Grid Maps, 1940s-1960s | historicmap |  | National Library of Scotland Historic Maps |
@@ -442,9 +439,6 @@ This table gives a summary of ids, names and other metainformation. [See the onl
 | LV_ORTOFOTO_C5 | Orthophoto (2013-2015), 1:5000, Latvia | photo |  | LĢIA (Latvian Geospatial Information Agency) provided these open data (CC0). WMS service is provided by LVM (Latvian State Forestry). |
 | LV_ORTOFOTO_C6 | Orthophoto (2016–2018), 1:5000, Latvia | photo | ⭐ | LĢIA (Latvian Geospatial Information Agency) provided these open data (CC0). WMS service is provided by LVM (Latvian State Forestry). |
 | LV_TERRAIN_LIDAR_LGIA | Digital terrain model (2013–2019), LĢIA, Latvia | elevation |  | LĢIA (Latvian Geospatial Information Agency) provided these open data (CC0). WMS service is provided by LVM (Latvian State Forestry). |
-| MoldovaMap-2020_Ortofoto_2016_RM | Moldova Ortophoto (2016) | photo | ⭐ | © Agenţia Relaţii Funciare şi Cadastru a Republicii Moldova / Geoportal INDS / Moldova Ortofoto 2016 |
-| Geoportal-Ortofoto_2016_RM | Moldova Ortophoto (2016) / Geoportal.md Reserve Server | photo |  | © Agenţia Relaţii Funciare şi Cadastru a Republicii Moldova / Fondul Naţional de Date Geospaţiale / Geoportal INDS / Moldova Ortofoto 2016 |
-| MoldovaMap-2020_ortofoto_moldova_centru | Moldova Ortophoto, Center part (2020) | photo | ⭐ | © Agenţia Relaţii Funciare şi Cadastru a Republicii Moldova / Geoportal INDS / Ortofoto Moldova, Centru 2020 |
 | Actueel_orthoHR_WMTS | PDOK aerial imagery Beeldmateriaal.nl 8cm (WMTS) latest | photo | ⭐ | Kadaster / Beeldmateriaal.nl, CC BY 4.0 |
 | kartverket-topo4 | Kartverket topo | map |  | © Kartverket |
 | kartverket-ok-1st | Kartverket Economic Maps (historic) | historicmap |  | © Kartverket |

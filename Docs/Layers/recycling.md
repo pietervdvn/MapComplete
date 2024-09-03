@@ -9,8 +9,9 @@ A layer with recycling containers and centres
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [recycling-type](#recycling-type)
   - [recycling-centre-name](#recycling-centre-name)
@@ -28,13 +29,21 @@ A layer with recycling containers and centres
   - [move-button](#move-button)
   - [delete-button](#delete-button)
   - [lod](#lod)
-4. [Filters](#filters)
+5. [Filters](#filters)
 
 ## Themes using this layer
 
  - [personal](https://mapcomplete.org/personal)
  - [waste](https://mapcomplete.org/waste)
  - [waste_assen](https://mapcomplete.org/waste_assen)
+
+## Presets
+
+The following options to create new points are included:
+
+**a recycling container** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Drecycling' target='_blank'>recycling</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:recycling_type' target='_blank'>recycling_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling_type%3Dcontainer' target='_blank'>container</a>
+
+**a recycling centre** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Drecycling' target='_blank'>recycling</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:recycling_type' target='_blank'>recycling_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling_type%3Dcentre' target='_blank'>centre</a>
 
 ## Basic tags for this layer
 
@@ -154,9 +163,9 @@ This tagrendering has labels
 ### phone
 
 The question is `What is the phone number of {title()}?`
-*<a href='tel:{phone}'>{phone}</a>* is shown if `phone` is set
+*{link(&LBRACEphone&RBRACE,tel:&LBRACEphone&RBRACE,,,,)}* is shown if `phone` is set
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/phone.svg' style='width: 3rem; height: 3rem'> *<a href='tel:{contact:phone}'>{contact:phone}</a>* is shown if with contact:phone~.+. _This option cannot be chosen as answer_
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/phone.svg' style='width: 3rem; height: 3rem'> *{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}* is shown if with contact:phone~.+. _This option cannot be chosen as answer_
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:recycling_type' target='_blank'>recycling_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling_type%3Dcentre' target='_blank'>centre</a>
 This tagrendering has labels 

@@ -9,8 +9,9 @@ A layer showing touristical, road side information boards (e.g. giving informati
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [leftover-questions](#leftover-questions)
   - [move-button](#move-button)
@@ -22,6 +23,12 @@ A layer showing touristical, road side information boards (e.g. giving informati
  - [nature](https://mapcomplete.org/nature)
  - [personal](https://mapcomplete.org/personal)
  - [ski](https://mapcomplete.org/ski)
+
+## Presets
+
+The following options to create new points are included:
+
+**an information board** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:tourism' target='_blank'>tourism</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dinformation' target='_blank'>information</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:information' target='_blank'>information</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:information%3Dboard' target='_blank'>board</a>
 
 ## Basic tags for this layer
 

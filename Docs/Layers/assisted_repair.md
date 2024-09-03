@@ -9,8 +9,9 @@ A self-assisted workshop is a location where people can come and repair their go
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [preset_description](#preset_description)
   - [name](#name)
@@ -31,6 +32,12 @@ A self-assisted workshop is a location where people can come and repair their go
 
  - [circular_economy](https://mapcomplete.org/circular_economy)
  - [personal](https://mapcomplete.org/personal)
+
+## Presets
+
+The following options to create new points are included:
+
+**an assisted repair workshop** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dworkshop' target='_blank'>workshop</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:repair' target='_blank'>repair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:repair%3Dassisted_self_service' target='_blank'>assisted_self_service</a>
 
 ## Basic tags for this layer
 
@@ -79,9 +86,9 @@ The question is `What are the opening hours of {title()}?`
 ### phone
 
 The question is `What is the phone number of {title()}?`
-*<a href='tel:{phone}'>{phone}</a>* is shown if `phone` is set
+*{link(&LBRACEphone&RBRACE,tel:&LBRACEphone&RBRACE,,,,)}* is shown if `phone` is set
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/phone.svg' style='width: 3rem; height: 3rem'> *<a href='tel:{contact:phone}'>{contact:phone}</a>* is shown if with contact:phone~.+. _This option cannot be chosen as answer_
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/phone.svg' style='width: 3rem; height: 3rem'> *{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}* is shown if with contact:phone~.+. _This option cannot be chosen as answer_
 
 This tagrendering has labels 
 `contact`

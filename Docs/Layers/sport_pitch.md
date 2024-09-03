@@ -9,8 +9,9 @@ A sport pitch
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [sport_pitch-sport](#sport_pitch-sport)
   - [basketball-hoops](#basketball-hoops)
@@ -22,8 +23,9 @@ A sport pitch
   - [sport_pitch-opening_hours](#sport_pitch-opening_hours)
   - [questions](#questions)
   - [sport-pitch-reviews](#sport-pitch-reviews)
+  - [move-button](#move-button)
   - [lod](#lod)
-4. [Filters](#filters)
+5. [Filters](#filters)
 
 ## Themes using this layer
 
@@ -31,6 +33,14 @@ A sport pitch
  - [speelplekken](https://mapcomplete.org/speelplekken)
  - [sport_pitches](https://mapcomplete.org/sport_pitches)
  - [sports](https://mapcomplete.org/sports)
+
+## Presets
+
+The following options to create new points are included:
+
+**a tabletennis table** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dpitch' target='_blank'>pitch</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dtable_tennis' target='_blank'>table_tennis</a>
+
+**a sport pitch** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dpitch' target='_blank'>pitch</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:fixme' target='_blank'>fixme</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fixme%3DGeometry to be drawn, added by MapComplete' target='_blank'>Geometry to be drawn, added by MapComplete</a>
 
 ## Basic tags for this layer
 
@@ -143,6 +153,11 @@ _This tagrendering has no question and is thus read-only_
 
 _This tagrendering has no question and is thus read-only_
 *{reviews(name, sportpitch)}*
+
+### move-button
+
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
 
 ### lod
 

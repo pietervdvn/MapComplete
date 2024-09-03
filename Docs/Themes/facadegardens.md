@@ -32,6 +32,7 @@ Available languages:
   - [Facade gardens ( facadegardens )](#facade-gardens-(-facadegardens-))
 1. [Layers defined in this theme configuration file](#layers-defined-in-this-theme-configuration-file)
 2. [facadegardens](#facadegardens)
+  - [Presets](#presets)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
     + [images](#images)
@@ -56,6 +57,12 @@ Facade gardens
  - This layer is shown at zoomlevel **12** and higher
 
 No themes use this layer
+
+## Presets
+
+The following options to create new points are included:
+
+**a facade garden** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dgarden' target='_blank'>garden</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:garden:type' target='_blank'>garden:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:garden:type%3Dfacade_garden' target='_blank'>facade_garden</a> (snaps to layers `walls_and_buildings`)
 
 ## Basic tags for this layer
 

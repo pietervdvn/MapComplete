@@ -10,8 +10,9 @@ Layer showing disused signs on buildings
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [historic](#historic)
   - [images](#images)
   - [name](#name)
@@ -23,6 +24,12 @@ Layer showing disused signs on buildings
 ## Themes using this layer
 
  - [ghostsigns](https://mapcomplete.org/ghostsigns)
+
+## Presets
+
+The following options to create new points are included:
+
+**a ghost sign** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:historic' target='_blank'>historic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:historic%3Dadvertising' target='_blank'>advertising</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dwall_painting' target='_blank'>wall_painting</a> (snaps to layers `walls_and_buildings`)
 
 ## Basic tags for this layer
 
@@ -40,7 +47,7 @@ Elements must match **all** of the following expressions:
 | attribute | type | values which are supported by this layer |
 -----|-----|----- |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/historic#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/historic/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [historic](https://wiki.openstreetmap.org/wiki/Key:historic) | Multiple choice | [advertising](https://wiki.openstreetmap.org/wiki/Tag:historic%3Dadvertising) [](https://wiki.openstreetmap.org/wiki/Tag:historic%3D) |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/inscription#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/inscription/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [inscription](https://wiki.openstreetmap.org/wiki/Key:inscription) | [string](../SpecialInputElements.md#string) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/inscription#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/inscription/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [inscription](https://wiki.openstreetmap.org/wiki/Key:inscription) | [text](../SpecialInputElements.md#text) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/brand#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/brand/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [brand](https://wiki.openstreetmap.org/wiki/Key:brand) | [string](../SpecialInputElements.md#string) |  |
 
 ### historic

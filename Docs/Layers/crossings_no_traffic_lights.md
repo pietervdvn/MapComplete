@@ -12,8 +12,9 @@ Crossings for pedestrians and cyclists
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [crossing-type](#crossing-type)
   - [crossing-is-zebra](#crossing-is-zebra)
@@ -28,12 +29,19 @@ Crossings for pedestrians and cyclists
   - [crossing-right-turn-through-red](#crossing-right-turn-through-red)
   - [crossing-continue-through-red](#crossing-continue-through-red)
   - [leftover-questions](#leftover-questions)
+  - [move-button](#move-button)
   - [lod](#lod)
-4. [Filters](#filters)
+5. [Filters](#filters)
 
 ## Themes using this layer
 
  - [kerbs_and_crossings](https://mapcomplete.org/kerbs_and_crossings)
+
+## Presets
+
+The following options to create new points are included:
+
+**a crossing** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dcrossing' target='_blank'>crossing</a> (snaps to layers `cycleways_and_roads`)
 
 ## Basic tags for this layer
 
@@ -184,6 +192,11 @@ This tagrendering is only visible in the popup if the following condition is met
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
+
+### move-button
+
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
 
 ### lod
 

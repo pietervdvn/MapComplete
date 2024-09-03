@@ -9,8 +9,9 @@ A layer showing veterinarians
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [website](#website)
   - [reviews](#reviews)
   - [phone](#phone)
@@ -18,12 +19,19 @@ A layer showing veterinarians
   - [Opening hours](#opening-hours)
   - [vetName](#vetname)
   - [leftover-questions](#leftover-questions)
+  - [move-button](#move-button)
   - [lod](#lod)
 
 ## Themes using this layer
 
  - [personal](https://mapcomplete.org/personal)
  - [pets](https://mapcomplete.org/pets)
+
+## Presets
+
+The following options to create new points are included:
+
+**a veterianarian** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dveterinary' target='_blank'>veterinary</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:pet' target='_blank'>pet</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:pet%3Ddog' target='_blank'>dog</a>
 
 ## Basic tags for this layer
 
@@ -60,9 +68,9 @@ _This tagrendering has no question and is thus read-only_
 ### phone
 
 The question is `What is the phone number of {title()}?`
-*<a href='tel:{phone}'>{phone}</a>* is shown if `phone` is set
+*{link(&LBRACEphone&RBRACE,tel:&LBRACEphone&RBRACE,,,,)}* is shown if `phone` is set
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/phone.svg' style='width: 3rem; height: 3rem'> *<a href='tel:{contact:phone}'>{contact:phone}</a>* is shown if with contact:phone~.+. _This option cannot be chosen as answer_
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/phone.svg' style='width: 3rem; height: 3rem'> *{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}* is shown if with contact:phone~.+. _This option cannot be chosen as answer_
 
 This tagrendering has labels 
 `contact`
@@ -83,6 +91,11 @@ The question is `What is the name of this veterinarian?`
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
+
+### move-button
+
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
 
 ### lod
 

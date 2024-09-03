@@ -55,6 +55,7 @@ Available languages:
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
 3. [departures_board](#departures_board)
+  - [Presets](#presets)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
     + [images](#images)
@@ -62,6 +63,7 @@ Available languages:
     + [repeated](#repeated)
     + [single_level](#single_level)
     + [leftover-questions](#leftover-questions)
+    + [move-button](#move-button)
     + [lod](#lod)
 
 # Layers defined in this theme configuration file
@@ -93,6 +95,12 @@ Displays showing the trains that will leave from this station
  - This layer is shown at zoomlevel **18** and higher
 
 No themes use this layer
+
+## Presets
+
+The following options to create new points are included:
+
+**a departures board** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:departures_board' target='_blank'>departures_board</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:departures_board%3Dyes' target='_blank'>yes</a>
 
 ## Basic tags for this layer
 
@@ -154,6 +162,11 @@ This tagrendering has labels
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
+
+### move-button
+
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
 
 ### lod
 

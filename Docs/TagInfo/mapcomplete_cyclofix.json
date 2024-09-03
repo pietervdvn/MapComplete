@@ -2,7 +2,7 @@
   "data_format": 1,
   "project": {
     "name": "MapComplete Cyclofix - a map for cyclists",
-    "description": "The goal of this map is to present cyclists with an easy-to-use solution to find the appropriate infrastructure for their needs",
+    "description": "A map for cyclists to find the appropriate infrastructure for their needs, such as bicycle pumps, drinking water, bicycle shops, repair stations or parkings",
     "project_url": "https://mapcomplete.org/cyclofix",
     "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
     "icon_url": "https://mapcomplete.org/assets/themes/cyclofix/logo.svg",
@@ -10,6 +10,129 @@
     "contact_email": "pietervdvn@posteo.net"
   },
   "tags": [
+    {
+      "key": "repair",
+      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Repair cafés and assisted repair workshops showing features with this tag",
+      "value": "assisted_self_service"
+    },
+    {
+      "key": "service:bicycle:repair",
+      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Repair cafés and assisted repair workshops showing features with this tag",
+      "value": "yes"
+    },
+    {
+      "key": "bicycle:repair",
+      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Repair cafés and assisted repair workshops showing features with this tag",
+      "value": "yes"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Repair cafés and assisted repair workshops' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Repair cafés and assisted repair workshops allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Repair cafés and assisted repair workshops allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Repair cafés and assisted repair workshops allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Repair cafés and assisted repair workshops allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Repair cafés and assisted repair workshops' shows and asks freeform values for key 'name' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Repair cafés and assisted repair workshops' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Repair cafés and assisted repair workshops' shows opening_hours=\"by appointment\" with a fixed text, namely 'Only by appointment' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "value": "\"by appointment\""
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Repair cafés and assisted repair workshops' shows opening_hours~^(\"by appointment\"|by appointment)$ with a fixed text, namely 'Only by appointment' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Repair cafés and assisted repair workshops' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "value": "closed"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'Repair cafés and assisted repair workshops' shows and asks freeform values for key 'phone' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "contact:phone",
+      "description": "Layer 'Repair cafés and assisted repair workshops' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "email",
+      "description": "Layer 'Repair cafés and assisted repair workshops' shows and asks freeform values for key 'email' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "contact:email",
+      "description": "Layer 'Repair cafés and assisted repair workshops' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "operator:email",
+      "description": "Layer 'Repair cafés and assisted repair workshops' shows operator:email~.+ with a fixed text, namely '<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Repair cafés and assisted repair workshops' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "contact:website",
+      "description": "Layer 'Repair cafés and assisted repair workshops' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "contact:mastodon",
+      "description": "Layer 'Repair cafés and assisted repair workshops' shows and asks freeform values for key 'contact:mastodon' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "contact:facebook",
+      "description": "Layer 'Repair cafés and assisted repair workshops' shows and asks freeform values for key 'contact:facebook' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "service:mobile_phone:repair",
+      "description": "Layer 'Repair cafés and assisted repair workshops' shows service:mobile_phone:repair=yes with a fixed text, namely 'Mobile phones are repaired here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "service:computer:repair",
+      "description": "Layer 'Repair cafés and assisted repair workshops' shows service:computer:repair=yes with a fixed text, namely 'Computers are repaired here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "service:bicycle:repair",
+      "description": "Layer 'Repair cafés and assisted repair workshops' shows service:bicycle:repair=yes with a fixed text, namely 'Bicycles are repaired here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "service:electronics:repair",
+      "description": "Layer 'Repair cafés and assisted repair workshops' shows service:electronics:repair=yes with a fixed text, namely 'Electronic devices are repaired here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "service:furniture:repair",
+      "description": "Layer 'Repair cafés and assisted repair workshops' shows service:furniture:repair=yes with a fixed text, namely 'Furniture is repaired here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "service:clothes:repair",
+      "description": "Layer 'Repair cafés and assisted repair workshops' shows service:clothes:repair=yes with a fixed text, namely 'Clothes are repaired here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "value": "yes"
+    },
     {
       "key": "amenity",
       "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bike cafe showing features with this tag",
@@ -118,7 +241,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Bike cafe' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+      "description": "Layer 'Bike cafe' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
     },
     {
       "key": "email",
@@ -1083,7 +1206,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Bike repair/shop' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+      "description": "Layer 'Bike repair/shop' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
     },
     {
       "key": "payment:cash",
@@ -1422,11 +1545,11 @@
     },
     {
       "key": "internet_access:ssid",
-      "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'internet_access:ssid' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if internet_access=wlan)"
+      "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'internet_access:ssid' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if internet_access~^(.*wlan.*)$)"
     },
     {
       "key": "internet_access:ssid",
-      "description": "Layer 'Bike repair/shop' shows internet_access:ssid=Telekom with a fixed text, namely 'Telekom' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if internet_access=wlan)",
+      "description": "Layer 'Bike repair/shop' shows internet_access:ssid=Telekom with a fixed text, namely 'Telekom' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if internet_access~^(.*wlan.*)$)",
       "value": "Telekom"
     },
     {
@@ -2034,7 +2157,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Bike-related object' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+      "description": "Layer 'Bike-related object' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
     },
     {
       "key": "opening_hours",
@@ -2222,7 +2345,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Bicycle rental' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+      "description": "Layer 'Bicycle rental' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
     },
     {
       "key": "opening_hours",
@@ -2393,7 +2516,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Bicycle library' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+      "description": "Layer 'Bicycle library' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
     },
     {
       "key": "email",
@@ -4581,7 +4704,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Vending Machines' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+      "description": "Layer 'Vending Machines' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
     },
     {
       "key": "website",

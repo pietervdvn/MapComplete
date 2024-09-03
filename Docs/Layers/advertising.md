@@ -17,8 +17,9 @@ We will complete data from advertising features with reference, operator and lit
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [type](#type)
   - [animated](#animated)
@@ -36,6 +37,42 @@ We will complete data from advertising features with reference, operator and lit
 
  - [advertising](https://mapcomplete.org/advertising)
  - [personal](https://mapcomplete.org/personal)
+
+## Presets
+
+The following options to create new points are included:
+
+**a billboard** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dbillboard' target='_blank'>billboard</a>
+
+**a billboard mounted to a wall** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dbillboard' target='_blank'>billboard</a> (snaps to layers `walls_and_buildings`)
+
+**a freestanding poster box** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dposter_box' target='_blank'>poster_box</a>
+
+**a poster box mounted on a wall** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dposter_box' target='_blank'>poster_box</a> (snaps to layers `walls_and_buildings`)
+
+**a poster box part of a public transport shelter** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dposter_box' target='_blank'>poster_box</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:support' target='_blank'>support</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:support%3Dstreet_furniture:transit_shelter' target='_blank'>street_furniture:transit_shelter</a> (snaps to layers `shelter`)
+
+**a board** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dboard' target='_blank'>board</a>
+
+**a column** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dcolumn' target='_blank'>column</a>
+
+**a flag** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dflag' target='_blank'>flag</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:man_made' target='_blank'>man_made</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:man_made%3Dpole' target='_blank'>pole</a>
+
+**a screen** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dscreen' target='_blank'>screen</a>
+
+**a screen mounted on a wall** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dscreen' target='_blank'>screen</a> (snaps to layers `walls_and_buildings`)
+
+**a screen mounted on a transit shelter** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dscreen' target='_blank'>screen</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:support' target='_blank'>support</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:support%3Dstreet_furniture:transit_shelter' target='_blank'>street_furniture:transit_shelter</a> (snaps to layers `shelter`)
+
+**a tarp** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dtarp' target='_blank'>tarp</a> (snaps to layers `walls_and_buildings`)
+
+**a totem** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dtotem' target='_blank'>totem</a>
+
+**a sign** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dsign' target='_blank'>sign</a> (snaps to layers `walls_and_buildings`)
+
+**a sculpture** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dsculpture' target='_blank'>sculpture</a>
+
+**a wall painting** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dwall_painting' target='_blank'>wall_painting</a> (snaps to layers `walls_and_buildings`)
 
 ## Basic tags for this layer
 

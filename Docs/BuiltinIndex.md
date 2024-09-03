@@ -31,6 +31,7 @@
  - brothel
  - cafe_pub
  - car_rental
+ - caravansites
  - charging_station
  - cinema
  - climbing_area
@@ -45,6 +46,7 @@
  - doctors
  - dogpark
  - drinking_water
+ - dumpstations
  - elevator
  - elongated_coin
  - entrance
@@ -160,6 +162,7 @@
              - animal_shelter
  - brothel
  - cafe_pub
+ - caravansites
  - cinema
  - climbing_area
  - climbing_gym
@@ -465,7 +468,8 @@
             
             ### questions
 
-             - charging_station
+             - caravansites
+ - charging_station
  - etymology
  - favourite
  - hackerspace

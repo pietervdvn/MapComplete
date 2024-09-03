@@ -114,7 +114,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Bicycle rental' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Bicycle rental')"
+      "description": "Layer 'Bicycle rental' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Bicycle rental')"
     },
     {
       "key": "opening_hours",

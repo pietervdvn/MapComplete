@@ -13,8 +13,9 @@ A layer showing entrances and offering capabilities to survey some advanced data
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [repeated](#repeated)
   - [single_level](#single_level)
@@ -24,6 +25,7 @@ A layer showing entrances and offering capabilities to survey some advanced data
   - [width](#width)
   - [kerb-height](#kerb-height)
   - [leftover-questions](#leftover-questions)
+  - [move-button](#move-button)
   - [lod](#lod)
 
 ## Themes using this layer
@@ -33,6 +35,14 @@ A layer showing entrances and offering capabilities to survey some advanced data
  - [personal](https://mapcomplete.org/personal)
  - [stations](https://mapcomplete.org/stations)
  - [walls_and_buildings](https://mapcomplete.org/walls_and_buildings)
+
+## Presets
+
+The following options to create new points are included:
+
+**an entrance** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:entrance' target='_blank'>entrance</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:entrance%3Dyes' target='_blank'>yes</a> (snaps to layers `walls_and_buildings`, `pedestrian_path`)
+
+**an indoor door** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Ddoor' target='_blank'>door</a> (snaps to layers `indoors`)
 
 ## Basic tags for this layer
 
@@ -140,6 +150,11 @@ The question is `What is the height of this kerb?`
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
+
+### move-button
+
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
 
 ### lod
 

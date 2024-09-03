@@ -9,8 +9,9 @@ Find ticket validators to validate public transport tickets
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [repeated](#repeated)
   - [single_level](#single_level)
@@ -25,6 +26,12 @@ Find ticket validators to validate public transport tickets
 ## Themes using this layer
 
  - [stations](https://mapcomplete.org/stations)
+
+## Presets
+
+The following options to create new points are included:
+
+**a ticket validator** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dticket_validator' target='_blank'>ticket_validator</a>
 
 ## Basic tags for this layer
 

@@ -9,8 +9,9 @@ Map layer to show fire stations.
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [station-name](#station-name)
   - [station-street](#station-street)
   - [station-place](#station-place)
@@ -18,12 +19,19 @@ Map layer to show fire stations.
   - [station-operator](#station-operator)
   - [images](#images)
   - [leftover-questions](#leftover-questions)
+  - [move-button](#move-button)
   - [lod](#lod)
 
 ## Themes using this layer
 
  - [hailhydrant](https://mapcomplete.org/hailhydrant)
  - [personal](https://mapcomplete.org/personal)
+
+## Presets
+
+The following options to create new points are included:
+
+**a fire station** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dfire_station' target='_blank'>fire_station</a>
 
 ## Basic tags for this layer
 
@@ -84,6 +92,11 @@ _This tagrendering has no question and is thus read-only_
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
+
+### move-button
+
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
 
 ### lod
 

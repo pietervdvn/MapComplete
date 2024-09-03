@@ -15,6 +15,7 @@ Ski and snowboard pistes
   - [piste_difficulty](#piste_difficulty)
   - [length](#length)
   - [leftover-questions](#leftover-questions)
+  - [move-button](#move-button)
   - [lod](#lod)
 
 ## Themes using this layer
@@ -64,6 +65,11 @@ _This tagrendering has no question and is thus read-only_
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
+
+### move-button
+
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
 
 ### lod
 

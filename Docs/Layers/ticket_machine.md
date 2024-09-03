@@ -9,8 +9,9 @@ Find ticket machines for public transport tickets
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [repeated](#repeated)
   - [single_level](#single_level)
@@ -28,6 +29,12 @@ Find ticket machines for public transport tickets
  - [personal](https://mapcomplete.org/personal)
  - [stations](https://mapcomplete.org/stations)
  - [vending_machine](https://mapcomplete.org/vending_machine)
+
+## Presets
+
+The following options to create new points are included:
+
+**a ticket machine** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dvending_machine' target='_blank'>vending_machine</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Dpublic_transport_tickets' target='_blank'>public_transport_tickets</a>
 
 ## Basic tags for this layer
 

@@ -38,6 +38,7 @@ Available languages:
     + [leftover-questions](#leftover-questions)
     + [lod](#lod)
 3. [node_bicycle](#node_bicycle)
+  - [Presets](#presets)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
     + [node-rxn_ref](#node-rxn_ref)
@@ -47,6 +48,7 @@ Available languages:
     + [leftover-questions](#leftover-questions)
     + [lod](#lod)
 4. [bicycle_guidepost](#bicycle_guidepost)
+  - [Presets](#presets)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
     + [images](#images)
@@ -112,6 +114,12 @@ This tagrendering has labels
 
 No themes use this layer
 
+## Presets
+
+The following options to create new points are included:
+
+**a cycling node** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:rcn_ref' target='_blank'>rcn_ref</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rcn_ref%3D?' target='_blank'>?</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:network:type' target='_blank'>network:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network' target='_blank'>node_network</a> (snaps to layers `cycleways_and_roads`)
+
 ## Basic tags for this layer
 
 Elements must match **any** of the following expressions:
@@ -176,6 +184,12 @@ Guideposts (also known as fingerposts or finger posts) are often found along off
  - This layer is shown at zoomlevel **16** and higher
 
 No themes use this layer
+
+## Presets
+
+The following options to create new points are included:
+
+**a guidepost** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:tourism' target='_blank'>tourism</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dinformation' target='_blank'>information</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:information' target='_blank'>information</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost' target='_blank'>guidepost</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle' target='_blank'>bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle%3Dyes' target='_blank'>yes</a>
 
 ## Basic tags for this layer
 

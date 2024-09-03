@@ -239,7 +239,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Fitness Centres' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Sports')"
+      "description": "Layer 'Fitness Centres' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Sports')"
     },
     {
       "key": "email",
@@ -536,7 +536,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Sports centres' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Sports')"
+      "description": "Layer 'Sports centres' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Sports')"
     },
     {
       "key": "website",
@@ -1490,7 +1490,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Shop' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Sports')"
+      "description": "Layer 'Shop' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Sports')"
     },
     {
       "key": "payment:cash",
@@ -1829,11 +1829,11 @@
     },
     {
       "key": "internet_access:ssid",
-      "description": "Layer 'Shop' shows and asks freeform values for key 'internet_access:ssid' (in the mapcomplete.org theme 'Sports') (This is only shown if internet_access=wlan)"
+      "description": "Layer 'Shop' shows and asks freeform values for key 'internet_access:ssid' (in the mapcomplete.org theme 'Sports') (This is only shown if internet_access~^(.*wlan.*)$)"
     },
     {
       "key": "internet_access:ssid",
-      "description": "Layer 'Shop' shows internet_access:ssid=Telekom with a fixed text, namely 'Telekom' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if internet_access=wlan)",
+      "description": "Layer 'Shop' shows internet_access:ssid=Telekom with a fixed text, namely 'Telekom' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if internet_access~^(.*wlan.*)$)",
       "value": "Telekom"
     },
     {

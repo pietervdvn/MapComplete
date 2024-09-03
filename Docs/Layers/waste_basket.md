@@ -9,8 +9,9 @@ This is a public waste basket, thrash can, where you can throw away your thrash.
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [waste-basket-waste-types](#waste-basket-waste-types)
   - [dispensing_dog_bags](#dispensing_dog_bags)
@@ -18,7 +19,7 @@ This is a public waste basket, thrash can, where you can throw away your thrash.
   - [move-button](#move-button)
   - [delete-button](#delete-button)
   - [lod](#lod)
-4. [Filters](#filters)
+5. [Filters](#filters)
 
 ## Themes using this layer
 
@@ -29,6 +30,12 @@ This is a public waste basket, thrash can, where you can throw away your thrash.
  - [waste](https://mapcomplete.org/waste)
  - [waste_assen](https://mapcomplete.org/waste_assen)
  - [waste_basket](https://mapcomplete.org/waste_basket)
+
+## Presets
+
+The following options to create new points are included:
+
+**a waste basket** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dwaste_basket' target='_blank'>waste_basket</a>
 
 ## Basic tags for this layer
 

@@ -9,8 +9,9 @@ A bike café is a café geared towards cyclists, for example with services such 
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [bike_cafe-name](#bike_cafe-name)
   - [bike_cafe-bike-pump](#bike_cafe-bike-pump)
@@ -22,6 +23,7 @@ A bike café is a café geared towards cyclists, for example with services such 
   - [opening_hours](#opening_hours)
   - [Opening hours](#opening-hours)
   - [leftover-questions](#leftover-questions)
+  - [move-button](#move-button)
   - [delete-button](#delete-button)
   - [lod](#lod)
 
@@ -29,6 +31,12 @@ A bike café is a café geared towards cyclists, for example with services such 
 
  - [cyclofix](https://mapcomplete.org/cyclofix)
  - [personal](https://mapcomplete.org/personal)
+
+## Presets
+
+The following options to create new points are included:
+
+**a bike cafe** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dpub' target='_blank'>pub</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:pub' target='_blank'>pub</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:pub%3Dcycling' target='_blank'>cycling</a>
 
 ## Basic tags for this layer
 
@@ -98,9 +106,9 @@ This tagrendering has labels
 ### phone
 
 The question is `What is the phone number of {title()}?`
-*<a href='tel:{phone}'>{phone}</a>* is shown if `phone` is set
+*{link(&LBRACEphone&RBRACE,tel:&LBRACEphone&RBRACE,,,,)}* is shown if `phone` is set
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/phone.svg' style='width: 3rem; height: 3rem'> *<a href='tel:{contact:phone}'>{contact:phone}</a>* is shown if with contact:phone~.+. _This option cannot be chosen as answer_
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/phone.svg' style='width: 3rem; height: 3rem'> *{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}* is shown if with contact:phone~.+. _This option cannot be chosen as answer_
 
 This tagrendering has labels 
 `contact`
@@ -127,6 +135,11 @@ The question is `When it this bike café opened?`
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
+
+### move-button
+
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
 
 ### delete-button
 

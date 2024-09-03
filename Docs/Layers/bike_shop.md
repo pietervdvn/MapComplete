@@ -9,8 +9,9 @@ A shop specifically selling bicycles or related items
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [reviews](#reviews)
   - [shops-name](#shops-name)
@@ -56,12 +57,18 @@ A shop specifically selling bicycles or related items
   - [move-button](#move-button)
   - [delete-button](#delete-button)
   - [lod](#lod)
-4. [Filters](#filters)
+5. [Filters](#filters)
 
 ## Themes using this layer
 
  - [cyclofix](https://mapcomplete.org/cyclofix)
  - [personal](https://mapcomplete.org/personal)
+
+## Presets
+
+The following options to create new points are included:
+
+**a bike repair/shop** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbicycle' target='_blank'>bicycle</a>
 
 ## Basic tags for this layer
 
@@ -113,7 +120,7 @@ Elements must match **any** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/diet:sugar_free#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/diet%3Asugar_free/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [diet:sugar_free](https://wiki.openstreetmap.org/wiki/Key:diet:sugar_free) | Multiple choice | [only](https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Donly) [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/diet:gluten_free#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/diet%3Agluten_free/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [diet:gluten_free](https://wiki.openstreetmap.org/wiki/Key:diet:gluten_free) | Multiple choice | [only](https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Donly) [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/diet:lactose_free#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/diet%3Alactose_free/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [diet:lactose_free](https://wiki.openstreetmap.org/wiki/Key:diet:lactose_free) | Multiple choice | [only](https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Donly) [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dno) |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/description#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/description/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [description](https://wiki.openstreetmap.org/wiki/Key:description) | [string](../SpecialInputElements.md#string) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/description#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/description/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [description](https://wiki.openstreetmap.org/wiki/Key:description) | [text](../SpecialInputElements.md#text) |  |
 
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
@@ -300,9 +307,6 @@ The question is `What kind of shop is this?`
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-window.svg' style='width: 3rem; height: 3rem'> *Window Blind Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dwindow_blind' target='_blank'>window_blind</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/maki-alcohol-shop.svg' style='width: 3rem; height: 3rem'> *Wine Shop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dwine' target='_blank'>wine</a>
 
-This tagrendering has labels 
-`description`
-
 ### brand
 
 The question is `What is the brand of this shop?`
@@ -351,9 +355,9 @@ This tagrendering has labels
 ### phone
 
 The question is `What is the phone number of {title()}?`
-*<a href='tel:{phone}'>{phone}</a>* is shown if `phone` is set
+*{link(&LBRACEphone&RBRACE,tel:&LBRACEphone&RBRACE,,,,)}* is shown if `phone` is set
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/phone.svg' style='width: 3rem; height: 3rem'> *<a href='tel:{contact:phone}'>{contact:phone}</a>* is shown if with contact:phone~.+. _This option cannot be chosen as answer_
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/phone.svg' style='width: 3rem; height: 3rem'> *{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}* is shown if with contact:phone~.+. _This option cannot be chosen as answer_
 
 This tagrendering has labels 
 `contact`
@@ -613,7 +617,7 @@ The question is `What is the network name for the wireless internet access?`
 
  -  *Telekom* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:ssid' target='_blank'>internet_access:ssid</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:ssid%3DTelekom' target='_blank'>Telekom</a>
 
-This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwlan' target='_blank'>wlan</a>
+This tagrendering is only visible in the popup if the following condition is met: internet_access~^(.*wlan.*)$
 This tagrendering has labels 
 `internet-all`
 

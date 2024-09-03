@@ -9,8 +9,9 @@ A layer showing trees
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [plantnet](#plantnet)
   - [tree-species-wikidata](#tree-species-wikidata)
@@ -33,6 +34,16 @@ A layer showing trees
 
  - [personal](https://mapcomplete.org/personal)
  - [trees](https://mapcomplete.org/trees)
+
+## Presets
+
+The following options to create new points are included:
+
+**a broadleaved tree** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:natural' target='_blank'>natural</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:natural%3Dtree' target='_blank'>tree</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:leaf_type' target='_blank'>leaf_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leaf_type%3Dbroadleaved' target='_blank'>broadleaved</a>
+
+**a needleleaved tree** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:natural' target='_blank'>natural</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:natural%3Dtree' target='_blank'>tree</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:leaf_type' target='_blank'>leaf_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leaf_type%3Dneedleleaved' target='_blank'>needleleaved</a>
+
+**a tree** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:natural' target='_blank'>natural</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:natural%3Dtree' target='_blank'>tree</a>
 
 ## Basic tags for this layer
 

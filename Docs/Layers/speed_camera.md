@@ -9,8 +9,9 @@ Layer showing speed cameras
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [maxspeed](#maxspeed)
   - [ref](#ref)
@@ -24,6 +25,12 @@ Layer showing speed cameras
  - [maxspeed](https://mapcomplete.org/maxspeed)
  - [personal](https://mapcomplete.org/personal)
  - [surveillance](https://mapcomplete.org/surveillance)
+
+## Presets
+
+The following options to create new points are included:
+
+**a speed camera** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dspeed_camera' target='_blank'>speed_camera</a>
 
 ## Basic tags for this layer
 

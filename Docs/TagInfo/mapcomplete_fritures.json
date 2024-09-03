@@ -93,7 +93,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Fries shop' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Fries shops')"
+      "description": "Layer 'Fries shop' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Fries shops')"
     },
     {
       "key": "payment:cash",
@@ -636,11 +636,11 @@
     },
     {
       "key": "internet_access:ssid",
-      "description": "Layer 'Fries shop' shows and asks freeform values for key 'internet_access:ssid' (in the mapcomplete.org theme 'Fries shops') (This is only shown if internet_access=wlan)"
+      "description": "Layer 'Fries shop' shows and asks freeform values for key 'internet_access:ssid' (in the mapcomplete.org theme 'Fries shops') (This is only shown if internet_access~^(.*wlan.*)$)"
     },
     {
       "key": "internet_access:ssid",
-      "description": "Layer 'Fries shop' shows internet_access:ssid=Telekom with a fixed text, namely 'Telekom' and allows to pick this as a default answer (in the mapcomplete.org theme 'Fries shops') (This is only shown if internet_access=wlan)",
+      "description": "Layer 'Fries shop' shows internet_access:ssid=Telekom with a fixed text, namely 'Telekom' and allows to pick this as a default answer (in the mapcomplete.org theme 'Fries shops') (This is only shown if internet_access~^(.*wlan.*)$)",
       "value": "Telekom"
     }
   ]

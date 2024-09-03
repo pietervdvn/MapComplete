@@ -9,8 +9,9 @@ Sanitary dump stations
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [dumpstations-fee](#dumpstations-fee)
   - [dumpstations-charge](#dumpstations-charge)
@@ -19,14 +20,20 @@ Sanitary dump stations
   - [dumpstations-chemical-waste](#dumpstations-chemical-waste)
   - [dumpstations-access](#dumpstations-access)
   - [dumpstations-network](#dumpstations-network)
-  - [operator](#operator)
-  - [power_supply](#power_supply)
   - [leftover-questions](#leftover-questions)
+  - [move-button](#move-button)
   - [lod](#lod)
 
 ## Themes using this layer
 
  - [campersite](https://mapcomplete.org/campersite)
+ - [personal](https://mapcomplete.org/personal)
+
+## Presets
+
+The following options to create new points are included:
+
+**a sanitary dump station** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dsanitary_dump_station' target='_blank'>sanitary_dump_station</a>
 
 ## Basic tags for this layer
 
@@ -50,8 +57,6 @@ Elements must match **all** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/sanitary_dump_station:chemical_toilet#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/sanitary_dump_station%3Achemical_toilet/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [sanitary_dump_station:chemical_toilet](https://wiki.openstreetmap.org/wiki/Key:sanitary_dump_station:chemical_toilet) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:sanitary_dump_station:chemical_toilet%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:sanitary_dump_station:chemical_toilet%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/access#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/access/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [access](https://wiki.openstreetmap.org/wiki/Key:access) | Multiple choice | [network](https://wiki.openstreetmap.org/wiki/Tag:access%3Dnetwork) [customers](https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers) [yes](https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/network#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/network/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [network](https://wiki.openstreetmap.org/wiki/Key:network) | [string](../SpecialInputElements.md#string) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/operator#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/operator/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [operator](https://wiki.openstreetmap.org/wiki/Key:operator) | [string](../SpecialInputElements.md#string) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/power_supply#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/power_supply/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [power_supply](https://wiki.openstreetmap.org/wiki/Key:power_supply) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:power_supply%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:power_supply%3Dno) |
 
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
@@ -107,22 +112,15 @@ The question is `Who can use this dump station?`
 The question is `What network is this place a part of? (skip if none)`
 *This station is part of network {network}* is shown if `network` is set
 
-### operator
-
-The question is `Who operates this place?`
-*This place is operated by {operator}* is shown if `operator` is set
-
-### power_supply
-
-The question is `Does this place have a power supply?`
-
- -  *This place has a power supply* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:power_supply' target='_blank'>power_supply</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:power_supply%3Dyes' target='_blank'>yes</a>
- -  *This place does not have power supply* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:power_supply' target='_blank'>power_supply</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:power_supply%3Dno' target='_blank'>no</a>
-
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
+
+### move-button
+
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
 
 ### lod
 
@@ -133,4 +131,4 @@ This tagrendering has labels
 `added_by_default`
 
 
-This document is autogenerated from [assets/themes/campersite/campersite.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/themes/campersite/campersite.json)
+This document is autogenerated from [assets/layers/dumpstations/dumpstations.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/dumpstations/dumpstations.json)

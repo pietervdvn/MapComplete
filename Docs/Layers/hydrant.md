@@ -9,8 +9,9 @@ Map layer to show fire hydrants.
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [hydrant-color](#hydrant-color)
   - [hydrant-type](#hydrant-type)
   - [hydrant-state](#hydrant-state)
@@ -27,6 +28,12 @@ Map layer to show fire hydrants.
 
  - [hailhydrant](https://mapcomplete.org/hailhydrant)
  - [personal](https://mapcomplete.org/personal)
+
+## Presets
+
+The following options to create new points are included:
+
+**a fire hydrant** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:emergency' target='_blank'>emergency</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:emergency%3Dfire_hydrant' target='_blank'>fire_hydrant</a>
 
 ## Basic tags for this layer
 

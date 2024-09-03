@@ -9,8 +9,9 @@ A bench is a wooden, metal, stone, … surface where a human can sit. This layer
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [bench-backrest](#bench-backrest)
   - [bench-armrest](#bench-armrest)
@@ -31,7 +32,7 @@ A bench is a wooden, metal, stone, … surface where a human can sit. This layer
   - [move-button](#move-button)
   - [delete-button](#delete-button)
   - [lod](#lod)
-4. [Filters](#filters)
+5. [Filters](#filters)
 
 ## Themes using this layer
 
@@ -43,6 +44,12 @@ A bench is a wooden, metal, stone, … surface where a human can sit. This layer
  - [playgrounds](https://mapcomplete.org/playgrounds)
  - [stations](https://mapcomplete.org/stations)
  - [toerisme_vlaanderen](https://mapcomplete.org/toerisme_vlaanderen)
+
+## Presets
+
+The following options to create new points are included:
+
+**a bench** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbench' target='_blank'>bench</a>
 
 ## Basic tags for this layer
 

@@ -9,8 +9,9 @@ Route markers are small markers often found along official hiking/cycling/riding
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [type](#type)
   - [leftover-questions](#leftover-questions)
@@ -22,6 +23,12 @@ Route markers are small markers often found along official hiking/cycling/riding
 
  - [cyclenodes](https://mapcomplete.org/cyclenodes)
  - [walkingnodes](https://mapcomplete.org/walkingnodes)
+
+## Presets
+
+The following options to create new points are included:
+
+**a route marker** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:tourism' target='_blank'>tourism</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dinformation' target='_blank'>information</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:information' target='_blank'>information</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:information%3Droute_marker' target='_blank'>route_marker</a>
 
 ## Basic tags for this layer
 
