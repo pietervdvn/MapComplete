@@ -43,8 +43,6 @@
   export let selectedTags: UploadableTag = undefined
   export let extraTags: UIEventSource<Record<string, string>> = new UIEventSource({})
 
-  export let allowDeleteOfFreeform: boolean = true
-
   export let clss = "interactive border-interactive"
 
   let feedback: UIEventSource<Translation> = new UIEventSource<Translation>(undefined)
@@ -197,7 +195,6 @@
   $: {
     if (
       config.freeform?.key &&
-      allowDeleteOfFreeform &&
       !$freeformInput &&
       !$freeformInputUnvalidated &&
       !checkedMappings?.some((m) => m) &&
@@ -504,7 +501,7 @@
             <!-- TagRenderingQuestion-buttons -->
             <slot name="cancel" />
             <slot name="save-button" {selectedTags}>
-              {#if config.freeform?.key && allowDeleteOfFreeform && !checkedMappings?.some((m) => m) && !$freeformInput && !$freeformInputUnvalidated && $tags[config.freeform.key]}
+              {#if config.freeform?.key && !checkedMappings?.some((m) => m) && !$freeformInput && !$freeformInputUnvalidated && $tags[config.freeform.key]}
                 <button
                   class="primary flex"
                   on:click|stopPropagation|preventDefault={() => onSave()}
