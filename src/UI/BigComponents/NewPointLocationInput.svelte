@@ -18,6 +18,7 @@
   import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeatureSource"
   import { Tag } from "../../Logic/Tags/Tag"
   import { TagUtils } from "../../Logic/Tags/TagUtils"
+  import type { WayId } from "../../Models/OsmFeature"
 
   /**
    * An advanced location input, which has support to:
@@ -45,11 +46,16 @@
   }
   export let snapToLayers: string[] | undefined = undefined
   export let targetLayer: LayerConfig | undefined = undefined
+  /**
+   * If a 'targetLayer' is given, objects of this layer will be shown as well to avoid duplicates
+   * If you want to hide some of them, blacklist them here
+   */
+  export let dontShow: string[] = []
   export let maxSnapDistance: number = undefined
   export let presetProperties: Tag[] = []
   let presetPropertiesUnpacked = TagUtils.KVtoProperties(presetProperties)
 
-  export let snappedTo: UIEventSource<string | undefined>
+  export let snappedTo: UIEventSource<WayId | undefined>
 
   let preciseLocation: UIEventSource<{ lon: number; lat: number }> = new UIEventSource<{
     lon: number
@@ -57,7 +63,7 @@
   }>(undefined)
 
   const map: UIEventSource<MlMap> = new UIEventSource<MlMap>(undefined)
-  let initialMapProperties: Partial<MapProperties> & { location } = {
+  export let mapProperties: Partial<MapProperties> & { location } = {
     zoom: new UIEventSource<number>(19),
     maxbounds: new UIEventSource(undefined),
     /*If no snapping needed: the value is simply the map location;
@@ -77,8 +83,11 @@
 
   if (targetLayer) {
     // Show already existing items
-    const featuresForLayer = state.perLayer.get(targetLayer.id)
+    let featuresForLayer: FeatureSource = state.perLayer.get(targetLayer.id)
     if (featuresForLayer) {
+      if (dontShow) {
+        featuresForLayer = new StaticFeatureSource(featuresForLayer.features.map(feats => feats.filter(f => dontShow.indexOf(f.properties.id) < 0)))
+      }
       new ShowDataLayer(map, {
         layer: targetLayer,
         features: featuresForLayer,
@@ -104,13 +113,13 @@
     const snappedLocation = new SnappingFeatureSource(
       new FeatureSourceMerger(...Utils.NoNull(snapSources)),
       // We snap to the (constantly updating) map location
-      initialMapProperties.location,
+      mapProperties.location,
       {
         maxDistance: maxSnapDistance ?? 15,
         allowUnsnapped: true,
         snappedTo,
         snapLocation: value,
-      }
+      },
     )
     const withCorrectedAttributes = new StaticFeatureSource(
       snappedLocation.features.mapD((feats) =>
@@ -124,8 +133,8 @@
             ...f,
             properties,
           }
-        })
-      )
+        }),
+      ),
     )
     // The actual point to be created, snapped at the new location
     new ShowDataLayer(map, {
@@ -139,7 +148,7 @@
 <LocationInput
   {map}
   on:click
-  mapProperties={initialMapProperties}
+  {mapProperties}
   value={preciseLocation}
   initialCoordinate={coordinate}
   maxDistanceInMeters={50}

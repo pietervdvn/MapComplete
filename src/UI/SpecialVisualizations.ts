@@ -1995,35 +1995,8 @@ export default class SpecialVisualizations {
                     layer: LayerConfig
                 ): BaseUIElement {
                     const translation = tagSource.map((tags) => {
-                        const presets = state.layout.getMatchingLayer(tags)?.presets
-                        if(!presets){
-                            return undefined
-                        }
-                        const matchingPresets = presets
-                            .filter((pr) => pr.description !== undefined)
-                            .filter((pr) => new And(pr.tags).matchesProperties(tags))
-                        let mostShadowed = matchingPresets[0]
-                        let mostShadowedTags = new And(mostShadowed.tags)
-                        for (let i = 1; i < matchingPresets.length; i++) {
-                            const pr = matchingPresets[i]
-                            const prTags = new And(pr.tags)
-                            if (mostShadowedTags.shadows(prTags)) {
-                                if (!prTags.shadows(mostShadowedTags)) {
-                                    // We have a new most shadowed item
-                                    mostShadowed = pr
-                                    mostShadowedTags = prTags
-                                } else {
-                                    // Both shadow each other: abort
-                                    mostShadowed = undefined
-                                    break
-                                }
-                            } else if (!prTags.shadows(mostShadowedTags)) {
-                                // The new contender does not win, but it might defeat the current contender
-                                mostShadowed = undefined
-                                break
-                            }
-                        }
-                        return mostShadowed?.description ?? matchingPresets[0]?.description
+                        const layer = state.layout.getMatchingLayer(tags)
+                        return layer?.getMostMatchingPreset(tags)?.description
                     })
                     return new VariableUiElement(translation)
                 }

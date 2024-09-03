@@ -9671,6 +9671,7 @@
     },
     "walls_and_buildings": {
         "description": "Speciale ingebouwde laag voor alle muren en gebouwen. Deze laag is nuttig in voorkeuzen voor objecten die tegen muren geplaatst kunnen worden (bv. AEDs, brievenbussen, ingangen, adressen, beveiligingscamera's,…). Deze laag is standaard onzichtbaar en niet in te schakelen door de gebruiker.",
+        "snapName": "een muur of gebouw",
         "tagRenderings": {
             "entrance_info": {
                 "mappings": {

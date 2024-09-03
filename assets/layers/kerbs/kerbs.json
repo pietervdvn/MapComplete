@@ -11,6 +11,9 @@
     "ca": "Vroades",
     "cs": "Obrubníky"
   },
+  "snapName": {
+    "en": "a kerb"
+  },
   "description": {
     "en": "A layer showing kerbs.",
     "nl": "Een laag met stoepranden.",

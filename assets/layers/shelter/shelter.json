@@ -8,6 +8,9 @@
     "fr": "Abri",
     "cs": "Přístřešek"
   },
+  "snapName": {
+    "en": "a shelter"
+  },
   "description": {
     "en": "Layer showing shelter structures",
     "de": "Eine Ebene, die verschiedene Bauformen von Unterständen zeigt",

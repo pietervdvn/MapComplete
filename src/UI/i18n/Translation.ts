@@ -417,6 +417,9 @@ export class TypedTranslation<T extends Record<string, any>> extends Translation
         key: string,
         replaceWith: Translation
     ): TypedTranslation<Omit<T, K>> {
+        if(replaceWith === undefined){
+            return this
+        }
         const newTranslations: Record<string, string> = {}
         const toSearch = "{" + key + "}"
         const missingLanguages = new Set<string>(Object.keys(this.translations))

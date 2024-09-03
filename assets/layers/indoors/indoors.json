@@ -8,6 +8,10 @@
     "ca": "Interiors",
     "cs": "Vnitřní prostory"
   },
+  "snapName": {
+    "en": "an indoor wall",
+    "nl": "een binnenmuur"
+  },
   "description": {
     "en": "Basic indoor mapping: shows room outlines",
     "de": "Grundlegende Innenraumkartierung: zeigt Umrisse von Räumen",

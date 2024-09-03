@@ -643,7 +643,8 @@
         "pointIsMoved": "The point has been moved",
         "reasons": {
             "reasonInaccurate": "The location is inaccurate by a few meter",
-            "reasonRelocation": "The object has been relocated to a totally different location"
+            "reasonRelocation": "The object has been relocated to a totally different location",
+            "reasonSnapTo": "This should be snapped onto {name}"
         },
         "selectReason": "Why do you move this object?",
         "whyMove": "Why do you want to move this point?",

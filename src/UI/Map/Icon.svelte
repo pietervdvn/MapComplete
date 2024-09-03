@@ -41,6 +41,7 @@
   import Relocation from "../../assets/svg/Relocation.svelte"
   import LockClosed from "@babeard/svelte-heroicons/solid/LockClosed"
   import Key from "@babeard/svelte-heroicons/solid/Key"
+  import Snap from "../../assets/svg/Snap.svelte"
 
   /**
    * Renders a single icon.
@@ -152,6 +153,8 @@
     <LockClosed class={clss} {color} />
   {:else if icon === "key"}
     <Key class={clss} {color} />
+  {:else if icon === "snap"}
+    <Snap class={clss} />
   {:else if Utils.isEmoji(icon)}
     <span style={`font-size: ${emojiHeight}; line-height: ${emojiHeight}`}>
       {icon}

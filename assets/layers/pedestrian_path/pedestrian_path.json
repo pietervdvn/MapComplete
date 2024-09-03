@@ -8,6 +8,9 @@
     "ca": "Camins per a vianants",
     "cs": "Cesty pro chodce"
   },
+  "snapName": {
+    "en": "a pedestrian path"
+  },
   "description": {
     "en": "Pedestrian footpaths, especially used for indoor navigation and snapping entrances to this layer",
     "nl": "Pad voor voetgangers, in het bijzonder gebruikt voor navigatie binnen gebouwen en om aan toegangen vast te klikken in deze laag",

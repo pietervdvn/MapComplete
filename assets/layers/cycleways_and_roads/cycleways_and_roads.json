@@ -9,6 +9,10 @@
     "ca": "Vies ciclistes i carreteres",
     "cs": "Cyklostezky a silnice"
   },
+  "snapName": {
+    "en": "a road or a cycleway",
+    "nl": "een weg, straat of fietspad"
+  },
   "description": {
     "en": "All infrastructure that someone can cycle over, accompanied with questions about this infrastructure",
     "nl": "Alle infrastructuur waar je over kunt fietsen, met vragen over die infrastructuur",
