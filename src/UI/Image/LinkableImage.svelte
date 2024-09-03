@@ -72,7 +72,19 @@
     imgClass="max-h-64 w-auto"
     previewedImage={state.previewedImage}
     attributionFormat="minimal"
-  />
+  >
+    <!--
+    <div slot="preview-action" class="self-center" >
+    <LoginToggle {state} silentFail={true}>
+      {#if linkable}
+        <label class="normal-background p-2 rounded-full pointer-events-auto">
+          <input bind:checked={$isLinked} type="checkbox" />
+          <SpecialTranslation t={t.link} {tags} {state} {layer} {feature} />
+        </label>
+      {/if}
+    </LoginToggle>
+    </div>-->
+  </AttributedImage>
   <LoginToggle {state} silentFail={true}>
     {#if linkable}
       <label>

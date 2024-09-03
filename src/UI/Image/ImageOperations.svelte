@@ -45,6 +45,8 @@
       <ImageAttribution {image} attributionFormat="large"/>
     </div>
 
+    <slot/>
+
     <button
       class="no-image-background pointer-events-auto flex items-center bg-black text-white opacity-50 transition-colors duration-200 hover:opacity-100"
       on:click={() => download()}

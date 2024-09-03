@@ -13,9 +13,7 @@
   import type { MapProperties } from "../Models/MapProperties"
   import Geosearch from "./BigComponents/Geosearch.svelte"
   import Translations from "./i18n/Translations"
-  import {
-    MenuIcon,
-  } from "@rgossiaux/svelte-heroicons/solid"
+  import { MenuIcon } from "@rgossiaux/svelte-heroicons/solid"
   import Tr from "./Base/Tr.svelte"
   import FloatOver from "./Base/FloatOver.svelte"
   import Constants from "../Models/Constants"
@@ -32,7 +30,6 @@
   import Min from "../assets/svg/Min.svelte"
   import Plus from "../assets/svg/Plus.svelte"
   import Filter from "../assets/svg/Filter.svelte"
-  import ImageOperations from "./Image/ImageOperations.svelte"
   import VisualFeedbackPanel from "./BigComponents/VisualFeedbackPanel.svelte"
   import { Orientation } from "../Sensors/Orientation"
   import GeolocationIndicator from "./BigComponents/GeolocationIndicator.svelte"
@@ -47,7 +44,7 @@
   import DrawerLeft from "./Base/DrawerLeft.svelte"
   import Hash from "../Logic/Web/Hash"
   import { Drawer } from "flowbite-svelte"
-  import { sineIn } from "svelte/easing"
+  import { linear, sineIn } from "svelte/easing"
 
   export let state: ThemeViewState
   let layout = state.layout
@@ -58,20 +55,26 @@
   let compassLoaded = Orientation.singleton.gotMeasurement
   Orientation.singleton.startMeasurements()
 
-  state.selectedElement.addCallback((selected) => {
-    if (!selected) {
-      selectedElement.setData(selected)
+  let slideDuration = 150 // ms
+  state.selectedElement.addCallback((value) => {
+    if (!value) {
+      selectedElement.setData(undefined)
       return
     }
-    if (selected !== selectedElement.data) {
-      // We first set the selected element to 'undefined' to force the popup to close...
-      selectedElement.setData(undefined)
+    if(!selectedElement.data){
+      // The store for this component doesn't have value right now, so we can simply set it
+      selectedElement.set(value)
+      return
     }
-    // ... we give svelte some time to update with requestAnimationFrame ...
-    window.requestAnimationFrame(() => {
-      // ... and we force a fresh popup window
-      selectedElement.setData(selected)
-    })
+    // We first set the selected element to 'undefined' to force the popup to close...
+    selectedElement.setData(undefined)
+    // ... and we give svelte some time to update with requestAnimationFrame ...
+    window.setTimeout(() => {
+      window.requestAnimationFrame(() => {
+        // ... and we force a fresh popup window
+        selectedElement.setData(value)
+      })
+    }, slideDuration)
   })
 
 
@@ -143,7 +146,6 @@
       rasterLayerName = l.properties.name
     }),
   )
-  let previewedImage = state.previewedImage
   let addNewFeatureMode = state.userRelatedState.addNewFeatureMode
   let gpsAvailable = state.geolocation.geolocationState.gpsAvailable
   let gpsButtonAriaLabel = state.geolocation.geolocationState.gpsStateExplanation
@@ -433,14 +435,14 @@
       rightOffset="inset-y-0 right-0"
       transitionParams={ {
     x: 640,
-    duration: 200,
-    easing: sineIn
+    duration: slideDuration,
+    easing: linear
   }}
       divClass="overflow-y-auto z-50 "
       hidden={$selectedElement === undefined}
       on:close={() => {      state.selectedElement.setData(undefined)
     }}
-      >
+    >
       <div slot="close-button" />
       <SelectedElementPanel {state} selected={$state_selectedElement} />
     </Drawer>
@@ -468,13 +470,5 @@
       </FloatOver>
     {/if}
   {/if}
-
-  <!-- Image preview -->
-  <If condition={state.previewedImage.map((i) => i !== undefined)}>
-    <FloatOver on:close={() => state.previewedImage.setData(undefined)}>
-      <ImageOperations image={$previewedImage} />
-    </FloatOver>
-  </If>
-
 
 </main>
