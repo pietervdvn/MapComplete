@@ -581,6 +581,7 @@
         "title": "Jardines de fachada"
     },
     "fireplace": {
+        "description": "Lugar al aire libre adecuado para hacer fuego y con barbacoas.",
         "title": "Chimenea y barbacoas"
     },
     "food": {
@@ -803,6 +804,137 @@
         "description": "Un mapa en que colaborar con tiendas y restaurantes con productos sin lactosa",
         "title": "Tiendas y restaurantes con productos sin lactosa"
     },
+    "lighthouses": {
+        "description": "Los faros son edificios altos con una luz en la parte superior para guiar el tráfico marítimo.",
+        "title": "Faros"
+    },
+    "mapcomplete-changes": {
+        "description": "Este mapa muestra todos los cambios realizados con MapComplete",
+        "layers": {
+            "0": {
+                "description": "Muestra todos los cambios de MapComplete",
+                "filter": {
+                    "0": {
+                        "options": {
+                            "0": {
+                                "question": "El nombre del tema contiene {search}"
+                            }
+                        }
+                    },
+                    "1": {
+                        "options": {
+                            "0": {
+                                "question": "El nombre del tema contiene <b> no </b> {search}"
+                            }
+                        }
+                    },
+                    "10": {
+                        "options": {
+                            "0": {
+                                "question": "Excluir el tema etimológico"
+                            }
+                        }
+                    },
+                    "2": {
+                        "options": {
+                            "0": {
+                                "question": "Hecho por el colaborador {search}"
+                            }
+                        }
+                    },
+                    "3": {
+                        "options": {
+                            "0": {
+                                "question": "<b>No</b> realizado por el colaborador {search}"
+                            }
+                        }
+                    },
+                    "4": {
+                        "options": {
+                            "0": {
+                                "question": "Hecho antes de {search}"
+                            }
+                        }
+                    },
+                    "5": {
+                        "options": {
+                            "0": {
+                                "question": "Hecho después de {search}"
+                            }
+                        }
+                    },
+                    "6": {
+                        "options": {
+                            "0": {
+                                "question": "Idioma del usuario (código iso) {search}"
+                            }
+                        }
+                    },
+                    "7": {
+                        "options": {
+                            "0": {
+                                "question": "Hecho con el host {search}"
+                            }
+                        }
+                    },
+                    "8": {
+                        "options": {
+                            "0": {
+                                "question": "El conjunto de cambios agregó al menos una imagen"
+                            }
+                        }
+                    },
+                    "9": {
+                        "options": {
+                            "0": {
+                                "question": "Excluir tema RGB"
+                            }
+                        }
+                    }
+                },
+                "name": "Centros de conjuntos de cambios",
+                "tagRenderings": {
+                    "contributor": {
+                        "question": "¿Qué colaborador realizó este cambio?",
+                        "render": "Cambio realizado por <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>"
+                    },
+                    "host": {
+                        "question": "¿Con qué host (sitio web) se realizó este cambio?",
+                        "render": "Cambiar con <a href='{host}'>{host}</a>"
+                    },
+                    "locale": {
+                        "question": "¿En qué configuración regional (idioma) se realizó este cambio?",
+                        "render": "La configuración regional del usuario es {locale}"
+                    },
+                    "show_changeset_id": {
+                        "render": "Conjunto de cambios <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
+                    },
+                    "theme-id": {
+                        "question": "¿Qué tema se ha utilizado para realizar este cambio?",
+                        "render": "Cambiar con el tema <a href='https://mapcomplete.org/{theme}'>{theme}</a>"
+                    },
+                    "version": {
+                        "question": "¿Qué versión de MapComplete se ha utilizado para realizar este cambio?",
+                        "render": "Elaborado con {editor}"
+                    }
+                },
+                "title": {
+                    "render": "Cambios para {theme}"
+                }
+            },
+            "1": {
+                "override": {
+                    "tagRenderings+": {
+                        "0": {
+                            "render": "Encontraras más estadísticas <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>aquí</a>"
+                        }
+                    }
+                }
+            }
+        },
+        "shortDescription": "Muestra los cambios realizados por MapComplete",
+        "title": "Cambios realizados con MapComplete"
+    },
     "maproulette": {
         "description": "Tema que muestra las tareas de MapRoulette, permitiendo buscarlas, filtrarlas y arreglarlas.",
         "title": "Tareas de MapRoulette"
@@ -816,6 +948,10 @@
         "description": "Este mapa muestra la velocidad máxima legalmente permitida en cada carretera. Si falta una velocidad máxima o es incorrecta, puedes corregirla aquí.",
         "shortDescription": "Este mapa muestra la velocidad máxima permitida legalmente en cada carretera.",
         "title": "Velocidad"
+    },
+    "memorials": {
+        "description": "Los monumentos conmemorativos son objetos físicos colocados de forma permanente en el espacio público para recordar a una persona o un acontecimiento. Pueden ser objetos muy diversos, como estatuas, placas, pinturas, objetos militares (como tanques),...",
+        "title": "Memoriales"
     },
     "nature": {
         "description": "En este mapa, uno puede encontrar información interesante para turistas y amantes de la naturaleza.",
@@ -917,7 +1053,29 @@
                             "title": "una tienda erótica"
                         }
                     },
-                    "name": "Tiendas eróticas"
+                    "name": "Tiendas eróticas",
+                    "tagRenderings+": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "Esta tienda ofrece <b>artículos BDSM suaves</b>, como esposas mullidas, un conjunto de ..."
+                                },
+                                "1": {
+                                    "then": "Esta tienda ofrece <b>artículos especializados en BDSM</b>, como barras separadoras, artículos para juegos con agujas, artículos de bondage médico, herramientas de impacto, grilletes, colores metálicos, esposas, pinzas para pezones, accesorios de shibari, ..."
+                                },
+                                "2": {
+                                    "then": "Esta tienda ofrece <b>accesorios para mascotas</b>, como máscaras de cachorros, máscaras de animales, juegos de ponis, colas, herraduras..."
+                                },
+                                "3": {
+                                    "then": "Esta tienda ofrece <b>ropa de cuero</b>, desde pantalones y camisas de uso diario hasta arneses de cuero"
+                                },
+                                "4": {
+                                    "then": "Esta tienda ofrece <b>uniformes</b> para juegos de rol, tales como uniformes de enfermera, uniformes militares, policía, colegiala, criada francesa, ..."
+                                }
+                            },
+                            "question": "¿Ofrece esta tienda artículos fetichistas?"
+                        }
+                    }
                 }
             },
             "4": {
@@ -1036,6 +1194,32 @@
     },
     "postboxes": {
         "description": "En este mapa podrás buscar y añadir los datos de las oficinas de correos y buzones de correo. ¡Puedes utilizar este mapa para encontrar dónde enviar tu próxima postal! :)<br/>¿Has detectado un error o falta algún buzón de correo? Puedes editar este mapa con una cuenta gratuita de OpenStreetMap.",
+        "layers": {
+            "3": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "Esta tienda es colaboradora de correos o alguna agencia de transporte"
+                                },
+                                "1": {
+                                    "then": "Esta tienda no está asociada a ninguna agencia de transporte"
+                                }
+                            },
+                            "question": "¿Es esta tienda un puesto asociado?"
+                        }
+                    },
+                    "=presets": {
+                        "0": {
+                            "description": "Si una tienda aún no está en el mapa y es socia de alguna empresa, puedes añadirla aquí.",
+                            "title": "Una tienda desaparecida que era un punto de recogida"
+                        }
+                    },
+                    "description": "Agregar un nuevo punto de recogida al mapa en una tienda existente"
+                }
+            }
+        },
         "shortDescription": "Un mapa que muestra buzones y oficinas de correo",
         "title": "Mapa de Buzones y Oficinas de Correos"
     },
