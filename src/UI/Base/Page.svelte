@@ -26,14 +26,14 @@
 {/if}
 
 <style>
-    :global(.page-header) {
-        display: flex;
-        align-items: center;
-    }
+  :global(.page-header) {
+    display: flex;
+    align-items: center;
+  }
 
-    :global(.page-header svg) {
-        width: 2rem;
-        height: 2rem;
-        margin-right: 0.75rem;
-    }
+  :global(.page-header svg) {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 0.75rem;
+  }
 </style>

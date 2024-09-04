@@ -179,6 +179,9 @@
                 },
                 "question": "Kakšne vrste spomenik je to?",
                 "render": "To je {memorial}"
+            },
+            "start_date": {
+                "render": "Datum postavitve {start_date}"
             }
         }
     },

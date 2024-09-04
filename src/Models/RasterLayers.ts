@@ -38,7 +38,7 @@ export class AvailableRasterLayers {
                 <RasterLayerPolygon>{
                     type: "Feature",
                     properties,
-                    geometry: BBox.global.asGeometry()
+                    geometry: BBox.global.asGeometry(),
                 }
         )
     public static bing = <RasterLayerPolygon>bingJson
@@ -48,18 +48,18 @@ export class AvailableRasterLayers {
         url: "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
         attribution: {
             text: "OpenStreetMap",
-            url: "https://openStreetMap.org/copyright"
+            url: "https://openStreetMap.org/copyright",
         },
         best: true,
         max_zoom: 19,
         min_zoom: 0,
-        category: "osmbasedmap"
+        category: "osmbasedmap",
     }
 
     public static readonly osmCarto: RasterLayerPolygon = {
         type: "Feature",
         properties: AvailableRasterLayers.osmCartoProperties,
-        geometry: BBox.global.asGeometry()
+        geometry: BBox.global.asGeometry(),
     }
 
     /**
@@ -197,7 +197,7 @@ export interface EditorLayerIndexProperties extends RasterLayerProperties {
     /**
      * A URL template for imagery tiles
      */
-    readonly    url: string
+    readonly url: string
     readonly min_zoom?: number
     readonly max_zoom?: number
     /**

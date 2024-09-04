@@ -102,7 +102,11 @@
       </div>
     </div>
 
-    <Searchbar value={themeSearchText} placeholder={tr.searchForATheme} on:search={() => MoreScreen.applySearch(themeSearchText.data)}/>
+    <Searchbar
+      value={themeSearchText}
+      placeholder={tr.searchForATheme}
+      on:search={() => MoreScreen.applySearch(themeSearchText.data)}
+    />
 
     <ThemesList search={themeSearchText} {state} themes={MoreScreen.officialThemes} />
 

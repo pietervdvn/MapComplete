@@ -9,9 +9,8 @@ camper sites
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Presets](#presets)
-3. [Basic tags for this layer](#basic-tags-for-this-layer)
-4. [Supported attributes](#supported-attributes)
+2. [Basic tags for this layer](#basic-tags-for-this-layer)
+3. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [caravansites-name](#caravansites-name)
   - [caravansites-fee](#caravansites-fee)
@@ -33,12 +32,6 @@ camper sites
 
  - [campersite](https://mapcomplete.org/campersite)
  - [personal](https://mapcomplete.org/personal)
-
-## Presets
-
-The following options to create new points are included:
-
-**a camper site** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:tourism' target='_blank'>tourism</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dcaravan_site' target='_blank'>caravan_site</a>
 
 ## Basic tags for this layer
 

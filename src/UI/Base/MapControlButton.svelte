@@ -14,7 +14,6 @@
   export let arialabel: Translation = undefined
   export let arialabelDynamic: Store<Translation> = new ImmutableStore(arialabel)
   let arialabelString = arialabelDynamic.bind((tr) => tr?.current)
-
 </script>
 
 <button

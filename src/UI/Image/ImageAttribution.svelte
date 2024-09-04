@@ -20,7 +20,9 @@
 </script>
 
 {#if $license !== undefined}
-  <div class="no-images flex items-center rounded-lg bg-black-transparent p-0.5 px-3 text-sm text-white">
+  <div
+    class="no-images bg-black-transparent flex items-center rounded-lg p-0.5 px-3 text-sm text-white"
+  >
     {#if icon !== undefined}
       <div class="mr-2 h-6 w-6">
         <ToSvelte construct={icon} />
@@ -28,7 +30,7 @@
     {/if}
 
     <div class="flex gap-x-2" class:flex-col={attributionFormat !== "minimal"}>
-      {#if attributionFormat !== "minimal" }
+      {#if attributionFormat !== "minimal"}
         {#if $license.title}
           {#if $license.informationLocation}
             <a href={$license.informationLocation.href} target="_blank" rel="noopener nofollower">
@@ -42,7 +44,7 @@
 
       {#if $license.artist}
         {#if attributionFormat === "large"}
-          <Tr t={Translations.t.general.attribution.madeBy.Subs({author: $license.artist})} />
+          <Tr t={Translations.t.general.attribution.madeBy.Subs({ author: $license.artist })} />
         {:else}
           <div class="font-bold">
             {@html $license.artist}
@@ -58,7 +60,7 @@
 
       {#if attributionFormat !== "minimal"}
         <div class="flex w-full justify-between gap-x-1">
-          {#if ($license.license !== undefined || $license.licenseShortName !== undefined)}
+          {#if $license.license !== undefined || $license.licenseShortName !== undefined}
             <div>
               {$license?.license ?? $license?.licenseShortName}
             </div>
@@ -72,7 +74,6 @@
           {/if}
         </div>
       {/if}
-
     </div>
   </div>
 {/if}

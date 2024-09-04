@@ -77,7 +77,6 @@
     }, slideDuration)
   })
 
-
   let selectedLayer: Store<LayerConfig> = state.selectedElement.mapD((element) => {
     const id = element.properties.id
     if (id.startsWith("current_view")) {
@@ -104,11 +103,11 @@
   state.mapProperties.installCustomKeyboardHandler(viewport)
   let canZoomIn = mapproperties.maxzoom.map(
     (mz) => mapproperties.zoom.data < mz,
-    [mapproperties.zoom],
+    [mapproperties.zoom]
   )
   let canZoomOut = mapproperties.minzoom.map(
     (mz) => mapproperties.zoom.data > mz,
-    [mapproperties.zoom],
+    [mapproperties.zoom]
   )
 
   function updateViewport() {
@@ -144,13 +143,12 @@
   onDestroy(
     rasterLayer.addCallbackAndRunD((l) => {
       rasterLayerName = l.properties.name
-    }),
+    })
   )
   let addNewFeatureMode = state.userRelatedState.addNewFeatureMode
   let gpsAvailable = state.geolocation.geolocationState.gpsAvailable
   let gpsButtonAriaLabel = state.geolocation.geolocationState.gpsStateExplanation
   let debug = state.featureSwitches.featureSwitchIsDebugging
-
 
   debug.addCallbackAndRun((dbg) => {
     if (dbg) {
@@ -196,14 +194,17 @@
     <!-- Top components -->
 
     <div
-      class="flex bg-black-light-transparent pointer-events-auto items-center justify-between px-4 py-1 flex-wrap-reverse">
+      class="bg-black-light-transparent pointer-events-auto flex flex-wrap-reverse items-center justify-between px-4 py-1"
+    >
       <!-- Top bar with tools -->
       <div class="flex items-center">
-
         <MapControlButton
           cls="m-0.5 p-0.5 sm:p-1"
           arialabel={Translations.t.general.labels.menu}
-          on:click={() => {console.log("Opening...."); state.guistate.pageStates.menu.setData(true)}}
+          on:click={() => {
+            console.log("Opening....")
+            state.guistate.pageStates.menu.setData(true)
+          }}
           on:keydown={forwardEventToMap}
         >
           <MenuIcon class="h-6 w-6 cursor-pointer" />
@@ -213,9 +214,7 @@
           on:click={() => state.guistate.pageStates.about_theme.set(true)}
           on:keydown={forwardEventToMap}
         >
-          <div
-            class="m-0.5 mx-1 flex cursor-pointer items-center max-[480px]:w-full sm:mx-1 mr-2"
-          >
+          <div class="m-0.5 mx-1 mr-2 flex cursor-pointer items-center max-[480px]:w-full sm:mx-1">
             <Marker icons={layout.icon} size="h-6 w-6 shrink-0 mr-0.5 sm:mr-1 md:mr-2" />
             <b class="mr-1">
               <Tr t={layout.title} />
@@ -231,20 +230,18 @@
       {/if}
 
       <If condition={state.featureSwitches.featureSwitchSearch}>
-        <div class="w-full sm:w-64 my-2 sm:mt-0">
-
+        <div class="my-2 w-full sm:mt-0 sm:w-64">
           <Geosearch
             bounds={state.mapProperties.bounds}
             on:searchCompleted={() => {
-            state.map?.data?.getCanvas()?.focus()
-          }}
+              state.map?.data?.getCanvas()?.focus()
+            }}
             perLayer={state.perLayer}
             selectedElement={state.selectedElement}
             geolocationState={state.geolocation.geolocationState}
           />
         </div>
       </If>
-
     </div>
 
     <div class="pointer-events-auto float-right mt-1 flex flex-col px-1 max-[480px]:w-full sm:m-2">
@@ -255,13 +252,9 @@
           </div>
         {/if}
       </If>
-
     </div>
     <div class="float-left m-1 flex flex-col sm:mt-2">
-      <If condition={state.featureSwitches.featureSwitchWelcomeMessage}>
-
-
-      </If>
+      <If condition={state.featureSwitches.featureSwitchWelcomeMessage} />
       {#if currentViewLayer?.tagRenderings && currentViewLayer.defaultIcon()}
         <MapControlButton
           on:click={() => {
@@ -332,15 +325,14 @@
             </MapControlButton>
           </If>
           <If condition={state.featureSwitches.featureSwitchBackgroundSelection}>
-            <OpenBackgroundSelectorButton
-              hideTooltip={true}
-              {state}
-            />
+            <OpenBackgroundSelectorButton hideTooltip={true} {state} />
           </If>
           <button
             class="unstyled bg-black-transparent pointer-events-auto ml-1 h-fit max-h-12 cursor-pointer overflow-hidden rounded-2xl px-1 text-white opacity-50 hover:opacity-100"
             style="background: #00000088; padding: 0.25rem; border-radius: 2rem;"
-            on:click={() => {state.guistate.pageStates.copyright.set(true)}}
+            on:click={() => {
+              state.guistate.pageStates.copyright.set(true)
+            }}
           >
             © <span class="hidden sm:inline sm:pr-2">
               OpenStreetMap
@@ -466,7 +458,11 @@
           state.selectedElement.setData(undefined)
         }}
       >
-        <SelectedElementView {state} layer={$selectedLayer} selectedElement={$state_selectedElement} />
+        <SelectedElementView
+          {state}
+          layer={$selectedLayer}
+          selectedElement={$state_selectedElement}
+        />
       </FloatOver>
     {/if}
   {/if}

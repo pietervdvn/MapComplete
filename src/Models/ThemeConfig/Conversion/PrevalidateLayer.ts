@@ -141,13 +141,9 @@ export class PrevalidateLayer extends DesugaringStep<LayerConfigJson> {
             }
         }
 
-        if(this._isBuiltin && json.allowMove === undefined && json.source["geoJson"] === undefined){
+        if(this._isBuiltin && json.allowMove === undefined && json.source["geoJson"] === undefined) {
             if (!Constants.priviliged_layers.find((x) => x == json.id)) {
-                context.err(
-                    "Layer " +
-                    json.id +
-                    " does not have an explicit 'allowMove'"
-                )
+                context.err("Layer " + json.id + " does not have an explicit 'allowMove'")
             }
         }
 

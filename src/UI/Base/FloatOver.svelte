@@ -30,7 +30,7 @@
   }}
 >
   <div
-    class="content relative normal-background pointer-events-auto h-full"
+    class="content normal-background pointer-events-auto relative h-full"
     on:click|stopPropagation={() => {}}
   >
     <div class="h-full rounded-xl">
@@ -39,20 +39,16 @@
     <slot name="close-button">
       <!-- The close button is placed _after_ the default slot in order to always paint it on top -->
       <div class="absolute top-0 right-0">
-
-        <CloseButton class="normal-background mt-2 mr-2"
-                     on:click={() => dispatch("close")}
-        />
+        <CloseButton class="normal-background mt-2 mr-2" on:click={() => dispatch("close")} />
       </div>
-
     </slot>
   </div>
 </div>
 
 <style>
-    .content {
-        border-radius: 0.5rem;
-        overflow-x: hidden;
-        box-shadow: 0 0 1rem #00000088;
-    }
+  .content {
+    border-radius: 0.5rem;
+    overflow-x: hidden;
+    box-shadow: 0 0 1rem #00000088;
+  }
 </style>

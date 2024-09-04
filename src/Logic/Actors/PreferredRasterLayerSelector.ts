@@ -64,9 +64,9 @@ export class PreferredRasterLayerSelector {
      */
     private async updateLayer() {
         // What is the ID of the layer we have to (try to) load?
-        const targetLayerId = (
-            (this._queryParameter.data ?? this._preferredBackgroundLayer.data)?.toLowerCase()
-        )?.toLowerCase()
+        const targetLayerId = (this._queryParameter.data ?? this._preferredBackgroundLayer.data)
+            ?.toLowerCase()
+            ?.toLowerCase()
         if (targetLayerId === undefined || targetLayerId === "default") {
             return
         }
@@ -78,7 +78,7 @@ export class PreferredRasterLayerSelector {
             return
         }
         await AvailableRasterLayers.editorLayerIndex()
-        const isCategory = (eliCategory).indexOf(<any> targetLayerId) >= 0
+        const isCategory = eliCategory.indexOf(<any>targetLayerId) >= 0
         const available = this._availableLayers.store.data
         const foundLayer = isCategory
             ? available.find((l) => l.properties.category === targetLayerId)

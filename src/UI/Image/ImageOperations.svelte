@@ -39,10 +39,8 @@
   <div
     class="pointer-events-none absolute bottom-0 left-0 flex w-full flex-wrap items-end justify-between"
   >
-    <div
-      class="pointer-events-auto m-1 w-fit transition-colors duration-200"
-    >
-      <ImageAttribution {image} attributionFormat="large"/>
+    <div class="pointer-events-auto m-1 w-fit transition-colors duration-200">
+      <ImageAttribution {image} attributionFormat="large" />
     </div>
 
     <slot/>
@@ -52,7 +50,7 @@
       on:click={() => download()}
     >
       <DownloadIcon class="h-6 w-6 px-2 opacity-100" />
-      <Tr t={Translations.t.general.download.downloadImage}/>
+      <Tr t={Translations.t.general.download.downloadImage} />
     </button>
   </div>
 </div>

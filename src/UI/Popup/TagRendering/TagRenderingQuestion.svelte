@@ -408,7 +408,7 @@
           />
         {:else if config.mappings !== undefined && !config.multiAnswer}
           <!-- Simple radiobuttons as mapping -->
-          <div class="flex flex-col no-bold">
+          <div class="no-bold flex flex-col">
             {#each config.mappings as mapping, i (mapping.then)}
               <!-- Even though we have a list of 'mappings' already, we still iterate over the list as to keep the original indices-->
               <TagRenderingMappingInput
@@ -423,7 +423,7 @@
               >
                 <input
                   type="radio"
-                  class="self-center mr-1"
+                  class="mr-1 self-center"
                   bind:group={selectedMapping}
                   name={"mappings-radio-" + config.id}
                   value={i}
@@ -435,7 +435,7 @@
               <label class="flex gap-x-1">
                 <input
                   type="radio"
-                  class="self-center mr-1"
+                  class="mr-1 self-center"
                   bind:group={selectedMapping}
                   name={"mappings-radio-" + config.id}
                   value={config.mappings?.length}
@@ -458,7 +458,7 @@
           </div>
         {:else if config.mappings !== undefined && config.multiAnswer}
           <!-- Multiple answers can be chosen: checkboxes -->
-          <div class="flex flex-col no-bold">
+          <div class="no-bold flex flex-col">
             {#each config.mappings as mapping, i (mapping.then)}
               <TagRenderingMappingInput
                 {mapping}
@@ -472,7 +472,7 @@
               >
                 <input
                   type="checkbox"
-                  class="self-center mr-1"
+                  class="mr-1 self-center"
                   name={"mappings-checkbox-" + config.id + "-" + i}
                   bind:checked={checkedMappings[i]}
                   on:keypress={(e) => onInputKeypress(e)}
@@ -483,7 +483,7 @@
               <label class="flex gap-x-1">
                 <input
                   type="checkbox"
-                  class="self-center mr-1"
+                  class="mr-1 self-center"
                   name={"mappings-checkbox-" + config.id + "-" + config.mappings?.length}
                   bind:checked={checkedMappings[config.mappings.length]}
                   on:keypress={(e) => onInputKeypress(e)}

@@ -47,7 +47,6 @@
 </script>
 
 <LoginToggle {state} silentFail>
-
   {#if !$sourceUrl || !$enableLogin}
     <!-- empty block -->
   {:else if $externalData === undefined}
@@ -59,15 +58,15 @@
   {:else if $propertyKeysExternal.length === 0 && $knownImages.size + $unknownImages.length === 0}
     <Tr cls="subtle" t={t.noDataLoaded} />
   {:else if !$hasDifferencesAtStart}
-  <span class="subtle text-sm">
-    <Tr t={t.allIncluded.Subs({ source: $sourceUrl })} />
-  </span>
+    <span class="subtle text-sm">
+      <Tr t={t.allIncluded.Subs({ source: $sourceUrl })} />
+    </span>
   {:else if $comparisonState !== undefined}
     <AccordionSingle expanded={!collapsed}>
-    <span slot="header" class="flex">
-      <GlobeAlt class="h-6 w-6" />
-      <Tr t={Translations.t.external.title} />
-    </span>
+      <span slot="header" class="flex">
+        <GlobeAlt class="h-6 w-6" />
+        <Tr t={Translations.t.external.title} />
+      </span>
       <ComparisonTable
         externalProperties={$externalData["success"]}
         {state}

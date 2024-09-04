@@ -20,7 +20,6 @@
   const t = Translations.t.general.attribution
   const layoutToUse = state.layout
 
-
   let maintainer: Translation = undefined
   if (layoutToUse.credits !== undefined && layoutToUse.credits !== "") {
     maintainer = t.themeBy.Subs({ author: layoutToUse.credits })
@@ -47,8 +46,6 @@
     }
     return Translations.t.general.attribution.attributionBackgroundLayer.Subs(props)
   })
-
-
 
   function calculateDataContributions(contributions: Map<string, number>): Translation {
     if (contributions === undefined) {
@@ -146,7 +143,6 @@
     <TranslateIcon class="h-8 w-8 shrink-0" />
     <Tr t={codeContributors(translators, t.translatedBy)} />
   </div>
-
 
   <div class="self-end">
     MapComplete {Constants.vNumber}

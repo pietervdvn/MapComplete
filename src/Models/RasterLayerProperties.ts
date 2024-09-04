@@ -1,11 +1,13 @@
-export const eliCategory = ["photo"
-    , "map"
-    , "historicmap"
-    , "osmbasedmap"
-    , "historicphoto"
-    , "qa"
-    , "elevation"
-    , "other"] as const
+export const eliCategory = [
+    "photo",
+    "map",
+    "historicmap",
+    "osmbasedmap",
+    "historicphoto",
+    "qa",
+    "elevation",
+    "other",
+] as const
 export type EliCategory = (typeof eliCategory)[number]
 
 /**

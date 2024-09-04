@@ -50,17 +50,20 @@ export default class OverpassFeatureSource implements UpdatableFeatureSource {
         options?: {
             padToTiles?: Store<number>
             isActive?: Store<boolean>
-        },
+        }
     ) {
         this.state = state
         this._isActive = options?.isActive ?? new ImmutableStore(true)
         this.padToZoomLevel = options?.padToTiles
         const self = this
-        this._layersToDownload = state.zoom.map(zoom => this.layersToDownload(zoom))
+        this._layersToDownload = state.zoom.map((zoom) => this.layersToDownload(zoom))
 
-        state.bounds.mapD((_) => {
-            self.updateAsyncIfNeeded()
-        }, [this._layersToDownload])
+        state.bounds.mapD(
+            (_) => {
+                self.updateAsyncIfNeeded()
+            },
+            [this._layersToDownload]
+        )
     }
 
     private layersToDownload(zoom: number): LayerConfig[] {
@@ -82,7 +85,7 @@ export default class OverpassFeatureSource implements UpdatableFeatureSource {
                 // This is a special layer. Should not have been here
                 console.warn(
                     "OverpassFeatureSource received a layer for which the source is null:",
-                    layer.id,
+                    layer.id
                 )
                 continue
             }
@@ -116,7 +119,7 @@ export default class OverpassFeatureSource implements UpdatableFeatureSource {
             throw "Panic: overpassFeatureSource didn't receive any overpassUrls"
         }
         // Note: the bounds are updated between attempts, in case that the user zoomed around
-        let bounds : BBox
+        let bounds: BBox
         do {
             try {
                 bounds = this.state.bounds.data
@@ -165,10 +168,16 @@ export default class OverpassFeatureSource implements UpdatableFeatureSource {
 
             const end = new Date()
             const timeNeeded = (end.getTime() - start.getTime()) / 1000
-            console.log("Overpass returned", data.features.length, "features in", timeNeeded, "seconds")
+            console.log(
+                "Overpass returned",
+                data.features.length,
+                "features in",
+                timeNeeded,
+                "seconds"
+            )
             self.features.setData(data.features)
             this._lastQueryBBox = bounds
-            this._lastRequestedLayers= layersToDownload
+            this._lastRequestedLayers = layersToDownload
         } catch (e) {
             console.error("Got the overpass response, but could not process it: ", e, e.stack)
         } finally {
