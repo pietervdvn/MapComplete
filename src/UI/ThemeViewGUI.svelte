@@ -312,7 +312,7 @@
               {#if $currentZoom < Constants.minZoomLevelToAddNewPoint}
                 <Tr t={Translations.t.general.add.zoomInFurther} />
               {:else if state.layout.hasPresets()}
-                <Tr t={Translations.t.general.add.title} />
+                ✨ <Tr t={Translations.t.general.add.title} />
               {:else}
                 <Tr t={Translations.t.notes.addAComment} />
               {/if}
