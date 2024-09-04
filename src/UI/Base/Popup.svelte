@@ -34,7 +34,7 @@
 
 <Modal open={_shown} on:close={() => shown.set(false)} outsideclose
        size="xl"
-       dismissable={false}
+       dismissable={false}P
        {defaultClass} {bodyClass} {dialogClass} {headerClass}
        color="none">
   <h1 slot="header" class="page-header w-full">

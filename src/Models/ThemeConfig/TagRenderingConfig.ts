@@ -84,7 +84,7 @@ export default class TagRenderingConfig {
             | string
             | TagRenderingConfigJson
             | (QuestionableTagRenderingConfigJson & { questionHintIsMd?: boolean }),
-        context?: string
+        context?: string,
     ) {
         let json = <string | QuestionableTagRenderingConfigJson>config
         if (json === undefined) {
@@ -143,7 +143,7 @@ export default class TagRenderingConfig {
         this.description = Translations.T(json.description, translationKey + ".description")
         this.editButtonAriaLabel = Translations.T(
             json.editButtonAriaLabel,
-            translationKey + ".editButtonAriaLabel"
+            translationKey + ".editButtonAriaLabel",
         )
 
         this.condition = TagUtils.Tag(json.condition ?? { and: [] }, `${context}.condition`)
@@ -159,7 +159,7 @@ export default class TagRenderingConfig {
         }
         this.metacondition = TagUtils.Tag(
             json.metacondition ?? { and: [] },
-            `${context}.metacondition`
+            `${context}.metacondition`,
         )
         if (json.freeform) {
             if (
@@ -177,7 +177,7 @@ export default class TagRenderingConfig {
                 }, perhaps you meant ${Utils.sortedByLevenshteinDistance(
                     json.freeform.key,
                     <any>Validators.availableTypes,
-                    (s) => <any>s
+                    (s) => <any>s,
                 )}`
             }
             const type: ValidatorType = <any>json.freeform.type ?? "string"
@@ -199,7 +199,7 @@ export default class TagRenderingConfig {
                 placeholder,
                 addExtraTags:
                     json.freeform.addExtraTags?.map((tg, i) =>
-                        TagUtils.ParseUploadableTag(tg, `${context}.extratag[${i}]`)
+                        TagUtils.ParseUploadableTag(tg, `${context}.extratag[${i}]`),
                     ) ?? [],
                 inline: json.freeform.inline ?? false,
                 default: json.freeform.default,
@@ -265,8 +265,8 @@ export default class TagRenderingConfig {
                     context,
                     this.multiAnswer,
                     this.question !== undefined,
-                    commonIconSize
-                )
+                    commonIconSize,
+                ),
             )
         } else {
             this.mappings = []
@@ -292,7 +292,7 @@ export default class TagRenderingConfig {
                 for (const expectedKey of keys) {
                     if (usedKeys.indexOf(expectedKey) < 0) {
                         const msg = `${context}.mappings[${i}]: This mapping only defines values for ${usedKeys.join(
-                            ", "
+                            ", ",
                         )}, but it should also give a value for ${expectedKey}`
                         this.configuration_warnings.push(msg)
                     }
@@ -339,7 +339,7 @@ export default class TagRenderingConfig {
         context: string,
         multiAnswer?: boolean,
         isQuestionable?: boolean,
-        commonSize: string = "small"
+        commonSize: string = "small",
     ): Mapping {
         const ctx = `${translationKey}.mappings.${i}`
         if (mapping.if === undefined) {
@@ -348,7 +348,7 @@ export default class TagRenderingConfig {
         if (mapping.then === undefined) {
             if (mapping["render"] !== undefined) {
                 throw `${ctx}: Invalid mapping: no 'then'-clause found. You might have typed 'render' instead of 'then', change it in ${JSON.stringify(
-                    mapping
+                    mapping,
                 )}`
             }
             throw `${ctx}: Invalid mapping: no 'then'-clause found in ${JSON.stringify(mapping)}`
@@ -359,7 +359,7 @@ export default class TagRenderingConfig {
 
         if (mapping["render"] !== undefined) {
             throw `${ctx}: Invalid mapping: a 'render'-key is present, this is probably a bug: ${JSON.stringify(
-                mapping
+                mapping,
             )}`
         }
         if (typeof mapping.if !== "string" && mapping.if["length"] !== undefined) {
@@ -382,11 +382,11 @@ export default class TagRenderingConfig {
         } else if (mapping.hideInAnswer !== undefined) {
             hideInAnswer = TagUtils.Tag(
                 mapping.hideInAnswer,
-                `${context}.mapping[${i}].hideInAnswer`
+                `${context}.mapping[${i}].hideInAnswer`,
             )
         }
         const addExtraTags = (mapping.addExtraTags ?? []).map((str, j) =>
-            TagUtils.SimpleTag(str, `${ctx}.addExtraTags[${j}]`)
+            TagUtils.SimpleTag(str, `${ctx}.addExtraTags[${j}]`),
         )
         if (hideInAnswer === true && addExtraTags.length > 0) {
             throw `${ctx}: Invalid mapping: 'hideInAnswer' is set to 'true', but 'addExtraTags' is enabled as well. This means that extra tags will be applied if this mapping is chosen as answer, but it cannot be chosen as answer. This either indicates a thought error or obsolete code that must be removed.`
@@ -482,7 +482,7 @@ export default class TagRenderingConfig {
      * @constructor
      */
     public GetRenderValues(
-        tags: Record<string, string>
+        tags: Record<string, string>,
     ): { then: Translation; icon?: string; iconClass?: string }[] {
         if (!this.multiAnswer) {
             return [this.GetRenderValueWithImage(tags)]
@@ -505,7 +505,7 @@ export default class TagRenderingConfig {
                     return mapping
                 }
                 return undefined
-            })
+            }),
         )
 
         if (freeformKeyDefined && tags[this.freeform.key] !== undefined) {
@@ -513,7 +513,7 @@ export default class TagRenderingConfig {
                 applicableMappings
                     ?.flatMap((m) => m.if?.usedTags() ?? [])
                     ?.filter((kv) => kv.key === this.freeform.key)
-                    ?.map((kv) => kv.value)
+                    ?.map((kv) => kv.value),
             )
 
             const freeformValues = tags[this.freeform.key].split(";")
@@ -522,7 +522,7 @@ export default class TagRenderingConfig {
                 applicableMappings.push({
                     then: new TypedTranslation<object>(
                         this.render.replace("{" + this.freeform.key + "}", leftover).translations,
-                        this.render.context
+                        this.render.context,
                     ),
                 })
             }
@@ -540,7 +540,7 @@ export default class TagRenderingConfig {
      * @constructor
      */
     public GetRenderValueWithImage(
-        tags: Record<string, string>
+        tags: Record<string, string>,
     ): { then: TypedTranslation<any>; icon?: string; iconClass?: string } | undefined {
         if (this.condition !== undefined) {
             if (!this.condition.matchesProperties(tags)) {
@@ -609,7 +609,7 @@ export default class TagRenderingConfig {
             const answerMappings = this.mappings?.filter((m) => m.hideInAnswer !== true)
             if (key === undefined) {
                 const values: { k: string; v: string }[][] = Utils.NoNull(
-                    answerMappings?.map((m) => m.if.asChange({})) ?? []
+                    answerMappings?.map((m) => m.if.asChange({})) ?? [],
                 )
                 if (values.length === 0) {
                     return
@@ -627,15 +627,15 @@ export default class TagRenderingConfig {
                 return {
                     key: commonKey,
                     values: Utils.NoNull(
-                        values.map((arr) => arr.filter((item) => item.k === commonKey)[0]?.v)
+                        values.map((arr) => arr.filter((item) => item.k === commonKey)[0]?.v),
                     ),
                 }
             }
 
             let values = Utils.NoNull(
                 answerMappings?.map(
-                    (m) => m.if.asChange({}).filter((item) => item.k === key)[0]?.v
-                ) ?? []
+                    (m) => m.if.asChange({}).filter((item) => item.k === key)[0]?.v,
+                ) ?? [],
             )
             if (values.length === undefined) {
                 values = undefined
@@ -699,7 +699,7 @@ export default class TagRenderingConfig {
         freeformValue: string | undefined,
         singleSelectedMapping: number,
         multiSelectedMapping: boolean[] | undefined,
-        currentProperties: Record<string, string>
+        currentProperties: Record<string, string>,
     ): UploadableTag {
         if (typeof freeformValue === "string") {
             freeformValue = freeformValue?.trim()
@@ -774,7 +774,7 @@ export default class TagRenderingConfig {
                     new And([
                         new Tag(this.freeform.key, freeformValue),
                         ...(this.freeform.addExtraTags ?? []),
-                    ])
+                    ]),
                 )
             }
             const and = TagUtils.FlattenMultiAnswer([...selectedMappings, ...unselectedMappings])
@@ -844,11 +844,11 @@ export default class TagRenderingConfig {
                     }
                     const msgs: string[] = [
                         icon +
-                            " " +
-                            "*" +
-                            m.then.textFor(lang) +
-                            "* is shown if with " +
-                            m.if.asHumanString(true, false, {}),
+                        " " +
+                        "*" +
+                        m.then.textFor(lang) +
+                        "* is shown if with " +
+                        m.if.asHumanString(true, false, {}),
                     ]
 
                     if (m.hideInAnswer === true) {
@@ -857,11 +857,11 @@ export default class TagRenderingConfig {
                     if (m.ifnot !== undefined) {
                         msgs.push(
                             "Unselecting this answer will add " +
-                                m.ifnot.asHumanString(true, false, {})
+                            m.ifnot.asHumanString(true, false, {}),
                         )
                     }
                     return msgs.join(". ")
-                })
+                }),
             )
         }
 
@@ -870,7 +870,7 @@ export default class TagRenderingConfig {
             const conditionAsLink = (<TagsFilter>this.condition.optimize()).asHumanString(
                 true,
                 false,
-                {}
+                {},
             )
             condition =
                 "This tagrendering is only visible in the popup if the following condition is met: " +
@@ -898,15 +898,13 @@ export default class TagRenderingConfig {
         ].join("\n")
     }
 
-    public
-
-    usedTags(): TagsFilter[] {
+    public usedTags(): TagsFilter[] {
         const tags: TagsFilter[] = []
         tags.push(
             this.metacondition,
             this.condition,
             this.freeform?.key ? new RegexTag(this.freeform?.key, /.*/) : undefined,
-            this.invalidValues
+            this.invalidValues,
         )
         for (const m of this.mappings ?? []) {
             tags.push(m.if)
@@ -924,16 +922,30 @@ export default class TagRenderingConfig {
 
     /**
      * The keys that should be erased if one has to revert to 'unknown'.
-     * Might give undefined
+     * Might give undefined if setting to unknown is not possible
      */
-    public settableKeys(): string[] | undefined {
+    public removeToSetUnknown(): string[] | undefined {
         const toDelete = new Set<string>()
         if (this.freeform) {
             toDelete.add(this.freeform.key)
+            const extraTags = new And(this.freeform.addExtraTags ?? []).usedKeys().filter(k => k !== "fixme")
+            if (extraTags.length > 0) {
+                return undefined
+            }
         }
-        for (const mapping of this.mappings) {
-            for (const usedKey of mapping.if.usedKeys()) {
-                toDelete.add(usedKey)
+        if (this.mappings?.length > 0) {
+            const mainkey = this.mappings[0].if.usedKeys()
+            mainkey.forEach(k => toDelete.add(k))
+            for (const mapping of this.mappings) {
+                if (mapping.addExtraTags?.length > 0) {
+                    return undefined
+                }
+                for (const usedKey of mapping.if.usedKeys()) {
+                    if (mainkey.indexOf(usedKey) < 0) {
+                        // This is a complicated case, we ignore this for now
+                        return undefined
+                    }
+                }
             }
         }
 
@@ -945,7 +957,7 @@ export class TagRenderingConfigUtils {
     public static withNameSuggestionIndex(
         config: TagRenderingConfig,
         tags: UIEventSource<Record<string, string>>,
-        feature?: Feature
+        feature?: Feature,
     ): Store<TagRenderingConfig> {
         const isNSI = NameSuggestionIndex.supportedTypes().indexOf(config.freeform?.key) >= 0
         if (!isNSI) {
@@ -963,8 +975,8 @@ export class TagRenderingConfigUtils {
                     tags,
                     country.split(";"),
                     center,
-                    { sortByFrequency: true }
-                )
+                    { sortByFrequency: true },
+                ),
             )
         })
         return extraMappings.map((extraMappings) => {
@@ -980,7 +992,7 @@ export class TagRenderingConfigUtils {
                             ...m,
                             addExtraTags: [new Tag("nobrand", "")],
                             priorityIf: m.priorityIf ?? TagUtils.Tag("id~*"),
-                        }
+                        },
                 ) ?? []
             clone.mappings = [...oldMappingsCloned, ...extraMappings]
             return clone

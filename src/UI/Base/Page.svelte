@@ -12,11 +12,15 @@
 </script>
 
 {#if !onlyLink}
-<Popup {shown} {bodyPadding} {fullscreen}/>
+  <Popup {shown} {bodyPadding} {fullscreen}>
+    <slot name="header" slot="header" />
+    <slot />
+    <slot name="footer" slot="footer" />
+  </Popup>
 {:else}
   <button class="as-link sidebar-button" on:click={() => shown.setData(true)}>
     <slot name="link">
-    <slot name="header" />
+      <slot name="header" />
     </slot>
   </button>
 {/if}
@@ -27,9 +31,9 @@
         align-items: center;
     }
 
-  :global(.page-header svg) {
-      width: 2rem;
-      height: 2rem;
-      margin-right: 0.75rem;
-  }
+    :global(.page-header svg) {
+        width: 2rem;
+        height: 2rem;
+        margin-right: 0.75rem;
+    }
 </style>
