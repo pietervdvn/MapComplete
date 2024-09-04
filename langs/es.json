@@ -193,7 +193,7 @@
             },
             "josmNotOpened": "No se pudo llegar a JSOM. Asegúrate de que esta abierto y que el control remoto esta activado",
             "josmOpened": "JOSM está abierto",
-            "madeBy": "Realizado por <b>{autor}</b>",
+            "madeBy": "Realizado por <b>{author}</b>",
             "mapContributionsBy": "La información visible actual tiene ediciones hechas por {contributors}",
             "mapContributionsByAndHidden": "Los datos actualmente visibles tienen ediciones hechas por {contributors} y {hiddenCount} más contribuidores",
             "mapDataByOsm": "Datos del mapa: OpenStreetMap",
