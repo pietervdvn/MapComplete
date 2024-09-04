@@ -67,7 +67,7 @@
   /**
    * IF set: we can remove the current answer by deleting all those keys
    */
-  let settableKeys = config.removeToSetUnknown()
+  let settableKeys = tags.mapD(tags => config.removeToSetUnknown(layer, tags))
   let unknownModal = new UIEventSource(false)
 
   let searchTerm: UIEventSource<string> = new UIEventSource("")
@@ -325,7 +325,7 @@
   }
 
   function clearAnswer() {
-    const tagsToSet = settableKeys.map(k => new Tag(k, ""))
+    const tagsToSet = settableKeys.data.map(k => new Tag(k, ""))
     const change = new ChangeTagAction(tags.data.id, new And(tagsToSet), tags.data, {
       theme: tags.data["_orig_theme"] ?? state.layout.id,
       changeType: "answer",
@@ -526,7 +526,7 @@
             <If condition={state.userRelatedState.showTags.map(v => v === "yes" || v === "full" || v === "always")}>
               <div class="subtle">
                 <Tr t={Translations.t.unknown.removedKeys}/>
-                {#each settableKeys as key}
+                {#each $settableKeys as key}
                   <code>
                     <del>
                       {key}
@@ -550,7 +550,7 @@
             style="z-index: 11"
           >
 
-            {#if settableKeys && $isKnown && !matchesEmpty }
+            {#if $settableKeys && $isKnown && !matchesEmpty }
               <button class="as-link small text-sm" on:click={() => unknownModal.set(true)}>
                 <Tr t={Translations.t.unknown.markUnknown} />
               </button>

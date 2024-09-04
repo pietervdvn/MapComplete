@@ -18,6 +18,7 @@ import { GeoOperations } from "../../Logic/GeoOperations"
 import { Feature } from "geojson"
 import MarkdownUtils from "../../Utils/MarkdownUtils"
 import { UploadableTag } from "../../Logic/Tags/TagTypes"
+import LayerConfig from "./LayerConfig"
 
 export interface Mapping {
     readonly if: UploadableTag
@@ -924,7 +925,7 @@ export default class TagRenderingConfig {
      * The keys that should be erased if one has to revert to 'unknown'.
      * Might give undefined if setting to unknown is not possible
      */
-    public removeToSetUnknown(): string[] | undefined {
+    public removeToSetUnknown(partOfLayer: LayerConfig, currentTags: Record<string, string>): string[] | undefined {
         const toDelete = new Set<string>()
         if (this.freeform) {
             toDelete.add(this.freeform.key)
@@ -947,6 +948,16 @@ export default class TagRenderingConfig {
                     }
                 }
             }
+        }
+
+
+        currentTags = { ...currentTags }
+        for (const key of toDelete) {
+            delete currentTags[key]
+        }
+        const required = partOfLayer.source.osmTags
+        if (!required.matchesProperties(currentTags)) {
+            return undefined
         }
 
         return Array.from(toDelete)
