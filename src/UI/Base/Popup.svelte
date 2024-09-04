@@ -25,6 +25,7 @@
     headerClass = "hidden"
   }
   export let shown: UIEventSource<boolean>
+  export let dismissable = true
   let _shown = false
   shown.addCallbackAndRun(sh => {
     _shown = sh
@@ -36,7 +37,7 @@
 
 <Modal open={_shown} on:close={() => shown.set(false)} outsideclose
        size="xl"
-       dismissable={false}
+       {dismissable}
        {defaultClass} {bodyClass} {dialogClass} {headerClass}
        color="none">
 
