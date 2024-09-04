@@ -21,7 +21,9 @@
   let bodyClass = bodyPadding + " h-full space-y-4 flex-1 overflow-y-auto overscroll-contain"
 
   let headerClass = "flex justify-between items-center p-2 px-4 md:px-5 rounded-t-lg"
-
+  if (!$$slots.header) {
+    headerClass = "hidden"
+  }
   export let shown: UIEventSource<boolean>
   let _shown = false
   shown.addCallbackAndRun(sh => {
@@ -34,12 +36,17 @@
 
 <Modal open={_shown} on:close={() => shown.set(false)} outsideclose
        size="xl"
-       dismissable={false}P
+       dismissable={false}
        {defaultClass} {bodyClass} {dialogClass} {headerClass}
        color="none">
-  <h1 slot="header" class="page-header w-full">
-    <slot name="header" />
-  </h1>
+
+  <svelte:fragment slot="header">
+    {#if $$slots.header}
+      <h1 class="page-header w-full">
+        <slot name="header" />
+      </h1>
+    {/if}
+  </svelte:fragment>
   <slot />
   {#if $$slots.footer}
     <slot name="footer" />
