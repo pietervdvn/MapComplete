@@ -57,7 +57,17 @@
             "title": "Elementos conflictivos"
         },
         "currentInOsmIs": "Por el momento, OpenStreetMap tiene el siguiente valor registrado:",
-        "done": "Listo"
+        "done": "Listo",
+        "error": "Los datos vinculados no se pudieron cargar desde el sitio web",
+        "lastModified": "Los datos externos se modificaron por última vez el {date}",
+        "loadedFrom": "Los siguientes datos se cargan desde <a href={url}>{source}</a> usando el JSON-LD incorporado",
+        "missing": {
+            "intro": "OpenStreetMap no tiene información sobre los siguientes atributos",
+            "title": "Elementos que faltan"
+        },
+        "noDataLoaded": "El sitio web externo no tiene datos vinculados que se puedan cargar",
+        "overwrite": "Sobrescribir en OpenStreetMap",
+        "title": "Datos estructurados cargados desde un sitio externo"
     },
     "favourite": {
         "loginNeeded": "<h3>Entrar</h3>El diseño personalizado sólo está disponible para los usuarios de OpenStreetMap",
@@ -135,8 +145,11 @@
             "confirmButton": "Añade una {category}<br/><div class='alert'>Tu adición es visible para todos</div>",
             "confirmLocation": "Confirmar esta ubicación",
             "confirmTitle": "¿Añadir un {title}?",
+            "confirmWarning": "La función que crees aquí será <b>visible para todos</b>. Por favor, solo agrega cosas al mapa si realmente existen. Muchas aplicaciones utilizan estos datos.",
+            "creating": "Creando un nuevo punto...",
             "disableFilters": "Desactivar todos los filtros",
             "disableFiltersExplanation": "Algunas características pueden estar ocultas por un filtro",
+            "enableLayer": "Habilitar capa {name}",
             "hasBeenImported": "Este elemento ya ha sido importado",
             "import": {
                 "hasBeenImported": "Este objeto ya ha sido importado",
@@ -144,6 +157,7 @@
                 "importTags": "El elemento recibirá {tags}",
                 "officialThemesOnly": "El botón de importación está desactivado para los temas no oficiales para evitar accidentes",
                 "wrongType": "Este elemento no es un nodo o una vía y no puede ser importado",
+                "wrongTypeToConflate": "Esta característica no es un nodo ni una vía y no se puede combinar",
                 "zoomInMore": "Ampliar más para importar este elemento"
             },
             "importTags": "El elemento recibirá {tags}",
@@ -164,6 +178,8 @@
             "isApplied": "Los cambios serán aplicados"
         },
         "attribution": {
+            "attributionBackgroundLayer": "La capa de fondo actual es {name}",
+            "attributionBackgroundLayerWithCopyright": "La capa de fondo actual es {name}: {copyright}",
             "attributionContent": "<p>Todos los datos son proporcionados por <a href='https://www.openstreetmap.org' target='_blank'>OpenStreetMap</a>, reutilizables libremente bajo <a href='https://www.openstreetmap.org/copyright' target='_blank'>la Licencia Abierta de Bases de Datos (ODL)</a>.</p>",
             "attributionTitle": "Aviso de atribución",
             "codeContributionsBy": "MapComplete ha sido construido por {contributors} y <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} más contribuidores</a>",
@@ -171,31 +187,52 @@
             "editId": "Abre el editor en línea de OpenStreetMap aquí",
             "editJosm": "Edita aquí conJOSM",
             "followOnMastodon": "Seguir a MapComplete en Mastodon",
+            "gotoSourceCode": "Ver el código fuente",
             "iconAttribution": {
                 "title": "Iconos usados"
             },
             "josmNotOpened": "No se pudo llegar a JSOM. Asegúrate de que esta abierto y que el control remoto esta activado",
             "josmOpened": "JOSM está abierto",
+            "madeBy": "Realizado por <b>{author}</b>",
             "mapContributionsBy": "La información visible actual tiene ediciones hechas por {contributors}",
             "mapContributionsByAndHidden": "Los datos actualmente visibles tienen ediciones hechas por {contributors} y {hiddenCount} más contribuidores",
+            "mapDataByOsm": "Datos del mapa: OpenStreetMap",
             "mapillaryHelp": "<b>Mapillary</b> es un servicio en línea que recoge imágenes a pié de calle y las ofrece bajo una licencia libre. Los contribuidores pueden utilizar estás imágenes para mejorar OpenStreetMap",
             "openIssueTracker": "Reportar un error",
             "openMapillary": "Abrir Mapillary aquí",
             "openOsmcha": "Ver las últimas ediciones hechas con {theme}",
+            "openOsmchaLastWeek": "Ver ediciones de los últimos 7 días",
+            "openThemeDocumentation": "Abrir la documentación para el mapa temático {name}",
+            "seeOnMapillary": "Vea esta imagen en Mapillary",
             "themeBy": "Tema mantenido por {author}",
+            "title": "Derechos de autor y atribución",
             "translatedBy": "MapComplete ha sido traducido por {contributors} y <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} más contribuidores</a>"
         },
         "back": "Atrás",
-        "backToIndex": "Volver a la vista general con todos los mapas temáticos",
+        "backToIndex": "Ver todos los mapas temáticos",
+        "backToMap": "Volver al mapa",
         "backgroundMap": "Seleccione una capa de fondo",
+        "backgroundSwitch": "Cambiar fondo",
         "cancel": "Cancelar",
+        "clearPendingChanges": "Borrar cambios pendientes",
         "confirm": "Confirmar",
         "customThemeIntro": "Estos son los temas generados por los usuarios que han sido visitados previamente.",
+        "customThemeTitle": "Temas personalizados",
         "download": {
+            "custom": {
+                "download": "Descargar PNG de {width}mm de ancho y {height}mm de alto",
+                "downloadHelper": "Esto está pensado para imprimir",
+                "height": "Altura de la imagen (en mm):",
+                "title": "Descarga una imagen con un ancho y alto personalizados",
+                "width": "Ancho de imagen (en mm): "
+            },
             "downloadAsPdf": "Descargar un PDF del mapa actual",
             "downloadAsPdfHelper": "Ideal para imprimir el mapa actual",
+            "downloadAsPng": "Descargar como imagen",
+            "downloadAsPngHelper": "Ideal para incluir en informes",
             "downloadAsSvg": "Descargar un SVG del mapa actual",
             "downloadAsSvgHelper": "Compatible con Inkscape o Adobe Illustrator; necesitará más procesado",
+            "downloadAsSvgLinesOnly": "Descarga un SVG del mapa actual que solo contenga líneas",
             "downloadCSV": "Descargar los datos visibles como CSV",
             "downloadCSVHelper": "Compatible con LibreOffice Calc, Excel, …",
             "downloadFeatureAsGeojson": "Descargar como un archivo GeoJSON",
