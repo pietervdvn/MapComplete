@@ -146,12 +146,10 @@ name | doc
 ------ | -----
 options | A JSON-object of type `{ prefix: string, postfix: string }`.  
 
-subarg \| doc
--------- \| -----
-prefix \| Piece of text that will always be added to the front of the generated opening hours. If the OSM-data does not start with this, it will fail to parse.
-postfix \| Piece of text that will always be added to the end of the generated opening hours
-
- 
+| subarg  | doc                                                                                                                                                   |
+|---------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
+| prefix  | Piece of text that will always be added to the front of the generated opening hours. If the OSM-data does not start with this, it will fail to parse. |
+| postfix | Piece of text that will always be added to the end of the generated opening hours                                                                     |
 
 ### Example usage 
 

@@ -859,6 +859,9 @@ This list will be sorted
         return ranges
     }
 
+    public static isSame(a: OpeningHour, b: OpeningHour){
+        return a.weekday === b.weekday && a.startHour === b.startHour && a.startMinutes === b.startMinutes && a.endHour === b.endHour && a.endMinutes === b.endMinutes
+    }
     private static multiply(
         weekdays: number[],
         timeranges: {

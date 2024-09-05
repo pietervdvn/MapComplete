@@ -38,7 +38,7 @@ export default class OpeningHoursRange extends BaseUIElement {
             })
 
         let content: BaseUIElement
-        if (height > 2) {
+        if (height > 3) {
             content = new Combine([startTime, deleteRange, endTime]).SetClass(
                 "flex flex-col h-full justify-between"
             )
@@ -55,6 +55,10 @@ export default class OpeningHoursRange extends BaseUIElement {
         return el
     }
 
+    /**
+     * Gets the relative height, in number of hours to display
+     * Range: ]0 - 24]
+     */
     private getHeight(): number {
         const oh = this._oh
 
