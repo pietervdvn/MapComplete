@@ -42,7 +42,7 @@
     },
     "default_overpass_urls": [
       "https://overpass-api.de/api/interpreter",
-      "https://overpass.private.coffee/api/",
+      "https://overpass.private.coffee/api/interpreter",
       "https://overpass.osm.jp/api/interpreter"
     ],
     "#broken_overpass_urls": {
