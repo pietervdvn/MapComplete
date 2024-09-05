@@ -43,7 +43,7 @@
     "default_overpass_urls": [
       "https://overpass-api.de/api/interpreter",
       "https://overpass.private.coffee/api/",
-      "https://overpass.osm.jp/api/interpreter",
+      "https://overpass.osm.jp/api/interpreter"
     ],
     "#broken_overpass_urls": {
       "https://maps.mail.ru/osm/tools/overpass/api/interpreter": "Blocked by firefox strict tracking protection as 'tracking'",
