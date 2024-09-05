@@ -230,7 +230,7 @@ class LayerOverviewUtils extends Script {
                 return
             }
 
-            word = Utils.SubstituteKeys(word, {}).trim()
+            word = Utils.SubstituteKeys(word, {})?.trim()
             if(!word){
                 return
             }

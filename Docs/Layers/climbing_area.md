@@ -10,8 +10,9 @@ An area where climbing is possible, e.g. a crag, site, boulder, … Contains agg
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [minimap](#minimap)
   - [Contained routes length hist](#contained-routes-length-hist)
@@ -34,6 +35,12 @@ An area where climbing is possible, e.g. a crag, site, boulder, … Contains agg
 
  - [climbing](https://mapcomplete.org/climbing)
  - [personal](https://mapcomplete.org/personal)
+
+## Presets
+
+The following options to create new points are included:
+
+**a climbing opportunity** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dclimbing' target='_blank'>climbing</a>
 
 ## Basic tags for this layer
 

@@ -7395,6 +7395,9 @@
                     },
                     "2": {
                         "then": "Dieser Picknicktisch ist aus (recyceltem) Kunststoff hergestellt"
+                    },
+                    "3": {
+                        "then": "Der Picknicktisch ist aus Metall"
                     }
                 },
                 "question": "Aus welchem Material besteht dieser Picknicktisch?",
@@ -7434,6 +7437,17 @@
                     }
                 },
                 "question": "Ist der Spielplatz für Rollstuhlfahrer zugänglich?"
+            },
+            "fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Nutzung kostenlos"
+                    },
+                    "1": {
+                        "then": "Gebührenpflichtiger Spielplatz"
+                    }
+                },
+                "question": "Muss man zahlen, um den Spielplatz zu nutzen?"
             },
             "playground-access": {
                 "mappings": {

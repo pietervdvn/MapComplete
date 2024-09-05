@@ -45,6 +45,7 @@
   import BuildingStorefront from "@babeard/svelte-heroicons/outline/BuildingStorefront"
   import LockClosed from "@babeard/svelte-heroicons/solid/LockClosed"
   import Key from "@babeard/svelte-heroicons/solid/Key"
+  import Snap from "../../assets/svg/Snap.svelte"
 
   /**
    * Renders a single icon.
@@ -168,6 +169,8 @@
     <Airport {color} class={clss}/>
   {:else if icon === "building_storefront"}
     <BuildingStorefront {color} class={clss}/>
+  {:else if icon === "snap"}
+    <Snap class={clss} />
   {:else if Utils.isEmoji(icon)}
     <span style={`font-size: ${emojiHeight}; line-height: ${emojiHeight}`}>
       {icon}

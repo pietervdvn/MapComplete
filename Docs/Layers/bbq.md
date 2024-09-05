@@ -9,8 +9,9 @@ A permanently installed barbecue, typically accessible to the public.
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [access](#access)
   - [covered](#covered)
@@ -26,6 +27,12 @@ A permanently installed barbecue, typically accessible to the public.
  - [nature](https://mapcomplete.org/nature)
  - [personal](https://mapcomplete.org/personal)
  - [playgrounds](https://mapcomplete.org/playgrounds)
+
+## Presets
+
+The following options to create new points are included:
+
+**BBQ** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbbq' target='_blank'>bbq</a>
 
 ## Basic tags for this layer
 

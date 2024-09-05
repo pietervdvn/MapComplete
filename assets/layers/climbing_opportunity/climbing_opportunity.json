@@ -34,6 +34,9 @@
       ]
     }
   },
+  "snapName": {
+    "en": "a wall, cliff or rock"
+  },
   "minzoom": 18,
   "title": {
     "render": {

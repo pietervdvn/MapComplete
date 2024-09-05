@@ -9,8 +9,9 @@ Find trolley bays for shopping trolleys.
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [covered](#covered)
   - [deposit](#deposit)
   - [denominations](#denominations)
@@ -25,6 +26,12 @@ Find trolley bays for shopping trolleys.
 
  - [personal](https://mapcomplete.org/personal)
  - [shops](https://mapcomplete.org/shops)
+
+## Presets
+
+The following options to create new points are included:
+
+**a trolley bay** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dtrolley_bay' target='_blank'>trolley_bay</a>
 
 ## Basic tags for this layer
 

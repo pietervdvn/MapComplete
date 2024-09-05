@@ -13,6 +13,7 @@ No themes use this layer
 1. [Basic tags for this layer](#basic-tags-for-this-layer)
 2. [Supported attributes](#supported-attributes)
   - [leftover-questions](#leftover-questions)
+  - [move-button](#move-button)
   - [lod](#lod)
 
 ## Basic tags for this layer
@@ -30,6 +31,11 @@ Elements must match **any** of the following expressions:
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
+
+### move-button
+
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
 
 ### lod
 

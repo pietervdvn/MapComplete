@@ -21,15 +21,17 @@ export class And extends TagsFilter {
     }
 
     public static construct(and: ReadonlyArray<TagsFilter>): TagsFilter
-    public static construct(and: ReadonlyArray<(FlatTag | (Or & OptimizedTag))>): TagsFilterClosed & OptimizedTag
-    public static construct(and: ReadonlyArray< TagsFilter>): TagsFilter {
+    public static construct(
+        and: ReadonlyArray<FlatTag | (Or & OptimizedTag)>
+    ): TagsFilterClosed & OptimizedTag
+    public static construct(and: ReadonlyArray<TagsFilter>): TagsFilter {
         if (and.length === 1) {
             return and[0]
         }
         return new And(and)
     }
 
-    private static combine(filter: string, choices: ReadonlyArray< string>): string[] {
+    private static combine(filter: string, choices: ReadonlyArray<string>): string[] {
         const values = []
         for (const or of choices) {
             values.push(filter + or)
@@ -447,7 +449,7 @@ export class And extends TagsFilter {
         if (containedOrs.length === 1) {
             newAnds.push(containedOrs[0])
         } else if (containedOrs.length > 1) {
-            let commonValues: TagsFilter[] = [...(containedOrs[0].or)]
+            let commonValues: TagsFilter[] = [...containedOrs[0].or]
             for (let i = 1; i < containedOrs.length && commonValues.length > 0; i++) {
                 const containedOr = containedOrs[i]
                 commonValues = commonValues.filter((cv) =>

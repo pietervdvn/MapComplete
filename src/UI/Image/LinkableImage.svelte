@@ -33,7 +33,7 @@
     key: undefined,
     provider: AllImageProviders.byName(image.provider),
     date: new Date(image.date),
-    id: Object.values(image.osmTags)[0]
+    id: Object.values(image.osmTags)[0],
   }
 
   async function applyLink(isLinked: boolean) {
@@ -44,7 +44,7 @@
     if (isLinked) {
       const action = new LinkImageAction(currentTags.id, key, url, tags, {
         theme: tags.data._orig_theme ?? state.layout.id,
-        changeType: "link-image"
+        changeType: "link-image",
       })
       await state.changes.applyAction(action)
     } else {
@@ -53,7 +53,7 @@
         if (v === url) {
           const action = new ChangeTagAction(currentTags.id, new Tag(k, ""), currentTags, {
             theme: tags.data._orig_theme ?? state.layout.id,
-            changeType: "remove-image"
+            changeType: "remove-image",
           })
           state.changes.applyAction(action)
         }
@@ -62,17 +62,31 @@
   }
 
   isLinked.addCallback((isLinked) => applyLink(isLinked))
-
 </script>
 
-<div class="flex w-fit shrink-0 flex-col rounded-lg overflow-hidden" class:border-interactive={$isLinked}
-     style="border-width: 2px">
+<div
+  class="flex w-fit shrink-0 flex-col overflow-hidden rounded-lg"
+  class:border-interactive={$isLinked}
+  style="border-width: 2px"
+>
   <AttributedImage
     image={providedImage}
     imgClass="max-h-64 w-auto"
     previewedImage={state.previewedImage}
     attributionFormat="minimal"
-  />
+  >
+    <!--
+    <div slot="preview-action" class="self-center" >
+    <LoginToggle {state} silentFail={true}>
+      {#if linkable}
+        <label class="normal-background p-2 rounded-full pointer-events-auto">
+          <input bind:checked={$isLinked} type="checkbox" />
+          <SpecialTranslation t={t.link} {tags} {state} {layer} {feature} />
+        </label>
+      {/if}
+    </LoginToggle>
+    </div>-->
+  </AttributedImage>
   <LoginToggle {state} silentFail={true}>
     {#if linkable}
       <label>

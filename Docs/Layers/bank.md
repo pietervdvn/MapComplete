@@ -14,6 +14,7 @@ A financial institution to deposit money
   - [images](#images)
   - [has_atm](#has_atm)
   - [leftover-questions](#leftover-questions)
+  - [move-button](#move-button)
   - [delete-button](#delete-button)
   - [lod](#lod)
 4. [Filters](#filters)
@@ -54,6 +55,11 @@ The question is `Does this bank have an ATM?`
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
+
+### move-button
+
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
 
 ### delete-button
 

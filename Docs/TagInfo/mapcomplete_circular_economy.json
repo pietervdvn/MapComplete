@@ -175,7 +175,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Bicycle library' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Circular economy')"
+      "description": "Layer 'Bicycle library' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Circular economy')"
     },
     {
       "key": "email",
@@ -481,7 +481,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Tool libraries' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Circular economy')"
+      "description": "Layer 'Tool libraries' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Circular economy')"
     },
     {
       "key": "email",
@@ -622,7 +622,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Repair cafés and assisted repair workshops' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Circular economy')"
+      "description": "Layer 'Repair cafés and assisted repair workshops' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Circular economy')"
     },
     {
       "key": "email",
@@ -1613,7 +1613,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Second hand shops' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Circular economy')"
+      "description": "Layer 'Second hand shops' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Circular economy')"
     },
     {
       "key": "payment:cash",
@@ -1952,11 +1952,11 @@
     },
     {
       "key": "internet_access:ssid",
-      "description": "Layer 'Second hand shops' shows and asks freeform values for key 'internet_access:ssid' (in the mapcomplete.org theme 'Circular economy') (This is only shown if internet_access=wlan)"
+      "description": "Layer 'Second hand shops' shows and asks freeform values for key 'internet_access:ssid' (in the mapcomplete.org theme 'Circular economy') (This is only shown if internet_access~^(.*wlan.*)$)"
     },
     {
       "key": "internet_access:ssid",
-      "description": "Layer 'Second hand shops' shows internet_access:ssid=Telekom with a fixed text, namely 'Telekom' and allows to pick this as a default answer (in the mapcomplete.org theme 'Circular economy') (This is only shown if internet_access=wlan)",
+      "description": "Layer 'Second hand shops' shows internet_access:ssid=Telekom with a fixed text, namely 'Telekom' and allows to pick this as a default answer (in the mapcomplete.org theme 'Circular economy') (This is only shown if internet_access~^(.*wlan.*)$)",
       "value": "Telekom"
     },
     {

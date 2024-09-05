@@ -3027,6 +3027,7 @@
     "climbing_opportunity": {
         "description": "Fallback layer with items on which climbing _might_ be possible. It is loaded when zoomed in a lot, to prevent duplicate items to be added",
         "name": "Climbing opportunities?",
+        "snapName": "a wall, cliff or rock",
         "tagRenderings": {
             "climbing-opportunity-name": {
                 "render": "<strong>{name}</strong>"
@@ -3428,6 +3429,7 @@
     "cycleways_and_roads": {
         "description": "All infrastructure that someone can cycle over, accompanied with questions about this infrastructure",
         "name": "Cycleways and roads",
+        "snapName": "a road or a cycleway",
         "tagRenderings": {
             "Cycleway type for a road": {
                 "mappings": {
@@ -5926,6 +5928,7 @@
     "indoors": {
         "description": "Basic indoor mapping: shows room outlines",
         "name": "Indoors",
+        "snapName": "an indoor wall",
         "tagRenderings": {
             "name": {
                 "freeform": {
@@ -6095,6 +6098,7 @@
                 "title": "a kerb"
             }
         },
+        "snapName": "a kerb",
         "tagRenderings": {
             "kerb-height": {
                 "freeform": {
@@ -7312,7 +7316,8 @@
     },
     "pedestrian_path": {
         "description": "Pedestrian footpaths, especially used for indoor navigation and snapping entrances to this layer",
-        "name": "Pedestrian paths"
+        "name": "Pedestrian paths",
+        "snapName": "a pedestrian path"
     },
     "pharmacy": {
         "description": "A layer showing pharmacies, which (probably) dispense prescription drugs",
@@ -9061,6 +9066,7 @@
     "shelter": {
         "description": "Layer showing shelter structures",
         "name": "Shelter",
+        "snapName": "a shelter",
         "tagRenderings": {
             "shelter-type": {
                 "mappings": {
@@ -12015,6 +12021,7 @@
     },
     "walls_and_buildings": {
         "description": "Special builtin layer providing all walls and buildings. This layer is useful in presets for objects which can be placed against walls (e.g. AEDs, postboxes, entrances, addresses, surveillance cameras, …). This layer is invisible by default and not toggleable by the user.",
+        "snapName": "a wall or building",
         "tagRenderings": {
             "entrance_info": {
                 "mappings": {

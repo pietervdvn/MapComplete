@@ -30,7 +30,7 @@ class SubstituteLayer extends Conversion<string | LayerConfigJson, LayerConfigJs
         super(
             "Converts the identifier of a builtin layer into the actual layer, or converts a 'builtin' syntax with override in the fully expanded form. Note that 'tagRenderings+' will be inserted before 'leftover-questions'",
             [],
-            "SubstituteLayer"
+            "SubstituteLayer",
         )
         this._state = state
     }
@@ -86,14 +86,14 @@ class SubstituteLayer extends Conversion<string | LayerConfigJson, LayerConfigJs
                 (found["tagRenderings"] ?? []).length > 0
             ) {
                 context.err(
-                    `When overriding a layer, an override is not allowed to override into tagRenderings. Use "+tagRenderings" or "tagRenderings+" instead to prepend or append some questions.`
+                    `When overriding a layer, an override is not allowed to override into tagRenderings. Use "+tagRenderings" or "tagRenderings+" instead to prepend or append some questions.`,
                 )
             }
             try {
                 const trPlus = json["override"]["tagRenderings+"]
                 if (trPlus) {
                     let index = found.tagRenderings.findIndex(
-                        (tr) => tr["id"] === "leftover-questions"
+                        (tr) => tr["id"] === "leftover-questions",
                     )
                     if (index < 0) {
                         index = found.tagRenderings.length
@@ -107,8 +107,8 @@ class SubstituteLayer extends Conversion<string | LayerConfigJson, LayerConfigJs
             } catch (e) {
                 context.err(
                     `Could not apply an override due to: ${e}.\nThe override is: ${JSON.stringify(
-                        json["override"]
-                    )}`
+                        json["override"],
+                    )}`,
                 )
             }
 
@@ -132,9 +132,9 @@ class SubstituteLayer extends Conversion<string | LayerConfigJson, LayerConfigJs
                             usedLabels.add(labels[forbiddenLabel])
                             context.info(
                                 "Dropping tagRendering " +
-                                    tr["id"] +
-                                    " as it has a forbidden label: " +
-                                    labels[forbiddenLabel]
+                                tr["id"] +
+                                " as it has a forbidden label: " +
+                                labels[forbiddenLabel],
                             )
                             continue
                         }
@@ -143,7 +143,7 @@ class SubstituteLayer extends Conversion<string | LayerConfigJson, LayerConfigJs
                     if (hideLabels.has(tr["id"])) {
                         usedLabels.add(tr["id"])
                         context.info(
-                            "Dropping tagRendering " + tr["id"] + " as its id is a forbidden label"
+                            "Dropping tagRendering " + tr["id"] + " as its id is a forbidden label",
                         )
                         continue
                     }
@@ -152,10 +152,10 @@ class SubstituteLayer extends Conversion<string | LayerConfigJson, LayerConfigJs
                         usedLabels.add(tr["group"])
                         context.info(
                             "Dropping tagRendering " +
-                                tr["id"] +
-                                " as its group `" +
-                                tr["group"] +
-                                "` is a forbidden label"
+                            tr["id"] +
+                            " as its group `" +
+                            tr["group"] +
+                            "` is a forbidden label",
                         )
                         continue
                     }
@@ -166,8 +166,8 @@ class SubstituteLayer extends Conversion<string | LayerConfigJson, LayerConfigJs
                 if (unused.length > 0) {
                     context.err(
                         "This theme specifies that certain tagrenderings have to be removed based on forbidden layers. One or more of these layers did not match any tagRenderings and caused no deletions: " +
-                            unused.join(", ") +
-                            "\n   This means that this label can be removed or that the original tagRendering that should be deleted does not have this label anymore"
+                        unused.join(", ") +
+                        "\n   This means that this label can be removed or that the original tagRendering that should be deleted does not have this label anymore",
                     )
                 }
                 found.tagRenderings = filtered
@@ -184,7 +184,7 @@ class AddDefaultLayers extends DesugaringStep<LayoutConfigJson> {
         super(
             "Adds the default layers, namely: " + Constants.added_by_default.join(", "),
             ["layers"],
-            "AddDefaultLayers"
+            "AddDefaultLayers",
         )
         this._state = state
     }
@@ -207,10 +207,10 @@ class AddDefaultLayers extends DesugaringStep<LayoutConfigJson> {
             if (alreadyLoaded.has(v.id)) {
                 context.warn(
                     "Layout " +
-                        context +
-                        " already has a layer with name " +
-                        v.id +
-                        "; skipping inclusion of this builtin layer"
+                    context +
+                    " already has a layer with name " +
+                    v.id +
+                    "; skipping inclusion of this builtin layer",
                 )
                 continue
             }
@@ -226,14 +226,14 @@ class AddImportLayers extends DesugaringStep<LayoutConfigJson> {
         super(
             "For every layer in the 'layers'-list, create a new layer which'll import notes. (Note that priviliged layers and layers which have a geojson-source set are ignored)",
             ["layers"],
-            "AddImportLayers"
+            "AddImportLayers",
         )
     }
 
     convert(json: LayoutConfigJson, context: ConversionContext): LayoutConfigJson {
         if (!(json.enableNoteImports ?? true)) {
             context.info(
-                "Not creating a note import layers for theme " + json.id + " as they are disabled"
+                "Not creating a note import layers for theme " + json.id + " as they are disabled",
             )
             return json
         }
@@ -268,7 +268,7 @@ class AddImportLayers extends DesugaringStep<LayoutConfigJson> {
             try {
                 const importLayerResult = creator.convert(
                     layer,
-                    context.inOperation(this.name).enter(i1)
+                    context.inOperation(this.name).enter(i1),
                 )
                 if (importLayerResult !== undefined) {
                     json.layers.push(importLayerResult)
@@ -288,7 +288,7 @@ class AddContextToTranslationsInLayout extends DesugaringStep<LayoutConfigJson> 
         super(
             "Adds context to translations, including the prefix 'themes:json.id'; this is to make sure terms in an 'overrides' or inline layer are linkable too",
             ["_context"],
-            "AddContextToTranlationsInLayout"
+            "AddContextToTranlationsInLayout",
         )
     }
 
@@ -297,7 +297,7 @@ class AddContextToTranslationsInLayout extends DesugaringStep<LayoutConfigJson> 
         // The context is used to generate the 'context' in the translation .It _must_ be `json.id` to correctly link into weblate
         return conversion.convert(
             json,
-            ConversionContext.construct([json.id], ["AddContextToTranslation"])
+            ConversionContext.construct([json.id], ["AddContextToTranslation"]),
         )
     }
 }
@@ -307,7 +307,7 @@ class ApplyOverrideAll extends DesugaringStep<LayoutConfigJson> {
         super(
             "Applies 'overrideAll' onto every 'layer'. The 'overrideAll'-field is removed afterwards",
             ["overrideAll", "layers"],
-            "ApplyOverrideAll"
+            "ApplyOverrideAll",
         )
     }
 
@@ -336,7 +336,7 @@ class ApplyOverrideAll extends DesugaringStep<LayoutConfigJson> {
                     layer.tagRenderings = tagRenderingsPlus
                 } else {
                     let index = layer.tagRenderings.findIndex(
-                        (tr) => tr["id"] === "leftover-questions"
+                        (tr) => tr["id"] === "leftover-questions",
                     )
                     if (index < 0) {
                         index = layer.tagRenderings.length - 1
@@ -357,14 +357,9 @@ class AddDependencyLayersToTheme extends DesugaringStep<LayoutConfigJson> {
 
     constructor(state: DesugaringContext) {
         super(
-            `If a layer has a dependency on another layer, these layers are added automatically on the theme. (For example: defibrillator depends on 'walls_and_buildings' to snap onto. This layer is added automatically)
-
-            Note that these layers are added _at the start_ of the layer list, meaning that they will see _every_ feature.
-            Furthermore, \`passAllFeatures\` will be set, so that they won't steal away features from further layers.
-            Some layers (e.g. \`all_buildings_and_walls\' or \'streets_with_a_name\') are invisible, so by default, \'force_load\' is set too.
-            `,
+            `If a layer has a dependency on another layer, these layers are added automatically on the theme. (For example: defibrillator depends on 'walls_and_buildings' to snap onto. This layer is added automatically)`,
             ["layers"],
-            "AddDependencyLayersToTheme"
+            "AddDependencyLayersToTheme",
         )
         this._state = state
     }
@@ -373,7 +368,7 @@ class AddDependencyLayersToTheme extends DesugaringStep<LayoutConfigJson> {
         alreadyLoaded: LayerConfigJson[],
         allKnownLayers: Map<string, LayerConfigJson>,
         themeId: string,
-        context: ConversionContext
+        context: ConversionContext,
     ): { config: LayerConfigJson; reason: string }[] {
         const dependenciesToAdd: { config: LayerConfigJson; reason: string }[] = []
         const loadedLayerIds: Set<string> = new Set<string>(alreadyLoaded.map((l) => l?.id))
@@ -391,12 +386,13 @@ class AddDependencyLayersToTheme extends DesugaringStep<LayoutConfigJson> {
                 reason: string
                 context?: string
                 neededBy: string
+                checkHasSnapName: boolean
             }[] = []
 
             for (const layerConfig of alreadyLoaded) {
                 try {
                     const layerDeps = DependencyCalculator.getLayerDependencies(
-                        new LayerConfig(layerConfig, themeId + "(dependencies)")
+                        new LayerConfig(layerConfig, themeId + "(dependencies)"),
                     )
                     dependencies.push(...layerDeps)
                 } catch (e) {
@@ -413,7 +409,11 @@ class AddDependencyLayersToTheme extends DesugaringStep<LayoutConfigJson> {
             for (const dependency of dependencies) {
                 if (loadedLayerIds.has(dependency.neededLayer)) {
                     // We mark the needed layer as 'mustLoad'
-                    alreadyLoaded.find((l) => l.id === dependency.neededLayer).forceLoad = true
+                    const loadedLayer = alreadyLoaded.find((l) => l.id === dependency.neededLayer)
+                    loadedLayer.forceLoad = true
+                    if(dependency.checkHasSnapName && !loadedLayer.snapName){
+                        context.enters("layer dependency").err("Layer "+dependency.neededLayer+" is loaded because "+dependency.reason+"; so it must specify a `snapName`. This is used in the sentence `move this point to snap it to {snapName}`")
+                    }
                 }
             }
 
@@ -436,10 +436,10 @@ class AddDependencyLayersToTheme extends DesugaringStep<LayoutConfigJson> {
                 if (dep === undefined) {
                     const message = [
                         "Loading a dependency failed: layer " +
-                            unmetDependency.neededLayer +
-                            " is not found, neither as layer of " +
-                            themeId +
-                            " nor as builtin layer.",
+                        unmetDependency.neededLayer +
+                        " is not found, neither as layer of " +
+                        themeId +
+                        " nor as builtin layer.",
                         reason,
                         "Loaded layers are: " + alreadyLoaded.map((l) => l.id).join(","),
                     ]
@@ -455,10 +455,11 @@ class AddDependencyLayersToTheme extends DesugaringStep<LayoutConfigJson> {
                 })
                 loadedLayerIds.add(dep.id)
                 unmetDependencies = unmetDependencies.filter(
-                    (d) => d.neededLayer !== unmetDependency.neededLayer
+                    (d) => d.neededLayer !== unmetDependency.neededLayer,
                 )
             }
         } while (unmetDependencies.length > 0)
+
 
         return dependenciesToAdd
     }
@@ -477,12 +478,12 @@ class AddDependencyLayersToTheme extends DesugaringStep<LayoutConfigJson> {
             layers,
             allKnownLayers,
             theme.id,
-            context
+            context,
         )
         if (dependencies.length > 0) {
             for (const dependency of dependencies) {
                 context.info(
-                    "Added " + dependency.config.id + " to the theme. " + dependency.reason
+                    "Added " + dependency.config.id + " to the theme. " + dependency.reason,
                 )
             }
         }
@@ -530,7 +531,7 @@ class WarnForUnsubstitutedLayersInTheme extends DesugaringStep<LayoutConfigJson>
         super(
             "Generates a warning if a theme uses an unsubstituted layer",
             ["layers"],
-            "WarnForUnsubstitutedLayersInTheme"
+            "WarnForUnsubstitutedLayersInTheme",
         )
     }
 
@@ -542,7 +543,7 @@ class WarnForUnsubstitutedLayersInTheme extends DesugaringStep<LayoutConfigJson>
             context
                 .enter("layers")
                 .err(
-                    "No layers are defined. You must define at least one layer to have a valid theme"
+                    "No layers are defined. You must define at least one layer to have a valid theme",
                 )
             return json
         }
@@ -566,10 +567,10 @@ class WarnForUnsubstitutedLayersInTheme extends DesugaringStep<LayoutConfigJson>
 
             context.warn(
                 "The theme " +
-                    json.id +
-                    " has an inline layer: " +
-                    layer["id"] +
-                    ". This is discouraged."
+                json.id +
+                " has an inline layer: " +
+                layer["id"] +
+                ". This is discouraged.",
             )
         }
         return json
@@ -578,6 +579,7 @@ class WarnForUnsubstitutedLayersInTheme extends DesugaringStep<LayoutConfigJson>
 
 class PostvalidateTheme extends DesugaringStep<LayoutConfigJson> {
     private readonly _state: DesugaringContext
+
     constructor(state: DesugaringContext) {
         super("Various validation steps when everything is done", [], "PostvalidateTheme")
         this._state = state
@@ -596,13 +598,13 @@ class PostvalidateTheme extends DesugaringStep<LayoutConfigJson> {
             }
             const sameBasedOn = <LayerConfigJson[]>(
                 json.layers.filter(
-                    (l) => l["_basedOn"] === layer["_basedOn"] && l["id"] !== layer.id
+                    (l) => l["_basedOn"] === layer["_basedOn"] && l["id"] !== layer.id,
                 )
             )
             const minZoomAll = Math.min(...sameBasedOn.map((sbo) => sbo.minzoom))
 
             const sameNameDetected = sameBasedOn.some(
-                (same) => JSON.stringify(layer["name"]) === JSON.stringify(same["name"])
+                (same) => JSON.stringify(layer["name"]) === JSON.stringify(same["name"]),
             )
             if (!sameNameDetected) {
                 // The name is unique, so it'll won't be confusing
@@ -611,12 +613,12 @@ class PostvalidateTheme extends DesugaringStep<LayoutConfigJson> {
             if (minZoomAll < layer.minzoom) {
                 context.err(
                     "There are multiple layers based on " +
-                        basedOn +
-                        ". The layer with id " +
-                        layer.id +
-                        " has a minzoom of " +
-                        layer.minzoom +
-                        ", and has a name set. Another similar layer has a lower minzoom. As such, the layer selection might show 'zoom in to see features' even though some of the features are already visible. Set `\"name\": null` for this layer and eventually remove the 'name':null for the other layer."
+                    basedOn +
+                    ". The layer with id " +
+                    layer.id +
+                    " has a minzoom of " +
+                    layer.minzoom +
+                    ", and has a name set. Another similar layer has a lower minzoom. As such, the layer selection might show 'zoom in to see features' even though some of the features are already visible. Set `\"name\": null` for this layer and eventually remove the 'name':null for the other layer.",
                 )
             }
         }
@@ -636,17 +638,17 @@ class PostvalidateTheme extends DesugaringStep<LayoutConfigJson> {
                 const closeLayers = Utils.sortedByLevenshteinDistance(
                     sameAs,
                     json.layers,
-                    (l) => l["id"]
+                    (l) => l["id"],
                 ).map((l) => l["id"])
                 context
                     .enters("layers", config.id, "filter", "sameAs")
                     .err(
                         "The layer " +
-                            config.id +
-                            " follows the filter state of layer " +
-                            sameAs +
-                            ", but no layer with this name was found.\n\tDid you perhaps mean one of: " +
-                            closeLayers.slice(0, 3).join(", ")
+                        config.id +
+                        " follows the filter state of layer " +
+                        sameAs +
+                        ", but no layer with this name was found.\n\tDid you perhaps mean one of: " +
+                        closeLayers.slice(0, 3).join(", "),
                     )
             }
         }
@@ -654,6 +656,7 @@ class PostvalidateTheme extends DesugaringStep<LayoutConfigJson> {
         return json
     }
 }
+
 export class PrepareTheme extends Fuse<LayoutConfigJson> {
     private state: DesugaringContext
 
@@ -661,7 +664,7 @@ export class PrepareTheme extends Fuse<LayoutConfigJson> {
         state: DesugaringContext,
         options?: {
             skipDefaultLayers: false | boolean
-        }
+        },
     ) {
         super(
             "Fully prepares and expands a theme",
@@ -683,7 +686,7 @@ export class PrepareTheme extends Fuse<LayoutConfigJson> {
                 : new AddDefaultLayers(state),
             new AddDependencyLayersToTheme(state),
             new AddImportLayers(),
-            new PostvalidateTheme(state)
+            new PostvalidateTheme(state),
         )
         this.state = state
     }
@@ -698,13 +701,13 @@ export class PrepareTheme extends Fuse<LayoutConfigJson> {
         const needsNodeDatabase = result.layers?.some((l: LayerConfigJson) =>
             l.tagRenderings?.some((tr) =>
                 ValidationUtils.getSpecialVisualisations(<any>tr)?.some(
-                    (special) => special.needsNodeDatabase
-                )
-            )
+                    (special) => special.needsNodeDatabase,
+                ),
+            ),
         )
         if (needsNodeDatabase) {
             context.info(
-                "Setting 'enableNodeDatabase' as this theme uses a special visualisation which needs to keep track of _all_ nodes"
+                "Setting 'enableNodeDatabase' as this theme uses a special visualisation which needs to keep track of _all_ nodes",
             )
             result.enableNodeDatabase = true
         }

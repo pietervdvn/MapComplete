@@ -17,7 +17,6 @@
   import FloatOver from "./Base/FloatOver.svelte"
   import Constants from "../Models/Constants"
   import LoginToggle from "./Base/LoginToggle.svelte"
-  import ModalRight from "./Base/ModalRight.svelte"
   import LevelSelector from "./BigComponents/LevelSelector.svelte"
   import type { RasterLayerPolygon } from "../Models/RasterLayers"
   import { AvailableRasterLayers } from "../Models/RasterLayers"
@@ -30,7 +29,6 @@
   import Min from "../assets/svg/Min.svelte"
   import Plus from "../assets/svg/Plus.svelte"
   import Filter from "../assets/svg/Filter.svelte"
-  import ImageOperations from "./Image/ImageOperations.svelte"
   import VisualFeedbackPanel from "./BigComponents/VisualFeedbackPanel.svelte"
   import { Orientation } from "../Sensors/Orientation"
   import GeolocationIndicator from "./BigComponents/GeolocationIndicator.svelte"
@@ -49,6 +47,8 @@
   import Searchbar from "./Base/Searchbar.svelte"
   import ChevronRight from "@babeard/svelte-heroicons/mini/ChevronRight"
   import ChevronLeft from "@babeard/svelte-heroicons/solid/ChevronLeft"
+  import { Drawer } from "flowbite-svelte"
+  import { linear, sineIn } from "svelte/easing"
 
   export let state: ThemeViewState
 
@@ -77,20 +77,26 @@
 
   Orientation.singleton.startMeasurements()
 
-  state.selectedElement.addCallback((selected) => {
-    if (!selected) {
-      selectedElement.setData(selected)
+  let slideDuration = 150 // ms
+  state.selectedElement.addCallback((value) => {
+    if (!value) {
+      selectedElement.setData(undefined)
       return
     }
-    if (selected !== selectedElement.data) {
-      // We first set the selected element to 'undefined' to force the popup to close...
-      selectedElement.setData(undefined)
+    if(!selectedElement.data){
+      // The store for this component doesn't have value right now, so we can simply set it
+      selectedElement.set(value)
+      return
     }
-    // ... we give svelte some time to update with requestAnimationFrame ...
-    window.requestAnimationFrame(() => {
-      // ... and we force a fresh popup window
-      selectedElement.setData(selected)
-    })
+    // We first set the selected element to 'undefined' to force the popup to close...
+    selectedElement.setData(undefined)
+    // ... and we give svelte some time to update with requestAnimationFrame ...
+    window.setTimeout(() => {
+      window.requestAnimationFrame(() => {
+        // ... and we force a fresh popup window
+        selectedElement.setData(value)
+      })
+    }, slideDuration)
   })
 
   state.mapProperties.installCustomKeyboardHandler(viewport)
@@ -220,7 +226,7 @@
               {#if $currentZoom < Constants.minZoomLevelToAddNewPoint}
                 <Tr t={Translations.t.general.add.zoomInFurther} />
               {:else if state.layout.hasPresets()}
-                <Tr t={Translations.t.general.add.title} />
+                ✨ <Tr t={Translations.t.general.add.title} />
               {:else}
                 <Tr t={Translations.t.notes.addAComment} />
               {/if}
@@ -240,15 +246,14 @@
             </MapControlButton>
           </If>
           <If condition={state.featureSwitches.featureSwitchBackgroundSelection}>
-            <OpenBackgroundSelectorButton
-              hideTooltip={true}
-              {state}
-            />
+            <OpenBackgroundSelectorButton hideTooltip={true} {state} />
           </If>
           <button
             class="unstyled bg-black-transparent pointer-events-auto ml-1 h-fit max-h-12 cursor-pointer overflow-hidden rounded-2xl px-1 text-white opacity-50 hover:opacity-100"
             style="background: #00000088; padding: 0.25rem; border-radius: 2rem;"
-            on:click={() => {state.guistate.pageStates.copyright.set(true)}}
+            on:click={() => {
+              state.guistate.pageStates.copyright.set(true)
+            }}
           >
             © <span class="hidden sm:inline sm:pr-2">
               OpenStreetMap
@@ -435,14 +440,27 @@
 
   {#if $selectedElement !== undefined && $selectedLayer !== undefined && !$selectedLayer.popupInFloatover}
     <!-- right modal with the selected element view -->
-    <ModalRight
-      on:close={() => {
-        state.selectedElement.setData(undefined)
-      }}
+    <Drawer
+      placement="right"
+      transitionType="fly"
+      activateClickOutside={false}
+      backdrop={false}
+      id="drawer-right"
+      width="w-full md:w-6/12 lg:w-5/12 xl:w-4/12"
+      rightOffset="inset-y-0 right-0"
+      transitionParams={ {
+    x: 640,
+    duration: slideDuration,
+    easing: linear
+  }}
+      divClass="overflow-y-auto z-50 "
+      hidden={$selectedElement === undefined}
+      on:close={() => {      state.selectedElement.setData(undefined)
+    }}
     >
       <div slot="close-button" />
       <SelectedElementPanel {state} selected={$state_selectedElement} />
-    </ModalRight>
+    </Drawer>
   {/if}
 
   {#if $selectedElement !== undefined && $selectedLayer !== undefined && $selectedLayer.popupInFloatover}
@@ -463,17 +481,13 @@
           state.selectedElement.setData(undefined)
         }}
       >
-        <SelectedElementView {state} layer={$selectedLayer} selectedElement={$state_selectedElement} />
+        <SelectedElementView
+          {state}
+          layer={$selectedLayer}
+          selectedElement={$state_selectedElement}
+        />
       </FloatOver>
     {/if}
   {/if}
-
-  <!-- Image preview -->
-  <If condition={state.previewedImage.map((i) => i !== undefined)}>
-    <FloatOver on:close={() => state.previewedImage.setData(undefined)}>
-      <ImageOperations image={$previewedImage} />
-    </FloatOver>
-  </If>
-
 
 </main>

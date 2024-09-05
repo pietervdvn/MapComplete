@@ -9,8 +9,9 @@ A layer showing where you can park your bike
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [Bicycle parking type](#bicycle-parking-type)
   - [Underground?](#underground)
@@ -41,6 +42,12 @@ A layer showing where you can park your bike
  - [stations](https://mapcomplete.org/stations)
  - [transit](https://mapcomplete.org/transit)
  - [velopark](https://mapcomplete.org/velopark)
+
+## Presets
+
+The following options to create new points are included:
+
+**a bike parking** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbicycle_parking' target='_blank'>bicycle_parking</a>
 
 ## Basic tags for this layer
 

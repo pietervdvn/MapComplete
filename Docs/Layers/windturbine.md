@@ -9,8 +9,9 @@ Modern windmills generating electricity
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [turbine-output](#turbine-output)
   - [turbine-operator](#turbine-operator)
   - [turbine-height](#turbine-height)
@@ -25,6 +26,12 @@ Modern windmills generating electricity
 
  - [openwindpowermap](https://mapcomplete.org/openwindpowermap)
  - [personal](https://mapcomplete.org/personal)
+
+## Presets
+
+The following options to create new points are included:
+
+**a wind turbine** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:power' target='_blank'>power</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:power%3Dgenerator' target='_blank'>generator</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:generator:source' target='_blank'>generator:source</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:generator:source%3Dwind' target='_blank'>wind</a>
 
 ## Basic tags for this layer
 

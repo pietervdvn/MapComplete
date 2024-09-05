@@ -53,7 +53,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Bicycle library' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Bicycle libraries')"
+      "description": "Layer 'Bicycle library' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Bicycle libraries')"
     },
     {
       "key": "email",

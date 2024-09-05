@@ -978,7 +978,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Restaurants and fast food' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Ski pistes and aerialways')"
+      "description": "Layer 'Restaurants and fast food' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Ski pistes and aerialways')"
     },
     {
       "key": "payment:cash",
@@ -1122,6 +1122,26 @@
       "key": "cuisine",
       "description": "Layer 'Restaurants and fast food' shows cuisine=thai with a fixed text, namely 'Thai dishes are served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
       "value": "thai"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=mexican   with a fixed text, namely 'Mexican dishes are served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "mexican  "
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=japanese   with a fixed text, namely 'Japanese dishes are served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "japanese  "
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=chicken   with a fixed text, namely 'Chicken based dishes are served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "chicken  "
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=seafood   with a fixed text, namely 'Seafood dishes are served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "seafood  "
     },
     {
       "key": "image",
@@ -1521,11 +1541,11 @@
     },
     {
       "key": "internet_access:ssid",
-      "description": "Layer 'Restaurants and fast food' shows and asks freeform values for key 'internet_access:ssid' (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if internet_access=wlan)"
+      "description": "Layer 'Restaurants and fast food' shows and asks freeform values for key 'internet_access:ssid' (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if internet_access~^(.*wlan.*)$)"
     },
     {
       "key": "internet_access:ssid",
-      "description": "Layer 'Restaurants and fast food' shows internet_access:ssid=Telekom with a fixed text, namely 'Telekom' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if internet_access=wlan)",
+      "description": "Layer 'Restaurants and fast food' shows internet_access:ssid=Telekom with a fixed text, namely 'Telekom' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if internet_access~^(.*wlan.*)$)",
       "value": "Telekom"
     },
     {

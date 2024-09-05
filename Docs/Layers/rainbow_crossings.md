@@ -10,17 +10,25 @@ A layer showing pedestrian crossings with rainbow paintings
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [crossing-with-rainbow](#crossing-with-rainbow)
   - [leftover-questions](#leftover-questions)
+  - [move-button](#move-button)
   - [lod](#lod)
 
 ## Themes using this layer
 
  - [personal](https://mapcomplete.org/personal)
  - [rainbow_crossings](https://mapcomplete.org/rainbow_crossings)
+
+## Presets
+
+The following options to create new points are included:
+
+**a crossing** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dfootway' target='_blank'>footway</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:footway' target='_blank'>footway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:footway%3Dcrossing' target='_blank'>crossing</a> (snaps to layers `cycleways_and_roads`)
 
 ## Basic tags for this layer
 
@@ -51,6 +59,11 @@ The question is `Does this crossing has rainbow paintings?`
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
+
+### move-button
+
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
 
 ### lod
 

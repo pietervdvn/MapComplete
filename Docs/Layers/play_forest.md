@@ -9,8 +9,9 @@ Een speelbos is een vrij toegankelijke zone in een bos
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [play_forest-operator](#play_forest-operator)
   - [play_forest-opening_hours](#play_forest-opening_hours)
@@ -18,12 +19,19 @@ Een speelbos is een vrij toegankelijke zone in een bos
   - [play_forest-phone](#play_forest-phone)
   - [questions](#questions)
   - [play_forest-reviews](#play_forest-reviews)
+  - [move-button](#move-button)
   - [lod](#lod)
 
 ## Themes using this layer
 
  - [play_forests](https://mapcomplete.org/play_forests)
  - [speelplekken](https://mapcomplete.org/speelplekken)
+
+## Presets
+
+The following options to create new points are included:
+
+**Speelbos** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dplayground' target='_blank'>playground</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:playground' target='_blank'>playground</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:playground%3Dforest' target='_blank'>forest</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:fixme' target='_blank'>fixme</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fixme%3DToegevoegd met MapComplete, geometry nog uit te tekenen' target='_blank'>Toegevoegd met MapComplete, geometry nog uit te tekenen</a>
 
 ## Basic tags for this layer
 
@@ -81,6 +89,11 @@ _This tagrendering has no question and is thus read-only_
 
 _This tagrendering has no question and is thus read-only_
 *{reviews(name, play_forest)}*
+
+### move-button
+
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
 
 ### lod
 

@@ -9,8 +9,9 @@ A layer showing memorials for cyclists, killed in road accidents
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [preset_description](#preset_description)
   - [images](#images)
   - [ghost_bike-name](#ghost_bike-name)
@@ -29,6 +30,12 @@ A layer showing memorials for cyclists, killed in road accidents
  - [ghostbikes](https://mapcomplete.org/ghostbikes)
  - [memorials](https://mapcomplete.org/memorials)
  - [personal](https://mapcomplete.org/personal)
+
+## Presets
+
+The following options to create new points are included:
+
+**a ghost bike** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:historic' target='_blank'>historic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:historic%3Dmemorial' target='_blank'>memorial</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:memorial' target='_blank'>memorial</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dghost_bike' target='_blank'>ghost_bike</a>
 
 ## Basic tags for this layer
 

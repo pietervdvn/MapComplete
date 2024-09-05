@@ -15,6 +15,7 @@ A layer showing village-green (which are communal green areas, but not quite par
   - [village_green-explanation](#village_green-explanation)
   - [village_green-reviews](#village_green-reviews)
   - [leftover-questions](#leftover-questions)
+  - [move-button](#move-button)
   - [lod](#lod)
 
 ## Themes using this layer
@@ -48,6 +49,11 @@ _This tagrendering has no question and is thus read-only_
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
+
+### move-button
+
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
 
 ### lod
 

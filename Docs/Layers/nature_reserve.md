@@ -9,8 +9,9 @@ A nature reserve is an area where nature can take its course
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [Access tag](#access-tag)
   - [Operator tag](#operator-tag)
@@ -25,13 +26,20 @@ A nature reserve is an area where nature can take its course
   - [Surface area](#surface-area)
   - [wikipedia](#wikipedia)
   - [leftover-questions](#leftover-questions)
+  - [move-button](#move-button)
   - [lod](#lod)
-4. [Filters](#filters)
+5. [Filters](#filters)
 
 ## Themes using this layer
 
  - [nature](https://mapcomplete.org/nature)
  - [personal](https://mapcomplete.org/personal)
+
+## Presets
+
+The following options to create new points are included:
+
+**a nature reserve** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dnature_reserve' target='_blank'>nature_reserve</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:fixme' target='_blank'>fixme</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fixme%3DToegevoegd met MapComplete, geometry nog uit te tekenen' target='_blank'>Toegevoegd met MapComplete, geometry nog uit te tekenen</a>
 
 ## Basic tags for this layer
 
@@ -155,6 +163,11 @@ The question is `What is the corresponding Wikidata entity?`
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
+
+### move-button
+
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
 
 ### lod
 

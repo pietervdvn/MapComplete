@@ -31,6 +31,7 @@ Available languages:
   - [Kerbs and crossings ( kerbs_and_crossings )](#kerbs-and-crossings-(-kerbs_and_crossings-))
 1. [Layers defined in this theme configuration file](#layers-defined-in-this-theme-configuration-file)
 2. [crossings_no_traffic_lights](#crossings_no_traffic_lights)
+  - [Presets](#presets)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
     + [images](#images)
@@ -47,6 +48,7 @@ Available languages:
     + [crossing-right-turn-through-red](#crossing-right-turn-through-red)
     + [crossing-continue-through-red](#crossing-continue-through-red)
     + [leftover-questions](#leftover-questions)
+    + [move-button](#move-button)
     + [lod](#lod)
   - [Filters](#filters)
 
@@ -61,6 +63,12 @@ Crossings for pedestrians and cyclists
  - This layer is shown at zoomlevel **17** and higher
 
 No themes use this layer
+
+## Presets
+
+The following options to create new points are included:
+
+**a crossing** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dcrossing' target='_blank'>crossing</a> (snaps to layers `cycleways_and_roads`)
 
 ## Basic tags for this layer
 
@@ -211,6 +219,11 @@ This tagrendering is only visible in the popup if the following condition is met
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
+
+### move-button
+
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
 
 ### lod
 

@@ -9,8 +9,9 @@ A layer showing street lights
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [ref](#ref)
   - [support](#support)
@@ -30,6 +31,12 @@ A layer showing street lights
  - [personal](https://mapcomplete.org/personal)
  - [street_lighting](https://mapcomplete.org/street_lighting)
  - [street_lighting_assen](https://mapcomplete.org/street_lighting_assen)
+
+## Presets
+
+The following options to create new points are included:
+
+**a street lamp** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dstreet_lamp' target='_blank'>street_lamp</a>
 
 ## Basic tags for this layer
 

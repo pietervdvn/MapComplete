@@ -20,6 +20,7 @@ Layer showing stairs and escalators
   - [ramp](#ramp)
   - [incline](#incline)
   - [leftover-questions](#leftover-questions)
+  - [move-button](#move-button)
   - [lod](#lod)
 
 ## Themes using this layer
@@ -115,6 +116,11 @@ The question is `What is the incline of these stairs?`
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
+
+### move-button
+
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
 
 ### lod
 

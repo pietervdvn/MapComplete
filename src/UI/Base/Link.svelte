@@ -4,7 +4,6 @@
   export let text: string
   export let href: string
 
-
   export let classnames: string = undefined
   export let download: string = undefined
   export let ariaLabel: string = undefined
@@ -13,7 +12,7 @@
 </script>
 
 <a
-  href={Utils.prepareHref(href) }
+  href={Utils.prepareHref(href)}
   aria-label={ariaLabel}
   title={ariaLabel}
   target={newTab ? "_blank" : undefined}

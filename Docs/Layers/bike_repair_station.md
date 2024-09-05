@@ -9,8 +9,9 @@ A layer showing bicycle pumps and bicycle repair tool stands
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [bike_repair_station-available-services](#bike_repair_station-available-services)
   - [Operational status](#operational-status)
@@ -40,6 +41,16 @@ A layer showing bicycle pumps and bicycle repair tool stands
  - [personal](https://mapcomplete.org/personal)
  - [toerisme_vlaanderen](https://mapcomplete.org/toerisme_vlaanderen)
  - [velopark](https://mapcomplete.org/velopark)
+
+## Presets
+
+The following options to create new points are included:
+
+**a bike pump** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbicycle_repair_station' target='_blank'>bicycle_repair_station</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:tools' target='_blank'>service:bicycle:tools</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:tools%3Dno' target='_blank'>no</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump' target='_blank'>service:bicycle:pump</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dyes' target='_blank'>yes</a>
+
+**a bike repair station and pump** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbicycle_repair_station' target='_blank'>bicycle_repair_station</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:tools' target='_blank'>service:bicycle:tools</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:tools%3Dyes' target='_blank'>yes</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump' target='_blank'>service:bicycle:pump</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dyes' target='_blank'>yes</a>
+
+**a bike repair station without pump** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbicycle_repair_station' target='_blank'>bicycle_repair_station</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:tools' target='_blank'>service:bicycle:tools</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:tools%3Dyes' target='_blank'>yes</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump' target='_blank'>service:bicycle:pump</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dno' target='_blank'>no</a>
 
 ## Basic tags for this layer
 

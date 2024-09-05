@@ -118,8 +118,7 @@
   )
 </script>
 
-<div class="flex flex-col link-underline">
-
+<div class="link-underline flex flex-col">
   <a href="geo:{$location.lat},{$location.lon}">Open the current location in other applications</a>
 
   <div class="flex flex-col">

@@ -28,6 +28,7 @@ Available languages:
   - [Pin je punt ( toerisme_vlaanderen )](#pin-je-punt-(-toerisme_vlaanderen-))
 1. [Layers defined in this theme configuration file](#layers-defined-in-this-theme-configuration-file)
 2. [charging_station_ebikes](#charging_station_ebikes)
+  - [Presets](#presets)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
     + [images](#images)
@@ -144,6 +145,7 @@ Available languages:
     + [delete-button](#delete-button)
     + [lod](#lod)
 3. [bicycle_rental_non_docking](#bicycle_rental_non_docking)
+  - [Presets](#presets)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
     + [images](#images)
@@ -179,6 +181,12 @@ A charging station
  - This layer is shown at zoomlevel **14** and higher
 
 No themes use this layer
+
+## Presets
+
+The following options to create new points are included:
+
+**laadpunt voor elektrische fietsen** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcharging_station' target='_blank'>charging_station</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:motorcar' target='_blank'>motorcar</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:motorcar%3Dno' target='_blank'>no</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle' target='_blank'>bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle%3Dyes' target='_blank'>yes</a>
 
 ## Basic tags for this layer
 
@@ -1422,6 +1430,14 @@ Bicycle rental stations
 
 No themes use this layer
 
+## Presets
+
+The following options to create new points are included:
+
+**a bicycle rental shop** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbicycle_rental' target='_blank'>bicycle_rental</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_rental' target='_blank'>bicycle_rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_rental%3Dshop' target='_blank'>shop</a>
+
+**a bicycle rental** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbicycle_rental' target='_blank'>bicycle_rental</a>
+
 ## Basic tags for this layer
 
 Elements must match **all** of the following expressions:
@@ -1492,9 +1508,9 @@ This tagrendering has labels
 ### phone
 
 The question is `What is the phone number of {title()}?`
-*<a href='tel:{phone}'>{phone}</a>* is shown if `phone` is set
+*{link(&LBRACEphone&RBRACE,tel:&LBRACEphone&RBRACE,,,,)}* is shown if `phone` is set
 
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/phone.svg' style='width: 3rem; height: 3rem'> *<a href='tel:{contact:phone}'>{contact:phone}</a>* is shown if with contact:phone~.+. _This option cannot be chosen as answer_
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/phone.svg' style='width: 3rem; height: 3rem'> *{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}* is shown if with contact:phone~.+. _This option cannot be chosen as answer_
 
 This tagrendering has labels 
 `contact`

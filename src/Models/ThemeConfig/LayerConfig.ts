@@ -22,6 +22,7 @@ import { Overpass } from "../../Logic/Osm/Overpass"
 import Constants from "../Constants"
 import { QuestionableTagRenderingConfigJson } from "./Json/QuestionableTagRenderingConfigJson"
 import MarkdownUtils from "../../Utils/MarkdownUtils"
+import { And } from "../../Logic/Tags/And"
 import Combine from "../../UI/Base/Combine"
 
 export default class LayerConfig extends WithContextLoader {
@@ -50,6 +51,7 @@ export default class LayerConfig extends WithContextLoader {
     public readonly allowSplit: boolean
     public readonly shownByDefault: boolean
     public readonly doCount: boolean
+    public readonly snapName?: Translation
     /**
      * In seconds
      */
@@ -102,12 +104,13 @@ export default class LayerConfig extends WithContextLoader {
                     mercatorCrs: json.source["mercatorCrs"],
                     idKey: json.source["idKey"],
                 },
-                json.id
+                json.id,
             )
         }
 
         this.allowSplit = json.allowSplit ?? false
         this.name = Translations.T(json.name, translationContext + ".name")
+        this.snapName = Translations.T(json.snapName, translationContext + ".snapName")
 
         if (json.description !== undefined) {
             if (Object.keys(json.description).length === 0) {
@@ -457,6 +460,22 @@ export default class LayerConfig extends WithContextLoader {
             )
         }
 
+        let presets: string[] = []
+        if (this.presets.length > 0) {
+
+            presets = [
+                "## Presets",
+                "The following options to create new points are included:",
+                MarkdownUtils.list(this.presets.map(preset => {
+                    let snaps = ""
+                    if (preset.preciseInput?.snapToLayers) {
+                        snaps = " (snaps to layers " + preset.preciseInput.snapToLayers.map(id => `\`${id}\``).join(", ") + ")"
+                    }
+                    return "**" + preset.title.txt + "** which has the following tags:" + new And(preset.tags).asHumanString(true) + snaps
+                })),
+            ]
+        }
+
         for (const revDep of Utils.Dedup(layerIsNeededBy?.get(this.id) ?? [])) {
             extraProps.push(
                 ["This layer is needed as dependency for layer", `[${revDep}](#${revDep})`].join(
@@ -566,6 +585,7 @@ export default class LayerConfig extends WithContextLoader {
             ].join("\n\n"),
             MarkdownUtils.list(extraProps),
             ...usingLayer,
+            ...presets,
             ...tagsDescription,
             "## Supported attributes",
             quickOverview,
@@ -589,5 +609,36 @@ export default class LayerConfig extends WithContextLoader {
 
     public isLeftRightSensitive(): boolean {
         return this.lineRendering.some((lr) => lr.leftRightSensitive)
+    }
+
+    public getMostMatchingPreset(tags: Record<string, string>): PresetConfig {
+        const presets = this.presets
+        if (!presets) {
+            return undefined
+        }
+        const matchingPresets = presets
+            .filter((pr) => new And(pr.tags).matchesProperties(tags))
+        let mostShadowed = matchingPresets[0]
+        let mostShadowedTags = new And(mostShadowed.tags)
+        for (let i = 1; i < matchingPresets.length; i++) {
+            const pr = matchingPresets[i]
+            const prTags = new And(pr.tags)
+            if (mostShadowedTags.shadows(prTags)) {
+                if (!prTags.shadows(mostShadowedTags)) {
+                    // We have a new most shadowed item
+                    mostShadowed = pr
+                    mostShadowedTags = prTags
+                } else {
+                    // Both shadow each other: abort
+                    mostShadowed = undefined
+                    break
+                }
+            } else if (!prTags.shadows(mostShadowedTags)) {
+                // The new contender does not win, but it might defeat the current contender
+                mostShadowed = undefined
+                break
+            }
+        }
+        return mostShadowed ?? matchingPresets[0]
     }
 }

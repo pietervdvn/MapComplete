@@ -193,7 +193,7 @@
             },
             "josmNotOpened": "JOSM could not be reached. Make sure it is opened and remote control is enabled",
             "josmOpened": "JOSM is opened",
-            "madeBy": "Mady by <b>{author}</b>",
+            "madeBy": "Made by <b>{author}</b>",
             "mapContributionsBy": "The current visible data has edits made by {contributors}",
             "mapContributionsByAndHidden": "The current visible data has edits made by {contributors} and {hiddenCount} more contributors",
             "mapDataByOsm": "Map data: OpenStreetMap",
@@ -418,7 +418,7 @@
             "fsGeolocation": "Enable geolocation",
             "fsUserbadge": "Enable the login button and thus the possibility to make changes",
             "fsWelcomeMessage": "Show the welcome message popup and associated tabs",
-            "intro": "<h3>Share this map</h3> Share this map by copying the link below and sending it to friends and family:",
+            "intro": "Share this map by copying the link below and sending it to friends and family:",
             "openInOtherApplications": "Open the current location with another map application",
             "openLayers": "Open the layers and filters menu",
             "options": "Sharing options",
@@ -647,7 +647,8 @@
         "pointIsMoved": "The point has been moved",
         "reasons": {
             "reasonInaccurate": "The location is inaccurate by a few meter",
-            "reasonRelocation": "The object has been relocated to a totally different location"
+            "reasonRelocation": "The object has been relocated to a totally different location",
+            "reasonSnapTo": "This should be snapped onto {name}"
         },
         "selectReason": "Why do you move this object?",
         "whyMove": "Why do you want to move this point?",
@@ -781,6 +782,14 @@
         "allMissing": "No translations yet",
         "missing": "{count} untranslated strings",
         "notImmediate": "Translations are not updated directly. This typically takes a few days"
+    },
+    "unknown": {
+        "clear": "Clear answer",
+        "explanation": "Clear this bit of information if the current answer is incorrect but the actual value is not known. No other information will be removed.",
+        "keep": "Keep answer",
+        "markUnknown": "Mark as unknown",
+        "removedKeys": "The following keys will be removed:",
+        "title": "Mark as unknown?"
     },
     "userinfo": {
         "gotoInbox": "Open your inbox",

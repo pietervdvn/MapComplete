@@ -12,6 +12,10 @@
     "zh_Hant": "特殊的內建圖層顯示所有牆壁與建築。這個圖層對於規畫要靠牆的東西 (例如 AED、郵筒、入口、地址、監視器等) 相當實用。這個圖層預設顯示而且無法由使用者開關。",
     "pl": "Specjalna warstwa zabudowana zapewniająca wszystkie mury i budynki. Warstwa ta jest przydatna w ustawieniach wstępnych obiektów, które można umieścić przy ścianach (np. AED, skrzynki pocztowe, wejścia, adresy, kamery monitorujące itp.). Warstwa ta jest domyślnie niewidoczna i użytkownik nie może jej przełączać."
   },
+  "snapName": {
+    "en": "a wall or building",
+    "nl": "een muur of gebouw"
+  },
   "source": {
     "osmTags": {
       "or": [

@@ -685,7 +685,10 @@ export class TagUtils {
      * TagUtils.containsEquivalents([new Tag("key","value")],  [ new Tag("other_key","value")]) // => false
      * TagUtils.containsEquivalents([new Tag("key","value")],  [ new Tag("key","other_value")]) // => false
      */
-    public static containsEquivalents(guards: ReadonlyArray<TagsFilter>, listToFilter: ReadonlyArray<TagsFilter>): boolean {
+    public static containsEquivalents(
+        guards: ReadonlyArray<TagsFilter>,
+        listToFilter: ReadonlyArray<TagsFilter>
+    ): boolean {
         return listToFilter.some((tf) => guards.some((guard) => guard.shadows(tf)))
     }
 

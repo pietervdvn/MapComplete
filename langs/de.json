@@ -79,7 +79,7 @@
             "isFavourite": "Der Standort ist derzeit als Favorit markiert und wird auf allen thematischen Karten von MapComplete angezeigt, die Sie besuchen.",
             "isMarkedShort": "Als bevorzugter Standort markiert",
             "isNotMarkedShort": "Nicht als Favorit markiert",
-            "markAsFavouriteTitle": "Diesen Standort als Favorit markieren",
+            "markAsFavouriteTitle": "Standort als Favorit markieren",
             "markDescription": "Diesen Standort zur persönlichen Liste bevorzugter Standorte hinzufügen",
             "unmark": "Standort von Favoritenliste entfernen",
             "unmarkNotDeleted": "Dieser Punkt wird nicht gelöscht und ist weiterhin auf der entsprechenden Karte für dich und andere sichtbar"
@@ -193,6 +193,7 @@
             },
             "josmNotOpened": "JOSM konnte nicht erreicht werden. Bitte sicherstellen, dass das Programm geöffnet und Remote Control aktiviert ist",
             "josmOpened": "JOSM ist geöffnet",
+            "madeBy": "Erstellt von <b>{author}</b>",
             "mapContributionsBy": "Die angezeigten Daten wurden bearbeitet durch {contributors}",
             "mapContributionsByAndHidden": "Die angezeigten Daten wurden bearbeitet von {contributors} und {hiddenCount} weiteren Beitragenden",
             "mapDataByOsm": "Kartendaten: OpenStreetMap",
@@ -210,7 +211,7 @@
         "back": "Zurück",
         "backToIndex": "Alle Themenkarten anzeigen",
         "backToMap": "Zurück zur Karte",
-        "backgroundMap": "Hintergrundkarte auswählen",
+        "backgroundMap": "Hintergrund auswählen",
         "backgroundSwitch": "Hintergrund wechseln",
         "cancel": "Abbrechen",
         "clearPendingChanges": "Ausstehende Änderungen löschen",
@@ -241,6 +242,7 @@
             "downloadGeojson": "Sichtbare Daten als GeoJSON herunterladen",
             "downloadGpx": "GPX Datei herunterladen",
             "downloadGpxHelper": "Eine GPX Datei kann von den meisten Geräten und Anwendungen gelesen werden",
+            "downloadImage": "Bild herunterladen",
             "exporting": "Exportieren…",
             "includeMetaData": "Metadaten übernehmen (letzter Bearbeiter, berechnete Werte, ...)",
             "licenseInfo": "<h3>Copyright-Hinweis</h3>Die bereitgestellten Daten sind unter ODbL verfügbar. Die Wiederverwendung ist für jeden Zweck frei, aber <ul><li>die Namensnennung <b>© OpenStreetMap contributors</b> ist darzustellen</li><li>Jede Änderung muss unter der gleichen Lizenz veröffentlicht werden</li></ul> Bitte lesen Sie den vollständigen <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">Copyright-Hinweis</a> für weitere Details.",
@@ -297,13 +299,17 @@
         "loginToStart": "Anmelden, um diese Frage zu beantworten",
         "loginWithOpenStreetMap": "Bei OpenStreetMap anmelden",
         "logout": "Abmelden",
-        "mappingsAreHidden": "Einige Optionen sind versteckt. Verwende die Suche, um mehr Optionen anzuzeigen.",
+        "mappingsAreHidden": "Suche verwenden, um weitere Auswahlmöglichkeiten anzuzeigen.",
         "menu": {
+            "aboutCurrentThemeTitle": "Über diese Karte",
             "aboutMapComplete": "Über MapComplete",
-            "filter": "Daten filtern"
+            "filter": "Daten filtern",
+            "moreUtilsTitle": "Mehr entdecken",
+            "showIntroduction": "Einführung anzeigen",
+            "title": "Menü"
         },
         "morescreen": {
-            "createYourOwnTheme": "Ein eigenes MapComplete-Thema von Grund auf neu erstellen",
+            "createYourOwnTheme": "Eigenes MapComplete-Thema von Grund auf neu erstellen",
             "enterToOpen": "Drücke Enter um Theme zu öffnen",
             "hiddenExplanation": "Diese Themen sind nur für Personen zugänglich, die einen Link erhalten haben. Sie haben {hidden_discovered} von {total_hidden} versteckten Themen entdeckt.",
             "noMatchingThemes": "Keine Themen, die Ihren Suchkriterien entsprechen",
@@ -408,7 +414,8 @@
             "fsGeolocation": "Geolokalisierung aktivieren",
             "fsUserbadge": "Anmelde-Button aktivieren, um Änderungen vornehmen zu können",
             "fsWelcomeMessage": "Begrüßung und Registerkarten anzeigen",
-            "intro": "<h3>Karte teilen</h3> Mit dem folgenden Link kann die Karte mit Freunden und Familie geteilt werden:",
+            "intro": "Mit dem folgenden Link kann die Karte mit Freunden und Familie geteilt werden:",
+            "openInOtherApplications": "Aktuellen Standort mit einer anderen Kartenanwendung öffnen",
             "openLayers": "Ebenen- und Filterauswahl öffnen",
             "options": "Optionen teilen",
             "stateIsIncluded": "Die aktuelle Ebenen- und Filterauswahl ist im geteilten Link und iFrame enthalten.",
@@ -510,8 +517,8 @@
         },
         "welcomeBack": "Willkommen zurück!",
         "welcomeExplanation": {
-            "addNew": "Fehlt ein Element? Verwende die Schaltfläche unten links, um ein neues Objekt hinzuzufügen.",
-            "general": "Auf dieser Karte können <i>themenspezifische Kartenobjekte</i> angesehen, bearbeitet und hinzugefügt werden. Verschieben Sie den Kartenausschnitt, um Objekte zu entdecken, tippen Sie auf eines, um weitere Informationen zu sehen oder zu bearbeiten. Alle Daten stammen von OpenStreetMap und dürfen frei verwendet werden."
+            "addNew": "Fehlt ein Element? Über die Schaltfläche unten links, kann ein neues Objekt hinzugefügt werden.",
+            "general": "Auf dieser Karte können <i>Objekte</i> angesehen, bearbeitet und hinzugefügt werden. Der Kartenausschnitt kann verschoben werden, um Objekte zu entdecken. Objekte können ausgewählt werden, um weitere Informationen anzuzeigen oder zu bearbeiten. Alle Daten stammen von OpenStreetMap und dürfen frei verwendet werden."
         },
         "wikipedia": {
             "addEntry": "Eine weitere Wikipedia-Seite hinzufügen",

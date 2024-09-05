@@ -55,7 +55,7 @@
   }
 
   function onKeyPress(e: KeyboardEvent) {
-    if (e.key === "Enter") {
+    if (e.key === "Enter" && (!validator.textArea || e.ctrlKey)) {
       e.stopPropagation()
       e.preventDefault()
       dispatch("submit")

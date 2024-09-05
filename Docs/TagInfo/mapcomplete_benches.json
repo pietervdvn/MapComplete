@@ -84,6 +84,11 @@
       "value": "plastic"
     },
     {
+      "key": "material",
+      "description": "Layer 'Picnic tables' shows material=metal with a fixed text, namely 'This picnic table is made from metal' and allows to pick this as a default answer (in the mapcomplete.org theme 'Benches')",
+      "value": "metal"
+    },
+    {
       "key": "amenity",
       "description": "The MapComplete theme Benches has a layer Benches showing features with this tag",
       "value": "bench"

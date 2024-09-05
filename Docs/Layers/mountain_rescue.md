@@ -9,8 +9,9 @@ A building where first aid responders store material and might be on watch
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [leftover-questions](#leftover-questions)
   - [move-button](#move-button)
@@ -21,6 +22,12 @@ A building where first aid responders store material and might be on watch
 
  - [personal](https://mapcomplete.org/personal)
  - [ski](https://mapcomplete.org/ski)
+
+## Presets
+
+The following options to create new points are included:
+
+**a mountain rescue station** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:emergency' target='_blank'>emergency</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:emergency%3Dmountain_rescue' target='_blank'>mountain_rescue</a>
 
 ## Basic tags for this layer
 

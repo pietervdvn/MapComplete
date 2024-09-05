@@ -33,6 +33,9 @@
   import Markdown from "../../Base/Markdown.svelte"
   import { Utils } from "../../../Utils"
   import type { UploadableTag } from "../../../Logic/Tags/TagTypes"
+  import { Modal } from "flowbite-svelte"
+  import Popup from "../../Base/Popup.svelte"
+  import If from "../../Base/If.svelte"
 
   export let config: TagRenderingConfig
   export let tags: UIEventSource<Record<string, string>>
@@ -43,13 +46,13 @@
   export let selectedTags: UploadableTag = undefined
   export let extraTags: UIEventSource<Record<string, string>> = new UIEventSource({})
 
-  export let allowDeleteOfFreeform: boolean = true
-
   export let clss = "interactive border-interactive"
 
   let feedback: UIEventSource<Translation> = new UIEventSource<Translation>(undefined)
 
   let unit: Unit = layer?.units?.find((unit) => unit.appliesToKeys.has(config.freeform?.key))
+  let isKnown = tags.mapD(tags => config.GetRenderValue(tags) !== undefined)
+  let matchesEmpty = config.GetRenderValue({}) !== undefined
 
   // Will be bound if a freeform is available
   let freeformInput = new UIEventSource<string>(tags?.[config.freeform?.key])
@@ -60,6 +63,12 @@
    * A list of booleans, used if multiAnswer is set
    */
   let checkedMappings: boolean[]
+
+  /**
+   * IF set: we can remove the current answer by deleting all those keys
+   */
+  let settableKeys = tags.mapD(tags => config.removeToSetUnknown(layer, tags))
+  let unknownModal = new UIEventSource(false)
 
   let searchTerm: UIEventSource<string> = new UIEventSource("")
 
@@ -82,7 +91,7 @@
       return !m.hideInAnswer.matchesProperties(tgs)
     })
     selectedMapping = mappings?.findIndex(
-      (mapping) => mapping.if.matchesProperties(tgs) || mapping.alsoShowIf?.matchesProperties(tgs)
+      (mapping) => mapping.if.matchesProperties(tgs) || mapping.alsoShowIf?.matchesProperties(tgs),
     )
     if (selectedMapping < 0) {
       selectedMapping = undefined
@@ -144,7 +153,6 @@
 
   let usedKeys: string[] = Utils.Dedup(config.usedTags().flatMap((t) => t.usedKeys()))
 
-  let keysToDeleteOnUnknown = config.settableKeys()
   /**
    * The 'minimalTags' is a subset of the tags of the feature, only containing the values relevant for this object.
    * The main goal is to be stable and only 'ping' when an actual change is relevant
@@ -191,13 +199,12 @@
       if (freeformValue?.length > 0) {
         selectedMapping = config.mappings.length
       }
-    })
+    }),
   )
 
   $: {
     if (
       config.freeform?.key &&
-      allowDeleteOfFreeform &&
       !$freeformInput &&
       !$freeformInputUnvalidated &&
       !checkedMappings?.some((m) => m) &&
@@ -210,7 +217,7 @@
           $freeformInput,
           selectedMapping,
           checkedMappings,
-          tags.data
+          tags.data,
         )
         if (featureSwitchIsDebugging?.data) {
           console.log(
@@ -222,7 +229,7 @@
               currentTags: tags.data,
             },
             " --> ",
-            selectedTags
+            selectedTags,
           )
         }
       } catch (e) {
@@ -244,7 +251,7 @@
         selectedTags = new And([...selectedTags.and, ...extraTagsArray])
       } else {
         console.error(
-          "selectedTags is not of type Tag or And, it is a " + JSON.stringify(selectedTags)
+          "selectedTags is not of type Tag or And, it is a " + JSON.stringify(selectedTags),
         )
       }
     }
@@ -313,8 +320,23 @@
     onDestroy(
       state.osmConnection?.userDetails?.addCallbackAndRun((ud) => {
         numberOfCs = ud.csCount
-      })
+      }),
     )
+  }
+
+  function clearAnswer() {
+    const tagsToSet = settableKeys.data.map(k => new Tag(k, ""))
+    const change = new ChangeTagAction(tags.data.id, new And(tagsToSet), tags.data, {
+      theme: tags.data["_orig_theme"] ?? state.layout.id,
+      changeType: "answer",
+    })
+    freeformInput.set(undefined)
+    selectedMapping = undefined
+    selectedTags = undefined
+    change
+      .CreateChangeDescriptions()
+      .then((changes) => state.changes.applyChanges(changes))
+      .catch(console.error)
   }
 </script>
 
@@ -324,7 +346,7 @@
       class="relative flex flex-col overflow-y-auto px-2"
       style="max-height: 75vh"
       on:submit|preventDefault={() => {
-        /*onSave(); This submit is not needed and triggers to early, causing bugs: see #1808*/
+        /*onSave(); This submit is not needed and triggers too early, causing bugs: see #1808*/
       }}
     >
       <fieldset>
@@ -386,7 +408,7 @@
           />
         {:else if config.mappings !== undefined && !config.multiAnswer}
           <!-- Simple radiobuttons as mapping -->
-          <div class="flex flex-col no-bold">
+          <div class="no-bold flex flex-col">
             {#each config.mappings as mapping, i (mapping.then)}
               <!-- Even though we have a list of 'mappings' already, we still iterate over the list as to keep the original indices-->
               <TagRenderingMappingInput
@@ -401,7 +423,7 @@
               >
                 <input
                   type="radio"
-                  class="self-center mr-1"
+                  class="mr-1 self-center"
                   bind:group={selectedMapping}
                   name={"mappings-radio-" + config.id}
                   value={i}
@@ -413,7 +435,7 @@
               <label class="flex gap-x-1">
                 <input
                   type="radio"
-                  class="self-center mr-1"
+                  class="mr-1 self-center"
                   bind:group={selectedMapping}
                   name={"mappings-radio-" + config.id}
                   value={config.mappings?.length}
@@ -436,7 +458,7 @@
           </div>
         {:else if config.mappings !== undefined && config.multiAnswer}
           <!-- Multiple answers can be chosen: checkboxes -->
-          <div class="flex flex-col no-bold">
+          <div class="no-bold flex flex-col">
             {#each config.mappings as mapping, i (mapping.then)}
               <TagRenderingMappingInput
                 {mapping}
@@ -450,7 +472,7 @@
               >
                 <input
                   type="checkbox"
-                  class="self-center mr-1"
+                  class="mr-1 self-center"
                   name={"mappings-checkbox-" + config.id + "-" + i}
                   bind:checked={checkedMappings[i]}
                   on:keypress={(e) => onInputKeypress(e)}
@@ -461,7 +483,7 @@
               <label class="flex gap-x-1">
                 <input
                   type="checkbox"
-                  class="self-center mr-1"
+                  class="mr-1 self-center"
                   name={"mappings-checkbox-" + config.id + "-" + config.mappings?.length}
                   bind:checked={checkedMappings[config.mappings.length]}
                   on:keypress={(e) => onInputKeypress(e)}
@@ -494,36 +516,74 @@
               <Tr t={$feedback} />
             </div>
           {/if}
-          <!--{#if keysToDeleteOnUnknown?.some(k => !! $tags[k])}
-            Mark as unknown (delete {keysToDeleteOnUnknown?.filter(k => !! $tags[k]).join(";")})
-            {/if}-->
+
+
+          <Popup shown={unknownModal}>
+            <h2 slot="header">
+              <Tr t={Translations.t.unknown.title} />
+            </h2>
+            <Tr t={Translations.t.unknown.explanation} />
+            <If condition={state.userRelatedState.showTags.map(v => v === "yes" || v === "full" || v === "always")}>
+              <div class="subtle">
+                <Tr t={Translations.t.unknown.removedKeys}/>
+                {#each $settableKeys as key}
+                  <code>
+                    <del>
+                      {key}
+                    </del>
+                  </code>
+                {/each}
+              </div>
+            </If>
+            <div class="flex justify-end w-full" slot="footer">
+              <button on:click={() => unknownModal.set(false)}>
+                <Tr t={Translations.t.unknown.keep} />
+              </button>
+              <button class="primary" on:click={() => {unknownModal.set(false); clearAnswer()}}>
+                <Tr t={Translations.t.unknown.clear} />
+              </button>
+            </div>
+          </Popup>
+
           <div
-            class="sticky bottom-0 flex flex-wrap-reverse items-stretch justify-end sm:flex-nowrap"
+            class="sticky bottom-0 flex justify-between flex-wrap"
             style="z-index: 11"
           >
-            <!-- TagRenderingQuestion-buttons -->
-            <slot name="cancel" />
-            <slot name="save-button" {selectedTags}>
-              {#if config.freeform?.key && allowDeleteOfFreeform && !checkedMappings?.some((m) => m) && !$freeformInput && !$freeformInputUnvalidated && $tags[config.freeform.key]}
-                <button
-                  class="primary flex"
-                  on:click|stopPropagation|preventDefault={() => onSave()}
-                >
-                  <TrashIcon class="h-6 w-6 text-red-500" />
-                  <Tr t={Translations.t.general.eraseValue} />
-                </button>
-              {:else}
-                <button
-                  on:click={() => onSave()}
-                  class={twJoin(
+
+            {#if $settableKeys && $isKnown && !matchesEmpty }
+              <button class="as-link small text-sm" on:click={() => unknownModal.set(true)}>
+                <Tr t={Translations.t.unknown.markUnknown} />
+              </button>
+            {/if}
+
+
+            <div class="flex flex-wrap-reverse items-stretch justify-end sm:flex-nowrap self-end flex-grow">
+
+              <!-- TagRenderingQuestion-buttons -->
+              <slot name="cancel" />
+              <slot name="save-button" {selectedTags}>
+                {#if config.freeform?.key && !checkedMappings?.some((m) => m) && !$freeformInput && !$freeformInputUnvalidated && $tags[config.freeform.key]}
+                  <button
+                    class="primary flex"
+                    on:click|stopPropagation|preventDefault={() => onSave()}
+                  >
+                    <TrashIcon class="h-6 w-6 text-red-500" />
+                    <Tr t={Translations.t.general.eraseValue} />
+                  </button>
+                {:else}
+                  <button
+                    on:click={() => onSave()}
+                    class={twJoin(
                     selectedTags === undefined ? "disabled" : "button-shadow",
                     "primary"
                   )}
-                >
-                  <Tr t={Translations.t.general.save} />
-                </button>
-              {/if}
-            </slot>
+                  >
+                    <Tr t={Translations.t.general.save} />
+                  </button>
+                {/if}
+              </slot>
+            </div>
+
           </div>
           {#if UserRelatedState.SHOW_TAGS_VALUES.indexOf($showTags) >= 0 || ($showTags === "" && numberOfCs >= Constants.userJourney.tagsVisibleAt) || $featureSwitchIsTesting || $featureSwitchIsDebugging}
             <span class="flex flex-wrap justify-between">

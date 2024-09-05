@@ -12,5 +12,4 @@ class DeleteOldDbs extends Script {
     }
 }
 
-
 new DeleteOldDbs().run()

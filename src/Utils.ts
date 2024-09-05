@@ -114,7 +114,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         "version",
         "wayHandling",
         "widenFactor",
-        "width"
+        "width",
     ]
     private static extraKeys = [
         "nl",
@@ -133,7 +133,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         "yes",
         "no",
         "true",
-        "false"
+        "false",
     ]
     private static injectedDownloads = {}
     private static _download_cache = new Map<
@@ -150,7 +150,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         if (Utils.runningFromConsole) {
             return
         }
-        DOMPurify.addHook("afterSanitizeAttributes", function(node) {
+        DOMPurify.addHook("afterSanitizeAttributes", function (node) {
             // set all elements owning target to target=_blank + add noopener noreferrer
             const target = node.getAttribute("target")
             if (target) {
@@ -163,7 +163,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
     public static purify(src: string): string {
         return DOMPurify.sanitize(src, {
             USE_PROFILES: { html: true },
-            ADD_ATTR: ["target"] // Don't remove target='_blank'. Note that Utils.initDomPurify does add a hook which automatically adds 'rel=noopener'
+            ADD_ATTR: ["target"], // Don't remove target='_blank'. Note that Utils.initDomPurify does add a hook which automatically adds 'rel=noopener'
         })
     }
 
@@ -344,7 +344,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
                     console.error("Error while calculating a lazy property", e)
                     return undefined
                 }
-            }
+            },
         })
     }
 
@@ -368,7 +368,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
                         whenDone()
                     }
                 })
-            }
+            },
         })
     }
 
@@ -651,7 +651,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
                     if (!Array.isArray(targetV)) {
                         throw new Error(
                             "Cannot concatenate: value to add is not an array: " +
-                            JSON.stringify(targetV)
+                                JSON.stringify(targetV)
                         )
                     }
                     if (Array.isArray(sourceV)) {
@@ -659,9 +659,9 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
                     } else {
                         throw new Error(
                             "Could not merge concatenate " +
-                            JSON.stringify(sourceV) +
-                            " and " +
-                            JSON.stringify(targetV)
+                                JSON.stringify(sourceV) +
+                                " and " +
+                                JSON.stringify(targetV)
                         )
                     }
                 } else {
@@ -922,7 +922,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
                 continue
             }
             const i = part.charCodeAt(0)
-            result += "\"" + keys[i] + "\":" + part.substring(1)
+            result += '"' + keys[i] + '":' + part.substring(1)
         }
 
         return result
@@ -1009,7 +1009,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
                     resolve({
                         error: "other error: " + xhr.statusText + ", " + xhr.responseText,
                         url,
-                        statuscode: xhr.status
+                        statuscode: xhr.status,
                     })
                 }
             }
@@ -1023,12 +1023,12 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             xhr.onerror = (ev: ProgressEvent<EventTarget>) =>
                 reject(
                     "Could not get " +
-                    url +
-                    ", xhr status code is " +
-                    xhr.status +
-                    " (" +
-                    xhr.statusText +
-                    ")"
+                        url +
+                        ", xhr status code is " +
+                        xhr.status +
+                        " (" +
+                        xhr.statusText +
+                        ")"
                 )
         })
     }
@@ -1086,9 +1086,9 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         }
         const promise =
             /*NO AWAIT as we work with the promise directly */ Utils.downloadJsonAdvanced<T>(
-            url,
-            headers
-        )
+                url,
+                headers
+            )
         Utils._download_cache.set(url, { promise, timestamp: new Date().getTime() })
         return await promise
     }
@@ -1281,7 +1281,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
     ): T[] {
         const withDistance: [T, number][] = ts.map((t) => [
             t,
-            Utils.levenshteinDistance(getName(t), reference)
+            Utils.levenshteinDistance(getName(t), reference),
         ])
         withDistance.sort(([_, a], [__, b]) => a - b)
         return withDistance.map((n) => n[0])
@@ -1404,7 +1404,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             return {
                 r: Utils.percentageToNumber(match[1]),
                 g: Utils.percentageToNumber(match[2]),
-                b: Utils.percentageToNumber(match[3])
+                b: Utils.percentageToNumber(match[3]),
             }
         }
 
@@ -1415,14 +1415,14 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             return {
                 r: parseInt(hex.substr(1, 1), 16),
                 g: parseInt(hex.substr(2, 1), 16),
-                b: parseInt(hex.substr(3, 1), 16)
+                b: parseInt(hex.substr(3, 1), 16),
             }
         }
 
         return {
             r: parseInt(hex.substr(1, 2), 16),
             g: parseInt(hex.substr(3, 2), 16),
-            b: parseInt(hex.substr(5, 2), 16)
+            b: parseInt(hex.substr(5, 2), 16),
         }
     }
 
@@ -1605,7 +1605,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             line: Number(line),
             column: Number(column),
             markdownLocation,
-            filename: path.substring(path.lastIndexOf("/") + 1)
+            filename: path.substring(path.lastIndexOf("/") + 1),
         }
     }
 
@@ -1810,10 +1810,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         }
 
         /* Chromium based browsers eat the spaces */
-        href = href.replaceAll(
-            / /g,
-            "%20"
-        )
+        href = href.replaceAll(/ /g, "%20")
         return href
     }
 

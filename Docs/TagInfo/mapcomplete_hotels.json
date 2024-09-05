@@ -41,6 +41,11 @@
       "value": "guest_house"
     },
     {
+      "key": "tourism",
+      "description": "The MapComplete theme Hotels has a layer Tourism accomodation showing features with this tag",
+      "value": "camp_site"
+    },
+    {
       "key": "id",
       "description": "Layer 'Tourism accomodation' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Hotels') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
     },
@@ -79,7 +84,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Tourism accomodation' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Hotels')"
+      "description": "Layer 'Tourism accomodation' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Hotels')"
     },
     {
       "key": "email",
@@ -163,11 +168,11 @@
     },
     {
       "key": "internet_access:ssid",
-      "description": "Layer 'Tourism accomodation' shows and asks freeform values for key 'internet_access:ssid' (in the mapcomplete.org theme 'Hotels') (This is only shown if internet_access=wlan)"
+      "description": "Layer 'Tourism accomodation' shows and asks freeform values for key 'internet_access:ssid' (in the mapcomplete.org theme 'Hotels') (This is only shown if internet_access~^(.*wlan.*)$)"
     },
     {
       "key": "internet_access:ssid",
-      "description": "Layer 'Tourism accomodation' shows internet_access:ssid=Telekom with a fixed text, namely 'Telekom' and allows to pick this as a default answer (in the mapcomplete.org theme 'Hotels') (This is only shown if internet_access=wlan)",
+      "description": "Layer 'Tourism accomodation' shows internet_access:ssid=Telekom with a fixed text, namely 'Telekom' and allows to pick this as a default answer (in the mapcomplete.org theme 'Hotels') (This is only shown if internet_access~^(.*wlan.*)$)",
       "value": "Telekom"
     },
     {
@@ -230,7 +235,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Love hotels' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Hotels')"
+      "description": "Layer 'Love hotels' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Hotels')"
     },
     {
       "key": "email",

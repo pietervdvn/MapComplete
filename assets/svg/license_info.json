@@ -1076,6 +1076,14 @@
     ]
   },
   {
+    "path": "snap.svg",
+    "license": "CC0-1.0",
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "sources": []
+  },
+  {
     "path": "speech_bubble.svg",
     "license": "CC-BY-4.0",
     "authors": [
@@ -1220,6 +1228,14 @@
     "license": "CC0-1.0",
     "authors": [
       "Robin van der Linde"
+    ],
+    "sources": []
+  },
+  {
+    "path": "unsnap.svg",
+    "license": "CC0-1.0",
+    "authors": [
+      "Pieter Vander Vennet"
     ],
     "sources": []
   },

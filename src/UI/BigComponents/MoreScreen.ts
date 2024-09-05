@@ -18,7 +18,7 @@ export default class MoreScreen {
     } = themeOverview
     public static readonly officialThemesById: Map<string, MinimalLayoutInformation> = new Map<string, MinimalLayoutInformation>()
     static {
-        for (const th of MoreScreen.officialThemes.themes) {
+        for (const th of MoreScreen.officialThemes.themes ?? []) {
             MoreScreen.officialThemesById.set(th.id, th)
         }
     }

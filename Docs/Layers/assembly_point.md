@@ -9,8 +9,9 @@ This layer contains assembly points and waiting areas where all employees, passe
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [assembly_point_name](#assembly_point_name)
   - [assembly_point_operator](#assembly_point_operator)
@@ -23,6 +24,12 @@ This layer contains assembly points and waiting areas where all employees, passe
 
  - [disaster_response](https://mapcomplete.org/disaster_response)
  - [personal](https://mapcomplete.org/personal)
+
+## Presets
+
+The following options to create new points are included:
+
+**an assembly point** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:emergency' target='_blank'>emergency</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:emergency%3Dassembly_point' target='_blank'>assembly_point</a>
 
 ## Basic tags for this layer
 

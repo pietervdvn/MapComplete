@@ -3,7 +3,9 @@ import { OsmPoiDatabase } from "./osmPoiDatabase"
 
 class CreateNewDatabase extends Script {
     constructor() {
-        super("Creates a new version of the database. Usage: `createNewDatabase -- YYYY-MM-DD` which will create database `osm-poi.YYYY-MM-DD`")
+        super(
+            "Creates a new version of the database. Usage: `createNewDatabase -- YYYY-MM-DD` which will create database `osm-poi.YYYY-MM-DD`"
+        )
     }
 
     async main(args: string[]): Promise<void> {
@@ -11,6 +13,5 @@ class CreateNewDatabase extends Script {
         await db.createNew(args[0])
     }
 }
-
 
 new CreateNewDatabase().run()

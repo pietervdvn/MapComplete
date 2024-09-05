@@ -27,7 +27,7 @@
     photo: ["photo", "historicphoto"],
     map: ["map", "historicmap"],
     other: ["other", "elevation"],
-    osmbasedmap: ["osmbasedmap"]
+    osmbasedmap: ["osmbasedmap"],
   }
 
   function availableForCategory(type: CategoryType): Store<RasterLayerPolygon[]> {
@@ -51,20 +51,18 @@
   }
 
   export let onlyLink: boolean
-
 </script>
 
-<Page {onlyLink} shown={shown} fullscreen={true}>
-  <div slot="header" class="flex" >
+<Page {onlyLink} {shown} fullscreen={true}>
+  <div slot="header" class="flex">
     <Square3Stack3dIcon class="h-6 w-6" />
 
-  <Tr t={Translations.t.general.backgroundMap} />
+    <Tr t={Translations.t.general.backgroundMap} />
   </div>
   {#if $_availableLayers?.length < 1}
     <Loading />
   {:else}
-
-    <div class="flex gap-x-2 flex-col sm:flex-row gap-y-2" style="height: calc( 100% - 5rem)">
+    <div class="flex flex-col gap-x-2 gap-y-2 sm:flex-row" style="height: calc( 100% - 5rem)">
       <RasterLayerPicker
         availableLayers={$photoLayers}
         favourite={getPref("photo")}

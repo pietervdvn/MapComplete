@@ -78,13 +78,6 @@
     box-sizing: border-box;
 }
 
-.oh-timecell-0 {
-    border-left: 10px solid rgba(0, 0, 0, 0);
-}
-
-.oh-timecell-6 {
-    border-right: 10px solid rgba(0, 0, 0, 0);
-}
 
 .oh-timecol-selected {
     border-right: var(--catch-detail-color);

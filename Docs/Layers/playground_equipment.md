@@ -9,8 +9,9 @@ Layer showing playground equipment
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [type](#type)
   - [wheelchair-access](#wheelchair-access)
@@ -23,6 +24,12 @@ Layer showing playground equipment
 
  - [personal](https://mapcomplete.org/personal)
  - [playgrounds](https://mapcomplete.org/playgrounds)
+
+## Presets
+
+The following options to create new points are included:
+
+**a playground device** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:playground' target='_blank'>playground</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:playground%3Dyes' target='_blank'>yes</a>
 
 ## Basic tags for this layer
 

@@ -587,4 +587,13 @@ export interface LayerConfigJson {
      * iftrue: Do not write 'change_within_x_m' and do not indicate that this was done by survey
      */
     enableMorePrivacy?: boolean
+
+    /**
+     * question: When a feature is snapped to this name, how should this item be called?
+     *
+     * In the move wizard, the option `snap object onto {snapName}` is shown
+     *
+     * group: hidden
+     */
+    snapName?: Translatable
 }

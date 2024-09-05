@@ -33,6 +33,7 @@ Available languages:
     + [leftover-questions](#leftover-questions)
     + [lod](#lod)
 3. [node_hiking](#node_hiking)
+  - [Presets](#presets)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
     + [node-rwn_ref](#node-rwn_ref)
@@ -42,6 +43,7 @@ Available languages:
     + [leftover-questions](#leftover-questions)
     + [lod](#lod)
 4. [guidepost_hiking](#guidepost_hiking)
+  - [Presets](#presets)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
     + [images](#images)
@@ -107,6 +109,12 @@ This tagrendering has labels
 
 No themes use this layer
 
+## Presets
+
+The following options to create new points are included:
+
+**a walking node** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:rwn_ref' target='_blank'>rwn_ref</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rwn_ref%3D?' target='_blank'>?</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:network:type' target='_blank'>network:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network' target='_blank'>node_network</a> (snaps to layers `cycleways_and_roads`)
+
 ## Basic tags for this layer
 
 Elements must match **any** of the following expressions:
@@ -171,6 +179,12 @@ Guideposts (also known as fingerposts or finger posts) are often found along off
  - This layer is shown at zoomlevel **16** and higher
 
 No themes use this layer
+
+## Presets
+
+The following options to create new points are included:
+
+**a guidepost** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:tourism' target='_blank'>tourism</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dinformation' target='_blank'>information</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:information' target='_blank'>information</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost' target='_blank'>guidepost</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:hiking' target='_blank'>hiking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hiking%3Dyes' target='_blank'>yes</a>
 
 ## Basic tags for this layer
 

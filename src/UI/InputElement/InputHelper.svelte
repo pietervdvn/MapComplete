@@ -7,7 +7,6 @@
   import { UIEventSource } from "../../Logic/UIEventSource"
   import type { ValidatorType } from "./Validators"
   import InputHelpers from "./InputHelpers"
-  import ToSvelte from "../Base/ToSvelte.svelte"
   import type { Feature } from "geojson"
   import ImageHelper from "./Helpers/ImageHelper.svelte"
   import TranslationInput from "./Helpers/TranslationInput.svelte"
@@ -19,7 +18,6 @@
   import OpeningHoursInput from "./Helpers/OpeningHoursInput.svelte"
   import SlopeInput from "./Helpers/SlopeInput.svelte"
   import type { SpecialVisualizationState } from "../SpecialVisualization"
-  import WikidataInput from "./Helpers/WikidataInput.svelte"
   import WikidataInputHelper from "./WikidataInputHelper.svelte"
 
   export let type: ValidatorType
@@ -48,7 +46,7 @@
 {:else if type === "simple_tag"}
   <SimpleTagInput {value} {args} on:submit />
 {:else if type === "opening_hours"}
-  <OpeningHoursInput {value} />
+  <OpeningHoursInput {value} {args} />
 {:else if type === "slope"}
   <SlopeInput {value} {feature} {state} />
 {:else if type === "wikidata"}

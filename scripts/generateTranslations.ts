@@ -52,10 +52,10 @@ class TranslationPart {
             if (typeof v != "string") {
                 console.error(
                     `Non-string object at ${context} in translation while trying to add the translation ` +
-                    JSON.stringify(v) +
-                    ` to '` +
-                    translationsKey +
-                    "'. The offending object which _should_ be a translation is: ",
+                        JSON.stringify(v) +
+                        ` to '` +
+                        translationsKey +
+                        "'. The offending object which _should_ be a translation is: ",
                     v,
                     "\n\nThe current object is (only showing en):",
                     this.toJson(),
@@ -94,9 +94,9 @@ class TranslationPart {
             if (noTranslate !== undefined) {
                 console.log(
                     "Ignoring some translations for " +
-                    context +
-                    ": " +
-                    dontTranslateKeys.join(", ")
+                        context +
+                        ": " +
+                        dontTranslateKeys.join(", ")
                 )
             }
         }
@@ -150,7 +150,7 @@ class TranslationPart {
                 this.contents.set(key, new TranslationPart())
             }
 
-            (this.contents.get(key) as TranslationPart).recursiveAdd(v, context + "." + key)
+            ;(this.contents.get(key) as TranslationPart).recursiveAdd(v, context + "." + key)
         }
     }
 
@@ -179,7 +179,7 @@ class TranslationPart {
             let value = this.contents.get(key)
 
             if (typeof value === "string") {
-                value = value.replace(/"/g, "\\\"").replace(/\n/g, "\\n")
+                value = value.replace(/"/g, '\\"').replace(/\n/g, "\\n")
                 if (neededLanguage === undefined) {
                     parts.push(`"${key}": "${value}"`)
                 } else if (key === neededLanguage) {
@@ -229,7 +229,7 @@ class TranslationPart {
             } else if (!isLeaf) {
                 errors.push({
                     error: "Mixed node: non-leaf node has translation strings",
-                    path: path
+                    path: path,
                 })
             }
 
@@ -280,7 +280,7 @@ class TranslationPart {
                                 value +
                                 "\n" +
                                 fixLink,
-                            path: path
+                            path: path,
                         })
                     }
                     return
@@ -292,7 +292,7 @@ class TranslationPart {
                             error: `The translation for ${key} does not have the required subpart ${part} (in ${usedByLanguage}).
     \tThe full translation is ${value}
     \t${fixLink}`,
-                            path: path
+                            path: path,
                         })
                     }
                 }
@@ -328,7 +328,6 @@ class TranslationPart {
         }
     }
 }
-
 
 /**
  * Converts a translation object into something that can be added to the 'generated translations'.
@@ -373,9 +372,7 @@ function transformTranslation(
                 )}.${key}\n\tThe translations in other languages are ${JSON.stringify(value)}`
             }
             const subParts: string[] = value["en"].match(/{[^}]*}/g)
-            let expr = `new Translation(${JSON.stringify(value)}, "core:${path.join(
-                "."
-            )}.${key}")`
+            let expr = `new Translation(${JSON.stringify(value)}, "core:${path.join(".")}.${key}")`
             if (subParts !== null) {
                 // convert '{to_substitute}' into 'to_substitute'
                 const types = Utils.Dedup(subParts.map((tp) => tp.substring(1, tp.length - 1)))
@@ -393,7 +390,6 @@ function transformTranslation(
             }
             if (shortNotation) {
                 values.push(`${spaces} ${key}: ${expr}`)
-
             } else {
                 values.push(`${spaces}get ${key}() { return ${expr} }`)
             }
@@ -423,26 +419,29 @@ function stringifySorted(o: object, space: string = undefined, depth = 0): strin
     const keys = Object.keys(o)
     let obj = "{"
 
-    obj += keys.sort().map(key => {
-        const v = o[key]
-        let r = ""
-        if (space !== undefined) {
-            r += "\n"
-            for (let i = 0; i <= depth; i++) {
-                r += space
+    obj += keys
+        .sort()
+        .map((key) => {
+            const v = o[key]
+            let r = ""
+            if (space !== undefined) {
+                r += "\n"
+                for (let i = 0; i <= depth; i++) {
+                    r += space
+                }
             }
-        }
 
-        r += JSON.stringify("" + key) + ": "
-        if (typeof v === "object") {
-            r += stringifySorted(v, space, depth + 1)
-        } else if (Array.isArray(v)) {
-            r += "[" + v.map(v_ => stringifySorted(v_, space, depth + 1)).join(",") + "]"
-        } else {
-            r += JSON.stringify(v)
-        }
-        return r
-    }).join(",")
+            r += JSON.stringify("" + key) + ": "
+            if (typeof v === "object") {
+                r += stringifySorted(v, space, depth + 1)
+            } else if (Array.isArray(v)) {
+                r += "[" + v.map((v_) => stringifySorted(v_, space, depth + 1)).join(",") + "]"
+            } else {
+                r += JSON.stringify(v)
+            }
+            return r
+        })
+        .join(",")
     if (space !== undefined) {
         obj += "\n"
         for (let i = 0; i < depth; i++) {
@@ -476,7 +475,6 @@ function formatFile(path) {
     contents = stringifySorted(contents, "    ")
     writeFileSync(path, contents)
 }
-
 
 /**
  * Reads 'lang/*.json', writes them into to 'assets/generated/translations.json'.
@@ -662,7 +660,9 @@ function removeNonEnglishTranslations(object: any) {
             leaf["en"] = en
         },
         (possibleLeaf) =>
-            possibleLeaf !== null && typeof possibleLeaf === "object" && GenerateTranslations.isTranslation(possibleLeaf)
+            possibleLeaf !== null &&
+            typeof possibleLeaf === "object" &&
+            GenerateTranslations.isTranslation(possibleLeaf)
     )
 }
 
@@ -738,7 +738,6 @@ class GenerateTranslations extends Script {
         }
     }
 
-
     /**
      * Generates the big compiledTranslations file based on 'translations.json'
      */
@@ -749,7 +748,12 @@ class GenerateTranslations extends Script {
         const translations = JSON.parse(
             fs.readFileSync("./src/assets/generated/translations.json", "utf-8")
         )
-        const transformed = transformTranslation(translations, undefined, englishOnly ? ["en"] : undefined, englishOnly)
+        const transformed = transformTranslation(
+            translations,
+            undefined,
+            englishOnly ? ["en"] : undefined,
+            englishOnly
+        )
 
         let module = `import {Translation, TypedTranslation} from "../../UI/i18n/Translation"\n\nexport default class CompiledTranslations {\n\n`
         module += " public static t = " + transformed

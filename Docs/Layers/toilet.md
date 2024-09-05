@@ -9,8 +9,9 @@ A layer showing (public) toilets
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [repeated](#repeated)
   - [single_level](#single_level)
@@ -35,7 +36,7 @@ A layer showing (public) toilets
   - [move-button](#move-button)
   - [delete-button](#delete-button)
   - [lod](#lod)
-4. [Filters](#filters)
+5. [Filters](#filters)
 
 ## Themes using this layer
 
@@ -49,6 +50,14 @@ A layer showing (public) toilets
  - [toerisme_vlaanderen](https://mapcomplete.org/toerisme_vlaanderen)
  - [toilets](https://mapcomplete.org/toilets)
  - [velopark](https://mapcomplete.org/velopark)
+
+## Presets
+
+The following options to create new points are included:
+
+**a public toilet** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dtoilets' target='_blank'>toilets</a>
+
+**a toilets with wheelchair accessible toilet** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dtoilets' target='_blank'>toilets</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes' target='_blank'>yes</a>
 
 ## Basic tags for this layer
 
@@ -77,7 +86,7 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/changing_table:location#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/changing_table%3Alocation/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [changing_table:location](https://wiki.openstreetmap.org/wiki/Key:changing_table:location) | [string](../SpecialInputElements.md#string) | [female_toilet](https://wiki.openstreetmap.org/wiki/Tag:changing_table:location%3Dfemale_toilet) [male_toilet](https://wiki.openstreetmap.org/wiki/Tag:changing_table:location%3Dmale_toilet) [wheelchair_toilet](https://wiki.openstreetmap.org/wiki/Tag:changing_table:location%3Dwheelchair_toilet) [dedicated_room](https://wiki.openstreetmap.org/wiki/Tag:changing_table:location%3Ddedicated_room) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/toilets:handwashing#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/toilets%3Ahandwashing/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [toilets:handwashing](https://wiki.openstreetmap.org/wiki/Key:toilets:handwashing) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:toilets:handwashing%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:toilets:handwashing%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/toilets:paper_supplied#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/toilets%3Apaper_supplied/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [toilets:paper_supplied](https://wiki.openstreetmap.org/wiki/Key:toilets:paper_supplied) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:toilets:paper_supplied%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:toilets:paper_supplied%3Dno) |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/description#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/description/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [description](https://wiki.openstreetmap.org/wiki/Key:description) | [string](../SpecialInputElements.md#string) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/description#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/description/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [description](https://wiki.openstreetmap.org/wiki/Key:description) | [text](../SpecialInputElements.md#text) |  |
 
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
@@ -113,9 +122,9 @@ The question is `Are these toilets publicly accessible?`
 *Access is {access}* is shown if `access` is set
 
  -  *Public access* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
- -  *Only access to customers* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers' target='_blank'>customers</a>
- -  *Not accessible* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dno' target='_blank'>no</a>
- -  *Accessible, but one has to ask a key to enter* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dkey' target='_blank'>key</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/key' style='width: 3rem; height: 3rem'> *Only access to customers* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers' target='_blank'>customers</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/lock' style='width: 3rem; height: 3rem'> *Not accessible* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dno' target='_blank'>no</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/key' style='width: 3rem; height: 3rem'> *Accessible, but one has to ask a key to enter* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dkey' target='_blank'>key</a>
  -  *Public access* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dpublic' target='_blank'>public</a>. _This option cannot be chosen as answer_
 
 This tagrendering has labels 

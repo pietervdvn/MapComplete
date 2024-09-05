@@ -192,6 +192,12 @@
             "ca": "Aquest és un espai hacker tradicional (orientat al software)",
             "cs": "Toto je tradiční (softwarově orientovaný) hackerský prostor"
           }
+        },
+        {
+          "if": "hackerspace=hacklab",
+          "then": {
+            "en": "This is a <b>hacklab</b> which is mostly focussed on basic computer skills, using recycled devices and/or providing internet to the community. This is typically located in autonomous spaces, squats or social facilities"
+          }
         }
       ]
     },

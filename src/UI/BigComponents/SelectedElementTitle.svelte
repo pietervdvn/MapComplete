@@ -74,9 +74,8 @@
   </div>
   <slot name="close-button">
     <div class="mt-4">
-    <CloseButton  on:click={() => state.selectedElement.setData(undefined)}/>
+      <CloseButton on:click={() => state.selectedElement.setData(undefined)} />
     </div>
-
   </slot>
 </div>
 

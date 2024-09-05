@@ -153,7 +153,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Cafés and pubs' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Cafés and pubs')"
+      "description": "Layer 'Cafés and pubs' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Cafés and pubs')"
     },
     {
       "key": "payment:cash",
@@ -292,11 +292,11 @@
     },
     {
       "key": "internet_access:ssid",
-      "description": "Layer 'Cafés and pubs' shows and asks freeform values for key 'internet_access:ssid' (in the mapcomplete.org theme 'Cafés and pubs') (This is only shown if internet_access=wlan)"
+      "description": "Layer 'Cafés and pubs' shows and asks freeform values for key 'internet_access:ssid' (in the mapcomplete.org theme 'Cafés and pubs') (This is only shown if internet_access~^(.*wlan.*)$)"
     },
     {
       "key": "internet_access:ssid",
-      "description": "Layer 'Cafés and pubs' shows internet_access:ssid=Telekom with a fixed text, namely 'Telekom' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cafés and pubs') (This is only shown if internet_access=wlan)",
+      "description": "Layer 'Cafés and pubs' shows internet_access:ssid=Telekom with a fixed text, namely 'Telekom' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cafés and pubs') (This is only shown if internet_access~^(.*wlan.*)$)",
       "value": "Telekom"
     },
     {
@@ -433,11 +433,11 @@
     },
     {
       "key": "internet_access:ssid",
-      "description": "Layer 'Outdoor Seating' shows and asks freeform values for key 'internet_access:ssid' (in the mapcomplete.org theme 'Cafés and pubs') (This is only shown if internet_access=wlan)"
+      "description": "Layer 'Outdoor Seating' shows and asks freeform values for key 'internet_access:ssid' (in the mapcomplete.org theme 'Cafés and pubs') (This is only shown if internet_access~^(.*wlan.*)$)"
     },
     {
       "key": "internet_access:ssid",
-      "description": "Layer 'Outdoor Seating' shows internet_access:ssid=Telekom with a fixed text, namely 'Telekom' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cafés and pubs') (This is only shown if internet_access=wlan)",
+      "description": "Layer 'Outdoor Seating' shows internet_access:ssid=Telekom with a fixed text, namely 'Telekom' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cafés and pubs') (This is only shown if internet_access~^(.*wlan.*)$)",
       "value": "Telekom"
     },
     {
@@ -567,7 +567,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Food Courts' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Cafés and pubs')"
+      "description": "Layer 'Food Courts' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Cafés and pubs')"
     },
     {
       "key": "smoking",

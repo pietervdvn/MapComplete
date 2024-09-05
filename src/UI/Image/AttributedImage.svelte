@@ -7,6 +7,10 @@
   import { Mapillary } from "../../Logic/ImageProviders/Mapillary"
   import { UIEventSource } from "../../Logic/UIEventSource"
   import { MagnifyingGlassPlusIcon } from "@babeard/svelte-heroicons/outline"
+  import { CloseButton, Modal } from "flowbite-svelte"
+  import ImageOperations from "./ImageOperations.svelte"
+  import Popup from "../Base/Popup.svelte"
+  import { onDestroy } from "svelte"
 
   export let image: Partial<ProvidedImage>
   let fallbackImage: string = undefined
@@ -16,36 +20,58 @@
 
   let imgEl: HTMLImageElement
   export let imgClass: string = undefined
-  export let previewedImage: UIEventSource<ProvidedImage> = undefined
   export let attributionFormat: "minimal" | "medium" | "large" = "medium"
-  let canZoom = previewedImage !== undefined // We check if there is a SOURCE, not if there is data in it!
+  export let previewedImage: UIEventSource<ProvidedImage>
+  export let canZoom = previewedImage !== undefined
   let loaded = false
+  let showBigPreview =  new UIEventSource(false)
+  onDestroy(showBigPreview.addCallbackAndRun(shown=>{
+    if(!shown){
+      previewedImage.set(false)
+    }
+  }))
+  onDestroy(previewedImage.addCallbackAndRun(previewedImage => {
+    showBigPreview.set(previewedImage?.id === image.id)
+  }))
 </script>
 
+<Popup shown={showBigPreview} bodyPadding="p-0" dismissable={true}>
+  <div slot="close" />
+  <div style="height: 80vh">
+    <ImageOperations {image}>
+      <slot name="preview-action" />
+    </ImageOperations>
+  </div>
+  <div class="absolute top-4 right-4">
+    <CloseButton class="normal-background"
+                 on:click={() => {console.log("Closing");previewedImage.set(undefined)}}></CloseButton>
+  </div>
+</Popup>
 <div class="relative shrink-0">
   <div class="relative w-fit">
     <img
       bind:this={imgEl}
-      on:load={() => loaded = true}
+      on:load={() => (loaded = true)}
       class={imgClass ?? ""}
-      class:cursor-zoom-in={previewedImage !== undefined}
+      class:cursor-zoom-in={canZoom}
       on:click={() => {
-      previewedImage?.setData(image)
+        previewedImage?.set(image)
     }}
       on:error={() => {
-      if (fallbackImage) {
-        imgEl.src = fallbackImage
-      }
-    }}
+        if (fallbackImage) {
+          imgEl.src = fallbackImage
+        }
+      }}
       src={image.url}
     />
 
     {#if canZoom && loaded}
-      <div class="absolute right-0 top-0 bg-black-transparent rounded-bl-full" on:click={() => previewedImage.set(image)}>
-      <MagnifyingGlassPlusIcon class="w-8 h-8 pl-3 pb-3 cursor-zoom-in" color="white" />
+      <div
+        class="bg-black-transparent absolute right-0 top-0 rounded-bl-full"
+           on:click={() => previewedImage.set(image)}>
+        <MagnifyingGlassPlusIcon class="h-8 w-8 cursor-zoom-in pl-3 pb-3" color="white" />
       </div>
     {/if}
-
   </div>
   <div class="absolute bottom-0 left-0">
     <ImageAttribution {image} {attributionFormat} />

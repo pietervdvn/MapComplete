@@ -3,29 +3,19 @@
  * Keeps track of unparsed rules
  * Exports everything conveniently as a string, for direct use
  */
-import OpeningHoursPicker from "./OpeningHoursPicker"
 import { Store, UIEventSource } from "../../Logic/UIEventSource"
-import { VariableUiElement } from "../Base/VariableUIElement"
-import Combine from "../Base/Combine"
-import { FixedUiElement } from "../Base/FixedUiElement"
 import { OH, OpeningHour } from "./OpeningHours"
-import { InputElement } from "../Input/InputElement"
-import Translations from "../i18n/Translations"
-import BaseUIElement from "../BaseUIElement"
-import SvelteUIElement from "../Base/SvelteUIElement"
-import PublicHolidaySelector from "./PublicHolidaySelector.svelte"
 
-export default class OpeningHoursInput extends InputElement<string> {
-    private readonly _value: UIEventSource<string>
-    private readonly _element: BaseUIElement
+export default class OpeningHoursState {
+    public readonly normalOhs: UIEventSource<OpeningHour[]>
+    public readonly leftoverRules: Store<string[]>
+    public readonly phSelectorValue: UIEventSource<string>
 
     constructor(
         value: UIEventSource<string> = new UIEventSource<string>(""),
         prefix = "",
-        postfix = ""
+        postfix = "",
     ) {
-        super()
-        this._value = value
         let valueWithoutPrefix = value
         if (prefix !== "" && postfix !== "") {
             valueWithoutPrefix = value.sync(
@@ -54,11 +44,11 @@ export default class OpeningHoursInput extends InputElement<string> {
                     }
 
                     return prefix + noPrefix + postfix
-                }
+                },
             )
         }
 
-        const leftoverRules: Store<string[]> = valueWithoutPrefix.map((str) => {
+        this.leftoverRules = valueWithoutPrefix.map((str) => {
             if (str === undefined) {
                 return []
             }
@@ -88,24 +78,25 @@ export default class OpeningHoursInput extends InputElement<string> {
                 break
             }
         }
-        const phSelectorValue = new UIEventSource<string>(ph ?? "")
+        this.phSelectorValue = new UIEventSource<string>(ph ?? "")
+
 
         // Note: MUST be bound AFTER the leftover rules!
-        const rulesFromOhPicker: UIEventSource<OpeningHour[]> = valueWithoutPrefix.sync(
+        this.normalOhs = valueWithoutPrefix.sync(
             (str) => {
                 return OH.Parse(str)
             },
-            [leftoverRules, phSelectorValue],
+            [this.leftoverRules, this.phSelectorValue],
             (rules, oldString) => {
                 // We always add a ';', to easily add new rules. We remove the ';' again at the end of the function
                 // Important: spaces are _not_ allowed after a ';' as it'll destabilize the parsing!
                 let str = OH.ToString(rules) + ";"
-                const ph = phSelectorValue.data
+                const ph = this.phSelectorValue.data
                 if (ph) {
                     str += ph + ";"
                 }
 
-                str += leftoverRules.data.join(";") + ";"
+                str += this.leftoverRules.data.join(";") + ";"
 
                 str = str.trim()
                 while (str.endsWith(";")) {
@@ -120,41 +111,24 @@ export default class OpeningHoursInput extends InputElement<string> {
                     return oldString // We pass a reference to the old string to stabilize the EventSource
                 }
                 return str
-            }
+            },
         )
+        /*
+                const leftoverWarning = new VariableUiElement(
+                    leftoverRules.map((leftovers: string[]) => {
+                        if (leftovers.length == 0) {
+                            return ""
+                        }
+                        return new Combine([
+                            Translations.t.general.opening_hours.not_all_rules_parsed,
+                            new FixedUiElement(leftovers.map((r) => `${r}<br/>`).join("")).SetClass(
+                                "subtle"
+                            ),
+                        ])
+                    })
+                )*/
 
-        const leftoverWarning = new VariableUiElement(
-            leftoverRules.map((leftovers: string[]) => {
-                if (leftovers.length == 0) {
-                    return ""
-                }
-                return new Combine([
-                    Translations.t.general.opening_hours.not_all_rules_parsed,
-                    new FixedUiElement(leftovers.map((r) => `${r}<br/>`).join("")).SetClass(
-                        "subtle"
-                    ),
-                ])
-            })
-        )
 
-        const ohPicker = new OpeningHoursPicker(rulesFromOhPicker)
-
-        this._element = new Combine([
-            leftoverWarning,
-            ohPicker,
-            new SvelteUIElement(PublicHolidaySelector, { value: phSelectorValue }),
-        ])
     }
 
-    GetValue(): UIEventSource<string> {
-        return this._value
-    }
-
-    IsValid(_: string): boolean {
-        return true
-    }
-
-    protected InnerConstructElement(): HTMLElement {
-        return this._element.ConstructElement()
-    }
 }

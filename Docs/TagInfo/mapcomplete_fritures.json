@@ -93,7 +93,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Fries shop' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Fries shops')"
+      "description": "Layer 'Fries shop' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Fries shops')"
     },
     {
       "key": "payment:cash",
@@ -237,6 +237,26 @@
       "key": "cuisine",
       "description": "Layer 'Fries shop' shows cuisine=thai with a fixed text, namely 'Thai dishes are served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Fries shops')",
       "value": "thai"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Fries shop' shows cuisine=mexican   with a fixed text, namely 'Mexican dishes are served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Fries shops')",
+      "value": "mexican  "
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Fries shop' shows cuisine=japanese   with a fixed text, namely 'Japanese dishes are served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Fries shops')",
+      "value": "japanese  "
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Fries shop' shows cuisine=chicken   with a fixed text, namely 'Chicken based dishes are served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Fries shops')",
+      "value": "chicken  "
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Fries shop' shows cuisine=seafood   with a fixed text, namely 'Seafood dishes are served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Fries shops')",
+      "value": "seafood  "
     },
     {
       "key": "image",
@@ -636,11 +656,11 @@
     },
     {
       "key": "internet_access:ssid",
-      "description": "Layer 'Fries shop' shows and asks freeform values for key 'internet_access:ssid' (in the mapcomplete.org theme 'Fries shops') (This is only shown if internet_access=wlan)"
+      "description": "Layer 'Fries shop' shows and asks freeform values for key 'internet_access:ssid' (in the mapcomplete.org theme 'Fries shops') (This is only shown if internet_access~^(.*wlan.*)$)"
     },
     {
       "key": "internet_access:ssid",
-      "description": "Layer 'Fries shop' shows internet_access:ssid=Telekom with a fixed text, namely 'Telekom' and allows to pick this as a default answer (in the mapcomplete.org theme 'Fries shops') (This is only shown if internet_access=wlan)",
+      "description": "Layer 'Fries shop' shows internet_access:ssid=Telekom with a fixed text, namely 'Telekom' and allows to pick this as a default answer (in the mapcomplete.org theme 'Fries shops') (This is only shown if internet_access~^(.*wlan.*)$)",
       "value": "Telekom"
     }
   ]

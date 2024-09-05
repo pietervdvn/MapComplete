@@ -42,13 +42,12 @@
     },
     "default_overpass_urls": [
       "https://overpass-api.de/api/interpreter",
-      "https://overpass.private.coffee/api/",
-      "https://overpass.osm.jp/api/interpreter",
+      "https://overpass.private.coffee/api/interpreter",
+      "https://overpass.osm.jp/api/interpreter"
     ],
     "#broken_overpass_urls": {
       "https://maps.mail.ru/osm/tools/overpass/api/interpreter": "Blocked by firefox strict tracking protection as 'tracking'",
-      "https://overpass.openstreetmap.ru/cgi/interpreter": "Broken as of 2024-09-05, might be a glitch",
-
+      "https://overpass.openstreetmap.ru/cgi/interpreter": "Broken as of 2024-09-05, might be a glitch"
     },
     "country_coder_host": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/latlon2country",
     "nominatimEndpoint": "https://geocoding.geofabrik.de/b75350b1cfc34962ac49824fe5b582dc/",
@@ -132,7 +131,6 @@
     "generate:summaryCache": "vite-node scripts/generateSummaryTileCache.ts",
     "create:database": "vite-node scripts/osm2pgsql/createNewDatabase.ts",
     "delete:database:old": "vite-node scripts/osm2pgsql/deleteOldDbs.ts"
-
   },
   "keywords": [
     "OpenStreetMap",

@@ -2960,6 +2960,7 @@
     "cycleways_and_roads": {
         "description": "Alle infrastructuur waar je over kunt fietsen, met vragen over die infrastructuur",
         "name": "Fietspaden, straten en wegen",
+        "snapName": "een weg, straat of fietspad",
         "tagRenderings": {
             "Cycleway type for a road": {
                 "mappings": {
@@ -4942,6 +4943,7 @@
     "indoors": {
         "description": "Een basis voor indoor-navigatie: toont binnenruimtes",
         "name": "Binnenruimtes",
+        "snapName": "een binnenmuur",
         "tagRenderings": {
             "name": {
                 "freeform": {
@@ -9687,6 +9689,7 @@
     },
     "walls_and_buildings": {
         "description": "Speciale ingebouwde laag voor alle muren en gebouwen. Deze laag is nuttig in voorkeuzen voor objecten die tegen muren geplaatst kunnen worden (bv. AEDs, brievenbussen, ingangen, adressen, beveiligingscamera's,…). Deze laag is standaard onzichtbaar en niet in te schakelen door de gebruiker.",
+        "snapName": "een muur of gebouw",
         "tagRenderings": {
             "entrance_info": {
                 "mappings": {
