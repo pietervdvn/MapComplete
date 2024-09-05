@@ -546,7 +546,7 @@
           </Popup>
 
           <div
-            class="sticky bottom-0 flex justify-between flex-wrap"
+            class="sticky bottom-0 flex justify-between flex-wrap interactive"
             style="z-index: 11"
           >
 
