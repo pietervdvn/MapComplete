@@ -13,7 +13,6 @@ export class RecentSearch {
 
     constructor(state: { layout: LayoutConfig, osmConnection: OsmConnection, selectedElement: Store<Feature> }) {
         const prefs = state.osmConnection.preferencesHandler.GetLongPreference("previous-searches")
-        prefs.set(null)
         this._seenThisSession = new UIEventSource<GeocodeResult[]>([])//UIEventSource.asObject<GeoCodeResult[]>(prefs, [])
         this.seenThisSession = this._seenThisSession
 

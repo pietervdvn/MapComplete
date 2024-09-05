@@ -3,26 +3,37 @@ import { Store } from "../../Logic/UIEventSource"
 import { Utils } from "../../Utils"
 import themeOverview from "../../assets/generated/theme_overview.json"
 import Locale from "../i18n/Locale"
-import { Translatable } from "../../Models/ThemeConfig/Json/Translatable"
-import { TagRenderingConfigJson } from "../../Models/ThemeConfig/Json/TagRenderingConfigJson"
 import { OsmConnection } from "../../Logic/Osm/OsmConnection"
 
+export  type ThemeSearchScore = {
+    theme: MinimalLayoutInformation,
+    lowest: number,
+    perLayer?: Record<string, number>,
+    other: number
+}
 export default class MoreScreen {
-    public static readonly officialThemes: MinimalLayoutInformation[] = themeOverview
+    public static readonly officialThemes: {
+        themes: MinimalLayoutInformation[],
+        layers: Record<string, Record<string, string[]>>
+    } = themeOverview
     public static readonly officialThemesById: Map<string, MinimalLayoutInformation> = new Map<string, MinimalLayoutInformation>()
     static {
-        for (const th of MoreScreen.officialThemes) {
+        for (const th of MoreScreen.officialThemes.themes) {
             MoreScreen.officialThemesById.set(th.id, th)
         }
     }
 
-    public static applySearch(searchTerm: string) {
+    /** Applies special search terms, such as 'studio', 'osmcha', ...
+     * Returns 'false' if nothing is matched.
+     * Doesn't return control flow if a match is found (navigates to another page in this case)
+     */
+    public static applySearch(searchTerm: string, ) {
         searchTerm = searchTerm.toLowerCase()
         if (!searchTerm) {
-            return
+            return false
         }
         if (searchTerm === "personal") {
-            window.location.href = MoreScreen.createUrlFor({ id: "personal" }, false)
+            window.location.href = MoreScreen.createUrlFor({ id: "personal" })
         }
         if (searchTerm === "bugs" || searchTerm === "issues") {
             window.location.href = "https://github.com/pietervdvn/MapComplete/issues"
@@ -39,77 +50,110 @@ export default class MoreScreen {
         if (searchTerm === "studio") {
             window.location.href = "./studio.html"
         }
-        // Enter pressed -> search the first _official_ matchin theme and open it
-        const publicTheme = MoreScreen.officialThemes.find(
-            (th) =>
-                th.hideFromOverview == false &&
-                th.id !== "personal" &&
-                MoreScreen.MatchesLayout(th, searchTerm),
-        )
-        if (publicTheme !== undefined) {
-            window.location.href = MoreScreen.createUrlFor(publicTheme, false)
-        }
-        const hiddenTheme = MoreScreen.officialThemes.find(
-            (th) => th.id !== "personal" && MoreScreen.MatchesLayout(th, searchTerm),
-        )
-        if (hiddenTheme !== undefined) {
-            window.location.href = MoreScreen.createUrlFor(hiddenTheme, false)
-        }
+        return false
+
     }
 
-    public static MatchesLayout(
-        layout: MinimalLayoutInformation,
-        search: string,
-        language?: string,
-    ): boolean {
-        if (search === undefined) {
-            return true
-        }
-        search = Utils.simplifyStringForSearch(search.toLocaleLowerCase()) // See #1729
-        if (search.length > 3 && layout.id.toLowerCase().indexOf(search) >= 0) {
-            return true
-        }
-        if (layout.id === "personal") {
-            return false
-        }
-        if (Utils.simplifyStringForSearch(layout.id) === Utils.simplifyStringForSearch(search)) {
-            return true
+    /**
+     * Searches for the smallest distance in words; will split both the query and the terms
+     *
+     * MoreScreen.scoreKeywords("drinking water", {"en": ["A layer with drinking water points"]}, "en") // => 0
+     * MoreScreen.scoreKeywords("waste", {"en": ["A layer with drinking water points"]}, "en") // => 2
+     *
+     */
+    public static scoreKeywords(query: string, keywords: Record<string, string[]> | string[], language?: string): number {
+        if(!keywords){
+            return Infinity
         }
         language ??= Locale.language.data
+        const queryParts = query.split(" ").map(q => Utils.simplifyStringForSearch(q))
+        let terms: string[]
+        if (Array.isArray(keywords)) {
+            terms = keywords
+        } else {
+            terms = (keywords[language] ?? []).concat(keywords["*"])
+        }
+        const termsAll = Utils.NoNullInplace(terms).flatMap(t => t.split(" "))
 
-        const entitiesToSearch: (string | Record<string, string> | Record<string, string[]>)[] = [layout.shortDescription, layout.title, layout.keywords]
-        for (const entity of entitiesToSearch) {
-            if (entity === undefined) {
-                continue
-            }
-
-            let term: string[]
-            if (typeof entity === "string") {
-                term = [entity]
-            } else {
-                const terms = [].concat(entity["*"], entity[language])
-                if (Array.isArray(terms)) {
-                    term = terms
-                } else {
-                    term = [terms]
+        let distanceSummed = 0
+        for (let i = 0; i < queryParts.length; i++) {
+            const q = queryParts[i]
+            let minDistance: number = 99
+            for (const term of termsAll) {
+                const d = Utils.levenshteinDistance(q, Utils.simplifyStringForSearch(term))
+                if (d < minDistance) {
+                    minDistance = d
                 }
             }
+            distanceSummed += minDistance
+        }
+        return distanceSummed
+    }
 
-            const minLevehnstein = Math.min(...Utils.NoNull(term).map(t => Utils.levenshteinDistance(search,
-                Utils.simplifyStringForSearch(t).slice(0, search.length))))
+    public static scoreLayers(query: string): Record<string, number> {
+        const result: Record<string, number> = {}
+        for (const id in this.officialThemes.layers) {
+            const keywords = this.officialThemes.layers[id]
+            const distance = this.scoreKeywords(query, keywords)
+            result[id] = distance
+        }
+        return result
+    }
 
-            if (minLevehnstein < 1 || minLevehnstein / search.length < 0.2) {
-                return true
+
+    public static scoreThemes(query: string, themes: MinimalLayoutInformation[], ignoreLayers: string[] = []): Record<string, ThemeSearchScore> {
+        if (query?.length < 1) {
+            return undefined
+        }
+        themes = Utils.NoNullInplace(themes)
+        const layerScores = this.scoreLayers(query)
+        for (const ignoreLayer of ignoreLayers) {
+            delete layerScores[ignoreLayer]
+        }
+        const results: Record<string, ThemeSearchScore> = {}
+        for (const layoutInfo of themes) {
+            const theme = layoutInfo.id
+            if (theme === "personal") {
+                continue
+            }
+            if (Utils.simplifyStringForSearch(theme) === query) {
+                results[theme] = {
+                    theme: layoutInfo,
+                    lowest: -1,
+                    other: 0
+                }
+                continue
+            }
+            const perLayer = Utils.asRecord(
+                layoutInfo.layers ?? [], layer => layerScores[layer]
+            )
+            const language = Locale.language.data
+
+            const keywords =Utils.NoNullInplace( [layoutInfo.shortDescription, layoutInfo.title])
+                .map(item => typeof item === "string" ? item : (item[language] ?? item["*"]))
+
+
+            const other = Math.min(this.scoreKeywords(query, keywords), this.scoreKeywords(query, layoutInfo.keywords))
+            const lowest = Math.min(other, ...Object.values(perLayer))
+            results[theme] = {
+                theme:layoutInfo,
+                perLayer,
+                other,
+                lowest
             }
         }
+        return results
+    }
 
-        return false
+    public static sortedByLowest(search: string, themes: MinimalLayoutInformation[], ignoreLayers: string[] = []){
+        const scored = Object.values(this.scoreThemes(search, themes, ignoreLayers ))
+        scored.sort((a,b) => a.lowest - b.lowest)
+        return scored
     }
 
     public static createUrlFor(
         layout: { id: string },
-        isCustom: boolean,
-        state?: { layoutToUse?: { id } },
+        state?: { layoutToUse?: { id } }
     ): string {
         if (layout === undefined) {
             return undefined
@@ -136,7 +180,7 @@ export default class MoreScreen {
             linkPrefix = `${path}/theme.html?layout=${layout.id}&`
         }
 
-        if (isCustom) {
+        if (layout.id.startsWith("http://") || layout.id.startsWith("https://")) {
             linkPrefix = `${path}/theme.html?userlayout=${layout.id}&`
         }
 
@@ -155,7 +199,7 @@ export default class MoreScreen {
             new Set<string>(
                 Object.keys(preferences)
                     .filter((key) => key.startsWith(prefix))
-                    .map((key) => key.substring(prefix.length, key.length - "-enabled".length)),
+                    .map((key) => key.substring(prefix.length, key.length - "-enabled".length))
             ))
     }
 }

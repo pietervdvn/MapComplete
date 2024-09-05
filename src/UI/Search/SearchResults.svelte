@@ -29,8 +29,6 @@
 </script>
 <div class="p-4 low-interaction flex gap-y-2 flex-col">
 
-  <h3>Search results</h3>
-
   <ActiveFilters activeFilters={$activeFilters} />
 
   {#if $searchTerm.length > 0 && $filterResults.length > 0}
@@ -79,7 +77,7 @@
       <h3>
         Other maps
       </h3>
-      {#each $themeResults as entry}
+      {#each $themeResults as entry (entry.id)}
         <ThemeResult {entry} />
       {/each}
     </SidebarUnit>

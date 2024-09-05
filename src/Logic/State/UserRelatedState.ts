@@ -1,4 +1,4 @@
-import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
+import LayoutConfig, { MinimalLayoutInformation } from "../../Models/ThemeConfig/LayoutConfig"
 import { OsmConnection } from "../Osm/OsmConnection"
 import { MangroveIdentity } from "../Web/MangroveReviews"
 import { Store, Stores, UIEventSource } from "../UIEventSource"
@@ -141,8 +141,9 @@ export default class UserRelatedState {
         this._recentlyVisitedThemes = UIEventSource.asObject(prefs.GetLongPreference("recently-visited-themes"), [])
         this.recentlyVisitedThemes = this._recentlyVisitedThemes
         if (layout) {
-            const osmConn =this.osmConnection
+            const osmConn = this.osmConnection
             const recentlyVisited = this._recentlyVisitedThemes
+
             function update() {
                 if (!osmConn.isLoggedIn.data) {
                     return
@@ -203,16 +204,7 @@ export default class UserRelatedState {
         }
     }
 
-    public GetUnofficialTheme(id: string):
-        | {
-        id: string
-        icon: string
-        title: any
-        shortDescription: any
-        definition?: any
-        isOfficial: boolean
-    }
-        | undefined {
+    public getUnofficialTheme(id: string): (MinimalLayoutInformation & { definition }) | undefined {
         const pref = this.osmConnection.GetLongPreference("unofficial-theme-" + id)
         const str = pref.data
 
@@ -222,16 +214,7 @@ export default class UserRelatedState {
         }
 
         try {
-            const value: {
-                id: string
-                icon: string
-                title: any
-                shortDescription: any
-                definition?: any
-                isOfficial: boolean
-            } = JSON.parse(str)
-            value.isOfficial = false
-            return value
+            return <MinimalLayoutInformation & { definition: string }>JSON.parse(str)
         } catch (e) {
             console.warn(
                 "Removing theme " +
@@ -464,7 +447,7 @@ export default class UserRelatedState {
                 }
                 if (tags[key + "-combined-0"]) {
                     // A combined value exists
-                    if(tags[key].startsWith("undefined")){
+                    if (tags[key].startsWith("undefined")) {
                         // Sometimes, a long string of 'undefined' will show up, we ignore them
                         continue
                     }

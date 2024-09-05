@@ -1413,11 +1413,6 @@ input[type="range"].range-lg::-moz-range-thumb {
   margin-right: auto;
 }
 
-.mx-3 {
-  margin-left: 0.75rem;
-  margin-right: 0.75rem;
-}
-
 .my-4 {
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -1511,8 +1506,8 @@ input[type="range"].range-lg::-moz-range-thumb {
   margin-left: 0.5rem;
 }
 
-.ml-4 {
-  margin-left: 1rem;
+.mr-3 {
+  margin-right: 0.75rem;
 }
 
 .mb-2 {
@@ -1529,6 +1524,10 @@ input[type="range"].range-lg::-moz-range-thumb {
 
 .mb-1 {
   margin-bottom: 0.25rem;
+}
+
+.ml-4 {
+  margin-left: 1rem;
 }
 
 .mt-8 {
@@ -3913,6 +3912,11 @@ input[type="range"].range-lg::-moz-range-thumb {
   padding-bottom: 0.25rem;
 }
 
+.px-0 {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
@@ -3978,11 +3982,6 @@ input[type="range"].range-lg::-moz-range-thumb {
   padding-bottom: 0.875rem;
 }
 
-.px-0 {
-  padding-left: 0px;
-  padding-right: 0px;
-}
-
 .\!px-0 {
   padding-left: 0px !important;
   padding-right: 0px !important;
@@ -4003,10 +4002,6 @@ input[type="range"].range-lg::-moz-range-thumb {
 
 .pl-2 {
   padding-left: 0.5rem;
-}
-
-.pl-1 {
-  padding-left: 0.25rem;
 }
 
 .pr-1 {
@@ -4035,6 +4030,10 @@ input[type="range"].range-lg::-moz-range-thumb {
 
 .pr-4 {
   padding-right: 1rem;
+}
+
+.pl-1 {
+  padding-left: 0.25rem;
 }
 
 .pb-1\.5 {
@@ -4662,6 +4661,10 @@ input[type="range"].range-lg::-moz-range-thumb {
 .placeholder-red-700::placeholder {
   --tw-placeholder-opacity: 1;
   color: rgb(200 30 30 / var(--tw-placeholder-opacity));
+}
+
+.accent-gray-600 {
+  accent-color: #4B5563;
 }
 
 .opacity-50 {
@@ -8111,10 +8114,6 @@ svg.apply-fill path {
 
   .sm\:mr-1 {
     margin-right: 0.25rem;
-  }
-
-  .sm\:mt-0 {
-    margin-top: 0px;
   }
 
   .sm\:mt-2 {

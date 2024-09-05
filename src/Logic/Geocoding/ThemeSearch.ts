@@ -1,8 +1,7 @@
-import GeocodingProvider, { SearchResult, GeocodingOptions } from "./GeocodingProvider"
+import GeocodingProvider, { GeocodingOptions, SearchResult } from "./GeocodingProvider"
 import * as themeOverview from "../../assets/generated/theme_overview.json"
 import { MinimalLayoutInformation } from "../../Models/ThemeConfig/LayoutConfig"
 import { SpecialVisualizationState } from "../../UI/SpecialVisualization"
-import { Utils } from "../../Utils"
 import MoreScreen from "../../UI/BigComponents/MoreScreen"
 import { ImmutableStore, Store } from "../UIEventSource"
 
@@ -12,11 +11,16 @@ export default class ThemeSearch implements GeocodingProvider {
     private readonly _state: SpecialVisualizationState
     private readonly _knownHiddenThemes: Store<Set<string>>
     private readonly _suggestionLimit: number
+    private readonly _layersToIgnore: string[]
+    private readonly _otherThemes: MinimalLayoutInformation[]
 
     constructor(state: SpecialVisualizationState, suggestionLimit: number) {
         this._state = state
+        this._layersToIgnore = state.layout.layers.map(l => l.id)
         this._suggestionLimit = suggestionLimit
         this._knownHiddenThemes = MoreScreen.knownHiddenThemes(this._state.osmConnection)
+        this._otherThemes = MoreScreen.officialThemes.themes
+            .filter(th => th.id !== state.layout.id)
     }
 
     async search(query: string): Promise<SearchResult[]> {
@@ -40,11 +44,11 @@ export default class ThemeSearch implements GeocodingProvider {
         if (query.length < 1) {
             return []
         }
-        query = Utils.simplifyStringForSearch(query)
-        return ThemeSearch.allThemes
+        const sorted = MoreScreen.sortedByLowest(query, this._otherThemes, this._layersToIgnore)
+        console.log(">>>", sorted)
+        return sorted
+            .map(th => th.theme)
             .filter(th => !th.hideFromOverview || this._knownHiddenThemes.data.has(th.id))
-            .filter(th => th.id !== this._state.layout.id)
-            .filter(th => MoreScreen.MatchesLayout(th, query))
             .slice(0, limit)
     }
 

@@ -22,10 +22,10 @@ export class MinimalLayoutInformation {
     icon: string
     title: Translatable
     shortDescription: Translatable
-    definition?: Translatable
     mustHaveLanguage?: boolean
     hideFromOverview?: boolean
     keywords?: Record<string, string[]>
+    layers: string[]
 }
 /**
  * Minimal information about a theme

@@ -1287,6 +1287,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return withDistance.map((n) => n[0])
     }
 
+
     public static levenshteinDistance(str1: string, str2: string): number {
         const track: number[][] = Array(str2.length + 1)
             .fill(null)
@@ -1435,6 +1436,14 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         }
 
         return d
+    }
+
+    public static asRecord<K extends string | number | symbol, V>(keys: K[], f: ((k: K) => V)): Record<K, V> {
+        const results = <Record<K, V>> {}
+        for (const key of keys) {
+            results[key] = f(key)
+        }
+        return results
     }
 
     static toIdRecord<T extends { id: string }>(ts: T[]): Record<string, T> {
@@ -1781,7 +1790,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
 
     public static NoNullInplace<T>(items: T[]): T[] {
         for (let i = items.length - 1; i >= 0; i--) {
-            if (items[i] === null || items[i] === undefined) {
+            if (items[i] === null || items[i] === undefined || items[i] === "") {
                 items.splice(i, 1)
             }
         }

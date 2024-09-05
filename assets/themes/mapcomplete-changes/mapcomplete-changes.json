@@ -4,13 +4,13 @@
     "en": "Changes made with MapComplete",
     "de": "Änderungen mit MapComplete vorgenommen"
   },
-  "description": {
-    "en": "This maps shows all the changes made with MapComplete",
-    "de": "Diese Karte zeigt alle mit MapComplete vorgenommenen Änderungen"
-  },
   "shortDescription": {
     "en": "Shows changes made by MapComplete",
     "de": "Änderungen von MapComplete anzeigen"
+  },
+  "description": {
+    "en": "This maps shows all the changes made with MapComplete",
+    "de": "Diese Karte zeigt alle mit MapComplete vorgenommenen Änderungen"
   },
   "icon": "./assets/svg/logo.svg",
   "hideFromOverview": true,

@@ -29,13 +29,12 @@ import LayerConfig from "../src/Models/ThemeConfig/LayerConfig"
 import PointRenderingConfig from "../src/Models/ThemeConfig/PointRenderingConfig"
 import { ConversionContext } from "../src/Models/ThemeConfig/Conversion/ConversionContext"
 import { GenerateFavouritesLayer } from "./generateFavouritesLayer"
-import LayoutConfig from "../src/Models/ThemeConfig/LayoutConfig"
+import LayoutConfig, { MinimalLayoutInformation } from "../src/Models/ThemeConfig/LayoutConfig"
 import Translations from "../src/UI/i18n/Translations"
 import { Translatable } from "../src/Models/ThemeConfig/Json/Translatable"
 import { ValidateThemeAndLayers } from "../src/Models/ThemeConfig/Conversion/ValidateThemeAndLayers"
 import { ExtractImages } from "../src/Models/ThemeConfig/Conversion/FixImages"
 import {
-    MinimalTagRenderingConfigJson,
     TagRenderingConfigJson,
 } from "../src/Models/ThemeConfig/Json/TagRenderingConfigJson"
 
@@ -189,7 +188,7 @@ class LayerOverviewUtils extends Script {
         return publicLayerIds
     }
 
-    public static cleanTranslation(t: Record<string, string> | Translation): Translatable {
+    public static cleanTranslation(t: string | Record<string, string> | Translation): Translatable {
         return Translations.T(t).OnEveryLanguage((s) => parse_html(s).textContent).translations
     }
 
@@ -212,11 +211,71 @@ class LayerOverviewUtils extends Script {
         return false
     }
 
+    static mergeKeywords(into: Record<string, string[]>, source: Readonly<Record<string, string[]>>){
+        for (const key in source) {
+            if(into[key]){
+                into[key].push(...source[key])
+            }else{
+                into[key] = source[key]
+            }
+        }
+    }
+
+    private layerKeywords(l: LayerConfigJson): Record<string, string[]> {
+        const keywords: Record<string, string[]> = {}
+
+        function addWord(language: string, word: string | string[]) {
+            if(Array.isArray(word)){
+                word.forEach(w => addWord(language, w))
+                return
+            }
+
+            word = Utils.SubstituteKeys(word, {}).trim()
+            if(!word){
+                return
+            }
+            if (!keywords[language]) {
+                keywords[language] = []
+            }
+            keywords[language].push(word)
+        }
+
+        function addWords(tr: string | Record<string, string> | Record<string, string[]> | TagRenderingConfigJson) {
+            if(!tr){
+                return
+            }
+            if (typeof tr === "string") {
+                addWord("*", tr)
+                return
+            }
+            if (tr["render"] !== undefined || tr["mappings"] !== undefined) {
+                tr = <TagRenderingConfigJson>tr
+                addWords(<Translatable>tr.render)
+                for (const mapping of tr.mappings ?? []) {
+                    if (typeof mapping === "string") {
+                        addWords(mapping)
+                        continue
+                    }
+                    addWords(mapping.then)
+                }
+                return
+            }
+            for (const lang in tr) {
+                addWord(lang, tr[lang])
+            }
+        }
+        addWord("*", l.id)
+        addWords(l.title)
+        addWords(l.description)
+        addWords(l.searchTerms)
+        return keywords
+    }
+
     writeSmallOverview(
         themes: {
             id: string
-            title: any
-            shortDescription: any
+            title: Translatable
+            shortDescription: Translatable
             icon: string
             hideFromOverview: boolean
             mustHaveLanguage: boolean
@@ -228,62 +287,31 @@ class LayerOverviewUtils extends Script {
             }
                 )[]
         }[],
+        sharedLayers: Map<string, LayerConfigJson>
     ) {
-        const perId = new Map<string, any>()
+        const layerKeywords : Record<string, Record<string, string[]>> = {}
+
+        sharedLayers.forEach((layer, id) => {
+            layerKeywords[id] =  this.layerKeywords(layer)
+        })
+
+        const perId = new Map<string, MinimalLayoutInformation>()
         for (const theme of themes) {
+
             const keywords: Record<string, string[]> = {}
-
-            function addWord(language: string, word: string | string[]) {
-                if(Array.isArray(word)){
-                    word.forEach(w => addWord(language, w))
-                    return
-                }
-
-                word = Utils.SubstituteKeys(word, {}).trim()
-                if(!word){
-                    return
-                }
-                console.log(language, "--->", word)
-                if (!keywords[language]) {
-                    keywords[language] = []
-                }
-                keywords[language].push(word)
-            }
-
-            function addWords(tr: string | Record<string, string> | Record<string, string[]> | TagRenderingConfigJson) {
-                if(!tr){
-                    return
-                }
-                if (typeof tr === "string") {
-                    addWord("*", tr)
-                    return
-                }
-                if (tr["render"] !== undefined || tr["mappings"] !== undefined) {
-                    tr = <TagRenderingConfigJson>tr
-                    addWords(<Translatable>tr.render)
-                    for (let mapping of tr.mappings ?? []) {
-                        if (typeof mapping === "string") {
-                            addWords(mapping)
-                            continue
-                        }
-                        addWords(mapping.then)
-                    }
-                    return
-                }
-                for (const lang in tr) {
-                    addWord(lang, tr[lang])
-                }
-            }
-
             for (const layer of theme.layers ?? []) {
                 const l = <LayerConfigJson>layer
-                addWord("*", l.id)
-                addWords(l.title)
-                addWords(l.description)
-                addWords(l.searchTerms)
+                if(sharedLayers.has(l.id)){
+                    continue
+                }
+                if(l.id.startsWith("note_import")){
+                    continue
+                }
+                LayerOverviewUtils.mergeKeywords(keywords, this.layerKeywords(l))
+
             }
 
-            const data = {
+            const data = <MinimalLayoutInformation> {
                 id: theme.id,
                 title: theme.title,
                 shortDescription: LayerOverviewUtils.cleanTranslation(theme.shortDescription),
@@ -291,6 +319,7 @@ class LayerOverviewUtils extends Script {
                 hideFromOverview: theme.hideFromOverview,
                 mustHaveLanguage: theme.mustHaveLanguage,
                 keywords,
+                layers: theme.layers.filter(l => sharedLayers.has(l["id"])).map(l => l["id"])
             }
             perId.set(theme.id, data)
         }
@@ -311,7 +340,7 @@ class LayerOverviewUtils extends Script {
 
         writeFileSync(
             "./src/assets/generated/theme_overview.json",
-            JSON.stringify(sorted, null, "  "),
+            JSON.stringify({ layers: layerKeywords, themes: sorted }, null, "  "),
             { encoding: "utf8" },
         )
     }
@@ -927,7 +956,7 @@ class LayerOverviewUtils extends Script {
         if (whitelist.size == 0) {
             this.writeSmallOverview(
                 Array.from(fixed.values()).map((t) => {
-                    return {
+                    return <any> {
                         ...t,
                         hideFromOverview: t.hideFromOverview ?? false,
                         shortDescription:
@@ -935,6 +964,7 @@ class LayerOverviewUtils extends Script {
                         mustHaveLanguage: t.mustHaveLanguage?.length > 0,
                     }
                 }),
+                sharedLayers
             )
         }
 

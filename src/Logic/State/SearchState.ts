@@ -154,7 +154,7 @@ export default class SearchState {
             const poi = result[0]
             if (poi.category === "theme") {
                 const theme = <MinimalLayoutInformation>poi.payload
-                const url = MoreScreen.createUrlFor(theme, false)
+                const url = MoreScreen.createUrlFor(theme)
                 window.location = <any>url
                 return true
             }

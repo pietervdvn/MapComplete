@@ -47,14 +47,34 @@
   import { CloseButton } from "flowbite-svelte"
   import Hash from "../Logic/Web/Hash"
   import Searchbar from "./Base/Searchbar.svelte"
+  import ChevronRight from "@babeard/svelte-heroicons/mini/ChevronRight"
+  import ChevronLeft from "@babeard/svelte-heroicons/solid/ChevronLeft"
 
   export let state: ThemeViewState
+
+
   let layout = state.layout
   let maplibremap: UIEventSource<MlMap> = state.map
   let state_selectedElement = state.selectedElement
   let selectedElement: UIEventSource<Feature> = new UIEventSource<Feature>(undefined)
   let compass = Orientation.singleton.alpha
   let compassLoaded = Orientation.singleton.gotMeasurement
+  let hash = Hash.hash
+  let previewedImage = state.previewedImage
+  let addNewFeatureMode = state.userRelatedState.addNewFeatureMode
+  let gpsAvailable = state.geolocation.geolocationState.gpsAvailable
+  let gpsButtonAriaLabel = state.geolocation.geolocationState.gpsStateExplanation
+  let debug = state.featureSwitches.featureSwitchIsDebugging
+  let featureSwitches: FeatureSwitchState = state.featureSwitches
+  let currentViewLayer: LayerConfig = layout.layers.find((l) => l.id === "current_view")
+  let rasterLayer: Store<RasterLayerPolygon> = state.mapProperties.rasterLayer
+  let currentZoom = state.mapProperties.zoom
+  let showCrosshair = state.userRelatedState.showCrosshair
+  let visualFeedback = state.visualFeedback
+  let viewport: UIEventSource<HTMLDivElement> = new UIEventSource<HTMLDivElement>(undefined)
+  let mapproperties: MapProperties = state.mapProperties
+  let searchOpened = state.searchState.showSearchDrawer
+
   Orientation.singleton.startMeasurements()
 
   state.selectedElement.addCallback((selected) => {
@@ -73,6 +93,8 @@
     })
   })
 
+  state.mapProperties.installCustomKeyboardHandler(viewport)
+
 
   let selectedLayer: Store<LayerConfig> = state.selectedElement.mapD((element) => {
     if (element.properties.id.startsWith("current_view")) {
@@ -80,20 +102,34 @@
     }
     return state.getMatchingLayer(element.properties)
   })
-  let currentZoom = state.mapProperties.zoom
-  let showCrosshair = state.userRelatedState.showCrosshair
-  let visualFeedback = state.visualFeedback
-  let viewport: UIEventSource<HTMLDivElement> = new UIEventSource<HTMLDivElement>(undefined)
-  let mapproperties: MapProperties = state.mapProperties
-  state.mapProperties.installCustomKeyboardHandler(viewport)
+
   let canZoomIn = mapproperties.maxzoom.map(
     (mz) => mapproperties.zoom.data < mz,
-    [mapproperties.zoom],
+    [mapproperties.zoom]
   )
   let canZoomOut = mapproperties.minzoom.map(
     (mz) => mapproperties.zoom.data > mz,
-    [mapproperties.zoom],
+    [mapproperties.zoom]
   )
+
+  let rasterLayerName =
+    rasterLayer.data?.properties?.name ??
+    AvailableRasterLayers.defaultBackgroundLayer.properties.name
+  onDestroy(
+    rasterLayer.addCallbackAndRunD((l) => {
+      rasterLayerName = l.properties.name
+    })
+  )
+
+
+  debug.addCallbackAndRun((dbg) => {
+    if (dbg) {
+      document.body.classList.add("debug")
+    } else {
+      document.body.classList.remove("debug")
+    }
+  })
+
 
   function updateViewport() {
     const rect = viewport.data?.getBoundingClientRect()
@@ -108,7 +144,7 @@
     const bottomRight = mlmap.unproject([rect.right, rect.bottom])
     const bbox = new BBox([
       [topLeft.lng, topLeft.lat],
-      [bottomRight.lng, bottomRight.lat],
+      [bottomRight.lng, bottomRight.lat]
     ])
     state.visualFeedbackViewportBounds.setData(bbox)
   }
@@ -118,31 +154,6 @@
   })
   mapproperties.bounds.addCallbackAndRunD(() => {
     updateViewport()
-  })
-  let featureSwitches: FeatureSwitchState = state.featureSwitches
-  let currentViewLayer: LayerConfig = layout.layers.find((l) => l.id === "current_view")
-  let rasterLayer: Store<RasterLayerPolygon> = state.mapProperties.rasterLayer
-  let rasterLayerName =
-    rasterLayer.data?.properties?.name ??
-    AvailableRasterLayers.defaultBackgroundLayer.properties.name
-  onDestroy(
-    rasterLayer.addCallbackAndRunD((l) => {
-      rasterLayerName = l.properties.name
-    }),
-  )
-  let previewedImage = state.previewedImage
-  let addNewFeatureMode = state.userRelatedState.addNewFeatureMode
-  let gpsAvailable = state.geolocation.geolocationState.gpsAvailable
-  let gpsButtonAriaLabel = state.geolocation.geolocationState.gpsStateExplanation
-  let debug = state.featureSwitches.featureSwitchIsDebugging
-
-
-  debug.addCallbackAndRun((dbg) => {
-    if (dbg) {
-      document.body.classList.add("debug")
-    } else {
-      document.body.classList.remove("debug")
-    }
   })
 
   function forwardEventToMap(e: KeyboardEvent) {
@@ -157,7 +168,6 @@
     animation?.cameraAnimation(mlmap)
   }
 
-  let hash = Hash.hash
 </script>
 
 <main>
@@ -303,20 +313,11 @@
 
 
   <DrawerRight shown={state.searchState.showSearchDrawer}>
-    <div class="relative">
-      <div class="absolute right-0 top-0 ">
-        <div class="mr-4 mt-4">
-          <CloseButton on:click={() => state.searchState.showSearchDrawer.set(false)} />
-        </div>
-      </div>
-      <SearchResults {state} />
-    </div>
+    <SearchResults {state} />
   </DrawerRight>
 
 
-
-
-    <!-- Top components -->
+  <!-- Top components -->
   <div class="pointer-events-none absolute top-0 left-0 w-full">
 
     <div
@@ -356,9 +357,22 @@
       {/if}
 
       <If condition={state.featureSwitches.featureSwitchSearch}>
-        <div class="w-full sm:w-64">
-          <Searchbar value={state.searchState.searchTerm} isFocused={state.searchState.searchIsFocused}/>
+        <div class="flex items-center">
+          <div class="w-full sm:w-64">
+            <Searchbar value={state.searchState.searchTerm} isFocused={state.searchState.searchIsFocused} />
+          </div>
+          <MapControlButton on:keydown={forwardEventToMap} on:click={() =>{
+            if(searchOpened.data){
+              searchOpened.set(false)
+            }else{
+              state.searchState.searchIsFocused.set(true)
+            }
+            }}>
+            <ChevronRight class="w-7 h-7 p-0 m-0 transition-all"
+                          style={"rotate: " + ($searchOpened ?  "0deg" : "180deg" ) } />
+          </MapControlButton>
         </div>
+
       </If>
 
     </div>

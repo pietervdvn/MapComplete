@@ -7,11 +7,9 @@ import Constants from "../../Models/Constants"
 
 export default class FilterSearch implements GeocodingProvider {
     private readonly _state: SpecialVisualizationState
-    private readonly suggestions
 
     constructor(state: SpecialVisualizationState) {
         this._state = state
-        this.suggestions = this.getSuggestions()
     }
 
     async search(query: string): Promise<SearchResult[]> {
@@ -58,7 +56,6 @@ export default class FilterSearch implements GeocodingProvider {
                     Utils.NoNullInplace(terms)
                     const distances = queries.flatMap(query => terms.map(entry => {
                         const d = Utils.levenshteinDistance(query, entry.slice(0, query.length))
-                        console.log(query, "?  +", terms, "=", d)
                         const dRelative = d / query.length
                         return dRelative
                     }))
@@ -79,10 +76,10 @@ export default class FilterSearch implements GeocodingProvider {
     }
 
 
+    /**
+     * Create a random list of filters
+     */
     getSuggestions(): FilterPayload[] {
-        if (this.suggestions) {
-       //     return this.suggestions
-        }
         const result: FilterPayload[] = []
         for (const [id, filteredLayer] of this._state.layerState.filteredLayers) {
             if (!Array.isArray(filteredLayer.layerDef.filters)) {
