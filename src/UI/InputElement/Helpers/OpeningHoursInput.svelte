@@ -5,8 +5,11 @@
   import { UIEventSource } from "../../../Logic/UIEventSource"
   import ToSvelte from "../../Base/ToSvelte.svelte"
   import OpeningHoursInput from "../../OpeningHours/OpeningHoursInput"
+  import PublicHolidaySelector from "../../OpeningHours/PublicHolidaySelector.svelte"
 
   export let value: UIEventSource<string>
+  export let phSelectorValue = new UIEventSource("")
 </script>
 
-<ToSvelte construct={new OpeningHoursInput(value)} />
+<ToSvelte construct={new OpeningHoursInput(value, phSelectorValue)} />
+<PublicHolidaySelector value={phSelectorValue}/>

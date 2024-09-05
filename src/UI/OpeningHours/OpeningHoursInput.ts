@@ -21,6 +21,7 @@ export default class OpeningHoursInput extends InputElement<string> {
 
     constructor(
         value: UIEventSource<string> = new UIEventSource<string>(""),
+        phSelectorValue: UIEventSource<string> = new UIEventSource<string>(undefined),
         prefix = "",
         postfix = ""
     ) {
@@ -88,7 +89,8 @@ export default class OpeningHoursInput extends InputElement<string> {
                 break
             }
         }
-        const phSelectorValue = new UIEventSource<string>(ph ?? "")
+
+        phSelectorValue.set(ph ?? "")
 
         // Note: MUST be bound AFTER the leftover rules!
         const rulesFromOhPicker: UIEventSource<OpeningHour[]> = valueWithoutPrefix.sync(
@@ -142,7 +144,6 @@ export default class OpeningHoursInput extends InputElement<string> {
         this._element = new Combine([
             leftoverWarning,
             ohPicker,
-            new SvelteUIElement(PublicHolidaySelector, { value: phSelectorValue }),
         ])
     }
 
