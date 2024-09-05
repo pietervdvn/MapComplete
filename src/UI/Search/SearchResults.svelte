@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Store } from "../../Logic/UIEventSource"
+  import { Store, UIEventSource } from "../../Logic/UIEventSource"
   import Loading from "../Base/Loading.svelte"
   import Tr from "../Base/Tr.svelte"
   import Translations from "../i18n/Translations"
@@ -14,10 +14,11 @@
   import FilterResult from "./FilterResult.svelte"
   import ThemeResult from "./ThemeResult.svelte"
   import SidebarUnit from "../Base/SidebarUnit.svelte"
+  import { TrashIcon } from "@babeard/svelte-heroicons/mini"
 
   export let state: ThemeViewState
   let activeFilters: Store<ActiveFilter[]> = state.layerState.activeFilters.map(fs => fs.filter(f => Constants.priviliged_layers.indexOf(<any>f.layer.id) < 0))
-  let recentlySeen: Store<GeocodeResult[]> = state.searchState.recentlySearched.seenThisSession
+  let recentlySeen: UIEventSource<GeocodeResult[]> = state.searchState.recentlySearched.seenThisSession
   let recentThemes = state.userRelatedState.recentlyVisitedThemes.mapD(thms => thms.filter(th => th !== state.layout.id).slice(0, 6))
   let allowOtherThemes = state.featureSwitches.featureSwitchBackToThemeOverview
   let searchTerm = state.searchState.searchTerm
@@ -92,6 +93,10 @@
       {#each $recentlySeen as entry}
         <SearchResultSvelte {entry} {state} on:select />
       {/each}
+      <button class="as-link flex self-end" on:click={() => {recentlySeen.set([])}}>
+        <TrashIcon class="w-4 h-4"/>
+        Delete history
+      </button>
     </SidebarUnit>
   {/if}
 
@@ -106,6 +111,10 @@
           {state}
           on:select />
       {/each}
+      <button class="as-link flex self-end" on:click={() => {state.userRelatedState.recentlyVisitedThemes.set([])}}>
+        <TrashIcon class="w-4 h-4"/>
+        Delete history
+      </button>
     </SidebarUnit>
   {/if}
 

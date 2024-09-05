@@ -47,6 +47,7 @@ export default class ThemeSearch implements GeocodingProvider {
         const sorted = MoreScreen.sortedByLowest(query, this._otherThemes, this._layersToIgnore)
         console.log(">>>", sorted)
         return sorted
+            .filter(sorted => sorted.lowest < 2)
             .map(th => th.theme)
             .filter(th => !th.hideFromOverview || this._knownHiddenThemes.data.has(th.id))
             .slice(0, limit)

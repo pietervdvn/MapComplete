@@ -47,7 +47,7 @@
     if (entry.feature?.properties?.id) {
       state.selectedElement.set(entry.feature)
     }
-    state.recentlySearched.addSelected(entry)
+    state.searchState.recentlySearched.addSelected(entry)
     dispatch("select")
   }
 </script>

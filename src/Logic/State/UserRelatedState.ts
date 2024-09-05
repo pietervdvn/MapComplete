@@ -80,8 +80,7 @@ export default class UserRelatedState {
     public readonly preferencesAsTags: UIEventSource<Record<string, string>>
     private readonly _mapProperties: MapProperties
 
-    private readonly _recentlyVisitedThemes: UIEventSource<string[]>
-    public readonly recentlyVisitedThemes: Store<string[]>
+    public readonly recentlyVisitedThemes: UIEventSource<string[]>
 
 
     constructor(
@@ -138,11 +137,10 @@ export default class UserRelatedState {
         this.preferencesAsTags = this.initAmendedPrefs(layout, featureSwitches)
 
         const prefs = this.osmConnection
-        this._recentlyVisitedThemes = UIEventSource.asObject(prefs.GetLongPreference("recently-visited-themes"), [])
-        this.recentlyVisitedThemes = this._recentlyVisitedThemes
+        this.recentlyVisitedThemes = UIEventSource.asObject(prefs.GetLongPreference("recently-visited-themes"), [])
         if (layout) {
             const osmConn = this.osmConnection
-            const recentlyVisited = this._recentlyVisitedThemes
+            const recentlyVisited = this.recentlyVisitedThemes
 
             function update() {
                 if (!osmConn.isLoggedIn.data) {
@@ -158,7 +156,7 @@ export default class UserRelatedState {
             }
 
 
-            this._recentlyVisitedThemes.addCallbackAndRun(() => update())
+            this.recentlyVisitedThemes.addCallbackAndRun(() => update())
             this.osmConnection.isLoggedIn.addCallbackAndRun(() => update())
         }
 

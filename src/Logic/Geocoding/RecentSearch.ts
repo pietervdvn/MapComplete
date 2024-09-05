@@ -8,13 +8,11 @@ import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 export class RecentSearch {
 
 
-    private readonly _seenThisSession: UIEventSource<GeocodeResult[]>
-    public readonly seenThisSession: Store<GeocodeResult[]>
+    public readonly seenThisSession: UIEventSource<GeocodeResult[]>
 
     constructor(state: { layout: LayoutConfig, osmConnection: OsmConnection, selectedElement: Store<Feature> }) {
         const prefs = state.osmConnection.preferencesHandler.GetLongPreference("previous-searches")
-        this._seenThisSession = new UIEventSource<GeocodeResult[]>([])//UIEventSource.asObject<GeoCodeResult[]>(prefs, [])
-        this.seenThisSession = this._seenThisSession
+        this.seenThisSession = new UIEventSource<GeocodeResult[]>([])//UIEventSource.asObject<GeoCodeResult[]>(prefs, [])
 
         prefs.addCallbackAndRunD(pref => {
             if (pref === "") {
@@ -24,7 +22,7 @@ export class RecentSearch {
 
                 const simpleArr = <GeocodeResult[]>JSON.parse(pref)
                 if (simpleArr.length > 0) {
-                    this._seenThisSession.set(simpleArr)
+                    this.seenThisSession.set(simpleArr)
                     return true
                 }
             } catch (e) {
@@ -72,17 +70,10 @@ export class RecentSearch {
     }
 
     addSelected(entry: GeocodeResult) {
-        const arr = [...(this.seenThisSession.data ?? []).slice(0, 20), entry]
+        const id = entry.osm_type+entry.osm_id
+        const arr = [...(this.seenThisSession.data.reverse() ?? []).slice(0, 5)]
+            .filter(e => e.osm_type+e.osm_id !== id)
 
-        const seenIds = new Set<string>()
-        for (let i = arr.length - 1; i >= 0; i--) {
-            const id = arr[i].osm_type + arr[i].osm_id
-            if (seenIds.has(id)) {
-                arr.splice(i, 1)
-            } else {
-                seenIds.add(id)
-            }
-        }
-        this._seenThisSession.set(arr)
+        this.seenThisSession.set([entry, ...arr])
     }
 }
