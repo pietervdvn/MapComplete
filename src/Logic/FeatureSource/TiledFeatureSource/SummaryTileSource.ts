@@ -78,9 +78,6 @@ export class SummaryTileSource extends DynamicTileSource {
             isActive?: Store<boolean>
         }
     ) {
-        if(layers.length === 0){
-            return
-        }
         const layersSummed = layers.join("+")
         const zDiff = 2
         super(

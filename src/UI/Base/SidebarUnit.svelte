@@ -18,7 +18,7 @@
         padding: 0.25rem;
     }
 
-    :global(.sidebar-button svg, .sidebar-button img) {
+    :global(.sidebar-button svg, .sidebar-button img, .sidebar-unit > button img, .sidebar-unit > button svg) {
         width: 1.5rem;
         height: 1.5rem;
         margin-right: 0.5rem;
@@ -32,7 +32,7 @@
     }
 
 
-    :global(.sidebar-button, .sidebar-unit > a) {
+    :global(.sidebar-button, .sidebar-unit > a, .sidebar-unit > button) {
         display: flex;
         align-items: center;
         border-radius: 0.25rem !important;
@@ -42,12 +42,12 @@
         text-align: start;
     }
 
-    :global(.sidebar-button > svg , .sidebar-button > img, .sidebar-unit > a img, .sidebar-unit > a svg) {
+    :global(.sidebar-button > svg , .sidebar-button > img, .sidebar-unit > a img, .sidebar-unit > a svg, .sidebar-unit > button svg, .sidebar-unit > button img) {
         margin-right: 0.5rem;
         flex-shrink: 0;
     }
 
-    :global(.sidebar-button:hover, .sidebar-unit > a:hover) {
+    :global(.sidebar-button:hover, .sidebar-unit > a:hover, .sidebar-unit > button:hover) {
         background: var(--low-interaction-background) !important;
     }
 

@@ -15,6 +15,10 @@
   import ThemeResult from "./ThemeResult.svelte"
   import SidebarUnit from "../Base/SidebarUnit.svelte"
   import { TrashIcon } from "@babeard/svelte-heroicons/mini"
+  import { Dropdown, DropdownItem } from "flowbite-svelte"
+  import DotsCircleHorizontal from "@rgossiaux/svelte-heroicons/solid/DotsCircleHorizontal"
+  import DotMenu from "../Base/DotMenu.svelte"
+  import { CogIcon } from "@rgossiaux/svelte-heroicons/solid"
 
   export let state: ThemeViewState
   let activeFilters: Store<ActiveFilter[]> = state.layerState.activeFilters.map(fs => fs.filter(f => Constants.priviliged_layers.indexOf(<any>f.layer.id) < 0))
@@ -90,11 +94,11 @@
       <h3 class="m-2">
         <Tr t={Translations.t.general.search.recents} />
       </h3>
-      {#each $recentlySeen as entry}
+      {#each $recentlySeen as entry (entry)}
         <SearchResultSvelte {entry} {state} on:select />
       {/each}
       <button class="as-link flex self-end" on:click={() => {recentlySeen.set([])}}>
-        <TrashIcon class="w-4 h-4"/>
+        <TrashIcon class="w-4 h-4" />
         Delete history
       </button>
     </SidebarUnit>
@@ -102,19 +106,29 @@
 
   {#if $searchTerm.length === 0 && $recentThemes?.length > 0 && $allowOtherThemes}
     <SidebarUnit>
-      <h3 class="m-2">
-        <Tr t={Translations.t.general.search.recentThemes} />
-      </h3>
+      <div class="flex w-full justify-between">
+
+        <h3 class="m-2">
+          <Tr t={Translations.t.general.search.recentThemes} />
+        </h3>
+        <DotMenu>
+          <button on:click={() => {state.userRelatedState.recentlyVisitedThemes.set([])}}>
+            <TrashIcon />
+            Delete earlier visited themes
+          </button>
+          <button>
+            <CogIcon/>
+            Edit sync settings
+          </button>
+        </DotMenu>
+      </div>
       {#each $recentThemes as themeId (themeId)}
         <SearchResultSvelte
           entry={{payload: MoreScreen.officialThemesById.get(themeId), osm_id: themeId, category: "theme"}}
           {state}
           on:select />
       {/each}
-      <button class="as-link flex self-end" on:click={() => {state.userRelatedState.recentlyVisitedThemes.set([])}}>
-        <TrashIcon class="w-4 h-4"/>
-        Delete history
-      </button>
+
     </SidebarUnit>
   {/if}
 

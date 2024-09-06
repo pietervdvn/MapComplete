@@ -5,18 +5,19 @@
   import Icon from "../Map/Icon.svelte"
   import Tr from "../Base/Tr.svelte"
 
-  export let entry:   MinimalLayoutInformation
+  export let entry: MinimalLayoutInformation
   let otherTheme = entry
 </script>
+{#if entry}
+  <a href={MoreScreen.createUrlFor(otherTheme)}
+     class="flex items-center p-2 w-full gap-y-2 rounded-xl searchresult">
 
-<a href={MoreScreen.createUrlFor(otherTheme, false)}
-   class="flex items-center p-2 w-full gap-y-2 rounded-xl searchresult">
-
-  <Icon icon={otherTheme.icon} clss="w-6 h-6 m-1" />
-  <div class="flex flex-col">
-    <b>
-      <Tr t={new Translation(otherTheme.title)} />
-    </b>
-    <!--<Tr t={new Translation(otherTheme.shortDescription)} /> -->
-  </div>
-</a>
+    <Icon icon={otherTheme.icon} clss="w-6 h-6 m-1" />
+    <div class="flex flex-col">
+      <b>
+        <Tr t={new Translation(otherTheme.title)} />
+      </b>
+      <!--<Tr t={new Translation(otherTheme.shortDescription)} /> -->
+    </div>
+  </a>
+{/if}

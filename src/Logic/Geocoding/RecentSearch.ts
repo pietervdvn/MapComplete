@@ -61,6 +61,7 @@ export class RecentSearch {
             const [lon, lat] = GeoOperations.centerpointCoordinates(selected)
             const entry = <GeocodeResult>{
                 feature: selected,
+                display_name: selected.properties.name ?? selected.properties.alt_name ?? selected.properties.local_name,
                 osm_id, osm_type,
                 lon, lat,
             }
@@ -70,9 +71,9 @@ export class RecentSearch {
     }
 
     addSelected(entry: GeocodeResult) {
-        const id = entry.osm_type+entry.osm_id
+        const id = entry.osm_type + entry.osm_id
         const arr = [...(this.seenThisSession.data.reverse() ?? []).slice(0, 5)]
-            .filter(e => e.osm_type+e.osm_id !== id)
+            .filter(e => e.osm_type + e.osm_id !== id)
 
         this.seenThisSession.set([entry, ...arr])
     }

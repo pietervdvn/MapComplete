@@ -138,20 +138,24 @@ export default class SearchState {
         if (query === "") {
             return
         }
+
+
+
         const geolocationState = this.state.geolocation.geolocationState
-        const searcher = this.state.searchState.geosearch
         const bounds = this.state.mapProperties.bounds
         const bbox = this.state.mapProperties.bounds.data
         try {
             this.isSearching.set(true)
             geolocationState?.allowMoving.setData(true)
             geolocationState?.requestMoment.setData(undefined) // If the GPS is still searching for a fix, we say that we don't want tozoom to it anymore
-            const result = await searcher.search(query, { bbox })
-            if (result.length == 0) {
-                this.feedback.set(Translations.t.general.search.nothing)
-                return false
+            let poi: SearchResult
+            if(this.suggestions.data){
+                poi = this.suggestions.data[0]
+            }else{
+                const results = GeocodingUtils.mergeSimilarResults([].concat(...await Promise.all(this.locationSearchers.map(ls => ls.search(query, { bbox: bounds.data })))))
+                poi = results[0]
             }
-            const poi = result[0]
+
             if (poi.category === "theme") {
                 const theme = <MinimalLayoutInformation>poi.payload
                 const url = MoreScreen.createUrlFor(theme)

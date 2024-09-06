@@ -554,6 +554,10 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 this.previewedImage.setData(undefined)
                 return
             }
+            if(this.selectedElement.data){
+                this.selectedElement.setData(undefined)
+                return
+            }
             if (this.searchState.showSearchDrawer.data){
                 this.searchState.showSearchDrawer.set(false)
                 return
@@ -561,7 +565,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
             if (this.guistate.closeAll()){
                return
             }
-            this.selectedElement.setData(undefined)
             Zoomcontrol.resetzoom()
             this.focusOnMap()
         })
