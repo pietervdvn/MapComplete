@@ -158,7 +158,7 @@
 
     <Page {onlyLink} shown={pg.about_theme}>
       <svelte:fragment slot="link">
-        <Marker size="h-6 w-6 mr-2" icons={layout.icon} />
+        <Marker size="h-7 w-7" icons={layout.icon} />
         <Tr t={t.showIntroduction} />
       </svelte:fragment>
       <svelte:fragment slot="header">

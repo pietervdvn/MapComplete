@@ -1530,6 +1530,10 @@ input[type="range"].range-lg::-moz-range-thumb {
   margin-left: 1rem;
 }
 
+.mr-3 {
+  margin-right: 0.75rem;
+}
+
 .mt-8 {
   margin-top: 2rem;
 }
