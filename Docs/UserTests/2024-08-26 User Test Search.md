@@ -31,31 +31,32 @@ The user was asked to search 'Saladette' in Roeselare.
 > "Let's use the search function, cause I don't know by heart where Roeselare is"
 > "Oh, a hamburger menu! Maybe the search is there"
 
-Failure: Search bar isn't very visible and rather hidden/low contrast: the white searchbar on a yellow basemap with many white-on-black indicators is hidden
+ [x] Failure: Search bar isn't very visible and rather hidden/low contrast: the white searchbar on a yellow basemap with many white-on-black indicators is hidden
     Fixed (see #2113)
-Failure: the 'theme overview menu' where a search functionality is (again) not considered a button!
+ [x] Failure: the 'theme overview menu' where a search functionality is (again) not considered a button!
     Fixed (see #2113)
 Observator hinted to the location of the search button
 
 > User clicks search button, an empty result bar appears
 
-Failure: bar shows up if there are no results (was using private navigation)
+ [ ] Failure: bar shows up if there are no results (was using private navigation)
     Search suggestions should be shown!
+
     
 > User searches for 'Roeselare', but the results are mostly 'Kanaal Roeselare'
 
-Failure: maybe dedup some results, and place e.g. cities higher? Is there a relevancy-metric included?
+ [x] Failure: maybe dedup some results, and place e.g. cities higher? Is there a relevancy-metric included?
 (Fixed now)
 
 (In a different part of the user test, the user was asked to go to Ghent)
 > User types 'Gent' and presses enter
 > Gentstraat in Brugge pops up
 
-Failure: cities should have more priority
+ [ ] Failure: cities should have more priority
 
 > User swipes "back" to go to the previous location
 
-Failure: Should this work? TBD
+ [ ] Failure: Should this work? TBD
 
 
 > "Fuck it, let's just type 'Saladette'
@@ -64,7 +65,7 @@ Success, immediately found! "Dat heeft ie snel"
 
 > User sees the little clock of being closed
 
-Failure: closed icon not immediately clear; maybe use a different icon?
+ [ ] Failure: closed icon not immediately clear; maybe use a different icon?
 
 ## Adding a review
 
@@ -72,11 +73,11 @@ Failure: closed icon not immediately clear; maybe use a different icon?
 > User sponteanously adds a review
 
 Success: user sponteanously interacts with the questions!
-Failure: some terms are still in english, fixed now
+ [x] Failure: some terms are still in english, fixed now
 
 > User wants to make a change to the review
 
-Failure: this is not yet possible
+ [/] Failure: this is not yet possible, tracked in https://github.com/pietervdvn/MapComplete/issues/2129
 
 ## Updating information
 
@@ -89,11 +90,11 @@ Failure: this is not yet possible
 > User clicks 'login button' and doesn't know password anymore
 > User wants to _see_ the password they are typing, and will thus first type it in the URL-bar of a new browsertab, to copy-paste it into the password field
 
-Failure: user cannot show the password they are typing. See https://github.com/openstreetmap/openstreetmap-website/issues/5122
+ [/] Failure: user cannot show the password they are typing. See https://github.com/openstreetmap/openstreetmap-website/issues/5122
 
 > Password is incorrect, but user doesn't see immediately see this
 
-Failure: error message should be closer to the login form. See https://github.com/openstreetmap/openstreetmap-website/issues/5123
+ [/] Failure: error message should be closer to the login form. See https://github.com/openstreetmap/openstreetmap-website/issues/5123
 
 > In the end, the observators OSM-account was used
 
@@ -102,20 +103,20 @@ Failure: error message should be closer to the login form. See https://github.co
 
 > THe user notices that complex opening hours are displayed a bit sloppily
 
-Coincidentally, an issue was opened about precisely this at the same time: https://github.com/pietervdvn/MapComplete/issues/2100
+ [+] Coincidentally, an issue was opened about precisely this at the same time: https://github.com/pietervdvn/MapComplete/issues/2100
 
 > At first, the user changed the classification from 'restaurant' to 'fastfood' after thoroughly reading through the descriptions
 
 > Then, the 'cuisine' was inspected. As the restaurant they visited is focusing on _vegetarian_ salads, the user wanted to use the freeform to enter 'vegetarian salad'
 
-Failure: how to properly explain this? Move the 'vegetarian' question up? Should some options, such as 'chicken restaurant' be hidden if `vegetarian=only`?
+ [ ] Failure: how to properly exp   lain this? Move the 'vegetarian' question up? Should some options, such as 'chicken restaurant' be hidden if `vegetarian=only`?
 
-UI: issue: the emojis (especially flags) slightly overlaps with the text on this browser
+ [ ] UI: issue: the emojis (especially flags) slightly overlaps with the text on this browser
 
 > The user left the 'cuisine' question open and moved on to other questions
 > Whenever they answered a question, the UI would jump back to the first open question
 
-Failure: maybe simply remove this?
+ [ ] Failure: maybe simply remove this scrolling behaviour?
 
 > User gets confused by having some bold options: "I thought someone already selected option "Lactose free offering"
 
@@ -123,64 +124,63 @@ Failure: maybe simply remove this?
 > (In the popup for a different restaurant)
 > User wants to scroll down, but the opening hours picker intercepts the swipe event
 
-Failure: move OH-picker into separate popup
+ [x] Failure: move OH-picker into separate popup
 
 > User wants to remove selected OH
 
-Failure: trash bin is too small, maybe provide a 'clear all' button?
+ [x] Failure: trash bin is too small, maybe provide a 'clear all' button?
 
 ![](./2024-08-26%20Usertest-bold-question.png)
 
-Failure: don't show bold (fixed in b79835074fe5f954bd4b64ecdb713ca13503495e)
+ [x] Failure: don't show bold (fixed in b79835074fe5f954bd4b64ecdb713ca13503495e)
 
 > The user also taps the 'phone' icon, upon which the phone app opens with the phone number filled out
 > The phone number misses some numbers
 
-browser-specific-bug: phone links should not contain spaces in blink-based browsers, fixed in 4168ef01e333784f738fafa15d1eb7d7c4c527c7
+ [x] browser-specific-bug: phone links should not contain spaces in blink-based browsers, fixed in 4168ef01e333784f738fafa15d1eb7d7c4c527c7
 
 ## Using filters through the search menu
 
 > When instructed to search for filters, the user didn't realise that is possible through the search
 
-Failure: search results should show some example filters, cities, layers and other thematic maps when nothing has been shown before
-Failure: default text should be changed and broadened and mention more then just 'locations'
+ [ ] Failure: search results should show some example filters, cities, layers and other thematic maps when nothing has been shown before
+ [x] Failure: default text should be changed and broadened and mention more then just 'locations'
 
 > The user attempts to search, but often 'fat-fingers' and presses a shop behind the search bar, opening this
 
-Solution: on mobile, a 'no-touch' buffer should be added; Maybe even a top bar?  --> Fixed in feature/menu-drawer
+ [x] Solution: on mobile, a 'no-touch' buffer should be added; Maybe even a top bar?  --> Fixed in feature/menu-drawer
     Fixed by #2113
 
 > The user was tasked to search a 'vegetarian pizzeria'
 > User literally types "vegetarian pizza", but no filters pop up as the goal was to search for 'pizza' and "vegetarian" separately
 > Same for "vegetarisch frietkot"
 
-Failure: filter-search should be split on word
+ [x] Failure: filter-search should be split on word
     Fixed
 
 > Suggested filters shows up as "This is a pizzeria"
 
-Failure: Unclear text, to be changed
-Unclear that this is a filter that can be added: subheadings are needed
+ [ ] Failure: Unclear text, to be changed
+ [x] Unclear that this is a filter that can be added: subheadings are needed
 
 > User clears the filter, MC hangs as it is re-rendering all items
 
-Failure: show a loading icon
-    Fixed
+ [x] Failure: show a loading icon - Fixed
 
 ## Switching theme
 
 > The user types 'WC' and doesn't find anything
 
-Failure:  only 'toilet' is known, fixed in cdc1e05499ffc41d093503ccd24defa347eea50e
+ [x] Failure:  only 'toilet' is known, fixed in cdc1e05499ffc41d093503ccd24defa347eea50e
 
 > The user sees the 'WC'-theme button, but after a second, it is replaced by other search results
 
-Reorder this, so that slow-loading and fast-loading search queries don't overlap
+ [x] Reorder this, so that slow-loading and fast-loading search queries don't overlap
     Fixed by having separate titles
 
 > The user sees 'no results found', which gets replaced by results a few ms later
 
-Have a 'loading-indicator'
+ [x] Have a 'loading-indicator'
 
 > User switches to 'toilets' theme
 
@@ -198,23 +198,23 @@ Success: the icons are clear :)
 > The user was pointed to the "See and link nearby images"
 > "Wow, linking sounds intimidating"
 
-Note: "and link" also doesn't work if the user isn't logged in
-Remove this wording, fixed in weblate
+ [x] Note: "and link" also doesn't work if the user isn't logged in
+    Remove this wording, fixed in weblate
 
 > Mapillary-pictures popup, some images are made by 'Teddy73'
 > "What is this 'Teddy73' and this 'CC-BY-SA'-thing?
 
-Failure: attribution is unclear and irritating, made smaller in link-preview and more explicit in image preview
+ [x] Failure: attribution is unclear and irritating, made smaller in link-preview and more explicit in image preview
     Fixed
 
 > User wants a bigger version of the picture and zooms in onto the low-quality picture
 
-Failure: user doesn't realize that tapping the picture will open up a pannable, big screen and HD version
-Fix: add a 'zoom-in' icon, fixed in 8465b59c7f4ece18b830899e9cc7b680ae100c13
+ [x] Failure: user doesn't realize that tapping the picture will open up a pannable, big screen and HD version
+    Fix: add a 'zoom-in' icon, fixed in 8465b59c7f4ece18b830899e9cc7b680ae100c13
 
 > User finds the zoomed-in version, but is confused by the download-button. How to link?
 
-Failure: move download-button behind "extra"-dot?
-Failure: should some of the tools (e.g. linking and unlinking) be hidden behind a dot?
+ [ ] Failure: move download-button behind "extra"-dot?
+ [ ] Failure: should some of the tools (e.g. linking and unlinking) be hidden behind a dot?
 
 
