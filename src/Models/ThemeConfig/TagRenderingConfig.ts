@@ -926,6 +926,9 @@ export default class TagRenderingConfig {
      * Might give undefined if setting to unknown is not possible
      */
     public removeToSetUnknown(partOfLayer: LayerConfig, currentTags: Record<string, string>): string[] | undefined {
+        if(!partOfLayer?.source || !currentTags){
+            return
+        }
         const toDelete = new Set<string>()
         if (this.freeform) {
             toDelete.add(this.freeform.key)
