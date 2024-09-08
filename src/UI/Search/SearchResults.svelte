@@ -91,16 +91,25 @@
 
   {#if $searchTerm.length == 0 && $recentlySeen?.length > 0}
     <SidebarUnit>
-      <h3 class="m-2">
-        <Tr t={Translations.t.general.search.recents} />
-      </h3>
+      <div class="flex justify-between">
+
+        <h3 class="m-2">
+          <Tr t={Translations.t.general.search.recents} />
+        </h3>
+        <DotMenu>
+          <button on:click={() => {state.searchState.recentlySearched.seenThisSession.set([])}}>
+            <TrashIcon />
+            Delete search history
+          </button>
+          <button on:click={() => state.guistate.openUsersettings("sync-visited-locations")}>
+            <CogIcon />
+            Edit sync settings
+          </button>
+        </DotMenu>
+      </div>
       {#each $recentlySeen as entry (entry)}
         <SearchResultSvelte {entry} {state} on:select />
       {/each}
-      <button class="as-link flex self-end" on:click={() => {recentlySeen.set([])}}>
-        <TrashIcon class="w-4 h-4" />
-        Delete history
-      </button>
     </SidebarUnit>
   {/if}
 
@@ -116,8 +125,8 @@
             <TrashIcon />
             Delete earlier visited themes
           </button>
-          <button>
-            <CogIcon/>
+          <button on:click={() => state.guistate.openUsersettings("sync-visited-themes")}>
+            <CogIcon />
             Edit sync settings
           </button>
         </DotMenu>

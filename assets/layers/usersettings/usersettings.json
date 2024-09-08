@@ -306,6 +306,12 @@
       }
     },
     {
+      "id": "title-map",
+      "render": {
+        "en": "<h3>Configure map</h3>"
+      }
+    },
+    {
       "id": "a11y-features",
       "question": {
         "en": "What accessibility features should be applied?",
@@ -471,70 +477,123 @@
       ]
     },
     {
-      "id": "picture-license",
-      "description": "This question is not meant to be placed on an OpenStreetMap-element; however it is used in the user information panel to ask which license the user wants",
+      "id": "show_crosshair",
       "question": {
-        "en": "Under what license do you want to publish your pictures?",
-        "de": "Unter welcher Lizenz möchten Sie Ihre Bilder veröffentlichen?",
-        "nl": "Met welke licentie wil je je afbeeldingen toevoegen?",
-        "ca": "Sota quina llicència vols publicar les teves fotos?",
-        "pt": "Sob que licença você deseja publicar suas fotos?",
-        "cs": "Pod jakou licencí chcete své fotografie zveřejnit?",
-        "da": "Under hvilken licens vil du frigive dine billeder?"
+        "en": "Should a crosshair be shown in the center of the display?",
+        "cs": "Měl by se uprostřed displeje zobrazovat kříž?",
+        "de": "Soll ein Fadenkreuz in der Mitte des Bildschirms angezeigt werden?",
+        "nl": "Moet er een kruisje getoond worden in het centrum van je display?"
+      },
+      "questionHint": {
+        "en": "This can help to accurately position a new element",
+        "cs": "To může pomoci přesněji umístit nový prvek",
+        "de": "Dies kann dazu beitragen, ein neues Element genau zu positionieren",
+        "nl": "Dit kan helpen om nieuwe elementen accuraat te plaatsen",
+        "ca": "Això pot ajudar a posicionar amb precisió un nou element"
       },
       "mappings": [
         {
-          "if": "mapcomplete-pictures-license=",
-          "icon": "./assets/layers/usersettings/scale.svg",
-          "then": {
-            "en": "Pictures you take will be licensed with <b>CC0</b> and added to the public domain. This means that everyone can use your pictures for any purpose. <span class='subtle'>This is the default choice.</span>",
-            "de": "Die von Ihnen aufgenommenen Bilder werden mit <b>CC0</b> lizenziert und der Public Domain hinzugefügt. Das bedeutet, dass jeder Ihre Bilder für jeden Zweck verwenden kann. <span class='subtle'>Dies ist die Standardeinstellung.</span>",
-            "nl": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC0</b>-licentie en dus aan het publieke domein toegevoegd worden. Dit betekent dat iedereen je afbeeldingen kan gebruiken voor elk mogelijks gebruik. <span class='subtle'>Dit is de standaard-instelling</span>",
-            "cs": "Pořízené fotografie budou licencovány pod <b>CC0</b> a přidány do veřejné domény. To znamená, že kdokoli může vaše snímky použít k jakémukoli účelu. <span class='subtle'>Toto je výchozí volba.</span>",
-            "ca": "Les imatges que feu tindran llicència <b>CC0</b> i s'afegiran al domini públic. Això vol dir que tothom pot utilitzar les vostres imatges per a qualsevol propòsit. <span class='subtle'>Aquesta és l'opció predeterminada. </span>",
-            "pt": "As fotos que você tirar serão licenciadas com <b>CC0</b> e adicionadas ao domínio público. Isso significa que todos podem usar suas fotos para qualquer finalidade. <span class='subtle'>Esta é a escolha padrão.</span>"
-          },
+          "if": "mapcomplete-show_crosshair=yes",
+          "then": "Show a crosshair in the center of the map when zoomed in above level 17"
+        },
+        {
+          "if": "mapcomplete-show_crosshair=no",
+          "then": "Do not show a crosshair in the center of the map"
+        },
+        {
+          "if": "mapcomplete-show_crosshair=",
+          "then": "Do not show a crosshair in the center of the map",
           "hideInAnswer": true
         },
         {
-          "if": "mapcomplete-pictures-license=CC0",
-          "icon": "./assets/layers/usersettings/scale.svg",
+          "if": "mapcomplete-show_crosshair=always",
+          "then": "Always show a crosshair in the center of the map"
+        }
+      ]
+    },
+    {
+      "id": "fixate-north",
+      "question": {
+        "en": "Should north always be up?",
+        "de": "Soll Norden immer oben sein?",
+        "ca": "El nord hauria d'estar sempre amunt?",
+        "cs": "Měl by být sever vždy nahoře?",
+        "nl": "Moet het noorden altijd naar boven getoond worden?",
+        "da": "Skal nord altid pege opad?"
+      },
+      "mappings": [
+        {
+          "if": "mapcomplete-fixate-north=no",
+          "alsoShowIf": "mapcomplete-fixate-north=",
+          "icon": "./assets/svg/compass.svg",
           "then": {
-            "en": "Pictures you take will be licensed with <b>CC0</b> and added to the public domain. This means that everyone can use your pictures for any purpose.",
-            "de": "Ihre aufgenommenen Bilder werden mit <b>CC0</b> lizenziert und der Public Domain hinzugefügt. Das bedeutet, dass jeder Ihre Bilder für jeden Zweck verwenden kann.",
-            "nl": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC0</b>-licentie en dus aan het publieke domein toegevoegd worden. Dit betekent dat iedereen je afbeeldingen kan gebruiken voor elk mogelijks gebruik.",
-            "ru": "Изображения будут опубликованы под лицензией <b>CC0</b> и перейдут в общественное достояние. Это значит, что кто угодно имеет право использовать их без ограничений.",
-            "cs": "Pořízené fotografie budou licencovány pod <b>CC0</b> a přidány do veřejné domény. To znamená, že kdokoli může vaše snímky použít k jakémukoli účelu.",
-            "ca": "Les imatges que feu tindran llicència <b>CC0</b> i s'afegiran al domini públic. Això vol dir que tothom pot utilitzar les vostres imatges per a qualsevol propòsit.",
-            "es": "Las fotografías que tome tendrán una licencia con <b>CC0</b> y se agregarán al dominio público. Esto significa que todos pueden usar sus imágenes para cualquier propósito.",
-            "pt": "As fotos que você tirar serão licenciadas com <b>CC0</b> e adicionadas ao domínio público. Isso significa que todos podem usar suas fotos para qualquer finalidade.",
-            "da": "Billeder, som du har taget, vil blive udgivet under <b>CC0</b>-licensen og lagt ud i fælleseje. Det betyder, at alle kan bruge dine billeder til ethvert formål.",
-            "fr": "Les photos que vous avez ajoutées seront sous licence <b>CC0</b>  et mises dans le domaine public. Cela signifie que n'importe qui pourra les utiliser, quel qu'en soit l'usage."
+            "en": "Allow to rotate the map",
+            "de": "Drehen der Karte zulassen",
+            "ca": "Permet girar el mapa",
+            "fr": "Autoriser la rotation de la carte",
+            "da": "Tillad rotation af kortet",
+            "cs": "Umožnit otáčení mapy",
+            "nl": "Sta kaartrotatie toe"
           }
         },
         {
-          "if": "mapcomplete-pictures-license=CC-BY 4.0",
-          "icon": "./assets/layers/usersettings/scale.svg",
+          "if": "mapcomplete-fixate-north=yes",
+          "icon": "./assets/svg/compass.svg",
           "then": {
-            "en": "Pictures you take will be licensed with <b>CC-BY 4.0</b> which requires everyone using your picture that they have to attribute you",
-            "ca": "Les fotografies que facis es publicaran sota <b>CC-BY 4.0</b> que requereix que qualsevol que utilitzi la vostra imatge us ha de donar crèdits",
-            "de": "Die von Ihnen aufgenommenen Bilder werden mit <b>CC-BY 4.0</b> lizenziert, was bedeutet, dass jeder, der Ihr Bild verwendet, Sie als Urheber nennen muss",
-            "nl": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC-BY 4.0</b>-licentie. Dit betekent dat iedereen je afbeelding mag gebruiken voor elke toepassing mits het vermelden van je naam",
-            "cs": "Pořízené fotografie budou licencovány pod <b>CC-BY 4.0</b>, což vyžaduje, aby vás uvedl každý, kdo použije vaší fotku",
-            "pt": "As fotos que você tirar serão licenciadas com <b>CC-BY 4.0</b>, que exige que todos que usam sua foto atribuam a você"
+            "en": "Always keep north pointing up",
+            "de": "Norden immer nach oben zeigen lassen",
+            "fr": "Toujours garder le nord en haut",
+            "ca": "Mantingueu sempre el nord apuntant cap amunt",
+            "cs": "Sever vždy směřujte nahoru",
+            "nl": "Hou het noorden altijd naar boven",
+            "da": "Nord peger altid opad"
+          }
+        }
+      ]
+    },
+    {
+      "id": "title-editing",
+      "render": {
+        "en": "<h3>Editing settings</h3>"
+      }
+    },
+    {
+      "id": "all-questions-at-once",
+      "question": {
+        "en": "Should questions for unknown data fields appear one-by-one or together?",
+        "de": "Sollen Fragen für unbekannte Datenfelder einzeln oder zusammen angezeigt werden?",
+        "fr": "Est-ce que les questions pour les champs sans donnée doivent apparaître une à une ou toutes ensembles ?",
+        "pt": "As perguntas para campos de dados desconhecidos devem aparecer uma a uma ou juntas?",
+        "ca": "Les preguntes amb camps de dades desconeguts haurien d'aparèixer una per una o juntes?",
+        "nl": "Moeten onbeantwoorde vragen om beurt of allemaal samen getoond worden?",
+        "cs": "Mají se otázky pro neznámá datová pole zobrazovat jednotlivě, nebo společně?",
+        "da": "Skal spørgsmål for ukendte oplysninger vises ét ad gangen eller alle på én gang?"
+      },
+      "mappings": [
+        {
+          "if": "mapcomplete-show-all-questions=true",
+          "then": {
+            "en": "Show all questions in the infobox together",
+            "de": "Alle Fragen in der Infobox zusammen anzeigen",
+            "ca": "Mostra totes les preguntes al quadre d'informació",
+            "fr": "Afficher toutes les question en même temps dans l'infobox",
+            "pt": "Mostrar todas as perguntas na caixa de informações juntas",
+            "nl": "Toon alle onbeantwoorde vragen",
+            "cs": "Zobrazit všechny otázky v infoboxu dohromady",
+            "da": "Vis alle spørgsmål i infoboksen på én gang"
           }
         },
         {
-          "if": "mapcomplete-pictures-license=CC-BY-SA 4.0",
-          "icon": "./assets/layers/usersettings/scale.svg",
+          "if": "mapcomplete-show-all-questions=false",
           "then": {
-            "en": "Pictures you take will be licensed with <b>CC-BY-SA 4.0</b> which means that everyone using your picture must attribute you and that derivatives of your picture must be reshared with the same license.",
-            "de": "Die von Ihnen aufgenommenen Bilder werden mit <b>CC-BY-SA 4.0</b> lizenziert, was bedeutet, dass jeder, der Ihr Bild verwendet, Sie als Urheber nennen muss und dass Ableitungen Ihres Bildes mit der gleichen Lizenz weitergegeben werden müssen.",
-            "nl": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC-BY-SA 4.0</b>-licentie. Dit betekent dat iedereen je afbeelding mag gebruiken voor elke toepassing mits het vermelden van je naam en dat afgeleide werken van je afbeelding ook ondere deze licentie moeten gepubliceerd worden.",
-            "cs": "Pořízené fotografie budou licencovány pod <b>CC-BY-SA 4.0</b>, což vyžaduje, aby vás uvedl každý, kdo použije vaší fotku a že odvozené fotky musí být dále sdíleny se stejnou licencí.",
-            "ca": "Les imatges que feu tindran una llicència amb <b>CC-BY-SA 4.0</b> el que significa que tothom que utilitzi la vostra imatge us ha d'atribuir i que els derivats de la vostra imatge s'han de tornar a compartir amb la mateixa llicència.",
-            "fr": "Les photos que vous prenez seront sous la licence <b>CC-BY-SA 4.0</b> ce qui signifie que quiconque utilisant votre photo doit vous créditer et que les modifications apportées à votre photo doivent être repartagées avec la même licence.",
-            "pt": "As fotos que você tirar serão licenciadas com <b>CC-BY-SA 4.0</b>, o que significa que todos que usarem sua foto devem atribuí-lo e que os derivados de sua foto devem ser compartilhados novamente com a mesma licença."
+            "en": "Show questions one-by-one",
+            "de": "Fragen der Reihe nach anzeigen",
+            "ca": "Mostra les preguntes una per una",
+            "fr": "Afficher les questions une à une",
+            "pt": "Mostrar perguntas uma a uma",
+            "nl": "Toon de vragen één per één",
+            "cs": "Zobrazit otázky jednu po druhé",
+            "da": "Vis spørgsmål ét ad gangen"
           }
         }
       ]
@@ -605,82 +664,6 @@
       ]
     },
     {
-      "id": "all-questions-at-once",
-      "question": {
-        "en": "Should questions for unknown data fields appear one-by-one or together?",
-        "de": "Sollen Fragen für unbekannte Datenfelder einzeln oder zusammen angezeigt werden?",
-        "fr": "Est-ce que les questions pour les champs sans donnée doivent apparaître une à une ou toutes ensembles ?",
-        "pt": "As perguntas para campos de dados desconhecidos devem aparecer uma a uma ou juntas?",
-        "ca": "Les preguntes amb camps de dades desconeguts haurien d'aparèixer una per una o juntes?",
-        "nl": "Moeten onbeantwoorde vragen om beurt of allemaal samen getoond worden?",
-        "cs": "Mají se otázky pro neznámá datová pole zobrazovat jednotlivě, nebo společně?",
-        "da": "Skal spørgsmål for ukendte oplysninger vises ét ad gangen eller alle på én gang?"
-      },
-      "mappings": [
-        {
-          "if": "mapcomplete-show-all-questions=true",
-          "then": {
-            "en": "Show all questions in the infobox together",
-            "de": "Alle Fragen in der Infobox zusammen anzeigen",
-            "ca": "Mostra totes les preguntes al quadre d'informació",
-            "fr": "Afficher toutes les question en même temps dans l'infobox",
-            "pt": "Mostrar todas as perguntas na caixa de informações juntas",
-            "nl": "Toon alle onbeantwoorde vragen",
-            "cs": "Zobrazit všechny otázky v infoboxu dohromady",
-            "da": "Vis alle spørgsmål i infoboksen på én gang"
-          }
-        },
-        {
-          "if": "mapcomplete-show-all-questions=false",
-          "then": {
-            "en": "Show questions one-by-one",
-            "de": "Fragen der Reihe nach anzeigen",
-            "ca": "Mostra les preguntes una per una",
-            "fr": "Afficher les questions une à une",
-            "pt": "Mostrar perguntas uma a uma",
-            "nl": "Toon de vragen één per één",
-            "cs": "Zobrazit otázky jednu po druhé",
-            "da": "Vis spørgsmål ét ad gangen"
-          }
-        }
-      ]
-    },
-    {
-      "id": "show_crosshair",
-      "question": {
-        "en": "Should a crosshair be shown in the center of the display?",
-        "cs": "Měl by se uprostřed displeje zobrazovat kříž?",
-        "de": "Soll ein Fadenkreuz in der Mitte des Bildschirms angezeigt werden?",
-        "nl": "Moet er een kruisje getoond worden in het centrum van je display?"
-      },
-      "questionHint": {
-        "en": "This can help to accurately position a new element",
-        "cs": "To může pomoci přesněji umístit nový prvek",
-        "de": "Dies kann dazu beitragen, ein neues Element genau zu positionieren",
-        "nl": "Dit kan helpen om nieuwe elementen accuraat te plaatsen",
-        "ca": "Això pot ajudar a posicionar amb precisió un nou element"
-      },
-      "mappings": [
-        {
-          "if": "mapcomplete-show_crosshair=yes",
-          "then": "Show a crosshair in the center of the map when zoomed in above level 17"
-        },
-        {
-          "if": "mapcomplete-show_crosshair=no",
-          "then": "Do not show a crosshair in the center of the map"
-        },
-        {
-          "if": "mapcomplete-show_crosshair=",
-          "then": "Do not show a crosshair in the center of the map",
-          "hideInAnswer": true
-        },
-        {
-          "if": "mapcomplete-show_crosshair=always",
-          "then": "Always show a crosshair in the center of the map"
-        }
-      ]
-    },
-    {
       "id": "add-new-feature",
       "question": {
         "en": "How should the menu to add a new feature be opened?",
@@ -725,44 +708,10 @@
       ]
     },
     {
-      "id": "fixate-north",
-      "question": {
-        "en": "Should north always be up?",
-        "de": "Soll Norden immer oben sein?",
-        "ca": "El nord hauria d'estar sempre amunt?",
-        "cs": "Měl by být sever vždy nahoře?",
-        "nl": "Moet het noorden altijd naar boven getoond worden?",
-        "da": "Skal nord altid pege opad?"
-      },
-      "mappings": [
-        {
-          "if": "mapcomplete-fixate-north=no",
-          "alsoShowIf": "mapcomplete-fixate-north=",
-          "icon": "./assets/svg/compass.svg",
-          "then": {
-            "en": "Allow to rotate the map",
-            "de": "Drehen der Karte zulassen",
-            "ca": "Permet girar el mapa",
-            "fr": "Autoriser la rotation de la carte",
-            "da": "Tillad rotation af kortet",
-            "cs": "Umožnit otáčení mapy",
-            "nl": "Sta kaartrotatie toe"
-          }
-        },
-        {
-          "if": "mapcomplete-fixate-north=yes",
-          "icon": "./assets/svg/compass.svg",
-          "then": {
-            "en": "Always keep north pointing up",
-            "de": "Norden immer nach oben zeigen lassen",
-            "fr": "Toujours garder le nord en haut",
-            "ca": "Mantingueu sempre el nord apuntant cap amunt",
-            "cs": "Sever vždy směřujte nahoru",
-            "nl": "Hou het noorden altijd naar boven",
-            "da": "Nord peger altid opad"
-          }
-        }
-      ]
+      "id": "title-privacy-legal",
+      "render": {
+        "en": "<h3>Privacy and legal</h3>"
+      }
     },
     {
       "id": "more_privacy_theme_override",
@@ -809,6 +758,141 @@
           }
         }
       ]
+    },
+    {
+      "id": "picture-license",
+      "description": "This question is not meant to be placed on an OpenStreetMap-element; however it is used in the user information panel to ask which license the user wants",
+      "question": {
+        "en": "Under what license do you want to publish your pictures?",
+        "de": "Unter welcher Lizenz möchten Sie Ihre Bilder veröffentlichen?",
+        "nl": "Met welke licentie wil je je afbeeldingen toevoegen?",
+        "ca": "Sota quina llicència vols publicar les teves fotos?",
+        "pt": "Sob que licença você deseja publicar suas fotos?",
+        "cs": "Pod jakou licencí chcete své fotografie zveřejnit?",
+        "da": "Under hvilken licens vil du frigive dine billeder?"
+      },
+      "mappings": [
+        {
+          "if": "mapcomplete-pictures-license=",
+          "icon": "./assets/layers/usersettings/scale.svg",
+          "then": {
+            "en": "Pictures you take will be licensed with <b>CC0</b> and added to the public domain. This means that everyone can use your pictures for any purpose. <span class='subtle'>This is the default choice.</span>",
+            "de": "Die von Ihnen aufgenommenen Bilder werden mit <b>CC0</b> lizenziert und der Public Domain hinzugefügt. Das bedeutet, dass jeder Ihre Bilder für jeden Zweck verwenden kann. <span class='subtle'>Dies ist die Standardeinstellung.</span>",
+            "nl": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC0</b>-licentie en dus aan het publieke domein toegevoegd worden. Dit betekent dat iedereen je afbeeldingen kan gebruiken voor elk mogelijks gebruik. <span class='subtle'>Dit is de standaard-instelling</span>",
+            "cs": "Pořízené fotografie budou licencovány pod <b>CC0</b> a přidány do veřejné domény. To znamená, že kdokoli může vaše snímky použít k jakémukoli účelu. <span class='subtle'>Toto je výchozí volba.</span>",
+            "ca": "Les imatges que feu tindran llicència <b>CC0</b> i s'afegiran al domini públic. Això vol dir que tothom pot utilitzar les vostres imatges per a qualsevol propòsit. <span class='subtle'>Aquesta és l'opció predeterminada. </span>",
+            "pt": "As fotos que você tirar serão licenciadas com <b>CC0</b> e adicionadas ao domínio público. Isso significa que todos podem usar suas fotos para qualquer finalidade. <span class='subtle'>Esta é a escolha padrão.</span>"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "mapcomplete-pictures-license=CC0",
+          "icon": "./assets/layers/usersettings/scale.svg",
+          "then": {
+            "en": "Pictures you take will be licensed with <b>CC0</b> and added to the public domain. This means that everyone can use your pictures for any purpose.",
+            "de": "Ihre aufgenommenen Bilder werden mit <b>CC0</b> lizenziert und der Public Domain hinzugefügt. Das bedeutet, dass jeder Ihre Bilder für jeden Zweck verwenden kann.",
+            "nl": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC0</b>-licentie en dus aan het publieke domein toegevoegd worden. Dit betekent dat iedereen je afbeeldingen kan gebruiken voor elk mogelijks gebruik.",
+            "ru": "Изображения будут опубликованы под лицензией <b>CC0</b> и перейдут в общественное достояние. Это значит, что кто угодно имеет право использовать их без ограничений.",
+            "cs": "Pořízené fotografie budou licencovány pod <b>CC0</b> a přidány do veřejné domény. To znamená, že kdokoli může vaše snímky použít k jakémukoli účelu.",
+            "ca": "Les imatges que feu tindran llicència <b>CC0</b> i s'afegiran al domini públic. Això vol dir que tothom pot utilitzar les vostres imatges per a qualsevol propòsit.",
+            "es": "Las fotografías que tome tendrán una licencia con <b>CC0</b> y se agregarán al dominio público. Esto significa que todos pueden usar sus imágenes para cualquier propósito.",
+            "pt": "As fotos que você tirar serão licenciadas com <b>CC0</b> e adicionadas ao domínio público. Isso significa que todos podem usar suas fotos para qualquer finalidade.",
+            "da": "Billeder, som du har taget, vil blive udgivet under <b>CC0</b>-licensen og lagt ud i fælleseje. Det betyder, at alle kan bruge dine billeder til ethvert formål.",
+            "fr": "Les photos que vous avez ajoutées seront sous licence <b>CC0</b>  et mises dans le domaine public. Cela signifie que n'importe qui pourra les utiliser, quel qu'en soit l'usage."
+          }
+        },
+        {
+          "if": "mapcomplete-pictures-license=CC-BY 4.0",
+          "icon": "./assets/layers/usersettings/scale.svg",
+          "then": {
+            "en": "Pictures you take will be licensed with <b>CC-BY 4.0</b> which requires everyone using your picture that they have to attribute you",
+            "ca": "Les fotografies que facis es publicaran sota <b>CC-BY 4.0</b> que requereix que qualsevol que utilitzi la vostra imatge us ha de donar crèdits",
+            "de": "Die von Ihnen aufgenommenen Bilder werden mit <b>CC-BY 4.0</b> lizenziert, was bedeutet, dass jeder, der Ihr Bild verwendet, Sie als Urheber nennen muss",
+            "nl": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC-BY 4.0</b>-licentie. Dit betekent dat iedereen je afbeelding mag gebruiken voor elke toepassing mits het vermelden van je naam",
+            "cs": "Pořízené fotografie budou licencovány pod <b>CC-BY 4.0</b>, což vyžaduje, aby vás uvedl každý, kdo použije vaší fotku",
+            "pt": "As fotos que você tirar serão licenciadas com <b>CC-BY 4.0</b>, que exige que todos que usam sua foto atribuam a você"
+          }
+        },
+        {
+          "if": "mapcomplete-pictures-license=CC-BY-SA 4.0",
+          "icon": "./assets/layers/usersettings/scale.svg",
+          "then": {
+            "en": "Pictures you take will be licensed with <b>CC-BY-SA 4.0</b> which means that everyone using your picture must attribute you and that derivatives of your picture must be reshared with the same license.",
+            "de": "Die von Ihnen aufgenommenen Bilder werden mit <b>CC-BY-SA 4.0</b> lizenziert, was bedeutet, dass jeder, der Ihr Bild verwendet, Sie als Urheber nennen muss und dass Ableitungen Ihres Bildes mit der gleichen Lizenz weitergegeben werden müssen.",
+            "nl": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC-BY-SA 4.0</b>-licentie. Dit betekent dat iedereen je afbeelding mag gebruiken voor elke toepassing mits het vermelden van je naam en dat afgeleide werken van je afbeelding ook ondere deze licentie moeten gepubliceerd worden.",
+            "cs": "Pořízené fotografie budou licencovány pod <b>CC-BY-SA 4.0</b>, což vyžaduje, aby vás uvedl každý, kdo použije vaší fotku a že odvozené fotky musí být dále sdíleny se stejnou licencí.",
+            "ca": "Les imatges que feu tindran una llicència amb <b>CC-BY-SA 4.0</b> el que significa que tothom que utilitzi la vostra imatge us ha d'atribuir i que els derivats de la vostra imatge s'han de tornar a compartir amb la mateixa llicència.",
+            "fr": "Les photos que vous prenez seront sous la licence <b>CC-BY-SA 4.0</b> ce qui signifie que quiconque utilisant votre photo doit vous créditer et que les modifications apportées à votre photo doivent être repartagées avec la même licence.",
+            "pt": "As fotos que você tirar serão licenciadas com <b>CC-BY-SA 4.0</b>, o que significa que todos que usarem sua foto devem atribuí-lo e que os derivados de sua foto devem ser compartilhados novamente com a mesma licença."
+          }
+        }
+      ]
+    },
+    {
+      "id": "sync-visited-themes",
+      "question": {
+        "en": "Should the thematic maps you visit be saved?"
+      },
+      "questionHint": {
+        "en": "If you visit a map about a certain topic, MapComplete can remember this and offer this as suggestion."
+      },
+      "mappings": [
+        {
+          "if": "mapcomplete-theme-history=sync",
+          "alsoShowIf": "mapcomplete-theme-history=",
+          "then": {
+            "en": "Save the visited thematic maps and sync them via openstreetmap.org. OpenStreetMap and all apps you use can see this history"
+          }
+        },
+        {
+          "if": "mapcomplete-theme-history=local",
+          "then": {
+            "en": "Save the visited thematic maps on my device"
+          }
+        },
+        {
+          "if": "mapcomplete-theme-history=no",
+          "then": {
+            "en": "Don't save visited thematic maps"
+          }
+        }
+      ]
+    },
+    {
+      "id": "sync-visited-locations",
+      "question": {
+        "en": "Should the locations you search for and inspect be remembered?"
+      },
+      "questionHint": {
+        "en": "Those locations will be offered in the search menu"
+      },
+      "mappings": [
+        {
+          "if": "mapcomplete-search-history=sync",
+          "alsoShowIf": "mapcomplete-search-history=",
+          "then": {
+            "en": "Save the locations you search for and inspect and sync them via openstreetmap.org. OpenStreetMap and all apps you use can see this history"
+          }
+        },
+        {
+          "if": "mapcomplete-search-history=local",
+          "then": {
+            "en": "Save the locations you search for and inspect on my device"
+          }
+        },
+        {
+          "if": "mapcomplete-search-history=no",
+          "then": {
+            "en": "Don't save the locations you search for and inspect "
+          }
+        }
+      ]
+    },
+    {
+      "id": "title-id",
+      "render": {
+        "en": "<h3>Mangrove ID management</h3>"
+      }
     },
     {
       "id": "mangrove-keys",

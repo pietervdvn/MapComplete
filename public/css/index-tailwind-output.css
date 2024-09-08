@@ -1176,16 +1176,24 @@ input[type="range"].range-lg::-moz-range-thumb {
   top: 2.5rem;
 }
 
+.top-4 {
+  top: 1rem;
+}
+
+.right-4 {
+  right: 1rem;
+}
+
 .left-1\/4 {
   left: 25%;
 }
 
-.top-6 {
-  top: 1.5rem;
-}
-
 .bottom-4 {
   bottom: 1rem;
+}
+
+.top-6 {
+  top: 1.5rem;
 }
 
 .bottom-5 {
@@ -1234,10 +1242,6 @@ input[type="range"].range-lg::-moz-range-thumb {
 
 .top-3 {
   top: 0.75rem;
-}
-
-.top-4 {
-  top: 1rem;
 }
 
 .top-1 {
@@ -1530,10 +1534,6 @@ input[type="range"].range-lg::-moz-range-thumb {
   margin-left: 1rem;
 }
 
-.mr-3 {
-  margin-right: 0.75rem;
-}
-
 .mt-8 {
   margin-top: 2rem;
 }
@@ -1737,6 +1737,10 @@ input[type="range"].range-lg::-moz-range-thumb {
   height: 0px;
 }
 
+.h-7 {
+  height: 1.75rem;
+}
+
 .h-1\/2 {
   height: 50%;
 }
@@ -1747,10 +1751,6 @@ input[type="range"].range-lg::-moz-range-thumb {
 
 .h-modal {
   height: calc(100% - 2rem);
-}
-
-.h-7 {
-  height: 1.75rem;
 }
 
 .h-11 {
@@ -1999,12 +1999,12 @@ input[type="range"].range-lg::-moz-range-thumb {
   width: 0px;
 }
 
-.w-3 {
-  width: 0.75rem;
-}
-
 .w-7 {
   width: 1.75rem;
+}
+
+.w-3 {
+  width: 0.75rem;
 }
 
 .w-11 {
@@ -3259,11 +3259,6 @@ input[type="range"].range-lg::-moz-range-thumb {
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
-.bg-indigo-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(229 237 255 / var(--tw-bg-opacity));
-}
-
 .bg-gray-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
@@ -3292,6 +3287,11 @@ input[type="range"].range-lg::-moz-range-thumb {
 .bg-yellow-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(253 246 178 / var(--tw-bg-opacity));
+}
+
+.bg-indigo-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 237 255 / var(--tw-bg-opacity));
 }
 
 .bg-purple-100 {
@@ -4667,10 +4667,6 @@ input[type="range"].range-lg::-moz-range-thumb {
   color: rgb(200 30 30 / var(--tw-placeholder-opacity));
 }
 
-.accent-gray-600 {
-  accent-color: #4B5563;
-}
-
 .opacity-50 {
   opacity: 0.5;
 }
@@ -4940,6 +4936,12 @@ input[type="range"].range-lg::-moz-range-thumb {
           backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
 }
 
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 .transition {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
@@ -4950,12 +4952,6 @@ input[type="range"].range-lg::-moz-range-thumb {
 
 .transition-colors {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.transition-all {
-  transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -5964,11 +5960,6 @@ svg.apply-fill path {
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
 }
 
-.hover\:bg-indigo-200:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(205 219 254 / var(--tw-bg-opacity));
-}
-
 .hover\:bg-gray-100:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
@@ -6002,6 +5993,11 @@ svg.apply-fill path {
 .hover\:bg-yellow-200:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(252 233 106 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-indigo-200:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(205 219 254 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-purple-200:hover {
@@ -8385,12 +8381,12 @@ svg.apply-fill path {
     height: 100%;
   }
 
-  .md\:w-96 {
-    width: 24rem;
-  }
-
   .md\:w-6\/12 {
     width: 50%;
+  }
+
+  .md\:w-96 {
+    width: 24rem;
   }
 
   .md\:w-48 {
@@ -8526,6 +8522,11 @@ svg.apply-fill path {
   .md\:py-8 {
     padding-top: 2rem;
     padding-bottom: 2rem;
+  }
+
+  .md\:px-2 {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
 
   .md\:pr-2 {
