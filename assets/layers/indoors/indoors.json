@@ -480,8 +480,7 @@
           "if": "room=printer",
           "then": {
             "en": "This is a copy room"
-          },
-          "icon": "./assets/layers/indoors/room_printer.svg"
+          }
         },
         {
           "if": "room=prison_cell",
