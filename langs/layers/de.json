@@ -2854,7 +2854,7 @@
             "Type": {
                 "mappings": {
                     "0": {
-                        "then": "Ein Kletterfelsen - ein einzelner Felsen oder eine Klippe mit einer oder wenigen Kletterrouten, die ohne Seil sicher bestiegen werden können"
+                        "then": "Ein Boulderfelsen - ein einzelner Felsen oder eine Klippe mit einer oder wenigen Boulderrouten, die ohne Seil sicher bestiegen werden können"
                     },
                     "1": {
                         "then": "Ein Kletterfelsen - ein einzelner Fels oder eine Klippe mit mindestens einigen Kletterrouten"
