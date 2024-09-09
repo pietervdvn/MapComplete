@@ -2,7 +2,7 @@
   // All the relevant links
   import ThemeViewState from "../../Models/ThemeViewState"
   import Translations from "../i18n/Translations"
-  import { CogIcon, EyeIcon, HeartIcon } from "@rgossiaux/svelte-heroicons/solid"
+  import { CogIcon, EyeIcon, HeartIcon, TranslateIcon } from "@rgossiaux/svelte-heroicons/solid"
   import Page from "../Base/Page.svelte"
   import PrivacyPolicy from "./PrivacyPolicy.svelte"
   import Tr from "../Base/Tr.svelte"
@@ -262,6 +262,11 @@
     <a class="flex" href="https://github.com/pietervdvn/MapComplete/issues" target="_blank">
       <Bug class="h-6 w-6" />
       <Tr t={Translations.t.general.attribution.openIssueTracker} />
+    </a>
+
+    <a class="flex" href="https://hosted.weblate.org/projects/mapcomplete/" target="_blank">
+      <TranslateIcon class="h-6 w-6"/>
+      <Tr t={Translations.t.translations.activateButton} />
     </a>
 
     <a class="flex" href="https://en.osm.town/@MapComplete" target="_blank">
