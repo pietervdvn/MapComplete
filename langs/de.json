@@ -19,7 +19,7 @@
     "delete": {
         "cancel": "Abbrechen",
         "cannotBeDeleted": "Dieses Element kann nicht gelöscht werden",
-        "delete": "Löschen",
+        "delete": "Objekt löschen",
         "deletedTitle": "Gelöschtes Objekt",
         "explanations": {
             "hardDelete": "Dieses Objekt wird in OpenStreetMap gelöscht. Es kann von einem erfahrenen Mitwirkenden wiederhergestellt werden",
@@ -200,9 +200,9 @@
             "mapillaryHelp": "<b>Mapillary</b> ist ein Online-Dienst, der Straßenbilder sammelt und sie unter einer freien Lizenz anbietet. Mitwirkende dürfen diese Bilder verwenden, um OpenStreetMap zu verbessern",
             "openIssueTracker": "Fehler melden",
             "openMapillary": "Mapillary öffnen",
-            "openOsmcha": "Neueste Bearbeitungen mit {theme} ansehen",
+            "openOsmcha": "Neueste Bearbeitungen mit Thema {theme} ansehen",
             "openOsmchaLastWeek": "Bearbeitungen der letzten 7 Tage anzeigen",
-            "openThemeDocumentation": "Dokumentation für Themenkarte {name} öffnen",
+            "openThemeDocumentation": "Dokumentation zum Thema {name} öffnen",
             "seeOnMapillary": "Dieses Bild auf Mapillary ansehen",
             "themeBy": "Dieses Thema wurde erstellt von {author}",
             "title": "Copyright und Urheberrechtsangabe",
@@ -228,7 +228,7 @@
             },
             "downloadAsPdf": "Aktuelle Karte als PDF herunterladen",
             "downloadAsPdfHelper": "Ideal zum Drucken der aktuellen Karte",
-            "downloadAsPng": "Als Bild herunterladen",
+            "downloadAsPng": "Als Bild (PNG) herunterladen",
             "downloadAsPngHelper": "Am besten geeignet, um in Berichten zu verwenden",
             "downloadAsSvg": "Aktuelle Karte als SVG herunterladen",
             "downloadAsSvgHelper": "Kompatibel mit Inkscape oder Adobe Illustrator; Weiterbearbeitung erforderlich",
@@ -250,7 +250,7 @@
             "pdf": {
                 "current_view_generic": "PDF der aktuellen Karte in {paper_size} im {orientation} Format herunterladen"
             },
-            "title": "Download",
+            "title": "Karte herunterladen",
             "toMuch": "Es gibt zu viele Funktionen, um sie alle herunterzuladen",
             "uploadGpx": "Einen Track auf OpenStreetMap hochladen"
         },
