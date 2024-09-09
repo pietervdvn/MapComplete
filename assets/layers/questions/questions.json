@@ -2080,7 +2080,6 @@
         "ca": "Aquest lloc ofereix accés a internet?",
         "pl": "Czy to miejsce oferuje dostęp do Internetu?"
       },
-      "multiAnswer": true,
       "mappings": [
         {
           "if": "internet_access=wlan",
@@ -2169,6 +2168,13 @@
             "fr": "Cet endroit offre un accès Internet filaire",
             "ca": "Aquest lloc ofereix accés a internet per cable",
             "pl": "To miejsce oferuje przewodowy dostęp do Internetu"
+          }
+        },
+        {
+          "if": "internet_access=terminal;wifi",
+          "alsoShowIf": "internet_access=wifi;terminal",
+          "then": {
+            "en": "This place offers both wireless internet and internet access via a terminal or computer"
           }
         }
       ],
