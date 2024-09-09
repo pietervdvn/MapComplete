@@ -291,7 +291,10 @@
         },
         {
           "if": "climbing=area",
-          "then": "A climbing area with one or more climbing crags and/or boulders"
+          "then": {
+            "en": "A climbing area with one or more climbing crags and/or boulders",
+            "de": "Ein Klettergebiet mit einem oder meheren Kletter- und/oder Boulderfelsen"
+          }
         }
       ],
       "id": "Type"
