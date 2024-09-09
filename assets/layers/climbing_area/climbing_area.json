@@ -292,7 +292,7 @@
         {
           "if": "climbing=area",
           "then": {
-            "en": "A climbing area with one or more climbing crags and/or boulders"
+            "en": "A climbing area with one or more climbing crags and/or boulders",
             "de": "Ein Klettergebiet mit einem oder meheren Kletter- und/oder Boulderfelsen"
           }
         }
