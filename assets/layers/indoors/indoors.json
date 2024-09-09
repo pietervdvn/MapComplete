@@ -145,6 +145,7 @@
                 "room=locker",
                 "room=nursery",
                 "room=office",
+                "room=printer",
                 "room=prison_cell",
                 "room=restaurant",
                 "room=security_check",
@@ -185,6 +186,7 @@
                     "room=locker",
                     "room=nursery",
                     "room=office",
+                    "room=printer",
                     "room=prison_cell",
                     "room=restaurant",
                     "room=security_check",
@@ -473,6 +475,12 @@
             "pl": "To jest biuro"
           },
           "icon": "./assets/layers/indoors/room_office.svg"
+        },
+        {
+          "if": "room=printer",
+          "then": {
+            "en": "This is a copy room"
+          }
         },
         {
           "if": "room=prison_cell",
