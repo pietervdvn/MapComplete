@@ -67,7 +67,7 @@ import { LayerConfigJson } from "./ThemeConfig/Json/LayerConfigJson"
 import Hash from "../Logic/Web/Hash"
 import { GeoOperations } from "../Logic/GeoOperations"
 import { CombinedFetcher } from "../Logic/Web/NearbyImagesSearch"
-import { GeocodingUtils } from "../Logic/Geocoding/GeocodingProvider"
+import { GeocodeResult, GeocodingUtils } from "../Logic/Geocoding/GeocodingProvider"
 import SearchState from "../Logic/State/SearchState"
 
 /**
@@ -900,6 +900,20 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 }
             })
         })
+
+        this.selectedElement.addCallbackD(selected => {
+            const [osm_type, osm_id] = selected.properties.id.split("/")
+            const [lon, lat]  = GeoOperations.centerpointCoordinates(selected)
+            const layer = this.layout.getMatchingLayer(selected.properties)
+            const r = <GeocodeResult> {
+                feature: selected,
+                display_name: selected.properties.name ?? selected.properties.alt_name ?? selected.properties.local_name ?? layer.title.GetRenderValue(selected.properties ?? {}).txt ,
+                osm_id, osm_type,
+                lon, lat,
+            }
+            this.userRelatedState.recentlyVisitedSearch.add(r)
+        })
+
         new ThemeViewStateHashActor(this)
         new MetaTagging(this)
         new TitleHandler(this.selectedElement, this.featureProperties, this)

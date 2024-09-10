@@ -22,7 +22,7 @@
   if (entry.feature?.properties?.id) {
     layer = state.layout.getMatchingLayer(entry.feature.properties)
     tags = state.featureProperties.getStore(entry.feature.properties.id)
-    descriptionTr = layer.tagRenderings.find(tr => tr.labels.indexOf("description") >= 0)
+    descriptionTr = layer?.tagRenderings?.find(tr => tr.labels.indexOf("description") >= 0)
   }
 
   let dispatch = createEventDispatcher<{ select }>()
@@ -47,7 +47,7 @@
     if (entry.feature?.properties?.id) {
       state.selectedElement.set(entry.feature)
     }
-    state.searchState.recentlySearched.addSelected(entry)
+    state.userRelatedState.recentlyVisitedSearch.add(entry)
     dispatch("select")
   }
 </script>
@@ -81,11 +81,11 @@
       </div>
       <div class="flex flex-wrap gap-x-2">
 
-        {#if descriptionTr}
+        {#if descriptionTr && tags}
           <TagRenderingAnswer defaultSize="subtle" noIcons={true} config={descriptionTr} {tags} {state}
                               selectedElement={entry.feature} {layer} />
         {/if}
-        {#if descriptionTr && entry.description}
+        {#if descriptionTr && tags && entry.description}
           –
         {/if}
         {#if entry.description}

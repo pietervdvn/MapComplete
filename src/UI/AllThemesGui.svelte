@@ -45,9 +45,9 @@
 
   const officialThemes: MinimalLayoutInformation[] = MoreScreen.officialThemes.themes.filter(th => th.hideFromOverview === false)
   const hiddenThemes: MinimalLayoutInformation[] = MoreScreen.officialThemes.themes.filter(th => th.hideFromOverview === true)
-  let visitedHiddenThemes: Store<MinimalLayoutInformation[]> = MoreScreen.knownHiddenThemes(state.osmConnection)
+  let visitedHiddenThemes: Store<MinimalLayoutInformation[]> = UserRelatedState.initDiscoveredHiddenThemes(state.osmConnection)
     .map((knownIds) => hiddenThemes.filter((theme) =>
-      knownIds.has(theme.id) || state.osmConnection.userDetails.data.name === "Pieter Vander Vennet"
+      knownIds.indexOf(theme.id) >= 0 || state.osmConnection.userDetails.data.name === "Pieter Vander Vennet"
     ))
 
 

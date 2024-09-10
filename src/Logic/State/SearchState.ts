@@ -4,7 +4,6 @@ import GeocodingProvider, {
     GeocodingUtils,
     type SearchResult
 } from "../Geocoding/GeocodingProvider"
-import { RecentSearch } from "../Geocoding/RecentSearch"
 import { ImmutableStore, Store, Stores, UIEventSource } from "../UIEventSource"
 import CombinedSearcher from "../Geocoding/CombinedSearcher"
 import FilterSearch from "../Geocoding/FilterSearch"
@@ -25,7 +24,6 @@ import ShowDataLayer from "../../UI/Map/ShowDataLayer"
 export default class SearchState {
 
     public readonly isSearching = new UIEventSource(false)
-    public readonly recentlySearched: RecentSearch
     public readonly feedback: UIEventSource<Translation> = new UIEventSource<Translation>(undefined)
     public readonly searchTerm: UIEventSource<string> = new UIEventSource<string>("")
     public readonly searchIsFocused = new UIEventSource(false)
@@ -48,7 +46,6 @@ export default class SearchState {
             new PhotonSearch() // new NominatimGeocoding(),
         ]
 
-        this.recentlySearched = new RecentSearch(state)
         const bounds = state.mapProperties.bounds
         const suggestionsList = this.searchTerm.stabilized(250).mapD(search => {
                 if (search.length === 0) {

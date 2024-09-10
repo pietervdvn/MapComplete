@@ -1,11 +1,7 @@
 import { Store, UIEventSource } from "../Logic/UIEventSource"
 import BaseUIElement from "./BaseUIElement"
-import LayoutConfig, { MinimalLayoutInformation } from "../Models/ThemeConfig/LayoutConfig"
-import {
-    FeatureSource,
-    IndexedFeatureSource,
-    WritableFeatureSource
-} from "../Logic/FeatureSource/FeatureSource"
+import LayoutConfig from "../Models/ThemeConfig/LayoutConfig"
+import { FeatureSource, IndexedFeatureSource, WritableFeatureSource } from "../Logic/FeatureSource/FeatureSource"
 import { OsmConnection } from "../Logic/Osm/OsmConnection"
 import { Changes } from "../Logic/Osm/Changes"
 import { ExportableMap, MapProperties } from "../Models/MapProperties"
@@ -18,7 +14,6 @@ import LayerConfig from "../Models/ThemeConfig/LayerConfig"
 import FeatureSwitchState from "../Logic/State/FeatureSwitchState"
 import { MenuState } from "../Models/MenuState"
 import OsmObjectDownloader from "../Logic/Osm/OsmObjectDownloader"
-import { RasterLayerPolygon } from "../Models/RasterLayers"
 import { ImageUploadManager } from "../Logic/ImageProviders/ImageUploadManager"
 import { OsmTags } from "../Models/OsmFeature"
 import FavouritesFeatureSource from "../Logic/FeatureSource/Sources/FavouritesFeatureSource"
@@ -30,6 +25,8 @@ import { Map as MlMap } from "maplibre-gl"
 import ShowDataLayer from "./Map/ShowDataLayer"
 import { CombinedFetcher } from "../Logic/Web/NearbyImagesSearch"
 import SearchState from "../Logic/State/SearchState"
+import UserRelatedState, { OptionallySyncedHistory } from "../Logic/State/UserRelatedState"
+import GeocodeResult from "./Search/GeocodeResult.svelte"
 
 /**
  * The state needed to render a special Visualisation.
@@ -80,15 +77,7 @@ export interface SpecialVisualizationState {
     readonly fullNodeDatabase?: FullNodeDatabaseSource
 
     readonly perLayer: ReadonlyMap<string, GeoIndexedStoreForLayer>
-    readonly userRelatedState: {
-        readonly imageLicense: UIEventSource<string>
-        readonly showTags: UIEventSource<"no" | undefined | "always" | "yes" | "full">
-        readonly mangroveIdentity: MangroveIdentity
-        readonly showAllQuestionsAtOnce: UIEventSource<boolean>
-        readonly preferencesAsTags: UIEventSource<Record<string, string>>
-        readonly language: UIEventSource<string>
-        readonly recentlyVisitedThemes: Store<string[]>
-    }
+    readonly userRelatedState: UserRelatedState
 
     readonly imageUploadManager: ImageUploadManager
 

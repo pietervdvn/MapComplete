@@ -188,18 +188,4 @@ export default class MoreScreen {
         return `${linkPrefix}`
     }
 
-    /**
-     * Gives all the IDs of the hidden themes which were previously visited
-     * @param osmConnection
-     */
-    public static knownHiddenThemes(osmConnection: OsmConnection): Store<Set<string>> {
-        const prefix = "mapcomplete-hidden-theme-"
-        const userPreferences = osmConnection.preferencesHandler.preferences
-        return userPreferences.map((preferences) =>
-            new Set<string>(
-                Object.keys(preferences)
-                    .filter((key) => key.startsWith(prefix))
-                    .map((key) => key.substring(prefix.length, key.length - "-enabled".length))
-            ))
-    }
 }

@@ -838,20 +838,20 @@
       },
       "mappings": [
         {
-          "if": "mapcomplete-theme-history=sync",
-          "alsoShowIf": "mapcomplete-theme-history=",
+          "if": "mapcomplete-preference-theme-history=sync",
+          "alsoShowIf": "mapcomplete-preference-theme-history=",
           "then": {
             "en": "Save the visited thematic maps and sync them via openstreetmap.org. OpenStreetMap and all apps you use can see this history"
           }
         },
         {
-          "if": "mapcomplete-theme-history=local",
+          "if": "mapcomplete-preference-theme-history=local",
           "then": {
             "en": "Save the visited thematic maps on my device"
           }
         },
         {
-          "if": "mapcomplete-theme-history=no",
+          "if": "mapcomplete-preference-theme-history=no",
           "then": {
             "en": "Don't save visited thematic maps"
           }
@@ -868,20 +868,20 @@
       },
       "mappings": [
         {
-          "if": "mapcomplete-search-history=sync",
-          "alsoShowIf": "mapcomplete-search-history=",
+          "if": "mapcomplete-preference-search-history=sync",
+          "alsoShowIf": "mapcomplete-preference-search-history=",
           "then": {
             "en": "Save the locations you search for and inspect and sync them via openstreetmap.org. OpenStreetMap and all apps you use can see this history"
           }
         },
         {
-          "if": "mapcomplete-search-history=local",
+          "if": "mapcomplete-preference-search-history=local",
           "then": {
             "en": "Save the locations you search for and inspect on my device"
           }
         },
         {
-          "if": "mapcomplete-search-history=no",
+          "if": "mapcomplete-preference-search-history=no",
           "then": {
             "en": "Don't save the locations you search for and inspect "
           }

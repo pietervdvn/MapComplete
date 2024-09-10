@@ -5,18 +5,19 @@
   /**
    * A menu, opened by a dot
    */
-  export let dotColor = "var(--background-interactive)"
-  export let placement: "left" | "right" | "top" | "bottom" = "left"
+
   export let open = new UIEventSource(false)
 
   function toggle() {
     open.set(!open.data)
   }
+
+
 </script>
 
 <div class="relative" style="z-index: 50">
   <div
-    class="sidebar-unit absolute right-0 top-0 collapsable normal-background button-unstyled border-2 border-gray-300"
+    class="sidebar-unit absolute right-0 top-0 collapsable normal-background button-unstyled"
     class:collapsed={!$open}>
     <slot />
   </div>
@@ -31,6 +32,7 @@
     :global(.dots-menu > path) {
         fill: var(--interactive-background);
         transition: fill 350ms linear;
+        cursor: pointer;
 
     }
 
@@ -41,18 +43,21 @@
     .collapsable {
         max-width: 100rem;
         max-height: 100rem;
-        transition: max-width 500ms ease-in-out, border 400ms linear;
+        transition: border 150ms linear, max-width 500ms linear, max-height 500ms linear;
         overflow: hidden;
         flex-wrap: nowrap;
         text-wrap: none;
         width: max-content;
         box-shadow: #ccc ;
         white-space: nowrap;
+        border: 1px solid var(--button-background);
     }
 
     .collapsed {
         max-width: 0;
-        border: 2px solid #00000000
+        max-height: 0;
+        border: 2px solid #00000000;
+        pointer-events: none;
     }
 
 </style>

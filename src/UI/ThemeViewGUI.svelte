@@ -60,7 +60,6 @@
   let compass = Orientation.singleton.alpha
   let compassLoaded = Orientation.singleton.gotMeasurement
   let hash = Hash.hash
-  let previewedImage = state.previewedImage
   let addNewFeatureMode = state.userRelatedState.addNewFeatureMode
   let gpsAvailable = state.geolocation.geolocationState.gpsAvailable
   let gpsButtonAriaLabel = state.geolocation.geolocationState.gpsStateExplanation

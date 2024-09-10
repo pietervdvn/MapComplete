@@ -2,6 +2,8 @@
   import { Store, UIEventSource } from "../../Logic/UIEventSource"
   import SimpleMetaTaggers from "../../Logic/SimpleMetaTagger"
   import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
+  import Searchbar from "../Base/Searchbar.svelte"
+  import Translations from "../i18n/Translations"
 
   export let tags: UIEventSource<Record<string, any>>
   export let tagKeys = tags.map((tgs) => (tgs === undefined ? [] : Object.keys(tgs)))
@@ -31,9 +33,11 @@
 
   const metaKeys: string[] = [].concat(...SimpleMetaTaggers.metatags.map((k) => k.keys))
   let allCalculatedTags = new Set<string>([...calculatedTags, ...metaKeys])
+  let search = new UIEventSource<string>("")
 </script>
 
 <section>
+  <Searchbar value={search} placeholder={Translations.T("Search a key")}></Searchbar>
   <table class="zebra-table break-all">
     <tr>
       <th>Key</th>
@@ -43,7 +47,7 @@
       <th colspan="2">Normal tags</th>
     </tr>
     {#each $tagKeys as key}
-      {#if !allCalculatedTags.has(key)}
+      {#if !allCalculatedTags.has(key) && ($search?.length === 0 || key.toLowerCase().indexOf($search.toLowerCase()) >= 0)}
         <tr>
           <td>{key}</td>
           <td style="width: 75%">

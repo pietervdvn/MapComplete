@@ -22,8 +22,8 @@
 
   export let state: ThemeViewState
   let activeFilters: Store<ActiveFilter[]> = state.layerState.activeFilters.map(fs => fs.filter(f => Constants.priviliged_layers.indexOf(<any>f.layer.id) < 0))
-  let recentlySeen: UIEventSource<GeocodeResult[]> = state.searchState.recentlySearched.seenThisSession
-  let recentThemes = state.userRelatedState.recentlyVisitedThemes.mapD(thms => thms.filter(th => th !== state.layout.id).slice(0, 6))
+  let recentlySeen: Store<GeocodeResult[]> = state.userRelatedState.recentlyVisitedSearch.value
+  let recentThemes = state.userRelatedState.recentlyVisitedThemes.value.map(themes => themes.filter(th => th.id !== state.layout.id).slice(0, 6))
   let allowOtherThemes = state.featureSwitches.featureSwitchBackToThemeOverview
   let searchTerm = state.searchState.searchTerm
   let results = state.searchState.suggestions
@@ -97,7 +97,7 @@
           <Tr t={Translations.t.general.search.recents} />
         </h3>
         <DotMenu>
-          <button on:click={() => {state.searchState.recentlySearched.seenThisSession.set([])}}>
+          <button on:click={() => {state.userRelatedState.recentlyVisitedSearch.clear()}}>
             <TrashIcon />
             Delete search history
           </button>
@@ -121,7 +121,7 @@
           <Tr t={Translations.t.general.search.recentThemes} />
         </h3>
         <DotMenu>
-          <button on:click={() => {state.userRelatedState.recentlyVisitedThemes.set([])}}>
+          <button on:click={() => {state.userRelatedState.recentlyVisitedThemes.clear()}}>
             <TrashIcon />
             Delete earlier visited themes
           </button>

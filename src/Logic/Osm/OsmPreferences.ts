@@ -1,151 +1,109 @@
-import { UIEventSource } from "../UIEventSource"
-import UserDetails, { OsmConnection } from "./OsmConnection"
-import { Utils } from "../../Utils"
+import { Store, UIEventSource } from "../UIEventSource"
+import { OsmConnection } from "./OsmConnection"
 import { LocalStorageSource } from "../Web/LocalStorageSource"
 import OSMAuthInstance = OSMAuth.osmAuth
 
 export class OsmPreferences {
-    /**
-     * A dictionary containing all the preferences. The 'preferenceSources' will be initialized from this
-     * We keep a local copy of them, to init mapcomplete with the previous choices and to be able to get the open changesets right away
-     */
-    public preferences = LocalStorageSource.GetParsed<Record<string, string>>(
-        "all-osm-preferences",
-        {}
-    )
-    /**
-     * A map containing the individual preference sources
-     * @private
-     */
-    private readonly preferenceSources = new Map<string, UIEventSource<string>>()
-    private readonly auth: OSMAuthInstance
-    private userDetails: UIEventSource<UserDetails>
-    private longPreferences = {}
+
+    private normalPreferences: Record<string, UIEventSource<string>> = {}
+    private longPreferences: Record<string, UIEventSource<string>> = {}
+    private localStorageInited: Set<string> = new Set()
+
+    private readonly _allPreferences: UIEventSource<Record<string, string>> = new UIEventSource({})
+    public readonly allPreferences: Store<Readonly<Record<string, string>>> = this._allPreferences
     private readonly _fakeUser: boolean
+    private readonly auth: OSMAuthInstance
+    private readonly osmConnection: OsmConnection
 
     constructor(auth: OSMAuthInstance, osmConnection: OsmConnection, fakeUser: boolean = false) {
         this.auth = auth
         this._fakeUser = fakeUser
-        this.userDetails = osmConnection.userDetails
+        this.osmConnection = osmConnection
         osmConnection.OnLoggedIn(() => {
-            this.UpdatePreferences(true)
+            this.loadBulkPreferences()
             return true
         })
     }
 
+    private getLongValue(allPrefs: Record<string, string>, key: string): string {
+        const count = Number(allPrefs[key + "-length"])
+        let str = ""
+        for (let i = 0; i < count; i++) {
+            str += allPrefs[key + i]
+        }
+        return str
+
+    }
+
+    private setPreferencesAll(key: string, value: string) {
+        if (this._allPreferences.data[key] !== value) {
+            this._allPreferences.data[key] = value
+            this._allPreferences.ping()
+        }
+    }
+
+    private initPreference(key: string, value: string = "", excludeFromAll: boolean = false): UIEventSource<string> {
+        if (this.normalPreferences[key] !== undefined) {
+            return this.normalPreferences[key]
+        }
+        const pref = this.normalPreferences[key] = new UIEventSource(value, "preference: " + key)
+        if(value && !excludeFromAll){
+            this.setPreferencesAll(key, value)
+        }
+        pref.addCallback(v => {
+            this.UploadPreference(key, v)
+            if(!excludeFromAll){
+                this.setPreferencesAll(key, v)
+            }
+        })
+        return pref
+    }
+
+    private initLongPreference(key: string, initialValue: string): UIEventSource<string> {
+        if (this.longPreferences[key] !== undefined) {
+            return this.longPreferences[key]
+        }
+        const pref = this.longPreferences[key] = new UIEventSource<string>(initialValue, "long-preference-"+key)
+        const maxLength = 255
+        const length = UIEventSource.asInt(this.initPreference(key + "-length", "0", true))
+        if(initialValue){
+            this.setPreferencesAll(key, initialValue)
+        }
+        pref.addCallback(v => {
+            length.set(Math.ceil(v.length / maxLength))
+            let i = 0
+            while (v.length > 0) {
+                this.UploadPreference(key + "-" + i, v.substring(0, maxLength))
+                i++
+                v = v.substring(maxLength)
+            }
+            this.setPreferencesAll(key, v)
+        })
+        return pref
+    }
+
+    private async loadBulkPreferences() {
+        const prefs = await this.getPreferencesDict()
+        const isCombined = /-combined-/
+        for (const key in prefs) {
+            if (key.endsWith("-combined-length")) {
+                const v = this.getLongValue(prefs, key.substring(0, key.length - "-length".length))
+                this.initLongPreference(key, v)
+            }
+            if (key.match(isCombined)) {
+                continue
+            }
+            this.initPreference(key, prefs[key])
+        }
+    }
+
     /**
-     * OSM preferences can be at most 255 chars
-     * @param key
-     * @param prefix
-     * @constructor
+     * OSM preferences can be at most 255 chars.
+     * This method chains multiple together.
+     * Values written into this key will be erased when the user logs in
      */
     public GetLongPreference(key: string, prefix: string = "mapcomplete-"): UIEventSource<string> {
-        if (this.longPreferences[prefix + key] !== undefined) {
-            return this.longPreferences[prefix + key]
-        }
-
-        const source = new UIEventSource<string>(undefined, "long-osm-preference:" + prefix + key)
-        this.longPreferences[prefix + key] = source
-
-        const allStartWith = prefix + key + "-combined"
-        const subOptions = { prefix: "" }
-        // Gives the number of combined preferences
-        const length = this.GetPreference(allStartWith + "-length", "", subOptions)
-        const preferences = this.preferences
-        if ((allStartWith + "-length").length > 255) {
-            throw (
-                "This preference key is too long, it has " +
-                key.length +
-                " characters, but at most " +
-                (255 - "-length".length - "-combined".length - prefix.length) +
-                " characters are allowed"
-            )
-        }
-
-        source.addCallback((str) => {
-            if (str === undefined || str === "") {
-                return
-            }
-            if (str === null) {
-                console.error("Deleting " + allStartWith)
-                const count = parseInt(length.data)
-                for (let i = 0; i < count; i++) {
-                    // Delete all the preferences
-                    this.GetPreference(allStartWith + "-" + i, "", subOptions).setData("")
-                }
-                this.GetPreference(allStartWith + "-length", "", subOptions).setData("")
-                return
-            }
-
-            let i = 0
-            while (str !== "") {
-                if (str === undefined || str === "undefined") {
-                    source.setData(undefined)
-                    throw (
-                        "Got 'undefined' or a literal string containing 'undefined' for a long preference with name " +
-                        key
-                    )
-                }
-                if (str === "undefined") {
-                    source.setData(undefined)
-                    throw (
-                        "Got a literal string containing 'undefined' for a long preference with name " +
-                        key
-                    )
-                }
-                if (i > 100) {
-                    throw "This long preference is getting very long... "
-                }
-                this.GetPreference(allStartWith + "-" + i, "", subOptions).setData(
-                    str.substr(0, 255)
-                )
-                str = str.substr(255)
-                i++
-            }
-            length.setData("" + i) // We use I, the number of preference fields used
-        })
-
-
-        function updateData(l: number) {
-            if (Object.keys(preferences.data).length === 0) {
-                // The preferences are still empty - they are not yet updated, so we delay updating for now
-                return
-            }
-            const prefsCount = Number(l)
-            if (prefsCount > 100) {
-                throw "Length to long"
-            }
-            let str = ""
-            for (let i = 0; i < prefsCount; i++) {
-                const key = allStartWith + "-" + i
-                if (preferences.data[key] === undefined) {
-                    console.warn(
-                        "Detected a broken combined preference:",
-                        key,
-                        "is undefined",
-                        preferences
-                    )
-                    continue
-                }
-                const v = preferences.data[key]
-                if(v === "undefined"){
-                    delete preferences.data[key]
-                    continue
-                }
-                str += preferences.data[key] ?? ""
-            }
-
-            source.setData(str)
-        }
-
-        length.addCallback((l) => {
-            updateData(Number(l))
-        })
-        this.preferences.addCallbackAndRun(() => {
-            updateData(Number(length.data))
-        })
-
-        return source
+        return this.getPreferenceSeedFromlocal(key, true, undefined, { prefix })
     }
 
     public GetPreference(
@@ -154,145 +112,108 @@ export class OsmPreferences {
         options?: {
             documentation?: string
             prefix?: string
-        }
+        },
+    ) {
+        return this.getPreferenceSeedFromlocal(key, false, defaultValue, options)
+    }
+
+    /**
+     * Gets a OSM-preference.
+     * The OSM-preference is cached in local storage and updated from the OSM.org as soon as those values come in.
+     * THis means that values written before being logged in might be erased by the cloud settings
+     * @param key
+     * @param defaultValue
+     * @param options
+     * @constructor
+     */
+    private getPreferenceSeedFromlocal(
+        key: string,
+        long: boolean,
+        defaultValue: string = undefined,
+        options?: {
+            prefix?: string,
+            saveToLocalStorage?: true | boolean
+        },
     ): UIEventSource<string> {
-        const prefix: string = options?.prefix ?? "mapcomplete-"
-        if (key.startsWith(prefix) && prefix !== "") {
-            console.trace(
-                "A preference was requested which has a duplicate prefix in its key. This is probably a bug"
-            )
+        if (options?.prefix) {
+            key = options.prefix + key
         }
-        key = prefix + key
         key = key.replace(/[:/"' {}.%\\]/g, "")
-        if (key.length >= 255) {
-            throw "Preferences: key length to big"
+
+
+        let pref : UIEventSource<string>
+        const localStorage = LocalStorageSource.Get(key)
+        if(localStorage.data === "null" || localStorage.data === "undefined"){
+            localStorage.set(undefined)
         }
-        const cached = this.preferenceSources.get(key)
-        if (cached !== undefined) {
-            return cached
-        }
-        if (this.userDetails.data.loggedIn && this.preferences.data[key] === undefined) {
-            this.UpdatePreferences()
+        if(long){
+            pref = this.initLongPreference(key, localStorage.data ?? defaultValue)
+        }else{
+            pref = this.initPreference(key, localStorage.data  ?? defaultValue)
         }
 
-        const pref = new UIEventSource<string>(
-            this.preferences.data[key] ?? defaultValue,
-            "osm-preference:" + key
-        )
-        pref.addCallback((v) => {
-            this.UploadPreference(key, v)
-        })
+        if (this.localStorageInited.has(key)) {
+            return pref
+        }
 
-        this.preferences.addCallbackD((allPrefs) => {
-            const v = allPrefs[key]
-            if (v === undefined) {
-                return
-            }
-            pref.setData(v)
-        })
-
-        this.preferenceSources.set(key, pref)
+        if (options?.saveToLocalStorage ?? true) {
+            pref.addCallback(v => localStorage.set(v)) // Keep a local copy
+        }
+        this.localStorageInited.add(key)
         return pref
     }
 
     public ClearPreferences() {
-        let isRunning = false
-        this.preferences.addCallback((prefs) => {
-            console.log("Cleaning preferences...")
-            if (Object.keys(prefs).length == 0) {
-                return
-            }
-            if (isRunning) {
-                return
-            }
-            isRunning = true
-            const prefixes = ["mapcomplete-"]
-            for (const key in prefs) {
-                const matches = prefixes.some((prefix) => key.startsWith(prefix))
-                if (matches) {
-                    console.log("Clearing ", key)
-                    this.GetPreference(key, "", { prefix: "" }).setData("")
-                }
-            }
-            isRunning = false
-            return
+        console.log("Starting to remove all preferences")
+        this.removeAllWithPrefix("")
+    }
+
+
+    /**
+     * Bulk-downloads all preferences
+     * @private
+     */
+    private getPreferencesDict(): Promise<Record<string, string>> {
+        return new Promise<Record<string, string>>((resolve, reject) => {
+            this.auth.xhr(
+                {
+                    method: "GET",
+                    path: "/api/0.6/user/preferences",
+                },
+                (error, value: XMLDocument) => {
+                    if (error) {
+                        console.log("Could not load preferences", error)
+                        reject(error)
+                        return
+                    }
+                    const prefs = value.getElementsByTagName("preference")
+                    const dict: Record<string, string> = {}
+                    for (let i = 0; i < prefs.length; i++) {
+                        const pref = prefs[i]
+                        const k = pref.getAttribute("k")
+                        dict[k] = pref.getAttribute("v")
+                    }
+                    resolve(dict)
+                },
+            )
         })
+
     }
 
-    removeAllWithPrefix(prefix: string) {
-        for (const key in this.preferences.data) {
-            if (key.startsWith(prefix)) {
-                this.GetPreference(key, "", { prefix: "" }).setData(undefined)
-                console.log("Clearing preference", key)
-            }
-        }
-        this.preferences.ping()
-    }
-
-    private UpdatePreferences(forceUpdate?: boolean) {
-        if (this._fakeUser) {
-            return
-        }
-        this.auth.xhr(
-            {
-                method: "GET",
-                path: "/api/0.6/user/preferences",
-            },
-             (error, value: XMLDocument) => {
-                if (error) {
-                    console.log("Could not load preferences", error)
-                    return
-                }
-                const prefs = value.getElementsByTagName("preference")
-                const seenKeys = new Set<string>()
-                for (let i = 0; i < prefs.length; i++) {
-                    const pref = prefs[i]
-                    const k = pref.getAttribute("k")
-                    this.preferences.data[k] = pref.getAttribute("v")
-                    seenKeys.add(k)
-                }
-                if (forceUpdate) {
-                    for (const key in this.preferences.data) {
-                        if (seenKeys.has(key)) {
-                            continue
-                        }
-                        console.log("Deleting key", key, "as we didn't find it upstream")
-                        delete this.preferences.data[key]
-                    }
-                }
-
-                // We merge all the preferences: new keys are uploaded
-                // For differing values, the server overrides local changes
-                this.preferenceSources.forEach((preference, key) => {
-                    const osmValue = this.preferences.data[key]
-                    if (osmValue === undefined && preference.data !== undefined) {
-                        // OSM doesn't know this value yet
-                        this.UploadPreference(key, preference.data)
-                    } else {
-                        // OSM does have a value - set it
-                        preference.setData(osmValue)
-                    }
-                })
-
-                this.preferences.ping()
-            }
-        )
-    }
-
+    /**
+     * UPloads the given k=v to the OSM-server
+     * Deletes it if 'v' is undefined, null or empty
+     */
     private UploadPreference(k: string, v: string) {
-        if (!this.userDetails.data.loggedIn) {
+        if (!this.osmConnection.userDetails.data.loggedIn) {
             console.debug(`Not saving preference ${k}: user not logged in`)
             return
         }
 
-        if (this.preferences.data[k] === v) {
-            return
-        }
-        console.debug("Updating preference", k, " to ", Utils.EllipsesAfter(v, 15))
         if (this._fakeUser) {
             return
         }
-        if (v === undefined || v === "") {
+        if (v === undefined || v === "" || v === null) {
             this.auth.xhr(
                 {
                     method: "DELETE",
@@ -304,10 +225,8 @@ export class OsmPreferences {
                         console.warn("Could not remove preference", error)
                         return
                     }
-                    delete this.preferences.data[k]
-                    this.preferences.ping()
                     console.debug("Preference ", k, "removed!")
-                }
+                },
             )
             return
         }
@@ -319,15 +238,38 @@ export class OsmPreferences {
                 headers: { "Content-Type": "text/plain" },
                 content: v,
             },
-            (error)=>  {
+            (error) => {
                 if (error) {
                     console.warn(`Could not set preference "${k}"'`, error)
                     return
                 }
-                this.preferences.data[k] = v
-                this.preferences.ping()
-                console.debug(`Preference ${k} written!`)
-            }
+            },
         )
+    }
+
+    removeAllWithPrefix(prefix: string) {
+        for (const key in this.normalPreferences) {
+            if(key.startsWith(prefix)){
+                this.normalPreferences[key].set(null)
+            }
+        }
+        for (const key in this.longPreferences) {
+            if(key.startsWith(prefix)){
+                this.longPreferences[key].set(null)
+            }
+        }
+    }
+
+    getExistingPreference(key: string, defaultValue: undefined, prefix: string ): UIEventSource<string> {
+        if (prefix) {
+            key = prefix + key
+        }
+        key = key.replace(/[:/"' {}.%\\]/g, "")
+
+        if(this.normalPreferences[key]){
+            return this.normalPreferences[key]
+        }
+        return this.longPreferences[key]
+
     }
 }
