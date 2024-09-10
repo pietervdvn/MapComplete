@@ -790,10 +790,7 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
                 }
             },
             [],
-            (b) => {
-                console.log("Stringifying", b)
-                return JSON.stringify(b) ?? ""
-            }
+            (b) => JSON.stringify(b) ?? ""
         )
     }
 
