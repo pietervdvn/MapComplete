@@ -962,6 +962,10 @@ export default class ThemeViewState implements SpecialVisualizationState {
     }
 
     public async reportError(message: string | Error | XMLHttpRequest, extramessage:string = "") {
+        if(Utils.runningFromConsole){
+            console.error("Got (in themeViewSTate.reportError):", message, extramessage)
+            return
+        }
         const isTesting = this.featureSwitchIsTesting.data
         console.log(
             isTesting
