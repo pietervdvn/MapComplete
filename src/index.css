@@ -391,8 +391,8 @@ h2.group {
     align-items: center;
     white-space: nowrap;
     border-radius: 999rem;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
     border: 1px solid var(--subtle-detail-color-light-contrast);
     background-color: var(--low-interaction-background);
 }

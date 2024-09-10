@@ -326,7 +326,7 @@
 
     <div
       id="top-bar"
-      class="flex bg-black-light-transparent pointer-events-auto items-center justify-between px-4 py-1 flex-wrap-reverse">
+      class="flex bg-black-light-transparent pointer-events-auto items-center justify-between px-4 py-1 flex-wrap">
       <!-- Top bar with tools -->
       <div class="flex items-center">
 
@@ -361,7 +361,7 @@
       {/if}
 
       <If condition={state.featureSwitches.featureSwitchSearch}>
-        <div class="flex items-center">
+        <div class="flex items-center flex-grow justify-end">
           <div class="w-full sm:w-64">
             <Searchbar value={state.searchState.searchTerm} isFocused={state.searchState.searchIsFocused} />
           </div>

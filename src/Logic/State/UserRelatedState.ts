@@ -20,7 +20,7 @@ import { ThemeMetaTagging } from "./UserSettingsMetaTagging"
 import { MapProperties } from "../../Models/MapProperties"
 import Showdown from "showdown"
 import { LocalStorageSource } from "../Web/LocalStorageSource"
-import { GeocodeResult } from "../Geocoding/GeocodingProvider"
+import { GeocodeResult } from "../Search/GeocodingProvider"
 
 
 export class OptionallySyncedHistory<T> {
@@ -42,8 +42,6 @@ export class OptionallySyncedHistory<T> {
             "preference-" + key + "-history",
             "sync",
         )
-        console.log(">>>",key, this.syncPreference)
-
         const synced = this.synced = UIEventSource.asObject<T[]>(osmconnection.GetLongPreference(key + "-history"), [])
         const local = this.local = LocalStorageSource.GetParsed<T[]>(key + "-history", [])
         const thisSession = this.thisSession = new UIEventSource<T[]>([], "optionally-synced:"+key+"(session only)")
@@ -91,7 +89,6 @@ export class OptionallySyncedHistory<T> {
         if (this._isSame) {
             oldList = oldList.filter(x => !this._isSame(t, x))
         }
-        console.log("Setting new history:", store, [t, ...oldList])
         store.set([t, ...oldList].slice(0, this._maxHistory))
     }
 
@@ -198,7 +195,6 @@ export default class UserRelatedState {
         this.showTags = this.osmConnection.GetPreference("show_tags")
         this.showCrosshair = this.osmConnection.GetPreference("show_crosshair")
         this.fixateNorth = this.osmConnection.GetPreference("fixate-north")
-        console.log("Fixate north is:", this.fixateNorth)
         this.morePrivacy = this.osmConnection.GetPreference("more_privacy", "no")
 
         this.a11y = this.osmConnection.GetPreference("a11y")

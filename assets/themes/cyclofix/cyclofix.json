@@ -80,7 +80,7 @@
       "override": {
         "name=": null,
         "minzoom": 17,
-        "filter": {
+        "=filter": {
           "sameAs": "bike_shop"
         }
       }
@@ -182,7 +182,7 @@
       "builtin": "charging_station",
       "override": {
         "name": null,
-        "filter": {
+        "=filter": {
           "sameAs": "charging_station_ebikes"
         },
         "minzoom": 18,
@@ -209,7 +209,7 @@
       "builtin": "vending_machine",
       "override": {
         "name": null,
-        "filter": {
+        "=filter": {
           "sameAs": "vending_machine_bicycle"
         },
         "minzoom": 18,

@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { GeocodingUtils } from "../../Logic/Geocoding/GeocodingProvider"
-  import type { GeocodeResult } from "../../Logic/Geocoding/GeocodingProvider"
+  import { GeocodingUtils } from "../../Logic/Search/GeocodingProvider"
+  import type { GeocodeResult } from "../../Logic/Search/GeocodingProvider"
   import { GeoOperations } from "../../Logic/GeoOperations"
   import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
   import { UIEventSource } from "../../Logic/UIEventSource"

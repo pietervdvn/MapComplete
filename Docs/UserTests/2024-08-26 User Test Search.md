@@ -109,7 +109,7 @@ Success: user sponteanously interacts with the questions!
 
 > Then, the 'cuisine' was inspected. As the restaurant they visited is focusing on _vegetarian_ salads, the user wanted to use the freeform to enter 'vegetarian salad'
 
- [ ] Failure: how to properly exp   lain this? Move the 'vegetarian' question up? Should some options, such as 'chicken restaurant' be hidden if `vegetarian=only`?
+ [ ] Failure: how to properly explain this? Move the 'vegetarian' question up? Should some options, such as 'chicken restaurant' be hidden if `vegetarian=only`?
 
  [ ] UI: issue: the emojis (especially flags) slightly overlaps with the text on this browser
 

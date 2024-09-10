@@ -66,7 +66,7 @@ export default class MoreScreen {
             return Infinity
         }
         language ??= Locale.language.data
-        const queryParts = query.split(" ").map(q => Utils.simplifyStringForSearch(q))
+        const queryParts = query.trim().split(" ").map(q => Utils.simplifyStringForSearch(q))
         let terms: string[]
         if (Array.isArray(keywords)) {
             terms = keywords
@@ -90,9 +90,12 @@ export default class MoreScreen {
         return distanceSummed
     }
 
-    public static scoreLayers(query: string): Record<string, number> {
+    public static scoreLayers(query: string, layerWhitelist?: Set<string>): Record<string, number> {
         const result: Record<string, number> = {}
         for (const id in this.officialThemes.layers) {
+            if(layerWhitelist !== undefined && !layerWhitelist.has(id)){
+                continue
+            }
             const keywords = this.officialThemes.layers[id]
             const distance = this.scoreKeywords(query, keywords)
             result[id] = distance

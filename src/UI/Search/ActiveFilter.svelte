@@ -1,8 +1,8 @@
 <script lang="ts">
   import type { ActiveFilter } from "../../Logic/State/LayerState"
   import FilterOption from "./FilterOption.svelte"
-  import { XMarkIcon } from "@babeard/svelte-heroicons/mini"
   import Loading from "../Base/Loading.svelte"
+  import FilterToggle from "./FilterToggle.svelte"
 
 
   export let activeFilter: ActiveFilter
@@ -21,10 +21,7 @@
 {#if loading}
   <Loading />
 {:else }
-  <div class="badge button-unstyled w-fit">
+  <FilterToggle  on:click={() => clear()}>
     <FilterOption option={$option} />
-    <button on:click={() => clear()}>
-      <XMarkIcon class="w-5 h-5 pl-1" color="gray" />
-    </button>
-  </div>
+  </FilterToggle>
 {/if}

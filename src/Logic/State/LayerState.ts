@@ -8,6 +8,7 @@ import Translations from "../../UI/i18n/Translations"
 import { RegexTag } from "../Tags/RegexTag"
 import { Or } from "../Tags/Or"
 import FilterConfig from "../../Models/ThemeConfig/FilterConfig"
+import Constants from "../../Models/Constants"
 
 export type ActiveFilter = {
     layer: LayerConfig,
@@ -35,6 +36,10 @@ export default class LayerState {
     private readonly _activeFilters: UIEventSource<ActiveFilter[]> = new UIEventSource([])
 
     public readonly activeFilters: Store<ActiveFilter[]> = this._activeFilters
+    private readonly _activeLayers: UIEventSource<FilteredLayer[]> = new UIEventSource<FilteredLayer[]>(undefined)
+    public readonly activeLayers: Store<FilteredLayer[]> = this._activeLayers
+    private readonly _nonactiveLayers: UIEventSource<FilteredLayer[]> = new UIEventSource<FilteredLayer[]>(undefined)
+    public readonly nonactiveLayers: Store<FilteredLayer[]> = this._nonactiveLayers
     private readonly osmConnection: OsmConnection
 
     /**
@@ -77,8 +82,16 @@ export default class LayerState {
 
     private updateActiveFilters(){
         const filters: ActiveFilter[] = []
+        const activeLayers: FilteredLayer[] = []
+        const nonactiveLayers: FilteredLayer[] =  []
         this.filteredLayers.forEach(fl => {
             if(!fl.isDisplayed.data){
+                nonactiveLayers.push(fl)
+                return
+            }
+            activeLayers.push(fl)
+
+            if(fl.layerDef.filterIsSameAs){
                 return
             }
             for (const [filtername, appliedFilter] of fl.appliedFilters) {
@@ -86,6 +99,7 @@ export default class LayerState {
                     continue
                 }
                 const filter = fl.layerDef.filters.find(f => f.id === filtername)
+                console.log("Updating active filters for flayer", fl.layerDef.id,"with filterconfig",filter)
                 if(typeof appliedFilter.data === "number"){
                     if(filter.options[appliedFilter.data].osmTags === undefined){
                         // This is probably the first, generic option which doesn't _actually_ filter
@@ -99,6 +113,8 @@ export default class LayerState {
                 })
             }
         })
+        this._activeLayers.set(activeLayers)
+        this._nonactiveLayers.set(nonactiveLayers)
         this._activeFilters.set(filters)
     }
 

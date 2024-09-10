@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { SearchResult } from "../../Logic/Geocoding/GeocodingProvider"
+  import type { SearchResult } from "../../Logic/Search/GeocodingProvider"
 
   import ThemeResult from "../Search/ThemeResult.svelte"
   import FilterResult from "./FilterResult.svelte"

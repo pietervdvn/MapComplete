@@ -8,7 +8,7 @@
   import Loading from "./Loading.svelte"
   import { onDestroy } from "svelte"
   import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
-  import { GeocodingUtils } from "../../Logic/Geocoding/GeocodingProvider"
+  import { GeocodingUtils } from "../../Logic/Search/GeocodingProvider"
   import ThemeViewState from "../../Models/ThemeViewState"
 
   export let state: SpecialVisualizationState

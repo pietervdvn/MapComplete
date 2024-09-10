@@ -67,7 +67,7 @@ import { LayerConfigJson } from "./ThemeConfig/Json/LayerConfigJson"
 import Hash from "../Logic/Web/Hash"
 import { GeoOperations } from "../Logic/GeoOperations"
 import { CombinedFetcher } from "../Logic/Web/NearbyImagesSearch"
-import { GeocodeResult, GeocodingUtils } from "../Logic/Geocoding/GeocodingProvider"
+import { GeocodeResult, GeocodingUtils } from "../Logic/Search/GeocodingProvider"
 import SearchState from "../Logic/State/SearchState"
 
 /**

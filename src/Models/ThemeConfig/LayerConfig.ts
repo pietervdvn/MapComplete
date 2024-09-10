@@ -641,4 +641,18 @@ export default class LayerConfig extends WithContextLoader {
         }
         return mostShadowed ?? matchingPresets[0]
     }
+
+    public isNormal(){
+        if(this.id.startsWith("note_import")){
+            return false
+        }
+
+        if(Constants.added_by_default.indexOf(<any> this.id) >=0){
+            return false
+        }
+        if(this.filterIsSameAs !== undefined){
+            return false
+        }
+        return true
+    }
 }
