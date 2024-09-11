@@ -468,11 +468,14 @@
       ],
       "title": {
         "en": "a billboard mounted to a wall",
-        "de": "Eine an einer Wand montierte Werbetafel"
+        "de": "Eine an einer Wand montierte Werbetafel",
+        "cs": "billboard připevněný na stěnu"
       },
       "description": {
         "en": "A large outdoor advertising structure, typically found in high-traffic areas such as alongside busy roads mounted on a wall",
-        "de": "Eine große Außenwerbestruktur, die typischerweise in stark frequentierten Bereichen wie an vielbefahrenen Straßen auf einer Wand montiert zu finden ist"
+        "de": "Eine große Außenwerbestruktur, die typischerweise in stark frequentierten Bereichen wie an vielbefahrenen Straßen auf einer Wand montiert zu finden ist",
+        "cs": "Velká venkovní reklamní konstrukce, která se obvykle nachází na frekventovaných místech, například podél frekventovaných silnic, umístěná na zdi",
+        "pl": "Duży obiekt reklamowy na zewnątrz, zazwyczaj znajduje się w obszarach z dużym ruchem, np. obok ruchliwych dróg na ścianie"
       },
       "exampleImages": [
         "./assets/themes/advertising/billboard_wall.jpg"
@@ -531,7 +534,8 @@
         "de": "ein Plakatkasten, der zu einem Unterstand für öffentliche Verkehrsmittel gehört",
         "fr": "Un affichage sur un abribus",
         "it": "un contenitore di poster pubblicitari di una pensilina del trasporto pubblico",
-        "es": "una caja de carteles que forma parte de una marquesina de transporte público"
+        "es": "una caja de carteles que forma parte de una marquesina de transporte público",
+        "cs": "plakátovací skříňka, která je součástí přístřešku veřejné dopravy"
       },
       "snapToLayer": [
         "shelter"
@@ -694,7 +698,8 @@
         "de": "ein Bildschirm, der an einem Wartehäuschen angebracht ist",
         "fr": "un écran fixé sur un abri de transport",
         "it": "uno schermo montato su una pensilina del traporto pubblico",
-        "es": "una pantalla montada en una marquesina de tránsito"
+        "es": "una pantalla montada en una marquesina de tránsito",
+        "cs": "obrazovka namontovaná na dopravním přístřešku"
       },
       "snapToLayer": [
         "shelter"

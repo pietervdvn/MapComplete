@@ -301,7 +301,7 @@
 {{service_item
 |name= [https://mapcomplete.org/fireplace fireplace]
 |region= Worldwide
-|lang= {{#language:de|en}}, {{#language:en|en}}
+|lang= {{#language:de|en}}, {{#language:en|en}}, {{#language:es|en}}
 |descr= A MapComplete theme: Outdoor place to make a fire or a fixed barbecue in an official place
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -420,7 +420,7 @@ The position of a signpost can be used by a hiker/biker/rider/s…
 {{service_item
 |name= [https://mapcomplete.org/lighthouses lighthouses]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:it|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:es|en}}
 |descr= A MapComplete theme: Lighthouses are tall buildings with a light on top to guide marine traffic
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -447,7 +447,7 @@ The position of a signpost can be used by a hiker/biker/rider/s…
 {{service_item
 |name= [https://mapcomplete.org/memorials memorials]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:nl|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:nl|en}}, {{#language:es|en}}
 |descr= A MapComplete theme: Memorials are physical objects permantently placed in the public space to remember a person or event
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png

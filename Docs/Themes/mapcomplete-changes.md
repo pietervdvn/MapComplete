@@ -14,6 +14,8 @@ This theme contains the following layers:
 Available languages:
 
  - en
+ - de
+ - es
 
 # Table of contents
 

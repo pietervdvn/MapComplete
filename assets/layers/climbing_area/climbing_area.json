@@ -271,7 +271,7 @@
           "then": {
             "en": "A climbing boulder - a single rock or cliff with one or a few climbing routes which can be climbed safely without rope",
             "fr": "Rocher d’escalade, rocher avec une ou peu de voie permettant d’escalader sans corde",
-            "de": "Ein Kletterfelsen - ein einzelner Felsen oder eine Klippe mit einer oder wenigen Kletterrouten, die ohne Seil sicher bestiegen werden können",
+            "de": "Ein Boulderfelsen - ein einzelner Felsen oder eine Klippe mit einer oder wenigen Boulderrouten, die ohne Seil sicher bestiegen werden können",
             "it": "Un masso per arrampicata (una singola roccia o falesia con una o poche vie di arrampicata che possono essere scalate in sicurezza senza una corda)",
             "nl": "Een klimboulder - een enkele rots of klif met één of enkele klimroutes die veilig zonder touw kunnen worden beklommen",
             "ca": "Una roca d'escalada: una única roca o penya-segat amb una o unes quantes vies d'escalada que es poden escalar amb seguretat sense corda",
@@ -330,7 +330,8 @@
             "pa_PK": "چونہ پتھر",
             "eu": "Kareharria",
             "ca": "Calcària",
-            "cs": "Vápenec"
+            "cs": "Vápenec",
+            "pl": "Wapień"
           }
         }
       ],

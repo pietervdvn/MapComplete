@@ -259,26 +259,6 @@
       "value": "thai"
     },
     {
-      "key": "cuisine",
-      "description": "Layer 'Restaurants and fast food' shows cuisine=mexican   with a fixed text, namely 'Mexican dishes are served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Lactose free shops and restaurants')",
-      "value": "mexican  "
-    },
-    {
-      "key": "cuisine",
-      "description": "Layer 'Restaurants and fast food' shows cuisine=japanese   with a fixed text, namely 'Japanese dishes are served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Lactose free shops and restaurants')",
-      "value": "japanese  "
-    },
-    {
-      "key": "cuisine",
-      "description": "Layer 'Restaurants and fast food' shows cuisine=chicken   with a fixed text, namely 'Chicken based dishes are served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Lactose free shops and restaurants')",
-      "value": "chicken  "
-    },
-    {
-      "key": "cuisine",
-      "description": "Layer 'Restaurants and fast food' shows cuisine=seafood   with a fixed text, namely 'Seafood dishes are served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Lactose free shops and restaurants')",
-      "value": "seafood  "
-    },
-    {
       "key": "image",
       "description": "The layer 'Restaurants and fast food shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
     },
