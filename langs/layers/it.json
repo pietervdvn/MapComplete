@@ -613,25 +613,25 @@
                     "0": {
                         "then": "Archetti"
                     },
-                    "1": {
+                    "2": {
                         "then": "Rastrelliera classica"
                     },
-                    "2": {
+                    "3": {
                         "then": "Blocca manubrio"
                     },
-                    "3": {
+                    "4": {
                         "then": "Rastrelliera"
                     },
-                    "4": {
+                    "5": {
                         "then": "A due piani"
                     },
-                    "5": {
+                    "6": {
                         "then": "Rimessa"
                     },
-                    "6": {
+                    "7": {
                         "then": "Colonnina"
                     },
-                    "7": {
+                    "8": {
                         "then": "Una zona del terreno che è marcata per il parcheggio delle bici"
                     }
                 },

@@ -1470,27 +1470,30 @@
                         "then": "Fahrradbügel"
                     },
                     "1": {
-                        "then": "Metallgestänge"
+                        "then": "Radständer mit Seitenbügel"
                     },
                     "2": {
-                        "then": "Halter für Fahrradlenker"
+                        "then": "Metallgestänge"
                     },
                     "3": {
-                        "then": "Gestell"
+                        "then": "Halter für Fahrradlenker"
                     },
                     "4": {
-                        "then": "Zweistufig"
+                        "then": "Gestell"
                     },
                     "5": {
-                        "then": "Schuppen"
+                        "then": "Zweistufig"
                     },
                     "6": {
-                        "then": "Poller"
+                        "then": "Schuppen"
                     },
                     "7": {
-                        "then": "Ein Bereich auf dem Boden, der für das Abstellen von Fahrrädern gekennzeichnet ist"
+                        "then": "Poller"
                     },
                     "8": {
+                        "then": "Ein Bereich auf dem Boden, der für das Abstellen von Fahrrädern gekennzeichnet ist"
+                    },
+                    "9": {
                         "then": "Ein Schließfach - Fahrräder werden einzeln oder mit mehreren Fahrrädern zusammen eingeschlossen. Der Schrank ist zu klein für eine stehende Person."
                     }
                 },
@@ -2858,6 +2861,9 @@
                     },
                     "1": {
                         "then": "Ein Kletterfelsen - ein einzelner Fels oder eine Klippe mit mindestens einigen Kletterrouten"
+                    },
+                    "2": {
+                        "then": "Ein Klettergebiet mit einem oder meheren Kletter- und/oder Boulderfelsen"
                     }
                 }
             },
@@ -5949,31 +5955,31 @@
                     "14": {
                         "then": "Dies ist ein Büro"
                     },
-                    "15": {
+                    "16": {
                         "then": "Dies ist eine Gefängniszelle"
                     },
-                    "16": {
+                    "17": {
                         "then": "Dies ist ein Restaurant"
                     },
-                    "17": {
+                    "18": {
                         "then": "Dies ist ein Raum für Sicherheitskontrollen"
                     },
-                    "18": {
-                        "then": "Dies ist ein Raum um Sport zu treiben"
-                    },
                     "19": {
-                        "then": "Dies ist ein Lagerraum"
+                        "then": "Dies ist ein Raum um Sport zu treiben"
                     },
                     "2": {
                         "then": "Dies ist ein Schlafzimmer"
                     },
                     "20": {
-                        "then": "Dies ist ein Technikraum"
+                        "then": "Dies ist ein Lagerraum"
                     },
                     "21": {
-                        "then": "Dies ist ein WC-Raum"
+                        "then": "Dies ist ein Technikraum"
                     },
                     "22": {
+                        "then": "Dies ist ein WC-Raum"
+                    },
+                    "23": {
                         "then": "Dies ist ein Wartezimmer"
                     },
                     "3": {

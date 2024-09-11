@@ -1175,25 +1175,25 @@
                     "0": {
                         "then": "Stojany"
                     },
-                    "1": {
+                    "2": {
                         "then": "Stojan na kola / smyčky"
                     },
-                    "2": {
+                    "3": {
                         "then": "Držák na řídítka"
                     },
-                    "3": {
+                    "4": {
                         "then": "Stojan"
                     },
-                    "4": {
+                    "5": {
                         "then": "Dvouúrovňové"
                     },
-                    "5": {
+                    "6": {
                         "then": "Přístřešek"
                     },
-                    "6": {
+                    "7": {
                         "then": "Sloupek"
                     },
-                    "7": {
+                    "8": {
                         "then": "Plocha na zemi označená pro parkování jízdních kol"
                     }
                 },
@@ -4682,31 +4682,31 @@
                     "14": {
                         "then": "Jedná se o kancelář"
                     },
-                    "15": {
+                    "16": {
                         "then": "Jedná se o vězeňskou celu"
                     },
-                    "16": {
+                    "17": {
                         "then": "Jedná se o restauraci"
                     },
-                    "17": {
+                    "18": {
                         "then": "Jedná se o místnost pro provádění bezpečnostních kontrol"
                     },
-                    "18": {
-                        "then": "Jedná se o sportovní místnost"
-                    },
                     "19": {
-                        "then": "Jedná se o skladovací místnost"
+                        "then": "Jedná se o sportovní místnost"
                     },
                     "2": {
                         "then": "Jedná se o ložnici"
                     },
                     "20": {
-                        "then": "Jedná se o technickou místnost"
+                        "then": "Jedná se o skladovací místnost"
                     },
                     "21": {
-                        "then": "Jedná se o toalety"
+                        "then": "Jedná se o technickou místnost"
                     },
                     "22": {
+                        "then": "Jedná se o toalety"
+                    },
+                    "23": {
                         "then": "Jedná se o čekárnu"
                     },
                     "3": {

@@ -845,7 +845,7 @@
                     "0": {
                         "then": "Stojaki"
                     },
-                    "5": {
+                    "6": {
                         "then": "Wiata"
                     }
                 },
@@ -2238,28 +2238,28 @@
                     "14": {
                         "then": "To jest biuro"
                     },
-                    "15": {
+                    "16": {
                         "then": "To jest cela więzienna"
                     },
-                    "16": {
+                    "17": {
                         "then": "To jest restauracja"
                     },
-                    "17": {
+                    "18": {
                         "then": "To jest pomieszczenie do wykonywania kontroli bezpieczeństwa"
-                    },
-                    "19": {
-                        "then": "To jest magazyn"
                     },
                     "2": {
                         "then": "To jest sypialnia"
                     },
                     "20": {
-                        "then": "To jest pomieszczenie techniczne"
+                        "then": "To jest magazyn"
                     },
                     "21": {
-                        "then": "To są toalety"
+                        "then": "To jest pomieszczenie techniczne"
                     },
                     "22": {
+                        "then": "To są toalety"
+                    },
+                    "23": {
                         "then": "To jest poczekalnia"
                     },
                     "3": {

@@ -665,25 +665,25 @@
                     "0": {
                         "then": "Hæftestativer"
                     },
-                    "1": {
+                    "2": {
                         "then": "Hjulstativ/løkker"
                     },
-                    "2": {
+                    "3": {
                         "then": "Styrholder"
                     },
-                    "3": {
+                    "4": {
                         "then": "Stativ"
                     },
-                    "4": {
+                    "5": {
                         "then": "To-lags"
                     },
-                    "5": {
+                    "6": {
                         "then": "Skur"
                     },
-                    "6": {
+                    "7": {
                         "then": "Pullert"
                     },
-                    "7": {
+                    "8": {
                         "then": "Et område på gulvet, der er markeret til cykelparkering"
                     }
                 },

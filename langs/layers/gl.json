@@ -82,19 +82,19 @@
                     "0": {
                         "then": "De roda (Stands)"
                     },
-                    "1": {
+                    "2": {
                         "then": "Aros"
                     },
-                    "2": {
+                    "3": {
                         "then": "Cadeado para guiador"
                     },
-                    "3": {
+                    "4": {
                         "then": "Cremalleira"
                     },
-                    "4": {
+                    "5": {
                         "then": "Dobre cremalleira"
                     },
-                    "5": {
+                    "6": {
                         "then": "Abeiro"
                     }
                 },

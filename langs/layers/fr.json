@@ -1119,24 +1119,27 @@
                         "then": "Arceaux"
                     },
                     "1": {
-                        "then": "Pinces-roues"
+                        "then": "Rack à vélo avec arceau"
                     },
                     "2": {
-                        "then": "Support guidon"
+                        "then": "Pinces-roues"
                     },
                     "3": {
-                        "then": "Râtelier"
+                        "then": "Support guidon"
                     },
                     "4": {
-                        "then": "Superposé"
+                        "then": "Râtelier"
                     },
                     "5": {
-                        "then": "Abri"
+                        "then": "Superposé"
                     },
                     "6": {
-                        "then": "Potelet"
+                        "then": "Abri"
                     },
                     "7": {
+                        "then": "Potelet"
+                    },
+                    "8": {
                         "then": "Zone au sol qui est marquée pour le stationnement des vélos"
                     }
                 },

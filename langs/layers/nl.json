@@ -1058,27 +1058,30 @@
                         "then": "Nietjes"
                     },
                     "1": {
-                        "then": "Wielrek/lussen"
+                        "then": "Rek met zijbeugel"
                     },
                     "2": {
-                        "then": "Stuurhouder"
+                        "then": "Wielrek/lussen"
                     },
                     "3": {
-                        "then": "Rek"
+                        "then": "Stuurhouder"
                     },
                     "4": {
-                        "then": "Dubbel (twee verdiepingen)"
+                        "then": "Rek"
                     },
                     "5": {
-                        "then": "Schuur"
+                        "then": "Dubbel (twee verdiepingen)"
                     },
                     "6": {
-                        "then": "Paal met ring"
+                        "then": "Schuur"
                     },
                     "7": {
-                        "then": "Een oppervlakte die gemarkeerd is om fietsen te parkeren"
+                        "then": "Paal met ring"
                     },
                     "8": {
+                        "then": "Een oppervlakte die gemarkeerd is om fietsen te parkeren"
+                    },
+                    "9": {
                         "then": "Een fietskluis waar één of enkele fietsen staan en op slot kan en die te klein is om in recht te staan."
                     }
                 },
