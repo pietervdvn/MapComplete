@@ -3033,6 +3033,7 @@
     "climbing_opportunity": {
         "description": "Rückfallebene mit Orten, auf denen Klettern eventuell möglich ist. Sie wird erst angezeigt, wenn man stark hineinzoomt, um zu verhindern, dass Elemente doppelt hinzugefügt werden",
         "name": "Klettermöglichkeiten?",
+        "snapName": "eine Wand, Klippe oder ein Felsen",
         "tagRenderings": {
             "climbing-opportunity-name": {
                 "render": "<strong>{name}</strong>"
@@ -3434,6 +3435,7 @@
     "cycleways_and_roads": {
         "description": "Infrastruktur, die man mit dem Fahrrad befahren kann, begleitet von diesbezüglichen Fragen",
         "name": "Radwege und Straßen",
+        "snapName": "eine Straße oder einen Radweg",
         "tagRenderings": {
             "Cycleway type for a road": {
                 "mappings": {
@@ -5910,6 +5912,7 @@
     "indoors": {
         "description": "Grundlegende Innenraumkartierung: zeigt Umrisse von Räumen",
         "name": "Innenräume",
+        "snapName": "eine Innenwand",
         "tagRenderings": {
             "name": {
                 "freeform": {
@@ -5951,6 +5954,9 @@
                     },
                     "14": {
                         "then": "Dies ist ein Büro"
+                    },
+                    "15": {
+                        "then": "Dies ist ein Kopierraum"
                     },
                     "16": {
                         "then": "Dies ist eine Gefängniszelle"
@@ -6079,6 +6085,7 @@
                 "title": "einen Bordstein"
             }
         },
+        "snapName": "ein Bordstein",
         "tagRenderings": {
             "kerb-height": {
                 "freeform": {
@@ -7296,7 +7303,8 @@
     },
     "pedestrian_path": {
         "description": "Fußgängerwege, insbesondere für die Navigation in Gebäuden und die Aufnahme von Eingängen in diese Ebene",
-        "name": "Fußgängerwege"
+        "name": "Fußgängerwege",
+        "snapName": "ein Fußweg"
     },
     "pharmacy": {
         "description": "Eine Ebene mit Apotheken, die (wahrscheinlich) verschreibungspflichtige Medikamente ausgeben",
@@ -8183,6 +8191,9 @@
                     },
                     "4": {
                         "then": "Dieser Ort bietet kabelgebundenen Internetzugang"
+                    },
+                    "5": {
+                        "then": "Dieser Ort bietet sowohl drahtloses Internet als auch Internetzugang über ein Terminal oder einen Computer"
                     }
                 },
                 "question": "Bietet dieser Ort Internetzugang?"
@@ -9037,6 +9048,7 @@
     "shelter": {
         "description": "Eine Ebene, die verschiedene Bauformen von Unterständen zeigt",
         "name": "Unterstände",
+        "snapName": "ein Unterstand",
         "tagRenderings": {
             "shelter-type": {
                 "mappings": {
@@ -12005,6 +12017,7 @@
     },
     "walls_and_buildings": {
         "description": "Spezielle Ebene, die alle Wände und Gebäude bereitstellt. Diese Ebene ist nützlich in Voreinstellungen für Objekte, die an Wänden platziert werden können (z. B. AEDs, Briefkästen, Eingänge, Adressen, Überwachungskameras, ...). Diese Ebene ist standardmäßig unsichtbar und kann vom Benutzer nicht umgeschaltet werden.",
+        "snapName": "eine Wand oder ein Gebäude",
         "tagRenderings": {
             "entrance_info": {
                 "mappings": {
