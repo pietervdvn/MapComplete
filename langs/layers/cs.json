@@ -4072,10 +4072,10 @@
             "Cuisine": {
                 "mappings": {
                     "0": {
-                        "then": "Tohle je pizzerie"
+                        "then": "Pizzerie"
                     },
                     "1": {
-                        "then": "Tohle je hranolkárna"
+                        "then": "Hranolkárna"
                     },
                     "10": {
                         "then": "Podávají se zde čínské pokrmy"

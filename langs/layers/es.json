@@ -2707,7 +2707,7 @@
             "Cuisine": {
                 "mappings": {
                     "0": {
-                        "then": "Esto es una pizzería"
+                        "then": "Pizzería"
                     },
                     "10": {
                         "then": "Aquí se sirven platos Chinos"
@@ -2725,10 +2725,10 @@
                         "then": "Principalmente sirve pasta"
                     },
                     "3": {
-                        "then": "Esta es una tienda de kebak"
+                        "then": "Tienda de kebak"
                     },
                     "5": {
-                        "then": "Aquí se sirven hamburguesas"
+                        "then": "Hamburguesas"
                     },
                     "6": {
                         "then": "Aquí se sirve sushi"

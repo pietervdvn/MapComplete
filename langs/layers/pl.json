@@ -1998,7 +1998,7 @@
             "Cuisine": {
                 "mappings": {
                     "0": {
-                        "then": "To jest pizzeria"
+                        "then": "Pizzeria"
                     },
                     "2": {
                         "then": "Podaje głównie makarony"

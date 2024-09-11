@@ -3560,10 +3560,10 @@
             "Cuisine": {
                 "mappings": {
                     "0": {
-                        "then": "C'est une pizzéria"
+                        "then": "Pizzéria"
                     },
                     "1": {
-                        "then": "C'est une friterie"
+                        "then": "Friterie"
                     },
                     "10": {
                         "then": "Des plats chinois sont servis ici"
@@ -3584,10 +3584,10 @@
                         "then": "Restaurant Italien"
                     },
                     "3": {
-                        "then": "C'est un resto kebab"
+                        "then": "Resto kebab"
                     },
                     "4": {
-                        "then": "C'est une sandwicherie"
+                        "then": "Sandwicherie"
                     },
                     "5": {
                         "then": "Des hamburgers sont servis ici"

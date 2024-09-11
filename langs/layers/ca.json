@@ -3926,10 +3926,10 @@
             "Cuisine": {
                 "mappings": {
                     "0": {
-                        "then": "Això és una pizzeria"
+                        "then": "Pizzeria"
                     },
                     "1": {
-                        "then": "Això és una fregiduria"
+                        "then": "Fregiduria"
                     },
                     "10": {
                         "then": "Aquí es serveixen plats xinesos"
@@ -3953,7 +3953,7 @@
                         "then": "Aquesta és una botiga de kebabs"
                     },
                     "4": {
-                        "then": "Això és una botiga d'entrepans"
+                        "then": "Botiga d'entrepans"
                     },
                     "5": {
                         "then": "Aquí es serveixen hamburgueses"

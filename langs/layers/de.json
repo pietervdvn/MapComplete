@@ -5147,10 +5147,10 @@
             "Cuisine": {
                 "mappings": {
                     "0": {
-                        "then": "Dies ist eine Pizzeria"
+                        "then": "Pizzeria"
                     },
                     "1": {
-                        "then": "Dies ist eine Pommesbude"
+                        "then": "Pommesbude"
                     },
                     "10": {
                         "then": "Hier werden chinesische Gerichte serviert"
@@ -5171,13 +5171,10 @@
                         "then": "Bietet vorwiegend Pastagerichte an"
                     },
                     "3": {
-                        "then": "Das ist ein Dönerladen"
+                        "then": "Dönerladen"
                     },
                     "4": {
-                        "then": "Dies ist ein Sandwichladen"
-                    },
-                    "5": {
-                        "then": "Hier werden Burger serviert"
+                        "then": "Sandwichladen"
                     },
                     "6": {
                         "then": "Hier wird Sushi serviert"

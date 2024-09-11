@@ -5149,49 +5149,49 @@
             "Cuisine": {
                 "mappings": {
                     "0": {
-                        "then": "This is a pizzeria"
+                        "then": "Pizzeria"
                     },
                     "1": {
-                        "then": "This is a friture"
+                        "then": "Friture"
                     },
                     "10": {
-                        "then": "Chinese dishes are served here"
+                        "then": "Chinese"
                     },
                     "11": {
-                        "then": "Greek dishes are served here"
+                        "then": "Greek"
                     },
                     "12": {
-                        "then": "Indian dishes are served here"
+                        "then": "Indian"
                     },
                     "13": {
-                        "then": "Turkish dishes are served here"
+                        "then": "Turkish restaurant"
                     },
                     "14": {
-                        "then": "Thai dishes are served here"
+                        "then": "Thai restaurant"
                     },
                     "2": {
-                        "then": "Mainly serves pasta"
+                        "then": "Serves mainly pasta"
                     },
                     "3": {
-                        "then": "This is kebab shop"
+                        "then": "Kebab shop"
                     },
                     "4": {
-                        "then": "This is a sandwich shop"
+                        "then": "Sandwich shop"
                     },
                     "5": {
-                        "then": "Burgers are served here"
+                        "then": "Burgersrestaurant"
                     },
                     "6": {
-                        "then": "Sushi is served here"
+                        "then": "Sushi restaurant"
                     },
                     "7": {
-                        "then": "Coffee is served here"
+                        "then": "Coffeebar"
                     },
                     "8": {
-                        "then": "This is an Italian restaurant (which serves more than pasta and pizza)"
+                        "then": "Italian restaurant (which serves more than pasta and pizza)"
                     },
                     "9": {
-                        "then": "French dishes are served here"
+                        "then": "French restaurant"
                     }
                 },
                 "question": "What kind of food is served here?",
