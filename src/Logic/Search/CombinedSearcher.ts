@@ -2,11 +2,11 @@ import GeocodingProvider, { SearchResult, GeocodingOptions, GeocodeResult } from
 import { Utils } from "../../Utils"
 import { Store, Stores } from "../UIEventSource"
 
-export default class CombinedSearcher implements GeocodingProvider <GeocodeResult> {
-    private _providers: ReadonlyArray<GeocodingProvider<GeocodeResult>>
-    private _providersWithSuggest: ReadonlyArray<GeocodingProvider<GeocodeResult>>
+export default class CombinedSearcher implements GeocodingProvider {
+    private _providers: ReadonlyArray<GeocodingProvider>
+    private _providersWithSuggest: ReadonlyArray<GeocodingProvider>
 
-    constructor(...providers: ReadonlyArray<GeocodingProvider<GeocodeResult>>) {
+    constructor(...providers: ReadonlyArray<GeocodingProvider>) {
         this._providers = Utils.NoNull(providers)
         this._providersWithSuggest = this._providers.filter(pr => pr.suggest !== undefined)
     }

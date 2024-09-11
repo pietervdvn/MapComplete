@@ -3,7 +3,7 @@ import GeocodingProvider, { GeocodingOptions, GeocodeResult } from "./GeocodingP
 import { OsmId } from "../../Models/OsmFeature"
 import { SpecialVisualizationState } from "../../UI/SpecialVisualization"
 
-export default class OpenStreetMapIdSearch implements GeocodingProvider<GeocodeResult> {
+export default class OpenStreetMapIdSearch implements GeocodingProvider {
     private static readonly regex = /((https?:\/\/)?(www.)?(osm|openstreetmap).org\/)?(n|node|w|way|r|relation)[/ ]?([0-9]+)/
 
     private static readonly types: Readonly<Record<string, "node" | "way" | "relation">> = {

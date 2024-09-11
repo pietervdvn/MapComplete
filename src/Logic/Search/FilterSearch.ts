@@ -1,24 +1,24 @@
-import { ImmutableStore, Store } from "../UIEventSource"
-import GeocodingProvider, { FilterPayload, FilterResult, GeocodingOptions, SearchResult } from "./GeocodingProvider"
 import { SpecialVisualizationState } from "../../UI/SpecialVisualization"
 import { Utils } from "../../Utils"
 import Locale from "../../UI/i18n/Locale"
 import Constants from "../../Models/Constants"
+import FilterConfig, { FilterConfigOption } from "../../Models/ThemeConfig/FilterConfig"
+import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
+
+export type FilterSearchResult = { option: FilterConfigOption, filter: FilterConfig, layer: LayerConfig, index: number }
+
 
 /**
  * Searches matching filters
  */
-export default class FilterSearch implements GeocodingProvider {
+export default class FilterSearch {
     private readonly _state: SpecialVisualizationState
 
     constructor(state: SpecialVisualizationState) {
         this._state = state
     }
 
-    async search(query: string): Promise<SearchResult[]> {
-        return this.searchDirectly(query)
-    }
-    public searchDirectly(query: string): FilterResult[] {
+    public search(query: string): FilterSearchResult[] {
         if (query.length === 0) {
             return []
         }
@@ -28,7 +28,7 @@ export default class FilterSearch implements GeocodingProvider {
             }
             return query
         }).filter(q => q.length > 0)
-        const possibleFilters: FilterResult[] = []
+        const possibleFilters: FilterSearchResult[] = []
         for (const layer of this._state.layout.layers) {
             if (!Array.isArray(layer.filters)) {
                 continue
@@ -61,13 +61,9 @@ export default class FilterSearch implements GeocodingProvider {
                     if (levehnsteinD > 0.25) {
                         continue
                     }
-                    possibleFilters.push(<FilterResult>{
-                        category: "filter",
-                        osm_id: layer.id + "/" + filter.id + "/" + i,
-                        payload: {
+                    possibleFilters.push({
                             option, layer, filter, index:
                             i,
-                        },
                     })
                 }
             }
@@ -75,16 +71,11 @@ export default class FilterSearch implements GeocodingProvider {
         return possibleFilters
     }
 
-    suggest(query: string, options?: GeocodingOptions): Store<SearchResult[]> {
-        return new ImmutableStore(this.searchDirectly(query))
-    }
-
-
     /**
      * Create a random list of filters
      */
-    getSuggestions(): FilterPayload[] {
-        const result: FilterPayload[] = []
+    getSuggestions(): FilterSearchResult[] {
+        const result: FilterSearchResult[] = []
         for (const [id, filteredLayer] of this._state.layerState.filteredLayers) {
             if (!Array.isArray(filteredLayer.layerDef.filters)) {
                 continue
@@ -93,7 +84,7 @@ export default class FilterSearch implements GeocodingProvider {
                 continue
             }
             for (const filter of filteredLayer.layerDef.filters) {
-                const singleFilterResults: FilterPayload[] = []
+                const singleFilterResults: FilterSearchResult[] = []
                 for (let i = 0; i < Math.min(filter.options.length, 5); i++) {
                     const option = filter.options[i]
                     if (option.osmTags === undefined) {

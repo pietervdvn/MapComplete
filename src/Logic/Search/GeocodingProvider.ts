@@ -5,8 +5,6 @@ import { Store } from "../UIEventSource"
 import * as search from "../../assets/generated/layers/search.json"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
 import { LayerConfigJson } from "../../Models/ThemeConfig/Json/LayerConfigJson"
-import FilterConfig, { FilterConfigOption } from "../../Models/ThemeConfig/FilterConfig"
-import { MinimalLayoutInformation } from "../../Models/ThemeConfig/LayoutConfig"
 import { GeoOperations } from "../GeoOperations"
 
 export type GeocodingCategory =
@@ -44,13 +42,7 @@ export type GeocodeResult =  {
     payload?: object,
     source?: string
 }
-export type FilterPayload = { option: FilterConfigOption, filter: FilterConfig, layer: LayerConfig, index: number }
-export type FilterResult =  { category: "filter", osm_id: string, payload:  FilterPayload }
-export type LayerResult = {category: "layer", osm_id: string, payload: LayerConfig}
 export type SearchResult =
-    | FilterResult
-    | { category: "theme", osm_id: string, payload: MinimalLayoutInformation }
-    | LayerResult
     | GeocodeResult
 
 export interface GeocodingOptions {
@@ -58,16 +50,16 @@ export interface GeocodingOptions {
 }
 
 
-export default interface GeocodingProvider<T extends SearchResult = SearchResult> {
+export default interface GeocodingProvider {
 
 
-    search(query: string, options?: GeocodingOptions): Promise<T[]>
+    search(query: string, options?: GeocodingOptions): Promise<GeocodeResult[]>
 
     /**
      * @param query
      * @param options
      */
-    suggest?(query: string, options?: GeocodingOptions): Store<T[]>
+    suggest?(query: string, options?: GeocodingOptions): Store<GeocodeResult[]>
 }
 
 export type ReverseGeocodingResult = Feature<Geometry, {

@@ -5,7 +5,7 @@ import { ImmutableStore, Store } from "../UIEventSource"
 /**
  * A simple search-class which interprets possible locations
  */
-export default class CoordinateSearch implements GeocodingProvider<GeocodeResult> {
+export default class CoordinateSearch implements GeocodingProvider {
     private static readonly latLonRegexes: ReadonlyArray<RegExp> = [
         /^(-?[0-9]+\.[0-9]+)[ ,;/\\]+(-?[0-9]+\.[0-9]+)/,
         /lat[:=]? *['"]?(-?[0-9]+\.[0-9]+)['"]?[ ,;&]+lon[:=]? *['"]?(-?[0-9]+\.[0-9]+)['"]?/,

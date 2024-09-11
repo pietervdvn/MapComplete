@@ -7,7 +7,6 @@
   import Translations from "./i18n/Translations"
   import Logo from "../assets/svg/Logo.svelte"
   import Tr from "./Base/Tr.svelte"
-  import MoreScreen from "./BigComponents/MoreScreen"
   import LoginToggle from "./Base/LoginToggle.svelte"
   import Pencil from "../assets/svg/Pencil.svelte"
   import Constants from "../Models/Constants"
@@ -24,6 +23,8 @@
   import { ArrowTrendingUp } from "@babeard/svelte-heroicons/solid/ArrowTrendingUp"
   import Searchbar from "./Base/Searchbar.svelte"
   import ChevronDoubleRight from "@babeard/svelte-heroicons/mini/ChevronDoubleRight"
+  import ThemeSearch from "../Logic/Search/ThemeSearch"
+  import SearchUtils from "../Logic/Search/SearchUtils"
 
   const featureSwitches = new OsmConnectionFeatureSwitches()
   const osmConnection = new OsmConnection({
@@ -43,8 +44,8 @@
   let search: UIEventSource<string | undefined> = new UIEventSource<string>("")
   let searchStable = search.stabilized(100)
 
-  const officialThemes: MinimalLayoutInformation[] = MoreScreen.officialThemes.themes.filter(th => th.hideFromOverview === false)
-  const hiddenThemes: MinimalLayoutInformation[] = MoreScreen.officialThemes.themes.filter(th => th.hideFromOverview === true)
+  const officialThemes: MinimalLayoutInformation[] = ThemeSearch.officialThemes.themes.filter(th => th.hideFromOverview === false)
+  const hiddenThemes: MinimalLayoutInformation[] = ThemeSearch.officialThemes.themes.filter(th => th.hideFromOverview === true)
   let visitedHiddenThemes: Store<MinimalLayoutInformation[]> = UserRelatedState.initDiscoveredHiddenThemes(state.osmConnection)
     .map((knownIds) => hiddenThemes.filter((theme) =>
       knownIds.indexOf(theme.id) >= 0 || state.osmConnection.userDetails.data.name === "Pieter Vander Vennet"
@@ -60,7 +61,7 @@
       if (!search) {
         return themes
       }
-      const scores = MoreScreen.sortedByLowest(search, themes)
+      const scores = ThemeSearch.sortedByLowestScores(search, themes)
       const strict = scores.filter(sc => sc.lowest < 2)
       if (strict.length > 0) {
         return strict.map(sc => sc.theme)
@@ -84,7 +85,7 @@
   })
 
   function applySearch() {
-    const didRedirect = MoreScreen.applySearch(search.data)
+    const didRedirect = SearchUtils.applySpecialSearch(search.data)
     console.log("Did redirect?", didRedirect)
     if (didRedirect) {
       // Just for style and readability; won't _actually_ reach this
@@ -96,7 +97,7 @@
       return
     }
 
-    window.location.href = MoreScreen.createUrlFor(candidate)
+    window.location.href = ThemeSearch.createUrlFor(candidate, undefined)
 
   }
 

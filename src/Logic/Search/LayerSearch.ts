@@ -1,44 +1,41 @@
-import GeocodingProvider, { GeocodingOptions, LayerResult, SearchResult } from "./GeocodingProvider"
 import { SpecialVisualizationState } from "../../UI/SpecialVisualization"
-import MoreScreen from "../../UI/BigComponents/MoreScreen"
-import { ImmutableStore, Store } from "../UIEventSource"
 import Constants from "../../Models/Constants"
+import SearchUtils from "./SearchUtils"
+import ThemeSearch from "./ThemeSearch"
+import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
 
-export default class LayerSearch implements GeocodingProvider<LayerResult> {
+export default class LayerSearch {
 
     private readonly _state: SpecialVisualizationState
-    private readonly _suggestionLimit: number
     private readonly _layerWhitelist : Set<string>
-    constructor(state: SpecialVisualizationState, suggestionLimit: number) {
+    constructor(state: SpecialVisualizationState) {
         this._state = state
         this._layerWhitelist = new Set(state.layout.layers.map(l => l.id).filter(id => Constants.added_by_default.indexOf(<any> id) < 0))
-        this._suggestionLimit = suggestionLimit
     }
 
-    async search(query: string): Promise<LayerResult[]> {
-        return this.searchWrapped(query, 99)
+    static scoreLayers(query: string, layerWhitelist?: Set<string>): Record<string, number> {
+        const result: Record<string, number> = {}
+        for (const id in ThemeSearch.officialThemes.layers) {
+            if(layerWhitelist !== undefined && !layerWhitelist.has(id)){
+                continue
+            }
+            const keywords = ThemeSearch.officialThemes.layers[id]
+            const distance = SearchUtils.scoreKeywords(query, keywords)
+            result[id] = distance
+        }
+        return result
     }
 
-    suggest(query: string, options?: GeocodingOptions): Store<LayerResult[]> {
-        return new ImmutableStore(this.searchWrapped(query, this._suggestionLimit ?? 4))
-    }
 
-
-    private searchWrapped(query: string, limit: number): LayerResult[] {
-        return this.searchDirect(query, limit)
-    }
-
-    public searchDirect(query: string, limit: number): LayerResult[] {
+    public search(query: string, limit: number): LayerConfig[] {
         if (query.length < 1) {
             return []
         }
-        const scores = MoreScreen.scoreLayers(query, this._layerWhitelist)
-        const asList:(LayerResult & {score:number})[] = []
+        const scores = LayerSearch.scoreLayers(query, this._layerWhitelist)
+        const asList:({layer: LayerConfig, score:number})[] = []
         for (const layer in scores) {
             asList.push({
-                category: "layer",
-                payload: this._state.layout.getLayer(layer),
-                osm_id: layer,
+                layer: this._state.layout.getLayer(layer),
                 score: scores[layer]
             })
         }
@@ -47,6 +44,7 @@ export default class LayerSearch implements GeocodingProvider<LayerResult> {
         return asList
             .filter(sorted => sorted.score < 2)
             .slice(0, limit)
+            .map(l => l.layer)
     }
 
 
