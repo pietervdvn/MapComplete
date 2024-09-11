@@ -33,6 +33,7 @@
       "id": "accepts_cash",
       "options": [
         {
+          "emoji": "🪙",
           "osmTags": "payment:cash=yes",
           "question": {
             "en": "Accepts cash",
@@ -51,6 +52,7 @@
       "id": "accepts_cards",
       "options": [
         {
+          "emoji": "💳",
           "osmTags": "payment:cards=yes",
           "question": {
             "en": "Accepts payment cards",
@@ -69,6 +71,7 @@
       "id": "accepts_debit_cards",
       "options": [
         {
+          "emoji": "💳",
           "osmTags": "payment:debit_cards=yes",
           "question": {
             "en": "Accepts debit cards",
@@ -84,6 +87,7 @@
       "id": "accepts_credit_cards",
       "options": [
         {
+          "emoji": "💳",
           "osmTags": "payment:credit_cards=yes",
           "question": {
             "en": "Accepts credit cards",

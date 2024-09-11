@@ -26,10 +26,19 @@
   },
   "searchTerms": {
     "en": [
-      "drink","water","fountain","bubbler"
+      "drink",
+      "water",
+      "fountain",
+      "bubbler"
     ],
     "nl": [
-      "drinken","water","drinkwater","waterfontein","fontein","kraan","kraantje"
+      "drinken",
+      "water",
+      "drinkwater",
+      "waterfontein",
+      "fontein",
+      "kraan",
+      "kraantje"
     ]
   },
   "source": {
