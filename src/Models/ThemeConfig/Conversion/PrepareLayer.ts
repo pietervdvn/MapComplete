@@ -39,7 +39,8 @@ class ExpandFilter extends DesugaringStep<LayerConfigJson> {
     constructor(state: DesugaringContext) {
         super(
             ["Expands filters: replaces a shorthand by the value found in 'filters.json'.",
-                "If the string is formatted 'layername.filtername, it will be looked up into that layer instead. If a tagRendering sets 'filter', this filter will also be included",
+                "If the string is formatted 'layername.filtername, it will be looked up into that layer instead.",
+                "If a tagRendering sets 'filter', this filter will also be included - unless \"#filter\":\"no-auto\" is set",
                 ""].join(" "),
             ["filter"],
             "ExpandFilter",
@@ -96,6 +97,8 @@ class ExpandFilter extends DesugaringStep<LayerConfigJson> {
             return json // Nothing to change here
         }
 
+        const noAutoFilters = json["#filter"] === "no-auto"
+
         const newFilters: FilterConfigJson[] = []
         const filters = <(FilterConfigJson | string)[]>json.filter
 
@@ -109,34 +112,36 @@ class ExpandFilter extends DesugaringStep<LayerConfigJson> {
             })
         }
 
-        /**
-         * Checks all tagRendering. If a tagrendering has 'filter' set, add this filter to the layer config
-         */
-        for (let i = 0; i < json.tagRenderings?.length; i++) {
-            const tagRendering = <TagRenderingConfigJson>json.tagRenderings[i]
-            if (!tagRendering?.filter) {
-                continue
-            }
-            if (tagRendering.filter === true) {
-                if (filterExists(tagRendering["id"])) {
+        if (!noAutoFilters){
+            /**
+             * Checks all tagRendering. If a tagrendering has 'filter' set, add this filter to the layer config
+             */
+            for (let i = 0; i < json.tagRenderings?.length; i++) {
+                const tagRendering = <TagRenderingConfigJson>json.tagRenderings[i]
+                if (!tagRendering?.filter) {
                     continue
                 }
-                filters.push(ExpandFilter.buildFilterFromTagRendering(tagRendering, context.enters("tagRenderings", i, "filter")))
-                continue
-            }
-            for (const filterName of tagRendering.filter ?? []) {
-                if (typeof filterName !== "string") {
-                    context.enters("tagRenderings", i, "filter").err("Not a string: " + filterName)
-                }
-                if (filterExists(filterName)) {
-                    // This filter has already been added
+                if (tagRendering.filter === true) {
+                    if (filterExists(tagRendering["id"])) {
+                        continue
+                    }
+                    filters.push(ExpandFilter.buildFilterFromTagRendering(tagRendering, context.enters("tagRenderings", i, "filter")))
                     continue
                 }
-                if (!filterName) {
-                    context.err("Got undefined as filter expansion in " + tagRendering["id"])
-                    continue
+                for (const filterName of tagRendering.filter ?? []) {
+                    if (typeof filterName !== "string") {
+                        context.enters("tagRenderings", i, "filter").err("Not a string: " + filterName)
+                    }
+                    if (filterExists(filterName)) {
+                        // This filter has already been added
+                        continue
+                    }
+                    if (!filterName) {
+                        context.err("Got undefined as filter expansion in " + tagRendering["id"])
+                        continue
+                    }
+                    filters.push(filterName)
                 }
-                filters.push(filterName)
             }
         }
 

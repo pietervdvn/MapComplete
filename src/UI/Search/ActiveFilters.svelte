@@ -8,12 +8,13 @@
   import FilterToggle from "./FilterToggle.svelte"
   import ToSvelte from "../Base/ToSvelte.svelte"
   import Tr from "../Base/Tr.svelte"
-  import Constants from "../../Models/Constants"
   import { Store } from "../../Logic/UIEventSource"
+  import Translations from "../i18n/Translations"
 
   export let activeFilters: ActiveFilter[]
   export let state: SpecialVisualizationState
   let loading = false
+  const t =Translations.t.general.search
 
 
   let activeLayers: Store<FilteredLayer[]> = state.layerState.activeLayers.mapD(l => l.filter(l => l.layerDef.isNormal()))
@@ -42,10 +43,10 @@
 {#if activeFilters.length > 0 || $activeLayers.length === 1 || $nonactiveLayers.length > 0}
   <SidebarUnit>
     <div class="flex justify-between">
-      <h3>Active filters</h3>
+      <h3><Tr t={t.activeFilters}/></h3>
 
       <button class="as-link subtle self-end" on:click={() => clear()} style="margin-right: 0.75rem">
-        Clear filters
+        <Tr t={t.clearFilters}/>
       </button>
     </div>
     {#if loading}
@@ -82,9 +83,6 @@
           </div>
         {/each}
       </div>
-
-
     {/if}
   </SidebarUnit>
-
 {/if}

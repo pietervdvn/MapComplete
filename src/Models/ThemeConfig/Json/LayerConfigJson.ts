@@ -442,6 +442,7 @@ export interface LayerConfigJson {
      * 2. search 'filters.json' for the appropriate filter or
      * 3. will try to parse it as `layername.filterid` and us that one.
      *
+     * Note: adding "#filter":"no-auto" will disable the filters added by tagRenderings
      *
      * group: filters
      */
