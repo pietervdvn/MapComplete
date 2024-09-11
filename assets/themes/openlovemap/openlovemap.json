@@ -52,7 +52,8 @@
             "multiAnswer": true,
             "question": {
               "en": "Does this shop offer fetish gear?",
-              "de": "Bietet dieser Laden Fetischkleidung an?"
+              "de": "Bietet dieser Laden Fetischkleidung an?",
+              "es": "¿Ofrece esta tienda artículos fetichistas?"
             },
             "mappings": [
               {
@@ -60,7 +61,8 @@
                 "ifnot": "fetish:bdsm:soft=no",
                 "then": {
                   "en": "This shop offers <b>soft BDSM-gear</b>, such as fluffy handcuffs, a 'fifty-shade-of-grey'-starterset, ...",
-                  "de": "Dieser Laden bietet <b>weiches BDSM-Zubehör</b> an, wie zum Beispiel flauschige Handschellen, ein \"Fifty Shades of Grey\"-Starterset, ..."
+                  "de": "Dieser Laden bietet <b>weiches BDSM-Zubehör</b> an, wie zum Beispiel flauschige Handschellen, ein \"Fifty Shades of Grey\"-Starterset, ...",
+                  "es": "Esta tienda ofrece <b>artículos BDSM suaves</b>, como esposas mullidas, un conjunto de ..."
                 }
               },
               {
@@ -68,7 +70,8 @@
                 "ifnot": "fetish:bdsm:specialized=no",
                 "then": {
                   "en": "This shop offers <b>specialized BDSM-gear</b>, such as spreader bars, supplies for needle play, medical bondage supplies, impact tools, shackles, metal colors, cuffs, nipple clamps, shibari accessories, ...",
-                  "de": "Dieser Laden bietet <b>spezialisiertes BDSM-Zubehör</b> an, wie zum Beispiel Spreizstangen, Utensilien für Nadelfolter, medizinische Bondage-Ausrüstung, Schlagwerkzeuge, Fesseln, Metallhalsbänder, Handschellen, Nippelklemmen, Shibari-Zubehör, ..."
+                  "de": "Dieser Laden bietet <b>spezialisiertes BDSM-Zubehör</b> an, wie zum Beispiel Spreizstangen, Utensilien für Nadelfolter, medizinische Bondage-Ausrüstung, Schlagwerkzeuge, Fesseln, Metallhalsbänder, Handschellen, Nippelklemmen, Shibari-Zubehör, ...",
+                  "es": "Esta tienda ofrece <b>artículos especializados en BDSM</b>, como barras separadoras, artículos para juegos con agujas, artículos de bondage médico, herramientas de impacto, grilletes, colores metálicos, esposas, pinzas para pezones, accesorios de shibari, ..."
                 }
               },
               {
@@ -76,7 +79,8 @@
                 "ifnot": "fetish:pet_play=no",
                 "then": {
                   "en": "This shop offers <b>pet play</b> accessories, such as puppy masks, animal masks, pony play, tails, hoof shoes, ...",
-                  "de": "Dieser Laden bietet <b>Petplay</b>-Zubehör an, wie zum Beispiel Hundemasken, Tiermasken, Ponyplay-Ausrüstung, Schwänze, Hufschuhe, ..."
+                  "de": "Dieser Laden bietet <b>Petplay</b>-Zubehör an, wie zum Beispiel Hundemasken, Tiermasken, Ponyplay-Ausrüstung, Schwänze, Hufschuhe, ...",
+                  "es": "Esta tienda ofrece <b>accesorios para mascotas</b>, como máscaras de cachorros, máscaras de animales, juegos de ponis, colas, herraduras..."
                 }
               },
               {
@@ -84,7 +88,8 @@
                 "ifnot": "fetish:leather=no",
                 "then": {
                   "en": "This shop offers <b>leather gear</b>, including pants and shirts usable in daily life up till leather harnesses",
-                  "de": "Dieser Laden bietet <b>Lederkleidung</b> an, darunter Hosen und Hemden für den Alltag bis hin zu Lederharnissen"
+                  "de": "Dieser Laden bietet <b>Lederkleidung</b> an, darunter Hosen und Hemden für den Alltag bis hin zu Lederharnissen",
+                  "es": "Esta tienda ofrece <b>ropa de cuero</b>, desde pantalones y camisas de uso diario hasta arneses de cuero"
                 }
               },
               {
@@ -92,7 +97,8 @@
                 "ifnot": "fetish:uniform=no",
                 "then": {
                   "en": "This shop offers <b>uniforms</b> for roleplay, such nurse uniforms, military uniforms, police, school girl, french maid, ...",
-                  "de": "Dieser Laden bietet <b>Uniformen</b> für Rollenspiele an, wie Krankenschwester-Uniformen, Militäruniformen, Polizei-, Schulmädchen- und Dienstmädchen-Outfits, ..."
+                  "de": "Dieser Laden bietet <b>Uniformen</b> für Rollenspiele an, wie Krankenschwester-Uniformen, Militäruniformen, Polizei-, Schulmädchen- und Dienstmädchen-Outfits, ...",
+                  "es": "Esta tienda ofrece <b>uniformes</b> para juegos de rol, tales como uniformes de enfermera, uniformes militares, policía, colegiala, criada francesa, ..."
                 }
               }
             ]

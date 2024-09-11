@@ -32,6 +32,9 @@
                 "description": "Duża struktura reklamowa na dworze, zwykle znajdująca się w obszarach z dużym ruchem, np. w pobliżu ruchliwych dróg",
                 "title": "bilbord"
             },
+            "1": {
+                "description": "Duży obiekt reklamowy na zewnątrz, zazwyczaj znajduje się w obszarach z dużym ruchem, np. obok ruchliwych dróg na ścianie"
+            },
             "11": {
                 "description": "Kawałek wodoodpornej tkaniny z nadrukowanym przesłaniem, trwale przymocowany do ściany",
                 "title": "plandeka"
@@ -925,6 +928,11 @@
                 "question": "Czy pompka posiada wskaźnik ciśnienia lub manometr?"
             },
             "bike_repair_station-valves": {
+                "mappings": {
+                    "1": {
+                        "then": "Dunlop"
+                    }
+                },
                 "question": "Jakie zawory są obsługiwane?",
                 "render": "Ta pompka obsługuje następujące zawory: {valves}"
             },
@@ -1005,6 +1013,11 @@
             }
         },
         "title": {
+            "mappings": {
+                "0": {
+                    "then": "<i>{name}</i>"
+                }
+            },
             "render": "Pub"
         }
     },
@@ -1231,6 +1244,17 @@
             "ref": {
                 "question": "Jaki jest numer referencyjny tej stacji ładowania?",
                 "render": "Numer referencyjny to <b>{ref}</b>"
+            }
+        }
+    },
+    "climbing_area": {
+        "tagRenderings": {
+            "Rock type (crag/rock/cliff only)": {
+                "mappings": {
+                    "0": {
+                        "then": "Wapień"
+                    }
+                }
             }
         }
     },
@@ -1725,6 +1749,7 @@
         }
     },
     "entrance": {
+        "name": "Wejście",
         "tagRenderings": {
             "Entrance type": {
                 "mappings": {
@@ -2045,6 +2070,9 @@
             "mappings": {
                 "0": {
                     "then": "Restauracja <i>{name}</i>"
+                },
+                "2": {
+                    "then": "Fastfood"
                 }
             },
             "render": "Restauracja"
@@ -2059,6 +2087,9 @@
             }
         },
         "tagRenderings": {
+            "ghost_bike-inscription": {
+                "render": "<i>{inscription}</i>"
+            },
             "ghost_bike-name": {
                 "mappings": {
                     "0": {
@@ -3430,6 +3461,7 @@
         }
     },
     "recycling": {
+        "name": "Recykling",
         "tagRenderings": {
             "recycling-accepts": {
                 "mappings": {
@@ -3475,6 +3507,17 @@
             "render": "Szkoła <i>{name}</i>"
         }
     },
+    "shops": {
+        "name": "Sklep",
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
+            "render": "Sklep"
+        }
+    },
     "surveillance_camera": {
         "tagRenderings": {
             "Camera type: fixed; panning; dome": {
@@ -3495,6 +3538,26 @@
             "mappings": {
                 "0": {
                     "then": "Hotel {name}"
+                }
+            }
+        }
+    },
+    "trail": {
+        "name": "Ścieżki",
+        "title": {
+            "render": "Ścieżka"
+        }
+    },
+    "tree_node": {
+        "tagRenderings": {
+            "tree-leaf_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Szerokolistne"
+                    },
+                    "1": {
+                        "then": "Iglaste"
+                    }
                 }
             }
         }
@@ -3553,6 +3616,22 @@
                     }
                 }
             }
+        }
+    },
+    "veterinary": {
+        "name": "weterynaryjny",
+        "title": {
+            "render": "Weterynaryjny"
+        }
+    },
+    "visitor_information_centre": {
+        "title": {
+            "mappings": {
+                "1": {
+                    "then": "{name}"
+                }
+            },
+            "render": "{name}"
         }
     },
     "walls_and_buildings": {

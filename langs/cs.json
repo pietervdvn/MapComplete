@@ -193,6 +193,7 @@
             },
             "josmNotOpened": "JOSM se nepodařilo propojit. Ujistěte se, že je otevřený a že je povoleno dálkové ovládání",
             "josmOpened": "JOSM je otevřen",
+            "madeBy": "Vytvořeno od <b>{author}</b>",
             "mapContributionsBy": "Aktuální viditelná data obsahují úpravy provedené uživateli {contributors}",
             "mapContributionsByAndHidden": "Aktuální viditelná data obsahují úpravy provedené {contributors} a {hiddenCount} dalšími přispěvateli",
             "mapDataByOsm": "Mapová data: OpenStreetMap",
@@ -208,7 +209,7 @@
             "translatedBy": "MapComplete přeložili {contributors} a <a href='https://github.com/pietervdvn/MapComplete/graphs/contributors' target='_blank'>{hiddenCount} dalších přispěvatelů</a>"
         },
         "back": "Zpět",
-        "backToIndex": "Návrat na přehled všech tematických map",
+        "backToIndex": "Zobrazit všechny tematické mapy",
         "backToMap": "Zpět na mapu",
         "backgroundMap": "Vyberte vrstvu pozadí",
         "backgroundSwitch": "Přepnout pozadí",
@@ -241,6 +242,7 @@
             "downloadGeojson": "Stáhnout viditelná data jako GeoJSON",
             "downloadGpx": "Stáhnout jako soubor GPX",
             "downloadGpxHelper": "Soubor GPX lze použít s většinou navigačních zařízení a aplikací",
+            "downloadImage": "Stáhnout obrázek",
             "exporting": "Exportování…",
             "includeMetaData": "Zahrnout metadata (poslední editor, vypočtené hodnoty, ...)",
             "licenseInfo": "<h3>Upozornění na autorská práva</h3>Poskytovaná data jsou dostupná pod ODbL. Opětovné použití je zdarma pro jakýkoli účel, ale <ul><li>musí být uveden zdroj <b>© přispěvatelé OpenStreetMap</b><li><li>Jakákoli změna musí být publikována pod stejnou licencí</li>< /ul> Podrobnosti naleznete v úplném <a href='https://www.openstreetmap.org/copyright' target='_blank'>upozornění na autorská práva</a>.",
@@ -299,8 +301,12 @@
         "logout": "Odhlásit se",
         "mappingsAreHidden": "Některé možnosti jsou skryté. Pomocí vyhledávání zobrazíte další možnosti.",
         "menu": {
+            "aboutCurrentThemeTitle": "O této mapě",
             "aboutMapComplete": "O MapComplete",
-            "filter": "Filtrování dat"
+            "filter": "Filtrování dat",
+            "moreUtilsTitle": "Zjistit více",
+            "showIntroduction": "Zobrazit úvod",
+            "title": "Menu"
         },
         "morescreen": {
             "createYourOwnTheme": "Vytvořte si vlastní téma MapComplete",
@@ -408,7 +414,8 @@
             "fsGeolocation": "Povolit geolokaci",
             "fsUserbadge": "Povolit přihlašovací tlačítko a tím i možnost provádět změny",
             "fsWelcomeMessage": "Zobrazit vyskakovací okno s uvítací zprávou a související karty",
-            "intro": "<h3>Sdílejte tuto mapu</h3> Sdílejte tuto mapu zkopírováním níže uvedeného odkazu a jeho zasláním přátelům a rodině:",
+            "intro": "Sdílejte tuto mapu zkopírováním níže uvedeného odkazu a jeho zasláním přátelům a rodině:",
+            "openInOtherApplications": "Otevřete aktuální polohu pomocí jiné mapové aplikace",
             "openLayers": "Otevřete nabídku vrstev a filtrů",
             "options": "Možnosti sdílení",
             "stateIsIncluded": "Aktuální stav vrstev a filtrů je zahrnut ve sdíleném odkazu a prvku iframe.",
@@ -537,11 +544,18 @@
         "openLayersPanel": "Otevírá panel Vrstvy pozadí",
         "queryCurrentLocation": "Zobrazte adresu, která je nejblíže středu mapy",
         "selectAerial": "Nastavte pozadí na letecké nebo satelitní snímky. Přepíná mezi dvěma nejlepšími dostupnými vrstvami",
+        "selectFavourites": "Otevřít stránku oblíbených položek",
+        "selectItem": "Vyberte bod zájmu, který je nejblíže středu mapy (křížek). Pouze při použití klávesnicové navigace",
+        "selectItem2": "Vyberte bod zájmu, který je druhým nejbližším prvkem ke středu mapy (křížek). Pouze při použití klávesnicové navigace",
+        "selectItem3": "Vyberte bod zájmu, který je třetím nejbližším prvkem ke středu mapy (křížek). Pouze při použití klávesnicové navigace",
+        "selectItemI": "Vyberte bod zájmu, který je {i}tým nejbližším prvkem ke středu mapy (křížek). Pouze při použití klávesnicové navigace",
         "selectMap": "Nastavení pozadí na mapu z externích zdrojů. Přepíná mezi dvěma nejlepšími dostupnými vrstvami",
         "selectMapnik": "Nastavení vrstvy pozadí na OpenStreetMap-carto",
         "selectOsmbasedmap": "Nastavení vrstvy pozadí na mapu založenou na OpenStreetMap (nebo vypnutí rastrové vrstvy pozadí)",
         "selectSearch": "Vybere vyhledávací řádek pro vyhledávání míst",
-        "title": "Klávesové zkratky"
+        "shakePhone": "Zatřesení telefonem",
+        "title": "Klávesové zkratky",
+        "translationMode": "Zapnutí nebo vypnutí režimu překladu"
     },
     "image": {
         "addPicture": "Přidat fotku",
@@ -550,8 +564,11 @@
         "dontDelete": "Zrušit",
         "isDeleted": "Smazáno",
         "nearby": {
+            "close": "Sbalení panelu s okolními obrázky",
+            "failed": "Získání obrázků ze služby {service} se nezdařilo",
             "link": "Tento obrázek zobrazuje objekt",
-            "seeNearby": "Procházení a propojování okolních obrázků",
+            "noNearbyImages": "Nebyly nalezeny žádné obrázky v okolí",
+            "seeNearby": "Procházet okolní obrázky",
             "title": "Blízké obrázky streetview"
         },
         "pleaseLogin": "Pro přidání fotky se prosím přihlaste",
@@ -594,14 +611,16 @@
     },
     "index": {
         "#": "Tyto texty se zobrazují nad tlačítky motivu, pokud není načten žádný motiv",
+        "about": "O MapComplete",
         "featuredThemeTitle": "Tento týden",
-        "intro": "MapComplete je prohlížeč a editor OpenStreetMap, který zobrazuje informace o prvcích konkrétního tématu a umožňuje je aktualizovat.",
+        "intro": "Mapy k různým tématům, ke kterým přispíváte",
+        "learnMore": "Více informací",
         "logIn": "Přihlaste se, abyste viděli další témata, která jste dříve navštívili",
         "pickTheme": "Vyberte si téma níže a začněte.",
-        "title": "Vítejte v MapComplete"
+        "title": "MapComplete"
     },
     "move": {
-        "cancel": "Zrušit přesun",
+        "cancel": "Vyberte jiný důvod",
         "cannotBeMoved": "Tuto funkci nelze přesunout.",
         "confirmMove": "Přesunout sem",
         "inviteToMove": {
@@ -618,7 +637,7 @@
         "partOfRelation": "Tato funkce je součástí vztahu. K přesunutí použijte jiný editor.",
         "pointIsMoved": "Bod byl přesunut",
         "reasons": {
-            "reasonInaccurate": "Umístění tohoto objektu je nepřesné a mělo by být posunuto o několik metrů",
+            "reasonInaccurate": "Poloha je nepřesná o několik metrů",
             "reasonRelocation": "Objekt byl přemístěn na úplně jiné místo"
         },
         "selectReason": "Proč přesouváte tento objekt?",
@@ -681,6 +700,11 @@
         "takeImages": "Pořizujte snímky stromu, abyste automaticky zjistili typ stromu",
         "tryAgain": "Vyberte jiný druh"
     },
+    "preset_type": {
+        "question": "Jakého typu je tento objekt?",
+        "typeDescription": "To je <b>{title}</b>. <div class='subtle'>{description}</div>",
+        "typeTitle": "To je <b>{title}</b>"
+    },
     "privacy": {
         "editingIntro": "Když v mapě provedete změnu, tato změna se zaznamená na OpenStreetMap a je veřejně dostupná komukoli. Sada změn provedená pomocí MapComplete obsahuje následující data:",
         "editingOutro": "Viz <a href='https://wiki.osmfoundation.org/wiki/Privacy_Policy' target='_blank'>zásady ochrany osobních údajů na OpenStreetMap.org</a> pro podrobné informace. Rádi bychom vám připomněli, že při registraci můžete použít smyšlené jméno.",
@@ -706,22 +730,33 @@
     },
     "reviews": {
         "affiliated_reviewer_warning": "(Recenze od zaměstnance)",
-        "attribution": "Recenze jsou poskytovány službou <a href='https://mangrove.reviews/' target='_blank'>Mangrove Reviews</a> a jsou k dispozici pod licencí <a href='https://mangrove.reviews/terms#8-licensing-of-content' target='_blank'>CC-BY 4.0</a>.",
+        "attribution": "Od <a href='https://mangrove.reviews/' target='_blank'>Mangrove Reviews</a>",
+        "averageRating": "Průměrné hodnocení {n} hvězdiček",
         "i_am_affiliated": "Jsem spojen s tímto objektem",
         "i_am_affiliated_explanation": "Zkontrolujte, zda jste vlastníkem, tvůrcem, zaměstnancem, …",
         "name_required": "Pro zobrazení a vytváření recenzí je vyžadováno jméno",
-        "no_reviews_yet": "Zatím zde nejsou žádné recenze. Buďte první, kdo ji napíše, a pomozte otevřít data a podnikání!",
+        "no_reviews_yet": "Zatím nejsou žádné recenze. Buďte první!",
+        "non_place_review": "Jedna recenze se netýká místa a není zde uvedena.",
+        "non_place_reviews": "{n} recenzí se netýkají místa a nejsou zde zobrazeny.",
         "question": "Jak byste ohodnotili {title()}?",
         "question_opinion": "Jaká byla vaše zkušenost?",
+        "rate": "Ohodnotit {n} hvězdičkami",
+        "rated": "Hodnoceno {n} hvězdičkami",
+        "reviewPlaceholder": "Popište svou zkušenost…",
         "reviewing_as": "Přezkoumání jako {nickname}",
         "reviewing_as_anonymous": "Kontrola jako anonymní",
-        "save": "Uložit",
+        "reviews_bug": "Očekávali jste více recenzí? Některé recenze se nezobrazují kvůli chybě.",
+        "save": "Uložit recenzi",
         "saved": "Recenze uložena. Díky za sdílení!",
         "saving_review": "Ukládání…",
+        "see_all": "Zobrazit všechny recenze na mangrove.reviews",
         "title": "{count} recenzí",
         "title_singular": "Jedna recenze",
+        "too_long": "Povoleno je maximálně {max} znaků. Vaše recenze má {amount} znaků.",
         "tos": "Zanecháním recenze souhlasíte s <a href='https://mangrove.reviews/terms' target='_blank'>podmínkami a zásadami ochrany osobních údajů služby Mangrove.reviews</a>",
-        "write_a_comment": "Zanechte recenzi…"
+        "write_a_comment": "Zanechte recenzi…",
+        "your_reviews": "Vaše předchozí recenze",
+        "your_reviews_empty": "Nenašli jsme žádné z vašich předchozích hodnocení"
     },
     "split": {
         "cancel": "Zrušit",
@@ -765,11 +800,17 @@
         "fediverse": {
             "description": "Fediverse adresa, často @username@server.tld",
             "feedback": "Fediverse adresa se skládá z @username@server.tld nebo je odkazem na profil",
-            "invalidHost": "{host} není platný název hostitele"
+            "invalidHost": "{host} není platný název hostitele",
+            "onYourServer": "Zobrazit a sledovat na serveru"
         },
         "float": {
             "description": "nějaké číslo",
             "feedback": "To není číslo"
+        },
+        "id": {
+            "description": "identifikátor",
+            "invalidCharacter": "ID může obsahovat pouze písmena, číslice a podtržítka",
+            "shouldBeLonger": "Id by mělo mít alespoň 3 znaky"
         },
         "int": {
             "description": "celé číslo"
@@ -795,6 +836,10 @@
             "description": "celé kladné číslo",
             "noZero": "Nula není povolena"
         },
+        "slope": {
+            "inputExplanation": "Položte telefon na zem tak, aby horní strana telefonu směřovala k horní části svahu.",
+            "inputIncorrect": "Pro správné měření se ujistěte, že se šipka nachází v zelené oblasti."
+        },
         "string": {
             "description": "kus textu"
         },
@@ -803,11 +848,15 @@
         },
         "tooLong": "Text je příliš dlouhý, povoleno je maximálně 255 znaků. Nyní máte {count} znaků.",
         "url": {
+            "aggregator": "{host} je webová stránka třetí strany. Pokud je to možné, vyhledejte oficiální webové stránky.",
             "description": "odkaz na webové stránky",
-            "feedback": "Toto není platná webová adresa"
+            "feedback": "Toto není platná webová adresa",
+            "spamSite": "{host} je považován za nekvalitní webovou stránku. Používání této webové stránky není povoleno."
         },
         "wikidata": {
-            "description": "A Wikidata identifikátor"
+            "description": "A Wikidata identifikátor",
+            "empty": "Zadejte prosím nějaká wikidata",
+            "startsWithQ": "Identifikátor wikidat začíná písmenem Q a následuje za ním číslo"
         }
     }
 }

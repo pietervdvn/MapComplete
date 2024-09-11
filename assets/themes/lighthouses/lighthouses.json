@@ -4,12 +4,14 @@
     "en": "Lighthouses",
     "de": "Leuchttürme",
     "da": "Fyrtårne",
-    "it": "Fari"
+    "it": "Fari",
+    "es": "Faros"
   },
   "description": {
     "en": "Lighthouses are tall buildings with a light on top to guide marine traffic.",
     "de": "Leuchttürme sind hohe Gebäude mit einem Licht an der Spitze, das den Schiffsverkehr leitet.",
-    "it": "I fari sono edifici alti con una luce in cima per guidare il traffico marittimo."
+    "it": "I fari sono edifici alti con una luce in cima per guidare il traffico marittimo.",
+    "es": "Los faros son edificios altos con una luz en la parte superior para guiar el tráfico marítimo."
   },
   "icon": "./assets/themes/lighthouses/lighthouse.svg",
   "startLat": 51.33884,

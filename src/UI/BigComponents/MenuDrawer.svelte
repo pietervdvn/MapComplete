@@ -161,7 +161,7 @@
         <Tr t={t.showIntroduction} />
       </svelte:fragment>
       <svelte:fragment slot="header">
-        <Marker size="h-8 w-8 mr-3"  icons={layout.icon} />
+        <Marker size="h-8 w-8 mr-3" icons={layout.icon} />
         <Tr t={layout.title} />
       </svelte:fragment>
       <ThemeIntroPanel {state} />

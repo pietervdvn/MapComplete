@@ -139,7 +139,8 @@
     {
       "question": {
         "en": "Does one have to pay to use this playground?",
-        "nl": "Moet men betalen om deze speeltuin te gebruiken?"
+        "nl": "Moet men betalen om deze speeltuin te gebruiken?",
+        "de": "Muss man zahlen, um den Spielplatz zu nutzen?"
       },
       "id": "fee",
       "mappings": [
@@ -148,14 +149,16 @@
           "alsoShowIf": "fee=",
           "then": {
             "en": "Free to use",
-            "nl": "Gratis te gebruiken"
+            "nl": "Gratis te gebruiken",
+            "de": "Nutzung kostenlos"
           }
         },
         {
           "if": "fee=yes",
           "then": {
             "en": "Paid playground",
-            "nl": "Betalend"
+            "nl": "Betalend",
+            "de": "Gebührenpflichtiger Spielplatz"
           }
         }
       ],
@@ -575,7 +578,7 @@
         "en": "What is the email address of the playground maintainer?",
         "it": "Qual è l’indirizzo email del gestore di questo parco giochi?",
         "fr": "Quelle est l'adresse électronique du responsable de l'aire de jeux ?",
-        "de": "Wie lautet die E-Mail Adresse des Spielplatzbetreuers?",
+        "de": "Wie lautet die E-Mail Adresse des Spielplatzbetreibers?",
         "ca": "Quina és l'adreça de correu electrònic del mantenidor del parc infantil?",
         "cs": "Jaká je e-mailová adresa správce hřiště?"
       },
@@ -604,7 +607,7 @@
         "en": "What is the phone number of the playground maintainer?",
         "fr": "Quel est le numéro de téléphone du responsable du terrain de jeux ?",
         "it": "Qual è il numero di telefono del gestore del campetto?",
-        "de": "Wie lautet die Telefonnummer vom Betreiber des Spielplatzes?",
+        "de": "Wie lautet die Telefonnummer des Spielplatzbetreibers?",
         "ca": "Quin és el telèfon del mantenidor del parc infantil?",
         "cs": "Jaké je telefonní číslo na správce hřiště?"
       },

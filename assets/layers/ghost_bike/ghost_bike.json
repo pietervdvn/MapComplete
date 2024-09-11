@@ -266,7 +266,8 @@
         "it": "<i>{inscription}</i>",
         "ru": "<i>{inscription}</i>",
         "id": "<i>{inscription}</i>",
-        "cs": "<i>{inscription}</i>"
+        "cs": "<i>{inscription}</i>",
+        "pl": "<i>{inscription}</i>"
       },
       "freeform": {
         "key": "inscription"

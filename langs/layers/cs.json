@@ -32,6 +32,13 @@
                 "description": "Velká venkovní reklamní konstrukce, která se obvykle nachází na místech s velkým provozem, například podél frekventovaných silnic",
                 "title": "billboard"
             },
+            "1": {
+                "description": "Velká venkovní reklamní konstrukce, která se obvykle nachází na frekventovaných místech, například podél frekventovaných silnic, umístěná na zdi",
+                "title": "billboard připevněný na stěnu"
+            },
+            "10": {
+                "title": "obrazovka namontovaná na dopravním přístřešku"
+            },
             "11": {
                 "description": "Kus nepromokavého textilu s natištěným vzkazem, trvale připevněný na stěnu",
                 "title": "plachta"
@@ -54,6 +61,9 @@
             },
             "3": {
                 "title": "plakátovací skříň připevněná na stěnu"
+            },
+            "4": {
+                "title": "plakátovací skříňka, která je součástí přístřešku veřejné dopravy"
             },
             "5": {
                 "description": "Malý billboard pro sousedskou reklamu, zpravidla určený pro chodce",
@@ -232,6 +242,24 @@
                 "9": {
                     "then": "Totem"
                 }
+            }
+        }
+    },
+    "aerialway": {
+        "description": "Různé formy přepravy osob a zboží, které využívají dráty, včetně lanovek, gondol, sedačkových lanovek, vleků a lanových drah. ",
+        "name": "Letecké trasy",
+        "pointRendering": {
+            "1": {
+                "label": {
+                    "render": "{name}"
+                }
+            }
+        },
+        "tagRenderings": {
+            "duration": {
+                "question": "Jak dlouho trvá jedna jízda tímto výtahem?",
+                "questionHint": "To nezahrnuje čekací dobu.",
+                "render": "Jedna jízda trvá {duration} minut"
             }
         }
     },

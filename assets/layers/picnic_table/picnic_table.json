@@ -151,7 +151,8 @@
           "if": "material=metal",
           "then": {
             "en": "This picnic table is made from metal",
-            "nl": "Deze picnictafel is gemaakt uit metaal"
+            "nl": "Deze picnictafel is gemaakt uit metaal",
+            "de": "Der Picknicktisch ist aus Metall"
           }
         }
       ],

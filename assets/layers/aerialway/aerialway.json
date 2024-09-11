@@ -2,13 +2,15 @@
   "id": "aerialway",
   "name": {
     "en": "Aerialways",
-    "de": "Seilbahnen"
+    "de": "Seilbahnen",
+    "cs": "Letecké trasy"
   },
   "description": {
     "en": "Various forms of transport for passengers and goods that use wires, including cable cars, gondolas, chair lifts, drag lifts, and zip lines. ",
     "de": "Alle Arten von seil- oder drahtgestütztem Personen- oder Gütertransport, wie Seilbahnen, Gondeln, Sessellifte, Schlepplifte. ",
     "es": "Diversas formas de transporte de pasajeros y mercancías que utilizan cables, como teleféricos, telecabinas, telesillas, telesquíes y tirolinas. ",
-    "pl": "Różne formy transportu dla pasażerów i dóbr, które używają lin, w tym kolejki gondolowe, wyciągi krzesełkowe i orczykowe oraz tyrolki. "
+    "pl": "Różne formy transportu dla pasażerów i dóbr, które używają lin, w tym kolejki gondolowe, wyciągi krzesełkowe i orczykowe oraz tyrolki. ",
+    "cs": "Různé formy přepravy osob a zboží, které využívají dráty, včetně lanovek, gondol, sedačkových lanovek, vleků a lanových drah. "
   },
   "source": {
     "osmTags": {
@@ -49,7 +51,8 @@
           "de": "{name}",
           "fr": "{name}",
           "pl": "{name}",
-          "es": "{name}"
+          "es": "{name}",
+          "cs": "{name}"
         },
         "condition": "name~*",
         "classes": "bg-white p-1 px-2 rounded"
@@ -179,14 +182,16 @@
         "de": "Wie lange dauert eine Fahrt mit diesem Aufzug?",
         "fr": "Combien de temps dure le trajet dans cet ascenseur ?",
         "pl": "Jak długo trwa pojedynczy przejazd tą windą?",
-        "es": "¿Cuánto dura un viaje en este ascensor?"
+        "es": "¿Cuánto dura un viaje en este ascensor?",
+        "cs": "Jak dlouho trvá jedna jízda tímto výtahem?"
       },
       "questionHint": {
         "en": "This excludes the waiting time.",
         "de": "Dies schließt die Wartezeit aus.",
         "fr": "Cela n'inclut pas le temps d'attente.",
         "pl": "To nie włącza czasu oczekiwania.",
-        "es": "Esto elimina el tiempo de espera."
+        "es": "Esto elimina el tiempo de espera.",
+        "cs": "To nezahrnuje čekací dobu."
       },
       "freeform": {
         "key": "duration"
@@ -196,7 +201,8 @@
         "de": "Eine Fahrt dauert {duration} Minuten",
         "fr": "Un aller simple dure {duration} minutes",
         "pl": "Pojedynczy przejazd trwa {duration} minut",
-        "es": "Un viaje dura {duration} minutos"
+        "es": "Un viaje dura {duration} minutos",
+        "cs": "Jedna jízda trvá {duration} minut"
       }
     },
     {

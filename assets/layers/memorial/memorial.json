@@ -389,7 +389,8 @@
         "ru": "Установлен {start_date}",
         "de": "Aufgestellt am {start_date}",
         "ca": "Col·locat el {start_date}",
-        "cs": "Umístěno {start_date}"
+        "cs": "Umístěno {start_date}",
+        "sl": "Datum postavitve {start_date}"
       },
       "freeform": {
         "key": "start_date",

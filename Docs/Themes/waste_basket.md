@@ -4,7 +4,7 @@
 _This document details some technical information about this MapComplete theme, mostly about the attributes used in the theme. Various links point toward more information about the attributes, e.g. to the OpenStreetMap-wiki, to TagInfo or tools creating statistics_
 The theme introduction reads:
 
-> On this map, you'll find waste baskets near you. If a waste basket is missing on this map, you can add it yourself
+> On this map, you'll find waste baskets near you. If a waste basket is missing on this map, you can add it yourself.
 
 This theme contains the following layers:
 

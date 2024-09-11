@@ -661,7 +661,7 @@
                         "then": "Sie können Bargeld in diesen Geldautomaten einzahlen"
                     },
                     "2": {
-                        "then": "Sie können an diesem Geldautomaten kein Bargeld einzahlen"
+                        "then": "Am Geldautomaten kann kein Bargeld eingezahlt werden"
                     }
                 },
                 "question": "Kann man an diesem Geldautomaten Bargeld einzahlen?"
@@ -669,16 +669,16 @@
             "cash_out": {
                 "mappings": {
                     "0": {
-                        "then": "Sie können an diesem Geldautomaten Bargeld abheben"
+                        "then": "Am Geldautomaten kann Bargeld abgehoben werden"
                     },
                     "1": {
-                        "then": "An diesem Geldautomaten können Sie Bargeld abheben"
+                        "then": "Am Automaten kann Bargeld abgehoben werden"
                     },
                     "2": {
-                        "then": "Sie können an diesem Geldautomaten kein Bargeld abheben"
+                        "then": "Am Automaten kann kein Bargeld abgehoben werden"
                     }
                 },
-                "question": "Kann man an diesem Geldautomaten Bargeld abheben?"
+                "question": "Kann man am Automaten Bargeld abheben?"
             },
             "cash_out-denominations-notes": {
                 "mappings": {
@@ -692,7 +692,7 @@
                         "then": "20-Euro-Scheine können abgehoben werden"
                     },
                     "3": {
-                        "then": "Es können 50-Euro-Scheine abgehoben werden"
+                        "then": "50-Euro-Scheine können abgehoben werden"
                     },
                     "4": {
                         "then": "100-Euro-Scheine können abgehoben werden"
@@ -704,7 +704,7 @@
                         "then": "500-Euro-Scheine können abgehoben werden"
                     }
                 },
-                "question": "Welche Geldscheine können Sie hier abheben?"
+                "question": "Welche Geldscheine können abgehoben werden?"
             },
             "name": {
                 "render": "Der Name des Geldautomaten ist {name}"
@@ -719,13 +719,13 @@
             "speech_output": {
                 "mappings": {
                     "0": {
-                        "then": "Dieser Geldautomat verfügt über eine Sprachausgabe, die normalerweise über eine Kopfhörerbuchse verfügbar ist"
+                        "then": "Der Geldautomat hat eine Sprachausgabe, in der Regel verfügbar über eine Kopfhörerbuchse"
                     },
                     "1": {
-                        "then": "Dieser Geldautomat hat keine Sprachausgabe"
+                        "then": "Der Geldautomat hat keine Sprachausgabe"
                     }
                 },
-                "question": "Verfügt dieser Geldautomat über eine Sprachausgabe für sehbehinderte Benutzer?"
+                "question": "Ist eine Sprachausgabe für Sehbehinderte vorhanden?"
             },
             "speech_output_language": {
                 "render": {
@@ -2854,7 +2854,7 @@
             "Type": {
                 "mappings": {
                     "0": {
-                        "then": "Ein Kletterfelsen - ein einzelner Felsen oder eine Klippe mit einer oder wenigen Kletterrouten, die ohne Seil sicher bestiegen werden können"
+                        "then": "Ein Boulderfelsen - ein einzelner Felsen oder eine Klippe mit einer oder wenigen Boulderrouten, die ohne Seil sicher bestiegen werden können"
                     },
                     "1": {
                         "then": "Ein Kletterfelsen - ein einzelner Fels oder eine Klippe mit mindestens einigen Kletterrouten"
@@ -7466,7 +7466,7 @@
                 "question": "Ist der Spielplatz öffentlich zugänglich?"
             },
             "playground-email": {
-                "question": "Wie lautet die E-Mail Adresse des Spielplatzbetreuers?",
+                "question": "Wie lautet die E-Mail Adresse des Spielplatzbetreibers?",
                 "render": "<a href='mailto:{email}'>{email}</a>"
             },
             "playground-lit": {
@@ -7504,7 +7504,7 @@
                 "render": "Betrieben von {operator}"
             },
             "playground-phone": {
-                "question": "Wie lautet die Telefonnummer vom Betreiber des Spielplatzes?",
+                "question": "Wie lautet die Telefonnummer des Spielplatzbetreibers?",
                 "render": "<a href='tel:{phone}'>{phone}</a>"
             },
             "playground-surface": {
@@ -7559,7 +7559,7 @@
     },
     "playground_equipment": {
         "description": "Ebene mit Spielplatzausrüstung",
-        "name": "Spielplatzausstattung",
+        "name": "Spielgeräte",
         "presets": {
             "0": {
                 "description": "Ein genauer Typ wird später gefragt",
@@ -8349,7 +8349,7 @@
             },
             "qr_code": {
                 "render": {
-                    "after": "Scannen Sie den Code, um diesen Ort auf einem anderen Gerät zu öffnen"
+                    "after": "QR Code scannen, um diesen Ort auf einem anderen Gerät zu öffnen"
                 }
             },
             "repeated": {
@@ -9175,7 +9175,7 @@
             "brand": {
                 "mappings": {
                     "0": {
-                        "then": "Dieses Geschäft gehört zu keiner Marke oder Handelskette"
+                        "then": "Das Geschäft gehört zu keiner Marke oder Handelskette"
                     }
                 },
                 "question": "Zu welcher Marke gehört dieses Geschäft?",

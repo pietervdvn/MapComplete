@@ -67,7 +67,8 @@
           "es": "<i>{name}</i>",
           "fr": "<i>{name}</i>",
           "eu": "<i>{name}</i>",
-          "cs": "<i>{name}</i>"
+          "cs": "<i>{name}</i>",
+          "pl": "<i>{name}</i>"
         }
       },
       {
