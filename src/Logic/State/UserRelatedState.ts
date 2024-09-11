@@ -69,6 +69,8 @@ export default class UserRelatedState {
         "button" | "button_click_right" | "button_click" | "click" | "click_right"
     >("button_click_right")
 
+    public readonly showScale : UIEventSource<boolean>
+
     /**
      * Preferences as tags exposes many preferences and state properties as record.
      * This is used to bridge the internal state with the usersettings.json layerconfig file
@@ -123,6 +125,7 @@ export default class UserRelatedState {
                 documentation: "How adding a new feature is done",
             }
         )
+        this.showScale = UIEventSource.asBoolean(this.osmConnection.GetPreference("preference-show-scale","false"))
 
         this.imageLicense = this.osmConnection.GetPreference("pictures-license", "CC0", {
             documentation: "The license under which new images are uploaded",

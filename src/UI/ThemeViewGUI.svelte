@@ -390,6 +390,11 @@
             {/if}
           </div>
         </If>
+        <If condition={state.mapProperties.showScale}>
+          <div class="h-6">
+            <!-- Empty. We just provide some space for the maplibre scalecontrol -->
+          </div>
+        </If>
       </div>
     </div>
   </div>

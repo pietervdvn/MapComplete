@@ -1,5 +1,5 @@
 import { ImmutableStore, Store, UIEventSource } from "../../Logic/UIEventSource"
-import maplibregl, { Map as MLMap, Map as MlMap, SourceSpecification } from "maplibre-gl"
+import maplibregl, { Map as MLMap, Map as MlMap, ScaleControl, SourceSpecification } from "maplibre-gl"
 import { RasterLayerPolygon } from "../../Models/RasterLayers"
 import { Utils } from "../../Utils"
 import { BBox } from "../../Logic/BBox"
@@ -23,13 +23,13 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         "dragRotate",
         "dragPan",
         "keyboard",
-        "touchZoomRotate",
+        "touchZoomRotate"
     ]
     private static maplibre_zoom_handlers = [
         "scrollZoom",
         "boxZoom",
         "doubleClickZoom",
-        "touchZoomRotate",
+        "touchZoomRotate"
     ]
     readonly location: UIEventSource<{ lon: number; lat: number }>
     readonly zoom: UIEventSource<number>
@@ -47,6 +47,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
     readonly rotation: UIEventSource<number>
     readonly pitch: UIEventSource<number>
     readonly useTerrain: Store<boolean>
+    readonly showScale: UIEventSource<boolean>
 
     private static pmtilesInited = false
     /**
@@ -92,6 +93,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         this.useTerrain = state?.useTerrain ?? new ImmutableStore<boolean>(false)
         this.rasterLayer =
             state?.rasterLayer ?? new UIEventSource<RasterLayerPolygon | undefined>(undefined)
+        this.showScale = state?.showScale ?? new UIEventSource<boolean>(false)
 
         const lastClickLocation = new UIEventSource<{
             lat: number
@@ -104,6 +106,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         new RasterLayerHandler(this._maplibreMap, this.rasterLayer)
 
         const clickmodes = ["left", "middle", "right"] as const
+
         function handleClick(e: maplibregl.MapMouseEvent, mode?: "left" | "right" | "middle") {
             if (e.originalEvent["consumed"]) {
                 // Workaround, 'ShowPointLayer' sets this flag
@@ -129,6 +132,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
                 self.setMaxzoom(self.maxzoom.data)
                 self.setBounds(self.bounds.data)
                 self.setTerrain(self.useTerrain.data)
+                self.setScale(self.showScale.data)
                 this.updateStores(true)
             })
             self.MoveMapToCurrentLoc(self.location.data)
@@ -142,6 +146,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             self.setBounds(self.bounds.data)
             self.SetRotation(self.rotation.data)
             self.setTerrain(self.useTerrain.data)
+            self.setScale(self.showScale.data)
             this.updateStores(true)
             map.on("moveend", () => this.updateStores())
             map.on("click", (e) => {
@@ -213,6 +218,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         this.allowZooming.addCallbackAndRun((allowZooming) => self.setAllowZooming(allowZooming))
         this.bounds.addCallbackAndRunD((bounds) => self.setBounds(bounds))
         this.useTerrain?.addCallbackAndRun((useTerrain) => self.setTerrain(useTerrain))
+        this.showScale?.addCallbackAndRun(showScale => self.setScale(showScale))
     }
 
     /**
@@ -227,9 +233,9 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         return {
             map: mlmap,
             ui: new SvelteUIElement(MaplibreMap, {
-                map: mlmap,
+                map: mlmap
             }),
-            mapproperties: new MapLibreAdaptor(mlmap),
+            mapproperties: new MapLibreAdaptor(mlmap)
         }
     }
 
@@ -297,7 +303,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
     ) {
         const event = {
             date: new Date(),
-            key: key,
+            key: key
         }
 
         for (let i = 0; i < this._onKeyNavigation.length; i++) {
@@ -486,7 +492,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         const bounds = map.getBounds()
         const bbox = new BBox([
             [bounds.getEast(), bounds.getNorth()],
-            [bounds.getWest(), bounds.getSouth()],
+            [bounds.getWest(), bounds.getSouth()]
         ])
         if (this.bounds.data === undefined || !isSetup) {
             this.bounds.setData(bbox)
@@ -664,18 +670,42 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
                 type: "raster-dem",
                 url:
                     "https://api.maptiler.com/tiles/terrain-rgb/tiles.json?key=" +
-                    Constants.maptilerApiKey,
+                    Constants.maptilerApiKey
             })
             try {
                 while (!map?.isStyleLoaded()) {
                     await Utils.waitFor(250)
                 }
                 map.setTerrain({
-                    source: id,
+                    source: id
                 })
             } catch (e) {
                 console.error(e)
             }
+        }
+    }
+
+    private scaleControl: maplibregl.ScaleControl = undefined
+
+    private setScale(showScale: boolean) {
+        const map = this._maplibreMap.data
+        if (!map) {
+            return
+        }
+        if (!showScale && this.scaleControl) {
+            map.removeControl(this.scaleControl)
+            return
+        }
+        console.log("Adding scale")
+        if (this.scaleControl === undefined) {
+
+            this.scaleControl = new ScaleControl({
+                maxWidth: 80,
+                unit: "metric"
+            })
+        }
+        if (!map.hasControl(this.scaleControl)) {
+            map.addControl(this.scaleControl, "bottom-right")
         }
     }
 }

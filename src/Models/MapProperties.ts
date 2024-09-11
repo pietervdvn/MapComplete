@@ -22,6 +22,7 @@ export interface MapProperties {
     readonly lastClickLocation: Store<{ lon: number; lat: number }>
     readonly allowZooming: UIEventSource<true | boolean>
     readonly useTerrain: Store<boolean>
+    readonly showScale: UIEventSource<boolean>
 
     /**
      * Triggered when the user navigated by using the keyboard.

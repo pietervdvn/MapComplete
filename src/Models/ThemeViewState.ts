@@ -889,6 +889,9 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 }
             })
         })
+        this.userRelatedState.showScale.addCallbackAndRun(showScale => {
+            this.mapProperties.showScale.set(showScale)
+        })
         new ThemeViewStateHashActor(this)
         new MetaTagging(this)
         new TitleHandler(this.selectedElement, this.featureProperties, this)
