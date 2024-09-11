@@ -1,11 +1,11 @@
 {
   "contributors": [
     {
-      "commits": 478,
+      "commits": 479,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 368,
+      "commits": 385,
       "contributor": "kjon"
     },
     {
@@ -38,6 +38,10 @@
     },
     {
       "commits": 36,
+      "contributor": "Jiří Podhorecký"
+    },
+    {
+      "commits": 36,
       "contributor": "Lucas"
     },
     {
@@ -45,16 +49,12 @@
       "contributor": "Iago"
     },
     {
-      "commits": 34,
-      "contributor": "Jiří Podhorecký"
+      "commits": 33,
+      "contributor": "gallegonovato"
     },
     {
       "commits": 32,
       "contributor": "Babos Gábor"
-    },
-    {
-      "commits": 30,
-      "contributor": "gallegonovato"
     },
     {
       "commits": 29,
@@ -70,11 +70,11 @@
     },
     {
       "commits": 23,
-      "contributor": "Marco"
+      "contributor": "Štefan Baebler"
     },
     {
-      "commits": 21,
-      "contributor": "Štefan Baebler"
+      "commits": 23,
+      "contributor": "Marco"
     },
     {
       "commits": 18,
@@ -170,6 +170,10 @@
     },
     {
       "commits": 9,
+      "contributor": "Krzysztof Chorzempa"
+    },
+    {
+      "commits": 9,
       "contributor": "Lasse Liehu"
     },
     {
@@ -195,10 +199,6 @@
     {
       "commits": 8,
       "contributor": "nilocram"
-    },
-    {
-      "commits": 8,
-      "contributor": "Krzysztof Chorzempa"
     },
     {
       "commits": 8,
@@ -330,6 +330,10 @@
     },
     {
       "commits": 3,
+      "contributor": "Thomas"
+    },
+    {
+      "commits": 3,
       "contributor": "Paolo Mauri"
     },
     {
@@ -399,10 +403,6 @@
     {
       "commits": 3,
       "contributor": "SiegbjornSitumeang"
-    },
-    {
-      "commits": 2,
-      "contributor": "Thomas"
     },
     {
       "commits": 2,
@@ -523,6 +523,10 @@
     {
       "commits": 2,
       "contributor": "Leo Alcaraz"
+    },
+    {
+      "commits": 1,
+      "contributor": "tiptoptom"
     },
     {
       "commits": 1,

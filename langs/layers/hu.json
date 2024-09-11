@@ -377,13 +377,13 @@
                     "0": {
                         "then": "Korlát"
                     },
-                    "1": {
+                    "2": {
                         "then": "Kerékbefogó hurok"
                     },
-                    "4": {
+                    "5": {
                         "then": "Kétszintű"
                     },
-                    "5": {
+                    "6": {
                         "then": "Fészer"
                     }
                 },

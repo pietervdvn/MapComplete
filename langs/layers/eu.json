@@ -211,13 +211,13 @@
             },
             "Bicycle parking type": {
                 "mappings": {
-                    "3": {
+                    "4": {
                         "then": "Rack-a"
                     },
-                    "5": {
+                    "6": {
                         "then": "Etxola"
                     },
-                    "6": {
+                    "7": {
                         "then": "Bolardo"
                     }
                 }

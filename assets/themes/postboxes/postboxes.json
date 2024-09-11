@@ -62,7 +62,8 @@
         "minzoomVisible": 18,
         "description": {
           "en": "Add a new post partner to the map in an existing shop",
-          "de": "Hinzufügen eines neuen Post-Partners auf der Karte in einem bestehenden Geschäft"
+          "de": "Hinzufügen eines neuen Post-Partners auf der Karte in einem bestehenden Geschäft",
+          "es": "Agregar un nuevo punto de recogida al mapa en una tienda existente"
         },
         "+tagRenderings": [
           {
@@ -70,7 +71,8 @@
             "question": {
               "en": "Is this shop a post partner?",
               "de": "Ist dieses Geschäft ein Post-Partner?",
-              "nl": "Is deze winkel een post-partner?"
+              "nl": "Is deze winkel een post-partner?",
+              "es": "¿Es esta tienda un puesto de recogida de paquetes?"
             },
             "mappings": [
               {
@@ -78,7 +80,8 @@
                 "then": {
                   "en": "This shop is a post partner",
                   "de": "Dieses Geschäft ist ein Post-Partner",
-                  "nl": "Deze winkel is een post-partner"
+                  "nl": "Deze winkel is een post-partner",
+                  "es": "Esta tienda es colaboradora de correos o alguna agencia de transporte"
                 }
               },
               {
@@ -86,7 +89,8 @@
                 "then": {
                   "en": "This shop is not a post partner",
                   "de": "Dieses Geschäft ist kein Post-Partner",
-                  "nl": "Deze winkel is geen post-partner"
+                  "nl": "Deze winkel is geen post-partner",
+                  "es": "Esta tienda no está asociada a ninguna agencia de transporte"
                 }
               }
             ]
@@ -101,11 +105,13 @@
             ],
             "title": {
               "en": "a missing shop that is a post partner",
-              "de": "ein fehlendes Geschäft, das ein Post-Partner ist"
+              "de": "ein fehlendes Geschäft, das ein Post-Partner ist",
+              "es": "Una tienda desaparecida que era un punto de recogida de paquetes"
             },
             "description": {
               "en": "If a shop is not yet on the map and is a post partner, you can add it here.",
-              "de": "Wenn ein Laden noch nicht auf der Karte ist und ein Post-Partner ist, kannst du ihn hier hinzufügen."
+              "de": "Wenn ein Laden noch nicht auf der Karte ist und ein Post-Partner ist, kannst du ihn hier hinzufügen.",
+              "es": "Si una tienda aún no está en el mapa y es un puntode recogida de paquetes, puedes añadirla aquí."
             }
           }
         ]

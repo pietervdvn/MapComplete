@@ -241,7 +241,7 @@
       "id": "cash_out",
       "question": {
         "en": "Can you withdraw cash from this ATM?",
-        "de": "Kann man an diesem Geldautomaten Bargeld abheben?",
+        "de": "Kann man am Automaten Bargeld abheben?",
         "nl": "Kan je geld ophalen bij deze geldautomaat?",
         "nb_NO": "Kan man gjøre uttak fra denne minibanken?",
         "ca": "Pots retirar diners des d'aquest caixer?",
@@ -257,7 +257,7 @@
           "if": "cash_out=",
           "then": {
             "en": "You can withdraw cash from this ATM",
-            "de": "Sie können an diesem Geldautomaten Bargeld abheben",
+            "de": "Am Geldautomaten kann Bargeld abgehoben werden",
             "nl": "Je kan geld ophalen bij deze geldautomaat",
             "ca": "Pots retirar diners a aquest caixer",
             "nb_NO": "Du kan gjøre uttak i denne minibanken",
@@ -275,7 +275,7 @@
           "if": "cash_out=yes",
           "then": {
             "en": "You can withdraw cash from this ATM",
-            "de": "An diesem Geldautomaten können Sie Bargeld abheben",
+            "de": "Am Automaten kann Bargeld abgehoben werden",
             "nl": "Je kan geld ophalen bij deze geldautomaat",
             "ca": "Pots retirar diners des d'aquest caixer",
             "cs": "Z tohoto bankomatu můžete vybírat hotovost",
@@ -290,7 +290,7 @@
           "if": "cash_out=no",
           "then": {
             "en": "You cannot withdraw cash from this ATM",
-            "de": "Sie können an diesem Geldautomaten kein Bargeld abheben",
+            "de": "Am Automaten kann kein Bargeld abgehoben werden",
             "nl": "Je kan geen geld ophalen bij deze geldautomaat",
             "ca": "No pots retirar diners des d'aquest caixer",
             "cs": "Z tohoto bankomatu nelze vybírat hotovost",
@@ -361,7 +361,7 @@
           "if": "cash_in=no",
           "then": {
             "en": "You cannot deposit cash into this ATM",
-            "de": "Sie können an diesem Geldautomaten kein Bargeld einzahlen",
+            "de": "Am Geldautomaten kann kein Bargeld eingezahlt werden",
             "nl": "Je kan geen geld deponeren in deze geldautomaat",
             "nb_NO": "Du kan ikke gjøre innskudd i denne minibanken",
             "ca": "No pots dipositar diners a aquest caixer",
@@ -399,7 +399,7 @@
         "en": "What notes can you withdraw here?",
         "nl": "Welke bankbiljetten kan je hier afhalen?",
         "fr": "Quels billets pouvez-vous retirer ici ?",
-        "de": "Welche Geldscheine können Sie hier abheben?",
+        "de": "Welche Geldscheine können abgehoben werden?",
         "cs": "Jaké bankovky zde můžete vybírat?",
         "he": "אילו הערות תוכל למשוך כאן?",
         "ca": "Quins bitllets pots retirar aquí?",
@@ -465,7 +465,7 @@
           "then": {
             "en": "50 euro notes can be withdrawn",
             "nl": "Je kunt biljetten van 50 euro afhalen",
-            "de": "Es können 50-Euro-Scheine abgehoben werden",
+            "de": "50-Euro-Scheine können abgehoben werden",
             "cs": "50 eurové bankovky lze vybírat",
             "ca": "es poden retirar bitllets de 50 euros",
             "fr": "On peut retirer des billets de 50 euros",
@@ -529,7 +529,7 @@
       "id": "speech_output",
       "question": {
         "en": "Does this ATM have speech output for visually impaired users?",
-        "de": "Verfügt dieser Geldautomat über eine Sprachausgabe für sehbehinderte Benutzer?",
+        "de": "Ist eine Sprachausgabe für Sehbehinderte vorhanden?",
         "nl": "Heeft deze automaat spraak voor slechtziende en blinde gebruikers?",
         "ca": "Aquest caixer té un lector de pantalla per a usuaris amb discapacitat visual?",
         "cs": "Má tento bankomat hlasový výstup pro zrakově postižené uživatele?",
@@ -543,7 +543,7 @@
           "if": "speech_output=yes",
           "then": {
             "en": "This ATM has speech output, usually available through a headphone jack",
-            "de": "Dieser Geldautomat verfügt über eine Sprachausgabe, die normalerweise über eine Kopfhörerbuchse verfügbar ist",
+            "de": "Der Geldautomat hat eine Sprachausgabe, in der Regel verfügbar über eine Kopfhörerbuchse",
             "nl": "Deze automaat heeft spraak, waarschijnlijk beschikbaar via een hoofdtelefoon-aansluiting",
             "ca": "Aquest caixer té lector de pantalla, normalment disponible a través d'un connector d'auriculars \"jack\"",
             "cs": "Tento bankomat má řečový výstup, který je obvykle dostupný přes konektor pro sluchátka",
@@ -557,7 +557,7 @@
           "if": "speech_output=no",
           "then": {
             "en": "This ATM does not have speech output",
-            "de": "Dieser Geldautomat hat keine Sprachausgabe",
+            "de": "Der Geldautomat hat keine Sprachausgabe",
             "nl": "Deze automaat heeft geen spraak",
             "ca": "Aquest caixer no té lector de pantalla",
             "cs": "Tento bankomat nemá hlasový výstup",

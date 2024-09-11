@@ -541,7 +541,8 @@
             "id": "Berdaun lebar",
             "da": "Bredbladet",
             "pt": "Folha larga",
-            "cs": "Listnatý"
+            "cs": "Listnatý",
+            "pl": "Szerokolistne"
           },
           "icon": {
             "path": "./assets/layers/tree_node/broadleaved.svg",
@@ -563,7 +564,8 @@
             "ca": "Amb fulles d'agulla",
             "es": "Hoja aguja",
             "id": "Berdaun jarum",
-            "cs": "Jehličnatý"
+            "cs": "Jehličnatý",
+            "pl": "Iglaste"
           },
           "icon": {
             "path": "./assets/layers/tree_node/needleleaved.svg",

@@ -60,7 +60,7 @@
       <Tr t={Translations.t.general.menu.filter} />
     </div>
 
-    <div class="ml-2 flex gap-x-2 self-end self-end text-sm">
+    <div class="ml-2 flex gap-x-2 text-sm">
       <button class="small as-link" class:disabled={allEnabled} on:click={() => enableAll(true)}>
         <Tr t={Translations.t.general.filterPanel.enableAll} />
       </button>

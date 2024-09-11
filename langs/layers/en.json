@@ -1470,27 +1470,30 @@
                         "then": "Stands"
                     },
                     "1": {
-                        "then": "Wheelbenders / rack"
+                        "then": "Rack with side loops"
                     },
                     "2": {
-                        "then": "Handlebar holder"
+                        "then": "Wheelbenders / rack"
                     },
                     "3": {
-                        "then": "Rack"
+                        "then": "Handlebar holder"
                     },
                     "4": {
-                        "then": "Two-tiered"
+                        "then": "Rack"
                     },
                     "5": {
-                        "then": "Shed"
+                        "then": "Two-tiered"
                     },
                     "6": {
-                        "then": "Bollard"
+                        "then": "Shed"
                     },
                     "7": {
-                        "then": "An area on the floor which is marked for bicycle parking"
+                        "then": "Bollard"
                     },
                     "8": {
+                        "then": "An area on the floor which is marked for bicycle parking"
+                    },
+                    "9": {
                         "then": "A locker - the bicycles are enclosed completely individually or with a few bicycles together. The locker is too small to fit a person standing.."
                     }
                 },
@@ -2858,6 +2861,9 @@
                     },
                     "1": {
                         "then": "A climbing crag - a single rock or cliff with at least a few climbing routes"
+                    },
+                    "2": {
+                        "then": "A climbing area with one or more climbing crags and/or boulders"
                     }
                 }
             },
@@ -5710,6 +5716,9 @@
                     },
                     "1": {
                         "then": "This is a traditional (software oriented) hackerspace"
+                    },
+                    "2": {
+                        "then": "This is a <b>hacklab</b> which is mostly focussed on basic computer skills, using recycled devices and/or providing internet to the community. This is typically located in autonomous spaces, squats or social facilities"
                     }
                 },
                 "question": "Is this a hackerspace or a makerspace?"
@@ -5972,30 +5981,33 @@
                         "then": "This is an office"
                     },
                     "15": {
-                        "then": "This is a prison_cell"
+                        "then": "This is a copy room"
                     },
                     "16": {
-                        "then": "This is a restaurant"
+                        "then": "This is a prison_cell"
                     },
                     "17": {
-                        "then": "This is a room to perform security checks"
+                        "then": "This is a restaurant"
                     },
                     "18": {
-                        "then": "This is a sport room"
+                        "then": "This is a room to perform security checks"
                     },
                     "19": {
-                        "then": "This is a storage room"
+                        "then": "This is a sport room"
                     },
                     "2": {
                         "then": "This is a bedroom"
                     },
                     "20": {
-                        "then": "This is a technical room"
+                        "then": "This is a storage room"
                     },
                     "21": {
-                        "then": "These are toilets"
+                        "then": "This is a technical room"
                     },
                     "22": {
+                        "then": "These are toilets"
+                    },
+                    "23": {
                         "then": "This is a waiting room"
                     },
                     "3": {
@@ -8204,6 +8216,9 @@
                     },
                     "4": {
                         "then": "This place offers wired internet access"
+                    },
+                    "5": {
+                        "then": "This place offers both wireless internet and internet access via a terminal or computer"
                     }
                 },
                 "question": "Does this place offer internet access?"

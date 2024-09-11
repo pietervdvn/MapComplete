@@ -8,7 +8,8 @@
     "nl": "Dierenarts",
     "fr": "vétérinaire",
     "ca": "Veterinari",
-    "cs": "veterinář"
+    "cs": "veterinář",
+    "pl": "weterynaryjny"
   },
   "description": "A layer showing veterinarians",
   "source": {
@@ -28,7 +29,8 @@
       "es": "Veterinario",
       "nl": "Dierenarts",
       "ca": "Veterinari",
-      "cs": "Veterinární ordinace"
+      "cs": "Veterinární ordinace",
+      "pl": "Weterynaryjny"
     },
     "mappings": [
       {

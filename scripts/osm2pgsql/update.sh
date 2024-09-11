@@ -16,11 +16,12 @@ wget https://planet.osm.org/pbf/planet-latest.osm.pbf
 TIMESTAMP=$(osmium fileinfo ~/data/planet-latest.osm.pbf -g header.option.timestamp)
 DATE=$(echo $TIMESTAMP | sed "s/T.*//")
 echo $DATE
+cd ~/git/MapComplete/ || exit
 npm run create:database -- -- ${DATE/T.*//}
-
+cd ~/data || exit
 
 rm seeddb.log
-osm2pgsql -O flex -S build_db.lua -s --flat-nodes=import-help-file -d postgresql://user:password@localhost:5444/osm-poi planet-latest.osm.pbf >> seeddb.log
+osm2pgsql -O flex -S build_db.lua -s --flat-nodes=import-help-file -d postgresql://user:password@localhost:5444/osm-poi.${DATE} planet-latest.osm.pbf >> seeddb.log
 
 # To see the progress
 # tail -f seeddb.log

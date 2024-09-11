@@ -7,7 +7,6 @@
   import ToSvelte from "../Base/ToSvelte.svelte"
   import Checkbox from "../Base/Checkbox.svelte"
   import FilterConfig from "../../Models/ThemeConfig/FilterConfig"
-  import If from "../Base/If.svelte"
   import Dropdown from "../Base/Dropdown.svelte"
   import { ImmutableStore, Store, UIEventSource } from "../../Logic/UIEventSource"
   import FilterviewWithFields from "./FilterviewWithFields.svelte"

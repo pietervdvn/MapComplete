@@ -50,10 +50,10 @@
         "tagRenderings": {
             "Bicycle parking type": {
                 "mappings": {
-                    "5": {
+                    "6": {
                         "then": "شیڈ"
                     },
-                    "6": {
+                    "7": {
                         "then": "بولارڈ"
                     }
                 }

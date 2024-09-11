@@ -180,6 +180,19 @@
           }
         },
         {
+          "if": "bicycle_parking=safe_loops",
+          "then": {
+            "en": "Rack with side loops",
+            "nl": "Rek met zijbeugel",
+            "fr": "Rack à vélo avec arceau",
+            "de": "Radständer mit Seitenbügel"
+          },
+          "icon": {
+            "path": "./assets/layers/bike_parking/safe_loops.svg",
+            "class": "large"
+          }
+        },
+        {
           "if": "bicycle_parking=wall_loops",
           "then": {
             "en": "Wheelbenders / rack",

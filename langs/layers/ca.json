@@ -1182,25 +1182,25 @@
                     "0": {
                         "then": "Bastidors"
                     },
-                    "1": {
+                    "2": {
                         "then": "Portarodes/bucles"
                     },
-                    "2": {
+                    "3": {
                         "then": "Suport de manillar"
                     },
-                    "3": {
+                    "4": {
                         "then": "Enganxament"
                     },
-                    "4": {
+                    "5": {
                         "then": "De dos nivells"
                     },
-                    "5": {
+                    "6": {
                         "then": "cobert"
                     },
-                    "6": {
+                    "7": {
                         "then": "Pilona"
                     },
-                    "7": {
+                    "8": {
                         "then": "Una zona al terra que està senyalitzada per a l'aparcament de bicicletes"
                     }
                 },
@@ -4499,16 +4499,16 @@
                     "14": {
                         "then": "Açò és una oficina"
                     },
-                    "16": {
+                    "17": {
                         "then": "Açò és un restaurant"
-                    },
-                    "19": {
-                        "then": "Açò és un magatzem"
                     },
                     "2": {
                         "then": "Açò és un dormitori"
                     },
-                    "22": {
+                    "20": {
+                        "then": "Açò és un magatzem"
+                    },
+                    "23": {
                         "then": "Açò és una sala d'espera"
                     },
                     "3": {
