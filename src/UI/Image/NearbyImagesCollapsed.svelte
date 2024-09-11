@@ -11,8 +11,9 @@
   import Camera_plus from "../../assets/svg/Camera_plus.svelte"
   import LoginToggle from "../Base/LoginToggle.svelte"
   import { ariaLabel } from "../../Utils/ariaLabel"
-  import { Accordion, AccordionItem } from "flowbite-svelte"
+  import { Accordion, AccordionItem, Modal } from "flowbite-svelte"
   import AccordionSingle from "../Flowbite/AccordionSingle.svelte"
+  import Popup from "../Base/Popup.svelte"
 
   export let tags: UIEventSource<OsmTags>
   export let state: SpecialVisualizationState
@@ -24,15 +25,16 @@
   export let layer: LayerConfig
   const t = Translations.t.image.nearby
 
-  let expanded = false
   let enableLogin = state.featureSwitches.featureSwitchEnableLogin
+  export let shown = new UIEventSource(false)
 </script>
 
 {#if enableLogin.data}
-  <AccordionSingle>
-    <span slot="header" class="p-2 text-base">
+  <button on:click={() => {shown.set(!shown.data)}}><Tr t={t.seeNearby}/> </button>
+  <Popup {shown} bodyPadding="p-4">
+    <span slot="header">
       <Tr t={t.seeNearby} />
     </span>
     <NearbyImages {tags} {state} {lon} {lat} {feature} {linkable} {layer} />
-  </AccordionSingle>
+  </Popup>
 {/if}

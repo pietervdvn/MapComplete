@@ -56,7 +56,7 @@ export interface P4CPicture {
     author?
     license?
     detailsUrl?: string
-    direction?
+    direction?: number,
     osmTags?: object /*To copy straight into OSM!*/
     thumbUrl: string
     details: {

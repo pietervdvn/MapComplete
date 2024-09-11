@@ -234,7 +234,7 @@
         {
           "id": "nearby_images",
           "render": {
-            "*": "{nearby_images(open,readonly)}"
+            "*": "{nearby_images(,readonly)}"
           }
         }
       ],

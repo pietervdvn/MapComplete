@@ -132,6 +132,7 @@
         <div class="flex h-32 w-max gap-x-2">
           {#each $unknownImages as image (image)}
             <AttributedImage
+              {state}
               imgClass="h-32 w-max shrink-0"
               image={{ url: image }}
               previewedImage={state.previewedImage}

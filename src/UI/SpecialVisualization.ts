@@ -93,6 +93,7 @@ export interface SpecialVisualizationState {
     readonly previewedImage: UIEventSource<ProvidedImage>
     readonly nearbyImageSearcher: CombinedFetcher
     readonly geolocation: GeoLocationHandler
+    readonly geocodedImages : UIEventSource<Feature[]>
 
     showCurrentLocationOn(map: Store<MlMap>): ShowDataLayer
     reportError(message: string): Promise<void>

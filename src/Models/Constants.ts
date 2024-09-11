@@ -25,6 +25,7 @@ export default class Constants {
         "last_click",
         "favourite",
         "summary",
+        "geocoded_image"
     ] as const
     /**
      * Special layers which are not included in a theme by default
