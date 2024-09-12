@@ -34,7 +34,12 @@
   export let coordinate: { lon: number; lat: number } = undefined
 
   /**
-   * The center of the map at all times
+   * Max distance that one is allowed to move, to prevent to stray too much
+   */
+  export let maxDistanceInMeters = 50
+
+  /**
+   * The resulting location; either the map center or the snapped coordinate
    * If undefined at the beginning, 'coordinate' will be used
    */
   export let value: UIEventSource<{ lon: number; lat: number }>
@@ -57,11 +62,6 @@
 
   export let snappedTo: UIEventSource<WayId | undefined>
 
-  let preciseLocation: UIEventSource<{ lon: number; lat: number }> = new UIEventSource<{
-    lon: number
-    lat: number
-  }>(undefined)
-
   const map: UIEventSource<MlMap> = new UIEventSource<MlMap>(undefined)
   export let mapProperties: Partial<MapProperties> & { location } = {
     zoom: new UIEventSource<number>(19),
@@ -69,10 +69,7 @@
     /*If no snapping needed: the value is simply the map location;
      * If snapping is needed: the value will be set later on by the snapping feature source
      * */
-    location:
-      snapToLayers?.length > 0
-        ? new UIEventSource<{ lon: number; lat: number }>(coordinate)
-        : value,
+    location: new UIEventSource<{ lon: number; lat: number }>(coordinate),
     bounds: new UIEventSource<BBox>(undefined),
     allowMoving: new UIEventSource<boolean>(true),
     allowZooming: new UIEventSource<boolean>(true),
@@ -143,15 +140,16 @@
     })
     withCorrectedAttributes.features.addCallbackAndRunD((f) => console.log("Snapped point is", f))
   }
+
 </script>
 
 <LocationInput
   {map}
   on:click
   {mapProperties}
-  value={preciseLocation}
+  value={ snapToLayers?.length > 0 ? new UIEventSource(undefined) : value}
   initialCoordinate={coordinate}
-  maxDistanceInMeters={50}
+  {maxDistanceInMeters}
 >
   <slot name="image" slot="image">
     <Move_arrows class="h-full max-h-24" />
