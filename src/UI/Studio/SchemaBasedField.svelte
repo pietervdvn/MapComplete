@@ -32,12 +32,23 @@
     return type.some((t) => mightBeBoolean(t))
   }
 
+  function mightBeTag(){
+    const t = schema.type
+    if(!Array.isArray(t)){
+      return false
+    }
+    const hasAnd = t.some(obj => obj["$ref"] === "#/definitions/{and:TagConfigJson[];}")
+    const hasOr = t.some(obj => obj["$ref"] === "#/definitions/{or:TagConfigJson[];}")
+    const hasString = t.some(obj => obj["type"] === "string")
+    return hasAnd && hasOr && hasString
+  }
+
   const isTranslation =
     schema.hints?.typehint === "translation" ||
     schema.hints?.typehint === "rendered" ||
     ConfigMetaUtils.isTranslation(schema)
-  let type = schema.hints.typehint ?? "string"
 
+  let type = schema.hints.typehint ?? (mightBeTag() ? "tag" : "string")
   let rendervalue =
     (schema.hints.inline ?? schema.path.join(".")) +
     (isTranslation ? " <b>{translated(value)}</b>" : " <b>{value}</b>")
