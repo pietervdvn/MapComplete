@@ -1,16 +1,16 @@
-import { SpecialVisualizationState } from "../../UI/SpecialVisualization"
 import Constants from "../../Models/Constants"
 import SearchUtils from "./SearchUtils"
 import ThemeSearch from "./ThemeSearch"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
+import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 
 export default class LayerSearch {
 
-    private readonly _state: SpecialVisualizationState
+    private readonly _layout: LayoutConfig
     private readonly _layerWhitelist : Set<string>
-    constructor(state: SpecialVisualizationState) {
-        this._state = state
-        this._layerWhitelist = new Set(state.layout.layers.map(l => l.id).filter(id => Constants.added_by_default.indexOf(<any> id) < 0))
+    constructor(layout: LayoutConfig) {
+        this._layout = layout
+        this._layerWhitelist = new Set(layout.layers.map(l => l.id).filter(id => Constants.added_by_default.indexOf(<any> id) < 0))
     }
 
     static scoreLayers(query: string, layerWhitelist?: Set<string>): Record<string, number> {
@@ -35,7 +35,7 @@ export default class LayerSearch {
         const asList:({layer: LayerConfig, score:number})[] = []
         for (const layer in scores) {
             asList.push({
-                layer: this._state.layout.getLayer(layer),
+                layer: this._layout.getLayer(layer),
                 score: scores[layer]
             })
         }

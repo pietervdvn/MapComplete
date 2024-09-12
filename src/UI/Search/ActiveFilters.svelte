@@ -36,6 +36,7 @@
         activeFilter.control.setData(undefined)
       }
       loading = false
+      state.searchState.closeIfFullscreen()
     })
   }
 </script>

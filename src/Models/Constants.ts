@@ -26,6 +26,7 @@ export default class Constants {
         "last_click",
         "favourite",
         "summary",
+        "search"
     ] as const
     /**
      * Special layers which are not included in a theme by default
@@ -39,7 +40,6 @@ export default class Constants {
         "usersettings",
         "icons",
         "filters",
-        "search"
     ] as const
     /**
      * Layer IDs of layers which have special properties through built-in hooks

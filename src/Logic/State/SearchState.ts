@@ -1,4 +1,4 @@
-import GeocodingProvider, { GeocodingUtils, type SearchResult } from "../Search/GeocodingProvider"
+import GeocodingProvider, { type SearchResult } from "../Search/GeocodingProvider"
 import { ImmutableStore, Store, Stores, UIEventSource } from "../UIEventSource"
 import CombinedSearcher from "../Search/CombinedSearcher"
 import FilterSearch, { FilterSearchResult } from "../Search/FilterSearch"
@@ -11,9 +11,10 @@ import ThemeViewState from "../../Models/ThemeViewState"
 import type { MinimalLayoutInformation } from "../../Models/ThemeConfig/LayoutConfig"
 import { Translation } from "../../UI/i18n/Translation"
 import GeocodingFeatureSource from "../Search/GeocodingFeatureSource"
-import ShowDataLayer from "../../UI/Map/ShowDataLayer"
 import LayerSearch from "../Search/LayerSearch"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
+import { FeatureSource } from "../FeatureSource/FeatureSource"
+import { Feature } from "geojson"
 
 export default class SearchState {
 
@@ -29,6 +30,7 @@ export default class SearchState {
     private readonly state: ThemeViewState
     public readonly showSearchDrawer: UIEventSource<boolean>
     public readonly suggestionsSearchRunning: Store<boolean>
+    public readonly locationResults: FeatureSource
 
     constructor(state: ThemeViewState) {
         this.state = state
@@ -62,7 +64,7 @@ export default class SearchState {
         const themeSearch = new ThemeSearch(state)
         this.themeSuggestions = this.searchTerm.mapD(query => themeSearch.search(query, 3))
 
-        const layerSearch = new LayerSearch(state)
+        const layerSearch = new LayerSearch(state.layout)
         this.layerSuggestions = this.searchTerm.mapD(query => layerSearch.search(query, 5))
 
         const filterSearch = new FilterSearch(state)
@@ -77,17 +79,7 @@ export default class SearchState {
                     return !foundMatch
                 })
             }, [state.layerState.activeFilters])
-        const geocodedFeatures = new GeocodingFeatureSource(this.suggestions.stabilized(250))
-        state.featureProperties.trackFeatureSource(geocodedFeatures)
-
-        new ShowDataLayer(
-            state.map,
-            {
-                layer: GeocodingUtils.searchLayer,
-                features: geocodedFeatures,
-                selectedElement: state.selectedElement,
-            },
-        )
+        this.locationResults =new GeocodingFeatureSource(this.suggestions.stabilized(250))
 
         this.showSearchDrawer = new UIEventSource(false)
 
@@ -131,4 +123,19 @@ export default class SearchState {
         }
     }
 
+    closeIfFullscreen() {
+        if(window.innerWidth < 640){
+            this.showSearchDrawer.set(false)
+        }
+    }
+
+    clickedOnMap(feature: Feature) {
+        const osmid = feature.properties.osm_id
+        const localElement = this.state.indexedFeatures.featuresById.data.get(osmid)
+        if(localElement){
+            this.state.selectedElement.set(localElement)
+            return
+        }
+        console.log(">>>",feature)
+    }
 }

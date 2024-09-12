@@ -48,7 +48,7 @@
       state.selectedElement.set(entry.feature)
     }
     state.userRelatedState.recentlyVisitedSearch.add(entry)
-    dispatch("select")
+    state.searchState.closeIfFullscreen()
   }
 </script>
 

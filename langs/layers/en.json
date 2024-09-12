@@ -11657,6 +11657,48 @@
                 "question": "Show the raw OpenStreetMap-tags?",
                 "questionHint": "<b>Tags</b> are attributes that every element has. This is the technical data that is stored in the database. You don't need this information to edit with MapComplete, but advanced users might want to use this as reference."
             },
+            "sync-visited-locations": {
+                "mappings": {
+                    "0": {
+                        "then": "Save the locations you search for and inspect and sync them via openstreetmap.org. OpenStreetMap and all apps you use can see this history"
+                    },
+                    "1": {
+                        "then": "Save the locations you search for and inspect on my device"
+                    },
+                    "2": {
+                        "then": "Don't save the locations you search for and inspect "
+                    }
+                },
+                "question": "Should the locations you search for and inspect be remembered?",
+                "questionHint": "Those locations will be offered in the search menu"
+            },
+            "sync-visited-themes": {
+                "mappings": {
+                    "0": {
+                        "then": "Save the visited thematic maps and sync them via openstreetmap.org. OpenStreetMap and all apps you use can see this history"
+                    },
+                    "1": {
+                        "then": "Save the visited thematic maps on my device"
+                    },
+                    "2": {
+                        "then": "Don't save visited thematic maps"
+                    }
+                },
+                "question": "Should the thematic maps you visit be saved?",
+                "questionHint": "If you visit a map about a certain topic, MapComplete can remember this and offer this as suggestion."
+            },
+            "title-editing": {
+                "render": "<h3>Editing settings</h3>"
+            },
+            "title-id": {
+                "render": "<h3>Mangrove ID management</h3>"
+            },
+            "title-map": {
+                "render": "<h3>Configure map</h3>"
+            },
+            "title-privacy-legal": {
+                "render": "<h3>Privacy and legal</h3>"
+            },
             "translation-completeness": {
                 "mappings": {
                     "0": {

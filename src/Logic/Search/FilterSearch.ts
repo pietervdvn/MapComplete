@@ -4,6 +4,8 @@ import Locale from "../../UI/i18n/Locale"
 import Constants from "../../Models/Constants"
 import FilterConfig, { FilterConfigOption } from "../../Models/ThemeConfig/FilterConfig"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
+import LayerState from "../State/LayerState"
+import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 
 export type FilterSearchResult = { option: FilterConfigOption, filter: FilterConfig, layer: LayerConfig, index: number }
 
@@ -12,9 +14,9 @@ export type FilterSearchResult = { option: FilterConfigOption, filter: FilterCon
  * Searches matching filters
  */
 export default class FilterSearch {
-    private readonly _state: SpecialVisualizationState
+    private readonly _state: {layerState: LayerState, layout: LayoutConfig}
 
-    constructor(state: SpecialVisualizationState) {
+    constructor(state:  {layerState: LayerState, layout: LayoutConfig}) {
         this._state = state
     }
 

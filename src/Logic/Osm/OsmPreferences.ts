@@ -70,7 +70,11 @@ export class OsmPreferences {
             this.setPreferencesAll(key, initialValue)
         }
         pref.addCallback(v => {
-            length.set(Math.ceil(v.length / maxLength))
+            if(v === null || v === undefined || v === ""){
+                length.set(null)
+                return
+            }
+            length.set(Math.ceil((v?.length ?? 1) / maxLength))
             let i = 0
             while (v.length > 0) {
                 this.UploadPreference(key + "-" + i, v.substring(0, maxLength))
@@ -96,6 +100,7 @@ export class OsmPreferences {
             this.initPreference(key, prefs[key])
         }
     }
+
 
     /**
      * OSM preferences can be at most 255 chars.

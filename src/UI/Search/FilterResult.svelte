@@ -6,21 +6,30 @@
   import ToSvelte from "../Base/ToSvelte.svelte"
   import type { FilterSearchResult } from "../../Logic/Search/FilterSearch"
   import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
+  import Loading from "../Base/Loading.svelte"
 
   export let entry: FilterSearchResult | LayerConfig
   let isLayer = entry instanceof LayerConfig
-  let asLayer = <LayerConfig> entry
-  let asFilter = <FilterSearchResult> entry
+  let asLayer = <LayerConfig>entry
+  let asFilter = <FilterSearchResult>entry
   export let state: SpecialVisualizationState
-  let dispatch = createEventDispatcher<{ select }>()
 
+  let loading = false
 
   function apply() {
+    loading = true
+    console.log("Loading is now ", loading)
+    window.requestAnimationFrame(() => {
       state.searchState.apply(entry)
-      dispatch("select")
+      loading = false
+      state.searchState.closeIfFullscreen()
+    })
   }
 </script>
-<button on:click={() => apply()}>
+<button on:click={() => apply()} class:disabled={loading}>
+  {#if loading}
+    <Loading />
+  {/if}
   <div class="flex flex-col items-start">
     <div class="flex items-center gap-x-1">
       {#if isLayer}
