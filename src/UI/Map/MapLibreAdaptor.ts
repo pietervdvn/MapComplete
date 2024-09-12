@@ -692,15 +692,17 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         if (!map) {
             return
         }
-        if (!showScale && this.scaleControl) {
-            map.removeControl(this.scaleControl)
+        if (!showScale) {
+            if(this.scaleControl){
+                map.removeControl(this.scaleControl)
+                this.scaleControl = undefined
+            }
             return
         }
-        console.log("Adding scale")
         if (this.scaleControl === undefined) {
 
             this.scaleControl = new ScaleControl({
-                maxWidth: 80,
+                maxWidth: 100,
                 unit: "metric"
             })
         }

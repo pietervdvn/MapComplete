@@ -471,6 +471,31 @@
       ]
     },
     {
+      "id": "scalebar",
+      "question": {
+        "en": "Should a scale bar be shown on the map?",
+        "nl": "Moet er een schaalbalk weergegeven worden?"
+      },
+      "mappings": [
+        {
+          "if": "mapcomplete-preference-show-scale=true",
+          "then": {
+            "en": "Show the scalebar",
+            "nl": "Toon de schaalbalk"
+          }
+        },
+        {
+          "if": "mapcomplete-preference-show-scale=false",
+          "alsoShowIf": "mapcomplete-preference-show-scale=",
+
+          "then": {
+            "en": "Hide the scalebar",
+            "nl": "Verberg de schaalbalk"
+          }
+        }
+      ]
+    },
+    {
       "id": "picture-license",
       "description": "This question is not meant to be placed on an OpenStreetMap-element; however it is used in the user information panel to ask which license the user wants",
       "question": {
