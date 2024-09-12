@@ -5155,19 +5155,19 @@
                         "then": "Pommesbude"
                     },
                     "10": {
-                        "then": "Hier werden chinesische Gerichte serviert"
+                        "then": "Chinesisch"
                     },
                     "11": {
-                        "then": "Hier werden griechische Gerichte serviert"
+                        "then": "Griechisch"
                     },
                     "12": {
-                        "then": "Hier werden indische Gerichte serviert"
+                        "then": "Indisch"
                     },
                     "13": {
-                        "then": "Hier werden türkische Gerichte serviert"
+                        "then": "Türkisches Restaurant"
                     },
                     "14": {
-                        "then": "Hier werden thailändische Gerichte serviert"
+                        "then": "Thailändisches Restaurant"
                     },
                     "2": {
                         "then": "Bietet vorwiegend Pastagerichte an"
@@ -5178,17 +5178,20 @@
                     "4": {
                         "then": "Sandwichladen"
                     },
+                    "5": {
+                        "then": "Burgersrestaurant"
+                    },
                     "6": {
-                        "then": "Hier wird Sushi serviert"
+                        "then": "Sushi-Restaurant"
                     },
                     "7": {
-                        "then": "Hier wird Kaffee serviert"
+                        "then": "Kaffeebar"
                     },
                     "8": {
-                        "then": "Dies ist ein italienisches Restaurant (das mehr als nur Pasta und Pizza serviert)"
+                        "then": "Italienisches Restaurant (das mehr als nur Pasta und Pizza serviert)"
                     },
                     "9": {
-                        "then": "Hier werden französische Gerichte serviert"
+                        "then": "Französisches Restaurant"
                     }
                 },
                 "question": "Was für Essen gibt es hier?",
@@ -5701,6 +5704,9 @@
                     },
                     "1": {
                         "then": "Dies ist ein traditioneller (softwareorientierter) Hackerspace"
+                    },
+                    "2": {
+                        "then": "Dies ist ein <b>Hackerspace/Hack-Lab</b>, das sich hauptsächlich auf grundlegende Computerkenntnisse konzentriert, recycelte Geräte verwendet und/oder der Gemeinschaft Internet bereitstellt. Es befindet sich typischerweise in autonomen Räumen, besetzten Häusern oder sozialen Einrichtungen."
                     }
                 },
                 "question": "Ist dies ein Hackerspace oder ein Makerspace?"
