@@ -643,7 +643,8 @@
         "pointIsMoved": "Der Punkt wurde verschoben",
         "reasons": {
             "reasonInaccurate": "Der Standort ist um ein paar Meter ungenau",
-            "reasonRelocation": "Das Element wurde an einen völlig anderen Ort verlegt"
+            "reasonRelocation": "Das Element wurde an einen völlig anderen Ort verlegt",
+            "reasonSnapTo": "Dies sollte auf {name} fixiert werden"
         },
         "selectReason": "Warum verschieben Sie dieses Element?",
         "whyMove": "Warum wollen Sie diesen Punkt verschieben?",
@@ -777,6 +778,14 @@
         "allMissing": "Noch keine Übersetzungen",
         "missing": "{count} nicht übersetzte Zeichenfolgen",
         "notImmediate": "Die Übersetzung wird nicht direkt aktualisiert. Dies dauert in der Regel ein paar Tage"
+    },
+    "unknown": {
+        "clear": "Antwort löschen",
+        "explanation": "Lösche dieses Informationsmerkmal, wenn die aktuelle Antwort falsch ist, aber der tatsächliche Wert nicht bekannt ist. Andere Informationen werden nicht entfernt.",
+        "keep": "Antwort behalten",
+        "markUnknown": "Als unbekannt markieren",
+        "removedKeys": "Die folgenden Einträge werden entfernt:",
+        "title": "Als unbekannt markieren?"
     },
     "userinfo": {
         "gotoInbox": "Deinen Posteingang öffnen",
