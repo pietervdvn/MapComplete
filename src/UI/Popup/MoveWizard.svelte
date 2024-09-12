@@ -106,6 +106,7 @@
                 snapToLayers={$reason.snapTo}
                 targetLayer={layer}
                 dontShow={[id]}
+                maxDistanceInMeters={200}
               />
               <div class="absolute bottom-0 left-0">
                 <OpenBackgroundSelectorButton {state} />

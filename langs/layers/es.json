@@ -2731,7 +2731,7 @@
                         "then": "Hamburguesas"
                     },
                     "6": {
-                        "then": "Aquí se sirve sushi"
+                        "then": "Restaurante de sushi"
                     },
                     "7": {
                         "then": "Aquí se sirve café"
@@ -2740,7 +2740,7 @@
                         "then": "Este es un restaurante italiano (que sirve algo más que pasta y pizza)"
                     },
                     "9": {
-                        "then": "Aquí se sirven platos Franceses"
+                        "then": "Restaurante francés"
                     }
                 },
                 "question": "¿Qué tipo de comida sirven aquí?",
