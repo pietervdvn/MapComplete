@@ -39,7 +39,7 @@ Observator hinted to the location of the search button
 
 > User clicks search button, an empty result bar appears
 
- [ ] Failure: bar shows up if there are no results (was using private navigation)
+ [x] Failure: bar shows up if there are no results (was using private navigation)
     Search suggestions should be shown!
 
     
@@ -116,7 +116,7 @@ Success: user sponteanously interacts with the questions!
 > The user left the 'cuisine' question open and moved on to other questions
 > Whenever they answered a question, the UI would jump back to the first open question
 
- [ ] Failure: maybe simply remove this scrolling behaviour?
+ [x] Failure: maybe simply remove this scrolling behaviour? (Fixed in d62974b1e3896f887c581ffcbe44488a6de8a9bc)
 
 > User gets confused by having some bold options: "I thought someone already selected option "Lactose free offering"
 
@@ -143,7 +143,7 @@ Success: user sponteanously interacts with the questions!
 
 > When instructed to search for filters, the user didn't realise that is possible through the search
 
- [ ] Failure: search results should show some example filters, cities, layers and other thematic maps when nothing has been shown before
+ [x] Failure: search results should show some example filters, cities, layers and other thematic maps when nothing has been shown before
  [x] Failure: default text should be changed and broadened and mention more then just 'locations'
 
 > The user attempts to search, but often 'fat-fingers' and presses a shop behind the search bar, opening this
@@ -160,7 +160,7 @@ Success: user sponteanously interacts with the questions!
 
 > Suggested filters shows up as "This is a pizzeria"
 
- [ ] Failure: Unclear text, to be changed
+ [x] Failure: Unclear text, to be changed (Fixed in 3939d2fe7bb4e6f40abd659372e4d67b457281c3)
  [x] Unclear that this is a filter that can be added: subheadings are needed
 
 > User clears the filter, MC hangs as it is re-rendering all items
