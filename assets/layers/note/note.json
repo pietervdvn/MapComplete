@@ -18,13 +18,16 @@
   "calculatedTags": [
     "_total_comments:=get(feat)('comments').length",
     "_first_comment:=get(feat)('comments')[0].text",
+    "_all_comments:=get(feat)('comments').map(c => c.text ?? '').join('\\n')",
+    "_all_usernames:=get(feat)('comments').map(c => c.user ?? 'Anonymous').join('\\n')",
     "_opened_by_anonymous_user:=get(feat)('comments')[0].user === undefined",
     "_first_user:=get(feat)('comments')[0].user",
     "_last_user:=(() => {const comms = get(feat)('comments'); return comms[comms.length - 1].user})()",
+    "_last_change_date:=(() => {const comms = get(feat)('comments'); return comms[comms.length - 1].date})()",
     "_first_user_id:=get(feat)('comments')[0].uid",
     "_is_import_note:=(() => {const lines = feat.properties['_first_comment'].split('\\n'); const matchesMapCompleteURL = lines.map(l => l.match(\".*https://mapcomplete.\\(osm.be|org\\)/\\([a-zA-Z_-]+\\)\\(.html\\).*#import\")); const matchedIndexes = matchesMapCompleteURL.map((doesMatch, i) => [doesMatch !== null, i]).filter(v => v[0]).map(v => v[1]); return matchedIndexes[0] })()"
   ],
-  "minzoom": 10,
+  "minzoom": 7,
   "title": {
     "render": {
       "en": "Note",
@@ -159,183 +162,6 @@
   ],
   "filter": [
     {
-      "id": "search",
-      "options": [
-        {
-          "osmTags": "_first_comment~i~.*{search}.*",
-          "fields": [
-            {
-              "name": "search"
-            }
-          ],
-          "question": {
-            "en": "Should mention {search} in the first comment",
-            "nl": "Moet in de eerste opmerking \"{search}\" bevatten",
-            "de": "Sollte {search} im ersten Kommentar erwähnen",
-            "es": "Debe mencionar {search} en el primer comentario",
-            "ca": "Has de mencionar {search} en el primer comentari",
-            "cs": "Měl by se zmínit {search} v prvním komentáři"
-          }
-        }
-      ]
-    },
-    {
-      "id": "not",
-      "options": [
-        {
-          "osmTags": "_first_comment!~i~.*{search}.*",
-          "fields": [
-            {
-              "name": "search"
-            }
-          ],
-          "question": {
-            "en": "Should <b>not</b> mention {search} in the first comment",
-            "nl": "Mag in de eerste opmerking <b>niet</b> \"{search}\" bevatten",
-            "de": "Sollte <b>nicht</b> {search} im ersten Kommentar erwähnen",
-            "es": "<b>No</b> debe mencionar {search} en el primer comentario",
-            "ca": "<b>No</b> s'ha de mencionar {search} al primer comentari",
-            "cs": "V prvním komentáři by jste <b>neměli</b> zmiňovat {search}"
-          }
-        }
-      ]
-    },
-    {
-      "id": "opened_by",
-      "options": [
-        {
-          "osmTags": "_first_user~i~.*{search}.*",
-          "fields": [
-            {
-              "name": "search"
-            }
-          ],
-          "question": {
-            "en": "Opened by contributor {search}",
-            "nl": "Geopend door bijdrager {search}",
-            "de": "Erstellt von {search}",
-            "es": "Abierto por el contributor {search}",
-            "fr": "Ouverte par {search}",
-            "ca": "Obert pel contribuïdor {search}",
-            "cs": "Otevřeno přispěvatelem {search}"
-          }
-        }
-      ]
-    },
-    {
-      "id": "not_opened_by",
-      "options": [
-        {
-          "osmTags": "_first_user!~i~.*{search}.*",
-          "fields": [
-            {
-              "name": "search"
-            }
-          ],
-          "question": {
-            "en": "<b>Not</b> opened by contributor {search}",
-            "nl": "<b>Niet</b> geopend door bijdrager {search}",
-            "de": "<b>Nicht</b> erstellt von {search}",
-            "es": "<b>No</b> abierto por el contributor {search}",
-            "ca": "<b>No</b> obert pel contribuïdor {search}",
-            "cs": "<b>Není</b> otevřeno přispěvatelem {search}",
-            "fr": "<b>Exclure</b>les notes ouvertes par {search}"
-          }
-        }
-      ]
-    },
-    {
-      "id": "edited_by",
-      "options": [
-        {
-          "osmTags": "_last_user~i~.*{search}.*",
-          "fields": [
-            {
-              "name": "search"
-            }
-          ],
-          "question": {
-            "en": "Last edited by contributor {search}",
-            "nl": "Laatst bewerkt door bijdrager {search}",
-            "de": "Zuletzt bearbeitet von {search}",
-            "es": "Editada por última vez por el contributor {search}",
-            "ca": "Editat per última vega pel contribuïdor {search}",
-            "cs": "Naposledy upravil přispěvatel {search}",
-            "da": "Senest redigeret af bidragsyder {search}",
-            "fr": "Dernière modification par {search}"
-          }
-        }
-      ]
-    },
-    {
-      "id": "not_edited_by",
-      "options": [
-        {
-          "osmTags": "_last_user!~i~.*{search}.*",
-          "fields": [
-            {
-              "name": "search"
-            }
-          ],
-          "question": {
-            "en": "Opened after {search}",
-            "nl": "Geopend na {search}",
-            "de": "Zuletzt bearbeitet nach dem {search}",
-            "es": "Abierta después de {search}",
-            "ca": "Oberta després de {search}",
-            "cs": "Otevřeno po {search}",
-            "fr": "Ouverte après le {search}"
-          }
-        }
-      ]
-    },
-    {
-      "id": "opened_before",
-      "options": [
-        {
-          "osmTags": "date_created<{search}",
-          "fields": [
-            {
-              "name": "search",
-              "type": "date"
-            }
-          ],
-          "question": {
-            "en": "Created before {search}",
-            "nl": "Aangemaakt voor {search}",
-            "de": "Erstellt vor dem {search}",
-            "es": "Creada antes de {search}",
-            "ca": "Creada abans de {search}",
-            "cs": "Vytvořeno před {search}",
-            "fr": "Créée avant le {search}"
-          }
-        }
-      ]
-    },
-    {
-      "id": "opened_after",
-      "options": [
-        {
-          "osmTags": "date_created>{search}",
-          "fields": [
-            {
-              "name": "search",
-              "type": "date"
-            }
-          ],
-          "question": {
-            "en": "Created after {search}",
-            "nl": "Aangemaakt na {search}",
-            "de": "Erstellt nach dem {search}",
-            "es": "Creada después de {search}",
-            "ca": "Creada després de {search}",
-            "cs": "Vytvořeno po {search}",
-            "fr": "Créée après le {search}"
-          }
-        }
-      ]
-    },
-    {
       "id": "anonymous",
       "options": [
         {
@@ -403,6 +229,244 @@
             "es": "Solo mostrar las notas de importación",
             "ca": "Mostrar només les notes d'importació",
             "cs": "Zobrazit pouze poznámky k importu"
+          }
+        }
+      ]
+    },
+    {
+      "id": "search",
+      "options": [
+        {
+          "osmTags": "_first_comment~i~.*{search}.*",
+          "fields": [
+            {
+              "name": "search"
+            }
+          ],
+          "question": {
+            "en": "Should mention {search} in the first comment",
+            "nl": "Moet in de eerste opmerking \"{search}\" bevatten",
+            "de": "Sollte {search} im ersten Kommentar erwähnen",
+            "es": "Debe mencionar {search} en el primer comentario",
+            "ca": "Has de mencionar {search} en el primer comentari",
+            "cs": "Měl by se zmínit {search} v prvním komentáři"
+          }
+        }
+      ]
+    },
+    {
+      "id": "search_any",
+      "options": [
+        {
+          "osmTags": "_all_comments~i~.*{search}.*",
+          "fields": [
+            {
+              "name": "search"
+            }
+          ],
+          "question": {
+            "en": "Should mention {search} in any comment"
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "not",
+      "options": [
+        {
+          "osmTags": "_first_comment!~i~.*{search}.*",
+          "fields": [
+            {
+              "name": "search"
+            }
+          ],
+          "question": {
+            "en": "Should <b>not</b> mention {search} in the first comment",
+            "nl": "Mag in de eerste opmerking <b>niet</b> \"{search}\" bevatten",
+            "de": "Sollte <b>nicht</b> {search} im ersten Kommentar erwähnen",
+            "es": "<b>No</b> debe mencionar {search} en el primer comentario",
+            "ca": "<b>No</b> s'ha de mencionar {search} al primer comentari",
+            "cs": "V prvním komentáři by jste <b>neměli</b> zmiňovat {search}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "opened_by",
+      "options": [
+        {
+          "osmTags": "_first_user~i~.*{search}.*",
+          "fields": [
+            {
+              "name": "search"
+            }
+          ],
+          "question": {
+            "en": "Opened by contributor {search}",
+            "nl": "Geopend door bijdrager {search}",
+            "de": "Erstellt von {search}",
+            "es": "Abierto por el contributor {search}",
+            "fr": "Ouverte par {search}",
+            "ca": "Obert pel contribuïdor {search}",
+            "cs": "Otevřeno přispěvatelem {search}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "not_opened_by",
+      "options": [
+        {
+          "osmTags": "_first_user!~i~.*{search}.*",
+          "fields": [
+            {
+              "name": "search"
+            }
+          ],
+          "question": {
+            "en": "<b>Not</b> opened by contributor {search}",
+            "nl": "<b>Niet</b> geopend door bijdrager {search}",
+            "de": "<b>Nicht</b> erstellt von {search}",
+            "es": "<b>No</b> abierto por el contributor {search}",
+            "ca": "<b>No</b> obert pel contribuïdor {search}",
+            "cs": "<b>Není</b> otevřeno přispěvatelem {search}",
+            "fr": "<b>Exclure</b>les notes ouvertes par {search}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "edited_by_any",
+      "options": [
+        {
+          "osmTags": "_all_usernames~i~.*{search}.*",
+          "fields": [
+            {
+              "name": "search"
+            }
+          ],
+          "question": {
+            "en": "Edited or commented on by any user with name {search}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "last_edited_by",
+      "options": [
+        {
+          "osmTags": "_last_user~i~.*{search}.*",
+          "fields": [
+            {
+              "name": "search"
+            }
+          ],
+          "question": {
+            "en": "Last edited by contributor {search}",
+            "nl": "Laatst bewerkt door bijdrager {search}",
+            "de": "Zuletzt bearbeitet von {search}",
+            "es": "Editada por última vez por el contributor {search}",
+            "ca": "Editat per última vega pel contribuïdor {search}",
+            "cs": "Naposledy upravil přispěvatel {search}",
+            "da": "Senest redigeret af bidragsyder {search}",
+            "fr": "Dernière modification par {search}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "not_last_edited_by",
+      "options": [
+        {
+          "osmTags": "_last_user!~i~.*{search}.*",
+          "fields": [
+            {
+              "name": "search"
+            }
+          ],
+          "question": {
+            "en": "Not edited as last by {search}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "opened_before",
+      "options": [
+        {
+          "osmTags": "date_created<{search}",
+          "fields": [
+            {
+              "name": "search",
+              "type": "date"
+            }
+          ],
+          "question": {
+            "en": "Created before {search}",
+            "nl": "Aangemaakt voor {search}",
+            "de": "Erstellt vor dem {search}",
+            "es": "Creada antes de {search}",
+            "ca": "Creada abans de {search}",
+            "cs": "Vytvořeno před {search}",
+            "fr": "Créée avant le {search}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "opened_after",
+      "options": [
+        {
+          "osmTags": "date_created>{search}",
+          "fields": [
+            {
+              "name": "search",
+              "type": "date"
+            }
+          ],
+          "question": {
+            "en": "Created after {search}",
+            "nl": "Aangemaakt na {search}",
+            "de": "Erstellt nach dem {search}",
+            "es": "Creada después de {search}",
+            "ca": "Creada després de {search}",
+            "cs": "Vytvořeno po {search}",
+            "fr": "Créée après le {search}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "last_edited_before",
+      "options": [
+        {
+          "osmTags": "_last_change_date<{search}",
+          "fields": [
+            {
+              "name": "search",
+              "type": "date"
+            }
+          ],
+          "question": {
+            "en": "Last edited before {search}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "last_edited_after",
+      "options": [
+        {
+          "osmTags": "_last_change_date>{search}",
+          "fields": [
+            {
+              "name": "search",
+              "type": "date"
+            }
+          ],
+          "question": {
+            "en": "Last edited after {search}"
           }
         }
       ]

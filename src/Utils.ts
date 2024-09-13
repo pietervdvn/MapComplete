@@ -1272,7 +1272,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
 
     public static sortedByLevenshteinDistance<T>(
         reference: string,
-        ts: T[],
+        ts: ReadonlyArray<T>,
         getName: (t: T) => string
     ): T[] {
         const withDistance: [T, number][] = ts.map((t) => [

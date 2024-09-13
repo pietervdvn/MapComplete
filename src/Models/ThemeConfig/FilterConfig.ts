@@ -12,12 +12,14 @@ import BaseUIElement from "../../UI/BaseUIElement"
 import Table from "../../UI/Base/Table"
 import Combine from "../../UI/Base/Combine"
 import MarkdownUtils from "../../Utils/MarkdownUtils"
+import Validators, { ValidatorType } from "../../UI/InputElement/Validators"
+
 export type FilterConfigOption = {
     question: Translation
     osmTags: TagsFilter | undefined
     /* Only set if fields are present. Used to create `osmTags` (which are used to _actually_ filter) when the field is written*/
     readonly originalTagsSpec: TagConfigJson
-    fields: { name: string; type: string }[]
+    fields: { name: string; type: ValidatorType }[]
 }
 export default class FilterConfig {
     public readonly id: string
@@ -57,8 +59,11 @@ export default class FilterConfig {
                 throw `Invalid filter: no question given at ${ctx}`
             }
 
-            const fields: { name: string; type: string }[] = (option.fields ?? []).map((f, i) => {
-                const type = f.type ?? "string"
+            const fields: { name: string; type: ValidatorType }[] = (option.fields ?? []).map((f, i) => {
+                const type = <ValidatorType> f.type ?? "string"
+                if(Validators.availableTypes.indexOf(type) < 0){
+                    throw `Invalid filter: type is not a valid validator. Did you mean one of ${Utils.sortedByLevenshteinDistance(type, <any>Validators.availableTypes, x => x).slice(0, 3)}`
+                }
                 // Type is validated against 'ValidatedTextField' in Validation.ts, in ValidateFilterConfig
                 if (f.name === undefined || f.name === "" || f.name.match(/[a-z0-9_-]+/) == null) {
                     throw `Invalid filter: a variable name should match [a-z0-9_-]+ at ${ctx}.fields[${i}]`
