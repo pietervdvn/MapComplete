@@ -133,9 +133,8 @@
       }
     },
     "opening_hours",
-    "phone",
-    "email",
-    "website",
+    "contact",
+    "payment-options",
     {
       "id": "wheelchair",
       "question": {
