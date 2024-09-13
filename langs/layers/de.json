@@ -3033,7 +3033,6 @@
     "climbing_opportunity": {
         "description": "Rückfallebene mit Orten, auf denen Klettern eventuell möglich ist. Sie wird erst angezeigt, wenn man stark hineinzoomt, um zu verhindern, dass Elemente doppelt hinzugefügt werden",
         "name": "Klettermöglichkeiten?",
-        "snapName": "eine Wand, Klippe oder ein Felsen",
         "tagRenderings": {
             "climbing-opportunity-name": {
                 "render": "<strong>{name}</strong>"
@@ -3435,7 +3434,6 @@
     "cycleways_and_roads": {
         "description": "Infrastruktur, die man mit dem Fahrrad befahren kann, begleitet von diesbezüglichen Fragen",
         "name": "Radwege und Straßen",
-        "snapName": "eine Straße oder einen Radweg",
         "tagRenderings": {
             "Cycleway type for a road": {
                 "mappings": {
@@ -5155,19 +5153,19 @@
                         "then": "Pommesbude"
                     },
                     "10": {
-                        "then": "Chinesisch"
+                        "then": "Hier werden chinesische Gerichte serviert"
                     },
                     "11": {
-                        "then": "Griechisch"
+                        "then": "Hier werden griechische Gerichte serviert"
                     },
                     "12": {
-                        "then": "Indisch"
+                        "then": "Hier werden indische Gerichte serviert"
                     },
                     "13": {
-                        "then": "Türkisches Restaurant"
+                        "then": "Hier werden türkische Gerichte serviert"
                     },
                     "14": {
-                        "then": "Thailändisches Restaurant"
+                        "then": "Hier werden thailändische Gerichte serviert"
                     },
                     "2": {
                         "then": "Bietet vorwiegend Pastagerichte an"
@@ -5178,20 +5176,17 @@
                     "4": {
                         "then": "Sandwichladen"
                     },
-                    "5": {
-                        "then": "Burgersrestaurant"
-                    },
                     "6": {
-                        "then": "Sushi-Restaurant"
+                        "then": "Hier wird Sushi serviert"
                     },
                     "7": {
-                        "then": "Kaffeebar"
+                        "then": "Hier wird Kaffee serviert"
                     },
                     "8": {
-                        "then": "Italienisches Restaurant (das mehr als nur Pasta und Pizza serviert)"
+                        "then": "Dies ist ein italienisches Restaurant (das mehr als nur Pasta und Pizza serviert)"
                     },
                     "9": {
-                        "then": "Französisches Restaurant"
+                        "then": "Hier werden französische Gerichte serviert"
                     }
                 },
                 "question": "Was für Essen gibt es hier?",
@@ -5704,9 +5699,6 @@
                     },
                     "1": {
                         "then": "Dies ist ein traditioneller (softwareorientierter) Hackerspace"
-                    },
-                    "2": {
-                        "then": "Dies ist ein <b>Hackerspace/Hack-Lab</b>, das sich hauptsächlich auf grundlegende Computerkenntnisse konzentriert, recycelte Geräte verwendet und/oder der Gemeinschaft Internet bereitstellt. Es befindet sich typischerweise in autonomen Räumen, besetzten Häusern oder sozialen Einrichtungen."
                     }
                 },
                 "question": "Ist dies ein Hackerspace oder ein Makerspace?"
@@ -5918,7 +5910,6 @@
     "indoors": {
         "description": "Grundlegende Innenraumkartierung: zeigt Umrisse von Räumen",
         "name": "Innenräume",
-        "snapName": "eine Innenwand",
         "tagRenderings": {
             "name": {
                 "freeform": {
@@ -5960,9 +5951,6 @@
                     },
                     "14": {
                         "then": "Dies ist ein Büro"
-                    },
-                    "15": {
-                        "then": "Dies ist ein Kopierraum"
                     },
                     "16": {
                         "then": "Dies ist eine Gefängniszelle"
@@ -6091,7 +6079,6 @@
                 "title": "einen Bordstein"
             }
         },
-        "snapName": "ein Bordstein",
         "tagRenderings": {
             "kerb-height": {
                 "freeform": {
@@ -6772,18 +6759,32 @@
             "0": {
                 "options": {
                     "0": {
-                        "question": "Sollte {search} im ersten Kommentar erwähnen"
+                        "question": "Nur Notizen anzeigen, die anonym erstellt wurden"
                     }
                 }
             },
             "1": {
                 "options": {
                     "0": {
-                        "question": "Sollte <b>nicht</b> {search} im ersten Kommentar erwähnen"
+                        "question": "Nur offene Notizen anzeigen"
                     }
                 }
             },
-            "10": {
+            "11": {
+                "options": {
+                    "0": {
+                        "question": "Erstellt vor dem {search}"
+                    }
+                }
+            },
+            "12": {
+                "options": {
+                    "0": {
+                        "question": "Erstellt nach dem {search}"
+                    }
+                }
+            },
+            "2": {
                 "options": {
                     "0": {
                         "question": "Alle Notizen"
@@ -6796,59 +6797,38 @@
                     }
                 }
             },
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "Erstellt von {search}"
-                    }
-                }
-            },
             "3": {
                 "options": {
                     "0": {
-                        "question": "<b>Nicht</b> erstellt von {search}"
-                    }
-                }
-            },
-            "4": {
-                "options": {
-                    "0": {
-                        "question": "Zuletzt bearbeitet von {search}"
+                        "question": "Sollte {search} im ersten Kommentar erwähnen"
                     }
                 }
             },
             "5": {
                 "options": {
                     "0": {
-                        "question": "Zuletzt bearbeitet nach dem {search}"
+                        "question": "Sollte <b>nicht</b> {search} im ersten Kommentar erwähnen"
                     }
                 }
             },
             "6": {
                 "options": {
                     "0": {
-                        "question": "Erstellt vor dem {search}"
+                        "question": "Erstellt von {search}"
                     }
                 }
             },
             "7": {
                 "options": {
                     "0": {
-                        "question": "Erstellt nach dem {search}"
-                    }
-                }
-            },
-            "8": {
-                "options": {
-                    "0": {
-                        "question": "Nur Notizen anzeigen, die anonym erstellt wurden"
+                        "question": "<b>Nicht</b> erstellt von {search}"
                     }
                 }
             },
             "9": {
                 "options": {
                     "0": {
-                        "question": "Nur offene Notizen anzeigen"
+                        "question": "Zuletzt bearbeitet von {search}"
                     }
                 }
             }
@@ -7309,8 +7289,7 @@
     },
     "pedestrian_path": {
         "description": "Fußgängerwege, insbesondere für die Navigation in Gebäuden und die Aufnahme von Eingängen in diese Ebene",
-        "name": "Fußgängerwege",
-        "snapName": "ein Fußweg"
+        "name": "Fußgängerwege"
     },
     "pharmacy": {
         "description": "Eine Ebene mit Apotheken, die (wahrscheinlich) verschreibungspflichtige Medikamente ausgeben",
@@ -8197,9 +8176,6 @@
                     },
                     "4": {
                         "then": "Dieser Ort bietet kabelgebundenen Internetzugang"
-                    },
-                    "5": {
-                        "then": "Dieser Ort bietet sowohl drahtloses Internet als auch Internetzugang über ein Terminal oder einen Computer"
                     }
                 },
                 "question": "Bietet dieser Ort Internetzugang?"
@@ -9054,7 +9030,6 @@
     "shelter": {
         "description": "Eine Ebene, die verschiedene Bauformen von Unterständen zeigt",
         "name": "Unterstände",
-        "snapName": "ein Unterstand",
         "tagRenderings": {
             "shelter-type": {
                 "mappings": {
@@ -12023,7 +11998,6 @@
     },
     "walls_and_buildings": {
         "description": "Spezielle Ebene, die alle Wände und Gebäude bereitstellt. Diese Ebene ist nützlich in Voreinstellungen für Objekte, die an Wänden platziert werden können (z. B. AEDs, Briefkästen, Eingänge, Adressen, Überwachungskameras, ...). Diese Ebene ist standardmäßig unsichtbar und kann vom Benutzer nicht umgeschaltet werden.",
-        "snapName": "eine Wand oder ein Gebäude",
         "tagRenderings": {
             "entrance_info": {
                 "mappings": {

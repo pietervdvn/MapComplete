@@ -5352,18 +5352,32 @@
             "0": {
                 "options": {
                     "0": {
-                        "question": "Měl by se zmínit {search} v prvním komentáři"
+                        "question": "Zobrazovat pouze poznámky otevřené anonymním přispěvatelem"
                     }
                 }
             },
             "1": {
                 "options": {
                     "0": {
-                        "question": "V prvním komentáři by jste <b>neměli</b> zmiňovat {search}"
+                        "question": "Zobrazit pouze otevřené poznámky"
                     }
                 }
             },
-            "10": {
+            "11": {
+                "options": {
+                    "0": {
+                        "question": "Vytvořeno před {search}"
+                    }
+                }
+            },
+            "12": {
+                "options": {
+                    "0": {
+                        "question": "Vytvořeno po {search}"
+                    }
+                }
+            },
+            "2": {
                 "options": {
                     "0": {
                         "question": "Všechny poznámky"
@@ -5376,59 +5390,38 @@
                     }
                 }
             },
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "Otevřeno přispěvatelem {search}"
-                    }
-                }
-            },
             "3": {
                 "options": {
                     "0": {
-                        "question": "<b>Není</b> otevřeno přispěvatelem {search}"
-                    }
-                }
-            },
-            "4": {
-                "options": {
-                    "0": {
-                        "question": "Naposledy upravil přispěvatel {search}"
+                        "question": "Měl by se zmínit {search} v prvním komentáři"
                     }
                 }
             },
             "5": {
                 "options": {
                     "0": {
-                        "question": "Otevřeno po {search}"
+                        "question": "V prvním komentáři by jste <b>neměli</b> zmiňovat {search}"
                     }
                 }
             },
             "6": {
                 "options": {
                     "0": {
-                        "question": "Vytvořeno před {search}"
+                        "question": "Otevřeno přispěvatelem {search}"
                     }
                 }
             },
             "7": {
                 "options": {
                     "0": {
-                        "question": "Vytvořeno po {search}"
-                    }
-                }
-            },
-            "8": {
-                "options": {
-                    "0": {
-                        "question": "Zobrazovat pouze poznámky otevřené anonymním přispěvatelem"
+                        "question": "<b>Není</b> otevřeno přispěvatelem {search}"
                     }
                 }
             },
             "9": {
                 "options": {
                     "0": {
-                        "question": "Zobrazit pouze otevřené poznámky"
+                        "question": "Naposledy upravil přispěvatel {search}"
                     }
                 }
             }

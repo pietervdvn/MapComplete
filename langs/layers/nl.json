@@ -5523,18 +5523,32 @@
             "0": {
                 "options": {
                     "0": {
-                        "question": "Moet in de eerste opmerking \"{search}\" bevatten"
+                        "question": "Toon enkel de Notes geopend door een anonieme bijdrager"
                     }
                 }
             },
             "1": {
                 "options": {
                     "0": {
-                        "question": "Mag in de eerste opmerking <b>niet</b> \"{search}\" bevatten"
+                        "question": "Toon enkel open Notes"
                     }
                 }
             },
-            "10": {
+            "11": {
+                "options": {
+                    "0": {
+                        "question": "Aangemaakt voor {search}"
+                    }
+                }
+            },
+            "12": {
+                "options": {
+                    "0": {
+                        "question": "Aangemaakt na {search}"
+                    }
+                }
+            },
+            "2": {
                 "options": {
                     "0": {
                         "question": "Alle Notes"
@@ -5547,59 +5561,38 @@
                     }
                 }
             },
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "Geopend door bijdrager {search}"
-                    }
-                }
-            },
             "3": {
                 "options": {
                     "0": {
-                        "question": "<b>Niet</b> geopend door bijdrager {search}"
-                    }
-                }
-            },
-            "4": {
-                "options": {
-                    "0": {
-                        "question": "Laatst bewerkt door bijdrager {search}"
+                        "question": "Moet in de eerste opmerking \"{search}\" bevatten"
                     }
                 }
             },
             "5": {
                 "options": {
                     "0": {
-                        "question": "Geopend na {search}"
+                        "question": "Mag in de eerste opmerking <b>niet</b> \"{search}\" bevatten"
                     }
                 }
             },
             "6": {
                 "options": {
                     "0": {
-                        "question": "Aangemaakt voor {search}"
+                        "question": "Geopend door bijdrager {search}"
                     }
                 }
             },
             "7": {
                 "options": {
                     "0": {
-                        "question": "Aangemaakt na {search}"
-                    }
-                }
-            },
-            "8": {
-                "options": {
-                    "0": {
-                        "question": "Toon enkel de Notes geopend door een anonieme bijdrager"
+                        "question": "<b>Niet</b> geopend door bijdrager {search}"
                     }
                 }
             },
             "9": {
                 "options": {
                     "0": {
-                        "question": "Toon enkel open Notes"
+                        "question": "Laatst bewerkt door bijdrager {search}"
                     }
                 }
             }
@@ -9259,6 +9252,17 @@
                         }
                     }
                 }
+            },
+            "scalebar": {
+                "mappings": {
+                    "0": {
+                        "then": "Toon de schaalbalk"
+                    },
+                    "1": {
+                        "then": "Verberg de schaalbalk"
+                    }
+                },
+                "question": "Moet er een schaalbalk weergegeven worden?"
             },
             "settings-link": {
                 "render": {

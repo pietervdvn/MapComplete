@@ -5126,18 +5126,32 @@
             "0": {
                 "options": {
                     "0": {
-                        "question": "Has de mencionar {search} en el primer comentari"
+                        "question": "Sols mostrar les notes obertes per contribuïdors anònims"
                     }
                 }
             },
             "1": {
                 "options": {
                     "0": {
-                        "question": "<b>No</b> s'ha de mencionar {search} al primer comentari"
+                        "question": "Sols mostra les notes obertes"
                     }
                 }
             },
-            "10": {
+            "11": {
+                "options": {
+                    "0": {
+                        "question": "Creada abans de {search}"
+                    }
+                }
+            },
+            "12": {
+                "options": {
+                    "0": {
+                        "question": "Creada després de {search}"
+                    }
+                }
+            },
+            "2": {
                 "options": {
                     "0": {
                         "question": "Totes les notes"
@@ -5150,59 +5164,38 @@
                     }
                 }
             },
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "Obert pel contribuïdor {search}"
-                    }
-                }
-            },
             "3": {
                 "options": {
                     "0": {
-                        "question": "<b>No</b> obert pel contribuïdor {search}"
-                    }
-                }
-            },
-            "4": {
-                "options": {
-                    "0": {
-                        "question": "Editat per última vega pel contribuïdor {search}"
+                        "question": "Has de mencionar {search} en el primer comentari"
                     }
                 }
             },
             "5": {
                 "options": {
                     "0": {
-                        "question": "Oberta després de {search}"
+                        "question": "<b>No</b> s'ha de mencionar {search} al primer comentari"
                     }
                 }
             },
             "6": {
                 "options": {
                     "0": {
-                        "question": "Creada abans de {search}"
+                        "question": "Obert pel contribuïdor {search}"
                     }
                 }
             },
             "7": {
                 "options": {
                     "0": {
-                        "question": "Creada després de {search}"
-                    }
-                }
-            },
-            "8": {
-                "options": {
-                    "0": {
-                        "question": "Sols mostrar les notes obertes per contribuïdors anònims"
+                        "question": "<b>No</b> obert pel contribuïdor {search}"
                     }
                 }
             },
             "9": {
                 "options": {
                     "0": {
-                        "question": "Sols mostra les notes obertes"
+                        "question": "Editat per última vega pel contribuïdor {search}"
                     }
                 }
             }

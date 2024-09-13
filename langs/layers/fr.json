@@ -4425,66 +4425,59 @@
     },
     "note": {
         "filter": {
-            "10": {
-                "options": {
-                    "0": {
-                        "question": "Toutes les notes"
-                    }
-                }
-            },
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "Ouverte par {search}"
-                    }
-                }
-            },
-            "3": {
-                "options": {
-                    "0": {
-                        "question": "<b>Exclure</b>les notes ouvertes par {search}"
-                    }
-                }
-            },
-            "4": {
-                "options": {
-                    "0": {
-                        "question": "Dernière modification par {search}"
-                    }
-                }
-            },
-            "5": {
-                "options": {
-                    "0": {
-                        "question": "Ouverte après le {search}"
-                    }
-                }
-            },
-            "6": {
-                "options": {
-                    "0": {
-                        "question": "Créée avant le {search}"
-                    }
-                }
-            },
-            "7": {
-                "options": {
-                    "0": {
-                        "question": "Créée après le {search}"
-                    }
-                }
-            },
-            "8": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Montrer uniquement les notes ouvertes par un contributeur anonyme"
                     }
                 }
             },
-            "9": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Montrer uniquement les notes ouvertes"
+                    }
+                }
+            },
+            "11": {
+                "options": {
+                    "0": {
+                        "question": "Créée avant le {search}"
+                    }
+                }
+            },
+            "12": {
+                "options": {
+                    "0": {
+                        "question": "Créée après le {search}"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Toutes les notes"
+                    }
+                }
+            },
+            "6": {
+                "options": {
+                    "0": {
+                        "question": "Ouverte par {search}"
+                    }
+                }
+            },
+            "7": {
+                "options": {
+                    "0": {
+                        "question": "<b>Exclure</b>les notes ouvertes par {search}"
+                    }
+                }
+            },
+            "9": {
+                "options": {
+                    "0": {
+                        "question": "Dernière modification par {search}"
                     }
                 }
             }

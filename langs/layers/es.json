@@ -2731,7 +2731,7 @@
                         "then": "Hamburguesas"
                     },
                     "6": {
-                        "then": "Restaurante de sushi"
+                        "then": "Aquí se sirve sushi"
                     },
                     "7": {
                         "then": "Aquí se sirve café"
@@ -2740,7 +2740,7 @@
                         "then": "Este es un restaurante italiano (que sirve algo más que pasta y pizza)"
                     },
                     "9": {
-                        "then": "Restaurante francés"
+                        "then": "Aquí se sirven platos Franceses"
                     }
                 },
                 "question": "¿Qué tipo de comida sirven aquí?",
@@ -3135,18 +3135,32 @@
             "0": {
                 "options": {
                     "0": {
-                        "question": "Debe mencionar {search} en el primer comentario"
+                        "question": "Solo mostrar las notas abiertas por contributores anómimos"
                     }
                 }
             },
             "1": {
                 "options": {
                     "0": {
-                        "question": "<b>No</b> debe mencionar {search} en el primer comentario"
+                        "question": "Solo mostrar las notas abiertas"
                     }
                 }
             },
-            "10": {
+            "11": {
+                "options": {
+                    "0": {
+                        "question": "Creada antes de {search}"
+                    }
+                }
+            },
+            "12": {
+                "options": {
+                    "0": {
+                        "question": "Creada después de {search}"
+                    }
+                }
+            },
+            "2": {
                 "options": {
                     "0": {
                         "question": "Todas las notas"
@@ -3159,59 +3173,38 @@
                     }
                 }
             },
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "Abierto por el contributor {search}"
-                    }
-                }
-            },
             "3": {
                 "options": {
                     "0": {
-                        "question": "<b>No</b> abierto por el contributor {search}"
-                    }
-                }
-            },
-            "4": {
-                "options": {
-                    "0": {
-                        "question": "Editada por última vez por el contributor {search}"
+                        "question": "Debe mencionar {search} en el primer comentario"
                     }
                 }
             },
             "5": {
                 "options": {
                     "0": {
-                        "question": "Abierta después de {search}"
+                        "question": "<b>No</b> debe mencionar {search} en el primer comentario"
                     }
                 }
             },
             "6": {
                 "options": {
                     "0": {
-                        "question": "Creada antes de {search}"
+                        "question": "Abierto por el contributor {search}"
                     }
                 }
             },
             "7": {
                 "options": {
                     "0": {
-                        "question": "Creada después de {search}"
-                    }
-                }
-            },
-            "8": {
-                "options": {
-                    "0": {
-                        "question": "Solo mostrar las notas abiertas por contributores anómimos"
+                        "question": "<b>No</b> abierto por el contributor {search}"
                     }
                 }
             },
             "9": {
                 "options": {
                     "0": {
-                        "question": "Solo mostrar las notas abiertas"
+                        "question": "Editada por última vez por el contributor {search}"
                     }
                 }
             }
