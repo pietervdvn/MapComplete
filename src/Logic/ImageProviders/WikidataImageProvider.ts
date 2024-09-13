@@ -4,11 +4,14 @@ import { WikimediaImageProvider } from "./WikimediaImageProvider"
 import Wikidata from "../Web/Wikidata"
 import SvelteUIElement from "../../UI/Base/SvelteUIElement"
 import * as Wikidata_icon from "../../assets/svg/Wikidata.svelte"
+import { Utils } from "../../Utils"
 
 export class WikidataImageProvider extends ImageProvider {
     public static readonly singleton = new WikidataImageProvider()
     public readonly defaultKeyPrefixes = ["wikidata"]
     public readonly name = "Wikidata"
+    private static readonly keyBlacklist: ReadonlySet<string> = new Set(
+        ["mapillary", ...Utils.Times(i => "mapillary:" + i, 10)])
 
     private constructor() {
         super()
@@ -23,6 +26,9 @@ export class WikidataImageProvider extends ImageProvider {
     }
 
     public async ExtractUrls(key: string, value: string): Promise<Promise<ProvidedImage>[]> {
+        if (WikidataImageProvider.keyBlacklist.has(key)) {
+            return []
+        }
         const entity = await Wikidata.LoadWikidataEntryAsync(value)
         if (entity === undefined) {
             return []
