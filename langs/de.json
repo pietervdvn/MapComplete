@@ -194,7 +194,7 @@
             "josmNotOpened": "JOSM konnte nicht erreicht werden. Bitte sicherstellen, dass das Programm geöffnet und Remote Control aktiviert ist",
             "josmOpened": "JOSM ist geöffnet",
             "madeBy": "Erstellt von <b>{author}</b>",
-            "mapContributionsBy": "Die angezeigten Daten wurden bearbeitet durch {contributors}",
+            "mapContributionsBy": "Angezeigte Daten wurden bearbeitet durch {contributors}",
             "mapContributionsByAndHidden": "Die angezeigten Daten wurden bearbeitet von {contributors} und {hiddenCount} weiteren Beitragenden",
             "mapDataByOsm": "Kartendaten: OpenStreetMap",
             "mapillaryHelp": "<b>Mapillary</b> ist ein Online-Dienst, der Straßenbilder sammelt und sie unter einer freien Lizenz anbietet. Mitwirkende dürfen diese Bilder verwenden, um OpenStreetMap zu verbessern",
