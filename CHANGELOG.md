@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.46.8](https://github.com/USERNAME/REPOSITORY_NAME/compare/v0.46.7...v0.46.8) (2024-09-13)
+
+
+### Theme improvements
+
+* improve note theme, fix [#2088](https://github.com/pietervdvn/MapComplete/issues/2088) ([e8099b9](https://github.com/USERNAME/REPOSITORY_NAME/commitse8099b9081ae25ff37f2b7a491f9301a29772080))
+* update safe_loops svg ([70117ac](https://github.com/USERNAME/REPOSITORY_NAME/commits70117ac6874ec860a6f2497c2230d29248de71a7))
+
 ### 0.46.7 (2024-09-13)
 
 
