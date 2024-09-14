@@ -1177,7 +1177,6 @@
     "description"
   ],
   "filter": [
-    "open_now",
     {
       "id": "second_hand",
       "options": [
