@@ -420,7 +420,8 @@
     "index": {
         "#": "Estos textos son mostrados sobre los botones del tema cuando no hay un tema cargado",
         "featuredThemeTitle": "Esta semana destacamos",
-        "intro": "Mapas sobre diversos temas a los que contribuye",
+        "intro": "Mapas sobre diversos temas a los que puedes contribuir",
+        "learnMore": "Más información",
         "logIn": "Inicia sesión para ver otros temas que visitaste anteriormente",
         "pickTheme": "Elige un tema de abajo para empezar.",
         "title": "MapComplete"
