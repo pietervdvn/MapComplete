@@ -13,7 +13,6 @@
     "de": "Diese Karte zeigt alle mit MapComplete vorgenommenen Änderungen",
     "es": "Este mapa muestra todos los cambios realizados con MapComplete",
     "pl": "Ta mapa pokazuje wszystkie zmiany wprowadzone za pomocą MapComplete"
-
   },
   "icon": "./assets/svg/logo.svg",
   "hideFromOverview": true,
