@@ -3,6 +3,7 @@ import SearchUtils from "./SearchUtils"
 import ThemeSearch from "./ThemeSearch"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
+import { Utils } from "../../Utils"
 
 export default class LayerSearch {
 
@@ -15,12 +16,13 @@ export default class LayerSearch {
 
     static scoreLayers(query: string, layerWhitelist?: Set<string>): Record<string, number> {
         const result: Record<string, number> = {}
+        const queryParts = query.trim().split(" ").map(q => Utils.simplifyStringForSearch(q))
         for (const id in ThemeSearch.officialThemes.layers) {
             if(layerWhitelist !== undefined && !layerWhitelist.has(id)){
                 continue
             }
             const keywords = ThemeSearch.officialThemes.layers[id]
-            const distance = SearchUtils.scoreKeywords(query, keywords)
+            const distance = Math.min(... queryParts.map(q => SearchUtils.scoreKeywords(q, keywords)))
             result[id] = distance
         }
         return result
