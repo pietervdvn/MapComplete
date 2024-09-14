@@ -18,8 +18,15 @@
   "socialImage": "./assets/themes/disaster_response/social.svg",
   "layers": [
     "hospital",
+    "pharmacy",
+    "doctors",
     "assembly_point",
-    "disaster_response"
+    "disaster_response",
+    "police",
+    "fire_station",
+    "ambulancestation",
+    "extinguisher",
+    "hydrant"
   ],
   "docs": "https://wiki.openstreetmap.org/wiki/Emergency_facilities_and_amenities"
 }
