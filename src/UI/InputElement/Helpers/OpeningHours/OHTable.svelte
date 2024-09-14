@@ -220,8 +220,8 @@
         <td/>
         {/if}
       {#each range(7) as wd}
-        <OHCell type="half" {h} {wd} on:start={() => startSelection(wd, h)} on:end={() => endSelection(wd, h)}
-                on:move={() => moved(wd, h)} on:clear={() => clearSelection()} />
+        <OHCell type="half" {h} {wd} on:start={() => startSelection(wd, h + 0.5)} on:end={() => endSelection(wd, h + 0.5)}
+                on:move={() => moved(wd, h + 0.5)} on:clear={() => clearSelection()} />
       {/each}
     </tr>
 
