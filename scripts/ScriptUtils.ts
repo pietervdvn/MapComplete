@@ -95,9 +95,14 @@ export default class ScriptUtils {
     }
 
     public static getThemePaths(): string[] {
-        return ScriptUtils.readDirRecSync("./assets/themes")
+        const blacklist = ["assets/themes/mapcomplete-changes/mapcomplete-changes.json"]
+        const normalFiles = ScriptUtils.readDirRecSync("./assets/themes")
             .filter((path) => path.endsWith(".json") && !path.endsWith(".proto.json"))
             .filter((path) => path.indexOf("license_info.json") < 0)
+            .filter(path => !blacklist.some(black => path.endsWith(black)))
+        const specialfiles = ["./assets/themes/mapcomplete-changes/mapcomplete-changes.proto.json"]
+        return normalFiles.concat(specialfiles)
+
     }
 
     public static getThemeFiles(): { parsed: LayoutConfigJson; path: string; raw: string }[] {
