@@ -5176,6 +5176,9 @@
                     "4": {
                         "then": "Sandwichladen"
                     },
+                    "5": {
+                        "then": "Burgerrestaurant"
+                    },
                     "6": {
                         "then": "Hier wird Sushi serviert"
                     },
