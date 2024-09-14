@@ -34,9 +34,6 @@
       ]
     }
   },
-  "snapName": {
-    "en": "a wall, cliff or rock"
-  },
   "minzoom": 18,
   "title": {
     "render": {
@@ -152,5 +149,8 @@
     }
   ],
   "allowMove": false,
+  "snapName": {
+    "en": "a wall, cliff or rock"
+  },
   "doCount": false
 }

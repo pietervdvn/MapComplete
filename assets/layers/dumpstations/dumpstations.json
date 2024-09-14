@@ -18,7 +18,24 @@
     "pl": "Stacje zrzutów sanitarnych",
     "pt": "Estações de despejo sanitário"
   },
-  "minzoom": 7,
+  "description": {
+    "en": "Sanitary dump stations",
+    "ru": "Ассенизационные сливные станции",
+    "ja": "衛生ゴミ捨て場",
+    "it": "Luoghi di sversamento delle acque reflue",
+    "fr": "Site de vidange sanitaire",
+    "pt_BR": "Estações de despejo sanitário",
+    "de": "Sanitäre Entsorgungsstationen",
+    "zh_Hant": "垃圾處理站",
+    "id": "Tempat pembuangan sanitasi",
+    "nl": "Loosplaatsen",
+    "ca": "Estacions d'abocament sanitari",
+    "da": "Sanitære afleveringspladser",
+    "cs": "Sanitární skládky",
+    "es": "Vertederos Sanitarios",
+    "pl": "Stacje zrzutów sanitarnych",
+    "pt": "Estações de despejo sanitário"
+  },
   "source": {
     "osmTags": {
       "and": [
@@ -27,6 +44,7 @@
       ]
     }
   },
+  "minzoom": 7,
   "title": {
     "render": {
       "en": "Dump station {name}",
@@ -70,24 +88,66 @@
       }
     ]
   },
-  "description": {
-    "en": "Sanitary dump stations",
-    "ru": "Ассенизационные сливные станции",
-    "ja": "衛生ゴミ捨て場",
-    "it": "Luoghi di sversamento delle acque reflue",
-    "fr": "Site de vidange sanitaire",
-    "pt_BR": "Estações de despejo sanitário",
-    "de": "Sanitäre Entsorgungsstationen",
-    "zh_Hant": "垃圾處理站",
-    "id": "Tempat pembuangan sanitasi",
-    "nl": "Loosplaatsen",
-    "ca": "Estacions d'abocament sanitari",
-    "da": "Sanitære afleveringspladser",
-    "cs": "Sanitární skládky",
-    "es": "Vertederos Sanitarios",
-    "pl": "Stacje zrzutów sanitarnych",
-    "pt": "Estações de despejo sanitário"
-  },
+  "pointRendering": [
+    {
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/themes/campersite/sanitary_dump_station.svg"
+        }
+      ],
+      "iconSize": "32,32",
+      "location": [
+        "point"
+      ],
+      "anchor": "center"
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "#00f",
+      "width": "8"
+    }
+  ],
+  "presets": [
+    {
+      "tags": [
+        "amenity=sanitary_dump_station"
+      ],
+      "title": {
+        "en": "a sanitary dump station",
+        "ja": "衛生ゴミ捨て場",
+        "it": "una luogo di sversamento delle acque reflue",
+        "fr": "une site de vidange",
+        "de": "eine sanitäre Entsorgungsstation",
+        "zh_Hant": "垃圾丟棄站",
+        "nl": "een loosplaats",
+        "da": "en sanitær afleveringsplads",
+        "ca": "una estació d'abocament sanitari",
+        "cs": "sanitární skládka",
+        "es": "un vertedero sanitario",
+        "pl": "stacja zrzutu sanitarnego"
+      },
+      "description": {
+        "en": "Add a new sanitary dump station. This is a place where camper drivers can dump waste water or chemical toilet waste. Often there's also drinking water and electricity.",
+        "ja": "新しい衛生ゴミ捨て場を追加します。ここは、キャンピングカーの運転手が排水や携帯トイレの廃棄物を捨てることができる場所です。飲料水や電気もあることが多いです。",
+        "it": "Aggiungi un nuovo luogo di sversamento delle acque reflue. Si tratta di luoghi dove chi viaggia in camper può smaltire le acque grigie o le acque nere. Spesso forniscono anche acqua ed elettricità.",
+        "fr": "Ajouter un nouveau site de vidange. Un espace où évacuer ses eaux usées (grises et/ou noires). Généralement alimenté en eau potable et électricité.",
+        "de": "Fügen Sie eine neue sanitäre Entsorgungsstation hinzu. Hier können Camper Abwasser oder chemischen Toilettenabfälle entsorgen. Oft gibt es auch Trinkwasser und Strom.",
+        "zh_Hant": "新增垃圾站，這通常是提供露營駕駛丟棄廢水與化學性廁所廢水的地方，也會有飲用水與電力。",
+        "hu": "Új egészségügyihulldék-lerakó hozzáadása. Ez egy olyan hely, ahol a lakókocsisok a szennyvizet vagy a vegyi WC hulladékát kiüríthetik. Gyakran van ivóvíz és áram is.",
+        "nl": "Voeg een nieuwe loosplaats toe. Dat is een plaats waar campers hun grijs water en toiletten kunnen lozen. Vaak is er ook een kraan om water te tanken en een stopcontact.",
+        "da": "Tilføj en ny sanitær afleveringsplads. Dette er et sted, hvor autocamperchauffører kan dumpe spildevand eller kemisk toiletaffald. Ofte er der også drikkevand og el.",
+        "cs": "Přidejte novou sanitární skládku. Toto je místo, kam mohou řidiči obytných vozů vypouštět odpadní vodu nebo odpad z chemických toalet. Často je zde také dostupná pitná voda a elektřina.",
+        "es": "Añadir un nuevo vertedero sanitario. Se trata de un lugar donde los autocaravanistas pueden verter las aguas residuales o los residuos químicos de los aseos. A menudo también hay agua potable y electricidad.",
+        "ca": "Afegir una nova estació d'abocador sanitari. Aquest és un lloc on els conductors de campers poden abocar aigües residuals o residus de vàter químic. Sovint també hi ha aigua potable i electricitat.",
+        "pl": "Dodaj nową stację zrzutu sanitarnego. To miejsce, w którym kierowcy kamperów mogą wyrzucać ścieki lub odpady z toalet chemicznych. Często jest tam też woda pitna i prąd."
+      }
+    }
+  ],
   "tagRenderings": [
     "images",
     {
@@ -567,66 +627,6 @@
         "key": "network"
       },
       "id": "dumpstations-network"
-    }
-  ],
-  "presets": [
-    {
-      "tags": [
-        "amenity=sanitary_dump_station"
-      ],
-      "title": {
-        "en": "a sanitary dump station",
-        "ja": "衛生ゴミ捨て場",
-        "it": "una luogo di sversamento delle acque reflue",
-        "fr": "une site de vidange",
-        "de": "eine sanitäre Entsorgungsstation",
-        "zh_Hant": "垃圾丟棄站",
-        "nl": "een loosplaats",
-        "da": "en sanitær afleveringsplads",
-        "ca": "una estació d'abocament sanitari",
-        "cs": "sanitární skládka",
-        "es": "un vertedero sanitario",
-        "pl": "stacja zrzutu sanitarnego"
-      },
-      "description": {
-        "en": "Add a new sanitary dump station. This is a place where camper drivers can dump waste water or chemical toilet waste. Often there's also drinking water and electricity.",
-        "ja": "新しい衛生ゴミ捨て場を追加します。ここは、キャンピングカーの運転手が排水や携帯トイレの廃棄物を捨てることができる場所です。飲料水や電気もあることが多いです。",
-        "it": "Aggiungi un nuovo luogo di sversamento delle acque reflue. Si tratta di luoghi dove chi viaggia in camper può smaltire le acque grigie o le acque nere. Spesso forniscono anche acqua ed elettricità.",
-        "fr": "Ajouter un nouveau site de vidange. Un espace où évacuer ses eaux usées (grises et/ou noires). Généralement alimenté en eau potable et électricité.",
-        "de": "Fügen Sie eine neue sanitäre Entsorgungsstation hinzu. Hier können Camper Abwasser oder chemischen Toilettenabfälle entsorgen. Oft gibt es auch Trinkwasser und Strom.",
-        "zh_Hant": "新增垃圾站，這通常是提供露營駕駛丟棄廢水與化學性廁所廢水的地方，也會有飲用水與電力。",
-        "hu": "Új egészségügyihulldék-lerakó hozzáadása. Ez egy olyan hely, ahol a lakókocsisok a szennyvizet vagy a vegyi WC hulladékát kiüríthetik. Gyakran van ivóvíz és áram is.",
-        "nl": "Voeg een nieuwe loosplaats toe. Dat is een plaats waar campers hun grijs water en toiletten kunnen lozen. Vaak is er ook een kraan om water te tanken en een stopcontact.",
-        "da": "Tilføj en ny sanitær afleveringsplads. Dette er et sted, hvor autocamperchauffører kan dumpe spildevand eller kemisk toiletaffald. Ofte er der også drikkevand og el.",
-        "cs": "Přidejte novou sanitární skládku. Toto je místo, kam mohou řidiči obytných vozů vypouštět odpadní vodu nebo odpad z chemických toalet. Často je zde také dostupná pitná voda a elektřina.",
-        "es": "Añadir un nuevo vertedero sanitario. Se trata de un lugar donde los autocaravanistas pueden verter las aguas residuales o los residuos químicos de los aseos. A menudo también hay agua potable y electricidad.",
-        "ca": "Afegir una nova estació d'abocador sanitari. Aquest és un lloc on els conductors de campers poden abocar aigües residuals o residus de vàter químic. Sovint també hi ha aigua potable i electricitat.",
-        "pl": "Dodaj nową stację zrzutu sanitarnego. To miejsce, w którym kierowcy kamperów mogą wyrzucać ścieki lub odpady z toalet chemicznych. Często jest tam też woda pitna i prąd."
-      }
-    }
-  ],
-  "pointRendering": [
-    {
-      "marker": [
-        {
-          "icon": "circle",
-          "color": "white"
-        },
-        {
-          "icon": "./assets/themes/campersite/sanitary_dump_station.svg"
-        }
-      ],
-      "iconSize": "32,32",
-      "location": [
-        "point"
-      ],
-      "anchor": "center"
-    }
-  ],
-  "lineRendering": [
-    {
-      "color": "#00f",
-      "width": "8"
     }
   ],
   "allowMove": {
