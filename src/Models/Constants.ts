@@ -84,17 +84,29 @@ export default class Constants {
     static distanceToChangeObjectBins = [25, 50, 100, 500, 1000, 5000, Number.MAX_VALUE]
     static themeOrder = [
         "personal",
+
         "cyclofix",
-        "waste",
         "etymology",
+        "waste",
+
         "food",
         "cafes_and_pubs",
         "shops",
-        "playgrounds",
-        "hailhydrant",
-        "toilets",
-        "aed",
+        "healthcare",
+        "sports",
+
+        "artwork",
         "bookcases",
+        "playgrounds",
+        "drinking_water",
+        "toilets",
+        "vending_machine",
+        "aed",
+        "clock",
+
+        "surveillance",
+        "advertising",
+        "circular_economy",
     ]
     /**
      * Upon initialization, the GPS will search the location.

@@ -3,6 +3,13 @@
       {"type": "feat", "section": "Features"},
       {"type": "fix", "section": "Bug Fixes"},
       {"type": "themes", "section": "Theme improvements"},
+      {"type": "UX",
+        "section": "User experience improvements"
+      },
+      {
+        "type": "UI",
+        "section": "User interface improvements"
+      },
       {"type": "chore", "hidden": true},
       {"type": "docs", "hidden": true},
       {"type": "style", "hidden": true},

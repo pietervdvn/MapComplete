@@ -1465,6 +1465,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         if (!element) {
             return
         }
+        console.log("Scrolling into view:", element)
         // Is the element completely in the view?
         const parentRect = Utils.findParentWithScrolling(element)?.getBoundingClientRect()
         if (!parentRect) {
@@ -1475,7 +1476,9 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         // Check if the element is within the vertical bounds of the parent element
         const topIsVisible = elementRect.top >= parentRect.top
         const bottomIsVisible = elementRect.bottom <= parentRect.bottom
-        const inView = topIsVisible && bottomIsVisible
+        const leftIsVisible = elementRect.left >= parentRect.left
+        const rightIsVisible = elementRect.right <= parentRect.right
+        const inView = topIsVisible && bottomIsVisible && leftIsVisible && rightIsVisible
         if (inView) {
             return
         }

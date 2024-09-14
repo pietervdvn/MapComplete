@@ -487,7 +487,6 @@
         {
           "if": "mapcomplete-preference-show-scale=false",
           "alsoShowIf": "mapcomplete-preference-show-scale=",
-
           "then": {
             "en": "Hide the scalebar",
             "nl": "Verberg de schaalbalk"

@@ -17,9 +17,38 @@
   "icon": "./assets/themes/disaster_response/CivilDefence.svg",
   "socialImage": "./assets/themes/disaster_response/social.svg",
   "layers": [
-    "hospital",
-    "assembly_point",
-    "disaster_response"
+    {
+      "builtin": [
+        "hospital",
+        "fire_station",
+        "disaster_response",
+        "police"
+      ],
+      "override": {
+        "minzoom": 6
+      }
+    },
+    {
+      "builtin": [
+        "extinguisher",
+        "assembly_point",
+        "defibrillator",
+        "hydrant"
+      ],
+      "override": {
+        "minzoom": 15
+      }
+    },
+    {
+      "builtin": [
+        "doctors",
+        "ambulancestation",
+        "pharmacy"
+      ],
+      "override": {
+        "minzoom": 14
+      }
+    }
   ],
   "docs": "https://wiki.openstreetmap.org/wiki/Emergency_facilities_and_amenities"
 }

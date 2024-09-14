@@ -1,8 +1,7 @@
 {
   "id": "geocoded_image",
-  "source": "special",
   "name": null,
-  "tagRenderings": [],
+  "source": "special",
   "pointRendering": [
     {
       "location": [
@@ -66,5 +65,6 @@
       ],
       "iconSize": "14,14"
     }
-  ]
+  ],
+  "tagRenderings": []
 }
