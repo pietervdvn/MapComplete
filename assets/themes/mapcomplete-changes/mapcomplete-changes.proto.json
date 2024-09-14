@@ -11,7 +11,9 @@
   "description": {
     "en": "This maps shows all the changes made with MapComplete",
     "de": "Diese Karte zeigt alle mit MapComplete vorgenommenen Änderungen",
-    "es": "Este mapa muestra todos los cambios realizados con MapComplete"
+    "es": "Este mapa muestra todos los cambios realizados con MapComplete",
+    "pl": "Ta mapa pokazuje wszystkie zmiany wprowadzone za pomocą MapComplete"
+
   },
   "icon": "./assets/svg/logo.svg",
   "hideFromOverview": true,
@@ -164,7 +166,8 @@
               "question": {
                 "en": "Themename contains {search}",
                 "de": "Themenname enthält {search}",
-                "es": "El nombre contiene {search}"
+                "es": "El nombre contiene {search}",
+                "pl": "Nazwa tematu zawiera {search}"
               }
             }
           ]
