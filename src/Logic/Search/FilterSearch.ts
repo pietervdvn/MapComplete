@@ -47,6 +47,10 @@ export default class FilterSearch {
                     if (!option.osmTags) {
                         continue
                     }
+                    if(option.fields.length > 0){
+                        // Filters with a search field are not supported as of now, see #2141
+                        continue
+                    }
                     let terms = ([option.question.txt,
                         ...(option.searchTerms?.[Locale.language.data] ?? option.searchTerms?.["en"] ?? [])]
                         .flatMap(term => [term, ...(term?.split(" ") ?? [])]))
