@@ -25,7 +25,6 @@
     descriptionTr = layer?.tagRenderings?.find(tr => tr.labels.indexOf("description") >= 0)
   }
 
-  let dispatch = createEventDispatcher<{ select }>()
   let distance = state.mapProperties.location.mapD(l => GeoOperations.distanceBetween([l.lon, l.lat], [entry.lon, entry.lat]))
   let bearing = state.mapProperties.location.mapD(l => GeoOperations.bearing([l.lon, l.lat], [entry.lon, entry.lat]))
   let mapRotation = state.mapProperties.rotation
@@ -55,7 +54,7 @@
 <button class="unstyled w-full link-no-underline searchresult" on:click={() => select() }>
   <div class="p-2 flex items-center w-full gap-y-2">
     {#if layer}
-      <ToSvelte construct={() => layer.defaultIcon(entry.feature.properties).SetClass("w-6 h-6")} />
+      <ToSvelte construct={() => layer.defaultIcon(entry.feature.properties)?.SetClass("w-6 h-6")} />
     {:else if entry.category}
       <Icon icon={GeocodingUtils.categoryToIcon[entry.category]} clss="w-6 h-6 shrink-0" color="#aaa" />
     {/if}

@@ -1123,7 +1123,6 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
     ): Promise<{ content: T } | { error: string; url: string; statuscode?: number }> {
         const injected = Utils.injectedDownloads[url]
         if (injected !== undefined) {
-            console.debug("Using injected resource for test for URL", url)
             return { content: injected }
         }
         const result = await Utils.downloadAdvanced(

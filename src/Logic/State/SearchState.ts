@@ -110,12 +110,15 @@ export default class SearchState {
 
         const { layer, filter, index } = payload
         for (const [name, otherLayer] of state.layerState.filteredLayers) {
-            otherLayer.isDisplayed.setData(name === layer.id)
+            const layer = otherLayer.layerDef
+            if(!layer.isNormal()){
+                continue
+            }
+            otherLayer.isDisplayed.setData(payload.layer.id === layer.id)
         }
         const flayer = state.layerState.filteredLayers.get(layer.id)
         flayer.isDisplayed.set(true)
         const filtercontrol = flayer.appliedFilters.get(filter.id)
-        console.log("Could not apply", layer.id, ".", filter.id, index)
         if (filtercontrol.data === index) {
             filtercontrol.setData(undefined)
         } else {
@@ -136,6 +139,5 @@ export default class SearchState {
             this.state.selectedElement.set(localElement)
             return
         }
-        console.log(">>>",feature)
     }
 }

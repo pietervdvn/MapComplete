@@ -11,7 +11,9 @@
   import Translations from "../i18n/Translations"
 
   export let state: ThemeViewState
-  let activeFilters: Store<ActiveFilter[]> = state.layerState.activeFilters.map(fs => fs.filter(f => Constants.priviliged_layers.indexOf(<any>f.layer.id) < 0))
+  let activeFilters: Store<ActiveFilter[]> = state.layerState.activeFilters.map(fs => fs.filter(f =>
+    (f.filter.options[0].fields.length === 0) &&
+    Constants.priviliged_layers.indexOf(<any>f.layer.id) < 0))
   let allowOtherThemes = state.featureSwitches.featureSwitchBackToThemeOverview
   let searchTerm = state.searchState.searchTerm
 </script>

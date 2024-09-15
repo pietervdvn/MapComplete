@@ -22,6 +22,9 @@
 
   function enableAllLayers() {
     for (const flayer of $nonactiveLayers) {
+      if (!flayer.layerDef.isNormal()) {
+        continue
+      }
       flayer.isDisplayed.set(true)
     }
   }
@@ -41,7 +44,7 @@
   }
 </script>
 
-{#if activeFilters.length > 0 || $activeLayers.length === 1 || $nonactiveLayers.length > 0}
+{#if activeFilters.length > 0 || $nonactiveLayers.length > 0}
   <SidebarUnit>
     <div class="flex justify-between">
       <h3><Tr t={t.activeFilters}/></h3>

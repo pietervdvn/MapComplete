@@ -19,11 +19,13 @@
   function apply() {
     loading = true
     console.log("Loading is now ", loading)
-    window.requestAnimationFrame(() => {
-      state.searchState.apply(entry)
-      loading = false
-      state.searchState.closeIfFullscreen()
-    })
+    setTimeout(() => {
+      window.requestAnimationFrame(() => {
+        state.searchState.apply(entry)
+        loading = false
+        state.searchState.closeIfFullscreen()
+      })
+    }, 25)
   }
 </script>
 <button on:click={() => apply()} class:disabled={loading}>

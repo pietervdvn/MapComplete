@@ -24,7 +24,7 @@
         {theme}
         {state}
       >
-        {#if $search && hasSelection && themes[0] === theme}
+        {#if $search && hasSelection && themes?.[0] === theme}
         <span class="thanks hidden-on-mobile" aria-hidden="true">
           <Tr t={Translations.t.general.morescreen.enterToOpen} />
         </span>
@@ -33,7 +33,7 @@
     {/each}
   </div>
 
-  {#if themes.length === 0}
+  {#if themes?.length === 0}
     <NoThemeResultButton {search} />
   {/if}
 </section>
