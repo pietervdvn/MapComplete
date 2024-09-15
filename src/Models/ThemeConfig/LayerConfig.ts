@@ -642,6 +642,10 @@ export default class LayerConfig extends WithContextLoader {
         return mostShadowed ?? matchingPresets[0]
     }
 
+    /**
+     * Indicates if this is a normal layer, meaning that it can be toggled by the user in normal circumstances
+     * Thus: name is set, not a note import layer, not synced with another filter, ...
+     */
     public isNormal(){
         if(this.id.startsWith("note_import")){
             return false
@@ -651,6 +655,9 @@ export default class LayerConfig extends WithContextLoader {
             return false
         }
         if(this.filterIsSameAs !== undefined){
+            return false
+        }
+        if(!this.name ){
             return false
         }
         return true

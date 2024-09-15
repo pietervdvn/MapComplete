@@ -30,8 +30,72 @@ import LineRenderingConfigJson from "../Json/LineRenderingConfigJson"
 import { ConversionContext } from "./ConversionContext"
 import { ExpandRewrite } from "./ExpandRewrite"
 import { TagUtils } from "../../../Logic/Tags/TagUtils"
-import FilterConfig, { FilterConfigOption } from "../FilterConfig"
 
+
+class AddFiltersFromTagRenderings extends DesugaringStep<LayerConfigJson> {
+    constructor() {
+        super("Inspects all the tagRenderings. If some tagRenderings have the `filter` attribute set, introduce those filters. This step might introduce shorthand filter names, thus 'ExpandFilter' should be run afterwards. Can be disabled with \"#filter\":\"no-auto\"", ["filter"], "AddFiltersFromTagRenderings")
+    }
+
+    convert(json: LayerConfigJson, context: ConversionContext): LayerConfigJson {
+        const noAutoFilters = json["#filter"] === "no-auto"
+        if(noAutoFilters){
+            return json
+        }
+
+        if(json.filter?.["sameAs"]){
+            return json
+        }
+
+        const filters: (FilterConfigJson | string)[] = [...<any>json.filter ?? []]
+
+        function filterExists(filterName: string): boolean {
+            return filters.some((existing) => {
+                const id: string = existing["id"] ?? existing
+                return (
+                    filterName === id ||
+                    (filterName.startsWith("filters.") && filterName.endsWith("." + id))
+                )
+            })
+        }
+
+
+
+        for (let i = 0; i < json.tagRenderings?.length; i++) {
+            const tagRendering = <TagRenderingConfigJson>json.tagRenderings[i]
+            if (!tagRendering?.filter) {
+                continue
+            }
+            if (tagRendering.filter === true) {
+                if (filterExists(tagRendering["id"])) {
+                    continue
+                }
+                filters.push(ExpandFilter.buildFilterFromTagRendering(tagRendering, context.enters("tagRenderings", i, "filter")))
+                continue
+            }
+            for (const filterName of tagRendering.filter ?? []) {
+                if (typeof filterName !== "string") {
+                    context.enters("tagRenderings", i, "filter").err("Not a string: " + filterName)
+                }
+                if (filterExists(filterName)) {
+                    // This filter has already been added
+                    continue
+                }
+                if (!filterName) {
+                    context.err("Got undefined as filter expansion in " + tagRendering["id"])
+                    continue
+                }
+                filters.push(filterName)
+            }
+        }
+
+        if(filters.length === 0){
+            return json
+        }
+
+        return { ...json, filter: filters }
+    }
+}
 class ExpandFilter extends DesugaringStep<LayerConfigJson> {
     private static readonly predefinedFilters = ExpandFilter.load_filters()
     private _state: DesugaringContext
@@ -39,9 +103,7 @@ class ExpandFilter extends DesugaringStep<LayerConfigJson> {
     constructor(state: DesugaringContext) {
         super(
             ["Expands filters: replaces a shorthand by the value found in 'filters.json'.",
-                "If the string is formatted 'layername.filtername, it will be looked up into that layer instead.",
-                "If a tagRendering sets 'filter', this filter will also be included - unless \"#filter\":\"no-auto\" is set",
-                ""].join(" "),
+                "If the string is formatted 'layername.filtername, it will be looked up into that layer instead."].join(" "),
             ["filter"],
             "ExpandFilter",
         )
@@ -56,7 +118,7 @@ class ExpandFilter extends DesugaringStep<LayerConfigJson> {
         return filters
     }
 
-    private static buildFilterFromTagRendering(tr: TagRenderingConfigJson, context: ConversionContext): FilterConfigJson {
+    public static buildFilterFromTagRendering(tr: TagRenderingConfigJson, context: ConversionContext): FilterConfigJson {
         if (!(tr.mappings?.length >= 1)) {
             context.err(
                 "Found a matching tagRendering to base a filter on, but this tagRendering does not contain any mappings",
@@ -97,53 +159,10 @@ class ExpandFilter extends DesugaringStep<LayerConfigJson> {
             return json // Nothing to change here
         }
 
-        const noAutoFilters = json["#filter"] === "no-auto"
 
         const newFilters: FilterConfigJson[] = []
         const filters = <(FilterConfigJson | string)[]>json.filter
 
-        function filterExists(filterName: string): boolean {
-            return filters.some((existing) => {
-                const id: string = existing["id"] ?? existing
-                return (
-                    filterName === id ||
-                    (filterName.startsWith("filters.") && filterName.endsWith("." + id))
-                )
-            })
-        }
-
-        if (!noAutoFilters){
-            /**
-             * Checks all tagRendering. If a tagrendering has 'filter' set, add this filter to the layer config
-             */
-            for (let i = 0; i < json.tagRenderings?.length; i++) {
-                const tagRendering = <TagRenderingConfigJson>json.tagRenderings[i]
-                if (!tagRendering?.filter) {
-                    continue
-                }
-                if (tagRendering.filter === true) {
-                    if (filterExists(tagRendering["id"])) {
-                        continue
-                    }
-                    filters.push(ExpandFilter.buildFilterFromTagRendering(tagRendering, context.enters("tagRenderings", i, "filter")))
-                    continue
-                }
-                for (const filterName of tagRendering.filter ?? []) {
-                    if (typeof filterName !== "string") {
-                        context.enters("tagRenderings", i, "filter").err("Not a string: " + filterName)
-                    }
-                    if (filterExists(filterName)) {
-                        // This filter has already been added
-                        continue
-                    }
-                    if (!filterName) {
-                        context.err("Got undefined as filter expansion in " + tagRendering["id"])
-                        continue
-                    }
-                    filters.push(filterName)
-                }
-            }
-        }
 
         /**
          * Create filters based on builtin filters or create them based on the tagRendering
@@ -168,28 +187,28 @@ class ExpandFilter extends DesugaringStep<LayerConfigJson> {
             }
 
             if (filter.indexOf(".") > 0) {
-                if (this._state.sharedLayers.size > 0) {
-                    const split = filter.split(".")
-                    if (split.length > 2) {
-                        context.err(
-                            "invalid filter name: " + filter + ", expected `layername.filterid`",
-                        )
-                    }
-                    const layer = this._state.sharedLayers.get(split[0])
-                    if (layer === undefined) {
-                        context.err("Layer '" + split[0] + "' not found")
-                    }
-                    const expectedId = split[1]
-                    const expandedFilter = (<(FilterConfigJson | string)[]>layer.filter).find(
-                        (f) => typeof f !== "string" && f.id === expectedId,
-                    )
-                    if (expandedFilter === undefined) {
-                        context.err("Did not find filter with name " + filter)
-                    } else {
-                        newFilters.push(<FilterConfigJson>expandedFilter)
-                    }
-                } else {
+                if (!(this._state.sharedLayers?.size > 0)) {
                     // This is a bootstrapping-run, we can safely ignore this
+                    continue
+                }
+                const split = filter.split(".")
+                if (split.length > 2) {
+                    context.err(
+                        "invalid filter name: " + filter + ", expected `layername.filterid`",
+                    )
+                }
+                const layer = this._state.sharedLayers.get(split[0])
+                if (layer === undefined) {
+                    context.err("Layer '" + split[0] + "' not found")
+                }
+                const expectedId = split[1]
+                const expandedFilter = (<(FilterConfigJson | string)[]>layer.filter).find(
+                    (f) => typeof f !== "string" && f.id === expectedId,
+                )
+                if (expandedFilter === undefined) {
+                    context.err("Did not find filter with name " + filter)
+                } else {
+                    newFilters.push(<FilterConfigJson>expandedFilter)
                 }
                 continue
             }
@@ -1424,6 +1443,7 @@ export class PrepareLayer extends Fuse<LayerConfigJson> {
                 (layer) =>
                     new Concat(new ExpandTagRendering(state, layer, { noHardcodedStrings: true })),
             ),
+            new AddFiltersFromTagRenderings(),
             new ExpandFilter(state),
         )
     }

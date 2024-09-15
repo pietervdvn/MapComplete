@@ -447,6 +447,10 @@ export interface LayerConfigJson {
      * group: filters
      */
     filter?: (FilterConfigJson | string)[] | { sameAs: string }
+    /**
+     * Set this to disable the feature that tagRenderings can introduce filters
+     */
+    "#filter"?: "no-auto"
 
     /**
      * This block defines under what circumstances the delete dialog is shown for objects of this layer.
