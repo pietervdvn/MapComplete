@@ -6,5 +6,56 @@
     "artwork": {
         "description": "Malugod na pag-dating sa Open Artwork Map, ang mapa ng mga bantayog, graffiti, at iba pang likhang sining sa buong mundo",
         "title": "Open Artwork Map"
+    },
+    "bag": {
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "Reference": {
+                        "mappings": {
+                            "0": {
+                                "then": "Walang sanggunian ang gusaling ito sa BAG"
+                            }
+                        },
+                        "render": "Ang sanggunian sa BAG ay <b>{ref:bag}</b>"
+                    }
+                }
+            },
+            "2": {
+                "description": "Mga gusali mula sa rehistro ng BAG",
+                "tagRenderings": {
+                    "Build year": {
+                        "mappings": {
+                            "0": {
+                                "then": "Sinimulan ang gusali noong <b>{_bag_obj:start_date}</b>"
+                            }
+                        },
+                        "render": "Ang gusaling ito ay itinayo noong <b>{_bag_obj:start_date}</b>"
+                    },
+                    "Building type": {
+                        "mappings": {
+                            "0": {
+                                "then": "Ang uri ng gusali ay magiging <b>{_bag_obj:construction}</b>"
+                            }
+                        },
+                        "render": "Ang uri ng gusali ay <b>{_bag_obj:building}</b>"
+                    },
+                    "Reference": {
+                        "render": "Ang sanggunian sa BAG ay <b>{_bag_obj:ref:bag}</b>"
+                    }
+                }
+            }
+        }
+    },
+    "benches": {
+        "shortDescription": "Mapa ng upuan",
+        "title": "Mga upuan"
+    },
+    "bicycle_parkings": {
+        "description": "Mapa na nagpapakita ng lahat ng uri ng paradahan ng bisikleta",
+        "title": "Mga paradahan ng bisikleta"
+    },
+    "blind_osm": {
+        "title": "OSM para sa mga bulag"
     }
 }
