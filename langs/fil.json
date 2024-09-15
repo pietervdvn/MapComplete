@@ -6,7 +6,7 @@
         "zoomIn": "Mag-zoom in pa, ng makita or ma-edit ang datos."
     },
     "delete": {
-        "cancel": "Kanselá",
+        "cancel": "Kanselahin",
         "cannotBeDeleted": "Ang tampok na ito ay hindi matatanggal",
         "delete": "Tanggalin",
         "explanations": {
@@ -37,6 +37,12 @@
         "panelIntro": "<h3>Pangsariling tikha</h3>Gawing aktibo ang mga paborito galing sa mga tikhang opisyal",
         "reload": "Muling pasanin ang datos"
     },
+    "flyer": {
+        "mapcomplete": {
+            "title": "Ano ang MapComplete?"
+        },
+        "whatIsOsm": "Ano ang OpenStreetMap?"
+    },
     "general": {
         "about": "Madaling i-edit at mag-dagdag sa OpenStreetMap gamit ang mga partikular na tikha",
         "add": {
@@ -57,101 +63,80 @@
             "intro": "Nag-klik ka kung saan wala pang nababatid na datos.<br>",
             "layerNotEnabled": "Ang layer {layer} ay hindi gumagana. Paganahin ang layer na ito upang makapag-dagdag ng tampók"
         },
-        "apply_button": {
-        },
         "attribution": {
-            "iconAttribution": {
-            }
+            "followOnMastodon": "Subaybayan ang MapComplete sa Mastodon",
+            "gotoSourceCode": "Tingnan ang source code",
+            "mapDataByOsm": "Datos ng mapa: OpenStreetMap",
+            "openMapillary": "Buksan ang Mapillary dito",
+            "seeOnMapillary": "Tingnan ang larawang ito sa Mapillary"
         },
-        "download": {
-        },
-        "histogram": {
-        },
-        "layerSelection": {
-        },
-        "levelSelection": {
-        },
-        "morescreen": {
-        },
+        "back": "Bumalik",
+        "backToMap": "Bumalik sa mapa",
+        "cancel": "Kanselahin",
+        "confirm": "Kumpirmahin",
+        "openTheMap": "Buksan ang mapa",
         "opening_hours": {
+            "friday": "Sa Biyernes {ranges}",
+            "loadingCountry": "Tinutukoy ang bansa…",
+            "monday": "Sa Lunes {ranges}",
+            "openTill": "hanggang",
+            "opensAt": "mula",
+            "ph_closed": "sarado",
+            "ph_open": "bukas",
+            "ranges": "mula {starttime} hanggang {endtime}",
+            "rangescombined": "{range0} at {range1}",
+            "saturday": "Sa Sabado {ranges}",
+            "sunday": "Sa Linggo {ranges}"
         },
-        "pdf": {
+        "pickLanguage": "Pumili ng wika",
+        "questionBox": {
+            "answeredMultiple": "Sinagutan mo ang {answered} na tanong"
         },
         "questions": {
+            "emailOf": "Ano ba ang email address ng {category}?"
         },
+        "returnToTheMap": "Bumalik sa mapa",
         "search": {
-        },
-        "sharescreen": {
-        },
-        "weekdays": {
-            "abbreviations": {
-            }
-        },
-        "welcomeExplanation": {
-        },
-        "wikipedia": {
-            "previewbox": {
-            }
+            "nothing": "Walang nahanap…"
         }
-    },
-    "image": {
-    },
-    "importInspector": {
-    },
-    "importLayer": {
-    },
-    "index": {
-    },
-    "move": {
-        "inviteToMove": {
-        },
-        "reasons": {
-        }
-    },
-    "multi_apply": {
-    },
-    "notes": {
-    },
-    "privacy": {
     },
     "reviews": {
-    },
-    "split": {
+        "question_opinion": "Kamusta ang iyong karanasan?",
+        "reviewPlaceholder": "Ilarawan ang iyong karanasan…"
     },
     "translations": {
+        "allMissing": "Wala pang pagsasalin"
+    },
+    "unknown": {
+        "clear": "Tanggalin ang sagot"
     },
     "validation": {
         "color": {
+            "description": "Kulay o hexcode"
         },
         "date": {
-        },
-        "direction": {
-        },
-        "distance": {
+            "description": "Petsa na nagsisimula sa taon"
         },
         "email": {
+            "noAt": "Ang e-mail address ay dapat naglalaman ng @"
         },
-        "float": {
-        },
-        "int": {
+        "fediverse": {
+            "onYourServer": "Tingnan at subaybayan sa iyong server"
         },
         "nat": {
-        },
-        "opening_hours": {
+            "mustBePositive": "Dapat positibo ang numerong ito"
         },
         "pfloat": {
+            "description": "positibong numero"
         },
         "phone": {
-        },
-        "pnat": {
-        },
-        "string": {
-        },
-        "text": {
+            "description": "numero ng telepono",
+            "feedback": "Ito ay hindi tamang numero ng telepono",
+            "feedbackCountry": "Ito ay hindi tamang numero ng telepono (sa bansang {country})"
         },
         "url": {
-        },
-        "wikidata": {
+            "aggregator": "Ang {host} ay isang third-party na website. Kung maaari, hanapin ang opisyal na website.",
+            "feedback": "Ito ay hindi tamang web address"
         }
     }
 }
