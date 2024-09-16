@@ -51,17 +51,17 @@
       knownIds.indexOf(theme.id) >= 0 || state.osmConnection.userDetails.data.name === "Pieter Vander Vennet"
     ))
 
-
   const customThemes: Store<MinimalLayoutInformation[]> = Stores.ListStabilized<string>(state.installedUserThemes)
-    .mapD(stableIds => stableIds.map(id => state.getUnofficialTheme(id)))
-
+    .mapD(stableIds => Utils.NoNullInplace(stableIds.map(id => state.getUnofficialTheme(id))))
 
   function filtered(themes: MinimalLayoutInformation[]): Store<MinimalLayoutInformation[]> {
+    const prefiltered = themes.filter(th => th.id !== "personal")
     return searchStable.map(search => {
       if (!search) {
         return themes
       }
-      const scores = ThemeSearch.sortedByLowestScores(search, themes)
+
+      const scores = ThemeSearch.sortedByLowestScores(search, prefiltered)
       const strict = scores.filter(sc => sc.lowest < 2)
       if (strict.length > 0) {
         return strict.map(sc => sc.theme)

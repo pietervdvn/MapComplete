@@ -1,4 +1,3 @@
-import { OsmObject } from "../../../src/Logic/Osm/OsmObject"
 import { Utils } from "../../../src/Utils"
 import ScriptUtils from "../../../scripts/ScriptUtils"
 import { readFileSync } from "fs"

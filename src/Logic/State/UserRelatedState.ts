@@ -38,7 +38,7 @@ export class OptionallySyncedHistory<T> {
         this.osmconnection = osmconnection
         this._maxHistory = maxHistory
         this._isSame = isSame
-        this.syncPreference = osmconnection.GetPreference(
+        this.syncPreference = osmconnection.getPreference(
             "preference-" + key + "-history",
             "sync",
         )
@@ -189,28 +189,28 @@ export default class UserRelatedState {
         this._mapProperties = mapProperties
 
         this.showAllQuestionsAtOnce = UIEventSource.asBoolean(
-            this.osmConnection.GetPreference("show-all-questions", "false"),
+            this.osmConnection.getPreference("show-all-questions", "false"),
         )
-        this.language = this.osmConnection.GetPreference("language")
-        this.showTags = this.osmConnection.GetPreference("show_tags")
-        this.showCrosshair = this.osmConnection.GetPreference("show_crosshair")
-        this.fixateNorth = this.osmConnection.GetPreference("fixate-north")
-        this.morePrivacy = this.osmConnection.GetPreference("more_privacy", "no")
+        this.language = this.osmConnection.getPreference("language")
+        this.showTags = this.osmConnection.getPreference("show_tags")
+        this.showCrosshair = this.osmConnection.getPreference("show_crosshair")
+        this.fixateNorth = this.osmConnection.getPreference("fixate-north")
+        this.morePrivacy = this.osmConnection.getPreference("more_privacy", "no")
 
-        this.a11y = this.osmConnection.GetPreference("a11y")
+        this.a11y = this.osmConnection.getPreference("a11y")
 
         this.mangroveIdentity = new MangroveIdentity(
-            this.osmConnection.GetLongPreference("identity", "mangrove"),
-            this.osmConnection.GetPreference("identity-creation-date", "mangrove"),
+            this.osmConnection.getPreference("identity", undefined,"mangrove"),
+            this.osmConnection.getPreference("identity-creation-date", undefined,"mangrove"),
         )
-        this.preferredBackgroundLayer = this.osmConnection.GetPreference("preferred-background-layer")
+        this.preferredBackgroundLayer = this.osmConnection.getPreference("preferred-background-layer")
 
-        this.addNewFeatureMode = this.osmConnection.GetPreference(
+        this.addNewFeatureMode = this.osmConnection.getPreference(
             "preferences-add-new-mode",
             "button_click_right",
         )
 
-        this.imageLicense = this.osmConnection.GetPreference("pictures-license", "CC0")
+        this.imageLicense = this.osmConnection.getPreference("pictures-license", "CC0")
         this.installedUserThemes = UserRelatedState.initInstalledUserThemes(osmConnection)
         this.translationMode = this.initTranslationMode()
         this.homeLocation = this.initHomeLocation()
@@ -242,7 +242,7 @@ export default class UserRelatedState {
 
     private initTranslationMode(): UIEventSource<"false" | "true" | "mobile" | undefined | string> {
         const translationMode: UIEventSource<undefined | "true" | "false" | "mobile" | string> =
-            this.osmConnection.GetPreference("translation-mode", "false")
+            this.osmConnection.getPreference("translation-mode", "false")
         translationMode.addCallbackAndRunD((mode) => {
             mode = mode.toLowerCase()
             if (mode === "true" || mode === "yes") {
@@ -301,7 +301,7 @@ export default class UserRelatedState {
             this.osmConnection.isLoggedIn.addCallbackAndRunD((loggedIn) => {
                 if (loggedIn) {
                     this.osmConnection
-                        .GetPreference("hidden-theme-" + layout?.id + "-enabled")
+                        .getPreference("hidden-theme-" + layout?.id + "-enabled")
                         .setData("true")
                     return true
                 }
@@ -516,10 +516,8 @@ export default class UserRelatedState {
                 if(tags[key] === null){
                     continue
                 }
-                let pref = this.osmConnection.preferencesHandler.getExistingPreference(key, undefined, "")
-                if (!pref) {
-                    pref = this.osmConnection.GetPreference(key, undefined, {prefix: ""})
-                }
+                let pref = this.osmConnection.GetPreference(key, undefined, {prefix: ""})
+
                 pref.set(tags[key])
             }
         })

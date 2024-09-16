@@ -22,6 +22,9 @@ export class MangroveIdentity {
         this.mangroveIdentity = mangroveIdentity
         this._mangroveIdentityCreationDate = mangroveIdentityCreationDate
         mangroveIdentity.addCallbackAndRunD(async (data) => {
+            if(data === ""){
+                return
+            }
             await this.setKeypair(data)
         })
     }

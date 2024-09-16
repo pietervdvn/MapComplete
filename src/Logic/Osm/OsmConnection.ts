@@ -154,7 +154,6 @@ export class OsmConnection {
             console.log("Not authenticated")
         }
     }
-
     public GetPreference<T extends string = string>(
         key: string,
         defaultValue: string = undefined,
@@ -162,12 +161,20 @@ export class OsmConnection {
             prefix?: string
         }
     ): UIEventSource<T | undefined> {
-        options ??= {prefix: "mapcomplete-"}
-        return <UIEventSource<T>>this.preferencesHandler.GetPreference(key, defaultValue, options)
+        const prefix =options?.prefix ?? "mapcomplete-"
+        return <UIEventSource<T>>this.preferencesHandler.getPreference(key, defaultValue, prefix)
+
+    }
+    public getPreference<T extends string = string>(
+        key: string,
+        defaultValue: string = undefined,
+        prefix: string = "mapcomplete-"
+    ): UIEventSource<T | undefined> {
+        return <UIEventSource<T>>this.preferencesHandler.getPreference(key, defaultValue, prefix)
     }
 
     public GetLongPreference(key: string, prefix: string = "mapcomplete-"): UIEventSource<string> {
-        return this.preferencesHandler.GetLongPreference(key, prefix)
+        return this.preferencesHandler.getPreference(key, prefix)
     }
 
     public OnLoggedIn(action: (userDetails: UserDetails) => void) {

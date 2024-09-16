@@ -2,12 +2,18 @@ import { Store, UIEventSource } from "../UIEventSource"
 import { OsmConnection } from "./OsmConnection"
 import { LocalStorageSource } from "../Web/LocalStorageSource"
 import OSMAuthInstance = OSMAuth.osmAuth
+import { Utils } from "../../Utils"
 
 export class OsmPreferences {
 
-    private normalPreferences: Record<string, UIEventSource<string>> = {}
-    private longPreferences: Record<string, UIEventSource<string>> = {}
+    private preferences: Record<string, UIEventSource<string>> = {}
+
     private localStorageInited: Set<string> = new Set()
+    /**
+     * Contains all the keys as returned by the OSM-preferences.
+     * Used to clean up old preferences
+     */
+    private seenKeys: string[] = []
 
     private readonly _allPreferences: UIEventSource<Record<string, string>> = new UIEventSource({})
     public readonly allPreferences: Store<Readonly<Record<string, string>>> = this._allPreferences
@@ -25,15 +31,6 @@ export class OsmPreferences {
         })
     }
 
-    private getLongValue(allPrefs: Record<string, string>, key: string): string {
-        const count = Number(allPrefs[key + "-length"])
-        let str = ""
-        for (let i = 0; i < count; i++) {
-            str += allPrefs[key + i]
-        }
-        return str
-
-    }
 
     private setPreferencesAll(key: string, value: string) {
         if (this._allPreferences.data[key] !== value) {
@@ -42,98 +39,50 @@ export class OsmPreferences {
         }
     }
 
-    private initPreference(key: string, value: string = "", excludeFromAll: boolean = false): UIEventSource<string> {
-        if (this.normalPreferences[key] !== undefined) {
-            return this.normalPreferences[key]
+    private initPreference(key: string, value: string = ""): UIEventSource<string> {
+        if (this.preferences[key] !== undefined) {
+            return this.preferences[key]
         }
-        const pref = this.normalPreferences[key] = new UIEventSource(value, "preference: " + key)
-        if(value && !excludeFromAll){
+        const pref = this.preferences[key] = new UIEventSource(value, "preference: " + key)
+        if (value) {
             this.setPreferencesAll(key, value)
         }
         pref.addCallback(v => {
-            this.UploadPreference(key, v)
-            if(!excludeFromAll){
-                this.setPreferencesAll(key, v)
-            }
-        })
-        return pref
-    }
-
-    private initLongPreference(key: string, initialValue: string): UIEventSource<string> {
-        if (this.longPreferences[key] !== undefined) {
-            return this.longPreferences[key]
-        }
-        const pref = this.longPreferences[key] = new UIEventSource<string>(initialValue, "long-preference-"+key)
-        const maxLength = 255
-        const length = UIEventSource.asInt(this.initPreference(key + "-length", "0", true))
-        if(initialValue){
-            this.setPreferencesAll(key, initialValue)
-        }
-        pref.addCallback(v => {
-            if(v === null || v === undefined || v === ""){
-                length.set(null)
-                return
-            }
-            length.set(Math.ceil((v?.length ?? 1) / maxLength))
-            let i = 0
-            while (v.length > 0) {
-                this.UploadPreference(key + "-" + i, v.substring(0, maxLength))
-                i++
-                v = v.substring(maxLength)
-            }
+            this.uploadKvSplit(key, v)
             this.setPreferencesAll(key, v)
         })
         return pref
     }
 
     private async loadBulkPreferences() {
-        const prefs = await this.getPreferencesDict()
-        const isCombined = /-combined-/
-        for (const key in prefs) {
-            if (key.endsWith("-combined-length")) {
-                const v = this.getLongValue(prefs, key.substring(0, key.length - "-length".length))
-                this.initLongPreference(key, v)
-            }
-            if (key.match(isCombined)) {
-                continue
-            }
+        const prefs = await this.getPreferencesDictDirectly()
+        this.seenKeys = Object.keys(prefs)
+        const legacy = OsmPreferences.getLegacyCombinedItems(prefs)
+        const merged = OsmPreferences.mergeDict(prefs)
+        for (const key in merged) {
             this.initPreference(key, prefs[key])
+        }
+        for (const key in legacy) {
+            this.initPreference(key, legacy[key])
         }
     }
 
 
-    /**
-     * OSM preferences can be at most 255 chars.
-     * This method chains multiple together.
-     * Values written into this key will be erased when the user logs in
-     */
-    public GetLongPreference(key: string, prefix: string = "mapcomplete-"): UIEventSource<string> {
-        return this.getPreferenceSeedFromlocal(key, true, undefined, { prefix })
-    }
-
-    public GetPreference(
+    public getPreference(
         key: string,
         defaultValue: string = undefined,
-        options?: {
-            documentation?: string
-            prefix?: string
-        },
+        prefix?: string,
     ) {
-        return this.getPreferenceSeedFromlocal(key, false, defaultValue, options)
+        return this.getPreferenceSeedFromlocal(key, defaultValue, { prefix })
     }
 
     /**
      * Gets a OSM-preference.
      * The OSM-preference is cached in local storage and updated from the OSM.org as soon as those values come in.
      * THis means that values written before being logged in might be erased by the cloud settings
-     * @param key
-     * @param defaultValue
-     * @param options
-     * @constructor
      */
     private getPreferenceSeedFromlocal(
         key: string,
-        long: boolean,
         defaultValue: string = undefined,
         options?: {
             prefix?: string,
@@ -146,17 +95,11 @@ export class OsmPreferences {
         key = key.replace(/[:/"' {}.%\\]/g, "")
 
 
-        let pref : UIEventSource<string>
         const localStorage = LocalStorageSource.Get(key)
-        if(localStorage.data === "null" || localStorage.data === "undefined"){
+        if (localStorage.data === "null" || localStorage.data === "undefined") {
             localStorage.set(undefined)
         }
-        if(long){
-            pref = this.initLongPreference(key, localStorage.data ?? defaultValue)
-        }else{
-            pref = this.initPreference(key, localStorage.data  ?? defaultValue)
-        }
-
+        let pref: UIEventSource<string> = this.initPreference(key, localStorage.data ?? defaultValue)
         if (this.localStorageInited.has(key)) {
             return pref
         }
@@ -173,12 +116,67 @@ export class OsmPreferences {
         this.removeAllWithPrefix("")
     }
 
+    /**
+     *
+     * OsmPreferences.mergeDict({abc: "123", def: "123", "def:0": "456", "def:1":"789"}) // => {abc: "123", def: "123456789"}
+     */
+    private static mergeDict(dict: Record<string, string>): Record<string, string> {
+        const newDict = {}
+
+        const allKeys: string[] = Object.keys(dict)
+        const normalKeys = allKeys.filter(k => !k.match(/[a-z-_0-9A-Z]*:[0-9]+/))
+        for (const normalKey of normalKeys) {
+            if(normalKey.match(/-combined-[0-9]*$/) || normalKey.match(/-combined-length$/)){
+                // Ignore legacy keys
+                continue
+            }
+            const partKeys = OsmPreferences.keysStartingWith(allKeys, normalKey)
+            const parts = partKeys.map(k => dict[k])
+            newDict[normalKey] = parts.join("")
+        }
+        return newDict
+    }
+
+    /**
+     * Gets all items which have a 'combined'-string, the legacy long preferences
+     *
+     *   const input = {
+     *             "extra-noncombined-key":"xyz",
+     *             "mapcomplete-unofficial-theme-httpsrawgithubusercontentcomosm-catalanwikidataimgmainwikidataimgjson-combined-0":
+     *                 "{\"id\":\"https://raw.githubusercontent.com/osm-catalan/wikidataimg/main/wikidataimg.json\",\"icon\":\"https://upload.wikimedia.org/wikipedia/commons/5/50/Yes_Check_Circle.svg\",\"title\":{\"ca\":\"wikidataimg\",\"_context\":\"themes:wikidataimg.title\"},\"shortDescription\"",
+     *             "mapcomplete-unofficial-theme-httpsrawgithubusercontentcomosm-catalanwikidataimgmainwikidataimgjson-combined-1":
+     *                 ":{\"ca\":\"Afegeix imatges d'articles de wikimedia\",\"_context\":\"themes:wikidataimg\"}}",
+     *         }
+     *         const merged = OsmPreferences.getLegacyCombinedItems(input)
+     *         const data = merged["mapcomplete-unofficial-theme-httpsrawgithubusercontentcomosm-catalanwikidataimgmainwikidataimgjson"]
+     *         JSON.parse(data) // =>  {"id": "https://raw.githubusercontent.com/osm-catalan/wikidataimg/main/wikidataimg.json", "icon": "https://upload.wikimedia.org/wikipedia/commons/5/50/Yes_Check_Circle.svg","title": { "ca": "wikidataimg", "_context": "themes:wikidataimg.title" }, "shortDescription": {"ca": "Afegeix imatges d'articles de wikimedia","_context": "themes:wikidataimg"}}
+     *         merged["extra-noncombined-key"] // => undefined
+     */
+    public static getLegacyCombinedItems(dict: Record<string, string>): Record<string, string> {
+        const merged: Record<string, string> = {}
+        const keys = Object.keys(dict)
+        const toCheck =Utils.NoNullInplace( Utils.Dedup(keys.map(k => k.match(/(.*)-combined-[0-9]+$/)?.[1])))
+        for (const key of toCheck) {
+            let i = 0
+            let str = ""
+            let v: string
+            do {
+                v = dict[key + "-combined-" + i]
+                str += v ?? ""
+                i++
+            } while (v !== undefined)
+            merged[key] = str
+        }
+
+
+        return merged
+    }
 
     /**
      * Bulk-downloads all preferences
      * @private
      */
-    private getPreferencesDict(): Promise<Record<string, string>> {
+    private getPreferencesDictDirectly(): Promise<Record<string, string>> {
         return new Promise<Record<string, string>>((resolve, reject) => {
             this.auth.xhr(
                 {
@@ -206,10 +204,86 @@ export class OsmPreferences {
     }
 
     /**
-     * UPloads the given k=v to the OSM-server
+     * Returns all keys matching `k:[number]`
+     * Split separately for test
+     *
+     * const keys = ["abc", "def", "ghi", "ghi:0", "ghi:1"]
+     * OsmPreferences.keysStartingWith(keys, "xyz") // => []
+     * OsmPreferences.keysStartingWith(keys, "abc") // => ["abc"]
+     * OsmPreferences.keysStartingWith(keys, "ghi") // => ["ghi", "ghi:0", "ghi:1"]
+     *
+     */
+    private static keysStartingWith(allKeys: string[], key: string): string[] {
+        const keys = allKeys.filter(k =>  k === key || k.match(new RegExp(key + ":[0-9]+")))
+        keys.sort()
+        return keys
+    }
+
+    /**
+     * Smart 'upload', which splits the value into `k`, `k:0`, `k:1` if needed.
+     * If `v` is null, undefined, empty, "undefined" (literal string) or "null" (literal string), will delete `k` and `k:[number]`
+     *
+     */
+    private async uploadKvSplit(k: string, v: string) {
+
+        if (v === null || v === undefined || v === "" || v === "undefined" || v === "null") {
+            const keysToDelete = OsmPreferences.keysStartingWith(this.seenKeys, k)
+            await Promise.all(keysToDelete.map(k => this.deleteKeyDirectly(k)))
+            return
+        }
+
+
+        await this.uploadKeyDirectly(k, v.slice(0, 255))
+        v = v.slice(255)
+        let i = 0
+        while (v.length > 0) {
+            await this.uploadKeyDirectly(`${k}:${i}`, v.slice(0, 255))
+            v = v.slice(255)
+        }
+
+    }
+
+    /**
+     * Directly deletes this key
+     * @param k
+     * @private
+     */
+    private deleteKeyDirectly(k: string) {
+        if (!this.osmConnection.userDetails.data.loggedIn) {
+            console.debug(`Not saving preference ${k}: user not logged in`)
+            return
+        }
+
+        if (this._fakeUser) {
+            return
+        }
+        return new Promise<void>((resolve, reject) => {
+
+                this.auth.xhr(
+                    {
+                        method: "DELETE",
+                        path: "/api/0.6/user/preferences/" + encodeURIComponent(k),
+                        headers: { "Content-Type": "text/plain" },
+                    },
+                    (error) => {
+                        if (error) {
+                            console.warn("Could not remove preference", error)
+                            reject(error)
+                            return
+                        }
+                        console.debug("Preference ", k, "removed!")
+                        resolve()
+                    },
+                )
+            },
+        )
+    }
+
+    /**
+     * Uploads the given k=v to the OSM-server
      * Deletes it if 'v' is undefined, null or empty
      */
-    private UploadPreference(k: string, v: string) {
+    private async uploadKeyDirectly(k: string, v: string) {
         if (!this.osmConnection.userDetails.data.loggedIn) {
             console.debug(`Not saving preference ${k}: user not logged in`)
             return
@@ -219,62 +293,49 @@ export class OsmPreferences {
             return
         }
         if (v === undefined || v === "" || v === null) {
-            this.auth.xhr(
-                {
-                    method: "DELETE",
-                    path: "/api/0.6/user/preferences/" + encodeURIComponent(k),
-                    headers: { "Content-Type": "text/plain" },
-                },
-                (error) => {
-                    if (error) {
-                        console.warn("Could not remove preference", error)
-                        return
-                    }
-                    console.debug("Preference ", k, "removed!")
-                },
-            )
+            await this.deleteKeyDirectly(k)
             return
         }
 
-        this.auth.xhr(
-            {
-                method: "PUT",
-                path: "/api/0.6/user/preferences/" + encodeURIComponent(k),
-                headers: { "Content-Type": "text/plain" },
-                content: v,
-            },
-            (error) => {
-                if (error) {
-                    console.warn(`Could not set preference "${k}"'`, error)
-                    return
-                }
-            },
-        )
+        if (v.length > 255) {
+            console.error("Preference too long, max 255 chars", { k, v })
+            throw "Preference too long, at most 255 characters are supported"
+        }
+
+        return new Promise<void>((resolve, reject) => {
+
+            this.auth.xhr(
+                {
+                    method: "PUT",
+                    path: "/api/0.6/user/preferences/" + encodeURIComponent(k),
+                    headers: { "Content-Type": "text/plain" },
+                    content: v,
+                },
+                (error) => {
+                    if (error) {
+                        console.warn(`Could not set preference "${k}"'`, error)
+                        reject(error)
+                        return
+                    }
+                    resolve()
+                },
+            )
+        })
     }
 
-    removeAllWithPrefix(prefix: string) {
-        for (const key in this.normalPreferences) {
-            if(key.startsWith(prefix)){
-                this.normalPreferences[key].set(null)
-            }
-        }
-        for (const key in this.longPreferences) {
-            if(key.startsWith(prefix)){
-                this.longPreferences[key].set(null)
-            }
+    async removeAllWithPrefix(prefix: string) {
+        const keys = this.seenKeys
+        for (const key in keys) {
+            await this.deleteKeyDirectly(key)
         }
     }
 
-    getExistingPreference(key: string, defaultValue: undefined, prefix: string ): UIEventSource<string> {
+    getExistingPreference(key: string, defaultValue: undefined, prefix: string): UIEventSource<string> {
         if (prefix) {
             key = prefix + key
         }
         key = key.replace(/[:/"' {}.%\\]/g, "")
-
-        if(this.normalPreferences[key]){
-            return this.normalPreferences[key]
-        }
-        return this.longPreferences[key]
+        return this.preferences[key]
 
     }
 }
