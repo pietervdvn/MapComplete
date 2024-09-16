@@ -1381,6 +1381,17 @@
   "filter": [
     "open_now",
     {
+      "id": "centres_only",
+      "options": [
+        {
+          "osmTags": "recycling_type=centre",
+          "question": {
+            "en": "Recycling centre"
+          }
+        }
+      ]
+    },
+    {
       "id": "recyclingType",
       "options": [
         {
