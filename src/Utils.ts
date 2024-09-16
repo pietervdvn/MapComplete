@@ -1073,19 +1073,22 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
     public static async downloadJsonCached<T = object | []>(
         url: string,
         maxCacheTimeMs: number,
-        headers?: Record<string, string>
+        headers?: Record<string, string>,
+        dontCacheErrors: boolean = false
     ): Promise<T> {
-        const result = await Utils.downloadJsonCachedAdvanced(url, maxCacheTimeMs, headers)
+        const result = await Utils.downloadJsonCachedAdvanced(url, maxCacheTimeMs, headers, dontCacheErrors)
         if (result["content"]) {
             return result["content"]
         }
         throw result["error"]
+
     }
 
     public static async downloadJsonCachedAdvanced<T = object | []>(
         url: string,
         maxCacheTimeMs: number,
-        headers?: Record<string, string>
+        headers?: Record<string, string>,
+        dontCacheErrors = false
     ): Promise<{ content: T } | { error: string; url: string; statuscode?: number }> {
         const cached = Utils._download_cache.get(url)
         if (cached !== undefined) {
@@ -1099,7 +1102,15 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
                 headers
             )
         Utils._download_cache.set(url, { promise, timestamp: new Date().getTime() })
+        try {
+
         return await promise
+        }catch (e) {
+                if(dontCacheErrors){
+                    Utils._download_cache.delete(url)
+                }
+            throw e
+        }
     }
 
     public static async downloadJson<T = object | []>(
