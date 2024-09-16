@@ -401,6 +401,19 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return newArr
     }
 
+    public static DedupT<T>(arr: T[]): T[]{
+        if(!arr){
+            return arr
+        }
+        const items = []
+        for (const item of arr) {
+            if(items.indexOf(item) < 0){
+                items.push(item)
+            }
+        }
+        return items
+    }
+
     /**
      * Finds all duplicates in a list of strings
      *

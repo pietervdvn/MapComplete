@@ -670,7 +670,7 @@ function removeNonEnglishTranslations(object: any) {
  * Load the translations into the theme files
  */
 function mergeThemeTranslations(englishOnly: boolean = false) {
-    const themeFiles = ScriptUtils.getThemeFiles()
+    const themeFiles = ScriptUtils.getThemeFiles(true)
     for (const themeFile of themeFiles) {
         let config = themeFile.parsed
         mergeLayerTranslation(config, themeFile.path, loadTranslationFilesFrom("themes"))
@@ -723,7 +723,7 @@ class GenerateTranslations extends Script {
         {
             const l1 = generateTranslationsObjectFrom(ScriptUtils.getLayerFiles(), "layers")
             const l2 = generateTranslationsObjectFrom(
-                ScriptUtils.getThemeFiles().filter(
+                ScriptUtils.getThemeFiles(true).filter(
                     (th) => th.parsed.mustHaveLanguage === undefined
                 ),
                 "themes"

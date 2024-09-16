@@ -7697,6 +7697,50 @@
             "render": "Playground device"
         }
     },
+    "police": {
+        "description": "Many types of police facilities ",
+        "name": "Police stations",
+        "presets": {
+            "0": {
+                "description": "A police office where the general public can enter for inquiries",
+                "title": "a police office"
+            },
+            "1": {
+                "description": "A place where police performs checks on travelling people",
+                "title": "a police checkpoint"
+            },
+            "2": {
+                "description": "An administrative police office without services for the general public.",
+                "title": "an administrative, police backoffice"
+            },
+            "3": {
+                "description": "A jail run by the police without public services. People are detained here for a short time (at most a few days), e.g. for small misdemeanors, disturbance of the public order or awaiting a trial"
+            },
+            "4": {
+                "description": "A naval or maritime base for the maritime police; often with a pier and police boats nearby"
+            }
+        },
+        "tagRenderings": {
+            "4_z2nrdhy6tyyh4fd": {
+                "mappings": {
+                    "0": {
+                        "then": "This police office has some cells to detain people"
+                    },
+                    "1": {
+                        "then": "This police office does not have cells to detain people"
+                    }
+                },
+                "question": "Does this police office have detention facilities?"
+            },
+            "police_name": {
+                "question": "What is the name of this police facility?",
+                "render": "<b>{name}</b>"
+            }
+        },
+        "title": {
+            "render": "{name}"
+        }
+    },
     "postboxes": {
         "description": "The layer showing postboxes.",
         "name": "Postboxes",

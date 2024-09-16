@@ -644,6 +644,22 @@
         },
         "title": "Krawężniki i przejścia"
     },
+    "mapcomplete-changes": {
+        "description": "Ta mapa pokazuje wszystkie zmiany wprowadzone za pomocą MapComplete",
+        "layers": {
+            "0": {
+                "filter": {
+                    "0": {
+                        "options": {
+                            "0": {
+                                "question": "Nazwa tematu zawiera {search}"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
     "maproulette": {
         "description": "Temat pokazujący zadania MapRoulette, umożliwiający ich wyszukiwanie, filtrowanie i naprawianie.",
         "title": "Zadania MapRoulette"

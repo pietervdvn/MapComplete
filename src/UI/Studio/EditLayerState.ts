@@ -159,6 +159,9 @@ export abstract class EditJsonState<T> {
     }
 
     public getSchemaStartingWith(path: string[]) {
+        if(path === undefined){
+            return undefined
+        }
         return this.schema.filter(
             (sch) =>
                 !path.some((part, i) => !(sch.path.length > path.length && sch.path[i] === part))

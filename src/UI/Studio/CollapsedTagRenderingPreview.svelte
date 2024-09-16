@@ -30,7 +30,7 @@
     .getSchemaStartingWith(schema.path)
     .filter((part) => part.path.length - 1 === schema.path.length)
 
-  let usesOverride = value["builtin"] !== undefined
+  let usesOverride = value?.["builtin"] !== undefined
 
   function schemaForMultitype() {
     const sch = { ...schema }
@@ -138,7 +138,7 @@
       </div>
     {:else if typeof value === "string"}
       Builtin: <b>{value}</b>
-    {:else if value["builtin"]}
+    {:else if value?.["builtin"]}
       reused tagrendering <span class="font-bold">{JSON.stringify(value["builtin"])}</span>
     {:else}
       <Tr cls="font-bold" t={Translations.T(value?.question ?? value?.render)} />
