@@ -10,7 +10,7 @@
   import CommunityIndexView from "./CommunityIndexView.svelte"
   import Community from "../../assets/svg/Community.svelte"
   import LoginToggle from "../Base/LoginToggle.svelte"
-  import { CloseButton, Sidebar } from "flowbite-svelte"
+  import { CloseButton } from "flowbite-svelte"
   import HotkeyTable from "./HotkeyTable.svelte"
   import { Utils } from "../../Utils"
   import Constants from "../../Models/Constants"
@@ -23,7 +23,6 @@
   import MapillaryLink from "./MapillaryLink.svelte"
   import Github from "../../assets/svg/Github.svelte"
   import Bug from "../../assets/svg/Bug.svelte"
-  import Add from "../../assets/svg/Add.svelte"
   import CopyrightPanel from "./CopyrightPanel.svelte"
   import CopyrightAllIcons from "./CopyrightAllIcons.svelte"
   import LanguagePicker from "../InputElement/LanguagePicker.svelte"
@@ -90,7 +89,7 @@
       <LoginButton osmConnection={state.osmConnection} slot="not-logged-in" />
       <div class="flex items-center gap-x-4">
         {#if $userdetails.img}
-          <img src={$userdetails.img} class="h-14 w-14 rounded-full" />
+          <img alt="avatar" src={$userdetails.img} class="h-14 w-14 rounded-full" />
         {/if}
         <b>{$userdetails.name}</b>
       </div>

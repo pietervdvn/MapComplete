@@ -44,7 +44,7 @@
   import DrawerLeft from "./Base/DrawerLeft.svelte"
   import Hash from "../Logic/Web/Hash"
   import { Drawer } from "flowbite-svelte"
-  import { linear, sineIn } from "svelte/easing"
+  import { linear } from "svelte/easing"
 
   export let state: ThemeViewState
   let layout = state.layout
@@ -418,7 +418,6 @@
       <MenuDrawer onlyLink={true} {state} />
     </div>
   </DrawerLeft>
-  <MenuDrawer onlyLink={false} {state} />
 
   {#if $selectedElement !== undefined && $selectedLayer !== undefined && !$selectedLayer.popupInFloatover}
     <!-- right modal with the selected element view -->
@@ -471,5 +470,7 @@
       </FloatOver>
     {/if}
   {/if}
+
+  <MenuDrawer onlyLink={false} {state} />
 
 </main>
