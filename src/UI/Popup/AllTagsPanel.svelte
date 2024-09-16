@@ -2,6 +2,7 @@
   import { Store, UIEventSource } from "../../Logic/UIEventSource"
   import SimpleMetaTaggers from "../../Logic/SimpleMetaTagger"
   import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
+  import { Utils } from "../../Utils"
 
   export let tags: UIEventSource<Record<string, any>>
   export let tagKeys = tags.map((tgs) => (tgs === undefined ? [] : Object.keys(tgs)))
@@ -31,9 +32,18 @@
 
   const metaKeys: string[] = [].concat(...SimpleMetaTaggers.metatags.map((k) => k.keys))
   let allCalculatedTags = new Set<string>([...calculatedTags, ...metaKeys])
+
+  function downloadAsJson(){
+    Utils.offerContentsAsDownloadableFile(
+      JSON.stringify(tags.data, null, "  "), "tags-"+(tags.data.id ?? layer?.id ?? "")+".json"
+    )
+  }
 </script>
 
 <section>
+  <button class="as-link" on:click={() => downloadAsJson()}>
+    Download as JSON
+  </button>
   <table class="zebra-table break-all">
     <tr>
       <th>Key</th>
