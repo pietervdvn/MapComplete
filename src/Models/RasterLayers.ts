@@ -23,7 +23,7 @@ export class AvailableRasterLayers {
         const eli = await Utils.downloadJson<{ features: EditorLayerIndex }>(
             "./assets/data/editor-layer-index.json"
         )
-        this._editorLayerIndex = eli.features.filter((l) => l.properties.id !== "Bing")
+        this._editorLayerIndex = eli.features?.filter((l) => l.properties.id !== "Bing") ?? []
         this._editorLayerIndexStore.set(this._editorLayerIndex)
         return this._editorLayerIndex
     }

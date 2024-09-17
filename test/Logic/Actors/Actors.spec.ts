@@ -43,6 +43,8 @@ Utils.injectJsonDownloadForTests("https://www.openstreetmap.org/api/0.6/node/556
     ],
 })
 
+Utils.injectJsonDownloadForTests("./assets/data/editor-layer-index.json", '{"features": [] }')
+
 it("should download the latest version", async () => {
     const state = new ThemeViewState(new LayoutConfig(<any>bookcaseJson, true), new Set<string>())
     const feature: Feature<Geometry, OsmTags> = {
@@ -83,6 +85,6 @@ it("should download the latest version", async () => {
 
     // The name should be updated
     expect(feature.properties.name).toEqual("Stubbekwartier-buurtbibliotheek")
-    // The fixme should be removed
+    // The fix_me should be removed
     expect(feature.properties.fixme).toBeUndefined()
 })

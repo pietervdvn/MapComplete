@@ -9,6 +9,7 @@
       "id": "open_now",
       "options": [
         {
+          "emoji": "⏰",
           "question": {
             "en": "Open now",
             "nl": "Nu open",
@@ -32,6 +33,7 @@
       "id": "accepts_cash",
       "options": [
         {
+          "emoji": "🪙",
           "osmTags": "payment:cash=yes",
           "question": {
             "en": "Accepts cash",
@@ -50,6 +52,7 @@
       "id": "accepts_cards",
       "options": [
         {
+          "emoji": "💳",
           "osmTags": "payment:cards=yes",
           "question": {
             "en": "Accepts payment cards",
@@ -68,6 +71,7 @@
       "id": "accepts_debit_cards",
       "options": [
         {
+          "emoji": "💳",
           "osmTags": "payment:debit_cards=yes",
           "question": {
             "en": "Accepts debit cards",
@@ -83,6 +87,7 @@
       "id": "accepts_credit_cards",
       "options": [
         {
+          "emoji": "💳",
           "osmTags": "payment:credit_cards=yes",
           "question": {
             "en": "Accepts credit cards",
@@ -268,6 +273,7 @@
         {
           "question": {
             "en": "No preference towards dogs",
+            "nl": "Geen voorkeur voor honden",
             "de": "Keine Bevorzugung von Hunden",
             "cs": "Bez preference psů"
           }
@@ -275,22 +281,27 @@
         {
           "question": {
             "en": "Dogs allowed",
+            "nl": "Honden toegelaten",
             "de": "Hunde erlaubt",
             "cs": "Psi povoleny"
           },
+          "emoji": "🐕",
           "osmTags": {
             "or": [
               "dog=unleashed",
               "dog=yes"
             ]
-          }
+          },
+          "icon": "./assets/layers/questions/dogs_allowed.svg"
         },
         {
           "question": {
             "en": "No dogs allowed",
+            "nl": "Geen honden toegelaten",
             "de": "Keine Hunde erlaubt",
             "cs": "Psi nejsou povoleni"
           },
+          "icon": "./assets/layers/questions/no_dogs.svg",
           "osmTags": "dog=no"
         }
       ]
@@ -304,6 +315,7 @@
             "de": "Internetzugang vorhanden",
             "cs": "Nabízí internet"
           },
+          "icon": "wifi",
           "osmTags": {
             "or": [
               "internet_access=wlan",
@@ -355,6 +367,7 @@
             "cs": "Má bezlepkovou nabídku",
             "de": "Hat glutenfreie Angebote"
           },
+          "icon": "./assets/layers/questions/glutenfree.svg",
           "osmTags": {
             "or": [
               "diet:gluten_free=yes",
@@ -374,6 +387,7 @@
             "cs": "Má nabídku bez laktózy",
             "de": "Hat laktosefreie Angebote"
           },
+          "icon": "./assets/layers/questions/lactose_free.svg",
           "osmTags": {
             "or": [
               "diet:lactose_free=yes",

@@ -6894,15 +6894,6 @@
             }
         },
         "description": "Una botiga",
-        "filter": {
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Sols mostrar botigues que venen {search}"
-                    }
-                }
-            }
-        },
         "name": "Botiga",
         "presets": {
             "0": {

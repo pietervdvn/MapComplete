@@ -5881,6 +5881,13 @@
                                 "arialabel": "Auf openstreetmap.org öffnen"
                             }
                         }
+                    },
+                    "2": {
+                        "then": {
+                            "special": {
+                                "arialabel": "Auf openstreetmap.org öffnen"
+                            }
+                        }
                     }
                 },
                 "render": {
@@ -9070,21 +9077,7 @@
         },
         "description": "Ein Geschäft",
         "filter": {
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Nur Geschäfte, die {search} verkaufen"
-                    }
-                }
-            },
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "Nur Geschäfte mit dem Namen {search} anzeigen"
-                    }
-                }
-            },
-            "3": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Nur Second-Hand-Geschäfte anzeigen"

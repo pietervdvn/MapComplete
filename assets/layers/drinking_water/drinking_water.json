@@ -24,6 +24,23 @@
     "ca": "Una capa que mostra fonts d'aigua potable",
     "cs": "Vrstva zobrazující fontány s pitnou vodou"
   },
+  "searchTerms": {
+    "en": [
+      "drink",
+      "water",
+      "fountain",
+      "bubbler"
+    ],
+    "nl": [
+      "drinken",
+      "water",
+      "drinkwater",
+      "waterfontein",
+      "fontein",
+      "kraan",
+      "kraantje"
+    ]
+  },
   "source": {
     "osmTags": {
       "and": [

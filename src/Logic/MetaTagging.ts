@@ -424,9 +424,11 @@ export default class MetaTagging {
             }
         }
 
-        console.warn(
-            "Static MetataggingObject for theme is not set; using `new Function` (aka `eval`) to get calculated tags. This might trip up the CSP"
-        )
+        if (!window.location.pathname.endsWith("theme.html")) {
+            console.warn(
+                "Static MetataggingObject for theme is not set; using `new Function` (aka `eval`) to get calculated tags. This might trip up the CSP"
+            )
+        }
 
         const calculatedTags: [string, string, boolean][] = layer?.calculatedTags ?? []
         if (calculatedTags === undefined || calculatedTags.length === 0) {

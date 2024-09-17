@@ -1168,6 +1168,14 @@ input[type="range"].range-lg::-moz-range-thumb {
   right: 33.333333%;
 }
 
+.right-10 {
+  right: 2.5rem;
+}
+
+.top-10 {
+  top: 2.5rem;
+}
+
 .top-4 {
   top: 1rem;
 }
@@ -1414,6 +1422,11 @@ input[type="range"].range-lg::-moz-range-thumb {
   margin-bottom: 1rem;
 }
 
+.my-8 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
 .mx-4 {
   margin-left: 1rem;
   margin-right: 1rem;
@@ -1437,11 +1450,6 @@ input[type="range"].range-lg::-moz-range-thumb {
 .-mx-1 {
   margin-left: -0.25rem;
   margin-right: -0.25rem;
-}
-
-.my-8 {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
 }
 
 .mx-12 {
@@ -1470,6 +1478,14 @@ input[type="range"].range-lg::-moz-range-thumb {
   margin-bottom: 4rem;
 }
 
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.ml-1 {
+  margin-left: 0.25rem;
+}
+
 .mr-0\.5 {
   margin-right: 0.125rem;
 }
@@ -1486,14 +1502,6 @@ input[type="range"].range-lg::-moz-range-thumb {
   margin-top: 0.25rem;
 }
 
-.mb-4 {
-  margin-bottom: 1rem;
-}
-
-.ml-1 {
-  margin-left: 0.25rem;
-}
-
 .mt-2 {
   margin-top: 0.5rem;
 }
@@ -1502,8 +1510,8 @@ input[type="range"].range-lg::-moz-range-thumb {
   margin-left: 0.5rem;
 }
 
-.ml-4 {
-  margin-left: 1rem;
+.mr-3 {
+  margin-right: 0.75rem;
 }
 
 .mb-2 {
@@ -1522,8 +1530,8 @@ input[type="range"].range-lg::-moz-range-thumb {
   margin-bottom: 0.25rem;
 }
 
-.mr-3 {
-  margin-right: 0.75rem;
+.ml-4 {
+  margin-left: 1rem;
 }
 
 .mt-8 {
@@ -1729,6 +1737,10 @@ input[type="range"].range-lg::-moz-range-thumb {
   height: 0px;
 }
 
+.h-7 {
+  height: 1.75rem;
+}
+
 .h-1\/2 {
   height: 50%;
 }
@@ -1739,10 +1751,6 @@ input[type="range"].range-lg::-moz-range-thumb {
 
 .h-modal {
   height: calc(100% - 2rem);
-}
-
-.h-7 {
-  height: 1.75rem;
 }
 
 .h-11 {
@@ -1991,12 +1999,12 @@ input[type="range"].range-lg::-moz-range-thumb {
   width: 0px;
 }
 
-.w-3 {
-  width: 0.75rem;
-}
-
 .w-7 {
   width: 1.75rem;
+}
+
+.w-3 {
+  width: 0.75rem;
 }
 
 .w-11 {
@@ -2750,6 +2758,10 @@ input[type="range"].range-lg::-moz-range-thumb {
 
 .overflow-y-auto {
   overflow-y: auto;
+}
+
+.overflow-x-hidden {
+  overflow-x: hidden;
 }
 
 .overflow-y-scroll {
@@ -3908,6 +3920,11 @@ input[type="range"].range-lg::-moz-range-thumb {
   padding-bottom: 0.25rem;
 }
 
+.px-0 {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
@@ -3973,11 +3990,6 @@ input[type="range"].range-lg::-moz-range-thumb {
   padding-bottom: 0.875rem;
 }
 
-.px-0 {
-  padding-left: 0px;
-  padding-right: 0px;
-}
-
 .\!px-0 {
   padding-left: 0px !important;
   padding-right: 0px !important;
@@ -3998,10 +4010,6 @@ input[type="range"].range-lg::-moz-range-thumb {
 
 .pl-2 {
   padding-left: 0.5rem;
-}
-
-.pl-1 {
-  padding-left: 0.25rem;
 }
 
 .pr-1 {
@@ -4034,6 +4042,10 @@ input[type="range"].range-lg::-moz-range-thumb {
 
 .pt-2 {
   padding-top: 0.5rem;
+}
+
+.pl-1 {
+  padding-left: 0.25rem;
 }
 
 .pb-1\.5 {
@@ -4865,6 +4877,11 @@ input[type="range"].range-lg::-moz-range-thumb {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
+.drop-shadow-2xl {
+  --tw-drop-shadow: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
 .drop-shadow-md {
   --tw-drop-shadow: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
@@ -4927,6 +4944,12 @@ input[type="range"].range-lg::-moz-range-thumb {
           backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
 }
 
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 .transition {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
@@ -4937,12 +4960,6 @@ input[type="range"].range-lg::-moz-range-thumb {
 
 .transition-colors {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.transition-all {
-  transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -4986,10 +5003,10 @@ input[type="range"].range-lg::-moz-range-thumb {
 }
 
 :root {
-  /* 
-    * The main colour scheme of mapcomplete is configured here.
-    * For a custom styling, set 'customCss' in your layoutConfig and overwrite some of these.
-    */
+  /*
+      * The main colour scheme of mapcomplete is configured here.
+      * For a custom styling, set 'customCss' in your layoutConfig and overwrite some of these.
+      */
   /* No support for dark mode yet, we disable it to prevent some elements to suddenly toggle */
   color-scheme: only light;
   /* Main color of the application: the background and text colours */
@@ -5014,9 +5031,9 @@ input[type="range"].range-lg::-moz-range-thumb {
   --disabled: #B8B8B8;
   --disabled-font: #B8B8B8;
   /**
-     * Base colour of interactive elements, mainly the 'subtle button'
-     * @deprecated
-     */
+       * Base colour of interactive elements, mainly the 'subtle button'
+       * @deprecated
+       */
   --subtle-detail-color: #dbeafe;
   --subtle-detail-color-contrast: black;
   --subtle-detail-color-light-contrast: lightgrey;
@@ -5026,14 +5043,14 @@ input[type="range"].range-lg::-moz-range-thumb {
   --catch-detail-color-contrast: #fb3afb;
   --image-carousel-height: 350px;
   /** Technical value, used by icon.svelte
-     */
+       */
   --svg-color: #000000;
 }
 
-@font-face{
-  font-family:"Source Sans Pro";
+@font-face {
+  font-family: "Source Sans Pro";
 
-  src:url("/assets/source-sans-pro.regular.ttf") format("woff");
+  src: url("/assets/source-sans-pro.regular.ttf") format("woff");
 }
 
 /***********************************************************************\
@@ -5238,6 +5255,16 @@ button.as-link {
   padding: 0;
 }
 
+button.unstyled, .button-unstyled button {
+  background-color: unset;
+  display: inline-flex;
+  justify-content: start;
+  border: none;
+  box-shadow: none !important;
+  margin: 0;
+  padding: 0;
+}
+
 /******* Other input elements ******/
 
 .hover-alert:hover {
@@ -5264,18 +5291,18 @@ select:hover {
 
 .neutral-label {
   /** This label styles as normal text. It's power comes from the many :not(.neutral-label) entries.
-     * Placed here for autocompletion
-     */
+       * Placed here for autocompletion
+       */
 }
 
 label:not(.neutral-label):not(.button) {
   /**
-     * Label should _contain_ the input element
-     */
+       * Label should _contain_ the input element
+       */
   padding: 0.25rem;
   padding-right: 0.5rem;
   padding-left: 0.5rem;
-  margin:0.25rem;
+  margin: 0.25rem;
   border-radius: 0.5rem;
   width: 100%;
   box-sizing: border-box;
@@ -5327,6 +5354,17 @@ h2.group {
   padding-right: 0.5rem;
   border: 3px dotted #58cd27;
   background-color: #58cd2722;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  border-radius: 999rem;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+  border: 1px solid var(--subtle-detail-color-light-contrast);
+  background-color: var(--low-interaction-background);
 }
 
 .alert {
@@ -5496,6 +5534,10 @@ a.link-underline {
   color: unset !important;
 }
 
+a:hover {
+  background-color: var(--low-interaction-background);
+}
+
 .disable-links a.must-link,
 .disable-links .must-link a {
   /* Hide links if they are disabled */
@@ -5514,7 +5556,7 @@ a.link-underline {
 
 .selected svg:not(.noselect *) path.selectable {
   /* A marker on the map gets the 'selected' class when it's properties are displayed
-    */
+      */
   stroke: white !important;
   stroke-width: 20px !important;
   overflow: visible !important;
@@ -5528,7 +5570,7 @@ a.link-underline {
 
 .selected svg {
   /* A marker on the map gets the 'selected' class when it's properties are displayed
-    */
+      */
   overflow: visible !important;
 }
 
@@ -8060,12 +8102,12 @@ svg.apply-fill path {
     order: 9999;
   }
 
-  .sm\:m-2 {
-    margin: 0.5rem;
-  }
-
   .sm\:m-1 {
     margin: 0.25rem;
+  }
+
+  .sm\:m-2 {
+    margin: 0.5rem;
   }
 
   .sm\:mx-1 {
@@ -8080,10 +8122,6 @@ svg.apply-fill path {
 
   .sm\:mr-1 {
     margin-right: 0.25rem;
-  }
-
-  .sm\:mt-0 {
-    margin-top: 0px;
   }
 
   .sm\:mt-2 {
@@ -8144,6 +8182,10 @@ svg.apply-fill path {
 
   .sm\:w-64 {
     width: 16rem;
+  }
+
+  .sm\:w-80 {
+    width: 20rem;
   }
 
   .sm\:w-11 {
@@ -8357,6 +8399,10 @@ svg.apply-fill path {
 
   .md\:w-6\/12 {
     width: 50%;
+  }
+
+  .md\:w-96 {
+    width: 24rem;
   }
 
   .md\:w-48 {

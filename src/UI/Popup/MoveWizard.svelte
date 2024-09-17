@@ -11,12 +11,10 @@
   import type { Feature, Point } from "geojson"
   import { GeoOperations } from "../../Logic/GeoOperations"
   import OpenBackgroundSelectorButton from "../BigComponents/OpenBackgroundSelectorButton.svelte"
-  import Geosearch from "../BigComponents/Geosearch.svelte"
   import If from "../Base/If.svelte"
   import Constants from "../../Models/Constants"
   import LoginToggle from "../Base/LoginToggle.svelte"
   import AccordionSingle from "../Flowbite/AccordionSingle.svelte"
-  import BackButton from "../Base/BackButton.svelte"
   import ChevronLeft from "@babeard/svelte-heroicons/solid/ChevronLeft"
   import ThemeViewState from "../../Models/ThemeViewState"
   import Icon from "../Map/Icon.svelte"
@@ -114,7 +112,7 @@
             </div>
 
             {#if $reason.includeSearch}
-              <Geosearch bounds={currentMapProperties.bounds} clearAfterView={false} />
+             <!-- TODO -->
             {/if}
 
             <div class="flex flex-wrap">

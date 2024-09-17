@@ -8,11 +8,11 @@
   import { ImmutableStore, Store, Stores, UIEventSource } from "../../../Logic/UIEventSource"
   import Wikidata, { WikidataResponse } from "../../../Logic/Web/Wikidata"
   import Locale from "../../i18n/Locale"
-  import SearchField from "../../BigComponents/SearchField.svelte"
   import Loading from "../../Base/Loading.svelte"
   import Wikidatapreview from "../../Wikipedia/Wikidatapreview.svelte"
   import { Utils } from "../../../Utils"
   import WikidataValidator from "../Validators/WikidataValidator"
+  import Searchbar from "../../Base/Searchbar.svelte"
 
   const t = Translations.t.general.wikipedia
 
@@ -89,7 +89,7 @@
 </h3>
 
 <form>
-  <SearchField {searchValue} placeholderText={placeholder} />
+  <Searchbar value={searchValue} {placeholder} />
 
   {#if $searchValue.trim().length === 0}
     <Tr cls="w-full flex justify-center p-4" t={t.doSearch} />

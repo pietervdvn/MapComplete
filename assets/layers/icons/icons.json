@@ -356,9 +356,32 @@
               }
             }
           }
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "osm_id~*",
+          "then": {
+            "special": {
+              "type": "link",
+              "text": "<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>",
+              "href": "https://www.openstreetmap.org/{osm_id}",
+              "arialabel": {
+                "en": "Open on openstreetmap.org",
+                "nl": "Bekijk op openstreetmap.org",
+                "de": "Auf openstreetmap.org öffnen",
+                "pl": "Otwórz na openstreetmap.org",
+                "da": "Åbn på openstreetmap.org"
+              }
+            }
+          }
         }
       ],
-      "condition": "id~(node|way|relation)/[0-9]*"
+      "condition": {
+        "or": [
+          "id~(node|way|relation)/[0-9]*",
+          "osm_id~*"
+        ]
+      }
     },
     {
       "id": "rating",

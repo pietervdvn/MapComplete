@@ -10,6 +10,9 @@
         "type": "UI",
         "section": "User interface improvements"
       },
+      {"type": "Search",
+        "section": "Search related features"
+      },
       {"type": "chore", "hidden": true},
       {"type": "docs", "hidden": true},
       {"type": "style", "hidden": true},

@@ -25,6 +25,31 @@
     "cs": "Vrstva zobrazující (veřejné) toalety",
     "sl": "Prikaz (javnih) stranišč"
   },
+  "searchTerms": {
+    "en": [
+      "Toilets",
+      "Bathroom",
+      "Lavatory",
+      "Water Closet",
+      "outhouse",
+      "privy",
+      "head",
+      "latrine",
+      "WC",
+      "W.C."
+    ],
+    "nl": [
+      "WC",
+      "WCs",
+      "plee",
+      "gemak",
+      "opschik",
+      "kabinet",
+      "latrine",
+      "retirade",
+      "piesemopsantee"
+    ]
+  },
   "source": {
     "osmTags": "amenity=toilets"
   },

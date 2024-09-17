@@ -262,6 +262,7 @@
         "examples": "Examples",
         "fewChangesBefore": "Please, answer a few questions of existing features before adding a new feature.",
         "filterPanel": {
+            "allTypes": "All types",
             "disableAll": "Disable all",
             "enableAll": "Enable all"
         },
@@ -396,8 +397,22 @@
         "save": "Save",
         "screenToSmall": "Open <i>{theme}</i> in a new window",
         "search": {
+            "activeFilters": "Active filters",
+            "clearFilters": "Clear filters",
+            "deleteSearchHistory": "Delete location history",
+            "deleteThemeHistory": "Delete earlier visited themes",
+            "editSearchSyncSettings": "Edit sync settings",
+            "editThemeSync": "Edit sync settings",
             "error": "Something went wrong…",
+            "instructions": "Use the search bar above to search for locations, filters or other thematic maps",
+            "locations": "Locations",
+            "nMoreFilters": "{n} more",
             "nothing": "Nothing found…",
+            "nothingFor": "No results found for {term}",
+            "otherMaps": "Other maps",
+            "pickFilter": "Pick a filter",
+            "recentThemes": "Recently visited maps",
+            "recents": "Recently seen places",
             "search": "Search a location",
             "searchShort": "Search…",
             "searching": "Searching…"

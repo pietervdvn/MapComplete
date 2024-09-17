@@ -41,13 +41,21 @@ export interface LayerConfigJson {
     name?: Translatable
 
     /**
+     * question: How would you describe the features that are shown on this layer?
+     *
      * A description for the features shown in this layer.
      * This often resembles the introduction of the wiki.osm.org-page for this feature.
      *
      * group: Basic
-     * question: How would you describe the features that are shown on this layer?
      */
     description?: Translatable
+
+    /**
+     * question: What are some other terms used to describe these objects?
+     *
+     * This is used in the search functionality
+     */
+    searchTerms?: Record<string, string[]>
 
     /**
      * Question: Where should the data be fetched from?
@@ -434,10 +442,15 @@ export interface LayerConfigJson {
      * 2. search 'filters.json' for the appropriate filter or
      * 3. will try to parse it as `layername.filterid` and us that one.
      *
+     * Note: adding "#filter":"no-auto" will disable the filters added by tagRenderings
      *
      * group: filters
      */
     filter?: (FilterConfigJson | string)[] | { sameAs: string }
+    /**
+     * Set this to disable the feature that tagRenderings can introduce filters
+     */
+    "#filter"?: "no-auto"
 
     /**
      * This block defines under what circumstances the delete dialog is shown for objects of this layer.

@@ -23,7 +23,7 @@
   import Brick_wall_round from "../../assets/svg/Brick_wall_round.svelte"
   import Gps_arrow from "../../assets/svg/Gps_arrow.svelte"
   import { HeartIcon, PencilIcon, WifiIcon } from "@babeard/svelte-heroicons/solid"
-  import { HeartIcon as HeartOutlineIcon } from "@babeard/svelte-heroicons/outline"
+  import { HeartIcon as HeartOutlineIcon, HomeIcon } from "@babeard/svelte-heroicons/outline"
   import Confirm from "../../assets/svg/Confirm.svelte"
   import Not_found from "../../assets/svg/Not_found.svelte"
   import { twMerge } from "tailwind-merge"
@@ -31,7 +31,7 @@
   import Mastodon from "../../assets/svg/Mastodon.svelte"
   import Party from "../../assets/svg/Party.svelte"
   import AddSmall from "../../assets/svg/AddSmall.svelte"
-  import { LinkIcon } from "@babeard/svelte-heroicons/mini"
+  import { GlobeAltIcon, LinkIcon } from "@babeard/svelte-heroicons/mini"
   import Square_rounded from "../../assets/svg/Square_rounded.svelte"
   import Bug from "../../assets/svg/Bug.svelte"
   import Cross_bottom_right from "../../assets/svg/Cross_bottom_right.svelte"
@@ -39,6 +39,10 @@
   import Gear from "../../assets/svg/Gear.svelte"
   import { DesktopComputerIcon, UserCircleIcon } from "@rgossiaux/svelte-heroicons/solid"
   import Relocation from "../../assets/svg/Relocation.svelte"
+  import BuildingOffice2 from "@babeard/svelte-heroicons/outline/BuildingOffice2"
+  import Train from "../../assets/svg/Train.svelte"
+  import Airport from "../../assets/svg/Airport.svelte"
+  import BuildingStorefront from "@babeard/svelte-heroicons/outline/BuildingStorefront"
   import LockClosed from "@babeard/svelte-heroicons/solid/LockClosed"
   import Key from "@babeard/svelte-heroicons/solid/Key"
   import Snap from "../../assets/svg/Snap.svelte"
@@ -153,6 +157,18 @@
     <LockClosed class={clss} {color} />
   {:else if icon === "key"}
     <Key class={clss} {color} />
+    {:else if icon==="globe_alt"}
+    <GlobeAltIcon class={clss} {color} />
+  {:else if icon === "building_office_2"}
+    <BuildingOffice2 class={clss} {color} />
+  {:else if icon === "house"}
+    <HomeIcon class={clss} {color} />
+    {:else if icon === "train"}
+    <Train {color} class={clss}/>
+  {:else if icon === "airport"}
+    <Airport {color} class={clss}/>
+  {:else if icon === "building_storefront"}
+    <BuildingStorefront {color} class={clss}/>
   {:else if icon === "snap"}
     <Snap class={clss} />
   {:else if Utils.isEmoji(icon)}

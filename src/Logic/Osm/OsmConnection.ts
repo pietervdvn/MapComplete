@@ -137,7 +137,6 @@ export class OsmConnection {
         this.preferencesHandler = new OsmPreferences(this.auth, this, this.fakeUser)
 
         if (options.oauth_token?.data !== undefined) {
-            console.log(options.oauth_token.data)
             this.auth.bootstrapToken(options.oauth_token.data, (err, result) => {
                 console.log("Bootstrap token called back", err, result)
                 this.AttemptLogin()
@@ -155,20 +154,27 @@ export class OsmConnection {
             console.log("Not authenticated")
         }
     }
-
     public GetPreference<T extends string = string>(
         key: string,
         defaultValue: string = undefined,
         options?: {
-            documentation?: string
             prefix?: string
         }
     ): UIEventSource<T | undefined> {
-        return <UIEventSource<T>>this.preferencesHandler.GetPreference(key, defaultValue, options)
+        const prefix =options?.prefix ?? "mapcomplete-"
+        return <UIEventSource<T>>this.preferencesHandler.getPreference(key, defaultValue, prefix)
+
+    }
+    public getPreference<T extends string = string>(
+        key: string,
+        defaultValue: string = undefined,
+        prefix: string = "mapcomplete-"
+    ): UIEventSource<T | undefined> {
+        return <UIEventSource<T>>this.preferencesHandler.getPreference(key, defaultValue, prefix)
     }
 
     public GetLongPreference(key: string, prefix: string = "mapcomplete-"): UIEventSource<string> {
-        return this.preferencesHandler.GetLongPreference(key, prefix)
+        return this.preferencesHandler.getPreference(key, prefix)
     }
 
     public OnLoggedIn(action: (userDetails: UserDetails) => void) {
@@ -183,7 +189,6 @@ export class OsmConnection {
         this.userDetails.ping()
         console.log("Logged out")
         this.loadingStatus.setData("not-attempted")
-        this.preferencesHandler.preferences.setData(undefined)
     }
 
     /**

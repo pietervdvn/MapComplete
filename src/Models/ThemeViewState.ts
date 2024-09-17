@@ -73,6 +73,9 @@ import { LayerConfigJson } from "./ThemeConfig/Json/LayerConfigJson"
 import Hash from "../Logic/Web/Hash"
 import { GeoOperations } from "../Logic/GeoOperations"
 import { CombinedFetcher } from "../Logic/Web/NearbyImagesSearch"
+import { GeocodeResult, GeocodingUtils } from "../Logic/Search/GeocodingProvider"
+import SearchState from "../Logic/State/SearchState"
+import { ShowDataLayerOptions } from "../UI/Map/ShowDataLayerOptions"
 
 /**
  *
@@ -157,6 +160,8 @@ export default class ThemeViewState implements SpecialVisualizationState {
      * Geocoded images that should be shown on the main map; probably only the currently hovered image
      */
     public readonly geocodedImages: UIEventSource<Feature[]> = new UIEventSource<Feature[]>([    ])
+
+    public readonly searchState: SearchState
 
     constructor(layout: LayoutConfig, mvtAvailableLayers: Set<string>) {
         Utils.initDomPurify()
@@ -380,6 +385,9 @@ export default class ThemeViewState implements SpecialVisualizationState {
 
         this.featureSummary = this.setupSummaryLayer()
         this.toCacheSavers = layout.enableCache ? this.initSaveToLocalStorage() : undefined
+
+        this.searchState = new SearchState(this)
+
         this.initActors()
         this.drawSpecialLayers()
         this.initHotkeys()
@@ -557,10 +565,17 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 this.previewedImage.setData(undefined)
                 return
             }
+            if (this.selectedElement.data) {
+                this.selectedElement.setData(undefined)
+                return
+            }
+            if (this.searchState.showSearchDrawer.data) {
+                this.searchState.showSearchDrawer.set(false)
+                return
+            }
             if (this.guistate.closeAll()) {
                 return
             }
-            this.selectedElement.setData(undefined)
             Zoomcontrol.resetzoom()
             this.focusOnMap()
         })
@@ -568,6 +583,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
         Hotkeys.RegisterHotkey({ nomod: "f" }, docs.selectFavourites, () => {
             this.guistate.pageStates.favourites.set(true)
         })
+
 
         Hotkeys.RegisterHotkey(
             {
@@ -580,6 +596,9 @@ export default class ThemeViewState implements SpecialVisualizationState {
                     return false
                 }
                 if (this.guistate.isSomethingOpen() || this.previewedImage.data !== undefined) {
+                    return
+                }
+                if (document.activeElement.tagName === "button" || document.activeElement.tagName === "input") {
                     return
                 }
                 this.selectClosestAtCenter(0)
@@ -604,6 +623,12 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 () => this.selectClosestAtCenter(i - 1)
             )
         }
+
+
+        Hotkeys.RegisterHotkey({ ctrl: "F" }, Translations.t.hotkeyDocumentation.selectSearch, () => {
+            this.searchState.feedback.set(undefined)
+            this.searchState.searchIsFocused.set(true)
+        })
 
         this.featureSwitches.featureSwitchBackgroundSelection.addCallbackAndRun((enable) => {
             if (!enable) {
@@ -770,7 +795,8 @@ export default class ThemeViewState implements SpecialVisualizationState {
             current_view: this.currentView,
             favourite: this.favourites,
             summary: this.featureSummary,
-            last_click: this.lastClickObject
+            last_click: this.lastClickObject,
+            search: this.searchState.locationResults
         }
 
         this.closestFeatures.registerSource(specialLayers.favourite, "favourite")
@@ -820,13 +846,21 @@ export default class ThemeViewState implements SpecialVisualizationState {
             }
 
             this.featureProperties.trackFeatureSource(features)
-            new ShowDataLayer(this.map, {
+            const options: ShowDataLayerOptions & { layer: LayerConfig } = {
                 features,
                 doShowLayer: flayer.isDisplayed,
                 layer: flayer.layerDef,
                 metaTags: this.userRelatedState.preferencesAsTags,
                 selectedElement: this.selectedElement
-            })
+
+            }
+            if (flayer.layerDef.id === "search") {
+                options.onClick = (feature) => {
+                    this.searchState.clickedOnMap(feature)
+                }
+                delete options.selectedElement
+            }
+            new ShowDataLayer(this.map, options)
         })
         const summaryLayerConfig = new LayerConfig(<LayerConfigJson>summaryLayer, "summaryLayer")
         new ShowDataLayer(this.map, {
@@ -889,6 +923,29 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 }
             })
         })
+
+        // Add the selected element to the recently visited history
+        this.selectedElement.addCallbackD(selected => {
+            const [osm_type, osm_id] = selected.properties.id.split("/")
+            const [lon, lat] = GeoOperations.centerpointCoordinates(selected)
+            const layer = this.layout.getMatchingLayer(selected.properties)
+
+            const nameOptions = [
+                selected?.properties?.name,
+                selected?.properties?.alt_name, selected?.properties?.local_name,
+                layer?.title.GetRenderValue(selected?.properties ?? {}).txt,
+                selected.properties.display_name,
+                selected.properties.id
+            ]
+            const r = <GeocodeResult>{
+                feature: selected,
+                display_name: nameOptions.find(opt => opt !== undefined),
+                osm_id, osm_type,
+                lon, lat
+            }
+            this.userRelatedState.recentlyVisitedSearch.add(r)
+        })
+
         this.userRelatedState.showScale.addCallbackAndRun(showScale => {
             this.mapProperties.showScale.set(showScale)
         })
@@ -912,7 +969,38 @@ export default class ThemeViewState implements SpecialVisualizationState {
         this.selectedElement.setData(this.currentView.features?.data?.[0])
     }
 
+    /**
+     * Searches the appropriate layer - will first try if a special layer matches; if not, a normal layer will be used by delegating to the layout
+     */
+    public getMatchingLayer(properties: Record<string, string>) {
+
+        const id = properties.id
+
+        if (id.startsWith("summary_")) {
+            // We don't select 'summary'-objects
+            return undefined
+        }
+
+        if (id === "settings") {
+            return UserRelatedState.usersettingsConfig
+        }
+        if (id.startsWith(LastClickFeatureSource.newPointElementId)) {
+            return this.layout.layers.find((l) => l.id === "last_click")
+        }
+        if (id.startsWith("search_result")) {
+            return GeocodingUtils.searchLayer
+        }
+        if (id === "location_track") {
+            return this.layout.layers.find((l) => l.id === "gps_track")
+        }
+        return this.layout.getMatchingLayer(properties)
+    }
+
     public async reportError(message: string | Error | XMLHttpRequest, extramessage: string = "") {
+        if (Utils.runningFromConsole) {
+            console.error("Got (in themeViewSTate.reportError):", message, extramessage)
+            return
+        }
         const isTesting = this.featureSwitchIsTesting.data
         console.log(
             isTesting

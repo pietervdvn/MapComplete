@@ -60,6 +60,16 @@
     "sources": []
   },
   {
+    "path": "airport.svg",
+    "license": "CC0-1.0",
+    "authors": [
+      "Maki"
+    ],
+    "sources": [
+      "https://github.com/mapbox/maki/blob/main/icons/airport.svg"
+    ]
+  },
+  {
     "path": "back.svg",
     "license": "CC0-1.0",
     "authors": [
@@ -1181,6 +1191,16 @@
     "authors": [],
     "sources": [
       "https://pngimg.com/image/46283"
+    ]
+  },
+  {
+    "path": "train.svg",
+    "license": "CC0-1.0",
+    "authors": [
+      "Maki"
+    ],
+    "sources": [
+      "https://labs.mapbox.com/maki-icons/"
     ]
   },
   {

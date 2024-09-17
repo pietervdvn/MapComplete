@@ -342,6 +342,7 @@
       "mappings": [
         {
           "if": "cuisine=pizza",
+          "icon": "🍕",
           "then": {
             "en": "Pizzeria",
             "nl": "Pizzeria",
@@ -355,6 +356,7 @@
         },
         {
           "if": "cuisine=friture",
+          "icon": "🍟",
           "then": {
             "en": "Friture",
             "nl": "Frituur",
@@ -366,6 +368,7 @@
         },
         {
           "if": "cuisine=pasta",
+          "icon": "🍝",
           "then": {
             "en": "Serves mainly pasta",
             "nl": "Pastazaak",
@@ -379,6 +382,7 @@
         },
         {
           "if": "cuisine=kebab",
+          "icon": "🥙",
           "then": {
             "en": "Kebab shop",
             "nl": "Kebabzaak",
@@ -392,6 +396,7 @@
         },
         {
           "if": "cuisine=sandwich",
+          "icon": "🥪",
           "then": {
             "en": "Sandwich shop",
             "nl": "Broodjeszaak",
@@ -403,6 +408,7 @@
         },
         {
           "if": "cuisine=burger",
+          "icon": "🍔",
           "then": {
             "en": "Burgersrestaurant",
             "nl": "Hamburgerrestaurant",
@@ -415,6 +421,7 @@
         },
         {
           "if": "cuisine=sushi",
+          "icon": "🍣",
           "then": {
             "en": "Sushi restaurant",
             "nl": "Sushirestaurant",
@@ -427,6 +434,7 @@
         },
         {
           "if": "cuisine=coffee",
+          "icon": "☕",
           "then": {
             "en": "Coffeebar",
             "nl": "Koffiezaak",
@@ -439,6 +447,7 @@
         },
         {
           "if": "cuisine=italian",
+          "icon": "🇮🇹",
           "then": {
             "en": "Italian restaurant (which serves more than pasta and pizza)",
             "nl": "Italiaans restaurant (dat meer dan enkel pasta of pizza verkoopt)",
@@ -451,6 +460,7 @@
         },
         {
           "if": "cuisine=french",
+          "icon": "🇫🇷",
           "then": {
             "en": "French restaurant",
             "nl": "Frans restaurant",
@@ -463,6 +473,7 @@
         },
         {
           "if": "cuisine=chinese",
+          "icon": "🇨🇳",
           "then": {
             "en": "Chinese",
             "nl": "Chinees restaurant",
@@ -475,6 +486,7 @@
         },
         {
           "if": "cuisine=greek",
+          "icon": "🇬🇷",
           "then": {
             "en": "Greek",
             "nl": "Grieks restaurant",
@@ -487,6 +499,7 @@
         },
         {
           "if": "cuisine=indian",
+          "icon": "🇮🇳",
           "then": {
             "en": "Indian",
             "nl": "Indisch restaurant",
@@ -499,6 +512,7 @@
         },
         {
           "if": "cuisine=turkish",
+          "icon": "🇹🇷",
           "then": {
             "en": "Turkish restaurant",
             "nl": "Turks restaurant",
@@ -511,6 +525,7 @@
         },
         {
           "if": "cuisine=thai",
+          "icon": "🇹🇭",
           "then": {
             "en": "Thai restaurant",
             "nl": "Thaïs restaurant",
@@ -519,9 +534,42 @@
             "ca": "Aquí es serveixen plats tailandesos",
             "cs": "Podávají se zde thajské pokrmy"
           }
+        },
+        {
+          "if": "cuisine=mexican  ",
+          "icon": "🇲🇽",
+          "then": {
+            "en": "Mexican dishes are served here",
+            "nl": "Dit is een mexicaans restaurant"
+          }
+        },
+        {
+          "if": "cuisine=japanese  ",
+          "icon": "🇯🇵",
+          "then": {
+            "en": "Japanese dishes are served here",
+            "nl": "Dit is een japans restaurant"
+          }
+        },
+        {
+          "if": "cuisine=chicken  ",
+          "icon": "🐔",
+          "then": {
+            "en": "Chicken based dishes are served here",
+            "nl": "Dit is een kiprestaurant"
+          }
+        },
+        {
+          "if": "cuisine=seafood  ",
+          "icon": "🐟",
+          "then": {
+            "en": "Seafood dishes are served here",
+            "nl": "Dit is een vis- en zeerestaurant"
+          }
         }
       ],
-      "id": "Cuisine"
+      "id": "Cuisine",
+      "filter": true
     },
     {
       "id": "show-menu-image",
@@ -1291,6 +1339,7 @@
             "es": "Tiene menú vegetariano",
             "fr": "A un menu végétarien"
           },
+          "icon": "./assets/layers/food/Vegetarian-mark.svg",
           "osmTags": {
             "or": [
               "diet:vegetarian=yes",

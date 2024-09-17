@@ -2,17 +2,12 @@
   import Translations from "../i18n/Translations"
   import Tr from "../Base/Tr.svelte"
   import NextButton from "../Base/NextButton.svelte"
-  import Geosearch from "./Geosearch.svelte"
   import ThemeViewState from "../../Models/ThemeViewState"
-  import { Store, UIEventSource } from "../../Logic/UIEventSource"
-  import { SearchIcon } from "@rgossiaux/svelte-heroicons/solid"
-  import { twJoin } from "tailwind-merge"
-  import { Utils } from "../../Utils"
+  import { Store } from "../../Logic/UIEventSource"
   import type { GeolocationPermissionState } from "../../Logic/State/GeoLocationState"
   import { GeoLocationState } from "../../Logic/State/GeoLocationState"
   import If from "../Base/If.svelte"
   import { ExclamationTriangleIcon } from "@babeard/svelte-heroicons/mini"
-  import ChevronDoubleLeft from "@babeard/svelte-heroicons/solid/ChevronDoubleLeft"
   import GeolocationIndicator from "./GeolocationIndicator.svelte"
 
   /**
@@ -20,10 +15,6 @@
    */
   export let state: ThemeViewState
   let layout = state.layout
-  let selectedElement = state.selectedElement
-
-  let triggerSearch: UIEventSource<any> = new UIEventSource<any>(undefined)
-  let searchEnabled = false
 
   let geolocation = state.geolocation.geolocationState
   let geopermission: Store<GeolocationPermissionState> = geolocation.permission
@@ -35,7 +26,7 @@
     state.geolocationControl.handleClick()
     const glstate = state.geolocation.geolocationState
     if (glstate.currentGPSLocation.data !== undefined) {
-      const c: GeolocationCoordinates = glstate.currentGPSLocation.data
+      const c = glstate.currentGPSLocation.data
       state.guistate.pageStates.about_theme.setData(false)
       const coor = { lon: c.longitude, lat: c.latitude }
       state.mapProperties.location.setData(coor)
@@ -88,36 +79,6 @@
           <GeolocationIndicator {state} />
           <Tr t={$gpsExplanation} />
         </button>
-      </If>
-
-      <If condition={state.featureSwitches.featureSwitchSearch}>
-        <div
-          class=".button low-interaction m-1 flex h-fit w-full flex-wrap items-center justify-end gap-x-2 gap-y-2 rounded border p-1"
-        >
-          <div style="min-width: 16rem; " class="grow">
-            <Geosearch
-              bounds={state.mapProperties.bounds}
-              on:searchCompleted={() => state.guistate.pageStates.about_theme.setData(false)}
-              on:searchIsValid={(event) => {
-                searchEnabled = event.detail
-              }}
-              perLayer={state.perLayer}
-              {selectedElement}
-              {triggerSearch}
-              geolocationState={state.geolocation.geolocationState}
-            />
-          </div>
-          <button
-            class={twJoin(
-              "small flex w-fit shrink-0 items-center justify-between gap-x-2",
-              !searchEnabled && "disabled"
-            )}
-            on:click={() => triggerSearch.ping()}
-          >
-            <Tr t={Translations.t.general.search.searchShort} />
-            <SearchIcon class="h-6 w-6" />
-          </button>
-        </div>
       </If>
     </div>
 

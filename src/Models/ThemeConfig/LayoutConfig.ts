@@ -12,7 +12,21 @@ import { RasterLayerProperties } from "../RasterLayerProperties"
 
 import { ConversionContext } from "./Conversion/ConversionContext"
 import { Translatable } from "./Json/Translatable"
+import { MinimalTagRenderingConfigJson, TagRenderingConfigJson } from "./Json/TagRenderingConfigJson"
 
+/**
+ * Minimal information about a theme
+ **/
+export class MinimalLayoutInformation {
+    id: string
+    icon: string
+    title: Translatable
+    shortDescription: Translatable
+    mustHaveLanguage?: boolean
+    hideFromOverview?: boolean
+    keywords?: Record<string, string[]>
+    layers: string[]
+}
 /**
  * Minimal information about a theme
  **/
@@ -26,6 +40,8 @@ export class LayoutInformation {
     hideFromOverview?: boolean
     keywords?: (Translatable | Translation)[]
 }
+
+
 
 export default class LayoutConfig implements LayoutInformation {
     public static readonly defaultSocialImage = "assets/SocialImage.png"
@@ -324,7 +340,7 @@ export default class LayoutConfig implements LayoutInformation {
                 }
             }
         }
-        console.log("Fallthrough", this, tags)
+        console.trace("Fallthrough: could not find the appropriate layer for an object with tags", tags, "within layout", this)
         return undefined
     }
 
@@ -338,7 +354,7 @@ export default class LayoutConfig implements LayoutInformation {
             ...json,
             layers: json.layers.filter((l) => l["id"] !== "favourite"),
         }
-        const usedImages = json._usedImages
+        const usedImages = jsonNoFavourites._usedImages
         usedImages.sort()
 
         this.usedImages = Utils.Dedup(usedImages)

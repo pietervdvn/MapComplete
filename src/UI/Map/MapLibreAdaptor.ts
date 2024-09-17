@@ -32,6 +32,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         "touchZoomRotate"
     ]
     readonly location: UIEventSource<{ lon: number; lat: number }>
+    private readonly isFlying = new UIEventSource(false)
     readonly zoom: UIEventSource<number>
     readonly bounds: UIEventSource<BBox>
     readonly rasterLayer: UIEventSource<RasterLayerPolygon | undefined>
@@ -148,7 +149,13 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             self.setTerrain(self.useTerrain.data)
             self.setScale(self.showScale.data)
             this.updateStores(true)
-            map.on("moveend", () => this.updateStores())
+            map.on("movestart", () => {
+                this.isFlying.setData(true)
+            })
+            map.on("moveend", () => {
+                this.isFlying.setData(false)
+                this.updateStores()
+            })
             map.on("click", (e) => {
                 handleClick(e)
             })
@@ -506,6 +513,9 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         if (!map || z === undefined) {
             return
         }
+        if (this.isFlying.data) {
+            return
+        }
         if (Math.abs(map.getZoom() - z) > 0.01) {
             map.setZoom(z)
         }
@@ -653,7 +663,20 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         if (!hasDiff) {
             return
         }
+        this.lockZoom()
         map.fitBounds(bounds.toLngLat())
+    }
+
+    /**
+     * Should be called before making an animation.
+     * First, 'isFlying' is set to true. This will disable the zoom control
+     * Then, zoom is set to '1', which is very low. This will generally disable all layers, after which this function will return
+     *
+     * Then, a zoom/pan/... animation can be made; after which a 'moveEnd'-event will trigger the 'isFlying' to be set to false and the zoom to be set correctly
+     */
+    private lockZoom() {
+        this.isFlying.setData(true)
+        this.zoom.setData(1)
     }
 
     private async setTerrain(useTerrain: boolean) {
@@ -709,5 +732,15 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         if (!map.hasControl(this.scaleControl)) {
             map.addControl(this.scaleControl, "bottom-right")
         }
+    }
+
+    public flyTo(lon: number, lat: number, zoom: number) {
+        this.lockZoom()
+        window.requestAnimationFrame(() => {
+            this._maplibreMap.data?.flyTo({
+                zoom,
+                center: [lon, lat]
+            })
+        })
     }
 }

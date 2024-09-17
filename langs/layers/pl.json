@@ -2180,6 +2180,13 @@
                                 "arialabel": "Otwórz na openstreetmap.org"
                             }
                         }
+                    },
+                    "2": {
+                        "then": {
+                            "special": {
+                                "arialabel": "Otwórz na openstreetmap.org"
+                            }
+                        }
                     }
                 },
                 "render": {

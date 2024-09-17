@@ -23,12 +23,14 @@ import Constants from "../Constants"
 import { QuestionableTagRenderingConfigJson } from "./Json/QuestionableTagRenderingConfigJson"
 import MarkdownUtils from "../../Utils/MarkdownUtils"
 import { And } from "../../Logic/Tags/And"
+import Combine from "../../UI/Base/Combine"
 
 export default class LayerConfig extends WithContextLoader {
     public static readonly syncSelectionAllowed = ["no", "local", "theme-only", "global"] as const
     public readonly id: string
     public readonly name: Translation
     public readonly description: Translation
+    public readonly searchTerms: Record<string, string[]>
     /**
      * Only 'null' for special, privileged layers
      */
@@ -83,9 +85,12 @@ export default class LayerConfig extends WithContextLoader {
         }
 
         this.syncSelection = json.syncSelection ?? "no"
-        if (!json.source) {
+        if(!json.source) {
+            if(json.presets === undefined){
+                throw "Error while parsing "+json.id+" in "+context+"; no source given"
+            }
             this.source = new SourceConfig({
-                osmTags: TagUtils.Tag({ or: json.presets.map((pr) => ({ and: pr.tags })) }),
+                osmTags: TagUtils.Tag({or: json.presets.map(pr => ({and:pr.tags}))}),
             })
         } else if (typeof json.source !== "string") {
             this.maxAgeOfCache = json.source["maxCacheAge"] ?? 24 * 60 * 60 * 30
@@ -112,8 +117,8 @@ export default class LayerConfig extends WithContextLoader {
                 json.description = undefined
             }
         }
-
         this.description = Translations.T(json.description, translationContext + ".description")
+        this.searchTerms = json.searchTerms ?? {}
 
         this.calculatedTags = undefined
         if (json.calculatedTags !== undefined) {
@@ -353,11 +358,13 @@ export default class LayerConfig extends WithContextLoader {
         if (this.mapRendering === undefined || this.mapRendering === null) {
             return undefined
         }
-        const mapRendering = this.mapRendering.filter((r) => r.location.has("point"))[0]
-        if (mapRendering === undefined) {
+        const mapRenderings = this.mapRendering.filter((r) => r.location.has("point"))
+        if (mapRenderings.length === 0) {
             return undefined
         }
-        return mapRendering.GetBaseIcon(properties ?? this.GetBaseTags())
+        return new Combine(mapRenderings.map(
+            mr => mr.GetBaseIcon(properties ?? this.GetBaseTags()).SetClass("absolute left-0 top-0 w-full h-full"))
+        ).SetClass("relative block w-full h-full")
     }
 
     public GetBaseTags(): Record<string, string> {
@@ -633,5 +640,26 @@ export default class LayerConfig extends WithContextLoader {
             }
         }
         return mostShadowed ?? matchingPresets[0]
+    }
+
+    /**
+     * Indicates if this is a normal layer, meaning that it can be toggled by the user in normal circumstances
+     * Thus: name is set, not a note import layer, not synced with another filter, ...
+     */
+    public isNormal(){
+        if(this.id.startsWith("note_import")){
+            return false
+        }
+
+        if(Constants.added_by_default.indexOf(<any> this.id) >=0){
+            return false
+        }
+        if(this.filterIsSameAs !== undefined){
+            return false
+        }
+        if(!this.name ){
+            return false
+        }
+        return true
     }
 }

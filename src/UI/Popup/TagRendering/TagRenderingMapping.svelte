@@ -20,6 +20,7 @@
   export let tags: UIEventSource<Record<string, string>>
   export let state: SpecialVisualizationState
   export let layer: LayerConfig
+  export let noIcons = false
 
   /**
    * Css classes to apply
@@ -57,7 +58,7 @@
   }
 </script>
 
-{#if mapping.icon !== undefined}
+{#if mapping.icon !== undefined && !noIcons}
   <div class="inline-flex items-center">
     {#if mapping.icon === "auto"}
       <div class="mr-2 h-8 w-8 shrink-0">

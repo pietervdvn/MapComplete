@@ -908,9 +908,12 @@ export class GeoOperations {
     }
 
     /**
-     * GeoOperations.distanceToHuman(52.8) // => "53m"
+     * GeoOperations.distanceToHuman(52.3) // => "50m"
+     * GeoOperations.distanceToHuman(999) // => "1.0km"
      * GeoOperations.distanceToHuman(2800) // => "2.8km"
      * GeoOperations.distanceToHuman(12800) // => "13km"
+     * GeoOperations.distanceToHuman(128000) // => "130km"
+     *
      *
      * @param meters
      */
@@ -918,13 +921,13 @@ export class GeoOperations {
         if (meters === undefined) {
             return ""
         }
-        meters = Math.round(meters)
+        meters = Utils.roundHuman( Math.round(meters))
         if (meters < 1000) {
-            return meters + "m"
+            return Utils.roundHuman(meters) + "m"
         }
 
         if (meters >= 10000) {
-            const km = Math.round(meters / 1000)
+            const km =  Utils.roundHuman(Math.round(meters / 1000))
             return km + "km"
         }
 

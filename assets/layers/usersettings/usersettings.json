@@ -306,6 +306,12 @@
       }
     },
     {
+      "id": "title-map",
+      "render": {
+        "en": "<h3>Configure map</h3>"
+      }
+    },
+    {
       "id": "a11y-features",
       "question": {
         "en": "What accessibility features should be applied?",
@@ -471,6 +477,81 @@
       ]
     },
     {
+      "id": "show_crosshair",
+      "question": {
+        "en": "Should a crosshair be shown in the center of the display?",
+        "cs": "Měl by se uprostřed displeje zobrazovat kříž?",
+        "de": "Soll ein Fadenkreuz in der Mitte des Bildschirms angezeigt werden?",
+        "nl": "Moet er een kruisje getoond worden in het centrum van je display?"
+      },
+      "questionHint": {
+        "en": "This can help to accurately position a new element",
+        "cs": "To může pomoci přesněji umístit nový prvek",
+        "de": "Dies kann dazu beitragen, ein neues Element genau zu positionieren",
+        "nl": "Dit kan helpen om nieuwe elementen accuraat te plaatsen",
+        "ca": "Això pot ajudar a posicionar amb precisió un nou element"
+      },
+      "mappings": [
+        {
+          "if": "mapcomplete-show_crosshair=yes",
+          "then": "Show a crosshair in the center of the map when zoomed in above level 17"
+        },
+        {
+          "if": "mapcomplete-show_crosshair=no",
+          "then": "Do not show a crosshair in the center of the map"
+        },
+        {
+          "if": "mapcomplete-show_crosshair=",
+          "then": "Do not show a crosshair in the center of the map",
+          "hideInAnswer": true
+        },
+        {
+          "if": "mapcomplete-show_crosshair=always",
+          "then": "Always show a crosshair in the center of the map"
+        }
+      ]
+    },
+    {
+      "id": "fixate-north",
+      "question": {
+        "en": "Should north always be up?",
+        "de": "Soll Norden immer oben sein?",
+        "ca": "El nord hauria d'estar sempre amunt?",
+        "cs": "Měl by být sever vždy nahoře?",
+        "nl": "Moet het noorden altijd naar boven getoond worden?",
+        "da": "Skal nord altid pege opad?"
+      },
+      "mappings": [
+        {
+          "if": "mapcomplete-fixate-north=no",
+          "alsoShowIf": "mapcomplete-fixate-north=",
+          "icon": "./assets/svg/compass.svg",
+          "then": {
+            "en": "Allow to rotate the map",
+            "de": "Drehen der Karte zulassen",
+            "ca": "Permet girar el mapa",
+            "fr": "Autoriser la rotation de la carte",
+            "da": "Tillad rotation af kortet",
+            "cs": "Umožnit otáčení mapy",
+            "nl": "Sta kaartrotatie toe"
+          }
+        },
+        {
+          "if": "mapcomplete-fixate-north=yes",
+          "icon": "./assets/svg/compass.svg",
+          "then": {
+            "en": "Always keep north pointing up",
+            "de": "Norden immer nach oben zeigen lassen",
+            "fr": "Toujours garder le nord en haut",
+            "ca": "Mantingueu sempre el nord apuntant cap amunt",
+            "cs": "Sever vždy směřujte nahoru",
+            "nl": "Hou het noorden altijd naar boven",
+            "da": "Nord peger altid opad"
+          }
+        }
+      ]
+    },
+    {
       "id": "scalebar",
       "question": {
         "en": "Should a scale bar be shown on the map?",
@@ -490,6 +571,214 @@
           "then": {
             "en": "Hide the scalebar",
             "nl": "Verberg de schaalbalk"
+          }
+        }
+      ]
+    },
+    {
+      "id": "title-editing",
+      "render": {
+        "en": "<h3>Editing settings</h3>"
+      }
+    },
+    {
+      "id": "all-questions-at-once",
+      "question": {
+        "en": "Should questions for unknown data fields appear one-by-one or together?",
+        "de": "Sollen Fragen für unbekannte Datenfelder einzeln oder zusammen angezeigt werden?",
+        "fr": "Est-ce que les questions pour les champs sans donnée doivent apparaître une à une ou toutes ensembles ?",
+        "pt": "As perguntas para campos de dados desconhecidos devem aparecer uma a uma ou juntas?",
+        "ca": "Les preguntes amb camps de dades desconeguts haurien d'aparèixer una per una o juntes?",
+        "nl": "Moeten onbeantwoorde vragen om beurt of allemaal samen getoond worden?",
+        "cs": "Mají se otázky pro neznámá datová pole zobrazovat jednotlivě, nebo společně?",
+        "da": "Skal spørgsmål for ukendte oplysninger vises ét ad gangen eller alle på én gang?"
+      },
+      "mappings": [
+        {
+          "if": "mapcomplete-show-all-questions=true",
+          "then": {
+            "en": "Show all questions in the infobox together",
+            "de": "Alle Fragen in der Infobox zusammen anzeigen",
+            "ca": "Mostra totes les preguntes al quadre d'informació",
+            "fr": "Afficher toutes les question en même temps dans l'infobox",
+            "pt": "Mostrar todas as perguntas na caixa de informações juntas",
+            "nl": "Toon alle onbeantwoorde vragen",
+            "cs": "Zobrazit všechny otázky v infoboxu dohromady",
+            "da": "Vis alle spørgsmål i infoboksen på én gang"
+          }
+        },
+        {
+          "if": "mapcomplete-show-all-questions=false",
+          "then": {
+            "en": "Show questions one-by-one",
+            "de": "Fragen der Reihe nach anzeigen",
+            "ca": "Mostra les preguntes una per una",
+            "fr": "Afficher les questions une à une",
+            "pt": "Mostrar perguntas uma a uma",
+            "nl": "Toon de vragen één per één",
+            "cs": "Zobrazit otázky jednu po druhé",
+            "da": "Vis spørgsmål ét ad gangen"
+          }
+        }
+      ]
+    },
+    {
+      "id": "show_tags",
+      "question": {
+        "en": "Show the raw OpenStreetMap-tags?",
+        "de": "Rohe OpenStreetMap-Tags anzeigen?",
+        "fr": "Afficher les attributs OpenStreetMap bruts ?",
+        "ca": "Mostra les etiquetes d'OpenStreetMap en brut?",
+        "cs": "Zobrazit nezpracované/raw tagy OpenStreetMap?",
+        "nl": "Moeten de data-attributen getoond worden?"
+      },
+      "questionHint": {
+        "en": "<b>Tags</b> are attributes that every element has. This is the technical data that is stored in the database. You don't need this information to edit with MapComplete, but advanced users might want to use this as reference.",
+        "de": "<b>Tags</b> sind die Eigenschaften, die jedes Objekt hat. Das sind die technischen Daten, die in der Datenbank gespeichert werden. Du brauchst diese Informationen nicht, um mit MapComplete Änderungen zu machen, aber fortgeschrittenen Nutzer*innen kann es als Referenz dienen.",
+        "ca": "Les <b>etiquetes</b> són atributs que té cada element. Aquestes són les dades tècniques que s'emmagatzemen a la base de dades. No necessiteu aquesta informació per editar amb MapComplete, però és possible que els usuaris avançats la vulguin fer servir com a referència.",
+        "cs": "<b>Tagy</b> jsou atributy, které má každý element. Jedná se o technické údaje, které jsou uloženy v databázi. K úpravám pomocí MapComplete tyto informace nepotřebujete, ale pokročilí uživatelé by je mohli chtít použít jako referenci.",
+        "nl": "<b>Data-attributen</b> zijn stukjes data die elk element in OpenStreetMap heeft. Dit is technische data die in de databank komt. Je hoeft deze informatie niet te kennen om aanpassingen te maken met MapComplete, maar geavanceerde gebruikers kunnen dit als referentie gebruiken.",
+        "fr": "Les<b>Tags</b> ou étiquettes sont des attributs rattachés à chaque élément. C'est une donnée technique qui est stockée dans une base de données. Vous n'avez pas besoin de connaître ces étiquettes pour utiliser MapComplete, mais certains utilisateurs préfèrent les afficher."
+      },
+      "mappings": [
+        {
+          "if": "mapcomplete-show_tags=no",
+          "then": {
+            "en": "Never show the tags.",
+            "de": "Tags nie anzeigen.",
+            "ca": "No mostris mai les etiquetes.",
+            "cs": "Nikdy nezobrazovat tagy.",
+            "nl": "Verberg data-attributen",
+            "fr": "Ne jamais voir les étiquettes."
+          }
+        },
+        {
+          "if": "mapcomplete-show_tags=",
+          "then": {
+            "en": "Show the tags that will be applied once I have made {__userjourney_tagsVisibleAt} changesets",
+            "de": "Tags anzeigen, sobald ich {__userjourney_tagsVisibleAt} Änderungssätze erstellt habe",
+            "ca": "Mostra les etiquetes que s'aplicaran un cop hagi fet {__userjourney_tagsVisibleAt} conjunts de canvis",
+            "cs": "Zobrazit tagy, které budou použity, jakmile provedu {__userjourney_tagsVisibleAt} sady změn",
+            "nl": "Toon data-attributen bij wijzigingen indien je meer dan {__userjourney_tagsVisibleAt} changesets hebt gemaakt",
+            "fr": "Voir les étiquettes au bout de  {__userjourney_tagsVisibleAt} modifications"
+          }
+        },
+        {
+          "if": "mapcomplete-show_tags=yes",
+          "then": {
+            "en": "Show the tags that will be applied when making a change",
+            "de": "Tags anzeigen, die bei der Änderung hinzugefügt werden",
+            "ca": "Mostra les etiquetes que s'aplicaran en fer un canvi",
+            "cs": "Zobrazení tagů, které budou použity při provádění změny",
+            "nl": "Toon de data-attributen die toegepast zullen worden bij wijzigingen",
+            "fr": "Voir les étiquettes quand je fais une modification"
+          }
+        },
+        {
+          "if": "mapcomplete-show_tags=full",
+          "then": {
+            "en": "Show the tags that will be applied when making a change and show the tags table on every feature",
+            "de": "Tags anzeigen, die bei der Änderung hinzugefügt werden, und Tag-Tabelle bei jedem Objekt anzeigen",
+            "ca": "Mostra les etiquetes que s'aplicaran a l'hora de fer un canvi i mostra la taula d'etiquetes a cada element",
+            "cs": "Zobrazení tagů, které se použijí při provádění změny, a zobrazení tabulky tagů u každé funkce",
+            "nl": "Toon de data-attributen die toegepast zullen worden bij wijzigingen en toon een tabel met alle data-attributen bij elk object.",
+            "fr": "Voir les étiquettes quand je fais une modification et toujours voir les étiquettes pour chaque élément"
+          }
+        }
+      ]
+    },
+    {
+      "id": "add-new-feature",
+      "question": {
+        "en": "How should the menu to add a new feature be opened?",
+        "de": "Wie soll das Menü zum Hinzufügen eines neuen Objekts geöffnet werden?"
+      },
+      "mappings": [
+        {
+          "if": "mapcomplete-preferences-add-new-mode=button",
+          "then": {
+            "en": "Adding a new feature is done with the button at the bottom left. Clicking the map does nothing",
+            "de": "Das Hinzufügen eines neuen Objekts erfolgt über die Schaltfläche unten links. Ein Klick auf die Karte bewirkt nichts"
+          }
+        },
+        {
+          "if": "mapcomplete-preferences-add-new-mode=click",
+          "then": {
+            "en": "When clicking or tapping the map, a marker pops up where a new feature is added",
+            "de": "Wenn Sie auf die Karte klicken oder tippen, wird eine Markierung eingeblendet, an der ein neues Objekt hinzugefügt wird"
+          }
+        },
+        {
+          "if": "mapcomplete-preferences-add-new-mode=click_right",
+          "then": {
+            "en": "When right-clicking or long-pressing the map, a marker pops up where a new feature can be added",
+            "de": "Beim Rechtsklick oder einem langen Druck auf die Karte erscheint eine Markierung, mit der ein neues Objekt hinzugefügt werden kann"
+          }
+        },
+        {
+          "if": "mapcomplete-preferences-add-new-mode=button_click",
+          "then": {
+            "en": "When clicking or tapping the map, a marker pops up where a new feature can be added. Additionally, a button at the bottom left is shown",
+            "de": "Beim Klicken oder Tippen auf die Karte wird eine Markierung eingeblendet, an der ein neues Objekt hinzugefügt werden kann. Zusätzlich wird unten links eine Schaltfläche angezeigt"
+          }
+        },
+        {
+          "if": "mapcomplete-preferences-add-new-mode=button_click_right",
+          "then": {
+            "en": "When right-clicking or long-pressing the map, a marker pops up where a new feature can be added. Additionally, a button at the bottom left is shown",
+            "de": "Beim Rechtsklick oder einem langen Druck auf die Karte erscheint eine Markierung, an der ein neues Objekt hinzugefügt werden kann. Zusätzlich wird unten links eine Schaltfläche angezeigt"
+          }
+        }
+      ]
+    },
+    {
+      "id": "title-privacy-legal",
+      "render": {
+        "en": "<h3>Privacy and legal</h3>"
+      }
+    },
+    {
+      "id": "more_privacy_theme_override",
+      "mappings": [
+        {
+          "if": "__featureSwitchMorePrivacy=true",
+          "then": {
+            "en": "This theme is sensitive. Making changes will not indicate if you were nearby explicitly.",
+            "de": "Dieses Thema ist sensibel. Wenn du Änderungen vornimmst, wird nicht angezeigt, ob du explizit in der Nähe warst.",
+            "nl": "Dit thema ligt gevoelig. Wijzigingen aan objecten zullen niet aangeven of je in de buurt was."
+          }
+        }
+      ]
+    },
+    {
+      "id": "more_privacy",
+      "question": {
+        "en": "When making changes, should a rough indication be given how far away you were from the object?",
+        "de": "Sollte bei Änderungen eine grobe Angabe gemacht werden, wie weit du vom Objekt entfernt warst?",
+        "nl": "Mag er opgeslaan worden hoever je je van een object bevindt wanneer je aanpassingen maakt aan dit object?"
+      },
+      "questionHint": {
+        "en": "If you make a change to one or more objects and you enabled your location, a rough indication of where you made will be saved: it is indicated if you were closer then 25m, 500m, 5km or further away then 5km. This helps mappers understand your context when making changes, but gives an indication of where you were at this time. ",
+        "de": "Wenn du eine Änderung an einem oder mehreren Objekten vornimmst und deinen Standort aktivierst, wird eine ungefähre Angabe darüber gespeichert, wo du dich befunden hast: Es wird angezeigt, ob du näher als 25m, 500m, 5km oder weiter als 5km entfernt warst. Das hilft den Kartierern, deinen Kontext zu verstehen, wenn du Änderungen vornimmst, gibt aber auch einen Hinweis darauf, wo du zu diesem Zeitpunkt warst. ",
+        "nl": "Wanneer je een wijziging maakt aan één of meer interessepunten en als MapComplete toont waar je bent, dan kan opgeslaan worden hoever je je ongeveer van deze objecten bevindt. Er wordt aangeduid of je dichter dan 25m, 500m, 5km of verder dan 5km was. Dit helpt om andere bijdragers te begrijpen hoe je je bijdragen deed, maar geeft natuurlijk ook aan waar je op dat moment was. "
+      },
+      "mappings": [
+        {
+          "if": "mapcomplete-more_privacy=yes",
+          "icon": "./assets/svg/eye.svg",
+          "then": {
+            "en": "When making changes to OpenStreetMap, do not indicate how far away you were from the changed objects.",
+            "de": "Wenn du Änderungen an OpenStreetMap vornimmst, gibst du nicht an, wie weit du von den geänderten Objekten entfernt warst.",
+            "nl": "Geef niet aan hoever je je van de gewijzigde objecten bevindt wanneer je wijzigingen maakt met MapComplete."
+          }
+        },
+        {
+          "if": "mapcomplete-more_privacy=no",
+          "icon": "cross_bottom_right:red;./assets/svg/eye.svg",
+          "then": {
+            "en": "When making changes to OpenStreetMap, roughly indicate how far away you were from the changed objects. This helps other contributors to understand how you made the change",
+            "de": "Gebe bei Änderungen an OpenStreetMap an, wie weit du ungefähr von den geänderten Objekten entfernt warst. Das hilft anderen Mitwirkenden zu verstehen, wie du die Änderung vorgenommen hast",
+            "nl": "Geef aan hoever je je ongeveer bevindt ten opzichte van objecten die je wijzigt in OpenStreetMap. Dit helpt andere bijdagers te begrijpen welke wijzigingen je waarom maakt."
           }
         }
       ]
@@ -564,275 +853,70 @@
       ]
     },
     {
-      "id": "show_tags",
+      "id": "sync-visited-themes",
       "question": {
-        "en": "Show the raw OpenStreetMap-tags?",
-        "de": "Rohe OpenStreetMap-Tags anzeigen?",
-        "fr": "Afficher les attributs OpenStreetMap bruts ?",
-        "ca": "Mostra les etiquetes d'OpenStreetMap en brut?",
-        "cs": "Zobrazit nezpracované/raw tagy OpenStreetMap?",
-        "nl": "Moeten de data-attributen getoond worden?"
+        "en": "Should the thematic maps you visit be saved?"
       },
       "questionHint": {
-        "en": "<b>Tags</b> are attributes that every element has. This is the technical data that is stored in the database. You don't need this information to edit with MapComplete, but advanced users might want to use this as reference.",
-        "de": "<b>Tags</b> sind die Eigenschaften, die jedes Objekt hat. Das sind die technischen Daten, die in der Datenbank gespeichert werden. Du brauchst diese Informationen nicht, um mit MapComplete Änderungen zu machen, aber fortgeschrittenen Nutzer*innen kann es als Referenz dienen.",
-        "ca": "Les <b>etiquetes</b> són atributs que té cada element. Aquestes són les dades tècniques que s'emmagatzemen a la base de dades. No necessiteu aquesta informació per editar amb MapComplete, però és possible que els usuaris avançats la vulguin fer servir com a referència.",
-        "cs": "<b>Tagy</b> jsou atributy, které má každý element. Jedná se o technické údaje, které jsou uloženy v databázi. K úpravám pomocí MapComplete tyto informace nepotřebujete, ale pokročilí uživatelé by je mohli chtít použít jako referenci.",
-        "nl": "<b>Data-attributen</b> zijn stukjes data die elk element in OpenStreetMap heeft. Dit is technische data die in de databank komt. Je hoeft deze informatie niet te kennen om aanpassingen te maken met MapComplete, maar geavanceerde gebruikers kunnen dit als referentie gebruiken.",
-        "fr": "Les<b>Tags</b> ou étiquettes sont des attributs rattachés à chaque élément. C'est une donnée technique qui est stockée dans une base de données. Vous n'avez pas besoin de connaître ces étiquettes pour utiliser MapComplete, mais certains utilisateurs préfèrent les afficher."
+        "en": "If you visit a map about a certain topic, MapComplete can remember this and offer this as suggestion."
       },
       "mappings": [
         {
-          "if": "mapcomplete-show_tags=no",
+          "if": "mapcomplete-preference-theme-history=sync",
+          "alsoShowIf": "mapcomplete-preference-theme-history=",
           "then": {
-            "en": "Never show the tags.",
-            "de": "Tags nie anzeigen.",
-            "ca": "No mostris mai les etiquetes.",
-            "cs": "Nikdy nezobrazovat tagy.",
-            "nl": "Verberg data-attributen",
-            "fr": "Ne jamais voir les étiquettes."
+            "en": "Save the visited thematic maps and sync them via openstreetmap.org. OpenStreetMap and all apps you use can see this history"
           }
         },
         {
-          "if": "mapcomplete-show_tags=",
+          "if": "mapcomplete-preference-theme-history=local",
           "then": {
-            "en": "Show the tags that will be applied once I have made {__userjourney_tagsVisibleAt} changesets",
-            "de": "Tags anzeigen, sobald ich {__userjourney_tagsVisibleAt} Änderungssätze erstellt habe",
-            "ca": "Mostra les etiquetes que s'aplicaran un cop hagi fet {__userjourney_tagsVisibleAt} conjunts de canvis",
-            "cs": "Zobrazit tagy, které budou použity, jakmile provedu {__userjourney_tagsVisibleAt} sady změn",
-            "nl": "Toon data-attributen bij wijzigingen indien je meer dan {__userjourney_tagsVisibleAt} changesets hebt gemaakt",
-            "fr": "Voir les étiquettes au bout de  {__userjourney_tagsVisibleAt} modifications"
+            "en": "Save the visited thematic maps on my device"
           }
         },
         {
-          "if": "mapcomplete-show_tags=yes",
+          "if": "mapcomplete-preference-theme-history=no",
           "then": {
-            "en": "Show the tags that will be applied when making a change",
-            "de": "Tags anzeigen, die bei der Änderung hinzugefügt werden",
-            "ca": "Mostra les etiquetes que s'aplicaran en fer un canvi",
-            "cs": "Zobrazení tagů, které budou použity při provádění změny",
-            "nl": "Toon de data-attributen die toegepast zullen worden bij wijzigingen",
-            "fr": "Voir les étiquettes quand je fais une modification"
-          }
-        },
-        {
-          "if": "mapcomplete-show_tags=full",
-          "then": {
-            "en": "Show the tags that will be applied when making a change and show the tags table on every feature",
-            "de": "Tags anzeigen, die bei der Änderung hinzugefügt werden, und Tag-Tabelle bei jedem Objekt anzeigen",
-            "ca": "Mostra les etiquetes que s'aplicaran a l'hora de fer un canvi i mostra la taula d'etiquetes a cada element",
-            "cs": "Zobrazení tagů, které se použijí při provádění změny, a zobrazení tabulky tagů u každé funkce",
-            "nl": "Toon de data-attributen die toegepast zullen worden bij wijzigingen en toon een tabel met alle data-attributen bij elk object.",
-            "fr": "Voir les étiquettes quand je fais une modification et toujours voir les étiquettes pour chaque élément"
+            "en": "Don't save visited thematic maps"
           }
         }
       ]
     },
     {
-      "id": "all-questions-at-once",
+      "id": "sync-visited-locations",
       "question": {
-        "en": "Should questions for unknown data fields appear one-by-one or together?",
-        "de": "Sollen Fragen für unbekannte Datenfelder einzeln oder zusammen angezeigt werden?",
-        "fr": "Est-ce que les questions pour les champs sans donnée doivent apparaître une à une ou toutes ensembles ?",
-        "pt": "As perguntas para campos de dados desconhecidos devem aparecer uma a uma ou juntas?",
-        "ca": "Les preguntes amb camps de dades desconeguts haurien d'aparèixer una per una o juntes?",
-        "nl": "Moeten onbeantwoorde vragen om beurt of allemaal samen getoond worden?",
-        "cs": "Mají se otázky pro neznámá datová pole zobrazovat jednotlivě, nebo společně?",
-        "da": "Skal spørgsmål for ukendte oplysninger vises ét ad gangen eller alle på én gang?"
-      },
-      "mappings": [
-        {
-          "if": "mapcomplete-show-all-questions=true",
-          "then": {
-            "en": "Show all questions in the infobox together",
-            "de": "Alle Fragen in der Infobox zusammen anzeigen",
-            "ca": "Mostra totes les preguntes al quadre d'informació",
-            "fr": "Afficher toutes les question en même temps dans l'infobox",
-            "pt": "Mostrar todas as perguntas na caixa de informações juntas",
-            "nl": "Toon alle onbeantwoorde vragen",
-            "cs": "Zobrazit všechny otázky v infoboxu dohromady",
-            "da": "Vis alle spørgsmål i infoboksen på én gang"
-          }
-        },
-        {
-          "if": "mapcomplete-show-all-questions=false",
-          "then": {
-            "en": "Show questions one-by-one",
-            "de": "Fragen der Reihe nach anzeigen",
-            "ca": "Mostra les preguntes una per una",
-            "fr": "Afficher les questions une à une",
-            "pt": "Mostrar perguntas uma a uma",
-            "nl": "Toon de vragen één per één",
-            "cs": "Zobrazit otázky jednu po druhé",
-            "da": "Vis spørgsmål ét ad gangen"
-          }
-        }
-      ]
-    },
-    {
-      "id": "show_crosshair",
-      "question": {
-        "en": "Should a crosshair be shown in the center of the display?",
-        "cs": "Měl by se uprostřed displeje zobrazovat kříž?",
-        "de": "Soll ein Fadenkreuz in der Mitte des Bildschirms angezeigt werden?",
-        "nl": "Moet er een kruisje getoond worden in het centrum van je display?"
+        "en": "Should the locations you search for and inspect be remembered?"
       },
       "questionHint": {
-        "en": "This can help to accurately position a new element",
-        "cs": "To může pomoci přesněji umístit nový prvek",
-        "de": "Dies kann dazu beitragen, ein neues Element genau zu positionieren",
-        "nl": "Dit kan helpen om nieuwe elementen accuraat te plaatsen",
-        "ca": "Això pot ajudar a posicionar amb precisió un nou element"
+        "en": "Those locations will be offered in the search menu"
       },
       "mappings": [
         {
-          "if": "mapcomplete-show_crosshair=yes",
-          "then": "Show a crosshair in the center of the map when zoomed in above level 17"
-        },
-        {
-          "if": "mapcomplete-show_crosshair=no",
-          "then": "Do not show a crosshair in the center of the map"
-        },
-        {
-          "if": "mapcomplete-show_crosshair=",
-          "then": "Do not show a crosshair in the center of the map",
-          "hideInAnswer": true
-        },
-        {
-          "if": "mapcomplete-show_crosshair=always",
-          "then": "Always show a crosshair in the center of the map"
-        }
-      ]
-    },
-    {
-      "id": "add-new-feature",
-      "question": {
-        "en": "How should the menu to add a new feature be opened?",
-        "de": "Wie soll das Menü zum Hinzufügen eines neuen Objekts geöffnet werden?"
-      },
-      "mappings": [
-        {
-          "if": "mapcomplete-preferences-add-new-mode=button",
+          "if": "mapcomplete-preference-search-history=sync",
+          "alsoShowIf": "mapcomplete-preference-search-history=",
           "then": {
-            "en": "Adding a new feature is done with the button at the bottom left. Clicking the map does nothing",
-            "de": "Das Hinzufügen eines neuen Objekts erfolgt über die Schaltfläche unten links. Ein Klick auf die Karte bewirkt nichts"
+            "en": "Save the locations you search for and inspect and sync them via openstreetmap.org. OpenStreetMap and all apps you use can see this history"
           }
         },
         {
-          "if": "mapcomplete-preferences-add-new-mode=click",
+          "if": "mapcomplete-preference-search-history=local",
           "then": {
-            "en": "When clicking or tapping the map, a marker pops up where a new feature is added",
-            "de": "Wenn Sie auf die Karte klicken oder tippen, wird eine Markierung eingeblendet, an der ein neues Objekt hinzugefügt wird"
+            "en": "Save the locations you search for and inspect on my device"
           }
         },
         {
-          "if": "mapcomplete-preferences-add-new-mode=click_right",
+          "if": "mapcomplete-preference-search-history=no",
           "then": {
-            "en": "When right-clicking or long-pressing the map, a marker pops up where a new feature can be added",
-            "de": "Beim Rechtsklick oder einem langen Druck auf die Karte erscheint eine Markierung, mit der ein neues Objekt hinzugefügt werden kann"
-          }
-        },
-        {
-          "if": "mapcomplete-preferences-add-new-mode=button_click",
-          "then": {
-            "en": "When clicking or tapping the map, a marker pops up where a new feature can be added. Additionally, a button at the bottom left is shown",
-            "de": "Beim Klicken oder Tippen auf die Karte wird eine Markierung eingeblendet, an der ein neues Objekt hinzugefügt werden kann. Zusätzlich wird unten links eine Schaltfläche angezeigt"
-          }
-        },
-        {
-          "if": "mapcomplete-preferences-add-new-mode=button_click_right",
-          "then": {
-            "en": "When right-clicking or long-pressing the map, a marker pops up where a new feature can be added. Additionally, a button at the bottom left is shown",
-            "de": "Beim Rechtsklick oder einem langen Druck auf die Karte erscheint eine Markierung, an der ein neues Objekt hinzugefügt werden kann. Zusätzlich wird unten links eine Schaltfläche angezeigt"
+            "en": "Don't save the locations you search for and inspect "
           }
         }
       ]
     },
     {
-      "id": "fixate-north",
-      "question": {
-        "en": "Should north always be up?",
-        "de": "Soll Norden immer oben sein?",
-        "ca": "El nord hauria d'estar sempre amunt?",
-        "cs": "Měl by být sever vždy nahoře?",
-        "nl": "Moet het noorden altijd naar boven getoond worden?",
-        "da": "Skal nord altid pege opad?"
-      },
-      "mappings": [
-        {
-          "if": "mapcomplete-fixate-north=no",
-          "alsoShowIf": "mapcomplete-fixate-north=",
-          "icon": "./assets/svg/compass.svg",
-          "then": {
-            "en": "Allow to rotate the map",
-            "de": "Drehen der Karte zulassen",
-            "ca": "Permet girar el mapa",
-            "fr": "Autoriser la rotation de la carte",
-            "da": "Tillad rotation af kortet",
-            "cs": "Umožnit otáčení mapy",
-            "nl": "Sta kaartrotatie toe"
-          }
-        },
-        {
-          "if": "mapcomplete-fixate-north=yes",
-          "icon": "./assets/svg/compass.svg",
-          "then": {
-            "en": "Always keep north pointing up",
-            "de": "Norden immer nach oben zeigen lassen",
-            "fr": "Toujours garder le nord en haut",
-            "ca": "Mantingueu sempre el nord apuntant cap amunt",
-            "cs": "Sever vždy směřujte nahoru",
-            "nl": "Hou het noorden altijd naar boven",
-            "da": "Nord peger altid opad"
-          }
-        }
-      ]
-    },
-    {
-      "id": "more_privacy_theme_override",
-      "mappings": [
-        {
-          "if": "__featureSwitchMorePrivacy=true",
-          "then": {
-            "en": "This theme is sensitive. Making changes will not indicate if you were nearby explicitly.",
-            "de": "Dieses Thema ist sensibel. Wenn du Änderungen vornimmst, wird nicht angezeigt, ob du explizit in der Nähe warst.",
-            "nl": "Dit thema ligt gevoelig. Wijzigingen aan objecten zullen niet aangeven of je in de buurt was."
-          }
-        }
-      ]
-    },
-    {
-      "id": "more_privacy",
-      "question": {
-        "en": "When making changes, should a rough indication be given how far away you were from the object?",
-        "de": "Sollte bei Änderungen eine grobe Angabe gemacht werden, wie weit du vom Objekt entfernt warst?",
-        "nl": "Mag er opgeslaan worden hoever je je van een object bevindt wanneer je aanpassingen maakt aan dit object?"
-      },
-      "questionHint": {
-        "en": "If you make a change to one or more objects and you enabled your location, a rough indication of where you made will be saved: it is indicated if you were closer then 25m, 500m, 5km or further away then 5km. This helps mappers understand your context when making changes, but gives an indication of where you were at this time. ",
-        "de": "Wenn du eine Änderung an einem oder mehreren Objekten vornimmst und deinen Standort aktivierst, wird eine ungefähre Angabe darüber gespeichert, wo du dich befunden hast: Es wird angezeigt, ob du näher als 25m, 500m, 5km oder weiter als 5km entfernt warst. Das hilft den Kartierern, deinen Kontext zu verstehen, wenn du Änderungen vornimmst, gibt aber auch einen Hinweis darauf, wo du zu diesem Zeitpunkt warst. ",
-        "nl": "Wanneer je een wijziging maakt aan één of meer interessepunten en als MapComplete toont waar je bent, dan kan opgeslaan worden hoever je je ongeveer van deze objecten bevindt. Er wordt aangeduid of je dichter dan 25m, 500m, 5km of verder dan 5km was. Dit helpt om andere bijdragers te begrijpen hoe je je bijdragen deed, maar geeft natuurlijk ook aan waar je op dat moment was. "
-      },
-      "mappings": [
-        {
-          "if": "mapcomplete-more_privacy=yes",
-          "icon": "./assets/svg/eye.svg",
-          "then": {
-            "en": "When making changes to OpenStreetMap, do not indicate how far away you were from the changed objects.",
-            "de": "Wenn du Änderungen an OpenStreetMap vornimmst, gibst du nicht an, wie weit du von den geänderten Objekten entfernt warst.",
-            "nl": "Geef niet aan hoever je je van de gewijzigde objecten bevindt wanneer je wijzigingen maakt met MapComplete."
-          }
-        },
-        {
-          "if": "mapcomplete-more_privacy=no",
-          "icon": "cross_bottom_right:red;./assets/svg/eye.svg",
-          "then": {
-            "en": "When making changes to OpenStreetMap, roughly indicate how far away you were from the changed objects. This helps other contributors to understand how you made the change",
-            "de": "Gebe bei Änderungen an OpenStreetMap an, wie weit du ungefähr von den geänderten Objekten entfernt warst. Das hilft anderen Mitwirkenden zu verstehen, wie du die Änderung vorgenommen hast",
-            "nl": "Geef aan hoever je je ongeveer bevindt ten opzichte van objecten die je wijzigt in OpenStreetMap. Dit helpt andere bijdagers te begrijpen welke wijzigingen je waarom maakt."
-          }
-        }
-      ]
+      "id": "title-id",
+      "render": {
+        "en": "<h3>Mangrove ID management</h3>"
+      }
     },
     {
       "id": "mangrove-keys",

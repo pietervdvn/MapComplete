@@ -263,14 +263,14 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return res
     }
 
-    public static NoNull<T>(array: T[] | undefined): T[] | undefined
+    public static NoNull<T>(array: ReadonlyArray<T> | undefined): T[] | undefined
     public static NoNull<T>(array: undefined): undefined
-    public static NoNull<T>(array: T[]): T[]
-    public static NoNull<T>(array: T[]): NonNullable<T>[] {
+    public static NoNull<T>(array: ReadonlyArray<T>): T[]
+    public static NoNull<T>(array: ReadonlyArray<T>): NonNullable<T>[] {
         return <any>array?.filter((o) => o !== undefined && o !== null)
     }
 
-    public static Hist(array: string[]): Map<string, number> {
+    public static Hist(array: ReadonlyArray<string>): Map<string, number> {
         const hist = new Map<string, number>()
         for (const s of array) {
             hist.set(s, 1 + (hist.get(s) ?? 0))
@@ -974,6 +974,10 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
                 return result
             }
             const error = result.error
+            if (error.statuscode === 410) {
+                // Gone permanently is not recoverable
+                return result
+            }
             if (error.statuscode === 429 || error.statuscode === 509) {
                 // rate limited
                 return result
@@ -1143,7 +1147,6 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
     ): Promise<{ content: T } | { error: string; url: string; statuscode?: number }> {
         const injected = Utils.injectedDownloads[url]
         if (injected !== undefined) {
-            console.debug("Using injected resource for test for URL", url)
             return { content: injected }
         }
         const result = await Utils.downloadAdvanced(
@@ -1307,8 +1310,9 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return withDistance.map((n) => n[0])
     }
 
-    public static levenshteinDistance(str1: string, str2: string) {
-        const track = Array(str2.length + 1)
+
+    public static levenshteinDistance(str1: string, str2: string): number {
+        const track: number[][] = Array(str2.length + 1)
             .fill(null)
             .map(() => Array(str1.length + 1).fill(null))
         for (let i = 0; i <= str1.length; i += 1) {
@@ -1455,6 +1459,14 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         }
 
         return d
+    }
+
+    public static asRecord<K extends string | number | symbol, V>(keys: K[], f: ((k: K) => V)): Record<K, V> {
+        const results = <Record<K, V>> {}
+        for (const key of keys) {
+            results[key] = f(key)
+        }
+        return results
     }
 
     static toIdRecord<T extends { id: string }>(ts: T[]): Record<string, T> {
@@ -1623,11 +1635,31 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         }
     }
 
+    /**
+     * Removes accents from a string
+     * @param str
+     * @constructor
+     *
+     * Utils.RemoveDiacritics("bâtiments") // => "batiments"
+     * Utils.RemoveDiacritics(undefined) // => undefined
+     */
     public static RemoveDiacritics(str?: string): string {
+        // See #1729
         if (!str) {
             return str
         }
         return str.normalize("NFD").replace(/\p{Diacritic}/gu, "")
+    }
+
+    /**
+     * Simplifies a string to increase the chance of a match
+     * @param str
+     * Utils.simplifyStringForSearch("abc def; ghi 564") // => "abcdefghi564"
+     * Utils.simplifyStringForSearch("âbc déf; ghi 564") // => "abcdefghi564"
+     * Utils.simplifyStringForSearch(undefined) // => undefined
+     */
+    public static simplifyStringForSearch(str: string): string {
+        return Utils.RemoveDiacritics(str)?.toLowerCase()?.replace(/[^a-z0-9]/g, "")
     }
 
     public static randomString(length: number): string {
@@ -1753,12 +1785,42 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return n + Utils._metrixPrefixes[index]
     }
 
-    static NoNullInplace(layers: any[]): void {
-        for (let i = layers.length - 1; i >= 0; i--) {
-            if (layers[i] === null || layers[i] === undefined) {
-                layers.splice(i, 1)
+    /**
+     * Rounds to a human-number
+     * @param number
+     *
+     * Utils.roundHuman(7) // => 7
+     * Utils.roundHuman(147) // => 150
+     * Utils.roundHuman(386) // => 375
+     * Utils.roundHuman(521) // => 500
+     */
+    public static roundHuman(number: number) {
+        if (number <= 25) {
+            return number
+        }
+        if (number < 100) {
+            return 5 * Math.round(number / 5)
+        }
+        if (number < 250) {
+            return 10 * Math.round(number / 10)
+
+        }
+        if (number < 500) {
+            return 25 * Math.round(number / 25)
+
+        }
+        return 50 * Math.round(number / 50)
+
+    }
+
+
+    public static NoNullInplace<T>(items: T[]): T[] {
+        for (let i = items.length - 1; i >= 0; i--) {
+            if (items[i] === null || items[i] === undefined || items[i] === "") {
+                items.splice(i, 1)
             }
         }
+        return items
     }
 
     /**
@@ -1778,14 +1840,37 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return href
     }
 
-    private static emojiRegex = /[\p{Extended_Pictographic}🛰️]$/u
+    /** Randomize array in-place using Durstenfeld shuffle algorithm
+     * Source: https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+     * */
+    static shuffle(array: any[]) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1))
+            const temp = array[i]
+            array[i] = array[j]
+            array[j] = temp
+        }
+    }
+
+
+    private static emojiRegex = /[\p{Extended_Pictographic}🛰️]/u
 
     /**
      * Returns 'true' if the given string contains at least one and only emoji characters
      *
      * Utils.isEmoji("⛰\uFE0F") // => true
+     * Utils.isEmoji("🇧🇪") // => true
+     * Utils.isEmoji("🍕") // => true
      */
     public static isEmoji(string: string) {
-        return Utils.emojiRegex.test(string)
+        return Utils.emojiRegex.test(string) || Utils.isEmojiFlag(string)
+    }
+
+    /**
+     * Utils.isEmojiFlag("🇧🇪") // => true
+     */
+    public static isEmojiFlag(string: string) {
+        return /[🇦-🇿]{2}/u.test(string) // flags, see https://stackoverflow.com/questions/53360006/detect-with-regex-if-emoji-is-country-flag
+
     }
 }

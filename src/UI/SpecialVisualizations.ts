@@ -2101,6 +2101,23 @@ export default class SpecialVisualizations {
                     })
                 },
             },
+            {
+                funcName:"clear_all",
+                docs: "Clears all user preferences",
+                needsUrls: [],
+                args: [
+                    {
+                        name: "text",
+                        doc: "Text to show on the button"
+                    }
+                ],
+                constr(state: SpecialVisualizationState, tagSource: UIEventSource<Record<string, string>>, argument: string[], feature: Feature, layer: LayerConfig): BaseUIElement {
+                    const text = argument[0]
+                    return new SubtleButton(undefined, text).onClick(() => {
+                        state.osmConnection.preferencesHandler.ClearPreferences()
+                    })
+                }
+            }
         ]
 
         specialVisualizations.push(new AutoApplyButton(specialVisualizations))

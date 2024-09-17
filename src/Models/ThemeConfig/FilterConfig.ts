@@ -13,6 +13,9 @@ import Validators, { ValidatorType } from "../../UI/InputElement/Validators"
 
 export type FilterConfigOption = {
     question: Translation
+    searchTerms: Record<string, string[]>
+    icon?: string
+    emoji?: string
     osmTags: TagsFilter | undefined
     /* Only set if fields are present. Used to create `osmTags` (which are used to _actually_ filter) when the field is written*/
     readonly originalTagsSpec: TagConfigJson
@@ -107,8 +110,11 @@ export default class FilterConfig {
             return {
                 question: question,
                 osmTags: osmTags,
+                searchTerms: option.searchTerms,
                 fields,
-                originalTagsSpec: option.osmTags
+                originalTagsSpec: option.osmTags,
+                icon: option.icon,
+                emoji: option.emoji,
             }
         })
 
@@ -153,7 +159,7 @@ export default class FilterConfig {
     }
 
     public initState(layerId: string): UIEventSource<undefined | number | string> {
-        let defaultValue = ""
+        let defaultValue: string
         if (this.options.length > 1) {
             defaultValue = "" + (this.defaultSelection ?? 0)
         } else if (this.options[0].fields?.length > 0) {

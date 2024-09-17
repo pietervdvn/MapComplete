@@ -3,7 +3,7 @@
    * Shows the current address when shaken
    **/
   import Motion from "../../Sensors/Motion"
-  import { Geocoding } from "../../Logic/Osm/Geocoding"
+  import { NominatimGeocoding } from "../../Logic/Search/NominatimGeocoding"
   import Hotkeys from "../Base/Hotkeys"
   import Translations from "../i18n/Translations"
   import Locale from "../i18n/Locale"
@@ -15,9 +15,11 @@
   let lastDisplayed: Date = undefined
   let currentLocation: string = undefined
 
+  let geocoder = new NominatimGeocoding()
+
   async function displayLocation() {
     lastDisplayed = new Date()
-    let result = await Geocoding.reverse(
+    let result = await geocoder.reverseSearch(
       mapProperties.location.data,
       mapProperties.zoom.data,
       Locale.language.data

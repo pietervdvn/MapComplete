@@ -14,11 +14,11 @@
 
   let dataIsLoading = state.dataIsLoading
   let currentState = state.hasDataInView
-  currentState.data === ""
   const t = Translations.t.centerMessage
+  const showingSearch = state.searchState.showSearchDrawer
 </script>
 
-{#if $currentState === "has-visible-features"}
+{#if $currentState === "has-visible-features" || $showingSearch}
   <!-- don't show anything -->
 {:else if $currentState === "zoom-to-low"}
   <div class="alert w-fit p-4">

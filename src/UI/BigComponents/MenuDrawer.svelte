@@ -47,6 +47,7 @@
   import Copyright from "../../assets/svg/Copyright.svelte"
   import Pencil from "../../assets/svg/Pencil.svelte"
   import Squares2x2 from "@babeard/svelte-heroicons/mini/Squares2x2"
+  import SidebarUnit from "../Base/SidebarUnit.svelte"
 
   export let state: ThemeViewState
   let userdetails = state.osmConnection.userDetails
@@ -84,7 +85,7 @@
   {/if}
 
   <!-- User related: avatar, settings, favourits, logout -->
-  <div class="sidebar-unit">
+  <SidebarUnit>
     <LoginToggle {state}>
       <LoginButton osmConnection={state.osmConnection} slot="not-logged-in" />
       <div class="flex items-center gap-x-4">
@@ -146,10 +147,11 @@
     </LoginToggle>
 
     <LanguagePicker />
-  </div>
+
+  </SidebarUnit>
 
   <!-- Theme related: documentation links, download, ... -->
-  <div class="sidebar-unit">
+  <SidebarUnit>
     <h3>
       <Tr t={t.aboutCurrentThemeTitle} />
     </h3>
@@ -209,10 +211,11 @@
         <Tr t={Translations.t.general.attribution.openOsmcha.Subs({ theme: layout.title })} />
       </a>
     {/if}
-  </div>
+  </SidebarUnit>
 
   <!-- Other links and tools for the given location: open iD/JOSM; community index, ... -->
-  <div class="sidebar-unit">
+  <SidebarUnit>
+
     <h3>
       <Tr t={t.moreUtilsTitle} />
     </h3>
@@ -230,10 +233,12 @@
       <OpenJosm {state} />
       <MapillaryLink large={false} mapProperties={state.mapProperties} />
     </If>
-  </div>
+
+  </SidebarUnit>
 
   <!-- About MC: various outward links, legal info, ... -->
-  <div class="sidebar-unit">
+  <SidebarUnit>
+
     <h3>
       <Tr t={Translations.t.general.menu.aboutMapComplete} />
     </h3>
@@ -305,59 +310,8 @@
     <div class="subtle self-end">
       {Constants.vNumber}
     </div>
-  </div>
+  </SidebarUnit>
 </div>
 
-<style>
-  :global(.sidebar-unit) {
-    display: flex;
-    flex-direction: column;
-    row-gap: 0.25rem;
-    background: var(--background-color);
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-  }
 
-  :global(.sidebar-unit > h3) {
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-    padding: 0.25rem;
-  }
 
-  :global(.sidebar-button svg, .sidebar-button img) {
-    width: 1.5rem;
-    height: 1.5rem;
-    margin-right: 0.5rem;
-    flex-shrink: 0;
-  }
-
-  :global(.sidebar-button .weblate-link > svg) {
-    width: 0.75rem;
-    height: 0.75rem;
-    flex-shrink: 0;
-  }
-
-  :global(.sidebar-button, .sidebar-unit > a) {
-    display: flex;
-    align-items: center;
-    border-radius: 0.25rem !important;
-    padding: 0.4rem 0.75rem !important;
-    text-decoration: none !important;
-    width: 100%;
-    text-align: start;
-  }
-
-  :global(
-      .sidebar-button > svg,
-      .sidebar-button > img,
-      .sidebar-unit a > img,
-      .sidebar-unit > a svg
-    ) {
-    margin-right: 0.5rem;
-    flex-shrink: 0;
-  }
-
-  :global(.sidebar-button:hover, .sidebar-unit > a:hover) {
-    background: var(--low-interaction-background) !important;
-  }
-</style>

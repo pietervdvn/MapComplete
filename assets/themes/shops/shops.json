@@ -50,13 +50,24 @@
   },
   "icon": "./assets/themes/shops/shop.svg",
   "layers": [
-    "shops",
-    "pharmacy",
-    "ice_cream",
-    "trolley_bay"
-  ],
-  "overrideAll": {
-    "minzoom": 14,
-    "syncSelection": "theme-only"
-  }
+    {
+      "builtin": [
+        "shops",
+        "pharmacy",
+        "ice_cream"
+      ],
+      "override": {
+        "minzoom": 12,
+        "syncSelection": "theme-only"
+      }
+    },
+    {
+      "builtin": [
+        "trolley_bay"
+      ],
+      "override": {
+        "syncSelection": "theme-only"
+      }
+    }
+  ]
 }
