@@ -5363,14 +5363,21 @@
                     }
                 }
             },
-            "11": {
+            "10": {
+                "options": {
+                    "0": {
+                        "question": "Naposledy upravil přispěvatel {search}"
+                    }
+                }
+            },
+            "12": {
                 "options": {
                     "0": {
                         "question": "Vytvořeno před {search}"
                     }
                 }
             },
-            "12": {
+            "13": {
                 "options": {
                     "0": {
                         "question": "Vytvořeno po {search}"
@@ -5404,24 +5411,17 @@
                     }
                 }
             },
-            "6": {
+            "7": {
                 "options": {
                     "0": {
                         "question": "Otevřeno přispěvatelem {search}"
                     }
                 }
             },
-            "7": {
+            "8": {
                 "options": {
                     "0": {
                         "question": "<b>Není</b> otevřeno přispěvatelem {search}"
-                    }
-                }
-            },
-            "9": {
-                "options": {
-                    "0": {
-                        "question": "Naposledy upravil přispěvatel {search}"
                     }
                 }
             }

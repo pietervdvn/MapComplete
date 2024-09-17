@@ -5176,9 +5176,6 @@
                     "4": {
                         "then": "Sandwichladen"
                     },
-                    "5": {
-                        "then": "Burgerrestaurant"
-                    },
                     "6": {
                         "then": "Hier wird Sushi serviert"
                     },
@@ -6773,14 +6770,21 @@
                     }
                 }
             },
-            "11": {
+            "10": {
+                "options": {
+                    "0": {
+                        "question": "Zuletzt bearbeitet von {search}"
+                    }
+                }
+            },
+            "12": {
                 "options": {
                     "0": {
                         "question": "Erstellt vor dem {search}"
                     }
                 }
             },
-            "12": {
+            "13": {
                 "options": {
                     "0": {
                         "question": "Erstellt nach dem {search}"
@@ -6814,24 +6818,17 @@
                     }
                 }
             },
-            "6": {
+            "7": {
                 "options": {
                     "0": {
                         "question": "Erstellt von {search}"
                     }
                 }
             },
-            "7": {
+            "8": {
                 "options": {
                     "0": {
                         "question": "<b>Nicht</b> erstellt von {search}"
-                    }
-                }
-            },
-            "9": {
-                "options": {
-                    "0": {
-                        "question": "Zuletzt bearbeitet von {search}"
                     }
                 }
             }

@@ -8,9 +8,6 @@ import { UIEventSource } from "../../Logic/UIEventSource"
 import { QueryParameters } from "../../Logic/Web/QueryParameters"
 import { Utils } from "../../Utils"
 import { RegexTag } from "../../Logic/Tags/RegexTag"
-import BaseUIElement from "../../UI/BaseUIElement"
-import Table from "../../UI/Base/Table"
-import Combine from "../../UI/Base/Combine"
 import MarkdownUtils from "../../Utils/MarkdownUtils"
 import Validators, { ValidatorType } from "../../UI/InputElement/Validators"
 
@@ -70,12 +67,12 @@ export default class FilterConfig {
                 }
                 return {
                     name: f.name,
-                    type,
+                    type
                 }
             })
 
             for (const field of fields) {
-                for (let ln in question.translations) {
+                for (const ln in question.translations) {
                     const txt = question.translations[ln]
                     if (ln.startsWith("_")) {
                         continue
@@ -111,7 +108,7 @@ export default class FilterConfig {
                 question: question,
                 osmTags: osmTags,
                 fields,
-                originalTagsSpec: option.osmTags,
+                originalTagsSpec: option.osmTags
             }
         })
 
@@ -223,7 +220,7 @@ export default class FilterConfig {
                         opt.osmTags?.asHumanString() ?? "",
                         opt.fields?.length > 0
                             ? opt.fields.map((f) => f.name + " (" + f.type + ")").join(" ")
-                            : undefined,
+                            : undefined
                     ])
                 )
             })
