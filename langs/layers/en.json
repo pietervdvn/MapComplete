@@ -6786,32 +6786,39 @@
             "10": {
                 "options": {
                     "0": {
-                        "question": "Not edited as last by {search}"
+                        "question": "Last edited by contributor {search}"
                     }
                 }
             },
             "11": {
                 "options": {
                     "0": {
-                        "question": "Created before {search}"
+                        "question": "Not edited as last by {search}"
                     }
                 }
             },
             "12": {
                 "options": {
                     "0": {
-                        "question": "Created after {search}"
+                        "question": "Created before {search}"
                     }
                 }
             },
             "13": {
                 "options": {
                     "0": {
-                        "question": "Last edited before {search}"
+                        "question": "Created after {search}"
                     }
                 }
             },
             "14": {
+                "options": {
+                    "0": {
+                        "question": "Last edited before {search}"
+                    }
+                }
+            },
+            "15": {
                 "options": {
                     "0": {
                         "question": "Last edited after {search}"
@@ -6855,28 +6862,28 @@
             "6": {
                 "options": {
                     "0": {
-                        "question": "Opened by contributor {search}"
+                        "question": "Should <b>not</b> mention {search} in <b>any</b> comment"
                     }
                 }
             },
             "7": {
                 "options": {
                     "0": {
-                        "question": "<b>Not</b> opened by contributor {search}"
+                        "question": "Opened by contributor {search}"
                     }
                 }
             },
             "8": {
                 "options": {
                     "0": {
-                        "question": "Edited or commented on by any user with name {search}"
+                        "question": "<b>Not</b> opened by contributor {search}"
                     }
                 }
             },
             "9": {
                 "options": {
                     "0": {
-                        "question": "Last edited by contributor {search}"
+                        "question": "Edited or commented on by any user with name {search}"
                     }
                 }
             }

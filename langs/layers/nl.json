@@ -5534,14 +5534,21 @@
                     }
                 }
             },
-            "11": {
+            "10": {
+                "options": {
+                    "0": {
+                        "question": "Laatst bewerkt door bijdrager {search}"
+                    }
+                }
+            },
+            "12": {
                 "options": {
                     "0": {
                         "question": "Aangemaakt voor {search}"
                     }
                 }
             },
-            "12": {
+            "13": {
                 "options": {
                     "0": {
                         "question": "Aangemaakt na {search}"
@@ -5575,24 +5582,17 @@
                     }
                 }
             },
-            "6": {
+            "7": {
                 "options": {
                     "0": {
                         "question": "Geopend door bijdrager {search}"
                     }
                 }
             },
-            "7": {
+            "8": {
                 "options": {
                     "0": {
                         "question": "<b>Niet</b> geopend door bijdrager {search}"
-                    }
-                }
-            },
-            "9": {
-                "options": {
-                    "0": {
-                        "question": "Laatst bewerkt door bijdrager {search}"
                     }
                 }
             }
