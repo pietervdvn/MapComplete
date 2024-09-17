@@ -20,6 +20,6 @@
       {"type": "perf", "hidden": true},
       {"type": "test", "hidden": true}
     ],
-    "commitUrlFormat": "https://github.com/USERNAME/REPOSITORY_NAME/commits{{hash}}",
-    "compareUrlFormat": "https://github.com/USERNAME/REPOSITORY_NAME/compare/{{previousTag}}...{{currentTag}}"
+    "commitUrlFormat": "https://github.com/pietervdvn/mapcomplete/commits{{hash}}",
+    "compareUrlFormat": "https://github.com/pietervdvn/mapcomplete/compare/{{previousTag}}...{{currentTag}}"
   }
