@@ -131,6 +131,13 @@ export default class FilteredLayer {
         return values
     }
 
+    /**
+     * import Translations from "../UI/i18n/Translations"
+     * import { RegexTag } from "../Logic/Tags/RegexTag"
+     *
+     * const option: FilterConfigOption = {question: Translations.T("question"), osmTags: undefined, originalTagsSpec: "key~.*{search}.*", fields: [{name: "search", type: "string"}]  }
+     * FilteredLayer.fieldsToTags(option, {search: "value_regex"}) // => new RegexTag("key", /^(.*(value_regex).*)$/)
+     */
     private static fieldsToTags(
         option: FilterConfigOption,
         fieldstate: string | Record<string, string>
@@ -153,7 +160,7 @@ export default class FilteredLayer {
             }
 
             for (const key in properties) {
-                v = (<string>v).replace("{" + key + "}", properties[key])
+                v = (<string>v).replace("{" + key + "}", "(" + properties[key] + ")")
             }
 
             return v
