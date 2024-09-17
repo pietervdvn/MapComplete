@@ -159,10 +159,9 @@ class PointRenderingLayer {
         })
 
         if (this._onClick) {
-            const self = this
-            el.addEventListener("click", function (ev) {
+            el.addEventListener("click",  (ev)=> {
                 ev.preventDefault()
-                self._onClick(feature)
+                this._onClick(feature)
                 // Workaround to signal the MapLibreAdaptor to ignore this click
                 ev["consumed"] = true
             })

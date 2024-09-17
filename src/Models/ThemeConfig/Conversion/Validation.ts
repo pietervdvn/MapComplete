@@ -722,7 +722,7 @@ export class ValidatePointRendering extends DesugaringStep<PointRenderingConfigJ
         if (json.marker && !Array.isArray(json.marker)) {
             context.enter("marker").err("The marker in a pointRendering should be an array")
         }
-        if (json.location.length == 0) {
+        if (!(json.location?.length > 0)) {
             context
                 .enter("location")
                 .err(

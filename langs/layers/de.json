@@ -5147,10 +5147,10 @@
             "Cuisine": {
                 "mappings": {
                     "0": {
-                        "then": "Dies ist eine Pizzeria"
+                        "then": "Pizzeria"
                     },
                     "1": {
-                        "then": "Dies ist eine Pommesbude"
+                        "then": "Pommesbude"
                     },
                     "10": {
                         "then": "Hier werden chinesische Gerichte serviert"
@@ -5171,13 +5171,10 @@
                         "then": "Bietet vorwiegend Pastagerichte an"
                     },
                     "3": {
-                        "then": "Das ist ein Dönerladen"
+                        "then": "Dönerladen"
                     },
                     "4": {
-                        "then": "Dies ist ein Sandwichladen"
-                    },
-                    "5": {
-                        "then": "Hier werden Burger serviert"
+                        "then": "Sandwichladen"
                     },
                     "6": {
                         "then": "Hier wird Sushi serviert"
@@ -6769,18 +6766,32 @@
             "0": {
                 "options": {
                     "0": {
-                        "question": "Sollte {search} im ersten Kommentar erwähnen"
+                        "question": "Nur Notizen anzeigen, die anonym erstellt wurden"
                     }
                 }
             },
             "1": {
                 "options": {
                     "0": {
-                        "question": "Sollte <b>nicht</b> {search} im ersten Kommentar erwähnen"
+                        "question": "Nur offene Notizen anzeigen"
                     }
                 }
             },
-            "10": {
+            "11": {
+                "options": {
+                    "0": {
+                        "question": "Erstellt vor dem {search}"
+                    }
+                }
+            },
+            "12": {
+                "options": {
+                    "0": {
+                        "question": "Erstellt nach dem {search}"
+                    }
+                }
+            },
+            "2": {
                 "options": {
                     "0": {
                         "question": "Alle Notizen"
@@ -6793,59 +6804,38 @@
                     }
                 }
             },
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "Erstellt von {search}"
-                    }
-                }
-            },
             "3": {
                 "options": {
                     "0": {
-                        "question": "<b>Nicht</b> erstellt von {search}"
-                    }
-                }
-            },
-            "4": {
-                "options": {
-                    "0": {
-                        "question": "Zuletzt bearbeitet von {search}"
+                        "question": "Sollte {search} im ersten Kommentar erwähnen"
                     }
                 }
             },
             "5": {
                 "options": {
                     "0": {
-                        "question": "Zuletzt bearbeitet nach dem {search}"
+                        "question": "Sollte <b>nicht</b> {search} im ersten Kommentar erwähnen"
                     }
                 }
             },
             "6": {
                 "options": {
                     "0": {
-                        "question": "Erstellt vor dem {search}"
+                        "question": "Erstellt von {search}"
                     }
                 }
             },
             "7": {
                 "options": {
                     "0": {
-                        "question": "Erstellt nach dem {search}"
-                    }
-                }
-            },
-            "8": {
-                "options": {
-                    "0": {
-                        "question": "Nur Notizen anzeigen, die anonym erstellt wurden"
+                        "question": "<b>Nicht</b> erstellt von {search}"
                     }
                 }
             },
             "9": {
                 "options": {
                     "0": {
-                        "question": "Nur offene Notizen anzeigen"
+                        "question": "Zuletzt bearbeitet von {search}"
                     }
                 }
             }

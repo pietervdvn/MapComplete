@@ -343,7 +343,7 @@
 {#if question !== undefined}
   <div class={clss}>
     <form
-      class="relative flex flex-col overflow-y-auto px-2"
+      class="relative flex flex-col overflow-y-auto px-4"
       style="max-height: 75vh"
       on:submit|preventDefault={() => {
         /*onSave(); This submit is not needed and triggers too early, causing bugs: see #1808*/
@@ -351,7 +351,7 @@
     >
       <fieldset>
         <legend>
-          <div class="sticky top-0 justify-between pt-1 font-bold" style="z-index: 11">
+          <div class="sticky top-0 justify-between pt-4 pb-2 font-bold" style="z-index: 11">
             <SpecialTranslation t={question} {tags} {state} {layer} feature={selectedElement} />
           </div>
 
@@ -557,7 +557,7 @@
             {/if}
 
 
-            <div class="flex flex-wrap-reverse items-stretch justify-end sm:flex-nowrap self-end flex-grow">
+            <div class="flex flex-wrap-reverse items-stretch justify-end sm:flex-nowrap self-end flex-grow mt-4 mb-2">
 
               <!-- TagRenderingQuestion-buttons -->
               <slot name="cancel" />
@@ -590,7 +590,7 @@
               <TagHint {state} tags={selectedTags} currentProperties={$tags} />
               <span class="flex flex-wrap">
                 {#if $featureSwitchIsTesting}
-                  <div class="alert">Testmode &nbsp;</div>
+                  <div class="alert" style="padding: 0; margin: 0; margin-right:  0.5rem">Testmode &nbsp;</div>
                 {/if}
                 {#if $featureSwitchIsTesting || $featureSwitchIsDebugging}
                   <a class="small" on:click={() => console.log("Configuration is ", config)}>

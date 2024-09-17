@@ -6,7 +6,8 @@
   import { UIEventSource } from "../../Logic/UIEventSource"
   import { onDestroy } from "svelte"
   import { Utils } from "../../Utils"
-  import Tr from "../Base/Tr.svelte"
+  import type { ValidatorType } from "../InputElement/Validators"
+  import InputHelper from "../InputElement/InputHelper.svelte"
 
   export let filteredLayer: FilteredLayer
   export let option: FilterConfigOption
@@ -18,7 +19,7 @@
     parts = Utils.splitIntoSubstitutionParts(template)
   }
   let fieldValues: Record<string, UIEventSource<string>> = {}
-  let fieldTypes: Record<string, string> = {}
+  let fieldTypes: Record<string, ValidatorType> = {}
   let appliedFilter = <UIEventSource<string>>filteredLayer.appliedFilters.get(id)
   let initialState: Record<string, string> = JSON.parse(appliedFilter?.data ?? "{}")
 
@@ -35,25 +36,30 @@
     appliedFilter?.setData(FilteredLayer.fieldsToString(properties))
   }
 
+  let firstValue : UIEventSource<string>
   for (const field of option.fields) {
     // A bit of cheating: the 'parts' will have '}' suffixed for fields
     const src = new UIEventSource<string>(initialState[field.name] ?? "")
+    firstValue ??= src
     fieldTypes[field.name] = field.type
+    console.log(field.name, "-->", field.type)
     fieldValues[field.name] = src
     onDestroy(
       src.stabilized(200).addCallback(() => {
         setFields()
-      })
+      }),
     )
   }
 </script>
 
-<div>
+<div class="low-interaction p-1 rounded-2xl px-3" class:interactive={$firstValue?.length > 0}>
   {#each parts as part, i}
     {#if part["subs"]}
       <!-- This is a field! -->
       <span class="mx-1">
-        <ValidatedInput value={fieldValues[part["subs"]]} type={fieldTypes[part["subs"]]} />
+        <InputHelper value={fieldValues[part["subs"]]} type={fieldTypes[part["subs"]]}>
+          <ValidatedInput slot="fallback" value={fieldValues[part["subs"]]} type={fieldTypes[part["subs"]]} />
+        </InputHelper>
       </span>
     {:else}
       {@html part["message"]}

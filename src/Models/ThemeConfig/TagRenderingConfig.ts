@@ -926,7 +926,7 @@ export default class TagRenderingConfig {
      * Might give undefined if setting to unknown is not possible
      */
     public removeToSetUnknown(partOfLayer: LayerConfig, currentTags: Record<string, string>): string[] | undefined {
-        if(!partOfLayer?.source || !currentTags){
+        if (!partOfLayer?.source || !currentTags) {
             return
         }
         const toDelete = new Set<string>()
@@ -1001,12 +1001,17 @@ export class TagRenderingConfigUtils {
             // The original mappings get "priorityIf" set
             const oldMappingsCloned =
                 clone.mappings?.map(
-                    (m) =>
-                        <Mapping>{
+                    (m) => {
+                        const mapping = {
                             ...m,
-                            addExtraTags: [new Tag("nobrand", "")],
                             priorityIf: m.priorityIf ?? TagUtils.Tag("id~*"),
-                        },
+                        }
+                        if (m.if.usedKeys().indexOf("nobrand") < 0) {
+                            // Erase 'nobrand=yes', unless this option explicitly sets it
+                            mapping["addExtraTags"] = [new Tag("nobrand", "")]
+                        }
+                        return <Mapping>mapping
+                    },
                 ) ?? []
             clone.mappings = [...oldMappingsCloned, ...extraMappings]
             return clone

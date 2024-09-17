@@ -9,7 +9,14 @@ export interface ProvidedImage {
     key: string
     provider: ImageProvider
     id: string
-    date?: Date
+    date?: Date,
+    /**
+     * Compass angle of the taken image
+     * 0 = north, 90° = East
+     */
+    rotation?: number
+    lat?: number,
+    lon?: number
 }
 
 export default abstract class ImageProvider {

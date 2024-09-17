@@ -552,6 +552,31 @@
       ]
     },
     {
+      "id": "scalebar",
+      "question": {
+        "en": "Should a scale bar be shown on the map?",
+        "nl": "Moet er een schaalbalk weergegeven worden?"
+      },
+      "mappings": [
+        {
+          "if": "mapcomplete-preference-show-scale=true",
+          "then": {
+            "en": "Show the scalebar",
+            "nl": "Toon de schaalbalk"
+          }
+        },
+        {
+          "if": "mapcomplete-preference-show-scale=false",
+          "alsoShowIf": "mapcomplete-preference-show-scale=",
+
+          "then": {
+            "en": "Hide the scalebar",
+            "nl": "Verberg de schaalbalk"
+          }
+        }
+      ]
+    },
+    {
       "id": "title-editing",
       "render": {
         "en": "<h3>Editing settings</h3>"

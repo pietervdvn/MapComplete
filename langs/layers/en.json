@@ -5149,25 +5149,25 @@
             "Cuisine": {
                 "mappings": {
                     "0": {
-                        "then": "This is a pizzeria"
+                        "then": "Pizzeria"
                     },
                     "1": {
-                        "then": "This is a friture"
+                        "then": "Friture"
                     },
                     "10": {
-                        "then": "Chinese dishes are served here"
+                        "then": "Chinese"
                     },
                     "11": {
-                        "then": "Greek dishes are served here"
+                        "then": "Greek"
                     },
                     "12": {
-                        "then": "Indian dishes are served here"
+                        "then": "Indian"
                     },
                     "13": {
-                        "then": "Turkish dishes are served here"
+                        "then": "Turkish restaurant"
                     },
                     "14": {
-                        "then": "Thai dishes are served here"
+                        "then": "Thai restaurant"
                     },
                     "15": {
                         "then": "Mexican dishes are served here"
@@ -5182,28 +5182,28 @@
                         "then": "Seafood dishes are served here"
                     },
                     "2": {
-                        "then": "Mainly serves pasta"
+                        "then": "Serves mainly pasta"
                     },
                     "3": {
-                        "then": "This is kebab shop"
+                        "then": "Kebab shop"
                     },
                     "4": {
-                        "then": "This is a sandwich shop"
+                        "then": "Sandwich shop"
                     },
                     "5": {
-                        "then": "Burgers are served here"
+                        "then": "Burgersrestaurant"
                     },
                     "6": {
-                        "then": "Sushi is served here"
+                        "then": "Sushi restaurant"
                     },
                     "7": {
-                        "then": "Coffee is served here"
+                        "then": "Coffeebar"
                     },
                     "8": {
-                        "then": "This is an Italian restaurant (which serves more than pasta and pizza)"
+                        "then": "Italian restaurant (which serves more than pasta and pizza)"
                     },
                     "9": {
-                        "then": "French dishes are served here"
+                        "then": "French restaurant"
                     }
                 },
                 "question": "What kind of food is served here?",
@@ -6791,18 +6791,53 @@
             "0": {
                 "options": {
                     "0": {
-                        "question": "Should mention {search} in the first comment"
+                        "question": "Only show notes opened by an anonymous contributor"
                     }
                 }
             },
             "1": {
                 "options": {
                     "0": {
-                        "question": "Should <b>not</b> mention {search} in the first comment"
+                        "question": "Only show open notes"
                     }
                 }
             },
             "10": {
+                "options": {
+                    "0": {
+                        "question": "Not edited as last by {search}"
+                    }
+                }
+            },
+            "11": {
+                "options": {
+                    "0": {
+                        "question": "Created before {search}"
+                    }
+                }
+            },
+            "12": {
+                "options": {
+                    "0": {
+                        "question": "Created after {search}"
+                    }
+                }
+            },
+            "13": {
+                "options": {
+                    "0": {
+                        "question": "Last edited before {search}"
+                    }
+                }
+            },
+            "14": {
+                "options": {
+                    "0": {
+                        "question": "Last edited after {search}"
+                    }
+                }
+            },
+            "2": {
                 "options": {
                     "0": {
                         "question": "All Notes"
@@ -6815,59 +6850,52 @@
                     }
                 }
             },
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "Opened by contributor {search}"
-                    }
-                }
-            },
             "3": {
                 "options": {
                     "0": {
-                        "question": "<b>Not</b> opened by contributor {search}"
+                        "question": "Should mention {search} in the first comment"
                     }
                 }
             },
             "4": {
                 "options": {
                     "0": {
-                        "question": "Last edited by contributor {search}"
+                        "question": "Should mention {search} in any comment"
                     }
                 }
             },
             "5": {
                 "options": {
                     "0": {
-                        "question": "Opened after {search}"
+                        "question": "Should <b>not</b> mention {search} in the first comment"
                     }
                 }
             },
             "6": {
                 "options": {
                     "0": {
-                        "question": "Created before {search}"
+                        "question": "Opened by contributor {search}"
                     }
                 }
             },
             "7": {
                 "options": {
                     "0": {
-                        "question": "Created after {search}"
+                        "question": "<b>Not</b> opened by contributor {search}"
                     }
                 }
             },
             "8": {
                 "options": {
                     "0": {
-                        "question": "Only show notes opened by an anonymous contributor"
+                        "question": "Edited or commented on by any user with name {search}"
                     }
                 }
             },
             "9": {
                 "options": {
                     "0": {
-                        "question": "Only show open notes"
+                        "question": "Last edited by contributor {search}"
                     }
                 }
             }
@@ -11613,6 +11641,17 @@
                         }
                     }
                 }
+            },
+            "scalebar": {
+                "mappings": {
+                    "0": {
+                        "then": "Show the scalebar"
+                    },
+                    "1": {
+                        "then": "Hide the scalebar"
+                    }
+                },
+                "question": "Should a scale bar be shown on the map?"
             },
             "settings-link": {
                 "render": {

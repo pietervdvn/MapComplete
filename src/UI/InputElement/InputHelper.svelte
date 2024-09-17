@@ -23,9 +23,9 @@
   export let type: ValidatorType
   export let value: UIEventSource<string | object>
 
-  export let feature: Feature
+  export let feature: Feature = undefined
   export let args: (string | number | boolean)[] = undefined
-  export let state: SpecialVisualizationState
+  export let state: SpecialVisualizationState = undefined
 </script>
 
 {#if type === "translation"}
@@ -51,4 +51,6 @@
   <SlopeInput {value} {feature} {state} />
 {:else if type === "wikidata"}
   <WikidataInputHelper {value} {feature} {state} {args} />
+{:else}
+  <slot name="fallback" />
 {/if}

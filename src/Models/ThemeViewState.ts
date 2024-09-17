@@ -2,7 +2,11 @@ import LayoutConfig from "./ThemeConfig/LayoutConfig"
 import { SpecialVisualizationState } from "../UI/SpecialVisualization"
 import { Changes } from "../Logic/Osm/Changes"
 import { Store, UIEventSource } from "../Logic/UIEventSource"
-import { FeatureSource, IndexedFeatureSource, WritableFeatureSource } from "../Logic/FeatureSource/FeatureSource"
+import {
+    FeatureSource,
+    IndexedFeatureSource,
+    WritableFeatureSource
+} from "../Logic/FeatureSource/FeatureSource"
 import { OsmConnection } from "../Logic/Osm/OsmConnection"
 import { ExportableMap, MapProperties } from "./MapProperties"
 import LayerState from "../Logic/State/LayerState"
@@ -46,7 +50,9 @@ import BackgroundLayerResetter from "../Logic/Actors/BackgroundLayerResetter"
 import SaveFeatureSourceToLocalStorage from "../Logic/FeatureSource/Actors/SaveFeatureSourceToLocalStorage"
 import BBoxFeatureSource from "../Logic/FeatureSource/Sources/TouchesBboxFeatureSource"
 import ThemeViewStateHashActor from "../Logic/Web/ThemeViewStateHashActor"
-import NoElementsInViewDetector, { FeatureViewState } from "../Logic/Actors/NoElementsInViewDetector"
+import NoElementsInViewDetector, {
+    FeatureViewState
+} from "../Logic/Actors/NoElementsInViewDetector"
 import FilteredLayer from "./FilteredLayer"
 import { PreferredRasterLayerSelector } from "../Logic/Actors/PreferredRasterLayerSelector"
 import { ImageUploadManager } from "../Logic/ImageProviders/ImageUploadManager"
@@ -150,6 +156,10 @@ export default class ThemeViewState implements SpecialVisualizationState {
     public readonly toCacheSavers: ReadonlyMap<string, SaveFeatureSourceToLocalStorage>
 
     public readonly nearbyImageSearcher: CombinedFetcher
+    /**
+     * Geocoded images that should be shown on the main map; probably only the currently hovered image
+     */
+    public readonly geocodedImages: UIEventSource<Feature[]> = new UIEventSource<Feature[]>([    ])
 
     public readonly searchState: SearchState
 
@@ -773,6 +783,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
             gps_location: this.geolocation.currentUserLocation,
             gps_location_history: this.geolocation.historicalUserLocations,
             gps_track: this.geolocation.historicalUserLocationsTrack,
+            geocoded_image: new StaticFeatureSource(this.geocodedImages),
             selected_element: new StaticFeatureSource(
                 this.selectedElement.map((f) => (f === undefined ? empty : [f]))
             ),
@@ -898,6 +909,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
         this.selectedElement.addCallback((selected) => {
             if (selected === undefined) {
                 this.focusOnMap()
+                this.geocodedImages.set([])
             } else {
                 this.lastClickObject.clear()
             }
@@ -934,6 +946,9 @@ export default class ThemeViewState implements SpecialVisualizationState {
             this.userRelatedState.recentlyVisitedSearch.add(r)
         })
 
+        this.userRelatedState.showScale.addCallbackAndRun(showScale => {
+            this.mapProperties.showScale.set(showScale)
+        })
         new ThemeViewStateHashActor(this)
         new MetaTagging(this)
         new TitleHandler(this.selectedElement, this.featureProperties, this)

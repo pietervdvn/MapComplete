@@ -84,6 +84,7 @@ export interface SpecialVisualizationState {
     readonly previewedImage: UIEventSource<ProvidedImage>
     readonly nearbyImageSearcher: CombinedFetcher
     readonly geolocation: GeoLocationHandler
+    readonly geocodedImages : UIEventSource<Feature[]>
     readonly searchState: SearchState
 
     getMatchingLayer(properties: Record<string, string>);

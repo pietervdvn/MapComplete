@@ -14,14 +14,16 @@
   import AttributedImage from "./AttributedImage.svelte"
   import SpecialTranslation from "../Popup/TagRendering/SpecialTranslation.svelte"
   import LoginToggle from "../Base/LoginToggle.svelte"
-  import ImagePreview from "./ImagePreview.svelte"
-  import FloatOver from "../Base/FloatOver.svelte"
+  import { onDestroy } from "svelte"
+  import { Utils } from "../../Utils"
 
   export let tags: UIEventSource<OsmTags>
   export let state: SpecialVisualizationState
   export let image: P4CPicture
   export let feature: Feature
   export let layer: LayerConfig
+
+  export let highlighted: UIEventSource<string> = undefined
 
   export let linkable = true
   let targetValue = Object.values(image.osmTags)[0]
@@ -33,7 +35,7 @@
     key: undefined,
     provider: AllImageProviders.byName(image.provider),
     date: new Date(image.date),
-    id: Object.values(image.osmTags)[0],
+    id: Object.values(image.osmTags)[0]
   }
 
   async function applyLink(isLinked: boolean) {
@@ -44,7 +46,7 @@
     if (isLinked) {
       const action = new LinkImageAction(currentTags.id, key, url, tags, {
         theme: tags.data._orig_theme ?? state.layout.id,
-        changeType: "link-image",
+        changeType: "link-image"
       })
       await state.changes.applyAction(action)
     } else {
@@ -53,7 +55,7 @@
         if (v === url) {
           const action = new ChangeTagAction(currentTags.id, new Tag(k, ""), currentTags, {
             theme: tags.data._orig_theme ?? state.layout.id,
-            changeType: "remove-image",
+            changeType: "remove-image"
           })
           state.changes.applyAction(action)
         }
@@ -62,16 +64,30 @@
   }
 
   isLinked.addCallback((isLinked) => applyLink(isLinked))
+
+  let element: HTMLDivElement
+  if (highlighted) {
+
+    onDestroy(
+      highlighted.addCallbackD(highlightedUrl => {
+        if (highlightedUrl === image.pictureUrl) {
+          Utils.scrollIntoView(element)
+        }
+      })
+    )
+  }
 </script>
 
 <div
   class="flex w-fit shrink-0 flex-col overflow-hidden rounded-lg"
-  class:border-interactive={$isLinked}
+  class:border-interactive={$isLinked || $highlighted === image.pictureUrl}
   style="border-width: 2px"
+  bind:this={element}
 >
   <AttributedImage
+    {state}
     image={providedImage}
-    imgClass="max-h-64 w-auto"
+    imgClass="max-h-64 w-auto sm:h-32 md:h-64"
     previewedImage={state.previewedImage}
     attributionFormat="minimal"
   >

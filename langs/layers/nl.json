@@ -4289,25 +4289,25 @@
             "Cuisine": {
                 "mappings": {
                     "0": {
-                        "then": "Dit is een pizzeria"
+                        "then": "Pizzeria"
                     },
                     "1": {
-                        "then": "Dit is een frituur"
+                        "then": "Frituur"
                     },
                     "10": {
-                        "then": "Dit is een Chinees restaurant"
+                        "then": "Chinees restaurant"
                     },
                     "11": {
-                        "then": "Dit is een Grieks restaurant"
+                        "then": "Grieks restaurant"
                     },
                     "12": {
-                        "then": "Dit is een Indisch restaurant"
+                        "then": "Indisch restaurant"
                     },
                     "13": {
-                        "then": "Dit is een Turks restaurant (dat meer dan enkel kebab verkoopt)"
+                        "then": "Turks restaurant"
                     },
                     "14": {
-                        "then": "Dit is een Thaïs restaurant"
+                        "then": "Thaïs restaurant"
                     },
                     "15": {
                         "then": "Dit is een mexicaans restaurant"
@@ -4322,28 +4322,28 @@
                         "then": "Dit is een vis- en zeerestaurant"
                     },
                     "2": {
-                        "then": "Dit is een pastazaak"
+                        "then": "Pastazaak"
                     },
                     "3": {
-                        "then": "Dit is een kebabzaak"
+                        "then": "Kebabzaak"
                     },
                     "4": {
-                        "then": "Dit is een broodjeszaak"
+                        "then": "Broodjeszaak"
                     },
                     "5": {
-                        "then": "Dit is een hamburgerrestaurant"
+                        "then": "Hamburgerrestaurant"
                     },
                     "6": {
-                        "then": "Dit is een sushirestaurant"
+                        "then": "Sushirestaurant"
                     },
                     "7": {
-                        "then": "Dit is een koffiezaak"
+                        "then": "Koffiezaak"
                     },
                     "8": {
-                        "then": "Dit is een Italiaans restaurant (dat meer dan enkel pasta of pizza verkoopt)"
+                        "then": "Italiaans restaurant (dat meer dan enkel pasta of pizza verkoopt)"
                     },
                     "9": {
-                        "then": "Dit is een Frans restaurant"
+                        "then": "Frans restaurant"
                     }
                 },
                 "question": "Welk soort gerechten worden hier geserveerd?",
@@ -5555,18 +5555,32 @@
             "0": {
                 "options": {
                     "0": {
-                        "question": "Moet in de eerste opmerking \"{search}\" bevatten"
+                        "question": "Toon enkel de Notes geopend door een anonieme bijdrager"
                     }
                 }
             },
             "1": {
                 "options": {
                     "0": {
-                        "question": "Mag in de eerste opmerking <b>niet</b> \"{search}\" bevatten"
+                        "question": "Toon enkel open Notes"
                     }
                 }
             },
-            "10": {
+            "11": {
+                "options": {
+                    "0": {
+                        "question": "Aangemaakt voor {search}"
+                    }
+                }
+            },
+            "12": {
+                "options": {
+                    "0": {
+                        "question": "Aangemaakt na {search}"
+                    }
+                }
+            },
+            "2": {
                 "options": {
                     "0": {
                         "question": "Alle Notes"
@@ -5579,59 +5593,38 @@
                     }
                 }
             },
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "Geopend door bijdrager {search}"
-                    }
-                }
-            },
             "3": {
                 "options": {
                     "0": {
-                        "question": "<b>Niet</b> geopend door bijdrager {search}"
-                    }
-                }
-            },
-            "4": {
-                "options": {
-                    "0": {
-                        "question": "Laatst bewerkt door bijdrager {search}"
+                        "question": "Moet in de eerste opmerking \"{search}\" bevatten"
                     }
                 }
             },
             "5": {
                 "options": {
                     "0": {
-                        "question": "Geopend na {search}"
+                        "question": "Mag in de eerste opmerking <b>niet</b> \"{search}\" bevatten"
                     }
                 }
             },
             "6": {
                 "options": {
                     "0": {
-                        "question": "Aangemaakt voor {search}"
+                        "question": "Geopend door bijdrager {search}"
                     }
                 }
             },
             "7": {
                 "options": {
                     "0": {
-                        "question": "Aangemaakt na {search}"
-                    }
-                }
-            },
-            "8": {
-                "options": {
-                    "0": {
-                        "question": "Toon enkel de Notes geopend door een anonieme bijdrager"
+                        "question": "<b>Niet</b> geopend door bijdrager {search}"
                     }
                 }
             },
             "9": {
                 "options": {
                     "0": {
-                        "question": "Toon enkel open Notes"
+                        "question": "Laatst bewerkt door bijdrager {search}"
                     }
                 }
             }
@@ -9275,6 +9268,17 @@
                         }
                     }
                 }
+            },
+            "scalebar": {
+                "mappings": {
+                    "0": {
+                        "then": "Toon de schaalbalk"
+                    },
+                    "1": {
+                        "then": "Verberg de schaalbalk"
+                    }
+                },
+                "question": "Moet er een schaalbalk weergegeven worden?"
             },
             "settings-link": {
                 "render": {

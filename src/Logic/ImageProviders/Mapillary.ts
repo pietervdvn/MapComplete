@@ -162,12 +162,14 @@ export class Mapillary extends ImageProvider {
         const metadataUrl =
             "https://graph.mapillary.com/" +
             mapillaryId +
-            "?fields=thumb_1024_url,thumb_original_url,captured_at,creator&access_token=" +
+            "?fields=thumb_1024_url,thumb_original_url,captured_at,compass_angle,geometry,creator&access_token=" +
             Constants.mapillary_client_token_v4
         const response = await Utils.downloadJsonCached(metadataUrl, 60 * 60)
         const url = <string>response["thumb_1024_url"]
         const url_hd = <string>response["thumb_original_url"]
         const date = new Date()
+        const rotation = (720 - Number(response["compass_angle"])) % 360
+        const geometry = response["geometry"]
         date.setTime(response["captured_at"])
         return <ProvidedImage>{
             id: "" + mapillaryId,
@@ -176,6 +178,9 @@ export class Mapillary extends ImageProvider {
             provider: this,
             date,
             key,
+            rotation,
+            lat: geometry.coordinates[1],
+            lon: geometry.coordinates[0]
         }
     }
 }

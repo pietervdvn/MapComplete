@@ -125,7 +125,7 @@
     <HeartOutlineIcon style="--svg-color: {color}" class={twMerge(clss, "apply-fill")} />
   {:else if icon === "confirm"}
     <Confirm class={clss} {color} />
-  {:else if icon === "direction"}
+  {:else if icon === "direction" || icon === "direction_gradient"}
     <Direction_gradient class={clss} {color} />
   {:else if icon === "not_found"}
     <Not_found class={twMerge(clss, "no-image-background")} {color} />

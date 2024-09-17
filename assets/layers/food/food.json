@@ -344,34 +344,34 @@
           "if": "cuisine=pizza",
           "icon": "🍕",
           "then": {
-            "en": "This is a pizzeria",
-            "nl": "Dit is een pizzeria",
-            "de": "Dies ist eine Pizzeria",
-            "es": "Esto es una pizzería",
-            "fr": "C'est une pizzéria",
-            "ca": "Això és una pizzeria",
-            "pl": "To jest pizzeria",
-            "cs": "Tohle je pizzerie"
+            "en": "Pizzeria",
+            "nl": "Pizzeria",
+            "de": "Pizzeria",
+            "es": "Pizzería",
+            "fr": "Pizzéria",
+            "ca": "Pizzeria",
+            "pl": "Pizzeria",
+            "cs": "Pizzerie"
           }
         },
         {
           "if": "cuisine=friture",
           "icon": "🍟",
           "then": {
-            "en": "This is a friture",
-            "nl": "Dit is een frituur",
-            "de": "Dies ist eine Pommesbude",
-            "fr": "C'est une friterie",
-            "ca": "Això és una fregiduria",
-            "cs": "Tohle je hranolkárna"
+            "en": "Friture",
+            "nl": "Frituur",
+            "de": "Pommesbude",
+            "fr": "Friterie",
+            "ca": "Fregiduria",
+            "cs": "Hranolkárna"
           }
         },
         {
           "if": "cuisine=pasta",
           "icon": "🍝",
           "then": {
-            "en": "Mainly serves pasta",
-            "nl": "Dit is een pastazaak",
+            "en": "Serves mainly pasta",
+            "nl": "Pastazaak",
             "de": "Bietet vorwiegend Pastagerichte an",
             "es": "Principalmente sirve pasta",
             "fr": "Restaurant Italien",
@@ -384,11 +384,11 @@
           "if": "cuisine=kebab",
           "icon": "🥙",
           "then": {
-            "en": "This is kebab shop",
-            "nl": "Dit is een kebabzaak",
-            "de": "Das ist ein Dönerladen",
-            "es": "Esta es una tienda de kebak",
-            "fr": "C'est un resto kebab",
+            "en": "Kebab shop",
+            "nl": "Kebabzaak",
+            "de": "Dönerladen",
+            "es": "Tienda de kebak",
+            "fr": "Resto kebab",
             "pl": "To jest stoisko z kebabem",
             "ca": "Aquesta és una botiga de kebabs",
             "cs": "Tohle je kebab"
@@ -398,11 +398,11 @@
           "if": "cuisine=sandwich",
           "icon": "🥪",
           "then": {
-            "en": "This is a sandwich shop",
-            "nl": "Dit is een broodjeszaak",
-            "de": "Dies ist ein Sandwichladen",
-            "fr": "C'est une sandwicherie",
-            "ca": "Això és una botiga d'entrepans",
+            "en": "Sandwich shop",
+            "nl": "Broodjeszaak",
+            "de": "Sandwichladen",
+            "fr": "Sandwicherie",
+            "ca": "Botiga d'entrepans",
             "cs": "Toto je obchod se sendviči"
           }
         },
@@ -410,10 +410,9 @@
           "if": "cuisine=burger",
           "icon": "🍔",
           "then": {
-            "en": "Burgers are served here",
-            "nl": "Dit is een hamburgerrestaurant",
-            "de": "Hier werden Burger serviert",
-            "es": "Aquí se sirven hamburguesas",
+            "en": "Burgersrestaurant",
+            "nl": "Hamburgerrestaurant",
+            "es": "Hamburguesas",
             "fr": "Des hamburgers sont servis ici",
             "ca": "Aquí es serveixen hamburgueses",
             "pl": "Są tu podawane burgery",
@@ -424,8 +423,8 @@
           "if": "cuisine=sushi",
           "icon": "🍣",
           "then": {
-            "en": "Sushi is served here",
-            "nl": "Dit is een sushirestaurant",
+            "en": "Sushi restaurant",
+            "nl": "Sushirestaurant",
             "de": "Hier wird Sushi serviert",
             "es": "Aquí se sirve sushi",
             "fr": "Des sushis sont servis ici",
@@ -437,8 +436,8 @@
           "if": "cuisine=coffee",
           "icon": "☕",
           "then": {
-            "en": "Coffee is served here",
-            "nl": "Dit is een koffiezaak",
+            "en": "Coffeebar",
+            "nl": "Koffiezaak",
             "de": "Hier wird Kaffee serviert",
             "es": "Aquí se sirve café",
             "fr": "C'est un café",
@@ -450,8 +449,8 @@
           "if": "cuisine=italian",
           "icon": "🇮🇹",
           "then": {
-            "en": "This is an Italian restaurant (which serves more than pasta and pizza)",
-            "nl": "Dit is een Italiaans restaurant (dat meer dan enkel pasta of pizza verkoopt)",
+            "en": "Italian restaurant (which serves more than pasta and pizza)",
+            "nl": "Italiaans restaurant (dat meer dan enkel pasta of pizza verkoopt)",
             "de": "Dies ist ein italienisches Restaurant (das mehr als nur Pasta und Pizza serviert)",
             "es": "Este es un restaurante italiano (que sirve algo más que pasta y pizza)",
             "fr": "C'est un Restaurant Italien (qui sert plus que des pâtes et des pizzas)",
@@ -463,8 +462,8 @@
           "if": "cuisine=french",
           "icon": "🇫🇷",
           "then": {
-            "en": "French dishes are served here",
-            "nl": "Dit is een Frans restaurant",
+            "en": "French restaurant",
+            "nl": "Frans restaurant",
             "de": "Hier werden französische Gerichte serviert",
             "es": "Aquí se sirven platos Franceses",
             "fr": "Des plats français sont servis ici",
@@ -476,8 +475,8 @@
           "if": "cuisine=chinese",
           "icon": "🇨🇳",
           "then": {
-            "en": "Chinese dishes are served here",
-            "nl": "Dit is een Chinees restaurant",
+            "en": "Chinese",
+            "nl": "Chinees restaurant",
             "de": "Hier werden chinesische Gerichte serviert",
             "es": "Aquí se sirven platos Chinos",
             "fr": "Des plats chinois sont servis ici",
@@ -489,8 +488,8 @@
           "if": "cuisine=greek",
           "icon": "🇬🇷",
           "then": {
-            "en": "Greek dishes are served here",
-            "nl": "Dit is een Grieks restaurant",
+            "en": "Greek",
+            "nl": "Grieks restaurant",
             "de": "Hier werden griechische Gerichte serviert",
             "es": "Aquí se sirven platos Griegos",
             "fr": "Des plats grecs sont servis ici",
@@ -502,8 +501,8 @@
           "if": "cuisine=indian",
           "icon": "🇮🇳",
           "then": {
-            "en": "Indian dishes are served here",
-            "nl": "Dit is een Indisch restaurant",
+            "en": "Indian",
+            "nl": "Indisch restaurant",
             "de": "Hier werden indische Gerichte serviert",
             "es": "Aquí se sirven platos Indios",
             "fr": "Des plats indiens sont servis ici",
@@ -515,8 +514,8 @@
           "if": "cuisine=turkish",
           "icon": "🇹🇷",
           "then": {
-            "en": "Turkish dishes are served here",
-            "nl": "Dit is een Turks restaurant (dat meer dan enkel kebab verkoopt)",
+            "en": "Turkish restaurant",
+            "nl": "Turks restaurant",
             "de": "Hier werden türkische Gerichte serviert",
             "es": "Aquí se sirven platos Turcos",
             "fr": "Des plats turcs sont servis ici",
@@ -528,8 +527,8 @@
           "if": "cuisine=thai",
           "icon": "🇹🇭",
           "then": {
-            "en": "Thai dishes are served here",
-            "nl": "Dit is een Thaïs restaurant",
+            "en": "Thai restaurant",
+            "nl": "Thaïs restaurant",
             "de": "Hier werden thailändische Gerichte serviert",
             "fr": "Des plats thaïlandais sont servis ici",
             "ca": "Aquí es serveixen plats tailandesos",

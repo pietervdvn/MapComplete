@@ -8,7 +8,6 @@ import ImageProvider, { ProvidedImage } from "../../Logic/ImageProviders/ImagePr
 import { OsmConnection } from "../../Logic/Osm/OsmConnection"
 import { Changes } from "../../Logic/Osm/Changes"
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
-import { Feature } from "geojson"
 import SvelteUIElement from "../Base/SvelteUIElement"
 import AttributedImage from "./AttributedImage.svelte"
 
@@ -30,6 +29,7 @@ export class ImageCarousel extends Toggle {
                     try {
                         let image: BaseUIElement = new SvelteUIElement(AttributedImage, {
                             image: url,
+                            state,
                             previewedImage: state?.previewedImage,
                         })
 
