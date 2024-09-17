@@ -683,8 +683,8 @@
         }
       ],
       "allowMove": {
-        "enableImproveAccuraccy": true,
-        "enableRelocation": false
+        "enableRelocation": false,
+        "enableImproveAccuracy": true
       }
     },
     "named_streets"

@@ -48,7 +48,7 @@
   import ChevronRight from "@babeard/svelte-heroicons/mini/ChevronRight"
   import ChevronLeft from "@babeard/svelte-heroicons/solid/ChevronLeft"
   import { Drawer } from "flowbite-svelte"
-  import { linear, sineIn } from "svelte/easing"
+  import { linear } from "svelte/easing"
 
   export let state: ThemeViewState
 
@@ -440,7 +440,6 @@
       <MenuDrawer onlyLink={true} {state} />
     </div>
   </DrawerLeft>
-  <MenuDrawer onlyLink={false} {state} />
 
   {#if $selectedElement !== undefined && $selectedLayer !== undefined && !$selectedLayer.popupInFloatover}
     <!-- right modal with the selected element view -->
@@ -493,5 +492,7 @@
       </FloatOver>
     {/if}
   {/if}
+
+  <MenuDrawer onlyLink={false} {state} />
 
 </main>

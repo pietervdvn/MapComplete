@@ -633,7 +633,7 @@
         "#": "These texts are shown above the theme buttons when no theme is loaded",
         "about": "About MapComplete",
         "featuredThemeTitle": "Featured this week",
-        "intro": "Maps about various topics which you contribute to",
+        "intro": "Maps about various topics which you can contribute to",
         "learnMore": "Learn more",
         "logIn": "Log in to see other themes you previously visited",
         "pickTheme": "Pick a theme below to get started.",
@@ -864,6 +864,9 @@
         "pnat": {
             "description": "a positive, whole number",
             "noZero": "Zero is not allowed"
+        },
+        "regex": {
+            "description": "a regular expression"
         },
         "slope": {
             "inputExplanation": "Place your phone on the ground with the top side of your phone pointing towards the top of the slope.",

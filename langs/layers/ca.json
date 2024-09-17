@@ -5137,14 +5137,21 @@
                     }
                 }
             },
-            "11": {
+            "10": {
+                "options": {
+                    "0": {
+                        "question": "Editat per última vega pel contribuïdor {search}"
+                    }
+                }
+            },
+            "12": {
                 "options": {
                     "0": {
                         "question": "Creada abans de {search}"
                     }
                 }
             },
-            "12": {
+            "13": {
                 "options": {
                     "0": {
                         "question": "Creada després de {search}"
@@ -5178,24 +5185,17 @@
                     }
                 }
             },
-            "6": {
+            "7": {
                 "options": {
                     "0": {
                         "question": "Obert pel contribuïdor {search}"
                     }
                 }
             },
-            "7": {
+            "8": {
                 "options": {
                     "0": {
                         "question": "<b>No</b> obert pel contribuïdor {search}"
-                    }
-                }
-            },
-            "9": {
-                "options": {
-                    "0": {
-                        "question": "Editat per última vega pel contribuïdor {search}"
                     }
                 }
             }

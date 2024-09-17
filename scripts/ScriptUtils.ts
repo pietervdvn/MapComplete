@@ -94,14 +94,28 @@ export default class ScriptUtils {
             })
     }
 
-    public static getThemePaths(): string[] {
-        return ScriptUtils.readDirRecSync("./assets/themes")
+    public static getThemePaths(useTranslationPaths = false): string[] {
+        const normalFiles = ScriptUtils.readDirRecSync("./assets/themes")
             .filter((path) => path.endsWith(".json") && !path.endsWith(".proto.json"))
             .filter((path) => path.indexOf("license_info.json") < 0)
+
+        if (!useTranslationPaths) {
+            return normalFiles
+        }
+        const specialfiles = ["./assets/themes/mapcomplete-changes/mapcomplete-changes.proto.json"]
+        const blacklist = ["assets/themes/mapcomplete-changes/mapcomplete-changes.json"]
+
+        const filtered = normalFiles.filter(path => !blacklist.some(black => path.endsWith(black)))
+        return filtered.concat(specialfiles)
+
     }
 
-    public static getThemeFiles(): { parsed: LayoutConfigJson; path: string; raw: string }[] {
-        return this.getThemePaths().map((path) => {
+    public static getThemeFiles(useTranslationPaths = false): {
+        parsed: LayoutConfigJson;
+        path: string;
+        raw: string
+    }[] {
+        return this.getThemePaths(useTranslationPaths).map((path) => {
             try {
                 const contents = readFileSync(path, { encoding: "utf8" })
                 if (contents === "") {
@@ -148,6 +162,7 @@ export default class ScriptUtils {
         const data = await ScriptUtils.Download(url, headers)
         return JSON.parse(data["content"])
     }
+
     public static async DownloadFetch(
         url: string,
         headers?: any
@@ -158,6 +173,7 @@ export default class ScriptUtils {
         console.log("Fetched", url, data)
         return { content: data }
     }
+
     public static Download(
         url: string,
         headers?: any
@@ -193,17 +209,17 @@ export default class ScriptUtils {
                         path: urlObj.pathname + urlObj.search,
 
                         port: urlObj.port,
-                        headers: headers,
+                        headers: headers
                     },
                     (res) => {
                         const parts: string[] = []
                         res.setEncoding("utf8")
-                        res.on("data", function (chunk) {
+                        res.on("data", function(chunk) {
                             // @ts-ignore
                             parts.push(chunk)
                         })
 
-                        res.addListener("end", function () {
+                        res.addListener("end", function() {
                             if (res.statusCode === 301 || res.statusCode === 302) {
                                 console.log("Got a redirect:", res.headers.location)
                                 resolve({ redirect: res.headers.location })
@@ -221,7 +237,7 @@ export default class ScriptUtils {
                         })
                     }
                 )
-                request.on("error", function (e) {
+                request.on("error", function(e) {
                     reject(e)
                 })
             } catch (e) {

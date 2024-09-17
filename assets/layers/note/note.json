@@ -292,6 +292,23 @@
       ]
     },
     {
+      "id": "search_not_any",
+      "options": [
+        {
+          "osmTags": "_all_comments!~i~.*{search}.*",
+          "fields": [
+            {
+              "name": "search"
+            }
+          ],
+          "question": {
+            "en": "Should <b>not</b> mention {search} in <b>any</b> comment"
+          }
+        }
+      ]
+    },
+
+    {
       "id": "opened_by",
       "options": [
         {

@@ -90,13 +90,13 @@
       <LoginButton osmConnection={state.osmConnection} slot="not-logged-in" />
       <div class="flex items-center gap-x-4">
         {#if $userdetails.img}
-          <img src={$userdetails.img} class="h-14 w-14 rounded-full" />
+          <img alt="avatar" src={$userdetails.img} class="h-14 w-14 rounded-full" />
         {/if}
         <b>{$userdetails.name}</b>
       </div>
     </LoginToggle>
 
-    <Page {onlyLink} shown={pg.usersettings} bodyPadding="p-0">
+    <Page {onlyLink} shown={pg.usersettings} bodyPadding="p-0 pb-4">
       <svelte:fragment slot="header">
         <CogIcon />
         <Tr t={UserRelatedState.usersettingsConfig.title.GetRenderValue({})} />

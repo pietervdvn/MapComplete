@@ -59,7 +59,8 @@
       "override": {
         "minzoom": 12
       }
-    }
+    },
+    "police"
   ],
   "enableMorePrivacy": true
 }

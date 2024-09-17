@@ -504,7 +504,8 @@ class LayerOverviewUtils extends Script {
         priviliged.delete("last_click")
         priviliged.delete("search")
 
-        if (priviliged.size > 0 && !forceReload) {
+       const isBoostrapping =  AllSharedLayers.getSharedLayersConfigs().size == 0
+        if (!isBoostrapping  && priviliged.size > 0) {
             throw (
                 "Priviliged layer " +
                 Array.from(priviliged).join(", ") +

@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.46.9](https://github.com/USERNAME/REPOSITORY_NAME/compare/v0.46.8...v0.46.9) (2024-09-14)
+
+
+### Bug Fixes
+
+* fix [#2142](https://github.com/pietervdvn/MapComplete/issues/2142) ([f2fca2d](https://github.com/USERNAME/REPOSITORY_NAME/commitsf2fca2dad8576a18629591e886e511912c1d99e9))
+* nobrand= is actually applied when using the Name suggestion index ([c3bb0cb](https://github.com/USERNAME/REPOSITORY_NAME/commitsc3bb0cb83787c299ee4a92e8df6046aa448d77c8))
+* scroll horizontal images into view ([0397863](https://github.com/USERNAME/REPOSITORY_NAME/commits03978631ebd1e61abd13dd7a53bdb400c3d0f059))
+* some fixes to make studio useable again, probably fixes [#2139](https://github.com/pietervdvn/MapComplete/issues/2139) ([6672fc8](https://github.com/USERNAME/REPOSITORY_NAME/commits6672fc87b4326db65289dfa31599ec0583d6c0f4))
+
+
+### Theme improvements
+
+* **disaster_respone:** add a police station layer, add this and more layers to disaster_response theme ([418a4a7](https://github.com/USERNAME/REPOSITORY_NAME/commits418a4a71af5824487e4aa6754701e5d14371beae))
+* **disaster_response:** add defibrillators and logical zoom levels ([65fceb9](https://github.com/USERNAME/REPOSITORY_NAME/commits65fceb9434294051c8f565d89f42443c6afe3fb8))
+
 ### [0.46.8](https://github.com/USERNAME/REPOSITORY_NAME/compare/v0.46.7...v0.46.8) (2024-09-13)
 
 

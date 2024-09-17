@@ -1,0 +1,142 @@
+{
+  "id": "police",
+  "name": {
+    "en": "Police stations"
+  },
+  "description": {
+    "en": "Many types of police facilities "
+  },
+  "source": {
+    "osmTags": {
+      "or": [
+        "amenity=police",
+        "police~*"
+      ]
+    }
+  },
+  "minzoom": 10,
+  "title": {
+    "render": {
+      "en": "{name}"
+    }
+  },
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "#00000000"
+        },
+        {
+          "icon": "./assets/layers/police/police.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "width": 1,
+      "color": "blue"
+    }
+  ],
+  "presets": [
+    {
+      "tags": [
+        "amenity=police"
+      ],
+      "title": {
+        "en": "a police office"
+      },
+      "description": {
+        "en": "A police office where the general public can enter for inquiries"
+      }
+    },
+    {
+      "tags": [
+        "police=checkpoint"
+      ],
+      "title": {
+        "en": "a police checkpoint"
+      },
+      "description": {
+        "en": "A place where police performs checks on travelling people"
+      }
+    },
+    {
+      "tags": [
+        "police=offices"
+      ],
+      "title": {
+        "en": "an administrative, police backoffice"
+      },
+      "description": {
+        "en": "An administrative police office without services for the general public."
+      }
+    },
+    {
+      "tags": [
+        "police=detention"
+      ],
+      "title": "a police detention center",
+      "description": {
+        "en": "A jail run by the police without public services. People are detained here for a short time (at most a few days), e.g. for small misdemeanors, disturbance of the public order or awaiting a trial"
+      }
+    },
+    {
+      "tags": [
+        "police=naval_base"
+      ],
+      "title": "a police naval base",
+      "description": {
+        "en": "A naval or maritime base for the maritime police; often with a pier and police boats nearby"
+      }
+    }
+  ],
+  "tagRenderings": [
+    "images",
+    "reviews",
+    {
+      "question": {
+        "en": "What is the name of this police facility?"
+      },
+      "id": "police_name",
+      "render": {
+        "en": "<b>{name}</b>"
+      },
+      "freeform": {
+        "key": "name"
+      }
+    },
+    "{preset_type_select()}",
+    "contact",
+    "opening_hours",
+    {
+      "question": {
+        "en": "Does this police office have detention facilities?"
+      },
+      "id": "4_z2nrdhy6tyyh4fd",
+      "condition": "amenity=police",
+      "mappings": [
+        {
+          "if": "detention=yes",
+          "then": {
+            "en": "This police office has some cells to detain people"
+          }
+        },
+        {
+          "if": "detention=no",
+          "then": {
+            "en": "This police office does not have cells to detain people"
+          }
+        }
+      ]
+    }
+  ],
+  "deletion": true,
+  "allowMove": true,
+  "enableMorePrivacy": true
+}
