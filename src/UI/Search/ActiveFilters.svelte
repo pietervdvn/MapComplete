@@ -8,10 +8,17 @@
   import FilterToggle from "./FilterToggle.svelte"
   import ToSvelte from "../Base/ToSvelte.svelte"
   import Tr from "../Base/Tr.svelte"
-  import { Store } from "../../Logic/UIEventSource"
+  import { Store, UIEventSource } from "../../Logic/UIEventSource"
   import Translations from "../i18n/Translations"
+  import type { FilterSearchResult } from "../../Logic/Search/FilterSearch"
+  import FilterSearch from "../../Logic/Search/FilterSearch"
 
-  export let activeFilters: ActiveFilter[]
+  import Locale from "../i18n/Locale"
+
+  export let activeFilters: ( FilterSearchResult & ActiveFilter)[]
+  let language = Locale.language
+  let mergedActiveFilters = FilterSearch.mergeSemiIdenticalLayers(activeFilters, $language)
+  $:mergedActiveFilters = FilterSearch.mergeSemiIdenticalLayers(activeFilters, $language)
   export let state: SpecialVisualizationState
   let loading = false
   const t =Translations.t.general.search
@@ -33,8 +40,6 @@
     loading = true
     requestIdleCallback(() => {
       enableAllLayers()
-
-
       for (const activeFilter of activeFilters) {
         activeFilter.control.setData(undefined)
       }
@@ -44,7 +49,7 @@
   }
 </script>
 
-{#if activeFilters.length > 0 || $nonactiveLayers.length > 0}
+{#if mergedActiveFilters.length > 0 || $nonactiveLayers.length > 0}
   <SidebarUnit>
     <div class="flex justify-between">
       <h3><Tr t={t.activeFilters}/></h3>
@@ -81,9 +86,9 @@
         {/if}
 
 
-        {#each activeFilters as activeFilter (activeFilter)}
+        {#each mergedActiveFilters as activeFilter (activeFilter)}
           <div>
-            <ActiveFilterSvelte {activeFilter} />
+            <ActiveFilterSvelte {activeFilter} {state}/>
           </div>
         {/each}
       </div>

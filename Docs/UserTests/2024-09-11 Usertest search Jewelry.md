@@ -26,5 +26,5 @@ To validate the 'search with filters', the tester was tasked with searching all 
 
 ## To improve
 
-[ ] Why are there multiple "Open Now" filters?
+[x] Why are there multiple "Open Now" filters? Because of different layers with a similar filter, they are now shown merged
 [x] Special layers (e.g. gps location) are disabled as well (fixed now)

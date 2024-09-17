@@ -1188,12 +1188,12 @@ input[type="range"].range-lg::-moz-range-thumb {
   left: 25%;
 }
 
-.bottom-4 {
-  bottom: 1rem;
-}
-
 .top-6 {
   top: 1.5rem;
+}
+
+.bottom-4 {
+  bottom: 1rem;
 }
 
 .bottom-5 {
@@ -2758,6 +2758,10 @@ input[type="range"].range-lg::-moz-range-thumb {
 
 .overflow-y-auto {
   overflow-y: auto;
+}
+
+.overflow-x-hidden {
+  overflow-x: hidden;
 }
 
 .overflow-y-scroll {
@@ -4719,6 +4723,11 @@ input[type="range"].range-lg::-moz-range-thumb {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.shadow-transparent {
+  --tw-shadow-color: transparent;
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
 .shadow-gray-300 {
   --tw-shadow-color: #D1D5DB;
   --tw-shadow: var(--tw-shadow-colored);
@@ -5353,8 +5362,8 @@ h2.group {
   align-items: center;
   white-space: nowrap;
   border-radius: 999rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
   border: 1px solid var(--subtle-detail-color-light-contrast);
   background-color: var(--low-interaction-background);
 }

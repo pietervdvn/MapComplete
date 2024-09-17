@@ -406,6 +406,7 @@
             "error": "Something went wrong…",
             "instructions": "Use the search bar above to search for locations, filters or other thematic maps",
             "locations": "Locations",
+            "nMoreFilters": "{n} more",
             "nothing": "Nothing found…",
             "nothingFor": "No results found for {term}",
             "otherMaps": "Other maps",

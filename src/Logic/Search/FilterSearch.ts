@@ -1,4 +1,3 @@
-import { SpecialVisualizationState } from "../../UI/SpecialVisualization"
 import { Utils } from "../../Utils"
 import Locale from "../../UI/i18n/Locale"
 import Constants from "../../Models/Constants"
@@ -109,5 +108,24 @@ export default class FilterSearch {
         }
         Utils.shuffle(result)
         return result.slice(0, 6)
+    }
+
+    /**
+     * Partitions the list of filters in such a way that identically appearing filters will be in the same sublist.
+     *
+     * Note that this depends on the language and the displayed text. For example, two filters {"en": "A", "nl": "B"} and {"en": "X", "nl": "B"} will be joined for dutch but not for English
+     *
+     */
+    static mergeSemiIdenticalLayers<T extends FilterSearchResult = FilterSearchResult>(filters: ReadonlyArray<T>, language: string):T[][]  {
+        const results : Record<string, T[]> = {}
+        for (const filter of filters) {
+            const txt = filter.option.question.textFor(language)
+            if(results[txt]){
+                results[txt].push(filter)
+            }else{
+                results[txt] = [filter]
+            }
+        }
+        return Object.values(results)
     }
 }

@@ -79,7 +79,7 @@ export default class SearchState {
                     return !foundMatch
                 })
             }, [state.layerState.activeFilters])
-        this.locationResults =new GeocodingFeatureSource(this.suggestions.stabilized(250))
+        this.locationResults = new GeocodingFeatureSource(this.suggestions.stabilized(250))
 
         this.showSearchDrawer = new UIEventSource(false)
 
@@ -92,7 +92,7 @@ export default class SearchState {
 
     }
 
-    public async apply(result: FilterSearchResult | LayerConfig) {
+    public async apply(result: FilterSearchResult[] | LayerConfig) {
         if (result instanceof LayerConfig) {
             return this.applyLayer(result)
         }
@@ -105,29 +105,35 @@ export default class SearchState {
         }
     }
 
-    private async applyFilter(payload: FilterSearchResult) {
+    private async applyFilter(payload: FilterSearchResult[]) {
         const state = this.state
 
-        const { layer, filter, index } = payload
+        const layers = payload.map(fsr => fsr.layer.id)
         for (const [name, otherLayer] of state.layerState.filteredLayers) {
             const layer = otherLayer.layerDef
-            if(!layer.isNormal()){
+            if (!layer.isNormal()) {
                 continue
             }
-            otherLayer.isDisplayed.setData(payload.layer.id === layer.id)
+            if(otherLayer.layerDef.minzoom > state.mapProperties.minzoom.data) {
+                // Currently not displayed, we don't hide
+                continue
+            }
+            otherLayer.isDisplayed.setData(layers.indexOf(layer.id) > 0)
         }
-        const flayer = state.layerState.filteredLayers.get(layer.id)
-        flayer.isDisplayed.set(true)
-        const filtercontrol = flayer.appliedFilters.get(filter.id)
-        if (filtercontrol.data === index) {
-            filtercontrol.setData(undefined)
-        } else {
-            filtercontrol.setData(index)
+        for (const  { filter, index, layer } of payload) {
+            const flayer = state.layerState.filteredLayers.get(layer.id)
+            flayer.isDisplayed.set(true)
+            const filtercontrol = flayer.appliedFilters.get(filter.id)
+            if (filtercontrol.data === index) {
+                filtercontrol.setData(undefined)
+            } else {
+                filtercontrol.setData(index)
+            }
         }
     }
 
     closeIfFullscreen() {
-        if(window.innerWidth < 640){
+        if (window.innerWidth < 640) {
             this.showSearchDrawer.set(false)
         }
     }
@@ -135,7 +141,7 @@ export default class SearchState {
     clickedOnMap(feature: Feature) {
         const osmid = feature.properties.osm_id
         const localElement = this.state.indexedFeatures.featuresById.data.get(osmid)
-        if(localElement){
+        if (localElement) {
             this.state.selectedElement.set(localElement)
             return
         }

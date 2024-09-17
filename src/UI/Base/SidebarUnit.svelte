@@ -10,6 +10,7 @@
         background: var(--background-color);
         padding: 0.5rem;
         border-radius: 0.5rem;
+        overflow-y: auto;
     }
 
     :global(.sidebar-unit > h3) {

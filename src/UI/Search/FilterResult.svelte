@@ -8,13 +8,19 @@
   import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
   import Loading from "../Base/Loading.svelte"
 
-  export let entry: FilterSearchResult | LayerConfig
-  let isLayer = entry instanceof LayerConfig
-  let asLayer = <LayerConfig>entry
-  let asFilter = <FilterSearchResult>entry
+  export let entry: FilterSearchResult[] | LayerConfig
+  let asFilter: FilterSearchResult[]
+  let asLayer: LayerConfig
+  if(Array.isArray(entry)){
+      asFilter = entry
+  }else{
+    asLayer = <LayerConfig>entry
+
+  }
   export let state: SpecialVisualizationState
 
   let loading = false
+  let debug = state.featureSwitches.featureSwitchIsDebugging
 
   function apply() {
     loading = true
@@ -34,7 +40,7 @@
   {/if}
   <div class="flex flex-col items-start">
     <div class="flex items-center gap-x-1">
-      {#if isLayer}
+      {#if asLayer}
         <div class="w-8 h-8 p-1">
           <ToSvelte construct={asLayer.defaultIcon()} />
         </div>
@@ -42,8 +48,11 @@
           <Tr t={asLayer.name} />
         </b>
       {:else}
-        <Icon icon={asFilter.option.icon ?? asFilter.option.emoji} clss="w-4 h-4" emojiHeight="14px" />
-        <Tr cls="whitespace-nowrap" t={asFilter.option.question} />
+        <Icon icon={asFilter[0].option.icon ?? asFilter[0].option.emoji} clss="w-4 h-4" emojiHeight="14px" />
+        <Tr cls="whitespace-nowrap" t={asFilter[0].option.question} />
+        {#if $debug}
+        <span class="subtle">({asFilter.map(f => f.layer.id).join(", ")})</span>
+          {/if}
       {/if}
     </div>
   </div>

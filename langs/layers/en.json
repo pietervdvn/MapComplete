@@ -9122,7 +9122,7 @@
         },
         "description": "A shop",
         "filter": {
-            "1": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Only show shops selling second-hand items"

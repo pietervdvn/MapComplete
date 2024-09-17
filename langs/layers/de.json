@@ -9087,7 +9087,7 @@
         },
         "description": "Ein Geschäft",
         "filter": {
-            "1": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Nur Second-Hand-Geschäfte anzeigen"

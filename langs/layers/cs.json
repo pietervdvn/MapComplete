@@ -7208,7 +7208,7 @@
         },
         "description": "Obchod",
         "filter": {
-            "1": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Zobrazit pouze obchody prodávající použité zboží"
