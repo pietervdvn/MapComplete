@@ -136,7 +136,7 @@ export default class FilteredLayer {
      * import { RegexTag } from "../Logic/Tags/RegexTag"
      *
      * const option: FilterConfigOption = {question: Translations.T("question"), osmTags: undefined, originalTagsSpec: "key~.*{search}.*", fields: [{name: "search", type: "string"}]  }
-     * FilteredLayer.fieldsToTags(option, {search: "value_regex"}) // => new RegexTag("key", /^(.*(value_regex).*)$/)
+     * FilteredLayer.fieldsToTags(option, {search: "value_regex"}) // => new RegexTag("key", /^(.*(value_regex).*)$/s)
      */
     private static fieldsToTags(
         option: FilterConfigOption,
