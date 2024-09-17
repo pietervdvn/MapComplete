@@ -60,7 +60,7 @@ export default class FilterConfig {
             }
 
             const fields: { name: string; type: ValidatorType }[] = (option.fields ?? []).map((f, i) => {
-                const type = <ValidatorType> f.type ?? "string"
+                const type = <ValidatorType> f.type ?? "regex"
                 if(Validators.availableTypes.indexOf(type) < 0){
                     throw `Invalid filter: type is not a valid validator. Did you mean one of ${Utils.sortedByLevenshteinDistance(type, <any>Validators.availableTypes, x => x).slice(0, 3)}`
                 }

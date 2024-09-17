@@ -850,6 +850,9 @@
             "description": "a positive, whole number",
             "noZero": "Zero is not allowed"
         },
+        "regex": {
+            "description": "a regular expression"
+        },
         "slope": {
             "inputExplanation": "Place your phone on the ground with the top side of your phone pointing towards the top of the slope.",
             "inputIncorrect": "For correct measurements, make sure the arrow is within the green area."

@@ -15,9 +15,6 @@ import UrlValidator from "./Validators/UrlValidator"
 import PhoneValidator from "./Validators/PhoneValidator"
 import OpeningHoursValidator from "./Validators/OpeningHoursValidator"
 import ColorValidator from "./Validators/ColorValidator"
-import BaseUIElement from "../BaseUIElement"
-import Combine from "../Base/Combine"
-import Title from "../Base/Title"
 import SimpleTagValidator from "./Validators/SimpleTagValidator"
 import ImageUrlValidator from "./Validators/ImageUrlValidator"
 import TagKeyValidator from "./Validators/TagKeyValidator"
@@ -30,6 +27,7 @@ import SlopeValidator from "./Validators/SlopeValidator"
 import VeloparkValidator from "./Validators/VeloparkValidator"
 import NameSuggestionIndexValidator from "./Validators/NameSuggestionIndexValidator"
 import CurrencyValidator from "./Validators/CurrencyValidator"
+import RegexValidator from "./Validators/RegexValidator"
 
 export type ValidatorType = (typeof Validators.availableTypes)[number]
 
@@ -64,6 +62,7 @@ export default class Validators {
         "velopark",
         "nsi",
         "currency",
+        "regex"
     ] as const
 
     public static readonly AllValidators: ReadonlyArray<Validator> = [
@@ -95,6 +94,7 @@ export default class Validators {
         new VeloparkValidator(),
         new NameSuggestionIndexValidator(),
         new CurrencyValidator(),
+        new RegexValidator()
     ]
 
     private static _byType = Validators._byTypeConstructor()

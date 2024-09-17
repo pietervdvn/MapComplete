@@ -8,6 +8,8 @@
   import { Utils } from "../../Utils"
   import type { ValidatorType } from "../InputElement/Validators"
   import InputHelper from "../InputElement/InputHelper.svelte"
+  import { Translation } from "../i18n/Translation"
+  import Tr from "../Base/Tr.svelte"
 
   export let filteredLayer: FilteredLayer
   export let option: FilterConfigOption
@@ -36,7 +38,7 @@
     appliedFilter?.setData(FilteredLayer.fieldsToString(properties))
   }
 
-  let firstValue : UIEventSource<string>
+  let firstValue: UIEventSource<string>
   for (const field of option.fields) {
     // A bit of cheating: the 'parts' will have '}' suffixed for fields
     const src = new UIEventSource<string>(initialState[field.name] ?? "")
@@ -47,9 +49,10 @@
     onDestroy(
       src.stabilized(200).addCallback(() => {
         setFields()
-      }),
+      })
     )
   }
+  let feedback: UIEventSource<Translation> = new UIEventSource<Translation>(undefined)
 </script>
 
 <div class="low-interaction p-1 rounded-2xl px-3" class:interactive={$firstValue?.length > 0}>
@@ -58,11 +61,15 @@
       <!-- This is a field! -->
       <span class="mx-1">
         <InputHelper value={fieldValues[part["subs"]]} type={fieldTypes[part["subs"]]}>
-          <ValidatedInput slot="fallback" value={fieldValues[part["subs"]]} type={fieldTypes[part["subs"]]} />
+          <ValidatedInput slot="fallback" value={fieldValues[part["subs"]]} type={fieldTypes[part["subs"]]}
+                          {feedback} />
         </InputHelper>
       </span>
     {:else}
       {@html part["message"]}
     {/if}
   {/each}
+  {#if $feedback}
+    <Tr cls="alert" t={$feedback}/>
+  {/if}
 </div>
