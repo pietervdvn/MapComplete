@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.47.0](https://github.com/USERNAME/REPOSITORY_NAME/compare/v0.46.9...v0.47.0) (2024-09-17)
+
+
+### Features
+
+* add download as json to 'allTags'-panel (for debugging) ([af2905d](https://github.com/USERNAME/REPOSITORY_NAME/commitsaf2905dc6d1cbbcfb2d9cd2583369eebd90ced70))
+
+
+### Bug Fixes
+
+* actually search for keywords in theme view ([cdc1e05](https://github.com/USERNAME/REPOSITORY_NAME/commitscdc1e05499ffc41d093503ccd24defa347eea50e))
+* search fields in a filter are now wrapped into parentheses, allowing for OR as regex ([fb250fb](https://github.com/USERNAME/REPOSITORY_NAME/commitsfb250fb928da576b5649d398272387da72e89e5c))
+
+
+### Theme improvements
+
+* allow to disable auto filters ([b349293](https://github.com/USERNAME/REPOSITORY_NAME/commitsb3492930b8e5090e9a9d3449d6e9abc365fc1780))
+* **healthcare:** add payment options to pharmacy layer ([6c5b619](https://github.com/USERNAME/REPOSITORY_NAME/commits6c5b61924a63e8bb82afd2dc963cc4fe38caa9ad))
+* **note:** add filter removing anything matching one or more keywords ([9c09da3](https://github.com/USERNAME/REPOSITORY_NAME/commits9c09da3c137a6af88b935108fe55aa8e1163ed2c))
+* **shop:** 'open_now' filter is introduced automatically ([ed2bec1](https://github.com/USERNAME/REPOSITORY_NAME/commitsed2bec139cf4e4094973aba2f4734522802898f3))
+* **shop:** don't show trolley bay on low zoom levels ([cdb62df](https://github.com/USERNAME/REPOSITORY_NAME/commitscdb62dfe58f5a6264c17e9d88bb590ea3f984b09))
+* some tweaks for the search feature ([bc52c05](https://github.com/USERNAME/REPOSITORY_NAME/commitsbc52c05a9b47ba6dbf8c3f79a131f8281b8c5197))
+* **waste:** add filter for 'recycling centre' ([5da63bf](https://github.com/USERNAME/REPOSITORY_NAME/commits5da63bf83aa7d8b230c8dbc082be3fba33344289))
+
 ### [0.46.9](https://github.com/USERNAME/REPOSITORY_NAME/compare/v0.46.8...v0.46.9) (2024-09-14)
 
 
