@@ -48,6 +48,7 @@
   ],
   "allowMove": false,
   "snapName": {
-    "en": "a pedestrian path"
+    "en": "a pedestrian path",
+    "de": "ein Fußweg"
   }
 }

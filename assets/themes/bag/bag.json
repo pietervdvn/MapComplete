@@ -73,7 +73,8 @@
             "es": "La referencia de BAG es <b>{ref:bag}</b>",
             "cs": "Reference v BAG je <b>{ref:bag}</b>",
             "pl": "Numer referencyjny w BAG to <b>{ref:bag}</b>",
-            "zh_Hans": "在 BAG 中的参考是 <b>{ref:bag}</b>"
+            "zh_Hans": "在 BAG 中的参考是 <b>{ref:bag}</b>",
+            "fil": "Ang sanggunian sa BAG ay <b>{ref:bag}</b>"
           },
           "mappings": [
             {
@@ -88,7 +89,8 @@
                 "zgh": "ⵜⵓⵚⴽⴰ ⴰⴷ ⵓⵔ ⵖⵓⵔⵙ ⵜⴰⵙⴰⵖⵓⵍⵜ ⴳ BAG",
                 "es": "Este edificio no tiene referencia en el BAG",
                 "pl": "Budynek ten nie ma odniesienia w BAG",
-                "zh_Hans": "这栋建筑在BAG中没有参考信息"
+                "zh_Hans": "这栋建筑在BAG中没有参考信息",
+                "fil": "Walang sanggunian ang gusaling ito sa BAG"
               }
             }
           ]
@@ -205,7 +207,8 @@
         "es": "Edificios del registro BAG",
         "cs": "Budovy z registru BAG",
         "pl": "Budynki z rejestru BAG",
-        "zh_Hans": "BAG 注册中的建筑物"
+        "zh_Hans": "BAG 注册中的建筑物",
+        "fil": "Mga gusali mula sa rehistro ng BAG"
       },
       "source": {
         "geoJson": "https://service.pdok.nl/lv/bag/wfs/v2_0?request=GetFeature&service=WFS&version=2.0.0&outputFormat=application%2Fjson%3B%20subtype%3Dgeojson&typeName=bag%3Apand&bbox={x_min}%2C{y_min}%2C{x_max}%2C{y_max}%2CCRS84&srsName=EPSG%3A4326",
@@ -291,7 +294,8 @@
             "es": "La referencia en BAG es <b>{_bag_obj:ref:bag}</b>",
             "cs": "Reference v BAG je <b>{_bag_obj:ref:bag}</b>",
             "pl": "Odniesienie w BAG to <b>{_bag_obj:ref:bag}</b>",
-            "zh_Hans": "在 BAG 中的参考文献是 <b>{_bag_obj:ref:bag}</b>"
+            "zh_Hans": "在 BAG 中的参考文献是 <b>{_bag_obj:ref:bag}</b>",
+            "fil": "Ang sanggunian sa BAG ay <b>{_bag_obj:ref:bag}</b>"
           }
         },
         {
@@ -308,7 +312,8 @@
             "nb_NO": "Bygning oppført <b>{_bag_obj:start_date}</b>",
             "pl": "Ten budynek zbudowano w <b>{_bag_obj:start_date}</b>",
             "pt": "Esta construção é de <b>{_bag_obj:start_date}</b>",
-            "zh_Hans": "这座建筑建于 <b>{_bag_obj:start_date}</b>"
+            "zh_Hans": "这座建筑建于 <b>{_bag_obj:start_date}</b>",
+            "fil": "Ang gusaling ito ay itinayo noong <b>{_bag_obj:start_date}</b>"
           },
           "mappings": [
             {
@@ -323,7 +328,8 @@
                 "nb_NO": "Oppføring startet <b>{_bag_obj:start_date}</b>",
                 "es": "Este edificio se empezó a construir en <b>{_bag_obj:start_date}</b>",
                 "pl": "Budynek został zbudowany w <b>{_bag_obj:start_date}</b>",
-                "zh_Hans": "该建筑始建于 <b>{_bag_obj:start_date}</b>"
+                "zh_Hans": "该建筑始建于 <b>{_bag_obj:start_date}</b>",
+                "fil": "Sinimulan ang gusali noong <b>{_bag_obj:start_date}</b>"
               }
             }
           ]
@@ -340,7 +346,8 @@
             "nb_NO": "Dette er en bygning av typen <b>{_bag_obj:building}</b>",
             "es": "El edificio es de tipo <b>{_bag_obj:building}</b>",
             "pl": "Rodzaj budynku to <b>{_bag_obj:building}</b>",
-            "zh_Hans": "建筑类型是 <b>{_bag_obj:building}</b>"
+            "zh_Hans": "建筑类型是 <b>{_bag_obj:building}</b>",
+            "fil": "Ang uri ng gusali ay <b>{_bag_obj:building}</b>"
           },
           "mappings": [
             {
@@ -354,7 +361,8 @@
                 "cs": "Typ budovy bude <b>{_bag_obj:construction}</b>",
                 "es": "El tipo de edificio será un <b>{_bag_obj:construction}</b>",
                 "pl": "Budynek będzie o typie <b>{_bag_obj:construction}</b>",
-                "zh_Hans": "建筑类型将是 <b>{_bag_obj:construction}</b>"
+                "zh_Hans": "建筑类型将是 <b>{_bag_obj:construction}</b>",
+                "fil": "Ang uri ng gusali ay magiging <b>{_bag_obj:construction}</b>"
               }
             }
           ]

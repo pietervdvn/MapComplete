@@ -127,6 +127,7 @@
     "enableImproveAccuracy": true
   },
   "snapName": {
-    "en": "a shelter"
+    "en": "a shelter",
+    "de": "ein Unterstand"
   }
 }

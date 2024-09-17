@@ -6797,13 +6797,6 @@
             "13": {
                 "options": {
                     "0": {
-                        "question": "Erstellt nach dem {search}"
-                    }
-                }
-            },
-            "13": {
-                "options": {
-                    "0": {
                         "question": "Zuletzt bearbeitet vor {search}"
                     }
                 }
