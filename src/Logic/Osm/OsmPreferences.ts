@@ -39,8 +39,11 @@ export class OsmPreferences {
         }
     }
 
-    private initPreference(key: string, value: string = ""): UIEventSource<string> {
+    private initPreference(key: string, value: string = undefined): UIEventSource<string> {
         if (this.preferences[key] !== undefined) {
+            if(value !== undefined){
+                this.preferences[key].set(value)
+            }
             return this.preferences[key]
         }
         const pref = this.preferences[key] = new UIEventSource(value, "preference: " + key)
@@ -99,7 +102,7 @@ export class OsmPreferences {
         if (localStorage.data === "null" || localStorage.data === "undefined") {
             localStorage.set(undefined)
         }
-        let pref: UIEventSource<string> = this.initPreference(key, localStorage.data ?? defaultValue)
+        const pref: UIEventSource<string> = this.initPreference(key, localStorage.data ?? defaultValue)
         if (this.localStorageInited.has(key)) {
             return pref
         }
