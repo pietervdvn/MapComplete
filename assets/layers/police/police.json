@@ -1,10 +1,12 @@
 {
   "id": "police",
   "name": {
-    "en": "Police stations"
+    "en": "Police stations",
+    "de": "Polizeiwachen"
   },
   "description": {
-    "en": "Many types of police facilities "
+    "en": "Many types of police facilities ",
+    "de": "Verschiedene Polizeieinrichtungen "
   },
   "source": {
     "osmTags": {
@@ -17,7 +19,8 @@
   "minzoom": 10,
   "title": {
     "render": {
-      "en": "{name}"
+      "en": "{name}",
+      "de": "{name}"
     }
   },
   "pointRendering": [
@@ -49,10 +52,12 @@
         "amenity=police"
       ],
       "title": {
-        "en": "a police office"
+        "en": "a police office",
+        "de": "eine Polizeiwache"
       },
       "description": {
-        "en": "A police office where the general public can enter for inquiries"
+        "en": "A police office where the general public can enter for inquiries",
+        "de": "Eine Polizeiwache, die von der Öffentlichkeit für Anfragen genutzt werden kann"
       }
     },
     {
@@ -60,10 +65,12 @@
         "police=checkpoint"
       ],
       "title": {
-        "en": "a police checkpoint"
+        "en": "a police checkpoint",
+        "de": "eine Polizeikontrolle"
       },
       "description": {
-        "en": "A place where police performs checks on travelling people"
+        "en": "A place where police performs checks on travelling people",
+        "de": "Ein Ort, an dem die Polizei Kontrollen von Reisenden durchführt"
       }
     },
     {
@@ -71,10 +78,12 @@
         "police=offices"
       ],
       "title": {
-        "en": "an administrative, police backoffice"
+        "en": "an administrative, police backoffice",
+        "de": "ein Verwaltungsbüro der Polizei"
       },
       "description": {
-        "en": "An administrative police office without services for the general public."
+        "en": "An administrative police office without services for the general public.",
+        "de": "Ein Verwaltungsbüro der Polizei ohne Dienstleistungen für die Allgemeinheit."
       }
     },
     {
@@ -83,7 +92,8 @@
       ],
       "title": "a police detention center",
       "description": {
-        "en": "A jail run by the police without public services. People are detained here for a short time (at most a few days), e.g. for small misdemeanors, disturbance of the public order or awaiting a trial"
+        "en": "A jail run by the police without public services. People are detained here for a short time (at most a few days), e.g. for small misdemeanors, disturbance of the public order or awaiting a trial",
+        "de": "Ein von der Polizei betriebenes Gefängnis ohne öffentliche Dienstleistungen. Hier werden Menschen für kurze Zeit (höchstens ein paar Tage) inhaftiert, z. B. wegen kleinerer Vergehen, Störung der öffentlichen Ordnung oder in Erwartung eines Gerichtsverfahrens"
       }
     },
     {
@@ -92,7 +102,8 @@
       ],
       "title": "a police naval base",
       "description": {
-        "en": "A naval or maritime base for the maritime police; often with a pier and police boats nearby"
+        "en": "A naval or maritime base for the maritime police; often with a pier and police boats nearby",
+        "de": "Ein Stützpunkt für die Schifffahrtspolizei; oft mit einem Anleger und Polizeibooten in der Nähe"
       }
     }
   ],
@@ -101,11 +112,13 @@
     "reviews",
     {
       "question": {
-        "en": "What is the name of this police facility?"
+        "en": "What is the name of this police facility?",
+        "de": "Wie lautet der Name der Polizeieinrichtung?"
       },
       "id": "police_name",
       "render": {
-        "en": "<b>{name}</b>"
+        "en": "<b>{name}</b>",
+        "de": "<b>{name}</b>"
       },
       "freeform": {
         "key": "name"
@@ -116,7 +129,8 @@
     "opening_hours",
     {
       "question": {
-        "en": "Does this police office have detention facilities?"
+        "en": "Does this police office have detention facilities?",
+        "de": "Verfügt die Polizeidienststelle über Gewahrsamsräume?"
       },
       "id": "4_z2nrdhy6tyyh4fd",
       "condition": "amenity=police",
@@ -124,13 +138,15 @@
         {
           "if": "detention=yes",
           "then": {
-            "en": "This police office has some cells to detain people"
+            "en": "This police office has some cells to detain people",
+            "de": "Die Polizeidienststelle hat Zellen für die Inhaftierung von Personen"
           }
         },
         {
           "if": "detention=no",
           "then": {
-            "en": "This police office does not have cells to detain people"
+            "en": "This police office does not have cells to detain people",
+            "de": "Die Polizeidienststelle hat keine Zellen für die Inhaftierung von Personen"
           }
         }
       ]

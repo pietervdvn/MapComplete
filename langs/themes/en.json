@@ -437,7 +437,7 @@
     },
     "disaster_response": {
         "description": "This map contains elements meant for disaster preparedness and response.",
-        "title": "Disaster response"
+        "title": "Disaster response and emergency services"
     },
     "drinking_water": {
         "description": "On this map, publicly accessible drinking water spots are shown and can be easily added",

@@ -2174,7 +2174,8 @@
           "if": "internet_access=terminal;wifi",
           "alsoShowIf": "internet_access=wifi;terminal",
           "then": {
-            "en": "This place offers both wireless internet and internet access via a terminal or computer"
+            "en": "This place offers both wireless internet and internet access via a terminal or computer",
+            "de": "Dieser Ort bietet sowohl drahtloses Internet als auch Internetzugang über ein Terminal oder einen Computer"
           }
         }
       ],

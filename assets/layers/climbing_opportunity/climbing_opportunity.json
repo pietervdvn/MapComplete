@@ -150,7 +150,8 @@
   ],
   "allowMove": false,
   "snapName": {
-    "en": "a wall, cliff or rock"
+    "en": "a wall, cliff or rock",
+    "de": "eine Wand, eine Klippe oder einen Felsen"
   },
   "doCount": false
 }

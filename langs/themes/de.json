@@ -437,7 +437,7 @@
     },
     "disaster_response": {
         "description": "Diese Karte enthält Elemente, die der Katastrophenvorsorge und dem Katastrophenschutz dienen.",
-        "title": "Katastrophenschutz"
+        "title": "Katastrophenschutz und Notfalldienste"
     },
     "drinking_water": {
         "description": "Eine Karte zum Anzeigen und Bearbeiten öffentlicher Trinkwasserstellen",

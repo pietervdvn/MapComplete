@@ -1916,6 +1916,7 @@
   "allowSplit": true,
   "snapName": {
     "en": "a road or a cycleway",
-    "nl": "een weg, straat of fietspad"
+    "nl": "een weg, straat of fietspad",
+    "de": "eine Straße oder einen Radweg"
   }
 }

@@ -475,7 +475,8 @@
         {
           "if": "room=printer",
           "then": {
-            "en": "This is a copy room"
+            "en": "This is a copy room",
+            "de": "Dies ist ein Kopierraum"
           }
         },
         {
@@ -622,6 +623,7 @@
   },
   "snapName": {
     "en": "an indoor wall",
-    "nl": "een binnenmuur"
+    "nl": "een binnenmuur",
+    "de": "eine Innenwand"
   }
 }

@@ -307,7 +307,6 @@
         }
       ]
     },
-
     {
       "id": "opened_by",
       "options": [
@@ -444,7 +443,7 @@
           "question": {
             "en": "Created after {search}",
             "nl": "Aangemaakt na {search}",
-            "de": "Erstellt nach dem {search}",
+            "de": "Zuletzt bearbeitet vor {search}",
             "es": "Creada después de {search}",
             "ca": "Creada després de {search}",
             "cs": "Vytvořeno po {search}",
@@ -465,7 +464,8 @@
             }
           ],
           "question": {
-            "en": "Last edited before {search}"
+            "en": "Last edited before {search}",
+            "de": "Zuletzt bearbeitet nach {search}"
           }
         }
       ]

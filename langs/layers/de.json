@@ -3033,6 +3033,7 @@
     "climbing_opportunity": {
         "description": "Rückfallebene mit Orten, auf denen Klettern eventuell möglich ist. Sie wird erst angezeigt, wenn man stark hineinzoomt, um zu verhindern, dass Elemente doppelt hinzugefügt werden",
         "name": "Klettermöglichkeiten?",
+        "snapName": "eine Wand, eine Klippe oder einen Felsen",
         "tagRenderings": {
             "climbing-opportunity-name": {
                 "render": "<strong>{name}</strong>"
@@ -3434,6 +3435,7 @@
     "cycleways_and_roads": {
         "description": "Infrastruktur, die man mit dem Fahrrad befahren kann, begleitet von diesbezüglichen Fragen",
         "name": "Radwege und Straßen",
+        "snapName": "eine Straße oder einen Radweg",
         "tagRenderings": {
             "Cycleway type for a road": {
                 "mappings": {
@@ -5699,6 +5701,9 @@
                     },
                     "1": {
                         "then": "Dies ist ein traditioneller (softwareorientierter) Hackerspace"
+                    },
+                    "2": {
+                        "then": "Dies ist ein <b>Hackerspace/Hack-Lab</b>, das sich hauptsächlich auf grundlegende Computerkenntnisse konzentriert, recycelte Geräte verwendet und/oder der Gemeinschaft Internet bereitstellt. Es befindet sich typischerweise in autonomen Räumen, besetzten Häusern oder sozialen Einrichtungen."
                     }
                 },
                 "question": "Ist dies ein Hackerspace oder ein Makerspace?"
@@ -5917,6 +5922,7 @@
     "indoors": {
         "description": "Grundlegende Innenraumkartierung: zeigt Umrisse von Räumen",
         "name": "Innenräume",
+        "snapName": "eine Innenwand",
         "tagRenderings": {
             "name": {
                 "freeform": {
@@ -5958,6 +5964,9 @@
                     },
                     "14": {
                         "then": "Dies ist ein Büro"
+                    },
+                    "15": {
+                        "then": "Dies ist ein Kopierraum"
                     },
                     "16": {
                         "then": "Dies ist eine Gefängniszelle"
@@ -6086,6 +6095,7 @@
                 "title": "einen Bordstein"
             }
         },
+        "snapName": "ein Bordstein",
         "tagRenderings": {
             "kerb-height": {
                 "freeform": {
@@ -6794,7 +6804,14 @@
             "13": {
                 "options": {
                     "0": {
-                        "question": "Erstellt nach dem {search}"
+                        "question": "Zuletzt bearbeitet vor {search}"
+                    }
+                }
+            },
+            "14": {
+                "options": {
+                    "0": {
+                        "question": "Zuletzt bearbeitet nach {search}"
                     }
                 }
             },
@@ -7296,7 +7313,8 @@
     },
     "pedestrian_path": {
         "description": "Fußgängerwege, insbesondere für die Navigation in Gebäuden und die Aufnahme von Eingängen in diese Ebene",
-        "name": "Fußgängerwege"
+        "name": "Fußgängerwege",
+        "snapName": "ein Fußweg"
     },
     "pharmacy": {
         "description": "Eine Ebene mit Apotheken, die (wahrscheinlich) verschreibungspflichtige Medikamente ausgeben",
@@ -7653,6 +7671,50 @@
         },
         "title": {
             "render": "Spielplatzgerät"
+        }
+    },
+    "police": {
+        "description": "Verschiedene Polizeieinrichtungen ",
+        "name": "Polizeiwachen",
+        "presets": {
+            "0": {
+                "description": "Eine Polizeiwache, die von der Öffentlichkeit für Anfragen genutzt werden kann",
+                "title": "eine Polizeiwache"
+            },
+            "1": {
+                "description": "Ein Ort, an dem die Polizei Kontrollen von Reisenden durchführt",
+                "title": "eine Polizeikontrolle"
+            },
+            "2": {
+                "description": "Ein Verwaltungsbüro der Polizei ohne Dienstleistungen für die Allgemeinheit.",
+                "title": "ein Verwaltungsbüro der Polizei"
+            },
+            "3": {
+                "description": "Ein von der Polizei betriebenes Gefängnis ohne öffentliche Dienstleistungen. Hier werden Menschen für kurze Zeit (höchstens ein paar Tage) inhaftiert, z. B. wegen kleinerer Vergehen, Störung der öffentlichen Ordnung oder in Erwartung eines Gerichtsverfahrens"
+            },
+            "4": {
+                "description": "Ein Stützpunkt für die Schifffahrtspolizei; oft mit einem Anleger und Polizeibooten in der Nähe"
+            }
+        },
+        "tagRenderings": {
+            "4_z2nrdhy6tyyh4fd": {
+                "mappings": {
+                    "0": {
+                        "then": "Die Polizeidienststelle hat Zellen für die Inhaftierung von Personen"
+                    },
+                    "1": {
+                        "then": "Die Polizeidienststelle hat keine Zellen für die Inhaftierung von Personen"
+                    }
+                },
+                "question": "Verfügt die Polizeidienststelle über Gewahrsamsräume?"
+            },
+            "police_name": {
+                "question": "Wie lautet der Name der Polizeieinrichtung?",
+                "render": "<b>{name}</b>"
+            }
+        },
+        "title": {
+            "render": "{name}"
         }
     },
     "postboxes": {
@@ -8183,6 +8245,9 @@
                     },
                     "4": {
                         "then": "Dieser Ort bietet kabelgebundenen Internetzugang"
+                    },
+                    "5": {
+                        "then": "Dieser Ort bietet sowohl drahtloses Internet als auch Internetzugang über ein Terminal oder einen Computer"
                     }
                 },
                 "question": "Bietet dieser Ort Internetzugang?"
@@ -9037,6 +9102,7 @@
     "shelter": {
         "description": "Eine Ebene, die verschiedene Bauformen von Unterständen zeigt",
         "name": "Unterstände",
+        "snapName": "ein Unterstand",
         "tagRenderings": {
             "shelter-type": {
                 "mappings": {
@@ -11569,6 +11635,17 @@
                     }
                 }
             },
+            "scalebar": {
+                "mappings": {
+                    "0": {
+                        "then": "Maßstab anzeigen"
+                    },
+                    "1": {
+                        "then": "Maßstab ausblenden"
+                    }
+                },
+                "question": "Kartenmaßstab anzeigen?"
+            },
             "settings-link": {
                 "render": {
                     "special": {
@@ -11991,6 +12068,7 @@
     },
     "walls_and_buildings": {
         "description": "Spezielle Ebene, die alle Wände und Gebäude bereitstellt. Diese Ebene ist nützlich in Voreinstellungen für Objekte, die an Wänden platziert werden können (z. B. AEDs, Briefkästen, Eingänge, Adressen, Überwachungskameras, ...). Diese Ebene ist standardmäßig unsichtbar und kann vom Benutzer nicht umgeschaltet werden.",
+        "snapName": "eine Wand oder ein Gebäude",
         "tagRenderings": {
             "entrance_info": {
                 "mappings": {
