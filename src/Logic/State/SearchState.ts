@@ -39,7 +39,7 @@ export default class SearchState {
             new LocalElementSearch(state, 5),
             new CoordinateSearch(),
             new OpenStreetMapIdSearch(state),
-            new PhotonSearch(), // new NominatimGeocoding(),
+            new PhotonSearch() // new NominatimGeocoding(),
         ]
 
         const bounds = state.mapProperties.bounds
@@ -49,7 +49,7 @@ export default class SearchState {
                 }
                 return this.locationSearchers.map(ls => ls.suggest(search, { bbox: bounds.data }))
 
-            }, [bounds],
+            }, [bounds]
         )
         this.suggestionsSearchRunning = suggestionsList.bind(suggestions => {
             if (suggestions === undefined) {
@@ -58,7 +58,7 @@ export default class SearchState {
             return Stores.concat(suggestions).map(suggestions => suggestions.some(list => list === undefined))
         })
         this.suggestions = suggestionsList.bindD(suggestions =>
-            Stores.concat(suggestions).map(suggestions => CombinedSearcher.merge(suggestions)),
+            Stores.concat(suggestions).map(suggestions => CombinedSearcher.merge(suggestions))
         )
 
         const themeSearch = new ThemeSearch(state)
@@ -108,19 +108,16 @@ export default class SearchState {
     private async applyFilter(payload: FilterSearchResult[]) {
         const state = this.state
 
-        const layers = payload.map(fsr => fsr.layer.id)
+        const layersToShow = payload.map(fsr => fsr.layer.id)
+        console.log("Layers to show are", layersToShow)
         for (const [name, otherLayer] of state.layerState.filteredLayers) {
             const layer = otherLayer.layerDef
             if (!layer.isNormal()) {
                 continue
             }
-            if(otherLayer.layerDef.minzoom > state.mapProperties.minzoom.data) {
-                // Currently not displayed, we don't hide
-                continue
-            }
-            otherLayer.isDisplayed.setData(layers.indexOf(layer.id) > 0)
+            otherLayer.isDisplayed.setData(layersToShow.indexOf(layer.id) >= 0)
         }
-        for (const  { filter, index, layer } of payload) {
+        for (const { filter, index, layer } of payload) {
             const flayer = state.layerState.filteredLayers.get(layer.id)
             flayer.isDisplayed.set(true)
             const filtercontrol = flayer.appliedFilters.get(filter.id)
