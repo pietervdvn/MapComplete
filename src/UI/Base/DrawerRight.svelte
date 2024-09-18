@@ -26,7 +26,7 @@
 <Drawer placement="right"
         transitionType="fly" {transitionParams}
         activateClickOutside={false}
-        divClass="overflow-y-auto"
+        divClass="overflow-y-auto z-3"
         backdrop={false}
         id="drawer-right"
         width="w-full sm:w-80 md:w-96"

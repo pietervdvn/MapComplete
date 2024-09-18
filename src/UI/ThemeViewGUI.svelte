@@ -327,7 +327,7 @@
 
 
   <!-- Top components -->
-  <div class="pointer-events-none absolute top-0 left-0 w-full">
+  <div class="pointer-events-none absolute top-0 left-0 w-full z-4">
 
     <div
       id="top-bar"

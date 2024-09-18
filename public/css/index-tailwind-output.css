@@ -1462,6 +1462,10 @@ input[type="range"].range-lg::-moz-range-thumb {
   margin-right: 4rem;
 }
 
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
 .mt-4 {
   margin-top: 1rem;
 }
@@ -1476,10 +1480,6 @@ input[type="range"].range-lg::-moz-range-thumb {
 
 .mb-16 {
   margin-bottom: 4rem;
-}
-
-.mb-4 {
-  margin-bottom: 1rem;
 }
 
 .ml-1 {
@@ -1698,12 +1698,12 @@ input[type="range"].range-lg::-moz-range-thumb {
   height: 6rem;
 }
 
-.h-full {
-  height: 100%;
-}
-
 .h-screen {
   height: 100vh;
+}
+
+.h-full {
+  height: 100%;
 }
 
 .h-fit {
@@ -4016,6 +4016,10 @@ input[type="range"].range-lg::-moz-range-thumb {
   padding-right: 0.25rem;
 }
 
+.pb-4 {
+  padding-bottom: 1rem;
+}
+
 .pt-0\.5 {
   padding-top: 0.125rem;
 }
@@ -5626,6 +5630,18 @@ svg.apply-fill path {
 
 .max-w-screen {
   max-width: 100vw;
+}
+
+.z-4 {
+  z-index: 4;
+}
+
+.z-3 {
+  z-index: 3;
+}
+
+.z-5 {
+  z-index: 5;
 }
 
 /************************* Experimental support for foldable devices ********************************/
