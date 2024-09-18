@@ -12,7 +12,7 @@ export class Imgur extends ImageProvider implements ImageUploader {
     public readonly defaultKeyPrefixes: string[] = ["image"]
     public readonly maxFileSizeInMegabytes = 10
     public static readonly apiUrl = "https://api.imgur.com/3/image"
-
+    public static readonly supportingUrls = ["https://i.imgur.com"]
     private constructor() {
         super()
     }

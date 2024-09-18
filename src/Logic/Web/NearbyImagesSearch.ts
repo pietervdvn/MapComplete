@@ -9,6 +9,7 @@ import { Utils } from "../../Utils"
 import { Point } from "geojson"
 import MvtSource from "../FeatureSource/Sources/MvtSource"
 import AllImageProviders from "../ImageProviders/AllImageProviders"
+import { Imgur } from "../ImageProviders/Imgur"
 
 interface ImageFetcher {
     /**
@@ -353,7 +354,7 @@ type P4CService = (typeof P4CImageFetcher.services)[number]
 
 export class CombinedFetcher {
     private readonly sources: ReadonlyArray<CachedFetcher>
-    public static apiUrls = P4CImageFetcher.apiUrls
+    public static apiUrls = [...P4CImageFetcher.apiUrls, Imgur.apiUrl, ...Imgur.supportingUrls]
 
     constructor(radius: number, maxage: Date, indexedFeatures: IndexedFeatureSource) {
         this.sources = [

@@ -700,7 +700,7 @@ export default class SpecialVisualizations {
             {
                 funcName: "image_upload",
                 docs: "Creates a button where a user can upload an image to IMGUR",
-                needsUrls: [Imgur.apiUrl],
+                needsUrls: [Imgur.apiUrl, ...Imgur.supportingUrls],
                 args: [
                     {
                         name: "image-key",
@@ -1098,7 +1098,7 @@ export default class SpecialVisualizations {
                         defaultValue: "id",
                     },
                 ],
-                needsUrls: [Imgur.apiUrl],
+                needsUrls: [Imgur.apiUrl, ...Imgur.supportingUrls],
 
                 constr: (state, tags, args) => {
                     const id = tags.data[args[0] ?? "id"]
