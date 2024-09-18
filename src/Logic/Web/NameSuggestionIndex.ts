@@ -261,6 +261,15 @@ export default class NameSuggestionIndex {
     }
 
     /**
+     * Caching for the resolved sets, as they can take a while
+     * @private
+     */
+    private static resolvedSets: Record<string, any> = {}
+
+    /**
+     * Returns all suggestions for the given type (brand|operator) and main tag.
+     * Can optionally be filtered by countries and location set
+     *
      *
      * @param country: a string containing one or more country codes, separated by ";"
      * @param location: center point of the feature, should be [lon, lat]
@@ -274,24 +283,47 @@ export default class NameSuggestionIndex {
     ): NSIItem[] {
         const path = `${type}s/${key}/${value}`
         const entry = NameSuggestionIndex.nsiFile.nsi[path]
+        const countries = country?.split(";") ?? []
         return entry?.items?.filter((i) => {
             if (i.locationSet.include.indexOf("001") >= 0) {
+                // this brand is spread globally
+                return true
+            }
+
+            if (country === undefined) {
+                // IF the country is not set, we are probably in some international area, it isn't loaded yet,
+                // or we are in a code path where we need everything (e.g. a script)
+                // We just allow everything
                 return true
             }
 
             if (
-                country === undefined ||
-                // We prefer the countries provided by lonlat2country, they are more precise
-                // Country might contain multiple countries, separated by ';'
-                i.locationSet.include.some((c) => country.indexOf(c) >= 0)
+                i.locationSet.include.some((c) => countries.indexOf(c) >= 0)
             ) {
+                // We prefer the countries provided by lonlat2country, they are more precise and are loaded already anyway (cheap)
+                // Country might contain multiple countries, separated by ';'
                 return true
+            }
+
+            if (i.locationSet.exclude?.some(c => countries.indexOf(c) >= 0)) {
+                return false
             }
 
             if (location === undefined) {
                 return true
             }
-            const resolvedSet = NameSuggestionIndex.loco.resolveLocationSet(i.locationSet)
+
+            const hasSpecial = i.locationSet.include?.some(i => i.endsWith(".geojson") || Array.isArray(i)) || i.locationSet.exclude?.some(i => i.endsWith(".geojson") || Array.isArray(i))
+            if (!hasSpecial) {
+                return false
+            }
+            const key = i.locationSet.include?.join(";") + "-" + i.locationSet.exclude?.join(";")
+            const fromCache = NameSuggestionIndex.resolvedSets[key]
+            const resolvedSet = fromCache ?? NameSuggestionIndex.loco.resolveLocationSet(i.locationSet)
+            if (!fromCache) {
+                NameSuggestionIndex.resolvedSets[key] = resolvedSet
+            }
+
 
             if (resolvedSet) {
                 // We actually have a location set, so we can check if the feature is in it, by determining if our point is inside the MultiPolygon using @turf/boolean-point-in-polygon
