@@ -105,6 +105,7 @@ export default class Constants {
         "vending_machine",
         "aed",
         "clock",
+        "charging_stations",
 
         "surveillance",
         "advertising",
