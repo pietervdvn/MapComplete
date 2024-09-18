@@ -314,7 +314,8 @@
           }
         }
       ],
-      "id": "sport_pitch-sport"
+      "id": "sport_pitch-sport",
+      "filter": true
     },
     {
       "id": "basketball-hoops",
@@ -753,69 +754,6 @@
               "access=public",
               "access="
             ]
-          }
-        }
-      ]
-    },
-    {
-      "id": "available_sports",
-      "options": [
-        {
-          "question": {
-            "en": "All sports",
-            "nl": "Alle sporten",
-            "de": "Alle Sportarten",
-            "ca": "Tots els esports",
-            "cs": "Všechny sporty"
-          }
-        },
-        {
-          "osmTags": "sport=basketball",
-          "question": {
-            "nl": "Basketbalvelden",
-            "en": "Basketball fields",
-            "de": "Basketballplätze",
-            "ca": "Camps de bàsquet",
-            "cs": "Basketbalová hřiště"
-          }
-        },
-        {
-          "osmTags": "sport=soccer",
-          "question": {
-            "nl": "Voetbalvelden",
-            "en": "Soccer fields",
-            "de": "Fußballplätze",
-            "ca": "Camps de futbol",
-            "cs": "Fotbalová hřiště"
-          }
-        },
-        {
-          "osmTags": "sport=table_tennis",
-          "question": {
-            "nl": "Pingpong-tafel",
-            "en": "Ping-pong tables",
-            "de": "Tischtennisplatten",
-            "ca": "Taules de ping-pong",
-            "cs": "Ping-pongové stoly"
-          }
-        },
-        {
-          "osmTags": "sport=tennis",
-          "question": {
-            "nl": "Tennisveld",
-            "en": "Tennis fields",
-            "de": "Tennisplätze",
-            "ca": "Camps de tennis",
-            "cs": "Tenisové kurty"
-          }
-        },
-        {
-          "osmTags": "sport=badminton",
-          "question": {
-            "nl": "Badmintonveld",
-            "en": "Badminton fields",
-            "cs": "Badmintonová hřiště",
-            "de": "Badmintonfelder"
           }
         }
       ]
