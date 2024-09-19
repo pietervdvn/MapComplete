@@ -56,7 +56,7 @@
         "osmTags": "building~*"
       },
       "minzoom": 18,
-      "doCount": false,
+      "isCounted": false,
       "calculatedTags": [
         "_surface:strict:=feat(get)('_surface')"
       ],
@@ -152,7 +152,8 @@
           }
         }
       ],
-      "allowMove": false
+      "allowMove": false,
+      "isCounted": false
     },
     {
       "id": "osm_adresses",
@@ -171,7 +172,6 @@
         }
       },
       "minzoom": 18,
-      "doCount": false,
       "pointRendering": [
         {
           "label": {
@@ -191,7 +191,8 @@
           }
         }
       ],
-      "allowMove": false
+      "allowMove": false,
+      "isCounted": false
     },
     {
       "id": "bag_pand",

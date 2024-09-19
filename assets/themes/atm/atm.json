@@ -63,7 +63,7 @@
         "filter": {
           "sameAs": "banks_with_atm"
         },
-        "doCount": false
+        "isCounted": false
       }
     },
     {

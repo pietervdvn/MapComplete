@@ -275,7 +275,8 @@
           }
         }
       ],
-      "allowMove": false
+      "allowMove": false,
+      "isCounted": false
     },
     {
       "id": "grb",
@@ -606,7 +607,8 @@
           "fill": "no"
         }
       ],
-      "allowMove": false
+      "allowMove": false,
+      "isCounted": false
     },
     "address",
     {

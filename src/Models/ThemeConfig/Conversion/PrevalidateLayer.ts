@@ -88,6 +88,10 @@ export class PrevalidateLayer extends DesugaringStep<LayerConfigJson> {
             }
         }
 
+        if(json["doCount"] !== undefined){
+            context.err("Detected 'doCount'. did you mean: isCounted ?")
+        }
+
         if (
             json.syncSelection !== undefined &&
             LayerConfig.syncSelectionAllowed.indexOf(json.syncSelection) < 0
