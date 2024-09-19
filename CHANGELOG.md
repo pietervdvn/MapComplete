@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.47.1](https://github.com/pietervdvn/mapcomplete/compare/v0.47.0...v0.47.1) (2024-09-19)
+
+
+### Bug Fixes
+
+* actually read preferences ([a5b3342](https://github.com/pietervdvn/mapcomplete/commitsa5b3342415e843d5a33b1d3eb2dce4a95b14932a))
+* fix loading images for CSP, fix [#2161](https://github.com/pietervdvn/MapComplete/issues/2161) ([2569d0c](https://github.com/pietervdvn/mapcomplete/commits2569d0cb66e411228d9d25cf50dc3278a83d0de5))
+* use correct overflow ([c668698](https://github.com/pietervdvn/mapcomplete/commitsc668698b1eb16f0d96c5ae0e4e7e79209b6abd95))
+
+
+### Theme improvements
+
+* **food:** add search keywords ([53b7597](https://github.com/pietervdvn/mapcomplete/commits53b75973f6734bcad6d1081299e826d2e00e0551))
+* **sport:** add sport pitches filter on sports, fix [#2159](https://github.com/pietervdvn/MapComplete/issues/2159) ([58cec96](https://github.com/pietervdvn/mapcomplete/commits58cec96fb50284dca79716ffe43d0a75b4cb6597))
+
 ## [0.47.0](https://github.com/pietervdvn/MapComplete/compare/v0.46.9...v0.47.0) (2024-09-17)
 
 
