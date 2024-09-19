@@ -186,6 +186,7 @@
             "donate": "Support MapComplete financially",
             "editId": "Open the OpenStreetMap online editor here",
             "editJosm": "Edit here with JOSM",
+            "emailCreators": "Send an email to the creators",
             "followOnMastodon": "Follow MapComplete on Mastodon",
             "gotoSourceCode": "View the source code",
             "iconAttribution": {

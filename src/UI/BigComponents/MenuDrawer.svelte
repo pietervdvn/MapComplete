@@ -46,8 +46,9 @@
   import { BoltIcon } from "@babeard/svelte-heroicons/mini"
   import Copyright from "../../assets/svg/Copyright.svelte"
   import Pencil from "../../assets/svg/Pencil.svelte"
-  import Squares2x2 from "@babeard/svelte-heroicons/mini/Squares2x2"
   import SidebarUnit from "../Base/SidebarUnit.svelte"
+  import Squares2x2 from "@babeard/svelte-heroicons/mini/Squares2x2"
+  import EnvelopeOpen from "@babeard/svelte-heroicons/mini/EnvelopeOpen"
 
   export let state: ThemeViewState
   let userdetails = state.osmConnection.userDetails
@@ -268,6 +269,10 @@
       <Tr t={Translations.t.general.attribution.openIssueTracker} />
     </a>
 
+    <a class="flex" href="mailto:info@mapcomplete.org">
+      <EnvelopeOpen class="h-6 w-6"/>
+      <Tr t={Translations.t.general.attribution.emailCreators}/>en
+    </a>
     <a class="flex" href="https://hosted.weblate.org/projects/mapcomplete/" target="_blank">
       <TranslateIcon class="h-6 w-6"/>
       <Tr t={Translations.t.translations.activateButton} />
