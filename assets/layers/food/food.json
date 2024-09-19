@@ -195,6 +195,9 @@
         "pl": "Warstwa przedstawiająca restauracje i obiekty typu fast-food (ze specjalnym renderowaniem dla frytek)"
       }
     },
+    "searchTerms":{
+      "nl": ["restaurant","fast food","burgerzaak","eten"]
+    },
     {
       "title": {
         "en": "a fastfood",
