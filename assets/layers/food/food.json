@@ -21,6 +21,14 @@
     "cs": "Vrstva zobrazující restaurace a zařízení rychlého občerstvení (se speciálním vykreslením pro fritézy)",
     "pl": "Warstwa przedstawiająca restauracje i obiekty typu fast-food (ze specjalnym renderowaniem dla frytek)"
   },
+  "searchTerms": {
+    "nl": [
+      "restaurant",
+      "fast food",
+      "burgerzaak",
+      "eten"
+    ]
+  },
   "source": {
     "osmTags": {
       "or": [
@@ -194,9 +202,6 @@
         "cs": "Formální jídelna s posezením, kde se prodávají kompletní jídla podávaná číšníky",
         "pl": "Warstwa przedstawiająca restauracje i obiekty typu fast-food (ze specjalnym renderowaniem dla frytek)"
       }
-    },
-    "searchTerms":{
-      "nl": ["restaurant","fast food","burgerzaak","eten"]
     },
     {
       "title": {
