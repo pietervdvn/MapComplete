@@ -25,7 +25,7 @@
         continue
       }
       const el = document.elementFromPoint(touch.clientX, touch.clientY)
-      if (!el) {
+      if (!el || !el.classList.contains("oh-timecell")) {
         continue
       }
       lastElement = <any>el
@@ -46,12 +46,18 @@
       if (el?.onmouseup) {
         el?.onmouseup(<any>ev)
       }else{
+        // We dragged outside of the table
         dispatch("clear")
       }
 
     })
     element.addEventListener("touchmove", ev => {
-      elementUnderTouch(ev)?.onmouseenter(<any>ev)
+      const underTouch = elementUnderTouch(ev)
+        if(typeof underTouch?.onmouseenter !== "function"){
+          return
+        }
+
+        underTouch.onmouseenter(<any>ev)
     })
 
 

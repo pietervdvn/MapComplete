@@ -9,6 +9,8 @@
   import OHTable from "./OpeningHours/OHTable.svelte"
   import OpeningHoursState from "../../OpeningHours/OpeningHoursState"
   import Popup from "../../Base/Popup.svelte"
+  import CheckCircle from "@babeard/svelte-heroicons/mini/CheckCircle"
+  import Check from "@babeard/svelte-heroicons/mini/Check"
 
   export let value: UIEventSource<string>
   export let args: string
@@ -34,9 +36,9 @@
 </script>
 <Popup bodyPadding="p-0" shown={expanded}>
   <OHTable value={state.normalOhs} />
-  <div class="absolute w-full pointer-events-none bottom-0 flex justify-end">
-    <button on:click={() => expanded.set(false)} class="primary pointer-events-auto">Done</button>
-  </div>
+    <button on:click={() => expanded.set(false)} class="absolute left-0 bottom-0 primary pointer-events-auto h-8 w-10 rounded-full">
+      <Check class="shrink-0 w-6 h-6 m-0 p-0" color="white"/>
+    </button>
 </Popup>
 <button on:click={() => expanded.set(true)}>Pick opening hours</button>
 <PublicHolidaySelector value={state.phSelectorValue} />
