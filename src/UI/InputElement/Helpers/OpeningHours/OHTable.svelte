@@ -24,6 +24,8 @@
     wd.sunday,
   ]
 
+  let element: HTMLTableElement
+
   function range(n: number) {
     return Utils.TimesT(n, n => n)
   }
@@ -114,11 +116,29 @@
     clearSelection()
   }
 
+
+  let lasttouched: [number, number] = undefined
+
   function moved(weekday: number, hour: number) {
+    lasttouched = [weekday, hour]
     if (selectionStart) {
       clearSelection()
       setSelection(selectionStart[0], weekday, selectionStart[1], hour + 0.5)
     }
+    const allRows =  Array.from(element.getElementsByTagName("tr"))
+    for (const r of allRows) {
+      r.classList.remove("hover")
+      r.classList.remove("hovernext")
+
+    }
+    const selectedRow = allRows[hour * 2 + 2]
+    selectedRow?.classList?.add("hover")
+    const selectedNextRow = allRows[hour * 2 + 3]
+    selectedNextRow?.classList?.add("hovernext")
+  }
+
+  function mouseLeft() {
+    endSelection(...lasttouched)
   }
 
   let totalHeight = 0
@@ -146,14 +166,20 @@
 
 </script>
 
-<table class="oh-table no-weblate w-full" cellspacing="0" cellpadding="0">
+<table
+  bind:this={element}
+  class="oh-table no-weblate w-full" cellspacing="0" cellpadding="0"
+  class:hasselection={selectionStart !== undefined} class:hasnoselection={selectionStart === undefined}
+  on:mouseleave={mouseLeft}>
   <tr>
-
+    <!-- Header row -->
     <th style="width: 9%">
       <!-- Top-left cell -->
-      <button class="absolute top-0 left-0 p-1 rounded-full" on:click={() => value.set([])} style="z-index: 10">
-        <TrashIcon class="w-5 h-5" />
-      </button>
+      <slot name="top-left">
+        <button class="absolute top-0 left-0 p-1 rounded-full" on:click={() => value.set([])} style="z-index: 10">
+          <TrashIcon class="w-5 h-5" />
+        </button>
+      </slot>
     </th>
     {#each days as wd}
       <th style="width: 13%">
@@ -162,14 +188,14 @@
     {/each}
   </tr>
 
-  <tr class="h-0">
+  <tr class="h-0 nobold">
     <!-- Virtual row to add the ranges to-->
     <td style="width: 9%" />
     {#each range(7) as wd}
       <td style="width: 13%; position: relative;">
 
         <div class="h-0 pointer-events-none" style="z-index: 10">
-          {#each $value.filter(oh => oh.weekday === wd) as range }
+          {#each $value.filter(oh => oh.weekday === wd).map(oh => OpeningHours.rangeAs24Hr(oh)) as range }
             <div class="absolute pointer-events-none px-1 md:px-2 w-full "
                  style={rangeStyle(range, totalHeight)}
             >
@@ -180,7 +206,7 @@
                 <button class="w-fit rounded-full p-1 self-center pointer-events-auto"
                         on:click={() => {
                           const cleaned = value.data.filter(v => !OpeningHours.isSame(v, range))
-                          console.log("Cleaned", cleaned, value.data)
+                          console.log("Cleaned", cleaned, OpeningHours.ToString(value.data))
                   value.set(cleaned)
                 }}>
                   <TrashIcon class="w-6 h-6" />
@@ -202,11 +228,13 @@
 
   {#each range(24) as h}
     <tr style="height: 0.75rem; width: 9%"> <!-- even row, for the hour -->
-      <td rowspan={ h < 23 ? 2: 1 }
-          class="relative text-sm sm:text-base oh-left-col oh-timecell-full border-box interactive"
-          style={ h < 23 ? "top: 0.75rem" : "height:0; top: 0.75rem"}>
-        {#if h < 23}
-          {h + 1}:00
+      <td rowspan={ h > 0 ? 2: 1 }
+          class="relative text-sm sm:text-base oh-left-col oh-timecell-full border-box interactive "
+          style={ h > 0 ? "top: -0.75rem" : "height:0; top: -0.75rem"}>
+        {#if h > 0}
+          <span class="hour-header w-full">
+          {h}:00
+          </span>
         {/if}
       </td>
       {#each range(7) as wd}
@@ -215,12 +243,13 @@
       {/each}
     </tr>
 
-    <tr style="height: 0.75rem"> <!-- odd row, for the half hour -->
-      {#if h === 23}
-        <td/>
-        {/if}
+    <tr style="height: calc( 0.75rem - 1px) "> <!-- odd row, for the half hour -->
+      {#if h === 0}
+        <td/> <!-- extra cell  to compensate for irregular header-->
+      {/if}
       {#each range(7) as wd}
-        <OHCell type="half" {h} {wd} on:start={() => startSelection(wd, h + 0.5)} on:end={() => endSelection(wd, h + 0.5)}
+        <OHCell type="half" {h} {wd} on:start={() => startSelection(wd, h + 0.5)}
+                on:end={() => endSelection(wd, h + 0.5)}
                 on:move={() => moved(wd, h + 0.5)} on:clear={() => clearSelection()} />
       {/each}
     </tr>
@@ -235,4 +264,25 @@
         position: sticky;
         z-index: 10;
     }
+
+
+    .hasselection tr:hover .hour-header, .hasselection tr.hover .hour-header {
+        border-bottom: 2px solid black;
+    }
+
+
+    .hasselection tr:hover + tr {
+        font-weight: bold;
+    }
+
+    .hasselection tr.hovernext {
+        font-weight: bold;
+    }
+
+    .hasnoselection tr:hover, .hasnoselection tr.hover {
+        font-weight: bold;
+    }
+
+
+
 </style>
