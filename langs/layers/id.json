@@ -690,6 +690,13 @@
                         "question": "Hanya akses publik"
                     }
                 }
+            },
+            "3": {
+                "options": {
+                    "0": {
+                        "question": "Hanya akses publik"
+                    }
+                }
             }
         }
     },

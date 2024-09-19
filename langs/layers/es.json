@@ -3805,6 +3805,13 @@
                 "options": {
                     "0": {
                         "question": "Todos los tipos de reciclado"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Todos los tipos de reciclado"
                     },
                     "1": {
                         "question": "Reciclaje de baterías"

@@ -8717,6 +8717,13 @@
                 "options": {
                     "0": {
                         "question": "All recycling types"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Only public access"
                     },
                     "1": {
                         "question": "Recycling of batteries"
@@ -8786,7 +8793,7 @@
                     }
                 }
             },
-            "2": {
+            "3": {
                 "options": {
                     "0": {
                         "question": "Only public access"
@@ -9786,28 +9793,6 @@
                 "options": {
                     "0": {
                         "question": "Publicly accessible"
-                    }
-                }
-            },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "All sports"
-                    },
-                    "1": {
-                        "question": "Basketball fields"
-                    },
-                    "2": {
-                        "question": "Soccer fields"
-                    },
-                    "3": {
-                        "question": "Ping-pong tables"
-                    },
-                    "4": {
-                        "question": "Tennis fields"
-                    },
-                    "5": {
-                        "question": "Badminton fields"
                     }
                 }
             }

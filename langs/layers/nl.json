@@ -6994,6 +6994,13 @@
                 "options": {
                     "0": {
                         "question": "Alle recyclingtypes"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Enkel publiek toegankelijke afvalcontainers"
                     },
                     "1": {
                         "question": "Recycling van batterijen"
@@ -7063,7 +7070,7 @@
                     }
                 }
             },
-            "2": {
+            "3": {
                 "options": {
                     "0": {
                         "question": "Enkel publiek toegankelijke afvalcontainers"
@@ -7705,28 +7712,6 @@
                 "options": {
                     "0": {
                         "question": "Publiek toegankelijk"
-                    }
-                }
-            },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Alle sporten"
-                    },
-                    "1": {
-                        "question": "Basketbalvelden"
-                    },
-                    "2": {
-                        "question": "Voetbalvelden"
-                    },
-                    "3": {
-                        "question": "Pingpong-tafel"
-                    },
-                    "4": {
-                        "question": "Tennisveld"
-                    },
-                    "5": {
-                        "question": "Badmintonveld"
                     }
                 }
             }

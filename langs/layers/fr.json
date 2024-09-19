@@ -5451,6 +5451,13 @@
                 "options": {
                     "0": {
                         "question": "Tout type de recyclage"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Accès public uniquement"
                     },
                     "1": {
                         "question": "Recyclage de piles et batteries domestiques"
@@ -5517,7 +5524,7 @@
                     }
                 }
             },
-            "2": {
+            "3": {
                 "options": {
                     "0": {
                         "question": "Accès public uniquement"

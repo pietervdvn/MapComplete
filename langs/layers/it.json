@@ -2254,6 +2254,13 @@
                 "options": {
                     "0": {
                         "question": "Tutti i tipi di rifiuti"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Solo accesso pubblico"
                     },
                     "1": {
                         "question": "Riciclo di batterie"
@@ -2311,7 +2318,7 @@
                     }
                 }
             },
-            "2": {
+            "3": {
                 "options": {
                     "0": {
                         "question": "Solo accesso pubblico"

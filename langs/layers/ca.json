@@ -6512,6 +6512,13 @@
                 "options": {
                     "0": {
                         "question": "Tots els tipus de reciclatge"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Només amb accés públic"
                     },
                     "1": {
                         "question": "Reciclatge de piles"
@@ -6578,7 +6585,7 @@
                     }
                 }
             },
-            "2": {
+            "3": {
                 "options": {
                     "0": {
                         "question": "Només amb accés públic"
@@ -7208,25 +7215,6 @@
                 "options": {
                     "0": {
                         "question": "Accés lliure"
-                    }
-                }
-            },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Tots els esports"
-                    },
-                    "1": {
-                        "question": "Camps de bàsquet"
-                    },
-                    "2": {
-                        "question": "Camps de futbol"
-                    },
-                    "3": {
-                        "question": "Taules de ping-pong"
-                    },
-                    "4": {
-                        "question": "Camps de tennis"
                     }
                 }
             }
