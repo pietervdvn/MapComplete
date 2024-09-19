@@ -112,7 +112,7 @@
         "minzoom": 18,
         "=presets": [],
         "=name": null,
-        "doCount": false,
+        "isCounted": false,
         "=filter": {
           "sameAs": "erotic_shop"
         }
@@ -188,7 +188,7 @@
       "override": {
         "minzoom": 18,
         "=presets": [],
-        "doCount": false,
+        "isCounted": false,
         "=name": null
       }
     },
@@ -267,7 +267,7 @@
       "override": {
         "minzoom": 18,
         "=presets": [],
-        "doCount": false,
+        "isCounted": false,
         "=name": null
       }
     },
@@ -302,7 +302,7 @@
             ]
           }
         ],
-        "doCount": false,
+        "isCounted": false,
         "=presets": []
       }
     }

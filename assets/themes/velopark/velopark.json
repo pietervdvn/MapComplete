@@ -397,7 +397,7 @@
         "leftover-questions"
       ],
       "override": {
-        "doCount": false,
+        "isCounted": false,
         "minzoom": 14,
         "+tagRenderings": [
           "questions",
@@ -427,7 +427,7 @@
         "+tagRenderings": [
           "questions"
         ],
-        "doCount": false,
+        "isCounted": false,
         "minzoom": 18
       }
     },

@@ -789,7 +789,7 @@
   ],
   "overrideAll": {
     "minzoom": 17,
-    "doCount": false
+    "isCounted": false
   },
   "overpassMaxZoom": 15,
   "osmApiTileSize": 17,

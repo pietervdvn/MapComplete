@@ -120,7 +120,7 @@
       "override": {
         "=presets": [],
         "name": null,
-        "doCount": false,
+        "isCounted": false,
         "minzoom": 18
       }
     }
