@@ -96,6 +96,10 @@
         "shortDescription": "Mapa laviček",
         "title": "Lavičky"
     },
+    "bicycle_parkings": {
+        "description": "Mapa všech typů parkovišť pro jízdní kola",
+        "title": "Parkování jízdních kol"
+    },
     "bicycle_rental": {
         "description": "Na této mapě najdete půjčovny jízdních kol, jak jsou uvedeny v OpenStreetMap",
         "shortDescription": "Mapa se stanicemi a obchody pro vypůjčení kol",
@@ -150,6 +154,17 @@
         "description": "Na této otevřené mapě lze vyhledávat a označovat informace o nabíjecích stanicích",
         "shortDescription": "Celosvětová mapa nabíjecích stanic",
         "title": "Nabíjecí stanice"
+    },
+    "circular_economy": {
+        "description": "Různé předměty, které pomáhají lidem sdílet, znovu používat nebo recyklovat.",
+        "layers": {
+            "5": {
+                "override": {
+                    "=name": "Obchody s použitým zbožím"
+                }
+            }
+        },
+        "title": "Cirkulární ekonomika"
     },
     "climbing": {
         "description": "Na této mapě najdete nejrůznější možnosti lezení, jako lezecké tělocvičny, boulderingové haly a skály v přírodě.",
@@ -273,6 +288,11 @@
             },
             "1": {
                 "name": "uzly",
+                "presets": {
+                    "0": {
+                        "title": "cyklistický uzel"
+                    }
+                },
                 "tagRenderings": {
                     "node-expected_rcn_route_relations": {
                         "freeform": {
@@ -299,6 +319,9 @@
                     "mappings": {
                         "0": {
                             "then": "uzel cyklu <strong>{rcn_ref}</strong>"
+                        },
+                        "1": {
+                            "then": "Navrhovaný cyklistický uzel <strong>{proposed:rcn_ref}</strong>"
                         }
                     },
                     "render": "uzel cyklu"
@@ -316,7 +339,7 @@
                 "override": {
                     "presets": {
                         "0": {
-                            "title": "značka trasy pro spojení mezi uzlem"
+                            "title": "značka trasy pro spojení mezi uzly"
                         }
                     }
                 }
@@ -409,8 +432,12 @@
         "title": "Cyklostezky"
     },
     "cyclofix": {
-        "description": "Cílem této mapy je představit cyklistům snadno použitelné řešení pro vyhledání vhodné infrastruktury pro jejich potřeby.<br><br>Můžete sledovat svou přesnou polohu (pouze pro mobilní zařízení) a v levém dolním rohu vybrat vrstvy, které jsou pro vás relevantní. Pomocí tohoto nástroje můžete také přidávat nebo upravovat špendlíky (body zájmu) do mapy a poskytovat další údaje pomocí odpovědí na otázky.<br><br>Všechny vámi provedené změny se automaticky uloží do globální databáze OpenStreetMap a mohou být volně znovu použity ostatními.<br><br>Další informace o projektu cyklofix najdete na <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
+        "description": "Mapa pro cyklisty, kde najdou vhodnou infrastrukturu pro své potřeby, jako jsou pumpy na kola, pitná voda, cyklistické obchody, opravny nebo parkoviště.",
         "title": "Cyklofix - mapa pro cyklisty"
+    },
+    "disaster_response": {
+        "description": "Tato mapa obsahuje prvky určené pro připravenost na katastrofy a reakci na ně.",
+        "title": "Reakce na katastrofy a záchranné služby"
     },
     "drinking_water": {
         "description": "Na této mapě jsou zobrazena veřejně přístupná místa s pitnou vodou, která lze snadno přidat",
@@ -449,7 +476,7 @@
             },
             "5": {
                 "override": {
-                    "=name": "Toursistická místa bez etymologických informací"
+                    "=name": "Turistická místa bez etymologických informací"
                 }
             },
             "6": {
@@ -464,7 +491,7 @@
             }
         },
         "shortDescription": "Jaký je původ toponyma?",
-        "title": "Etymologie - podle čeho se ulice jmenuje?"
+        "title": "Etymologie - podle čeho je místo pojmenováno?"
     },
     "facadegardens": {
         "description": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Fasádní zahrady</a>, zelené fasády a stromy ve městě přinášejí nejen klid a pohodu, ale také krásnější město, větší biodiverzitu, ochlazující efekt a lepší kvalitu ovzduší. <br/> Klimaan VZW a Mechelen Klimaatneutraal chtějí zmapovat stávající i nové fasádní zahrady jako příklad pro lidi, kteří si chtějí vybudovat vlastní zahradu, nebo pro městské chodce, kteří mají rádi přírodu.<br/>Více informací o projektu najdete na <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
@@ -553,6 +580,10 @@
         "shortDescription": "Tato mapa zobrazuje fasádní zahrady s obrázky a užitečnými informacemi o orientaci, oslunění a druzích rostlin.",
         "title": "Fasádní zahrady"
     },
+    "fireplace": {
+        "description": "Venkovní místo pro rozdělání ohně nebo grilování na oficiálním místě.",
+        "title": "Ohniště a grily"
+    },
     "food": {
         "description": "Restaurace a rychlého občerstvení",
         "title": "Restaurace a rychlé občerstvení"
@@ -562,6 +593,21 @@
         "layers": {
             "0": {
                 "override": {
+                    "filter+": {
+                        "0": {
+                            "options": {
+                                "0": {
+                                    "question": "Žádný preferovaný typ oleje"
+                                },
+                                "1": {
+                                    "question": "Zobrazit pouze jídla smažená na rostlinném oleji"
+                                },
+                                "2": {
+                                    "question": "Zobrazit pouze jídla smažená na živočišném oleji"
+                                }
+                            }
+                        }
+                    },
                     "name": "Obchod s hranolky"
                 }
             }
@@ -571,6 +617,51 @@
     "ghostbikes": {
         "description": "<b>Kolo duchů</b> je památník pro cyklisty, kteří zemřeli při dopravní nehodě, ve formě bílého kola trvale umístěného poblíž místa nehody.<br/><br/>Na této mapě je možné vidět všechna kola duchů, která jsou známa OpenStreetMap. Chybí na mapě nějaké? Každý může přidat nebo aktualizovat informace zde - stačí mít pouze (bezplatný) účet OpenStreetMap. <p>Na Mastodonu existuje <a href='https://masto.bike/@ghostbikebot' target='_blank'>automatizovaný účet, který posílá měsíční přehled kol duchů po celém světě</a></p>",
         "title": "Kola duchů"
+    },
+    "ghostsigns": {
+        "description": "Mapa zobrazující nepoužívané nápisy na budovách",
+        "layers": {
+            "0": {
+                "description": "Vrstva zobrazující nepoužívané nápisy na budovách",
+                "name": "Nápisy na zdech",
+                "presets": {
+                    "0": {
+                        "title": "nápis na zdi"
+                    }
+                },
+                "tagRenderings": {
+                    "brand": {
+                        "freeform": {
+                            "placeholder": "Název firmy"
+                        },
+                        "question": "Pro jaký účel byla tato značka vyrobena?",
+                        "render": "Tato cedule byla vyrobena pro: {brand}"
+                    }
+                }
+            },
+            "2": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "Toto dílo je historickou reklamou"
+                                },
+                                "1": {
+                                    "then": "Toto dílo není historickou reklamou"
+                                }
+                            },
+                            "question": "Je toto dílo historickou reklamou?"
+                        }
+                    }
+                }
+            }
+        },
+        "title": "Nápisy na zdech"
+    },
+    "glutenfree": {
+        "description": "Mapa s bezlepkovými položkami vytvořená pomocí crowdsourcingu",
+        "title": "Bez lepku"
     },
     "grb": {
         "description": "Toto téma je pokusem o automatizaci importu GRB.",
@@ -648,6 +739,10 @@
         "description": "Na této mapě jsou zobrazeny veřejně přístupné vnitřní prostory",
         "title": "Vnitřní prostory"
     },
+    "items_with_image": {
+        "description": "Mapa zobrazující všechny položky v OSM, které mají obrázek. Toto téma je pro MapComplete velmi nevhodné, protože někdo nemůže přímo přidat obrázek. Nicméně toto téma je zde hlavně proto, aby to vše zahrnovalo do databáze, což umožní rychle načítat obrázky v okolí pro další funkce",
+        "title": "Všechny položky s obrázky"
+    },
     "kerbs_and_crossings": {
         "description": "Mapa zobrazující obrubníky a přechody.",
         "layers": {
@@ -663,6 +758,10 @@
             }
         },
         "title": "Obrubníky a přechody"
+    },
+    "lactosefree": {
+        "description": "Mapa bezlaktózových obchodů a restaurací vytvořená crowdsourcingem",
+        "title": "Bezlaktózové obchody a restaurace"
     },
     "maproulette": {
         "description": "Téma zobrazující úkoly MapRoulette, které umožňuje vyhledávat, filtrovat a opravovat je.",
@@ -1050,7 +1149,7 @@
         "title": "Odpad"
     },
     "waste_basket": {
-        "description": "Na této mapě najdete koše na odpadky ve vašem okolí. Pokud na této mapě odpadkový koš chybí, můžete jej přidat sami",
+        "description": "Na této mapě najdete koše na odpadky ve vašem okolí. Pokud na této mapě odpadkový koš chybí, můžete jej přidat sami.",
         "shortDescription": "Mapa odpadkových košů",
         "title": "Odpadkový koš"
     }
