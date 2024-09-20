@@ -152,8 +152,7 @@
           }
         }
       ],
-      "allowMove": false,
-      "isCounted": false
+      "allowMove": false
     },
     {
       "id": "osm_adresses",
