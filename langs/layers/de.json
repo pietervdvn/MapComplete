@@ -6828,6 +6828,13 @@
                     }
                 }
             },
+            "4": {
+                "options": {
+                    "0": {
+                        "question": "Sollte {search} in jedem Kommentar erwähnen"
+                    }
+                }
+            },
             "5": {
                 "options": {
                     "0": {
@@ -6846,6 +6853,20 @@
                 "options": {
                     "0": {
                         "question": "<b>Nicht</b> erstellt von {search}"
+                    }
+                }
+            },
+            "8": {
+                "options": {
+                    "0": {
+                        "question": "Bearbeitet oder kommentiert von jedem Benutzer mit dem Namen {search}"
+                    }
+                }
+            },
+            "9": {
+                "options": {
+                    "0": {
+                        "question": "Zuletzt bearbeitet von {search}"
                     }
                 }
             }
