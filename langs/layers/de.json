@@ -6852,13 +6852,6 @@
             "8": {
                 "options": {
                     "0": {
-                        "question": "<b>Nicht</b> erstellt von {search}"
-                    }
-                }
-            },
-            "8": {
-                "options": {
-                    "0": {
                         "question": "Bearbeitet oder kommentiert von jedem Benutzer mit dem Namen {search}"
                     }
                 }
