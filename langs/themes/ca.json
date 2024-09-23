@@ -97,6 +97,7 @@
         "title": "Bancs"
     },
     "bicycle_parkings": {
+        "description": "Un mapa que mostra tots els tipus d'aparcaments de bicicletes",
         "title": "Aparcament de bicicletes"
     },
     "bicycle_rental": {
@@ -153,6 +154,17 @@
         "description": "A aquest mapa, un pot trobar i marcar informació sobre punts de càrrega",
         "shortDescription": "Un mapa mundial d'estacions de càrrega",
         "title": "Estacions de càrrega"
+    },
+    "circular_economy": {
+        "description": "Varios elements que ajuden a la gent a compartir, reutilitzar o reciclar.",
+        "layers": {
+            "5": {
+                "override": {
+                    "=name": "Tendes de segona mà"
+                }
+            }
+        },
+        "title": "Economia circular"
     },
     "climbing": {
         "description": "A aquest mapa trobaràs varies oportunitats d'escalada, como gimnasos d'escalada, sales d'escalada en bloc i roques a la natura.",
@@ -283,10 +295,16 @@
                 },
                 "tagRenderings": {
                     "node-expected_rcn_route_relations": {
+                        "freeform": {
+                            "placeholder": "Per exemple, 3"
+                        },
                         "question": "A quants altes nodes ciclistes enllaça aquest node?",
                         "render": "Aquest node enllaça a {expected_rcn_route_relations} altres nodes ciclistes."
                     },
                     "node-rxn_ref": {
+                        "freeform": {
+                            "placeholder": "Per exemple, 1"
+                        },
                         "question": "Quin és el número de referència d'aquest node ciclista?",
                         "render": "Aquest node ciclista té la referència número {rcn_ref}"
                     },
@@ -394,11 +412,12 @@
         "title": "Ciclocarrers"
     },
     "cyclofix": {
-        "description": "L'objectiu d'aquest mapa és presentar als ciclistes una solució fàcil d'utilitzar per trobar la infraestructura adequada per a les seves necessitats.<br><br>Pots fer un seguiment de la teva ubicació precisa (només mòbil) i seleccionar capes que siguin rellevants per a tu a la cantonada inferior esquerra. També podeu utilitzar aquesta eina per afegir o editar pins (punts d'interès) al mapa i proporcionar més dades responent a les preguntes.<br><br>Tots els canvis que feu es desaran automàticament a la base de dades global d'OpenStreetMap i es poden ser reutilitzat lliurement per altres persones.<br><br>Per obtenir més informació sobre el projecte cyclofix, aneu a <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a> .",
+        "description": "Un mapa per a que els ciclistes troben la infraestructura adequada a les seves necessitats, com bombes de bicicletes, aigua potable, botigues de bicicletes, reparació o aparcaments.",
         "title": "Cyclofix - un mapa per a ciclistes"
     },
     "disaster_response": {
-        "title": "Resposta davant de desastres"
+        "description": "Aquest mapa conté elements destinants a la preparació i resposta davant desastres.",
+        "title": "Resposta davant de desastres i serveis d'emergència"
     },
     "drinking_water": {
         "description": "En aquest mapa es mostren els punts d'aigua potable accessibles al públic i es poden afegir fàcilment",
@@ -452,7 +471,7 @@
             }
         },
         "shortDescription": "Quin és l'origen d'un topònim?",
-        "title": "Etimologia: com rep el nom un carrer?"
+        "title": "Etimologia: com rep el nom un lloc?"
     },
     "facadegardens": {
         "description": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Els Jardins de façana</a>, façanes verdes i arbres de la ciutat no només aporten pau i tranquil·litat, sinó també una ciutat més bella , una major biodiversitat, un efecte de refredament i una millor qualitat de l'aire. <br/> Klimaan VZW i Mechelen Klimaatneutraal volen cartografiar els jardins de façana existents i nous com a exemple per a les persones que volen construir el seu propi jardí o per als excursionistes de la ciutat que estimen la natura.<br/>Més informació sobre el projecte a <a href ='https://klimaan.be/' target=_blank>klimaan.be</a>.",
@@ -541,6 +560,10 @@
         "shortDescription": "Aquest mapa mostra jardins a façanes amb fotografies i informació útil sobre l'orientació, llum del sol i els tipus de plantes.",
         "title": "Jardins verticals"
     },
+    "fireplace": {
+        "description": "Lloc a l'aire lliure adequat per a fer foc i barbacoes.",
+        "title": "Xemeneies i barbacoes"
+    },
     "food": {
         "description": "Restaurants i menjar ràpid",
         "title": "Restaurants i menjar ràpid"
@@ -571,6 +594,42 @@
     "ghostbikes": {
         "description": "Una <b>bicicleta fantasma</b> és un monument commemoratiu d'un ciclista que va morir en un accident de trànsit en forma d'una bicicleta blanca col·locada permanentment a prop del lloc de l'accident.<br/><br/>En aquest mapa, un pot veure totes les bicicletes fantasma conegudes per OpenStreetMap. Falta una bicicleta fantasma? Tothom pot afegir o actualitzar informació aquí; només cal que tingueu un compte d'OpenStreetMap (gratuït). <p>Hi ha un <a href='https://masto.bike/@ghostbikebot' target='_blank'>compte automatitzat a Mastodon que publica una visió mensual de les bicicletes fantasma a tot el món</a></p>",
         "title": "Bicicletes fantasmes"
+    },
+    "ghostsigns": {
+        "description": "Un mapa que mostra els rètols en desús dels edificis",
+        "layers": {
+            "0": {
+                "description": "Capa que mostra rètols en desús dels edificis",
+                "name": "Rètols fantasma",
+                "presets": {
+                    "0": {
+                        "title": "un rètol fantasma"
+                    }
+                },
+                "tagRenderings": {
+                    "brand": {
+                        "freeform": {
+                            "placeholder": "Nom comercial"
+                        },
+                        "question": "Per a quin negoci es va fer aquest rètol?",
+                        "render": "El rètol es va fer per a: {brand}"
+                    },
+                    "historic": {
+                        "question": "Açò és un rètol fantasma?"
+                    },
+                    "inscription": {
+                        "freeform": {
+                            "placeholder": "Text en el rètol"
+                        },
+                        "question": "Quin és el text del rètol?"
+                    }
+                }
+            }
+        }
+    },
+    "glutenfree": {
+        "description": "Un mapa col·lectiu amb articles sense gluten",
+        "title": "Sense gluten"
     },
     "grb": {
         "description": "Aquest tema és un intent d'automatitzar la importació GRB.",
@@ -662,6 +721,13 @@
             }
         },
         "title": "Vorals i encreuaments"
+    },
+    "lactosefree": {
+        "description": "Un mapa col·lectiu amb botigues i restaurants sense lactosa",
+        "title": "Botigues i restaurants amb productes sense lactosa"
+    },
+    "lighthouses": {
+        "title": "Fars"
     },
     "maproulette": {
         "description": "Tema que mostra les tasques de MapRoulette, que us permet cercar-les, filtrar-les i solucionar-les.",
