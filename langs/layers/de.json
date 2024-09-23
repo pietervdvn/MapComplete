@@ -6790,6 +6790,13 @@
                     }
                 }
             },
+            "11": {
+                "options": {
+                    "0": {
+                        "question": "Nicht zuletzt bearbeitet von {search}"
+                    }
+                }
+            },
             "12": {
                 "options": {
                     "0": {
@@ -6800,14 +6807,21 @@
             "13": {
                 "options": {
                     "0": {
-                        "question": "Zuletzt bearbeitet vor {search}"
+                        "question": "Erstellt nach dem {search}"
                     }
                 }
             },
             "14": {
                 "options": {
                     "0": {
-                        "question": "Zuletzt bearbeitet nach {search}"
+                        "question": "Zuletzt bearbeitet vor dem {search}"
+                    }
+                }
+            },
+            "15": {
+                "options": {
+                    "0": {
+                        "question": "Zuletzt bearbeitet nach dem {search}"
                     }
                 }
             },
@@ -6845,6 +6859,13 @@
                     }
                 }
             },
+            "6": {
+                "options": {
+                    "0": {
+                        "question": "Sollte {search} in <b>keinem</b> Kommentar erwähnen"
+                    }
+                }
+            },
             "7": {
                 "options": {
                     "0": {
@@ -6855,14 +6876,14 @@
             "8": {
                 "options": {
                     "0": {
-                        "question": "Bearbeitet oder kommentiert von jedem Benutzer mit dem Namen {search}"
+                        "question": "<b>Nicht</b> geöffnet von Beitragendem {search}"
                     }
                 }
             },
             "9": {
                 "options": {
                     "0": {
-                        "question": "Zuletzt bearbeitet von {search}"
+                        "question": "Bearbeitet oder kommentiert von jedem Benutzer mit Namen {search}"
                     }
                 }
             }
