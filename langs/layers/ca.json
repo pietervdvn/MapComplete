@@ -32,6 +32,13 @@
                 "description": "Una estructura publicitària gran a l'exterior, que normalment es troba a zones transitades com ara al costat de carreteres amb molta intensitat",
                 "title": "una tanca publicitària"
             },
+            "1": {
+                "description": "Una gran estructura publicitària exterior, que normalment es troba en zones de gran trànsit, com ara al costat de carreteres transitades muntades a una paret",
+                "title": "un cartell muntat a una paret"
+            },
+            "10": {
+                "title": "una pantalla muntada en una marquesina"
+            },
             "11": {
                 "description": "Una peça de tèxtil impermeable amb un missatge imprès, fixada permanentment a una paret",
                 "title": "una lona"
@@ -54,6 +61,9 @@
             },
             "3": {
                 "title": "un mupi sobre la paret"
+            },
+            "4": {
+                "title": "un mupi que forma part d'un refugi de transport públic"
             },
             "5": {
                 "description": "Un xicotet tauló d'anuncics per a anuncis del veïnat, normalment destitat a peatons",
@@ -235,6 +245,26 @@
             }
         }
     },
+    "aerialway": {
+        "description": "Diverses formes de transport per a passatgers i mercaderies que utilitzen cables, incloent-hi telefèrics, telecabines, telecadires, teleesquís i tiroleses. ",
+        "name": "Vies aeries",
+        "pointRendering": {
+            "1": {
+                "label": {
+                    "render": "{name}"
+                }
+            }
+        },
+        "tagRenderings": {
+            "duration": {
+                "question": "Quant de temps triga un trajecte amb aquest ascensor?",
+                "render": "Un viatge dura {duration} minuts"
+            },
+            "occupancy": {
+                "question": "Quantes persones caben a la cabina?"
+            }
+        }
+    },
     "ambulancestation": {
         "description": "Una estició d'abulàncies és una àrea per a emmagatzemar ambulàncies, equipament mèdic, equips de protecció personal i altres subministraments mèdics.",
         "name": "Mapa d'estacions d'ambulàncies",
@@ -308,6 +338,9 @@
                     }
                 },
                 "question": "Quina és la finalitat del refugi d'animals?"
+            },
+            "boarded_animals": {
+                "question": "Quins animals s'accepten aquí?"
             }
         },
         "title": {
@@ -409,6 +442,13 @@
                     }
                 },
                 "question": "Aquesta obra d'art serveix com a un banc?"
+            },
+            "doubles_as_memorial": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquesta obra d'art també serveix com a memorial"
+                    }
+                }
             }
         },
         "title": {
@@ -721,10 +761,10 @@
                         "then": "Aquest banc té dues cares i comparteix el respatller"
                     },
                     "1": {
-                        "then": "Té espatller"
+                        "then": "Aquest banc té espatller"
                     },
                     "2": {
-                        "then": "<b>No</b> té espatller"
+                        "then": "Aquest banc <b>No</b> té espatller"
                     }
                 },
                 "question": "Aquest banc té respatller?"
@@ -818,7 +858,7 @@
                     }
                 },
                 "question": "Quants seients té aquest banc?",
-                "render": "{seats} seients"
+                "render": "Aquest banc té {seats} seients"
             },
             "bench-survey:date": {
                 "mappings": {
@@ -1208,7 +1248,7 @@
                 "render": "Aquest és un aparcament de bicicletes del tipus: {bicycle_parking}"
             },
             "Capacity": {
-                "question": "Quantes bicicletes caben en aquest aparcament de bicicletes (incloent possibles bicicletes de càrrega)?",
+                "question": "Quantes bicicletes caben en aquest aparcament de bicicletes?",
                 "render": "Espai per a {capacity} bicis"
             },
             "Cargo bike capacity?": {
@@ -1224,7 +1264,7 @@
                         "then": "Aquest aparcament hi han llocs designats (oficialment) per a bicicletes de càrrega."
                     },
                     "2": {
-                        "then": "No teniu permís per aparcar bicicletes de càrrega"
+                        "then": "No teniu permís per aparcar bicicletes de càrrega o no hi ha places previstes per a bicicletes de càrrega"
                     }
                 },
                 "question": "Aquest aparcament de bicicletes té punts per a bicicletes de càrrega?"
@@ -1818,13 +1858,29 @@
                     },
                     "1": {
                         "question": "Punt de recàrrega per a bicicletes"
+                    },
+                    "2": {
+                        "question": "Estació de càrrega per a cotxes"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Només estacions de recàrrega en funcionament"
                     }
                 }
             },
             "2": {
                 "options": {
+                    "0": {
+                        "question": "Tots els connectors"
+                    },
                     "1": {
                         "question": "Té un connector <div style='display: inline-block'><b><b>Schuko</b> sense pin de terra (CEE7/4 tipus F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div>"
+                    },
+                    "10": {
+                        "question": "Té un connector <div style='display: inline-block'><b><b>Tipus 2 amb cable</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
                     },
                     "2": {
                         "question": "Té un connector <div style='display: inline-block'><b><b>endoll de paret Europeu</b> amb un pin de terra (CEE7/4 tipus F)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div>"
@@ -1835,9 +1891,25 @@
                 }
             }
         },
+        "name": "Estacions de càrrega",
+        "presets": {
+            "1": {
+                "title": "estació de càrrega per a cotxes"
+            }
+        },
         "tagRenderings": {
+            "Auth phone": {
+                "question": "Quin és el número de telèfon per a la trucada d'autenticació o SMS?",
+                "render": "Autentiqueu-vos trucant o enviant SMS a <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>"
+            },
             "Authentication": {
                 "mappings": {
+                    "0": {
+                        "then": "Autenticació mitjançant una targeta de soci"
+                    },
+                    "1": {
+                        "then": "Autenticació mitjançant una aplicació"
+                    },
                     "4": {
                         "then": "L'autenticació mitjançant NFC està disponible"
                     },
@@ -1868,7 +1940,7 @@
                         "then": "<b>CSS Tipus 1</b> (també conegut com a Tipus 1 Combo)"
                     },
                     "12": {
-                        "then": "<b>Supercarregador de Tesla"
+                        "then": "<b>Supercarregador de Tesla</b>"
                     },
                     "13": {
                         "then": "<b>Supercarregador de Tesla</b>"
@@ -3932,43 +4004,43 @@
                         "then": "Fregiduria"
                     },
                     "10": {
-                        "then": "Aquí es serveixen plats xinesos"
+                        "then": "Xinés"
                     },
                     "11": {
-                        "then": "Aquí es serveixen plats grecs"
+                        "then": "Grec"
                     },
                     "12": {
-                        "then": "Aquí es serveixen plats indis"
+                        "then": "Indi"
                     },
                     "13": {
-                        "then": "Aquí es serveixen plats turcs"
+                        "then": "Turc"
                     },
                     "14": {
-                        "then": "Aquí es serveixen plats tailandesos"
+                        "then": "Tailandés"
                     },
                     "2": {
                         "then": "Principalment serveix pasta"
                     },
                     "3": {
-                        "then": "Aquesta és una botiga de kebabs"
+                        "then": "Botiga de kebabs"
                     },
                     "4": {
                         "then": "Botiga d'entrepans"
                     },
                     "5": {
-                        "then": "Aquí es serveixen hamburgueses"
+                        "then": "Restaurant d'hamburgueses"
                     },
                     "6": {
-                        "then": "Aquí es serveix sushi"
+                        "then": "Restaurant de shushi"
                     },
                     "7": {
-                        "then": "Aquí es serveix cafè"
+                        "then": "Cafeteria"
                     },
                     "8": {
-                        "then": "Això és un restaurant italià (que serveix més que pasta i pizza)"
+                        "then": "Restaurant italià (que serveix més que pasta i pizza)"
                     },
                     "9": {
-                        "then": "Aquí es serveixen plats francesos"
+                        "then": "Restaurant francés"
                     }
                 },
                 "question": "Quin tipus de menjar es serveix aquí?",
@@ -4983,8 +5055,8 @@
     "memorial": {
         "tagRenderings": {
             "inscription": {
-                "question": "Quina és la inscripció d'aquesta placa?",
-                "render": "La inscripció d'aquesta placa diu: <p><i>{inscription}<i></p>"
+                "question": "Quina és la inscripció d'aquest memorial?",
+                "render": "La inscripció d'aquest memorial diu: <p><i>{inscription}<i></p>"
             },
             "start_date": {
                 "render": "Col·locat el {start_date}"
@@ -5784,6 +5856,14 @@
                 }
             },
             "render": "Parc infantil"
+        }
+    },
+    "police": {
+        "presets": {
+            "0": {
+                "description": "Una comissaria on pot entrar la ciutadania per a les consultes",
+                "title": "una comissaria"
+            }
         }
     },
     "postboxes": {
@@ -7951,20 +8031,20 @@
             "toilet-changing_table:location": {
                 "mappings": {
                     "0": {
-                        "then": "El canviador està al lavabo per a dones. "
+                        "then": "Al lavabo per a dones hi ha un canviador"
                     },
                     "1": {
-                        "then": "El canviador està al lavabo per a homes. "
+                        "then": "Al lavabo per a homes hi ha un canviador"
                     },
                     "2": {
-                        "then": "El canviador està al lavabo per a usuaris de cadira de rodes. "
+                        "then": "Al lavabo per a usuaris de cadira de rodes hi ha un canviador"
                     },
                     "3": {
-                        "then": "El canviador està en una habitació dedicada. "
+                        "then": "Hi ha un canviador en una habitació dedicada"
                     }
                 },
                 "question": "On està el canviador?",
-                "render": "El cambiador està a {changing_table:location}"
+                "render": "Hi ha un canviador a {changing_table:location}"
             },
             "toilet-charge": {
                 "freeform": {
