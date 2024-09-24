@@ -7208,20 +7208,20 @@
                     "12": {
                         "question": "Vente d'œufs"
                     },
-                    "13": {
+                    "14": {
                         "question": "Vente de fromage"
                     },
-                    "14": {
+                    "15": {
                         "question": "Vente de miel"
                     },
-                    "15": {
+                    "16": {
                         "question": "Vente de pommes de terre"
-                    },
-                    "19": {
-                        "question": "Vente de fleurs"
                     },
                     "2": {
                         "question": "Ventre de confiseries"
+                    },
+                    "20": {
+                        "question": "Vente de fleurs"
                     },
                     "3": {
                         "question": "Ventre de nourriture"
@@ -7306,16 +7306,16 @@
                     "11": {
                         "then": "Vent des œufs"
                     },
-                    "12": {
+                    "13": {
                         "then": "Vent du fromage"
                     },
-                    "13": {
+                    "14": {
                         "then": "Vent du miel"
                     },
-                    "14": {
+                    "15": {
                         "then": "Vent des pommes de terre"
                     },
-                    "18": {
+                    "19": {
                         "then": "Vent des fleurs"
                     },
                     "2": {

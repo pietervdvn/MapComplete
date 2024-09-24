@@ -11891,51 +11891,54 @@
                         "question": "Sale of eggs"
                     },
                     "13": {
-                        "question": "Sale of cheese"
+                        "question": "Sale of ice cream"
                     },
                     "14": {
-                        "question": "Sale of honey"
+                        "question": "Sale of cheese"
                     },
                     "15": {
-                        "question": "Sale of potatoes"
+                        "question": "Sale of honey"
                     },
                     "16": {
-                        "question": "Sale of meat"
+                        "question": "Sale of potatoes"
                     },
                     "17": {
-                        "question": "Sale of fruit"
+                        "question": "Sale of meat"
                     },
                     "18": {
-                        "question": "Sale of strawberries"
+                        "question": "Sale of fruit"
                     },
                     "19": {
-                        "question": "Sale of flowers"
+                        "question": "Sale of strawberries"
                     },
                     "2": {
                         "question": "Sale of sweets"
                     },
                     "20": {
-                        "question": "Sale of parking tickets"
+                        "question": "Sale of flowers"
                     },
                     "21": {
-                        "question": "Sale of pressed pennies"
+                        "question": "Sale of parking tickets"
                     },
                     "22": {
-                        "question": "Sale of public transport tickets"
+                        "question": "Sale of pressed pennies"
                     },
                     "23": {
-                        "question": "Sale of bicycle lights"
+                        "question": "Sale of public transport tickets"
                     },
                     "24": {
-                        "question": "Sale of gloves"
+                        "question": "Sale of bicycle lights"
                     },
                     "25": {
-                        "question": "Sale of bicycle repair kits"
+                        "question": "Sale of gloves"
                     },
                     "26": {
-                        "question": "Sale of bicycle pumps"
+                        "question": "Sale of bicycle repair kits"
                     },
                     "27": {
+                        "question": "Sale of bicycle pumps"
+                    },
+                    "28": {
                         "question": "Sale of bicycle locks"
                     },
                     "3": {
@@ -12061,51 +12064,54 @@
                         "then": "Eggs are sold"
                     },
                     "12": {
-                        "then": "Cheese is sold"
+                        "then": "Ice cream is sold"
                     },
                     "13": {
-                        "then": "Honey is sold"
+                        "then": "Cheese is sold"
                     },
                     "14": {
-                        "then": "Potatoes are sold"
+                        "then": "Honey is sold"
                     },
                     "15": {
-                        "then": "Meat is sold"
+                        "then": "Potatoes are sold"
                     },
                     "16": {
-                        "then": "Fruit is sold"
+                        "then": "Meat is sold"
                     },
                     "17": {
-                        "then": "Strawberries are sold"
+                        "then": "Fruit is sold"
                     },
                     "18": {
-                        "then": "Flowers are sold"
+                        "then": "Strawberries are sold"
                     },
                     "19": {
-                        "then": "Parking tickets are sold"
+                        "then": "Flowers are sold"
                     },
                     "2": {
                         "then": "Food is sold"
                     },
                     "20": {
-                        "then": "Pressed pennies are sold"
+                        "then": "Parking tickets are sold"
                     },
                     "21": {
-                        "then": "Public transport tickets are sold"
+                        "then": "Pressed pennies are sold"
                     },
                     "22": {
-                        "then": "Bicycle lights are sold"
+                        "then": "Public transport tickets are sold"
                     },
                     "23": {
-                        "then": "Gloves are sold"
+                        "then": "Bicycle lights are sold"
                     },
                     "24": {
-                        "then": "Bicycle repair kits are sold"
+                        "then": "Gloves are sold"
                     },
                     "25": {
-                        "then": "Bicycle pumps are sold"
+                        "then": "Bicycle repair kits are sold"
                     },
                     "26": {
+                        "then": "Bicycle pumps are sold"
+                    },
+                    "27": {
                         "then": "Bicycle locks are sold"
                     },
                     "3": {

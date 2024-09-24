@@ -9380,42 +9380,45 @@
                         "question": "Verkoop van eieren"
                     },
                     "13": {
-                        "question": "Verkoop van kaas"
+                        "question": "Verkoop van ijs"
                     },
                     "14": {
-                        "question": "Verkoop van honing"
+                        "question": "Verkoop van kaas"
                     },
                     "15": {
-                        "question": "Verkoop van aardappelen"
+                        "question": "Verkoop van honing"
                     },
                     "16": {
-                        "question": "Verkoop van vlees"
+                        "question": "Verkoop van aardappelen"
                     },
                     "17": {
-                        "question": "Verkoop van fruit"
+                        "question": "Verkoop van vlees"
                     },
                     "18": {
-                        "question": "Verkoop van aardbeien"
+                        "question": "Verkoop van fruit"
                     },
                     "19": {
-                        "question": "Verkoop van bloemen"
+                        "question": "Verkoop van aardbeien"
                     },
                     "2": {
                         "question": "Verkoop van snoep"
                     },
-                    "23": {
-                        "question": "Verkoop van fietslampjes"
+                    "20": {
+                        "question": "Verkoop van bloemen"
                     },
                     "24": {
-                        "question": "Verkoop van handschoenen"
+                        "question": "Verkoop van fietslampjes"
                     },
                     "25": {
-                        "question": "Verkoop van fietsreparatiesets"
+                        "question": "Verkoop van handschoenen"
                     },
                     "26": {
-                        "question": "Verkoop van fietspompen"
+                        "question": "Verkoop van fietsreparatiesets"
                     },
                     "27": {
+                        "question": "Verkoop van fietspompen"
+                    },
+                    "28": {
                         "question": "Verkoop van fietssloten"
                     },
                     "3": {
@@ -9535,48 +9538,51 @@
                         "then": "Eieren worden verkocht"
                     },
                     "12": {
-                        "then": "Kaas wordt verkocht"
+                        "then": "IJs wordt verkocht"
                     },
                     "13": {
-                        "then": "Honing wordt verkocht"
+                        "then": "Kaas wordt verkocht"
                     },
                     "14": {
-                        "then": "Aardappelen worden verkocht"
+                        "then": "Honing wordt verkocht"
                     },
                     "15": {
-                        "then": "Vlees wordt verkocht"
+                        "then": "Aardappelen worden verkocht"
                     },
                     "16": {
-                        "then": "Fruit wordt verkocht"
+                        "then": "Vlees wordt verkocht"
                     },
                     "17": {
-                        "then": "Aardbeien worden verkocht"
+                        "then": "Fruit wordt verkocht"
                     },
                     "18": {
-                        "then": "Bloemen worden verkocht"
+                        "then": "Aardbeien worden verkocht"
                     },
                     "19": {
-                        "then": "Parkeerkaarten worden verkocht"
+                        "then": "Bloemen worden verkocht"
                     },
                     "2": {
                         "then": "Eten wordt verkocht"
                     },
-                    "21": {
-                        "then": "Openbaar vervoerkaartjes worden verkocht"
+                    "20": {
+                        "then": "Parkeerkaarten worden verkocht"
                     },
                     "22": {
-                        "then": "Fietslampjes worden verkocht"
+                        "then": "Openbaar vervoerkaartjes worden verkocht"
                     },
                     "23": {
-                        "then": "Handschoenen worden verkocht"
+                        "then": "Fietslampjes worden verkocht"
                     },
                     "24": {
-                        "then": "Fietsreparatiesets worden verkocht"
+                        "then": "Handschoenen worden verkocht"
                     },
                     "25": {
-                        "then": "Fietspompen worden verkocht"
+                        "then": "Fietsreparatiesets worden verkocht"
                     },
                     "26": {
+                        "then": "Fietspompen worden verkocht"
+                    },
+                    "27": {
                         "then": "Fietssloten worden verkocht"
                     },
                     "3": {

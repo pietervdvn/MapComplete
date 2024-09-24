@@ -1690,19 +1690,19 @@
             },
             "vending": {
                 "mappings": {
-                    "22": {
+                    "23": {
                         "then": "Luzes para bicicleta são vendidas aqui"
                     },
-                    "23": {
+                    "24": {
                         "then": "Luvas são vendidas aqui"
                     },
-                    "24": {
+                    "25": {
                         "then": "Kits para reparo de bicicleta são vendidos aqui"
                     },
-                    "25": {
+                    "26": {
                         "then": "Bombas de ar para bicicleta são vendidas aqui"
                     },
-                    "26": {
+                    "27": {
                         "then": "Cadeados para bicicleta são vendidos aqui"
                     },
                     "8": {

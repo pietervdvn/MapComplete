@@ -143,6 +143,10 @@
               {
                 "if": "vending=condoms",
                 "then": "./assets/layers/vending_machine/condom.svg"
+              },
+              {
+                "if": "vending=ice_cream",
+                "then": "./assets/layers/ice_cream/ice_cream.svg"
               }
             ]
           }
@@ -336,6 +340,15 @@
             ]
           },
           "then": "circle:white;./assets/themes/stations/public_transport_tickets.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_vending_count>1",
+              "vending~.*ice_cream.*"
+            ]
+          },
+          "then": "circle:white;./assets/layers/ice_cream/ice_cream.svg"
         }
       ]
     }
@@ -529,6 +542,14 @@
             "cs": "Prodává vejce"
           },
           "icon": "./assets/layers/vending_machine/egg.svg"
+        },
+        {
+          "if": "vending=ice_cream",
+          "then": {
+            "en": "Ice cream is sold",
+            "nl": "IJs wordt verkocht"
+          },
+          "icon": "./assets/layers/ice_cream/ice_cream.svg"
         },
         {
           "if": "vending=cheese",
@@ -1185,6 +1206,13 @@
             "cs": "Prodej vajec"
           },
           "osmTags": "vending~i~.*eggs.*"
+        },
+        {
+          "question": {
+            "en": "Sale of ice cream",
+            "nl": "Verkoop van ijs"
+          },
+          "osmTags": "vending~i~.*ice_cream.*"
         },
         {
           "question": {
