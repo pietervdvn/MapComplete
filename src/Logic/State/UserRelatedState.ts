@@ -42,7 +42,7 @@ export class OptionallySyncedHistory<T> {
             "preference-" + key + "-history",
             "sync",
         )
-        const synced = this.synced = UIEventSource.asObject<T[]>(osmconnection.GetLongPreference(key + "-history"), [])
+        const synced = this.synced = UIEventSource.asObject<T[]>(osmconnection.getPreference(key + "-history"), [])
         const local = this.local = LocalStorageSource.GetParsed<T[]>(key + "-history", [])
         const thisSession = this.thisSession = new UIEventSource<T[]>([], "optionally-synced:"+key+"(session only)")
         this.syncPreference.addCallback(syncmode => {
@@ -273,7 +273,7 @@ export default class UserRelatedState {
     }
 
     public getUnofficialTheme(id: string): (MinimalLayoutInformation & { definition }) | undefined {
-        const pref = this.osmConnection.GetLongPreference("unofficial-theme-" + id)
+        const pref = this.osmConnection.getPreference("unofficial-theme-" + id)
         const str = pref.data
 
         if (str === undefined || str === "undefined" || str === "") {
@@ -311,7 +311,7 @@ export default class UserRelatedState {
             })
         }
         if (!layout.official) {
-            this.osmConnection.GetLongPreference("unofficial-theme-" + layout.id).setData(
+            this.osmConnection.getPreference("unofficial-theme-" + layout.id).setData(
                 JSON.stringify({
                     id: layout.id,
                     icon: layout.icon,

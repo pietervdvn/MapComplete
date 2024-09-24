@@ -172,11 +172,6 @@ export class OsmConnection {
     ): UIEventSource<T | undefined> {
         return <UIEventSource<T>>this.preferencesHandler.getPreference(key, defaultValue, prefix)
     }
-
-    public GetLongPreference(key: string, prefix: string = "mapcomplete-"): UIEventSource<string> {
-        return this.preferencesHandler.getPreference(key, prefix)
-    }
-
     public OnLoggedIn(action: (userDetails: UserDetails) => void) {
         this._onLoggedIn.push(action)
     }
