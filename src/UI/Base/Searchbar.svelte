@@ -20,6 +20,8 @@
   export let isFocused: UIEventSource<boolean> = undefined
   let inputElement: HTMLInputElement
 
+  export let autofocus = false
+
   isFocused?.addCallback(focussed => {
     if (focussed) {
       requestAnimationFrame(() => {
@@ -30,6 +32,10 @@
       })
     }
   })
+
+  if(autofocus){
+    isFocused.set(true)
+  }
 
 </script>
 

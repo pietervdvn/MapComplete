@@ -43,13 +43,13 @@ export default class ThemeSearch {
     }
 
 
-    public search(query: string, limit: number): MinimalLayoutInformation[] {
+    public search(query: string, limit: number, threshold: number = 3): MinimalLayoutInformation[] {
         if (query.length < 1) {
             return []
         }
         const sorted = ThemeSearch.sortedByLowestScores(query, this._otherThemes, this._layersToIgnore)
         return sorted
-            .filter(sorted => sorted.lowest < 2)
+            .filter(sorted => sorted.lowest < threshold)
             .map(th => th.theme)
             .filter(th => !th.hideFromOverview || this._knownHiddenThemes.data.has(th.id))
             .slice(0, limit)

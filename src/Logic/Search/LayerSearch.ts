@@ -35,7 +35,7 @@ export default class LayerSearch {
     }
 
 
-    public search(query: string, limit: number): LayerConfig[] {
+    public search(query: string, limit: number, scoreThreshold: number = 2): LayerConfig[] {
         if (query.length < 1) {
             return []
         }
@@ -50,7 +50,7 @@ export default class LayerSearch {
         asList.sort((a, b) => a.score - b.score)
 
         return asList
-            .filter(sorted => sorted.score < 2)
+            .filter(sorted => sorted.score < scoreThreshold)
             .slice(0, limit)
             .map(l => l.layer)
     }

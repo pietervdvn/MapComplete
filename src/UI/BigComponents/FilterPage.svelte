@@ -72,6 +72,7 @@
 
   {#each layout.layers as layer}
     <Filterview
+      {state}
       zoomlevel={state.mapProperties.zoom}
       filteredLayer={state.layerState.filteredLayers.get(layer.id)}
       highlightedLayer={state.guistate.highlightedLayerInFilters}

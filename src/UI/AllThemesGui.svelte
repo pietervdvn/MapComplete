@@ -44,6 +44,8 @@
   let search: UIEventSource<string | undefined> = new UIEventSource<string>("")
   let searchStable = search.stabilized(100)
 
+  let searchIsFocused = new UIEventSource(true)
+
   const officialThemes: MinimalLayoutInformation[] = ThemeSearch.officialThemes.themes.filter(th => th.hideFromOverview === false)
   const hiddenThemes: MinimalLayoutInformation[] = ThemeSearch.officialThemes.themes.filter(th => th.hideFromOverview === true)
   let visitedHiddenThemes: Store<MinimalLayoutInformation[]> = UserRelatedState.initDiscoveredHiddenThemes(state.osmConnection)
@@ -135,7 +137,7 @@
       </div>
     </div>
 
-    <Searchbar value={search} placeholder={tr.searchForATheme} on:search={() => applySearch()}  />
+    <Searchbar value={search} placeholder={tr.searchForATheme} on:search={() => applySearch()} autofocus isFocused={searchIsFocussed} />
 
     <ThemesList {search} {state} themes={$officialSearched} />
 

@@ -794,15 +794,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
             last_click: this.lastClickObject,
             search: this.searchState.locationResults,
         }
-        if (specialLayers.summary) {
 
-            new ShowDataLayer(this.map, {
-                features: specialLayers.summary,
-                layer: new LayerConfig(<LayerConfigJson>summaryLayer, "summaryLayer"),
-                // doShowLayer: this.mapProperties.zoom.map((z) => z < maxzoom),
-                selectedElement: this.selectedElement,
-            })
-        }
 
         this.closestFeatures.registerSource(specialLayers.favourite, "favourite")
         if (this.layout?.lockLocation) {
@@ -900,6 +892,15 @@ export default class ThemeViewState implements SpecialVisualizationState {
                         center: GeoOperations.centerpointCoordinates(feature),
                     })
                 },
+            })
+        }
+
+        if (specialLayers.summary) {
+            new ShowDataLayer(this.map, {
+                features: specialLayers.summary,
+                layer: new LayerConfig(<LayerConfigJson>summaryLayer, "summaryLayer"),
+                // doShowLayer: this.mapProperties.zoom.map((z) => z < maxzoom),
+                selectedElement: this.selectedElement,
             })
         }
     }
