@@ -596,36 +596,7 @@
         "title": "Bicicletes fantasmes"
     },
     "ghostsigns": {
-        "description": "Un mapa que mostra els rètols en desús dels edificis",
-        "layers": {
-            "0": {
-                "description": "Capa que mostra rètols en desús dels edificis",
-                "name": "Rètols fantasma",
-                "presets": {
-                    "0": {
-                        "title": "un rètol fantasma"
-                    }
-                },
-                "tagRenderings": {
-                    "brand": {
-                        "freeform": {
-                            "placeholder": "Nom comercial"
-                        },
-                        "question": "Per a quin negoci es va fer aquest rètol?",
-                        "render": "El rètol es va fer per a: {brand}"
-                    },
-                    "historic": {
-                        "question": "Açò és un rètol fantasma?"
-                    },
-                    "inscription": {
-                        "freeform": {
-                            "placeholder": "Text en el rètol"
-                        },
-                        "question": "Quin és el text del rètol?"
-                    }
-                }
-            }
-        }
+        "description": "Un mapa que mostra els rètols en desús dels edificis"
     },
     "glutenfree": {
         "description": "Un mapa col·lectiu amb articles sense gluten",

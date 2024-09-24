@@ -115,6 +115,9 @@
                 },
                 "question": "Werden mehrere Werbungen abwechselnd angezeigt?"
             },
+            "historic": {
+                "question": "Ist dieses Schild für ein Geschäft, das nicht mehr existiert oder nicht mehr gepflegt wird?"
+            },
             "luminous_or_lit_advertising": {
                 "override": {
                     "+mappings": {
@@ -5494,6 +5497,34 @@
                 }
             },
             "render": "Geisterrad"
+        }
+    },
+    "ghostsign": {
+        "description": "Ebene, die ungenutzte Zeichen auf Gebäuden zeigt",
+        "name": "Geisterzeichen",
+        "presets": {
+            "0": {
+                "title": "ein Geisterzeichen"
+            }
+        },
+        "tagRenderings": {
+            "brand": {
+                "freeform": {
+                    "placeholder": "Unternehmensname"
+                },
+                "question": "Für welches Unternehmen wurde dieses Schild angefertigt?",
+                "render": "Dieses Schild wurde gemacht für: {brand}"
+            },
+            "inscription": {
+                "freeform": {
+                    "placeholder": "Text auf dem Schild"
+                },
+                "question": "Was ist der Text auf dem Schild?",
+                "render": "Der Text auf dem Schild ist: {inscription}"
+            }
+        },
+        "title": {
+            "render": "Geisterzeichen"
         }
     },
     "governments": {

@@ -621,65 +621,6 @@
     "ghostsigns": {
         "description": "Un mapa que muestra los rótulos en desuso de los edificios",
         "layers": {
-            "0": {
-                "description": "Capa que muestra carteles en desuso en edificios",
-                "name": "Señales fantasma",
-                "presets": {
-                    "0": {
-                        "title": "una señal fantasma"
-                    }
-                },
-                "tagRenderings": {
-                    "brand": {
-                        "freeform": {
-                            "placeholder": "Nombre comercial"
-                        },
-                        "question": "¿Para qué negocio se hizo este cartel?",
-                        "render": "Este cartel se hizo para: {brand}"
-                    },
-                    "historic": {
-                        "mappings": {
-                            "0": {
-                                "then": "Esta es una señal fantasma"
-                            },
-                            "1": {
-                                "then": "Esta no es una señal fantasma, al responder esto se ocultará la señal del mapa"
-                            }
-                        },
-                        "question": "¿Es esto una señal fantasma?",
-                        "questionHint": "¿Este cartel es para una empresa que ya no existe o que ya no recibe mantenimiento?"
-                    },
-                    "inscription": {
-                        "freeform": {
-                            "placeholder": "Texto en el cartel"
-                        },
-                        "question": "¿Cuál es el texto del cartel?",
-                        "render": "El texto del cartel es: {inscription}"
-                    }
-                },
-                "title": {
-                    "render": "Publicidad en una fachada"
-                }
-            },
-            "1": {
-                "override": {
-                    "+tagRenderings": {
-                        "0": {
-                            "mappings": {
-                                "0": {
-                                    "then": "Esta es una señal fantasma"
-                                },
-                                "1": {
-                                    "then": "Esta no es una señal fantasma"
-                                }
-                            },
-                            "question": "¿Es una señal fantasma?",
-                            "questionHint": "¿Es este rótulo de un negocio que ya no existe o que ya no se mantiene?"
-                        }
-                    },
-                    "name": "Todos los murales promocionales"
-                }
-            },
             "2": {
                 "override": {
                     "+tagRenderings": {

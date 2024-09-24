@@ -4443,6 +4443,32 @@
             "render": "Bicicleta blanca"
         }
     },
+    "ghostsign": {
+        "description": "Capa que mostra rètols en desús dels edificis",
+        "presets": {
+            "0": {
+                "title": "un rètol fantasma"
+            }
+        },
+        "tagRenderings": {
+            "brand": {
+                "freeform": {
+                    "placeholder": "Nom comercial"
+                },
+                "question": "Per a quin negoci es va fer aquest rètol?",
+                "render": "El rètol es va fer per a: {brand}"
+            },
+            "inscription": {
+                "freeform": {
+                    "placeholder": "Text en el rètol"
+                },
+                "question": "Quin és el text del rètol?"
+            }
+        },
+        "title": {
+            "render": "Rètols fantasma"
+        }
+    },
     "governments": {
         "description": "Aquesta capa mostra edificis governamentals. Es va configurar com a capa encarregada per al client d'OSOC '22",
         "name": "Governs",

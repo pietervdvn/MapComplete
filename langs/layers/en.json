@@ -115,6 +115,17 @@
                 },
                 "question": "Does this advertisement cycle through multiple messages?"
             },
+            "historic": {
+                "mappings": {
+                    "0": {
+                        "then": "This is a historic advertisement sign (an advertisement for a business that no longer exists or a very old sign with heritage value)"
+                    },
+                    "1": {
+                        "then": "This advertisement sign has no historic value (the business still exists and has no heritage value)"
+                    }
+                },
+                "question": "Is this sign for a business that no longer exists or no longer being maintained?"
+            },
             "luminous_or_lit_advertising": {
                 "override": {
                     "+mappings": {
@@ -177,6 +188,12 @@
                     },
                     "10": {
                         "then": "This is a wall painting"
+                    },
+                    "11": {
+                        "then": "This is tilework - the advertisement is painted on tiles"
+                    },
+                    "12": {
+                        "then": "This is a relief"
                     },
                     "2": {
                         "then": "This is a column"
@@ -5494,6 +5511,34 @@
                 }
             },
             "render": "Ghost bike"
+        }
+    },
+    "ghostsign": {
+        "description": "Layer showing disused signs on buildings",
+        "name": "Ghost Signs",
+        "presets": {
+            "0": {
+                "title": "a ghost sign"
+            }
+        },
+        "tagRenderings": {
+            "brand": {
+                "freeform": {
+                    "placeholder": "Business name"
+                },
+                "question": "For what business was this sign made?",
+                "render": "This sign was made for: {brand}"
+            },
+            "inscription": {
+                "freeform": {
+                    "placeholder": "Text on the sign"
+                },
+                "question": "What is the text on the sign?",
+                "render": "The text on the sign is: {inscription}"
+            }
+        },
+        "title": {
+            "render": "Ghost Sign"
         }
     },
     "governments": {
