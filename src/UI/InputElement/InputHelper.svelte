@@ -33,6 +33,7 @@
 {:else if type === "direction"}
   <DirectionInput
     {value}
+    {state}
     mapProperties={InputHelpers.constructMapProperties({ feature, args: args ?? [] })}
   />
 {:else if type === "date"}
