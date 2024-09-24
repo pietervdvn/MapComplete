@@ -299,7 +299,8 @@
             "en": "No dogs allowed",
             "nl": "Geen honden toegelaten",
             "de": "Keine Hunde erlaubt",
-            "cs": "Psi nejsou povoleni"
+            "cs": "Psi nejsou povoleni",
+            "ca": "No s'admeten gossos"
           },
           "icon": "./assets/layers/questions/no_dogs.svg",
           "osmTags": "dog=no"

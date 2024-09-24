@@ -168,7 +168,8 @@
       "question": {
         "en": "Which animals are accepted here?",
         "de": "Welche Tiere werden hier akzeptiert?",
-        "pl": "Jakie zwierzęta są tutaj przyjmowane?"
+        "pl": "Jakie zwierzęta są tutaj przyjmowane?",
+        "ca": "Quins animals s'accepten aquí?"
       },
       "id": "boarded_animals",
       "mappings": [

@@ -65,6 +65,7 @@
     tags.data["closed_at"] = undefined
     NoteCommentElement.addCommentTo(txt.data, tags, state)
     tags.ping()
+    txt.set(undefined)
     isProcessing.set(false)
   }
 </script>

@@ -180,7 +180,8 @@
       "question": {
         "en": "What shape does this elevator have?",
         "de": "Welche Form hat dieser Aufzug?",
-        "pl": "Jaki kształt ma ta winda?"
+        "pl": "Jaki kształt ma ta winda?",
+        "ca": "Quina forma té aquest ascensor?"
       },
       "mappings": [
         {
@@ -190,7 +191,8 @@
             "en": "This elevator has a rectangular shape",
             "de": "Dieser Aufzug hat eine rechteckige Form",
             "fr": "Cet ascenseur est de forme rectangulaire",
-            "pl": "Ta winda ma prostokątny kształt"
+            "pl": "Ta winda ma prostokątny kształt",
+            "ca": "Aquest ascensor té una forma rectangular"
           },
           "icon": "./assets/svg/square.svg"
         },
@@ -199,7 +201,8 @@
           "then": {
             "en": "This elevator has a circular shape",
             "de": "Dieser Aufzug hat eine kreisförmige Form",
-            "pl": "Ta winda ma okrągły kształt"
+            "pl": "Ta winda ma okrągły kształt",
+            "ca": "Aquest ascensor té una forma circular"
           },
           "icon": "./assets/svg/circle.svg"
         }

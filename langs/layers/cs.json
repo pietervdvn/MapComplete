@@ -4377,6 +4377,26 @@
             "render": "Kolo duchů"
         }
     },
+    "ghostsign": {
+        "description": "Vrstva zobrazující nepoužívané nápisy na budovách",
+        "presets": {
+            "0": {
+                "title": "nápis na zdi"
+            }
+        },
+        "tagRenderings": {
+            "brand": {
+                "freeform": {
+                    "placeholder": "Název firmy"
+                },
+                "question": "Pro jaký účel byla tato značka vyrobena?",
+                "render": "Tato cedule byla vyrobena pro: {brand}"
+            }
+        },
+        "title": {
+            "render": "Nápisy na zdech"
+        }
+    },
     "governments": {
         "description": "Tato vrstva zobrazuje vládní budovy. Byla nastavena jako zprovozněná vrstva pro klienta OSOC '22",
         "name": "vlády",

@@ -3,7 +3,8 @@
   "name": {
     "en": "Charging stations",
     "nl": "Oplaadpunten",
-    "de": "Ladestationen"
+    "de": "Ladestationen",
+    "ca": "Estacions de càrrega"
   },
   "description": {
     "en": "A charging station",
@@ -171,7 +172,8 @@
       "title": {
         "en": "charging station for cars",
         "nl": "oplaadstation voor elektrische auto's",
-        "de": "Ladestation für Autos"
+        "de": "Ladestation für Autos",
+        "ca": "estació de càrrega per a cotxes"
       }
     }
   ],
@@ -787,7 +789,7 @@
           "then": {
             "en": "<b>Tesla Supercharger</b>",
             "nl": "<b>Tesla Supercharger</b>",
-            "ca": "<b>Supercarregador de Tesla",
+            "ca": "<b>Supercarregador de Tesla</b>",
             "de": "<b>Tesla Supercharger</b>"
           },
           "icon": {
@@ -2396,7 +2398,8 @@
             "en": "Authentication by a membership card",
             "nl": "Aanmelden met een lidkaart is mogelijk",
             "de": "Authentifizierung durch eine Mitgliedskarte",
-            "fr": "Authentification par carte de membre"
+            "fr": "Authentification par carte de membre",
+            "ca": "Autenticació mitjançant una targeta de soci"
           }
         },
         {
@@ -2406,7 +2409,8 @@
             "en": "Authentication by an app",
             "nl": "Aanmelden via een applicatie is mogelijk",
             "de": "Authentifizierung per App",
-            "fr": "Authentification par une application"
+            "fr": "Authentification par une application",
+            "ca": "Autenticació mitjançant una aplicació"
           }
         },
         {
@@ -2482,12 +2486,14 @@
       "render": {
         "en": "Authenticate by calling or SMS'ing to <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>",
         "nl": "Aanmelden door te bellen of te SMS'en naar <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>",
-        "de": "Authentifiziere dich, indem du anrufst oder eine SMS sendest an <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>"
+        "de": "Authentifiziere dich, indem du anrufst oder eine SMS sendest an <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>",
+        "ca": "Autentiqueu-vos trucant o enviant SMS a <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>"
       },
       "question": {
         "en": "What's the phone number for authentication call or SMS?",
         "nl": "Wat is het telefoonnummer dat men moet bellen of SMS'en om zich aan te melden?",
-        "de": "Wie lautet die Telefonnummer für den Authentifizierungsanruf oder die SMS?"
+        "de": "Wie lautet die Telefonnummer für den Authentifizierungsanruf oder die SMS?",
+        "ca": "Quin és el número de telèfon per a la trucada d'autenticació o SMS?"
       },
       "freeform": {
         "key": "authentication:phone_call:number",
@@ -2911,7 +2917,8 @@
             "nl": "Oplaadpunten voor auto's",
             "de": "Ladestationen für Autos",
             "fr": "Station de recharge pour voitures",
-            "it": "Stazione di ricarica per auto"
+            "it": "Stazione di ricarica per auto",
+            "ca": "Estació de càrrega per a cotxes"
           },
           "osmTags": {
             "or": [
@@ -2931,7 +2938,8 @@
             "nl": "Enkel werkende oplaadpunten",
             "de": "Nur Ladestationen in Betrieb",
             "fr": "Seulement les stations de recharge qui fonctionnent",
-            "it": "Solo stazioni di ricarica funzionanti"
+            "it": "Solo stazioni di ricarica funzionanti",
+            "ca": "Només estacions de recàrrega en funcionament"
           },
           "osmTags": {
             "and": [
@@ -2950,7 +2958,8 @@
             "en": "All connectors",
             "nl": "Alle types",
             "de": "Alle Anschlüsse",
-            "it": "Tutti i connettori"
+            "it": "Tutti i connettori",
+            "ca": "Tots els connectors"
           }
         },
         {
@@ -3032,7 +3041,8 @@
           "question": {
             "en": "Has a <div style='display: inline-block'><b><b>Type 2 with cable</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> connector",
             "nl": "Heeft een <div style='display: inline-block'><b><b>Type 2 met kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>",
-            "de": "Hat einen <div style='display: inline-block'><b><b>Typ 2</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> Anschluss mit Kabel"
+            "de": "Hat einen <div style='display: inline-block'><b><b>Typ 2</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> Anschluss mit Kabel",
+            "ca": "Té un connector <div style='display: inline-block'><b><b>Tipus 2 amb cable</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
           },
           "osmTags": "socket:type2_cable~*"
         },

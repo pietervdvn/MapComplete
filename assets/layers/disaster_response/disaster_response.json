@@ -2,12 +2,14 @@
   "id": "disaster_response",
   "name": {
     "en": "Disaster response organizations",
-    "de": "Katastrophenschutzorganisationen"
+    "de": "Katastrophenschutzorganisationen",
+    "ca": "Organitzacions de resposta a desastres"
   },
   "description": {
     "en": "This layer contains organizations that have the main objective to help the civil population during and after natural or anthropogenic disasters by working in the affected area.",
     "it": "Questo livello contiene organizzazioni che hanno come obiettivo principale quello di aiutare la popolazione civile durante e dopo disastri naturali o antropogenici, lavorando nell'area colpita.",
-    "de": "Diese Ebene umfasst Organisationen, deren Hauptziel es ist, der Zivilbevölkerung während und nach Natur- oder anthropogenen Katastrophen zu helfen, indem sie in dem betroffenen Gebiet tätig sind."
+    "de": "Diese Ebene umfasst Organisationen, deren Hauptziel es ist, der Zivilbevölkerung während und nach Natur- oder anthropogenen Katastrophen zu helfen, indem sie in dem betroffenen Gebiet tätig sind.",
+    "ca": "Aquesta capa conté organitzacions que tenen com a objectiu principal ajudar la població civil durant i després de desastres naturals o antropogènics treballant a la zona afectada."
   },
   "source": {
     "osmTags": {
@@ -21,7 +23,8 @@
     "render": {
       "en": "Disaster response organization",
       "it": "Organizzazione per la risposta ai disastri",
-      "de": "Katastrophenschutzorganisation"
+      "de": "Katastrophenschutzorganisation",
+      "ca": "Organització de resposta a desastres"
     }
   },
   "pointRendering": [
@@ -50,7 +53,8 @@
       "title": {
         "en": "a disaster response organization",
         "it": "un'organizzazione per la risposta ai disastri",
-        "de": "eine Katastrophenschutzorganisation"
+        "de": "eine Katastrophenschutzorganisation",
+        "ca": "una organització de resposta a desastres"
       },
       "tags": [
         "emergency=disaster_response"
@@ -68,7 +72,8 @@
       "question": {
         "en": "What is the name of this organization?",
         "it": "Qual è il nome di questa organizzazione?",
-        "de": "Wie lautet der Name dieser Organisation?"
+        "de": "Wie lautet der Name dieser Organisation?",
+        "ca": "Quin és el nom d'aquesta organització?"
       },
       "render": {
         "en": "This organization is named <b>{name}</b>",

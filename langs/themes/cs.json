@@ -621,24 +621,6 @@
     "ghostsigns": {
         "description": "Mapa zobrazující nepoužívané nápisy na budovách",
         "layers": {
-            "0": {
-                "description": "Vrstva zobrazující nepoužívané nápisy na budovách",
-                "name": "Nápisy na zdech",
-                "presets": {
-                    "0": {
-                        "title": "nápis na zdi"
-                    }
-                },
-                "tagRenderings": {
-                    "brand": {
-                        "freeform": {
-                            "placeholder": "Název firmy"
-                        },
-                        "question": "Pro jaký účel byla tato značka vyrobena?",
-                        "render": "Tato cedule byla vyrobena pro: {brand}"
-                    }
-                }
-            },
             "2": {
                 "override": {
                     "+tagRenderings": {

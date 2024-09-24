@@ -621,65 +621,6 @@
     "ghostsigns": {
         "description": "Eine Karte, die ungenutzte Zeichen auf Gebäuden zeigt",
         "layers": {
-            "0": {
-                "description": "Ebene, die ungenutzte Zeichen auf Gebäuden zeigt",
-                "name": "Geisterzeichen",
-                "presets": {
-                    "0": {
-                        "title": "ein Geisterzeichen"
-                    }
-                },
-                "tagRenderings": {
-                    "brand": {
-                        "freeform": {
-                            "placeholder": "Unternehmensname"
-                        },
-                        "question": "Für welches Unternehmen wurde dieses Schild angefertigt?",
-                        "render": "Dieses Schild wurde gemacht für: {brand}"
-                    },
-                    "historic": {
-                        "mappings": {
-                            "0": {
-                                "then": "Das ist ein Geisterzeichen"
-                            },
-                            "1": {
-                                "then": "Dies ist kein Geisterzeichen, die Antwort darauf wird das Schild von der Karte verstecken"
-                            }
-                        },
-                        "question": "Ist das ein Geisterzeichen?",
-                        "questionHint": "Ist dieses Schild für ein Geschäft, das nicht mehr existiert oder nicht mehr gepflegt wird?"
-                    },
-                    "inscription": {
-                        "freeform": {
-                            "placeholder": "Text auf dem Schild"
-                        },
-                        "question": "Was ist der Text auf dem Schild?",
-                        "render": "Der Text auf dem Schild ist: {inscription}"
-                    }
-                },
-                "title": {
-                    "render": "Geisterzeichen"
-                }
-            },
-            "1": {
-                "override": {
-                    "+tagRenderings": {
-                        "0": {
-                            "mappings": {
-                                "0": {
-                                    "then": "Das ist ein Geisterzeichen"
-                                },
-                                "1": {
-                                    "then": "Das ist kein Geisterzeichen"
-                                }
-                            },
-                            "question": "Ist das ein Geisterzeichen?",
-                            "questionHint": "Ist dieses Schild für ein Geschäft, das nicht mehr existiert oder nicht mehr gepflegt wird?"
-                        }
-                    },
-                    "name": "Alle Werbe-Wandbilder"
-                }
-            },
             "2": {
                 "override": {
                     "+tagRenderings": {

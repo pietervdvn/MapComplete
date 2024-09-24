@@ -205,7 +205,8 @@
               "en": "Proposed cycle node <strong>{proposed:rcn_ref}</strong>",
               "nl": "Voorgesteld fietsknooppunt <strong>{proposed:rcn_ref}</strong>",
               "de": "Vorgeschlagener Radknoten <strong>{proposed:rcn_ref}</strong>",
-              "es": "Nodo de ciclo propuesto <strong>{proposed:rcn_ref}</strong>"
+              "es": "Nodo de ciclo propuesto <strong>{proposed:rcn_ref}</strong>",
+              "cs": "Navrhovaný cyklistický uzel <strong>{proposed:rcn_ref}</strong>"
             }
           }
         ]
@@ -231,7 +232,8 @@
               "cs": "e.g. 1",
               "es": "Por ejemplo, 1",
               "pl": "np. 1",
-              "da": "fx 1"
+              "da": "fx 1",
+              "ca": "Per exemple, 1"
             }
           },
           "render": {
@@ -301,7 +303,8 @@
               "cs": "e.g. 3",
               "es": "Por ejemplo, 3",
               "pl": "np. 3",
-              "da": "fx 3"
+              "da": "fx 3",
+              "ca": "Per exemple, 3"
             }
           },
           "id": "node-expected_rcn_route_relations"
@@ -319,7 +322,8 @@
             "nl": "een fietsknooppunt",
             "de": "ein Knoten eines Fahrradknotenpunktnetzwerks",
             "ca": "un node ciclista",
-            "es": "un nodo cíclico"
+            "es": "un nodo cíclico",
+            "cs": "cyklistický uzel"
           },
           "snapToLayer": [
             "cycleways_and_roads"
@@ -391,7 +395,7 @@
             "title": {
               "en": "a route marker for a node to node link",
               "de": "Eine Routenmarkierung für eine Verbindung von Knoten zu Knoten",
-              "cs": "značka trasy pro spojení mezi uzlem",
+              "cs": "značka trasy pro spojení mezi uzly",
               "es": "Un marcador de ruta para un enlace de nodo a nodo"
             },
             "=exampleImages": [

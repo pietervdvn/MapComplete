@@ -53,11 +53,13 @@
       ],
       "title": {
         "en": "a police office",
-        "de": "eine Polizeiwache"
+        "de": "eine Polizeiwache",
+        "ca": "una comissaria"
       },
       "description": {
         "en": "A police office where the general public can enter for inquiries",
-        "de": "Eine Polizeiwache, die von der Öffentlichkeit für Anfragen genutzt werden kann"
+        "de": "Eine Polizeiwache, die von der Öffentlichkeit für Anfragen genutzt werden kann",
+        "ca": "Una comissaria on pot entrar la ciutadania per a les consultes"
       }
     },
     {

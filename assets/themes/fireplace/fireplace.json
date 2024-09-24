@@ -3,12 +3,16 @@
   "title": {
     "en": "Fireplaces and barbeques",
     "de": "Feuerstellen und Grillplätze",
-    "es": "Chimenea y barbacoas"
+    "es": "Chimenea y barbacoas",
+    "ca": "Xemeneies i barbacoes",
+    "cs": "Ohniště a grily"
   },
   "description": {
     "de": "Stelle im Freien zum Feuermachen oder ein ortsfest installierter Grill an einer offizielle Stelle.",
     "en": "Outdoor place to make a fire or a fixed barbecue in an official place.",
-    "es": "Lugar al aire libre adecuado para hacer fuego y con barbacoas."
+    "es": "Lugar al aire libre adecuado para hacer fuego y con barbacoas.",
+    "ca": "Lloc a l'aire lliure adequat per a fer foc i barbacoes.",
+    "cs": "Venkovní místo pro rozdělání ohně nebo grilování na oficiálním místě."
   },
   "icon": "./assets/layers/assembly_point/fire.svg",
   "layers": [

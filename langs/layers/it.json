@@ -1722,6 +1722,15 @@
             "render": "Bici fantasma"
         }
     },
+    "ghostsign": {
+        "tagRenderings": {
+            "brand": {
+                "freeform": {
+                    "placeholder": "Nome dell'attività"
+                }
+            }
+        }
+    },
     "hydrant": {
         "description": "Livello della mappa che mostra gli idranti antincendio.",
         "name": "Mappa degli idranti",

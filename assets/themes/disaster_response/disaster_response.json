@@ -5,14 +5,17 @@
     "it": "Risposta ai disastri",
     "de": "Katastrophenschutz und Notfalldienste",
     "es": "Respuesta ante desastres",
-    "ca": "Resposta davant de desastres",
-    "da": "Beredskab"
+    "ca": "Resposta davant de desastres i serveis d'emergència",
+    "da": "Beredskab",
+    "cs": "Reakce na katastrofy a záchranné služby"
   },
   "description": {
     "en": "This map contains elements meant for disaster preparedness and response.",
     "it": "Questa mappa contiene elementi pensati per la preparazione e risposta ai disastri.",
     "de": "Diese Karte enthält Elemente, die der Katastrophenvorsorge und dem Katastrophenschutz dienen.",
-    "es": "Este mapa contiene elementos destinados a la preparación y respuesta ante desastres."
+    "es": "Este mapa contiene elementos destinados a la preparación y respuesta ante desastres.",
+    "ca": "Aquest mapa conté elements destinants a la preparació i resposta davant desastres.",
+    "cs": "Tato mapa obsahuje prvky určené pro připravenost na katastrofy a reakci na ně."
   },
   "icon": "./assets/themes/disaster_response/CivilDefence.svg",
   "socialImage": "./assets/themes/disaster_response/social.svg",

@@ -406,19 +406,6 @@
         "description": "Una <b>bici fantasma</b> è un monumento in ricordo di un ciclista che è morto in un incidente stradale, che ha la forma di un una bicicletta bianca installata in maniera permanente ne luogo dell’incidente.<br/><br/>In questa mappa, è possibile vedere tutte le bici fantasma che sono state aggiunte su OpenStreetMap. Ne manca una? Chiunque può aggiungere o migliorare le informazioni qui presenti (è solo richiesto un account gratuito su OpenStreetMap). <p>Esiste un <a href='https://masto.bike/@ghostbikebot' target='_blank'>account automatizzato su Mastodon da aggiornamenti mensili sulle bici fantasma del mondo</a></p>",
         "title": "Bici fantasma"
     },
-    "ghostsigns": {
-        "layers": {
-            "0": {
-                "tagRenderings": {
-                    "brand": {
-                        "freeform": {
-                            "placeholder": "Nome dell'attività"
-                        }
-                    }
-                }
-            }
-        }
-    },
     "glutenfree": {
         "description": "Una mappa in crowdsourcing per articoli senza glutine",
         "title": "Senza glutine"

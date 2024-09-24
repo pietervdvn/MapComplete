@@ -75,14 +75,16 @@
         "if": "amenity=bar",
         "then": {
           "en": "Bar",
-          "de": "Bar"
+          "de": "Bar",
+          "ca": "Pub"
         }
       },
       {
         "if": "amenity=cafe",
         "then": {
           "en": "Cafe",
-          "de": "Café"
+          "de": "Café",
+          "ca": "CAfè"
         }
       },
       {

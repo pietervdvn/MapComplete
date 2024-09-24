@@ -115,6 +115,9 @@
                 },
                 "question": "Werden mehrere Werbungen abwechselnd angezeigt?"
             },
+            "historic": {
+                "question": "Ist dieses Schild für ein Geschäft, das nicht mehr existiert oder nicht mehr gepflegt wird?"
+            },
             "luminous_or_lit_advertising": {
                 "override": {
                     "+mappings": {
@@ -5178,6 +5181,9 @@
                     "4": {
                         "then": "Sandwichladen"
                     },
+                    "5": {
+                        "then": "Burgerrestaurant"
+                    },
                     "6": {
                         "then": "Hier wird Sushi serviert"
                     },
@@ -5491,6 +5497,34 @@
                 }
             },
             "render": "Geisterrad"
+        }
+    },
+    "ghostsign": {
+        "description": "Ebene, die ungenutzte Zeichen auf Gebäuden zeigt",
+        "name": "Geisterzeichen",
+        "presets": {
+            "0": {
+                "title": "ein Geisterzeichen"
+            }
+        },
+        "tagRenderings": {
+            "brand": {
+                "freeform": {
+                    "placeholder": "Unternehmensname"
+                },
+                "question": "Für welches Unternehmen wurde dieses Schild angefertigt?",
+                "render": "Dieses Schild wurde gemacht für: {brand}"
+            },
+            "inscription": {
+                "freeform": {
+                    "placeholder": "Text auf dem Schild"
+                },
+                "question": "Was ist der Text auf dem Schild?",
+                "render": "Der Text auf dem Schild ist: {inscription}"
+            }
+        },
+        "title": {
+            "render": "Geisterzeichen"
         }
     },
     "governments": {
@@ -6794,6 +6828,13 @@
                     }
                 }
             },
+            "11": {
+                "options": {
+                    "0": {
+                        "question": "Nicht zuletzt bearbeitet von {search}"
+                    }
+                }
+            },
             "12": {
                 "options": {
                     "0": {
@@ -6804,14 +6845,21 @@
             "13": {
                 "options": {
                     "0": {
-                        "question": "Zuletzt bearbeitet vor {search}"
+                        "question": "Erstellt nach dem {search}"
                     }
                 }
             },
             "14": {
                 "options": {
                     "0": {
-                        "question": "Zuletzt bearbeitet nach {search}"
+                        "question": "Zuletzt bearbeitet vor dem {search}"
+                    }
+                }
+            },
+            "15": {
+                "options": {
+                    "0": {
+                        "question": "Zuletzt bearbeitet nach dem {search}"
                     }
                 }
             },
@@ -6849,6 +6897,13 @@
                     }
                 }
             },
+            "6": {
+                "options": {
+                    "0": {
+                        "question": "Sollte {search} in <b>keinem</b> Kommentar erwähnen"
+                    }
+                }
+            },
             "7": {
                 "options": {
                     "0": {
@@ -6859,21 +6914,14 @@
             "8": {
                 "options": {
                     "0": {
-                        "question": "<b>Nicht</b> erstellt von {search}"
-                    }
-                }
-            },
-            "8": {
-                "options": {
-                    "0": {
-                        "question": "Bearbeitet oder kommentiert von jedem Benutzer mit dem Namen {search}"
+                        "question": "<b>Nicht</b> geöffnet von Beitragendem {search}"
                     }
                 }
             },
             "9": {
                 "options": {
                     "0": {
-                        "question": "Zuletzt bearbeitet von {search}"
+                        "question": "Bearbeitet oder kommentiert von jedem Benutzer mit Namen {search}"
                     }
                 }
             }

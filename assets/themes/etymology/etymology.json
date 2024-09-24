@@ -9,10 +9,10 @@
     "zh_Hant": "開放詞源地圖",
     "hu": "Etimológiai térkép",
     "fr": "Étymologie - d'où les rues tirent leur nom ?",
-    "ca": "Etimologia: com rep el nom un carrer?",
+    "ca": "Etimologia: com rep el nom un lloc?",
     "da": "Etymology - hvad er et sted opkaldt efter?",
     "nb_NO": "Åpent etymologikart",
-    "cs": "Etymologie - podle čeho se ulice jmenuje?",
+    "cs": "Etymologie - podle čeho je místo pojmenováno?",
     "es": "Etimología: ¿De qué recibe el nombre un lugar?",
     "pl": "Etymologia - od czego pochodzi nazwa ulicy?"
   },
@@ -201,7 +201,7 @@
           "ca": "Llocs turístics sense informació etimològica",
           "da": "Turistiske steder uden oprindelses information",
           "nb_NO": "Turiststeder uten etymologi-info",
-          "cs": "Toursistická místa bez etymologických informací",
+          "cs": "Turistická místa bez etymologických informací",
           "pl": "Miejsca turystyczne bez informacji o etymologii"
         },
         "minzoom": 18,

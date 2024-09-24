@@ -533,7 +533,7 @@
         "es": "¿Cuántas bicicletas caben en este aparcamiento de bicicletas (incluyendo posibles bicicletas de carga)?",
         "da": "Hvor mange cykler er der plads til på denne cykelparkering (inklusive mulige ladcykler)?",
         "cs": "Kolik jízdních kol se vejde na toto parkoviště (včetně případných nákladních kol)?",
-        "ca": "Quantes bicicletes caben en aquest aparcament de bicicletes (incloent possibles bicicletes de càrrega)?",
+        "ca": "Quantes bicicletes caben en aquest aparcament de bicicletes?",
         "pt_BR": "Quantas bicicletas cabem nesse estacionamento de bicicletas (incluindo possíveis bicicletas de carga)?",
         "pt": "Quantas bicicletas cabem neste estacionamento de bicicletas (incluindo possíveis bicicletas de carga)?",
         "pl": "Ile rowerów mieści się na tym parkingu rowerowym?"
@@ -688,7 +688,8 @@
       "question": {
         "en": "Are these bicycle parkings free to use?",
         "nl": "Is deze fietsenstalling gratis te gebruiken?",
-        "de": "Sind die Fahrradparkplätze kostenlos zu benutzen?"
+        "de": "Sind die Fahrradparkplätze kostenlos zu benutzen?",
+        "ca": "Aquests aparcaments de bicicletes són gratuïts?"
       },
       "mappings": [
         {
@@ -742,12 +743,14 @@
         "en": "Who maintains this bicycle parking?",
         "nl": "Wie beheert deze fietsenstalling?",
         "de": "Wer unterhält diese Fahrradabstellplätze?",
-        "fr": "Qui entretient ce parking à vélos ?"
+        "fr": "Qui entretient ce parking à vélos ?",
+        "ca": "Qui manté aquest aparcament per a bicis?"
       },
       "render": {
         "en": "This bicycle parking is maintained by {operator}",
         "nl": "Deze fietsenstalling wordt beheerd door {operator}",
-        "de": "Dieser Fahrradparkplatz wird von {operator} bereitgestellt"
+        "de": "Dieser Fahrradparkplatz wird von {operator} bereitgestellt",
+        "ca": "{operator} manté aquest aparcament per a bicis"
       },
       "freeform": {
         "key": "operator"
@@ -758,12 +761,14 @@
       "question": {
         "en": "What is the phone number of the operator of this bicycle parking?",
         "nl": "Wat is het telefoonnummer van de operator van deze fietsenstalling?",
-        "de": "Wie lautet die Telefonnummer des Betreibers dieses Fahrradparkplatzes?"
+        "de": "Wie lautet die Telefonnummer des Betreibers dieses Fahrradparkplatzes?",
+        "ca": "Quin és el número de telèfon de l'operador d'aquest aparcament per a bicis?"
       },
       "questionHint": {
         "en": "One might be able to call this number in case of problems, e.g. to remove unmaintained bicycles",
         "nl": "Men kan dit nummer bellen om bv. fietswrakken of defecten te melden",
-        "de": "Man könnte diese Nummer anrufen, wenn es Probleme gibt, z. B. um nicht gewartete Fahrräder zu entfernen"
+        "de": "Man könnte diese Nummer anrufen, wenn es Probleme gibt, z. B. um nicht gewartete Fahrräder zu entfernen",
+        "ca": "És possible que es pugui trucar a aquest número en cas de problemes, p. per retirar les bicicletes abandonades"
       },
       "icon": "./assets/layers/questions/phone.svg",
       "freeform": {
@@ -835,7 +840,8 @@
       "question": {
         "en": "What is the email address of the operator of this bicycle parking?",
         "nl": "Wat is het emailadres van de beheerder van deze parking?",
-        "de": "Wie lautet die E-Mail-Adresse des Betreibers dieses Fahrradparkplatzes?"
+        "de": "Wie lautet die E-Mail-Adresse des Betreibers dieses Fahrradparkplatzes?",
+        "ca": "Quina és l'adreça de correu electrònic de l'operador d'aquest aparcament per a bicis?"
       },
       "icon": "./assets/svg/envelope.svg",
       "freeform": {
@@ -911,7 +917,7 @@
             "es": "No está permitido aparcar bicicletas de carga",
             "da": "Det er ikke tilladt at parkere ladcykler",
             "cs": "Není povoleno parkovat nákladní kola",
-            "ca": "No teniu permís per aparcar bicicletes de càrrega"
+            "ca": "No teniu permís per aparcar bicicletes de càrrega o no hi ha places previstes per a bicicletes de càrrega"
           }
         }
       ],
@@ -977,7 +983,8 @@
       "question": {
         "en": "What is the maximum allowed parking duration?",
         "nl": "Wat is de toegestane, maximale parkeerduur?",
-        "de": "Was ist die maximal erlaubte Parkdauer?"
+        "de": "Was ist die maximal erlaubte Parkdauer?",
+        "ca": "Quina és la durada màxima permesa d'estacionament?"
       },
       "questionHint": {
         "en": "If the bicycle is parked for a longer amount, it might be removed by the operator",
@@ -991,7 +998,8 @@
       "render": {
         "en": "A bike can be parked here for at most {canonical(maxstay)}",
         "nl": "Een fiets mag hier maximaal {canonical(maxstay)} parkeren",
-        "de": "Ein Fahrrad kann hier höchstens für {canonical(maxstay)} geparkt werden"
+        "de": "Ein Fahrrad kann hier höchstens für {canonical(maxstay)} geparkt werden",
+        "ca": "Una bici pot aparcar aquí com a màxim {canonical(maxstay)}"
       }
     }
   ],
