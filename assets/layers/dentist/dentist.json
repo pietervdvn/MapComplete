@@ -55,7 +55,8 @@
             "if": "name~*",
             "then": {
               "en": "{name}",
-              "de": "{name}"
+              "de": "{name}",
+              "ca": "{name}"
             }
           }
         ]

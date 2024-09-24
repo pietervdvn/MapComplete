@@ -195,7 +195,8 @@
           "then": {
             "en": "You have contributed to translating MapComplete with {_translation_contributions} commits! That's awesome!",
             "nl": "Je hebt MapComplete helpen vertalen met {_translation_contributions} commits! Dat is fantastisch! Bedankt hiervoor!",
-            "de": "Du hast mit {_translation_contributions} Änderungen zur Übersetzung von MapComplete beigetragen! Das ist großartig!"
+            "de": "Du hast mit {_translation_contributions} Änderungen zur Übersetzung von MapComplete beigetragen! Das ist großartig!",
+            "ca": "Has contribuït a traduir MapComplete amb {_translation_contributions} canvis! Això és fantàstic!"
           },
           "icon": "party"
         }
@@ -725,7 +726,8 @@
           "if": "mapcomplete-preferences-add-new-mode=click",
           "then": {
             "en": "When clicking or tapping the map, a marker pops up where a new feature is added",
-            "de": "Wenn Sie auf die Karte klicken oder tippen, wird eine Markierung eingeblendet, an der ein neues Objekt hinzugefügt wird"
+            "de": "Wenn Sie auf die Karte klicken oder tippen, wird eine Markierung eingeblendet, an der ein neues Objekt hinzugefügt wird",
+            "ca": "En fer clic o tocar el mapa, apareix un marcador on s'afegeix un element nou"
           }
         },
         {

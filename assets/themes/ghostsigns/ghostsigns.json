@@ -3,12 +3,15 @@
   "title": {
     "en": "Ghost Signs",
     "de": "Geisterzeichen",
-    "es": "Señales fantasma"
+    "es": "Señales fantasma",
+    "cs": "Nápisy na zdech"
   },
   "description": {
     "en": "A map showing disused signs on buildings",
     "de": "Eine Karte, die ungenutzte Zeichen auf Gebäuden zeigt",
-    "es": "Un mapa que muestra los rótulos en desuso de los edificios"
+    "es": "Un mapa que muestra los rótulos en desuso de los edificios",
+    "ca": "Un mapa que mostra els rètols en desús dels edificis",
+    "cs": "Mapa zobrazující nepoužívané nápisy na budovách"
   },
   "icon": "./assets/themes/advertising/wall_painting.svg",
   "layers": [
@@ -24,12 +27,16 @@
       "description": {
         "en": "Layer showing disused signs on buildings",
         "de": "Ebene, die ungenutzte Zeichen auf Gebäuden zeigt",
-        "es": "Capa que muestra carteles en desuso en edificios"
+        "es": "Capa que muestra carteles en desuso en edificios",
+        "ca": "Capa que mostra rètols en desús dels edificis",
+        "cs": "Vrstva zobrazující nepoužívané nápisy na budovách"
       },
       "name": {
         "en": "Ghost Signs",
         "de": "Geisterzeichen",
-        "es": "Señales fantasma"
+        "es": "Señales fantasma",
+        "ca": "Rètols fantasma",
+        "cs": "Nápisy na zdech"
       },
       "source": {
         "osmTags": {
@@ -48,7 +55,8 @@
           "question": {
             "en": "Is this a ghost sign?",
             "de": "Ist das ein Geisterzeichen?",
-            "es": "¿Es esto una señal fantasma?"
+            "es": "¿Es esto una señal fantasma?",
+            "ca": "Açò és un rètol fantasma?"
           },
           "questionHint": {
             "en": "Is this sign for a business that no longer exists or no longer being maintained?",
@@ -88,7 +96,8 @@
           "question": {
             "en": "What is the text on the sign?",
             "de": "Was ist der Text auf dem Schild?",
-            "es": "¿Cuál es el texto del cartel?"
+            "es": "¿Cuál es el texto del cartel?",
+            "ca": "Quin és el text del rètol?"
           },
           "freeform": {
             "key": "inscription",
@@ -96,7 +105,8 @@
             "placeholder": {
               "en": "Text on the sign",
               "de": "Text auf dem Schild",
-              "es": "Texto en el cartel"
+              "es": "Texto en el cartel",
+              "ca": "Text en el rètol"
             }
           },
           "render": {
@@ -110,7 +120,9 @@
           "question": {
             "en": "For what business was this sign made?",
             "de": "Für welches Unternehmen wurde dieses Schild angefertigt?",
-            "es": "¿Para qué negocio se hizo este cartel?"
+            "es": "¿Para qué negocio se hizo este cartel?",
+            "ca": "Per a quin negoci es va fer aquest rètol?",
+            "cs": "Pro jaký účel byla tato značka vyrobena?"
           },
           "freeform": {
             "key": "brand",
@@ -119,13 +131,17 @@
               "en": "Business name",
               "de": "Unternehmensname",
               "es": "Nombre comercial",
-              "it": "Nome dell'attività"
+              "it": "Nome dell'attività",
+              "ca": "Nom comercial",
+              "cs": "Název firmy"
             }
           },
           "render": {
             "en": "This sign was made for: {brand}",
             "de": "Dieses Schild wurde gemacht für: {brand}",
-            "es": "Este cartel se hizo para: {brand}"
+            "es": "Este cartel se hizo para: {brand}",
+            "ca": "El rètol es va fer per a: {brand}",
+            "cs": "Tato cedule byla vyrobena pro: {brand}"
           }
         }
       ],
@@ -157,7 +173,9 @@
           "title": {
             "en": "a ghost sign",
             "de": "ein Geisterzeichen",
-            "es": "una señal fantasma"
+            "es": "una señal fantasma",
+            "ca": "un rètol fantasma",
+            "cs": "nápis na zdi"
           },
           "snapToLayer": [
             "walls_and_buildings"
@@ -235,7 +253,8 @@
             "question": {
               "en": "Is this artwork a historic advertisement?",
               "de": "Ist dieses Kunstwerk eine historische Werbung?",
-              "es": "¿Es esta obra de arte un anuncio histórico?"
+              "es": "¿Es esta obra de arte un anuncio histórico?",
+              "cs": "Je toto dílo historickou reklamou?"
             },
             "mappings": [
               {
@@ -246,7 +265,8 @@
                 "then": {
                   "en": "This artwork is a historic advertisement",
                   "de": "Dieses Kunstwerk ist eine historische Werbung",
-                  "es": "Esta obra de arte es un anuncio histórico"
+                  "es": "Esta obra de arte es un anuncio histórico",
+                  "cs": "Toto dílo je historickou reklamou"
                 }
               },
               {
@@ -257,7 +277,8 @@
                 "then": {
                   "en": "This artwork is not a historic advertisement",
                   "de": "Dieses Kunstwerk ist keine historische Werbung",
-                  "es": "Esta obra de arte no es un anuncio histórico"
+                  "es": "Esta obra de arte no es un anuncio histórico",
+                  "cs": "Toto dílo není historickou reklamou"
                 }
               }
             ]

@@ -386,7 +386,7 @@
             "es": "Tienda de kebak",
             "fr": "Resto kebab",
             "pl": "To jest stoisko z kebabem",
-            "ca": "Aquesta és una botiga de kebabs",
+            "ca": "Botiga de kebabs",
             "cs": "Tohle je kebab"
           }
         },
@@ -408,9 +408,10 @@
             "nl": "Hamburgerrestaurant",
             "es": "Hamburguesas",
             "fr": "Des hamburgers sont servis ici",
-            "ca": "Aquí es serveixen hamburgueses",
+            "ca": "Restaurant d'hamburgueses",
             "pl": "Są tu podawane burgery",
-            "cs": "Podávají se zde burgery"
+            "cs": "Podávají se zde burgery",
+            "de": "Burgerrestaurant"
           }
         },
         {
@@ -421,7 +422,7 @@
             "de": "Hier wird Sushi serviert",
             "es": "Aquí se sirve sushi",
             "fr": "Des sushis sont servis ici",
-            "ca": "Aquí es serveix sushi",
+            "ca": "Restaurant de shushi",
             "cs": "Podává se zde sushi"
           }
         },
@@ -433,7 +434,7 @@
             "de": "Hier wird Kaffee serviert",
             "es": "Aquí se sirve café",
             "fr": "C'est un café",
-            "ca": "Aquí es serveix cafè",
+            "ca": "Cafeteria",
             "cs": "Podává se zde káva"
           }
         },
@@ -445,7 +446,7 @@
             "de": "Dies ist ein italienisches Restaurant (das mehr als nur Pasta und Pizza serviert)",
             "es": "Este es un restaurante italiano (que sirve algo más que pasta y pizza)",
             "fr": "C'est un Restaurant Italien (qui sert plus que des pâtes et des pizzas)",
-            "ca": "Això és un restaurant italià (que serveix més que pasta i pizza)",
+            "ca": "Restaurant italià (que serveix més que pasta i pizza)",
             "cs": "Toto je italská restaurace (která nabízí více než těstoviny a pizzu)"
           }
         },
@@ -457,7 +458,7 @@
             "de": "Hier werden französische Gerichte serviert",
             "es": "Aquí se sirven platos Franceses",
             "fr": "Des plats français sont servis ici",
-            "ca": "Aquí es serveixen plats francesos",
+            "ca": "Restaurant francés",
             "cs": "Podávají se zde francouzská jídla"
           }
         },
@@ -469,7 +470,7 @@
             "de": "Hier werden chinesische Gerichte serviert",
             "es": "Aquí se sirven platos Chinos",
             "fr": "Des plats chinois sont servis ici",
-            "ca": "Aquí es serveixen plats xinesos",
+            "ca": "Xinés",
             "cs": "Podávají se zde čínské pokrmy"
           }
         },
@@ -481,7 +482,7 @@
             "de": "Hier werden griechische Gerichte serviert",
             "es": "Aquí se sirven platos Griegos",
             "fr": "Des plats grecs sont servis ici",
-            "ca": "Aquí es serveixen plats grecs",
+            "ca": "Grec",
             "cs": "Podávají se zde řecká jídla"
           }
         },
@@ -493,7 +494,7 @@
             "de": "Hier werden indische Gerichte serviert",
             "es": "Aquí se sirven platos Indios",
             "fr": "Des plats indiens sont servis ici",
-            "ca": "Aquí es serveixen plats indis",
+            "ca": "Indi",
             "cs": "Podávají se zde indická jídla"
           }
         },
@@ -505,7 +506,7 @@
             "de": "Hier werden türkische Gerichte serviert",
             "es": "Aquí se sirven platos Turcos",
             "fr": "Des plats turcs sont servis ici",
-            "ca": "Aquí es serveixen plats turcs",
+            "ca": "Turc",
             "cs": "Podávají se zde turecké pokrmy"
           }
         },
@@ -516,7 +517,7 @@
             "nl": "Thaïs restaurant",
             "de": "Hier werden thailändische Gerichte serviert",
             "fr": "Des plats thaïlandais sont servis ici",
-            "ca": "Aquí es serveixen plats tailandesos",
+            "ca": "Tailandés",
             "cs": "Podávají se zde thajské pokrmy"
           }
         }
@@ -547,7 +548,8 @@
       "id": "menu-website",
       "question": {
         "en": "On what webpage is the menu published?",
-        "de": "Auf welcher Webseite wird das Menü veröffentlicht?"
+        "de": "Auf welcher Webseite wird das Menü veröffentlicht?",
+        "ca": "A quina web està publicat el menú?"
       },
       "render": {
         "special": {

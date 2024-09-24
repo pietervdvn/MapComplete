@@ -580,7 +580,8 @@
       "question": {
         "en": "Are these toilets gender-segregated?",
         "nl": "Zijn deze toiletten gescheiden op basis van geslacht?",
-        "de": "Sind diese Toiletten geschlechtergetrennt?"
+        "de": "Sind diese Toiletten geschlechtergetrennt?",
+        "ca": "Aquests lavabos estan separats per gènere?"
       },
       "questionHint": {
         "en": "Are there separate stalls or separate areas for men and women and are they signposted as such?",
@@ -593,7 +594,8 @@
           "then": {
             "en": "There is a separate, signposted area for men and women",
             "nl": "Er zijn aparte ruimtes of toiletten voor mannen en vrouwen",
-            "de": "Es gibt einen separaten, ausgeschilderten Bereich für Männer und Frauen"
+            "de": "Es gibt einen separaten, ausgeschilderten Bereich für Männer und Frauen",
+            "ca": "Hi ha una zona separada, senyalitzada per a homes i dones"
           }
         },
         {
@@ -770,7 +772,7 @@
         "it": "Il fasciatoio si trova presso {changing_table:location}",
         "es": "El cambiador está en {changing_table:location}",
         "da": "Puslebordet er placeret på {changing_table:location}",
-        "ca": "El cambiador està a {changing_table:location}",
+        "ca": "Hi ha un canviador a {changing_table:location}",
         "cs": "Přebalovací pult se nachází v {changing_table:location}"
       },
       "condition": {
@@ -791,7 +793,7 @@
             "nl": "Er bevindt zich een luiertafel in de vrouwentoiletten ",
             "it": "Un fasciatoio è nei servizi igienici femminili",
             "da": "Puslebordet er på toilettet til kvinder. ",
-            "ca": "El canviador està al lavabo per a dones. ",
+            "ca": "Al lavabo per a dones hi ha un canviador",
             "cs": "Přebalovací pult je na dámské toaletě. "
           },
           "if": "changing_table:location=female_toilet"
@@ -803,7 +805,7 @@
             "fr": "La table à langer est dans les toilettes pour hommes.",
             "nl": "Er bevindt zich een luiertafel in de herentoiletten ",
             "it": "Un fasciatoio è nei servizi igienici maschili",
-            "ca": "El canviador està al lavabo per a homes. ",
+            "ca": "Al lavabo per a homes hi ha un canviador",
             "cs": "Přebalovací pult je na pánské toaletě. "
           },
           "if": "changing_table:location=male_toilet"
@@ -817,7 +819,7 @@
             "nl": "Er bevindt zich een luiertafel in de rolstoeltoegankelijke toilet ",
             "it": "Un fasciatoio è nei servizi igienici per persone in sedia a rotelle",
             "da": "Puslebordet er på toilettet for kørestolsbrugere. ",
-            "ca": "El canviador està al lavabo per a usuaris de cadira de rodes. ",
+            "ca": "Al lavabo per a usuaris de cadira de rodes hi ha un canviador",
             "cs": "Přebalovací pult je na toaletě pro vozíčkáře. "
           }
         },
@@ -831,7 +833,7 @@
             "it": "Un fasciatoio è in una stanza dedicata",
             "es": "El cambiador está en una habitación dedicada",
             "da": "Vuggestuen står i et særligt rum. ",
-            "ca": "El canviador està en una habitació dedicada. ",
+            "ca": "Hi ha un canviador en una habitació dedicada",
             "cs": "Přebalovací pult je ve vyhrazené místnosti. "
           }
         }
@@ -851,7 +853,7 @@
         "es": "¿Esto baños tienen una pileta para lavarte las manos?",
         "fr": "Ces toilettes ont-ils un lavabo pour se laver les mains ?",
         "da": "Har disse toiletter en håndvask til at vaske hænder?",
-        "ca": "Aquests lavabos tenen una pica per a rentar-te les mans?",
+        "ca": "Aquests lavabos tenen una pica per a rentar-se les mans?",
         "cs": "Mají tyto toalety umyvadlo na mytí rukou?"
       },
       "mappings": [
@@ -864,7 +866,7 @@
             "es": "Estos aseos tienen un lavabo para lavarse las manos",
             "fr": "Ces toilettes ont un lavabo pour se laver les mains",
             "da": "Dette toilet har en vask til at vaske dine hænder",
-            "ca": "Aquests lavabos tenen una pica per a rentar-te les mans",
+            "ca": "Aquests lavabos tenen una pica per a rentar-se les mans",
             "cs": "Tyto toalety mají umyvadlo na mytí rukou"
           }
         },
@@ -877,7 +879,7 @@
             "es": "Estos aseos <b>no tienen lavabo</b> para lavarse las manos",
             "fr": "Ces toilettes <b>n'ont pas</b> de lavabo pour se laver les mains",
             "da": "Disse toiletter <b> har ikke </b> en vask til at vaske dine hænder",
-            "ca": "Aquests lavabos <b>no</b> tenen una pica per a rentar-te les mans",
+            "ca": "Aquests lavabos <b>no</b> tenen una pica per a rentar-se les mans",
             "cs": "Tyto toalety <b>nemají umyvadlo na mytí rukou</b>"
           }
         }

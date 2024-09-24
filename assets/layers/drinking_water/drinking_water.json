@@ -121,7 +121,8 @@
       "description": {
         "en": "Typically a drinking fountain, water tap, water well or natural spring",
         "de": "Typischerweise ein Trinkbrunnen, Wasserhahn, Brunnen oder eine natürliche Quelle",
-        "nl": "Meestal een drinkwaterfonteintje, waterkraan, waterput of natuurlijke bron"
+        "nl": "Meestal een drinkwaterfonteintje, waterkraan, waterput of natuurlijke bron",
+        "ca": "Normalment una font d'aigua, aixeta, pou d'aigua o font natural"
       },
       "tags": [
         "amenity=drinking_water"
@@ -212,7 +213,8 @@
       "question": {
         "en": "What type of drinking water point is this?",
         "nl": "Wat voor soort drinkwaterpunt is dit?",
-        "de": "Um welche Art von Trinkwasserentnahmestelle handelt es sich?"
+        "de": "Um welche Art von Trinkwasserentnahmestelle handelt es sich?",
+        "ca": "Quin tipus de punt d'aigua potable és aquest?"
       },
       "mappings": [
         {
@@ -233,7 +235,8 @@
           "then": {
             "en": "This is a bottle refill point where the water is sent downwards, typically controlled by a push button or a motion sensor. Drinking directly from the stream might be very hard or impossible.",
             "nl": "Dit is een hervulpunt voor drinkwaterflessen. De waterstraal wordt omlaag gestuurd wanneer op een drukknop geduwd wordt of wanneer er beweging gedetecteerd wordt. Rechtstreeks van de waterstraal drinking kan moeilijk of zelfs onmogelijk zijn.",
-            "de": "Dies ist eine Flaschenauffüllstation, an der das Wasser nach unten geleitet wird, in der Regel durch einen Druckknopf oder einen Bewegungssensor gesteuert. Direkt aus dem Wasserstrahl zu trinken, kann sehr schwierig oder unmöglich sein."
+            "de": "Dies ist eine Flaschenauffüllstation, an der das Wasser nach unten geleitet wird, in der Regel durch einen Druckknopf oder einen Bewegungssensor gesteuert. Direkt aus dem Wasserstrahl zu trinken, kann sehr schwierig oder unmöglich sein.",
+            "ca": "Aquest és un punt de reomplida d'ampolles on l'aigua s'envia cap avall, normalment controlat per un polsador o un sensor de moviment. Beure directament del raig pot ser molt difícil o impossible."
           },
           "addExtraTags": [
             "man_made=",
@@ -246,7 +249,8 @@
           "then": {
             "en": "This is a water tap. The water flows downward and the stream is controlled by a valve or push-button.",
             "nl": "Dit is een waterkraan. Het water strooomt naar beneden en het volume wordt door een knop of draaimechanisme geregeld.",
-            "de": "Dies ist ein Wasserhahn. Das Wasser fließt nach unten und der Wasserstrahl wird durch ein Ventil oder einen Druckknopf gesteuert."
+            "de": "Dies ist ein Wasserhahn. Das Wasser fließt nach unten und der Wasserstrahl wird durch ein Ventil oder einen Druckknopf gesteuert.",
+            "ca": "Això és una aixeta d'aigua. L'aigua flueix cap avall i el corrent és controlat per una vàlvula o polsador."
           },
           "addExtraTags": [
             "fountain="
@@ -307,7 +311,8 @@
       "question": {
         "en": "Is this drinking water point free to use?",
         "nl": "Is dit drinkwaterpunt gratis te gebruiken?",
-        "de": "Kann diese Trinkwasserstelle kostenlos genutzt werden?"
+        "de": "Kann diese Trinkwasserstelle kostenlos genutzt werden?",
+        "ca": "Aquest punt d'aigua potable és d'ús gratuït?"
       },
       "mappings": [
         {
@@ -315,7 +320,8 @@
           "then": {
             "en": "Free to use",
             "nl": "Gratis te gebruiken",
-            "de": "Die Nutzung ist kostenlos"
+            "de": "Die Nutzung ist kostenlos",
+            "ca": "D'us gratuït"
           }
         },
         {
@@ -323,7 +329,8 @@
           "then": {
             "en": "One needs to pay to use this drinking water point",
             "nl": "Men moet betalen om dit drinkwaterpunt te gebruiken",
-            "de": "Die Nutzung ist kostenpflichtig"
+            "de": "Die Nutzung ist kostenpflichtig",
+            "ca": "Cal pagar per utilitzar aquest punt d'aigua potable"
           }
         }
       ]
@@ -334,7 +341,8 @@
         "question": {
           "en": "Is this drinking water point available all year round?",
           "nl": "Is dit drinkwaterpunt heel het jaar door beschikbaar?",
-          "de": "Ist die Trinkwasserstelle ganzjährig in Betrieb?"
+          "de": "Ist die Trinkwasserstelle ganzjährig in Betrieb?",
+          "ca": "Aquest punt d'aigua potable està disponible tot l'any?"
         }
       }
     },
@@ -344,7 +352,8 @@
         "questionHint": {
           "en": "These are the opening hours if the drinking water fountain is operational.",
           "nl": "Tijdens deze openingsuren is dit drinkwaterpunt bruikbaar.",
-          "de": "Dies sind die Öffnungszeiten des Trinkwasserbrunnens, wenn dieser in Betrieb ist."
+          "de": "Dies sind die Öffnungszeiten des Trinkwasserbrunnens, wenn dieser in Betrieb ist.",
+          "ca": "Aquests són els horaris d'obertura si la font d'aigua potable està operativa."
         },
         "+mappings": [
           {
@@ -385,7 +394,8 @@
             "then": {
               "en": "This drinking water fountain is closed this season. As such, the opening hours are not shown.",
               "nl": "Dit drinkwaterpunt is dit seizoen gesloten. De openingsuren worden dus niet weergegeven.",
-              "de": "Der Trinkwasserbrunnen ist derzeit nicht in Betrieb. Deshalb werden keine Öffnungszeiten angezeigt."
+              "de": "Der Trinkwasserbrunnen ist derzeit nicht in Betrieb. Deshalb werden keine Öffnungszeiten angezeigt.",
+              "ca": "Aquesta font d'aigua potable està tancada aquesta temporada. Com a tal, l'horari d'obertura no es mostra."
             },
             "hideInAnswer": true
           }
@@ -397,7 +407,8 @@
       "question": {
         "en": "Does this drinking water fountain have an artistic element?",
         "nl": "Heeft dit drinkwaterpunt een geintegreerd kunstwerk?",
-        "de": "Verfügt der Trinkwasserbrunnen über ein künstlerisches Element?"
+        "de": "Verfügt der Trinkwasserbrunnen über ein künstlerisches Element?",
+        "ca": "Aquesta font d'aigua potable té un element artístic?"
       },
       "mappings": [
         {
@@ -408,7 +419,8 @@
           "then": {
             "en": "This drinking water point has an integrated artwork",
             "nl": "Dit drinkwaterpunt heeft een geintegreerd kunstwerk",
-            "de": "Die Trinkwasserstelle hat ein integriertes Kunstwerk"
+            "de": "Die Trinkwasserstelle hat ein integriertes Kunstwerk",
+            "ca": "Aquest punt d'aigua potable té una obra d'art integrada"
           }
         },
         {
@@ -416,7 +428,8 @@
           "then": {
             "en": "This drinking water point does not have an integrated artwork",
             "nl": "Dit drinkwaterpunt heeft geen geïntegreerd kunstwerk",
-            "de": "Die Trinkwasserstelle hat kein integriertes Kunstwerk"
+            "de": "Die Trinkwasserstelle hat kein integriertes Kunstwerk",
+            "ca": "Aquest punt d'aigua potable no té una obra d'art integrada"
           },
           "addExtraTags": [
             "tourism="
@@ -427,7 +440,8 @@
           "then": {
             "en": "This drinking water point <span class=\"subtle\">probably</span> doesn't have an integrated artwork",
             "nl": "Dit drinkwaterpunt heeft <span class=\"subtle\">waarschijnlijk</span> geen geïntegreerd kunstwerk",
-            "de": "Die Trinkwasserstelle hat <span class=\"subtle\">wahrscheinlich</span> kein integriertes Kunstwerk"
+            "de": "Die Trinkwasserstelle hat <span class=\"subtle\">wahrscheinlich</span> kein integriertes Kunstwerk",
+            "ca": "Aquest punt d'aigua potable <span class=\"subtle\">probablement</span> no té una obra d'art integrada"
           },
           "hideInAnswer": true
         }
@@ -435,7 +449,8 @@
       "questionHint": {
         "en": "E.g. it has an integrated statue or other non-trivial, creative work",
         "nl": "Bijvoorbeeld een standbeeld of ander, niet-triviaal kunstwerk",
-        "de": "Z.B. eine integrierte Statue oder andere künstlerische Werke"
+        "de": "Z.B. eine integrierte Statue oder andere künstlerische Werke",
+        "ca": "P. ex. té una estàtua integrada o un altre treball creatiu no trivial"
       }
     },
     {
@@ -513,7 +528,8 @@
         "then": {
           "en": "This is a historic, manual water pump where no drinking water can be found",
           "nl": "Dit is een historische, manuele waterpomp waar geen drinkwater uitkomt",
-          "de": "Dies ist eine historische, manuelle Wasserpumpe, an der kein Trinkwasser zu finden ist"
+          "de": "Dies ist eine historische, manuelle Wasserpumpe, an der kein Trinkwasser zu finden ist",
+          "ca": "Es tracta d'una bomba d'aigua manual històrica on no hi ha aigua potable"
         }
       }
     ]

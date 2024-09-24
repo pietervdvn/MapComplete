@@ -10,7 +10,8 @@
     "es": "Aparcamiento de bicicletas",
     "zh_Hans": "自行车停车场",
     "it": "Parcheggi per biciclette",
-    "fil": "Mga paradahan ng bisikleta"
+    "fil": "Mga paradahan ng bisikleta",
+    "cs": "Parkování jízdních kol"
   },
   "description": {
     "en": "A map showing all types of bicycle parkings",
@@ -18,7 +19,9 @@
     "es": "Un mapa que muestra todos los tipos de aparcamientos de bicicletas",
     "zh_Hans": "一张显示所有类型自行车停车设施的地图",
     "it": "Una mappa che mostra tutti i tipi di parcheggi per biciclette",
-    "fil": "Mapa na nagpapakita ng lahat ng uri ng paradahan ng bisikleta"
+    "fil": "Mapa na nagpapakita ng lahat ng uri ng paradahan ng bisikleta",
+    "ca": "Un mapa que mostra tots els tipus d'aparcaments de bicicletes",
+    "cs": "Mapa všech typů parkovišť pro jízdní kola"
   },
   "icon": "./assets/themes/bicycle_parkings/logo.svg",
   "layers": [

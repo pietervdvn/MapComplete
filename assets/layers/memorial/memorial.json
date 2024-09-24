@@ -262,7 +262,8 @@
         "en": "This is a {memorial}",
         "de": "Das ist ein {memorial}",
         "fr": "C'est un {memorial}",
-        "sl": "To je {memorial}"
+        "sl": "To je {memorial}",
+        "ca": "Això és un {memorial}"
       },
       "freeform": {
         "key": "memorial"
@@ -275,7 +276,7 @@
       ],
       "question": {
         "en": "What is the inscription on this memorial?",
-        "ca": "Quina és la inscripció d'aquesta placa?",
+        "ca": "Quina és la inscripció d'aquest memorial?",
         "cs": "Jaký je nápis na této desce?",
         "de": "Wie lautet die Inschrift auf diesem Denkmal?",
         "fr": "Quelle est l'inscription sur cette plaque ?",
@@ -290,7 +291,7 @@
       },
       "render": {
         "en": "The inscription on this memorial reads: <p><i>{inscription}<i></p>",
-        "ca": "La inscripció d'aquesta placa diu: <p><i>{inscription}<i></p>",
+        "ca": "La inscripció d'aquest memorial diu: <p><i>{inscription}<i></p>",
         "cs": "Nápis na této desce zní: <p><i>{inscription}<i></p>",
         "de": "Die Inschrift auf diesem Denkmal lautet: <p><i>{inscription}<i></p>",
         "fr": "L'inscription sur cette plaque indique: <p><i>{inscription}<i></p>",

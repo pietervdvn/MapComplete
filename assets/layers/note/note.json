@@ -265,7 +265,8 @@
             }
           ],
           "question": {
-            "en": "Should mention {search} in any comment"
+            "en": "Should mention {search} in any comment",
+            "de": "Sollte {search} in jedem Kommentar erwähnen"
           }
         }
       ]
@@ -302,7 +303,8 @@
             }
           ],
           "question": {
-            "en": "Should <b>not</b> mention {search} in <b>any</b> comment"
+            "en": "Should <b>not</b> mention {search} in <b>any</b> comment",
+            "de": "Sollte {search} in <b>keinem</b> Kommentar erwähnen"
           }
         }
       ]
@@ -342,7 +344,7 @@
           "question": {
             "en": "<b>Not</b> opened by contributor {search}",
             "nl": "<b>Niet</b> geopend door bijdrager {search}",
-            "de": "<b>Nicht</b> erstellt von {search}",
+            "de": "<b>Nicht</b> geöffnet von Beitragendem {search}",
             "es": "<b>No</b> abierto por el contributor {search}",
             "ca": "<b>No</b> obert pel contribuïdor {search}",
             "cs": "<b>Není</b> otevřeno přispěvatelem {search}",
@@ -362,7 +364,8 @@
             }
           ],
           "question": {
-            "en": "Edited or commented on by any user with name {search}"
+            "en": "Edited or commented on by any user with name {search}",
+            "de": "Bearbeitet oder kommentiert von jedem Benutzer mit Namen {search}"
           }
         }
       ]
@@ -401,7 +404,8 @@
             }
           ],
           "question": {
-            "en": "Not edited as last by {search}"
+            "en": "Not edited as last by {search}",
+            "de": "Nicht zuletzt bearbeitet von {search}"
           }
         }
       ]
@@ -443,7 +447,7 @@
           "question": {
             "en": "Created after {search}",
             "nl": "Aangemaakt na {search}",
-            "de": "Zuletzt bearbeitet vor {search}",
+            "de": "Erstellt nach dem {search}",
             "es": "Creada después de {search}",
             "ca": "Creada després de {search}",
             "cs": "Vytvořeno po {search}",
@@ -465,7 +469,7 @@
           ],
           "question": {
             "en": "Last edited before {search}",
-            "de": "Zuletzt bearbeitet nach {search}"
+            "de": "Zuletzt bearbeitet vor dem {search}"
           }
         }
       ]
@@ -482,7 +486,8 @@
             }
           ],
           "question": {
-            "en": "Last edited after {search}"
+            "en": "Last edited after {search}",
+            "de": "Zuletzt bearbeitet nach dem {search}"
           }
         }
       ]

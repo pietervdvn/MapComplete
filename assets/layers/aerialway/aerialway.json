@@ -3,14 +3,16 @@
   "name": {
     "en": "Aerialways",
     "de": "Seilbahnen",
-    "cs": "Letecké trasy"
+    "cs": "Letecké trasy",
+    "ca": "Vies aeries"
   },
   "description": {
     "en": "Various forms of transport for passengers and goods that use wires, including cable cars, gondolas, chair lifts, drag lifts, and zip lines. ",
     "de": "Alle Arten von seil- oder drahtgestütztem Personen- oder Gütertransport, wie Seilbahnen, Gondeln, Sessellifte, Schlepplifte. ",
     "es": "Diversas formas de transporte de pasajeros y mercancías que utilizan cables, como teleféricos, telecabinas, telesillas, telesquíes y tirolinas. ",
     "pl": "Różne formy transportu dla pasażerów i dóbr, które używają lin, w tym kolejki gondolowe, wyciągi krzesełkowe i orczykowe oraz tyrolki. ",
-    "cs": "Různé formy přepravy osob a zboží, které využívají dráty, včetně lanovek, gondol, sedačkových lanovek, vleků a lanových drah. "
+    "cs": "Různé formy přepravy osob a zboží, které využívají dráty, včetně lanovek, gondol, sedačkových lanovek, vleků a lanových drah. ",
+    "ca": "Diverses formes de transport per a passatgers i mercaderies que utilitzen cables, incloent-hi telefèrics, telecabines, telecadires, teleesquís i tiroleses. "
   },
   "source": {
     "osmTags": {
@@ -52,7 +54,8 @@
           "fr": "{name}",
           "pl": "{name}",
           "es": "{name}",
-          "cs": "{name}"
+          "cs": "{name}",
+          "ca": "{name}"
         },
         "condition": "name~*",
         "classes": "bg-white p-1 px-2 rounded"
@@ -183,7 +186,8 @@
         "fr": "Combien de temps dure le trajet dans cet ascenseur ?",
         "pl": "Jak długo trwa pojedynczy przejazd tą windą?",
         "es": "¿Cuánto dura un viaje en este ascensor?",
-        "cs": "Jak dlouho trvá jedna jízda tímto výtahem?"
+        "cs": "Jak dlouho trvá jedna jízda tímto výtahem?",
+        "ca": "Quant de temps triga un trajecte amb aquest ascensor?"
       },
       "questionHint": {
         "en": "This excludes the waiting time.",
@@ -191,7 +195,8 @@
         "fr": "Cela n'inclut pas le temps d'attente.",
         "pl": "To nie włącza czasu oczekiwania.",
         "es": "Esto elimina el tiempo de espera.",
-        "cs": "To nezahrnuje čekací dobu."
+        "cs": "To nezahrnuje čekací dobu.",
+        "ca": "Això exclou el temps d'espera."
       },
       "freeform": {
         "key": "duration"
@@ -202,7 +207,8 @@
         "fr": "Un aller simple dure {duration} minutes",
         "pl": "Pojedynczy przejazd trwa {duration} minut",
         "es": "Un viaje dura {duration} minutos",
-        "cs": "Jedna jízda trvá {duration} minut"
+        "cs": "Jedna jízda trvá {duration} minut",
+        "ca": "Un viatge dura {duration} minuts"
       }
     },
     {
@@ -214,7 +220,8 @@
         "en": "How many people fit a single carriage?",
         "de": "Wie viele Leute passen in eine Kabine?",
         "pl": "Ile osób może pomieścić jeden wagon?",
-        "es": "¿Cuál es la capacidad de la cabina?"
+        "es": "¿Cuál es la capacidad de la cabina?",
+        "ca": "Quantes persones caben a la cabina?"
       },
       "render": {
         "en": "{aerialway:occupancy} people fit a single carriage",

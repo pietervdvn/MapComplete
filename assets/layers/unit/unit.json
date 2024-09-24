@@ -446,13 +446,15 @@
             "en": "one year",
             "nl": "één jaar",
             "de": "ein Jahr",
-            "fr": "un an"
+            "fr": "un an",
+            "ca": "un any"
           },
           "human": {
             "en": "{quantity} years",
             "nl": "{quantity} jaar",
             "de": "{quantity} Jahre",
-            "fr": "{quantity} années"
+            "fr": "{quantity} années",
+            "ca": "{quantity} anys"
           }
         }
       ]

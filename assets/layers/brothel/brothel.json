@@ -15,7 +15,8 @@
   "title": {
     "render": {
       "en": "Brothel",
-      "de": "Bordell"
+      "de": "Bordell",
+      "ca": "Bordell"
     },
     "mappings": [
       {
@@ -80,7 +81,8 @@
       },
       "question": {
         "en": "What is the name of this brothel?",
-        "de": "Wie lautet der Name des Bordells?"
+        "de": "Wie lautet der Name des Bordells?",
+        "ca": "Com es diu aquest bordell?"
       },
       "render": {
         "en": "This brothel is named <b>{name}</b>",

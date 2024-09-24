@@ -800,7 +800,8 @@
           "if": "historic=memorial",
           "then": {
             "en": "This artwork also serves as a memorial",
-            "de": "Dieses Kunstwerk dient auch als Mahnmal"
+            "de": "Dieses Kunstwerk dient auch als Mahnmal",
+            "ca": "Aquesta obra d'art també serveix com a memorial"
           }
         },
         {

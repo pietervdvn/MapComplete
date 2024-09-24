@@ -171,7 +171,7 @@
             "pl": "Oparcie: Tak",
             "pt_BR": "Tem encosto",
             "pt": "Encosto: Sim",
-            "ca": "Té espatller",
+            "ca": "Aquest banc té espatller",
             "da": "Har et ryglæn",
             "cs": "Má opěradlo",
             "he": "יש משענת גב"
@@ -202,7 +202,7 @@
             "pl": "<b>Nie</b> posiada oparcia",
             "pt_BR": "<b>Não</b> tem encosto",
             "pt": "Não <b>not</b> tem um encosto",
-            "ca": "<b>No</b> té espatller",
+            "ca": "Aquest banc <b>No</b> té espatller",
             "da": "Har <b>ikke</b> et ryglæn",
             "cs": "<b>nemá</b> opěradlo"
           }
@@ -279,7 +279,7 @@
         "pl": "{seats} siedzeń",
         "pt_BR": "{seats} assentos",
         "pt": "{seats} lugares",
-        "ca": "{seats} seients",
+        "ca": "Aquest banc té {seats} seients",
         "da": "{seats} pladser",
         "cs": "{seats} míst k sezení",
         "zh_Hans": "{seats}座",

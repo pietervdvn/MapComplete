@@ -289,7 +289,8 @@
           "question": {
             "en": "No dogs allowed",
             "de": "Keine Hunde erlaubt",
-            "cs": "Psi nejsou povoleni"
+            "cs": "Psi nejsou povoleni",
+            "ca": "No s'admeten gossos"
           },
           "osmTags": "dog=no"
         }
