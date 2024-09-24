@@ -25,8 +25,11 @@ async function timeout(timeMS: number): Promise<{ layers: string[] }> {
 
 
 async function getAvailableLayers(): Promise<Set<string>> {
+    if(!Constants.SummaryServer){
+        return new Set<string>()
+    }
     try {
-        const host = new URL(Constants.VectorTileServer).host
+        const host = new URL(Constants.SummaryServer).host
         const status = await Promise.any([
                                    Utils.downloadJson("https://" + host + "/summary/status.json"),
                                    timeout(0)

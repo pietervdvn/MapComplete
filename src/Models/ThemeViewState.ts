@@ -2,11 +2,7 @@ import LayoutConfig from "./ThemeConfig/LayoutConfig"
 import { SpecialVisualizationState } from "../UI/SpecialVisualization"
 import { Changes } from "../Logic/Osm/Changes"
 import { Store, UIEventSource } from "../Logic/UIEventSource"
-import {
-    FeatureSource,
-    IndexedFeatureSource,
-    WritableFeatureSource
-} from "../Logic/FeatureSource/FeatureSource"
+import { FeatureSource, IndexedFeatureSource, WritableFeatureSource } from "../Logic/FeatureSource/FeatureSource"
 import { OsmConnection } from "../Logic/Osm/OsmConnection"
 import { ExportableMap, MapProperties } from "./MapProperties"
 import LayerState from "../Logic/State/LayerState"
@@ -50,9 +46,7 @@ import BackgroundLayerResetter from "../Logic/Actors/BackgroundLayerResetter"
 import SaveFeatureSourceToLocalStorage from "../Logic/FeatureSource/Actors/SaveFeatureSourceToLocalStorage"
 import BBoxFeatureSource from "../Logic/FeatureSource/Sources/TouchesBboxFeatureSource"
 import ThemeViewStateHashActor from "../Logic/Web/ThemeViewStateHashActor"
-import NoElementsInViewDetector, {
-    FeatureViewState
-} from "../Logic/Actors/NoElementsInViewDetector"
+import NoElementsInViewDetector, { FeatureViewState } from "../Logic/Actors/NoElementsInViewDetector"
 import FilteredLayer from "./FilteredLayer"
 import { PreferredRasterLayerSelector } from "../Logic/Actors/PreferredRasterLayerSelector"
 import { ImageUploadManager } from "../Logic/ImageProviders/ImageUploadManager"
@@ -64,7 +58,7 @@ import { GeolocationControlState } from "../UI/BigComponents/GeolocationControl"
 import Zoomcontrol from "../UI/Zoomcontrol"
 import {
     SummaryTileSource,
-    SummaryTileSourceRewriter
+    SummaryTileSourceRewriter,
 } from "../Logic/FeatureSource/TiledFeatureSource/SummaryTileSource"
 import summaryLayer from "../assets/generated/layers/summary.json"
 import last_click_layerconfig from "../assets/generated/layers/last_click.json"
@@ -120,7 +114,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
     readonly closestFeatures: NearbyFeatureSource
     readonly newFeatures: WritableFeatureSource
     readonly layerState: LayerState
-    readonly featureSummary: SummaryTileSourceRewriter
     readonly perLayer: ReadonlyMap<string, GeoIndexedStoreForLayer>
     readonly perLayerFiltered: ReadonlyMap<string, FilteringFeatureSource>
 
@@ -159,7 +152,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
     /**
      * Geocoded images that should be shown on the main map; probably only the currently hovered image
      */
-    public readonly geocodedImages: UIEventSource<Feature[]> = new UIEventSource<Feature[]>([    ])
+    public readonly geocodedImages: UIEventSource<Feature[]> = new UIEventSource<Feature[]>([])
 
     public readonly searchState: SearchState
 
@@ -169,7 +162,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
         this.featureSwitches = new FeatureSwitchState(layout)
         this.guistate = new MenuState(
             this.featureSwitches.featureSwitchWelcomeMessage.data,
-            layout.id
+            layout.id,
         )
         this.map = new UIEventSource<MlMap>(undefined)
         const geolocationState = new GeoLocationState()
@@ -185,14 +178,14 @@ export default class ThemeViewState implements SpecialVisualizationState {
             oauth_token: QueryParameters.GetQueryParameter(
                 "oauth_token",
                 undefined,
-                "Used to complete the login"
-            )
+                "Used to complete the login",
+            ),
         })
         this.userRelatedState = new UserRelatedState(
             this.osmConnection,
             layout,
             this.featureSwitches,
-            this.mapProperties
+            this.mapProperties,
         )
         this.userRelatedState.fixateNorth.addCallbackAndRunD((fixated) => {
             this.mapProperties.allowRotating.setData(fixated !== "yes")
@@ -203,20 +196,20 @@ export default class ThemeViewState implements SpecialVisualizationState {
             geolocationState,
             this.selectedElement,
             this.mapProperties,
-            this.userRelatedState.gpsLocationHistoryRetentionTime
+            this.userRelatedState.gpsLocationHistoryRetentionTime,
         )
         this.geolocationControl = new GeolocationControlState(this.geolocation, this.mapProperties)
 
         this.availableLayers = AvailableRasterLayers.layersAvailableAt(
             this.mapProperties.location,
-            this.osmConnection.isLoggedIn
+            this.osmConnection.isLoggedIn,
         )
 
         this.layerState = new LayerState(
             this.osmConnection,
             layout.layers,
             layout.id,
-            this.featureSwitches.featureSwitchLayerDefault
+            this.featureSwitches.featureSwitchLayerDefault,
         )
 
         {
@@ -225,7 +218,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 const isDisplayed = QueryParameters.GetBooleanQueryParameter(
                     "overlay-" + rasterInfo.id,
                     rasterInfo.defaultState ?? true,
-                    "Whether or not overlay layer " + rasterInfo.id + " is shown"
+                    "Whether or not overlay layer " + rasterInfo.id + " is shown",
                 )
                 const state = { isDisplayed }
                 overlayLayerStates.set(rasterInfo.id, state)
@@ -250,7 +243,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 this.osmConnection.Backend(),
                 (id) => this.layerState.filteredLayers.get(id).isDisplayed,
                 mvtAvailableLayers,
-                this.fullNodeDatabase
+                this.fullNodeDatabase,
             )
 
             let currentViewIndex = 0
@@ -265,10 +258,10 @@ export default class ThemeViewState implements SpecialVisualizationState {
                         bbox.asGeoJson({
                             zoom: this.mapProperties.zoom.data,
                             ...this.mapProperties.location.data,
-                            id: "current_view_" + currentViewIndex
-                        })
+                            id: "current_view_" + currentViewIndex,
+                        }),
                     ]
-                })
+                }),
             )
             this.featuresInView = new BBoxFeatureSource(layoutSource, this.mapProperties.bounds)
 
@@ -283,22 +276,22 @@ export default class ThemeViewState implements SpecialVisualizationState {
                     featurePropertiesStore: this.featureProperties,
                     osmConnection: this.osmConnection,
                     historicalUserLocations: this.geolocation.historicalUserLocations,
-                    featureSwitches: this.featureSwitches
+                    featureSwitches: this.featureSwitches,
                 },
                 layout?.isLeftRightSensitive() ?? false,
-                (e, extraMsg) => this.reportError(e, extraMsg)
+                (e, extraMsg) => this.reportError(e, extraMsg),
             )
             this.historicalUserLocations = this.geolocation.historicalUserLocations
             this.newFeatures = new NewGeometryFromChangesFeatureSource(
                 this.changes,
                 layoutSource,
-                this.featureProperties
+                this.featureProperties,
             )
             layoutSource.addSource(this.newFeatures)
 
             const perLayer = new PerLayerFeatureSourceSplitter(
                 Array.from(this.layerState.filteredLayers.values()).filter(
-                    (l) => l.layerDef?.source !== null
+                    (l) => l.layerDef?.source !== null,
                 ),
                 new ChangeGeometryApplicator(this.indexedFeatures, this.changes),
                 {
@@ -309,10 +302,10 @@ export default class ThemeViewState implements SpecialVisualizationState {
                             "Got ",
                             features.length,
                             "leftover features, such as",
-                            features[0].properties
+                            features[0].properties,
                         )
-                    }
-                }
+                    },
+                },
             )
             this.perLayer = perLayer.perLayer
         }
@@ -352,12 +345,12 @@ export default class ThemeViewState implements SpecialVisualizationState {
         this.lastClickObject = new LastClickFeatureSource(
             this.layout,
             this.mapProperties.lastClickLocation,
-            this.userRelatedState.addNewFeatureMode
+            this.userRelatedState.addNewFeatureMode,
         )
 
         this.osmObjectDownloader = new OsmObjectDownloader(
             this.osmConnection.Backend(),
-            this.changes
+            this.changes,
         )
 
         this.perLayerFiltered = this.showNormalDataOn(this.map)
@@ -367,8 +360,8 @@ export default class ThemeViewState implements SpecialVisualizationState {
             {
                 currentZoom: this.mapProperties.zoom,
                 layerState: this.layerState,
-                bounds: this.visualFeedbackViewportBounds
-            }
+                bounds: this.visualFeedbackViewportBounds,
+            },
         )
         this.hasDataInView = new NoElementsInViewDetector(this).hasFeatureInView
         this.imageUploadManager = new ImageUploadManager(
@@ -376,14 +369,13 @@ export default class ThemeViewState implements SpecialVisualizationState {
             Imgur.singleton,
             this.featureProperties,
             this.osmConnection,
-            this.changes
+            this.changes,
         )
         this.favourites = new FavouritesFeatureSource(this)
         const longAgo = new Date()
         longAgo.setTime(new Date().getTime() - 5 * 365 * 24 * 60 * 60 * 1000)
         this.nearbyImageSearcher = new CombinedFetcher(50, longAgo, this.indexedFeatures)
 
-        this.featureSummary = this.setupSummaryLayer()
         this.toCacheSavers = layout.enableCache ? this.initSaveToLocalStorage() : undefined
 
         this.searchState = new SearchState(this)
@@ -424,7 +416,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 LayoutSource.fromCacheZoomLevel,
                 fs,
                 this.featureProperties,
-                fs.layer.layerDef.maxAgeOfCache
+                fs.layer.layerDef.maxAgeOfCache,
             )
             toLocalStorage.set(layerId, storage)
         })
@@ -437,7 +429,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
             const doShowLayer = this.mapProperties.zoom.map(
                 (z) =>
                     (fs.layer.isDisplayed?.data ?? true) && z >= (fs.layer.layerDef?.minzoom ?? 0),
-                [fs.layer.isDisplayed]
+                [fs.layer.isDisplayed],
             )
 
             if (!doShowLayer.data && this.featureSwitches.featureSwitchFilter.data === false) {
@@ -454,7 +446,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 fs.layer,
                 fs,
                 (id) => this.featureProperties.getStore(id),
-                this.layerState.globalFilters
+                this.layerState.globalFilters,
             )
             filteringFeatureSource.set(layerName, filtered)
 
@@ -464,7 +456,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 doShowLayer,
                 metaTags: this.userRelatedState.preferencesAsTags,
                 selectedElement: this.selectedElement,
-                fetchStore: (id) => this.featureProperties.getStore(id)
+                fetchStore: (id) => this.featureProperties.getStore(id),
             })
         })
         return filteringFeatureSource
@@ -491,7 +483,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
             doShowLayer: flayerGps.isDisplayed,
             layer: flayerGps.layerDef,
             metaTags: this.userRelatedState.preferencesAsTags,
-            selectedElement: this.selectedElement
+            selectedElement: this.selectedElement,
         })
     }
 
@@ -588,7 +580,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
         Hotkeys.RegisterHotkey(
             {
                 nomod: " ",
-                onUp: true
+                onUp: true,
             },
             docs.selectItem,
             () => {
@@ -602,7 +594,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                     return
                 }
                 this.selectClosestAtCenter(0)
-            }
+            },
         )
 
         for (let i = 1; i < 9; i++) {
@@ -617,10 +609,10 @@ export default class ThemeViewState implements SpecialVisualizationState {
             Hotkeys.RegisterHotkey(
                 {
                     nomod: "" + i,
-                    onUp: true
+                    onUp: true,
                 },
                 doc,
-                () => this.selectClosestAtCenter(i - 1)
+                () => this.selectClosestAtCenter(i - 1),
             )
         }
 
@@ -636,25 +628,25 @@ export default class ThemeViewState implements SpecialVisualizationState {
             }
             Hotkeys.RegisterHotkey(
                 {
-                    nomod: "b"
+                    nomod: "b",
                 },
                 docs.openLayersPanel,
                 () => {
                     if (this.featureSwitches.featureSwitchBackgroundSelection.data) {
                         this.guistate.pageStates.background.setData(true)
                     }
-                }
+                },
             )
             Hotkeys.RegisterHotkey(
                 {
-                    nomod: "s"
+                    nomod: "s",
                 },
                 Translations.t.hotkeyDocumentation.openFilterPanel,
                 () => {
                     if (this.featureSwitches.featureSwitchFilter.data) {
                         this.guistate.openFilterView()
                     }
-                }
+                },
             )
             const setLayerCategory = (category: EliCategory, skipLayers: number = 0) => {
                 const timeOfCall = new Date()
@@ -669,7 +661,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                         available,
                         category,
                         current.data,
-                        skipLayers
+                        skipLayers,
                     )
                     if (!best) {
                         return
@@ -682,50 +674,50 @@ export default class ThemeViewState implements SpecialVisualizationState {
             Hotkeys.RegisterHotkey(
                 { nomod: "O" },
                 Translations.t.hotkeyDocumentation.selectOsmbasedmap,
-                () => setLayerCategory("osmbasedmap")
+                () => setLayerCategory("osmbasedmap"),
             )
 
             Hotkeys.RegisterHotkey(
                 { nomod: "M" },
                 Translations.t.hotkeyDocumentation.selectMap,
-                () => setLayerCategory("map")
+                () => setLayerCategory("map"),
             )
 
             Hotkeys.RegisterHotkey(
                 { nomod: "P" },
                 Translations.t.hotkeyDocumentation.selectAerial,
-                () => setLayerCategory("photo")
+                () => setLayerCategory("photo"),
             )
             Hotkeys.RegisterHotkey(
                 { shift: "O" },
                 Translations.t.hotkeyDocumentation.selectOsmbasedmap,
-                () => setLayerCategory("osmbasedmap", 2)
+                () => setLayerCategory("osmbasedmap", 2),
             )
 
             Hotkeys.RegisterHotkey(
                 { shift: "M" },
                 Translations.t.hotkeyDocumentation.selectMap,
-                () => setLayerCategory("map", 2)
+                () => setLayerCategory("map", 2),
             )
 
             Hotkeys.RegisterHotkey(
                 { shift: "P" },
                 Translations.t.hotkeyDocumentation.selectAerial,
-                () => setLayerCategory("photo", 2)
+                () => setLayerCategory("photo", 2),
             )
             Hotkeys.RegisterHotkey(
                 { nomod: "L" },
                 Translations.t.hotkeyDocumentation.geolocate,
                 () => {
                     this.geolocationControl.handleClick()
-                }
+                },
             )
             return true
         })
 
         Hotkeys.RegisterHotkey(
             {
-                shift: "T"
+                shift: "T",
             },
             Translations.t.hotkeyDocumentation.translationMode,
             () => {
@@ -735,35 +727,39 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 } else {
                     tm.setData("false")
                 }
-            }
+            },
         )
     }
 
-    private setupSummaryLayer(): SummaryTileSourceRewriter {
+    private setupSummaryLayer(): SummaryTileSourceRewriter | undefined {
         /**
          * MaxZoom for the summary layer
          */
         const normalLayers = this.layout.layers.filter(
             (l) =>
                 Constants.priviliged_layers.indexOf(<any>l.id) < 0 &&
-                !l.id.startsWith("note_import")
+                !l.id.startsWith("note_import"),
         )
+
         const maxzoom = Math.min(...normalLayers.map((l) => l.minzoom))
 
         const layers = this.layout.layers.filter(
             (l) =>
                 Constants.priviliged_layers.indexOf(<any>l.id) < 0 &&
                 l.source.geojsonSource === undefined &&
-                l.doCount
+                l.doCount,
         )
+        if (!Constants.SummaryServer || layers.length === 0) {
+            return undefined
+        }
         const summaryTileSource = new SummaryTileSource(
             Constants.SummaryServer,
             layers.map((l) => l.id),
             this.mapProperties.zoom.map((z) => Math.max(Math.floor(z), 0)),
             this.mapProperties,
             {
-                isActive: this.mapProperties.zoom.map((z) => z < maxzoom)
-            }
+                isActive: this.mapProperties.zoom.map((z) => z < maxzoom),
+            },
         )
 
         return new SummaryTileSourceRewriter(summaryTileSource, this.layerState.filteredLayers)
@@ -785,18 +781,27 @@ export default class ThemeViewState implements SpecialVisualizationState {
             gps_track: this.geolocation.historicalUserLocationsTrack,
             geocoded_image: new StaticFeatureSource(this.geocodedImages),
             selected_element: new StaticFeatureSource(
-                this.selectedElement.map((f) => (f === undefined ? empty : [f]))
+                this.selectedElement.map((f) => (f === undefined ? empty : [f])),
             ),
             range: new StaticFeatureSource(
                 this.mapProperties.maxbounds.map((bbox) =>
-                    bbox === undefined ? empty : <Feature[]>[bbox.asGeoJson({ id: "range" })]
-                )
+                    bbox === undefined ? empty : <Feature[]>[bbox.asGeoJson({ id: "range" })],
+                ),
             ),
             current_view: this.currentView,
             favourite: this.favourites,
-            summary: this.featureSummary,
+            summary: this.setupSummaryLayer(),
             last_click: this.lastClickObject,
-            search: this.searchState.locationResults
+            search: this.searchState.locationResults,
+        }
+        if (specialLayers.summary) {
+
+            new ShowDataLayer(this.map, {
+                features: specialLayers.summary,
+                layer: new LayerConfig(<LayerConfigJson>summaryLayer, "summaryLayer"),
+                // doShowLayer: this.mapProperties.zoom.map((z) => z < maxzoom),
+                selectedElement: this.selectedElement,
+            })
         }
 
         this.closestFeatures.registerSource(specialLayers.favourite, "favourite")
@@ -806,7 +811,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
             ShowDataLayer.showRange(
                 this.map,
                 new StaticFeatureSource([bbox.asGeoJson({ id: "range" })]),
-                this.featureSwitches.featureSwitchIsTesting
+                this.featureSwitches.featureSwitchIsTesting,
             )
         }
         const currentViewLayer = this.layout.layers.find((l) => l.id === "current_view")
@@ -820,7 +825,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                     currentViewLayer,
                     this.layout,
                     this.osmObjectDownloader,
-                    this.featureProperties
+                    this.featureProperties,
                 )
             })
         }
@@ -838,7 +843,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
         this.layerState.filteredLayers.forEach((flayer) => {
             const id = flayer.layerDef.id
             const features: FeatureSource = specialLayers[id]
-            if (features === undefined) {
+            if (!features?.features) {
                 return
             }
             if (id === "summary" || id === "last_click") {
@@ -851,7 +856,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 doShowLayer: flayer.isDisplayed,
                 layer: flayer.layerDef,
                 metaTags: this.userRelatedState.preferencesAsTags,
-                selectedElement: this.selectedElement
+                selectedElement: this.selectedElement,
 
             }
             if (flayer.layerDef.id === "search") {
@@ -862,44 +867,41 @@ export default class ThemeViewState implements SpecialVisualizationState {
             }
             new ShowDataLayer(this.map, options)
         })
-        const summaryLayerConfig = new LayerConfig(<LayerConfigJson>summaryLayer, "summaryLayer")
-        new ShowDataLayer(this.map, {
-            features: specialLayers.summary,
-            layer: summaryLayerConfig,
-            // doShowLayer: this.mapProperties.zoom.map((z) => z < maxzoom),
-            selectedElement: this.selectedElement
-        })
 
-        const lastClickLayerConfig = new LayerConfig(
-            <LayerConfigJson>last_click_layerconfig,
-            "last_click"
-        )
-        const lastClickFiltered =
-            lastClickLayerConfig.isShown === undefined
-                ? specialLayers.last_click
-                : specialLayers.last_click.features.mapD((fs) =>
-                    fs.filter((f) => {
-                        const matches = lastClickLayerConfig.isShown.matchesProperties(
-                            f.properties
-                        )
-                        console.debug("LastClick ", f, "matches", matches)
-                        return matches
+        // last click
+        {
+            const lastClickLayerConfig = new LayerConfig(
+                <LayerConfigJson>last_click_layerconfig,
+                "last_click",
+            )
+            const lastClickFiltered =
+                lastClickLayerConfig.isShown === undefined
+                    ? specialLayers.last_click
+                    : specialLayers.last_click.features.mapD((fs) =>
+                        fs.filter((f) => {
+                            const matches = lastClickLayerConfig.isShown.matchesProperties(
+                                f.properties,
+                            )
+                            console.debug("LastClick ", f, "matches", matches)
+                            return matches
+                        }),
+                    )
+            // show last click = new point/note marker
+            new ShowDataLayer(this.map, {
+                features: new StaticFeatureSource(lastClickFiltered),
+                layer: lastClickLayerConfig,
+                onClick: (feature) => {
+                    if (this.mapProperties.zoom.data >= Constants.minZoomLevelToAddNewPoint) {
+                        this.selectedElement.setData(feature)
+                        return
+                    }
+                    this.map.data.flyTo({
+                        zoom: Constants.minZoomLevelToAddNewPoint,
+                        center: GeoOperations.centerpointCoordinates(feature),
                     })
-                )
-        new ShowDataLayer(this.map, {
-            features: new StaticFeatureSource(lastClickFiltered),
-            layer: lastClickLayerConfig,
-            onClick: (feature) => {
-                if (this.mapProperties.zoom.data >= Constants.minZoomLevelToAddNewPoint) {
-                    this.selectedElement.setData(feature)
-                    return
-                }
-                this.map.data.flyTo({
-                    zoom: Constants.minZoomLevelToAddNewPoint,
-                    center: GeoOperations.centerpointCoordinates(feature)
-                })
-            }
-        })
+                },
+            })
+        }
     }
 
     /**
@@ -935,13 +937,13 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 selected?.properties?.alt_name, selected?.properties?.local_name,
                 layer?.title.GetRenderValue(selected?.properties ?? {}).txt,
                 selected.properties.display_name,
-                selected.properties.id
+                selected.properties.id,
             ]
             const r = <GeocodeResult>{
                 feature: selected,
                 display_name: nameOptions.find(opt => opt !== undefined),
                 osm_id, osm_type,
-                lon, lat
+                lon, lat,
             }
             this.userRelatedState.recentlyVisitedSearch.add(r)
         })
@@ -960,7 +962,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
             this.mapProperties.rasterLayer,
             this.availableLayers,
             this.featureSwitches.backgroundLayerId,
-            this.userRelatedState.preferredBackgroundLayer
+            this.userRelatedState.preferredBackgroundLayer,
         )
     }
 
@@ -1007,7 +1009,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 ? ">>> _Not_ reporting error to report server as testmode is on"
                 : ">>> Reporting error to",
             Constants.ErrorReportServer,
-            message
+            message,
         )
         if (isTesting) {
             return
@@ -1049,8 +1051,8 @@ export default class ThemeViewState implements SpecialVisualizationState {
                     userid: this.osmConnection.userDetails.data?.uid,
                     pendingChanges: this.changes.pendingChanges.data,
                     previousChanges: this.changes.allChanges.data,
-                    changeRewrites: Utils.MapToObj(this.changes._changesetHandler._remappings)
-                })
+                    changeRewrites: Utils.MapToObj(this.changes._changesetHandler._remappings),
+                }),
             })
         } catch (e) {
             console.error("Could not upload an error report")

@@ -32,7 +32,8 @@
     },
     "mvt_layer_server": "https://cache.mapcomplete.org/public.{type}_{layer}/{z}/{x}/{y}.pbf",
     "#summary_server": "Should be the endpoint; appending status.json should work",
-    "summary_server": "https://cache.mapcomplete.org/",
+    "disabled:summary_server": "https://cache.mapcomplete.org/",
+    "summary_server": null,
     "geoip_server": "https://ipinfo.mapcomplete.org/",
     "error_server": "https://report.mapcomplete.org/report",
     "api_keys": {

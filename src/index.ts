@@ -27,6 +27,9 @@ async function timeout(timeMS: number): Promise<{ layers: string[] }> {
 }
 
 async function getAvailableLayers(): Promise<Set<string>> {
+    if(!Constants.SummaryServer){
+        return new Set<string>()
+    }
     try {
         const host = new URL(Constants.SummaryServer).host
         const status: { layers: string[] } = await Promise.any([

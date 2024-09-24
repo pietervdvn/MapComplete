@@ -1,7 +1,6 @@
 <script lang="ts">
   import type { SpecialVisualizationState } from "../SpecialVisualization"
   import Tr from "../Base/Tr.svelte"
-  import { createEventDispatcher } from "svelte"
   import Icon from "../Map/Icon.svelte"
   import ToSvelte from "../Base/ToSvelte.svelte"
   import type { FilterSearchResult } from "../../Logic/Search/FilterSearch"
