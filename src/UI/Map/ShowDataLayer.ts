@@ -31,6 +31,7 @@ class PointRenderingLayer {
 
     constructor(
         map: MlMap,
+        layer: LayerConfig,
         features: FeatureSource,
         config: PointRenderingConfig,
         metatags?: Store<Record<string, string>>,
@@ -47,7 +48,10 @@ class PointRenderingLayer {
         this._onClick = onClick
         this._selectedElement = selectedElement
         const self = this
-        features.features.addCallbackAndRunD((features) => self.updateFeatures(features))
+        if(!features?.features){
+            throw "Could not setup a PointRenderingLayer; features?.features is undefined/null. The layer is "+layer.id
+        }
+        features.features?.addCallbackAndRunD((features) => self.updateFeatures(features))
         visibility?.addCallbackAndRunD((visible) => {
             if (visible === true && self._dirty) {
                 self.updateFeatures(features.features.data)
@@ -601,6 +605,7 @@ export default class ShowDataLayer {
             for (const pointRenderingConfig of this._options.layer.mapRendering) {
                 new PointRenderingLayer(
                     map,
+                    this._options.layer,
                     features,
                     pointRenderingConfig,
                     this._options.metaTags,
