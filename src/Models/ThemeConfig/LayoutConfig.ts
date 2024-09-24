@@ -3,16 +3,12 @@ import { LayoutConfigJson } from "./Json/LayoutConfigJson"
 import LayerConfig from "./LayerConfig"
 import { LayerConfigJson } from "./Json/LayerConfigJson"
 import Constants from "../Constants"
-import { ExtractImages } from "./Conversion/FixImages"
 import ExtraLinkConfig from "./ExtraLinkConfig"
 import { Utils } from "../../Utils"
 import LanguageUtils from "../../Utils/LanguageUtils"
 
 import { RasterLayerProperties } from "../RasterLayerProperties"
-
-import { ConversionContext } from "./Conversion/ConversionContext"
 import { Translatable } from "./Json/Translatable"
-import { MinimalTagRenderingConfigJson, TagRenderingConfigJson } from "./Json/TagRenderingConfigJson"
 
 /**
  * Minimal information about a theme
