@@ -10,7 +10,7 @@
   import LoginToggle from "./Base/LoginToggle.svelte"
   import Pencil from "../assets/svg/Pencil.svelte"
   import Constants from "../Models/Constants"
-  import { Store, Stores, UIEventSource } from "../Logic/UIEventSource"
+  import { ImmutableStore, Store, Stores, UIEventSource } from "../Logic/UIEventSource"
   import ThemesList from "./BigComponents/ThemesList.svelte"
   import { MinimalLayoutInformation } from "../Models/ThemeConfig/LayoutConfig"
   import Eye from "../assets/svg/Eye.svelte"
@@ -22,9 +22,9 @@
   import { Utils } from "../Utils"
   import { ArrowTrendingUp } from "@babeard/svelte-heroicons/solid/ArrowTrendingUp"
   import Searchbar from "./Base/Searchbar.svelte"
-  import ChevronDoubleRight from "@babeard/svelte-heroicons/mini/ChevronDoubleRight"
   import ThemeSearch from "../Logic/Search/ThemeSearch"
   import SearchUtils from "../Logic/Search/SearchUtils"
+  import ChevronDoubleRight from "@babeard/svelte-heroicons/mini/ChevronDoubleRight"
 
   const featureSwitches = new OsmConnectionFeatureSwitches()
   const osmConnection = new OsmConnection({
@@ -54,26 +54,28 @@
   const customThemes: Store<MinimalLayoutInformation[]> = Stores.ListStabilized<string>(state.installedUserThemes)
     .mapD(stableIds => Utils.NoNullInplace(stableIds.map(id => state.getUnofficialTheme(id))))
 
-  function filtered(themes: MinimalLayoutInformation[]): Store<MinimalLayoutInformation[]> {
-    const prefiltered = themes.filter(th => th.id !== "personal")
+  function filtered(themes: Store<MinimalLayoutInformation[]>): Store<MinimalLayoutInformation[]> {
     return searchStable.map(search => {
       if (!search) {
-        return themes
+        return themes.data
       }
 
-      const scores = ThemeSearch.sortedByLowestScores(search, prefiltered)
+      const start = new Date().getTime()
+      const scores = ThemeSearch.sortedByLowestScores(search, themes.data)
+      const end = new Date().getTime()
+      console.trace("Scores for", search , "are", scores, "searching took", end - start,"ms")
       const strict = scores.filter(sc => sc.lowest < 2)
       if (strict.length > 0) {
         return strict.map(sc => sc.theme)
       }
       return scores.filter(sc => sc.lowest < 4).slice(0, 6).map(sc => sc.theme)
-    })
+    }, [themes])
   }
 
 
-  let officialSearched = filtered(officialThemes)
-  let hiddenSearched = visitedHiddenThemes.bindD(visited => filtered(visited))
-  let customSearched = customThemes.bindD(customThemes => filtered(customThemes))
+  let officialSearched : Store<MinimalLayoutInformation[]>= filtered(new ImmutableStore(officialThemes))
+  let hiddenSearched: Store<MinimalLayoutInformation[]> =  filtered(visitedHiddenThemes)
+  let customSearched: Store<MinimalLayoutInformation[]> = filtered(customThemes)
 
 
   let searchIsFocussed = new UIEventSource(false)
@@ -133,7 +135,7 @@
       </div>
     </div>
 
-    <Searchbar value={search} placeholder={tr.searchForATheme} on:search={() => applySearch()} isFocused={searchIsFocussed} />
+    <Searchbar value={search} placeholder={tr.searchForATheme} on:search={() => applySearch()}  />
 
     <ThemesList {search} {state} themes={$officialSearched} />
 
