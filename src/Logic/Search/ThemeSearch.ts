@@ -109,7 +109,7 @@ export default class ThemeSearch {
 
         let options : {blacklist: Set<string>} = undefined
         if(ignoreLayers?.length > 0){
-            options.blacklist = new Set(ignoreLayers)
+            options = { blacklist: new Set(ignoreLayers) }
         }
         const layerScores = query.length < 3 ? {} :  LayerSearch.scoreLayers(query, options)
         const results: Record<string, ThemeSearchScore> = {}

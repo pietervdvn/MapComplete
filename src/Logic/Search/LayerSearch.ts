@@ -39,7 +39,7 @@ export default class LayerSearch {
         if (query.length < 1) {
             return []
         }
-        const scores = LayerSearch.scoreLayers(query, this._layerWhitelist)
+        const scores = LayerSearch.scoreLayers(query, { whitelist: this._layerWhitelist })
         const asList: ({ layer: LayerConfig, score: number })[] = []
         for (const layer in scores) {
             asList.push({
