@@ -372,7 +372,7 @@
       "freeform": {
         "key": "vending",
         "addExtraTags": [
-          "fixme=Freeform input used, value may need to be checked"
+          "fixme=A mapcomplete user used the text field to set the 'vending'-tag, which is probably incorrect (e.g. might be in the local language, use upercase, ...)"
         ]
       },
       "render": {
