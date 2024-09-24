@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.47.2](https://github.com/pietervdvn/mapcomplete/compare/v0.47.1...v0.47.2) (2024-09-24)
+
+
+### Bug Fixes
+
+* correctly apply previous refactoring ([2a53f99](https://github.com/pietervdvn/mapcomplete/commits2a53f99dd50695768ff9b625665ca69bf0bec4c1))
+* delete entry from 'localStorage' ([22c8a45](https://github.com/pietervdvn/mapcomplete/commits22c8a45012be60dad215f8b0d72501133665454e))
+* don't add buildings to database, reevaluate builddb script ([ce87edf](https://github.com/pietervdvn/mapcomplete/commitsce87edf80009bd65c9f185d9ff68b023c5486adc))
+* filtering for dates now works again ([bea9f66](https://github.com/pietervdvn/mapcomplete/commitsbea9f66b9aac9d2f13bca74b7a35cde7dd217e12))
+* fix wrong location in theme ([8b0b24b](https://github.com/pietervdvn/mapcomplete/commits8b0b24b01eefa5dbe86d97ac9c3baf38fd2fad0d))
+* remove stray word ([a6598fd](https://github.com/pietervdvn/mapcomplete/commitsa6598fd52d588ba7a5a6b05e2df8ff8ae460a37b))
+* studio now handles arrays better (might fix [#2102](https://github.com/pietervdvn/MapComplete/issues/2102)) ([0c9e41a](https://github.com/pietervdvn/mapcomplete/commits0c9e41a6ce4508ba3bc767f5eb5bd3cdb88201b2))
+* use 'isCounted' instead of 'doCount', add check for this ([3a8fc42](https://github.com/pietervdvn/mapcomplete/commits3a8fc4248b7aa6a9cea8c2529a02a7cc11325cc8))
+
+
+### Theme improvements
+
+* **ghostsigns:** streamline ghostsigns theme, fix [#2168](https://github.com/pietervdvn/MapComplete/issues/2168), fix [#2167](https://github.com/pietervdvn/MapComplete/issues/2167) ([392fe3b](https://github.com/pietervdvn/mapcomplete/commits392fe3b190975b9e3c5cb4aadb4d1543aa686d9e))
+* **vending_machine:** add better 'fixme' if freeform for 'vending' is used ([dfce217](https://github.com/pietervdvn/mapcomplete/commitsdfce217288957be2b27c198d640fd2dd5d53c9fb))
+
 ### [0.47.1](https://github.com/pietervdvn/mapcomplete/compare/v0.47.0...v0.47.1) (2024-09-19)
 
 
