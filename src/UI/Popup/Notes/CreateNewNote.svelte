@@ -19,6 +19,7 @@
   import Loading from "../../Base/Loading.svelte"
   import NextButton from "../../Base/NextButton.svelte"
   import Note from "../../../assets/svg/Note.svelte"
+  import TitledPanel from "../../Base/TitledPanel.svelte"
 
   export let coordinate: UIEventSource<{ lon: number; lat: number }>
   export let state: SpecialVisualizationState
@@ -32,6 +33,8 @@
   let isDisplayed = notelayer?.isDisplayed
 
   let submitted = false
+  let textEntered = false
+
   function enableNoteLayer() {
     state.guistate.closeAll()
     isDisplayed.setData(true)
@@ -91,14 +94,19 @@
     <Tr t={Translations.t.notes.isCreated} />
   </div>
 {:else}
-  <h3>
-    <Tr t={Translations.t.notes.createNoteTitle} />
-  </h3>
+  <TitledPanel>
 
-  {#if $isDisplayed}
-    <!-- The layer is displayed, so we can add a note without worrying for duplicates -->
-    {#if $hasFilter}
-      <div class="flex flex-col">
+    <Tr slot="title" t={Translations.t.notes.createNoteTitle} />
+
+    {#if !$isDisplayed}
+      <div class="alert">
+        <Tr t={Translations.t.notes.noteLayerNotEnabled} />
+      </div>
+      <SubtleButton on:click={enableNoteLayer}>
+        <Layers slot="image" class="mr-4 h-8 w-8" />
+        <Tr slot="message" t={Translations.t.notes.noteLayerDoEnable} />
+      </SubtleButton>
+    {:else if $hasFilter}
         <!-- ...but a filter is set ...-->
         <div class="alert">
           <Tr t={Translations.t.notes.noteLayerHasFilters} />
@@ -107,10 +115,12 @@
           <Layers class="mr-4 h-8 w-8" />
           <Tr slot="message" t={Translations.t.notes.disableAllNoteFilters} />
         </SubtleButton>
-      </div>
     {:else}
+      <!-- The layer with notes is displayed without filters, so we can add a note without worrying for duplicates -->
+      <div class="h-full flex flex-col justify-between">
+
       <form
-        class="low-interaction flex flex-col rounded-sm p-2"
+        class="flex flex-col rounded-sm p-2"
         on:submit|preventDefault={uploadNote}
       >
         <label class="neutral-label">
@@ -119,14 +129,6 @@
             <ValidatedInput autofocus={true} type="text" value={comment} />
           </div>
         </label>
-
-        <div class="h-56 w-full">
-          <NewPointLocationInput value={coordinate} {state}>
-            <div class="h-20 w-full pb-10" slot="image">
-              <Note class="h-10 w-full" />
-            </div>
-          </NewPointLocationInput>
-        </div>
 
         <LoginToggle {state}>
           <span slot="loading"><!--empty: don't show a loading message--></span>
@@ -146,16 +148,16 @@
           </div>
         {/if}
       </form>
-    {/if}
-  {:else}
-    <div class="flex flex-col">
-      <div class="alert">
-        <Tr t={Translations.t.notes.noteLayerNotEnabled} />
+
+      <div class="h-56 w-full">
+        <NewPointLocationInput value={coordinate} {state}>
+          <div class="h-20 w-full pb-10" slot="image">
+            <Note class="h-10 w-full" />
+          </div>
+        </NewPointLocationInput>
       </div>
-      <SubtleButton on:click={enableNoteLayer}>
-        <Layers slot="image" class="mr-4 h-8 w-8" />
-        <Tr slot="message" t={Translations.t.notes.noteLayerDoEnable} />
-      </SubtleButton>
-    </div>
-  {/if}
+      </div>
+
+    {/if}
+  </TitledPanel>
 {/if}
