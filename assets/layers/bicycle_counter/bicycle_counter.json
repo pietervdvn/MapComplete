@@ -1,0 +1,178 @@
+{
+  "id": "bicycle_counter",
+  "name": {
+    "en": "Bicycle counters"
+  },
+  "description": {
+    "en": "Layer showing monitoring stations for bicycle traffic"
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        "man_made=monitoring_station",
+        "monitoring:bicycle=yes"
+      ]
+    }
+  },
+  "title": {
+    "render": {
+      "en": "Bicycle counter"
+    }
+  },
+  "tagRenderings": [
+    {
+      "id": "display",
+      "question": {
+        "en": "Does this bicycle counter have a display showing the number of passing bicycles?"
+      },
+      "mappings": [
+        {
+          "if": "display=digital",
+          "then": {
+            "en": "This counter has a digital display"
+          }
+        },
+        {
+          "if": "display=analog",
+          "then": {
+            "en": "This counter has an analog display"
+          }
+        },
+        {
+          "if": "display=no",
+          "then": {
+            "en": "This counter has no display"
+          }
+        }
+      ]
+    },
+    {
+      "id": "name",
+      "question": {
+        "en": "What is the name of the counted location?"
+      },
+      "freeform": {
+        "key": "name",
+        "type": "string",
+        "placeholder": {
+          "en": "Name of the counted location"
+        }
+      },
+      "render": {
+        "en": "Name of the counted location: {name}"
+      }
+    },
+    {
+      "id": "start_date",
+      "question": {
+        "en": "When did this counter start counting?"
+      },
+      "freeform": {
+        "key": "start_date",
+        "type": "date",
+        "placeholder": {
+          "en": "Start date of the counter"
+        }
+      },
+      "render": {
+        "en": "This counter started counting on {start_date}"
+      }
+    },
+    {
+      "id": "clock",
+      "question": {
+        "en": "Does this bicycle counter have a clock?"
+      },
+      "mappings": [
+        {
+          "if": "amenity=clock",
+          "then": {
+            "en": "This counter has a clock"
+          }
+        },
+        {
+          "if": "amenity=",
+          "then": {
+            "en": "This counter has no clock"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ref",
+      "question": {
+        "en": "What is the reference number of this counter?"
+      },
+      "freeform": {
+        "key": "ref",
+        "type": "string",
+        "placeholder": {
+          "en": "Reference number of the counter"
+        },
+        "addExtraTags": [
+          "noref="
+        ]
+      },
+      "render": {
+        "en": "Reference number of the counter: {ref}"
+      },
+      "mappings": [
+        {
+          "if": "noref=yes",
+          "then": {
+            "en": "This counter has no reference number"
+          }
+        }
+      ]
+    },
+    {
+      "id": "website",
+      "question": {
+        "en": "Is there a website for this bicycle counter?"
+      },
+      "freeform": {
+        "key": "website",
+        "type": "url",
+        "placeholder": {
+          "en": "Website of the counter"
+        }
+      },
+      "render": {
+        "en": "Website of the counter: <a href='{website}'>{website}</a>"
+      }
+    }
+  ],
+  "pointRendering": [
+    {
+      "marker": [
+        {
+          "icon": "pin",
+          "color": "#538EE8"
+        },
+        {
+          "icon": "./assets/layers/bicycle_counter/bicycle_monitoring_station.svg"
+        }
+      ],
+      "location": [
+        "point",
+        "centroid"
+      ]
+    }
+  ],
+  "minzoom": 13,
+  "allowMove": {
+    "enableImproveAccuracy": true
+  },
+  "deletion": true,
+  "presets": [
+    {
+      "title": {
+        "en": "a bicycle counter"
+      },
+      "tags": [
+        "man_made=monitoring_station",
+        "monitoring:bicycle=yes"
+      ]
+    }
+  ]
+}

@@ -55,7 +55,8 @@
   "layers": [
     "cycleways_and_roads",
     "barrier",
-    "crossings"
+    "crossings",
+    "bicycle_counter"
   ],
   "enableDownload": true,
   "widenFactor": 1.5

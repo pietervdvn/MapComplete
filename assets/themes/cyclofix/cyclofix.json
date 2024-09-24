@@ -216,7 +216,8 @@
         "minzoom": 18,
         "isCounted": false
       }
-    }
+    },
+    "bicycle_counter"
   ],
   "widenFactor": 2
 }
