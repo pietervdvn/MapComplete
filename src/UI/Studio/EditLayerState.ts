@@ -204,7 +204,7 @@ export abstract class EditJsonState<T> {
 
         for (let i = 0; i < path.length - 1; i++) {
             const breadcrumb = path[i]
-            if (entry[breadcrumb] === undefined) {
+            if (entry[breadcrumb] === undefined || entry[breadcrumb] === null) {
                 if (isUndefined) {
                     // we have a dead end _and_ we do not need to set a value - we do an early return
                     return

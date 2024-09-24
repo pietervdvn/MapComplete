@@ -105,7 +105,7 @@
         </div>
       {/each}
     {:else}
-      <Accordion>
+      <Accordion> <!-- The CollapsedTagRenderingPreview contains the accordeon items -->
         {#each $currentValue as value, i}
           <CollapsedTagRenderingPreview
             {state}
