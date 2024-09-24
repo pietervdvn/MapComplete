@@ -13,7 +13,7 @@ type ThemeSearchScore = {
     theme: MinimalLayoutInformation,
     lowest: number,
     perLayer?: Record<string, number>,
-    other: number
+    other: number,
 }
 
 
@@ -92,15 +92,26 @@ export default class ThemeSearch {
         return `${linkPrefix}`
     }
 
-    private static scoreThemes(query: string, themes: MinimalLayoutInformation[], ignoreLayers: string[] = []): Record<string, ThemeSearchScore> {
+    /**
+     * Returns a score based on textual search
+     *
+     * Note that, if `query.length < 3`, layers are _not_ searched because this takes too much time
+     * @param query
+     * @param themes
+     * @param ignoreLayers
+     * @private
+     */
+    private static scoreThemes(query: string, themes: MinimalLayoutInformation[], ignoreLayers: string[] = undefined): Record<string, ThemeSearchScore> {
         if (query?.length < 1) {
             return undefined
         }
         themes = Utils.NoNullInplace(themes)
-        const layerScores = LayerSearch.scoreLayers(query)
-        for (const ignoreLayer of ignoreLayers) {
-            delete layerScores[ignoreLayer]
+
+        let options : {blacklist: Set<string>} = undefined
+        if(ignoreLayers?.length > 0){
+            options.blacklist = new Set(ignoreLayers)
         }
+        const layerScores = query.length < 3 ? {} :  LayerSearch.scoreLayers(query, options)
         const results: Record<string, ThemeSearchScore> = {}
         for (const layoutInfo of themes) {
             const theme = layoutInfo.id
@@ -111,7 +122,7 @@ export default class ThemeSearch {
                 results[theme] = {
                     theme: layoutInfo,
                     lowest: -1,
-                    other: 0,
+                    other: 0
                 }
                 continue
             }
