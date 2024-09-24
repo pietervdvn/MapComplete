@@ -9116,52 +9116,52 @@
                     "12": {
                         "question": "Prodej vajec"
                     },
-                    "13": {
+                    "14": {
                         "question": "Prodej sýrů"
                     },
-                    "14": {
+                    "15": {
                         "question": "Prodej medu"
                     },
-                    "15": {
+                    "16": {
                         "question": "Prodej brambor"
                     },
-                    "16": {
+                    "17": {
                         "question": "Prodej masa"
                     },
-                    "17": {
+                    "18": {
                         "question": "Prodej ovoce"
                     },
-                    "18": {
-                        "question": "Prodej jahod"
-                    },
                     "19": {
-                        "question": "Prodej květin"
+                        "question": "Prodej jahod"
                     },
                     "2": {
                         "question": "Prodej sladkostí"
                     },
                     "20": {
-                        "question": "Prodej parkovacích lístků"
+                        "question": "Prodej květin"
                     },
                     "21": {
-                        "question": "Prodej pamětních mincí/lisované mince"
+                        "question": "Prodej parkovacích lístků"
                     },
                     "22": {
-                        "question": "Prodej jízdenek MHD"
+                        "question": "Prodej pamětních mincí/lisované mince"
                     },
                     "23": {
-                        "question": "Prodej světel na kolo"
+                        "question": "Prodej jízdenek MHD"
                     },
                     "24": {
-                        "question": "Prodej rukavic"
+                        "question": "Prodej světel na kolo"
                     },
                     "25": {
-                        "question": "Prodej sad na opravu jízdních kol"
+                        "question": "Prodej rukavic"
                     },
                     "26": {
-                        "question": "Prodej pump na kolo"
+                        "question": "Prodej sad na opravu jízdních kol"
                     },
                     "27": {
+                        "question": "Prodej pump na kolo"
+                    },
+                    "28": {
                         "question": "Prodej zámků na kola"
                     },
                     "3": {
@@ -9280,52 +9280,52 @@
                     "11": {
                         "then": "Prodává vejce"
                     },
-                    "12": {
+                    "13": {
                         "then": "Prodává sýr"
                     },
-                    "13": {
+                    "14": {
                         "then": "Prodává med"
                     },
-                    "14": {
+                    "15": {
                         "then": "Prodává brambory"
                     },
-                    "15": {
+                    "16": {
                         "then": "Prodává maso"
                     },
-                    "16": {
+                    "17": {
                         "then": "Prodává ovoce"
                     },
-                    "17": {
+                    "18": {
                         "then": "Prodává jahody"
                     },
-                    "18": {
-                        "then": "Prodává květiny"
-                    },
                     "19": {
-                        "then": "Prodává parkovací lístky"
+                        "then": "Prodává květiny"
                     },
                     "2": {
                         "then": "Prodává jídlo"
                     },
                     "20": {
-                        "then": "Prodává pamětní mince/lisované"
+                        "then": "Prodává parkovací lístky"
                     },
                     "21": {
-                        "then": "Prodává lístky na MHD"
+                        "then": "Prodává pamětní mince/lisované"
                     },
                     "22": {
-                        "then": "Prodává světla na kolo"
+                        "then": "Prodává lístky na MHD"
                     },
                     "23": {
-                        "then": "Prodává rukavice"
+                        "then": "Prodává světla na kolo"
                     },
                     "24": {
-                        "then": "Prodává sady na opravu jízdních kol"
+                        "then": "Prodává rukavice"
                     },
                     "25": {
-                        "then": "Prodává pumpy na kolo"
+                        "then": "Prodává sady na opravu jízdních kol"
                     },
                     "26": {
+                        "then": "Prodává pumpy na kolo"
+                    },
+                    "27": {
                         "then": "Prodává zámky na kolo"
                     },
                     "3": {

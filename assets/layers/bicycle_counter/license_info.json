@@ -1,0 +1,12 @@
+[
+  {
+    "path": "bicycle_monitoring_station.svg",
+    "license": "BSD-3-Clause",
+    "authors": [
+      "Modified from Lucas Verney"
+    ],
+    "sources": [
+      "https://github.com/cyclosm/cyclosm-cartocss-style/blob/master/symbols/amenity/bicycle_monitoring_station.svg"
+    ]
+  }
+]

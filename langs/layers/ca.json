@@ -9098,52 +9098,52 @@
                     "12": {
                         "question": "Venda d'ous"
                     },
-                    "13": {
+                    "14": {
                         "question": "Venda de formatge"
                     },
-                    "14": {
+                    "15": {
                         "question": "Venda de mel"
                     },
-                    "15": {
+                    "16": {
                         "question": "Venda de patates"
                     },
-                    "16": {
+                    "17": {
                         "question": "Venda de productes carnis"
                     },
-                    "17": {
+                    "18": {
                         "question": "Venda de fruites"
                     },
-                    "18": {
-                        "question": "Venda de maduixes"
-                    },
                     "19": {
-                        "question": "Venda de flors"
+                        "question": "Venda de maduixes"
                     },
                     "2": {
                         "question": "Venda de llaminadures"
                     },
                     "20": {
-                        "question": "Venda de tiquets d'aparcament"
+                        "question": "Venda de flors"
                     },
                     "21": {
-                        "question": "Venda de monedes premsades"
+                        "question": "Venda de tiquets d'aparcament"
                     },
                     "22": {
-                        "question": "Venda de bitllets de transport públic"
+                        "question": "Venda de monedes premsades"
                     },
                     "23": {
-                        "question": "Venda de llums de bicicletes"
+                        "question": "Venda de bitllets de transport públic"
                     },
                     "24": {
-                        "question": "Venda de guants"
+                        "question": "Venda de llums de bicicletes"
                     },
                     "25": {
-                        "question": "Venda de kits de reparació de bicicletes"
+                        "question": "Venda de guants"
                     },
                     "26": {
-                        "question": "Venda de bombes de bicicletes"
+                        "question": "Venda de kits de reparació de bicicletes"
                     },
                     "27": {
+                        "question": "Venda de bombes de bicicletes"
+                    },
+                    "28": {
                         "question": "Venda de cadenat per a bicicletes"
                     },
                     "3": {
@@ -9265,52 +9265,52 @@
                     "11": {
                         "then": "Es venen ous"
                     },
-                    "12": {
+                    "13": {
                         "then": "Es ven formatge"
                     },
-                    "13": {
+                    "14": {
                         "then": "Es ven mel"
                     },
-                    "14": {
+                    "15": {
                         "then": "Es venen papes"
                     },
-                    "15": {
+                    "16": {
                         "then": "Es venen productes carnis"
                     },
-                    "16": {
+                    "17": {
                         "then": "Es ven fruita"
                     },
-                    "17": {
+                    "18": {
                         "then": "Es venen maduixes"
                     },
-                    "18": {
-                        "then": "Es venen flors"
-                    },
                     "19": {
-                        "then": "Es venen tiquets d'aparcament"
+                        "then": "Es venen flors"
                     },
                     "2": {
                         "then": "Es ven menjar"
                     },
                     "20": {
-                        "then": "Es venen cèntims premsats"
+                        "then": "Es venen tiquets d'aparcament"
                     },
                     "21": {
-                        "then": "Es venen bitllets de transport públic"
+                        "then": "Es venen cèntims premsats"
                     },
                     "22": {
-                        "then": "Es venen llums per a bicicletes"
+                        "then": "Es venen bitllets de transport públic"
                     },
                     "23": {
-                        "then": "Es venen guants"
+                        "then": "Es venen llums per a bicicletes"
                     },
                     "24": {
-                        "then": "Es venen kits de reparació de bicicletes"
+                        "then": "Es venen guants"
                     },
                     "25": {
-                        "then": "Es venen bombes de bicicletes"
+                        "then": "Es venen kits de reparació de bicicletes"
                     },
                     "26": {
+                        "then": "Es venen bombes de bicicletes"
+                    },
+                    "27": {
                         "then": "Es venen cadenats per a bicicletes"
                     },
                     "3": {

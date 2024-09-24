@@ -11814,52 +11814,52 @@
                     "12": {
                         "question": "Verkauf von Eiern"
                     },
-                    "13": {
+                    "14": {
                         "question": "Verkauf von Käse"
                     },
-                    "14": {
+                    "15": {
                         "question": "Verkauf von Honig"
                     },
-                    "15": {
+                    "16": {
                         "question": "Verkauf von Kartoffeln"
                     },
-                    "16": {
+                    "17": {
                         "question": "Verkauf von Fleisch"
                     },
-                    "17": {
+                    "18": {
                         "question": "Verkauf von Obst"
                     },
-                    "18": {
-                        "question": "Verkauf von Erdbeeren"
-                    },
                     "19": {
-                        "question": "Verkauf von Blumen"
+                        "question": "Verkauf von Erdbeeren"
                     },
                     "2": {
                         "question": "Verkauf von Süßigkeiten"
                     },
                     "20": {
-                        "question": "Verkauf von Parkscheinen"
+                        "question": "Verkauf von Blumen"
                     },
                     "21": {
-                        "question": "Verkauf von Souvenirmünzen"
+                        "question": "Verkauf von Parkscheinen"
                     },
                     "22": {
-                        "question": "Verkauf von Fahrscheinen"
+                        "question": "Verkauf von Souvenirmünzen"
                     },
                     "23": {
-                        "question": "Verkauf von Fahrradlampen"
+                        "question": "Verkauf von Fahrscheinen"
                     },
                     "24": {
-                        "question": "Verkauf von Fahrradhandschuhen"
+                        "question": "Verkauf von Fahrradlampen"
                     },
                     "25": {
-                        "question": "Verkauf von Fahrrad-Reparatursets"
+                        "question": "Verkauf von Fahrradhandschuhen"
                     },
                     "26": {
-                        "question": "Verkauf von Fahrradpumpen"
+                        "question": "Verkauf von Fahrrad-Reparatursets"
                     },
                     "27": {
+                        "question": "Verkauf von Fahrradpumpen"
+                    },
+                    "28": {
                         "question": "Verkauf von Fahrradschlössern"
                     },
                     "3": {
@@ -11984,52 +11984,52 @@
                     "11": {
                         "then": "Eier werden verkauft"
                     },
-                    "12": {
+                    "13": {
                         "then": "Käse wird verkauft"
                     },
-                    "13": {
+                    "14": {
                         "then": "Honig wird verkauft"
                     },
-                    "14": {
+                    "15": {
                         "then": "Kartoffeln werden verkauft"
                     },
-                    "15": {
+                    "16": {
                         "then": "Fleisch wird verkauft"
                     },
-                    "16": {
+                    "17": {
                         "then": "Obst wird verkauft"
                     },
-                    "17": {
+                    "18": {
                         "then": "Erdbeeren werden verkauft"
                     },
-                    "18": {
-                        "then": "Blumen werden verkauft"
-                    },
                     "19": {
-                        "then": "Parkscheine werden verkauft"
+                        "then": "Blumen werden verkauft"
                     },
                     "2": {
                         "then": "Lebensmittel werden verkauft"
                     },
                     "20": {
-                        "then": "Souvenirmünzen werden verkauft"
+                        "then": "Parkscheine werden verkauft"
                     },
                     "21": {
-                        "then": "Fahrscheine werden verkauft"
+                        "then": "Souvenirmünzen werden verkauft"
                     },
                     "22": {
-                        "then": "Fahrradlampen werden verkauft"
+                        "then": "Fahrscheine werden verkauft"
                     },
                     "23": {
-                        "then": "Fahrradhandschuhe werden verkauft"
+                        "then": "Fahrradlampen werden verkauft"
                     },
                     "24": {
-                        "then": "Fahrrad-Reparaturset werden verkauft"
+                        "then": "Fahrradhandschuhe werden verkauft"
                     },
                     "25": {
-                        "then": "Fahrradpumpen werden verkauft"
+                        "then": "Fahrrad-Reparaturset werden verkauft"
                     },
                     "26": {
+                        "then": "Fahrradpumpen werden verkauft"
+                    },
+                    "27": {
                         "then": "Fahrradschlösser werden verkauft"
                     },
                     "3": {
