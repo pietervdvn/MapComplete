@@ -18,7 +18,7 @@ import Filterview from "./BigComponents/Filterview.svelte"
 import FilteredLayer from "../Models/FilteredLayer"
 import { SubtleButton } from "./Base/SubtleButton"
 import { GeoOperations } from "../Logic/GeoOperations"
-import { Polygon } from "geojson"
+import { FeatureCollection, Polygon } from "geojson"
 import { Feature } from "geojson"
 
 class StatsticsForOverviewFile extends Combine {
@@ -30,7 +30,9 @@ class StatsticsForOverviewFile extends Combine {
             new Title("Filters"),
             new SvelteUIElement(Filterview, { filteredLayer }),
         ])
-
+        filteredLayer.currentFilter.addCallbackAndRun(tf => {
+            console.log("Filters are", tf)
+        })
         const downloaded = new UIEventSource<{ features: ChangeSetData[] }[]>([])
 
         for (const filepath of paths) {

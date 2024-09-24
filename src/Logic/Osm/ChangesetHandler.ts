@@ -392,7 +392,7 @@ export class ChangesetHandler {
         return [
             ["created_by", `MapComplete ${Constants.vNumber}`],
             ["locale", Locale.language.data],
-            ["host", `${window.location.origin}${window.location.pathname}`],
+            ["host", `${window.location.origin}${window.location.pathname}`], // Note: deferred changes might give a different hostpath then the theme with which the changes were made
             ["source", setSourceAsSurvey ? "survey" : undefined],
             ["imagery", this.changes.state["backgroundLayer"]?.data?.id],
         ].map(([key, value]) => ({
