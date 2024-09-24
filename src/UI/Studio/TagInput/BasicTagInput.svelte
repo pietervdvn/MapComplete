@@ -107,6 +107,7 @@
       placeholder="The key of the tag"
       type="key"
       value={keyValue}
+      autofocus
       on:submit
     />
     <select
