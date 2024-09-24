@@ -35,7 +35,21 @@
           "color": "#00000000"
         },
         {
-          "icon": "./assets/layers/police/police.svg"
+          "icon": {
+            "render":"./assets/layers/police/police.svg",
+            "mappings": [
+              {
+                "if": "police=checkpoint",
+                "then": "./assets/layers/police/checkpoint.svg"
+              }
+            ]
+          }
+        }
+      ],
+      "iconBadges": [
+        {
+          "if": "detention=yes",
+          "then": "circle:white;./assets/layers/police/jail.svg"
         }
       ]
     }
@@ -134,11 +148,13 @@
         "en": "Does this police office have detention facilities?",
         "de": "Verfügt die Polizeidienststelle über Gewahrsamsräume?"
       },
+      "filter": true,
       "id": "4_z2nrdhy6tyyh4fd",
       "condition": "amenity=police",
       "mappings": [
         {
           "if": "detention=yes",
+          "icon": "./assets/layers/police/jail.svg",
           "then": {
             "en": "This police office has some cells to detain people",
             "de": "Die Polizeidienststelle hat Zellen für die Inhaftierung von Personen"

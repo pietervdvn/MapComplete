@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="146.69728mm"
+   height="146.69728mm"
+   viewBox="0 0 146.69728 146.69728"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="checkpoint.svg"
+   inkscape:version="1.3.2 (1:1.3.2+202311252150+091e20ef0f)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.423041"
+     inkscape:cx="277.57457"
+     inkscape:cy="280.0341"
+     inkscape:window-width="1920"
+     inkscape:window-height="995"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <rect
+       x="180.04063"
+       y="225.93347"
+       width="387.81686"
+       height="272.452"
+       id="rect3" />
+    <rect
+       x="180.04063"
+       y="225.93347"
+       width="387.81686"
+       height="272.452"
+       id="rect4" />
+  </defs>
+  <g
+     id="layer1"
+     transform="translate(-0.7219696,-20.16819)">
+    <path
+       style="fill:#df0000;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+       id="path1"
+       d="M 147.41925,93.51683 A 73.34864,73.34864 0 0 1 74.487325,166.86429 73.34864,73.34864 0 0 1 0.72670457,94.350248 73.34864,73.34864 0 0 1 72.820518,20.178844 73.34864,73.34864 0 0 1 147.40031,91.850104" />
+    <path
+       style="fill:#ffffff;fill-opacity:1;stroke-width:0;stroke-linecap:round"
+       id="path2"
+       d="M 126.52909,93.51683 A 52.458477,52.458477 0 0 1 74.368642,145.97446 52.458477,52.458477 0 0 1 21.615519,94.112885 52.458477,52.458477 0 0 1 73.176552,41.065973 52.458477,52.458477 0 0 1 126.51554,92.324798" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:18;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
+       d="M 35.928083,94.568173 H 109.66638"
+       id="path3" />
+    <path
+       d="m 51.475227,71.953641 h -2.726158 c -0.168047,2.692182 -1.269716,3.908006 -3.006241,3.908006 -2.165988,0 -3.435704,-2.576388 -3.435704,-7.179155 0,-4.660658 1.325736,-7.265997 3.529065,-7.265997 1.512458,0 2.502091,1.071083 2.91288,3.792217 h 2.670142 c -0.242741,-4.863295 -2.614122,-7.497586 -5.676383,-7.497586 -3.846493,0 -6.236552,4.081698 -6.236552,10.913475 0,6.773874 2.371384,10.884517 6.161862,10.884517 3.379688,0 5.639038,-2.721127 5.807089,-7.555477 z m 13.051896,7.2081 V 58.058509 h -2.800848 v 7.902855 h -5.396296 v -7.902855 h -2.800845 v 21.103232 h 2.800845 V 69.57989 h 5.396296 v 9.581851 z m 12.865191,0 v -3.618526 h -7.375563 v -5.471207 h 6.516636 v -3.618526 h -6.516636 v -4.776453 h 7.03946 v -3.61852 h -9.840308 v 21.103232 z m 13.593432,-7.2081 h -2.726158 c -0.168047,2.692182 -1.269716,3.908006 -3.006241,3.908006 -2.165988,0 -3.435704,-2.576388 -3.435704,-7.179155 0,-4.660658 1.325736,-7.265997 3.529065,-7.265997 1.512458,0 2.502091,1.071083 2.91288,3.792217 h 2.670142 c -0.242741,-4.863295 -2.614122,-7.497586 -5.676383,-7.497586 -3.846493,0 -6.236552,4.081698 -6.236552,10.913475 0,6.773874 2.371385,10.884517 6.161862,10.884517 3.379689,0 5.639038,-2.721127 5.807089,-7.555477 z m 14.078884,7.2081 -6.012483,-12.013498 5.433643,-9.089734 h -3.305 l -5.321605,9.263419 v -9.263419 h -2.800849 v 21.103232 h 2.800849 v -7.06336 l 1.400422,-2.257956 4.462683,9.321316 z"
+       id="text3"
+       style="font-weight:bold;font-size:45.3543px;line-height:1.5;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros, Bold';white-space:pre;stroke:#000000;stroke-width:0;stroke-linecap:round"
+       aria-label="CHECK" />
+    <path
+       d="m 53.392636,116.09517 c 0,-4.22644 -1.831852,-6.54229 -5.186565,-6.54229 H 41.09937 v 21.10323 h 3.310576 v -7.52653 h 4.12718 c 2.957448,0 4.85551,-2.75008 4.85551,-7.03441 z m -3.310576,0.26053 c 0,2.14217 -0.816609,3.15536 -2.582246,3.15536 h -3.089868 v -6.33966 h 3.089868 c 1.765637,0 2.582246,1.01319 2.582246,3.1843 z m 20.437273,3.87906 c 0,-6.3686 -3.067799,-11.02926 -7.768815,-11.02926 -4.723085,0 -7.72467,4.83434 -7.72467,10.88452 0,6.31071 3.023658,10.91347 7.746743,10.91347 4.678943,0 7.746742,-4.60276 7.746742,-10.76873 z m -3.310576,-0.0289 c 0,4.31328 -1.78771,7.0923 -4.436166,7.0923 -2.670529,0 -4.436172,-2.77902 -4.436172,-7.2081 0,-4.25538 1.765643,-7.17915 4.436172,-7.17915 2.714671,0 4.436166,2.89482 4.436166,7.29495 z m 8.806123,10.45029 v -21.10323 h -3.310571 v 21.10323 z m 16.023175,0 v -21.10323 h -3.310576 v 14.3583 l -6.37837,-14.3583 h -3.398854 v 21.10323 h 3.310571 v -14.58989 l 6.466653,14.58989 z m 14.544415,-17.48471 v -3.61852 H 93.693302 v 3.61852 h 4.877578 v 17.48471 h 3.31058 v -17.48471 z"
+       id="text4"
+       style="font-weight:bold;font-size:45.3543px;line-height:1.5;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros, Bold';white-space:pre;stroke:#ffffff;stroke-width:0.6;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
+       aria-label="POINT" />
+  </g>
+</svg>

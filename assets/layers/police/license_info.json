@@ -1,5 +1,23 @@
 [
   {
+    "path": "checkpoint.svg",
+    "license": "CC0-1.0",
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "sources": []
+  },
+  {
+    "path": "jail.svg",
+    "license": "CC0-1.0",
+    "authors": [
+      "craigclark"
+    ],
+    "sources": [
+      "https://svgsilh.com/image/2071965.html"
+    ]
+  },
+  {
     "path": "police.svg",
     "license": "CC-BY 4.0",
     "authors": [
