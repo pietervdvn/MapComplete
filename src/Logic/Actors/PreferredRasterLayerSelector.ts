@@ -30,10 +30,7 @@ export class PreferredRasterLayerSelector {
         const self = this
 
         this._rasterLayerSetting.addCallbackD((layer) => {
-            if (layer.properties.id !== this._queryParameter.data) {
-                this._queryParameter.setData(undefined)
-                return true
-            }
+            this._queryParameter.setData(layer.properties.id)
         })
 
         this._queryParameter.addCallbackAndRunD((_) => {
