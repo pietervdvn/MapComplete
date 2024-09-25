@@ -18,8 +18,9 @@ export default class StudioServer {
         | { error: any }
         | undefined
     >
+    public isDirect: boolean
 
-    constructor(url: string, userId: Store<number>) {
+    constructor(url: string, userId: Store<number | undefined>, isDirect: boolean) {
         this.url = url
         this._userId = userId
         this.overview = UIEventSource.FromPromiseWithErr(this.fetchOverviewRaw())
@@ -123,7 +124,7 @@ export default class StudioServer {
 
     public urlFor(id: string, category: "layers" | "themes", uid?: number) {
         uid ??= this._userId.data
-        const uidStr = uid !== undefined ? "/" + uid : ""
+        const uidStr = uid !== null ? "/" + uid : ""
         return `${this.url}${uidStr}/${category}/${id}/${id}.json`
     }
 }

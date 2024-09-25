@@ -5,7 +5,7 @@ import {
     Conversion,
     ConversionMessage,
     DesugaringContext,
-    Pipe,
+    Pipe
 } from "../../Models/ThemeConfig/Conversion/Conversion"
 import { PrepareLayer } from "../../Models/ThemeConfig/Conversion/PrepareLayer"
 import { PrevalidateTheme, ValidateLayer } from "../../Models/ThemeConfig/Conversion/Validation"
@@ -97,16 +97,19 @@ export abstract class EditJsonState<T> {
 
     public startSavingUpdates(enabled = true) {
         this.sendingUpdates = enabled
-        this.register(
-            ["credits"],
-            this.osmConnection.userDetails.mapD((u) => u.name),
-            false
-        )
-        this.register(
-            ["credits:uid"],
-            this.osmConnection.userDetails.mapD((u) => u.uid),
-            false
-        )
+        if (!this.server.isDirect) {
+
+            this.register(
+                ["credits"],
+                this.osmConnection.userDetails.mapD((u) => u.name),
+                false
+            )
+            this.register(
+                ["credits:uid"],
+                this.osmConnection.userDetails.mapD((u) => u.uid),
+                false
+            )
+        }
         if (enabled) {
             this.configuration.ping()
         }
@@ -159,7 +162,7 @@ export abstract class EditJsonState<T> {
     }
 
     public getSchemaStartingWith(path: string[]) {
-        if(path === undefined){
+        if (path === undefined) {
             return undefined
         }
         return this.schema.filter(
@@ -174,10 +177,10 @@ export abstract class EditJsonState<T> {
             path,
             type: "translation",
             hints: {
-                typehint: "translation",
+                typehint: "translation"
             },
             required: origConfig.required ?? false,
-            description: origConfig.description ?? "A translatable object",
+            description: origConfig.description ?? "A translatable object"
         }
     }
 
@@ -329,7 +332,7 @@ export default class EditLayerState extends EditJsonState<LayerConfigJson> {
     public readonly imageUploadManager = {
         getCountsFor() {
             return 0
-        },
+        }
     }
     public readonly layout: { getMatchingLayer: (key: any) => LayerConfig }
     public readonly featureSwitches: {
@@ -345,8 +348,8 @@ export default class EditLayerState extends EditJsonState<LayerConfigJson> {
         properties: this.testTags.data,
         geometry: {
             type: "Point",
-            coordinates: [3.21, 51.2],
-        },
+            coordinates: [3.21, 51.2]
+        }
     }
 
     constructor(
@@ -363,10 +366,10 @@ export default class EditLayerState extends EditJsonState<LayerConfigJson> {
                 } catch (e) {
                     return undefined
                 }
-            },
+            }
         }
         this.featureSwitches = {
-            featureSwitchIsDebugging: new UIEventSource<boolean>(true),
+            featureSwitchIsDebugging: new UIEventSource<boolean>(true)
         }
 
         this.addMissingTagRenderingIds()
@@ -455,7 +458,7 @@ export default class EditLayerState extends EditJsonState<LayerConfigJson> {
         }
         const state: DesugaringContext = {
             tagRenderings: sharedQuestions,
-            sharedLayers: layers,
+            sharedLayers: layers
         }
         const prepare = this.buildValidation(state)
         const context = ConversionContext.construct([], ["prepare"])
@@ -531,7 +534,7 @@ export class EditThemeState extends EditJsonState<LayoutConfigJson> {
         }
         const state: DesugaringContext = {
             tagRenderings: sharedQuestions,
-            sharedLayers: layers,
+            sharedLayers: layers
         }
         const prepare = this.buildValidation(state)
         const context = ConversionContext.construct([], ["prepare"])

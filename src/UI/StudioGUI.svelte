@@ -31,11 +31,14 @@
   import Add from "../assets/svg/Add.svelte"
   import { SearchIcon } from "@rgossiaux/svelte-heroicons/solid"
   import Hash from "../Logic/Web/Hash"
+  const directEntry = QueryParameters.GetBooleanQueryParameter("direct",false,"If set, write directly into the theme files")
 
   export let studioUrl =
-    window.location.hostname === "127.0.0.2"
+    window.location.hostname === "127.0.0.2" || directEntry.data
       ? "http://127.0.0.1:1235"
       : "https://studio.mapcomplete.org"
+
+  console.log("Using studio URL", studioUrl, "direct?", directEntry.data)
 
   const oauth_token = QueryParameters.GetQueryParameter(
     "oauth_token",
@@ -57,8 +60,8 @@
   )
   expertMode.addCallbackAndRunD((expert) => console.log("Expert mode is", expert))
   const createdBy = osmConnection.userDetails.data.name
-  const uid = osmConnection.userDetails.map((ud) => ud?.uid)
-  const studio = new StudioServer(studioUrl, uid)
+  const uid = osmConnection.userDetails.map((ud) => directEntry.data ? null : ud?.uid, [directEntry])
+  const studio = new StudioServer(studioUrl, uid, directEntry.data)
 
   let layersWithErr = studio.fetchOverview()
   let layerFilterTerm: string = ""
@@ -285,7 +288,11 @@
         <div class="flex justify-between">
           <Checkbox selected={expertMode}>Enable more options (expert mode)</Checkbox>
           <span class="subtle">MapComplete version {version}</span>
-          <div>{$uid}</div>
+          <div>{$uid} {studioUrl}
+            {#if $directEntry}
+            <b>direct</b>
+            {/if}
+          </div>
         </div>
       </div>
     {:else if state === "edit_layer"}
@@ -368,7 +375,7 @@
       </div>
     {:else if state === "loading"}
       <div class="h-8 w-8">
-        <Loading />
+        <Loading >Fetching information from {studioUrl}</Loading>
       </div>
     {:else if state === "editing_layer"}
       <EditLayer state={editLayerState} {backToStudio}>
