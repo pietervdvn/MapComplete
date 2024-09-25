@@ -18,6 +18,7 @@ import ChangeTagAction from "./Actions/ChangeTagAction"
 import FeatureSwitchState from "../State/FeatureSwitchState"
 import DeleteAction from "./Actions/DeleteAction"
 import MarkdownUtils from "../../Utils/MarkdownUtils"
+import { SpecialVisualizationState } from "../../UI/SpecialVisualization"
 
 /**
  * Handles all changes made to OSM.
@@ -44,14 +45,7 @@ export class Changes {
     private readonly _reportError?: (string: string | Error, extramessage?: string) => void
 
     constructor(
-        state: {
-            dryRun: Store<boolean>
-            allElements?: IndexedFeatureSource
-            featurePropertiesStore?: FeaturePropertiesStore
-            osmConnection: OsmConnection
-            historicalUserLocations?: FeatureSource
-            featureSwitches?: FeatureSwitchState
-        },
+        state: SpecialVisualizationState,
         leftRightSensitive: boolean = false,
         reportError?: (string: string | Error, extramessage?: string) => void
     ) {
@@ -59,7 +53,11 @@ export class Changes {
         // We keep track of all changes just as well
         this.allChanges.setData([...this.pendingChanges.data])
         // If a pending change contains a negative ID, we save that
-        this._nextId = Math.min(-1, ...(this.pendingChanges.data?.map((pch) => pch.id) ?? []))
+        this._nextId = Math.min(-1, ...(this.pendingChanges.data?.map((pch) => pch.id ?? 0) ?? []))
+        if(isNaN(this._nextId)){
+            state.reportError("Got a NaN as nextID. Pending changes IDs are:" +this.pendingChanges.data?.map(pch => pch?.id).join("."))
+            this._nextId = -100
+        }
         this.state = state
         this.backend = state.osmConnection.Backend()
         this._reportError = reportError
