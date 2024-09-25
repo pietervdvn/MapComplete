@@ -714,14 +714,15 @@ export default class SpecialVisualizations {
                     },
                 ],
                 constr: (state, tags, args) => {
-                    const targetKey = args[0] === "" ? undefined : args[0]
+                    return new FixedUiElement("Due to a technical limitation, image uploads are currently not possible").SetClass("subtle low-interaction p-4np")
+                    /*const targetKey = args[0] === "" ? undefined : args[0]
                     return new SvelteUIElement(UploadImage, {
                         state,
                         tags,
                         targetKey,
                         labelText: args[1],
                         image: args[2],
-                    })
+                    })*/
                 },
             },
             {
