@@ -4,7 +4,8 @@
     "en": "Bicycle counters"
   },
   "description": {
-    "en": "Layer showing monitoring stations for bicycle traffic"
+    "en": "Layer showing monitoring stations for bicycle traffic",
+    "nl": "Automatische fietstelpunten"
   },
   "source": {
     "osmTags": {
@@ -20,6 +21,7 @@
     }
   },
   "tagRenderings": [
+    "images",
     {
       "id": "display",
       "question": {
@@ -156,7 +158,8 @@
       "location": [
         "point",
         "centroid"
-      ]
+      ],
+      "anchor": "bottom"
     }
   ],
   "minzoom": 13,
