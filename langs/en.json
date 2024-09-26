@@ -577,7 +577,7 @@
             "title": "Nearby streetview imagery"
         },
         "pleaseLogin": "Please log in to add a picture",
-        "respectPrivacy": "Do not upload Google Maps, Google Streetview or other copyrighted sources.",
+        "respectPrivacy": "Do not upload from Google Maps, Google Streetview or other copyrighted sources.",
         "toBig": "Your image is too large as it is {actual_size}. Please use images of at most {max_size}",
         "upload": {
             "failReasons": "You might have lost connection to the internet",
