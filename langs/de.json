@@ -709,7 +709,7 @@
     "preset_type": {
         "question": "Von welcher Art ist dieses Objekt?",
         "typeDescription": "Dies ist <b>{title}</b>. <div class='subtle'>{description}</div>",
-        "typeTitle": "Dies ist {title}"
+        "typeTitle": "Dies ist <b>{title}</b>"
     },
     "privacy": {
         "editingIntro": "Ihre Änderungen werden auf OpenStreetMap gespeichert und sind öffentlich zugänglich. Ein mit MapComplete erstellter Änderungssatz enthält folgende Daten:",
