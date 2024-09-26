@@ -2,11 +2,7 @@ import LayoutConfig from "./ThemeConfig/LayoutConfig"
 import { SpecialVisualizationState } from "../UI/SpecialVisualization"
 import { Changes } from "../Logic/Osm/Changes"
 import { Store, UIEventSource } from "../Logic/UIEventSource"
-import {
-    FeatureSource,
-    IndexedFeatureSource,
-    WritableFeatureSource
-} from "../Logic/FeatureSource/FeatureSource"
+import { FeatureSource, IndexedFeatureSource, WritableFeatureSource } from "../Logic/FeatureSource/FeatureSource"
 import { OsmConnection } from "../Logic/Osm/OsmConnection"
 import { ExportableMap, MapProperties } from "./MapProperties"
 import LayerState from "../Logic/State/LayerState"
@@ -50,13 +46,10 @@ import BackgroundLayerResetter from "../Logic/Actors/BackgroundLayerResetter"
 import SaveFeatureSourceToLocalStorage from "../Logic/FeatureSource/Actors/SaveFeatureSourceToLocalStorage"
 import BBoxFeatureSource from "../Logic/FeatureSource/Sources/TouchesBboxFeatureSource"
 import ThemeViewStateHashActor from "../Logic/Web/ThemeViewStateHashActor"
-import NoElementsInViewDetector, {
-    FeatureViewState
-} from "../Logic/Actors/NoElementsInViewDetector"
+import NoElementsInViewDetector, { FeatureViewState } from "../Logic/Actors/NoElementsInViewDetector"
 import FilteredLayer from "./FilteredLayer"
 import { PreferredRasterLayerSelector } from "../Logic/Actors/PreferredRasterLayerSelector"
 import { ImageUploadManager } from "../Logic/ImageProviders/ImageUploadManager"
-import { Imgur } from "../Logic/ImageProviders/Imgur"
 import NearbyFeatureSource from "../Logic/FeatureSource/Sources/NearbyFeatureSource"
 import FavouritesFeatureSource from "../Logic/FeatureSource/Sources/FavouritesFeatureSource"
 import { ProvidedImage } from "../Logic/ImageProviders/ImageProvider"
@@ -64,7 +57,7 @@ import { GeolocationControlState } from "../UI/BigComponents/GeolocationControl"
 import Zoomcontrol from "../UI/Zoomcontrol"
 import {
     SummaryTileSource,
-    SummaryTileSourceRewriter
+    SummaryTileSourceRewriter,
 } from "../Logic/FeatureSource/TiledFeatureSource/SummaryTileSource"
 import summaryLayer from "../assets/generated/layers/summary.json"
 import last_click_layerconfig from "../assets/generated/layers/last_click.json"
@@ -73,6 +66,7 @@ import { LayerConfigJson } from "./ThemeConfig/Json/LayerConfigJson"
 import Hash from "../Logic/Web/Hash"
 import { GeoOperations } from "../Logic/GeoOperations"
 import { CombinedFetcher } from "../Logic/Web/NearbyImagesSearch"
+import { PanoramaxUploader } from "../Logic/ImageProviders/Panoramax"
 
 /**
  *
@@ -272,14 +266,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
             this.featureProperties = new FeaturePropertiesStore(layoutSource)
 
             this.changes = new Changes(
-                {
-                    dryRun: this.featureSwitches.featureSwitchIsTesting,
-                    allElements: layoutSource,
-                    featurePropertiesStore: this.featureProperties,
-                    osmConnection: this.osmConnection,
-                    historicalUserLocations: this.geolocation.historicalUserLocations,
-                    featureSwitches: this.featureSwitches
-                },
+                this,
                 layout?.isLeftRightSensitive() ?? false,
                 (e, extraMsg) => this.reportError(e, extraMsg)
             )
@@ -368,10 +355,12 @@ export default class ThemeViewState implements SpecialVisualizationState {
         this.hasDataInView = new NoElementsInViewDetector(this).hasFeatureInView
         this.imageUploadManager = new ImageUploadManager(
             layout,
-            Imgur.singleton,
+            new PanoramaxUploader(Constants.panoramax.url, Constants.panoramax.token),
             this.featureProperties,
             this.osmConnection,
-            this.changes
+            this.changes,
+            this.geolocation.geolocationState.currentGPSLocation,
+            this.indexedFeatures
         )
         this.favourites = new FavouritesFeatureSource(this)
         const longAgo = new Date()

@@ -1,5 +1,5 @@
 import { OsmNode, OsmObject, OsmRelation, OsmWay } from "./OsmObject"
-import { Store, UIEventSource } from "../UIEventSource"
+import { UIEventSource } from "../UIEventSource"
 import Constants from "../../Models/Constants"
 import OsmChangeAction from "./Actions/OsmChangeAction"
 import { ChangeDescription, ChangeDescriptionTools } from "./Actions/ChangeDescription"
@@ -11,7 +11,6 @@ import { GeoLocationPointProperties } from "../State/GeoLocationState"
 import { GeoOperations } from "../GeoOperations"
 import { ChangesetHandler, ChangesetTag } from "./ChangesetHandler"
 import { OsmConnection } from "./OsmConnection"
-import FeaturePropertiesStore from "../FeatureSource/Actors/FeaturePropertiesStore"
 import OsmObjectDownloader from "./OsmObjectDownloader"
 import ChangeLocationAction from "./Actions/ChangeLocationAction"
 import ChangeTagAction from "./Actions/ChangeTagAction"
@@ -62,9 +61,9 @@ export class Changes {
         this.backend = state.osmConnection.Backend()
         this._reportError = reportError
         this._changesetHandler = new ChangesetHandler(
-            state.dryRun,
+            state.featureSwitches.featureSwitchIsTesting,
             state.osmConnection,
-            state.featurePropertiesStore,
+            state.featureProperties,
             this,
             (e, extramessage: string) => this._reportError(e, extramessage)
         )

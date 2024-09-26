@@ -5,6 +5,7 @@ import GenericImageProvider from "./GenericImageProvider"
 import { Store, UIEventSource } from "../UIEventSource"
 import ImageProvider, { ProvidedImage } from "./ImageProvider"
 import { WikidataImageProvider } from "./WikidataImageProvider"
+import Panoramax from "./Panoramax"
 
 /**
  * A generic 'from the interwebz' image picker, without attribution
@@ -28,6 +29,7 @@ export default class AllImageProviders {
         Mapillary.singleton,
         WikidataImageProvider.singleton,
         WikimediaImageProvider.singleton,
+        Panoramax.singleton,
         AllImageProviders.genericImageProvider,
     ]
     public static apiUrls: string[] = [].concat(
@@ -41,6 +43,7 @@ export default class AllImageProviders {
         mapillary: Mapillary.singleton,
         wikidata: WikidataImageProvider.singleton,
         wikimedia: WikimediaImageProvider.singleton,
+        panoramax: Panoramax.singleton
     }
     private static _cache: Map<string, UIEventSource<ProvidedImage[]>> = new Map<
         string,
@@ -66,6 +69,9 @@ export default class AllImageProviders {
         return AllImageProviders.genericImageProvider
     }
 
+    /**
+     * Tries to extract all image data for this image
+     */
     public static LoadImagesFor(
         tags: Store<Record<string, string>>,
         tagKey?: string[]

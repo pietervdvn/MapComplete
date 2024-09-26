@@ -291,6 +291,8 @@ export default class NameSuggestionIndex {
             if (location === undefined) {
                 return true
             }
+            console.log("Resolving location", i.locationSet)
+            /*
             const resolvedSet = NameSuggestionIndex.loco.resolveLocationSet(i.locationSet)
 
             if (resolvedSet) {
@@ -299,7 +301,7 @@ export default class NameSuggestionIndex {
                 const setFeature: Feature<MultiPolygon> = resolvedSet.feature
                 return turf.booleanPointInPolygon(location, setFeature.geometry)
             }
-
+*/
             return false
         })
     }

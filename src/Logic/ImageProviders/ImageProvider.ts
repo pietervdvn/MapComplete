@@ -36,7 +36,7 @@ export default abstract class ImageProvider {
             prefixes?: string[]
         }
     ): UIEventSource<ProvidedImage[]> {
-        const prefixes = options?.prefixes ?? this.defaultKeyPrefixes
+        const prefixes = Utils.Dedup(options?.prefixes ?? this.defaultKeyPrefixes)
         if (prefixes === undefined) {
             throw "No `defaultKeyPrefixes` defined by this image provider"
         }
@@ -46,6 +46,9 @@ export default abstract class ImageProvider {
         const seenValues = new Set<string>()
         allTags.addCallbackAndRunD((tags) => {
             for (const key in tags) {
+                if(key === "panoramax"){
+                    console.log("Inspecting", key,"against", prefixes)
+                }
                 if (!prefixes.some((prefix) => key.startsWith(prefix))) {
                     continue
                 }

@@ -47,6 +47,9 @@ export default class Constants {
         ...Constants.added_by_default,
         ...Constants.no_include,
     ] as const
+
+    public static panoramax: { url: string, token: string } = packagefile.config.panoramax
+
     // The user journey states thresholds when a new feature gets unlocked
     public static userJourney = {
         moreScreenUnlock: 1,

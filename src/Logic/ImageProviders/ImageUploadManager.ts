@@ -9,6 +9,8 @@ import { Changes } from "../Osm/Changes"
 import Translations from "../../UI/i18n/Translations"
 import NoteCommentElement from "../../UI/Popup/Notes/NoteCommentElement"
 import { Translation } from "../../UI/i18n/Translation"
+import { IndexedFeatureSource } from "../FeatureSource/FeatureSource"
+import { GeoOperations } from "../GeoOperations"
 
 /**
  * The ImageUploadManager has a
@@ -17,7 +19,8 @@ export class ImageUploadManager {
     private readonly _uploader: ImageUploader
     private readonly _featureProperties: FeaturePropertiesStore
     private readonly _layout: LayoutConfig
-
+    private readonly _indexedFeatures: IndexedFeatureSource
+    private readonly _gps: Store<GeolocationCoordinates | undefined>
     private readonly _uploadStarted: Map<string, UIEventSource<number>> = new Map()
     private readonly _uploadFinished: Map<string, UIEventSource<number>> = new Map()
     private readonly _uploadFailed: Map<string, UIEventSource<number>> = new Map()
@@ -32,13 +35,17 @@ export class ImageUploadManager {
         uploader: ImageUploader,
         featureProperties: FeaturePropertiesStore,
         osmConnection: OsmConnection,
-        changes: Changes
+        changes: Changes,
+        gpsLocation: Store<GeolocationCoordinates | undefined>,
+        allFeatures: IndexedFeatureSource,
     ) {
         this._uploader = uploader
         this._featureProperties = featureProperties
         this._layout = layout
         this._osmConnection = osmConnection
         this._changes = changes
+        this._indexedFeatures = allFeatures
+        this._gps = gpsLocation
 
         const failed = this.getCounterFor(this._uploadFailed, "*")
         const done = this.getCounterFor(this._uploadFinished, "*")
@@ -47,7 +54,7 @@ export class ImageUploadManager {
             (startedCount) => {
                 return startedCount > failed.data + done.data
             },
-            [failed, done]
+            [failed, done],
         )
     }
 
@@ -96,7 +103,7 @@ export class ImageUploadManager {
     public async uploadImageAndApply(
         file: File,
         tagsStore: UIEventSource<OsmTags>,
-        targetKey?: string
+        targetKey?: string,
     ): Promise<void> {
         const canBeUploaded = this.canBeUploaded(file)
         if (canBeUploaded !== true) {
@@ -105,28 +112,15 @@ export class ImageUploadManager {
 
         const tags = tagsStore.data
         const featureId = <OsmId>tags.id
-        const licenseStore = this._osmConnection?.GetPreference("pictures-license", "CC0")
-        const license = licenseStore?.data ?? "CC0"
 
-        const matchingLayer = this._layout?.getMatchingLayer(tags)
-
-        const title =
-            matchingLayer?.title?.GetRenderValue(tags)?.Subs(tags)?.textFor("en") ??
-            tags.name ??
-            "https//osm.org/" + tags.id
-        const description = [
-            "author:" + this._osmConnection.userDetails.data.name,
-            "license:" + license,
-            "osmid:" + tags.id,
-        ].join("\n")
+        const author = this._osmConnection.userDetails.data.name
 
         const action = await this.uploadImageWithLicense(
             featureId,
-            title,
-            description,
+            author,
             file,
             targetKey,
-            tags?.data?.["_orig_theme"]
+            tags?.data?.["_orig_theme"],
         )
 
         if (!action) {
@@ -146,23 +140,30 @@ export class ImageUploadManager {
 
     private async uploadImageWithLicense(
         featureId: OsmId,
-        title: string,
-        description: string,
+        author: string,
         blob: File,
         targetKey: string | undefined,
-        theme?: string
+        theme?: string,
     ): Promise<LinkImageAction> {
         this.increaseCountFor(this._uploadStarted, featureId)
         const properties = this._featureProperties.getStore(featureId)
         let key: string
         let value: string
+        let location: [number, number] = undefined
+        if (this._gps.data) {
+            location = [this._gps.data.longitude, this._gps.data.latitude]
+        }
+        if (location === undefined || location?.some(l => l === undefined)) {
+            const feature = this._indexedFeatures.featuresById.data.get(featureId)
+            location = GeoOperations.centerpointCoordinates(feature)
+        }
         try {
-            ;({ key, value } = await this._uploader.uploadImage(title, description, blob))
+            ;({ key, value } = await this._uploader.uploadImage(blob, location, author))
         } catch (e) {
             this.increaseCountFor(this._uploadRetried, featureId)
             console.error("Could not upload image, trying again:", e)
             try {
-                ;({ key, value } = await this._uploader.uploadImage(title, description, blob))
+                ;({ key, value } = await this._uploader.uploadImage(blob, location, author))
                 this.increaseCountFor(this._uploadRetriedSuccess, featureId)
             } catch (e) {
                 console.error("Could again not upload image due to", e)
