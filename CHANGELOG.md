@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.46.10](https://github.com/USERNAME/REPOSITORY_NAME/compare/v0.46.9...v0.46.10) (2024-09-26)
+
+
+### Features
+
+* Use panoramax to upload to. Will contain bugs ([0bdc1ae](https://github.com/USERNAME/REPOSITORY_NAME/commits0bdc1aec61ec742d141bb3882be07b6d99df654e))
+
+
+### Bug Fixes
+
+* disable image upload button (see [#2178](https://github.com/pietervdvn/MapComplete/issues/2178)) ([cf74296](https://github.com/USERNAME/REPOSITORY_NAME/commitscf74296d23de9ae6dab902205ebe860490627c00))
+* filtering for dates now works again ([bea9f66](https://github.com/USERNAME/REPOSITORY_NAME/commitsbea9f66b9aac9d2f13bca74b7a35cde7dd217e12))
+* fix loading images for CSP, fix [#2161](https://github.com/pietervdvn/MapComplete/issues/2161) ([2569d0c](https://github.com/USERNAME/REPOSITORY_NAME/commits2569d0cb66e411228d9d25cf50dc3278a83d0de5))
+* search fields in a filter are now wrapped into parentheses, allowing for OR as regex ([fb250fb](https://github.com/USERNAME/REPOSITORY_NAME/commitsfb250fb928da576b5649d398272387da72e89e5c))
+* studio now handles arrays better (might fix [#2102](https://github.com/pietervdvn/MapComplete/issues/2102)) ([0c9e41a](https://github.com/USERNAME/REPOSITORY_NAME/commits0c9e41a6ce4508ba3bc767f5eb5bd3cdb88201b2))
+
+
+### Theme improvements
+
+* **ghostsigns:** streamline ghostsigns theme, fix [#2168](https://github.com/pietervdvn/MapComplete/issues/2168), fix [#2167](https://github.com/pietervdvn/MapComplete/issues/2167) ([392fe3b](https://github.com/USERNAME/REPOSITORY_NAME/commits392fe3b190975b9e3c5cb4aadb4d1543aa686d9e))
+* **note:** add filter removing anything matching one or more keywords ([9c09da3](https://github.com/USERNAME/REPOSITORY_NAME/commits9c09da3c137a6af88b935108fe55aa8e1163ed2c))
+* **vending_machine:** add better 'fixme' if freeform for 'vending' is used ([dfce217](https://github.com/USERNAME/REPOSITORY_NAME/commitsdfce217288957be2b27c198d640fd2dd5d53c9fb))
+
 ### [0.46.9](https://github.com/USERNAME/REPOSITORY_NAME/compare/v0.46.8...v0.46.9) (2024-09-14)
 
 

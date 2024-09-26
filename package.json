@@ -1,6 +1,6 @@
 {
   "name": "mapcomplete",
-  "version": "0.46.9",
+  "version": "0.46.10",
   "repository": "https://github.com/pietervdvn/MapComplete",
   "description": "A small website to edit OSM easily",
   "bugs": "https://github.com/pietervdvn/MapComplete/issues",
