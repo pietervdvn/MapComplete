@@ -577,7 +577,7 @@
             "title": "Straßenbilder in der Nähe"
         },
         "pleaseLogin": "Bitte anmelden, um ein Bild hinzuzufügen",
-        "respectPrivacy": "Bitte respektieren Sie die Privatsphäre. Fotografieren Sie weder Personen noch Nummernschilder. Benutzen Sie keine urheberrechtlich geschützten Quellen wie z.B. Google Maps oder Google Streetview.",
+        "respectPrivacy": "Laden Sie keine Bilder von Google Maps, Google Streetview oder anderen urheberrechtlich geschützten Quellen hoch.",
         "toBig": "Ihr Bild ist mit {actual_size} zu groß. Die maximale Bildgröße ist {max_size}",
         "upload": {
             "failReasons": "Keine Internetverbindung",
@@ -709,7 +709,7 @@
     "preset_type": {
         "question": "Von welcher Art ist dieses Objekt?",
         "typeDescription": "Dies ist <b>{title}</b>. <div class='subtle'>{description}</div>",
-        "typeTitle": "Dies ist {title}"
+        "typeTitle": "Dies ist <b>{title}</b>"
     },
     "privacy": {
         "editingIntro": "Ihre Änderungen werden auf OpenStreetMap gespeichert und sind öffentlich zugänglich. Ein mit MapComplete erstellter Änderungssatz enthält folgende Daten:",
