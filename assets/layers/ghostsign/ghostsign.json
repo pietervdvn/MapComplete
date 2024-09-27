@@ -13,7 +13,6 @@
     "en": "Layer showing disused signs on buildings",
     "de": "Ebene, die ungenutzte Zeichen auf Gebäuden zeigt",
     "es": "Capa que muestra carteles en desuso en edificios",
-
     "ca": "Capa que mostra rètols en desús dels edificis",
     "cs": "Vrstva zobrazující nepoužívané nápisy na budovách"
   },
@@ -37,7 +36,6 @@
     "enableRelocation": false
   },
   "tagRenderings": [
-
     "images",
     "advertising.historic",
     "advertising.type",
@@ -48,7 +46,6 @@
         "de": "Was ist der Text auf dem Schild?",
         "es": "¿Cuál es el texto del cartel?",
         "ca": "Quin és el text del rètol?"
-
       },
       "freeform": {
         "key": "inscription",
@@ -95,7 +92,6 @@
         "cs": "Tato cedule byla vyrobena pro: {brand}"
       }
     }
-
   ],
   "lineRendering": [
     {

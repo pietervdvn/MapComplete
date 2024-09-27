@@ -11697,23 +11697,6 @@
                     }
                 }
             },
-            "picture-license": {
-                "mappings": {
-                    "0": {
-                        "then": "Pictures you take will be licensed with <b>CC0</b> and added to the public domain. This means that everyone can use your pictures for any purpose. <span class='subtle'>This is the default choice.</span>"
-                    },
-                    "1": {
-                        "then": "Pictures you take will be licensed with <b>CC0</b> and added to the public domain. This means that everyone can use your pictures for any purpose."
-                    },
-                    "2": {
-                        "then": "Pictures you take will be licensed with <b>CC-BY 4.0</b> which requires everyone using your picture that they have to attribute you"
-                    },
-                    "3": {
-                        "then": "Pictures you take will be licensed with <b>CC-BY-SA 4.0</b> which means that everyone using your picture must attribute you and that derivatives of your picture must be reshared with the same license."
-                    }
-                },
-                "question": "Under what license do you want to publish your pictures?"
-            },
             "profile-description": {
                 "mappings": {
                     "0": {

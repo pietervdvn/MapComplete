@@ -4932,13 +4932,6 @@
                     }
                 }
             },
-            "picture-license": {
-                "mappings": {
-                    "1": {
-                        "then": "Las fotografías que tome tendrán una licencia con <b>CC0</b> y se agregarán al dominio público. Esto significa que todos pueden usar sus imágenes para cualquier propósito."
-                    }
-                }
-            },
             "translation-completeness": {
                 "render": "Las traducciones para {_theme} en {_language} están al {_translation_percentage}%: {_translation_translated_count} cadenas de {_translation_total} están traducidas"
             },

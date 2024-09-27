@@ -2063,17 +2063,6 @@
             }
         }
     },
-    "usersettings": {
-        "tagRenderings": {
-            "picture-license": {
-                "mappings": {
-                    "1": {
-                        "then": "Изображения будут опубликованы под лицензией <b>CC0</b> и перейдут в общественное достояние. Это значит, что кто угодно имеет право использовать их без ограничений."
-                    }
-                }
-            }
-        }
-    },
     "vending_machine": {
         "tagRenderings": {
             "operational_status": {

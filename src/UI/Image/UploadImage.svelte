@@ -83,15 +83,6 @@
       </div>
     </FileSelector>
     <div class="text-sm">
-      <button
-        class="as-link"
-        style="margin: 0; padding: 0"
-        on:click={() => {
-          state.guistate.openUsersettings("picture-license")
-        }}
-      >
-      </button>
-      <br />
       <Tr cls="subtle italic" t={t.respectPrivacy} />
     </div>
   </div>
