@@ -2,8 +2,6 @@ import { Utils } from "../../../../src/Utils"
 import SplitAction from "../../../../src/Logic/Osm/Actions/SplitAction"
 import { Changes } from "../../../../src/Logic/Osm/Changes"
 import { describe, expect, it } from "vitest"
-import { OsmConnection } from "../../../../src/Logic/Osm/OsmConnection"
-import { ImmutableStore } from "../../../../src/Logic/UIEventSource"
 
 describe("SplitAction", () => {
     {
@@ -2690,10 +2688,7 @@ describe("SplitAction", () => {
             theme: "test",
         })
         const changeDescription = await splitter.CreateChangeDescriptions(
-            new Changes({
-                dryRun: new ImmutableStore(true),
-                osmConnection: new OsmConnection(),
-            })
+            Changes.createTestObject()
         )
 
         expect(changeDescription[0].type).toBe("node")
@@ -2720,10 +2715,7 @@ describe("SplitAction", () => {
             theme: "test",
         })
         const changeDescription = await splitter.CreateChangeDescriptions(
-            new Changes({
-                dryRun: new ImmutableStore(true),
-                osmConnection: new OsmConnection(),
-            })
+          Changes.createTestObject()
         )
 
         expect(changeDescription.length).toBe(2)
@@ -2742,10 +2734,7 @@ describe("SplitAction", () => {
             theme: "test",
         })
         const changeDescription = await splitter.CreateChangeDescriptions(
-            new Changes({
-                dryRun: new ImmutableStore(true),
-                osmConnection: new OsmConnection(),
-            })
+            Changes.createTestObject()
         )
 
         // Should be a new node
@@ -2760,10 +2749,7 @@ describe("SplitAction", () => {
             theme: "test",
         })
         const changes = await splitAction.Perform(
-            new Changes({
-                dryRun: new ImmutableStore(true),
-                osmConnection: new OsmConnection(),
-            })
+            Changes.createTestObject()
         )
         console.log(changes)
         // 8715440368 is the expected point of the split
@@ -2803,10 +2789,7 @@ describe("SplitAction", () => {
             1
         )
         const changes = await splitAction.Perform(
-            new Changes({
-                dryRun: new ImmutableStore(true),
-                osmConnection: new OsmConnection(),
-            })
+           Changes.createTestObject()
         )
 
         // THe first change is the creation of the new node
