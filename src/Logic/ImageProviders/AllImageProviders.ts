@@ -90,13 +90,14 @@ export default class AllImageProviders {
         this._cache.set(cacheKey, source)
         const allSources: Store<ProvidedImage[]>[] = []
         for (const imageProvider of AllImageProviders.ImageAttributionSource) {
-            let prefixes = imageProvider.defaultKeyPrefixes
-            if (tagKey !== undefined) {
-                prefixes = tagKey
-            }
+
 
             const singleSource = imageProvider.GetRelevantUrls(tags, {
-                prefixes: prefixes,
+                /*
+                 By default, 'GetRelevantUrls' uses the defaultKeyPrefixes.
+                 However, we override them if a custom image tag is set, e.g. 'image:menu'
+                */
+                prefixes: tagKey ?? imageProvider.defaultKeyPrefixes,
             })
             allSources.push(singleSource)
             singleSource.addCallbackAndRunD((_) => {

@@ -62,7 +62,7 @@ export class ImageUploadManager {
      * Gets various counters.
      * Note that counters can only increase
      * If a retry was a success, both 'retrySuccess' _and_ 'uploadFinished' will be increased
-     * @param featureId: the id of the feature you want information for. '*' has a global counter
+     * @param featureId the id of the feature you want information for. '*' has a global counter
      */
     public getCountsFor(featureId: string | "*"): {
         retried: Store<number>
@@ -157,13 +157,14 @@ export class ImageUploadManager {
             const feature = this._indexedFeatures.featuresById.data.get(featureId)
             location = GeoOperations.centerpointCoordinates(feature)
         }
+        let absoluteUrl: string
         try {
-            ;({ key, value } = await this._uploader.uploadImage(blob, location, author))
+            ;({ key, value, absoluteUrl } = await this._uploader.uploadImage(blob, location, author))
         } catch (e) {
             this.increaseCountFor(this._uploadRetried, featureId)
             console.error("Could not upload image, trying again:", e)
             try {
-                ;({ key, value } = await this._uploader.uploadImage(blob, location, author))
+                ;({ key, value , absoluteUrl} = await this._uploader.uploadImage(blob, location, author))
                 this.increaseCountFor(this._uploadRetriedSuccess, featureId)
             } catch (e) {
                 console.error("Could again not upload image due to", e)
@@ -173,12 +174,15 @@ export class ImageUploadManager {
         }
         console.log("Uploading image done, creating action for", featureId)
         key = targetKey ?? key
+        if(targetKey){
+            // This is a non-standard key, so we use the image link directly
+            value = absoluteUrl
+        }
         this.increaseCountFor(this._uploadFinished, featureId)
-        const action = new LinkImageAction(featureId, key, value, properties, {
+        return new LinkImageAction(featureId, key, value, properties, {
             theme: theme ?? this._layout.id,
             changeType: "add-image",
         })
-        return action
     }
 
     private getCounterFor(collection: Map<string, UIEventSource<number>>, key: string | "*") {

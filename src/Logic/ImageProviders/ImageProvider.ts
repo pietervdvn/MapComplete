@@ -49,7 +49,7 @@ export default abstract class ImageProvider {
                 if(key === "panoramax"){
                     console.log("Inspecting", key,"against", prefixes)
                 }
-                if (!prefixes.some((prefix) => key.startsWith(prefix))) {
+                if (!prefixes.some((prefix) => key === prefix || key.match(new RegExp(prefix+":[0-9]+")))) {
                     continue
                 }
                 const values = Utils.NoEmpty(tags[key]?.split(";")?.map((v) => v.trim()) ?? [])

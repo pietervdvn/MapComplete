@@ -18,7 +18,7 @@ export default class PanoramaxImageProvider extends ImageProvider {
 
     public static readonly singleton = new PanoramaxImageProvider()
 
-    public defaultKeyPrefixes: string[] = ["panoramax", "image"]
+    public defaultKeyPrefixes: string[] = ["panoramax"]
     public readonly name: string = "panoramax"
 
     private static knownMeta: Record<string, ImageData> = {}
@@ -128,6 +128,7 @@ export class PanoramaxUploader implements ImageUploader {
     async uploadImage(blob: File, currentGps: [number, number], author: string): Promise<{
         key: string;
         value: string;
+        absoluteUrl: string
     }> {
 
         const tags = await ExifReader.load(blob)
@@ -152,6 +153,7 @@ export class PanoramaxUploader implements ImageUploader {
         return {
             key: "panoramax",
             value: img.id,
+            absoluteUrl: img.assets.hd.href
         }
     }
 

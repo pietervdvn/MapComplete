@@ -1,5 +1,3 @@
-import { Feature } from "geojson"
-
 export interface ImageUploader {
     maxFileSizeInMegabytes?: number
     /**
@@ -10,5 +8,5 @@ export interface ImageUploader {
         blob: File,
         currentGps: [number,number],
         author: string
-    ): Promise<{ key: string; value: string }>
+    ): Promise<{ key: string; value: string, absoluteUrl: string }>
 }
