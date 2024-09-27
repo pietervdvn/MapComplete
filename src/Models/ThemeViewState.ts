@@ -954,7 +954,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
         })
         new ThemeViewStateHashActor(this)
         new MetaTagging(this)
-        new TitleHandler(this.selectedElement, this.featureProperties, this)
+        new TitleHandler(this.selectedElement, this)
         new ChangeToElementsActor(this.changes, this.featureProperties)
         new PendingChangesUploader(this.changes, this.selectedElement, this.imageUploadManager)
         new SelectedElementTagsUpdater(this)
