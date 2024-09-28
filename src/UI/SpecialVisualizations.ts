@@ -1100,11 +1100,10 @@ export default class SpecialVisualizations {
                 ],
                 needsUrls: [Imgur.apiUrl, ...Imgur.supportingUrls],
 
-                constr: (state, tags, args) => {
+                constr: (state, tags, args, feature, layer) => {
                     const id = tags.data[args[0] ?? "id"]
                     tags = state.featureProperties.getStore(id)
-                    console.log("Id is", id)
-                    return new SvelteUIElement(UploadImage, { state, tags })
+                    return new SvelteUIElement(UploadImage, { state, tags, layer  })
                 },
             },
             {
