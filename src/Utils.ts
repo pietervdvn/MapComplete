@@ -415,6 +415,29 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
     }
 
     /**
+     * Deduplicates the given array based on some ID-properties.
+     * Removes all falsey values
+     * @param arr
+     * @param toKey
+     * @constructor
+     */
+    public static DedupOnId<T>(arr: T[], toKey: ((t:T) => string) ): T[]{
+        const uniq: T[] = []
+        const seen = new Set<string>()
+        for (const img of arr) {
+            if(!img){
+                continue
+            }
+            const k = toKey(img)
+            if (!seen.has(k)) {
+                seen.add(k)
+                uniq.push(img)
+            }
+        }
+        return uniq
+    }
+
+    /**
      * Finds all duplicates in a list of strings
      *
      * Utils.Duplicates(["a", "b", "c"]) // => []

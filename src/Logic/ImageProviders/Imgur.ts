@@ -24,18 +24,18 @@ export class Imgur extends ImageProvider {
         return undefined
     }
 
-    public async ExtractUrls(key: string, value: string): Promise<Promise<ProvidedImage>[]> {
+    public ExtractUrls(key: string, value: string): undefined | ProvidedImage[] {
         if (Imgur.defaultValuePrefix.some((prefix) => value.startsWith(prefix))) {
             return [
-                Promise.resolve({
+                {
                     url: value,
                     key: key,
                     provider: this,
                     id: value,
-                }),
+                }
             ]
         }
-        return []
+        return undefined
     }
 
     /**

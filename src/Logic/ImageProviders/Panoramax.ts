@@ -1,35 +1,31 @@
 import { ImageUploader } from "./ImageUploader"
-import { AuthorizedPanoramax } from "panoramax-js/dist"
+import { AuthorizedPanoramax, PanoramaxXYZ, ImageData } from "panoramax-js/dist"
 import ExifReader from "exifreader"
 import ImageProvider, { ProvidedImage } from "./ImageProvider"
 import BaseUIElement from "../../UI/BaseUIElement"
 import { LicenseInfo } from "./LicenseInfo"
 import { Utils } from "../../Utils"
-import { Feature, FeatureCollection, Point } from "geojson"
 import { GeoOperations } from "../GeoOperations"
+import Constants from "../../Models/Constants"
+import { Store, Stores, UIEventSource } from "../UIEventSource"
 
-type ImageData = Feature<Point, { "geovisio:producer": string, "geovisio:license": string, "datetime": string }> & {
-    id: string,
-    assets: { hd: { href: string }, sd: { href: string } },
-    providers: {name: string}[]
-}
 
 export default class PanoramaxImageProvider extends ImageProvider {
 
     public static readonly singleton = new PanoramaxImageProvider()
-
+    private static readonly xyz = new PanoramaxXYZ()
+    private static defaultPanoramax = new AuthorizedPanoramax(Constants.panoramax.url, Constants.panoramax.token)
     public defaultKeyPrefixes: string[] = ["panoramax"]
     public readonly name: string = "panoramax"
 
-    private static knownMeta: Record<string, ImageData> = {}
+    private static knownMeta: Record<string, { data: ImageData, time: Date }> = {}
 
     public SourceIcon(id?: string, location?: { lon: number; lat: number; }): BaseUIElement {
         return undefined
     }
 
-    public addKnownMeta(meta: ImageData){
-        console.log("Adding known meta for", meta.id)
-        PanoramaxImageProvider.knownMeta[meta.id] = meta
+    public addKnownMeta(meta: ImageData) {
+        PanoramaxImageProvider.knownMeta[meta.id] = { data: meta, time: new Date() }
     }
 
     /**
@@ -39,16 +35,14 @@ export default class PanoramaxImageProvider extends ImageProvider {
      */
     private async getInfoFromMapComplete(id: string): Promise<{ data: ImageData, url: string }> {
         const sequence = "6e702976-580b-419c-8fb3-cf7bd364e6f8" // We always reuse this sequence
-        const url = `https://panoramax.mapcomplete.org/api/collections/${sequence}/items/${id}`
-        const data = <any> await Utils.downloadJsonCached(url, 60 * 60 * 1000)
-        return {url, data}
+        const url = `https://panoramax.mapcomplete.org/`
+        const data = await PanoramaxImageProvider.defaultPanoramax.imageInfo(sequence, id)
+        return { url, data }
     }
 
     private async getInfoFromXYZ(imageId: string): Promise<{ data: ImageData, url: string }> {
-        const url = "https://api.panoramax.xyz/api/search?limit=1&ids=" + imageId
-        const metaAll = await Utils.downloadJsonCached<FeatureCollection<Point>>(url, 1000 * 60 * 60)
-        const data= <any>metaAll.features[0]
-        return {data, url}
+        const data = await PanoramaxImageProvider.xyz.imageInfo(imageId)
+        return { data, url: "https://api.panoramax.xyz/" }
     }
 
 
@@ -57,17 +51,18 @@ export default class PanoramaxImageProvider extends ImageProvider {
      * @param meta
      * @private
      */
-    private featureToImage(info: {data: ImageData, url: string}) {
-        const meta = info.data
-        const url = info.url
+    private featureToImage(info: { data: ImageData, url: string }) {
+        const meta = info?.data
         if (!meta) {
             return undefined
         }
 
-        function makeAbsolute(s: string){
-            if(!s.startsWith("https://") && !s.startsWith("http://")){
-                 const parsed = new URL(url)
-                return parsed.protocol+"//"+parsed.host+s
+        const url = info.url
+
+        function makeAbsolute(s: string) {
+            if (!s.startsWith("https://") && !s.startsWith("http://")) {
+                const parsed = new URL(url)
+                return parsed.protocol + "//" + parsed.host + s
             }
             return s
         }
@@ -80,27 +75,64 @@ export default class PanoramaxImageProvider extends ImageProvider {
             lon, lat,
             key: "panoramax",
             provider: this,
+            status: meta.properties["geovisio:status"],
             rotation: Number(meta.properties["view:azimuth"]),
             date: new Date(meta.properties.datetime),
         }
     }
 
     private async getInfoFor(id: string): Promise<{ data: ImageData, url: string }> {
-        const cached=  PanoramaxImageProvider.knownMeta[id]
-        console.log("Cached version", id, cached)
-        if(cached){
-            return {data: cached, url: undefined}
+        if (!id.match(/^[a-zA-Z0-9-]+$/)) {
+            return undefined
+        }
+        const cached = PanoramaxImageProvider.knownMeta[id]
+        if (cached) {
+            if(new Date().getTime() - cached.time.getTime() < 1000){
+
+            return { data: cached.data, url: undefined }
+            }
         }
         try {
             return await this.getInfoFromMapComplete(id)
         } catch (e) {
-            return await this.getInfoFromXYZ(id)
+            console.debug(e)
         }
+        try {
+            return await this.getInfoFromXYZ(id)
+        } catch (e) {
+                console.debug(e)
+        }
+        return undefined
     }
 
 
-    public async ExtractUrls(key: string, value: string): Promise<Promise<ProvidedImage>[]> {
-        return [this.getInfoFor(value).then(r => this.featureToImage(<any>r))]
+    public async ExtractUrls(key: string, value: string): Promise<ProvidedImage[]> {
+        return [await this.getInfoFor(value).then(r => this.featureToImage(<any>r))]
+    }
+
+
+    getRelevantUrls(tags: Record<string, string>, prefixes: string[]): Store<ProvidedImage[]> {
+        const source = UIEventSource.FromPromise(super.getRelevantUrlsFor(tags, prefixes))
+
+        function hasLoading(data: ProvidedImage[]) {
+            if(data === undefined){
+                return true
+            }
+            return data?.some(img => img?.status !== undefined && img?.status !== "ready" && img?.status !== "broken")
+        }
+
+        Stores.Chronic(1500, () =>
+            hasLoading(source.data),
+        ).addCallback(_ => {
+            console.log("UPdating... ")
+            super.getRelevantUrlsFor(tags, prefixes).then(data => {
+                console.log("New panoramax data is", data, hasLoading(data))
+                source.set(data)
+                return !hasLoading(data)
+            })
+        })
+
+        return source
     }
 
     public async DownloadAttribution(providedImage: { url: string; id: string; }): Promise<LicenseInfo> {
@@ -139,7 +171,7 @@ export class PanoramaxUploader implements ImageUploader {
 
         const p = this._panoramax
         const defaultSequence = (await p.mySequences())[0]
-        const img = <ImageData> await p.addImage(blob, defaultSequence, {
+        const img = <ImageData>await p.addImage(blob, defaultSequence, {
             lat: !hasGPS ? lat : undefined,
             lon: !hasGPS ? lon : undefined,
             datetime: !hasDate ? new Date().toISOString() : undefined,
@@ -149,11 +181,10 @@ export class PanoramaxUploader implements ImageUploader {
 
         })
         PanoramaxImageProvider.singleton.addKnownMeta(img)
-        await Utils.waitFor(1250)
         return {
             key: "panoramax",
             value: img.id,
-            absoluteUrl: img.assets.hd.href
+            absoluteUrl: img.assets.hd.href,
         }
     }
 

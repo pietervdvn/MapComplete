@@ -6,6 +6,7 @@ import { Store, UIEventSource } from "../UIEventSource"
 import ImageProvider, { ProvidedImage } from "./ImageProvider"
 import { WikidataImageProvider } from "./WikidataImageProvider"
 import Panoramax from "./Panoramax"
+import { Utils } from "../../Utils"
 
 /**
  * A generic 'from the interwebz' image picker, without attribution
@@ -45,10 +46,6 @@ export default class AllImageProviders {
         wikimedia: WikimediaImageProvider.singleton,
         panoramax: Panoramax.singleton
     }
-    private static _cache: Map<string, UIEventSource<ProvidedImage[]>> = new Map<
-        string,
-        UIEventSource<ProvidedImage[]>
-    >()
 
     public static byName(name: string) {
         return AllImageProviders.providersByName[name.toLowerCase()]
@@ -76,42 +73,25 @@ export default class AllImageProviders {
         tags: Store<Record<string, string>>,
         tagKey?: string[]
     ): Store<ProvidedImage[]> {
-        if (tags.data.id === undefined) {
+        if (tags?.data?.id === undefined) {
             return undefined
         }
 
-        const cacheKey = tags.data.id + tagKey
-        const cached = this._cache.get(cacheKey)
-        if (cached !== undefined) {
-            return cached
-        }
 
         const source = new UIEventSource([])
-        this._cache.set(cacheKey, source)
         const allSources: Store<ProvidedImage[]>[] = []
         for (const imageProvider of AllImageProviders.ImageAttributionSource) {
-
-
-            const singleSource = imageProvider.GetRelevantUrls(tags, {
-                /*
-                 By default, 'GetRelevantUrls' uses the defaultKeyPrefixes.
-                 However, we override them if a custom image tag is set, e.g. 'image:menu'
-                */
-                prefixes: tagKey ?? imageProvider.defaultKeyPrefixes,
-            })
+            /*
+                By default, 'GetRelevantUrls' uses the defaultKeyPrefixes.
+                However, we override them if a custom image tag is set, e.g. 'image:menu'
+               */
+            const prefixes = tagKey ?? imageProvider.defaultKeyPrefixes
+            const singleSource = tags.bindD(tags => imageProvider.getRelevantUrls(tags, prefixes))
             allSources.push(singleSource)
             singleSource.addCallbackAndRunD((_) => {
                 const all: ProvidedImage[] = [].concat(...allSources.map((source) => source.data))
-                const uniq = []
-                const seen = new Set<string>()
-                for (const img of all) {
-                    if (seen.has(img.url)) {
-                        continue
-                    }
-                    seen.add(img.url)
-                    uniq.push(img)
-                }
-                source.setData(uniq)
+                const dedup = Utils.DedupOnId(all, i => i?.id ?? i?.url)
+                source.set(dedup)
             })
         }
         return source

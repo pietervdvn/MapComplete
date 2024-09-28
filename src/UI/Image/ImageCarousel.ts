@@ -31,7 +31,7 @@ export class ImageCarousel extends Toggle {
                             image: url,
                             state,
                             previewedImage: state?.previewedImage,
-                        })
+                        }).SetClass("h-full")
 
                         if (url.key !== undefined) {
                             image = new Combine([
@@ -42,8 +42,8 @@ export class ImageCarousel extends Toggle {
                             ]).SetClass("relative")
                         }
                         image
-                            .SetClass("w-full block cursor-zoom-in")
-                            .SetStyle("min-width: 50px; background: grey;")
+                            .SetClass("w-full h-full block cursor-zoom-in low-interaction")
+                            .SetStyle("min-width: 50px;")
                         uiElements.push(image)
                     } catch (e) {
                         console.error("Could not generate image element for", url.url, "due to", e)
