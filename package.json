@@ -205,7 +205,7 @@
     "opening_hours": "^3.6.0",
     "osm-auth": "^2.5.0",
     "osmtogeojson": "^3.0.0-beta.5",
-    "panoramax-js": "^0.1.4",
+    "panoramax-js": "^0.1.7",
     "panzoom": "^9.4.3",
     "papaparse": "^5.3.1",
     "pbf": "^3.2.1",

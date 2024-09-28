@@ -1,10 +1,9 @@
 import { ImageUploader } from "./ImageUploader"
-import { AuthorizedPanoramax, PanoramaxXYZ, ImageData } from "panoramax-js/dist"
+import { AuthorizedPanoramax, ImageData, Panoramax, PanoramaxXYZ } from "panoramax-js/dist"
 import ExifReader from "exifreader"
 import ImageProvider, { ProvidedImage } from "./ImageProvider"
 import BaseUIElement from "../../UI/BaseUIElement"
 import { LicenseInfo } from "./LicenseInfo"
-import { Utils } from "../../Utils"
 import { GeoOperations } from "../GeoOperations"
 import Constants from "../../Models/Constants"
 import { Store, Stores, UIEventSource } from "../UIEventSource"
@@ -87,9 +86,9 @@ export default class PanoramaxImageProvider extends ImageProvider {
         }
         const cached = PanoramaxImageProvider.knownMeta[id]
         if (cached) {
-            if(new Date().getTime() - cached.time.getTime() < 1000){
+            if (new Date().getTime() - cached.time.getTime() < 1000) {
 
-            return { data: cached.data, url: undefined }
+                return { data: cached.data, url: undefined }
             }
         }
         try {
@@ -100,13 +99,14 @@ export default class PanoramaxImageProvider extends ImageProvider {
         try {
             return await this.getInfoFromXYZ(id)
         } catch (e) {
-                console.debug(e)
+            console.debug(e)
         }
         return undefined
     }
-
-
     public async ExtractUrls(key: string, value: string): Promise<ProvidedImage[]> {
+        if(!Panoramax.isId(value)){
+            return undefined
+        }
         return [await this.getInfoFor(value).then(r => this.featureToImage(<any>r))]
     }
 
@@ -115,7 +115,7 @@ export default class PanoramaxImageProvider extends ImageProvider {
         const source = UIEventSource.FromPromise(super.getRelevantUrlsFor(tags, prefixes))
 
         function hasLoading(data: ProvidedImage[]) {
-            if(data === undefined){
+            if (data === undefined) {
                 return true
             }
             return data?.some(img => img?.status !== undefined && img?.status !== "ready" && img?.status !== "broken")
