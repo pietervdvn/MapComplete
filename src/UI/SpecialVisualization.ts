@@ -37,7 +37,6 @@ export interface SpecialVisualizationState {
     readonly featureSwitches: FeatureSwitchState
 
     readonly layerState: LayerState
-    readonly featureSummary: SummaryTileSourceRewriter
     readonly featureProperties: FeaturePropertiesStore
 
     readonly indexedFeatures: IndexedFeatureSource & LayoutSource
