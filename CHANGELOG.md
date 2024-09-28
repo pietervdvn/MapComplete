@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.46.11](https://github.com/USERNAME/REPOSITORY_NAME/compare/v0.46.10...v0.46.11) (2024-09-28)
+
+
+### Features
+
+* check if the image was blurred, attempt to reload if it is done; refactoring of ImageProvider code ([4650170](https://github.com/USERNAME/REPOSITORY_NAME/commits4650170db4bdd3b9e4fbd1900147a7433652dd6f))
+
+
+### Bug Fixes
+
+* fix tests with some refactoring ([0b992e7](https://github.com/USERNAME/REPOSITORY_NAME/commits0b992e75a481ffa5156f68d9a9fa3495a1fec4c9))
+* note themes uses full URL now instead of Panoramax-id ([ce363df](https://github.com/USERNAME/REPOSITORY_NAME/commitsce363dfb59c3237e20aed87ab51da42b9652cb01))
+* quickfixes to image upload flow ([ba1eb28](https://github.com/USERNAME/REPOSITORY_NAME/commitsba1eb28f274ac6cc6be4614456ca3d2137d9ba64))
+
 ### [0.46.10](https://github.com/USERNAME/REPOSITORY_NAME/compare/v0.46.9...v0.46.10) (2024-09-26)
 
 
