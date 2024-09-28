@@ -1,6 +1,6 @@
 import { Utils } from "../../Utils"
 import { Store, UIEventSource } from "../UIEventSource"
-import * as wds from "wikidata-sdk"
+import { WBK} from "wikibase-sdk"
 
 export class WikidataResponse {
     public readonly id: string
@@ -54,7 +54,8 @@ export class WikidataResponse {
     }
 
     static extractClaims(claimsJson: any): Map<string, Set<string>> {
-        const simplified = wds.simplify.claims(claimsJson, {
+        // @ts-ignore
+        const simplified = Wikidata.wds.simplify.claims(claimsJson, {
             timeConverter: "simple-day",
         })
 
@@ -127,6 +128,12 @@ interface SparqlResult {
  * Utility functions around wikidata
  */
 export default class Wikidata {
+
+    public static wds = WBK({
+        instance: "https://wikidata.org",
+        sparqlEndpoint: "https://query.wikidata.org/bigdata/namespace/wdq/sparql"
+    })
+
     public static readonly neededUrls = [
         "https://www.wikidata.org/",
         "https://wikidata.org/",
@@ -204,7 +211,7 @@ export default class Wikidata {
             ${instanceOf}
             ${minusPhrases.join("\n    ")}
         } ORDER BY ASC(?num) LIMIT ${options?.maxCount ?? 20}`
-        const url = wds.sparqlQuery(sparql)
+        const url = Wikidata. wds.sparqlQuery(sparql)
 
         const result = await Utils.downloadJson<SparqlResult>(url)
         /*The full uri of the wikidata-item*/
@@ -245,9 +252,9 @@ export default class Wikidata {
             lang +
             "&type=item&origin=*" +
             "&props=" // props= removes some unused values in the result
-        const response = await Utils.downloadJsonCached(url, 10000)
+        const response = await Utils.downloadJsonCached<{search: any[]}>(url, 10000)
 
-        const result: any[] = response.search
+        const result = response.search
 
         if (result.length < pageCount) {
             // No next page
@@ -375,7 +382,7 @@ export default class Wikidata {
     /**
      * Build a SPARQL-query, return the result
      *
-     * @param keys: how variables are named. Every key not ending with 'Label' should appear in at least one statement
+     * @param keys how variables are named. Every key not ending with 'Label' should appear in at least one statement
      * @param statements
      * @constructor
      */
@@ -392,9 +399,9 @@ export default class Wikidata {
             statements.map((stmt) => (stmt.endsWith(".") ? stmt : stmt + ".")).join("\n") +
             '  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE]". }\n' +
             "}"
-        const url = wds.sparqlQuery(query)
+        const url = Wikidata.wds.sparqlQuery(query)
         const result = await Utils.downloadJsonCached<SparqlResult>(url, 24 * 60 * 60 * 1000)
-        return result.results.bindings
+        return <any> result.results.bindings
     }
 
     private static _cache = new Map<string, Promise<WikidataResponse>>()
