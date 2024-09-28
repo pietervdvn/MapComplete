@@ -13,6 +13,9 @@
   import { onDestroy } from "svelte"
   import type { SpecialVisualizationState } from "../SpecialVisualization"
   import type { Feature, Point } from "geojson"
+  import Loading from "../Base/Loading.svelte"
+  import Translations from "../i18n/Translations"
+  import Tr from "../Base/Tr.svelte"
 
   export let image: Partial<ProvidedImage>
   let fallbackImage: string = undefined
@@ -30,7 +33,7 @@
   let showBigPreview = new UIEventSource(false)
   onDestroy(showBigPreview.addCallbackAndRun(shown => {
     if (!shown) {
-      previewedImage.set(false)
+      previewedImage.set(undefined)
     }
   }))
   onDestroy(previewedImage.addCallbackAndRun(previewedImage => {
@@ -49,12 +52,12 @@
       type: "Feature",
       properties: {
         id: image.id,
-        rotation: image.rotation
+        rotation: image.rotation,
       },
       geometry: {
         type: "Point",
-        coordinates: [image.lon, image.lat]
-      }
+        coordinates: [image.lon, image.lat],
+      },
     }
     console.log(f)
     state?.geocodedImages.set([f])
@@ -73,36 +76,45 @@
                  on:click={() => {console.log("Closing");previewedImage.set(undefined)}}></CloseButton>
   </div>
 </Popup>
-<div class="relative shrink-0">
-  <div class="relative w-fit"
-       on:mouseenter={() => highlight()}
-       on:mouseleave={() => highlight(false)}
-  >
-    <img
-      bind:this={imgEl}
-      on:load={() => (loaded = true)}
-      class={imgClass ?? ""}
-      class:cursor-zoom-in={canZoom}
-      on:click={() => {
+{#if image.status !== undefined && image.status !== "ready"}
+  <div class="h-full flex flex-col justify-center">
+    <Loading>
+      <Tr t={Translations.t.image.processing}/>
+    </Loading>
+  </div>
+{:else}
+  <div class="relative shrink-0">
+    <div class="relative w-fit"
+         on:mouseenter={() => highlight()}
+         on:mouseleave={() => highlight(false)}
+    >
+
+      <img
+        bind:this={imgEl}
+        on:load={() => (loaded = true)}
+        class={imgClass ?? ""}
+        class:cursor-zoom-in={canZoom}
+        on:click={() => {
         previewedImage?.set(image)
     }}
-      on:error={() => {
+        on:error={() => {
         if (fallbackImage) {
           imgEl.src = fallbackImage
         }
       }}
-      src={image.url}
-    />
+        src={image.url}
+      />
 
-    {#if canZoom && loaded}
-      <div
-        class="bg-black-transparent absolute right-0 top-0 rounded-bl-full"
-        on:click={() => previewedImage.set(image)}>
-        <MagnifyingGlassPlusIcon class="h-8 w-8 cursor-zoom-in pl-3 pb-3" color="white" />
-      </div>
-    {/if}
+      {#if canZoom && loaded}
+        <div
+          class="bg-black-transparent absolute right-0 top-0 rounded-bl-full"
+          on:click={() => previewedImage.set(image)}>
+          <MagnifyingGlassPlusIcon class="h-8 w-8 cursor-zoom-in pl-3 pb-3" color="white" />
+        </div>
+      {/if}
+    </div>
+    <div class="absolute bottom-0 left-0">
+      <ImageAttribution {image} {attributionFormat} />
+    </div>
   </div>
-  <div class="absolute bottom-0 left-0">
-    <ImageAttribution {image} {attributionFormat} />
-  </div>
-</div>
+{/if}

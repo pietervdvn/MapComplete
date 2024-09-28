@@ -131,8 +131,9 @@ export class Mapillary extends ImageProvider {
         return new SvelteUIElement(MapillaryIcon, { url })
     }
 
-    async ExtractUrls(key: string, value: string): Promise<Promise<ProvidedImage>[]> {
-        return [this.PrepareUrlAsync(key, value)]
+    async ExtractUrls(key: string, value: string): Promise<ProvidedImage[]> {
+        const img = await this.PrepareUrlAsync(key, value)
+        return [img]
     }
 
     public async DownloadAttribution(providedImage: { id: string }): Promise<LicenseInfo> {

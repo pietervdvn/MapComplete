@@ -1,6 +1,6 @@
 {
   "name": "mapcomplete",
-  "version": "0.47.2",
+  "version": "0.47.3",
   "repository": "https://github.com/pietervdvn/MapComplete",
   "description": "A small website to edit OSM easily",
   "bugs": "https://github.com/pietervdvn/MapComplete/issues",
@@ -40,6 +40,10 @@
       "#": "Various API-keys for various services. Feel free to reuse those in another MapComplete-hosted version",
       "imgur": "7070e7167f0a25a",
       "mapillary_v4": "MLY|4441509239301885|b40ad2d3ea105435bd40c7e76993ae85"
+    },
+    "panoramax": {
+      "url": "https://panoramax.mapcomplete.org",
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnZW92aXNpbyIsInN1YiI6IjU5ZjgzOGI0LTM4ZjAtNDdjYi04OWYyLTM3NDQ3MWMxNTUxOCJ9.0rBioZS_48NTjnkIyN9497c3fQdTqtGgH1HDqlz1bWs"
     },
     "default_overpass_urls": [
       "https://overpass-api.de/api/interpreter",
@@ -180,6 +184,7 @@
     "dompurify": "^3.0.5",
     "email-validator": "^2.0.4",
     "escape-html": "^1.0.3",
+    "exifreader": "^4.23.5",
     "fake-dom": "^1.0.4",
     "flowbite-svelte": "^0.46.2",
     "follow-redirects": "^1.15.6",
@@ -203,6 +208,7 @@
     "opening_hours": "^3.6.0",
     "osm-auth": "^2.5.0",
     "osmtogeojson": "^3.0.0-beta.5",
+    "panoramax-js": "^0.1.4",
     "panzoom": "^9.4.3",
     "papaparse": "^5.3.1",
     "pbf": "^3.2.1",

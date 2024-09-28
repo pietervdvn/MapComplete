@@ -83,16 +83,6 @@
       </div>
     </FileSelector>
     <div class="text-sm">
-      <button
-        class="as-link"
-        style="margin: 0; padding: 0"
-        on:click={() => {
-          state.guistate.openUsersettings("picture-license")
-        }}
-      >
-        <Tr t={t.currentLicense.Subs({ license: $licenseStore })} />
-      </button>
-      <br />
       <Tr cls="subtle italic" t={t.respectPrivacy} />
     </div>
   </div>

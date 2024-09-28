@@ -714,7 +714,7 @@ export default class SpecialVisualizations {
                     },
                 ],
                 constr: (state, tags, args) => {
-                    const targetKey = args[0] === "" ? undefined : args[0]
+                        const targetKey = args[0] === "" ? undefined : args[0]
                     return new SvelteUIElement(UploadImage, {
                         state,
                         tags,

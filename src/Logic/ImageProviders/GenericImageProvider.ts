@@ -15,26 +15,24 @@ export default class GenericImageProvider extends ImageProvider {
         this._valuePrefixBlacklist = valuePrefixBlacklist
     }
 
-    async ExtractUrls(key: string, value: string): Promise<Promise<ProvidedImage>[]> {
+    ExtractUrls(key: string, value: string): undefined | ProvidedImage[] {
         if (this._valuePrefixBlacklist.some((prefix) => value.startsWith(prefix))) {
-            return []
+            return undefined
         }
 
         try {
             new URL(value)
         } catch (_) {
             // Not a valid URL
-            return []
+            return undefined
         }
 
-        return [
-            Promise.resolve({
-                key: key,
-                url: value,
-                provider: this,
-                id: value,
-            }),
-        ]
+        return [{
+            key: key,
+            url: value,
+            provider: this,
+            id: value,
+        }]
     }
 
     SourceIcon() {

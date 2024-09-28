@@ -1117,13 +1117,15 @@
         {
           "if": "advertising=tilework",
           "then": {
-            "en": "This is tilework - the advertisement is painted on tiles"
+            "en": "This is tilework - the advertisement is painted on tiles",
+            "de": "Dies ist eine Kachelarbeit - die Werbung ist auf Fliesen gemalt"
           }
         },
         {
           "if": "advertising=relief",
           "then": {
-            "en": "This is a relief"
+            "en": "This is a relief",
+            "de": "Dies ist ein Relief"
           }
         }
       ]
@@ -1652,13 +1654,15 @@
           "if": "historic=advertising",
           "alsoShowIf": "historic=yes",
           "then": {
-            "en": "This is a historic advertisement sign (an advertisement for a business that no longer exists or a very old sign with heritage value)"
+            "en": "This is a historic advertisement sign (an advertisement for a business that no longer exists or a very old sign with heritage value)",
+            "de": "Es handelt sich um ein historisches Werbeschild (eine Werbung für ein Unternehmen, das nicht mehr existiert, oder ein sehr altes Schild mit historischem Wert)"
           }
         },
         {
           "if": "historic=",
           "then": {
-            "en": "This advertisement sign has no historic value (the business still exists and has no heritage value)"
+            "en": "This advertisement sign has no historic value (the business still exists and has no heritage value)",
+            "de": "Dieses Werbeschild hat keinen historischen Wert (das Unternehmen existiert noch und hat keinen denkmalpflegerischen Wert)"
           }
         }
       ]
