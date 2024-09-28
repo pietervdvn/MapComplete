@@ -160,9 +160,13 @@
       },
       "mappings": [
         {
-          "if": "operational_status=",
+          "if": {
+            "and": [
+              "operational_status=",
+              "disused:amenity="
+            ]
+          },
           "addExtraTags": [
-            "disused:amenity=",
             "amenity=drinking_water"
           ],
           "then": {
@@ -203,6 +207,15 @@
             "es": "Esta agua potable está cerrada",
             "ca": "Aquesta font d'aigua potable està tancada",
             "cs": "Tato pitná voda je uzavřena"
+          }
+        },
+        {
+          "if": "disused:amenity=drinking_water",
+          "addExtraTags": [
+            "amenity="
+          ],
+          "then": {
+            "en": "This drinking water is permanently closed"
           }
         }
       ],
