@@ -752,6 +752,9 @@
             "render": "Zitbank"
         }
     },
+    "bicycle_counter": {
+        "description": "Automatische fietstelpunten"
+    },
     "bicycle_library": {
         "description": "Een plaats waar men voor langere tijd een fiets kan lenen",
         "name": "Fietsbibliotheek",
