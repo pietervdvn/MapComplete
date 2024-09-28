@@ -88,7 +88,8 @@ export interface SpecialVisualizationState {
     readonly geocodedImages : UIEventSource<Feature[]>
 
     showCurrentLocationOn(map: Store<MlMap>): ShowDataLayer
-    reportError(message: string): Promise<void>
+    reportError(message: string | Error | XMLHttpRequest, extramessage?: string): Promise<void>
+
 }
 
 export interface SpecialVisualization {

@@ -7,7 +7,6 @@ import { Store, UIEventSource } from "../UIEventSource"
 import { OsmConnection } from "../Osm/OsmConnection"
 import { Changes } from "../Osm/Changes"
 import Translations from "../../UI/i18n/Translations"
-import NoteCommentElement from "../../UI/Popup/Notes/NoteCommentElement"
 import { Translation } from "../../UI/i18n/Translation"
 import { IndexedFeatureSource } from "../FeatureSource/FeatureSource"
 import { GeoOperations } from "../GeoOperations"
@@ -136,7 +135,7 @@ export class ImageUploadManager {
     }
 
     public async uploadImageWithLicense(
-        featureId: OsmId,
+        featureId: string,
         author: string,
         blob: File,
         targetKey: string | undefined,

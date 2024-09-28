@@ -5,7 +5,7 @@
 
   import type { SpecialVisualizationState } from "../SpecialVisualization"
   import { ImmutableStore, UIEventSource } from "../../Logic/UIEventSource"
-  import type { OsmTags } from "../../Models/OsmFeature"
+  import type { OsmId, OsmTags } from "../../Models/OsmFeature"
   import LoginToggle from "../Base/LoginToggle.svelte"
   import Translations from "../i18n/Translations"
   import Tr from "../Base/Tr.svelte"
@@ -47,22 +47,25 @@
           continue
         }
 
-        if(layer.id === "note"){
-          const uploadResult = await state?.imageUploadManager.uploadImageWithLicense(file, tags, targetKey)
+        if(layer?.id === "note"){
+          const uploadResult = await state?.imageUploadManager.uploadImageWithLicense(tags.data.id,
+            state.osmConnection.userDetails.data?.name ?? "Anonymous",
+            file, "image")
           if(!uploadResult){
             return
           }
           const url = uploadResult.absoluteUrl
-          await this._osmConnection.addCommentToNote(tags.data.id, url)
+          await state.osmConnection.addCommentToNote(tags.data.id, url)
           NoteCommentElement.addCommentTo(url, <UIEventSource<any>>tags, {
-            osmConnection: this._osmConnection,
+            osmConnection: state.osmConnection,
           })
           return
         }
 
         await state?.imageUploadManager.uploadImageAndApply(file, tags, targetKey)
       } catch (e) {
-        alert(e)
+        console.error(e)
+        state.reportError(e, "Could not upload image")
       }
     }
     errors.setData(errs)
