@@ -5,7 +5,7 @@
 
   import type { SpecialVisualizationState } from "../SpecialVisualization"
   import { ImmutableStore, UIEventSource } from "../../Logic/UIEventSource"
-  import type { OsmTags } from "../../Models/OsmFeature"
+  import type { OsmId, OsmTags } from "../../Models/OsmFeature"
   import LoginToggle from "../Base/LoginToggle.svelte"
   import Translations from "../i18n/Translations"
   import Tr from "../Base/Tr.svelte"
@@ -14,11 +14,14 @@
   import LoginButton from "../Base/LoginButton.svelte"
   import { Translation } from "../i18n/Translation"
   import Camera from "@babeard/svelte-heroicons/solid/Camera"
+  import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
+  import NoteCommentElement from "../Popup/Notes/NoteCommentElement"
 
   export let state: SpecialVisualizationState
 
   export let tags: UIEventSource<OsmTags>
   export let targetKey: string = undefined
+  export let layer: LayerConfig
   /**
    * Image to show in the button
    * NOT the image to upload!
@@ -30,11 +33,9 @@
   export let labelText: string = undefined
   const t = Translations.t.image
 
-  let licenseStore = state?.userRelatedState?.imageLicense ?? new ImmutableStore("CC0")
-
   let errors = new UIEventSource<Translation[]>([])
 
-  function handleFiles(files: FileList) {
+  async function handleFiles(files: FileList) {
     const errs = []
     for (let i = 0; i < files.length; i++) {
       const file = files.item(i)
@@ -45,9 +46,26 @@
           errs.push(canBeUploaded.error)
           continue
         }
-        state?.imageUploadManager.uploadImageAndApply(file, tags, targetKey)
+
+        if(layer?.id === "note"){
+          const uploadResult = await state?.imageUploadManager.uploadImageWithLicense(tags.data.id,
+            state.osmConnection.userDetails.data?.name ?? "Anonymous",
+            file, "image")
+          if(!uploadResult){
+            return
+          }
+          const url = uploadResult.absoluteUrl
+          await state.osmConnection.addCommentToNote(tags.data.id, url)
+          NoteCommentElement.addCommentTo(url, <UIEventSource<any>>tags, {
+            osmConnection: state.osmConnection,
+          })
+          return
+        }
+
+        await state?.imageUploadManager.uploadImageAndApply(file, tags, targetKey)
       } catch (e) {
-        alert(e)
+        console.error(e)
+        state.reportError(e, "Could not upload image")
       }
     }
     errors.setData(errs)

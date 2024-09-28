@@ -8,5 +8,7 @@ export interface ImageUploader {
         blob: File,
         currentGps: [number,number],
         author: string
-    ): Promise<{ key: string; value: string, absoluteUrl: string }>
+    ): Promise<UploadResult>
 }
+
+export interface UploadResult{ key: string; value: string, absoluteUrl: string }

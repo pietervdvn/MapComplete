@@ -86,8 +86,8 @@ export interface SpecialVisualizationState {
     getMatchingLayer(properties: Record<string, string>);
 
     showCurrentLocationOn(map: Store<MlMap>): ShowDataLayer
+    reportError(message: string | Error | XMLHttpRequest, extramessage?: string): Promise<void>
 
-    reportError(message: string): Promise<void>
 }
 
 export interface SpecialVisualization {

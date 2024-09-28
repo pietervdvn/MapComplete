@@ -1,4 +1,4 @@
-import { ImageUploader } from "./ImageUploader"
+import { ImageUploader, UploadResult } from "./ImageUploader"
 import LinkImageAction from "../Osm/Actions/LinkImageAction"
 import FeaturePropertiesStore from "../FeatureSource/Actors/FeaturePropertiesStore"
 import { OsmId, OsmTags } from "../../Models/OsmFeature"
@@ -7,7 +7,6 @@ import { Store, UIEventSource } from "../UIEventSource"
 import { OsmConnection } from "../Osm/OsmConnection"
 import { Changes } from "../Osm/Changes"
 import Translations from "../../UI/i18n/Translations"
-import NoteCommentElement from "../../UI/Popup/Notes/NoteCommentElement"
 import { Translation } from "../../UI/i18n/Translation"
 import { IndexedFeatureSource } from "../FeatureSource/FeatureSource"
 import { GeoOperations } from "../GeoOperations"
@@ -111,44 +110,40 @@ export class ImageUploadManager {
         }
 
         const tags = tagsStore.data
+
         const featureId = <OsmId>tags.id
 
         const author = this._osmConnection.userDetails.data.name
 
-        const action = await this.uploadImageWithLicense(
+        const uploadResult = await this.uploadImageWithLicense(
             featureId,
             author,
             file,
             targetKey,
-            tags?.data?.["_orig_theme"],
         )
+        if (!uploadResult) {
+            return
+        }
+        const properties = this._featureProperties.getStore(featureId)
 
-        if (!action) {
-            return
-        }
-        if (!isNaN(Number(featureId))) {
-            // This is a map note
-            const url = action._url
-            await this._osmConnection.addCommentToNote(featureId, url)
-            NoteCommentElement.addCommentTo(url, <UIEventSource<any>>tagsStore, {
-                osmConnection: this._osmConnection,
-            })
-            return
-        }
+        const action = new LinkImageAction(featureId, uploadResult. key,  uploadResult   . value, properties, {
+            theme:  tags?.data?.["_orig_theme"] ?? this._layout.id,
+            changeType: "add-image",
+        })
+
         await this._changes.applyAction(action)
     }
 
-    private async uploadImageWithLicense(
-        featureId: OsmId,
+    public async uploadImageWithLicense(
+        featureId: string,
         author: string,
         blob: File,
         targetKey: string | undefined,
-        theme?: string,
-    ): Promise<LinkImageAction> {
+    ): Promise<UploadResult> {
         this.increaseCountFor(this._uploadStarted, featureId)
-        const properties = this._featureProperties.getStore(featureId)
         let key: string
         let value: string
+        let absoluteUrl: string
         let location: [number, number] = undefined
         if (this._gps.data) {
             location = [this._gps.data.longitude, this._gps.data.latitude]
@@ -157,7 +152,6 @@ export class ImageUploadManager {
             const feature = this._indexedFeatures.featuresById.data.get(featureId)
             location = GeoOperations.centerpointCoordinates(feature)
         }
-        let absoluteUrl: string
         try {
             ;({ key, value, absoluteUrl } = await this._uploader.uploadImage(blob, location, author))
         } catch (e) {
@@ -179,10 +173,8 @@ export class ImageUploadManager {
             value = absoluteUrl
         }
         this.increaseCountFor(this._uploadFinished, featureId)
-        return new LinkImageAction(featureId, key, value, properties, {
-            theme: theme ?? this._layout.id,
-            changeType: "add-image",
-        })
+        return {key, absoluteUrl, value}
+
     }
 
     private getCounterFor(collection: Map<string, UIEventSource<number>>, key: string | "*") {
