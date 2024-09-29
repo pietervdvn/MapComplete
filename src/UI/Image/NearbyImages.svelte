@@ -130,7 +130,7 @@
     for (const f of features) {
       bbox = bbox.unionWith(BBox.get(f))
     }
-    mapProperties.maxbounds.set(bbox.pad(1.1))
+    mapProperties.maxbounds.set(bbox.pad(4))
   })
 
   )

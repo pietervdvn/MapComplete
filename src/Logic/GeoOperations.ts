@@ -92,6 +92,13 @@ export class GeoOperations {
         return turf.distance(lonlat0, lonlat1, { units: "meters" })
     }
 
+    /**
+     * Starting on `from`, travels `distance` meters in the direction of the `bearing` (default: 90)
+     */
+    static destination(from: Coord | [number,number],distance: number, bearing: number = 90): [number,number]{
+        return <[number,number]> turf.destination(from, distance, bearing, {units: "meters"}).geometry.coordinates
+    }
+
     static convexHull(featureCollection, options: { concavity?: number }) {
         return turf.convex(featureCollection, options)
     }

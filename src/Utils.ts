@@ -1511,7 +1511,6 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         if (!element) {
             return
         }
-        console.log("Scrolling into view:", element)
         // Is the element completely in the view?
         const parentRect = Utils.findParentWithScrolling(element)?.getBoundingClientRect()
         if (!parentRect) {
