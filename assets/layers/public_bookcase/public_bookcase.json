@@ -24,7 +24,7 @@
   "source": {
     "osmTags": "amenity=public_bookcase"
   },
-  "minzoom": 7,
+  "minzoom": 10,
   "title": {
     "render": {
       "en": "Bookcase",
