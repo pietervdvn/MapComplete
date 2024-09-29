@@ -63,7 +63,28 @@ export default class MvtSource implements FeatureSourceForTile, UpdatableFeature
                 return
             }
             const buffer = await result.arrayBuffer()
-            const features = await MvtToGeojson.fromBuffer(buffer, this.x, this.y, this.z)
+            const features = MvtToGeojson.fromBuffer(buffer, this.x, this.y, this.z)
+            for (const feature of features) {
+                const properties = feature.properties
+                if(!properties["osm_type"]){
+                    continue
+                }
+                let type: string = "node"
+                switch (properties["osm_type"]) {
+                    case "N":
+                        type = "node"
+                        break
+                    case "W":
+                        type = "way"
+                        break
+                    case "R":
+                        type = "relation"
+                        break
+                }
+                properties["id"] = type + "/" + properties["osm_id"]
+                delete properties["osm_id"]
+                delete properties["osm_type"]
+            }
             this._features.setData(features)
         } catch (e) {
             console.error("Could not download MVT " + this._url + " tile due to", e)

@@ -878,6 +878,26 @@
     ]
   },
   {
+    "path": "panoramax.svg",
+    "license": "LOGO",
+    "authors": [
+      "Panoramax"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Panoramax.svg"
+    ]
+  },
+  {
+    "path": "panoramax_bw.svg",
+    "license": "LOGO",
+    "authors": [
+      "Panoramax"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Panoramax.svg"
+    ]
+  },
+  {
     "path": "party.svg",
     "license": "CC-BY-4.0",
     "authors": [

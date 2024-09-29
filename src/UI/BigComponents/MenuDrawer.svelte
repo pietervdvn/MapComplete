@@ -48,6 +48,7 @@
   import Copyright from "../../assets/svg/Copyright.svelte"
   import Pencil from "../../assets/svg/Pencil.svelte"
   import Squares2x2 from "@babeard/svelte-heroicons/mini/Squares2x2"
+  import PanoramaxLink from "./PanoramaxLink.svelte"
 
   export let state: ThemeViewState
   let userdetails = state.osmConnection.userDetails
@@ -229,6 +230,7 @@
     <If condition={featureSwitches.featureSwitchEnableLogin}>
       <OpenIdEditor mapProperties={state.mapProperties} />
       <OpenJosm {state} />
+      <PanoramaxLink large={false} mapProperties={state.mapProperties} />
       <MapillaryLink large={false} mapProperties={state.mapProperties} />
     </If>
   </div>

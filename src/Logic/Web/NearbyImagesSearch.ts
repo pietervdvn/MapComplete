@@ -10,6 +10,7 @@ import { Point } from "geojson"
 import MvtSource from "../FeatureSource/Sources/MvtSource"
 import AllImageProviders from "../ImageProviders/AllImageProviders"
 import { Imgur } from "../ImageProviders/Imgur"
+import { Panoramax, PanoramaxXYZ } from "panoramax-js/dist"
 
 interface ImageFetcher {
     /**
@@ -102,7 +103,7 @@ class P4CImageFetcher implements ImageFetcher {
                 {
                     mindate: new Date().getTime() - maxAgeSeconds,
                     towardscenter: false,
-                }
+                },
             )
         } catch (e) {
             console.log("P4C image fetcher failed with", e)
@@ -163,6 +164,55 @@ class ImagesInLoadedDataFetcher implements ImageFetcher {
     }
 }
 
+class ImagesFromPanoramaxFetcher implements ImageFetcher {
+    private readonly _radius: number
+    private readonly _panoramax: Panoramax
+    name: string = "panoramax"
+
+    constructor(url?: string, radius: number = 100) {
+        this._radius = radius
+        if (url) {
+
+            this._panoramax = new Panoramax(url)
+        } else {
+            this._panoramax = new PanoramaxXYZ()
+        }
+    }
+
+
+    public async fetchImages(lat: number, lon: number): Promise<P4CPicture[]> {
+
+        const bboxObj = new BBox([
+            GeoOperations.destination([lon, lat], this._radius * Math.sqrt(2), -45),
+            GeoOperations.destination([lon, lat], this._radius * Math.sqrt(2), 135),
+        ])
+        const bbox: [number, number, number, number] = bboxObj.toLngLatFlat()
+        const images = await this._panoramax.search({ bbox, limit: 1000 })
+
+        return images.map(i => {
+            const [lng, lat] = i.geometry.coordinates
+            return ({
+                pictureUrl: i.assets.sd.href,
+                coordinates: { lng, lat },
+
+                provider: "panoramax",
+                direction: i.properties["view:azimuth"],
+                osmTags: {
+                    "panoramax": i.id,
+                },
+                thumbUrl: i.assets.thumb.href,
+                date: new Date(i.properties.datetime).getTime(),
+                license: i.properties["geovisio:license"],
+                author: i.providers.at(-1).name,
+                detailsUrl: i.id,
+                details: {
+                    isSpherical: i.properties["exif"]["Xmp.GPano.ProjectionType"] === "equirectangular",
+                },
+            })
+        })
+    }
+}
+
 class ImagesFromCacheServerFetcher implements ImageFetcher {
     private readonly _searchRadius: number
     public readonly name = "fromCacheServer"
@@ -186,7 +236,7 @@ class ImagesFromCacheServerFetcher implements ImageFetcher {
     async fetchImagesForType(
         targetlat: number,
         targetlon: number,
-        type: "lines" | "pois" | "polygons"
+        type: "lines" | "pois" | "polygons",
     ): Promise<P4CPicture[]> {
         const { x, y, z } = Tiles.embedded_tile(targetlat, targetlon, 14)
 
@@ -203,7 +253,7 @@ class ImagesFromCacheServerFetcher implements ImageFetcher {
                 }),
                 x,
                 y,
-                z
+                z,
             )
             await src.updateAsync()
             return src.features.data
@@ -360,6 +410,8 @@ export class CombinedFetcher {
         this.sources = [
             new ImagesInLoadedDataFetcher(indexedFeatures, radius),
             new ImagesFromCacheServerFetcher(radius),
+            new ImagesFromPanoramaxFetcher(),
+            new ImagesFromPanoramaxFetcher(Constants.panoramax.url),
             new MapillaryFetcher({
                 panoramas: "no",
                 max_images: 25,
@@ -375,7 +427,7 @@ export class CombinedFetcher {
         lat: number,
         lon: number,
         state: UIEventSource<Record<string, "loading" | "done" | "error">>,
-        sink: UIEventSource<P4CPicture[]>
+        sink: UIEventSource<P4CPicture[]>,
     ): Promise<void> {
         try {
             const pics = await source.fetchImages(lat, lon)
@@ -408,7 +460,7 @@ export class CombinedFetcher {
 
     public getImagesAround(
         lon: number,
-        lat: number
+        lat: number,
     ): {
         images: Store<P4CPicture[]>
         state: Store<Record<string, "loading" | "done" | "error">>

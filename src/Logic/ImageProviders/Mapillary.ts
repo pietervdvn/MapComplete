@@ -118,13 +118,14 @@ export class Mapillary extends ImageProvider {
     }
 
     SourceIcon(
-        id: string,
+        img:  {id: string, url: string},
         location?: {
             lon: number
             lat: number
         }
     ): BaseUIElement {
         let url: string = undefined
+        const id = img.id
         if (id) {
             url = Mapillary.createLink(location, 16, "" + id)
         }

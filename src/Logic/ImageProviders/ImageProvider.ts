@@ -17,7 +17,8 @@ export interface ProvidedImage {
      */
     rotation?: number
     lat?: number,
-    lon?: number
+    lon?: number,
+    host?: string
 }
 
 export default abstract class ImageProvider {
@@ -25,7 +26,7 @@ export default abstract class ImageProvider {
 
     public abstract readonly name: string
 
-    public abstract SourceIcon(id?: string, location?: { lon: number; lat: number }): BaseUIElement
+    public abstract SourceIcon(img?: {id: string, url: string, host?: string}, location?: { lon: number; lat: number }): BaseUIElement
 
 
     /**

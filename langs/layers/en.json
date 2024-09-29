@@ -4142,6 +4142,9 @@
                     },
                     "2": {
                         "then": "This drinking water is closed"
+                    },
+                    "3": {
+                        "then": "This drinking water is permanently closed"
                     }
                 },
                 "question": "Is this drinking water spot still operational?",
