@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.46.12](https://github.com/USERNAME/REPOSITORY_NAME/compare/v0.46.11...v0.46.12) (2024-09-29)
+
+
+### Features
+
+* more integrations of panoramax: add panoramax to nearby images view, add to drawer, add icon, see [#1451](https://github.com/pietervdvn/MapComplete/issues/1451) ([5fd1d75](https://github.com/USERNAME/REPOSITORY_NAME/commits5fd1d75efb0fbd49cac3eb5f7a37104887f92f10))
+
+
+### Bug Fixes
+
+* add panoramax.xyz to CSP list ([89d31f5](https://github.com/USERNAME/REPOSITORY_NAME/commits89d31f54bcd9f7f2bf62a663d67aa5bf1308307a))
+* load external panoramax images ([df9c44a](https://github.com/USERNAME/REPOSITORY_NAME/commitsdf9c44aaed7b2670134e8f9128343022e92c6e8d))
+
+
+### Theme improvements
+
+* **drinking water:** fix [#2184](https://github.com/pietervdvn/MapComplete/issues/2184) ([308d2ba](https://github.com/USERNAME/REPOSITORY_NAME/commits308d2ba4c62cc66d9c30cd1536549411c0abcb88))
+
 ### [0.46.11](https://github.com/USERNAME/REPOSITORY_NAME/compare/v0.46.10...v0.46.11) (2024-09-28)
 
 
