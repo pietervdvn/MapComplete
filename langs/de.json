@@ -14,7 +14,7 @@
         "available": "Diese Gemeinschaft spricht {native}",
         "intro": "Treten Sie mit anderen Menschen in Kontakt, um sie kennen zu lernen, von ihnen zu lernen, …",
         "notAvailable": "Diese Gemeinschaft spricht nicht {native}",
-        "title": "Mit anderen in Kontakt treten"
+        "title": "Andere Mapper Kontaktieren"
     },
     "delete": {
         "cancel": "Abbrechen",
@@ -184,7 +184,7 @@
             "attributionTitle": "Danke",
             "codeContributionsBy": "MapComplete wurde erstellt von {contributors} und <a href='https://github.com/pietervdvn/MapComplete/graphs/contributors' target='_blank'>{hiddenCount} weiteren Personen</a>",
             "donate": "MapComplete finanziell unterstützen",
-            "editId": "Den OpenStreetMap Editor öffnen",
+            "editId": "OpenStreetMap Online Editor öffnen",
             "editJosm": "Mit JOSM bearbeiten",
             "emailCreators": "E-Mail an Ersteller senden",
             "followOnMastodon": "MapComplete auf Mastodon folgen",
@@ -203,7 +203,7 @@
             "openMapillary": "Mapillary öffnen",
             "openOsmcha": "Neueste Bearbeitungen mit Thema {theme} ansehen",
             "openOsmchaLastWeek": "Bearbeitungen der letzten 7 Tage anzeigen",
-            "openPanoramax": "Panoramax hier öffnen",
+            "openPanoramax": "Panoramax öffnen",
             "openThemeDocumentation": "Dokumentation zum Thema {name} öffnen",
             "panoramaxHelp": "<b>Panoramax</b> ist ein Online-Service, der Straßenbilder sammelt und sie unter einer kostenlosen Lizenz anbietet. Mitwirkende dürfen diese Bilder nutzen, um OpenStreetMap zu verbessern",
             "seeOnMapillary": "Dieses Bild auf Mapillary ansehen",
