@@ -45,15 +45,25 @@
      x1="346.50821"
      gradientUnits="userSpaceOnUse"
      id="SVGID_1_"
-     gradientTransform="matrix(6.6326761,0,0,6.6326761,-1221.4079,-713.64667)">&#10;		<stop
+     gradientTransform="matrix(6.6326761,0,0,6.6326761,-1221.4079,-713.64667)">
+		<stop
    id="stop4"
    style="stop-color:#8F2A85"
-   offset="0" />&#10;		<stop
+   offset="0" />
+		<stop
    id="stop6"
    style="stop-color:#2570B6"
-   offset="1" />&#10;	</linearGradient></defs>&#10;<style
+   offset="1" />
+	</linearGradient></defs>
+<style
    type="text/css"
-   id="style2">&#10;	.st0{fill:url(#SVGID_1_);}&#10;	.st1{fill:#FFFFFF;}&#10;	.st2{display:none;fill:none;stroke:#E62054;stroke-width:7.5;stroke-miterlimit:10;}&#10;</style>&#10;&#10;<text
+   id="style2">
+	.st0{fill:url(#SVGID_1_);}
+	.st1{fill:#FFFFFF;}
+	.st2{display:none;fill:none;stroke:#E62054;stroke-width:7.5;stroke-miterlimit:10;}
+</style>
+
+<text
    y="-2248.8188"
    style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect60279);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
    id="text60277"
