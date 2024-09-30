@@ -1,0 +1,37 @@
+{
+  "id": "lock_outline",
+  "name": {
+    "en": "Lock area"
+  },
+  "description": {
+    "en": "Small layer showing the outline of the lock waterway, but without containing any information"
+  },
+  "source": {
+    "osmTags": "water=lock"
+  },
+  "minzoom": 15,
+  "title": null,
+  "pointRendering": [
+    {
+      "location": [
+        "point"
+      ],
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "width": 1,
+      "color": "blue"
+    }
+  ],
+  "tagRenderings": [],
+  "allowMove": false,
+  "credits": "Pieter Vander Vennet",
+  "credits:uid": 3818858
+}

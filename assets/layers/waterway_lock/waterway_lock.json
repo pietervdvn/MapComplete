@@ -1,0 +1,220 @@
+{
+  "id": "waterway_lock",
+  "name": {
+    "en": "Locks"
+  },
+  "description": {
+    "en": "Locks on canals, rivers and other navigable waterways "
+  },
+  "source": {
+    "osmTags": "lock=yes"
+  },
+  "minzoom": 10,
+  "title": {
+    "render": {
+      "en": "{lock_name} Lock {lock_ref} (on {name})"
+    }
+  },
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "polygon_centroid",
+        "projected_centerpoint"
+      ],
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/waterway_lock/waterway_lock.svg"
+        }
+      ],
+      "rotation": "calc( {_direction:centerpoint}deg - 90deg )",
+      "pitchAlignment": "map",
+      "label": {
+        "mappings": [
+          {
+            "if": {
+              "and": [
+                "lock_name~*",
+                "vhf~*"
+              ]
+            },
+            "then": {
+              "en": "{lock_name} (VHF {vhf})"
+            }
+          },
+          {
+            "if": "lock_name~*",
+            "then": {
+              "en": "{lock_name}"
+            }
+          }
+        ]
+      },
+      "labelCssClasses": "bg-white rounded px-2"
+    }
+  ],
+  "lineRendering": [
+    {
+      "width": 1,
+      "color": "blue"
+    }
+  ],
+  "tagRenderings": [
+    "images",
+    {
+      "question": {
+        "en": "What is the maximum width (beam) of boats using this lock?"
+      },
+      "id": "max_length",
+      "render": {
+        "en": "This lock permits boats with a maximum width of {maxwidth}"
+      },
+      "freeform": {
+        "key": "maxwidth",
+        "unit": "length"
+      },
+      "questionHint": {
+        "en": "Omit units if designated in meters. Feet and inches maybe indicated with apostrophes and quotation marks."
+      },
+      "condition": "waterway!=derelict_canal"
+    },
+    {
+      "question": {
+        "en": "What is the maximum length of boats that may use this lock?"
+      },
+      "id": "2_qyvwk0kx77jcmh2",
+      "multiAnswer": false,
+      "freeform": {
+        "key": "maxlength"
+      },
+      "render": {
+        "en": "Boats with a maximum length of {maxlength} may use this lock."
+      },
+      "questionHint": {
+        "en": "Omit units if designated in meters. Feet and inches maybe indicated with apostrophes and quotation marks."
+      },
+      "condition": "waterway!=derelict_canal"
+    },
+    {
+      "question": {
+        "en": "How far does this lock raise or lower a boat?"
+      },
+      "id": "3_sm4v6ow91r2i4kd",
+      "questionHint": {
+        "en": "Omit units if designated in meters. Feet and inches maybe indicated with apostrophes and quotation marks."
+      },
+      "multiAnswer": false,
+      "freeform": {
+        "key": "lock:height",
+        "type": "nat"
+      },
+      "render": {
+        "en": "This lock has a drop height of {lock:height}"
+      },
+      "condition": "waterway!=derelict_canal"
+    },
+    {
+      "question": {
+        "en": "Is this lock automated?"
+      },
+      "id": "4_pwnx07go36rzk54",
+      "mappings": [
+        {
+          "if": "automated=yes",
+          "then": {
+            "en": "This lock is automated (operated from control panel or control room)"
+          },
+          "ifnot": "automated="
+        },
+        {
+          "if": "manual=yes",
+          "then": {
+            "en": "This lock is manually operated (with muscle power)"
+          },
+          "ifnot": "manual="
+        }
+      ],
+      "multiAnswer": true,
+      "condition": "waterway!=derelict_canal"
+    },
+    {
+      "question": {
+        "en": "What is the maximum draft of boats using this lock?"
+      },
+      "id": "5_1sz01guflvjeyx7",
+      "questionHint": {
+        "en": "Omit units if designated in meters. Feet and inches maybe indicated with apostrophes and quotation marks."
+      },
+      "multiAnswer": false,
+      "render": {
+        "en": "The maximum draft of boats using this lock is {draft}."
+      },
+      "freeform": {
+        "key": "draft"
+      },
+      "condition": "waterway!=derelict_canal"
+    },
+    {
+      "question": {
+        "en": "What is the name of this lock?"
+      },
+      "id": "lock_name",
+      "questionHint": {
+        "en": "The numerical reference code can be added in a follow-up question "
+      },
+      "multiAnswer": false,
+      "render": {
+        "en": "This lock is named {lock_name}"
+      },
+      "freeform": {
+        "key": "lock_name"
+      }
+    },
+    {
+      "question": {
+        "en": "Does this lock have a reference number/code?"
+      },
+      "id": "ref",
+      "multiAnswer": false,
+      "render": {
+        "en": "This is lock {lock_ref}"
+      },
+      "freeform": {
+        "key": "lock_ref"
+      }
+    },
+    {
+      "question": {
+        "en": "What VHF channel should be used to communicate with this lock?"
+      },
+      "id": "vhf",
+      "render": {
+        "en": "The VHF channelnis {vhf}"
+      },
+      "freeform": {
+        "key": "vhf"
+      }
+    },
+    "opening_hours_24_7",
+    "phone",
+    {
+      "question": {
+        "en": "What is the name of the waterway that this lock is on?"
+      },
+      "id": "waterway_name",
+      "render": {
+        "en": "The waterway is name <b>{name}</b>"
+      },
+      "freeform": {
+        "key": "name"
+      }
+    }
+  ],
+  "allowMove": false,
+  "credits": "Pieter Vander Vennet",
+  "credits:uid": 3818858
+}

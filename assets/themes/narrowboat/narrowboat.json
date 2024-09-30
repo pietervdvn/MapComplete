@@ -1,0 +1,37 @@
+{
+  "id": "narrowboat",
+  "title": {
+    "en": "Narrowboat Amenities"
+  },
+  "description": {
+    "en": "Features of interest to narrowboats and similar cruisers on inland waterways. "
+  },
+  "icon": "./assets/layers/waterway_lock/waterway_lock.svg",
+  "startZoom": 5,
+  "startLat": 54.44,
+  "startLon": -5.23,
+  "layers": [
+    "waterway_lock",
+    "waterway",
+    "lock_outline",
+    {
+      "builtin": [
+        "drinking_water",
+        "shower",
+        "toilet"
+      ],
+      "override": {
+        "minzoom": 14
+      }
+    }
+  ],
+  "#layers": [
+    "https://studio.mapcomplete.org/89098/layers/waterway_locks/waterway_locks.json",
+    "https://studio.mapcomplete.org/89098/layers/waterway_sanitary_dump_station/waterway_sanitary_dump_station.json",
+    "https://studio.mapcomplete.org/89098/layers/fuel_dock/fuel_dock.json",
+    "https://studio.mapcomplete.org/89098/layers/water_point/water_point.json",
+    "https://studio.mapcomplete.org/89098/layers/winding_holes/winding_holes.json",
+    "https://studio.mapcomplete.org/89098/layers/marinas/marinas.json",
+    "https://studio.mapcomplete.org/89098/layers/chandler/chandler.json"
+  ]
+}

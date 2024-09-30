@@ -1,0 +1,79 @@
+{
+  "id": "waterway",
+  "name": {
+    "en": "Navigable waterways"
+  },
+  "description": {
+    "en": "Waterways which are navigable by small boats, yachts, ..."
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        "motorboat!=no",
+        "boat!=no",
+        {
+          "or": [
+            "waterway=river",
+            "waterway=canal"
+          ]
+        }
+      ]
+    }
+  },
+  "title": {
+    "en": "{name}"
+  },
+  "pointRendering": null,
+  "lineRendering": [
+    {
+      "color": "blue",
+      "width": {
+        "mappings": [
+          {
+            "if": "waterway=canal",
+            "then": "8"
+          },
+          {
+            "if": "waterway=river",
+            "then": "8"
+          },
+          {
+            "if": "waterway=stream",
+            "then": "6"
+          }
+        ]
+      }
+    }
+  ],
+  "tagRenderings": [
+    "images",
+    "wikipedia",
+    {
+      "id": "type",
+      "question": {
+        "en": "What type of waterway is this?"
+      },
+      "mappings": [
+        {
+          "if": "waterway=river",
+          "then": {
+            "en": "This is a river"
+          }
+        },
+        {
+          "if": "waterway=canal",
+          "then": {
+            "en": "This is a canal"
+          }
+        },
+        {
+          "if": "waterway=stream",
+          "then": {
+            "en": "This is a stream "
+          }
+        }
+      ]
+    }
+  ],
+  "allowMove": false
+}

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500px" height="500px" viewBox="0 0 500 500">
+<title>BSicon lock complex</title>
+<defs>
+ <linearGradient gradientTransform="rotate(90)" id="gate">
+  <stop offset="0%" stop-color="#000" />
+  <stop offset="33.3%" stop-color="#000" />
+  <stop offset="33.3%" stop-color="#FFF" />
+  <stop offset="66.7%" stop-color="#FFF" />
+  <stop offset="66.7%" stop-color="#000" />
+  <stop offset="100%" stop-color="#000" />
+ </linearGradient>
+</defs>
+<polygon stroke="none" fill="#FFF" points="440,400 340,250 440,100 140,100 40,250 140,400"/>
+<rect width="500" height="100" x="0" y="200" style="fill:#039"/>
+<polygon stroke="url(#gate)" stroke-width="40px" fill="none" points="440,400 340,250 440,100 140,100 40,250 140,400"/>
+</svg>
