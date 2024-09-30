@@ -1462,10 +1462,6 @@ input[type="range"].range-lg::-moz-range-thumb {
   margin-right: 4rem;
 }
 
-.mb-4 {
-  margin-bottom: 1rem;
-}
-
 .mt-4 {
   margin-top: 1rem;
 }
@@ -1480,6 +1476,10 @@ input[type="range"].range-lg::-moz-range-thumb {
 
 .mb-16 {
   margin-bottom: 4rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
 }
 
 .ml-1 {
@@ -1698,12 +1698,12 @@ input[type="range"].range-lg::-moz-range-thumb {
   height: 6rem;
 }
 
-.h-screen {
-  height: 100vh;
-}
-
 .h-full {
   height: 100%;
+}
+
+.h-screen {
+  height: 100vh;
 }
 
 .h-fit {
@@ -2534,6 +2534,10 @@ input[type="range"].range-lg::-moz-range-thumb {
 
 .gap-y-8 {
   row-gap: 2rem;
+}
+
+.gap-x-8 {
+  column-gap: 2rem;
 }
 
 .space-y-4 > :not([hidden]) ~ :not([hidden]) {
