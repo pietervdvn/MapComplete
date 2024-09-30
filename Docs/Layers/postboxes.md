@@ -28,7 +28,7 @@ The layer showing postboxes.
 
 The following options to create new points are included:
 
-**a postbox** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dpost_box' target='_blank'>post_box</a>
+ - **a postbox** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dpost_box' target='_blank'>post_box</a>
 
 ## Basic tags for this layer
 

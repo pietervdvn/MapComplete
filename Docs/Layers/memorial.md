@@ -44,7 +44,7 @@ Layer showing memorial plaques, based upon a unofficial theme. Can be expanded t
 
 The following options to create new points are included:
 
-**a memorial** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:historic' target='_blank'>historic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:historic%3Dmemorial' target='_blank'>memorial</a>
+ - **a memorial** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:historic' target='_blank'>historic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:historic%3Dmemorial' target='_blank'>memorial</a>
 
 ## Basic tags for this layer
 

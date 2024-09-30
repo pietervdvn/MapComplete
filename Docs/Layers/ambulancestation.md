@@ -24,6 +24,7 @@ An ambulance station is an area for storage of ambulance vehicles, medical equip
 
 ## Themes using this layer
 
+ - [disaster_response](https://mapcomplete.org/disaster_response)
  - [hailhydrant](https://mapcomplete.org/hailhydrant)
  - [personal](https://mapcomplete.org/personal)
 
@@ -31,7 +32,7 @@ An ambulance station is an area for storage of ambulance vehicles, medical equip
 
 The following options to create new points are included:
 
-**an ambulance station** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:emergency' target='_blank'>emergency</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:emergency%3Dambulance_station' target='_blank'>ambulance_station</a>
+ - **an ambulance station** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:emergency' target='_blank'>emergency</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:emergency%3Dambulance_station' target='_blank'>ambulance_station</a>
 
 ## Basic tags for this layer
 

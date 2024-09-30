@@ -30,7 +30,7 @@ A layer showing where the reception desks are and which asks some accessibility 
 
 The following options to create new points are included:
 
-**a reception desk** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dreception_desk' target='_blank'>reception_desk</a>
+ - **a reception desk** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dreception_desk' target='_blank'>reception_desk</a>
 
 ## Basic tags for this layer
 

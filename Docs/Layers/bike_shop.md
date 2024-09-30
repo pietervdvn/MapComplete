@@ -9,8 +9,9 @@ A shop specifically selling bicycles or related items
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [reviews](#reviews)
   - [shops-name](#shops-name)
@@ -56,12 +57,18 @@ A shop specifically selling bicycles or related items
   - [move-button](#move-button)
   - [delete-button](#delete-button)
   - [lod](#lod)
-4. [Filters](#filters)
+5. [Filters](#filters)
 
 ## Themes using this layer
 
  - [cyclofix](https://mapcomplete.org/cyclofix)
  - [personal](https://mapcomplete.org/personal)
+
+## Presets
+
+The following options to create new points are included:
+
+ - **a bike repair/shop** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbicycle' target='_blank'>bicycle</a>
 
 ## Basic tags for this layer
 
@@ -299,6 +306,9 @@ The question is `What kind of shop is this?`
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/maki-shop.svg' style='width: 3rem; height: 3rem'> *Wig Shop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dwigs' target='_blank'>wigs</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-window.svg' style='width: 3rem; height: 3rem'> *Window Blind Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dwindow_blind' target='_blank'>window_blind</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/maki-alcohol-shop.svg' style='width: 3rem; height: 3rem'> *Wine Shop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dwine' target='_blank'>wine</a>
+
+This tagrendering has labels 
+`description`
 
 ### brand
 
@@ -587,7 +597,7 @@ The question is `Does this place offer internet access?`
  -  *This place offers internet access* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dyes' target='_blank'>yes</a>. _This option cannot be chosen as answer_
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/computer' style='width: 3rem; height: 3rem'> *This place offers internet access via a terminal or computer* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dterminal' target='_blank'>terminal</a>
  -  *This place offers wired internet access* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwired' target='_blank'>wired</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/computer' style='width: 3rem; height: 3rem'> *This place offers both wireless internet and internet access via a terminal or computer* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dterminal;wifi' target='_blank'>terminal;wifi</a>
+ -  *This place offers both wireless internet and internet access via a terminal or computer* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dterminal;wifi' target='_blank'>terminal;wifi</a>
 
 This tagrendering has labels 
 `internet-all`
@@ -705,30 +715,6 @@ This tagrendering has labels
 | id | question | osmTags |
 -----|-----|----- |
 | open_now.0 | Open now | _isOpen=yes |
-
-| id | question | osmTags |
------|-----|----- |
-| accepts_cash.0 | Accepts cash | payment:cash=yes |
-
-| id | question | osmTags |
------|-----|----- |
-| accepts_cards.0 | Accepts payment cards | payment:cards=yes |
-
-| id | question | osmTags |
------|-----|----- |
-| has_internet.0 | Offers internet | internet_access=wlan | internet_access=yes | internet_access=wired |
-
-| id | question | osmTags |
------|-----|----- |
-| sugar_free.0 | Has a sugar-free offering | diet:sugar_free=yes | diet:sugar_free=only | diet:sugar_free=limited |
-
-| id | question | osmTags |
------|-----|----- |
-| gluten_free.0 | Has a gluten free offering | diet:gluten_free=yes | diet:gluten_free=only | diet:gluten_free=limited |
-
-| id | question | osmTags |
------|-----|----- |
-| lactose_free.0 | Has a lactose free offering | diet:lactose_free=yes | diet:lactose_free=only | diet:lactose_free=limited |
 
 
 

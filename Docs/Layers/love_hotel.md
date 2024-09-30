@@ -32,7 +32,7 @@ A love hotel is a type of short-stay hotel found around the world operated prima
 
 The following options to create new points are included:
 
-**a love hotel** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dlove_hotel' target='_blank'>love_hotel</a>
+ - **a love hotel** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dlove_hotel' target='_blank'>love_hotel</a>
 
 ## Basic tags for this layer
 

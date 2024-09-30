@@ -32,7 +32,7 @@ Layer with all tertiary education institutes (ISCED:2011 levels 6,7 and 8)
 
 The following options to create new points are included:
 
-**a university** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Duniversity' target='_blank'>university</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:fixme' target='_blank'>fixme</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fixme%3DAdded with MapComplete, geometry to be drawn' target='_blank'>Added with MapComplete, geometry to be drawn</a>
+ - **a university** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Duniversity' target='_blank'>university</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:fixme' target='_blank'>fixme</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fixme%3DAdded with MapComplete, geometry to be drawn' target='_blank'>Added with MapComplete, geometry to be drawn</a>
 
 ## Basic tags for this layer
 

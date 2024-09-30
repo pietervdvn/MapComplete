@@ -28,6 +28,7 @@ We will complete data from advertising features with reference, operator and lit
   - [message_type](#message_type)
   - [Sides](#sides)
   - [ref](#ref)
+  - [historic](#historic)
   - [leftover-questions](#leftover-questions)
   - [move-button](#move-button)
   - [delete-button](#delete-button)
@@ -42,37 +43,22 @@ We will complete data from advertising features with reference, operator and lit
 
 The following options to create new points are included:
 
-**a billboard** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dbillboard' target='_blank'>billboard</a>
-
-**a billboard mounted to a wall** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dbillboard' target='_blank'>billboard</a> (snaps to layers `walls_and_buildings`)
-
-**a freestanding poster box** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dposter_box' target='_blank'>poster_box</a>
-
-**a poster box mounted on a wall** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dposter_box' target='_blank'>poster_box</a> (snaps to layers `walls_and_buildings`)
-
-**a poster box part of a public transport shelter** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dposter_box' target='_blank'>poster_box</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:support' target='_blank'>support</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:support%3Dstreet_furniture:transit_shelter' target='_blank'>street_furniture:transit_shelter</a> (snaps to layers `shelter`)
-
-**a board** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dboard' target='_blank'>board</a>
-
-**a column** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dcolumn' target='_blank'>column</a>
-
-**a flag** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dflag' target='_blank'>flag</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:man_made' target='_blank'>man_made</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:man_made%3Dpole' target='_blank'>pole</a>
-
-**a screen** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dscreen' target='_blank'>screen</a>
-
-**a screen mounted on a wall** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dscreen' target='_blank'>screen</a> (snaps to layers `walls_and_buildings`)
-
-**a screen mounted on a transit shelter** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dscreen' target='_blank'>screen</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:support' target='_blank'>support</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:support%3Dstreet_furniture:transit_shelter' target='_blank'>street_furniture:transit_shelter</a> (snaps to layers `shelter`)
-
-**a tarp** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dtarp' target='_blank'>tarp</a> (snaps to layers `walls_and_buildings`)
-
-**a totem** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dtotem' target='_blank'>totem</a>
-
-**a sign** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dsign' target='_blank'>sign</a> (snaps to layers `walls_and_buildings`)
-
-**a sculpture** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dsculpture' target='_blank'>sculpture</a>
-
-**a wall painting** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dwall_painting' target='_blank'>wall_painting</a> (snaps to layers `walls_and_buildings`)
+ - **a billboard** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dbillboard' target='_blank'>billboard</a>
+ - **a billboard mounted to a wall** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dbillboard' target='_blank'>billboard</a> (snaps to layers `walls_and_buildings`)
+ - **a freestanding poster box** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dposter_box' target='_blank'>poster_box</a>
+ - **a poster box mounted on a wall** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dposter_box' target='_blank'>poster_box</a> (snaps to layers `walls_and_buildings`)
+ - **a poster box part of a public transport shelter** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dposter_box' target='_blank'>poster_box</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:support' target='_blank'>support</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:support%3Dstreet_furniture:transit_shelter' target='_blank'>street_furniture:transit_shelter</a> (snaps to layers `shelter`)
+ - **a board** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dboard' target='_blank'>board</a>
+ - **a column** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dcolumn' target='_blank'>column</a>
+ - **a flag** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dflag' target='_blank'>flag</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:man_made' target='_blank'>man_made</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:man_made%3Dpole' target='_blank'>pole</a>
+ - **a screen** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dscreen' target='_blank'>screen</a>
+ - **a screen mounted on a wall** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dscreen' target='_blank'>screen</a> (snaps to layers `walls_and_buildings`)
+ - **a screen mounted on a transit shelter** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dscreen' target='_blank'>screen</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:support' target='_blank'>support</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:support%3Dstreet_furniture:transit_shelter' target='_blank'>street_furniture:transit_shelter</a> (snaps to layers `shelter`)
+ - **a tarp** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dtarp' target='_blank'>tarp</a> (snaps to layers `walls_and_buildings`)
+ - **a totem** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dtotem' target='_blank'>totem</a>
+ - **a sign** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dsign' target='_blank'>sign</a> (snaps to layers `walls_and_buildings`)
+ - **a sculpture** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dsculpture' target='_blank'>sculpture</a>
+ - **a wall painting** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dwall_painting' target='_blank'>wall_painting</a> (snaps to layers `walls_and_buildings`)
 
 ## Basic tags for this layer
 
@@ -89,11 +75,12 @@ Elements must match **all** of the following expressions:
 
 | attribute | type | values which are supported by this layer |
 -----|-----|----- |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/advertising#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/advertising/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [advertising](https://wiki.openstreetmap.org/wiki/Key:advertising) | [string](../SpecialInputElements.md#string) | [billboard](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dbillboard) [board](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dboard) [column](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dcolumn) [flag](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dflag) [poster_box](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dposter_box) [screen](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dscreen) [sculpture](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dsculpture) [sign](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dsign) [tarp](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dtarp) [totem](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dtotem) [wall_painting](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dwall_painting) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/advertising#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/advertising/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [advertising](https://wiki.openstreetmap.org/wiki/Key:advertising) | [string](../SpecialInputElements.md#string) | [billboard](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dbillboard) [board](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dboard) [column](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dcolumn) [flag](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dflag) [poster_box](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dposter_box) [screen](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dscreen) [sculpture](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dsculpture) [sign](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dsign) [tarp](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dtarp) [totem](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dtotem) [wall_painting](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dwall_painting) [tilework](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dtilework) [relief](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Drelief) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/animated#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/animated/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [animated](https://wiki.openstreetmap.org/wiki/Key:animated) | Multiple choice | [no](https://wiki.openstreetmap.org/wiki/Tag:animated%3Dno) [digital_display](https://wiki.openstreetmap.org/wiki/Tag:animated%3Ddigital_display) [trivision_blades](https://wiki.openstreetmap.org/wiki/Tag:animated%3Dtrivision_blades) [winding_posters](https://wiki.openstreetmap.org/wiki/Tag:animated%3Dwinding_posters) [revolving](https://wiki.openstreetmap.org/wiki/Tag:animated%3Drevolving) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/operator#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/operator/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [operator](https://wiki.openstreetmap.org/wiki/Key:operator) | [string](../SpecialInputElements.md#string) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/sides#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/sides/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [sides](https://wiki.openstreetmap.org/wiki/Key:sides) | Multiple choice | [1](https://wiki.openstreetmap.org/wiki/Tag:sides%3D1) [2](https://wiki.openstreetmap.org/wiki/Tag:sides%3D2) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/ref#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/ref/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [ref](https://wiki.openstreetmap.org/wiki/Key:ref) | [string](../SpecialInputElements.md#string) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/historic#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/historic/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [historic](https://wiki.openstreetmap.org/wiki/Key:historic) | Multiple choice | [advertising](https://wiki.openstreetmap.org/wiki/Tag:historic%3Dadvertising) [](https://wiki.openstreetmap.org/wiki/Tag:historic%3D) |
 
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
@@ -116,6 +103,8 @@ The question is `Which type of advertising feature is this?`
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/advertising/tarp.svg' style='width: 3rem; height: 3rem'> *This is a tarp (a weatherproof piece of textile with an advertising message)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dtarp' target='_blank'>tarp</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/advertising/totem.svg' style='width: 3rem; height: 3rem'> *This is a totem* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dtotem' target='_blank'>totem</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/advertising/wall_painting.svg' style='width: 3rem; height: 3rem'> *This is a wall painting* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dwall_painting' target='_blank'>wall_painting</a>
+ -  *This is tilework - the advertisement is painted on tiles* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dtilework' target='_blank'>tilework</a>
+ -  *This is a relief* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Drelief' target='_blank'>relief</a>
 
 ### animated
 
@@ -170,6 +159,13 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is `Wich is the reference number?`
 *Reference number is {ref}* is shown if `ref` is set
+
+### historic
+
+The question is `Is this sign for a business that no longer exists or no longer being maintained?`
+
+ -  *This is a historic advertisement sign (an advertisement for a business that no longer exists or a very old sign with heritage value)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:historic' target='_blank'>historic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:historic%3Dadvertising' target='_blank'>advertising</a>
+ -  *This advertisement sign has no historic value (the business still exists and has no heritage value)* is shown if with historic=
 
 ### leftover-questions
 

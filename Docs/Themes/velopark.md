@@ -221,7 +221,7 @@ _This tagrendering has no question and is thus read-only_
 ### nearby_images
 
 _This tagrendering has no question and is thus read-only_
-*{nearby_images(open,readonly)}*
+*{nearby_images(,readonly)}*
 
 ### no_save_needed
 
@@ -279,7 +279,7 @@ Elements must match **all** of the following expressions:
 | attribute | type | values which are supported by this layer |
 -----|-----|----- |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/ref:velopark#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/ref%3Avelopark/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [ref:velopark](https://wiki.openstreetmap.org/wiki/Key:ref:velopark) | [velopark](../SpecialInputElements.md#velopark) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/bicycle_parking#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/bicycle_parking/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [bicycle_parking](https://wiki.openstreetmap.org/wiki/Key:bicycle_parking) | [string](../SpecialInputElements.md#string) | [stands](https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dstands) [wall_loops](https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dwall_loops) [handlebar_holder](https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dhandlebar_holder) [rack](https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Drack) [two_tier](https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dtwo_tier) [shed](https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dshed) [bollard](https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dbollard) [floor](https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dfloor) [lockers](https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dlockers) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/bicycle_parking#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/bicycle_parking/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [bicycle_parking](https://wiki.openstreetmap.org/wiki/Key:bicycle_parking) | [string](../SpecialInputElements.md#string) | [stands](https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dstands) [safe_loops](https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dsafe_loops) [wall_loops](https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dwall_loops) [handlebar_holder](https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dhandlebar_holder) [rack](https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Drack) [two_tier](https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dtwo_tier) [shed](https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dshed) [bollard](https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dbollard) [floor](https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dfloor) [lockers](https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dlockers) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/location#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/location/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [location](https://wiki.openstreetmap.org/wiki/Key:location) | Multiple choice | [underground](https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground) [surface](https://wiki.openstreetmap.org/wiki/Tag:location%3Dsurface) [rooftop](https://wiki.openstreetmap.org/wiki/Tag:location%3Drooftop) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/covered#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/covered/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [covered](https://wiki.openstreetmap.org/wiki/Key:covered) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:covered%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:covered%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/capacity#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/capacity/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [capacity](https://wiki.openstreetmap.org/wiki/Key:capacity) | [nat](../SpecialInputElements.md#nat) |  |
@@ -330,6 +330,7 @@ The question is `What is the type of this bicycle parking?`
 *This is a bicycle parking of the type: {bicycle_parking}* is shown if `bicycle_parking` is set
 
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/bike_parking/staple.svg' style='width: 3rem; height: 3rem'> *Stands* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dstands' target='_blank'>stands</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/bike_parking/safe_loops.svg' style='width: 3rem; height: 3rem'> *Rack with side loops* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dsafe_loops' target='_blank'>safe_loops</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/bike_parking/wall_loops.svg' style='width: 3rem; height: 3rem'> *Wheelbenders / rack* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dwall_loops' target='_blank'>wall_loops</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/bike_parking/handlebar_holder.svg' style='width: 3rem; height: 3rem'> *Handlebar holder* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dhandlebar_holder' target='_blank'>handlebar_holder</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/bike_parking/rack.svg' style='width: 3rem; height: 3rem'> *Rack* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Drack' target='_blank'>rack</a>
@@ -472,13 +473,13 @@ This tagrendering is only visible in the popup if the following condition is met
 
 ## Filters
 
-| id | question | osmTags | fields |
------|-----|-----|----- |
-| last_edited_before.0 | Last edit was before {date} |  | date (date) |
-
 | id | question | osmTags |
 -----|-----|----- |
 | open_now.0 | Open now | _isOpen=yes |
+
+| id | question | osmTags | fields |
+-----|-----|-----|----- |
+| last_edited_before.0 | Last edit was before {date} |  | date (date) |
 
 
 

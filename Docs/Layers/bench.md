@@ -49,7 +49,7 @@ A bench is a wooden, metal, stone, … surface where a human can sit. This layer
 
 The following options to create new points are included:
 
-**a bench** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbench' target='_blank'>bench</a>
+ - **a bench** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbench' target='_blank'>bench</a>
 
 ## Basic tags for this layer
 

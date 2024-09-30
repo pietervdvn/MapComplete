@@ -13,58 +13,60 @@ This is a special layer - data is not sourced from OpenStreetMap
 
 ## Table of contents
 
-1. [questions](#questions)
-2. [images](#images)
-3. [mapillary](#mapillary)
-4. [export_as_gpx](#export_as_gpx)
-5. [export_as_geojson](#export_as_geojson)
-6. [wikipedia](#wikipedia)
-7. [reviews](#reviews)
-8. [phone](#phone)
-9. [mastodon](#mastodon)
-10. [facebook](#facebook)
-11. [osmlink](#osmlink)
-12. [email](#email)
-13. [website](#website)
-14. [wheelchair-access](#wheelchair-access)
-15. [dog-access](#dog-access)
-16. [description](#description)
-17. [opening_hours](#opening_hours)
-18. [Opening hours](#opening-hours)
-19. [opening_hours_24_7](#opening_hours_24_7)
-20. [Opening hours](#opening-hours)
-21. [opening_hours_24_7_default](#opening_hours_24_7_default)
-22. [Opening hours](#opening-hours)
-23. [opening_hours_by_appointment](#opening_hours_by_appointment)
-24. [Opening hours](#opening-hours)
-25. [service:electricity](#serviceelectricity)
-26. [payment-options](#payment-options)
-27. [payment-options-split](#payment-options-split)
-28. [payment-options-advanced](#payment-options-advanced)
-29. [denominations-coins](#denominations-coins)
-30. [denominations-notes](#denominations-notes)
-31. [all_tags](#all_tags)
-32. [multilevels](#multilevels)
-33. [repeated](#repeated)
-34. [single_level](#single_level)
-35. [smoking](#smoking)
-36. [induction-loop](#induction-loop)
-37. [internet](#internet)
-38. [internet-fee](#internet-fee)
-39. [internet-ssid](#internet-ssid)
-40. [luminous_or_lit](#luminous_or_lit)
-41. [survey_date](#survey_date)
-42. [check_date](#check_date)
-43. [sugar_free](#sugar_free)
-44. [lactose_free](#lactose_free)
-45. [gluten_free](#gluten_free)
-46. [vegan](#vegan)
-47. [lod](#lod)
-48. [split_button](#split_button)
-49. [seasonal](#seasonal)
-50. [shower](#shower)
-51. [preset_description](#preset_description)
-52. [brand](#brand)
+1. [Supported attributes](#supported-attributes)
+  - [questions](#questions)
+  - [images](#images)
+  - [mapillary](#mapillary)
+  - [export_as_gpx](#export_as_gpx)
+  - [export_as_geojson](#export_as_geojson)
+  - [wikipedia](#wikipedia)
+  - [reviews](#reviews)
+  - [phone](#phone)
+  - [mastodon](#mastodon)
+  - [facebook](#facebook)
+  - [osmlink](#osmlink)
+  - [email](#email)
+  - [website](#website)
+  - [wheelchair-access](#wheelchair-access)
+  - [dog-access](#dog-access)
+  - [description](#description)
+  - [opening_hours](#opening_hours)
+  - [Opening hours](#opening-hours)
+  - [opening_hours_24_7](#opening_hours_24_7)
+  - [Opening hours](#opening-hours)
+  - [opening_hours_24_7_default](#opening_hours_24_7_default)
+  - [Opening hours](#opening-hours)
+  - [opening_hours_by_appointment](#opening_hours_by_appointment)
+  - [Opening hours](#opening-hours)
+  - [service:electricity](#serviceelectricity)
+  - [payment-options](#payment-options)
+  - [payment-options-split](#payment-options-split)
+  - [payment-options-advanced](#payment-options-advanced)
+  - [denominations-coins](#denominations-coins)
+  - [denominations-notes](#denominations-notes)
+  - [all_tags](#all_tags)
+  - [multilevels](#multilevels)
+  - [repeated](#repeated)
+  - [single_level](#single_level)
+  - [smoking](#smoking)
+  - [induction-loop](#induction-loop)
+  - [internet](#internet)
+  - [internet-fee](#internet-fee)
+  - [internet-ssid](#internet-ssid)
+  - [luminous_or_lit](#luminous_or_lit)
+  - [survey_date](#survey_date)
+  - [check_date](#check_date)
+  - [sugar_free](#sugar_free)
+  - [lactose_free](#lactose_free)
+  - [gluten_free](#gluten_free)
+  - [vegan](#vegan)
+  - [lod](#lod)
+  - [split_button](#split_button)
+  - [seasonal](#seasonal)
+  - [shower](#shower)
+  - [preset_description](#preset_description)
+  - [brand](#brand)
+2. [Filters](#filters)
 
 ## Supported attributes
 
@@ -92,7 +94,7 @@ This is a special layer - data is not sourced from OpenStreetMap
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/level#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/level/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [level](https://wiki.openstreetmap.org/wiki/Key:level) | [float](../SpecialInputElements.md#float) | [0](https://wiki.openstreetmap.org/wiki/Tag:level%3D0) [1](https://wiki.openstreetmap.org/wiki/Tag:level%3D1) [-1](https://wiki.openstreetmap.org/wiki/Tag:level%3D-1) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/smoking#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/smoking/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [smoking](https://wiki.openstreetmap.org/wiki/Key:smoking) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:smoking%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:smoking%3Dno) [outside](https://wiki.openstreetmap.org/wiki/Tag:smoking%3Doutside) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/hearing_loop#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/hearing_loop/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [hearing_loop](https://wiki.openstreetmap.org/wiki/Key:hearing_loop) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:hearing_loop%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:hearing_loop%3Dno) |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/internet_access#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/internet_access/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [internet_access](https://wiki.openstreetmap.org/wiki/Key:internet_access) | Multiple choice | [wlan](https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwlan) [no](https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dno) [terminal](https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dterminal) [wired](https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwired) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/internet_access#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/internet_access/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [internet_access](https://wiki.openstreetmap.org/wiki/Key:internet_access) | Multiple choice | [wlan](https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwlan) [no](https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dno) [terminal](https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dterminal) [wired](https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwired) [terminal;wifi](https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dterminal;wifi) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/internet_access:fee#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/internet_access%3Afee/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [internet_access:fee](https://wiki.openstreetmap.org/wiki/Key:internet_access:fee) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dno) [customers](https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dcustomers) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/internet_access:ssid#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/internet_access%3Assid/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [internet_access:ssid](https://wiki.openstreetmap.org/wiki/Key:internet_access:ssid) | [string](../SpecialInputElements.md#string) | [Telekom](https://wiki.openstreetmap.org/wiki/Tag:internet_access:ssid%3DTelekom) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/survey:date#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/survey%3Adate/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [survey:date](https://wiki.openstreetmap.org/wiki/Key:survey:date) | [date](../SpecialInputElements.md#date) | [](https://wiki.openstreetmap.org/wiki/Tag:survey:date%3D) |
@@ -391,6 +393,7 @@ The question is `Does this place offer internet access?`
  -  *This place offers internet access* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dyes' target='_blank'>yes</a>. _This option cannot be chosen as answer_
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/computer' style='width: 3rem; height: 3rem'> *This place offers internet access via a terminal or computer* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dterminal' target='_blank'>terminal</a>
  -  *This place offers wired internet access* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwired' target='_blank'>wired</a>
+ -  *This place offers both wireless internet and internet access via a terminal or computer* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dterminal;wifi' target='_blank'>terminal;wifi</a>
 
 This tagrendering has labels 
 `internet-all`
@@ -530,6 +533,42 @@ The question is `Is {title()} part of a bigger brand?`
 *Part of {brand}* is shown if `brand` is set
 
  -  *Not part of a bigger brand* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:nobrand' target='_blank'>nobrand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:nobrand%3Dyes' target='_blank'>yes</a>
+
+## Filters
+
+| id | question | osmTags |
+-----|-----|----- |
+| dogs.0 | *No preference towards dogs* (default) |  |
+| dogs.1 | Dogs allowed | dog=unleashed | dog=yes |
+| dogs.2 | No dogs allowed | dog=no |
+
+| id | question | osmTags |
+-----|-----|----- |
+| open_now.0 | Open now | _isOpen=yes |
+
+| id | question | osmTags |
+-----|-----|----- |
+| accepts_cash.0 | Accepts cash | payment:cash=yes |
+
+| id | question | osmTags |
+-----|-----|----- |
+| accepts_cards.0 | Accepts payment cards | payment:cards=yes |
+
+| id | question | osmTags |
+-----|-----|----- |
+| has_internet.0 | Offers internet | internet_access=wlan | internet_access=yes | internet_access=wired |
+
+| id | question | osmTags |
+-----|-----|----- |
+| sugar_free.0 | Has a sugar-free offering | diet:sugar_free=yes | diet:sugar_free=only | diet:sugar_free=limited |
+
+| id | question | osmTags |
+-----|-----|----- |
+| lactose_free.0 | Has a lactose free offering | diet:lactose_free=yes | diet:lactose_free=only | diet:lactose_free=limited |
+
+| id | question | osmTags |
+-----|-----|----- |
+| gluten_free.0 | Has a gluten free offering | diet:gluten_free=yes | diet:gluten_free=only | diet:gluten_free=limited |
 
 
 

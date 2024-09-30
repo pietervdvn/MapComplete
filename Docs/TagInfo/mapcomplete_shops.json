@@ -1254,6 +1254,11 @@
       "value": "wired"
     },
     {
+      "key": "internet_access",
+      "description": "Layer 'Shop' shows internet_access=terminal;wifi with a fixed text, namely 'This place offers both wireless internet and internet access via a terminal or computer' and allows to pick this as a default answer (in the mapcomplete.org theme 'Shops')",
+      "value": "terminal;wifi"
+    },
+    {
       "key": "internet_access:fee",
       "description": "Layer 'Shop' shows internet_access:fee=yes with a fixed text, namely 'There is a fee for the internet access at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'Shops') (This is only shown if internet_access!=no & internet_access~.+)",
       "value": "yes"
@@ -1421,6 +1426,21 @@
     {
       "key": "contact:website",
       "description": "Layer 'Pharmacies' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the mapcomplete.org theme 'Shops')"
+    },
+    {
+      "key": "payment:cash",
+      "description": "Layer 'Pharmacies' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Shops')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:cards",
+      "description": "Layer 'Pharmacies' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Shops')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:qr_code",
+      "description": "Layer 'Pharmacies' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Shops')",
+      "value": "yes"
     },
     {
       "key": "wheelchair",

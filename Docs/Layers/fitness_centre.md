@@ -37,7 +37,7 @@ Layer showing fitness centres
 
 The following options to create new points are included:
 
-**a fitness centre** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dfitness_centre' target='_blank'>fitness_centre</a>
+ - **a fitness centre** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dfitness_centre' target='_blank'>fitness_centre</a>
 
 ## Basic tags for this layer
 

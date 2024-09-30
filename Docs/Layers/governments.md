@@ -30,7 +30,7 @@ This layer show governmental buildings. It was setup as commissioned layer for t
 
 The following options to create new points are included:
 
-**a Governmental Office** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:office' target='_blank'>office</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:office%3Dgovernment' target='_blank'>government</a>
+ - **a Governmental Office** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:office' target='_blank'>office</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:office%3Dgovernment' target='_blank'>government</a>
 
 ## Basic tags for this layer
 

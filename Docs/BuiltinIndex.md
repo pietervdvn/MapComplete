@@ -19,6 +19,7 @@
  - bbq
  - bench
  - bench_at_pt
+ - bicycle_counter
  - bicycle_library
  - bicycle_rental
  - bike_cafe
@@ -59,6 +60,7 @@
  - food
  - food_courts
  - ghost_bike
+ - ghostsign
  - governments
  - grave
  - guidepost
@@ -87,6 +89,7 @@
  - play_forest
  - playground
  - playground_equipment
+ - police
  - postboxes
  - postoffices
  - public_bookcase
@@ -147,6 +150,7 @@
  - ice_cream
  - kindergarten_childcare
  - pharmacy
+ - police
  - postoffices
  - questions
  - questions
@@ -175,6 +179,7 @@
  - love_hotel
  - pharmacy
  - playground
+ - police
  - shops
  - stripclub
  - tourism_accomodation
@@ -206,7 +211,6 @@
  - nature_reserve
  - observation_tower
  - outdoor_seating
- - pharmacy
  - physiotherapist
  - playground
  - recycling
@@ -238,7 +242,6 @@
  - governments
  - hackerspace
  - kindergarten_childcare
- - pharmacy
  - physiotherapist
  - recycling
  - school
@@ -266,7 +269,6 @@
  - governments
  - hackerspace
  - kindergarten_childcare
- - pharmacy
  - physiotherapist
  - recycling
  - school
@@ -312,6 +314,8 @@
  - hospital
  - ice_cream
  - love_hotel
+ - pharmacy
+ - police
  - stripclub
  - tool_library
  - tourism_accomodation
@@ -368,6 +372,7 @@
  - food
  - ice_cream
  - observation_tower
+ - pharmacy
  - questions
  - questions
  - shops
@@ -523,6 +528,7 @@
 
              - cycle_highways
  - fixme
+ - search
  - summary
             
             ### seasonal
@@ -582,6 +588,14 @@
              - food
  - shops
             
+            ### advertising.historic
+
+             - ghostsign
+            
+            ### advertising.type
+
+             - ghostsign
+            
             ### export_as_gpx
 
              - gps_track
@@ -617,6 +631,11 @@
              - parking_ticket_machine
  - ticket_machine
  - vending_machine
+            
+            ### {preset_type_select()}
+
+             - police
+ - tourism_accomodation
             
             ### single_level
 
@@ -677,10 +696,6 @@
             ### toilet.menstrual_products_location
 
              - toilet_at_amenity
-            
-            ### {preset_type_select()}
-
-             - tourism_accomodation
             
             ### brand
 

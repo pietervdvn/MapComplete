@@ -30,7 +30,7 @@ Layer showing speed cameras
 
 The following options to create new points are included:
 
-**a speed camera** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dspeed_camera' target='_blank'>speed_camera</a>
+ - **a speed camera** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dspeed_camera' target='_blank'>speed_camera</a>
 
 ## Basic tags for this layer
 

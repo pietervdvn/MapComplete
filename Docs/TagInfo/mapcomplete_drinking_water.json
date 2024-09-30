@@ -51,7 +51,12 @@
     },
     {
       "key": "operational_status",
-      "description": "Layer 'Drinking water' shows operational_status= with a fixed text, namely 'This drinking water works' and allows to pick this as a default answer (in the mapcomplete.org theme 'Drinking Water') Picking this answer will delete the key operational_status.",
+      "description": "Layer 'Drinking water' shows operational_status= & disused:amenity= with a fixed text, namely 'This drinking water works' and allows to pick this as a default answer (in the mapcomplete.org theme 'Drinking Water') Picking this answer will delete the key operational_status.",
+      "value": ""
+    },
+    {
+      "key": "disused:amenity",
+      "description": "Layer 'Drinking water' shows operational_status= & disused:amenity= with a fixed text, namely 'This drinking water works' and allows to pick this as a default answer (in the mapcomplete.org theme 'Drinking Water') Picking this answer will delete the key disused:amenity.",
       "value": ""
     },
     {
@@ -63,6 +68,11 @@
       "key": "operational_status",
       "description": "Layer 'Drinking water' shows operational_status=closed with a fixed text, namely 'This drinking water is closed' and allows to pick this as a default answer (in the mapcomplete.org theme 'Drinking Water')",
       "value": "closed"
+    },
+    {
+      "key": "disused:amenity",
+      "description": "Layer 'Drinking water' shows disused:amenity=drinking_water with a fixed text, namely 'This drinking water is permanently closed' and allows to pick this as a default answer (in the mapcomplete.org theme 'Drinking Water')",
+      "value": "drinking_water"
     },
     {
       "key": "fountain",

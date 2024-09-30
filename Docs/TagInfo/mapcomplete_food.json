@@ -161,78 +161,98 @@
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Restaurants and fast food' shows cuisine=pizza with a fixed text, namely 'This is a pizzeria' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=pizza with a fixed text, namely 'Pizzeria' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
       "value": "pizza"
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Restaurants and fast food' shows cuisine=friture with a fixed text, namely 'This is a friture' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=friture with a fixed text, namely 'Friture' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
       "value": "friture"
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Restaurants and fast food' shows cuisine=pasta with a fixed text, namely 'Mainly serves pasta' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=pasta with a fixed text, namely 'Serves mainly pasta' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
       "value": "pasta"
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Restaurants and fast food' shows cuisine=kebab with a fixed text, namely 'This is kebab shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=kebab with a fixed text, namely 'Kebab shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
       "value": "kebab"
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Restaurants and fast food' shows cuisine=sandwich with a fixed text, namely 'This is a sandwich shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=sandwich with a fixed text, namely 'Sandwich shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
       "value": "sandwich"
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Restaurants and fast food' shows cuisine=burger with a fixed text, namely 'Burgers are served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=burger with a fixed text, namely 'Burgersrestaurant' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
       "value": "burger"
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Restaurants and fast food' shows cuisine=sushi with a fixed text, namely 'Sushi is served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=sushi with a fixed text, namely 'Sushi restaurant' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
       "value": "sushi"
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Restaurants and fast food' shows cuisine=coffee with a fixed text, namely 'Coffee is served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=coffee with a fixed text, namely 'Coffeebar' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
       "value": "coffee"
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Restaurants and fast food' shows cuisine=italian with a fixed text, namely 'This is an Italian restaurant (which serves more than pasta and pizza)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=italian with a fixed text, namely 'Italian restaurant (which serves more than pasta and pizza)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
       "value": "italian"
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Restaurants and fast food' shows cuisine=french with a fixed text, namely 'French dishes are served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=french with a fixed text, namely 'French restaurant' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
       "value": "french"
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Restaurants and fast food' shows cuisine=chinese with a fixed text, namely 'Chinese dishes are served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=chinese with a fixed text, namely 'Chinese' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
       "value": "chinese"
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Restaurants and fast food' shows cuisine=greek with a fixed text, namely 'Greek dishes are served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=greek with a fixed text, namely 'Greek' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
       "value": "greek"
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Restaurants and fast food' shows cuisine=indian with a fixed text, namely 'Indian dishes are served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=indian with a fixed text, namely 'Indian' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
       "value": "indian"
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Restaurants and fast food' shows cuisine=turkish with a fixed text, namely 'Turkish dishes are served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=turkish with a fixed text, namely 'Turkish restaurant' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
       "value": "turkish"
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Restaurants and fast food' shows cuisine=thai with a fixed text, namely 'Thai dishes are served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=thai with a fixed text, namely 'Thai restaurant' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
       "value": "thai"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=mexican   with a fixed text, namely 'Mexican dishes are served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "mexican  "
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=japanese   with a fixed text, namely 'Japanese dishes are served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "japanese  "
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=chicken   with a fixed text, namely 'Chicken based dishes are served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "chicken  "
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=seafood   with a fixed text, namely 'Seafood dishes are served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "seafood  "
     },
     {
       "key": "image",
@@ -616,6 +636,11 @@
       "value": "wired"
     },
     {
+      "key": "internet_access",
+      "description": "Layer 'Restaurants and fast food' shows internet_access=terminal;wifi with a fixed text, namely 'This place offers both wireless internet and internet access via a terminal or computer' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "terminal;wifi"
+    },
+    {
       "key": "internet_access:fee",
       "description": "Layer 'Restaurants and fast food' shows internet_access:fee=yes with a fixed text, namely 'There is a fee for the internet access at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if internet_access!=no & internet_access~.+)",
       "value": "yes"
@@ -936,6 +961,11 @@
       "key": "internet_access",
       "description": "Layer 'Outdoor Seating' shows internet_access=wired with a fixed text, namely 'This place offers wired internet access' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
       "value": "wired"
+    },
+    {
+      "key": "internet_access",
+      "description": "Layer 'Outdoor Seating' shows internet_access=terminal;wifi with a fixed text, namely 'This place offers both wireless internet and internet access via a terminal or computer' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "terminal;wifi"
     },
     {
       "key": "internet_access:fee",

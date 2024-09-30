@@ -34,7 +34,7 @@ This layer shows dentist offices
 
 The following options to create new points are included:
 
-**a dentists office** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Ddentist' target='_blank'>dentist</a>
+ - **a dentists office** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Ddentist' target='_blank'>dentist</a>
 
 ## Basic tags for this layer
 

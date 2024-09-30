@@ -1886,7 +1886,12 @@
     },
     {
       "key": "operational_status",
-      "description": "Layer 'Drinking water' shows operational_status= with a fixed text, namely 'This drinking water works' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') Picking this answer will delete the key operational_status.",
+      "description": "Layer 'Drinking water' shows operational_status= & disused:amenity= with a fixed text, namely 'This drinking water works' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') Picking this answer will delete the key operational_status.",
+      "value": ""
+    },
+    {
+      "key": "disused:amenity",
+      "description": "Layer 'Drinking water' shows operational_status= & disused:amenity= with a fixed text, namely 'This drinking water works' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') Picking this answer will delete the key disused:amenity.",
       "value": ""
     },
     {
@@ -1898,6 +1903,11 @@
       "key": "operational_status",
       "description": "Layer 'Drinking water' shows operational_status=closed with a fixed text, namely 'This drinking water is closed' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
       "value": "closed"
+    },
+    {
+      "key": "disused:amenity",
+      "description": "Layer 'Drinking water' shows disused:amenity=drinking_water with a fixed text, namely 'This drinking water is permanently closed' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "value": "drinking_water"
     },
     {
       "key": "fountain",
@@ -2620,6 +2630,11 @@
       "key": "bicycle_parking",
       "description": "Layer 'Bike parking' shows bicycle_parking=stands with a fixed text, namely 'Stands' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
       "value": "stands"
+    },
+    {
+      "key": "bicycle_parking",
+      "description": "Layer 'Bike parking' shows bicycle_parking=safe_loops with a fixed text, namely 'Rack with side loops' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "value": "safe_loops"
     },
     {
       "key": "bicycle_parking",
@@ -4408,6 +4423,11 @@
     },
     {
       "key": "vending",
+      "description": "Layer 'Vending Machines' shows vending=ice_cream with a fixed text, namely 'Ice cream is sold' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "value": "ice_cream"
+    },
+    {
+      "key": "vending",
       "description": "Layer 'Vending Machines' shows vending=cheese with a fixed text, namely 'Cheese is sold' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
       "value": "cheese"
     },
@@ -4749,6 +4769,82 @@
     {
       "key": "operational_status",
       "description": "Layer 'Vending Machines' shows operational_status~.+ with a fixed text, namely 'The operational status is <i>{operational_status}</i>' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "man_made",
+      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bicycle counters showing features with this tag",
+      "value": "monitoring_station"
+    },
+    {
+      "key": "monitoring:bicycle",
+      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bicycle counters showing features with this tag",
+      "value": "yes"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Bicycle counters' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Bicycle counters allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Bicycle counters allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Bicycle counters allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Bicycle counters allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "display",
+      "description": "Layer 'Bicycle counters' shows display=digital with a fixed text, namely 'This counter has a digital display' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "value": "digital"
+    },
+    {
+      "key": "display",
+      "description": "Layer 'Bicycle counters' shows display=analog with a fixed text, namely 'This counter has an analog display' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "value": "analog"
+    },
+    {
+      "key": "display",
+      "description": "Layer 'Bicycle counters' shows display=no with a fixed text, namely 'This counter has no display' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "value": "no"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Bicycle counters' shows and asks freeform values for key 'name' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "start_date",
+      "description": "Layer 'Bicycle counters' shows and asks freeform values for key 'start_date' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "amenity",
+      "description": "Layer 'Bicycle counters' shows amenity=clock with a fixed text, namely 'This counter has a clock' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "value": "clock"
+    },
+    {
+      "key": "amenity",
+      "description": "Layer 'Bicycle counters' shows amenity= with a fixed text, namely 'This counter has no clock' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') Picking this answer will delete the key amenity.",
+      "value": ""
+    },
+    {
+      "key": "ref",
+      "description": "Layer 'Bicycle counters' shows and asks freeform values for key 'ref' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
+    },
+    {
+      "key": "noref",
+      "description": "Layer 'Bicycle counters' shows noref=yes with a fixed text, namely 'This counter has no reference number' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Bicycle counters' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')"
     }
   ]
 }

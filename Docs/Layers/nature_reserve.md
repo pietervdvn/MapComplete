@@ -39,7 +39,7 @@ A nature reserve is an area where nature can take its course
 
 The following options to create new points are included:
 
-**a nature reserve** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dnature_reserve' target='_blank'>nature_reserve</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:fixme' target='_blank'>fixme</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fixme%3DToegevoegd met MapComplete, geometry nog uit te tekenen' target='_blank'>Toegevoegd met MapComplete, geometry nog uit te tekenen</a>
+ - **a nature reserve** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dnature_reserve' target='_blank'>nature_reserve</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:fixme' target='_blank'>fixme</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fixme%3DToegevoegd met MapComplete, geometry nog uit te tekenen' target='_blank'>Toegevoegd met MapComplete, geometry nog uit te tekenen</a>
 
 ## Basic tags for this layer
 

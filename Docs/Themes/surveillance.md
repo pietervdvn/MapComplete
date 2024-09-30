@@ -10,6 +10,7 @@ This theme contains the following layers:
 
  - [surveillance_camera](../Layers/surveillance_camera.md)
  - [speed_camera](../Layers/speed_camera.md)
+ - [police](../Layers/police.md)
  - [walls_and_buildings](../Layers/walls_and_buildings.md)
 
 Available languages:

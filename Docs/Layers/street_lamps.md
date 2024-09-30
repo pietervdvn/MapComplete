@@ -36,7 +36,7 @@ A layer showing street lights
 
 The following options to create new points are included:
 
-**a street lamp** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dstreet_lamp' target='_blank'>street_lamp</a>
+ - **a street lamp** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dstreet_lamp' target='_blank'>street_lamp</a>
 
 ## Basic tags for this layer
 

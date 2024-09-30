@@ -35,7 +35,7 @@ This is a public waste basket, thrash can, where you can throw away your thrash.
 
 The following options to create new points are included:
 
-**a waste basket** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dwaste_basket' target='_blank'>waste_basket</a>
+ - **a waste basket** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dwaste_basket' target='_blank'>waste_basket</a>
 
 ## Basic tags for this layer
 

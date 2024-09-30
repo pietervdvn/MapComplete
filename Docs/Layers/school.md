@@ -38,7 +38,7 @@ Schools giving primary and secondary education and post-secondary, non-tertiary 
 
 The following options to create new points are included:
 
-**a primary or secondary school** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dschool' target='_blank'>school</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:fixme' target='_blank'>fixme</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fixme%3DAdded with MapComplete, the precise geometry should still be drawn' target='_blank'>Added with MapComplete, the precise geometry should still be drawn</a>
+ - **a primary or secondary school** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dschool' target='_blank'>school</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:fixme' target='_blank'>fixme</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fixme%3DAdded with MapComplete, the precise geometry should still be drawn' target='_blank'>Added with MapComplete, the precise geometry should still be drawn</a>
 
 ## Basic tags for this layer
 

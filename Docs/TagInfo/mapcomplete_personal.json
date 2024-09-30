@@ -94,6 +94,16 @@
       "value": "wall_painting"
     },
     {
+      "key": "advertising",
+      "description": "Layer 'Advertisement' shows advertising=tilework with a fixed text, namely 'This is tilework - the advertisement is painted on tiles' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "tilework"
+    },
+    {
+      "key": "advertising",
+      "description": "Layer 'Advertisement' shows advertising=relief with a fixed text, namely 'This is a relief' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "relief"
+    },
+    {
       "key": "animated",
       "description": "Layer 'Advertisement' shows animated=no with a fixed text, namely '<b>Static</b>, always shows the same message' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if advertising!=screen & advertising!=flag & advertising!=tarp & advertising!=wall_painting & advertising!=sign & advertising!=board)",
       "value": "no"
@@ -220,6 +230,16 @@
     {
       "key": "ref",
       "description": "Layer 'Advertisement' shows and asks freeform values for key 'ref' (in the mapcomplete.org theme 'Personal theme') (This is only shown if advertising!=sign)"
+    },
+    {
+      "key": "historic",
+      "description": "Layer 'Advertisement' shows historic=advertising with a fixed text, namely 'This is a historic advertisement sign (an advertisement for a business that no longer exists or a very old sign with heritage value)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "advertising"
+    },
+    {
+      "key": "historic",
+      "description": "Layer 'Advertisement' shows historic= with a fixed text, namely 'This advertisement sign has no historic value (the business still exists and has no heritage value)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') Picking this answer will delete the key historic.",
+      "value": ""
     },
     {
       "key": "aerialway",
@@ -1764,6 +1784,82 @@
       "value": "no"
     },
     {
+      "key": "man_made",
+      "description": "The MapComplete theme Personal theme has a layer Bicycle counters showing features with this tag",
+      "value": "monitoring_station"
+    },
+    {
+      "key": "monitoring:bicycle",
+      "description": "The MapComplete theme Personal theme has a layer Bicycle counters showing features with this tag",
+      "value": "yes"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Bicycle counters' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Personal theme') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Bicycle counters allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Bicycle counters allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Bicycle counters allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Bicycle counters allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "display",
+      "description": "Layer 'Bicycle counters' shows display=digital with a fixed text, namely 'This counter has a digital display' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "digital"
+    },
+    {
+      "key": "display",
+      "description": "Layer 'Bicycle counters' shows display=analog with a fixed text, namely 'This counter has an analog display' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "analog"
+    },
+    {
+      "key": "display",
+      "description": "Layer 'Bicycle counters' shows display=no with a fixed text, namely 'This counter has no display' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Bicycle counters' shows and asks freeform values for key 'name' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "start_date",
+      "description": "Layer 'Bicycle counters' shows and asks freeform values for key 'start_date' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "amenity",
+      "description": "Layer 'Bicycle counters' shows amenity=clock with a fixed text, namely 'This counter has a clock' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "clock"
+    },
+    {
+      "key": "amenity",
+      "description": "Layer 'Bicycle counters' shows amenity= with a fixed text, namely 'This counter has no clock' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') Picking this answer will delete the key amenity.",
+      "value": ""
+    },
+    {
+      "key": "ref",
+      "description": "Layer 'Bicycle counters' shows and asks freeform values for key 'ref' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "noref",
+      "description": "Layer 'Bicycle counters' shows noref=yes with a fixed text, namely 'This counter has no reference number' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Bicycle counters' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
       "key": "amenity",
       "description": "The MapComplete theme Personal theme has a layer Bicycle library showing features with this tag",
       "value": "bicycle_library"
@@ -2341,6 +2437,11 @@
       "key": "bicycle_parking",
       "description": "Layer 'Bike parking' shows bicycle_parking=stands with a fixed text, namely 'Stands' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "stands"
+    },
+    {
+      "key": "bicycle_parking",
+      "description": "Layer 'Bike parking' shows bicycle_parking=safe_loops with a fixed text, namely 'Rack with side loops' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "safe_loops"
     },
     {
       "key": "bicycle_parking",
@@ -4638,6 +4739,11 @@
       "value": "wired"
     },
     {
+      "key": "internet_access",
+      "description": "Layer 'Cafés and pubs' shows internet_access=terminal;wifi with a fixed text, namely 'This place offers both wireless internet and internet access via a terminal or computer' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "terminal;wifi"
+    },
+    {
       "key": "internet_access:fee",
       "description": "Layer 'Cafés and pubs' shows internet_access:fee=yes with a fixed text, namely 'There is a fee for the internet access at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if internet_access!=no & internet_access~.+)",
       "value": "yes"
@@ -6775,6 +6881,11 @@
       "value": "wired"
     },
     {
+      "key": "internet_access",
+      "description": "Layer 'Climbing gyms' shows internet_access=terminal;wifi with a fixed text, namely 'This place offers both wireless internet and internet access via a terminal or computer' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "terminal;wifi"
+    },
+    {
       "key": "internet_access:fee",
       "description": "Layer 'Climbing gyms' shows internet_access:fee=yes with a fixed text, namely 'There is a fee for the internet access at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if internet_access!=no & internet_access~.+)",
       "value": "yes"
@@ -8344,7 +8455,12 @@
     },
     {
       "key": "operational_status",
-      "description": "Layer 'Drinking water' shows operational_status= with a fixed text, namely 'This drinking water works' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') Picking this answer will delete the key operational_status.",
+      "description": "Layer 'Drinking water' shows operational_status= & disused:amenity= with a fixed text, namely 'This drinking water works' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') Picking this answer will delete the key operational_status.",
+      "value": ""
+    },
+    {
+      "key": "disused:amenity",
+      "description": "Layer 'Drinking water' shows operational_status= & disused:amenity= with a fixed text, namely 'This drinking water works' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') Picking this answer will delete the key disused:amenity.",
       "value": ""
     },
     {
@@ -8356,6 +8472,11 @@
       "key": "operational_status",
       "description": "Layer 'Drinking water' shows operational_status=closed with a fixed text, namely 'This drinking water is closed' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "closed"
+    },
+    {
+      "key": "disused:amenity",
+      "description": "Layer 'Drinking water' shows disused:amenity=drinking_water with a fixed text, namely 'This drinking water is permanently closed' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "drinking_water"
     },
     {
       "key": "fountain",
@@ -10004,78 +10125,98 @@
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Restaurants and fast food' shows cuisine=pizza with a fixed text, namely 'This is a pizzeria' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=pizza with a fixed text, namely 'Pizzeria' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "pizza"
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Restaurants and fast food' shows cuisine=friture with a fixed text, namely 'This is a friture' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=friture with a fixed text, namely 'Friture' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "friture"
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Restaurants and fast food' shows cuisine=pasta with a fixed text, namely 'Mainly serves pasta' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=pasta with a fixed text, namely 'Serves mainly pasta' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "pasta"
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Restaurants and fast food' shows cuisine=kebab with a fixed text, namely 'This is kebab shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=kebab with a fixed text, namely 'Kebab shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "kebab"
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Restaurants and fast food' shows cuisine=sandwich with a fixed text, namely 'This is a sandwich shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=sandwich with a fixed text, namely 'Sandwich shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "sandwich"
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Restaurants and fast food' shows cuisine=burger with a fixed text, namely 'Burgers are served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=burger with a fixed text, namely 'Burgersrestaurant' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "burger"
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Restaurants and fast food' shows cuisine=sushi with a fixed text, namely 'Sushi is served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=sushi with a fixed text, namely 'Sushi restaurant' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "sushi"
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Restaurants and fast food' shows cuisine=coffee with a fixed text, namely 'Coffee is served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=coffee with a fixed text, namely 'Coffeebar' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "coffee"
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Restaurants and fast food' shows cuisine=italian with a fixed text, namely 'This is an Italian restaurant (which serves more than pasta and pizza)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=italian with a fixed text, namely 'Italian restaurant (which serves more than pasta and pizza)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "italian"
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Restaurants and fast food' shows cuisine=french with a fixed text, namely 'French dishes are served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=french with a fixed text, namely 'French restaurant' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "french"
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Restaurants and fast food' shows cuisine=chinese with a fixed text, namely 'Chinese dishes are served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=chinese with a fixed text, namely 'Chinese' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "chinese"
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Restaurants and fast food' shows cuisine=greek with a fixed text, namely 'Greek dishes are served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=greek with a fixed text, namely 'Greek' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "greek"
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Restaurants and fast food' shows cuisine=indian with a fixed text, namely 'Indian dishes are served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=indian with a fixed text, namely 'Indian' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "indian"
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Restaurants and fast food' shows cuisine=turkish with a fixed text, namely 'Turkish dishes are served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=turkish with a fixed text, namely 'Turkish restaurant' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "turkish"
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Restaurants and fast food' shows cuisine=thai with a fixed text, namely 'Thai dishes are served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=thai with a fixed text, namely 'Thai restaurant' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "thai"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=mexican   with a fixed text, namely 'Mexican dishes are served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "mexican  "
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=japanese   with a fixed text, namely 'Japanese dishes are served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "japanese  "
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=chicken   with a fixed text, namely 'Chicken based dishes are served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "chicken  "
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=seafood   with a fixed text, namely 'Seafood dishes are served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "seafood  "
     },
     {
       "key": "image",
@@ -10459,6 +10600,11 @@
       "value": "wired"
     },
     {
+      "key": "internet_access",
+      "description": "Layer 'Restaurants and fast food' shows internet_access=terminal;wifi with a fixed text, namely 'This place offers both wireless internet and internet access via a terminal or computer' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "terminal;wifi"
+    },
+    {
       "key": "internet_access:fee",
       "description": "Layer 'Restaurants and fast food' shows internet_access:fee=yes with a fixed text, namely 'There is a fee for the internet access at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if internet_access!=no & internet_access~.+)",
       "value": "yes"
@@ -10620,6 +10766,121 @@
     {
       "key": "start_date",
       "description": "Layer 'Ghost bikes' shows and asks freeform values for key 'start_date' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "historic",
+      "description": "The MapComplete theme Personal theme has a layer Ghost Signs showing features with this tag"
+    },
+    {
+      "key": "advertising",
+      "description": "The MapComplete theme Personal theme has a layer Ghost Signs showing features with this tag"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Ghost Signs' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Personal theme') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Ghost Signs allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Ghost Signs allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Ghost Signs allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Ghost Signs allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "historic",
+      "description": "Layer 'Ghost Signs' shows historic=advertising with a fixed text, namely 'This is a historic advertisement sign (an advertisement for a business that no longer exists or a very old sign with heritage value)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "advertising"
+    },
+    {
+      "key": "historic",
+      "description": "Layer 'Ghost Signs' shows historic= with a fixed text, namely 'This advertisement sign has no historic value (the business still exists and has no heritage value)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') Picking this answer will delete the key historic.",
+      "value": ""
+    },
+    {
+      "key": "advertising",
+      "description": "Layer 'Ghost Signs' shows and asks freeform values for key 'advertising' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "advertising",
+      "description": "Layer 'Ghost Signs' shows advertising=billboard with a fixed text, namely 'This is a billboard' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "billboard"
+    },
+    {
+      "key": "advertising",
+      "description": "Layer 'Ghost Signs' shows advertising=board with a fixed text, namely 'This is a board' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "board"
+    },
+    {
+      "key": "advertising",
+      "description": "Layer 'Ghost Signs' shows advertising=column with a fixed text, namely 'This is a column' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "column"
+    },
+    {
+      "key": "advertising",
+      "description": "Layer 'Ghost Signs' shows advertising=flag with a fixed text, namely 'This is a flag' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "flag"
+    },
+    {
+      "key": "advertising",
+      "description": "Layer 'Ghost Signs' shows advertising=poster_box with a fixed text, namely 'This is a poster Box' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "poster_box"
+    },
+    {
+      "key": "advertising",
+      "description": "Layer 'Ghost Signs' shows advertising=screen with a fixed text, namely 'This is a screen' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "screen"
+    },
+    {
+      "key": "advertising",
+      "description": "Layer 'Ghost Signs' shows advertising=sculpture with a fixed text, namely 'This is a sculpture' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "sculpture"
+    },
+    {
+      "key": "advertising",
+      "description": "Layer 'Ghost Signs' shows advertising=sign with a fixed text, namely 'This is a sign' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "sign"
+    },
+    {
+      "key": "advertising",
+      "description": "Layer 'Ghost Signs' shows advertising=tarp with a fixed text, namely 'This is a tarp (a weatherproof piece of textile with an advertising message)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "tarp"
+    },
+    {
+      "key": "advertising",
+      "description": "Layer 'Ghost Signs' shows advertising=totem with a fixed text, namely 'This is a totem' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "totem"
+    },
+    {
+      "key": "advertising",
+      "description": "Layer 'Ghost Signs' shows advertising=wall_painting with a fixed text, namely 'This is a wall painting' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "wall_painting"
+    },
+    {
+      "key": "advertising",
+      "description": "Layer 'Ghost Signs' shows advertising=tilework with a fixed text, namely 'This is tilework - the advertisement is painted on tiles' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "tilework"
+    },
+    {
+      "key": "advertising",
+      "description": "Layer 'Ghost Signs' shows advertising=relief with a fixed text, namely 'This is a relief' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "relief"
+    },
+    {
+      "key": "inscription",
+      "description": "Layer 'Ghost Signs' shows and asks freeform values for key 'inscription' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "brand",
+      "description": "Layer 'Ghost Signs' shows and asks freeform values for key 'brand' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
       "key": "office",
@@ -10795,6 +11056,11 @@
       "key": "hackerspace",
       "description": "Layer 'Hackerspace' shows hackerspace= with a fixed text, namely 'This is a traditional (software oriented) hackerspace' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') Picking this answer will delete the key hackerspace.",
       "value": ""
+    },
+    {
+      "key": "hackerspace",
+      "description": "Layer 'Hackerspace' shows hackerspace=hacklab with a fixed text, namely 'This is a <b>hacklab</b> which is mostly focussed on basic computer skills, using recycled devices and/or providing internet to the community. This is typically located in autonomous spaces, squats or social facilities' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "hacklab"
     },
     {
       "key": "name",
@@ -11068,6 +11334,11 @@
       "key": "internet_access",
       "description": "Layer 'Hackerspace' shows internet_access=wired with a fixed text, namely 'This place offers wired internet access' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "wired"
+    },
+    {
+      "key": "internet_access",
+      "description": "Layer 'Hackerspace' shows internet_access=terminal;wifi with a fixed text, namely 'This place offers both wireless internet and internet access via a terminal or computer' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "terminal;wifi"
     },
     {
       "key": "internet_access:fee",
@@ -11609,6 +11880,11 @@
       "key": "room",
       "description": "Layer 'Indoors' shows room=office with a fixed text, namely 'This is an office' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "office"
+    },
+    {
+      "key": "room",
+      "description": "Layer 'Indoors' shows room=printer with a fixed text, namely 'This is a copy room' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "printer"
     },
     {
       "key": "room",
@@ -13061,6 +13337,11 @@
       "value": "wired"
     },
     {
+      "key": "internet_access",
+      "description": "Layer 'Outdoor Seating' shows internet_access=terminal;wifi with a fixed text, namely 'This place offers both wireless internet and internet access via a terminal or computer' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "terminal;wifi"
+    },
+    {
       "key": "internet_access:fee",
       "description": "Layer 'Outdoor Seating' shows internet_access:fee=yes with a fixed text, namely 'There is a fee for the internet access at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if internet_access!=no & internet_access~.+)",
       "value": "yes"
@@ -13748,6 +14029,21 @@
       "description": "Layer 'Pharmacies' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the mapcomplete.org theme 'Personal theme')"
     },
     {
+      "key": "payment:cash",
+      "description": "Layer 'Pharmacies' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:cards",
+      "description": "Layer 'Pharmacies' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:qr_code",
+      "description": "Layer 'Pharmacies' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
       "key": "wheelchair",
       "description": "Layer 'Pharmacies' shows wheelchair=yes with a fixed text, namely 'This pharmacy is easy to access on a wheelchair' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "yes"
@@ -14271,6 +14567,86 @@
     {
       "key": "wheelchair",
       "description": "Layer 'Playground equipment' shows wheelchair=no with a fixed text, namely 'This place is not reachable with a wheelchair' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Personal theme has a layer Police stations showing features with this tag",
+      "value": "police"
+    },
+    {
+      "key": "police",
+      "description": "The MapComplete theme Personal theme has a layer Police stations showing features with this tag"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Police stations' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Personal theme') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Police stations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Police stations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Police stations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Police stations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Police stations' shows and asks freeform values for key 'name' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'Police stations' shows and asks freeform values for key 'phone' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "contact:phone",
+      "description": "Layer 'Police stations' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "email",
+      "description": "Layer 'Police stations' shows and asks freeform values for key 'email' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "contact:email",
+      "description": "Layer 'Police stations' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "operator:email",
+      "description": "Layer 'Police stations' shows operator:email~.+ with a fixed text, namely '<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Police stations' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "contact:website",
+      "description": "Layer 'Police stations' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Police stations' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Personal theme')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Police stations' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Personal theme')",
+      "value": "closed"
+    },
+    {
+      "key": "detention",
+      "description": "Layer 'Police stations' shows detention=yes with a fixed text, namely 'This police office has some cells to detain people' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if amenity=police)",
+      "value": "yes"
+    },
+    {
+      "key": "detention",
+      "description": "Layer 'Police stations' shows detention=no with a fixed text, namely 'This police office does not have cells to detain people' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if amenity=police)",
       "value": "no"
     },
     {
@@ -16502,6 +16878,11 @@
       "key": "internet_access",
       "description": "Layer 'Shop' shows internet_access=wired with a fixed text, namely 'This place offers wired internet access' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "wired"
+    },
+    {
+      "key": "internet_access",
+      "description": "Layer 'Shop' shows internet_access=terminal;wifi with a fixed text, namely 'This place offers both wireless internet and internet access via a terminal or computer' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "terminal;wifi"
     },
     {
       "key": "internet_access:fee",
@@ -19248,6 +19629,11 @@
       "value": "wired"
     },
     {
+      "key": "internet_access",
+      "description": "Layer 'Tourism accomodation' shows internet_access=terminal;wifi with a fixed text, namely 'This place offers both wireless internet and internet access via a terminal or computer' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "terminal;wifi"
+    },
+    {
       "key": "internet_access:fee",
       "description": "Layer 'Tourism accomodation' shows internet_access:fee=yes with a fixed text, namely 'There is a fee for the internet access at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme') (This is only shown if internet_access!=no & internet_access~.+)",
       "value": "yes"
@@ -19851,6 +20237,11 @@
       "key": "vending",
       "description": "Layer 'Vending Machines' shows vending=eggs with a fixed text, namely 'Eggs are sold' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
       "value": "eggs"
+    },
+    {
+      "key": "vending",
+      "description": "Layer 'Vending Machines' shows vending=ice_cream with a fixed text, namely 'Ice cream is sold' and allows to pick this as a default answer (in the mapcomplete.org theme 'Personal theme')",
+      "value": "ice_cream"
     },
     {
       "key": "vending",

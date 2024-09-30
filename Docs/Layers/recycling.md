@@ -41,9 +41,8 @@ A layer with recycling containers and centres
 
 The following options to create new points are included:
 
-**a recycling container** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Drecycling' target='_blank'>recycling</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:recycling_type' target='_blank'>recycling_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling_type%3Dcontainer' target='_blank'>container</a>
-
-**a recycling centre** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Drecycling' target='_blank'>recycling</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:recycling_type' target='_blank'>recycling_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling_type%3Dcentre' target='_blank'>centre</a>
+ - **a recycling container** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Drecycling' target='_blank'>recycling</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:recycling_type' target='_blank'>recycling_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling_type%3Dcontainer' target='_blank'>container</a>
+ - **a recycling centre** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Drecycling' target='_blank'>recycling</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:recycling_type' target='_blank'>recycling_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling_type%3Dcentre' target='_blank'>centre</a>
 
 ## Basic tags for this layer
 
@@ -226,7 +225,11 @@ This tagrendering has labels
 
 | id | question | osmTags |
 -----|-----|----- |
-| recyclingType.0 | *All recycling types* (default) |  |
+| centres_only.0 | All recycling types | recycling_type=centre |
+
+| id | question | osmTags |
+-----|-----|----- |
+| recyclingType.0 | *Only public access* (default) |  |
 | recyclingType.1 | Recycling of batteries | recycling:batteries=yes |
 | recyclingType.2 | Recycling of beverage cartons | recycling:beverage_cartons=yes |
 | recyclingType.3 | Recycling of cans | recycling:cans=yes |

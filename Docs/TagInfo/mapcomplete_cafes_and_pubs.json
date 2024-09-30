@@ -276,6 +276,11 @@
       "value": "wired"
     },
     {
+      "key": "internet_access",
+      "description": "Layer 'Cafés and pubs' shows internet_access=terminal;wifi with a fixed text, namely 'This place offers both wireless internet and internet access via a terminal or computer' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cafés and pubs')",
+      "value": "terminal;wifi"
+    },
+    {
       "key": "internet_access:fee",
       "description": "Layer 'Cafés and pubs' shows internet_access:fee=yes with a fixed text, namely 'There is a fee for the internet access at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cafés and pubs') (This is only shown if internet_access!=no & internet_access~.+)",
       "value": "yes"
@@ -415,6 +420,11 @@
       "key": "internet_access",
       "description": "Layer 'Outdoor Seating' shows internet_access=wired with a fixed text, namely 'This place offers wired internet access' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cafés and pubs')",
       "value": "wired"
+    },
+    {
+      "key": "internet_access",
+      "description": "Layer 'Outdoor Seating' shows internet_access=terminal;wifi with a fixed text, namely 'This place offers both wireless internet and internet access via a terminal or computer' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cafés and pubs')",
+      "value": "terminal;wifi"
     },
     {
       "key": "internet_access:fee",

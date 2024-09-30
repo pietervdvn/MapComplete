@@ -38,9 +38,8 @@ Layer with public clocks
 
 The following options to create new points are included:
 
-**a clock** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dclock' target='_blank'>clock</a>
-
-**a wall-mounted clock** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dclock' target='_blank'>clock</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:support' target='_blank'>support</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:support%3Dwall_mounted' target='_blank'>wall_mounted</a> (snaps to layers `walls_and_buildings`)
+ - **a clock** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dclock' target='_blank'>clock</a>
+ - **a wall-mounted clock** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dclock' target='_blank'>clock</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:support' target='_blank'>support</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:support%3Dwall_mounted' target='_blank'>wall_mounted</a> (snaps to layers `walls_and_buildings`)
 
 ## Basic tags for this layer
 

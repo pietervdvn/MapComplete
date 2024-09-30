@@ -39,7 +39,7 @@ ATMs to withdraw money
 
 The following options to create new points are included:
 
-**an ATM** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Datm' target='_blank'>atm</a>
+ - **an ATM** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Datm' target='_blank'>atm</a>
 
 ## Basic tags for this layer
 

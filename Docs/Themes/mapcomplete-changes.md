@@ -15,7 +15,6 @@ Available languages:
 
  - en
  - de
- - es
 
 # Table of contents
 
@@ -117,19 +116,19 @@ This tagrendering has labels
 
 | id | question | osmTags | fields |
 -----|-----|-----|----- |
-| theme-search.0 | Themename contains {search} |  | search (string) |
+| theme-search.0 | Themename contains {search} |  | search (regex) |
 
 | id | question | osmTags | fields |
 -----|-----|-----|----- |
-| theme-not-search.0 | Themename does <b>not</b> contain {search} |  | search (string) |
+| theme-not-search.0 | Themename does <b>not</b> contain {search} |  | search (regex) |
 
 | id | question | osmTags | fields |
 -----|-----|-----|----- |
-| created_by.0 | Made by contributor {search} |  | search (string) |
+| created_by.0 | Made by contributor {search} |  | search (regex) |
 
 | id | question | osmTags | fields |
 -----|-----|-----|----- |
-| not_created_by.0 | <b>Not</b> made by contributor {search} |  | search (string) |
+| not_created_by.0 | <b>Not</b> made by contributor {search} |  | search (regex) |
 
 | id | question | osmTags | fields |
 -----|-----|-----|----- |
@@ -141,11 +140,11 @@ This tagrendering has labels
 
 | id | question | osmTags | fields |
 -----|-----|-----|----- |
-| locale-filter.0 | User language (iso-code) {search} |  | search (string) |
+| locale-filter.0 | User language (iso-code) {search} |  | search (regex) |
 
 | id | question | osmTags | fields |
 -----|-----|-----|----- |
-| host_name.0 | Made with host {search} |  | search (string) |
+| host_name.0 | Made with host {search} |  | search (regex) |
 
 | id | question | osmTags |
 -----|-----|----- |
