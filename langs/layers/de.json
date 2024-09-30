@@ -10035,10 +10035,10 @@
                         "then": "Der Belag ist aus <b>Beton</b>"
                     },
                     "5": {
-                        "then": "Die Oberfläche ist <b>feiner Kies</b>"
+                        "then": "Der Belag ist <b>feiner Kies</b>"
                     },
                     "6": {
-                        "then": "Der Belag dieser Laufbahn ist Tartan, ein synthetischer, leicht federnder, poröser Belag"
+                        "then": "Der Belag ist Tartan, ein synthetischer, leicht federnder, poröser Belag"
                     }
                 },
                 "question": "Welchen Belag hat der Sportplatz?",
