@@ -115,6 +115,17 @@
                 },
                 "question": "Zobrazuje tato reklama cyklicky několik zpráv?"
             },
+            "historic": {
+                "mappings": {
+                    "0": {
+                        "then": "Jedná se o historický reklamní nápis (reklama na již neexistující podnik nebo velmi starý nápis s památkovou hodnotou)"
+                    },
+                    "1": {
+                        "then": "Tento reklamní nápis nemá žádnou historickou hodnotu (podnik stále existuje a nemá žádnou památkovou hodnotu)"
+                    }
+                },
+                "question": "Je tato značka určena pro již neexistující nebo neudržovaný podnik?"
+            },
             "luminous_or_lit_advertising": {
                 "override": {
                     "+mappings": {
