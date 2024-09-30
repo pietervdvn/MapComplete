@@ -186,6 +186,7 @@
             "donate": "Podpořte MapComplete finančně",
             "editId": "Zde otevřít online editor OpenStreetMap",
             "editJosm": "Upravit zde pomocí JOSM",
+            "emailCreators": "Pošlete e-mail tvůrcům",
             "followOnMastodon": "Sledujte MapComplete na Mastodonu",
             "gotoSourceCode": "Zobrazit zdrojový kód",
             "iconAttribution": {
@@ -202,7 +203,9 @@
             "openMapillary": "Zde otevřít Mapillary",
             "openOsmcha": "Podívejte se na nejnovější úpravy provedené v tématu {theme}",
             "openOsmchaLastWeek": "Zobrazit úpravy za posledních 7 dní",
+            "openPanoramax": "Zde otevřete Panoramax",
             "openThemeDocumentation": "Otevřít dokumentaci k tematické mapě {name}",
+            "panoramaxHelp": "<b>Panoramax</b> je online služba, která shromažďuje snímky z úrovně ulic a nabízí je pod bezplatnou licencí. Přispěvatelé mohou tyto snímky používat ke zlepšení OpenStreetMap",
             "seeOnMapillary": "Podívejte se na tento obrázek na Mapillary",
             "themeBy": "Téma spravuje {author}",
             "title": "Autorská práva a uvedení zdroje",
@@ -262,6 +265,7 @@
         "examples": "Příklady",
         "fewChangesBefore": "Před přidáním nové funkce prosím odpovězte na několik otázek týkajících se stávajících funkcí.",
         "filterPanel": {
+            "allTypes": "Všechny typy",
             "disableAll": "Zakázat vše",
             "enableAll": "Povolit vše"
         },
@@ -396,8 +400,22 @@
         "save": "Uložit",
         "screenToSmall": "Otevřít <i>{theme}</i> v novém okně",
         "search": {
+            "activeFilters": "Aktivní filtry",
+            "clearFilters": "Vymazat filtry",
+            "deleteSearchHistory": "Odstranění historie polohy",
+            "deleteThemeHistory": "Odstranění dříve navštívených témat",
+            "editSearchSyncSettings": "Úprava nastavení synchronizace",
+            "editThemeSync": "Úprava nastavení synchronizace",
             "error": "Něco se pokazilo…",
+            "instructions": "Pro vyhledávání lokalit, filtrů nebo jiných tematických map použijte panel hledání nahoře",
+            "locations": "Lokality",
+            "nMoreFilters": "{n} další",
             "nothing": "Nic nenalezeno…",
+            "nothingFor": "Pro {term} nebyly nalezeny žádné výsledky",
+            "otherMaps": "Další mapy",
+            "pickFilter": "Vyberte filtr",
+            "recentThemes": "Nedávno navštívené mapy",
+            "recents": "Nedávno navštívená místa",
             "search": "Vyhledat místo",
             "searchShort": "Vyhledávání…",
             "searching": "Hledání…"
@@ -572,7 +590,8 @@
             "title": "Blízké obrázky streetview"
         },
         "pleaseLogin": "Pro přidání fotky se prosím přihlaste",
-        "respectPrivacy": "Nefotografujte osoby ani poznávací značky. Nevkládejte Mapy Google, Google Streetview ani jiné zdroje chráněné autorskými právy.",
+        "processing": "Server zpracovává váš obrázek",
+        "respectPrivacy": "Nenahrávejte z Map Google, Google Streetview ani z jiných zdrojů chráněných autorskými právy.",
         "toBig": "Váš obrázek je příliš velký, protože má velikost {actual_size}. Používejte prosím obrázky o maximální velikosti {max_size}",
         "upload": {
             "failReasons": "Možná jste ztratili připojení k internetu",
@@ -613,7 +632,7 @@
         "#": "Tyto texty se zobrazují nad tlačítky motivu, pokud není načten žádný motiv",
         "about": "O MapComplete",
         "featuredThemeTitle": "Tento týden",
-        "intro": "Mapy k různým tématům, ke kterým přispíváte",
+        "intro": "Mapy k různým tématům, ke kterým můžete přispět",
         "learnMore": "Více informací",
         "logIn": "Přihlaste se, abyste viděli další témata, která jste dříve navštívili",
         "pickTheme": "Vyberte si téma níže a začněte.",
@@ -638,7 +657,8 @@
         "pointIsMoved": "Bod byl přesunut",
         "reasons": {
             "reasonInaccurate": "Poloha je nepřesná o několik metrů",
-            "reasonRelocation": "Objekt byl přemístěn na úplně jiné místo"
+            "reasonRelocation": "Objekt byl přemístěn na úplně jiné místo",
+            "reasonSnapTo": "Toto by mělo být přichyceno k {name}"
         },
         "selectReason": "Proč přesouváte tento objekt?",
         "whyMove": "Proč chcete přesunout tento bod?",
@@ -773,6 +793,14 @@
         "missing": "{count} nepřeložených řetězců",
         "notImmediate": "Překlady nejsou aktualizovány přímo. Obvykle to trvá několik dní"
     },
+    "unknown": {
+        "clear": "Vymazat odpověď",
+        "explanation": "Vymažte tuto informaci, pokud je aktuální odpověď nesprávná, ale skutečná hodnota není známa. Žádná jiná informace nebude odstraněna.",
+        "keep": "Zachovat odpověď",
+        "markUnknown": "Označit jako neznámé",
+        "removedKeys": "Následující klíče budou odstraněny:",
+        "title": "Označit jako neznámé?"
+    },
     "userinfo": {
         "gotoInbox": "Otevřít poštu",
         "gotoSettings": "Přejít do vašich nastavení na OpenStreetMap.org",
@@ -835,6 +863,9 @@
         "pnat": {
             "description": "celé kladné číslo",
             "noZero": "Nula není povolena"
+        },
+        "regex": {
+            "description": "regulární výraz"
         },
         "slope": {
             "inputExplanation": "Položte telefon na zem tak, aby horní strana telefonu směřovala k horní části svahu.",
