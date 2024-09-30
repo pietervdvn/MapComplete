@@ -43,6 +43,12 @@ _Not_ having a to write down a name or to log in makes the barrier to experiment
 
 We also had [one spam-campaign](https://wiki.openstreetmap.org/wiki/Organised_Editing/Activities/Trziste_prace). It would have become practically impossible to clean up this mess if this would have happened with anonymous accounts, whereas the datateam could simply revert all changes by those users now.
 
+# Editing programs are not allowed to have anonymous contributions
+
+Bing map builder had a single user account for all changes - until they got blocked. The foundation [asked them](https://osmfoundation.org/wiki/Board/Minutes/2022-06#MapBuilder_implementation_proposal) to address some grievances with anonymous contributions.  [Please read the wiki for more details](https://wiki.openstreetmap.org/wiki/Map_builder)
+
+wheelmap.org gets an exception to this, because they only modify a single tag (and can thus not do a lot of damage) and are _old_ - they started in 2010, when OSM was 5 years old and unusable anyway.
+
 # To wrap it up
 
 Anonymous accounts would indeed allow more contributions, but would shift the work to the already existing community instead of growing it.
