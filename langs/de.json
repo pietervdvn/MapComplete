@@ -869,6 +869,9 @@
             "description": "eine positive, ganze Zahl",
             "noZero": "Null ist nicht erlaubt"
         },
+        "regex": {
+            "description": "ein regulärer Ausdruck"
+        },
         "slope": {
             "inputExplanation": "Legen Sie Ihr Telefon so auf den Boden, dass die Oberseite des Telefons zum oberen Ende des Hangs zeigt.",
             "inputIncorrect": "Für korrekte Messungen achten Sie darauf, dass sich der Pfeil in der grünen Fläche befindet."
