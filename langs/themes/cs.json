@@ -268,7 +268,7 @@
         "description": "Tato mapa zobrazuje sítě uzlů cyklu a umožňuje snadno přidávat nové uzly",
         "layers": {
             "0": {
-                "name": "propojení mezi uzly",
+                "name": "Propojení mezi uzly",
                 "tagRenderings": {
                     "node2node-survey:date": {
                         "override": {
@@ -681,7 +681,7 @@
     "hackerspaces": {
         "description": "Na této mapě si můžete prohlédnout hackerspaces, přidat nový hackerspace nebo přímo aktualizovat data",
         "shortDescription": "Mapa označující Hackerspaces",
-        "title": "Hackerspaces"
+        "title": "Hackerspaces a tvůrčí prostory"
     },
     "hailhydrant": {
         "description": "Na této mapě můžete najít a aktualizovat informace o hydrantech, stanicích záchranné služby, hasičských stanicích a hasicích přístrojích ve vašich oblíbených čtvrtích.",
@@ -744,6 +744,120 @@
     "lactosefree": {
         "description": "Mapa bezlaktózových obchodů a restaurací vytvořená crowdsourcingem",
         "title": "Bezlaktózové obchody a restaurace"
+    },
+    "lighthouses": {
+        "description": "Majáky jsou vysoké budovy se světlem na vrcholu, které slouží k vedení námořní dopravy.",
+        "title": "Majáky"
+    },
+    "mapcomplete-changes": {
+        "description": "Tyto mapy zobrazují všechny změny provedené pomocí MapComplete",
+        "layers": {
+            "0": {
+                "description": "Zobrazí všechny změny MapComplete",
+                "filter": {
+                    "0": {
+                        "options": {
+                            "0": {
+                                "question": "Název obsahuje {search}"
+                            }
+                        }
+                    },
+                    "1": {
+                        "options": {
+                            "0": {
+                                "question": "Název motivu <b>neobsahuje</b> {search}"
+                            }
+                        }
+                    },
+                    "10": {
+                        "options": {
+                            "0": {
+                                "question": "Vyloučit etymologii tématu"
+                            }
+                        }
+                    },
+                    "2": {
+                        "options": {
+                            "0": {
+                                "question": "Vytvořeno přispěvatelem {search}"
+                            }
+                        }
+                    },
+                    "3": {
+                        "options": {
+                            "0": {
+                                "question": "<b>Nevytvořeno</b> přispěvatelem {search}"
+                            }
+                        }
+                    },
+                    "4": {
+                        "options": {
+                            "0": {
+                                "question": "Vytvořeno před {search}"
+                            }
+                        }
+                    },
+                    "5": {
+                        "options": {
+                            "0": {
+                                "question": "Vytvořeno po {search}"
+                            }
+                        }
+                    },
+                    "6": {
+                        "options": {
+                            "0": {
+                                "question": "Jazyk uživatele (iso-kód) {search}"
+                            }
+                        }
+                    },
+                    "7": {
+                        "options": {
+                            "0": {
+                                "question": "Vytvořeno pomocí hostitele {search}"
+                            }
+                        }
+                    },
+                    "8": {
+                        "options": {
+                            "0": {
+                                "question": "Sada změn přidala alespoň jeden obrázek"
+                            }
+                        }
+                    },
+                    "9": {
+                        "options": {
+                            "0": {
+                                "question": "Vyloučit motiv GRB"
+                            }
+                        }
+                    }
+                },
+                "tagRenderings": {
+                    "contributor": {
+                        "question": "Který přispěvatel provedl tuto změnu?",
+                        "render": "Změna provedena uživatelem <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>"
+                    },
+                    "host": {
+                        "question": "U jakého hostitele (webové stránky) byla tato změna provedena?",
+                        "render": "Změnit pomocí <a href='{host}'>{host}</a>"
+                    },
+                    "locale": {
+                        "question": "V jakém prostředí (jazyce) byla tato změna provedena?",
+                        "render": "Uživatelské prostředí je {locale}"
+                    },
+                    "show_changeset_id": {
+                        "render": "Sada změn <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
+                    },
+                    "theme-id": {
+                        "question": "Jaký motiv byl použit k provedení této změny?"
+                    },
+                    "version": {
+                        "question": "Jaká verze aplikace MapComplete byla použita k provedení této změny?"
+                    }
+                }
+            }
+        }
     },
     "maproulette": {
         "description": "Téma zobrazující úkoly MapRoulette, které umožňuje vyhledávat, filtrovat a opravovat je.",
@@ -848,6 +962,32 @@
             }
         },
         "title": "Na kolečkách"
+    },
+    "openlovemap": {
+        "layers": {
+            "2": {
+                "override": {
+                    "tagRenderings+": {
+                        "0": {
+                            "mappings": {
+                                "1": {
+                                    "then": "Tento obchod nabízí <b>specializované BDSM pomůcky</b>, jako jsou roztahovací tyče, potřeby pro hru na jehlách, potřeby pro lékařskou bondáž, nárazové nástroje, pouta, kovové barvy, pouta, svorky na bradavky, shibari doplňky, ..."
+                                },
+                                "2": {
+                                    "then": "Tento obchod nabízí doplňky <b>na hraní si na zvířata</b>, jako jsou masky štěňat, masky zvířat, poníci na hraní, ocasy, boty na kopyta, ..."
+                                },
+                                "3": {
+                                    "then": "Tento obchod nabízí <b>kožené vybavení</b>, včetně kalhot a košil použitelných v každodenním životě až po kožené postroje"
+                                },
+                                "4": {
+                                    "then": "Tento obchod nabízí <b>uniformy</b> pro roleplay, jako jsou uniformy zdravotní sestry, vojenské uniformy, policie, školačky, francouzské pokojské, ..."
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     },
     "openwindpowermap": {
         "description": "Mapa pro zobrazení a úpravy větrných turbín.",
