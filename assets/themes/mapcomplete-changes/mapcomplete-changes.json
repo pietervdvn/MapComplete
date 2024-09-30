@@ -12,7 +12,8 @@
     "en": "This maps shows all the changes made with MapComplete",
     "de": "Diese Karte zeigt alle mit MapComplete vorgenommenen Änderungen",
     "es": "Este mapa muestra todos los cambios realizados con MapComplete",
-    "pl": "Ta mapa pokazuje wszystkie zmiany wprowadzone za pomocą MapComplete"
+    "pl": "Ta mapa pokazuje wszystkie zmiany wprowadzone za pomocą MapComplete",
+    "cs": "Tyto mapy zobrazují všechny změny provedené pomocí MapComplete"
   },
   "icon": "./assets/svg/logo.svg",
   "hideFromOverview": true,
@@ -41,35 +42,40 @@
       "description": {
         "en": "Shows all MapComplete changes",
         "de": "Zeigt alle MapComplete-Änderungen",
-        "es": "Muestra todos los cambios de MapComplete"
+        "es": "Muestra todos los cambios de MapComplete",
+        "cs": "Zobrazí všechny změny MapComplete"
       },
       "tagRenderings": [
         {
           "id": "show_changeset_id",
           "render": {
             "en": "Changeset <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>",
-            "de": "Änderungssatz <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
+            "de": "Änderungssatz <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>",
+            "cs": "Sada změn <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
           }
         },
         {
           "id": "contributor",
           "question": {
             "en": "What contributor did make this change?",
-            "de": "Wer hat zu dieser Änderung beigetragen?"
+            "de": "Wer hat zu dieser Änderung beigetragen?",
+            "cs": "Který přispěvatel provedl tuto změnu?"
           },
           "freeform": {
             "key": "user"
           },
           "render": {
             "en": "Change made by <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>",
-            "de": "Änderung vorgenommen von <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>"
+            "de": "Änderung vorgenommen von <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>",
+            "cs": "Změna provedena uživatelem <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>"
           }
         },
         {
           "id": "theme-id",
           "question": {
             "en": "What theme was used to make this change?",
-            "de": "Welches Thema wurde für diese Änderung verwendet?"
+            "de": "Welches Thema wurde für diese Änderung verwendet?",
+            "cs": "Jaký motiv byl použit k provedení této změny?"
           },
           "freeform": {
             "key": "theme"
@@ -86,22 +92,26 @@
           },
           "question": {
             "en": "What locale (language) was this change made in?",
-            "de": "In welcher Sprache (Locale) wurde diese Änderung vorgenommen?"
+            "de": "In welcher Sprache (Locale) wurde diese Änderung vorgenommen?",
+            "cs": "V jakém prostředí (jazyce) byla tato změna provedena?"
           },
           "render": {
             "en": "User locale is {locale}",
-            "de": "Die Benutzersprache ist {locale}"
+            "de": "Die Benutzersprache ist {locale}",
+            "cs": "Uživatelské prostředí je {locale}"
           }
         },
         {
           "id": "host",
           "render": {
             "en": "Change with with <a href='{host}'>{host}</a>",
-            "de": "Änderung mit <a href='{host}'>{host}</a>"
+            "de": "Änderung mit <a href='{host}'>{host}</a>",
+            "cs": "Změnit pomocí <a href='{host}'>{host}</a>"
           },
           "question": {
             "en": "What host (website) was this change made with?",
-            "de": "Bei welchem Host (Website) wurde diese Änderung vorgenommen?"
+            "de": "Bei welchem Host (Website) wurde diese Änderung vorgenommen?",
+            "cs": "U jakého hostitele (webové stránky) byla tato změna provedena?"
           },
           "freeform": {
             "key": "host"
@@ -123,7 +133,8 @@
           "id": "version",
           "question": {
             "en": "What version of MapComplete was used to make this change?",
-            "de": "Welche Version von MapComplete wurde verwendet, um diese Änderung vorzunehmen?"
+            "de": "Welche Version von MapComplete wurde verwendet, um diese Änderung vorzunehmen?",
+            "cs": "Jaká verze aplikace MapComplete byla použita k provedení této změny?"
           },
           "render": {
             "en": "Made with {editor}",
@@ -528,7 +539,8 @@
                 "en": "Themename contains {search}",
                 "de": "Themenname enthält {search}",
                 "es": "El nombre contiene {search}",
-                "pl": "Nazwa tematu zawiera {search}"
+                "pl": "Nazwa tematu zawiera {search}",
+                "cs": "Název obsahuje {search}"
               }
             }
           ]
@@ -546,7 +558,8 @@
               "question": {
                 "en": "Themename does <b>not</b> contain {search}",
                 "de": "Themename enthält <b>nicht</b> {search}",
-                "es": "El nombre del tema <b>no</b> contiene {search}"
+                "es": "El nombre del tema <b>no</b> contiene {search}",
+                "cs": "Název motivu <b>neobsahuje</b> {search}"
               }
             }
           ]
@@ -564,7 +577,8 @@
               "question": {
                 "en": "Made by contributor {search}",
                 "de": "Erstellt von Mitwirkendem {search}",
-                "es": "Hecho por el colaborador {search}"
+                "es": "Hecho por el colaborador {search}",
+                "cs": "Vytvořeno přispěvatelem {search}"
               }
             }
           ]
@@ -582,7 +596,8 @@
               "question": {
                 "en": "<b>Not</b> made by contributor {search}",
                 "de": "<b>Nicht</b> erstellt von Mitwirkendem {search}",
-                "es": "<b>No</b> realizado por el colaborador {search}"
+                "es": "<b>No</b> realizado por el colaborador {search}",
+                "cs": "<b>Nevytvořeno</b> přispěvatelem {search}"
               }
             }
           ]
@@ -601,7 +616,8 @@
               "question": {
                 "en": "Made before {search}",
                 "de": "Erstellt vor {search}",
-                "es": "Realizado antes de {search}"
+                "es": "Realizado antes de {search}",
+                "cs": "Vytvořeno před {search}"
               }
             }
           ]
@@ -620,7 +636,8 @@
               "question": {
                 "en": "Made after {search}",
                 "de": "Erstellt nach {search}",
-                "es": "Realizado después de {search}"
+                "es": "Realizado después de {search}",
+                "cs": "Vytvořeno po {search}"
               }
             }
           ]
@@ -638,7 +655,8 @@
               "question": {
                 "en": "User language (iso-code) {search}",
                 "de": "Benutzersprache (ISO-Code) {search}",
-                "es": "Idioma del usuario (código iso) {search}"
+                "es": "Idioma del usuario (código iso) {search}",
+                "cs": "Jazyk uživatele (iso-kód) {search}"
               }
             }
           ]
@@ -655,7 +673,8 @@
               ],
               "question": {
                 "en": "Made with host {search}",
-                "de": "Erstellt mit Host {search}"
+                "de": "Erstellt mit Host {search}",
+                "cs": "Vytvořeno pomocí hostitele {search}"
               }
             }
           ]
@@ -667,7 +686,8 @@
               "osmTags": "add-image>0",
               "question": {
                 "en": "Changeset added at least one image",
-                "de": "Changeset hat mindestens ein Bild hinzugefügt"
+                "de": "Changeset hat mindestens ein Bild hinzugefügt",
+                "cs": "Sada změn přidala alespoň jeden obrázek"
               }
             }
           ]
@@ -679,7 +699,8 @@
               "osmTags": "theme!=grb",
               "question": {
                 "en": "Exclude GRB theme",
-                "de": "GRB-Thema ausschließen"
+                "de": "GRB-Thema ausschließen",
+                "cs": "Vyloučit motiv GRB"
               }
             }
           ]
@@ -692,7 +713,8 @@
               "question": {
                 "en": "Exclude etymology theme",
                 "de": "Etymologie-Thema ausschließen",
-                "es": "Excluir el tema de la etimología"
+                "es": "Excluir el tema de la etimología",
+                "cs": "Vyloučit etymologii tématu"
               }
             }
           ]
