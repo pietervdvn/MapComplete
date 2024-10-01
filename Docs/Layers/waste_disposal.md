@@ -32,7 +32,7 @@ Waste Disposal Bin, medium to large bin for disposal of (household) waste
 
 The following options to create new points are included:
 
-**a waste disposal bin** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dwaste_disposal' target='_blank'>waste_disposal</a>
+ - **a waste disposal bin** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dwaste_disposal' target='_blank'>waste_disposal</a>
 
 ## Basic tags for this layer
 

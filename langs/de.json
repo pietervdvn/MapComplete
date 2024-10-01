@@ -577,6 +577,7 @@
             "title": "Straßenbilder in der Nähe"
         },
         "pleaseLogin": "Bitte anmelden, um ein Bild hinzuzufügen",
+        "processing": "Der Server verarbeitet das Bild",
         "respectPrivacy": "Laden Sie keine Bilder von Google Maps, Google Streetview oder anderen urheberrechtlich geschützten Quellen hoch.",
         "toBig": "Ihr Bild ist mit {actual_size} zu groß. Die maximale Bildgröße ist {max_size}",
         "upload": {

@@ -28,7 +28,7 @@ A nice viewpoint or nice view. Ideal to add an image if no other category fits
 
 The following options to create new points are included:
 
-**a viewpoint** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:tourism' target='_blank'>tourism</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dviewpoint' target='_blank'>viewpoint</a>
+ - **a viewpoint** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:tourism' target='_blank'>tourism</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dviewpoint' target='_blank'>viewpoint</a>
 
 ## Basic tags for this layer
 

@@ -2,9 +2,74 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.47.4](https://github.com/pietervdvn/mapcomplete/compare/v0.46.12...v0.47.4) (2024-09-30)
 
 
+### Features
 
+* **studio:** add possibility to directly write into the theme files ([0be7c64](https://github.com/pietervdvn/mapcomplete/commits0be7c64ea1dae928ef658b0ef91ad6ad662f0f36))
+
+
+### Bug Fixes
+
+* enable summary server again ([d6eca37](https://github.com/pietervdvn/mapcomplete/commitsd6eca3717a7fb3ac8d17d20861870d17a0da44bb))
+* fix [#2183](https://github.com/pietervdvn/MapComplete/issues/2183) by updating wikidata-sdk to latest wikibase-sdk ([021e5f2](https://github.com/pietervdvn/mapcomplete/commits021e5f2734c46de3d51860f6c717b667dd8d1427))
+
+
+### Theme improvements
+
+* **bicycle_counter:** add images, fix center location ([ea133c5](https://github.com/pietervdvn/mapcomplete/commitsea133c5effeaad3f5e09e6e2991f0f1f6a12bbc4))
+* **police:** add jail and checkpoint icons ([169ee29](https://github.com/pietervdvn/mapcomplete/commits169ee2941498e9968dfbf42f65c8504b6bcb7f37))
+* **shops:** make 'shops' only appear on zoomlevel 15 ([c4ae41e](https://github.com/pietervdvn/mapcomplete/commitsc4ae41e0e1fffa925f293f2a65c277979308a694))
+* tighten minzooms ([1aef862](https://github.com/pietervdvn/mapcomplete/commits1aef862b11dfcb1a359144c70cd7d26db51dd6f2))
+
+### [0.47.2](https://github.com/pietervdvn/mapcomplete/compare/v0.47.1...v0.47.2) (2024-09-24)
+
+
+### Bug Fixes
+
+* correctly apply previous refactoring ([2a53f99](https://github.com/pietervdvn/mapcomplete/commits2a53f99dd50695768ff9b625665ca69bf0bec4c1))
+* delete entry from 'localStorage' ([22c8a45](https://github.com/pietervdvn/mapcomplete/commits22c8a45012be60dad215f8b0d72501133665454e))
+* don't add buildings to database, reevaluate builddb script ([ce87edf](https://github.com/pietervdvn/mapcomplete/commitsce87edf80009bd65c9f185d9ff68b023c5486adc))
+* fix wrong location in theme ([8b0b24b](https://github.com/pietervdvn/mapcomplete/commits8b0b24b01eefa5dbe86d97ac9c3baf38fd2fad0d))
+* remove stray word ([a6598fd](https://github.com/pietervdvn/mapcomplete/commitsa6598fd52d588ba7a5a6b05e2df8ff8ae460a37b))
+* use 'isCounted' instead of 'doCount', add check for this ([3a8fc42](https://github.com/pietervdvn/mapcomplete/commits3a8fc4248b7aa6a9cea8c2529a02a7cc11325cc8))
+
+### [0.47.1](https://github.com/pietervdvn/mapcomplete/compare/v0.47.0...v0.47.1) (2024-09-19)
+
+
+### Bug Fixes
+
+* actually read preferences ([a5b3342](https://github.com/pietervdvn/mapcomplete/commitsa5b3342415e843d5a33b1d3eb2dce4a95b14932a))
+* use correct overflow ([c668698](https://github.com/pietervdvn/mapcomplete/commitsc668698b1eb16f0d96c5ae0e4e7e79209b6abd95))
+
+
+### Theme improvements
+
+* **food:** add search keywords ([53b7597](https://github.com/pietervdvn/mapcomplete/commits53b75973f6734bcad6d1081299e826d2e00e0551))
+* **sport:** add sport pitches filter on sports, fix [#2159](https://github.com/pietervdvn/MapComplete/issues/2159) ([58cec96](https://github.com/pietervdvn/mapcomplete/commits58cec96fb50284dca79716ffe43d0a75b4cb6597))
+
+## [0.47.0](https://github.com/pietervdvn/mapcomplete/compare/v0.46.9...v0.47.0) (2024-09-17)
+
+
+### Features
+
+* add download as json to 'allTags'-panel (for debugging) ([af2905d](https://github.com/pietervdvn/mapcomplete/commitsaf2905dc6d1cbbcfb2d9cd2583369eebd90ced70))
+
+
+### Bug Fixes
+
+* actually search for keywords in theme view ([cdc1e05](https://github.com/pietervdvn/mapcomplete/commitscdc1e05499ffc41d093503ccd24defa347eea50e))
+
+
+### Theme improvements
+
+* allow to disable auto filters ([b349293](https://github.com/pietervdvn/mapcomplete/commitsb3492930b8e5090e9a9d3449d6e9abc365fc1780))
+* **healthcare:** add payment options to pharmacy layer ([6c5b619](https://github.com/pietervdvn/mapcomplete/commits6c5b61924a63e8bb82afd2dc963cc4fe38caa9ad))
+* **shop:** 'open_now' filter is introduced automatically ([ed2bec1](https://github.com/pietervdvn/mapcomplete/commitsed2bec139cf4e4094973aba2f4734522802898f3))
+* **shop:** don't show trolley bay on low zoom levels ([cdb62df](https://github.com/pietervdvn/mapcomplete/commitscdb62dfe58f5a6264c17e9d88bb590ea3f984b09))
+* some tweaks for the search feature ([bc52c05](https://github.com/pietervdvn/mapcomplete/commitsbc52c05a9b47ba6dbf8c3f79a131f8281b8c5197))
+* **waste:** add filter for 'recycling centre' ([5da63bf](https://github.com/pietervdvn/mapcomplete/commits5da63bf83aa7d8b230c8dbc082be3fba33344289))
 
 ### [0.47.2](https://github.com/pietervdvn/mapcomplete/compare/v0.47.1...v0.47.2) (2024-09-24)
 

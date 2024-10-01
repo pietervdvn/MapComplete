@@ -392,7 +392,7 @@
                         "then": "Relief"
                     }
                 },
-                "question": "Quel est le type de cette œuvre d'art ?",
+                "question": "Quel est le type de cette œuvre d'art ?",
                 "render": "Type d'œuvre : {artwork_type}"
             },
             "artwork-website": {
@@ -420,6 +420,17 @@
                     }
                 },
                 "question": "Cette oeuvre d'art sert-elle de banc ?"
+            },
+            "doubles_as_memorial": {
+                "mappings": {
+                    "0": {
+                        "then": "Cette œuvre est un mémorial"
+                    },
+                    "1": {
+                        "then": "Cette œuvre ne sert pas de banc"
+                    }
+                },
+                "question": "Cet œuvre a-t-elle un rôle de mémorial ?"
             }
         },
         "title": {
@@ -4232,6 +4243,7 @@
         "name": "Mémoriaux",
         "presets": {
             "0": {
+                "description": "Un mémorial est un élément physique disposé en mémoire d'une personne ou d'un évènement.",
                 "title": "un mémorial"
             }
         },
@@ -4264,6 +4276,9 @@
                     },
                     "13": {
                         "then": "C'est un arbre du souvenir"
+                    },
+                    "14": {
+                        "then": "C'est une pierre tombale, une personne est enterrée ici"
                     },
                     "2": {
                         "then": "C'est un banc commémoratif"
@@ -7121,6 +7136,16 @@
                     },
                     "1": {
                         "then": "Toujours garder le nord en haut"
+                    }
+                }
+            },
+            "picture-license": {
+                "mappings": {
+                    "1": {
+                        "then": "Les photos que vous avez ajoutées seront sous licence <b>CC0</b>  et mises dans le domaine public. Cela signifie que n'importe qui pourra les utiliser, quel qu'en soit l'usage."
+                    },
+                    "3": {
+                        "then": "Les photos que vous prenez seront sous la licence <b>CC-BY-SA 4.0</b> ce qui signifie que quiconque utilisant votre photo doit vous créditer et que les modifications apportées à votre photo doivent être repartagées avec la même licence."
                     }
                 }
             },

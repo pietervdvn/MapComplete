@@ -100,7 +100,7 @@ No themes use this layer
 
 The following options to create new points are included:
 
-**a departures board** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:departures_board' target='_blank'>departures_board</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:departures_board%3Dyes' target='_blank'>yes</a>
+ - **a departures board** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:departures_board' target='_blank'>departures_board</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:departures_board%3Dyes' target='_blank'>yes</a>
 
 ## Basic tags for this layer
 

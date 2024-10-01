@@ -108,11 +108,11 @@ This tagrendering has labels
 
 | id | question | osmTags | fields |
 -----|-----|-----|----- |
-| parent-name.0 | Challenge name contains {search} |  | search (string) |
+| parent-name.0 | Challenge name contains {search} |  | search (regex) |
 
 | id | question | osmTags | fields |
 -----|-----|-----|----- |
-| parent-id.0 | Challenge ID matches {search} |  | search (string) |
+| parent-id.0 | Challenge ID matches {search} |  | search (regex) |
 
 
 

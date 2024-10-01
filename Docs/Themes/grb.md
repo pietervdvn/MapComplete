@@ -177,7 +177,7 @@ This tagrendering has labels
 
 | id | question | osmTags | fields |
 -----|-----|-----|----- |
-| last-edited-by.0 | Last change made by {username} |  | username (string) |
+| last-edited-by.0 | Last change made by {username} |  | username (regex) |
 
 # grb
 

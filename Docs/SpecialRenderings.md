@@ -335,11 +335,11 @@ Sends the images linked to the current object to plantnet.org and asks it what p
 
 | name | default | description |
 -----|-----|----- |
-| image_key | image,mapillary,image,wikidata,wikimedia_commons,image,image | The keys given to the images, e.g. if <span class='literal-code'>image</span> is given, the first picture URL will be added as <span class='literal-code'>image</span>, the second as <span class='literal-code'>image:0</span>, the third as <span class='literal-code'>image:1</span>, etc... Multiple values are allowed if ';'-separated  |
+| image_key | image,mapillary,image,wikidata,wikimedia_commons,image,panoramax,image | The keys given to the images, e.g. if <span class='literal-code'>image</span> is given, the first picture URL will be added as <span class='literal-code'>image</span>, the second as <span class='literal-code'>image:0</span>, the third as <span class='literal-code'>image:1</span>, etc... Multiple values are allowed if ';'-separated  |
 
 #### Example usage of plantnet_detection
 
-<code>`{plantnet_detection(image,mapillary,image,wikidata,wikimedia_commons,image,image)}`</code>
+<code>`{plantnet_detection(image,mapillary,image,wikidata,wikimedia_commons,image,panoramax,image)}`</code>
 
 ### tag_apply
 
@@ -632,11 +632,11 @@ Creates an image carousel for the given sources. An attempt will be made to gues
 
 | name | default | description |
 -----|-----|----- |
-| image_key | image,mapillary,image,wikidata,wikimedia_commons,image,image | The keys given to the images, e.g. if <span class='literal-code'>image</span> is given, the first picture URL will be added as <span class='literal-code'>image</span>, the second as <span class='literal-code'>image:0</span>, the third as <span class='literal-code'>image:1</span>, etc... Multiple values are allowed if ';'-separated  |
+| image_key | image,mapillary,image,wikidata,wikimedia_commons,image,panoramax,image | The keys given to the images, e.g. if <span class='literal-code'>image</span> is given, the first picture URL will be added as <span class='literal-code'>image</span>, the second as <span class='literal-code'>image:0</span>, the third as <span class='literal-code'>image:1</span>, etc... Multiple values are allowed if ';'-separated  |
 
 #### Example usage of image_carousel
 
-<code>`{image_carousel(image,mapillary,image,wikidata,wikimedia_commons,image,image)}`</code>
+<code>`{image_carousel(image,mapillary,image,wikidata,wikimedia_commons,image,panoramax,image)}`</code>
 
 ### image_upload
 
@@ -1140,6 +1140,18 @@ An editable tag rendering which allows to change the type
 #### Example usage of preset_type_select
 
 <code>`{preset_type_select()}`</code>
+
+### clear_all
+
+Clears all user preferences
+
+| name | default | description |
+-----|-----|----- |
+| text | _undefined_ | Text to show on the button |
+
+#### Example usage of clear_all
+
+<code>`{clear_all()}`</code>
 
 ### auto_apply
 

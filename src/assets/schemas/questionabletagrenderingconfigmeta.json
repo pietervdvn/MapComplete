@@ -672,6 +672,10 @@
         {
           "if": "value=currency",
           "then": "<b>currency</b> Validates monetary amounts"
+        },
+        {
+          "if": "value=regex",
+          "then": "<b>regex</b> Validates a regex"
         }
       ]
     },
@@ -919,7 +923,7 @@
     "required": false,
     "hints": {},
     "type": "array",
-    "description": "A list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer"
+    "description": "What labels should be applied on this tagRendering?\nA list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer\nSpecial values:\n- \"hidden\": do not show this tagRendering. Useful in it is used by e.g. an accordion\n- \"description\": this label is a description used in the search"
   },
   {
     "path": [
@@ -1233,7 +1237,20 @@
     ],
     "required": false,
     "hints": {},
-    "type": "array",
+    "type": [
+      {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      {
+        "enum": [
+          true
+        ],
+        "type": "boolean"
+      }
+    ],
     "description": "This tagRendering can introduce this builtin filter"
   }
 ]

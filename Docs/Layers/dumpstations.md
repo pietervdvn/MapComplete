@@ -9,8 +9,9 @@ Sanitary dump stations
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [dumpstations-fee](#dumpstations-fee)
   - [dumpstations-charge](#dumpstations-charge)
@@ -27,6 +28,12 @@ Sanitary dump stations
 
  - [campersite](https://mapcomplete.org/campersite)
  - [personal](https://mapcomplete.org/personal)
+
+## Presets
+
+The following options to create new points are included:
+
+ - **a sanitary dump station** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dsanitary_dump_station' target='_blank'>sanitary_dump_station</a>
 
 ## Basic tags for this layer
 

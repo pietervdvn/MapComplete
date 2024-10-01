@@ -11,6 +11,7 @@ This theme contains the following layers:
  - [cycleways_and_roads](../Layers/cycleways_and_roads.md)
  - [barrier](../Layers/barrier.md)
  - [crossings](../Layers/crossings.md)
+ - [bicycle_counter](../Layers/bicycle_counter.md)
 
 Available languages:
 

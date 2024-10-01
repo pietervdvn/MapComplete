@@ -28,6 +28,7 @@ This layer shows doctor offices
 
 ## Themes using this layer
 
+ - [disaster_response](https://mapcomplete.org/disaster_response)
  - [healthcare](https://mapcomplete.org/healthcare)
  - [onwheels](https://mapcomplete.org/onwheels)
  - [personal](https://mapcomplete.org/personal)
@@ -36,7 +37,7 @@ This layer shows doctor offices
 
 The following options to create new points are included:
 
-**a doctors office** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Ddoctors' target='_blank'>doctors</a>
+ - **a doctors office** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Ddoctors' target='_blank'>doctors</a>
 
 ## Basic tags for this layer
 

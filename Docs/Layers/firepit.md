@@ -30,7 +30,7 @@ An outdoor place to make a fire, typically open to the public.
 
 The following options to create new points are included:
 
-**Firepit** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dfirepit' target='_blank'>firepit</a>
+ - **Firepit** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dfirepit' target='_blank'>firepit</a>
 
 ## Basic tags for this layer
 

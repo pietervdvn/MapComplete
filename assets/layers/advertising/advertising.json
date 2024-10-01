@@ -1118,14 +1118,16 @@
           "if": "advertising=tilework",
           "then": {
             "en": "This is tilework - the advertisement is painted on tiles",
-            "de": "Dies ist eine Kachelarbeit - die Werbung ist auf Fliesen gemalt"
+            "de": "Dies ist eine Kachelarbeit - die Werbung ist auf Fliesen gemalt",
+            "cs": "Jedná se o dlaždice - reklama je namalovaná na dlaždicích"
           }
         },
         {
           "if": "advertising=relief",
           "then": {
             "en": "This is a relief",
-            "de": "Dies ist ein Relief"
+            "de": "Dies ist ein Relief",
+            "cs": "Toto je reliéf"
           }
         }
       ]
@@ -1647,7 +1649,8 @@
       "question": {
         "en": "Is this sign for a business that no longer exists or no longer being maintained?",
         "de": "Ist dieses Schild für ein Geschäft, das nicht mehr existiert oder nicht mehr gepflegt wird?",
-        "es": "¿Es este rótulo de un negocio que ya no existe o que ya no se mantiene?"
+        "es": "¿Es este rótulo de un negocio que ya no existe o que ya no se mantiene?",
+        "cs": "Je tato značka určena pro již neexistující nebo neudržovaný podnik?"
       },
       "mappings": [
         {
@@ -1655,14 +1658,16 @@
           "alsoShowIf": "historic=yes",
           "then": {
             "en": "This is a historic advertisement sign (an advertisement for a business that no longer exists or a very old sign with heritage value)",
-            "de": "Es handelt sich um ein historisches Werbeschild (eine Werbung für ein Unternehmen, das nicht mehr existiert, oder ein sehr altes Schild mit historischem Wert)"
+            "de": "Es handelt sich um ein historisches Werbeschild (eine Werbung für ein Unternehmen, das nicht mehr existiert, oder ein sehr altes Schild mit historischem Wert)",
+            "cs": "Jedná se o historický reklamní nápis (reklama na již neexistující podnik nebo velmi starý nápis s památkovou hodnotou)"
           }
         },
         {
           "if": "historic=",
           "then": {
             "en": "This advertisement sign has no historic value (the business still exists and has no heritage value)",
-            "de": "Dieses Werbeschild hat keinen historischen Wert (das Unternehmen existiert noch und hat keinen denkmalpflegerischen Wert)"
+            "de": "Dieses Werbeschild hat keinen historischen Wert (das Unternehmen existiert noch und hat keinen denkmalpflegerischen Wert)",
+            "cs": "Tento reklamní nápis nemá žádnou historickou hodnotu (podnik stále existuje a nemá žádnou památkovou hodnotu)"
           }
         }
       ]

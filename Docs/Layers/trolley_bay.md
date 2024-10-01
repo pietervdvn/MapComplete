@@ -31,7 +31,7 @@ Find trolley bays for shopping trolleys.
 
 The following options to create new points are included:
 
-**a trolley bay** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dtrolley_bay' target='_blank'>trolley_bay</a>
+ - **a trolley bay** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dtrolley_bay' target='_blank'>trolley_bay</a>
 
 ## Basic tags for this layer
 

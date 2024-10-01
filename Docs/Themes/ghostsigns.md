@@ -8,7 +8,7 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
- - [ghostsigns (defined in this theme)](#ghostsigns)
+ - [ghostsign](../Layers/ghostsign.md)
  - [advertising_wall_paintings (defined in this theme)](#advertising_wall_paintings)
  - [artwork_on_wall (defined in this theme)](#artwork_on_wall)
  - [walls_and_buildings](../Layers/walls_and_buildings.md)
@@ -18,26 +18,15 @@ Available languages:
  - en
  - de
  - es
+ - cs
 
 # Table of contents
 
   - [Ghost Signs ( ghostsigns )](#ghost-signs-(-ghostsigns-))
 1. [Layers defined in this theme configuration file](#layers-defined-in-this-theme-configuration-file)
-2. [ghostsigns](#ghostsigns)
-  - [Presets](#presets)
+2. [advertising_wall_paintings](#advertising_wall_paintings)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
-    + [historic](#historic)
-    + [images](#images)
-    + [name](#name)
-    + [inscription](#inscription)
-    + [brand](#brand)
-    + [leftover-questions](#leftover-questions)
-    + [lod](#lod)
-3. [advertising_wall_paintings](#advertising_wall_paintings)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [historic](#historic)
     + [images](#images)
     + [type](#type)
     + [animated](#animated)
@@ -46,11 +35,12 @@ Available languages:
     + [message_type](#message_type)
     + [Sides](#sides)
     + [ref](#ref)
+    + [historic](#historic)
     + [leftover-questions](#leftover-questions)
     + [move-button](#move-button)
     + [delete-button](#delete-button)
     + [lod](#lod)
-4. [artwork_on_wall](#artwork_on_wall)
+3. [artwork_on_wall](#artwork_on_wall)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
     + [historic_or_not](#historic_or_not)
@@ -82,80 +72,6 @@ Available languages:
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.
-# ghostsigns
-
-Layer showing disused signs on buildings
-
- - This layer is shown at zoomlevel **10** and higher
-
-No themes use this layer
-
-## Presets
-
-The following options to create new points are included:
-
-**a ghost sign** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:historic' target='_blank'>historic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:historic%3Dadvertising' target='_blank'>advertising</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dwall_painting' target='_blank'>wall_painting</a> (snaps to layers `walls_and_buildings`)
-
-## Basic tags for this layer
-
-Elements must match **all** of the following expressions:
-
-0. <a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dwall_painting' target='_blank'>wall_painting</a>
-1. historic~.+
-
-[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22advertising%22%3D%22wall_painting%22%5D%5B%22historic%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
-
-## Supported attributes
-
-**Warning:**,this quick overview is incomplete,
-
-| attribute | type | values which are supported by this layer |
------|-----|----- |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/historic#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/historic/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [historic](https://wiki.openstreetmap.org/wiki/Key:historic) | Multiple choice | [advertising](https://wiki.openstreetmap.org/wiki/Tag:historic%3Dadvertising) [](https://wiki.openstreetmap.org/wiki/Tag:historic%3D) |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/inscription#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/inscription/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [inscription](https://wiki.openstreetmap.org/wiki/Key:inscription) | [text](../SpecialInputElements.md#text) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/brand#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/brand/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [brand](https://wiki.openstreetmap.org/wiki/Key:brand) | [string](../SpecialInputElements.md#string) |  |
-
-### historic
-
-The question is `Is this a ghost sign?`
-
- -  *This is a ghost sign* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:historic' target='_blank'>historic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:historic%3Dadvertising' target='_blank'>advertising</a>
- -  *This is not a ghost sign, answering this will hide the sign from the map* is shown if with historic=
-
-### images
-This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
-_This tagrendering has no question and is thus read-only_
-*{image_carousel()}{image_upload()}*
-
-### name
-
-_This tagrendering has no question and is thus read-only_
-*{name}*
-
-This tagrendering is only visible in the popup if the following condition is met: name~.+
-
-### inscription
-
-The question is `What is the text on the sign?`
-*The text on the sign is: {inscription}* is shown if `inscription` is set
-
-### brand
-
-The question is `For what business was this sign made?`
-*This sign was made for: {brand}* is shown if `brand` is set
-
-### leftover-questions
-
-_This tagrendering has no question and is thus read-only_
-*{questions( ,)}*
-
-### lod
-
-_This tagrendering has no question and is thus read-only_
-*{linked_data_from_website()}*
-
-This tagrendering has labels 
-`added_by_default`
 # advertising_wall_paintings
 
 This layer is based on [advertising](../Layers/advertising.md)
@@ -168,9 +84,12 @@ No themes use this layer
 
 ## Basic tags for this layer
 
-Elements must match the expression **<a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dwall_painting' target='_blank'>wall_painting</a>**
+Elements must match **all** of the following expressions:
 
-[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22advertising%22%3D%22wall_painting%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
+0. advertising~.+
+1. advertising!=no
+
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22advertising%22%5D%5B%22advertising%22!%3D%22no%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
 ## Supported attributes
 
@@ -178,19 +97,12 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 
 | attribute | type | values which are supported by this layer |
 -----|-----|----- |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/historic#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/historic/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [historic](https://wiki.openstreetmap.org/wiki/Key:historic) | Multiple choice | [advertising](https://wiki.openstreetmap.org/wiki/Tag:historic%3Dadvertising) [](https://wiki.openstreetmap.org/wiki/Tag:historic%3D) |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/advertising#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/advertising/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [advertising](https://wiki.openstreetmap.org/wiki/Key:advertising) | [string](../SpecialInputElements.md#string) | [billboard](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dbillboard) [board](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dboard) [column](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dcolumn) [flag](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dflag) [poster_box](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dposter_box) [screen](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dscreen) [sculpture](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dsculpture) [sign](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dsign) [tarp](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dtarp) [totem](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dtotem) [wall_painting](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dwall_painting) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/advertising#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/advertising/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [advertising](https://wiki.openstreetmap.org/wiki/Key:advertising) | [string](../SpecialInputElements.md#string) | [billboard](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dbillboard) [board](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dboard) [column](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dcolumn) [flag](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dflag) [poster_box](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dposter_box) [screen](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dscreen) [sculpture](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dsculpture) [sign](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dsign) [tarp](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dtarp) [totem](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dtotem) [wall_painting](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dwall_painting) [tilework](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dtilework) [relief](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Drelief) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/animated#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/animated/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [animated](https://wiki.openstreetmap.org/wiki/Key:animated) | Multiple choice | [no](https://wiki.openstreetmap.org/wiki/Tag:animated%3Dno) [digital_display](https://wiki.openstreetmap.org/wiki/Tag:animated%3Ddigital_display) [trivision_blades](https://wiki.openstreetmap.org/wiki/Tag:animated%3Dtrivision_blades) [winding_posters](https://wiki.openstreetmap.org/wiki/Tag:animated%3Dwinding_posters) [revolving](https://wiki.openstreetmap.org/wiki/Tag:animated%3Drevolving) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/operator#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/operator/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [operator](https://wiki.openstreetmap.org/wiki/Key:operator) | [string](../SpecialInputElements.md#string) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/sides#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/sides/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [sides](https://wiki.openstreetmap.org/wiki/Key:sides) | Multiple choice | [1](https://wiki.openstreetmap.org/wiki/Tag:sides%3D1) [2](https://wiki.openstreetmap.org/wiki/Tag:sides%3D2) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/ref#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/ref/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [ref](https://wiki.openstreetmap.org/wiki/Key:ref) | [string](../SpecialInputElements.md#string) |  |
-
-### historic
-
-The question is `Is this a ghost sign?`
-
- -  *This is a ghost sign* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:historic' target='_blank'>historic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:historic%3Dadvertising' target='_blank'>advertising</a>
- -  *This is not a ghost sign* is shown if with historic=
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/historic#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/historic/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [historic](https://wiki.openstreetmap.org/wiki/Key:historic) | Multiple choice | [advertising](https://wiki.openstreetmap.org/wiki/Tag:historic%3Dadvertising) [](https://wiki.openstreetmap.org/wiki/Tag:historic%3D) |
 
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
@@ -213,6 +125,8 @@ The question is `Which type of advertising feature is this?`
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/advertising/tarp.svg' style='width: 3rem; height: 3rem'> *This is a tarp (a weatherproof piece of textile with an advertising message)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dtarp' target='_blank'>tarp</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/advertising/totem.svg' style='width: 3rem; height: 3rem'> *This is a totem* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dtotem' target='_blank'>totem</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/advertising/wall_painting.svg' style='width: 3rem; height: 3rem'> *This is a wall painting* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dwall_painting' target='_blank'>wall_painting</a>
+ -  *This is tilework - the advertisement is painted on tiles* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dtilework' target='_blank'>tilework</a>
+ -  *This is a relief* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Drelief' target='_blank'>relief</a>
 
 ### animated
 
@@ -267,6 +181,13 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is `Wich is the reference number?`
 *Reference number is {ref}* is shown if `ref` is set
+
+### historic
+
+The question is `Is this sign for a business that no longer exists or no longer being maintained?`
+
+ -  *This is a historic advertisement sign (an advertisement for a business that no longer exists or a very old sign with heritage value)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:historic' target='_blank'>historic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:historic%3Dadvertising' target='_blank'>advertising</a>
+ -  *This advertisement sign has no historic value (the business still exists and has no heritage value)* is shown if with historic=
 
 ### leftover-questions
 

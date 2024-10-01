@@ -22,7 +22,7 @@
 
   let metaIsIncluded = false
 
-  let numberOfFeatures = state.featureSummary.totalNumberOfFeatures
+  let numberOfFeatures = state.featureSummary?.totalNumberOfFeatures
 
   async function getGeojson() {
     await state.indexedFeatures.downloadAll()

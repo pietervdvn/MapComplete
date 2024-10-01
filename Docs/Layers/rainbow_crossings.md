@@ -28,7 +28,7 @@ A layer showing pedestrian crossings with rainbow paintings
 
 The following options to create new points are included:
 
-**a crossing** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dfootway' target='_blank'>footway</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:footway' target='_blank'>footway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:footway%3Dcrossing' target='_blank'>crossing</a> (snaps to layers `cycleways_and_roads`)
+ - **a crossing** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dfootway' target='_blank'>footway</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:footway' target='_blank'>footway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:footway%3Dcrossing' target='_blank'>crossing</a> (snaps to layers `cycleways_and_roads`)
 
 ## Basic tags for this layer
 

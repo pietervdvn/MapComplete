@@ -35,7 +35,7 @@ A layer showing kerbs.
 
 The following options to create new points are included:
 
-**a kerb** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:barrier' target='_blank'>barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dkerb' target='_blank'>kerb</a> (snaps to layers `cycleways_and_roads`, `kerbs`)
+ - **a kerb** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:barrier' target='_blank'>barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dkerb' target='_blank'>kerb</a> (snaps to layers `cycleways_and_roads`, `kerbs`)
 
 ## Basic tags for this layer
 

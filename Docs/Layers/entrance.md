@@ -40,9 +40,8 @@ A layer showing entrances and offering capabilities to survey some advanced data
 
 The following options to create new points are included:
 
-**an entrance** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:entrance' target='_blank'>entrance</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:entrance%3Dyes' target='_blank'>yes</a> (snaps to layers `walls_and_buildings`, `pedestrian_path`)
-
-**an indoor door** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Ddoor' target='_blank'>door</a> (snaps to layers `indoors`)
+ - **an entrance** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:entrance' target='_blank'>entrance</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:entrance%3Dyes' target='_blank'>yes</a> (snaps to layers `walls_and_buildings`, `pedestrian_path`)
+ - **an indoor door** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Ddoor' target='_blank'>door</a> (snaps to layers `indoors`)
 
 ## Basic tags for this layer
 

@@ -35,6 +35,7 @@ Available languages:
  - eu
  - pl
  - pt
+ - fil
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

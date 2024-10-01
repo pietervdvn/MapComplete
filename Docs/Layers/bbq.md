@@ -32,7 +32,7 @@ A permanently installed barbecue, typically accessible to the public.
 
 The following options to create new points are included:
 
-**BBQ** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbbq' target='_blank'>bbq</a>
+ - **BBQ** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbbq' target='_blank'>bbq</a>
 
 ## Basic tags for this layer
 

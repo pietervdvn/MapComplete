@@ -34,7 +34,7 @@ This layer shows physiotherapists
 
 The following options to create new points are included:
 
-**a physiotherapists office** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:healthcare' target='_blank'>healthcare</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:healthcare%3Dphysiotherapist' target='_blank'>physiotherapist</a>
+ - **a physiotherapists office** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:healthcare' target='_blank'>healthcare</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:healthcare%3Dphysiotherapist' target='_blank'>physiotherapist</a>
 
 ## Basic tags for this layer
 

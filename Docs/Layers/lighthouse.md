@@ -26,7 +26,7 @@
 
 The following options to create new points are included:
 
-**a lighthouse** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:man_made' target='_blank'>man_made</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:man_made%3Dlighthouse' target='_blank'>lighthouse</a>
+ - **a lighthouse** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:man_made' target='_blank'>man_made</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:man_made%3Dlighthouse' target='_blank'>lighthouse</a>
 
 ## Basic tags for this layer
 

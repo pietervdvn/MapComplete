@@ -41,7 +41,7 @@ This layer show elevators and asks for operational status and elevator dimension
 
 The following options to create new points are included:
 
-**an elevator** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Delevator' target='_blank'>elevator</a>
+ - **an elevator** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Delevator' target='_blank'>elevator</a>
 
 ## Basic tags for this layer
 

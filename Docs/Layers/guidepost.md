@@ -31,7 +31,7 @@ Guideposts (also known as fingerposts or finger posts) are often found along off
 
 The following options to create new points are included:
 
-**a guidepost** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:information' target='_blank'>information</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost' target='_blank'>guidepost</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:tourism' target='_blank'>tourism</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dinformation' target='_blank'>information</a>
+ - **a guidepost** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:information' target='_blank'>information</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost' target='_blank'>guidepost</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:tourism' target='_blank'>tourism</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dinformation' target='_blank'>information</a>
 
 ## Basic tags for this layer
 

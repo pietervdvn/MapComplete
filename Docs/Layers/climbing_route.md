@@ -34,7 +34,7 @@ A single climbing route and its properties. Some properties are derived from the
 
 The following options to create new points are included:
 
-**a climbing route** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dclimbing' target='_blank'>climbing</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:climbing' target='_blank'>climbing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing%3Droute' target='_blank'>route</a> (snaps to layers `climbing_opportunity`)
+ - **a climbing route** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dclimbing' target='_blank'>climbing</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:climbing' target='_blank'>climbing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing%3Droute' target='_blank'>route</a> (snaps to layers `climbing_opportunity`)
 
 ## Basic tags for this layer
 

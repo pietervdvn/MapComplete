@@ -37,7 +37,7 @@ A layer showing (public) showers
 
 The following options to create new points are included:
 
-**a shower** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dshower' target='_blank'>shower</a>
+ - **a shower** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dshower' target='_blank'>shower</a>
 
 ## Basic tags for this layer
 

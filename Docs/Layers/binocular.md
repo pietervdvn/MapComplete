@@ -30,7 +30,7 @@ Binoculars
 
 The following options to create new points are included:
 
-**a binocular** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbinoculars' target='_blank'>binoculars</a>
+ - **a binocular** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbinoculars' target='_blank'>binoculars</a>
 
 ## Basic tags for this layer
 
