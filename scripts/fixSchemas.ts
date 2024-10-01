@@ -362,6 +362,7 @@ function main() {
     for (const path of allSchemas) {
         const dir = path.substring(0, path.lastIndexOf("/"))
         const name = path.substring(path.lastIndexOf("/"), path.length - "JSC.ts".length)
+        console.log("Trying to read", path)
         let content = readFileSync(path, { encoding: "utf8" })
         content = content.substring("export default ".length)
         let parsed = JSON.parse(content)

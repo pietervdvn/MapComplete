@@ -462,7 +462,20 @@
     ],
     "required": false,
     "hints": {},
-    "type": "array",
+    "type": [
+      {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      {
+        "enum": [
+          true
+        ],
+        "type": "boolean"
+      }
+    ],
     "description": "This tagRendering can introduce this builtin filter"
   }
 ]
