@@ -34,13 +34,13 @@
         "loading": "Inspecciona las propiedades para comprobar si este elemento puede ser eliminado.",
         "loginToDelete": "Debes de haber iniciado sesión para eliminar un elemento",
         "notEnoughExperience": "Este elemento fue hecho por otra persona.",
-        "onlyEditedByLoggedInUser": "Este elemento sólo ha sido editado por ti, puedes eliminarlo de manera segura.",
+        "onlyEditedByLoggedInUser": "Este elemento solo ha sido editado por ti, puedes eliminarlo de manera segura.",
         "partOfOthers": "Este nodo forma parte de alguna vía o relación y no se puede eliminar directamente.",
         "readMessages": "Tienes mensajes sin leer. Léelos antes de eliminar un elemento - alguien puede tener algún comentario",
         "reasons": {
             "disused": "Este elemento está fuera de uso o eliminado",
             "duplicate": "Este elemento es un duplicado de otro elemento",
-            "notFound": "No se encontró este elemento",
+            "notFound": "No se pudo encontrar esta función",
             "test": "Este era un elemento de pruebas - el elemento en realidad nunca estuvo ahí"
         },
         "safeDelete": "Este elemento puede ser eliminado con seguridad.",
@@ -209,7 +209,7 @@
             "seeOnMapillary": "Vea esta imagen en Mapillary",
             "themeBy": "Tema mantenido por {author}",
             "title": "Derechos de autor y atribución",
-            "translatedBy": "MapComplete ha sido traducido por {contributors} y <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} colaboradores más</a>"
+            "translatedBy": "MapComplete ha sido traducido por {contribuidores} y <a href='https://github.com/pietervdvn/MapComplete/graphs/contributors' target='_blank'> {hiddenCount} colaboradores más </a>"
         },
         "back": "Atrás",
         "backToIndex": "Ver todos los mapas temáticos",
