@@ -155,6 +155,10 @@ export default class ThemeViewState implements SpecialVisualizationState {
     public readonly geocodedImages: UIEventSource<Feature[]> = new UIEventSource<Feature[]>([])
 
     public readonly searchState: SearchState
+    /**
+     * Used to check in the download panel if used
+     */
+    public readonly featureSummary: SummaryTileSourceRewriter
 
     constructor(layout: LayoutConfig, mvtAvailableLayers: Set<string>) {
         Utils.initDomPurify()
@@ -356,6 +360,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 bounds: this.visualFeedbackViewportBounds,
             },
         )
+        this.featureSummary = this.setupSummaryLayer()
         this.hasDataInView = new NoElementsInViewDetector(this).hasFeatureInView
         this.imageUploadManager = new ImageUploadManager(
             layout,
@@ -785,7 +790,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
             ),
             current_view: this.currentView,
             favourite: this.favourites,
-            summary: this.setupSummaryLayer(),
+            summary: this.featureSummary,
             last_click: this.lastClickObject,
             search: this.searchState.locationResults,
         }
