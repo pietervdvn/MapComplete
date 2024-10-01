@@ -35,7 +35,7 @@
         "loginToDelete": "Sie müssen angemeldet sein, um ein Objekt zu löschen",
         "notEnoughExperience": "Dieses Objekt wurde von jemand anderem erstellt.",
         "onlyEditedByLoggedInUser": "Dieses Objekt wurde nur von Ihnen bearbeitet. Sie können es gefahrlos löschen.",
-        "partOfOthers": "Dieser Punkt ist Teil eines Weges oder einer Relation und kann nicht direkt gelöscht werden.",
+        "partOfOthers": "Der Punkt ist Teil eines Wegs oder einer Relation und kann nicht direkt gelöscht werden.",
         "readMessages": "Sie haben ungelesene Nachrichten. Bitte vor dem Löschen des Objekts lesen - vielleicht liegt eine Rückmeldung vor",
         "reasons": {
             "disused": "Dieses Element wird nicht mehr verwendet oder wurde entfernt",
@@ -645,7 +645,7 @@
     },
     "move": {
         "cancel": "Einen anderen Grund auswählen",
-        "cannotBeMoved": "Dieses Element kann nicht verschoben werden.",
+        "cannotBeMoved": "Das Objekt kann nicht verschoben werden.",
         "confirmMove": "Hierhin verschieben",
         "inviteToMove": {
             "generic": "Objekt verschieben",
@@ -657,7 +657,7 @@
         "isWay": "Dieses Element ist ein Weg. Verwenden Sie einen anderen OpenStreetMap-Editor, um ihn zu verschieben.",
         "loginToMove": "Sie müssen angemeldet sein, um einen Punkt zu verschieben",
         "moveTitle": "Diesen Punkt verschieben",
-        "partOfAWay": "Dieses Element ist Teil eines anderen Weges. Verwenden Sie einen anderen Editor, um es zu verschieben.",
+        "partOfAWay": "Das Objekt ist Teil eines anderen Wegs. Zum Verschieben bitte einen anderen Editor verwenden.",
         "partOfRelation": "Dieses Element ist Teil einer Relation. Verwenden Sie einen anderen Editor, um es zu verschieben.",
         "pointIsMoved": "Der Punkt wurde verschoben",
         "reasons": {
