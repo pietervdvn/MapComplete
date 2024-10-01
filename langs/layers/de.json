@@ -1183,71 +1183,78 @@
     },
     "bicycle_counter": {
         "description": "Ebene mit Messstationen für den Fahrradverkehr",
-        "name": "Fahrradzähler",
+        "name": "Fahrradzählstellen",
         "presets": {
             "0": {
-                "title": "einen Fahrradzähler"
+                "title": "eine Fahrradzählstelle"
             }
         },
         "tagRenderings": {
             "clock": {
                 "mappings": {
                     "0": {
-                        "then": "Der Zähler hat eine Uhr"
+                        "then": "Die Zählstelle zeigt die Uhrzeit an"
                     },
                     "1": {
-                        "then": "Der Zähler hat keine Uhr"
+                        "then": "Die Zählstelle zeigt keine Uhrzeit an"
                     }
                 },
-                "question": "Hat der Fahrradzähler eine Uhr?"
+                "question": "Zeigt die Fahrradzählstelle die Uhrzeit an?"
             },
             "display": {
                 "mappings": {
                     "0": {
-                        "then": "Der Zähler hat eine Digitalanzeige"
+                        "then": "Die Zählstelle hat eine digitale Anzeige"
                     },
                     "1": {
-                        "then": "Der Zähler hat eine Analoganzeige"
+                        "then": "Die Zählstelle hat eine analoge Anzeige"
                     },
                     "2": {
-                        "then": "Der Zähler hat keine Anzeige"
+                        "then": "Die Zählstelle hat keine Anzeige"
                     }
                 },
-                "question": "Hat der Zähler eine Anzeige, um die Anzahl der gezählten Fahrräder anzuzeigen?"
+                "question": "Zeigt die Fahrradzählstelle die Anzahl gezählter Fahrräder an?"
+            },
+            "name": {
+                "freeform": {
+                    "placeholder": "Name des Zählorts"
+                },
+                "question": "Wie lautet der Name des Zählorts?",
+                "render": "Name des Zählorts: {name}"
             },
             "ref": {
                 "freeform": {
-                    "placeholder": "Kennung des Zählers"
+                    "placeholder": "Kennziffer der Zählstelle"
                 },
                 "mappings": {
                     "0": {
-                        "then": "Der Zähler hat keine Kennung"
+                        "then": "Die Zählstelle hat keine Kennziffer"
                     }
                 },
-                "question": "Wie lautet die Kennung der Zählers?",
-                "render": "Kennung des Zählers: {ref}"
+                "question": "Wie lautet die Kennziffer der Zählstelle?",
+                "render": "Kennziffer der Zählstelle: {ref}"
             },
             "start_date": {
                 "freeform": {
-                    "placeholder": "Aufstelldatum des Zählers"
+                    "placeholder": "Aufstelldatum der Zählstelle"
                 },
-                "question": "Wann wurde der Zähler aufgestellt?",
-                "render": "Der Zähler wurde am {start_date} aufgestellt"
+                "question": "Wann wurde die Zählstelle aufgestellt?",
+                "render": "Die Zählstelle wurde am {start_date} aufgestellt"
             },
             "website": {
                 "freeform": {
-                    "placeholder": "Website des Zählers"
+                    "placeholder": "Website der Zählstelle"
                 },
-                "question": "Gibt es eine Website für den Fahrradzähler?",
-                "render": "Website des Zählers: <a href='{website}'>{website}</a>"
+                "question": "Gibt es eine Website für die Fahrradzählstelle?",
+                "render": "Website der Zählstelle: <a href='{website}'>{website}</a>"
             }
         },
         "title": {
-            "render": "Fahrradzähler"
+            "render": "Fahrradzählstelle"
         }
     },
     "bicycle_library": {
-        "description": "Eine Einrichtung, in der Fahrräder für längere Zeit geliehen werden können",
+        "description": "Eine Einrichtung, um Fahrräder längere Zeit auszuleihen",
         "name": "Fahrradbibliotheken",
         "presets": {
             "0": {
