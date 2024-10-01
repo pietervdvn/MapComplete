@@ -357,7 +357,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
             {
                 currentZoom: this.mapProperties.zoom,
                 layerState: this.layerState,
-                bounds: this.visualFeedbackViewportBounds,
+                bounds: this.visualFeedbackViewportBounds.map(bounds => bounds ?? this.mapProperties.bounds?.data, [this.mapProperties.bounds]),
             },
         )
         this.featureSummary = this.setupSummaryLayer()
@@ -531,9 +531,11 @@ export default class ThemeViewState implements SpecialVisualizationState {
      * Selects the feature that is 'i' closest to the map center
      */
     private selectClosestAtCenter(i: number = 0) {
+        console.log("Selecting closest",i)
         if (this.userRelatedState.a11y.data !== "never") {
             this.visualFeedback.setData(true)
         }
+
         const toSelect = this.closestFeatures.features?.data?.[i]
         if (!toSelect) {
             window.requestAnimationFrame(() => {
