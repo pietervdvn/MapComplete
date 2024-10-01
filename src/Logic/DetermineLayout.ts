@@ -181,7 +181,7 @@ export default class DetermineLayout {
             // We got fed a layer instead of a theme
             const layerConfig = <LayerConfigJson>json
             let icon = Utils.NoNull(
-                layerConfig.pointRendering
+                (layerConfig.pointRendering ?? [])
                     .flatMap((pr) => pr.marker)
                     .map((iconSpec) => {
                         if (!iconSpec) {

@@ -1,0 +1,86 @@
+{
+  "credits": "Pieter Vander Vennet",
+  "minzoom": 15,
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        }
+      ]
+    }
+  ],
+  "tagRenderings": [
+    "images",
+    {
+      "question": {
+        "en": "Which boats are allowed to moor here?"
+      },
+      "id": "allowed_boats",
+      "multiAnswer": true,
+      "mappings": [
+        {
+          "if": "motorboat=yes",
+          "ifnot": "motorboat=no",
+          "then": {
+            "en": "Small motorboats (<20m) are allowed here"
+          }
+        },
+        {
+          "if": "sailboat=yes",
+          "ifnot": "sailboat=no",
+          "then": {
+            "en": "Small sailboats (<20m) are allowed here"
+          }
+        },
+        {
+          "if": "canoe=yes",
+          "ifnot": "canoe=no",
+          "then": {
+            "en": "Canoes and kayaks are allowed here"
+          }
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "width": 1,
+      "color": "blue"
+    }
+  ],
+  "id": "piers_and_quays",
+  "name": {
+    "en": "Piers and quays"
+  },
+  "description": {
+    "en": "Piers and quays are structures next to or on the water where people might walk on and where boats might be moored"
+  },
+  "source": {
+    "osmTags": {
+      "or": [
+        "man_made=pier",
+        "man_made=quay"
+      ]
+    }
+  },
+  "title": {
+    "render": {
+      "en": "{name}"
+    },
+    "mappings": [
+      {
+        "if": "man_made=pier",
+        "then": {
+          "en": "Pier {name}"
+        }
+      }
+    ]
+  },
+  "allowMove": false
+}

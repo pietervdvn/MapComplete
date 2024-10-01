@@ -1,0 +1,55 @@
+{
+  "minzoom": 13,
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/chandler/chandler.svg"
+        }
+      ],
+      "iconSize": "80,80"
+    }
+  ],
+  "tagRenderings": [
+    "shop.*"
+  ],
+  "lineRendering": [
+    {
+      "width": 1,
+      "color": "blue"
+    }
+  ],
+  "id": "chandler",
+  "name": {
+    "en": "Chandlers"
+  },
+  "description": {
+    "en": "Boating supplies and equipment."
+  },
+  "source": {
+    "osmTags": {
+      "or": [
+        "shop=chandler",
+        "shop=ship_chandler",
+        "seamark:small_craft_facility:category=chandler",
+        "shop=chandlery"
+      ]
+    }
+  },
+  "title": {
+    "render": {
+      "en": "Chandler {name}"
+    }
+  },
+  "allowMove": true,
+  "credits": "Pieter Vander Vennet",
+  "credits:uid": 3818858
+}

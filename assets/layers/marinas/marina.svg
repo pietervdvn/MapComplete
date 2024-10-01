@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500">
+<title>ANCHOR</title>
+<g stroke="black" fill="none">
+ <circle cx="250" cy="80" r="40" stroke-width="20" />
+ <path d="M 250,125 V 440 M 150,185 H 350 M 100,347 C 130,460 370,460 400,347" stroke-width="30" />
+</g>
+<g fill="black">
+ <circle cx="250" cy="115" r="20" />
+ <path d="M 55,365 L 75,260 150,330 Z M 225,440 L 250,470 275,440 Z M 445,365 L 425,260 350,330 Z" />
+</g>
+</svg>

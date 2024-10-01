@@ -128,17 +128,21 @@
           "then": {
             "en": "This lock is automated (operated from control panel or control room)"
           },
-          "ifnot": "automated="
+          "addExtraTags": [
+            "manual=no"
+          ]
         },
         {
           "if": "manual=yes",
           "then": {
             "en": "This lock is manually operated (with muscle power)"
           },
-          "ifnot": "manual="
+          "addExtraTags": [
+            "automated=no"
+          ]
         }
       ],
-      "multiAnswer": true,
+      "multiAnswer": false,
       "condition": "waterway!=derelict_canal"
     },
     {
@@ -189,7 +193,7 @@
     },
     {
       "question": {
-        "en": "What VHF channel should be used to communicate with this lock?"
+        "en": "What VHF channel should be used to communicate with the control room of this lock?"
       },
       "id": "vhf",
       "render": {
@@ -197,6 +201,12 @@
       },
       "freeform": {
         "key": "vhf"
+      },
+      "condition": {
+        "or": [
+          "automated=yes",
+          "automated="
+        ]
       }
     },
     "opening_hours_24_7",

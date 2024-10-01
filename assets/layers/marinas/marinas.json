@@ -1,0 +1,167 @@
+{
+  "credits": "Pieter Vander Vennet",
+  "minzoom": 10,
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/marina/marina.svg"
+        }
+      ]
+    }
+  ],
+  "tagRenderings": [
+    "phone",
+    "images",
+    {
+      "question": {
+        "en": "What is the name of this marina?"
+      },
+      "id": "marina-name",
+      "freeform": {
+        "key": "name"
+      },
+      "render": {
+        "en": "The name of this marina is: {name}"
+      }
+    },
+    "website",
+    "opening_hours_24_7",
+    "internet-all",
+    "wikipedia",
+    {
+      "question": {
+        "en": "Does this marina have a sanitary dump station?"
+      },
+      "id": "marina-sewage-station",
+      "questionHint": {
+        "en": "Does this marina provide facilities for pump out or other black water disposal."
+      },
+      "mappings": [
+        {
+          "if": "sanitary_dump_station=yes",
+          "then": {
+            "en": "This marina does provide facilities to dispose of sewage."
+          }
+        },
+        {
+          "if": "sanitary_dump_station=no",
+          "then": {
+            "en": "This marina does not provide facilities to dispose of sewage."
+          }
+        },
+        {
+          "if": "sanitary_dump_station=customers",
+          "then": {
+            "en": "Only customers are allowed to use the facilities here to dispose of sewage."
+          }
+        }
+      ]
+    },
+    {
+      "question": {
+        "en": "Do the wastewater facilities here provide a means of pumping out a sewage tank?"
+      },
+      "id": "marina_dump_station",
+      "condition": {
+        "or": [
+          "sanitary_dump_station=yes",
+          "sanitary_dump_station=customers"
+        ]
+      },
+      "mappings": [
+        {
+          "if": "sanitary_dump_station:pump-out=yes",
+          "then": {
+            "en": "This marina offers toilet pump-out services"
+          }
+        },
+        {
+          "if": "sanitary_dump_station:pump-out=no",
+          "then": {
+            "en": "There is no toilet pump-out service at this marina"
+          }
+        }
+      ]
+    },
+    {
+      "condition": {
+        "or": [
+          "sanitary_dump_station=yes",
+          "sanitary_dump_station=customers"
+        ]
+      },
+      "id": "marina_basin",
+      "question": {
+        "en": "Does this sanitary dump station provide the means to empty a toilet cassette or other container into a basin?"
+      },
+      "mappings": [
+        {
+          "if": "sanitary_dump_station:basin=yes",
+          "then": {
+            "en": "You can empty toilet cassettes into a basin here."
+          }
+        },
+        {
+          "if": "sanitary_dump_station:basin=no",
+          "then": {
+            "en": "There is no basin to empty a toilet cassettes here."
+          }
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "width": 1,
+      "color": "blue"
+    }
+  ],
+  "id": "marinas",
+  "name": {
+    "en": "Marinas"
+  },
+  "description": {
+    "en": "Marinas and yacht havens for small craft."
+  },
+  "source": {
+    "osmTags": {
+      "or": [
+        "leisure=marina",
+        "seamark:harbour:category=marina",
+        "seamark:harbour:category=marina_no_facilities"
+      ]
+    }
+  },
+  "title": {
+    "render": {
+      "en": "Marina {name}"
+    },
+    "icon": "./assets/layers/marina/marina.svg"
+  },
+  "presets": [
+    {
+      "title": {
+        "en": "a marina"
+      },
+      "tags": [
+        "leisure=marina",
+        "seamark:harbour:category=marina",
+        "seamark:type=harbour"
+      ],
+      "exampleImages": [
+        "./assets/layers/marina/Marina_in_Seething_Wells.jpg"
+      ]
+    }
+  ],
+  "allowMove": true,
+  "credits:uid": 3818858
+}

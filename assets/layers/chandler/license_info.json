@@ -1,0 +1,12 @@
+[
+  {
+    "path": "chandler.svg",
+    "license": "GPLv3",
+    "authors": [
+      "OsmAnd"
+    ],
+    "sources": [
+      "https://github.com/osmandapp/OsmAnd-resources/tree/master"
+    ]
+  }
+]
