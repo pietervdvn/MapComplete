@@ -24,6 +24,7 @@ This theme contains the following layers:
  - [charging_station](../Layers/charging_station.md)
  - [vending_machine_bicycle (defined in this theme)](#vending_machine_bicycle)
  - [vending_machine](../Layers/vending_machine.md)
+ - [bicycle_counter](../Layers/bicycle_counter.md)
 
 Available languages:
 
@@ -66,6 +67,7 @@ Available languages:
     + [move-button](#move-button)
     + [delete-button](#delete-button)
     + [lod](#lod)
+  - [Filters](#filters)
 3. [bicycle_rental_non_docking](#bicycle_rental_non_docking)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
@@ -90,6 +92,7 @@ Available languages:
     + [move-button](#move-button)
     + [delete-button](#delete-button)
     + [lod](#lod)
+  - [Filters](#filters)
 4. [charging_station_ebikes](#charging_station_ebikes)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
@@ -206,6 +209,7 @@ Available languages:
     + [move-button](#move-button)
     + [delete-button](#delete-button)
     + [lod](#lod)
+  - [Filters](#filters)
 5. [vending_machine_bicycle](#vending_machine_bicycle)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
@@ -366,6 +370,13 @@ _This tagrendering has no question and is thus read-only_
 
 This tagrendering has labels 
 `added_by_default`
+
+## Filters
+
+| id | question | osmTags |
+-----|-----|----- |
+| open_now.0 | Open now | _isOpen=yes |
+
 # bicycle_rental_non_docking
 
 This layer is based on [bicycle_rental](../Layers/bicycle_rental.md)
@@ -585,6 +596,21 @@ _This tagrendering has no question and is thus read-only_
 
 This tagrendering has labels 
 `added_by_default`
+
+## Filters
+
+| id | question | osmTags |
+-----|-----|----- |
+| open_now.0 | Open now | _isOpen=yes |
+
+| id | question | osmTags |
+-----|-----|----- |
+| accepts_cash.0 | Accepts cash | payment:cash=yes |
+
+| id | question | osmTags |
+-----|-----|----- |
+| accepts_cards.0 | Accepts payment cards | payment:cards=yes |
+
 # charging_station_ebikes
 
 This layer is based on [charging_station](../Layers/charging_station.md)
@@ -1827,6 +1853,21 @@ _This tagrendering has no question and is thus read-only_
 
 This tagrendering has labels 
 `added_by_default`
+
+## Filters
+
+| id | question | osmTags |
+-----|-----|----- |
+| open_now.0 | Open now | _isOpen=yes |
+
+| id | question | osmTags |
+-----|-----|----- |
+| accepts_cash.0 | Accepts cash | payment:cash=yes |
+
+| id | question | osmTags |
+-----|-----|----- |
+| accepts_cards.0 | Accepts payment cards | payment:cards=yes |
+
 # vending_machine_bicycle
 
 This layer is based on [vending_machine](../Layers/vending_machine.md)
@@ -1854,7 +1895,7 @@ Elements must match **all** of the following expressions:
 | attribute | type | values which are supported by this layer |
 -----|-----|----- |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/level#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/level/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [level](https://wiki.openstreetmap.org/wiki/Key:level) | [float](../SpecialInputElements.md#float) | [0](https://wiki.openstreetmap.org/wiki/Tag:level%3D0) [1](https://wiki.openstreetmap.org/wiki/Tag:level%3D1) [-1](https://wiki.openstreetmap.org/wiki/Tag:level%3D-1) |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/vending#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/vending/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [vending](https://wiki.openstreetmap.org/wiki/Key:vending) | [string](../SpecialInputElements.md#string) | [drinks](https://wiki.openstreetmap.org/wiki/Tag:vending%3Ddrinks) [sweets](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dsweets) [food](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dfood) [cigarettes](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dcigarettes) [condoms](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dcondoms) [coffee](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dcoffee) [water](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dwater) [newspapers](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dnewspapers) [bicycle_tube](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dbicycle_tube) [milk](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dmilk) [bread](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dbread) [eggs](https://wiki.openstreetmap.org/wiki/Tag:vending%3Deggs) [cheese](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dcheese) [honey](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dhoney) [potatoes](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dpotatoes) [meat](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dmeat) [fruit](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dfruit) [strawberries](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dstrawberries) [flowers](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dflowers) [parking_tickets](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dparking_tickets) [elongated_coin](https://wiki.openstreetmap.org/wiki/Tag:vending%3Delongated_coin) [public_transport_tickets](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dpublic_transport_tickets) [bicycle_light](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dbicycle_light) [gloves](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dgloves) [bicycle_repair_kit](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dbicycle_repair_kit) [bicycle_pump](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dbicycle_pump) [bicycle_lock](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dbicycle_lock) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/vending#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/vending/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [vending](https://wiki.openstreetmap.org/wiki/Key:vending) | [string](../SpecialInputElements.md#string) | [drinks](https://wiki.openstreetmap.org/wiki/Tag:vending%3Ddrinks) [sweets](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dsweets) [food](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dfood) [cigarettes](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dcigarettes) [condoms](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dcondoms) [coffee](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dcoffee) [water](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dwater) [newspapers](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dnewspapers) [bicycle_tube](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dbicycle_tube) [milk](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dmilk) [bread](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dbread) [eggs](https://wiki.openstreetmap.org/wiki/Tag:vending%3Deggs) [ice_cream](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dice_cream) [cheese](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dcheese) [honey](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dhoney) [potatoes](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dpotatoes) [meat](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dmeat) [fruit](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dfruit) [strawberries](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dstrawberries) [flowers](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dflowers) [parking_tickets](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dparking_tickets) [elongated_coin](https://wiki.openstreetmap.org/wiki/Tag:vending%3Delongated_coin) [public_transport_tickets](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dpublic_transport_tickets) [bicycle_light](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dbicycle_light) [gloves](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dgloves) [bicycle_repair_kit](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dbicycle_repair_kit) [bicycle_pump](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dbicycle_pump) [bicycle_lock](https://wiki.openstreetmap.org/wiki/Tag:vending%3Dbicycle_lock) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/brand#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/brand/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [brand](https://wiki.openstreetmap.org/wiki/Key:brand) | [string](../SpecialInputElements.md#string) | [Continental](https://wiki.openstreetmap.org/wiki/Tag:brand%3DContinental) [Schwalbe](https://wiki.openstreetmap.org/wiki/Tag:brand%3DSchwalbe) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/opening_hours#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/opening_hours/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | [24/7](https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/payment:coins:denominations#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/payment%3Acoins%3Adenominations/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [payment:coins:denominations](https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations) | Multiple choice | [0.01 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.01 EUR) [0.02 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.02 EUR) [0.05 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.05 EUR) [0.10 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.10 EUR) [0.20 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.20 EUR) [0.50 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.50 EUR) [1 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D1 EUR) [2 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D2 EUR) [0.05 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.05 CHF) [0.10 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.10 CHF) [0.20 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.20 CHF) [0.50 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.50 CHF) [1 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D1 CHF) [2 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D2 CHF) [5 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D5 CHF) |
@@ -1913,6 +1954,7 @@ The question is `What does this vending machine sell?`
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/vending_machine/cow.svg' style='width: 3rem; height: 3rem'> *Milk is sold* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Dmilk' target='_blank'>milk</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/maki-bakery.svg' style='width: 3rem; height: 3rem'> *Bread is sold* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Dbread' target='_blank'>bread</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/vending_machine/egg.svg' style='width: 3rem; height: 3rem'> *Eggs are sold* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Deggs' target='_blank'>eggs</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/ice_cream/ice_cream.svg' style='width: 3rem; height: 3rem'> *Ice cream is sold* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Dice_cream' target='_blank'>ice_cream</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/fas-cheese.svg' style='width: 3rem; height: 3rem'> *Cheese is sold* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Dcheese' target='_blank'>cheese</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/vending_machine/honey.svg' style='width: 3rem; height: 3rem'> *Honey is sold* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Dhoney' target='_blank'>honey</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/vending_machine/potato.svg' style='width: 3rem; height: 3rem'> *Potatoes are sold* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Dpotatoes' target='_blank'>potatoes</a>
@@ -2092,37 +2134,6 @@ This tagrendering has labels
 | id | question | osmTags |
 -----|-----|----- |
 | open_now.0 | Open now | _isOpen=yes |
-
-| id | question | osmTags |
------|-----|----- |
-| vending.0 | *All vending machines* (default) |  |
-| vending.1 | Sale of drinks | vending~^(.*drinks.*)$ |
-| vending.2 | Sale of sweets | vending~^(.*sweets.*)$ |
-| vending.3 | Sale of food | vending~^(.*food.*)$ |
-| vending.4 | Sale of cigarettes | vending~^(.*cigarettes.*)$ |
-| vending.5 | Sale of condoms | vending~^(.*condoms.*)$ |
-| vending.6 | Sale of coffee | vending~^(.*coffee.*)$ |
-| vending.7 | Sale of water | vending~^(.*water.*)$ |
-| vending.8 | Sale of newspapers | vending~^(.*newspapers.*)$ |
-| vending.9 | Sale of bicycle inner tubes | vending~^(.*bicycle_tube.*)$ |
-| vending.10 | Sale of milk | vending~^(.*milk.*)$ |
-| vending.11 | Sale of bread | vending~^(.*bread.*)$ |
-| vending.12 | Sale of eggs | vending~^(.*eggs.*)$ |
-| vending.13 | Sale of cheese | vending~^(.*cheese.*)$ |
-| vending.14 | Sale of honey | vending~^(.*honey.*)$ |
-| vending.15 | Sale of potatoes | vending~^(.*potatoes.*)$ |
-| vending.16 | Sale of meat | vending~^(.*meat.*)$ |
-| vending.17 | Sale of fruit | vending~^(.*fruit.*)$ |
-| vending.18 | Sale of strawberries | vending~^(.*strawberries.*)$ |
-| vending.19 | Sale of flowers | vending~^(.*flowers.*)$ |
-| vending.20 | Sale of parking tickets | vending~^(.*parking_tickets.*)$ |
-| vending.21 | Sale of pressed pennies | vending=elongated_coin |
-| vending.22 | Sale of public transport tickets | vending~^(.*public_transport_tickets.*)$ |
-| vending.23 | Sale of bicycle lights | vending=bicycle_light |
-| vending.24 | Sale of gloves | vending=gloves |
-| vending.25 | Sale of bicycle repair kits | vending=bicycle_repair_kit |
-| vending.26 | Sale of bicycle pumps | vending=bicycle_pump |
-| vending.27 | Sale of bicycle locks | vending=bicycle_lock |
 
 | id | question | osmTags |
 -----|-----|----- |

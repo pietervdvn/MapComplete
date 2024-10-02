@@ -82,7 +82,8 @@
       },
       "description": {
         "en": "A memorial is a physical object which remembers a person or event.",
-        "de": "Ein Mahnmal ist ein physischer Gegenstand, der an eine Person oder ein Ereignis erinnert."
+        "de": "Ein Mahnmal ist ein physischer Gegenstand, der an eine Person oder ein Ereignis erinnert.",
+        "fr": "Un mémorial est un élément physique disposé en mémoire d'une personne ou d'un évènement."
       },
       "tags": [
         "historic=memorial"
@@ -251,7 +252,8 @@
           "then": {
             "en": "This is a gravestone; the person is buried here",
             "de": "Dies ist ein Grabstein; die Person ist hier begraben",
-            "sl": "To je nagrobni kamen; oseba je pokopana tu"
+            "sl": "To je nagrobni kamen; oseba je pokopana tu",
+            "fr": "C'est une pierre tombale, une personne est enterrée ici"
           },
           "addExtraTags": [
             "memorial="

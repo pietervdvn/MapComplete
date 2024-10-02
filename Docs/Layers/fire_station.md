@@ -24,6 +24,7 @@ Map layer to show fire stations.
 
 ## Themes using this layer
 
+ - [disaster_response](https://mapcomplete.org/disaster_response)
  - [hailhydrant](https://mapcomplete.org/hailhydrant)
  - [personal](https://mapcomplete.org/personal)
 
@@ -31,7 +32,7 @@ Map layer to show fire stations.
 
 The following options to create new points are included:
 
-**a fire station** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dfire_station' target='_blank'>fire_station</a>
+ - **a fire station** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dfire_station' target='_blank'>fire_station</a>
 
 ## Basic tags for this layer
 

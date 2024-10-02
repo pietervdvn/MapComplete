@@ -902,6 +902,82 @@
       "key": "red_turn:straight:bicycle",
       "description": "Layer 'Crossings' shows red_turn:straight:bicycle=no with a fixed text, namely 'A cyclist can not go straight on if the light is red' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway=traffic_signals)",
       "value": "no"
+    },
+    {
+      "key": "man_made",
+      "description": "The MapComplete theme Bicycle infrastructure has a layer Bicycle counters showing features with this tag",
+      "value": "monitoring_station"
+    },
+    {
+      "key": "monitoring:bicycle",
+      "description": "The MapComplete theme Bicycle infrastructure has a layer Bicycle counters showing features with this tag",
+      "value": "yes"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Bicycle counters' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Bicycle counters allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Bicycle counters allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Bicycle counters allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Bicycle counters allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "display",
+      "description": "Layer 'Bicycle counters' shows display=digital with a fixed text, namely 'This counter has a digital display' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure')",
+      "value": "digital"
+    },
+    {
+      "key": "display",
+      "description": "Layer 'Bicycle counters' shows display=analog with a fixed text, namely 'This counter has an analog display' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure')",
+      "value": "analog"
+    },
+    {
+      "key": "display",
+      "description": "Layer 'Bicycle counters' shows display=no with a fixed text, namely 'This counter has no display' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure')",
+      "value": "no"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Bicycle counters' shows and asks freeform values for key 'name' (in the mapcomplete.org theme 'Bicycle infrastructure')"
+    },
+    {
+      "key": "start_date",
+      "description": "Layer 'Bicycle counters' shows and asks freeform values for key 'start_date' (in the mapcomplete.org theme 'Bicycle infrastructure')"
+    },
+    {
+      "key": "amenity",
+      "description": "Layer 'Bicycle counters' shows amenity=clock with a fixed text, namely 'This counter has a clock' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure')",
+      "value": "clock"
+    },
+    {
+      "key": "amenity",
+      "description": "Layer 'Bicycle counters' shows amenity= with a fixed text, namely 'This counter has no clock' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') Picking this answer will delete the key amenity.",
+      "value": ""
+    },
+    {
+      "key": "ref",
+      "description": "Layer 'Bicycle counters' shows and asks freeform values for key 'ref' (in the mapcomplete.org theme 'Bicycle infrastructure')"
+    },
+    {
+      "key": "noref",
+      "description": "Layer 'Bicycle counters' shows noref=yes with a fixed text, namely 'This counter has no reference number' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure')",
+      "value": "yes"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Bicycle counters' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Bicycle infrastructure')"
     }
   ]
 }

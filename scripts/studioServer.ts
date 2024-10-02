@@ -147,7 +147,7 @@ http.createServer(async (req: http.IncomingMessage, res) => {
         console.log("URL pathname is")
         if (url.pathname.endsWith("overview")) {
             console.log("Giving overview")
-            let userId = url.searchParams.get("userId")
+            const userId = url.searchParams.get("userId")
             const allFiles = ScriptUtils.readDirRecSync(STATIC_PATH)
                 .filter(
                     (p) =>

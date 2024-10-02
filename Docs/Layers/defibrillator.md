@@ -39,15 +39,15 @@ A layer showing defibrillators which can be used in case of emergency. This cont
 ## Themes using this layer
 
  - [aed](https://mapcomplete.org/aed)
+ - [disaster_response](https://mapcomplete.org/disaster_response)
  - [personal](https://mapcomplete.org/personal)
 
 ## Presets
 
 The following options to create new points are included:
 
-**a defibrillator** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:emergency' target='_blank'>emergency</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:emergency%3Ddefibrillator' target='_blank'>defibrillator</a>
-
-**a defibrillator mounted on a wall** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:emergency' target='_blank'>emergency</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:emergency%3Ddefibrillator' target='_blank'>defibrillator</a> (snaps to layers `walls_and_buildings`)
+ - **a defibrillator** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:emergency' target='_blank'>emergency</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:emergency%3Ddefibrillator' target='_blank'>defibrillator</a>
+ - **a defibrillator mounted on a wall** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:emergency' target='_blank'>emergency</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:emergency%3Ddefibrillator' target='_blank'>defibrillator</a> (snaps to layers `walls_and_buildings`)
 
 ## Basic tags for this layer
 

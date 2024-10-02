@@ -97,7 +97,8 @@
           "if": "aerialway=cable_car",
           "then": {
             "en": "This is a cable car where the car goes up and down again on the same cable.",
-            "de": "Es handelt sich um eine Seilbahn, bei der die Kabine auf demselben Seil nach oben und wieder nach unten fährt."
+            "de": "Es handelt sich um eine Seilbahn, bei der die Kabine auf demselben Seil nach oben und wieder nach unten fährt.",
+            "cs": "Jedná se o lanovku, kde vagon jezdí nahoru a dolů po stejném laně."
           },
           "icon": "./assets/layers/aerialway/cable_car.svg"
         },
@@ -105,7 +106,8 @@
           "if": "aerialway=gondola",
           "then": {
             "en": "This is a gondola where the cars go around in continuous circles",
-            "de": "Es handelt sich um eine Seilbahn, bei der die Kabinen in ständigen Kreisen fahren"
+            "de": "Es handelt sich um eine Seilbahn, bei der die Kabinen in ständigen Kreisen fahren",
+            "cs": "Jedná se o gondolu, kde vozy jezdí v nepřetržitých kruzích"
           },
           "icon": "./assets/layers/aerialway/gondola_lift.svg"
         },
@@ -113,7 +115,8 @@
           "if": "aerialway=chair_lift",
           "then": {
             "en": "An open chairlift with seats to sit on and open to the outside air.",
-            "de": "Ein offener Sessellift mit Sitzgelegenheiten und Zugang zur Außenluft."
+            "de": "Ein offener Sessellift mit Sitzgelegenheiten und Zugang zur Außenluft.",
+            "cs": "Otevřená lanovka se sedačkami k sezení na čerstvém vzduchu."
           },
           "icon": "./assets/layers/aerialway/chair_lift.svg"
         },
@@ -121,7 +124,8 @@
           "if": "aerialway=mixed",
           "then": {
             "en": "An aerialway which has both chairs and gondolas in the same continuous track",
-            "de": "Eine Seilbahn, die sowohl offene Sessel als auch geschlossene Gondeln auf einer durchgehenden Bahn hat"
+            "de": "Eine Seilbahn, die sowohl offene Sessel als auch geschlossene Gondeln auf einer durchgehenden Bahn hat",
+            "cs": "Lanová dráha, která má sedačky i gondoly na stejné souvislé dráze"
           }
         },
         {
@@ -129,7 +133,8 @@
           "then": {
             "en": "A drag lift",
             "de": "Ein Schlepplift",
-            "pl": "Wyciąg orczykowy"
+            "pl": "Wyciąg orczykowy",
+            "cs": "Vlek"
           },
           "hideInAnswer": true
         },
@@ -137,14 +142,16 @@
           "if": "aerialway=t-bar",
           "then": {
             "en": "A drag lift with T-shaped carriers for two passengers at a time",
-            "de": "Ein Schlepplift mit T-förmigen Trägern für jeweils zwei Passagiere"
+            "de": "Ein Schlepplift mit T-förmigen Trägern für jeweils zwei Passagiere",
+            "cs": "Vlek s nosiči ve tvaru T pro dva cestující najednou"
           }
         },
         {
           "if": "aerialway=j-bar",
           "then": {
             "en": "A drag lift with L-shaped bars for a single passenger at a time",
-            "de": "Ein Schlepplift mit L-förmigen Trägern für jeweils einen Passagier"
+            "de": "Ein Schlepplift mit L-förmigen Trägern für jeweils einen Passagier",
+            "cs": "Vlek s tyčemi ve tvaru písmene L pro jednoho cestujícího"
           }
         },
         {
@@ -173,7 +180,8 @@
           "then": {
             "en": "A zip line. (A touristical attraction where adventurous people go down at high speeds) ",
             "de": "Eine Seilrutsche. (Eine Touristenattraktion, bei der abenteuerlustige Menschen mit hoher Geschwindigkeit hinunterfahren) ",
-            "pl": "Tyrolka. (Atrakcja turystyczna, która pozwala żądnym przygód zjechać z dużą szybkością) "
+            "pl": "Tyrolka. (Atrakcja turystyczna, która pozwala żądnym przygód zjechać z dużą szybkością) ",
+            "cs": "Lano na visuté dráze. (Turistická atrakce, kde se odvážlivci spouštějí vysokou rychlostí) "
           }
         }
       ]
@@ -221,12 +229,14 @@
         "de": "Wie viele Leute passen in eine Kabine?",
         "pl": "Ile osób może pomieścić jeden wagon?",
         "es": "¿Cuál es la capacidad de la cabina?",
-        "ca": "Quantes persones caben a la cabina?"
+        "ca": "Quantes persones caben a la cabina?",
+        "cs": "Kolik osob se vejde do jednoho vozu?"
       },
       "render": {
         "en": "{aerialway:occupancy} people fit a single carriage",
         "de": "{aerialway:occupancy} Leute passen in eine Kabine",
-        "pl": "{aerialway:occupancy} osób mieści się w jednym wagonie"
+        "pl": "{aerialway:occupancy} osób mieści się w jednym wagonie",
+        "cs": "{aerialway:occupancy} osob se vejde do jednoho vozu"
       }
     },
     "opening_hours",
@@ -234,7 +244,8 @@
       "id": "oneway",
       "question": {
         "en": "In what direction can this aerialway be taken?",
-        "de": "In welche Richtung kann diese Seilbahn genutzt werden?"
+        "de": "In welche Richtung kann diese Seilbahn genutzt werden?",
+        "cs": "Jakým směrem tato dráha může vést?"
       },
       "mappings": [
         {
@@ -242,14 +253,16 @@
           "alsoShowIf": "oneway=",
           "then": {
             "en": "This aerialway can only be taken to the top",
-            "de": "Diese Seilbahn kann nur nach oben gefahren werden"
+            "de": "Diese Seilbahn kann nur nach oben gefahren werden",
+            "cs": "Touto lanovkou lze vyjet pouze na vrchol"
           }
         },
         {
           "if": "oneway=no",
           "then": {
             "en": "This aerialway can be taken in both directions",
-            "de": "Diese Seilbahn kann in beide Richtungen befahren werden"
+            "de": "Diese Seilbahn kann in beide Richtungen befahren werden",
+            "cs": "Tuto dráhu lze využít v obou směrech"
           }
         }
       ]
@@ -259,7 +272,8 @@
       "render": {
         "en": "This aerialway is {_length:km} kilometer long",
         "de": "Die Seilbahn hat eine Länge von {_length:km} km",
-        "fr": "Cette voie aérienne fait {_length:km} kilomètre de long"
+        "fr": "Cette voie aérienne fait {_length:km} kilomètre de long",
+        "cs": "Tato dráha je dlouhá {_length:km} kilometr"
       }
     }
   ],

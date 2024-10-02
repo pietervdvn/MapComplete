@@ -118,21 +118,23 @@ export class Mapillary extends ImageProvider {
     }
 
     SourceIcon(
-        id: string,
+        img:  {id: string, url: string},
         location?: {
             lon: number
             lat: number
         }
     ): BaseUIElement {
         let url: string = undefined
+        const id = img.id
         if (id) {
             url = Mapillary.createLink(location, 16, "" + id)
         }
         return new SvelteUIElement(MapillaryIcon, { url })
     }
 
-    async ExtractUrls(key: string, value: string): Promise<Promise<ProvidedImage>[]> {
-        return [this.PrepareUrlAsync(key, value)]
+    async ExtractUrls(key: string, value: string): Promise<ProvidedImage[]> {
+        const img = await this.PrepareUrlAsync(key, value)
+        return [img]
     }
 
     public async DownloadAttribution(providedImage: { id: string }): Promise<LicenseInfo> {

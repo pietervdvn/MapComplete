@@ -16,7 +16,7 @@
   let license: Store<LicenseInfo> = UIEventSource.FromPromise(
     image.provider?.DownloadAttribution(image)
   )
-  let icon = image.provider?.SourceIcon(image.id)
+  let icon = image.provider?.SourceIcon(image)
 </script>
 
 {#if $license !== undefined}

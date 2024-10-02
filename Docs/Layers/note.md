@@ -4,7 +4,7 @@
 
 This layer shows notes on OpenStreetMap. Having this layer in your theme will trigger the 'add new note' functionality in the 'addNewPoint'-popup (or if your theme has no presets, it'll enable adding notes)
 
- - This layer is shown at zoomlevel **10** and higher
+ - This layer is shown at zoomlevel **7** and higher
  - <img src='../warning.svg' height='1rem'/>
 
 This layer is loaded from an external source, namely 
@@ -87,38 +87,6 @@ This tagrendering has labels
 
 ## Filters
 
-| id | question | osmTags | fields |
------|-----|-----|----- |
-| search.0 | Should mention {search} in the first comment |  | search (string) |
-
-| id | question | osmTags | fields |
------|-----|-----|----- |
-| not.0 | Should <b>not</b> mention {search} in the first comment |  | search (string) |
-
-| id | question | osmTags | fields |
------|-----|-----|----- |
-| opened_by.0 | Opened by contributor {search} |  | search (string) |
-
-| id | question | osmTags | fields |
------|-----|-----|----- |
-| not_opened_by.0 | <b>Not</b> opened by contributor {search} |  | search (string) |
-
-| id | question | osmTags | fields |
------|-----|-----|----- |
-| edited_by.0 | Last edited by contributor {search} |  | search (string) |
-
-| id | question | osmTags | fields |
------|-----|-----|----- |
-| not_edited_by.0 | Opened after {search} |  | search (string) |
-
-| id | question | osmTags | fields |
------|-----|-----|----- |
-| opened_before.0 | Created before {search} |  | search (date) |
-
-| id | question | osmTags | fields |
------|-----|-----|----- |
-| opened_after.0 | Created after {search} |  | search (date) |
-
 | id | question | osmTags |
 -----|-----|----- |
 | anonymous.0 | Only show notes opened by an anonymous contributor | _opened_by_anonymous_user=true |
@@ -132,6 +100,58 @@ This tagrendering has labels
 | no_imports.0 | *All Notes* (default) |  |
 | no_imports.1 | Hide import notes | _is_import_note= |
 | no_imports.2 | Show only import Notes | _is_import_note~.+ |
+
+| id | question | osmTags | fields |
+-----|-----|-----|----- |
+| search.0 | Should mention {search} in the first comment |  | search (regex) |
+
+| id | question | osmTags | fields |
+-----|-----|-----|----- |
+| search_any.0 | Should mention {search} in any comment |  | search (regex) |
+
+| id | question | osmTags | fields |
+-----|-----|-----|----- |
+| not.0 | Should <b>not</b> mention {search} in the first comment |  | search (regex) |
+
+| id | question | osmTags | fields |
+-----|-----|-----|----- |
+| search_not_any.0 | Should <b>not</b> mention {search} in <b>any</b> comment |  | search (regex) |
+
+| id | question | osmTags | fields |
+-----|-----|-----|----- |
+| opened_by.0 | Opened by contributor {search} |  | search (regex) |
+
+| id | question | osmTags | fields |
+-----|-----|-----|----- |
+| not_opened_by.0 | <b>Not</b> opened by contributor {search} |  | search (regex) |
+
+| id | question | osmTags | fields |
+-----|-----|-----|----- |
+| edited_by_any.0 | Edited or commented on by any user with name {search} |  | search (regex) |
+
+| id | question | osmTags | fields |
+-----|-----|-----|----- |
+| last_edited_by.0 | Last edited by contributor {search} |  | search (regex) |
+
+| id | question | osmTags | fields |
+-----|-----|-----|----- |
+| not_last_edited_by.0 | Not edited as last by {search} |  | search (regex) |
+
+| id | question | osmTags | fields |
+-----|-----|-----|----- |
+| opened_before.0 | Created before {search} |  | search (date) |
+
+| id | question | osmTags | fields |
+-----|-----|-----|----- |
+| opened_after.0 | Created after {search} |  | search (date) |
+
+| id | question | osmTags | fields |
+-----|-----|-----|----- |
+| last_edited_before.0 | Last edited before {search} |  | search (date) |
+
+| id | question | osmTags | fields |
+-----|-----|-----|----- |
+| last_edited_after.0 | Last edited after {search} |  | search (date) |
 
 
 

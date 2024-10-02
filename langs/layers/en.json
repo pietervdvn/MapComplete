@@ -1181,6 +1181,78 @@
             "render": "Bench"
         }
     },
+    "bicycle_counter": {
+        "description": "Layer showing monitoring stations for bicycle traffic",
+        "name": "Bicycle counters",
+        "presets": {
+            "0": {
+                "title": "a bicycle counter"
+            }
+        },
+        "tagRenderings": {
+            "clock": {
+                "mappings": {
+                    "0": {
+                        "then": "This counter has a clock"
+                    },
+                    "1": {
+                        "then": "This counter has no clock"
+                    }
+                },
+                "question": "Does this bicycle counter have a clock?"
+            },
+            "display": {
+                "mappings": {
+                    "0": {
+                        "then": "This counter has a digital display"
+                    },
+                    "1": {
+                        "then": "This counter has an analog display"
+                    },
+                    "2": {
+                        "then": "This counter has no display"
+                    }
+                },
+                "question": "Does this bicycle counter have a display showing the number of passing bicycles?"
+            },
+            "name": {
+                "freeform": {
+                    "placeholder": "Name of the counted location"
+                },
+                "question": "What is the name of the counted location?",
+                "render": "Name of the counted location: {name}"
+            },
+            "ref": {
+                "freeform": {
+                    "placeholder": "Reference number of the counter"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "This counter has no reference number"
+                    }
+                },
+                "question": "What is the reference number of this counter?",
+                "render": "Reference number of the counter: {ref}"
+            },
+            "start_date": {
+                "freeform": {
+                    "placeholder": "Start date of the counter"
+                },
+                "question": "When did this counter start counting?",
+                "render": "This counter started counting on {start_date}"
+            },
+            "website": {
+                "freeform": {
+                    "placeholder": "Website of the counter"
+                },
+                "question": "Is there a website for this bicycle counter?",
+                "render": "Website of the counter: <a href='{website}'>{website}</a>"
+            }
+        },
+        "title": {
+            "render": "Bicycle counter"
+        }
+    },
     "bicycle_library": {
         "description": "A facility where bicycles can be lent for longer period of times",
         "name": "Bicycle library",
@@ -4142,6 +4214,9 @@
                     },
                     "2": {
                         "then": "This drinking water is closed"
+                    },
+                    "3": {
+                        "then": "This drinking water is permanently closed"
                     }
                 },
                 "question": "Is this drinking water spot still operational?",

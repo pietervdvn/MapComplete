@@ -205,10 +205,19 @@ export class ChangesetHandler {
         try {
             return await this.UploadWithNew(generateChangeXML, openChangeset, extraMetaTags)
         } catch (e) {
+            const req = (<XMLHttpRequest>e)
+            if (req.status === 403) {
+                // Someone got the banhammer
+                // This is the message that OSM returned, will be something like "you have an important message, go to osm.org"
+                const msg =   req.responseText
+                alert(msg+"\n\nWe'll take you to openstreetmap.org now")
+                window.location.replace(this.osmConnection.Backend())
+                return
+            }
             if (this._reportError) {
                 this._reportError(e, "While opening a new changeset")
             }
-            if ((<XMLHttpRequest>e).status === 400) {
+            if (req.status === 400) {
                 // This request is invalid. We simply drop the changes and hope that someone will analyze what went wrong with it in the upload; we pretend everything went fine
                 return
             }

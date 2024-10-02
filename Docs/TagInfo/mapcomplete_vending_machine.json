@@ -130,6 +130,11 @@
     },
     {
       "key": "vending",
+      "description": "Layer 'Vending Machines' shows vending=ice_cream with a fixed text, namely 'Ice cream is sold' and allows to pick this as a default answer (in the mapcomplete.org theme 'Vending Machines')",
+      "value": "ice_cream"
+    },
+    {
+      "key": "vending",
       "description": "Layer 'Vending Machines' shows vending=cheese with a fixed text, namely 'Cheese is sold' and allows to pick this as a default answer (in the mapcomplete.org theme 'Vending Machines')",
       "value": "cheese"
     },

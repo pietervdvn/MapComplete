@@ -29,7 +29,7 @@ Tombstones (and graves) indicate where a person was buried. On this map, those c
 
 The following options to create new points are included:
 
-**a tombstone** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:historic' target='_blank'>historic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:historic%3Dtomb' target='_blank'>tomb</a>
+ - **a tombstone** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:historic' target='_blank'>historic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:historic%3Dtomb' target='_blank'>tomb</a>
 
 ## Basic tags for this layer
 

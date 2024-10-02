@@ -46,6 +46,11 @@
       "value": ""
     },
     {
+      "key": "hackerspace",
+      "description": "Layer 'Hackerspace' shows hackerspace=hacklab with a fixed text, namely 'This is a <b>hacklab</b> which is mostly focussed on basic computer skills, using recycled devices and/or providing internet to the community. This is typically located in autonomous spaces, squats or social facilities' and allows to pick this as a default answer (in the mapcomplete.org theme 'Hackerspaces and makerspaces')",
+      "value": "hacklab"
+    },
+    {
       "key": "name",
       "description": "Layer 'Hackerspace' shows and asks freeform values for key 'name' (in the mapcomplete.org theme 'Hackerspaces and makerspaces')"
     },
@@ -317,6 +322,11 @@
       "key": "internet_access",
       "description": "Layer 'Hackerspace' shows internet_access=wired with a fixed text, namely 'This place offers wired internet access' and allows to pick this as a default answer (in the mapcomplete.org theme 'Hackerspaces and makerspaces')",
       "value": "wired"
+    },
+    {
+      "key": "internet_access",
+      "description": "Layer 'Hackerspace' shows internet_access=terminal;wifi with a fixed text, namely 'This place offers both wireless internet and internet access via a terminal or computer' and allows to pick this as a default answer (in the mapcomplete.org theme 'Hackerspaces and makerspaces')",
+      "value": "terminal;wifi"
     },
     {
       "key": "internet_access:fee",

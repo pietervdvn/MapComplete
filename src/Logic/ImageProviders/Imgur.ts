@@ -3,14 +3,12 @@ import BaseUIElement from "../../UI/BaseUIElement"
 import { Utils } from "../../Utils"
 import Constants from "../../Models/Constants"
 import { LicenseInfo } from "./LicenseInfo"
-import { ImageUploader } from "./ImageUploader"
 
-export class Imgur extends ImageProvider implements ImageUploader {
+export class Imgur extends ImageProvider {
     public static readonly defaultValuePrefix = ["https://i.imgur.com"]
     public static readonly singleton = new Imgur()
     public readonly name = "Imgur"
     public readonly defaultKeyPrefixes: string[] = ["image"]
-    public readonly maxFileSizeInMegabytes = 10
     public static readonly apiUrl = "https://api.imgur.com/3/image"
     public static readonly supportingUrls = ["https://i.imgur.com"]
     private constructor() {
@@ -21,57 +19,23 @@ export class Imgur extends ImageProvider implements ImageUploader {
         return [Imgur.apiUrl]
     }
 
-    /**
-     * Uploads an image, returns the URL where to find the image
-     * @param title
-     * @param description
-     * @param blob
-     */
-    public async uploadImage(
-        title: string,
-        description: string,
-        blob: File
-    ): Promise<{ key: string; value: string }> {
-        const apiUrl = Imgur.apiUrl
-        const apiKey = Constants.ImgurApiKey
-
-        const formData = new FormData()
-        formData.append("image", blob)
-        formData.append("title", title)
-        formData.append("description", description)
-
-        const settings: RequestInit = {
-            method: "POST",
-            body: formData,
-            redirect: "follow",
-            headers: new Headers({
-                Authorization: `Client-ID ${apiKey}`,
-                Accept: "application/json",
-            }),
-        }
-
-        // Response contains stringified JSON
-        const response = await fetch(apiUrl, settings)
-        const content = await response.json()
-        return { key: "image", value: content.data.link }
-    }
 
     SourceIcon(): BaseUIElement {
         return undefined
     }
 
-    public async ExtractUrls(key: string, value: string): Promise<Promise<ProvidedImage>[]> {
+    public ExtractUrls(key: string, value: string): undefined | ProvidedImage[] {
         if (Imgur.defaultValuePrefix.some((prefix) => value.startsWith(prefix))) {
             return [
-                Promise.resolve({
+                {
                     url: value,
                     key: key,
                     provider: this,
                     id: value,
-                }),
+                }
             ]
         }
-        return []
+        return undefined
     }
 
     /**

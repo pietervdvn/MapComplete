@@ -86,7 +86,7 @@ class WikiPageGenerator {
             "! Name, link !! Genre !! Covered region !! Language !! Description !! Free materials !! Image\n" +
             "|-"
 
-        for (const layout of themeOverview) {
+        for (const layout of themeOverview.themes) {
             if (layout.hideFromOverview) {
                 continue
             }

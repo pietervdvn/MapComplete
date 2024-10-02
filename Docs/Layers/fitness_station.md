@@ -32,7 +32,7 @@ Find a fitness station near you, and add missing ones.
 
 The following options to create new points are included:
 
-**a fitness station** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dfitness_station' target='_blank'>fitness_station</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dfitness' target='_blank'>fitness</a>
+ - **a fitness station** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dfitness_station' target='_blank'>fitness_station</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dfitness' target='_blank'>fitness</a>
 
 ## Basic tags for this layer
 

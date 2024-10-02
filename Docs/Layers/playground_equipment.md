@@ -29,7 +29,7 @@ Layer showing playground equipment
 
 The following options to create new points are included:
 
-**a playground device** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:playground' target='_blank'>playground</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:playground%3Dyes' target='_blank'>yes</a>
+ - **a playground device** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:playground' target='_blank'>playground</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:playground%3Dyes' target='_blank'>yes</a>
 
 ## Basic tags for this layer
 

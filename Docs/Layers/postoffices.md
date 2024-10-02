@@ -40,7 +40,7 @@ A layer showing post offices.
 
 The following options to create new points are included:
 
-**a post office** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dpost_office' target='_blank'>post_office</a>
+ - **a post office** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dpost_office' target='_blank'>post_office</a>
 
 ## Basic tags for this layer
 

@@ -1,4 +1,3 @@
-import Constants from "../../Models/Constants"
 import SearchUtils from "./SearchUtils"
 import ThemeSearch from "./ThemeSearch"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
@@ -12,7 +11,9 @@ export default class LayerSearch {
 
     constructor(layout: LayoutConfig) {
         this._layout = layout
-        this._layerWhitelist = new Set(layout.layers.map(l => l.id).filter(id => Constants.added_by_default.indexOf(<any>id) < 0))
+        this._layerWhitelist = new Set(layout.layers
+            .filter(l => l.isNormal())
+            .map(l => l.id))
     }
 
     static scoreLayers(query: string, options: {

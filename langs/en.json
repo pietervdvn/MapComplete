@@ -203,7 +203,10 @@
             "openMapillary": "Open Mapillary here",
             "openOsmcha": "See latest edits made with {theme}",
             "openOsmchaLastWeek": "See edits from the last 7 days",
+            "openPanoramax": "Open Panoramax here",
             "openThemeDocumentation": "Open the documentation for thematic map {name}",
+            "panoramaxHelp": "<b>Panoramax</b> is an online service which gathers street-level pictures and offers them under a free license. Contributors are allowed to use these pictures to improve OpenStreetMap",
+            "panoramaxLicenseCCBYSA": "Your pictures are published under CC-BY-SA - everyone can reuse your image if they mention your name",
             "seeOnMapillary": "See this image on Mapillary",
             "themeBy": "Theme maintained by {author}",
             "title": "Copyright and attribution",
@@ -593,7 +596,8 @@
             "title": "Nearby streetview imagery"
         },
         "pleaseLogin": "Please log in to add a picture",
-        "respectPrivacy": "Do not photograph people nor license plates. Do not upload Google Maps, Google Streetview or other copyrighted sources.",
+        "processing": "The server is processing your image",
+        "respectPrivacy": "Do not upload from Google Maps, Google Streetview or other copyrighted sources.",
         "toBig": "Your image is too large as it is {actual_size}. Please use images of at most {max_size}",
         "upload": {
             "failReasons": "You might have lost connection to the internet",

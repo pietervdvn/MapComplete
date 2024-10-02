@@ -18,7 +18,7 @@ export default {
       ]
     },
     "description": {
-      "description": "A description for the features shown in this layer.\nThis often resembles the introduction of the wiki.osm.org-page for this feature.\n\ngroup: Basic\nquestion: How would you describe the features that are shown on this layer?",
+      "description": "question: How would you describe the features that are shown on this layer?\n\nA description for the features shown in this layer.\nThis often resembles the introduction of the wiki.osm.org-page for this feature.\n\ngroup: Basic",
       "anyOf": [
         {
           "$ref": "#/definitions/Record<string,string>"
@@ -27,6 +27,10 @@ export default {
           "type": "string"
         }
       ]
+    },
+    "searchTerms": {
+      "description": "question: What are some other terms used to describe these objects?\n\nThis is used in the search functionality",
+      "$ref": "#/definitions/Record<string,string[]>"
     },
     "source": {
       "description": "Question: Where should the data be fetched from?\ntitle: Data Source\n\nThis determines where the data for the layer is fetched: from OSM or from an external geojson dataset.\n\nIf no 'geojson' is defined, data will be fetched from overpass and the OSM-API.\n\nEvery source _must_ define which tags _must_ be present in order to be picked up.\n\nNote: a source must always be defined. 'special' is only allowed if this is a builtin-layer\n\ntypes: Load data with specific tags from OpenStreetMap ; Load data from an external geojson source ;\ntypesdefault: 0\nifunset: Determine the tags automatically based on the presets\ngroup: Basic",
@@ -324,7 +328,7 @@ export default {
       }
     },
     "filter": {
-      "description": "All the extra questions for filtering.\nIf a string is given, mapComplete will search in\n1. The tagrenderings for a match on ID and use the mappings as options\n2. search 'filters.json' for the appropriate filter or\n3. will try to parse it as `layername.filterid` and us that one.\n\n\ngroup: filters",
+      "description": "All the extra questions for filtering.\nIf a string is given, mapComplete will search in\n1. The tagrenderings for a match on ID and use the mappings as options\n2. search 'filters.json' for the appropriate filter or\n3. will try to parse it as `layername.filterid` and us that one.\n\nNote: adding \"#filter\":\"no-auto\" will disable the filters added by tagRenderings\n\ngroup: filters",
       "anyOf": [
         {
           "type": "array",
@@ -351,6 +355,13 @@ export default {
           ]
         }
       ]
+    },
+    "#filter": {
+      "description": "Set this to disable the feature that tagRenderings can introduce filters",
+      "enum": [
+        "no-auto"
+      ],
+      "type": "string"
     },
     "deletion": {
       "description": "This block defines under what circumstances the delete dialog is shown for objects of this layer.\nIf set, a dialog is shown to the user to (soft) delete the point.\nThe dialog is built to be user friendly and to prevent mistakes.\nIf deletion is not possible, the dialog will hide itself and show the reason of non-deletability instead.\n\nTo configure, the following values are possible:\n\n- false: never ever show the delete button\n- true: show the default delete button\n- undefined: use the mapcomplete default to show deletion or not. Currently, this is the same as 'false' but this will change in the future\n- or: a hash with options (see below)\n\n### The delete dialog\n\n\n\n#### Hard deletion if enough experience\n\nA feature can only be deleted from OpenStreetMap by mapcomplete if:\n\n- It is a node\n- No ways or relations use the node\n- The logged-in user has enough experience OR the user is the only one to have edited the point previously\n- The logged-in user has no unread messages (or has a ton of experience)\n- The user did not select one of the 'non-delete-options' (see below)\n\nIn all other cases, a 'soft deletion' is used.\n\n#### Soft deletion\n\nA 'soft deletion' is when the point isn't deleted fromOSM but retagged so that it'll won't how up in the mapcomplete theme anymore.\nThis makes it look like it was deleted, without doing damage. A fixme will be added to the point.\n\nNote that a soft deletion is _only_ possible if these tags are provided by the theme creator, as they'll be different for every theme\n\n##### No-delete options\n\nIn some cases, the contributor might want to delete something for the wrong reason (e.g. someone who wants to have a path removed \"because the path is on their private property\").\nHowever, the path exists in reality and should thus be on OSM - otherwise the next contributor will pass by and notice \"hey, there is a path missing here! Let me redraw it in OSM!)\n\nThe correct approach is to retag the feature in such a way that it is semantically correct *and* that it doesn't show up on the theme anymore.\nA no-delete option is offered as 'reason to delete it', but secretly retags.\n\ngroup: editing\ntypes: Use an advanced delete configuration ; boolean\niftrue: Allow deletion\niffalse: Do not allow deletion\nifunset: Do not allow deletion",
@@ -413,6 +424,17 @@ export default {
     "enableMorePrivacy": {
       "description": "question: Should a theme using this layer leak some location info when making changes?\n\nWhen a changeset is made, a 'distance to object'-class is written to the changeset.\nFor some particular themes and layers, this might leak too much information, and we want to obfuscate this\n\nifunset: Write 'change_within_x_m' as usual and if GPS is enabled\niftrue: Do not write 'change_within_x_m' and do not indicate that this was done by survey",
       "type": "boolean"
+    },
+    "snapName": {
+      "description": "question: When a feature is snapped to this name, how should this item be called?\n\nIn the move wizard, the option `snap object onto {snapName}` is shown\n\ngroup: hidden",
+      "anyOf": [
+        {
+          "$ref": "#/definitions/Record<string,string>"
+        },
+        {
+          "type": "string"
+        }
+      ]
     }
   },
   "required": [
@@ -475,6 +497,71 @@ export default {
       "required": [
         "or"
       ]
+    },
+    "FilterConfigOptionJson": {
+      "type": "object",
+      "properties": {
+        "question": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Record<string,string>"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "searchTerms": {
+          "$ref": "#/definitions/Record<string,string[]>"
+        },
+        "emoji": {
+          "type": "string"
+        },
+        "icon": {
+          "type": "string"
+        },
+        "osmTags": {
+          "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation\n\ntype: tag",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/{and:TagConfigJson[];}"
+            },
+            {
+              "$ref": "#/definitions/{or:TagConfigJson[];}"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "default": {
+          "type": "boolean"
+        },
+        "fields": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "If name is `search`, use  \"_first_comment~.*{search}.*\" as osmTags",
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name"
+            ]
+          }
+        }
+      },
+      "required": [
+        "question"
+      ]
+    },
+    "Record<string,string[]>": {
+      "type": "object"
     },
     "Record<string,string|Record<string,string>>": {
       "type": "object"
@@ -805,15 +892,22 @@ export default {
         },
         "filter": {
           "description": "This tagRendering can introduce this builtin filter",
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            {
+              "enum": [
+                true
+              ],
+              "type": "boolean"
+            }
+          ]
         }
       }
-    },
-    "Record<string,string[]>": {
-      "type": "object"
     },
     "MappingConfigJson": {
       "type": "object",
@@ -1320,7 +1414,7 @@ export default {
           ]
         },
         "labels": {
-          "description": "A list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer",
+          "description": "What labels should be applied on this tagRendering?\n\nA list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer\n\nSpecial values:\n- \"hidden\": do not show this tagRendering. Useful in it is used by e.g. an accordion\n- \"description\": this label is a description used in the search",
           "type": "array",
           "items": {
             "type": "string"
@@ -1432,10 +1526,20 @@ export default {
         },
         "filter": {
           "description": "This tagRendering can introduce this builtin filter",
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            {
+              "enum": [
+                true
+              ],
+              "type": "boolean"
+            }
+          ]
         }
       },
       "required": [
@@ -1557,7 +1661,7 @@ export default {
           ]
         },
         "labels": {
-          "description": "A list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer",
+          "description": "What labels should be applied on this tagRendering?\n\nA list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer\n\nSpecial values:\n- \"hidden\": do not show this tagRendering. Useful in it is used by e.g. an accordion\n- \"description\": this label is a description used in the search",
           "type": "array",
           "items": {
             "type": "string"
@@ -1669,10 +1773,20 @@ export default {
         },
         "filter": {
           "description": "This tagRendering can introduce this builtin filter",
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            {
+              "enum": [
+                true
+              ],
+              "type": "boolean"
+            }
+          ]
         }
       }
     },
@@ -1786,48 +1900,7 @@ export default {
           "description": "The options for a filter\nIf there are multiple options these will be a list of radio buttons\nIf there is only one option this will be a checkbox\nFiltering is done based on the given osmTags that are compared to the objects in that layer.\n\nAn example which searches by name:\n\n```\n{\n      \"id\": \"shop-name\",\n      \"options\": [\n        {\n          \"fields\": [\n            {\n              \"name\": \"search\",\n              \"type\": \"string\"\n            }\n          ],\n          \"osmTags\": \"name~i~.*{search}.*\",\n          \"question\": {\n            \"en\": \"Only show shops with name {search}\",\n          }\n        }\n      ]\n    }\n    ```",
           "type": "array",
           "items": {
-            "type": "object",
-            "properties": {
-              "question": {},
-              "osmTags": {
-                "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation\n\ntype: tag",
-                "anyOf": [
-                  {
-                    "$ref": "#/definitions/{and:TagConfigJson[];}"
-                  },
-                  {
-                    "$ref": "#/definitions/{or:TagConfigJson[];}"
-                  },
-                  {
-                    "type": "string"
-                  }
-                ]
-              },
-              "default": {
-                "type": "boolean"
-              },
-              "fields": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "name": {
-                      "description": "If name is `search`, use  \"_first_comment~.*{search}.*\" as osmTags",
-                      "type": "string"
-                    },
-                    "type": {
-                      "type": "string"
-                    }
-                  },
-                  "required": [
-                    "name"
-                  ]
-                }
-              }
-            },
-            "required": [
-              "question"
-            ]
+            "$ref": "#/definitions/FilterConfigOptionJson"
           }
         },
         "#": {

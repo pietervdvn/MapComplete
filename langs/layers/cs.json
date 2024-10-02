@@ -115,6 +115,17 @@
                 },
                 "question": "Zobrazuje tato reklama cyklicky několik zpráv?"
             },
+            "historic": {
+                "mappings": {
+                    "0": {
+                        "then": "Jedná se o historický reklamní nápis (reklama na již neexistující podnik nebo velmi starý nápis s památkovou hodnotou)"
+                    },
+                    "1": {
+                        "then": "Tento reklamní nápis nemá žádnou historickou hodnotu (podnik stále existuje a nemá žádnou památkovou hodnotu)"
+                    }
+                },
+                "question": "Je tato značka určena pro již neexistující nebo neudržovaný podnik?"
+            },
             "luminous_or_lit_advertising": {
                 "override": {
                     "+mappings": {
@@ -177,6 +188,12 @@
                     },
                     "10": {
                         "then": "Toto je nástěnná malba"
+                    },
+                    "11": {
+                        "then": "Jedná se o dlaždice - reklama je namalovaná na dlaždicích"
+                    },
+                    "12": {
+                        "then": "Toto je reliéf"
                     },
                     "2": {
                         "then": "Toto je sloup"
@@ -260,6 +277,52 @@
                 "question": "Jak dlouho trvá jedna jízda tímto výtahem?",
                 "questionHint": "To nezahrnuje čekací dobu.",
                 "render": "Jedna jízda trvá {duration} minut"
+            },
+            "length": {
+                "render": "Tato dráha je dlouhá {_length:km} kilometr"
+            },
+            "occupancy": {
+                "question": "Kolik osob se vejde do jednoho vozu?",
+                "render": "{aerialway:occupancy} osob se vejde do jednoho vozu"
+            },
+            "oneway": {
+                "mappings": {
+                    "0": {
+                        "then": "Touto lanovkou lze vyjet pouze na vrchol"
+                    },
+                    "1": {
+                        "then": "Tuto dráhu lze využít v obou směrech"
+                    }
+                },
+                "question": "Jakým směrem tato dráha může vést?"
+            },
+            "type": {
+                "mappings": {
+                    "0": {
+                        "then": "Jedná se o lanovku, kde vagon jezdí nahoru a dolů po stejném laně."
+                    },
+                    "1": {
+                        "then": "Jedná se o gondolu, kde vozy jezdí v nepřetržitých kruzích"
+                    },
+                    "10": {
+                        "then": "Lano na visuté dráze. (Turistická atrakce, kde se odvážlivci spouštějí vysokou rychlostí) "
+                    },
+                    "2": {
+                        "then": "Otevřená lanovka se sedačkami k sezení na čerstvém vzduchu."
+                    },
+                    "3": {
+                        "then": "Lanová dráha, která má sedačky i gondoly na stejné souvislé dráze"
+                    },
+                    "4": {
+                        "then": "Vlek"
+                    },
+                    "5": {
+                        "then": "Vlek s nosiči ve tvaru T pro dva cestující najednou"
+                    },
+                    "6": {
+                        "then": "Vlek s tyčemi ve tvaru písmene L pro jednoho cestujícího"
+                    }
+                }
             }
         }
     },

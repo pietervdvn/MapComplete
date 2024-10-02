@@ -15,7 +15,6 @@ import FeatureSwitchState from "../Logic/State/FeatureSwitchState"
 import { MenuState } from "../Models/MenuState"
 import OsmObjectDownloader from "../Logic/Osm/OsmObjectDownloader"
 import { ImageUploadManager } from "../Logic/ImageProviders/ImageUploadManager"
-import { OsmTags } from "../Models/OsmFeature"
 import FavouritesFeatureSource from "../Logic/FeatureSource/Sources/FavouritesFeatureSource"
 import { ProvidedImage } from "../Logic/ImageProviders/ImageProvider"
 import GeoLocationHandler from "../Logic/Actors/GeoLocationHandler"
@@ -27,6 +26,7 @@ import { CombinedFetcher } from "../Logic/Web/NearbyImagesSearch"
 import SearchState from "../Logic/State/SearchState"
 import UserRelatedState, { OptionallySyncedHistory } from "../Logic/State/UserRelatedState"
 import GeocodeResult from "./Search/GeocodeResult.svelte"
+import FeaturePropertiesStore from "../Logic/FeatureSource/Actors/FeaturePropertiesStore"
 
 /**
  * The state needed to render a special Visualisation.
@@ -37,10 +37,7 @@ export interface SpecialVisualizationState {
     readonly featureSwitches: FeatureSwitchState
 
     readonly layerState: LayerState
-    readonly featureProperties: {
-        getStore(id: string): UIEventSource<Record<string, string>>,
-        trackFeature?(feature: { properties: OsmTags })
-    }
+    readonly featureProperties: FeaturePropertiesStore
 
     readonly indexedFeatures: IndexedFeatureSource & LayoutSource
     /**
@@ -89,8 +86,8 @@ export interface SpecialVisualizationState {
     getMatchingLayer(properties: Record<string, string>);
 
     showCurrentLocationOn(map: Store<MlMap>): ShowDataLayer
+    reportError(message: string | Error | XMLHttpRequest, extramessage?: string): Promise<void>
 
-    reportError(message: string): Promise<void>
 }
 
 export interface SpecialVisualization {

@@ -1,5 +1,5 @@
 import { OsmNode, OsmObject, OsmRelation, OsmWay } from "./OsmObject"
-import { Store, UIEventSource } from "../UIEventSource"
+import { ImmutableStore, Store, UIEventSource } from "../UIEventSource"
 import Constants from "../../Models/Constants"
 import OsmChangeAction from "./Actions/OsmChangeAction"
 import { ChangeDescription, ChangeDescriptionTools } from "./Actions/ChangeDescription"
@@ -11,13 +11,12 @@ import { GeoLocationPointProperties } from "../State/GeoLocationState"
 import { GeoOperations } from "../GeoOperations"
 import { ChangesetHandler, ChangesetTag } from "./ChangesetHandler"
 import { OsmConnection } from "./OsmConnection"
-import FeaturePropertiesStore from "../FeatureSource/Actors/FeaturePropertiesStore"
 import OsmObjectDownloader from "./OsmObjectDownloader"
 import ChangeLocationAction from "./Actions/ChangeLocationAction"
 import ChangeTagAction from "./Actions/ChangeTagAction"
-import FeatureSwitchState from "../State/FeatureSwitchState"
 import DeleteAction from "./Actions/DeleteAction"
 import MarkdownUtils from "../../Utils/MarkdownUtils"
+import FeaturePropertiesStore from "../FeatureSource/Actors/FeaturePropertiesStore"
 
 /**
  * Handles all changes made to OSM.
@@ -30,7 +29,9 @@ export class Changes {
     public readonly state: {
         allElements?: IndexedFeatureSource
         osmConnection: OsmConnection
-        featureSwitches?: FeatureSwitchState
+        featureSwitches?: {
+            featureSwitchMorePrivacy?: Store<boolean>
+        }
     }
     public readonly extraComment: UIEventSource<string> = new UIEventSource(undefined)
     public readonly backend: string
@@ -45,12 +46,15 @@ export class Changes {
 
     constructor(
         state: {
-            dryRun: Store<boolean>
+            featureSwitches: {
+                featureSwitchMorePrivacy?: Store<boolean>
+                featureSwitchIsTesting?: Store<boolean>
+            },
+            osmConnection: OsmConnection,
+            reportError?: (error: string) => void,
+            featureProperties?: FeaturePropertiesStore,
+            historicalUserLocations?: FeatureSource,
             allElements?: IndexedFeatureSource
-            featurePropertiesStore?: FeaturePropertiesStore
-            osmConnection: OsmConnection
-            historicalUserLocations?: FeatureSource
-            featureSwitches?: FeatureSwitchState
         },
         leftRightSensitive: boolean = false,
         reportError?: (string: string | Error, extramessage?: string) => void
@@ -59,14 +63,18 @@ export class Changes {
         // We keep track of all changes just as well
         this.allChanges.setData([...this.pendingChanges.data])
         // If a pending change contains a negative ID, we save that
-        this._nextId = Math.min(-1, ...(this.pendingChanges.data?.map((pch) => pch.id) ?? []))
+        this._nextId = Math.min(-1, ...(this.pendingChanges.data?.map((pch) => pch.id ?? 0) ?? []))
+        if(isNaN(this._nextId) && state.reportError !== undefined){
+            state.reportError("Got a NaN as nextID. Pending changes IDs are:" +this.pendingChanges.data?.map(pch => pch?.id).join("."))
+            this._nextId = -100
+        }
         this.state = state
         this.backend = state.osmConnection.Backend()
         this._reportError = reportError
         this._changesetHandler = new ChangesetHandler(
-            state.dryRun,
+            state.featureSwitches.featureSwitchIsTesting,
             state.osmConnection,
-            state.featurePropertiesStore,
+            state.featureProperties,
             this,
             (e, extramessage: string) => this._reportError(e, extramessage)
         )
@@ -74,6 +82,15 @@ export class Changes {
 
         // Note: a changeset might be reused which was opened just before and might have already used some ids
         // This doesn't matter however, as the '-1' is per piecewise upload, not global per changeset
+    }
+
+    public static createTestObject(): Changes{
+        return new Changes({
+            osmConnection: new OsmConnection(),
+            featureSwitches:{
+                featureSwitchIsTesting: new ImmutableStore(true)
+            }
+        })
     }
 
     static buildChangesetXML(

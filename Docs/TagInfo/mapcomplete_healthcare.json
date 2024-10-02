@@ -377,6 +377,21 @@
       "description": "Layer 'Pharmacies' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the mapcomplete.org theme 'Healthcare')"
     },
     {
+      "key": "payment:cash",
+      "description": "Layer 'Pharmacies' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Healthcare')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:cards",
+      "description": "Layer 'Pharmacies' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Healthcare')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:qr_code",
+      "description": "Layer 'Pharmacies' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Healthcare')",
+      "value": "yes"
+    },
+    {
       "key": "wheelchair",
       "description": "Layer 'Pharmacies' shows wheelchair=yes with a fixed text, namely 'This pharmacy is easy to access on a wheelchair' and allows to pick this as a default answer (in the mapcomplete.org theme 'Healthcare')",
       "value": "yes"
@@ -1648,6 +1663,11 @@
       "key": "internet_access",
       "description": "Layer 'Shop' shows internet_access=wired with a fixed text, namely 'This place offers wired internet access' and allows to pick this as a default answer (in the mapcomplete.org theme 'Healthcare')",
       "value": "wired"
+    },
+    {
+      "key": "internet_access",
+      "description": "Layer 'Shop' shows internet_access=terminal;wifi with a fixed text, namely 'This place offers both wireless internet and internet access via a terminal or computer' and allows to pick this as a default answer (in the mapcomplete.org theme 'Healthcare')",
+      "value": "terminal;wifi"
     },
     {
       "key": "internet_access:fee",

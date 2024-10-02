@@ -2,6 +2,75 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.47.4](https://github.com/pietervdvn/mapcomplete/compare/v0.46.12...v0.47.4) (2024-09-30)
+
+
+### Features
+
+* **studio:** add possibility to directly write into the theme files ([0be7c64](https://github.com/pietervdvn/mapcomplete/commits0be7c64ea1dae928ef658b0ef91ad6ad662f0f36))
+
+
+### Bug Fixes
+
+* enable summary server again ([d6eca37](https://github.com/pietervdvn/mapcomplete/commitsd6eca3717a7fb3ac8d17d20861870d17a0da44bb))
+* fix [#2183](https://github.com/pietervdvn/MapComplete/issues/2183) by updating wikidata-sdk to latest wikibase-sdk ([021e5f2](https://github.com/pietervdvn/mapcomplete/commits021e5f2734c46de3d51860f6c717b667dd8d1427))
+
+
+### Theme improvements
+
+* **bicycle_counter:** add images, fix center location ([ea133c5](https://github.com/pietervdvn/mapcomplete/commitsea133c5effeaad3f5e09e6e2991f0f1f6a12bbc4))
+* **police:** add jail and checkpoint icons ([169ee29](https://github.com/pietervdvn/mapcomplete/commits169ee2941498e9968dfbf42f65c8504b6bcb7f37))
+* **shops:** make 'shops' only appear on zoomlevel 15 ([c4ae41e](https://github.com/pietervdvn/mapcomplete/commitsc4ae41e0e1fffa925f293f2a65c277979308a694))
+* tighten minzooms ([1aef862](https://github.com/pietervdvn/mapcomplete/commits1aef862b11dfcb1a359144c70cd7d26db51dd6f2))
+
+### [0.47.2](https://github.com/pietervdvn/mapcomplete/compare/v0.47.1...v0.47.2) (2024-09-24)
+
+
+### Bug Fixes
+
+* correctly apply previous refactoring ([2a53f99](https://github.com/pietervdvn/mapcomplete/commits2a53f99dd50695768ff9b625665ca69bf0bec4c1))
+* delete entry from 'localStorage' ([22c8a45](https://github.com/pietervdvn/mapcomplete/commits22c8a45012be60dad215f8b0d72501133665454e))
+* don't add buildings to database, reevaluate builddb script ([ce87edf](https://github.com/pietervdvn/mapcomplete/commitsce87edf80009bd65c9f185d9ff68b023c5486adc))
+* fix wrong location in theme ([8b0b24b](https://github.com/pietervdvn/mapcomplete/commits8b0b24b01eefa5dbe86d97ac9c3baf38fd2fad0d))
+* remove stray word ([a6598fd](https://github.com/pietervdvn/mapcomplete/commitsa6598fd52d588ba7a5a6b05e2df8ff8ae460a37b))
+* use 'isCounted' instead of 'doCount', add check for this ([3a8fc42](https://github.com/pietervdvn/mapcomplete/commits3a8fc4248b7aa6a9cea8c2529a02a7cc11325cc8))
+
+### [0.47.1](https://github.com/pietervdvn/mapcomplete/compare/v0.47.0...v0.47.1) (2024-09-19)
+
+
+### Bug Fixes
+
+* actually read preferences ([a5b3342](https://github.com/pietervdvn/mapcomplete/commitsa5b3342415e843d5a33b1d3eb2dce4a95b14932a))
+* use correct overflow ([c668698](https://github.com/pietervdvn/mapcomplete/commitsc668698b1eb16f0d96c5ae0e4e7e79209b6abd95))
+
+
+### Theme improvements
+
+* **food:** add search keywords ([53b7597](https://github.com/pietervdvn/mapcomplete/commits53b75973f6734bcad6d1081299e826d2e00e0551))
+* **sport:** add sport pitches filter on sports, fix [#2159](https://github.com/pietervdvn/MapComplete/issues/2159) ([58cec96](https://github.com/pietervdvn/mapcomplete/commits58cec96fb50284dca79716ffe43d0a75b4cb6597))
+
+## [0.47.0](https://github.com/pietervdvn/mapcomplete/compare/v0.46.9...v0.47.0) (2024-09-17)
+
+
+### Features
+
+* add download as json to 'allTags'-panel (for debugging) ([af2905d](https://github.com/pietervdvn/mapcomplete/commitsaf2905dc6d1cbbcfb2d9cd2583369eebd90ced70))
+
+
+### Bug Fixes
+
+* actually search for keywords in theme view ([cdc1e05](https://github.com/pietervdvn/mapcomplete/commitscdc1e05499ffc41d093503ccd24defa347eea50e))
+
+
+### Theme improvements
+
+* allow to disable auto filters ([b349293](https://github.com/pietervdvn/mapcomplete/commitsb3492930b8e5090e9a9d3449d6e9abc365fc1780))
+* **healthcare:** add payment options to pharmacy layer ([6c5b619](https://github.com/pietervdvn/mapcomplete/commits6c5b61924a63e8bb82afd2dc963cc4fe38caa9ad))
+* **shop:** 'open_now' filter is introduced automatically ([ed2bec1](https://github.com/pietervdvn/mapcomplete/commitsed2bec139cf4e4094973aba2f4734522802898f3))
+* **shop:** don't show trolley bay on low zoom levels ([cdb62df](https://github.com/pietervdvn/mapcomplete/commitscdb62dfe58f5a6264c17e9d88bb590ea3f984b09))
+* some tweaks for the search feature ([bc52c05](https://github.com/pietervdvn/mapcomplete/commitsbc52c05a9b47ba6dbf8c3f79a131f8281b8c5197))
+* **waste:** add filter for 'recycling centre' ([5da63bf](https://github.com/pietervdvn/mapcomplete/commits5da63bf83aa7d8b230c8dbc082be3fba33344289))
+
 ### [0.47.2](https://github.com/pietervdvn/mapcomplete/compare/v0.47.1...v0.47.2) (2024-09-24)
 
 
@@ -60,6 +129,67 @@ All notable changes to this project will be documented in this file. See [standa
 * **shop:** don't show trolley bay on low zoom levels ([cdb62df](https://github.com/pietervdvn/MapComplete/commit/cdb62dfe58f5a6264c17e9d88bb590ea3f984b09))
 * some tweaks for the search feature ([bc52c05](https://github.com/pietervdvn/MapComplete/commit/bc52c05a9b47ba6dbf8c3f79a131f8281b8c5197))
 * **waste:** add filter for 'recycling centre' ([5da63bf](https://github.com/pietervdvn/MapComplete/commit/5da63bf83aa7d8b230c8dbc082be3fba33344289))
+
+
+### [0.46.12](https://github.com/USERNAME/REPOSITORY_NAME/compare/v0.46.11...v0.46.12) (2024-09-29)
+
+
+### Features
+
+* more integrations of panoramax: add panoramax to nearby images view, add to drawer, add icon, see [#1451](https://github.com/pietervdvn/MapComplete/issues/1451) ([5fd1d75](https://github.com/USERNAME/REPOSITORY_NAME/commits5fd1d75efb0fbd49cac3eb5f7a37104887f92f10))
+
+
+### Bug Fixes
+
+* add panoramax.xyz to CSP list ([89d31f5](https://github.com/USERNAME/REPOSITORY_NAME/commits89d31f54bcd9f7f2bf62a663d67aa5bf1308307a))
+* load external panoramax images ([df9c44a](https://github.com/USERNAME/REPOSITORY_NAME/commitsdf9c44aaed7b2670134e8f9128343022e92c6e8d))
+
+
+### Theme improvements
+
+* **drinking water:** fix [#2184](https://github.com/pietervdvn/MapComplete/issues/2184) ([308d2ba](https://github.com/USERNAME/REPOSITORY_NAME/commits308d2ba4c62cc66d9c30cd1536549411c0abcb88))
+
+
+### [0.46.11](https://github.com/USERNAME/REPOSITORY_NAME/compare/v0.46.10...v0.46.11) (2024-09-28)
+
+
+### Features
+
+* check if the image was blurred, attempt to reload if it is done; refactoring of ImageProvider code ([4650170](https://github.com/USERNAME/REPOSITORY_NAME/commits4650170db4bdd3b9e4fbd1900147a7433652dd6f))
+
+
+### Bug Fixes
+
+* fix tests with some refactoring ([0b992e7](https://github.com/USERNAME/REPOSITORY_NAME/commits0b992e75a481ffa5156f68d9a9fa3495a1fec4c9))
+* note themes uses full URL now instead of Panoramax-id ([ce363df](https://github.com/USERNAME/REPOSITORY_NAME/commitsce363dfb59c3237e20aed87ab51da42b9652cb01))
+* quickfixes to image upload flow ([ba1eb28](https://github.com/USERNAME/REPOSITORY_NAME/commitsba1eb28f274ac6cc6be4614456ca3d2137d9ba64))
+
+
+### [0.46.10](https://github.com/USERNAME/REPOSITORY_NAME/compare/v0.46.9...v0.46.10) (2024-09-26)
+
+
+### Features
+
+* Use panoramax to upload to. Will contain bugs ([0bdc1ae](https://github.com/USERNAME/REPOSITORY_NAME/commits0bdc1aec61ec742d141bb3882be07b6d99df654e))
+
+
+### Bug Fixes
+
+* disable image upload button (see [#2178](https://github.com/pietervdvn/MapComplete/issues/2178)) ([cf74296](https://github.com/USERNAME/REPOSITORY_NAME/commitscf74296d23de9ae6dab902205ebe860490627c00))
+* filtering for dates now works again ([bea9f66](https://github.com/USERNAME/REPOSITORY_NAME/commitsbea9f66b9aac9d2f13bca74b7a35cde7dd217e12))
+* fix loading images for CSP, fix [#2161](https://github.com/pietervdvn/MapComplete/issues/2161) ([2569d0c](https://github.com/USERNAME/REPOSITORY_NAME/commits2569d0cb66e411228d9d25cf50dc3278a83d0de5))
+* search fields in a filter are now wrapped into parentheses, allowing for OR as regex ([fb250fb](https://github.com/USERNAME/REPOSITORY_NAME/commitsfb250fb928da576b5649d398272387da72e89e5c))
+* studio now handles arrays better (might fix [#2102](https://github.com/pietervdvn/MapComplete/issues/2102)) ([0c9e41a](https://github.com/USERNAME/REPOSITORY_NAME/commits0c9e41a6ce4508ba3bc767f5eb5bd3cdb88201b2))
+
+
+### Theme improvements
+
+* **ghostsigns:** streamline ghostsigns theme, fix [#2168](https://github.com/pietervdvn/MapComplete/issues/2168), fix [#2167](https://github.com/pietervdvn/MapComplete/issues/2167) ([392fe3b](https://github.com/USERNAME/REPOSITORY_NAME/commits392fe3b190975b9e3c5cb4aadb4d1543aa686d9e))
+* **note:** add filter removing anything matching one or more keywords ([9c09da3](https://github.com/USERNAME/REPOSITORY_NAME/commits9c09da3c137a6af88b935108fe55aa8e1163ed2c))
+* **vending_machine:** add better 'fixme' if freeform for 'vending' is used ([dfce217](https://github.com/USERNAME/REPOSITORY_NAME/commitsdfce217288957be2b27c198d640fd2dd5d53c9fb))
+
+### [0.46.9](https://github.com/USERNAME/REPOSITORY_NAME/compare/v0.46.8...v0.46.9) (2024-09-14)
+
 
 ### [0.46.9](https://github.com/pietervdvn/MapComplete/compare/v0.46.8...v0.46.9) (2024-09-14)
 

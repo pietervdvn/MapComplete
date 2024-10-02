@@ -216,7 +216,7 @@
       "question": {
         "en": "What is the type of this artwork?",
         "nl": "Wat voor soort kunstwerk is dit?",
-        "fr": "Quel est le type de cette œuvre d'art ?",
+        "fr": "Quel est le type de cette œuvre d'art ?",
         "de": "Um welche Art Kunstwerk handelt es sich?",
         "it": "Che tipo di opera d’arte è questo?",
         "ru": "К какому типу относится эта работа?",
@@ -793,7 +793,8 @@
       "id": "doubles_as_memorial",
       "question": {
         "en": "Does this artwork serve as a memorial?",
-        "de": "Dient dieses Kunstwerk als Mahnmal?"
+        "de": "Dient dieses Kunstwerk als Mahnmal?",
+        "fr": "Cet œuvre a-t-elle un rôle de mémorial ?"
       },
       "mappings": [
         {
@@ -801,7 +802,8 @@
           "then": {
             "en": "This artwork also serves as a memorial",
             "de": "Dieses Kunstwerk dient auch als Mahnmal",
-            "ca": "Aquesta obra d'art també serveix com a memorial"
+            "ca": "Aquesta obra d'art també serveix com a memorial",
+            "fr": "Cette œuvre est un mémorial"
           }
         },
         {
@@ -809,7 +811,8 @@
           "alsoShowIf": "historic!=memorial",
           "then": {
             "en": "This artwork does not serve as a bench",
-            "de": "Dieses Kunstwerk dient nicht als Sitzbank"
+            "de": "Dieses Kunstwerk dient nicht als Sitzbank",
+            "fr": "Cette œuvre ne sert pas de banc"
           }
         }
       ]

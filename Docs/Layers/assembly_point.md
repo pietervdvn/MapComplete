@@ -29,7 +29,7 @@ This layer contains assembly points and waiting areas where all employees, passe
 
 The following options to create new points are included:
 
-**an assembly point** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:emergency' target='_blank'>emergency</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:emergency%3Dassembly_point' target='_blank'>assembly_point</a>
+ - **an assembly point** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:emergency' target='_blank'>emergency</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:emergency%3Dassembly_point' target='_blank'>assembly_point</a>
 
 ## Basic tags for this layer
 

@@ -36,7 +36,7 @@
         },
         {
           "icon": {
-            "render":"./assets/layers/police/police.svg",
+            "render": "./assets/layers/police/police.svg",
             "mappings": [
               {
                 "if": "police=checkpoint",

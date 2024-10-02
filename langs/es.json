@@ -397,7 +397,7 @@
             "seeNearby": "Buscar y enlazar fotos cercanas"
         },
         "pleaseLogin": "Acceda para cargar una imagen",
-        "respectPrivacy": "No fotografíe personas ni matrículas. No cargue datos de Google Maps, Google StreetView u otras fuentes protegidas por derechos de autor.",
+        "respectPrivacy": "No cargue datos desde Google Maps, Google StreetView u otras fuentes protegidas por derechos de autor.",
         "toBig": "Tu imagen es demasiado grande, ya que pesa {actual_size}. Por favor utiliza imágenes de como máximo {max_size}",
         "uploadDone": "Se ha añadido la imagen. Gracias por ayudar!",
         "uploadFailed": "No se pudo cargar la imagen. ¿Tiene Internet y se permiten las API de terceros? El navegador Brave o uMatrix podría bloquearlas.",

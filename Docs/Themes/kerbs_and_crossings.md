@@ -68,7 +68,7 @@ No themes use this layer
 
 The following options to create new points are included:
 
-**a crossing** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dcrossing' target='_blank'>crossing</a> (snaps to layers `cycleways_and_roads`)
+ - **a crossing** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dcrossing' target='_blank'>crossing</a> (snaps to layers `cycleways_and_roads`)
 
 ## Basic tags for this layer
 

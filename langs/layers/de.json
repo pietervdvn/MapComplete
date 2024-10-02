@@ -116,6 +116,14 @@
                 "question": "Werden mehrere Werbungen abwechselnd angezeigt?"
             },
             "historic": {
+                "mappings": {
+                    "0": {
+                        "then": "Es handelt sich um ein historisches Werbeschild (eine Werbung für ein Unternehmen, das nicht mehr existiert, oder ein sehr altes Schild mit historischem Wert)"
+                    },
+                    "1": {
+                        "then": "Dieses Werbeschild hat keinen historischen Wert (das Unternehmen existiert noch und hat keinen denkmalpflegerischen Wert)"
+                    }
+                },
                 "question": "Ist dieses Schild für ein Geschäft, das nicht mehr existiert oder nicht mehr gepflegt wird?"
             },
             "luminous_or_lit_advertising": {
@@ -180,6 +188,12 @@
                     },
                     "10": {
                         "then": "Dies ist eine Wandmalerei"
+                    },
+                    "11": {
+                        "then": "Dies ist eine Kachelarbeit - die Werbung ist auf Fliesen gemalt"
+                    },
+                    "12": {
+                        "then": "Dies ist ein Relief"
                     },
                     "2": {
                         "then": "Dies ist eine Litfaßsäule"

@@ -169,6 +169,11 @@
     },
     {
       "key": "room",
+      "description": "Layer 'Indoors' shows room=printer with a fixed text, namely 'This is a copy room' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "value": "printer"
+    },
+    {
+      "key": "room",
       "description": "Layer 'Indoors' shows room=prison_cell with a fixed text, namely 'This is a prison_cell' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
       "value": "prison_cell"
     },

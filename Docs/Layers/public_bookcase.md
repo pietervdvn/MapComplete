@@ -4,7 +4,7 @@
 
 A streetside cabinet with books, accessible to anyone
 
- - This layer is shown at zoomlevel **7** and higher
+ - This layer is shown at zoomlevel **10** and higher
 
 ## Table of contents
 
@@ -39,7 +39,7 @@ A streetside cabinet with books, accessible to anyone
 
 The following options to create new points are included:
 
-**a bookcase** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dpublic_bookcase' target='_blank'>public_bookcase</a>
+ - **a bookcase** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dpublic_bookcase' target='_blank'>public_bookcase</a>
 
 ## Basic tags for this layer
 

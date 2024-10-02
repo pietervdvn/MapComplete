@@ -33,7 +33,7 @@ Indoor and outdoor sports centres can be found on this layer
 
 The following options to create new points are included:
 
-**a sports centre** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dsports_centre' target='_blank'>sports_centre</a>
+ - **a sports centre** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dsports_centre' target='_blank'>sports_centre</a>
 
 ## Basic tags for this layer
 

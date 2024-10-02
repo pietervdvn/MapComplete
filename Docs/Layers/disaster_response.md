@@ -28,7 +28,7 @@ This layer contains organizations that have the main objective to help the civil
 
 The following options to create new points are included:
 
-**a disaster response organization** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:emergency' target='_blank'>emergency</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:emergency%3Ddisaster_response' target='_blank'>disaster_response</a>
+ - **a disaster response organization** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:emergency' target='_blank'>emergency</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:emergency%3Ddisaster_response' target='_blank'>disaster_response</a>
 
 ## Basic tags for this layer
 

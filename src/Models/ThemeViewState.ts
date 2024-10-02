@@ -50,7 +50,6 @@ import NoElementsInViewDetector, { FeatureViewState } from "../Logic/Actors/NoEl
 import FilteredLayer from "./FilteredLayer"
 import { PreferredRasterLayerSelector } from "../Logic/Actors/PreferredRasterLayerSelector"
 import { ImageUploadManager } from "../Logic/ImageProviders/ImageUploadManager"
-import { Imgur } from "../Logic/ImageProviders/Imgur"
 import NearbyFeatureSource from "../Logic/FeatureSource/Sources/NearbyFeatureSource"
 import FavouritesFeatureSource from "../Logic/FeatureSource/Sources/FavouritesFeatureSource"
 import { ProvidedImage } from "../Logic/ImageProviders/ImageProvider"
@@ -70,6 +69,7 @@ import { CombinedFetcher } from "../Logic/Web/NearbyImagesSearch"
 import { GeocodeResult, GeocodingUtils } from "../Logic/Search/GeocodingProvider"
 import SearchState from "../Logic/State/SearchState"
 import { ShowDataLayerOptions } from "../UI/Map/ShowDataLayerOptions"
+import { PanoramaxUploader } from "../Logic/ImageProviders/Panoramax"
 
 /**
  *
@@ -155,6 +155,10 @@ export default class ThemeViewState implements SpecialVisualizationState {
     public readonly geocodedImages: UIEventSource<Feature[]> = new UIEventSource<Feature[]>([])
 
     public readonly searchState: SearchState
+    /**
+     * Used to check in the download panel if used
+     */
+    public readonly featureSummary: SummaryTileSourceRewriter
 
     constructor(layout: LayoutConfig, mvtAvailableLayers: Set<string>) {
         Utils.initDomPurify()
@@ -270,14 +274,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
             this.featureProperties = new FeaturePropertiesStore(layoutSource)
 
             this.changes = new Changes(
-                {
-                    dryRun: this.featureSwitches.featureSwitchIsTesting,
-                    allElements: layoutSource,
-                    featurePropertiesStore: this.featureProperties,
-                    osmConnection: this.osmConnection,
-                    historicalUserLocations: this.geolocation.historicalUserLocations,
-                    featureSwitches: this.featureSwitches,
-                },
+                this,
                 layout?.isLeftRightSensitive() ?? false,
                 (e, extraMsg) => this.reportError(e, extraMsg),
             )
@@ -360,16 +357,19 @@ export default class ThemeViewState implements SpecialVisualizationState {
             {
                 currentZoom: this.mapProperties.zoom,
                 layerState: this.layerState,
-                bounds: this.visualFeedbackViewportBounds,
+                bounds: this.visualFeedbackViewportBounds.map(bounds => bounds ?? this.mapProperties.bounds?.data, [this.mapProperties.bounds]),
             },
         )
+        this.featureSummary = this.setupSummaryLayer()
         this.hasDataInView = new NoElementsInViewDetector(this).hasFeatureInView
         this.imageUploadManager = new ImageUploadManager(
             layout,
-            Imgur.singleton,
+            new PanoramaxUploader(Constants.panoramax.url, Constants.panoramax.token),
             this.featureProperties,
             this.osmConnection,
             this.changes,
+            this.geolocation.geolocationState.currentGPSLocation,
+            this.indexedFeatures
         )
         this.favourites = new FavouritesFeatureSource(this)
         const longAgo = new Date()
@@ -531,9 +531,11 @@ export default class ThemeViewState implements SpecialVisualizationState {
      * Selects the feature that is 'i' closest to the map center
      */
     private selectClosestAtCenter(i: number = 0) {
+        console.log("Selecting closest",i)
         if (this.userRelatedState.a11y.data !== "never") {
             this.visualFeedback.setData(true)
         }
+
         const toSelect = this.closestFeatures.features?.data?.[i]
         if (!toSelect) {
             window.requestAnimationFrame(() => {
@@ -790,7 +792,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
             ),
             current_view: this.currentView,
             favourite: this.favourites,
-            summary: this.setupSummaryLayer(),
+            summary: this.featureSummary,
             last_click: this.lastClickObject,
             search: this.searchState.locationResults,
         }

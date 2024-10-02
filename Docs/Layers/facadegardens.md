@@ -34,7 +34,7 @@ Facade gardens
 
 The following options to create new points are included:
 
-**a facade garden** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dgarden' target='_blank'>garden</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:garden:type' target='_blank'>garden:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:garden:type%3Dfacade_garden' target='_blank'>facade_garden</a> (snaps to layers `walls_and_buildings`)
+ - **a facade garden** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dgarden' target='_blank'>garden</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:garden:type' target='_blank'>garden:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:garden:type%3Dfacade_garden' target='_blank'>facade_garden</a> (snaps to layers `walls_and_buildings`)
 
 ## Basic tags for this layer
 

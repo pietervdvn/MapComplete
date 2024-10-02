@@ -37,9 +37,8 @@ Obstacles while cycling, such as bollards and cycle barriers
 
 The following options to create new points are included:
 
-**a bollard** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:barrier' target='_blank'>barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dbollard' target='_blank'>bollard</a> (snaps to layers `cycleways_and_roads`)
-
-**a cycle barrier** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:barrier' target='_blank'>barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dcycle_barrier' target='_blank'>cycle_barrier</a> (snaps to layers `cycleways_and_roads`)
+ - **a bollard** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:barrier' target='_blank'>barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dbollard' target='_blank'>bollard</a> (snaps to layers `cycleways_and_roads`)
+ - **a cycle barrier** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:barrier' target='_blank'>barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dcycle_barrier' target='_blank'>cycle_barrier</a> (snaps to layers `cycleways_and_roads`)
 
 ## Basic tags for this layer
 

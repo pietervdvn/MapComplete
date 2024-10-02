@@ -33,7 +33,7 @@ The layer showing picnic tables
 
 The following options to create new points are included:
 
-**a picnic table** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dpicnic_table' target='_blank'>picnic_table</a>
+ - **a picnic table** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dpicnic_table' target='_blank'>picnic_table</a>
 
 ## Basic tags for this layer
 

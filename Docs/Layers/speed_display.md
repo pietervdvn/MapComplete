@@ -27,7 +27,7 @@ Layer showing speed displays that alert drivers of their speed.
 
 The following options to create new points are included:
 
-**a speed display** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dspeed_display' target='_blank'>speed_display</a>
+ - **a speed display** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dspeed_display' target='_blank'>speed_display</a>
 
 ## Basic tags for this layer
 

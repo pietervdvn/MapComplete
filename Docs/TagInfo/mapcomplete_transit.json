@@ -242,6 +242,11 @@
     },
     {
       "key": "bicycle_parking",
+      "description": "Layer 'Bike parking' shows bicycle_parking=safe_loops with a fixed text, namely 'Rack with side loops' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bus routes')",
+      "value": "safe_loops"
+    },
+    {
+      "key": "bicycle_parking",
       "description": "Layer 'Bike parking' shows bicycle_parking=wall_loops with a fixed text, namely 'Wheelbenders / rack' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bus routes')",
       "value": "wall_loops"
     },

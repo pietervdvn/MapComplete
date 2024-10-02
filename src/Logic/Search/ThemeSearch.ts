@@ -36,7 +36,7 @@ export default class ThemeSearch {
     private readonly _otherThemes: MinimalLayoutInformation[]
 
     constructor(state: {osmConnection: OsmConnection, layout: LayoutConfig}) {
-        this._layersToIgnore = state.layout.layers.map(l => l.id)
+        this._layersToIgnore = state.layout.layers.filter(l => l.isNormal()).map(l => l.id)
         this._knownHiddenThemes = UserRelatedState.initDiscoveredHiddenThemes(state.osmConnection).map(list => new Set(list))
         this._otherThemes = ThemeSearch.officialThemes.themes
             .filter(th => th.id !== state.layout.id)

@@ -23,6 +23,7 @@
   import type { LayerConfigJson } from "../../Models/ThemeConfig/Json/LayerConfigJson"
   import { onDestroy } from "svelte"
   import { BBox } from "../../Logic/BBox"
+  import PanoramaxLink from "../BigComponents/PanoramaxLink.svelte"
 
 
   export let tags: UIEventSource<OsmTags>
@@ -37,7 +38,7 @@
   let imagesProvider = state.nearbyImageSearcher
 
   let loadedImages = AllImageProviders.LoadImagesFor(tags).mapD(
-    (loaded) => new Set(loaded.map((img) => img.url))
+    (loaded) => new Set(loaded.map((img) => img.url)),
   )
   let imageState = imagesProvider.getImagesAround(lon, lat)
   let result: Store<P4CPicture[]> = imageState.images.mapD(
@@ -46,22 +47,22 @@
         .filter(
           (p: P4CPicture) =>
             !loadedImages.data.has(p.pictureUrl) && // We don't show any image which is already linked
-            !p.details.isSpherical
+            !p.details.isSpherical,
         )
         .slice(0, 25),
-    [loadedImages]
+    [loadedImages],
   )
 
   let asFeatures = result.map(p4cs => p4cs.map(p4c => (<Feature<Point>>{
     type: "Feature",
     geometry: {
       type: "Point",
-      coordinates: [p4c.coordinates.lng, p4c.coordinates.lat]
+      coordinates: [p4c.coordinates.lng, p4c.coordinates.lat],
     },
     properties: {
       id: p4c.pictureUrl,
-      rotation: p4c.direction
-    }
+      rotation: p4c.direction,
+    },
   })))
 
   let selected = new UIEventSource<P4CPicture>(undefined)
@@ -70,28 +71,28 @@
       type: "Feature",
       geometry: {
         type: "Point",
-        coordinates: [s.coordinates.lng, s.coordinates.lat]
+        coordinates: [s.coordinates.lng, s.coordinates.lat],
       },
       properties: {
         id: s.pictureUrl,
         selected: "yes",
-        rotation: s.direction
-      }
+        rotation: s.direction,
+      },
     }]
   })
 
   let someLoading = imageState.state.mapD((stateRecord) =>
-    Object.values(stateRecord).some((v) => v === "loading")
+    Object.values(stateRecord).some((v) => v === "loading"),
   )
   let errors = imageState.state.mapD((stateRecord) =>
-    Object.keys(stateRecord).filter((k) => stateRecord[k] === "error")
+    Object.keys(stateRecord).filter((k) => stateRecord[k] === "error"),
   )
   let highlighted = new UIEventSource<string>(undefined)
 
   onDestroy(highlighted.addCallbackD(hl => {
       const p4c = result.data?.find(i => i.pictureUrl === hl)
       selected.set(p4c)
-    }
+    },
   ))
 
   let map: UIEventSource<MlMap> = new UIEventSource<MlMap>(undefined)
@@ -111,28 +112,27 @@
     zoomToFeatures: true,
     onClick: (feature) => {
       highlighted.set(feature.properties.id)
-    }
+    },
   })
 
 
   ShowDataLayer.showMultipleLayers(
     map,
     new StaticFeatureSource([feature]),
-    state.layout.layers
+    state.layout.layers,
   )
 
   onDestroy(
-  asFeatures.addCallbackAndRunD(features => {
-    if(features.length == 0){
-      return
-    }
-    let bbox = BBox.get(features[0])
-    for (const f of features) {
-      bbox = bbox.unionWith(BBox.get(f))
-    }
-    mapProperties.maxbounds.set(bbox.pad(1.1))
-  })
-
+    asFeatures.addCallbackAndRunD(features => {
+      if (features.length == 0) {
+        return
+      }
+      let bbox = BBox.get(features[0])
+      for (const f of features) {
+        bbox = bbox.unionWith(BBox.get(f))
+      }
+      mapProperties.maxbounds.set(bbox.pad(4))
+    }),
   )
 
   new ShowDataLayer(map, {
@@ -140,10 +140,8 @@
     layer: geocodedImageLayer,
     onClick: (feature) => {
       highlighted.set(feature.properties.id)
-    }
+    },
   })
-
-
 
 
 </script>
@@ -169,13 +167,16 @@
       {/each}
     </div>
   {/if}
-  <span class="self-end pt-2">
-
-  <MapillaryLink
-    large={false}
-    mapProperties={{ zoom: new ImmutableStore(16), location: new ImmutableStore({ lon, lat }) }}
-  />
-  </span>
+  <div class="w-full flex flex-wrap justify-end gap-x-8 pt-2">
+    <PanoramaxLink
+      large={false}
+      mapProperties={{ zoom: new ImmutableStore(16), location: new ImmutableStore({ lon, lat }) }}
+    />
+    <MapillaryLink
+      large={false}
+      mapProperties={{ zoom: new ImmutableStore(16), location: new ImmutableStore({ lon, lat }) }}
+    />
+  </div>
 
 
   <div class="my-2 flex justify-between">

@@ -249,6 +249,13 @@ export class BBox {
         ]
     }
 
+    toLngLatFlat(): [number, number, number, number] {
+        return [
+            this.minLon, this.minLat,
+            this.maxLon, this.maxLat,
+        ]
+    }
+
     public asGeojsonCached() {
         if (this["geojsonCache"] === undefined) {
             this["geojsonCache"] = this.asGeoJson({})

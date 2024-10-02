@@ -38,9 +38,8 @@ A sport pitch
 
 The following options to create new points are included:
 
-**a tabletennis table** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dpitch' target='_blank'>pitch</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dtable_tennis' target='_blank'>table_tennis</a>
-
-**a sport pitch** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dpitch' target='_blank'>pitch</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:fixme' target='_blank'>fixme</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fixme%3DGeometry to be drawn, added by MapComplete' target='_blank'>Geometry to be drawn, added by MapComplete</a>
+ - **a tabletennis table** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dpitch' target='_blank'>pitch</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dtable_tennis' target='_blank'>table_tennis</a>
+ - **a sport pitch** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dpitch' target='_blank'>pitch</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:fixme' target='_blank'>fixme</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fixme%3DGeometry to be drawn, added by MapComplete' target='_blank'>Geometry to be drawn, added by MapComplete</a>
 
 ## Basic tags for this layer
 
@@ -175,16 +174,18 @@ This tagrendering has labels
 
 | id | question | osmTags |
 -----|-----|----- |
-| available_sports.0 | *All sports* (default) |  |
-| available_sports.1 | Basketball fields | sport=basketball |
-| available_sports.2 | Soccer fields | sport=soccer |
-| available_sports.3 | Ping-pong tables | sport=table_tennis |
-| available_sports.4 | Tennis fields | sport=tennis |
-| available_sports.5 | Badminton fields | sport=badminton |
+| open_now.0 | Open now | _isOpen=yes |
 
 | id | question | osmTags |
 -----|-----|----- |
-| open_now.0 | Open now | _isOpen=yes |
+| sport_pitch-sport.0 | *Which sport can be played here?* (default) |  |
+| sport_pitch-sport.1 | Basketball is played here | sport=basketball |
+| sport_pitch-sport.2 | Soccer is played here | sport=soccer |
+| sport_pitch-sport.3 | This is a pingpong table | sport=table_tennis |
+| sport_pitch-sport.4 | Tennis is played here | sport=tennis |
+| sport_pitch-sport.5 | Korfball is played here | sport=korfball |
+| sport_pitch-sport.6 | Basketball is played here | sport=basket |
+| sport_pitch-sport.7 | This is a skatepark | sport=skateboard |
 
 
 

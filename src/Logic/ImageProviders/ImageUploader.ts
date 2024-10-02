@@ -3,13 +3,12 @@ export interface ImageUploader {
     /**
      * Uploads the 'blob' as image, with some metadata.
      * Returns the URL to be linked + the appropriate key to add this to OSM
-     * @param title
-     * @param description
-     * @param blob
      */
     uploadImage(
-        title: string,
-        description: string,
-        blob: File
-    ): Promise<{ key: string; value: string }>
+        blob: File,
+        currentGps: [number,number],
+        author: string
+    ): Promise<UploadResult>
 }
+
+export interface UploadResult{ key: string; value: string, absoluteUrl: string }

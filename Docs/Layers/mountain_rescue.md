@@ -27,7 +27,7 @@ A building where first aid responders store material and might be on watch
 
 The following options to create new points are included:
 
-**a mountain rescue station** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:emergency' target='_blank'>emergency</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:emergency%3Dmountain_rescue' target='_blank'>mountain_rescue</a>
+ - **a mountain rescue station** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:emergency' target='_blank'>emergency</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:emergency%3Dmountain_rescue' target='_blank'>mountain_rescue</a>
 
 ## Basic tags for this layer
 

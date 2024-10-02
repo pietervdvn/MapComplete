@@ -257,78 +257,98 @@
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Dog friendly eateries' shows cuisine=pizza with a fixed text, namely 'This is a pizzeria' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "description": "Layer 'Dog friendly eateries' shows cuisine=pizza with a fixed text, namely 'Pizzeria' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
       "value": "pizza"
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Dog friendly eateries' shows cuisine=friture with a fixed text, namely 'This is a friture' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "description": "Layer 'Dog friendly eateries' shows cuisine=friture with a fixed text, namely 'Friture' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
       "value": "friture"
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Dog friendly eateries' shows cuisine=pasta with a fixed text, namely 'Mainly serves pasta' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "description": "Layer 'Dog friendly eateries' shows cuisine=pasta with a fixed text, namely 'Serves mainly pasta' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
       "value": "pasta"
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Dog friendly eateries' shows cuisine=kebab with a fixed text, namely 'This is kebab shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "description": "Layer 'Dog friendly eateries' shows cuisine=kebab with a fixed text, namely 'Kebab shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
       "value": "kebab"
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Dog friendly eateries' shows cuisine=sandwich with a fixed text, namely 'This is a sandwich shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "description": "Layer 'Dog friendly eateries' shows cuisine=sandwich with a fixed text, namely 'Sandwich shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
       "value": "sandwich"
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Dog friendly eateries' shows cuisine=burger with a fixed text, namely 'Burgers are served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "description": "Layer 'Dog friendly eateries' shows cuisine=burger with a fixed text, namely 'Burgersrestaurant' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
       "value": "burger"
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Dog friendly eateries' shows cuisine=sushi with a fixed text, namely 'Sushi is served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "description": "Layer 'Dog friendly eateries' shows cuisine=sushi with a fixed text, namely 'Sushi restaurant' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
       "value": "sushi"
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Dog friendly eateries' shows cuisine=coffee with a fixed text, namely 'Coffee is served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "description": "Layer 'Dog friendly eateries' shows cuisine=coffee with a fixed text, namely 'Coffeebar' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
       "value": "coffee"
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Dog friendly eateries' shows cuisine=italian with a fixed text, namely 'This is an Italian restaurant (which serves more than pasta and pizza)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "description": "Layer 'Dog friendly eateries' shows cuisine=italian with a fixed text, namely 'Italian restaurant (which serves more than pasta and pizza)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
       "value": "italian"
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Dog friendly eateries' shows cuisine=french with a fixed text, namely 'French dishes are served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "description": "Layer 'Dog friendly eateries' shows cuisine=french with a fixed text, namely 'French restaurant' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
       "value": "french"
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Dog friendly eateries' shows cuisine=chinese with a fixed text, namely 'Chinese dishes are served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "description": "Layer 'Dog friendly eateries' shows cuisine=chinese with a fixed text, namely 'Chinese' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
       "value": "chinese"
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Dog friendly eateries' shows cuisine=greek with a fixed text, namely 'Greek dishes are served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "description": "Layer 'Dog friendly eateries' shows cuisine=greek with a fixed text, namely 'Greek' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
       "value": "greek"
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Dog friendly eateries' shows cuisine=indian with a fixed text, namely 'Indian dishes are served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "description": "Layer 'Dog friendly eateries' shows cuisine=indian with a fixed text, namely 'Indian' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
       "value": "indian"
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Dog friendly eateries' shows cuisine=turkish with a fixed text, namely 'Turkish dishes are served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "description": "Layer 'Dog friendly eateries' shows cuisine=turkish with a fixed text, namely 'Turkish restaurant' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
       "value": "turkish"
     },
     {
       "key": "cuisine",
-      "description": "Layer 'Dog friendly eateries' shows cuisine=thai with a fixed text, namely 'Thai dishes are served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "description": "Layer 'Dog friendly eateries' shows cuisine=thai with a fixed text, namely 'Thai restaurant' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
       "value": "thai"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Dog friendly eateries' shows cuisine=mexican   with a fixed text, namely 'Mexican dishes are served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "mexican  "
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Dog friendly eateries' shows cuisine=japanese   with a fixed text, namely 'Japanese dishes are served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "japanese  "
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Dog friendly eateries' shows cuisine=chicken   with a fixed text, namely 'Chicken based dishes are served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "chicken  "
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Dog friendly eateries' shows cuisine=seafood   with a fixed text, namely 'Seafood dishes are served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "seafood  "
     },
     {
       "key": "image",
@@ -710,6 +730,11 @@
       "key": "internet_access",
       "description": "Layer 'Dog friendly eateries' shows internet_access=wired with a fixed text, namely 'This place offers wired internet access' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
       "value": "wired"
+    },
+    {
+      "key": "internet_access",
+      "description": "Layer 'Dog friendly eateries' shows internet_access=terminal;wifi with a fixed text, namely 'This place offers both wireless internet and internet access via a terminal or computer' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "terminal;wifi"
     },
     {
       "key": "internet_access:fee",
@@ -1982,6 +2007,11 @@
       "key": "internet_access",
       "description": "Layer 'Dog-friendly shops' shows internet_access=wired with a fixed text, namely 'This place offers wired internet access' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
       "value": "wired"
+    },
+    {
+      "key": "internet_access",
+      "description": "Layer 'Dog-friendly shops' shows internet_access=terminal;wifi with a fixed text, namely 'This place offers both wireless internet and internet access via a terminal or computer' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "terminal;wifi"
     },
     {
       "key": "internet_access:fee",

@@ -31,7 +31,7 @@ Modern windmills generating electricity
 
 The following options to create new points are included:
 
-**a wind turbine** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:power' target='_blank'>power</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:power%3Dgenerator' target='_blank'>generator</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:generator:source' target='_blank'>generator:source</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:generator:source%3Dwind' target='_blank'>wind</a>
+ - **a wind turbine** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:power' target='_blank'>power</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:power%3Dgenerator' target='_blank'>generator</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:generator:source' target='_blank'>generator:source</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:generator:source%3Dwind' target='_blank'>wind</a>
 
 ## Basic tags for this layer
 

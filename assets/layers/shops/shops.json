@@ -41,7 +41,7 @@
       ]
     }
   },
-  "minzoom": 12,
+  "minzoom": 15,
   "title": {
     "render": {
       "en": "Shop",
