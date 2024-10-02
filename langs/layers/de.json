@@ -9274,6 +9274,7 @@
         }
     },
     "search": {
+        "description": "Priorisierte Ebene, die Suchergebnissen anzeigt",
         "tagRenderings": {
             "intro": {
                 "render": "Suchergebnis"
@@ -11850,6 +11851,21 @@
                 },
                 "question": "Rohe OpenStreetMap-Tags anzeigen?",
                 "questionHint": "<b>Tags</b> sind die Eigenschaften, die jedes Objekt hat. Das sind die technischen Daten, die in der Datenbank gespeichert werden. Du brauchst diese Informationen nicht, um mit MapComplete Änderungen zu machen, aber fortgeschrittenen Nutzer*innen kann es als Referenz dienen."
+            },
+            "sync-visited-locations": {
+                "mappings": {
+                    "0": {
+                        "then": "Gesuchte und überprüfte Orte speichern und über openstreetmap.org synchronisieren. OpenStreetMap und alle verwendeten Programme können diesen Verlauf sehen"
+                    },
+                    "1": {
+                        "then": "Gesuchte und überprüfte Orte auf meinem Gerät speichern"
+                    },
+                    "2": {
+                        "then": "Gesuchte und überprüfte Orte nicht auf meinem Gerät speichern "
+                    }
+                },
+                "question": "Sollen die gesuchten und überprüften Orte gespeichert werden?",
+                "questionHint": "Diese Orte werden im Suchmenü angezeigt"
             },
             "title-editing": {
                 "render": "<h3> Einstellungen bearbeiten</h3>"
