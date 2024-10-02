@@ -675,7 +675,7 @@
         }
     },
     "guideposts": {
-        "description": "Wegweiser (auch als Wegzeiger oder Fingerschilder bekannt) sind entlang offizieller Wander-, Rad-, Ski- oder Reitstrecken häufig zu finden, um die Richtungen zu verschiedenen Zielen anzuzeigen. Darüber hinaus sind sie oft nach einer Region oder einem Ort benannt und zeigen die Höhe an.\n\nDie Position eines Wegweisers kann von Wanderern, Radfahrern, Reitern oder Skifahrern als Bestätigung der aktuellen Position genutzt werden, insbesondere wenn sie eine gedruckte Karte ohne GPS-Empfänger verwenden. ",
+        "description": "Wegweiser an offiziellen Wander-, Rad-, Ski- oder Reitstrecken, um Richtungen zu verschiedenen Zielen anzuzeigen. Sie sind oft nach einer Region oder einem Ort benannt und zeigen die Höhe an.\n\nDie Position eines Wegweisers kann von Wanderern, Radfahrern, Reitern oder Skifahrern als Bestätigung der aktuellen Position genutzt werden, insbesondere wenn sie eine gedruckte Karte ohne GPS-Empfänger verwenden. ",
         "title": "Wegweiser"
     },
     "hackerspaces": {
@@ -1073,7 +1073,7 @@
     },
     "personal": {
         "description": "Stellen Sie Ihr persönliches Thema zusammen, das auf bereits verfügbaren Ebenen aller Themen basiert. Um diese anzuzeigen, öffnen Sie die <a href='#filter'>Ebenenauswahl</a>",
-        "title": "Persönliches Thema"
+        "title": "Persönliche Themenkarte"
     },
     "pets": {
         "description": "Diese Karte zeigt interessante Orte für Haustierbesitzer: Tierärzte, Hundeparks, Tiergeschäfte, hundefreundliche Restaurants, ...",
