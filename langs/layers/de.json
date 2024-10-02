@@ -11867,6 +11867,21 @@
                 "question": "Sollen die gesuchten und überprüften Orte gespeichert werden?",
                 "questionHint": "Diese Orte werden im Suchmenü angezeigt"
             },
+            "sync-visited-themes": {
+                "mappings": {
+                    "0": {
+                        "then": "Besuchte Themenkarten speichern und über opentreetmap.org synchronisieren. OpenStreetMap und alle verwendeten Programme können diesen Verlauf sehen"
+                    },
+                    "1": {
+                        "then": "Besuchte Themenkarten auf meinem Gerät speichern"
+                    },
+                    "2": {
+                        "then": "Besuchte Themenkarten nicht auf meinem Gerät speichern"
+                    }
+                },
+                "question": "Sollen besuchte Themenkarten gespeichert werden?",
+                "questionHint": "Besuchte Themenkarten, können von MapComplete gespeichert und als Vorschlag angeboten werden."
+            },
             "title-editing": {
                 "render": "<h3> Einstellungen bearbeiten</h3>"
             },
