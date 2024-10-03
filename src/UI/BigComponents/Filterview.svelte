@@ -21,7 +21,7 @@
   let layer: LayerConfig = filteredLayer.layerDef
   let isDisplayed: UIEventSource<boolean> = filteredLayer.isDisplayed
 
-  let isDebugging = state.featureSwitches.featureSwitchIsDebugging
+  let isDebugging = state?.featureSwitches?.featureSwitchIsDebugging ?? new ImmutableStore(false)
 
   /**
    * Gets a UIEventSource as boolean for the given option, to be used with a checkbox
