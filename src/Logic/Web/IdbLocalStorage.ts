@@ -6,7 +6,7 @@ import { Utils } from "../../Utils"
  * UIEventsource-wrapper around indexedDB key-value
  */
 export class IdbLocalStorage {
-    private static readonly _sourceCache: Record<string, UIEventSource<any>> = {}
+    private static readonly _sourceCache: Record<string, UIEventSource<object>> = {}
 
     public static Get<T>(
         key: string,
@@ -38,11 +38,11 @@ export class IdbLocalStorage {
         return src
     }
 
-    public static SetDirectly(key: string, value: any): Promise<void> {
+    public static SetDirectly(key: string, value: object): Promise<void> {
         return idb.set(key, value)
     }
 
-    static GetDirectly(key: string): Promise<any> {
+    static GetDirectly(key: string): Promise<object> {
         return idb.get(key)
     }
 

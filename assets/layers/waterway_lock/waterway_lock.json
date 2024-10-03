@@ -65,11 +65,39 @@
   ],
   "tagRenderings": [
     "images",
+    "opening_hours_24_7",
+    {
+      "question": {
+        "en": "What VHF channel should be used to communicate with the control room of this lock?"
+      },
+      "id": "vhf",
+      "render": {
+        "en": "The VHF channel is {vhf}"
+      },
+      "freeform": {
+        "key": "vhf"
+      },
+      "condition": {
+        "or": [
+          "automated=yes",
+          "automated="
+        ]
+      }
+    },
+    "phone",
+    {
+      "builtin": "website",
+      "override": {
+        "question": {
+          "en": "On what website can one find more information about this lock?"
+        }
+      }
+    },
     {
       "question": {
         "en": "What is the maximum width (beam) of boats using this lock?"
       },
-      "id": "max_length",
+      "id": "max_width",
       "render": {
         "en": "This lock permits boats with a maximum width of {maxwidth}"
       },
@@ -86,7 +114,7 @@
       "question": {
         "en": "What is the maximum length of boats that may use this lock?"
       },
-      "id": "2_qyvwk0kx77jcmh2",
+      "id": "maxlength",
       "multiAnswer": false,
       "freeform": {
         "key": "maxlength"
@@ -101,9 +129,27 @@
     },
     {
       "question": {
+        "en": "What is the maximum draft of boats using this lock?",
+        "nl": "Wat is de maximale toegestane diepgang in deze sluis?"
+      },
+      "id": "max_depth",
+      "questionHint": {
+        "en": "Omit units if designated in meters. Feet and inches maybe indicated with apostrophes and quotation marks."
+      },
+      "multiAnswer": false,
+      "render": {
+        "en": "The maximum draft of boats using this lock is {draft}."
+      },
+      "freeform": {
+        "key": "draft"
+      },
+      "condition": "waterway!=derelict_canal"
+    },
+    {
+      "question": {
         "en": "How far does this lock raise or lower a boat?"
       },
-      "id": "3_sm4v6ow91r2i4kd",
+      "id": "lock_height_difference",
       "questionHint": {
         "en": "Omit units if designated in meters. Feet and inches maybe indicated with apostrophes and quotation marks."
       },
@@ -121,7 +167,7 @@
       "question": {
         "en": "Is this lock automated?"
       },
-      "id": "4_pwnx07go36rzk54",
+      "id": "automated",
       "mappings": [
         {
           "if": "automated=yes",
@@ -147,20 +193,15 @@
     },
     {
       "question": {
-        "en": "What is the maximum draft of boats using this lock?"
+        "en": "What is the name of the waterway that this lock is on?"
       },
-      "id": "5_1sz01guflvjeyx7",
-      "questionHint": {
-        "en": "Omit units if designated in meters. Feet and inches maybe indicated with apostrophes and quotation marks."
-      },
-      "multiAnswer": false,
+      "id": "lock_waterway_name",
       "render": {
-        "en": "The maximum draft of boats using this lock is {draft}."
+        "en": "The waterway is name <b>{name}</b>"
       },
       "freeform": {
-        "key": "draft"
-      },
-      "condition": "waterway!=derelict_canal"
+        "key": "name"
+      }
     },
     {
       "question": {
@@ -191,38 +232,7 @@
         "key": "lock_ref"
       }
     },
-    {
-      "question": {
-        "en": "What VHF channel should be used to communicate with the control room of this lock?"
-      },
-      "id": "vhf",
-      "render": {
-        "en": "The VHF channelnis {vhf}"
-      },
-      "freeform": {
-        "key": "vhf"
-      },
-      "condition": {
-        "or": [
-          "automated=yes",
-          "automated="
-        ]
-      }
-    },
-    "opening_hours_24_7",
-    "phone",
-    {
-      "question": {
-        "en": "What is the name of the waterway that this lock is on?"
-      },
-      "id": "waterway_name",
-      "render": {
-        "en": "The waterway is name <b>{name}</b>"
-      },
-      "freeform": {
-        "key": "name"
-      }
-    }
+    "waterway.access"
   ],
   "allowMove": false,
   "credits": "Pieter Vander Vennet",

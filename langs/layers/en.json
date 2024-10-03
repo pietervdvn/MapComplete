@@ -6664,7 +6664,7 @@
             "render": "Item in MapRoulette"
         }
     },
-    "marinas": {
+    "marina": {
         "description": "Marinas and yacht havens for small craft.",
         "name": "Marinas",
         "presets": {
@@ -12565,7 +12565,7 @@
         "description": "Waterways which are navigable by small boats, yachts, ...",
         "name": "Navigable waterways",
         "tagRenderings": {
-            "3_vyksl7ofya7m97l": {
+            "boats_allowed": {
                 "mappings": {
                     "0": {
                         "then": "Boats (<20m) are allowed on this waterway"
@@ -12577,7 +12577,18 @@
                 "question": "Are boats allowed on this waterway?",
                 "questionHint": "A boat is a floating craft of which the hull is less then 20 meter long (without rudder or bowsprit)"
             },
-            "4_yuodfwdyocflwg8": {
+            "canoes_allowed": {
+                "mappings": {
+                    "0": {
+                        "then": "Canoes, kayaks and manually powered craft are allowed here"
+                    },
+                    "1": {
+                        "then": "Canoes, kayaks and other manually powered craft are <b>not</b> allowed"
+                    }
+                },
+                "question": "Are canoes, kayaks and other small, manually powered craft allowed on this waterway?"
+            },
+            "motorboats_allowed": {
                 "mappings": {
                     "0": {
                         "then": "Motorized boats are allowed"
@@ -12587,6 +12598,10 @@
                     }
                 },
                 "question": "Are motorboats allowed on this waterway?"
+            },
+            "name": {
+                "question": "What is the name of this waterway?",
+                "render": "This waterway is named {name}"
             },
             "type": {
                 "mappings": {
@@ -12623,17 +12638,7 @@
             }
         },
         "tagRenderings": {
-            "2_qyvwk0kx77jcmh2": {
-                "question": "What is the maximum length of boats that may use this lock?",
-                "questionHint": "Omit units if designated in meters. Feet and inches maybe indicated with apostrophes and quotation marks.",
-                "render": "Boats with a maximum length of {maxlength} may use this lock."
-            },
-            "3_sm4v6ow91r2i4kd": {
-                "question": "How far does this lock raise or lower a boat?",
-                "questionHint": "Omit units if designated in meters. Feet and inches maybe indicated with apostrophes and quotation marks.",
-                "render": "This lock has a drop height of {lock:height}"
-            },
-            "4_pwnx07go36rzk54": {
+            "automated": {
                 "mappings": {
                     "0": {
                         "then": "This lock is automated (operated from control panel or control room)"
@@ -12644,20 +12649,34 @@
                 },
                 "question": "Is this lock automated?"
             },
-            "5_1sz01guflvjeyx7": {
-                "question": "What is the maximum draft of boats using this lock?",
+            "lock_height_difference": {
+                "question": "How far does this lock raise or lower a boat?",
                 "questionHint": "Omit units if designated in meters. Feet and inches maybe indicated with apostrophes and quotation marks.",
-                "render": "The maximum draft of boats using this lock is {draft}."
+                "render": "This lock has a drop height of {lock:height}"
             },
             "lock_name": {
                 "question": "What is the name of this lock?",
                 "questionHint": "The numerical reference code can be added in a follow-up question ",
                 "render": "This lock is named {lock_name}"
             },
-            "max_length": {
+            "lock_waterway_name": {
+                "question": "What is the name of the waterway that this lock is on?",
+                "render": "The waterway is name <b>{name}</b>"
+            },
+            "max_depth": {
+                "question": "What is the maximum draft of boats using this lock?",
+                "questionHint": "Omit units if designated in meters. Feet and inches maybe indicated with apostrophes and quotation marks.",
+                "render": "The maximum draft of boats using this lock is {draft}."
+            },
+            "max_width": {
                 "question": "What is the maximum width (beam) of boats using this lock?",
                 "questionHint": "Omit units if designated in meters. Feet and inches maybe indicated with apostrophes and quotation marks.",
                 "render": "This lock permits boats with a maximum width of {maxwidth}"
+            },
+            "maxlength": {
+                "question": "What is the maximum length of boats that may use this lock?",
+                "questionHint": "Omit units if designated in meters. Feet and inches maybe indicated with apostrophes and quotation marks.",
+                "render": "Boats with a maximum length of {maxlength} may use this lock."
             },
             "ref": {
                 "question": "Does this lock have a reference number/code?",
@@ -12665,11 +12684,12 @@
             },
             "vhf": {
                 "question": "What VHF channel should be used to communicate with the control room of this lock?",
-                "render": "The VHF channelnis {vhf}"
+                "render": "The VHF channel is {vhf}"
             },
-            "waterway_name": {
-                "question": "What is the name of the waterway that this lock is on?",
-                "render": "The waterway is name <b>{name}</b>"
+            "website": {
+                "override": {
+                    "question": "On what website can one find more information about this lock?"
+                }
             }
         },
         "title": {

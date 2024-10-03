@@ -1,20 +1,7 @@
 {
   "credits": "Pieter Vander Vennet",
   "minzoom": 15,
-  "pointRendering": [
-    {
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "marker": [
-        {
-          "icon": "circle",
-          "color": "white"
-        }
-      ]
-    }
-  ],
+  "pointRendering": null,
   "tagRenderings": [
     "images",
     {

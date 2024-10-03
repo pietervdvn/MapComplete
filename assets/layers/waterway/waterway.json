@@ -11,6 +11,7 @@
       "and": [
         "motorboat!=no",
         "boat!=no",
+        "type=",
         {
           "or": [
             "waterway=river",
@@ -63,6 +64,18 @@
   ],
   "tagRenderings": [
     "images",
+    {
+      "id": "name",
+      "question": {
+        "en": "What is the name of this waterway?"
+      },
+      "render": {
+        "en": "This waterway is named {name}"
+      },
+      "freeform": {
+        "key": "name"
+      }
+    },
     "wikipedia",
     {
       "id": "type",
@@ -94,7 +107,10 @@
       "question": {
         "en": "Are boats allowed on this waterway?"
       },
-      "id": "3_vyksl7ofya7m97l",
+      "label": [
+        "access"
+      ],
+      "id": "boats_allowed",
       "questionHint": {
         "en": "A boat is a floating craft of which the hull is less then 20 meter long (without rudder or bowsprit)"
       },
@@ -117,11 +133,15 @@
         }
       ]
     },
+
     {
       "question": {
         "en": "Are motorboats allowed on this waterway?"
       },
-      "id": "4_yuodfwdyocflwg8",
+      "id": "motorboats_allowed",
+      "label": [
+        "access"
+      ],
       "mappings": [
         {
           "if": "motorboat=yes",
@@ -133,6 +153,29 @@
           "if": "motorboat=no",
           "then": {
             "en": "Motorized boats are <b>not</b> allowed"
+          }
+        }
+      ]
+    },
+    {
+      "question": {
+        "en": "Are canoes, kayaks and other small, manually powered craft allowed on this waterway?"
+      },
+      "id": "canoes_allowed",
+      "label": [
+        "access"
+      ],
+      "mappings": [
+        {
+          "if": "canoe=yes",
+          "then": {
+            "en": "Canoes, kayaks and manually powered craft are allowed here"
+          }
+        },
+        {
+          "if": "canoe=no",
+          "then": {
+            "en": "Canoes, kayaks and other manually powered craft are <b>not</b> allowed"
           }
         }
       ]

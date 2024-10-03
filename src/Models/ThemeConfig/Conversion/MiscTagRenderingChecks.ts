@@ -86,7 +86,7 @@ export class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJso
 
         if (json["question"] && json.freeform?.key === undefined && json.mappings === undefined) {
             context.err(
-                "A question is defined, but no mappings nor freeform (key) are. Add at least one of them"
+                "A question is defined, but no mappings nor freeform (key) are. Add at least one of them. The question is: "+new Translation(json["question"]).textFor("en")
             )
         }
         if (json["question"] && !json.freeform && (json.mappings?.length ?? 0) == 1) {
