@@ -5708,7 +5708,7 @@
             "type": {
                 "mappings": {
                     "0": {
-                        "then": "Dieser Wegweiser zeigt Fahrradrouten"
+                        "then": "Dieser Wegweiser zeigt Fahrradwege"
                     },
                     "1": {
                         "then": "Dieser Wegweiser zeigt Wanderwege"
