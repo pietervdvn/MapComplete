@@ -14,7 +14,7 @@
         "available": "Diese Gemeinschaft spricht {native}",
         "intro": "Treten Sie mit anderen Menschen in Kontakt, um sie kennen zu lernen, von ihnen zu lernen, …",
         "notAvailable": "Diese Gemeinschaft spricht nicht {native}",
-        "title": "Mit anderen in Kontakt treten"
+        "title": "Andere Mapper Kontaktieren"
     },
     "delete": {
         "cancel": "Abbrechen",
@@ -35,7 +35,7 @@
         "loginToDelete": "Sie müssen angemeldet sein, um ein Objekt zu löschen",
         "notEnoughExperience": "Dieses Objekt wurde von jemand anderem erstellt.",
         "onlyEditedByLoggedInUser": "Dieses Objekt wurde nur von Ihnen bearbeitet. Sie können es gefahrlos löschen.",
-        "partOfOthers": "Dieser Punkt ist Teil eines Weges oder einer Relation und kann nicht direkt gelöscht werden.",
+        "partOfOthers": "Der Punkt ist Teil eines Wegs oder einer Relation und kann nicht direkt gelöscht werden.",
         "readMessages": "Sie haben ungelesene Nachrichten. Bitte vor dem Löschen des Objekts lesen - vielleicht liegt eine Rückmeldung vor",
         "reasons": {
             "disused": "Dieses Element wird nicht mehr verwendet oder wurde entfernt",
@@ -184,10 +184,11 @@
             "attributionTitle": "Danke",
             "codeContributionsBy": "MapComplete wurde erstellt von {contributors} und <a href='https://github.com/pietervdvn/MapComplete/graphs/contributors' target='_blank'>{hiddenCount} weiteren Personen</a>",
             "donate": "MapComplete finanziell unterstützen",
-            "editId": "Den OpenStreetMap Editor öffnen",
+            "editId": "OpenStreetMap Online Editor öffnen",
             "editJosm": "Mit JOSM bearbeiten",
+            "emailCreators": "E-Mail an Ersteller senden",
             "followOnMastodon": "MapComplete auf Mastodon folgen",
-            "gotoSourceCode": "Quellcode anzeigen",
+            "gotoSourceCode": "Quellcode",
             "iconAttribution": {
                 "title": "Verwendete Symbole"
             },
@@ -200,9 +201,11 @@
             "mapillaryHelp": "<b>Mapillary</b> ist ein Online-Dienst, der Straßenbilder sammelt und sie unter einer freien Lizenz anbietet. Mitwirkende dürfen diese Bilder verwenden, um OpenStreetMap zu verbessern",
             "openIssueTracker": "Fehler melden",
             "openMapillary": "Mapillary öffnen",
-            "openOsmcha": "Neueste Bearbeitungen mit Thema {theme} ansehen",
-            "openOsmchaLastWeek": "Bearbeitungen der letzten 7 Tage anzeigen",
-            "openThemeDocumentation": "Dokumentation zum Thema {name} öffnen",
+            "openOsmcha": "Neueste Bearbeitungen zur Themenkarte {theme} anzeigen",
+            "openOsmchaLastWeek": "Bearbeitungen der letzten 7 Tage",
+            "openPanoramax": "Panoramax öffnen",
+            "openThemeDocumentation": "Dokumentation zur Themenkarte {name} anzeigen",
+            "panoramaxHelp": "<b>Panoramax</b> ist ein Online-Service, der Straßenbilder sammelt und sie unter einer kostenlosen Lizenz anbietet. Mitwirkende dürfen diese Bilder nutzen, um OpenStreetMap zu verbessern",
             "seeOnMapillary": "Dieses Bild auf Mapillary ansehen",
             "themeBy": "Dieses Thema wurde erstellt von {author}",
             "title": "Copyright und Urheberrechtsangabe",
@@ -262,6 +265,7 @@
         "examples": "Beispiele",
         "fewChangesBefore": "Bitte beantworten Sie einige Fragen zu bestehenden Objekten, bevor Sie ein neues Objekt hinzufügen.",
         "filterPanel": {
+            "allTypes": "Alle Arten",
             "disableAll": "Alle deaktivieren",
             "enableAll": "Alle aktivieren"
         },
@@ -309,7 +313,7 @@
             "title": "Menü"
         },
         "morescreen": {
-            "createYourOwnTheme": "Eigenes MapComplete-Thema von Grund auf neu erstellen",
+            "createYourOwnTheme": "Eigene MapComplete Themenkarte erstellen",
             "enterToOpen": "Drücke Enter um Theme zu öffnen",
             "hiddenExplanation": "Diese Themen sind nur für Personen zugänglich, die einen Link erhalten haben. Sie haben {hidden_discovered} von {total_hidden} versteckten Themen entdeckt.",
             "noMatchingThemes": "Keine Themen, die Ihren Suchkriterien entsprechen",
@@ -396,8 +400,22 @@
         "save": "Speichern",
         "screenToSmall": "<i>{theme}</i> in einem neuen Fenster öffnen",
         "search": {
+            "activeFilters": "Aktive Filter",
+            "clearFilters": "Filter löschen",
+            "deleteSearchHistory": "Standortverlauf löschen",
+            "deleteThemeHistory": "Früher besuchte Themen löschen",
+            "editSearchSyncSettings": "Synchronisierungseinstellungen bearbeiten",
+            "editThemeSync": "Bearbeitung synchronisieren Lagen",
             "error": "Etwas ist schief gelaufen…",
+            "instructions": "In der oberen Suchleiste kann nach Standorten, Filtern oder anderen Themenkarten gesucht werden",
+            "locations": "Orte",
+            "nMoreFilters": "{n} weitere",
             "nothing": "Nichts gefunden…",
+            "nothingFor": "Keine Ergebnisse für {term} gefunden",
+            "otherMaps": "Andere Karten",
+            "pickFilter": "Filter auswählen",
+            "recentThemes": "Kürzlich besuchte Karten",
+            "recents": "Kürzlich gesehene Orte",
             "search": "Ortssuche",
             "searchShort": "Suche…",
             "searching": "Suchen …"
@@ -478,22 +496,22 @@
                 "slight_right": "leicht rechts",
                 "straight": "geradeaus"
             },
-            "east": "Nach Osten bewegen",
+            "east": "Nach Osten",
             "fromGps": "{distance} {direction} von deinem Standort",
             "fromMapCenter": "{distance} {direction} von der Kartenmitte",
             "in": "Hineinzoomen auf Stufe {z}",
             "islocked": "Die Ansicht ist an Ihren GPS-Standort gebunden, Bewegen ist deaktiviert. Drücken Sie zum Entsperren die Geolocation-Taste.",
             "locked": "Die Ansicht ist jetzt an Ihren GPS-Standort gebunden, Bewegen ist deaktiviert.",
             "navigation": "Verwenden Sie die Pfeiltasten, um die Karte zu bewegen, drücken Sie die Leertaste, um das nächstgelegene Objekt auszuwählen. Drücken Sie eine Zahl, um weiter entfernte Objekte auszuwählen.",
-            "noCloseFeatures": "Keine Objekte im Anzeigebereich.",
-            "north": "Nach Norden bewegen",
+            "noCloseFeatures": "Keine Objekte im Kartenausschnitt.",
+            "north": "Nach Norden",
             "oneFeatureInView": "Ein Objekt im Anzeigebereich.",
             "out": "Herauszoomen auf Stufe {z}",
-            "south": "Nach Süden bewegen",
+            "south": "Nach Süden",
             "unlocked": "Bewegen aktiviert.",
             "viewportCenterCloseToGps": "Die Karte wird um Ihren Standort zentriert.",
             "viewportCenterDetails": "Die Kartenmitte ist {distance} und {bearing} von Ihrem Standort entfernt.",
-            "west": "Nach Westen bewegen"
+            "west": "Nach Westen"
         },
         "waitingForGeopermission": "Warten auf Ihre Erlaubnis, Standortdaten zu verwenden…",
         "waitingForLocation": "Ihr Standort wird gesucht…",
@@ -619,7 +637,7 @@
         "#": "Dieser Text wird über der Thema-Auswahlschaltfläche gezeigt, wenn kein Thema geladen ist",
         "about": "Über MapComplete",
         "featuredThemeTitle": "Diese Woche im Blickpunkt",
-        "intro": "Karten über verschiedenen Themen, zu denen Sie beitragen können",
+        "intro": "Verschiedenen Themenkarten, zu denen Sie beitragen können",
         "learnMore": "Mehr erfahren",
         "logIn": "Anmelden, um Themen anzuzeigen, die Sie bereits besucht haben",
         "pickTheme": "Eines der folgenden Themen auswählen, um zu starten.",
@@ -627,7 +645,7 @@
     },
     "move": {
         "cancel": "Einen anderen Grund auswählen",
-        "cannotBeMoved": "Dieses Element kann nicht verschoben werden.",
+        "cannotBeMoved": "Das Objekt kann nicht verschoben werden.",
         "confirmMove": "Hierhin verschieben",
         "inviteToMove": {
             "generic": "Objekt verschieben",
@@ -639,7 +657,7 @@
         "isWay": "Dieses Element ist ein Weg. Verwenden Sie einen anderen OpenStreetMap-Editor, um ihn zu verschieben.",
         "loginToMove": "Sie müssen angemeldet sein, um einen Punkt zu verschieben",
         "moveTitle": "Diesen Punkt verschieben",
-        "partOfAWay": "Dieses Element ist Teil eines anderen Weges. Verwenden Sie einen anderen Editor, um es zu verschieben.",
+        "partOfAWay": "Das Objekt ist Teil eines anderen Wegs. Zum Verschieben bitte einen anderen Editor verwenden.",
         "partOfRelation": "Dieses Element ist Teil einer Relation. Verwenden Sie einen anderen Editor, um es zu verschieben.",
         "pointIsMoved": "Der Punkt wurde verschoben",
         "reasons": {
@@ -730,7 +748,7 @@
         "miscCookies": "MapComplete integriert weitere Dienste, insbesondere um Bilder von Objekten zu laden. Diese Bilder werden auf Servern von Drittanbietern gehostet, die möglicherweise eigene Cookies setzen.",
         "miscCookiesTitle": "Andere Cookies",
         "surveillance": "Da Sie die Datenschutzbestimmungen lesen, ist Ihnen der Datenschutz wahrscheinlich wichtig - uns auch! Wir haben sogar <a href=\"https://mapcomplete.org/surveillance\">ein Thema erstellt, das Überwachungskameras zeigt.</a> Zögern Sie nicht, sie alle zu mappen!",
-        "title": "Datenschutzbestimmungen",
+        "title": "Datenschutz",
         "tracking": "Um zu erfahren, wer unsere Webseite besucht, werden technische Informationen gesammelt. Dazu gehören das Land, aus dem Sie die Webseite besucht haben, die Webseite, die Sie auf MapComplete verwiesen hat, der Typ Ihres Geräts und die Bildschirmgröße. Ein Cookie wird auf Ihrem Gerät gespeichert, um anzuzeigen, dass Sie MapComplete heute bereits besucht haben. Diese Daten sind nicht detailliert genug, um Sie persönlich zu identifizieren. Diese Statistiken sind nur in aggregierter Form <a href=\"https://pietervdvn.goatcounter.com\" target=\"_blank\">öffentlich zugänglich</a>",
         "trackingTitle": "Statistische Daten",
         "whileYoureHere": "Datenschutz ist Ihnen wichtig?"
@@ -850,6 +868,9 @@
         "pnat": {
             "description": "eine positive, ganze Zahl",
             "noZero": "Null ist nicht erlaubt"
+        },
+        "regex": {
+            "description": "ein regulärer Ausdruck"
         },
         "slope": {
             "inputExplanation": "Legen Sie Ihr Telefon so auf den Boden, dass die Oberseite des Telefons zum oberen Ende des Hangs zeigt.",
