@@ -14,7 +14,7 @@
         "available": "Diese Gemeinschaft spricht {native}",
         "intro": "Treten Sie mit anderen Menschen in Kontakt, um sie kennen zu lernen, von ihnen zu lernen, …",
         "notAvailable": "Diese Gemeinschaft spricht nicht {native}",
-        "title": "Andere Mapper Kontaktieren"
+        "title": "Andere Mapper kontaktieren"
     },
     "delete": {
         "cancel": "Abbrechen",
@@ -407,15 +407,15 @@
             "editSearchSyncSettings": "Synchronisierungseinstellungen bearbeiten",
             "editThemeSync": "Bearbeitung synchronisieren Lagen",
             "error": "Etwas ist schief gelaufen…",
-            "instructions": "In der oberen Suchleiste kann nach Standorten, Filtern oder anderen Themenkarten gesucht werden",
+            "instructions": "In der oberen Suchleiste kann nach Orten, Filtern oder anderen Themenkarten gesucht werden",
             "locations": "Orte",
             "nMoreFilters": "{n} weitere",
             "nothing": "Nichts gefunden…",
             "nothingFor": "Keine Ergebnisse für {term} gefunden",
             "otherMaps": "Andere Karten",
             "pickFilter": "Filter auswählen",
-            "recentThemes": "Kürzlich besuchte Karten",
-            "recents": "Kürzlich gesehene Orte",
+            "recentThemes": "Kürzlich besuchte Themenkarten",
+            "recents": "Kürzlich angesehene Objekte",
             "search": "Ortssuche",
             "searchShort": "Suche…",
             "searching": "Suchen …"
@@ -475,7 +475,7 @@
         "uploadingChanges": "Änderungen werden hochgeladen…",
         "useSearch": "Suche oben verwenden für weitere Optionen",
         "visualFeedback": {
-            "closestFeaturesAre": "{n} Objekte im Anzeigebereich.",
+            "closestFeaturesAre": "{n} Objekte im Kartenausschnitt.",
             "directionsAbsolute": {
                 "E": "Ost",
                 "N": "Nord",
@@ -505,7 +505,7 @@
             "navigation": "Verwenden Sie die Pfeiltasten, um die Karte zu bewegen, drücken Sie die Leertaste, um das nächstgelegene Objekt auszuwählen. Drücken Sie eine Zahl, um weiter entfernte Objekte auszuwählen.",
             "noCloseFeatures": "Keine Objekte im Kartenausschnitt.",
             "north": "Nach Norden",
-            "oneFeatureInView": "Ein Objekt im Anzeigebereich.",
+            "oneFeatureInView": "Ein Objekt im Kartenausschnitt.",
             "out": "Herauszoomen auf Stufe {z}",
             "south": "Nach Süden",
             "unlocked": "Bewegen aktiviert.",
