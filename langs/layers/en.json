@@ -2265,6 +2265,13 @@
             "render": "Camper site {name}"
         }
     },
+    "chandler": {
+        "description": "Boating supplies and equipment.",
+        "name": "Chandlers",
+        "title": {
+            "render": "Chandler {name}"
+        }
+    },
     "charging_station": {
         "description": "A charging station",
         "filter": {
@@ -6379,6 +6386,10 @@
             "render": "lighthouse"
         }
     },
+    "lock_outline": {
+        "description": "Small layer showing the outline of the lock waterway, but without containing any information",
+        "name": "Lock area"
+    },
     "love_hotel": {
         "description": "A love hotel is a type of short-stay hotel found around the world operated primarily for the purpose of allowing guests privacy for sexual activities",
         "name": "Love hotels",
@@ -6651,6 +6662,61 @@
         },
         "title": {
             "render": "Item in MapRoulette"
+        }
+    },
+    "marinas": {
+        "description": "Marinas and yacht havens for small craft.",
+        "name": "Marinas",
+        "presets": {
+            "0": {
+                "title": "a marina"
+            }
+        },
+        "tagRenderings": {
+            "marina-name": {
+                "question": "What is the name of this marina?",
+                "render": "The name of this marina is: {name}"
+            },
+            "marina-sewage-station": {
+                "mappings": {
+                    "0": {
+                        "then": "This marina does provide facilities to dispose of sewage."
+                    },
+                    "1": {
+                        "then": "This marina does not provide facilities to dispose of sewage."
+                    },
+                    "2": {
+                        "then": "Only customers are allowed to use the facilities here to dispose of sewage."
+                    }
+                },
+                "question": "Does this marina have a sanitary dump station?",
+                "questionHint": "Does this marina provide facilities for pump out or other black water disposal."
+            },
+            "marina_basin": {
+                "mappings": {
+                    "0": {
+                        "then": "You can empty toilet cassettes into a basin here."
+                    },
+                    "1": {
+                        "then": "There is no basin to empty a toilet cassettes here."
+                    }
+                },
+                "question": "Does this sanitary dump station provide the means to empty a toilet cassette or other container into a basin?"
+            },
+            "marina_dump_station": {
+                "mappings": {
+                    "0": {
+                        "then": "This marina offers toilet pump-out services"
+                    },
+                    "1": {
+                        "then": "There is no toilet pump-out service at this marina"
+                    }
+                },
+                "question": "Do the wastewater facilities here provide a means of pumping out a sewage tank?"
+            }
+        },
+        "title": {
+            "render": "Marina {name}"
         }
     },
     "maxspeed": {
@@ -7590,6 +7656,34 @@
         },
         "title": {
             "render": "Picnic table"
+        }
+    },
+    "piers_and_quays": {
+        "description": "Piers and quays are structures next to or on the water where people might walk on and where boats might be moored",
+        "name": "Piers and quays",
+        "tagRenderings": {
+            "allowed_boats": {
+                "mappings": {
+                    "0": {
+                        "then": "Small motorboats (<20m) are allowed here"
+                    },
+                    "1": {
+                        "then": "Small sailboats (<20m) are allowed here"
+                    },
+                    "2": {
+                        "then": "Canoes and kayaks are allowed here"
+                    }
+                },
+                "question": "Which boats are allowed to moor here?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Pier {name}"
+                }
+            },
+            "render": "{name}"
         }
     },
     "playground": {
@@ -12465,6 +12559,121 @@
         },
         "title": {
             "render": "Waste Disposal"
+        }
+    },
+    "waterway": {
+        "description": "Waterways which are navigable by small boats, yachts, ...",
+        "name": "Navigable waterways",
+        "tagRenderings": {
+            "3_vyksl7ofya7m97l": {
+                "mappings": {
+                    "0": {
+                        "then": "Boats (<20m) are allowed on this waterway"
+                    },
+                    "1": {
+                        "then": "Boats (<20m) are <b>not</b> allowed on this waterway"
+                    }
+                },
+                "question": "Are boats allowed on this waterway?",
+                "questionHint": "A boat is a floating craft of which the hull is less then 20 meter long (without rudder or bowsprit)"
+            },
+            "4_yuodfwdyocflwg8": {
+                "mappings": {
+                    "0": {
+                        "then": "Motorized boats are allowed"
+                    },
+                    "1": {
+                        "then": "Motorized boats are <b>not</b> allowed"
+                    }
+                },
+                "question": "Are motorboats allowed on this waterway?"
+            },
+            "type": {
+                "mappings": {
+                    "0": {
+                        "then": "This is a river"
+                    },
+                    "1": {
+                        "then": "This is a canal"
+                    },
+                    "2": {
+                        "then": "This is a stream "
+                    }
+                },
+                "question": "What type of waterway is this?"
+            }
+        },
+        "title": "{name}"
+    },
+    "waterway_lock": {
+        "description": "Locks on canals, rivers and other navigable waterways ",
+        "name": "Locks",
+        "pointRendering": {
+            "0": {
+                "label": {
+                    "mappings": {
+                        "0": {
+                            "then": "{lock_name} (VHF {vhf})"
+                        },
+                        "1": {
+                            "then": "{lock_name}"
+                        }
+                    }
+                }
+            }
+        },
+        "tagRenderings": {
+            "2_qyvwk0kx77jcmh2": {
+                "question": "What is the maximum length of boats that may use this lock?",
+                "questionHint": "Omit units if designated in meters. Feet and inches maybe indicated with apostrophes and quotation marks.",
+                "render": "Boats with a maximum length of {maxlength} may use this lock."
+            },
+            "3_sm4v6ow91r2i4kd": {
+                "question": "How far does this lock raise or lower a boat?",
+                "questionHint": "Omit units if designated in meters. Feet and inches maybe indicated with apostrophes and quotation marks.",
+                "render": "This lock has a drop height of {lock:height}"
+            },
+            "4_pwnx07go36rzk54": {
+                "mappings": {
+                    "0": {
+                        "then": "This lock is automated (operated from control panel or control room)"
+                    },
+                    "1": {
+                        "then": "This lock is manually operated (with muscle power)"
+                    }
+                },
+                "question": "Is this lock automated?"
+            },
+            "5_1sz01guflvjeyx7": {
+                "question": "What is the maximum draft of boats using this lock?",
+                "questionHint": "Omit units if designated in meters. Feet and inches maybe indicated with apostrophes and quotation marks.",
+                "render": "The maximum draft of boats using this lock is {draft}."
+            },
+            "lock_name": {
+                "question": "What is the name of this lock?",
+                "questionHint": "The numerical reference code can be added in a follow-up question ",
+                "render": "This lock is named {lock_name}"
+            },
+            "max_length": {
+                "question": "What is the maximum width (beam) of boats using this lock?",
+                "questionHint": "Omit units if designated in meters. Feet and inches maybe indicated with apostrophes and quotation marks.",
+                "render": "This lock permits boats with a maximum width of {maxwidth}"
+            },
+            "ref": {
+                "question": "Does this lock have a reference number/code?",
+                "render": "This is lock {lock_ref}"
+            },
+            "vhf": {
+                "question": "What VHF channel should be used to communicate with the control room of this lock?",
+                "render": "The VHF channelnis {vhf}"
+            },
+            "waterway_name": {
+                "question": "What is the name of the waterway that this lock is on?",
+                "render": "The waterway is name <b>{name}</b>"
+            }
+        },
+        "title": {
+            "render": "{lock_name} Lock {lock_ref} (on {name})"
         }
     },
     "windturbine": {

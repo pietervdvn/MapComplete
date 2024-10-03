@@ -369,6 +369,10 @@
                     "then": "./assets/layers/memorial/memorial.svg"
                   },
                   {
+                    "if": "theme=narrowboat",
+                    "then": "./assets/themes/narrowboat/boat.svg"
+                  },
+                  {
                     "if": "theme=nature",
                     "then": "./assets/themes/nature/logo.svg"
                   },

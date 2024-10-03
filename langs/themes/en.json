@@ -894,6 +894,10 @@
         "description": "Memorials are physical objects permantently placed in the public space to remember a person or event. They can be a wide range of objects, such as statues, plaques, paintings, military objects (such as tanks), ...",
         "title": "Memorials"
     },
+    "narrowboat": {
+        "description": "Features of interest to narrowboats and similar cruisers on inland waterways. ",
+        "title": "Narrowboat Amenities"
+    },
     "nature": {
         "description": "On this map, one can find interesting information for tourists and nature lovers.",
         "shortDescription": "A map for nature lovers, with interesting POI's",
