@@ -1181,8 +1181,80 @@
             "render": "Sitzbank"
         }
     },
+    "bicycle_counter": {
+        "description": "Ebene mit Messstationen für den Fahrradverkehr",
+        "name": "Fahrradzählstellen",
+        "presets": {
+            "0": {
+                "title": "eine Fahrradzählstelle"
+            }
+        },
+        "tagRenderings": {
+            "clock": {
+                "mappings": {
+                    "0": {
+                        "then": "Die Zählstelle zeigt die Uhrzeit an"
+                    },
+                    "1": {
+                        "then": "Die Zählstelle zeigt keine Uhrzeit an"
+                    }
+                },
+                "question": "Zeigt die Fahrradzählstelle die Uhrzeit an?"
+            },
+            "display": {
+                "mappings": {
+                    "0": {
+                        "then": "Die Zählstelle hat eine digitale Anzeige"
+                    },
+                    "1": {
+                        "then": "Die Zählstelle hat eine analoge Anzeige"
+                    },
+                    "2": {
+                        "then": "Die Zählstelle hat keine Anzeige"
+                    }
+                },
+                "question": "Zeigt die Fahrradzählstelle die Anzahl gezählter Fahrräder an?"
+            },
+            "name": {
+                "freeform": {
+                    "placeholder": "Name des Zählorts"
+                },
+                "question": "Wie lautet der Name des Zählorts?",
+                "render": "Name des Zählorts: {name}"
+            },
+            "ref": {
+                "freeform": {
+                    "placeholder": "Kennziffer der Zählstelle"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Die Zählstelle hat keine Kennziffer"
+                    }
+                },
+                "question": "Wie lautet die Kennziffer der Zählstelle?",
+                "render": "Kennziffer der Zählstelle: {ref}"
+            },
+            "start_date": {
+                "freeform": {
+                    "placeholder": "Aufstelldatum der Zählstelle"
+                },
+                "question": "Wann wurde die Zählstelle aufgestellt?",
+                "render": "Die Zählstelle wurde am {start_date} aufgestellt"
+            },
+            "website": {
+                "freeform": {
+                    "placeholder": "Website der Zählstelle"
+                },
+                "question": "Gibt es eine Website für die Fahrradzählstelle?",
+                "render": "Website der Zählstelle: <a href='{website}'>{website}</a>"
+            }
+        },
+        "title": {
+            "render": "Fahrradzählstelle"
+        }
+    },
     "bicycle_library": {
-        "description": "Eine Einrichtung, in der Fahrräder für längere Zeit geliehen werden können",
+        "description": "Eine Einrichtung, um Fahrräder längere Zeit auszuleihen",
         "name": "Fahrradbibliotheken",
         "presets": {
             "0": {
@@ -4142,6 +4214,9 @@
                     },
                     "2": {
                         "then": "Diese Trinkwasserstelle wurde geschlossen"
+                    },
+                    "3": {
+                        "then": "Die Trinkwasserstelle ist dauerhaft geschlossen"
                     }
                 },
                 "question": "Ist diese Trinkwasserstelle noch in Betrieb?",
@@ -5186,6 +5261,18 @@
                     "14": {
                         "then": "Hier werden thailändische Gerichte serviert"
                     },
+                    "15": {
+                        "then": "Hier werden mexikanische Gerichte serviert"
+                    },
+                    "16": {
+                        "then": "Hier werden japanische Gerichte serviert"
+                    },
+                    "17": {
+                        "then": "Hier werden Hühnergerichte serviert"
+                    },
+                    "18": {
+                        "then": "Hier werden Fisch und Meeresfrüchte serviert"
+                    },
                     "2": {
                         "then": "Bietet vorwiegend Pastagerichte an"
                     },
@@ -5621,7 +5708,7 @@
             "type": {
                 "mappings": {
                     "0": {
-                        "then": "Dieser Wegweiser zeigt Fahrradrouten"
+                        "then": "Dieser Wegweiser zeigt Fahrradwege"
                     },
                     "1": {
                         "then": "Dieser Wegweiser zeigt Wanderwege"
@@ -9186,6 +9273,14 @@
             "render": "Schule <i>{name}</i>"
         }
     },
+    "search": {
+        "description": "Priorisierte Ebene, die Suchergebnissen anzeigt",
+        "tagRenderings": {
+            "intro": {
+                "render": "Suchergebnis"
+            }
+        }
+    },
     "selected_element": {
         "description": "Hebt das aktuell ausgewählte Element hervor. Überschreiben Sie diese Ebene, um unterschiedliche Farben zu erhalten"
     },
@@ -9948,10 +10043,10 @@
                         "then": "Der Belag ist aus <b>Beton</b>"
                     },
                     "5": {
-                        "then": "Die Oberfläche ist <b>feiner Kies</b>"
+                        "then": "Der Belag ist <b>feiner Kies</b>"
                     },
                     "6": {
-                        "then": "Der Belag dieser Laufbahn ist Tartan, ein synthetischer, leicht federnder, poröser Belag"
+                        "then": "Der Belag ist Tartan, ein synthetischer, leicht federnder, poröser Belag"
                     }
                 },
                 "question": "Welchen Belag hat der Sportplatz?",
@@ -11757,6 +11852,48 @@
                 "question": "Rohe OpenStreetMap-Tags anzeigen?",
                 "questionHint": "<b>Tags</b> sind die Eigenschaften, die jedes Objekt hat. Das sind die technischen Daten, die in der Datenbank gespeichert werden. Du brauchst diese Informationen nicht, um mit MapComplete Änderungen zu machen, aber fortgeschrittenen Nutzer*innen kann es als Referenz dienen."
             },
+            "sync-visited-locations": {
+                "mappings": {
+                    "0": {
+                        "then": "Gesuchte und überprüfte Orte speichern und über openstreetmap.org synchronisieren. OpenStreetMap und alle verwendeten Programme können diesen Verlauf sehen"
+                    },
+                    "1": {
+                        "then": "Gesuchte und überprüfte Orte auf meinem Gerät speichern"
+                    },
+                    "2": {
+                        "then": "Gesuchte und überprüfte Orte nicht auf meinem Gerät speichern "
+                    }
+                },
+                "question": "Sollen die gesuchten und überprüften Orte gespeichert werden?",
+                "questionHint": "Diese Orte werden im Suchmenü angezeigt"
+            },
+            "sync-visited-themes": {
+                "mappings": {
+                    "0": {
+                        "then": "Besuchte Themenkarten speichern und über opentreetmap.org synchronisieren. OpenStreetMap und alle verwendeten Programme können diesen Verlauf sehen"
+                    },
+                    "1": {
+                        "then": "Besuchte Themenkarten auf meinem Gerät speichern"
+                    },
+                    "2": {
+                        "then": "Besuchte Themenkarten nicht auf meinem Gerät speichern"
+                    }
+                },
+                "question": "Sollen besuchte Themenkarten gespeichert werden?",
+                "questionHint": "Besuchte Themenkarten, können von MapComplete gespeichert und als Vorschlag angeboten werden."
+            },
+            "title-editing": {
+                "render": "<h3> Einstellungen bearbeiten</h3>"
+            },
+            "title-id": {
+                "render": "<h3>Mangrove ID Management</h3>"
+            },
+            "title-map": {
+                "render": "<h3>Karte konfigurieren</h3>"
+            },
+            "title-privacy-legal": {
+                "render": "<h3>Datenschutz und Rechtliches</h3>"
+            },
             "translation-completeness": {
                 "mappings": {
                     "0": {
@@ -11827,6 +11964,9 @@
                     },
                     "12": {
                         "question": "Verkauf von Eiern"
+                    },
+                    "13": {
+                        "question": "Verkauf von Speiseeis"
                     },
                     "14": {
                         "question": "Verkauf von Käse"
@@ -11997,6 +12137,9 @@
                     },
                     "11": {
                         "then": "Eier werden verkauft"
+                    },
+                    "12": {
+                        "then": "Speiseeis wird verkauft"
                     },
                     "13": {
                         "then": "Käse wird verkauft"
