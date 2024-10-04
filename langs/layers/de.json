@@ -5838,7 +5838,7 @@
                         "then": "Dies ist ein traditioneller (softwareorientierter) Hackerspace"
                     },
                     "2": {
-                        "then": "Dies ist ein <b>Hackerspace/Hack-Lab</b>, das sich hauptsächlich auf grundlegende Computerkenntnisse konzentriert, recycelte Geräte verwendet und/oder der Gemeinschaft Internet bereitstellt. Es befindet sich typischerweise in autonomen Räumen, besetzten Häusern oder sozialen Einrichtungen."
+                        "then": "Dies ist ein <b>Hackerspace/Hack-Lab</b>, das sich hauptsächlich auf grundlegende Computerkenntnisse konzentriert, recycelte Geräte verwendet und/oder der Gemeinschaft Internet bereitstellt. Es befindet sich typischerweise in autonomen Räumen, besetzten Häusern oder sozialen Einrichtungen"
                     }
                 },
                 "question": "Ist dies ein Hackerspace oder ein Makerspace?"
@@ -6384,7 +6384,7 @@
         "name": "Love Hotels",
         "presets": {
             "0": {
-                "description": "Ein Love Hotel ist eine Art Kurzzeithotel, das in erster Linie zu dem Zweck betrieben wird, den Gästen Privatsphäre für sexuelle Aktivitäten zu bieten",
+                "description": "Ein Love Hotel ist eine Art Kurzzeithotel, das in erster Linie zu dem Zweck betrieben wird, den Gästen Privatsphäre für sexuelle Aktivitäten zu bieten.",
                 "title": "ein Love Hotel"
             }
         },
@@ -6443,7 +6443,7 @@
                         "then": "Eine Karte der Räume innerhalb eines Gebäudes"
                     },
                     "1": {
-                        "then": "Örtlichkeit (z.B. Burg)"
+                        "then": "Eine Karte mit besonderen Orten, wie einem historischen Schloss, einem Park, einem Campus, einem Wald, ...."
                     },
                     "2": {
                         "then": "Eine Karte, die das Dorf oder die Stadt anzeigt"
@@ -11912,16 +11912,16 @@
             "translation-mode": {
                 "mappings": {
                     "0": {
-                        "then": "Keine Schaltfläche zum schnellen Wechseln von Übersetzungen anzeigen"
+                        "then": "Schaltflächen zur Übersetzung nie anzeigen"
                     },
                     "1": {
-                        "then": "Schaltfläche anzeigen zum schnellen Öffnen von Übersetzungen beim Verwenden von MapComplete auf einem großen Bildschirm"
+                        "then": "Schaltflächen zur Übersetzung nur auf großen Bildschirmen anzeigen"
                     },
                     "2": {
-                        "then": "Übersetzungsschaltflächen immer anzeigen, auch auf dem Handy"
+                        "then": "Schaltflächen zur Übersetzung immer anzeigen, auch auf Smartphones"
                     }
                 },
-                "question": "Möchten Sie bei der Übersetzung von MapComplete helfen?"
+                "question": "Möchten Sie beim Übersetzen von MapComplete helfen?"
             },
             "translation-thanks": {
                 "mappings": {
