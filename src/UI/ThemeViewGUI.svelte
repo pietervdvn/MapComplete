@@ -95,7 +95,7 @@
         // ... and we force a fresh popup window
         selectedElement.setData(value)
       })
-    }, slideDuration)
+    }, slideDuration + 50)
   })
 
   state.mapProperties.installCustomKeyboardHandler(viewport)
