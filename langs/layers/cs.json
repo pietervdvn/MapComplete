@@ -321,9 +321,22 @@
                     },
                     "6": {
                         "then": "Vlek s tyčemi ve tvaru písmene L pro jednoho cestujícího"
+                    },
+                    "7": {
+                        "then": "Vlek s talířem, který táhne jednoho cestujícího"
+                    },
+                    "8": {
+                        "then": "Vlečné lano, které táhne lyžaře"
+                    },
+                    "9": {
+                        "then": "Kouzelný koberec (pásový dopravník na zemi)"
                     }
-                }
+                },
+                "question": "O jaký typ dráhy se jedná?"
             }
+        },
+        "title": {
+            "render": "Dráha {name}"
         }
     },
     "ambulancestation": {
@@ -373,6 +386,64 @@
         },
         "title": {
             "render": "Stanice rychlé záchranné služby"
+        }
+    },
+    "animal_shelter": {
+        "description": "Útulek pro zvířata je zařízení, kam se přivážejí zvířata v nesnázích a zaměstnanci zařízení (ať už dobrovolníci, nebo ne) je krmí, starají se o ně a v případě potřeby je rehabilitují a léčí. Tato definice zahrnuje chovné stanice pro opuštěné psy, chovné stanice pro opuštěné kočky, útulky pro jiná opuštěná zvířata a centra pro záchranu volně žijících zvířat. ",
+        "name": "Útulky pro zvířata",
+        "presets": {
+            "0": {
+                "title": "útulek pro zvířata"
+            }
+        },
+        "tagRenderings": {
+            "2": {
+                "question": "Jak se jmenuje tento útulek pro zvířata?",
+                "render": "Tento útulek pro zvířata se jmenuje <b>{name}</b>"
+            },
+            "6": {
+                "mappings": {
+                    "0": {
+                        "then": "Zvířata jsou zde držena do doby, než si je osvojí nový majitel"
+                    },
+                    "1": {
+                        "then": "Zvířata jsou v péči po zbytek života"
+                    },
+                    "2": {
+                        "then": "Zraněná zvířata jsou zde rehabilitována do doby, než mohou být opět vypuštěna do přírody "
+                    }
+                },
+                "question": "Jaký je účel útulku pro zvířata?"
+            },
+            "boarded_animals": {
+                "mappings": {
+                    "0": {
+                        "then": "Chovají se zde psi"
+                    },
+                    "1": {
+                        "then": "Chovají se zde kočky"
+                    },
+                    "2": {
+                        "then": "Chovají se zde koně"
+                    },
+                    "3": {
+                        "then": "Chovají se zde ptáci"
+                    },
+                    "4": {
+                        "then": "Chovají se zde divoká zvířata"
+                    }
+                },
+                "question": "Která zvířata jsou zde přijímána?",
+                "render": "{animal_shelter} je uložen zde"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
+            "render": "Útulek pro zvířata"
         }
     },
     "artwork": {
@@ -465,6 +536,17 @@
                     }
                 },
                 "question": "Slouží toto umělecké dílo jako lavička?"
+            },
+            "doubles_as_memorial": {
+                "mappings": {
+                    "0": {
+                        "then": "Toto dílo slouží také jako památník"
+                    },
+                    "1": {
+                        "then": "Toto dílo neslouží jako lavička"
+                    }
+                },
+                "question": "Slouží toto dílo jako památník?"
             }
         },
         "title": {
@@ -474,6 +556,92 @@
                 }
             },
             "render": "Umělecké dílo"
+        }
+    },
+    "assembly_point": {
+        "description": "Tato vrstva obsahuje shromaždiště a čekací prostory, kde se v případě nouze shromažďují všichni zaměstnanci, cestující nebo velký dav lidí.",
+        "name": "Nouzová shromaždiště",
+        "presets": {
+            "0": {
+                "title": "shromaždiště"
+            }
+        },
+        "tagRenderings": {
+            "assembly_point_name": {
+                "question": "Jak se jmenuje toto shromaždiště?",
+                "render": "Toto shromaždiště se jmenuje <b>{name}</b>"
+            },
+            "assembly_point_operator": {
+                "question": "Jaká organizace provozuje toto shromaždiště?",
+                "render": "Toto shromaždiště provozuje <b>{operator}</b>"
+            },
+            "disaster_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Zemětřesení"
+                    },
+                    "1": {
+                        "then": "Povodně"
+                    },
+                    "2": {
+                        "then": "Požár"
+                    },
+                    "3": {
+                        "then": "Sesuv půdy"
+                    }
+                },
+                "question": "Pro jaký typ katastrofy je toto shromaždiště určeno?"
+            }
+        },
+        "title": {
+            "render": "Shromaždiště při mimořádných událostech"
+        }
+    },
+    "assisted_repair": {
+        "description": "Svépomocná dílna je místo, kam mohou lidé přijít a opravit si své zboží s pomocí dobrovolníků a nástrojů, které jsou na daném místě k dispozici.  Opravárenská kavárna je typ akce, která se pravidelně pořádá na stejných principech.",
+        "name": "Opravárenské kavárny a asistované opravárenské dílny",
+        "presets": {
+            "0": {
+                "description": "Místo se stálou dílnou, kam mohou lidé přijít a s pomocí dobrovolníků opravovat předměty.",
+                "title": "asistovaná opravárenská dílna"
+            }
+        },
+        "tagRenderings": {
+            "item:repair": {
+                "mappings": {
+                    "0": {
+                        "then": "Zde se opravují mobilní telefony"
+                    },
+                    "1": {
+                        "then": "Počítače se opravují zde"
+                    },
+                    "2": {
+                        "then": "Zde se opravují jízdní kola"
+                    },
+                    "3": {
+                        "then": "Zde se opravují elektronická zařízení"
+                    },
+                    "4": {
+                        "then": "Zde se opravuje nábytek"
+                    },
+                    "5": {
+                        "then": "Zde se opravují oděvy"
+                    }
+                },
+                "question": "Jaké předměty se zde opravují?"
+            },
+            "name": {
+                "question": "Jak se tato opravna jmenuje?",
+                "render": "Tato dílna se nazývá <b>{name}</b>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
+            "render": "Dílna pro asistované opravy"
         }
     },
     "atm": {
@@ -725,6 +893,72 @@
             "render": "Bariéra"
         }
     },
+    "bbq": {
+        "description": "Trvale instalovaný gril, obvykle přístupný veřejnosti.",
+        "name": "BBQ",
+        "presets": {
+            "0": {
+                "description": "Trvale instalovaný gril, obvykle přístupný veřejnosti.",
+                "title": "BBQ"
+            }
+        },
+        "tagRenderings": {
+            "access": {
+                "mappings": {
+                    "0": {
+                        "then": "Veřejné"
+                    },
+                    "1": {
+                        "then": "Zákaz vstupu"
+                    },
+                    "2": {
+                        "then": "Soukromé"
+                    },
+                    "3": {
+                        "then": "Přístup až do odvolání"
+                    },
+                    "4": {
+                        "then": "Přístup pouze pro zákazníky"
+                    },
+                    "5": {
+                        "then": "Přístup pouze pro oprávněné osoby"
+                    }
+                },
+                "question": "Jaký přístup je povolen?"
+            },
+            "covered": {
+                "mappings": {
+                    "0": {
+                        "then": "Gril není zakrytý"
+                    },
+                    "1": {
+                        "then": "Gril je zakrytý"
+                    }
+                },
+                "question": "Je gril zakrytý?"
+            },
+            "fuel": {
+                "mappings": {
+                    "0": {
+                        "then": "Dřevo"
+                    },
+                    "1": {
+                        "then": "Dřevěné uhlí"
+                    },
+                    "2": {
+                        "then": "Elektrický"
+                    },
+                    "3": {
+                        "then": "Plynový"
+                    }
+                },
+                "question": "Jak je gril napájen?"
+            }
+        },
+        "title": {
+            "render": "BBQ"
+        }
+    },
     "bench": {
         "description": "Lavička je dřevěná, kovová, kamenná, ... plocha, na které může člověk sedět. Tato vrstva je vizualizuje a klade si o nich několik otázek.",
         "filter": {
@@ -756,6 +990,17 @@
             }
         },
         "tagRenderings": {
+            "bench-armrest": {
+                "mappings": {
+                    "0": {
+                        "then": "Tato lavice má jednu nebo více opěrek na ruce"
+                    },
+                    "1": {
+                        "then": "Tato lavice <b>nemá opěrky rukou</b>"
+                    }
+                },
+                "question": "Má tato lavice jednu nebo více opěrek?"
+            },
             "bench-artwork": {
                 "mappings": {
                     "0": {
@@ -777,10 +1022,10 @@
                         "then": "Tato lavička je oboustranná a má společné opěradlo"
                     },
                     "1": {
-                        "then": "Má opěradlo"
+                        "then": "Tato lavice má opěradlo"
                     },
                     "2": {
-                        "then": "<b>nemá</b> opěradlo"
+                        "then": "Tato lavice <b>nemá opěradlo</b>"
                     }
                 },
                 "question": "Má tato lavička opěradlo?"
@@ -874,7 +1119,7 @@
                     }
                 },
                 "question": "Kolik má tato lavice míst k sezení?",
-                "render": "{seats} míst k sezení"
+                "render": "Tato lavička má {seats} sedadla"
             },
             "bench-survey:date": {
                 "mappings": {
@@ -934,6 +1179,48 @@
                 }
             },
             "render": "Lavička"
+        }
+    },
+    "bicycle_counter": {
+        "description": "Vrstva zobrazující monitorovací stanice pro cyklistickou dopravu",
+        "name": "Počítadla jízdních kol",
+        "presets": {
+            "0": {
+                "title": "počítadlo jízdních kol"
+            }
+        },
+        "tagRenderings": {
+            "clock": {
+                "mappings": {
+                    "0": {
+                        "then": "Toto počítadlo je vybaveno hodinami"
+                    },
+                    "1": {
+                        "then": "Toto počítadlo nemá žádné hodiny"
+                    }
+                },
+                "question": "Má toto počítadlo kol hodiny?"
+            },
+            "display": {
+                "mappings": {
+                    "0": {
+                        "then": "Toto počítadlo má digitální displej"
+                    },
+                    "1": {
+                        "then": "Toto počítadlo má analogový displej"
+                    },
+                    "2": {
+                        "then": "Toto počítadlo nemá žádný displej"
+                    }
+                },
+                "question": "Má tento počítač jízdních kol displej zobrazující počet projíždějících jízdních kol?"
+            },
+            "name": {
+                "freeform": {
+                    "placeholder": "Název započítávané lokality"
+                },
+                "question": "Jak se jmenuje započítávaná lokalita?"
+            }
         }
     },
     "bicycle_library": {
