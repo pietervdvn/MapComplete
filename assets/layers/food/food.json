@@ -109,10 +109,6 @@
     {
       "iconBadges": [
         {
-          "if": "opening_hours~*",
-          "then": "icons.isOpen"
-        },
-        {
           "if": {
             "or": [
               "diet:vegetarian=yes",

@@ -154,10 +154,6 @@
       ],
       "iconBadges": [
         {
-          "if": "opening_hours~*",
-          "then": "icons.isOpen"
-        },
-        {
           "if": {
             "or": [
               "organic=yes",
@@ -370,7 +366,7 @@
         ]
       }
     },
-    "opening_hours",
+    "opening_hours_by_appointment",
     "website",
     "email",
     "phone",
