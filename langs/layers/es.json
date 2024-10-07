@@ -32,6 +32,10 @@
                 "description": "Una estructura publicitaria grande al aire libre, que normalmente se encuentra en áreas transitadas como carreteras con mucha intensidad",
                 "title": "una valla publicitària"
             },
+            "1": {
+                "description": "Una gran estructura de publicidad exterior, que suele encontrarse en zonas de mucho tráfico, por ejemplo, junto a carreteras muy transitadas",
+                "title": "una valla publicitaria montada en un muro"
+            },
             "10": {
                 "title": "una pantalla montada en una marquesina de tránsito"
             },
@@ -83,7 +87,7 @@
             "Sides": {
                 "mappings": {
                     "0": {
-                        "then": "Este mupi tiene publicidad en un único lado"
+                        "then": "Este objeto tiene publicidad en un único lado"
                     },
                     "1": {
                         "then": "Este objeto tiene publicidad por los dos lados"
@@ -109,10 +113,18 @@
                         "then": "<b>Rota</b> sobre si mismo"
                     }
                 },
-                "question": "¿Como cambian los anuncios de este elemento?"
+                "question": "¿Pasa este anuncio por varios mensajes?"
             },
             "historic": {
-                "question": "¿Es este rótulo de un negocio que ya no existe o que ya no se mantiene?"
+                "mappings": {
+                    "0": {
+                        "then": "Esto es un cartel publicitario histórico (un anuncio para un negocio que ya no existe o un cartel con un gran valor patrimonial)"
+                    },
+                    "1": {
+                        "then": "Este cartel publicitario no tiene valor histórico (el negocio todavía existe y no tiene valor patrimonial)"
+                    }
+                },
+                "question": "¿Es este cartel de un negocio que ya no existe o que ya no se mantiene?"
             },
             "luminous_or_lit_advertising": {
                 "override": {
@@ -177,11 +189,17 @@
                     "10": {
                         "then": "Esto es una pared pintada"
                     },
+                    "11": {
+                        "then": "Esto es un azulejería - la publicidad está pintada en azulejos"
+                    },
+                    "12": {
+                        "then": "Esto es un alivio"
+                    },
                     "2": {
                         "then": "Esto es una columna"
                     },
                     "3": {
-                        "then": "Esto es una bndera"
+                        "then": "Esto es una bandera"
                     },
                     "4": {
                         "then": "Esto es un mupi"
@@ -260,7 +278,8 @@
                 "render": "Un viaje dura {duration} minutos"
             },
             "occupancy": {
-                "question": "¿Cuál es la capacidad de la cabina?"
+                "question": "¿Cuál es la capacidad de la cabina?",
+                "render": "{aerialway:occupancy} personas entran en un solo vagón"
             }
         }
     },
@@ -285,7 +304,7 @@
             "ambulance-operator-type": {
                 "mappings": {
                     "0": {
-                        "then": "La estación la opera el govierno."
+                        "then": "La estación la opera el gobierno."
                     },
                     "1": {
                         "then": "La estación la opera una organización basada en la comunidad o informal."
@@ -339,6 +358,27 @@
                     }
                 },
                 "question": "¿Cuál es la finalidad del refugio de animales?"
+            },
+            "boarded_animals": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquí se guardan perros"
+                    },
+                    "1": {
+                        "then": "Aquí se guardan gatos"
+                    },
+                    "2": {
+                        "then": "Aquí se guardan caballos"
+                    },
+                    "3": {
+                        "then": "Aquí se guardan aves"
+                    },
+                    "4": {
+                        "then": "Aquí se guardan animales salvajes"
+                    }
+                },
+                "question": "¿Qué animales se aceptan aquí?",
+                "render": "Aquí se guardan {animal_shelter}"
             }
         },
         "title": {
@@ -358,7 +398,7 @@
                 "title": "una obra de arte"
             },
             "1": {
-                "title": "Una obra de arte en la pared"
+                "title": "una obra de arte en la pared"
             }
         },
         "tagRenderings": {
@@ -440,6 +480,17 @@
                     }
                 },
                 "question": "¿Sirve esta obra de arte como banco?"
+            },
+            "doubles_as_memorial": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta obra de arte también sirve como monumento conmemorativo"
+                    },
+                    "1": {
+                        "then": "Esta obra de arte no sirve como banco"
+                    }
+                },
+                "question": "¿Sirve esta obra de arte como monumento conmemorativo?"
             }
         },
         "title": {
@@ -449,6 +500,82 @@
                 }
             },
             "render": "Obra de arte"
+        }
+    },
+    "assembly_point": {
+        "name": "Puntos de encuentro por emergencia",
+        "presets": {
+            "0": {
+                "title": "un punto de encuentro"
+            }
+        },
+        "tagRenderings": {
+            "assembly_point_name": {
+                "question": "¿Cuál es el nombre de este punto de encuentro?",
+                "render": "Este punto de encuentro se llama <b>{name}</b>"
+            },
+            "assembly_point_operator": {
+                "question": "¿Qué organización opera este punto de encuentro?",
+                "render": "Este punto de encuentro lo opera <b>{operator}</b>"
+            },
+            "disaster_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Terremoto"
+                    },
+                    "1": {
+                        "then": "Riada"
+                    },
+                    "2": {
+                        "then": "Incendio"
+                    },
+                    "3": {
+                        "then": "Deslizamiento de tierra"
+                    }
+                },
+                "question": "¿A qué tipo de catástrofe está destinado este punto de encuentro?"
+            }
+        },
+        "title": {
+            "render": "Punto de encuentro durante emergencias"
+        }
+    },
+    "assisted_repair": {
+        "tagRenderings": {
+            "item:repair": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquí se reparan teléfonos móviles"
+                    },
+                    "1": {
+                        "then": "Aquí se reparan ordenadores"
+                    },
+                    "2": {
+                        "then": "Aquí se reparan bicicletas"
+                    },
+                    "3": {
+                        "then": "Aquí se reparan dispositivos electrónicos"
+                    },
+                    "4": {
+                        "then": "Aquí se reparan muebles"
+                    },
+                    "5": {
+                        "then": "Aquí se reparan prendas textiles"
+                    }
+                },
+                "question": "¿Qué tipo de objetos se reparan aquí?"
+            },
+            "name": {
+                "question": "¿Cuál es el nombre de este taller de reparación?",
+                "render": "Este taller se llama <b>{name}</b>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            }
         }
     },
     "atm": {
@@ -465,7 +592,7 @@
         "name": "Cajeros automáticos",
         "presets": {
             "0": {
-                "title": "Un cajero automático"
+                "title": "un cajero automático"
             }
         },
         "tagRenderings": {
@@ -538,7 +665,7 @@
                     "placeholder": "Operador"
                 },
                 "question": "¿De qué banco es este cajero automático?",
-                "render": "El cajero es de {operator}"
+                "render": "El cajero lo opera {operator}"
             },
             "speech_output": {
                 "mappings": {
@@ -595,7 +722,7 @@
                         "then": "Este banco tiene un cajero automático, pero aparece con un icono diferente"
                     }
                 },
-                "question": "¿Este banco tiene cajero automático?"
+                "question": "¿Tiene este banco cajero automático?"
             }
         }
     },
@@ -700,6 +827,71 @@
             "render": "Barrera"
         }
     },
+    "bbq": {
+        "description": "Una barbacoa instalada permanentemente, normalmente accesible al público.",
+        "name": "Barbacoa",
+        "presets": {
+            "0": {
+                "description": "Una barbacoa instalada permanentemente, normalmente accesible al público.",
+                "title": "Barbacoa"
+            }
+        },
+        "tagRenderings": {
+            "access": {
+                "mappings": {
+                    "0": {
+                        "then": "Pública"
+                    },
+                    "1": {
+                        "then": "Sin acceso"
+                    },
+                    "2": {
+                        "then": "Privada"
+                    },
+                    "3": {
+                        "then": "Acceso hasta que se anule"
+                    },
+                    "4": {
+                        "then": "Acceso exclusivo para clientes"
+                    },
+                    "5": {
+                        "then": "Acceso exclusivo a personal autorizado"
+                    }
+                }
+            },
+            "covered": {
+                "mappings": {
+                    "0": {
+                        "then": "La parrilla no está cubierta"
+                    },
+                    "1": {
+                        "then": "La parrilla está cubierta"
+                    }
+                },
+                "question": "¿Está cubierta la parrilla?"
+            },
+            "fuel": {
+                "mappings": {
+                    "0": {
+                        "then": "Madera"
+                    },
+                    "1": {
+                        "then": "Carbón"
+                    },
+                    "2": {
+                        "then": "Eléctrica"
+                    },
+                    "3": {
+                        "then": "Gas"
+                    }
+                },
+                "question": "¿Cómo se alimenta la parrilla?"
+            }
+        },
+        "title": {
+            "render": "Barbacoa"
+        }
+    },
     "bench": {
         "description": "Un banco es una superficie de madera, metal, piedra, ... donde un humano se puede sentar. Estas capas los visualizan y hacen algunas preguntas sobre ellos.",
         "filter": {
@@ -731,6 +923,17 @@
             }
         },
         "tagRenderings": {
+            "bench-armrest": {
+                "mappings": {
+                    "0": {
+                        "then": "Este banco dispone de uno o más reposabrazos"
+                    },
+                    "1": {
+                        "then": "Este banco <b>not</b> dispone de reposabrazos"
+                    }
+                },
+                "question": "¿Dispone este banco de uno o más reposabrazos?"
+            },
             "bench-artwork": {
                 "mappings": {
                     "0": {
@@ -752,13 +955,13 @@
                         "then": "Este banco tiene dos caras y comparte el respaldo"
                     },
                     "1": {
-                        "then": "Tiene respaldo"
+                        "then": "Este banco tiene respaldo"
                     },
                     "2": {
-                        "then": "<b>No</b> tiene respaldo"
+                        "then": "Este banco <b>no</b> tiene respaldo"
                     }
                 },
-                "question": "¿Este banco tiene respaldo?"
+                "question": "¿Tiene este banco respaldo?"
             },
             "bench-colour": {
                 "mappings": {
@@ -803,7 +1006,7 @@
                         "then": "Este banco <span class='subtle'>(probablemente)</span> no tiene inscripción"
                     }
                 },
-                "question": "¿Este banco tiene una inscripción?",
+                "question": "¿Tiene este banco una inscripción?",
                 "questionHint": "Por ejemplo, en una placa montada, en el respaldo, …",
                 "render": "Este banco tiene la siguiente inscripción:<br/><p><i>{inscription}</i></p>"
             },
@@ -849,7 +1052,7 @@
                     }
                 },
                 "question": "¿Cuántos asientos tiene este banco?",
-                "render": "{seats} asientos"
+                "render": "Este banco tiene {seats} asientos"
             },
             "bench-survey:date": {
                 "mappings": {
@@ -909,6 +1112,15 @@
                 }
             },
             "render": "Banco"
+        }
+    },
+    "bicycle_counter": {
+        "description": "Capa que muestra las estaciones de seguimiento para el tráfico de bicicletas",
+        "name": "Contadores de bicicletas",
+        "presets": {
+            "0": {
+                "title": "un contador de bicicletas"
+            }
         }
     },
     "bicycle_library": {
@@ -1006,6 +1218,9 @@
                     },
                     "7": {
                         "then": "Aquí se pueden alquilar cascos"
+                    },
+                    "8": {
+                        "then": "Aquí se pueden alquilar bicicletas de carga"
                     }
                 },
                 "question": "¿Qué tipo de bicicletas y accesorios se alquilan aquí?",
@@ -1078,10 +1293,39 @@
         }
     },
     "bike_cafe": {
+        "name": "Cafetería para ciclistas",
+        "presets": {
+            "0": {
+                "title": "una cafetería para ciclistas"
+            }
+        },
         "tagRenderings": {
+            "bike_cafe-bike-pump": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta cafetería para ciclistas ofrece una bomba de aire para cualquier persona"
+                    },
+                    "1": {
+                        "then": "Esta cafetería para ciclistas no ofrece una bomba de aire para cualquier persona"
+                    }
+                },
+                "question": "¿Ofrece esta cafetería para ciclistas una bomba de aire para uso de cualquier persona?"
+            },
+            "bike_cafe-name": {
+                "question": "¿Cómo se llama la cafetería para ciclistas?",
+                "render": "La cafetería para ciclistas se llama {name}"
+            },
             "bike_cafe-repair-tools": {
                 "question": "¿Se ofrecen herramientas para reparar tu propia bicicleta?"
             }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Cafetería para ciclistas <i>{name}</i>"
+                }
+            },
+            "render": "Cafetería para ciclistas"
         }
     },
     "bike_cleaning": {
@@ -1170,7 +1414,8 @@
                 "render": "Este es un aparcamiento de bicicletas del tipo: {bicycle_parking}"
             },
             "Capacity": {
-                "question": "¿Cuántas bicicletas caben en este aparcamiento de bicicletas (incluyendo posibles bicicletas de carga)?",
+                "question": "¿Cuántas bicicletas caben en este aparcamiento de bicicletas?",
+                "questionHint": "Esto incluye bicis normales, de carga, eléctricas, ...",
                 "render": "Espacio para {capacity} bicis"
             },
             "Cargo bike capacity?": {
@@ -1218,6 +1463,39 @@
                     }
                 },
                 "question": "¿Cual es la localización relativa de este aparcamiento de bicicletas?"
+            },
+            "charge": {
+                "question": "¿Cuánto cuesta aparcar aquí tu bici?",
+                "questionHint": "Esta es la cantidad que se cobra por una sola bici",
+                "render": "Aparcar tu bici cuesta {charge}"
+            },
+            "fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Uno tiene que <b>pagar</b> para utilizar este aparcamiento de bicicletas"
+                    },
+                    "1": {
+                        "then": "Uso gratuito"
+                    }
+                },
+                "question": "¿Son estos aparcamientos de bicicletras de uso gratuito?"
+            },
+            "maxstay": {
+                "question": "¿Cuál es la duración máxima permitida de estacionamiento?",
+                "render": "Se puede aparcar aquí una bici por como mucho {canonical(maxstay)}"
+            },
+            "operator": {
+                "question": "¿Quién mantiene este aparcamiento de bicicletas?",
+                "render": "Este aparcamiento de bicicletas es mantenido por {operator}"
+            },
+            "operator_email": {
+                "question": "¿Cuál es la dirección de correo electrónico del operador de este aparcamiento de bicicletas?"
+            },
+            "operator_phone": {
+                "question": "¿Cuál es número de teléfono del operador de este aparcamiento de bicicletas?"
+            },
+            "operator_website": {
+                "question": "¿Cuál es la página web del operador de este aparcamiento de bicicletas?"
             }
         },
         "title": {
@@ -1234,7 +1512,7 @@
             },
             "1": {
                 "description": "Una bomba de bicicletas y herramientas para reparar tu bicicleta en el espacio público. Las herramientas habitualmente están aseguradas con cadenas contra el robo.",
-                "title": "En estación de reparación de bicicletas y bomba"
+                "title": "una estación de reparación de bicicletas y bomba"
             },
             "2": {
                 "description": "Herramientas para reparar tu bici en el espacio público (sin bomba).Las herramientas están aseguradas contra el robo.",
@@ -1484,6 +1762,7 @@
         }
     },
     "birdhide": {
+        "description": "Un observatorio de aves",
         "filter": {
             "0": {
                 "options": {
@@ -1493,10 +1772,11 @@
                 }
             }
         },
-        "name": "Lugares para ver pájaros",
+        "name": "Lugares para ver aves",
         "presets": {
             "0": {
-                "description": "Un refugio cubierto donde se pueden ver pájaros confortablemente"
+                "description": "Un refugio cubierto donde se pueden ver aves confortablemente",
+                "title": "un observatorio de aves"
             },
             "1": {
                 "description": "Una pantalla o pared con aperturas para ver pájaros"
@@ -1590,12 +1870,12 @@
         }
     },
     "caravansites": {
-        "description": "Sitios de acampada",
+        "description": "zonas de acampada",
         "name": "Sitios de Acampada",
         "presets": {
             "0": {
                 "description": "Añade un nuevo sitio de acampada oficial. Son lugares designados para pasar la noche con tu caravana. Pueden parecerse a un camping real o simplemente a un aparcamiento. Puede que no estén señalizados en absoluto, sino que simplemente estén definidos en una decisión municipal. Un aparcamiento normal destinado a los campistas en el que no se espera que se pase la noche, no es un camping. ",
-                "title": "Un camping"
+                "title": "una zona de acampada"
             }
         },
         "tagRenderings": {
@@ -3333,7 +3613,7 @@
             }
         },
         "title": {
-            "render": "aparcamiento de coches"
+            "render": "Aparcamiento de coches"
         }
     },
     "picnic_table": {
@@ -4756,7 +5036,7 @@
             },
             "1": {
                 "description": "Un árbol de hojas agujas, como el Pino o el Abeto.",
-                "title": "Árbol tipo Conífera"
+                "title": "un árbol con hojas de aguja"
             },
             "2": {
                 "description": "Si no estás seguro de si es un árbol de hoja ancha o de hoja de aguja.",
