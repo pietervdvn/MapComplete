@@ -578,6 +578,11 @@
     },
     {
       "key": "diet:vegetarian",
+      "description": "Layer 'Dog friendly eateries' shows diet:vegetarian=only with a fixed text, namely 'Serves only vegetarian snacks and burgers' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if cuisine=friture)",
+      "value": "only"
+    },
+    {
+      "key": "diet:vegetarian",
       "description": "Layer 'Dog friendly eateries' shows diet:vegetarian=yes with a fixed text, namely 'Vegetarian snacks are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if cuisine=friture)",
       "value": "yes"
     },
@@ -590,6 +595,11 @@
       "key": "diet:vegetarian",
       "description": "Layer 'Dog friendly eateries' shows diet:vegetarian=no with a fixed text, namely 'No vegetarian snacks are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if cuisine=friture)",
       "value": "no"
+    },
+    {
+      "key": "diet:vegan",
+      "description": "Layer 'Dog friendly eateries' shows diet:vegan=only with a fixed text, namely 'Servers only vegan snacks and burgers' and allows to pick this as a default answer (in the mapcomplete.org theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if cuisine=friture)",
+      "value": "only"
     },
     {
       "key": "diet:vegan",
