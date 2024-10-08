@@ -172,11 +172,12 @@
           "then": "circle:white;./assets/layers/id_presets/fas-key.svg"
         }
       ],
+      "labelCssClasses": "bg-white rounded px-2",,
       "label": {
         "mappings": [
           {
             "if": "name~*",
-            "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
+            "then": "{name}"
           }
         ]
       },
@@ -366,7 +367,7 @@
         ]
       }
     },
-    "opening_hours_by_appointment",
+    "opening_hours",
     "website",
     "email",
     "phone",
