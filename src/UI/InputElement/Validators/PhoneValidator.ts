@@ -1,4 +1,4 @@
-import { parsePhoneNumberFromString } from "libphonenumber-js"
+import { CountryCode, parsePhoneNumberFromString } from "libphonenumber-js"
 import { Validator } from "../Validator"
 import { Translation } from "../../i18n/Translation"
 import Translations from "../../i18n/Translations"
@@ -46,16 +46,16 @@ export default class PhoneValidator extends Validator {
         if (str.startsWith("tel:")) {
             str = str.substring("tel:".length)
         }
-        let countryCode = undefined
+        let countryCode: CountryCode = undefined
         if (country) {
-            countryCode = country()
+            countryCode = <CountryCode> country()?.toUpperCase()
         }
-        if (this.isShortCode(str, countryCode?.toUpperCase())) {
+        if (this.isShortCode(str, countryCode)) {
             return str
         }
         return parsePhoneNumberFromString(
             str,
-            countryCode?.toUpperCase() as any
+            countryCode
         )?.formatInternational()
     }
 
