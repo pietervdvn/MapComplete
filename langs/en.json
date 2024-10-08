@@ -387,6 +387,13 @@
             "skippedMultiple": "You skipped {skipped} questions",
             "skippedOne": "You skipped one question"
         },
+        "questions": {
+            "disable": "Do not ask this question again",
+            "disabledIntro": "You disabled some type of questions. To enable a question again, click them here",
+            "disabledTitle": "Disabled questions",
+            "enable": "Ask this question for all features",
+            "noneDisabled": "If you are not interested in a specific type of question, disable it. To disable a question, click the three dots in the upper-right corner and select 'disable'"
+        },
         "readYourMessages": "Please, read all your OpenStreetMap-messages before adding a new feature.",
         "removeLocationHistory": "Delete the location history",
         "retry": "Retry",

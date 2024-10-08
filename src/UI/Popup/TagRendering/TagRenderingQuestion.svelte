@@ -365,11 +365,11 @@
       <SidebarUnit>
         {#if $disabledInTheme.indexOf(config.id) >= 0}
           <button on:click={() => enableQuestion()}>
-            Ask this question for all features
+            <Tr t={Translations.t.general.questions.enable}/>
           </button>
         {:else}
           <button on:click={() => disableQuestion()}>
-            Don't ask this question again
+            <Tr t={Translations.t.general.questions.disable}/>
           </button>
         {/if}
       </SidebarUnit>
