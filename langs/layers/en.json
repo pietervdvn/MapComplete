@@ -6449,7 +6449,7 @@
                         "then": "A map showing the village or town"
                     },
                     "3": {
-                        "then": " A map of a city"
+                        "then": "A map of a city"
                     },
                     "4": {
                         "then": "The map of an entire region, showing multiple cities and villages"

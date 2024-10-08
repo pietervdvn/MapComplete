@@ -437,7 +437,7 @@
     },
     "disaster_response": {
         "description": "Este mapa contiene elementos destinados a la preparación y respuesta ante desastres.",
-        "title": "Respuesta ante desastres"
+        "title": "Respuesta a catástrofes y servicios de emergencia"
     },
     "drinking_water": {
         "description": "En este mapa, se muestran los puntos de agua potable accesibles públicamente y pueden añadirse fácilmente",
@@ -808,6 +808,20 @@
                         "options": {
                             "0": {
                                 "question": "Idioma del usuario (código iso) {search}"
+                            }
+                        }
+                    },
+                    "7": {
+                        "options": {
+                            "0": {
+                                "question": "Hecho con host {search}"
+                            }
+                        }
+                    },
+                    "8": {
+                        "options": {
+                            "0": {
+                                "question": "El conjunto de cambios ha añadido al menos una imagen"
                             }
                         }
                     }

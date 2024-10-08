@@ -853,11 +853,26 @@
                         "question": "Jaký motiv byl použit k provedení této změny?"
                     },
                     "version": {
-                        "question": "Jaká verze aplikace MapComplete byla použita k provedení této změny?"
+                        "question": "Jaká verze aplikace MapComplete byla použita k provedení této změny?",
+                        "render": "Vytvořeno pomocí {editor}"
+                    }
+                },
+                "title": {
+                    "render": "Sada změn pro {theme}"
+                }
+            },
+            "1": {
+                "override": {
+                    "tagRenderings+": {
+                        "0": {
+                            "render": "Další statistiky najdete <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>zde</a>"
+                        }
                     }
                 }
             }
-        }
+        },
+        "shortDescription": "Zobrazuje změny provedené nástrojem MapComplete",
+        "title": "Změny provedené pomocí MapComplete"
     },
     "maproulette": {
         "description": "Téma zobrazující úkoly MapRoulette, které umožňuje vyhledávat, filtrovat a opravovat je.",
@@ -872,6 +887,10 @@
         "description": "Tato mapa zobrazuje zákonem povolenou maximální rychlost na každé silnici. Pokud maximální rychlost chybí nebo je nesprávná, můžete ji zde opravit.",
         "shortDescription": "Tato mapa zobrazuje zákonem povolenou maximální rychlost na každé silnici.",
         "title": "Maximální rychlost"
+    },
+    "memorials": {
+        "description": "Památníky jsou fyzické předměty trvale umístěné na veřejném prostranství, které připomínají určitou osobu nebo událost. Může se jednat o nejrůznější předměty, jako jsou sochy, pamětní desky, obrazy, vojenské objekty (např. tanky), ...",
+        "title": "Památníky"
     },
     "nature": {
         "description": "Na této mapě najdete zajímavé informace pro turisty a milovníky přírody.",
@@ -964,12 +983,22 @@
         "title": "Na kolečkách"
     },
     "openlovemap": {
+        "description": "<p><i>Láska na dlani</i></p>Open Love Map obsahuje různé položky pro dospělé, například nevěstince, erotické obchody a striptýzové kluby.",
         "layers": {
             "2": {
                 "override": {
+                    "=presets": {
+                        "0": {
+                            "title": "erotický obchod"
+                        }
+                    },
+                    "name": "Erotické obchody",
                     "tagRenderings+": {
                         "0": {
                             "mappings": {
+                                "0": {
+                                    "then": "Tento obchod nabízí <b>měkké BDSM pomůcky</b>, jako jsou chlupatá pouta, sada „padesát odstínů šedi“, ..."
+                                },
                                 "1": {
                                     "then": "Tento obchod nabízí <b>specializované BDSM pomůcky</b>, jako jsou roztahovací tyče, potřeby pro hru na jehlách, potřeby pro lékařskou bondáž, nárazové nástroje, pouta, kovové barvy, pouta, svorky na bradavky, shibari doplňky, ..."
                                 },
@@ -982,12 +1011,49 @@
                                 "4": {
                                     "then": "Tento obchod nabízí <b>uniformy</b> pro roleplay, jako jsou uniformy zdravotní sestry, vojenské uniformy, policie, školačky, francouzské pokojské, ..."
                                 }
-                            }
+                            },
+                            "question": "Nabízí tento obchod vybavení pro fetišisty?"
+                        }
+                    }
+                }
+            },
+            "4": {
+                "override": {
+                    "=presets": {
+                        "0": {
+                            "title": "automat na kondomy"
+                        }
+                    }
+                }
+            },
+            "6": {
+                "override": {
+                    "=presets": {
+                        "0": {
+                            "title": "erotické kino"
+                        }
+                    }
+                }
+            },
+            "9": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "question": "O jaký typ hotelu se jedná?"
                         }
                     }
                 }
             }
-        }
+        },
+        "overrideAll": {
+            "tagRenderings+": {
+                "0": {
+                    "question": "Má {title()} soukromou video kabinu?",
+                    "questionHint": "Je určena pro použití jednou osobou."
+                }
+            }
+        },
+        "title": "Open Love Map"
     },
     "openwindpowermap": {
         "description": "Mapa pro zobrazení a úpravy větrných turbín.",
@@ -1067,6 +1133,32 @@
     },
     "postboxes": {
         "description": "Na této mapě můžete najít a přidat údaje o poštách a poštovních schránkách. Pomocí této mapy můžete zjistit, kam můžete poslat svou příští pohlednici! :)<br/>Všimli jste si chyby nebo vám chybí poštovní schránka? Tuto mapu můžete upravovat pomocí bezplatného účtu OpenStreetMap.",
+        "layers": {
+            "3": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "Tento obchod je partnerem pošty"
+                                },
+                                "1": {
+                                    "then": "Tento obchod není partnerem pošty"
+                                }
+                            },
+                            "question": "Je tento obchod partnerem pošty?"
+                        }
+                    },
+                    "=presets": {
+                        "0": {
+                            "description": "Pokud obchod ještě není na mapě a je partnerem pošty, můžete jej přidat zde.",
+                            "title": "chybějící obchod, který je partnerem pošty"
+                        }
+                    },
+                    "description": "Přidání nového poštovního partnera do mapy v existujícím obchodě"
+                }
+            }
+        },
         "shortDescription": "Mapa s poštovními schránkami a poštami",
         "title": "Mapa poštovních schránek a pošt"
     },
@@ -1078,6 +1170,10 @@
         "description": "Na této mapě můžete označit základní informace o obchodech, přidat otevírací dobu a telefonní čísla",
         "shortDescription": "Upravitelná mapa se základními informacemi o obchodech",
         "title": "Obchody"
+    },
+    "ski": {
+        "description": "Vše, co potřebujete k lyžování",
+        "title": "Sjezdovky a lanové dráhy"
     },
     "sport_pitches": {
         "description": "Sportovní hřiště je plocha, na které se provozují sporty",
@@ -1222,7 +1318,7 @@
         "title": "Prodejní automaty"
     },
     "walkingnodes": {
-        "description": "Tato mapa zobrazuje sítě uzlových bodů a umožňuje snadné přidávání nových uzlů",
+        "description": "Tato mapa zobrazuje sítě pěších uzlů a umožňuje snadno přidávat nové uzly",
         "layers": {
             "0": {
                 "name": "propojení mezi uzly",
@@ -1245,22 +1341,64 @@
             },
             "1": {
                 "name": "uzly",
+                "presets": {
+                    "0": {
+                        "title": "pěší uzel"
+                    }
+                },
                 "tagRenderings": {
                     "node-expected_rwn_route_relations": {
                         "freeform": {
                             "placeholder": "e.g. 3"
                         },
-                        "question": "S kolika dalšími pěšími uzly je tento uzel propojen?"
+                        "question": "S kolika dalšími pěšími uzly je tento uzel propojen?",
+                        "render": "Tento uzel je propojen s {expected_rwn_route_relations} dalšími uzly pro pěší."
                     },
                     "node-rwn_ref": {
                         "freeform": {
                             "placeholder": "e.g. 1"
                         },
-                        "question": "Jaké je referenční číslo tohoto pěšího uzlu?"
+                        "question": "Jaké je referenční číslo tohoto pěšího uzlu?",
+                        "render": "Tento pěší uzel má referenční číslo {rwn_ref}"
+                    },
+                    "survey_date": {
+                        "override": {
+                            "question": "Kdy byl tento pěší uzel naposledy zkontrolován?",
+                            "render": "Tento pěší uzel byl naposledy zkontrolován dne {survey:date}"
+                        }
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "Pěší uzel <strong>{rwn_ref}</strong>"
+                        },
+                        "1": {
+                            "then": "Navrhovaný pěší uzel <strong>{proposed:rwn_ref}</strong>"
+                        }
+                    },
+                    "render": "Pěší uzel"
+                }
+            },
+            "2": {
+                "override": {
+                    "name": "Turistické rozcestníky",
+                    "title": {
+                        "render": "Turistický rozcestník"
+                    }
+                }
+            },
+            "3": {
+                "override": {
+                    "presets": {
+                        "0": {
+                            "title": "značka trasy pro spojení mezi uzly"
+                        }
                     }
                 }
             }
-        }
+        },
+        "title": "Sítě uzlů pro pěší"
     },
     "walls_and_buildings": {
         "description": "Speciální zabudovaná vrstva poskytující všechny stěny a budovy. Tato vrstva je užitečná v předvolbách pro objekty, které lze umístit ke stěnám (např. AED, poštovní schránky, vchody, adresy, bezpečnostní kamery, …). Tato vrstva je ve výchozím nastavení neviditelná a uživatel ji nemůže přepínat.",
@@ -1273,6 +1411,6 @@
     "waste_basket": {
         "description": "Na této mapě najdete koše na odpadky ve vašem okolí. Pokud na této mapě odpadkový koš chybí, můžete jej přidat sami.",
         "shortDescription": "Mapa odpadkových košů",
-        "title": "Odpadkový koš"
+        "title": "Odpadkové koše"
     }
 }
