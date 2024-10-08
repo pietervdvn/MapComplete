@@ -1,6 +1,6 @@
 import { Map as MLMap, RasterSourceSpecification, VectorTileSource } from "maplibre-gl"
 import { Store, Stores, UIEventSource } from "../../Logic/UIEventSource"
-import { AvailableRasterLayers, RasterLayerPolygon } from "../../Models/RasterLayers"
+import { RasterLayerPolygon } from "../../Models/RasterLayers"
 import { RasterLayerProperties } from "../../Models/RasterLayerProperties"
 import { Utils } from "../../Utils"
 import { VectorSourceSpecification } from "@maplibre/maplibre-gl-style-spec"
@@ -88,7 +88,7 @@ class SingleBackgroundHandler {
             return
         }
         while (!map?.isStyleLoaded()) {
-            await Utils.waitFor(250)
+            await Utils.waitFor(100)
         }
     }
 
@@ -98,15 +98,6 @@ class SingleBackgroundHandler {
         while (!this.tryEnable() && ttl > 0) {
             ttl--
             await Utils.waitFor(250)
-        }
-    }
-
-    private tryEnableSafe(): boolean {
-        try {
-            return this.tryEnable()
-        } catch (e) {
-            console.log("Error: could not enable due to error", e)
-            return false
         }
     }
 
