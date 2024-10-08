@@ -545,4 +545,14 @@ export default class UserRelatedState {
 
         return amendedPrefs
     }
+
+
+    /**
+     * The disabled questions for this theme and layer
+     */
+    public getThemeDisabled(themeId: string, layerId: string): UIEventSource<string[]> {
+        const flatSource = this.osmConnection.getPreference("disabled-questions-" + themeId + "-" + layerId, "[]")
+        return UIEventSource.asObject<string[]>(flatSource, [])
+    }
+
 }

@@ -97,6 +97,7 @@ import ClearCaches from "./Popup/ClearCaches.svelte"
 import GroupedView from "./Popup/GroupedView.svelte"
 import { QuestionableTagRenderingConfigJson } from "../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
 import NoteCommentElement from "./Popup/Notes/NoteCommentElement.svelte"
+import DisabledQuestions from "./Popup/DisabledQuestions.svelte"
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -2112,6 +2113,16 @@ export default class SpecialVisualizations {
                         state.osmConnection.preferencesHandler.ClearPreferences()
                     })
                 },
+            },
+            {
+                funcName: "disabled_questions",
+                docs: "Shows which questions are disabled for every layer. Used in 'settings'",
+                needsUrls: [],
+                args: [],
+                constr(state) {
+                    return new SvelteUIElement(DisabledQuestions, { state })
+                },
+
             },
         ]
 
