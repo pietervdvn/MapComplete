@@ -54,7 +54,9 @@
 <button class="unstyled w-full link-no-underline searchresult" on:click={() => select() }>
   <div class="p-2 flex items-center w-full gap-y-2">
     {#if layer}
-      <ToSvelte construct={() => layer.defaultIcon(entry.feature.properties)?.SetClass("w-6 h-6")} />
+      <div class="h-6">
+        <ToSvelte construct={() => layer.defaultIcon(entry.feature.properties)?.SetClass("w-6 h-6")} />
+      </div>
     {:else if entry.category}
       <Icon icon={GeocodingUtils.categoryToIcon[entry.category]} clss="w-6 h-6 shrink-0" color="#aaa" />
     {/if}
