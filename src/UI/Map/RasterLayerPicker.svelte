@@ -26,7 +26,6 @@
     (id) => availableLayers.find((l) => l.properties.id === id)
   )
   rasterLayer.setData(availableLayers[0])
-  $: rasterLayer.setData(availableLayers[0])
 
   if (favourite) {
     onDestroy(
