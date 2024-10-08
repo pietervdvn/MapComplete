@@ -685,7 +685,7 @@ export class PrepareTheme extends Fuse<LayoutConfigJson> {
                 ? new Pass("AddDefaultLayers is disabled due to the set flag")
                 : new AddDefaultLayers(state),
             new AddDependencyLayersToTheme(state),
-            new AddImportLayers(),
+          //  new AddImportLayers(),
             new PostvalidateTheme(state),
         )
         this.state = state
