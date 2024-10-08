@@ -49,6 +49,9 @@ class TranslationPart {
         }
         for (const translationsKey in translations) {
             const v = translations[translationsKey]
+            if(Array.isArray(v) && context .endsWith("keywords")){
+                continue
+            }
             if (typeof v != "string") {
                 console.error(
                     `Non-string object at ${context} in translation while trying to add the translation ` +
