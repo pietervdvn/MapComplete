@@ -3,13 +3,10 @@
    * Opens the 'Opening hours input' in another top level window
    */
   import { UIEventSource } from "../../../Logic/UIEventSource"
-  import ToSvelte from "../../Base/ToSvelte.svelte"
-  import OpeningHoursInput from "../../OpeningHours/OpeningHoursState"
   import PublicHolidaySelector from "../../OpeningHours/PublicHolidaySelector.svelte"
   import OHTable from "./OpeningHours/OHTable.svelte"
   import OpeningHoursState from "../../OpeningHours/OpeningHoursState"
   import Popup from "../../Base/Popup.svelte"
-  import CheckCircle from "@babeard/svelte-heroicons/mini/CheckCircle"
   import Check from "@babeard/svelte-heroicons/mini/Check"
 
   export let value: UIEventSource<string>
@@ -31,7 +28,7 @@
     }
   }
 
-  const state = new OpeningHoursState(value)
+  const state = new OpeningHoursState(value, prefix, postfix)
   let expanded = new UIEventSource(false)
 </script>
 <Popup bodyPadding="p-0" shown={expanded}>
