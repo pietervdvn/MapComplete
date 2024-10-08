@@ -4,12 +4,11 @@
   import Note from "../../../assets/svg/Note.svelte"
   import Resolved from "../../../assets/svg/Resolved.svelte"
   import Speech_bubble from "../../../assets/svg/Speech_bubble.svelte"
-  import { ImmutableStore, Stores } from "../../../Logic/UIEventSource"
+  import { Stores } from "../../../Logic/UIEventSource"
   import { Utils } from "../../../Utils"
-  import Img from "../../Base/Img"
-  import { SlideShow } from "../../Image/SlideShow"
-  import ToSvelte from "../../Base/ToSvelte.svelte"
   import Tr from "../../Base/Tr.svelte"
+  import AllImageProviders from "../../../Logic/ImageProviders/AllImageProviders"
+  import AttributedImage from "../../Image/AttributedImage.svelte"
 
   export let comment: {
     date: string
@@ -46,58 +45,60 @@
     .filter((link) => !link.startsWith("https://wiki.openstreetmap.org/wiki/File:"))
 
 
-  let imgStore = new ImmutableStore(
-    images.map((i) =>
-      new Img(i).SetClass("w-full block cursor-pointer")
-        .onClick(() =>
-          state?.previewedImage?.setData(
-            <any>{
-              url_hd: i,
-              url: i,
-            }),
-        )))
-
+  const attributedImages = AllImageProviders.loadImagesFrom(images)
+  /**
+   * Class of the little icons indicating 'opened', 'comment' and 'resolved'
+   */
+  export let iconClass = "shrink-0 w-6 mr-3 my-2 "
 
 </script>
 
-<div class="flex flex-col py-2 my-2 border-gray-500 border-b" class:border-interactive={comment.highlighted}>
+<div class="flex flex-col my-2 border-gray-500 border-b" class:border-interactive={comment.highlighted}>
 
-  <div class="flex">
+  <div class="flex items-center">
 
     <!-- Action icon, e.g. 'created', 'commented', 'closed' -->
-    {#if comment.action === "opened" || comment.action === "reopened"}
-      <Note class="shrink-0 mr-4 w-6" />
+
+    {#if $userinfo?.user?.img?.href}
+      <img alt="avatar" aria-hidden="true" src={$userinfo?.user?.img?.href} class="rounded-full w-10 h-10 mr-3" />
+    {:else if comment.action === "opened" || comment.action === "reopened"}
+      <Note class={iconClass} />
     {:else if comment.action === "closed"}
-      <Resolved class="shrink-0 mr-4 w-6" />
+      <Resolved class={iconClass} />
     {:else}
-      <Speech_bubble class="shrink-0 mr-4 w-6" />
+      <Speech_bubble class={iconClass} />
     {/if}
     <div class="flex flex-col gap-y-2">
       {@html comment.html}
     </div>
   </div>
 
-  {#if images.length > 0}
-    <ToSvelte
-      construct={() => new SlideShow(imgStore) .SetClass("mb-1").SetStyle("min-width: 50px; background: grey;")} />
+  {#if $attributedImages?.length > 0}
+    <div class="flex justify-center w-full space-x-4 overflow-x-auto" style="scroll-snap-type: x proximity">
+      {#each $attributedImages as image (image.id)}
+        <AttributedImage
+          {state}
+          {image}
+          imgClass="max-h-64 w-auto sm:h-32 md:h-64"
+          previewedImage={state.previewedImage}
+          attributionFormat="minimal"
+        >
+        </AttributedImage>
+        {/each}
+    </div>
   {/if}
 
 
-  <div class="flex justify-end items-center subtle pt-4 pb-2">
+  <div class="flex justify-end items-center subtle py-2">
     <!-- commenter info -->
-
-    {#if $userinfo?.user?.img?.href}
-      <img alt="avatar" aria-hidden="true" src={$userinfo?.user?.img?.href} class="rounded-full w-8 h-8 mr-4" />
-    {/if}
-
     <span class="mr-2">
-  {#if comment.user === undefined}
-    <Tr t={t.anonymous} />
-  {:else}
-    <a href={comment.user_url} target="_blank">{comment.user}</a>
+      {#if comment.user === undefined}
+        <Tr t={t.anonymous} />
+      {:else}
+        <a href={comment.user_url} target="_blank">{comment.user}</a>
       {/if}
       {comment.date}
-      </span>
+    </span>
 
   </div>
 </div>

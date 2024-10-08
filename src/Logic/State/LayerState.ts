@@ -99,7 +99,6 @@ export default class LayerState {
                     continue
                 }
                 const filter = fl.layerDef.filters.find(f => f.id === filtername)
-                console.log("Updating active filters for flayer", fl.layerDef.id,"with filterconfig",filter)
                 if(typeof appliedFilter.data === "number"){
                     if(filter.options[appliedFilter.data].osmTags === undefined){
                         // This is probably the first, generic option which doesn't _actually_ filter

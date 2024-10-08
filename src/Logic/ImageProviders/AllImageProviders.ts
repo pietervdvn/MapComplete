@@ -2,7 +2,7 @@ import { Mapillary } from "./Mapillary"
 import { WikimediaImageProvider } from "./WikimediaImageProvider"
 import { Imgur } from "./Imgur"
 import GenericImageProvider from "./GenericImageProvider"
-import { Store, UIEventSource } from "../UIEventSource"
+import { ImmutableStore, Store, UIEventSource } from "../UIEventSource"
 import ImageProvider, { ProvidedImage } from "./ImageProvider"
 import { WikidataImageProvider } from "./WikidataImageProvider"
 import Panoramax from "./Panoramax"
@@ -34,17 +34,17 @@ export default class AllImageProviders {
         AllImageProviders.genericImageProvider,
     ]
     public static apiUrls: string[] = [].concat(
-        ...AllImageProviders.ImageAttributionSource.map((src) => src.apiUrls())
+        ...AllImageProviders.ImageAttributionSource.map((src) => src.apiUrls()),
     )
     public static defaultKeys = [].concat(
-        AllImageProviders.ImageAttributionSource.map((provider) => provider.defaultKeyPrefixes)
+        AllImageProviders.ImageAttributionSource.map((provider) => provider.defaultKeyPrefixes),
     )
     private static providersByName = {
         imgur: Imgur.singleton,
         mapillary: Mapillary.singleton,
         wikidata: WikidataImageProvider.singleton,
         wikimedia: WikimediaImageProvider.singleton,
-        panoramax: Panoramax.singleton
+        panoramax: Panoramax.singleton,
     }
 
     public static byName(name: string) {
@@ -71,7 +71,7 @@ export default class AllImageProviders {
      */
     public static LoadImagesFor(
         tags: Store<Record<string, string>>,
-        tagKey?: string[]
+        tagKey?: string[],
     ): Store<ProvidedImage[]> {
         if (tags?.data?.id === undefined) {
             return undefined
@@ -95,5 +95,20 @@ export default class AllImageProviders {
             })
         }
         return source
+    }
+
+    /**
+     * Given a list of URLs, tries to detect the images. Used in e.g. the comments
+     * @param url
+     */
+    public static loadImagesFrom(urls: string[]): Store<ProvidedImage[]> {
+        const tags = {
+            id:"na"
+        }
+        for (let i = 0; i < urls.length; i++) {
+            const url = urls[i]
+            tags["image:" + i] = url
+        }
+        return this.LoadImagesFor(new ImmutableStore(tags))
     }
 }
