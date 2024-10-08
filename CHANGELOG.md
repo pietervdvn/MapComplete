@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.47.5](https://github.com/pietervdvn/mapcomplete/compare/v0.47.4...v0.47.5) (2024-10-08)
+
+
+### Features
+
+* add DWG-block support ([c28baaa](https://github.com/pietervdvn/mapcomplete/commitsc28baaab62585838a4f6a652b922d170b4cfff02))
+* add panoramax link to 'browse nearby images' ([06363e8](https://github.com/pietervdvn/mapcomplete/commits06363e808ff16fae528d620e16a0972f9f8b5053))
+* add panoramax to status page ([9e9d5e8](https://github.com/pietervdvn/mapcomplete/commits9e9d5e80d891e41c77ded60c59e122ef734ed31d))
+
+
+### Bug Fixes
+
+* actually use prefix and postfix ([0461ca1](https://github.com/pietervdvn/mapcomplete/commits0461ca176de3f1aad222105a1393882264bb8f80))
+* fix [#2197](https://github.com/pietervdvn/MapComplete/issues/2197) ([c2f7b1e](https://github.com/pietervdvn/mapcomplete/commitsc2f7b1e8c11dcc844131da4d368cc114c99e7601))
+* fix download panel ([fb3bf98](https://github.com/pietervdvn/mapcomplete/commitsfb3bf98f1923db4bbba02728d23360a12319a08c))
+* fix filters in statistics.html ([5048da5](https://github.com/pietervdvn/mapcomplete/commits5048da58e7cb6446716ca143b93e98e946f940b8))
+* mention license of panoramax ([86af270](https://github.com/pietervdvn/mapcomplete/commits86af270aa0a0bcb49843eb009fccee47a54012cd))
+* should improve 2193 ([15856d7](https://github.com/pietervdvn/mapcomplete/commits15856d7047e05f29f3e37dc8f9c9eb47ae81d9f7))
+* tests ([ba46736](https://github.com/pietervdvn/mapcomplete/commitsba46736ed9cf51161c8da99cb85f5d307e90e084))
+* use textContent instead of inntertext, fixes tests ([591e992](https://github.com/pietervdvn/mapcomplete/commits591e992839592d3037f31e6e0d33f7f7f19d0aa4))
+
+
+### Theme improvements
+
+* **charging stations:** add keywords in search ([e502c15](https://github.com/pietervdvn/mapcomplete/commitse502c1519d2f9a021c01ebd7fcfa7ad289a30d01))
+* **fritures:** Add 'diet:vegan=only' and 'diet:vegetarian=only' options to fritures, fix [#2191](https://github.com/pietervdvn/MapComplete/issues/2191) ([17e95ca](https://github.com/pietervdvn/mapcomplete/commits17e95ca5946782894304cf4d9d811bb4c9dd3bec))
+* **shops:** add labels to icecream, refactor label for shps ([1ade2ed](https://github.com/pietervdvn/mapcomplete/commits1ade2ed45b1fdd2e4fa6acccc889f939f68c4fa2))
+
 ### [0.47.4](https://github.com/pietervdvn/mapcomplete/compare/v0.46.12...v0.47.4) (2024-09-30)
 
 
