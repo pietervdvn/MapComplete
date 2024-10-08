@@ -38,6 +38,11 @@
         "point",
         "centroid"
       ],
+      "label": {
+        "render": "{name}",
+        "condition": "name~*"
+      },
+      "labelCssClasses": "bg-white rounded px-2",
       "marker": [
         {
           "icon": "circle",

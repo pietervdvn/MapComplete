@@ -95,6 +95,23 @@
   }
   {
     services.push({
+      name: Constants.panoramax.url,
+      status: testDownload(Constants.panoramax.url + "/api").mapD((result) => {
+        if (result["success"]?.stac_version === "1.0.0") {
+          return "online"
+        }
+        if (result["error"]) {
+          return "offline"
+        } else {
+          return "degraded"
+        }
+      }),
+      message: simpleMessage(testDownload(Constants.panoramax.url + "/api"))
+
+    })
+  }
+  {
+    services.push({
       name: Constants.GeoIpServer,
       status: testDownload(Constants.GeoIpServer + "/status").mapD((result) => {
         if (result["success"].online) {

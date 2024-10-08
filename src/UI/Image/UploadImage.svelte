@@ -83,11 +83,11 @@
     {/each}
     <FileSelector
       accept="image/*"
-      cls="button border-2 text-2xl"
+      cls="button border-2 flex flex-col"
       multiple={true}
       on:submit={(e) => handleFiles(e.detail)}
     >
-      <div class="flex items-center">
+      <div class="flex items-center text-2xl w-full justify-center">
         {#if image !== undefined}
           <img src={image} aria-hidden="true" />
         {:else}
@@ -100,8 +100,10 @@
         {/if}
       </div>
     </FileSelector>
-    <div class="text-sm">
-      <Tr cls="subtle italic" t={t.respectPrivacy} />
+    <div class="text-xs subtle italic">
+      <Tr t={Translations.t.general.attribution.panoramaxLicenseCCBYSA}/>
+      <span class="mx-1">—</span>
+      <Tr t={t.respectPrivacy} />
     </div>
   </div>
 </LoginToggle>

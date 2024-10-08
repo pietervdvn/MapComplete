@@ -28,6 +28,8 @@
   {#if $reviews === undefined}
     <Loading />
   {:else}
+    <div class="flex flex-col">
+
     {#if $reviews?.length > 0}
       <div class="flex flex-col gap-y-1" on:keypress={(e) => console.log("Got keypress", e)}>
         {#each $reviews as review (review.sub)}
@@ -61,9 +63,11 @@
     >
       <Tr t={t.reviews_bug} />
     </a>
+  </div>
   {/if}
   <div class="flex justify-end">
     <Mangrove_logo class="h-6 w-6 shrink-0 p-1" />
     <Tr cls="text-sm subtle" t={t.attribution} />
   </div>
+
 </LoginToggle>

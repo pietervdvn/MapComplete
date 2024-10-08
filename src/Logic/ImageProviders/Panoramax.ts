@@ -75,9 +75,6 @@ export default class PanoramaxImageProvider extends ImageProvider {
         }
 
         const [lon, lat] = GeoOperations.centerpointCoordinates(meta)
-        const hd = meta.properties
-        console.log(">>>",meta)
-        // const hdUrl = new URL(hd)
         return <ProvidedImage>{
             id: meta.id,
             url: makeAbsolute(meta.assets.sd.href),

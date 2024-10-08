@@ -58,7 +58,7 @@
     {/each}
 
     {#if $favourites.length > 0}
-      <div class="mt-8 flex">
+      <div class="mt-8 sm:flex">
         <button on:click={() => downloadGeojson()}>
           <ArrowDownTray class="h-6 w-6" />
           <Tr t={Translations.t.favouritePoi.downloadGeojson} />

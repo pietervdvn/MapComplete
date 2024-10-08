@@ -109,10 +109,6 @@
     {
       "iconBadges": [
         {
-          "if": "opening_hours~*",
-          "then": "icons.isOpen"
-        },
-        {
           "if": {
             "or": [
               "diet:vegetarian=yes",
@@ -1047,6 +1043,12 @@
       },
       "mappings": [
         {
+          "if": "diet:vegetarian=only",
+          "then": {
+            "en": "Serves only vegetarian snacks and burgers"
+          }
+        },
+        {
           "if": "diet:vegetarian=yes",
           "then": {
             "en": "Vegetarian snacks are available",
@@ -1093,6 +1095,12 @@
         "cs": "Má tento obchod s hranolky veganské občerstvení?"
       },
       "mappings": [
+        {
+          "if": "diet:vegan=only",
+          "then": {
+            "en": "Servers only vegan snacks and burgers"
+          }
+        },
         {
           "if": "diet:vegan=yes",
           "then": {

@@ -39,10 +39,10 @@ export abstract class Validator {
         this.inputmode = inputmode
         this.textArea = textArea ?? false
         if (this.name.endsWith("textfield")) {
-            this.name = this.name.substr(0, this.name.length - "TextField".length)
+            this.name = this.name.substring(0, this.name.length - "TextField".length)
         }
         if (this.name.endsWith("textfielddef")) {
-            this.name = this.name.substr(0, this.name.length - "TextFieldDef".length)
+            this.name = this.name.substring(0, this.name.length - "TextFieldDef".length)
         }
         if (typeof explanation === "string") {
             this.explanation = explanation

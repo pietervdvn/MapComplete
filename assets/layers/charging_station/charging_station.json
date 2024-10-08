@@ -21,6 +21,9 @@
       ]
     }
   },
+  "keywords": {"nl": [
+    "oplaadstations","oplaad stations","oplaad punten"
+  ]},
   "title": {
     "render": {
       "en": "Charging station",

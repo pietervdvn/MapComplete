@@ -33,7 +33,7 @@ export default class TitleHandler {
                 const title = Utils.SubstituteKeys(titleUnsubbed, tags)
                 const el = document.createElement("span")
                 el.innerHTML = title
-                return el.innerText + " | " + defaultTitle
+                return el.textContent + " | " + defaultTitle
 
             },
             [Locale.language]
