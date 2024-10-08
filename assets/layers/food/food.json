@@ -112,7 +112,9 @@
           "if": {
             "or": [
               "diet:vegetarian=yes",
-              "diet:vegan=yes"
+              "diet:vegan=yes",
+              "diet:vegetarian=only",
+              "diet:vegan=only"
             ]
           },
           "then": {
@@ -981,9 +983,6 @@
       "condition": "cuisine!=friture",
       "id": "halal (no friture)"
     },
-    "sugar_free",
-    "gluten_free",
-    "lactose_free",
     {
       "id": "organic (no friture)",
       "question": {
@@ -1098,7 +1097,7 @@
         {
           "if": "diet:vegan=only",
           "then": {
-            "en": "Servers only vegan snacks and burgers"
+            "en": "Serves only vegan snacks and burgers"
           }
         },
         {
@@ -1276,6 +1275,9 @@
       ],
       "condition": "cuisine=friture"
     },
+    "sugar_free",
+    "gluten_free",
+    "lactose_free",
     "smoking",
     "service:electricity",
     "dog-access",

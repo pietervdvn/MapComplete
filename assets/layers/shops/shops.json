@@ -172,7 +172,7 @@
           "then": "circle:white;./assets/layers/id_presets/fas-key.svg"
         }
       ],
-      "labelCssClasses": "bg-white rounded px-2",,
+      "labelCssClasses": "bg-white rounded px-2",
       "label": {
         "mappings": [
           {
