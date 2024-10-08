@@ -8,13 +8,15 @@
     "pt": "Abrigo para animais",
     "ca": "Refugis d'animals",
     "pl": "Schroniska dla zwierząt",
-    "fr": "Abri pour animaux"
+    "fr": "Abri pour animaux",
+    "cs": "Útulky pro zvířata"
   },
   "description": {
     "en": "An animal shelter is a facility where animals in trouble are brought and facility's staff (volunteers or not) feeds them and cares of them, rehabilitating and healing them if necessary. This definition includes kennels for abandoned dogs, catteries for abandoned cats, shelters for other abandoned pets and wildlife recovery centres. ",
     "es": "Un refugio de animales es una instalación donde se llevan animales con problemas y el personal de la instalación (voluntario o no) los alimenta y cuida, rehabilitándolos y curándolos si es necesario. Esta definición incluye las perreras para perros abandonados, los criaderos para gatos abandonados, los refugios para otros animales de compañía abandonados y los centros de recuperación de la fauna salvaje. ",
     "zh_Hans": "动物收容所是一个设施，将遇到麻烦的动物带到这里，设施的工作人员（志愿者或非志愿者）喂养并照顾它们，并在必要时使它们康复和治愈。该定义包括被遗弃的狗的狗舍、被遗弃的猫的猫舍、其他被遗弃的宠物的庇护所和野生动物恢复中心。 ",
-    "de": "Ein Tierheim ist eine Einrichtung, in die notleidende Tiere gebracht werden und wo das Personal (ob freiwillig oder nicht) sie füttert und pflegt, sie rehabilitiert und bei Bedarf heilt. Diese Definition umfasst Zwinger für ausgesetzte Hunde, Katzenheime für ausgesetzte Katzen, Unterkünfte für andere ausgesetzte Haustiere und Wildtier-Auffangstationen. "
+    "de": "Ein Tierheim ist eine Einrichtung, in die notleidende Tiere gebracht werden und wo das Personal (ob freiwillig oder nicht) sie füttert und pflegt, sie rehabilitiert und bei Bedarf heilt. Diese Definition umfasst Zwinger für ausgesetzte Hunde, Katzenheime für ausgesetzte Katzen, Unterkünfte für andere ausgesetzte Haustiere und Wildtier-Auffangstationen. ",
+    "cs": "Útulek pro zvířata je zařízení, kam se přivážejí zvířata v nesnázích a zaměstnanci zařízení (ať už dobrovolníci, nebo ne) je krmí, starají se o ně a v případě potřeby je rehabilitují a léčí. Tato definice zahrnuje chovné stanice pro opuštěné psy, chovné stanice pro opuštěné kočky, útulky pro jiná opuštěná zvířata a centra pro záchranu volně žijících zvířat. "
   },
   "source": {
     "osmTags": "amenity=animal_shelter"
@@ -28,7 +30,8 @@
       "pt": "Abrigo para animais",
       "ca": "Refugi d'animals",
       "pl": "Schronisko dla zwierząt",
-      "fr": "Un refuge animalier"
+      "fr": "Un refuge animalier",
+      "cs": "Útulek pro zvířata"
     },
     "mappings": [
       {
@@ -39,7 +42,8 @@
           "es": "{name}",
           "zh_Hans": "{name}",
           "ca": "{name}",
-          "pl": "{name}"
+          "pl": "{name}",
+          "cs": "{name}"
         }
       }
     ]
@@ -78,7 +82,8 @@
         "pt": "um abrigo para animais",
         "ca": "un refugi d'animals",
         "pl": "schronisko dla zwierząt",
-        "fr": "refuge animalier"
+        "fr": "refuge animalier",
+        "cs": "útulek pro zvířata"
       },
       "tags": [
         "amenity=animal_shelter"
@@ -100,7 +105,8 @@
         "zh_Hans": "这个动物收容所叫什么名字？",
         "ca": "Quin nom té aquest refugi d'animals?",
         "pl": "Jak nazywa się to schronisko dla zwierząt?",
-        "fr": "Quel est le nom de ce refuge animalier ?"
+        "fr": "Quel est le nom de ce refuge animalier ?",
+        "cs": "Jak se jmenuje tento útulek pro zvířata?"
       },
       "render": {
         "en": "This animal shelter is named <b>{name}</b>",
@@ -108,7 +114,8 @@
         "es": "Este refugio de animales se llama <b>{name}</b>",
         "zh_Hans": "这个动物收容所叫 <b>{name}</b>",
         "pl": "To schronisko dla zwierząt nazywa się <b>{name}</b>",
-        "fr": "Ce refuge s'appelle <b>{name}</b>"
+        "fr": "Ce refuge s'appelle <b>{name}</b>",
+        "cs": "Tento útulek pro zvířata se jmenuje <b>{name}</b>"
       }
     },
     "website",
@@ -122,7 +129,8 @@
         "es": "¿Cuál es la finalidad del refugio de animales?",
         "zh_Hans": "动物收容所的目的是什么？",
         "ca": "Quina és la finalitat del refugi d'animals?",
-        "pl": "Jaki jest cel tego schroniska dla zwierząt?"
+        "pl": "Jaki jest cel tego schroniska dla zwierząt?",
+        "cs": "Jaký je účel útulku pro zvířata?"
       },
       "mappings": [
         {
@@ -133,7 +141,8 @@
             "zh_Hans": "动物被饲养在这里直到被新主人收养",
             "ca": "Els animals romanen ací fins que son adoptats per un nou propietari",
             "pl": "Zwierzęta są tutaj dopóki nie znajdą nowego właściciela",
-            "fr": "Les animaux sont gardés jusqu'à ce qu'ils soient adoptés par un nouveau maître"
+            "fr": "Les animaux sont gardés jusqu'à ce qu'ils soient adoptés par un nouveau maître",
+            "cs": "Zvířata jsou zde držena do doby, než si je osvojí nový majitel"
           },
           "if": "purpose=adoption"
         },
@@ -144,7 +153,8 @@
             "es": "Los animales reciben cuidados para el resto de su vida",
             "zh_Hans": "动物的余生都得到照顾",
             "ca": "Els animals reben cures per a la resta de la seva vida",
-            "fr": "Les animaux sont recueillis pour le reste de leur vie"
+            "fr": "Les animaux sont recueillis pour le reste de leur vie",
+            "cs": "Zvířata jsou v péči po zbytek života"
           },
           "if": "purpose=sanctuary"
         },
@@ -156,7 +166,8 @@
             "zh_Hans": "受伤的动物在这里康复，直到它们可以再次被释放到大自然中 ",
             "ca": "Els animals ferits es rehabiliten aquí fins que puguen ser alliberats de nou a la natura ",
             "pl": "Ranne zwierzęta przechodzą tutaj rehabilitację do momentu, kiedy mogą zostać wypuszczone na wolność ",
-            "fr": "Les animaux blessés sont soignés jusqu'à ce qu'ils soient en état d'être relâchés dans la nature "
+            "fr": "Les animaux blessés sont soignés jusqu'à ce qu'ils soient en état d'être relâchés dans la nature ",
+            "cs": "Zraněná zvířata jsou zde rehabilitována do doby, než mohou být opět vypuštěna do přírody "
           },
           "if": "purpose=release"
         }
@@ -169,7 +180,9 @@
         "en": "Which animals are accepted here?",
         "de": "Welche Tiere werden hier akzeptiert?",
         "pl": "Jakie zwierzęta są tutaj przyjmowane?",
-        "ca": "Quins animals s'accepten aquí?"
+        "ca": "Quins animals s'accepten aquí?",
+        "cs": "Která zvířata jsou zde přijímána?",
+        "es": "¿Qué animales se aceptan aquí?"
       },
       "id": "boarded_animals",
       "mappings": [
@@ -178,7 +191,9 @@
           "then": {
             "en": "Dogs are kept here",
             "de": "Hunde werden hier gehalten",
-            "pl": "Są tutaj trzymane psy"
+            "pl": "Są tutaj trzymane psy",
+            "cs": "Chovají se zde psi",
+            "es": "Aquí se guardan perros"
           }
         },
         {
@@ -186,7 +201,9 @@
           "then": {
             "en": "Cats are kept here",
             "de": "Katzen werden hier gehalten",
-            "pl": "Są tutaj trzymane koty"
+            "pl": "Są tutaj trzymane koty",
+            "cs": "Chovají se zde kočky",
+            "es": "Aquí se guardan gatos"
           }
         },
         {
@@ -194,7 +211,9 @@
           "then": {
             "en": "Horses are kept here",
             "de": "Pferde werden hier gehalten",
-            "pl": "Są tutaj trzymane konie"
+            "pl": "Są tutaj trzymane konie",
+            "cs": "Chovají se zde koně",
+            "es": "Aquí se guardan caballos"
           }
         },
         {
@@ -202,7 +221,9 @@
           "then": {
             "en": "Birds are kept here",
             "de": "Vögel werden hier gehalten",
-            "pl": "Są tutaj trzymane ptaki"
+            "pl": "Są tutaj trzymane ptaki",
+            "cs": "Chovají se zde ptáci",
+            "es": "Aquí se guardan aves"
           }
         },
         {
@@ -210,13 +231,17 @@
           "then": {
             "en": "Wild animals are kept here",
             "de": "Wildtiere werden hier gehalten",
-            "pl": "Są tutaj trzymane dzikie zwierzęta"
+            "pl": "Są tutaj trzymane dzikie zwierzęta",
+            "cs": "Chovají se zde divoká zvířata",
+            "es": "Aquí se guardan animales salvajes"
           }
         }
       ],
       "render": {
         "en": "{animal_shelter} is kept here",
-        "de": "{animal_shelter} wird hier gehalten"
+        "de": "{animal_shelter} wird hier gehalten",
+        "cs": "{animal_shelter} je uložen zde",
+        "es": "Aquí se guardan {animal_shelter}"
       },
       "freeform": {
         "key": "animal_shelter"

@@ -106,7 +106,7 @@
         "cs": "bankomat",
         "pl": "bankomat",
         "pt_BR": "um caixa eletrônico",
-        "es": "Un cajero automático",
+        "es": "un cajero automático",
         "pt": "um multibanco",
         "it": "Uno sportello bancomat"
       }
@@ -231,7 +231,7 @@
         "he": "הכספומט מופעל על ידי {operator}",
         "pl": "Ten bankomat jest obsługiwany przez {operator}",
         "pt_BR": "O caixa eletrônico é operado por {operator}",
-        "es": "El cajero es de {operator}",
+        "es": "El cajero lo opera {operator}",
         "pt": "O multibanco é operado por {operator}",
         "sl": "Ta bankomat upravlja {operator}"
       }

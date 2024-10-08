@@ -232,7 +232,8 @@
             "amenity="
           ],
           "then": {
-            "en": "This drinking water is permanently closed"
+            "en": "This drinking water is permanently closed",
+            "de": "Die Trinkwasserstelle ist dauerhaft geschlossen"
           }
         }
       ],

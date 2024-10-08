@@ -14,7 +14,8 @@
     "pt": "Café de bicicletas",
     "ca": "Cafeteria per a bicicletes",
     "da": "Cykelcafé",
-    "cs": "Cyklokavárna"
+    "cs": "Cyklokavárna",
+    "es": "Cafetería para ciclistas"
   },
   "description": {
     "en": "A bike café is a café geared towards cyclists, for example with services such as a pump, with lots of bicycle-related decoration, …",
@@ -67,7 +68,8 @@
       "pt": "Café de bicicleta",
       "ca": "Cafeteria per a bicicletes",
       "da": "Cykelcafé",
-      "cs": "Cyklokavárna"
+      "cs": "Cyklokavárna",
+      "es": "Cafetería para ciclistas"
     },
     "mappings": [
       {
@@ -86,7 +88,8 @@
           "pt": "Café de bicicleta <i>{name}</i>",
           "da": "Cykelcafé <i>{name}</i>",
           "cs": "Cyklokavárna <i>{name}</i>",
-          "ca": "Cafè ciclista <i>{name}</i>"
+          "ca": "Cafè ciclista <i>{name}</i>",
+          "es": "Cafetería para ciclistas <i>{name}</i>"
         }
       }
     ]
@@ -132,7 +135,8 @@
         "pt": "uma café de bicicleta",
         "da": "en cykelcafé",
         "cs": "kavárna pro cyklisty",
-        "ca": "un cafè ciclista"
+        "ca": "un cafè ciclista",
+        "es": "una cafetería para ciclistas"
       },
       "tags": [
         "amenity=pub",
@@ -157,7 +161,8 @@
         "pt": "Qual o nome deste café de bicicleta?",
         "da": "Hvad hedder denne cykelcafé?",
         "cs": "Jak se jmenuje tato cyklokavárna?",
-        "ca": "Quin és el nom d'aquest cafè ciclista?"
+        "ca": "Quin és el nom d'aquest cafè ciclista?",
+        "es": "¿Cómo se llama la cafetería para ciclistas?"
       },
       "render": {
         "en": "This bike cafe is called {name}",
@@ -173,7 +178,8 @@
         "pt": "Este café de bicicleta se chama {name}",
         "da": "Denne cykelcafé hedder {name}",
         "cs": "Tato cyklokavárna se jmenuje {name}",
-        "ca": "Aquest cafè ciclista s'anomena {name}"
+        "ca": "Aquest cafè ciclista s'anomena {name}",
+        "es": "La cafetería para ciclistas se llama {name}"
       },
       "freeform": {
         "key": "name"
@@ -196,7 +202,8 @@
         "cs": "Nabízí tato cyklistická kavárna vzduchový kompresor na kolo k použití pro kohokoli?",
         "ca": "Aquest cafè ciclista ofereix una bomba de bicicletes per a qualsevol persona?",
         "pt_BR": "Esse café para ciclistas oferece uma bomba de ar para qualquer um usar?",
-        "pt": "Este café para ciclistas oferece uma bomba de ar para qualquer um usar?"
+        "pt": "Este café para ciclistas oferece uma bomba de ar para qualquer um usar?",
+        "es": "¿Ofrece esta cafetería para ciclistas una bomba de aire para uso de cualquier persona?"
       },
       "mappings": [
         {
@@ -215,7 +222,8 @@
             "cs": "Tato cyklistická kavárna nabízí vzduchový kompresor na kolo pro každého",
             "ca": "Aquest cafè ciclista ofereix una bomba per a bicicletes per a qualsevol persona",
             "pt_BR": "Esse café para ciclistas oferece uma bomba de ar para todos",
-            "pt": "Este café para ciclistas oferece uma bomba de ar para todos"
+            "pt": "Este café para ciclistas oferece uma bomba de ar para todos",
+            "es": "Esta cafetería para ciclistas ofrece una bomba de aire para cualquier persona"
           }
         },
         {
@@ -234,7 +242,8 @@
             "cs": "Tato cyklistická kavárna nenabízí vzduchový kompresor na kolo",
             "ca": "Aquest cafè ciclista no ofereix una bomba per a bicicletes per a qualsevol persona",
             "pt_BR": "Esse café para ciclistas não oferece uma bomba de ar para ninguém",
-            "pt": "Este café para ciclistas não oferece uma bomba de ar para ninguém"
+            "pt": "Este café para ciclistas não oferece uma bomba de ar para ninguém",
+            "es": "Esta cafetería para ciclistas no ofrece una bomba de aire para cualquier persona"
           }
         }
       ]

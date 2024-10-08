@@ -467,7 +467,7 @@
           "then": {
             "en": "The surface is <b>fine gravel</b>",
             "nl": "De ondergrond bestaat uit <b>grind</b>",
-            "de": "Die Oberfläche ist <b>feiner Kies</b>",
+            "de": "Der Belag ist <b>feiner Kies</b>",
             "ca": "La superfície és <b> grava fina</b>"
           }
         },
@@ -477,7 +477,7 @@
             "en": "The surface of this track is Tartan, a synthetic, slightly springy, porous surface",
             "nl": "De ondergrond is Tartan, een synthetisch, licht verende en poreuze ondergrond",
             "ca": "La superfície d'aquesta pista és Tartan, una superfície sintètica, lleugerament molla i porosa",
-            "de": "Der Belag dieser Laufbahn ist Tartan, ein synthetischer, leicht federnder, poröser Belag"
+            "de": "Der Belag ist Tartan, ein synthetischer, leicht federnder, poröser Belag"
           }
         }
       ],

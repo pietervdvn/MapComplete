@@ -3,12 +3,14 @@
   "title": {
     "en": "Open Love Map",
     "de": "Open Love Map",
-    "es": "Open Love Map"
+    "es": "Open Love Map",
+    "cs": "Open Love Map"
   },
   "description": {
     "en": "<p><i>Love in the palm of your hand</i></p>Open Love Map lists various adult entries, such as brothels, erotic stores and stripclubs.",
     "de": "<p><i>Liebe in der Hand</i></p>Open Love Map listet verschiedene Einträge für Erwachsene, wie Bordelle, Erotikshops und Stripclubs.",
-    "es": "<p><i>Amor en la palma de tu mano</i></p>Open Love Map lista varias entradas para adultos, como burdeles, tiendas eróticas y clubs de striptease."
+    "es": "<p><i>Amor en la palma de tu mano</i></p>Open Love Map lista varias entradas para adultos, como burdeles, tiendas eróticas y clubs de striptease.",
+    "cs": "<p><i>Láska na dlani</i></p>Open Love Map obsahuje různé položky pro dospělé, například nevěstince, erotické obchody a striptýzové kluby."
   },
   "icon": "./assets/layers/stripclub/stripclub.svg",
   "hideFromOverview": true,
@@ -32,14 +34,16 @@
         "name": {
           "en": "Erotic shops",
           "de": "Erotikgeschäfte",
-          "es": "Tiendas eróticas"
+          "es": "Tiendas eróticas",
+          "cs": "Erotické obchody"
         },
         "=presets": [
           {
             "title": {
               "en": "an erotic shop",
               "de": "ein Erotikgeschäft",
-              "es": "una tienda erótica"
+              "es": "una tienda erótica",
+              "cs": "erotický obchod"
             },
             "tags": [
               "shop=erotic"
@@ -53,7 +57,8 @@
             "question": {
               "en": "Does this shop offer fetish gear?",
               "de": "Bietet dieser Laden Fetischkleidung an?",
-              "es": "¿Ofrece esta tienda artículos fetichistas?"
+              "es": "¿Ofrece esta tienda artículos fetichistas?",
+              "cs": "Nabízí tento obchod vybavení pro fetišisty?"
             },
             "mappings": [
               {
@@ -62,7 +67,8 @@
                 "then": {
                   "en": "This shop offers <b>soft BDSM-gear</b>, such as fluffy handcuffs, a 'fifty-shade-of-grey'-starterset, ...",
                   "de": "Dieser Laden bietet <b>weiches BDSM-Zubehör</b> an, wie zum Beispiel flauschige Handschellen, ein \"Fifty Shades of Grey\"-Starterset, ...",
-                  "es": "Esta tienda ofrece <b>artículos BDSM suaves</b>, como esposas mullidas, un conjunto de ..."
+                  "es": "Esta tienda ofrece <b>artículos BDSM suaves</b>, como esposas mullidas, un conjunto de ...",
+                  "cs": "Tento obchod nabízí <b>měkké BDSM pomůcky</b>, jako jsou chlupatá pouta, sada „padesát odstínů šedi“, ..."
                 }
               },
               {
@@ -177,7 +183,8 @@
               "en": "a condom vending machine",
               "de": "ein Kondomautomat",
               "es": "una máquina de venta de condones",
-              "da": "en kondomautomat"
+              "da": "en kondomautomat",
+              "cs": "automat na kondomy"
             },
             "tags": [
               "amenity=vending_machine",
@@ -256,7 +263,8 @@
             "title": {
               "en": "an erotic cinema",
               "de": "Ein Sex-Kino",
-              "es": "un cine erótico"
+              "es": "un cine erótico",
+              "cs": "erotické kino"
             },
             "tags": [
               "amenity=cinema",
@@ -286,7 +294,8 @@
             "question": {
               "en": "What type of hotel is this?",
               "de": "Welche Art von Hotel ist das?",
-              "es": "¿Qué tipo de hotel es este?"
+              "es": "¿Qué tipo de hotel es este?",
+              "cs": "O jaký typ hotelu se jedná?"
             },
             "mappings": [
               {
@@ -318,12 +327,14 @@
         "question": {
           "en": "Does {title()} have a private video booth?",
           "de": "Hat {title()} eine private Videokabine?",
-          "es": "¿Este {title()} tiene una cabina de video privada?"
+          "es": "¿Este {title()} tiene una cabina de video privada?",
+          "cs": "Má {title()} soukromou video kabinu?"
         },
         "questionHint": {
           "en": "This is for use by a single person.",
           "de": "Dies ist für die Nutzung durch eine einzelne Person vorgesehen.",
-          "es": "Esto es para uso de una sola persona."
+          "es": "Esto es para uso de una sola persona.",
+          "cs": "Je určena pro použití jednou osobou."
         },
         "mappings": [
           {

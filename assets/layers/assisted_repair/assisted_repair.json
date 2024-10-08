@@ -2,11 +2,13 @@
   "id": "assisted_repair",
   "name": {
     "en": "Repair cafés and assisted repair workshops",
-    "de": "Repair-Cafés und unterstützte Reparaturwerkstätten"
+    "de": "Repair-Cafés und unterstützte Reparaturwerkstätten",
+    "cs": "Opravárenské kavárny a asistované opravárenské dílny"
   },
   "description": {
     "en": "A self-assisted workshop is a location where people can come and repair their goods with help of volunteers and with the tools available at the given location.  A repair café is a type of event organized regularly along the same principles.",
-    "de": "Eine Selbsthilfewerkstatt ist ein Ort, an dem Menschen ihre Gegenstände mit Hilfe von Freiwilligen und den vor Ort verfügbaren Werkzeugen reparieren können. Ein Repair-Café ist eine Art von Veranstaltung, die regelmäßig nach denselben Prinzipien organisiert wird."
+    "de": "Eine Selbsthilfewerkstatt ist ein Ort, an dem Menschen ihre Gegenstände mit Hilfe von Freiwilligen und den vor Ort verfügbaren Werkzeugen reparieren können. Ein Repair-Café ist eine Art von Veranstaltung, die regelmäßig nach denselben Prinzipien organisiert wird.",
+    "cs": "Svépomocná dílna je místo, kam mohou lidé přijít a opravit si své zboží s pomocí dobrovolníků a nástrojů, které jsou na daném místě k dispozici.  Opravárenská kavárna je typ akce, která se pravidelně pořádá na stejných principech."
   },
   "source": {
     "osmTags": "repair=assisted_self_service"
@@ -15,14 +17,17 @@
   "title": {
     "render": {
       "en": "Workshop for assisted repair",
-      "de": "Werkstatt für unterstützte Reparaturen"
+      "de": "Werkstatt für unterstützte Reparaturen",
+      "cs": "Dílna pro asistované opravy"
     },
     "mappings": [
       {
         "if": "name~*",
         "then": {
           "en": "{name}",
-          "de": "{name}"
+          "de": "{name}",
+          "cs": "{name}",
+          "es": "{name}"
         }
       }
     ]
@@ -67,7 +72,8 @@
     {
       "title": {
         "en": "an assisted repair workshop",
-        "de": "Eine unterstützte Reparaturwerkstatt"
+        "de": "Eine unterstützte Reparaturwerkstatt",
+        "cs": "asistovaná opravárenská dílna"
       },
       "tags": [
         "amenity=workshop",
@@ -75,7 +81,8 @@
       ],
       "description": {
         "en": "A location with a permanent workshop where people can come to repair items with the help of volunteers.",
-        "de": "Ein Ort mit einer festen Werkstatt, in der Menschen mit Hilfe von Freiwilligen Gegenstände reparieren können."
+        "de": "Ein Ort mit einer festen Werkstatt, in der Menschen mit Hilfe von Freiwilligen Gegenstände reparieren können.",
+        "cs": "Místo se stálou dílnou, kam mohou lidé přijít a s pomocí dobrovolníků opravovat předměty."
       }
     }
   ],
@@ -85,12 +92,16 @@
     {
       "question": {
         "en": "What is the name of this repair workshop?",
-        "de": "Wie heißt diese Reparaturwerkstatt?"
+        "de": "Wie heißt diese Reparaturwerkstatt?",
+        "cs": "Jak se tato opravna jmenuje?",
+        "es": "¿Cuál es el nombre de este taller de reparación?"
       },
       "id": "name",
       "render": {
         "en": "This workshop is called <b>{name}</b>",
-        "de": "Diese Werkstatt heißt <b>{name}</b>"
+        "de": "Diese Werkstatt heißt <b>{name}</b>",
+        "cs": "Tato dílna se nazývá <b>{name}</b>",
+        "es": "Este taller se llama <b>{name}</b>"
       },
       "freeform": {
         "key": "name"
@@ -103,7 +114,9 @@
     {
       "question": {
         "en": "What type of items are repaired here?",
-        "de": "Welche Art von Gegenständen wird hier repariert?"
+        "de": "Welche Art von Gegenständen wird hier repariert?",
+        "cs": "Jaké předměty se zde opravují?",
+        "es": "¿Qué tipo de objetos se reparan aquí?"
       },
       "id": "item:repair",
       "mappings": [
@@ -115,7 +128,9 @@
           ],
           "then": {
             "en": "Mobile phones are repaired here",
-            "de": "Mobiltelefone werden hier repariert"
+            "de": "Mobiltelefone werden hier repariert",
+            "cs": "Zde se opravují mobilní telefony",
+            "es": "Aquí se reparan teléfonos móviles"
           },
           "ifnot": "service:mobile_phone:repair=no"
         },
@@ -127,7 +142,9 @@
           ],
           "then": {
             "en": "Computers are repaired here",
-            "de": "Computer werden hier repariert"
+            "de": "Computer werden hier repariert",
+            "cs": "Počítače se opravují zde",
+            "es": "Aquí se reparan ordenadores"
           },
           "ifnot": "service:computer:repair=no"
         },
@@ -139,7 +156,9 @@
           ],
           "then": {
             "en": "Bicycles are repaired here",
-            "de": "Fahrräder werden hier repariert"
+            "de": "Fahrräder werden hier repariert",
+            "cs": "Zde se opravují jízdní kola",
+            "es": "Aquí se reparan bicicletas"
           },
           "ifnot": "service:bicycle:repair=no"
         },
@@ -151,7 +170,9 @@
           ],
           "then": {
             "en": "Electronic devices are repaired here",
-            "de": "Elektronische Geräte werden hier repariert"
+            "de": "Elektronische Geräte werden hier repariert",
+            "cs": "Zde se opravují elektronická zařízení",
+            "es": "Aquí se reparan dispositivos electrónicos"
           },
           "ifnot": "service:electronics:repair=no",
           "icon": "./assets/layers/recycling/small_electrical_appliances.svg"
@@ -164,7 +185,9 @@
           ],
           "then": {
             "en": "Furniture is repaired here",
-            "de": "Möbel werden hier repariert"
+            "de": "Möbel werden hier repariert",
+            "cs": "Zde se opravuje nábytek",
+            "es": "Aquí se reparan muebles"
           },
           "ifnot": "service:furniture:repair=no",
           "icon": "./assets/layers/recycling/furniture.svg"
@@ -177,7 +200,9 @@
           ],
           "then": {
             "en": "Clothes are repaired here",
-            "de": "Kleidung wird hier repariert"
+            "de": "Kleidung wird hier repariert",
+            "cs": "Zde se opravují oděvy",
+            "es": "Aquí se reparan prendas textiles"
           },
           "ifnot": "service:clothes:repair=no",
           "icon": "./assets/layers/recycling/clothes.svg"

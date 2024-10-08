@@ -309,7 +309,8 @@
     {
       "id": "title-map",
       "render": {
-        "en": "<h3>Configure map</h3>"
+        "en": "<h3>Configure map</h3>",
+        "de": "<h3>Karte konfigurieren</h3>"
       }
     },
     {
@@ -582,7 +583,8 @@
     {
       "id": "title-editing",
       "render": {
-        "en": "<h3>Editing settings</h3>"
+        "en": "<h3>Editing settings</h3>",
+        "de": "<h3> Einstellungen bearbeiten</h3>"
       }
     },
     {
@@ -739,7 +741,8 @@
     {
       "id": "title-privacy-legal",
       "render": {
-        "en": "<h3>Privacy and legal</h3>"
+        "en": "<h3>Privacy and legal</h3>",
+        "de": "<h3>Datenschutz und Rechtliches</h3>"
       }
     },
     {
@@ -860,29 +863,34 @@
     {
       "id": "sync-visited-themes",
       "question": {
-        "en": "Should the thematic maps you visit be saved?"
+        "en": "Should the thematic maps you visit be saved?",
+        "de": "Sollen besuchte Themenkarten gespeichert werden?"
       },
       "questionHint": {
-        "en": "If you visit a map about a certain topic, MapComplete can remember this and offer this as suggestion."
+        "en": "If you visit a map about a certain topic, MapComplete can remember this and offer this as suggestion.",
+        "de": "Besuchte Themenkarten, können von MapComplete gespeichert und als Vorschlag angeboten werden."
       },
       "mappings": [
         {
           "if": "mapcomplete-preference-theme-history=sync",
           "alsoShowIf": "mapcomplete-preference-theme-history=",
           "then": {
-            "en": "Save the visited thematic maps and sync them via openstreetmap.org. OpenStreetMap and all apps you use can see this history"
+            "en": "Save the visited thematic maps and sync them via openstreetmap.org. OpenStreetMap and all apps you use can see this history",
+            "de": "Besuchte Themenkarten speichern und über opentreetmap.org synchronisieren. OpenStreetMap und alle verwendeten Programme können diesen Verlauf sehen"
           }
         },
         {
           "if": "mapcomplete-preference-theme-history=local",
           "then": {
-            "en": "Save the visited thematic maps on my device"
+            "en": "Save the visited thematic maps on my device",
+            "de": "Besuchte Themenkarten auf meinem Gerät speichern"
           }
         },
         {
           "if": "mapcomplete-preference-theme-history=no",
           "then": {
-            "en": "Don't save visited thematic maps"
+            "en": "Don't save visited thematic maps",
+            "de": "Besuchte Themenkarten nicht auf meinem Gerät speichern"
           }
         }
       ]
@@ -890,29 +898,34 @@
     {
       "id": "sync-visited-locations",
       "question": {
-        "en": "Should the locations you search for and inspect be remembered?"
+        "en": "Should the locations you search for and inspect be remembered?",
+        "de": "Sollen die gesuchten und überprüften Orte gespeichert werden?"
       },
       "questionHint": {
-        "en": "Those locations will be offered in the search menu"
+        "en": "Those locations will be offered in the search menu",
+        "de": "Diese Orte werden im Suchmenü angezeigt"
       },
       "mappings": [
         {
           "if": "mapcomplete-preference-search-history=sync",
           "alsoShowIf": "mapcomplete-preference-search-history=",
           "then": {
-            "en": "Save the locations you search for and inspect and sync them via openstreetmap.org. OpenStreetMap and all apps you use can see this history"
+            "en": "Save the locations you search for and inspect and sync them via openstreetmap.org. OpenStreetMap and all apps you use can see this history",
+            "de": "Gesuchte und überprüfte Orte speichern und über openstreetmap.org synchronisieren. OpenStreetMap und alle verwendeten Programme können diesen Verlauf sehen"
           }
         },
         {
           "if": "mapcomplete-preference-search-history=local",
           "then": {
-            "en": "Save the locations you search for and inspect on my device"
+            "en": "Save the locations you search for and inspect on my device",
+            "de": "Gesuchte und überprüfte Orte auf meinem Gerät speichern"
           }
         },
         {
           "if": "mapcomplete-preference-search-history=no",
           "then": {
-            "en": "Don't save the locations you search for and inspect "
+            "en": "Don't save the locations you search for and inspect ",
+            "de": "Gesuchte und überprüfte Orte nicht auf meinem Gerät speichern "
           }
         }
       ]
@@ -920,7 +933,8 @@
     {
       "id": "title-id",
       "render": {
-        "en": "<h3>Mangrove ID management</h3>"
+        "en": "<h3>Mangrove ID management</h3>",
+        "de": "<h3>Mangrove ID Management</h3>"
       }
     },
     {
@@ -987,7 +1001,7 @@
       "id": "translation-mode",
       "question": {
         "en": "Do you want to help translating MapComplete?",
-        "de": "Möchten Sie bei der Übersetzung von MapComplete helfen?",
+        "de": "Möchten Sie beim Übersetzen von MapComplete helfen?",
         "cs": "Chcete pomoci s překladem MapComplete?",
         "ca": "Vols ajudar a traduir MapComplete?",
         "fr": "Voulez-vous aider à traduire MapComplete ?",
@@ -1001,7 +1015,7 @@
           "icon": "cross_bottom_right:red;./assets/svg/translate.svg",
           "then": {
             "en": "Don't show a button to quickly change translations",
-            "de": "Keine Schaltfläche zum schnellen Wechseln von Übersetzungen anzeigen",
+            "de": "Schaltflächen zur Übersetzung nie anzeigen",
             "ca": "No mostris cap botó per a canviar ràpidament les traduccions",
             "fr": "Ne pas afficher de bouton pour modifier les traductions rapidement",
             "pt": "Não mostrar um botão para alterar as traduções rapidamente",
@@ -1014,7 +1028,7 @@
           "icon": "./assets/svg/translate.svg",
           "then": {
             "en": "Show a button to quickly open translations when using MapComplete on a big screen",
-            "de": "Schaltfläche anzeigen zum schnellen Öffnen von Übersetzungen beim Verwenden von MapComplete auf einem großen Bildschirm",
+            "de": "Schaltflächen zur Übersetzung nur auf großen Bildschirmen anzeigen",
             "fr": "Afficher un bouton pour ouvrir rapidement les traductions lorsque vous utilisez MapComplete sur un grand écran",
             "ca": "Mostra un botó per a obrir ràpidament les traduccions quan utilitzes MapComplet en una pantalla gran",
             "pt": "Mostrar um botão para abrir traduções rapidamente ao usar o MapComplete em uma tela grande",
@@ -1028,7 +1042,7 @@
           "icon": "./assets/layers/usersettings/translate_mobile.svg",
           "then": {
             "en": "Always show the translation buttons, including on mobile",
-            "de": "Übersetzungsschaltflächen immer anzeigen, auch auf dem Handy",
+            "de": "Schaltflächen zur Übersetzung immer anzeigen, auch auf Smartphones",
             "ca": "Mostra sempre els botons de traducció, fins i tot al mòbil",
             "fr": "Toujours afficher les boutons de traduction, même sur mobile",
             "pt": "Mostrar sempre os botões de tradução, inclusive no celular",

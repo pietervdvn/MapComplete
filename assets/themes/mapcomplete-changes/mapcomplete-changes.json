@@ -2,11 +2,13 @@
   "id": "mapcomplete-changes",
   "title": {
     "en": "Changes made with MapComplete",
-    "de": "Änderungen mit MapComplete"
+    "de": "Änderungen mit MapComplete",
+    "cs": "Změny provedené pomocí MapComplete"
   },
   "shortDescription": {
     "en": "Shows changes made by MapComplete",
-    "de": "Zeigt die von MapComplete vorgenommenen Änderungen an"
+    "de": "Zeigt die von MapComplete vorgenommenen Änderungen an",
+    "cs": "Zobrazuje změny provedené nástrojem MapComplete"
   },
   "description": {
     "en": "This maps shows all the changes made with MapComplete",
@@ -36,7 +38,8 @@
       "title": {
         "render": {
           "en": "Changeset for {theme}",
-          "de": "Änderungssatz für {theme}"
+          "de": "Änderungssatz für {theme}",
+          "cs": "Sada změn pro {theme}"
         }
       },
       "description": {
@@ -138,7 +141,8 @@
           },
           "render": {
             "en": "Made with {editor}",
-            "de": "Erstellt mit {editor}"
+            "de": "Erstellt mit {editor}",
+            "cs": "Vytvořeno pomocí {editor}"
           },
           "freeform": {
             "key": "editor"
@@ -674,7 +678,8 @@
               "question": {
                 "en": "Made with host {search}",
                 "de": "Erstellt mit Host {search}",
-                "cs": "Vytvořeno pomocí hostitele {search}"
+                "cs": "Vytvořeno pomocí hostitele {search}",
+                "es": "Hecho con host {search}"
               }
             }
           ]
@@ -687,7 +692,8 @@
               "question": {
                 "en": "Changeset added at least one image",
                 "de": "Changeset hat mindestens ein Bild hinzugefügt",
-                "cs": "Sada změn přidala alespoň jeden obrázek"
+                "cs": "Sada změn přidala alespoň jeden obrázek",
+                "es": "El conjunto de cambios ha añadido al menos una imagen"
               }
             }
           ]
@@ -730,7 +736,8 @@
             "id": "link_to_more",
             "render": {
               "en": "More statistics can be found <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>here</a>",
-              "de": "Weitere Statistiken findest du <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>hier</a>"
+              "de": "Weitere Statistiken findest du <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>hier</a>",
+              "cs": "Další statistiky najdete <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>zde</a>"
             }
           },
           {

@@ -547,7 +547,8 @@
           "if": "vending=ice_cream",
           "then": {
             "en": "Ice cream is sold",
-            "nl": "IJs wordt verkocht"
+            "nl": "IJs wordt verkocht",
+            "de": "Speiseeis wird verkauft"
           },
           "icon": "./assets/layers/ice_cream/ice_cream.svg"
         },
@@ -1210,7 +1211,8 @@
         {
           "question": {
             "en": "Sale of ice cream",
-            "nl": "Verkoop van ijs"
+            "nl": "Verkoop van ijs",
+            "de": "Verkauf von Speiseeis"
           },
           "osmTags": "vending~i~.*ice_cream.*"
         },

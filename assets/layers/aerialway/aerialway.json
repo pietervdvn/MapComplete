@@ -27,7 +27,8 @@
   "title": {
     "render": {
       "en": "Aerialway {name}",
-      "de": "Seilbahn {name}"
+      "de": "Seilbahn {name}",
+      "cs": "Dráha {name}"
     }
   },
   "pointRendering": [
@@ -89,7 +90,8 @@
     {
       "question": {
         "en": "What type of aerialway is this?",
-        "de": "Um welchen Seilbahntyp handelt es sich?"
+        "de": "Um welchen Seilbahntyp handelt es sich?",
+        "cs": "O jaký typ dráhy se jedná?"
       },
       "id": "type",
       "mappings": [
@@ -158,21 +160,24 @@
           "if": "aerialway=platter",
           "then": {
             "en": "A drag lift with a platter to drag a single passenger at a time",
-            "de": "Ein Schlepplift mit einem Teller für jeweils einen Passagier"
+            "de": "Ein Schlepplift mit einem Teller für jeweils einen Passagier",
+            "cs": "Vlek s talířem, který táhne jednoho cestujícího"
           }
         },
         {
           "if": "aerialway=rope_tow",
           "then": {
             "en": "A tow line which which drags skieers",
-            "de": "Eine Schleppleine, die Skifahrer mit sich zieht"
+            "de": "Eine Schleppleine, die Skifahrer mit sich zieht",
+            "cs": "Vlečné lano, které táhne lyžaře"
           }
         },
         {
           "if": "aerialway=magic_carpet",
           "then": {
             "en": "A magic carpet (a conveyor belt on the ground)",
-            "de": "Ein magic carpet (ein Förderband auf dem Boden)"
+            "de": "Ein magic carpet (ein Förderband auf dem Boden)",
+            "cs": "Kouzelný koberec (pásový dopravník na zemi)"
           }
         },
         {
@@ -236,7 +241,8 @@
         "en": "{aerialway:occupancy} people fit a single carriage",
         "de": "{aerialway:occupancy} Leute passen in eine Kabine",
         "pl": "{aerialway:occupancy} osób mieści się w jednym wagonie",
-        "cs": "{aerialway:occupancy} osob se vejde do jednoho vozu"
+        "cs": "{aerialway:occupancy} osob se vejde do jednoho vozu",
+        "es": "{aerialway:occupancy} personas entran en un solo vagón"
       }
     },
     "opening_hours",

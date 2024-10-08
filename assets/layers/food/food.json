@@ -549,7 +549,8 @@
           "icon": "🇲🇽",
           "then": {
             "en": "Mexican dishes are served here",
-            "nl": "Dit is een mexicaans restaurant"
+            "nl": "Dit is een mexicaans restaurant",
+            "de": "Hier werden mexikanische Gerichte serviert"
           }
         },
         {
@@ -557,7 +558,8 @@
           "icon": "🇯🇵",
           "then": {
             "en": "Japanese dishes are served here",
-            "nl": "Dit is een japans restaurant"
+            "nl": "Dit is een japans restaurant",
+            "de": "Hier werden japanische Gerichte serviert"
           }
         },
         {
@@ -565,7 +567,8 @@
           "icon": "🐔",
           "then": {
             "en": "Chicken based dishes are served here",
-            "nl": "Dit is een kiprestaurant"
+            "nl": "Dit is een kiprestaurant",
+            "de": "Hier werden Hühnergerichte serviert"
           }
         },
         {
@@ -573,7 +576,8 @@
           "icon": "🐟",
           "then": {
             "en": "Seafood dishes are served here",
-            "nl": "Dit is een vis- en zeerestaurant"
+            "nl": "Dit is een vis- en zeerestaurant",
+            "de": "Hier werden Fisch und Meeresfrüchte serviert"
           }
         }
       ],

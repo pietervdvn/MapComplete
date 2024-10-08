@@ -1,7 +1,8 @@
 {
   "id": "search",
   "description": {
-    "en": "Priviliged layer showing the search results"
+    "en": "Priviliged layer showing the search results",
+    "de": "Priorisierte Ebene, die Suchergebnissen anzeigt"
   },
   "source": "special",
   "title": "{display_name}",
@@ -9,7 +10,8 @@
     {
       "id": "intro",
       "render": {
-        "en": "Search result"
+        "en": "Search result",
+        "de": "Suchergebnis"
       }
     },
     {

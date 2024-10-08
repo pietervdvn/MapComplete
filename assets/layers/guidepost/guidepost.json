@@ -70,7 +70,7 @@
           "ifnot": "bicycle=",
           "then": {
             "en": "This guidepost shows bicycle routes",
-            "de": "Dieser Wegweiser zeigt Fahrradrouten",
+            "de": "Dieser Wegweiser zeigt Fahrradwege",
             "fr": "Un itinéraire vélo"
           }
         },

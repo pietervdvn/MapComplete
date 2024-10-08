@@ -530,7 +530,7 @@
         "de": "Wie viele Fahrräder passen auf diesen Fahrrad-Parkplatz?",
         "it": "Quante biciclette entrano in questo parcheggio per bici (incluse le eventuali bici cargo)?",
         "zh_Hant": "這個單車停車場能放幾台單車 (包括裝箱單車)？",
-        "es": "¿Cuántas bicicletas caben en este aparcamiento de bicicletas (incluyendo posibles bicicletas de carga)?",
+        "es": "¿Cuántas bicicletas caben en este aparcamiento de bicicletas?",
         "da": "Hvor mange cykler er der plads til på denne cykelparkering (inklusive mulige ladcykler)?",
         "cs": "Kolik jízdních kol se vejde na toto parkoviště (včetně případných nákladních kol)?",
         "ca": "Quantes bicicletes caben en aquest aparcament de bicicletes?",
@@ -542,7 +542,8 @@
         "en": "This includes regular bicycles, cargo bikes, ebikes, ...",
         "nl": "Dit is het totaal aantal gewone fietsen, bakfietsen, elektrische fietsen, ...",
         "de": "Dazu gehören reguläre Fahrräder, Lasträder, Ebikes,...",
-        "pl": "To obejmuje zwykłe rowery, do transportu dóbr, elektryczne, ..."
+        "pl": "To obejmuje zwykłe rowery, do transportu dóbr, elektryczne, ...",
+        "es": "Esto incluye bicis normales, de carga, eléctricas, ..."
       },
       "render": {
         "en": "Place for {capacity} bikes",
@@ -689,7 +690,8 @@
         "en": "Are these bicycle parkings free to use?",
         "nl": "Is deze fietsenstalling gratis te gebruiken?",
         "de": "Sind die Fahrradparkplätze kostenlos zu benutzen?",
-        "ca": "Aquests aparcaments de bicicletes són gratuïts?"
+        "ca": "Aquests aparcaments de bicicletes són gratuïts?",
+        "es": "¿Son estos aparcamientos de bicicletras de uso gratuito?"
       },
       "mappings": [
         {
@@ -698,7 +700,8 @@
             "en": "One has to <b>pay</b> to use this bicycle parking",
             "nl": "<b>Betalende</b> fietsparking",
             "de": "Man muss <b>zahlen</b>, um den Fahrradparkplatz zu nutzen",
-            "fr": "L'utilisation de ce parking à vélo est <b>payant</b>"
+            "fr": "L'utilisation de ce parking à vélo est <b>payant</b>",
+            "es": "Uno tiene que <b>pagar</b> para utilizar este aparcamiento de bicicletas"
           }
         },
         {
@@ -708,7 +711,8 @@
             "en": "Free to use",
             "nl": "Gratis te gebruiken",
             "de": "Die Nutzung ist kostenlos",
-            "fr": "L'utilisation de ce parking à vélo est <b>gratuit</b>"
+            "fr": "L'utilisation de ce parking à vélo est <b>gratuit</b>",
+            "es": "Uso gratuito"
           }
         }
       ]
@@ -719,17 +723,20 @@
       "question": {
         "en": "How much does it cost to park your bike here?",
         "nl": "Hoeveel kost het om een fiets te stallen?",
-        "de": "Wie viel kostet es, Ihr Fahrrad hier zu parken?"
+        "de": "Wie viel kostet es, Ihr Fahrrad hier zu parken?",
+        "es": "¿Cuánto cuesta aparcar aquí tu bici?"
       },
       "questionHint": {
         "en": "This is the amount which is charged for a single bike",
         "nl": "Dit is de kostprijs voor een enkele fiets",
-        "de": "Das ist der Betrag, der für ein einzelnes Fahrrad berechnet wird"
+        "de": "Das ist der Betrag, der für ein einzelnes Fahrrad berechnet wird",
+        "es": "Esta es la cantidad que se cobra por una sola bici"
       },
       "render": {
         "en": "Parking your bike costs {charge}",
         "nl": "Je fiets hier parkeren kost {charge}",
-        "de": "Das Parken Ihres Fahrrads kostet {charge}"
+        "de": "Das Parken Ihres Fahrrads kostet {charge}",
+        "es": "Aparcar tu bici cuesta {charge}"
       },
       "freeform": {
         "key": "charge",
@@ -744,13 +751,15 @@
         "nl": "Wie beheert deze fietsenstalling?",
         "de": "Wer unterhält diese Fahrradabstellplätze?",
         "fr": "Qui entretient ce parking à vélos ?",
-        "ca": "Qui manté aquest aparcament per a bicis?"
+        "ca": "Qui manté aquest aparcament per a bicis?",
+        "es": "¿Quién mantiene este aparcamiento de bicicletas?"
       },
       "render": {
         "en": "This bicycle parking is maintained by {operator}",
         "nl": "Deze fietsenstalling wordt beheerd door {operator}",
         "de": "Dieser Fahrradparkplatz wird von {operator} bereitgestellt",
-        "ca": "{operator} manté aquest aparcament per a bicis"
+        "ca": "{operator} manté aquest aparcament per a bicis",
+        "es": "Este aparcamiento de bicicletas es mantenido por {operator}"
       },
       "freeform": {
         "key": "operator"
@@ -762,7 +771,8 @@
         "en": "What is the phone number of the operator of this bicycle parking?",
         "nl": "Wat is het telefoonnummer van de operator van deze fietsenstalling?",
         "de": "Wie lautet die Telefonnummer des Betreibers dieses Fahrradparkplatzes?",
-        "ca": "Quin és el número de telèfon de l'operador d'aquest aparcament per a bicis?"
+        "ca": "Quin és el número de telèfon de l'operador d'aquest aparcament per a bicis?",
+        "es": "¿Cuál es número de teléfono del operador de este aparcamiento de bicicletas?"
       },
       "questionHint": {
         "en": "One might be able to call this number in case of problems, e.g. to remove unmaintained bicycles",
@@ -804,7 +814,8 @@
       "question": {
         "en": "What is the website number of the operator of this bicycle parking?",
         "nl": "Wat is de website van de operator van deze fietsenstalling?",
-        "de": "Wie lautet die Nummer auf der Website des Betreibers dieses Fahrradparkplatzes?"
+        "de": "Wie lautet die Nummer auf der Website des Betreibers dieses Fahrradparkplatzes?",
+        "es": "¿Cuál es la página web del operador de este aparcamiento de bicicletas?"
       },
       "icon": "./assets/layers/icons/website.svg",
       "freeform": {
@@ -841,7 +852,8 @@
         "en": "What is the email address of the operator of this bicycle parking?",
         "nl": "Wat is het emailadres van de beheerder van deze parking?",
         "de": "Wie lautet die E-Mail-Adresse des Betreibers dieses Fahrradparkplatzes?",
-        "ca": "Quina és l'adreça de correu electrònic de l'operador d'aquest aparcament per a bicis?"
+        "ca": "Quina és l'adreça de correu electrònic de l'operador d'aquest aparcament per a bicis?",
+        "es": "¿Cuál es la dirección de correo electrónico del operador de este aparcamiento de bicicletas?"
       },
       "icon": "./assets/svg/envelope.svg",
       "freeform": {
@@ -984,7 +996,8 @@
         "en": "What is the maximum allowed parking duration?",
         "nl": "Wat is de toegestane, maximale parkeerduur?",
         "de": "Was ist die maximal erlaubte Parkdauer?",
-        "ca": "Quina és la durada màxima permesa d'estacionament?"
+        "ca": "Quina és la durada màxima permesa d'estacionament?",
+        "es": "¿Cuál es la duración máxima permitida de estacionamiento?"
       },
       "questionHint": {
         "en": "If the bicycle is parked for a longer amount, it might be removed by the operator",
@@ -999,7 +1012,8 @@
         "en": "A bike can be parked here for at most {canonical(maxstay)}",
         "nl": "Een fiets mag hier maximaal {canonical(maxstay)} parkeren",
         "de": "Ein Fahrrad kann hier höchstens für {canonical(maxstay)} geparkt werden",
-        "ca": "Una bici pot aparcar aquí com a màxim {canonical(maxstay)}"
+        "ca": "Una bici pot aparcar aquí com a màxim {canonical(maxstay)}",
+        "es": "Se puede aparcar aquí una bici por como mucho {canonical(maxstay)}"
       }
     }
   ],

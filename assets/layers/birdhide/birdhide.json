@@ -4,7 +4,7 @@
     "en": "Bird watching places",
     "nl": "Vogelkijkhutten",
     "de": "Orte zur Vogelbeobachtung",
-    "es": "Lugares para ver pájaros",
+    "es": "Lugares para ver aves",
     "da": "Steder til fugleobservation",
     "fr": "Lieu pour observer des oiseaux",
     "ca": "Llocs per a vore ocells",
@@ -18,7 +18,8 @@
     "de": "Ein Vogelbeobachtungsturm",
     "fr": "Un observatoire ornithologique",
     "ca": "Un observatori d'ocells",
-    "cs": "Pozorovatelna"
+    "cs": "Pozorovatelna",
+    "es": "Un observatorio de aves"
   },
   "source": {
     "osmTags": {
@@ -133,13 +134,14 @@
         "de": "ein Gebäude zur Vogelbeobachtung",
         "fr": "un observatoire ornithologique",
         "ca": "un observatori d'ocells",
-        "cs": "pozorovatelna"
+        "cs": "pozorovatelna",
+        "es": "un observatorio de aves"
       },
       "description": {
         "en": "A covered shelter where one can watch birds comfortably",
         "nl": "Een overdekte hut waarbinnen er warm en droog naar vogels gekeken kan worden",
         "de": "Ein überdachter Unterstand, in dem man bequem Vögel beobachten kann",
-        "es": "Un refugio cubierto donde se pueden ver pájaros confortablemente",
+        "es": "Un refugio cubierto donde se pueden ver aves confortablemente",
         "da": "Et overdækket ly, hvor man kan se fugle i ro og mag",
         "fr": "Un abris couvert pour observer les oiseaux confortablement",
         "ca": "Un refugi cobert on es poden veure ocells confortablement",

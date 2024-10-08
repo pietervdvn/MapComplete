@@ -470,14 +470,16 @@
         "en": "a billboard mounted to a wall",
         "de": "Eine an einer Wand montierte Werbetafel",
         "cs": "billboard připevněný na stěnu",
-        "ca": "un cartell muntat a una paret"
+        "ca": "un cartell muntat a una paret",
+        "es": "una valla publicitaria montada en un muro"
       },
       "description": {
         "en": "A large outdoor advertising structure, typically found in high-traffic areas such as alongside busy roads mounted on a wall",
         "de": "Eine große Außenwerbestruktur, die typischerweise in stark frequentierten Bereichen wie an vielbefahrenen Straßen auf einer Wand montiert zu finden ist",
         "cs": "Velká venkovní reklamní konstrukce, která se obvykle nachází na frekventovaných místech, například podél frekventovaných silnic, umístěná na zdi",
         "pl": "Duży obiekt reklamowy na zewnątrz, zazwyczaj znajduje się w obszarach z dużym ruchem, np. obok ruchliwych dróg na ścianie",
-        "ca": "Una gran estructura publicitària exterior, que normalment es troba en zones de gran trànsit, com ara al costat de carreteres transitades muntades a una paret"
+        "ca": "Una gran estructura publicitària exterior, que normalment es troba en zones de gran trànsit, com ara al costat de carreteres transitades muntades a una paret",
+        "es": "Una gran estructura de publicidad exterior, que suele encontrarse en zonas de mucho tráfico, por ejemplo, junto a carreteras muy transitadas"
       },
       "exampleImages": [
         "./assets/themes/advertising/billboard_wall.jpg"
@@ -964,7 +966,7 @@
           "if": "advertising=flag",
           "then": {
             "ca": "Açò és una bandera",
-            "es": "Esto es una bndera",
+            "es": "Esto es una bandera",
             "en": "This is a flag",
             "de": "Dies ist eine Flagge",
             "cs": "Toto je vlajka",
@@ -1119,7 +1121,8 @@
           "then": {
             "en": "This is tilework - the advertisement is painted on tiles",
             "de": "Dies ist eine Kachelarbeit - die Werbung ist auf Fliesen gemalt",
-            "cs": "Jedná se o dlaždice - reklama je namalovaná na dlaždicích"
+            "cs": "Jedná se o dlaždice - reklama je namalovaná na dlaždicích",
+            "es": "Esto es un azulejería - la publicidad está pintada en azulejos"
           }
         },
         {
@@ -1127,7 +1130,8 @@
           "then": {
             "en": "This is a relief",
             "de": "Dies ist ein Relief",
-            "cs": "Toto je reliéf"
+            "cs": "Toto je reliéf",
+            "es": "Esto es un alivio"
           }
         }
       ]
@@ -1136,7 +1140,7 @@
       "id": "animated",
       "question": {
         "ca": "Com canvien els anuncis d'aquest element?",
-        "es": "¿Como cambian los anuncios de este elemento?",
+        "es": "¿Pasa este anuncio por varios mensajes?",
         "en": "Does this advertisement cycle through multiple messages?",
         "de": "Werden mehrere Werbungen abwechselnd angezeigt?",
         "cs": "Zobrazuje tato reklama cyklicky několik zpráv?",
@@ -1577,7 +1581,7 @@
           "then": {
             "en": "This object has advertisements on a single side",
             "ca": "Aquest mupi té publicitat a un únic costat",
-            "es": "Este mupi tiene publicidad en un único lado",
+            "es": "Este objeto tiene publicidad en un único lado",
             "de": "Werbung wird nur auf einer Seite angezeigt",
             "cs": "Tento objekt má reklamy na jedné straně",
             "fr": "Cet objet a de la publicité sur un seul côté",
@@ -1649,7 +1653,7 @@
       "question": {
         "en": "Is this sign for a business that no longer exists or no longer being maintained?",
         "de": "Ist dieses Schild für ein Geschäft, das nicht mehr existiert oder nicht mehr gepflegt wird?",
-        "es": "¿Es este rótulo de un negocio que ya no existe o que ya no se mantiene?",
+        "es": "¿Es este cartel de un negocio que ya no existe o que ya no se mantiene?",
         "cs": "Je tato značka určena pro již neexistující nebo neudržovaný podnik?"
       },
       "mappings": [
@@ -1659,7 +1663,8 @@
           "then": {
             "en": "This is a historic advertisement sign (an advertisement for a business that no longer exists or a very old sign with heritage value)",
             "de": "Es handelt sich um ein historisches Werbeschild (eine Werbung für ein Unternehmen, das nicht mehr existiert, oder ein sehr altes Schild mit historischem Wert)",
-            "cs": "Jedná se o historický reklamní nápis (reklama na již neexistující podnik nebo velmi starý nápis s památkovou hodnotou)"
+            "cs": "Jedná se o historický reklamní nápis (reklama na již neexistující podnik nebo velmi starý nápis s památkovou hodnotou)",
+            "es": "Esto es un cartel publicitario histórico (un anuncio para un negocio que ya no existe o un cartel con un gran valor patrimonial)"
           }
         },
         {
@@ -1667,7 +1672,8 @@
           "then": {
             "en": "This advertisement sign has no historic value (the business still exists and has no heritage value)",
             "de": "Dieses Werbeschild hat keinen historischen Wert (das Unternehmen existiert noch und hat keinen denkmalpflegerischen Wert)",
-            "cs": "Tento reklamní nápis nemá žádnou historickou hodnotu (podnik stále existuje a nemá žádnou památkovou hodnotu)"
+            "cs": "Tento reklamní nápis nemá žádnou historickou hodnotu (podnik stále existuje a nemá žádnou památkovou hodnotu)",
+            "es": "Este cartel publicitario no tiene valor histórico (el negocio todavía existe y no tiene valor patrimonial)"
           }
         }
       ]

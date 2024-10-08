@@ -159,7 +159,7 @@
             "de": "Diese Sitzbank hat eine Rückenlehne",
             "fr": "Ce banc a un dossier",
             "nl": "Heeft een rugleuning",
-            "es": "Tiene respaldo",
+            "es": "Este banco tiene respaldo",
             "hu": "Van háttámlája",
             "id": "Sandaran: Ya",
             "it": "Schienale: Sì",
@@ -173,7 +173,7 @@
             "pt": "Encosto: Sim",
             "ca": "Aquest banc té espatller",
             "da": "Har et ryglæn",
-            "cs": "Má opěradlo",
+            "cs": "Tato lavice má opěradlo",
             "he": "יש משענת גב"
           },
           "addExtraTags": [
@@ -190,7 +190,7 @@
             "de": "Diese Sitzbank hat <b>keine</b> Rückenlehne",
             "fr": "Ce banc n'a <b>pas</b> de dossier",
             "nl": "Heeft <b>geen</b> rugleuning",
-            "es": "<b>No</b> tiene respaldo",
+            "es": "Este banco <b>no</b> tiene respaldo",
             "hu": "<b>Nincs</b> háttámlája",
             "id": "Sandaran: Tidak",
             "it": "Questa panchina <b>non</b> ha uno schienale",
@@ -204,7 +204,7 @@
             "pt": "Não <b>not</b> tem um encosto",
             "ca": "Aquest banc <b>No</b> té espatller",
             "da": "Har <b>ikke</b> et ryglæn",
-            "cs": "<b>nemá</b> opěradlo"
+            "cs": "Tato lavice <b>nemá opěradlo</b>"
           }
         }
       ],
@@ -213,7 +213,7 @@
         "de": "Hat diese Sitzbank eine Rückenlehne?",
         "fr": "Ce banc dispose-t-il d'un dossier ?",
         "nl": "Heeft deze zitbank een rugleuning?",
-        "es": "¿Este banco tiene respaldo?",
+        "es": "¿Tiene este banco respaldo?",
         "hu": "Van-e háttámlája ennek a padnak?",
         "id": "Apakah bangku ini memiliki sandaran?",
         "it": "Questa panchina ha lo schienale?",
@@ -241,7 +241,9 @@
           "then": {
             "en": "This bench does have one or more armrests",
             "de": "Diese Sitzbank hat eine oder mehrere Armlehnen",
-            "nl": "Deze bank heeft armleuningen"
+            "nl": "Deze bank heeft armleuningen",
+            "cs": "Tato lavice má jednu nebo více opěrek na ruce",
+            "es": "Este banco dispone de uno o más reposabrazos"
           }
         },
         {
@@ -249,14 +251,18 @@
           "then": {
             "en": "This bench does <b>not</b> have any armrests",
             "de": "Diese Sitzbank hat <b>keine</b> Armlehnen",
-            "nl": "Deze bank heeft <b>geen</b> armleuningen"
+            "nl": "Deze bank heeft <b>geen</b> armleuningen",
+            "cs": "Tato lavice <b>nemá opěrky rukou</b>",
+            "es": "Este banco <b>not</b> dispone de reposabrazos"
           }
         }
       ],
       "question": {
         "en": "Does this bench have one or more armrests?",
         "de": "Hat diese Sitzbank eine oder mehrere Armlehnen?",
-        "nl": "Heeft deze bank armleuningen?"
+        "nl": "Heeft deze bank armleuningen?",
+        "cs": "Má tato lavice jednu nebo více opěrek?",
+        "es": "¿Dispone este banco de uno o más reposabrazos?"
       },
       "id": "bench-armrest",
       "labels": [
@@ -269,7 +275,7 @@
         "de": "Diese Sitzbank hat {seats} Sitzplätze",
         "fr": "{seats} places",
         "nl": "{seats} zitplaatsen",
-        "es": "{seats} asientos",
+        "es": "Este banco tiene {seats} asientos",
         "hu": "{seats} ülőhely",
         "id": "{seats} kursi",
         "it": "{seats} posti",
@@ -281,7 +287,7 @@
         "pt": "{seats} lugares",
         "ca": "Aquest banc té {seats} seients",
         "da": "{seats} pladser",
-        "cs": "{seats} míst k sezení",
+        "cs": "Tato lavička má {seats} sedadla",
         "zh_Hans": "{seats}座",
         "he": "{seats} מושבים"
       },
@@ -930,7 +936,7 @@
         "cs": "Má tato lavička nápis?",
         "pt": "Esse banco tem inscrição?",
         "pt_BR": "Esse banco tem uma inscrição?",
-        "es": "¿Este banco tiene una inscripción?"
+        "es": "¿Tiene este banco una inscripción?"
       },
       "freeform": {
         "key": "inscription",

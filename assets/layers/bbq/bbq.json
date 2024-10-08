@@ -2,11 +2,15 @@
   "id": "bbq",
   "name": {
     "en": "BBQ",
-    "de": "Grillstelle"
+    "de": "Grillstelle",
+    "cs": "BBQ",
+    "es": "Barbacoa"
   },
   "description": {
     "de": "Ein ortsfest installierter Grill, typischerweise öffentlich zugänglich.",
-    "en": "A permanently installed barbecue, typically accessible to the public."
+    "en": "A permanently installed barbecue, typically accessible to the public.",
+    "cs": "Trvale instalovaný gril, obvykle přístupný veřejnosti.",
+    "es": "Una barbacoa instalada permanentemente, normalmente accesible al público."
   },
   "source": {
     "osmTags": "amenity=bbq"
@@ -15,7 +19,9 @@
   "title": {
     "render": {
       "en": "BBQ",
-      "de": "Grillstelle"
+      "de": "Grillstelle",
+      "cs": "BBQ",
+      "es": "Barbacoa"
     }
   },
   "pointRendering": [
@@ -41,11 +47,15 @@
     {
       "title": {
         "en": "BBQ",
-        "de": "Grillstelle"
+        "de": "Grillstelle",
+        "cs": "BBQ",
+        "es": "Barbacoa"
       },
       "description": {
         "de": "Ein ortsfest installierter Grill, typischerweise öffentlich zugänglich.",
-        "en": "A permanently installed barbecue, typically accessible to the public."
+        "en": "A permanently installed barbecue, typically accessible to the public.",
+        "cs": "Trvale instalovaný gril, obvykle přístupný veřejnosti.",
+        "es": "Una barbacoa instalada permanentemente, normalmente accesible al público."
       },
       "tags": [
         "amenity=bbq"
@@ -58,49 +68,62 @@
       "id": "access",
       "question": {
         "en": "What is the permitted access?",
-        "de": "Was ist der erlaubte Zugang?"
+        "de": "Was ist der erlaubte Zugang?",
+        "cs": "Jaký přístup je povolen?"
       },
       "mappings": [
         {
           "if": "access=yes",
           "then": {
             "de": "Öffentlich",
-            "en": "Public"
+            "en": "Public",
+            "cs": "Veřejné",
+            "es": "Pública"
           }
         },
         {
           "if": "access=no",
           "then": {
             "de": "Kein Zugang",
-            "en": "No access"
+            "en": "No access",
+            "cs": "Zákaz vstupu",
+            "es": "Sin acceso"
           }
         },
         {
           "if": "access=private",
           "then": {
             "de": "Privat",
-            "en": "Private"
+            "en": "Private",
+            "cs": "Soukromé",
+            "es": "Privada"
           }
         },
         {
           "if": "access=permissive",
           "then": {
             "de": "Zugang bis auf Widerruf",
-            "en": "Access until revoked"
+            "en": "Access until revoked",
+            "cs": "Přístup až do odvolání",
+            "es": "Acceso hasta que se anule"
           }
         },
         {
           "if": "access=customers",
           "then": {
             "de": "Zugang nur für Kunden",
-            "en": "Access only for customers"
+            "en": "Access only for customers",
+            "cs": "Přístup pouze pro zákazníky",
+            "es": "Acceso exclusivo para clientes"
           }
         },
         {
           "if": "access=permit",
           "then": {
             "de": "Zugang nur für Berechtigte",
-            "en": "Access only for authorized persons"
+            "en": "Access only for authorized persons",
+            "cs": "Přístup pouze pro oprávněné osoby",
+            "es": "Acceso exclusivo a personal autorizado"
           }
         }
       ]
@@ -109,21 +132,27 @@
       "id": "covered",
       "question": {
         "en": "Is the grill covered?",
-        "de": "Ist die Grillstelle überdacht?"
+        "de": "Ist die Grillstelle überdacht?",
+        "cs": "Je gril zakrytý?",
+        "es": "¿Está cubierta la parrilla?"
       },
       "mappings": [
         {
           "if": "covered=no",
           "then": {
             "de": "Die Grillstelle ist nicht überdacht",
-            "en": "The grill is not covered"
+            "en": "The grill is not covered",
+            "cs": "Gril není zakrytý",
+            "es": "La parrilla no está cubierta"
           }
         },
         {
           "if": "covered=yes",
           "then": {
             "de": "Die Grillstelle ist überdacht",
-            "en": "The grill is covered"
+            "en": "The grill is covered",
+            "cs": "Gril je zakrytý",
+            "es": "La parrilla está cubierta"
           }
         }
       ]
@@ -132,35 +161,45 @@
       "id": "fuel",
       "question": {
         "en": "How ist the grill fueled?",
-        "de": "Mit was wird die Grillstelle angefeuert?"
+        "de": "Mit was wird die Grillstelle angefeuert?",
+        "cs": "Jak je gril napájen?",
+        "es": "¿Cómo se alimenta la parrilla?"
       },
       "mappings": [
         {
           "if": "fuel=wood",
           "then": {
             "de": "Holz",
-            "en": "Wood"
+            "en": "Wood",
+            "cs": "Dřevo",
+            "es": "Madera"
           }
         },
         {
           "if": "fuel=charcoal",
           "then": {
             "de": "Kohle",
-            "en": "Charcoal"
+            "en": "Charcoal",
+            "cs": "Dřevěné uhlí",
+            "es": "Carbón"
           }
         },
         {
           "if": "fuel=electric",
           "then": {
             "de": "Elektronisch",
-            "en": "Electric"
+            "en": "Electric",
+            "cs": "Elektrický",
+            "es": "Eléctrica"
           }
         },
         {
           "if": "fuel=gas",
           "then": {
             "de": "Gas",
-            "en": "Gas"
+            "en": "Gas",
+            "cs": "Plynový",
+            "es": "Gas"
           }
         }
       ]

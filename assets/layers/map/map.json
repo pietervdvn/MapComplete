@@ -214,7 +214,7 @@
           "if": "map_size=site",
           "then": {
             "en": "A map of special site, like of a historical castle, a park, a campus, a forest, ....",
-            "de": "Örtlichkeit (z.B. Burg)",
+            "de": "Eine Karte mit besonderen Orten, wie einem historischen Schloss, einem Park, einem Campus, einem Wald, ....",
             "ca": "Un mapa d'un lloc especial, com un castell històric, un parc, un campus, un bosc, …",
             "cs": "Mapa speciálního místa, například historického zámku, parku, areálu, lesa, ....",
             "fr": "La carte d'un site particulier, comme un château, un parc, un campus, une forêt, ...."
@@ -234,7 +234,7 @@
         {
           "if": "map_size=city",
           "then": {
-            "en": " A map of a city",
+            "en": "A map of a city",
             "de": "Stadt",
             "pl": " Mapa miasta",
             "ca": " Un mapa d'una ciutat",

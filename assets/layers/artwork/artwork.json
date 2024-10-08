@@ -174,7 +174,7 @@
         "ca": "una obra d'art en una paret",
         "de": "ein Kunstwerk an einer Wand",
         "cs": "umělecké dílo na zdi",
-        "es": "Una obra de arte en la pared",
+        "es": "una obra de arte en la pared",
         "fr": "une œuvre sur un mur",
         "pl": "Dzieło sztuki na ścianie",
         "pt_BR": "uma obra de arte em uma parede",
@@ -794,7 +794,9 @@
       "question": {
         "en": "Does this artwork serve as a memorial?",
         "de": "Dient dieses Kunstwerk als Mahnmal?",
-        "fr": "Cet œuvre a-t-elle un rôle de mémorial ?"
+        "fr": "Cet œuvre a-t-elle un rôle de mémorial ?",
+        "cs": "Slouží toto dílo jako památník?",
+        "es": "¿Sirve esta obra de arte como monumento conmemorativo?"
       },
       "mappings": [
         {
@@ -803,7 +805,9 @@
             "en": "This artwork also serves as a memorial",
             "de": "Dieses Kunstwerk dient auch als Mahnmal",
             "ca": "Aquesta obra d'art també serveix com a memorial",
-            "fr": "Cette œuvre est un mémorial"
+            "fr": "Cette œuvre est un mémorial",
+            "cs": "Toto dílo slouží také jako památník",
+            "es": "Esta obra de arte también sirve como monumento conmemorativo"
           }
         },
         {
@@ -812,7 +816,9 @@
           "then": {
             "en": "This artwork does not serve as a bench",
             "de": "Dieses Kunstwerk dient nicht als Sitzbank",
-            "fr": "Cette œuvre ne sert pas de banc"
+            "fr": "Cette œuvre ne sert pas de banc",
+            "cs": "Toto dílo neslouží jako lavička",
+            "es": "Esta obra de arte no sirve como banco"
           }
         }
       ]

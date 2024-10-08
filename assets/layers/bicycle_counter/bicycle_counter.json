@@ -1,11 +1,17 @@
 {
   "id": "bicycle_counter",
   "name": {
-    "en": "Bicycle counters"
+    "en": "Bicycle counters",
+    "cs": "Počítadla jízdních kol",
+    "de": "Fahrradzählstellen",
+    "es": "Contadores de bicicletas"
   },
   "description": {
     "en": "Layer showing monitoring stations for bicycle traffic",
-    "nl": "Automatische fietstelpunten"
+    "nl": "Automatische fietstelpunten",
+    "cs": "Vrstva zobrazující monitorovací stanice pro cyklistickou dopravu",
+    "de": "Ebene mit Messstationen für den Fahrradverkehr",
+    "es": "Capa que muestra las estaciones de seguimiento para el tráfico de bicicletas"
   },
   "source": {
     "osmTags": {
@@ -17,7 +23,8 @@
   },
   "title": {
     "render": {
-      "en": "Bicycle counter"
+      "en": "Bicycle counter",
+      "de": "Fahrradzählstelle"
     }
   },
   "tagRenderings": [
@@ -25,25 +32,33 @@
     {
       "id": "display",
       "question": {
-        "en": "Does this bicycle counter have a display showing the number of passing bicycles?"
+        "en": "Does this bicycle counter have a display showing the number of passing bicycles?",
+        "cs": "Má tento počítač jízdních kol displej zobrazující počet projíždějících jízdních kol?",
+        "de": "Zeigt die Fahrradzählstelle die Anzahl gezählter Fahrräder an?"
       },
       "mappings": [
         {
           "if": "display=digital",
           "then": {
-            "en": "This counter has a digital display"
+            "en": "This counter has a digital display",
+            "cs": "Toto počítadlo má digitální displej",
+            "de": "Die Zählstelle hat eine digitale Anzeige"
           }
         },
         {
           "if": "display=analog",
           "then": {
-            "en": "This counter has an analog display"
+            "en": "This counter has an analog display",
+            "cs": "Toto počítadlo má analogový displej",
+            "de": "Die Zählstelle hat eine analoge Anzeige"
           }
         },
         {
           "if": "display=no",
           "then": {
-            "en": "This counter has no display"
+            "en": "This counter has no display",
+            "cs": "Toto počítadlo nemá žádný displej",
+            "de": "Die Zählstelle hat keine Anzeige"
           }
         }
       ]
@@ -51,51 +66,65 @@
     {
       "id": "name",
       "question": {
-        "en": "What is the name of the counted location?"
+        "en": "What is the name of the counted location?",
+        "cs": "Jak se jmenuje započítávaná lokalita?",
+        "de": "Wie lautet der Name des Zählorts?"
       },
       "freeform": {
         "key": "name",
         "type": "string",
         "placeholder": {
-          "en": "Name of the counted location"
+          "en": "Name of the counted location",
+          "cs": "Název započítávané lokality",
+          "de": "Name des Zählorts"
         }
       },
       "render": {
-        "en": "Name of the counted location: {name}"
+        "en": "Name of the counted location: {name}",
+        "de": "Name des Zählorts: {name}"
       }
     },
     {
       "id": "start_date",
       "question": {
-        "en": "When did this counter start counting?"
+        "en": "When did this counter start counting?",
+        "de": "Wann wurde die Zählstelle aufgestellt?"
       },
       "freeform": {
         "key": "start_date",
         "type": "date",
         "placeholder": {
-          "en": "Start date of the counter"
+          "en": "Start date of the counter",
+          "de": "Aufstelldatum der Zählstelle"
         }
       },
       "render": {
-        "en": "This counter started counting on {start_date}"
+        "en": "This counter started counting on {start_date}",
+        "de": "Die Zählstelle wurde am {start_date} aufgestellt"
       }
     },
     {
       "id": "clock",
       "question": {
-        "en": "Does this bicycle counter have a clock?"
+        "en": "Does this bicycle counter have a clock?",
+        "cs": "Má toto počítadlo kol hodiny?",
+        "de": "Zeigt die Fahrradzählstelle die Uhrzeit an?"
       },
       "mappings": [
         {
           "if": "amenity=clock",
           "then": {
-            "en": "This counter has a clock"
+            "en": "This counter has a clock",
+            "cs": "Toto počítadlo je vybaveno hodinami",
+            "de": "Die Zählstelle zeigt die Uhrzeit an"
           }
         },
         {
           "if": "amenity=",
           "then": {
-            "en": "This counter has no clock"
+            "en": "This counter has no clock",
+            "cs": "Toto počítadlo nemá žádné hodiny",
+            "de": "Die Zählstelle zeigt keine Uhrzeit an"
           }
         }
       ]
@@ -103,26 +132,30 @@
     {
       "id": "ref",
       "question": {
-        "en": "What is the reference number of this counter?"
+        "en": "What is the reference number of this counter?",
+        "de": "Wie lautet die Kennziffer der Zählstelle?"
       },
       "freeform": {
         "key": "ref",
         "type": "string",
         "placeholder": {
-          "en": "Reference number of the counter"
+          "en": "Reference number of the counter",
+          "de": "Kennziffer der Zählstelle"
         },
         "addExtraTags": [
           "noref="
         ]
       },
       "render": {
-        "en": "Reference number of the counter: {ref}"
+        "en": "Reference number of the counter: {ref}",
+        "de": "Kennziffer der Zählstelle: {ref}"
       },
       "mappings": [
         {
           "if": "noref=yes",
           "then": {
-            "en": "This counter has no reference number"
+            "en": "This counter has no reference number",
+            "de": "Die Zählstelle hat keine Kennziffer"
           }
         }
       ]
@@ -130,17 +163,20 @@
     {
       "id": "website",
       "question": {
-        "en": "Is there a website for this bicycle counter?"
+        "en": "Is there a website for this bicycle counter?",
+        "de": "Gibt es eine Website für die Fahrradzählstelle?"
       },
       "freeform": {
         "key": "website",
         "type": "url",
         "placeholder": {
-          "en": "Website of the counter"
+          "en": "Website of the counter",
+          "de": "Website der Zählstelle"
         }
       },
       "render": {
-        "en": "Website of the counter: <a href='{website}'>{website}</a>"
+        "en": "Website of the counter: <a href='{website}'>{website}</a>",
+        "de": "Website der Zählstelle: <a href='{website}'>{website}</a>"
       }
     }
   ],
@@ -170,7 +206,10 @@
   "presets": [
     {
       "title": {
-        "en": "a bicycle counter"
+        "en": "a bicycle counter",
+        "cs": "počítadlo jízdních kol",
+        "de": "eine Fahrradzählstelle",
+        "es": "un contador de bicicletas"
       },
       "tags": [
         "man_made=monitoring_station",
