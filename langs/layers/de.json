@@ -5446,6 +5446,9 @@
             },
             "friture-vegan": {
                 "mappings": {
+                    "0": {
+                        "then": "Nur vegane Snacks und Burger erhältlich"
+                    },
                     "1": {
                         "then": "Vegane Snacks sind erhältlich"
                     },
@@ -5460,6 +5463,9 @@
             },
             "friture-vegetarian": {
                 "mappings": {
+                    "0": {
+                        "then": "Nur vegetarische Snacks und Burger erhältlich"
+                    },
                     "1": {
                         "then": "Vegetarische Snacks sind erhältlich"
                     },
