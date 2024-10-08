@@ -43,7 +43,7 @@
   import ThemeIntroPanel from "./ThemeIntroPanel.svelte"
   import Marker from "../Map/Marker.svelte"
   import LogoutButton from "../Base/LogoutButton.svelte"
-  import { BoltIcon } from "@babeard/svelte-heroicons/mini"
+  import { BoltIcon, ShareIcon } from "@babeard/svelte-heroicons/mini"
   import Copyright from "../../assets/svg/Copyright.svelte"
   import Pencil from "../../assets/svg/Pencil.svelte"
   import SidebarUnit from "../Base/SidebarUnit.svelte"
@@ -60,6 +60,7 @@
   let featureSwitches = state.featureSwitches
   let showHome = featureSwitches.featureSwitchBackToThemeOverview
   let pg = state.guistate.pageStates
+  let location = state.mapProperties.location
   export let onlyLink: boolean
   const t = Translations.t.general.menu
 </script>
@@ -236,6 +237,8 @@
       <PanoramaxLink large={false} mapProperties={state.mapProperties} />
       <MapillaryLink large={false} mapProperties={state.mapProperties} />
     </If>
+
+    <a class="flex sidebar-button" href="geo:{$location.lat},{$location.lon}"><ShareIcon /><Tr t={t.openHereDifferentApp}/></a>
 
   </SidebarUnit>
 
