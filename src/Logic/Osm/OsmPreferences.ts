@@ -41,7 +41,7 @@ export class OsmPreferences {
 
     private initPreference(key: string, value: string = undefined): UIEventSource<string> {
         if (this.preferences[key] !== undefined) {
-            if(value !== undefined){
+            if (value !== undefined) {
                 this.preferences[key].set(value)
             }
             return this.preferences[key]
@@ -62,6 +62,9 @@ export class OsmPreferences {
         this.seenKeys = Object.keys(prefs)
         const legacy = OsmPreferences.getLegacyCombinedItems(prefs)
         const merged = OsmPreferences.mergeDict(prefs)
+        if(Object.keys(legacy).length > 0){
+            await this.removeLegacy(legacy)
+        }
         for (const key in merged) {
             this.initPreference(key, prefs[key])
         }
@@ -119,6 +122,15 @@ export class OsmPreferences {
         this.removeAllWithPrefix("")
     }
 
+    public async removeLegacy(legacyDict: Record<string, string>) {
+        for (const k in legacyDict) {
+            const v = legacyDict[k]
+            console.log("Upgrading legacy preference",k )
+            await this.removeAllWithPrefix(k)
+            this.osmConnection.getPreference(k).set(v)
+        }
+    }
+
     /**
      *
      * OsmPreferences.mergeDict({abc: "123", def: "123", "def:0": "456", "def:1":"789"}) // => {abc: "123", def: "123456789"}
@@ -129,7 +141,7 @@ export class OsmPreferences {
         const allKeys: string[] = Object.keys(dict)
         const normalKeys = allKeys.filter(k => !k.match(/[a-z-_0-9A-Z]*:[0-9]+/))
         for (const normalKey of normalKeys) {
-            if(normalKey.match(/-combined-[0-9]*$/) || normalKey.match(/-combined-length$/)){
+            if (normalKey.match(/-combined-[0-9]*$/) || normalKey.match(/-combined-length$/)) {
                 // Ignore legacy keys
                 continue
             }
@@ -139,6 +151,7 @@ export class OsmPreferences {
         }
         return newDict
     }
+
 
     /**
      * Gets all items which have a 'combined'-string, the legacy long preferences
@@ -158,7 +171,7 @@ export class OsmPreferences {
     public static getLegacyCombinedItems(dict: Record<string, string>): Record<string, string> {
         const merged: Record<string, string> = {}
         const keys = Object.keys(dict)
-        const toCheck =Utils.NoNullInplace( Utils.Dedup(keys.map(k => k.match(/(.*)-combined-[0-9]+$/)?.[1])))
+        const toCheck = Utils.NoNullInplace(Utils.Dedup(keys.map(k => k.match(/(.*)-combined-[0-9]+$/)?.[1])))
         for (const key of toCheck) {
             let i = 0
             let str = ""
@@ -170,10 +183,9 @@ export class OsmPreferences {
             } while (v !== undefined)
             merged[key] = str
         }
-
-
         return merged
     }
+
 
     /**
      * Bulk-downloads all preferences
@@ -217,7 +229,7 @@ export class OsmPreferences {
      *
      */
     private static keysStartingWith(allKeys: string[], key: string): string[] {
-        const keys = allKeys.filter(k =>  k === key || k.match(new RegExp(key + ":[0-9]+")))
+        const keys = allKeys.filter(k => k === key || k.match(new RegExp(key + ":[0-9]+")))
         keys.sort()
         return keys
     }
@@ -242,6 +254,7 @@ export class OsmPreferences {
         while (v.length > 0) {
             await this.uploadKeyDirectly(`${k}:${i}`, v.slice(0, 255))
             v = v.slice(255)
+            i++
         }
 
     }
@@ -333,12 +346,5 @@ export class OsmPreferences {
         }
     }
 
-    getExistingPreference(key: string, defaultValue: undefined, prefix: string): UIEventSource<string> {
-        if (prefix) {
-            key = prefix + key
-        }
-        key = key.replace(/[:/"' {}.%\\]/g, "")
-        return this.preferences[key]
 
-    }
 }
