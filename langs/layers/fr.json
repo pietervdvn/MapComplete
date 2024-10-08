@@ -3737,13 +3737,13 @@
             },
             "friture-vegan": {
                 "mappings": {
-                    "0": {
+                    "1": {
                         "then": "Des collations végétaliens sont disponibles"
                     },
-                    "1": {
+                    "2": {
                         "then": "Quelques snacks végétaliens seulement"
                     },
-                    "2": {
+                    "3": {
                         "then": "Pas d'en-cas végétaliens disponibles"
                     }
                 },
@@ -3751,13 +3751,13 @@
             },
             "friture-vegetarian": {
                 "mappings": {
-                    "0": {
+                    "1": {
                         "then": "Des collations végétariens sont disponibles"
                     },
-                    "1": {
+                    "2": {
                         "then": "Quelques snacks végétariens seulement"
                     },
-                    "2": {
+                    "3": {
                         "then": "Pas d'en-cas végétariens disponibles"
                     }
                 },
