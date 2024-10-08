@@ -72,14 +72,6 @@
         },
         "osmLinkTooltip": "履歴とその他の編集オプションについては、OpenStreetMapのこのオブジェクトを参照してください",
         "pickLanguage": "言語を選択します: ",
-        "questions": {
-            "emailIs": "この{category}の電子メール・アドレスは<a href=\"mailto:{email}\" target=\"_blank\">{email}</a>です",
-            "emailOf": "{category} の電子メールアドレスは何ですか?",
-            "phoneNumberIs": "この {category} の電話番号は<a target=\"_blank\">{phone}</a>です。",
-            "phoneNumberOf": "{category} の電話番号は何番ですか?",
-            "websiteIs": "Webサイト:<a href=\"{website}\" target=\"_blank\">{website}</a>",
-            "websiteOf": "{category} のウェブサイトはどこですか?"
-        },
         "readYourMessages": "新しいポイントを追加する前に、OpenStreetMapのメッセージをすべて読んでください。",
         "returnToTheMap": "マップに戻る",
         "save": "保存",

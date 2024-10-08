@@ -295,14 +295,6 @@
             "skippedMultiple": "Heu saltat {skipped} pregutnes",
             "skippedOne": "Heu saltat una pregunta"
         },
-        "questions": {
-            "emailIs": "L'adreça de correu d'aquesta {category} és <a href=\"mailto:{email}\" target=\"_blank\">{email}</a>",
-            "emailOf": "Quina és l'adreça de correu-e de {category}?",
-            "phoneNumberIs": "El número de telèfon de {category} és <a href='tel:{phone}' target='_blank'>{phone}</a>",
-            "phoneNumberOf": "Quin és el telèfon de {category}?",
-            "websiteIs": "Pàgina web: <a href=\"{website}\" target=\"_blank\">{website}</a>",
-            "websiteOf": "Quina és la pàgina web de {category}?"
-        },
         "readYourMessages": "Per favor, llegeix tots els teus missatges d'OpenStreetMap abans d'afegir nous punts.",
         "removeLocationHistory": "Esborrar l'historial d'ubicació",
         "returnToTheMap": "Tornar al mapa",

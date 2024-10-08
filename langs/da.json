@@ -274,14 +274,6 @@
             "skippedMultiple": "Du sprang over {skipped} spørgsmål",
             "skippedOne": "Du sprang over ét spørgsmål"
         },
-        "questions": {
-            "emailIs": "E-mailadressen for denne {category} er <a href=\"mailto:{email}\" target=\"_blank\">{email}</a>",
-            "emailOf": "Hvad er e-mailadressen for {category}?",
-            "phoneNumberIs": "Telefonnummeret for denne/dette {category} er <a target=\"_blank\">{phone}</a>",
-            "phoneNumberOf": "Hvad er telefonnummeret for {category}?",
-            "websiteIs": "Hjemmeside: <a href=\"{website}\" target=\"_blank\">{website}</a>",
-            "websiteOf": "Hvad er hjemmesiden for {category}?"
-        },
         "readYourMessages": "Læs venligst alle dine OpenStreetMap beskeder før du tilføjer et nyt punkt.",
         "removeLocationHistory": "Slet placeringshistorikken",
         "returnToTheMap": "Vend tilbage til kortet",

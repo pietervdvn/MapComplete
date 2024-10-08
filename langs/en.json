@@ -387,14 +387,6 @@
             "skippedMultiple": "You skipped {skipped} questions",
             "skippedOne": "You skipped one question"
         },
-        "questions": {
-            "emailIs": "The email address of this {category} is <a href='mailto:{email}' target='_blank'>{email}</a>",
-            "emailOf": "What is the email address of {category}?",
-            "phoneNumberIs": "The phone number of this {category} is <a href='tel:{phone}' target='_blank'>{phone}</a>",
-            "phoneNumberOf": "What is the phone number of {category}?",
-            "websiteIs": "Website: <a href='{website}' target='_blank'>{website}</a>",
-            "websiteOf": "What is the website of {category}?"
-        },
         "readYourMessages": "Please, read all your OpenStreetMap-messages before adding a new feature.",
         "removeLocationHistory": "Delete the location history",
         "retry": "Retry",

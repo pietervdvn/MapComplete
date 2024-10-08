@@ -319,14 +319,6 @@
             "skippedMultiple": "Je hebt {skipped} vragen overgeslaan",
             "skippedOne": "Je hebt één vraag beantwoord"
         },
-        "questions": {
-            "emailIs": "Het email-adres van {category} is <a href=\"mailto:{email}\" target=\"_blank\">{email}</a>",
-            "emailOf": "Wat is het email-adres van {category}?",
-            "phoneNumberIs": "Het telefoonnummer van {category} is <a href='tel:{phone}' target='_blank'>{phone}</a>",
-            "phoneNumberOf": "Wat is het telefoonnummer van {category}?",
-            "websiteIs": "Website: <a href=\"{website}\" target=\"_blank\">{website}</a>",
-            "websiteOf": "Wat is de website van {category}?"
-        },
         "readYourMessages": "Gelieve eerst je berichten op OpenStreetMap te lezen alvorens nieuwe objecten toe te voegen.",
         "removeLocationHistory": "Verwijder de geschiedenis aan locaties",
         "returnToTheMap": "Ga terug naar de kaart",

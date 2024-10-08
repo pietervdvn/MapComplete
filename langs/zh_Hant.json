@@ -373,14 +373,6 @@
             "skippedMultiple": "你跳過 {skipped} 問題",
             "skippedOne": "你跳過一個問題"
         },
-        "questions": {
-            "emailIs": "{category} 的電子郵件地址是<a href=\"mailto:{email}\" target=\"_blank\">{email}</a>",
-            "emailOf": "{category} 的電子郵件地址是？",
-            "phoneNumberIs": "此 {category} 的電話號碼為 <a href='tel:{phone}' target='_blank'>{phone}</a>",
-            "phoneNumberOf": "{category} 的電話號碼是？",
-            "websiteIs": "網站：<a href=\"{website}\" target=\"_blank\">{website}</a>",
-            "websiteOf": "{category} 的網站網址是？"
-        },
         "readYourMessages": "請先閱讀開放街圖訊息之前再來新增新圖徵。",
         "removeLocationHistory": "刪除位置歷史",
         "retry": "重試",

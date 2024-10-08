@@ -175,14 +175,6 @@
         },
         "pickLanguage": "Nyelv kiválasztása: ",
         "poweredByOsm": "Motor: OpenStreetMap",
-        "questions": {
-            "emailIs": "Ezen {category} e-mail-címe: <a href=\"mailto:{email}\" target=\"_blank\">{email}</a>",
-            "emailOf": "Mi az e-mail-címe ennek ({category})?",
-            "phoneNumberIs": "Ezen {category} telefonszáma: <a target=\"_blank\">{phone}</a>",
-            "phoneNumberOf": "Mi a telefonszáma ennek ({category})?",
-            "websiteIs": "Weboldal: <a href=\"{website}\" target=\"_blank\">{website}</a>",
-            "websiteOf": "Mi a weboldala ennek ({category})?"
-        },
         "readYourMessages": "Kérjük, új térképelem hozzáadása előtt olvasd el az összes OpenStreetMap-üzeneted.",
         "removeLocationHistory": "Helyelőzmények törlése",
         "returnToTheMap": "Vissza a térképhez",

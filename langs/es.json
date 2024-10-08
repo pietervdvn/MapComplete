@@ -385,14 +385,6 @@
             "skippedMultiple": "Te has saltado {skipped} preguntas",
             "skippedOne": "Te has saltado una pregunta"
         },
-        "questions": {
-            "emailIs": "La dirección de correo electrónico de {category} es <a href='mailto:{email}' target='_blank'>{email}</a>",
-            "emailOf": "¿Qué dirección de correo electrónico tiene {category}?",
-            "phoneNumberIs": "El número de teléfono de esta {category} es <a href='tel:{phone}' target='_blank'>{phone}</a>",
-            "phoneNumberOf": "Qué teléfono tiene {category}?",
-            "websiteIs": "Página web: <a href='{website}' target='_blank'>{website}</a>",
-            "websiteOf": "Cual es la página web de {category}?"
-        },
         "readYourMessages": "Lee todos tus mensajes de OpenStreetMap antes de añadir nuevos elementos.",
         "removeLocationHistory": "Eliminar el historial de ubicaciones",
         "retry": "Reintentar",
