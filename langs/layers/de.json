@@ -5397,7 +5397,7 @@
             "delivery": {
                 "mappings": {
                     "0": {
-                        "then": "Dieses Unternehmen liefert nach Hause (eventuell über eine dritte Partei)"
+                        "then": "Dieses Unternehmen liefert nach Hause (möglicherweise über eine dritte Partei)"
                     },
                     "1": {
                         "then": "Dieses Unternehmen liefert nicht nach Hause"
