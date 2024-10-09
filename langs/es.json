@@ -206,6 +206,7 @@
             "openPanoramax": "Abrir Panoramax aquí",
             "openThemeDocumentation": "Abrir la documentación para el mapa temático {name}",
             "panoramaxHelp": "<b>Panoramax</b> es un servicio en línea que recoge imágenes a pie de calle y las ofrece bajo una licencia libre. Los colaboradores pueden utilizar estas imágenes para mejorar OpenStreetMap",
+            "panoramaxLicenseCCBYSA": "Tus fotos son publicadas bajo CC-BY-SA - todos pueden reutilizar tu imagen si mencionan tu nombre",
             "seeOnMapillary": "Vea esta imagen en Mapillary",
             "themeBy": "Tema mantenido por {author}",
             "title": "Derechos de autor y atribución",
@@ -309,6 +310,7 @@
             "aboutMapComplete": "Sobre MapComplete",
             "filter": "Filtrar datos",
             "moreUtilsTitle": "Descubrir más",
+            "openHereDifferentApp": "Abrir la ubicación actual en otras aplicaciones",
             "showIntroduction": "Mostrar introducción",
             "title": "Menú"
         },
@@ -571,6 +573,10 @@
         "selectItem": "Seleccione el PDI más cercano al centro del mapa (cruz). Solo cuando se utiliza la navegación por teclado",
         "selectItem2": "Seleccione el PDI que es el segundo elemento más cercano al centro del mapa (cruz). Solo cuando se utiliza la navegación mediante el teclado",
         "selectItem3": "Seleccione el PDI que es el tercer elemento más cercano al centro del mapa (cruz). Solo cuando se utiliza la navegación mediante el teclado",
+        "selectItemI": "Seleccione el PDI que es el {i}o elemento más cercano al centro del mapa (cruz). Solo cuando se utiliza en la navegación por teclado",
+        "selectMap": "Establecer el fondo de un mapa desde fuentes externas. Alterna entre las dos mejores capas disponibles",
+        "selectMapnik": "Establecer la capa de fondo a OpenStreetMap-carto",
+        "selectOsmbasedmap": "Establecer la capa de fondo en el mapa basado en OpenStreetMap (o desactivar la capa de fondo)",
         "selectSearch": "Selecciona la barra de búsqueda para buscar ubicaciones",
         "shakePhone": "Agitar tu teléfono",
         "title": "Atajos de teclado",
@@ -587,7 +593,8 @@
             "failed": "Ha fallado la búsqueda de imágenes de {service}",
             "link": "Esta imagen muestra el objeto",
             "noNearbyImages": "No se han encontrado imágenes cercanas",
-            "seeNearby": "Explorar fotos cercanas"
+            "seeNearby": "Explorar fotos cercanas",
+            "title": "Imágenes de streetview cercanas"
         },
         "pleaseLogin": "Accede para cargar una imagen",
         "processing": "El servidor está procesando tu imagen",
@@ -795,8 +802,10 @@
     },
     "unknown": {
         "clear": "Borrar respuesta",
+        "explanation": "Borrar esta información si la respuesta actual es incorrecta pero el valor real no se conoce. No se eliminará ninguna otra información.",
         "keep": "Mantener respuesta",
         "markUnknown": "Marcar como desconocido",
+        "removedKeys": "Se eliminarán las siguientes claves:",
         "title": "¿Marcar como desconocido?"
     },
     "userinfo": {
@@ -824,6 +833,8 @@
             "noAt": "Una dirección de correo electrónico debe de contener un @"
         },
         "fediverse": {
+            "description": "Un identificador fediverse, a menudo @username@server.tld",
+            "feedback": "Un identificador fediverse consiste en @username@server.tld o es un enlace a un perfil",
             "invalidHost": "{host} es un nombre de host no válido",
             "onYourServer": "Ver y seguir en tu servidor"
         },
@@ -881,7 +892,9 @@
             "spamSite": "{host} es considerado un sitio web de baja calidad. No se permite usar este sitio web."
         },
         "wikidata": {
-            "description": "Un identificador de Wikidata"
+            "description": "Un identificador de Wikidata",
+            "empty": "Por favor, introduzca algunas entradas en wikidata",
+            "startsWithQ": "Un identificador wikidata comienza con Q y es seguido por un número"
         }
     }
 }
