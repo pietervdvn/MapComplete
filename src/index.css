@@ -68,7 +68,7 @@
 
 @font-face {
     font-family: "Source Sans Pro";
-    src: url("./assets/source-sans-pro.regular.ttf") format("woff");
+    src: url("../assets/fonts/source-sans-pro.regular.ttf") format("woff");
 }
 
 /***********************************************************************\
