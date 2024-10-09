@@ -72,7 +72,7 @@ export class Changes {
         this.backend = state.osmConnection.Backend()
         this._reportError = reportError
         this._changesetHandler = new ChangesetHandler(
-            state.featureSwitches.featureSwitchIsTesting,
+            state.featureSwitches?.featureSwitchIsTesting ?? new ImmutableStore(false),
             state.osmConnection,
             state.featureProperties,
             this,
@@ -837,7 +837,12 @@ export class Changes {
             )
 
             // We keep all the refused changes to try them again
-            this.pendingChanges.setData(refusedChanges.flatMap((c) => c))
+            this.pendingChanges.setData(refusedChanges.flatMap((c) => c).filter(c => {
+                if(c.id === null || c.id === undefined){
+                    return false
+                }
+                return true
+            }))
         } catch (e) {
             console.error(
                 "Could not handle changes - probably an old, pending changeset in localstorage with an invalid format; erasing those",
