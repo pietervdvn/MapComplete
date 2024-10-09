@@ -5058,7 +5058,7 @@ input[type="range"].range-lg::-moz-range-thumb {
 @font-face {
   font-family: "Source Sans Pro";
 
-  src: url("/assets/source-sans-pro.regular.ttf") format("woff");
+  src: url("./assets/source-sans-pro.regular.ttf") format("woff");
 }
 
 /***********************************************************************\
