@@ -1036,7 +1036,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
         }
 
         if (extramessage) {
-            message += "(" + extramessage + ")"
+            message += " (" + extramessage + ")"
         }
 
         const stacktrace: string = new Error().stack
