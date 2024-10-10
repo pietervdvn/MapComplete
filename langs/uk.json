@@ -71,6 +71,14 @@
     },
     "general": {
         "backToIndex": "Переглянути всі тематичні карти",
+        "enableGeolocationForSafariLink": "Дізнайтеся, як увімкнути дозвіл на геолокацію в налаштуваннях",
+        "search": {
+            "editSearchSyncSettings": "Редагування налаштувань синхронізації",
+            "editThemeSync": "Редагування налаштувань синхронізації"
+        },
         "seeIndex": "Дивіться огляд з усіма тематичними картами"
+    },
+    "userinfo": {
+        "gotoSettings": "Перейдіть до своїх налаштувань на OpenStreetMap.org"
     }
 }
