@@ -165,6 +165,7 @@ export default class PanoramaxImageProvider extends ImageProvider {
 
 export class PanoramaxUploader implements ImageUploader {
     private readonly _panoramax: AuthorizedPanoramax
+    maxFileSizeInMegabytes = 100 * 1000 * 1000 // 100MB
 
     constructor(url: string, token: string) {
         this._panoramax = new AuthorizedPanoramax(url, token)
