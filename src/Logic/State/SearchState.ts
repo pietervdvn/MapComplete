@@ -135,12 +135,21 @@ export default class SearchState {
         }
     }
 
-    clickedOnMap(feature: Feature) {
+    async clickedOnMap(feature: Feature) {
         const osmid = feature.properties.osm_id
         const localElement = this.state.indexedFeatures.featuresById.data.get(osmid)
         if (localElement) {
             this.state.selectedElement.set(localElement)
             return
         }
+        // This feature might not be loaded because we zoomed out
+        const object = await this.state.osmObjectDownloader.DownloadObjectAsync(osmid)
+        if(object === "deleted"){
+            return
+        }
+        const f = object.asGeoJson()
+        this.state.indexedFeatures.addItem(f)
+        this.state.featureProperties.trackFeature(f)
+        this.state.selectedElement.set(f)
     }
 }

@@ -2,14 +2,14 @@ import { Store, UIEventSource } from "../../UIEventSource"
 import { FeatureSource, IndexedFeatureSource, UpdatableFeatureSource } from "../FeatureSource"
 import { Feature } from "geojson"
 import { Utils } from "../../../Utils"
+import { OsmFeature } from "../../../Models/OsmFeature"
 
 /**
  * The featureSourceMerger receives complete geometries from various sources.
  * If multiple sources contain the same object (as determined by 'id'), only one copy of them is retained
  */
 export default class FeatureSourceMerger<Src extends FeatureSource = FeatureSource>
-    implements IndexedFeatureSource
-{
+    implements IndexedFeatureSource {
     public features: UIEventSource<Feature[]> = new UIEventSource([])
     public readonly featuresById: Store<Map<string, Feature>>
     protected readonly _featuresById: UIEventSource<Map<string, Feature>>
@@ -48,6 +48,24 @@ export default class FeatureSourceMerger<Src extends FeatureSource = FeatureSour
 
     protected addDataFromSources(sources: Src[]) {
         this.addData(sources.map((s) => s.features.data))
+    }
+
+    /**
+     * Add the given feature if it isn't in the dictionary yet.
+     * Returns 'true' if this was a previously unseen item.
+     * If the item was already present, nothing will happen
+     */
+    public addItem(f: OsmFeature): boolean {
+        const id = f.properties.id
+
+        const all = this._featuresById.data
+        if (!all.has(id)) {
+            all.set(id, f)
+            this._featuresById.ping()
+            this.features.data.push(f)
+            this.features.ping()
+            return true
+        }
     }
 
     protected addData(sources: Feature[][]) {
@@ -100,14 +118,14 @@ export default class FeatureSourceMerger<Src extends FeatureSource = FeatureSour
 }
 
 export class UpdatableFeatureSourceMerger<
-        Src extends UpdatableFeatureSource = UpdatableFeatureSource
-    >
+    Src extends UpdatableFeatureSource = UpdatableFeatureSource
+>
     extends FeatureSourceMerger<Src>
-    implements IndexedFeatureSource, UpdatableFeatureSource
-{
+    implements IndexedFeatureSource, UpdatableFeatureSource {
     constructor(...sources: Src[]) {
         super(...sources)
     }
+
     async updateAsync() {
         await Promise.all(this._sources.map((src) => src.updateAsync()))
     }
