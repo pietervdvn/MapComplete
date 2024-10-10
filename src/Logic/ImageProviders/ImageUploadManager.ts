@@ -28,6 +28,7 @@ export class ImageUploadManager {
     private readonly _osmConnection: OsmConnection
     private readonly _changes: Changes
     public readonly isUploading: Store<boolean>
+    private readonly _reportError: (message: (string | Error | XMLHttpRequest), extramessage?: string) => Promise<void>
 
     constructor(
         layout: LayoutConfig,
@@ -37,6 +38,7 @@ export class ImageUploadManager {
         changes: Changes,
         gpsLocation: Store<GeolocationCoordinates | undefined>,
         allFeatures: IndexedFeatureSource,
+        reportError: (message: string | Error | XMLHttpRequest, extramessage?: string ) => Promise<void>
     ) {
         this._uploader = uploader
         this._featureProperties = featureProperties
@@ -45,6 +47,7 @@ export class ImageUploadManager {
         this._changes = changes
         this._indexedFeatures = allFeatures
         this._gps = gpsLocation
+        this._reportError = reportError
 
         const failed = this.getCounterFor(this._uploadFailed, "*")
         const done = this.getCounterFor(this._uploadFinished, "*")
@@ -163,6 +166,7 @@ export class ImageUploadManager {
             } catch (e) {
                 console.error("Could again not upload image due to", e)
                 this.increaseCountFor(this._uploadFailed, featureId)
+                await this._reportError(e, JSON.stringify({ctx:"While uploading an image in the Image Upload Manager", featureId, author, targetKey}))
                 return undefined
             }
         }

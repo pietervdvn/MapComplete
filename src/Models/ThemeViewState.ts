@@ -369,7 +369,8 @@ export default class ThemeViewState implements SpecialVisualizationState {
             this.osmConnection,
             this.changes,
             this.geolocation.geolocationState.currentGPSLocation,
-            this.indexedFeatures
+            this.indexedFeatures,
+            this.reportError
         )
         this.favourites = new FavouritesFeatureSource(this)
         const longAgo = new Date()
