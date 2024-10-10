@@ -5005,7 +5005,48 @@
         }
     },
     "icons": {
-        "description": "Vrstva sloužící jako knihovna pro ikony-značky, zejména pro zobrazení jako odznak vedle bodu zájmu"
+        "description": "Vrstva sloužící jako knihovna pro ikony-značky, zejména pro zobrazení jako odznak vedle bodu zájmu",
+        "tagRenderings": {
+            "osmlink": {
+                "mappings": {
+                    "1": {
+                        "then": {
+                            "special": {
+                                "arialabel": "Otevřít na openstreetmap.org"
+                            }
+                        }
+                    },
+                    "2": {
+                        "then": {
+                            "special": {
+                                "arialabel": "Otevřít na openstreetmap.org"
+                            }
+                        }
+                    }
+                },
+                "render": {
+                    "special": {
+                        "arialabel": "Otevřít na openstreetmap.org"
+                    }
+                }
+            },
+            "phonelink": {
+                "mappings": {
+                    "0": {
+                        "then": {
+                            "special": {
+                                "arialabel": "telefon"
+                            }
+                        }
+                    }
+                },
+                "render": {
+                    "special": {
+                        "arialabel": "telefon"
+                    }
+                }
+            }
+        }
     },
     "indoors": {
         "description": "Základní mapování interiérů: zobrazuje obrysy místností",
@@ -5817,6 +5858,11 @@
                 }
             },
             "render": "Poznámka"
+        },
+        "titleIcons": {
+            "0": {
+                "ariaLabel": "Zobrazit na OpenStreetMap.org"
+            }
         }
     },
     "observation_tower": {
@@ -7532,6 +7578,14 @@
             "render": "Škola <i>{name}</i>"
         }
     },
+    "search": {
+        "description": "Soukromá vrstva zobrazující výsledky hledání",
+        "tagRenderings": {
+            "intro": {
+                "render": "Výsledek hledání"
+            }
+        }
+    },
     "selected_element": {
         "description": "Zvýrazní aktuálně vybraný prvek. Přepište tuto vrstvu, aby měla různé barvy"
     },
@@ -8299,6 +8353,11 @@
             "render": "Pouliční lampa"
         }
     },
+    "summary": {
+        "title": {
+            "render": "Souhrn"
+        }
+    },
     "surveillance_camera": {
         "description": "Tato vrstva zobrazuje sledovací kamery a umožňuje přispěvateli aktualizovat informace a přidávat nové kamery",
         "name": "Bezpečnostní kamery",
@@ -8591,6 +8650,18 @@
             }
         },
         "tagRenderings": {
+            "gender_segregated": {
+                "mappings": {
+                    "0": {
+                        "then": "K dispozici je oddělený, označený prostor pro muže a ženy"
+                    },
+                    "1": {
+                        "then": "Neexistuje žádný oddělený, označený prostor pro muže a ženy"
+                    }
+                },
+                "question": "Jsou tyto toalety rozděleny podle pohlaví?",
+                "questionHint": "Existují samostatné stánky nebo oddělené prostory pro muže a ženy a jsou jako takové označeny?"
+            },
             "opening_hours_24_7": {
                 "override": {
                     "question": "Kdy jsou tyto toalety otevřeny?"
@@ -9229,6 +9300,20 @@
     "usersettings": {
         "description": "Speciální vrstva, která není určena k zobrazení na mapě, ale slouží k nastavení uživatelských nastavení",
         "tagRenderings": {
+            "a11y-features": {
+                "mappings": {
+                    "0": {
+                        "then": "Povolení funkcí přístupnosti při použití kláves se šipkami k navigaci na mapě"
+                    }
+                }
+            },
+            "add-new-feature": {
+                "mappings": {
+                    "4": {
+                        "then": "Po kliknutí pravým tlačítkem myši nebo dlouhém stisknutí mapy se zobrazí značka, kam lze přidat nový prvek. Kromě toho se vlevo dole zobrazí tlačítko"
+                    }
+                }
+            },
             "all-questions-at-once": {
                 "mappings": {
                     "0": {
@@ -9331,6 +9416,16 @@
                     }
                 }
             },
+            "more_privacy": {
+                "mappings": {
+                    "0": {
+                        "then": "Při provádění změn v OpenStreetMap neuvádějte, jak daleko jste byli od změněných objektů."
+                    },
+                    "1": {
+                        "then": "Při provádění změn v OpenStreetMap zhruba uveďte, jak daleko jste byli od změněných objektů. To pomůže ostatním přispěvatelům pochopit, jak jste změnu provedli"
+                    }
+                }
+            },
             "picture-license": {
                 "mappings": {
                     "0": {
@@ -9358,6 +9453,14 @@
                         }
                     }
                 }
+            },
+            "scalebar": {
+                "mappings": {
+                    "1": {
+                        "then": "Skrytí panelu měřítka"
+                    }
+                },
+                "question": "Má být na mapě zobrazeno měřítko?"
             },
             "settings-link": {
                 "render": {
@@ -9401,6 +9504,19 @@
                 },
                 "question": "Zobrazit nezpracované/raw tagy OpenStreetMap?",
                 "questionHint": "<b>Tagy</b> jsou atributy, které má každý element. Jedná se o technické údaje, které jsou uloženy v databázi. K úpravám pomocí MapComplete tyto informace nepotřebujete, ale pokročilí uživatelé by je mohli chtít použít jako referenci."
+            },
+            "sync-visited-themes": {
+                "mappings": {
+                    "0": {
+                        "then": "Uložit navštívené tematické mapy a synchronizovat je prostřednictvím openstreetmap.org. OpenStreetMap a všechny aplikace, které používáte, mohou tuto historii vidět"
+                    }
+                }
+            },
+            "title-editing": {
+                "render": "<h3>Úprava nastavení</h3>"
+            },
+            "title-privacy-legal": {
+                "render": "<h3>Soukromí a právní záležitosti</h3>"
             },
             "translation-completeness": {
                 "mappings": {
