@@ -814,7 +814,7 @@
           "if": "historic=",
           "alsoShowIf": "historic!=memorial",
           "then": {
-            "en": "This artwork does not serve as a bench",
+            "en": "This artwork does not serve as a memorial",
             "de": "Dieses Kunstwerk dient nicht als Sitzbank",
             "fr": "Cette œuvre ne sert pas de banc",
             "cs": "Toto dílo neslouží jako lavička",
