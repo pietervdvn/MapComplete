@@ -543,7 +543,7 @@
                         "then": "This artwork also serves as a memorial"
                     },
                     "1": {
-                        "then": "This artwork does not serve as a bench"
+                        "then": "This artwork does not serve as a memorial"
                     }
                 },
                 "question": "Does this artwork serve as a memorial?"
