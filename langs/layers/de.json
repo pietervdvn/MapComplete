@@ -543,7 +543,7 @@
                         "then": "Dieses Kunstwerk dient auch als Mahnmal"
                     },
                     "1": {
-                        "then": "Dieses Kunstwerk dient nicht als Sitzbank"
+                        "then": "Dieses Kunstwerk dient nicht als Denkmal"
                     }
                 },
                 "question": "Dient dieses Kunstwerk als Mahnmal?"
