@@ -177,6 +177,12 @@
                             "mappings": {
                                 "0": {
                                     "then": "<span class='subtle'>У <a href='#{_embedding_feature:id}'>що містить об'єкт</a> зазначено, що це</span> загальнодоступне<br/>{_embedding_feature:access:description}"
+                                },
+                                "1": {
+                                    "then": "<span class='subtle'>У <a href='#{_embedding_feature:id}'>функції</a> зазначено, що </span> потрібен дозвіл для доступу<br/>{_embedding_feature:access:description}"
+                                },
+                                "2": {
+                                    "then": "<span class='subtle'>У <a href='#{_embedding_feature:id}'>що містить об'єкт</a> зазначено, що вона</span> доступна лише клієнтам<br/>{_embedding_feature:access:description}"
                                 }
                             }
                         }
