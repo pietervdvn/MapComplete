@@ -2072,6 +2072,9 @@
                     }
                 }
             }
+        },
+        "title": {
+            "render": "Настройки"
         }
     },
     "vending_machine": {
