@@ -60,9 +60,6 @@
       if (flayer.layerDef.filterIsSameAs) {
         continue
       }
-      if (id.indexOf("note_import") >= 0) {
-        continue
-      }
       if (Constants.added_by_default.indexOf(<any>id) >= 0) {
         continue
       }

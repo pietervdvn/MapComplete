@@ -459,7 +459,6 @@ export class GenerateDocs extends Script {
         const allLayers = AllSharedLayers.getSharedLayersConfigs()
         const layersToShow = theme.layers.filter(
             (l) =>
-                !l.id.startsWith("note_import_") &&
                 l.id !== "favourite" &&
                 Constants.added_by_default.indexOf(<any>l.id) < 0
         )

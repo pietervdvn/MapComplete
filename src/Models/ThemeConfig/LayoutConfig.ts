@@ -23,6 +23,7 @@ export class MinimalLayoutInformation {
     keywords?: Record<string, string[]>
     layers: string[]
 }
+
 /**
  * Minimal information about a theme
  **/
@@ -36,7 +37,6 @@ export class LayoutInformation {
     hideFromOverview?: boolean
     keywords?: (Translatable | Translation)[]
 }
-
 
 
 export default class LayoutConfig implements LayoutInformation {
@@ -195,7 +195,7 @@ export default class LayoutConfig implements LayoutInformation {
                 icon: "./assets/svg/pop-out.svg",
                 href: "https://{basepath}/{theme}.html?lat={lat}&lon={lon}&z={zoom}&language={language}",
                 newTab: true,
-                requirements: ["iframe", "no-welcome-message"],
+                requirements: ["iframe", "no-welcome-message"]
             },
             context + ".extraLink"
         )
@@ -296,12 +296,7 @@ export default class LayoutConfig implements LayoutInformation {
                         }
                         untranslated
                             .get(ln)
-                            .push(
-                                translation.context.replace(
-                                    /^note_import_[a-zA-Z0-9_]*/,
-                                    "note_import"
-                                )
-                            )
+                            .push(translation.context)
                     }
                 })
             },
@@ -315,6 +310,7 @@ export default class LayoutConfig implements LayoutInformation {
 
         return { untranslated, total }
     }
+
     public getMatchingLayer(tags: Record<string, string>): LayerConfig | undefined {
         if (tags === undefined) {
             return undefined
@@ -348,7 +344,7 @@ export default class LayoutConfig implements LayoutInformation {
         // The 'favourite'-layer contains pretty much all images as it bundles all layers, so we exclude it
         const jsonNoFavourites = {
             ...json,
-            layers: json.layers.filter((l) => l["id"] !== "favourite"),
+            layers: json.layers.filter((l) => l["id"] !== "favourite")
         }
         const usedImages = jsonNoFavourites._usedImages
         usedImages.sort()

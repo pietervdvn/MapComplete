@@ -16,7 +16,6 @@ export default class NoElementsInViewDetector {
         const minZoom = Math.min(
             ...themeViewState.layout.layers
                 .filter((l) => Constants.priviliged_layers.indexOf(<any>l.id) < 0)
-                .filter((l) => !l.id.startsWith("note_import"))
                 .map((l) => l.minzoom)
         )
         const mapProperties = themeViewState.mapProperties

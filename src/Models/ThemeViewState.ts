@@ -737,11 +737,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
         /**
          * MaxZoom for the summary layer
          */
-        const normalLayers = this.layout.layers.filter(
-            (l) =>
-                Constants.priviliged_layers.indexOf(<any>l.id) < 0 &&
-                !l.id.startsWith("note_import"),
-        )
+        const normalLayers = this.layout.layers.filter(l => l.isNormal())
 
         const maxzoom = Math.min(...normalLayers.map((l) => l.minzoom))
 

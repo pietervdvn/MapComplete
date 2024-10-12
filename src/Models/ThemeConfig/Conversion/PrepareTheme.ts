@@ -1,27 +1,15 @@
-import {
-    Concat,
-    Conversion,
-    DesugaringContext,
-    DesugaringStep,
-    Each,
-    Fuse,
-    On,
-    Pass,
-    SetDefault,
-} from "./Conversion"
+import { Concat, Conversion, DesugaringContext, DesugaringStep, Each, Fuse, On, Pass, SetDefault } from "./Conversion"
 import { LayoutConfigJson } from "../Json/LayoutConfigJson"
 import { PrepareLayer } from "./PrepareLayer"
 import { LayerConfigJson } from "../Json/LayerConfigJson"
 import { Utils } from "../../../Utils"
 import Constants from "../../Constants"
-import CreateNoteImportLayer from "./CreateNoteImportLayer"
 import LayerConfig from "../LayerConfig"
 import { TagRenderingConfigJson } from "../Json/TagRenderingConfigJson"
 import DependencyCalculator from "../DependencyCalculator"
 import { AddContextToTranslations } from "./AddContextToTranslations"
 import ValidationUtils from "./ValidationUtils"
 import { ConversionContext } from "./ConversionContext"
-import { PrevalidateTheme } from "./Validation"
 
 class SubstituteLayer extends Conversion<string | LayerConfigJson, LayerConfigJson[]> {
     private readonly _state: DesugaringContext
@@ -40,7 +28,7 @@ class SubstituteLayer extends Conversion<string | LayerConfigJson, LayerConfigJs
 
         function reportNotFound(name: string) {
             const knownLayers = Array.from(state.sharedLayers.keys())
-            const withDistance = knownLayers.map((lname) => [
+            const withDistance:[string,number][] = knownLayers.map((lname) => [
                 lname,
                 Utils.levenshteinDistance(name, lname),
             ])
@@ -215,68 +203,6 @@ class AddDefaultLayers extends DesugaringStep<LayoutConfigJson> {
                 continue
             }
             json.layers.push(v)
-        }
-
-        return json
-    }
-}
-
-class AddImportLayers extends DesugaringStep<LayoutConfigJson> {
-    constructor() {
-        super(
-            "For every layer in the 'layers'-list, create a new layer which'll import notes. (Note that priviliged layers and layers which have a geojson-source set are ignored)",
-            ["layers"],
-            "AddImportLayers",
-        )
-    }
-
-    convert(json: LayoutConfigJson, context: ConversionContext): LayoutConfigJson {
-        if (!(json.enableNoteImports ?? true)) {
-            context.info(
-                "Not creating a note import layers for theme " + json.id + " as they are disabled",
-            )
-            return json
-        }
-
-        json = { ...json }
-        const allLayers: LayerConfigJson[] = <LayerConfigJson[]>json.layers
-        json.layers = [...json.layers]
-
-        const creator = new CreateNoteImportLayer()
-        for (let i1 = 0; i1 < allLayers.length; i1++) {
-            const layer = allLayers[i1]
-            if (layer.source === undefined) {
-                // Priviliged layers are skipped
-                continue
-            }
-
-            if (layer.source["geoJson"] !== undefined) {
-                // Layer which don't get their data from OSM are skipped
-                continue
-            }
-
-            if (layer.title === undefined || layer.name === undefined) {
-                // Anonymous layers and layers without popup are skipped
-                continue
-            }
-
-            if (layer.presets === undefined || layer.presets.length == 0) {
-                // A preset is needed to be able to generate a new point
-                continue
-            }
-
-            try {
-                const importLayerResult = creator.convert(
-                    layer,
-                    context.inOperation(this.name).enter(i1),
-                )
-                if (importLayerResult !== undefined) {
-                    json.layers.push(importLayerResult)
-                }
-            } catch (e) {
-                console.error("Error", e)
-                context.err("Could not generate an import-layer for " + layer.id + " due to " + e)
-            }
         }
 
         return json
@@ -589,7 +515,6 @@ class PostvalidateTheme extends DesugaringStep<LayoutConfigJson> {
         for (const l of json.layers) {
             const layer = <LayerConfigJson>l
             const basedOn = <string>layer["_basedOn"]
-            const basedOnDef = this._state.sharedLayers.get(basedOn)
             if (!basedOn) {
                 continue
             }

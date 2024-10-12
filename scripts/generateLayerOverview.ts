@@ -304,9 +304,6 @@ class LayerOverviewUtils extends Script {
                 if(sharedLayers.has(l.id)){
                     continue
                 }
-                if(l.id.startsWith("note_import")){
-                    continue
-                }
                 LayerOverviewUtils.mergeKeywords(keywords, this.layerKeywords(l))
 
             }
