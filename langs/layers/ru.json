@@ -1976,6 +1976,13 @@
             "render": "Тропа"
         }
     },
+    "transit_routes": {
+        "tagRenderings": {
+            "via": {
+                "question": "Где находится конечный пункт этого автобусного маршрута?"
+            }
+        }
+    },
     "tree_node": {
         "name": "Дерево",
         "presets": {
