@@ -7,7 +7,8 @@ export interface ImageUploader {
     uploadImage(
         blob: File,
         currentGps: [number,number],
-        author: string
+        author: string,
+        noblur: boolean
     ): Promise<UploadResult>
 }
 

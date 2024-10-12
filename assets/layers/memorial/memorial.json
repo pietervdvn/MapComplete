@@ -91,7 +91,7 @@
     }
   ],
   "tagRenderings": [
-    "images",
+    "images_no_blur",
     {
       "id": "memorial-type",
       "labels": [

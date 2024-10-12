@@ -81,11 +81,10 @@ export class ImageUploadManager {
 
     public canBeUploaded(file: File): true | { error: Translation } {
         const sizeInBytes = file.size
-        const self = this
         if (sizeInBytes > this._uploader.maxFileSizeInMegabytes * 1000000) {
             const error = Translations.t.image.toBig.Subs({
                 actual_size: Math.floor(sizeInBytes / 1000000) + "MB",
-                max_size: self._uploader.maxFileSizeInMegabytes + "MB",
+                max_size: this._uploader.maxFileSizeInMegabytes + "MB",
             })
             return { error }
         }
@@ -102,7 +101,8 @@ export class ImageUploadManager {
     public async uploadImageAndApply(
         file: File,
         tagsStore: UIEventSource<OsmTags>,
-        targetKey?: string,
+        targetKey: string,
+        noblur: boolean,
     ): Promise<void> {
         const canBeUploaded = this.canBeUploaded(file)
         if (canBeUploaded !== true) {
@@ -120,6 +120,7 @@ export class ImageUploadManager {
             author,
             file,
             targetKey,
+            noblur
         )
         if (!uploadResult) {
             return
@@ -139,6 +140,7 @@ export class ImageUploadManager {
         author: string,
         blob: File,
         targetKey: string | undefined,
+        noblur: boolean
     ): Promise<UploadResult> {
         this.increaseCountFor(this._uploadStarted, featureId)
         let key: string
@@ -153,12 +155,12 @@ export class ImageUploadManager {
             location = GeoOperations.centerpointCoordinates(feature)
         }
         try {
-            ;({ key, value, absoluteUrl } = await this._uploader.uploadImage(blob, location, author))
+            ({ key, value, absoluteUrl } = await this._uploader.uploadImage(blob, location, author, noblur))
         } catch (e) {
             this.increaseCountFor(this._uploadRetried, featureId)
             console.error("Could not upload image, trying again:", e)
             try {
-                ;({ key, value , absoluteUrl} = await this._uploader.uploadImage(blob, location, author))
+                ({ key, value , absoluteUrl} = await this._uploader.uploadImage(blob, location, author, noblur))
                 this.increaseCountFor(this._uploadRetriedSuccess, featureId)
             } catch (e) {
                 console.error("Could again not upload image due to", e)

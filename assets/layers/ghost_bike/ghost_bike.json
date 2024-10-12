@@ -142,7 +142,7 @@
   ],
   "tagRenderings": [
     "preset_description",
-    "images",
+    "images_no_blur",
     {
       "question": {
         "en": "Whom is remembered by this ghost bike?",

@@ -20,6 +20,13 @@
       }
     },
     {
+      "id": "images_no_blur",
+      "description": "Same as `images`, but uploaded request to disable blurring to the panoramax server",
+      "render": {
+        "*": "{image_carousel()}{image_upload(,,,true)}"
+      }
+    },
+    {
       "id": "mapillary",
       "description": "Shows a button to open Mapillary on this location",
       "render": {

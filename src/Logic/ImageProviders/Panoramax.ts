@@ -167,12 +167,12 @@ export class PanoramaxUploader implements ImageUploader {
         this._panoramax = new AuthorizedPanoramax(url, token)
     }
 
-    async uploadImage(blob: File, currentGps: [number, number], author: string): Promise<{
+    async uploadImage(blob: File, currentGps: [number, number], author: string,  noblur: boolean = false): Promise<{
         key: string;
         value: string;
         absoluteUrl: string
     }> {
-
+        // https://panoramax.openstreetmap.fr/api/docs/swagger#/
         const tags = await ExifReader.load(blob)
         const hasDate = tags.DateTime !== undefined
         const hasGPS = tags.GPSLatitude !== undefined && tags.GPSLongitude !== undefined
@@ -184,6 +184,7 @@ export class PanoramaxUploader implements ImageUploader {
         const img = <ImageData>await p.addImage(blob, defaultSequence, {
             lat: !hasGPS ? lat : undefined,
             lon: !hasGPS ? lon : undefined,
+            isBlurred: noblur,
             datetime: !hasDate ? new Date().toISOString() : undefined,
             exifOverride: {
                 Artist: author,
