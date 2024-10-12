@@ -68,6 +68,10 @@
         },
         "error": "Что-то пошло не так",
         "fewChangesBefore": "Пожалуйста, ответьте на несколько вопросов о существующих точках, прежде чем добавить новую точку.",
+        "filterPanel": {
+            "disableAll": "Отключить все",
+            "enableAll": "Включить все"
+        },
         "getStartedLogin": "Войти с помощью OpenStreetMap, чтобы начать работу",
         "getStartedNewAccount": " или <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">создать новую учетную запись</a>",
         "goToInbox": "Открыть входящие сообщения",
