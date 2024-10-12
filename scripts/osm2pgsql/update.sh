@@ -2,6 +2,8 @@
 
 # Full database update. Downloads the latest from planet.osm.org, build update script, setup and seed it
 # Meant to be run with 'nohup'
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 nvm use 20.12.2
 npm run init # contains a 'npm run generate, which builds the layers'
 npm run generate:buildDbScript
