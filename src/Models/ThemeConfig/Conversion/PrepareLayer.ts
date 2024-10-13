@@ -860,12 +860,12 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
      * // should handle special case with a translated parameter
      * const spec = {"special": {"type":"image_upload", "label": {"en": "Add a picture to this object", "nl": "Voeg een afbeelding toe"}}}
      * const r = RewriteSpecial.convertIfNeeded(spec, ConversionContext.test())
-     * r // => {"en": "{image_upload(,Add a picture to this object)}", "nl": "{image_upload(,Voeg een afbeelding toe)}" }
+     * r // => {"en": "{image_upload(,Add a picture to this object,)}", "nl": "{image_upload(,Voeg een afbeelding toe,)}" }
      *
      * // should handle special case with a prefix and postfix
      * const spec = {"special": {"type":"image_upload" }, before: {"en": "PREFIX "}, after: {"en": " POSTFIX", nl: " Achtervoegsel"} }
      * const r = RewriteSpecial.convertIfNeeded(spec, ConversionContext.test())
-     * r // => {"en": "PREFIX {image_upload(,)} POSTFIX", "nl": "PREFIX {image_upload(,)} Achtervoegsel" }
+     * r // => {"en": "PREFIX {image_upload(,,)} POSTFIX", "nl": "PREFIX {image_upload(,,)} Achtervoegsel" }
      *
      * // should warn for unexpected keys
      * const context = ConversionContext.test()
