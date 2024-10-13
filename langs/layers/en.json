@@ -543,7 +543,7 @@
                         "then": "This artwork also serves as a memorial"
                     },
                     "1": {
-                        "then": "This artwork does not serve as a bench"
+                        "then": "This artwork does not serve as a memorial"
                     }
                 },
                 "question": "Does this artwork serve as a memorial?"
@@ -5397,7 +5397,7 @@
             "delivery": {
                 "mappings": {
                     "0": {
-                        "then": "This business does home delivery (eventually via a third party)"
+                        "then": "This business does home delivery (possibly via a third party)"
                     },
                     "1": {
                         "then": "This business does not deliver at home"

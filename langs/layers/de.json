@@ -543,7 +543,7 @@
                         "then": "Dieses Kunstwerk dient auch als Mahnmal"
                     },
                     "1": {
-                        "then": "Dieses Kunstwerk dient nicht als Sitzbank"
+                        "then": "Dieses Kunstwerk dient nicht als Denkmal"
                     }
                 },
                 "question": "Dient dieses Kunstwerk als Mahnmal?"
@@ -5397,7 +5397,7 @@
             "delivery": {
                 "mappings": {
                     "0": {
-                        "then": "Dieses Unternehmen liefert nach Hause (eventuell über eine dritte Partei)"
+                        "then": "Dieses Unternehmen liefert nach Hause (möglicherweise über eine dritte Partei)"
                     },
                     "1": {
                         "then": "Dieses Unternehmen liefert nicht nach Hause"
@@ -5446,6 +5446,9 @@
             },
             "friture-vegan": {
                 "mappings": {
+                    "0": {
+                        "then": "Nur vegane Snacks und Burger erhältlich"
+                    },
                     "1": {
                         "then": "Vegane Snacks sind erhältlich"
                     },
@@ -5460,6 +5463,9 @@
             },
             "friture-vegetarian": {
                 "mappings": {
+                    "0": {
+                        "then": "Nur vegetarische Snacks und Burger erhältlich"
+                    },
                     "1": {
                         "then": "Vegetarische Snacks sind erhältlich"
                     },
