@@ -120,11 +120,11 @@ export class ConversionContext {
         return new ConversionContext(this.messages, this.path, [...this.operation, key])
     }
 
-    warn(message: string) {
-        this.messages.push({ context: this, level: "warning", message })
+    warn(...message: (string | number)[]) {
+        this.messages.push({ context: this, level: "warning", message: message.join(" ") })
     }
 
-    err(...message: string[]) {
+    err(...message: (string | number)[]) {
         this._hasErrors = true
         this.messages.push({ context: this, level: "error", message: message.join(" ") })
     }

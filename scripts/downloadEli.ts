@@ -13,10 +13,13 @@ class DownloadEli extends Script {
         const url = "https://osmlab.github.io/editor-layer-index/imagery.geojson"
         // Target should use '.json' instead of '.geojson', as the latter cannot be imported by the build systems
         const target = args[0] ?? "public/assets/data/editor-layer-index.json"
+        const targetGlobal = args[1] ?? "src/assets/generated/editor-layer-index-global.json"
+
         const targetBing = args[0] ?? "src/assets/bing.json"
 
         const eli: Eli = await Utils.downloadJson(url)
         const keptLayers: EliEntry[] = []
+        const keptGlobalLayers: EliEntry[] = []
         console.log("Got", eli.features.length, "ELI-entries")
         for (let layer of eli.features) {
             const props = layer.properties
@@ -95,18 +98,26 @@ class DownloadEli extends Script {
             }
 
             layer = { properties: layer.properties, type: layer.type, geometry: layer.geometry }
-            keptLayers.push(layer)
+            if(layer.geometry === null){
+                keptGlobalLayers.push(layer)
+            }else{
+                keptLayers.push(layer)
+            }
         }
 
         const contents =
             '{"type":"FeatureCollection",\n  "features": [\n' +
             keptLayers
-                .filter((l) => l.properties.id !== "Bing")
                 .map((l) => JSON.stringify(l))
                 .join(",\n") +
             "\n]}"
 
-        const bing = keptLayers.find((l) => l.properties.id === "Bing")
+        const contentsGlobal =
+            keptGlobalLayers
+                .filter((l) => l.properties.id !== "Bing")
+                .map(l => l.properties)
+
+        const bing = keptGlobalLayers.find((l) => l.properties.id === "Bing")
         if (bing) {
             fs.writeFileSync(targetBing, JSON.stringify(bing), { encoding: "utf8" })
             console.log("Written", targetBing)
@@ -115,6 +126,9 @@ class DownloadEli extends Script {
         }
         fs.writeFileSync(target, contents, { encoding: "utf8" })
         console.log("Written", keptLayers.length + ", entries to the ELI")
+        fs.writeFileSync(targetGlobal,  JSON.stringify(contentsGlobal,null, "  "), { encoding: "utf8" })
+        console.log("Written", keptGlobalLayers.length + ", entries to the global ELI")
+
     }
 }
 
