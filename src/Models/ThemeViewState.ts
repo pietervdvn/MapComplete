@@ -1007,7 +1007,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
             console.error("Got (in themeViewSTate.reportError):", message, extramessage)
             return
         }
-        const isTesting = this.featureSwitchIsTesting.data
+        const isTesting = this.featureSwitchIsTesting?.data
         console.log(
             isTesting
                 ? ">>> _Not_ reporting error to report server as testmode is on"
