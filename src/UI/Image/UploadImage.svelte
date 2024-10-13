@@ -102,7 +102,7 @@
             <Tr t={t.addPicture} />
             {#if noBlur}
           <span class="subtle text-sm">
-          Faces will not be blurred
+            <Tr t={t.upload.noBlur}/>
           </span>
             {/if}
           </div>
