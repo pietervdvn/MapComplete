@@ -816,10 +816,7 @@
           "alsoShowIf": "historic!=memorial",
           "then": {
             "en": "This artwork does not serve as a memorial",
-            "de": "Dieses Kunstwerk dient nicht als Denkmal",
-            "fr": "Cette œuvre ne sert pas de banc",
-            "cs": "Toto dílo neslouží jako lavička",
-            "es": "Esta obra de arte no sirve como banco"
+            "de": "Dieses Kunstwerk dient nicht als Denkmal"
           }
         }
       ]

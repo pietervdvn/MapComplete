@@ -541,9 +541,6 @@
                 "mappings": {
                     "0": {
                         "then": "Toto dílo slouží také jako památník"
-                    },
-                    "1": {
-                        "then": "Toto dílo neslouží jako lavička"
                     }
                 },
                 "question": "Slouží toto dílo jako památník?"

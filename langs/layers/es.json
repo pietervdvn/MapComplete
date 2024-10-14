@@ -485,9 +485,6 @@
                 "mappings": {
                     "0": {
                         "then": "Esta obra de arte también sirve como monumento conmemorativo"
-                    },
-                    "1": {
-                        "then": "Esta obra de arte no sirve como banco"
                     }
                 },
                 "question": "¿Sirve esta obra de arte como monumento conmemorativo?"

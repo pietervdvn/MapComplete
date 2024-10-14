@@ -425,9 +425,6 @@
                 "mappings": {
                     "0": {
                         "then": "Cette œuvre est un mémorial"
-                    },
-                    "1": {
-                        "then": "Cette œuvre ne sert pas de banc"
                     }
                 },
                 "question": "Cet œuvre a-t-elle un rôle de mémorial ?"
