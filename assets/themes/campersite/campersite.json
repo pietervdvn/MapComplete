@@ -17,7 +17,8 @@
     "pa_PK": "کیمپ‌سایٹاں",
     "cs": "Kempovací místa",
     "eu": "Kanpinak",
-    "pl": "Miejsca dla kamperów"
+    "pl": "Miejsca dla kamperów",
+    "uk": "Кемпінги"
   },
   "description": {
     "en": "This site collects all official camper stopover places and places where you can dump grey and black water. You can add details about the services provided and the cost. Add pictures and reviews.",
@@ -35,7 +36,8 @@
     "cs": "Na této stránce jsou shromážděna všechna oficiální místa pro zastavení karavanů a místa, kde můžete vypouštět šedou a černou vodu. Můžete přidat podrobnosti o poskytovaných službách a cenách. Přidávejte fotografie a recenze.",
     "eu": "Karabanak gelditzeko leku ofizial guztiak eta ur gris eta beltzak botatzeko lekuak biltzen ditu. Emandako zerbitzuei eta kostuari buruzko xehetasunak gehitu ditzakezu. Erantsi argazkiak eta aipamenak.",
     "pl": "Na tej stronie zebrano wszystkie oficjalne miejsca postoju kamperów oraz miejsca, w których można wylać zanieczyszczoną wodę. Możesz dodać szczegóły dotyczące świadczonych usług i kosztów. Dodaj zdjęcia i recenzje.",
-    "zh_Hans": "该网站汇总了所有官方的露营车停留点以及可以倾倒灰水和黑水的地点。你可以添加有关提供的服务和费用的详细信息，并且可以上传图片和撰写评论。"
+    "zh_Hans": "该网站汇总了所有官方的露营车停留点以及可以倾倒灰水和黑水的地点。你可以添加有关提供的服务和费用的详细信息，并且可以上传图片和撰写评论。",
+    "uk": "На цьому сайті зібрані всі офіційні місця зупинки автокемперів та місця, де можна здати сірі та чорні води. Ви можете додати детальну інформацію про послуги, що надаються, та вартість. Додавайте фотографії та відгуки."
   },
   "shortDescription": {
     "en": "Find sites to spend the night with your camper",
@@ -53,7 +55,8 @@
     "ca": "Troba llocs on passar la nit amb la teua caravana",
     "cs": "Najděte místa, kde můžete strávit noc se svým karavanem",
     "pl": "Znajdź miejsca, w których możesz spędzić noc w kamperze",
-    "pt": "Encontre locais para passar a noite com o seu campista"
+    "pt": "Encontre locais para passar a noite com o seu campista",
+    "uk": "Знайдіть місця для ночівлі з вашим кемпером"
   },
   "icon": "./assets/themes/campersite/caravan.svg",
   "socialImage": "./assets/themes/campersite/social_image.jpg",
@@ -85,7 +88,8 @@
           "ca": "Aquest lloc és operat per {operator}",
           "cs": "Toto místo je provozováno {operator}",
           "eu": "Leku hau {operator}k operatzen du",
-          "pl": "To miejsce jest obsługiwane przez {operator}"
+          "pl": "To miejsce jest obsługiwane przez {operator}",
+          "uk": "Цим закладом керує {operator}"
         },
         "question": {
           "en": "Who operates this place?",
@@ -100,7 +104,8 @@
           "nb_NO": "Hvem driver dette stedet?",
           "ca": "Qui opera aquest lloc?",
           "cs": "Kdo toto místo provozuje?",
-          "pl": "Kto obsługuje to miejsce?"
+          "pl": "Kto obsługuje to miejsce?",
+          "uk": "Хто керує цим місцем?"
         },
         "freeform": {
           "key": "operator"
@@ -121,7 +126,8 @@
           "da": "Har dette sted en strømforsyning?",
           "ca": "Aquest lloc té subministrament elèctric?",
           "cs": "Má toto místo napájecí zdroj?",
-          "pl": "Czy to miejsce ma dostęp do prądu?"
+          "pl": "Czy to miejsce ma dostęp do prądu?",
+          "uk": "Чи є тут електропостачання?"
         },
         "mappings": [
           {
@@ -144,7 +150,8 @@
               "ca": "Aquest lloc té subministrament elèctric",
               "cs": "Toto místo má napájecí zdroj",
               "eu": "Leku honek hornidura elektrikoa du",
-              "pl": "To miejsce ma dostęp do prądu"
+              "pl": "To miejsce ma dostęp do prądu",
+              "uk": "У цьому місці є електропостачання"
             }
           },
           {
@@ -166,7 +173,8 @@
               "da": "Dette sted har ikke strømforsyning",
               "ca": "Aquest lloc no té subministrament elèctric",
               "cs": "Toto místo nemá napájecí zdroj",
-              "pl": "To miejsce nie ma dostępu do prądu"
+              "pl": "To miejsce nie ma dostępu do prądu",
+              "uk": "Це місце не має електропостачання"
             }
           }
         ]

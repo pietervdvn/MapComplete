@@ -46,7 +46,8 @@
     "ca": "Un mapa editable amb informació bàsica sobre botigues",
     "cs": "Upravitelná mapa se základními informacemi o obchodech",
     "zh_Hant": "有基本商家資訊的可編輯性的地圖",
-    "pl": "Edytowalna mapa z podstawowymi informacjami o sklepach"
+    "pl": "Edytowalna mapa z podstawowymi informacjami o sklepach",
+    "ru": "Редактируемая карта с основной информацией о магазине"
   },
   "icon": "./assets/themes/shops/shop.svg",
   "layers": [

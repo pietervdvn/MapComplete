@@ -41,7 +41,8 @@
         "fr": "liens noeud à noeud",
         "ca": "Enllaços node a node",
         "cs": "Propojení mezi uzly",
-        "pl": "łącza węzeł do węzła"
+        "pl": "łącza węzeł do węzła",
+        "uk": "Зв'язки між точками"
       },
       "source": {
         "osmTags": {
@@ -92,7 +93,8 @@
               "fr": "Quand cette liaison de nœud à nœud a-t-elle été contrôlée sur le terrain pour la dernière fois ?",
               "ca": "Quan es va comprovar per última vegada aquest enllaç node a node presencialment?",
               "cs": "Kdy bylo toto propojení mezi uzly naposledy zkontrolováno?",
-              "pl": "Kiedy ostatnio badano to połączenie węzła z węzłem?"
+              "pl": "Kiedy ostatnio badano to połączenie węzła z węzłem?",
+              "uk": "Коли цей зв'язок між точками досліджувався востаннє?"
             },
             "render": {
               "en": "This node to node link was last surveyed on {survey:date}",

@@ -23,7 +23,8 @@
     "da": "Hjertestartere",
     "cs": "Defibrilátory",
     "zgh": "ⴽⵛⵎ ⵖⵔ ⵜⴽⴰⵕⴹⴰ ⵏ AED",
-    "eu": "Desfibriladoreak"
+    "eu": "Desfibriladoreak",
+    "uk": "Дефібрилятори"
   },
   "description": {
     "en": "On this map, one can find and mark nearby defibrillators",
@@ -49,7 +50,8 @@
     "cs": "Na této mapě lze najít a označit defibrilátory v okolí",
     "zgh": "ⴳ ⵜⴽⴰⵕⴹⴰ ⴰⴷ, ⵉⵣⵎⵔⵏ ⵓⴼⴳⴰⵏ ⴰⴷ ⵢⴰⴼ ⵓⵎⵍⴰⵏ ⵅⴼ ⵡⴰⵍⵍⴰⵍⵏ ⵏ ⵜⵓⴽⴽⵙⴰ ⵏ ⵜⵔⴳⴰⴳⴰⵢⵜ",
     "eu": "Mapa honetan, hurbileko desfibriladoreak aurkitu eta marka daitezke",
-    "pt": "Neste mapa, pode-se encontrar e marcar desfibriladores próximos"
+    "pt": "Neste mapa, pode-se encontrar e marcar desfibriladores próximos",
+    "uk": "На цій карті можна знайти та позначити найближчі дефібрилятори"
   },
   "icon": "./assets/themes/aed/aed.svg",
   "startZoom": 12,

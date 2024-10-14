@@ -13,7 +13,8 @@
     "pa_PK": "سائیکل‌وے",
     "cs": "Cyklodálnice",
     "pl": "Ścieżki rowerowe",
-    "zh_Hant": "單車高速公路"
+    "zh_Hant": "單車高速公路",
+    "uk": "Велосипедні доріжки"
   },
   "description": {
     "en": "This map shows cycle highways",
@@ -26,7 +27,8 @@
     "ca": "Aquest mapa mostra carrils bici",
     "da": "Dette kort viser cykelmotorveje",
     "cs": "Tato mapa zobrazuje cyklostezky",
-    "pl": "Ta mapa pokazuje ścieżki rowerowe"
+    "pl": "Ta mapa pokazuje ścieżki rowerowe",
+    "uk": "На цій карті показані велодоріжки"
   },
   "icon": "./assets/themes/cycle_highways/fietssnelwegen-logo.svg",
   "startZoom": 7,

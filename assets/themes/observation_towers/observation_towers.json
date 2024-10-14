@@ -44,7 +44,8 @@
     "da": "Offentligt tilgængelige tårne for at nyde udsigten",
     "cs": "Veřejně přístupné věže s výhledem",
     "ca": "Torres accesibles públicament per a disfrutar de la vista",
-    "pl": "Publicznie dostępne wieże do podziwiania widoku"
+    "pl": "Publicznie dostępne wieże do podziwiania widoku",
+    "ru": "Общедоступные башни, с которых можно любоваться видами"
   },
   "icon": "./assets/layers/observation_tower/Tower_observation.svg",
   "layers": [

@@ -42,7 +42,8 @@
     "ca": "Quin és l'origen d'un topònim?",
     "da": "Hvad er oprindelsen af et stednavn?",
     "cs": "Jaký je původ toponyma?",
-    "pl": "Jakie jest pochodzenie toponimów?"
+    "pl": "Jakie jest pochodzenie toponimów?",
+    "ru": "Каково происхождение топонима?"
   },
   "icon": "./assets/layers/etymology/logo.svg",
   "hideFromOverview": false,

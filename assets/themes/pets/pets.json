@@ -11,7 +11,8 @@
     "cs": "Veterináři, psí parky a další služby pro domácí zvířata",
     "zh_Hant": "獸醫院、寵物公園以及其他寵物設施",
     "pl": "Kliniki weterynaryjne, parki dla psów i inne obiekty dla zwierząt",
-    "it": "Veterinari, parchi accessibili ai cani e altri servizi per animali domestici"
+    "it": "Veterinari, parchi accessibili ai cani e altri servizi per animali domestici",
+    "ru": "Ветеринары, парки для собак и другие удобства для домашних животных"
   },
   "description": {
     "en": "On this map, you'll find various interesting places for you pets: veterinarians, dog parks, pet shops, dog-friendly restaurants, ...",
@@ -22,7 +23,8 @@
     "ca": "A aquest mapa, trobaràs diferents llocs interesants per a les teves mascotes: veterinaris, parcs per a gossos, botigues d'animals, restaurants amables amb gossos, ...",
     "es": "En este mapa, encontrarás varios lugares interesantes para tus mascotas: veterinarios, parques para perros, tiendas de mascotas, restaurantes aptos para perros, ...",
     "cs": "Na této mapě najdete různá zajímavá místa pro vaše domácí mazlíčky: veterináře, psí parky, obchody pro zvířata, restaurace pro psy, ...",
-    "pl": "Na tej mapie znajdziesz różne ciekawe miejsca dla swoich zwierząt: weterynarze, wybiegi dla psów, sklepy zoologiczne, restauracje przyjazne psom, ..."
+    "pl": "Na tej mapie znajdziesz różne ciekawe miejsca dla swoich zwierząt: weterynarze, wybiegi dla psów, sklepy zoologiczne, restauracje przyjazne psom, ...",
+    "ru": "На этой карте вы найдете различные интересные места для ваших питомцев: ветеринарные клиники, парки для собак, зоомагазины, рестораны для собак, ..."
   },
   "icon": "./assets/layers/dogpark/dog-park.svg",
   "startZoom": 10,
@@ -49,7 +51,8 @@
           "cs": "Restaurace vhodné pro vstup se psy",
           "zh_Hant": "寵物友善餐廳",
           "pl": "Restauracje przyjazne psom",
-          "it": "Ristoranti che accettano i cani"
+          "it": "Ristoranti che accettano i cani",
+          "ru": "Заведения, где можно поесть с собаками"
         },
         "pointRendering": [
           {

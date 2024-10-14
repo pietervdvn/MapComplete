@@ -128,7 +128,8 @@
         "nl": "Wat is de legale maximumsnelheid voor deze weg?",
         "fr": "Quelle est la vitesse maximum autorisée sur cette route ?",
         "cs": "Jaká je zákonná maximální povolená rychlost na této silnici?",
-        "pl": "Jaka jest maksymalna prawnie dopuszczona prędkość na tej drodze?"
+        "pl": "Jaka jest maksymalna prawnie dopuszczona prędkość na tej drodze?",
+        "ru": "С какой максимальной скоростью разрешено ездить по этой дороге?"
       },
       "freeform": {
         "key": "maxspeed",

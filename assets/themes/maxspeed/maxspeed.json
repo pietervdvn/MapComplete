@@ -37,7 +37,8 @@
     "es": "Este mapa muestra la velocidad máxima permitida legalmente en cada carretera.",
     "ca": "Aquest mapa mostra la velocitat màxima permesa legalment a cada carretera.",
     "zh_Hant": "這份地圖顯示每一條道路的法定允許的最高速限。",
-    "pl": "Ta mapa pokazuje prawnie dozwoloną maksymalną prędkość na każdej drodze."
+    "pl": "Ta mapa pokazuje prawnie dozwoloną maksymalną prędkość na każdej drodze.",
+    "ru": "На этой карте показана разрешенная законом максимальная скорость на каждой дороге."
   },
   "icon": "./assets/themes/maxspeed/maxspeed_logo.svg",
   "layers": [

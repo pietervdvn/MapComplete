@@ -45,7 +45,8 @@
     "zgh": "ⵢⴰⵜ ⵜⴽⴰⵕⴹⴰ ⵉⵕⵥⵎⵏ ⵅⴼ ⵉⵙⴼⵔⵉⵙⵏ, ⵉⵖⵔⴰⵙⵏ ⴷ ⵜⵡⵓⵔⵉⵡⵉⵏ ⵜⵉⵏⴰⵥⵓⵕⵉⵏ ⵢⴰⴹⵏⵉⵏ ⴳ ⵓⵎⴰⴹⴰⵍ",
     "eu": "Estatuen, bustoen, graffitien eta mundu osoko beste artelan batzuen mapa irekia",
     "pl": "Otwarta mapa posągów, popiersi, graffiti i innych dzieł sztuki z całego świata",
-    "pt_BR": "Um mapa aberto de estátuas, bustos, grafites e outras obras de arte em todo o mundo"
+    "pt_BR": "Um mapa aberto de estátuas, bustos, grafites e outras obras de arte em todo o mundo",
+    "uk": "Відкрита карта статуй, бюстів, графіті та інших творів мистецтва по всьому світу"
   },
   "source": {
     "osmTags": "tourism=artwork"
@@ -814,8 +815,8 @@
           "if": "historic=",
           "alsoShowIf": "historic!=memorial",
           "then": {
-            "en": "This artwork does not serve as a bench",
-            "de": "Dieses Kunstwerk dient nicht als Sitzbank",
+            "en": "This artwork does not serve as a memorial",
+            "de": "Dieses Kunstwerk dient nicht als Denkmal",
             "fr": "Cette œuvre ne sert pas de banc",
             "cs": "Toto dílo neslouží jako lavička",
             "es": "Esta obra de arte no sirve como banco"

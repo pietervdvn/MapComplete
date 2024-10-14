@@ -12,7 +12,8 @@
     "es": "Rutas de autobús",
     "cs": "Autobusové linky",
     "zh_Hant": "公車路線",
-    "pl": "Trasy autobusowe"
+    "pl": "Trasy autobusowe",
+    "ru": "Автобусные маршруты"
   },
   "description": {
     "en": "Plan your trip with the help of the public transport system.",

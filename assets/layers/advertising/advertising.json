@@ -16,7 +16,8 @@
     "it": "Pubblicità",
     "zh_Hant": "廣告",
     "fr": "Publicité",
-    "ru": "Реклама"
+    "ru": "Реклама",
+    "uk": "Оголошення"
   },
   "description": {
     "ca": "Completarem les dades dels elements publicitaris amb referència, operador i il·luminació",
@@ -29,7 +30,8 @@
     "pl": "Uzupełnimy dane z obiektów reklamowych o referencję, operatora i oświetlenie",
     "pt_BR": "Completaremos os dados das características de publicidade com referência, operador e iluminação",
     "it": "Completeremo i dati da caratteristiche pubblicitarie, con referenza, operatore e illuminazione",
-    "fr": "Nous allons compléter les information sur la publicité avec la référence, l'opérateur et l'éclairage"
+    "fr": "Nous allons compléter les information sur la publicité avec la référence, l'opérateur et l'éclairage",
+    "uk": "Ми доповнимо дані з рекламних об'єктів посиланням, оператором та освітленням"
   },
   "source": {
     "osmTags": {
@@ -437,7 +439,8 @@
         "zh_Hans": "一块广告牌",
         "it": "un cartellone",
         "zh_Hant": "一塊告示牌",
-        "ru": "билборд"
+        "ru": "билборд",
+        "uk": "білборд"
       },
       "description": {
         "en": "A large outdoor advertising structure, typically found in high-traffic areas such as alongside busy roads",
@@ -451,7 +454,8 @@
         "eu": "Atari zabaleko publizitate-egitura handia, trafiko handiko eremuetan egon ohi dena, adibidez errepideen ondoan",
         "pl": "Duża struktura reklamowa na dworze, zwykle znajdująca się w obszarach z dużym ruchem, np. w pobliżu ruchliwych dróg",
         "pt_BR": "Uma grande estrutura de publicidade outdoor, geralmente encontrada em áreas com alto tráfego, como ao longo de estradas movimentadas",
-        "it": "Grande struttura pubblicitaria all'aperto, trovata normalmente in aree ad alto traffico come accanto a strade molto trafficate"
+        "it": "Grande struttura pubblicitaria all'aperto, trovata normalmente in aree ad alto traffico come accanto a strade molto trafficate",
+        "uk": "Велика зовнішня рекламна конструкція, зазвичай розташована в місцях з високим трафіком, наприклад, уздовж жвавих доріг"
       },
       "exampleImages": [
         "./assets/themes/advertising/KFC_Billboard.jpg",
@@ -471,7 +475,8 @@
         "de": "Eine an einer Wand montierte Werbetafel",
         "cs": "billboard připevněný na stěnu",
         "ca": "un cartell muntat a una paret",
-        "es": "una valla publicitaria montada en un muro"
+        "es": "una valla publicitaria montada en un muro",
+        "uk": "білборд, прикріплений до стіни"
       },
       "description": {
         "en": "A large outdoor advertising structure, typically found in high-traffic areas such as alongside busy roads mounted on a wall",
@@ -479,7 +484,8 @@
         "cs": "Velká venkovní reklamní konstrukce, která se obvykle nachází na frekventovaných místech, například podél frekventovaných silnic, umístěná na zdi",
         "pl": "Duży obiekt reklamowy na zewnątrz, zazwyczaj znajduje się w obszarach z dużym ruchem, np. obok ruchliwych dróg na ścianie",
         "ca": "Una gran estructura publicitària exterior, que normalment es troba en zones de gran trànsit, com ara al costat de carreteres transitades muntades a una paret",
-        "es": "Una gran estructura de publicidad exterior, que suele encontrarse en zonas de mucho tráfico, por ejemplo, junto a carreteras muy transitadas"
+        "es": "Una gran estructura de publicidad exterior, que suele encontrarse en zonas de mucho tráfico, por ejemplo, junto a carreteras muy transitadas",
+        "uk": "Велика зовнішня рекламна конструкція, зазвичай розташована в місцях з високим трафіком, наприклад, уздовж жвавих доріг, встановлена на стіні"
       },
       "exampleImages": [
         "./assets/themes/advertising/billboard_wall.jpg"
@@ -500,7 +506,8 @@
         "pl": "wolnostojąca skrzynka plakatowa",
         "pt_BR": "uma caixa expositora independente",
         "it": "un cartellone pubblicitario fissato a terra",
-        "zh_Hant": "獨自設立的海報框"
+        "zh_Hant": "獨自設立的海報框",
+        "uk": "окремо стояча коробка для плакатів"
       },
       "exampleImages": [
         "./assets/themes/advertising/Mupi_spain.jpg",
@@ -522,7 +529,8 @@
         "pl": "skrzynka plakatowa montowana na ścianie",
         "pt_BR": "uma caixa de pôster montada em uma parede",
         "zh_Hans": "安装在墙上的海报盒子",
-        "it": "un cartellone pubblicitario fissato al muro"
+        "it": "un cartellone pubblicitario fissato al muro",
+        "uk": "коробка для плакатів, що кріпиться на стіну"
       },
       "snapToLayer": [
         "walls_and_buildings"
@@ -540,7 +548,8 @@
         "it": "un contenitore di poster pubblicitari di una pensilina del trasporto pubblico",
         "es": "una caja de carteles que forma parte de una marquesina de transporte público",
         "cs": "plakátovací skříňka, která je součástí přístřešku veřejné dopravy",
-        "ca": "un mupi que forma part d'un refugi de transport públic"
+        "ca": "un mupi que forma part d'un refugi de transport públic",
+        "uk": "афішна скринька, що є частиною зупинки громадського транспорту"
       },
       "snapToLayer": [
         "shelter"
@@ -561,7 +570,8 @@
         "pt": "a bordo",
         "pl": "tablica",
         "pt_BR": "um painel publicitário",
-        "it": "un piccolo pannello"
+        "it": "un piccolo pannello",
+        "uk": "дошка"
       },
       "description": {
         "en": "Small billboard for neighbourhood advertising, generally intended for pedestrians",
@@ -574,7 +584,8 @@
         "pt": "Pequeno outdoor para publicidade de bairro, geralmente destinado a pedestres",
         "pl": "Mały bilbord dla reklam lokalnych, przeznaczony głównie dla pieszych",
         "pt_BR": "Pequeno outdoor para publicidade local, geralmente destinado a pedestres",
-        "it": "PIccolo pannello per la pubblicità di vicinanza, generalmente destinato ai pedoni"
+        "it": "PIccolo pannello per la pubblicità di vicinanza, generalmente destinato ai pedoni",
+        "uk": "Невеликий білборд для місцевої реклами, в основному призначений для пішоходів"
       },
       "exampleImages": [
         "./assets/themes/advertising/local_Board.jpg",
@@ -598,7 +609,8 @@
         "pl": "kolumna",
         "pt_BR": "uma coluna",
         "it": "una colonna",
-        "ru": "столбец"
+        "ru": "столбец",
+        "uk": "стовпчик"
       },
       "description": {
         "en": "A cylindrical outdoor structure which shows advertisements",
@@ -611,7 +623,8 @@
         "pt": "Uma estrutura exterior cilíndrica que mostra anúncios",
         "pl": "Cylindryczna konstrukcja zewnętrzna, na której pokazywane są reklamy",
         "pt_BR": "Uma estrutura cilíndrica ao ar livre que exibe anúncios",
-        "it": "Una struttura cilindrica all'esterno con affissa della pubblicità"
+        "it": "Una struttura cilindrica all'esterno con affissa della pubblicità",
+        "uk": "Циліндрична зовнішня конструкція, що показує рекламу"
       },
       "exampleImages": [
         "./assets/themes/advertising/AdvertisingColumn_001.jpg",
@@ -635,7 +648,8 @@
         "pl": "flaga",
         "pt_BR": "uma bandeira",
         "zh_Hans": "一个旗子",
-        "it": "una bandiera"
+        "it": "una bandiera",
+        "uk": "прапор"
       },
       "exampleImages": [
         "./assets/themes/advertising/Advertising_flag.jpg",
@@ -658,7 +672,8 @@
         "pl": "ekran",
         "pt_BR": "uma tela",
         "zh_Hans": "一块屏幕",
-        "it": "uno schermo"
+        "it": "uno schermo",
+        "uk": "екран"
       },
       "exampleImages": [
         "./assets/themes/advertising/Screen_poster_box.jpg",
@@ -681,7 +696,8 @@
         "pl": "ekran zamontowany na ścianie",
         "pt_BR": "uma tela montada em uma parede",
         "zh_Hans": "一块挂在墙上的屏幕",
-        "it": "uno schermo fissato al muro"
+        "it": "uno schermo fissato al muro",
+        "uk": "екран, встановлений на стіні"
       },
       "exampleImages": [
         "./assets/themes/advertising/Subway_screen.jpg",
@@ -705,7 +721,8 @@
         "it": "uno schermo montato su una pensilina del traporto pubblico",
         "es": "una pantalla montada en una marquesina de tránsito",
         "cs": "obrazovka namontovaná na dopravním přístřešku",
-        "ca": "una pantalla muntada en una marquesina"
+        "ca": "una pantalla muntada en una marquesina",
+        "uk": "екран, встановлений на тимчасовому укритті"
       },
       "snapToLayer": [
         "shelter"
@@ -728,7 +745,8 @@
         "pl": "plandeka",
         "pt_BR": "uma lona",
         "zh_Hans": "防水布",
-        "it": "un telone"
+        "it": "un telone",
+        "uk": "брезент"
       },
       "description": {
         "en": "A piece of waterproof textile with a printed message, permanently anchored on a wall",
@@ -741,7 +759,8 @@
         "fr": "Une pièce de textile imperméable avec un message imprimé, ancrée de façon permanente sur un mur.",
         "pl": "Kawałek wodoodpornej tkaniny z nadrukowanym przesłaniem, trwale przymocowany do ściany",
         "pt_BR": "Um pedaço de tecido impermeável com uma mensagem impressa, permanentemente fixado a uma parede",
-        "it": "Un telo impermeabile con un messaggio stampato, fissato in modo permanente al muro"
+        "it": "Un telo impermeabile con un messaggio stampato, fissato in modo permanente al muro",
+        "uk": "Шматок водонепроникного текстилю з надрукованим повідомленням, постійно закріплений на стіні"
       },
       "exampleImages": [
         "./assets/themes/advertising/tarp_feder.jpg",
@@ -767,7 +786,8 @@
         "pl": "totem",
         "pt_BR": "um totem",
         "zh_Hans": "图腾",
-        "it": "un totem"
+        "it": "un totem",
+        "uk": "тотем"
       },
       "exampleImages": [
         "./assets/themes/advertising/AdvertisingTotem_004.jpg",
@@ -791,7 +811,8 @@
         "eu": "letrero bat",
         "pl": "znak",
         "zh_Hans": "标志",
-        "it": "un'insegna"
+        "it": "un'insegna",
+        "uk": "знак"
       },
       "description": {
         "en": "Used for advertising signs, neon signs, logos & institutional entrance signs",
@@ -804,7 +825,8 @@
         "eu": "Iragarki publizitarioetarako, neon-karteletarako, logotipoetarako eta erakundeen sarrera-seinaleetarako erabiltzen da",
         "pl": "Używany do znaków reklamowych, neonów, logo i znaków wejściowych do instytucji",
         "pt_BR": "Usado para placas de publicidade, letreiros de neon, logotipos e placas de entrada institucionais",
-        "it": "Utilizzato per insegna pubblicitaria, un'insegna al neon, i loghi o le indicazioni d'entrata"
+        "it": "Utilizzato per insegna pubblicitaria, un'insegna al neon, i loghi o le indicazioni d'entrata",
+        "uk": "Використовується для рекламних вивісок, неонових вивісок, логотипів та вхідних табличок установ"
       },
       "exampleImages": [
         "./assets/themes/advertising/Waitrose_sign.jpg",
@@ -832,7 +854,8 @@
         "pl": "rzeźba",
         "pt_BR": "uma escultura",
         "zh_Hans": "雕像",
-        "it": "una scultura"
+        "it": "una scultura",
+        "uk": "скульптура"
       },
       "exampleImages": [
         "./assets/themes/advertising/Aircraft_Sculpture.jpg",
@@ -857,7 +880,8 @@
         "pl": "mural ścienny",
         "pt_BR": "uma pintura mural",
         "zh_Hans": "墙上的画",
-        "it": "un murales"
+        "it": "un murales",
+        "uk": "настінний розпис"
       },
       "exampleImages": [
         "./assets/themes/advertising/Capitol_wall.jpg",
@@ -916,7 +940,8 @@
             "he": "זה שלט חוצות",
             "pl": "To jest bilbord",
             "pt_BR": "Isso é um outdoor",
-            "zh_Hans": "这是一个广告牌"
+            "zh_Hans": "这是一个广告牌",
+            "uk": "Це білборд"
           },
           "icon": {
             "path": "./assets/themes/advertising/billboard.svg",
@@ -935,7 +960,8 @@
             "pt": "Isso é uma placa",
             "pl": "To jest tablica",
             "pt_BR": "Isso é uma placa",
-            "zh_Hans": "这是一块板"
+            "zh_Hans": "这是一块板",
+            "uk": "Це дошка"
           },
           "icon": {
             "path": "./assets/themes/advertising/board.svg",
@@ -1109,7 +1135,8 @@
             "pl": "To jest mural ścienny",
             "pt_BR": "Isso é uma pintura mural",
             "zh_Hans": "这是一幅壁画",
-            "pt": "Isto é uma pintura mural"
+            "pt": "Isto é uma pintura mural",
+            "uk": "Це настінний розпис"
           },
           "icon": {
             "path": "./assets/themes/advertising/wall_painting.svg",
@@ -1122,7 +1149,8 @@
             "en": "This is tilework - the advertisement is painted on tiles",
             "de": "Dies ist eine Kachelarbeit - die Werbung ist auf Fliesen gemalt",
             "cs": "Jedná se o dlaždice - reklama je namalovaná na dlaždicích",
-            "es": "Esto es un azulejería - la publicidad está pintada en azulejos"
+            "es": "Esto es un azulejería - la publicidad está pintada en azulejos",
+            "uk": "Це кахельна плитка - реклама намальована на плитці"
           }
         },
         {
@@ -1148,7 +1176,8 @@
         "pt": "Este anúncio percorre várias mensagens?",
         "pl": "Czy ta reklama przechodzi przez wiele różnych wiadomości?",
         "pt_BR": "Este anúncio passa por várias mensagens em sequência?",
-        "zh_Hans": "该广告是否会在多条消息中循环播放？"
+        "zh_Hans": "该广告是否会在多条消息中循环播放？",
+        "uk": "Чи циркулює ця реклама через кілька повідомлень?"
       },
       "condition": {
         "#": "Screens are _always_ animated; flags, tarps, and wall_paintings cannot be animated; signs can be anything so we don't make guesses",
@@ -1174,7 +1203,8 @@
             "pt": "<b> Static</b>, mostra sempre a mesma mensagem",
             "pl": "<b>Statyczne</b>, zawsze pokazuje tą samą wiadomość",
             "pt_BR": "<b>Estático</b>, mostra sempre a mesma mensagem",
-            "zh_Hans": "<b>静态</b>，始终显示相同的消息"
+            "zh_Hans": "<b>静态</b>，始终显示相同的消息",
+            "uk": "<b>Статичний</b>, завжди показує одне й те саме повідомлення"
           }
         },
         {
@@ -1189,7 +1219,8 @@
             "pt": "Este objeto possui um <b>digital display</b> embutido para mostrar preços ou alguma outra mensagem",
             "pl": "Ten obiekt ma wbudowany <b>cyfrowy wyświetlacz</b> do pokazywania cen lub innych informacji",
             "pt_BR": "Este objeto possui um <b>display digital</b> incorporado para mostrar preços ou alguma outra mensagem",
-            "zh_Hans": "该对象有一个内置的<b>数字显示器</b>来显示价格或其他一些消息"
+            "zh_Hans": "该对象有一个内置的<b>数字显示器</b>来显示价格或其他一些消息",
+            "uk": "Цей об'єкт має вбудований <b>цифровий дисплей</b> для відображення цін або іншого повідомлення"
           },
           "hideInAnswer": {
             "and": [
@@ -1211,7 +1242,8 @@
             "fr": "<b>Trivision</b> - le panneau est constitué de lames triangulaires qui tournent régulièrement",
             "pt": "<b>Trivision</b> - o outdoor consiste em muitos prismas triangulares que giram regularmente",
             "pt_BR": "<b>Trivision</b> - o outdoor consiste em muitos prismas triangulares que giram regularmente",
-            "zh_Hans": "<b>Trivision</b> - 广告牌由许多有规律旋转的三棱柱组成"
+            "zh_Hans": "<b>Trivision</b> - 广告牌由许多有规律旋转的三棱柱组成",
+            "uk": "<b>Поділ</b> - білборд складається з багатьох трикутних призм, які регулярно обертаються"
           },
           "icon": {
             "class": "large",
@@ -1231,7 +1263,8 @@
             "fr": "Affiches <b>défilantes</b>",
             "pt": "Pôsteres de <b>rolagem</b>",
             "pt_BR": "Pôsteres <b>deslizantes</b>",
-            "zh_Hans": "<b>滚动</b>海报"
+            "zh_Hans": "<b>滚动</b>海报",
+            "uk": "<b>Прокрутка</b> постерів"
           },
           "hideInAnswer": {
             "and": [
@@ -1252,7 +1285,8 @@
             "fr": "<b>Tourne</b> sur elle-même",
             "pt": "<b>Gira</b> sobre si mesmo",
             "pt_BR": "<b>Gira</b> sobre si mesmo",
-            "zh_Hans": "<b>自行旋转</b>"
+            "zh_Hans": "<b>自行旋转</b>",
+            "uk": "<b>Обертається</b> на себе"
           },
           "hideInAnswer": {
             "and": [
@@ -1283,7 +1317,8 @@
               "he": "זהו תאורת ניאון",
               "pl": "To jest lampa neonowa",
               "pt_BR": "Isso é uma luz de neon",
-              "zh_Hans": "这是霓虹灯管"
+              "zh_Hans": "这是霓虹灯管",
+              "uk": "Це неонова лампа"
             },
             "hideInAnswer": "advertising!=sign",
             "addExtraTags": [
@@ -1313,7 +1348,8 @@
         "pt_BR": "Operado por {operator}",
         "he": "מופעל על ידי {operator}",
         "pl": "Obsługiwane przez {operator}",
-        "zh_Hans": "由{operator}运营"
+        "zh_Hans": "由{operator}运营",
+        "uk": "Управляється {operator}"
       },
       "question": {
         "ca": "Qui opera aquest element?",
@@ -1327,7 +1363,8 @@
         "he": "מי מפעיל את התכונה הזו?",
         "pl": "Kto obsługuje ten obiekt?",
         "pt_BR": "Quem opera este recurso?",
-        "zh_Hans": "谁操作此物件？"
+        "zh_Hans": "谁操作此物件？",
+        "uk": "Хто керує цим об'єктом?"
       },
       "freeform": {
         "addExtraTags": [],
@@ -1348,7 +1385,8 @@
         "he": "איזה סוג הודעה מוצגת?",
         "pl": "Jaki rodzaj wiadomości jest pokazany?",
         "pt_BR": "Que tipo de mensagem é exibido?",
-        "zh_Hans": "显示什么样的消息？"
+        "zh_Hans": "显示什么样的消息？",
+        "uk": "Яке повідомлення відображається?"
       },
       "mappings": [
         {
@@ -1366,7 +1404,8 @@
             "he": "מסר מסחרי",
             "nl": "Commerciële boodschap",
             "pl": "Wiadomość komercyjna",
-            "zh_Hans": "商业留言"
+            "zh_Hans": "商业留言",
+            "uk": "Комерційне повідомлення"
           }
         },
         {
@@ -1384,7 +1423,8 @@
             "nl": "Lokale informatie",
             "pl": "Informacja lokalna",
             "pt_BR": "Informações locais",
-            "zh_Hans": "本地信息"
+            "zh_Hans": "本地信息",
+            "uk": "Місцева інформація"
           }
         },
         {
@@ -1401,7 +1441,8 @@
             "he": "מידע אבטחה",
             "pl": "Informacje dotyczące bezpieczeństwa",
             "pt_BR": "Informações de segurança",
-            "zh_Hans": "安全信息"
+            "zh_Hans": "安全信息",
+            "uk": "Інформація про безпеку"
           },
           "hideInAnswer": {
             "and": [
@@ -1423,7 +1464,8 @@
             "he": "פרסום בחירות",
             "pl": "Reklamy wyborcze",
             "pt_BR": "Propaganda eleitoral",
-            "zh_Hans": "选举广告"
+            "zh_Hans": "选举广告",
+            "uk": "Передвиборча реклама"
           }
         },
         {
@@ -1442,7 +1484,8 @@
             "eu": "Antzerkiari, kontzertuei eta abarri buruzko informazioa",
             "pl": "Informacje dotyczące teatru, koncertów, …",
             "pt_BR": "Informações relacionadas a teatro, concertos, …",
-            "zh_Hans": "与戏剧、音乐会等相关的信息……"
+            "zh_Hans": "与戏剧、音乐会等相关的信息……",
+            "uk": "Інформація, пов'язана з театром, концертами, …"
           },
           "hideInAnswer": {
             "and": [
@@ -1464,7 +1507,8 @@
             "pt": "Mensagem de organizações sem fins lucrativos",
             "pl": "Wiadomość od organizacji non-profit",
             "pt_BR": "Mensagens de organizações sem fins lucrativos",
-            "zh_Hans": "来自非营利组织的消息"
+            "zh_Hans": "来自非营利组织的消息",
+            "uk": "Повідомлення від неприбуткових організацій"
           }
         },
         {
@@ -1480,7 +1524,8 @@
             "pt": "Para expressar sua opinião",
             "pl": "Żeby wyrazić swoją opinię",
             "pt_BR": "Para expressar sua opinião",
-            "zh_Hans": "表达您的意见"
+            "zh_Hans": "表达您的意见",
+            "uk": "Щоб висловити свою думку"
           },
           "hideInAnswer": {
             "or": [
@@ -1504,7 +1549,8 @@
             "pt_BR": "Mensagem religiosa",
             "he": "מסר דתי",
             "pl": "Przekaz religijny",
-            "zh_Hans": "宗教讯息"
+            "zh_Hans": "宗教讯息",
+            "uk": "Релігійне послання"
           }
         },
         {
@@ -1519,7 +1565,8 @@
             "pt": "sinal de financiamento",
             "pl": "Znak finansowania",
             "pt_BR": "Placa de financiamento",
-            "zh_Hans": "资助标志"
+            "zh_Hans": "资助标志",
+            "uk": "Ознака фінансування"
           },
           "hideInAnswer": {
             "or": [
@@ -1542,7 +1589,8 @@
             "pt": "Um mapa",
             "pt_BR": "Um mapa",
             "pl": "Mapa",
-            "zh_Hans": "地图"
+            "zh_Hans": "地图",
+            "uk": "Карта"
           }
         }
       ],
@@ -1573,7 +1621,8 @@
         "eu": "Zenbat aldetatik ikus dezakezu publizitatea?",
         "pl": "Z ilu stron można oglądać reklamy?",
         "pt_BR": "De quantos lados você consegue visualizar os anúncios?",
-        "zh_Hans": "您可以从几个侧面观看广告？"
+        "zh_Hans": "您可以从几个侧面观看广告？",
+        "uk": "Зі скількох сторін можна дивитися рекламу?"
       },
       "mappings": [
         {
@@ -1590,7 +1639,8 @@
             "pl": "Ten obiekt ma reklamy po jednej stronie",
             "pt_BR": "Este objeto tem anúncios em um único lado",
             "zh_Hans": "该物体单面有广告",
-            "it": "Questo oggetto ha la pubblicità solo da un lato"
+            "it": "Questo oggetto ha la pubblicità solo da un lato",
+            "uk": "Цей об'єкт має рекламу з одного боку"
           }
         },
         {
@@ -1606,7 +1656,8 @@
             "eu": "Objektu honek iragarkiak ditu bi aldeetan",
             "pl": "Ten obiekt ma reklamy po dwóch stronach",
             "pt_BR": "Este objeto tem anúncios em ambos os lados",
-            "zh_Hans": "该物体双面有广告"
+            "zh_Hans": "该物体双面有广告",
+            "uk": "Цей об'єкт має рекламу з обох боків"
           }
         }
       ]
@@ -1624,7 +1675,8 @@
         "pt": "O número de referência é {ref}",
         "pt_BR": "O número de referência é {ref}",
         "pl": "Numer referencyjny to {ref}",
-        "zh_Hans": "编号是{ref}"
+        "zh_Hans": "编号是{ref}",
+        "uk": "Номер посилання: {ref}"
       },
       "question": {
         "ca": "Quin és el número de refèrencia?",
@@ -1637,7 +1689,8 @@
         "pt": "Qual é o número de referência?",
         "pl": "Jaki jest numer referencyjny?",
         "pt_BR": "Qual é o número de referência?",
-        "zh_Hans": "编号是多少？"
+        "zh_Hans": "编号是多少？",
+        "uk": "Який номер посилання?"
       },
       "freeform": {
         "key": "ref"
@@ -1654,7 +1707,8 @@
         "en": "Is this sign for a business that no longer exists or no longer being maintained?",
         "de": "Ist dieses Schild für ein Geschäft, das nicht mehr existiert oder nicht mehr gepflegt wird?",
         "es": "¿Es este cartel de un negocio que ya no existe o que ya no se mantiene?",
-        "cs": "Je tato značka určena pro již neexistující nebo neudržovaný podnik?"
+        "cs": "Je tato značka určena pro již neexistující nebo neudržovaný podnik?",
+        "uk": "Це знак для бізнесу, який більше не існує або більше не підтримується?"
       },
       "mappings": [
         {
@@ -1664,7 +1718,8 @@
             "en": "This is a historic advertisement sign (an advertisement for a business that no longer exists or a very old sign with heritage value)",
             "de": "Es handelt sich um ein historisches Werbeschild (eine Werbung für ein Unternehmen, das nicht mehr existiert, oder ein sehr altes Schild mit historischem Wert)",
             "cs": "Jedná se o historický reklamní nápis (reklama na již neexistující podnik nebo velmi starý nápis s památkovou hodnotou)",
-            "es": "Esto es un cartel publicitario histórico (un anuncio para un negocio que ya no existe o un cartel con un gran valor patrimonial)"
+            "es": "Esto es un cartel publicitario histórico (un anuncio para un negocio que ya no existe o un cartel con un gran valor patrimonial)",
+            "uk": "Це історична рекламна вивіска (реклама підприємства, яке більше не існує, або дуже стара вивіска, що має історичну цінність)"
           }
         },
         {
@@ -1673,7 +1728,8 @@
             "en": "This advertisement sign has no historic value (the business still exists and has no heritage value)",
             "de": "Dieses Werbeschild hat keinen historischen Wert (das Unternehmen existiert noch und hat keinen denkmalpflegerischen Wert)",
             "cs": "Tento reklamní nápis nemá žádnou historickou hodnotu (podnik stále existuje a nemá žádnou památkovou hodnotu)",
-            "es": "Este cartel publicitario no tiene valor histórico (el negocio todavía existe y no tiene valor patrimonial)"
+            "es": "Este cartel publicitario no tiene valor histórico (el negocio todavía existe y no tiene valor patrimonial)",
+            "uk": "Ця рекламна вивіска не має історичної цінності (бізнес все ще існує і не має історичної цінності)"
           }
         }
       ]
