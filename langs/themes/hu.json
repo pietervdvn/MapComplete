@@ -1,11 +1,11 @@
 {
     "aed": {
         "description": "Ezen a térképen a közeli defibrillátorokat lehet megtalálni és feltüntetni",
-        "title": "Defibrillátor-térkép"
+        "title": "Defibrillátorok"
     },
     "artwork": {
         "description": "Szobrok, mellszobrok, graffitik és egyéb műalkotások nyílt világtérképe",
-        "title": "Műalkotástérkép"
+        "title": "Műalkotás"
     },
     "benches": {
         "description": "Ez a térkép megjeleníti az OpenStreetMap-en rögzített összes padot: egyes padokat, valamint tömegközlekedési megállókban vagy menedékhelyeken található padokat. OpenStreetMap-fiókkal Ön is felrajzolhat új padokat, vagy szerkesztheti a meglévő padok részleteit.",
@@ -133,7 +133,7 @@
             }
         },
         "shortDescription": "Mi az eredete egy helynévnek?",
-        "title": "Etimológiai térkép"
+        "title": "Etimológiai térkép – miről kapta a nevét ez a hely?"
     },
     "facadegardens": {
         "description": "A <a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>homlokzatkertek</a>, zöld homlokzatok és fák a városban nemcsak békét és nyugalmat, hanem szebb várost, nagyobb biológiai sokféleséget, hűsítő hatást és jobb levegőminőséget is hoznak. <br/> A Klimaan VZW és a Mechelen Klimaatneutraal a meglévő és új homlokzati kerteket szeretné feltérképezni, hogy példaként szolgáljanak a saját kertet építeni vágyóknak vagy a természetet kedvelő városi sétálóknak.<br/>További információ a projektről a <a href='https://klimaan.be/' target=_blank>klimaan.be</a> oldalon.",
@@ -235,7 +235,7 @@
         }
     },
     "ghostbikes": {
-        "description": "A <b>szellemkerékpár</b> egy közlekedési balesetben elhunyt kerékpáros emlékműve: egy fehér kerékpár, amelyet állandó jelleggel a baleset helyszínének közelében helyeznek el.<br/><br/>A térképen az OpenStreetMap által ismert összes szellemkerékpár megtekinthető. Hiányzik róla egy szellemkerékpár? Bárki hozzáadhat vagy frissíthet adatokat – csak egy (ingyenes) OpenStreetMap-fiókra van szükség hozzá.",
+        "description": "A <b>szellemkerékpár</b> egy közlekedési balesetben elhunyt kerékpáros emlékműve: egy fehér kerékpár, amelyet állandó jelleggel a baleset helyszínének közelében helyeznek el.<br/><br/>A térképen az OpenStreetMap által ismert összes szellemkerékpár megtekinthető. Hiányzik róla egy szellemkerékpár? Bárki hozzáadhat vagy frissíthet adatokat – csak egy (ingyenes) OpenStreetMap-fiókra van szükség hozzá.<p><a href='https://masto.bike/@ghostbikebot' target='_blank'>A Mastodonon van egy automatizált fiók, amely havonta közzétesz egy áttekintést a szellemkerékpárokról világszerte</a>.</p>",
         "title": "Szellemkerékpárok"
     },
     "grb": {
@@ -262,7 +262,7 @@
     },
     "openwindpowermap": {
         "description": "Szélerőművek megjelenítésére és szerkesztésére szolgáló térkép.",
-        "title": "OpenWindPowerMap"
+        "title": "Szélerőművek"
     },
     "parkings": {
         "description": "Ez a térkép különböző parkolókat jelenít meg",
@@ -299,14 +299,14 @@
         "title": "Irányítószámok"
     },
     "postboxes": {
-        "description": "Ezen a térképen postahivatalok és postaládák adatait találod és egészítheted ki. Utánanézhetsz, hogy hol adhatod fel a következő képeslapodat! :)<br/>Hibát találtál, vagy hiányzik egy postaláda? Ezt a térképet mindössze egy ingyenes OpenStreetMap-fiókkal szerkesztheted. ",
+        "description": "Ezen a térképen postahivatalok és postaládák adatait találod és viheted föl. A térkép segítségével utánanézhetsz, hogy hol adhatod fel a következő képeslapodat! :)<br/>Hibát találtál, vagy hiányzik egy postaláda? A térképet mindössze egy ingyenes OpenStreetMap-fiókkal szerkesztheted.",
         "shortDescription": "Posták és postaládák térképe",
         "title": "Posta- és postaládatérkép"
     },
     "shops": {
         "description": "Ezen a térképen az üzletek alapvető adatait lehet megadni, például nyitvatartási időt és telefonszámokat.",
         "shortDescription": "Szerkeszthető térkép üzletek alapvető adataival",
-        "title": "Bolttérkép"
+        "title": "Boltok"
     },
     "sport_pitches": {
         "description": "A sportpálya egy olyan terület, amelyen valamilyen sportot űznek",
@@ -376,15 +376,18 @@
     },
     "toilets": {
         "description": "Nyilvános WC-k térképe",
-        "title": "WC-térkép"
+        "title": "Nyilvános illemhelyek"
     },
     "trees": {
         "description": "Térképezzünk fel minden fát!",
         "shortDescription": "Az összes fa feltérképezése",
         "title": "Fatérkép"
     },
+    "waste": {
+        "title": "Hulladék"
+    },
     "waste_basket": {
-        "description": "Ezen a térképen megtalálhatod a közeledben lévő szemeteskosarakat. Ha hiányzik egy kuka a térképről, te is felrajzolhatod",
+        "description": "Ezen a térképen megtalálhatod a közeledben lévő szemeteskosarakat. Ha hiányzik egy kuka a térképről, te is felrajzolhatod.",
         "shortDescription": "Szemeteskosarakat ábrázoló térkép",
         "title": "Kukatérkép"
     }
