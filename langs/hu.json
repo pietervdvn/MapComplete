@@ -137,12 +137,12 @@
         "404": "Ez az oldal nem létezik",
         "about": "Tematikus OpenStreetMap-objektumok egyszerű felrajzolása és szerkesztése",
         "aboutMapComplete": {
-            "intro": "A MapComplete segítségével <b>egyetlen témában</b> fehetsz fel OpenStreetMap-adatokat<b>.</b> Válaszolj a kérdésekre, és a szerkesztésed perceken belül mindenhol láthatóvá válik. A legtöbb témához képeket is adhatsz, vagy akár véleményt is írhatsz. Az elemeket, a kérdéseket és a nyelveket <b>tematikus térkép gazdája</b> határozza meg."
+            "intro": "A MapComplete segítségével <b>egyetlen témában</b> vihetsz fel OpenStreetMap-adatokat. Válaszolj a kérdésekre, és a szerkesztésed perceken belül világszerte láthatóvá válik. A legtöbb témához képeket is adhatsz, vagy akár véleményt is írhatsz. Az elemeket, a kérdéseket és a nyelveket <b>tematikus térkép gazdája</b> határozza meg."
         },
         "add": {
             "addNew": "Új {category} felvétele",
             "backToSelect": "Másik kategória kijelölése",
-            "confirmButton": "{category} felvétele.<br><div class=\"alert\">A felvett objektumot mindenki látni fogja</div>",
+            "confirmButton": "{category} felvétele.<br/><div class='alert'>A felvett dolgokat mindenki látni fogja</div>",
             "confirmLocation": "Hely megerősítése",
             "confirmTitle": "Adsz hozzá {title} szöveget is?",
             "confirmWarning": "Az itt létrehozott objektumot <b>mindenki látni fogja</b>. Csak akkor rajzolj valamit a térképre, ha az valóban létezik. Sok alkalmazás használja ezeket az adatokat.",
@@ -161,7 +161,7 @@
                 "zoomInMore": "Nagyíts tovább az objektum importálásához"
             },
             "importTags": "Az elem {tags} címkéket fog kapni",
-            "intro": "Olyan helyre kattintottál, ahol még nincs ismert adat.<br>",
+            "intro": "Olyan helyre kattintottál, ahol még nincs ismert adat.<br/>",
             "layerNotEnabled": "A {layer} réteg nincs engedélyezve. Objektum felrajzolásához engedélyezd ezt a réteget",
             "openLayerControl": "Rétegvezérlő-doboz megnyitása",
             "pleaseLogin": "Új objektum felvételéhez be kell jelentkezned",
@@ -188,27 +188,56 @@
             "editJosm": "Szerkesztés itt JOSM-mal",
             "emailCreators": "E-mail küldése az alkotóknak",
             "followOnMastodon": "Kövesse a MapComplete-et a Mastodonon",
+            "gotoSourceCode": "Forráskód megtekintése",
             "iconAttribution": {
                 "title": "Felhasznált ikonok"
             },
             "josmNotOpened": "A JOSM-ot nem lehetett elérni. Győződj meg róla, hogy meg van nyitva, és a távvezérlés engedélyezve van",
             "josmOpened": "A JOSM megnyílt",
+            "madeBy": "Készítette: <b>{author}</b>",
             "mapContributionsBy": "A jelenleg látható adatokat szerkesztette: {contributors}",
             "mapContributionsByAndHidden": "A jelenleg látható adatokat szerkesztette: {contributors} és {hiddenCount} további közreműködő",
+            "mapDataByOsm": "Térképadatok: OpenStreetMap",
+            "mapillaryHelp": "A <b>Mapillary</b> olyan online szolgáltatás, amely utcaképeket gyűjt, és ingyenes licenc alatt kínálja őket. A szerkesztők felhasználhatják ezeket a képeket az OpenStreetMap javítására",
             "openIssueTracker": "Hiba bejelentése",
             "openMapillary": "Mapillary megnyitása itt",
             "openOsmcha": "A téma {theme} legutóbbi szerkesztéseinek megtekintése",
-            "themeBy": "A téma karbantartója: {author}"
+            "openOsmchaLastWeek": "Az előző 7 nap szerkesztéseinek megtekintése",
+            "openPanoramax": "Panoramax megnyitása",
+            "openThemeDocumentation": "{name} tematikus térkép dokumentációjának megnyitása",
+            "panoramaxHelp": "A <b>Panoramax</b> olyan online szolgáltatás, amely utcaképeket gyűjt, és ingyenes licenc alatt kínálja őket. A szerkesztők felhasználhatják ezeket a képeket az OpenStreetMap javítására",
+            "panoramaxLicenseCCBYSA": "A képeid CC-BY-SA alatt jelennek meg, és bárki újra felhasználhatja őket, ha megemlíti a neved",
+            "seeOnMapillary": "Kép megtekintése a Mapillaryn",
+            "themeBy": "A téma karbantartója: {author}",
+            "title": "Szerzői jogok és tulajdonjog",
+            "translatedBy": "A MapComplete fordítói: {contributors} és <a href='https://github.com/pietervdvn/MapComplete/graphs/contributors' target='_blank'>{hiddenCount} további közreműködők</a>"
         },
         "back": "Vissza",
+        "backToIndex": "Az összes tematikus térkép megtekintése",
+        "backToMap": "Vissza a térképhez",
         "backgroundMap": "Jelölj ki egy háttérréteget",
+        "backgroundSwitch": "Háttér váltása",
         "cancel": "Mégse",
+        "clearPendingChanges": "Függőben lévő módosítások törlése",
         "confirm": "Megerősítés",
         "customThemeIntro": "Ezek korábban megnézett, felhasználó által létrehozott témák.",
+        "customThemeTitle": "Egyedi témák",
         "download": {
+            "custom": {
+                "download": "{width} mm széles és {height} mm magas PNG-kép letöltése",
+                "downloadHelper": "Nyomtatásra való",
+                "height": "Kép magassága (mm):",
+                "title": "Egyedi szélességű és magasságú kép letöltése",
+                "width": "Kép szélessége (mm): "
+            },
             "downloadAsPdf": "A jelenlegi térkép letöltése PDF-ként",
             "downloadAsPdfHelper": "Eszményi a jelenlegi térkép kinyomtatásához",
+            "downloadAsPng": "Letöltés képként",
+            "downloadAsPngHelper": "Eszményi módon elhelyezhető jelentésekben",
             "downloadAsSvg": "Az aktuális térkép letöltése SVG formátumban",
+            "downloadAsSvgHelper": "Kompatibilis az Inkscape vagy az Adobe Illustrator programmal; további feldolgozást igényel",
+            "downloadAsSvgLinesOnly": "Az aktuális térkép letöltése SVG formátumban, amely csak vonalakat tartalmaz",
+            "downloadAsSvgLinesOnlyHelper": "Az önmagukat metsző vonalak megszakadnak; egyes 3D szoftverekkel használható",
             "downloadCSV": "Látható adatok letöltése CSV-ként",
             "downloadCSVHelper": "Kompatibilis a LibreOffice Calc-kal, az Excellel…",
             "downloadFeatureAsGeojson": "Letöltés GeoJSON-fájlként",
@@ -217,56 +246,108 @@
             "downloadGeojson": "A látható adatok letöltése GeoJSON-ként",
             "downloadGpx": "Letöltés GPX-ként",
             "downloadGpxHelper": "A GPX-fájlok a legtöbb navigációs eszközzel és alkalmazással használhatók",
+            "downloadImage": "Kép letöltése",
             "exporting": "Exportálás…",
             "includeMetaData": "Metaadatokat is tartalmazzon (legutóbbi szerkesztő, számított értékek stb.)",
             "licenseInfo": "<h3>Szerzői jogi nyilatkozat</h3>A megadott adatok az ODbL licenc szerint érhetők el. Újrafelhasználásuk bármilyen célra ingyenes, de <ul><li>meg kell nevezni az <b>© OpenStreetMap-közreműködőket</b>, és</li><li>minden változtatáshoz ezt a licencet kell használni</li></ul>A részletekért kérjük, olvasd el a teljes <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">szerzői jogi nyilatkozatot</a>.",
             "noDataLoaded": "Még nincs betöltött adat. A letöltés hamarosan elérhető lesz",
+            "pdf": {
+                "current_view_generic": "Az aktuális nézet exportálása PDF-be ({paper_size} méret9 és {orientation} tájolás)"
+            },
             "title": "Letöltés",
+            "toMuch": "Túl sok az objektum: ennyit nem lehet letölteni",
             "uploadGpx": "Töltsd fel a nyomvonalaidat az OpenStreetMapre"
         },
+        "enableGeolocationForSafari": "Nem jelent meg a felugró ablak a tartózkodási helyed felhasználásának engedélyezéséről?",
+        "enableGeolocationForSafariLink": "A beállításokban megnézheted, hogyan engedélyezheted a tartózkodási helyed felhasználását",
+        "eraseValue": "Érték törlése",
         "error": "Valami rosszul sült el",
         "example": "Példa",
         "examples": "Példák",
         "fewChangesBefore": "Kérjük, válaszolj néhány meglévő objektumokra vonatkozó kérdésre, mielőtt felvennél egy újat.",
+        "filterPanel": {
+            "allTypes": "Minden típus",
+            "disableAll": "Összes letiltása",
+            "enableAll": "Összes engedélyezése"
+        },
+        "geopermissionDenied": "A tartózkodási hely felhasználása meg lett tagadva",
         "getStartedLogin": "A kezdéshez jelentkezz be az OpenStreetMap-fiókoddal,",
         "getStartedNewAccount": " vagy <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">hozz létre új fiókot</a>",
         "goToInbox": "Beérkezett üzenetek megnyitása",
         "histogram": {
             "error_loading": "Nem sikerült betölteni a hisztogramot"
         },
+        "labels": {
+            "background": "Háttér megváltoztatása",
+            "filter": "Adatok szűrése",
+            "jumpToLocation": "Ugrás a jelenlegi helyzetedhez",
+            "locationNotAvailable": "GPS-helyzet nem elérhető. Lehet, hogy a készülékeden nincs helymeghatározás vagy egy alagútban vagy?",
+            "menu": "Menü",
+            "zoomIn": "Közelítés",
+            "zoomOut": "Távolítás"
+        },
         "layerSelection": {
             "title": "Rétegek kijelölése",
             "zoomInToSeeThisLayer": "Nagyíts a réteg megtekintéséhez"
         },
+        "levelSelection": {
+            "addNewOnLevel": "Ezen a szinten található az új pont: {level}?",
+            "confirmLevel": "Igen, {preset} hozzáadása a következő szinten: {level}"
+        },
         "loading": "Betöltés…",
         "loadingTheme": "{theme} betöltése…",
         "loginFailed": "Az OpenStreetMap-be való bejelentkezés nem sikerült",
+        "loginFailedOfflineMode": "Az OpenStreetMap.org karbantartás miatt jelenleg nem elérhető. Hamarosan megint lehet szerkeszteni",
+        "loginFailedReadonlyMode": "Az OpenStreetMap.org karbantartás miatt jelenleg csak olvasható üzemmódban van. Hamarosan megint lehet szerkeszteni",
+        "loginFailedUnreachableMode": "Az OpenStreetMap.org jelenleg nem elérhető. Nem lehet, hogy nincs internetkapcsolatod, vagy blokkolsz harmadik feleket? Próbáld meg később újra",
         "loginOnlyNeededToEdit": "ha módosítani szeretnél",
         "loginToStart": "A kérdés megválaszolásához be kell jelentkezni",
         "loginWithOpenStreetMap": "Bejelentkezés OpenStreetMap-fiókkal",
         "logout": "Kijelentkezés",
+        "mappingsAreHidden": "Néhány beállítás el van rejtve. További beállítások megjelenítéséhez használd a keresést.",
+        "menu": {
+            "aboutCurrentThemeTitle": "Térkép névjegye",
+            "aboutMapComplete": "A MapComplete névjegye",
+            "filter": "Adatok szűrése",
+            "moreUtilsTitle": "Ismerj meg többet",
+            "openHereDifferentApp": "Jelenlegi helyzet megnyitása más alkalmazásban",
+            "showIntroduction": "Bevezetés megjelenítése",
+            "title": "Menü"
+        },
         "morescreen": {
             "createYourOwnTheme": "Készítsd el saját MapComplete témád a semmiből",
+            "enterToOpen": "Nyomd meg az entert a téma megnyitásához",
             "hiddenExplanation": "Ezeket a témákat csak az érheti el, akik ismeri a linket. {total_hidden} rejtett téma közül {hidden_discovered} témát ismersz.",
             "noMatchingThemes": "Nincs olyan téma, amely megfelelt volna a keresési feltételeknek",
             "noSearch": "Minden téma megjelenítése",
             "previouslyHiddenTitle": "Korábban megnézett rejtett témák",
             "requestATheme": "Ha egyedi témát szeretnél, kérd a problémakövetőben (issue tracker)",
+            "searchForATheme": "Téma keresése",
             "streetcomplete": "Egy másik, hasonló alkalmazás a <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>."
         },
         "nameInlineQuestion": "Ezen {category} neve: $$$",
         "next": "Következő",
+        "noMatchingMapping": "Nincs a keresésnek megfelelő találat…",
         "noNameCategory": "Név nélküli {category}",
         "noTagsSelected": "Nincs kijelölt címke",
+        "notValid": "A folytatáshoz jelölj ki egy érvényes értéket",
         "number": "szám",
         "openStreetMapIntro": "<h3>Nyílt térkép</h3><p>Ezt a térképet mindenki szabadon használhatja és szerkesztheti. Ez egy olyan egységes hely, ahol &lt;i&gt;minden&lt;/i&gt; térinformatikai adatot tárolni lehet. Semmi szükség különböző, kicsi, nem kompatibilis és elavult térképekre.</p><p>Az <b><a href=\"https://OpenStreetMap.org\" target=\"_blank\">OpenStreetMap</a> (OSM)</b> nem az ellenség térképe. A térképadatok szabadon felhasználhatók (<a href=\"https://osm.org/copyright\" target=\"_blank\">a tulajdonlással és az adatokban bekövetkezett változások feltüntetésével</a>). Mindenki adhat hozzá új térképadatokat és javíthat hibákat. Ez a weboldal is az OpenStreetMapet használja. Minden adat onnan származik, és a Te válaszaid és javításaid is meg fognak jelenni mindenütt.</p><p>Sok ember és alkalmazás már használja az OpenStreetMapet: például az <a href=\"https://organicmaps.app/\" target=\"_blank\">Organic Maps</a> vagy az <a href=\"https://osmAnd.net\" target=\"_blank\">OsmAnd</a>, de a Facebook, az Instagram, az Apple és a Bing (Microsoft) térképei is (részben) az OpenStreetMap adataira támaszkodnak.</p>",
-        "openTheMap": "Nyisd meg a térképet,",
+        "openTheMap": "Térkép megnyitása",
+        "openTheMapAtGeolocation": "Nagyítás a saját helyzetemre",
+        "openTheMapReason": "megtekintéshez, szerkesztéshez és adatok felviteléhez",
         "opening_hours": {
+            "all_days_from": "Nyitva minden nap: {ranges}",
             "closed_permanently": "Ismeretlen ideig zárva",
             "closed_until": "Zárva eddig: {date}",
+            "error": "A megadott nyitvatartási idő nem értelmezhető",
             "error_loading": "Hiba: nem sikerült megjeleníteni ezt a nyitva tartási időt.",
+            "friday": "Péntek {ranges}",
             "loadingCountry": "Ország meghatározása…",
+            "monday": "Hétfő {ranges}",
             "not_all_rules_parsed": "Ez a nyitva tartás bonyolult. A beviteli elemben a következő szabályok nem vétetnek figyelembe:",
+            "on_weekdays": "Nyitva hétköznap {ranges}",
+            "on_weekends": "Nyitva hétvégén {ranges}",
             "openTill": "eddig:",
             "open_24_7": "Éjjel-nappal nyitva",
             "open_during_ph": "Munkaszüneti napokon",
@@ -274,7 +355,15 @@
             "ph_closed": "zárva",
             "ph_not_known": " ",
             "ph_open": "nyitva",
-            "ph_open_as_usual": "a szokásos rend szerint nyitva"
+            "ph_open_as_usual": "a szokásos rend szerint nyitva",
+            "ranges": "ettől: {starttime} eddig: {endtime}",
+            "rangescombined": "{range0} és {range1}",
+            "saturday": "Szombat {ranges}",
+            "sunday": "Vasárnap {ranges}",
+            "thursday": "Csütörtök {ranges}",
+            "tuesday": "Kedd {ranges}",
+            "unknown": "Nyitva tartás ismeretlen",
+            "wednesday": "Szerda {ranges}"
         },
         "osmLinkTooltip": "A szerkesztési előzmények és további szerkesztési lehetőségek megtekintéséhez nézd meg ezt az objektumot az OpenStreetMapen",
         "pdf": {
@@ -284,35 +373,142 @@
             "versionInfo": "{version} verzió – létrehozva: {date}"
         },
         "pickLanguage": "Nyelv kiválasztása",
+        "poweredByMapComplete": "Motor: MapComplete – sokak által szerkesztett tematikus térképek az OpenStreetMap segítségével",
         "poweredByOsm": "Motor: OpenStreetMap",
+        "questionBox": {
+            "answeredMultiple": "Megválaszoltál {answered} kérdést",
+            "answeredMultipleSkippedMultiple": "Megválaszoltál {answered} kérdést, és kihagytál {skipped} másikat",
+            "answeredMultipleSkippedOne": "Megválaszoltál {answered} kérdést, és kihagytál egyet",
+            "answeredOne": "Megválaszoltál egy kérdést",
+            "answeredOneSkippedMultiple": "Megválaszoltál egy kérdést, és kihagytál {skipped} másikat",
+            "answeredOneSkippedOne": "Megválaszoltál egy kérdést és kihagytál egy másikat",
+            "done": "Nincs több kérdés. Köszönjük!",
+            "reactivate": "Kihagyott kérdések újraaktiválása",
+            "skippedMultiple": "Kihagytál {skipped} kérdést",
+            "skippedOne": "Kihagytál egy kérdést"
+        },
         "questions": {
             "emailIs": "Ezen {category} e-mail-címe: <a href=\"mailto:{email}\" target=\"_blank\">{email}</a>",
             "emailOf": "Mi az e-mail-címe ennek ({category})?",
-            "phoneNumberIs": "Ezen {category} telefonszáma: <a target=\"_blank\">{phone}</a>",
+            "phoneNumberIs": "{category} telefonszáma: <a href='tel:{phone}' target='_blank'>{phone}</a>",
             "phoneNumberOf": "Mi a telefonszáma ennek ({category})?",
             "websiteIs": "Weboldal: <a href=\"{website}\" target=\"_blank\">{website}</a>",
             "websiteOf": "Mi a weboldala ennek ({category})?"
         },
         "readYourMessages": "Kérjük, új objektum felvétele előtt olvasd el az összes OpenStreetMap-üzeneted.",
         "removeLocationHistory": "Helyelőzmények törlése",
+        "retry": "Újrapróbálkozás",
         "returnToTheMap": "Vissza a térképhez",
         "save": "Mentés",
+        "screenToSmall": "<i>{theme}</i> megnyitása új ablakban",
         "search": {
+            "activeFilters": "Bekapcsolt szűrők",
+            "clearFilters": "Szűrők törlése",
+            "deleteSearchHistory": "Helyelőzmények törlése",
+            "deleteThemeHistory": "Korábban megtekintett témák törlése",
+            "editSearchSyncSettings": "Szinkronizálási beállítások törlése",
+            "editThemeSync": "Szinkronizálási beállítások szerkesztése",
             "error": "Hiba történt…",
+            "instructions": "Helyek, szűrők vagy más tematikus térképek kereséséhez használja a fenti keresősávot",
+            "locations": "Helyek",
+            "nMoreFilters": "{n} további",
             "nothing": "Nincs találat…",
+            "nothingFor": "Nem található semmi erre a kifejezésre: {term}",
+            "otherMaps": "Más térképek",
+            "pickFilter": "Szűrő bekapcsolása",
+            "recentThemes": "Legutóbb megnézett térképek",
+            "recents": "Legutóbb megnézett helyek",
             "search": "Helyszín keresése",
+            "searchShort": "Keresés…",
             "searching": "Keresés…"
         },
+        "searchAnswer": "Beállítás keresése…",
+        "seeIndex": "Az összes tematikus térkép áttekintése",
+        "share": "Megosztás",
         "sharescreen": {
             "copiedToClipboard": "Link a vágólapra másolva",
-            "embedIntro": "<h3>Beágyazás egy weboldalon</h3>Kérjük, illeszd be ezt a térképet a weboldalba. <br>Biztatunk, tedd meg – még engedélyt sem kell kérned. <br> Ingyenes, és az is marad. Minél többen használják, annál értékesebbé válik. A pipákra kattintva módosíthatod a paramétereket:",
+            "documentation": "A használható URL-paraméterekről további információt <a href='https://github.com/pietervdvn/MapComplete/blob/develop/Docs/URL_Parameters.md' target='_blank'>a dokumentációban</a> találsz",
+            "embedIntro": "<h3>Beágyazás egy weboldalon</h3>Kérjük, illeszd be ezt a térképet a weboldalba.<br/>Nosza, tedd meg – még engedélyt sem kell kérned.<br/>Ingyenes, és az is marad. Minél többen használják, annál értékesebbé válik.",
+            "fsBackground": "Háttér váltásának engedélyezése",
+            "fsFilter": "Tétegek és szűrők közötti váltások lehetőségének engedélyezése",
+            "fsGeolocation": "Tartózkodási hely felhasználásának engedélyezése",
             "fsUserbadge": "Engedélyezze a bejelentkezés gombot és így a módosítás lehetőségét",
             "fsWelcomeMessage": "Felugró üdvözlő üzenet és kapcsolódó fülek megjelenítése",
             "intro": "Oszd meg ezt a térképet! Másold ki az alábbi linket, és küldd el barátaidnak és családodnak:",
-            "thanksForSharing": "Köszönjük a megosztást!"
+            "openInOtherApplications": "Jelenlegi helyzet megnyitása más térképalkalmazásban",
+            "openLayers": "Rétegek és szűrők menü megnyitása",
+            "options": "Megosztási beállítások",
+            "stateIsIncluded": "A megosztott link és az iframe tartalmazza a rétegek és szűrők aktuális állapotát is.",
+            "thanksForSharing": "Köszönjük a megosztást!",
+            "title": "Térkép megosztása"
         },
         "skip": "Kérdés kihagyása",
         "testing": "Kipróbálás – a módosítások nem lesznek elmentve",
+        "uploadError": "Hiba történt a módosítások feltöltésekor: {error}",
+        "uploadGpx": {
+            "choosePermission": "Válaszd ki, hogyan osztassék meg a nyomvonalad:",
+            "confirm": "Feltöltés megerősítése",
+            "gpxServiceOffline": "A GPX-szolgáltatás jelenleg offline, jelenleg nem lehet feltölteni semmit. Próbálja meg később újra.",
+            "intro0": "A nyomvonal feltöltésével az OpenStreetMap.org megőriz belőle egy példányt.",
+            "intro1": "A nyomvonalat újra le tudod majd tölteni, valamint be tudod tölteni OpenStreetMap szerkesztőprogramokba is",
+            "meta": {
+                "descriptionIntro": "Megadhatod a nyomvonal leírását (nem kötelező):",
+                "descriptionPlaceHolder": "Adj meg egy leírást a nyomvonaladhoz",
+                "intro": "Nyomvonal címe:",
+                "title": "Cím és leírás",
+                "titlePlaceholder": "Add meg a nyomvonalad címét"
+            },
+            "modes": {
+                "private": {
+                    "docs": "A nyomvonalad pontjait megosztják és összesítik más nyomvonalakkal. Te a teljes nyomvonalat látni fogod és be tudod majd tölteni más szerkesztőprogramokba. Az OpenStreetMap.org megőrzi a nyomvonalad egy példányát",
+                    "name": "Névtelen"
+                },
+                "public": {
+                    "docs": "Nyomvonaladat mindenki láthatja mind a felhasználói profilodnál, mind pedig az openstreetmap.org-on a GPS-nyomvonalak listáján",
+                    "name": "Nyilvános"
+                }
+            },
+            "title": "Nyomvonalad feltöltése az OpenStreetMap.org-ra",
+            "uploadFinished": "A nyomvonalad fel lett töltve",
+            "uploading": "Nyomvonal felöltése…"
+        },
+        "uploadPending": "{count} módosítás függőben",
+        "uploadPendingSingle": "Egy módosítás függőben",
+        "uploadingChanges": "Módosítások feltöltése…",
+        "useSearch": "További beállítások megtekintéséhez használd a fenti keresést",
+        "visualFeedback": {
+            "closestFeaturesAre": "{n} objektum a térképnézetben.",
+            "directionsAbsolute": {
+                "E": "keletre",
+                "N": "északra",
+                "NE": "északkeletre",
+                "NW": "északnyugatra",
+                "S": "délre",
+                "SE": "délkeletre",
+                "SW": "délnyugatra",
+                "W": "nyugatra"
+            },
+            "directionsRelative": {
+                "behind": "hátra",
+                "left": "balra",
+                "right": "jobbra",
+                "sharp_left": "élesen balra",
+                "sharp_right": "élesen jobra",
+                "slight_left": "enyhén balra",
+                "slight_right": "enyhén jobbra",
+                "straight": "egyenesen"
+            },
+            "fromGps": "{distance} {direction} a tartózkodási helyedtől",
+            "fromMapCenter": "{distance} {direction} a térkép közepétől",
+            "in": "Közelítés {z} nagyítási szintig",
+            "islocked": "GPS-helyzetedhez rögzített nézet, mozgás letiltva. A feloldáshoz nyomd meg a tartózkodási hely elérésének engedélyezése gombot.",
+            "locked": "A nézet mostantól a GPS-helyzetedhez van rögzítve, a mozgás letiltva.",
+            "navigation": "A térképet a nyílbillentyűkkel mozgathatod, a legközelebbi objektumot a szóközzel, a távolabbi helyeket pedig a számokkal jelölheted ki.",
+            "noCloseFeatures": "Nincs objektum a térképnézetben.",
+            "out": "Távolítás {z} nagyítási szintig",
+            "unlocked": "Mozgás engedélyezve."
+        },
+        "waitingForLocation": "Jelenlegi helyzeted keresése…",
         "weekdays": {
             "abbreviations": {
                 "friday": "Pé",
@@ -333,32 +529,83 @@
         },
         "welcomeBack": "Isten hozott ismét!",
         "wikipedia": {
+            "addEntry": "További Wikipédia-oldal hozzáfűzése",
             "createNewWikidata": "Új Wikidata-elem létrehozása",
             "doSearch": "Keress fent az eredmények megtekintéséhez",
             "failed": "Wikipédia-szócikk betöltése sikertelen",
+            "fromWikipedia": "A Wikipédiából, a szabad enciklopédiából",
             "loading": "Wikipédia betöltése…",
             "noResults": "Nincs találat erre: <i>{search}</i>",
             "noWikipediaPage": "Ennek a Wikidata-elemnek még nincs megfelelő Wikipédia-oldala.",
+            "previewbox": {
+                "born": "Született: {value}",
+                "died": "Elhunyt: {value}"
+            },
+            "readMore": "A cikk fennmaradó részének elolvasása",
+            "searchToShort": "Túl rövid a keresési kifejezés, írj be egy hosszabb szöveget",
             "searchWikidata": "Keresés a Wikidatán",
             "wikipediaboxTitle": "Wikipédia"
         }
     },
+    "hotkeyDocumentation": {
+        "action": "Művelet",
+        "closeSidebar": "Oldalsáv bezárása",
+        "intro": "A MapComplete a következő kulcsokat támogatja:",
+        "key": "Kulcskombináció",
+        "openFilterPanel": "Megnyitja az érdekes pontok (POI-k) rétegét és a szűrőpanelt",
+        "openLayersPanel": "Megnyitja a háttérrétegek paneljét",
+        "queryCurrentLocation": "A térkép közepéhez legközelebbi cím megjelenítése",
+        "selectFavourites": "Kedvencek oldal megnyitása",
+        "selectMapnik": "Háttérréteg beállítása OpenStreetMap-carto-ra",
+        "title": "Gyorsbillentyűk",
+        "translationMode": "Fordítási mód be- vagy kikapcsolása"
+    },
     "image": {
         "addPicture": "Kép hozzáadása",
+        "currentLicense": "Képeid {license} alapján lesznek közzétéve",
         "doDelete": "Kép eltávolítása",
         "dontDelete": "Mégse",
         "isDeleted": "Törölve",
+        "nearby": {
+            "close": "Panel összecsukása a környező képekkel",
+            "failed": "Nem sikerült a képek lehívása innen: {service}",
+            "link": "Ez a kép az objektumot ábrázolja",
+            "noNearbyImages": "Nincs a közelben kép",
+            "seeNearby": "Közeli képek böngészése",
+            "title": "Közeli utcakép"
+        },
         "pleaseLogin": "Kép hozzáadásához be kell jelentkezni",
+        "processing": "A szerver feldolgozza a képet",
         "respectPrivacy": "Ne tölts fel képet a Google térképről, a Google Streetview-ról (utcaképről) és egyéb szerzői jog által védett forrásokból.",
         "toBig": "A kép túl nagy ({actual_size}). Kérjük, legfeljebb {max_size} méretű képeket használj",
+        "upload": {
+            "failReasons": "Lehet, hogy megszakadt az internetkapcsolatod",
+            "multiple": {
+                "done": "{count} kép sikeresen feltöltve. Köszönjük!",
+                "partiallyDone": "{count} kép feltöltése folyamatban, {done} kép már kész…",
+                "someFailed": "Sajnáljuk, {count} képet nem sikerült feltöltenünk",
+                "uploading": "{count} kép feltöltése folyamatban…"
+            },
+            "one": {
+                "done": "Kép sikeresen feltöltve. Köszönjük!",
+                "failed": "Sajnos nem sikerült feltöltenünk a képed",
+                "retrying": "A kép feltöltése újból folyamatban van…",
+                "uploading": "Kép feltöltése…"
+            }
+        },
         "uploadDone": "A kép hozzá lett adva. Köszönjük a segítséged!",
         "uploadFailed": "Nem sikerült feltölteni a képet. Van-e internetkapcsolatod, és engedélyezted-e a harmadik féltől származó API-kat? A Brave böngésző vagy a uMatrix bővítmény blokkolhatja őket.",
         "uploadMultipleDone": "{count} kép hozzáadva. Köszönjük a segítséget!",
         "uploadingMultiple": "{count} kép feltöltése folyamatban…",
         "uploadingPicture": "Kép feltöltése folyamatban…"
     },
+    "importLayer": {
+        "layerName": "Lehetséges {title}",
+        "notFound": "Nem sikerült megtalálnom ezt: {title}. Távolítsd el"
+    },
     "index": {
         "#": "Ezek a szövegek akkor jelennek meg a témagombok felett, ha nincs betöltve téma",
+        "about": "A MapComplete névjegye",
         "featuredThemeTitle": "Kiemelt ezen a héten",
         "intro": "Tematikus térképek, amelyeket te is szerkeszthetsz",
         "logIn": "A korábban megnézett témák megtekintéséhez be kell jelentkezned",
@@ -393,20 +640,65 @@
     "multi_apply": {
         "autoApply": "A(z) {attr_names} tulajdonságok módosításával ezek a tulajdonságok automatikusan módosulnak {count} további objektumon is"
     },
+    "notes": {
+        "addAComment": "Hozzászólás",
+        "addComment": "Hozzászólás írása",
+        "addCommentAndClose": "Hozzászólás és lezárás",
+        "addCommentPlaceholder": "Hozzászólás…",
+        "anonymous": "Névtelen felhasználó",
+        "closeNote": "Jegyzet lezárása",
+        "createNote": "Új jegyzet létrehozása",
+        "createNoteTitle": "Új jegyzet létrehozása itt",
+        "creating": "Jegyzet létrehozása folyamatban…",
+        "disableAllNoteFilters": "Szűrők letiltása",
+        "isClosed": "Ez a jegyzet meg lett oldva",
+        "isCreated": "Létrejött a jegyzeted",
+        "loginToAddComment": "Hozzászóláshoz be kell jelentkezned",
+        "loginToAddPicture": "Kép felviteléhez be kell jelentkezned",
+        "loginToClose": "A jegyzet lezáráshoz be kell jelentkezned",
+        "noteIsPublic": "Ezt mindenki látni fogja",
+        "noteLayerDoEnable": "Jegyzeteket megjelenítő réteg engedélyezése",
+        "noteLayerHasFilters": "Egy szűrő elrejthet néhány jegyzetet",
+        "reopenNote": "Jegyzet újbóli megnyitása",
+        "reopenNoteAndComment": "Jegyzet újbóli megnyitása és hozzászólás"
+    },
+    "plantDetection": {
+        "back": "Vissza a fajok áttekintéséhez",
+        "button": "Automatikusan felismeri a növényfajokat a Pl@antNet.org mesterséges intelligenciája segítségével",
+        "confirm": "Fajok kiválasztása",
+        "seeInfo": "További információk a fajról",
+        "tryAgain": "Másik faj kiválasztása"
+    },
     "privacy": {
         "geodata": "Amikor a MapComplete lekéri a földrajzi helyed meghatározását, az – a korábban meglátogatott helyekkel együtt – az eszközödön marad. Helyadatokat soha nem küldünk el automatikusan máshová – kivéve, ha bizonyos funkciók egyértelműen másként rendelkeznek.",
         "geodataTitle": "Földrajzi helyed",
         "intro": "A magánélet fontos – az egyénnek és a társadalomnak egyaránt. A MapComplete igyekszik a lehető legnagyobb mértékben tiszteletben tartani a magánéletedet – egészen addig a pontig, hogy már idegesítő cookie-bannerre sincs szükségünk. Ennek ellenére szeretnénk tájékoztatni arról, hogy milyen információkat gyűjtünk és osztunk meg, milyen körülmények között, és miért kell ezeket a kompromisszumoknak megkötnünk.",
+        "items": {
+            "language": "Felhasználói felület nyelve",
+            "theme": "A módosításkor használt téma",
+            "username": "Felhasználóneved"
+        },
+        "miscCookiesTitle": "Más cookie-k",
         "title": "Adatvédelmi irányelvek",
         "tracking": "Ahhoz, hogy némi betekintést nyerünk abba, hogy ki látogatja meg weboldalunkat, néhány technikai adatot gyűjtünk. Ez tartalmazza azt az országot, ahonnan meglátogattad a weboldalt, azt a webhelyet, amely a MapComplete-re irányított, az eszközöd típusát és képernyőméretét. Egy cookie kerül elhelyezésre a készülékeden, amely jelzi, hogy ma meglátogatta a MapComplete-et. Ezek az adatok nem elég részletesek ahhoz, hogy személyesen azonosítsanak. A statisztika csak összesítetten érhető el, és <a href=\"https://pietervdvn.goatcounter.com\" target=\"_blank\">mindenkinek nyilvános</a>",
-        "trackingTitle": "Statisztikai adatok"
+        "trackingTitle": "Statisztikai adatok",
+        "whileYoureHere": "Érdekel az adatvédelem?"
     },
     "reviews": {
         "affiliated_reviewer_warning": "(Kapcsolódó személy véleménye)",
         "attribution": "A <a href='https://mangrove.reviews/' target='_blank'>Mangrove Reviews</a>",
+        "averageRating": "Átlagos értékelés: {n} csillag",
         "i_am_affiliated": "Kapcsolatban állok ezzel a létesítménnyel",
+        "i_am_affiliated_explanation": "Annak ellenőrzése, hogy tulajdonos, létrehozó, alkalmazott stb. vagy-e.",
         "name_required": "Vélemények megjelenítéséhez és létrehozásához névre van szükség",
         "no_reviews_yet": "Még nincs vélemény. Légy Te az első!",
+        "question": "Hogyan értékelnéd ezt: {title()}?",
+        "question_opinion": "Milyen tapasztalatokat szereztél?",
+        "rate": "Értékelés {n} csillagra",
+        "rated": "{n} csillagra értékelve",
+        "reviewPlaceholder": "Írd le a tapasztalataidat…",
+        "reviewing_as": "Értékelés mint {nickname}",
+        "reviewing_as_anonymous": "Értékelés névtelenül",
         "saved": "Vélemény elmentve. Köszönjük a megosztást!",
         "saving_review": "Mentés…",
         "title": "{count} vélemény",
