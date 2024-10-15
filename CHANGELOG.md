@@ -2,6 +2,38 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.47.6](https://github.com/pietervdvn/mapcomplete/compare/v0.47.5...v0.47.6) (2024-10-15)
+
+
+### Features
+
+* remove 'noteImportLayer', they are not used enough for the big performance and maintenance impact they have ([e35df65](https://github.com/pietervdvn/mapcomplete/commitse35df654d7f2a0ef7c12c0ceef27cb3a1a7a1027))
+
+
+### Bug Fixes
+
+* add error reporting when image upload fails, see [#2202](https://github.com/pietervdvn/MapComplete/issues/2202) ([368d785](https://github.com/pietervdvn/mapcomplete/commits368d7857a055c92109ec6d5155078aabaef230ac))
+* add nvm path ([7d83cb1](https://github.com/pietervdvn/mapcomplete/commits7d83cb1a7fdaad23d4a1343edb75145f60bf771f))
+* add spaces to opening hours picker for PH ([8a8b2e2](https://github.com/pietervdvn/mapcomplete/commits8a8b2e20aebe8019af86aca02e6bcc4d90896b4f))
+* attempt to workaround for [#2202](https://github.com/pietervdvn/MapComplete/issues/2202) ([66465fd](https://github.com/pietervdvn/mapcomplete/commits66465fdc9893fa4c3f0c1f5b8279a51c33a1e407))
+* bug in error reporting ([4794032](https://github.com/pietervdvn/mapcomplete/commits4794032e49a4b5b2d3fdceac8a2b8a75994e94ea))
+* build: add generated file which is needed for some steps ([016908f](https://github.com/pietervdvn/mapcomplete/commits016908fb940a65dc863cddca5be8d681b9370c49))
+* explicitly use version number in update script ([977c6ff](https://github.com/pietervdvn/mapcomplete/commits977c6ff9fb30267f47c39aa55fb0a0f2e6028564))
+* fix [#2207](https://github.com/pietervdvn/MapComplete/issues/2207) ([ca17d3d](https://github.com/pietervdvn/mapcomplete/commitsca17d3da1b772e4976414b54406816a68ef0e175))
+* fix [#2209](https://github.com/pietervdvn/MapComplete/issues/2209), remove lingering incorrect translations ([fbcbdc5](https://github.com/pietervdvn/mapcomplete/commitsfbcbdc571edd848106885f9148e473c816990a67))
+* fix loading of preferences ([7060f7c](https://github.com/pietervdvn/mapcomplete/commits7060f7cf6cac807877efb8babc8586eabfc79351))
+* remove truly unrecoverable changes from report logging ([f2b681c](https://github.com/pietervdvn/mapcomplete/commitsf2b681caa59a419c4c217e705ad6d1a7ac271128))
+* reset translations ([6a4166f](https://github.com/pietervdvn/mapcomplete/commits6a4166febb5ce386beac8bbb06cd7527b90c6a12))
+* set max image size (100 MB) ([cc6ce3c](https://github.com/pietervdvn/mapcomplete/commitscc6ce3c271475759a7a2062b1ca7e4668ca4a230))
+* some fixes to studio ([c795e74](https://github.com/pietervdvn/mapcomplete/commitsc795e74037ca1aa222fdba6eb2cc4a32a78a8eb7))
+* tests ([c95999b](https://github.com/pietervdvn/mapcomplete/commitsc95999b50b84d294476783573baf21d46318cb16))
+
+
+### Theme improvements
+
+* don't do face blurring for some layers (artwork, memorials, ghost_bikes) ([15176a1](https://github.com/pietervdvn/mapcomplete/commits15176a16825d52e26a52f92567cf3977382ce213))
+* **food:** fix vegan questions, show vegan/vegetarian badge if `=only`, fix shops layer ([f8ef32f](https://github.com/pietervdvn/mapcomplete/commitsf8ef32f123340cb9db0060cdca7f4622cd55c228))
+
 ### [0.47.5](https://github.com/pietervdvn/mapcomplete/compare/v0.47.4...v0.47.5) (2024-10-08)
 
 
