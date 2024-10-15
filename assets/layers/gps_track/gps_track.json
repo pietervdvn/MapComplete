@@ -7,7 +7,8 @@
     "fr": "Votre chemin parcouru",
     "da": "Dit tilbagelagte spor",
     "ca": "La teva traça recorreguda",
-    "cs": "Vaše procestovaná trasa"
+    "cs": "Vaše procestovaná trasa",
+    "ru": "Ваш пройденный путь"
   },
   "description": "Meta layer showing the previous locations of the user as single line with controls, e.g. to erase, upload or download this track. Add this to your theme and override the maprendering to change the appearance of the travelled track.",
   "source": "special",

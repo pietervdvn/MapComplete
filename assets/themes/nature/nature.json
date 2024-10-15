@@ -11,7 +11,8 @@
     "cs": "Do přírody",
     "es": "En la naturaleza",
     "zh_Hant": "投入自然懷抱",
-    "pl": "W naturze"
+    "pl": "W naturze",
+    "ru": "На природе"
   },
   "description": {
     "en": "On this map, one can find interesting information for tourists and nature lovers.",
@@ -37,7 +38,8 @@
     "ca": "Un mapa per als amants de la natura, amb PDI interessants",
     "zh_Hant": "為了自然愛好者，以及有趣的興趣點的地圖",
     "pl": "Mapa dla miłośników przyrody z ciekawymi punktami POI",
-    "it": "Una mappa per amanti della natura con interessanti POI"
+    "it": "Una mappa per amanti della natura con interessanti POI",
+    "ru": "Карта для любителей природы, с интересными POI"
   },
   "icon": "./assets/themes/nature/logo.svg",
   "startZoom": 12,

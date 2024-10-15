@@ -23,11 +23,14 @@ export default class PanoramaxImageProvider extends ImageProvider {
 
     private static knownMeta: Record<string, { data: ImageData, time: Date }> = {}
 
-    public SourceIcon(img?: { id: string, url: string, host?: string }, location?: { lon: number; lat: number; }): BaseUIElement {
+    public SourceIcon(img?: { id: string, url: string, host?: string }, location?: {
+        lon: number;
+        lat: number;
+    }): BaseUIElement {
         const p = new Panoramax(img.host)
         return new Link(new SvelteUIElement(Panoramax_bw), p.createViewLink({
             imageId: img?.id,
-            location
+            location,
         }), true)
     }
 
@@ -162,6 +165,7 @@ export default class PanoramaxImageProvider extends ImageProvider {
 
 export class PanoramaxUploader implements ImageUploader {
     private readonly _panoramax: AuthorizedPanoramax
+    maxFileSizeInMegabytes = 100 * 1000 * 1000 // 100MB
 
     constructor(url: string, token: string) {
         this._panoramax = new AuthorizedPanoramax(url, token)
@@ -173,15 +177,25 @@ export class PanoramaxUploader implements ImageUploader {
         absoluteUrl: string
     }> {
         // https://panoramax.openstreetmap.fr/api/docs/swagger#/
-        const tags = await ExifReader.load(blob)
-        const hasDate = tags.DateTime !== undefined
-        const hasGPS = tags.GPSLatitude !== undefined && tags.GPSLongitude !== undefined
 
-        const [lon, lat] = currentGps
+        let tags: ExifReader.Tags = undefined
+        let hasDate = false
+        let hasGPS = false
+        try {
+            const tags = await ExifReader.load(blob)
+            hasDate  = tags?.DateTime !== undefined
+            hasGPS = tags?.GPSLatitude !== undefined && tags?.GPSLongitude !== undefined
+        } catch (e) {
+            console.error("Could not read EXIF-tags")
+        }
+
+        let [lon, lat] = currentGps
 
         const p = this._panoramax
         const defaultSequence = (await p.mySequences())[0]
         const img = <ImageData>await p.addImage(blob, defaultSequence, {
+            // It might seem odd that we set 'undefined' here - keep in mind that, by default, panoramax will use the EXIF-data
+            // We only pass variables as fallback!
             lat: !hasGPS ? lat : undefined,
             lon: !hasGPS ? lon : undefined,
             isBlurred: noblur,

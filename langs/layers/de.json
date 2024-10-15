@@ -543,7 +543,7 @@
                         "then": "Dieses Kunstwerk dient auch als Mahnmal"
                     },
                     "1": {
-                        "then": "Dieses Kunstwerk dient nicht als Sitzbank"
+                        "then": "Dieses Kunstwerk dient nicht als Denkmal"
                     }
                 },
                 "question": "Dient dieses Kunstwerk als Mahnmal?"
@@ -5397,7 +5397,7 @@
             "delivery": {
                 "mappings": {
                     "0": {
-                        "then": "Dieses Unternehmen liefert nach Hause (eventuell über eine dritte Partei)"
+                        "then": "Dieses Unternehmen liefert nach Hause (möglicherweise über eine dritte Partei)"
                     },
                     "1": {
                         "then": "Dieses Unternehmen liefert nicht nach Hause"
@@ -5447,12 +5447,15 @@
             "friture-vegan": {
                 "mappings": {
                     "0": {
-                        "then": "Vegane Snacks sind erhältlich"
+                        "then": "Nur vegane Snacks und Burger erhältlich"
                     },
                     "1": {
-                        "then": "Nur eine kleine Auswahl an veganen Snacks ist erhältlich"
+                        "then": "Vegane Snacks sind erhältlich"
                     },
                     "2": {
+                        "then": "Nur eine kleine Auswahl an veganen Snacks ist erhältlich"
+                    },
+                    "3": {
                         "then": "Es sind keine veganen Snacks verfügbar"
                     }
                 },
@@ -5461,12 +5464,15 @@
             "friture-vegetarian": {
                 "mappings": {
                     "0": {
-                        "then": "Vegetarische Snacks sind erhältlich"
+                        "then": "Nur vegetarische Snacks und Burger erhältlich"
                     },
                     "1": {
-                        "then": "Nur eine kleine Auswahl an vegetarischen Snacks ist erhältlich"
+                        "then": "Vegetarische Snacks sind erhältlich"
                     },
                     "2": {
+                        "then": "Nur eine kleine Auswahl an vegetarischen Snacks ist erhältlich"
+                    },
+                    "3": {
                         "then": "Es sind keine vegetarischen Snacks erhältlich"
                     }
                 },

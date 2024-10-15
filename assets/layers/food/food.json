@@ -750,8 +750,8 @@
         {
           "if": "delivery=yes",
           "then": {
-            "en": "This business does home delivery (eventually via a third party)",
-            "de": "Dieses Unternehmen liefert nach Hause (eventuell über eine dritte Partei)",
+            "en": "This business does home delivery (possibly via a third party)",
+            "de": "Dieses Unternehmen liefert nach Hause (möglicherweise über eine dritte Partei)",
             "fr": "Ce restaurant effectue la livraison à domicile (éventuellement via un tiers)",
             "nl": "Deze zaak levert aan huis (eventueel via een derde partij)",
             "ca": "Aquest negoci fa lliuraments a domicili (eventualment a través d'un tercer)",
@@ -1044,7 +1044,8 @@
         {
           "if": "diet:vegetarian=only",
           "then": {
-            "en": "Serves only vegetarian snacks and burgers"
+            "en": "Serves only vegetarian snacks and burgers",
+            "de": "Nur vegetarische Snacks und Burger erhältlich"
           }
         },
         {
@@ -1097,7 +1098,8 @@
         {
           "if": "diet:vegan=only",
           "then": {
-            "en": "Serves only vegan snacks and burgers"
+            "en": "Serves only vegan snacks and burgers",
+            "de": "Nur vegane Snacks und Burger erhältlich"
           }
         },
         {

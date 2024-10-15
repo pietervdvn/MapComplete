@@ -56,7 +56,7 @@
     currentValue.ping()
 
     if (isTagRenderingBlock) {
-      state.highlightedItem.setData({ path: [...path, currentValue.data.length - 1], schema })
+      state.highlightedItem?.setData({ path: [...path, currentValue.data.length - 1], schema })
     }
   }
 

@@ -543,7 +543,7 @@
                         "then": "This artwork also serves as a memorial"
                     },
                     "1": {
-                        "then": "This artwork does not serve as a bench"
+                        "then": "This artwork does not serve as a memorial"
                     }
                 },
                 "question": "Does this artwork serve as a memorial?"
@@ -5397,7 +5397,7 @@
             "delivery": {
                 "mappings": {
                     "0": {
-                        "then": "This business does home delivery (eventually via a third party)"
+                        "then": "This business does home delivery (possibly via a third party)"
                     },
                     "1": {
                         "then": "This business does not deliver at home"
@@ -5447,12 +5447,15 @@
             "friture-vegan": {
                 "mappings": {
                     "0": {
-                        "then": "Vegan snacks are available"
+                        "then": "Serves only vegan snacks and burgers"
                     },
                     "1": {
-                        "then": "A small selection of vegan snacks are available"
+                        "then": "Vegan snacks are available"
                     },
                     "2": {
+                        "then": "A small selection of vegan snacks are available"
+                    },
+                    "3": {
                         "then": "No vegan snacks are available"
                     }
                 },
@@ -5461,12 +5464,15 @@
             "friture-vegetarian": {
                 "mappings": {
                     "0": {
-                        "then": "Vegetarian snacks are available"
+                        "then": "Serves only vegetarian snacks and burgers"
                     },
                     "1": {
-                        "then": "Only a small selection of snacks are vegetarian"
+                        "then": "Vegetarian snacks are available"
                     },
                     "2": {
+                        "then": "Only a small selection of snacks are vegetarian"
+                    },
+                    "3": {
                         "then": "No vegetarian snacks are available"
                     }
                 },

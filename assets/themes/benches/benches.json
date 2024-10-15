@@ -22,7 +22,8 @@
     "eu": "Eserlekuak",
     "pl": "Ławki",
     "pt": "Bancadas",
-    "fil": "Mga upuan"
+    "fil": "Mga upuan",
+    "uk": "Лавки"
   },
   "description": {
     "en": "This map shows all benches that are recorded in OpenStreetMap: Individual benches, and benches belonging to public transport stops or shelters.",
@@ -41,7 +42,8 @@
     "cs": "Tato mapa zobrazuje všechny lavičky, které jsou zaznamenány v OpenStreetMap: samostatné lavičky a lavičky patřící k zastávkám veřejné dopravy nebo přístřeškům.",
     "eu": "OpenStreetMap-en erregistratzen diren banku guztiak erakusten ditu mapa honek: garraio publikoko geralekuetako edo babeslekuetako banakako bankuak eta bankuak.",
     "pl": "Mapa ta pokazuje wszystkie ławki zarejestrowane w OpenStreetMap: ławki indywidualne oraz ławki należące do przystanków komunikacji miejskiej lub wiat.",
-    "zh_Hans": "这张地图显示了所有记录在 OpenStreetMap 中的长椅：包括独立长椅和属于公共交通站点或候车亭的长椅。"
+    "zh_Hans": "这张地图显示了所有记录在 OpenStreetMap 中的长椅：包括独立长椅和属于公共交通站点或候车亭的长椅。",
+    "uk": "На цій карті показані всі лавки, які зафіксовані в OpenStreetMap: Окремі лавки та лавки, що належать до зупинок громадського транспорту або притулків."
   },
   "shortDescription": {
     "en": "A map of benches",
@@ -64,7 +66,8 @@
     "eu": "Eserleku mapa bat",
     "pl": "Mapa ławek",
     "pt": "Um mapa de bancadas",
-    "fil": "Mapa ng upuan"
+    "fil": "Mapa ng upuan",
+    "uk": "Карта лавок"
   },
   "icon": "./assets/themes/benches/bench_poi.svg",
   "credits": [

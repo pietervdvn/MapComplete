@@ -6,7 +6,8 @@
     "nl": "Een speciale lag die niet getoond wordt op de kaart, maar die de instellingen van de gebruiker weergeeft",
     "pt": "Uma camada especial que não deve ser mostrada em um mapa, mas que é usada para definir as configurações do usuário",
     "ca": "Una capa especial que no està pensada per mostrar-se en un mapa, però que s'utilitza per configurar la configuració de l'usuari",
-    "cs": "Speciální vrstva, která není určena k zobrazení na mapě, ale slouží k nastavení uživatelských nastavení"
+    "cs": "Speciální vrstva, která není určena k zobrazení na mapě, ale slouží k nastavení uživatelských nastavení",
+    "uk": "Спеціальний шар, який не призначений для відображення на карті, але використовується для встановлення користувацьких налаштувань"
   },
   "source": "special",
   "calculatedTags": [
@@ -28,7 +29,8 @@
       "cs": "Nastavení",
       "fi": "Asetukset",
       "zh_Hant": "設定",
-      "sl": "Nastavitve"
+      "sl": "Nastavitve",
+      "ru": "Настройки"
     }
   },
   "pointRendering": null,
@@ -319,7 +321,8 @@
         "en": "What accessibility features should be applied?",
         "nl": "Wanneer moet de toegankelijkheidsmode ingeschakeld worden?",
         "de": "Welche Barrierefrei-Funktionen sollen angewendet werden?",
-        "da": "Hvilke tilgængelighedsfunktioner skal anvendes?"
+        "da": "Hvilke tilgængelighedsfunktioner skal anvendes?",
+        "uk": "Які елементи доступності слід застосовувати?"
       },
       "mappings": [
         {
@@ -330,7 +333,9 @@
             "ca": "Activar les funcions d'accessibilitat quan s'utilitzen les tecles de fletxa per navegar pel mapa",
             "nl": "Schakel toegankelijkheidsmode aan wanneer op de pijltjestoetsen wordt geduwd om de kaart te bewegen",
             "de": "Barrierefrei-Modus aktivieren, wenn Pfeiltasten zum Navigieren in der Karte verwendet werden",
-            "da": "Aktiver tilgængelighedsfunktioner, når piletaster anvendes til at navigere i kortet"
+            "da": "Aktiver tilgængelighedsfunktioner, når piletaster anvendes til at navigere i kortet",
+            "cs": "Povolení funkcí přístupnosti při použití kláves se šipkami k navigaci na mapě",
+            "uk": "Увімкніть функції доступності, коли для навігації по карті використовуються клавіші зі стрілками"
           }
         },
         {
@@ -340,7 +345,8 @@
             "ca": "Sempre habilita les característiques d'accessibilitat",
             "nl": "Schakel de toegankelijkheidsmode altijd aan",
             "de": "Barrierefrei-Modus immer aktivieren",
-            "da": "Aktiver altid tilgængelighedsfunktioner"
+            "da": "Aktiver altid tilgængelighedsfunktioner",
+            "uk": "Завжди вмикайте функції доступності"
           }
         },
         {
@@ -349,7 +355,8 @@
             "en": "Never enable accessibility features",
             "nl": "Gebruik geen toegankelijkheidsmode",
             "de": "Barrierefrei-Modus niemals aktivieren",
-            "da": "Aktiver aldrig tilgængelighedsfunktioner"
+            "da": "Aktiver aldrig tilgængelighedsfunktioner",
+            "uk": "Ніколи не вмикайте функції доступності"
           }
         }
       ]
@@ -400,7 +407,8 @@
             "cs": "Použití výchozí vrstvu pozadí",
             "nl": "Gebruik de standaard achtergrondlaag",
             "fr": "Utiliser le fond par défaut",
-            "da": "Vis standardbaggrundslaget"
+            "da": "Vis standardbaggrundslaget",
+            "uk": "Використовуйте фоновий шар за замовчуванням"
           }
         },
         {
@@ -415,7 +423,8 @@
             "cs": "Použít OpenStreetMap-carto jako výchozí vrstvu",
             "nl": "Gebruik OpenStreetMap-carto altijd als achtergrondlaag",
             "fr": "Utiliser le fond OpenStreetMap-carto par défaut",
-            "da": "Brug OpenStreetMap-carto som standardlag"
+            "da": "Brug OpenStreetMap-carto som standardlag",
+            "uk": "Використовувати OpenStreetMap-carto як шар за замовчуванням"
           }
         },
         {
@@ -428,7 +437,8 @@
             "cs": "Použít letecké snímky jako výchozí pozadí",
             "nl": "Gebruik luchtfoto's als standaard achtergrondlaag",
             "fr": "Utiliser le fond imagerie aérienne par défaut",
-            "da": "Brug luftfoto som standardbaggrund"
+            "da": "Brug luftfoto som standardbaggrund",
+            "uk": "Використовувати аерофотознімки як фон за замовчуванням"
           }
         },
         {
@@ -441,7 +451,8 @@
             "cs": "Použití mapy, která není založena na mapě openstreetmap, jako výchozího pozadí",
             "nl": "Gebruik altijd een kaart die niet op OpenStreetMap gebaseerd is als achtergrond",
             "fr": "Utiliser un fond non basé sur OpenStreetMap par défaut",
-            "da": "Brug et ikke-OpenSreetMap-baseret kort som standardbaggrund"
+            "da": "Brug et ikke-OpenSreetMap-baseret kort som standardbaggrund",
+            "uk": "Використовувати мапу на основі не-openstreetmap як фон за замовчуванням"
           }
         },
         {
@@ -453,7 +464,8 @@
             "cs": "Použít aktuální vrstvu pozadí (<span class='code'>{__current_background}</span>) jako výchozí pozadí",
             "nl": "Gebruik altijd <span class='code'>{__current_background}</span> als achtergrondlaag. Dit is de huidige achtergrond.",
             "fr": "Utiliser le fond actuel (<span class='code'>{__current_background}</span>) par défaut",
-            "da": "Brug det nuværende baggrundslag (<span class='code'>{__current_background}</span>) som standardbaggrund"
+            "da": "Brug det nuværende baggrundslag (<span class='code'>{__current_background}</span>) som standardbaggrund",
+            "uk": "Використовувати поточний фоновий шар (<span class='code'>{__current_background}</span>) як фон за замовчуванням"
           },
           "hideInAnswer": {
             "or": [
@@ -472,7 +484,8 @@
             "cs": "Použít vrstvu pozadí <span class='code'>{mapcomplete-preferred-background-layer}</span> jako výchozí pozadí",
             "nl": "Gebruik <span class='code'>{mapcomplete-preferred-background-layer}</span> altijd als achtergrondlaag",
             "fr": "Utiliser le fond (<span class='code'>{mapcomplete-preferred-background-layer}</span>)par défaut",
-            "da": "Brug baggrundslaget <span class='code'>{mapcomplete-preferred-background-layer}</span> som standardbaggrund"
+            "da": "Brug baggrundslaget <span class='code'>{mapcomplete-preferred-background-layer}</span> som standardbaggrund",
+            "uk": "Використовувати фоновий шар <span class='code'>{mapcomplete-preferred-background-layer}</span> як фон за замовчуванням"
           },
           "hideInAnswer": true
         }
@@ -558,7 +571,8 @@
       "question": {
         "en": "Should a scale bar be shown on the map?",
         "nl": "Moet er een schaalbalk weergegeven worden?",
-        "de": "Kartenmaßstab anzeigen?"
+        "de": "Kartenmaßstab anzeigen?",
+        "cs": "Má být na mapě zobrazeno měřítko?"
       },
       "mappings": [
         {
@@ -575,7 +589,8 @@
           "then": {
             "en": "Hide the scalebar",
             "nl": "Verberg de schaalbalk",
-            "de": "Maßstab ausblenden"
+            "de": "Maßstab ausblenden",
+            "cs": "Skrytí panelu měřítka"
           }
         }
       ]
@@ -584,7 +599,8 @@
       "id": "title-editing",
       "render": {
         "en": "<h3>Editing settings</h3>",
-        "de": "<h3> Einstellungen bearbeiten</h3>"
+        "de": "<h3> Einstellungen bearbeiten</h3>",
+        "cs": "<h3>Úprava nastavení</h3>"
       }
     },
     {
@@ -597,7 +613,8 @@
         "ca": "Les preguntes amb camps de dades desconeguts haurien d'aparèixer una per una o juntes?",
         "nl": "Moeten onbeantwoorde vragen om beurt of allemaal samen getoond worden?",
         "cs": "Mají se otázky pro neznámá datová pole zobrazovat jednotlivě, nebo společně?",
-        "da": "Skal spørgsmål for ukendte oplysninger vises ét ad gangen eller alle på én gang?"
+        "da": "Skal spørgsmål for ukendte oplysninger vises ét ad gangen eller alle på én gang?",
+        "uk": "Чи повинні питання для невідомих полів даних з'являтися по одному або разом?"
       },
       "mappings": [
         {
@@ -610,7 +627,8 @@
             "pt": "Mostrar todas as perguntas na caixa de informações juntas",
             "nl": "Toon alle onbeantwoorde vragen",
             "cs": "Zobrazit všechny otázky v infoboxu dohromady",
-            "da": "Vis alle spørgsmål i infoboksen på én gang"
+            "da": "Vis alle spørgsmål i infoboksen på én gang",
+            "uk": "Показати всі питання в інфобокс разом"
           }
         },
         {
@@ -623,7 +641,8 @@
             "pt": "Mostrar perguntas uma a uma",
             "nl": "Toon de vragen één per één",
             "cs": "Zobrazit otázky jednu po druhé",
-            "da": "Vis spørgsmål ét ad gangen"
+            "da": "Vis spørgsmål ét ad gangen",
+            "uk": "Показувати питання по черзі"
           }
         }
       ]
@@ -697,14 +716,16 @@
       "id": "add-new-feature",
       "question": {
         "en": "How should the menu to add a new feature be opened?",
-        "de": "Wie soll das Menü zum Hinzufügen eines neuen Objekts geöffnet werden?"
+        "de": "Wie soll das Menü zum Hinzufügen eines neuen Objekts geöffnet werden?",
+        "uk": "Як має відкриватися меню для додавання нового об'єкту?"
       },
       "mappings": [
         {
           "if": "mapcomplete-preferences-add-new-mode=button",
           "then": {
             "en": "Adding a new feature is done with the button at the bottom left. Clicking the map does nothing",
-            "de": "Das Hinzufügen eines neuen Objekts erfolgt über die Schaltfläche unten links. Ein Klick auf die Karte bewirkt nichts"
+            "de": "Das Hinzufügen eines neuen Objekts erfolgt über die Schaltfläche unten links. Ein Klick auf die Karte bewirkt nichts",
+            "uk": "Додавання нового об'єкта здійснюється за допомогою кнопки внизу ліворуч. Клацання по карті нічого не робить"
           }
         },
         {
@@ -712,28 +733,33 @@
           "then": {
             "en": "When clicking or tapping the map, a marker pops up where a new feature is added",
             "de": "Wenn Sie auf die Karte klicken oder tippen, wird eine Markierung eingeblendet, an der ein neues Objekt hinzugefügt wird",
-            "ca": "En fer clic o tocar el mapa, apareix un marcador on s'afegeix un element nou"
+            "ca": "En fer clic o tocar el mapa, apareix un marcador on s'afegeix un element nou",
+            "uk": "При натисканні або торканні мапи з'являється маркер, де додається новий об'єкт"
           }
         },
         {
           "if": "mapcomplete-preferences-add-new-mode=click_right",
           "then": {
             "en": "When right-clicking or long-pressing the map, a marker pops up where a new feature can be added",
-            "de": "Beim Rechtsklick oder einem langen Druck auf die Karte erscheint eine Markierung, mit der ein neues Objekt hinzugefügt werden kann"
+            "de": "Beim Rechtsklick oder einem langen Druck auf die Karte erscheint eine Markierung, mit der ein neues Objekt hinzugefügt werden kann",
+            "uk": "При натисканні правою кнопкою миші або тривалому утриманні мапи з'являється маркер, де можна додати новий об'єкт"
           }
         },
         {
           "if": "mapcomplete-preferences-add-new-mode=button_click",
           "then": {
             "en": "When clicking or tapping the map, a marker pops up where a new feature can be added. Additionally, a button at the bottom left is shown",
-            "de": "Beim Klicken oder Tippen auf die Karte wird eine Markierung eingeblendet, an der ein neues Objekt hinzugefügt werden kann. Zusätzlich wird unten links eine Schaltfläche angezeigt"
+            "de": "Beim Klicken oder Tippen auf die Karte wird eine Markierung eingeblendet, an der ein neues Objekt hinzugefügt werden kann. Zusätzlich wird unten links eine Schaltfläche angezeigt",
+            "uk": "При натисканні або торканні мапи з'являється маркер, де можна додати новий об'єкт. Крім того, внизу ліворуч відображається кнопка"
           }
         },
         {
           "if": "mapcomplete-preferences-add-new-mode=button_click_right",
           "then": {
             "en": "When right-clicking or long-pressing the map, a marker pops up where a new feature can be added. Additionally, a button at the bottom left is shown",
-            "de": "Beim Rechtsklick oder einem langen Druck auf die Karte erscheint eine Markierung, an der ein neues Objekt hinzugefügt werden kann. Zusätzlich wird unten links eine Schaltfläche angezeigt"
+            "de": "Beim Rechtsklick oder einem langen Druck auf die Karte erscheint eine Markierung, an der ein neues Objekt hinzugefügt werden kann. Zusätzlich wird unten links eine Schaltfläche angezeigt",
+            "cs": "Po kliknutí pravým tlačítkem myši nebo dlouhém stisknutí mapy se zobrazí značka, kam lze přidat nový prvek. Kromě toho se vlevo dole zobrazí tlačítko",
+            "uk": "При натисканні правою кнопкою миші або тривалому утриманні на мапі з'являється маркер, куди можна додати новий об'єкт. Крім того, внизу ліворуч відображається кнопка"
           }
         }
       ]
@@ -742,7 +768,8 @@
       "id": "title-privacy-legal",
       "render": {
         "en": "<h3>Privacy and legal</h3>",
-        "de": "<h3>Datenschutz und Rechtliches</h3>"
+        "de": "<h3>Datenschutz und Rechtliches</h3>",
+        "cs": "<h3>Soukromí a právní záležitosti</h3>"
       }
     },
     {
@@ -777,7 +804,8 @@
           "then": {
             "en": "When making changes to OpenStreetMap, do not indicate how far away you were from the changed objects.",
             "de": "Wenn du Änderungen an OpenStreetMap vornimmst, gibst du nicht an, wie weit du von den geänderten Objekten entfernt warst.",
-            "nl": "Geef niet aan hoever je je van de gewijzigde objecten bevindt wanneer je wijzigingen maakt met MapComplete."
+            "nl": "Geef niet aan hoever je je van de gewijzigde objecten bevindt wanneer je wijzigingen maakt met MapComplete.",
+            "cs": "Při provádění změn v OpenStreetMap neuvádějte, jak daleko jste byli od změněných objektů."
           }
         },
         {
@@ -786,7 +814,8 @@
           "then": {
             "en": "When making changes to OpenStreetMap, roughly indicate how far away you were from the changed objects. This helps other contributors to understand how you made the change",
             "de": "Gebe bei Änderungen an OpenStreetMap an, wie weit du ungefähr von den geänderten Objekten entfernt warst. Das hilft anderen Mitwirkenden zu verstehen, wie du die Änderung vorgenommen hast",
-            "nl": "Geef aan hoever je je ongeveer bevindt ten opzichte van objecten die je wijzigt in OpenStreetMap. Dit helpt andere bijdagers te begrijpen welke wijzigingen je waarom maakt."
+            "nl": "Geef aan hoever je je ongeveer bevindt ten opzichte van objecten die je wijzigt in OpenStreetMap. Dit helpt andere bijdagers te begrijpen welke wijzigingen je waarom maakt.",
+            "cs": "Při provádění změn v OpenStreetMap zhruba uveďte, jak daleko jste byli od změněných objektů. To pomůže ostatním přispěvatelům pochopit, jak jste změnu provedli"
           }
         }
       ]
@@ -876,7 +905,8 @@
           "alsoShowIf": "mapcomplete-preference-theme-history=",
           "then": {
             "en": "Save the visited thematic maps and sync them via openstreetmap.org. OpenStreetMap and all apps you use can see this history",
-            "de": "Besuchte Themenkarten speichern und über opentreetmap.org synchronisieren. OpenStreetMap und alle verwendeten Programme können diesen Verlauf sehen"
+            "de": "Besuchte Themenkarten speichern und über opentreetmap.org synchronisieren. OpenStreetMap und alle verwendeten Programme können diesen Verlauf sehen",
+            "cs": "Uložit navštívené tematické mapy a synchronizovat je prostřednictvím openstreetmap.org. OpenStreetMap a všechny aplikace, které používáte, mohou tuto historii vidět"
           }
         },
         {

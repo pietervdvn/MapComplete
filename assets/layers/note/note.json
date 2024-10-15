@@ -63,7 +63,8 @@
         "nl": "Bekijk op OpenStreetMap.org",
         "de": "Auf OpenStreetMap.org ansehen",
         "da": "Se på OpenStreetMap.org",
-        "fr": "Voir sur OpenStreetMap.org"
+        "fr": "Voir sur OpenStreetMap.org",
+        "cs": "Zobrazit na OpenStreetMap.org"
       },
       "render": "<a href='https://openstreetmap.org/note/{id}' target='_blank'><img src='./assets/svg/osm-logo-us.svg'></a>"
     }

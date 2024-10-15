@@ -11,7 +11,9 @@
     "eu": "Erlojuak",
     "pl": "Zegary",
     "da": "Ure",
-    "it": "Orologi"
+    "it": "Orologi",
+    "ru": "Часы",
+    "uk": "Годинники"
   },
   "description": {
     "en": "Map showing all public clocks",
@@ -23,7 +25,8 @@
     "fr": "Carte affichant toutes les horloges publiques",
     "pl": "Mapa pokazująca wszystkie zegary publiczne",
     "da": "Kort over alle ure i det offentlige rum",
-    "it": "Mappa di tutti gli orologi pubblici"
+    "it": "Mappa di tutti gli orologi pubblici",
+    "uk": "Карта з усіма громадськими годинниками"
   },
   "icon": "./assets/layers/clock/clock.svg",
   "layers": [

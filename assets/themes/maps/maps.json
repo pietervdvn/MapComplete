@@ -42,7 +42,8 @@
     "da": "Dette tema viser alle (turisme) kort, som OpenStreetMap kender til",
     "cs": "Toto téma zobrazuje všechny (turistické) mapy, které zná OpenStreetMap",
     "ca": "Aquest tema mostra tots els mapes (turístics) que OpenStreetMap coneix",
-    "pl": "Ten motyw pokazuje wszystkie mapy (turystyczne), które zna OpenStreetMap"
+    "pl": "Ten motyw pokazuje wszystkie mapy (turystyczne), które zna OpenStreetMap",
+    "ru": "Эта тема показывает все (туристические) карты, известные OpenStreetMap"
   },
   "icon": "./assets/themes/maps/logo.svg",
   "defaultBackgroundId": "protomaps.white",

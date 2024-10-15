@@ -22,7 +22,8 @@
     "pa_PK": "آزاد کلاکاری نقشہ",
     "zgh": "ⵕⵥⵎ ⵜⴰⴽⴰⵕⴹⴰ ⵏ ⵜⵡⵓⵔⵉ ⵜⴰⵏⴰⵥⵓⵕⵜ",
     "es": "Obras de arte",
-    "eu": "Artelanak"
+    "eu": "Artelanak",
+    "uk": "Витвір мистецтва"
   },
   "description": {
     "en": "An open map of statues, busts, graffitis and other artwork all over the world",
@@ -46,7 +47,8 @@
     "zgh": "ⵢⴰⵜ ⵜⴽⴰⵕⴹⴰ ⵉⵕⵥⵎⵏ ⵅⴼ ⵉⵙⴼⵔⵉⵙⵏ, ⵉⵖⵔⴰⵙⵏ ⴷ ⵜⵡⵓⵔⵉⵡⵉⵏ ⵜⵉⵏⴰⵥⵓⵕⵉⵏ ⵢⴰⴹⵏⵉⵏ ⴳ ⵓⵎⴰⴹⴰⵍ",
     "eu": "Estatuen, bustoen, graffitien eta mundu osoko beste artelan batzuen mapa irekia",
     "pt_BR": "Um mapa aberto de estátuas, bustos, grafites e outras obras de arte em todo o mundo",
-    "pt": "Um mapa aberto de estátuas, bustos, grafites e outras obras de arte em todo o mundo"
+    "pt": "Um mapa aberto de estátuas, bustos, grafites e outras obras de arte em todo o mundo",
+    "uk": "Відкрита карта статуй, бюстів, графіті та інших творів мистецтва по всьому світу"
   },
   "icon": "./assets/themes/artwork/artwork.svg",
   "startZoom": 12,

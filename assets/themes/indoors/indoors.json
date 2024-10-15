@@ -14,7 +14,8 @@
     "eu": "Barnealdean",
     "pl": "Wewnątrz",
     "zh_Hant": "室內",
-    "it": "Al chiuso"
+    "it": "Al chiuso",
+    "ru": "Внутри помещений"
   },
   "description": {
     "en": "On this map, publicly accessible indoor places are shown",

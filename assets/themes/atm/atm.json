@@ -16,7 +16,8 @@
     "it": "Sportelli bancomat",
     "pl": "Bankomaty",
     "da": "Hæveautomater",
-    "zh_Hans": "自动取款机"
+    "zh_Hans": "自动取款机",
+    "uk": "Банкомати"
   },
   "description": {
     "en": "This map shows ATMs to withdraw or deposit money",
@@ -33,7 +34,8 @@
     "it": "Questa mappa mostra gli sportelli Bancomat per ritirare o depositare del denaro",
     "pl": "Ta mapa pokazuje bankomaty, w których można wypłacać lub wpłacać pieniądze",
     "da": "Dette kort viser hæveautomater, hvor du kan hæve og indsætte kontanter",
-    "zh_Hans": "这张地图显示了可以取款或存款的自动取款机"
+    "zh_Hans": "这张地图显示了可以取款或存款的自动取款机",
+    "uk": "На цій карті показані банкомати, де можна зняти або поповнити рахунок"
   },
   "icon": "./assets/themes/atm/logo.svg",
   "layers": [
@@ -102,7 +104,8 @@
                   "pl": "Importuj ten bankomat",
                   "cs": "Importovat tento bankomat",
                   "da": "Importer denne hæveautomat",
-                  "zh_Hans": "导入这个ATM"
+                  "zh_Hans": "导入这个ATM",
+                  "uk": "Імпортувати цей банкомат"
                 },
                 "icon": "./assets/svg/addSmall.svg"
               }
@@ -120,7 +123,8 @@
               "pl": "OpenStreetMap wie o <a href='#{_closest_osm_poi}'>bankomacie oddalonym o {_closest_osm_poi_distance} metry.</a> ",
               "nl": "OpenStreetMap kent <a href='#{_closest_osm_poi}'>een geldautomaat die {_closest_osm_poi_distance} meter weg is</a> ",
               "da": "OpenStreetMap kender <a href='#{_closest_osm_poi}'>en hæveautomatet, som ligger {_closest_osm_poi_distance} meter væk.</a> ",
-              "zh_Hans": "OpenStreetMap 知道有一个<a href='#{_closest_osm_poi}'>自动取款机，它距离你 {_closest_osm_poi_distance} 米。</a> "
+              "zh_Hans": "OpenStreetMap 知道有一个<a href='#{_closest_osm_poi}'>自动取款机，它距离你 {_closest_osm_poi_distance} 米。</a> ",
+              "uk": "OpenStreetMap знає про <a href='#{_closest_osm_poi}'>банкомат, що знаходиться за {_closest_osm_poi_distance} метрів від нього.</a> "
             }
           },
           {
@@ -142,7 +146,8 @@
                   "cs": "Přidání všech navrhovaných značek do nejbližšího bankomatu",
                   "nl": "Voeg alle gesuggereerde tags toe aan de dichtstbijzijnde geldautomaat",
                   "da": "Tilføj alle foreslåede tags til den nærmeste hæveautomat",
-                  "zh_Hans": "将所有建议的标签添加到距离最近的自动取款机"
+                  "zh_Hans": "将所有建议的标签添加到距离最近的自动取款机",
+                  "uk": "Додайте всі запропоновані теги до найближчого банкомату"
                 },
                 "image": "./assets/svg/addSmall.svg",
                 "maproulette_id": "mr_taskId"

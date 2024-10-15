@@ -606,12 +606,14 @@
         "en": "Are these toilets gender-segregated?",
         "nl": "Zijn deze toiletten gescheiden op basis van geslacht?",
         "de": "Sind diese Toiletten geschlechtergetrennt?",
-        "ca": "Aquests lavabos estan separats per gènere?"
+        "ca": "Aquests lavabos estan separats per gènere?",
+        "cs": "Jsou tyto toalety rozděleny podle pohlaví?"
       },
       "questionHint": {
         "en": "Are there separate stalls or separate areas for men and women and are they signposted as such?",
         "nl": "Is er een aparte ruimte voor mannen en vrouwen en zijn deze ruimtes ook expliciet aangegeven?",
-        "de": "Gibt es getrennte Kabinen oder getrennte Bereiche für Männer und Frauen, und sind sie als solche ausgeschildert?"
+        "de": "Gibt es getrennte Kabinen oder getrennte Bereiche für Männer und Frauen, und sind sie als solche ausgeschildert?",
+        "cs": "Existují samostatné stánky nebo oddělené prostory pro muže a ženy a jsou jako takové označeny?"
       },
       "mappings": [
         {
@@ -620,7 +622,8 @@
             "en": "There is a separate, signposted area for men and women",
             "nl": "Er zijn aparte ruimtes of toiletten voor mannen en vrouwen",
             "de": "Es gibt einen separaten, ausgeschilderten Bereich für Männer und Frauen",
-            "ca": "Hi ha una zona separada, senyalitzada per a homes i dones"
+            "ca": "Hi ha una zona separada, senyalitzada per a homes i dones",
+            "cs": "K dispozici je oddělený, označený prostor pro muže a ženy"
           }
         },
         {
@@ -628,7 +631,8 @@
           "then": {
             "en": "There is no separate, signposted area for men and women",
             "nl": "Mannen en vrouwen gebruiken dezelfde ruimtes en toiletten",
-            "de": "Es gibt keinen getrennten, ausgeschilderten Bereich für Männer und Frauen"
+            "de": "Es gibt keinen getrennten, ausgeschilderten Bereich für Männer und Frauen",
+            "cs": "Neexistuje žádný oddělený, označený prostor pro muže a ženy"
           }
         }
       ]

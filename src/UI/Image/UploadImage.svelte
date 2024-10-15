@@ -63,7 +63,7 @@
           return
         }
 
-        await state?.imageUploadManager.uploadImageAndApply(file, tags, targetKey, noBlur)
+        await state?.imageUploadManager?.uploadImageAndApply(file, tags, targetKey, noBlur)
       } catch (e) {
         console.error(e)
         state.reportError(e, "Could not upload image")

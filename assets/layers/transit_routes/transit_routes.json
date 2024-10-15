@@ -138,7 +138,8 @@
         "en": "What is the via point for this bus line?",
         "de": "Über welchen Zwischenhalt fährt die Buslinie?",
         "nl": "Via welk punt gaat deze buslijn?",
-        "cs": "Jaký je průjezdní bod této autobusové linky?"
+        "cs": "Jaký je průjezdní bod této autobusové linky?",
+        "ru": "Где находится конечный пункт этого автобусного маршрута?"
       }
     },
     {

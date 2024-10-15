@@ -93,10 +93,10 @@ export default class OpeningHoursState {
                 let str = OH.ToString(rules) + ";"
                 const ph = this.phSelectorValue.data
                 if (ph) {
-                    str += ph + ";"
+                    str += " " + ph + ";" // There must be a space after every ";"
                 }
 
-                str += this.leftoverRules.data.join(";") + ";"
+                str += this.leftoverRules.data.join("; ") + ";"
 
                 str = str.trim()
                 while (str.endsWith(";")) {

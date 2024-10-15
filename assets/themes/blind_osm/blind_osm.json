@@ -15,7 +15,8 @@
     "pl": "OSM dla niewidomych",
     "da": "OSM for blinde",
     "zh_Hans": "为盲人设计的OSM",
-    "fil": "OSM para sa mga bulag"
+    "fil": "OSM para sa mga bulag",
+    "uk": "OSM для незрячих"
   },
   "description": {
     "en": "Help to map features relevant for the blind",
@@ -29,7 +30,8 @@
     "eu": "Itsuentzako elementu garrantzitsuak kartografiatzeko laguntza",
     "it": "Aiuta a mappare le caratteristiche importanti per i non vedenti",
     "pl": "Pomóż umieszczać na mapie obiekty ważne dla niewidomych",
-    "zh_Hans": "帮助绘制与盲人相关的设施"
+    "zh_Hans": "帮助绘制与盲人相关的设施",
+    "uk": "Допоможіть нанести на карту об'єкти, важливі для незрячих"
   },
   "icon": "./assets/themes/blind_osm/Blindicon.svg",
   "startZoom": 20,

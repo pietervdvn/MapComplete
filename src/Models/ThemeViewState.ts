@@ -369,7 +369,8 @@ export default class ThemeViewState implements SpecialVisualizationState {
             this.osmConnection,
             this.changes,
             this.geolocation.geolocationState.currentGPSLocation,
-            this.indexedFeatures
+            this.indexedFeatures,
+            this.reportError
         )
         this.favourites = new FavouritesFeatureSource(this)
         const longAgo = new Date()
@@ -1002,7 +1003,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
             console.error("Got (in themeViewSTate.reportError):", message, extramessage)
             return
         }
-        const isTesting = this.featureSwitchIsTesting.data
+        const isTesting = this.featureSwitchIsTesting?.data
         console.log(
             isTesting
                 ? ">>> _Not_ reporting error to report server as testmode is on"
@@ -1032,7 +1033,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
         }
 
         if (extramessage) {
-            message += "(" + extramessage + ")"
+            message += " (" + extramessage + ")"
         }
 
         const stacktrace: string = new Error().stack

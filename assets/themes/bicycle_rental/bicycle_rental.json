@@ -16,7 +16,9 @@
     "eu": "Bizikleta alokairua",
     "pl": "Wypożyczanie rowerów",
     "zh_Hans": "自行车租赁",
-    "it": "Noleggio biciclette"
+    "it": "Noleggio biciclette",
+    "ru": "Прокат велосипедов",
+    "uk": "Прокат велосипедів"
   },
   "description": {
     "en": "On this map, you'll find the many bicycle rental stations as they are known by OpenStreetMap",
@@ -31,7 +33,8 @@
     "eu": "Mapa honetan aurkituko dituzu bizikletak alokatzeko OpenStreetMap-ek ezagutzen dituen estazio ugari",
     "it": "In questa mappa trovi i luoghi conosciuti da OpenStreetMap dove puoi noleggiare delle biciclette",
     "pl": "Na tej mapie znajdziesz wiele stacji wynajmu rowerów, znanych w OpenStreetMap",
-    "zh_Hans": "在这张地图上，你可以找到许多由 OpenStreetMap 记录的自行车租赁站点"
+    "zh_Hans": "在这张地图上，你可以找到许多由 OpenStreetMap 记录的自行车租赁站点",
+    "uk": "На цій карті ви знайдете багато станцій прокату велосипедів, що є на OpenStreetMap"
   },
   "shortDescription": {
     "en": "A map with bicycle rental stations and bicycle rental shops",
@@ -47,7 +50,8 @@
     "eu": "Bizikletak alokatzeko estazioen eta bizikletak alokatzeko denden mapa",
     "pl": "Mapa ze stacjami wypożyczania rowerów i wypożyczalniami rowerów",
     "zh_Hans": "一张包含自行车租赁站点和自行车租赁商店的地图",
-    "it": "Una mappa con le stazioni e i negozi per il noleggio delle biciclette"
+    "it": "Una mappa con le stazioni e i negozi per il noleggio delle biciclette",
+    "uk": "Карта зі станціями та пунктами прокату велосипедів"
   },
   "icon": "./assets/themes/bicycle_rental/logo.svg",
   "layers": [

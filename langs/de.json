@@ -206,6 +206,7 @@
             "openPanoramax": "Panoramax öffnen",
             "openThemeDocumentation": "Dokumentation zur Themenkarte {name} anzeigen",
             "panoramaxHelp": "<b>Panoramax</b> ist ein Online-Service, der Straßenbilder sammelt und sie unter einer kostenlosen Lizenz anbietet. Mitwirkende dürfen diese Bilder nutzen, um OpenStreetMap zu verbessern",
+            "panoramaxLicenseCCBYSA": "Ihre Bilder werden unter CC-BY-SA veröffentlicht - jeder kann Ihr Bild weiterverwenden, wenn er Ihren Namen erwähnt",
             "seeOnMapillary": "Dieses Bild auf Mapillary ansehen",
             "themeBy": "Dieses Thema wurde erstellt von {author}",
             "title": "Copyright und Urheberrechtsangabe",
@@ -309,6 +310,7 @@
             "aboutMapComplete": "Über MapComplete",
             "filter": "Daten filtern",
             "moreUtilsTitle": "Mehr entdecken",
+            "openHereDifferentApp": "Aktuellen Standort in anderen Anwendungen öffnen",
             "showIntroduction": "Einführung anzeigen",
             "title": "Menü"
         },
