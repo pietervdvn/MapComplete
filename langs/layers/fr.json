@@ -7136,16 +7136,6 @@
                     }
                 }
             },
-            "picture-license": {
-                "mappings": {
-                    "1": {
-                        "then": "Les photos que vous avez ajoutées seront sous licence <b>CC0</b>  et mises dans le domaine public. Cela signifie que n'importe qui pourra les utiliser, quel qu'en soit l'usage."
-                    },
-                    "3": {
-                        "then": "Les photos que vous prenez seront sous la licence <b>CC-BY-SA 4.0</b> ce qui signifie que quiconque utilisant votre photo doit vous créditer et que les modifications apportées à votre photo doivent être repartagées avec la même licence."
-                    }
-                }
-            },
             "show_tags": {
                 "mappings": {
                     "0": {

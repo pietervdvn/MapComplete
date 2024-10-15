@@ -9229,23 +9229,6 @@
                     }
                 }
             },
-            "picture-license": {
-                "mappings": {
-                    "0": {
-                        "then": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC0</b>-licentie en dus aan het publieke domein toegevoegd worden. Dit betekent dat iedereen je afbeeldingen kan gebruiken voor elk mogelijks gebruik. <span class='subtle'>Dit is de standaard-instelling</span>"
-                    },
-                    "1": {
-                        "then": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC0</b>-licentie en dus aan het publieke domein toegevoegd worden. Dit betekent dat iedereen je afbeeldingen kan gebruiken voor elk mogelijks gebruik."
-                    },
-                    "2": {
-                        "then": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC-BY 4.0</b>-licentie. Dit betekent dat iedereen je afbeelding mag gebruiken voor elke toepassing mits het vermelden van je naam"
-                    },
-                    "3": {
-                        "then": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC-BY-SA 4.0</b>-licentie. Dit betekent dat iedereen je afbeelding mag gebruiken voor elke toepassing mits het vermelden van je naam en dat afgeleide werken van je afbeelding ook ondere deze licentie moeten gepubliceerd worden."
-                    }
-                },
-                "question": "Met welke licentie wil je je afbeeldingen toevoegen?"
-            },
             "profile-description": {
                 "mappings": {
                     "0": {

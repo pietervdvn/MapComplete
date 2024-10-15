@@ -2757,14 +2757,6 @@
                     }
                 }
             },
-            "picture-license": {
-                "mappings": {
-                    "1": {
-                        "then": "Billeder, som du har taget, vil blive udgivet under <b>CC0</b>-licensen og lagt ud i fælleseje. Det betyder, at alle kan bruge dine billeder til ethvert formål."
-                    }
-                },
-                "question": "Under hvilken licens vil du frigive dine billeder?"
-            },
             "settings-link": {
                 "render": {
                     "special": {

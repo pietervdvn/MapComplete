@@ -1912,23 +1912,6 @@
                     }
                 }
             },
-            "picture-license": {
-                "mappings": {
-                    "0": {
-                        "then": "As fotos que você tirar serão licenciadas com <b>CC0</b> e adicionadas ao domínio público. Isso significa que todos podem usar suas fotos para qualquer finalidade. <span class='subtle'>Esta é a escolha padrão.</span>"
-                    },
-                    "1": {
-                        "then": "As fotos que você tirar serão licenciadas com <b>CC0</b> e adicionadas ao domínio público. Isso significa que todos podem usar suas fotos para qualquer finalidade."
-                    },
-                    "2": {
-                        "then": "As fotos que você tirar serão licenciadas com <b>CC-BY 4.0</b>, que exige que todos que usam sua foto atribuam a você"
-                    },
-                    "3": {
-                        "then": "As fotos que você tirar serão licenciadas com <b>CC-BY-SA 4.0</b>, o que significa que todos que usarem sua foto devem atribuí-lo e que os derivados de sua foto devem ser compartilhados novamente com a mesma licença."
-                    }
-                },
-                "question": "Sob que licença você deseja publicar suas fotos?"
-            },
             "profile-description": {
                 "mappings": {
                     "0": {
