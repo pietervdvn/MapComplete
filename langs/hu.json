@@ -505,9 +505,16 @@
             "locked": "A nézet mostantól a GPS-helyzetedhez van rögzítve, a mozgás letiltva.",
             "navigation": "A térképet a nyílbillentyűkkel mozgathatod, a legközelebbi objektumot a szóközzel, a távolabbi helyeket pedig a számokkal jelölheted ki.",
             "noCloseFeatures": "Nincs objektum a térképnézetben.",
+            "north": "Észak felé",
+            "oneFeatureInView": "Egy objektum van a nézetben.",
             "out": "Távolítás {z} nagyítási szintig",
-            "unlocked": "Mozgás engedélyezve."
+            "south": "Dél felé",
+            "unlocked": "Mozgás engedélyezve.",
+            "viewportCenterCloseToGps": "A térkép közepe a tartózkodási helyed.",
+            "viewportCenterDetails": "A nézetablak közepe {distance} távolságra és {bearing} távolságra van a tartózkodási helyedtől.",
+            "west": "Nyugat felé"
         },
+        "waitingForGeopermission": "Az oldal várja az engedélyed, hogy felhasználhassa a tartózkodási helyed…",
         "waitingForLocation": "Jelenlegi helyzeted keresése…",
         "weekdays": {
             "abbreviations": {
@@ -528,6 +535,10 @@
             "wednesday": "Szerda"
         },
         "welcomeBack": "Isten hozott ismét!",
+        "welcomeExplanation": {
+            "addNew": "Hiányzik egy elem? A bal alsó sarokban található gombbal felvihetsz egy új érdekes pontot (POI-t).",
+            "general": "Ezen a térképen megtekinthetsz, szerkeszthetsz és felvihetsz <i>érdekes pontokat (POI-kat)</i>. Nagyíts, hogy lásd őket, az adatok megtekintéséhez vagy szerkesztéséhez pedig koppints valamelyikre. Minden adat az OpenStreetMapről származik, és az OpenStreetMapre van mentve, amely szabadon újra felhasználható."
+        },
         "wikipedia": {
             "addEntry": "További Wikipédia-oldal hozzáfűzése",
             "createNewWikidata": "Új Wikidata-elem létrehozása",
@@ -550,13 +561,23 @@
     "hotkeyDocumentation": {
         "action": "Művelet",
         "closeSidebar": "Oldalsáv bezárása",
+        "geolocate": "Húzd vagy közelítsd a térképet az aktuális helyre. Engedélyezned kell a tartózkodási helyet elérését.",
         "intro": "A MapComplete a következő kulcsokat támogatja:",
         "key": "Kulcskombináció",
         "openFilterPanel": "Megnyitja az érdekes pontok (POI-k) rétegét és a szűrőpanelt",
         "openLayersPanel": "Megnyitja a háttérrétegek paneljét",
         "queryCurrentLocation": "A térkép közepéhez legközelebbi cím megjelenítése",
+        "selectAerial": "Háttér beállítása légi felvételre vagy műholdképre. A két legjobb elérhető réteg között lehet váltani",
         "selectFavourites": "Kedvencek oldal megnyitása",
+        "selectItem": "A térkép középpontjához (célkereszt) legközelebbi érdekes pont kijelölése . Csak billentyűzetes navigációval működik",
+        "selectItem2": "A térkép középpontjához (célkereszt) második legközelebbi érdekes pont kijelölése . Csak billentyűzetes navigációval működik",
+        "selectItem3": "A térkép középpontjához (célkereszt) harmadik legközelebbi érdekes pont kijelölése . Csak billentyűzetes navigációval működik",
+        "selectItemI": "A térkép középpontjához (célkereszt) {i}. legközelebbi érdekes pont kijelölése . Csak billentyűzetes navigációval működik",
+        "selectMap": "Külső forrásból származó térkép beállítása háttérként. A két legjobb elérhető réteg között lehet váltani",
         "selectMapnik": "Háttérréteg beállítása OpenStreetMap-carto-ra",
+        "selectOsmbasedmap": "Háttérréteg beállítása egy OpenStreetMap-alapú térképre (vagy a raszteres háttérréteg letiltása)",
+        "selectSearch": "Helyszín kereséséhez jelölje ki a keresősávot",
+        "shakePhone": "Telefon rázása",
         "title": "Gyorsbillentyűk",
         "translationMode": "Fordítási mód be- vagy kikapcsolása"
     },
@@ -580,6 +601,7 @@
         "toBig": "A kép túl nagy ({actual_size}). Kérjük, legfeljebb {max_size} méretű képeket használj",
         "upload": {
             "failReasons": "Lehet, hogy megszakadt az internetkapcsolatod",
+            "failReasonsAdvanced": "Másik lehetőségként győződj meg arról, hogy a böngésződ vagy bővítményei nem blokkolnak-e harmadik féltől származó API-kat.",
             "multiple": {
                 "done": "{count} kép sikeresen feltöltve. Köszönjük!",
                 "partiallyDone": "{count} kép feltöltése folyamatban, {done} kép már kész…",
@@ -599,15 +621,25 @@
         "uploadingMultiple": "{count} kép feltöltése folyamatban…",
         "uploadingPicture": "Kép feltöltése folyamatban…"
     },
+    "importInspector": {
+        "title": "Importált jegyzetek felügyelete és kezelése"
+    },
     "importLayer": {
+        "alreadyMapped": "A térképen már van {title} – ez a pont duplikátum",
+        "description": "Egy réteg, amely bejegyzéseket importál a következőhöz: {title}",
+        "importButton": "import_button({layerId}, _tags, van itt egy {title} nevű cím – felvitel a térképre,./assets/svg/addSmall.svg,,,id)",
+        "importHandled": "<div class='thanks'>Ez az objektum el van rendezve. Köszönjük a munkádat.</div>",
         "layerName": "Lehetséges {title}",
-        "notFound": "Nem sikerült megtalálnom ezt: {title}. Távolítsd el"
+        "nearbyImagesIntro": "<h3>Közeli képek</h3>A következők különböző online szolgáltatásokból származó, a közelben található és földrajzi pozícióval felcímkézett (geotagelt) képek. Segíthetnek a jegyzet megoldásában.{nearby_images(open)}",
+        "notFound": "Nem sikerült megtalálnom ezt: {title}. Távolítsd el",
+        "popupTitle": "Itt lehet egy {title}"
     },
     "index": {
         "#": "Ezek a szövegek akkor jelennek meg a témagombok felett, ha nincs betöltve téma",
         "about": "A MapComplete névjegye",
         "featuredThemeTitle": "Kiemelt ezen a héten",
         "intro": "Tematikus térképek, amelyeket te is szerkeszthetsz",
+        "learnMore": "További tudnivalók",
         "logIn": "A korábban megnézett témák megtekintéséhez be kell jelentkezned",
         "pickTheme": "Válassz egy témát lent a kezdéshez.",
         "title": "MapComplete"
@@ -631,7 +663,8 @@
         "pointIsMoved": "A pont áthelyeződött",
         "reasons": {
             "reasonInaccurate": "Az objektum helye pontatlan, pár méterrel odébb van",
-            "reasonRelocation": "Az objektumot áthelyezték egy teljesen más helyre"
+            "reasonRelocation": "Az objektumot áthelyezték egy teljesen más helyre",
+            "reasonSnapTo": "Hozzá kellene illeszteni ehhez: {name}"
         },
         "selectReason": "Miért szeretnéd áthelyezni ezt az objektumot?",
         "whyMove": "Miért szeretnéd áthelyezni ezt a pontot?",
@@ -648,6 +681,7 @@
         "anonymous": "Névtelen felhasználó",
         "closeNote": "Jegyzet lezárása",
         "createNote": "Új jegyzet létrehozása",
+        "createNoteIntro": "Valami hibás vagy hiányzik a térképen? Írj ide egy jegyzetet, amelyet majd önkéntesek ellenőriznek.",
         "createNoteTitle": "Új jegyzet létrehozása itt",
         "creating": "Jegyzet létrehozása folyamatban…",
         "disableAllNoteFilters": "Szűrők letiltása",
@@ -659,26 +693,62 @@
         "noteIsPublic": "Ezt mindenki látni fogja",
         "noteLayerDoEnable": "Jegyzeteket megjelenítő réteg engedélyezése",
         "noteLayerHasFilters": "Egy szűrő elrejthet néhány jegyzetet",
+        "noteLayerNotEnabled": "Nincs engedélyezve a jegyzeteket megjelenítő réteg. Új jegyzet hozzáadásához engedélyezni kell",
+        "notesLayerMustBeEnabled": "A 'jegyzetek' réteg le van tiltva. Engedélyezd jegyzet felviteléhez",
         "reopenNote": "Jegyzet újbóli megnyitása",
-        "reopenNoteAndComment": "Jegyzet újbóli megnyitása és hozzászólás"
+        "reopenNoteAndComment": "Jegyzet újbóli megnyitása és hozzászólás",
+        "textNeeded": "Jegyzet létrehozásához adj meg egy leíró jellegű szöveget",
+        "typeText": "Hozzászólásként írj ide egy szöveget",
+        "warnAnonymous": "Nem vagy bejelentkezve, így nem tudunk elérni, hogy megoldjuk a problémádat."
     },
     "plantDetection": {
         "back": "Vissza a fajok áttekintéséhez",
         "button": "Automatikusan felismeri a növényfajokat a Pl@antNet.org mesterséges intelligenciája segítségével",
-        "confirm": "Fajok kiválasztása",
+        "confirm": "Faj kiválasztása",
+        "done": "A faj meg lett adva",
+        "error": "Valami nem sikerült a fafaj meghatározásakor: {error}",
+        "howTo": {
+            "intro": "A legjobb eredmény érdekében",
+            "li0": "készíts egy képet, amelynek a fa foglalja el a közepét, és kevés háttér van körülötte",
+            "li1": "készíts egy képet egyetlen levélről",
+            "li2": "készíts egy képet a kéregről",
+            "li3": "készíts egy képet a virágokról",
+            "li4": "készíts egy képet a gyümölcsökről"
+        },
+        "loadingWikidata": "Adatok betöltése a következőről: {species}…",
+        "matchPercentage": "{match}%-os illeszkedés",
+        "overviewIntro": "A <a href='https://plantnet.org/' target='_blank'>Pl@ntNet.org</a> mesterséges intelligenciája szerint a képeken az alábbi faj lehet.",
+        "overviewTitle": "Automatikusan észlelt fajok",
+        "overviewVerify": "Ellenőrizd, hogy megfelelő-e faj, és linkeld a fához",
+        "poweredByPlantnet": "Motor: <a href='https://plantnet.org' target='_blank'>Pl@ntNet.org</a>",
+        "querying": "A Pl@ntNet.org lekérdezése {length} képpel",
         "seeInfo": "További információk a fajról",
+        "takeImages": "Fényképezd le a fát a fajának automatikus felismeréséhez",
         "tryAgain": "Másik faj kiválasztása"
     },
+    "preset_type": {
+        "question": "Mi ez az objektum?",
+        "typeDescription": "Ez egy <b>{title}</b>. <div class='subtle'>{description}</div>",
+        "typeTitle": "Ez egy <b>{title}</b>"
+    },
     "privacy": {
+        "editingIntro": "Ha változtatsz a térképen, akkor a módosítás rögzül az OpenStreetMapen, és bárki számára nyilvánosan látható lesz. A MapComplete-tal létrehozott módosításkészlet a következő adatokat tartalmazza:",
+        "editingOutro": "Részletes információkért kérjük, olvassa el <a href='https://wiki.osmfoundation.org/wiki/Privacy_Policy' target='_blank'>az OpenStreetMap.org adatvédelmi szabályzatát</a>. Ne feledd, hogy a regisztrációnál kitalált nevet is használhatsz.",
+        "editingTitle": "Módosításkor",
         "geodata": "Amikor a MapComplete lekéri a földrajzi helyed meghatározását, az – a korábban meglátogatott helyekkel együtt – az eszközödön marad. Helyadatokat soha nem küldünk el automatikusan máshová – kivéve, ha bizonyos funkciók egyértelműen másként rendelkeznek.",
-        "geodataTitle": "Földrajzi helyed",
+        "geodataTitle": "Tartózkodási helyed",
         "intro": "A magánélet fontos – az egyénnek és a társadalomnak egyaránt. A MapComplete igyekszik a lehető legnagyobb mértékben tiszteletben tartani a magánéletedet – egészen addig a pontig, hogy már idegesítő cookie-bannerre sincs szükségünk. Ennek ellenére szeretnénk tájékoztatni arról, hogy milyen információkat gyűjtünk és osztunk meg, milyen körülmények között, és miért kell ezeket a kompromisszumoknak megkötnünk.",
         "items": {
+            "changesYouMake": "Az általad elvégzett módosítások",
+            "date": "Amikor ez a módosítás létrejön",
+            "distanceIndicator": "Annak megjelölése, hogy milyen közel voltál a módosított objektumhoz. Más térképészek ebből tudják majd megállapítani, hogy (helyszíni) felmérés vagy távoli kutatás (pl. légi felvétel) alapján rajzoltál-e a térképre",
             "language": "Felhasználói felület nyelve",
             "theme": "A módosításkor használt téma",
             "username": "Felhasználóneved"
         },
+        "miscCookies": "A MapComplete együttműködik más szolgáltatókkal , különösen az objektumokról szóló fényképek betöltése érdekében. A képek különféle harmadik felek szerverein vannak tárolva, amelyek maguk is küldhetnek cookie-kat.",
         "miscCookiesTitle": "Más cookie-k",
+        "surveillance": "Minthogy elolvasod az adatvédelmi irányelveket, valószínűleg törődsz az adatvédelemmel. Mi is! Még <a href='https://mapcomplete.org/surveillance'>egy térfigyelő kamerákat tartalmazó témát</a> is készítettünk. Térképezd fel az összeset!",
         "title": "Adatvédelmi irányelvek",
         "tracking": "Ahhoz, hogy némi betekintést nyerünk abba, hogy ki látogatja meg weboldalunkat, néhány technikai adatot gyűjtünk. Ez tartalmazza azt az országot, ahonnan meglátogattad a weboldalt, azt a webhelyet, amely a MapComplete-re irányított, az eszközöd típusát és képernyőméretét. Egy cookie kerül elhelyezésre a készülékeden, amely jelzi, hogy ma meglátogatta a MapComplete-et. Ezek az adatok nem elég részletesek ahhoz, hogy személyesen azonosítsanak. A statisztika csak összesítetten érhető el, és <a href=\"https://pietervdvn.goatcounter.com\" target=\"_blank\">mindenkinek nyilvános</a>",
         "trackingTitle": "Statisztikai adatok",
