@@ -11,7 +11,8 @@
     "es": "Muros y edificios",
     "cs": "Stěny a budovy",
     "zh_Hant": "牆壁與建築",
-    "pl": "Ściany i budynki"
+    "pl": "Ściany i budynki",
+    "hu": "Falak és épületek"
   },
   "description": {
     "en": "Special builtin layer providing all walls and buildings. This layer is useful in presets for objects which can be placed against walls (e.g. AEDs, postboxes, entrances, addresses, surveillance cameras, …). This layer is invisible by default and not toggleable by the user.",

@@ -10,7 +10,7 @@
     "nb_NO": "Åpent klatrekart",
     "it": "Palestre, club e luoghi attrezzati per l'arrampicata",
     "fr": "Escalade : gymnases, clubs et spots",
-    "hu": "Mászótérkép",
+    "hu": "Falmászás: tornacsarnokok, klubok és helyek",
     "ca": "Gimnasos, clubs i llocs d'escalada",
     "da": "Åbn klatrekort",
     "cs": "Lezecké tělocvičny, kluby a místa",
@@ -475,7 +475,8 @@
               "pl": "warsztat szewski",
               "da": "en skomager",
               "it": "un calzolaio",
-              "uk": "майстерня по ремонту взуття"
+              "uk": "майстерня по ремонту взуття",
+              "hu": "egy cipészműhely"
             }
           }
         ]

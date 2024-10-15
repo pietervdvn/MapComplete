@@ -12,7 +12,8 @@
     "zh_Hant": "獸醫院、寵物公園以及其他寵物設施",
     "pl": "Kliniki weterynaryjne, parki dla psów i inne obiekty dla zwierząt",
     "it": "Veterinari, parchi accessibili ai cani e altri servizi per animali domestici",
-    "ru": "Ветеринары, парки для собак и другие удобства для домашних животных"
+    "ru": "Ветеринары, парки для собак и другие удобства для домашних животных",
+    "hu": "Állatorvosok, kutyafuttatók és hasonló, kedvtelésből tartott állatoknak szóló létesítmények"
   },
   "description": {
     "en": "On this map, you'll find various interesting places for you pets: veterinarians, dog parks, pet shops, dog-friendly restaurants, ...",
@@ -124,7 +125,8 @@
             "cs": "Obchody vhodné pro vstup se psy",
             "zh_Hant": "寵物友善商家",
             "pl": "Sklepy przyjazne psom",
-            "it": "Negozi che accettano i cani"
+            "it": "Negozi che accettano i cani",
+            "hu": "Kutyabarát üzletek"
           },
           "mappings": [
             {

@@ -13,7 +13,8 @@
     "cs": "Autobusové linky",
     "zh_Hant": "公車路線",
     "pl": "Trasy autobusowe",
-    "ru": "Автобусные маршруты"
+    "ru": "Автобусные маршруты",
+    "hu": "Buszjáratok"
   },
   "description": {
     "en": "Plan your trip with the help of the public transport system.",

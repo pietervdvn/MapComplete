@@ -12,7 +12,8 @@
     "zh_Hant": "自動販賣機",
     "da": "Salgsautomater",
     "it": "Distributori automatici",
-    "ru": "Торговые автоматы"
+    "ru": "Торговые автоматы",
+    "hu": "Árusító automaták"
   },
   "description": {
     "en": "Find vending machines for everything",

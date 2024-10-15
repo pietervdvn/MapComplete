@@ -18,7 +18,8 @@
     "zh_Hans": "自行车租赁",
     "it": "Noleggio biciclette",
     "ru": "Прокат велосипедов",
-    "uk": "Прокат велосипедів"
+    "uk": "Прокат велосипедів",
+    "hu": "Kerékpárkölcsönzők"
   },
   "description": {
     "en": "On this map, you'll find the many bicycle rental stations as they are known by OpenStreetMap",

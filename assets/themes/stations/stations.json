@@ -12,7 +12,8 @@
     "zh_Hant": "火車站",
     "pl": "Stacje Kolejowe",
     "da": "Togstationer",
-    "it": "Stazioni ferroviarie"
+    "it": "Stazioni ferroviarie",
+    "hu": "Vasútállomások"
   },
   "description": {
     "en": "View, edit and add details to a train station",

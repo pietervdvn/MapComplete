@@ -17,7 +17,8 @@
     "pa_PK": "چݨی تھیم",
     "cs": "Osobní téma",
     "pl": "Temat osobisty",
-    "ru": "Собственная тема"
+    "ru": "Собственная тема",
+    "hu": "Személyes téma"
   },
   "description": {
     "en": "Create a personal theme based on all the available layers of all themes. In order to show some data, open <a href='#filter'>layer selection</a>",

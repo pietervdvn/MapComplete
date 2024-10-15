@@ -6,7 +6,8 @@
     "es": "Prensa de céntimos",
     "ca": "Premsa de cèntims",
     "cs": "Stroje na ražbu mincí",
-    "pl": "Prasy do groszy"
+    "pl": "Prasy do groszy",
+    "hu": "Kinyújtottérem-automaták"
   },
   "description": {
     "en": "Find penny presses to create your own elongated coins.",

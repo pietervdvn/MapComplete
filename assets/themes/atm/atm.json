@@ -17,7 +17,8 @@
     "pl": "Bankomaty",
     "da": "Hæveautomater",
     "zh_Hans": "自动取款机",
-    "uk": "Банкомати"
+    "uk": "Банкомати",
+    "hu": "Bankautomaták"
   },
   "description": {
     "en": "This map shows ATMs to withdraw or deposit money",

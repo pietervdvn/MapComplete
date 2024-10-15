@@ -13,7 +13,8 @@
     "ru": "Ограничения скорости",
     "zh_Hant": "最高速限",
     "eu": "Abiadiura",
-    "pl": "Prędkość maksymalna"
+    "pl": "Prędkość maksymalna",
+    "hu": "Sebességkorlátozások"
   },
   "description": {
     "en": "This map shows the legally allowed maximum speed on every road. If a maxspeed is missing or wrong, you can correct it here.",

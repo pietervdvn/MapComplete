@@ -13,7 +13,8 @@
     "da": "Ure",
     "it": "Orologi",
     "ru": "Часы",
-    "uk": "Годинники"
+    "uk": "Годинники",
+    "hu": "Órák"
   },
   "description": {
     "en": "Map showing all public clocks",

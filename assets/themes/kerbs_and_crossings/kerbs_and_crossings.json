@@ -11,7 +11,8 @@
     "ru": "Бордюры и пешеходные переходы",
     "es": "Bordillos y cruces",
     "ca": "Vorals i encreuaments",
-    "pl": "Krawężniki i przejścia"
+    "pl": "Krawężniki i przejścia",
+    "hu": "Járdaszegélyek és gyalogosátkelők"
   },
   "description": {
     "en": "A map showing kerbs and crossings.",

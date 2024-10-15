@@ -8,7 +8,8 @@
     "ca": "Resposta davant de desastres i serveis d'emergència",
     "da": "Beredskab",
     "cs": "Reakce na katastrofy a záchranné služby",
-    "ru": "Ликвидация последствий стихийных бедствий и аварийные службы"
+    "ru": "Ликвидация последствий стихийных бедствий и аварийные службы",
+    "hu": "Katasztrófaelhárítás és sürgősségi szolgálatok"
   },
   "description": {
     "en": "This map contains elements meant for disaster preparedness and response.",
