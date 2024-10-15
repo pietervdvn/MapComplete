@@ -20,6 +20,7 @@
         "cancel": "Cancel·lar",
         "cannotBeDeleted": "Aquest element no pot ser esborrat",
         "delete": "Esborrar",
+        "deletedTitle": "Element eliminat",
         "explanations": {
             "hardDelete": "Aquest element s'esborrarà a OpenStreetMap. Es podria recuperar per part d'un contribuïdor experimentat",
             "retagNoOtherThemes": "Aquest element serà reclasificada i ocultada a aquesta aplicació",
@@ -46,6 +47,19 @@
         "useSomethingElse": "Utilitza un altre editor d'OpenStreetMap per esborrar-lo",
         "whyDelete": "Per què s'hauria d'esborrar aquest element?"
     },
+    "external": {
+        "allAreApplied": "Tots els valors externs que faltaven s'han copiat a OpenStreetMap",
+        "conflicting": {
+            "title": "Elements conflictius"
+        },
+        "currentInOsmIs": "Pel moment, OpenStreetMap té el següent valor registrat:",
+        "done": "Fet",
+        "missing": {
+            "intro": "OpenStreetMap no té informació sobre els següents atributs",
+            "title": "Elements que falten"
+        },
+        "noDataLoaded": "El lloc web extern no té dades vinculades que es puguen carregar"
+    },
     "favourite": {
         "loginNeeded": "<h3>Entrar</h3>El disseny personalitzat només està disponible pels usuaris d'OpenstreetMap",
         "panelIntro": "<h3>La teva interfície personal</h3>Activa les teves capes favorites de totes les interfícies oficials",
@@ -57,6 +71,8 @@
             "isNotMarkedShort": "No marcat com a favorit",
             "markAsFavouriteTitle": "Marca aquesta ubicació com a preferida"
         },
+        "introPrivacy": "Aquesta llista nomes és visible per a tu",
+        "loginToSeeList": "Inicia sessió per a veure la llista d'ubicacions marcades com a favorites",
         "tab": "Els teus favorits i opinions",
         "title": "Les teues ubicacions favorites"
     },
@@ -153,6 +169,7 @@
             "donate": "Donar suport econòmic a MapComplete",
             "editId": "Obre l'editor en línia d'OpenStreetMap aquí",
             "editJosm": "Editar aquí amb JOSM",
+            "emailCreators": "Envia un correu electrònic als creadors",
             "followOnMastodon": "Segueix MapComplet a Mastodon",
             "gotoSourceCode": "Veure el codi font",
             "iconAttribution": {
