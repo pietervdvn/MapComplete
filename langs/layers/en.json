@@ -1148,7 +1148,7 @@
                 }
             }
         },
-        "description": "A layer showing all public-transport-stops which do have a bench",
+        "description": "A layer showing all public transport stops which have a bench",
         "name": "Benches at public transport stops",
         "tagRenderings": {
             "bench_at_pt-bench_type": {
@@ -1424,7 +1424,7 @@
     },
     "bike_cafe": {
         "description": "A bike café is a café geared towards cyclists, for example with services such as a pump, with lots of bicycle-related decoration, …",
-        "name": "Bike cafe",
+        "name": "Bike café",
         "presets": {
             "0": {
                 "title": "a bike cafe"
@@ -1997,10 +1997,10 @@
                         "then": "There are special provisions for wheelchair users"
                     },
                     "1": {
-                        "then": "A wheelchair can easily use this birdhide"
+                        "then": "A wheelchair user can easily use this bird hide"
                     },
                     "2": {
-                        "then": "This birdhide is reachable by wheelchair, but it is not easy"
+                        "then": "This bird hide is accessible in a wheelchair, but it is not easy"
                     },
                     "3": {
                         "then": "Not accessible to wheelchair users"
@@ -2071,7 +2071,7 @@
                 "title": "a bar"
             },
             "2": {
-                "description": "A <b>cafe</b> to drink tea, coffee or an alcoholical bevarage in a quiet environment",
+                "description": "A <b>cafe</b> to drink tea, coffee or an alcoholic beverage in a quiet environment",
                 "title": "a cafe"
             },
             "3": {
@@ -2089,7 +2089,7 @@
                         "then": "A more modern and commercial <b>bar</b>, possibly with a music and light installation"
                     },
                     "2": {
-                        "then": "A <b>cafe</b> to drink tea, coffee or an alcoholical bevarage in a quiet environment"
+                        "then": "A <b>cafe</b> to drink tea, coffee or an alcoholic beverage in a quiet environment"
                     },
                     "3": {
                         "then": "A <b>restaurant</b> where one can get a proper meal"
