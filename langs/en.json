@@ -258,8 +258,8 @@
             "toMuch": "There are to many features to download them all",
             "uploadGpx": "Upload your track to OpenStreetMap"
         },
-        "enableGeolocationForSafari": "Did you not get the popup to ask for geopermission?",
-        "enableGeolocationForSafariLink": "Learn how to enable the geolocation permission in settings",
+        "enableGeolocationForSafari": "Did you not get the popup to ask for location permission?",
+        "enableGeolocationForSafariLink": "Learn how to enable location permission in settings",
         "eraseValue": "Erase this value",
         "error": "Something went wrong",
         "example": "Example",
@@ -270,7 +270,7 @@
             "disableAll": "Disable all",
             "enableAll": "Enable all"
         },
-        "geopermissionDenied": "Using the geolocation was denied",
+        "geopermissionDenied": "Location permission was denied",
         "getStartedLogin": "Log in with OpenStreetMap to get started",
         "getStartedNewAccount": " or <a href='https://www.openstreetmap.org/user/new' target='_blank'>create a new account</a>",
         "goToInbox": "Open inbox",
