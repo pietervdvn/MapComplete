@@ -87,9 +87,6 @@
         "shortDescription": "Olyan térkép, ahol a kerékpáros infrastruktúrával kapcsolatos dolgokat tekinthet meg és szerkeszthet.",
         "title": "Kerékpáros infrastruktúra"
     },
-    "cyclenodes": {
-        "title": ""
-    },
     "cyclestreets": {
         "description": "A kerékpárosutca (cyclestreet, Fahrradstraße) olyan utca, ahol <b>gépjármű nem előzhet meg kerékpárost</b>. Az ilyen utcákat külön közlekedési tábla jelzi. Kerékpárosutcák találhatók Hollandiában és Belgiumban, valamint Németországban és Franciaországban is. ",
         "layers": {
