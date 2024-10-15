@@ -1,0 +1,56 @@
+{
+  "data_format": 1,
+  "project": {
+    "name": "MapComplete Lighthouses",
+    "description": "Lighthouses are tall buildings with a light on top to guide marine traffic",
+    "project_url": "https://mapcomplete.org/lighthouses",
+    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "icon_url": "https://mapcomplete.org/assets/themes/lighthouses/lighthouse.svg",
+    "contact_name": "Pieter Vander Vennet",
+    "contact_email": "pietervdvn@posteo.net"
+  },
+  "tags": [
+    {
+      "key": "man_made",
+      "description": "The MapComplete theme Lighthouses has a layer lighthouse showing features with this tag",
+      "value": "lighthouse"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'lighthouse' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Lighthouses') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'lighthouse allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'lighthouse allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'lighthouse allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'lighthouse allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "Layer 'lighthouse' shows and asks freeform values for key 'wikidata' (in the mapcomplete.org theme 'Lighthouses')"
+    },
+    {
+      "key": "wikipedia",
+      "description": "Layer 'lighthouse' shows wikipedia~.+ with a fixed text, namely '{wikipedia():max-height:25rem}' (in the mapcomplete.org theme 'Lighthouses')"
+    },
+    {
+      "key": "wikidata",
+      "description": "Layer 'lighthouse' shows wikidata= with a fixed text, namely 'No Wikipedia page has been linked yet' (in the mapcomplete.org theme 'Lighthouses') Picking this answer will delete the key wikidata.",
+      "value": ""
+    },
+    {
+      "key": "height",
+      "description": "Layer 'lighthouse' shows and asks freeform values for key 'height' (in the mapcomplete.org theme 'Lighthouses')"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "data_format": 1,
+  "project": {
+    "name": "MapComplete Ghost bikes",
+    "description": "A <b>ghost bike</b> is a memorial for a cyclist who died in a traffic accident, in the form of a white bicycle placed permanently near the accident location",
+    "project_url": "https://mapcomplete.org/ghostbikes",
+    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "icon_url": "https://mapcomplete.org/assets/themes/ghostbikes/logo.svg",
+    "contact_name": "Pieter Vander Vennet",
+    "contact_email": "pietervdvn@posteo.net"
+  },
+  "tags": [
+    {
+      "key": "memorial",
+      "description": "The MapComplete theme Ghost bikes has a layer Ghost bikes showing features with this tag",
+      "value": "ghost_bike"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Ghost bikes' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Ghost bikes') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Ghost bikes allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Ghost bikes allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Ghost bikes allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Ghost bikes allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "subject",
+      "description": "Layer 'Ghost bikes' shows and asks freeform values for key 'subject' (in the mapcomplete.org theme 'Ghost bikes')"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Ghost bikes' shows name~.+ with a fixed text, namely 'In remembrance of {name}' (in the mapcomplete.org theme 'Ghost bikes')"
+    },
+    {
+      "key": "noname",
+      "description": "Layer 'Ghost bikes' shows noname=yes with a fixed text, namely 'No name is marked on the bike' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost bikes')",
+      "value": "yes"
+    },
+    {
+      "key": "source",
+      "description": "Layer 'Ghost bikes' shows and asks freeform values for key 'source' (in the mapcomplete.org theme 'Ghost bikes')"
+    },
+    {
+      "key": "inscription",
+      "description": "Layer 'Ghost bikes' shows and asks freeform values for key 'inscription' (in the mapcomplete.org theme 'Ghost bikes')"
+    },
+    {
+      "key": "start_date",
+      "description": "Layer 'Ghost bikes' shows and asks freeform values for key 'start_date' (in the mapcomplete.org theme 'Ghost bikes')"
+    }
+  ]
+}

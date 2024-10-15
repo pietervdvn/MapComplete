@@ -1,0 +1,794 @@
+{
+  "data_format": 1,
+  "project": {
+    "name": "MapComplete Indoors",
+    "description": "On this map, publicly accessible indoor places are shown",
+    "project_url": "https://mapcomplete.org/indoors",
+    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "icon_url": "https://mapcomplete.org/assets/layers/entrance/entrance.svg",
+    "contact_name": "Pieter Vander Vennet",
+    "contact_email": "pietervdvn@posteo.net"
+  },
+  "tags": [
+    {
+      "key": "indoor",
+      "description": "The MapComplete theme Indoors has a layer Indoors showing features with this tag",
+      "value": "room"
+    },
+    {
+      "key": "indoor",
+      "description": "The MapComplete theme Indoors has a layer Indoors showing features with this tag",
+      "value": "area"
+    },
+    {
+      "key": "indoor",
+      "description": "The MapComplete theme Indoors has a layer Indoors showing features with this tag",
+      "value": "wall"
+    },
+    {
+      "key": "indoor",
+      "description": "The MapComplete theme Indoors has a layer Indoors showing features with this tag",
+      "value": "door"
+    },
+    {
+      "key": "indoor",
+      "description": "The MapComplete theme Indoors has a layer Indoors showing features with this tag",
+      "value": "level"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Indoors' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Indoors') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Indoors allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Indoors allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Indoors allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Indoors allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Indoors' shows and asks freeform values for key 'level' (in the mapcomplete.org theme 'Indoors') (This is only shown if repeat_on=)"
+    },
+    {
+      "key": "location",
+      "description": "Layer 'Indoors' shows location=underground with a fixed text, namely 'Located underground' (in the mapcomplete.org theme 'Indoors') (This is only shown if repeat_on=)",
+      "value": "underground"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Indoors' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if repeat_on=)",
+      "value": "0"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Indoors' shows level= with a fixed text, namely 'Located on the ground floor' (in the mapcomplete.org theme 'Indoors') Picking this answer will delete the key level. (This is only shown if repeat_on=)",
+      "value": ""
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Indoors' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if repeat_on=)",
+      "value": "1"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Indoors' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if repeat_on=)",
+      "value": "-1"
+    },
+    {
+      "key": "ref",
+      "description": "Layer 'Indoors' shows and asks freeform values for key 'ref' (in the mapcomplete.org theme 'Indoors') (This is only shown if indoor=room | indoor=area | indoor=corridor)"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Indoors' shows and asks freeform values for key 'name' (in the mapcomplete.org theme 'Indoors') (This is only shown if indoor=room | indoor=area | indoor=corridor)"
+    },
+    {
+      "key": "room",
+      "description": "Layer 'Indoors' shows room=administration with a fixed text, namely 'This is a administrative room' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "value": "administration"
+    },
+    {
+      "key": "room",
+      "description": "Layer 'Indoors' shows room=auditorium with a fixed text, namely 'This is a auditorium' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "value": "auditorium"
+    },
+    {
+      "key": "room",
+      "description": "Layer 'Indoors' shows room=bedroom with a fixed text, namely 'This is a bedroom' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "value": "bedroom"
+    },
+    {
+      "key": "room",
+      "description": "Layer 'Indoors' shows room=chapel with a fixed text, namely 'This is a chapel' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "value": "chapel"
+    },
+    {
+      "key": "room",
+      "description": "Layer 'Indoors' shows room=class with a fixed text, namely 'This is a classroom' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "value": "class"
+    },
+    {
+      "key": "room",
+      "description": "Layer 'Indoors' shows room=classroom with a fixed text, namely 'This is a classroom' (in the mapcomplete.org theme 'Indoors')",
+      "value": "classroom"
+    },
+    {
+      "key": "room",
+      "description": "Layer 'Indoors' shows room=computer with a fixed text, namely 'This is a computer room' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "value": "computer"
+    },
+    {
+      "key": "room",
+      "description": "Layer 'Indoors' shows room=conference with a fixed text, namely 'This is a conference room' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "value": "conference"
+    },
+    {
+      "key": "room",
+      "description": "Layer 'Indoors' shows room=crypt with a fixed text, namely 'This is a crypt' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "value": "crypt"
+    },
+    {
+      "key": "room",
+      "description": "Layer 'Indoors' shows room=kitchen with a fixed text, namely 'This is a kitchen' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "value": "kitchen"
+    },
+    {
+      "key": "room",
+      "description": "Layer 'Indoors' shows room=laboratory with a fixed text, namely 'This is a laboratory' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "value": "laboratory"
+    },
+    {
+      "key": "room",
+      "description": "Layer 'Indoors' shows room=library with a fixed text, namely 'This is a library' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "value": "library"
+    },
+    {
+      "key": "room",
+      "description": "Layer 'Indoors' shows room=locker with a fixed text, namely 'This is a locker room' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "value": "locker"
+    },
+    {
+      "key": "room",
+      "description": "Layer 'Indoors' shows room=nursery with a fixed text, namely 'This is a nursery' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "value": "nursery"
+    },
+    {
+      "key": "room",
+      "description": "Layer 'Indoors' shows room=office with a fixed text, namely 'This is an office' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "value": "office"
+    },
+    {
+      "key": "room",
+      "description": "Layer 'Indoors' shows room=printer with a fixed text, namely 'This is a copy room' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "value": "printer"
+    },
+    {
+      "key": "room",
+      "description": "Layer 'Indoors' shows room=prison_cell with a fixed text, namely 'This is a prison_cell' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "value": "prison_cell"
+    },
+    {
+      "key": "room",
+      "description": "Layer 'Indoors' shows room=restaurant with a fixed text, namely 'This is a restaurant' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "value": "restaurant"
+    },
+    {
+      "key": "room",
+      "description": "Layer 'Indoors' shows room=security_check with a fixed text, namely 'This is a room to perform security checks' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "value": "security_check"
+    },
+    {
+      "key": "room",
+      "description": "Layer 'Indoors' shows room=sport with a fixed text, namely 'This is a sport room' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "value": "sport"
+    },
+    {
+      "key": "room",
+      "description": "Layer 'Indoors' shows room=storage with a fixed text, namely 'This is a storage room' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "value": "storage"
+    },
+    {
+      "key": "room",
+      "description": "Layer 'Indoors' shows room=technical with a fixed text, namely 'This is a technical room' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "value": "technical"
+    },
+    {
+      "key": "room",
+      "description": "Layer 'Indoors' shows room=toilets with a fixed text, namely 'These are toilets' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "value": "toilets"
+    },
+    {
+      "key": "room",
+      "description": "Layer 'Indoors' shows room=waiting with a fixed text, namely 'This is a waiting room' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "value": "waiting"
+    },
+    {
+      "key": "capacity",
+      "description": "Layer 'Indoors' shows and asks freeform values for key 'capacity' (in the mapcomplete.org theme 'Indoors') (This is only shown if room=waiting | room=restaurant | room=office | room=nursery | room=conference | room=auditorium | room=chapel | room=bedroom | room=classroom)"
+    },
+    {
+      "key": "name:etymology:wikidata",
+      "description": "Layer 'Indoors' shows and asks freeform values for key 'name:etymology:wikidata' (in the mapcomplete.org theme 'Indoors') (This is only shown if name:etymology!=unknown & name~.+)"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Indoors' shows and asks freeform values for key 'access' (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets)"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Indoors' shows access=yes with a fixed text, namely 'Public access' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets)",
+      "value": "yes"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Indoors' shows access=customers with a fixed text, namely 'Only access to customers' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets)",
+      "value": "customers"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Indoors' shows access=no with a fixed text, namely 'Not accessible' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets)",
+      "value": "no"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Indoors' shows access=key with a fixed text, namely 'Accessible, but one has to ask a key to enter' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets)",
+      "value": "key"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Indoors' shows access=public with a fixed text, namely 'Public access' (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets)",
+      "value": "public"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Indoors' shows fee=yes with a fixed text, namely 'These are paid toilets' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets & access!=no)",
+      "value": "yes"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Indoors' shows fee=no with a fixed text, namely 'Free to use' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets & access!=no)",
+      "value": "no"
+    },
+    {
+      "key": "charge",
+      "description": "Layer 'Indoors' shows and asks freeform values for key 'charge' (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets & fee=yes)"
+    },
+    {
+      "key": "payment:cash",
+      "description": "Layer 'Indoors' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets & fee=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:cards",
+      "description": "Layer 'Indoors' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets & fee=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:qr_code",
+      "description": "Layer 'Indoors' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets & fee=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:coins",
+      "description": "Layer 'Indoors' shows payment:coins=yes with a fixed text, namely 'Coins are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets & fee=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:notes",
+      "description": "Layer 'Indoors' shows payment:notes=yes with a fixed text, namely 'Bank notes are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets & fee=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:debit_cards",
+      "description": "Layer 'Indoors' shows payment:debit_cards=yes with a fixed text, namely 'Debit cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets & fee=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:credit_cards",
+      "description": "Layer 'Indoors' shows payment:credit_cards=yes with a fixed text, namely 'Credit cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets & fee=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Indoors' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets & access!=no)"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Indoors' shows opening_hours=24/7 with a fixed text, namely '24/7 opened (including holidays)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets & access!=no)",
+      "value": "24/7"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Indoors' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets & access!=no)",
+      "value": "closed"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Indoors' shows wheelchair=yes with a fixed text, namely 'There is a dedicated toilet for wheelchair users' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets)",
+      "value": "yes"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Indoors' shows wheelchair=no with a fixed text, namely 'No wheelchair access' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets)",
+      "value": "no"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Indoors' shows wheelchair=designated with a fixed text, namely 'There is only a dedicated toilet for wheelchair users' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets)",
+      "value": "designated"
+    },
+    {
+      "key": "door:width",
+      "description": "Layer 'Indoors' shows and asks freeform values for key 'door:width' (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets & (wheelchair=yes | wheelchair=designated))"
+    },
+    {
+      "key": "toilets:position",
+      "description": "Layer 'Indoors' shows toilets:position=seated with a fixed text, namely 'There are only seated toilets' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets)",
+      "value": "seated"
+    },
+    {
+      "key": "toilets:position",
+      "description": "Layer 'Indoors' shows toilets:position=urinal with a fixed text, namely 'There are only urinals here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets)",
+      "value": "urinal"
+    },
+    {
+      "key": "toilets:position",
+      "description": "Layer 'Indoors' shows toilets:position=squat with a fixed text, namely 'There are only squat toilets here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets)",
+      "value": "squat"
+    },
+    {
+      "key": "toilets:position",
+      "description": "Layer 'Indoors' shows toilets:position=seated;urinal with a fixed text, namely 'Both seated toilets and urinals are available here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets)",
+      "value": "seated;urinal"
+    },
+    {
+      "key": "changing_table",
+      "description": "Layer 'Indoors' shows changing_table=yes with a fixed text, namely 'A changing table is available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets)",
+      "value": "yes"
+    },
+    {
+      "key": "changing_table",
+      "description": "Layer 'Indoors' shows changing_table=no with a fixed text, namely 'No changing table is available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets)",
+      "value": "no"
+    },
+    {
+      "key": "changing_table:location",
+      "description": "Layer 'Indoors' shows and asks freeform values for key 'changing_table:location' (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets & changing_table=yes)"
+    },
+    {
+      "key": "changing_table:location",
+      "description": "Layer 'Indoors' shows changing_table:location=female_toilet with a fixed text, namely 'A changing table is in the toilet for women' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets & changing_table=yes)",
+      "value": "female_toilet"
+    },
+    {
+      "key": "changing_table:location",
+      "description": "Layer 'Indoors' shows changing_table:location=male_toilet with a fixed text, namely 'A changing table is in the toilet for men' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets & changing_table=yes)",
+      "value": "male_toilet"
+    },
+    {
+      "key": "changing_table:location",
+      "description": "Layer 'Indoors' shows changing_table:location=wheelchair_toilet with a fixed text, namely 'A changing table is in the toilet for wheelchair users' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets & changing_table=yes)",
+      "value": "wheelchair_toilet"
+    },
+    {
+      "key": "changing_table:location",
+      "description": "Layer 'Indoors' shows changing_table:location=dedicated_room with a fixed text, namely 'A changing table is in a dedicated room' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets & changing_table=yes)",
+      "value": "dedicated_room"
+    },
+    {
+      "key": "toilets:handwashing",
+      "description": "Layer 'Indoors' shows toilets:handwashing=yes with a fixed text, namely 'These toilets have a sink to wash your hands' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets)",
+      "value": "yes"
+    },
+    {
+      "key": "toilets:handwashing",
+      "description": "Layer 'Indoors' shows toilets:handwashing=no with a fixed text, namely 'These toilets <b>don't</b> have a sink to wash your hands' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets)",
+      "value": "no"
+    },
+    {
+      "key": "toilets:paper_supplied",
+      "description": "Layer 'Indoors' shows toilets:paper_supplied=yes with a fixed text, namely 'This toilet is equipped with toilet paper' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets & toilets:position!=urinal)",
+      "value": "yes"
+    },
+    {
+      "key": "toilets:paper_supplied",
+      "description": "Layer 'Indoors' shows toilets:paper_supplied=no with a fixed text, namely 'You have to bring your own toilet paper to this toilet' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if amenity=toilets & toilets:position!=urinal)",
+      "value": "no"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Indoors has a layer Pedestrian paths showing features with this tag",
+      "value": "footway"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Indoors has a layer Pedestrian paths showing features with this tag",
+      "value": "path"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Indoors has a layer Pedestrian paths showing features with this tag",
+      "value": "corridor"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Indoors has a layer Pedestrian paths showing features with this tag",
+      "value": "steps"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Indoors has a layer Elevator showing features with this tag",
+      "value": "elevator"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Elevator' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Indoors') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Elevator allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Elevator allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Elevator allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Elevator allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Elevator' shows and asks freeform values for key 'level' (in the mapcomplete.org theme 'Indoors') (This is only shown if repeat_on=)"
+    },
+    {
+      "key": "location",
+      "description": "Layer 'Elevator' shows location=underground with a fixed text, namely 'Located underground' (in the mapcomplete.org theme 'Indoors') (This is only shown if repeat_on=)",
+      "value": "underground"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Elevator' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if repeat_on=)",
+      "value": "0"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Elevator' shows level= with a fixed text, namely 'Located on the ground floor' (in the mapcomplete.org theme 'Indoors') Picking this answer will delete the key level. (This is only shown if repeat_on=)",
+      "value": ""
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Elevator' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if repeat_on=)",
+      "value": "1"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Elevator' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if repeat_on=)",
+      "value": "-1"
+    },
+    {
+      "key": "operational_status",
+      "description": "Layer 'Elevator' shows operational_status=broken with a fixed text, namely 'This elevator is broken' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "value": "broken"
+    },
+    {
+      "key": "operational_status",
+      "description": "Layer 'Elevator' shows operational_status=closed with a fixed text, namely 'This elevator is closed <span class='subtle'>e.g. because renovation works are going on</span>' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "value": "closed"
+    },
+    {
+      "key": "operational_status",
+      "description": "Layer 'Elevator' shows operational_status=ok with a fixed text, namely 'This elevator works' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "value": "ok"
+    },
+    {
+      "key": "operational_status",
+      "description": "Layer 'Elevator' shows operational_status= with a fixed text, namely 'This elevator works' (in the mapcomplete.org theme 'Indoors') Picking this answer will delete the key operational_status.",
+      "value": ""
+    },
+    {
+      "key": "door:width",
+      "description": "Layer 'Elevator' shows and asks freeform values for key 'door:width' (in the mapcomplete.org theme 'Indoors')"
+    },
+    {
+      "key": "shape",
+      "description": "Layer 'Elevator' shows shape=rectangular with a fixed text, namely 'This elevator has a rectangular shape' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "value": "rectangular"
+    },
+    {
+      "key": "shape",
+      "description": "Layer 'Elevator' shows shape=circular with a fixed text, namely 'This elevator has a circular shape' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "value": "circular"
+    },
+    {
+      "key": "width",
+      "description": "Layer 'Elevator' shows and asks freeform values for key 'width' (in the mapcomplete.org theme 'Indoors') (This is only shown if shape= | shape=rectangular)"
+    },
+    {
+      "key": "length",
+      "description": "Layer 'Elevator' shows and asks freeform values for key 'length' (in the mapcomplete.org theme 'Indoors') (This is only shown if shape= | shape=rectangular)"
+    },
+    {
+      "key": "diameter",
+      "description": "Layer 'Elevator' shows and asks freeform values for key 'diameter' (in the mapcomplete.org theme 'Indoors') (This is only shown if shape=circular)"
+    },
+    {
+      "key": "hearing_loop",
+      "description": "Layer 'Elevator' shows hearing_loop=yes with a fixed text, namely 'This place has an audio induction loop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "value": "yes"
+    },
+    {
+      "key": "hearing_loop",
+      "description": "Layer 'Elevator' shows hearing_loop=no with a fixed text, namely 'This place <b>does not</b> have an audio induction loop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "value": "no"
+    },
+    {
+      "key": "tactile_writing:braille",
+      "description": "Layer 'Elevator' shows tactile_writing:braille=yes with a fixed text, namely 'This elevator has tactile writing in Braille' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "value": "yes"
+    },
+    {
+      "key": "tactile_writing:braille",
+      "description": "Layer 'Elevator' shows tactile_writing:braille=no with a fixed text, namely 'This elevator does not have tactile writing' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "value": "no"
+    },
+    {
+      "key": "speech_output",
+      "description": "Layer 'Elevator' shows speech_output=yes with a fixed text, namely 'This elevator has speech output' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "value": "yes"
+    },
+    {
+      "key": "speech_output",
+      "description": "Layer 'Elevator' shows speech_output=no with a fixed text, namely 'This elevator does not have speech output' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "value": "no"
+    },
+    {
+      "key": "entrance",
+      "description": "The MapComplete theme Indoors has a layer Entrance showing features with this tag"
+    },
+    {
+      "key": "indoor",
+      "description": "The MapComplete theme Indoors has a layer Entrance showing features with this tag",
+      "value": "door"
+    },
+    {
+      "key": "door",
+      "description": "The MapComplete theme Indoors has a layer Entrance showing features with this tag"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Entrance' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Indoors') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Entrance allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Entrance allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Entrance allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Entrance allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Entrance' shows and asks freeform values for key 'level' (in the mapcomplete.org theme 'Indoors') (This is only shown if repeat_on=)"
+    },
+    {
+      "key": "location",
+      "description": "Layer 'Entrance' shows location=underground with a fixed text, namely 'Located underground' (in the mapcomplete.org theme 'Indoors') (This is only shown if repeat_on=)",
+      "value": "underground"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Entrance' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if repeat_on=)",
+      "value": "0"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Entrance' shows level= with a fixed text, namely 'Located on the ground floor' (in the mapcomplete.org theme 'Indoors') Picking this answer will delete the key level. (This is only shown if repeat_on=)",
+      "value": ""
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Entrance' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if repeat_on=)",
+      "value": "1"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Entrance' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if repeat_on=)",
+      "value": "-1"
+    },
+    {
+      "key": "entrance",
+      "description": "Layer 'Entrance' shows entrance=yes with a fixed text, namely 'No specific entrance type is known' (in the mapcomplete.org theme 'Indoors')",
+      "value": "yes"
+    },
+    {
+      "key": "entrance",
+      "description": "Layer 'Entrance' shows entrance= & indoor=door with a fixed text, namely 'This is an indoor door, separating a room or a corridor within a single building' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') Picking this answer will delete the key entrance.",
+      "value": ""
+    },
+    {
+      "key": "indoor",
+      "description": "Layer 'Entrance' shows entrance= & indoor=door with a fixed text, namely 'This is an indoor door, separating a room or a corridor within a single building' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "value": "door"
+    },
+    {
+      "key": "indoor",
+      "description": "Layer 'Entrance' shows indoor= & entrance=main with a fixed text, namely 'This is the main entrance' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') Picking this answer will delete the key indoor.",
+      "value": ""
+    },
+    {
+      "key": "entrance",
+      "description": "Layer 'Entrance' shows indoor= & entrance=main with a fixed text, namely 'This is the main entrance' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "value": "main"
+    },
+    {
+      "key": "indoor",
+      "description": "Layer 'Entrance' shows indoor= & entrance=secondary with a fixed text, namely 'This is a secondary entrance' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') Picking this answer will delete the key indoor.",
+      "value": ""
+    },
+    {
+      "key": "entrance",
+      "description": "Layer 'Entrance' shows indoor= & entrance=secondary with a fixed text, namely 'This is a secondary entrance' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "value": "secondary"
+    },
+    {
+      "key": "indoor",
+      "description": "Layer 'Entrance' shows indoor= & entrance=service with a fixed text, namely 'This is a service entrance - normally only used for employees, delivery, …' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') Picking this answer will delete the key indoor.",
+      "value": ""
+    },
+    {
+      "key": "entrance",
+      "description": "Layer 'Entrance' shows indoor= & entrance=service with a fixed text, namely 'This is a service entrance - normally only used for employees, delivery, …' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "value": "service"
+    },
+    {
+      "key": "indoor",
+      "description": "Layer 'Entrance' shows indoor= & entrance=exit with a fixed text, namely 'This is an exit where one can not enter' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') Picking this answer will delete the key indoor.",
+      "value": ""
+    },
+    {
+      "key": "entrance",
+      "description": "Layer 'Entrance' shows indoor= & entrance=exit with a fixed text, namely 'This is an exit where one can not enter' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "value": "exit"
+    },
+    {
+      "key": "indoor",
+      "description": "Layer 'Entrance' shows indoor= & entrance=entrance with a fixed text, namely 'This is an entrance where one can only enter (but not exit)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') Picking this answer will delete the key indoor.",
+      "value": ""
+    },
+    {
+      "key": "entrance",
+      "description": "Layer 'Entrance' shows indoor= & entrance=entrance with a fixed text, namely 'This is an entrance where one can only enter (but not exit)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "value": "entrance"
+    },
+    {
+      "key": "indoor",
+      "description": "Layer 'Entrance' shows indoor= & entrance=emergency with a fixed text, namely 'This is emergency exit' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') Picking this answer will delete the key indoor.",
+      "value": ""
+    },
+    {
+      "key": "entrance",
+      "description": "Layer 'Entrance' shows indoor= & entrance=emergency with a fixed text, namely 'This is emergency exit' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "value": "emergency"
+    },
+    {
+      "key": "indoor",
+      "description": "Layer 'Entrance' shows indoor= & entrance=home with a fixed text, namely 'This is the entrance to a private home' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') Picking this answer will delete the key indoor.",
+      "value": ""
+    },
+    {
+      "key": "entrance",
+      "description": "Layer 'Entrance' shows indoor= & entrance=home with a fixed text, namely 'This is the entrance to a private home' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "value": "home"
+    },
+    {
+      "key": "door",
+      "description": "Layer 'Entrance' shows door=yes with a fixed text, namely 'The door type is not known' (in the mapcomplete.org theme 'Indoors')",
+      "value": "yes"
+    },
+    {
+      "key": "door",
+      "description": "Layer 'Entrance' shows door=hinged with a fixed text, namely 'A classical, hinged door supported by joints' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "value": "hinged"
+    },
+    {
+      "key": "door",
+      "description": "Layer 'Entrance' shows door=revolving with a fixed text, namely 'A revolving door which hangs on a central shaft, rotating within a cylindrical enclosure' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "value": "revolving"
+    },
+    {
+      "key": "door",
+      "description": "Layer 'Entrance' shows door=sliding with a fixed text, namely 'A sliding door where the door slides sidewards, typically parallel with a wall' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "value": "sliding"
+    },
+    {
+      "key": "door",
+      "description": "Layer 'Entrance' shows door=overhead with a fixed text, namely 'A door which rolls from overhead, typically seen for garages' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "value": "overhead"
+    },
+    {
+      "key": "door",
+      "description": "Layer 'Entrance' shows door=no with a fixed text, namely 'This is an entrance without a physical door' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "value": "no"
+    },
+    {
+      "key": "automatic_door",
+      "description": "Layer 'Entrance' shows automatic_door=yes with a fixed text, namely 'This is an automatic door' (in the mapcomplete.org theme 'Indoors') (This is only shown if door!=no)",
+      "value": "yes"
+    },
+    {
+      "key": "automatic_door",
+      "description": "Layer 'Entrance' shows automatic_door=no with a fixed text, namely 'This door is <b>not</b> automated' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if door!=no)",
+      "value": "no"
+    },
+    {
+      "key": "automatic_door",
+      "description": "Layer 'Entrance' shows automatic_door=motion with a fixed text, namely 'This door will open automatically when <b>motion</b> is detected' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if door!=no)",
+      "value": "motion"
+    },
+    {
+      "key": "automatic_door",
+      "description": "Layer 'Entrance' shows automatic_door=floor with a fixed text, namely 'This door will open automatically when a <b>sensor in the floor</b> is triggered' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if door!=no)",
+      "value": "floor"
+    },
+    {
+      "key": "automatic_door",
+      "description": "Layer 'Entrance' shows automatic_door=button with a fixed text, namely 'This door will open automatically when a <b>button is pressed</b>' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if door!=no)",
+      "value": "button"
+    },
+    {
+      "key": "automatic_door",
+      "description": "Layer 'Entrance' shows automatic_door=slowdown_button with a fixed text, namely 'This door revolves automatically all the time, but has a <b>button to slow it down</b>, e.g. for wheelchair users' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if door!=no)",
+      "value": "slowdown_button"
+    },
+    {
+      "key": "automatic_door",
+      "description": "Layer 'Entrance' shows automatic_door=continuous with a fixed text, namely 'This door revolves automatically all the time' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if door!=no)",
+      "value": "continuous"
+    },
+    {
+      "key": "automatic_door",
+      "description": "Layer 'Entrance' shows automatic_door=serviced_on_button_press with a fixed text, namely 'This door will be opened by staff when requested by <b>pressing a button</b>' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if door!=no)",
+      "value": "serviced_on_button_press"
+    },
+    {
+      "key": "automatic_door",
+      "description": "Layer 'Entrance' shows automatic_door=serviced_on_request with a fixed text, namely 'This door will be opened by staff when requested' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors') (This is only shown if door!=no)",
+      "value": "serviced_on_request"
+    },
+    {
+      "key": "width",
+      "description": "Layer 'Entrance' shows and asks freeform values for key 'width' (in the mapcomplete.org theme 'Indoors')"
+    },
+    {
+      "key": "kerb:height",
+      "description": "Layer 'Entrance' shows and asks freeform values for key 'kerb:height' (in the mapcomplete.org theme 'Indoors')"
+    },
+    {
+      "key": "kerb:height",
+      "description": "Layer 'Entrance' shows kerb:height=0 with a fixed text, namely 'This door does not have a kerb' and allows to pick this as a default answer (in the mapcomplete.org theme 'Indoors')",
+      "value": "0"
+    }
+  ]
+}

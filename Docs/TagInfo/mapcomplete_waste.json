@@ -1,0 +1,456 @@
+{
+  "data_format": 1,
+  "project": {
+    "name": "MapComplete Waste",
+    "description": "Map showing waste baskets and recycling facilities",
+    "project_url": "https://mapcomplete.org/waste",
+    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "icon_url": "https://mapcomplete.org/assets/layers/recycling/recycling-14.svg",
+    "contact_name": "Pieter Vander Vennet",
+    "contact_email": "pietervdvn@posteo.net"
+  },
+  "tags": [
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Waste has a layer Waste Basket showing features with this tag",
+      "value": "waste_basket"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Waste Basket' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Waste') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Waste Basket allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Waste Basket allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Waste Basket allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Waste Basket allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "waste",
+      "description": "Layer 'Waste Basket' shows waste= with a fixed text, namely 'A waste basket for general waste' (in the mapcomplete.org theme 'Waste') Picking this answer will delete the key waste.",
+      "value": ""
+    },
+    {
+      "key": "waste",
+      "description": "Layer 'Waste Basket' shows waste=trash with a fixed text, namely 'A waste basket for general waste' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste')",
+      "value": "trash"
+    },
+    {
+      "key": "waste",
+      "description": "Layer 'Waste Basket' shows waste=dog_excrement with a fixed text, namely 'A waste basket for dog excrements' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste')",
+      "value": "dog_excrement"
+    },
+    {
+      "key": "waste",
+      "description": "Layer 'Waste Basket' shows waste=cigarettes with a fixed text, namely 'A waste basket for cigarettes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste')",
+      "value": "cigarettes"
+    },
+    {
+      "key": "waste",
+      "description": "Layer 'Waste Basket' shows waste=drugs with a fixed text, namely 'A waste basket for drugs' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste')",
+      "value": "drugs"
+    },
+    {
+      "key": "waste",
+      "description": "Layer 'Waste Basket' shows waste=sharps with a fixed text, namely 'A waste basket for needles and other sharp objects' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste')",
+      "value": "sharps"
+    },
+    {
+      "key": "waste",
+      "description": "Layer 'Waste Basket' shows waste=plastic with a fixed text, namely 'A waste basket for plastic' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste')",
+      "value": "plastic"
+    },
+    {
+      "key": "waste",
+      "description": "Layer 'Waste Basket' shows waste=pmd with a fixed text, namely 'A waste basket for plastic packaging, metal packaging and drink cartons (PMD)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste')",
+      "value": "pmd"
+    },
+    {
+      "key": "waste",
+      "description": "Layer 'Waste Basket' shows waste=paper with a fixed text, namely 'A waste basket for paper' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste')",
+      "value": "paper"
+    },
+    {
+      "key": "vending",
+      "description": "Layer 'Waste Basket' shows vending=excrement_bags & not:vending= with a fixed text, namely 'This waste basket has a dispenser for (dog) excrement bags' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste') (This is only shown if waste~^(.*dog_excrement.*)$ | waste~^(.*trash.*)$ | waste=)",
+      "value": "excrement_bags"
+    },
+    {
+      "key": "not:vending",
+      "description": "Layer 'Waste Basket' shows vending=excrement_bags & not:vending= with a fixed text, namely 'This waste basket has a dispenser for (dog) excrement bags' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste') Picking this answer will delete the key not:vending. (This is only shown if waste~^(.*dog_excrement.*)$ | waste~^(.*trash.*)$ | waste=)",
+      "value": ""
+    },
+    {
+      "key": "not:vending",
+      "description": "Layer 'Waste Basket' shows not:vending=excrement_bags & vending= with a fixed text, namely 'This waste basket <b>does not</b> have a dispenser for (dog) excrement bags' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste') (This is only shown if waste~^(.*dog_excrement.*)$ | waste~^(.*trash.*)$ | waste=)",
+      "value": "excrement_bags"
+    },
+    {
+      "key": "vending",
+      "description": "Layer 'Waste Basket' shows not:vending=excrement_bags & vending= with a fixed text, namely 'This waste basket <b>does not</b> have a dispenser for (dog) excrement bags' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste') Picking this answer will delete the key vending. (This is only shown if waste~^(.*dog_excrement.*)$ | waste~^(.*trash.*)$ | waste=)",
+      "value": ""
+    },
+    {
+      "key": "vending",
+      "description": "Layer 'Waste Basket' shows vending= with a fixed text, namely 'This waste basket <b>does not</b> have a dispenser for (dog) excrement bags' (in the mapcomplete.org theme 'Waste') Picking this answer will delete the key vending. (This is only shown if waste~^(.*dog_excrement.*)$ | waste~^(.*trash.*)$ | waste=)",
+      "value": ""
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Waste has a layer Recycling showing features with this tag",
+      "value": "recycling"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Recycling' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Waste') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Recycling allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Recycling allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Recycling allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Recycling allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "recycling_type",
+      "description": "Layer 'Recycling' shows recycling_type=container with a fixed text, namely 'This is a recycling container' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste')",
+      "value": "container"
+    },
+    {
+      "key": "recycling_type",
+      "description": "Layer 'Recycling' shows recycling_type=centre with a fixed text, namely 'This is a recycling centre' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste')",
+      "value": "centre"
+    },
+    {
+      "key": "amenity",
+      "description": "Layer 'Recycling' shows amenity=waste_disposal with a fixed text, namely 'Waste disposal container for residual waste' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste')",
+      "value": "waste_disposal"
+    },
+    {
+      "key": "recycling_type",
+      "description": "Layer 'Recycling' shows recycling_type=pickup_point with a fixed text, namely 'This is a pickup point. The waste material is placed here without placing it in a dedicated container.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste')",
+      "value": "pickup_point"
+    },
+    {
+      "key": "recycling_type",
+      "description": "Layer 'Recycling' shows recycling_type=dump with a fixed text, namely 'This is a dump where the waste material is stacked.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste')",
+      "value": "dump"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Recycling' shows and asks freeform values for key 'name' (in the mapcomplete.org theme 'Waste') (This is only shown if recycling_type=centre)"
+    },
+    {
+      "key": "noname",
+      "description": "Layer 'Recycling' shows noname=yes with a fixed text, namely 'This recycling centre doesn't have a specific name' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste') (This is only shown if recycling_type=centre)",
+      "value": "yes"
+    },
+    {
+      "key": "location",
+      "description": "Layer 'Recycling' shows location=underground with a fixed text, namely 'This is an underground container' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste') (This is only shown if recycling_type=container)",
+      "value": "underground"
+    },
+    {
+      "key": "location",
+      "description": "Layer 'Recycling' shows location=indoor with a fixed text, namely 'This container is located indoors' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste') (This is only shown if recycling_type=container)",
+      "value": "indoor"
+    },
+    {
+      "key": "location",
+      "description": "Layer 'Recycling' shows location= with a fixed text, namely 'This container is located outdoors' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste') Picking this answer will delete the key location. (This is only shown if recycling_type=container)",
+      "value": ""
+    },
+    {
+      "key": "recycling:batteries",
+      "description": "Layer 'Recycling' shows recycling:batteries=yes with a fixed text, namely 'Batteries can be recycled here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste')",
+      "value": "yes"
+    },
+    {
+      "key": "recycling:beverage_cartons",
+      "description": "Layer 'Recycling' shows recycling:beverage_cartons=yes with a fixed text, namely 'Beverage cartons can be recycled here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste')",
+      "value": "yes"
+    },
+    {
+      "key": "recycling:cans",
+      "description": "Layer 'Recycling' shows recycling:cans=yes with a fixed text, namely 'Cans can be recycled here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste')",
+      "value": "yes"
+    },
+    {
+      "key": "recycling:clothes",
+      "description": "Layer 'Recycling' shows recycling:clothes=yes with a fixed text, namely 'Clothes can be recycled here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste')",
+      "value": "yes"
+    },
+    {
+      "key": "recycling:cooking_oil",
+      "description": "Layer 'Recycling' shows recycling:cooking_oil=yes with a fixed text, namely 'Cooking oil can be recycled here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste')",
+      "value": "yes"
+    },
+    {
+      "key": "recycling:engine_oil",
+      "description": "Layer 'Recycling' shows recycling:engine_oil=yes with a fixed text, namely 'Engine oil can be recycled here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste')",
+      "value": "yes"
+    },
+    {
+      "key": "recycling:fluorescent_tubes",
+      "description": "Layer 'Recycling' shows recycling:fluorescent_tubes=yes with a fixed text, namely 'Fluorescent tubes can be recycled here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste')",
+      "value": "yes"
+    },
+    {
+      "key": "recycling:green_waste",
+      "description": "Layer 'Recycling' shows recycling:green_waste=yes with a fixed text, namely 'Green waste can be recycled here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste')",
+      "value": "yes"
+    },
+    {
+      "key": "recycling:organic",
+      "description": "Layer 'Recycling' shows recycling:organic=yes with a fixed text, namely 'Organic waste can be recycled here' (in the mapcomplete.org theme 'Waste')",
+      "value": "yes"
+    },
+    {
+      "key": "recycling:glass_bottles",
+      "description": "Layer 'Recycling' shows recycling:glass_bottles=yes with a fixed text, namely 'Glass bottles can be recycled here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste')",
+      "value": "yes"
+    },
+    {
+      "key": "recycling:glass",
+      "description": "Layer 'Recycling' shows recycling:glass=yes with a fixed text, namely 'Glass can be recycled here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste')",
+      "value": "yes"
+    },
+    {
+      "key": "recycling:light_bulbs",
+      "description": "Layer 'Recycling' shows recycling:light_bulbs=yes with a fixed text, namely 'Light bulbs can be recycled here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste')",
+      "value": "yes"
+    },
+    {
+      "key": "recycling:newspaper",
+      "description": "Layer 'Recycling' shows recycling:newspaper=yes with a fixed text, namely 'Newspapers can be recycled here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste')",
+      "value": "yes"
+    },
+    {
+      "key": "recycling:paper",
+      "description": "Layer 'Recycling' shows recycling:paper=yes with a fixed text, namely 'Paper can be recycled here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste')",
+      "value": "yes"
+    },
+    {
+      "key": "recycling:plastic_bottles",
+      "description": "Layer 'Recycling' shows recycling:plastic_bottles=yes with a fixed text, namely 'Plastic bottles can be recycled here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste')",
+      "value": "yes"
+    },
+    {
+      "key": "recycling:plastic_packaging",
+      "description": "Layer 'Recycling' shows recycling:plastic_packaging=yes with a fixed text, namely 'Plastic packaging can be recycled here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste')",
+      "value": "yes"
+    },
+    {
+      "key": "recycling:plastic",
+      "description": "Layer 'Recycling' shows recycling:plastic=yes with a fixed text, namely 'Plastic can be recycled here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste')",
+      "value": "yes"
+    },
+    {
+      "key": "recycling:pmd",
+      "description": "Layer 'Recycling' shows recycling:pmd=yes with a fixed text, namely 'Plastic packaging, metal packaging and drink cartons (PMD) can be recycled here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste')",
+      "value": "yes"
+    },
+    {
+      "key": "recycling:printer_cartridges",
+      "description": "Layer 'Recycling' shows recycling:printer_cartridges=yes with a fixed text, namely 'Printer cartridges can be recycled here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste')",
+      "value": "yes"
+    },
+    {
+      "key": "recycling:scrap_metal",
+      "description": "Layer 'Recycling' shows recycling:scrap_metal=yes with a fixed text, namely 'Scrap metal can be recycled here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste')",
+      "value": "yes"
+    },
+    {
+      "key": "recycling:shoes",
+      "description": "Layer 'Recycling' shows recycling:shoes=yes with a fixed text, namely 'Shoes can be recycled here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste')",
+      "value": "yes"
+    },
+    {
+      "key": "recycling:small_appliances",
+      "description": "Layer 'Recycling' shows recycling:small_appliances=yes with a fixed text, namely 'Small electrical appliances can be recycled here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste')",
+      "value": "yes"
+    },
+    {
+      "key": "recycling:small_electrical_appliances",
+      "description": "Layer 'Recycling' shows recycling:small_electrical_appliances=yes with a fixed text, namely 'Small electrical appliances can be recycled here' (in the mapcomplete.org theme 'Waste')",
+      "value": "yes"
+    },
+    {
+      "key": "recycling:needles",
+      "description": "Layer 'Recycling' shows recycling:needles=yes with a fixed text, namely 'Needles can be recycled here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste')",
+      "value": "yes"
+    },
+    {
+      "key": "recycling:waste",
+      "description": "Layer 'Recycling' shows recycling:waste=yes with a fixed text, namely 'Residual waste can be recycled here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste')",
+      "value": "yes"
+    },
+    {
+      "key": "recycling:bicycles",
+      "description": "Layer 'Recycling' shows recycling:bicycles=yes with a fixed text, namely 'Bicycles can be recycled here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste')",
+      "value": "yes"
+    },
+    {
+      "key": "operator",
+      "description": "Layer 'Recycling' shows and asks freeform values for key 'operator' (in the mapcomplete.org theme 'Waste')"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Recycling' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Waste') (This is only shown if recycling_type=centre)"
+    },
+    {
+      "key": "contact:website",
+      "description": "Layer 'Recycling' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the mapcomplete.org theme 'Waste') (This is only shown if recycling_type=centre)"
+    },
+    {
+      "key": "email",
+      "description": "Layer 'Recycling' shows and asks freeform values for key 'email' (in the mapcomplete.org theme 'Waste') (This is only shown if recycling_type=centre)"
+    },
+    {
+      "key": "contact:email",
+      "description": "Layer 'Recycling' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Waste') (This is only shown if recycling_type=centre)"
+    },
+    {
+      "key": "operator:email",
+      "description": "Layer 'Recycling' shows operator:email~.+ with a fixed text, namely '<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>' (in the mapcomplete.org theme 'Waste') (This is only shown if recycling_type=centre)"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'Recycling' shows and asks freeform values for key 'phone' (in the mapcomplete.org theme 'Waste') (This is only shown if recycling_type=centre)"
+    },
+    {
+      "key": "contact:phone",
+      "description": "Layer 'Recycling' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Waste') (This is only shown if recycling_type=centre)"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Recycling' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Waste')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Recycling' shows opening_hours=24/7 with a fixed text, namely '24/7 opened (including holidays)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste')",
+      "value": "24/7"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Recycling' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Waste')",
+      "value": "closed"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Recycling' shows and asks freeform values for key 'access' (in the mapcomplete.org theme 'Waste')"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Recycling' shows access=yes with a fixed text, namely 'Everyone can use this recycling facility' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste')",
+      "value": "yes"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Recycling' shows access=residents with a fixed text, namely 'Only residents can use this recycling facility' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste')",
+      "value": "residents"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Recycling' shows access=private with a fixed text, namely 'This recycling facility is only for private use' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste')",
+      "value": "private"
+    },
+    {
+      "key": "survey:date",
+      "description": "Layer 'Recycling' shows and asks freeform values for key 'survey:date' (in the mapcomplete.org theme 'Waste')"
+    },
+    {
+      "key": "survey:date",
+      "description": "Layer 'Recycling' shows survey:date= with a fixed text, namely 'This object was last surveyed today' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste') Picking this answer will delete the key survey:date.",
+      "value": ""
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Waste has a layer Waste Disposal Bins showing features with this tag",
+      "value": "waste_disposal"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Waste Disposal Bins' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Waste') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Waste Disposal Bins allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Waste Disposal Bins allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Waste Disposal Bins allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Waste Disposal Bins allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "amenity",
+      "description": "Layer 'Waste Disposal Bins' shows amenity=waste_disposal with a fixed text, namely 'This is a medium to large bin for disposal of (household) waste' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste')",
+      "value": "waste_disposal"
+    },
+    {
+      "key": "amenity",
+      "description": "Layer 'Waste Disposal Bins' shows amenity=recycling with a fixed text, namely 'This is actually a recycling container' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste')",
+      "value": "recycling"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Waste Disposal Bins' shows and asks freeform values for key 'access' (in the mapcomplete.org theme 'Waste')"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Waste Disposal Bins' shows access=yes with a fixed text, namely 'This bin can be used by anyone' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste')",
+      "value": "yes"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Waste Disposal Bins' shows access=no with a fixed text, namely 'This bin is private' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste')",
+      "value": "no"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Waste Disposal Bins' shows access=residents with a fixed text, namely 'This bin is only for residents' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste')",
+      "value": "residents"
+    },
+    {
+      "key": "location",
+      "description": "Layer 'Waste Disposal Bins' shows location=underground with a fixed text, namely 'This is an underground container' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste')",
+      "value": "underground"
+    },
+    {
+      "key": "location",
+      "description": "Layer 'Waste Disposal Bins' shows location=indoor with a fixed text, namely 'This container is located indoors' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste')",
+      "value": "indoor"
+    },
+    {
+      "key": "location",
+      "description": "Layer 'Waste Disposal Bins' shows location= with a fixed text, namely 'This container is located outdoors' and allows to pick this as a default answer (in the mapcomplete.org theme 'Waste') Picking this answer will delete the key location.",
+      "value": ""
+    }
+  ]
+}

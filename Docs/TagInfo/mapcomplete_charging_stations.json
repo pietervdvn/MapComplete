@@ -1,0 +1,1486 @@
+{
+  "data_format": 1,
+  "project": {
+    "name": "MapComplete Charging stations",
+    "description": "A worldwide map of charging stations",
+    "project_url": "https://mapcomplete.org/charging_stations",
+    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "icon_url": "https://mapcomplete.org/assets/themes/charging_stations/logo.svg",
+    "contact_name": "Pieter Vander Vennet",
+    "contact_email": "pietervdvn@posteo.net"
+  },
+  "tags": [
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Charging stations has a layer Charging stations showing features with this tag",
+      "value": "charging_station"
+    },
+    {
+      "key": "disused:amenity",
+      "description": "The MapComplete theme Charging stations has a layer Charging stations showing features with this tag",
+      "value": "charging_station"
+    },
+    {
+      "key": "planned:amenity",
+      "description": "The MapComplete theme Charging stations has a layer Charging stations showing features with this tag",
+      "value": "charging_station"
+    },
+    {
+      "key": "construction:amenity",
+      "description": "The MapComplete theme Charging stations has a layer Charging stations showing features with this tag",
+      "value": "charging_station"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Charging stations' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Charging stations') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Charging stations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Charging stations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Charging stations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Charging stations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "bicycle",
+      "description": "Layer 'Charging stations' shows bicycle=yes with a fixed text, namely '<b>Bicycles</b> can be charged here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations')",
+      "value": "yes"
+    },
+    {
+      "key": "motorcar",
+      "description": "Layer 'Charging stations' shows motorcar=yes with a fixed text, namely '<b>Cars</b> can be charged here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations')",
+      "value": "yes"
+    },
+    {
+      "key": "scooter",
+      "description": "Layer 'Charging stations' shows scooter=yes with a fixed text, namely '<b>Scooters</b> can be charged here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations')",
+      "value": "yes"
+    },
+    {
+      "key": "hgv",
+      "description": "Layer 'Charging stations' shows hgv=yes with a fixed text, namely '<b>Heavy good vehicles</b> (such as trucks) can be charged here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations')",
+      "value": "yes"
+    },
+    {
+      "key": "bus",
+      "description": "Layer 'Charging stations' shows bus=yes with a fixed text, namely '<b>Buses</b> can be charged here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations')",
+      "value": "yes"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'access' (in the mapcomplete.org theme 'Charging stations')"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Charging stations' shows access=yes with a fixed text, namely 'Anyone can use this charging station (payment might be needed)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations')",
+      "value": "yes"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Charging stations' shows access=public with a fixed text, namely 'Anyone can use this charging station (payment might be needed)' (in the mapcomplete.org theme 'Charging stations')",
+      "value": "public"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Charging stations' shows access=customers with a fixed text, namely 'Only customers of the place this station belongs to can use this charging station<br/><span class='subtle'>E.g. a charging station operated by hotel which is only usable by their guests</span>' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations')",
+      "value": "customers"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Charging stations' shows access=key with a fixed text, namely 'A <b>key</b> must be requested to access this charging station<br/><span class='subtle'>E.g. a charging station operated by hotel which is only usable by their guests, which receive a key from the reception to unlock the charging station</span>' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations')",
+      "value": "key"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Charging stations' shows access=private with a fixed text, namely 'Not accessible to the general public (e.g. only accessible to the owners, employees, ...)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations')",
+      "value": "private"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Charging stations' shows access=permissive with a fixed text, namely 'This charging station is accessible to the public during certain hours or conditions. Restrictions might apply, but general use is allowed.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations')",
+      "value": "permissive"
+    },
+    {
+      "key": "capacity",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'capacity' (in the mapcomplete.org theme 'Charging stations')"
+    },
+    {
+      "key": "socket:schuko",
+      "description": "Layer 'Charging stations' shows socket:schuko=1 with a fixed text, namely '<b>Schuko wall plug</b> without ground pin (CEE7/4 type F)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations')",
+      "value": "1"
+    },
+    {
+      "key": "socket:schuko",
+      "description": "Layer 'Charging stations' shows socket:schuko~.+ & socket:schuko!=1 with a fixed text, namely '<b>Schuko wall plug</b> without ground pin (CEE7/4 type F)' (in the mapcomplete.org theme 'Charging stations')"
+    },
+    {
+      "key": "socket:typee",
+      "description": "Layer 'Charging stations' shows socket:typee=1 with a fixed text, namely '<b>European wall plug</b> with ground pin (CEE7/4 type E)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations')",
+      "value": "1"
+    },
+    {
+      "key": "socket:typee",
+      "description": "Layer 'Charging stations' shows socket:typee~.+ & socket:typee!=1 with a fixed text, namely '<b>European wall plug</b> with ground pin (CEE7/4 type E)' (in the mapcomplete.org theme 'Charging stations')"
+    },
+    {
+      "key": "socket:chademo",
+      "description": "Layer 'Charging stations' shows socket:chademo=1 with a fixed text, namely '<b>Chademo</b>' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations')",
+      "value": "1"
+    },
+    {
+      "key": "socket:chademo",
+      "description": "Layer 'Charging stations' shows socket:chademo~.+ & socket:chademo!=1 with a fixed text, namely '<b>Chademo</b>' (in the mapcomplete.org theme 'Charging stations')"
+    },
+    {
+      "key": "socket:type1_cable",
+      "description": "Layer 'Charging stations' shows socket:type1_cable=1 with a fixed text, namely '<b>Type 1 with cable</b> (J1772)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations')",
+      "value": "1"
+    },
+    {
+      "key": "socket:type1_cable",
+      "description": "Layer 'Charging stations' shows socket:type1_cable~.+ & socket:type1_cable!=1 with a fixed text, namely '<b>Type 1 with cable</b> (J1772)' (in the mapcomplete.org theme 'Charging stations')"
+    },
+    {
+      "key": "socket:type1",
+      "description": "Layer 'Charging stations' shows socket:type1=1 with a fixed text, namely '<b>Type 1 <i>without</i> cable</b> (J1772)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations')",
+      "value": "1"
+    },
+    {
+      "key": "socket:type1",
+      "description": "Layer 'Charging stations' shows socket:type1~.+ & socket:type1!=1 with a fixed text, namely '<b>Type 1 <i>without</i> cable</b> (J1772)' (in the mapcomplete.org theme 'Charging stations')"
+    },
+    {
+      "key": "socket:type1_combo",
+      "description": "Layer 'Charging stations' shows socket:type1_combo=1 with a fixed text, namely '<b>Type 1 CCS</b> (aka Type 1 Combo)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations')",
+      "value": "1"
+    },
+    {
+      "key": "socket:type1_combo",
+      "description": "Layer 'Charging stations' shows socket:type1_combo~.+ & socket:type1_combo!=1 with a fixed text, namely '<b>Type 1 CCS</b> (aka Type 1 Combo)' (in the mapcomplete.org theme 'Charging stations')"
+    },
+    {
+      "key": "socket:tesla_supercharger",
+      "description": "Layer 'Charging stations' shows socket:tesla_supercharger=1 with a fixed text, namely '<b>Tesla Supercharger</b>' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations')",
+      "value": "1"
+    },
+    {
+      "key": "socket:tesla_supercharger",
+      "description": "Layer 'Charging stations' shows socket:tesla_supercharger~.+ & socket:tesla_supercharger!=1 with a fixed text, namely '<b>Tesla Supercharger</b>' (in the mapcomplete.org theme 'Charging stations')"
+    },
+    {
+      "key": "socket:type2",
+      "description": "Layer 'Charging stations' shows socket:type2=1 with a fixed text, namely '<b>Type 2</b> (mennekes)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations')",
+      "value": "1"
+    },
+    {
+      "key": "socket:type2",
+      "description": "Layer 'Charging stations' shows socket:type2~.+ & socket:type2!=1 with a fixed text, namely '<b>Type 2</b> (mennekes)' (in the mapcomplete.org theme 'Charging stations')"
+    },
+    {
+      "key": "socket:type2_combo",
+      "description": "Layer 'Charging stations' shows socket:type2_combo=1 with a fixed text, namely '<b>Type 2 CCS</b> (mennekes)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations')",
+      "value": "1"
+    },
+    {
+      "key": "socket:type2_combo",
+      "description": "Layer 'Charging stations' shows socket:type2_combo~.+ & socket:type2_combo!=1 with a fixed text, namely '<b>Type 2 CCS</b> (mennekes)' (in the mapcomplete.org theme 'Charging stations')"
+    },
+    {
+      "key": "socket:type2_cable",
+      "description": "Layer 'Charging stations' shows socket:type2_cable=1 with a fixed text, namely '<b>Type 2 with cable</b> (mennekes)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations')",
+      "value": "1"
+    },
+    {
+      "key": "socket:type2_cable",
+      "description": "Layer 'Charging stations' shows socket:type2_cable~.+ & socket:type2_cable!=1 with a fixed text, namely '<b>Type 2 with cable</b> (mennekes)' (in the mapcomplete.org theme 'Charging stations')"
+    },
+    {
+      "key": "socket:tesla_supercharger_ccs",
+      "description": "Layer 'Charging stations' shows socket:tesla_supercharger_ccs=1 with a fixed text, namely '<b>Tesla Supercharger CCS</b> (a branded type2_css)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations')",
+      "value": "1"
+    },
+    {
+      "key": "socket:tesla_supercharger_ccs",
+      "description": "Layer 'Charging stations' shows socket:tesla_supercharger_ccs~.+ & socket:tesla_supercharger_ccs!=1 with a fixed text, namely '<b>Tesla Supercharger CCS</b> (a branded type2_css)' (in the mapcomplete.org theme 'Charging stations')"
+    },
+    {
+      "key": "socket:tesla_destination",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination=1 with a fixed text, namely '<b>Tesla Supercharger (destination)</b>' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations')",
+      "value": "1"
+    },
+    {
+      "key": "socket:tesla_destination",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination~.+ & socket:tesla_destination!=1 & _country=us with a fixed text, namely '<b>Tesla Supercharger (destination)</b>' (in the mapcomplete.org theme 'Charging stations')"
+    },
+    {
+      "key": "socket:tesla_destination",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination=1 with a fixed text, namely '<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations')",
+      "value": "1"
+    },
+    {
+      "key": "socket:tesla_destination",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination~.+ & socket:tesla_destination!=1 & _country!=us with a fixed text, namely '<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla)' (in the mapcomplete.org theme 'Charging stations')"
+    },
+    {
+      "key": "socket:USB-A",
+      "description": "Layer 'Charging stations' shows socket:USB-A=1 with a fixed text, namely '<b>USB</b> to charge phones and small electronics' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations')",
+      "value": "1"
+    },
+    {
+      "key": "socket:USB-A",
+      "description": "Layer 'Charging stations' shows socket:USB-A~.+ & socket:USB-A!=1 with a fixed text, namely '<b>USB</b> to charge phones and small electronics' (in the mapcomplete.org theme 'Charging stations')"
+    },
+    {
+      "key": "socket:bosch_3pin",
+      "description": "Layer 'Charging stations' shows socket:bosch_3pin=1 with a fixed text, namely '<b>Bosch Active Connect with 3 pins</b> and cable' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations')",
+      "value": "1"
+    },
+    {
+      "key": "socket:bosch_3pin",
+      "description": "Layer 'Charging stations' shows socket:bosch_3pin~.+ & socket:bosch_3pin!=1 with a fixed text, namely '<b>Bosch Active Connect with 3 pins</b> and cable' (in the mapcomplete.org theme 'Charging stations')"
+    },
+    {
+      "key": "socket:bosch_5pin",
+      "description": "Layer 'Charging stations' shows socket:bosch_5pin=1 with a fixed text, namely '<b>Bosch Active Connect with 5 pins</b> and cable' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations')",
+      "value": "1"
+    },
+    {
+      "key": "socket:bosch_5pin",
+      "description": "Layer 'Charging stations' shows socket:bosch_5pin~.+ & socket:bosch_5pin!=1 with a fixed text, namely '<b>Bosch Active Connect with 5 pins</b> and cable' (in the mapcomplete.org theme 'Charging stations')"
+    },
+    {
+      "key": "socket:bs1363",
+      "description": "Layer 'Charging stations' shows socket:bs1363=1 with a fixed text, namely '<b>BS1363</b> (Type G)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations')",
+      "value": "1"
+    },
+    {
+      "key": "socket:bs1363",
+      "description": "Layer 'Charging stations' shows socket:bs1363~.+ & socket:bs1363!=1 with a fixed text, namely '<b>BS1363</b> (Type G)' (in the mapcomplete.org theme 'Charging stations')"
+    },
+    {
+      "key": "socket:nema5_15",
+      "description": "Layer 'Charging stations' shows socket:nema5_15=1 with a fixed text, namely '<b>NEMA 5-15</b> (Type B)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations')",
+      "value": "1"
+    },
+    {
+      "key": "socket:nema5_15",
+      "description": "Layer 'Charging stations' shows socket:nema5_15~.+ & socket:nema5_15!=1 with a fixed text, namely '<b>NEMA 5-15</b> (Type B)' (in the mapcomplete.org theme 'Charging stations')"
+    },
+    {
+      "key": "socket:sev1011_t23",
+      "description": "Layer 'Charging stations' shows socket:sev1011_t23=1 with a fixed text, namely '<b>SEV 1011 T23</b> (Type J)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations')",
+      "value": "1"
+    },
+    {
+      "key": "socket:sev1011_t23",
+      "description": "Layer 'Charging stations' shows socket:sev1011_t23~.+ & socket:sev1011_t23!=1 with a fixed text, namely '<b>SEV 1011 T23</b> (Type J)' (in the mapcomplete.org theme 'Charging stations')"
+    },
+    {
+      "key": "socket:as3112",
+      "description": "Layer 'Charging stations' shows socket:as3112=1 with a fixed text, namely '<b>AS3112</b> (Type I)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations')",
+      "value": "1"
+    },
+    {
+      "key": "socket:as3112",
+      "description": "Layer 'Charging stations' shows socket:as3112~.+ & socket:as3112!=1 with a fixed text, namely '<b>AS3112</b> (Type I)' (in the mapcomplete.org theme 'Charging stations')"
+    },
+    {
+      "key": "socket:nema_5_20",
+      "description": "Layer 'Charging stations' shows socket:nema_5_20=1 with a fixed text, namely '<b>NEMA 5-20</b> (Type B)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations')",
+      "value": "1"
+    },
+    {
+      "key": "socket:nema_5_20",
+      "description": "Layer 'Charging stations' shows socket:nema_5_20~.+ & socket:nema_5_20!=1 with a fixed text, namely '<b>NEMA 5-20</b> (Type B)' (in the mapcomplete.org theme 'Charging stations')"
+    },
+    {
+      "key": "socket:schuko",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:schuko' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:schuko~.+ & socket:schuko!=0)"
+    },
+    {
+      "key": "socket:schuko:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:schuko:voltage' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:schuko~.+ & socket:schuko!=0)"
+    },
+    {
+      "key": "socket:schuko:voltage",
+      "description": "Layer 'Charging stations' shows socket:schuko:voltage=230 V with a fixed text, namely '<b>Schuko wall plug</b> without ground pin (CEE7/4 type F) outputs 230 volt' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:schuko~.+ & socket:schuko!=0)",
+      "value": "230 V"
+    },
+    {
+      "key": "socket:schuko:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:schuko:current' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:schuko~.+ & socket:schuko!=0)"
+    },
+    {
+      "key": "socket:schuko:current",
+      "description": "Layer 'Charging stations' shows socket:schuko:current=16 A with a fixed text, namely '<b>Schuko wall plug</b> without ground pin (CEE7/4 type F) outputs at most 16 A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:schuko~.+ & socket:schuko!=0)",
+      "value": "16 A"
+    },
+    {
+      "key": "socket:schuko:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:schuko:output' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:schuko~.+ & socket:schuko!=0)"
+    },
+    {
+      "key": "socket:schuko:output",
+      "description": "Layer 'Charging stations' shows socket:schuko:output=3.6 kW with a fixed text, namely '<b>Schuko wall plug</b> without ground pin (CEE7/4 type F) outputs at most 3.6 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:schuko~.+ & socket:schuko!=0)",
+      "value": "3.6 kW"
+    },
+    {
+      "key": "socket:typee",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:typee' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:typee~.+ & socket:typee!=0)"
+    },
+    {
+      "key": "socket:typee:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:typee:voltage' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:typee~.+ & socket:typee!=0)"
+    },
+    {
+      "key": "socket:typee:voltage",
+      "description": "Layer 'Charging stations' shows socket:typee:voltage=230 V with a fixed text, namely '<b>European wall plug</b> with ground pin (CEE7/4 type E) outputs 230 volt' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:typee~.+ & socket:typee!=0)",
+      "value": "230 V"
+    },
+    {
+      "key": "socket:typee:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:typee:current' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:typee~.+ & socket:typee!=0)"
+    },
+    {
+      "key": "socket:typee:current",
+      "description": "Layer 'Charging stations' shows socket:typee:current=16 A with a fixed text, namely '<b>European wall plug</b> with ground pin (CEE7/4 type E) outputs at most 16 A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:typee~.+ & socket:typee!=0)",
+      "value": "16 A"
+    },
+    {
+      "key": "socket:typee:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:typee:output' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:typee~.+ & socket:typee!=0)"
+    },
+    {
+      "key": "socket:typee:output",
+      "description": "Layer 'Charging stations' shows socket:typee:output=3 kW with a fixed text, namely '<b>European wall plug</b> with ground pin (CEE7/4 type E) outputs at most 3 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:typee~.+ & socket:typee!=0)",
+      "value": "3 kW"
+    },
+    {
+      "key": "socket:typee:output",
+      "description": "Layer 'Charging stations' shows socket:typee:output=22 kW with a fixed text, namely '<b>European wall plug</b> with ground pin (CEE7/4 type E) outputs at most 22 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:typee~.+ & socket:typee!=0)",
+      "value": "22 kW"
+    },
+    {
+      "key": "socket:chademo",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:chademo' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:chademo~.+ & socket:chademo!=0)"
+    },
+    {
+      "key": "socket:chademo:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:chademo:voltage' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:chademo~.+ & socket:chademo!=0)"
+    },
+    {
+      "key": "socket:chademo:voltage",
+      "description": "Layer 'Charging stations' shows socket:chademo:voltage=500 V with a fixed text, namely '<b>Chademo</b> outputs 500 volt' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:chademo~.+ & socket:chademo!=0)",
+      "value": "500 V"
+    },
+    {
+      "key": "socket:chademo:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:chademo:current' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:chademo~.+ & socket:chademo!=0)"
+    },
+    {
+      "key": "socket:chademo:current",
+      "description": "Layer 'Charging stations' shows socket:chademo:current=120 A with a fixed text, namely '<b>Chademo</b> outputs at most 120 A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:chademo~.+ & socket:chademo!=0)",
+      "value": "120 A"
+    },
+    {
+      "key": "socket:chademo:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:chademo:output' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:chademo~.+ & socket:chademo!=0)"
+    },
+    {
+      "key": "socket:chademo:output",
+      "description": "Layer 'Charging stations' shows socket:chademo:output=50 kW with a fixed text, namely '<b>Chademo</b> outputs at most 50 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:chademo~.+ & socket:chademo!=0)",
+      "value": "50 kW"
+    },
+    {
+      "key": "socket:type1_cable",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type1_cable' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type1_cable~.+ & socket:type1_cable!=0)"
+    },
+    {
+      "key": "socket:type1_cable:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type1_cable:voltage' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type1_cable~.+ & socket:type1_cable!=0)"
+    },
+    {
+      "key": "socket:type1_cable:voltage",
+      "description": "Layer 'Charging stations' shows socket:type1_cable:voltage=200 V with a fixed text, namely '<b>Type 1 with cable</b> (J1772) outputs 200 volt' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type1_cable~.+ & socket:type1_cable!=0)",
+      "value": "200 V"
+    },
+    {
+      "key": "socket:type1_cable:voltage",
+      "description": "Layer 'Charging stations' shows socket:type1_cable:voltage=240 V with a fixed text, namely '<b>Type 1 with cable</b> (J1772) outputs 240 volt' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type1_cable~.+ & socket:type1_cable!=0)",
+      "value": "240 V"
+    },
+    {
+      "key": "socket:type1_cable:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type1_cable:current' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type1_cable~.+ & socket:type1_cable!=0)"
+    },
+    {
+      "key": "socket:type1_cable:current",
+      "description": "Layer 'Charging stations' shows socket:type1_cable:current=32 A with a fixed text, namely '<b>Type 1 with cable</b> (J1772) outputs at most 32 A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type1_cable~.+ & socket:type1_cable!=0)",
+      "value": "32 A"
+    },
+    {
+      "key": "socket:type1_cable:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type1_cable:output' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type1_cable~.+ & socket:type1_cable!=0)"
+    },
+    {
+      "key": "socket:type1_cable:output",
+      "description": "Layer 'Charging stations' shows socket:type1_cable:output=3.7 kW with a fixed text, namely '<b>Type 1 with cable</b> (J1772) outputs at most 3.7 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type1_cable~.+ & socket:type1_cable!=0)",
+      "value": "3.7 kW"
+    },
+    {
+      "key": "socket:type1_cable:output",
+      "description": "Layer 'Charging stations' shows socket:type1_cable:output=7 kW with a fixed text, namely '<b>Type 1 with cable</b> (J1772) outputs at most 7 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type1_cable~.+ & socket:type1_cable!=0)",
+      "value": "7 kW"
+    },
+    {
+      "key": "socket:type1",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type1' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type1~.+ & socket:type1!=0)"
+    },
+    {
+      "key": "socket:type1:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type1:voltage' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type1~.+ & socket:type1!=0)"
+    },
+    {
+      "key": "socket:type1:voltage",
+      "description": "Layer 'Charging stations' shows socket:type1:voltage=200 V with a fixed text, namely '<b>Type 1 <i>without</i> cable</b> (J1772) outputs 200 volt' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type1~.+ & socket:type1!=0)",
+      "value": "200 V"
+    },
+    {
+      "key": "socket:type1:voltage",
+      "description": "Layer 'Charging stations' shows socket:type1:voltage=240 V with a fixed text, namely '<b>Type 1 <i>without</i> cable</b> (J1772) outputs 240 volt' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type1~.+ & socket:type1!=0)",
+      "value": "240 V"
+    },
+    {
+      "key": "socket:type1:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type1:current' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type1~.+ & socket:type1!=0)"
+    },
+    {
+      "key": "socket:type1:current",
+      "description": "Layer 'Charging stations' shows socket:type1:current=32 A with a fixed text, namely '<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 32 A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type1~.+ & socket:type1!=0)",
+      "value": "32 A"
+    },
+    {
+      "key": "socket:type1:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type1:output' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type1~.+ & socket:type1!=0)"
+    },
+    {
+      "key": "socket:type1:output",
+      "description": "Layer 'Charging stations' shows socket:type1:output=3.7 kW with a fixed text, namely '<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 3.7 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type1~.+ & socket:type1!=0)",
+      "value": "3.7 kW"
+    },
+    {
+      "key": "socket:type1:output",
+      "description": "Layer 'Charging stations' shows socket:type1:output=6.6 kW with a fixed text, namely '<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 6.6 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type1~.+ & socket:type1!=0)",
+      "value": "6.6 kW"
+    },
+    {
+      "key": "socket:type1:output",
+      "description": "Layer 'Charging stations' shows socket:type1:output=7 kW with a fixed text, namely '<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 7 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type1~.+ & socket:type1!=0)",
+      "value": "7 kW"
+    },
+    {
+      "key": "socket:type1:output",
+      "description": "Layer 'Charging stations' shows socket:type1:output=7.2 kW with a fixed text, namely '<b>Type 1 <i>without</i> cable</b> (J1772) outputs at most 7.2 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type1~.+ & socket:type1!=0)",
+      "value": "7.2 kW"
+    },
+    {
+      "key": "socket:type1_combo",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type1_combo' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type1_combo~.+ & socket:type1_combo!=0)"
+    },
+    {
+      "key": "socket:type1_combo:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type1_combo:voltage' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type1_combo~.+ & socket:type1_combo!=0)"
+    },
+    {
+      "key": "socket:type1_combo:voltage",
+      "description": "Layer 'Charging stations' shows socket:type1_combo:voltage=400 V with a fixed text, namely '<b>Type 1 CCS</b> (aka Type 1 Combo) outputs 400 volt' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type1_combo~.+ & socket:type1_combo!=0)",
+      "value": "400 V"
+    },
+    {
+      "key": "socket:type1_combo:voltage",
+      "description": "Layer 'Charging stations' shows socket:type1_combo:voltage=1000 V with a fixed text, namely '<b>Type 1 CCS</b> (aka Type 1 Combo) outputs 1000 volt' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type1_combo~.+ & socket:type1_combo!=0)",
+      "value": "1000 V"
+    },
+    {
+      "key": "socket:type1_combo:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type1_combo:current' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type1_combo~.+ & socket:type1_combo!=0)"
+    },
+    {
+      "key": "socket:type1_combo:current",
+      "description": "Layer 'Charging stations' shows socket:type1_combo:current=50 A with a fixed text, namely '<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 50 A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type1_combo~.+ & socket:type1_combo!=0)",
+      "value": "50 A"
+    },
+    {
+      "key": "socket:type1_combo:current",
+      "description": "Layer 'Charging stations' shows socket:type1_combo:current=125 A with a fixed text, namely '<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 125 A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type1_combo~.+ & socket:type1_combo!=0)",
+      "value": "125 A"
+    },
+    {
+      "key": "socket:type1_combo:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type1_combo:output' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type1_combo~.+ & socket:type1_combo!=0)"
+    },
+    {
+      "key": "socket:type1_combo:output",
+      "description": "Layer 'Charging stations' shows socket:type1_combo:output=50 kW with a fixed text, namely '<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 50 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type1_combo~.+ & socket:type1_combo!=0)",
+      "value": "50 kW"
+    },
+    {
+      "key": "socket:type1_combo:output",
+      "description": "Layer 'Charging stations' shows socket:type1_combo:output=62.5 kW with a fixed text, namely '<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 62.5 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type1_combo~.+ & socket:type1_combo!=0)",
+      "value": "62.5 kW"
+    },
+    {
+      "key": "socket:type1_combo:output",
+      "description": "Layer 'Charging stations' shows socket:type1_combo:output=150 kW with a fixed text, namely '<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 150 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type1_combo~.+ & socket:type1_combo!=0)",
+      "value": "150 kW"
+    },
+    {
+      "key": "socket:type1_combo:output",
+      "description": "Layer 'Charging stations' shows socket:type1_combo:output=350 kW with a fixed text, namely '<b>Type 1 CCS</b> (aka Type 1 Combo) outputs at most 350 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type1_combo~.+ & socket:type1_combo!=0)",
+      "value": "350 kW"
+    },
+    {
+      "key": "socket:tesla_supercharger",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:tesla_supercharger' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:tesla_supercharger~.+ & socket:tesla_supercharger!=0)"
+    },
+    {
+      "key": "socket:tesla_supercharger:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:tesla_supercharger:voltage' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:tesla_supercharger~.+ & socket:tesla_supercharger!=0)"
+    },
+    {
+      "key": "socket:tesla_supercharger:voltage",
+      "description": "Layer 'Charging stations' shows socket:tesla_supercharger:voltage=480 V with a fixed text, namely '<b>Tesla Supercharger</b> outputs 480 volt' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:tesla_supercharger~.+ & socket:tesla_supercharger!=0)",
+      "value": "480 V"
+    },
+    {
+      "key": "socket:tesla_supercharger:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:tesla_supercharger:current' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:tesla_supercharger~.+ & socket:tesla_supercharger!=0)"
+    },
+    {
+      "key": "socket:tesla_supercharger:current",
+      "description": "Layer 'Charging stations' shows socket:tesla_supercharger:current=125 A with a fixed text, namely '<b>Tesla Supercharger</b> outputs at most 125 A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:tesla_supercharger~.+ & socket:tesla_supercharger!=0)",
+      "value": "125 A"
+    },
+    {
+      "key": "socket:tesla_supercharger:current",
+      "description": "Layer 'Charging stations' shows socket:tesla_supercharger:current=350 A with a fixed text, namely '<b>Tesla Supercharger</b> outputs at most 350 A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:tesla_supercharger~.+ & socket:tesla_supercharger!=0)",
+      "value": "350 A"
+    },
+    {
+      "key": "socket:tesla_supercharger:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:tesla_supercharger:output' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:tesla_supercharger~.+ & socket:tesla_supercharger!=0)"
+    },
+    {
+      "key": "socket:tesla_supercharger:output",
+      "description": "Layer 'Charging stations' shows socket:tesla_supercharger:output=120 kW with a fixed text, namely '<b>Tesla Supercharger</b> outputs at most 120 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:tesla_supercharger~.+ & socket:tesla_supercharger!=0)",
+      "value": "120 kW"
+    },
+    {
+      "key": "socket:tesla_supercharger:output",
+      "description": "Layer 'Charging stations' shows socket:tesla_supercharger:output=150 kW with a fixed text, namely '<b>Tesla Supercharger</b> outputs at most 150 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:tesla_supercharger~.+ & socket:tesla_supercharger!=0)",
+      "value": "150 kW"
+    },
+    {
+      "key": "socket:tesla_supercharger:output",
+      "description": "Layer 'Charging stations' shows socket:tesla_supercharger:output=250 kW with a fixed text, namely '<b>Tesla Supercharger</b> outputs at most 250 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:tesla_supercharger~.+ & socket:tesla_supercharger!=0)",
+      "value": "250 kW"
+    },
+    {
+      "key": "socket:type2",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type2' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type2~.+ & socket:type2!=0)"
+    },
+    {
+      "key": "socket:type2:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type2:voltage' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type2~.+ & socket:type2!=0)"
+    },
+    {
+      "key": "socket:type2:voltage",
+      "description": "Layer 'Charging stations' shows socket:type2:voltage=230 V with a fixed text, namely '<b>Type 2</b> (mennekes) outputs 230 volt' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type2~.+ & socket:type2!=0)",
+      "value": "230 V"
+    },
+    {
+      "key": "socket:type2:voltage",
+      "description": "Layer 'Charging stations' shows socket:type2:voltage=400 V with a fixed text, namely '<b>Type 2</b> (mennekes) outputs 400 volt' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type2~.+ & socket:type2!=0)",
+      "value": "400 V"
+    },
+    {
+      "key": "socket:type2:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type2:current' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type2~.+ & socket:type2!=0)"
+    },
+    {
+      "key": "socket:type2:current",
+      "description": "Layer 'Charging stations' shows socket:type2:current=16 A with a fixed text, namely '<b>Type 2</b> (mennekes) outputs at most 16 A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type2~.+ & socket:type2!=0)",
+      "value": "16 A"
+    },
+    {
+      "key": "socket:type2:current",
+      "description": "Layer 'Charging stations' shows socket:type2:current=32 A with a fixed text, namely '<b>Type 2</b> (mennekes) outputs at most 32 A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type2~.+ & socket:type2!=0)",
+      "value": "32 A"
+    },
+    {
+      "key": "socket:type2:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type2:output' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type2~.+ & socket:type2!=0)"
+    },
+    {
+      "key": "socket:type2:output",
+      "description": "Layer 'Charging stations' shows socket:type2:output=11 kW with a fixed text, namely '<b>Type 2</b> (mennekes) outputs at most 11 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type2~.+ & socket:type2!=0)",
+      "value": "11 kW"
+    },
+    {
+      "key": "socket:type2:output",
+      "description": "Layer 'Charging stations' shows socket:type2:output=22 kW with a fixed text, namely '<b>Type 2</b> (mennekes) outputs at most 22 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type2~.+ & socket:type2!=0)",
+      "value": "22 kW"
+    },
+    {
+      "key": "socket:type2_combo",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type2_combo' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type2_combo~.+ & socket:type2_combo!=0)"
+    },
+    {
+      "key": "socket:type2_combo:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type2_combo:voltage' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type2_combo~.+ & socket:type2_combo!=0)"
+    },
+    {
+      "key": "socket:type2_combo:voltage",
+      "description": "Layer 'Charging stations' shows socket:type2_combo:voltage=500 V with a fixed text, namely '<b>Type 2 CCS</b> (mennekes) outputs 500 volt' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type2_combo~.+ & socket:type2_combo!=0)",
+      "value": "500 V"
+    },
+    {
+      "key": "socket:type2_combo:voltage",
+      "description": "Layer 'Charging stations' shows socket:type2_combo:voltage=920 V with a fixed text, namely '<b>Type 2 CCS</b> (mennekes) outputs 920 volt' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type2_combo~.+ & socket:type2_combo!=0)",
+      "value": "920 V"
+    },
+    {
+      "key": "socket:type2_combo:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type2_combo:current' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type2_combo~.+ & socket:type2_combo!=0)"
+    },
+    {
+      "key": "socket:type2_combo:current",
+      "description": "Layer 'Charging stations' shows socket:type2_combo:current=125 A with a fixed text, namely '<b>Type 2 CCS</b> (mennekes) outputs at most 125 A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type2_combo~.+ & socket:type2_combo!=0)",
+      "value": "125 A"
+    },
+    {
+      "key": "socket:type2_combo:current",
+      "description": "Layer 'Charging stations' shows socket:type2_combo:current=350 A with a fixed text, namely '<b>Type 2 CCS</b> (mennekes) outputs at most 350 A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type2_combo~.+ & socket:type2_combo!=0)",
+      "value": "350 A"
+    },
+    {
+      "key": "socket:type2_combo:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type2_combo:output' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type2_combo~.+ & socket:type2_combo!=0)"
+    },
+    {
+      "key": "socket:type2_combo:output",
+      "description": "Layer 'Charging stations' shows socket:type2_combo:output=50 kW with a fixed text, namely '<b>Type 2 CCS</b> (mennekes) outputs at most 50 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type2_combo~.+ & socket:type2_combo!=0)",
+      "value": "50 kW"
+    },
+    {
+      "key": "socket:type2_cable",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type2_cable' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type2_cable~.+ & socket:type2_cable!=0)"
+    },
+    {
+      "key": "socket:type2_cable:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type2_cable:voltage' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type2_cable~.+ & socket:type2_cable!=0)"
+    },
+    {
+      "key": "socket:type2_cable:voltage",
+      "description": "Layer 'Charging stations' shows socket:type2_cable:voltage=230 V with a fixed text, namely '<b>Type 2 with cable</b> (mennekes) outputs 230 volt' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type2_cable~.+ & socket:type2_cable!=0)",
+      "value": "230 V"
+    },
+    {
+      "key": "socket:type2_cable:voltage",
+      "description": "Layer 'Charging stations' shows socket:type2_cable:voltage=400 V with a fixed text, namely '<b>Type 2 with cable</b> (mennekes) outputs 400 volt' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type2_cable~.+ & socket:type2_cable!=0)",
+      "value": "400 V"
+    },
+    {
+      "key": "socket:type2_cable:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type2_cable:current' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type2_cable~.+ & socket:type2_cable!=0)"
+    },
+    {
+      "key": "socket:type2_cable:current",
+      "description": "Layer 'Charging stations' shows socket:type2_cable:current=16 A with a fixed text, namely '<b>Type 2 with cable</b> (mennekes) outputs at most 16 A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type2_cable~.+ & socket:type2_cable!=0)",
+      "value": "16 A"
+    },
+    {
+      "key": "socket:type2_cable:current",
+      "description": "Layer 'Charging stations' shows socket:type2_cable:current=32 A with a fixed text, namely '<b>Type 2 with cable</b> (mennekes) outputs at most 32 A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type2_cable~.+ & socket:type2_cable!=0)",
+      "value": "32 A"
+    },
+    {
+      "key": "socket:type2_cable:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:type2_cable:output' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type2_cable~.+ & socket:type2_cable!=0)"
+    },
+    {
+      "key": "socket:type2_cable:output",
+      "description": "Layer 'Charging stations' shows socket:type2_cable:output=11 kW with a fixed text, namely '<b>Type 2 with cable</b> (mennekes) outputs at most 11 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type2_cable~.+ & socket:type2_cable!=0)",
+      "value": "11 kW"
+    },
+    {
+      "key": "socket:type2_cable:output",
+      "description": "Layer 'Charging stations' shows socket:type2_cable:output=22 kW with a fixed text, namely '<b>Type 2 with cable</b> (mennekes) outputs at most 22 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:type2_cable~.+ & socket:type2_cable!=0)",
+      "value": "22 kW"
+    },
+    {
+      "key": "socket:tesla_supercharger_ccs",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:tesla_supercharger_ccs' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:tesla_supercharger_ccs~.+ & socket:tesla_supercharger_ccs!=0)"
+    },
+    {
+      "key": "socket:tesla_supercharger_ccs:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:tesla_supercharger_ccs:voltage' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:tesla_supercharger_ccs~.+ & socket:tesla_supercharger_ccs!=0)"
+    },
+    {
+      "key": "socket:tesla_supercharger_ccs:voltage",
+      "description": "Layer 'Charging stations' shows socket:tesla_supercharger_ccs:voltage=500 V with a fixed text, namely '<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs 500 volt' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:tesla_supercharger_ccs~.+ & socket:tesla_supercharger_ccs!=0)",
+      "value": "500 V"
+    },
+    {
+      "key": "socket:tesla_supercharger_ccs:voltage",
+      "description": "Layer 'Charging stations' shows socket:tesla_supercharger_ccs:voltage=920 V with a fixed text, namely '<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs 920 volt' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:tesla_supercharger_ccs~.+ & socket:tesla_supercharger_ccs!=0)",
+      "value": "920 V"
+    },
+    {
+      "key": "socket:tesla_supercharger_ccs:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:tesla_supercharger_ccs:current' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:tesla_supercharger_ccs~.+ & socket:tesla_supercharger_ccs!=0)"
+    },
+    {
+      "key": "socket:tesla_supercharger_ccs:current",
+      "description": "Layer 'Charging stations' shows socket:tesla_supercharger_ccs:current=125 A with a fixed text, namely '<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs at most 125 A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:tesla_supercharger_ccs~.+ & socket:tesla_supercharger_ccs!=0)",
+      "value": "125 A"
+    },
+    {
+      "key": "socket:tesla_supercharger_ccs:current",
+      "description": "Layer 'Charging stations' shows socket:tesla_supercharger_ccs:current=350 A with a fixed text, namely '<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs at most 350 A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:tesla_supercharger_ccs~.+ & socket:tesla_supercharger_ccs!=0)",
+      "value": "350 A"
+    },
+    {
+      "key": "socket:tesla_supercharger_ccs:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:tesla_supercharger_ccs:output' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:tesla_supercharger_ccs~.+ & socket:tesla_supercharger_ccs!=0)"
+    },
+    {
+      "key": "socket:tesla_supercharger_ccs:output",
+      "description": "Layer 'Charging stations' shows socket:tesla_supercharger_ccs:output=50 kW with a fixed text, namely '<b>Tesla Supercharger CCS</b> (a branded type2_css) outputs at most 50 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:tesla_supercharger_ccs~.+ & socket:tesla_supercharger_ccs!=0)",
+      "value": "50 kW"
+    },
+    {
+      "key": "socket:tesla_destination",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:tesla_destination' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:tesla_destination~.+ & socket:tesla_destination!=0)"
+    },
+    {
+      "key": "socket:tesla_destination:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:tesla_destination:voltage' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:tesla_destination~.+ & socket:tesla_destination!=0)"
+    },
+    {
+      "key": "socket:tesla_destination:voltage",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:voltage=480 V with a fixed text, namely '<b>Tesla Supercharger (destination)</b> outputs 480 volt' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:tesla_destination~.+ & socket:tesla_destination!=0)",
+      "value": "480 V"
+    },
+    {
+      "key": "socket:tesla_destination:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:tesla_destination:current' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:tesla_destination~.+ & socket:tesla_destination!=0)"
+    },
+    {
+      "key": "socket:tesla_destination:current",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:current=125 A with a fixed text, namely '<b>Tesla Supercharger (destination)</b> outputs at most 125 A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:tesla_destination~.+ & socket:tesla_destination!=0)",
+      "value": "125 A"
+    },
+    {
+      "key": "socket:tesla_destination:current",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:current=350 A with a fixed text, namely '<b>Tesla Supercharger (destination)</b> outputs at most 350 A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:tesla_destination~.+ & socket:tesla_destination!=0)",
+      "value": "350 A"
+    },
+    {
+      "key": "socket:tesla_destination:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:tesla_destination:output' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:tesla_destination~.+ & socket:tesla_destination!=0)"
+    },
+    {
+      "key": "socket:tesla_destination:output",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:output=120 kW with a fixed text, namely '<b>Tesla Supercharger (destination)</b> outputs at most 120 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:tesla_destination~.+ & socket:tesla_destination!=0)",
+      "value": "120 kW"
+    },
+    {
+      "key": "socket:tesla_destination:output",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:output=150 kW with a fixed text, namely '<b>Tesla Supercharger (destination)</b> outputs at most 150 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:tesla_destination~.+ & socket:tesla_destination!=0)",
+      "value": "150 kW"
+    },
+    {
+      "key": "socket:tesla_destination:output",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:output=250 kW with a fixed text, namely '<b>Tesla Supercharger (destination)</b> outputs at most 250 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:tesla_destination~.+ & socket:tesla_destination!=0)",
+      "value": "250 kW"
+    },
+    {
+      "key": "socket:tesla_destination",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:tesla_destination' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:tesla_destination~.+ & socket:tesla_destination!=0)"
+    },
+    {
+      "key": "socket:tesla_destination:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:tesla_destination:voltage' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:tesla_destination~.+ & socket:tesla_destination!=0)"
+    },
+    {
+      "key": "socket:tesla_destination:voltage",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:voltage=230 V with a fixed text, namely '<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs 230 volt' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:tesla_destination~.+ & socket:tesla_destination!=0)",
+      "value": "230 V"
+    },
+    {
+      "key": "socket:tesla_destination:voltage",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:voltage=400 V with a fixed text, namely '<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs 400 volt' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:tesla_destination~.+ & socket:tesla_destination!=0)",
+      "value": "400 V"
+    },
+    {
+      "key": "socket:tesla_destination:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:tesla_destination:current' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:tesla_destination~.+ & socket:tesla_destination!=0)"
+    },
+    {
+      "key": "socket:tesla_destination:current",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:current=16 A with a fixed text, namely '<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs at most 16 A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:tesla_destination~.+ & socket:tesla_destination!=0)",
+      "value": "16 A"
+    },
+    {
+      "key": "socket:tesla_destination:current",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:current=32 A with a fixed text, namely '<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs at most 32 A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:tesla_destination~.+ & socket:tesla_destination!=0)",
+      "value": "32 A"
+    },
+    {
+      "key": "socket:tesla_destination:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:tesla_destination:output' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:tesla_destination~.+ & socket:tesla_destination!=0)"
+    },
+    {
+      "key": "socket:tesla_destination:output",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:output=11 kW with a fixed text, namely '<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs at most 11 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:tesla_destination~.+ & socket:tesla_destination!=0)",
+      "value": "11 kW"
+    },
+    {
+      "key": "socket:tesla_destination:output",
+      "description": "Layer 'Charging stations' shows socket:tesla_destination:output=22 kW with a fixed text, namely '<b>Tesla supercharger (destination)</b> (A Type 2 with cable branded as tesla) outputs at most 22 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:tesla_destination~.+ & socket:tesla_destination!=0)",
+      "value": "22 kW"
+    },
+    {
+      "key": "socket:USB-A",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:USB-A' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:USB-A~.+ & socket:USB-A!=0)"
+    },
+    {
+      "key": "socket:USB-A:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:USB-A:voltage' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:USB-A~.+ & socket:USB-A!=0)"
+    },
+    {
+      "key": "socket:USB-A:voltage",
+      "description": "Layer 'Charging stations' shows socket:USB-A:voltage=5 V with a fixed text, namely '<b>USB</b> to charge phones and small electronics outputs 5 volt' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:USB-A~.+ & socket:USB-A!=0)",
+      "value": "5 V"
+    },
+    {
+      "key": "socket:USB-A:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:USB-A:current' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:USB-A~.+ & socket:USB-A!=0)"
+    },
+    {
+      "key": "socket:USB-A:current",
+      "description": "Layer 'Charging stations' shows socket:USB-A:current=1 A with a fixed text, namely '<b>USB</b> to charge phones and small electronics outputs at most 1 A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:USB-A~.+ & socket:USB-A!=0)",
+      "value": "1 A"
+    },
+    {
+      "key": "socket:USB-A:current",
+      "description": "Layer 'Charging stations' shows socket:USB-A:current=2 A with a fixed text, namely '<b>USB</b> to charge phones and small electronics outputs at most 2 A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:USB-A~.+ & socket:USB-A!=0)",
+      "value": "2 A"
+    },
+    {
+      "key": "socket:USB-A:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:USB-A:output' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:USB-A~.+ & socket:USB-A!=0)"
+    },
+    {
+      "key": "socket:USB-A:output",
+      "description": "Layer 'Charging stations' shows socket:USB-A:output=5W with a fixed text, namely '<b>USB</b> to charge phones and small electronics outputs at most 5W A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:USB-A~.+ & socket:USB-A!=0)",
+      "value": "5W"
+    },
+    {
+      "key": "socket:USB-A:output",
+      "description": "Layer 'Charging stations' shows socket:USB-A:output=10W with a fixed text, namely '<b>USB</b> to charge phones and small electronics outputs at most 10W A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:USB-A~.+ & socket:USB-A!=0)",
+      "value": "10W"
+    },
+    {
+      "key": "socket:bosch_3pin",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:bosch_3pin' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:bosch_3pin~.+ & socket:bosch_3pin!=0)"
+    },
+    {
+      "key": "socket:bosch_3pin:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:bosch_3pin:voltage' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:bosch_3pin~.+ & socket:bosch_3pin!=0)"
+    },
+    {
+      "key": "socket:bosch_3pin:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:bosch_3pin:current' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:bosch_3pin~.+ & socket:bosch_3pin!=0)"
+    },
+    {
+      "key": "socket:bosch_3pin:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:bosch_3pin:output' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:bosch_3pin~.+ & socket:bosch_3pin!=0)"
+    },
+    {
+      "key": "socket:bosch_5pin",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:bosch_5pin' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:bosch_5pin~.+ & socket:bosch_5pin!=0)"
+    },
+    {
+      "key": "socket:bosch_5pin:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:bosch_5pin:voltage' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:bosch_5pin~.+ & socket:bosch_5pin!=0)"
+    },
+    {
+      "key": "socket:bosch_5pin:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:bosch_5pin:current' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:bosch_5pin~.+ & socket:bosch_5pin!=0)"
+    },
+    {
+      "key": "socket:bosch_5pin:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:bosch_5pin:output' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:bosch_5pin~.+ & socket:bosch_5pin!=0)"
+    },
+    {
+      "key": "socket:bs1363",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:bs1363' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:bs1363~.+ & socket:bs1363!=0)"
+    },
+    {
+      "key": "socket:bs1363:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:bs1363:voltage' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:bs1363~.+ & socket:bs1363!=0)"
+    },
+    {
+      "key": "socket:bs1363:voltage",
+      "description": "Layer 'Charging stations' shows socket:bs1363:voltage=230 V with a fixed text, namely '<b>BS1363</b> (Type G) outputs 230 volt' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:bs1363~.+ & socket:bs1363!=0)",
+      "value": "230 V"
+    },
+    {
+      "key": "socket:bs1363:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:bs1363:current' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:bs1363~.+ & socket:bs1363!=0)"
+    },
+    {
+      "key": "socket:bs1363:current",
+      "description": "Layer 'Charging stations' shows socket:bs1363:current=13 A with a fixed text, namely '<b>BS1363</b> (Type G) outputs at most 13 A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:bs1363~.+ & socket:bs1363!=0)",
+      "value": "13 A"
+    },
+    {
+      "key": "socket:bs1363:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:bs1363:output' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:bs1363~.+ & socket:bs1363!=0)"
+    },
+    {
+      "key": "socket:bs1363:output",
+      "description": "Layer 'Charging stations' shows socket:bs1363:output=3kW with a fixed text, namely '<b>BS1363</b> (Type G) outputs at most 3kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:bs1363~.+ & socket:bs1363!=0)",
+      "value": "3kW"
+    },
+    {
+      "key": "socket:nema5_15",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:nema5_15' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:nema5_15~.+ & socket:nema5_15!=0)"
+    },
+    {
+      "key": "socket:nema5_15:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:nema5_15:voltage' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:nema5_15~.+ & socket:nema5_15!=0)"
+    },
+    {
+      "key": "socket:nema5_15:voltage",
+      "description": "Layer 'Charging stations' shows socket:nema5_15:voltage=120 V with a fixed text, namely '<b>NEMA 5-15</b> (Type B) outputs 120 volt' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:nema5_15~.+ & socket:nema5_15!=0)",
+      "value": "120 V"
+    },
+    {
+      "key": "socket:nema5_15:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:nema5_15:current' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:nema5_15~.+ & socket:nema5_15!=0)"
+    },
+    {
+      "key": "socket:nema5_15:current",
+      "description": "Layer 'Charging stations' shows socket:nema5_15:current=15 A with a fixed text, namely '<b>NEMA 5-15</b> (Type B) outputs at most 15 A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:nema5_15~.+ & socket:nema5_15!=0)",
+      "value": "15 A"
+    },
+    {
+      "key": "socket:nema5_15:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:nema5_15:output' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:nema5_15~.+ & socket:nema5_15!=0)"
+    },
+    {
+      "key": "socket:nema5_15:output",
+      "description": "Layer 'Charging stations' shows socket:nema5_15:output=1.8 kW with a fixed text, namely '<b>NEMA 5-15</b> (Type B) outputs at most 1.8 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:nema5_15~.+ & socket:nema5_15!=0)",
+      "value": "1.8 kW"
+    },
+    {
+      "key": "socket:sev1011_t23",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:sev1011_t23' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:sev1011_t23~.+ & socket:sev1011_t23!=0)"
+    },
+    {
+      "key": "socket:sev1011_t23:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:sev1011_t23:voltage' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:sev1011_t23~.+ & socket:sev1011_t23!=0)"
+    },
+    {
+      "key": "socket:sev1011_t23:voltage",
+      "description": "Layer 'Charging stations' shows socket:sev1011_t23:voltage=230 V with a fixed text, namely '<b>SEV 1011 T23</b> (Type J) outputs 230 volt' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:sev1011_t23~.+ & socket:sev1011_t23!=0)",
+      "value": "230 V"
+    },
+    {
+      "key": "socket:sev1011_t23:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:sev1011_t23:current' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:sev1011_t23~.+ & socket:sev1011_t23!=0)"
+    },
+    {
+      "key": "socket:sev1011_t23:current",
+      "description": "Layer 'Charging stations' shows socket:sev1011_t23:current=16 A with a fixed text, namely '<b>SEV 1011 T23</b> (Type J) outputs at most 16 A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:sev1011_t23~.+ & socket:sev1011_t23!=0)",
+      "value": "16 A"
+    },
+    {
+      "key": "socket:sev1011_t23:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:sev1011_t23:output' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:sev1011_t23~.+ & socket:sev1011_t23!=0)"
+    },
+    {
+      "key": "socket:sev1011_t23:output",
+      "description": "Layer 'Charging stations' shows socket:sev1011_t23:output=3.7 kW with a fixed text, namely '<b>SEV 1011 T23</b> (Type J) outputs at most 3.7 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:sev1011_t23~.+ & socket:sev1011_t23!=0)",
+      "value": "3.7 kW"
+    },
+    {
+      "key": "socket:as3112",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:as3112' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:as3112~.+ & socket:as3112!=0)"
+    },
+    {
+      "key": "socket:as3112:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:as3112:voltage' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:as3112~.+ & socket:as3112!=0)"
+    },
+    {
+      "key": "socket:as3112:voltage",
+      "description": "Layer 'Charging stations' shows socket:as3112:voltage=230 V with a fixed text, namely '<b>AS3112</b> (Type I) outputs 230 volt' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:as3112~.+ & socket:as3112!=0)",
+      "value": "230 V"
+    },
+    {
+      "key": "socket:as3112:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:as3112:current' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:as3112~.+ & socket:as3112!=0)"
+    },
+    {
+      "key": "socket:as3112:current",
+      "description": "Layer 'Charging stations' shows socket:as3112:current=10 A with a fixed text, namely '<b>AS3112</b> (Type I) outputs at most 10 A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:as3112~.+ & socket:as3112!=0)",
+      "value": "10 A"
+    },
+    {
+      "key": "socket:as3112:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:as3112:output' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:as3112~.+ & socket:as3112!=0)"
+    },
+    {
+      "key": "socket:as3112:output",
+      "description": "Layer 'Charging stations' shows socket:as3112:output=2.3 kW with a fixed text, namely '<b>AS3112</b> (Type I) outputs at most 2.3 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:as3112~.+ & socket:as3112!=0)",
+      "value": "2.3 kW"
+    },
+    {
+      "key": "socket:nema_5_20",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:nema_5_20' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:nema_5_20~.+ & socket:nema_5_20!=0)"
+    },
+    {
+      "key": "socket:nema_5_20:voltage",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:nema_5_20:voltage' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:nema_5_20~.+ & socket:nema_5_20!=0)"
+    },
+    {
+      "key": "socket:nema_5_20:voltage",
+      "description": "Layer 'Charging stations' shows socket:nema_5_20:voltage=120 V with a fixed text, namely '<b>NEMA 5-20</b> (Type B) outputs 120 volt' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:nema_5_20~.+ & socket:nema_5_20!=0)",
+      "value": "120 V"
+    },
+    {
+      "key": "socket:nema_5_20:current",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:nema_5_20:current' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:nema_5_20~.+ & socket:nema_5_20!=0)"
+    },
+    {
+      "key": "socket:nema_5_20:current",
+      "description": "Layer 'Charging stations' shows socket:nema_5_20:current=20 A with a fixed text, namely '<b>NEMA 5-20</b> (Type B) outputs at most 20 A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:nema_5_20~.+ & socket:nema_5_20!=0)",
+      "value": "20 A"
+    },
+    {
+      "key": "socket:nema_5_20:output",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'socket:nema_5_20:output' (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:nema_5_20~.+ & socket:nema_5_20!=0)"
+    },
+    {
+      "key": "socket:nema_5_20:output",
+      "description": "Layer 'Charging stations' shows socket:nema_5_20:output=2.4 kW with a fixed text, namely '<b>NEMA 5-20</b> (Type B) outputs at most 2.4 kW A' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if socket:nema_5_20~.+ & socket:nema_5_20!=0)",
+      "value": "2.4 kW"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Charging stations')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Charging stations' shows opening_hours=24/7 with a fixed text, namely '24/7 opened (including holidays)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations')",
+      "value": "24/7"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Charging stations' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Charging stations')",
+      "value": "closed"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Charging stations' shows fee=no & fee:conditional= & charge= & authentication:none=yes with a fixed text, namely 'Free to use (without authenticating)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations')",
+      "value": "no"
+    },
+    {
+      "key": "fee:conditional",
+      "description": "Layer 'Charging stations' shows fee=no & fee:conditional= & charge= & authentication:none=yes with a fixed text, namely 'Free to use (without authenticating)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') Picking this answer will delete the key fee:conditional.",
+      "value": ""
+    },
+    {
+      "key": "charge",
+      "description": "Layer 'Charging stations' shows fee=no & fee:conditional= & charge= & authentication:none=yes with a fixed text, namely 'Free to use (without authenticating)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') Picking this answer will delete the key charge.",
+      "value": ""
+    },
+    {
+      "key": "authentication:none",
+      "description": "Layer 'Charging stations' shows fee=no & fee:conditional= & charge= & authentication:none=yes with a fixed text, namely 'Free to use (without authenticating)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations')",
+      "value": "yes"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Charging stations' shows fee=no & fee:conditional= & charge= & authentication:none=no with a fixed text, namely 'Free to use, but one has to authenticate' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations')",
+      "value": "no"
+    },
+    {
+      "key": "fee:conditional",
+      "description": "Layer 'Charging stations' shows fee=no & fee:conditional= & charge= & authentication:none=no with a fixed text, namely 'Free to use, but one has to authenticate' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') Picking this answer will delete the key fee:conditional.",
+      "value": ""
+    },
+    {
+      "key": "charge",
+      "description": "Layer 'Charging stations' shows fee=no & fee:conditional= & charge= & authentication:none=no with a fixed text, namely 'Free to use, but one has to authenticate' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') Picking this answer will delete the key charge.",
+      "value": ""
+    },
+    {
+      "key": "authentication:none",
+      "description": "Layer 'Charging stations' shows fee=no & fee:conditional= & charge= & authentication:none=no with a fixed text, namely 'Free to use, but one has to authenticate' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations')",
+      "value": "no"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Charging stations' shows fee=no with a fixed text, namely 'Free to use' (in the mapcomplete.org theme 'Charging stations')",
+      "value": "no"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Charging stations' shows fee=yes & fee:conditional=no @ customers with a fixed text, namely 'Paid use, but free for customers of the hotel/pub/hospital/... who operates the charging station' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations')",
+      "value": "yes"
+    },
+    {
+      "key": "fee:conditional",
+      "description": "Layer 'Charging stations' shows fee=yes & fee:conditional=no @ customers with a fixed text, namely 'Paid use, but free for customers of the hotel/pub/hospital/... who operates the charging station' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations')",
+      "value": "no @ customers"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Charging stations' shows fee=yes & fee:conditional= with a fixed text, namely 'Paid use' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations')",
+      "value": "yes"
+    },
+    {
+      "key": "fee:conditional",
+      "description": "Layer 'Charging stations' shows fee=yes & fee:conditional= with a fixed text, namely 'Paid use' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') Picking this answer will delete the key fee:conditional.",
+      "value": ""
+    },
+    {
+      "key": "charge",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'charge' (in the mapcomplete.org theme 'Charging stations') (This is only shown if fee=yes)"
+    },
+    {
+      "key": "payment:cash",
+      "description": "Layer 'Charging stations' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if fee=yes | charge~.+)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:cards",
+      "description": "Layer 'Charging stations' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if fee=yes | charge~.+)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:qr_code",
+      "description": "Layer 'Charging stations' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if fee=yes | charge~.+)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:app",
+      "description": "Layer 'Charging stations' shows payment:app=yes with a fixed text, namely 'Payment is done using a dedicated app' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if fee=yes | charge~.+)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:membership_card",
+      "description": "Layer 'Charging stations' shows payment:membership_card=yes with a fixed text, namely 'Payment is done using a membership card' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if fee=yes | charge~.+)",
+      "value": "yes"
+    },
+    {
+      "key": "authentication:membership_card",
+      "description": "Layer 'Charging stations' shows authentication:membership_card=yes with a fixed text, namely 'Authentication by a membership card' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if fee=no | fee=)",
+      "value": "yes"
+    },
+    {
+      "key": "authentication:app",
+      "description": "Layer 'Charging stations' shows authentication:app=yes with a fixed text, namely 'Authentication by an app' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if fee=no | fee=)",
+      "value": "yes"
+    },
+    {
+      "key": "authentication:phone_call",
+      "description": "Layer 'Charging stations' shows authentication:phone_call=yes with a fixed text, namely 'Authentication via phone call is available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if fee=no | fee=)",
+      "value": "yes"
+    },
+    {
+      "key": "authentication:short_message",
+      "description": "Layer 'Charging stations' shows authentication:short_message=yes with a fixed text, namely 'Authentication via SMS is available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if fee=no | fee=)",
+      "value": "yes"
+    },
+    {
+      "key": "authentication:nfc",
+      "description": "Layer 'Charging stations' shows authentication:nfc=yes with a fixed text, namely 'Authentication via NFC is available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if fee=no | fee=)",
+      "value": "yes"
+    },
+    {
+      "key": "authentication:money_card",
+      "description": "Layer 'Charging stations' shows authentication:money_card=yes with a fixed text, namely 'Authentication via Money Card is available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if fee=no | fee=)",
+      "value": "yes"
+    },
+    {
+      "key": "authentication:debit_card",
+      "description": "Layer 'Charging stations' shows authentication:debit_card=yes with a fixed text, namely 'Authentication via debit card is available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if fee=no | fee=)",
+      "value": "yes"
+    },
+    {
+      "key": "authentication:none",
+      "description": "Layer 'Charging stations' shows authentication:none=yes with a fixed text, namely 'Charging here is (also) possible without authentication' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if fee=no | fee=)",
+      "value": "yes"
+    },
+    {
+      "key": "authentication:phone_call:number",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'authentication:phone_call:number' (in the mapcomplete.org theme 'Charging stations') (This is only shown if authentication:phone_call=yes | authentication:short_message=yes)"
+    },
+    {
+      "key": "maxstay",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'maxstay' (in the mapcomplete.org theme 'Charging stations') (This is only shown if maxstay~.+ | motorcar=yes | hgv=yes | bus=yes)"
+    },
+    {
+      "key": "maxstay",
+      "description": "Layer 'Charging stations' shows maxstay=unlimited with a fixed text, namely 'No timelimit on leaving your vehicle here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if maxstay~.+ | motorcar=yes | hgv=yes | bus=yes)",
+      "value": "unlimited"
+    },
+    {
+      "key": "network",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'network' (in the mapcomplete.org theme 'Charging stations')"
+    },
+    {
+      "key": "no:network",
+      "description": "Layer 'Charging stations' shows no:network=yes with a fixed text, namely 'Not part of a bigger network, e.g. because the charging station is maintained by a local business' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations')",
+      "value": "yes"
+    },
+    {
+      "key": "network",
+      "description": "Layer 'Charging stations' shows network=none with a fixed text, namely 'Not part of a bigger network' (in the mapcomplete.org theme 'Charging stations')",
+      "value": "none"
+    },
+    {
+      "key": "network",
+      "description": "Layer 'Charging stations' shows network=AeroVironment with a fixed text, namely 'AeroVironment' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations')",
+      "value": "AeroVironment"
+    },
+    {
+      "key": "network",
+      "description": "Layer 'Charging stations' shows network=Blink with a fixed text, namely 'Blink' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations')",
+      "value": "Blink"
+    },
+    {
+      "key": "network",
+      "description": "Layer 'Charging stations' shows network=EVgo with a fixed text, namely 'EVgo' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations')",
+      "value": "EVgo"
+    },
+    {
+      "key": "network",
+      "description": "Layer 'Charging stations' shows network=Allego with a fixed text, namely 'Allego' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations')",
+      "value": "Allego"
+    },
+    {
+      "key": "network",
+      "description": "Layer 'Charging stations' shows network=Blue Corner with a fixed text, namely 'Blue Corner' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations')",
+      "value": "Blue Corner"
+    },
+    {
+      "key": "network",
+      "description": "Layer 'Charging stations' shows network=Tesla with a fixed text, namely 'Tesla' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations')",
+      "value": "Tesla"
+    },
+    {
+      "key": "operator",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'operator' (in the mapcomplete.org theme 'Charging stations') (This is only shown if network=)"
+    },
+    {
+      "key": "network",
+      "description": "Layer 'Charging stations' shows network= with a fixed text, namely 'Actually, {operator} is the network' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') Picking this answer will delete the key network. (This is only shown if network=)",
+      "value": ""
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'phone' (in the mapcomplete.org theme 'Charging stations')"
+    },
+    {
+      "key": "email",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'email' (in the mapcomplete.org theme 'Charging stations')"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Charging stations')"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'level' (in the mapcomplete.org theme 'Charging stations') (This is only shown if repeat_on=)"
+    },
+    {
+      "key": "location",
+      "description": "Layer 'Charging stations' shows location=underground with a fixed text, namely 'Located underground' (in the mapcomplete.org theme 'Charging stations') (This is only shown if repeat_on=)",
+      "value": "underground"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Charging stations' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if repeat_on=)",
+      "value": "0"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Charging stations' shows level= with a fixed text, namely 'Located on the ground floor' (in the mapcomplete.org theme 'Charging stations') Picking this answer will delete the key level. (This is only shown if repeat_on=)",
+      "value": ""
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Charging stations' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if repeat_on=)",
+      "value": "1"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Charging stations' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if repeat_on=)",
+      "value": "-1"
+    },
+    {
+      "key": "ref",
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'ref' (in the mapcomplete.org theme 'Charging stations') (This is only shown if network~.+)"
+    },
+    {
+      "key": "planned:amenity",
+      "description": "Layer 'Charging stations' shows planned:amenity= & construction:amenity= & disused:amenity= & operational_status= & amenity=charging_station with a fixed text, namely 'This charging station works' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') Picking this answer will delete the key planned:amenity.",
+      "value": ""
+    },
+    {
+      "key": "construction:amenity",
+      "description": "Layer 'Charging stations' shows planned:amenity= & construction:amenity= & disused:amenity= & operational_status= & amenity=charging_station with a fixed text, namely 'This charging station works' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') Picking this answer will delete the key construction:amenity.",
+      "value": ""
+    },
+    {
+      "key": "disused:amenity",
+      "description": "Layer 'Charging stations' shows planned:amenity= & construction:amenity= & disused:amenity= & operational_status= & amenity=charging_station with a fixed text, namely 'This charging station works' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') Picking this answer will delete the key disused:amenity.",
+      "value": ""
+    },
+    {
+      "key": "operational_status",
+      "description": "Layer 'Charging stations' shows planned:amenity= & construction:amenity= & disused:amenity= & operational_status= & amenity=charging_station with a fixed text, namely 'This charging station works' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') Picking this answer will delete the key operational_status.",
+      "value": ""
+    },
+    {
+      "key": "amenity",
+      "description": "Layer 'Charging stations' shows planned:amenity= & construction:amenity= & disused:amenity= & operational_status= & amenity=charging_station with a fixed text, namely 'This charging station works' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations')",
+      "value": "charging_station"
+    },
+    {
+      "key": "planned:amenity",
+      "description": "Layer 'Charging stations' shows planned:amenity= & construction:amenity= & disused:amenity= & operational_status=broken & amenity=charging_station with a fixed text, namely 'This charging station is broken' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') Picking this answer will delete the key planned:amenity.",
+      "value": ""
+    },
+    {
+      "key": "construction:amenity",
+      "description": "Layer 'Charging stations' shows planned:amenity= & construction:amenity= & disused:amenity= & operational_status=broken & amenity=charging_station with a fixed text, namely 'This charging station is broken' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') Picking this answer will delete the key construction:amenity.",
+      "value": ""
+    },
+    {
+      "key": "disused:amenity",
+      "description": "Layer 'Charging stations' shows planned:amenity= & construction:amenity= & disused:amenity= & operational_status=broken & amenity=charging_station with a fixed text, namely 'This charging station is broken' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') Picking this answer will delete the key disused:amenity.",
+      "value": ""
+    },
+    {
+      "key": "operational_status",
+      "description": "Layer 'Charging stations' shows planned:amenity= & construction:amenity= & disused:amenity= & operational_status=broken & amenity=charging_station with a fixed text, namely 'This charging station is broken' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations')",
+      "value": "broken"
+    },
+    {
+      "key": "amenity",
+      "description": "Layer 'Charging stations' shows planned:amenity= & construction:amenity= & disused:amenity= & operational_status=broken & amenity=charging_station with a fixed text, namely 'This charging station is broken' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations')",
+      "value": "charging_station"
+    },
+    {
+      "key": "planned:amenity",
+      "description": "Layer 'Charging stations' shows planned:amenity=charging_station & construction:amenity= & disused:amenity= & operational_status= & amenity= with a fixed text, namely 'A charging station is planned here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations')",
+      "value": "charging_station"
+    },
+    {
+      "key": "construction:amenity",
+      "description": "Layer 'Charging stations' shows planned:amenity=charging_station & construction:amenity= & disused:amenity= & operational_status= & amenity= with a fixed text, namely 'A charging station is planned here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') Picking this answer will delete the key construction:amenity.",
+      "value": ""
+    },
+    {
+      "key": "disused:amenity",
+      "description": "Layer 'Charging stations' shows planned:amenity=charging_station & construction:amenity= & disused:amenity= & operational_status= & amenity= with a fixed text, namely 'A charging station is planned here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') Picking this answer will delete the key disused:amenity.",
+      "value": ""
+    },
+    {
+      "key": "operational_status",
+      "description": "Layer 'Charging stations' shows planned:amenity=charging_station & construction:amenity= & disused:amenity= & operational_status= & amenity= with a fixed text, namely 'A charging station is planned here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') Picking this answer will delete the key operational_status.",
+      "value": ""
+    },
+    {
+      "key": "amenity",
+      "description": "Layer 'Charging stations' shows planned:amenity=charging_station & construction:amenity= & disused:amenity= & operational_status= & amenity= with a fixed text, namely 'A charging station is planned here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') Picking this answer will delete the key amenity.",
+      "value": ""
+    },
+    {
+      "key": "planned:amenity",
+      "description": "Layer 'Charging stations' shows planned:amenity= & construction:amenity=charging_station & disused:amenity= & operational_status= & amenity= with a fixed text, namely 'A charging station is constructed here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') Picking this answer will delete the key planned:amenity.",
+      "value": ""
+    },
+    {
+      "key": "construction:amenity",
+      "description": "Layer 'Charging stations' shows planned:amenity= & construction:amenity=charging_station & disused:amenity= & operational_status= & amenity= with a fixed text, namely 'A charging station is constructed here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations')",
+      "value": "charging_station"
+    },
+    {
+      "key": "disused:amenity",
+      "description": "Layer 'Charging stations' shows planned:amenity= & construction:amenity=charging_station & disused:amenity= & operational_status= & amenity= with a fixed text, namely 'A charging station is constructed here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') Picking this answer will delete the key disused:amenity.",
+      "value": ""
+    },
+    {
+      "key": "operational_status",
+      "description": "Layer 'Charging stations' shows planned:amenity= & construction:amenity=charging_station & disused:amenity= & operational_status= & amenity= with a fixed text, namely 'A charging station is constructed here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') Picking this answer will delete the key operational_status.",
+      "value": ""
+    },
+    {
+      "key": "amenity",
+      "description": "Layer 'Charging stations' shows planned:amenity= & construction:amenity=charging_station & disused:amenity= & operational_status= & amenity= with a fixed text, namely 'A charging station is constructed here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') Picking this answer will delete the key amenity.",
+      "value": ""
+    },
+    {
+      "key": "planned:amenity",
+      "description": "Layer 'Charging stations' shows planned:amenity= & construction:amenity= & disused:amenity=charging_station & operational_status= & amenity= with a fixed text, namely 'This charging station has beed permanently disabled and is not in use anymore but is still visible' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') Picking this answer will delete the key planned:amenity.",
+      "value": ""
+    },
+    {
+      "key": "construction:amenity",
+      "description": "Layer 'Charging stations' shows planned:amenity= & construction:amenity= & disused:amenity=charging_station & operational_status= & amenity= with a fixed text, namely 'This charging station has beed permanently disabled and is not in use anymore but is still visible' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') Picking this answer will delete the key construction:amenity.",
+      "value": ""
+    },
+    {
+      "key": "disused:amenity",
+      "description": "Layer 'Charging stations' shows planned:amenity= & construction:amenity= & disused:amenity=charging_station & operational_status= & amenity= with a fixed text, namely 'This charging station has beed permanently disabled and is not in use anymore but is still visible' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations')",
+      "value": "charging_station"
+    },
+    {
+      "key": "operational_status",
+      "description": "Layer 'Charging stations' shows planned:amenity= & construction:amenity= & disused:amenity=charging_station & operational_status= & amenity= with a fixed text, namely 'This charging station has beed permanently disabled and is not in use anymore but is still visible' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') Picking this answer will delete the key operational_status.",
+      "value": ""
+    },
+    {
+      "key": "amenity",
+      "description": "Layer 'Charging stations' shows planned:amenity= & construction:amenity= & disused:amenity=charging_station & operational_status= & amenity= with a fixed text, namely 'This charging station has beed permanently disabled and is not in use anymore but is still visible' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') Picking this answer will delete the key amenity.",
+      "value": ""
+    },
+    {
+      "key": "parking:fee",
+      "description": "Layer 'Charging stations' shows parking:fee=no with a fixed text, namely 'No additional parking cost while charging' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if motor_vehicle=yes | hgv=yes | bus=yes | bicycle=no | bicycle=)",
+      "value": "no"
+    },
+    {
+      "key": "parking:fee",
+      "description": "Layer 'Charging stations' shows parking:fee=yes with a fixed text, namely 'An additional parking fee should be paid while charging' and allows to pick this as a default answer (in the mapcomplete.org theme 'Charging stations') (This is only shown if motor_vehicle=yes | hgv=yes | bus=yes | bicycle=no | bicycle=)",
+      "value": "yes"
+    }
+  ]
+}

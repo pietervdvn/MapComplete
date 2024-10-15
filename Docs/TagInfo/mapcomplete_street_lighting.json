@@ -1,0 +1,297 @@
+{
+  "data_format": 1,
+  "project": {
+    "name": "MapComplete Street Lighting",
+    "description": "On this map you can find everything about street lighting",
+    "project_url": "https://mapcomplete.org/street_lighting",
+    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "icon_url": "https://mapcomplete.org/assets/layers/street_lamps/street_lamp.svg",
+    "contact_name": "Pieter Vander Vennet",
+    "contact_email": "pietervdvn@posteo.net"
+  },
+  "tags": [
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Street Lighting has a layer Street Lamps showing features with this tag",
+      "value": "street_lamp"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Street Lamps' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Street Lighting') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Street Lamps allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Street Lamps allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Street Lamps allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Street Lamps allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "ref",
+      "description": "Layer 'Street Lamps' shows and asks freeform values for key 'ref' (in the mapcomplete.org theme 'Street Lighting')"
+    },
+    {
+      "key": "support",
+      "description": "Layer 'Street Lamps' shows support=catenary with a fixed text, namely 'This lamp is suspended using cables' and allows to pick this as a default answer (in the mapcomplete.org theme 'Street Lighting')",
+      "value": "catenary"
+    },
+    {
+      "key": "support",
+      "description": "Layer 'Street Lamps' shows support=ceiling with a fixed text, namely 'This lamp is mounted on a ceiling' and allows to pick this as a default answer (in the mapcomplete.org theme 'Street Lighting')",
+      "value": "ceiling"
+    },
+    {
+      "key": "support",
+      "description": "Layer 'Street Lamps' shows support=ground with a fixed text, namely 'This lamp is mounted in the ground' and allows to pick this as a default answer (in the mapcomplete.org theme 'Street Lighting')",
+      "value": "ground"
+    },
+    {
+      "key": "support",
+      "description": "Layer 'Street Lamps' shows support=pedestal with a fixed text, namely 'This lamp is mounted on a short pole (mostly < 1.5m)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Street Lighting')",
+      "value": "pedestal"
+    },
+    {
+      "key": "support",
+      "description": "Layer 'Street Lamps' shows support=pole with a fixed text, namely 'This lamp is mounted on a pole' and allows to pick this as a default answer (in the mapcomplete.org theme 'Street Lighting')",
+      "value": "pole"
+    },
+    {
+      "key": "support",
+      "description": "Layer 'Street Lamps' shows support=wall with a fixed text, namely 'This lamp is mounted directly to the wall' and allows to pick this as a default answer (in the mapcomplete.org theme 'Street Lighting')",
+      "value": "wall"
+    },
+    {
+      "key": "support",
+      "description": "Layer 'Street Lamps' shows support=wall_mount with a fixed text, namely 'This lamp is mounted to the wall using a metal bar' and allows to pick this as a default answer (in the mapcomplete.org theme 'Street Lighting')",
+      "value": "wall_mount"
+    },
+    {
+      "key": "lamp_mount",
+      "description": "Layer 'Street Lamps' shows lamp_mount=straight_mast with a fixed text, namely 'This lamp sits atop of a straight mast' and allows to pick this as a default answer (in the mapcomplete.org theme 'Street Lighting') (This is only shown if support=pole)",
+      "value": "straight_mast"
+    },
+    {
+      "key": "lamp_mount",
+      "description": "Layer 'Street Lamps' shows lamp_mount=bent_mast with a fixed text, namely 'This lamp sits at the end of a bent mast' and allows to pick this as a default answer (in the mapcomplete.org theme 'Street Lighting') (This is only shown if support=pole)",
+      "value": "bent_mast"
+    },
+    {
+      "key": "light:method",
+      "description": "Layer 'Street Lamps' shows light:method=electric with a fixed text, namely 'This lamp is lit electrically' (in the mapcomplete.org theme 'Street Lighting')",
+      "value": "electric"
+    },
+    {
+      "key": "light:method",
+      "description": "Layer 'Street Lamps' shows light:method=LED with a fixed text, namely 'This lamp uses LEDs' and allows to pick this as a default answer (in the mapcomplete.org theme 'Street Lighting')",
+      "value": "LED"
+    },
+    {
+      "key": "light:method",
+      "description": "Layer 'Street Lamps' shows light:method=incandescent with a fixed text, namely 'This lamp uses incandescent lighting' and allows to pick this as a default answer (in the mapcomplete.org theme 'Street Lighting')",
+      "value": "incandescent"
+    },
+    {
+      "key": "light:method",
+      "description": "Layer 'Street Lamps' shows light:method=halogen with a fixed text, namely 'This lamp uses halogen lighting' and allows to pick this as a default answer (in the mapcomplete.org theme 'Street Lighting')",
+      "value": "halogen"
+    },
+    {
+      "key": "light:method",
+      "description": "Layer 'Street Lamps' shows light:method=discharge with a fixed text, namely 'This lamp uses discharge lamps (unknown type)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Street Lighting')",
+      "value": "discharge"
+    },
+    {
+      "key": "light:method",
+      "description": "Layer 'Street Lamps' shows light:method=mercury with a fixed text, namely 'This lamp uses a mercury-vapour lamp (lightly blueish)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Street Lighting')",
+      "value": "mercury"
+    },
+    {
+      "key": "light:method",
+      "description": "Layer 'Street Lamps' shows light:method=metal-halide with a fixed text, namely 'This lamp uses metal-halide lamps (bright white)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Street Lighting')",
+      "value": "metal-halide"
+    },
+    {
+      "key": "light:method",
+      "description": "Layer 'Street Lamps' shows light:method=fluorescent with a fixed text, namely 'This lamp uses fluorescent lighting' and allows to pick this as a default answer (in the mapcomplete.org theme 'Street Lighting')",
+      "value": "fluorescent"
+    },
+    {
+      "key": "light:method",
+      "description": "Layer 'Street Lamps' shows light:method=sodium with a fixed text, namely 'This lamp uses sodium lamps (unknown type)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Street Lighting')",
+      "value": "sodium"
+    },
+    {
+      "key": "light:method",
+      "description": "Layer 'Street Lamps' shows light:method=low_pressure_sodium with a fixed text, namely 'This lamp uses low pressure sodium lamps (monochrome orange)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Street Lighting')",
+      "value": "low_pressure_sodium"
+    },
+    {
+      "key": "light:method",
+      "description": "Layer 'Street Lamps' shows light:method=high_pressure_sodium with a fixed text, namely 'This lamp uses high pressure sodium lamps (orange with white)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Street Lighting')",
+      "value": "high_pressure_sodium"
+    },
+    {
+      "key": "light:method",
+      "description": "Layer 'Street Lamps' shows light:method=gas with a fixed text, namely 'This lamp is lit using gas' and allows to pick this as a default answer (in the mapcomplete.org theme 'Street Lighting')",
+      "value": "gas"
+    },
+    {
+      "key": "light:colour",
+      "description": "Layer 'Street Lamps' shows and asks freeform values for key 'light:colour' (in the mapcomplete.org theme 'Street Lighting')"
+    },
+    {
+      "key": "light:colour",
+      "description": "Layer 'Street Lamps' shows light:colour=white with a fixed text, namely 'This lamp emits white light' and allows to pick this as a default answer (in the mapcomplete.org theme 'Street Lighting')",
+      "value": "white"
+    },
+    {
+      "key": "light:colour",
+      "description": "Layer 'Street Lamps' shows light:colour=green with a fixed text, namely 'This lamp emits green light' and allows to pick this as a default answer (in the mapcomplete.org theme 'Street Lighting')",
+      "value": "green"
+    },
+    {
+      "key": "light:colour",
+      "description": "Layer 'Street Lamps' shows light:colour=orange with a fixed text, namely 'This lamp emits orange light' and allows to pick this as a default answer (in the mapcomplete.org theme 'Street Lighting')",
+      "value": "orange"
+    },
+    {
+      "key": "light:count",
+      "description": "Layer 'Street Lamps' shows and asks freeform values for key 'light:count' (in the mapcomplete.org theme 'Street Lighting') (This is only shown if support=pole)"
+    },
+    {
+      "key": "light:count",
+      "description": "Layer 'Street Lamps' shows light:count=1 with a fixed text, namely 'This lamp has 1 fixture' and allows to pick this as a default answer (in the mapcomplete.org theme 'Street Lighting') (This is only shown if support=pole)",
+      "value": "1"
+    },
+    {
+      "key": "light:count",
+      "description": "Layer 'Street Lamps' shows light:count=2 with a fixed text, namely 'This lamp has 2 fixtures' and allows to pick this as a default answer (in the mapcomplete.org theme 'Street Lighting') (This is only shown if support=pole)",
+      "value": "2"
+    },
+    {
+      "key": "light:lit",
+      "description": "Layer 'Street Lamps' shows light:lit=dusk-dawn with a fixed text, namely 'This lamp is lit at night' and allows to pick this as a default answer (in the mapcomplete.org theme 'Street Lighting')",
+      "value": "dusk-dawn"
+    },
+    {
+      "key": "light:lit",
+      "description": "Layer 'Street Lamps' shows light:lit=24/7 with a fixed text, namely 'This lamp is lit 24/7' and allows to pick this as a default answer (in the mapcomplete.org theme 'Street Lighting')",
+      "value": "24/7"
+    },
+    {
+      "key": "light:lit",
+      "description": "Layer 'Street Lamps' shows light:lit=motion with a fixed text, namely 'This lamp is lit based on motion' and allows to pick this as a default answer (in the mapcomplete.org theme 'Street Lighting')",
+      "value": "motion"
+    },
+    {
+      "key": "light:lit",
+      "description": "Layer 'Street Lamps' shows light:lit=demand with a fixed text, namely 'This lamp is lit based on demand (e.g. with a pushbutton)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Street Lighting')",
+      "value": "demand"
+    },
+    {
+      "key": "light:direction",
+      "description": "Layer 'Street Lamps' shows and asks freeform values for key 'light:direction' (in the mapcomplete.org theme 'Street Lighting') (This is only shown if light:count=1)"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Street Lighting has a layer Lit streets showing features with this tag"
+    },
+    {
+      "key": "lit",
+      "description": "The MapComplete theme Street Lighting has a layer Lit streets showing features with this tag"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Lit streets' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Street Lighting') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Lit streets allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Lit streets allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Lit streets allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Lit streets allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "lit",
+      "description": "Layer 'Lit streets' shows lit=yes with a fixed text, namely 'This street is lit' and allows to pick this as a default answer (in the mapcomplete.org theme 'Street Lighting')",
+      "value": "yes"
+    },
+    {
+      "key": "lit",
+      "description": "Layer 'Lit streets' shows lit=no with a fixed text, namely 'This street is not lit' and allows to pick this as a default answer (in the mapcomplete.org theme 'Street Lighting')",
+      "value": "no"
+    },
+    {
+      "key": "lit",
+      "description": "Layer 'Lit streets' shows lit=sunset-sunrise with a fixed text, namely 'This street is lit at night' (in the mapcomplete.org theme 'Street Lighting')",
+      "value": "sunset-sunrise"
+    },
+    {
+      "key": "lit",
+      "description": "Layer 'Lit streets' shows lit=24/7 with a fixed text, namely 'This street is lit 24/7' and allows to pick this as a default answer (in the mapcomplete.org theme 'Street Lighting')",
+      "value": "24/7"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Street Lighting has a layer All streets showing features with this tag"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'All streets' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Street Lighting') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'All streets allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'All streets allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'All streets allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'All streets allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "lit",
+      "description": "Layer 'All streets' shows lit=yes with a fixed text, namely 'This street is lit' and allows to pick this as a default answer (in the mapcomplete.org theme 'Street Lighting')",
+      "value": "yes"
+    },
+    {
+      "key": "lit",
+      "description": "Layer 'All streets' shows lit=no with a fixed text, namely 'This street is not lit' and allows to pick this as a default answer (in the mapcomplete.org theme 'Street Lighting')",
+      "value": "no"
+    },
+    {
+      "key": "lit",
+      "description": "Layer 'All streets' shows lit=sunset-sunrise with a fixed text, namely 'This street is lit at night' (in the mapcomplete.org theme 'Street Lighting')",
+      "value": "sunset-sunrise"
+    },
+    {
+      "key": "lit",
+      "description": "Layer 'All streets' shows lit=24/7 with a fixed text, namely 'This street is lit 24/7' and allows to pick this as a default answer (in the mapcomplete.org theme 'Street Lighting')",
+      "value": "24/7"
+    }
+  ]
+}

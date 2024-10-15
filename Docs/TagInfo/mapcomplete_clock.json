@@ -1,0 +1,173 @@
+{
+  "data_format": 1,
+  "project": {
+    "name": "MapComplete Clocks",
+    "description": "Map showing all public clocks",
+    "project_url": "https://mapcomplete.org/clock",
+    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "icon_url": "https://mapcomplete.org/assets/layers/clock/clock.svg",
+    "contact_name": "Pieter Vander Vennet",
+    "contact_email": "pietervdvn@posteo.net"
+  },
+  "tags": [
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Clocks has a layer Clocks showing features with this tag",
+      "value": "clock"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Clocks' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Clocks') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Clocks allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Clocks allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Clocks allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Clocks allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "support",
+      "description": "Layer 'Clocks' shows support=pole with a fixed text, namely 'This clock is mounted on a pole' and allows to pick this as a default answer (in the mapcomplete.org theme 'Clocks')",
+      "value": "pole"
+    },
+    {
+      "key": "support",
+      "description": "Layer 'Clocks' shows support=wall_mounted with a fixed text, namely 'This clock is mounted on a wall' and allows to pick this as a default answer (in the mapcomplete.org theme 'Clocks')",
+      "value": "wall_mounted"
+    },
+    {
+      "key": "support",
+      "description": "Layer 'Clocks' shows support=billboard with a fixed text, namely 'This clock is part of a billboard' and allows to pick this as a default answer (in the mapcomplete.org theme 'Clocks')",
+      "value": "billboard"
+    },
+    {
+      "key": "support",
+      "description": "Layer 'Clocks' shows support=ground with a fixed text, namely 'This clock is on the ground' and allows to pick this as a default answer (in the mapcomplete.org theme 'Clocks')",
+      "value": "ground"
+    },
+    {
+      "key": "display",
+      "description": "Layer 'Clocks' shows display=analog with a fixed text, namely 'This clock displays the time with hands' and allows to pick this as a default answer (in the mapcomplete.org theme 'Clocks')",
+      "value": "analog"
+    },
+    {
+      "key": "display",
+      "description": "Layer 'Clocks' shows display=digital with a fixed text, namely 'This clock displays the time with digits' and allows to pick this as a default answer (in the mapcomplete.org theme 'Clocks')",
+      "value": "digital"
+    },
+    {
+      "key": "display",
+      "description": "Layer 'Clocks' shows display=sundial with a fixed text, namely 'This clock displays the time with a sundial' and allows to pick this as a default answer (in the mapcomplete.org theme 'Clocks')",
+      "value": "sundial"
+    },
+    {
+      "key": "display",
+      "description": "Layer 'Clocks' shows display=unorthodox with a fixed text, namely 'This clock displays the time in a non-standard way, e.g using binary, water or something else' and allows to pick this as a default answer (in the mapcomplete.org theme 'Clocks')",
+      "value": "unorthodox"
+    },
+    {
+      "key": "visibility",
+      "description": "Layer 'Clocks' shows visibility=house with a fixed text, namely 'This clock is visible from about 5 meters away (small wall-mounted clock)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Clocks')",
+      "value": "house"
+    },
+    {
+      "key": "visibility",
+      "description": "Layer 'Clocks' shows visibility=street with a fixed text, namely 'This clock is visible from about 20 meters away (medium size billboard clock)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Clocks')",
+      "value": "street"
+    },
+    {
+      "key": "visibility",
+      "description": "Layer 'Clocks' shows visibility=area with a fixed text, namely 'This clock is visible from more than 20 meters away (e.g. a church clock or station clock)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Clocks')",
+      "value": "area"
+    },
+    {
+      "key": "date",
+      "description": "Layer 'Clocks' shows date=yes with a fixed text, namely 'This clock also displays the date' and allows to pick this as a default answer (in the mapcomplete.org theme 'Clocks')",
+      "value": "yes"
+    },
+    {
+      "key": "date",
+      "description": "Layer 'Clocks' shows date=no with a fixed text, namely 'This clock does not display the date' and allows to pick this as a default answer (in the mapcomplete.org theme 'Clocks')",
+      "value": "no"
+    },
+    {
+      "key": "date",
+      "description": "Layer 'Clocks' shows date= with a fixed text, namely 'This clock does probably not display the date' (in the mapcomplete.org theme 'Clocks') Picking this answer will delete the key date.",
+      "value": ""
+    },
+    {
+      "key": "thermometer",
+      "description": "Layer 'Clocks' shows thermometer=yes with a fixed text, namely 'This clock also displays the temperature' and allows to pick this as a default answer (in the mapcomplete.org theme 'Clocks')",
+      "value": "yes"
+    },
+    {
+      "key": "thermometer",
+      "description": "Layer 'Clocks' shows thermometer=no with a fixed text, namely 'This clock does not display the temperature' and allows to pick this as a default answer (in the mapcomplete.org theme 'Clocks')",
+      "value": "no"
+    },
+    {
+      "key": "thermometer",
+      "description": "Layer 'Clocks' shows thermometer= with a fixed text, namely 'This clock does probably not display the temperature' (in the mapcomplete.org theme 'Clocks') Picking this answer will delete the key thermometer.",
+      "value": ""
+    },
+    {
+      "key": "barometer",
+      "description": "Layer 'Clocks' shows barometer=yes with a fixed text, namely 'This clock also displays the air pressure' and allows to pick this as a default answer (in the mapcomplete.org theme 'Clocks')",
+      "value": "yes"
+    },
+    {
+      "key": "barometer",
+      "description": "Layer 'Clocks' shows barometer=no with a fixed text, namely 'This clock does not display the air pressure' and allows to pick this as a default answer (in the mapcomplete.org theme 'Clocks')",
+      "value": "no"
+    },
+    {
+      "key": "barometer",
+      "description": "Layer 'Clocks' shows barometer= with a fixed text, namely 'This clock does probably not display the air pressure' (in the mapcomplete.org theme 'Clocks') Picking this answer will delete the key barometer.",
+      "value": ""
+    },
+    {
+      "key": "hygrometer",
+      "description": "Layer 'Clocks' shows hygrometer=yes with a fixed text, namely 'This clock also displays the humidity' and allows to pick this as a default answer (in the mapcomplete.org theme 'Clocks')",
+      "value": "yes"
+    },
+    {
+      "key": "hygrometer",
+      "description": "Layer 'Clocks' shows hygrometer=no with a fixed text, namely 'This clock does not display the humidity' and allows to pick this as a default answer (in the mapcomplete.org theme 'Clocks')",
+      "value": "no"
+    },
+    {
+      "key": "hygrometer",
+      "description": "Layer 'Clocks' shows hygrometer= with a fixed text, namely 'This clock does probably not display the humidity' (in the mapcomplete.org theme 'Clocks') Picking this answer will delete the key hygrometer.",
+      "value": ""
+    },
+    {
+      "key": "faces",
+      "description": "Layer 'Clocks' shows and asks freeform values for key 'faces' (in the mapcomplete.org theme 'Clocks')"
+    },
+    {
+      "key": "faces",
+      "description": "Layer 'Clocks' shows faces=1 with a fixed text, namely 'This clock has one face' and allows to pick this as a default answer (in the mapcomplete.org theme 'Clocks')",
+      "value": "1"
+    },
+    {
+      "key": "faces",
+      "description": "Layer 'Clocks' shows faces=2 with a fixed text, namely 'This clock has two faces' and allows to pick this as a default answer (in the mapcomplete.org theme 'Clocks')",
+      "value": "2"
+    },
+    {
+      "key": "faces",
+      "description": "Layer 'Clocks' shows faces=4 with a fixed text, namely 'This clock has four faces' and allows to pick this as a default answer (in the mapcomplete.org theme 'Clocks')",
+      "value": "4"
+    }
+  ]
+}

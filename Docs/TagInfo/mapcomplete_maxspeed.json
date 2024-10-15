@@ -1,0 +1,147 @@
+{
+  "data_format": 1,
+  "project": {
+    "name": "MapComplete Maxspeed",
+    "description": "This map shows the legally allowed maximum speed on every road.",
+    "project_url": "https://mapcomplete.org/maxspeed",
+    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "icon_url": "https://mapcomplete.org/assets/themes/maxspeed/maxspeed_logo.svg",
+    "contact_name": "Pieter Vander Vennet",
+    "contact_email": "pietervdvn@posteo.net"
+  },
+  "tags": [
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Maxspeed has a layer Maxspeed showing features with this tag",
+      "value": "residential"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Maxspeed has a layer Maxspeed showing features with this tag",
+      "value": "living_street"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Maxspeed has a layer Maxspeed showing features with this tag",
+      "value": "motorway"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Maxspeed has a layer Maxspeed showing features with this tag",
+      "value": "tertiary"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Maxspeed has a layer Maxspeed showing features with this tag",
+      "value": "unclassified"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Maxspeed has a layer Maxspeed showing features with this tag",
+      "value": "secondary"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Maxspeed has a layer Maxspeed showing features with this tag",
+      "value": "primary"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Maxspeed has a layer Maxspeed showing features with this tag",
+      "value": "trunk"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Maxspeed has a layer Maxspeed showing features with this tag",
+      "value": "motorway"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Maxspeed has a layer Maxspeed showing features with this tag",
+      "value": "tertiary_link"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Maxspeed has a layer Maxspeed showing features with this tag",
+      "value": "secondary_link"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Maxspeed has a layer Maxspeed showing features with this tag",
+      "value": "primary_link"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Maxspeed has a layer Maxspeed showing features with this tag",
+      "value": "trunk_link"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Maxspeed has a layer Maxspeed showing features with this tag",
+      "value": "motorway_link"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Maxspeed' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Maxspeed') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "maxspeed",
+      "description": "Layer 'Maxspeed' shows and asks freeform values for key 'maxspeed' (in the mapcomplete.org theme 'Maxspeed')"
+    },
+    {
+      "key": "highway",
+      "description": "Layer 'Maxspeed' shows highway=living_street & _country=be with a fixed text, namely 'This is a living street, which has a maxspeed of 20km/h' and allows to pick this as a default answer (in the mapcomplete.org theme 'Maxspeed')",
+      "value": "living_street"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Maxspeed has a layer Speed Camera showing features with this tag",
+      "value": "speed_camera"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Speed Camera' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Maxspeed') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Speed Camera allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Speed Camera allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Speed Camera allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Speed Camera allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "maxspeed",
+      "description": "Layer 'Speed Camera' shows and asks freeform values for key 'maxspeed' (in the mapcomplete.org theme 'Maxspeed')"
+    },
+    {
+      "key": "direction",
+      "description": "Layer 'Speed Camera' shows and asks freeform values for key 'direction' (in the mapcomplete.org theme 'Maxspeed')"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Maxspeed has a layer Speed Display showing features with this tag",
+      "value": "speed_display"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Speed Display' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Maxspeed') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "maxspeed",
+      "description": "Layer 'Speed Display' shows and asks freeform values for key 'maxspeed' (in the mapcomplete.org theme 'Maxspeed')"
+    },
+    {
+      "key": "inscription",
+      "description": "Layer 'Speed Display' shows and asks freeform values for key 'inscription' (in the mapcomplete.org theme 'Maxspeed')"
+    }
+  ]
+}

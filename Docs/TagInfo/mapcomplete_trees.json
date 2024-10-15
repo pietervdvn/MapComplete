@@ -1,0 +1,182 @@
+{
+  "data_format": 1,
+  "project": {
+    "name": "MapComplete Trees",
+    "description": "Map all the trees",
+    "project_url": "https://mapcomplete.org/trees",
+    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "icon_url": "https://mapcomplete.org/assets/themes/trees/logo.svg",
+    "contact_name": "Pieter Vander Vennet",
+    "contact_email": "pietervdvn@posteo.net"
+  },
+  "tags": [
+    {
+      "key": "natural",
+      "description": "The MapComplete theme Trees has a layer Tree showing features with this tag",
+      "value": "tree"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Tree' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Trees') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Tree allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Tree allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Tree allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Tree allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "species:wikidata",
+      "description": "Layer 'Tree' shows and asks freeform values for key 'species:wikidata' (in the mapcomplete.org theme 'Trees')"
+    },
+    {
+      "key": "circumference",
+      "description": "Layer 'Tree' shows and asks freeform values for key 'circumference' (in the mapcomplete.org theme 'Trees')"
+    },
+    {
+      "key": "height",
+      "description": "Layer 'Tree' shows and asks freeform values for key 'height' (in the mapcomplete.org theme 'Trees')"
+    },
+    {
+      "key": "denotation",
+      "description": "Layer 'Tree' shows denotation=landmark with a fixed text, namely 'The tree is remarkable due to its size or prominent location. It is useful for navigation.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Trees')",
+      "value": "landmark"
+    },
+    {
+      "key": "denotation",
+      "description": "Layer 'Tree' shows denotation=natural_monument with a fixed text, namely 'The tree is a natural monument, e.g. because it is especially old, or of a valuable species.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Trees')",
+      "value": "natural_monument"
+    },
+    {
+      "key": "denotation",
+      "description": "Layer 'Tree' shows denotation=agricultural with a fixed text, namely 'The tree is used for agricultural purposes, e.g. in an orchard.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Trees')",
+      "value": "agricultural"
+    },
+    {
+      "key": "denotation",
+      "description": "Layer 'Tree' shows denotation=park with a fixed text, namely 'The tree is in a park or similar (cemetery, school grounds, …).' and allows to pick this as a default answer (in the mapcomplete.org theme 'Trees')",
+      "value": "park"
+    },
+    {
+      "key": "denotation",
+      "description": "Layer 'Tree' shows denotation=garden with a fixed text, namely 'The tree is in a residential garden.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Trees')",
+      "value": "garden"
+    },
+    {
+      "key": "denotation",
+      "description": "Layer 'Tree' shows denotation=avenue with a fixed text, namely 'This is a tree along an avenue.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Trees')",
+      "value": "avenue"
+    },
+    {
+      "key": "denotation",
+      "description": "Layer 'Tree' shows denotation=urban with a fixed text, namely 'The tree is in an urban area.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Trees')",
+      "value": "urban"
+    },
+    {
+      "key": "denotation",
+      "description": "Layer 'Tree' shows denotation=none with a fixed text, namely 'The tree is outside of an urban area.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Trees')",
+      "value": "none"
+    },
+    {
+      "key": "leaf_type",
+      "description": "Layer 'Tree' shows leaf_type=broadleaved with a fixed text, namely 'Broadleaved' and allows to pick this as a default answer (in the mapcomplete.org theme 'Trees') (This is only shown if species:wikidata=)",
+      "value": "broadleaved"
+    },
+    {
+      "key": "leaf_type",
+      "description": "Layer 'Tree' shows leaf_type=needleleaved with a fixed text, namely 'Needleleaved' and allows to pick this as a default answer (in the mapcomplete.org theme 'Trees') (This is only shown if species:wikidata=)",
+      "value": "needleleaved"
+    },
+    {
+      "key": "leaf_type",
+      "description": "Layer 'Tree' shows leaf_type=leafless with a fixed text, namely 'Permanently leafless' (in the mapcomplete.org theme 'Trees') (This is only shown if species:wikidata=)",
+      "value": "leafless"
+    },
+    {
+      "key": "leaf_cycle",
+      "description": "Layer 'Tree' shows leaf_cycle=deciduous with a fixed text, namely 'Deciduous: the tree loses its leaves for some time of the year.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Trees') (This is only shown if leaf_type!~^(^leafless$)$ & species:wikidata=)",
+      "value": "deciduous"
+    },
+    {
+      "key": "leaf_cycle",
+      "description": "Layer 'Tree' shows leaf_cycle=evergreen with a fixed text, namely 'Evergreen.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Trees') (This is only shown if leaf_type!~^(^leafless$)$ & species:wikidata=)",
+      "value": "evergreen"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Tree' shows and asks freeform values for key 'name' (in the mapcomplete.org theme 'Trees') (This is only shown if denotation=landmark | denotation=natural_monument | name~.+)"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Tree' shows name= & noname=yes with a fixed text, namely 'The tree does not have a name.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Trees') Picking this answer will delete the key name. (This is only shown if denotation=landmark | denotation=natural_monument | name~.+)",
+      "value": ""
+    },
+    {
+      "key": "noname",
+      "description": "Layer 'Tree' shows name= & noname=yes with a fixed text, namely 'The tree does not have a name.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Trees') (This is only shown if denotation=landmark | denotation=natural_monument | name~.+)",
+      "value": "yes"
+    },
+    {
+      "key": "heritage",
+      "description": "Layer 'Tree' shows heritage=4 & heritage:operator=OnroerendErfgoed with a fixed text, namely 'Registered as heritage by <i>Onroerend Erfgoed</i> Flanders' and allows to pick this as a default answer (in the mapcomplete.org theme 'Trees') (This is only shown if denotation=landmark | denotation=natural_monument)",
+      "value": "4"
+    },
+    {
+      "key": "heritage:operator",
+      "description": "Layer 'Tree' shows heritage=4 & heritage:operator=OnroerendErfgoed with a fixed text, namely 'Registered as heritage by <i>Onroerend Erfgoed</i> Flanders' and allows to pick this as a default answer (in the mapcomplete.org theme 'Trees') (This is only shown if denotation=landmark | denotation=natural_monument)",
+      "value": "OnroerendErfgoed"
+    },
+    {
+      "key": "heritage",
+      "description": "Layer 'Tree' shows heritage=4 & heritage:operator=aatl with a fixed text, namely 'Registered as heritage by <i>Direction du Patrimoine culturel</i> Brussels' and allows to pick this as a default answer (in the mapcomplete.org theme 'Trees') (This is only shown if denotation=landmark | denotation=natural_monument)",
+      "value": "4"
+    },
+    {
+      "key": "heritage:operator",
+      "description": "Layer 'Tree' shows heritage=4 & heritage:operator=aatl with a fixed text, namely 'Registered as heritage by <i>Direction du Patrimoine culturel</i> Brussels' and allows to pick this as a default answer (in the mapcomplete.org theme 'Trees') (This is only shown if denotation=landmark | denotation=natural_monument)",
+      "value": "aatl"
+    },
+    {
+      "key": "heritage",
+      "description": "Layer 'Tree' shows heritage=yes & heritage:operator= with a fixed text, namely 'Registered as heritage by a different organisation' and allows to pick this as a default answer (in the mapcomplete.org theme 'Trees') (This is only shown if denotation=landmark | denotation=natural_monument)",
+      "value": "yes"
+    },
+    {
+      "key": "heritage:operator",
+      "description": "Layer 'Tree' shows heritage=yes & heritage:operator= with a fixed text, namely 'Registered as heritage by a different organisation' and allows to pick this as a default answer (in the mapcomplete.org theme 'Trees') Picking this answer will delete the key heritage:operator. (This is only shown if denotation=landmark | denotation=natural_monument)",
+      "value": ""
+    },
+    {
+      "key": "heritage",
+      "description": "Layer 'Tree' shows heritage=no & heritage:operator= with a fixed text, namely 'Not registered as heritage' and allows to pick this as a default answer (in the mapcomplete.org theme 'Trees') (This is only shown if denotation=landmark | denotation=natural_monument)",
+      "value": "no"
+    },
+    {
+      "key": "heritage:operator",
+      "description": "Layer 'Tree' shows heritage=no & heritage:operator= with a fixed text, namely 'Not registered as heritage' and allows to pick this as a default answer (in the mapcomplete.org theme 'Trees') Picking this answer will delete the key heritage:operator. (This is only shown if denotation=landmark | denotation=natural_monument)",
+      "value": ""
+    },
+    {
+      "key": "heritage",
+      "description": "Layer 'Tree' shows heritage~.+ with a fixed text, namely 'Registered as heritage by a different organisation' (in the mapcomplete.org theme 'Trees') (This is only shown if denotation=landmark | denotation=natural_monument)"
+    },
+    {
+      "key": "ref:OnroerendErfgoed",
+      "description": "Layer 'Tree' shows and asks freeform values for key 'ref:OnroerendErfgoed' (in the mapcomplete.org theme 'Trees') (This is only shown if heritage=4 & heritage:operator=OnroerendErfgoed)"
+    },
+    {
+      "key": "wikidata",
+      "description": "Layer 'Tree' shows and asks freeform values for key 'wikidata' (in the mapcomplete.org theme 'Trees') (This is only shown if denotation=landmark | denotation=natural_monument | wikidata~.+)"
+    }
+  ]
+}

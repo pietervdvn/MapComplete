@@ -1,0 +1,169 @@
+{
+  "data_format": 1,
+  "project": {
+    "name": "MapComplete Fireplaces and barbeques",
+    "description": "Outdoor place to make a fire or a fixed barbecue in an official place",
+    "project_url": "https://mapcomplete.org/fireplace",
+    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "icon_url": "https://mapcomplete.org/assets/layers/assembly_point/fire.svg",
+    "contact_name": "Pieter Vander Vennet",
+    "contact_email": "pietervdvn@posteo.net"
+  },
+  "tags": [
+    {
+      "key": "leisure",
+      "description": "The MapComplete theme Fireplaces and barbeques has a layer Firepit showing features with this tag",
+      "value": "firepit"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Firepit' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Fireplaces and barbeques') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Firepit allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Firepit allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Firepit allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Firepit allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Firepit' shows access=yes with a fixed text, namely 'Public' and allows to pick this as a default answer (in the mapcomplete.org theme 'Fireplaces and barbeques')",
+      "value": "yes"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Firepit' shows access=no with a fixed text, namely 'No access' and allows to pick this as a default answer (in the mapcomplete.org theme 'Fireplaces and barbeques')",
+      "value": "no"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Firepit' shows access=private with a fixed text, namely 'Private' and allows to pick this as a default answer (in the mapcomplete.org theme 'Fireplaces and barbeques')",
+      "value": "private"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Firepit' shows access=permissive with a fixed text, namely 'Access until revoked' and allows to pick this as a default answer (in the mapcomplete.org theme 'Fireplaces and barbeques')",
+      "value": "permissive"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Firepit' shows access=customers with a fixed text, namely 'Access only for customers' and allows to pick this as a default answer (in the mapcomplete.org theme 'Fireplaces and barbeques')",
+      "value": "customers"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Firepit' shows access=permit with a fixed text, namely 'Access only for authorized' and allows to pick this as a default answer (in the mapcomplete.org theme 'Fireplaces and barbeques')",
+      "value": "permit"
+    },
+    {
+      "key": "seasonal",
+      "description": "Layer 'Firepit' shows seasonal=no with a fixed text, namely 'Available all around the year' and allows to pick this as a default answer (in the mapcomplete.org theme 'Fireplaces and barbeques')",
+      "value": "no"
+    },
+    {
+      "key": "seasonal",
+      "description": "Layer 'Firepit' shows seasonal=summer with a fixed text, namely 'Only available in summer' and allows to pick this as a default answer (in the mapcomplete.org theme 'Fireplaces and barbeques')",
+      "value": "summer"
+    },
+    {
+      "key": "seasonal",
+      "description": "Layer 'Firepit' shows seasonal=spring;summer;autumn with a fixed text, namely 'Closed during the winter' and allows to pick this as a default answer (in the mapcomplete.org theme 'Fireplaces and barbeques')",
+      "value": "spring;summer;autumn"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Fireplaces and barbeques has a layer BBQ showing features with this tag",
+      "value": "bbq"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'BBQ' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Fireplaces and barbeques') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'BBQ allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'BBQ allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'BBQ allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'BBQ allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'BBQ' shows access=yes with a fixed text, namely 'Public' and allows to pick this as a default answer (in the mapcomplete.org theme 'Fireplaces and barbeques')",
+      "value": "yes"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'BBQ' shows access=no with a fixed text, namely 'No access' and allows to pick this as a default answer (in the mapcomplete.org theme 'Fireplaces and barbeques')",
+      "value": "no"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'BBQ' shows access=private with a fixed text, namely 'Private' and allows to pick this as a default answer (in the mapcomplete.org theme 'Fireplaces and barbeques')",
+      "value": "private"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'BBQ' shows access=permissive with a fixed text, namely 'Access until revoked' and allows to pick this as a default answer (in the mapcomplete.org theme 'Fireplaces and barbeques')",
+      "value": "permissive"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'BBQ' shows access=customers with a fixed text, namely 'Access only for customers' and allows to pick this as a default answer (in the mapcomplete.org theme 'Fireplaces and barbeques')",
+      "value": "customers"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'BBQ' shows access=permit with a fixed text, namely 'Access only for authorized persons' and allows to pick this as a default answer (in the mapcomplete.org theme 'Fireplaces and barbeques')",
+      "value": "permit"
+    },
+    {
+      "key": "covered",
+      "description": "Layer 'BBQ' shows covered=no with a fixed text, namely 'The grill is not covered' and allows to pick this as a default answer (in the mapcomplete.org theme 'Fireplaces and barbeques')",
+      "value": "no"
+    },
+    {
+      "key": "covered",
+      "description": "Layer 'BBQ' shows covered=yes with a fixed text, namely 'The grill is covered' and allows to pick this as a default answer (in the mapcomplete.org theme 'Fireplaces and barbeques')",
+      "value": "yes"
+    },
+    {
+      "key": "fuel",
+      "description": "Layer 'BBQ' shows fuel=wood with a fixed text, namely 'Wood' and allows to pick this as a default answer (in the mapcomplete.org theme 'Fireplaces and barbeques')",
+      "value": "wood"
+    },
+    {
+      "key": "fuel",
+      "description": "Layer 'BBQ' shows fuel=charcoal with a fixed text, namely 'Charcoal' and allows to pick this as a default answer (in the mapcomplete.org theme 'Fireplaces and barbeques')",
+      "value": "charcoal"
+    },
+    {
+      "key": "fuel",
+      "description": "Layer 'BBQ' shows fuel=electric with a fixed text, namely 'Electric' and allows to pick this as a default answer (in the mapcomplete.org theme 'Fireplaces and barbeques')",
+      "value": "electric"
+    },
+    {
+      "key": "fuel",
+      "description": "Layer 'BBQ' shows fuel=gas with a fixed text, namely 'Gas' and allows to pick this as a default answer (in the mapcomplete.org theme 'Fireplaces and barbeques')",
+      "value": "gas"
+    }
+  ]
+}

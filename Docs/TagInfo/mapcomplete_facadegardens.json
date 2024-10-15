@@ -1,0 +1,111 @@
+{
+  "data_format": 1,
+  "project": {
+    "name": "MapComplete Facade gardens",
+    "description": "This map shows facade gardens with pictures and useful info about orientation, sunshine and plant types.",
+    "project_url": "https://mapcomplete.org/facadegardens",
+    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "icon_url": "https://mapcomplete.org/assets/themes/facadegardens/geveltuin.svg",
+    "contact_name": "Pieter Vander Vennet",
+    "contact_email": "pietervdvn@posteo.net"
+  },
+  "tags": [
+    {
+      "key": "leisure",
+      "description": "The MapComplete theme Facade gardens has a layer Facade gardens showing features with this tag",
+      "value": "garden"
+    },
+    {
+      "key": "garden:type",
+      "description": "The MapComplete theme Facade gardens has a layer Facade gardens showing features with this tag",
+      "value": "facade_garden"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Facade gardens' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Facade gardens') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Facade gardens allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Facade gardens allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Facade gardens allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Facade gardens allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "direction",
+      "description": "Layer 'Facade gardens' shows and asks freeform values for key 'direction' (in the mapcomplete.org theme 'Facade gardens')"
+    },
+    {
+      "key": "direct_sunlight",
+      "description": "Layer 'Facade gardens' shows direct_sunlight=yes with a fixed text, namely 'The garden is in full sun' and allows to pick this as a default answer (in the mapcomplete.org theme 'Facade gardens')",
+      "value": "yes"
+    },
+    {
+      "key": "direct_sunlight",
+      "description": "Layer 'Facade gardens' shows direct_sunlight=partial with a fixed text, namely 'The garden is in partial shade' and allows to pick this as a default answer (in the mapcomplete.org theme 'Facade gardens')",
+      "value": "partial"
+    },
+    {
+      "key": "direct_sunlight",
+      "description": "Layer 'Facade gardens' shows direct_sunlight=no with a fixed text, namely 'The garden is in the shade' and allows to pick this as a default answer (in the mapcomplete.org theme 'Facade gardens')",
+      "value": "no"
+    },
+    {
+      "key": "rain_barrel",
+      "description": "Layer 'Facade gardens' shows rain_barrel=yes with a fixed text, namely 'There is a rain barrel' and allows to pick this as a default answer (in the mapcomplete.org theme 'Facade gardens')",
+      "value": "yes"
+    },
+    {
+      "key": "rain_barrel",
+      "description": "Layer 'Facade gardens' shows rain_barrel=no with a fixed text, namely 'There is no rain barrel' and allows to pick this as a default answer (in the mapcomplete.org theme 'Facade gardens')",
+      "value": "no"
+    },
+    {
+      "key": "start_date",
+      "description": "Layer 'Facade gardens' shows and asks freeform values for key 'start_date' (in the mapcomplete.org theme 'Facade gardens')"
+    },
+    {
+      "key": "edible",
+      "description": "Layer 'Facade gardens' shows edible=yes with a fixed text, namely 'There are edible plants' and allows to pick this as a default answer (in the mapcomplete.org theme 'Facade gardens')",
+      "value": "yes"
+    },
+    {
+      "key": "edible",
+      "description": "Layer 'Facade gardens' shows edible=no with a fixed text, namely 'There are no edible plants' and allows to pick this as a default answer (in the mapcomplete.org theme 'Facade gardens')",
+      "value": "no"
+    },
+    {
+      "key": "plant",
+      "description": "Layer 'Facade gardens' shows plant=vine with a fixed text, namely 'There are vines' and allows to pick this as a default answer (in the mapcomplete.org theme 'Facade gardens')",
+      "value": "vine"
+    },
+    {
+      "key": "plant",
+      "description": "Layer 'Facade gardens' shows plant=flower with a fixed text, namely 'There are flowering plants' and allows to pick this as a default answer (in the mapcomplete.org theme 'Facade gardens')",
+      "value": "flower"
+    },
+    {
+      "key": "plant",
+      "description": "Layer 'Facade gardens' shows plant=shrub with a fixed text, namely 'There are shrubs' and allows to pick this as a default answer (in the mapcomplete.org theme 'Facade gardens')",
+      "value": "shrub"
+    },
+    {
+      "key": "plant",
+      "description": "Layer 'Facade gardens' shows plant=groundcover with a fixed text, namely 'There are groundcovering plants' and allows to pick this as a default answer (in the mapcomplete.org theme 'Facade gardens')",
+      "value": "groundcover"
+    },
+    {
+      "key": "description",
+      "description": "Layer 'Facade gardens' shows and asks freeform values for key 'description' (in the mapcomplete.org theme 'Facade gardens')"
+    }
+  ]
+}

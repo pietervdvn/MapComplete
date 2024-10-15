@@ -1,0 +1,1149 @@
+{
+  "data_format": 1,
+  "project": {
+    "name": "MapComplete Restaurants and fast food",
+    "description": "Restaurants and fast food",
+    "project_url": "https://mapcomplete.org/food",
+    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "icon_url": "https://mapcomplete.org/assets/layers/food/restaurant.svg",
+    "contact_name": "Pieter Vander Vennet",
+    "contact_email": "pietervdvn@posteo.net"
+  },
+  "tags": [
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Restaurants and fast food has a layer Restaurants and fast food showing features with this tag",
+      "value": "fast_food"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Restaurants and fast food has a layer Restaurants and fast food showing features with this tag",
+      "value": "restaurant"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Restaurants and fast food' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Restaurants and fast food' shows and asks freeform values for key 'name' (in the mapcomplete.org theme 'Restaurants and fast food')"
+    },
+    {
+      "key": "amenity",
+      "description": "Layer 'Restaurants and fast food' shows amenity=fast_food with a fixed text, namely 'This is a fast-food business, focused on fast service. If seating is available, it is rather limited and functional.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "fast_food"
+    },
+    {
+      "key": "amenity",
+      "description": "Layer 'Restaurants and fast food' shows amenity=restaurant with a fixed text, namely 'A <b>restaurant</b>, focused on creating a nice experience where one is served at the table' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "restaurant"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Restaurants and fast food' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Restaurants and fast food')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Restaurants and fast food' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "closed"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Restaurants and fast food' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Restaurants and fast food')"
+    },
+    {
+      "key": "contact:website",
+      "description": "Layer 'Restaurants and fast food' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the mapcomplete.org theme 'Restaurants and fast food')"
+    },
+    {
+      "key": "email",
+      "description": "Layer 'Restaurants and fast food' shows and asks freeform values for key 'email' (in the mapcomplete.org theme 'Restaurants and fast food')"
+    },
+    {
+      "key": "contact:email",
+      "description": "Layer 'Restaurants and fast food' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Restaurants and fast food')"
+    },
+    {
+      "key": "operator:email",
+      "description": "Layer 'Restaurants and fast food' shows operator:email~.+ with a fixed text, namely '<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>' (in the mapcomplete.org theme 'Restaurants and fast food')"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'Restaurants and fast food' shows and asks freeform values for key 'phone' (in the mapcomplete.org theme 'Restaurants and fast food')"
+    },
+    {
+      "key": "contact:phone",
+      "description": "Layer 'Restaurants and fast food' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Restaurants and fast food')"
+    },
+    {
+      "key": "payment:cash",
+      "description": "Layer 'Restaurants and fast food' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:cards",
+      "description": "Layer 'Restaurants and fast food' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:qr_code",
+      "description": "Layer 'Restaurants and fast food' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "yes"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Restaurants and fast food' shows and asks freeform values for key 'level' (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if repeat_on=)"
+    },
+    {
+      "key": "location",
+      "description": "Layer 'Restaurants and fast food' shows location=underground with a fixed text, namely 'Located underground' (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if repeat_on=)",
+      "value": "underground"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Restaurants and fast food' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if repeat_on=)",
+      "value": "0"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Restaurants and fast food' shows level= with a fixed text, namely 'Located on the ground floor' (in the mapcomplete.org theme 'Restaurants and fast food') Picking this answer will delete the key level. (This is only shown if repeat_on=)",
+      "value": ""
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Restaurants and fast food' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if repeat_on=)",
+      "value": "1"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Restaurants and fast food' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if repeat_on=)",
+      "value": "-1"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Restaurants and fast food' shows wheelchair=designated with a fixed text, namely 'This place is specially adapted for wheelchair users' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "designated"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Restaurants and fast food' shows wheelchair=yes with a fixed text, namely 'This place is easily reachable with a wheelchair' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "yes"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Restaurants and fast food' shows wheelchair=limited with a fixed text, namely 'It is possible to reach this place in a wheelchair, but it is not easy' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "limited"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Restaurants and fast food' shows wheelchair=no with a fixed text, namely 'This place is not reachable with a wheelchair' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "no"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows and asks freeform values for key 'cuisine' (in the mapcomplete.org theme 'Restaurants and fast food')"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=pizza with a fixed text, namely 'Pizzeria' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "pizza"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=friture with a fixed text, namely 'Friture' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "friture"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=pasta with a fixed text, namely 'Serves mainly pasta' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "pasta"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=kebab with a fixed text, namely 'Kebab shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "kebab"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=sandwich with a fixed text, namely 'Sandwich shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "sandwich"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=burger with a fixed text, namely 'Burgersrestaurant' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "burger"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=sushi with a fixed text, namely 'Sushi restaurant' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "sushi"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=coffee with a fixed text, namely 'Coffeebar' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "coffee"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=italian with a fixed text, namely 'Italian restaurant (which serves more than pasta and pizza)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "italian"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=french with a fixed text, namely 'French restaurant' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "french"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=chinese with a fixed text, namely 'Chinese' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "chinese"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=greek with a fixed text, namely 'Greek' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "greek"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=indian with a fixed text, namely 'Indian' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "indian"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=turkish with a fixed text, namely 'Turkish restaurant' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "turkish"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=thai with a fixed text, namely 'Thai restaurant' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "thai"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=mexican   with a fixed text, namely 'Mexican dishes are served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "mexican  "
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=japanese   with a fixed text, namely 'Japanese dishes are served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "japanese  "
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=chicken   with a fixed text, namely 'Chicken based dishes are served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "chicken  "
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=seafood   with a fixed text, namely 'Seafood dishes are served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "seafood  "
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Restaurants and fast food shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Restaurants and fast food shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Restaurants and fast food shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Restaurants and fast food shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "website:menu",
+      "description": "Layer 'Restaurants and fast food' shows and asks freeform values for key 'website:menu' (in the mapcomplete.org theme 'Restaurants and fast food')"
+    },
+    {
+      "key": "reservation",
+      "description": "Layer 'Restaurants and fast food' shows reservation=required with a fixed text, namely 'A reservation is required at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if takeaway!=only)",
+      "value": "required"
+    },
+    {
+      "key": "reservation",
+      "description": "Layer 'Restaurants and fast food' shows reservation=recommended with a fixed text, namely 'A reservation is not required, but still recommended to make sure you get a table' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if takeaway!=only)",
+      "value": "recommended"
+    },
+    {
+      "key": "reservation",
+      "description": "Layer 'Restaurants and fast food' shows reservation=yes with a fixed text, namely 'Reservation is possible at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if takeaway!=only)",
+      "value": "yes"
+    },
+    {
+      "key": "reservation",
+      "description": "Layer 'Restaurants and fast food' shows reservation=no with a fixed text, namely 'Reservation is not possible at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if takeaway!=only)",
+      "value": "no"
+    },
+    {
+      "key": "takeaway",
+      "description": "Layer 'Restaurants and fast food' shows takeaway=only with a fixed text, namely 'This is a take-away only business' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "only"
+    },
+    {
+      "key": "takeaway",
+      "description": "Layer 'Restaurants and fast food' shows takeaway=yes with a fixed text, namely 'Take-away is possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "yes"
+    },
+    {
+      "key": "takeaway",
+      "description": "Layer 'Restaurants and fast food' shows takeaway=no with a fixed text, namely 'Take-away is not possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "no"
+    },
+    {
+      "key": "delivery",
+      "description": "Layer 'Restaurants and fast food' shows delivery=yes with a fixed text, namely 'This business does home delivery (possibly via a third party)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "yes"
+    },
+    {
+      "key": "delivery",
+      "description": "Layer 'Restaurants and fast food' shows delivery=no with a fixed text, namely 'This business does not deliver at home' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "no"
+    },
+    {
+      "key": "diet:vegetarian",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegetarian=no with a fixed text, namely 'No vegetarian options are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if cuisine!=friture)",
+      "value": "no"
+    },
+    {
+      "key": "diet:vegetarian",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegetarian=limited with a fixed text, namely 'Some vegetarian options are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if cuisine!=friture)",
+      "value": "limited"
+    },
+    {
+      "key": "diet:vegetarian",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegetarian=yes with a fixed text, namely 'Vegetarian options are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if cuisine!=friture)",
+      "value": "yes"
+    },
+    {
+      "key": "diet:vegetarian",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegetarian=only with a fixed text, namely 'All dishes are vegetarian' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if cuisine!=friture)",
+      "value": "only"
+    },
+    {
+      "key": "diet:vegetarian",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegetarian=on_demand with a fixed text, namely 'Some dishes might be adapted to a vegetarian version, but this should be demanded' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if cuisine!=friture)",
+      "value": "on_demand"
+    },
+    {
+      "key": "diet:vegan",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegan=no with a fixed text, namely 'No vegan options available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if cuisine!=friture)",
+      "value": "no"
+    },
+    {
+      "key": "diet:vegan",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegan=limited with a fixed text, namely 'Some vegan options are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if cuisine!=friture)",
+      "value": "limited"
+    },
+    {
+      "key": "diet:vegan",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegan=yes with a fixed text, namely 'Vegan options are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if cuisine!=friture)",
+      "value": "yes"
+    },
+    {
+      "key": "diet:vegan",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegan=only with a fixed text, namely 'All dishes are vegan' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if cuisine!=friture)",
+      "value": "only"
+    },
+    {
+      "key": "diet:vegan",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegan=on_demand with a fixed text, namely 'Some dishes might be adapted to a vegan version if asked for' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if cuisine!=friture)",
+      "value": "on_demand"
+    },
+    {
+      "key": "diet:halal",
+      "description": "Layer 'Restaurants and fast food' shows diet:halal=no with a fixed text, namely 'There are no halal options available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if cuisine!=friture)",
+      "value": "no"
+    },
+    {
+      "key": "diet:halal",
+      "description": "Layer 'Restaurants and fast food' shows diet:halal=limited with a fixed text, namely 'There is a small halal menu' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if cuisine!=friture)",
+      "value": "limited"
+    },
+    {
+      "key": "diet:halal",
+      "description": "Layer 'Restaurants and fast food' shows diet:halal=yes with a fixed text, namely 'There is a halal menu' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if cuisine!=friture)",
+      "value": "yes"
+    },
+    {
+      "key": "diet:halal",
+      "description": "Layer 'Restaurants and fast food' shows diet:halal=only with a fixed text, namely 'Only halal options are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if cuisine!=friture)",
+      "value": "only"
+    },
+    {
+      "key": "organic",
+      "description": "Layer 'Restaurants and fast food' shows organic=no with a fixed text, namely 'There are no organic options available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if cuisine!=friture)",
+      "value": "no"
+    },
+    {
+      "key": "organic",
+      "description": "Layer 'Restaurants and fast food' shows organic=yes with a fixed text, namely 'There is an organic menu' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if cuisine!=friture)",
+      "value": "yes"
+    },
+    {
+      "key": "organic",
+      "description": "Layer 'Restaurants and fast food' shows organic=only with a fixed text, namely 'Only organic options are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if cuisine!=friture)",
+      "value": "only"
+    },
+    {
+      "key": "diet:vegetarian",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegetarian=only with a fixed text, namely 'Serves only vegetarian snacks and burgers' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if cuisine=friture)",
+      "value": "only"
+    },
+    {
+      "key": "diet:vegetarian",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegetarian=yes with a fixed text, namely 'Vegetarian snacks are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if cuisine=friture)",
+      "value": "yes"
+    },
+    {
+      "key": "diet:vegetarian",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegetarian=limited with a fixed text, namely 'Only a small selection of snacks are vegetarian' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if cuisine=friture)",
+      "value": "limited"
+    },
+    {
+      "key": "diet:vegetarian",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegetarian=no with a fixed text, namely 'No vegetarian snacks are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if cuisine=friture)",
+      "value": "no"
+    },
+    {
+      "key": "diet:vegan",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegan=only with a fixed text, namely 'Serves only vegan snacks and burgers' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if cuisine=friture)",
+      "value": "only"
+    },
+    {
+      "key": "diet:vegan",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegan=yes with a fixed text, namely 'Vegan snacks are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if cuisine=friture)",
+      "value": "yes"
+    },
+    {
+      "key": "diet:vegan",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegan=limited with a fixed text, namely 'A small selection of vegan snacks are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if cuisine=friture)",
+      "value": "limited"
+    },
+    {
+      "key": "diet:vegan",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegan=no with a fixed text, namely 'No vegan snacks are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if cuisine=friture)",
+      "value": "no"
+    },
+    {
+      "key": "organic",
+      "description": "Layer 'Restaurants and fast food' shows organic=yes with a fixed text, namely 'Organic snacks are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if cuisine=friture)",
+      "value": "yes"
+    },
+    {
+      "key": "organic",
+      "description": "Layer 'Restaurants and fast food' shows organic=no with a fixed text, namely 'No organic snacks are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if cuisine=friture)",
+      "value": "no"
+    },
+    {
+      "key": "organic",
+      "description": "Layer 'Restaurants and fast food' shows organic=only with a fixed text, namely 'Only organic snacks are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if cuisine=friture)",
+      "value": "only"
+    },
+    {
+      "key": "friture:oil",
+      "description": "Layer 'Restaurants and fast food' shows friture:oil=vegetable with a fixed text, namely 'The frying is done with vegetable oil' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if cuisine=friture)",
+      "value": "vegetable"
+    },
+    {
+      "key": "friture:oil",
+      "description": "Layer 'Restaurants and fast food' shows friture:oil=animal with a fixed text, namely 'The frying is done with animal oil' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if cuisine=friture)",
+      "value": "animal"
+    },
+    {
+      "key": "reusable_packaging:accept",
+      "description": "Layer 'Restaurants and fast food' shows reusable_packaging:accept=yes with a fixed text, namely 'You can bring <b>your own containers</b> to get your order, saving on single-use packaging material and thus waste' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if cuisine=friture)",
+      "value": "yes"
+    },
+    {
+      "key": "reusable_packaging:accept",
+      "description": "Layer 'Restaurants and fast food' shows reusable_packaging:accept=no with a fixed text, namely 'Bringing your own container is <b>not allowed</b>' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if cuisine=friture)",
+      "value": "no"
+    },
+    {
+      "key": "reusable_packaging:accept",
+      "description": "Layer 'Restaurants and fast food' shows reusable_packaging:accept=only with a fixed text, namely 'You <b>must</b> bring your own container to order here.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if cuisine=friture)",
+      "value": "only"
+    },
+    {
+      "key": "diet:sugar_free",
+      "description": "Layer 'Restaurants and fast food' shows diet:sugar_free=only with a fixed text, namely 'This shop <b>only sells sugar free</b> products' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "only"
+    },
+    {
+      "key": "diet:sugar_free",
+      "description": "Layer 'Restaurants and fast food' shows diet:sugar_free=yes with a fixed text, namely 'This shop has a big sugar free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "yes"
+    },
+    {
+      "key": "diet:sugar_free",
+      "description": "Layer 'Restaurants and fast food' shows diet:sugar_free=limited with a fixed text, namely 'This shop has a <b>limited sugar free</b> offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "limited"
+    },
+    {
+      "key": "diet:sugar_free",
+      "description": "Layer 'Restaurants and fast food' shows diet:sugar_free=no with a fixed text, namely 'This shop has no sugar free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "no"
+    },
+    {
+      "key": "diet:gluten_free",
+      "description": "Layer 'Restaurants and fast food' shows diet:gluten_free=only with a fixed text, namely 'This shop <b>only sells gluten free</b> products' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "only"
+    },
+    {
+      "key": "diet:gluten_free",
+      "description": "Layer 'Restaurants and fast food' shows diet:gluten_free=yes with a fixed text, namely 'This shop has a big gluten free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "yes"
+    },
+    {
+      "key": "diet:gluten_free",
+      "description": "Layer 'Restaurants and fast food' shows diet:gluten_free=limited with a fixed text, namely 'This shop has a <b>limited gluten free</b> offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "limited"
+    },
+    {
+      "key": "diet:gluten_free",
+      "description": "Layer 'Restaurants and fast food' shows diet:gluten_free=no with a fixed text, namely 'This shop has no gluten free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "no"
+    },
+    {
+      "key": "diet:lactose_free",
+      "description": "Layer 'Restaurants and fast food' shows diet:lactose_free=only with a fixed text, namely '<b>Only sells lactose free</b> products' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "only"
+    },
+    {
+      "key": "diet:lactose_free",
+      "description": "Layer 'Restaurants and fast food' shows diet:lactose_free=yes with a fixed text, namely 'Big lactose free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "yes"
+    },
+    {
+      "key": "diet:lactose_free",
+      "description": "Layer 'Restaurants and fast food' shows diet:lactose_free=limited with a fixed text, namely '<b>Limited lactose free</b> offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "limited"
+    },
+    {
+      "key": "diet:lactose_free",
+      "description": "Layer 'Restaurants and fast food' shows diet:lactose_free=no with a fixed text, namely 'No lactose free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "no"
+    },
+    {
+      "key": "smoking",
+      "description": "Layer 'Restaurants and fast food' shows smoking=yes with a fixed text, namely 'Smoking is <b>allowed</b>' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if _country!~^(al|be)$)",
+      "value": "yes"
+    },
+    {
+      "key": "smoking",
+      "description": "Layer 'Restaurants and fast food' shows smoking=no with a fixed text, namely 'Smoking is <b>not allowed</b>' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if _country!~^(al|be)$)",
+      "value": "no"
+    },
+    {
+      "key": "smoking",
+      "description": "Layer 'Restaurants and fast food' shows smoking=outside with a fixed text, namely 'Smoking is <b>allowed outside</b>.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if _country!~^(al|be)$)",
+      "value": "outside"
+    },
+    {
+      "key": "service:electricity",
+      "description": "Layer 'Restaurants and fast food' shows service:electricity=yes with a fixed text, namely 'There are plenty of domestic sockets available to customers seated indoors, where they can charge their electronics' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "yes"
+    },
+    {
+      "key": "service:electricity",
+      "description": "Layer 'Restaurants and fast food' shows service:electricity=limited with a fixed text, namely 'There are a few domestic sockets available to customers seated indoors, where they can charge their electronics' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "limited"
+    },
+    {
+      "key": "service:electricity",
+      "description": "Layer 'Restaurants and fast food' shows service:electricity=ask with a fixed text, namely 'There are no sockets available indoors to customers, but charging might be possible if the staff is asked' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "ask"
+    },
+    {
+      "key": "service:electricity",
+      "description": "Layer 'Restaurants and fast food' shows service:electricity=no with a fixed text, namely 'There are a no domestic sockets available to customers seated indoors' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "no"
+    },
+    {
+      "key": "dog",
+      "description": "Layer 'Restaurants and fast food' shows dog=yes with a fixed text, namely 'Dogs are allowed' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "yes"
+    },
+    {
+      "key": "dog",
+      "description": "Layer 'Restaurants and fast food' shows dog=no with a fixed text, namely 'Dogs are <b>not</b> allowed' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "no"
+    },
+    {
+      "key": "dog",
+      "description": "Layer 'Restaurants and fast food' shows dog=leashed with a fixed text, namely 'Dogs are allowed, but they have to be leashed' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "leashed"
+    },
+    {
+      "key": "dog",
+      "description": "Layer 'Restaurants and fast food' shows dog=unleashed with a fixed text, namely 'Dogs are allowed and can run around freely' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "unleashed"
+    },
+    {
+      "key": "dog",
+      "description": "Layer 'Restaurants and fast food' shows dog=outside with a fixed text, namely 'Dogs are allowed only outside' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "outside"
+    },
+    {
+      "key": "internet_access",
+      "description": "Layer 'Restaurants and fast food' shows internet_access=wlan with a fixed text, namely 'This place offers wireless internet access' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "wlan"
+    },
+    {
+      "key": "internet_access",
+      "description": "Layer 'Restaurants and fast food' shows internet_access=no with a fixed text, namely 'This place <b>does not</b> offer internet access' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "no"
+    },
+    {
+      "key": "internet_access",
+      "description": "Layer 'Restaurants and fast food' shows internet_access=yes with a fixed text, namely 'This place offers internet access' (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "yes"
+    },
+    {
+      "key": "internet_access",
+      "description": "Layer 'Restaurants and fast food' shows internet_access=terminal with a fixed text, namely 'This place offers internet access via a terminal or computer' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "terminal"
+    },
+    {
+      "key": "internet_access",
+      "description": "Layer 'Restaurants and fast food' shows internet_access=wired with a fixed text, namely 'This place offers wired internet access' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "wired"
+    },
+    {
+      "key": "internet_access",
+      "description": "Layer 'Restaurants and fast food' shows internet_access=terminal;wifi with a fixed text, namely 'This place offers both wireless internet and internet access via a terminal or computer' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "terminal;wifi"
+    },
+    {
+      "key": "internet_access:fee",
+      "description": "Layer 'Restaurants and fast food' shows internet_access:fee=yes with a fixed text, namely 'There is a fee for the internet access at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if internet_access!=no & internet_access~.+)",
+      "value": "yes"
+    },
+    {
+      "key": "internet_access:fee",
+      "description": "Layer 'Restaurants and fast food' shows internet_access:fee=no with a fixed text, namely 'Internet access is free at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if internet_access!=no & internet_access~.+)",
+      "value": "no"
+    },
+    {
+      "key": "internet_access:fee",
+      "description": "Layer 'Restaurants and fast food' shows internet_access:fee=customers with a fixed text, namely 'Internet access is free at this place, for customers only' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if internet_access!=no & internet_access~.+)",
+      "value": "customers"
+    },
+    {
+      "key": "internet_access:ssid",
+      "description": "Layer 'Restaurants and fast food' shows and asks freeform values for key 'internet_access:ssid' (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if internet_access~^(.*wlan.*)$)"
+    },
+    {
+      "key": "internet_access:ssid",
+      "description": "Layer 'Restaurants and fast food' shows internet_access:ssid=Telekom with a fixed text, namely 'Telekom' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if internet_access~^(.*wlan.*)$)",
+      "value": "Telekom"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Restaurants and fast food has a layer Ice cream parlors showing features with this tag",
+      "value": "ice_cream"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Ice cream parlors' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Ice cream parlors allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Ice cream parlors allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Ice cream parlors allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Ice cream parlors allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Ice cream parlors' shows and asks freeform values for key 'name' (in the mapcomplete.org theme 'Restaurants and fast food')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Ice cream parlors' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Restaurants and fast food')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Ice cream parlors' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "closed"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'Ice cream parlors' shows and asks freeform values for key 'phone' (in the mapcomplete.org theme 'Restaurants and fast food')"
+    },
+    {
+      "key": "contact:phone",
+      "description": "Layer 'Ice cream parlors' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Restaurants and fast food')"
+    },
+    {
+      "key": "email",
+      "description": "Layer 'Ice cream parlors' shows and asks freeform values for key 'email' (in the mapcomplete.org theme 'Restaurants and fast food')"
+    },
+    {
+      "key": "contact:email",
+      "description": "Layer 'Ice cream parlors' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Restaurants and fast food')"
+    },
+    {
+      "key": "operator:email",
+      "description": "Layer 'Ice cream parlors' shows operator:email~.+ with a fixed text, namely '<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>' (in the mapcomplete.org theme 'Restaurants and fast food')"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Ice cream parlors' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Restaurants and fast food')"
+    },
+    {
+      "key": "contact:website",
+      "description": "Layer 'Ice cream parlors' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the mapcomplete.org theme 'Restaurants and fast food')"
+    },
+    {
+      "key": "diet:sugar_free",
+      "description": "Layer 'Ice cream parlors' shows diet:sugar_free=only with a fixed text, namely 'This shop <b>only sells sugar free</b> products' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "only"
+    },
+    {
+      "key": "diet:sugar_free",
+      "description": "Layer 'Ice cream parlors' shows diet:sugar_free=yes with a fixed text, namely 'This shop has a big sugar free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "yes"
+    },
+    {
+      "key": "diet:sugar_free",
+      "description": "Layer 'Ice cream parlors' shows diet:sugar_free=limited with a fixed text, namely 'This shop has a <b>limited sugar free</b> offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "limited"
+    },
+    {
+      "key": "diet:sugar_free",
+      "description": "Layer 'Ice cream parlors' shows diet:sugar_free=no with a fixed text, namely 'This shop has no sugar free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "no"
+    },
+    {
+      "key": "diet:lactose_free",
+      "description": "Layer 'Ice cream parlors' shows diet:lactose_free=only with a fixed text, namely '<b>Only sells lactose free</b> products' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "only"
+    },
+    {
+      "key": "diet:lactose_free",
+      "description": "Layer 'Ice cream parlors' shows diet:lactose_free=yes with a fixed text, namely 'Big lactose free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "yes"
+    },
+    {
+      "key": "diet:lactose_free",
+      "description": "Layer 'Ice cream parlors' shows diet:lactose_free=limited with a fixed text, namely '<b>Limited lactose free</b> offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "limited"
+    },
+    {
+      "key": "diet:lactose_free",
+      "description": "Layer 'Ice cream parlors' shows diet:lactose_free=no with a fixed text, namely 'No lactose free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "no"
+    },
+    {
+      "key": "diet:gluten_free",
+      "description": "Layer 'Ice cream parlors' shows diet:gluten_free=only with a fixed text, namely 'This shop <b>only sells gluten free</b> products' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "only"
+    },
+    {
+      "key": "diet:gluten_free",
+      "description": "Layer 'Ice cream parlors' shows diet:gluten_free=yes with a fixed text, namely 'This shop has a big gluten free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "yes"
+    },
+    {
+      "key": "diet:gluten_free",
+      "description": "Layer 'Ice cream parlors' shows diet:gluten_free=limited with a fixed text, namely 'This shop has a <b>limited gluten free</b> offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "limited"
+    },
+    {
+      "key": "diet:gluten_free",
+      "description": "Layer 'Ice cream parlors' shows diet:gluten_free=no with a fixed text, namely 'This shop has no gluten free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "no"
+    },
+    {
+      "key": "diet:vegan",
+      "description": "Layer 'Ice cream parlors' shows diet:vegan=only with a fixed text, namely 'This place <b>only sells vegan</b> products' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "only"
+    },
+    {
+      "key": "diet:vegan",
+      "description": "Layer 'Ice cream parlors' shows diet:vegan=yes with a fixed text, namely 'This shop has a big vegan offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "yes"
+    },
+    {
+      "key": "diet:vegan",
+      "description": "Layer 'Ice cream parlors' shows diet:vegan=limited with a fixed text, namely 'This shop has a <b>limited vegan</b> offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "limited"
+    },
+    {
+      "key": "diet:vegan",
+      "description": "Layer 'Ice cream parlors' shows diet:vegan=no with a fixed text, namely 'This shop has no vegan offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "no"
+    },
+    {
+      "key": "payment:cash",
+      "description": "Layer 'Ice cream parlors' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:cards",
+      "description": "Layer 'Ice cream parlors' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:qr_code",
+      "description": "Layer 'Ice cream parlors' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "yes"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Ice cream parlors' shows wheelchair=designated with a fixed text, namely 'This place is specially adapted for wheelchair users' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "designated"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Ice cream parlors' shows wheelchair=yes with a fixed text, namely 'This place is easily reachable with a wheelchair' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "yes"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Ice cream parlors' shows wheelchair=limited with a fixed text, namely 'It is possible to reach this place in a wheelchair, but it is not easy' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "limited"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Ice cream parlors' shows wheelchair=no with a fixed text, namely 'This place is not reachable with a wheelchair' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "no"
+    },
+    {
+      "key": "leisure",
+      "description": "The MapComplete theme Restaurants and fast food has a layer Outdoor Seating showing features with this tag",
+      "value": "outdoor_seating"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Outdoor Seating' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Outdoor Seating allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Outdoor Seating allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Outdoor Seating allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Outdoor Seating allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Outdoor Seating' shows access=yes with a fixed text, namely 'Anyone can use this outdoor seating area.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "yes"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Outdoor Seating' shows access=customers with a fixed text, namely 'Only customers can use this outdoor seating area.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "customers"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Outdoor Seating' shows access=private with a fixed text, namely 'This outdoor seating area is private.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "private"
+    },
+    {
+      "key": "seasonal",
+      "description": "Layer 'Outdoor Seating' shows seasonal=no with a fixed text, namely 'This outdoor seating area is available all year round.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "no"
+    },
+    {
+      "key": "seasonal",
+      "description": "Layer 'Outdoor Seating' shows seasonal=spring with a fixed text, namely 'This outdoor seating area is available in spring.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "spring"
+    },
+    {
+      "key": "seasonal",
+      "description": "Layer 'Outdoor Seating' shows seasonal=summer with a fixed text, namely 'This outdoor seating area is available in summer.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "summer"
+    },
+    {
+      "key": "seasonal",
+      "description": "Layer 'Outdoor Seating' shows seasonal=autumn with a fixed text, namely 'This outdoor seating area is available in autumn.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "autumn"
+    },
+    {
+      "key": "seasonal",
+      "description": "Layer 'Outdoor Seating' shows seasonal=winter with a fixed text, namely 'This outdoor seating area is available in winter.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "winter"
+    },
+    {
+      "key": "seasonal",
+      "description": "Layer 'Outdoor Seating' shows seasonal=dry_season with a fixed text, namely 'This outdoor seating area is available in the dry season.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "dry_season"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Outdoor Seating' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Restaurants and fast food')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Outdoor Seating' shows opening_hours=24/7 with a fixed text, namely '24/7 opened (including holidays)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "24/7"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Outdoor Seating' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "closed"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Outdoor Seating' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Restaurants and fast food')"
+    },
+    {
+      "key": "contact:website",
+      "description": "Layer 'Outdoor Seating' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the mapcomplete.org theme 'Restaurants and fast food')"
+    },
+    {
+      "key": "internet_access",
+      "description": "Layer 'Outdoor Seating' shows internet_access=wlan with a fixed text, namely 'This place offers wireless internet access' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "wlan"
+    },
+    {
+      "key": "internet_access",
+      "description": "Layer 'Outdoor Seating' shows internet_access=no with a fixed text, namely 'This place <b>does not</b> offer internet access' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "no"
+    },
+    {
+      "key": "internet_access",
+      "description": "Layer 'Outdoor Seating' shows internet_access=yes with a fixed text, namely 'This place offers internet access' (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "yes"
+    },
+    {
+      "key": "internet_access",
+      "description": "Layer 'Outdoor Seating' shows internet_access=terminal with a fixed text, namely 'This place offers internet access via a terminal or computer' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "terminal"
+    },
+    {
+      "key": "internet_access",
+      "description": "Layer 'Outdoor Seating' shows internet_access=wired with a fixed text, namely 'This place offers wired internet access' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "wired"
+    },
+    {
+      "key": "internet_access",
+      "description": "Layer 'Outdoor Seating' shows internet_access=terminal;wifi with a fixed text, namely 'This place offers both wireless internet and internet access via a terminal or computer' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "terminal;wifi"
+    },
+    {
+      "key": "internet_access:fee",
+      "description": "Layer 'Outdoor Seating' shows internet_access:fee=yes with a fixed text, namely 'There is a fee for the internet access at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if internet_access!=no & internet_access~.+)",
+      "value": "yes"
+    },
+    {
+      "key": "internet_access:fee",
+      "description": "Layer 'Outdoor Seating' shows internet_access:fee=no with a fixed text, namely 'Internet access is free at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if internet_access!=no & internet_access~.+)",
+      "value": "no"
+    },
+    {
+      "key": "internet_access:fee",
+      "description": "Layer 'Outdoor Seating' shows internet_access:fee=customers with a fixed text, namely 'Internet access is free at this place, for customers only' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if internet_access!=no & internet_access~.+)",
+      "value": "customers"
+    },
+    {
+      "key": "internet_access:ssid",
+      "description": "Layer 'Outdoor Seating' shows and asks freeform values for key 'internet_access:ssid' (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if internet_access~^(.*wlan.*)$)"
+    },
+    {
+      "key": "internet_access:ssid",
+      "description": "Layer 'Outdoor Seating' shows internet_access:ssid=Telekom with a fixed text, namely 'Telekom' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if internet_access~^(.*wlan.*)$)",
+      "value": "Telekom"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Outdoor Seating' shows wheelchair=designated with a fixed text, namely 'This place is specially adapted for wheelchair users' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "designated"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Outdoor Seating' shows wheelchair=yes with a fixed text, namely 'This place is easily reachable with a wheelchair' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "yes"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Outdoor Seating' shows wheelchair=limited with a fixed text, namely 'It is possible to reach this place in a wheelchair, but it is not easy' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "limited"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Outdoor Seating' shows wheelchair=no with a fixed text, namely 'This place is not reachable with a wheelchair' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "no"
+    },
+    {
+      "key": "heating",
+      "description": "Layer 'Outdoor Seating' shows heating=yes with a fixed text, namely 'This outdoor seating area is heated.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "yes"
+    },
+    {
+      "key": "heating",
+      "description": "Layer 'Outdoor Seating' shows heating=no with a fixed text, namely 'This outdoor seating area is not heated.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "no"
+    },
+    {
+      "key": "covered",
+      "description": "Layer 'Outdoor Seating' shows covered=yes with a fixed text, namely 'This outdoor seating area is covered.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "yes"
+    },
+    {
+      "key": "covered",
+      "description": "Layer 'Outdoor Seating' shows covered=no with a fixed text, namely 'This outdoor seating area is not covered.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "no"
+    },
+    {
+      "key": "smoking",
+      "description": "Layer 'Outdoor Seating' shows smoking=yes with a fixed text, namely 'Smoking is <b>allowed</b>' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if _country!~^(al|be)$)",
+      "value": "yes"
+    },
+    {
+      "key": "smoking",
+      "description": "Layer 'Outdoor Seating' shows smoking=no with a fixed text, namely 'Smoking is <b>not allowed</b>' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if _country!~^(al|be)$)",
+      "value": "no"
+    },
+    {
+      "key": "smoking",
+      "description": "Layer 'Outdoor Seating' shows smoking=outside with a fixed text, namely 'Smoking is <b>allowed outside</b>.' (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if _country!~^(al|be)$)",
+      "value": "outside"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Restaurants and fast food has a layer Food Courts showing features with this tag",
+      "value": "food_court"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Food Courts' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Food Courts' shows and asks freeform values for key 'name' (in the mapcomplete.org theme 'Restaurants and fast food')"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Food Courts allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Food Courts allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Food Courts allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Food Courts allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Food Courts' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Restaurants and fast food')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Food Courts' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "closed"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Food Courts' shows wheelchair=designated with a fixed text, namely 'This place is specially adapted for wheelchair users' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "designated"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Food Courts' shows wheelchair=yes with a fixed text, namely 'This place is easily reachable with a wheelchair' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "yes"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Food Courts' shows wheelchair=limited with a fixed text, namely 'It is possible to reach this place in a wheelchair, but it is not easy' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "limited"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Food Courts' shows wheelchair=no with a fixed text, namely 'This place is not reachable with a wheelchair' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food')",
+      "value": "no"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Food Courts' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Restaurants and fast food')"
+    },
+    {
+      "key": "contact:website",
+      "description": "Layer 'Food Courts' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the mapcomplete.org theme 'Restaurants and fast food')"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'Food Courts' shows and asks freeform values for key 'phone' (in the mapcomplete.org theme 'Restaurants and fast food')"
+    },
+    {
+      "key": "contact:phone",
+      "description": "Layer 'Food Courts' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Restaurants and fast food')"
+    },
+    {
+      "key": "smoking",
+      "description": "Layer 'Food Courts' shows smoking=yes with a fixed text, namely 'Smoking is <b>allowed</b>' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if _country!~^(al|be)$)",
+      "value": "yes"
+    },
+    {
+      "key": "smoking",
+      "description": "Layer 'Food Courts' shows smoking=no with a fixed text, namely 'Smoking is <b>not allowed</b>' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if _country!~^(al|be)$)",
+      "value": "no"
+    },
+    {
+      "key": "smoking",
+      "description": "Layer 'Food Courts' shows smoking=outside with a fixed text, namely 'Smoking is <b>allowed outside</b>.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Restaurants and fast food') (This is only shown if _country!~^(al|be)$)",
+      "value": "outside"
+    }
+  ]
+}

@@ -16,6 +16,7 @@ This is a special layer - data is not sourced from OpenStreetMap
 1. [Supported attributes](#supported-attributes)
   - [questions](#questions)
   - [images](#images)
+  - [images_no_blur](#images_no_blur)
   - [mapillary](#mapillary)
   - [export_as_gpx](#export_as_gpx)
   - [export_as_geojson](#export_as_geojson)
@@ -116,6 +117,11 @@ _This tagrendering has no question and is thus read-only_
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
+
+### images_no_blur
+Same as `images`, but uploaded request to disable blurring to the panoramax server
+_This tagrendering has no question and is thus read-only_
+*{image_carousel()}{image_upload(,,,true)}*
 
 ### mapillary
 Shows a button to open Mapillary on this location

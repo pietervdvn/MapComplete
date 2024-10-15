@@ -44,9 +44,8 @@ This document gives an overview of which URL-parameters can be used to influence
 33. [filter-public_bookcase-adult-books](#filter-public_bookcase-adult-books)
 34. [filter-public_bookcase-inside](#filter-public_bookcase-inside)
 35. [filter-public_bookcase-has_image](#filter-public_bookcase-has_image)
-36. [layer-note_import_public_bookcase](#layer-note_import_public_bookcase)
-37. [mode](#mode)
-38. [layer-<layer-id>](#layer-<layer-id>)
+36. [mode](#mode)
+37. [layer-<layer-id>](#layer-<layer-id>)
 
 ## What is a URL parameter?
 
@@ -322,6 +321,16 @@ One can use the [ID of an ELI-layer](./ELI-overview.md) or use one of the global
  - carto.positron_no_labels
  - carto.dark_matter_no_labels
  - carto.voyager_no_labels
+ - cyclosm
+ - EsriWorldImagery
+ - EsriWorldImageryClarity
+ - Mapbox
+ - OpenAerialMapMosaic
+ - osmfr-basque
+ - osmfr-breton
+ - osmfr
+ - HDM_HOT
+ - osmfr-occitan
 
 This documentation is defined in the source code at [FeatureSwitchState.ts](/src/Logic/State/FeatureSwitchState.ts#L250)
 
@@ -399,19 +408,11 @@ This documentation is defined in the source code at [FilterConfig.ts](/src/Model
 
 The default value is _0_
 
-## layer-note_import_public_bookcase
-
-Whether or not layer note_import_public_bookcase is shown
-
-This documentation is defined in the source code at [FilteredLayer.ts](/src/Models/FilteredLayer.ts#L110)
-
-The default value is _true_
-
 ## mode
 
 The mode the application starts in, e.g. 'map', 'dashboard' or 'statistics'
 
-This documentation is defined in the source code at [generateDocs.ts](ervdvn/git2/MapComplete/scripts/generateDocs.ts#L436)
+This documentation is defined in the source code at [generateDocs.ts](ervdvn/git/MapComplete/scripts/generateDocs.ts#L436)
 
 The default value is _map_
 

@@ -1,0 +1,63 @@
+{
+  "data_format": 1,
+  "project": {
+    "name": "MapComplete Wind power generators",
+    "description": "A map for showing and editing wind turbines",
+    "project_url": "https://mapcomplete.org/openwindpowermap",
+    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "icon_url": "https://mapcomplete.org/assets/themes/openwindpowermap/logo.svg",
+    "contact_name": "Pieter Vander Vennet",
+    "contact_email": "pietervdvn@posteo.net"
+  },
+  "tags": [
+    {
+      "key": "generator:source",
+      "description": "The MapComplete theme Wind power generators has a layer wind turbine showing features with this tag",
+      "value": "wind"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'wind turbine' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Wind power generators') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "generator:output:electricity",
+      "description": "Layer 'wind turbine' shows and asks freeform values for key 'generator:output:electricity' (in the mapcomplete.org theme 'Wind power generators')"
+    },
+    {
+      "key": "operator",
+      "description": "Layer 'wind turbine' shows and asks freeform values for key 'operator' (in the mapcomplete.org theme 'Wind power generators')"
+    },
+    {
+      "key": "height",
+      "description": "Layer 'wind turbine' shows and asks freeform values for key 'height' (in the mapcomplete.org theme 'Wind power generators')"
+    },
+    {
+      "key": "rotor:diameter",
+      "description": "Layer 'wind turbine' shows and asks freeform values for key 'rotor:diameter' (in the mapcomplete.org theme 'Wind power generators')"
+    },
+    {
+      "key": "start_date",
+      "description": "Layer 'wind turbine' shows and asks freeform values for key 'start_date' (in the mapcomplete.org theme 'Wind power generators')"
+    },
+    {
+      "key": "fixme",
+      "description": "Layer 'wind turbine' shows and asks freeform values for key 'fixme' (in the mapcomplete.org theme 'Wind power generators')"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'wind turbine allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'wind turbine allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'wind turbine allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'wind turbine allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    }
+  ]
+}

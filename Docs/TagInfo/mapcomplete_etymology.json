@@ -1,0 +1,556 @@
+{
+  "data_format": 1,
+  "project": {
+    "name": "MapComplete Etymology - what is a place named after?",
+    "description": "What is the origin of a toponym?",
+    "project_url": "https://mapcomplete.org/etymology",
+    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "icon_url": "https://mapcomplete.org/assets/layers/etymology/logo.svg",
+    "contact_name": "Pieter Vander Vennet",
+    "contact_email": "pietervdvn@posteo.net"
+  },
+  "tags": [
+    {
+      "key": "name:etymology:wikidata",
+      "description": "The MapComplete theme Etymology - what is a place named after? has a layer Has etymology showing features with this tag"
+    },
+    {
+      "key": "name:etymology",
+      "description": "The MapComplete theme Etymology - what is a place named after? has a layer Has etymology showing features with this tag"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Has etymology' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Etymology - what is a place named after?') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Has etymology shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Has etymology shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Has etymology shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Has etymology shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "name:etymology:wikidata",
+      "description": "Layer 'Has etymology' shows and asks freeform values for key 'name:etymology:wikidata' (in the mapcomplete.org theme 'Etymology - what is a place named after?') (This is only shown if name:etymology!=unknown)"
+    },
+    {
+      "key": "name:etymology",
+      "description": "Layer 'Has etymology' shows and asks freeform values for key 'name:etymology' (in the mapcomplete.org theme 'Etymology - what is a place named after?') (This is only shown if name:etymology~.+ | name:etymology:wikidata=)"
+    },
+    {
+      "key": "name:etymology",
+      "description": "Layer 'Has etymology' shows name:etymology=unknown with a fixed text, namely 'The origin of this name is unknown in all literature' and allows to pick this as a default answer (in the mapcomplete.org theme 'Etymology - what is a place named after?') (This is only shown if name:etymology~.+ | name:etymology:wikidata=)",
+      "value": "unknown"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Has etymology allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Has etymology allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Has etymology allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Has etymology allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "name",
+      "description": "The MapComplete theme Etymology - what is a place named after? has a layer Streets without etymology information showing features with this tag"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Etymology - what is a place named after? has a layer Streets without etymology information showing features with this tag"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Streets without etymology information' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Etymology - what is a place named after?') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Streets without etymology information shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Streets without etymology information shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Streets without etymology information shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Streets without etymology information shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "name:etymology:wikidata",
+      "description": "Layer 'Streets without etymology information' shows and asks freeform values for key 'name:etymology:wikidata' (in the mapcomplete.org theme 'Etymology - what is a place named after?') (This is only shown if name:etymology!=unknown)"
+    },
+    {
+      "key": "name:etymology",
+      "description": "Layer 'Streets without etymology information' shows and asks freeform values for key 'name:etymology' (in the mapcomplete.org theme 'Etymology - what is a place named after?') (This is only shown if name:etymology~.+ | name:etymology:wikidata=)"
+    },
+    {
+      "key": "name:etymology",
+      "description": "Layer 'Streets without etymology information' shows name:etymology=unknown with a fixed text, namely 'The origin of this name is unknown in all literature' and allows to pick this as a default answer (in the mapcomplete.org theme 'Etymology - what is a place named after?') (This is only shown if name:etymology~.+ | name:etymology:wikidata=)",
+      "value": "unknown"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Streets without etymology information allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Streets without etymology information allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Streets without etymology information allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Streets without etymology information allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "name",
+      "description": "The MapComplete theme Etymology - what is a place named after? has a layer Parks and forests without etymology information showing features with this tag"
+    },
+    {
+      "key": "leisure",
+      "description": "The MapComplete theme Etymology - what is a place named after? has a layer Parks and forests without etymology information showing features with this tag",
+      "value": "park"
+    },
+    {
+      "key": "landuse",
+      "description": "The MapComplete theme Etymology - what is a place named after? has a layer Parks and forests without etymology information showing features with this tag",
+      "value": "forest"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Parks and forests without etymology information' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Etymology - what is a place named after?') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Parks and forests without etymology information shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Parks and forests without etymology information shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Parks and forests without etymology information shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Parks and forests without etymology information shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "name:etymology:wikidata",
+      "description": "Layer 'Parks and forests without etymology information' shows and asks freeform values for key 'name:etymology:wikidata' (in the mapcomplete.org theme 'Etymology - what is a place named after?') (This is only shown if name:etymology!=unknown)"
+    },
+    {
+      "key": "name:etymology",
+      "description": "Layer 'Parks and forests without etymology information' shows and asks freeform values for key 'name:etymology' (in the mapcomplete.org theme 'Etymology - what is a place named after?') (This is only shown if name:etymology~.+ | name:etymology:wikidata=)"
+    },
+    {
+      "key": "name:etymology",
+      "description": "Layer 'Parks and forests without etymology information' shows name:etymology=unknown with a fixed text, namely 'The origin of this name is unknown in all literature' and allows to pick this as a default answer (in the mapcomplete.org theme 'Etymology - what is a place named after?') (This is only shown if name:etymology~.+ | name:etymology:wikidata=)",
+      "value": "unknown"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Parks and forests without etymology information allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Parks and forests without etymology information allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Parks and forests without etymology information allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Parks and forests without etymology information allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "name",
+      "description": "The MapComplete theme Etymology - what is a place named after? has a layer Education institutions without etymology information showing features with this tag"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Etymology - what is a place named after? has a layer Education institutions without etymology information showing features with this tag",
+      "value": "school"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Etymology - what is a place named after? has a layer Education institutions without etymology information showing features with this tag",
+      "value": "kindergarten"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Etymology - what is a place named after? has a layer Education institutions without etymology information showing features with this tag",
+      "value": "university"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Etymology - what is a place named after? has a layer Education institutions without etymology information showing features with this tag",
+      "value": "college"
+    },
+    {
+      "key": "landuse",
+      "description": "The MapComplete theme Etymology - what is a place named after? has a layer Education institutions without etymology information showing features with this tag",
+      "value": "education"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Education institutions without etymology information' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Etymology - what is a place named after?') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Education institutions without etymology information shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Education institutions without etymology information shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Education institutions without etymology information shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Education institutions without etymology information shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "name:etymology:wikidata",
+      "description": "Layer 'Education institutions without etymology information' shows and asks freeform values for key 'name:etymology:wikidata' (in the mapcomplete.org theme 'Etymology - what is a place named after?') (This is only shown if name:etymology!=unknown)"
+    },
+    {
+      "key": "name:etymology",
+      "description": "Layer 'Education institutions without etymology information' shows and asks freeform values for key 'name:etymology' (in the mapcomplete.org theme 'Etymology - what is a place named after?') (This is only shown if name:etymology~.+ | name:etymology:wikidata=)"
+    },
+    {
+      "key": "name:etymology",
+      "description": "Layer 'Education institutions without etymology information' shows name:etymology=unknown with a fixed text, namely 'The origin of this name is unknown in all literature' and allows to pick this as a default answer (in the mapcomplete.org theme 'Etymology - what is a place named after?') (This is only shown if name:etymology~.+ | name:etymology:wikidata=)",
+      "value": "unknown"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Education institutions without etymology information allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Education institutions without etymology information allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Education institutions without etymology information allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Education institutions without etymology information allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "name",
+      "description": "The MapComplete theme Etymology - what is a place named after? has a layer Cultural places without etymology information showing features with this tag"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Etymology - what is a place named after? has a layer Cultural places without etymology information showing features with this tag",
+      "value": "arts_centre"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Etymology - what is a place named after? has a layer Cultural places without etymology information showing features with this tag",
+      "value": "cinema"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Etymology - what is a place named after? has a layer Cultural places without etymology information showing features with this tag",
+      "value": "community_centre"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Etymology - what is a place named after? has a layer Cultural places without etymology information showing features with this tag",
+      "value": "library"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Etymology - what is a place named after? has a layer Cultural places without etymology information showing features with this tag",
+      "value": "theatre"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Cultural places without etymology information' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Etymology - what is a place named after?') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Cultural places without etymology information shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Cultural places without etymology information shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Cultural places without etymology information shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Cultural places without etymology information shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "name:etymology:wikidata",
+      "description": "Layer 'Cultural places without etymology information' shows and asks freeform values for key 'name:etymology:wikidata' (in the mapcomplete.org theme 'Etymology - what is a place named after?') (This is only shown if name:etymology!=unknown)"
+    },
+    {
+      "key": "name:etymology",
+      "description": "Layer 'Cultural places without etymology information' shows and asks freeform values for key 'name:etymology' (in the mapcomplete.org theme 'Etymology - what is a place named after?') (This is only shown if name:etymology~.+ | name:etymology:wikidata=)"
+    },
+    {
+      "key": "name:etymology",
+      "description": "Layer 'Cultural places without etymology information' shows name:etymology=unknown with a fixed text, namely 'The origin of this name is unknown in all literature' and allows to pick this as a default answer (in the mapcomplete.org theme 'Etymology - what is a place named after?') (This is only shown if name:etymology~.+ | name:etymology:wikidata=)",
+      "value": "unknown"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Cultural places without etymology information allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Cultural places without etymology information allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Cultural places without etymology information allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Cultural places without etymology information allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "name",
+      "description": "The MapComplete theme Etymology - what is a place named after? has a layer Touristic places without etymology information showing features with this tag"
+    },
+    {
+      "key": "tourism",
+      "description": "The MapComplete theme Etymology - what is a place named after? has a layer Touristic places without etymology information showing features with this tag",
+      "value": "aquarium"
+    },
+    {
+      "key": "tourism",
+      "description": "The MapComplete theme Etymology - what is a place named after? has a layer Touristic places without etymology information showing features with this tag",
+      "value": "museum"
+    },
+    {
+      "key": "tourism",
+      "description": "The MapComplete theme Etymology - what is a place named after? has a layer Touristic places without etymology information showing features with this tag",
+      "value": "theme_park"
+    },
+    {
+      "key": "tourism",
+      "description": "The MapComplete theme Etymology - what is a place named after? has a layer Touristic places without etymology information showing features with this tag",
+      "value": "zoo"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Touristic places without etymology information' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Etymology - what is a place named after?') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Touristic places without etymology information shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Touristic places without etymology information shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Touristic places without etymology information shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Touristic places without etymology information shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "name:etymology:wikidata",
+      "description": "Layer 'Touristic places without etymology information' shows and asks freeform values for key 'name:etymology:wikidata' (in the mapcomplete.org theme 'Etymology - what is a place named after?') (This is only shown if name:etymology!=unknown)"
+    },
+    {
+      "key": "name:etymology",
+      "description": "Layer 'Touristic places without etymology information' shows and asks freeform values for key 'name:etymology' (in the mapcomplete.org theme 'Etymology - what is a place named after?') (This is only shown if name:etymology~.+ | name:etymology:wikidata=)"
+    },
+    {
+      "key": "name:etymology",
+      "description": "Layer 'Touristic places without etymology information' shows name:etymology=unknown with a fixed text, namely 'The origin of this name is unknown in all literature' and allows to pick this as a default answer (in the mapcomplete.org theme 'Etymology - what is a place named after?') (This is only shown if name:etymology~.+ | name:etymology:wikidata=)",
+      "value": "unknown"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Touristic places without etymology information allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Touristic places without etymology information allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Touristic places without etymology information allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Touristic places without etymology information allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "name",
+      "description": "The MapComplete theme Etymology - what is a place named after? has a layer Health and social places without etymology information showing features with this tag"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Etymology - what is a place named after? has a layer Health and social places without etymology information showing features with this tag",
+      "value": "clinic"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Etymology - what is a place named after? has a layer Health and social places without etymology information showing features with this tag",
+      "value": "hospital"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Etymology - what is a place named after? has a layer Health and social places without etymology information showing features with this tag",
+      "value": "social_facility"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Health and social places without etymology information' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Etymology - what is a place named after?') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Health and social places without etymology information shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Health and social places without etymology information shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Health and social places without etymology information shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Health and social places without etymology information shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "name:etymology:wikidata",
+      "description": "Layer 'Health and social places without etymology information' shows and asks freeform values for key 'name:etymology:wikidata' (in the mapcomplete.org theme 'Etymology - what is a place named after?') (This is only shown if name:etymology!=unknown)"
+    },
+    {
+      "key": "name:etymology",
+      "description": "Layer 'Health and social places without etymology information' shows and asks freeform values for key 'name:etymology' (in the mapcomplete.org theme 'Etymology - what is a place named after?') (This is only shown if name:etymology~.+ | name:etymology:wikidata=)"
+    },
+    {
+      "key": "name:etymology",
+      "description": "Layer 'Health and social places without etymology information' shows name:etymology=unknown with a fixed text, namely 'The origin of this name is unknown in all literature' and allows to pick this as a default answer (in the mapcomplete.org theme 'Etymology - what is a place named after?') (This is only shown if name:etymology~.+ | name:etymology:wikidata=)",
+      "value": "unknown"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Health and social places without etymology information allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Health and social places without etymology information allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Health and social places without etymology information allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Health and social places without etymology information allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "name",
+      "description": "The MapComplete theme Etymology - what is a place named after? has a layer Sport places without etymology information showing features with this tag"
+    },
+    {
+      "key": "leisure",
+      "description": "The MapComplete theme Etymology - what is a place named after? has a layer Sport places without etymology information showing features with this tag",
+      "value": "sports_centre"
+    },
+    {
+      "key": "leisure",
+      "description": "The MapComplete theme Etymology - what is a place named after? has a layer Sport places without etymology information showing features with this tag",
+      "value": "stadium"
+    },
+    {
+      "key": "leisure",
+      "description": "The MapComplete theme Etymology - what is a place named after? has a layer Sport places without etymology information showing features with this tag",
+      "value": "swimming_pool"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Sport places without etymology information' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Etymology - what is a place named after?') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Sport places without etymology information shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Sport places without etymology information shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Sport places without etymology information shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Sport places without etymology information shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "name:etymology:wikidata",
+      "description": "Layer 'Sport places without etymology information' shows and asks freeform values for key 'name:etymology:wikidata' (in the mapcomplete.org theme 'Etymology - what is a place named after?') (This is only shown if name:etymology!=unknown)"
+    },
+    {
+      "key": "name:etymology",
+      "description": "Layer 'Sport places without etymology information' shows and asks freeform values for key 'name:etymology' (in the mapcomplete.org theme 'Etymology - what is a place named after?') (This is only shown if name:etymology~.+ | name:etymology:wikidata=)"
+    },
+    {
+      "key": "name:etymology",
+      "description": "Layer 'Sport places without etymology information' shows name:etymology=unknown with a fixed text, namely 'The origin of this name is unknown in all literature' and allows to pick this as a default answer (in the mapcomplete.org theme 'Etymology - what is a place named after?') (This is only shown if name:etymology~.+ | name:etymology:wikidata=)",
+      "value": "unknown"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Sport places without etymology information allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Sport places without etymology information allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Sport places without etymology information allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Sport places without etymology information allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    }
+  ]
+}

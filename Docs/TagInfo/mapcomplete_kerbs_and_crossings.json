@@ -1,0 +1,865 @@
+{
+  "data_format": 1,
+  "project": {
+    "name": "MapComplete Kerbs and crossings",
+    "description": "A map showing kerbs and crossings",
+    "project_url": "https://mapcomplete.org/kerbs_and_crossings",
+    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "icon_url": "https://mapcomplete.org/assets/layers/kerbs/KerbIcon.svg",
+    "contact_name": "Pieter Vander Vennet",
+    "contact_email": "pietervdvn@posteo.net"
+  },
+  "tags": [
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Kerbs and crossings has a layer Cycleways and roads showing features with this tag",
+      "value": "cycleway"
+    },
+    {
+      "key": "cycleway",
+      "description": "The MapComplete theme Kerbs and crossings has a layer Cycleways and roads showing features with this tag",
+      "value": "lane"
+    },
+    {
+      "key": "cycleway",
+      "description": "The MapComplete theme Kerbs and crossings has a layer Cycleways and roads showing features with this tag",
+      "value": "shared_lane"
+    },
+    {
+      "key": "cycleway",
+      "description": "The MapComplete theme Kerbs and crossings has a layer Cycleways and roads showing features with this tag",
+      "value": "track"
+    },
+    {
+      "key": "cyclestreet",
+      "description": "The MapComplete theme Kerbs and crossings has a layer Cycleways and roads showing features with this tag",
+      "value": "yes"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Kerbs and crossings has a layer Cycleways and roads showing features with this tag",
+      "value": "residential"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Kerbs and crossings has a layer Cycleways and roads showing features with this tag",
+      "value": "tertiary"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Kerbs and crossings has a layer Cycleways and roads showing features with this tag",
+      "value": "unclassified"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Kerbs and crossings has a layer Cycleways and roads showing features with this tag",
+      "value": "primary"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Kerbs and crossings has a layer Cycleways and roads showing features with this tag",
+      "value": "secondary"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Kerbs and crossings has a layer Cycleways and roads showing features with this tag",
+      "value": "tertiary_link"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Kerbs and crossings has a layer Cycleways and roads showing features with this tag",
+      "value": "primary_link"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Kerbs and crossings has a layer Cycleways and roads showing features with this tag",
+      "value": "secondary_link"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Kerbs and crossings has a layer Cycleways and roads showing features with this tag",
+      "value": "service"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Kerbs and crossings has a layer Cycleways and roads showing features with this tag",
+      "value": "footway"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Kerbs and crossings has a layer Cycleways and roads showing features with this tag",
+      "value": "pedestrian"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Kerbs and crossings has a layer Cycleways and roads showing features with this tag",
+      "value": "living_street"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Kerbs and crossings has a layer Cycleways and roads showing features with this tag",
+      "value": "path"
+    },
+    {
+      "key": "bicycle",
+      "description": "The MapComplete theme Kerbs and crossings has a layer Cycleways and roads showing features with this tag",
+      "value": "designated"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Cycleways and roads' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Cycleways and roads allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Cycleways and roads allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Cycleways and roads allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Cycleways and roads allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "cycleway",
+      "description": "Layer 'Cycleways and roads' shows cycleway=shared_lane with a fixed text, namely 'There is a shared lane' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if highway!=cycleway & highway!=path & highway!=footway & highway!=pedestrian)",
+      "value": "shared_lane"
+    },
+    {
+      "key": "cycleway",
+      "description": "Layer 'Cycleways and roads' shows cycleway=lane with a fixed text, namely 'There is a lane next to the road (separated with paint)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if highway!=cycleway & highway!=path & highway!=footway & highway!=pedestrian)",
+      "value": "lane"
+    },
+    {
+      "key": "cycleway",
+      "description": "Layer 'Cycleways and roads' shows cycleway=track with a fixed text, namely 'There is a track, but no cycleway drawn separately from this road on the map.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if highway!=cycleway & highway!=path & highway!=footway & highway!=pedestrian)",
+      "value": "track"
+    },
+    {
+      "key": "cycleway",
+      "description": "Layer 'Cycleways and roads' shows cycleway=separate with a fixed text, namely 'There is a separately drawn cycleway' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if highway!=cycleway & highway!=path & highway!=footway & highway!=pedestrian)",
+      "value": "separate"
+    },
+    {
+      "key": "cycleway",
+      "description": "Layer 'Cycleways and roads' shows cycleway=no with a fixed text, namely 'There is no cycleway' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if highway!=cycleway & highway!=path & highway!=footway & highway!=pedestrian)",
+      "value": "no"
+    },
+    {
+      "key": "cycleway",
+      "description": "Layer 'Cycleways and roads' shows cycleway=no with a fixed text, namely 'There is no cycleway' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if highway!=cycleway & highway!=path & highway!=footway & highway!=pedestrian)",
+      "value": "no"
+    },
+    {
+      "key": "lit",
+      "description": "Layer 'Cycleways and roads' shows lit=yes with a fixed text, namely 'This street is lit' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings')",
+      "value": "yes"
+    },
+    {
+      "key": "lit",
+      "description": "Layer 'Cycleways and roads' shows lit=no with a fixed text, namely 'This road is not lit' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings')",
+      "value": "no"
+    },
+    {
+      "key": "lit",
+      "description": "Layer 'Cycleways and roads' shows lit=sunset-sunrise with a fixed text, namely 'This road is lit at night' (in the mapcomplete.org theme 'Kerbs and crossings')",
+      "value": "sunset-sunrise"
+    },
+    {
+      "key": "lit",
+      "description": "Layer 'Cycleways and roads' shows lit=24/7 with a fixed text, namely 'This road is lit 24/7' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings')",
+      "value": "24/7"
+    },
+    {
+      "key": "cyclestreet",
+      "description": "Layer 'Cycleways and roads' shows cyclestreet=yes with a fixed text, namely 'This is a cyclestreet, and a 30km/h zone.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if highway!=cycleway & highway!=path & highway!=footway)",
+      "value": "yes"
+    },
+    {
+      "key": "cyclestreet",
+      "description": "Layer 'Cycleways and roads' shows cyclestreet=yes with a fixed text, namely 'This is a cyclestreet' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if highway!=cycleway & highway!=path & highway!=footway)",
+      "value": "yes"
+    },
+    {
+      "key": "cyclestreet",
+      "description": "Layer 'Cycleways and roads' shows cyclestreet= with a fixed text, namely 'This is not a cyclestreet.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') Picking this answer will delete the key cyclestreet. (This is only shown if highway!=cycleway & highway!=path & highway!=footway)",
+      "value": ""
+    },
+    {
+      "key": "maxspeed",
+      "description": "Layer 'Cycleways and roads' shows and asks freeform values for key 'maxspeed' (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if highway!=cycleway & highway!=path & highway!=footway & highway!=pedestrian)"
+    },
+    {
+      "key": "maxspeed",
+      "description": "Layer 'Cycleways and roads' shows maxspeed=20 with a fixed text, namely 'The maximum speed is 20 km/h' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if highway!=cycleway & highway!=path & highway!=footway & highway!=pedestrian)",
+      "value": "20"
+    },
+    {
+      "key": "maxspeed",
+      "description": "Layer 'Cycleways and roads' shows maxspeed=30 with a fixed text, namely 'The maximum speed is 30 km/h' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if highway!=cycleway & highway!=path & highway!=footway & highway!=pedestrian)",
+      "value": "30"
+    },
+    {
+      "key": "maxspeed",
+      "description": "Layer 'Cycleways and roads' shows maxspeed=50 with a fixed text, namely 'The maximum speed is 50 km/h' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if highway!=cycleway & highway!=path & highway!=footway & highway!=pedestrian)",
+      "value": "50"
+    },
+    {
+      "key": "maxspeed",
+      "description": "Layer 'Cycleways and roads' shows maxspeed=70 with a fixed text, namely 'The maximum speed is 70 km/h' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if highway!=cycleway & highway!=path & highway!=footway & highway!=pedestrian)",
+      "value": "70"
+    },
+    {
+      "key": "maxspeed",
+      "description": "Layer 'Cycleways and roads' shows maxspeed=90 with a fixed text, namely 'The maximum speed is 90 km/h' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if highway!=cycleway & highway!=path & highway!=footway & highway!=pedestrian)",
+      "value": "90"
+    },
+    {
+      "key": "cycleway:surface",
+      "description": "Layer 'Cycleways and roads' shows and asks freeform values for key 'cycleway:surface' (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if cycleway=shared_lane | cycleway=lane | cycleway=track)"
+    },
+    {
+      "key": "cycleway:surface",
+      "description": "Layer 'Cycleways and roads' shows cycleway:surface=unpaved with a fixed text, namely 'This cycleway is unpaved' (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if cycleway=shared_lane | cycleway=lane | cycleway=track)",
+      "value": "unpaved"
+    },
+    {
+      "key": "cycleway:surface",
+      "description": "Layer 'Cycleways and roads' shows cycleway:surface=paved with a fixed text, namely 'This cycleway is paved' (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if cycleway=shared_lane | cycleway=lane | cycleway=track)",
+      "value": "paved"
+    },
+    {
+      "key": "cycleway:surface",
+      "description": "Layer 'Cycleways and roads' shows cycleway:surface=asphalt with a fixed text, namely 'This cycleway is made of asphalt' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if cycleway=shared_lane | cycleway=lane | cycleway=track)",
+      "value": "asphalt"
+    },
+    {
+      "key": "cycleway:surface",
+      "description": "Layer 'Cycleways and roads' shows cycleway:surface=paving_stones with a fixed text, namely 'This cycleway is made of smooth paving stones' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if cycleway=shared_lane | cycleway=lane | cycleway=track)",
+      "value": "paving_stones"
+    },
+    {
+      "key": "cycleway:surface",
+      "description": "Layer 'Cycleways and roads' shows cycleway:surface=concrete with a fixed text, namely 'This cycleway is made of concrete' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if cycleway=shared_lane | cycleway=lane | cycleway=track)",
+      "value": "concrete"
+    },
+    {
+      "key": "cycleway:surface",
+      "description": "Layer 'Cycleways and roads' shows cycleway:surface=cobblestone with a fixed text, namely 'This cycleway is made of cobblestone (unhewn or sett)' (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if cycleway=shared_lane | cycleway=lane | cycleway=track)",
+      "value": "cobblestone"
+    },
+    {
+      "key": "cycleway:surface",
+      "description": "Layer 'Cycleways and roads' shows cycleway:surface=unhewn_cobblestone with a fixed text, namely 'This cycleway is made of raw, natural cobblestone' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if cycleway=shared_lane | cycleway=lane | cycleway=track)",
+      "value": "unhewn_cobblestone"
+    },
+    {
+      "key": "cycleway:surface",
+      "description": "Layer 'Cycleways and roads' shows cycleway:surface=sett with a fixed text, namely 'This cycleway is made of flat, square cobblestone' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if cycleway=shared_lane | cycleway=lane | cycleway=track)",
+      "value": "sett"
+    },
+    {
+      "key": "cycleway:surface",
+      "description": "Layer 'Cycleways and roads' shows cycleway:surface=wood with a fixed text, namely 'This cycleway is made of wood' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if cycleway=shared_lane | cycleway=lane | cycleway=track)",
+      "value": "wood"
+    },
+    {
+      "key": "cycleway:surface",
+      "description": "Layer 'Cycleways and roads' shows cycleway:surface=gravel with a fixed text, namely 'This cycleway is made of gravel' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if cycleway=shared_lane | cycleway=lane | cycleway=track)",
+      "value": "gravel"
+    },
+    {
+      "key": "cycleway:surface",
+      "description": "Layer 'Cycleways and roads' shows cycleway:surface=fine_gravel with a fixed text, namely 'This cycleway is made of fine gravel' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if cycleway=shared_lane | cycleway=lane | cycleway=track)",
+      "value": "fine_gravel"
+    },
+    {
+      "key": "cycleway:surface",
+      "description": "Layer 'Cycleways and roads' shows cycleway:surface=pebblestone with a fixed text, namely 'This cycleway is made of pebblestone' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if cycleway=shared_lane | cycleway=lane | cycleway=track)",
+      "value": "pebblestone"
+    },
+    {
+      "key": "cycleway:surface",
+      "description": "Layer 'Cycleways and roads' shows cycleway:surface=ground with a fixed text, namely 'This cycleway is made from raw ground' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if cycleway=shared_lane | cycleway=lane | cycleway=track)",
+      "value": "ground"
+    },
+    {
+      "key": "incline",
+      "description": "Layer 'Cycleways and roads' shows and asks freeform values for key 'incline' (in the mapcomplete.org theme 'Kerbs and crossings')"
+    },
+    {
+      "key": "incline",
+      "description": "Layer 'Cycleways and roads' shows incline= with a fixed text, namely 'There is (probably) no incline here' (in the mapcomplete.org theme 'Kerbs and crossings') Picking this answer will delete the key incline.",
+      "value": ""
+    },
+    {
+      "key": "incline",
+      "description": "Layer 'Cycleways and roads' shows incline=up | incline=down | incline=yes with a fixed text, namely 'This road has a slope' (in the mapcomplete.org theme 'Kerbs and crossings')",
+      "value": "up"
+    },
+    {
+      "key": "incline",
+      "description": "Layer 'Cycleways and roads' shows incline=up | incline=down | incline=yes with a fixed text, namely 'This road has a slope' (in the mapcomplete.org theme 'Kerbs and crossings')",
+      "value": "down"
+    },
+    {
+      "key": "incline",
+      "description": "Layer 'Cycleways and roads' shows incline=up | incline=down | incline=yes with a fixed text, namely 'This road has a slope' (in the mapcomplete.org theme 'Kerbs and crossings')",
+      "value": "yes"
+    },
+    {
+      "key": "cycleway:smoothness",
+      "description": "Layer 'Cycleways and roads' shows cycleway:smoothness=excellent with a fixed text, namely 'Usable for thin rollers: rollerblade, skateboard' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if cycleway=shared_lane | cycleway=lane | cycleway=track)",
+      "value": "excellent"
+    },
+    {
+      "key": "cycleway:smoothness",
+      "description": "Layer 'Cycleways and roads' shows cycleway:smoothness=good with a fixed text, namely 'Usable for thin wheels: racing bike' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if cycleway=shared_lane | cycleway=lane | cycleway=track)",
+      "value": "good"
+    },
+    {
+      "key": "cycleway:smoothness",
+      "description": "Layer 'Cycleways and roads' shows cycleway:smoothness=intermediate with a fixed text, namely 'Usable for normal wheels: city bike, wheelchair, scooter' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if cycleway=shared_lane | cycleway=lane | cycleway=track)",
+      "value": "intermediate"
+    },
+    {
+      "key": "cycleway:smoothness",
+      "description": "Layer 'Cycleways and roads' shows cycleway:smoothness=bad with a fixed text, namely 'Usable for robust wheels: trekking bike, car, rickshaw' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if cycleway=shared_lane | cycleway=lane | cycleway=track)",
+      "value": "bad"
+    },
+    {
+      "key": "cycleway:smoothness",
+      "description": "Layer 'Cycleways and roads' shows cycleway:smoothness=very_bad with a fixed text, namely 'Usable for vehicles with high clearance: light duty off-road vehicle' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if cycleway=shared_lane | cycleway=lane | cycleway=track)",
+      "value": "very_bad"
+    },
+    {
+      "key": "cycleway:smoothness",
+      "description": "Layer 'Cycleways and roads' shows cycleway:smoothness=horrible with a fixed text, namely 'Usable for off-road vehicles: heavy duty off-road vehicle' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if cycleway=shared_lane | cycleway=lane | cycleway=track)",
+      "value": "horrible"
+    },
+    {
+      "key": "cycleway:smoothness",
+      "description": "Layer 'Cycleways and roads' shows cycleway:smoothness=very_horrible with a fixed text, namely 'Usable for specialized off-road vehicles: tractor, ATV' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if cycleway=shared_lane | cycleway=lane | cycleway=track)",
+      "value": "very_horrible"
+    },
+    {
+      "key": "cycleway:smoothness",
+      "description": "Layer 'Cycleways and roads' shows cycleway:smoothness=impassable with a fixed text, namely 'Impassable / No wheeled vehicle' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if cycleway=shared_lane | cycleway=lane | cycleway=track)",
+      "value": "impassable"
+    },
+    {
+      "key": "surface",
+      "description": "Layer 'Cycleways and roads' shows and asks freeform values for key 'surface' (in the mapcomplete.org theme 'Kerbs and crossings')"
+    },
+    {
+      "key": "surface",
+      "description": "Layer 'Cycleways and roads' shows surface=unpaved with a fixed text, namely 'This cycleway is unhardened' (in the mapcomplete.org theme 'Kerbs and crossings')",
+      "value": "unpaved"
+    },
+    {
+      "key": "surface",
+      "description": "Layer 'Cycleways and roads' shows surface=paved with a fixed text, namely 'This cycleway is paved' (in the mapcomplete.org theme 'Kerbs and crossings')",
+      "value": "paved"
+    },
+    {
+      "key": "surface",
+      "description": "Layer 'Cycleways and roads' shows surface=asphalt with a fixed text, namely 'This cycleway is made of asphalt' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings')",
+      "value": "asphalt"
+    },
+    {
+      "key": "surface",
+      "description": "Layer 'Cycleways and roads' shows surface=paving_stones with a fixed text, namely 'This cycleway is made of smooth paving stones' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings')",
+      "value": "paving_stones"
+    },
+    {
+      "key": "surface",
+      "description": "Layer 'Cycleways and roads' shows surface=concrete with a fixed text, namely 'This cycleway is made of concrete' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings')",
+      "value": "concrete"
+    },
+    {
+      "key": "surface",
+      "description": "Layer 'Cycleways and roads' shows surface=cobblestone with a fixed text, namely 'This cycleway is made of cobblestone (unhewn or sett)' (in the mapcomplete.org theme 'Kerbs and crossings')",
+      "value": "cobblestone"
+    },
+    {
+      "key": "surface",
+      "description": "Layer 'Cycleways and roads' shows surface=unhewn_cobblestone with a fixed text, namely 'This cycleway is made of raw, natural cobblestone' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings')",
+      "value": "unhewn_cobblestone"
+    },
+    {
+      "key": "surface",
+      "description": "Layer 'Cycleways and roads' shows surface=sett with a fixed text, namely 'This cycleway is made of flat, square cobblestone' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings')",
+      "value": "sett"
+    },
+    {
+      "key": "surface",
+      "description": "Layer 'Cycleways and roads' shows surface=wood with a fixed text, namely 'This cycleway is made of wood' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings')",
+      "value": "wood"
+    },
+    {
+      "key": "surface",
+      "description": "Layer 'Cycleways and roads' shows surface=gravel with a fixed text, namely 'This cycleway is made of gravel' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings')",
+      "value": "gravel"
+    },
+    {
+      "key": "surface",
+      "description": "Layer 'Cycleways and roads' shows surface=fine_gravel with a fixed text, namely 'This cycleway is made of fine gravel' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings')",
+      "value": "fine_gravel"
+    },
+    {
+      "key": "surface",
+      "description": "Layer 'Cycleways and roads' shows surface=pebblestone with a fixed text, namely 'This cycleway is made of pebblestone' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings')",
+      "value": "pebblestone"
+    },
+    {
+      "key": "surface",
+      "description": "Layer 'Cycleways and roads' shows surface=ground with a fixed text, namely 'This cycleway is made from raw ground' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings')",
+      "value": "ground"
+    },
+    {
+      "key": "smoothness",
+      "description": "Layer 'Cycleways and roads' shows smoothness=excellent with a fixed text, namely 'Usable for thin rollers: rollerblade, skateboard' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if cycleway=no | highway=cycleway)",
+      "value": "excellent"
+    },
+    {
+      "key": "smoothness",
+      "description": "Layer 'Cycleways and roads' shows smoothness=good with a fixed text, namely 'Usable for thin wheels: racing bike' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if cycleway=no | highway=cycleway)",
+      "value": "good"
+    },
+    {
+      "key": "smoothness",
+      "description": "Layer 'Cycleways and roads' shows smoothness=intermediate with a fixed text, namely 'Usable for normal wheels: city bike, wheelchair, scooter' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if cycleway=no | highway=cycleway)",
+      "value": "intermediate"
+    },
+    {
+      "key": "smoothness",
+      "description": "Layer 'Cycleways and roads' shows smoothness=bad with a fixed text, namely 'Usable for robust wheels: trekking bike, car, rickshaw' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if cycleway=no | highway=cycleway)",
+      "value": "bad"
+    },
+    {
+      "key": "smoothness",
+      "description": "Layer 'Cycleways and roads' shows smoothness=very_bad with a fixed text, namely 'Usable for vehicles with high clearance: light duty off-road vehicle' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if cycleway=no | highway=cycleway)",
+      "value": "very_bad"
+    },
+    {
+      "key": "smoothness",
+      "description": "Layer 'Cycleways and roads' shows smoothness=horrible with a fixed text, namely 'Usable for off-road vehicles: heavy duty off-road vehicle' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if cycleway=no | highway=cycleway)",
+      "value": "horrible"
+    },
+    {
+      "key": "smoothness",
+      "description": "Layer 'Cycleways and roads' shows smoothness=very_horrible with a fixed text, namely 'Usable for specialized off-road vehicles: tractor, ATV' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if cycleway=no | highway=cycleway)",
+      "value": "very_horrible"
+    },
+    {
+      "key": "smoothness",
+      "description": "Layer 'Cycleways and roads' shows smoothness=impassable with a fixed text, namely 'Impassable / No wheeled vehicle' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if cycleway=no | highway=cycleway)",
+      "value": "impassable"
+    },
+    {
+      "key": "width:carriageway",
+      "description": "Layer 'Cycleways and roads' shows and asks freeform values for key 'width:carriageway' (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if highway!=cycleway & highway!=path & highway!=footway)"
+    },
+    {
+      "key": "cycleway:traffic_sign",
+      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign=BE:D7 with a fixed text, namely 'Compulsory cycleway' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if (cycleway=lane | cycleway=track) & (_country=be))",
+      "value": "BE:D7"
+    },
+    {
+      "key": "cycleway:traffic_sign",
+      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign~^(BE:D7;.*)$ with a fixed text, namely 'Compulsory cycleway (with supplementary sign)<br>' (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if (cycleway=lane | cycleway=track) & (_country=be))"
+    },
+    {
+      "key": "cycleway:traffic_sign",
+      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign=BE:D9 with a fixed text, namely 'Segregated foot/cycleway' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if (cycleway=lane | cycleway=track) & (_country=be))",
+      "value": "BE:D9"
+    },
+    {
+      "key": "cycleway:traffic_sign",
+      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign=BE:D10 with a fixed text, namely 'Unsegregated foot/cycleway' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if (cycleway=lane | cycleway=track) & (_country=be))",
+      "value": "BE:D10"
+    },
+    {
+      "key": "cycleway:traffic_sign",
+      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign=none with a fixed text, namely 'No traffic sign present' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if (cycleway=lane | cycleway=track) & (_country=be))",
+      "value": "none"
+    },
+    {
+      "key": "traffic_sign",
+      "description": "Layer 'Cycleways and roads' shows traffic_sign=BE:D7 with a fixed text, namely 'Compulsory cycleway' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if (highway=cycleway | highway=path) & (_country=be | _country=nl))",
+      "value": "BE:D7"
+    },
+    {
+      "key": "traffic_sign",
+      "description": "Layer 'Cycleways and roads' shows traffic_sign~^(BE:D7;.*)$ with a fixed text, namely 'Compulsory cycleway (with supplementary sign)<br>' (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if (highway=cycleway | highway=path) & (_country=be | _country=nl))"
+    },
+    {
+      "key": "traffic_sign",
+      "description": "Layer 'Cycleways and roads' shows traffic_sign=BE:D9 with a fixed text, namely 'Segregated foot/cycleway' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if (highway=cycleway | highway=path) & (_country=be | _country=nl))",
+      "value": "BE:D9"
+    },
+    {
+      "key": "traffic_sign",
+      "description": "Layer 'Cycleways and roads' shows traffic_sign=BE:D10 with a fixed text, namely 'Unsegregated foot/cycleway' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if (highway=cycleway | highway=path) & (_country=be | _country=nl))",
+      "value": "BE:D10"
+    },
+    {
+      "key": "traffic_sign",
+      "description": "Layer 'Cycleways and roads' shows traffic_sign=NL:G11 with a fixed text, namely 'Compulsory cycleway' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if (highway=cycleway | highway=path) & (_country=be | _country=nl))",
+      "value": "NL:G11"
+    },
+    {
+      "key": "traffic_sign",
+      "description": "Layer 'Cycleways and roads' shows traffic_sign=NL:G12a with a fixed text, namely 'Compulsory (moped)cycleway' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if (highway=cycleway | highway=path) & (_country=be | _country=nl))",
+      "value": "NL:G12a"
+    },
+    {
+      "key": "traffic_sign",
+      "description": "Layer 'Cycleways and roads' shows traffic_sign=NL:G13 with a fixed text, namely 'Non-compulsory cycleway' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if (highway=cycleway | highway=path) & (_country=be | _country=nl))",
+      "value": "NL:G13"
+    },
+    {
+      "key": "traffic_sign",
+      "description": "Layer 'Cycleways and roads' shows traffic_sign=none with a fixed text, namely 'No traffic sign present' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if (highway=cycleway | highway=path) & (_country=be | _country=nl))",
+      "value": "none"
+    },
+    {
+      "key": "cycleway:traffic_sign",
+      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign=BE:D7;BE:M6 with a fixed text, namely 'Mopeds must use the cycleway' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if cycleway:traffic_sign=BE:D7 | cycleway:traffic_sign~^(BE:D7;.*)$)",
+      "value": "BE:D7;BE:M6"
+    },
+    {
+      "key": "cycleway:traffic_sign",
+      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign=BE:D7;BE:M13 with a fixed text, namely 'Speedpedelecs must use the cycleway' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if cycleway:traffic_sign=BE:D7 | cycleway:traffic_sign~^(BE:D7;.*)$)",
+      "value": "BE:D7;BE:M13"
+    },
+    {
+      "key": "cycleway:traffic_sign",
+      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign=BE:D7;BE:M14 with a fixed text, namely 'Mopeds and speedpedelecs must use the cycleway' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if cycleway:traffic_sign=BE:D7 | cycleway:traffic_sign~^(BE:D7;.*)$)",
+      "value": "BE:D7;BE:M14"
+    },
+    {
+      "key": "cycleway:traffic_sign",
+      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign=BE:D7;BE:M7 with a fixed text, namely 'Mopeds are not allowed' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if cycleway:traffic_sign=BE:D7 | cycleway:traffic_sign~^(BE:D7;.*)$)",
+      "value": "BE:D7;BE:M7"
+    },
+    {
+      "key": "cycleway:traffic_sign",
+      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign=BE:D7;BE:M15 with a fixed text, namely 'Speedpedelecs are not allowed' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if cycleway:traffic_sign=BE:D7 | cycleway:traffic_sign~^(BE:D7;.*)$)",
+      "value": "BE:D7;BE:M15"
+    },
+    {
+      "key": "cycleway:traffic_sign",
+      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign=BE:D7;BE:M16 with a fixed text, namely 'Mopeds and speedpedelecs are not allowed' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if cycleway:traffic_sign=BE:D7 | cycleway:traffic_sign~^(BE:D7;.*)$)",
+      "value": "BE:D7;BE:M16"
+    },
+    {
+      "key": "cycleway:traffic_sign:supplementary",
+      "description": "Layer 'Cycleways and roads' shows cycleway:traffic_sign:supplementary=none with a fixed text, namely 'No supplementary traffic sign present' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if cycleway:traffic_sign=BE:D7 | cycleway:traffic_sign~^(BE:D7;.*)$)",
+      "value": "none"
+    },
+    {
+      "key": "cycleway:buffer",
+      "description": "Layer 'Cycleways and roads' shows and asks freeform values for key 'cycleway:buffer' (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if cycleway=track | cycleway=lane)"
+    },
+    {
+      "key": "cycleway:separation",
+      "description": "Layer 'Cycleways and roads' shows cycleway:separation=dashed_line with a fixed text, namely 'This cycleway is separated by a dashed line' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if cycleway=track | cycleway=lane)",
+      "value": "dashed_line"
+    },
+    {
+      "key": "cycleway:separation",
+      "description": "Layer 'Cycleways and roads' shows cycleway:separation=solid_line with a fixed text, namely 'This cycleway is separated by a solid line' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if cycleway=track | cycleway=lane)",
+      "value": "solid_line"
+    },
+    {
+      "key": "cycleway:separation",
+      "description": "Layer 'Cycleways and roads' shows cycleway:separation=parking_lane with a fixed text, namely 'This cycleway is separated by a parking lane' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if cycleway=track | cycleway=lane)",
+      "value": "parking_lane"
+    },
+    {
+      "key": "cycleway:separation",
+      "description": "Layer 'Cycleways and roads' shows cycleway:separation=kerb with a fixed text, namely 'This cycleway is separated by a kerb' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if cycleway=track | cycleway=lane)",
+      "value": "kerb"
+    },
+    {
+      "key": "separation",
+      "description": "Layer 'Cycleways and roads' shows separation=dashed_line with a fixed text, namely 'This cycleway is separated by a dashed line' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if highway=cycleway | highway=path)",
+      "value": "dashed_line"
+    },
+    {
+      "key": "separation",
+      "description": "Layer 'Cycleways and roads' shows separation=solid_line with a fixed text, namely 'This cycleway is separated by a solid line' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if highway=cycleway | highway=path)",
+      "value": "solid_line"
+    },
+    {
+      "key": "separation",
+      "description": "Layer 'Cycleways and roads' shows separation=parking_lane with a fixed text, namely 'This cycleway is separated by a parking lane' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if highway=cycleway | highway=path)",
+      "value": "parking_lane"
+    },
+    {
+      "key": "separation",
+      "description": "Layer 'Cycleways and roads' shows separation=kerb with a fixed text, namely 'This cycleway is separated by a kerb' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if highway=cycleway | highway=path)",
+      "value": "kerb"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Kerbs and crossings has a layer Crossings showing features with this tag",
+      "value": "crossing"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Crossings' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Crossings allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Crossings allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Crossings allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Crossings allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "crossing",
+      "description": "Layer 'Crossings' shows crossing=uncontrolled with a fixed text, namely 'Crossing, without traffic lights' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if highway=crossing)",
+      "value": "uncontrolled"
+    },
+    {
+      "key": "crossing",
+      "description": "Layer 'Crossings' shows crossing=traffic_signals with a fixed text, namely 'Crossing with traffic signals' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if highway=crossing)",
+      "value": "traffic_signals"
+    },
+    {
+      "key": "crossing",
+      "description": "Layer 'Crossings' shows crossing=zebra with a fixed text, namely 'Zebra crossing' (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if highway=crossing)",
+      "value": "zebra"
+    },
+    {
+      "key": "crossing",
+      "description": "Layer 'Crossings' shows crossing=unmarked with a fixed text, namely 'Crossing without crossing markings' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if highway=crossing)",
+      "value": "unmarked"
+    },
+    {
+      "key": "crossing_ref",
+      "description": "Layer 'Crossings' shows crossing_ref=zebra with a fixed text, namely 'This is a zebra crossing' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if crossing=uncontrolled)",
+      "value": "zebra"
+    },
+    {
+      "key": "crossing_ref",
+      "description": "Layer 'Crossings' shows crossing_ref= with a fixed text, namely 'This is not a zebra crossing' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') Picking this answer will delete the key crossing_ref. (This is only shown if crossing=uncontrolled)",
+      "value": ""
+    },
+    {
+      "key": "bicycle",
+      "description": "Layer 'Crossings' shows bicycle=yes with a fixed text, namely 'A cyclist can use this crossing' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if highway=crossing)",
+      "value": "yes"
+    },
+    {
+      "key": "bicycle",
+      "description": "Layer 'Crossings' shows bicycle=no with a fixed text, namely 'A cyclist can not use this crossing' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if highway=crossing)",
+      "value": "no"
+    },
+    {
+      "key": "crossing:island",
+      "description": "Layer 'Crossings' shows crossing:island=yes with a fixed text, namely 'This crossing has an island in the middle' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if highway=crossing)",
+      "value": "yes"
+    },
+    {
+      "key": "crossing:island",
+      "description": "Layer 'Crossings' shows crossing:island=no with a fixed text, namely 'This crossing does not have an island in the middle' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if highway=crossing)",
+      "value": "no"
+    },
+    {
+      "key": "tactile_paving",
+      "description": "Layer 'Crossings' shows tactile_paving=yes with a fixed text, namely 'This crossing has tactile paving' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if highway=crossing)",
+      "value": "yes"
+    },
+    {
+      "key": "tactile_paving",
+      "description": "Layer 'Crossings' shows tactile_paving=no with a fixed text, namely 'This crossing does not have tactile paving' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if highway=crossing)",
+      "value": "no"
+    },
+    {
+      "key": "tactile_paving",
+      "description": "Layer 'Crossings' shows tactile_paving=incorrect with a fixed text, namely 'This crossing has tactile paving, but is not correct' (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if highway=crossing)",
+      "value": "incorrect"
+    },
+    {
+      "key": "button_operated",
+      "description": "Layer 'Crossings' shows button_operated=yes with a fixed text, namely 'This traffic light has a button to request green light' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if highway=traffic_signals | crossing=traffic_signals)",
+      "value": "yes"
+    },
+    {
+      "key": "button_operated",
+      "description": "Layer 'Crossings' shows button_operated=no with a fixed text, namely 'This traffic light does not have a button to request green light' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if highway=traffic_signals | crossing=traffic_signals)",
+      "value": "no"
+    },
+    {
+      "key": "traffic_signals:sound",
+      "description": "Layer 'Crossings' shows traffic_signals:sound=yes with a fixed text, namely 'This traffic light has sound signals to help crossing, both for finding the crossing and for crossing.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if crossing=traffic_signals)",
+      "value": "yes"
+    },
+    {
+      "key": "traffic_signals:sound",
+      "description": "Layer 'Crossings' shows traffic_signals:sound=no with a fixed text, namely 'This traffic light does not have sound signals to help crossing.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if crossing=traffic_signals)",
+      "value": "no"
+    },
+    {
+      "key": "traffic_signals:sound",
+      "description": "Layer 'Crossings' shows traffic_signals:sound=locate with a fixed text, namely 'This traffic light has a sound signal to help locate the pole, but no signal to sign that it is safe to cross.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if crossing=traffic_signals)",
+      "value": "locate"
+    },
+    {
+      "key": "traffic_signals:sound",
+      "description": "Layer 'Crossings' shows traffic_signals:sound=walk with a fixed text, namely 'This traffic light has a sound signal to sign that it is safe to cross, but no signal to help locate the pole.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if crossing=traffic_signals)",
+      "value": "walk"
+    },
+    {
+      "key": "traffic_signals:vibration",
+      "description": "Layer 'Crossings' shows traffic_signals:vibration=yes with a fixed text, namely 'The button for this traffic light has a vibration signal to indicate that it is safe to cross.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if crossing=traffic_signals & button_operated=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "traffic_signals:vibration",
+      "description": "Layer 'Crossings' shows traffic_signals:vibration=no with a fixed text, namely 'The button for this traffic light does not have a vibration signal to indicate that it is safe to cross.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if crossing=traffic_signals & button_operated=yes)",
+      "value": "no"
+    },
+    {
+      "key": "traffic_signals:arrow",
+      "description": "Layer 'Crossings' shows traffic_signals:arrow=yes with a fixed text, namely 'This traffic light has an arrow pointing in the direction of crossing.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if crossing=traffic_signals)",
+      "value": "yes"
+    },
+    {
+      "key": "traffic_signals:arrow",
+      "description": "Layer 'Crossings' shows traffic_signals:arrow=no with a fixed text, namely 'This traffic light does <b>not</b> have an arrow pointing in the direction of crossing.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if crossing=traffic_signals)",
+      "value": "no"
+    },
+    {
+      "key": "traffic_signals:minimap",
+      "description": "Layer 'Crossings' shows traffic_signals:minimap=yes with a fixed text, namely 'This traffic light has a tactile map showing the layout of the crossing.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if crossing=traffic_signals)",
+      "value": "yes"
+    },
+    {
+      "key": "traffic_signals:minimap",
+      "description": "Layer 'Crossings' shows traffic_signals:minimap=no with a fixed text, namely 'This traffic light does <b>not</b> have a tactile map showing the layout of the crossing.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if crossing=traffic_signals)",
+      "value": "no"
+    },
+    {
+      "key": "red_turn:right:bicycle",
+      "description": "Layer 'Crossings' shows red_turn:right:bicycle=yes with a fixed text, namely 'A cyclist can turn right if the light is red' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if highway=traffic_signals)",
+      "value": "yes"
+    },
+    {
+      "key": "red_turn:right:bicycle",
+      "description": "Layer 'Crossings' shows red_turn:right:bicycle=yes with a fixed text, namely 'A cyclist can turn right if the light is red' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if highway=traffic_signals)",
+      "value": "yes"
+    },
+    {
+      "key": "red_turn:right:bicycle",
+      "description": "Layer 'Crossings' shows red_turn:right:bicycle=no with a fixed text, namely 'A cyclist can not turn right if the light is red' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if highway=traffic_signals)",
+      "value": "no"
+    },
+    {
+      "key": "red_turn:straight:bicycle",
+      "description": "Layer 'Crossings' shows red_turn:straight:bicycle=yes with a fixed text, namely 'A cyclist can go straight on if the light is red' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if highway=traffic_signals)",
+      "value": "yes"
+    },
+    {
+      "key": "red_turn:straight:bicycle",
+      "description": "Layer 'Crossings' shows red_turn:straight:bicycle=yes with a fixed text, namely 'A cyclist can go straight on if the light is red' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if highway=traffic_signals)",
+      "value": "yes"
+    },
+    {
+      "key": "red_turn:straight:bicycle",
+      "description": "Layer 'Crossings' shows red_turn:straight:bicycle=no with a fixed text, namely 'A cyclist can not go straight on if the light is red' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if highway=traffic_signals)",
+      "value": "no"
+    },
+    {
+      "key": "barrier",
+      "description": "The MapComplete theme Kerbs and crossings has a layer Kerbs showing features with this tag",
+      "value": "kerb"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Kerbs' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Kerbs allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Kerbs allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Kerbs allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Kerbs allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "kerb",
+      "description": "Layer 'Kerbs' shows kerb=raised with a fixed text, namely 'This kerb is raised (>3 cm)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if _geometry:type=Point)",
+      "value": "raised"
+    },
+    {
+      "key": "kerb",
+      "description": "Layer 'Kerbs' shows kerb=lowered with a fixed text, namely 'This kerb is lowered (~3 cm)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if _geometry:type=Point)",
+      "value": "lowered"
+    },
+    {
+      "key": "kerb",
+      "description": "Layer 'Kerbs' shows kerb=flush with a fixed text, namely 'This kerb is flush (~0cm)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if _geometry:type=Point)",
+      "value": "flush"
+    },
+    {
+      "key": "kerb",
+      "description": "Layer 'Kerbs' shows kerb=no with a fixed text, namely 'There is no kerb here' (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if _geometry:type=Point)",
+      "value": "no"
+    },
+    {
+      "key": "kerb",
+      "description": "Layer 'Kerbs' shows kerb=yes with a fixed text, namely 'There is a kerb of unknown height' (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if _geometry:type=Point)",
+      "value": "yes"
+    },
+    {
+      "key": "tactile_paving",
+      "description": "Layer 'Kerbs' shows tactile_paving=yes with a fixed text, namely 'This kerb has tactile paving.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if _geometry:type=Point)",
+      "value": "yes"
+    },
+    {
+      "key": "tactile_paving",
+      "description": "Layer 'Kerbs' shows tactile_paving=no with a fixed text, namely 'This kerb does not have tactile paving.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if _geometry:type=Point)",
+      "value": "no"
+    },
+    {
+      "key": "tactile_paving",
+      "description": "Layer 'Kerbs' shows tactile_paving=incorrect with a fixed text, namely 'This kerb has tactile paving, but it is incorrect.' (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if _geometry:type=Point)",
+      "value": "incorrect"
+    },
+    {
+      "key": "kerb:height",
+      "description": "Layer 'Kerbs' shows and asks freeform values for key 'kerb:height' (in the mapcomplete.org theme 'Kerbs and crossings')"
+    },
+    {
+      "key": "kerb:height",
+      "description": "Layer 'Kerbs' shows kerb:height=0 with a fixed text, namely 'This kerb is flush and is lower than 1cm.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings')",
+      "value": "0"
+    }
+  ]
+}

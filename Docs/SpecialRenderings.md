@@ -646,10 +646,11 @@ Creates a button where a user can upload an image to IMGUR
 -----|-----|----- |
 | image-key | _undefined_ | Image tag to add the URL to (or image-tag:0, image-tag:1 when multiple images are added) |
 | label | _undefined_ | The text to show on the button |
+| disable_blur | _undefined_ | If set to 'true' or 'yes', then face blurring will be disabled. To be used sparingly |
 
 #### Example usage of image_upload
 
-<code>`{image_upload(,)}`</code>
+<code>`{image_upload(,,)}`</code>
 
 ### rating
 

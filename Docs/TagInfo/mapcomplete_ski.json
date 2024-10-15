@@ -1,0 +1,1649 @@
+{
+  "data_format": 1,
+  "project": {
+    "name": "MapComplete Ski pistes and aerialways",
+    "description": "Everything you need to go skiing",
+    "project_url": "https://mapcomplete.org/ski",
+    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "icon_url": "https://mapcomplete.org/assets/layers/aerialway/chair_lift.svg",
+    "contact_name": "Pieter Vander Vennet",
+    "contact_email": "pietervdvn@posteo.net"
+  },
+  "tags": [
+    {
+      "key": "piste:type",
+      "description": "The MapComplete theme Ski pistes and aerialways has a layer Ski and snowboard pistes showing features with this tag",
+      "value": "downhill"
+    },
+    {
+      "key": "piste:type",
+      "description": "The MapComplete theme Ski pistes and aerialways has a layer Ski and snowboard pistes showing features with this tag",
+      "value": "connection"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Ski and snowboard pistes' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Ski and snowboard pistes allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Ski and snowboard pistes allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Ski and snowboard pistes allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Ski and snowboard pistes allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "piste:difficulty",
+      "description": "Layer 'Ski and snowboard pistes' shows piste:difficulty=novice with a fixed text, namely 'Novice (green)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if piste:type!=connection)",
+      "value": "novice"
+    },
+    {
+      "key": "piste:difficulty",
+      "description": "Layer 'Ski and snowboard pistes' shows piste:difficulty=easy with a fixed text, namely 'Easy (blue)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if piste:type!=connection)",
+      "value": "easy"
+    },
+    {
+      "key": "piste:difficulty",
+      "description": "Layer 'Ski and snowboard pistes' shows piste:difficulty=intermediate with a fixed text, namely 'Intermediate (red)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if piste:type!=connection)",
+      "value": "intermediate"
+    },
+    {
+      "key": "piste:difficulty",
+      "description": "Layer 'Ski and snowboard pistes' shows piste:difficulty=advanced with a fixed text, namely 'Advanced (black)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if piste:type!=connection)",
+      "value": "advanced"
+    },
+    {
+      "key": "piste:difficulty",
+      "description": "Layer 'Ski and snowboard pistes' shows piste:difficulty=expert with a fixed text, namely 'Expert (orange/double black)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if piste:type!=connection)",
+      "value": "expert"
+    },
+    {
+      "key": "piste:difficulty",
+      "description": "Layer 'Ski and snowboard pistes' shows piste:difficulty=freeride with a fixed text, namely 'Freeride' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if piste:type!=connection)",
+      "value": "freeride"
+    },
+    {
+      "key": "aerialway",
+      "description": "The MapComplete theme Ski pistes and aerialways has a layer Aerialways showing features with this tag"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Aerialways' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Aerialways allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Aerialways allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Aerialways allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Aerialways allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "aerialway",
+      "description": "Layer 'Aerialways' shows aerialway=cable_car with a fixed text, namely 'This is a cable car where the car goes up and down again on the same cable.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "cable_car"
+    },
+    {
+      "key": "aerialway",
+      "description": "Layer 'Aerialways' shows aerialway=gondola with a fixed text, namely 'This is a gondola where the cars go around in continuous circles' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "gondola"
+    },
+    {
+      "key": "aerialway",
+      "description": "Layer 'Aerialways' shows aerialway=chair_lift with a fixed text, namely 'An open chairlift with seats to sit on and open to the outside air.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "chair_lift"
+    },
+    {
+      "key": "aerialway",
+      "description": "Layer 'Aerialways' shows aerialway=mixed with a fixed text, namely 'An aerialway which has both chairs and gondolas in the same continuous track' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "mixed"
+    },
+    {
+      "key": "aerialway",
+      "description": "Layer 'Aerialways' shows aerialway=drag_lift with a fixed text, namely 'A drag lift' (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "drag_lift"
+    },
+    {
+      "key": "aerialway",
+      "description": "Layer 'Aerialways' shows aerialway=t-bar with a fixed text, namely 'A drag lift with T-shaped carriers for two passengers at a time' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "t-bar"
+    },
+    {
+      "key": "aerialway",
+      "description": "Layer 'Aerialways' shows aerialway=j-bar with a fixed text, namely 'A drag lift with L-shaped bars for a single passenger at a time' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "j-bar"
+    },
+    {
+      "key": "aerialway",
+      "description": "Layer 'Aerialways' shows aerialway=platter with a fixed text, namely 'A drag lift with a platter to drag a single passenger at a time' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "platter"
+    },
+    {
+      "key": "aerialway",
+      "description": "Layer 'Aerialways' shows aerialway=rope_tow with a fixed text, namely 'A tow line which which drags skieers' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "rope_tow"
+    },
+    {
+      "key": "aerialway",
+      "description": "Layer 'Aerialways' shows aerialway=magic_carpet with a fixed text, namely 'A magic carpet (a conveyor belt on the ground)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "magic_carpet"
+    },
+    {
+      "key": "aerialway",
+      "description": "Layer 'Aerialways' shows aerialway=zip_line with a fixed text, namely 'A zip line. (A touristical attraction where adventurous people go down at high speeds) ' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "zip_line"
+    },
+    {
+      "key": "duration",
+      "description": "Layer 'Aerialways' shows and asks freeform values for key 'duration' (in the mapcomplete.org theme 'Ski pistes and aerialways')"
+    },
+    {
+      "key": "aerialway:occupancy",
+      "description": "Layer 'Aerialways' shows and asks freeform values for key 'aerialway:occupancy' (in the mapcomplete.org theme 'Ski pistes and aerialways')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Aerialways' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Ski pistes and aerialways')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Aerialways' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "closed"
+    },
+    {
+      "key": "oneway",
+      "description": "Layer 'Aerialways' shows oneway=yes with a fixed text, namely 'This aerialway can only be taken to the top' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "yes"
+    },
+    {
+      "key": "oneway",
+      "description": "Layer 'Aerialways' shows oneway=no with a fixed text, namely 'This aerialway can be taken in both directions' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "no"
+    },
+    {
+      "key": "information",
+      "description": "The MapComplete theme Ski pistes and aerialways has a layer Guideposts showing features with this tag",
+      "value": "guidepost"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Guideposts' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Guideposts allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Guideposts allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Guideposts allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Guideposts allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "bicycle",
+      "description": "Layer 'Guideposts' shows bicycle=yes with a fixed text, namely 'This guidepost shows bicycle routes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "yes"
+    },
+    {
+      "key": "hiking",
+      "description": "Layer 'Guideposts' shows hiking=yes with a fixed text, namely 'This guidepost shows hiking routes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "yes"
+    },
+    {
+      "key": "mtb",
+      "description": "Layer 'Guideposts' shows mtb=yes with a fixed text, namely 'This guidepost shows mountain bike routes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "yes"
+    },
+    {
+      "key": "horse",
+      "description": "Layer 'Guideposts' shows horse=yes with a fixed text, namely 'This guidepost shows horse riding routes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "yes"
+    },
+    {
+      "key": "ski",
+      "description": "Layer 'Guideposts' shows ski=yes with a fixed text, namely 'This guidepost shows ski routes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "yes"
+    },
+    {
+      "key": "tourism",
+      "description": "The MapComplete theme Ski pistes and aerialways has a layer Maps showing features with this tag",
+      "value": "map"
+    },
+    {
+      "key": "information",
+      "description": "The MapComplete theme Ski pistes and aerialways has a layer Maps showing features with this tag",
+      "value": "map"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Maps' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Maps allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Maps allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Maps allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Maps allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "map_type",
+      "description": "Layer 'Maps' shows map_type=topo with a fixed text, namely 'Topographical map <p class='subtle'>The map contains contour lines. </p>' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "topo"
+    },
+    {
+      "key": "map_type",
+      "description": "Layer 'Maps' shows map_type=street with a fixed text, namely 'A map with all streets or ways of an area. <p class='subtle'>The streets are mostly named; the angles, distances etc. are accurate</p>' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "street"
+    },
+    {
+      "key": "map_type",
+      "description": "Layer 'Maps' shows map_type=scheme with a fixed text, namely 'This is a schematic map. <p class='subtle'>A sketched map with only important ways and POIs. The angles, distances etc. are merely illustrative, not accurate.</p> ' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "scheme"
+    },
+    {
+      "key": "map_type",
+      "description": "Layer 'Maps' shows map_type=toposcope with a fixed text, namely 'This is a toposcope. <p class='subtle'>A marker erected on high places which indicates the direction to notable landscape features which can be seen from that point<p>' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "toposcope"
+    },
+    {
+      "key": "map_size",
+      "description": "Layer 'Maps' shows map_size=building with a fixed text, namely 'A map of the rooms within a building' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "building"
+    },
+    {
+      "key": "map_size",
+      "description": "Layer 'Maps' shows map_size=site with a fixed text, namely 'A map of special site, like of a historical castle, a park, a campus, a forest, ....' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "site"
+    },
+    {
+      "key": "map_size",
+      "description": "Layer 'Maps' shows map_size=village with a fixed text, namely 'A map showing the village or town' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "village"
+    },
+    {
+      "key": "map_size",
+      "description": "Layer 'Maps' shows map_size=city with a fixed text, namely 'A map of a city' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "city"
+    },
+    {
+      "key": "map_size",
+      "description": "Layer 'Maps' shows map_size=region with a fixed text, namely 'The map of an entire region, showing multiple cities and villages' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "region"
+    },
+    {
+      "key": "map_source",
+      "description": "Layer 'Maps' shows and asks freeform values for key 'map_source' (in the mapcomplete.org theme 'Ski pistes and aerialways')"
+    },
+    {
+      "key": "map_source",
+      "description": "Layer 'Maps' shows map_source=OpenStreetMap & not:map_source= with a fixed text, namely 'This map is based on OpenStreetMap' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "OpenStreetMap"
+    },
+    {
+      "key": "not:map_source",
+      "description": "Layer 'Maps' shows map_source=OpenStreetMap & not:map_source= with a fixed text, namely 'This map is based on OpenStreetMap' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') Picking this answer will delete the key not:map_source.",
+      "value": ""
+    },
+    {
+      "key": "map_source:attribution",
+      "description": "Layer 'Maps' shows map_source:attribution=yes with a fixed text, namely 'OpenStreetMap is clearly attributed, including the ODBL-license' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if map_source~^((O|)pen(S|s)treet(M|m)ap)$ | map_source=osm | map_source=OSM)",
+      "value": "yes"
+    },
+    {
+      "key": "map_source:attribution",
+      "description": "Layer 'Maps' shows map_source:attribution=incomplete with a fixed text, namely 'OpenStreetMap is clearly attributed, but the license is not mentioned' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if map_source~^((O|)pen(S|s)treet(M|m)ap)$ | map_source=osm | map_source=OSM)",
+      "value": "incomplete"
+    },
+    {
+      "key": "map_source:attribution",
+      "description": "Layer 'Maps' shows map_source:attribution=sticker with a fixed text, namely 'OpenStreetMap wasn't mentioned, but someone put an OpenStreetMap-sticker on it' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if map_source~^((O|)pen(S|s)treet(M|m)ap)$ | map_source=osm | map_source=OSM)",
+      "value": "sticker"
+    },
+    {
+      "key": "map_source:attribution",
+      "description": "Layer 'Maps' shows map_source:attribution=none with a fixed text, namely 'There is no attribution at all' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if map_source~^((O|)pen(S|s)treet(M|m)ap)$ | map_source=osm | map_source=OSM)",
+      "value": "none"
+    },
+    {
+      "key": "map_source:attribution",
+      "description": "Layer 'Maps' shows map_source:attribution=no with a fixed text, namely 'There is no attribution at all' (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if map_source~^((O|)pen(S|s)treet(M|m)ap)$ | map_source=osm | map_source=OSM)",
+      "value": "no"
+    },
+    {
+      "key": "information",
+      "description": "The MapComplete theme Ski pistes and aerialways has a layer Information boards showing features with this tag",
+      "value": "board"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Information boards' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Information boards allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Information boards allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Information boards allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Information boards allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "emergency",
+      "description": "The MapComplete theme Ski pistes and aerialways has a layer Mountain rescue stations showing features with this tag",
+      "value": "mountain_rescue"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Mountain rescue stations' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Mountain rescue stations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Mountain rescue stations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Mountain rescue stations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Mountain rescue stations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Ski pistes and aerialways has a layer Toilets showing features with this tag",
+      "value": "toilets"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Toilets' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Toilets allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Toilets allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Toilets allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Toilets allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Toilets' shows and asks freeform values for key 'level' (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if repeat_on=)"
+    },
+    {
+      "key": "location",
+      "description": "Layer 'Toilets' shows location=underground with a fixed text, namely 'Located underground' (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if repeat_on=)",
+      "value": "underground"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Toilets' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if repeat_on=)",
+      "value": "0"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Toilets' shows level= with a fixed text, namely 'Located on the ground floor' (in the mapcomplete.org theme 'Ski pistes and aerialways') Picking this answer will delete the key level. (This is only shown if repeat_on=)",
+      "value": ""
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Toilets' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if repeat_on=)",
+      "value": "1"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Toilets' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if repeat_on=)",
+      "value": "-1"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Toilets' shows and asks freeform values for key 'access' (in the mapcomplete.org theme 'Ski pistes and aerialways')"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Toilets' shows access=yes with a fixed text, namely 'Public access' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "yes"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Toilets' shows access=customers with a fixed text, namely 'Only access to customers' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "customers"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Toilets' shows access=no with a fixed text, namely 'Not accessible' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "no"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Toilets' shows access=key with a fixed text, namely 'Accessible, but one has to ask a key to enter' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "key"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Toilets' shows access=public with a fixed text, namely 'Public access' (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "public"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Toilets' shows fee=yes with a fixed text, namely 'These are paid toilets' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if access!=no)",
+      "value": "yes"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Toilets' shows fee=no with a fixed text, namely 'Free to use' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if access!=no)",
+      "value": "no"
+    },
+    {
+      "key": "charge",
+      "description": "Layer 'Toilets' shows and asks freeform values for key 'charge' (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if fee=yes)"
+    },
+    {
+      "key": "payment:cash",
+      "description": "Layer 'Toilets' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if fee=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:cards",
+      "description": "Layer 'Toilets' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if fee=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:qr_code",
+      "description": "Layer 'Toilets' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if fee=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:coins",
+      "description": "Layer 'Toilets' shows payment:coins=yes with a fixed text, namely 'Coins are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if fee=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:notes",
+      "description": "Layer 'Toilets' shows payment:notes=yes with a fixed text, namely 'Bank notes are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if fee=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:debit_cards",
+      "description": "Layer 'Toilets' shows payment:debit_cards=yes with a fixed text, namely 'Debit cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if fee=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:credit_cards",
+      "description": "Layer 'Toilets' shows payment:credit_cards=yes with a fixed text, namely 'Credit cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if fee=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Toilets' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if access!=no)"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Toilets' shows opening_hours=24/7 with a fixed text, namely '24/7 opened (including holidays)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if access!=no)",
+      "value": "24/7"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Toilets' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if access!=no)",
+      "value": "closed"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Toilets' shows wheelchair=yes with a fixed text, namely 'There is a dedicated toilet for wheelchair users' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "yes"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Toilets' shows wheelchair=no with a fixed text, namely 'No wheelchair access' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "no"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Toilets' shows wheelchair=designated with a fixed text, namely 'There is only a dedicated toilet for wheelchair users' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "designated"
+    },
+    {
+      "key": "door:width",
+      "description": "Layer 'Toilets' shows and asks freeform values for key 'door:width' (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if (wheelchair=yes | wheelchair=designated))"
+    },
+    {
+      "key": "toilets:position",
+      "description": "Layer 'Toilets' shows toilets:position=seated with a fixed text, namely 'There are only seated toilets' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "seated"
+    },
+    {
+      "key": "toilets:position",
+      "description": "Layer 'Toilets' shows toilets:position=urinal with a fixed text, namely 'There are only urinals here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "urinal"
+    },
+    {
+      "key": "toilets:position",
+      "description": "Layer 'Toilets' shows toilets:position=squat with a fixed text, namely 'There are only squat toilets here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "squat"
+    },
+    {
+      "key": "toilets:position",
+      "description": "Layer 'Toilets' shows toilets:position=seated;urinal with a fixed text, namely 'Both seated toilets and urinals are available here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "seated;urinal"
+    },
+    {
+      "key": "gender_segregated",
+      "description": "Layer 'Toilets' shows gender_segregated=yes with a fixed text, namely 'There is a separate, signposted area for men and women' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if toilets:position!=urinal)",
+      "value": "yes"
+    },
+    {
+      "key": "gender_segregated",
+      "description": "Layer 'Toilets' shows gender_segregated=no with a fixed text, namely 'There is no separate, signposted area for men and women' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if toilets:position!=urinal)",
+      "value": "no"
+    },
+    {
+      "key": "toilets:menstrual_products",
+      "description": "Layer 'Toilets' shows toilets:menstrual_products=yes with a fixed text, namely 'Free menstrual products are available to all visitors of these toilets' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "yes"
+    },
+    {
+      "key": "toilets:menstrual_products",
+      "description": "Layer 'Toilets' shows toilets:menstrual_products=limited with a fixed text, namely 'Free menstrual products are available to some visitors of these toilets' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "limited"
+    },
+    {
+      "key": "toilets:menstrual_products",
+      "description": "Layer 'Toilets' shows toilets:menstrual_products=no with a fixed text, namely 'No free menstrual products are available here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "no"
+    },
+    {
+      "key": "toilets:menstrual_products:location",
+      "description": "Layer 'Toilets' shows and asks freeform values for key 'toilets:menstrual_products:location' (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if toilets:menstrual_products=limited | toilets:menstrual_products:location~.+)"
+    },
+    {
+      "key": "toilets:menstrual_products:location",
+      "description": "Layer 'Toilets' shows toilets:menstrual_products:location=female_toilet with a fixed text, namely 'The free, menstrual products are located in the toilet for women' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if toilets:menstrual_products=limited | toilets:menstrual_products:location~.+)",
+      "value": "female_toilet"
+    },
+    {
+      "key": "toilets:menstrual_products:location",
+      "description": "Layer 'Toilets' shows toilets:menstrual_products:location=male_toilet with a fixed text, namely 'The free, menstrual products are located in the toilet for men' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if toilets:menstrual_products=limited | toilets:menstrual_products:location~.+)",
+      "value": "male_toilet"
+    },
+    {
+      "key": "toilets:menstrual_products:location",
+      "description": "Layer 'Toilets' shows toilets:menstrual_products:location=wheelchair_toilet with a fixed text, namely 'The free, menstrual products are located in the toilet for wheelchair users' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if toilets:menstrual_products=limited | toilets:menstrual_products:location~.+)",
+      "value": "wheelchair_toilet"
+    },
+    {
+      "key": "changing_table",
+      "description": "Layer 'Toilets' shows changing_table=yes with a fixed text, namely 'A changing table is available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "yes"
+    },
+    {
+      "key": "changing_table",
+      "description": "Layer 'Toilets' shows changing_table=no with a fixed text, namely 'No changing table is available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "no"
+    },
+    {
+      "key": "changing_table:location",
+      "description": "Layer 'Toilets' shows and asks freeform values for key 'changing_table:location' (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if changing_table=yes)"
+    },
+    {
+      "key": "changing_table:location",
+      "description": "Layer 'Toilets' shows changing_table:location=female_toilet with a fixed text, namely 'A changing table is in the toilet for women' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if changing_table=yes)",
+      "value": "female_toilet"
+    },
+    {
+      "key": "changing_table:location",
+      "description": "Layer 'Toilets' shows changing_table:location=male_toilet with a fixed text, namely 'A changing table is in the toilet for men' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if changing_table=yes)",
+      "value": "male_toilet"
+    },
+    {
+      "key": "changing_table:location",
+      "description": "Layer 'Toilets' shows changing_table:location=wheelchair_toilet with a fixed text, namely 'A changing table is in the toilet for wheelchair users' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if changing_table=yes)",
+      "value": "wheelchair_toilet"
+    },
+    {
+      "key": "changing_table:location",
+      "description": "Layer 'Toilets' shows changing_table:location=dedicated_room with a fixed text, namely 'A changing table is in a dedicated room' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if changing_table=yes)",
+      "value": "dedicated_room"
+    },
+    {
+      "key": "toilets:handwashing",
+      "description": "Layer 'Toilets' shows toilets:handwashing=yes with a fixed text, namely 'These toilets have a sink to wash your hands' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "yes"
+    },
+    {
+      "key": "toilets:handwashing",
+      "description": "Layer 'Toilets' shows toilets:handwashing=no with a fixed text, namely 'These toilets <b>don't</b> have a sink to wash your hands' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "no"
+    },
+    {
+      "key": "toilets:paper_supplied",
+      "description": "Layer 'Toilets' shows toilets:paper_supplied=yes with a fixed text, namely 'This toilet is equipped with toilet paper' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if toilets:position!=urinal)",
+      "value": "yes"
+    },
+    {
+      "key": "toilets:paper_supplied",
+      "description": "Layer 'Toilets' shows toilets:paper_supplied=no with a fixed text, namely 'You have to bring your own toilet paper to this toilet' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if toilets:position!=urinal)",
+      "value": "no"
+    },
+    {
+      "key": "description",
+      "description": "Layer 'Toilets' shows and asks freeform values for key 'description' (in the mapcomplete.org theme 'Ski pistes and aerialways')"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Ski pistes and aerialways has a layer Drinking water showing features with this tag",
+      "value": "drinking_water"
+    },
+    {
+      "key": "drinking_water",
+      "description": "The MapComplete theme Ski pistes and aerialways has a layer Drinking water showing features with this tag",
+      "value": "yes"
+    },
+    {
+      "key": "disused:amenity",
+      "description": "The MapComplete theme Ski pistes and aerialways has a layer Drinking water showing features with this tag",
+      "value": "drinking_water"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Drinking water' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Drinking water allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Drinking water allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Drinking water allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Drinking water allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "operational_status",
+      "description": "Layer 'Drinking water' shows and asks freeform values for key 'operational_status' (in the mapcomplete.org theme 'Ski pistes and aerialways')"
+    },
+    {
+      "key": "operational_status",
+      "description": "Layer 'Drinking water' shows operational_status= & disused:amenity= with a fixed text, namely 'This drinking water works' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') Picking this answer will delete the key operational_status.",
+      "value": ""
+    },
+    {
+      "key": "disused:amenity",
+      "description": "Layer 'Drinking water' shows operational_status= & disused:amenity= with a fixed text, namely 'This drinking water works' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') Picking this answer will delete the key disused:amenity.",
+      "value": ""
+    },
+    {
+      "key": "operational_status",
+      "description": "Layer 'Drinking water' shows operational_status=broken with a fixed text, namely 'This drinking water is broken' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "broken"
+    },
+    {
+      "key": "operational_status",
+      "description": "Layer 'Drinking water' shows operational_status=closed with a fixed text, namely 'This drinking water is closed' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "closed"
+    },
+    {
+      "key": "disused:amenity",
+      "description": "Layer 'Drinking water' shows disused:amenity=drinking_water with a fixed text, namely 'This drinking water is permanently closed' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "drinking_water"
+    },
+    {
+      "key": "fountain",
+      "description": "Layer 'Drinking water' shows fountain=bubbler with a fixed text, namely 'This is a bubbler fountain. A water jet to drink from is sent upwards, typically controlled by a push button.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "bubbler"
+    },
+    {
+      "key": "fountain",
+      "description": "Layer 'Drinking water' shows fountain=bottle_refill with a fixed text, namely 'This is a bottle refill point where the water is sent downwards, typically controlled by a push button or a motion sensor. Drinking directly from the stream might be very hard or impossible.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "bottle_refill"
+    },
+    {
+      "key": "man_made",
+      "description": "Layer 'Drinking water' shows man_made=water_tap with a fixed text, namely 'This is a water tap. The water flows downward and the stream is controlled by a valve or push-button.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "water_tap"
+    },
+    {
+      "key": "bottle",
+      "description": "Layer 'Drinking water' shows bottle=yes with a fixed text, namely 'It is easy to refill water bottles' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if fountain!=bottle_refill)",
+      "value": "yes"
+    },
+    {
+      "key": "bottle",
+      "description": "Layer 'Drinking water' shows bottle=no with a fixed text, namely 'Water bottles may not fit' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if fountain!=bottle_refill)",
+      "value": "no"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Drinking water' shows fee=no with a fixed text, namely 'Free to use' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "no"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Drinking water' shows fee=yes with a fixed text, namely 'One needs to pay to use this drinking water point' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "yes"
+    },
+    {
+      "key": "seasonal",
+      "description": "Layer 'Drinking water' shows seasonal=no with a fixed text, namely 'Available all around the year' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "no"
+    },
+    {
+      "key": "seasonal",
+      "description": "Layer 'Drinking water' shows seasonal=summer with a fixed text, namely 'Only available in summer' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "summer"
+    },
+    {
+      "key": "seasonal",
+      "description": "Layer 'Drinking water' shows seasonal=spring;summer;autumn with a fixed text, namely 'Closed during the winter' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "spring;summer;autumn"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Drinking water' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Ski pistes and aerialways')"
+    },
+    {
+      "key": "seasonal",
+      "description": "Layer 'Drinking water' shows seasonal!=no & seasonal~.+ & ((seasonal!~^(.*winter.*)$ & _now:date~^(....-(12|01|02)-..)$) | (seasonal!~^(.*spring.*)$ & _now:date~^(....-(03|04|05)-..)$) | (seasonal!~^(.*summer.*)$ & _now:date~^(....-(06|07|08)-..)$) | (seasonal!~^(.*autumn.*)$ & _now:date~^(....-(09|10|11)-..)$)) with a fixed text, namely 'This drinking water fountain is closed this season. As such, the opening hours are not shown.' (in the mapcomplete.org theme 'Ski pistes and aerialways')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Drinking water' shows opening_hours=24/7 with a fixed text, namely '24/7 opened (including holidays)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "24/7"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Drinking water' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "closed"
+    },
+    {
+      "key": "tourism",
+      "description": "Layer 'Drinking water' shows tourism=artwork with a fixed text, namely 'This drinking water point has an integrated artwork' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "artwork"
+    },
+    {
+      "key": "not:tourism:artwork",
+      "description": "Layer 'Drinking water' shows not:tourism:artwork=yes with a fixed text, namely 'This drinking water point does not have an integrated artwork' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "yes"
+    },
+    {
+      "key": "tourism",
+      "description": "Layer 'Drinking water' shows tourism= with a fixed text, namely 'This drinking water point <span class=\"subtle\">probably</span> doesn't have an integrated artwork' (in the mapcomplete.org theme 'Ski pistes and aerialways') Picking this answer will delete the key tourism.",
+      "value": ""
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Drinking water' shows and asks freeform values for key 'artwork_type' (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if tourism=artwork)"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Drinking water' shows artwork_type=architecture with a fixed text, namely 'Architecture' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if tourism=artwork)",
+      "value": "architecture"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Drinking water' shows artwork_type=mural with a fixed text, namely 'Mural' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if tourism=artwork)",
+      "value": "mural"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Drinking water' shows artwork_type=painting with a fixed text, namely 'Painting' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if tourism=artwork)",
+      "value": "painting"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Drinking water' shows artwork_type=sculpture with a fixed text, namely 'Sculpture' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if tourism=artwork)",
+      "value": "sculpture"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Drinking water' shows artwork_type=statue with a fixed text, namely 'Statue' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if tourism=artwork)",
+      "value": "statue"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Drinking water' shows artwork_type=bust with a fixed text, namely 'Bust' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if tourism=artwork)",
+      "value": "bust"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Drinking water' shows artwork_type=stone with a fixed text, namely 'Stone' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if tourism=artwork)",
+      "value": "stone"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Drinking water' shows artwork_type=installation with a fixed text, namely 'Installation' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if tourism=artwork)",
+      "value": "installation"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Drinking water' shows artwork_type=graffiti with a fixed text, namely 'Graffiti' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if tourism=artwork)",
+      "value": "graffiti"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Drinking water' shows artwork_type=relief with a fixed text, namely 'Relief' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if tourism=artwork)",
+      "value": "relief"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Drinking water' shows artwork_type=azulejo with a fixed text, namely 'Azulejo (Spanish decorative tilework)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if tourism=artwork)",
+      "value": "azulejo"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Drinking water' shows artwork_type=tilework with a fixed text, namely 'Tilework' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if tourism=artwork)",
+      "value": "tilework"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Drinking water' shows artwork_type=woodcarving with a fixed text, namely 'Woodcarving' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if tourism=artwork)",
+      "value": "woodcarving"
+    },
+    {
+      "key": "artist:wikidata",
+      "description": "Layer 'Drinking water' shows and asks freeform values for key 'artist:wikidata' (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if tourism=artwork)"
+    },
+    {
+      "key": "artist_name",
+      "description": "Layer 'Drinking water' shows and asks freeform values for key 'artist_name' (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if tourism=artwork)"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Drinking water' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if tourism=artwork)"
+    },
+    {
+      "key": "subject:wikidata",
+      "description": "Layer 'Drinking water' shows and asks freeform values for key 'subject:wikidata' (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if tourism=artwork)"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Ski pistes and aerialways has a layer Restaurants and fast food showing features with this tag",
+      "value": "fast_food"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Ski pistes and aerialways has a layer Restaurants and fast food showing features with this tag",
+      "value": "restaurant"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Restaurants and fast food' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Restaurants and fast food' shows and asks freeform values for key 'name' (in the mapcomplete.org theme 'Ski pistes and aerialways')"
+    },
+    {
+      "key": "amenity",
+      "description": "Layer 'Restaurants and fast food' shows amenity=fast_food with a fixed text, namely 'This is a fast-food business, focused on fast service. If seating is available, it is rather limited and functional.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "fast_food"
+    },
+    {
+      "key": "amenity",
+      "description": "Layer 'Restaurants and fast food' shows amenity=restaurant with a fixed text, namely 'A <b>restaurant</b>, focused on creating a nice experience where one is served at the table' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "restaurant"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Restaurants and fast food' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Ski pistes and aerialways')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Restaurants and fast food' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "closed"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Restaurants and fast food' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Ski pistes and aerialways')"
+    },
+    {
+      "key": "contact:website",
+      "description": "Layer 'Restaurants and fast food' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the mapcomplete.org theme 'Ski pistes and aerialways')"
+    },
+    {
+      "key": "email",
+      "description": "Layer 'Restaurants and fast food' shows and asks freeform values for key 'email' (in the mapcomplete.org theme 'Ski pistes and aerialways')"
+    },
+    {
+      "key": "contact:email",
+      "description": "Layer 'Restaurants and fast food' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Ski pistes and aerialways')"
+    },
+    {
+      "key": "operator:email",
+      "description": "Layer 'Restaurants and fast food' shows operator:email~.+ with a fixed text, namely '<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>' (in the mapcomplete.org theme 'Ski pistes and aerialways')"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'Restaurants and fast food' shows and asks freeform values for key 'phone' (in the mapcomplete.org theme 'Ski pistes and aerialways')"
+    },
+    {
+      "key": "contact:phone",
+      "description": "Layer 'Restaurants and fast food' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Ski pistes and aerialways')"
+    },
+    {
+      "key": "payment:cash",
+      "description": "Layer 'Restaurants and fast food' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:cards",
+      "description": "Layer 'Restaurants and fast food' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:qr_code",
+      "description": "Layer 'Restaurants and fast food' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "yes"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Restaurants and fast food' shows and asks freeform values for key 'level' (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if repeat_on=)"
+    },
+    {
+      "key": "location",
+      "description": "Layer 'Restaurants and fast food' shows location=underground with a fixed text, namely 'Located underground' (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if repeat_on=)",
+      "value": "underground"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Restaurants and fast food' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if repeat_on=)",
+      "value": "0"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Restaurants and fast food' shows level= with a fixed text, namely 'Located on the ground floor' (in the mapcomplete.org theme 'Ski pistes and aerialways') Picking this answer will delete the key level. (This is only shown if repeat_on=)",
+      "value": ""
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Restaurants and fast food' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if repeat_on=)",
+      "value": "1"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Restaurants and fast food' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if repeat_on=)",
+      "value": "-1"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Restaurants and fast food' shows wheelchair=designated with a fixed text, namely 'This place is specially adapted for wheelchair users' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "designated"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Restaurants and fast food' shows wheelchair=yes with a fixed text, namely 'This place is easily reachable with a wheelchair' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "yes"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Restaurants and fast food' shows wheelchair=limited with a fixed text, namely 'It is possible to reach this place in a wheelchair, but it is not easy' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "limited"
+    },
+    {
+      "key": "wheelchair",
+      "description": "Layer 'Restaurants and fast food' shows wheelchair=no with a fixed text, namely 'This place is not reachable with a wheelchair' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "no"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows and asks freeform values for key 'cuisine' (in the mapcomplete.org theme 'Ski pistes and aerialways')"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=pizza with a fixed text, namely 'Pizzeria' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "pizza"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=friture with a fixed text, namely 'Friture' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "friture"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=pasta with a fixed text, namely 'Serves mainly pasta' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "pasta"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=kebab with a fixed text, namely 'Kebab shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "kebab"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=sandwich with a fixed text, namely 'Sandwich shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "sandwich"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=burger with a fixed text, namely 'Burgersrestaurant' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "burger"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=sushi with a fixed text, namely 'Sushi restaurant' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "sushi"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=coffee with a fixed text, namely 'Coffeebar' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "coffee"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=italian with a fixed text, namely 'Italian restaurant (which serves more than pasta and pizza)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "italian"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=french with a fixed text, namely 'French restaurant' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "french"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=chinese with a fixed text, namely 'Chinese' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "chinese"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=greek with a fixed text, namely 'Greek' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "greek"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=indian with a fixed text, namely 'Indian' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "indian"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=turkish with a fixed text, namely 'Turkish restaurant' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "turkish"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=thai with a fixed text, namely 'Thai restaurant' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "thai"
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=mexican   with a fixed text, namely 'Mexican dishes are served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "mexican  "
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=japanese   with a fixed text, namely 'Japanese dishes are served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "japanese  "
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=chicken   with a fixed text, namely 'Chicken based dishes are served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "chicken  "
+    },
+    {
+      "key": "cuisine",
+      "description": "Layer 'Restaurants and fast food' shows cuisine=seafood   with a fixed text, namely 'Seafood dishes are served here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "seafood  "
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Restaurants and fast food shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Restaurants and fast food shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Restaurants and fast food shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Restaurants and fast food shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "website:menu",
+      "description": "Layer 'Restaurants and fast food' shows and asks freeform values for key 'website:menu' (in the mapcomplete.org theme 'Ski pistes and aerialways')"
+    },
+    {
+      "key": "reservation",
+      "description": "Layer 'Restaurants and fast food' shows reservation=required with a fixed text, namely 'A reservation is required at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if takeaway!=only)",
+      "value": "required"
+    },
+    {
+      "key": "reservation",
+      "description": "Layer 'Restaurants and fast food' shows reservation=recommended with a fixed text, namely 'A reservation is not required, but still recommended to make sure you get a table' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if takeaway!=only)",
+      "value": "recommended"
+    },
+    {
+      "key": "reservation",
+      "description": "Layer 'Restaurants and fast food' shows reservation=yes with a fixed text, namely 'Reservation is possible at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if takeaway!=only)",
+      "value": "yes"
+    },
+    {
+      "key": "reservation",
+      "description": "Layer 'Restaurants and fast food' shows reservation=no with a fixed text, namely 'Reservation is not possible at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if takeaway!=only)",
+      "value": "no"
+    },
+    {
+      "key": "takeaway",
+      "description": "Layer 'Restaurants and fast food' shows takeaway=only with a fixed text, namely 'This is a take-away only business' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "only"
+    },
+    {
+      "key": "takeaway",
+      "description": "Layer 'Restaurants and fast food' shows takeaway=yes with a fixed text, namely 'Take-away is possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "yes"
+    },
+    {
+      "key": "takeaway",
+      "description": "Layer 'Restaurants and fast food' shows takeaway=no with a fixed text, namely 'Take-away is not possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "no"
+    },
+    {
+      "key": "delivery",
+      "description": "Layer 'Restaurants and fast food' shows delivery=yes with a fixed text, namely 'This business does home delivery (possibly via a third party)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "yes"
+    },
+    {
+      "key": "delivery",
+      "description": "Layer 'Restaurants and fast food' shows delivery=no with a fixed text, namely 'This business does not deliver at home' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "no"
+    },
+    {
+      "key": "diet:vegetarian",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegetarian=no with a fixed text, namely 'No vegetarian options are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine!=friture)",
+      "value": "no"
+    },
+    {
+      "key": "diet:vegetarian",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegetarian=limited with a fixed text, namely 'Some vegetarian options are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine!=friture)",
+      "value": "limited"
+    },
+    {
+      "key": "diet:vegetarian",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegetarian=yes with a fixed text, namely 'Vegetarian options are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine!=friture)",
+      "value": "yes"
+    },
+    {
+      "key": "diet:vegetarian",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegetarian=only with a fixed text, namely 'All dishes are vegetarian' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine!=friture)",
+      "value": "only"
+    },
+    {
+      "key": "diet:vegetarian",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegetarian=on_demand with a fixed text, namely 'Some dishes might be adapted to a vegetarian version, but this should be demanded' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine!=friture)",
+      "value": "on_demand"
+    },
+    {
+      "key": "diet:vegan",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegan=no with a fixed text, namely 'No vegan options available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine!=friture)",
+      "value": "no"
+    },
+    {
+      "key": "diet:vegan",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegan=limited with a fixed text, namely 'Some vegan options are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine!=friture)",
+      "value": "limited"
+    },
+    {
+      "key": "diet:vegan",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegan=yes with a fixed text, namely 'Vegan options are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine!=friture)",
+      "value": "yes"
+    },
+    {
+      "key": "diet:vegan",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegan=only with a fixed text, namely 'All dishes are vegan' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine!=friture)",
+      "value": "only"
+    },
+    {
+      "key": "diet:vegan",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegan=on_demand with a fixed text, namely 'Some dishes might be adapted to a vegan version if asked for' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine!=friture)",
+      "value": "on_demand"
+    },
+    {
+      "key": "diet:halal",
+      "description": "Layer 'Restaurants and fast food' shows diet:halal=no with a fixed text, namely 'There are no halal options available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine!=friture)",
+      "value": "no"
+    },
+    {
+      "key": "diet:halal",
+      "description": "Layer 'Restaurants and fast food' shows diet:halal=limited with a fixed text, namely 'There is a small halal menu' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine!=friture)",
+      "value": "limited"
+    },
+    {
+      "key": "diet:halal",
+      "description": "Layer 'Restaurants and fast food' shows diet:halal=yes with a fixed text, namely 'There is a halal menu' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine!=friture)",
+      "value": "yes"
+    },
+    {
+      "key": "diet:halal",
+      "description": "Layer 'Restaurants and fast food' shows diet:halal=only with a fixed text, namely 'Only halal options are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine!=friture)",
+      "value": "only"
+    },
+    {
+      "key": "organic",
+      "description": "Layer 'Restaurants and fast food' shows organic=no with a fixed text, namely 'There are no organic options available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine!=friture)",
+      "value": "no"
+    },
+    {
+      "key": "organic",
+      "description": "Layer 'Restaurants and fast food' shows organic=yes with a fixed text, namely 'There is an organic menu' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine!=friture)",
+      "value": "yes"
+    },
+    {
+      "key": "organic",
+      "description": "Layer 'Restaurants and fast food' shows organic=only with a fixed text, namely 'Only organic options are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine!=friture)",
+      "value": "only"
+    },
+    {
+      "key": "diet:vegetarian",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegetarian=only with a fixed text, namely 'Serves only vegetarian snacks and burgers' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine=friture)",
+      "value": "only"
+    },
+    {
+      "key": "diet:vegetarian",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegetarian=yes with a fixed text, namely 'Vegetarian snacks are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine=friture)",
+      "value": "yes"
+    },
+    {
+      "key": "diet:vegetarian",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegetarian=limited with a fixed text, namely 'Only a small selection of snacks are vegetarian' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine=friture)",
+      "value": "limited"
+    },
+    {
+      "key": "diet:vegetarian",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegetarian=no with a fixed text, namely 'No vegetarian snacks are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine=friture)",
+      "value": "no"
+    },
+    {
+      "key": "diet:vegan",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegan=only with a fixed text, namely 'Serves only vegan snacks and burgers' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine=friture)",
+      "value": "only"
+    },
+    {
+      "key": "diet:vegan",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegan=yes with a fixed text, namely 'Vegan snacks are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine=friture)",
+      "value": "yes"
+    },
+    {
+      "key": "diet:vegan",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegan=limited with a fixed text, namely 'A small selection of vegan snacks are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine=friture)",
+      "value": "limited"
+    },
+    {
+      "key": "diet:vegan",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegan=no with a fixed text, namely 'No vegan snacks are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine=friture)",
+      "value": "no"
+    },
+    {
+      "key": "organic",
+      "description": "Layer 'Restaurants and fast food' shows organic=yes with a fixed text, namely 'Organic snacks are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine=friture)",
+      "value": "yes"
+    },
+    {
+      "key": "organic",
+      "description": "Layer 'Restaurants and fast food' shows organic=no with a fixed text, namely 'No organic snacks are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine=friture)",
+      "value": "no"
+    },
+    {
+      "key": "organic",
+      "description": "Layer 'Restaurants and fast food' shows organic=only with a fixed text, namely 'Only organic snacks are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine=friture)",
+      "value": "only"
+    },
+    {
+      "key": "friture:oil",
+      "description": "Layer 'Restaurants and fast food' shows friture:oil=vegetable with a fixed text, namely 'The frying is done with vegetable oil' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine=friture)",
+      "value": "vegetable"
+    },
+    {
+      "key": "friture:oil",
+      "description": "Layer 'Restaurants and fast food' shows friture:oil=animal with a fixed text, namely 'The frying is done with animal oil' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine=friture)",
+      "value": "animal"
+    },
+    {
+      "key": "reusable_packaging:accept",
+      "description": "Layer 'Restaurants and fast food' shows reusable_packaging:accept=yes with a fixed text, namely 'You can bring <b>your own containers</b> to get your order, saving on single-use packaging material and thus waste' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine=friture)",
+      "value": "yes"
+    },
+    {
+      "key": "reusable_packaging:accept",
+      "description": "Layer 'Restaurants and fast food' shows reusable_packaging:accept=no with a fixed text, namely 'Bringing your own container is <b>not allowed</b>' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine=friture)",
+      "value": "no"
+    },
+    {
+      "key": "reusable_packaging:accept",
+      "description": "Layer 'Restaurants and fast food' shows reusable_packaging:accept=only with a fixed text, namely 'You <b>must</b> bring your own container to order here.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine=friture)",
+      "value": "only"
+    },
+    {
+      "key": "diet:sugar_free",
+      "description": "Layer 'Restaurants and fast food' shows diet:sugar_free=only with a fixed text, namely 'This shop <b>only sells sugar free</b> products' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "only"
+    },
+    {
+      "key": "diet:sugar_free",
+      "description": "Layer 'Restaurants and fast food' shows diet:sugar_free=yes with a fixed text, namely 'This shop has a big sugar free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "yes"
+    },
+    {
+      "key": "diet:sugar_free",
+      "description": "Layer 'Restaurants and fast food' shows diet:sugar_free=limited with a fixed text, namely 'This shop has a <b>limited sugar free</b> offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "limited"
+    },
+    {
+      "key": "diet:sugar_free",
+      "description": "Layer 'Restaurants and fast food' shows diet:sugar_free=no with a fixed text, namely 'This shop has no sugar free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "no"
+    },
+    {
+      "key": "diet:gluten_free",
+      "description": "Layer 'Restaurants and fast food' shows diet:gluten_free=only with a fixed text, namely 'This shop <b>only sells gluten free</b> products' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "only"
+    },
+    {
+      "key": "diet:gluten_free",
+      "description": "Layer 'Restaurants and fast food' shows diet:gluten_free=yes with a fixed text, namely 'This shop has a big gluten free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "yes"
+    },
+    {
+      "key": "diet:gluten_free",
+      "description": "Layer 'Restaurants and fast food' shows diet:gluten_free=limited with a fixed text, namely 'This shop has a <b>limited gluten free</b> offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "limited"
+    },
+    {
+      "key": "diet:gluten_free",
+      "description": "Layer 'Restaurants and fast food' shows diet:gluten_free=no with a fixed text, namely 'This shop has no gluten free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "no"
+    },
+    {
+      "key": "diet:lactose_free",
+      "description": "Layer 'Restaurants and fast food' shows diet:lactose_free=only with a fixed text, namely '<b>Only sells lactose free</b> products' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "only"
+    },
+    {
+      "key": "diet:lactose_free",
+      "description": "Layer 'Restaurants and fast food' shows diet:lactose_free=yes with a fixed text, namely 'Big lactose free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "yes"
+    },
+    {
+      "key": "diet:lactose_free",
+      "description": "Layer 'Restaurants and fast food' shows diet:lactose_free=limited with a fixed text, namely '<b>Limited lactose free</b> offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "limited"
+    },
+    {
+      "key": "diet:lactose_free",
+      "description": "Layer 'Restaurants and fast food' shows diet:lactose_free=no with a fixed text, namely 'No lactose free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "no"
+    },
+    {
+      "key": "smoking",
+      "description": "Layer 'Restaurants and fast food' shows smoking=yes with a fixed text, namely 'Smoking is <b>allowed</b>' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if _country!~^(al|be)$)",
+      "value": "yes"
+    },
+    {
+      "key": "smoking",
+      "description": "Layer 'Restaurants and fast food' shows smoking=no with a fixed text, namely 'Smoking is <b>not allowed</b>' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if _country!~^(al|be)$)",
+      "value": "no"
+    },
+    {
+      "key": "smoking",
+      "description": "Layer 'Restaurants and fast food' shows smoking=outside with a fixed text, namely 'Smoking is <b>allowed outside</b>.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if _country!~^(al|be)$)",
+      "value": "outside"
+    },
+    {
+      "key": "service:electricity",
+      "description": "Layer 'Restaurants and fast food' shows service:electricity=yes with a fixed text, namely 'There are plenty of domestic sockets available to customers seated indoors, where they can charge their electronics' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "yes"
+    },
+    {
+      "key": "service:electricity",
+      "description": "Layer 'Restaurants and fast food' shows service:electricity=limited with a fixed text, namely 'There are a few domestic sockets available to customers seated indoors, where they can charge their electronics' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "limited"
+    },
+    {
+      "key": "service:electricity",
+      "description": "Layer 'Restaurants and fast food' shows service:electricity=ask with a fixed text, namely 'There are no sockets available indoors to customers, but charging might be possible if the staff is asked' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "ask"
+    },
+    {
+      "key": "service:electricity",
+      "description": "Layer 'Restaurants and fast food' shows service:electricity=no with a fixed text, namely 'There are a no domestic sockets available to customers seated indoors' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "no"
+    },
+    {
+      "key": "dog",
+      "description": "Layer 'Restaurants and fast food' shows dog=yes with a fixed text, namely 'Dogs are allowed' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "yes"
+    },
+    {
+      "key": "dog",
+      "description": "Layer 'Restaurants and fast food' shows dog=no with a fixed text, namely 'Dogs are <b>not</b> allowed' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "no"
+    },
+    {
+      "key": "dog",
+      "description": "Layer 'Restaurants and fast food' shows dog=leashed with a fixed text, namely 'Dogs are allowed, but they have to be leashed' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "leashed"
+    },
+    {
+      "key": "dog",
+      "description": "Layer 'Restaurants and fast food' shows dog=unleashed with a fixed text, namely 'Dogs are allowed and can run around freely' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "unleashed"
+    },
+    {
+      "key": "dog",
+      "description": "Layer 'Restaurants and fast food' shows dog=outside with a fixed text, namely 'Dogs are allowed only outside' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "outside"
+    },
+    {
+      "key": "internet_access",
+      "description": "Layer 'Restaurants and fast food' shows internet_access=wlan with a fixed text, namely 'This place offers wireless internet access' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "wlan"
+    },
+    {
+      "key": "internet_access",
+      "description": "Layer 'Restaurants and fast food' shows internet_access=no with a fixed text, namely 'This place <b>does not</b> offer internet access' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "no"
+    },
+    {
+      "key": "internet_access",
+      "description": "Layer 'Restaurants and fast food' shows internet_access=yes with a fixed text, namely 'This place offers internet access' (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "yes"
+    },
+    {
+      "key": "internet_access",
+      "description": "Layer 'Restaurants and fast food' shows internet_access=terminal with a fixed text, namely 'This place offers internet access via a terminal or computer' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "terminal"
+    },
+    {
+      "key": "internet_access",
+      "description": "Layer 'Restaurants and fast food' shows internet_access=wired with a fixed text, namely 'This place offers wired internet access' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "wired"
+    },
+    {
+      "key": "internet_access",
+      "description": "Layer 'Restaurants and fast food' shows internet_access=terminal;wifi with a fixed text, namely 'This place offers both wireless internet and internet access via a terminal or computer' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "terminal;wifi"
+    },
+    {
+      "key": "internet_access:fee",
+      "description": "Layer 'Restaurants and fast food' shows internet_access:fee=yes with a fixed text, namely 'There is a fee for the internet access at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if internet_access!=no & internet_access~.+)",
+      "value": "yes"
+    },
+    {
+      "key": "internet_access:fee",
+      "description": "Layer 'Restaurants and fast food' shows internet_access:fee=no with a fixed text, namely 'Internet access is free at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if internet_access!=no & internet_access~.+)",
+      "value": "no"
+    },
+    {
+      "key": "internet_access:fee",
+      "description": "Layer 'Restaurants and fast food' shows internet_access:fee=customers with a fixed text, namely 'Internet access is free at this place, for customers only' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if internet_access!=no & internet_access~.+)",
+      "value": "customers"
+    },
+    {
+      "key": "internet_access:ssid",
+      "description": "Layer 'Restaurants and fast food' shows and asks freeform values for key 'internet_access:ssid' (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if internet_access~^(.*wlan.*)$)"
+    },
+    {
+      "key": "internet_access:ssid",
+      "description": "Layer 'Restaurants and fast food' shows internet_access:ssid=Telekom with a fixed text, namely 'Telekom' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if internet_access~^(.*wlan.*)$)",
+      "value": "Telekom"
+    },
+    {
+      "key": "tourism",
+      "description": "The MapComplete theme Ski pistes and aerialways has a layer Viewpoint showing features with this tag",
+      "value": "viewpoint"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Viewpoint' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Viewpoint allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Viewpoint allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Viewpoint allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Viewpoint allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "description",
+      "description": "Layer 'Viewpoint' shows and asks freeform values for key 'description' (in the mapcomplete.org theme 'Ski pistes and aerialways')"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Ski pistes and aerialways has a layer Binoculars showing features with this tag",
+      "value": "binoculars"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Binoculars' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Binoculars allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Binoculars allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Binoculars allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Binoculars allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "charge",
+      "description": "Layer 'Binoculars' shows and asks freeform values for key 'charge' (in the mapcomplete.org theme 'Ski pistes and aerialways')"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Binoculars' shows fee=no & charge= with a fixed text, namely 'Free to use' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "value": "no"
+    },
+    {
+      "key": "charge",
+      "description": "Layer 'Binoculars' shows fee=no & charge= with a fixed text, namely 'Free to use' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') Picking this answer will delete the key charge.",
+      "value": ""
+    },
+    {
+      "key": "direction",
+      "description": "Layer 'Binoculars' shows and asks freeform values for key 'direction' (in the mapcomplete.org theme 'Ski pistes and aerialways')"
+    }
+  ]
+}

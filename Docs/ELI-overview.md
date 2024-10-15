@@ -203,6 +203,7 @@ This table gives a summary of ids, names and other metainformation. [See the onl
 | nrw_idop_wms | NRW iDOP | photo |  |  |
 | nrw_ortho_wms | NRW Orthophoto (RGB) | photo | ⭐ |  |
 | nrw_vdop_wms | NRW vDOP | photo |  |  |
+| Saarland-DOP20 | Saarland DOP20 | photo | ⭐ | © Saarländer Landesamt für Vermessung, Geoinformation und Landentwicklung - dl-de/by-2-0 (https://www.govdata.de/dl-de/by-2-0) |
 | GEOSN-DOP-RGB | Saxony latest aerial imagery | photo | ⭐ | Staatsbetrieb Geobasisinformation und Vermessung Sachsen |
 | LSA-DOP20 | © GeoBasis-DE/LVermGeo LSA, DOP20 | photo | ⭐ | © GeoBasis-DE/LVermGeo LSA |
 | GEOSN-WebAtlas | Saxony WebAtlasSN | map |  | Staatsbetrieb Geobasisinformation und Vermessung Sachsen |
@@ -212,6 +213,7 @@ This table gives a summary of ids, names and other metainformation. [See the onl
 | GEOSN-DOP-CIR | Saxony latest aerial imagery infrared | photo |  | Staatsbetrieb Geobasisinformation und Vermessung Sachsen |
 | GEOSN-DTK | Saxony topographic map | map |  | Staatsbetrieb Geobasisinformation und Vermessung Sachsen |
 | Stuttgart-latest | Stuttgart Luftbild Stadtmessungsamt | photo | ⭐ |  |
+| Thuringia-DOP20 | Thüringen DOP20 | photo | ⭐ | © Thüringer Landesamt für Bodenmanagement und Geoinformation - dl-de/by-2-0 (https://www.govdata.de/dl-de/by-2-0) |
 | Worms-2003 | Worms 2003 | historicphoto |  | © Nibelungenstadt Worms |
 | Worms-2008 | Worms 2008 | historicphoto |  | © Nibelungenstadt Worms |
 | Worms-2012 | Worms 2012 | historicphoto |  | © Nibelungenstadt Worms |
@@ -391,7 +393,8 @@ This table gives a summary of ids, names and other metainformation. [See the onl
 | Surrey-Air_Survey | Surrey Air Survey | photo |  |  |
 | dgu-dof-2011 | dgu.hr: Croatia 2011 Aerial imagery | historicphoto |  | Sadrži podatke Državne geodetske uprave |
 | dgu-dof-2014-2016 | dgu.hr: Croatia 2014-2016 Aerial imagery | historicphoto |  | Sadrži podatke Državne geodetske uprave |
-| dgu-dof-2019-2020 | dgu.hr: Croatia 2019-2020 aerial imagery | photo | ⭐ | Sadrži podatke Državne geodetske uprave |
+| dgu-dof-2019-2020 | dgu.hr: Croatia 2019-2020 aerial imagery | historicphoto |  | Sadrži podatke Državne geodetske uprave |
+| dgu-dof-2021-2022 | dgu.hr: Croatia 2021-2022 aerial imagery | photo | ⭐ | Sadrži podatke Državne geodetske uprave |
 | dgu-hok | dgu.hr: HOK | map |  | Sadrži podatke Državne geodetske uprave |
 | dgu-topo-100 | dgu.hr: Topo 100 | map |  | Sadrži podatke Državne geodetske uprave |
 | dgu-topo-200 | dgu.hr: Topo 200 | map |  | Sadrži podatke Državne geodetske uprave |
@@ -439,6 +442,8 @@ This table gives a summary of ids, names and other metainformation. [See the onl
 | LV_ORTOFOTO_C5 | Orthophoto (2013-2015), 1:5000, Latvia | photo |  | LĢIA (Latvian Geospatial Information Agency) provided these open data (CC0). WMS service is provided by LVM (Latvian State Forestry). |
 | LV_ORTOFOTO_C6 | Orthophoto (2016–2018), 1:5000, Latvia | photo | ⭐ | LĢIA (Latvian Geospatial Information Agency) provided these open data (CC0). WMS service is provided by LVM (Latvian State Forestry). |
 | LV_TERRAIN_LIDAR_LGIA | Digital terrain model (2013–2019), LĢIA, Latvia | elevation |  | LĢIA (Latvian Geospatial Information Agency) provided these open data (CC0). WMS service is provided by LVM (Latvian State Forestry). |
+| German-1944_Aerial | German Aerial Imagery (1944) | historicphoto |  | © Simpals SRL, Bundesarchiv - Stabsbildabteilung |
+| American-1966_Aerial | American Aerial Imagery (1966) | historicphoto |  | © Simpals SRL, U.S. Geological Survey |
 | Actueel_orthoHR_WMTS | PDOK aerial imagery Beeldmateriaal.nl 8cm (WMTS) latest | photo | ⭐ | Kadaster / Beeldmateriaal.nl, CC BY 4.0 |
 | kartverket-topo4 | Kartverket topo | map |  | © Kartverket |
 | kartverket-ok-1st | Kartverket Economic Maps (historic) | historicmap |  | © Kartverket |
@@ -485,7 +490,7 @@ This table gives a summary of ids, names and other metainformation. [See the onl
 | ORTOS_DGT_2018_WMS | Orthophotos of mainland Portugal - 25cm - 2018 (DGT) | photo | ⭐ | Informação geográfica cedida pela Direção-Geral do Território |
 | ORTOS_DGRF_2004_06 | Orthophotos of mainland Portugal - 50cm - 2004-2006 (DGT) | historicphoto |  | Informação geográfica cedida pela Direção-Geral do Território |
 | ORTOS_DGT_2021_RGB | Orthophotos of the northern portion of mainland Portugal - 25cm - 2021 (DGT) | photo | ⭐ | Informação geográfica cedida pela Direção-Geral do Território |
-| ORTOSAT_DGT_2023_RGB | OrtoSat - Portugal Central - 30cm - 2023 (DGT) | photo | ⭐ | Informação geográfica cedida pela Direção-Geral do Território |
+| ORTOSAT_DGT_2023_RGB | OrtoSat - Portugal Continental - 30cm - 2023 (DGT) | photo |  | Informação geográfica cedida pela Direção-Geral do Território |
 | rs-osm-official-cyr | Official Serbia OSM (cyr) | osmbasedmap |  | openstreetmap.rs |
 | rs-osm-official-lat | Official Serbia OSM (lat) | osmbasedmap |  | openstreetmap.rs |
 | lantmateriet-orto1960 | Lantmäteriet Historic Orthophoto 1960 | historicphoto |  | © Lantmäteriet, CC0 |
@@ -749,7 +754,8 @@ This table gives a summary of ids, names and other metainformation. [See the onl
 | Franklin_OH_2021 | Franklin County Orthoimagery (2021) | photo |  | Franklin County Auditor, State of Ohio |
 | Franklin_OH_2023 | Franklin County Orthoimagery (2023) | photo |  | Franklin County Auditor, State of Ohio |
 | Greene_OH_2022 | Greene County Orthoimagery (2022) | historicphoto |  | Greene County, State of Ohio |
-| Greene_OH_2023 | Greene County Orthoimagery (2023) | photo |  | Greene County, State of Ohio |
+| Greene_OH_2023 | Greene County Orthoimagery (2023) | historicphoto |  | Greene County, State of Ohio |
+| Greene_OH_2024 | Greene County Orthoimagery (2024) | photo |  | Greene County, State of Ohio |
 | Licking_OH_2023 | Licking County Orthoimagery (2023) | photo |  | Licking County, State of Ohio |
 | Lorain_OH_2024 | Lorain County Orthoimagery (2024) | photo |  | Lorain County, State of Ohio |
 | Lucas_OH_2023 | Lucas County Orthoimagery (2023) | photo |  | Lucas County, State of Ohio |
@@ -839,6 +845,7 @@ This table gives a summary of ids, names and other metainformation. [See the onl
 | LINZ_Cyclone_Gabrielle_Hawkes_Bay | LINZ Cyclone Gabrielle – Hawke's Bay | photo | ⭐ | Sourced from LINZ CC-BY 4.0 |
 | LINZ_NZ_Aerial_Imagery | LINZ NZ Aerial Imagery | photo | ⭐ | Sourced from LINZ CC-BY 4.0 |
 | LINZ_Auckland_2010 | LINZ Auckland 2010-2012 | historicphoto |  | Sourced from LINZ CC-BY 4.0 |
+| LINZ_Auckland_2023 | LINZ Auckland 2023 | photo | ⭐ | Sourced from LINZ CC-BY 4.0 |
 | LINZ_Bay_of_Plenty_2014 | LINZ Bay of Plenty 2014-2015 | historicphoto |  | Sourced from LINZ CC-BY 4.0 |
 | LINZ_Christchurch_2015 | LINZ Christchurch 2015-2016 | historicphoto |  | Sourced from LINZ CC-BY 4.0 |
 | LINZ_Hamilton_2016 | LINZ Hamilton 2016-2017 | historicphoto |  | Sourced from LINZ CC-BY 4.0 |
@@ -866,16 +873,7 @@ This table gives a summary of ids, names and other metainformation. [See the onl
 | rio2019 | Rio Mosaico 2019 | photo | ⭐ | Instituto Pereira Passos - Prefeitura da Cidade do Rio de Janeiro |
 | rio2022 | Rio Mosaico 2022 | photo |  | Instituto Pereira Passos - Prefeitura da Cidade do Rio de Janeiro |
 | jaragua-do-sul-2020 | Jaraguá do Sul Ortomosaico 2020 | photo |  | Prefeitura de Jaraguá do Sul, SC |
-| cyclosm | CyclOSM | osmbasedmap |  | Rendering: CyclOSM (hosted by OpenStreetMap France) © Map data OpenStreetMap contributors |
-| EsriWorldImagery | Esri World Imagery | photo |  | Terms & Feedback |
-| EsriWorldImageryClarity | Esri World Imagery (Clarity) Beta | photo |  | Terms & Feedback |
-| Mapbox | Mapbox Satellite | photo |  | Terms & Feedback |
-| OpenAerialMapMosaic | OpenAerialMap Mosaic, by Kontur.io | photo |  |  |
-| osmfr-basque | OpenStreetMap (Basque Style) | osmbasedmap |  | Tiles © OpenStreetMap France, data © OpenStreetMap contributors, ODbL |
-| osmfr-breton | OpenStreetMap (Breton Style) | osmbasedmap |  | Tiles © OpenStreetMap France, data © OpenStreetMap contributors, ODbL |
-| osmfr | OpenStreetMap (French Style) | osmbasedmap |  | Tiles © cquest@Openstreetmap France, data © OpenStreetMap contributors, ODBL |
-| HDM_HOT | OpenStreetMap (HOT Style) | osmbasedmap |  | © OpenStreetMap contributors, tiles courtesy of Humanitarian OpenStreetMap Team |
-| osmfr-occitan | OpenStreetMap (Occitan Style) | osmbasedmap |  | Tiles © OpenStreetMap France, data © OpenStreetMap contributors, ODbL |
+| UY-2019-orthophotos | Uruguay IDE.uy Ortofotos 2019 | photo | ⭐ | AGESIC - Agencia de Gobierno Electrónico y Sociedad de la Información y del Conocimiento |
 
 
 

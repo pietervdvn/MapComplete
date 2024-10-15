@@ -1,0 +1,306 @@
+{
+  "data_format": 1,
+  "project": {
+    "name": "MapComplete Surveillance under Surveillance",
+    "description": "Surveillance cameras and other means of surveillance",
+    "project_url": "https://mapcomplete.org/surveillance",
+    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "icon_url": "https://mapcomplete.org/assets/themes/surveillance/logo.svg",
+    "contact_name": "Pieter Vander Vennet",
+    "contact_email": "pietervdvn@posteo.net"
+  },
+  "tags": [
+    {
+      "key": "man_made",
+      "description": "The MapComplete theme Surveillance under Surveillance has a layer Surveillance camera's showing features with this tag",
+      "value": "surveillance"
+    },
+    {
+      "key": "surveillance:type",
+      "description": "The MapComplete theme Surveillance under Surveillance has a layer Surveillance camera's showing features with this tag",
+      "value": "camera"
+    },
+    {
+      "key": "surveillance:type",
+      "description": "The MapComplete theme Surveillance under Surveillance has a layer Surveillance camera's showing features with this tag",
+      "value": "ALPR"
+    },
+    {
+      "key": "surveillance:type",
+      "description": "The MapComplete theme Surveillance under Surveillance has a layer Surveillance camera's showing features with this tag",
+      "value": "ANPR"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Surveillance camera's' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Surveillance under Surveillance') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Surveillance camera's allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Surveillance camera's allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Surveillance camera's allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Surveillance camera's allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "surveillance:type",
+      "description": "Layer 'Surveillance camera's' shows surveillance:type=camera with a fixed text, namely 'This is a camera without number plate recognition.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Surveillance under Surveillance')",
+      "value": "camera"
+    },
+    {
+      "key": "surveillance:type",
+      "description": "Layer 'Surveillance camera's' shows surveillance:type=ALPR with a fixed text, namely 'This is an ALPR (Automatic License Plate Reader)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Surveillance under Surveillance')",
+      "value": "ALPR"
+    },
+    {
+      "key": "camera:type",
+      "description": "Layer 'Surveillance camera's' shows camera:type=fixed with a fixed text, namely 'A fixed (non-moving) camera' and allows to pick this as a default answer (in the mapcomplete.org theme 'Surveillance under Surveillance')",
+      "value": "fixed"
+    },
+    {
+      "key": "camera:type",
+      "description": "Layer 'Surveillance camera's' shows camera:type=dome with a fixed text, namely 'A dome camera (which can turn)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Surveillance under Surveillance')",
+      "value": "dome"
+    },
+    {
+      "key": "camera:type",
+      "description": "Layer 'Surveillance camera's' shows camera:type=panning with a fixed text, namely 'A panning camera' and allows to pick this as a default answer (in the mapcomplete.org theme 'Surveillance under Surveillance')",
+      "value": "panning"
+    },
+    {
+      "key": "camera:direction",
+      "description": "Layer 'Surveillance camera's' shows and asks freeform values for key 'camera:direction' (in the mapcomplete.org theme 'Surveillance under Surveillance') (This is only shown if camera:direction~.+ | direction~.+ | camera:type!=dome | (camera:type=dome & camera:mount=wall))"
+    },
+    {
+      "key": "camera:direction",
+      "description": "Layer 'Surveillance camera's' shows camera:direction= & direction~.+ with a fixed text, namely 'Films to a compass heading of {direction}' (in the mapcomplete.org theme 'Surveillance under Surveillance') Picking this answer will delete the key camera:direction. (This is only shown if camera:direction~.+ | direction~.+ | camera:type!=dome | (camera:type=dome & camera:mount=wall))",
+      "value": ""
+    },
+    {
+      "key": "direction",
+      "description": "Layer 'Surveillance camera's' shows camera:direction= & direction~.+ with a fixed text, namely 'Films to a compass heading of {direction}' (in the mapcomplete.org theme 'Surveillance under Surveillance') (This is only shown if camera:direction~.+ | direction~.+ | camera:type!=dome | (camera:type=dome & camera:mount=wall))"
+    },
+    {
+      "key": "operator",
+      "description": "Layer 'Surveillance camera's' shows and asks freeform values for key 'operator' (in the mapcomplete.org theme 'Surveillance under Surveillance')"
+    },
+    {
+      "key": "surveillance",
+      "description": "Layer 'Surveillance camera's' shows surveillance=public with a fixed text, namely 'A public area is surveilled, such as a street, a bridge, a square, a park, a train station, a public corridor or tunnel, …' and allows to pick this as a default answer (in the mapcomplete.org theme 'Surveillance under Surveillance')",
+      "value": "public"
+    },
+    {
+      "key": "surveillance",
+      "description": "Layer 'Surveillance camera's' shows surveillance=outdoor with a fixed text, namely 'An outdoor, yet private area is surveilled (e.g. a parking lot, a fuel station, courtyard, entrance, private driveway, …)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Surveillance under Surveillance')",
+      "value": "outdoor"
+    },
+    {
+      "key": "surveillance",
+      "description": "Layer 'Surveillance camera's' shows surveillance=indoor with a fixed text, namely 'A private indoor area is surveilled, e.g. a shop, a private underground parking, …' and allows to pick this as a default answer (in the mapcomplete.org theme 'Surveillance under Surveillance')",
+      "value": "indoor"
+    },
+    {
+      "key": "indoor",
+      "description": "Layer 'Surveillance camera's' shows indoor=yes with a fixed text, namely 'This camera is located indoors' and allows to pick this as a default answer (in the mapcomplete.org theme 'Surveillance under Surveillance') (This is only shown if surveillance:type=public)",
+      "value": "yes"
+    },
+    {
+      "key": "indoor",
+      "description": "Layer 'Surveillance camera's' shows indoor=no with a fixed text, namely 'This camera is located outdoors' and allows to pick this as a default answer (in the mapcomplete.org theme 'Surveillance under Surveillance') (This is only shown if surveillance:type=public)",
+      "value": "no"
+    },
+    {
+      "key": "indoor",
+      "description": "Layer 'Surveillance camera's' shows indoor= with a fixed text, namely 'This camera is probably located outdoors' (in the mapcomplete.org theme 'Surveillance under Surveillance') Picking this answer will delete the key indoor. (This is only shown if surveillance:type=public)",
+      "value": ""
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Surveillance camera's' shows and asks freeform values for key 'level' (in the mapcomplete.org theme 'Surveillance under Surveillance') (This is only shown if indoor=yes | surveillance:type=ye)"
+    },
+    {
+      "key": "surveillance:zone",
+      "description": "Layer 'Surveillance camera's' shows and asks freeform values for key 'surveillance:zone' (in the mapcomplete.org theme 'Surveillance under Surveillance')"
+    },
+    {
+      "key": "surveillance:zone",
+      "description": "Layer 'Surveillance camera's' shows surveillance:zone=parking with a fixed text, namely 'Surveills a parking' and allows to pick this as a default answer (in the mapcomplete.org theme 'Surveillance under Surveillance')",
+      "value": "parking"
+    },
+    {
+      "key": "surveillance:zone",
+      "description": "Layer 'Surveillance camera's' shows surveillance:zone=traffic with a fixed text, namely 'Surveills the traffic' and allows to pick this as a default answer (in the mapcomplete.org theme 'Surveillance under Surveillance')",
+      "value": "traffic"
+    },
+    {
+      "key": "surveillance:zone",
+      "description": "Layer 'Surveillance camera's' shows surveillance:zone=entrance with a fixed text, namely 'Surveills an entrance' and allows to pick this as a default answer (in the mapcomplete.org theme 'Surveillance under Surveillance')",
+      "value": "entrance"
+    },
+    {
+      "key": "surveillance:zone",
+      "description": "Layer 'Surveillance camera's' shows surveillance:zone=corridor with a fixed text, namely 'Surveills a corridor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Surveillance under Surveillance')",
+      "value": "corridor"
+    },
+    {
+      "key": "surveillance:zone",
+      "description": "Layer 'Surveillance camera's' shows surveillance:zone=public_transport_platform with a fixed text, namely 'Surveills a public tranport platform' and allows to pick this as a default answer (in the mapcomplete.org theme 'Surveillance under Surveillance')",
+      "value": "public_transport_platform"
+    },
+    {
+      "key": "surveillance:zone",
+      "description": "Layer 'Surveillance camera's' shows surveillance:zone=shop with a fixed text, namely 'Surveills a shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Surveillance under Surveillance')",
+      "value": "shop"
+    },
+    {
+      "key": "camera:mount",
+      "description": "Layer 'Surveillance camera's' shows and asks freeform values for key 'camera:mount' (in the mapcomplete.org theme 'Surveillance under Surveillance')"
+    },
+    {
+      "key": "camera:mount",
+      "description": "Layer 'Surveillance camera's' shows camera:mount=wall with a fixed text, namely 'This camera is placed against a wall' and allows to pick this as a default answer (in the mapcomplete.org theme 'Surveillance under Surveillance')",
+      "value": "wall"
+    },
+    {
+      "key": "camera:mount",
+      "description": "Layer 'Surveillance camera's' shows camera:mount=pole with a fixed text, namely 'This camera is placed on a pole' and allows to pick this as a default answer (in the mapcomplete.org theme 'Surveillance under Surveillance')",
+      "value": "pole"
+    },
+    {
+      "key": "camera:mount",
+      "description": "Layer 'Surveillance camera's' shows camera:mount=ceiling with a fixed text, namely 'This camera is placed on the ceiling' and allows to pick this as a default answer (in the mapcomplete.org theme 'Surveillance under Surveillance')",
+      "value": "ceiling"
+    },
+    {
+      "key": "camera:mount",
+      "description": "Layer 'Surveillance camera's' shows camera:mount=street_lamp with a fixed text, namely 'This camera is placed on a street light' and allows to pick this as a default answer (in the mapcomplete.org theme 'Surveillance under Surveillance')",
+      "value": "street_lamp"
+    },
+    {
+      "key": "camera:mount",
+      "description": "Layer 'Surveillance camera's' shows camera:mount=tree with a fixed text, namely 'This camera is placed on a tree' and allows to pick this as a default answer (in the mapcomplete.org theme 'Surveillance under Surveillance')",
+      "value": "tree"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Surveillance under Surveillance has a layer Speed Camera showing features with this tag",
+      "value": "speed_camera"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Speed Camera' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Surveillance under Surveillance') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Speed Camera allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Speed Camera allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Speed Camera allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Speed Camera allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "maxspeed",
+      "description": "Layer 'Speed Camera' shows and asks freeform values for key 'maxspeed' (in the mapcomplete.org theme 'Surveillance under Surveillance')"
+    },
+    {
+      "key": "direction",
+      "description": "Layer 'Speed Camera' shows and asks freeform values for key 'direction' (in the mapcomplete.org theme 'Surveillance under Surveillance')"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Surveillance under Surveillance has a layer Police stations showing features with this tag",
+      "value": "police"
+    },
+    {
+      "key": "police",
+      "description": "The MapComplete theme Surveillance under Surveillance has a layer Police stations showing features with this tag"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Police stations' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Surveillance under Surveillance') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Police stations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Police stations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Police stations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Police stations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Police stations' shows and asks freeform values for key 'name' (in the mapcomplete.org theme 'Surveillance under Surveillance')"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'Police stations' shows and asks freeform values for key 'phone' (in the mapcomplete.org theme 'Surveillance under Surveillance')"
+    },
+    {
+      "key": "contact:phone",
+      "description": "Layer 'Police stations' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Surveillance under Surveillance')"
+    },
+    {
+      "key": "email",
+      "description": "Layer 'Police stations' shows and asks freeform values for key 'email' (in the mapcomplete.org theme 'Surveillance under Surveillance')"
+    },
+    {
+      "key": "contact:email",
+      "description": "Layer 'Police stations' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Surveillance under Surveillance')"
+    },
+    {
+      "key": "operator:email",
+      "description": "Layer 'Police stations' shows operator:email~.+ with a fixed text, namely '<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>' (in the mapcomplete.org theme 'Surveillance under Surveillance')"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Police stations' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Surveillance under Surveillance')"
+    },
+    {
+      "key": "contact:website",
+      "description": "Layer 'Police stations' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the mapcomplete.org theme 'Surveillance under Surveillance')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Police stations' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Surveillance under Surveillance')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Police stations' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Surveillance under Surveillance')",
+      "value": "closed"
+    },
+    {
+      "key": "detention",
+      "description": "Layer 'Police stations' shows detention=yes with a fixed text, namely 'This police office has some cells to detain people' and allows to pick this as a default answer (in the mapcomplete.org theme 'Surveillance under Surveillance') (This is only shown if amenity=police)",
+      "value": "yes"
+    },
+    {
+      "key": "detention",
+      "description": "Layer 'Police stations' shows detention=no with a fixed text, namely 'This police office does not have cells to detain people' and allows to pick this as a default answer (in the mapcomplete.org theme 'Surveillance under Surveillance') (This is only shown if amenity=police)",
+      "value": "no"
+    }
+  ]
+}

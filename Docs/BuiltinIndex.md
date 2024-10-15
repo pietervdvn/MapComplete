@@ -10,7 +10,6 @@
  - aerialway
  - ambulancestation
  - animal_shelter
- - artwork
  - assembly_point
  - assisted_repair
  - atm
@@ -59,7 +58,6 @@
  - fitness_station
  - food
  - food_courts
- - ghost_bike
  - ghostsign
  - governments
  - grave
@@ -74,7 +72,6 @@
  - lighthouse
  - love_hotel
  - map
- - memorial
  - mountain_rescue
  - nature_reserve
  - observation_tower
@@ -283,6 +280,12 @@
  - doctors
  - physiotherapist
  - tool_library
+            
+            ### images_no_blur
+
+             - artwork
+ - ghost_bike
+ - memorial
             
             ### wikipedia
 
