@@ -317,7 +317,7 @@
         "morescreen": {
             "createYourOwnTheme": "Készítsd el saját MapComplete tematikus térképed",
             "enterToOpen": "Nyomd meg az entert a tematikus térkép megnyitásához",
-            "hiddenExplanation": "Ezeket a tematikus térképeket csak az érheti el, akik ismeri a linkjüket. Te {total_hidden} rejtett tematikus térkép közül {hidden_discovered} darabot ismersz.",
+            "hiddenExplanation": "Ezeket a tematikus térképeket csak az éri el, aki ismeri a linkjüket. Te {total_hidden} rejtett tematikus térkép közül {hidden_discovered} darabot ismersz.",
             "noMatchingThemes": "Nincs olyan tematikus térkép, amely megfelelne a keresési feltételeknek",
             "noSearch": "Minden tematikus térkép megjelenítése",
             "previouslyHiddenTitle": "Korábban megnézett rejtett tematikus térképek",
