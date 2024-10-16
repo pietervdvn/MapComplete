@@ -270,7 +270,7 @@
             "disableAll": "Alle deaktivieren",
             "enableAll": "Alle aktivieren"
         },
-        "geopermissionDenied": "Die Verwendung der Standortbestimmung wurde verweigert",
+        "geopermissionDenied": "Die Standortbestimmung wurde verweigert",
         "getStartedLogin": "Bei OpenStreetMap anmelden, um loszulegen",
         "getStartedNewAccount": " oder <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">ein neues Konto anlegen</a>",
         "goToInbox": "Posteingang öffnen",
