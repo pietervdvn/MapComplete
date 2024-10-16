@@ -258,8 +258,8 @@
             "toMuch": "Es gibt zu viele Funktionen, um sie alle herunterzuladen",
             "uploadGpx": "Einen Track auf OpenStreetMap hochladen"
         },
-        "enableGeolocationForSafari": "Hast du das Popup zur Abfrage der Geo-Berechtigung nicht erhalten?",
-        "enableGeolocationForSafariLink": "Erfahre, wie du die Geo-Berechtigung in den Einstellungen aktivieren kannst",
+        "enableGeolocationForSafari": "Hast du das Popup zur Standortabfrage nicht erhalten?",
+        "enableGeolocationForSafariLink": "Wie die Standortberechtigung in den Einstellungen aktiviert werden kann",
         "eraseValue": "Wert löschen",
         "error": "Etwas ist schief gelaufen",
         "example": "Beispiel",
