@@ -838,7 +838,7 @@
                         "then": "Dreifach, drei Barrieren hintereinander"
                     },
                     "3": {
-                        "then": "Eine Durchfahrtsbeschränkung, Durchfahrtsbreite ist oben kleiner als unten"
+                        "then": "Durchfahrtsbeschränkung - die Durchfahrtsbreite ist oben kleiner als unten"
                     }
                 },
                 "question": "Um welche Art Fahrradhindernis handelt es sich?"
@@ -915,7 +915,7 @@
                         "then": "Privat"
                     },
                     "3": {
-                        "then": "Zugang bis auf Widerruf"
+                        "then": "Zugang bis auf Widerruf (Erlaubt)"
                     },
                     "4": {
                         "then": "Zugang nur für Kunden"
