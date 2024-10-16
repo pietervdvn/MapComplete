@@ -341,7 +341,10 @@ export class OsmPreferences {
 
     async removeAllWithPrefix(prefix: string) {
         const keys = this.seenKeys
-        for (const key in keys) {
+        for (const key of keys) {
+            if(!key.startsWith(prefix)){
+                continue
+            }
             await this.deleteKeyDirectly(key)
         }
     }
