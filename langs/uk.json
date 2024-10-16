@@ -167,9 +167,14 @@
         "morescreen": {
             "createYourOwnTheme": "Створіть власну тему MapComplete з нуля",
             "hiddenExplanation": "Ці теми доступні лише для тих, хто має посилання. Ви виявили {hidden_discovered} з {total_hidden} прихованих тем.",
-            "noSearch": "Показати всі теми"
+            "noSearch": "Показати всі теми",
+            "previouslyHiddenTitle": "Раніше відвідані приховані теми"
+        },
+        "opening_hours": {
+            "open_during_ph": "У святкові дні - це"
         },
         "poweredByMapComplete": "Працює на основі MapComplete - краудсорсингові тематичні карти з OpenStreetMap",
+        "save": "Зберегти",
         "search": {
             "editSearchSyncSettings": "Редагування налаштувань синхронізації",
             "editThemeSync": "Редагування налаштувань синхронізації",
@@ -192,6 +197,8 @@
             "stateIsIncluded": "Поточний стан шарів і фільтрів відображається у спільному посиланні та iframe.",
             "title": "Поділіться цією мапою"
         },
+        "skip": "Пропустити це питання",
+        "testing": "Тестування - зміни не будуть збережені",
         "uploadError": "Помилка під час надсилання змін: {error}",
         "uploadGpx": {
             "choosePermission": "Виберіть нижче, як саме має бути поширений ваш трек:",
@@ -223,6 +230,11 @@
         },
         "respectPrivacy": "Не завантажуйте з Google Maps, Google Streetview або інших захищених авторським правом джерел."
     },
+    "move": {
+        "inviteToMove": {
+            "generic": "Перемістити цю точку"
+        }
+    },
     "multi_apply": {
         "autoApply": "При зміні атрибутів {attr_names}, ці атрибути будуть автоматично змінені і на {count} інших об'єктах"
     },
@@ -231,7 +243,9 @@
     },
     "reviews": {
         "no_reviews_yet": "Відгуків ще немає. Будьте першим!",
-        "question": "Як би ви оцінили {title()}?"
+        "question": "Як би ви оцінили {title()}?",
+        "save": "Зберегти відгук",
+        "saved": "Відгук збережено. Дякуємо, що поділилися!"
     },
     "translations": {
         "activateButton": "Допоможіть перекласти MapComplete"
