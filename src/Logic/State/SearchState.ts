@@ -39,7 +39,9 @@ export default class SearchState {
             new LocalElementSearch(state, 5),
             new CoordinateSearch(),
             new OpenStreetMapIdSearch(state),
-            new PhotonSearch() // new NominatimGeocoding(),
+            new PhotonSearch(true, 2),
+            new PhotonSearch(),
+            // new NominatimGeocoding(),
         ]
 
         const bounds = state.mapProperties.bounds

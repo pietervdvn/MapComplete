@@ -13,18 +13,20 @@ import { GeoOperations } from "../GeoOperations"
 import { Store, Stores } from "../UIEventSource"
 
 export default class PhotonSearch implements GeocodingProvider, ReverseGeocodingProvider {
-    private _endpoint: string
+    private readonly _endpoint: string
     private supportedLanguages = ["en", "de", "fr"]
     private static readonly types = {
         "R": "relation",
         "W": "way",
         "N": "node",
     }
+    private readonly ignoreBounds: boolean
     private readonly suggestionLimit: number = 5
     private readonly searchLimit: number = 1
 
 
-    constructor(suggestionLimit:number = 5, searchLimit:number = 1, endpoint?: string) {
+    constructor(ignoreBounds: boolean = false, suggestionLimit:number = 5, searchLimit:number = 1, endpoint?: string) {
+        this.ignoreBounds = ignoreBounds
         this.suggestionLimit = suggestionLimit
         this.searchLimit = searchLimit
         this._endpoint = endpoint ?? Constants.photonEndpoint ?? "https://photon.komoot.io/"
@@ -59,7 +61,7 @@ export default class PhotonSearch implements GeocodingProvider, ReverseGeocoding
     }
 
     suggest(query: string, options?: GeocodingOptions): Store<GeocodeResult[]> {
-        return Stores.FromPromise(this.search(query, options, this.suggestionLimit))
+        return Stores.FromPromise(this.search(query, options))
     }
 
     private buildDescription(entry: Feature) {
@@ -111,13 +113,13 @@ export default class PhotonSearch implements GeocodingProvider, ReverseGeocoding
         return p.type
     }
 
-    async search(query: string, options?: GeocodingOptions, limit?: number): Promise<GeocodeResult[]> {
+    async search(query: string, options?: GeocodingOptions): Promise<GeocodeResult[]> {
         if (query.length < 3) {
             return []
         }
-        limit ??= this.searchLimit
+        const limit = this.searchLimit
         let bbox = ""
-        if (options?.bbox) {
+        if (options?.bbox && !this.ignoreBounds) {
             const [lon, lat] = options.bbox.center()
             bbox = `&lon=${lon}&lat=${lat}`
         }
