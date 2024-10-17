@@ -354,6 +354,13 @@
             "nl": "Een fietskluis waar één of enkele fietsen staan en op slot kan en die te klein is om in recht te staan.",
             "de": "Ein Schließfach - Fahrräder werden einzeln oder mit mehreren Fahrrädern zusammen eingeschlossen. Der Schrank ist zu klein für eine stehende Person."
           }
+        },
+        {
+          "if": "bicycle_parking=lean_and_stick",
+          "then": {
+            "en": "A lean-to bracket with possibility to use a lock through eyelet. The seat tube can be held by the stand by an anchor",
+            "nl": "Een aanleunbeugel met klem waarbij je de zadelbuis in een anker kan vastklikken. Er is meestal een oog om een slot door te steken"
+          }
         }
       ],
       "id": "Bicycle parking type"
