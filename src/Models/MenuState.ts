@@ -57,7 +57,7 @@ export class MenuState {
             })
         }
 
-        const visitedBefore = LocalStorageSource.GetParsed<boolean>(
+        const visitedBefore = LocalStorageSource.getParsed<boolean>(
             themeid + "thememenuisopened",
             false
         )

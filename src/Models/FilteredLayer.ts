@@ -86,7 +86,7 @@ export default class FilteredLayer {
     ) {
         let isDisplayed: UIEventSource<boolean>
         if (layer.syncSelection === "local") {
-            isDisplayed = LocalStorageSource.GetParsed(
+            isDisplayed = LocalStorageSource.getParsed(
                 context + "-layer-" + layer.id + "-enabled",
                 layer.shownByDefault,
             )

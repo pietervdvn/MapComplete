@@ -55,7 +55,6 @@
 
   const customThemes: Store<MinimalLayoutInformation[]> = Stores.ListStabilized<string>(state.installedUserThemes)
     .mapD(stableIds => Utils.NoNullInplace(stableIds.map(id => state.getUnofficialTheme(id))))
-
   function filtered(themes: Store<MinimalLayoutInformation[]>): Store<MinimalLayoutInformation[]> {
     return searchStable.map(search => {
       if (!search) {

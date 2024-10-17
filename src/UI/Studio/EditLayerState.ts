@@ -37,7 +37,7 @@ export abstract class EditJsonState<T> {
     public readonly osmConnection: OsmConnection
 
     public readonly showIntro: UIEventSource<"no" | "intro" | "tagrenderings"> = <any>(
-        LocalStorageSource.Get("studio-show-intro", "intro")
+        LocalStorageSource.get("studio-show-intro", "intro")
     )
 
     public readonly expertMode: UIEventSource<boolean>

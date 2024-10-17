@@ -370,7 +370,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
             this.changes,
             this.geolocation.geolocationState.currentGPSLocation,
             this.indexedFeatures,
-            this.reportError
+            this.reportError,
         )
         this.favourites = new FavouritesFeatureSource(this)
         const longAgo = new Date()
@@ -532,7 +532,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
      * Selects the feature that is 'i' closest to the map center
      */
     private selectClosestAtCenter(i: number = 0) {
-        console.log("Selecting closest",i)
+        console.log("Selecting closest", i)
         if (this.userRelatedState.a11y.data !== "never") {
             this.visualFeedback.setData(true)
         }
@@ -908,6 +908,21 @@ export default class ThemeViewState implements SpecialVisualizationState {
      * Setup various services for which no reference are needed
      */
     private initActors() {
+
+        if (!this.layout.official) {
+            // Add custom themes to the "visited custom themes"
+            const th = this.layout
+            this.userRelatedState.addUnofficialTheme({
+                id: th.id,
+                icon: th.icon,
+                title: th.title.translations,
+                shortDescription: th.shortDescription.translations  ,
+                layers: th.layers.filter(l => l.isNormal()).map(l => l.id)
+
+            })
+        }
+
+
         this.selectedElement.addCallback((selected) => {
             if (selected === undefined) {
                 this.focusOnMap()

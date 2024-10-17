@@ -132,14 +132,14 @@ export default class DetermineLayout {
         let json: any
 
         // layoutFromBase64 contains the name of the theme. This is partly to do tracking with goat counter
-        const dedicatedHashFromLocalStorage = LocalStorageSource.Get(
+        const dedicatedHashFromLocalStorage = LocalStorageSource.get(
             "user-layout-" + userLayoutParam.data?.replace(" ", "_")
         )
         if (dedicatedHashFromLocalStorage.data?.length < 10) {
             dedicatedHashFromLocalStorage.setData(undefined)
         }
 
-        const hashFromLocalStorage = LocalStorageSource.Get("last-loaded-user-layout")
+        const hashFromLocalStorage = LocalStorageSource.get("last-loaded-user-layout")
         if (hash.length < 10) {
             hash = dedicatedHashFromLocalStorage.data ?? hashFromLocalStorage.data
         } else {

@@ -24,7 +24,7 @@ import FeaturePropertiesStore from "../FeatureSource/Actors/FeaturePropertiesSto
  */
 export class Changes {
     public readonly pendingChanges: UIEventSource<ChangeDescription[]> =
-        LocalStorageSource.GetParsed<ChangeDescription[]>("pending-changes", [])
+        LocalStorageSource.getParsed<ChangeDescription[]>("pending-changes", [])
     public readonly allChanges = new UIEventSource<ChangeDescription[]>(undefined)
     public readonly state: {
         allElements?: IndexedFeatureSource

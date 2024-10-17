@@ -31,7 +31,7 @@ export default class InitialMapPositioning {
             deflt: number,
             docs: string
         ): UIEventSource<number> {
-            const localStorage = LocalStorageSource.Get(key)
+            const localStorage = LocalStorageSource.get(key)
             const previousValue = localStorage.data
             const src = UIEventSource.asFloat(
                 QueryParameters.GetQueryParameter(key, "" + deflt, docs).syncWith(localStorage)

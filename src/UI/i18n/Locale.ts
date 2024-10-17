@@ -74,7 +74,7 @@ export default class Locale {
             if (typeof navigator !== "undefined") {
                 browserLanguage = Locale.getBestSupportedLanguage()
             }
-            source = LocalStorageSource.Get("language", browserLanguage)
+            source = LocalStorageSource.get("language", browserLanguage)
         }
 
         if (!Utils.runningFromConsole && typeof document !== undefined) {

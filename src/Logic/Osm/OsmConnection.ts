@@ -210,7 +210,7 @@ export class OsmConnection {
         console.log("Trying to log in...")
         this.updateAuthObject()
 
-        LocalStorageSource.Get("location_before_login").setData(
+        LocalStorageSource.get("location_before_login").setData(
             Utils.runningFromConsole ? undefined : window.location.href
         )
         this.auth.xhr(
@@ -521,7 +521,7 @@ export class OsmConnection {
         this.auth.authenticate(function () {
             // Fully authed at this point
             console.log("Authentication successful!")
-            const previousLocation = LocalStorageSource.Get("location_before_login")
+            const previousLocation = LocalStorageSource.get("location_before_login")
             callback(previousLocation.data)
         })
     }

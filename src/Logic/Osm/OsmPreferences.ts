@@ -6,7 +6,11 @@ import { Utils } from "../../Utils"
 
 export class OsmPreferences {
 
-    private preferences: Record<string, UIEventSource<string>> = {}
+    /**
+     * A 'cache' of all the preference stores
+     * @private
+     */
+    private readonly preferences: Record<string, UIEventSource<string>> = {}
 
     private localStorageInited: Set<string> = new Set()
     /**
@@ -15,6 +19,10 @@ export class OsmPreferences {
      */
     private seenKeys: string[] = []
 
+    /**
+     * Contains a dictionary which has all preferences
+     * @private
+     */
     private readonly _allPreferences: UIEventSource<Record<string, string>> = new UIEventSource({})
     public readonly allPreferences: Store<Readonly<Record<string, string>>> = this._allPreferences
     private readonly _fakeUser: boolean
@@ -51,6 +59,7 @@ export class OsmPreferences {
             this.setPreferencesAll(key, value)
         }
         pref.addCallback(v => {
+            console.log("Got an update:", key, "--->", v)
             this.uploadKvSplit(key, v)
             this.setPreferencesAll(key, v)
         })
@@ -101,11 +110,11 @@ export class OsmPreferences {
         key = key.replace(/[:/"' {}.%\\]/g, "")
 
 
-        const localStorage = LocalStorageSource.Get(key)
+        const localStorage = LocalStorageSource.get(key) // cached
         if (localStorage.data === "null" || localStorage.data === "undefined") {
             localStorage.set(undefined)
         }
-        const pref: UIEventSource<string> = this.initPreference(key, localStorage.data ?? defaultValue)
+        const pref: UIEventSource<string> = this.initPreference(key, localStorage.data ?? defaultValue) // cached
         if (this.localStorageInited.has(key)) {
             return pref
         }

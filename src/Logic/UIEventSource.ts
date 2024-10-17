@@ -23,7 +23,7 @@ export class Stores {
     }
 
     public static FromPromiseWithErr<T>(
-        promise: Promise<T>
+        promise: Promise<T>,
     ): Store<{ success: T } | { error: any }> {
         return UIEventSource.FromPromiseWithErr(promise)
     }
@@ -133,13 +133,13 @@ export abstract class Store<T> implements Readable<T> {
     abstract map<J>(
         f: (t: T) => J,
         extraStoresToWatch: Store<any>[],
-        callbackDestroyFunction: (f: () => void) => void
+        callbackDestroyFunction: (f: () => void) => void,
     ): Store<J>
 
     public mapD<J>(
         f: (t: Exclude<T, undefined | null>) => J,
         extraStoresToWatch?: Store<any>[],
-        callbackDestroyFunction?: (f: () => void) => void
+        callbackDestroyFunction?: (f: () => void) => void,
     ): Store<J> {
         return this.map((t) => {
             if (t === undefined) {
@@ -176,7 +176,7 @@ export abstract class Store<T> implements Readable<T> {
     abstract addCallbackAndRun(callback: (data: T) => void): () => void
 
     public withEqualityStabilized(
-        comparator: (t: T | undefined, t1: T | undefined) => boolean
+        comparator: (t: T | undefined, t1: T | undefined) => boolean,
     ): Store<T> {
         let oldValue = undefined
         return this.map((v) => {
@@ -342,6 +342,16 @@ export abstract class Store<T> implements Readable<T> {
     }
 
     public abstract destroy()
+
+    when(callback: () => void, condition?: (v:T) => boolean) {
+        condition ??= v => v === true
+        this.addCallbackAndRunD(v => {
+            if ( condition(v)) {
+                callback()
+                return true
+            }
+        })
+    }
 }
 
 export class ImmutableStore<T> extends Store<T> {
@@ -384,7 +394,7 @@ export class ImmutableStore<T> extends Store<T> {
     map<J>(
         f: (t: T) => J,
         extraStores: Store<any>[] = undefined,
-        ondestroyCallback?: (f: () => void) => void
+        ondestroyCallback?: (f: () => void) => void,
     ): ImmutableStore<J> {
         if (extraStores?.length > 0) {
             return new MappedStore(this, f, extraStores, undefined, f(this.data), ondestroyCallback)
@@ -454,7 +464,7 @@ class ListenerTracker<T> {
         let endTime = new Date().getTime() / 1000
         if (endTime - startTime > 500) {
             console.trace(
-                "Warning: a ping took more then 500ms; this is probably a performance issue"
+                "Warning: a ping took more then 500ms; this is probably a performance issue",
             )
         }
         if (toDelete !== undefined) {
@@ -496,7 +506,7 @@ class MappedStore<TIn, T> extends Store<T> {
         extraStores: Store<any>[],
         upstreamListenerHandler: ListenerTracker<TIn> | undefined,
         initialState: T,
-        onDestroy?: (f: () => void) => void
+        onDestroy?: (f: () => void) => void,
     ) {
         super()
         this._upstream = upstream
@@ -536,7 +546,7 @@ class MappedStore<TIn, T> extends Store<T> {
     map<J>(
         f: (t: T) => J,
         extraStores: Store<any>[] = undefined,
-        ondestroyCallback?: (f: () => void) => void
+        ondestroyCallback?: (f: () => void) => void,
     ): Store<J> {
         let stores: Store<any>[] = undefined
         if (extraStores?.length > 0 || this._extraStores?.length > 0) {
@@ -558,7 +568,7 @@ class MappedStore<TIn, T> extends Store<T> {
             stores,
             this._callbacks,
             f(this.data),
-            ondestroyCallback
+            ondestroyCallback,
         )
     }
 
@@ -614,7 +624,7 @@ class MappedStore<TIn, T> extends Store<T> {
 
         this._unregisterFromUpstream = this._upstream.addCallback((_) => self.update())
         this._unregisterFromExtraStores = this._extraStores?.map((store) =>
-            store?.addCallback((_) => self.update())
+            store?.addCallback((_) => self.update()),
         )
         this._callbacksAreRegistered = true
     }
@@ -651,7 +661,7 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
 
     public static flatten<X>(
         source: Store<Store<X>>,
-        possibleSources?: Store<object>[]
+        possibleSources?: Store<object>[],
     ): UIEventSource<X> {
         const sink = new UIEventSource<X>(source.data?.data)
 
@@ -680,7 +690,7 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
      */
     public static FromPromise<T>(
         promise: Promise<T>,
-        onError: (e) => void = undefined
+        onError: (e) => void = undefined,
     ): UIEventSource<T> {
         const src = new UIEventSource<T>(undefined)
         promise?.then((d) => src.setData(d))
@@ -701,7 +711,7 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
      * @constructor
      */
     public static FromPromiseWithErr<T>(
-        promise: Promise<T>
+        promise: Promise<T>,
     ): UIEventSource<{ success: T } | { error: any } | undefined> {
         const src = new UIEventSource<{ success: T } | { error: any }>(undefined)
         promise
@@ -733,7 +743,7 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
                     return undefined
                 }
                 return "" + fl
-            }
+            },
         )
     }
 
@@ -764,7 +774,7 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
                     return undefined
                 }
                 return "" + fl
-            }
+            },
         )
     }
 
@@ -772,7 +782,7 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
         return stringUIEventSource.sync(
             (str) => str === "true",
             [],
-            (b) => "" + b
+            (b) => "" + b,
         )
     }
 
@@ -790,7 +800,7 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
                 }
             },
             [],
-            (b) => JSON.stringify(b) ?? ""
+            (b) => JSON.stringify(b) ?? "",
         )
     }
 
@@ -880,7 +890,7 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
     public map<J>(
         f: (t: T) => J,
         extraSources: Store<any>[] = [],
-        onDestroy?: (f: () => void) => void
+        onDestroy?: (f: () => void) => void,
     ): Store<J> {
         return new MappedStore(this, f, extraSources, this._callbacks, f(this.data), onDestroy)
     }
@@ -892,7 +902,7 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
     public mapD<J>(
         f: (t: Exclude<T, undefined | null>) => J,
         extraSources: Store<any>[] = [],
-        callbackDestroyFunction?: (f: () => void) => void
+        callbackDestroyFunction?: (f: () => void) => void,
     ): Store<J | undefined> {
         return new MappedStore(
             this,
@@ -910,7 +920,7 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
             this.data === undefined || this.data === null
                 ? <undefined | null>this.data
                 : f(<any>this.data),
-            callbackDestroyFunction
+            callbackDestroyFunction,
         )
     }
 
@@ -930,7 +940,7 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
         f: (t: T) => J,
         extraSources: Store<any>[],
         g: (j: J, t: T) => T,
-        allowUnregister = false
+        allowUnregister = false,
     ): UIEventSource<J> {
         const self = this
 

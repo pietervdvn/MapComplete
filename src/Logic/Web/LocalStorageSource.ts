@@ -4,8 +4,11 @@ import { UIEventSource } from "../UIEventSource"
  * UIEventsource-wrapper around localStorage
  */
 export class LocalStorageSource {
-    static GetParsed<T>(key: string, defaultValue: T): UIEventSource<T> {
-        return LocalStorageSource.Get(key).sync(
+
+    private static readonly _cache: Record<string, UIEventSource<string>> = {}
+
+    static getParsed<T>(key: string, defaultValue: T): UIEventSource<T> {
+        return LocalStorageSource.get(key).sync(
             (str) => {
                 if (str === undefined) {
                     return defaultValue
@@ -17,34 +20,40 @@ export class LocalStorageSource {
                 }
             },
             [],
-            (value) => JSON.stringify(value)
+            (value) => JSON.stringify(value),
         )
     }
 
-    static Get(key: string, defaultValue: string = undefined): UIEventSource<string> {
+    static get(key: string, defaultValue: string = undefined): UIEventSource<string> {
+        const cached = LocalStorageSource._cache[key]
+        if (cached) {
+            return cached
+        }
+        let saved = defaultValue
         try {
-            let saved = localStorage.getItem(key)
+            saved = localStorage.getItem(key)
             if (saved === "undefined") {
                 saved = undefined
             }
-            const source = new UIEventSource<string>(saved ?? defaultValue, "localstorage:" + key)
-
-            source.addCallback((data) => {
-                if(data === undefined || data === "" || data === null){
-                    localStorage.removeItem(key)
-                    return
-                }
-                try {
-                    localStorage.setItem(key, data)
-                } catch (e) {
-                    // Probably exceeded the quota with this item!
-                    // Lets nuke everything
-                    localStorage.clear()
-                }
-            })
-            return source
         } catch (e) {
-            return new UIEventSource<string>(defaultValue)
+            console.error("Could not get value", key, "from local storage")
         }
+        const source = new UIEventSource<string>(saved ?? defaultValue, "localstorage:" + key)
+
+        source.addCallback((data) => {
+            if (data === undefined || data === "" || data === null) {
+                localStorage.removeItem(key)
+                return
+            }
+            try {
+                localStorage.setItem(key, data)
+            } catch (e) {
+                // Probably exceeded the quota with this item!
+                // Let's nuke everything
+                localStorage.clear()
+            }
+        })
+        LocalStorageSource._cache[key] = source
+        return source
     }
 }

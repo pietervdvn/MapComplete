@@ -24,7 +24,7 @@
   export let coordinate: UIEventSource<{ lon: number; lat: number }>
   export let state: SpecialVisualizationState
 
-  let comment: UIEventSource<string> = LocalStorageSource.Get("note-text")
+  let comment: UIEventSource<string> = LocalStorageSource.get("note-text")
   let created = false
 
   let notelayer: FilteredLayer = state.layerState.filteredLayers.get("note")

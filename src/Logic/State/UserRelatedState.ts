@@ -43,8 +43,8 @@ export class OptionallySyncedHistory<T> {
             "sync",
         )
         const synced = this.synced = UIEventSource.asObject<T[]>(osmconnection.getPreference(key + "-history"), [])
-        const local = this.local = LocalStorageSource.GetParsed<T[]>(key + "-history", [])
-        const thisSession = this.thisSession = new UIEventSource<T[]>([], "optionally-synced:"+key+"(session only)")
+        const local = this.local = LocalStorageSource.getParsed<T[]>(key + "-history", [])
+        const thisSession = this.thisSession = new UIEventSource<T[]>([], "optionally-synced:" + key + "(session only)")
         this.syncPreference.addCallback(syncmode => {
             if (syncmode === "sync") {
                 let list = [...thisSession.data, ...synced.data].slice(0, maxHistory)
@@ -164,7 +164,7 @@ export default class UserRelatedState {
         "button" | "button_click_right" | "button_click" | "click" | "click_right"
     >("button_click_right")
 
-    public readonly showScale : UIEventSource<boolean>
+    public readonly showScale: UIEventSource<boolean>
 
     /**
      * Preferences as tags exposes many preferences and state properties as record.
@@ -202,8 +202,8 @@ export default class UserRelatedState {
         this.a11y = this.osmConnection.getPreference("a11y")
 
         this.mangroveIdentity = new MangroveIdentity(
-            this.osmConnection.getPreference("identity", undefined,"mangrove"),
-            this.osmConnection.getPreference("identity-creation-date", undefined,"mangrove"),
+            this.osmConnection.getPreference("identity", undefined, "mangrove"),
+            this.osmConnection.getPreference("identity-creation-date", undefined, "mangrove"),
         )
         this.preferredBackgroundLayer = this.osmConnection.getPreference("preferred-background-layer")
 
@@ -211,7 +211,7 @@ export default class UserRelatedState {
             "preferences-add-new-mode",
             "button_click_right",
         )
-        this.showScale = UIEventSource.asBoolean(this.osmConnection.GetPreference("preference-show-scale","false"))
+        this.showScale = UIEventSource.asBoolean(this.osmConnection.GetPreference("preference-show-scale", "false"))
 
         this.imageLicense = this.osmConnection.getPreference("pictures-license", "CC0")
         this.installedUserThemes = UserRelatedState.initInstalledUserThemes(osmConnection)
@@ -272,7 +272,19 @@ export default class UserRelatedState {
         }
     }
 
-    public getUnofficialTheme(id: string): (MinimalLayoutInformation & { definition }) | undefined {
+    /**
+     * Adds a newly visited unofficial theme (or update the info).
+     *
+     * @param themeInfo note that themeInfo.id should be the URL where it was found
+     */
+    public addUnofficialTheme(themeInfo: MinimalLayoutInformation) {
+        const pref = this.osmConnection.getPreference("unofficial-theme-" + themeInfo.id)
+        this.osmConnection.isLoggedIn.when(
+            () =>        pref.set(JSON.stringify(themeInfo))
+        )
+    }
+
+    public getUnofficialTheme(id: string): MinimalLayoutInformation | undefined {
         const pref = this.osmConnection.getPreference("unofficial-theme-" + id)
         const str = pref.data
 
@@ -282,7 +294,7 @@ export default class UserRelatedState {
         }
 
         try {
-            return <MinimalLayoutInformation & { definition: string }>JSON.parse(str)
+            return JSON.parse(str)
         } catch (e) {
             console.warn(
                 "Removing theme " +
@@ -516,10 +528,10 @@ export default class UserRelatedState {
                     // Language is managed separately
                     continue
                 }
-                if(tags[key] === null){
+                if (tags[key] === null) {
                     continue
                 }
-                let pref = this.osmConnection.GetPreference(key, undefined, {prefix: ""})
+                let pref = this.osmConnection.GetPreference(key, undefined, { prefix: "" })
 
                 pref.set(tags[key])
             }
