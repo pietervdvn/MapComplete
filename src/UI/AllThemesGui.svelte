@@ -89,9 +89,7 @@
 
   function applySearch() {
     const didRedirect = SearchUtils.applySpecialSearch(search.data)
-    console.log("Did redirect?", didRedirect)
     if (didRedirect) {
-      // Just for style and readability; won't _actually_ reach this
       return
     }
 
