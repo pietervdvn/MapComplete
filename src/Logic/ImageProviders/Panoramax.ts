@@ -145,7 +145,7 @@ export default class PanoramaxImageProvider extends ImageProvider {
             })
         })
 
-        return source
+        return Stores.ListStabilized( source)
     }
 
     public async DownloadAttribution(providedImage: { url: string; id: string; }): Promise<LicenseInfo> {
@@ -178,7 +178,6 @@ export class PanoramaxUploader implements ImageUploader {
     }> {
         // https://panoramax.openstreetmap.fr/api/docs/swagger#/
 
-        let tags: ExifReader.Tags = undefined
         let hasDate = false
         let hasGPS = false
         try {
