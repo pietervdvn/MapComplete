@@ -1,4 +1,5 @@
 import { UIEventSource } from "../UIEventSource"
+import { Utils } from "../../Utils"
 
 /**
  * UIEventsource-wrapper around localStorage
