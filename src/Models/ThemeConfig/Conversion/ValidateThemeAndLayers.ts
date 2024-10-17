@@ -1,10 +1,10 @@
 import { Bypass, Each, Fuse, On } from "./Conversion"
-import { LayoutConfigJson } from "../Json/LayoutConfigJson"
+import { ThemeConfigJson } from "../Json/ThemeConfigJson"
 import Constants from "../../Constants"
 import { DoesImageExist, ValidateLayerConfig } from "./Validation"
 import { ValidateTheme } from "./ValidateTheme"
 
-export class ValidateThemeAndLayers extends Fuse<LayoutConfigJson> {
+export class ValidateThemeAndLayers extends Fuse<ThemeConfigJson> {
     constructor(
         doesImageExist: DoesImageExist,
         path: string,

@@ -38,10 +38,10 @@
         return downloadHelper.createImage(key, width, height)
       },
       textSubstitutions: <Record<string, string | Translation>>{
-        "layout.title": state.layout.title,
-        layoutid: state.layout.id,
-        title: state.layout.title,
-        layoutImg: state.layout.icon,
+        "layout.title": state.theme.title,
+        layoutid: state.theme.id,
+        title: state.theme.title,
+        layoutImg: state.theme.icon,
         version: Constants.vNumber,
         date: new Date().toISOString().substring(0, 16),
         background: new Translation(bg.properties.name).txt,

@@ -14,7 +14,7 @@
 
   export let state: SpecialVisualizationState
   let searchTerm = state.searchState.searchTerm
-  let recentThemes = state.userRelatedState.recentlyVisitedThemes.value.map(themes => themes.filter(th => th !== state.layout.id).slice(0, 6))
+  let recentThemes = state.userRelatedState.recentlyVisitedThemes.value.map(themes => themes.filter(th => th !== state.theme.id).slice(0, 6))
   let themeResults = state.searchState.themeSuggestions
 
   const t =Translations.t.general.search

@@ -53,7 +53,7 @@
   export let state: ThemeViewState
 
 
-  let layout = state.layout
+  let theme = state.theme
   let maplibremap: UIEventSource<MlMap> = state.map
   let state_selectedElement = state.selectedElement
   let selectedElement: UIEventSource<Feature> = new UIEventSource<Feature>(undefined)
@@ -65,7 +65,7 @@
   let gpsButtonAriaLabel = state.geolocation.geolocationState.gpsStateExplanation
   let debug = state.featureSwitches.featureSwitchIsDebugging
   let featureSwitches: FeatureSwitchState = state.featureSwitches
-  let currentViewLayer: LayerConfig = layout.layers.find((l) => l.id === "current_view")
+  let currentViewLayer: LayerConfig = theme.layers.find((l) => l.id === "current_view")
   let rasterLayer: Store<RasterLayerPolygon> = state.mapProperties.rasterLayer
   let currentZoom = state.mapProperties.zoom
   let showCrosshair = state.userRelatedState.showCrosshair
@@ -213,7 +213,7 @@
     <div class="flex w-full items-end justify-between px-4">
       <div class="flex flex-col">
         <If condition={featureSwitches.featureSwitchEnableLogin}>
-          {#if $addNewFeatureMode.indexOf("button") >= 0 && ((state.layout.hasPresets() && state.layout.enableAddNewPoints) || state.layout.hasNoteLayer())}
+          {#if $addNewFeatureMode.indexOf("button") >= 0 && ((state.theme.hasPresets() && state.theme.enableAddNewPoints) || state.theme.hasNoteLayer())}
             <button
               class="low-interaction pointer-events-auto w-fit"
               class:disabled={$currentZoom < Constants.minZoomLevelToAddNewPoint}
@@ -224,7 +224,7 @@
             >
               {#if $currentZoom < Constants.minZoomLevelToAddNewPoint}
                 <Tr t={Translations.t.general.add.zoomInFurther} />
-              {:else if state.layout.hasPresets()}
+              {:else if state.theme.hasPresets()}
                 ✨ <Tr t={Translations.t.general.add.title} />
               {:else}
                 <Tr t={Translations.t.notes.addAComment} />
@@ -351,9 +351,9 @@
           <div
             class="m-0.5 mx-1 flex cursor-pointer items-center max-[480px]:w-full sm:mx-1 mr-2"
           >
-            <Marker icons={layout.icon} size="h-6 w-6 shrink-0 mr-0.5 sm:mr-1 md:mr-2" />
+            <Marker icons={theme.icon} size="h-6 w-6 shrink-0 mr-0.5 sm:mr-1 md:mr-2" />
             <b class="mr-1">
-              <Tr t={layout.title} />
+              <Tr t={theme.title} />
             </b>
           </div>
         </MapControlButton>

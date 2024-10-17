@@ -32,7 +32,7 @@
     const gpsIsDisplayed = gpsLayer.isDisplayed.data
     try {
       gpsLayer.isDisplayed.setData(false)
-      const name = state.layout.id
+      const name = state.theme.id
 
       const title = `MapComplete_${name}_export_${new Date()
         .toISOString()

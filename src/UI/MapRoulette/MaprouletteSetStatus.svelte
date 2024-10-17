@@ -39,7 +39,7 @@
     const maproulette_id = tags.data[maproulette_id_key] ?? tags.data.mr_taskId ?? tags.data.id
     try {
       await Maproulette.singleton.closeTask(Number(maproulette_id), Number(statusToSet), {
-        tags: `MapComplete MapComplete:${state.layout.id}`,
+        tags: `MapComplete MapComplete:${state.theme.id}`,
         comment: feedback,
       })
       tags.data["mr_taskStatus"] = Maproulette.STATUS_MEANING[Number(statusToSet)]

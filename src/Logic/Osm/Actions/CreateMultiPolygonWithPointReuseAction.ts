@@ -7,7 +7,7 @@ import CreateWayWithPointReuseAction, { MergePointConfig } from "./CreateWayWith
 import { And } from "../../Tags/And"
 import { TagUtils } from "../../Tags/TagUtils"
 import { FeatureSource, IndexedFeatureSource } from "../../FeatureSource/FeatureSource"
-import LayoutConfig from "../../../Models/ThemeConfig/LayoutConfig"
+import ThemeConfig from "../../../Models/ThemeConfig/ThemeConfig"
 import { Position } from "geojson"
 import FullNodeDatabaseSource from "../../FeatureSource/TiledFeatureSource/FullNodeDatabaseSource"
 
@@ -32,7 +32,7 @@ export default class CreateMultiPolygonWithPointReuseAction
         outerRingCoordinates: Position[],
         innerRingsCoordinates: Position[][],
         state: {
-            layout: LayoutConfig
+            theme: ThemeConfig
             changes: Changes
             indexedFeatures: IndexedFeatureSource
             fullNodeDatabase?: FullNodeDatabaseSource
@@ -43,7 +43,7 @@ export default class CreateMultiPolygonWithPointReuseAction
         super(null, true)
         this._tags = [...tags, new Tag("type", "multipolygon")]
         this.changeType = changeType
-        this.theme = state?.layout?.id ?? ""
+        this.theme = state?.theme?.id ?? ""
         this.createOuterWay = new CreateWayWithPointReuseAction(
             [],
             <[number, number][]>outerRingCoordinates,
@@ -55,7 +55,7 @@ export default class CreateMultiPolygonWithPointReuseAction
                 new CreateNewWayAction(
                     [],
                     ringCoordinates.map(([lon, lat]) => ({ lat, lon })),
-                    { theme: state?.layout?.id }
+                    { theme: state?.theme?.id }
                 )
         )
 

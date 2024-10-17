@@ -15,7 +15,7 @@ type ErrorMessage = {
     message: {
         stacktrace: string
         message: string
-        layout: string
+        theme: string
         version: string
         language: string
         username: string
@@ -40,7 +40,7 @@ class HandleErrors extends Script {
     ) {
         console.log(
             parsed.message.username,
-            parsed.message.layout,
+            parsed.message.theme,
             parsed.message.message,
             parsed.date
         )
@@ -82,7 +82,7 @@ class HandleErrors extends Script {
         } = changesObj.CreateChangesetObjects(toUpload, objects, true)
 
         const changeset = Changes.buildChangesetXML("", changes)
-        const path = "error_changeset_" + parsed.index + "_" + e.layout + "_" + e.username + ".osc"
+        const path = "error_changeset_" + parsed.index + "_" + e.theme + "_" + e.username + ".osc"
         if (
             changeset ===
             `<osmChange version='0.6' generator='Mapcomplete ${Constants.vNumber}'></osmChange>`

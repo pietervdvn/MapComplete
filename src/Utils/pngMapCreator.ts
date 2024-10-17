@@ -52,7 +52,7 @@ export class PngMapCreator {
 
         PngMapCreator.id++
         try {
-            const layout = this._state.layout
+            const layout = this._state.theme
 
             function setState(msg: string) {
                 status?.setData(layout.id + ": " + msg)

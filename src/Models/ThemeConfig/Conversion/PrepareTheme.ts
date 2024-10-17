@@ -1,5 +1,5 @@
 import { Concat, Conversion, DesugaringContext, DesugaringStep, Each, Fuse, On, Pass, SetDefault } from "./Conversion"
-import { LayoutConfigJson } from "../Json/LayoutConfigJson"
+import { ThemeConfigJson } from "../Json/ThemeConfigJson"
 import { PrepareLayer } from "./PrepareLayer"
 import { LayerConfigJson } from "../Json/LayerConfigJson"
 import { Utils } from "../../../Utils"
@@ -165,7 +165,7 @@ class SubstituteLayer extends Conversion<string | LayerConfigJson, LayerConfigJs
     }
 }
 
-class AddDefaultLayers extends DesugaringStep<LayoutConfigJson> {
+class AddDefaultLayers extends DesugaringStep<ThemeConfigJson> {
     private readonly _state: DesugaringContext
 
     constructor(state: DesugaringContext) {
@@ -177,7 +177,7 @@ class AddDefaultLayers extends DesugaringStep<LayoutConfigJson> {
         this._state = state
     }
 
-    convert(json: LayoutConfigJson, context: ConversionContext): LayoutConfigJson {
+    convert(json: ThemeConfigJson, context: ConversionContext): ThemeConfigJson {
         const state = this._state
         json.layers = Utils.NoNull([...(json.layers ?? [])])
         const alreadyLoaded = new Set(json.layers.map((l) => l["id"]))
@@ -209,7 +209,7 @@ class AddDefaultLayers extends DesugaringStep<LayoutConfigJson> {
     }
 }
 
-class AddContextToTranslationsInLayout extends DesugaringStep<LayoutConfigJson> {
+class AddContextToTranslationsInLayout extends DesugaringStep<ThemeConfigJson> {
     constructor() {
         super(
             "Adds context to translations, including the prefix 'themes:json.id'; this is to make sure terms in an 'overrides' or inline layer are linkable too",
@@ -218,8 +218,8 @@ class AddContextToTranslationsInLayout extends DesugaringStep<LayoutConfigJson> 
         )
     }
 
-    convert(json: LayoutConfigJson): LayoutConfigJson {
-        const conversion = new AddContextToTranslations<LayoutConfigJson>("themes:")
+    convert(json: ThemeConfigJson): ThemeConfigJson {
+        const conversion = new AddContextToTranslations<ThemeConfigJson>("themes:")
         // The context is used to generate the 'context' in the translation .It _must_ be `json.id` to correctly link into weblate
         return conversion.convert(
             json,
@@ -228,7 +228,7 @@ class AddContextToTranslationsInLayout extends DesugaringStep<LayoutConfigJson> 
     }
 }
 
-class ApplyOverrideAll extends DesugaringStep<LayoutConfigJson> {
+class ApplyOverrideAll extends DesugaringStep<ThemeConfigJson> {
     constructor() {
         super(
             "Applies 'overrideAll' onto every 'layer'. The 'overrideAll'-field is removed afterwards",
@@ -237,7 +237,7 @@ class ApplyOverrideAll extends DesugaringStep<LayoutConfigJson> {
         )
     }
 
-    convert(json: LayoutConfigJson, ctx: ConversionContext): LayoutConfigJson {
+    convert(json: ThemeConfigJson, ctx: ConversionContext): ThemeConfigJson {
         const overrideAll = json.overrideAll
         if (overrideAll === undefined) {
             return json
@@ -278,7 +278,7 @@ class ApplyOverrideAll extends DesugaringStep<LayoutConfigJson> {
     }
 }
 
-class AddDependencyLayersToTheme extends DesugaringStep<LayoutConfigJson> {
+class AddDependencyLayersToTheme extends DesugaringStep<ThemeConfigJson> {
     private readonly _state: DesugaringContext
 
     constructor(state: DesugaringContext) {
@@ -390,7 +390,7 @@ class AddDependencyLayersToTheme extends DesugaringStep<LayoutConfigJson> {
         return dependenciesToAdd
     }
 
-    convert(theme: LayoutConfigJson, context: ConversionContext): LayoutConfigJson {
+    convert(theme: ThemeConfigJson, context: ConversionContext): ThemeConfigJson {
         const state = this._state
         const allKnownLayers: Map<string, LayerConfigJson> = state.sharedLayers
         const knownTagRenderings: Map<string, TagRenderingConfigJson> = state.tagRenderings
@@ -428,7 +428,7 @@ class AddDependencyLayersToTheme extends DesugaringStep<LayoutConfigJson> {
     }
 }
 
-class PreparePersonalTheme extends DesugaringStep<LayoutConfigJson> {
+class PreparePersonalTheme extends DesugaringStep<ThemeConfigJson> {
     private readonly _state: DesugaringContext
 
     constructor(state: DesugaringContext) {
@@ -436,7 +436,7 @@ class PreparePersonalTheme extends DesugaringStep<LayoutConfigJson> {
         this._state = state
     }
 
-    convert(json: LayoutConfigJson, context: ConversionContext): LayoutConfigJson {
+    convert(json: ThemeConfigJson, context: ConversionContext): ThemeConfigJson {
         if (json.id !== "personal") {
             return json
         }
@@ -452,7 +452,7 @@ class PreparePersonalTheme extends DesugaringStep<LayoutConfigJson> {
     }
 }
 
-class WarnForUnsubstitutedLayersInTheme extends DesugaringStep<LayoutConfigJson> {
+class WarnForUnsubstitutedLayersInTheme extends DesugaringStep<ThemeConfigJson> {
     constructor() {
         super(
             "Generates a warning if a theme uses an unsubstituted layer",
@@ -461,7 +461,7 @@ class WarnForUnsubstitutedLayersInTheme extends DesugaringStep<LayoutConfigJson>
         )
     }
 
-    convert(json: LayoutConfigJson, context: ConversionContext): LayoutConfigJson {
+    convert(json: ThemeConfigJson, context: ConversionContext): ThemeConfigJson {
         if (json.hideFromOverview === true) {
             return json
         }
@@ -503,7 +503,7 @@ class WarnForUnsubstitutedLayersInTheme extends DesugaringStep<LayoutConfigJson>
     }
 }
 
-class PostvalidateTheme extends DesugaringStep<LayoutConfigJson> {
+class PostvalidateTheme extends DesugaringStep<ThemeConfigJson> {
     private readonly _state: DesugaringContext
 
     constructor(state: DesugaringContext) {
@@ -511,7 +511,7 @@ class PostvalidateTheme extends DesugaringStep<LayoutConfigJson> {
         this._state = state
     }
 
-    convert(json: LayoutConfigJson, context: ConversionContext): LayoutConfigJson {
+    convert(json: ThemeConfigJson, context: ConversionContext): ThemeConfigJson {
         for (const l of json.layers) {
             const layer = <LayerConfigJson>l
             const basedOn = <string>layer["_basedOn"]
@@ -582,7 +582,7 @@ class PostvalidateTheme extends DesugaringStep<LayoutConfigJson> {
     }
 }
 
-export class PrepareTheme extends Fuse<LayoutConfigJson> {
+export class PrepareTheme extends Fuse<ThemeConfigJson> {
     private state: DesugaringContext
 
     constructor(
@@ -616,7 +616,7 @@ export class PrepareTheme extends Fuse<LayoutConfigJson> {
         this.state = state
     }
 
-    convert(json: LayoutConfigJson, context: ConversionContext): LayoutConfigJson {
+    convert(json: ThemeConfigJson, context: ConversionContext): ThemeConfigJson {
         const result = super.convert(json, context)
         if ((this.state.publicLayers?.size ?? 0) === 0) {
             // THis is a bootstrapping run, no need to already set this flag

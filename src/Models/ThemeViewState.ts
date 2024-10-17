@@ -1,4 +1,4 @@
-import LayoutConfig from "./ThemeConfig/LayoutConfig"
+import ThemeConfig from "./ThemeConfig/ThemeConfig"
 import { SpecialVisualizationState } from "../UI/SpecialVisualization"
 import { Changes } from "../Logic/Osm/Changes"
 import { Store, UIEventSource } from "../Logic/UIEventSource"
@@ -18,7 +18,7 @@ import UserRelatedState from "../Logic/State/UserRelatedState"
 import LayerConfig from "./ThemeConfig/LayerConfig"
 import GeoLocationHandler from "../Logic/Actors/GeoLocationHandler"
 import { AvailableRasterLayers, RasterLayerPolygon, RasterLayerUtils } from "./RasterLayers"
-import LayoutSource from "../Logic/FeatureSource/Sources/LayoutSource"
+import ThemeSource from "../Logic/FeatureSource/Sources/ThemeSource"
 import StaticFeatureSource from "../Logic/FeatureSource/Sources/StaticFeatureSource"
 import FeaturePropertiesStore from "../Logic/FeatureSource/Actors/FeaturePropertiesStore"
 import PerLayerFeatureSourceSplitter from "../Logic/FeatureSource/PerLayerFeatureSourceSplitter"
@@ -80,7 +80,7 @@ import { PanoramaxUploader } from "../Logic/ImageProviders/Panoramax"
  * It ties up all the needed elements and starts some actors.
  */
 export default class ThemeViewState implements SpecialVisualizationState {
-    readonly layout: LayoutConfig
+    readonly theme: ThemeConfig
     readonly map: UIEventSource<MlMap>
     readonly changes: Changes
     readonly featureSwitches: FeatureSwitchState
@@ -104,7 +104,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
     readonly fullNodeDatabase?: FullNodeDatabaseSource
 
     readonly historicalUserLocations: WritableFeatureSource<Feature<Point>>
-    readonly indexedFeatures: IndexedFeatureSource & LayoutSource
+    readonly indexedFeatures: IndexedFeatureSource & ThemeSource
     readonly currentView: FeatureSource<Feature<Polygon>>
     readonly featuresInView: FeatureSource
     readonly favourites: FavouritesFeatureSource
@@ -160,9 +160,9 @@ export default class ThemeViewState implements SpecialVisualizationState {
      */
     public readonly featureSummary: SummaryTileSourceRewriter
 
-    constructor(layout: LayoutConfig, mvtAvailableLayers: Set<string>) {
+    constructor(layout: ThemeConfig, mvtAvailableLayers: Set<string>) {
         Utils.initDomPurify()
-        this.layout = layout
+        this.theme = layout
         this.featureSwitches = new FeatureSwitchState(layout)
         this.guistate = new MenuState(
             this.featureSwitches.featureSwitchWelcomeMessage.data,
@@ -218,7 +218,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
 
         {
             const overlayLayerStates = new Map<string, { isDisplayed: UIEventSource<boolean> }>()
-            for (const rasterInfo of this.layout.tileLayerSources) {
+            for (const rasterInfo of this.theme.tileLayerSources) {
                 const isDisplayed = QueryParameters.GetBooleanQueryParameter(
                     "overlay-" + rasterInfo.id,
                     rasterInfo.defaultState ?? true,
@@ -236,11 +236,11 @@ export default class ThemeViewState implements SpecialVisualizationState {
              * A bit tricky, as this is heavily intertwined with the 'changes'-element, which generates a stream of new and changed features too
              */
 
-            if (this.layout.layers.some((l) => l._needsFullNodeDatabase)) {
+            if (this.theme.layers.some((l) => l._needsFullNodeDatabase)) {
                 this.fullNodeDatabase = new FullNodeDatabaseSource()
             }
 
-            const layoutSource = new LayoutSource(
+            const layoutSource = new ThemeSource(
                 layout.layers,
                 this.featureSwitches,
                 this.mapProperties,
@@ -340,7 +340,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
         })
 
         this.lastClickObject = new LastClickFeatureSource(
-            this.layout,
+            this.theme,
             this.mapProperties.lastClickLocation,
             this.userRelatedState.addNewFeatureMode,
         )
@@ -414,7 +414,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
             const storage = new SaveFeatureSourceToLocalStorage(
                 this.osmConnection.Backend(),
                 fs.layer.layerDef.id,
-                LayoutSource.fromCacheZoomLevel,
+                ThemeSource.fromCacheZoomLevel,
                 fs,
                 this.featureProperties,
                 fs.layer.layerDef.maxAgeOfCache,
@@ -509,7 +509,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
             }
         })
 
-        this.userRelatedState.markLayoutAsVisited(this.layout)
+        this.userRelatedState.markLayoutAsVisited(this.theme)
 
         this.selectedElement.addCallback((selected) => {
             if (selected === undefined) {
@@ -517,8 +517,8 @@ export default class ThemeViewState implements SpecialVisualizationState {
             }
         })
 
-        if (this.layout.customCss !== undefined && window.location.pathname.indexOf("theme") >= 0) {
-            Utils.LoadCustomCss(this.layout.customCss)
+        if (this.theme.customCss !== undefined && window.location.pathname.indexOf("theme") >= 0) {
+            Utils.LoadCustomCss(this.theme.customCss)
         }
 
         Hash.hash.addCallbackAndRunD((hash) => {
@@ -738,11 +738,11 @@ export default class ThemeViewState implements SpecialVisualizationState {
         /**
          * MaxZoom for the summary layer
          */
-        const normalLayers = this.layout.layers.filter(l => l.isNormal())
+        const normalLayers = this.theme.layers.filter(l => l.isNormal())
 
         const maxzoom = Math.min(...normalLayers.map((l) => l.minzoom))
 
-        const layers = this.layout.layers.filter(
+        const layers = this.theme.layers.filter(
             (l) =>
                 Constants.priviliged_layers.indexOf(<any>l.id) < 0 &&
                 l.source.geojsonSource === undefined &&
@@ -796,8 +796,8 @@ export default class ThemeViewState implements SpecialVisualizationState {
 
 
         this.closestFeatures.registerSource(specialLayers.favourite, "favourite")
-        if (this.layout?.lockLocation) {
-            const bbox = new BBox(<any>this.layout.lockLocation)
+        if (this.theme?.lockLocation) {
+            const bbox = new BBox(<any>this.theme.lockLocation)
             this.mapProperties.maxbounds.setData(bbox)
             ShowDataLayer.showRange(
                 this.map,
@@ -805,7 +805,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 this.featureSwitches.featureSwitchIsTesting,
             )
         }
-        const currentViewLayer = this.layout.layers.find((l) => l.id === "current_view")
+        const currentViewLayer = this.theme.layers.find((l) => l.id === "current_view")
         if (currentViewLayer?.tagRenderings?.length > 0) {
             const params = MetaTagging.createExtraFuncParams(this)
             this.featureProperties.trackFeatureSource(specialLayers.current_view)
@@ -814,7 +814,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                     features,
                     params,
                     currentViewLayer,
-                    this.layout,
+                    this.theme,
                     this.osmObjectDownloader,
                     this.featureProperties,
                 )
@@ -909,9 +909,9 @@ export default class ThemeViewState implements SpecialVisualizationState {
      */
     private initActors() {
 
-        if (!this.layout.official) {
+        if (!this.theme.official) {
             // Add custom themes to the "visited custom themes"
-            const th = this.layout
+            const th = this.theme
             this.userRelatedState.addUnofficialTheme({
                 id: th.id,
                 icon: th.icon,
@@ -945,7 +945,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
         this.selectedElement.addCallbackD(selected => {
             const [osm_type, osm_id] = selected.properties.id.split("/")
             const [lon, lat] = GeoOperations.centerpointCoordinates(selected)
-            const layer = this.layout.getMatchingLayer(selected.properties)
+            const layer = this.theme.getMatchingLayer(selected.properties)
 
             const nameOptions = [
                 selected?.properties?.name,
@@ -987,7 +987,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
     }
 
     /**
-     * Searches the appropriate layer - will first try if a special layer matches; if not, a normal layer will be used by delegating to the layout
+     * Searches the appropriate layer - will first try if a special layer matches; if not, a normal layer will be used by delegating to the theme
      */
     public getMatchingLayer(properties: Record<string, string>) {
 
@@ -1002,15 +1002,15 @@ export default class ThemeViewState implements SpecialVisualizationState {
             return UserRelatedState.usersettingsConfig
         }
         if (id.startsWith(LastClickFeatureSource.newPointElementId)) {
-            return this.layout.layers.find((l) => l.id === "last_click")
+            return this.theme.layers.find((l) => l.id === "last_click")
         }
         if (id.startsWith("search_result")) {
             return GeocodingUtils.searchLayer
         }
         if (id === "location_track") {
-            return this.layout.layers.find((l) => l.id === "gps_track")
+            return this.theme.layers.find((l) => l.id === "gps_track")
         }
-        return this.layout.getMatchingLayer(properties)
+        return this.theme.getMatchingLayer(properties)
     }
 
     public async reportError(message: string | Error | XMLHttpRequest, extramessage: string = "") {
@@ -1059,7 +1059,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 body: JSON.stringify({
                     stacktrace,
                     message: "" + message,
-                    layout: this.layout.id,
+                    theme: this.theme.id,
                     version: Constants.vNumber,
                     language: this.userRelatedState.language.data,
                     username: this.osmConnection.userDetails.data?.name,

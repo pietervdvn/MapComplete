@@ -16,7 +16,7 @@ import { Translatable } from "./Translatable"
  *
  * General remark: a type (string | any) indicates either a fixed or a translatable string.
  */
-export interface LayoutConfigJson {
+export interface ThemeConfigJson {
     /**
      * question: What is the id of this layout?
      *

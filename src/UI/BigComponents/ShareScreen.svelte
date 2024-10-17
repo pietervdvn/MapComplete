@@ -25,8 +25,8 @@
    * In some cases (local deploys, custom themes), we need to set the URL to `/theme.html?layout=xyz` instead of `/xyz?...`
    * Note that the 'layout='-param will be included automatically
    */
-  let needsThemeRedirect = url.port !== "" || url.hostname.match(/^[0-9]/) || !state.layout.official
-  let layoutId = state.layout.id
+  let needsThemeRedirect = url.port !== "" || url.hostname.match(/^[0-9]/) || !state.theme.official
+  let layoutId = state.theme.id
   let baseLink = `${url.protocol}//${url.host}/${needsThemeRedirect ? "theme.html" : layoutId}?`
 
   let showWelcomeMessage = true
@@ -44,7 +44,7 @@
     enableBackground: boolean,
     enableGeolocation: boolean
   ) {
-    const layout = state.layout
+    const layout = state.theme
     let excluded = Utils.NoNull([
       showWelcomeMessage ? undefined : "fs-welcome-message",
       enableLogin ? undefined : "fs-enable-login",
@@ -99,7 +99,7 @@
     ${
       enableGeolocation ? 'allow="geolocation"' : ""
     } width="100%" height="100%" style="min-width: 250px; min-height: 250px"
-    title="${state.layout.title?.txt ?? "MapComplete"} with MapComplete">
+    title="${state.theme.title?.txt ?? "MapComplete"} with MapComplete">
     </iframe>`
 
   Array.from(state.layerState.filteredLayers.values()).forEach((flayer) =>
@@ -163,7 +163,7 @@
         <Tr t={tr.stateIsIncluded} />
         <a
           class="inline-block w-fit cursor-pointer"
-          on:click={() => state.guistate.filtersPanelIsOpened.set(true)}
+          on:click={() => state.guistate.pageStates.filter.set(true)}
         >
           <Tr t={tr.openLayers} />
         </a>

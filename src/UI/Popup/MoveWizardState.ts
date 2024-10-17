@@ -94,7 +94,7 @@ export class MoveWizardState {
         const matchingPresets = this.layer.presets.filter(preset => preset.preciseInput.snapToLayers && new And(preset.tags).matchesProperties(tags))
         const matchingPreset = matchingPresets.flatMap(pr => pr.preciseInput?.snapToLayers)
         for (const layerId of matchingPreset) {
-            const snapOntoLayer = this._state.layout.getLayer(layerId)
+            const snapOntoLayer = this._state.theme.getLayer(layerId)
             const text = <Translation> t.reasons.reasonSnapTo.PartialSubsTr("name", snapOntoLayer.snapName)
             reasons.push({
                 text,
@@ -133,7 +133,7 @@ export class MoveWizardState {
                 snappedTo,
                 {
                     reason: reason.changesetCommentValue,
-                    theme: state.layout.id,
+                    theme: state.theme.id,
                 }),
         )
         featureToMove.properties._lat = loc.lat
@@ -152,7 +152,7 @@ export class MoveWizardState {
                     featureToMove.properties,
                     {
                         changeType: "relocated",
-                        theme: state.layout.id,
+                        theme: state.theme.id,
                     },
                 ),
             )

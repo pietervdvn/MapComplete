@@ -61,7 +61,7 @@
       "minzoom": 18,
       "isCounted": false,
       "calculatedTags": [
-        "_surface:strict:=feat(get)('_surface')"
+        "_surface:strict:=get(feat)('_surface')"
       ],
       "tagRenderings": [
         {
@@ -224,19 +224,19 @@
       "minzoom": 18,
       "calculatedTags": [
         "_overlaps_with_buildings=overlapWith(feat)('osm_buildings').filter(f => f.feat.properties.id.indexOf('-') < 0)",
-        "_overlaps_with=feat(get)('_overlaps_with_buildings').find(f => f.overlap > 1 /* square meter */ )",
-        "_overlaps_with_properties=feat(get)('_overlaps_with')?.feat?.properties",
-        "_overlap_percentage=Math.round(100 * (feat(get)('_overlaps_with')?.overlap / feat(get)('_overlaps_with_properties')['_surface:strict']))",
-        "_reverse_overlap_percentage=Math.round(100 * (feat(get)('_overlaps_with')?.overlap / feat(get)('_surface')))",
+        "_overlaps_with=get(feat)('_overlaps_with_buildings').find(f => f.overlap > 1 /* square meter */ )",
+        "_overlaps_with_properties=get(feat)('_overlaps_with')?.feat?.properties",
+        "_overlap_percentage=Math.round(100 * (get(feat)('_overlaps_with')?.overlap / get(feat)('_overlaps_with_properties')['_surface:strict']))",
+        "_reverse_overlap_percentage=Math.round(100 * (get(feat)('_overlaps_with')?.overlap / get(feat)('_surface')))",
         "_bag_obj:in_construction=feat.properties.status.startsWith('Bouwvergunning verleend') || feat.properties.status.startsWith('Bouw gestart')",
         "_bag_obj:construction=(feat.properties.gebruiksdoel == 'woonfunctie') ? ((Number(feat.properties.aantal_verblijfsobjecten) == 1) ? 'house' : 'apartments') : 'yes'",
         "_bag_obj:building=(feat.properties.status.startsWith('Bouwvergunning verleend') || feat.properties.status.startsWith('Bouw gestart')) ? 'construction' : feat.properties['_bag_obj:construction']",
         "_bag_obj:ref:bag=Number(feat.properties.identificatie)",
         "_bag_obj:source:date=new Date().toISOString().split('T')[0]",
         "_bag_obj:start_date=feat.properties.bouwjaar",
-        "_osm_obj:id=feat(get)('_overlaps_with_properties')?.id",
-        "_osm_obj:building=feat(get)('_overlaps_with_properties')?.building",
-        "_imported_osm_object_found:=Number(feat.properties.identificatie)==Number(feat(get)('_overlaps_with_properties')['ref:bag'])"
+        "_osm_obj:id=get(feat)('_overlaps_with_properties')?.id",
+        "_osm_obj:building=get(feat)('_overlaps_with_properties')?.building",
+        "_imported_osm_object_found:=Number(feat.properties.identificatie)==Number(get(feat)('_overlaps_with_properties')['ref:bag'])"
       ],
       "tagRenderings": [
         {
@@ -435,11 +435,11 @@
         "_bag_obj:addr:housenumber=`${feat.properties.huisnummer}${feat.properties.huisletter}${(feat.properties.toevoeging != '') ? '-' : ''}${feat.properties.toevoeging}`",
         "_bag_obj:ref:bag=Number(feat.properties.identificatie)",
         "_bag_obj:source:date=new Date().toISOString().split('T')[0]",
-        "_osm_obj:addr:city:=feat(get)('_closed_osm_addr')['addr:city']",
-        "_osm_obj:addr:housenumber:=feat(get)('_closed_osm_addr')['addr:housenumber']",
-        "_osm_obj:addr:postcode:=feat(get)('_closed_osm_addr')['addr:postcode']",
-        "_osm_obj:addr:street:=feat(get)('_closed_osm_addr')['addr:street']",
-        "_imported_osm_object_found:=(feat.properties.woonplaats==feat(get)('_closed_osm_addr')['addr:city'])&&(feat(get)('_bag_obj:addr:housenumber')==feat(get)('_closed_osm_addr')['addr:housenumber'])&&(feat.properties.postcode==feat(get)('_closed_osm_addr')['addr:postcode'])&&(feat.properties.openbare_ruimte==feat(get)('_closed_osm_addr')['addr:street'])"
+        "_osm_obj:addr:city:=get(feat)('_closed_osm_addr')['addr:city']",
+        "_osm_obj:addr:housenumber:=get(feat)('_closed_osm_addr')['addr:housenumber']",
+        "_osm_obj:addr:postcode:=get(feat)('_closed_osm_addr')['addr:postcode']",
+        "_osm_obj:addr:street:=get(feat)('_closed_osm_addr')['addr:street']",
+        "_imported_osm_object_found:=(feat.properties.woonplaats==get(feat)('_closed_osm_addr')['addr:city'])&&(get(feat)('_bag_obj:addr:housenumber')==get(feat)('_closed_osm_addr')['addr:housenumber'])&&(feat.properties.postcode==get(feat)('_closed_osm_addr')['addr:postcode'])&&(feat.properties.openbare_ruimte==get(feat)('_closed_osm_addr')['addr:street'])"
       ],
       "tagRenderings": [
         {

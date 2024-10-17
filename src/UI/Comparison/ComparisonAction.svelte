@@ -37,7 +37,7 @@
       new Tag(key, externalProperties[key]),
       tags.data,
       {
-        theme: state.layout.id,
+        theme: state.theme.id,
         changeType: "import",
       }
     )

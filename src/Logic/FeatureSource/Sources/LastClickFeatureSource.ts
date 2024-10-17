@@ -1,4 +1,4 @@
-import LayoutConfig from "../../../Models/ThemeConfig/LayoutConfig"
+import ThemeConfig from "../../../Models/ThemeConfig/ThemeConfig"
 import { ImmutableStore, Store, UIEventSource } from "../../UIEventSource"
 import { Feature, Point } from "geojson"
 import { TagUtils } from "../../Tags/TagUtils"
@@ -22,7 +22,7 @@ export class LastClickFeatureSource implements FeatureSource {
     private _usermode: UIEventSource<string>
     private _enabledAddMorePoints: UIEventSource<boolean>
     constructor(
-        layout: LayoutConfig,
+        layout: ThemeConfig,
         clickSource: Store<{ lon: number; lat: number; mode: "left" | "right" | "middle" }>,
         usermode?: UIEventSource<string>,
         enabledAddMorePoints?: UIEventSource<boolean>

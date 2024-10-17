@@ -1,5 +1,5 @@
 <script lang="ts">
-  import LayoutConfig from "../../../Models/ThemeConfig/LayoutConfig"
+  import ThemeConfig from "../../../Models/ThemeConfig/ThemeConfig"
   import { createEventDispatcher } from "svelte"
   import type PresetConfig from "../../../Models/ThemeConfig/PresetConfig"
   import Tr from "../../Base/Tr.svelte"
@@ -19,7 +19,7 @@
    * This component lists all the presets and allows the user to select one
    */
   export let state: SpecialVisualizationState
-  let layout: LayoutConfig = state.layout
+  let layout: ThemeConfig = state.theme
   let presets: {
     preset: PresetConfig
     layer: LayerConfig

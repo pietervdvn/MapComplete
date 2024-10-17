@@ -14,7 +14,7 @@ export default class NoElementsInViewDetector {
     constructor(themeViewState: ThemeViewState) {
         const state = themeViewState
         const minZoom = Math.min(
-            ...themeViewState.layout.layers
+            ...themeViewState.theme.layers
                 .filter((l) => Constants.priviliged_layers.indexOf(<any>l.id) < 0)
                 .map((l) => l.minzoom)
         )
@@ -43,7 +43,7 @@ export default class NoElementsInViewDetector {
                         // Nope, no data loaded
                         continue
                     }
-                    const layer = themeViewState.layout.getLayer(layerName)
+                    const layer = themeViewState.theme.getLayer(layerName)
                     if (mapProperties.zoom.data < layer.minzoom) {
                         minzoomWithData = Math.min(layer.minzoom)
                         continue
@@ -67,7 +67,7 @@ export default class NoElementsInViewDetector {
                         continue
                     }
 
-                    const layer = themeViewState.layout.getLayer(layerName)
+                    const layer = themeViewState.theme.getLayer(layerName)
                     if (mapProperties.zoom.data < layer.minzoom) {
                         continue
                     }

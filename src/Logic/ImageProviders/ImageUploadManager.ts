@@ -2,7 +2,7 @@ import { ImageUploader, UploadResult } from "./ImageUploader"
 import LinkImageAction from "../Osm/Actions/LinkImageAction"
 import FeaturePropertiesStore from "../FeatureSource/Actors/FeaturePropertiesStore"
 import { OsmId, OsmTags } from "../../Models/OsmFeature"
-import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
+import ThemeConfig from "../../Models/ThemeConfig/ThemeConfig"
 import { Store, UIEventSource } from "../UIEventSource"
 import { OsmConnection } from "../Osm/OsmConnection"
 import { Changes } from "../Osm/Changes"
@@ -17,7 +17,7 @@ import { GeoOperations } from "../GeoOperations"
 export class ImageUploadManager {
     private readonly _uploader: ImageUploader
     private readonly _featureProperties: FeaturePropertiesStore
-    private readonly _layout: LayoutConfig
+    private readonly _theme: ThemeConfig
     private readonly _indexedFeatures: IndexedFeatureSource
     private readonly _gps: Store<GeolocationCoordinates | undefined>
     private readonly _uploadStarted: Map<string, UIEventSource<number>> = new Map()
@@ -31,7 +31,7 @@ export class ImageUploadManager {
     private readonly _reportError: (message: (string | Error | XMLHttpRequest), extramessage?: string) => Promise<void>
 
     constructor(
-        layout: LayoutConfig,
+        layout: ThemeConfig,
         uploader: ImageUploader,
         featureProperties: FeaturePropertiesStore,
         osmConnection: OsmConnection,
@@ -42,7 +42,7 @@ export class ImageUploadManager {
     ) {
         this._uploader = uploader
         this._featureProperties = featureProperties
-        this._layout = layout
+        this._theme = layout
         this._osmConnection = osmConnection
         this._changes = changes
         this._indexedFeatures = allFeatures
@@ -131,7 +131,7 @@ export class ImageUploadManager {
         const properties = this._featureProperties.getStore(featureId)
 
         const action = new LinkImageAction(featureId, uploadResult. key,  uploadResult   . value, properties, {
-            theme:  tags?.data?.["_orig_theme"] ?? this._layout.id,
+            theme:  tags?.data?.["_orig_theme"] ?? this._theme.id,
             changeType: "add-image",
         })
 

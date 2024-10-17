@@ -56,7 +56,7 @@
 
   let usersettingslayer = new LayerConfig(<LayerConfigJson>usersettings, "usersettings", true)
 
-  let layout = state.layout
+  let theme = state.theme
   let featureSwitches = state.featureSwitches
   let showHome = featureSwitches.featureSwitchBackToThemeOverview
   let pg = state.guistate.pageStates
@@ -108,7 +108,7 @@
       <!-- All shown components are set by 'usersettings.json', which happily uses some special visualisations created specifically for it -->
       <LoginToggle {state}>
         <div class="flex flex-col" slot="not-logged-in">
-          <LanguagePicker availableLanguages={layout.language} />
+          <LanguagePicker availableLanguages={theme.language} />
           <Tr cls="alert" t={Translations.t.userinfo.notLoggedIn} />
           <LoginButton clss="primary" osmConnection={state.osmConnection} />
         </div>
@@ -161,12 +161,12 @@
 
     <Page {onlyLink} shown={pg.about_theme}>
       <svelte:fragment slot="link">
-        <Marker size="h-7 w-7" icons={layout.icon} />
+        <Marker size="h-7 w-7" icons={theme.icon} />
         <Tr t={t.showIntroduction} />
       </svelte:fragment>
       <svelte:fragment slot="header">
-        <Marker size="h-8 w-8 mr-3" icons={layout.icon} />
-        <Tr t={layout.title} />
+        <Marker size="h-8 w-8 mr-3" icons={theme.icon} />
+        <Tr t={theme.title} />
       </svelte:fragment>
       <ThemeIntroPanel {state} />
     </Page>
@@ -193,25 +193,25 @@
       </Page>
     {/if}
 
-    {#if layout.official}
+    {#if theme.official}
       <a
         class="flex"
         href={"https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Themes/" +
-          layout.id +
+          theme.id +
           ".md"}
         target="_blank"
       >
         <DocumentMagnifyingGlass class="h-6 w-6" />
         <Tr
           t={Translations.t.general.attribution.openThemeDocumentation.Subs({
-            name: layout.title,
+            name: theme.title,
           })}
         />
       </a>
 
-      <a class="flex" href={Utils.OsmChaLinkFor(31, layout.id)} target="_blank">
+      <a class="flex" href={Utils.OsmChaLinkFor(31, theme.id)} target="_blank">
         <DocumentChartBar class="h-6 w-6" />
-        <Tr t={Translations.t.general.attribution.openOsmcha.Subs({ theme: layout.title })} />
+        <Tr t={Translations.t.general.attribution.openOsmcha.Subs({ theme: theme.title })} />
       </a>
     {/if}
   </SidebarUnit>

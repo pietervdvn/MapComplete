@@ -58,7 +58,7 @@
       id,
       splitPoints.data.map((ff) => <[number, number]>(<Point>ff.geometry).coordinates),
       {
-        theme: state?.layout?.id,
+        theme: state?.theme?.id,
       },
       5
     )

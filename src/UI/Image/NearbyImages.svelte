@@ -119,7 +119,7 @@
   ShowDataLayer.showMultipleLayers(
     map,
     new StaticFeatureSource([feature]),
-    state.layout.layers,
+    state.theme.layers,
   )
 
   onDestroy(

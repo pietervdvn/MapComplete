@@ -4,12 +4,12 @@
   import { OsmConnection } from "../../Logic/Osm/OsmConnection"
   import { UIEventSource } from "../../Logic/UIEventSource"
   import ThemeButton from "./ThemeButton.svelte"
-  import { MinimalLayoutInformation } from "../../Models/ThemeConfig/LayoutConfig"
+  import { MinimalThemeInformation } from "../../Models/ThemeConfig/ThemeConfig"
   import Translations from "../i18n/Translations"
   import Tr from "../Base/Tr.svelte"
 
   export let search: UIEventSource<string>
-  export let themes: MinimalLayoutInformation[]
+  export let themes: MinimalThemeInformation[]
   export let state: { osmConnection: OsmConnection }
 
   export let hasSelection : boolean = true

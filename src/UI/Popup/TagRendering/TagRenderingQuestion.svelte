@@ -283,7 +283,7 @@
     }
     dispatch("saved", { config, applied: selectedTags })
     const change = new ChangeTagAction(tags.data.id, selectedTags, tags.data, {
-      theme: tags.data["_orig_theme"] ?? state.layout.id,
+      theme: tags.data["_orig_theme"] ?? state.theme.id,
       changeType: "answer",
     })
     freeformInput.set(undefined)
@@ -327,7 +327,7 @@
   function clearAnswer() {
     const tagsToSet = settableKeys.data.map(k => new Tag(k, ""))
     const change = new ChangeTagAction(tags.data.id, new And(tagsToSet), tags.data, {
-      theme: tags.data["_orig_theme"] ?? state.layout.id,
+      theme: tags.data["_orig_theme"] ?? state.theme.id,
       changeType: "answer",
     })
     freeformInput.set(undefined)

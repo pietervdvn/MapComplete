@@ -18,7 +18,7 @@ import FeatureSourceMerger from "./FeatureSourceMerger"
  *
  * Note that special layers (with `source=null` will be ignored)
  */
-export default class LayoutSource extends FeatureSourceMerger {
+export default class ThemeSource extends FeatureSourceMerger {
     /**
      * Indicates if a data source is loading something
      */
@@ -51,7 +51,7 @@ export default class LayoutSource extends FeatureSourceMerger {
                 const src = new LocalStorageFeatureSource(
                     backend,
                     layer,
-                    LayoutSource.fromCacheZoomLevel,
+                    ThemeSource.fromCacheZoomLevel,
                     mapProperties,
                     {
                         isActive: isDisplayed(layer.id),
@@ -63,13 +63,13 @@ export default class LayoutSource extends FeatureSourceMerger {
         }
         const mvtSources: UpdatableFeatureSource[] = osmLayers
             .filter((f) => mvtAvailableLayers.has(f.id))
-            .map((l) => LayoutSource.setupMvtSource(l, mapProperties, isDisplayed(l.id)))
+            .map((l) => ThemeSource.setupMvtSource(l, mapProperties, isDisplayed(l.id)))
         const nonMvtSources = []
         const nonMvtLayers = osmLayers.filter((l) => !mvtAvailableLayers.has(l.id))
 
         const isLoading = new UIEventSource(false)
 
-        const osmApiSource = LayoutSource.setupOsmApiSource(
+        const osmApiSource = ThemeSource.setupOsmApiSource(
             osmLayers,
             bounds,
             zoom,
@@ -86,7 +86,7 @@ export default class LayoutSource extends FeatureSourceMerger {
                 nonMvtLayers.map((l) => l.id),
                 " cannot be fetched from the cache server, defaulting to overpass/OSM-api"
             )
-            overpassSource = LayoutSource.setupOverpass(osmLayers, bounds, zoom, featureSwitches)
+            overpassSource = ThemeSource.setupOverpass(osmLayers, bounds, zoom, featureSwitches)
             nonMvtSources.push(overpassSource)
             supportsForceDownload.push(overpassSource)
         }
@@ -100,7 +100,7 @@ export default class LayoutSource extends FeatureSourceMerger {
         osmApiSource?.isRunning?.addCallbackAndRun(() => setIsLoading())
 
         const geojsonSources: UpdatableFeatureSource[] = geojsonlayers.map((l) =>
-            LayoutSource.setupGeojsonSource(l, mapProperties, isDisplayed(l.id))
+            ThemeSource.setupGeojsonSource(l, mapProperties, isDisplayed(l.id))
         )
 
         super(...geojsonSources, ...Array.from(fromCache.values()), ...mvtSources, ...nonMvtSources)
@@ -198,7 +198,7 @@ export default class LayoutSource extends FeatureSourceMerger {
                 zoom,
                 bounds,
                 layers: osmLayers,
-                widenFactor: featureSwitches.layoutToUse.widenFactor,
+                widenFactor: 1.5,
                 overpassUrl: featureSwitches.overpassUrl,
                 overpassTimeout: featureSwitches.overpassTimeout,
                 overpassMaxZoom: featureSwitches.overpassMaxZoom,

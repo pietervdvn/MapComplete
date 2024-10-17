@@ -8,7 +8,7 @@ import ThemeSearch from "../Search/ThemeSearch"
 import OpenStreetMapIdSearch from "../Search/OpenStreetMapIdSearch"
 import PhotonSearch from "../Search/PhotonSearch"
 import ThemeViewState from "../../Models/ThemeViewState"
-import type { MinimalLayoutInformation } from "../../Models/ThemeConfig/LayoutConfig"
+import type { MinimalThemeInformation } from "../../Models/ThemeConfig/ThemeConfig"
 import { Translation } from "../../UI/i18n/Translation"
 import GeocodingFeatureSource from "../Search/GeocodingFeatureSource"
 import LayerSearch from "../Search/LayerSearch"
@@ -23,7 +23,7 @@ export default class SearchState {
     public readonly searchIsFocused = new UIEventSource(false)
     public readonly suggestions: Store<SearchResult[]>
     public readonly filterSuggestions: Store<FilterSearchResult[]>
-    public readonly themeSuggestions: Store<MinimalLayoutInformation[]>
+    public readonly themeSuggestions: Store<MinimalThemeInformation[]>
     public readonly layerSuggestions: Store<LayerConfig[]>
     public readonly locationSearchers: ReadonlyArray<GeocodingProvider>
 
@@ -64,7 +64,7 @@ export default class SearchState {
         const themeSearch = new ThemeSearch(state)
         this.themeSuggestions = this.searchTerm.mapD(query => themeSearch.search(query, 3))
 
-        const layerSearch = new LayerSearch(state.layout)
+        const layerSearch = new LayerSearch(state.theme)
         this.layerSuggestions = this.searchTerm.mapD(query => layerSearch.search(query, 5))
 
         const filterSearch = new FilterSearch(state)

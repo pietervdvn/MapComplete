@@ -164,7 +164,7 @@ class StealViz implements SpecialVisualization {
         const tagRenderings: [LayerConfig, TagRenderingConfig][] = []
         for (const layerAndTagRenderingId of layerAndtagRenderingIds.split(";")) {
             const [layerId, tagRenderingId] = layerAndTagRenderingId.trim().split(".")
-            const layer = state.layout.layers.find((l) => l.id === layerId)
+            const layer = state.theme.layers.find((l) => l.id === layerId)
             const tagRendering = layer.tagRenderings.find((tr) => tr.id === tagRenderingId)
             tagRenderings.push([layer, tagRendering])
         }
@@ -444,7 +444,7 @@ export default class SpecialVisualizations {
                         Locale.showLinkToWeblate.map((showTranslations) => {
                             const languages = showTranslations
                                 ? LanguageUtils.usedLanguagesSorted
-                                : state.layout.language
+                                : state.theme.language
                             return new SvelteUIElement(LanguagePicker, {
                                 assignTo: state.userRelatedState.language,
                                 availableLanguages: languages,
@@ -971,7 +971,7 @@ export default class SpecialVisualizations {
                                     return undefined
                                 }
                                 const allUnits: Unit[] = [].concat(
-                                    ...(state?.layout?.layers?.map((lyr) => lyr.units) ?? [])
+                                    ...(state?.theme?.layers?.map((lyr) => lyr.units) ?? [])
                                 )
                                 const unit = allUnits.filter((unit) =>
                                     unit.isApplicableToKey(key)
@@ -1125,7 +1125,7 @@ export default class SpecialVisualizations {
                 ) =>
                     new VariableUiElement(
                         tagsSource.map((tags) => {
-                            if (state.layout === undefined) {
+                            if (state.theme === undefined) {
                                 return "<feature title>"
                             }
                             const title = layer?.title?.GetRenderValue(tags)
@@ -1276,7 +1276,7 @@ export default class SpecialVisualizations {
 
                 constr: (state) => {
                     return new Combine(
-                        state.layout.layers
+                        state.theme.layers
                             .filter(
                                 (l) =>
                                     l.name !== null &&
@@ -1995,7 +1995,7 @@ export default class SpecialVisualizations {
                     layer: LayerConfig
                 ): BaseUIElement {
                     const translation = tagSource.map((tags) => {
-                        const layer = state.layout.getMatchingLayer(tags)
+                        const layer = state.theme.getMatchingLayer(tags)
                         return layer?.getMostMatchingPreset(tags)?.description
                     })
                     return new VariableUiElement(translation)

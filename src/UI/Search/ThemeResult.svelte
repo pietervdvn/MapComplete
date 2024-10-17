@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { MinimalLayoutInformation } from "../../Models/ThemeConfig/LayoutConfig"
+  import { MinimalThemeInformation } from "../../Models/ThemeConfig/ThemeConfig"
   import { Translation } from "../i18n/Translation"
   import Icon from "../Map/Icon.svelte"
   import Tr from "../Base/Tr.svelte"
   import ThemeSearch from "../../Logic/Search/ThemeSearch"
 
-  export let entry: MinimalLayoutInformation
+  export let entry: MinimalThemeInformation
   let otherTheme = entry
 </script>
 {#if entry}

@@ -1,4 +1,4 @@
-import LayoutConfig from "../Models/ThemeConfig/LayoutConfig"
+import ThemeConfig from "../Models/ThemeConfig/ThemeConfig"
 import { QueryParameters } from "./Web/QueryParameters"
 import { AllKnownLayouts } from "../Customizations/AllKnownLayouts"
 import { FixedUiElement } from "../UI/Base/FixedUiElement"
@@ -19,10 +19,10 @@ import { DesugaringContext } from "../Models/ThemeConfig/Conversion/Conversion"
 import { TagRenderingConfigJson } from "../Models/ThemeConfig/Json/TagRenderingConfigJson"
 import Hash from "./Web/Hash"
 import { QuestionableTagRenderingConfigJson } from "../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
-import { LayoutConfigJson } from "../Models/ThemeConfig/Json/LayoutConfigJson"
+import { ThemeConfigJson } from "../Models/ThemeConfig/Json/ThemeConfigJson"
 import { ValidateThemeAndLayers } from "../Models/ThemeConfig/Conversion/ValidateThemeAndLayers"
 
-export default class DetermineLayout {
+export default class DetermineTheme {
     private static readonly _knownImages = new Set(Array.from(licenses).map((l) => l.path))
     private static readonly loadCustomThemeParam = QueryParameters.GetQueryParameter(
         "userlayout",
@@ -31,7 +31,7 @@ export default class DetermineLayout {
     )
 
     public static getCustomDefinition(): string {
-        const layoutFromBase64 = decodeURIComponent(DetermineLayout.loadCustomThemeParam.data)
+        const layoutFromBase64 = decodeURIComponent(DetermineTheme.loadCustomThemeParam.data)
 
         if (layoutFromBase64.startsWith("http")) {
             return layoutFromBase64
@@ -53,8 +53,8 @@ export default class DetermineLayout {
     }
 
     private static async expandRemoteLayers(
-        layoutConfig: LayoutConfigJson
-    ): Promise<LayoutConfigJson> {
+        layoutConfig: ThemeConfigJson
+    ): Promise<ThemeConfigJson> {
         if (!layoutConfig.layers) {
             // This is probably a layer in 'layer-only-mode'
             return layoutConfig
@@ -79,16 +79,16 @@ export default class DetermineLayout {
     /**
      * Gets the correct layout for this website
      */
-    public static async GetLayout(): Promise<LayoutConfig | undefined> {
-        const layoutFromBase64 = decodeURIComponent(DetermineLayout.loadCustomThemeParam.data)
+    public static async getTheme(): Promise<ThemeConfig | undefined> {
+        const layoutFromBase64 = decodeURIComponent(DetermineTheme.loadCustomThemeParam.data)
 
         if (layoutFromBase64.startsWith("http")) {
-            return await DetermineLayout.LoadRemoteTheme(layoutFromBase64)
+            return await DetermineTheme.LoadRemoteTheme(layoutFromBase64)
         }
 
         if (layoutFromBase64 !== "false") {
             // We have to load something from the hash (or from disk)
-            return await DetermineLayout.LoadLayoutFromHash(DetermineLayout.loadCustomThemeParam)
+            return await DetermineTheme.LoadLayoutFromHash(DetermineTheme.loadCustomThemeParam)
         }
 
         let layoutId: string = undefined
@@ -127,7 +127,7 @@ export default class DetermineLayout {
 
     public static async LoadLayoutFromHash(
         userLayoutParam: UIEventSource<string>
-    ): Promise<LayoutConfig | null> {
+    ): Promise<ThemeConfig | null> {
         let hash = location.hash.substr(1)
         let json: any
 
@@ -157,7 +157,7 @@ export default class DetermineLayout {
 
         json = await this.expandRemoteLayers(json)
 
-        const layoutToUse = DetermineLayout.prepCustomTheme(json)
+        const layoutToUse = DetermineTheme.prepCustomTheme(json)
         userLayoutParam.setData(layoutToUse.id)
         return layoutToUse
     }
@@ -166,7 +166,7 @@ export default class DetermineLayout {
         const dict = new Map<string, QuestionableTagRenderingConfigJson>()
 
         for (const tagRendering of questions.tagRenderings) {
-            dict.set(tagRendering.id, tagRendering)
+            dict.set(tagRendering.id, <QuestionableTagRenderingConfigJson> tagRendering)
         }
 
         return dict
@@ -176,7 +176,7 @@ export default class DetermineLayout {
         return questions.tagRenderings.map((tr) => tr.id)
     }
 
-    private static prepCustomTheme(json: any, sourceUrl?: string, forceId?: string): LayoutConfig {
+    private static prepCustomTheme(json: any, sourceUrl?: string, forceId?: string): ThemeConfig {
         if (json.layers === undefined && json.tagRenderings !== undefined) {
             // We got fed a layer instead of a theme
             const layerConfig = <LayerConfigJson>json
@@ -224,15 +224,15 @@ export default class DetermineLayout {
             knownLayersDict.set(layer.id, <LayerConfigJson>layer)
         }
         const convertState: DesugaringContext = {
-            tagRenderings: DetermineLayout.getSharedTagRenderings(),
-            tagRenderingOrder: DetermineLayout.getSharedTagRenderingOrder(),
+            tagRenderings: DetermineTheme.getSharedTagRenderings(),
+            tagRenderingOrder: DetermineTheme.getSharedTagRenderingOrder(),
             sharedLayers: knownLayersDict,
             publicLayers: new Set<string>(),
         }
         json = new FixLegacyTheme().convertStrict(json)
         const raw = json
 
-        json = new FixImages(DetermineLayout._knownImages).convertStrict(json)
+        json = new FixImages(DetermineTheme._knownImages).convertStrict(json)
         json.enableNoteImports = json.enableNoteImports ?? false
         json = new PrepareTheme(convertState).convertStrict(json)
         console.log("The layoutconfig is ", json)
@@ -249,20 +249,20 @@ export default class DetermineLayout {
                 false
             ).convertStrict(json)
         }
-        return new LayoutConfig(json, false, {
+        return new ThemeConfig(json, false, {
             definitionRaw: JSON.stringify(raw, null, "  "),
             definedAtUrl: sourceUrl,
         })
     }
 
-    private static async LoadRemoteTheme(link: string): Promise<LayoutConfig | null> {
+    private static async LoadRemoteTheme(link: string): Promise<ThemeConfig | null> {
         console.log("Downloading map theme from ", link)
 
         new FixedUiElement(`Downloading the theme from the <a href="${link}">link</a>...`).AttachTo(
             "maindiv"
         )
 
-        let parsed = <LayoutConfigJson>await Utils.downloadJson(link)
+        let parsed = <ThemeConfigJson>await Utils.downloadJson(link)
         let forcedId = parsed.id
         const url = new URL(link)
         if (!(url.hostname === "localhost" || url.hostname === "127.0.0.1")) {
@@ -270,6 +270,6 @@ export default class DetermineLayout {
         }
         console.log("Loaded remote link:", link)
         parsed = await this.expandRemoteLayers(parsed)
-        return DetermineLayout.prepCustomTheme(parsed, link, forcedId)
+        return DetermineTheme.prepCustomTheme(parsed, link, forcedId)
     }
 }

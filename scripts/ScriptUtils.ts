@@ -2,7 +2,7 @@ import * as fs from "fs"
 import { existsSync, lstatSync, readdirSync, readFileSync } from "fs"
 import { Utils } from "../src/Utils"
 import { https } from "follow-redirects"
-import { LayoutConfigJson } from "../src/Models/ThemeConfig/Json/LayoutConfigJson"
+import { ThemeConfigJson } from "../src/Models/ThemeConfig/Json/ThemeConfigJson"
 import { LayerConfigJson } from "../src/Models/ThemeConfig/Json/LayerConfigJson"
 import xml2js from "xml2js"
 
@@ -111,7 +111,7 @@ export default class ScriptUtils {
     }
 
     public static getThemeFiles(useTranslationPaths = false): {
-        parsed: LayoutConfigJson;
+        parsed: ThemeConfigJson;
         path: string;
         raw: string
     }[] {

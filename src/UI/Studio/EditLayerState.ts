@@ -18,7 +18,7 @@ import { OsmConnection } from "../../Logic/Osm/OsmConnection"
 import { OsmTags } from "../../Models/OsmFeature"
 import { Feature, Point } from "geojson"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
-import { LayoutConfigJson } from "../../Models/ThemeConfig/Json/LayoutConfigJson"
+import { ThemeConfigJson } from "../../Models/ThemeConfig/Json/ThemeConfigJson"
 import { PrepareTheme } from "../../Models/ThemeConfig/Conversion/PrepareTheme"
 import { ConversionContext } from "../../Models/ThemeConfig/Conversion/ConversionContext"
 import { LocalStorageSource } from "../../Logic/Web/LocalStorageSource"
@@ -334,7 +334,7 @@ export default class EditLayerState extends EditJsonState<LayerConfigJson> {
             return 0
         }
     }
-    public readonly layout: { getMatchingLayer: (key: any) => LayerConfig }
+    public readonly theme: { getMatchingLayer: (key: any) => LayerConfig }
     public readonly featureSwitches: {
         featureSwitchIsDebugging: UIEventSource<boolean>
     }
@@ -359,7 +359,7 @@ export default class EditLayerState extends EditJsonState<LayerConfigJson> {
         options: { expertMode: UIEventSource<boolean> }
     ) {
         super(schema, server, "layers", osmConnection, options)
-        this.layout = {
+        this.theme = {
             getMatchingLayer: () => {
                 try {
                     return new LayerConfig(<LayerConfigJson>this.configuration.data, "dynamic")
@@ -458,7 +458,8 @@ export default class EditLayerState extends EditJsonState<LayerConfigJson> {
         }
         const state: DesugaringContext = {
             tagRenderings: sharedQuestions,
-            sharedLayers: layers
+            sharedLayers: layers,
+            tagRenderingOrder: []
         }
         const prepare = this.buildValidation(state)
         const context = ConversionContext.construct([], ["prepare"])
@@ -472,7 +473,7 @@ export default class EditLayerState extends EditJsonState<LayerConfigJson> {
     }
 }
 
-export class EditThemeState extends EditJsonState<LayoutConfigJson> {
+export class EditThemeState extends EditJsonState<ThemeConfigJson> {
     constructor(
         schema: ConfigMeta[],
         server: StudioServer,
@@ -483,7 +484,7 @@ export class EditThemeState extends EditJsonState<LayoutConfigJson> {
         this.setupFixers()
     }
 
-    protected buildValidation(state: DesugaringContext): Conversion<LayoutConfigJson, any> {
+    protected buildValidation(state: DesugaringContext): Conversion<ThemeConfigJson, any> {
         return new Pipe(
             new PrevalidateTheme(),
             new Pipe(
@@ -513,7 +514,7 @@ export class EditThemeState extends EditJsonState<LayoutConfigJson> {
         })
     }
 
-    protected async validate(configuration: Partial<LayoutConfigJson>) {
+    protected async validate(configuration: Partial<ThemeConfigJson>) {
         const layers = AllSharedLayers.getSharedLayersConfigs()
 
         for (const l of configuration.layers ?? []) {
@@ -534,7 +535,8 @@ export class EditThemeState extends EditJsonState<LayoutConfigJson> {
         }
         const state: DesugaringContext = {
             tagRenderings: sharedQuestions,
-            sharedLayers: layers
+            sharedLayers: layers,
+            tagRenderingOrder: []
         }
         const prepare = this.buildValidation(state)
         const context = ConversionContext.construct([], ["prepare"])
@@ -542,7 +544,7 @@ export class EditThemeState extends EditJsonState<LayoutConfigJson> {
             Utils.NoNullInplace(configuration.layers)
         }
         try {
-            prepare.convert(<LayoutConfigJson>configuration, context)
+            prepare.convert(<ThemeConfigJson>configuration, context)
         } catch (e) {
             console.error(e)
             context.err(e)

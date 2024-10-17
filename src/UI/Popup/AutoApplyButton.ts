@@ -10,7 +10,7 @@ import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeature
 import { VariableUiElement } from "../Base/VariableUIElement"
 import Loading from "../Base/Loading"
 import Translations from "../i18n/Translations"
-import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
+import ThemeConfig from "../../Models/ThemeConfig/ThemeConfig"
 import { Changes } from "../../Logic/Osm/Changes"
 import { UIElement } from "../UIElement"
 import FilteredLayer from "../../Models/FilteredLayer"
@@ -32,7 +32,7 @@ export interface AutoAction extends SpecialVisualization {
     applyActionOn(
         feature: Feature,
         state: {
-            layout: LayoutConfig
+            theme: ThemeConfig
             changes: Changes
             indexedFeatures: IndexedFeatureSource
         },
@@ -282,7 +282,7 @@ export default class AutoApplyButton implements SpecialVisualization {
         argument: string[]
     ): BaseUIElement {
         try {
-            if (!state.layout.official && !state.featureSwitchIsTesting.data) {
+            if (!state.theme.official && !state.featureSwitchIsTesting.data) {
                 const t = Translations.t.general.add.import
                 return new Combine([
                     new FixedUiElement(
