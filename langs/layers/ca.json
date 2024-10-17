@@ -115,6 +115,16 @@
                 },
                 "question": "Com canvien els anuncis d'aquest element?"
             },
+            "historic": {
+                "mappings": {
+                    "0": {
+                        "then": "Açò és un cartell publicitari històric (un anunci per a un negoci que ja no existeix o un cartell amb un gran valor patrimonial)"
+                    },
+                    "1": {
+                        "then": "Aquest cartell publicitari no té valor històric (el negoci encara existeix i no té valor patrimonial)"
+                    }
+                }
+            },
             "luminous_or_lit_advertising": {
                 "override": {
                     "+mappings": {
@@ -177,6 +187,9 @@
                     },
                     "10": {
                         "then": "Açò és una paret pintada"
+                    },
+                    "11": {
+                        "then": "Açò és un mosaic - la publicitat està pintada en rajoles"
                     },
                     "2": {
                         "then": "Açò és una columna"

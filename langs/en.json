@@ -130,7 +130,7 @@
         "osm": "OpenStreetMap is an online map which can be edited and reused by anyone for any purpose as long as attribution is given and the data is kept open.\n\nIt is the biggest geospatial database in the world and is reused by thousands of applications and websites.",
         "tagline": "Collect geodata with OpenStreetMap",
         "title": "mapcomplete.org",
-        "toerisme_vlaanderen": "For joint project with Visit Flanders, 'Pin your point' was created. Over 160 contributors added a few thousand benches and picnictables and spotted 100 charging station for bicycles.",
+        "toerisme_vlaanderen": "For a joint project with Visit Flanders, 'Pin your point' was created. Over 160 contributors added a few thousand benches and picnic tables, and spotted 100 charging stations for bicycles.",
         "whatIsOsm": "What is OpenStreetMap?"
     },
     "general": {
@@ -224,7 +224,7 @@
         "customThemeTitle": "Custom themes",
         "download": {
             "custom": {
-                "download": "Download PNG of {width}mm wide and {height}mm high",
+                "download": "Download a {width}mm wide and {height}mm high PNG",
                 "downloadHelper": "This is meant for print",
                 "height": "Image height (in mm):",
                 "title": "Download an image with a custom width and height",
@@ -258,8 +258,8 @@
             "toMuch": "There are to many features to download them all",
             "uploadGpx": "Upload your track to OpenStreetMap"
         },
-        "enableGeolocationForSafari": "Did you not get the popup to ask for geopermission?",
-        "enableGeolocationForSafariLink": "Learn how to enable the geolocation permission in settings",
+        "enableGeolocationForSafari": "Did you not get the popup to ask for location permission?",
+        "enableGeolocationForSafariLink": "Learn how to enable location permission in settings",
         "eraseValue": "Erase this value",
         "error": "Something went wrong",
         "example": "Example",
@@ -270,7 +270,7 @@
             "disableAll": "Disable all",
             "enableAll": "Enable all"
         },
-        "geopermissionDenied": "Using the geolocation was denied",
+        "geopermissionDenied": "Location permission was denied",
         "getStartedLogin": "Log in with OpenStreetMap to get started",
         "getStartedNewAccount": " or <a href='https://www.openstreetmap.org/user/new' target='_blank'>create a new account</a>",
         "goToInbox": "Open inbox",

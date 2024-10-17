@@ -609,6 +609,7 @@
                 "someFailed": "Entschuldigung, {count} Bilder konnten nicht hochgeladen werden",
                 "uploading": "{count} Bilder werden hochgeladen…"
             },
+            "noBlur": "Die Bilder werden nicht unkenntlich gemacht. Fotografieren Sie keine Menschen",
             "one": {
                 "done": "Bild erfolgreich hochgeladen. Vielen Dank!",
                 "failed": "Entschuldigung, das Bild konnte nicht hochgeladen werden",

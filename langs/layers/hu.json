@@ -24,13 +24,20 @@
             "render": "Ismert cím"
         }
     },
+    "advertising": {
+        "presets": {
+            "0": {
+                "title": "óriásplakát"
+            }
+        }
+    },
     "ambulancestation": {
         "description": "A mentőállomás olyan terület, ahol mentőautókat, orvosi felszereléseket, egyéni védőfelszereléseket és egyéb orvosi felszereléseket tárolnak.",
         "name": "Mentőállomás-térkép",
         "presets": {
             "0": {
                 "description": "Mentőállomás hozzáadása a térképhez",
-                "title": "Mentőállomás"
+                "title": "mentőállomás"
             }
         },
         "tagRenderings": {
@@ -73,12 +80,19 @@
             "render": "Mentőállomás"
         }
     },
+    "animal_shelter": {
+        "presets": {
+            "0": {
+                "title": "állatmenhely"
+            }
+        }
+    },
     "artwork": {
         "description": "Szobrok, mellszobrok, graffitik és egyéb műalkotások nyílt világtérképe",
         "name": "Műalkotások",
         "presets": {
             "0": {
-                "title": "Műalkotás"
+                "title": "műalkotás"
             }
         },
         "tagRenderings": {
@@ -146,13 +160,27 @@
             "render": "Műalkotás"
         }
     },
+    "assembly_point": {
+        "presets": {
+            "0": {
+                "title": "gyülekezőhely"
+            }
+        }
+    },
+    "atm": {
+        "presets": {
+            "0": {
+                "title": "bankautomata"
+            }
+        }
+    },
     "barrier": {
         "description": "Kerékpározás közbeni akadályok, például terelőoszlopok és kerékpárakadályok",
         "name": "Akadályok",
         "presets": {
             "0": {
                 "description": "Terelőoszlop az úton",
-                "title": "Terelőoszlop"
+                "title": "terelőoszlop"
             },
             "1": {
                 "description": "A kerékpáros sebességét csökkentő kerékpárakadály",
@@ -236,8 +264,20 @@
             }
         }
     },
+    "bbq": {
+        "presets": {
+            "0": {
+                "title": "grillezőhely"
+            }
+        }
+    },
     "bench": {
         "name": "Padok",
+        "presets": {
+            "0": {
+                "title": "pad"
+            }
+        },
         "tagRenderings": {
             "bench-backrest": {
                 "mappings": {
@@ -336,8 +376,20 @@
             "render": "Pad"
         }
     },
+    "bicycle_counter": {
+        "presets": {
+            "0": {
+                "title": "kerékpárszámláló"
+            }
+        }
+    },
     "bicycle_library": {
         "description": "Létesítmény, ahonnan kerékpár kölcsönözhető hosszabb időre",
+        "presets": {
+            "0": {
+                "title": "kerékpárkönyvtár"
+            }
+        },
         "tagRenderings": {
             "bicycle-library-target-group": {
                 "question": "Ki kölcsönözhet itt kerékpárt?"
@@ -354,6 +406,11 @@
         }
     },
     "bicycle_rental": {
+        "presets": {
+            "0": {
+                "title": "kerékpárkölcsönző"
+            }
+        },
         "tagRenderings": {
             "bicycle_rental_type": {
                 "mappings": {
@@ -364,11 +421,25 @@
             }
         }
     },
+    "bike_cafe": {
+        "presets": {
+            "0": {
+                "title": "kerékpároskávézó"
+            }
+        }
+    },
+    "bike_cleaning": {
+        "presets": {
+            "0": {
+                "title": "kerékpártisztító"
+            }
+        }
+    },
     "bike_parking": {
         "name": "Kerékpártároló",
         "presets": {
             "0": {
-                "title": "Kerékpártároló"
+                "title": "kerékpártároló"
             }
         },
         "tagRenderings": {
@@ -419,6 +490,41 @@
             "render": "Kerékpártároló"
         }
     },
+    "bike_repair_station": {
+        "presets": {
+            "0": {
+                "title": "kerékpárpumpa"
+            }
+        }
+    },
+    "bike_shop": {
+        "presets": {
+            "0": {
+                "title": "kerékpárszerelő /-bolt"
+            }
+        }
+    },
+    "binocular": {
+        "presets": {
+            "0": {
+                "title": "távcső"
+            }
+        }
+    },
+    "birdhide": {
+        "presets": {
+            "0": {
+                "title": "madárvárta"
+            }
+        }
+    },
+    "brothel": {
+        "presets": {
+            "0": {
+                "title": "bordélyház"
+            }
+        }
+    },
     "cafe_pub": {
         "description": "Egy olyan réteg, amely kávézókat és kocsmákat jelenít meg, ahol össze lehet gyűlni egy ital köré. A réteg néhány lényeges kérdést tesz fel",
         "name": "Kávézók és kocsmák",
@@ -440,6 +546,13 @@
             "Name": {
                 "question": "Mi a neve ennek a kocsmának?",
                 "render": "A kocsma neve: {name}"
+            }
+        }
+    },
+    "car_rental": {
+        "presets": {
+            "0": {
+                "title": "autókölcsönző"
             }
         }
     },
@@ -466,6 +579,13 @@
             }
         }
     },
+    "charging_station": {
+        "presets": {
+            "0": {
+                "title": "e-kerékpár-töltő"
+            }
+        }
+    },
     "climbing": {
         "tagRenderings": {
             "sportclimbing": {
@@ -480,13 +600,20 @@
             }
         }
     },
+    "climbing_area": {
+        "presets": {
+            "0": {
+                "title": "falmászó létesítmény"
+            }
+        }
+    },
     "climbing_club": {
         "description": "Mászóegyesület vagy -szervezet",
         "name": "Mászóegyesület",
         "presets": {
             "0": {
                 "description": "Egy mászóegyesület",
-                "title": "Mászóegyesület"
+                "title": "mászóegyesület"
             },
             "1": {
                 "description": "Mászással foglalkozó civil szervezet",
@@ -507,12 +634,75 @@
             }
         }
     },
+    "climbing_gym": {
+        "presets": {
+            "0": {
+                "title": "falmászó sportcsarnok"
+            }
+        }
+    },
+    "climbing_route": {
+        "presets": {
+            "0": {
+                "title": "mászóútvonal"
+            }
+        }
+    },
+    "clock": {
+        "presets": {
+            "0": {
+                "title": "óra"
+            }
+        }
+    },
+    "crossings": {
+        "presets": {
+            "0": {
+                "title": "gyalogosátkelő"
+            }
+        }
+    },
+    "defibrillator": {
+        "presets": {
+            "0": {
+                "title": "defibrillátor"
+            }
+        }
+    },
+    "dentist": {
+        "presets": {
+            "0": {
+                "title": "fogorvosi rendelő"
+            }
+        }
+    },
+    "disaster_response": {
+        "presets": {
+            "0": {
+                "title": "katasztrófaelhárító szervezet"
+            }
+        }
+    },
+    "doctors": {
+        "presets": {
+            "0": {
+                "title": "orvosi rendelő"
+            }
+        }
+    },
+    "dogpark": {
+        "presets": {
+            "0": {
+                "title": "kutyafuttató"
+            }
+        }
+    },
     "drinking_water": {
         "description": "Ivóvizet adó kutakat megjelenítő réteg",
         "name": "Ivóvíz",
         "presets": {
             "0": {
-                "title": "ivóvíz"
+                "title": "ivóvízcsap"
             }
         },
         "tagRenderings": {
@@ -570,8 +760,36 @@
             }
         }
     },
+    "elevator": {
+        "presets": {
+            "0": {
+                "title": "lift"
+            }
+        }
+    },
+    "elongated_coin": {
+        "presets": {
+            "0": {
+                "title": "érmenyújtó prés"
+            }
+        }
+    },
+    "entrance": {
+        "presets": {
+            "0": {
+                "title": "bejárat"
+            }
+        }
+    },
     "etymology": {
         "description": "Minden olyan objektum, amelynél ismert a nevének az eredete"
+    },
+    "extinguisher": {
+        "presets": {
+            "0": {
+                "title": "tűzoltó készülét"
+            }
+        }
     },
     "filters": {
         "filter": {
@@ -584,7 +802,40 @@
             }
         }
     },
+    "fire_station": {
+        "presets": {
+            "0": {
+                "title": "tűzoltóság"
+            }
+        }
+    },
+    "firepit": {
+        "presets": {
+            "0": {
+                "title": "tűzrakóhely"
+            }
+        }
+    },
+    "fitness_centre": {
+        "presets": {
+            "0": {
+                "title": "fitneszstúdió"
+            }
+        }
+    },
+    "fitness_station": {
+        "presets": {
+            "0": {
+                "title": "fitneszpark"
+            }
+        }
+    },
     "food": {
+        "presets": {
+            "0": {
+                "title": "étterem"
+            }
+        },
         "tagRenderings": {
             "Fastfood vs restaurant": {
                 "mappings": {
@@ -599,11 +850,32 @@
         "name": "Emlékkerékpárok",
         "presets": {
             "0": {
-                "title": "Emlékkerékpár"
+                "title": "szellemkerékpár"
             }
         },
         "title": {
             "render": "Emlékkerékpár"
+        }
+    },
+    "governments": {
+        "presets": {
+            "0": {
+                "title": "kormányzati hivatal"
+            }
+        }
+    },
+    "grave": {
+        "presets": {
+            "0": {
+                "title": "sírkő"
+            }
+        }
+    },
+    "guidepost": {
+        "presets": {
+            "0": {
+                "title": "útirányjelző tábla"
+            }
         }
     },
     "hackerspace": {
@@ -612,7 +884,7 @@
         "presets": {
             "0": {
                 "description": "A hackerspace egy olyan hely, ahol szoftverek iránt érdeklő emberek találkoznak",
-                "title": "Hackerspace"
+                "title": "hackerspace"
             },
             "1": {
                 "description": "A makerspace olyan hely, ahol a barkácsolás szerelmesei találkoznak, hogy olyan elektronikai eszközökkel kísérletezzenek, mint például az Arduino vagy a LEDstrips…",
@@ -641,12 +913,152 @@
             "render": "Hackerspace"
         }
     },
+    "hydrant": {
+        "presets": {
+            "0": {
+                "title": "tűzcsap"
+            }
+        }
+    },
+    "ice_cream": {
+        "presets": {
+            "0": {
+                "title": "fagylaltos bódé"
+            }
+        }
+    },
+    "information_board": {
+        "presets": {
+            "0": {
+                "title": "tájékoztató tábla"
+            }
+        }
+    },
+    "kerbs": {
+        "presets": {
+            "0": {
+                "title": "járdaszegély"
+            }
+        }
+    },
+    "kindergarten_childcare": {
+        "presets": {
+            "0": {
+                "title": "óvoda"
+            }
+        }
+    },
     "last_click": {
         "pointRendering": {
             "0": {
                 "label": {
                     "render": "Új elem hozzáadásához kattints ide"
                 }
+            }
+        }
+    },
+    "lighthouse": {
+        "presets": {
+            "0": {
+                "title": "világítótorony"
+            }
+        }
+    },
+    "love_hotel": {
+        "presets": {
+            "0": {
+                "title": "love hotel"
+            }
+        }
+    },
+    "map": {
+        "presets": {
+            "0": {
+                "title": "térkép"
+            }
+        }
+    },
+    "memorial": {
+        "presets": {
+            "0": {
+                "title": "emlékmű"
+            }
+        }
+    },
+    "mountain_rescue": {
+        "presets": {
+            "0": {
+                "title": "hegyimentő-állomás"
+            }
+        }
+    },
+    "nature_reserve": {
+        "presets": {
+            "0": {
+                "title": "természetvédelmi terület"
+            }
+        }
+    },
+    "parcel_lockers": {
+        "presets": {
+            "0": {
+                "title": "csomagautomata"
+            }
+        }
+    },
+    "parking": {
+        "presets": {
+            "0": {
+                "title": "parkoló"
+            }
+        }
+    },
+    "parking_ticket_machine": {
+        "presets": {
+            "0": {
+                "title": "parkolójegy-automata"
+            }
+        }
+    },
+    "pharmacy": {
+        "presets": {
+            "0": {
+                "title": "gyógyszertár"
+            }
+        }
+    },
+    "physiotherapist": {
+        "presets": {
+            "0": {
+                "title": "gyógytornászrendelő"
+            }
+        }
+    },
+    "picnic_table": {
+        "presets": {
+            "0": {
+                "title": "piknikezőasztal"
+            }
+        }
+    },
+    "playground": {
+        "presets": {
+            "0": {
+                "title": "játszótér"
+            }
+        }
+    },
+    "playground_equipment": {
+        "presets": {
+            "0": {
+                "title": "játszótéri játék"
+            }
+        }
+    },
+    "police": {
+        "presets": {
+            "0": {
+                "title": "rendőrség"
             }
         }
     },
@@ -667,7 +1079,7 @@
         "name": "Posták",
         "presets": {
             "0": {
-                "title": "Posta"
+                "title": "posta"
             }
         },
         "tagRenderings": {
@@ -695,7 +1107,7 @@
         "name": "Könyvespolcok",
         "presets": {
             "0": {
-                "title": "Könyvespolc"
+                "title": "könyvespolc"
             }
         },
         "tagRenderings": {
@@ -928,8 +1340,167 @@
             }
         }
     },
+    "rainbow_crossings": {
+        "presets": {
+            "0": {
+                "title": "gyalogosátkelő"
+            }
+        }
+    },
+    "recycling": {
+        "presets": {
+            "0": {
+                "title": "szelektív hulladékgyűjtő konténer"
+            }
+        }
+    },
+    "route_marker": {
+        "presets": {
+            "0": {
+                "title": "turistaútjelzés"
+            }
+        }
+    },
+    "school": {
+        "presets": {
+            "0": {
+                "title": "általános vagy középiskola"
+            }
+        }
+    },
     "shops": {
-        "description": "Egy bolt"
+        "description": "Egy bolt",
+        "presets": {
+            "0": {
+                "title": "üzlet"
+            }
+        }
+    },
+    "shower": {
+        "presets": {
+            "0": {
+                "title": "zuhanyzó"
+            }
+        }
+    },
+    "souvenir_coin": {
+        "presets": {
+            "0": {
+                "title": "emlékérme-automata"
+            }
+        }
+    },
+    "souvenir_note": {
+        "presets": {
+            "0": {
+                "title": "emlékbankjegy-automata"
+            }
+        }
+    },
+    "speed_camera": {
+        "presets": {
+            "0": {
+                "title": "traffipax"
+            }
+        }
+    },
+    "speed_display": {
+        "presets": {
+            "0": {
+                "title": "sebességkijelző"
+            }
+        }
+    },
+    "sport_pitch": {
+        "presets": {
+            "0": {
+                "title": "pingpongasztal"
+            }
+        }
+    },
+    "sports_centre": {
+        "presets": {
+            "0": {
+                "title": "sportközpont"
+            }
+        }
+    },
+    "street_lamps": {
+        "presets": {
+            "0": {
+                "title": "utcai lámpa"
+            }
+        }
+    },
+    "stripclub": {
+        "presets": {
+            "0": {
+                "title": "sztriptízbár"
+            }
+        }
+    },
+    "surveillance_camera": {
+        "presets": {
+            "0": {
+                "title": "térfigyelő kamera"
+            }
+        }
+    },
+    "tertiary_education": {
+        "presets": {
+            "0": {
+                "title": "egyetem"
+            }
+        }
+    },
+    "ticket_machine": {
+        "presets": {
+            "0": {
+                "title": "jegyautomata"
+            }
+        }
+    },
+    "ticket_validator": {
+        "presets": {
+            "0": {
+                "title": "jegyérvényesítő"
+            }
+        }
+    },
+    "toilet": {
+        "presets": {
+            "0": {
+                "title": "nyilvános WC"
+            }
+        }
+    },
+    "tool_library": {
+        "presets": {
+            "0": {
+                "title": "szerszámkönyvtár"
+            }
+        }
+    },
+    "tourism_accomodation": {
+        "presets": {
+            "0": {
+                "title": "szálloda"
+            }
+        }
+    },
+    "tree_node": {
+        "presets": {
+            "0": {
+                "title": "lombos fa"
+            }
+        }
+    },
+    "trolley_bay": {
+        "presets": {
+            "0": {
+                "title": "bevásárlókocsi-tároló"
+            }
+        }
     },
     "unit": {
         "units": {
@@ -959,6 +1530,11 @@
         }
     },
     "vending_machine": {
+        "presets": {
+            "0": {
+                "title": "árusító automata"
+            }
+        },
         "tagRenderings": {
             "operational_status": {
                 "mappings": {
@@ -975,14 +1551,40 @@
             }
         }
     },
+    "veterinary": {
+        "presets": {
+            "0": {
+                "title": "állatorvos"
+            }
+        }
+    },
+    "viewpoint": {
+        "presets": {
+            "0": {
+                "title": "kilátóhely"
+            }
+        }
+    },
     "waste_basket": {
-        "description": "Ez egy nyilvános szemétkosár vagy kuka, ahová kidobhatod a szemetedet."
+        "description": "Ez egy nyilvános szemétkosár vagy kuka, ahová kidobhatod a szemetedet.",
+        "presets": {
+            "0": {
+                "title": "szemétkosár"
+            }
+        }
+    },
+    "waste_disposal": {
+        "presets": {
+            "0": {
+                "title": "szemeteskonténer"
+            }
+        }
     },
     "windturbine": {
         "name": "Szélerőmű",
         "presets": {
             "0": {
-                "title": "Szélerőmű"
+                "title": "szélerőmű"
             }
         },
         "tagRenderings": {
