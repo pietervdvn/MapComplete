@@ -1509,9 +1509,6 @@
                     },
                     "2": {
                         "then": "Přístup je omezen na členy školy, společnosti nebo organizace"
-                    },
-                    "3": {
-                        "then": "Přístup je omezen na členy školy, společnosti nebo organizace"
                     }
                 },
                 "question": "Kdo může parkoviště pro jízdní kola využívat?",

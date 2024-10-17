@@ -667,18 +667,8 @@
         {
           "if": "access=private",
           "then": {
-            "en": "Access is limited to members of a school, company or organisation",
-            "nl": "Private fietsenstalling van een school, een bedrijf, ...",
-            "fr": "Accès limité aux membres d'une école, entreprise ou organisation",
-            "it": "Accesso limitato ai membri di una scuola, una compagnia o un’organizzazione",
-            "zh_Hant": "通行性僅限學校、公司或組織的成員",
-            "pt_BR": "Acesso é limitado aos membros de uma escola, companhia ou organização",
-            "de": "Der Parkplatz darf nur von Mitgliedern einer Schule, Firma oder Organisation genutzt werden",
-            "pt": "Acesso é limitado aos membros de uma escola, companhia ou organização",
-            "es": "El acceso se limita a miembros de una escuela, compañía u organización",
-            "da": "Adgangen er begrænset til medlemmer af en skole, virksomhed eller organisation",
-            "cs": "Přístup je omezen na členy školy, společnosti nebo organizace",
-            "ca": "L'accés està limitat a membres d'una escola, companyia o organització"
+            "en": "Private bicycle parking which is never available to the public, also not via a membership fee",
+            "nl": "Private fietsenstalling die niet voor het grote publiek toegankelijk is (dus ook niet met bv. een abonnement)"
           }
         }
       ],

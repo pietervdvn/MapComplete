@@ -263,7 +263,7 @@
         }
     },
     "aerialway": {
-        "description": "Alle Arten von seil- oder drahtgestütztem Personen- oder Gütertransport, wie Seilbahnen, Gondeln, Sessellifte, Schlepplifte.",
+        "description": "Alle Arten von seil- oder drahtgestütztem Personen- oder Gütertransport, wie Seilbahnen, Gondeln, Sessellifte, Schlepplifte. ",
         "name": "Seilbahnen",
         "pointRendering": {
             "1": {
@@ -302,10 +302,10 @@
                         "then": "Es handelt sich um eine Seilbahn, bei der die Kabine auf demselben Seil nach oben und wieder nach unten fährt."
                     },
                     "1": {
-                        "then": "Es handelt sich um eine Seilbahn, bei der die Kabinen in ständigen Kreisen fahren."
+                        "then": "Es handelt sich um eine Seilbahn, bei der die Kabinen in ständigen Kreisen fahren"
                     },
                     "10": {
-                        "then": "Eine Seilrutsche. (Eine Touristenattraktion, bei der abenteuerlustige Menschen mit hoher Geschwindigkeit hinunterfahren)"
+                        "then": "Eine Seilrutsche. (Eine Touristenattraktion, bei der abenteuerlustige Menschen mit hoher Geschwindigkeit hinunterfahren) "
                     },
                     "2": {
                         "then": "Ein offener Sessellift mit Sitzgelegenheiten und Zugang zur Außenluft."
@@ -389,7 +389,7 @@
         }
     },
     "animal_shelter": {
-        "description": "Ein Tierheim ist eine Einrichtung, in die notleidende Tiere gebracht werden und wo das Personal (ob freiwillig oder nicht) sie füttert und pflegt, sie rehabilitiert und bei Bedarf heilt. Diese Definition umfasst Zwinger für ausgesetzte Hunde, Katzenheime für ausgesetzte Katzen, Unterkünfte für andere ausgesetzte Haustiere und Wildtier-Auffangstationen.",
+        "description": "Ein Tierheim ist eine Einrichtung, in die notleidende Tiere gebracht werden und wo das Personal (ob freiwillig oder nicht) sie füttert und pflegt, sie rehabilitiert und bei Bedarf heilt. Diese Definition umfasst Zwinger für ausgesetzte Hunde, Katzenheime für ausgesetzte Katzen, Unterkünfte für andere ausgesetzte Haustiere und Wildtier-Auffangstationen. ",
         "name": "Tierheime",
         "presets": {
             "0": {
@@ -410,7 +410,7 @@
                         "then": "Tiere werden hier bis zum Ende Ihres Lebens untergebracht"
                     },
                     "2": {
-                        "then": "Tiere werden hier untergebracht und gepflegt bis sie wieder in freier Natur ausgesetzt werden können"
+                        "then": "Tiere werden hier untergebracht und gepflegt bis sie wieder in freier Natur ausgesetzt werden können "
                     }
                 },
                 "question": "Was ist der Zweck des Tierheims?"
@@ -512,7 +512,7 @@
                 "render": "Dies ist ein {artwork_type}"
             },
             "artwork-website": {
-                "question": "Auf welcher offiziellen Webseite gibt es weitere Informationen zum Kunstwerk?",
+                "question": "Auf welcher Webseite gibt es weitere Informationen zum Kunstwerk?",
                 "render": {
                     "special": {
                         "text": "Weitere Informationen auf dieser Webseite"
@@ -559,7 +559,7 @@
         }
     },
     "assembly_point": {
-        "description": "Diese Ebene enthält Sammelplätze und Wartebereiche, in denen sich Mitarbeiter, Fahrgäste oder eine große Menschenmenge im Notfall versammeln.",
+        "description": "Diese Ebene enthält Sammelplätze und Wartebereiche, in denen sich alle Mitarbeiter, Fahrgäste oder eine große Menschenmenge im Notfall versammeln.",
         "name": "Notfallsammelplätze",
         "presets": {
             "0": {
@@ -598,7 +598,7 @@
         }
     },
     "assisted_repair": {
-        "description": "Eine Selbsthilfewerkstatt ist ein Ort, an dem Menschen ihre Gegenstände mit Hilfe von Freiwilligen und verfügbaren Werkzeugen reparieren können. Ein Repair-Café ist eine Art von Veranstaltung, die regelmäßig nach denselben Prinzipien organisiert wird.",
+        "description": "Eine Selbsthilfewerkstatt ist ein Ort, an dem Menschen ihre Gegenstände mit Hilfe von Freiwilligen und den vor Ort verfügbaren Werkzeugen reparieren können. Ein Repair-Café ist eine Art von Veranstaltung, die regelmäßig nach denselben Prinzipien organisiert wird.",
         "name": "Repair-Cafés und unterstützte Reparaturwerkstätten",
         "presets": {
             "0": {
@@ -838,7 +838,7 @@
                         "then": "Dreifach, drei Barrieren hintereinander"
                     },
                     "3": {
-                        "then": "Durchfahrtsbeschränkung - die Durchfahrtsbreite ist oben kleiner als unten"
+                        "then": "Eine Durchfahrtsbeschränkung, Durchfahrtsbreite ist oben kleiner als unten"
                     }
                 },
                 "question": "Um welche Art Fahrradhindernis handelt es sich?"
@@ -915,7 +915,7 @@
                         "then": "Privat"
                     },
                     "3": {
-                        "then": "Zugang bis auf Widerruf (Erlaubt)"
+                        "then": "Zugang bis auf Widerruf"
                     },
                     "4": {
                         "then": "Zugang nur für Kunden"
@@ -1148,7 +1148,7 @@
                 }
             }
         },
-        "description": "Eine Ebene mit allen Haltestellen des Öffentlichen Verkehrs mit Sitzbank",
+        "description": "Eine Ebene mit allen Haltestellen des öffentlichen Nahverkehrs, die über eine Sitzbank verfügen",
         "name": "Sitzbänke an Haltestellen",
         "tagRenderings": {
             "bench_at_pt-bench_type": {
@@ -1371,7 +1371,7 @@
                         "then": "Dies ist eine automatisierte Radstation, bei der ein Fahrrad mechanisch an einer Struktur befestigt wird"
                     },
                     "4": {
-                        "then": "Dies ist ein Automat, der Schlüssel nach Authentifizierung und/oder Bezahlung ausgibt und annimmt. Die Fahrräder sind in der Nähe geparkt"
+                        "then": "Dies ist ein Automat, der Schlüssel ausgibt und annimmt, eventuell nach Authentifizierung und/oder Bezahlung. Die Fahrräder sind in der Nähe geparkt"
                     },
                     "5": {
                         "then": "Dies ist ein Rückgabepunkt, z.B. ein reservierter Parkplatz, um die Fahrräder abzustellen, die eindeutig als nur für den Verleih gekennzeichnet sind"
@@ -1423,7 +1423,7 @@
         }
     },
     "bike_cafe": {
-        "description": "Ein Fahrradcafé ist ein Café, das auf Radfahrer ausgerichtet ist, zum Beispiel mit Dienstleistungen wie einer Pumpe und mit fahrradbezogener Dekoration.",
+        "description": "Ein Fahrradcafé ist ein Café, das auf Radfahrer ausgerichtet ist, zum Beispiel mit Dienstleistungen wie einer Pumpe, mit viel fahrradbezogener Dekoration, …",
         "name": "Fahrrad-Cafés",
         "presets": {
             "0": {
@@ -1545,9 +1545,6 @@
                     },
                     "2": {
                         "then": "Der Parkplatz darf nur von Mitgliedern einer Schule, Firma oder Organisation genutzt werden"
-                    },
-                    "3": {
-                        "then": "Der Parkplatz darf nur von Mitgliedern einer Schule, Firma oder Organisation genutzt werden"
                     }
                 },
                 "question": "Wer darf den Parkplatz nutzen?",
@@ -1591,7 +1588,7 @@
             },
             "Capacity": {
                 "question": "Wie viele Fahrräder passen auf diesen Fahrrad-Parkplatz?",
-                "questionHint": "Dazu gehören alle Fahrradtypen - reguläre Fahrräder, Lastenräder, Elektrofahrräder etc.",
+                "questionHint": "Dazu gehören reguläre Fahrräder, Lasträder, Ebikes,...",
                 "render": "Der Parkplatz bietet Platz für {capacity} Fahrräder"
             },
             "Cargo bike capacity?": {
@@ -1659,7 +1656,7 @@
                         "then": "Die Nutzung ist kostenlos"
                     }
                 },
-                "question": "Kann man hier kostenlos Fahrräder abstellen?"
+                "question": "Sind die Fahrradparkplätze kostenlos zu benutzen?"
             },
             "maxstay": {
                 "question": "Was ist die maximal erlaubte Parkdauer?",
@@ -1675,7 +1672,7 @@
             },
             "operator_phone": {
                 "question": "Wie lautet die Telefonnummer des Betreibers dieses Fahrradparkplatzes?",
-                "questionHint": "Man könnte diese Nummer anrufen, wenn es Probleme gibt, z. B. um herrenlose Fahrräder zu entfernen"
+                "questionHint": "Man könnte diese Nummer anrufen, wenn es Probleme gibt, z. B. um nicht gewartete Fahrräder zu entfernen"
             },
             "operator_website": {
                 "question": "Wie lautet die Nummer auf der Website des Betreibers dieses Fahrradparkplatzes?"
@@ -1787,16 +1784,16 @@
             "bike_repair_station-manometer": {
                 "mappings": {
                     "0": {
-                        "then": "Es gibt ein Druckmessgerät"
+                        "then": "Es gibt ein Manometer"
                     },
                     "1": {
-                        "then": "Es gibt kein Druckmessgerät"
+                        "then": "Es gibt kein Manometer"
                     },
                     "2": {
-                        "then": "Es gibt ein Druckmessgerät, aber es ist kaputt"
+                        "then": "Es gibt ein Manometer, aber es ist kaputt"
                     }
                 },
-                "question": "Verfügt die Pumpe über ein Druckmessgerät?"
+                "question": "Verfügt die Pumpe über einen Druckanzeiger oder ein Manometer?"
             },
             "bike_repair_station-operator": {
                 "question": "Wer betreibt die Reparaturstation?",
@@ -1817,8 +1814,8 @@
                         "then": "Schrader-Ventile (für Autos und Mountainbikes)"
                     }
                 },
-                "question": "Welche Ventile stehen zur Verfügung?",
-                "render": "Die Pumpe hat folgende Ventile: {valves}"
+                "question": "Welche Ventile werden unterstützt?",
+                "render": "Diese Pumpe unterstützt die folgenden Ventile: {valves}"
             },
             "opening_hours_24_7": {
                 "override": {
@@ -2034,7 +2031,7 @@
         }
     },
     "brothel": {
-        "description": "Eine Einrichtung, die speziell der Prostitution gewidmet ist.",
+        "description": "Eine Einrichtung, die speziell der Prostitution gewidmet ist. ",
         "name": "Bordelle",
         "presets": {
             "0": {
@@ -2059,7 +2056,7 @@
                 }
             }
         },
-        "description": "Eine Ebene mit Cafés und Kneipen, in denen man sich auf ein Getränk treffen kann.",
+        "description": "Eine Ebene mit Cafés und Kneipen, in denen man sich auf ein Getränk treffen kann. Die Ebene fragt nach einigen relevanten Eigenschaften",
         "name": "Cafés und Kneipen",
         "presets": {
             "0": {
@@ -2071,7 +2068,7 @@
                 "title": "eine Bar"
             },
             "2": {
-                "description": "Ein <b>Café</b>, um in ruhiger Umgebung Tee, Kaffee oder alkoholische Getränke zu trinken",
+                "description": "Ein <b>Café</b>, um in ruhiger Umgebung Tee, Kaffee oder ein alkoholisches Getränk zu trinken",
                 "title": "ein Café"
             },
             "3": {
@@ -2089,13 +2086,13 @@
                         "then": "Eine modernere und kommerzielle <b>Bar</b>, möglicherweise mit einer Musik- und Lichtinstallation"
                     },
                     "2": {
-                        "then": "Ein <b>Café</b>, um in ruhiger Umgebung Tee, Kaffee oder alkoholische Getränke zu trinken"
+                        "then": "Ein <b>Café</b>, um in ruhiger Umgebung Tee, Kaffee oder ein alkoholisches Getränk zu trinken"
                     },
                     "3": {
                         "then": "Ein <b>Restaurant</b>, in dem man ordentlich essen kann"
                     },
                     "4": {
-                        "then": "Ein Biergarten mit Außenbereich mit Bierausschank, typischerweise in Deutschland"
+                        "then": "Ein Außenbereich mit Bierausschank, typischerweise in Deutschland"
                     },
                     "5": {
                         "then": "Dies ist ein <b>Club</b> oder eine Disco mit Fokus auf Tanzen, Musik von einem DJ mit begleitender Lichtshow und einer Bar, an der man (alkoholische) Getränke bekommt"
@@ -2158,7 +2155,7 @@
         "name": "Wohnmobilstellplätze",
         "presets": {
             "0": {
-                "description": "Eine Ebene mit (offiziellen) Wohnmobilstellplätzen. Dies sind ausgewiesene Plätze, an denen Sie mit Ihrem Wohnmobil übernachten können. Sie können wie ein richtiger Campingplatz aussehen oder nur wie ein Parkplatz. Möglicherweise sind sie gar nicht ausgeschildert, sondern nur in einem kommunalen Beschluss festgelegt.",
+                "description": "Fügen Sie einen neuen offiziellen Wohnmobilstellplatz hinzu. Dies sind ausgewiesene Plätze, an denen Sie in Ihrem Wohnmobil übernachten können. Sie können wie ein richtiger Campingplatz oder nur wie ein Parkplatz aussehen. Möglicherweise sind sie gar nicht ausgeschildert, sondern nur in einem Gemeindebeschluss festgelegt. Ein normaler Parkplatz für Wohnmobile, auf dem übernachten nicht zulässig ist, zählt nicht als Wohnmobilstellplatz. ",
                 "title": "ein Wohnmobilstellplatz"
             }
         },
@@ -2370,8 +2367,8 @@
         },
         "tagRenderings": {
             "Auth phone": {
-                "question": "An welche Telefonnummer kann man sich wenden, um sich zu authentifizieren (Anruf oder SMS)?",
-                "render": "Authentifizierung per Anruf oder SMS an <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>"
+                "question": "Wie lautet die Telefonnummer für den Authentifizierungsanruf oder die SMS?",
+                "render": "Authentifiziere dich, indem du anrufst oder eine SMS sendest an <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>"
             },
             "Authentication": {
                 "mappings": {
@@ -2385,7 +2382,7 @@
                         "then": "Authentifizierung per Anruf ist möglich"
                     },
                     "3": {
-                        "then": "Authentifizierung per SMS"
+                        "then": "Authentifizierung per SMS ist möglich"
                     },
                     "4": {
                         "then": "Authentifizierung per NFC ist möglich"
@@ -2588,7 +2585,7 @@
                         "then": "Während des Ladens ist eine zusätzliche Parkgebühr zu entrichten"
                     }
                 },
-                "question": "Ist während des Ladens eine Parkgebühr zu bezahlen?"
+                "question": "Muss man während des Ladens eine Parkgebühr bezahlen?"
             },
             "Type": {
                 "mappings": {
@@ -2800,7 +2797,7 @@
         }
     },
     "cinema": {
-        "description": "Ein Ort, an dem Filme gezeigt werden, die der Öffentlichkeit gegen Gebühr zugänglich sind",
+        "description": " Ein Ort, an dem Filme gezeigt werden, die der Öffentlichkeit gegen Gebühr zugänglich sind",
         "name": "Kino",
         "tagRenderings": {
             "cinema_type": {
@@ -3220,7 +3217,7 @@
                         "then": "Diese Uhr zeigt wahrscheinlich nicht den Luftdruck an"
                     }
                 },
-                "question": "Zeigt diese Uhr auch den Luftdruck an? (Barometer)"
+                "question": "Zeigt diese Uhr auch den Luftdruck an?"
             },
             "date": {
                 "mappings": {
@@ -3336,11 +3333,11 @@
         }
     },
     "crossings": {
-        "description": "Übergänge für Fußgänger und/oder Radfahrer",
+        "description": "Übergänge für Fußgänger und Radfahrer",
         "name": "Kreuzungen",
         "presets": {
             "0": {
-                "description": "Eine Ebene die Überwege für Fußgänger und/oder Radfahrer zeigt",
+                "description": "Kreuzung für Fußgänger und/oder Radfahrer",
                 "title": "eine Kreuzung"
             },
             "1": {
@@ -3469,7 +3466,7 @@
                         "then": "Diese Kreuzung hat kein Blindenleitsystem"
                     },
                     "2": {
-                        "then": "Der Überweg ist mit taktilem Pflaster ausgestattet, das jedoch nicht den Vorschriften entspricht"
+                        "then": "Diese Kreuzung hat taktile Pflasterung, ist aber nicht korrekt"
                     }
                 },
                 "question": "Gibt es an dieser Kreuzung ein Blindenleitsystem?"
