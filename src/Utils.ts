@@ -46,95 +46,6 @@ There are also some technicalities in your theme to keep in mind:
 The import button can be tested in an unofficial theme by adding \`test=true\` or \`backend=osm-test\` as [URL-paramter](URL_Parameters.md).
 The import button will show up then. If in testmode, you can read the changeset-XML directly in the web console.
 In the case that MapComplete is pointed to the testing grounds, the edit will be made on https://master.apis.dev.openstreetmap.org`
-    private static knownKeys = [
-        "addExtraTags",
-        "and",
-        "calculatedTags",
-        "changesetmessage",
-        "clustering",
-        "color",
-        "condition",
-        "customCss",
-        "dashArray",
-        "defaultBackgroundId",
-        "description",
-        "descriptionTail",
-        "doNotDownload",
-        "enableAddNewPoints",
-        "enableBackgroundLayerSelection",
-        "enableGeolocation",
-        "enableLayers",
-        "enableMoreQuests",
-        "enableSearch",
-        "enableShareScreen",
-        "enableUserBadge",
-        "freeform",
-        "hideFromOverview",
-        "hideInAnswer",
-        "icon",
-        "iconOverlays",
-        "iconSize",
-        "id",
-        "if",
-        "ifnot",
-        "isShown",
-        "key",
-        "language",
-        "layers",
-        "lockLocation",
-        "maintainer",
-        "mappings",
-        "maxzoom",
-        "maxZoom",
-        "minNeededElements",
-        "minzoom",
-        "multiAnswer",
-        "name",
-        "or",
-        "osmTags",
-        "passAllFeatures",
-        "presets",
-        "question",
-        "render",
-        "roaming",
-        "roamingRenderings",
-        "rotation",
-        "shortDescription",
-        "socialImage",
-        "source",
-        "startLat",
-        "startLon",
-        "startZoom",
-        "tagRenderings",
-        "tags",
-        "then",
-        "title",
-        "titleIcons",
-        "type",
-        "version",
-        "wayHandling",
-        "widenFactor",
-        "width",
-    ]
-    private static extraKeys = [
-        "nl",
-        "en",
-        "fr",
-        "de",
-        "pt",
-        "es",
-        "name",
-        "phone",
-        "email",
-        "amenity",
-        "leisure",
-        "highway",
-        "building",
-        "yes",
-        "no",
-        "true",
-        "false",
-    ]
     private static injectedDownloads = {}
     private static _download_cache = new Map<
         string,
@@ -940,28 +851,6 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         }
         dict.set(k, v())
         return dict.get(k)
-    }
-
-    public static UnMinify(minified: string): string {
-        if (minified === undefined || minified === null) {
-            return undefined
-        }
-
-        const parts = minified.split("|")
-        let result = parts.shift()
-        const keys = Utils.knownKeys.concat(Utils.extraKeys)
-
-        for (const part of parts) {
-            if (part == "") {
-                // Empty string => this was a || originally
-                result += "|"
-                continue
-            }
-            const i = part.charCodeAt(0)
-            result += '"' + keys[i] + '":' + part.substring(1)
-        }
-
-        return result
     }
 
     public static injectJsonDownloadForTests(url: string, data) {
@@ -1782,13 +1671,6 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
 
         // If the element has a parent, repeat the process for the parent element
         return Utils.findParentWithScrolling(<HTMLBaseElement>element.parentElement)
-    }
-
-    private static colorDiff(
-        c0: { r: number; g: number; b: number },
-        c1: { r: number; g: number; b: number }
-    ) {
-        return Math.abs(c0.r - c1.r) + Math.abs(c0.g - c1.g) + Math.abs(c0.b - c1.b)
     }
 
     private static readonly _metrixPrefixes = ["", "k", "M", "G", "T", "P", "E"]
