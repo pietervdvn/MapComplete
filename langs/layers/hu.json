@@ -25,11 +25,54 @@
         }
     },
     "advertising": {
+        "name": "Reklámhordozók",
         "presets": {
             "0": {
                 "title": "óriásplakát"
+            },
+            "1": {
+                "title": "falra erősített óriásplakát"
+            },
+            "10": {
+                "title": "tömegközlekedési megállóban lévő képernyő"
+            },
+            "11": {
+                "title": "ponyva"
+            },
+            "13": {
+                "title": "tábla"
+            },
+            "14": {
+                "title": "szobor"
+            },
+            "15": {
+                "title": "falfestmény"
+            },
+            "2": {
+                "title": "megállítótábla"
+            },
+            "3": {
+                "title": "falra szerelt posztertartó"
+            },
+            "4": {
+                "title": "tömegközlekedési megállóban lévő posztertartó"
+            },
+            "6": {
+                "title": "oszlop"
+            },
+            "7": {
+                "title": "zászló"
+            },
+            "8": {
+                "title": "képernyő"
+            },
+            "9": {
+                "title": "falra szerelt képernyő"
             }
         }
+    },
+    "aerialway": {
+        "name": "Kötélpályák"
     },
     "ambulancestation": {
         "description": "A mentőállomás olyan terület, ahol mentőautókat, orvosi felszereléseket, egyéni védőfelszereléseket és egyéb orvosi felszereléseket tárolnak.",
@@ -81,9 +124,15 @@
         }
     },
     "animal_shelter": {
+        "name": "Állatmenhelyek",
         "presets": {
             "0": {
                 "title": "állatmenhely"
+            }
+        },
+        "tagRenderings": {
+            "2": {
+                "render": "Az állatmenhely neve: <b>{name}</b>"
             }
         }
     },
@@ -93,6 +142,9 @@
         "presets": {
             "0": {
                 "title": "műalkotás"
+            },
+            "1": {
+                "title": "falon lévő műalkotás"
             }
         },
         "tagRenderings": {
@@ -161,13 +213,29 @@
         }
     },
     "assembly_point": {
+        "name": "Vészhelyzeti gyülekezőhely",
         "presets": {
             "0": {
                 "title": "gyülekezőhely"
             }
+        },
+        "tagRenderings": {
+            "assembly_point_name": {
+                "question": "Mi a neve ennek a gyülekezőhelynek?",
+                "render": "A gyülekezőhely neve: <b>{name}</b>"
+            }
+        }
+    },
+    "assisted_repair": {
+        "tagRenderings": {
+            "name": {
+                "question": "Mi a neve ennek a szerelőműhelynek?",
+                "render": "A szerelőműhely neve: <b>{name}</b>"
+            }
         }
     },
     "atm": {
+        "name": "Bankautomaták",
         "presets": {
             "0": {
                 "title": "bankautomata"
@@ -184,7 +252,7 @@
             },
             "1": {
                 "description": "A kerékpáros sebességét csökkentő kerékpárakadály",
-                "title": "Kerékpárakadály"
+                "title": "kerékpárakadály"
             }
         },
         "tagRenderings": {
@@ -381,6 +449,11 @@
             "0": {
                 "title": "kerékpárszámláló"
             }
+        },
+        "tagRenderings": {
+            "name": {
+                "question": "Mi a neve a megfigyelt helynek?"
+            }
         }
     },
     "bicycle_library": {
@@ -402,12 +475,18 @@
                 },
                 "question": "Mennyibe kerül egy kerékpár kölcsönzése?",
                 "render": "Egy kerékpár kölcsönzése {charge}"
+            },
+            "bicycle_library-name": {
+                "question": "Mi a neve ennek a kerékpárkönyvtárnak?"
             }
         }
     },
     "bicycle_rental": {
         "presets": {
             "0": {
+                "title": "kerékpárkölcsönző üzlet"
+            },
+            "1": {
                 "title": "kerékpárkölcsönző"
             }
         },
@@ -425,6 +504,11 @@
         "presets": {
             "0": {
                 "title": "kerékpároskávézó"
+            }
+        },
+        "tagRenderings": {
+            "bike_cafe-name": {
+                "question": "Mi a neve ennek a kerékpároskávézónak?"
             }
         }
     },
@@ -494,6 +578,12 @@
         "presets": {
             "0": {
                 "title": "kerékpárpumpa"
+            },
+            "1": {
+                "title": "kerékpárszerelő pont pumpával"
+            },
+            "2": {
+                "title": "kerékpárszerelő pont pumpa nélkül"
             }
         }
     },
@@ -511,17 +601,16 @@
             }
         }
     },
-    "birdhide": {
-        "presets": {
-            "0": {
-                "title": "madárvárta"
-            }
-        }
-    },
     "brothel": {
         "presets": {
             "0": {
                 "title": "bordélyház"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "question": "Mi a neve ennek a bordélynak?",
+                "render": "A bordélyház neve: <b>{name}</b>"
             }
         }
     },
@@ -537,6 +626,9 @@
             },
             "2": {
                 "title": "kávézó"
+            },
+            "3": {
+                "title": "night club vagy diszkó"
             }
         },
         "tagRenderings": {
@@ -544,7 +636,7 @@
                 "question": "Milyen fajta kávézó ez?"
             },
             "Name": {
-                "question": "Mi a neve ennek a kocsmának?",
+                "question": "Mi a neve ennek a vállalkozásnak?",
                 "render": "A kocsma neve: {name}"
             }
         }
@@ -553,6 +645,11 @@
         "presets": {
             "0": {
                 "title": "autókölcsönző"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "question": "Mi a neve ennek az autókölcsönzőnek?"
             }
         }
     },
@@ -566,6 +663,9 @@
             }
         },
         "tagRenderings": {
+            "caravansites-name": {
+                "question": "Mi a neve ennek a helynek?"
+            },
             "caravansites-toilets": {
                 "mappings": {
                     "0": {
@@ -583,6 +683,9 @@
         "presets": {
             "0": {
                 "title": "e-kerékpár-töltő"
+            },
+            "1": {
+                "title": "gépkocsitöltő"
             }
         }
     },
@@ -604,6 +707,19 @@
         "presets": {
             "0": {
                 "title": "falmászó létesítmény"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "A mászófal neve: <b>{name}</b>"
+                },
+                "1": {
+                    "then": "A mászóhely neve: <b>{name}</b>"
+                },
+                "3": {
+                    "then": "A mászólétesítmény neve: <b>{name}</b>"
+                }
             }
         }
     },
@@ -652,6 +768,9 @@
         "presets": {
             "0": {
                 "title": "óra"
+            },
+            "1": {
+                "title": "falra szerelt óra"
             }
         }
     },
@@ -659,6 +778,9 @@
         "presets": {
             "0": {
                 "title": "gyalogosátkelő"
+            },
+            "1": {
+                "title": "jelzőlámpa"
             }
         }
     },
@@ -666,6 +788,9 @@
         "presets": {
             "0": {
                 "title": "defibrillátor"
+            },
+            "1": {
+                "title": "falra szerelt defibrillátor"
             }
         }
     },
@@ -674,12 +799,23 @@
             "0": {
                 "title": "fogorvosi rendelő"
             }
+        },
+        "tagRenderings": {
+            "name": {
+                "question": "Mi a neve ennek a fogorvosnak?"
+            }
         }
     },
     "disaster_response": {
         "presets": {
             "0": {
                 "title": "katasztrófaelhárító szervezet"
+            }
+        },
+        "tagRenderings": {
+            "disaster_response_name": {
+                "question": "Mi a neve ennek a szervezetnek?",
+                "render": "A szervezet neve: <b>{name}</b>"
             }
         }
     },
@@ -688,12 +824,22 @@
             "0": {
                 "title": "orvosi rendelő"
             }
+        },
+        "tagRenderings": {
+            "name": {
+                "question": "Mi a neve ennek az orvosi rendelőnek?"
+            }
         }
     },
     "dogpark": {
         "presets": {
             "0": {
                 "title": "kutyafuttató"
+            }
+        },
+        "tagRenderings": {
+            "Name": {
+                "question": "Mi a neve ennek a kutyafuttatónak?"
             }
         }
     },
@@ -778,6 +924,9 @@
         "presets": {
             "0": {
                 "title": "bejárat"
+            },
+            "1": {
+                "title": "beltéri ajtó"
             }
         }
     },
@@ -787,7 +936,7 @@
     "extinguisher": {
         "presets": {
             "0": {
-                "title": "tűzoltó készülét"
+                "title": "tűzoltó készülék"
             }
         }
     },
@@ -807,6 +956,11 @@
             "0": {
                 "title": "tűzoltóság"
             }
+        },
+        "tagRenderings": {
+            "station-name": {
+                "question": "Mi a neve ennek a tűzoltóságnak?"
+            }
         }
     },
     "firepit": {
@@ -819,7 +973,12 @@
     "fitness_centre": {
         "presets": {
             "0": {
-                "title": "fitneszstúdió"
+                "title": "edzőterem"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "question": "Mi a neve ennek az edzőteremnek?"
             }
         }
     },
@@ -828,12 +987,23 @@
             "0": {
                 "title": "fitneszpark"
             }
+        },
+        "tagRenderings": {
+            "name": {
+                "question": "Mi a neve ennek a fitneszparknak?"
+            }
         }
     },
     "food": {
         "presets": {
             "0": {
                 "title": "étterem"
+            },
+            "1": {
+                "title": "büfé, gyorsétterem"
+            },
+            "2": {
+                "title": "sültkrumpliárus"
             }
         },
         "tagRenderings": {
@@ -843,6 +1013,17 @@
                         "then": "Ez egy gyorsétterem (büfé), amely a gyors kiszolgálásra összpontosít. Ha vannak is ülőhelyek, ezek meglehetősen korlátozottak és funkcionálisak."
                     }
                 }
+            },
+            "Name": {
+                "question": "Mi a neve ennek a vállalkozásnak?"
+            }
+        }
+    },
+    "food_courts": {
+        "tagRenderings": {
+            "name": {
+                "question": "Mi a neve ennek az étkezőtérnek?",
+                "render": "Az étkezőtér neve: <b>{name}</b>."
             }
         }
     },
@@ -851,6 +1032,11 @@
         "presets": {
             "0": {
                 "title": "szellemkerékpár"
+            }
+        },
+        "tagRenderings": {
+            "ghost_bike-name": {
+                "question": "Mi a neve ennek a szellemkerékpárnak?"
             }
         },
         "title": {
@@ -862,12 +1048,23 @@
             "0": {
                 "title": "kormányzati hivatal"
             }
+        },
+        "tagRenderings": {
+            "name": {
+                "question": "Mi a neve ennek a hivatalnak?"
+            }
         }
     },
     "grave": {
         "presets": {
             "0": {
                 "title": "sírkő"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "question": "Ki van itt eltemetve?",
+                "render": "Itt van eltemetve <b>{name}</b>"
             }
         }
     },
@@ -892,6 +1089,10 @@
             }
         },
         "tagRenderings": {
+            "hackerspaces-name": {
+                "question": "Mi a neve ennek a hackerspace-nek?",
+                "render": "A hackerspace neve: <b>{name}</b>"
+            },
             "is_makerspace": {
                 "mappings": {
                     "0": {
@@ -913,6 +1114,13 @@
             "render": "Hackerspace"
         }
     },
+    "hospital": {
+        "tagRenderings": {
+            "name": {
+                "question": "Mi a neve ennek a kórháznak?"
+            }
+        }
+    },
     "hydrant": {
         "presets": {
             "0": {
@@ -924,6 +1132,18 @@
         "presets": {
             "0": {
                 "title": "fagylaltos bódé"
+            }
+        },
+        "tagRenderings": {
+            "1": {
+                "render": "A fagylaltozó neve: <b>{name}</b>"
+            }
+        }
+    },
+    "indoors": {
+        "tagRenderings": {
+            "name": {
+                "question": "Mi a neve ennek a helyiségnek?"
             }
         }
     },
@@ -945,6 +1165,15 @@
         "presets": {
             "0": {
                 "title": "óvoda"
+            },
+            "1": {
+                "title": "bölcsőde"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "question": "Mi a neve ennek a létesítménynek?",
+                "render": "A létesítmény neve: <b>{name}</b>"
             }
         }
     },
@@ -968,6 +1197,12 @@
         "presets": {
             "0": {
                 "title": "love hotel"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "question": "Mi a neve ennek a love hotelnek?",
+                "render": "A love hotel neve: <b>{name}</b>"
             }
         }
     },
@@ -999,6 +1234,21 @@
             }
         }
     },
+    "observation_tower": {
+        "tagRenderings": {
+            "name": {
+                "question": "Mi a neve ennek a toronynak?",
+                "render": "A torony neve: <b>{name}</b>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "<b>{name}</b>"
+                }
+            }
+        }
+    },
     "parcel_lockers": {
         "presets": {
             "0": {
@@ -1025,12 +1275,22 @@
             "0": {
                 "title": "gyógyszertár"
             }
+        },
+        "tagRenderings": {
+            "name": {
+                "question": "Mi a neve ennek a patikának?"
+            }
         }
     },
     "physiotherapist": {
         "presets": {
             "0": {
                 "title": "gyógytornászrendelő"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "question": "Mi a neve ennek a gyógytornász-rendelőnek?"
             }
         }
     },
@@ -1059,6 +1319,18 @@
         "presets": {
             "0": {
                 "title": "rendőrség"
+            },
+            "1": {
+                "title": "rendőrségi ellenőrzőpont"
+            },
+            "2": {
+                "title": "igazgatási célú rendőrségi iroda"
+            }
+        },
+        "tagRenderings": {
+            "police_name": {
+                "question": "Mi a neve ennek a rendőrségi létesítménynek?",
+                "render": "<b>{name}</b>"
             }
         }
     },
@@ -1351,6 +1623,15 @@
         "presets": {
             "0": {
                 "title": "szelektív hulladékgyűjtő konténer"
+            },
+            "1": {
+                "title": "hulladékudvar"
+            }
+        },
+        "tagRenderings": {
+            "recycling-centre-name": {
+                "question": "Mi a neve ennek a hulladékudvarnak?",
+                "render": "A hulladékudva neve: <b>{name}</b>"
             }
         }
     },
@@ -1366,6 +1647,11 @@
             "0": {
                 "title": "általános vagy középiskola"
             }
+        },
+        "tagRenderings": {
+            "school-name": {
+                "question": "Mi a neve ennek az iskolának?"
+            }
         }
     },
     "shops": {
@@ -1373,6 +1659,11 @@
         "presets": {
             "0": {
                 "title": "üzlet"
+            }
+        },
+        "tagRenderings": {
+            "shops-name": {
+                "question": "Mi a neve ennek a boltnak?"
             }
         }
     },
@@ -1415,6 +1706,9 @@
         "presets": {
             "0": {
                 "title": "pingpongasztal"
+            },
+            "1": {
+                "title": "sportpálya"
             }
         }
     },
@@ -1437,12 +1731,27 @@
             "0": {
                 "title": "sztriptízbár"
             }
+        },
+        "tagRenderings": {
+            "name": {
+                "question": "Mi a neve ennek a sztriptízbárnak?",
+                "render": "A sztriptízbár neve: <b>{name}</b>"
+            }
         }
     },
     "surveillance_camera": {
         "presets": {
             "0": {
                 "title": "térfigyelő kamera"
+            },
+            "1": {
+                "title": "falra szerelt térfigyelő kamera"
+            },
+            "2": {
+                "title": "automatikus rendszámfelismerő kamera"
+            },
+            "3": {
+                "title": "falra szerelt automatikus rendszámfelismerő kamera"
             }
         }
     },
@@ -1471,6 +1780,9 @@
         "presets": {
             "0": {
                 "title": "nyilvános WC"
+            },
+            "1": {
+                "title": "akadálymentes illemhellyel is rendelkező WC"
             }
         }
     },
@@ -1485,6 +1797,48 @@
         "presets": {
             "0": {
                 "title": "szálloda"
+            },
+            "1": {
+                "title": "turistaszálló"
+            },
+            "2": {
+                "title": "apartman"
+            },
+            "3": {
+                "title": "nyaralóház"
+            },
+            "4": {
+                "title": "motel"
+            },
+            "5": {
+                "title": "panzió"
+            },
+            "6": {
+                "title": "kis léptékű szálláshely, amelyet jellemzően a tulajdonos üzemeltet"
+            },
+            "7": {
+                "title": "kemping vagy sátrazóhely"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "question": "Mi a neve ennek: {title}?"
+            }
+        }
+    },
+    "trail": {
+        "tagRenderings": {
+            "Name": {
+                "question": "Mi a neve ennek az útnak?",
+                "render": "Az út neve: <b>{name}</b>"
+            }
+        }
+    },
+    "transit_stops": {
+        "tagRenderings": {
+            "stop_name": {
+                "question": "Mi a neve ennek a megállónak?",
+                "render": "A megálló neve: <b>{name}</b>"
             }
         }
     },
@@ -1492,6 +1846,17 @@
         "presets": {
             "0": {
                 "title": "lombos fa"
+            },
+            "1": {
+                "title": "tűlevelű fa"
+            },
+            "2": {
+                "title": "fa"
+            }
+        },
+        "tagRenderings": {
+            "tree_node-name": {
+                "question": "Van-e neve ennek a fának?"
             }
         }
     },
@@ -1555,6 +1920,11 @@
         "presets": {
             "0": {
                 "title": "állatorvos"
+            }
+        },
+        "tagRenderings": {
+            "vetName": {
+                "question": "Mi a neve ennek az állatorvosnak?"
             }
         }
     },
