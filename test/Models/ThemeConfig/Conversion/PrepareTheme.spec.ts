@@ -1,7 +1,7 @@
-import { LayoutConfigJson } from "../../../../src/Models/ThemeConfig/Json/LayoutConfigJson"
+import { ThemeConfigJson } from "../../../../src/Models/ThemeConfig/Json/ThemeConfigJson"
 import { LayerConfigJson } from "../../../../src/Models/ThemeConfig/Json/LayerConfigJson"
 import { PrepareTheme } from "../../../../src/Models/ThemeConfig/Conversion/PrepareTheme"
-import LayoutConfig from "../../../../src/Models/ThemeConfig/LayoutConfig"
+import ThemeConfig from "../../../../src/Models/ThemeConfig/ThemeConfig"
 import bookcaseLayer from "../../../../src/assets/generated/layers/public_bookcase.json"
 import LayerConfig from "../../../../src/Models/ThemeConfig/LayerConfig"
 import { ExtractImages } from "../../../../src/Models/ThemeConfig/Conversion/FixImages"
@@ -14,7 +14,7 @@ import { QuestionableTagRenderingConfigJson } from "../../../../src/Models/Theme
 import Constants from "../../../../src/Models/Constants"
 import { ConversionContext } from "../../../../src/Models/ThemeConfig/Conversion/ConversionContext"
 
-const themeConfigJson: LayoutConfigJson = {
+const themeConfigJson: ThemeConfigJson = {
     description: "Descr",
     icon: "",
     layers: [
@@ -70,7 +70,7 @@ describe("PrepareTheme", () => {
             publicLayers: new Set<string>(),
         })
         let themeConfigJsonPrepared = prepareStep.convertStrict(theme, ConversionContext.test())
-        const themeConfig = new LayoutConfig(themeConfigJsonPrepared)
+        const themeConfig = new ThemeConfig(themeConfigJsonPrepared)
         const layerUnderTest = <LayerConfig>(
             themeConfig.layers.find((l) => l.id === "public_bookcase")
         )
@@ -87,7 +87,7 @@ describe("PrepareTheme", () => {
             sharedLayers,
             publicLayers: new Set<string>(),
         }).convertStrict(themeConfigJson, ConversionContext.test())
-        const themeConfig = new LayoutConfig(themeConfigJsonPrepared)
+        const themeConfig = new ThemeConfig(themeConfigJsonPrepared)
         const layerUnderTest = <LayerConfig>(
             themeConfig.layers.find((l) => l.id === "public_bookcase")
         )
@@ -108,7 +108,7 @@ describe("PrepareTheme", () => {
             },
             ConversionContext.test()
         )
-        const themeConfig = new LayoutConfig(themeConfigJsonPrepared)
+        const themeConfig = new ThemeConfig(themeConfigJsonPrepared)
         const layerUnderTest = <LayerConfig>(
             themeConfig.layers.find((l) => l.id === "public_bookcase")
         )
@@ -149,7 +149,7 @@ describe("PrepareTheme", () => {
             tagRenderings: new Map<string, QuestionableTagRenderingConfigJson>(),
             publicLayers: new Set<string>(),
         }
-        const layout: LayoutConfigJson = {
+        const layout: ThemeConfigJson = {
             description: "A testing theme",
             icon: "",
             id: "",

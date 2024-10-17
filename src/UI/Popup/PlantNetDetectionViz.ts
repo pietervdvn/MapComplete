@@ -49,7 +49,7 @@ export class PlantNetDetectionViz implements SpecialVisualization {
                 ]),
                 tags.data,
                 {
-                    theme: state.layout.id,
+                    theme: state.theme.id,
                     changeType: "plantnet-ai-detection",
                 }
             )

@@ -1113,9 +1113,6 @@
                     },
                     "2": {
                         "then": "Accès limité aux membres d'une école, entreprise ou organisation"
-                    },
-                    "3": {
-                        "then": "Accès limité aux membres d'une école, entreprise ou organisation"
                     }
                 },
                 "question": "Qui peut utiliser ce parking à vélo ?",

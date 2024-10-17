@@ -4,7 +4,7 @@ import Constants from "../../Models/Constants"
 import FilterConfig, { FilterConfigOption } from "../../Models/ThemeConfig/FilterConfig"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
 import LayerState from "../State/LayerState"
-import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
+import ThemeConfig from "../../Models/ThemeConfig/ThemeConfig"
 
 export type FilterSearchResult = { option: FilterConfigOption, filter: FilterConfig, layer: LayerConfig, index: number }
 
@@ -13,9 +13,9 @@ export type FilterSearchResult = { option: FilterConfigOption, filter: FilterCon
  * Searches matching filters
  */
 export default class FilterSearch {
-    private readonly _state: {layerState: LayerState, layout: LayoutConfig}
+    private readonly _state: {layerState: LayerState, theme: ThemeConfig}
 
-    constructor(state:  {layerState: LayerState, layout: LayoutConfig}) {
+    constructor(state:  {layerState: LayerState, theme: ThemeConfig}) {
         this._state = state
     }
 
@@ -30,7 +30,7 @@ export default class FilterSearch {
             return query
         }).filter(q => q.length > 0)
         const possibleFilters: FilterSearchResult[] = []
-        for (const layer of this._state.layout.layers) {
+        for (const layer of this._state.theme.layers) {
             if (!Array.isArray(layer.filters)) {
                 continue
             }

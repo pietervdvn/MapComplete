@@ -63,7 +63,7 @@ export class PointImportFlowState extends ImportFlow<PointImportFlowArguments> {
         }
 
         const newElementAction = new CreateNewNodeAction(tags, location.lat, location.lon, {
-            theme: this.state.layout.id,
+            theme: this.state.theme.id,
             changeType: "import",
             snapOnto: <OsmWay>snapOnto,
             specialMotivation: specialMotivation,

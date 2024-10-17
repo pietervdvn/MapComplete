@@ -6,7 +6,7 @@ import { Tag } from "../../Logic/Tags/Tag"
 import ChangeTagAction from "../../Logic/Osm/Actions/ChangeTagAction"
 import { Changes } from "../../Logic/Osm/Changes"
 import { OsmConnection } from "../../Logic/Osm/OsmConnection"
-import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
+import ThemeConfig from "../../Models/ThemeConfig/ThemeConfig"
 import SvelteUIElement from "../Base/SvelteUIElement"
 import Delete_icon from "../../assets/svg/Delete_icon.svelte"
 
@@ -14,7 +14,7 @@ export default class DeleteImage extends Toggle {
     constructor(
         key: string,
         tags: Store<any>,
-        state: { layout: LayoutConfig; changes?: Changes; osmConnection?: OsmConnection }
+        state: { theme: ThemeConfig; changes?: Changes; osmConnection?: OsmConnection }
     ) {
         const oldValue = tags.data[key]
         const isDeletedBadge = Translations.t.image.isDeleted
@@ -25,7 +25,7 @@ export default class DeleteImage extends Toggle {
                 await state?.changes?.applyAction(
                     new ChangeTagAction(tags.data.id, new Tag(key, oldValue), tags.data, {
                         changeType: "delete-image",
-                        theme: state.layout.id,
+                        theme: state.theme.id,
                     })
                 )
             })
@@ -40,7 +40,7 @@ export default class DeleteImage extends Toggle {
                 await state?.changes?.applyAction(
                     new ChangeTagAction(tags.data.id, new Tag(key, ""), tags.data, {
                         changeType: "answer",
-                        theme: state.layout.id,
+                        theme: state.theme.id,
                     })
                 )
             })

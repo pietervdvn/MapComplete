@@ -1,12 +1,12 @@
 <script lang="ts">
   import { ImmutableStore, Store } from "../../Logic/UIEventSource"
   import { OsmConnection } from "../../Logic/Osm/OsmConnection"
-  import type { MinimalLayoutInformation } from "../../Models/ThemeConfig/LayoutConfig"
+  import type { MinimalThemeInformation } from "../../Models/ThemeConfig/ThemeConfig"
   import Tr from "../Base/Tr.svelte"
   import Translations from "../i18n/Translations"
   import Marker from "../Map/Marker.svelte"
 
-  export let theme: MinimalLayoutInformation & {isOfficial?: boolean}
+  export let theme: MinimalThemeInformation & {isOfficial?: boolean}
   let isCustom: boolean = theme.id.startsWith("https://") || theme.id.startsWith("http://")
   export let state: { layoutToUse?: { id: string }; osmConnection: OsmConnection }
 

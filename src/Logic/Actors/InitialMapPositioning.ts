@@ -1,5 +1,5 @@
 import { ImmutableStore, Store, UIEventSource } from "../UIEventSource"
-import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
+import ThemeConfig from "../../Models/ThemeConfig/ThemeConfig"
 import { LocalStorageSource } from "../Web/LocalStorageSource"
 import { QueryParameters } from "../Web/QueryParameters"
 import Hash from "../Web/Hash"
@@ -25,7 +25,7 @@ export default class InitialMapPositioning {
     public location: UIEventSource<{ lon: number; lat: number }>
     public useTerrain: Store<boolean>
 
-    constructor(layoutToUse: LayoutConfig, geolocationState: GeoLocationState) {
+    constructor(layoutToUse: ThemeConfig, geolocationState: GeoLocationState) {
         function localStorageSynced(
             key: string,
             deflt: number,

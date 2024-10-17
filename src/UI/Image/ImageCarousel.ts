@@ -7,7 +7,7 @@ import Toggle from "../Input/Toggle"
 import ImageProvider, { ProvidedImage } from "../../Logic/ImageProviders/ImageProvider"
 import { OsmConnection } from "../../Logic/Osm/OsmConnection"
 import { Changes } from "../../Logic/Osm/Changes"
-import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
+import ThemeConfig from "../../Models/ThemeConfig/ThemeConfig"
 import SvelteUIElement from "../Base/SvelteUIElement"
 import AttributedImage from "./AttributedImage.svelte"
 
@@ -18,7 +18,7 @@ export class ImageCarousel extends Toggle {
         state: {
             osmConnection?: OsmConnection
             changes?: Changes
-            layout: LayoutConfig
+            theme: ThemeConfig
             previewedImage?: UIEventSource<ProvidedImage>
         }
     ) {

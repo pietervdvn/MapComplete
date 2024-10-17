@@ -567,6 +567,7 @@
           "service:bicycle:retail~*",
           "shop=outdoor",
           "shop=sport",
+          "shop=sports",
           "shop=diy",
           "shop=doityourself"
         ]
@@ -677,6 +678,7 @@
         "or": [
           "service:bicycle:repair~*",
           "shop=sport",
+          "shop=sports",
           "shop=outdoor",
           "shop=bicycle",
           "service:bicycle:retail=yes",
@@ -782,6 +784,7 @@
           "service:bicycle:rental~*",
           "shop=bicycle",
           "shop=sport",
+          "shop=sports",
           "shop=bicycle_repair",
           "shop=outdoor",
           "shop=rental"

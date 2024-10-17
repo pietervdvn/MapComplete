@@ -12,7 +12,7 @@
   import Constants from "../Models/Constants"
   import { ImmutableStore, Store, Stores, UIEventSource } from "../Logic/UIEventSource"
   import ThemesList from "./BigComponents/ThemesList.svelte"
-  import { MinimalLayoutInformation } from "../Models/ThemeConfig/LayoutConfig"
+  import { MinimalThemeInformation } from "../Models/ThemeConfig/ThemeConfig"
   import Eye from "../assets/svg/Eye.svelte"
   import LoginButton from "./Base/LoginButton.svelte"
   import Mastodon from "../assets/svg/Mastodon.svelte"
@@ -46,16 +46,16 @@
 
   let searchIsFocused = new UIEventSource(true)
 
-  const officialThemes: MinimalLayoutInformation[] = ThemeSearch.officialThemes.themes.filter(th => th.hideFromOverview === false)
-  const hiddenThemes: MinimalLayoutInformation[] = ThemeSearch.officialThemes.themes.filter(th => th.hideFromOverview === true)
-  let visitedHiddenThemes: Store<MinimalLayoutInformation[]> = UserRelatedState.initDiscoveredHiddenThemes(state.osmConnection)
+  const officialThemes: MinimalThemeInformation[] = ThemeSearch.officialThemes.themes.filter(th => th.hideFromOverview === false)
+  const hiddenThemes: MinimalThemeInformation[] = ThemeSearch.officialThemes.themes.filter(th => th.hideFromOverview === true)
+  let visitedHiddenThemes: Store<MinimalThemeInformation[]> = UserRelatedState.initDiscoveredHiddenThemes(state.osmConnection)
     .map((knownIds) => hiddenThemes.filter((theme) =>
       knownIds.indexOf(theme.id) >= 0 || state.osmConnection.userDetails.data.name === "Pieter Vander Vennet"
     ))
 
-  const customThemes: Store<MinimalLayoutInformation[]> = Stores.ListStabilized<string>(state.installedUserThemes)
+  const customThemes: Store<MinimalThemeInformation[]> = Stores.ListStabilized<string>(state.installedUserThemes)
     .mapD(stableIds => Utils.NoNullInplace(stableIds.map(id => state.getUnofficialTheme(id))))
-  function filtered(themes: Store<MinimalLayoutInformation[]>): Store<MinimalLayoutInformation[]> {
+  function filtered(themes: Store<MinimalThemeInformation[]>): Store<MinimalThemeInformation[]> {
     return searchStable.map(search => {
       if (!search) {
         return themes.data
@@ -74,9 +74,9 @@
   }
 
 
-  let officialSearched : Store<MinimalLayoutInformation[]>= filtered(new ImmutableStore(officialThemes))
-  let hiddenSearched: Store<MinimalLayoutInformation[]> =  filtered(visitedHiddenThemes)
-  let customSearched: Store<MinimalLayoutInformation[]> = filtered(customThemes)
+  let officialSearched : Store<MinimalThemeInformation[]>= filtered(new ImmutableStore(officialThemes))
+  let hiddenSearched: Store<MinimalThemeInformation[]> =  filtered(visitedHiddenThemes)
+  let customSearched: Store<MinimalThemeInformation[]> = filtered(customThemes)
 
 
   let searchIsFocussed = new UIEventSource(false)

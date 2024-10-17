@@ -20,7 +20,7 @@
   let tags: UIEventSource<Record<string, string>>
   let descriptionTr: TagRenderingConfig = undefined
   if (entry.feature?.properties?.id) {
-    layer = state.layout.getMatchingLayer(entry.feature.properties)
+    layer = state.theme.getMatchingLayer(entry.feature.properties)
     tags = state.featureProperties.getStore(entry.feature.properties.id)
     descriptionTr = layer?.tagRenderings?.find(tr => tr.labels.indexOf("description") >= 0)
   }

@@ -1,7 +1,7 @@
 import ScriptUtils from "./ScriptUtils"
 import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from "fs"
 import licenses from "../src/assets/generated/license_info.json"
-import { LayoutConfigJson } from "../src/Models/ThemeConfig/Json/LayoutConfigJson"
+import { ThemeConfigJson } from "../src/Models/ThemeConfig/Json/ThemeConfigJson"
 import { LayerConfigJson } from "../src/Models/ThemeConfig/Json/LayerConfigJson"
 import Constants from "../src/Models/Constants"
 import {
@@ -29,7 +29,7 @@ import LayerConfig from "../src/Models/ThemeConfig/LayerConfig"
 import PointRenderingConfig from "../src/Models/ThemeConfig/PointRenderingConfig"
 import { ConversionContext } from "../src/Models/ThemeConfig/Conversion/ConversionContext"
 import { GenerateFavouritesLayer } from "./generateFavouritesLayer"
-import LayoutConfig, { MinimalLayoutInformation } from "../src/Models/ThemeConfig/LayoutConfig"
+import ThemeConfig, { MinimalThemeInformation } from "../src/Models/ThemeConfig/ThemeConfig"
 import Translations from "../src/UI/i18n/Translations"
 import { Translatable } from "../src/Models/ThemeConfig/Json/Translatable"
 import { ValidateThemeAndLayers } from "../src/Models/ThemeConfig/Conversion/ValidateThemeAndLayers"
@@ -148,14 +148,14 @@ class LayerOverviewUtils extends Script {
         super("Reviews and generates the compiled themes")
     }
 
-    private static publicLayerIdsFrom(themefiles: LayoutConfigJson[]): Set<string> {
+    private static publicLayerIdsFrom(themefiles: ThemeConfigJson[]): Set<string> {
         const publicThemes = [].concat(...themefiles.filter((th) => !th.hideFromOverview))
 
         return new Set([].concat(...publicThemes.map((th) => this.extractLayerIdsFrom(th))))
     }
 
     private static extractLayerIdsFrom(
-        themeFile: LayoutConfigJson,
+        themeFile: ThemeConfigJson,
         includeInlineLayers = true,
     ): string[] {
         const publicLayerIds: string[] = []
@@ -295,7 +295,7 @@ class LayerOverviewUtils extends Script {
             layerKeywords[id] =  this.layerKeywords(layer)
         })
 
-        const perId = new Map<string, MinimalLayoutInformation>()
+        const perId = new Map<string, MinimalThemeInformation>()
         for (const theme of themes) {
 
             const keywords: Record<string, string[]> = {}
@@ -308,7 +308,7 @@ class LayerOverviewUtils extends Script {
 
             }
 
-            const data = <MinimalLayoutInformation> {
+            const data = <MinimalThemeInformation> {
                 id: theme.id,
                 title: theme.title,
                 shortDescription: LayerOverviewUtils.cleanTranslation(theme.shortDescription),
@@ -342,7 +342,7 @@ class LayerOverviewUtils extends Script {
         )
     }
 
-    writeTheme(theme: LayoutConfigJson) {
+    writeTheme(theme: ThemeConfigJson) {
         if (!existsSync(LayerOverviewUtils.themePath)) {
             mkdirSync(LayerOverviewUtils.themePath)
         }
@@ -519,7 +519,7 @@ class LayerOverviewUtils extends Script {
         )
 
         new ValidateThemeEnsemble().convertStrict(
-            Array.from(sharedThemes.values()).map((th) => new LayoutConfig(th, true)),
+            Array.from(sharedThemes.values()).map((th) => new ThemeConfig(th, true)),
         )
 
         if (recompiledThemes.length > 0) {
@@ -545,7 +545,7 @@ class LayerOverviewUtils extends Script {
                 if: "theme=" + th.id,
                 then: th.icon,
             }))
-            const proto: LayoutConfigJson = JSON.parse(
+            const proto: ThemeConfigJson = JSON.parse(
                 readFileSync("./assets/themes/mapcomplete-changes/mapcomplete-changes.proto.json", {
                     encoding: "utf8",
                 }),
@@ -689,7 +689,7 @@ class LayerOverviewUtils extends Script {
      * @param themeFile
      * @private
      */
-    private extractJavascriptCode(themeFile: LayoutConfigJson) {
+    private extractJavascriptCode(themeFile: ThemeConfigJson) {
         const allCode = [
             "import {Feature} from 'geojson'",
             "import { ExtraFuncType } from \"../../../Logic/ExtraFunctions\";",
@@ -804,10 +804,10 @@ class LayerOverviewUtils extends Script {
         recompiledThemes: string[],
         forceReload: boolean,
         whitelist: Set<string>,
-    ): Map<string, LayoutConfigJson> {
+    ): Map<string, ThemeConfigJson> {
         console.log("   ---------- VALIDATING BUILTIN THEMES ---------")
         const themeFiles = ScriptUtils.getThemeFiles()
-        const fixed = new Map<string, LayoutConfigJson>()
+        const fixed = new Map<string, ThemeConfigJson>()
 
         const publicLayers = LayerOverviewUtils.publicLayerIdsFrom(
             themeFiles.map((th) => th.parsed),

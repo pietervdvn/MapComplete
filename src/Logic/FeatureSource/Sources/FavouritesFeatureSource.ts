@@ -49,7 +49,7 @@ export default class FavouritesFeatureSource extends StaticFeatureSource {
 
         const featuresWithoutAlreadyPresent = features.map((features) =>
             features.filter(
-                (feat) => !state.layout.layers.some((l) => l.id === feat.properties._orig_layer)
+                (feat) => !state.theme.layers.some((l) => l.id === feat.properties._orig_layer)
             )
         )
 

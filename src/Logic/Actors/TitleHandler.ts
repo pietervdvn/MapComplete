@@ -12,11 +12,11 @@ export default class TitleHandler {
         const currentTitle: Store<string> = selectedElement.map(
             (selected) => {
                 const lng = Locale.language.data
-                const defaultTitle = state.layout?.title?.textFor(lng) ?? "MapComplete"
+                const defaultTitle = state.theme?.title?.textFor(lng) ?? "MapComplete"
                 if (selected === undefined) {
                     return defaultTitle
                 }
-                const layer = state.layout.getMatchingLayer(selected.properties)
+                const layer = state.theme.getMatchingLayer(selected.properties)
                 if (layer === undefined) {
                     return defaultTitle
                 }

@@ -1,4 +1,4 @@
-import LayoutConfig, { MinimalLayoutInformation } from "../../Models/ThemeConfig/LayoutConfig"
+import ThemeConfig, { MinimalThemeInformation } from "../../Models/ThemeConfig/ThemeConfig"
 import { OsmConnection } from "../Osm/OsmConnection"
 import { MangroveIdentity } from "../Web/MangroveReviews"
 import { Store, Stores, UIEventSource } from "../UIEventSource"
@@ -183,7 +183,7 @@ export default class UserRelatedState {
 
     constructor(
         osmConnection: OsmConnection,
-        layout?: LayoutConfig,
+        layout?: ThemeConfig,
         featureSwitches?: FeatureSwitchState,
         mapProperties?: MapProperties,
     ) {
@@ -277,14 +277,14 @@ export default class UserRelatedState {
      *
      * @param themeInfo note that themeInfo.id should be the URL where it was found
      */
-    public addUnofficialTheme(themeInfo: MinimalLayoutInformation) {
+    public addUnofficialTheme(themeInfo: MinimalThemeInformation) {
         const pref = this.osmConnection.getPreference("unofficial-theme-" + themeInfo.id)
         this.osmConnection.isLoggedIn.when(
             () =>        pref.set(JSON.stringify(themeInfo))
         )
     }
 
-    public getUnofficialTheme(id: string): MinimalLayoutInformation | undefined {
+    public getUnofficialTheme(id: string): MinimalThemeInformation | undefined {
         const pref = this.osmConnection.getPreference("unofficial-theme-" + id)
         const str = pref.data
 
@@ -307,7 +307,7 @@ export default class UserRelatedState {
         }
     }
 
-    public markLayoutAsVisited(layout: LayoutConfig) {
+    public markLayoutAsVisited(layout: ThemeConfig) {
         if (!layout) {
             console.error("Trying to mark a layout as visited, but ", layout, " got passed")
             return
@@ -399,7 +399,7 @@ export default class UserRelatedState {
      * This is inherently a dirty and chaotic method, as it shoves many properties into this EventSource
      * */
     private initAmendedPrefs(
-        layout?: LayoutConfig,
+        layout?: ThemeConfig,
         featureSwitches?: FeatureSwitchState,
     ): UIEventSource<Record<string, string>> {
         const amendedPrefs = new UIEventSource<Record<string, string>>({

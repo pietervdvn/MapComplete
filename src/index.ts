@@ -1,4 +1,4 @@
-import DetermineLayout from "./Logic/DetermineLayout"
+import DetermineTheme from "./Logic/DetermineTheme"
 import ThemeViewState from "./Models/ThemeViewState"
 import SvelteUIElement from "./UI/Base/SvelteUIElement"
 import ThemeViewGUI from "./UI/ThemeViewGUI.svelte"
@@ -48,13 +48,13 @@ async function main() {
         if (!webgl_support()) {
             throw "WebGL is not supported or not enabled. This is essential for MapComplete to function, please enable this."
         }
-        const [layout, availableLayers] = await Promise.all([
-            DetermineLayout.GetLayout(),
+        const [theme, availableLayers] = await Promise.all([
+            DetermineTheme.getTheme(),
             await getAvailableLayers(),
         ])
         availableLayers?.delete("cycle_highways") // TODO remove after next cache.mapcomplete.org update
         console.log("The available layers on server are", Array.from(availableLayers))
-        const state = new ThemeViewState(layout, availableLayers)
+        const state = new ThemeViewState(theme, availableLayers)
         const target = document.getElementById("maindiv")
         const childs = Array.from(target.children)
         new ThemeViewGUI({
@@ -67,7 +67,7 @@ async function main() {
         })
     } catch (err) {
         console.error("Error while initializing: ", err, err.stack)
-        const customDefinition = DetermineLayout.getCustomDefinition()
+        const customDefinition = DetermineTheme.getCustomDefinition()
         new Combine([
             new FixedUiElement(err.toString().split("\n").join("<br/>")).SetClass("block alert"),
 
@@ -77,7 +77,7 @@ async function main() {
                       "Download the raw file"
                   ).onClick(() =>
                       Utils.offerContentsAsDownloadableFile(
-                          DetermineLayout.getCustomDefinition(),
+                          DetermineTheme.getCustomDefinition(),
                           "mapcomplete-theme.json",
                           { mimetype: "application/json" }
                       )

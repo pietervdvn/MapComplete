@@ -34,6 +34,7 @@
         "geoJson": "https://maproulette.org/api/v2/challenge/view/43282",
         "idKey": "mr_taskId"
       },
+      "isShown": "ref:velopark!~https://data.velopark.be/data/NMBS.*",
       "title": {
         "render": "Velopark parking <span class='literal-code'>{mr_velopark_id}</span>"
       },

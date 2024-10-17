@@ -37,7 +37,7 @@
                 "title": "a billboard mounted to a wall"
             },
             "10": {
-                "title": "a screen mounted on a transport shelter"
+                "title": "a screen mounted on a transit shelter"
             },
             "11": {
                 "description": "A piece of waterproof textile with a printed message, permanently anchored on a wall",
@@ -63,10 +63,10 @@
                 "title": "a poster box mounted on a wall"
             },
             "4": {
-                "title": "a poster box that is part of a public transport shelter"
+                "title": "a poster box part of a public transport shelter"
             },
             "5": {
-                "description": "Small billboard for neighbourhood advertising, generally targetting pedestrians",
+                "description": "Small billboard for neighbourhood advertising, generally intended for pedestrians",
                 "title": "a board"
             },
             "6": {
@@ -93,7 +93,7 @@
                         "then": "This object has advertisements on both sides"
                     }
                 },
-                "question": "How many sides display advertisements?"
+                "question": "From how many sides you can watch advertisments?"
             },
             "animated": {
                 "mappings": {
@@ -175,7 +175,7 @@
                 "render": "Operated by {operator}"
             },
             "ref": {
-                "question": "What is the reference number?",
+                "question": "Wich is the reference number?",
                 "render": "Reference number is {ref}"
             },
             "type": {
@@ -263,7 +263,7 @@
         }
     },
     "aerialway": {
-        "description": "Various forms of transport for passengers and goods that use wires, including cable cars, gondolas, chair lifts, drag lifts, and zip lines.",
+        "description": "Various forms of transport for passengers and goods that use wires, including cable cars, gondolas, chair lifts, drag lifts, and zip lines. ",
         "name": "Aerialways",
         "pointRendering": {
             "1": {
@@ -274,16 +274,16 @@
         },
         "tagRenderings": {
             "duration": {
-                "question": "How long does a single journey take on this elevator?",
+                "question": "How long takes a single journey with this elevator?",
                 "questionHint": "This excludes the waiting time.",
                 "render": "A single journey takes {duration} minutes"
             },
             "length": {
-                "render": "This aerialway is {_length:km} kilometers long"
+                "render": "This aerialway is {_length:km} kilometer long"
             },
             "occupancy": {
-                "question": "How many people fit in a single carriage?",
-                "render": "{aerialway:occupancy} people fit in a single carriage"
+                "question": "How many people fit a single carriage?",
+                "render": "{aerialway:occupancy} people fit a single carriage"
             },
             "oneway": {
                 "mappings": {
@@ -302,10 +302,10 @@
                         "then": "This is a cable car where the car goes up and down again on the same cable."
                     },
                     "1": {
-                        "then": "This is a gondola where the cars loop around once reaching the end."
+                        "then": "This is a gondola where the cars go around in continuous circles"
                     },
                     "10": {
-                        "then": "A zip line. (A tourist attraction where adventurous people go down at high speeds)"
+                        "then": "A zip line. (A touristical attraction where adventurous people go down at high speeds) "
                     },
                     "2": {
                         "then": "An open chairlift with seats to sit on and open to the outside air."
@@ -326,7 +326,7 @@
                         "then": "A drag lift with a platter to drag a single passenger at a time"
                     },
                     "8": {
-                        "then": "A tow line which which drags skiers"
+                        "then": "A tow line which which drags skieers"
                     },
                     "9": {
                         "then": "A magic carpet (a conveyor belt on the ground)"
@@ -389,7 +389,7 @@
         }
     },
     "animal_shelter": {
-        "description": "An animal shelter is a facility where animals in trouble are brought and facility staff (volunteers or not) feeds and cares for them, rehabilitating and healing them if necessary. This definition includes kennels for abandoned dogs, catteries for abandoned cats, shelters for other abandoned pets and wildlife recovery centres.",
+        "description": "An animal shelter is a facility where animals in trouble are brought and facility's staff (volunteers or not) feeds them and cares of them, rehabilitating and healing them if necessary. This definition includes kennels for abandoned dogs, catteries for abandoned cats, shelters for other abandoned pets and wildlife recovery centres. ",
         "name": "Animal shelters",
         "presets": {
             "0": {
@@ -410,7 +410,7 @@
                         "then": "Animals are taken care of for the rest of their lives"
                     },
                     "2": {
-                        "then": "Injured animals are rehabilitated here until they can be released in nature again"
+                        "then": "Injured animals are rehabilitated here until they can be released in nature again "
                     }
                 },
                 "question": "What is the purpose of the animal shelter?"
@@ -447,7 +447,7 @@
         }
     },
     "artwork": {
-        "description": "An open map of statues, busts, graffiti and other artworks all over the world",
+        "description": "An open map of statues, busts, graffitis and other artwork all over the world",
         "name": "Artworks",
         "presets": {
             "0": {
@@ -508,11 +508,11 @@
                         "then": "Relief"
                     }
                 },
-                "question": "What type of artwork is this?",
+                "question": "What is the type of this artwork?",
                 "render": "This is a {artwork_type}"
             },
             "artwork-website": {
-                "question": "Is there an official website with more information about this artwork?",
+                "question": "Is there a website with more information about this artwork?",
                 "render": {
                     "special": {
                         "text": "More information on this website"
@@ -559,7 +559,7 @@
         }
     },
     "assembly_point": {
-        "description": "This layer shows assembly points and waiting areas, where employees, passengers or a large crowd assemble in case of an emergency.",
+        "description": "This layer contains assembly points and waiting areas where all employees, passengers or a large crowd assemble in case of an emergency.",
         "name": "Emergency assembly points",
         "presets": {
             "0": {
@@ -598,7 +598,7 @@
         }
     },
     "assisted_repair": {
-        "description": "A self-assisted workshop is a location where people can repair their goods with help of volunteers and provided tools. A repair café is a type of event organized regularly along the same principles.",
+        "description": "A self-assisted workshop is a location where people can come and repair their goods with help of volunteers and with the tools available at the given location.  A repair café is a type of event organized regularly along the same principles.",
         "name": "Repair cafés and assisted repair workshops",
         "presets": {
             "0": {
@@ -838,7 +838,7 @@
                         "then": "Triple, three barriers behind each other"
                     },
                     "3": {
-                        "then": "Squeeze gate - the gap is smaller at the top than at the bottom"
+                        "then": "Squeeze gate, gap is smaller at top, than at the bottom"
                     }
                 },
                 "question": "What kind of cycling barrier is this?"
@@ -915,7 +915,7 @@
                         "then": "Private"
                     },
                     "3": {
-                        "then": "Access until revoked (Permissive)"
+                        "then": "Access until revoked"
                     },
                     "4": {
                         "then": "Access only for customers"
@@ -952,7 +952,7 @@
                         "then": "Gas"
                     }
                 },
-                "question": "How is the grill fuelled?"
+                "question": "How ist the grill fueled?"
             }
         },
         "title": {
@@ -993,7 +993,7 @@
             "bench-armrest": {
                 "mappings": {
                     "0": {
-                        "then": "This bench has one or more armrests"
+                        "then": "This bench does have one or more armrests"
                     },
                     "1": {
                         "then": "This bench does <b>not</b> have any armrests"
@@ -1144,11 +1144,11 @@
             },
             "nonDeleteMappings": {
                 "0": {
-                    "then": "This bus stop does not have a bench (there never was one, or it has been removed)"
+                    "then": "This bus stop does not have a bench (there never was one or it has been removed)"
                 }
             }
         },
-        "description": "A layer showing all public transport stops that have a bench",
+        "description": "A layer showing all public-transport-stops which do have a bench",
         "name": "Benches at public transport stops",
         "tagRenderings": {
             "bench_at_pt-bench_type": {
@@ -1217,10 +1217,10 @@
             },
             "name": {
                 "freeform": {
-                    "placeholder": "Name of the monitored location"
+                    "placeholder": "Name of the counted location"
                 },
-                "question": "What is the name of the monitored location?",
-                "render": "Name of the monitored location: {name}"
+                "question": "What is the name of the counted location?",
+                "render": "Name of the counted location: {name}"
             },
             "ref": {
                 "freeform": {
@@ -1254,7 +1254,7 @@
         }
     },
     "bicycle_library": {
-        "description": "A facility where bicycles can be lent for a longer period of time",
+        "description": "A facility where bicycles can be lent for longer period of times",
         "name": "Bicycle library",
         "presets": {
             "0": {
@@ -1266,13 +1266,13 @@
             "bicycle-library-target-group": {
                 "mappings": {
                     "0": {
-                        "then": "Bikes for children are available"
+                        "then": "Bikes for children available"
                     },
                     "1": {
-                        "then": "Bikes for adults are available"
+                        "then": "Bikes for adult available"
                     },
                     "2": {
-                        "then": "Bikes for disabled people available"
+                        "then": "Bikes for disabled persons available"
                     }
                 },
                 "question": "Who can loan bicycles here?"
@@ -1307,7 +1307,7 @@
             },
             "nonDeleteMappings": {
                 "0": {
-                    "then": "This bicycle shop used to rent out bikes, but no longer does"
+                    "then": "This bicycle shop used to rent out bikes but doesn't rent out bikes anymore"
                 }
             }
         },
@@ -1335,10 +1335,10 @@
                         "then": "BMX bikes can be rented here"
                     },
                     "3": {
-                        "then": "Mountain bikes can be rented here"
+                        "then": "Mountainbikes can be rented here"
                     },
                     "4": {
-                        "then": "Children's bikes can be rented here"
+                        "then": "Bikes for children can be rented here"
                     },
                     "5": {
                         "then": "Tandem bicycles can be rented here"
@@ -1371,7 +1371,7 @@
                         "then": "This is an automated docking station, where a bicycle is mechanically locked to a structure"
                     },
                     "4": {
-                        "then": "A machine is present which dispenses and accepts keys after authentication and/or payment. The bicycles are parked nearby"
+                        "then": "A machine is present which dispenses and accepts keys, eventually after authentication and/or payment. The bicycles are parked nearby"
                     },
                     "5": {
                         "then": "This is a dropoff point, e.g. a reserved parking to place the bicycles clearly marked as being for the rental service only"
@@ -1395,13 +1395,13 @@
                             "1": "electrical bikes"
                         },
                         "2": {
-                            "1": "Children's bikes"
+                            "1": "bikes for children"
                         },
                         "3": {
                             "1": "BMX bikes"
                         },
                         "4": {
-                            "1": "mountain bikes"
+                            "1": "mountainbikes"
                         },
                         "5": {
                             "1": "bicycle panniers"
@@ -1423,64 +1423,64 @@
         }
     },
     "bike_cafe": {
-        "description": "A bike café is a café geared towards cyclists, for example with services such as a pump, and with bicycle-related decoration.",
-        "name": "Bike café",
+        "description": "A bike café is a café geared towards cyclists, for example with services such as a pump, with lots of bicycle-related decoration, …",
+        "name": "Bike cafe",
         "presets": {
             "0": {
-                "title": "a bike café"
+                "title": "a bike cafe"
             }
         },
         "tagRenderings": {
             "bike_cafe-bike-pump": {
                 "mappings": {
                     "0": {
-                        "then": "This bike café offers a bike pump for anyone"
+                        "then": "This bike cafe offers a bike pump for anyone"
                     },
                     "1": {
-                        "then": "This bike café doesn't offer a bike pump for anyone"
+                        "then": "This bike cafe doesn't offer a bike pump for anyone"
                     }
                 },
-                "question": "Does this bike café offer a bike pump for use by anyone?"
+                "question": "Does this bike cafe offer a bike pump for use by anyone?"
             },
             "bike_cafe-name": {
-                "question": "What is the name of this bike café?",
-                "render": "This bike café is called {name}"
+                "question": "What is the name of this bike cafe?",
+                "render": "This bike cafe is called {name}"
             },
             "bike_cafe-repair-service": {
                 "mappings": {
                     "0": {
-                        "then": "This bike café repairs bikes"
+                        "then": "This bike cafe repairs bikes"
                     },
                     "1": {
-                        "then": "This bike café doesn't repair bikes"
+                        "then": "This bike cafe doesn't repair bikes"
                     }
                 },
-                "question": "Does this bike café repair bikes?"
+                "question": "Does this bike cafe repair bikes?"
             },
             "bike_cafe-repair-tools": {
                 "mappings": {
                     "0": {
-                        "then": "This bike café offers tools for DIY repair"
+                        "then": "This bike cafe offers tools for DIY repair"
                     },
                     "1": {
-                        "then": "This bike café doesn't offer tools for DIY repair"
+                        "then": "This bike cafe doesn't offer tools for DIY repair"
                     }
                 },
                 "question": "Are tools offered to repair your own bike?"
             },
             "opening_hours": {
                 "override": {
-                    "question": "When is this bike café open?"
+                    "question": "When it this bike café opened?"
                 }
             }
         },
         "title": {
             "mappings": {
                 "0": {
-                    "then": "Bike café <i>{name}</i>"
+                    "then": "Bike cafe <i>{name}</i>"
                 }
             },
-            "render": "Bike café"
+            "render": "Bike cafe"
         }
     },
     "bike_cleaning": {
@@ -1547,7 +1547,7 @@
                         "then": "Access is limited to members of a school, company or organisation"
                     },
                     "3": {
-                        "then": "Access is limited to members of a school, company or organisation"
+                        "then": "Private bicycle parking which is never available to the public, also not via a membership fee"
                     }
                 },
                 "question": "Who can use this bicycle parking?",
@@ -1591,7 +1591,7 @@
             },
             "Capacity": {
                 "question": "How many bicycles fit in this bicycle parking?",
-                "questionHint": "This includes all types of bicycle - regular, cargo, ebike etc.",
+                "questionHint": "This includes regular bicycles, cargo bikes, ebikes, ...",
                 "render": "Place for {capacity} bikes"
             },
             "Cargo bike capacity?": {
@@ -1659,11 +1659,11 @@
                         "then": "Free to use"
                     }
                 },
-                "question": "Is it free to park a bicycle here?"
+                "question": "Are these bicycle parkings free to use?"
             },
             "maxstay": {
                 "question": "What is the maximum allowed parking duration?",
-                "questionHint": "If the bicycle is parked for longer, it might be removed by the operator",
+                "questionHint": "If the bicycle is parked for a longer amount, it might be removed by the operator",
                 "render": "A bike can be parked here for at most {canonical(maxstay)}"
             },
             "operator": {
@@ -1675,7 +1675,7 @@
             },
             "operator_phone": {
                 "question": "What is the phone number of the operator of this bicycle parking?",
-                "questionHint": "One might be able to call this number in case of problems, e.g. to remove abandoned bicycles"
+                "questionHint": "One might be able to call this number in case of problems, e.g. to remove unmaintained bicycles"
             },
             "operator_website": {
                 "question": "What is the website number of the operator of this bicycle parking?"
@@ -1690,15 +1690,15 @@
         "name": "Bicycle pump and repair",
         "presets": {
             "0": {
-                "description": "A device to inflate your tires in a fixed location in a public space.",
+                "description": "A device to inflate your tires on a fixed location in the public space.",
                 "title": "a bike pump"
             },
             "1": {
-                "description": "A bicycle pump and tools to repair your bike in a public space. The tools are often secured with chains against theft.",
+                "description": "A bicycle pump and tools to repair your bike in the public space. The tools are often secured with chains against theft.",
                 "title": "a bike repair station and pump"
             },
             "2": {
-                "description": "Tools to repair your bike in a public space (without pump). The tools are secured against theft.",
+                "description": "Tools to repair your bike in the public space (without pump). The tools are secured against theft.",
                 "title": "a bike repair station without pump"
             }
         },
@@ -1787,16 +1787,16 @@
             "bike_repair_station-manometer": {
                 "mappings": {
                     "0": {
-                        "then": "There is a pressure gauge"
+                        "then": "There is a manometer"
                     },
                     "1": {
-                        "then": "There is no pressure gauge"
+                        "then": "There is no manometer"
                     },
                     "2": {
-                        "then": "There is a pressure gauge but it is broken"
+                        "then": "There is manometer but it is broken"
                     }
                 },
-                "question": "Does the pump have a pressure gauge?"
+                "question": "Does the pump have a pressure indicator or manometer?"
             },
             "bike_repair_station-operator": {
                 "question": "Who maintains this cycle pump?",
@@ -1814,11 +1814,11 @@
                         "then": "Dunlop"
                     },
                     "2": {
-                        "then": "Schrader (cars and mountain bikes)"
+                        "then": "Schrader (cars and mountainbikes)"
                     }
                 },
-                "question": "What valves are available?",
-                "render": "This pump has the following valves: {valves}"
+                "question": "What valves are supported?",
+                "render": "This pump supports the following valves: {valves}"
             },
             "opening_hours_24_7": {
                 "override": {
@@ -1905,7 +1905,7 @@
         }
     },
     "bike_themed_object": {
-        "description": "A layer with bike-themed objects that don't match any other layer",
+        "description": "A layer with bike-themed objects but who don't match any other layer",
         "name": "Bike-related object",
         "title": {
             "mappings": {
@@ -1922,7 +1922,7 @@
         "presets": {
             "0": {
                 "description": "A telescope or pair of binoculars mounted on a pole, available to the public to look around. <img src='./assets/layers/binocular/binoculars_example.jpg' style='height: 300px; width: auto; display: block;' />",
-                "title": "binoculars"
+                "title": "a binocular"
             }
         },
         "tagRenderings": {
@@ -1997,10 +1997,10 @@
                         "then": "There are special provisions for wheelchair users"
                     },
                     "1": {
-                        "then": "A wheelchair user can easily use this bird hide"
+                        "then": "A wheelchair can easily use this birdhide"
                     },
                     "2": {
-                        "then": "This bird hide is accessible in a wheelchair, but it is not easy"
+                        "then": "This birdhide is reachable by wheelchair, but it is not easy"
                     },
                     "3": {
                         "then": "Not accessible to wheelchair users"
@@ -2034,7 +2034,7 @@
         }
     },
     "brothel": {
-        "description": "An establishment specifically dedicated to prostitution.",
+        "description": "An establishment specifically dedicated to prostitution. ",
         "name": "Brothels",
         "presets": {
             "0": {
@@ -2059,11 +2059,11 @@
                 }
             }
         },
-        "description": "A layer showing cafés and pubs where one can gather around a drink.",
+        "description": "A layer showing cafés and pubs where one can gather around a drink. The layer asks for some relevant questions",
         "name": "Cafés and pubs",
         "presets": {
             "0": {
-                "description": "A pub, mostly for drinking beer in a warm, relaxed interior",
+                "description": "A pub, mostly for drinking beers in a warm, relaxed interior",
                 "title": "a pub"
             },
             "1": {
@@ -2071,11 +2071,11 @@
                 "title": "a bar"
             },
             "2": {
-                "description": "A <b>café</b> to drink tea, coffee or an alcoholic beverage in a quiet environment",
-                "title": "a café"
+                "description": "A <b>cafe</b> to drink tea, coffee or an alcoholical bevarage in a quiet environment",
+                "title": "a cafe"
             },
             "3": {
-                "description": "A <b>nightclub</b> or disco with a focus on dancing, music by a DJ with accompanying light show and a bar to get alcoholic) drinks",
+                "description": "A <b>nightclub</b> or disco with a focus on dancing, music by a DJ with accompanying light show and a bar to get (alcoholic) drinks",
                 "title": "a nightclub or disco"
             }
         },
@@ -2083,25 +2083,25 @@
             "Classification": {
                 "mappings": {
                     "0": {
-                        "then": "A pub, mostly for drinking beer in a warm, relaxed interior"
+                        "then": "A pub, mostly for drinking beers in a warm, relaxed interior"
                     },
                     "1": {
                         "then": "A more modern and commercial <b>bar</b>, possibly with a music and light installation"
                     },
                     "2": {
-                        "then": "A <b>café</b> to drink tea, coffee or an alcoholic beverage in a quiet environment"
+                        "then": "A <b>cafe</b> to drink tea, coffee or an alcoholical bevarage in a quiet environment"
                     },
                     "3": {
                         "then": "A <b>restaurant</b> where one can get a proper meal"
                     },
                     "4": {
-                        "then": "This is a beer garden: an open-air space where beer is served, typically seen in Germany"
+                        "then": "An open space where beer is served, typically seen in Germany"
                     },
                     "5": {
                         "then": "This is a <b>nightclub</b> or disco with a focus on dancing, music by a DJ with accompanying light show and a bar to get (alcoholic) drinks"
                     }
                 },
-                "question": "What kind of café is this?"
+                "question": "What kind of cafe is this?"
             },
             "Name": {
                 "question": "What is the name of this business?",
@@ -2117,7 +2117,7 @@
                     "then": "Bar"
                 },
                 "2": {
-                    "then": "Café"
+                    "then": "Cafe"
                 },
                 "3": {
                     "then": "Nightclub"
@@ -2154,18 +2154,18 @@
         }
     },
     "caravansites": {
-        "description": "caravan sites",
-        "name": "Caravan sites",
+        "description": "camper sites",
+        "name": "Camper sites",
         "presets": {
             "0": {
-                "description": "A layer showing (official) campervan sites. These are designated places to stay overnight with your camper. They might look like a real site or just look like parking. They may not be signposted at all, but just be defined in a municipal decision.",
-                "title": "a caravan site"
+                "description": "Add a new official camper site. These are designated places to stay overnight with your camper. They might look like a real camping or just look like a parking. They might not be signposted at all, but just be defined in a municipal decision. A regular parking intended for campers where it is not expected to spend the night, is -not- a camper site ",
+                "title": "a camper site"
             }
         },
         "tagRenderings": {
             "caravansites-capacity": {
-                "question": "How many caravans can stay here? (skip if there is no obvious number of spaces or allowed vehicles)",
-                "render": "{capacity} caravans can use this place at the same time"
+                "question": "How many campers can stay here? (skip if there is no obvious number of spaces or allowed vehicles)",
+                "render": "{capacity} campers can use this place at the same time"
             },
             "caravansites-charge": {
                 "question": "How much does this place charge?",
@@ -2259,10 +2259,10 @@
         "title": {
             "mappings": {
                 "0": {
-                    "then": "Unnamed caravan site"
+                    "then": "Unnamed camper site"
                 }
             },
-            "render": "Caravan site {name}"
+            "render": "Camper site {name}"
         }
     },
     "charging_station": {
@@ -2370,22 +2370,22 @@
         },
         "tagRenderings": {
             "Auth phone": {
-                "question": "What phone number should you contact to authenticate (call or text)?",
-                "render": "Authenticate by calling or texting <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>"
+                "question": "What's the phone number for authentication call or SMS?",
+                "render": "Authenticate by calling or SMS'ing to <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>"
             },
             "Authentication": {
                 "mappings": {
                     "0": {
-                        "then": "Authentication with a membership card"
+                        "then": "Authentication by a membership card"
                     },
                     "1": {
-                        "then": "Authentication with an app"
+                        "then": "Authentication by an app"
                     },
                     "2": {
                         "then": "Authentication via phone call is available"
                     },
                     "3": {
-                        "then": "Authentication via text message is available"
+                        "then": "Authentication via SMS is available"
                     },
                     "4": {
                         "then": "Authentication via NFC is available"
@@ -2547,7 +2547,7 @@
             },
             "OH": {
                 "override": {
-                    "question": "When is this charging station open?"
+                    "question": "When is this charging station opened?"
                 }
             },
             "Operational status": {
@@ -2588,7 +2588,7 @@
                         "then": "An additional parking fee should be paid while charging"
                     }
                 },
-                "question": "Do you have to pay a parking fee while charging?"
+                "question": "Does one have to pay a parking fee while charging?"
             },
             "Type": {
                 "mappings": {
@@ -2622,7 +2622,7 @@
                         "then": "Only customers of the place this station belongs to can use this charging station<br/><span class='subtle'>E.g. a charging station operated by hotel which is only usable by their guests</span>"
                     },
                     "3": {
-                        "then": "A <b>key</b> must be requested to access this charging station<br/><span class='subtle'>E.g. a charging station operated by hotel which is only usable by their guests, who receive a key from the reception to unlock the charging station</span>"
+                        "then": "A <b>key</b> must be requested to access this charging station<br/><span class='subtle'>E.g. a charging station operated by hotel which is only usable by their guests, which receive a key from the reception to unlock the charging station</span>"
                     },
                     "4": {
                         "then": "Not accessible to the general public (e.g. only accessible to the owners, employees, ...)"
@@ -2635,11 +2635,11 @@
                 "render": "Access is {access}"
             },
             "capacity": {
-                "question": "How many vehicles can be charged here at the same time?",
+                "question": "How much vehicles can be charged here at the same time?",
                 "render": "{capacity} vehicles can be charged here at the same time"
             },
             "charge": {
-                "question": "How much do you have to pay to use this charging station?",
+                "question": "How much does one have to pay to use this charging station?",
                 "render": "Using this charging station costs <b>{charge}</b>"
             },
             "email": {
@@ -2658,7 +2658,7 @@
                         "then": "Free to use"
                     },
                     "3": {
-                        "then": "Paid use, but free for customers of the hotel/pub/hospital/... which operates the charging station"
+                        "then": "Paid use, but free for customers of the hotel/pub/hospital/... who operates the charging station"
                     },
                     "4": {
                         "then": "Paid use"
@@ -2669,14 +2669,14 @@
             "maxstay": {
                 "mappings": {
                     "0": {
-                        "then": "No time limit on leaving your vehicle here"
+                        "then": "No timelimit on leaving your vehicle here"
                     }
                 },
-                "question": "What is the maximum amount of time you are allowed to stay here?",
+                "question": "What is the maximum amount of time one is allowed to stay here?",
                 "render": "One can stay at most <b>{canonical(maxstay)}</b>"
             },
             "phone": {
-                "question": "What number can you call if there is a problem with this charging station?",
+                "question": "What number can one call if there is a problem with this charging station?",
                 "render": "In case of problems, call <a href='tel:{phone}'>{phone}</a>"
             },
             "questions-technical": {
@@ -2689,7 +2689,7 @@
             "rewritten-questions": {
                 "renderings": {
                     "0": {
-                        "question": "How many plugs of type {{description}} are available here?",
+                        "question": "How much plugs of type {{description}} are available here?",
                         "render": "There are <b class='text-xl'>{{{key}}}</b> plugs of type {{description}} available here"
                     },
                     "1": {
@@ -2800,7 +2800,7 @@
         }
     },
     "cinema": {
-        "description": "A place showing movies (films), generally open to the public for a fee. Commonly referred to as a movie theater in the US",
+        "description": " A place showing movies (films), generally open to the public for a fee. Commonly referred to as a movie theater in the US",
         "name": "Cinema",
         "tagRenderings": {
             "cinema_type": {
@@ -2820,7 +2820,7 @@
         }
     },
     "climbing": {
-        "description": "A dummy layer which contains tag renderings, shared among the climbing layers",
+        "description": "A dummy layer which contains tagrenderings, shared among the climbing layers",
         "tagRenderings": {
             "average_length": {
                 "question": "What is the (average) length of the routes in meters?",
@@ -2846,7 +2846,7 @@
             "fee": {
                 "mappings": {
                     "0": {
-                        "then": "It's free to climb here"
+                        "then": "Climbing here is free of charge"
                     },
                     "1": {
                         "then": "Paying a fee is required to climb here"
@@ -2911,7 +2911,7 @@
                 "questionHint": "Using your own gear, e.g. chocks"
             },
             "website": {
-                "question": "Is there a (unofficial) website with more information (e.g. topos)?"
+                "question": "Is there a (unofficial) website with more informations (e.g. topos)?"
             }
         }
     },
@@ -3195,7 +3195,7 @@
         }
     },
     "clock": {
-        "description": "Layer showing public clocks",
+        "description": "Layer with public clocks",
         "name": "Clocks",
         "presets": {
             "0": {
@@ -3217,10 +3217,10 @@
                         "then": "This clock does not display the air pressure"
                     },
                     "2": {
-                        "then": "This clock probably doesn't display the air pressure"
+                        "then": "This clock does probably not display the air pressure"
                     }
                 },
-                "question": "Does this clock also display the air pressure? (barometer)"
+                "question": "Does this clock also display the air pressure?"
             },
             "date": {
                 "mappings": {
@@ -3231,7 +3231,7 @@
                         "then": "This clock does not display the date"
                     },
                     "2": {
-                        "then": "This clock probably doesn't display the date"
+                        "then": "This clock does probably not display the date"
                     }
                 },
                 "question": "Does this clock also display the date?"
@@ -3280,7 +3280,7 @@
                         "then": "This clock does not display the humidity"
                     },
                     "2": {
-                        "then": "This clock probably doesn't display the humidity"
+                        "then": "This clock does probably not display the humidity"
                     }
                 },
                 "question": "Does this clock also display the humidity?"
@@ -3311,7 +3311,7 @@
                         "then": "This clock does not display the temperature"
                     },
                     "2": {
-                        "then": "This clock probably doesn't display the temperature"
+                        "then": "This clock does probably not display the temperature"
                     }
                 },
                 "question": "Does this clock also display the temperature?"
@@ -3336,11 +3336,11 @@
         }
     },
     "crossings": {
-        "description": "Crossings for pedestrians and/or cyclists",
+        "description": "Crossings for pedestrians and cyclists",
         "name": "Crossings",
         "presets": {
             "0": {
-                "description": "Layer showing crossings for pedestrians and/or cyclists",
+                "description": "Crossing for pedestrians and/or cyclists",
                 "title": "a crossing"
             },
             "1": {
@@ -3374,13 +3374,13 @@
             "crossing-button": {
                 "mappings": {
                     "0": {
-                        "then": "This traffic light has a button to request a green light"
+                        "then": "This traffic light has a button to request green light"
                     },
                     "1": {
-                        "then": "This traffic light does not have a button to request a green light"
+                        "then": "This traffic light does not have a button to request green light"
                     }
                 },
-                "question": "Does this traffic light have a button to request a green light?"
+                "question": "Does this traffic light have a button to request green light?"
             },
             "crossing-continue-through-red": {
                 "mappings": {
@@ -3469,7 +3469,7 @@
                         "then": "This crossing does not have tactile paving"
                     },
                     "2": {
-                        "then": "This crossing has tactile paving, but it doesn't meet regulations"
+                        "then": "This crossing has tactile paving, but is not correct"
                     }
                 },
                 "question": "Does this crossing have tactile paving?"
@@ -5174,7 +5174,7 @@
                     "then": "This is actually a pub"
                 },
                 "1": {
-                    "then": "This is actually a café"
+                    "then": "This is actually a cafe"
                 }
             }
         },
@@ -5550,7 +5550,7 @@
         }
     },
     "ghost_bike": {
-        "description": "A layer showing memorials for cyclists killed in road accidents",
+        "description": "A layer showing memorials for cyclists, killed in road accidents",
         "name": "Ghost bikes",
         "presets": {
             "0": {
@@ -6186,7 +6186,7 @@
         }
     },
     "information_board": {
-        "description": "A layer showing touristic, road side information boards (e.g. giving information about the landscape, a building, a feature, a map, …)",
+        "description": "A layer showing touristical, road side information boards (e.g. giving information about the landscape, a building, a feature, a map, …)",
         "name": "Information boards",
         "presets": {
             "0": {
@@ -7186,7 +7186,7 @@
         }
     },
     "outdoor_seating": {
-        "description": "Outdoor seating areas, usually located near cafés and restaurants.",
+        "description": "Outdoor seating areas, usually located near cafes and restaurants.",
         "name": "Outdoor Seating",
         "tagRenderings": {
             "access": {
@@ -9652,8 +9652,8 @@
         }
     },
     "slow_roads": {
-        "description": "All car-free roads",
-        "name": "Paths, car-free and slow roads",
+        "description": "All carfree roads",
+        "name": "Paths, carfree and slow roads",
         "tagRenderings": {
             "explanation": {
                 "mappings": {
@@ -9661,7 +9661,7 @@
                         "then": "This is a living street"
                     },
                     "1": {
-                        "then": "This is a wide, car-free street"
+                        "then": "This is a wide, carfree street"
                     },
                     "2": {
                         "then": "This is a footway"

@@ -6,7 +6,7 @@
 
   export let state: SpecialVisualizationState
 
-  let layoutToUse = state.layout
+  let layoutToUse = state.theme
   let iconAttributions: string[] = layoutToUse.getUsedImages()
 
   const allLicenses = {}

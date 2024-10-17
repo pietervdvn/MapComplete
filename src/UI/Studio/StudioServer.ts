@@ -2,7 +2,7 @@ import { Utils } from "../../Utils"
 import Constants from "../../Models/Constants"
 import { LayerConfigJson } from "../../Models/ThemeConfig/Json/LayerConfigJson"
 import { Store, UIEventSource } from "../../Logic/UIEventSource"
-import { LayoutConfigJson } from "../../Models/ThemeConfig/Json/LayoutConfigJson"
+import { ThemeConfigJson } from "../../Models/ThemeConfig/Json/ThemeConfigJson"
 
 /**
  * A small class wrapping around the Server API.
@@ -71,12 +71,12 @@ export default class StudioServer {
     }
 
     async fetch(layerId: string, category: "layers", uid?: number): Promise<LayerConfigJson>
-    async fetch(layerId: string, category: "themes", uid?: number): Promise<LayoutConfigJson>
+    async fetch(layerId: string, category: "themes", uid?: number): Promise<ThemeConfigJson>
     async fetch(
         layerId: string,
         category: "layers" | "themes",
         uid?: number
-    ): Promise<LayerConfigJson | LayoutConfigJson> {
+    ): Promise<LayerConfigJson | ThemeConfigJson> {
         try {
             return <any>await Utils.downloadJson(this.urlFor(layerId, category, uid))
         } catch (e) {

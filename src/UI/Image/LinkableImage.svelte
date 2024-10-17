@@ -45,7 +45,7 @@
     const url = targetValue
     if (isLinked) {
       const action = new LinkImageAction(currentTags.id, key, url, tags, {
-        theme: tags.data._orig_theme ?? state.layout.id,
+        theme: tags.data._orig_theme ?? state.theme.id,
         changeType: "link-image"
       })
       await state.changes.applyAction(action)
@@ -54,7 +54,7 @@
         const v = currentTags[k]
         if (v === url) {
           const action = new ChangeTagAction(currentTags.id, new Tag(k, ""), currentTags, {
-            theme: tags.data._orig_theme ?? state.layout.id,
+            theme: tags.data._orig_theme ?? state.theme.id,
             changeType: "remove-image"
           })
           state.changes.applyAction(action)

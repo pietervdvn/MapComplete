@@ -20,7 +20,7 @@
   const t = Translations.t.favouritePoi
 
   function markFavourite(isFavourite: boolean) {
-    state.favourites.markAsFavourite(feature, layer.id, state.layout.id, tags, isFavourite)
+    state.favourites.markAsFavourite(feature, layer.id, state.theme.id, tags, isFavourite)
   }
 </script>
 

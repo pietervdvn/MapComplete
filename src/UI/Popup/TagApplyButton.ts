@@ -144,7 +144,7 @@ export default class TagApplyButton implements AutoAction, SpecialVisualization 
             new And(tagsToApply.data),
             tags.data, // We pass in the tags of the selected element, not the tags of the target element!
             {
-                theme: state.layout.id,
+                theme: state.theme.id,
                 changeType: "answer",
             }
         )

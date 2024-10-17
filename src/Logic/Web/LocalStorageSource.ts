@@ -1,4 +1,5 @@
 import { UIEventSource } from "../UIEventSource"
+import { Utils } from "../../Utils"
 
 /**
  * UIEventsource-wrapper around localStorage
@@ -30,13 +31,16 @@ export class LocalStorageSource {
             return cached
         }
         let saved = defaultValue
-        try {
-            saved = localStorage.getItem(key)
-            if (saved === "undefined") {
-                saved = undefined
+        if (!Utils.runningFromConsole) {
+
+            try {
+                saved = localStorage.getItem(key)
+                if (saved === "undefined") {
+                    saved = undefined
+                }
+            } catch (e) {
+                console.error("Could not get value", key, "from local storage")
             }
-        } catch (e) {
-            console.error("Could not get value", key, "from local storage")
         }
         const source = new UIEventSource<string>(saved ?? defaultValue, "localstorage:" + key)
 

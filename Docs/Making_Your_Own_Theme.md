@@ -33,7 +33,7 @@ You can create your own theme at https://mapcomplete.org/studio
 What is a good theme?
 ---------------------
 
-A **theme** (or _layout_) is a single map showing one or more layers.
+A **theme** is a single map showing one or more layers.
 The layers should work together in such a way that they serve a certain **audience**.
 You should be able to state in a few sentences whom would be the user of such a map, e.g. 
 
@@ -294,12 +294,12 @@ There are three important levels in the JSON file:
 
 Every field is documented in the source code itself - you can find them here:
 
-- [The top level `LayoutConfig`](/src/Models/ThemeConfig/Json/LayoutConfigJson.ts)
+- [The top level `ThemeConfig`](/src/Models/ThemeConfig/Json/ThemeConfigJson.ts)
 - [A layer object `LayerConfig`](/src/Models/ThemeConfig/Json/LayerConfigJson.ts)
 - [The `TagRendering`](/src/Models/ThemeConfig/Json/TagRenderingConfigJson.ts)
 - At last, the exact semantics of tags are documented [here](Tags_format.md)
 
-A JSON schema file is available in `Docs/Schemas` - use `LayoutConfig.schema.json` to validate a theme file.
+A JSON schema file is available in `Docs/Schemas` - use `ThemeConfig.schema.json` to validate a theme file.
 
 ### MetaTags
 

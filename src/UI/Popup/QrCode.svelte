@@ -17,7 +17,7 @@
   let [lon, lat] = GeoOperations.centerpointCoordinates(feature)
 
   const includeLayout = window.location.pathname.split("/").at(-1).startsWith("theme")
-  const layout = includeLayout ? "layout=" + state.layout.id + "&" : ""
+  const layout = includeLayout ? "layout=" + state.theme.id + "&" : ""
   let id: Store<string> = tags.mapD((tags) => tags.id)
   let url = id.mapD(
     (id) =>

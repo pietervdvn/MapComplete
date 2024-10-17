@@ -30,9 +30,9 @@ export class ShareLinkViz implements SpecialVisualization {
         const text = args[1]
 
         const generateShareData = () => {
-            const title = state?.layout?.title?.txt ?? "MapComplete"
+            const title = state?.theme?.title?.txt ?? "MapComplete"
 
-            let matchingLayer: LayerConfig = state?.layout?.getMatchingLayer(tagSource?.data)
+            let matchingLayer: LayerConfig = state?.theme?.getMatchingLayer(tagSource?.data)
             let name =
                 matchingLayer?.title?.GetRenderValue(tagSource.data)?.Subs(tagSource.data)?.txt ??
                 tagSource.data?.name ??
@@ -49,7 +49,7 @@ export class ShareLinkViz implements SpecialVisualization {
             return {
                 title: name,
                 url: url,
-                text: state?.layout?.shortDescription?.txt ?? "MapComplete",
+                text: state?.theme?.shortDescription?.txt ?? "MapComplete",
             }
         }
 

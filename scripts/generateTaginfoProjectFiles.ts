@@ -2,7 +2,7 @@ import { AllKnownLayouts } from "../src/Customizations/AllKnownLayouts"
 import Locale from "../src/UI/i18n/Locale"
 import { Translation } from "../src/UI/i18n/Translation"
 import { readFileSync, writeFileSync } from "fs"
-import LayoutConfig from "../src/Models/ThemeConfig/LayoutConfig"
+import ThemeConfig from "../src/Models/ThemeConfig/ThemeConfig"
 import LayerConfig from "../src/Models/ThemeConfig/LayerConfig"
 import { Utils } from "../src/Utils"
 
@@ -33,7 +33,7 @@ function generateTagOverview(
     return overview
 }
 
-function generateLayerUsage(layer: LayerConfig, layout: LayoutConfig): any[] {
+function generateLayerUsage(layer: LayerConfig, layout: ThemeConfig): any[] {
     if (layer.name === undefined) {
         return [] // Probably a duplicate or irrelevant layer
     }
@@ -124,7 +124,7 @@ function generateLayerUsage(layer: LayerConfig, layout: LayoutConfig): any[] {
  * Generates the JSON-object representing the theme for inclusion on taginfo
  * @param layout
  */
-function generateTagInfoEntry(layout: LayoutConfig): any {
+function generateTagInfoEntry(layout: ThemeConfig): any {
     const usedTags = []
     for (const layer of layout.layers) {
         if (layer.source === null) {

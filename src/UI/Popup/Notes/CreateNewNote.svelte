@@ -47,7 +47,7 @@
       return
     }
     const loc = coordinate.data
-    txt += "\n\n #MapComplete #" + state?.layout?.id
+    txt += "\n\n #MapComplete #" + state?.theme?.id
     const id = await state?.osmConnection?.openNote(loc.lat, loc.lon, txt)
     console.log("Created a note, got id", id)
     const feature = <Feature<Point, OsmTags>>{
