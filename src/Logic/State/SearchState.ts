@@ -15,6 +15,7 @@ import LayerSearch from "../Search/LayerSearch"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
 import { FeatureSource } from "../FeatureSource/FeatureSource"
 import { Feature } from "geojson"
+import OpenLocationCodeSearch from "../Search/OpenLocationCodeSearch"
 
 export default class SearchState {
 
@@ -38,6 +39,7 @@ export default class SearchState {
         this.locationSearchers = [
             new LocalElementSearch(state, 5),
             new CoordinateSearch(),
+            new OpenLocationCodeSearch(),
             new OpenStreetMapIdSearch(state),
             new PhotonSearch(true, 2),
             new PhotonSearch(),
