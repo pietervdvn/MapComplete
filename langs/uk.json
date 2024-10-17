@@ -92,13 +92,167 @@
         "title": "Ваші обрані локації"
     },
     "general": {
+        "add": {
+            "title": "Додати новий об'єкт",
+            "zoomInFurther": "Наблизьтесь ще більше, щоб додати об'єкт"
+        },
+        "attribution": {
+            "attributionContent": "<p>Усі дані надаються <a href='https://www.openstreetmap.org' target='_blank'>OpenStreetMap</a>, які можна вільно повторно використовувати в <a href='https://www.openstreetmap .org/copyright' target='_blank'>Ліцензія Open DataBase</a>.</p>",
+            "attributionTitle": "Повідомлення про авторство",
+            "codeContributionsBy": "MapComplete створено {contributors} та <a href='https://github.com/pietervdvn/MapComplete/graphs/contributors' target='_blank'>{hiddenCount} іншими учасниками</a>",
+            "donate": "Підтримайте MapComplete фінансово",
+            "editId": "Відкрийте онлайн-редактор OpenStreetMap тут",
+            "editJosm": "Редагувати тут за допомогою JOSM",
+            "emailCreators": "Надішліть електронного листа розробникам",
+            "followOnMastodon": "Слідкуйте за MapComplete на Mastodon",
+            "gotoSourceCode": "Переглянути вихідний код",
+            "iconAttribution": {
+                "title": "Використані іконки"
+            },
+            "openIssueTracker": "Подати повідомлення про помилку",
+            "openMapillary": "Відкрити Mapillary тут",
+            "openOsmcha": "Перегляньте останні правки, зроблені за допомогою {theme}",
+            "openPanoramax": "Відкрийте Panoramax тут",
+            "openThemeDocumentation": "Відкрити документацію для тематичної мапи {name}",
+            "panoramaxLicenseCCBYSA": "Ваші фотографії публікуються під ліцензією CC-BY-SA - кожен може повторно використовувати ваше зображення, якщо згадає ваше ім'я",
+            "themeBy": "Тему підтримує {author}",
+            "translatedBy": "MapComplete переклали {contributors} та <a href='https://github.com/pietervdvn/MapComplete/graphs/contributors' target='_blank'>{hiddenCount} інших учасників</a>"
+        },
         "backToIndex": "Переглянути всі тематичні карти",
+        "backgroundMap": "Виберіть фоновий шар",
+        "cancel": "Скасувати",
+        "download": {
+            "custom": {
+                "download": "Завантажити PNG шириною {width} мм і висотою {height} мм",
+                "downloadHelper": "Це призначено для друку",
+                "height": "Висота зображення (в мм):",
+                "title": "Завантажте зображення з власною шириною та висотою",
+                "width": "Ширина зображення (в мм): "
+            },
+            "downloadAsPdfHelper": "Ідеально для друку поточної карти",
+            "downloadAsPng": "Завантажити як зображення",
+            "downloadAsPngHelper": "Ідеально підходить для включення у звіти",
+            "downloadAsSvg": "Завантажити SVG-файл поточної карти",
+            "downloadAsSvgHelper": "Сумісні з Inkscape або Adobe Illustrator; потребують подальшої обробки",
+            "downloadAsSvgLinesOnly": "Завантажте SVG-файл поточної мапи, що містить лише лінії",
+            "downloadAsSvgLinesOnlyHelper": "Лінії, що перетинаються, розбиваються, можна використовувати з деякими 3D-програмами",
+            "downloadGeoJsonHelper": "Сумісний з QGIS, ArcGIS, ESRI, …",
+            "downloadGeojson": "Завантажте видимі дані у форматі GeoJSON",
+            "exporting": "Експорт…",
+            "includeMetaData": "Включити метадані (останній редактор, обчислені значення, ...)",
+            "licenseInfo": "<h3>Повідомлення про авторські права</h3>Надані дані доступні в ODbL. Його повторне використання безкоштовне для будь-яких цілей, але <ul><li>потрібно вказувати посилання на авторство <b>© учасників OpenStreetMap</b><li><li>Будь-які зміни мають бути опубліковані за тією самою ліцензією</li>< /ul> Прочитайте повний текст <a href='https://www.openstreetmap.org/copyright' target='_blank'>повідомлення про авторські права</a>, щоб дізнатися більше.",
+            "pdf": {
+                "current_view_generic": "Експортуйте PDF-файл поточного подання для {paper_size} в орієнтації {orientation}"
+            },
+            "title": "Завантажити",
+            "uploadGpx": "Завантажте свій трек на OpenStreetMap"
+        },
         "enableGeolocationForSafariLink": "Дізнайтеся, як увімкнути дозвіл на геолокацію в налаштуваннях",
+        "filterPanel": {
+            "disableAll": "Зняти вибір з усього",
+            "enableAll": "Обрати все"
+        },
+        "layerSelection": {
+            "zoomInToSeeThisLayer": "Збільште масштаб, щоб побачити цей шар"
+        },
+        "logout": "Вийти з системи",
+        "menu": {
+            "aboutMapComplete": "Про MapComplete",
+            "filter": "Фільтр даних",
+            "moreUtilsTitle": "Дізнайтеся більше",
+            "openHereDifferentApp": "Відкривайте поточне місцезнаходження в інших програмах",
+            "showIntroduction": "Показати вступ",
+            "title": "Меню"
+        },
+        "morescreen": {
+            "createYourOwnTheme": "Створіть власну тему MapComplete з нуля",
+            "hiddenExplanation": "Ці теми доступні лише для тих, хто має посилання. Ви виявили {hidden_discovered} з {total_hidden} прихованих тем.",
+            "noSearch": "Показати всі теми",
+            "previouslyHiddenTitle": "Раніше відвідані приховані теми"
+        },
+        "opening_hours": {
+            "open_during_ph": "У святкові дні - це"
+        },
+        "poweredByMapComplete": "Працює на основі MapComplete - краудсорсингові тематичні карти з OpenStreetMap",
+        "save": "Зберегти",
         "search": {
             "editSearchSyncSettings": "Редагування налаштувань синхронізації",
-            "editThemeSync": "Редагування налаштувань синхронізації"
+            "editThemeSync": "Редагування налаштувань синхронізації",
+            "instructions": "Використовуйте рядок пошуку вище для пошуку місцезнаходжень, фільтрів або інших тематичних мап",
+            "recentThemes": "Нещодавно відвідані карти",
+            "recents": "Нещодавно відвідані місця"
         },
-        "seeIndex": "Дивіться огляд з усіма тематичними картами"
+        "seeIndex": "Дивіться огляд з усіма тематичними картами",
+        "sharescreen": {
+            "documentation": "Для отримання додаткової інформації про доступні URL-параметри, <a href='https://github.com/pietervdvn/MapComplete/blob/develop/Docs/URL_Parameters.md' target='_blank'>зверніться до документації</a>",
+            "embedIntro": "<h3>Вставте на свій веб-сайт</h3>Будь ласка, вставте цю карту на свій веб-сайт. <br/>Ми заохочуємо вас це зробити - вам навіть не потрібно питати дозволу. <br/> Це безкоштовно, і завжди буде. Чим більше людей цим користується, тим ціннішим воно стає.",
+            "fsBackground": "Увімкнути перемикання фонів",
+            "fsFilter": "Увімкніть можливість перемикання шарів і фільтрів",
+            "fsGeolocation": "Увімкнути геолокацію",
+            "fsUserbadge": "Увімкніть кнопку входу і, таким чином, можливість вносити зміни",
+            "fsWelcomeMessage": "Показати спливаюче вікно привітального повідомлення та пов'язані з ним вкладки",
+            "intro": "Поділіться цією картою, скопіювавши посилання нижче та надіславши її друзям і родичам:",
+            "openLayers": "Відкрити меню шарів і фільтрів",
+            "options": "Параметри спільного використання",
+            "stateIsIncluded": "Поточний стан шарів і фільтрів відображається у спільному посиланні та iframe.",
+            "title": "Поділіться цією мапою"
+        },
+        "skip": "Пропустити це питання",
+        "testing": "Тестування - зміни не будуть збережені",
+        "uploadError": "Помилка під час надсилання змін: {error}",
+        "uploadGpx": {
+            "choosePermission": "Виберіть нижче, як саме має бути поширений ваш трек:",
+            "confirm": "Підтвердити надсилання",
+            "gpxServiceOffline": "GPX-сервіс зараз перебуває в режимі офлайн - завантаження наразі неможливе. Спробуйте пізніше.",
+            "intro0": "Завантаживши трек, OpenStreetMap.org збереже його повну копію.",
+            "intro1": "Ви зможете знову завантажити свої треки та завантажити їх у програми для редагування OpenStreetMap"
+        },
+        "waitingForGeopermission": "Очікуємо вашого дозволу на використання геолокації…",
+        "welcomeBack": "З поверненням!",
+        "welcomeExplanation": {
+            "addNew": "Відсутній об'єкт? Використовуйте кнопку внизу ліворуч, щоб додати новий об'єкт.",
+            "general": "На цій мапі ви можете переглядати, редагувати і додавати <i>точки інтересу</i>. Змініть масштаб, щоб побачити POI, торкніться одного з них, щоб переглянути або відредагувати інформацію. Всі дані отримані з OpenStreetMap і збережені в ньому, їх можна вільно використовувати повторно."
+        },
+        "wikipedia": {
+            "fromWikipedia": "З Вікіпедії, вільної енциклопедії",
+            "previewbox": {
+                "born": "Народився: {value}",
+                "died": "Помер(ла): {value}"
+            },
+            "readMore": "Прочитайте решту статті"
+        }
+    },
+    "image": {
+        "addPicture": "Додати фото",
+        "nearby": {
+            "noNearbyImages": "Зображень поблизу не знайдено",
+            "seeNearby": "Перегляньте фотографії поблизу"
+        },
+        "respectPrivacy": "Не завантажуйте з Google Maps, Google Streetview або інших захищених авторським правом джерел."
+    },
+    "move": {
+        "inviteToMove": {
+            "generic": "Перемістити цю точку"
+        }
+    },
+    "multi_apply": {
+        "autoApply": "При зміні атрибутів {attr_names}, ці атрибути будуть автоматично змінені і на {count} інших об'єктах"
+    },
+    "notes": {
+        "loginToAddPicture": "Увійдіть, щоб додати фото"
+    },
+    "reviews": {
+        "no_reviews_yet": "Відгуків ще немає. Будьте першим!",
+        "question": "Як би ви оцінили {title()}?",
+        "save": "Зберегти відгук",
+        "saved": "Відгук збережено. Дякуємо, що поділилися!"
+    },
+    "translations": {
+        "activateButton": "Допоможіть перекласти MapComplete"
+    },
+    "unknown": {
+        "explanation": "Очистіть цей біт інформації, якщо поточна відповідь невірна, але дійсне значення невідоме. Інша інформація не буде видалена.",
+        "title": "Позначити як невідомий?"
     },
     "userinfo": {
         "gotoSettings": "Перейдіть до своїх налаштувань на OpenStreetMap.org"

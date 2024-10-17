@@ -258,8 +258,8 @@
             "toMuch": "Es gibt zu viele Funktionen, um sie alle herunterzuladen",
             "uploadGpx": "Einen Track auf OpenStreetMap hochladen"
         },
-        "enableGeolocationForSafari": "Hast du das Popup zur Abfrage der Geo-Berechtigung nicht erhalten?",
-        "enableGeolocationForSafariLink": "Erfahre, wie du die Geo-Berechtigung in den Einstellungen aktivieren kannst",
+        "enableGeolocationForSafari": "Hast du das Popup zur Standortabfrage nicht erhalten?",
+        "enableGeolocationForSafariLink": "Wie die Standortberechtigung in den Einstellungen aktiviert werden kann",
         "eraseValue": "Wert löschen",
         "error": "Etwas ist schief gelaufen",
         "example": "Beispiel",
@@ -270,7 +270,7 @@
             "disableAll": "Alle deaktivieren",
             "enableAll": "Alle aktivieren"
         },
-        "geopermissionDenied": "Die Verwendung der Standortbestimmung wurde verweigert",
+        "geopermissionDenied": "Die Standortbestimmung wurde verweigert",
         "getStartedLogin": "Bei OpenStreetMap anmelden, um loszulegen",
         "getStartedNewAccount": " oder <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">ein neues Konto anlegen</a>",
         "goToInbox": "Posteingang öffnen",
@@ -609,6 +609,7 @@
                 "someFailed": "Entschuldigung, {count} Bilder konnten nicht hochgeladen werden",
                 "uploading": "{count} Bilder werden hochgeladen…"
             },
+            "noBlur": "Die Bilder werden nicht unkenntlich gemacht. Fotografieren Sie keine Menschen",
             "one": {
                 "done": "Bild erfolgreich hochgeladen. Vielen Dank!",
                 "failed": "Entschuldigung, das Bild konnte nicht hochgeladen werden",
