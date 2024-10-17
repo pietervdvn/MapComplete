@@ -34,7 +34,6 @@
         "geoJson": "https://maproulette.org/api/v2/challenge/view/43282",
         "idKey": "mr_taskId"
       },
-      "isShown": "ref:velopark!~https://data.velopark.be/data/NMBS.*",
       "title": {
         "render": "Velopark parking <span class='literal-code'>{mr_velopark_id}</span>"
       },
@@ -250,6 +249,19 @@
                 "nl": "Enkel onafgewerkte taken"
               },
               "osmTags": "mr_taskStatus=Created",
+              "default": true
+            }
+          ]
+        },
+        {
+          "id": "nmbs-only",
+          "options": [
+            {
+              "question": {
+                "en": "Only non-SNCB-bicycle parkings",
+                "nl": "Enkel niet-NMBS fietsstallingen"
+              },
+              "osmTags": "ref:velopark!~i~https://data.velopark.be/data/NMBS.*",
               "default": true
             }
           ]
