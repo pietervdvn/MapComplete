@@ -3290,7 +3290,7 @@
             "incline": {
                 "mappings": {
                     "0": {
-                        "then": "De straat hier is (waarschijnlijk) zonder helling"
+                        "then": "De straat heeft hier (waarschijnlijk) geen helling"
                     }
                 }
             },

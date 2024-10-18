@@ -1847,7 +1847,7 @@
                         "then": "Este es un <b>club nocturno</b> o discoteca centrado en bailar, música de un DJ con un espectáculo de luces que la acompaña y un bar donde conseguir bebidas (alcohólicas)"
                     }
                 },
-                "question": "Qué tipo de cafe es este?"
+                "question": "¿Qué tipo de café es este?"
             },
             "Name": {
                 "question": "¿Cuál es el nombre de esta empresa?",
@@ -1865,7 +1865,7 @@
     },
     "caravansites": {
         "description": "zonas de acampada",
-        "name": "Sitios de Acampada",
+        "name": "Zonas de acampada",
         "presets": {
             "0": {
                 "description": "Añade un nuevo sitio de acampada oficial. Son lugares designados para pasar la noche con tu caravana. Pueden parecerse a un camping real o simplemente a un aparcamiento. Puede que no estén señalizados en absoluto, sino que simplemente estén definidos en una decisión municipal. Un aparcamiento normal destinado a los campistas en el que no se espera que se pase la noche, no es un camping. ",
@@ -4414,6 +4414,7 @@
         }
     },
     "slow_roads": {
+        "name": "Caminos, carreteras sin tráfico y lentas",
         "tagRenderings": {
             "slow_roads-surface": {
                 "mappings": {
