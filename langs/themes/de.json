@@ -13,7 +13,7 @@
         "title": "Kunstwerke"
     },
     "atm": {
-        "description": "Diese Karte zeigt Geldautomaten zum Abheben oder Einzahlen von Geld",
+        "description": "Diese Karte zeigt Geldautomaten zum Abheben oder Einzahlen von Bargeld",
         "layers": {
             "3": {
                 "override": {
@@ -101,7 +101,7 @@
         "title": "Fahrradabstellplätze"
     },
     "bicycle_rental": {
-        "description": "Auf dieser Karte finden Sie alle Fahrradverleihstationen, die in OpenStreetMap eingetragen wurden",
+        "description": "Eine Karte mit allen Fahrradverleihstationen, die in OpenStreetMap eingetragen wurden",
         "shortDescription": "Eine Karte mit Fahrradverleihstationen und Fahrradverleihgeschäften",
         "title": "Fahrradverleih"
     },
@@ -718,7 +718,7 @@
         "title": "Eiscreme"
     },
     "indoors": {
-        "description": "Diese Karte zeigt öffentlich zugängliche Innenräume",
+        "description": "Eine Karte mit öffentlich zugänglichen Innenräumen",
         "title": "Innenräume"
     },
     "items_with_image": {

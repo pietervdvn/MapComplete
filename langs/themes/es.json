@@ -252,7 +252,7 @@
         "title": "Gimnasios de escalada, clubes y lugares"
     },
     "clock": {
-        "description": "Mapa mostrando todos los relojes públicos",
+        "description": "Mapa que muestra todos los relojes públicos",
         "title": "Relojes"
     },
     "cycle_highways": {
@@ -824,10 +824,57 @@
                                 "question": "El conjunto de cambios ha añadido al menos una imagen"
                             }
                         }
+                    },
+                    "9": {
+                        "options": {
+                            "0": {
+                                "question": "Excluir tema GRB"
+                            }
+                        }
+                    }
+                },
+                "name": "Centro del conjunto de cambios",
+                "tagRenderings": {
+                    "contributor": {
+                        "question": "¿Qué colaborador realizó este cambio?",
+                        "render": "Cambio realizado por <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>"
+                    },
+                    "host": {
+                        "question": "¿Con qué host (página web) se hizo este cambio?",
+                        "render": "Cambiado con <a href='{host}'>{host}</a>"
+                    },
+                    "locale": {
+                        "question": "¿En qué idioma (ubicación) se realizó este cambio?",
+                        "render": "La configuración local del usuario es {locale}"
+                    },
+                    "show_changeset_id": {
+                        "render": "Conjunto de cambios <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
+                    },
+                    "theme-id": {
+                        "question": "¿Qué tema se utilizó para hacer este cambio?",
+                        "render": "Cambiar con el tema <a href='https://mapcomplete.org/{theme}'>{theme}</a>"
+                    },
+                    "version": {
+                        "question": "¿Qué versión de MapComplete se utilizó para hacer este cambio?",
+                        "render": "Hecho con {editor}"
+                    }
+                },
+                "title": {
+                    "render": "Conjunto de cambios para {theme}"
+                }
+            },
+            "1": {
+                "override": {
+                    "tagRenderings+": {
+                        "0": {
+                            "render": "Se pueden encontrar más estadísticas <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>aquí</a>"
+                        }
                     }
                 }
             }
-        }
+        },
+        "shortDescription": "Muestra los cambios realizados por MapComplete",
+        "title": "Cambios realizados con MapComplete"
     },
     "maproulette": {
         "description": "Tema que muestra las tareas de MapRoulette, permitiendo buscarlas, filtrarlas y arreglarlas.",
@@ -1087,7 +1134,7 @@
         "title": "Códigos postales"
     },
     "postboxes": {
-        "description": "En este mapa podrás buscar y añadir los datos de las oficinas de correos y buzones de correo. ¡Puedes utilizar este mapa para encontrar dónde enviar tu próxima postal! :)<br/>¿Has detectado un error o falta algún buzón de correo? Puedes editar este mapa con una cuenta gratuita de OpenStreetMap.",
+        "description": "En este mapa puedes encontrar y añadir datos de oficinas postales y buzones. ¡Puedes usar este mapa para encontrar donde enviar tu próxima postal! : )<br/>¿Se ha detectado un error o falta un buzón? Puede editar este mapa con una cuenta gratuita de OpenStreetMap.",
         "layers": {
             "3": {
                 "override": {
