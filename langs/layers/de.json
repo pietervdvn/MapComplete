@@ -93,7 +93,7 @@
                         "then": "Werbung wird auf beiden Seiten angezeigt"
                     }
                 },
-                "question": "Auf wie vielen Seiten wird Werbung angezeigt?"
+                "question": "Von wie vielen Seiten kann man Werbung betrachten?"
             },
             "animated": {
                 "mappings": {
@@ -952,7 +952,7 @@
                         "then": "Gas"
                     }
                 },
-                "question": "Mit was wird die Grillstelle angefeuert?"
+                "question": "Womit wird der Grill befeuert?"
             }
         },
         "title": {
@@ -1144,7 +1144,7 @@
             },
             "nonDeleteMappings": {
                 "0": {
-                    "then": "Diese Bushaltestelle hat keine Bank (es gab nie eine oder sie wurde entfernt)"
+                    "then": "Diese Bushaltestelle hat keine Sitzank (es gab nie eine oder sie wurde entfernt)"
                 }
             }
         },
@@ -1545,6 +1545,9 @@
                     },
                     "2": {
                         "then": "Der Parkplatz darf nur von Mitgliedern einer Schule, Firma oder Organisation genutzt werden"
+                    },
+                    "3": {
+                        "then": "Private Fahrradabstellplätze, die nie der Öffentlichkeit zur Verfügung stehen, auch nicht über einen Mitgliedsbeitrag"
                     }
                 },
                 "question": "Wer darf den Parkplatz nutzen?",
@@ -1691,11 +1694,11 @@
                 "title": "eine Fahrradpumpe"
             },
             "1": {
-                "description": "Ein Gerät mit Werkzeugen zur Reparatur von Fahrrädern kombiniert mit einer Pumpe an einem festen Standort. Die Werkzeuge sind oft mit Ketten gegen Diebstahl gesichert.",
+                "description": "Ein Gerät mit Werkzeug zur Reparatur von Fahrrädern kombiniert mit einer Pumpe an einem festen Standort. Das Werkzeug ist oft mit Ketten gegen Diebstahl gesichert.",
                 "title": "eine Fahrrad-Reparaturstation mit Pumpe"
             },
             "2": {
-                "description": "Werkzeug, um Ihr Fahrrad im öffentlichen Raum zu reparieren (ohne Pumpe). Die Werkzeuge sind gegen Diebstahl gesichert.",
+                "description": "Werkzeug, um Ihr Fahrrad im öffentlichen Raum zu reparieren (ohne Pumpe). Das Werkzeug ist gegen Diebstahl gesichert.",
                 "title": "eine Fahrrad-Reparaturstation ohne Pumpe"
             }
         },

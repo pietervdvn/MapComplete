@@ -242,10 +242,10 @@
             "bench-backrest": {
                 "mappings": {
                     "1": {
-                        "then": "Van háttámlája"
+                        "then": "A padnak van háttámlája"
                     },
                     "2": {
-                        "then": "<b>Nincs</b> háttámlája"
+                        "then": "A padnak <b>nincs</b> háttámlája"
                     }
                 },
                 "question": "Van-e háttámlája ennek a padnak?"
@@ -310,7 +310,7 @@
             },
             "bench-seats": {
                 "question": "Hány ülőhely van ezen a padon?",
-                "render": "{seats} ülőhely"
+                "render": "A padra {seats} ember tud leülni"
             }
         },
         "title": {
@@ -439,7 +439,7 @@
             },
             "Name": {
                 "question": "Mi a neve ennek a kocsmának?",
-                "render": "A kocsma neve: {name}"
+                "render": "A vállalkozás neve: {name}"
             }
         }
     },
@@ -589,7 +589,7 @@
             "Fastfood vs restaurant": {
                 "mappings": {
                     "0": {
-                        "then": "Ez egy gyorsétterem (büfé), amely a gyors kiszolgálásra összpontosít. Ha vannak is ülőhelyek, ezek meglehetősen korlátozottak és funkcionálisak."
+                        "then": "Ez egy gyorsétterem (büfé), amely a gyors kiszolgálásra összpontosít. Ha van is ülőhely, az meglehetősen korlátozott és funkcionális."
                     }
                 }
             }
@@ -646,6 +646,38 @@
             "0": {
                 "label": {
                     "render": "Új elem hozzáadásához kattints ide"
+                }
+            }
+        }
+    },
+    "note": {
+        "filter": {
+            "10": {
+                "options": {
+                    "0": {
+                        "question": "Legutóbb {search} felhasználó szerkesztette"
+                    }
+                }
+            },
+            "11": {
+                "options": {
+                    "0": {
+                        "question": "Legutóbb nem {search} felhasználó szerkesztette"
+                    }
+                }
+            },
+            "14": {
+                "options": {
+                    "0": {
+                        "question": "Legutóbb {search} előtt szerkesztették"
+                    }
+                }
+            },
+            "15": {
+                "options": {
+                    "0": {
+                        "question": "Legutóbb {search} után szerkesztették"
+                    }
                 }
             }
         }
@@ -818,6 +850,13 @@
             "email": {
                 "question": "Mi a(z) {title()} e-mail címe?"
             },
+            "last_edit": {
+                "render": {
+                    "special": {
+                        "text": "Legutóbb {_last_edit:contributor} szerkesztette ekkor: {_last_edit:timestamp}"
+                    }
+                }
+            },
             "opening_hours": {
                 "question": "Mikor van nyitva ez: {title()}?",
                 "render": "<h3>Nyitva tartás</h3>{opening_hours_table(opening_hours)}"
@@ -856,6 +895,11 @@
             },
             "phone": {
                 "question": "Mi a telefonszáma ennek: {title()}?"
+            },
+            "qr_code": {
+                "render": {
+                    "after": "Szkenneld be ezt a kódot, hogy egy másik eszközön is meg tudd nyitni a helyet"
+                }
             },
             "service:electricity": {
                 "mappings": {
@@ -949,13 +993,415 @@
                     }
                 }
             },
+            "1": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "{quantity} Volt"
+                    }
+                }
+            },
+            "2": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "{quantity} A"
+                    }
+                }
+            },
             "3": {
                 "applicableUnits": {
                     "0": {
-                        "human": "{quantity} méter"
+                        "human": "{quantity} méter",
+                        "humanSingular": "egy méter"
+                    },
+                    "1": {
+                        "human": "{quantity} centiméter",
+                        "humanSingular": "egy centiméter"
+                    },
+                    "2": {
+                        "human": "{quantity} milliméter",
+                        "humanSingular": "egy milliméter"
+                    },
+                    "3": {
+                        "human": "{quantity} láb"
+                    }
+                }
+            },
+            "4": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "{quantity} kilméter/óra",
+                        "humanShort": "{quantity} km/h"
+                    },
+                    "1": {
+                        "human": "{quantity} mérföld/óra",
+                        "humanShort": "{quantity} mf/h"
+                    }
+                }
+            },
+            "5": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "{quantity} perc",
+                        "humanSingular": "egy perc"
+                    },
+                    "1": {
+                        "human": "{quantity} óra",
+                        "humanSingular": "egy óra"
+                    },
+                    "2": {
+                        "human": "{quantity} nap",
+                        "humanSingular": "egy nap"
+                    },
+                    "3": {
+                        "human": "{quantity} hét",
+                        "humanSingular": "egy hét"
+                    },
+                    "4": {
+                        "human": "{quantity} hónap",
+                        "humanSingular": "egy hónap"
+                    },
+                    "5": {
+                        "human": "{quantity} év",
+                        "humanSingular": "egy év"
                     }
                 }
             }
+        }
+    },
+    "usersettings": {
+        "description": "Egy speciális réteg, amelyet nem a térképen való megjelenítésre szántak, hanem a felhasználói beállítások megadására szolgál",
+        "tagRenderings": {
+            "a11y-features": {
+                "mappings": {
+                    "0": {
+                        "then": "Elérhető objektumok megjelenítése, amikor a térképen a nyílbillentyűkkel navigálsz"
+                    },
+                    "1": {
+                        "then": "Mindig jelenjenek meg az elérhető objektumok"
+                    },
+                    "2": {
+                        "then": "Soha ne jelenjenek meg az elérhető objektumok"
+                    }
+                },
+                "question": "Milyen elérhetőségi jellemzők jelenjenek meg?"
+            },
+            "add-new-feature": {
+                "mappings": {
+                    "0": {
+                        "then": "Új objektum a bal alsó sarokban található gombbal vihető fel. A térképre kattintva nem történik semmi"
+                    },
+                    "1": {
+                        "then": "Kattintás vagy koppintás után a térképen megjelenik egy jelölő ott, ahol fel lehet vinni egy új objektumot"
+                    },
+                    "2": {
+                        "then": "Jobb egérgombbal kattintva vagy hosszú nyomás után a térképen megjelenik egy jelölő ott, ahol fel lehet vinni egy új objektumot"
+                    },
+                    "3": {
+                        "then": "Kattintás vagy koppintás után a térképen megjelenik egy jelölő ott, ahol fel lehet vinni egy új objektumot. Ezen kívül a bal alsó sarokban is látható egy gomb"
+                    },
+                    "4": {
+                        "then": "Jobb egérgombbal kattintva vagy hosszú nyomás után a térképen megjelenik egy jelölő ott, ahol fel lehet vinni egy új objektumot. Ezen kívül a bal alsó sarokban is látható egy gomb"
+                    }
+                },
+                "question": "Hogyan nyíljék meg az új objektum hozzáadására szolgáló menü?"
+            },
+            "all-questions-at-once": {
+                "mappings": {
+                    "0": {
+                        "then": "Az infoboxban szereplő összes kérdés egyszerre jelenjék meg"
+                    },
+                    "1": {
+                        "then": "A kérdések egymás után jelenjenek meg"
+                    }
+                },
+                "question": "Egyenként vagy együttesen jelenjenek meg az ismeretlen adatokra vonatkozó kérdések?"
+            },
+            "background-layer": {
+                "mappings": {
+                    "0": {
+                        "then": "Alapértelmezett háttér: az alapértelmezés szerinti"
+                    },
+                    "1": {
+                        "then": "Alapértelmezett háttér: OpenStreetMap-carto"
+                    },
+                    "2": {
+                        "then": "Alapértelmezett háttér: légi felvételek"
+                    },
+                    "3": {
+                        "then": "Alapértelmezett háttér: egy nem OpenStreetMap-alapú réteg"
+                    },
+                    "4": {
+                        "then": "Alapértelmezett háttér: a jelenlegi <span class='code'>{__current_background}</span> háttérréteg"
+                    },
+                    "5": {
+                        "then": "Alapértelmezett háttér: <span class='code'>{mapcomplete-preferred-background-layer}</span> háttérréteg"
+                    }
+                },
+                "question": "Milyen háttérréteg jelenjék meg alapértelmezés szerint?",
+                "questionHint": "Ha szeretnél egy adott hátteret alapértelmezettként beállítani, először válaszd ki a háttér menüben, és ez után fog itt megjelenni."
+            },
+            "background-layer-readonly": {
+                "render": "Ennek a tematikus térképnek van előre meghatározott háttérrétegkészlete. Itt ezért nem alkalmazható az általad beállított alapértelmezett tematikustérkép-beállítás"
+            },
+            "clear_cache": {
+                "render": {
+                    "after": "A gyorsítótárak törlése a helyileg letöltött adatokat és kódot is törli. Ugyanakkor továbbra is bejelentkezve maradsz, és a beállításaid megmaradnak. Adat nem vész el",
+                    "special": {
+                        "text": "Gyorsítótárak törlése"
+                    }
+                }
+            },
+            "contributor-thanks": {
+                "mappings": {
+                    "0": {
+                        "then": "{_code_contributions} elemmel járultál hozzá a MapComplete kódjához! Fantasztikus!"
+                    }
+                }
+            },
+            "cscount-thanks": {
+                "mappings": {
+                    "0": {
+                        "then": "Eddig {_csCount} szerkesztést végeztél a térképen! Fantasztikus!"
+                    }
+                }
+            },
+            "debug-title": {
+                "render": "<h3>Hibakeresési lehetőségek</h3>"
+            },
+            "edit-profile": {
+                "render": {
+                    "special": {
+                        "text": "Profilleírás szerkesztése"
+                    }
+                }
+            },
+            "fixate-north": {
+                "mappings": {
+                    "0": {
+                        "then": "Térkép forgatásának engedélyezése"
+                    },
+                    "1": {
+                        "then": "Mindig fölfelé legyen észak"
+                    }
+                },
+                "question": "Északnak mindig fent kell lennie?"
+            },
+            "inbox": {
+                "mappings": {
+                    "0": {
+                        "then": {
+                            "special": {
+                                "text": "Beérkezett levelet megnyitása"
+                            }
+                        }
+                    },
+                    "1": {
+                        "then": {
+                            "special": {
+                                "text": "<b class='alert'>{_unreadMessages} üzeneted van</b><br/>Nyisd meg a bejövő üzeneteket"
+                            }
+                        }
+                    }
+                }
+            },
+            "language_picker": {
+                "mappings": {
+                    "0": {
+                        "then": "A nyelv egy URL-paraméterrel lett megadva ezért felhasználó nem tudja beállítani."
+                    }
+                }
+            },
+            "mangrove-key-import": {
+                "render": {
+                    "after": "A privát kulcs feltöltése törli a jelenlegi privát kulcsot. Ha írtál vele értékelést, akkor először töltsd le a jelenlegi privát kulcsodat",
+                    "special": {
+                        "text": "Mangrove privát kulcs importálása biztonsági mentésből"
+                    }
+                }
+            },
+            "mangrove-keys": {
+                "render": {
+                    "after": "Bárki, aki birtokában van ennek a fájlnak, a te személyazonosságoddal írhat értékelést",
+                    "special": {
+                        "text": "Mangrove-fiók privát kulcsának letöltése"
+                    }
+                }
+            },
+            "more_privacy": {
+                "mappings": {
+                    "0": {
+                        "then": "Az OpenStreetMap szerkesztésekor ne jelenjék meg, hogy milyen messze voltál a módosított objektumoktól."
+                    },
+                    "1": {
+                        "then": "Az OpenStreetMap szerkesztésekor hozzávetőlegesen jelenjék meg, hogy milyen messze voltál a módosított objektumoktól. A többi térképész így jobban látja, hogy hogyan végezted a szerkesztést"
+                    }
+                },
+                "question": "A szerkesztéseknél megjelenjék-e egy hozzávetőleges jelzés arról, hogy milyen messze voltál az objektumtól?",
+                "questionHint": "Ha módosítasz egy objektumot, és engedélyezed a helymeghatározást, akkor a rendszer elmenti a körülbelüli helyedet: jelzi, hogy 25 méteren, 500 méteren vagy 5 kilométeren belül vagy 5 km-nél távolabb voltál. A többi térképész így jobban látja, milyen körülmények között szerkesztetted a térképet, de egyúttal azt is jelzi, hogy hol voltál ebben az időpontban. "
+            },
+            "more_privacy_theme_override": {
+                "mappings": {
+                    "0": {
+                        "then": "Ez a tematikus térkép érzékeny. A módosításból nem fog kiderülni, hogy kifejezetten a közelben voltál-e."
+                    }
+                }
+            },
+            "profile-description": {
+                "mappings": {
+                    "0": {
+                        "then": {
+                            "special": {
+                                "text": "Profilleírás hozzáadása"
+                            }
+                        }
+                    }
+                }
+            },
+            "scalebar": {
+                "mappings": {
+                    "0": {
+                        "then": "Méretarány megjelenítése"
+                    },
+                    "1": {
+                        "then": "Méretarány elrejtése"
+                    }
+                },
+                "question": "Megjelenjék-e a méretarány a térképen?"
+            },
+            "settings-link": {
+                "render": {
+                    "special": {
+                        "text": "Beállításaid megnyitása az OpenStreetMap.org-on"
+                    }
+                }
+            },
+            "show_crosshair": {
+                "question": "Megjelenjék-e egy célkereszt a kijelző közepén?",
+                "questionHint": "Segíthet egy-egy új elem pontos elhelyezésében"
+            },
+            "show_debug": {
+                "mappings": {
+                    "0": {
+                        "then": "Jelenjenek meg a hibakeresési információk"
+                    },
+                    "1": {
+                        "then": "Ne jelenjenek meg hibakeresési információk"
+                    },
+                    "2": {
+                        "then": "Ne jelenjenek meg hibakeresési információk"
+                    }
+                },
+                "question": "Megjelenjenek-e a felhasználónak a hibakeresési (debug) információk?"
+            },
+            "show_tags": {
+                "mappings": {
+                    "0": {
+                        "then": "Soha ne jelenjenek meg a címkék."
+                    },
+                    "1": {
+                        "then": "Azok a címkék jelenjenek meg, amelyeket {__userjourney_tagsVisibleAt} módosításkészlet elvégzését követően alkalmaztam"
+                    },
+                    "2": {
+                        "then": "A módosításkor alkalmazott címkék jelenjenek meg"
+                    },
+                    "3": {
+                        "then": "A módosításkor alkalmazott címkék jelenjenek meg és minden objektumon jelenjék meg a címketáblázat"
+                    }
+                },
+                "question": "Megjelenjenek-e a nyers OpenStreetMap-címkék?",
+                "questionHint": "A <b>címkék</b> olyan tulajdonságok, amelyekkel minden térképobjektum rendelkezik. Ezek az adatbázisban tárolt technikai adatok. A MapComplete programmal történő szerkesztéshez nincs szükség ezekre az adatokra, haladó felhasználóknak azonban érdemes lehet referenciaként használniuk."
+            },
+            "sync-visited-locations": {
+                "mappings": {
+                    "0": {
+                        "then": "Az openstreetmap.org-on legyenek elmentve az általam megkeresett és szerkesztett helyek. Ezeket az előzményeket az OpenStreetMap és az összes hozzá kapcsolódó alkalmazás láthatja"
+                    },
+                    "1": {
+                        "then": "A saját készülékemen legyenek elmentve az általam megkeresett és szerkesztett helyek"
+                    },
+                    "2": {
+                        "then": "Ne legyenek elmentve az általam megkeresett és szerkesztett helyek "
+                    }
+                },
+                "question": "Meg legyenek-e jegyezve az általad megkeresett és szerkesztett helyek?",
+                "questionHint": "Ezek a helyszínek a keresési menüben lesznek felajánlva"
+            },
+            "sync-visited-themes": {
+                "mappings": {
+                    "0": {
+                        "then": "Az openstreetmap.org-on legyenek elmentve és szinkronizálva az általam megnézett tematikus térképek. Ezeket az előzményeket az OpenStreetMap és az összes hozzá kapcsolódó alkalmazás láthatja"
+                    },
+                    "1": {
+                        "then": "A saját készülékemen legyenek elmentve a meglátogatott tematikus térképek"
+                    },
+                    "2": {
+                        "then": "Ne legyenek elmentve a megnézett térképek"
+                    }
+                },
+                "question": "El legyenek-e mentve a meglátogatott tematikus térképek?",
+                "questionHint": "A MapComplete meg tudja jegyezni, hogy megnéztél egy bizonyos témájú térképet, és ezt később felajánlja javaslatként."
+            },
+            "title-editing": {
+                "render": "<h3>Szerkesztési beállítások</h3>"
+            },
+            "title-id": {
+                "render": "<h3>Mangrove ID (azonosító) kezelése</h3>"
+            },
+            "title-map": {
+                "render": "<h3>Térkép beállítása</h3>"
+            },
+            "title-privacy-legal": {
+                "render": "<h3>Adatvédelem és jog</h3>"
+            },
+            "translation-completeness": {
+                "mappings": {
+                    "0": {
+                        "then": "Teljesen le van fordítva"
+                    }
+                },
+                "render": "A {_theme} térkép {_language} nyelvű fordításai {_translation_percentage}%-ban készen vannak: {_translation_total} szövegrészletből {_translation_translated_count} kész"
+            },
+            "translation-help": {
+                "mappings": {
+                    "0": {
+                        "then": "Kattints a „fordítás” ikonra egy-egy szövegrészlet mellett, ha szeretnéd lefordítani vagy kijavítani. Ehhez szükséged lesz egy Weblate-fiókra. Létrehozhatsz egyet az OSM-felhasználóneveddel, hogy automatikusan fel legyen oldva a fordítási mód."
+                    }
+                }
+            },
+            "translation-mode": {
+                "mappings": {
+                    "0": {
+                        "then": "Ne jelenjék meg a fordítások gyors módosítására szolgáló gomb"
+                    },
+                    "1": {
+                        "then": "Jelenítsen meg egy gombot a fordítások gyors megnyitásához a MapComplete nagy képernyőn történő használatakor"
+                    },
+                    "2": {
+                        "then": "Mindig jelenítse meg a fordítási gombokat, mobilon is"
+                    }
+                },
+                "question": "Szívesen segítenél a MapComplete fordításában?"
+            },
+            "translation-thanks": {
+                "mappings": {
+                    "0": {
+                        "then": "A MapComplete fordításához {_translation_contributions} elemmel járultál hozzá! Fantasztikus!"
+                    }
+                }
+            },
+            "verified-mastodon": {
+                "mappings": {
+                    "0": {
+                        "then": "Megtaláltuk a Mastodon-profilodra mutató linket : <a href='{_mastodon_link}' target='_blank' rel='noopener'>{_mastodon_link}</a>"
+                    },
+                    "1": {
+                        "then": "Találtunk egy linket, ami egy Mastodon-fióknak tűnik, de nem ellenőrzött. <a href='https://www.openstreetmap.org/profile/edit' target='_blank' rel='noopener'>Lépj be a profilod szerkesztéséhez</a>, és add meg a következőt: <span class='code'>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt"
+                    }
+                }
+            }
+        },
+        "title": {
+            "render": "Beállítások"
         }
     },
     "vending_machine": {
