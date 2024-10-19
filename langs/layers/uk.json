@@ -485,7 +485,7 @@
         "tagRenderings": {
             "ghost_bike-inscription": {
                 "question": "Який напис на цьому примарному велосипеді?",
-                "render": "<i>{напис}</i>"
+                "render": "<i>{inscription}</i>"
             }
         }
     },
