@@ -269,7 +269,7 @@
         "id": "<i>{inscription}</i>",
         "cs": "<i>{inscription}</i>",
         "pl": "<i>{inscription}</i>",
-        "uk": "<i>{напис}</i>"
+        "uk": "<i>{inscription}</i>"
       },
       "freeform": {
         "key": "inscription"
