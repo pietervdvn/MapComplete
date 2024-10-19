@@ -255,7 +255,7 @@
         "if": "bench=no",
         "then": {
           "en": "This bus stop does not have a bench (there never was one or it has been removed)",
-          "de": "Diese Bushaltestelle hat keine Bank (es gab nie eine oder sie wurde entfernt)",
+          "de": "Diese Bushaltestelle hat keine Sitzank (es gab nie eine oder sie wurde entfernt)",
           "fr": "Cette station de bus n'a pas de banc (il n'y en a jamais eu ou il a été retiré)",
           "nl": "Deze bushalte heeft geen zitbank (er is er nooit een geweest of deze is verwijderd)",
           "ca": "Aquesta para de bus no té un banc (mai n'ha tingut un o ha estat eliminat)",
@@ -263,7 +263,8 @@
           "pt": "Este ponto de ônibus não tem banco (nunca houve ou foi removido)",
           "pl": "Ten przystanek autobusowy nie ma ławki (nigdy jej nie było lub została usunięta)",
           "pt_BR": "Essa parada de ônibus não tem um banco (nunca teve ou ele foi removido)",
-          "es": "Esta parada de autobús no tiene banco (nunca lo hubo o lo han quitado)"
+          "es": "Esta parada de autobús no tiene banco (nunca lo hubo o lo han quitado)",
+          "uk": "На цій зупинці немає лавки (ніколи не було або її прибрали)"
         }
       }
     ],
@@ -280,7 +281,8 @@
           "pt": "Este ponto de ônibus não é mais usado",
           "pl": "Ten przystanek autobusowy nie jest już używany",
           "pt_BR": "Essa parada de ônibus não é mais usada",
-          "es": "Esta parada ya no se usa"
+          "es": "Esta parada ya no se usa",
+          "uk": "Ця автобусна зупинка більше не використовується"
         }
       }
     ],

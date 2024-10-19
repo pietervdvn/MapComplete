@@ -83,7 +83,11 @@
     let featuresForLayer: FeatureSource = state.perLayer.get(targetLayer.id)
     if (featuresForLayer) {
       if (dontShow) {
-        featuresForLayer = new StaticFeatureSource(featuresForLayer.features.map(feats => feats.filter(f => dontShow.indexOf(f.properties.id) < 0)))
+        featuresForLayer = new StaticFeatureSource(
+          featuresForLayer.features.map((feats) =>
+            feats.filter((f) => dontShow.indexOf(f.properties.id) < 0)
+          )
+        )
       }
       new ShowDataLayer(map, {
         layer: targetLayer,
@@ -116,7 +120,7 @@
         allowUnsnapped: true,
         snappedTo,
         snapLocation: value,
-      },
+      }
     )
     const withCorrectedAttributes = new StaticFeatureSource(
       snappedLocation.features.mapD((feats) =>
@@ -130,8 +134,8 @@
             ...f,
             properties,
           }
-        }),
-      ),
+        })
+      )
     )
     // The actual point to be created, snapped at the new location
     new ShowDataLayer(map, {
@@ -140,14 +144,13 @@
     })
     withCorrectedAttributes.features.addCallbackAndRunD((f) => console.log("Snapped point is", f))
   }
-
 </script>
 
 <LocationInput
   {map}
   on:click
   {mapProperties}
-  value={ snapToLayers?.length > 0 ? new UIEventSource(undefined) : value}
+  value={snapToLayers?.length > 0 ? new UIEventSource(undefined) : value}
   initialCoordinate={coordinate}
   {maxDistanceInMeters}
 >

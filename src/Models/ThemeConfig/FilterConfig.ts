@@ -59,20 +59,30 @@ export default class FilterConfig {
                 throw `Invalid filter: no question given at ${ctx}`
             }
 
-            const fields: { name: string; type: ValidatorType }[] = (option.fields ?? []).map((f, i) => {
-                const type = <ValidatorType> f.type ?? "regex"
-                if(Validators.availableTypes.indexOf(type) < 0){
-                    throw `Invalid filter: type is not a valid validator. Did you mean one of ${Utils.sortedByLevenshteinDistance(type, <ReadonlyArray<string>>Validators.availableTypes, x => x).slice(0, 3)}`
+            const fields: { name: string; type: ValidatorType }[] = (option.fields ?? []).map(
+                (f, i) => {
+                    const type = <ValidatorType>f.type ?? "regex"
+                    if (Validators.availableTypes.indexOf(type) < 0) {
+                        throw `Invalid filter: type is not a valid validator. Did you mean one of ${Utils.sortedByLevenshteinDistance(
+                            type,
+                            <ReadonlyArray<string>>Validators.availableTypes,
+                            (x) => x
+                        ).slice(0, 3)}`
+                    }
+                    // Type is validated against 'ValidatedTextField' in Validation.ts, in ValidateFilterConfig
+                    if (
+                        f.name === undefined ||
+                        f.name === "" ||
+                        f.name.match(/[a-z0-9_-]+/) == null
+                    ) {
+                        throw `Invalid filter: a variable name should match [a-z0-9_-]+ at ${ctx}.fields[${i}]`
+                    }
+                    return {
+                        name: f.name,
+                        type,
+                    }
                 }
-                // Type is validated against 'ValidatedTextField' in Validation.ts, in ValidateFilterConfig
-                if (f.name === undefined || f.name === "" || f.name.match(/[a-z0-9_-]+/) == null) {
-                    throw `Invalid filter: a variable name should match [a-z0-9_-]+ at ${ctx}.fields[${i}]`
-                }
-                return {
-                    name: f.name,
-                    type
-                }
-            })
+            )
 
             for (const field of fields) {
                 for (const ln in question.translations) {
@@ -226,7 +236,7 @@ export default class FilterConfig {
                         opt.osmTags?.asHumanString() ?? "",
                         opt.fields?.length > 0
                             ? opt.fields.map((f) => f.name + " (" + f.type + ")").join(" ")
-                            : undefined
+                            : undefined,
                     ])
                 )
             })

@@ -22,14 +22,17 @@
   if (entry.feature?.properties?.id) {
     layer = state.theme.getMatchingLayer(entry.feature.properties)
     tags = state.featureProperties.getStore(entry.feature.properties.id)
-    descriptionTr = layer?.tagRenderings?.find(tr => tr.labels.indexOf("description") >= 0)
+    descriptionTr = layer?.tagRenderings?.find((tr) => tr.labels.indexOf("description") >= 0)
   }
 
-  let distance = state.mapProperties.location.mapD(l => GeoOperations.distanceBetween([l.lon, l.lat], [entry.lon, entry.lat]))
-  let bearing = state.mapProperties.location.mapD(l => GeoOperations.bearing([l.lon, l.lat], [entry.lon, entry.lat]))
+  let distance = state.mapProperties.location.mapD((l) =>
+    GeoOperations.distanceBetween([l.lon, l.lat], [entry.lon, entry.lat])
+  )
+  let bearing = state.mapProperties.location.mapD((l) =>
+    GeoOperations.bearing([l.lon, l.lat], [entry.lon, entry.lat])
+  )
   let mapRotation = state.mapProperties.rotation
-  let inView = state.mapProperties.bounds.mapD(bounds => bounds.contains([entry.lon, entry.lat]))
-
+  let inView = state.mapProperties.bounds.mapD((bounds) => bounds.contains([entry.lon, entry.lat]))
 
   function select() {
     if (entry.boundingbox) {
@@ -38,10 +41,14 @@
         new BBox([
           [lon0, lat0],
           [lon1, lat1],
-        ]).pad(0.01),
+        ]).pad(0.01)
       )
     } else {
-      state.mapProperties.flyTo(entry.lon, entry.lat, GeocodingUtils.categoryToZoomLevel[entry.category] ?? 17)
+      state.mapProperties.flyTo(
+        entry.lon,
+        entry.lat,
+        GeocodingUtils.categoryToZoomLevel[entry.category] ?? 17
+      )
     }
     if (entry.feature?.properties?.id) {
       state.selectedElement.set(entry.feature)
@@ -51,28 +58,43 @@
   }
 </script>
 
-<button class="unstyled w-full link-no-underline searchresult" on:click={() => select() }>
-  <div class="p-2 flex items-center w-full gap-y-2">
+<button class="unstyled link-no-underline searchresult w-full" on:click={() => select()}>
+  <div class="flex w-full items-center gap-y-2 p-2">
     {#if layer}
       <div class="h-6">
-        <ToSvelte construct={() => layer.defaultIcon(entry.feature.properties)?.SetClass("w-6 h-6")} />
+        <ToSvelte
+          construct={() => layer.defaultIcon(entry.feature.properties)?.SetClass("w-6 h-6")}
+        />
       </div>
     {:else if entry.category}
-      <Icon icon={GeocodingUtils.categoryToIcon[entry.category]} clss="w-6 h-6 shrink-0" color="#aaa" />
+      <Icon
+        icon={GeocodingUtils.categoryToIcon[entry.category]}
+        clss="w-6 h-6 shrink-0"
+        color="#aaa"
+      />
     {/if}
-    <div class="flex flex-col items-start pl-2 w-full">
-      <div class="flex flex-wrap gap-x-2 justify-between w-full">
+    <div class="flex w-full flex-col items-start pl-2">
+      <div class="flex w-full flex-wrap justify-between gap-x-2">
         <b class="nowrap">
           {#if layer && $tags?.id}
-            <TagRenderingAnswer config={layer.title} selectedElement={entry.feature} {state} {tags} {layer} />
+            <TagRenderingAnswer
+              config={layer.title}
+              selectedElement={entry.feature}
+              {state}
+              {tags}
+              {layer}
+            />
           {:else}
             {entry.display_name ?? entry.osm_id}
           {/if}
         </b>
         {#if $distance > 50}
-          <div class="flex gap-x-1 items-center">
+          <div class="flex items-center gap-x-1">
             {#if $bearing && !$inView}
-              <ArrowUp class="w-4 h-4 shrink-0" style={`transform: rotate(${$bearing - $mapRotation}deg)`} />
+              <ArrowUp
+                class="h-4 w-4 shrink-0"
+                style={`transform: rotate(${$bearing - $mapRotation}deg)`}
+              />
             {/if}
             {#if $distance}
               {GeoOperations.distanceToHuman($distance)}
@@ -81,21 +103,26 @@
         {/if}
       </div>
       <div class="flex flex-wrap gap-x-2">
-
         {#if descriptionTr && tags}
-          <TagRenderingAnswer defaultSize="subtle" noIcons={true} config={descriptionTr} {tags} {state}
-                              selectedElement={entry.feature} {layer} />
+          <TagRenderingAnswer
+            defaultSize="subtle"
+            noIcons={true}
+            config={descriptionTr}
+            {tags}
+            {state}
+            selectedElement={entry.feature}
+            {layer}
+          />
         {/if}
         {#if descriptionTr && tags && entry.description}
           –
         {/if}
         {#if entry.description}
-          <div class="subtle flex justify-between w-full">
+          <div class="subtle flex w-full justify-between">
             {entry.description}
           </div>
         {/if}
       </div>
-
     </div>
   </div>
 </button>

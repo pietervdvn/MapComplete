@@ -672,7 +672,8 @@
           "cs": "{title()} je trvale uzavřen",
           "ca": "{title()} ha tancat permanentment",
           "pt_BR": "{title()} fechou permanentemente",
-          "pt": "{title()} fechou permanentemente"
+          "pt": "{title()} fechou permanentemente",
+          "uk": "{title()} закрито назавжди"
         },
         "changesetMessage": "shop_closed"
       }
@@ -694,7 +695,8 @@
           "cs": "Tento obchod s koly dříve půjčoval kola, ale už je nepůjčuje",
           "ca": "Aquesta botiga de bicicletes solia llogar bicicletes, però ja no",
           "pt_BR": "Essa loja de bicicletas costumava alugar bicicletas, mas não aluga mais",
-          "pt": "Esta loja de bicicletas costumava alugar bicicletas, mas ja não as aluga"
+          "pt": "Esta loja de bicicletas costumava alugar bicicletas, mas ja não as aluga",
+          "uk": "У цьому веломагазині раніше видавали велосипеди напрокат, але більше не видають"
         }
       }
     ]

@@ -51,7 +51,7 @@
   let feedback: UIEventSource<Translation> = new UIEventSource<Translation>(undefined)
 
   let unit: Unit = layer?.units?.find((unit) => unit.appliesToKeys.has(config.freeform?.key))
-  let isKnown = tags.mapD(tags => config.GetRenderValue(tags) !== undefined)
+  let isKnown = tags.mapD((tags) => config.GetRenderValue(tags) !== undefined)
   let matchesEmpty = config.GetRenderValue({}) !== undefined
 
   // Will be bound if a freeform is available
@@ -67,7 +67,7 @@
   /**
    * IF set: we can remove the current answer by deleting all those keys
    */
-  let settableKeys = tags.mapD(tags => config.removeToSetUnknown(layer, tags))
+  let settableKeys = tags.mapD((tags) => config.removeToSetUnknown(layer, tags))
   let unknownModal = new UIEventSource(false)
 
   let searchTerm: UIEventSource<string> = new UIEventSource("")
@@ -91,7 +91,7 @@
       return !m.hideInAnswer.matchesProperties(tgs)
     })
     selectedMapping = mappings?.findIndex(
-      (mapping) => mapping.if.matchesProperties(tgs) || mapping.alsoShowIf?.matchesProperties(tgs),
+      (mapping) => mapping.if.matchesProperties(tgs) || mapping.alsoShowIf?.matchesProperties(tgs)
     )
     if (selectedMapping < 0) {
       selectedMapping = undefined
@@ -199,7 +199,7 @@
       if (freeformValue?.length > 0) {
         selectedMapping = config.mappings.length
       }
-    }),
+    })
   )
 
   $: {
@@ -217,7 +217,7 @@
           $freeformInput,
           selectedMapping,
           checkedMappings,
-          tags.data,
+          tags.data
         )
         if (featureSwitchIsDebugging?.data) {
           console.log(
@@ -229,7 +229,7 @@
               currentTags: tags.data,
             },
             " --> ",
-            selectedTags,
+            selectedTags
           )
         }
       } catch (e) {
@@ -251,7 +251,7 @@
         selectedTags = new And([...selectedTags.and, ...extraTagsArray])
       } else {
         console.error(
-          "selectedTags is not of type Tag or And, it is a " + JSON.stringify(selectedTags),
+          "selectedTags is not of type Tag or And, it is a " + JSON.stringify(selectedTags)
         )
       }
     }
@@ -320,12 +320,12 @@
     onDestroy(
       state.osmConnection?.userDetails?.addCallbackAndRun((ud) => {
         numberOfCs = ud.csCount
-      }),
+      })
     )
   }
 
   function clearAnswer() {
-    const tagsToSet = settableKeys.data.map(k => new Tag(k, ""))
+    const tagsToSet = settableKeys.data.map((k) => new Tag(k, ""))
     const change = new ChangeTagAction(tags.data.id, new And(tagsToSet), tags.data, {
       theme: tags.data["_orig_theme"] ?? state.theme.id,
       changeType: "answer",
@@ -517,15 +517,18 @@
             </div>
           {/if}
 
-
           <Popup shown={unknownModal}>
             <h2 slot="header">
               <Tr t={Translations.t.unknown.title} />
             </h2>
             <Tr t={Translations.t.unknown.explanation} />
-            <If condition={state.userRelatedState.showTags.map(v => v === "yes" || v === "full" || v === "always")}>
+            <If
+              condition={state.userRelatedState.showTags.map(
+                (v) => v === "yes" || v === "full" || v === "always"
+              )}
+            >
               <div class="subtle">
-                <Tr t={Translations.t.unknown.removedKeys}/>
+                <Tr t={Translations.t.unknown.removedKeys} />
                 {#each $settableKeys as key}
                   <code>
                     <del>
@@ -535,30 +538,35 @@
                 {/each}
               </div>
             </If>
-            <div class="flex justify-end w-full" slot="footer">
+            <div class="flex w-full justify-end" slot="footer">
               <button on:click={() => unknownModal.set(false)}>
                 <Tr t={Translations.t.unknown.keep} />
               </button>
-              <button class="primary" on:click={() => {unknownModal.set(false); clearAnswer()}}>
+              <button
+                class="primary"
+                on:click={() => {
+                  unknownModal.set(false)
+                  clearAnswer()
+                }}
+              >
                 <Tr t={Translations.t.unknown.clear} />
               </button>
             </div>
           </Popup>
 
           <div
-            class="sticky bottom-0 flex justify-between flex-wrap interactive"
+            class="interactive sticky bottom-0 flex flex-wrap justify-between"
             style="z-index: 11"
           >
-
-            {#if $settableKeys && $isKnown && !matchesEmpty }
+            {#if $settableKeys && $isKnown && !matchesEmpty}
               <button class="as-link small text-sm" on:click={() => unknownModal.set(true)}>
                 <Tr t={Translations.t.unknown.markUnknown} />
               </button>
             {/if}
 
-
-            <div class="flex flex-wrap-reverse items-stretch justify-end sm:flex-nowrap self-end flex-grow mt-4 mb-2">
-
+            <div
+              class="mt-4 mb-2 flex flex-grow flex-wrap-reverse items-stretch justify-end self-end sm:flex-nowrap"
+            >
               <!-- TagRenderingQuestion-buttons -->
               <slot name="cancel" />
               <slot name="save-button" {selectedTags}>
@@ -574,23 +582,24 @@
                   <button
                     on:click={() => onSave()}
                     class={twJoin(
-                    selectedTags === undefined ? "disabled" : "button-shadow",
-                    "primary"
-                  )}
+                      selectedTags === undefined ? "disabled" : "button-shadow",
+                      "primary"
+                    )}
                   >
                     <Tr t={Translations.t.general.save} />
                   </button>
                 {/if}
               </slot>
             </div>
-
           </div>
           {#if UserRelatedState.SHOW_TAGS_VALUES.indexOf($showTags) >= 0 || ($showTags === "" && numberOfCs >= Constants.userJourney.tagsVisibleAt) || $featureSwitchIsTesting || $featureSwitchIsDebugging}
             <span class="flex flex-wrap justify-between">
               <TagHint {state} tags={selectedTags} currentProperties={$tags} />
               <span class="flex flex-wrap">
                 {#if $featureSwitchIsTesting}
-                  <div class="alert" style="padding: 0; margin: 0; margin-right:  0.5rem">Testmode &nbsp;</div>
+                  <div class="alert" style="padding: 0; margin: 0; margin-right:  0.5rem">
+                    Testmode &nbsp;
+                  </div>
                 {/if}
                 {#if $featureSwitchIsTesting || $featureSwitchIsDebugging}
                   <a class="small" on:click={() => console.log("Configuration is ", config)}>

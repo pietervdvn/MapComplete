@@ -109,7 +109,7 @@ export default class DetermineTheme {
         const dict = new Map<string, QuestionableTagRenderingConfigJson>()
 
         for (const tagRendering of questions.tagRenderings) {
-            dict.set(tagRendering.id, <QuestionableTagRenderingConfigJson> tagRendering)
+            dict.set(tagRendering.id, <QuestionableTagRenderingConfigJson>tagRendering)
         }
 
         return dict

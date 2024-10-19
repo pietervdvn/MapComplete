@@ -28,7 +28,10 @@ export class ImageUploadManager {
     private readonly _osmConnection: OsmConnection
     private readonly _changes: Changes
     public readonly isUploading: Store<boolean>
-    private readonly _reportError: (message: (string | Error | XMLHttpRequest), extramessage?: string) => Promise<void>
+    private readonly _reportError: (
+        message: string | Error | XMLHttpRequest,
+        extramessage?: string
+    ) => Promise<void>
 
     constructor(
         layout: ThemeConfig,
@@ -38,7 +41,10 @@ export class ImageUploadManager {
         changes: Changes,
         gpsLocation: Store<GeolocationCoordinates | undefined>,
         allFeatures: IndexedFeatureSource,
-        reportError: (message: string | Error | XMLHttpRequest, extramessage?: string ) => Promise<void>
+        reportError: (
+            message: string | Error | XMLHttpRequest,
+            extramessage?: string
+        ) => Promise<void>
     ) {
         this._uploader = uploader
         this._featureProperties = featureProperties
@@ -56,7 +62,7 @@ export class ImageUploadManager {
             (startedCount) => {
                 return startedCount > failed.data + done.data
             },
-            [failed, done],
+            [failed, done]
         )
     }
 
@@ -105,7 +111,7 @@ export class ImageUploadManager {
         file: File,
         tagsStore: UIEventSource<OsmTags>,
         targetKey: string,
-        noblur: boolean,
+        noblur: boolean
     ): Promise<void> {
         const canBeUploaded = this.canBeUploaded(file)
         if (canBeUploaded !== true) {
@@ -130,10 +136,16 @@ export class ImageUploadManager {
         }
         const properties = this._featureProperties.getStore(featureId)
 
-        const action = new LinkImageAction(featureId, uploadResult. key,  uploadResult   . value, properties, {
-            theme:  tags?.data?.["_orig_theme"] ?? this._theme.id,
-            changeType: "add-image",
-        })
+        const action = new LinkImageAction(
+            featureId,
+            uploadResult.key,
+            uploadResult.value,
+            properties,
+            {
+                theme: tags?.data?.["_orig_theme"] ?? this._theme.id,
+                changeType: "add-image",
+            }
+        )
 
         await this._changes.applyAction(action)
     }
@@ -153,34 +165,51 @@ export class ImageUploadManager {
         if (this._gps.data) {
             location = [this._gps.data.longitude, this._gps.data.latitude]
         }
-        if (location === undefined || location?.some(l => l === undefined)) {
+        if (location === undefined || location?.some((l) => l === undefined)) {
             const feature = this._indexedFeatures.featuresById.data.get(featureId)
             location = GeoOperations.centerpointCoordinates(feature)
         }
         try {
-            ({ key, value, absoluteUrl } = await this._uploader.uploadImage(blob, location, author, noblur))
+            ;({ key, value, absoluteUrl } = await this._uploader.uploadImage(
+                blob,
+                location,
+                author,
+                noblur
+            ))
         } catch (e) {
             this.increaseCountFor(this._uploadRetried, featureId)
             console.error("Could not upload image, trying again:", e)
             try {
-                ({ key, value , absoluteUrl} = await this._uploader.uploadImage(blob, location, author, noblur))
+                ;({ key, value, absoluteUrl } = await this._uploader.uploadImage(
+                    blob,
+                    location,
+                    author,
+                    noblur
+                ))
                 this.increaseCountFor(this._uploadRetriedSuccess, featureId)
             } catch (e) {
                 console.error("Could again not upload image due to", e)
                 this.increaseCountFor(this._uploadFailed, featureId)
-                await this._reportError(e, JSON.stringify({ctx:"While uploading an image in the Image Upload Manager", featureId, author, targetKey}))
+                await this._reportError(
+                    e,
+                    JSON.stringify({
+                        ctx: "While uploading an image in the Image Upload Manager",
+                        featureId,
+                        author,
+                        targetKey,
+                    })
+                )
                 return undefined
             }
         }
         console.log("Uploading image done, creating action for", featureId)
         key = targetKey ?? key
-        if(targetKey){
+        if (targetKey) {
             // This is a non-standard key, so we use the image link directly
             value = absoluteUrl
         }
         this.increaseCountFor(this._uploadFinished, featureId)
-        return {key, absoluteUrl, value}
-
+        return { key, absoluteUrl, value }
     }
 
     private getCounterFor(collection: Map<string, UIEventSource<number>>, key: string | "*") {

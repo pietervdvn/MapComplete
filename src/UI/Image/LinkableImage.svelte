@@ -35,7 +35,7 @@
     key: undefined,
     provider: AllImageProviders.byName(image.provider),
     date: new Date(image.date),
-    id: Object.values(image.osmTags)[0]
+    id: Object.values(image.osmTags)[0],
   }
 
   async function applyLink(isLinked: boolean) {
@@ -46,7 +46,7 @@
     if (isLinked) {
       const action = new LinkImageAction(currentTags.id, key, url, tags, {
         theme: tags.data._orig_theme ?? state.theme.id,
-        changeType: "link-image"
+        changeType: "link-image",
       })
       await state.changes.applyAction(action)
     } else {
@@ -55,7 +55,7 @@
         if (v === url) {
           const action = new ChangeTagAction(currentTags.id, new Tag(k, ""), currentTags, {
             theme: tags.data._orig_theme ?? state.theme.id,
-            changeType: "remove-image"
+            changeType: "remove-image",
           })
           state.changes.applyAction(action)
         }
@@ -67,9 +67,8 @@
 
   let element: HTMLDivElement
   if (highlighted) {
-
     onDestroy(
-      highlighted.addCallbackD(highlightedUrl => {
+      highlighted.addCallbackD((highlightedUrl) => {
         if (highlightedUrl === image.pictureUrl) {
           Utils.scrollIntoView(element)
         }

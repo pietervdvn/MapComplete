@@ -36,7 +36,7 @@ export default class FilteredLayer {
     constructor(
         layer: LayerConfig,
         appliedFilters?: ReadonlyMap<string, UIEventSource<undefined | number | string>>,
-        isDisplayed?: UIEventSource<boolean>,
+        isDisplayed?: UIEventSource<boolean>
     ) {
         this.layerDef = layer
         this.isDisplayed = isDisplayed ?? new UIEventSource(true)
@@ -82,25 +82,25 @@ export default class FilteredLayer {
         layer: LayerConfig,
         context: string,
         osmConnection: OsmConnection,
-        enabledByDefault?: Store<boolean>,
+        enabledByDefault?: Store<boolean>
     ) {
         let isDisplayed: UIEventSource<boolean>
         if (layer.syncSelection === "local") {
             isDisplayed = LocalStorageSource.getParsed(
                 context + "-layer-" + layer.id + "-enabled",
-                layer.shownByDefault,
+                layer.shownByDefault
             )
         } else if (layer.syncSelection === "theme-only") {
             isDisplayed = FilteredLayer.getPref(
                 osmConnection,
                 context + "-layer-" + layer.id + "-enabled",
-                layer,
+                layer
             )
         } else if (layer.syncSelection === "global") {
             isDisplayed = FilteredLayer.getPref(
                 osmConnection,
                 "layer-" + layer.id + "-enabled",
-                layer,
+                layer
             )
         } else {
             let isShown = layer.shownByDefault
@@ -110,7 +110,7 @@ export default class FilteredLayer {
             isDisplayed = QueryParameters.GetBooleanQueryParameter(
                 FilteredLayer.queryParameterKey(layer),
                 isShown,
-                "Whether or not layer " + layer.id + " is shown",
+                "Whether or not layer " + layer.id + " is shown"
             )
         }
 
@@ -145,7 +145,7 @@ export default class FilteredLayer {
      */
     private static fieldsToTags(
         option: FilterConfigOption,
-        fieldstate: string | Record<string, string>,
+        fieldstate: string | Record<string, string>
     ): TagsFilter | undefined {
         let properties: Record<string, string>
         if (typeof fieldstate === "string") {
@@ -181,7 +181,7 @@ export default class FilteredLayer {
     private static getPref(
         osmConnection: OsmConnection,
         key: string,
-        layer: LayerConfig,
+        layer: LayerConfig
     ): UIEventSource<boolean> {
         return osmConnection.GetPreference(key, layer.shownByDefault + "").sync(
             (v) => {
@@ -196,7 +196,7 @@ export default class FilteredLayer {
                     return undefined
                 }
                 return "" + b
-            },
+            }
         )
     }
 

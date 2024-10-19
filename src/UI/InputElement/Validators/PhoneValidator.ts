@@ -48,15 +48,12 @@ export default class PhoneValidator extends Validator {
         }
         let countryCode: CountryCode = undefined
         if (country) {
-            countryCode = <CountryCode> country()?.toUpperCase()
+            countryCode = <CountryCode>country()?.toUpperCase()
         }
         if (this.isShortCode(str, countryCode)) {
             return str
         }
-        return parsePhoneNumberFromString(
-            str,
-            countryCode
-        )?.formatInternational()
+        return parsePhoneNumberFromString(str, countryCode)?.formatInternational()
     }
 
     /**

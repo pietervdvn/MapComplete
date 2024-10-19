@@ -19,7 +19,7 @@ export class Tag extends TagsFilter {
         if (value === undefined) {
             throw `Invalid value while constructing a Tag with key '${key}': value is undefined`
         }
-        if(value.length > 255 || key.length > 255){
+        if (value.length > 255 || key.length > 255) {
             throw "Invalid tag: length is over 255"
         }
         if (value === "*") {

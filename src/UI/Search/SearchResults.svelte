@@ -12,23 +12,33 @@
   import type { FilterSearchResult } from "../../Logic/Search/FilterSearch"
 
   export let state: ThemeViewState
-  let activeFilters: Store<(ActiveFilter & FilterSearchResult)[]> = state.layerState.activeFilters.map(fs => fs.filter(f =>
-    (f.filter.options[0].fields.length === 0) &&
-    Constants.priviliged_layers.indexOf(<any>f.layer.id) < 0)
-    .map(af => {
-      const index = <number> af.control.data
-      const r : FilterSearchResult & ActiveFilter = { ...af, index, option: af.filter.options[index] }
-      return r
-    }))
+  let activeFilters: Store<(ActiveFilter & FilterSearchResult)[]> =
+    state.layerState.activeFilters.map((fs) =>
+      fs
+        .filter(
+          (f) =>
+            f.filter.options[0].fields.length === 0 &&
+            Constants.priviliged_layers.indexOf(<any>f.layer.id) < 0
+        )
+        .map((af) => {
+          const index = <number>af.control.data
+          const r: FilterSearchResult & ActiveFilter = {
+            ...af,
+            index,
+            option: af.filter.options[index],
+          }
+          return r
+        })
+    )
   let allowOtherThemes = state.featureSwitches.featureSwitchBackToThemeOverview
   let searchTerm = state.searchState.searchTerm
 </script>
-<div class="p-4 low-interaction flex gap-y-2 flex-col">
 
+<div class="low-interaction flex flex-col gap-y-2 p-4">
   <ActiveFilters {state} activeFilters={$activeFilters} />
 
-  {#if $searchTerm.length === 0 && $activeFilters.length === 0 }
-    <div class="p-8 items-center text-center">
+  {#if $searchTerm.length === 0 && $activeFilters.length === 0}
+    <div class="items-center p-8 text-center">
       <b>
         <Tr t={Translations.t.general.search.instructions} />
       </b>

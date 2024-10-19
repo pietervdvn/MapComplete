@@ -1,7 +1,11 @@
 import { Store, UIEventSource } from "../Logic/UIEventSource"
 import BaseUIElement from "./BaseUIElement"
 import ThemeConfig from "../Models/ThemeConfig/ThemeConfig"
-import { FeatureSource, IndexedFeatureSource, WritableFeatureSource } from "../Logic/FeatureSource/FeatureSource"
+import {
+    FeatureSource,
+    IndexedFeatureSource,
+    WritableFeatureSource,
+} from "../Logic/FeatureSource/FeatureSource"
 import { OsmConnection } from "../Logic/Osm/OsmConnection"
 import { Changes } from "../Logic/Osm/Changes"
 import { ExportableMap, MapProperties } from "../Models/MapProperties"
@@ -80,14 +84,13 @@ export interface SpecialVisualizationState {
     readonly previewedImage: UIEventSource<ProvidedImage>
     readonly nearbyImageSearcher: CombinedFetcher
     readonly geolocation: GeoLocationHandler
-    readonly geocodedImages : UIEventSource<Feature[]>
+    readonly geocodedImages: UIEventSource<Feature[]>
     readonly searchState: SearchState
 
-    getMatchingLayer(properties: Record<string, string>);
+    getMatchingLayer(properties: Record<string, string>)
 
     showCurrentLocationOn(map: Store<MlMap>): ShowDataLayer
     reportError(message: string | Error | XMLHttpRequest, extramessage?: string): Promise<void>
-
 }
 
 export interface SpecialVisualization {
@@ -122,7 +125,7 @@ export interface SpecialVisualization {
 export type RenderingSpecification =
     | string
     | {
-    func: SpecialVisualization
-    args: string[]
-    style: string
-}
+          func: SpecialVisualization
+          args: string[]
+          style: string
+      }

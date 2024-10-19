@@ -45,7 +45,6 @@ export class OsmConnectionFeatureSwitches {
 }
 
 export default class FeatureSwitchState extends OsmConnectionFeatureSwitches {
-
     public readonly featureSwitchEnableLogin: UIEventSource<boolean>
     public readonly featureSwitchSearch: UIEventSource<boolean>
     public readonly featureSwitchBackgroundSelection: UIEventSource<boolean>

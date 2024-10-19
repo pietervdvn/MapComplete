@@ -509,7 +509,8 @@
         "nl": "Heeft dit verkeerslicht een element dat trilt om te helpen bij het oversteken? (meestal onderaan de oversteekknop geplaatst)",
         "fr": "Est-ce que ce feu a un signal vibrant pour aider à traverser ? (habituellement situé sous le bouton)",
         "ca": "Aquest semàfor té senyals de vibració per facilitar el pas? (normalment es troba a la part inferior del botó d'encreuament)",
-        "cs": "Má tento semafor vibrační signály pro usnadnění přecházení? (obvykle se nachází ve spodní části tlačítka pro přecházení)"
+        "cs": "Má tento semafor vibrační signály pro usnadnění přecházení? (obvykle se nachází ve spodní části tlačítka pro přecházení)",
+        "uk": "Чи має цей світлофор вібраційні сигнали для полегшення переходу? (зазвичай розташовані внизу кнопки переходу)"
       },
       "condition": {
         "and": [

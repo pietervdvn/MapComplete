@@ -19,7 +19,6 @@ export default class CoordinateSearch implements GeocodingProvider {
         /^(-?[0-9]+\.[0-9]+)[ ,;/\\]+(-?[0-9]+\.[0-9]+)/,
         /lon[:=]? *['"]?(-?[0-9]+\.[0-9]+)['"]?[ ,;&]+lat[:=]? *['"]?(-?[0-9]+\.[0-9]+)['"]?/,
         /lng[:=]? *['"]?(-?[0-9]+\.[0-9]+)['"]?[ ,;&]+lat[:=]? *['"]?(-?[0-9]+\.[0-9]+)['"]?/,
-
     ]
 
     /**
@@ -60,16 +59,18 @@ export default class CoordinateSearch implements GeocodingProvider {
      * results[0] // => {lat: -57.5802905, lon: -12.7202538, "display_name": "lon: -12.720254, lat: -57.58029",  "category": "coordinate","osm_id": "-12.720254/-57.58029", "source": "coordinate:latlon"}
      */
     private directSearch(query: string): GeocodeResult[] {
-        const matches = Utils.NoNull(CoordinateSearch.latLonRegexes.map(r => query.match(r)))
-            .map(m => CoordinateSearch.asResult(m[2], m[1], "latlon") )
+        const matches = Utils.NoNull(CoordinateSearch.latLonRegexes.map((r) => query.match(r))).map(
+            (m) => CoordinateSearch.asResult(m[2], m[1], "latlon")
+        )
 
-        const matchesLonLat = Utils.NoNull(CoordinateSearch.lonLatRegexes.map(r => query.match(r)))
-            .map(m => CoordinateSearch.asResult(m[1], m[2], "lonlat"))
+        const matchesLonLat = Utils.NoNull(
+            CoordinateSearch.lonLatRegexes.map((r) => query.match(r))
+        ).map((m) => CoordinateSearch.asResult(m[1], m[2], "lonlat"))
         return matches.concat(matchesLonLat)
     }
 
     private static round6(n: number): string {
-        return "" + (Math.round(n * 1000000) / 1000000)
+        return "" + Math.round(n * 1000000) / 1000000
     }
 
     private static asResult(lonIn: string, latIn: string, source: string): GeocodeResult {
@@ -82,7 +83,7 @@ export default class CoordinateSearch implements GeocodingProvider {
             lon,
             display_name: "lon: " + lonStr + ", lat: " + latStr,
             category: "coordinate",
-            source: "coordinate:"+source,
+            source: "coordinate:" + source,
             osm_id: lonStr + "/" + latStr,
         }
     }
@@ -94,5 +95,4 @@ export default class CoordinateSearch implements GeocodingProvider {
     async search(query: string): Promise<GeocodeResult[]> {
         return this.directSearch(query)
     }
-
 }

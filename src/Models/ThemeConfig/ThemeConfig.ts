@@ -38,7 +38,6 @@ export class ThemeInformation {
     keywords?: (Translatable | Translation)[]
 }
 
-
 export default class ThemeConfig implements ThemeInformation {
     public static readonly defaultSocialImage = "assets/SocialImage.png"
     public readonly id: string
@@ -193,7 +192,7 @@ export default class ThemeConfig implements ThemeInformation {
                 icon: "./assets/svg/pop-out.svg",
                 href: "https://{basepath}/{theme}.html?lat={lat}&lon={lon}&z={zoom}&language={language}",
                 newTab: true,
-                requirements: ["iframe", "no-welcome-message"]
+                requirements: ["iframe", "no-welcome-message"],
             },
             context + ".extraLink"
         )
@@ -292,9 +291,7 @@ export default class ThemeConfig implements ThemeInformation {
                         if (!untranslated.has(ln)) {
                             untranslated.set(ln, [])
                         }
-                        untranslated
-                            .get(ln)
-                            .push(translation.context)
+                        untranslated.get(ln).push(translation.context)
                     }
                 })
             },
@@ -330,7 +327,12 @@ export default class ThemeConfig implements ThemeInformation {
                 }
             }
         }
-        console.trace("Fallthrough: could not find the appropriate layer for an object with tags", tags, "within layout", this)
+        console.trace(
+            "Fallthrough: could not find the appropriate layer for an object with tags",
+            tags,
+            "within layout",
+            this
+        )
         return undefined
     }
 
@@ -342,7 +344,7 @@ export default class ThemeConfig implements ThemeInformation {
         // The 'favourite'-layer contains pretty much all images as it bundles all layers, so we exclude it
         const jsonNoFavourites = {
             ...json,
-            layers: json.layers.filter((l) => l["id"] !== "favourite")
+            layers: json.layers.filter((l) => l["id"] !== "favourite"),
         }
         const usedImages = jsonNoFavourites._usedImages
         usedImages.sort()

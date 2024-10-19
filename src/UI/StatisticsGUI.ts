@@ -30,7 +30,7 @@ class StatsticsForOverviewFile extends Combine {
             new Title("Filters"),
             new SvelteUIElement(Filterview, { filteredLayer }),
         ])
-        filteredLayer.currentFilter.addCallbackAndRun(tf => {
+        filteredLayer.currentFilter.addCallbackAndRun((tf) => {
             console.log("Filters are", tf)
         })
         const downloaded = new UIEventSource<{ features: ChangeSetData[] }[]>([])

@@ -1,5 +1,10 @@
 import { ImmutableStore, Store, UIEventSource } from "../../Logic/UIEventSource"
-import maplibregl, { Map as MLMap, Map as MlMap, ScaleControl, SourceSpecification } from "maplibre-gl"
+import maplibregl, {
+    Map as MLMap,
+    Map as MlMap,
+    ScaleControl,
+    SourceSpecification,
+} from "maplibre-gl"
 import { RasterLayerPolygon } from "../../Models/RasterLayers"
 import { Utils } from "../../Utils"
 import { BBox } from "../../Logic/BBox"
@@ -23,13 +28,13 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         "dragRotate",
         "dragPan",
         "keyboard",
-        "touchZoomRotate"
+        "touchZoomRotate",
     ]
     private static maplibre_zoom_handlers = [
         "scrollZoom",
         "boxZoom",
         "doubleClickZoom",
-        "touchZoomRotate"
+        "touchZoomRotate",
     ]
     readonly location: UIEventSource<{ lon: number; lat: number }>
     private readonly isFlying = new UIEventSource(false)
@@ -225,7 +230,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         this.allowZooming.addCallbackAndRun((allowZooming) => self.setAllowZooming(allowZooming))
         this.bounds.addCallbackAndRunD((bounds) => self.setBounds(bounds))
         this.useTerrain?.addCallbackAndRun((useTerrain) => self.setTerrain(useTerrain))
-        this.showScale?.addCallbackAndRun(showScale => self.setScale(showScale))
+        this.showScale?.addCallbackAndRun((showScale) => self.setScale(showScale))
     }
 
     /**
@@ -240,9 +245,9 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         return {
             map: mlmap,
             ui: new SvelteUIElement(MaplibreMap, {
-                map: mlmap
+                map: mlmap,
             }),
-            mapproperties: new MapLibreAdaptor(mlmap)
+            mapproperties: new MapLibreAdaptor(mlmap),
         }
     }
 
@@ -310,7 +315,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
     ) {
         const event = {
             date: new Date(),
-            key: key
+            key: key,
         }
 
         for (let i = 0; i < this._onKeyNavigation.length; i++) {
@@ -499,7 +504,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         const bounds = map.getBounds()
         const bbox = new BBox([
             [bounds.getEast(), bounds.getNorth()],
-            [bounds.getWest(), bounds.getSouth()]
+            [bounds.getWest(), bounds.getSouth()],
         ])
         if (this.bounds.data === undefined || !isSetup) {
             this.bounds.setData(bbox)
@@ -693,14 +698,14 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
                 type: "raster-dem",
                 url:
                     "https://api.maptiler.com/tiles/terrain-rgb/tiles.json?key=" +
-                    Constants.maptilerApiKey
+                    Constants.maptilerApiKey,
             })
             try {
                 while (!map?.isStyleLoaded()) {
                     await Utils.waitFor(250)
                 }
                 map.setTerrain({
-                    source: id
+                    source: id,
                 })
             } catch (e) {
                 console.error(e)
@@ -716,17 +721,16 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             return
         }
         if (!showScale) {
-            if(this.scaleControl){
+            if (this.scaleControl) {
                 map.removeControl(this.scaleControl)
                 this.scaleControl = undefined
             }
             return
         }
         if (this.scaleControl === undefined) {
-
             this.scaleControl = new ScaleControl({
                 maxWidth: 100,
-                unit: "metric"
+                unit: "metric",
             })
         }
         if (!map.hasControl(this.scaleControl)) {
@@ -739,7 +743,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         window.requestAnimationFrame(() => {
             this._maplibreMap.data?.flyTo({
                 zoom,
-                center: [lon, lat]
+                center: [lon, lat],
             })
         })
     }

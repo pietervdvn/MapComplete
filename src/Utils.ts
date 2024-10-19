@@ -312,13 +312,13 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return newArr
     }
 
-    public static DedupT<T>(arr: T[]): T[]{
-        if(!arr){
+    public static DedupT<T>(arr: T[]): T[] {
+        if (!arr) {
             return arr
         }
         const items = []
         for (const item of arr) {
-            if(items.indexOf(item) < 0){
+            if (items.indexOf(item) < 0) {
                 items.push(item)
             }
         }
@@ -332,11 +332,11 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      * @param toKey
      * @constructor
      */
-    public static DedupOnId<T>(arr: T[], toKey: ((t:T) => string) ): T[]{
+    public static DedupOnId<T>(arr: T[], toKey: (t: T) => string): T[] {
         const uniq: T[] = []
         const seen = new Set<string>()
         for (const img of arr) {
-            if(!img){
+            if (!img) {
                 continue
             }
             const k = toKey(img)
@@ -992,12 +992,16 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         headers?: Record<string, string>,
         dontCacheErrors: boolean = false
     ): Promise<T> {
-        const result = await Utils.downloadJsonCachedAdvanced(url, maxCacheTimeMs, headers, dontCacheErrors)
+        const result = await Utils.downloadJsonCachedAdvanced(
+            url,
+            maxCacheTimeMs,
+            headers,
+            dontCacheErrors
+        )
         if (result["content"]) {
             return result["content"]
         }
         throw result["error"]
-
     }
 
     public static async downloadJsonCachedAdvanced<T = object | []>(
@@ -1019,12 +1023,11 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             )
         Utils._download_cache.set(url, { promise, timestamp: new Date().getTime() })
         try {
-
-        return await promise
-        }catch (e) {
-                if(dontCacheErrors){
-                    Utils._download_cache.delete(url)
-                }
+            return await promise
+        } catch (e) {
+            if (dontCacheErrors) {
+                Utils._download_cache.delete(url)
+            }
             throw e
         }
     }
@@ -1222,7 +1225,6 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return withDistance.map((n) => n[0])
     }
 
-
     public static levenshteinDistance(str1: string, str2: string): number {
         const track: number[][] = Array(str2.length + 1)
             .fill(null)
@@ -1373,8 +1375,11 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return d
     }
 
-    public static asRecord<K extends string | number | symbol, V>(keys: K[], f: ((k: K) => V)): Record<K, V> {
-        const results = <Record<K, V>> {}
+    public static asRecord<K extends string | number | symbol, V>(
+        keys: K[],
+        f: (k: K) => V
+    ): Record<K, V> {
+        const results = <Record<K, V>>{}
         for (const key of keys) {
             results[key] = f(key)
         }
@@ -1570,7 +1575,9 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      * Utils.simplifyStringForSearch(undefined) // => undefined
      */
     public static simplifyStringForSearch(str: string): string {
-        return Utils.RemoveDiacritics(str)?.toLowerCase()?.replace(/[^a-z0-9]/g, "")
+        return Utils.RemoveDiacritics(str)
+            ?.toLowerCase()
+            ?.replace(/[^a-z0-9]/g, "")
     }
 
     public static randomString(length: number): string {
@@ -1707,16 +1714,12 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         }
         if (number < 250) {
             return 10 * Math.round(number / 10)
-
         }
         if (number < 500) {
             return 25 * Math.round(number / 25)
-
         }
         return 50 * Math.round(number / 50)
-
     }
-
 
     public static NoNullInplace<T>(items: T[]): T[] {
         for (let i = items.length - 1; i >= 0; i--) {
@@ -1756,7 +1759,6 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         }
     }
 
-
     private static emojiRegex = /[\p{Extended_Pictographic}🛰️]/u
 
     /**
@@ -1775,6 +1777,5 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      */
     public static isEmojiFlag(string: string) {
         return /[🇦-🇿]{2}/u.test(string) // flags, see https://stackoverflow.com/questions/53360006/detect-with-regex-if-emoji-is-country-flag
-
     }
 }

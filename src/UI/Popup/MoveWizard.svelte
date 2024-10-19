@@ -82,7 +82,8 @@
         <span class="flex flex-col p-2">
           {#if currentStep === "reason" && moveWizardState.reasons.length > 1}
             {#each moveWizardState.reasons as reasonSpec}
-              <button class="flex justify-start"
+              <button
+                class="flex justify-start"
                 on:click={() => {
                   reason.setData(reasonSpec)
                   currentStep = "pick_location"
@@ -112,7 +113,7 @@
             </div>
 
             {#if $reason.includeSearch}
-             <!-- TODO -->
+              <!-- TODO -->
             {/if}
 
             <div class="flex flex-wrap">
@@ -124,7 +125,12 @@
                 <button
                   class="primary w-full"
                   on:click={() => {
-                    moveWizardState.moveFeature(newLocation.data, snappedTo.data, reason.data, featureToMove)
+                    moveWizardState.moveFeature(
+                      newLocation.data,
+                      snappedTo.data,
+                      reason.data,
+                      featureToMove
+                    )
                     currentStep = "moved"
                   }}
                 >

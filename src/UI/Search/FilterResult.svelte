@@ -10,11 +10,10 @@
   export let entry: FilterSearchResult[] | LayerConfig
   let asFilter: FilterSearchResult[]
   let asLayer: LayerConfig
-  if(Array.isArray(entry)){
-      asFilter = entry
-  }else{
+  if (Array.isArray(entry)) {
+    asFilter = entry
+  } else {
     asLayer = <LayerConfig>entry
-
   }
   export let state: SpecialVisualizationState
 
@@ -33,6 +32,7 @@
     }, 25)
   }
 </script>
+
 <button on:click={() => apply()} class:disabled={loading}>
   {#if loading}
     <Loading />
@@ -40,18 +40,22 @@
   <div class="flex flex-col items-start">
     <div class="flex items-center gap-x-1">
       {#if asLayer}
-        <div class="w-8 h-8 p-1">
+        <div class="h-8 w-8 p-1">
           <ToSvelte construct={asLayer.defaultIcon()} />
         </div>
         <b>
           <Tr t={asLayer.name} />
         </b>
       {:else}
-        <Icon icon={asFilter[0].option.icon ?? asFilter[0].option.emoji} clss="w-4 h-4" emojiHeight="14px" />
+        <Icon
+          icon={asFilter[0].option.icon ?? asFilter[0].option.emoji}
+          clss="w-4 h-4"
+          emojiHeight="14px"
+        />
         <Tr cls="whitespace-nowrap" t={asFilter[0].option.question} />
         {#if $debug}
-        <span class="subtle">({asFilter.map(f => f.layer.id).join(", ")})</span>
-          {/if}
+          <span class="subtle">({asFilter.map((f) => f.layer.id).join(", ")})</span>
+        {/if}
       {/if}
     </div>
   </div>

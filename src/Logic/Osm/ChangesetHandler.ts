@@ -205,12 +205,12 @@ export class ChangesetHandler {
         try {
             return await this.UploadWithNew(generateChangeXML, openChangeset, extraMetaTags)
         } catch (e) {
-            const req = (<XMLHttpRequest>e)
+            const req = <XMLHttpRequest>e
             if (req.status === 403) {
                 // Someone got the banhammer
                 // This is the message that OSM returned, will be something like "you have an important message, go to osm.org"
-                const msg =   req.responseText
-                alert(msg+"\n\nWe'll take you to openstreetmap.org now")
+                const msg = req.responseText
+                alert(msg + "\n\nWe'll take you to openstreetmap.org now")
                 window.location.replace(this.osmConnection.Backend())
                 return
             }

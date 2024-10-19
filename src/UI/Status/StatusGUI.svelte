@@ -62,7 +62,7 @@
             return "offline"
         }
       }),
-      message: osmApi
+      message: osmApi,
     })
   }
 
@@ -90,7 +90,7 @@
         }
         const files: string[] = s["success"]["allFiles"]
         return "Contains " + (files.length ?? "no") + " files"
-      })
+      }),
     })
   }
   {
@@ -106,8 +106,7 @@
           return "degraded"
         }
       }),
-      message: simpleMessage(testDownload(Constants.panoramax.url + "/api"))
-
+      message: simpleMessage(testDownload(Constants.panoramax.url + "/api")),
     })
   }
   {
@@ -123,7 +122,7 @@
           return "degraded"
         }
       }),
-      message: simpleMessage(testDownload(Constants.GeoIpServer + "/ip"))
+      message: simpleMessage(testDownload(Constants.GeoIpServer + "/ip")),
     })
   }
 
@@ -142,7 +141,7 @@
         }
         return "degraded"
       }),
-      message: simpleMessage(status)
+      message: simpleMessage(status),
     })
   }
 
@@ -161,7 +160,7 @@
         }
         return "online"
       }),
-      message: simpleMessage(status)
+      message: simpleMessage(status),
     })
   }
 
@@ -200,7 +199,7 @@
 
         const json = JSON.stringify(s["success"], null, "  ")
         return "Database is " + Math.floor(timediffDays) + " days out of sync\n\n" + json
-      })
+      }),
     })
   }
 
@@ -219,7 +218,7 @@
         }
         return "degraded"
       }),
-      message: status.map((s) => JSON.stringify(s))
+      message: status.map((s) => JSON.stringify(s)),
     })
   }
 
@@ -229,7 +228,7 @@
     services.push({
       name: s,
       message: simpleMessage(status),
-      status: status.mapD(s => {
+      status: status.mapD((s) => {
         if (s["error"]) {
           return "offline"
         }
@@ -238,7 +237,7 @@
           return "online"
         }
         return "degraded"
-      })
+      }),
     })
   }
 
@@ -247,7 +246,7 @@
     const status = testDownload(s + "/api/?q=Brugge")
     services.push({
       name: s,
-      status: status.mapD(s => {
+      status: status.mapD((s) => {
         if (s["error"]) {
           return "offline"
         }
@@ -257,7 +256,7 @@
         }
         return "degraded"
       }),
-      message: simpleMessage(status)
+      message: simpleMessage(status),
     })
   }
 
@@ -283,7 +282,7 @@
 
           return "online"
         }),
-        message: simpleMessage(status)
+        message: simpleMessage(status),
       })
     }
   }
@@ -296,7 +295,7 @@
           return "online"
         }
         return "offline"
-      })
+      }),
     })
   }
 

@@ -46,7 +46,7 @@
       <ul>
         {#each $trs as mapping}
           <li>
-            <TagRenderingMapping {mapping} {tags} {state} {selectedElement} {layer} {noIcons}/>
+            <TagRenderingMapping {mapping} {tags} {state} {selectedElement} {layer} {noIcons} />
           </li>
         {/each}
       </ul>

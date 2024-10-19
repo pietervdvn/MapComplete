@@ -208,7 +208,8 @@
         "pl": "Jak nazywa się ulica, przy której znajduje się stacja?",
         "pt_BR": "Como é o nome da rua em que a estação está localizada?",
         "zh_Hans": "车站所在的街道名称是什么？",
-        "pt": "Como é o nome da rua em que a estação está localizada?"
+        "pt": "Como é o nome da rua em que a estação está localizada?",
+        "uk": "Як називається вулиця, на якій розташована станція?"
       },
       "render": {
         "en": "This station is along a highway called {addr:street}.",
@@ -247,7 +248,8 @@
         "he": "היכן ממוקמת התחנה? (למשל שם השכונה, הכפר או העיירה)",
         "pt_BR": "Onde está localizada a estação? (por exemplo, nome do bairro, vila ou cidade)",
         "zh_Hans": "车站位于哪里？ （例如邻里、村庄或城镇的名称）",
-        "pt": "Onde está a estação localizada ? (por exemplo, nome do bairro, vila ou cidade)"
+        "pt": "Onde está a estação localizada ? (por exemplo, nome do bairro, vila ou cidade)",
+        "uk": "Де знаходиться станція? (наприклад, назва району, села чи міста)"
       },
       "freeform": {
         "key": "addr:place"

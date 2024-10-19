@@ -124,7 +124,8 @@
             "en": "This is a plaque",
             "de": "Dies ist eine Gedenktafel",
             "fr": "C'est une plaque",
-            "sl": "To je plošča"
+            "sl": "To je plošča",
+            "uk": "Це меморіальна дошка"
           }
         },
         {
@@ -283,7 +284,8 @@
         "de": "Wie lautet die Inschrift auf diesem Denkmal?",
         "fr": "Quelle est l'inscription sur cette plaque ?",
         "nl": "Wat is het opschrift van dit gedenkteken?",
-        "sl": "Kakšen je napis na tem spomeniku?"
+        "sl": "Kakšen je napis na tem spomeniku?",
+        "uk": "Який напис на цьому пам'ятнику?"
       },
       "#:condition": "Benches have a separate inscription question",
       "condition": {
@@ -297,7 +299,8 @@
         "cs": "Nápis na této desce zní: <p><i>{inscription}<i></p>",
         "de": "Die Inschrift auf diesem Denkmal lautet: <p><i>{inscription}<i></p>",
         "fr": "L'inscription sur cette plaque indique: <p><i>{inscription}<i></p>",
-        "sl": "Napis na tem spomeniku je: <p><i>{inscription}<i></p>"
+        "sl": "Napis na tem spomeniku je: <p><i>{inscription}<i></p>",
+        "uk": "Напис на цьому меморіалі: <p><i>{inscription}<i></p>"
       },
       "freeform": {
         "key": "inscription",
@@ -311,7 +314,8 @@
             "de": "Dieses Denkmal hat keine Inschrift",
             "fr": "Il n'y a aucune inscription sur cette plaque",
             "nl": "Dit gedenkteken heeft geen opschrift",
-            "sl": "Ta spomenik nima napisa"
+            "sl": "Ta spomenik nima napisa",
+            "uk": "Цей пам'ятник не має напису"
           },
           "addExtraTags": [
             "inscription="

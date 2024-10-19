@@ -46,7 +46,9 @@ async function fetchRegularLanguages() {
     const url = Wikidata.wds.sparqlQuery(sparql)
 
     // request the generated URL with your favorite HTTP request library
-    const result = await Utils.downloadJson<{results: {bindings: any[]}}>(url, { "User-Agent": "MapComplete script" })
+    const result = await Utils.downloadJson<{ results: { bindings: any[] } }>(url, {
+        "User-Agent": "MapComplete script",
+    })
     const bindings = <LanguageSpecResult[]>result.results.bindings
 
     // Traditional chinese = 繁體中文 or 正體中文
@@ -98,7 +100,9 @@ async function fetchSpecial(id: number, code: string): Promise<LanguageSpecResul
     console.log("Special sparql:", sparql)
     const url = Wikidata.wds.sparqlQuery(sparql)
 
-    const result = await Utils.downloadJson<{results: {bindings: any[]}}>(url, { "User-Agent": "MapComplete script" })
+    const result = await Utils.downloadJson<{ results: { bindings: any[] } }>(url, {
+        "User-Agent": "MapComplete script",
+    })
     const bindings = result.results.bindings
     bindings.forEach((binding) => (binding["code"] = { value: code }))
     return bindings
@@ -134,7 +138,9 @@ async function getOfficialLanguagesPerCountry(): Promise<Map<string, string[]>> 
     }`
     const url = Wikidata.wds.sparqlQuery(sparql)
 
-    const result = await Utils.downloadJson<{results: {bindings: any[]}}>(url, { "User-Agent": "MapComplete script" })
+    const result = await Utils.downloadJson<{ results: { bindings: any[] } }>(url, {
+        "User-Agent": "MapComplete script",
+    })
     const bindings: { countryCode: { value: string }; languageCode: { value: string } }[] =
         result.results.bindings
     for (const binding of bindings) {

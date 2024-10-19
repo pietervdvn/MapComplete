@@ -45,7 +45,8 @@
         "en": "What is the text on the sign?",
         "de": "Was ist der Text auf dem Schild?",
         "es": "¿Cuál es el texto del cartel?",
-        "ca": "Quin és el text del rètol?"
+        "ca": "Quin és el text del rètol?",
+        "uk": "Який текст на вивісці?"
       },
       "freeform": {
         "key": "inscription",
@@ -54,13 +55,15 @@
           "en": "Text on the sign",
           "de": "Text auf dem Schild",
           "es": "Texto en el cartel",
-          "ca": "Text en el rètol"
+          "ca": "Text en el rètol",
+          "uk": "Текст на табличці"
         }
       },
       "render": {
         "en": "The text on the sign is: {inscription}",
         "de": "Der Text auf dem Schild ist: {inscription}",
-        "es": "El texto del cartel es: {inscription}"
+        "es": "El texto del cartel es: {inscription}",
+        "uk": "Текст на табличці: {inscription}"
       }
     },
     {

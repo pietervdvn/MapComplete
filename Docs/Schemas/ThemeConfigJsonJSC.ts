@@ -1,4 +1,4 @@
-{
+export default {
   "description": "Defines the entire theme.\n\nA theme is the collection of the layers that are shown; the intro text, the icon, ...\nIt more or less defines the entire experience.\n\nMost of the fields defined here are metadata about the theme, such as its name, description, supported languages, default starting location, ...\n\nThe main chunk of the json will however be the 'layers'-array, where the details of your layers are.\n\nGeneral remark: a type (string | any) indicates either a fixed or a translatable string.",
   "type": "object",
   "properties": {
@@ -359,12 +359,10 @@
       },
       "required": [
         "and"
-      ],
-      "additionalProperties": false
+      ]
     },
     "Record<string,string>": {
-      "type": "object",
-      "additionalProperties": false
+      "type": "object"
     },
     "{or:TagConfigJson[];}": {
       "type": "object",
@@ -378,8 +376,7 @@
       },
       "required": [
         "or"
-      ],
-      "additionalProperties": false
+      ]
     },
     "FilterConfigOptionJson": {
       "type": "object",
@@ -441,16 +438,13 @@
       },
       "required": [
         "question"
-      ],
-      "additionalProperties": false
+      ]
     },
     "Record<string,string[]>": {
-      "type": "object",
-      "additionalProperties": false
+      "type": "object"
     },
     "Record<string,string|Record<string,string>>": {
-      "type": "object",
-      "additionalProperties": false
+      "type": "object"
     },
     "DenominationConfigJson": {
       "type": "object",
@@ -517,8 +511,7 @@
       },
       "required": [
         "canonicalDenomination"
-      ],
-      "additionalProperties": false
+      ]
     },
     "MinimalTagRenderingConfigJson": {
       "description": "Mostly used for lineRendering and pointRendering",
@@ -549,8 +542,7 @@
             ]
           }
         }
-      },
-      "additionalProperties": false
+      }
     },
     "IconConfigJson": {
       "type": "object",
@@ -606,8 +598,7 @@
       },
       "required": [
         "icon"
-      ],
-      "additionalProperties": false
+      ]
     },
     "TagRenderingConfigJson": {
       "description": "A TagRenderingConfigJson is a single piece of code which converts one ore more tags into a HTML-snippet.\nFor an _editable_ tagRendering, use 'QuestionableTagRenderingConfigJson' instead, which extends this one",
@@ -796,8 +787,7 @@
             }
           ]
         }
-      },
-      "additionalProperties": false
+      }
     },
     "MappingConfigJson": {
       "type": "object",
@@ -919,12 +909,10 @@
       "required": [
         "if",
         "then"
-      ],
-      "additionalProperties": false
+      ]
     },
     "T": {
-      "type": "object",
-      "additionalProperties": false
+      "type": "object"
     },
     "default_4": {
       "description": "The PointRenderingConfig gives all details onto how to render a single point of a feature.\n\nThis can be used if:\n\n- The feature is a point\n- To render something at the centroid of an area, or at the start, end or projected centroid of a way",
@@ -1093,8 +1081,7 @@
       },
       "required": [
         "location"
-      ],
-      "additionalProperties": false
+      ]
     },
     "default_5": {
       "description": "The LineRenderingConfig gives all details onto how to render a single line of a feature.\n\nThis can be used if:\n\n- The feature is a line\n- The feature is an area",
@@ -1189,8 +1176,7 @@
             }
           ]
         }
-      },
-      "additionalProperties": false
+      }
     },
     "QuestionableTagRenderingConfigJson": {
       "description": "A QuestionableTagRenderingConfigJson is a single piece of code which converts one ore more tags into a HTML-snippet.\nIf the desired tags are missing and a question is defined, a question will be shown instead.",
@@ -1438,8 +1424,7 @@
       },
       "required": [
         "id"
-      ],
-      "additionalProperties": false
+      ]
     },
     "Partial<QuestionableTagRenderingConfigJson>": {
       "type": "object",
@@ -1683,8 +1668,7 @@
             }
           ]
         }
-      },
-      "additionalProperties": false
+      }
     },
     "default<(string|QuestionableTagRenderingConfigJson|{builtin:string;override:Partial<QuestionableTagRenderingConfigJson>;})[]>": {
       "description": "Rewrites and multiplies the given renderings of type T.\n\nThis can be used for introducing many similar questions automatically,\nwhich also makes translations easier.\n\n(Note that the key does _not_ need to be wrapped in {}.\nHowever, we recommend to use them if the key is used in a translation, as missing keys will be picked up and warned for by the translation scripts)\n\nFor example:\n\n```\n{\n    rewrite: {\n        sourceString: [\"key\", \"a|b|c\"],\n        into: [\n            [\"X\", 0]\n            [\"Y\", 1],\n            [\"Z\", 2]\n        ],\n        renderings: [{\n            \"key\":\"a|b|c\"\n        }]\n    }\n}\n```\nwill result in _three_ copies (as the values to rewrite into have three values, namely:\n\n[\n  {\n  # The first pair: key --> X, a|b|c --> 0\n      \"X\": 0\n  },\n  {\n      \"Y\": 1\n  },\n  {\n      \"Z\": 2\n  }\n\n]",
@@ -1783,8 +1767,7 @@
       "required": [
         "renderings",
         "rewrite"
-      ],
-      "additionalProperties": false
+      ]
     },
     "default_1": {
       "type": "object",
@@ -1808,8 +1791,7 @@
       "required": [
         "id",
         "options"
-      ],
-      "additionalProperties": false
+      ]
     },
     "DeleteConfigJson": {
       "type": "object",
@@ -1894,8 +1876,7 @@
             }
           ]
         }
-      },
-      "additionalProperties": false
+      }
     },
     "default_3": {
       "type": "object",
@@ -1908,8 +1889,7 @@
           "description": "question: Should moving this type of point due to a relocation be allowed?\n\nThis will erase the attributes `addr:street`, `addr:housenumber`, `addr:city` and `addr:postcode`\n\niftrue: This type of point can be moved due to a relocation (and will remove address information when this is done)\nifunset: (default) This type of point can be moved due to a relocation (and will remove address information when this is done)\niffalse: This type of point cannot be moved due to a relocation",
           "type": "boolean"
         }
-      },
-      "additionalProperties": false
+      }
     },
     "default_2": {
       "description": "In some cases, a value is represented in a certain unit (such as meters for heigt/distance/..., km/h for speed, ...)\n\nSometimes, multiple denominations are possible (e.g. km/h vs mile/h; megawatt vs kilowatt vs gigawatt for power generators, ...)\n\nThis brings in some troubles, as there are multiple ways to write it (no denomitation, 'm' vs 'meter' 'metre', ...)\n\nNot only do we want to write consistent data to OSM, we also want to present this consistently to the user.\nThis is handled by defining units.\n\n# Rendering\n\nTo render a value with long (human) denomination, use {canonical(key)}\n\n# Usage\n\nFirst of all, you define which keys have units applied, for example:\n\n```\nunits: [\n appliesTo: [\"maxspeed\", \"maxspeed:hgv\", \"maxspeed:bus\"]\n applicableUnits: [\n     ...\n ]\n]\n```\n\nApplicableUnits defines which is the canonical extension, how it is presented to the user, ...:\n\n```\napplicableUnits: [\n{\n    canonicalDenomination: \"km/h\",\n    alternativeDenomination: [\"km/u\", \"kmh\", \"kph\"]\n    default: true,\n    human: {\n        en: \"kilometer/hour\",\n        nl: \"kilometer/uur\"\n    },\n    humanShort: {\n        en: \"km/h\",\n        nl: \"km/u\"\n    }\n},\n{\n    canoncialDenomination: \"mph\",\n    ... similar for miles an hour ...\n}\n]\n```\n\n\nIf this is defined, then every key which the denominations apply to (`maxspeed`, `maxspeed:hgv` and `maxspeed:bus`) will be rewritten at the metatagging stage:\nevery value will be parsed and the canonical extension will be added add presented to the other parts of the code.\n\nAlso, if a freeform text field is used, an extra dropdown with applicable denominations will be given",
@@ -1944,12 +1924,10 @@
       },
       "required": [
         "applicableUnits"
-      ],
-      "additionalProperties": false
+      ]
     },
     "Record<string,string|{quantity:string;denominations:string[];canonical?:string|undefined;inverted?:boolean|undefined;}>": {
-      "type": "object",
-      "additionalProperties": false
+      "type": "object"
     },
     "default": {
       "type": "object",
@@ -1993,8 +1971,7 @@
       },
       "required": [
         "href"
-      ],
-      "additionalProperties": false
+      ]
     },
     "LayerConfigJson": {
       "description": "Configuration for a single layer",
@@ -2438,8 +2415,7 @@
       "required": [
         "id",
         "pointRendering"
-      ],
-      "additionalProperties": false
+      ]
     },
     "Partial<LayerConfigJson>": {
       "type": "object",
@@ -2878,12 +2854,10 @@
             }
           ]
         }
-      },
-      "additionalProperties": false
+      }
     },
     "Partial<any>": {
-      "type": "object",
-      "additionalProperties": false
+      "type": "object"
     },
     "RasterLayerProperties": {
       "description": "This class has grown beyond the point of only containing Raster Layers",
@@ -2949,10 +2923,8 @@
         "id",
         "name",
         "url"
-      ],
-      "additionalProperties": false
+      ]
     }
   },
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "additionalProperties": false
+  "$schema": "http://json-schema.org/draft-07/schema#"
 }

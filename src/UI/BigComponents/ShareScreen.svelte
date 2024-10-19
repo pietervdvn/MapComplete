@@ -116,7 +116,6 @@
 </script>
 
 <div class="link-underline flex flex-col">
-
   <div class="flex flex-col">
     <Tr t={tr.intro} />
     <Copyable {state} text={linkToShare} />

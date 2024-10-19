@@ -33,7 +33,7 @@ export default class ChangeLocationAction extends OsmChangeAction {
         meta: {
             theme: string
             reason: string
-        },
+        }
     ) {
         super(id, true)
         this.state = state
@@ -66,12 +66,10 @@ export default class ChangeLocationAction extends OsmChangeAction {
             return [d]
         }
 
-        const insertIntoWay = new InsertPointIntoWayAction(
-            lat, lon, this._id, snapToWay, {
-                allowReuseOfPreviouslyCreatedPoints: false,
-                reusePointWithinMeters: 0.25,
-            },
-        ).prepareChangeDescription()
+        const insertIntoWay = new InsertPointIntoWayAction(lat, lon, this._id, snapToWay, {
+            allowReuseOfPreviouslyCreatedPoints: false,
+            reusePointWithinMeters: 0.25,
+        }).prepareChangeDescription()
 
         return [d, { ...insertIntoWay, meta: d.meta }]
     }

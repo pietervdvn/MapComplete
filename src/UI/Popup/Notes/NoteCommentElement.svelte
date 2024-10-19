@@ -28,8 +28,8 @@
   let userinfo = Stores.FromPromise(
     Utils.downloadJsonCached<{ user: { img: { href: string } } }>(
       "https://api.openstreetmap.org/api/0.6/user/" + comment.uid,
-      24 * 60 * 60 * 1000,
-    ),
+      24 * 60 * 60 * 1000
+    )
   )
 
   const htmlElement = document.createElement("div")
@@ -44,23 +44,27 @@
     })
     .filter((link) => !link.startsWith("https://wiki.openstreetmap.org/wiki/File:"))
 
-
   const attributedImages = AllImageProviders.loadImagesFrom(images)
   /**
    * Class of the little icons indicating 'opened', 'comment' and 'resolved'
    */
   export let iconClass = "shrink-0 w-6 mr-3 my-2 "
-
 </script>
 
-<div class="flex flex-col my-2 border-gray-500 border-b" class:border-interactive={comment.highlighted}>
-
+<div
+  class="my-2 flex flex-col border-b border-gray-500"
+  class:border-interactive={comment.highlighted}
+>
   <div class="flex items-center">
-
     <!-- Action icon, e.g. 'created', 'commented', 'closed' -->
 
     {#if $userinfo?.user?.img?.href}
-      <img alt="avatar" aria-hidden="true" src={$userinfo?.user?.img?.href} class="rounded-full w-10 h-10 mr-3" />
+      <img
+        alt="avatar"
+        aria-hidden="true"
+        src={$userinfo?.user?.img?.href}
+        class="mr-3 h-10 w-10 rounded-full"
+      />
     {:else if comment.action === "opened" || comment.action === "reopened"}
       <Note class={iconClass} />
     {:else if comment.action === "closed"}
@@ -74,7 +78,10 @@
   </div>
 
   {#if $attributedImages?.length > 0}
-    <div class="flex justify-center w-full space-x-4 overflow-x-auto" style="scroll-snap-type: x proximity">
+    <div
+      class="flex w-full justify-center space-x-4 overflow-x-auto"
+      style="scroll-snap-type: x proximity"
+    >
       {#each $attributedImages as image (image.id)}
         <AttributedImage
           {state}
@@ -82,14 +89,12 @@
           imgClass="max-h-64 w-auto sm:h-32 md:h-64"
           previewedImage={state.previewedImage}
           attributionFormat="minimal"
-        >
-        </AttributedImage>
-        {/each}
+        />
+      {/each}
     </div>
   {/if}
 
-
-  <div class="flex justify-end items-center subtle py-2">
+  <div class="subtle flex items-center justify-end py-2">
     <!-- commenter info -->
     <span class="mr-2">
       {#if comment.user === undefined}
@@ -99,6 +104,5 @@
       {/if}
       {comment.date}
     </span>
-
   </div>
 </div>

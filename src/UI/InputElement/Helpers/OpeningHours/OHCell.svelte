@@ -7,7 +7,7 @@
   export let wd: number
   export let h: number
   export let type: "full" | "half"
-  let dispatch = createEventDispatcher<{ "start", "end", "move","clear" }>()
+  let dispatch = createEventDispatcher<{ start; end; move; clear }>()
   let element: HTMLElement
 
   function send(signal: "start" | "end" | "move", ev: Event) {
@@ -39,32 +39,30 @@
     element.onmouseenter = (ev) => send("move", ev)
     element.onmouseup = (ev) => send("end", ev)
 
-    element.addEventListener("touchstart", ev => dispatch("start", ev))
-    element.addEventListener("touchend", ev => {
-
+    element.addEventListener("touchstart", (ev) => dispatch("start", ev))
+    element.addEventListener("touchend", (ev) => {
       const el = elementUnderTouch(ev)
       if (el?.onmouseup) {
         el?.onmouseup(<any>ev)
-      }else{
+      } else {
         // We dragged outside of the table
         dispatch("clear")
       }
-
     })
-    element.addEventListener("touchmove", ev => {
+    element.addEventListener("touchmove", (ev) => {
       const underTouch = elementUnderTouch(ev)
-        if(typeof underTouch?.onmouseenter !== "function"){
-          return
-        }
+      if (typeof underTouch?.onmouseenter !== "function") {
+        return
+      }
 
-        underTouch.onmouseenter(<any>ev)
+      underTouch.onmouseenter(<any>ev)
     })
-
-
   })
 </script>
 
-<td bind:this={element} id={"oh-"+type+"-"+h+"-"+wd}
-    class:border-black={(h + 1) % 6 === 0}
-    class={`oh-timecell oh-timecell-${type} oh-timecell-${wd} `}
+<td
+  bind:this={element}
+  id={"oh-" + type + "-" + h + "-" + wd}
+  class:border-black={(h + 1) % 6 === 0}
+  class={`oh-timecell oh-timecell-${type} oh-timecell-${wd} `}
 />

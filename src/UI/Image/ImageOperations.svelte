@@ -56,7 +56,5 @@
     </div>
 
     <slot />
-
-
   </div>
 </div>

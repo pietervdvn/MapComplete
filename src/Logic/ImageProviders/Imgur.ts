@@ -19,7 +19,6 @@ export class Imgur extends ImageProvider {
         return [Imgur.apiUrl]
     }
 
-
     SourceIcon(): BaseUIElement {
         return undefined
     }
@@ -32,7 +31,7 @@ export class Imgur extends ImageProvider {
                     key: key,
                     provider: this,
                     id: value,
-                }
+                },
             ]
         }
         return undefined

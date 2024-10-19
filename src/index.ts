@@ -27,7 +27,7 @@ async function timeout(timeMS: number): Promise<{ layers: string[] }> {
 }
 
 async function getAvailableLayers(): Promise<Set<string>> {
-    if(!Constants.SummaryServer){
+    if (!Constants.SummaryServer) {
         return new Set<string>()
     }
     try {

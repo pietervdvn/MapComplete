@@ -118,7 +118,8 @@
           "human": {
             "en": "{quantity} Volt",
             "nl": "{quantity} volt",
-            "de": "{quantity} Volt"
+            "de": "{quantity} Volt",
+            "hu": "{quantity} Volt"
           }
         }
       ],
@@ -139,7 +140,8 @@
             "en": "{quantity} A",
             "nl": "{quantity} A",
             "ca": "{quantity} A",
-            "de": "{quantity} A"
+            "de": "{quantity} A",
+            "hu": "{quantity} A"
           }
         }
       ],
@@ -181,7 +183,8 @@
             "fr": "un mètre",
             "nl": "één meter",
             "de": "ein Meter",
-            "ca": "un metre"
+            "ca": "un metre",
+            "hu": "egy méter"
           }
         },
         {
@@ -201,13 +204,15 @@
             "cs": "{quantity} centimetr",
             "pl": "{quantity} centymetr",
             "ru": "{quantity} сантиметры",
-            "pa_PK": " {quantity}سینٹیمیٹر"
+            "pa_PK": " {quantity}سینٹیمیٹر",
+            "hu": "{quantity} centiméter"
           },
           "humanSingular": {
             "en": "one centimeter",
             "nl": "één centimeter",
             "ca": "un centímetre",
-            "de": "ein Zentimeter"
+            "de": "ein Zentimeter",
+            "hu": "egy centiméter"
           }
         },
         {
@@ -223,13 +228,15 @@
             "ru": "{quantity} миллиметры",
             "ca": "{quantity} mil·límetres",
             "cs": "{quantity} milimetry",
-            "pa_PK": "{quantity} ملیمیٹر"
+            "pa_PK": "{quantity} ملیمیٹر",
+            "hu": "{quantity} milliméter"
           },
           "humanSingular": {
             "en": "one millimeter",
             "nl": "één millimeter",
             "de": "ein Millimeter",
-            "ca": "un mil·límetre"
+            "ca": "un mil·límetre",
+            "hu": "egy milliméter"
           }
         },
         {
@@ -252,7 +259,8 @@
             "eu": "{quantity} ·hanka",
             "pl": "{quantity} stopy",
             "nb_NO": "{quantity} fot",
-            "pa_PK": "{quantity} ؜ فوٹ"
+            "pa_PK": "{quantity} ؜ فوٹ",
+            "hu": "{quantity} láb"
           }
         }
       ]
@@ -276,7 +284,8 @@
             "de": "{quantity} Kilometer/Stunde",
             "cs": "{quantity} kilometry/hodinu",
             "pa_PK": "{quantity}ہر گھنٹہ وچ کیلومیٹر",
-            "fr": "{quantity} kilomètres/heure"
+            "fr": "{quantity} kilomètres/heure",
+            "hu": "{quantity} kilméter/óra"
           },
           "humanShort": {
             "en": "{quantity} km/h",
@@ -287,7 +296,8 @@
             "cs": "{quantity} km/h",
             "pa_PK": "{quantity}ہر گھنٹے وچ کیلومیٹر",
             "ru": "{quantity} км/ч",
-            "fr": "{quantity} km/h"
+            "fr": "{quantity} km/h",
+            "hu": "{quantity} km/h"
           }
         },
         {
@@ -310,7 +320,8 @@
             "de": "{quantity} Meilen/Stunde",
             "cs": "{quantity} míle/hodinu",
             "fr": "{quantity} miles/heure",
-            "pa_PK": "{quantity} ہر گھنٹہ وچ میل"
+            "pa_PK": "{quantity} ہر گھنٹہ وچ میل",
+            "hu": "{quantity} mérföld/óra"
           },
           "humanShort": {
             "en": "{quantity} mph",
@@ -320,7 +331,8 @@
             "de": "{quantity} mph",
             "cs": "{quantity} mph",
             "pa_PK": "{quantity}ہر گھنٹہ وچ میل",
-            "fr": "{quantity} mph"
+            "fr": "{quantity} mph",
+            "hu": "{quantity} mf/h"
           }
         }
       ]
@@ -344,14 +356,16 @@
             "nl": "{quantity} minuten",
             "ca": "{quantity} minuts",
             "de": "{quantity} Minuten",
-            "fr": "{quantity} minutes"
+            "fr": "{quantity} minutes",
+            "hu": "{quantity} perc"
           },
           "humanSingular": {
             "en": "one minute",
             "nl": "één minuut",
             "ca": "un minut",
             "de": "eine Minute",
-            "fr": "une minute"
+            "fr": "une minute",
+            "hu": "egy perc"
           }
         },
         {
@@ -371,14 +385,16 @@
             "nl": "{quantity} uren",
             "ca": "{quantity} hores",
             "de": "{quantity} Stunden",
-            "fr": "{quantity} heures"
+            "fr": "{quantity} heures",
+            "hu": "{quantity} óra"
           },
           "humanSingular": {
             "en": "one hour",
             "nl": "één uur",
             "ca": "una hora",
             "de": "eine Stunde",
-            "fr": "une heure"
+            "fr": "une heure",
+            "hu": "egy óra"
           }
         },
         {
@@ -395,13 +411,15 @@
             "nl": "{quantity} day",
             "ca": "{quantity} dies",
             "de": "{quantity} Tage",
-            "fr": "{quantity} jours"
+            "fr": "{quantity} jours",
+            "hu": "{quantity} nap"
           },
           "humanSingular": {
             "en": "one day",
             "nl": "één dag",
             "de": "ein Tag",
-            "fr": "un jour"
+            "fr": "un jour",
+            "hu": "egy nap"
           }
         },
         {
@@ -412,13 +430,15 @@
             "en": "one week",
             "nl": "één week",
             "de": "ein Woche",
-            "fr": "une semaine"
+            "fr": "une semaine",
+            "hu": "egy hét"
           },
           "human": {
             "en": "{quantity} weeks",
             "nl": "{quantity} weken",
             "de": "{quantity} Wochen",
-            "fr": "{quantity} semaines"
+            "fr": "{quantity} semaines",
+            "hu": "{quantity} hét"
           }
         },
         {
@@ -429,13 +449,15 @@
             "en": "one month",
             "nl": "één maand",
             "de": "ein Monat",
-            "fr": "un mois"
+            "fr": "un mois",
+            "hu": "egy hónap"
           },
           "human": {
             "en": "{quantity} months",
             "nl": "{quantity} maanden",
             "de": "{quantity} Monate",
-            "fr": "{quantity} mois"
+            "fr": "{quantity} mois",
+            "hu": "{quantity} hónap"
           }
         },
         {
@@ -447,14 +469,16 @@
             "nl": "één jaar",
             "de": "ein Jahr",
             "fr": "un an",
-            "ca": "un any"
+            "ca": "un any",
+            "hu": "egy év"
           },
           "human": {
             "en": "{quantity} years",
             "nl": "{quantity} jaar",
             "de": "{quantity} Jahre",
             "fr": "{quantity} années",
-            "ca": "{quantity} anys"
+            "ca": "{quantity} anys",
+            "hu": "{quantity} év"
           }
         }
       ]

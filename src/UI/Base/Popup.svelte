@@ -8,7 +8,8 @@
 
   export let fullscreen: boolean = false
 
-  const shared = "in-page normal-background dark:bg-gray-800 rounded-lg border-gray-200 dark:border-gray-700 border-gray-200 dark:border-gray-700 divide-gray-200 dark:divide-gray-700 shadow-md"
+  const shared =
+    "in-page normal-background dark:bg-gray-800 rounded-lg border-gray-200 dark:border-gray-700 border-gray-200 dark:border-gray-700 divide-gray-200 dark:divide-gray-700 shadow-md"
   let defaultClass = "relative flex flex-col mx-auto w-full divide-y " + shared
   if (fullscreen) {
     defaultClass = shared
@@ -27,20 +28,23 @@
   export let shown: UIEventSource<boolean>
   export let dismissable = true
   let _shown = false
-  shown.addCallbackAndRun(sh => {
+  shown.addCallbackAndRun((sh) => {
     _shown = sh
   })
-
-
 </script>
 
-
-<Modal open={_shown} on:close={() => shown.set(false)} outsideclose
-       size="xl"
-       {dismissable}
-       {defaultClass} {bodyClass} {dialogClass} {headerClass}
-       color="none">
-
+<Modal
+  open={_shown}
+  on:close={() => shown.set(false)}
+  outsideclose
+  size="xl"
+  {dismissable}
+  {defaultClass}
+  {bodyClass}
+  {dialogClass}
+  {headerClass}
+  color="none"
+>
   <svelte:fragment slot="header">
     {#if $$slots.header}
       <h1 class="page-header w-full">

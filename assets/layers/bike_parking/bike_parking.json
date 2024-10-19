@@ -675,7 +675,8 @@
           "if": "access=private",
           "then": {
             "en": "Private bicycle parking which is never available to the public, also not via a membership fee",
-            "nl": "Private fietsenstalling die niet voor het grote publiek toegankelijk is (dus ook niet met bv. een abonnement)"
+            "nl": "Private fietsenstalling die niet voor het grote publiek toegankelijk is (dus ook niet met bv. een abonnement)",
+            "de": "Private Fahrradabstellplätze, die nie der Öffentlichkeit zur Verfügung stehen, auch nicht über einen Mitgliedsbeitrag"
           }
         }
       ],
@@ -812,7 +813,8 @@
         "en": "What is the website number of the operator of this bicycle parking?",
         "nl": "Wat is de website van de operator van deze fietsenstalling?",
         "de": "Wie lautet die Nummer auf der Website des Betreibers dieses Fahrradparkplatzes?",
-        "es": "¿Cuál es la página web del operador de este aparcamiento de bicicletas?"
+        "es": "¿Cuál es la página web del operador de este aparcamiento de bicicletas?",
+        "uk": "Яка адреса веб-сайту оператора цієї велопарковки?"
       },
       "icon": "./assets/layers/icons/website.svg",
       "freeform": {

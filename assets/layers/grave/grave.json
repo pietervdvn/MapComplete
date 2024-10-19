@@ -46,7 +46,8 @@
       ],
       "description": {
         "en": "A tombstone is a physical object which indicates that one or more persons are buried here. It generally has the name, birth date and death date of the person or persons as inscription.",
-        "de": "Ein Grabstein ist ein physischer Gegenstand, der anzeigt, dass eine oder mehrere Personen hier begraben sind. Er trägt in der Regel den Namen, das Geburts- und das Sterbedatum der Person oder Personen als Inschrift."
+        "de": "Ein Grabstein ist ein physischer Gegenstand, der anzeigt, dass eine oder mehrere Personen hier begraben sind. Er trägt in der Regel den Namen, das Geburts- und das Sterbedatum der Person oder Personen als Inschrift.",
+        "uk": "Надгробок - це фізичний об'єкт, який вказує на те, що тут похована одна або кілька осіб. Як правило, на ньому викарбувано ім'я, дату народження та дату смерті особи чи осіб."
       }
     }
   ],
