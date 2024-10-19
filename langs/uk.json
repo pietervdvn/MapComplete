@@ -204,6 +204,7 @@
             "noSearch": "Показати всі теми",
             "previouslyHiddenTitle": "Раніше відвідані приховані теми"
         },
+        "noTagsSelected": "Не вибрано жодного тегу",
         "openStreetMapIntro": "<h3>Відкрита карта</h3><p>Кожен може вільно використовувати та редагувати. Єдине місце для зберігання всієї геоінформації. Різні, маленькі, несумісні та застарілі карти ніде не потрібні.</p><p><b><a href='https://OpenStreetMap.org' target='_blank'>OpenStreetMap</a></b> це не карта ворога. Дані карти можна використовувати вільно (з <a href='https://osm.org/copyright' target='_blank'>зазначенням авторства та публікацією змін цих даних</a>). Кожен може додавати нові дані та виправляти помилки. Цей веб-сайт використовує OpenStreetMap. Звідти надходять усі дані, а ваші відповіді та виправлення використовуються всюди.</p><p>Багато людей і програм уже використовують OpenStreetMap: <a href='https://organicmaps.app/' target='_blank'>Organic Maps</a>, <a href='https://osmAnd.net' target='_blank'>OsmAnd</a>, а також карти у Facebook, Instagram, Apple-maps і Bing-maps (частково) працюють на OpenStreetMap.</p>",
         "openTheMap": "Відкрити карту",
         "openTheMapAtGeolocation": "Наблизьте до свого місцезнаходження",
