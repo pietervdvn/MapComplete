@@ -541,6 +541,9 @@
                 "mappings": {
                     "0": {
                         "then": "Toto dílo slouží také jako památník"
+                    },
+                    "1": {
+                        "then": "Toto umělecké dílo neslouží jako památník"
                     }
                 },
                 "question": "Slouží toto dílo jako památník?"
@@ -1216,7 +1219,19 @@
                 "freeform": {
                     "placeholder": "Název započítávané lokality"
                 },
-                "question": "Jak se jmenuje započítávaná lokalita?"
+                "question": "Jak se jmenuje započítávaná lokalita?",
+                "render": "Název započítávaného místa: {name}"
+            },
+            "ref": {
+                "freeform": {
+                    "placeholder": "Referenční číslo počítadla"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Toto počítadlo nemá referenční číslo"
+                    }
+                },
+                "question": "Jaké je referenční číslo tohoto počítadla?"
             }
         }
     },
@@ -5385,7 +5400,7 @@
                         "then": "Mapa zobrazující vesnici nebo město"
                     },
                     "3": {
-                        "then": " Mapa města"
+                        "then": "Mapa města"
                     },
                     "4": {
                         "then": "Mapa celého regionu s několika městy a vesnicemi"
@@ -7637,7 +7652,7 @@
         "name": "Obchod",
         "presets": {
             "0": {
-                "description": "Přidat nový obchod",
+                "description": "Později můžete zadat, co tento obchod prodává.",
                 "title": "obchod"
             }
         },
@@ -8685,16 +8700,16 @@
             "toilet-changing_table:location": {
                 "mappings": {
                     "0": {
-                        "then": "Přebalovací pult je na dámské toaletě. "
+                        "then": "Přebalovací pult je na dámské toaletě"
                     },
                     "1": {
-                        "then": "Přebalovací pult je na pánské toaletě. "
+                        "then": "Přebalovací pult je na pánské toaletě"
                     },
                     "2": {
-                        "then": "Přebalovací pult je na toaletě pro vozíčkáře. "
+                        "then": "Přebalovací pult je na toaletě pro vozíčkáře"
                     },
                     "3": {
-                        "then": "Přebalovací pult je ve vyhrazené místnosti. "
+                        "then": "Přebalovací pult je ve vyhrazené místnosti"
                     }
                 },
                 "question": "Kde je umístěn přebalovací pult?",
@@ -9398,7 +9413,7 @@
             "language_picker": {
                 "mappings": {
                     "0": {
-                        "then": "Jazyk byl nastaven pomocí parametru URL a uživatel jej nemůže nastavit.²"
+                        "then": "Jazyk byl nastaven pomocí parametru URL a uživatel jej nemůže nastavit."
                     }
                 }
             },
