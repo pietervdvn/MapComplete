@@ -10,13 +10,14 @@ import { Store, Stores, UIEventSource } from "../UIEventSource"
 import SvelteUIElement from "../../UI/Base/SvelteUIElement"
 import Panoramax_bw from "../../assets/svg/Panoramax_bw.svelte"
 import Link from "../../UI/Base/Link"
+import { Utils } from "../../Utils"
 
 
 export default class PanoramaxImageProvider extends ImageProvider {
 
     public static readonly singleton = new PanoramaxImageProvider()
     private static readonly xyz = new PanoramaxXYZ()
-    private static defaultPanoramax = new AuthorizedPanoramax(Constants.panoramax.url, Constants.panoramax.token)
+    private static defaultPanoramax =  new AuthorizedPanoramax(Constants.panoramax.url, Constants.panoramax.token, 3000)
 
     public defaultKeyPrefixes: string[] = ["panoramax"]
     public readonly name: string = "panoramax"
@@ -137,9 +138,7 @@ export default class PanoramaxImageProvider extends ImageProvider {
         Stores.Chronic(1500, () =>
             hasLoading(source.data),
         ).addCallback(_ => {
-            console.log("UPdating... ")
             super.getRelevantUrlsFor(tags, prefixes).then(data => {
-                console.log("New panoramax data is", data, hasLoading(data))
                 source.set(data)
                 return !hasLoading(data)
             })
@@ -180,25 +179,33 @@ export class PanoramaxUploader implements ImageUploader {
 
         let hasDate = false
         let hasGPS = false
+        let [lon, lat] = currentGps
+        let datetime = new Date().toISOString()
         try {
             const tags = await ExifReader.load(blob)
             hasDate  = tags?.DateTime !== undefined
-            hasGPS = tags?.GPSLatitude !== undefined && tags?.GPSLongitude !== undefined
+            const [[latD], [latM], [latS, latSDenom]]  =<[[number,number],[number,number],[number,number]]> tags?.GPSLatitude.value
+            const [[lonD], [lonM], [lonS, lonSDenom]]  =<[[number,number],[number,number],[number,number]]> tags?.GPSLongitude.value
+            lat = latD + latM / 60 + latS / (3600 * latSDenom)
+            lon = lonD + lonM / 60 + lonS / ( 3600 * lonSDenom)
+
+            const [date, time] = tags.DateTime.value[0].split(" ")
+            datetime = new Date(date.replaceAll(":", "-")+"T"+time).toISOString()
+
+            console.log("Tags are", tags)
         } catch (e) {
             console.error("Could not read EXIF-tags")
         }
 
-        let [lon, lat] = currentGps
 
         const p = this._panoramax
         const defaultSequence = (await p.mySequences())[0]
+        console.log("Upload options are", lon, lat, datetime)
         const img = <ImageData>await p.addImage(blob, defaultSequence, {
-            // It might seem odd that we set 'undefined' here - keep in mind that, by default, panoramax will use the EXIF-data
-            // We only pass variables as fallback!
-            lat: !hasGPS ? lat : undefined,
-            lon: !hasGPS ? lon : undefined,
+            lon: Utils.Round7(lon),
+            lat: Utils.Round7(lat),
+            datetime,
             isBlurred: noblur,
-            datetime: !hasDate ? new Date().toISOString() : undefined,
             exifOverride: {
                 Artist: author,
             },
