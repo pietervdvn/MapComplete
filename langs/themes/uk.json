@@ -331,8 +331,18 @@
     "shops": {
         "title": "Магазини"
     },
+    "ski": {
+        "title": "Гірськолижні траси та аеродроми"
+    },
+    "sport_pitches": {
+        "shortDescription": "Карта з позначенням спортивних майданчиків",
+        "title": "Спортивні майданчики"
+    },
     "sports": {
         "title": "Спорт"
+    },
+    "street_lighting": {
+        "title": "Вуличне освітлення"
     },
     "surveillance": {
         "shortDescription": "Камери спостереження та інші засоби спостереження",
@@ -341,7 +351,18 @@
     "toilets": {
         "title": "Громадські туалети"
     },
+    "transit": {
+        "title": "Автобусні маршрути"
+    },
+    "trees": {
+        "shortDescription": "Нанесіть на карту всі дерева",
+        "title": "Дерева"
+    },
     "waste": {
         "title": "Відходи"
+    },
+    "waste_basket": {
+        "shortDescription": "Мапа зі сміттєвими кошиками",
+        "title": "Кошики для сміття"
     }
 }
