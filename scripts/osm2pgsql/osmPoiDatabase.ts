@@ -69,8 +69,6 @@ export class OsmPoiDatabase {
         await metaclient.connect()
         try {
             const meta = await metaclient.query("SELECT datname FROM pg_database")
-            let latest: string = undefined
-            let latestDate: Date = new Date(0)
             const dbs: string[] = []
             for (const row of meta.rows) {
                 const name: string = row["datname"]

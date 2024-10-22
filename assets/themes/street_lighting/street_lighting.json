@@ -201,6 +201,7 @@
     },
     {
       "id": "all_streets",
+      "isCounted": false,
       "name": {
         "en": "All streets",
         "nl": "Alle straten",
