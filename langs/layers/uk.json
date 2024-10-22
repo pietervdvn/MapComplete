@@ -971,6 +971,14 @@
             }
         }
     },
+    "street_lamps": {
+        "tagRenderings": {
+            "ref": {
+                "question": "Який ідентифікаційний номер цього вуличного ліхтаря?",
+                "render": "Цей вуличний ліхтар має ідентифікаційний номер {ref}"
+            }
+        }
+    },
     "toilet": {
         "tagRenderings": {
             "menstrual_products_location": {
