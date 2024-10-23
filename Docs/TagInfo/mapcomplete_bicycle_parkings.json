@@ -90,6 +90,11 @@
       "value": "lockers"
     },
     {
+      "key": "bicycle_parking",
+      "description": "Layer 'Bike parking' shows bicycle_parking=lean_and_stick with a fixed text, namely 'A lean-to bracket with possibility to use a lock through eyelet. The seat tube can be held by the stand by an anchor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle parkings')",
+      "value": "lean_and_stick"
+    },
+    {
       "key": "location",
       "description": "Layer 'Bike parking' shows location=underground with a fixed text, namely 'Underground parking' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle parkings')",
       "value": "underground"
@@ -144,7 +149,7 @@
     },
     {
       "key": "access",
-      "description": "Layer 'Bike parking' shows access=private with a fixed text, namely 'Access is limited to members of a school, company or organisation' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle parkings')",
+      "description": "Layer 'Bike parking' shows access=private with a fixed text, namely 'Private bicycle parking which is never available to the public, also not via a membership fee' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle parkings')",
       "value": "private"
     },
     {

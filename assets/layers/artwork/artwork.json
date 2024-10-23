@@ -265,7 +265,8 @@
             "pt_BR": "Arquitetura",
             "he": "אדריכלות",
             "eu": "Arkitektura",
-            "zh_Hans": "建筑"
+            "zh_Hans": "建筑",
+            "uk": "Архітектура"
           }
         },
         {
@@ -292,7 +293,8 @@
             "pt_BR": "Mural",
             "he": "ציור קיר",
             "eu": "Murala",
-            "zh_Hans": "壁画"
+            "zh_Hans": "壁画",
+            "uk": "Мурал"
           }
         },
         {
@@ -318,7 +320,8 @@
             "he": "ציור",
             "eu": "Margolana",
             "pt_BR": "Pintura",
-            "zh_Hans": "喷绘"
+            "zh_Hans": "喷绘",
+            "uk": "Живопис"
           }
         },
         {
@@ -345,7 +348,8 @@
             "pt_BR": "Escultura",
             "he": "פיסול",
             "eu": "Eskultura",
-            "zh_Hans": "雕塑"
+            "zh_Hans": "雕塑",
+            "uk": "Скульптура"
           }
         },
         {
@@ -370,7 +374,8 @@
             "pt_BR": "Estátua",
             "he": "פסל",
             "eu": "Estatua",
-            "zh_Hans": "雕像"
+            "zh_Hans": "雕像",
+            "uk": "Статуя"
           }
         },
         {
@@ -394,7 +399,8 @@
             "cs": "Busta",
             "pt_BR": "Busto",
             "eu": "Bustoa",
-            "zh_Hans": "半身像"
+            "zh_Hans": "半身像",
+            "uk": "Бюст"
           }
         },
         {
@@ -421,7 +427,8 @@
             "pt_BR": "Pedra",
             "he": "אבן",
             "eu": "Harria",
-            "zh_Hans": "石头"
+            "zh_Hans": "石头",
+            "uk": "Камінь"
           }
         },
         {
@@ -446,7 +453,8 @@
             "cs": "Instalace",
             "pt_BR": "Instalação",
             "eu": "Instalazioa",
-            "zh_Hans": "设施"
+            "zh_Hans": "设施",
+            "uk": "Інсталяція"
           }
         },
         {
@@ -471,7 +479,8 @@
             "cs": "Grafiti",
             "eu": "Graffitia",
             "pt_BR": "Grafite",
-            "zh_Hans": "涂鸦/粗糙雕刻"
+            "zh_Hans": "涂鸦/粗糙雕刻",
+            "uk": "Графіті"
           }
         },
         {
@@ -495,7 +504,8 @@
             "da": "Relief",
             "cs": "Reliéf",
             "eu": "Erliebea",
-            "pt_BR": "Relevo"
+            "pt_BR": "Relevo",
+            "uk": "Рельєф"
           }
         },
         {
@@ -519,7 +529,8 @@
             "cs": "Azulejo (španělské dekorativní dlaždice)",
             "ca": "Azulejo (Rajoles decoratives espanyoles i portugueses)",
             "pt_BR": "Azulejo (Revestimento de azulejos decorativos espanhóis)",
-            "zh_Hans": "Azulejo（西班牙装饰瓷砖）"
+            "zh_Hans": "Azulejo（西班牙装饰瓷砖）",
+            "uk": "Азулехо (іспанська декоративна плитка)"
           }
         },
         {
@@ -543,7 +554,8 @@
             "cs": "Obklady a dlažba",
             "he": "יצירת פסיפס",
             "eu": "Keramika",
-            "pt_BR": "Azulejaria"
+            "pt_BR": "Azulejaria",
+            "uk": "Кахельна плитка"
           }
         },
         {
@@ -562,7 +574,8 @@
             "eu": "Egur taila",
             "pl": "Rzeźbienie w drewnie",
             "pt_BR": "Entalhe",
-            "it": "Scultura in legno"
+            "it": "Scultura in legno",
+            "uk": "Різьба по дереву"
           }
         }
       ],
@@ -599,7 +612,8 @@
         "he": "מי יצר את היצירה הזו?",
         "pl": "Kto stworzył to dzieło sztuki?",
         "pt_BR": "Quem fez essa obra de arte?",
-        "zh_Hans": "这件艺术品是谁创作的？"
+        "zh_Hans": "这件艺术品是谁创作的？",
+        "uk": "Хто створив цю роботу?"
       },
       "freeform": {
         "key": "artist:wikidata",
@@ -797,7 +811,8 @@
         "de": "Dient dieses Kunstwerk als Mahnmal?",
         "fr": "Cet œuvre a-t-elle un rôle de mémorial ?",
         "cs": "Slouží toto dílo jako památník?",
-        "es": "¿Sirve esta obra de arte como monumento conmemorativo?"
+        "es": "¿Sirve esta obra de arte como monumento conmemorativo?",
+        "uk": "Чи слугує ця робота меморіалом?"
       },
       "mappings": [
         {
@@ -808,7 +823,8 @@
             "ca": "Aquesta obra d'art també serveix com a memorial",
             "fr": "Cette œuvre est un mémorial",
             "cs": "Toto dílo slouží také jako památník",
-            "es": "Esta obra de arte también sirve como monumento conmemorativo"
+            "es": "Esta obra de arte también sirve como monumento conmemorativo",
+            "uk": "Цей витвір мистецтва також слугує меморіалом"
           }
         },
         {
@@ -816,7 +832,8 @@
           "alsoShowIf": "historic!=memorial",
           "then": {
             "en": "This artwork does not serve as a memorial",
-            "de": "Dieses Kunstwerk dient nicht als Denkmal"
+            "de": "Dieses Kunstwerk dient nicht als Denkmal",
+            "uk": "Ця робота не є меморіалом"
           }
         }
       ]
@@ -846,7 +863,8 @@
         "pt_BR": "Essa obra de arte serve como banco?",
         "es": "¿Sirve esta obra de arte como banco?",
         "pt": "Esta obra de arte serve como banco?",
-        "it": "Quest'opera d'arte funge da panchina?"
+        "it": "Quest'opera d'arte funge da panchina?",
+        "uk": "Чи слугує ця робота лавкою?"
       },
       "mappings": [
         {
@@ -863,7 +881,8 @@
             "pt_BR": "Essa obra de arte também serve como banco",
             "es": "Esta obra de arte también sirve de banco",
             "pt": "Esta obra de arte também serve como banco",
-            "it": "Quest'opera d'arte funge anche da panchina"
+            "it": "Quest'opera d'arte funge anche da panchina",
+            "uk": "Цей витвір мистецтва також слугує лавкою"
           }
         },
         {
@@ -881,7 +900,8 @@
             "pt_BR": "Essa obra de arte não serve como banco",
             "es": "Esta obra no sirve de banco",
             "pt": "Esta obra de arte não serve como banco",
-            "it": "Quest'opera d'arte non funge anche da panchina"
+            "it": "Quest'opera d'arte non funge anche da panchina",
+            "uk": "Цей витвір мистецтва не слугує лавкою"
           }
         },
         {

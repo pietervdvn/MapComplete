@@ -27,7 +27,7 @@ export default class Constants {
         "favourite",
         "summary",
         "search",
-        "geocoded_image"
+        "geocoded_image",
     ] as const
     /**
      * Special layers which are not included in a theme by default
@@ -50,7 +50,7 @@ export default class Constants {
         ...Constants.no_include,
     ] as const
 
-    public static panoramax: { url: string, token: string } = packagefile.config.panoramax
+    public static panoramax: { url: string; token: string, sequence: string } = packagefile.config.panoramax
 
     // The user journey states thresholds when a new feature gets unlocked
     public static userJourney = {

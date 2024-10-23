@@ -9,7 +9,8 @@ import { OsmFeature } from "../../../Models/OsmFeature"
  * If multiple sources contain the same object (as determined by 'id'), only one copy of them is retained
  */
 export default class FeatureSourceMerger<Src extends FeatureSource = FeatureSource>
-    implements IndexedFeatureSource {
+    implements IndexedFeatureSource
+{
     public features: UIEventSource<Feature[]> = new UIEventSource([])
     public readonly featuresById: Store<Map<string, Feature>>
     protected readonly _featuresById: UIEventSource<Map<string, Feature>>
@@ -118,10 +119,11 @@ export default class FeatureSourceMerger<Src extends FeatureSource = FeatureSour
 }
 
 export class UpdatableFeatureSourceMerger<
-    Src extends UpdatableFeatureSource = UpdatableFeatureSource
->
+        Src extends UpdatableFeatureSource = UpdatableFeatureSource
+    >
     extends FeatureSourceMerger<Src>
-    implements IndexedFeatureSource, UpdatableFeatureSource {
+    implements IndexedFeatureSource, UpdatableFeatureSource
+{
     constructor(...sources: Src[]) {
         super(...sources)
     }

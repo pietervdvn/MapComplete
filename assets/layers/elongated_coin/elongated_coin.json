@@ -416,7 +416,8 @@
             "de": "Der Prägeautomat befindet sich im Inneren.",
             "es": "Esta prensa está ubicada en interior.",
             "ca": "Esta premsa està ubicada en interior.",
-            "cs": "Tento lis na mince je umístěn v interiéru."
+            "cs": "Tento lis na mince je umístěn v interiéru.",
+            "uk": "Цей копійчаний прес розташований у приміщенні."
           }
         },
         {
@@ -426,7 +427,8 @@
             "de": "Der Prägeautomat befindet sich im Freien.",
             "es": "Esta prensa está ubicada al aire libre.",
             "ca": "Esta premsa està ubicada a l'exterior.",
-            "cs": "Tento lis na mince je umístěn venku."
+            "cs": "Tento lis na mince je umístěn venku.",
+            "uk": "Цей копійчаний прес розташований на відкритому повітрі."
           }
         }
       ]

@@ -96,7 +96,8 @@
         "nl": "Een brandweerstation is een plaats waar brandweerwagens en brandweerlieden gebaseerd zijn.",
         "es": "Un parque de bomberos es donde los bomberos y los camiones de incendios se encuentran cuando no están en uso.",
         "ca": "Un parc de bombers és on els bombers i els camions es troben quan no estan en ús.",
-        "cs": "Hasičská zbrojnice je místo, kde se nacházejí hasičská vozidla a hasiči."
+        "cs": "Hasičská zbrojnice je místo, kde se nacházejí hasičská vozidla a hasiči.",
+        "uk": "Пожежна станція - це місце, де знаходяться пожежні машини та пожежники, коли вони не працюють."
       }
     }
   ],
@@ -146,7 +147,8 @@
         "nl": " Aan welke straat ligt dit station?",
         "de": " In welcher Straße ist die Feuerwache?",
         "ca": " Quin és el nom del carrer on es troba aquesta estació?",
-        "cs": " Jak se jmenuje ulice, kde se stanice nachází?"
+        "cs": " Jak se jmenuje ulice, kde se stanice nachází?",
+        "uk": " Як називається вулиця, на якій розташована станція?"
       },
       "render": {
         "en": "This station is along a highway called {addr:street}.",
@@ -171,7 +173,8 @@
         "nl": "Waar is dit station gelegen? (v.b. naam van de buurt, dorp of stad)",
         "de": "Wo befindet sich die Station? (z. B. Name des Viertels, des Dorfes oder der Stadt)",
         "ca": "On es troba aquesta estació? (p.e. nom del barri, poble o ciutat)",
-        "cs": "Kde se stanice nachází? (např. název čtvrti, obce nebo města)"
+        "cs": "Kde se stanice nachází? (např. název čtvrti, obce nebo města)",
+        "uk": "Де розташована станція? (наприклад, назва району, села чи міста)"
       },
       "freeform": {
         "key": "addr:place"

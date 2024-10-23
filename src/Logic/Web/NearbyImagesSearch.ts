@@ -58,7 +58,7 @@ export interface P4CPicture {
     author?
     license?
     detailsUrl?: string
-    direction?: number,
+    direction?: number
     osmTags?: object /*To copy straight into OSM!*/
     thumbUrl: string
     details: {
@@ -103,7 +103,7 @@ class P4CImageFetcher implements ImageFetcher {
                 {
                     mindate: new Date().getTime() - maxAgeSeconds,
                     towardscenter: false,
-                },
+                }
             )
         } catch (e) {
             console.log("P4C image fetcher failed with", e)
@@ -172,16 +172,13 @@ class ImagesFromPanoramaxFetcher implements ImageFetcher {
     constructor(url?: string, radius: number = 100) {
         this._radius = radius
         if (url) {
-
             this._panoramax = new Panoramax(url)
         } else {
             this._panoramax = new PanoramaxXYZ()
         }
     }
 
-
     public async fetchImages(lat: number, lon: number): Promise<P4CPicture[]> {
-
         const bboxObj = new BBox([
             GeoOperations.destination([lon, lat], this._radius * Math.sqrt(2), -45),
             GeoOperations.destination([lon, lat], this._radius * Math.sqrt(2), 135),
@@ -189,16 +186,16 @@ class ImagesFromPanoramaxFetcher implements ImageFetcher {
         const bbox: [number, number, number, number] = bboxObj.toLngLatFlat()
         const images = await this._panoramax.search({ bbox, limit: 1000 })
 
-        return images.map(i => {
+        return images.map((i) => {
             const [lng, lat] = i.geometry.coordinates
-            return ({
+            return {
                 pictureUrl: i.assets.sd.href,
                 coordinates: { lng, lat },
 
                 provider: "panoramax",
                 direction: i.properties["view:azimuth"],
                 osmTags: {
-                    "panoramax": i.id,
+                    panoramax: i.id,
                 },
                 thumbUrl: i.assets.thumb.href,
                 date: new Date(i.properties.datetime).getTime(),
@@ -206,9 +203,10 @@ class ImagesFromPanoramaxFetcher implements ImageFetcher {
                 author: i.providers.at(-1).name,
                 detailsUrl: i.id,
                 details: {
-                    isSpherical: i.properties["exif"]["Xmp.GPano.ProjectionType"] === "equirectangular",
+                    isSpherical:
+                        i.properties["exif"]["Xmp.GPano.ProjectionType"] === "equirectangular",
                 },
-            })
+            }
         })
     }
 }
@@ -236,7 +234,7 @@ class ImagesFromCacheServerFetcher implements ImageFetcher {
     async fetchImagesForType(
         targetlat: number,
         targetlon: number,
-        type: "lines" | "pois" | "polygons",
+        type: "lines" | "pois" | "polygons"
     ): Promise<P4CPicture[]> {
         const { x, y, z } = Tiles.embedded_tile(targetlat, targetlon, 14)
 
@@ -253,7 +251,7 @@ class ImagesFromCacheServerFetcher implements ImageFetcher {
                 }),
                 x,
                 y,
-                z,
+                z
             )
             await src.updateAsync()
             return src.features.data
@@ -427,7 +425,7 @@ export class CombinedFetcher {
         lat: number,
         lon: number,
         state: UIEventSource<Record<string, "loading" | "done" | "error">>,
-        sink: UIEventSource<P4CPicture[]>,
+        sink: UIEventSource<P4CPicture[]>
     ): Promise<void> {
         try {
             const pics = await source.fetchImages(lat, lon)
@@ -460,7 +458,7 @@ export class CombinedFetcher {
 
     public getImagesAround(
         lon: number,
-        lat: number,
+        lat: number
     ): {
         images: Store<P4CPicture[]>
         state: Store<Record<string, "loading" | "done" | "error">>

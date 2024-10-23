@@ -258,7 +258,8 @@
         "es": "¿Cuál es el nombre de este negocio?",
         "fr": "Quel est le nom de ce restaurant ?",
         "ca": "Quin és el nom d'aquest negoci?",
-        "cs": "Jak se tento podnik jmenuje?"
+        "cs": "Jak se tento podnik jmenuje?",
+        "uk": "Як називається цей бізнес?"
       },
       "render": {
         "nl": "De naam van deze eetgelegeheid is {name}",
@@ -267,7 +268,8 @@
         "es": "El nombre de este negocio es {name}",
         "fr": "Le nom de ce restaurant est {name}",
         "ca": "El nom d'aquest negoci és {name}",
-        "cs": "Název tohoto podniku je {name}"
+        "cs": "Název tohoto podniku je {name}",
+        "uk": "Цей бізнес називається {name}"
       },
       "freeform": {
         "key": "name"
@@ -282,7 +284,8 @@
         "es": "¿Qué tipo de negocio es este?",
         "fr": "Quel type de restaurant est-ce ?",
         "ca": "Quin tipus de negoci és aquest?",
-        "cs": "O jaký typ podnikání se jedná?"
+        "cs": "O jaký typ podnikání se jedná?",
+        "uk": "Що це за бізнес?"
       },
       "mappings": [
         {
@@ -293,9 +296,10 @@
             "de": "Es handelt sich um einen Schnellimbiss, mit Fokus auf schnelle Bedienung am Tresen. Sitzmöglichkeiten sind begrenzt und funktional.",
             "es": "Se trata de un negocio de comida rápida, centrado en el servicio rápido. Si hay asientos disponibles, son más bien limitados y funcionales.",
             "fr": "C'est un fast-food, centrée sur le service rapide. Si des places sont disponibles, elles sont plutôt limitées et fonctionnelles.",
-            "hu": "Ez egy gyorsétterem (büfé), amely a gyors kiszolgálásra összpontosít. Ha vannak is ülőhelyek, ezek meglehetősen korlátozottak és funkcionálisak.",
+            "hu": "Ez egy gyorsétterem (büfé), amely a gyors kiszolgálásra összpontosít. Ha van is ülőhely, az meglehetősen korlátozott és funkcionális.",
             "ca": "Aquest és un negoci de menjar ràpid, centrat en el servei ràpid. Si hi han seients disponibles, aquests seran limitats i funcionals.",
-            "cs": "Jedná se o podnik s rychlým občerstvením, zaměřený na rychlou obsluhu. Pokud je k dispozici místo k sezení, je spíše omezené a funkční."
+            "cs": "Jedná se o podnik s rychlým občerstvením, zaměřený na rychlou obsluhu. Pokud je k dispozici místo k sezení, je spíše omezené a funkční.",
+            "uk": "Це бізнес швидкого харчування, орієнтований на швидке обслуговування. Якщо місця для сидіння і є, то вони досить обмежені та функціональні."
           }
         },
         {
@@ -307,7 +311,8 @@
             "es": "Un <b>restaurante</b>, centrado en crear una experiencia agradable en la que uno se sirve en mesa",
             "fr": "Un <b>restaurant</b>, axé sur la création d'une expérience agréable où l'on est servi à table",
             "ca": "Un <b>restaurant</b>, centrat en crear una bona experiència on es serveix a taula",
-            "cs": "<b>Restaurace</b> zaměřená na vytvoření příjemného zážitku, kde se obsluhuje u stolu"
+            "cs": "<b>Restaurace</b> zaměřená na vytvoření příjemného zážitku, kde se obsluhuje u stolu",
+            "uk": "<b>Ресторан</b>, зосереджений на створенні приємних вражень, де обслуговують за столом"
           }
         }
       ],

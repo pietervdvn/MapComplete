@@ -3,8 +3,8 @@
 
   export let expanded = false
   export let noBorder = false
-let defaultClass: string = undefined
-  if(noBorder){
+  let defaultClass: string = undefined
+  if (noBorder) {
     defaultClass = "unstyled w-full flex-grow"
   }
 </script>

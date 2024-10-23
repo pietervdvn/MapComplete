@@ -2,7 +2,7 @@ import { ChangeDescription } from "./ChangeDescription"
 import { GeoOperations } from "../../GeoOperations"
 import { OsmWay } from "../OsmObject"
 
-export default class InsertPointIntoWayAction  {
+export default class InsertPointIntoWayAction {
     private readonly _lat: number
     private readonly _lon: number
     private readonly _idToInsert: number
@@ -21,22 +21,19 @@ export default class InsertPointIntoWayAction  {
             allowReuseOfPreviouslyCreatedPoints?: boolean
             reusePointWithinMeters?: number
         }
-    ){
+    ) {
         this._lat = lat
         this._lon = lon
         this._idToInsert = idToInsert
         this._snapOnto = snapOnto
         this._options = options
-
     }
 
     /**
      * Tries to create the changedescription of the way where the point is inserted
      * Returns `undefined` if inserting failed
      */
-    public prepareChangeDescription():  Omit<ChangeDescription, "meta"> | undefined {
-
-
+    public prepareChangeDescription(): Omit<ChangeDescription, "meta"> | undefined {
         // Project the point onto the way
         console.log("Snapping a node onto an existing way...")
         const geojson = this._snapOnto.asGeoJson()
@@ -59,13 +56,19 @@ export default class InsertPointIntoWayAction  {
         }
 
         const prev = outerring[index]
-        if (GeoOperations.distanceBetween(prev, projectedCoor) < this._options.reusePointWithinMeters) {
+        if (
+            GeoOperations.distanceBetween(prev, projectedCoor) <
+            this._options.reusePointWithinMeters
+        ) {
             // We reuse this point instead!
             reusedPointId = this._snapOnto.nodes[index]
             reusedPointCoordinates = this._snapOnto.coordinates[index]
         }
         const next = outerring[index + 1]
-        if (GeoOperations.distanceBetween(next, projectedCoor) < this._options.reusePointWithinMeters) {
+        if (
+            GeoOperations.distanceBetween(next, projectedCoor) <
+            this._options.reusePointWithinMeters
+        ) {
             // We reuse this point instead!
             reusedPointId = this._snapOnto.nodes[index + 1]
             reusedPointCoordinates = this._snapOnto.coordinates[index + 1]
@@ -82,15 +85,13 @@ export default class InsertPointIntoWayAction  {
         locations.splice(index + 1, 0, [this._lon, this._lat])
         ids.splice(index + 1, 0, this._idToInsert)
 
-        return  {
+        return {
             type: "way",
             id: this._snapOnto.id,
             changes: {
                 coordinates: locations,
                 nodes: ids,
-            }
+            },
         }
-
     }
-
 }

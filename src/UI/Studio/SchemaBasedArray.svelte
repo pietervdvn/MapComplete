@@ -5,9 +5,7 @@
   import { TrashIcon } from "@babeard/svelte-heroicons/mini"
   import ShowConversionMessage from "./ShowConversionMessage.svelte"
   import Markdown from "../Base/Markdown.svelte"
-  import type {
-    QuestionableTagRenderingConfigJson
-  } from "../../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
+  import type { QuestionableTagRenderingConfigJson } from "../../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
   import CollapsedTagRenderingPreview from "./CollapsedTagRenderingPreview.svelte"
   import { Accordion } from "flowbite-svelte"
   import { Utils } from "../../Utils"
@@ -16,7 +14,6 @@
   export let path: (string | number)[] = []
   let schema: ConfigMeta = state.getSchema(path)[0]
   console.log("SBA got schema", schema, "for path", path)
-
 
   let title = schema?.path?.at(-1)
   let singular = title
@@ -69,6 +66,7 @@
     currentValue.ping()
   }
 </script>
+
 {#if schema !== undefined}
   <div class="pl-2">
     <h3>{schema.path.at(-1)}</h3>
@@ -97,15 +95,16 @@
           <button
             class="h-fit w-fit rounded-full border border-black p-1"
             on:click={() => {
-            del(i)
-          }}
+              del(i)
+            }}
           >
             <TrashIcon class="h-4 w-4" />
           </button>
         </div>
       {/each}
     {:else}
-      <Accordion> <!-- The CollapsedTagRenderingPreview contains the accordeon items -->
+      <Accordion>
+        <!-- The CollapsedTagRenderingPreview contains the accordeon items -->
         {#each $currentValue as value, i}
           <CollapsedTagRenderingPreview
             {state}
@@ -125,8 +124,8 @@
       {#if path.length === 1 && path[0] === "tagRenderings"}
         <button
           on:click={() => {
-          createItem("images")
-        }}
+            createItem("images")
+          }}
         >
           Add a builtin tagRendering
         </button>

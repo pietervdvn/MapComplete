@@ -2,7 +2,8 @@ import Constants from "../../Models/Constants"
 import GeocodingProvider, {
     GeocodeResult,
     GeocodingCategory,
-    GeocodingOptions, GeocodingUtils,
+    GeocodingOptions,
+    GeocodingUtils,
     ReverseGeocodingProvider,
     ReverseGeocodingResult,
 } from "./GeocodingProvider"
@@ -16,14 +17,13 @@ export default class PhotonSearch implements GeocodingProvider, ReverseGeocoding
     private readonly _endpoint: string
     private supportedLanguages = ["en", "de", "fr"]
     private static readonly types = {
-        "R": "relation",
-        "W": "way",
-        "N": "node",
+        R: "relation",
+        W: "way",
+        N: "node",
     }
     private readonly ignoreBounds: boolean
     private readonly suggestionLimit: number = 5
     private readonly searchLimit: number = 1
-
 
     constructor(ignoreBounds: boolean = false, suggestionLimit:number = 5, searchLimit:number = 1, endpoint?: string) {
         this.ignoreBounds = ignoreBounds
@@ -32,17 +32,22 @@ export default class PhotonSearch implements GeocodingProvider, ReverseGeocoding
         this._endpoint = endpoint ?? Constants.photonEndpoint ?? "https://photon.komoot.io/"
     }
 
-    async reverseSearch(coordinate: {
-        lon: number;
-        lat: number
-    }, zoom: number, language?: string): Promise<ReverseGeocodingResult[]> {
-        const url = `${this._endpoint}/reverse?lon=${coordinate.lon}&lat=${coordinate.lat}&${this.getLanguage(language)}`
+    async reverseSearch(
+        coordinate: {
+            lon: number
+            lat: number
+        },
+        zoom: number,
+        language?: string
+    ): Promise<ReverseGeocodingResult[]> {
+        const url = `${this._endpoint}/reverse?lon=${coordinate.lon}&lat=${
+            coordinate.lat
+        }&${this.getLanguage(language)}`
         const result = await Utils.downloadJsonCached<FeatureCollection>(url, 1000 * 60 * 60)
         for (const f of result.features) {
             f.properties.osm_type = PhotonSearch.types[f.properties.osm_type]
         }
         return <ReverseGeocodingResult[]>result.features
-
     }
 
     /**
@@ -51,13 +56,11 @@ export default class PhotonSearch implements GeocodingProvider, ReverseGeocoding
      * @private
      */
     private getLanguage(language?: string): string {
-
         language ??= Locale.language.data
         if (this.supportedLanguages.indexOf(language) < 0) {
             return ""
         }
         return `&lang=${language}`
-
     }
 
     suggest(query: string, options?: GeocodingOptions): Store<GeocodeResult[]> {
@@ -77,7 +80,6 @@ export default class PhotonSearch implements GeocodingProvider, ReverseGeocoding
 
         switch (type) {
             case "house": {
-
                 const addr = ifdef("", p.street) + ifdef(" ", p.housenumber)
                 if (!addr) {
                     return p.city
@@ -96,7 +98,6 @@ export default class PhotonSearch implements GeocodingProvider, ReverseGeocoding
             case "country":
                 return undefined
         }
-
     }
 
     private getCategory(entry: Feature) {
@@ -123,9 +124,11 @@ export default class PhotonSearch implements GeocodingProvider, ReverseGeocoding
             const [lon, lat] = options.bbox.center()
             bbox = `&lon=${lon}&lat=${lat}`
         }
-        const url = `${this._endpoint}/api/?q=${encodeURIComponent(query)}&limit=${limit}${this.getLanguage()}${bbox}`
+        const url = `${this._endpoint}/api/?q=${encodeURIComponent(
+            query
+        )}&limit=${limit}${this.getLanguage()}${bbox}`
         const results = await Utils.downloadJsonCached<FeatureCollection>(url, 1000 * 60 * 60)
-        const encoded=  results.features.map(f => {
+        const encoded = results.features.map((f) => {
             const [lon, lat] = GeoOperations.centerpointCoordinates(f)
             let boundingbox: number[] = undefined
             if (f.properties.extent) {
@@ -140,11 +143,11 @@ export default class PhotonSearch implements GeocodingProvider, ReverseGeocoding
                 osm_type: PhotonSearch.types[f.properties.osm_type],
                 category: this.getCategory(f),
                 boundingbox,
-                lon, lat,
+                lon,
+                lat,
                 source: this._endpoint,
             }
         })
         return GeocodingUtils.mergeSimilarResults(encoded)
     }
-
 }

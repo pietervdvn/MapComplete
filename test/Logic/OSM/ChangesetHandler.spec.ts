@@ -7,8 +7,7 @@ import { describe, expect, it } from "vitest"
 
 function elstorage() {
     return {
-        addAlias: (_, __) => {
-        },
+        addAlias: (_, __) => {},
     }
 }
 
@@ -19,7 +18,7 @@ function createChangesetHandler(): ChangesetHandler {
         new OsmConnection({}),
         elstorage(),
         changes,
-        e => console.error(e),
+        (e) => console.error(e)
     )
 }
 
@@ -63,13 +62,13 @@ describe("ChangesetHanlder", () => {
                     },
                 ],
                 new Map<string, string>(),
-                oldChangesetMeta,
+                oldChangesetMeta
             )
             const d = Utils.asDict(rewritten)
             expect(d.size).toEqual(10)
             expect(d.get("answer")).toEqual("5")
             expect(d.get("comment")).toEqual(
-                "Adding data with #MapComplete for theme #toerisme_vlaanderen",
+                "Adding data with #MapComplete for theme #toerisme_vlaanderen"
             )
             expect(d.get("created_by")).toEqual("MapComplete 0.16.6")
             expect(d.get("host")).toEqual("https://mapcomplete.org/toerisme_vlaanderen.html")
@@ -116,14 +115,14 @@ describe("ChangesetHanlder", () => {
                     },
                 ],
                 new Map<string, string>(),
-                oldChangesetMeta,
+                oldChangesetMeta
             )
             const d = Utils.asDict(rewritten)
 
             expect(d.size).toEqual(9)
             expect(d.get("answer")).toEqual("42")
             expect(d.get("comment")).toEqual(
-                "Adding data with #MapComplete for theme #toerisme_vlaanderen",
+                "Adding data with #MapComplete for theme #toerisme_vlaanderen"
             )
             expect(d.get("created_by")).toEqual("MapComplete 0.16.6")
             expect(d.get("host")).toEqual("https://mapcomplete.org/toerisme_vlaanderen.html")
@@ -163,14 +162,14 @@ describe("ChangesetHanlder", () => {
             const rewritten = changesetHandler.RewriteTagsOf(
                 [],
                 new Map<string, string>([["node/-1", "node/42"]]),
-                oldChangesetMeta,
+                oldChangesetMeta
             )
             const d = Utils.asDict(rewritten)
 
             expect(d.size).toEqual(9)
             expect(d.get("answer")).toEqual("5")
             expect(d.get("comment")).toEqual(
-                "Adding data with #MapComplete for theme #toerisme_vlaanderen",
+                "Adding data with #MapComplete for theme #toerisme_vlaanderen"
             )
             expect(d.get("created_by")).toEqual("MapComplete 0.16.6")
             expect(d.get("host")).toEqual("https://mapcomplete.org/toerisme_vlaanderen.html")
@@ -196,7 +195,7 @@ describe("ChangesetHanlder", () => {
             const changes = new Map<string, string>([["node/-1", "node/42"]])
             const hasSpecialMotivationChanges = ChangesetHandler.rewriteMetaTags(
                 extraMetaTags,
-                changes,
+                changes
             )
             // "Special rewrite did not trigger"
             expect(hasSpecialMotivationChanges).toBe(true)

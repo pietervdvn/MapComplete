@@ -23,25 +23,25 @@ export class AvailableRasterLayers {
         }
         console.debug("Downloading ELI")
         const eli = await Utils.downloadJson<{ features: EditorLayerIndex }>(
-            "./assets/data/editor-layer-index.json",
+            "./assets/data/editor-layer-index.json"
         )
         this._editorLayerIndex = eli.features?.filter((l) => l.properties.id !== "Bing") ?? []
         this._editorLayerIndexStore.set(this._editorLayerIndex)
         return this._editorLayerIndex
     }
 
-    public static readonly globalLayers: ReadonlyArray<RasterLayerPolygon> = AvailableRasterLayers.initGlobalLayers()
+    public static readonly globalLayers: ReadonlyArray<RasterLayerPolygon> =
+        AvailableRasterLayers.initGlobalLayers()
 
     private static initGlobalLayers(): RasterLayerPolygon[] {
-        const gl: RasterLayerProperties[] = (globallayers["default"] ?? globallayers ).layers
-            .filter(
-                (properties) =>
-                    properties.id !== "osm.carto" && properties.id !== "Bing", /*Added separately*/
-            )
+        const gl: RasterLayerProperties[] = (globallayers["default"] ?? globallayers).layers.filter(
+            (properties) =>
+                properties.id !== "osm.carto" && properties.id !== "Bing" /*Added separately*/
+        )
         const glEli: RasterLayerProperties[] = globallayersEli["default"] ?? globallayersEli
         const joined = gl.concat(glEli)
-        if (joined.some(j => !j.id)) {
-            console.log("Invalid layers:", JSON.stringify(joined .filter(l => !l.id)))
+        if (joined.some((j) => !j.id)) {
+            console.log("Invalid layers:", JSON.stringify(joined.filter((l) => !l.id)))
             throw "Detected invalid global layer with invalid id"
         }
         return joined.map(
@@ -50,7 +50,7 @@ export class AvailableRasterLayers {
                     type: "Feature",
                     properties,
                     geometry: BBox.global.asGeometry(),
-                },
+                }
         )
     }
 
@@ -85,18 +85,18 @@ export class AvailableRasterLayers {
 
     public static layersAvailableAt(
         location: Store<{ lon: number; lat: number }>,
-        enableBing?: Store<boolean>,
+        enableBing?: Store<boolean>
     ): { store: Store<RasterLayerPolygon[]> } {
         const store = { store: undefined }
         Utils.AddLazyProperty(store, "store", () =>
-            AvailableRasterLayers._layersAvailableAt(location, enableBing),
+            AvailableRasterLayers._layersAvailableAt(location, enableBing)
         )
         return store
     }
 
     private static _layersAvailableAt(
         location: Store<{ lon: number; lat: number }>,
-        enableBing?: Store<boolean>,
+        enableBing?: Store<boolean>
     ): Store<RasterLayerPolygon[]> {
         this.editorLayerIndex() // start the download
         const availableLayersBboxes = Stores.ListStabilized(
@@ -109,8 +109,8 @@ export class AvailableRasterLayers {
                     const lonlat: [number, number] = [loc.lon, loc.lat]
                     return eli.filter((eliPolygon) => BBox.get(eliPolygon).contains(lonlat))
                 },
-                [AvailableRasterLayers._editorLayerIndexStore],
-            ),
+                [AvailableRasterLayers._editorLayerIndexStore]
+            )
         )
         return Stores.ListStabilized(
             availableLayersBboxes.map(
@@ -132,15 +132,15 @@ export class AvailableRasterLayers {
                     if (
                         !matching.some(
                             (l) =>
-                                l.id === AvailableRasterLayers.defaultBackgroundLayer.properties.id,
+                                l.id === AvailableRasterLayers.defaultBackgroundLayer.properties.id
                         )
                     ) {
                         matching.push(AvailableRasterLayers.defaultBackgroundLayer)
                     }
                     return matching
                 },
-                [enableBing],
-            ),
+                [enableBing]
+            )
         )
     }
 }
@@ -159,7 +159,7 @@ export class RasterLayerUtils {
         available: RasterLayerPolygon[],
         preferredCategory: string,
         ignoreLayer?: RasterLayerPolygon,
-        skipLayers: number = 0,
+        skipLayers: number = 0
     ): RasterLayerPolygon {
         const inCategory = available.filter((l) => l.properties.category === preferredCategory)
         const best: RasterLayerPolygon[] = inCategory.filter((l) => l.properties.best)
@@ -167,7 +167,7 @@ export class RasterLayerUtils {
         let all = best.concat(others)
         console.log(
             "Selected layers are:",
-            all.map((l) => l.properties.id),
+            all.map((l) => l.properties.id)
         )
         if (others.length > skipLayers) {
             all = all.slice(skipLayers)

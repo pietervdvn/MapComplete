@@ -130,7 +130,7 @@
         "osm": "OpenStreetMapa es un mapa en línea que puede ser editado y reutilizado por cualquiera para cualquier fin, siempre que se cite a la fuente y los datos se mantienen abiertos.\n\nEs la base de datos geoespacial más grande del mundo y es reutilizada por miles de aplicaciones y sitios web.",
         "tagline": "Recolectar datos geográficos con OpenStreetMap",
         "title": "mapcomplete.org",
-        "toerisme_vlaanderen": "Para un proyecto conjunto con Visit Flanders, se creó 'Fijar tu punto'. Más de 160 colaboradores añadieron varios miles de bancos y mesas de picnic y localizaron 100 estaciones de carga para bicicletas.",
+        "toerisme_vlaanderen": "Para un proyecto conjunto con Visit Flanders se creó \"Pin your point\". Más de 160 colaboradores añadieron unos cuantos miles de bancos y mesas de picnic, y localizaron 100 estaciones de carga para bicicletas.",
         "whatIsOsm": "¿Qué es OpenStreetMap?"
     },
     "general": {
@@ -224,7 +224,7 @@
         "customThemeTitle": "Temas personalizados",
         "download": {
             "custom": {
-                "download": "Descargar PNG de {width}mm de ancho y {height}mm de alto",
+                "download": "Descargar un PNG de {width}mm de ancho y {height}}mm de alto",
                 "downloadHelper": "Esto está pensado para imprimir",
                 "height": "Altura de la imagen (en mm):",
                 "title": "Descarga una imagen con un ancho y alto personalizados",
@@ -258,7 +258,7 @@
             "toMuch": "Hay demasiados elementos para descargarlos todos",
             "uploadGpx": "Sube tu traza a OpenStreetMap"
         },
-        "enableGeolocationForSafari": "¿No te ha aparecido la ventana emergente para pedir permiso de ubicación?",
+        "enableGeolocationForSafari": "¿No te apareció la ventana emergente para pedir el permiso de ubicación?",
         "enableGeolocationForSafariLink": "Aprende a activar el permiso de ubicación en los ajustes",
         "eraseValue": "Borrar este valor",
         "error": "Algo fue mal",
@@ -270,7 +270,7 @@
             "disableAll": "Desactivar todos",
             "enableAll": "Activar todos"
         },
-        "geopermissionDenied": "Se denegó el uso de la ubicación",
+        "geopermissionDenied": "Se denegó el permiso de ubicación",
         "getStartedLogin": "Entra en OpenStreetMap para empezar",
         "getStartedNewAccount": " o <a href='https://www.openstreetmap.org/user/new' target='_blank'>crea una nueva cuenta</a>",
         "goToInbox": "Abrir mensajes",
@@ -361,7 +361,7 @@
             "saturday": "Sábado {ranges}",
             "sunday": "Domingo {ranges}",
             "thursday": "Jueves {ranges}",
-            "tuesday": "Martes  {ranges}",
+            "tuesday": "El martes {ranges}",
             "unknown": "Se desconocen las horas de apertura",
             "wednesday": "Miércoles {ranges}"
         },
@@ -609,6 +609,7 @@
                 "someFailed": "Lo sentimos, no pudimos subir {count} imágenes",
                 "uploading": "Se están subiendo {count} imágenes…"
             },
+            "noBlur": "Las imágenes no se desenfocarán. No fotografíe a las personas",
             "one": {
                 "done": "Tu imagen se ha subido con éxito. ¡Gracias!",
                 "failed": "Lo sentimos, no pudimos subir tu imagen",

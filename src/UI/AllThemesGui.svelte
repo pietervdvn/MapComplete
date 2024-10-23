@@ -33,7 +33,7 @@
       "oauth_token",
       undefined,
       "Used to complete the login"
-    )
+    ),
   })
   const state = new UserRelatedState(osmConnection)
   const t = Translations.t.index
@@ -46,41 +46,56 @@
 
   let searchIsFocused = new UIEventSource(true)
 
-  const officialThemes: MinimalThemeInformation[] = ThemeSearch.officialThemes.themes.filter(th => th.hideFromOverview === false)
-  const hiddenThemes: MinimalThemeInformation[] = ThemeSearch.officialThemes.themes.filter(th => th.hideFromOverview === true)
-  let visitedHiddenThemes: Store<MinimalThemeInformation[]> = UserRelatedState.initDiscoveredHiddenThemes(state.osmConnection)
-    .map((knownIds) => hiddenThemes.filter((theme) =>
-      knownIds.indexOf(theme.id) >= 0 || state.osmConnection.userDetails.data.name === "Pieter Vander Vennet"
-    ))
+  const officialThemes: MinimalThemeInformation[] = ThemeSearch.officialThemes.themes.filter(
+    (th) => th.hideFromOverview === false
+  )
+  const hiddenThemes: MinimalThemeInformation[] = ThemeSearch.officialThemes.themes.filter(
+    (th) => th.hideFromOverview === true
+  )
+  let visitedHiddenThemes: Store<MinimalThemeInformation[]> =
+    UserRelatedState.initDiscoveredHiddenThemes(state.osmConnection).map((knownIds) =>
+      hiddenThemes.filter(
+        (theme) =>
+          knownIds.indexOf(theme.id) >= 0 ||
+          state.osmConnection.userDetails.data.name === "Pieter Vander Vennet"
+      )
+    )
 
-  const customThemes: Store<MinimalThemeInformation[]> = Stores.ListStabilized<string>(state.installedUserThemes)
-    .mapD(stableIds => Utils.NoNullInplace(stableIds.map(id => state.getUnofficialTheme(id))))
+  const customThemes: Store<MinimalThemeInformation[]> = Stores.ListStabilized<string>(
+    state.installedUserThemes
+  ).mapD((stableIds) => Utils.NoNullInplace(stableIds.map((id) => state.getUnofficialTheme(id))))
   function filtered(themes: Store<MinimalThemeInformation[]>): Store<MinimalThemeInformation[]> {
-    return searchStable.map(search => {
-      if (!search) {
-        return themes.data
-      }
+    return searchStable.map(
+      (search) => {
+        if (!search) {
+          return themes.data
+        }
 
-      const start = new Date().getTime()
-      const scores = ThemeSearch.sortedByLowestScores(search, themes.data)
-      const end = new Date().getTime()
-      console.trace("Scores for", search , "are", scores, "searching took", end - start,"ms")
-      const strict = scores.filter(sc => sc.lowest < 2)
-      if (strict.length > 0) {
-        return strict.map(sc => sc.theme)
-      }
-      return scores.filter(sc => sc.lowest < 4).slice(0, 6).map(sc => sc.theme)
-    }, [themes])
+        const start = new Date().getTime()
+        const scores = ThemeSearch.sortedByLowestScores(search, themes.data)
+        const end = new Date().getTime()
+        console.trace("Scores for", search, "are", scores, "searching took", end - start, "ms")
+        const strict = scores.filter((sc) => sc.lowest < 2)
+        if (strict.length > 0) {
+          return strict.map((sc) => sc.theme)
+        }
+        return scores
+          .filter((sc) => sc.lowest < 4)
+          .slice(0, 6)
+          .map((sc) => sc.theme)
+      },
+      [themes]
+    )
   }
 
-
-  let officialSearched : Store<MinimalThemeInformation[]>= filtered(new ImmutableStore(officialThemes))
-  let hiddenSearched: Store<MinimalThemeInformation[]> =  filtered(visitedHiddenThemes)
+  let officialSearched: Store<MinimalThemeInformation[]> = filtered(
+    new ImmutableStore(officialThemes)
+  )
+  let hiddenSearched: Store<MinimalThemeInformation[]> = filtered(visitedHiddenThemes)
   let customSearched: Store<MinimalThemeInformation[]> = filtered(customThemes)
 
-
   let searchIsFocussed = new UIEventSource(false)
-  document.addEventListener("keydown", function(event) {
+  document.addEventListener("keydown", function (event) {
     if (event.ctrlKey && event.code === "KeyF") {
       searchIsFocussed.set(true)
       event.preventDefault()
@@ -99,10 +114,7 @@
     }
 
     window.location.href = ThemeSearch.createUrlFor(candidate, undefined)
-
   }
-
-
 </script>
 
 <main>
@@ -134,7 +146,13 @@
       </div>
     </div>
 
-    <Searchbar value={search} placeholder={tr.searchForATheme} on:search={() => applySearch()} autofocus isFocused={searchIsFocussed} />
+    <Searchbar
+      value={search}
+      placeholder={tr.searchForATheme}
+      on:search={() => applySearch()}
+      autofocus
+      isFocused={searchIsFocussed}
+    />
 
     <ThemesList {search} {state} themes={$officialSearched} />
 
@@ -164,8 +182,11 @@
       </ThemesList>
 
       {#if $customThemes.length > 0}
-        <ThemesList {search} {state} themes={$customSearched}
-                    hasSelection={$officialSearched.length === 0 && $hiddenSearched.length === 0}
+        <ThemesList
+          {search}
+          {state}
+          themes={$customSearched}
+          hasSelection={$officialSearched.length === 0 && $hiddenSearched.length === 0}
         >
           <svelte:fragment slot="title">
             <h3>
@@ -175,7 +196,6 @@
           </svelte:fragment>
         </ThemesList>
       {/if}
-
     </LoginToggle>
 
     <a

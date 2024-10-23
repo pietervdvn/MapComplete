@@ -3,7 +3,7 @@
   import Tr from "../Base/Tr.svelte"
   import Icon from "../Map/Icon.svelte"
 
-  export let option : FilterConfigOption
+  export let option: FilterConfigOption
 </script>
 
 <Icon icon={option.icon ?? option.emoji} clss="w-5 h-5" emojiHeight="14px" />

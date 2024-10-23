@@ -48,7 +48,7 @@
   }
 
   let htmlElem: HTMLDivElement
-  function enableEditMode(){
+  function enableEditMode() {
     editMode = true
     // EditMode switched to true yet the answer is already known, so the person wants to make a change
     // Make sure that the question is in the scrollview!

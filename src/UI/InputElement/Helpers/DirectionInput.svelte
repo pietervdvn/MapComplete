@@ -20,7 +20,7 @@
   let mla = new MapLibreAdaptor(map, mapProperties)
   mla.allowMoving.setData(false)
   mla.allowZooming.setData(false)
-  state?.mapProperties?.rasterLayer?.addCallbackAndRunD(l => mla.rasterLayer.set(l))
+  state?.mapProperties?.rasterLayer?.addCallbackAndRunD((l) => mla.rasterLayer.set(l))
 
   let directionElem: HTMLElement | undefined
   $: value.addCallbackAndRunD((degrees) => {

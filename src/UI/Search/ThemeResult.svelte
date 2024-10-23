@@ -8,10 +8,12 @@
   export let entry: MinimalThemeInformation
   let otherTheme = entry
 </script>
-{#if entry}
-  <a href={ThemeSearch.createUrlFor(otherTheme)}
-     class="flex items-center p-2 w-full gap-y-2 rounded-xl searchresult">
 
+{#if entry}
+  <a
+    href={ThemeSearch.createUrlFor(otherTheme)}
+    class="searchresult flex w-full items-center gap-y-2 rounded-xl p-2"
+  >
     <Icon icon={otherTheme.icon} clss="w-6 h-6 m-1" />
     <div class="flex flex-col">
       <b>

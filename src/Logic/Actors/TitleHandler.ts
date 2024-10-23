@@ -5,10 +5,7 @@ import { Feature } from "geojson"
 import { SpecialVisualizationState } from "../../UI/SpecialVisualization"
 
 export default class TitleHandler {
-    constructor(
-        selectedElement: Store<Feature>,
-        state: SpecialVisualizationState
-    ) {
+    constructor(selectedElement: Store<Feature>, state: SpecialVisualizationState) {
         const currentTitle: Store<string> = selectedElement.map(
             (selected) => {
                 const lng = Locale.language.data
@@ -34,7 +31,6 @@ export default class TitleHandler {
                 const el = document.createElement("span")
                 el.innerHTML = title
                 return el.textContent + " | " + defaultTitle
-
             },
             [Locale.language]
         )

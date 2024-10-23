@@ -157,18 +157,18 @@
     <LockClosed class={clss} {color} />
   {:else if icon === "key"}
     <Key class={clss} {color} />
-    {:else if icon==="globe_alt"}
+  {:else if icon === "globe_alt"}
     <GlobeAltIcon class={clss} {color} />
   {:else if icon === "building_office_2"}
     <BuildingOffice2 class={clss} {color} />
   {:else if icon === "house"}
     <HomeIcon class={clss} {color} />
-    {:else if icon === "train"}
-    <Train {color} class={clss}/>
+  {:else if icon === "train"}
+    <Train {color} class={clss} />
   {:else if icon === "airport"}
-    <Airport {color} class={clss}/>
+    <Airport {color} class={clss} />
   {:else if icon === "building_storefront"}
-    <BuildingStorefront {color} class={clss}/>
+    <BuildingStorefront {color} class={clss} />
   {:else if icon === "snap"}
     <Snap class={clss} />
   {:else if Utils.isEmoji(icon)}

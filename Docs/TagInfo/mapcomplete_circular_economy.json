@@ -1716,12 +1716,12 @@
     },
     {
       "key": "service:bicycle:retail",
-      "description": "Layer 'Second hand shops' shows service:bicycle:retail=yes with a fixed text, namely 'This shop sells new bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Circular economy') (This is only shown if service:bicycle:retail~.+ | shop=outdoor | shop=sport | shop=diy | shop=doityourself)",
+      "description": "Layer 'Second hand shops' shows service:bicycle:retail=yes with a fixed text, namely 'This shop sells new bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Circular economy') (This is only shown if service:bicycle:retail~.+ | shop=outdoor | shop=sport | shop=sports | shop=diy | shop=doityourself)",
       "value": "yes"
     },
     {
       "key": "service:bicycle:retail",
-      "description": "Layer 'Second hand shops' shows service:bicycle:retail=no with a fixed text, namely 'This shop doesn't sell new bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Circular economy') (This is only shown if service:bicycle:retail~.+ | shop=outdoor | shop=sport | shop=diy | shop=doityourself)",
+      "description": "Layer 'Second hand shops' shows service:bicycle:retail=no with a fixed text, namely 'This shop doesn't sell new bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Circular economy') (This is only shown if service:bicycle:retail~.+ | shop=outdoor | shop=sport | shop=sports | shop=diy | shop=doityourself)",
       "value": "no"
     },
     {
@@ -1741,32 +1741,32 @@
     },
     {
       "key": "service:bicycle:repair",
-      "description": "Layer 'Second hand shops' shows service:bicycle:repair=yes with a fixed text, namely 'This shop repairs bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Circular economy') (This is only shown if service:bicycle:repair~.+ | shop=sport | shop=outdoor | shop=bicycle | service:bicycle:retail=yes | service:bicycle:second_hand=yes | service:bicycle:second_hand=only)",
+      "description": "Layer 'Second hand shops' shows service:bicycle:repair=yes with a fixed text, namely 'This shop repairs bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Circular economy') (This is only shown if service:bicycle:repair~.+ | shop=sport | shop=sports | shop=outdoor | shop=bicycle | service:bicycle:retail=yes | service:bicycle:second_hand=yes | service:bicycle:second_hand=only)",
       "value": "yes"
     },
     {
       "key": "service:bicycle:repair",
-      "description": "Layer 'Second hand shops' shows service:bicycle:repair=no with a fixed text, namely 'This shop doesn't repair bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Circular economy') (This is only shown if service:bicycle:repair~.+ | shop=sport | shop=outdoor | shop=bicycle | service:bicycle:retail=yes | service:bicycle:second_hand=yes | service:bicycle:second_hand=only)",
+      "description": "Layer 'Second hand shops' shows service:bicycle:repair=no with a fixed text, namely 'This shop doesn't repair bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Circular economy') (This is only shown if service:bicycle:repair~.+ | shop=sport | shop=sports | shop=outdoor | shop=bicycle | service:bicycle:retail=yes | service:bicycle:second_hand=yes | service:bicycle:second_hand=only)",
       "value": "no"
     },
     {
       "key": "service:bicycle:repair",
-      "description": "Layer 'Second hand shops' shows service:bicycle:repair=only_sold with a fixed text, namely 'This shop only repairs bikes bought here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Circular economy') (This is only shown if service:bicycle:repair~.+ | shop=sport | shop=outdoor | shop=bicycle | service:bicycle:retail=yes | service:bicycle:second_hand=yes | service:bicycle:second_hand=only)",
+      "description": "Layer 'Second hand shops' shows service:bicycle:repair=only_sold with a fixed text, namely 'This shop only repairs bikes bought here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Circular economy') (This is only shown if service:bicycle:repair~.+ | shop=sport | shop=sports | shop=outdoor | shop=bicycle | service:bicycle:retail=yes | service:bicycle:second_hand=yes | service:bicycle:second_hand=only)",
       "value": "only_sold"
     },
     {
       "key": "service:bicycle:repair",
-      "description": "Layer 'Second hand shops' shows service:bicycle:repair=brand with a fixed text, namely 'This shop only repairs bikes of a certain brand' and allows to pick this as a default answer (in the mapcomplete.org theme 'Circular economy') (This is only shown if service:bicycle:repair~.+ | shop=sport | shop=outdoor | shop=bicycle | service:bicycle:retail=yes | service:bicycle:second_hand=yes | service:bicycle:second_hand=only)",
+      "description": "Layer 'Second hand shops' shows service:bicycle:repair=brand with a fixed text, namely 'This shop only repairs bikes of a certain brand' and allows to pick this as a default answer (in the mapcomplete.org theme 'Circular economy') (This is only shown if service:bicycle:repair~.+ | shop=sport | shop=sports | shop=outdoor | shop=bicycle | service:bicycle:retail=yes | service:bicycle:second_hand=yes | service:bicycle:second_hand=only)",
       "value": "brand"
     },
     {
       "key": "service:bicycle:rental",
-      "description": "Layer 'Second hand shops' shows service:bicycle:rental=yes with a fixed text, namely 'This shop rents out bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Circular economy') (This is only shown if service:bicycle:rental~.+ | shop=bicycle | shop=sport | shop=bicycle_repair | shop=outdoor | shop=rental)",
+      "description": "Layer 'Second hand shops' shows service:bicycle:rental=yes with a fixed text, namely 'This shop rents out bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Circular economy') (This is only shown if service:bicycle:rental~.+ | shop=bicycle | shop=sport | shop=sports | shop=bicycle_repair | shop=outdoor | shop=rental)",
       "value": "yes"
     },
     {
       "key": "service:bicycle:rental",
-      "description": "Layer 'Second hand shops' shows service:bicycle:rental=no with a fixed text, namely 'This shop doesn't rent out bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Circular economy') (This is only shown if service:bicycle:rental~.+ | shop=bicycle | shop=sport | shop=bicycle_repair | shop=outdoor | shop=rental)",
+      "description": "Layer 'Second hand shops' shows service:bicycle:rental=no with a fixed text, namely 'This shop doesn't rent out bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Circular economy') (This is only shown if service:bicycle:rental~.+ | shop=bicycle | shop=sport | shop=sports | shop=bicycle_repair | shop=outdoor | shop=rental)",
       "value": "no"
     },
     {

@@ -331,7 +331,8 @@
           "en": "When is the amenity where these toilets are located open?",
           "de": "Wann ist der Ort, an dem sich diese Toiletten befinden, geöffnet?",
           "ca": "Quan està oberta la instal·lació on es troben aquests lavabos?",
-          "cs": "Kdy je otevřeno zařízení, kde se tyto toalety nacházejí?"
+          "cs": "Kdy je otevřeno zařízení, kde se tyto toalety nacházejí?",
+          "uk": "Коли відкрито приміщення, де розташовані ці туалети?"
         }
       }
     },

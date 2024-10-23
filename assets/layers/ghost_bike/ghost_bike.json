@@ -255,7 +255,8 @@
         "it": "Che cosa è scritto sulla bici fantasma?",
         "fr": "Quelle est l'inscription sur ce vélo fantôme ?",
         "ca": "Quina és la inscripció d'aquesta bicicleta fantasma?",
-        "cs": "Jaký je nápis na tomto kole duchů?"
+        "cs": "Jaký je nápis na tomto kole duchů?",
+        "uk": "Який напис на цьому примарному велосипеді?"
       },
       "render": {
         "en": "<i>{inscription}</i>",
@@ -267,7 +268,8 @@
         "ru": "<i>{inscription}</i>",
         "id": "<i>{inscription}</i>",
         "cs": "<i>{inscription}</i>",
-        "pl": "<i>{inscription}</i>"
+        "pl": "<i>{inscription}</i>",
+        "uk": "<i>{inscription}</i>"
       },
       "freeform": {
         "key": "inscription"

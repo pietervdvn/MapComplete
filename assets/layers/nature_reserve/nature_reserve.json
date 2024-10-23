@@ -110,7 +110,8 @@
         "nl": "De toegankelijkheid van dit gebied is: {access:description}",
         "de": "Zugang zu diesem Naturschutzgebiet: {access:description}",
         "ca": "Accés a aquesta reserva natural: {access:description}",
-        "cs": "Přístup do této přírodní rezervace: {access:description}"
+        "cs": "Přístup do této přírodní rezervace: {access:description}",
+        "uk": "Доступ до цього природного заповідника: {access:description}"
       },
       "question": {
         "en": "Is this nature reserve accessible to the public?",

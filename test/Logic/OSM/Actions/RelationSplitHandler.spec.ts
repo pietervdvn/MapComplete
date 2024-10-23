@@ -1,6 +1,9 @@
 import { Utils } from "../../../../src/Utils"
 import { OsmRelation } from "../../../../src/Logic/Osm/OsmObject"
-import { InPlaceReplacedmentRTSH, TurnRestrictionRSH } from "../../../../src/Logic/Osm/Actions/RelationSplitHandler"
+import {
+    InPlaceReplacedmentRTSH,
+    TurnRestrictionRSH,
+} from "../../../../src/Logic/Osm/Actions/RelationSplitHandler"
 import { Changes } from "../../../../src/Logic/Osm/Changes"
 import { describe, expect, it } from "vitest"
 import OsmObjectDownloader from "../../../../src/Logic/Osm/OsmObjectDownloader"
@@ -648,7 +651,7 @@ describe("RelationSplitHandler", () => {
             downloader
         )
         const changeDescription = await splitter.CreateChangeDescriptions(
-           Changes.createTestObject()
+            Changes.createTestObject()
         )
         const allIds = changeDescription[0].changes["members"].map((m) => m.ref).join(",")
         const expected = "687866206,295132739,-1,690497698"

@@ -8,7 +8,6 @@ import { Changes } from "../../../../src/Logic/Osm/Changes"
 import FullNodeDatabaseSource from "../../../../src/Logic/FeatureSource/TiledFeatureSource/FullNodeDatabaseSource"
 
 describe("ReplaceGeometryAction", () => {
-
     const coordinates = <[number, number][]>[
         [3.216690793633461, 51.21474084112525],
         [3.2167256623506546, 51.214696737309964],

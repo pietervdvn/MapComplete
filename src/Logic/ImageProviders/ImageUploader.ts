@@ -6,10 +6,14 @@ export interface ImageUploader {
      */
     uploadImage(
         blob: File,
-        currentGps: [number,number],
+        currentGps: [number, number],
         author: string,
         noblur: boolean
     ): Promise<UploadResult>
 }
 
-export interface UploadResult{ key: string; value: string, absoluteUrl: string }
+export interface UploadResult {
+    key: string
+    value: string
+    absoluteUrl: string
+}

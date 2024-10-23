@@ -18,7 +18,6 @@ import { Feature } from "geojson"
 import OpenLocationCodeSearch from "../Search/OpenLocationCodeSearch"
 
 export default class SearchState {
-
     public readonly feedback: UIEventSource<Translation> = new UIEventSource<Translation>(undefined)
     public readonly searchTerm: UIEventSource<string> = new UIEventSource<string>("")
     public readonly searchIsFocused = new UIEventSource(false)
@@ -47,53 +46,62 @@ export default class SearchState {
         ]
 
         const bounds = state.mapProperties.bounds
-        const suggestionsList = this.searchTerm.stabilized(250).mapD(search => {
+        const suggestionsList = this.searchTerm.stabilized(250).mapD(
+            (search) => {
                 if (search.length === 0) {
                     return undefined
                 }
-                return this.locationSearchers.map(ls => ls.suggest(search, { bbox: bounds.data }))
-
-            }, [bounds]
+                return this.locationSearchers.map((ls) => ls.suggest(search, { bbox: bounds.data }))
+            },
+            [bounds]
         )
-        this.suggestionsSearchRunning = suggestionsList.bind(suggestions => {
+        this.suggestionsSearchRunning = suggestionsList.bind((suggestions) => {
             if (suggestions === undefined) {
                 return new ImmutableStore(true)
             }
-            return Stores.concat(suggestions).map(suggestions => suggestions.some(list => list === undefined))
+            return Stores.concat(suggestions).map((suggestions) =>
+                suggestions.some((list) => list === undefined)
+            )
         })
-        this.suggestions = suggestionsList.bindD(suggestions =>
-            Stores.concat(suggestions).map(suggestions => CombinedSearcher.merge(suggestions))
+        this.suggestions = suggestionsList.bindD((suggestions) =>
+            Stores.concat(suggestions).map((suggestions) => CombinedSearcher.merge(suggestions))
         )
 
         const themeSearch = new ThemeSearch(state)
-        this.themeSuggestions = this.searchTerm.mapD(query => themeSearch.search(query, 3))
+        this.themeSuggestions = this.searchTerm.mapD((query) => themeSearch.search(query, 3))
 
         const layerSearch = new LayerSearch(state.theme)
-        this.layerSuggestions = this.searchTerm.mapD(query => layerSearch.search(query, 5))
+        this.layerSuggestions = this.searchTerm.mapD((query) => layerSearch.search(query, 5))
 
         const filterSearch = new FilterSearch(state)
-        this.filterSuggestions = this.searchTerm.stabilized(50)
-            .mapD(query => filterSearch.search(query))
-            .mapD(filterResult => {
-                const active = state.layerState.activeFilters.data
-                return filterResult.filter(({ filter, index, layer }) => {
-                    const foundMatch = active.some(active =>
-                        active.filter.id === filter.id && layer.id === active.layer.id && active.control.data === index)
+        this.filterSuggestions = this.searchTerm
+            .stabilized(50)
+            .mapD((query) => filterSearch.search(query))
+            .mapD(
+                (filterResult) => {
+                    const active = state.layerState.activeFilters.data
+                    return filterResult.filter(({ filter, index, layer }) => {
+                        const foundMatch = active.some(
+                            (active) =>
+                                active.filter.id === filter.id &&
+                                layer.id === active.layer.id &&
+                                active.control.data === index
+                        )
 
-                    return !foundMatch
-                })
-            }, [state.layerState.activeFilters])
+                        return !foundMatch
+                    })
+                },
+                [state.layerState.activeFilters]
+            )
         this.locationResults = new GeocodingFeatureSource(this.suggestions.stabilized(250))
 
         this.showSearchDrawer = new UIEventSource(false)
 
-        this.searchIsFocused.addCallbackAndRunD(sugg => {
+        this.searchIsFocused.addCallbackAndRunD((sugg) => {
             if (sugg) {
                 this.showSearchDrawer.set(true)
             }
         })
-
-
     }
 
     public async apply(result: FilterSearchResult[] | LayerConfig) {
@@ -112,7 +120,7 @@ export default class SearchState {
     private async applyFilter(payload: FilterSearchResult[]) {
         const state = this.state
 
-        const layersToShow = payload.map(fsr => fsr.layer.id)
+        const layersToShow = payload.map((fsr) => fsr.layer.id)
         console.log("Layers to show are", layersToShow)
         for (const [name, otherLayer] of state.layerState.filteredLayers) {
             const layer = otherLayer.layerDef
@@ -148,7 +156,7 @@ export default class SearchState {
         }
         // This feature might not be loaded because we zoomed out
         const object = await this.state.osmObjectDownloader.DownloadObjectAsync(osmid)
-        if(object === "deleted"){
+        if (object === "deleted") {
             return
         }
         const f = object.asGeoJson()

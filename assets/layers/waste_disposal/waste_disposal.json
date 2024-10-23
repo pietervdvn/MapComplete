@@ -98,7 +98,8 @@
         "ca": "Quin tipus de contenidor de brossa és aquest?",
         "cs": "Co je to za odpadkový koš?",
         "pl": "Co to za pojemnik na śmieci?",
-        "zh_Hant": "這是甚麼種類的廢棄物處理箱？"
+        "zh_Hant": "這是甚麼種類的廢棄物處理箱？",
+        "uk": "Що це за контейнер для сміття?"
       },
       "mappings": [
         {
@@ -108,7 +109,8 @@
             "de": "Dies ist eine Mülltonne oder ein Müllcontainer für (Haushalts-)Abfälle",
             "ca": "Es tracta d'un contenidor mitjà o gran per a dipositar residus (domèstics)",
             "cs": "Jedná se o střední až velkou popelnici na (domovní) odpad",
-            "zh_Hant": "這是一個中型至大型的桶，用於處理（家庭）廢棄物"
+            "zh_Hant": "這是一個中型至大型的桶，用於處理（家庭）廢棄物",
+            "uk": "Це середній або великий контейнер для утилізації (побутових) відходів"
           }
         },
         {
@@ -119,7 +121,8 @@
             "ca": "En realitat es tracta d'un contenidor de reciclatge",
             "cs": "To je vlastně recyklační kontejner",
             "pl": "W rzeczywistości jest to pojemnik do recyklingu",
-            "zh_Hant": "這實際上是一個回收容器"
+            "zh_Hant": "這實際上是一個回收容器",
+            "uk": "Це, власне, контейнер для переробки сміття"
           },
           "addExtraTags": [
             "recycling_type=container"
@@ -138,7 +141,8 @@
         "da": "Adgang: {access}",
         "ca": "Accés: {access}",
         "cs": "Přístup: {access}",
-        "zh_Hant": "存取：{access}"
+        "zh_Hant": "存取：{access}",
+        "uk": "Доступ: {access}"
       },
       "question": {
         "en": "Who can use this waste disposal bin?",
@@ -150,7 +154,8 @@
         "ca": "Qui pot utilitzar aquest contenidor de brossa?",
         "cs": "Kdo může používat tento koš na odpadky?",
         "pl": "Kto może korzystać z tego pojemnika na odpady?",
-        "zh_Hant": "誰可以使用這個廢棄物處理桶？"
+        "zh_Hant": "誰可以使用這個廢棄物處理桶？",
+        "uk": "Хто може користуватися цим сміттєвим баком?"
       },
       "freeform": {
         "key": "access",
@@ -169,7 +174,8 @@
             "ca": "Aquest contenidor es pot utilitzat per qualsevol",
             "cs": "Tento koš může používat kdokoli",
             "pl": "Z tego pojemnika może korzystać każdy",
-            "zh_Hant": "這個桶可以給任何人使用"
+            "zh_Hant": "這個桶可以給任何人使用",
+            "uk": "Цим смітником може користуватися будь-хто"
           }
         },
         {
@@ -184,7 +190,8 @@
             "ca": "Aquest contenidor és privat",
             "cs": "Tento koš je soukromý",
             "pl": "Ten kosz jest prywatny",
-            "zh_Hant": "這個桶是私人的"
+            "zh_Hant": "這個桶是私人的",
+            "uk": "Ця скринька є приватною"
           }
         },
         {
@@ -199,7 +206,8 @@
             "ca": "Aquest contenidor és només per als residents",
             "cs": "Tento koš je určen pouze pro obyvatele",
             "pl": "Ten kosz jest przeznaczony wyłącznie dla mieszkańców",
-            "zh_Hant": "這個桶僅供居民使用"
+            "zh_Hant": "這個桶僅供居民使用",
+            "uk": "Цей контейнер призначений лише для мешканців"
           }
         }
       ]
@@ -216,7 +224,8 @@
         "ca": "On es troba aquest contenidor?",
         "cs": "Kde se nachází tento kontejner?",
         "pl": "Gdzie znajduje się ten kontener?",
-        "zh_Hant": "這個容器位於哪裡？"
+        "zh_Hant": "這個容器位於哪裡？",
+        "uk": "Де знаходиться цей контейнер?"
       },
       "mappings": [
         {
@@ -231,7 +240,8 @@
             "ca": "Aquest contenidor està soterrat",
             "cs": "Jedná se o podzemní kontejner",
             "pl": "To jest podziemny kontener",
-            "zh_Hant": "這是一個地下容器"
+            "zh_Hant": "這是一個地下容器",
+            "uk": "Це підземний контейнер"
           }
         },
         {
@@ -246,7 +256,8 @@
             "ca": "Aquest contenidor està situat a l'interior",
             "cs": "Tento kontejner se nachází uvnitř",
             "pl": "Kontener ten znajduje się w pomieszczeniu zamkniętym",
-            "zh_Hant": "這個容器位於室內"
+            "zh_Hant": "這個容器位於室內",
+            "uk": "Цей контейнер знаходиться в приміщенні"
           }
         },
         {
@@ -261,7 +272,8 @@
             "ca": "Aquest contenidor està situat a l'aire lliure",
             "cs": "Tento kontejner se nachází venku",
             "pl": "Kontener ten znajduje się na zewnątrz",
-            "zh_Hant": "這個容器位於室外"
+            "zh_Hant": "這個容器位於室外",
+            "uk": "Цей контейнер розташований на відкритому повітрі"
           }
         }
       ]

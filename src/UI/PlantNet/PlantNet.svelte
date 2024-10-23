@@ -64,8 +64,8 @@
   {:else if error !== undefined}
     <Tr cls="alert" t={t.error.Subs({ error })} />
     <button on:click={() => detectSpecies()}>
-      <ArrowPath class="w-6 h-6"/>
-      <Tr t={Translations.t.general.retry}/>
+      <ArrowPath class="h-6 w-6" />
+      <Tr t={Translations.t.general.retry} />
     </button>
   {:else if $imageUrls.length === 0}
     <!-- No urls are available, show the explanation instead-->

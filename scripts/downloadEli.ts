@@ -98,24 +98,21 @@ class DownloadEli extends Script {
             }
 
             layer = { properties: layer.properties, type: layer.type, geometry: layer.geometry }
-            if(layer.geometry === null){
+            if (layer.geometry === null) {
                 keptGlobalLayers.push(layer)
-            }else{
+            } else {
                 keptLayers.push(layer)
             }
         }
 
         const contents =
             '{"type":"FeatureCollection",\n  "features": [\n' +
-            keptLayers
-                .map((l) => JSON.stringify(l))
-                .join(",\n") +
+            keptLayers.map((l) => JSON.stringify(l)).join(",\n") +
             "\n]}"
 
-        const contentsGlobal =
-            keptGlobalLayers
-                .filter((l) => l.properties.id !== "Bing")
-                .map(l => l.properties)
+        const contentsGlobal = keptGlobalLayers
+            .filter((l) => l.properties.id !== "Bing")
+            .map((l) => l.properties)
 
         const bing = keptGlobalLayers.find((l) => l.properties.id === "Bing")
         if (bing) {
@@ -126,9 +123,10 @@ class DownloadEli extends Script {
         }
         fs.writeFileSync(target, contents, { encoding: "utf8" })
         console.log("Written", keptLayers.length + ", entries to the ELI")
-        fs.writeFileSync(targetGlobal,  JSON.stringify(contentsGlobal,null, "  "), { encoding: "utf8" })
+        fs.writeFileSync(targetGlobal, JSON.stringify(contentsGlobal, null, "  "), {
+            encoding: "utf8",
+        })
         console.log("Written", keptGlobalLayers.length + ", entries to the global ELI")
-
     }
 }
 

@@ -611,7 +611,7 @@
         },
         {
           "if": "value=wikidata",
-          "then": "<b>wikidata</b> A wikidata identifier, e.g. Q42. "
+          "then": "<b>wikidata</b> A wikidata identifier, e.g. Q42."
         },
         {
           "if": "value=pnat",
@@ -639,7 +639,7 @@
         },
         {
           "if": "value=opening_hours",
-          "then": "<b>opening_hours</b> Has extra elements to easily input when a POI is opened. "
+          "then": "<b>opening_hours</b> Has extra elements to easily input when a POI is opened."
         },
         {
           "if": "value=color",

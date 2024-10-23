@@ -118,7 +118,7 @@ export class Mapillary extends ImageProvider {
     }
 
     SourceIcon(
-        img:  {id: string, url: string},
+        img: { id: string; url: string },
         location?: {
             lon: number
             lat: number
@@ -182,7 +182,7 @@ export class Mapillary extends ImageProvider {
             key,
             rotation,
             lat: geometry.coordinates[1],
-            lon: geometry.coordinates[0]
+            lon: geometry.coordinates[0],
         }
     }
 }

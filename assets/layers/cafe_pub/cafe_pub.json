@@ -265,18 +265,20 @@
         "da": "Hvad hedder denne pub?",
         "es": "¿Cuál es el nombre de esta empresa?",
         "ca": "Quin és el nom d'aquest negoci?",
-        "cs": "Jak se tento podnik jmenuje?"
+        "cs": "Jak se tento podnik jmenuje?",
+        "uk": "Як називається цей бізнес?"
       },
       "render": {
         "nl": "De naam van deze zaak is {name}",
         "en": "This business is named {name}",
         "de": "Das Unternehmen heißt {name}",
         "fr": "Ce pub se nomme {name}",
-        "hu": "A kocsma neve: {name}",
+        "hu": "A vállalkozás neve: {name}",
         "da": "Denne pub hedder {name}",
         "es": "Esta empresa se llama {name}",
         "ca": "Aquest negoci es diu {name}",
-        "cs": "Tento podnik se jmenuje {name}"
+        "cs": "Tento podnik se jmenuje {name}",
+        "uk": "Цей бізнес називається {name}"
       },
       "freeform": {
         "key": "name"
@@ -290,11 +292,12 @@
         "de": "Was ist das für ein Café?",
         "hu": "Milyen fajta kávézó ez?",
         "da": "Hvilken slags cafe er dette?",
-        "es": "Qué tipo de cafe es este?",
+        "es": "¿Qué tipo de café es este?",
         "fr": "Quel genre de café est-ce ?",
         "ca": "Quin tipus de cafeteria és aquesta?",
         "pl": "Jakiego rodzaju jest to kawiarnia?",
-        "cs": "O jakou kavárnu se jedná?"
+        "cs": "O jakou kavárnu se jedná?",
+        "uk": "Що це за кафе?"
       },
       "mappings": [
         {
@@ -307,7 +310,8 @@
             "fr": "Un pub, principalement pour boire un verre dans une atmosphère chaleureuse et décontractée",
             "da": "En pub, mest et sted at drikke øl i hyggelige, afslappede omgivelser",
             "ca": "Un bar, principalment per a beure cerveses en un interior càlid i relaxat",
-            "cs": "Hospoda, kde se většinou pije pivo v příjemném a uvolněném interiéru"
+            "cs": "Hospoda, kde se většinou pije pivo v příjemném a uvolněném interiéru",
+            "uk": "Паб, переважно для пиття пива в теплому, розслабленому інтер'єрі"
           }
         },
         {
@@ -320,7 +324,8 @@
             "es": "Un <b>bar de copas</b> más moderno y comercial, posiblemente con una instalación de música y luz",
             "fr": "Un <b>bar</b> plus moderne et commercial, avec éventuellement musique et jeux de lumière",
             "ca": "Un <b>bar de copes</b> més modern i comercial, possiblement amb equipació de música i llums",
-            "cs": "Modernější a komerčnější <b>bar</b>, případně s hudební a světelnou instalací"
+            "cs": "Modernější a komerčnější <b>bar</b>, případně s hudební a světelnou instalací",
+            "uk": "Більш сучасний і комерційний <b>бар</b>, можливо, з музичною та світловою інсталяцією"
           }
         },
         {
@@ -333,7 +338,8 @@
             "es": "Una <b>cafetería</b> para beber té, café o una bebida alcohólica en un ambiente tranquilo",
             "fr": "Un <b>café</b> pour boire du thé, du café ou une boisson alcoolisée au calme",
             "ca": "Una <b>cafeteria</b> per a a beure té, café o una beguda alcohólica en un ambient tranquil",
-            "cs": "<b>kavárna</b>, kde si můžete v klidném prostředí vypít čaj, kávu nebo alkoholický nápoj"
+            "cs": "<b>kavárna</b>, kde si můžete v klidném prostředí vypít čaj, kávu nebo alkoholický nápoj",
+            "uk": "<b>Кафе</b>, щоб випити чаю, кави чи алкогольного напою в тихій обстановці"
           }
         },
         {
@@ -346,7 +352,8 @@
             "es": "Un <b>restaurante</b> donde se pueda comer como es debido",
             "fr": "Un <b>restaurant</b> où l'on peut prendre un bon repas",
             "ca": "Un <b>restaurant</b> on es pot menjar bé",
-            "cs": "<b>Restaurace</b>, kde se dá pořádně najíst"
+            "cs": "<b>Restaurace</b>, kde se dá pořádně najíst",
+            "uk": "<b>Ресторан</b> де можна смачно поїсти"
           }
         },
         {
@@ -373,7 +380,8 @@
             "fr": "Une <b>boîte de nuit</b> ou discothèque orientée danse, la musique d'un DJ avec un spectacle de lumière et un bar pour prendre des boissons (alcoolisées)",
             "da": "Dette er en <b>natklub</b> eller diskotek med fokus på dans, musik af en DJ med tilhørende lysshow og en bar, hvor man kan købe (alkoholiske) drikkevarer",
             "ca": "Açò és un <b>club nocturn</b> o discoteca centrat en ballar, música d'un DJ acompanyat d'un espectacle de llums i una barra on obtindre begudes (alcohòliques)",
-            "cs": "Jedná se o <b>noční klub</b> nebo diskotéku se zaměřením na tanec, hudbu DJ s doprovodnou světelnou show a bar, kde si můžete dát (alkoholické) nápoje"
+            "cs": "Jedná se o <b>noční klub</b> nebo diskotéku se zaměřením na tanec, hudbu DJ s doprovodnou světelnou show a bar, kde si můžete dát (alkoholické) nápoje",
+            "uk": "Це <b>нічний клуб</b> або дискотека з акцентом на танці, музикою від ді-джея з супроводом світлового шоу та баром, щоб отримати (алкогольні) напої"
           }
         }
       ],
@@ -417,7 +425,8 @@
           "da": "{title()} er lukket permanent",
           "fr": "{title()} est définitivement fermé",
           "ca": "{title()} ha tancat permanentment",
-          "cs": "{title()} byla trvale uzavřena"
+          "cs": "{title()} byla trvale uzavřena",
+          "uk": "{title()} закрито назавжди"
         },
         "changesetMessage": "shop_closed"
       }

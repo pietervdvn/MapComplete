@@ -361,7 +361,8 @@
         "es": "¿Cual es el sitio web de {title()}?",
         "zh_Hans": "{title()} 的网站为何？",
         "da": "Hvad er webstedet for {title()}?",
-        "cs": "Jaká je webová stránka {title()}?"
+        "cs": "Jaká je webová stránka {title()}?",
+        "uk": "Який веб-сайт має {title()}?"
       },
       "render": {
         "*": "<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>"
@@ -760,7 +761,8 @@
         "zh_Hans": "{title()} 的开放时间为何？",
         "da": "Hvad er åbningstiderne for {title()}?",
         "id": "Kapan jam buka {title()}?",
-        "cs": "Jaká je otevírací doba {title()}?"
+        "cs": "Jaká je otevírací doba {title()}?",
+        "uk": "Які години роботи {title()}?"
       },
       "render": {
         "de": "<h3>Öffnungszeiten</h3>{opening_hours_table(opening_hours)}",
@@ -1768,7 +1770,8 @@
         "es": "¿En qué nivel se encuentra esta característica?",
         "nb_NO": "Hvilken etasje befinner funksjonen seg i?",
         "da": "På hvilket niveau er denne funktion placeret?",
-        "cs": "V jaké úrovni se tento prvek nachází?"
+        "cs": "V jaké úrovni se tento prvek nachází?",
+        "uk": "На якому поверсі знаходиться цей об'єкт?"
       },
       "render": {
         "en": "Located on the {level}th floor",
@@ -1792,7 +1795,8 @@
         "da": "Beliggende på {level}. etage",
         "nb_NO": "Ligger i {level} etasje",
         "id": "Terletak di lantai {level}",
-        "cs": "Nachází se v {level}. patře"
+        "cs": "Nachází se v {level}. patře",
+        "uk": "Розташований на {level} поверсі"
       },
       "freeform": {
         "key": "level",
@@ -1822,7 +1826,8 @@
             "fil": "Nasa ilalim ng lupa",
             "es": "Localizado bajo tierra",
             "da": "Placeret under jorden",
-            "cs": "Nachází se v podzemí"
+            "cs": "Nachází se v podzemí",
+            "uk": "Розташований під землею"
           },
           "hideInAnswer": true
         },
@@ -1850,7 +1855,8 @@
             "fil": "Nasa unang palapag",
             "es": "Localizado en la planta baja",
             "da": "Beliggende i stueetagen",
-            "cs": "Nachází se v přízemí"
+            "cs": "Nachází se v přízemí",
+            "uk": "Розташований на рівні землі"
           }
         },
         {
@@ -1878,7 +1884,8 @@
             "fil": "Nasa unang palapag",
             "es": "Localizado en la planta baja",
             "da": "Beliggende i stueetagen",
-            "cs": "Nachází se v přízemí"
+            "cs": "Nachází se v přízemí",
+            "uk": "Розташований на рівні землі"
           }
         },
         {
@@ -1905,7 +1912,8 @@
             "fil": "Nasa unang palapag",
             "es": "Localizado en la primera planta",
             "da": "Beliggende på første sal",
-            "cs": "Nachází se v prvním patře"
+            "cs": "Nachází se v prvním patře",
+            "uk": "Розташований на другому поверсі"
           }
         },
         {
@@ -1926,7 +1934,8 @@
             "pt": "Localizado no primeiro nível da cave",
             "da": "Beliggende på første kælderetage",
             "cs": "Nachází se v prvním suterénu",
-            "pl": "Położone na pierwszym poziomie piwnicy"
+            "pl": "Położone na pierwszym poziomie piwnicy",
+            "uk": "Розташований на першому підвальному поверсі"
           }
         }
       ]
@@ -2327,7 +2336,8 @@
         "es": "El nombre de red es <b>{internet_access:ssid}</b>",
         "fr": "Le nom du réseau est <b>{internet_access:ssid}</b>",
         "ca": "El nom de la xarxa és <b>{internet_access:ssid}</b>",
-        "pl": "Nazwa sieci to <b>{internet_access:ssid}</b>"
+        "pl": "Nazwa sieci to <b>{internet_access:ssid}</b>",
+        "uk": "Назва мережі: <b>{internet_access:ssid}</b>"
       }
     },
     {
@@ -2781,7 +2791,8 @@
           "nl": "Scan deze code om deze locatie op een ander apparaat te zien",
           "de": "QR Code scannen, um diesen Ort auf einem anderen Gerät zu öffnen",
           "sl": "Skenirajte to kodo, da odprete ta kraj na drugi napravi",
-          "da": "Skan denne kode for at åbne dette sted på en anden enhed"
+          "da": "Skan denne kode for at åbne dette sted på en anden enhed",
+          "hu": "Szkenneld be ezt a kódot, hogy egy másik eszközön is meg tudd nyitni a helyet"
         }
       }
     },
@@ -2816,7 +2827,8 @@
             "de": "Zuletzt bearbeitet am {_last_edit:timestamp} von {_last_edit:contributor}",
             "ca": "Darrera edició el {_last_edit:timestamp} per {_last_edit:contributor}",
             "cs": "Naposledy upravil {_last_edit:timestamp} {_last_edit:contributor}",
-            "da": "Senest redigeret {_last_edit:timestamp} af {_last_edit:contributor}"
+            "da": "Senest redigeret {_last_edit:timestamp} af {_last_edit:contributor}",
+            "hu": "Legutóbb {_last_edit:contributor} szerkesztette ekkor: {_last_edit:timestamp}"
           },
           "class": "subtle font-small"
         }

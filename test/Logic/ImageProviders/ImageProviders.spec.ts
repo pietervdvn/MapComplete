@@ -167,13 +167,10 @@ describe("ImageProviders", () => {
 
                 id: "196804715753265",
                 captured_at: 1627748022000,
-                "compass_angle": 0,
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": [
-                        3.2153751999722,
-                        51.215653199972
-                    ]
+                compass_angle: 0,
+                geometry: {
+                    type: "Point",
+                    coordinates: [3.2153751999722, 51.215653199972],
                 },
                 creator: {
                     username: "filipc",

@@ -95,8 +95,14 @@ export class GeoOperations {
     /**
      * Starting on `from`, travels `distance` meters in the direction of the `bearing` (default: 90)
      */
-    static destination(from: Coord | [number,number],distance: number, bearing: number = 90): [number,number]{
-        return <[number,number]> turf.destination(from, distance, bearing, {units: "meters"}).geometry.coordinates
+    static destination(
+        from: Coord | [number, number],
+        distance: number,
+        bearing: number = 90
+    ): [number, number] {
+        return <[number, number]>(
+            turf.destination(from, distance, bearing, { units: "meters" }).geometry.coordinates
+        )
     }
 
     static convexHull(featureCollection, options: { concavity?: number }) {
@@ -928,13 +934,13 @@ export class GeoOperations {
         if (meters === undefined) {
             return ""
         }
-        meters = Utils.roundHuman( Math.round(meters))
+        meters = Utils.roundHuman(Math.round(meters))
         if (meters < 1000) {
             return Utils.roundHuman(meters) + "m"
         }
 
         if (meters >= 10000) {
-            const km =  Utils.roundHuman(Math.round(meters / 1000))
+            const km = Utils.roundHuman(Math.round(meters / 1000))
             return km + "km"
         }
 

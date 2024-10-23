@@ -31,7 +31,7 @@
     return state.sync(
       (f) => f === 0,
       [],
-      (b) => (b ? 0 : undefined),
+      (b) => (b ? 0 : undefined)
     )
   }
 
@@ -92,7 +92,7 @@
     {/if}
   </div>
 {:else if $isDebugging}
- <div class="code">
-  {layer.id} (no name)
- </div>
+  <div class="code">
+    {layer.id} (no name)
+  </div>
 {/if}

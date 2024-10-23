@@ -49,16 +49,20 @@
         }
 
         if (layer?.id === "note") {
-          const uploadResult = await state?.imageUploadManager.uploadImageWithLicense(tags.data.id,
+          const uploadResult = await state?.imageUploadManager.uploadImageWithLicense(
+            tags.data.id,
             state.osmConnection.userDetails.data?.name ?? "Anonymous",
-            file, "image", noBlur)
+            file,
+            "image",
+            noBlur
+          )
           if (!uploadResult) {
             return
           }
           const url = uploadResult.absoluteUrl
           await state.osmConnection.addCommentToNote(tags.data.id, url)
           NoteCommentElement.addCommentTo(url, <UIEventSource<any>>tags, {
-            osmConnection: state.osmConnection
+            osmConnection: state.osmConnection,
           })
           return
         }
@@ -88,7 +92,7 @@
       multiple={true}
       on:submit={(e) => handleFiles(e.detail)}
     >
-      <div class="flex items-center text-2xl w-full justify-center">
+      <div class="flex w-full items-center justify-center text-2xl">
         {#if image !== undefined}
           <img src={image} aria-hidden="true" />
         {:else}
@@ -98,19 +102,17 @@
           {labelText}
         {:else}
           <div class="flex flex-col">
-
             <Tr t={t.addPicture} />
             {#if noBlur}
-          <span class="subtle text-sm">
-            <Tr t={t.upload.noBlur}/>
-          </span>
+              <span class="subtle text-sm">
+                <Tr t={t.upload.noBlur} />
+              </span>
             {/if}
           </div>
         {/if}
-
       </div>
     </FileSelector>
-    <div class="text-xs subtle italic">
+    <div class="subtle text-xs italic">
       <Tr t={Translations.t.general.attribution.panoramaxLicenseCCBYSA} />
       <span class="mx-1">—</span>
       <Tr t={t.respectPrivacy} />

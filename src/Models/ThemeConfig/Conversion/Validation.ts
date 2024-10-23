@@ -30,7 +30,7 @@ export class ValidateLanguageCompleteness extends DesugaringStep<ThemeConfig> {
         super(
             "Checks that the given object is fully translated in the specified languages",
             [],
-            "ValidateLanguageCompleteness",
+            "ValidateLanguageCompleteness"
         )
         this._languages = languages ?? ["en"]
     }
@@ -44,18 +44,18 @@ export class ValidateLanguageCompleteness extends DesugaringStep<ThemeConfig> {
                 .filter(
                     (t) =>
                         t.tr.translations[neededLanguage] === undefined &&
-                        t.tr.translations["*"] === undefined,
+                        t.tr.translations["*"] === undefined
                 )
                 .forEach((missing) => {
                     context
                         .enter(missing.context.split("."))
                         .err(
                             `The theme ${obj.id} should be translation-complete for ` +
-                            neededLanguage +
-                            ", but it lacks a translation for " +
-                            missing.context +
-                            ".\n\tThe known translation is " +
-                            missing.tr.textFor("en"),
+                                neededLanguage +
+                                ", but it lacks a translation for " +
+                                missing.context +
+                                ".\n\tThe known translation is " +
+                                missing.tr.textFor("en")
                         )
                 })
         }
@@ -72,7 +72,7 @@ export class DoesImageExist extends DesugaringStep<string> {
     constructor(
         knownImagePaths: Set<string>,
         checkExistsSync: (path: string) => boolean = undefined,
-        ignore?: Set<string>,
+        ignore?: Set<string>
     ) {
         super("Checks if an image exists", [], "DoesImageExist")
         this._ignore = ignore
@@ -112,15 +112,15 @@ export class DoesImageExist extends DesugaringStep<string> {
         if (!this._knownImagePaths.has(image)) {
             if (this.doesPathExist === undefined) {
                 context.err(
-                    `Image with path ${image} not found or not attributed; it is used in ${context}`,
+                    `Image with path ${image} not found or not attributed; it is used in ${context}`
                 )
             } else if (!this.doesPathExist(image)) {
                 context.err(
-                    `Image with path ${image} does not exist.\n     Check for typo's and missing directories in the path.`,
+                    `Image with path ${image} does not exist.\n     Check for typo's and missing directories in the path.`
                 )
             } else {
                 context.err(
-                    `Image with path ${image} is not attributed (but it exists); execute 'npm run query:licenses' to add the license information and/or run 'npm run generate:licenses' to compile all the license info`,
+                    `Image with path ${image} is not attributed (but it exists); execute 'npm run query:licenses' to add the license information and/or run 'npm run generate:licenses' to compile all the license info`
                 )
             }
         }
@@ -133,7 +133,7 @@ class OverrideShadowingCheck extends DesugaringStep<ThemeConfigJson> {
         super(
             "Checks that an 'overrideAll' does not override a single override",
             [],
-            "OverrideShadowingCheck",
+            "OverrideShadowingCheck"
         )
     }
 
@@ -183,7 +183,7 @@ class MiscThemeChecks extends DesugaringStep<ThemeConfigJson> {
             context
                 .enter("layers")
                 .err(
-                    "The 'layers'-field should be an array, but it is not. Did you pase a layer identifier and forget to add the '[' and ']'?",
+                    "The 'layers'-field should be an array, but it is not. Did you pase a layer identifier and forget to add the '[' and ']'?"
                 )
         }
         if (json.socialImage === "") {
@@ -217,23 +217,37 @@ class MiscThemeChecks extends DesugaringStep<ThemeConfigJson> {
             context
                 .enter("overideAll")
                 .err(
-                    "'overrideAll' is spelled with _two_ `r`s. You only wrote a single one of them.",
+                    "'overrideAll' is spelled with _two_ `r`s. You only wrote a single one of them."
                 )
         }
 
-        if (json.defaultBackgroundId
-            && ![AvailableRasterLayers.osmCartoProperties.id, ...eliCategory ]
-                .find(l => l === json.defaultBackgroundId) ) {
+        if (
+            json.defaultBackgroundId &&
+            ![AvailableRasterLayers.osmCartoProperties.id, ...eliCategory].find(
+                (l) => l === json.defaultBackgroundId
+            )
+        ) {
             const background = json.defaultBackgroundId
-            const match = AvailableRasterLayers.globalLayers.find(l => l.properties.id === background)
+            const match = AvailableRasterLayers.globalLayers.find(
+                (l) => l.properties.id === background
+            )
             if (!match) {
-                const suggestions = Utils.sortedByLevenshteinDistance(background,
-                    AvailableRasterLayers.globalLayers, l => l.properties.id)
-                context.enter("defaultBackgroundId")
-                    .warn("The default background layer with id", background, "does not exist or is not a global layer. Perhaps you meant one of:",
-                        suggestions.slice(0, 5).map(l => l.properties.id).join(", "),
-                        "If you want to use a certain category of background image, use", AvailableRasterLayers.globalLayers.join(", ")
-                    )
+                const suggestions = Utils.sortedByLevenshteinDistance(
+                    background,
+                    AvailableRasterLayers.globalLayers,
+                    (l) => l.properties.id
+                )
+                context.enter("defaultBackgroundId").warn(
+                    "The default background layer with id",
+                    background,
+                    "does not exist or is not a global layer. Perhaps you meant one of:",
+                    suggestions
+                        .slice(0, 5)
+                        .map((l) => l.properties.id)
+                        .join(", "),
+                    "If you want to use a certain category of background image, use",
+                    AvailableRasterLayers.globalLayers.join(", ")
+                )
             }
         }
         return json
@@ -245,7 +259,7 @@ export class PrevalidateTheme extends Fuse<ThemeConfigJson> {
         super(
             "Various consistency checks on the raw JSON",
             new MiscThemeChecks(),
-            new OverrideShadowingCheck(),
+            new OverrideShadowingCheck()
         )
     }
 }
@@ -255,7 +269,7 @@ export class DetectConflictingAddExtraTags extends DesugaringStep<TagRenderingCo
         super(
             "The `if`-part in a mapping might set some keys. Those keys are not allowed to be set in the `addExtraTags`, as this might result in conflicting values",
             [],
-            "DetectConflictingAddExtraTags",
+            "DetectConflictingAddExtraTags"
         )
     }
 
@@ -282,7 +296,7 @@ export class DetectConflictingAddExtraTags extends DesugaringStep<TagRenderingCo
                         .enters("mappings", i)
                         .err(
                             "AddExtraTags overrides a key that is set in the `if`-clause of this mapping. Selecting this answer might thus first set one value (needed to match as answer) and then override it with a different value, resulting in an unsaveable question. The offending `addExtraTags` is " +
-                            duplicateKeys.join(", "),
+                                duplicateKeys.join(", ")
                         )
                 }
             }
@@ -300,13 +314,13 @@ export class DetectNonErasedKeysInMappings extends DesugaringStep<QuestionableTa
         super(
             "A tagRendering might set a freeform key (e.g. `name` and have an option that _should_ erase this name, e.g. `noname=yes`). Under normal circumstances, every mapping/freeform should affect all touched keys",
             [],
-            "DetectNonErasedKeysInMappings",
+            "DetectNonErasedKeysInMappings"
         )
     }
 
     convert(
         json: QuestionableTagRenderingConfigJson,
-        context: ConversionContext,
+        context: ConversionContext
     ): QuestionableTagRenderingConfigJson {
         if (json.multiAnswer) {
             // No need to check this here, this has its own validation
@@ -360,8 +374,8 @@ export class DetectNonErasedKeysInMappings extends DesugaringStep<QuestionableTa
                         .enters("freeform")
                         .warn(
                             "The freeform block does not modify the key `" +
-                            neededKey +
-                            "` which is set in a mapping. Use `addExtraTags` to overwrite it",
+                                neededKey +
+                                "` which is set in a mapping. Use `addExtraTags` to overwrite it"
                         )
                 }
             }
@@ -379,8 +393,8 @@ export class DetectNonErasedKeysInMappings extends DesugaringStep<QuestionableTa
                         .enters("mappings", i)
                         .warn(
                             "This mapping does not modify the key `" +
-                            neededKey +
-                            "` which is set in a mapping or by the freeform block. Use `addExtraTags` to overwrite it",
+                                neededKey +
+                                "` which is set in a mapping or by the freeform block. Use `addExtraTags` to overwrite it"
                         )
                 }
             }
@@ -397,7 +411,7 @@ export class DetectMappingsShadowedByCondition extends DesugaringStep<TagRenderi
         super(
             "Checks that, if the tagrendering has a condition, that a mapping is not contradictory to it, i.e. that there are no dead mappings",
             [],
-            "DetectMappingsShadowedByCondition",
+            "DetectMappingsShadowedByCondition"
         )
         this._forceError = forceError
     }
@@ -469,7 +483,7 @@ export class DetectShadowedMappings extends DesugaringStep<TagRenderingConfigJso
      * DetectShadowedMappings.extractCalculatedTagNames({calculatedTags: ["_abc=js()"]}) // => ["_abc"]
      */
     private static extractCalculatedTagNames(
-        layerConfig?: LayerConfigJson | { calculatedTags: string[] },
+        layerConfig?: LayerConfigJson | { calculatedTags: string[] }
     ) {
         return (
             layerConfig?.calculatedTags?.map((ct) => {
@@ -555,16 +569,16 @@ export class DetectShadowedMappings extends DesugaringStep<TagRenderingConfigJso
                     json.mappings[i]["hideInAnswer"] !== true
                 ) {
                     context.warn(
-                        `Mapping ${i} is shadowed by mapping ${j}. However, mapping ${j} has 'hideInAnswer' set, which will result in a different rendering in question-mode.`,
+                        `Mapping ${i} is shadowed by mapping ${j}. However, mapping ${j} has 'hideInAnswer' set, which will result in a different rendering in question-mode.`
                     )
                 } else if (doesMatch) {
                     // The current mapping is shadowed!
                     context.err(`Mapping ${i} is shadowed by mapping ${j} and will thus never be shown:
     The mapping ${parsedConditions[i].asHumanString(
-                        false,
-                        false,
-                        {},
-                    )} is fully matched by a previous mapping (namely ${j}), which matches:
+        false,
+        false,
+        {}
+    )} is fully matched by a previous mapping (namely ${j}), which matches:
     ${parsedConditions[j].asHumanString(false, false, {})}.
 
     To fix this problem, you can try to:
@@ -589,7 +603,7 @@ export class ValidatePossibleLinks extends DesugaringStep<string | Record<string
         super(
             "Given a possible set of translations, validates that <a href=... target='_blank'> does have `rel='noopener'` set",
             [],
-            "ValidatePossibleLinks",
+            "ValidatePossibleLinks"
         )
     }
 
@@ -619,21 +633,21 @@ export class ValidatePossibleLinks extends DesugaringStep<string | Record<string
 
     convert(
         json: string | Record<string, string>,
-        context: ConversionContext,
+        context: ConversionContext
     ): string | Record<string, string> {
         if (typeof json === "string") {
             if (this.isTabnabbingProne(json)) {
                 context.err(
                     "The string " +
-                    json +
-                    " has a link targeting `_blank`, but it doesn't have `rel='noopener'` set. This gives rise to reverse tabnapping",
+                        json +
+                        " has a link targeting `_blank`, but it doesn't have `rel='noopener'` set. This gives rise to reverse tabnapping"
                 )
             }
         } else {
             for (const k in json) {
                 if (this.isTabnabbingProne(json[k])) {
                     context.err(
-                        `The translation for ${k} '${json[k]}' has a link targeting \`_blank\`, but it doesn't have \`rel='noopener'\` set. This gives rise to reverse tabnapping`,
+                        `The translation for ${k} '${json[k]}' has a link targeting \`_blank\`, but it doesn't have \`rel='noopener'\` set. This gives rise to reverse tabnapping`
                     )
                 }
             }
@@ -651,7 +665,7 @@ export class CheckTranslation extends DesugaringStep<Translatable> {
         super(
             "Checks that a translation is valid and internally consistent",
             ["*"],
-            "CheckTranslation",
+            "CheckTranslation"
         )
         this._allowUndefined = allowUndefined
     }
@@ -698,7 +712,7 @@ export class ValidateLayerConfig extends DesugaringStep<LayerConfigJson> {
         isBuiltin: boolean,
         doesImageExist: DoesImageExist,
         studioValidations: boolean = false,
-        skipDefaultLayers: boolean = false,
+        skipDefaultLayers: boolean = false
     ) {
         super("Thin wrapper around 'ValidateLayer", [], "ValidateLayerConfig")
         this.validator = new ValidateLayer(
@@ -706,7 +720,7 @@ export class ValidateLayerConfig extends DesugaringStep<LayerConfigJson> {
             isBuiltin,
             doesImageExist,
             studioValidations,
-            skipDefaultLayers,
+            skipDefaultLayers
         )
     }
 
@@ -734,7 +748,7 @@ export class ValidatePointRendering extends DesugaringStep<PointRenderingConfigJ
             context
                 .enter("markers")
                 .err(
-                    `Detected a field 'markerS' in pointRendering. It is written as a singular case`,
+                    `Detected a field 'markerS' in pointRendering. It is written as a singular case`
                 )
         }
         if (json.marker && !Array.isArray(json.marker)) {
@@ -744,7 +758,7 @@ export class ValidatePointRendering extends DesugaringStep<PointRenderingConfigJ
             context
                 .enter("location")
                 .err(
-                    "A pointRendering should have at least one 'location' to defined where it should be rendered. ",
+                    "A pointRendering should have at least one 'location' to defined where it should be rendered. "
                 )
         }
         return json
@@ -763,26 +777,26 @@ export class ValidateLayer extends Conversion<
         isBuiltin: boolean,
         doesImageExist: DoesImageExist,
         studioValidations: boolean = false,
-        skipDefaultLayers: boolean = false,
+        skipDefaultLayers: boolean = false
     ) {
         super("Doesn't change anything, but emits warnings and errors", [], "ValidateLayer")
         this._prevalidation = new PrevalidateLayer(
             path,
             isBuiltin,
             doesImageExist,
-            studioValidations,
+            studioValidations
         )
         this._skipDefaultLayers = skipDefaultLayers
     }
 
     convert(
         json: LayerConfigJson,
-        context: ConversionContext,
+        context: ConversionContext
     ): { parsed: LayerConfig; raw: LayerConfigJson } {
         context = context.inOperation(this.name)
         if (typeof json === "string") {
             context.err(
-                `Not a valid layer: the layerConfig is a string. 'npm run generate:layeroverview' might be needed`,
+                `Not a valid layer: the layerConfig is a string. 'npm run generate:layeroverview' might be needed`
             )
             return undefined
         }
@@ -814,7 +828,7 @@ export class ValidateLayer extends Conversion<
                 context
                     .enters("calculatedTags", i)
                     .err(
-                        `Invalid function definition: the custom javascript is invalid:${e}. The offending javascript code is:\n    ${code}`,
+                        `Invalid function definition: the custom javascript is invalid:${e}. The offending javascript code is:\n    ${code}`
                     )
             }
         }
@@ -862,7 +876,7 @@ export class ValidateLayer extends Conversion<
             context
                 .enters("allowMove", "enableAccuracy")
                 .err(
-                    "`enableAccuracy` is written with two C in the first occurrence and only one in the last",
+                    "`enableAccuracy` is written with two C in the first occurrence and only one in the last"
                 )
         }
 
@@ -893,8 +907,8 @@ export class ValidateFilter extends DesugaringStep<FilterConfigJson> {
                         .enters("fields", i)
                         .err(
                             `Invalid filter: ${type} is not a valid textfield type.\n\tTry one of ${Array.from(
-                                Validators.availableTypes,
-                            ).join(",")}`,
+                                Validators.availableTypes
+                            ).join(",")}`
                         )
                 }
             }
@@ -911,13 +925,13 @@ export class DetectDuplicateFilters extends DesugaringStep<{
         super(
             "Tries to detect layers where a shared filter can be used (or where similar filters occur)",
             [],
-            "DetectDuplicateFilters",
+            "DetectDuplicateFilters"
         )
     }
 
     convert(
         json: { layers: LayerConfigJson[]; themes: ThemeConfigJson[] },
-        context: ConversionContext,
+        context: ConversionContext
     ): { layers: LayerConfigJson[]; themes: ThemeConfigJson[] } {
         const { layers, themes } = json
         const perOsmTag = new Map<
@@ -981,7 +995,7 @@ export class DetectDuplicateFilters extends DesugaringStep<{
                 filter: FilterConfigJson
             }[]
         >,
-        theme?: ThemeConfigJson | undefined,
+        theme?: ThemeConfigJson | undefined
     ): void {
         if (layer.filter === undefined || layer.filter === null) {
             return
@@ -1021,7 +1035,7 @@ export class DetectDuplicatePresets extends DesugaringStep<ThemeConfig> {
         super(
             "Detects mappings which have identical (english) names or identical mappings.",
             ["presets"],
-            "DetectDuplicatePresets",
+            "DetectDuplicatePresets"
         )
     }
 
@@ -1032,13 +1046,13 @@ export class DetectDuplicatePresets extends DesugaringStep<ThemeConfig> {
         if (new Set(enNames).size != enNames.length) {
             const dups = Utils.Duplicates(enNames)
             const layersWithDup = json.layers.filter((l) =>
-                l.presets.some((p) => dups.indexOf(p.title.textFor("en")) >= 0),
+                l.presets.some((p) => dups.indexOf(p.title.textFor("en")) >= 0)
             )
             const layerIds = layersWithDup.map((l) => l.id)
             context.err(
                 `This theme has multiple presets which are named:${dups}, namely layers ${layerIds.join(
-                    ", ",
-                )} this is confusing for contributors and is probably the result of reusing the same layer multiple times. Use \`{"override": {"=presets": []}}\` to remove some presets`,
+                    ", "
+                )} this is confusing for contributors and is probably the result of reusing the same layer multiple times. Use \`{"override": {"=presets": []}}\` to remove some presets`
             )
         }
 
@@ -1053,17 +1067,17 @@ export class DetectDuplicatePresets extends DesugaringStep<ThemeConfig> {
                     Utils.SameObject(presetATags, presetBTags) &&
                     Utils.sameList(
                         presetA.preciseInput.snapToLayers,
-                        presetB.preciseInput.snapToLayers,
+                        presetB.preciseInput.snapToLayers
                     )
                 ) {
                     context.err(
                         `This theme has multiple presets with the same tags: ${presetATags.asHumanString(
                             false,
                             false,
-                            {},
+                            {}
                         )}, namely the preset '${presets[i].title.textFor("en")}' and '${presets[
                             j
-                            ].title.textFor("en")}'`,
+                        ].title.textFor("en")}'`
                     )
                 }
             }
@@ -1088,13 +1102,13 @@ export class ValidateThemeEnsemble extends Conversion<
         super(
             "Validates that all themes together are logical, i.e. no duplicate ids exists within (overriden) themes",
             [],
-            "ValidateThemeEnsemble",
+            "ValidateThemeEnsemble"
         )
     }
 
     convert(
         json: ThemeConfig[],
-        context: ConversionContext,
+        context: ConversionContext
     ): Map<
         string,
         {
@@ -1145,11 +1159,11 @@ export class ValidateThemeEnsemble extends Conversion<
                 context.err(
                     [
                         "The layer with id '" +
-                        id +
-                        "' is found in multiple themes with different tag definitions:",
+                            id +
+                            "' is found in multiple themes with different tag definitions:",
                         "\t In theme " + oldTheme + ":\t" + oldTags.asHumanString(false, false, {}),
                         "\tIn theme " + theme.id + ":\t" + tags.asHumanString(false, false, {}),
-                    ].join("\n"),
+                    ].join("\n")
                 )
             }
         }

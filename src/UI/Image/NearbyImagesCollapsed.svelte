@@ -30,7 +30,13 @@
 </script>
 
 {#if enableLogin.data}
-  <button on:click={() => {shown.set(!shown.data)}}><Tr t={t.seeNearby}/> </button>
+  <button
+    on:click={() => {
+      shown.set(!shown.data)
+    }}
+  >
+    <Tr t={t.seeNearby} />
+  </button>
   <Popup {shown} bodyPadding="p-4">
     <span slot="header">
       <Tr t={t.seeNearby} />

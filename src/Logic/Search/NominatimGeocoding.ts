@@ -6,25 +6,23 @@ import Locale from "../../UI/i18n/Locale"
 import GeocodingProvider, { GeocodingOptions, SearchResult } from "./GeocodingProvider"
 
 export class NominatimGeocoding implements GeocodingProvider {
-
-    private readonly _host ;
+    private readonly _host
     private readonly limit: number
 
-    constructor(limit: number = 3, host: string =  Constants.nominatimEndpoint) {
+    constructor(limit: number = 3, host: string = Constants.nominatimEndpoint) {
         this.limit = limit
         this._host = host
     }
 
-    public search(query: string, options?:GeocodingOptions): Promise<SearchResult[]> {
+    public search(query: string, options?: GeocodingOptions): Promise<SearchResult[]> {
         const b = options?.bbox ?? BBox.global
-        const url = `${
-            this._host
-        }search?format=json&limit=${this.limit}&viewbox=${b.getEast()},${b.getNorth()},${b.getWest()},${b.getSouth()}&accept-language=${
+        const url = `${this._host}search?format=json&limit=${
+            this.limit
+        }&viewbox=${b.getEast()},${b.getNorth()},${b.getWest()},${b.getSouth()}&accept-language=${
             Locale.language.data
         }&q=${query}`
         return Utils.downloadJson(url)
     }
-
 
     async reverseSearch(
         coordinate: { lon: number; lat: number },

@@ -8,7 +8,7 @@ import { LayerConfigJson } from "../../Models/ThemeConfig/Json/LayerConfigJson"
 import { GeoOperations } from "../GeoOperations"
 
 export type GeocodingCategory =
-    "coordinate"
+    | "coordinate"
     | "city"
     | "house"
     | "street"
@@ -19,7 +19,7 @@ export type GeocodingCategory =
     | "airport"
     | "shop"
 
-export type GeocodeResult =  {
+export type GeocodeResult = {
     /**
      * The name of the feature being displayed
      */
@@ -27,8 +27,8 @@ export type GeocodeResult =  {
     /**
      * Some optional, extra information
      */
-    description?: string | Promise<string>,
-    feature?: Feature,
+    description?: string | Promise<string>
+    feature?: Feature
     lat: number
     lon: number
     /**
@@ -37,22 +37,18 @@ export type GeocodeResult =  {
      */
     boundingbox?: number[]
     osm_type?: "node" | "way" | "relation"
-    osm_id: string,
-    category?: GeocodingCategory,
-    payload?: object,
+    osm_id: string
+    category?: GeocodingCategory
+    payload?: object
     source?: string
 }
-export type SearchResult =
-    | GeocodeResult
+export type SearchResult = GeocodeResult
 
 export interface GeocodingOptions {
     bbox?: BBox
 }
 
-
 export default interface GeocodingProvider {
-
-
     search(query: string, options?: GeocodingOptions): Promise<GeocodeResult[]>
 
     /**
@@ -62,26 +58,28 @@ export default interface GeocodingProvider {
     suggest?(query: string, options?: GeocodingOptions): Store<GeocodeResult[]>
 }
 
-export type ReverseGeocodingResult = Feature<Geometry, {
-    osm_id: number,
-    osm_type: "node" | "way" | "relation",
-    country: string,
-    city: string,
-    countrycode: string,
-    type: GeocodingCategory,
-    street: string
-}>
+export type ReverseGeocodingResult = Feature<
+    Geometry,
+    {
+        osm_id: number
+        osm_type: "node" | "way" | "relation"
+        country: string
+        city: string
+        countrycode: string
+        type: GeocodingCategory
+        street: string
+    }
+>
 
 export interface ReverseGeocodingProvider {
     reverseSearch(
         coordinate: { lon: number; lat: number },
         zoom: number,
-        language?: string,
-    ): Promise<ReverseGeocodingResult[]>;
+        language?: string
+    ): Promise<ReverseGeocodingResult[]>
 }
 
 export class GeocodingUtils {
-
     public static searchLayer = GeocodingUtils.initSearchLayer()
 
     private static initSearchLayer(): LayerConfig {
@@ -103,16 +101,14 @@ export class GeocodingUtils {
         train_station: 14,
         airport: 13,
         shop: 16,
-
     }
 
-    public static mergeSimilarResults(results: GeocodeResult[]){
+    public static mergeSimilarResults(results: GeocodeResult[]) {
         const byName: Record<string, GeocodeResult[]> = {}
-
 
         for (const result of results) {
             const nm = result.display_name
-            if(!byName[nm]) {
+            if (!byName[nm]) {
                 byName[nm] = []
             }
             byName[nm].push(result)
@@ -123,11 +119,13 @@ export class GeocodingUtils {
             const options = byName[nm]
             const added = options[0]
             merged.push(added)
-            const centers: [number,number][] = [[added.lon, added.lat]]
+            const centers: [number, number][] = [[added.lon, added.lat]]
             for (const other of options) {
-                const otherCenter:[number,number] = [other.lon, other.lat]
-                const nearbyFound= centers.some(center => GeoOperations.distanceBetween(center, otherCenter) < 500)
-                if(!nearbyFound){
+                const otherCenter: [number, number] = [other.lon, other.lat]
+                const nearbyFound = centers.some(
+                    (center) => GeoOperations.distanceBetween(center, otherCenter) < 500
+                )
+                if (!nearbyFound) {
                     merged.push(other)
                     centers.push(otherCenter)
                 }
@@ -135,7 +133,6 @@ export class GeocodingUtils {
         }
         return merged
     }
-
 
     public static categoryToIcon: Record<GeocodingCategory, DefaultPinIcon> = {
         city: "building_office_2",
@@ -148,8 +145,5 @@ export class GeocodingUtils {
         county: "building_office_2",
         airport: "airport",
         shop: "building_storefront",
-
     }
-
 }
-

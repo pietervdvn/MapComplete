@@ -150,7 +150,6 @@
     </LoginToggle>
 
     <LanguagePicker />
-
   </SidebarUnit>
 
   <!-- Theme related: documentation links, download, ... -->
@@ -218,7 +217,6 @@
 
   <!-- Other links and tools for the given location: open iD/JOSM; community index, ... -->
   <SidebarUnit>
-
     <h3>
       <Tr t={t.moreUtilsTitle} />
     </h3>
@@ -238,13 +236,13 @@
       <MapillaryLink large={false} mapProperties={state.mapProperties} />
     </If>
 
-    <a class="flex sidebar-button" href="geo:{$location.lat},{$location.lon}"><ShareIcon /><Tr t={t.openHereDifferentApp}/></a>
-
+    <a class="sidebar-button flex" href="geo:{$location.lat},{$location.lon}">
+      <ShareIcon /><Tr t={t.openHereDifferentApp} />
+    </a>
   </SidebarUnit>
 
   <!-- About MC: various outward links, legal info, ... -->
   <SidebarUnit>
-
     <h3>
       <Tr t={Translations.t.general.menu.aboutMapComplete} />
     </h3>
@@ -275,11 +273,11 @@
     </a>
 
     <a class="flex" href="mailto:info@mapcomplete.org">
-      <EnvelopeOpen class="h-6 w-6"/>
-      <Tr t={Translations.t.general.attribution.emailCreators}/>
+      <EnvelopeOpen class="h-6 w-6" />
+      <Tr t={Translations.t.general.attribution.emailCreators} />
     </a>
     <a class="flex" href="https://hosted.weblate.org/projects/mapcomplete/" target="_blank">
-      <TranslateIcon class="h-6 w-6"/>
+      <TranslateIcon class="h-6 w-6" />
       <Tr t={Translations.t.translations.activateButton} />
     </a>
 
@@ -322,6 +320,3 @@
     </div>
   </SidebarUnit>
 </div>
-
-
-

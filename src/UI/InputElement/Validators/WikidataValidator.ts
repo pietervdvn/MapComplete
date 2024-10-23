@@ -17,12 +17,12 @@ export default class WikidataValidator extends Validator {
             [
                 [
                     "key",
-                    "the value of this tag will initialize search (default: name). This can be a ';'-separated list in which case every key will be inspected. The non-null value will be used as search"
+                    "the value of this tag will initialize search (default: name). This can be a ';'-separated list in which case every key will be inspected. The non-null value will be used as search",
                 ],
                 [
                     "options",
-                    "A JSON-object of type `{ removePrefixes: Record<string, string[]>, removePostfixes: Record<string, string[]>, ... }`. See the more detailed explanation below"
-                ]
+                    "A JSON-object of type `{ removePrefixes: Record<string, string[]>, removePostfixes: Record<string, string[]>, ... }`. See the more detailed explanation below",
+                ],
             ]
         ),
         "#### Suboptions",
@@ -31,28 +31,26 @@ export default class WikidataValidator extends Validator {
             [
                 [
                     "removePrefixes",
-                    "remove these snippets of text from the start of the passed string to search. This is either a list OR a hash of languages to a list. The individual strings are interpreted as case ignoring regexes"
+                    "remove these snippets of text from the start of the passed string to search. This is either a list OR a hash of languages to a list. The individual strings are interpreted as case ignoring regexes",
                 ],
                 [
                     "removePostfixes",
-                    "remove these snippets of text from the end of the passed string to search. This is either a list OR a hash of languages to a list. The individual strings are interpreted as case ignoring regexes."
+                    "remove these snippets of text from the end of the passed string to search. This is either a list OR a hash of languages to a list. The individual strings are interpreted as case ignoring regexes.",
                 ],
                 [
                     "instanceOf",
-                    "A list of Q-identifier which indicates that the search results _must_ be an entity of this type, e.g. [`Q5`](https://www.wikidata.org/wiki/Q5) for humans"
+                    "A list of Q-identifier which indicates that the search results _must_ be an entity of this type, e.g. [`Q5`](https://www.wikidata.org/wiki/Q5) for humans",
                 ],
                 [
                     "notInstanceof",
-                    "A list of Q-identifiers which indicates that the search results _must not_ be an entity of this type, e.g. [`Q79007`](https://www.wikidata.org/wiki/Q79007) to filter away all streets from the search results"
+                    "A list of Q-identifiers which indicates that the search results _must not_ be an entity of this type, e.g. [`Q79007`](https://www.wikidata.org/wiki/Q79007) to filter away all streets from the search results",
                 ],
-                [
-                    "multiple",
-                    "If 'yes' or 'true', will allow to select multiple values at once"
-                ]
+                ["multiple", "If 'yes' or 'true', will allow to select multiple values at once"],
             ]
-        )
+        ),
     ].join("\n\n")
-    private static readonly docsExampleUsage: string = "### Example usage\n\n" +
+    private static readonly docsExampleUsage: string =
+        "### Example usage\n\n" +
         `The following is the 'freeform'-part of a layer config which will trigger a search for the wikidata item corresponding with the name of the selected feature. It will also remove '-street', '-square', ... if found at the end of the name
 
 \`\`\`json
@@ -96,9 +94,13 @@ Another example is to search for species and trees:
 \`\`\`
 `
 
-
     constructor() {
-        super("wikidata", "A wikidata identifier, e.g. Q42.\n\n" + WikidataValidator.docs + WikidataValidator.docsExampleUsage)
+        super(
+            "wikidata",
+            "A wikidata identifier, e.g. Q42.\n\n" +
+                WikidataValidator.docs +
+                WikidataValidator.docsExampleUsage
+        )
     }
 
     public isValid(str): boolean {
