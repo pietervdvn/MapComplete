@@ -65,9 +65,11 @@ class TileCountServer extends Script {
                     const layers = await tcs.getLayers()
                     const meta = await tcs.getMeta()
                     const mostSuitable = await tcs.findSuitableDatabases()
-                    return JSON.stringify({ meta,
+                    return JSON.stringify({
+                        meta,
                         suitableDatabases: mostSuitable,
-                        layers: Array.from(layers) })
+                        layers: Array.from(layers),
+                    })
                 },
             },
             {
