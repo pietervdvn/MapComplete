@@ -138,7 +138,8 @@
     "generate:buildDbScript": "vite-node scripts/osm2pgsql/generateBuildDbScript.ts",
     "generate:summaryCache": "vite-node scripts/generateSummaryTileCache.ts",
     "create:database": "vite-node scripts/osm2pgsql/createNewDatabase.ts",
-    "delete:database:old": "vite-node scripts/osm2pgsql/deleteOldDbs.ts"
+    "delete:database:old": "vite-node scripts/osm2pgsql/deleteOldDbs.ts",
+    "upload:panoramax": "vite-node scripts/ImgurToPanoramax.ts"
   },
   "keywords": [
     "OpenStreetMap",
@@ -209,7 +210,7 @@
     "opening_hours": "^3.6.0",
     "osm-auth": "^2.5.0",
     "osmtogeojson": "^3.0.0-beta.5",
-    "panoramax-js": "^0.3.9",
+    "panoramax-js": "^0.3.10",
     "panzoom": "^9.4.3",
     "papaparse": "^5.3.1",
     "pg": "^8.11.3",

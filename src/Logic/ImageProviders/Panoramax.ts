@@ -45,9 +45,8 @@ export default class PanoramaxImageProvider extends ImageProvider {
      * @private
      */
     private async getInfoFromMapComplete(id: string): Promise<{ data: ImageData, url: string }> {
-        const sequence = "6e702976-580b-419c-8fb3-cf7bd364e6f8" // We always reuse this sequence
         const url = `https://panoramax.mapcomplete.org/`
-        const data = await PanoramaxImageProvider.defaultPanoramax.imageInfo(id, sequence)
+        const data = await PanoramaxImageProvider.defaultPanoramax.imageInfo(id)
         return { url, data }
     }
 
@@ -163,27 +162,24 @@ export default class PanoramaxImageProvider extends ImageProvider {
 }
 
 export class PanoramaxUploader implements ImageUploader {
-    private readonly _panoramax: AuthorizedPanoramax
+    public readonly panoramax: AuthorizedPanoramax
     maxFileSizeInMegabytes = 100 * 1000 * 1000 // 100MB
 
     constructor(url: string, token: string) {
-        this._panoramax = new AuthorizedPanoramax(url, token)
+        this.panoramax = new AuthorizedPanoramax(url, token)
     }
 
-    async uploadImage(blob: File, currentGps: [number, number], author: string,  noblur: boolean = false): Promise<{
+    async uploadImage(blob: File, currentGps: [number, number], author: string,  noblur: boolean = false, sequenceId?: string ): Promise<{
         key: string;
         value: string;
         absoluteUrl: string
     }> {
         // https://panoramax.openstreetmap.fr/api/docs/swagger#/
 
-        let hasDate = false
-        let hasGPS = false
         let [lon, lat] = currentGps
         let datetime = new Date().toISOString()
         try {
             const tags = await ExifReader.load(blob)
-            hasDate  = tags?.DateTime !== undefined
             const [[latD], [latM], [latS, latSDenom]]  =<[[number,number],[number,number],[number,number]]> tags?.GPSLatitude.value
             const [[lonD], [lonM], [lonS, lonSDenom]]  =<[[number,number],[number,number],[number,number]]> tags?.GPSLongitude.value
             lat = latD + latM / 60 + latS / (3600 * latSDenom)
@@ -198,12 +194,12 @@ export class PanoramaxUploader implements ImageUploader {
         }
 
 
-        const p = this._panoramax
-        const defaultSequence = (await p.mySequences())[0]
-        console.log("Upload options are", lon, lat, datetime)
+        const p = this.panoramax
+        const defaultSequence: {id: string, "stats:items":{count:number}} = (await p.mySequences()).find(s => s.id === (sequenceId ?? "6e702976-580b-419c-8fb3-cf7bd364e6f8"))
+        console.log("Upload options are", lon, lat, datetime, blob)
         const img = <ImageData>await p.addImage(blob, defaultSequence, {
-            lon: Utils.Round7(lon),
-            lat: Utils.Round7(lat),
+            lon,
+            lat,
             datetime,
             isBlurred: noblur,
             exifOverride: {

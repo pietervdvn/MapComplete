@@ -297,6 +297,18 @@ export class Changes {
         newObjects: OsmObject[]
         modifiedObjects: OsmObject[]
         deletedObjects: OsmObject[]
+    }{
+        return Changes.createChangesetObjectsStatic(changes, downloadedOsmObjects, ignoreNoCreate, this.previouslyCreated)
+    }
+    public static createChangesetObjectsStatic(
+        changes: ChangeDescription[],
+        downloadedOsmObjects: OsmObject[],
+        ignoreNoCreate: boolean = false,
+        previouslyCreated : OsmObject[]
+    ): {
+        newObjects: OsmObject[]
+        modifiedObjects: OsmObject[]
+        deletedObjects: OsmObject[]
     } {
         /**
          * This is a rather complicated method which does a lot of stuff.
@@ -322,7 +334,7 @@ export class Changes {
             states.set(o.type + "/" + o.id, "unchanged")
         }
 
-        for (const o of this.previouslyCreated) {
+        for (const o of previouslyCreated) {
             objects.set(o.type + "/" + o.id, o)
             states.set(o.type + "/" + o.id, "unchanged")
         }
@@ -372,7 +384,7 @@ export class Changes {
                     throw "Hmm? This is a bug"
                 }
                 objects.set(id, osmObj)
-                this.previouslyCreated.push(osmObj)
+                previouslyCreated.push(osmObj)
             }
 
             const state = states.get(id)
