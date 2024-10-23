@@ -606,7 +606,8 @@
         "da": "Denne station er en del af netværket {network}",
         "ca": "Aquesta estació forma part de la xarxa {network}",
         "cs": "Tato stanice je součástí sítě {network}",
-        "pl": "Ta stacja jest częścią sieci {network}"
+        "pl": "Ta stacja jest częścią sieci {network}",
+        "uk": "Ця станція є частиною мережі {network}"
       },
       "question": {
         "en": "What network is this place a part of? (skip if none)",
@@ -621,7 +622,8 @@
         "da": "Hvilket netværk er dette sted en del af? (spring over hvis ingen)",
         "ca": "A quina xarxa forma part aquest lloc? (Salta si a cap)",
         "cs": "Jaké sítě je toto místo součástí? (přeskočte, pokud žádné)",
-        "pl": "Do jakiej sieci należy to miejsce? (pomiń, jeśli nie ma)"
+        "pl": "Do jakiej sieci należy to miejsce? (pomiń, jeśli nie ma)",
+        "uk": "Частиною якої мережі є цей заклад? (пропустіть, якщо немає)"
       },
       "freeform": {
         "key": "network"

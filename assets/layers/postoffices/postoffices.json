@@ -157,7 +157,8 @@
           "nl": "Wat zijn de openingsuren voor dit postkantoor?",
           "fr": "Quelles sont les heures d’ouverture de ce bureau de poste ?",
           "ca": "Quines son els horaris d'apertura per a aquesta oficina postal?",
-          "cs": "Jaká je otevírací doba této pošty?"
+          "cs": "Jaká je otevírací doba této pošty?",
+          "uk": "Які години роботи цього поштового відділення?"
         }
       }
     },
@@ -245,7 +246,8 @@
             "de": "Dieser Standort bietet Dienstleistungen für DHL an",
             "nl": "Deze locatie biedt diensten aan voor DHL",
             "ca": "Aquesta localització ofereix serveis per a DHL",
-            "cs": "Toto místo nabízí služby pro společnost DHL"
+            "cs": "Toto místo nabízí služby pro společnost DHL",
+            "uk": "У цьому приміщенні надаються послуги для DHL"
           },
           "hideInAnswer": "_country=de"
         },
@@ -256,7 +258,8 @@
             "de": "Dieser Standort bietet Dienstleistungen für DPD an",
             "nl": "Deze locatie biedt diensten aan voor DPD",
             "ca": "Aquesta localització ofereix serveis per a DPD",
-            "cs": "Toto místo nabízí služby pro společnost DPD"
+            "cs": "Toto místo nabízí služby pro společnost DPD",
+            "uk": "У цій локації надаються послуги для DPD"
           }
         },
         {
@@ -266,7 +269,8 @@
             "de": "Dieser Standort bietet Dienstleistungen für GLS an",
             "nl": "Deze locatie biedt diensten aan voor GLS",
             "ca": "Aquesta localització ofereix serveis per a GLS",
-            "cs": "Toto místo nabízí služby pro společnost GLS"
+            "cs": "Toto místo nabízí služby pro společnost GLS",
+            "uk": "Ця локація пропонує послуги для GLS"
           }
         },
         {
@@ -276,7 +280,8 @@
             "de": "Dieser Standort bietet Dienstleistungen für UPS an",
             "nl": "Deze locatie biedt diensten aan voor UPS",
             "ca": "Aquesta localització ofereix serveis per a UPS",
-            "cs": "Toto místo nabízí služby pro společnost UPS"
+            "cs": "Toto místo nabízí služby pro společnost UPS",
+            "uk": "У цьому місці надаються послуги для UPS"
           }
         },
         {
@@ -285,7 +290,8 @@
             "en": "This location is a DHL Paketshop",
             "de": "Dieser Standort ist ein DHL Paketshop",
             "ca": "Aquesta ubicació és una botiga DHL Paketshop",
-            "cs": "Tato lokalita je DHL Paketshop"
+            "cs": "Tato lokalita je DHL Paketshop",
+            "uk": "Це відділення DHL Paketshop"
           },
           "hideInAnswer": "_country!=de"
         },
@@ -295,7 +301,8 @@
             "en": "This location is a Hermes PaketShop",
             "de": "Dieser Standort ist ein Hermes PaketShop",
             "ca": "Aquesta ubicació és una botiga Hermes PaketShop",
-            "cs": "Tato lokalita je Hermes Paketshop"
+            "cs": "Tato lokalita je Hermes Paketshop",
+            "uk": "Ця локація є магазином Hermes PaketShop"
           },
           "hideInAnswer": "_country!=de"
         },
@@ -306,7 +313,8 @@
             "de": "Dieser Standort ist ein PostNL-Punkt",
             "nl": "Deze locatie is een PostNL-punt",
             "ca": "Aquesta ubicació és un punt PostNL",
-            "cs": "Toto umístění je bod PostNL"
+            "cs": "Toto umístění je bod PostNL",
+            "uk": "Це місце є PostNL-пунктом"
           },
           "hideInAnswer": {
             "and": [
@@ -321,7 +329,8 @@
             "en": "This location offers services for bpost",
             "de": "Dieser Standort bietet Dienstleistungen für bpost an",
             "nl": "Deze locatie biedt diensten aan voor bpost",
-            "cs": "Toto místo nabízí služby pro společnost bpost"
+            "cs": "Toto místo nabízí služby pro společnost bpost",
+            "uk": "Ця локація пропонує послуги для bpost"
           },
           "hideInAnswer": "_country!=be"
         }

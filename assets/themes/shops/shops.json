@@ -16,7 +16,8 @@
     "es": "Tiendas",
     "cs": "Obchody",
     "eu": "Denda",
-    "pl": "Sklepy"
+    "pl": "Sklepy",
+    "uk": "Магазини"
   },
   "description": {
     "en": "On this map, one can mark basic information about shops, add opening hours and phone numbers",

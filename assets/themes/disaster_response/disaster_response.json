@@ -9,7 +9,8 @@
     "da": "Beredskab",
     "cs": "Reakce na katastrofy a záchranné služby",
     "ru": "Ликвидация последствий стихийных бедствий и аварийные службы",
-    "hu": "Katasztrófaelhárítás és sürgősségi szolgálatok"
+    "hu": "Katasztrófaelhárítás és sürgősségi szolgálatok",
+    "uk": "Реагування на стихійні лиха та аварійні служби"
   },
   "description": {
     "en": "This map contains elements meant for disaster preparedness and response.",

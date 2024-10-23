@@ -90,7 +90,8 @@
         "de": "Diese Straßenlaterne hat die Referenznummer {ref}",
         "es": "Esta lámpara callejera tiene el número de referencia {ref}",
         "ca": "Aquest fanal té el número de referència {ref}",
-        "cs": "Tato pouliční lampa má referenční číslo {ref}"
+        "cs": "Tato pouliční lampa má referenční číslo {ref}",
+        "uk": "Цей вуличний ліхтар має ідентифікаційний номер {ref}"
       },
       "question": {
         "en": "What is the reference number of this street lamp?",
@@ -98,7 +99,8 @@
         "de": "Wie lautet die Referenznummer dieser Straßenlaterne?",
         "es": "¿Cual es el número de referencia de esta lámpara callejera?",
         "ca": "Quin és el número de referència d'aquest fanal?",
-        "cs": "Jaké je referenční číslo této pouliční lampy?"
+        "cs": "Jaké je referenční číslo této pouliční lampy?",
+        "uk": "Який ідентифікаційний номер цього вуличного ліхтаря?"
       },
       "freeform": {
         "key": "ref"

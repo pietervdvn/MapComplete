@@ -738,7 +738,8 @@
         "es": "¿Cual es el número de teléfono del mantenedor?",
         "da": "Hvad er telefonnummeret på vedligeholderen?",
         "cs": "Jaké je telefonní číslo správce?",
-        "ca": "Quin és el número de telèfon del responsable?"
+        "ca": "Quin és el número de telèfon del responsable?",
+        "uk": "Який номер телефону супровідника?"
       },
       "freeform": {
         "key": "phone",

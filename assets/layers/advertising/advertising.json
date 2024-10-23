@@ -1002,7 +1002,8 @@
             "he": "זה דגל",
             "pl": "To jest flaga",
             "zh_Hans": "这是一面旗帜",
-            "pt": "Isto é uma bandeira"
+            "pt": "Isto é uma bandeira",
+            "uk": "Це прапор"
           },
           "icon": {
             "path": "./assets/themes/advertising/flag.svg",
@@ -1021,7 +1022,8 @@
             "pl": "To jest pudełko plakatowe",
             "pt_BR": "Isso é um quadro de pôster",
             "zh_Hans": "这是海报盒",
-            "pt": "Isto é um quadro de pôster"
+            "pt": "Isto é um quadro de pôster",
+            "uk": "Це скринька для плакатів"
           },
           "icon": {
             "path": "./assets/themes/advertising/poster_box.svg",
@@ -1040,7 +1042,8 @@
             "pl": "To jest ekran",
             "pt_BR": "Isso é uma tela",
             "zh_Hans": "这是一个屏幕",
-            "pt": "Isto é um ecrã"
+            "pt": "Isto é um ecrã",
+            "uk": "Це екран"
           },
           "icon": {
             "path": "./assets/themes/advertising/screen.svg",
@@ -1059,7 +1062,8 @@
             "pl": "To jest rzeźba",
             "pt_BR": "Isso é uma escultura",
             "zh_Hans": "这是一个雕塑",
-            "pt": "Isto é uma escultura"
+            "pt": "Isto é uma escultura",
+            "uk": "Це скульптура"
           },
           "icon": {
             "path": "./assets/themes/advertising/sculpture.svg",

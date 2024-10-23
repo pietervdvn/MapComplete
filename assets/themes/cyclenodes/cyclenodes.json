@@ -222,7 +222,8 @@
             "de": "Wie lautet die Nummer des Knotenpunkts im Fahrradknotenpunktnetzwerk?",
             "cs": "Jaké je referenční číslo tohoto cyklistického uzlu?",
             "ca": "Quin és el número de referència d'aquest node ciclista?",
-            "es": "¿Cuál es el número de referencia de este nodo cíclico?"
+            "es": "¿Cuál es el número de referencia de este nodo cíclico?",
+            "pl": "Jaki jest numer referencyjny tego węzła rowerowego?"
           },
           "freeform": {
             "key": "rcn_ref",
@@ -244,7 +245,8 @@
             "de": "Knotenpunktnummer {rcn_ref} des Fahrradknotenpunktnetzwerks",
             "cs": "Tento cyklistický uzel má referenční číslo {rcn_ref}",
             "ca": "Aquest node ciclista té la referència número {rcn_ref}",
-            "es": "Este nodo cíclico tiene el número de referencia {rcn_ref}"
+            "es": "Este nodo cíclico tiene el número de referencia {rcn_ref}",
+            "pl": "Ten węzeł rowerowy ma numer referencyjny {rcn_ref}"
           },
           "condition": "rcn_ref~*"
         },
@@ -325,7 +327,8 @@
             "de": "ein Knoten eines Fahrradknotenpunktnetzwerks",
             "ca": "un node ciclista",
             "es": "un nodo cíclico",
-            "cs": "cyklistický uzel"
+            "cs": "cyklistický uzel",
+            "pl": "węzeł rowerowy"
           },
           "snapToLayer": [
             "cycleways_and_roads"

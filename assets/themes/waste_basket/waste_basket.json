@@ -16,7 +16,8 @@
     "es": "Papeleras",
     "cs": "Odpadkové koše",
     "pl": "Kosz na śmieci",
-    "ru": "Корзины для мусора"
+    "ru": "Корзины для мусора",
+    "uk": "Кошики для сміття"
   },
   "description": {
     "en": "On this map, you'll find waste baskets near you. If a waste basket is missing on this map, you can add it yourself.",
@@ -45,7 +46,8 @@
     "ca": "Un mapa amb papereres",
     "es": "Un mapa con papeleras",
     "cs": "Mapa odpadkových košů",
-    "pl": "Mapa koszy na śmieci"
+    "pl": "Mapa koszy na śmieci",
+    "uk": "Мапа зі сміттєвими кошиками"
   },
   "icon": "./assets/themes/waste_basket/waste_basket.svg",
   "layers": [

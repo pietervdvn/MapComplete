@@ -83,7 +83,8 @@
           "ca": "Lloc de menjar ràpid <i>{name}</i>",
           "es": "Comida rápida <i>{name}</i>",
           "fr": "Fast-food <i>{name}</i>",
-          "cs": "Rychlé občerstvení <i>{name}</i>"
+          "cs": "Rychlé občerstvení <i>{name}</i>",
+          "uk": "Фаст-фуд <i>{name}</i>"
         }
       },
       {
@@ -699,7 +700,8 @@
         "es": "¿Este local ofrece comida para llevar?",
         "fr": "Cet établissement propose-t-il des plats à emporter ?",
         "ca": "Aquest lloc ofereix per a emportar?",
-        "cs": "Nabízí toto místo jídlo s sebou?"
+        "cs": "Nabízí toto místo jídlo s sebou?",
+        "uk": "Чи пропонують тут їжу на винос?"
       },
       "mappings": [
         {
@@ -711,7 +713,8 @@
             "es": "Este es un negocio solo para pedir para llevar",
             "fr": "Ce restaurant ne propose que de la vente à emporter",
             "ca": "Aquest és un negoci només per emportar",
-            "cs": "Jedná se o podnik jídlo pouze s sebou"
+            "cs": "Jedná se o podnik jídlo pouze s sebou",
+            "uk": "Це бізнес тільки на винос"
           }
         },
         {
@@ -723,7 +726,8 @@
             "es": "Aquí es posible pedir para llevar",
             "fr": "La vente à emporter est possible ici",
             "ca": "Aquí és possible demanar per emportar",
-            "cs": "Je zde možné vzít si s sebou"
+            "cs": "Je zde možné vzít si s sebou",
+            "uk": "Тут можна замовити їжу на винос"
           }
         },
         {
@@ -735,7 +739,8 @@
             "es": "Aquí no es posible pedir para llevar",
             "fr": "La vente à emporter n'est pas possible ici",
             "ca": "Aquí no és possible demanar per emportar",
-            "cs": "Jídlo sebou zde není možné"
+            "cs": "Jídlo sebou zde není možné",
+            "uk": "Замовлення на винос тут неможливе"
           }
         }
       ],

@@ -215,7 +215,7 @@
       "description": {
         "en": "You can specify later on what this shop sells.",
         "ca": "Podeu especificar més endavant el que ven aquesta botiga.",
-        "cs": "Přidat nový obchod",
+        "cs": "Později můžete zadat, co tento obchod prodává.",
         "de": "Sie können später angeben, was das Geschäft verkauft.",
         "eo": "Enmeti novan butikon",
         "es": "Puedes especificar más adelante lo que vende esta tienda.",
@@ -239,7 +239,8 @@
         "de": "Wie ist der Name dieses Geschäfts?",
         "es": "¿Cual es el nombre de esta tienda?",
         "ca": "Quin és el nom d'aquesta botiga?",
-        "cs": "Jak se jmenuje tento obchod?"
+        "cs": "Jak se jmenuje tento obchod?",
+        "uk": "Як називається цей магазин?"
       },
       "render": {
         "en": "This shop is called <i>{name}</i>",
@@ -247,7 +248,8 @@
         "nl": "Deze zaak heet <i>{name}</i>",
         "ca": "La botiga s'anomena <i>{name}</i>",
         "fr": "Ce commerce s'appelle <i>{name}</i>",
-        "cs": "Tento obchod se jmenuje <i>{name}</i>"
+        "cs": "Tento obchod se jmenuje <i>{name}</i>",
+        "uk": "Цей магазин називається <i>{name}</i>"
       },
       "freeform": {
         "key": "name"
@@ -266,7 +268,8 @@
           "de": "Um was für ein Geschäft handelt es sich?",
           "fr": "Quel genre de magasin est-ce?",
           "ca": "Quin tipus de botiga és aquesta?",
-          "cs": "Co je to za obchod?"
+          "cs": "Co je to za obchod?",
+          "uk": "Що це за магазин?"
         },
         "render": {
           "en": "This is a {shop}",
@@ -302,7 +305,8 @@
             "then": {
               "en": "Bicycle rental shop",
               "nl": "Fietsverhuurzaak",
-              "de": "Fahrradverleih"
+              "de": "Fahrradverleih",
+              "uk": "Пункт прокату велосипедів"
             }
           }
         ],
@@ -315,7 +319,8 @@
       "id": "brand",
       "question": {
         "en": "What is the brand of this shop?",
-        "de": "Zu welcher Marke gehört dieses Geschäft?"
+        "de": "Zu welcher Marke gehört dieses Geschäft?",
+        "uk": "Яка марка цього магазину?"
       },
       "render": {
         "en": "Part of <b>{brand}</b>",
@@ -329,7 +334,8 @@
           "if": "not:brand=yes",
           "then": {
             "en": "This shop does not have a specific brand, it is not part of a bigger chain",
-            "de": "Das Geschäft gehört zu keiner Marke oder Handelskette"
+            "de": "Das Geschäft gehört zu keiner Marke oder Handelskette",
+            "uk": "Цей магазин не має певного бренду, він не є частиною великої мережі"
           }
         }
       ]
@@ -803,11 +809,13 @@
         "es": "¿Alquila bicicis esta tienda?",
         "da": "Udlejer denne butik cykler?",
         "ca": "Aquesta botiga alquila bicicletes?",
-        "cs": "Pronajímá tento obchod kola?"
+        "cs": "Pronajímá tento obchod kola?",
+        "uk": "Чи дає цей магазин велосипеди напрокат?"
       },
       "questionHint": {
         "en": "This is about rental for e.g. tourists who need a bike. Some bicycle repair shops offer a bicycle to use while your bicycle is being repaired but this is not considered rental for this question.",
-        "de": "Es geht um die Vermietung, z.B. an Touristen, die ein Fahrrad benötigen. Einige Fahrradwerkstätten bieten ein Fahrrad an, das man benutzen kann, während das eigene Fahrrad repariert wird, aber dies wird für diese Frage nicht als Vermietung betrachtet."
+        "de": "Es geht um die Vermietung, z.B. an Touristen, die ein Fahrrad benötigen. Einige Fahrradwerkstätten bieten ein Fahrrad an, das man benutzen kann, während das eigene Fahrrad repariert wird, aber dies wird für diese Frage nicht als Vermietung betrachtet.",
+        "uk": "Йдеться про прокат для туристів, яким потрібен велосипед. Деякі майстерні з ремонту велосипедів пропонують велосипед на час ремонту, але це не вважається прокатом в даному випадку."
       },
       "mappings": [
         {
@@ -825,7 +833,8 @@
             "es": "Esta tienda alquila bicis",
             "da": "Denne butik udlejer cykler",
             "ca": "Aquesta botiga lloga bicis",
-            "cs": "Tento obchod pronajímá jízdní kola"
+            "cs": "Tento obchod pronajímá jízdní kola",
+            "uk": "У цьому магазині можна взяти напрокат велосипеди"
           }
         },
         {
@@ -843,7 +852,8 @@
             "es": "Esta tienda no alquila bicis",
             "da": "Denne butik udlejer ikke cykler",
             "ca": "Aquesta botiga no lloga bicis",
-            "cs": "Tento obchod nepronajímá kola"
+            "cs": "Tento obchod nepronajímá kola",
+            "uk": "Цей магазин не дає велосипеди напрокат"
           }
         }
       ]

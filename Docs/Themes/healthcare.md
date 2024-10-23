@@ -34,6 +34,7 @@ Available languages:
  - zh_Hant
  - it
  - hu
+ - uk
 
 # Table of contents
 

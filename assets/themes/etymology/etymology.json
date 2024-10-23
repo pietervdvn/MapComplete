@@ -14,7 +14,8 @@
     "nb_NO": "Åpent etymologikart",
     "cs": "Etymologie - podle čeho je místo pojmenováno?",
     "es": "Etimología: ¿De qué recibe el nombre un lugar?",
-    "pl": "Etymologia - od czego pochodzi nazwa ulicy?"
+    "pl": "Etymologia - od czego pochodzi nazwa ulicy?",
+    "uk": "Етимологія - на честь чого названо місце?"
   },
   "description": {
     "en": "On this map, you can see what an object is named after. The streets, buildings, ... come from OpenStreetMap which got linked with Wikidata. In the popup, you'll see the Wikipedia article (if it exists) or a wikidata box of what the object is named after. If the object itself has a wikipedia page, that'll be shown too.<br/><br/><b>You can help contribute too!</b>Zoom in enough and <i>all</i> streets will show up. You can click one and a Wikidata-search box will popup. With a few clicks, you can add an etymology link. Note that you need a free OpenStreetMap account to do this.",
@@ -43,7 +44,8 @@
     "da": "Hvad er oprindelsen af et stednavn?",
     "cs": "Jaký je původ toponyma?",
     "pl": "Jakie jest pochodzenie toponimów?",
-    "ru": "Каково происхождение топонима?"
+    "ru": "Каково происхождение топонима?",
+    "uk": "Звідки походить топонім?"
   },
   "icon": "./assets/layers/etymology/logo.svg",
   "hideFromOverview": false,

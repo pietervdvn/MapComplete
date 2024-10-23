@@ -14,7 +14,8 @@
     "zh_Hant": "公車路線",
     "pl": "Trasy autobusowe",
     "ru": "Автобусные маршруты",
-    "hu": "Buszjáratok"
+    "hu": "Buszjáratok",
+    "uk": "Автобусні маршрути"
   },
   "description": {
     "en": "Plan your trip with the help of the public transport system.",

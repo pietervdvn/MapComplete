@@ -17,7 +17,8 @@
     "cs": "Cyklostezky",
     "eu": "Bidegorriak",
     "pl": "Ulice rowerowe",
-    "ru": "Велосипедные дорожки"
+    "ru": "Велосипедные дорожки",
+    "uk": "Велодоріжки"
   },
   "description": {
     "nl": "Een fietsstraat is een straat waar <ul><li><b>automobilisten geen fietsers mogen inhalen</b></li><li>Er een maximumsnelheid van <b>30km/u</b> geldt</li><li>Fietsers gemotoriseerde voertuigen links mogen inhalen</li><li>Fietsers nog steeds voorrang aan rechts moeten verlenen - ook aan auto's en voetgangers op het zebrapad</li></ul><br/><br/>Op deze open kaart kan je alle gekende fietsstraten zien en kan je ontbrekende fietsstraten aanduiden. <b>Fietszones</b> worden aangeduid door elke straat apart als fietsstraat te markeren. <br/>Om de kaart aan te passen, moet je je aanmelden met OpenStreetMap en helemaal inzoomen tot straatniveau. ",
@@ -48,7 +49,8 @@
     "fr": "Une carte des rues cyclables",
     "da": "Et kort over cykelgader",
     "cs": "Mapa cyklostezek",
-    "pl": "Mapa ulic rowerowych"
+    "pl": "Mapa ulic rowerowych",
+    "uk": "Карта велодоріжок"
   },
   "icon": "./assets/themes/cyclestreets/logo.svg",
   "startZoom": 14,

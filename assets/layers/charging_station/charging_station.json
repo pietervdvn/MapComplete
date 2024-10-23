@@ -2448,14 +2448,16 @@
         "nl": "Maakt deel uit van het <b>{network}</b>-netwerk",
         "ca": "Part de la xarxa <b>{network}</b>",
         "de": "Teil des Netzwerks <b>{network}</b>",
-        "pl": "Część sieci <b>{network}</b>"
+        "pl": "Część sieci <b>{network}</b>",
+        "uk": "Частина мережі <b>{network}</b>"
       },
       "question": {
         "en": "Is this charging station part of a network?",
         "nl": "Is dit oplaadpunt deel van een groter netwerk?",
         "ca": "Aquesta estació de càrrega forma part d'una xarxa?",
         "de": "Ist diese Ladestation Teil eines Netzwerks?",
-        "pl": "Czy ta stacja ładowania jest częścią sieci?"
+        "pl": "Czy ta stacja ładowania jest częścią sieci?",
+        "uk": "Чи є ця зарядна станція частиною мережі?"
       },
       "freeform": {
         "key": "network"
@@ -2466,7 +2468,8 @@
           "then": {
             "en": "Not part of a bigger network, e.g. because the charging station is maintained by a local business",
             "nl": "Maakt geen deel uit van een groter netwerk, een lokale zaak of organisatie beheert dit oplaadpunt",
-            "de": "Nicht Teil eines größeren Netzwerks, z. B. weil die Ladestation von einem lokalen Unternehmen betrieben wird"
+            "de": "Nicht Teil eines größeren Netzwerks, z. B. weil die Ladestation von einem lokalen Unternehmen betrieben wird",
+            "uk": "Не є частиною більшої мережі, наприклад, тому що зарядна станція обслуговується місцевим підприємством"
           }
         },
         {
@@ -2475,7 +2478,8 @@
             "en": "Not part of a bigger network",
             "nl": "Maakt geen deel uit van een groter netwerk",
             "de": "Nicht Teil eines größeren Netzwerks",
-            "pl": "Nie jest częścią większej sieci"
+            "pl": "Nie jest częścią większej sieci",
+            "uk": "Не є частиною великої мережі"
           },
           "hideInAnswer": true
         },

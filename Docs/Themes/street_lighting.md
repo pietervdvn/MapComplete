@@ -29,6 +29,7 @@ Available languages:
  - cs
  - it
  - pl
+ - uk
 
 # Table of contents
 

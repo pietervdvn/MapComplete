@@ -28,7 +28,8 @@
       "nl": "Tandartspraktijk {name}",
       "fr": "Cabinet medical {name}",
       "ca": "Clínica Dental {name}",
-      "cs": "Zubní ordinace {name}"
+      "cs": "Zubní ordinace {name}",
+      "uk": "Стоматологічний кабінет {name}"
     }
   },
   "pointRendering": [
@@ -92,7 +93,8 @@
         "nl": "Hoe heet deze tandarts?",
         "ca": "Com s'anomena aquest dentista?",
         "pl": "Jaka jest nazwa tego gabinetu dentystycznego?",
-        "cs": "Jak se jmenuje tento zubař?"
+        "cs": "Jak se jmenuje tento zubař?",
+        "uk": "Як звуть цього стоматолога?"
       },
       "render": {
         "en": "This dentist is called {name}",
@@ -100,7 +102,8 @@
         "nl": "Deze tandarts heet {name}",
         "ca": "El dentista s'anomena {name}",
         "pl": "Nazwa tego gabinetu dentystycznego to {name}",
-        "cs": "Tento zubař se jmenuje {name}"
+        "cs": "Tento zubař se jmenuje {name}",
+        "uk": "Цього стоматолога звуть {name}"
       },
       "freeform": {
         "key": "name"

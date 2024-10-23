@@ -78,7 +78,8 @@
         "fr": "Comment s'appelle ce cabinet médical ?",
         "ca": "Com es diu aquesta consulta mèdica?",
         "he": "מה השם של מקום הרופאים הזה?",
-        "cs": "Jak se jmenuje toto místo lékařů?"
+        "cs": "Jak se jmenuje toto místo lékařů?",
+        "uk": "Як називається ця лікарня?"
       },
       "render": {
         "en": "This doctors place is called {name}",
@@ -86,7 +87,8 @@
         "nl": "Deze dokterspraktijk heet {name}",
         "fr": "Ce cabinet médical s'appelle {name}",
         "ca": "Aquest consultori mèdic és diu {name}",
-        "cs": "Toto místo lékařů se jmenuje {name}"
+        "cs": "Toto místo lékařů se jmenuje {name}",
+        "uk": "Ця лікарня називається {name}"
       },
       "freeform": {
         "key": "name"

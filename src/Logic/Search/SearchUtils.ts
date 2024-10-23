@@ -15,27 +15,22 @@ export default class SearchUtils {
         if (searchTerm === "personal") {
             window.location.href = ThemeSearch.createUrlFor({ id: "personal" }, undefined)
             return true
-
         }
         if (searchTerm === "bugs" || searchTerm === "issues") {
             window.location.href = "https://github.com/pietervdvn/MapComplete/issues"
             return true
-
         }
         if (searchTerm === "source") {
             window.location.href = "https://github.com/pietervdvn/MapComplete"
             return true
-
         }
         if (searchTerm === "docs") {
             window.location.href = "https://github.com/pietervdvn/MapComplete/tree/develop/Docs"
             return true
-
         }
         if (searchTerm === "osmcha" || searchTerm === "stats") {
             window.location.href = Utils.OsmChaLinkFor(7)
             return true
-
         }
         if (searchTerm === "studio") {
             window.location.href = "./studio.html"
