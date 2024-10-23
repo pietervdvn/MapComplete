@@ -37,7 +37,7 @@ export class WikimediaImageProvider extends ImageProvider {
             return value
         }
         const baseUrl = `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(
-            value,
+            value
         )}`
         if (useHd) {
             return baseUrl
@@ -106,7 +106,8 @@ export class WikimediaImageProvider extends ImageProvider {
         value = WikimediaImageProvider.removeCommonsPrefix(value)
         if (value.startsWith("Category:")) {
             const urls = await Wikimedia.GetCategoryContents(value)
-            return urls.filter((url) => url.startsWith("File:"))
+            return urls
+                .filter((url) => url.startsWith("File:"))
                 .map((image) => this.UrlForImage(image))
         }
         if (value.startsWith("File:")) {
@@ -117,7 +118,7 @@ export class WikimediaImageProvider extends ImageProvider {
             return undefined
         }
         // We do a last effort and assume this is a file
-        return [(this.UrlForImage("File:" + value))]
+        return [this.UrlForImage("File:" + value)]
     }
 
     public async DownloadAttribution(img: { url: string }): Promise<LicenseInfo> {
@@ -147,7 +148,7 @@ export class WikimediaImageProvider extends ImageProvider {
             console.warn(
                 "The file",
                 filename,
-                "has no usable metedata or license attached... Please fix the license info file yourself!",
+                "has no usable metedata or license attached... Please fix the license info file yourself!"
             )
             return undefined
         }

@@ -3,12 +3,14 @@
   "title": {
     "en": "Changes made with MapComplete",
     "de": "Änderungen mit MapComplete",
-    "cs": "Změny provedené pomocí MapComplete"
+    "cs": "Změny provedené pomocí MapComplete",
+    "es": "Cambios realizados con MapComplete"
   },
   "shortDescription": {
     "en": "Shows changes made by MapComplete",
     "de": "Zeigt die von MapComplete vorgenommenen Änderungen an",
-    "cs": "Zobrazuje změny provedené nástrojem MapComplete"
+    "cs": "Zobrazuje změny provedené nástrojem MapComplete",
+    "es": "Muestra los cambios realizados por MapComplete"
   },
   "description": {
     "en": "This maps shows all the changes made with MapComplete",
@@ -27,7 +29,8 @@
       "id": "mapcomplete-changes",
       "name": {
         "en": "Changeset centers",
-        "de": "Changeset-Zentren"
+        "de": "Changeset-Zentren",
+        "es": "Centro del conjunto de cambios"
       },
       "minzoom": 0,
       "source": {
@@ -39,7 +42,8 @@
         "render": {
           "en": "Changeset for {theme}",
           "de": "Änderungssatz für {theme}",
-          "cs": "Sada změn pro {theme}"
+          "cs": "Sada změn pro {theme}",
+          "es": "Conjunto de cambios para {theme}"
         }
       },
       "description": {
@@ -54,7 +58,8 @@
           "render": {
             "en": "Changeset <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>",
             "de": "Änderungssatz <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>",
-            "cs": "Sada změn <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
+            "cs": "Sada změn <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>",
+            "es": "Conjunto de cambios <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
           }
         },
         {
@@ -62,7 +67,8 @@
           "question": {
             "en": "What contributor did make this change?",
             "de": "Wer hat zu dieser Änderung beigetragen?",
-            "cs": "Který přispěvatel provedl tuto změnu?"
+            "cs": "Který přispěvatel provedl tuto změnu?",
+            "es": "¿Qué colaborador realizó este cambio?"
           },
           "freeform": {
             "key": "user"
@@ -70,7 +76,8 @@
           "render": {
             "en": "Change made by <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>",
             "de": "Änderung vorgenommen von <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>",
-            "cs": "Změna provedena uživatelem <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>"
+            "cs": "Změna provedena uživatelem <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>",
+            "es": "Cambio realizado por <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>"
           }
         },
         {
@@ -78,14 +85,16 @@
           "question": {
             "en": "What theme was used to make this change?",
             "de": "Welches Thema wurde für diese Änderung verwendet?",
-            "cs": "Jaký motiv byl použit k provedení této změny?"
+            "cs": "Jaký motiv byl použit k provedení této změny?",
+            "es": "¿Qué tema se utilizó para hacer este cambio?"
           },
           "freeform": {
             "key": "theme"
           },
           "render": {
             "en": "Change with theme <a href='https://mapcomplete.org/{theme}'>{theme}</a>",
-            "de": "Änderung mit Thema <a href='https://mapcomplete.org/{theme}'>{theme}</a>"
+            "de": "Änderung mit Thema <a href='https://mapcomplete.org/{theme}'>{theme}</a>",
+            "es": "Cambiar con el tema <a href='https://mapcomplete.org/{theme}'>{theme}</a>"
           }
         },
         {
@@ -96,12 +105,14 @@
           "question": {
             "en": "What locale (language) was this change made in?",
             "de": "In welcher Sprache (Locale) wurde diese Änderung vorgenommen?",
-            "cs": "V jakém prostředí (jazyce) byla tato změna provedena?"
+            "cs": "V jakém prostředí (jazyce) byla tato změna provedena?",
+            "es": "¿En qué idioma (ubicación) se realizó este cambio?"
           },
           "render": {
             "en": "User locale is {locale}",
             "de": "Die Benutzersprache ist {locale}",
-            "cs": "Uživatelské prostředí je {locale}"
+            "cs": "Uživatelské prostředí je {locale}",
+            "es": "La configuración local del usuario es {locale}"
           }
         },
         {
@@ -109,12 +120,14 @@
           "render": {
             "en": "Change with with <a href='{host}'>{host}</a>",
             "de": "Änderung mit <a href='{host}'>{host}</a>",
-            "cs": "Změnit pomocí <a href='{host}'>{host}</a>"
+            "cs": "Změnit pomocí <a href='{host}'>{host}</a>",
+            "es": "Cambiado con <a href='{host}'>{host}</a>"
           },
           "question": {
             "en": "What host (website) was this change made with?",
             "de": "Bei welchem Host (Website) wurde diese Änderung vorgenommen?",
-            "cs": "U jakého hostitele (webové stránky) byla tato změna provedena?"
+            "cs": "U jakého hostitele (webové stránky) byla tato změna provedena?",
+            "es": "¿Con qué host (página web) se hizo este cambio?"
           },
           "freeform": {
             "key": "host"
@@ -137,12 +150,14 @@
           "question": {
             "en": "What version of MapComplete was used to make this change?",
             "de": "Welche Version von MapComplete wurde verwendet, um diese Änderung vorzunehmen?",
-            "cs": "Jaká verze aplikace MapComplete byla použita k provedení této změny?"
+            "cs": "Jaká verze aplikace MapComplete byla použita k provedení této změny?",
+            "es": "¿Qué versión de MapComplete se utilizó para hacer este cambio?"
           },
           "render": {
             "en": "Made with {editor}",
             "de": "Erstellt mit {editor}",
-            "cs": "Vytvořeno pomocí {editor}"
+            "cs": "Vytvořeno pomocí {editor}",
+            "es": "Hecho con {editor}"
           },
           "freeform": {
             "key": "editor"
@@ -344,7 +359,8 @@
               "question": {
                 "en": "Exclude GRB theme",
                 "de": "GRB-Thema ausschließen",
-                "cs": "Vyloučit motiv GRB"
+                "cs": "Vyloučit motiv GRB",
+                "es": "Excluir tema GRB"
               }
             }
           ]
@@ -375,7 +391,8 @@
             "render": {
               "en": "More statistics can be found <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>here</a>",
               "de": "Weitere Statistiken findest du <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>hier</a>",
-              "cs": "Další statistiky najdete <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>zde</a>"
+              "cs": "Další statistiky najdete <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>zde</a>",
+              "es": "Se pueden encontrar más estadísticas <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>aquí</a>"
             }
           },
           {

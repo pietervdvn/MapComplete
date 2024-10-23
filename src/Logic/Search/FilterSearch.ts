@@ -6,16 +6,20 @@ import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
 import LayerState from "../State/LayerState"
 import ThemeConfig from "../../Models/ThemeConfig/ThemeConfig"
 
-export type FilterSearchResult = { option: FilterConfigOption, filter: FilterConfig, layer: LayerConfig, index: number }
-
+export type FilterSearchResult = {
+    option: FilterConfigOption
+    filter: FilterConfig
+    layer: LayerConfig
+    index: number
+}
 
 /**
  * Searches matching filters
  */
 export default class FilterSearch {
-    private readonly _state: {layerState: LayerState, theme: ThemeConfig}
+    private readonly _state: { layerState: LayerState; theme: ThemeConfig }
 
-    constructor(state:  {layerState: LayerState, theme: ThemeConfig}) {
+    constructor(state: { layerState: LayerState; theme: ThemeConfig }) {
         this._state = state
     }
 
@@ -23,12 +27,15 @@ export default class FilterSearch {
         if (query.length === 0) {
             return []
         }
-        const queries = query.split(" ").map(query => {
-            if (!Utils.isEmoji(query)) {
-                return Utils.simplifyStringForSearch(query)
-            }
-            return query
-        }).filter(q => q.length > 0)
+        const queries = query
+            .split(" ")
+            .map((query) => {
+                if (!Utils.isEmoji(query)) {
+                    return Utils.simplifyStringForSearch(query)
+                }
+                return query
+            })
+            .filter((q) => q.length > 0)
         const possibleFilters: FilterSearchResult[] = []
         for (const layer of this._state.theme.layers) {
             if (!Array.isArray(layer.filters)) {
@@ -46,29 +53,36 @@ export default class FilterSearch {
                     if (!option.osmTags) {
                         continue
                     }
-                    if(option.fields.length > 0){
+                    if (option.fields.length > 0) {
                         // Filters with a search field are not supported as of now, see #2141
                         continue
                     }
-                    let terms = ([option.question.txt,
-                        ...(option.searchTerms?.[Locale.language.data] ?? option.searchTerms?.["en"] ?? [])]
-                        .flatMap(term => [term, ...(term?.split(" ") ?? [])]))
-                    terms = terms.map(t => Utils.simplifyStringForSearch(t))
+                    let terms = [
+                        option.question.txt,
+                        ...(option.searchTerms?.[Locale.language.data] ??
+                            option.searchTerms?.["en"] ??
+                            []),
+                    ].flatMap((term) => [term, ...(term?.split(" ") ?? [])])
+                    terms = terms.map((t) => Utils.simplifyStringForSearch(t))
                     terms.push(option.emoji)
                     Utils.NoNullInplace(terms)
-                    const distances = queries.flatMap(query => terms.map(entry => {
-                        const d = Utils.levenshteinDistance(query, entry.slice(0, query.length))
-                        const dRelative = d / query.length
-                        return dRelative
-                    }))
+                    const distances = queries.flatMap((query) =>
+                        terms.map((entry) => {
+                            const d = Utils.levenshteinDistance(query, entry.slice(0, query.length))
+                            const dRelative = d / query.length
+                            return dRelative
+                        })
+                    )
 
                     const levehnsteinD = Math.min(...distances)
                     if (levehnsteinD > 0.25) {
                         continue
                     }
                     possibleFilters.push({
-                            option, layer, filter, index:
-                            i,
+                        option,
+                        layer,
+                        filter,
+                        index: i,
                     })
                 }
             }
@@ -85,7 +99,7 @@ export default class FilterSearch {
             if (!Array.isArray(filteredLayer.layerDef.filters)) {
                 continue
             }
-            if (Constants.priviliged_layers.indexOf(<any> id) >= 0) {
+            if (Constants.priviliged_layers.indexOf(<any>id) >= 0) {
                 continue
             }
             for (const filter of filteredLayer.layerDef.filters) {
@@ -116,13 +130,16 @@ export default class FilterSearch {
      * Note that this depends on the language and the displayed text. For example, two filters {"en": "A", "nl": "B"} and {"en": "X", "nl": "B"} will be joined for dutch but not for English
      *
      */
-    static mergeSemiIdenticalLayers<T extends FilterSearchResult = FilterSearchResult>(filters: ReadonlyArray<T>, language: string):T[][]  {
-        const results : Record<string, T[]> = {}
+    static mergeSemiIdenticalLayers<T extends FilterSearchResult = FilterSearchResult>(
+        filters: ReadonlyArray<T>,
+        language: string
+    ): T[][] {
+        const results: Record<string, T[]> = {}
         for (const filter of filters) {
             const txt = filter.option.question.textFor(language)
-            if(results[txt]){
+            if (results[txt]) {
                 results[txt].push(filter)
-            }else{
+            } else {
                 results[txt] = [filter]
             }
         }

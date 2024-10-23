@@ -55,14 +55,18 @@
   let feedback: UIEventSource<Translation> = new UIEventSource<Translation>(undefined)
 </script>
 
-<div class="low-interaction p-1 rounded-2xl px-3" class:interactive={$firstValue?.length > 0}>
+<div class="low-interaction rounded-2xl p-1 px-3" class:interactive={$firstValue?.length > 0}>
   {#each parts as part, i}
     {#if part["subs"]}
       <!-- This is a field! -->
       <span class="mx-1">
         <InputHelper value={fieldValues[part["subs"]]} type={fieldTypes[part["subs"]]}>
-          <ValidatedInput slot="fallback" value={fieldValues[part["subs"]]} type={fieldTypes[part["subs"]]}
-                          {feedback} />
+          <ValidatedInput
+            slot="fallback"
+            value={fieldValues[part["subs"]]}
+            type={fieldTypes[part["subs"]]}
+            {feedback}
+          />
         </InputHelper>
       </span>
     {:else}
@@ -70,6 +74,6 @@
     {/if}
   {/each}
   {#if $feedback}
-    <Tr cls="alert" t={$feedback}/>
+    <Tr cls="alert" t={$feedback} />
   {/if}
 </div>

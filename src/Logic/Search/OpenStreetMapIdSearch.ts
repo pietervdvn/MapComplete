@@ -5,12 +5,13 @@ import { SpecialVisualizationState } from "../../UI/SpecialVisualization"
 import { Utils } from "../../Utils"
 
 export default class OpenStreetMapIdSearch implements GeocodingProvider {
-    private static readonly regex = /((https?:\/\/)?(www.)?(osm|openstreetmap).org\/)?(n|node|w|way|r|relation)[/ ]?([0-9]+)/
+    private static readonly regex =
+        /((https?:\/\/)?(www.)?(osm|openstreetmap).org\/)?(n|node|w|way|r|relation)[/ ]?([0-9]+)/
 
     private static readonly types: Readonly<Record<string, "node" | "way" | "relation">> = {
-        "n": "node",
-        "w": "way",
-        "r": "relation",
+        n: "node",
+        w: "way",
+        r: "relation",
     }
 
     private readonly _state: SpecialVisualizationState
@@ -55,15 +56,17 @@ export default class OpenStreetMapIdSearch implements GeocodingProvider {
                 category: "coordinate",
                 osm_type: <"node" | "way" | "relation">osm_type,
                 osm_id,
-                lat: 0, lon: 0,
+                lat: 0,
+                lon: 0,
                 source: "osmid",
-
             }
         }
         const [lat, lon] = obj.centerpoint()
         return {
-            lat, lon,
-            display_name: obj.tags.name ?? obj.tags.alt_name ?? obj.tags.local_name ?? obj.tags.ref ?? id,
+            lat,
+            lon,
+            display_name:
+                obj.tags.name ?? obj.tags.alt_name ?? obj.tags.local_name ?? obj.tags.ref ?? id,
             description: osm_type,
             osm_type: <"node" | "way" | "relation">osm_type,
             osm_id,
@@ -72,14 +75,15 @@ export default class OpenStreetMapIdSearch implements GeocodingProvider {
     }
 
     async search(query: string, options?: GeocodingOptions): Promise<GeocodeResult[]> {
-
         if (!isNaN(Number(query))) {
             const n = Number(query)
-            return Utils.NoNullInplace(await Promise.all([
-                this.getInfoAbout(`node/${n}`).catch(x => undefined),
-                this.getInfoAbout(`way/${n}`).catch(x => undefined),
-                this.getInfoAbout(`relation/${n}`).catch(() => undefined),
-            ]))
+            return Utils.NoNullInplace(
+                await Promise.all([
+                    this.getInfoAbout(`node/${n}`).catch((x) => undefined),
+                    this.getInfoAbout(`way/${n}`).catch((x) => undefined),
+                    this.getInfoAbout(`relation/${n}`).catch(() => undefined),
+                ])
+            )
         }
 
         const id = OpenStreetMapIdSearch.extractId(query)
@@ -92,5 +96,4 @@ export default class OpenStreetMapIdSearch implements GeocodingProvider {
     suggest?(query: string, options?: GeocodingOptions): Store<GeocodeResult[]> {
         return UIEventSource.FromPromise(this.search(query, options))
     }
-
 }

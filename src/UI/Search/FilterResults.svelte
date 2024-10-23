@@ -18,32 +18,40 @@
   let activeLayers = state.layerState.activeLayers
   let filterResults = state.searchState.filterSuggestions
 
-  let filtersMerged = filterResults.map(filters => FilterSearch.mergeSemiIdenticalLayers(filters, Locale.language.data), [Locale.language])
+  let filtersMerged = filterResults.map(
+    (filters) => FilterSearch.mergeSemiIdenticalLayers(filters, Locale.language.data),
+    [Locale.language]
+  )
 
-  let layerResults = state.searchState.layerSuggestions.map(layers => {
-    const nowActive = activeLayers.data.filter(al => al.layerDef.isNormal())
-    if (nowActive.length === 1) {
-      const shownInActiveFiltersView = nowActive[0]
-      layers = layers.filter(l => l.id !== shownInActiveFiltersView.layerDef.id)
-    }
-    return layers
-  }, [activeLayers])
+  let layerResults = state.searchState.layerSuggestions.map(
+    (layers) => {
+      const nowActive = activeLayers.data.filter((al) => al.layerDef.isNormal())
+      if (nowActive.length === 1) {
+        const shownInActiveFiltersView = nowActive[0]
+        layers = layers.filter((l) => l.id !== shownInActiveFiltersView.layerDef.id)
+      }
+      return layers
+    },
+    [activeLayers]
+  )
   let filterResultsClipped: Store<{
-    clipped: (FilterSearchResult[] | LayerConfig)[],
+    clipped: (FilterSearchResult[] | LayerConfig)[]
     rest?: (FilterSearchResult[] | LayerConfig)[]
-  }> = filtersMerged.mapD(filters => {
-    let layers = layerResults.data
-    const ls: (FilterSearchResult[] | LayerConfig)[] = [].concat(layers, filters)
-    if (ls.length <= 6) {
-      return { clipped: ls }
-    }
-    return { clipped: ls.slice(0, 4), rest: ls.slice(4) }
-  }, [layerResults, activeLayers, Locale.language])
+  }> = filtersMerged.mapD(
+    (filters) => {
+      let layers = layerResults.data
+      const ls: (FilterSearchResult[] | LayerConfig)[] = [].concat(layers, filters)
+      if (ls.length <= 6) {
+        return { clipped: ls }
+      }
+      return { clipped: ls.slice(0, 4), rest: ls.slice(4) }
+    },
+    [layerResults, activeLayers, Locale.language]
+  )
 </script>
 
 {#if $searchTerm.length > 0 && ($filterResults.length > 0 || $layerResults.length > 0)}
   <SidebarUnit>
-
     <h3>
       <Tr t={Translations.t.general.search.pickFilter} />
     </h3>
@@ -55,10 +63,13 @@
     </div>
     {#if $filtersMerged.length + $layerResults.length > $filterResultsClipped.clipped.length}
       <AccordionSingle noBorder>
-        <div class="flex justify-end text-sm subtle" slot="header">
-          <Tr t={Translations.t.general.search.nMoreFilters.Subs(
-          {n: $filtersMerged.length + $layerResults.length - $filterResultsClipped.clipped.length}
-          )}/>
+        <div class="subtle flex justify-end text-sm" slot="header">
+          <Tr
+            t={Translations.t.general.search.nMoreFilters.Subs({
+              n:
+                $filtersMerged.length + $layerResults.length - $filterResultsClipped.clipped.length,
+            })}
+          />
         </div>
         <div class="flex flex-wrap overflow-y-auto">
           {#each $filterResultsClipped.rest as filterResult (filterResult)}

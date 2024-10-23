@@ -15,7 +15,6 @@
   let postfix = ""
   if (args) {
     try {
-
       const data = JSON.stringify(args)
       if (data["prefix"]) {
         prefix = data["prefix"]
@@ -31,11 +30,15 @@
   const state = new OpeningHoursState(value, prefix, postfix)
   let expanded = new UIEventSource(false)
 </script>
+
 <Popup bodyPadding="p-0" shown={expanded}>
   <OHTable value={state.normalOhs} />
-    <button on:click={() => expanded.set(false)} class="absolute left-0 bottom-0 primary pointer-events-auto h-8 w-10 rounded-full">
-      <Check class="shrink-0 w-6 h-6 m-0 p-0" color="white"/>
-    </button>
+  <button
+    on:click={() => expanded.set(false)}
+    class="primary pointer-events-auto absolute left-0 bottom-0 h-8 w-10 rounded-full"
+  >
+    <Check class="m-0 h-6 w-6 shrink-0 p-0" color="white" />
+  </button>
 </Popup>
 <button on:click={() => expanded.set(true)}>Pick opening hours</button>
 <PublicHolidaySelector value={state.phSelectorValue} />

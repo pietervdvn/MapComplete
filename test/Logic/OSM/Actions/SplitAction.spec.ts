@@ -2715,7 +2715,7 @@ describe("SplitAction", () => {
             theme: "test",
         })
         const changeDescription = await splitter.CreateChangeDescriptions(
-          Changes.createTestObject()
+            Changes.createTestObject()
         )
 
         expect(changeDescription.length).toBe(2)
@@ -2748,9 +2748,7 @@ describe("SplitAction", () => {
         const splitAction = new SplitAction("way/941079939", [splitPointAroundP3], {
             theme: "test",
         })
-        const changes = await splitAction.Perform(
-            Changes.createTestObject()
-        )
+        const changes = await splitAction.Perform(Changes.createTestObject())
         console.log(changes)
         // 8715440368 is the expected point of the split
 
@@ -2788,9 +2786,7 @@ describe("SplitAction", () => {
             { theme: "test" },
             1
         )
-        const changes = await splitAction.Perform(
-           Changes.createTestObject()
-        )
+        const changes = await splitAction.Perform(Changes.createTestObject())
 
         // THe first change is the creation of the new node
         expect(changes[0].type).toEqual("node")

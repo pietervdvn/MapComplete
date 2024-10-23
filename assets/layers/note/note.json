@@ -389,7 +389,8 @@
             "ca": "Editat per última vega pel contribuïdor {search}",
             "cs": "Naposledy upravil přispěvatel {search}",
             "da": "Senest redigeret af bidragsyder {search}",
-            "fr": "Dernière modification par {search}"
+            "fr": "Dernière modification par {search}",
+            "hu": "Legutóbb {search} felhasználó szerkesztette"
           }
         }
       ]
@@ -406,7 +407,8 @@
           ],
           "question": {
             "en": "Not edited as last by {search}",
-            "de": "Nicht zuletzt bearbeitet von {search}"
+            "de": "Nicht zuletzt bearbeitet von {search}",
+            "hu": "Legutóbb nem {search} felhasználó szerkesztette"
           }
         }
       ]
@@ -470,7 +472,8 @@
           ],
           "question": {
             "en": "Last edited before {search}",
-            "de": "Zuletzt bearbeitet vor dem {search}"
+            "de": "Zuletzt bearbeitet vor dem {search}",
+            "hu": "Legutóbb {search} előtt szerkesztették"
           }
         }
       ]
@@ -488,7 +491,8 @@
           ],
           "question": {
             "en": "Last edited after {search}",
-            "de": "Zuletzt bearbeitet nach dem {search}"
+            "de": "Zuletzt bearbeitet nach dem {search}",
+            "hu": "Legutóbb {search} után szerkesztették"
           }
         }
       ]

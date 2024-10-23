@@ -23,7 +23,6 @@ export default class CoordinateSearch implements GeocodingProvider {
 
         /lon[:=]? *['"]?(-?[0-9]+\.[0-9]+)['"]?[ ,;&]+lat[:=]? *['"]?(-?[0-9]+\.[0-9]+)['"]?/,
         /lng[:=]? *['"]?(-?[0-9]+\.[0-9]+)['"]?[ ,;&]+lat[:=]? *['"]?(-?[0-9]+\.[0-9]+)['"]?/,
-
     ]
 
     /**
@@ -70,8 +69,9 @@ export default class CoordinateSearch implements GeocodingProvider {
      * results[0] // => {lat: 51.047977, lon: 3.51184, "display_name": "lon: 3.51184, lat: 51.047977",  "category": "coordinate","osm_id": "3.51184/51.047977", "source": "coordinate:latlon"}
      */
     private directSearch(query: string): GeocodeResult[] {
-        const matches = Utils.NoNull(CoordinateSearch.latLonRegexes.map(r => query.match(r)))
-            .map(m => CoordinateSearch.asResult(m[2], m[1], "latlon"))
+        const matches = Utils.NoNull(CoordinateSearch.latLonRegexes.map((r) => query.match(r))).map(
+            (m) => CoordinateSearch.asResult(m[2], m[1], "latlon")
+        )
 
         const matchesLonLat = Utils.NoNull(CoordinateSearch.lonLatRegexes.map(r => query.match(r)))
             .map(m => CoordinateSearch.asResult(m[1], m[2], "lonlat"))
@@ -90,7 +90,7 @@ export default class CoordinateSearch implements GeocodingProvider {
     }
 
     private static round6(n: number): string {
-        return "" + (Math.round(n * 1000000) / 1000000)
+        return "" + Math.round(n * 1000000) / 1000000
     }
 
     private static asResult(lonIn: string, latIn: string, source: string): GeocodeResult {
@@ -118,5 +118,4 @@ export default class CoordinateSearch implements GeocodingProvider {
     async search(query: string): Promise<GeocodeResult[]> {
         return this.directSearch(query)
     }
-
 }

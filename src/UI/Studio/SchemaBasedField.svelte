@@ -32,14 +32,14 @@
     return type.some((t) => mightBeBoolean(t))
   }
 
-  function mightBeTag(){
+  function mightBeTag() {
     const t = schema.type
-    if(!Array.isArray(t)){
+    if (!Array.isArray(t)) {
       return false
     }
-    const hasAnd = t.some(obj => obj["$ref"] === "#/definitions/{and:TagConfigJson[];}")
-    const hasOr = t.some(obj => obj["$ref"] === "#/definitions/{or:TagConfigJson[];}")
-    const hasString = t.some(obj => obj["type"] === "string")
+    const hasAnd = t.some((obj) => obj["$ref"] === "#/definitions/{and:TagConfigJson[];}")
+    const hasOr = t.some((obj) => obj["$ref"] === "#/definitions/{or:TagConfigJson[];}")
+    const hasString = t.some((obj) => obj["type"] === "string")
     return hasAnd && hasOr && hasString
   }
 

@@ -7075,6 +7075,13 @@
     },
     "usersettings": {
         "tagRenderings": {
+            "a11y-features": {
+                "mappings": {
+                    "0": {
+                        "then": "Activer les fonctions d'accessibilité lorsque les touches directionnelles sont utilisées pour naviguer sur la carte"
+                    }
+                }
+            },
             "all-questions-at-once": {
                 "mappings": {
                     "0": {
@@ -7130,6 +7137,13 @@
                     },
                     "1": {
                         "then": "Toujours garder le nord en haut"
+                    }
+                }
+            },
+            "scalebar": {
+                "mappings": {
+                    "1": {
+                        "then": "Masquer la barre d'échelle"
                     }
                 }
             },

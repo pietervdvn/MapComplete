@@ -823,7 +823,7 @@
           "then": {
             "en": "There is (probably) no incline here",
             "de": "Hier gibt es (wahrscheinlich) keine Steigung",
-            "nl": "De straat hier is (waarschijnlijk) zonder helling"
+            "nl": "De straat heeft hier (waarschijnlijk) geen helling"
           },
           "hideInAnswer": true
         },

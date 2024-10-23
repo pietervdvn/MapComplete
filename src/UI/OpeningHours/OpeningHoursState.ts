@@ -14,7 +14,7 @@ export default class OpeningHoursState {
     constructor(
         value: UIEventSource<string> = new UIEventSource<string>(""),
         prefix = "",
-        postfix = "",
+        postfix = ""
     ) {
         let valueWithoutPrefix = value
         if (prefix !== "" && postfix !== "") {
@@ -44,7 +44,7 @@ export default class OpeningHoursState {
                     }
 
                     return prefix + noPrefix + postfix
-                },
+                }
             )
         }
 
@@ -80,7 +80,6 @@ export default class OpeningHoursState {
         }
         this.phSelectorValue = new UIEventSource<string>(ph ?? "")
 
-
         // Note: MUST be bound AFTER the leftover rules!
         this.normalOhs = valueWithoutPrefix.sync(
             (str) => {
@@ -111,7 +110,7 @@ export default class OpeningHoursState {
                     return oldString // We pass a reference to the old string to stabilize the EventSource
                 }
                 return str
-            },
+            }
         )
         /*
                 const leftoverWarning = new VariableUiElement(
@@ -127,8 +126,5 @@ export default class OpeningHoursState {
                         ])
                     })
                 )*/
-
-
     }
-
 }

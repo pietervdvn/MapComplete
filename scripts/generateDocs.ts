@@ -458,9 +458,7 @@ export class GenerateDocs extends Script {
     private generateForTheme(theme: ThemeConfig): void {
         const allLayers = AllSharedLayers.getSharedLayersConfigs()
         const layersToShow = theme.layers.filter(
-            (l) =>
-                l.id !== "favourite" &&
-                Constants.added_by_default.indexOf(<any>l.id) < 0
+            (l) => l.id !== "favourite" && Constants.added_by_default.indexOf(<any>l.id) < 0
         )
         const layersToInline = layersToShow.filter((l) => !allLayers.has(l.id))
         const el = [

@@ -331,7 +331,7 @@ class GenerateLayouts extends Script {
             "https://api.openstreetmap.org",
             "https://pietervdvn.goatcounter.com",
             "https://api.panoramax.xyz",
-            "https://panoramax.mapcomplete.org"
+            "https://panoramax.mapcomplete.org",
         ].concat(...(await this.eliUrls()))
 
         SpecialVisualizations.specialVisualizations.forEach((sv) => {

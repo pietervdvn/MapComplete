@@ -8,11 +8,11 @@
   let transitionParams = {
     x: 640,
     duration: 200,
-    easing: sineIn
+    easing: sineIn,
   }
   let hidden = !shown.data
 
-  shown.addCallback(sh => {
+  shown.addCallback((sh) => {
     hidden = !sh
   })
 
@@ -23,19 +23,21 @@
   })
 </script>
 
-<Drawer placement="right"
-        transitionType="fly" {transitionParams}
-        activateClickOutside={false}
-        divClass="overflow-y-auto z-3"
-        backdrop={false}
-        id="drawer-right"
-        width="w-full sm:w-80 md:w-96"
-        rightOffset="inset-y-0 right-0"
-        bind:hidden={hidden}>
-
+<Drawer
+  placement="right"
+  transitionType="fly"
+  {transitionParams}
+  activateClickOutside={false}
+  divClass="overflow-y-auto z-3"
+  backdrop={false}
+  id="drawer-right"
+  width="w-full sm:w-80 md:w-96"
+  rightOffset="inset-y-0 right-0"
+  bind:hidden
+>
   <div class="low-interaction h-screen">
     <div class="h-full" style={`padding-top: ${height}px`}>
-      <div class="flex flex-col h-full overflow-y-auto">
+      <div class="flex h-full flex-col overflow-y-auto">
         <slot />
       </div>
     </div>

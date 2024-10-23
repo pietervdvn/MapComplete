@@ -7,8 +7,8 @@ export default class GeocodingFeatureSource implements FeatureSource {
     public features: Store<Feature<Geometry, Record<string, string>>[]>
 
     constructor(provider: Store<SearchResult[]>) {
-        this.features = provider.map(geocoded => {
-            if(geocoded === undefined){
+        this.features = provider.map((geocoded) => {
+            if (geocoded === undefined) {
                 return []
             }
             const features: Feature[] = []
@@ -28,18 +28,16 @@ export default class GeocodingFeatureSource implements FeatureSource {
                         osm_id: gc.osm_type + "/" + gc.osm_id,
                         osm_key: gc.feature?.properties?.osm_key,
                         osm_value: gc.feature?.properties?.osm_value,
-                        source: gc.source
+                        source: gc.source,
                     },
                     geometry: {
                         type: "Point",
-                        coordinates: [gc.lon, gc.lat]
-                    }
+                        coordinates: [gc.lon, gc.lat],
+                    },
                 })
-
             }
 
             return features
         })
     }
-
 }

@@ -8,57 +8,59 @@ import LayerSearch from "./LayerSearch"
 import SearchUtils from "./SearchUtils"
 import { OsmConnection } from "../Osm/OsmConnection"
 
-
 type ThemeSearchScore = {
-    theme: MinimalThemeInformation,
-    lowest: number,
-    perLayer?: Record<string, number>,
-    other: number,
+    theme: MinimalThemeInformation
+    lowest: number
+    perLayer?: Record<string, number>
+    other: number
 }
 
-
 export default class ThemeSearch {
-
     public static readonly officialThemes: {
-        themes: MinimalThemeInformation[],
+        themes: MinimalThemeInformation[]
         layers: Record<string, Record<string, string[]>>
-    } = <any> themeOverview
-    public static readonly officialThemesById: Map<string, MinimalThemeInformation> = new Map<string, MinimalThemeInformation>()
+    } = <any>themeOverview
+    public static readonly officialThemesById: Map<string, MinimalThemeInformation> = new Map<
+        string,
+        MinimalThemeInformation
+    >()
     static {
         for (const th of ThemeSearch.officialThemes.themes ?? []) {
             ThemeSearch.officialThemesById.set(th.id, th)
         }
     }
 
-
     private readonly _knownHiddenThemes: Store<Set<string>>
     private readonly _layersToIgnore: string[]
     private readonly _otherThemes: MinimalThemeInformation[]
 
-    constructor(state: {osmConnection: OsmConnection, theme: ThemeConfig}) {
-        this._layersToIgnore = state.theme.layers.filter(l => l.isNormal()).map(l => l.id)
-        this._knownHiddenThemes = UserRelatedState.initDiscoveredHiddenThemes(state.osmConnection).map(list => new Set(list))
-        this._otherThemes = ThemeSearch.officialThemes.themes
-            .filter(th => th.id !== state.theme.id)
+    constructor(state: { osmConnection: OsmConnection; theme: ThemeConfig }) {
+        this._layersToIgnore = state.theme.layers.filter((l) => l.isNormal()).map((l) => l.id)
+        this._knownHiddenThemes = UserRelatedState.initDiscoveredHiddenThemes(
+            state.osmConnection
+        ).map((list) => new Set(list))
+        this._otherThemes = ThemeSearch.officialThemes.themes.filter(
+            (th) => th.id !== state.theme.id
+        )
     }
-
 
     public search(query: string, limit: number, threshold: number = 3): MinimalThemeInformation[] {
         if (query.length < 1) {
             return []
         }
-        const sorted = ThemeSearch.sortedByLowestScores(query, this._otherThemes, this._layersToIgnore)
+        const sorted = ThemeSearch.sortedByLowestScores(
+            query,
+            this._otherThemes,
+            this._layersToIgnore
+        )
         return sorted
-            .filter(sorted => sorted.lowest < threshold)
-            .map(th => th.theme)
-            .filter(th => !th.hideFromOverview || this._knownHiddenThemes.data.has(th.id))
+            .filter((sorted) => sorted.lowest < threshold)
+            .map((th) => th.theme)
+            .filter((th) => !th.hideFromOverview || this._knownHiddenThemes.data.has(th.id))
             .slice(0, limit)
     }
 
-    public static createUrlFor(
-        layout: { id: string },
-        state?: { layoutToUse?: { id } },
-    ): string {
+    public static createUrlFor(layout: { id: string }, state?: { layoutToUse?: { id } }): string {
         if (layout === undefined) {
             return undefined
         }
@@ -88,7 +90,6 @@ export default class ThemeSearch {
             linkPrefix = `${path}/theme.html?userlayout=${layout.id}&`
         }
 
-
         return `${linkPrefix}`
     }
 
@@ -101,17 +102,21 @@ export default class ThemeSearch {
      * @param ignoreLayers
      * @private
      */
-    private static scoreThemes(query: string, themes: MinimalThemeInformation[], ignoreLayers: string[] = undefined): Record<string, ThemeSearchScore> {
+    private static scoreThemes(
+        query: string,
+        themes: MinimalThemeInformation[],
+        ignoreLayers: string[] = undefined
+    ): Record<string, ThemeSearchScore> {
         if (query?.length < 1) {
             return undefined
         }
         themes = Utils.NoNullInplace(themes)
 
-        let options : {blacklist: Set<string>} = undefined
-        if(ignoreLayers?.length > 0){
+        let options: { blacklist: Set<string> } = undefined
+        if (ignoreLayers?.length > 0) {
             options = { blacklist: new Set(ignoreLayers) }
         }
-        const layerScores = query.length < 3 ? {} :  LayerSearch.scoreLayers(query, options)
+        const layerScores = query.length < 3 ? {} : LayerSearch.scoreLayers(query, options)
         const results: Record<string, ThemeSearchScore> = {}
         for (const layoutInfo of themes) {
             const theme = layoutInfo.id
@@ -122,20 +127,22 @@ export default class ThemeSearch {
                 results[theme] = {
                     theme: layoutInfo,
                     lowest: -1,
-                    other: 0
+                    other: 0,
                 }
                 continue
             }
-            const perLayer = Utils.asRecord(
-                layoutInfo.layers ?? [], layer => layerScores[layer],
-            )
+            const perLayer = Utils.asRecord(layoutInfo.layers ?? [], (layer) => layerScores[layer])
             const language = Locale.language.data
 
-            const keywords = Utils.NoNullInplace([layoutInfo.shortDescription, layoutInfo.title])
-                .map(item => typeof item === "string" ? item : (item[language] ?? item["*"]))
+            const keywords = Utils.NoNullInplace([
+                layoutInfo.shortDescription,
+                layoutInfo.title,
+            ]).map((item) => (typeof item === "string" ? item : item[language] ?? item["*"]))
 
-
-            const other = Math.min(SearchUtils.scoreKeywords(query, keywords), SearchUtils.scoreKeywords(query, layoutInfo.keywords))
+            const other = Math.min(
+                SearchUtils.scoreKeywords(query, keywords),
+                SearchUtils.scoreKeywords(query, layoutInfo.keywords)
+            )
             const lowest = Math.min(other, ...Object.values(perLayer))
             results[theme] = {
                 theme: layoutInfo,
@@ -147,15 +154,21 @@ export default class ThemeSearch {
         return results
     }
 
-    public static sortedByLowestScores(search: string, themes: MinimalThemeInformation[], ignoreLayers: string[] = []): ThemeSearchScore[] {
+    public static sortedByLowestScores(
+        search: string,
+        themes: MinimalThemeInformation[],
+        ignoreLayers: string[] = []
+    ): ThemeSearchScore[] {
         const scored = Object.values(this.scoreThemes(search, themes, ignoreLayers))
         scored.sort((a, b) => a.lowest - b.lowest)
         return scored
     }
 
-    public static sortedByLowest(search: string, themes: MinimalThemeInformation[], ignoreLayers: string[] = []): MinimalThemeInformation[] {
-        return this.sortedByLowestScores(search, themes, ignoreLayers)
-            .map(th => th.theme)
+    public static sortedByLowest(
+        search: string,
+        themes: MinimalThemeInformation[],
+        ignoreLayers: string[] = []
+    ): MinimalThemeInformation[] {
+        return this.sortedByLowestScores(search, themes, ignoreLayers).map((th) => th.theme)
     }
-
 }

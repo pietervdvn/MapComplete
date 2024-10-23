@@ -91,7 +91,8 @@
         "de": "Wie lautet der Text auf dieser Geschwindigkeitsanzeige?",
         "ca": "Quin text es mostra al radar pedagògic?",
         "nl": "Wat is de tekst op dit snelheidsdisplay?",
-        "cs": "Jaký je text na tomto ukazateli rychlosti?"
+        "cs": "Jaký je text na tomto ukazateli rychlosti?",
+        "uk": "Який текст відображається на цьому дисплеї швидкості?"
       },
       "freeform": {
         "key": "inscription",
@@ -101,7 +102,8 @@
           "de": "Text auf der Geschwindigkeitsanzeige (z. B. \"Ihre Geschwindigkeit\")",
           "nl": "Tekst op snelheidsdisplay (b.v. 'Uw snelheid')",
           "ca": "Text al radar pedagògic (p. e. 'La seva velocitat')",
-          "cs": "Text na displeji rychlosti (např. \"Vaše rychlost\")"
+          "cs": "Text na displeji rychlosti (např. \"Vaše rychlost\")",
+          "uk": "Текст на дисплеї швидкості (наприклад, \"Ваша швидкість\")"
         }
       },
       "render": {
@@ -109,7 +111,8 @@
         "de": "Der Text auf dieser Geschwindigkeitsanzeige ist {inscription}",
         "nl": "De tekst op dit snelheidsdisplay is {inscription}",
         "ca": "El text a aquest radar pedagogic és {inscription}",
-        "cs": "Text na tomto ukazateli rychlosti je {inscription}"
+        "cs": "Text na tomto ukazateli rychlosti je {inscription}",
+        "uk": "Текст на цьому дисплеї швидкості має вигляд {inscription}"
       }
     }
   ],

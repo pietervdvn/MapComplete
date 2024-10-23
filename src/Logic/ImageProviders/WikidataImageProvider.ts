@@ -11,8 +11,10 @@ export class WikidataImageProvider extends ImageProvider {
     public static readonly singleton = new WikidataImageProvider()
     public readonly defaultKeyPrefixes = ["wikidata"]
     public readonly name = "Wikidata"
-    private static readonly keyBlacklist: ReadonlySet<string> = new Set(
-        ["mapillary", ...Utils.Times(i => "mapillary:" + i, 10)])
+    private static readonly keyBlacklist: ReadonlySet<string> = new Set([
+        "mapillary",
+        ...Utils.Times((i) => "mapillary:" + i, 10),
+    ])
 
     private constructor() {
         super()
@@ -26,7 +28,7 @@ export class WikidataImageProvider extends ImageProvider {
         return new SvelteUIElement(Wikidata_icon)
     }
 
-    public async ExtractUrls(key: string, value: string):  Promise<ProvidedImage[]> {
+    public async ExtractUrls(key: string, value: string): Promise<ProvidedImage[]> {
         if (WikidataImageProvider.keyBlacklist.has(key)) {
             return undefined
         }

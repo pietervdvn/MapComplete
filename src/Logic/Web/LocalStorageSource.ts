@@ -5,7 +5,6 @@ import { Utils } from "../../Utils"
  * UIEventsource-wrapper around localStorage
  */
 export class LocalStorageSource {
-
     private static readonly _cache: Record<string, UIEventSource<string>> = {}
 
     static getParsed<T>(key: string, defaultValue: T): UIEventSource<T> {
@@ -21,7 +20,7 @@ export class LocalStorageSource {
                 }
             },
             [],
-            (value) => JSON.stringify(value),
+            (value) => JSON.stringify(value)
         )
     }
 
@@ -32,7 +31,6 @@ export class LocalStorageSource {
         }
         let saved = defaultValue
         if (!Utils.runningFromConsole) {
-
             try {
                 saved = localStorage.getItem(key)
                 if (saved === "undefined") {

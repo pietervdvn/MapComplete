@@ -527,7 +527,8 @@
           "de": "Dies ist ein Zierbrunnen, dessen Wasser für den Menschen nicht trinkbar ist",
           "es": "Esta es una fuente decorativa con agua no potable",
           "ca": "Es tracta d'una font decorativa amb aigua no potable",
-          "cs": "Jedná se o dekorativní fontánu, jejíž voda není pro lidi pitná"
+          "cs": "Jedná se o dekorativní fontánu, jejíž voda není pro lidi pitná",
+          "uk": "Це декоративний фонтан, вода з якого не придатна для пиття"
         }
       },
       {
@@ -544,7 +545,8 @@
           "de": "Dies ist ein Wasserhahn oder eine Wasserpumpe mit nicht trinkbarem Wasser.<div class='subtle'>Beispiele sind Wasserhähne mit Regenwasser zum Zapfen von Wasser für nahe gelegene Pflanzen</div>",
           "es": "Este es un grifo de agua o una bomba de agua con agua no potable.<div class='subtle'>Ejemplos son grifos con agua de lluvia o agua del grifo para plantas cercanas</div>",
           "ca": "Es tracta d'una aixeta d'aigua o bomba d'aigua amb aigua no potable. <div class='subtle'> Per exemple les aixetes d'aigua amb aigua de pluja per aprofitar i regar les plantes properes</div>",
-          "cs": "Jedná se o vodovodní kohoutek nebo vodní čerpadlo s nepitnou vodou.<div class='subtle'>Příkladem jsou vodovodní kohoutky s dešťovou vodou pro zalévání rostlin v okolí</div>"
+          "cs": "Jedná se o vodovodní kohoutek nebo vodní čerpadlo s nepitnou vodou.<div class='subtle'>Příkladem jsou vodovodní kohoutky s dešťovou vodou pro zalévání rostlin v okolí</div>",
+          "uk": "Це водопровідний кран або водяний насос з непитною водою.<div class='subtle'>Прикладами є водопровідні крани з дощовою водою для поливу прилеглих рослин</div>"
         }
       },
       {

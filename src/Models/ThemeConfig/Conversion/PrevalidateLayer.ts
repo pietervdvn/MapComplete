@@ -88,7 +88,7 @@ export class PrevalidateLayer extends DesugaringStep<LayerConfigJson> {
             }
         }
 
-        if(json["doCount"] !== undefined){
+        if (json["doCount"] !== undefined) {
             context.err("Detected 'doCount'. did you mean: isCounted ?")
         }
 
@@ -145,7 +145,11 @@ export class PrevalidateLayer extends DesugaringStep<LayerConfigJson> {
             }
         }
 
-        if(this._isBuiltin && json.allowMove === undefined && json.source["geoJson"] === undefined) {
+        if (
+            this._isBuiltin &&
+            json.allowMove === undefined &&
+            json.source["geoJson"] === undefined
+        ) {
             if (!Constants.priviliged_layers.find((x) => x == json.id)) {
                 context.err("Layer " + json.id + " does not have an explicit 'allowMove'")
             }

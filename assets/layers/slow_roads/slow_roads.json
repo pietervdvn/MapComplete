@@ -4,7 +4,8 @@
     "en": "Paths, carfree and slow roads",
     "nl": "Paadjes, trage wegen en autoluwe straten",
     "de": "Pfade, autofreie und geschwindigkeitsreduzierte Straßen",
-    "fr": "Chemins, routes non carrossables et routes à vitesse réduite"
+    "fr": "Chemins, routes non carrossables et routes à vitesse réduite",
+    "es": "Caminos, carreteras sin tráfico y lentas"
   },
   "description": {
     "en": "All carfree roads",

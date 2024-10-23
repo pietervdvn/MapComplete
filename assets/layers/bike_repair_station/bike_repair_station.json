@@ -382,7 +382,7 @@
         "nl": "Een fietspomp en gereedschap om je fiets te herstellen in de publieke ruimte. Deze zijn op een vastgemaakt, bijvoorbeeld aan een paal.",
         "fr": "Un dispositif avec des outils pour réparer votre vélo combiné à une pompe a un emplacement fixe. Les outils sont souvent attachés par une chaîne pour empêcher le vol.",
         "it": "Un dispositivo con attrezzi per riparare la tua bici e una pompa in un luogo fisso. Gli attrezzi sono spesso attaccati ad una catena per prevenire il furto.",
-        "de": "Ein Gerät mit Werkzeugen zur Reparatur von Fahrrädern kombiniert mit einer Pumpe an einem festen Standort. Die Werkzeuge sind oft mit Ketten gegen Diebstahl gesichert.",
+        "de": "Ein Gerät mit Werkzeug zur Reparatur von Fahrrädern kombiniert mit einer Pumpe an einem festen Standort. Das Werkzeug ist oft mit Ketten gegen Diebstahl gesichert.",
         "es": "Una bomba de bicicletas y herramientas para reparar tu bicicleta en el espacio público. Las herramientas habitualmente están aseguradas con cadenas contra el robo.",
         "da": "En cykelpumpe og værktøj til at reparere din cykel i det offentlige rum. Værktøjet er ofte sikret med kæder mod tyveri.",
         "cs": "Vzduchový kompresor na kolo a nářadí na opravu kola na veřejném místě. Nářadí je často zajištěno řetězy proti krádeži.",
@@ -417,7 +417,7 @@
       "description": {
         "en": "Tools to repair your bike in the public space (without pump). The tools are secured against theft.",
         "nl": "Gereedschap om je fiets te herstellen in de publieke ruimte (zonder pomp). Deze zijn op een vastgemaakt, bijvoorbeeld aan een paal.",
-        "de": "Werkzeug, um Ihr Fahrrad im öffentlichen Raum zu reparieren (ohne Pumpe). Die Werkzeuge sind gegen Diebstahl gesichert.",
+        "de": "Werkzeug, um Ihr Fahrrad im öffentlichen Raum zu reparieren (ohne Pumpe). Das Werkzeug ist gegen Diebstahl gesichert.",
         "es": "Herramientas para reparar tu bici en el espacio público (sin bomba).Las herramientas están aseguradas contra el robo.",
         "da": "Værktøj til at reparere din cykel i det offentlige rum (uden pumpe). Værktøjet er sikret mod tyveri.",
         "fr": "Des outils pour réparer les vélos dans l’espace public (sans pompe). Les outils sont sécurisés contre le vol.",
@@ -881,7 +881,8 @@
             "es": "Hola,\n\nCon este correo, me gustaría informar de que esta bomba para bicicletas situada en https://mapcomplete.org/cyclofix?lat={_lat}&lon={_lon}&z=18#{id} está rota.\n\nUn saludo",
             "fr": "Bonjour,\n\nCe mail pour vous informer que la pompe à vélo située à https://mapcomplete.org/cyclofix?lat={_lat}&lon={_lon}&z=18#{id} est cassée.\n\nBien à vous.",
             "cs": "Dobrý den,\n\ntímto e-mailem bych Vás chtěl informovat, že vzduchový kompresor na kolo umístěný na adrese https://mapcomplete.org/cyclofix?lat={_lat}&lon={_lon}&z=18#{id} je rozbitý.\n\n S pozdravem",
-            "ca": "Hola,\n\nAmb aquest correu electrònic, m'agradaria informar-vos que la bomba de bicicleta situada a https://mapcomplete.org/cyclofix?lat={_lat}&lon={_lon}&z=18#{id} està trencada.\n\nSalutacions cordials"
+            "ca": "Hola,\n\nAmb aquest correu electrònic, m'agradaria informar-vos que la bomba de bicicleta situada a https://mapcomplete.org/cyclofix?lat={_lat}&lon={_lon}&z=18#{id} està trencada.\n\nSalutacions cordials",
+            "uk": "Доброго дня,\n\nЦим листом хочу повідомити, що велосипедний насос, розташований за адресою https://mapcomplete.org/cyclofix?lat={_lat}&lon={_lon}&z=18#{id}, вийшов з ладу.\n\n З повагою"
           },
           "button_text": {
             "en": "Report this bicycle pump as broken",

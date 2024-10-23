@@ -44,8 +44,8 @@
 
     let indexInToAdd = 0
     for (let i = 0; i < newPath.length; i++) {
-      if(newPath[i] === toAdd[indexInToAdd]){
-        indexInToAdd ++
+      if (newPath[i] === toAdd[indexInToAdd]) {
+        indexInToAdd++
       }
     }
 

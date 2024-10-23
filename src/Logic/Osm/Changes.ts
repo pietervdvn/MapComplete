@@ -49,11 +49,11 @@ export class Changes {
             featureSwitches: {
                 featureSwitchMorePrivacy?: Store<boolean>
                 featureSwitchIsTesting?: Store<boolean>
-            },
-            osmConnection: OsmConnection,
-            reportError?: (error: string) => void,
-            featureProperties?: FeaturePropertiesStore,
-            historicalUserLocations?: FeatureSource,
+            }
+            osmConnection: OsmConnection
+            reportError?: (error: string) => void
+            featureProperties?: FeaturePropertiesStore
+            historicalUserLocations?: FeatureSource
             allElements?: IndexedFeatureSource
         },
         leftRightSensitive: boolean = false,
@@ -64,8 +64,11 @@ export class Changes {
         this.allChanges.setData([...this.pendingChanges.data])
         // If a pending change contains a negative ID, we save that
         this._nextId = Math.min(-1, ...(this.pendingChanges.data?.map((pch) => pch.id ?? 0) ?? []))
-        if(isNaN(this._nextId) && state.reportError !== undefined){
-            state.reportError("Got a NaN as nextID. Pending changes IDs are:" +this.pendingChanges.data?.map(pch => pch?.id).join("."))
+        if (isNaN(this._nextId) && state.reportError !== undefined) {
+            state.reportError(
+                "Got a NaN as nextID. Pending changes IDs are:" +
+                    this.pendingChanges.data?.map((pch) => pch?.id).join(".")
+            )
             this._nextId = -100
         }
         this.state = state
@@ -84,12 +87,12 @@ export class Changes {
         // This doesn't matter however, as the '-1' is per piecewise upload, not global per changeset
     }
 
-    public static createTestObject(): Changes{
+    public static createTestObject(): Changes {
         return new Changes({
             osmConnection: new OsmConnection(),
-            featureSwitches:{
-                featureSwitchIsTesting: new ImmutableStore(true)
-            }
+            featureSwitches: {
+                featureSwitchIsTesting: new ImmutableStore(true),
+            },
         })
     }
 
@@ -849,12 +852,16 @@ export class Changes {
             )
 
             // We keep all the refused changes to try them again
-            this.pendingChanges.setData(refusedChanges.flatMap((c) => c).filter(c => {
-                if(c.id === null || c.id === undefined){
-                    return false
-                }
-                return true
-            }))
+            this.pendingChanges.setData(
+                refusedChanges
+                    .flatMap((c) => c)
+                    .filter((c) => {
+                        if (c.id === null || c.id === undefined) {
+                            return false
+                        }
+                        return true
+                    })
+            )
         } catch (e) {
             console.error(
                 "Could not handle changes - probably an old, pending changeset in localstorage with an invalid format; erasing those",

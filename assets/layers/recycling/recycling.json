@@ -595,7 +595,8 @@
         "it": "Che tipo di raccolta è questo?",
         "ca": "Quin tipus de reciclatge és aquest?",
         "fr": "De quel type d’installation de recyclage s’agit-il ?",
-        "cs": "O jaký typ recyklace se jedná?"
+        "cs": "O jaký typ recyklace se jedná?",
+        "uk": "Що це за тип переробки?"
       },
       "mappings": [
         {
@@ -611,7 +612,8 @@
             "it": "Questo è un contenitore per il riciclo di rifiuti",
             "ca": "Açò és un contenidor de reciclatge",
             "fr": "C'est un conteneur de recyclage",
-            "cs": "Jedná se o recyklační kontejner"
+            "cs": "Jedná se o recyklační kontejner",
+            "uk": "Це контейнер для вторинної переробки"
           }
         },
         {
@@ -627,7 +629,8 @@
             "it": "Questo è un centro per la raccola e riciclo di rifiuti",
             "ca": "Açò és un centre de reciclatge",
             "fr": "C'est une déchèterie",
-            "cs": "Jedná se o recyklační centrum"
+            "cs": "Jedná se o recyklační centrum",
+            "uk": "Це центр переробки сміття"
           }
         },
         {
@@ -639,7 +642,8 @@
             "it": "Contenitore per lo smaltimento del secco",
             "ca": "Contenidor per a residus no reciclables (fracció resta)",
             "fr": "Conteneur à déchets pour déchets résiduels",
-            "cs": "Kontejner na zbytkový odpad"
+            "cs": "Kontejner na zbytkový odpad",
+            "uk": "Контейнер для утилізації залишкових відходів"
           },
           "addExtraTags": [
             "recycling:batteries=",
@@ -679,7 +683,8 @@
             "ca": "Aquest és un punt de recollida. El rebuig es col·loca aquí sense col·locar-lo en un contenidor dedicat.",
             "de": "Dies ist ein Abholpunkt. Abfälle werden hier abgelegt, ohne sie in einen speziellen Behälter zu geben.",
             "fr": "C'est un point de ramassage. Les déchets y sont déposés sans être placés dans un conteneur spécifique.",
-            "cs": "Jedná se o místo vyzvednutí. Odpadní materiál se zde ukládá bez umístění do vyhrazeného kontejneru."
+            "cs": "Jedná se o místo vyzvednutí. Odpadní materiál se zde ukládá bez umístění do vyhrazeného kontejneru.",
+            "uk": "Це пункт прийому відходів. Відходи розміщують тут, не поміщаючи їх у спеціальний контейнер."
           }
         },
         {
@@ -693,7 +698,8 @@
             "ca": "Es tracta d’un abocador on s’apilen els residus.",
             "de": "Dies ist eine Deponie, auf der die Abfälle gelagert werden.",
             "fr": "C'est une décharge où les déchets sont empilés.",
-            "cs": "Jedná se o skládku, kde se ukládá odpadní materiál."
+            "cs": "Jedná se o skládku, kde se ukládá odpadní materiál.",
+            "uk": "Це звалище, куди складають відходи."
           }
         }
       ]
@@ -708,7 +714,8 @@
         "it": "Come si chiama questo centro raccolta e riciclo rifiuti?",
         "ca": "Quin és el nom d’aquest centre de reciclatge?",
         "fr": "Quel est le nom de cette déchèterie ?",
-        "cs": "Jak se toto recyklační centrum jmenuje?"
+        "cs": "Jak se toto recyklační centrum jmenuje?",
+        "uk": "Як називається цей центр переробки?"
       },
       "render": {
         "en": "This recycling centre is named <b>{name}</b>",
@@ -718,7 +725,8 @@
         "it": "Questo centro raccolta e riciclo rifiuti si chiama <b>{name}</b>",
         "ca": "Aquest centre de reciclatge s'anomena <b>{name}</b>",
         "fr": "Le nom de cette déchèterie est <b>{name}</b>",
-        "cs": "Toto recyklační středisko se jmenuje <b>{name}</b>"
+        "cs": "Toto recyklační středisko se jmenuje <b>{name}</b>",
+        "uk": "Цей центр переробки має назву <b>{name}</b>"
       },
       "freeform": {
         "key": "name"
@@ -734,7 +742,8 @@
             "it": "Questo centro raccolta e riciclo rifiuti non ha un nome specifico",
             "ca": "Aquest centre de reciclatge no té un nom específic",
             "fr": "Cette déchèterie n'a pas de nom spécifique",
-            "cs": "Toto recyklační centrum nemá konkrétní název"
+            "cs": "Toto recyklační centrum nemá konkrétní název",
+            "uk": "Цей центр переробки не має конкретної назви"
           }
         }
       ],
@@ -777,7 +786,8 @@
             "it": "Questo contenitore è al chiuso",
             "ca": "Aquest contenidor està situat a l'interior",
             "fr": "Ce conteneur est situé en intérieur",
-            "cs": "Tento kontejner je umístěn uvnitř"
+            "cs": "Tento kontejner je umístěn uvnitř",
+            "uk": "Цей контейнер знаходиться в приміщенні"
           }
         },
         {
@@ -790,7 +800,8 @@
             "it": "Questo contenitore è all'aperto",
             "ca": "Aquest contenidor està situat a l'aire lliure",
             "fr": "Ce conteneur est situé à l'extérieur",
-            "cs": "Tento kontejner je umístěn venku"
+            "cs": "Tento kontejner je umístěn venku",
+            "uk": "Цей контейнер розташований на відкритому повітрі"
           }
         }
       ]
@@ -805,7 +816,8 @@
         "it": "Cosa si può riciclare qui?",
         "ca": "Què es pot reciclar aquí?",
         "fr": "Que peut-on recycler ici ?",
-        "cs": "Co se zde dá recyklovat?"
+        "cs": "Co se zde dá recyklovat?",
+        "uk": "Що тут можна переробити?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -820,7 +832,8 @@
             "it": "Batterie",
             "ca": "Aquí es poden reciclar piles",
             "fr": "Les piles et batteries domestiques peuvent être recyclées ici",
-            "cs": "Baterie se zde dají recyklovat"
+            "cs": "Baterie se zde dají recyklovat",
+            "uk": "Батарейки"
           },
           "icon": {
             "path": "./assets/layers/recycling/batteries.svg",
@@ -837,7 +850,8 @@
             "it": "Cartoni per bevande",
             "ca": "Aquí es poden reciclar els cartons de begudes",
             "fr": "Les briques alimentaires en carton peuvent être recyclées ici",
-            "cs": "Nápojové kartony se zde dají recyklovat"
+            "cs": "Nápojové kartony se zde dají recyklovat",
+            "uk": "Коробки з-під напоїв"
           },
           "icon": {
             "path": "./assets/layers/recycling/beverage_cartons.svg",
@@ -855,7 +869,8 @@
             "it": "Lattine",
             "ca": "Aquí es poden reciclar llaunes",
             "fr": "Les boites de conserve et canettes peuvent être recyclées ici",
-            "cs": "Plechovky se zde dají recyklovat"
+            "cs": "Plechovky se zde dají recyklovat",
+            "uk": "Бляшанки"
           },
           "icon": {
             "path": "./assets/layers/recycling/cans.svg",
@@ -873,7 +888,8 @@
             "it": "Abiti",
             "ca": "Aquí es pot reciclar roba",
             "fr": "Les vêtements peuvent être recyclés ici",
-            "cs": "Oblečení se zde dá recyklovat"
+            "cs": "Oblečení se zde dá recyklovat",
+            "uk": "Одяг"
           },
           "icon": {
             "path": "./assets/layers/recycling/clothes.svg",
@@ -891,7 +907,8 @@
             "it": "Olio da cucina",
             "ca": "Aquí es pot reciclar oli de cuina",
             "fr": "Les huiles de friture peuvent être recyclées ici",
-            "cs": "Olej na vaření zde lze recyklovat"
+            "cs": "Olej na vaření zde lze recyklovat",
+            "uk": "Олія для приготування їжі"
           },
           "icon": {
             "path": "./assets/layers/recycling/cooking_oil.svg",
@@ -909,7 +926,8 @@
             "it": "Olio di motore",
             "ca": "Aquí es pot reciclar oli de motor",
             "fr": "Les huiles de moteur peuvent être recyclées ici",
-            "cs": "Motorový olej zde lze recyklovat"
+            "cs": "Motorový olej zde lze recyklovat",
+            "uk": "Моторна олива"
           },
           "icon": {
             "path": "./assets/layers/recycling/engine_oil.svg",
@@ -925,7 +943,8 @@
             "de": "Hier können Leuchtstoffröhren recycelt werden",
             "ca": "Aquí es poden reciclar tub fluroescents",
             "fr": "Les lampes fluorescentes peuvent être recyclées ici",
-            "cs": "Zářivky se zde dají recyklovat"
+            "cs": "Zářivky se zde dají recyklovat",
+            "uk": "Флуоресцентні лампи"
           },
           "icon": {
             "path": "./assets/layers/recycling/fluorescent_tubes.svg",
@@ -943,7 +962,8 @@
             "ca": "Aquí es poden reciclar residus verds",
             "fr": "Les déchets verts peuvent être recyclés ici",
             "cs": "Zelený odpad se zde dá recyklovat",
-            "es": "Los residuos orgánicos pueden reciclarse aquí"
+            "es": "Los residuos orgánicos pueden reciclarse aquí",
+            "uk": "Зелені відходи"
           },
           "icon": {
             "path": "./assets/layers/recycling/garden_waste.svg",
@@ -980,7 +1000,8 @@
             "it": "Bottiglie di vetro",
             "ca": "Aquí es poden reciclar ampolles de vidre",
             "fr": "Les bouteilles en verre et bocaux peuvent être recyclés ici",
-            "cs": "Skleněné lahve se zde dají recyklovat"
+            "cs": "Skleněné lahve se zde dají recyklovat",
+            "uk": "Скляні пляшки"
           },
           "icon": {
             "path": "./assets/layers/recycling/glass_bottles.svg",
@@ -998,7 +1019,8 @@
             "it": "Vetro",
             "ca": "Aquí es pot reciclar vidre",
             "fr": "Tout type de verre peut être recyclé ici",
-            "cs": "Sklo se zde dá recyklovat"
+            "cs": "Sklo se zde dá recyklovat",
+            "uk": "Скло"
           },
           "icon": {
             "path": "./assets/layers/recycling/glass.svg",
@@ -1015,7 +1037,8 @@
             "ca": "Aquí es poden reciclar bombetes",
             "fr": "Les lampes basse consommation peuvent être recyclées ici",
             "cs": "Žárovky se zde dají recyklovat",
-            "es": "Las bombillas pueden reciclarse aquí"
+            "es": "Las bombillas pueden reciclarse aquí",
+            "uk": "Лампочки"
           },
           "icon": {
             "path": "./assets/layers/recycling/light_bulbs.svg",
@@ -1033,7 +1056,8 @@
             "it": "Giornali",
             "ca": "Aquí es poden reciclar diaris",
             "fr": "Les journaux peuvent être recyclés ici",
-            "cs": "Noviny se zde dají recyklovat"
+            "cs": "Noviny se zde dají recyklovat",
+            "uk": "Газети"
           },
           "icon": {
             "path": "./assets/layers/recycling/newspaper.svg",
@@ -1051,7 +1075,8 @@
             "it": "Carta",
             "ca": "Aquí es pot reciclar paper",
             "fr": "Le papier peut être recyclé ici",
-            "cs": "Papír se zde dá recyklovat"
+            "cs": "Papír se zde dá recyklovat",
+            "uk": "Папір"
           },
           "icon": {
             "path": "./assets/layers/recycling/paper.svg",
@@ -1069,7 +1094,8 @@
             "it": "Bottiglie di platica",
             "ca": "Aquí es poden reciclar ampolles de plàstic",
             "fr": "Les bouteilles en plastique peuvent être recyclées ici",
-            "cs": "Plastové lahve se zde dají recyklovat"
+            "cs": "Plastové lahve se zde dají recyklovat",
+            "uk": "Пластикові пляшки"
           },
           "icon": {
             "path": "./assets/layers/recycling/plastic_bottles.svg",
@@ -1087,7 +1113,8 @@
             "it": "Confezioni di plastica",
             "ca": "Aquí es poden reciclar envasos de plàstic",
             "fr": "Les emballages plastiques peuvent être recyclés ici",
-            "cs": "Plastové obaly se zde dají recyklovat"
+            "cs": "Plastové obaly se zde dají recyklovat",
+            "uk": "Пластикова упаковка"
           },
           "icon": {
             "path": "./assets/layers/recycling/plastic_packaging.svg",
@@ -1106,7 +1133,8 @@
             "ca": "Aquí es pot reciclar plàstic",
             "fr": "Le plastique peut être recyclé ici",
             "pl": "Plastik może być tutaj poddany recyklingowi",
-            "cs": "Plast se zde dá recyklovat"
+            "cs": "Plast se zde dá recyklovat",
+            "uk": "Пластик"
           },
           "icon": {
             "path": "./assets/layers/recycling/plastic.svg",
@@ -1119,7 +1147,8 @@
           "then": {
             "en": "Plastic packaging, metal packaging and drink cartons (PMD) can be recycled here",
             "nl": "Plastic verpakkingen, metalen verpakkingen en drankpakken kunnen hier gerecycled worden",
-            "de": "Kunststoffverpackungen, Metallverpackungen und Getränkekartons (Tetrapak) können hier recycelt werden"
+            "de": "Kunststoffverpackungen, Metallverpackungen und Getränkekartons (Tetrapak) können hier recycelt werden",
+            "uk": "Пластикова упаковка, металева упаковка та упаковка для напоїв (PMD)"
           },
           "icon": {
             "path": "./assets/layers/recycling/pmd.svg",
@@ -1135,7 +1164,8 @@
             "de": "Druckerpatronen können hier recycelt werden",
             "ca": "Els cartutxos d'impressora es poden reciclar aquí",
             "fr": "Les cartouches d'imprimante peuvent être recyclées ici",
-            "cs": "Náplně do tiskáren lze recyklovat zde"
+            "cs": "Náplně do tiskáren lze recyklovat zde",
+            "uk": "Картриджі для принтерів"
           },
           "icon": {
             "path": "./assets/layers/recycling/printer_cartridges.svg",
@@ -1153,7 +1183,8 @@
             "es": "Aquí se puede reciclar chatarra",
             "it": "Rottami metallici",
             "fr": "La ferraille peut être recyclée ici",
-            "cs": "Kovový šrot lze zde recyklovat"
+            "cs": "Kovový šrot lze zde recyklovat",
+            "uk": "Металобрухт"
           },
           "icon": {
             "path": "./assets/layers/recycling/scrap_metal.svg",
@@ -1171,7 +1202,8 @@
             "it": "Scarpe",
             "ca": "Aquí es poden reciclar sabates",
             "fr": "Les chaussures peuvent être recyclées ici",
-            "cs": "Boty se zde dají recyklovat"
+            "cs": "Boty se zde dají recyklovat",
+            "uk": "Взуття"
           },
           "icon": {
             "path": "./assets/layers/recycling/shoes.svg",
@@ -1188,7 +1220,8 @@
             "it": "Piccoli elettrodomestici",
             "ca": "Aquí es poden reciclar petits electrodomèstics",
             "fr": "Les petits appareils électriques peuvent être recyclés ici",
-            "cs": "Drobné elektrospotřebiče se zde dají recyklovat"
+            "cs": "Drobné elektrospotřebiče se zde dají recyklovat",
+            "uk": "Малі електричні прилади"
           },
           "icon": {
             "path": "./assets/layers/recycling/small_electrical_appliances.svg",
@@ -1223,7 +1256,8 @@
             "it": "Aghi e oggetti appuntiti",
             "ca": "Aquí es poden reciclar agulles",
             "fr": "Les aiguilles peuvent être recyclées ici",
-            "cs": "Jehly se zde dají recyklovat"
+            "cs": "Jehly se zde dají recyklovat",
+            "uk": "Голки"
           },
           "icon": {
             "path": "./assets/layers/recycling/needles.svg",
@@ -1240,7 +1274,8 @@
             "it": "Secco",
             "ca": "Ací es pot reciclar el rebuig",
             "fr": "Les autres déchets peuvent être déposés ici",
-            "cs": "Zbytkový odpad zde lze recyklovat"
+            "cs": "Zbytkový odpad zde lze recyklovat",
+            "uk": "Залишкові відходи"
           },
           "icon": {
             "path": "./assets/layers/waste_disposal/waste_disposal.svg",
@@ -1257,7 +1292,8 @@
             "ca": "Aquí es poden reciclar bicicletes",
             "de": "Fahrräder können hier recycelt werden",
             "fr": "Les vélos peuvent être recyclés ici",
-            "cs": "Kola se zde dají recyklovat"
+            "cs": "Kola se zde dají recyklovat",
+            "uk": "Велосипеди"
           },
           "icon": {
             "path": "./assets/layers/recycling/bicycles.svg",
@@ -1314,7 +1350,8 @@
           "es": "¿A qué horas abre esta facilidad de reciclado?",
           "it": "Quali sono gli orari di apertura di questo impianto di raccolta e riciclo?",
           "ca": "Quin és l'horari d'obertura d'aquesta instal·lació de reciclatge?",
-          "cs": "Jaká je otevírací doba tohoto recyklačního zařízení?"
+          "cs": "Jaká je otevírací doba tohoto recyklačního zařízení?",
+          "uk": "Які години роботи цього об'єкту з переробки?"
         }
       }
     },
