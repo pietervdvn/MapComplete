@@ -171,8 +171,10 @@ export default class PanoramaxImageProvider extends ImageProvider {
 export class PanoramaxUploader implements ImageUploader {
     public readonly panoramax: AuthorizedPanoramax
     maxFileSizeInMegabytes = 100 * 1000 * 1000 // 100MB
+    private readonly _targetSequence: Store<string>
 
-    constructor(url: string, token: string) {
+    constructor(url: string, token: string, targetSequence: Store<string>) {
+        this._targetSequence = targetSequence
         this.panoramax = new AuthorizedPanoramax(url, token)
     }
 
@@ -208,10 +210,10 @@ export class PanoramaxUploader implements ImageUploader {
 
 
         const p = this.panoramax
-        const defaultSequence: {id: string, "stats:items":{count:number}}  =
-            (await p.mySequences()).find(s => s.id === Constants.panoramax.sequence)
-        console.log("Upload options are", lon, lat, datetime, blob)
-        const img = <ImageData>await p.addImage(blob, defaultSequence, {
+        sequenceId ??= this._targetSequence?.data ?? Constants.panoramax.sequence
+        const sequence: {id: string, "stats:items":{count:number}}  =
+            (await p.mySequences()).find(s => s.id === sequenceId)
+        const img = <ImageData>await p.addImage(blob, sequence, {
             lon,
             lat,
             datetime,

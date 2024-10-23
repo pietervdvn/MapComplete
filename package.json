@@ -43,7 +43,8 @@
     "panoramax": {
       "url": "https://panoramax.mapcomplete.org",
       "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnZW92aXNpbyIsInN1YiI6IjU5ZjgzOGI0LTM4ZjAtNDdjYi04OWYyLTM3NDQ3MWMxNTUxOCJ9.0rBioZS_48NTjnkIyN9497c3fQdTqtGgH1HDqlz1bWs",
-      "sequence": "6e702976-580b-419c-8fb3-cf7bd364e6f8"
+      "sequence": "6e702976-580b-419c-8fb3-cf7bd364e6f8",
+      "testsequence": "7f34cf53-27ff-46c9-ac22-78511fa8457a"
     },
     "default_overpass_urls": [
       "https://overpass-api.de/api/interpreter",
