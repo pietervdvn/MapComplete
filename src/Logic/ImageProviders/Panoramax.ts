@@ -204,10 +204,10 @@ export class PanoramaxUploader implements ImageUploader {
             console.error("Could not read EXIF-tags")
         }
 
-        let [lon, lat] = currentGps
+        const [lon, lat] = currentGps
 
         const p = this._panoramax
-        const defaultSequence = (await p.mySequences())[0]
+        const defaultSequence = (await p.mySequences()).find(s => s.id === Constants.panoramax.sequence)
         const img = <ImageData>await p.addImage(blob, defaultSequence, {
             // It might seem odd that we set 'undefined' here - keep in mind that, by default, panoramax will use the EXIF-data
             // We only pass variables as fallback!
