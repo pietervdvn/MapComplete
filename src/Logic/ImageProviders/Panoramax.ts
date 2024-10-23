@@ -10,7 +10,6 @@ import { Store, Stores, UIEventSource } from "../UIEventSource"
 import SvelteUIElement from "../../UI/Base/SvelteUIElement"
 import Panoramax_bw from "../../assets/svg/Panoramax_bw.svelte"
 import Link from "../../UI/Base/Link"
-import { Utils } from "../../Utils"
 
 export default class PanoramaxImageProvider extends ImageProvider {
     public static readonly singleton = new PanoramaxImageProvider()
@@ -191,13 +190,10 @@ export class PanoramaxUploader implements ImageUploader {
     }> {
         // https://panoramax.openstreetmap.fr/api/docs/swagger#/
 
-        let hasDate = false
-        let hasGPS = false
         let [lon, lat] = currentGps
         let datetime = new Date().toISOString()
         try {
             const tags = await ExifReader.load(blob)
-            hasDate = tags?.DateTime !== undefined
             const [[latD], [latM], [latS, latSDenom]]  =<[[number,number],[number,number],[number,number]]> tags?.GPSLatitude.value
             const [[lonD], [lonM], [lonS, lonSDenom]]  =<[[number,number],[number,number],[number,number]]> tags?.GPSLongitude.value
             lat = latD + latM / 60 + latS / (3600 * latSDenom)
@@ -211,13 +207,12 @@ export class PanoramaxUploader implements ImageUploader {
             console.error("Could not read EXIF-tags")
         }
 
-        const [lon, lat] = currentGps
 
         const p = this._panoramax
         const defaultSequence = (await p.mySequences()).find(s => s.id === Constants.panoramax.sequence)
         const img = <ImageData>await p.addImage(blob, defaultSequence, {
-            lon: Utils.Round7(lon),
-            lat: Utils.Round7(lat),
+            lon,
+            lat,
             datetime,
             isBlurred: noblur,
             exifOverride: {
