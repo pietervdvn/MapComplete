@@ -204,7 +204,8 @@
             "hiddenExplanation": "Ці теми доступні лише для тих, хто має посилання. Ви виявили {hidden_discovered} з {total_hidden} прихованих тем.",
             "noMatchingThemes": "Ніякі теми не відповідають вашим критеріям пошуку",
             "noSearch": "Показати всі теми",
-            "previouslyHiddenTitle": "Раніше відвідані приховані теми"
+            "previouslyHiddenTitle": "Раніше відвідані приховані теми",
+            "streetcomplete": "Інша подібна програма — <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' class='underline hover:text-blue-800' class='underline hover:text-blue-800' target='_blank'>StreetComplete</a>."
         },
         "noTagsSelected": "Не вибрано жодного тегу",
         "openStreetMapIntro": "<h3>Відкрита карта</h3><p>Кожен може вільно використовувати та редагувати. Єдине місце для зберігання всієї геоінформації. Різні, маленькі, несумісні та застарілі карти ніде не потрібні.</p><p><b><a href='https://OpenStreetMap.org' target='_blank'>OpenStreetMap</a></b> це не карта ворога. Дані карти можна використовувати вільно (з <a href='https://osm.org/copyright' target='_blank'>зазначенням авторства та публікацією змін цих даних</a>). Кожен може додавати нові дані та виправляти помилки. Цей веб-сайт використовує OpenStreetMap. Звідти надходять усі дані, а ваші відповіді та виправлення використовуються всюди.</p><p>Багато людей і програм уже використовують OpenStreetMap: <a href='https://organicmaps.app/' target='_blank'>Organic Maps</a>, <a href='https://osmAnd.net' target='_blank'>OsmAnd</a>, а також карти у Facebook, Instagram, Apple-maps і Bing-maps (частково) працюють на OpenStreetMap.</p>",
