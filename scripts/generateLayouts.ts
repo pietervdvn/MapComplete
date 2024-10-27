@@ -15,6 +15,7 @@ import { ImmutableStore } from "../src/Logic/UIEventSource"
 import * as eli from "../public/assets/data/editor-layer-index.json"
 import * as layers_global from "../src/assets/global-raster-layers.json"
 import eli_global from "../src/assets/generated/editor-layer-index-global.json"
+import bing from "../src/assets/bing.json"
 
 import ValidationUtils from "../src/Models/ThemeConfig/Conversion/ValidationUtils"
 import { LayerConfigJson } from "../src/Models/ThemeConfig/Json/LayerConfigJson"
@@ -269,6 +270,7 @@ class GenerateLayouts extends Script {
         const rasterLayers: {properties: RasterLayerProperties}[] = [
             AvailableRasterLayers.defaultBackgroundLayer,
             ...eli.features,
+            bing.properties.url,
             ...eli_global.map((properties) => ({ properties })),
             ...layers_global.layers.map((properties) => ({ properties })),
         ]
