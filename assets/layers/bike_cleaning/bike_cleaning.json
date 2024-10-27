@@ -34,8 +34,7 @@
       "or": [
         "service:bicycle:cleaning=yes",
         "service:bicycle:cleaning=diy",
-        "amenity=bicycle_wash",
-        "amenity=bike_wash"
+        "amenity=bicycle_wash"
       ]
     }
   },
@@ -83,7 +82,6 @@
           "if": {
             "and": [
               "service:bicycle:cleaning~*",
-              "amenity!=bike_wash",
               "amenity!=bicycle_wash"
             ]
           },
@@ -106,7 +104,6 @@
       ]
     }
   ],
-  "lineRendering": [],
   "presets": [
     {
       "title": {
@@ -158,7 +155,6 @@
       },
       "condition": {
         "and": [
-          "amenity!=bike_wash",
           "amenity!=bicycle_wash",
           "service:bicycle:cleaning!=no",
           "service:bicycle:cleaning!="
@@ -169,7 +165,7 @@
         "addExtraTags": [
           "service:bicycle:cleaning:fee=yes"
         ],
-        "inline": true
+        "inline": false
       },
       "mappings": [
         {
@@ -212,7 +208,7 @@
           "hideInAnswer": true
         }
       ],
-      "id": "bike_cleaning-service_bicycle_cleaning_charge"
+      "id": "bike_cleaning-service:bicycle:cleaning:charge"
     },
     {
       "question": {
@@ -241,7 +237,6 @@
       },
       "condition": {
         "or": [
-          "amenity=bike_wash",
           "amenity=bicycle_wash"
         ]
       },
@@ -285,6 +280,54 @@
         }
       ],
       "id": "bike_cleaning-charge"
+    },
+    {
+      "question": {
+        "en": "Is this bicycle cleaning service automated?",
+        "nl": "Is dit fietsschoonmaakpunt geautomatiseerd?"
+      },
+      "id": "automated",
+      "mappings": [
+        {
+          "if": "automated=no",
+          "then": {
+            "en": "This is a manual bike washing station",
+            "nl": "Dit is een handmatig fietsschoonmaakpunt"
+          }
+        },
+        {
+          "if": "automated=yes",
+          "then": {
+            "en": "This is an automated bike wash",
+            "nl": "Dit is een automatisch fietsschoonmaakpunt"
+          }
+        }
+      ],
+      "condition": "amenity=bicycle_wash"
+    },
+    {
+      "question": {
+        "nl": "Is dit fietsschoonmaakpunt zelfbediening?",
+        "en": "Is this cleaning service self-service?"
+      },
+      "id": "self_service",
+      "mappings": [
+        {
+          "if": "self_service=yes",
+          "then": {
+            "nl": "Dit fietsschoonmaakpunt is zelfbediening",
+            "en": "This cleaning service is self-service"
+          }
+        },
+        {
+          "if": "self_service=no",
+          "then": {
+            "nl": "Dit fietsschoonmaakpunt wordt bediend door aanwezig personeel",
+            "en": "This cleaning service is operated by an employee"
+          }
+        }
+      ],
+      "condition": "amenity=bicycle_wash"
     }
   ],
   "deletion": {
