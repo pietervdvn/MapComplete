@@ -270,7 +270,7 @@ class GenerateLayouts extends Script {
         const rasterLayers: {properties: RasterLayerProperties}[] = [
             AvailableRasterLayers.defaultBackgroundLayer,
             ...eli.features,
-            bing.properties.url,
+             bing,
             ...eli_global.map((properties) => ({ properties })),
             ...layers_global.layers.map((properties) => ({ properties })),
         ]
