@@ -10,16 +10,18 @@ import ScriptUtils from "./ScriptUtils"
 import { Utils } from "../src/Utils"
 import SpecialVisualizations from "../src/UI/SpecialVisualizations"
 import Constants from "../src/Models/Constants"
-import { AvailableRasterLayers, RasterLayerPolygon } from "../src/Models/RasterLayers"
+import { AvailableRasterLayers, EditorLayerIndexProperties, RasterLayerPolygon } from "../src/Models/RasterLayers"
 import { ImmutableStore } from "../src/Logic/UIEventSource"
 import * as eli from "../public/assets/data/editor-layer-index.json"
-import * as eli_global from "../src/assets/global-raster-layers.json"
+import * as layers_global from "../src/assets/global-raster-layers.json"
+import eli_global from "../src/assets/generated/editor-layer-index-global.json"
+
 import ValidationUtils from "../src/Models/ThemeConfig/Conversion/ValidationUtils"
 import { LayerConfigJson } from "../src/Models/ThemeConfig/Json/LayerConfigJson"
 import { QuestionableTagRenderingConfigJson } from "../src/Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
 import Script from "./Script"
 import crypto from "crypto"
-
+import { RasterLayerProperties } from "../src/Models/RasterLayerProperties"
 const sharp = require("sharp")
 
 class GenerateLayouts extends Script {
@@ -264,10 +266,11 @@ class GenerateLayouts extends Script {
         }
         const urls: string[] = []
         const regex = /{switch:([^}]+)}/
-        const rasterLayers = [
+        const rasterLayers: {properties: RasterLayerProperties}[] = [
             AvailableRasterLayers.defaultBackgroundLayer,
             ...eli.features,
-            ...eli_global.layers.map((properties) => ({ properties })),
+            ...eli_global.map((properties) => ({ properties })),
+            ...layers_global.layers.map((properties) => ({ properties })),
         ]
         for (const feature of rasterLayers) {
             const f = <RasterLayerPolygon>feature
