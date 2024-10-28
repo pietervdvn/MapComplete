@@ -14,7 +14,11 @@ import Link from "../../UI/Base/Link"
 export default class PanoramaxImageProvider extends ImageProvider {
     public static readonly singleton = new PanoramaxImageProvider()
     private static readonly xyz = new PanoramaxXYZ()
-    private static defaultPanoramax =  new AuthorizedPanoramax(Constants.panoramax.url, Constants.panoramax.token, 3000)
+    private static defaultPanoramax = new AuthorizedPanoramax(
+        Constants.panoramax.url,
+        Constants.panoramax.token,
+        3000
+    )
 
     public defaultKeyPrefixes: string[] = ["panoramax"]
     public readonly name: string = "panoramax"
@@ -48,7 +52,7 @@ export default class PanoramaxImageProvider extends ImageProvider {
      * @param id
      * @private
      */
-    private async getInfoFromMapComplete(id: string): Promise<{ data: ImageData, url: string }> {
+    private async getInfoFromMapComplete(id: string): Promise<{ data: ImageData; url: string }> {
         const url = `https://panoramax.mapcomplete.org/`
         const data = await PanoramaxImageProvider.defaultPanoramax.imageInfo(id)
         return { url, data }
@@ -138,16 +142,14 @@ export default class PanoramaxImageProvider extends ImageProvider {
             )
         }
 
-        Stores.Chronic(1500, () =>
-            hasLoading(source.data),
-        ).addCallback(_ => {
-            super.getRelevantUrlsFor(tags, prefixes).then(data => {
+        Stores.Chronic(1500, () => hasLoading(source.data)).addCallback((_) => {
+            super.getRelevantUrlsFor(tags, prefixes).then((data) => {
                 source.set(data)
                 return !hasLoading(data)
             })
         })
 
-        return Stores.ListStabilized( source)
+        return Stores.ListStabilized(source)
     }
 
     public async DownloadAttribution(providedImage: {
@@ -195,24 +197,21 @@ export class PanoramaxUploader implements ImageUploader {
         let datetime = new Date().toISOString()
         try {
             const tags = await ExifReader.load(blob)
-            const [[latD], [latM], [latS, latSDenom]]  =<[[number,number],[number,number],[number,number]]> tags?.GPSLatitude.value
-            const [[lonD], [lonM], [lonS, lonSDenom]]  =<[[number,number],[number,number],[number,number]]> tags?.GPSLongitude.value
-            lat = latD + latM / 60 + latS / (3600 * latSDenom)
-            lon = lonD + lonM / 60 + lonS / ( 3600 * lonSDenom)
-
+            lat = Number(tags?.GPSLatitude?.description)
+            lon = Number(tags?.GPSLongitude?.description)
             const [date, time] = tags.DateTime.value[0].split(" ")
-            datetime = new Date(date.replaceAll(":", "-")+"T"+time).toISOString()
+            datetime = new Date(date.replaceAll(":", "-") + "T" + time).toISOString()
 
             console.log("Tags are", tags)
         } catch (e) {
             console.error("Could not read EXIF-tags")
         }
 
-
         const p = this.panoramax
         sequenceId ??= this._targetSequence?.data ?? Constants.panoramax.sequence
-        const sequence: {id: string, "stats:items":{count:number}}  =
-            (await p.mySequences()).find(s => s.id === sequenceId)
+        const sequence: { id: string; "stats:items": { count: number } } = (
+            await p.mySequences()
+        ).find((s) => s.id === sequenceId)
         const img = <ImageData>await p.addImage(blob, sequence, {
             lon,
             lat,

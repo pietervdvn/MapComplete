@@ -8,11 +8,11 @@ import GeocodingProvider, {
 import { decode as pluscode_decode } from "pluscodes"
 
 export default class OpenLocationCodeSearch implements GeocodingProvider {
-
     /**
      * A regex describing all plus-codes
      */
-    public static readonly _isPlusCode = /^([2-9CFGHJMPQRVWX]{2}|00){2,4}\+([2-9CFGHJMPQRVWX]{2,3})?$/
+    public static readonly _isPlusCode =
+        /^([2-9CFGHJMPQRVWX]{2}|00){2,4}\+([2-9CFGHJMPQRVWX]{2,3})?$/
 
     /**
      *
@@ -35,17 +35,18 @@ export default class OpenLocationCodeSearch implements GeocodingProvider {
         }
         const { latitude, longitude } = pluscode_decode(query)
 
-        return [{
-            lon: longitude,
-            lat: latitude,
-            description: "Open Location Code",
-            osm_id: query,
-            display_name: query.toUpperCase(),
-        }]
+        return [
+            {
+                lon: longitude,
+                lat: latitude,
+                description: "Open Location Code",
+                osm_id: query,
+                display_name: query.toUpperCase(),
+            },
+        ]
     }
 
     suggest?(query: string, options?: GeocodingOptions): Store<GeocodeResult[]> {
         return Stores.FromPromise(this.search(query, options))
     }
-
 }

@@ -17,14 +17,17 @@ import { ChangeDescription } from "../src/Logic/Osm/Actions/ChangeDescription"
 import OsmObjectDownloader from "../src/Logic/Osm/OsmObjectDownloader"
 import { OsmObject } from "../src/Logic/Osm/OsmObject"
 import { createReadStream } from "node:fs"
-import { File } from 'buffer';
-import { open } from 'node:fs/promises';
+import { File } from "buffer"
+import { open } from "node:fs/promises"
 import { UploadableTag } from "../src/Logic/Tags/TagTypes"
 
-
 export class ImgurToPanoramax extends Script {
+    private readonly panoramax = new PanoramaxUploader(
+        Constants.panoramax.url,
+        Constants.panoramax.token,
+    )
 
-    private readonly panoramax = new PanoramaxUploader(Constants.panoramax.url, Constants.panoramax.token)
+    private readonly alreadyUploaded: Record<string, string> = {}
 
     private _imageDirectory: string
     private _licenseDirectory: string
@@ -36,22 +39,32 @@ export class ImgurToPanoramax extends Script {
         ccbysa: "f3d02893-b4c1-4cd6-8b27-e27ab57eb59a",
     } as const
 
-
     constructor() {
         super(
             "Queries OSM for 'imgur'-images, uploads them to Panoramax and creates a changeset to update OSM",
         )
     }
 
-    async uploadImage(key: string, feat: Feature, sequences: ({
-        id: string;
-        "stats:items": { count: number }
-    })[]): Promise<UploadableTag | undefined> {
+    async uploadImage(
+        key: string,
+        feat: Feature,
+        sequences: {
+            id: string
+            "stats:items": { count: number }
+        }[],
+    ): Promise<UploadableTag | undefined> {
         const v = feat.properties[key]
         if (!v) {
             return undefined
         }
         const imageHash = v.split("/").at(-1).split(".").at(0)
+
+        if (this.alreadyUploaded[imageHash]) {
+            const panohash = this.alreadyUploaded[imageHash]
+            return new And([new Tag(key.replace("image", panohash), panohash), new Tag(key, "")])
+        }
+
+
         let path: string = undefined
         if (existsSync(this._imageDirectory + "/" + imageHash + ".jpg")) {
             path = this._imageDirectory + "/" + imageHash + ".jpg"
@@ -61,7 +74,8 @@ export class ImgurToPanoramax extends Script {
         if (!path) {
             return undefined
         }
-        const licensePath = this._licenseDirectory + "/" + v.replaceAll(/[^a-zA-Z0-9]/g, "_") + ".json"
+        const licensePath =
+            this._licenseDirectory + "/" + v.replaceAll(/[^a-zA-Z0-9]/g, "_") + ".json"
         if (!existsSync(licensePath)) {
             return undefined
         }
@@ -74,37 +88,45 @@ export class ImgurToPanoramax extends Script {
         const sequence = this.sequenceIds[license]
         const author = licenseText.artist
 
+        const handle = await open(path)
 
-        const handle = await open(path);
-
-        const stat = await handle.stat();
+        const stat = await handle.stat()
 
         class MyFile extends File {
             // we should set correct size
             // otherwise we will encounter UND_ERR_REQ_CONTENT_LENGTH_MISMATCH
-            size = stat.size;
+            size = stat.size
             stream = undefined
         }
 
         const file = new MyFile([], path)
 
         file.stream = function() {
-            return handle.readableWebStream();
-        };
+            return handle.readableWebStream()
+        }
 
         console.log("Uploading", imageHash, sequence)
-        const result = await this.panoramax.uploadImage(<any> file, GeoOperations.centerpointCoordinates(feat), author, true, sequence)
+        const result = await this.panoramax.uploadImage(
+            <any>file,
+            GeoOperations.centerpointCoordinates(feat),
+            author,
+            true,
+            sequence,
+        )
+        this.alreadyUploaded[imageHash] = result.value
         await handle.close()
-        return new And([new Tag(key.replace("image", result.key), result.value),
-            new Tag(key,"")])
+        return new And([new Tag(key.replace("image", result.key), result.value), new Tag(key, "")])
     }
 
     async main(args: string[]): Promise<void> {
         this._imageDirectory = args[0] ?? "/home/pietervdvn/data/imgur-image-backup"
         this._licenseDirectory = args[1] ?? "/home/pietervdvn/git/MapComplete-data/ImageLicenseInfo"
 
-        const bounds = new BBox([[3.6984301050112833, 51.06715570450848], [3.7434328399847914, 51.039379568816145]])
-        const maxcount = 100
+        const bounds = new BBox([
+            [3.6984301050112833, 51.06715570450848],
+            [3.7434328399847914, 51.039379568816145],
+        ])
+        const maxcount = 500
         const filter = new RegexTag("image", /^https:\/\/i.imgur.com\/.*/)
         const overpass = new Overpass(filter, [], Constants.defaultOverpassUrls[0])
         const features = (await overpass.queryGeoJson(bounds))[0].features
@@ -124,33 +146,39 @@ export class ImgurToPanoramax extends Script {
             for (const k of ["image", "image:menu", "image:streetsign"]) {
                 changedTags.push(await this.uploadImage(k, f, sequences))
                 for (let i = 0; i < 20; i++) {
-                    changedTags.push(
-                        await this.uploadImage(k + ":" + i, f, sequences),
-                    )
+                    changedTags.push(await this.uploadImage(k + ":" + i, f, sequences))
                 }
             }
-            const action = new ChangeTagAction(f.properties.id, new And(Utils.NoNull(changedTags)),
-                f.properties, {
+            const action = new ChangeTagAction(
+                f.properties.id,
+                new And(Utils.NoNull(changedTags)),
+                f.properties,
+                {
                     theme: "image-mover",
                     changeType: "link-image",
                 },
             )
-            changes.push(...await action.CreateChangeDescriptions())
+            changes.push(...(await action.CreateChangeDescriptions()))
             converted++
         } while (converted < maxcount)
 
-        const modif: string[] = Utils.Dedup(changes.map(ch => ch.type + "/" + ch.id))
-        const modifiedObjectsFresh =
-          <OsmObject[]>  (await Promise.all(modif.map(id => new OsmObjectDownloader().DownloadObjectAsync(id))))
-                .filter(m => m !== "deleted")
+        const modif: string[] = Utils.Dedup(changes.map((ch) => ch.type + "/" + ch.id))
+        const modifiedObjectsFresh = <OsmObject[]>(
+            (
+                await Promise.all(
+                    modif.map((id) => new OsmObjectDownloader().DownloadObjectAsync(id)),
+                )
+            ).filter((m) => m !== "deleted")
+        )
         const modifiedObjects = Changes.createChangesetObjectsStatic(
             changes,
-            modifiedObjectsFresh,false, [])
+            modifiedObjectsFresh,
+            false,
+            [],
+        )
         const cs = Changes.buildChangesetXML("0", modifiedObjects)
         writeFileSync("imgur_to_panoramax.osc", cs, "utf8")
-
     }
-
 }
 
 new ImgurToPanoramax().run()

@@ -19,7 +19,20 @@
         "image:7~*",
         "image:8~*",
         "image:9~*",
-        "image:10~*"
+        "image:10~*",
+        "panoramax~*",
+        "panoramax:0~*",
+        "panoramax:1~*",
+        "panoramax:2~*",
+        "panoramax:3~*",
+        "panoramax:4~*",
+        "panoramax:5~*",
+        "panoramax:6~*",
+        "panoramax:7~*",
+        "panoramax:8~*",
+        "panoramax:9~*",
+        "panoramax:10~*",
+        "mapillary~*"
       ]
     }
   },

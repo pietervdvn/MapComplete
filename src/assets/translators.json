@@ -1,7 +1,7 @@
 {
   "contributors": [
     {
-      "commits": 484,
+      "commits": 485,
       "contributor": "Pieter Vander Vennet"
     },
     {
@@ -37,7 +37,11 @@
       "contributor": "Harry Bond"
     },
     {
-      "commits": 47,
+      "commits": 49,
+      "contributor": "mike140"
+    },
+    {
+      "commits": 48,
       "contributor": "Jiří Podhorecký"
     },
     {
@@ -59,10 +63,6 @@
     {
       "commits": 36,
       "contributor": "Iago"
-    },
-    {
-      "commits": 35,
-      "contributor": "mike140"
     },
     {
       "commits": 29,
@@ -543,6 +543,10 @@
     {
       "commits": 2,
       "contributor": "Leo Alcaraz"
+    },
+    {
+      "commits": 1,
+      "contributor": "Teodor11"
     },
     {
       "commits": 1,

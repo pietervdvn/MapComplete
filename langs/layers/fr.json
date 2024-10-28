@@ -111,6 +111,17 @@
                 },
                 "question": "Est-ce que cette publicité fait défiler différent messages ?"
             },
+            "historic": {
+                "mappings": {
+                    "0": {
+                        "then": "C'est une publicité historique (publicité pour un commerce qui n'existe plus ou une très vielle publicité avec un intérêt patrimonial)"
+                    },
+                    "1": {
+                        "then": "Cette publicité n'a pas de valeur historique (le commerce existe toujours, mais n'a pas de valeur patrimoniale particulière)"
+                    }
+                },
+                "question": "Est-ce l'enseigne d'un commerce qui n'existe plus ou n'est plus en activité ?"
+            },
             "luminous_or_lit_advertising": {
                 "override": {
                     "+mappings": {

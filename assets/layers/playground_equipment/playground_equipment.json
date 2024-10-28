@@ -297,7 +297,8 @@
           "if": "playground=bridge",
           "then": {
             "en": "This is a bridge (either as a standalone device or as part of a larger structure)",
-            "de": "Dies ist eine Brücke (entweder als eigenständiges Gerät oder als Teil einer größeren Struktur)"
+            "de": "Dies ist eine Brücke (entweder als eigenständiges Gerät oder als Teil einer größeren Struktur)",
+            "uk": "Це міст (або як окремий пристрій, або як частина більшої конструкції)"
           },
           "icon": {
             "path": "./assets/layers/playground_equipment/Playground_in_Muchall_Park,_Wolverhampton_-_geograph.org.uk_-_2735437.jpg",
@@ -330,7 +331,8 @@
           "if": "playground=teenshelter",
           "then": {
             "en": "This is a teen shelter",
-            "de": "Dies ist eine Jugendherberge"
+            "de": "Dies ist eine Jugendherberge",
+            "uk": "Це притулок для підлітків"
           },
           "icon": {
             "path": "./assets/layers/playground_equipment/Teen_shelter_near_former_coastguard_lookout,_Watchet_-_geograph.org.uk_-_1714960.jpg",

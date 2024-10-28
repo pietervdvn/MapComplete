@@ -18,7 +18,7 @@
         .filter(
           (f) =>
             f.filter.options[0].fields.length === 0 &&
-            Constants.priviliged_layers.indexOf(<any>f.layer.id) < 0,
+            Constants.priviliged_layers.indexOf(<any>f.layer.id) < 0
         )
         .map((af) => {
           const index = <number>af.control.data
@@ -28,7 +28,7 @@
             option: af.filter.options[index],
           }
           return r
-        }),
+        })
     )
   let searchTerm = state.searchState.searchTerm
 

@@ -25,7 +25,8 @@
     "fil": "Mapa na nagpapakita ng lahat ng uri ng paradahan ng bisikleta",
     "ca": "Un mapa que mostra tots els tipus d'aparcaments de bicicletes",
     "cs": "Mapa všech typů parkovišť pro jízdní kola",
-    "uk": "Карта, що показує всі типи велосипедних парковок"
+    "uk": "Карта, що показує всі типи велосипедних парковок",
+    "pl": "Mapa pokazująca wszystkie typy parkingów dla rowerów"
   },
   "icon": "./assets/themes/bicycle_parkings/logo.svg",
   "layers": [

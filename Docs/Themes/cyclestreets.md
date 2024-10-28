@@ -31,6 +31,7 @@ Available languages:
  - eu
  - pl
  - ru
+ - uk
 
 # Table of contents
 

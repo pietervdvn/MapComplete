@@ -249,7 +249,7 @@
             "en": "The language was set via an URL-parameter and cannot be set by the user.",
             "de": "Die Sprache wurde über einen URL-Parameter gesetzt und kann nicht vom Benutzer eingestellt werden.",
             "ca": "L'idioma es va establir mitjançant un paràmetre d'URL i l'usuari no pot definir-lo.",
-            "cs": "Jazyk byl nastaven pomocí parametru URL a uživatel jej nemůže nastavit.²",
+            "cs": "Jazyk byl nastaven pomocí parametru URL a uživatel jej nemůže nastavit.",
             "nl": "De taal werd ingesteld via een URL-parameter en kan niet manueel ingesteld worden.",
             "da": "Sproget er angivet vha. en URL-parameter og kan ikke angives af brugeren.",
             "hu": "A nyelv egy URL-paraméterrel lett megadva ezért felhasználó nem tudja beállítani."

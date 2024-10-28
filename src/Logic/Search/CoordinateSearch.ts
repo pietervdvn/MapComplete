@@ -73,20 +73,26 @@ export default class CoordinateSearch implements GeocodingProvider {
             (m) => CoordinateSearch.asResult(m[2], m[1], "latlon")
         )
 
-        const matchesLonLat = Utils.NoNull(CoordinateSearch.lonLatRegexes.map(r => query.match(r)))
-            .map(m => CoordinateSearch.asResult(m[1], m[2], "lonlat"))
+        const matchesLonLat = Utils.NoNull(
+            CoordinateSearch.lonLatRegexes.map((r) => query.match(r))
+        ).map((m) => CoordinateSearch.asResult(m[1], m[2], "lonlat"))
         const init = matches.concat(matchesLonLat)
         if (init.length > 0) {
             return init
         }
 
         try {
-            const c = new CoordinateParser(query);
-            return [CoordinateSearch.asResult(""+c.getLongitude(), ""+c.getLatitude(), "coordinateParser")]
+            const c = new CoordinateParser(query)
+            return [
+                CoordinateSearch.asResult(
+                    "" + c.getLongitude(),
+                    "" + c.getLatitude(),
+                    "coordinateParser"
+                ),
+            ]
         } catch {
             return []
         }
-
     }
 
     private static round6(n: number): string {

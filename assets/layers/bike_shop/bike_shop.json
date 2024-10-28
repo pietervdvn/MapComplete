@@ -119,7 +119,8 @@
           "it": "Noleggio di biciclette <i>{name}</i>",
           "pt": "Aluguel de bicicletas <i>{name}</i>",
           "pt_BR": "Aluguel de bicicletas <i>{name}</i>",
-          "ru": "Прокат велосипедов <i>{name}</i>"
+          "ru": "Прокат велосипедов <i>{name}</i>",
+          "uk": "Пункт прокату велосипедів <i>{name}</i>"
         }
       },
       {

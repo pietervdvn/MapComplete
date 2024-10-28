@@ -30,6 +30,7 @@ Available languages:
  - pl
  - ru
  - hu
+ - uk
 
 # Table of contents
 

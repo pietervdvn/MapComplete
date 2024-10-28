@@ -770,7 +770,8 @@
         "nl": "Wat is het telefoonnummer van de operator van deze fietsenstalling?",
         "de": "Wie lautet die Telefonnummer des Betreibers dieses Fahrradparkplatzes?",
         "ca": "Quin és el número de telèfon de l'operador d'aquest aparcament per a bicis?",
-        "es": "¿Cuál es número de teléfono del operador de este aparcamiento de bicicletas?"
+        "es": "¿Cuál es número de teléfono del operador de este aparcamiento de bicicletas?",
+        "uk": "Який номер телефону оператора цієї велопарковки?"
       },
       "questionHint": {
         "en": "One might be able to call this number in case of problems, e.g. to remove unmaintained bicycles",

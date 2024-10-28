@@ -33,6 +33,7 @@ Available languages:
  - cs
  - es
  - pl
+ - uk
 
 # Table of contents
 
