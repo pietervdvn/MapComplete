@@ -2,6 +2,48 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.47.7](https://github.com/pietervdvn/mapcomplete/compare/v0.47.6...v0.47.7) (2024-10-28)
+
+
+### Features
+
+* add script to upload images to panoramax and remove 'imgur'-links ([4233bd7](https://github.com/pietervdvn/mapcomplete/commits4233bd7618e69e71c00ef027bbb4afc199c29fa9))
+* panoramax uploads in testmode are sent to a different sequence ([834b6b1](https://github.com/pietervdvn/mapcomplete/commits834b6b18ff985cd1a79e725af915e307525d221e))
+* remove possibility to load a custom theme via the hash, no longer necessary with a theme server ([a016a8f](https://github.com/pietervdvn/mapcomplete/commitsa016a8f771ca3cfb210b5f5f92b136a011d08543))
+* update update script ([d27c38d](https://github.com/pietervdvn/mapcomplete/commitsd27c38d0e48d653675ffa44bc3812e6f8e05f5f8))
+* upload to specified panoramax instance ([3df0f9c](https://github.com/pietervdvn/mapcomplete/commits3df0f9ca94f8df6314322359edbfb4276c971419))
+
+
+### Bug Fixes
+
+* add missing import ([9bf013c](https://github.com/pietervdvn/mapcomplete/commits9bf013cd47468c88bbc9ad90376f9240d0e921c0))
+* attempt to fix build ([571791d](https://github.com/pietervdvn/mapcomplete/commits571791d06349cc9a409ddede0737f04824186210))
+* attempt to fix panoramax upload, see [#2202](https://github.com/pietervdvn/MapComplete/issues/2202) ([07c1cc0](https://github.com/pietervdvn/mapcomplete/commits07c1cc0beea816d4f328adaa9ac15d32676380c4))
+* bing layer, see [#2222](https://github.com/pietervdvn/MapComplete/issues/2222) ([51608fb](https://github.com/pietervdvn/mapcomplete/commits51608fb22348a79b7459a7d3558202edb68ec773))
+* build ([01c8d63](https://github.com/pietervdvn/mapcomplete/commits01c8d63943c0df74892e2ae02720a469bf3bdb89))
+* don't index 'all_streets' ([c1c2390](https://github.com/pietervdvn/mapcomplete/commitsc1c2390694ab145524dae96cd7dff5a866e4b865))
+* fix [#2212](https://github.com/pietervdvn/MapComplete/issues/2212). ([91f5c8f](https://github.com/pietervdvn/mapcomplete/commits91f5c8f1669a448c36876e0fda374165f5b60886))
+* fix [#2213](https://github.com/pietervdvn/MapComplete/issues/2213), remove image-license from usersettings.json ([90a34ab](https://github.com/pietervdvn/mapcomplete/commits90a34ab31f23be942e27ba4cbcd60528c591f7df))
+* fix [#2222](https://github.com/pietervdvn/MapComplete/issues/2222), restore global background layers which were not included in the connect-src ([905f176](https://github.com/pietervdvn/mapcomplete/commits905f1768f2b994fa83af31224447c96003ab70ce))
+* **panoramax:** stabilize loading images ([8480f94](https://github.com/pietervdvn/mapcomplete/commits8480f9417c6fa11ab21bc06d15e4a5a5baeaa1f4))
+* see [#2212](https://github.com/pietervdvn/MapComplete/issues/2212): actually save custom themes as visited ([9427083](https://github.com/pietervdvn/mapcomplete/commits9427083939bb6958b07e6fd48f5356101f06e681))
+* special quicksearch for osmcha ([01cfc5f](https://github.com/pietervdvn/mapcomplete/commits01cfc5fe4db17362b3e3317f0eba7e0bf954a689))
+* translations ([d10f894](https://github.com/pietervdvn/mapcomplete/commitsd10f89469a7de5e91bc613ae4527054c502b966a))
+* translations ([ab8835b](https://github.com/pietervdvn/mapcomplete/commitsab8835b279a9c3aecf04a367464cc1bde25ac1d8))
+* Use alternative way to read coordinates from exif data ([6257c24](https://github.com/pietervdvn/mapcomplete/commits6257c2415a6fff2859168bb671f54e700f0b3152))
+* use popup when in an iframe ([63162c5](https://github.com/pietervdvn/mapcomplete/commits63162c58e147aaf9c1c4c77d5187b13aaa8cf13a))
+
+
+### Theme improvements
+
+* **bike_parking:** add lean_and_stick type ([9e1bd7f](https://github.com/pietervdvn/mapcomplete/commits9e1bd7fa9d9e3b2d5242fbe7b073234b7fa04cbd))
+* **bikeparking:** update text of access=private, sync translation ([4ce5a40](https://github.com/pietervdvn/mapcomplete/commits4ce5a40eb4b3b3d350873ff2bf9a2a7d9b3a5d15))
+* **cycle_infra:** add minzoom for all layers ([94bc478](https://github.com/pietervdvn/mapcomplete/commits94bc478b9e5cfdbbb9e062b3950433984bfd752b))
+* **items_with_image:** include 'panoramax' and 'mapillary' as tags for items with image, fix [#2225](https://github.com/pietervdvn/MapComplete/issues/2225) ([899312b](https://github.com/pietervdvn/mapcomplete/commits899312ba7cb2b9b00fc8c4483ffe57955f08cdf2))
+* **shops:** support `shop=sports` together with 'shop=sport' ([98470ef](https://github.com/pietervdvn/mapcomplete/commits98470ef8ac1c38cb54cdbae1bd07cbab825be795))
+* **velopark:** hide NMBS-maproulette items ([0a0d0a1](https://github.com/pietervdvn/mapcomplete/commits0a0d0a15cb546dd390bd2c388fafb43d13bda327))
+* **velopark:** properly hide NMBS-maproulette items with a filter ([4840816](https://github.com/pietervdvn/mapcomplete/commits4840816b1768cd3c4d43ef01d07c852cd32f1d3e))
+
 ### [0.47.6](https://github.com/pietervdvn/mapcomplete/compare/v0.47.5...v0.47.6) (2024-10-15)
 
 
