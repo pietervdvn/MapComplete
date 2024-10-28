@@ -2895,7 +2895,7 @@
                 "render": "<i>Informations supplémentaires à propos de l'emplacement (dans la langue locale) :</i><br/>{defibrillator:location}"
             },
             "defibrillator-defibrillator:location:en": {
-                "question": "Veuillez indiquez plus précisément où se situe le défibrillateur (en englais)",
+                "question": "Veuillez indiquez plus précisément où se situe le défibrillateur (en anglais)",
                 "render": "<i>Informations supplémentaires à propos de l'emplacement (en anglais) :</i><br/>{defibrillator:location:en}"
             },
             "defibrillator-defibrillator:location:fr": {
