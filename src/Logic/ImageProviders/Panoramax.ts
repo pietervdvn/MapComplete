@@ -197,15 +197,8 @@ export class PanoramaxUploader implements ImageUploader {
         let datetime = new Date().toISOString()
         try {
             const tags = await ExifReader.load(blob)
-            const [[latD], [latM], [latS, latSDenom]] = <
-                [[number, number], [number, number], [number, number]]
-            >tags?.GPSLatitude.value
-            const [[lonD], [lonM], [lonS, lonSDenom]] = <
-                [[number, number], [number, number], [number, number]]
-            >tags?.GPSLongitude.value
-            lat = latD + latM / 60 + latS / (3600 * latSDenom)
-            lon = lonD + lonM / 60 + lonS / (3600 * lonSDenom)
-
+            lat = Number(tags?.GPSLatitude?.description)
+            lon = Number(tags?.GPSLongitude?.description)
             const [date, time] = tags.DateTime.value[0].split(" ")
             datetime = new Date(date.replaceAll(":", "-") + "T" + time).toISOString()
 
