@@ -222,49 +222,181 @@
             "fr": "Passage piéton sans marquages",
             "ca": "Creuament sense senyalitzar",
             "cs": "Přechod bez označení přechodu"
-          }
+          },
+          "hideInAnswer": true
         }
       ]
     },
     {
-      "id": "crossing-is-zebra",
+      "id": "markings",
       "question": {
-        "en": "Is this is a zebra crossing?",
-        "nl": "Is dit een zebrapad?",
-        "de": "Ist das ein Zebrastreifen?",
-        "es": "¿Esto es un paso de cebra?",
-        "fr": "Est-ce un passage piéton ?",
-        "ca": "Açò és un pas de vianants?",
-        "pl": "Czy to jest przejście dla pieszych typu \"zebra\"?",
-        "cs": "Jedná se o zebra přechod?"
+        "en": "What kind of markings does this crossing have?",
+        "nl": "Wat voor markering heeft deze oversteekplaats?"
       },
-      "condition": "crossing=uncontrolled",
       "mappings": [
         {
-          "if": "crossing_ref=zebra",
+          "if": "crossing:markings=no",
           "then": {
-            "en": "This is a zebra crossing",
-            "nl": "Dit is een zebrapad",
-            "de": "Dies ist ein Zebrastreifen",
-            "es": "Esto es un paso de cebra",
-            "fr": "C'est un passage piéton",
-            "ca": "Açò és un pas de vianants",
-            "cs": "Toto je zebra přechod"
+            "en": "This crossing has no markings",
+            "nl": "Deze oversteekplaats heeft geen markeringen"
+          },
+          "icon": {
+            "class": "large",
+            "path": "./assets/layers/crossings/crossing_unmarked.png"
           }
         },
         {
-          "if": "crossing_ref=",
+          "if": "crossing:markings=zebra",
           "then": {
-            "en": "This is not a zebra crossing",
-            "nl": "Dit is geen zebrapad",
-            "de": "Dies ist kein Zebrastreifen",
-            "es": "Esto no es un paso de cebra",
-            "fr": "Ce n'est pas un passage piéton",
-            "ca": "Açò no és un pas de vianants",
-            "cs": "Tohle není zebra přechod"
+            "en": "This crossing has zebra markings",
+            "nl": "Deze oversteekplaats heeft een zebramarkering"
+          },
+          "icon": {
+            "class": "large",
+            "path": "./assets/layers/crossings/markings_zebra.png"
+          }
+        },
+        {
+          "hideInAnswer": true,
+          "then": {
+            "en": "This crossing has markings of an unknown type",
+            "nl": "Deze oversteekplaats heeft markeringen van een onbekend type"
+          },
+          "if": "crossing:markings=yes"
+        },
+        {
+          "if": "crossing:markings=lines",
+          "then": {
+            "en": "This crossings has lines on either side of the crossing",
+            "nl": "Deze oversteekplaats heeft lijnen aan beide kanten van de oversteekplaats"
+          },
+          "icon": {
+            "class": "large",
+            "path": "./assets/layers/crossings/markings_lines.png"
+          }
+        },
+        {
+          "if": "crossing:markings=ladder",
+          "then": {
+            "en": "This crossing has lines on either side of the crossing, along with bars connecting them",
+            "nl": "Deze oversteekplaats heeft lijnen aan beide kanten van de oversteekplaats, met strepen die ze verbinden"
+          },
+          "icon": {
+            "class": "large",
+            "path": "./assets/layers/crossings/markings_ladder.png"
+          }
+        },
+        {
+          "if": "crossing:markings=dashes",
+          "then": {
+            "en": "This crossing has dashed lines on either sides of the crossing",
+            "nl": "Deze oversteekplaats heeft onderbroken lijnen aan beide kanten van de oversteekplaats"
+          },
+          "icon": {
+            "class": "large",
+            "path": "./assets/layers/crossings/markings_dashes.png"
+          }
+        },
+        {
+          "if": "crossing:markings=dots",
+          "then": {
+            "en": "This crossing has dotted lines on either sides of the crossing",
+            "nl": "Deze oversteekplaats heeft stippellijnen aan beide kanten van de oversteekplaats"
+          },
+          "icon": {
+            "class": "large",
+            "path": "./assets/layers/crossings/markings_dots.png"
+          }
+        },
+        {
+          "if": "crossing:markings=surface",
+          "then": {
+            "en": "This crossing is marked by using a different coloured surface",
+            "nl": "Deze oversteekplaats is gemarkeerd door een anders gekleurd wegdek"
+          },
+          "icon": {
+            "class": "large",
+            "path": "./assets/layers/crossings/markings_surface.png"
+          }
+        },
+        {
+          "if": "crossing:markings=ladder:skewed",
+          "then": {
+            "en": "This crossing has lines on either side of the crossing, along with angled bars connecting them",
+            "nl": "Deze oversteekplaats heeft lijnen aan beide kanten van de oversteekplaats, met schuine strepen die ze verbinden"
+          },
+          "icon": {
+            "class": "large",
+            "path": "./assets/layers/crossings/markings_ladder_skewed.png"
+          }
+        },
+        {
+          "if": "crossing:markings=zebra:paired",
+          "then": {
+            "en": "This crossing has zebra markings with an interruption in every bar",
+            "nl": "Deze oversteekplaats heeft zebramarkeringen met een onderbreking van elke streep"
+          }
+        },
+        {
+          "if": "crossing:markings=zebra:bicolour",
+          "then": {
+            "en": "This crossing has zebra markings in alternating colours",
+            "nl": "Deze oversteekplaats heeft een zebramarkering in afwisselende kleuren"
+          },
+          "icon": {
+            "class": "large",
+            "path": "./assets/layers/crossings/markings_zebra_bicolour.png"
+          }
+        },
+        {
+          "if": "crossing:markings=zebra:double",
+          "then": {
+            "en": "This crossing has double zebra markings",
+            "nl": "Deze oversteekplaats heeft een dubbele zebramarkering"
+          },
+          "icon": {
+            "class": "large",
+            "path": "./assets/layers/crossings/markings_zebra_double.png"
+          }
+        },
+        {
+          "if": "crossing:markings=pictograms",
+          "then": {
+            "en": "This crossing has pictograms on the road",
+            "nl": "Deze oversteekplaats heeft pictogrammen op de weg"
+          }
+        },
+        {
+          "if": "crossing:markings=ladder:paired",
+          "then": {
+            "en": "This crossing has lines on either side of the crossing, along with bars connecting them, with an interruption in every bar",
+            "nl": "Deze oversteekplaats heeft lijnen aan beide kanten van de oversteekplaats, met strepen die ze verbinden, met een onderbreking van elke streep"
+          }
+        },
+        {
+          "if": "crossing:markings=lines:paired",
+          "then": {
+            "en": "This crossing has double lines on either side of the crossing",
+            "nl": "Deze oversteekplaats heeft dubbele lijnen aan beide kanten van de oversteekplaats"
+          },
+          "icon": {
+            "class": "large",
+            "path": "./assets/layers/crossings/markings_lines_paired.png"
           }
         }
-      ]
+      ],
+      "render": {
+        "en": "This crossing has {crossing:markings} markings",
+        "nl": "Deze oversteekplaats heeft {crossing:markings} markeringen"
+      },
+      "freeform": {
+        "key": "crossing:markings",
+        "type": "string",
+        "addExtraTags": [
+          "fixme=Free-form value used in MapComplete for crossing:markings"
+        ]
+      },
+      "multiAnswer": true
     },
     {
       "id": "crossing-bicycle-allowed",

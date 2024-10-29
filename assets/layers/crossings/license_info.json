@@ -40,6 +40,116 @@
     ]
   },
   {
+    "path": "crossing_unmarked.png",
+    "license": "CC0 1.0",
+    "authors": [
+      "StenSoft"
+    ],
+    "sources": [
+      "https://wiki.openstreetmap.org/wiki/File:Crossing_without_markings.png"
+    ]
+  },
+  {
+    "path": "markings_dashes.png",
+    "license": "CC0 1.0",
+    "authors": [
+      "Popball"
+    ],
+    "sources": [
+      "https://wiki.openstreetmap.org/wiki/File:Markings_dashes.png"
+    ]
+  },
+  {
+    "path": "markings_dots.png",
+    "license": "CC0 1.0",
+    "authors": [
+      "Popball"
+    ],
+    "sources": [
+      "https://wiki.openstreetmap.org/wiki/File:Markings_dots.png"
+    ]
+  },
+  {
+    "path": "markings_ladder.png",
+    "license": "CC0 1.0",
+    "authors": [
+      "Popball"
+    ],
+    "sources": [
+      "https://wiki.openstreetmap.org/wiki/File:Markings_ladder.png"
+    ]
+  },
+  {
+    "path": "markings_ladder_skewed.png",
+    "license": "CC0 1.0",
+    "authors": [
+      "Popball"
+    ],
+    "sources": [
+      "https://wiki.openstreetmap.org/wiki/File:Markings_adder_skewed.png"
+    ]
+  },
+  {
+    "path": "markings_lines.png",
+    "license": "CC0 1.0",
+    "authors": [
+      "Popball"
+    ],
+    "sources": [
+      "https://wiki.openstreetmap.org/wiki/File:Markings_lines.png"
+    ]
+  },
+  {
+    "path": "markings_lines_paired.png",
+    "license": "CC0 1.0",
+    "authors": [
+      "Popball"
+    ],
+    "sources": [
+      "https://wiki.openstreetmap.org/wiki/File:Markings_lines_paired.png"
+    ]
+  },
+  {
+    "path": "markings_surface.png",
+    "license": "CC0 1.0",
+    "authors": [
+      "Popball"
+    ],
+    "sources": [
+      "https://wiki.openstreetmap.org/wiki/File:Surface_crossing_markings.png"
+    ]
+  },
+  {
+    "path": "markings_zebra.png",
+    "license": "CC0 1.0",
+    "authors": [
+      "Popball"
+    ],
+    "sources": [
+      "https://wiki.openstreetmap.org/wiki/File:Markings_zebra.png"
+    ]
+  },
+  {
+    "path": "markings_zebra_bicolour.png",
+    "license": "CC0 1.0",
+    "authors": [
+      "Popball"
+    ],
+    "sources": [
+      "https://wiki.openstreetmap.org/wiki/File:Markings_zebra_bicolour.png"
+    ]
+  },
+  {
+    "path": "markings_zebra_double.png",
+    "license": "CC0 1.0",
+    "authors": [
+      "Popball"
+    ],
+    "sources": [
+      "https://wiki.openstreetmap.org/wiki/File:Crossing_markings_zebra_double.png"
+    ]
+  },
+  {
     "path": "pedestrian_crossing.svg",
     "license": "CC-BY-SA-4.0",
     "authors": [
