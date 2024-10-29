@@ -15,7 +15,8 @@
     "es": "Un mapa de mapas",
     "cs": "Mapa map",
     "pl": "Mapa map",
-    "hu": "Térképek térképe"
+    "hu": "Térképek térképe",
+    "uk": "Карта карт"
   },
   "description": {
     "en": "On this map you can find all maps OpenStreetMap knows - typically a big map on an information board showing the area, city or region, e.g. a tourist map on the back of a billboard, a map of a nature reserve, a map of cycling networks in the region, ...) <br/><br/>If a map is missing, you can easily map this map on OpenStreetMap.",
@@ -44,7 +45,8 @@
     "cs": "Toto téma zobrazuje všechny (turistické) mapy, které zná OpenStreetMap",
     "ca": "Aquest tema mostra tots els mapes (turístics) que OpenStreetMap coneix",
     "pl": "Ten motyw pokazuje wszystkie mapy (turystyczne), które zna OpenStreetMap",
-    "ru": "Эта тема показывает все (туристические) карты, известные OpenStreetMap"
+    "ru": "Эта тема показывает все (туристические) карты, известные OpenStreetMap",
+    "uk": "Ця тема показує всі (туристичні) мапи, які відомі OpenStreetMap"
   },
   "icon": "./assets/themes/maps/logo.svg",
   "defaultBackgroundId": "protomaps.white",

@@ -28,6 +28,7 @@ Available languages:
  - eu
  - pl
  - hu
+ - uk
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

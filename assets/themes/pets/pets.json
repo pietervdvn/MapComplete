@@ -26,7 +26,8 @@
     "es": "En este mapa, encontrarás varios lugares interesantes para tus mascotas: veterinarios, parques para perros, tiendas de mascotas, restaurantes aptos para perros, ...",
     "cs": "Na této mapě najdete různá zajímavá místa pro vaše domácí mazlíčky: veterináře, psí parky, obchody pro zvířata, restaurace pro psy, ...",
     "pl": "Na tej mapie znajdziesz różne ciekawe miejsca dla swoich zwierząt: weterynarze, wybiegi dla psów, sklepy zoologiczne, restauracje przyjazne psom, ...",
-    "ru": "На этой карте вы найдете различные интересные места для ваших питомцев: ветеринарные клиники, парки для собак, зоомагазины, рестораны для собак, ..."
+    "ru": "На этой карте вы найдете различные интересные места для ваших питомцев: ветеринарные клиники, парки для собак, зоомагазины, рестораны для собак, ...",
+    "uk": "На цій карті ви знайдете різні цікаві місця для ваших домашніх улюбленців: ветеринари, парки для собак, зоомагазини, ресторани, дружні до собак, ..."
   },
   "icon": "./assets/layers/dogpark/dog-park.svg",
   "startZoom": 10,

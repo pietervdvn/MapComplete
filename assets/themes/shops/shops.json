@@ -32,7 +32,8 @@
     "da": "På dette kort kan man markere grundlæggende informationer om butikker, tilføje åbningstider og telefonnumre",
     "ca": "A aquest mapa, es pot marcar informació bàsica sobre botigues, afegir horaris i números de telèfon",
     "cs": "Na této mapě můžete označit základní informace o obchodech, přidat otevírací dobu a telefonní čísla",
-    "pl": "Na mapie tej można zaznaczyć podstawowe informacje o sklepach, dodać godziny otwarcia oraz numery telefonów"
+    "pl": "Na mapie tej można zaznaczyć podstawowe informacje o sklepach, dodać godziny otwarcia oraz numery telefonów",
+    "uk": "На цій карті можна позначити основну інформацію про магазини, додати години роботи та номери телефонів"
   },
   "shortDescription": {
     "en": "An editable map with basic shop information",
@@ -48,7 +49,8 @@
     "cs": "Upravitelná mapa se základními informacemi o obchodech",
     "zh_Hant": "有基本商家資訊的可編輯性的地圖",
     "pl": "Edytowalna mapa z podstawowymi informacjami o sklepach",
-    "ru": "Редактируемая карта с основной информацией о магазине"
+    "ru": "Редактируемая карта с основной информацией о магазине",
+    "uk": "Редагована карта з основною інформацією про магазин"
   },
   "icon": "./assets/themes/shops/shop.svg",
   "layers": [

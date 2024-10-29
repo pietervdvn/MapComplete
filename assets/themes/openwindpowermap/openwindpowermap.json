@@ -16,7 +16,8 @@
     "es": "Generadores de energía eólica",
     "cs": "Větrné elektrárny",
     "pl": "Generatory wiatrowe",
-    "da": "Vindmøller"
+    "da": "Vindmøller",
+    "uk": "Вітрогенератори"
   },
   "description": {
     "en": "A map for showing and editing wind turbines.",

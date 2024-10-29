@@ -17,7 +17,8 @@
     "ca": "Aparcament",
     "cs": "Parkoviště",
     "eu": "Aparkalekua",
-    "pl": "Parking"
+    "pl": "Parking",
+    "uk": "Парковки"
   },
   "description": {
     "nl": "Deze kaart toont verschillende parkeerplekken",
@@ -49,7 +50,8 @@
     "da": "Dette kort viser forskellige parkeringspladser",
     "ca": "Aquest mapa mostra diferents punts d'aparcament",
     "cs": "Na této mapě jsou vyznačena různá parkovací místa",
-    "pl": "Ta mapa pokazuje różne miejsca parkingowe"
+    "pl": "Ta mapa pokazuje różne miejsca parkingowe",
+    "uk": "На цій карті показані різні місця для паркування"
   },
   "icon": "./assets/themes/parkings/parkings.svg",
   "startZoom": 12,

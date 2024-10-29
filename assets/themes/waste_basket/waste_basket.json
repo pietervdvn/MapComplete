@@ -31,7 +31,8 @@
     "ca": "A aquest mapa trobaràs les papereres a prop teua. Si falta una paperera al mapa pots afegir-la tu mateix",
     "es": "En este mapa, encontrarás las papeleras cercanas a ti. Si falta alguna en el mapa, puedes añadirla tu mismo.",
     "cs": "Na této mapě najdete koše na odpadky ve vašem okolí. Pokud na této mapě odpadkový koš chybí, můžete jej přidat sami.",
-    "pl": "Na tej mapie znajdziesz kosze na śmieci w twojej okolicy. Jeśli brakuje kosza, możesz go dodać"
+    "pl": "Na tej mapie znajdziesz kosze na śmieci w twojej okolicy. Jeśli brakuje kosza, możesz go dodać",
+    "uk": "На цій мапі ви знайдете найближчі до вас контейнери для сміття. Якщо на мапі відсутній кошик для сміття, ви можете додати його самостійно."
   },
   "shortDescription": {
     "en": "A map with waste baskets",

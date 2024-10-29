@@ -24,7 +24,8 @@
   "title": {
     "render": {
       "en": "Bicycle counter",
-      "de": "Fahrradzählstelle"
+      "de": "Fahrradzählstelle",
+      "cs": "Počítadlo jízdních kol"
     }
   },
   "tagRenderings": [
@@ -89,19 +90,22 @@
       "id": "start_date",
       "question": {
         "en": "When did this counter start counting?",
-        "de": "Wann wurde die Zählstelle aufgestellt?"
+        "de": "Wann wurde die Zählstelle aufgestellt?",
+        "cs": "Kdy toto počítadlo začalo počítat?"
       },
       "freeform": {
         "key": "start_date",
         "type": "date",
         "placeholder": {
           "en": "Start date of the counter",
-          "de": "Aufstelldatum der Zählstelle"
+          "de": "Aufstelldatum der Zählstelle",
+          "cs": "Datum spuštění počítadla"
         }
       },
       "render": {
         "en": "This counter started counting on {start_date}",
-        "de": "Die Zählstelle wurde am {start_date} aufgestellt"
+        "de": "Die Zählstelle wurde am {start_date} aufgestellt",
+        "cs": "Toto počítadlo se začalo počítat dne {start_date}"
       }
     },
     {
@@ -151,7 +155,8 @@
       },
       "render": {
         "en": "Reference number of the counter: {ref}",
-        "de": "Kennziffer der Zählstelle: {ref}"
+        "de": "Kennziffer der Zählstelle: {ref}",
+        "cs": "Referenční číslo počítadla: {ref}"
       },
       "mappings": [
         {
@@ -168,19 +173,22 @@
       "id": "website",
       "question": {
         "en": "Is there a website for this bicycle counter?",
-        "de": "Gibt es eine Website für die Fahrradzählstelle?"
+        "de": "Gibt es eine Website für die Fahrradzählstelle?",
+        "cs": "Existuje webová stránka tohoto počítadla jízdních kol?"
       },
       "freeform": {
         "key": "website",
         "type": "url",
         "placeholder": {
           "en": "Website of the counter",
-          "de": "Website der Zählstelle"
+          "de": "Website der Zählstelle",
+          "cs": "Webové stránky počítadla"
         }
       },
       "render": {
         "en": "Website of the counter: <a href='{website}'>{website}</a>",
-        "de": "Website der Zählstelle: <a href='{website}'>{website}</a>"
+        "de": "Website der Zählstelle: <a href='{website}'>{website}</a>",
+        "cs": "Webové stránky počítadla: <a href='{website}'>{web}</a>"
       }
     }
   ],

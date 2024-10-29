@@ -33,7 +33,8 @@
     "da": "Et kort over offentlige toiletter",
     "ca": "Mapa de lavabos públics",
     "es": "Mapa de aseos públicos",
-    "cs": "Mapa veřejných toalet"
+    "cs": "Mapa veřejných toalet",
+    "uk": "Карта громадських туалетів"
   },
   "icon": "./assets/themes/toilets/toilets.svg",
   "startZoom": 12,

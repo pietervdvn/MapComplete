@@ -24,7 +24,8 @@
     "ca": "A aquest mapa es mostren els pasos de vianants pintats amb l'arc de Sant Martí i poden afegir-se fàcilment",
     "es": "En este mapa se muestran los pasos de peatones pintados con el arco iris, que pueden añadirse fácilmente",
     "cs": "Na této mapě si můžete zobrazit a snadno přidat přechody pro chodce s duhovými malbami",
-    "pl": "Na tej mapie pokazane są tęczowo pomalowane przejścia dla pieszych, które można łatwo dodać"
+    "pl": "Na tej mapie pokazane są tęczowo pomalowane przejścia dla pieszych, które można łatwo dodać",
+    "uk": "На цій карті пішохідні переходи позначені райдужним кольором і можуть бути легко додані"
   },
   "icon": "./assets/themes/rainbow_crossings/logo.svg",
   "startZoom": 16,

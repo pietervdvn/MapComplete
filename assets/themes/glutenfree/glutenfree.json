@@ -8,7 +8,8 @@
     "ca": "Sense gluten",
     "cs": "Bez lepku",
     "ru": "Без глютена",
-    "hu": "Gluténmentes helyek"
+    "hu": "Gluténmentes helyek",
+    "uk": "Без глютену"
   },
   "description": {
     "en": "A crowdsourced map with glutenfree items",
@@ -16,7 +17,8 @@
     "it": "Una mappa in crowdsourcing per articoli senza glutine",
     "es": "Un menú compartido con productos sin gluten",
     "ca": "Un mapa col·lectiu amb articles sense gluten",
-    "cs": "Mapa s bezlepkovými položkami vytvořená pomocí crowdsourcingu"
+    "cs": "Mapa s bezlepkovými položkami vytvořená pomocí crowdsourcingu",
+    "uk": "Краудсорсингова карта з безглютеновими продуктами"
   },
   "icon": "./assets/layers/questions/glutenfree.svg",
   "layers": [

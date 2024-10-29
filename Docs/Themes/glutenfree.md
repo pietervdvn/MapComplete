@@ -25,6 +25,7 @@ Available languages:
  - cs
  - ru
  - hu
+ - uk
 
 # Table of contents
 
