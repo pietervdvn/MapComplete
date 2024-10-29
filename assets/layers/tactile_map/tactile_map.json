@@ -33,7 +33,11 @@
     {
       "marker": [
         {
-          "icon": "./assets/layers/map/map.svg"
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/themes/maps/logo.svg"
         }
       ],
       "location": [
@@ -81,9 +85,6 @@
     },
     {
       "id": "braille_languages",
-      "question": {
-        "en": "In which languages is the braille text on this tactile map?"
-      },
       "condition": "braille=yes",
       "render": {
         "special": {
@@ -123,9 +124,6 @@
     },
     {
       "id": "embossed_letters_languages",
-      "question": {
-        "en": "In which languages are the embossed letters on this tactile map?"
-      },
       "condition": "embossed_letters=yes",
       "render": {
         "special": {
@@ -142,6 +140,7 @@
           }
         }
       }
-    }
+    },
+    "website"
   ]
 }
