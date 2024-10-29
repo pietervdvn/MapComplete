@@ -97,8 +97,8 @@
         "support=wall_mounted"
       ],
       "title": {
-        "en": "a wall-mounted clock",
-        "nl": "een klok aan een muur",
+        "en": "a wall-mounted clock, mounted using a support perpendicular to the wall",
+        "nl": "een klok aan een muur, bevestigd met een steun loodrecht op de muur",
         "de": "eine an der Wand montierte Uhr",
         "ca": "un rellotge muntat en un paret",
         "fr": "une horloge fixée au mur",
@@ -113,6 +113,23 @@
         "fr": "Une horloge publique fixée sur un mur",
         "pl": "Publicznie widoczny zegar zamontowany na ścianie",
         "cs": "Veřejně viditelné hodiny umístěné na stěně"
+      },
+      "snapToLayer": [
+        "walls_and_buildings"
+      ]
+    },
+    {
+      "tags": [
+        "amenity=clock",
+        "support=wall"
+      ],
+      "title": {
+        "en": "a wall-mounted clock, mounted directly on a wall",
+        "nl": "een klok aan een muur, rechtstreeks bevestigd aan een muur"
+      },
+      "description": {
+        "en": "A publicly visible clock mounted directly on a wall",
+        "nl": "Een publiekelijk zichtbare klok rechtstreeks bevestigd aan een muur"
       },
       "snapToLayer": [
         "walls_and_buildings"
@@ -148,13 +165,20 @@
         {
           "if": "support=wall_mounted",
           "then": {
-            "en": "This clock is mounted on a wall",
-            "nl": "Deze klok is bevestigd aan een muur",
+            "en": "This clock is mounted on a wall, usually through a support perpendicular to the wall",
+            "nl": "Deze klok is bevestigd aan een muur, meestal met een steun loodrecht op de muur",
             "de": "Diese Uhr ist an einer Wand montiert",
             "ca": "Aquest rellotge està muntat en una paret",
             "fr": "Cette horloge est fixée sur un mur",
             "pl": "Ten zegar jest zamontowany na ścianie",
             "cs": "Tyto hodiny jsou namontovány na stěně"
+          }
+        },
+        {
+          "if": "support=wall",
+          "then": {
+            "en": "This clock is mounted directly on a wall",
+            "nl": "Deze klok is rechtstreeks aan een muur bevestigd"
           }
         },
         {
@@ -246,6 +270,30 @@
       ]
     },
     {
+      "builtin": "indoor",
+      "override": {
+        "question": {
+          "en": "Is this clock indoors?",
+          "nl": "Is deze klok binnen?"
+        },
+        "mappings": [
+          {
+            "then": {
+              "en": "This clock is indoors",
+              "nl": "Deze klok is binnen"
+            }
+          },
+          {
+            "if": "indoor=no",
+            "then": {
+              "en": "This clock is outdoors",
+              "nl": "Deze klok is buiten"
+            }
+          }
+        ]
+      }
+    },
+    {
       "id": "visibility",
       "question": {
         "en": "How visible is this clock?",
@@ -293,7 +341,8 @@
             "cs": "Tyto hodiny jsou viditelné ze vzdálenosti větší než 20 metrů (např. kostelní nebo nádražní hodiny)"
           }
         }
-      ]
+      ],
+      "condition": "indoor!=yes"
     },
     {
       "id": "date",
