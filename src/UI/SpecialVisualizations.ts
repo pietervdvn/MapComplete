@@ -101,6 +101,7 @@ import ClearCaches from "./Popup/ClearCaches.svelte"
 import GroupedView from "./Popup/GroupedView.svelte"
 import { QuestionableTagRenderingConfigJson } from "../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
 import NoteCommentElement from "./Popup/Notes/NoteCommentElement.svelte"
+import FediverseLink from "./Popup/FediverseLink.svelte"
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -1514,52 +1515,14 @@ export default class SpecialVisualizations {
 
                 constr(
                     state: SpecialVisualizationState,
-                    tagSource: UIEventSource<Record<string, string>>,
+                    tags: UIEventSource<Record<string, string>>,
                     argument: string[],
                     feature: Feature,
                     layer: LayerConfig
                 ): BaseUIElement {
                     const key = argument[0]
-                    const validator = new FediverseValidator()
-                    return new VariableUiElement(
-                        tagSource
-                            .map((tags) => tags[key])
-                            .map((fediAccount) => {
-                                fediAccount = validator.reformat(fediAccount)
-                                const [_, username, host] = fediAccount.match(
-                                    FediverseValidator.usernameAtServer
-                                )
+                    return new SvelteUIElement(FediverseLink, {key, tags, state})
 
-                                const normalLink = new SvelteUIElement(Link, {
-                                    text: fediAccount,
-                                    href: "https://" + host + "/@" + username,
-                                    newTab: true,
-                                })
-
-                                const loggedInContributorMastodon =
-                                    state.userRelatedState?.preferencesAsTags?.data?.[
-                                        "_mastodon_link"
-                                    ]
-                                console.log(
-                                    "LoggedinContributorMastodon",
-                                    loggedInContributorMastodon
-                                )
-                                if (!loggedInContributorMastodon) {
-                                    return normalLink
-                                }
-                                const homeUrl = new URL(loggedInContributorMastodon)
-                                const homeHost = homeUrl.protocol + "//" + homeUrl.hostname
-
-                                return new Combine([
-                                    normalLink,
-                                    new SvelteUIElement(Link, {
-                                        href: homeHost + "/" + fediAccount,
-                                        text: Translations.t.validation.fediverse.onYourServer,
-                                        newTab: true,
-                                    }).SetClass("button"),
-                                ])
-                            })
-                    )
                 },
             },
             {

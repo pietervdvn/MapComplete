@@ -13,26 +13,41 @@ export default class FediverseValidator extends Validator {
     }
 
     /**
+     * FediverseValidator.extractServer(undefined) // => undefined
+     * FediverseValidator.extractServer("@pietervdvn@en.osm.town") // => {server: "en.osm.town", username: "pietervdvn"}
+     */
+    public static extractServer(handle: string): { server: string; username: string } {
+        const match = handle?.match(this.usernameAtServer)
+        if(!match){
+            return undefined
+        }
+        const [_, username, server] = match
+        return {username, server}
+    }
+
+    /**
      * Returns an `@username@host`
      * @param s
+     * new FediverseValidator().reformat("https://hsnl.social/@pixelbar") // => "@pixelbar@hsnl.social"
      */
     reformat(s: string): string {
         s = s.trim()
+        try {
+            const url = new URL(s)
+            const path = url.pathname
+            if (path.match(/^\/@?\w+$/)) {
+                return `${path.substring(1)}@${url.hostname}`;
+            }
+        } catch (e) {
+            // Nothing to do here
+        }
         if (!s.startsWith("@")) {
             s = "@" + s
         }
         if (s.match(FediverseValidator.usernameAtServer)) {
             return s
         }
-        try {
-            const url = new URL(s)
-            const path = url.pathname
-            if (path.match(/^\/\w+$/)) {
-                return `@${path.substring(1)}@${url.hostname}`
-            }
-        } catch (e) {
-            // Nothing to do here
-        }
+
         return undefined
     }
     getFeedback(s: string): Translation | undefined {
