@@ -16,6 +16,7 @@
   import Camera from "@babeard/svelte-heroicons/solid/Camera"
   import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
   import NoteCommentElement from "../Popup/Notes/NoteCommentElement"
+  import type { Feature } from "geojson"
 
   export let state: SpecialVisualizationState
 
@@ -23,6 +24,7 @@
   export let targetKey: string = undefined
   export let layer: LayerConfig
   export let noBlur: boolean = false
+  export let feature: Feature = undefined
   /**
    * Image to show in the button
    * NOT the image to upload!
@@ -54,7 +56,8 @@
             state.osmConnection.userDetails.data?.name ?? "Anonymous",
             file,
             "image",
-            noBlur
+            noBlur,
+            feature
           )
           if (!uploadResult) {
             return
