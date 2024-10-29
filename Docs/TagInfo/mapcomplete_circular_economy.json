@@ -21,19 +21,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Bookcases allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bookcases allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Bookcases allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Bookcases allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bookcases allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Bookcases allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bookcases allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Bookcases allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bookcases allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "name",
@@ -143,19 +147,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Bicycle library allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bicycle library allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Bicycle library allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Bicycle library allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bicycle library allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Bicycle library allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bicycle library allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Bicycle library allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bicycle library allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "name",
@@ -252,19 +260,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Bicycle pump and repair allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bicycle pump and repair allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Bicycle pump and repair allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Bicycle pump and repair allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bicycle pump and repair allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Bicycle pump and repair allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bicycle pump and repair allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Bicycle pump and repair allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bicycle pump and repair allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "service:bicycle:tools",
@@ -461,19 +473,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Tool libraries allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Tool libraries allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Tool libraries allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Tool libraries allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Tool libraries allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Tool libraries allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Tool libraries allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Tool libraries allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Tool libraries allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "phone",
@@ -580,19 +596,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Repair cafés and assisted repair workshops allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Repair cafés and assisted repair workshops allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Repair cafés and assisted repair workshops allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Repair cafés and assisted repair workshops allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Repair cafés and assisted repair workshops allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Repair cafés and assisted repair workshops allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Repair cafés and assisted repair workshops allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Repair cafés and assisted repair workshops allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Repair cafés and assisted repair workshops allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "name",
@@ -712,19 +732,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Second hand shops allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Second hand shops allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Second hand shops allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Second hand shops allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Second hand shops allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Second hand shops allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Second hand shops allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Second hand shops allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Second hand shops allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "name",

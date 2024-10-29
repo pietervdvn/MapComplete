@@ -66,12 +66,14 @@ function generateLayerUsage(layer: LayerConfig, layout: ThemeConfig): any[] {
             const usesImageUpload = (tr.render?.txt?.indexOf("image_upload") ?? -2) > 0
 
             if (usesImageCarousel || usesImageUpload) {
-                const descrNoUpload = `The layer '${layer.name.txt} shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary`
-                const descrUpload = `The layer '${layer.name.txt} allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary`
+                const descrNoUpload = `The layer '${layer.name.txt} shows images based on the keys image, image:0, image:1,..., panoramax, panoramax:0, panoramx:1, ... ,  wikidata, wikipedia, wikimedia_commons and mapillary`
+                const descrUpload = `The layer '${layer.name.txt} allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary`
 
                 const descr = (usesImageUpload ? descrUpload : descrNoUpload) + condition
 
                 result.push(generateTagOverview({ k: "image", v: undefined }, descr))
+                result.push(generateTagOverview({ k: "panoramax", v: undefined }, descr))
+
                 result.push(generateTagOverview({ k: "mapillary", v: undefined }, descr))
                 result.push(generateTagOverview({ k: "wikidata", v: undefined }, descr))
                 result.push(generateTagOverview({ k: "wikipedia", v: undefined }, descr))
