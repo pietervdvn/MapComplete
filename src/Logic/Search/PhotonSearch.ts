@@ -25,7 +25,12 @@ export default class PhotonSearch implements GeocodingProvider, ReverseGeocoding
     private readonly suggestionLimit: number = 5
     private readonly searchLimit: number = 1
 
-    constructor(ignoreBounds: boolean = false, suggestionLimit:number = 5, searchLimit:number = 1, endpoint?: string) {
+    constructor(
+        ignoreBounds: boolean = false,
+        suggestionLimit: number = 5,
+        searchLimit: number = 1,
+        endpoint?: string
+    ) {
         this.ignoreBounds = ignoreBounds
         this.suggestionLimit = suggestionLimit
         this.searchLimit = searchLimit

@@ -609,7 +609,8 @@
         "it": "Qual è il numero di telefono del gestore del campetto?",
         "de": "Wie lautet die Telefonnummer des Spielplatzbetreibers?",
         "ca": "Quin és el telèfon del mantenidor del parc infantil?",
-        "cs": "Jaké je telefonní číslo na správce hřiště?"
+        "cs": "Jaké je telefonní číslo na správce hřiště?",
+        "uk": "Який номер телефону доглядача дитячого майданчика?"
       },
       "render": {
         "nl": "De bevoegde dienst kan getelefoneerd worden via <a href='tel:{phone}'>{phone}</a>",

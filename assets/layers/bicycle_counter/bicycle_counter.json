@@ -81,7 +81,8 @@
       },
       "render": {
         "en": "Name of the counted location: {name}",
-        "de": "Name des Zählorts: {name}"
+        "de": "Name des Zählorts: {name}",
+        "cs": "Název započítávaného místa: {name}"
       }
     },
     {
@@ -133,14 +134,16 @@
       "id": "ref",
       "question": {
         "en": "What is the reference number of this counter?",
-        "de": "Wie lautet die Kennziffer der Zählstelle?"
+        "de": "Wie lautet die Kennziffer der Zählstelle?",
+        "cs": "Jaké je referenční číslo tohoto počítadla?"
       },
       "freeform": {
         "key": "ref",
         "type": "string",
         "placeholder": {
           "en": "Reference number of the counter",
-          "de": "Kennziffer der Zählstelle"
+          "de": "Kennziffer der Zählstelle",
+          "cs": "Referenční číslo počítadla"
         },
         "addExtraTags": [
           "noref="
@@ -155,7 +158,8 @@
           "if": "noref=yes",
           "then": {
             "en": "This counter has no reference number",
-            "de": "Die Zählstelle hat keine Kennziffer"
+            "de": "Die Zählstelle hat keine Kennziffer",
+            "cs": "Toto počítadlo nemá referenční číslo"
           }
         }
       ]

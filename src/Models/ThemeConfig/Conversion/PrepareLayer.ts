@@ -33,6 +33,8 @@ import LineRenderingConfigJson from "../Json/LineRenderingConfigJson"
 import { ConversionContext } from "./ConversionContext"
 import { ExpandRewrite } from "./ExpandRewrite"
 import { TagUtils } from "../../../Logic/Tags/TagUtils"
+import { Tag } from "../../../Logic/Tags/Tag"
+import { RegexTag } from "../../../Logic/Tags/RegexTag"
 
 class AddFiltersFromTagRenderings extends DesugaringStep<LayerConfigJson> {
     constructor() {
@@ -138,16 +140,22 @@ class ExpandFilter extends DesugaringStep<LayerConfigJson> {
                 "Found a matching tagRendering to base a filter on, but this tagRendering does not contain any mappings"
             )
         }
-        const options = (<QuestionableTagRenderingConfigJson>tr).mappings.map((mapping) => {
+        const qtr = (<QuestionableTagRenderingConfigJson>tr)
+        const options = qtr.mappings.map((mapping) => {
             let icon: string = mapping.icon?.["path"] ?? mapping.icon
             let emoji: string = undefined
             if (Utils.isEmoji(icon)) {
                 emoji = icon
                 icon = undefined
             }
+            let osmTags = TagUtils.Tag( mapping.if)
+            if(qtr.multiAnswer && osmTags instanceof Tag){
+                osmTags = new RegexTag(osmTags.key, new RegExp("^(.+;)?"+osmTags.value+"(;.+)$","is"))
+            }
+
             return <FilterConfigOptionJson>{
                 question: mapping.then,
-                osmTags: mapping.if,
+                osmTags: osmTags.asJson(),
                 searchTerms: mapping.searchTerms,
                 icon,
                 emoji,

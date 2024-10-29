@@ -833,7 +833,8 @@
           "then": {
             "en": "This artwork does not serve as a memorial",
             "de": "Dieses Kunstwerk dient nicht als Denkmal",
-            "uk": "Ця робота не є меморіалом"
+            "uk": "Ця робота не є меморіалом",
+            "cs": "Toto umělecké dílo neslouží jako památník"
           }
         }
       ]

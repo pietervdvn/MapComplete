@@ -97,6 +97,7 @@
         "title": "Ławki"
     },
     "bicycle_parkings": {
+        "description": "Mapa pokazująca wszystkie typy parkingów dla rowerów",
         "title": "Parkingi dla rowerów"
     },
     "bicycle_rental": {
@@ -153,6 +154,17 @@
         "description": "Na tej otwartej mapie można znaleźć i zaznaczyć informacje o stacjach ładowania",
         "shortDescription": "Światowa mapa stacji ładowania",
         "title": "Stacje ładowania"
+    },
+    "circular_economy": {
+        "description": "Różne przedmioty, które pomagają ludziom się dzielić, ponownie używać lub poddawać recyklingowi.",
+        "layers": {
+            "5": {
+                "override": {
+                    "=name": "Sklepy second-hand"
+                }
+            }
+        },
+        "title": "Gospodarka o obiegu zamkniętym"
     },
     "climbing": {
         "description": "Na tej mapie znajdziesz różne możliwości wspinaczki, takie jak sale wspinaczkowe, hale do boulderingu i skały w przyrodzie.",
@@ -276,6 +288,11 @@
             },
             "1": {
                 "name": "węzły",
+                "presets": {
+                    "0": {
+                        "title": "węzeł rowerowy"
+                    }
+                },
                 "tagRenderings": {
                     "node-expected_rcn_route_relations": {
                         "freeform": {
@@ -287,7 +304,9 @@
                     "node-rxn_ref": {
                         "freeform": {
                             "placeholder": "np. 1"
-                        }
+                        },
+                        "question": "Jaki jest numer referencyjny tego węzła rowerowego?",
+                        "render": "Ten węzeł rowerowy ma numer referencyjny {rcn_ref}"
                     },
                     "node-survey:date": {
                         "override": {

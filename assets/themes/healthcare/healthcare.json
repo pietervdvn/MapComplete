@@ -16,7 +16,8 @@
     "pl": "Służba zdrowia",
     "zh_Hant": "醫療保健",
     "it": "Assistenza sanitaria",
-    "hu": "Egészségügy"
+    "hu": "Egészségügy",
+    "uk": "Охорона здоров'я"
   },
   "description": {
     "en": "On this map, various healthcare related items are shown",
@@ -28,7 +29,8 @@
     "cs": "Na této mapě jsou zobrazeny různé položky související se zdravotní péčí",
     "es": "En este mapa se muestran varios elementos relacionados con la salud",
     "pl": "Na tej mapie pokazane są różne elementy związane z opieką zdrowotną",
-    "it": "Su questa mappa sono indicati vari elementi relativi all'assistenza sanitaria"
+    "it": "Su questa mappa sono indicati vari elementi relativi all'assistenza sanitaria",
+    "uk": "На цій карті показані різні об'єкти, пов'язані з охороною здоров'я"
   },
   "icon": "./assets/layers/doctors/doctors.svg",
   "startZoom": 16,

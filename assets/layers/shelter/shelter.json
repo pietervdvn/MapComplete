@@ -55,7 +55,8 @@
             "en": "This is a shelter at a public transport stop.",
             "de": "Das ist ein Unterstand an einer Haltestelle für öffentliche Verkehrsmittel.",
             "nl": "Dit is een schuilplaats bij een halte voor openbaar vervoer.",
-            "cs": "Jedná se o přístřešek u zastávky MHD."
+            "cs": "Jedná se o přístřešek u zastávky MHD.",
+            "uk": "Це притулок на зупинці громадського транспорту."
           }
         },
         {
@@ -63,7 +64,8 @@
           "then": {
             "en": "This is a shelter protecting from rain at a picnic site.",
             "de": "Dies ist ein Unterstand zum Schutz vor Regen auf einem Picknickplatz.",
-            "cs": "Jedná se o přístřešek chránící před deštěm na piknikovém místě."
+            "cs": "Jedná se o přístřešek chránící před deštěm na piknikovém místě.",
+            "uk": "Це накриття, що захищає від дощу на місці для пікніка."
           }
         },
         {
@@ -71,7 +73,8 @@
           "then": {
             "en": "This is a gazebo.",
             "de": "Das ist ein offener Gartenpavillon.",
-            "cs": "Toto je altán."
+            "cs": "Toto je altán.",
+            "uk": "Це альтанка."
           }
         },
         {
@@ -80,7 +83,8 @@
             "en": "This is a small shelter, primarily intended for short breaks. Usually found in the mountains or alongside roads.",
             "de": "Dies ist ein kleiner Unterstand, der vor allem für kurze Pausen gedacht ist. Normalerweise findet man ihn in Bergen oder an Straßen.",
             "cs": "Jedná se o malý přístřešek, primárně určený pro krátké přestávky. Obvykle se vyskytuje v horách nebo podél silnic.",
-            "ca": "Es tracta d'un petit refugi, principalment destinat a descansos curts. Normalment es troba a les muntanyes o al costat de les carreteres."
+            "ca": "Es tracta d'un petit refugi, principalment destinat a descansos curts. Normalment es troba a les muntanyes o al costat de les carreteres.",
+            "uk": "Це невеликий притулок, призначений насамперед для коротких перерв. Зазвичай знаходиться в горах або вздовж доріг."
           }
         },
         {
@@ -89,7 +93,8 @@
             "en": "This is a shed with 3 walls, primarily intended for camping.",
             "de": "Es handelt sich um einen an 3 Seiten geschlossenen Unterstand, der in erster Linie zum Campen gedacht ist.",
             "ca": "Es tracta d'un cobert amb 3 parets, destinat principalment a l'acampada.",
-            "cs": "Jedná se o přístřešek se 3 stěnami, primárně určený pro kempování."
+            "cs": "Jedná se o přístřešek se 3 stěnami, primárně určený pro kempování.",
+            "uk": "Це сарай з 3-ма стінами, в першу чергу призначений для кемпінгу."
           }
         },
         {
@@ -97,7 +102,8 @@
           "then": {
             "en": "This is a pavilion",
             "de": "Das ist ein Pavillon",
-            "cs": "Toto je pavilon"
+            "cs": "Toto je pavilon",
+            "uk": "Це павільйон"
           }
         },
         {
@@ -110,12 +116,14 @@
         "de": "Um welche Art von Unterstand handelt es sich?",
         "nl": "Wat voor schuilplaats is dit?",
         "ca": "Quin tipus de refugi és aquest?",
-        "cs": "Co je to za přístřešek?"
+        "cs": "Co je to za přístřešek?",
+        "uk": "Що це за притулок?"
       },
       "render": {
         "en": "Shelter type: {shelter_type}",
         "de": "Art des Unterstands: {shelter_type}",
-        "cs": "Typ přístřešku: {shelter_type}"
+        "cs": "Typ přístřešku: {shelter_type}",
+        "uk": "Тип притулку: {shelter_type}"
       },
       "freeform": {
         "key": "shelter_type",

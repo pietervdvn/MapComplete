@@ -300,14 +300,19 @@ export class Changes {
         newObjects: OsmObject[]
         modifiedObjects: OsmObject[]
         deletedObjects: OsmObject[]
-    }{
-        return Changes.createChangesetObjectsStatic(changes, downloadedOsmObjects, ignoreNoCreate, this.previouslyCreated)
+    } {
+        return Changes.createChangesetObjectsStatic(
+            changes,
+            downloadedOsmObjects,
+            ignoreNoCreate,
+            this.previouslyCreated
+        )
     }
     public static createChangesetObjectsStatic(
         changes: ChangeDescription[],
         downloadedOsmObjects: OsmObject[],
         ignoreNoCreate: boolean = false,
-        previouslyCreated : OsmObject[]
+        previouslyCreated: OsmObject[]
     ): {
         newObjects: OsmObject[]
         modifiedObjects: OsmObject[]

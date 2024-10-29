@@ -15,7 +15,8 @@
     "zh_Hant": "廢棄物",
     "eu": "Hondakinak eta birziklapena",
     "pl": "Odpady",
-    "hu": "Hulladék"
+    "hu": "Hulladék",
+    "uk": "Відходи"
   },
   "description": {
     "en": "Map showing waste baskets and recycling facilities.",

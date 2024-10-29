@@ -828,7 +828,7 @@
             "it": "Un fasciatoio è nei servizi igienici femminili",
             "da": "Puslebordet er på toilettet til kvinder. ",
             "ca": "Al lavabo per a dones hi ha un canviador",
-            "cs": "Přebalovací pult je na dámské toaletě. "
+            "cs": "Přebalovací pult je na dámské toaletě"
           },
           "if": "changing_table:location=female_toilet"
         },
@@ -840,7 +840,7 @@
             "nl": "Er bevindt zich een luiertafel in de herentoiletten ",
             "it": "Un fasciatoio è nei servizi igienici maschili",
             "ca": "Al lavabo per a homes hi ha un canviador",
-            "cs": "Přebalovací pult je na pánské toaletě. "
+            "cs": "Přebalovací pult je na pánské toaletě"
           },
           "if": "changing_table:location=male_toilet"
         },
@@ -854,7 +854,7 @@
             "it": "Un fasciatoio è nei servizi igienici per persone in sedia a rotelle",
             "da": "Puslebordet er på toilettet for kørestolsbrugere. ",
             "ca": "Al lavabo per a usuaris de cadira de rodes hi ha un canviador",
-            "cs": "Přebalovací pult je na toaletě pro vozíčkáře. "
+            "cs": "Přebalovací pult je na toaletě pro vozíčkáře"
           }
         },
         {
@@ -868,7 +868,7 @@
             "es": "El cambiador está en una habitación dedicada",
             "da": "Vuggestuen står i et særligt rum. ",
             "ca": "Hi ha un canviador en una habitació dedicada",
-            "cs": "Přebalovací pult je ve vyhrazené místnosti. "
+            "cs": "Přebalovací pult je ve vyhrazené místnosti"
           }
         }
       ],

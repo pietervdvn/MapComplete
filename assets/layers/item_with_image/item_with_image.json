@@ -31,7 +31,8 @@
         "panoramax:7~*",
         "panoramax:8~*",
         "panoramax:9~*",
-        "panoramax:10~*"
+        "panoramax:10~*",
+        "mapillary~*"
       ]
     }
   },

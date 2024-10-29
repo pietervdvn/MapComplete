@@ -17,7 +17,8 @@
     "da": "Legepladser",
     "cs": "Dětská hřiště",
     "eu": "Jolas parkeak",
-    "pl": "Place zabaw"
+    "pl": "Place zabaw",
+    "uk": "Дитячі майданчики"
   },
   "description": {
     "nl": "Op deze kaart vind je speeltuinen en kan je zelf meer informatie en foto's toevoegen",
@@ -52,7 +53,8 @@
     "es": "Un mapa con parques infantiles",
     "da": "Et kort med legepladser",
     "cs": "Mapa dětských hřišť",
-    "pl": "Mapa z placami zabaw"
+    "pl": "Mapa z placami zabaw",
+    "uk": "Карта з дитячими майданчиками"
   },
   "icon": "./assets/themes/playgrounds/playground.svg",
   "startZoom": 13,

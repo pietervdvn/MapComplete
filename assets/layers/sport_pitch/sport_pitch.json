@@ -656,7 +656,8 @@
         "de": "Wie lautet die Telefonnummer des Betreibers?",
         "es": "¿Cual es el número de teléfono de la operadora?",
         "ca": "Quin és el telèfon de l'operadora?",
-        "cs": "Jaké je telefonní číslo provozovatele?"
+        "cs": "Jaké je telefonní číslo provozovatele?",
+        "uk": "Який номер телефону оператора?"
       },
       "freeform": {
         "key": "phone",

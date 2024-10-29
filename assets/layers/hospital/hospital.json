@@ -78,7 +78,8 @@
         "nl": "Dit ziekenhuis heet {name}",
         "ru": "Эта больница называется {name}",
         "cs": "Tato nemocnice se jmenuje {name}",
-        "pl": "Nazwa tego szpitala to {name}"
+        "pl": "Nazwa tego szpitala to {name}",
+        "uk": "Ця лікарня називається {name}"
       },
       "question": {
         "en": "What is the name of this hospital?",
@@ -87,7 +88,8 @@
         "ca": "Quin és el nom d'aquest hospital?",
         "ru": "Как называется эта больница?",
         "cs": "Jak se jmenuje tato nemocnice?",
-        "pl": "Jak nazywa się ten szpital?"
+        "pl": "Jak nazywa się ten szpital?",
+        "uk": "Як називається ця лікарня?"
       },
       "freeform": {
         "key": "name"
@@ -99,7 +101,8 @@
         "en": "Does this facility admit inpatients?",
         "de": "Nimmt die Einrichtung stationäre Patienten auf?",
         "ca": "Aquesta instal·lació admet hospitalitzacions?",
-        "cs": "Přijímá toto zařízení pacienty na lůžko?"
+        "cs": "Přijímá toto zařízení pacienty na lůžko?",
+        "uk": "Чи приймає цей заклад стаціонарних пацієнтів?"
       },
       "mappings": [
         {
@@ -108,7 +111,8 @@
             "en": "This is a clinic - patients can not stay overnight",
             "de": "Dies ist ein Medizinisches Versorgungszentrum - Patienten können nicht über Nacht bleiben",
             "ca": "Açò és una clínica: els pacients no poden passar la nit",
-            "cs": "Toto je klinika - pacienti nemohou zůstat přes noc"
+            "cs": "Toto je klinika - pacienti nemohou zůstat přes noc",
+            "uk": "Це клініка - пацієнти не можуть залишатися на ніч"
           }
         },
         {
@@ -117,7 +121,8 @@
             "en": "This is a hospital - patients can be admitted here for multiple days",
             "de": "Dies ist ein Krankenhaus - Patienten können hier für mehrere Tage aufgenommen werden",
             "ca": "Es tracta d'un hospital: els pacients poden estar ingressats aquí durant diversos dies",
-            "cs": "Jedná se o nemocnici – pacienti zde mohou být přijímáni na více dní"
+            "cs": "Jedná se o nemocnici – pacienti zde mohou být přijímáni na více dní",
+            "uk": "Це лікарня - пацієнти можуть перебувати тут кілька днів"
           }
         }
       ],

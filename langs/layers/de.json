@@ -1561,6 +1561,9 @@
                     "1": {
                         "then": "Radständer mit Seitenbügel"
                     },
+                    "10": {
+                        "then": "Ein Anlehnbügel mit der Möglichkeit, ein Schloss durch eine Öse zu verwenden. Das Sitzrohr kann durch den Ständer durch einen Anker gehalten werden"
+                    },
                     "2": {
                         "then": "Metallgestänge"
                     },

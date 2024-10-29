@@ -112,7 +112,8 @@
         "cs": "půjčovna jízdních kol",
         "ca": "una botiga de lloguer de bicicletes",
         "pt_BR": "uma loja de aluguel de bicicletas",
-        "pt": "uma loja de aluguel de bicicletas"
+        "pt": "uma loja de aluguel de bicicletas",
+        "uk": "пункт прокату велосипедів"
       },
       "tags": [
         "amenity=bicycle_rental",
@@ -128,7 +129,8 @@
         "cs": "Obsluhovaný obchod zaměřený na půjčování jízdních kol",
         "ca": "Una botiga atesa que es centra en el lloguer de bicicletes",
         "pt_BR": "Uma loja com atendimento pessoal que foca no aluguel de bicicletas",
-        "pt": "Uma loja com atendimento pessoal que foca no aluguel de bicicletas"
+        "pt": "Uma loja com atendimento pessoal que foca no aluguel de bicicletas",
+        "uk": "Магазин, який спеціалізується на прокаті велосипедів"
       }
     },
     {
@@ -184,7 +186,8 @@
             "cs": "Jedná se o obchod, jehož hlavním zaměřením je půjčování jízdních kol",
             "ca": "Es tracta d'una botiga que té com a objectiu principal el lloguer de bicicletes",
             "pt_BR": "Essa é uma loja cujo foco principal é o aluguel de bicicletas",
-            "pt": "Esta é uma loja cujo foco principal é o aluguel de bicicletas"
+            "pt": "Esta é uma loja cujo foco principal é o aluguel de bicicletas",
+            "uk": "Це магазин, основним напрямком якого є прокат велосипедів"
           }
         },
         {
@@ -219,7 +222,8 @@
             "cs": "Jedná se o prodejnu, která prodává nebo opravuje jízdní kola, ale také je pronajímá",
             "ca": "Es tracta d'una botiga que ven o repara bicicletes, però també lloga bicicletes",
             "pt_BR": "Essa é uma loja que vende ou conserta bicicletas, mas também aluga elas",
-            "pt": "Esta é uma loja que vende ou conserta bicicletas, mas também aluga elas"
+            "pt": "Esta é uma loja que vende ou conserta bicicletas, mas também aluga elas",
+            "uk": "Це магазин, який продає або ремонтує велосипеди, а також здає їх напрокат"
           }
         },
         {

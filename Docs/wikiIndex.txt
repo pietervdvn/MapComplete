@@ -4,7 +4,7 @@
 {{service_item
 |name= [https://mapcomplete.org/personal personal]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:es|en}}, {{#language:ca|en}}, {{#language:gl|en}}, {{#language:fr|en}}, {{#language:de|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:ru|en}}, {{#language:it|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:pl|en}}
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:es|en}}, {{#language:ca|en}}, {{#language:gl|en}}, {{#language:fr|en}}, {{#language:de|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:ru|en}}, {{#language:it|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:pl|en}}, {{#language:uk|en}}
 |descr= A MapComplete theme: Create a personal theme based on all the available layers of all themes
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -22,7 +22,7 @@
 {{service_item
 |name= [https://mapcomplete.org/etymology etymology]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:zh_Hant|en}}, {{#language:hu|en}}, {{#language:fr|en}}, {{#language:es|en}}, {{#language:ca|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:pl|en}}, {{#language:ru|en}}
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:zh_Hant|en}}, {{#language:hu|en}}, {{#language:fr|en}}, {{#language:es|en}}, {{#language:ca|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:pl|en}}, {{#language:ru|en}}, {{#language:uk|en}}
 |descr= A MapComplete theme: What is the origin of a toponym?
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -40,7 +40,7 @@
 {{service_item
 |name= [https://mapcomplete.org/food food]
 |region= Worldwide
-|lang= {{#language:nl|en}}, {{#language:en|en}}, {{#language:de|en}}, {{#language:es|en}}, {{#language:nb_NO|en}}, {{#language:fr|en}}, {{#language:da|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:pl|en}}, {{#language:it|en}}
+|lang= {{#language:nl|en}}, {{#language:en|en}}, {{#language:de|en}}, {{#language:es|en}}, {{#language:nb_NO|en}}, {{#language:fr|en}}, {{#language:da|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:pl|en}}, {{#language:it|en}}, {{#language:uk|en}}
 |descr= A MapComplete theme: Restaurants and fast food
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -67,7 +67,7 @@
 {{service_item
 |name= [https://mapcomplete.org/healthcare healthcare]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:ca|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:da|en}}, {{#language:nl|en}}, {{#language:cs|en}}, {{#language:es|en}}, {{#language:pl|en}}, {{#language:it|en}}
+|lang= {{#language:en|en}}, {{#language:ca|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:da|en}}, {{#language:nl|en}}, {{#language:cs|en}}, {{#language:es|en}}, {{#language:pl|en}}, {{#language:it|en}}, {{#language:uk|en}}
 |descr= A MapComplete theme: On this map, various healthcare related items are shown
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -103,7 +103,7 @@
 {{service_item
 |name= [https://mapcomplete.org/playgrounds playgrounds]
 |region= Worldwide
-|lang= {{#language:nl|en}}, {{#language:en|en}}, {{#language:fr|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:ru|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:nb_NO|en}}, {{#language:id|en}}, {{#language:hu|en}}, {{#language:ca|en}}, {{#language:es|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:pl|en}}
+|lang= {{#language:nl|en}}, {{#language:en|en}}, {{#language:fr|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:ru|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:nb_NO|en}}, {{#language:id|en}}, {{#language:hu|en}}, {{#language:ca|en}}, {{#language:es|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:pl|en}}, {{#language:uk|en}}
 |descr= A MapComplete theme: A map with playgrounds
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -166,7 +166,7 @@
 {{service_item
 |name= [https://mapcomplete.org/surveillance surveillance]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:fr|en}}, {{#language:pl|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:hu|en}}, {{#language:da|en}}, {{#language:nb_NO|en}}, {{#language:ca|en}}, {{#language:es|en}}, {{#language:cs|en}}
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:fr|en}}, {{#language:pl|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:hu|en}}, {{#language:da|en}}, {{#language:nb_NO|en}}, {{#language:ca|en}}, {{#language:es|en}}, {{#language:cs|en}}, {{#language:uk|en}}
 |descr= A MapComplete theme: Surveillance cameras and other means of surveillance
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -184,7 +184,7 @@
 {{service_item
 |name= [https://mapcomplete.org/circular_economy circular_economy]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:es|en}}, {{#language:de|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:uk|en}}
+|lang= {{#language:en|en}}, {{#language:es|en}}, {{#language:de|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:uk|en}}, {{#language:pl|en}}
 |descr= A MapComplete theme: Various items which help people to share, reuse or recycle
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -211,7 +211,7 @@
 {{service_item
 |name= [https://mapcomplete.org/bicycle_parkings bicycle_parkings]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:es|en}}, {{#language:zh_Hans|en}}, {{#language:it|en}}, {{#language:fil|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:uk|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:es|en}}, {{#language:zh_Hans|en}}, {{#language:it|en}}, {{#language:fil|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:uk|en}}, {{#language:pl|en}}
 |descr= A MapComplete theme: A map showing all types of bicycle parkings
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -283,7 +283,7 @@
 {{service_item
 |name= [https://mapcomplete.org/cyclestreets cyclestreets]
 |region= Worldwide
-|lang= {{#language:nl|en}}, {{#language:en|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:nb_NO|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:hu|en}}, {{#language:ca|en}}, {{#language:es|en}}, {{#language:fr|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:pl|en}}
+|lang= {{#language:nl|en}}, {{#language:en|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:nb_NO|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:hu|en}}, {{#language:ca|en}}, {{#language:es|en}}, {{#language:fr|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:pl|en}}, {{#language:uk|en}}
 |descr= A MapComplete theme: A map of cyclestreets
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -310,7 +310,7 @@
 {{service_item
 |name= [https://mapcomplete.org/elongated_coin elongated_coin]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:es|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:pl|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:es|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:pl|en}}, {{#language:uk|en}}
 |descr= A MapComplete theme: Find penny presses to create your own elongated coins
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -319,7 +319,7 @@
 {{service_item
 |name= [https://mapcomplete.org/facadegardens facadegardens]
 |region= Worldwide
-|lang= {{#language:nl|en}}, {{#language:en|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:it|en}}, {{#language:fr|en}}, {{#language:de|en}}, {{#language:hu|en}}, {{#language:es|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:ca|en}}, {{#language:pl|en}}
+|lang= {{#language:nl|en}}, {{#language:en|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:it|en}}, {{#language:fr|en}}, {{#language:de|en}}, {{#language:hu|en}}, {{#language:es|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:ca|en}}, {{#language:pl|en}}, {{#language:uk|en}}
 |descr= A MapComplete theme: This map shows facade gardens with pictures and useful info about orientation, sunshine and plant types.
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -555,7 +555,7 @@ The position of a signpost can be used by a hiker/biker/rider/s…
 {{service_item
 |name= [https://mapcomplete.org/postboxes postboxes]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:zh_Hant|en}}, {{#language:hu|en}}, {{#language:es|en}}, {{#language:nl|en}}, {{#language:fr|en}}, {{#language:nb_NO|en}}, {{#language:da|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:pl|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:zh_Hant|en}}, {{#language:hu|en}}, {{#language:es|en}}, {{#language:nl|en}}, {{#language:fr|en}}, {{#language:nb_NO|en}}, {{#language:da|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:pl|en}}, {{#language:uk|en}}
 |descr= A MapComplete theme: A map showing postboxes and post offices
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -582,7 +582,7 @@ The position of a signpost can be used by a hiker/biker/rider/s…
 {{service_item
 |name= [https://mapcomplete.org/sport_pitches sport_pitches]
 |region= Worldwide
-|lang= {{#language:nl|en}}, {{#language:fr|en}}, {{#language:en|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:ru|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:hu|en}}, {{#language:es|en}}, {{#language:da|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:pl|en}}
+|lang= {{#language:nl|en}}, {{#language:fr|en}}, {{#language:en|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:ru|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:hu|en}}, {{#language:es|en}}, {{#language:da|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:pl|en}}, {{#language:uk|en}}
 |descr= A MapComplete theme: A map showing sport pitches
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -609,7 +609,7 @@ The position of a signpost can be used by a hiker/biker/rider/s…
 {{service_item
 |name= [https://mapcomplete.org/trees trees]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:fr|en}}, {{#language:it|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:ru|en}}, {{#language:pl|en}}, {{#language:de|en}}, {{#language:nb_NO|en}}, {{#language:hu|en}}, {{#language:ca|en}}, {{#language:es|en}}, {{#language:da|en}}, {{#language:cs|en}}
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:fr|en}}, {{#language:it|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:ru|en}}, {{#language:pl|en}}, {{#language:de|en}}, {{#language:nb_NO|en}}, {{#language:hu|en}}, {{#language:ca|en}}, {{#language:es|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:uk|en}}
 |descr= A MapComplete theme: Map all the trees
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -618,7 +618,7 @@ The position of a signpost can be used by a hiker/biker/rider/s…
 {{service_item
 |name= [https://mapcomplete.org/waste_basket waste_basket]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:zh_Hant|en}}, {{#language:hu|en}}, {{#language:fr|en}}, {{#language:nb_NO|en}}, {{#language:da|en}}, {{#language:ca|en}}, {{#language:es|en}}, {{#language:cs|en}}, {{#language:pl|en}}
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:zh_Hant|en}}, {{#language:hu|en}}, {{#language:fr|en}}, {{#language:nb_NO|en}}, {{#language:da|en}}, {{#language:ca|en}}, {{#language:es|en}}, {{#language:cs|en}}, {{#language:pl|en}}, {{#language:uk|en}}
 |descr= A MapComplete theme: A map with waste baskets
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png

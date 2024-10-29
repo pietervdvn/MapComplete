@@ -373,9 +373,13 @@ export default class ThemeViewState implements SpecialVisualizationState {
         this.hasDataInView = new NoElementsInViewDetector(this).hasFeatureInView
         this.imageUploadManager = new ImageUploadManager(
             layout,
-            new PanoramaxUploader(Constants.panoramax.url, Constants.panoramax.token,
-                this.featureSwitchIsTesting.map(t => t ? Constants.panoramax.testsequence : Constants.panoramax.sequence)
-                ),
+            new PanoramaxUploader(
+                Constants.panoramax.url,
+                Constants.panoramax.token,
+                this.featureSwitchIsTesting.map((t) =>
+                    t ? Constants.panoramax.testsequence : Constants.panoramax.sequence
+                )
+            ),
             this.featureProperties,
             this.osmConnection,
             this.changes,

@@ -179,7 +179,8 @@
         "es": "¿Cuál es el número de teléfono de {title()}?",
         "zh_Hans": "{title()} 的电话号码为何？",
         "da": "Hvad er telefonnummeret til {title()}?",
-        "cs": "Jaké je telefonní číslo {title()}?"
+        "cs": "Jaké je telefonní číslo {title()}?",
+        "uk": "Який номер телефону {title()}?"
       },
       "render": {
         "special": {
@@ -2792,7 +2793,8 @@
           "de": "QR Code scannen, um diesen Ort auf einem anderen Gerät zu öffnen",
           "sl": "Skenirajte to kodo, da odprete ta kraj na drugi napravi",
           "da": "Skan denne kode for at åbne dette sted på en anden enhed",
-          "hu": "Szkenneld be ezt a kódot, hogy egy másik eszközön is meg tudd nyitni a helyet"
+          "hu": "Szkenneld be ezt a kódot, hogy egy másik eszközön is meg tudd nyitni a helyet",
+          "uk": "Відскануйте цей код, щоб відкрити це місце на іншому пристрої"
         }
       }
     },

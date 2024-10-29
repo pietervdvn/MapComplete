@@ -13,7 +13,8 @@
     "ca": "Mapa de bústies i oficines de correus",
     "es": "Mapa de Buzones y Oficinas de Correos",
     "cs": "Mapa poštovních schránek a pošt",
-    "pl": "Mapa skrzynek i urzędów pocztowych"
+    "pl": "Mapa skrzynek i urzędów pocztowych",
+    "uk": "Поштові скриньки та карта поштових відділень"
   },
   "description": {
     "en": "On this map you can find and add data of post offices and post boxes. You can use this map to find where you can mail your next postcard! :)<br/>Spotted an error or is a post box missing? You can edit this map with a free OpenStreetMap account.",
@@ -42,7 +43,8 @@
     "da": "Et kort med postkasser og posthuse",
     "ca": "Un mapa que mostra bústies i oficines de correus",
     "cs": "Mapa s poštovními schránkami a poštami",
-    "pl": "Mapa pokazująca skrzynki pocztowe i urzędy pocztowe"
+    "pl": "Mapa pokazująca skrzynki pocztowe i urzędy pocztowe",
+    "uk": "Мапа з позначенням поштових скриньок та поштових відділень"
   },
   "icon": "./assets/layers/postboxes/postbox.svg",
   "startZoom": 13,

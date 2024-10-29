@@ -877,7 +877,8 @@
           "en": "What is the phone number of the operator of this vending machine?",
           "ca": "Quin és el número de telèfon de l'operador d'aquesta màquina expenedora?",
           "de": "Wie lautet die Telefonnummer des Automatenbetreibers?",
-          "cs": "Jaké je telefonní číslo na provozovatele tohoto automatu?"
+          "cs": "Jaké je telefonní číslo na provozovatele tohoto automatu?",
+          "uk": "Який номер телефону оператора цього торгового автомата?"
         },
         "questionHint": {
           "en": "This is the number you can call in case of problems with the vending machine",

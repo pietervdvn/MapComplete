@@ -31,9 +31,7 @@ export default class DependencyCalculator {
      * Returns a set of all other layer-ids that this layer needs to function.
      * E.g. if this layers does snap to another layer in the preset, this other layer id will be mentioned
      */
-    public static getLayerDependencies(
-        layer: LayerConfig
-    ): {
+    public static getLayerDependencies(layer: LayerConfig): {
         neededLayer: string
         reason: string
         context?: string
