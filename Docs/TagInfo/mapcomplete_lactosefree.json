@@ -26,19 +26,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "diet:lactose_free",
@@ -280,35 +284,43 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Restaurants and fast food shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Restaurants and fast food shows images based on the keys image, image:0, image:1,..., panoramax, panoramax:0, panoramx:1, ... ,  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Restaurants and fast food shows images based on the keys image, image:0, image:1,..., panoramax, panoramax:0, panoramx:1, ... ,  wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Restaurants and fast food shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Restaurants and fast food shows images based on the keys image, image:0, image:1,..., panoramax, panoramax:0, panoramx:1, ... ,  wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Restaurants and fast food shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Restaurants and fast food shows images based on the keys image, image:0, image:1,..., panoramax, panoramax:0, panoramx:1, ... ,  wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Restaurants and fast food shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Restaurants and fast food shows images based on the keys image, image:0, image:1,..., panoramax, panoramax:0, panoramx:1, ... ,  wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "image",
-      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "website:menu",
@@ -689,19 +701,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Ice cream parlors allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Ice cream parlors allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Ice cream parlors allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Ice cream parlors allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Ice cream parlors allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Ice cream parlors allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Ice cream parlors allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Ice cream parlors allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Ice cream parlors allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "diet:lactose_free",
@@ -883,19 +899,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Shop allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Shop allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Shop allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Shop allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Shop allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Shop allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Shop allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Shop allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Shop allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "diet:lactose_free",

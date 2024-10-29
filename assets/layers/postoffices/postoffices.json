@@ -140,10 +140,7 @@
   ],
   "tagRenderings": [
     "images",
-    {
-      "id": "minimap",
-      "render": "{minimap(18): height: 5rem; overflow: hidden; border-radius:3rem; }"
-    },
+    "contact",
     {
       "builtin": "opening_hours",
       "override": {
@@ -171,6 +168,8 @@
         "cs": "Jedná se o partnerskou poštu?",
         "nl": "Is dit een postkantoor?"
       },
+      "#condition": "If it is a post office, it'll won't be a post partner...",
+      "condition":   "amenity!=post_office",
       "mappings": [
         {
           "if": "post_office=post_partner",
