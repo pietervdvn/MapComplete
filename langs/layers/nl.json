@@ -2748,12 +2748,15 @@
                         "then": "Deze klok is bevestigd aan een paal"
                     },
                     "1": {
-                        "then": "Deze klok is bevestigd aan een muur"
+                        "then": "Deze klok is bevestigd aan een muur, meestal met een steun loodrecht op de muur"
                     },
                     "2": {
-                        "then": "Deze klok is onderdeel van een reclamebord"
+                        "then": "Deze klok is rechtstreeks aan een muur bevestigd"
                     },
                     "3": {
+                        "then": "Deze klok is onderdeel van een reclamebord"
+                    },
+                    "4": {
                         "then": "Deze klok staat op de grond"
                     }
                 },

@@ -56,13 +56,18 @@
   "startLon": 3.75,
   "hideFromOverview": false,
   "layers": [
-    "cycleways_and_roads",
-    "barrier",
-    "crossings",
-    "bicycle_counter"
+    {
+      "builtin": [
+        "cycleways_and_roads",
+        "barrier",
+        "crossings",
+        "bicycle_counter",
+        "cyclist_waiting_aid"
+      ],
+      "override": {
+        "minzoom": 16
+      }
+    }
   ],
-  "overrideAll": {
-    "minzoom": 16
-  },
   "enableDownload": true
 }

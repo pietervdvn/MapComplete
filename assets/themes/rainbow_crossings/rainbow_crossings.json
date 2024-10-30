@@ -47,12 +47,18 @@
         }
       }
     },
-    "rainbow_crossings",
+    {
+      "builtin": "rainbow_crossings",
+      "override": {
+        "isCounted": false
+      }
+    },
     {
       "builtin": "cycleways_and_roads",
       "override": {
         "minzoom": 18,
-        "name": null
+        "name": null,
+        "isCounted": false
       }
     }
   ],

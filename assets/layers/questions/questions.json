@@ -2972,6 +2972,29 @@
           }
         }
       ]
+    },
+    {
+      "id": "indoor",
+      "question": {
+        "en": "Is this object located indoors?",
+        "nl": "Bevindt dit object zich binnen?"
+      },
+      "mappings": [
+        {
+          "if": "indoor=yes",
+          "then": {
+            "en": "This object is located indoors",
+            "nl": "Dit object bevindt zich binnen"
+          }
+        },
+        {
+          "if": "indoor=no",
+          "then": {
+            "en": "This object is located outdoors",
+            "nl": "Dit object bevindt zich buiten"
+          }
+        }
+      ]
     }
   ],
   "allowMove": false

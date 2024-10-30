@@ -117,6 +117,8 @@
         "minzoom": 17
       }
     },
-    "stairs"
+    "stairs",
+    "tactile_map",
+    "tactile_model"
   ]
 }
