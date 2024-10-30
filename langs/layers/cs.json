@@ -2752,10 +2752,10 @@
                     "1": {
                         "then": "Tyto hodiny jsou namontovány na stěně"
                     },
-                    "2": {
+                    "3": {
                         "then": "Tyto hodiny jsou součástí billboardu"
                     },
-                    "3": {
+                    "4": {
                         "then": "Tyto hodiny jsou na zemi"
                     }
                 },

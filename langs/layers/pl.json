@@ -1356,10 +1356,10 @@
                     "1": {
                         "then": "Ten zegar jest zamontowany na ścianie"
                     },
-                    "2": {
+                    "3": {
                         "then": "Ten zegar jest częścią bilbordu"
                     },
-                    "3": {
+                    "4": {
                         "then": "Ten zegar jest na ziemi"
                     }
                 },

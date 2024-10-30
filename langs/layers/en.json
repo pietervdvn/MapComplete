@@ -3294,12 +3294,15 @@
                         "then": "This clock is mounted on a pole"
                     },
                     "1": {
-                        "then": "This clock is mounted on a wall"
+                        "then": "This clock is mounted on a wall, usually through a support perpendicular to the wall"
                     },
                     "2": {
-                        "then": "This clock is part of a billboard"
+                        "then": "This clock is mounted directly on a wall"
                     },
                     "3": {
+                        "then": "This clock is part of a billboard"
+                    },
+                    "4": {
                         "then": "This clock is on the ground"
                     }
                 },

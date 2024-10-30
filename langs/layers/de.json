@@ -3296,10 +3296,10 @@
                     "1": {
                         "then": "Diese Uhr ist an einer Wand montiert"
                     },
-                    "2": {
+                    "3": {
                         "then": "Diese Uhr ist Teil einer Werbetafel"
                     },
-                    "3": {
+                    "4": {
                         "then": "Diese Uhr befindet sich auf dem Boden"
                     }
                 },

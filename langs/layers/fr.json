@@ -2272,10 +2272,10 @@
                     "1": {
                         "then": "Cette horloge est fixée sur un mur"
                     },
-                    "2": {
+                    "3": {
                         "then": "Cette horloge fait partie d'un panneau publicitaire"
                     },
-                    "3": {
+                    "4": {
                         "then": "Cette horloge est posée au sol"
                     }
                 },
