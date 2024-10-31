@@ -42,19 +42,21 @@ export class LocalStorageSource {
         }
         const source = new UIEventSource<string>(saved ?? defaultValue, "localstorage:" + key)
 
-        source.addCallback((data) => {
-            if (data === undefined || data === "" || data === null) {
-                localStorage.removeItem(key)
-                return
-            }
-            try {
-                localStorage.setItem(key, data)
-            } catch (e) {
-                // Probably exceeded the quota with this item!
-                // Let's nuke everything
-                localStorage.clear()
-            }
-        })
+        if(!Utils.runningFromConsole){
+            source.addCallback((data) => {
+                if (data === undefined || data === "" || data === null) {
+                    localStorage.removeItem(key)
+                    return
+                }
+                try {
+                    localStorage.setItem(key, data)
+                } catch (e) {
+                    // Probably exceeded the quota with this item!
+                    // Let's nuke everything
+                    localStorage.clear()
+                }
+            })
+        }
         LocalStorageSource._cache[key] = source
         return source
     }
