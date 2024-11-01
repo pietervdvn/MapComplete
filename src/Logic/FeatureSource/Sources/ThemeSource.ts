@@ -1,6 +1,6 @@
 import GeoJsonSource from "./GeoJsonSource"
 import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
-import { UpdatableFeatureSource } from "../FeatureSource"
+import { FeatureSource, UpdatableFeatureSource } from "../FeatureSource"
 import { Or } from "../../Tags/Or"
 import FeatureSwitchState from "../../State/FeatureSwitchState"
 import OverpassFeatureSource from "./OverpassFeatureSource"
@@ -64,8 +64,8 @@ export default class ThemeSource extends FeatureSourceMerger {
         const mvtSources: UpdatableFeatureSource[] = osmLayers
             .filter((f) => mvtAvailableLayers.has(f.id))
             .map((l) => ThemeSource.setupMvtSource(l, mapProperties, isDisplayed(l.id)))
-        const nonMvtSources = []
-        const nonMvtLayers = osmLayers.filter((l) => !mvtAvailableLayers.has(l.id))
+        const nonMvtSources: FeatureSource[] = []
+        const nonMvtLayers: LayerConfig[] = osmLayers.filter((l) => !mvtAvailableLayers.has(l.id))
 
         const isLoading = new UIEventSource(false)
 
