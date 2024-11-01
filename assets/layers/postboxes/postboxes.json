@@ -48,17 +48,45 @@
       "cs": "Poštovní schránka"
     }
   },
+  "keywords": {
+    "en": ["post","post box","letter","letterbox"],
+    "nl": ["brieven","post","brief","brievenbus","pakjes"]
+  },
   "pointRendering": [
     {
-      "iconSize": "40,40",
+      "iconSize": {
+        "render": "40,40",
+        "mappings": [
+          {
+            "if": "_referencing_ways~*",
+            "then": "25,25"
+          }
+        ]
+      },
       "location": [
         "point",
         "centroid"
       ],
-      "anchor": "bottom",
+      "anchor": {
+        "render": "bottom",
+        "mappings": [
+          {
+            "if": "_referencing_ways~*",
+            "then": "center"
+          }
+        ]
+      },
       "marker": [
         {
-          "icon": "./assets/layers/postboxes/postbox.svg"
+          "icon": {
+            "render": "./assets/layers/postboxes/postbox.svg",
+            "mappings": [
+              {
+                "if": "_referencing_ways~*",
+                "then": "./assets/layers/postboxes/postbox_wall.svg"
+              }
+            ]
+          }
         }
       ]
     }
@@ -87,6 +115,18 @@
         "fr": "une boîte à lettres",
         "cs": "poštovní schránka"
       }
+    },
+    {
+      "tags": [
+        "amenity=post_box"
+      ],
+      "title": {
+        "en": "a postbox on a wall",
+        "nl": "een brievenbus tegen een muur"
+      },
+      "snapToLayer": [
+        "walls_and_buildings"
+      ]
     }
   ],
   "tagRenderings": [
@@ -94,6 +134,18 @@
     {
       "id": "minimap",
       "render": "{minimap(18): height: 5rem; overflow: hidden; border-radius:3rem; }"
+    },
+    {
+      "id": "operator",
+      "question": {
+        "en": "Who operates this postbox?"
+      },
+      "render": {
+        "en": "This postbox is operated by <b>{operator}</b>"
+      },
+      "freeform": {
+        "key": "operator"
+      }
     }
   ],
   "deletion": {
