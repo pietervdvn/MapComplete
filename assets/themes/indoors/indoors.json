@@ -16,7 +16,8 @@
     "zh_Hant": "室內",
     "it": "Al chiuso",
     "ru": "Внутри помещений",
-    "hu": "Beltéri létesítmények"
+    "hu": "Beltéri létesítmények",
+    "uk": "У приміщенні"
   },
   "description": {
     "en": "On this map, publicly accessible indoor places are shown",

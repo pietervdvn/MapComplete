@@ -104,7 +104,8 @@
               "fr": "Cette lien de nœud à nœud a été vérifié sur le terrain le {survey:date}",
               "ca": "Aquest enllaç node a node es va sondejar per última vegada el {survey:date}",
               "cs": "Toto propojení mezi uzly bylo naposledy zkontrolováno dne {survey:date}",
-              "pl": "To połączenie węzła z węzłem było ostatnio sprawdzane w dniu {survey:date}"
+              "pl": "To połączenie węzła z węzłem było ostatnio sprawdzane w dniu {survey:date}",
+              "uk": "Цей зв’язок між точками востаннє досліджувався {survey:date}"
             }
           },
           "id": "node2node-survey:date"

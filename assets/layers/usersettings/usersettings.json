@@ -651,7 +651,8 @@
         "en": "<h3>Editing settings</h3>",
         "de": "<h3> Einstellungen bearbeiten</h3>",
         "cs": "<h3>Úprava nastavení</h3>",
-        "hu": "<h3>Szerkesztési beállítások</h3>"
+        "hu": "<h3>Szerkesztési beállítások</h3>",
+        "uk": "<h3>Налаштування редагування</h3>"
       }
     },
     {
@@ -1254,7 +1255,8 @@
         "after": {
           "en": "Clearing the caches will delete locally downloaded data and code. You will remain logged in and your settings will be preserved. No data should be lost",
           "de": "Wenn du die Caches löschst, werden lokal heruntergeladene Daten und Code gelöscht. Du bleibst eingeloggt und deine Einstellungen bleiben erhalten. Es sollten keine Daten verloren gehen",
-          "hu": "A gyorsítótárak törlése a helyileg letöltött adatokat és kódot is törli. Ugyanakkor továbbra is bejelentkezve maradsz, és a beállításaid megmaradnak. Adat nem vész el"
+          "hu": "A gyorsítótárak törlése a helyileg letöltött adatokat és kódot is törli. Ugyanakkor továbbra is bejelentkezve maradsz, és a beállításaid megmaradnak. Adat nem vész el",
+          "uk": "Очищення кешу призведе до видалення локально завантажених даних і коду. Ви залишитеся в системі, і ваші налаштування будуть збережені. Дані не будуть втрачені"
         }
       }
     },

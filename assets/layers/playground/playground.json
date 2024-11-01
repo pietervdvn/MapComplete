@@ -140,7 +140,8 @@
       "question": {
         "en": "Does one have to pay to use this playground?",
         "nl": "Moet men betalen om deze speeltuin te gebruiken?",
-        "de": "Muss man zahlen, um den Spielplatz zu nutzen?"
+        "de": "Muss man zahlen, um den Spielplatz zu nutzen?",
+        "uk": "Чи потрібно платити за користування цим майданчиком?"
       },
       "id": "fee",
       "mappings": [
@@ -150,7 +151,8 @@
           "then": {
             "en": "Free to use",
             "nl": "Gratis te gebruiken",
-            "de": "Nutzung kostenlos"
+            "de": "Nutzung kostenlos",
+            "uk": "Вільне використання"
           }
         },
         {
@@ -158,7 +160,8 @@
           "then": {
             "en": "Paid playground",
             "nl": "Betalend",
-            "de": "Gebührenpflichtiger Spielplatz"
+            "de": "Gebührenpflichtiger Spielplatz",
+            "uk": "Платний дитячий майданчик"
           }
         }
       ],
@@ -172,7 +175,8 @@
         "de": "Welchen Bodenbelag hat dieser Spielplatz?",
         "fr": "De quelle matière est la surface de l’aire de jeu ?",
         "ca": "Quina és la superfície d'aquest parc infantil?",
-        "cs": "Jaký je povrch tohoto hřiště?"
+        "cs": "Jaký je povrch tohoto hřiště?",
+        "uk": "Яка поверхня цього дитячого майданчика?"
       },
       "render": {
         "nl": "De ondergrond is <b>{surface}</b>",
@@ -183,7 +187,8 @@
         "fr": "La surface est en <b>{surface}</b>",
         "es": "La superficie es <b>{surface}</b>",
         "ca": "La superfícies és <b>{surface}</b>",
-        "cs": "Povrch je <b>{surface}</b>"
+        "cs": "Povrch je <b>{surface}</b>",
+        "uk": "Поверхня - <b>{surface}</b>"
       },
       "freeform": {
         "key": "surface"
@@ -200,7 +205,8 @@
             "fr": "La surface est en <b>gazon</b>",
             "es": "La superficie es <b>hierba</b>",
             "ca": "La superfície és <b>herba</b>",
-            "cs": "Povrch je <b>tráva</b>"
+            "cs": "Povrch je <b>tráva</b>",
+            "uk": "Поверхня - <b>трава</b>"
           }
         },
         {
@@ -214,7 +220,8 @@
             "fr": "La surface est en <b>sable</b>",
             "es": "La superficie es <b>arena</b>",
             "ca": "La superfície és <b>sorra</b>",
-            "cs": "Povrch je <b>písek</b>"
+            "cs": "Povrch je <b>písek</b>",
+            "uk": "Поверхня - <b>пісок</b>"
           }
         },
         {
@@ -227,7 +234,8 @@
             "ru": "Покрытие из <b>щепы</b>",
             "fr": "La surface est en <b>copeaux de bois</b>",
             "ca": "La superfície consisteix en <b>estelles</b>",
-            "cs": "Povrch tvoří <b>dřevěná štěpka</b>"
+            "cs": "Povrch tvoří <b>dřevěná štěpka</b>",
+            "uk": "Поверхня складається з <b>деревної стружки</b>"
           }
         },
         {
@@ -241,7 +249,8 @@
             "fr": "La surface est en <b>pavés</b>",
             "es": "La superficie es de <b>adoquines</b>",
             "ca": "La superfície són <b>llambordes</b>",
-            "cs": "Povrch je <b>dlažební kostky</b>"
+            "cs": "Povrch je <b>dlažební kostky</b>",
+            "uk": "Покриття - <b>бруківка</b>"
           }
         },
         {
@@ -255,7 +264,8 @@
             "fr": "La surface est en <b>bitume</b>",
             "es": "La superficie es <b>asfalto</b>",
             "ca": "La superfície és <b>asfalt</b>",
-            "cs": "Povrch je <b>asfalt</b>"
+            "cs": "Povrch je <b>asfalt</b>",
+            "uk": "Покриття - <b>асфальт</b>"
           }
         },
         {
@@ -269,7 +279,8 @@
             "fr": "La surface est en <b>béton</b>",
             "es": "La superficie es <b>hormigón</b>",
             "ca": "La superfície és <b>formigó</b>",
-            "cs": "Povrch je <b>beton</b>"
+            "cs": "Povrch je <b>beton</b>",
+            "uk": "Поверхня - <b>бетон</b>"
           }
         },
         {
@@ -282,7 +293,8 @@
             "fr": "La surface n’a <b>pas de revêtement</b>",
             "es": "La superficie está <b>sin pavimentar</b>",
             "ca": "La superfícies està <b>sense pavimentar</b>",
-            "cs": "Povrch je <b>nezpevněný</b>"
+            "cs": "Povrch je <b>nezpevněný</b>",
+            "uk": "Поверхня <b>грунтова</b>"
           },
           "hideInAnswer": true
         },
@@ -296,7 +308,8 @@
             "fr": "La surface a <b>un revêtement</b>",
             "es": "La superficie está <b>pavimentada</b>",
             "ca": "La superfície està <b>pavimentada</b>",
-            "cs": "Povrch je <b>zpevněný</b>"
+            "cs": "Povrch je <b>zpevněný</b>",
+            "uk": "Поверхня <b>тверде покриття</b>"
           },
           "hideInAnswer": true
         },
@@ -306,7 +319,8 @@
             "en": "The surface is tartan - a synthetic, springy surface typically seen on athletic pistes",
             "nl": "De ondergrond bestaat uit Tartan - een synthetisch, elastisch en poreus materiaal dat je ook vindt op atletiekpistes",
             "de": "Der Belag ist aus Tartan - ein synthetischer, federnder Belag, der typischerweise auf Sportbahnen zu finden ist",
-            "fr": "La surface est en tartan - un revêtement synthétique typiquement utilisé sur les pistes d'athlétisme"
+            "fr": "La surface est en tartan - un revêtement synthétique typiquement utilisé sur les pistes d'athlétisme",
+            "uk": "Покриття - тартан - синтетична, пружна поверхня, яку зазвичай можна побачити на спортивних трасах"
           }
         },
         {
@@ -315,7 +329,8 @@
             "en": "The surface is made from rubber, such as rubber tiles, rubber mulch or a big rubber area",
             "nl": "De ondergrond bestaat uit rubber, zoals rubberen tegels, rubber snippers of een groot rubberen oppervlak",
             "de": "Die Oberfläche besteht aus Gummi, z. B. aus Gummifliesen, Gummimulch oder einer großen Gummifläche",
-            "fr": "La surface est en caoutchouc, comme des dalles de caoutchouc, des copeaux de caoutchouc ou une grande surface en caoutchouc"
+            "fr": "La surface est en caoutchouc, comme des dalles de caoutchouc, des copeaux de caoutchouc ou une grande surface en caoutchouc",
+            "uk": "Поверхня зроблена з гуми, наприклад, гумова плитка, гумова мульча або велика гумова площа"
           }
         },
         {
@@ -323,7 +338,8 @@
           "then": {
             "en": "The surface is <b>fine gravel</b> (less then 2 cm per stone)",
             "nl": "De ondergrond bestaat uit <b>kleine grindsteentjes</b> (steentjes kleiner dan 2 cm)",
-            "de": "Die Oberfläche ist <b>feiner Kies</b> (weniger als 2 cm pro Stein)"
+            "de": "Die Oberfläche ist <b>feiner Kies</b> (weniger als 2 cm pro Stein)",
+            "uk": "Поверхня - <b>дрібний гравій</b> (менше 2 см на камінь)"
           }
         }
       ],
@@ -335,7 +351,8 @@
         "de": "Wenn es mehrere gibt, wähle den am häufigsten vorkommende aus",
         "fr": "Pour plusieurs matières, sélectionner la principale",
         "ca": "Si n'hi ha múltiples, selecciona la més predominant",
-        "cs": "Pokud jich je více, vyberte nejčastěji se vyskytující"
+        "cs": "Pokud jich je více, vyberte nejčastěji se vyskytující",
+        "uk": "Якщо їх декілька, виберіть найпоширеніший"
       }
     },
     {

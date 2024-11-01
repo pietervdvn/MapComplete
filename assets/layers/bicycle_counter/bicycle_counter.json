@@ -188,7 +188,7 @@
       "render": {
         "en": "Website of the counter: <a href='{website}'>{website}</a>",
         "de": "Website der Zählstelle: <a href='{website}'>{website}</a>",
-        "cs": "Webové stránky počítadla: <a href='{website}'>{web}</a>"
+        "cs": "Webové stránky počítadla: <a href='{website}'>{website}</a>"
       }
     }
   ],

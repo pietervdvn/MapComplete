@@ -386,7 +386,8 @@
         "de": "Der Belag ist <b>{surface}</b>",
         "es": "La superficie es <b>{surface}</b>",
         "ca": "La superfícies és <b>{surface}</b>",
-        "cs": "Povrch je <b>{surface}</b>"
+        "cs": "Povrch je <b>{surface}</b>",
+        "uk": "Поверхня - <b>{surface}</b>"
       },
       "freeform": {
         "key": "surface"
@@ -403,7 +404,8 @@
             "de": "Der Belag ist aus <b>Gras</b>",
             "es": "La superficie es <b>hierba</b>",
             "ca": "La superfície és <b>herba</b>",
-            "cs": "Povrch je <b>tráva</b>"
+            "cs": "Povrch je <b>tráva</b>",
+            "uk": "Поверхня - <b>трава</b>"
           }
         },
         {
@@ -417,7 +419,8 @@
             "de": "Der Belag ist aus <b>Sand</b>",
             "es": "La superficie es <b>arena</b>",
             "ca": "La superfície és <b>sorra</b>",
-            "cs": "Povrch je <b>písek</b>"
+            "cs": "Povrch je <b>písek</b>",
+            "uk": "Поверхня - <b>пісок</b>"
           }
         },
         {
@@ -431,7 +434,8 @@
             "de": "Der Belag ist aus <b>Pflastersteinen</b>",
             "es": "La superficie es <b>adoquines</b>",
             "ca": "La superfície són <b>llambordes</b>",
-            "cs": "Povrch je <b>dlážděný</b>"
+            "cs": "Povrch je <b>dlážděný</b>",
+            "uk": "Покриття - <b>бруківка</b>"
           }
         },
         {
@@ -445,7 +449,8 @@
             "de": "Der Belag ist aus <b>Asphalt</b>",
             "es": "La superficie es <b>asfalto</b>",
             "ca": "La superfície és <b>asfalt</b>",
-            "cs": "Povrch je <b>asfalt</b>"
+            "cs": "Povrch je <b>asfalt</b>",
+            "uk": "Покриття - <b>асфальт</b>"
           }
         },
         {
@@ -459,7 +464,8 @@
             "de": "Der Belag ist aus <b>Beton</b>",
             "es": "La superficie es <b>hormigón</b>",
             "ca": "La superfície és <b>formigó</b>",
-            "cs": "Povrch je <b>betonový</b>"
+            "cs": "Povrch je <b>betonový</b>",
+            "uk": "Поверхня - <b>бетон</b>"
           }
         },
         {
@@ -468,7 +474,8 @@
             "en": "The surface is <b>fine gravel</b>",
             "nl": "De ondergrond bestaat uit <b>grind</b>",
             "de": "Der Belag ist <b>feiner Kies</b>",
-            "ca": "La superfície és <b> grava fina</b>"
+            "ca": "La superfície és <b> grava fina</b>",
+            "uk": "Поверхня - <b>дрібний гравій</b>"
           }
         },
         {
@@ -477,7 +484,8 @@
             "en": "The surface of this track is Tartan, a synthetic, slightly springy, porous surface",
             "nl": "De ondergrond is Tartan, een synthetisch, licht verende en poreuze ondergrond",
             "ca": "La superfície d'aquesta pista és Tartan, una superfície sintètica, lleugerament molla i porosa",
-            "de": "Der Belag ist Tartan, ein synthetischer, leicht federnder, poröser Belag"
+            "de": "Der Belag ist Tartan, ein synthetischer, leicht federnder, poröser Belag",
+            "uk": "Поверхня цієї доріжки - тартан, синтетична, злегка пружиниста, пориста поверхня"
           }
         }
       ],

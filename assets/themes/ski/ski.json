@@ -14,7 +14,8 @@
     "en": "Everything you need to go skiing",
     "de": "Alles, was Sie zum Skifahren brauchen",
     "es": "Todo lo que necesitas para esquiar",
-    "cs": "Vše, co potřebujete k lyžování"
+    "cs": "Vše, co potřebujete k lyžování",
+    "uk": "Все необхідне для катання на лижах"
   },
   "icon": "./assets/layers/aerialway/chair_lift.svg",
   "layers": [

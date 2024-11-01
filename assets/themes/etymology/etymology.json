@@ -69,7 +69,8 @@
           "da": "Gader uden oprindelses information",
           "nb_NO": "Gater uten etymologi-info",
           "cs": "Ulice bez etymologických informací",
-          "pl": "Ulice bez informacji o etymologii"
+          "pl": "Ulice bez informacji o etymologii",
+          "uk": "Вулиці без етимологічної інформації"
         },
         "minzoom": 15,
         "isCounted": false,
@@ -101,7 +102,8 @@
           "da": "Parker og skove uden oprindelses information",
           "nb_NO": "Parker og skoger uten etymologi-info",
           "cs": "Parky a lesy bez etymologických informací",
-          "pl": "Parki i lasy bez informacji o etymologii"
+          "pl": "Parki i lasy bez informacji o etymologii",
+          "uk": "Парки та ліси без етимологічної інформації"
         },
         "minzoom": 18,
         "isCounted": false,
@@ -134,7 +136,8 @@
           "da": "Uddannelsesinstitutioner uden oprindelses oplysninger",
           "nb_NO": "Utdannelsesinstitusjoner uten etymologi-info",
           "cs": "Vzdělávací instituce bez etymologických informací",
-          "pl": "Instytucje edukacyjne bez informacji o etymologii"
+          "pl": "Instytucje edukacyjne bez informacji o etymologii",
+          "uk": "Навчальні заклади без етимологічної інформації"
         },
         "minzoom": 18,
         "isCounted": false,
@@ -170,7 +173,8 @@
           "da": "Kulturelle steder uden oprindelses information",
           "nb_NO": "Kulturelle steder uten etymologi-info",
           "cs": "Kulturní místa bez etymologických informací",
-          "pl": "Miejsca kulturowe bez informacji o etymologii"
+          "pl": "Miejsca kulturowe bez informacji o etymologii",
+          "uk": "Культурні місця без етимологічної інформації"
         },
         "minzoom": 18,
         "isCounted": false,
@@ -206,7 +210,8 @@
           "da": "Turistiske steder uden oprindelses information",
           "nb_NO": "Turiststeder uten etymologi-info",
           "cs": "Turistická místa bez etymologických informací",
-          "pl": "Miejsca turystyczne bez informacji o etymologii"
+          "pl": "Miejsca turystyczne bez informacji o etymologii",
+          "uk": "Туристичні місця без інформації про етимологію"
         },
         "minzoom": 18,
         "isCounted": false,
@@ -241,7 +246,8 @@
           "nb_NO": "Helse- og sosiale steder uten etymologi-info",
           "cs": "Zdravotní a sociální místa bez etymologických informací",
           "es": "Lugares sanitarios y sociales sin información etimológica",
-          "pl": "Miejsca związane ze zdrowiem i społeczeństwem bez informacji o etymologii"
+          "pl": "Miejsca związane ze zdrowiem i społeczeństwem bez informacji o etymologii",
+          "uk": "Медичні та соціальні заклади без етимологічної інформації"
         },
         "minzoom": 18,
         "isCounted": false,
@@ -275,7 +281,8 @@
           "da": "Sportspladser uden oprindelses information",
           "nb_NO": "Sportssteder uten etymologi-info",
           "cs": "Sportovní místa bez etymologických informací",
-          "pl": "Miejsca sportowe bez informacji o etymologii"
+          "pl": "Miejsca sportowe bez informacji o etymologii",
+          "uk": "Спортивні місця без етимологічної інформації"
         },
         "minzoom": 18,
         "isCounted": false,

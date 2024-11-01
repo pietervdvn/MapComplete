@@ -1056,7 +1056,8 @@
             "es": "El estado operacional es <i>{operational_status}</i>",
             "da": "Driftsstatus er <i>{operational_status}</i>",
             "cs": "Provozní stav je <i>{operational_status}</i>",
-            "ca": "L'estat operatiu és <i>{operational_status}</i>"
+            "ca": "L'estat operatiu és <i>{operational_status}</i>",
+            "uk": "Робочий стан - це <i>{operational_status}</i>"
           }
         }
       ]

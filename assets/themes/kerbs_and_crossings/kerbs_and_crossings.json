@@ -25,7 +25,8 @@
     "nb_NO": "Fortauskanter og fotgjengerfelt.",
     "es": "Un mapa que muestra bordillos y cruces.",
     "ca": "Un mapa amb voreres i encreuaments.",
-    "pl": "Mapa pokazująca krawężniki i przejścia."
+    "pl": "Mapa pokazująca krawężniki i przejścia.",
+    "uk": "Карта з позначенням бордюрів та переходів."
   },
   "icon": "./assets/layers/kerbs/KerbIcon.svg",
   "startZoom": 19,

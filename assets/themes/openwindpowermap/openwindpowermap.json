@@ -32,7 +32,8 @@
     "nb_NO": "Et kart for visning og redigering av vindmøller.",
     "cs": "Mapa pro zobrazení a úpravy větrných turbín.",
     "ca": "Un mapa per a mostrar i editar turbines eòliques.",
-    "pl": "Mapa do pokazywania i edytowania turbin wiatrowych."
+    "pl": "Mapa do pokazywania i edytowania turbin wiatrowych.",
+    "uk": "Карта для показу та редагування вітрових турбін."
   },
   "icon": "./assets/themes/openwindpowermap/logo.svg",
   "startZoom": 8,

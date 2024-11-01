@@ -6,14 +6,16 @@
     "es": "Tiendas y restaurantes con productos sin lactosa",
     "ca": "Botigues i restaurants amb productes sense lactosa",
     "cs": "Bezlaktózové obchody a restaurace",
-    "hu": "Laktózmentes boltok és éttermek"
+    "hu": "Laktózmentes boltok és éttermek",
+    "uk": "Магазини та ресторани без лактози"
   },
   "description": {
     "en": "A crowdsourced map with lactose free shops and restaurants",
     "de": "Eine Crowdsourcing-Karte mit laktosefreien Geschäften und Restaurants",
     "es": "Un mapa en que colaborar con tiendas y restaurantes con productos sin lactosa",
     "ca": "Un mapa col·lectiu amb botigues i restaurants sense lactosa",
-    "cs": "Mapa bezlaktózových obchodů a restaurací vytvořená crowdsourcingem"
+    "cs": "Mapa bezlaktózových obchodů a restaurací vytvořená crowdsourcingem",
+    "uk": "Краудсорсингова карта з магазинами та ресторанами без лактози"
   },
   "icon": "./assets/layers/questions/lactose_free.svg",
   "layers": [

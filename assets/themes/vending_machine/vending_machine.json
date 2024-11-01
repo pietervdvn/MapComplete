@@ -13,7 +13,8 @@
     "da": "Salgsautomater",
     "it": "Distributori automatici",
     "ru": "Торговые автоматы",
-    "hu": "Árusító automaták"
+    "hu": "Árusító automaták",
+    "uk": "Торгові автомати"
   },
   "description": {
     "en": "Find vending machines for everything",
@@ -24,7 +25,8 @@
     "cs": "Najít prodejní automaty na vše",
     "es": "Encontrar máquinas expendedoras para todo",
     "pl": "Znajdź wszelakie automaty sprzedające",
-    "it": "Trova distributori automatici per ogni cosa"
+    "it": "Trova distributori automatici per ogni cosa",
+    "uk": "Знайдіть торгові автомати для всього"
   },
   "icon": "./assets/layers/vending_machine/vending_machine.svg",
   "startZoom": 19,
