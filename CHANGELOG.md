@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.47.8](https://github.com/pietervdvn/mapcomplete/compare/v0.47.7...v0.47.8) (2024-11-01)
+
+
+### Bug Fixes
+
+* fix uploading images in the 'notes' theme ([5fd0314](https://github.com/pietervdvn/mapcomplete/commits5fd03144080aa32fe500333b64575069e93e8b79))
+
 ### [0.47.7](https://github.com/pietervdvn/mapcomplete/compare/v0.47.6...v0.47.7) (2024-10-28)
 
 
