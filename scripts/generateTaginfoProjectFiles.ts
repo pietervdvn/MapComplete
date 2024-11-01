@@ -206,6 +206,9 @@ function main() {
         if (layout.hideFromOverview) {
             continue
         }
+        if(layout.id === "personal"){
+            continue
+        }
         files.push(generateTagInfoEntry(layout))
     }
     generateProjectsOverview(Utils.NoNull(files))
