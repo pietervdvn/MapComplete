@@ -1351,14 +1351,14 @@
                 "tagRenderings": {
                     "node-expected_rwn_route_relations": {
                         "freeform": {
-                            "placeholder": "ej. 3"
+                            "placeholder": "p.ej.3"
                         },
                         "question": "¿A cuántos otros nodos de senderismo se conecta este nodo?",
                         "render": "Este nodo se conecta a {expected_rwn_route_relations} otros nodos de senderismo."
                     },
                     "node-rwn_ref": {
                         "freeform": {
-                            "placeholder": "ej. 1"
+                            "placeholder": "p.ej.1"
                         },
                         "question": "¿Cuál es el número de referencia de este nodo de senderismo?",
                         "render": "Este nodo de senderismo tiene el número de referencia {rwn_ref}"
@@ -1366,27 +1366,27 @@
                     "survey_date": {
                         "override": {
                             "question": "¿Cuándo se inspeccionó por última vez este nodo de senderismo?",
-                            "render": "Este nodo de senderismo se inspeccionó por última vez el {survey:date}"
+                            "render": "Este hito de senderismo se inspeccionó por última vez el {survey:date}"
                         }
                     }
                 },
                 "title": {
                     "mappings": {
                         "0": {
-                            "then": "Nodo de senderismo <strong>{rwn_ref}</strong>"
+                            "then": "Hito de senderismo <strong>{rwn_ref}</strong>"
                         },
                         "1": {
-                            "then": "Nodo de senderismo propuesto <strong>{proposed:rwn_ref}</strong>"
+                            "then": "Hito de senderismo propuesto <strong>{proposed:rwn_ref}</strong>"
                         }
                     },
-                    "render": "Nodo de senderismo"
+                    "render": "Hito de senderismo"
                 }
             },
             "2": {
                 "override": {
                     "name": "Señalización de senderismo",
                     "title": {
-                        "render": "Poste guía de senderismo"
+                        "render": "Hito de senderismo"
                     }
                 }
             },
@@ -1403,7 +1403,7 @@
         "title": "Redes de nodos de senderismo"
     },
     "walls_and_buildings": {
-        "description": "Capa integrada especial que proporciona todas las paredes y edificios. Esta capa es útil en los ajustes preestablecidos para objetos que se pueden colocar contra las paredes (por ejemplo, DEA, buzones, entradas, direcciones, cámaras de vigilancia,…). Esta capa es invisible de forma predeterminada y no es conmutable por el usuario.",
+        "description": "Capa especial incorporada que proporciona todas las paredes y edificios. Esta capa es útil en configuraciones predefinidas para objetos que se pueden colocar contra las paredes (por ejemplo, desfibriladores externos automáticos, buzones de correo, entradas, direcciones, cámaras de vigilancia, etc.). Esta capa es invisible de forma predeterminada y el usuario no puede activarla.",
         "title": "Paredes y edificios"
     },
     "waste": {
@@ -1411,7 +1411,7 @@
         "title": "Residuos"
     },
     "waste_basket": {
-        "description": "En este mapa, encontrarás papeleras cerca de ti. Si falta una papelera en este mapa, puedes agregarla tú mismo.",
+        "description": "En este mapa, encontrarás papeleras cerca de ti. Si falta alguna papelera en este mapa, puedes añadirla tú mismo.",
         "shortDescription": "Un mapa con papeleras",
         "title": "Papeleras"
     }
