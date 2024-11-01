@@ -29,6 +29,7 @@ Available languages:
  - it
  - ru
  - hu
+ - uk
 
 # Table of contents
 

@@ -19,6 +19,7 @@ Available languages:
  - de
  - es
  - cs
+ - uk
 
 # Table of contents
 
