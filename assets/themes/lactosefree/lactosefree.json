@@ -15,7 +15,7 @@
     "es": "Un mapa en que colaborar con tiendas y restaurantes con productos sin lactosa",
     "ca": "Un mapa col·lectiu amb botigues i restaurants sense lactosa",
     "cs": "Mapa bezlaktózových obchodů a restaurací vytvořená crowdsourcingem",
-    "uk": "Краудсорсингова карта з магазинами та ресторанами без лактози"
+    "uk": "Колективна мапа з магазинами та ресторанами з безлактозними продуктами"
   },
   "icon": "./assets/layers/questions/lactose_free.svg",
   "layers": [

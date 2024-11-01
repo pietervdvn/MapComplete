@@ -90,7 +90,8 @@
         "fr": "En quel matériau est faite la table de pique-nique ?",
         "es": "¿De qué material está hecha esta mesa de pícnic?",
         "ca": "De quin material està feta aquesta taula de pícnic?",
-        "cs": "Z jakého materiálu je vyroben tento piknikový stůl?"
+        "cs": "Z jakého materiálu je vyroben tento piknikový stůl?",
+        "uk": "З якого матеріалу виготовлений цей стіл для пікніка?"
       },
       "render": {
         "en": "This picnic table is made of {material}",
@@ -118,7 +119,8 @@
             "fr": "C’est une table en bois",
             "es": "Esta es una mesa de pícnic de madera",
             "ca": "Aquesta és una taula de pícnic de fusta",
-            "cs": "Jedná se o dřevěný piknikový stůl"
+            "cs": "Jedná se o dřevěný piknikový stůl",
+            "uk": "Це деревʼяний стіл для пікніка"
           }
         },
         {

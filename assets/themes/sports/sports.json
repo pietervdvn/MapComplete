@@ -39,7 +39,7 @@
     "zh_Hant": "顯示運動設施的地圖。",
     "pl": "Mapa pokazująca obiekty sportowe.",
     "it": "Mappa che mostra gli impianti sportivi.",
-    "uk": "Карта з позначенням спортивних об'єктів."
+    "uk": "Мапа спортивних обʼєктів."
   },
   "icon": "./assets/themes/sports/sport.svg",
   "layers": [

@@ -45,7 +45,7 @@
     "cs": "Tato mapa zobrazuje fasádní zahrady s obrázky a užitečnými informacemi o orientaci, oslunění a druzích rostlin.",
     "ca": "Aquest mapa mostra jardins a façanes amb fotografies i informació útil sobre l'orientació, llum del sol i els tipus de plantes.",
     "pl": "Mapa przedstawia ogrody fasadowe ze zdjęciami i przydatnymi informacjami na temat orientacji, nasłonecznienia i rodzajów roślin.",
-    "uk": "На цій карті показані фасадні сади з фотографіями та корисною інформацією про орієнтацію, сонячне освітлення та типи рослин."
+    "uk": "На цій мапі показані фасадні сади з фотографіями та корисною інформацією про орієнтацію, сонячне освітлення та типи рослин."
   },
   "icon": "./assets/themes/facadegardens/geveltuin.svg",
   "startZoom": 15,

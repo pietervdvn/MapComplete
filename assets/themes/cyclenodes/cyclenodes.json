@@ -20,7 +20,8 @@
     "ca": "Aquest mapa mostra xarxes de nodes ciclistes i et permet afegir-ne de nous de manera senzilla",
     "da": "Dette kort viser cykel netværk og giver dig mulighed for nemt at tilføje nye punkter",
     "cs": "Tato mapa zobrazuje sítě uzlů cyklu a umožňuje snadno přidávat nové uzly",
-    "pl": "Mapa ta przedstawia sieci węzłów rowerowych i umożliwia łatwe dodawanie nowych węzłów"
+    "pl": "Mapa ta przedstawia sieci węzłów rowerowych i umożliwia łatwe dodawanie nowych węzłów",
+    "uk": "Мапа на якій показуються точки веломережі, ви також можете легко додавати нові"
   },
   "icon": "./assets/themes/cyclenodes/logo.svg",
   "startZoom": 11,
@@ -42,7 +43,7 @@
         "ca": "Enllaços node a node",
         "cs": "Propojení mezi uzly",
         "pl": "łącza węzeł do węzła",
-        "uk": "Зв'язки між точками"
+        "uk": "Звʼязки між точками"
       },
       "source": {
         "osmTags": {
@@ -63,7 +64,8 @@
           "fr": "lien noeud à noeud",
           "ca": "Enllaç node a node",
           "cs": "propojení mezi uzly",
-          "pl": "połączenie węzła z węzłem"
+          "pl": "połączenie węzła z węzłem",
+          "uk": "Відрізок між точками"
         },
         "mappings": [
           {
@@ -76,7 +78,8 @@
               "fr": "lien noeud à noeud <strong>{ref}</strong>",
               "ca": "Enllaç node a node <strong>{ref}</strong>",
               "cs": "propojení mezi uzly <strong>{ref}</strong>",
-              "pl": "połączenie węzła z węzłem <strong>{ref}</strong>"
+              "pl": "połączenie węzła z węzłem <strong>{ref}</strong>",
+              "uk": "Відрізок між точками <strong>{ref}</strong>"
             }
           }
         ]
@@ -94,7 +97,7 @@
               "ca": "Quan es va comprovar per última vegada aquest enllaç node a node presencialment?",
               "cs": "Kdy bylo toto propojení mezi uzly naposledy zkontrolováno?",
               "pl": "Kiedy ostatnio badano to połączenie węzła z węzłem?",
-              "uk": "Коли цей зв'язок між точками досліджувався востаннє?"
+              "uk": "Коли цей звʼязок між точками досліджувався востаннє?"
             },
             "render": {
               "en": "This node to node link was last surveyed on {survey:date}",
@@ -143,7 +146,8 @@
         "cs": "uzly",
         "eu": "nodoak",
         "pl": "węzły",
-        "zh_Hant": "節點"
+        "zh_Hant": "節點",
+        "uk": "Точки"
       },
       "source": {
         "osmTags": {
@@ -286,7 +290,8 @@
             "fr": "A combien dautres nœuds vélo ce nœud est-il lié ?",
             "ca": "A quants altes nodes ciclistes enllaça aquest node?",
             "cs": "S kolika dalšími uzly cyklu je tento uzel propojen?",
-            "pl": "Z iloma innymi węzłami rowerowymi łączy się ten węzeł?"
+            "pl": "Z iloma innymi węzłami rowerowymi łączy się ten węzeł?",
+            "uk": "З кількома іншими точками повʼязана ця точка?"
           },
           "render": {
             "en": "This node links to {expected_rcn_route_relations} other cycle nodes.",
@@ -309,7 +314,8 @@
               "es": "Por ejemplo, 3",
               "pl": "np. 3",
               "da": "fx 3",
-              "ca": "Per exemple, 3"
+              "ca": "Per exemple, 3",
+              "uk": "напр. 3"
             }
           },
           "id": "node-expected_rcn_route_relations"
@@ -329,7 +335,8 @@
             "ca": "un node ciclista",
             "es": "un nodo cíclico",
             "cs": "cyklistický uzel",
-            "pl": "węzeł rowerowy"
+            "pl": "węzeł rowerowy",
+            "uk": "велоточка"
           },
           "snapToLayer": [
             "cycleways_and_roads"

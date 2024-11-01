@@ -46,7 +46,7 @@
     "eu": "Estatuen, bustoen, graffitien eta mundu osoko beste artelan batzuen mapa irekia",
     "pl": "Otwarta mapa posągów, popiersi, graffiti i innych dzieł sztuki z całego świata",
     "pt_BR": "Um mapa aberto de estátuas, bustos, grafites e outras obras de arte em todo o mundo",
-    "uk": "Відкрита карта статуй, бюстів, графіті та інших творів мистецтва по всьому світу"
+    "uk": "Відкрита мапа статуй, бюстів, графіті та інших творів мистецтва по всьому світу"
   },
   "source": {
     "osmTags": "tourism=artwork"

@@ -48,7 +48,7 @@
     "ca": "Un mapa que mostra pistes d'esports",
     "cs": "Mapa sportovních hřišť",
     "pl": "Mapa przedstawiająca boiska sportowe",
-    "uk": "Карта з позначенням спортивних майданчиків"
+    "uk": "Мапа з позначенням спортивних майданчиків"
   },
   "icon": "./assets/layers/sport_pitch/table_tennis.svg",
   "layers": [

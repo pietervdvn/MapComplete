@@ -45,7 +45,7 @@
     "es": "Un mapa de hackerspaces",
     "ca": "Un mapa dels hackerspaces",
     "pl": "Mapa hackerspaceów",
-    "uk": "Карта хакерських просторів"
+    "uk": "Мапа хакерських просторів"
   },
   "icon": "./assets/themes/hackerspaces/glider.svg",
   "layers": [

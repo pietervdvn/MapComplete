@@ -28,7 +28,7 @@
     "zh_Hant": "在這份地圖，你可以找到觀光客與自然愛好者感興趣的資訊...",
     "pl": "Na tej mapie można znaleźć ciekawe informacje dla turystów i miłośników przyrody.",
     "it": "Su questa mappa si possono trovare informazioni interessanti per turisti e amanti della natura.",
-    "uk": "На цій карті можна знайти цікаву інформацію для туристів та любителів природи."
+    "uk": "На цій мапі можна знайти цікаву інформацію для туристів та любителів природи."
   },
   "shortDescription": {
     "en": "A map for nature lovers, with interesting POI's",
@@ -43,7 +43,7 @@
     "pl": "Mapa dla miłośników przyrody z ciekawymi punktami POI",
     "it": "Una mappa per amanti della natura con interessanti POI",
     "ru": "Карта для любителей природы, с интересными POI",
-    "uk": "Карта для любителів природи, з цікавими об'єктами POI"
+    "uk": "Мапа для любителів природи, з Точками інтересу"
   },
   "icon": "./assets/themes/nature/logo.svg",
   "startZoom": 12,

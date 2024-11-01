@@ -32,7 +32,7 @@
     "it": "Aiuta a mappare le caratteristiche importanti per i non vedenti",
     "pl": "Pomóż umieszczać na mapie obiekty ważne dla niewidomych",
     "zh_Hans": "帮助绘制与盲人相关的设施",
-    "uk": "Допоможіть нанести на карту об'єкти, важливі для незрячих"
+    "uk": "Допоможіть нанести на мапу обʼєкти, важливі для незрячих"
   },
   "icon": "./assets/themes/blind_osm/Blindicon.svg",
   "startZoom": 20,

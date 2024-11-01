@@ -36,7 +36,7 @@
     "pl": "Ta mapa pokazuje bankomaty, w których można wypłacać lub wpłacać pieniądze",
     "da": "Dette kort viser hæveautomater, hvor du kan hæve og indsætte kontanter",
     "zh_Hans": "这张地图显示了可以取款或存款的自动取款机",
-    "uk": "На цій карті показані банкомати, де можна зняти або поповнити рахунок"
+    "uk": "На цій мапі показані банкомати, де можна зняти готівку або поповнити рахунок"
   },
   "icon": "./assets/themes/atm/logo.svg",
   "layers": [

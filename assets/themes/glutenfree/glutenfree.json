@@ -18,7 +18,7 @@
     "es": "Un menú compartido con productos sin gluten",
     "ca": "Un mapa col·lectiu amb articles sense gluten",
     "cs": "Mapa s bezlepkovými položkami vytvořená pomocí crowdsourcingu",
-    "uk": "Краудсорсингова карта з безглютеновими продуктами"
+    "uk": "Колективна мапа з безглютеновими продуктами"
   },
   "icon": "./assets/layers/questions/glutenfree.svg",
   "layers": [

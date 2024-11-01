@@ -13,7 +13,7 @@
     "es": "Un mapa que muestra los rótulos en desuso de los edificios",
     "ca": "Un mapa que mostra els rètols en desús dels edificis",
     "cs": "Mapa zobrazující nepoužívané nápisy na budovách",
-    "uk": "Карта, на якій показані вивіски на будівлях, що не використовуються"
+    "uk": "Мапа, на якій показані вивіски на будівлях, що не використовуються"
   },
   "icon": "./assets/themes/advertising/wall_painting.svg",
   "layers": [
