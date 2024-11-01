@@ -391,7 +391,7 @@
         }
     },
     "artwork": {
-        "description": "Un mapa abierto de Estatuas, bustos, Graffitis y otras Obras de Arte en todo el mundo",
+        "description": "Un mapa abierto de estatuas, bustos, grafitis y otras obras de arte de todo el mundo",
         "name": "Obras de arte",
         "presets": {
             "0": {
@@ -5319,7 +5319,7 @@
         }
     },
     "walls_and_buildings": {
-        "description": "Capa especial incorporada que proporciona todas las paredes y edificios. Esta capa es útil en los preajustes para objetos que pueden colocarse contra las paredes (por ejemplo: AEDs, buzones de correos, entradas, direcciones, cámaras de vigilancia, ...). Esta capa es invisible por defecto y no puede ser activada por el usuario.",
+        "description": "Capa integrada especial que proporciona todas las paredes y edificios. Esta capa es útil en los ajustes preestablecidos para objetos que se pueden colocar contra las paredes (por ejemplo, DEA, buzones, entradas, direcciones, cámaras de vigilancia,…). Esta capa es invisible de forma predeterminada y no es conmutable por el usuario.",
         "title": {
             "render": "Pared o edificio"
         }
