@@ -1,7 +1,7 @@
 {
   "contributors": [
     {
-      "commits": 8513,
+      "commits": 8525,
       "contributor": "Pieter Vander Vennet"
     },
     {
@@ -166,6 +166,10 @@
     },
     {
       "commits": 3,
+      "contributor": "Languages add-on"
+    },
+    {
+      "commits": 3,
       "contributor": "Thierry1030"
     },
     {
@@ -178,7 +182,7 @@
     },
     {
       "commits": 2,
-      "contributor": "Languages add-on"
+      "contributor": "Kim Minwoo"
     },
     {
       "commits": 2,

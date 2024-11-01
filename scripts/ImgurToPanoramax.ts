@@ -24,7 +24,7 @@ import { UploadableTag } from "../src/Logic/Tags/TagTypes"
 export class ImgurToPanoramax extends Script {
     private readonly panoramax = new PanoramaxUploader(
         Constants.panoramax.url,
-        Constants.panoramax.token,
+        Constants.panoramax.token
     )
 
     private readonly alreadyUploaded: Record<string, string> = {}
@@ -41,7 +41,7 @@ export class ImgurToPanoramax extends Script {
 
     constructor() {
         super(
-            "Queries OSM for 'imgur'-images, uploads them to Panoramax and creates a changeset to update OSM",
+            "Queries OSM for 'imgur'-images, uploads them to Panoramax and creates a changeset to update OSM"
         )
     }
 
@@ -51,7 +51,7 @@ export class ImgurToPanoramax extends Script {
         sequences: {
             id: string
             "stats:items": { count: number }
-        }[],
+        }[]
     ): Promise<UploadableTag | undefined> {
         const v = feat.properties[key]
         if (!v) {
@@ -63,7 +63,6 @@ export class ImgurToPanoramax extends Script {
             const panohash = this.alreadyUploaded[imageHash]
             return new And([new Tag(key.replace("image", panohash), panohash), new Tag(key, "")])
         }
-
 
         let path: string = undefined
         if (existsSync(this._imageDirectory + "/" + imageHash + ".jpg")) {
@@ -101,7 +100,7 @@ export class ImgurToPanoramax extends Script {
 
         const file = new MyFile([], path)
 
-        file.stream = function() {
+        file.stream = function () {
             return handle.readableWebStream()
         }
 
@@ -111,7 +110,7 @@ export class ImgurToPanoramax extends Script {
             GeoOperations.centerpointCoordinates(feat),
             author,
             true,
-            sequence,
+            sequence
         )
         this.alreadyUploaded[imageHash] = result.value
         await handle.close()
@@ -156,7 +155,7 @@ export class ImgurToPanoramax extends Script {
                 {
                     theme: "image-mover",
                     changeType: "link-image",
-                },
+                }
             )
             changes.push(...(await action.CreateChangeDescriptions()))
             converted++
@@ -166,7 +165,7 @@ export class ImgurToPanoramax extends Script {
         const modifiedObjectsFresh = <OsmObject[]>(
             (
                 await Promise.all(
-                    modif.map((id) => new OsmObjectDownloader().DownloadObjectAsync(id)),
+                    modif.map((id) => new OsmObjectDownloader().DownloadObjectAsync(id))
                 )
             ).filter((m) => m !== "deleted")
         )
@@ -174,7 +173,7 @@ export class ImgurToPanoramax extends Script {
             changes,
             modifiedObjectsFresh,
             false,
-            [],
+            []
         )
         const cs = Changes.buildChangesetXML("0", modifiedObjects)
         writeFileSync("imgur_to_panoramax.osc", cs, "utf8")

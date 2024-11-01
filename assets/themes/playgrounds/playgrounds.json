@@ -35,7 +35,8 @@
     "da": "På dette kort finder du legepladser og kan tilføje flere oplysninger",
     "ca": "A aquest mapa, pots trobar parcs i afegir més informació",
     "cs": "Na této mapě najdete dětská hřiště a můžete k nim přidat další informace",
-    "pl": "Na tej mapie znajdziesz place zabaw, możesz też dodać o nich więcej informacji"
+    "pl": "Na tej mapie znajdziesz place zabaw, możesz też dodać o nich więcej informacji",
+    "uk": "На цій мапі ви знайдете дитячі майданчики та зможете додати додаткову інформацію"
   },
   "shortDescription": {
     "nl": "Een kaart met speeltuinen",
@@ -54,7 +55,7 @@
     "da": "Et kort med legepladser",
     "cs": "Mapa dětských hřišť",
     "pl": "Mapa z placami zabaw",
-    "uk": "Карта з дитячими майданчиками"
+    "uk": "Мапа дитячих майданчиків"
   },
   "icon": "./assets/themes/playgrounds/playground.svg",
   "startZoom": 13,

@@ -26,6 +26,7 @@ Available languages:
  - ca
  - pl
  - hu
+ - uk
 
 # Table of contents
 

@@ -76,7 +76,8 @@
         "then": {
           "en": "Bar",
           "de": "Bar",
-          "ca": "Pub"
+          "ca": "Pub",
+          "cs": "Bar"
         }
       },
       {
@@ -84,14 +85,16 @@
         "then": {
           "en": "Cafe",
           "de": "Café",
-          "ca": "CAfè"
+          "ca": "CAfè",
+          "cs": "Kavárna"
         }
       },
       {
         "if": "amenity=nightclub",
         "then": {
           "en": "Nightclub",
-          "de": "Nachtclub"
+          "de": "Nachtclub",
+          "cs": "Noční klub"
         }
       }
     ]

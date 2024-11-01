@@ -34,7 +34,8 @@
     "ca": "En aquest mapa es mostren els punts d'aigua potable accessibles al públic i es poden afegir fàcilment",
     "da": "På dette kort er offentligt tilgængelige drikkevandsteder vist og kan nemt tilføjes",
     "cs": "Na této mapě jsou zobrazena veřejně přístupná místa s pitnou vodou, která lze snadno přidat",
-    "pl": "Na tej mapie znajdują się dostępne publicznie źródła pitnej wody i mogą łatwo być dodane"
+    "pl": "Na tej mapie znajdują się dostępne publicznie źródła pitnej wody i mogą łatwo być dodane",
+    "uk": "На цій мапі показуються і можуть бути легко додані загальнодоступні місця з питною водою"
   },
   "icon": "./assets/themes/drinking_water/logo.svg",
   "startLat": 50.8465573,

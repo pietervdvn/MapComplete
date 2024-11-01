@@ -1,7 +1,7 @@
 {
   "contributors": [
     {
-      "commits": 485,
+      "commits": 486,
       "contributor": "Pieter Vander Vennet"
     },
     {
@@ -17,7 +17,7 @@
       "contributor": "Anonymous"
     },
     {
-      "commits": 101,
+      "commits": 102,
       "contributor": "mcliquid"
     },
     {
@@ -34,14 +34,14 @@
     },
     {
       "commits": 53,
-      "contributor": "Harry Bond"
-    },
-    {
-      "commits": 49,
       "contributor": "mike140"
     },
     {
-      "commits": 48,
+      "commits": 53,
+      "contributor": "Harry Bond"
+    },
+    {
+      "commits": 50,
       "contributor": "Jiří Podhorecký"
     },
     {
@@ -57,7 +57,7 @@
       "contributor": "Babos Gábor"
     },
     {
-      "commits": 36,
+      "commits": 37,
       "contributor": "Lucas"
     },
     {
@@ -422,6 +422,10 @@
     },
     {
       "commits": 2,
+      "contributor": "David Crochet"
+    },
+    {
+      "commits": 2,
       "contributor": "Ryan C"
     },
     {
@@ -543,6 +547,10 @@
     {
       "commits": 2,
       "contributor": "Leo Alcaraz"
+    },
+    {
+      "commits": 1,
+      "contributor": "Kim Minwoo"
     },
     {
       "commits": 1,

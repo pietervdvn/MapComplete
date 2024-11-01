@@ -13,7 +13,8 @@
     "zh_Hant": "投入自然懷抱",
     "pl": "W naturze",
     "ru": "На природе",
-    "hu": "Ki a természetbe"
+    "hu": "Ki a természetbe",
+    "uk": "На природі"
   },
   "description": {
     "en": "On this map, one can find interesting information for tourists and nature lovers.",
@@ -26,7 +27,8 @@
     "ca": "En aquest mapa es pot trobar informació interessant per a turistes i amants de la natura.",
     "zh_Hant": "在這份地圖，你可以找到觀光客與自然愛好者感興趣的資訊...",
     "pl": "Na tej mapie można znaleźć ciekawe informacje dla turystów i miłośników przyrody.",
-    "it": "Su questa mappa si possono trovare informazioni interessanti per turisti e amanti della natura."
+    "it": "Su questa mappa si possono trovare informazioni interessanti per turisti e amanti della natura.",
+    "uk": "На цій мапі можна знайти цікаву інформацію для туристів та любителів природи."
   },
   "shortDescription": {
     "en": "A map for nature lovers, with interesting POI's",
@@ -40,7 +42,8 @@
     "zh_Hant": "為了自然愛好者，以及有趣的興趣點的地圖",
     "pl": "Mapa dla miłośników przyrody z ciekawymi punktami POI",
     "it": "Una mappa per amanti della natura con interessanti POI",
-    "ru": "Карта для любителей природы, с интересными POI"
+    "ru": "Карта для любителей природы, с интересными POI",
+    "uk": "Мапа для любителів природи, з Точками інтересу"
   },
   "icon": "./assets/themes/nature/logo.svg",
   "startZoom": 12,

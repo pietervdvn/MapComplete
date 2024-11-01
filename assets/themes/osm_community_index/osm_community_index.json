@@ -9,7 +9,8 @@
     "ca": "Índex de comunitats d'OSM",
     "cs": "Komunitní rejstřík OSM",
     "pl": "Indeks społeczności OSM",
-    "hu": "OSM-közösségek jegyzéke"
+    "hu": "OSM-közösségek jegyzéke",
+    "uk": "Індекс спільноти OSM"
   },
   "description": {
     "en": "A list of resources for users of OpenStreetMap. 'Resources' can be links to forums, meetups, Slack groups, IRC channels, mailing lists, and so on. Anything that mappers, especially beginners, might find interesting or helpful.",
@@ -29,7 +30,8 @@
     "es": "Un índice de recursos comunitarios para OpenStreetMap.",
     "ca": "Un índex de recursos comunitaris per a OpenStreetMap.",
     "cs": "Rejstřík komunitních zdrojů pro OpenStreetMap.",
-    "pl": "Indeks zasobów społeczności dotyczących OpenStreetMap."
+    "pl": "Indeks zasobów społeczności dotyczących OpenStreetMap.",
+    "uk": "Індекс ресурсів спільноти для OpenStreetMap."
   },
   "icon": "./assets/themes/osm_community_index/osm.svg",
   "startZoom": 16,

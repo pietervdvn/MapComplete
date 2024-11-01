@@ -97,7 +97,8 @@
           "da": "Cykelreparationsstation",
           "cs": "Stanice na opravu kol",
           "ca": "Estació de reparació de bicicletes",
-          "pl": "Stacja naprawy rowerów"
+          "pl": "Stacja naprawy rowerów",
+          "uk": "Станція ремонту велосипедів"
         }
       },
       {
@@ -442,7 +443,8 @@
         "es": "¿Qué servicios están disponibles en esta localización?",
         "da": "Hvilke tjenester er tilgængelige på dette sted?",
         "cs": "Jaké služby jsou na tomto místě k dispozici?",
-        "ca": "Quins serveis hi ha disponibles en aquesta ubicació?"
+        "ca": "Quins serveis hi ha disponibles en aquesta ubicació?",
+        "uk": "Які послуги доступні в цьому місці?"
       },
       "mappings": [
         {
@@ -464,7 +466,8 @@
             "es": "Solo hay una bomba presente",
             "da": "Der er kun en pumpe",
             "cs": "K dispozici je pouze vzduchový kompresor",
-            "ca": "Només hi ha una bomba present"
+            "ca": "Només hi ha una bomba present",
+            "uk": "Присутній тільки насос"
           }
         },
         {
@@ -486,7 +489,8 @@
             "es": "Solo hay herramientas (destornilladores, pinzas...) presentes",
             "da": "Der er kun værktøj (skruetrækkere, tænger, ...) til stede",
             "cs": "K dispozici je pouze nářadí (šroubováky, kleště, …)",
-            "ca": "Només hi ha present ferramentes (tornavísos, pinces, …)"
+            "ca": "Només hi ha present ferramentes (tornavísos, pinces, …)",
+            "uk": "Присутні лише інструменти (викрутки, плоскогубці, ...)"
           }
         },
         {
@@ -508,7 +512,8 @@
             "es": "Hay tanto herramientas como bombas",
             "da": "Der er både værktøj og pumpe",
             "cs": "K dispozici jsou nástroje i vzduchový kompresor",
-            "ca": "Hi ha tant eines com una bomba"
+            "ca": "Hi ha tant eines com una bomba",
+            "uk": "Присутні як інструменти, так і насос"
           }
         }
       ]
@@ -526,7 +531,8 @@
         "es": "¿Todavía está operativa la bomba para bicicletas?",
         "da": "Fungerer cykelpumpen stadig?",
         "cs": "Je vzduchový kompresor na kolo stále funkční?",
-        "ca": "La bomba per a la bicicleta encara funciona?"
+        "ca": "La bomba per a la bicicleta encara funciona?",
+        "uk": "Велосипедний насос ще працює?"
       },
       "condition": "service:bicycle:pump=yes",
       "mappings": [
@@ -544,7 +550,8 @@
             "es": "La bomba para bicicletas está rota",
             "da": "Cykelpumpen er i stykker",
             "cs": "Vzduchový kompresor na kolo je rozbitý",
-            "ca": "La bomba per a bicicletes està trencada"
+            "ca": "La bomba per a bicicletes està trencada",
+            "uk": "Велосипедний насос зламаний"
           }
         },
         {
@@ -561,7 +568,8 @@
             "es": "La bomba para bicicletas está operativa",
             "da": "Cykelpumpen er i drift",
             "cs": "Vzduchový kompresor na kolo je v provozu",
-            "ca": "La bomba per a la bicicleta està operativa"
+            "ca": "La bomba per a la bicicleta està operativa",
+            "uk": "Велосипедний насос працює"
           }
         }
       ],
@@ -812,7 +820,8 @@
         "es": "¿Esta estación tiene un gancho para colgar tu bici o un soporte para elevarla?",
         "da": "Har denne cykelstation en krog til at hænge din cykel på eller et stativ til at hæve den?",
         "cs": "Má tato cyklistická stanice hák na zavěšení kola nebo stojan na jeho zvednutí?",
-        "ca": "Aquesta estació de bicicletes té un ganxo per penjar la bicicleta o un suport per aixecar-la?"
+        "ca": "Aquesta estació de bicicletes té un ganxo per penjar la bicicleta o un suport per aixecar-la?",
+        "uk": "Чи є на цій станції гачок, на який можна повісити велосипед, або підставка для його підйому?"
       },
       "condition": "service:bicycle:tools=yes",
       "mappings": [
@@ -830,7 +839,8 @@
             "es": "Hay un gancho o soporte",
             "da": "Der er en krog eller et stativ",
             "cs": "K dispozici je závěsný hák nebo stojan",
-            "ca": "Hi ha un ganxo o suport"
+            "ca": "Hi ha un ganxo o suport",
+            "uk": "Є гачок або підставка"
           }
         },
         {
@@ -847,7 +857,8 @@
             "es": "No hay ningún gancho o soporte",
             "da": "Der er ingen krog eller stativ",
             "cs": "Není zde žádný závěsný hák ani stojan",
-            "ca": "No hi ha ganxo ni suport"
+            "ca": "No hi ha ganxo ni suport",
+            "uk": "Немає гачка або підставки"
           }
         }
       ]

@@ -43,7 +43,7 @@
     "eu": "OpenStreetMap-en erregistratzen diren banku guztiak erakusten ditu mapa honek: garraio publikoko geralekuetako edo babeslekuetako banakako bankuak eta bankuak.",
     "pl": "Mapa ta pokazuje wszystkie ławki zarejestrowane w OpenStreetMap: ławki indywidualne oraz ławki należące do przystanków komunikacji miejskiej lub wiat.",
     "zh_Hans": "这张地图显示了所有记录在 OpenStreetMap 中的长椅：包括独立长椅和属于公共交通站点或候车亭的长椅。",
-    "uk": "На цій карті показані всі лавки, які зафіксовані в OpenStreetMap: Окремі лавки та лавки, що належать до зупинок громадського транспорту або притулків."
+    "uk": "На цій мапі показані всі лавки, які зафіксовані в OpenStreetMap: Окремі лавки та лавки, що належать до зупинок громадського транспорту або прихистків."
   },
   "shortDescription": {
     "en": "A map of benches",
@@ -67,7 +67,7 @@
     "pl": "Mapa ławek",
     "pt": "Um mapa de bancadas",
     "fil": "Mapa ng upuan",
-    "uk": "Карта лавок"
+    "uk": "Мапа лавок"
   },
   "icon": "./assets/themes/benches/bench_poi.svg",
   "credits": [

@@ -1246,7 +1246,7 @@
                     "placeholder": "Webové stránky počítadla"
                 },
                 "question": "Existuje webová stránka tohoto počítadla jízdních kol?",
-                "render": "Webové stránky počítadla: <a href='{website}'>{web}</a>"
+                "render": "Webové stránky počítadla: <a href='{website}'>{website}</a>"
             }
         },
         "title": {

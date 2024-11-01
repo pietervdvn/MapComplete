@@ -14,7 +14,8 @@
     "en": "Outdoor place to make a fire or a fixed barbecue in an official place.",
     "es": "Lugar al aire libre adecuado para hacer fuego y con barbacoas.",
     "ca": "Lloc a l'aire lliure adequat per a fer foc i barbacoes.",
-    "cs": "Venkovní místo pro rozdělání ohně nebo grilování na oficiálním místě."
+    "cs": "Venkovní místo pro rozdělání ohně nebo grilování na oficiálním místě.",
+    "uk": "Відкрите місце для розведення багаття або стаціонарне барбекю в офіційному місці."
   },
   "icon": "./assets/layers/assembly_point/fire.svg",
   "layers": [

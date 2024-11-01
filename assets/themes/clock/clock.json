@@ -27,7 +27,7 @@
     "pl": "Mapa pokazująca wszystkie zegary publiczne",
     "da": "Kort over alle ure i det offentlige rum",
     "it": "Mappa di tutti gli orologi pubblici",
-    "uk": "Карта з усіма громадськими годинниками"
+    "uk": "Мапа годинників в громадських місцях"
   },
   "icon": "./assets/layers/clock/clock.svg",
   "layers": [

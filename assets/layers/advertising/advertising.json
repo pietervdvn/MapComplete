@@ -1712,7 +1712,8 @@
         "de": "Ist dieses Schild für ein Geschäft, das nicht mehr existiert oder nicht mehr gepflegt wird?",
         "es": "¿Es este cartel de un negocio que ya no existe o que ya no se mantiene?",
         "cs": "Je tato značka určena pro již neexistující nebo neudržovaný podnik?",
-        "uk": "Це знак для бізнесу, який більше не існує або більше не підтримується?"
+        "uk": "Це знак для бізнесу, який більше не існує або більше не підтримується?",
+        "fr": "Est-ce l'enseigne d'un commerce qui n'existe plus ou n'est plus en activité ?"
       },
       "mappings": [
         {
@@ -1723,7 +1724,8 @@
             "de": "Es handelt sich um ein historisches Werbeschild (eine Werbung für ein Unternehmen, das nicht mehr existiert, oder ein sehr altes Schild mit historischem Wert)",
             "cs": "Jedná se o historický reklamní nápis (reklama na již neexistující podnik nebo velmi starý nápis s památkovou hodnotou)",
             "es": "Esto es un cartel publicitario histórico (un anuncio para un negocio que ya no existe o un cartel con un gran valor patrimonial)",
-            "uk": "Це історична рекламна вивіска (реклама підприємства, яке більше не існує, або дуже стара вивіска, що має історичну цінність)"
+            "uk": "Це історична рекламна вивіска (реклама підприємства, яке більше не існує, або дуже стара вивіска, що має історичну цінність)",
+            "fr": "C'est une publicité historique (publicité pour un commerce qui n'existe plus ou une très vielle publicité avec un intérêt patrimonial)"
           }
         },
         {
@@ -1733,7 +1735,8 @@
             "de": "Dieses Werbeschild hat keinen historischen Wert (das Unternehmen existiert noch und hat keinen denkmalpflegerischen Wert)",
             "cs": "Tento reklamní nápis nemá žádnou historickou hodnotu (podnik stále existuje a nemá žádnou památkovou hodnotu)",
             "es": "Este cartel publicitario no tiene valor histórico (el negocio todavía existe y no tiene valor patrimonial)",
-            "uk": "Ця рекламна вивіска не має історичної цінності (бізнес все ще існує і не має історичної цінності)"
+            "uk": "Ця рекламна вивіска не має історичної цінності (бізнес все ще існує і не має історичної цінності)",
+            "fr": "Cette publicité n'a pas de valeur historique (le commerce existe toujours, mais n'a pas de valeur patrimoniale particulière)"
           }
         }
       ]

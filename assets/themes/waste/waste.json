@@ -29,7 +29,8 @@
     "es": "Mapa que muestra las papeleras y las instalaciones de reciclaje.",
     "cs": "Mapa zobrazující koše na odpadky a recyklační zařízení.",
     "zh_Hant": "顯示垃圾筒與回收設施的地圖。",
-    "pl": "Mapa przedstawiająca kosze na śmieci i zakłady recyklingu."
+    "pl": "Mapa przedstawiająca kosze na śmieci i zakłady recyklingu.",
+    "uk": "Мапа сміттєвих контейнерів та пунктів перероблення вторсировини."
   },
   "icon": "./assets/layers/recycling/recycling-14.svg",
   "startZoom": 19,

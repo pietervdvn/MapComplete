@@ -17,7 +17,7 @@
     "da": "Cyclofix - et åbent kort for cyklister",
     "cs": "Cyklofix - mapa pro cyklisty",
     "pl": "Cyclofix - mapa dla rowerzystów",
-    "uk": "Cyclofix - карта для велосипедистів"
+    "uk": "Cyclofix — мапа для велосипедистів"
   },
   "description": {
     "en": "A map for cyclists to find the appropriate infrastructure for their needs, such as bicycle pumps, drinking water, bicycle shops, repair stations or parkings.",
@@ -33,7 +33,8 @@
     "da": "Målet med dette kort er at præsentere cyklister for en letanvendelig løsning til at finde den passende infrastruktur til deres behov.<br><br>Du kan spore din præcise placering (kun mobil) og vælge lag, der er relevante for dig i nederste venstre hjørne. Du kan også bruge dette værktøj til at tilføje eller redigere pins (points of interest) til kortet og give flere data ved at besvare spørgsmålene.<br><br>Alle ændringer, du foretager, vil automatisk blive gemt i den globale database af OpenStreetMap og kan kan frit genbruges af andre.<br><br>For mere information om cyclofix-projektet, gå til <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a> .",
     "cs": "Mapa pro cyklisty, kde najdou vhodnou infrastrukturu pro své potřeby, jako jsou pumpy na kola, pitná voda, cyklistické obchody, opravny nebo parkoviště.",
     "ca": "Un mapa per a que els ciclistes troben la infraestructura adequada a les seves necessitats, com bombes de bicicletes, aigua potable, botigues de bicicletes, reparació o aparcaments.",
-    "pl": "Celem tej mapy jest zaprezentowanie rowerzystom łatwego w użyciu rozwiązania umożliwiającego znalezienie infrastruktury odpowiedniej dla ich potrzeb.<br><br>Możesz śledzić swoją dokładną lokalizację (tylko na urządzeniach mobilnych) i wybierać w lewym dolnym rogu warstwy, które są dla Ciebie odpowiednie. Możesz także użyć tego narzędzia, aby dodać lub edytować pinezki (interesujące miejsca) na mapie i dostarczyć więcej danych, odpowiadając na pytania.<br><br>Wszystkie wprowadzone zmiany zostaną automatycznie zapisane w globalnej bazie danych OpenStreetMap i mogą być swobodnie ponownie wykorzystywane przez innych.<br><br>Więcej informacji o projekcie cyclofix można znaleźć na stronie <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a> ."
+    "pl": "Celem tej mapy jest zaprezentowanie rowerzystom łatwego w użyciu rozwiązania umożliwiającego znalezienie infrastruktury odpowiedniej dla ich potrzeb.<br><br>Możesz śledzić swoją dokładną lokalizację (tylko na urządzeniach mobilnych) i wybierać w lewym dolnym rogu warstwy, które są dla Ciebie odpowiednie. Możesz także użyć tego narzędzia, aby dodać lub edytować pinezki (interesujące miejsca) na mapie i dostarczyć więcej danych, odpowiadając na pytania.<br><br>Wszystkie wprowadzone zmiany zostaną automatycznie zapisane w globalnej bazie danych OpenStreetMap i mogą być swobodnie ponownie wykorzystywane przez innych.<br><br>Więcej informacji o projekcie cyclofix można znaleźć na stronie <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a> .",
+    "uk": "Мапа, на якій велосипедисти можуть знайти відповідну інфраструктуру для своїх потреб, наприклад, велосипедні насоси, питну воду, веломагазини, ремонтні станції або парковки."
   },
   "icon": "./assets/themes/cyclofix/logo.svg",
   "socialImage": "./assets/themes/cyclofix/logo.svg",

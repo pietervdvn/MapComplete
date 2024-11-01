@@ -13,7 +13,7 @@
 {{service_item
 |name= [https://mapcomplete.org/cyclofix cyclofix]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:fr|en}}, {{#language:gl|en}}, {{#language:de|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:it|en}}, {{#language:hu|en}}, {{#language:es|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:ca|en}}, {{#language:pl|en}}
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:fr|en}}, {{#language:gl|en}}, {{#language:de|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:it|en}}, {{#language:hu|en}}, {{#language:es|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:ca|en}}, {{#language:pl|en}}, {{#language:uk|en}}
 |descr= A MapComplete theme: A map for cyclists to find the appropriate infrastructure for their needs, such as bicycle pumps, drinking water, bicycle shops, repair stations or parkings
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -31,7 +31,7 @@
 {{service_item
 |name= [https://mapcomplete.org/waste waste]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:it|en}}, {{#language:ca|en}}, {{#language:da|en}}, {{#language:es|en}}, {{#language:cs|en}}, {{#language:zh_Hant|en}}, {{#language:pl|en}}
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:it|en}}, {{#language:ca|en}}, {{#language:da|en}}, {{#language:es|en}}, {{#language:cs|en}}, {{#language:zh_Hant|en}}, {{#language:pl|en}}, {{#language:uk|en}}
 |descr= A MapComplete theme: Map showing waste baskets and recycling facilities
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -58,7 +58,7 @@
 {{service_item
 |name= [https://mapcomplete.org/shops shops]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:fr|en}}, {{#language:ja|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:hu|en}}, {{#language:es|en}}, {{#language:nl|en}}, {{#language:da|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:zh_Hant|en}}, {{#language:pl|en}}, {{#language:ru|en}}
+|lang= {{#language:en|en}}, {{#language:fr|en}}, {{#language:ja|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:hu|en}}, {{#language:es|en}}, {{#language:nl|en}}, {{#language:da|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:zh_Hant|en}}, {{#language:pl|en}}, {{#language:ru|en}}, {{#language:uk|en}}
 |descr= A MapComplete theme: An editable map with basic shop information
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -76,7 +76,7 @@
 {{service_item
 |name= [https://mapcomplete.org/sports sports]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:ca|en}}, {{#language:es|en}}, {{#language:cs|en}}, {{#language:zh_Hant|en}}, {{#language:pl|en}}, {{#language:it|en}}
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:ca|en}}, {{#language:es|en}}, {{#language:cs|en}}, {{#language:zh_Hant|en}}, {{#language:pl|en}}, {{#language:it|en}}, {{#language:uk|en}}
 |descr= A MapComplete theme: Map showing sport facilities.
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -112,7 +112,7 @@
 {{service_item
 |name= [https://mapcomplete.org/drinking_water drinking_water]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:fr|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:it|en}}, {{#language:ru|en}}, {{#language:de|en}}, {{#language:nb_NO|en}}, {{#language:hu|en}}, {{#language:es|en}}, {{#language:ca|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:pl|en}}
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:fr|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:it|en}}, {{#language:ru|en}}, {{#language:de|en}}, {{#language:nb_NO|en}}, {{#language:hu|en}}, {{#language:es|en}}, {{#language:ca|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:pl|en}}, {{#language:uk|en}}
 |descr= A MapComplete theme: On this map, publicly accessible drinking water spots are shown and can be easily added
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -121,7 +121,7 @@
 {{service_item
 |name= [https://mapcomplete.org/toilets toilets]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:nl|en}}, {{#language:ru|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:pl|en}}, {{#language:it|en}}, {{#language:hu|en}}, {{#language:nb_NO|en}}, {{#language:da|en}}, {{#language:ca|en}}, {{#language:es|en}}, {{#language:cs|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:nl|en}}, {{#language:ru|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:pl|en}}, {{#language:it|en}}, {{#language:hu|en}}, {{#language:nb_NO|en}}, {{#language:da|en}}, {{#language:ca|en}}, {{#language:es|en}}, {{#language:cs|en}}, {{#language:uk|en}}
 |descr= A MapComplete theme: A map of public toilets
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -301,7 +301,7 @@
 {{service_item
 |name= [https://mapcomplete.org/education education]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:ca|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:es|en}}, {{#language:pl|en}}, {{#language:it|en}}
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:ca|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:es|en}}, {{#language:pl|en}}, {{#language:it|en}}, {{#language:uk|en}}
 |descr= A MapComplete theme: On this map, you'll find information about all types of schools and education and can easily add more information
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -337,7 +337,7 @@
 {{service_item
 |name= [https://mapcomplete.org/fritures fritures]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:ca|en}}, {{#language:es|en}}, {{#language:pl|en}}
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:ca|en}}, {{#language:es|en}}, {{#language:pl|en}}, {{#language:uk|en}}
 |descr= A MapComplete theme: On this map, you'll find your favourite fries shop!
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -346,7 +346,7 @@
 {{service_item
 |name= [https://mapcomplete.org/ghostbikes ghostbikes]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:fr|en}}, {{#language:it|en}}, {{#language:hu|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:es|en}}, {{#language:ca|en}}, {{#language:pl|en}}
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:fr|en}}, {{#language:it|en}}, {{#language:hu|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:es|en}}, {{#language:ca|en}}, {{#language:pl|en}}, {{#language:uk|en}}
 |descr= A MapComplete theme: A ghost bike is a memorial for a cyclist who died in a traffic accident, in the form of a white bicycle placed permanently near the accident location
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -364,7 +364,7 @@
 {{service_item
 |name= [https://mapcomplete.org/glutenfree glutenfree]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:es|en}}, {{#language:ca|en}}, {{#language:cs|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:es|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:uk|en}}
 |descr= A MapComplete theme: A crowdsourced map with glutenfree items
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -393,7 +393,7 @@ The position of a signpost can be used by a hiker/biker/rider/s…
 {{service_item
 |name= [https://mapcomplete.org/hailhydrant hailhydrant]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:ru|en}}, {{#language:fr|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:hu|en}}, {{#language:es|en}}, {{#language:ca|en}}, {{#language:nl|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:pl|en}}
+|lang= {{#language:en|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:ru|en}}, {{#language:fr|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:hu|en}}, {{#language:es|en}}, {{#language:ca|en}}, {{#language:nl|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:pl|en}}, {{#language:uk|en}}
 |descr= A MapComplete theme: Map to show hydrants, extinguishers, fire stations, and ambulance stations.
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -402,7 +402,7 @@ The position of a signpost can be used by a hiker/biker/rider/s…
 {{service_item
 |name= [https://mapcomplete.org/hotels hotels]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:da|en}}, {{#language:nb_NO|en}}, {{#language:nl|en}}, {{#language:fr|en}}, {{#language:cs|en}}, {{#language:es|en}}, {{#language:ca|en}}, {{#language:pl|en}}, {{#language:it|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:da|en}}, {{#language:nb_NO|en}}, {{#language:nl|en}}, {{#language:fr|en}}, {{#language:cs|en}}, {{#language:es|en}}, {{#language:ca|en}}, {{#language:pl|en}}, {{#language:it|en}}, {{#language:uk|en}}
 |descr= A MapComplete theme: On this map, you'll find hotels in your area
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -420,7 +420,7 @@ The position of a signpost can be used by a hiker/biker/rider/s…
 {{service_item
 |name= [https://mapcomplete.org/indoors indoors]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:da|en}}, {{#language:nl|en}}, {{#language:cs|en}}, {{#language:nb_NO|en}}, {{#language:es|en}}, {{#language:ca|en}}, {{#language:pl|en}}, {{#language:it|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:da|en}}, {{#language:nl|en}}, {{#language:cs|en}}, {{#language:nb_NO|en}}, {{#language:es|en}}, {{#language:ca|en}}, {{#language:pl|en}}, {{#language:it|en}}, {{#language:uk|en}}
 |descr= A MapComplete theme: On this map, publicly accessible indoor places are shown
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -456,7 +456,7 @@ The position of a signpost can be used by a hiker/biker/rider/s…
 {{service_item
 |name= [https://mapcomplete.org/maps maps]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:fr|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:es|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:ca|en}}, {{#language:pl|en}}, {{#language:ru|en}}
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:fr|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:es|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:ca|en}}, {{#language:pl|en}}, {{#language:ru|en}}, {{#language:uk|en}}
 |descr= A MapComplete theme: This theme shows all (touristic) maps that OpenStreetMap knows of
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -465,7 +465,7 @@ The position of a signpost can be used by a hiker/biker/rider/s…
 {{service_item
 |name= [https://mapcomplete.org/maxspeed maxspeed]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:nl|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:es|en}}, {{#language:ca|en}}, {{#language:zh_Hant|en}}, {{#language:pl|en}}, {{#language:ru|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:nl|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:es|en}}, {{#language:ca|en}}, {{#language:zh_Hant|en}}, {{#language:pl|en}}, {{#language:ru|en}}, {{#language:uk|en}}
 |descr= A MapComplete theme: This map shows the legally allowed maximum speed on every road.
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -483,7 +483,7 @@ The position of a signpost can be used by a hiker/biker/rider/s…
 {{service_item
 |name= [https://mapcomplete.org/nature nature]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:es|en}}, {{#language:fr|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:ca|en}}, {{#language:zh_Hant|en}}, {{#language:pl|en}}, {{#language:it|en}}, {{#language:ru|en}}
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:es|en}}, {{#language:fr|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:ca|en}}, {{#language:zh_Hant|en}}, {{#language:pl|en}}, {{#language:it|en}}, {{#language:ru|en}}, {{#language:uk|en}}
 |descr= A MapComplete theme: A map for nature lovers, with interesting POI's
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -501,7 +501,7 @@ The position of a signpost can be used by a hiker/biker/rider/s…
 {{service_item
 |name= [https://mapcomplete.org/observation_towers observation_towers]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:zh_Hant|en}}, {{#language:hu|en}}, {{#language:es|en}}, {{#language:fr|en}}, {{#language:nb_NO|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:ca|en}}, {{#language:pl|en}}, {{#language:ru|en}}
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:zh_Hant|en}}, {{#language:hu|en}}, {{#language:es|en}}, {{#language:fr|en}}, {{#language:nb_NO|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:ca|en}}, {{#language:pl|en}}, {{#language:ru|en}}, {{#language:uk|en}}
 |descr= A MapComplete theme: Publicly accessible towers to enjoy the view
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -510,7 +510,7 @@ The position of a signpost can be used by a hiker/biker/rider/s…
 {{service_item
 |name= [https://mapcomplete.org/onwheels onwheels]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:nl|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:es|en}}, {{#language:ca|en}}, {{#language:pl|en}}, {{#language:it|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:nl|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:es|en}}, {{#language:ca|en}}, {{#language:pl|en}}, {{#language:it|en}}, {{#language:uk|en}}
 |descr= A MapComplete theme: On this map, publicly weelchair accessible places are shown and can be easily added
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -528,7 +528,7 @@ The position of a signpost can be used by a hiker/biker/rider/s…
 {{service_item
 |name= [https://mapcomplete.org/osm_community_index osm_community_index]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:nl|en}}, {{#language:fr|en}}, {{#language:es|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:pl|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:nl|en}}, {{#language:fr|en}}, {{#language:es|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:pl|en}}, {{#language:uk|en}}
 |descr= A MapComplete theme: An index of community resources for OpenStreetMap.
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -537,7 +537,7 @@ The position of a signpost can be used by a hiker/biker/rider/s…
 {{service_item
 |name= [https://mapcomplete.org/parkings parkings]
 |region= Worldwide
-|lang= {{#language:nl|en}}, {{#language:en|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:nb_NO|en}}, {{#language:zh_Hant|en}}, {{#language:id|en}}, {{#language:hu|en}}, {{#language:es|en}}, {{#language:fr|en}}, {{#language:da|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:pl|en}}
+|lang= {{#language:nl|en}}, {{#language:en|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:nb_NO|en}}, {{#language:zh_Hant|en}}, {{#language:id|en}}, {{#language:hu|en}}, {{#language:es|en}}, {{#language:fr|en}}, {{#language:da|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:pl|en}}, {{#language:uk|en}}
 |descr= A MapComplete theme: This map shows different parking spots
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -546,7 +546,7 @@ The position of a signpost can be used by a hiker/biker/rider/s…
 {{service_item
 |name= [https://mapcomplete.org/pets pets]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:da|en}}, {{#language:de|en}}, {{#language:nl|en}}, {{#language:fr|en}}, {{#language:ca|en}}, {{#language:es|en}}, {{#language:cs|en}}, {{#language:pl|en}}, {{#language:ru|en}}
+|lang= {{#language:en|en}}, {{#language:da|en}}, {{#language:de|en}}, {{#language:nl|en}}, {{#language:fr|en}}, {{#language:ca|en}}, {{#language:es|en}}, {{#language:cs|en}}, {{#language:pl|en}}, {{#language:ru|en}}, {{#language:uk|en}}
 |descr= A MapComplete theme: On this map, you'll find various interesting places for you pets: veterinarians, dog parks, pet shops, dog-friendly restaurants,
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -564,7 +564,7 @@ The position of a signpost can be used by a hiker/biker/rider/s…
 {{service_item
 |name= [https://mapcomplete.org/rainbow_crossings rainbow_crossings]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:da|en}}, {{#language:nl|en}}, {{#language:ca|en}}, {{#language:es|en}}, {{#language:cs|en}}, {{#language:pl|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:da|en}}, {{#language:nl|en}}, {{#language:ca|en}}, {{#language:es|en}}, {{#language:cs|en}}, {{#language:pl|en}}, {{#language:uk|en}}
 |descr= A MapComplete theme: On this map, rainbow-painted pedestrian crossings are shown and can be easily added
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png

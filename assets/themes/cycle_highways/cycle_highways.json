@@ -28,7 +28,7 @@
     "da": "Dette kort viser cykelmotorveje",
     "cs": "Tato mapa zobrazuje cyklostezky",
     "pl": "Ta mapa pokazuje ścieżki rowerowe",
-    "uk": "На цій карті показані велодоріжки"
+    "uk": "Ця мапа показує велодоріжки"
   },
   "icon": "./assets/themes/cycle_highways/fietssnelwegen-logo.svg",
   "startZoom": 7,

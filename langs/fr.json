@@ -46,6 +46,7 @@
         "whyDelete": "Pourquoi cet élément devrait-il être supprimé ?"
     },
     "external": {
+        "apply": "Appliquer",
         "done": "Fait",
         "missing": {
             "title": "Éléments manquants"
@@ -196,6 +197,9 @@
         "goToInbox": "Ouvrir les messages",
         "histogram": {
             "error_loading": "Erreur de chargement de l’histograme"
+        },
+        "labels": {
+            "jumpToLocation": "Aller à votre emplacement"
         },
         "layerSelection": {
             "title": "Selectionner des couches",

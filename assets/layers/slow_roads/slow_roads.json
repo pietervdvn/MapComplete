@@ -187,7 +187,8 @@
         "eo": "La surfaco estas <b>{surface}</b>",
         "es": "La superficie es <b>{surface}</b>",
         "ca": "La superfícies és <b>{surface}</b>",
-        "cs": "Povrch je <b>{surface}</b>"
+        "cs": "Povrch je <b>{surface}</b>",
+        "uk": "Поверхня - <b>{surface}</b>"
       },
       "freeform": {
         "key": "surface"
@@ -205,7 +206,8 @@
             "eo": "La surfaco estas <b>herba</b>",
             "es": "La superficie es <b>hierba</b>",
             "ca": "La superfície és <b>herba</b>",
-            "cs": "Povrch je <b>tráva</b>"
+            "cs": "Povrch je <b>tráva</b>",
+            "uk": "Поверхня - <b>трава</b>"
           }
         },
         {
@@ -218,7 +220,8 @@
             "it": "La superficie è <b>terreno</b>",
             "de": "Die Oberfläche ist <b>Erde</b>",
             "ca": "La superfície és <b>terra</b>",
-            "cs": "Povrch je <b>země</b>"
+            "cs": "Povrch je <b>země</b>",
+            "uk": "Поверхня - <b>земля</b>"
           }
         },
         {
@@ -231,7 +234,8 @@
             "de": "Die Oberfläche ist <b>ohne festen Belag</b>",
             "es": "La superficie está <b>sin pavimentar</b>",
             "ca": "La superfície és <b>sense asfaltar</b>",
-            "cs": "Povrch je <b>nezpevněný</b>"
+            "cs": "Povrch je <b>nezpevněný</b>",
+            "uk": "Поверхня -<b>без покриття</b>"
           },
           "hideInAnswer": true
         },
@@ -247,7 +251,8 @@
             "eo": "La surfaco estas <b>sabla</b>",
             "es": "La superficie es <b>arena</b>",
             "ca": "La superfície és <b>sorra</b>",
-            "cs": "Povrch je <b>písek</b>"
+            "cs": "Povrch je <b>písek</b>",
+            "uk": "Поверхня - <b>пісок</b>"
           }
         },
         {
@@ -260,7 +265,8 @@
             "fr": "La surface est en <b>pierres pavées</b>",
             "de": "Die Oberfläche ist aus <b>Pflastersteinen</b>",
             "es": "La superficie es <b>adoquines</b>",
-            "cs": "Povrch je <b>dlážděný</b>"
+            "cs": "Povrch je <b>dlážděný</b>",
+            "uk": "Покриття - <b>бруківка</b>"
           }
         },
         {
@@ -274,7 +280,8 @@
             "de": "Die Oberfläche ist <b>Asphalt</b>",
             "es": "La superficie es <b>asfalto</b>",
             "ca": "La superfícies és <b>asfalt</b>",
-            "cs": "Povrch je <b>asfalt</b>"
+            "cs": "Povrch je <b>asfalt</b>",
+            "uk": "Покриття - <b>асфальт</b>"
           }
         },
         {
@@ -289,7 +296,8 @@
             "eo": "La surfaco estas <b>betona</b>",
             "es": "La superficie es <b>hormigón</b>",
             "ca": "La superfície es <b>formigó</b>",
-            "cs": "Povrch je <b>betonový</b>"
+            "cs": "Povrch je <b>betonový</b>",
+            "uk": "Поверхня - <b>бетон</b>"
           }
         },
         {
@@ -302,7 +310,8 @@
             "de": "Die Oberfläche ist <b>gepflastert</b>",
             "es": "La superficie está <b>pavimentada</b>",
             "ca": "La superfície està <b>pavimentada</b>",
-            "cs": "Povrch je <b>zpevněný</b>"
+            "cs": "Povrch je <b>zpevněný</b>",
+            "uk": "Поверхня <b>тверде покриття</b>"
           },
           "hideInAnswer": true
         }

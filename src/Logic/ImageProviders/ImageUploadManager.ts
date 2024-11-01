@@ -10,6 +10,7 @@ import Translations from "../../UI/i18n/Translations"
 import { Translation } from "../../UI/i18n/Translation"
 import { IndexedFeatureSource } from "../FeatureSource/FeatureSource"
 import { GeoOperations } from "../GeoOperations"
+import { Feature } from "geojson"
 
 /**
  * The ImageUploadManager has a
@@ -155,7 +156,8 @@ export class ImageUploadManager {
         author: string,
         blob: File,
         targetKey: string | undefined,
-        noblur: boolean
+        noblur: boolean,
+        feature?: Feature
     ): Promise<UploadResult> {
         this.increaseCountFor(this._uploadStarted, featureId)
         let key: string
@@ -166,7 +168,7 @@ export class ImageUploadManager {
             location = [this._gps.data.longitude, this._gps.data.latitude]
         }
         if (location === undefined || location?.some((l) => l === undefined)) {
-            const feature = this._indexedFeatures.featuresById.data.get(featureId)
+            feature ??= this._indexedFeatures.featuresById.data.get(featureId)
             location = GeoOperations.centerpointCoordinates(feature)
         }
         try {

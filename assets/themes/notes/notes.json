@@ -13,7 +13,8 @@
     "cs": "Poznámky k OpenStreetMap",
     "zh_Hant": "開放街圖上的註解",
     "pl": "Notatki na OpenStreetMap",
-    "ru": "Заметки в OpenStreetMap"
+    "ru": "Заметки в OpenStreetMap",
+    "uk": "Нотатки OpenStreetMap"
   },
   "description": {
     "en": "A note is a pin on the map with some text to indicate something wrong.<br/><br/>Make sure to checkout the <a href='#filters'>filter view</a> to search for users and text.",
@@ -26,7 +27,8 @@
     "cs": "Poznámka je špendlík na mapě s textem, jež označuje, že něco není v pořádku.<br/><br/>Nezapomeňte si prohlédnout zobrazení filtru <a href='#filters'></a> pro vyhledávání uživatelů a textu.",
     "ca": "Una nota és un marcador al mapa amb un text per indicar alguna cosa incorrecta.<br/><br/>Assegureu-vos de revisar la <a href='#filters'>visualització de filtres</a> per cercar usuaris i text.",
     "zh_Hant": "註解會散佈在地圖上並且有一些文字說明，來顯示那邊有錯誤。<br/><br/>請確認用<a href='#filter'>過濾檢視</a>來搜尋使用者或是文字。",
-    "pl": "Uwaga to pinezka na mapie z tekstem wskazującym, że coś jest nie tak.<br/><br/>Pamiętaj o skorzystaniu z <a href='#filters'>widoku filtra</a>, aby wyszukać użytkowników i tekst ."
+    "pl": "Uwaga to pinezka na mapie z tekstem wskazującym, że coś jest nie tak.<br/><br/>Pamiętaj o skorzystaniu z <a href='#filters'>widoku filtra</a>, aby wyszukać użytkowników i tekst .",
+    "uk": "Нотатка — це мітка на мапі з певним текстом, яка вказує на те, що щось не так.<br/><br/>Не забудьте переглянути <a href='#filters'>фільтри</a> для пошуку користувачів і тексту."
   },
   "icon": "./assets/themes/notes/logo.svg",
   "layers": [

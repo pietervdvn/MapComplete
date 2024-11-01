@@ -34,7 +34,7 @@
     "ca": "A aquest mapa trobaràs varies oportunitats d'escalada, como gimnasos d'escalada, sales d'escalada en bloc i roques a la natura.",
     "es": "En este mapa encontrará diversas posibilidades de escalada, como rocódromos, salas de búlder y rocas en la naturaleza.",
     "pl": "Na tej mapie znajdziesz różne możliwości wspinaczki, takie jak sale wspinaczkowe, hale do boulderingu i skały w przyrodzie.",
-    "uk": "На цій карті ви знайдете різні можливості для скелелазіння, такі як скелелазні зали, боулдерингові зали та скелі на природі."
+    "uk": "На цій мапі ви знайдете різні можливості для скелелазіння, такі як скелелазні зали, боулдерингові зали та скелі на природі."
   },
   "descriptionTail": {
     "nl": "De klimkaart is oorspronkelijk gemaakt door <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a> op <a href='https://kletterspots.de' target='_blank'>kletterspots.de</a>.",
@@ -50,7 +50,7 @@
     "es": "El mapa de escalada fue realizado originalmente por <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Por favor, <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>ponte en contacto</a> si tienes comentarios o preguntas.</p><p>El proyecto utiliza datos del proyecto <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>.</p>",
     "ca": "El mapa d'escalada va ser creat originalment per <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a>. <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>Contacteu-vos</a> si teniu comentaris o preguntes.</p>< p>El projecte utilitza dades del projecte <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>.</p>",
     "pl": "Mapa wspinaczkowa została pierwotnie stworzona przez <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christiana Neumanna</a>. Jeśli masz uwagi lub pytania, <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>skontaktuj się z nim</a>.</p>< p>Projekt wykorzystuje dane projektu <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>.</p>",
-    "uk": "Карту сходження спочатку склав <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Крістіан Нойманн</a>. Будь ласка, <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>зв'яжіться</a>, якщо у вас є відгуки чи запитання.</p>< p>Проект використовує дані проекту <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>.</p>"
+    "uk": "Мапу альпіністських маршрутів спочатку склав <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Крістіан Нойманн</a>. Будь ласка, <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>звʼяжіться</a> з ним, якщо у вас є відгуки чи запитання.</p>< p>Проєкт використовує дані <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>.</p>"
   },
   "icon": "./assets/themes/climbing/climbing_icon.svg",
   "credits": [

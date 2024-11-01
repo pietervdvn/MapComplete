@@ -1114,7 +1114,7 @@ export default class SpecialVisualizations {
                 constr: (state, tags, args, feature, layer) => {
                     const id = tags.data[args[0] ?? "id"]
                     tags = state.featureProperties.getStore(id)
-                    return new SvelteUIElement(UploadImage, { state, tags, layer })
+                    return new SvelteUIElement(UploadImage, { state, tags, layer, feature })
                 },
             },
             {

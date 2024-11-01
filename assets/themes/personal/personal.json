@@ -19,7 +19,7 @@
     "pl": "Temat osobisty",
     "ru": "Собственная тема",
     "hu": "Személyes téma",
-    "uk": "Особиста тема"
+    "uk": "Власна тема"
   },
   "description": {
     "en": "Create a personal theme based on all the available layers of all themes. In order to show some data, open <a href='#filter'>layer selection</a>",
