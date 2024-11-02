@@ -1403,7 +1403,7 @@
         "title": "Redes de nodos de senderismo"
     },
     "walls_and_buildings": {
-        "description": "Capa especial incorporada que proporciona todas las paredes y edificios. Esta capa es útil en configuraciones predefinidas para objetos que se pueden colocar contra las paredes (por ejemplo, desfibriladores externos automáticos, buzones de correo, entradas, direcciones, cámaras de vigilancia, etc.). Esta capa es invisible de forma predeterminada y el usuario no puede activarla.",
+        "description": "Capa incorporada especial que proporciona todas las paredes y edificios. Esta capa es útil en los ajustes preestablecidos para objetos que se pueden colocar contra las paredes (por ejemplo, DEA, buzones, entradas, direcciones, cámaras de vigilancia, etc.). Esta capa es invisible de forma predeterminada y el usuario no puede activarla.",
         "title": "Paredes y edificios"
     },
     "waste": {
