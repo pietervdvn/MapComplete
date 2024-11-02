@@ -12304,7 +12304,7 @@
                         "question": "Todos los tipos"
                     },
                     "1": {
-                        "question": "Contenedor para cigarrillos"
+                        "question": "Papelera para cigarrillos"
                     },
                     "2": {
                         "question": "Contenedor para drogas"
@@ -12337,7 +12337,7 @@
                 }
             }
         },
-        "name": "Contenedor de Basura",
+        "name": "Contenedor de basura",
         "presets": {
             "0": {
                 "title": "un contenedor de basura"
@@ -12392,7 +12392,7 @@
             }
         },
         "title": {
-            "render": "Contenedor de Basura"
+            "render": "Contenedor de basura"
         }
     },
     "waste_disposal": {
@@ -12406,7 +12406,7 @@
                 }
             }
         },
-        "name": "Contenedores de Residuos",
+        "name": "Contenedores de residuos",
         "presets": {
             "0": {
                 "description": "Contenedor mediano o grande para la eliminación de residuos (domésticos)",
@@ -12456,7 +12456,7 @@
             }
         },
         "title": {
-            "render": "Eliminación de Residuos"
+            "render": "Eliminación de residuos"
         }
     },
     "windturbine": {
