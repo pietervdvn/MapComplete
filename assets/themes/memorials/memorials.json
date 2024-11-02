@@ -29,6 +29,7 @@
         "ghost_bike",
         "memorial",
         "grave"
+        "stolperstein"
       ],
       "override": {
         "minzoom": 9

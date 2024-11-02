@@ -1,0 +1,117 @@
+{
+  "id": "stolperstein",
+  "name": {
+    "en": "stolperstein",
+    "de": "Stolperstein"
+  },
+  "description": {
+    "en": "Stolpersteine (or stumbling stones) indicate where a person lived. They are intended to commemorate the fate of people who were persecuted, murdered, deported, expelled or driven to suicide during the National Socialist era. These stumbling blocks can be marked on this map and a Wikipedialink or Wikidata can be created.",
+    "de": "Stolpersteine zeigen an, wo ein Mensch gewohnt hat. Sie sollen an das Schicksal der Menschen erinnert werden, die in der Zeit des Nationalsozialismus verfolgt, ermordet, deportiert, vertrieben oder in den Suizid getrieben wurden. Auf dieser Karte können diese Stolpersteine aufgezeichnet werden und ein Wikipedialink bzw. Wikidata erstellt werden"
+  },
+  "source": {
+    "osmTags": "memorial=stolperstein"
+  },
+  "minzoom": 15,
+  "title": {
+    "render": {
+      "en": "stolperstein",
+      "de": "Stolperstein"
+    }
+  },
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "./assets/layers/memorial/memorial.svg",
+          "color": "white"
+        }
+      ],
+      "label": "{name}",
+      "labelCssClasses": "bg-white rounded px-2"
+    }
+  ],
+  "lineRendering": [],
+  "presets": [
+    {
+      "title": {
+        "en": "a stolperstein",
+        "de": "ein Stolperstein"
+      },
+      "tags": [
+        "memorial=stolperstein"
+      ],
+      "description": {
+        "en": "A stolperstein is a physical object which indicates that one or more persons has lived here. It generally has the name, birth date and death date of the person or persons as inscription and information about your personal history.",
+        "de": "Ein Stolperstein ist ein physischer Gegenstand, der anzeigt, dass eine oder mehrere Personen hier gelebt haben. Er trägt in der Regel den Namen, das Geburts- und das Sterbedatum der Person(en) als Inschrift und Informationen über ihre persönliche Geschichte.",
+      }
+    }
+  ],
+  "tagRenderings": [
+    "images",
+    {
+      "question": {
+        "en": "What is the Wikipedia page of the person, who lived here?",
+        "de": "Wie lautet die Wikipedia-Seite der Person, die hier gewohnt hat?"
+      },
+      "id": "subject:wikidata",
+      "render": {
+        "en": "{wikipedia(subject:wikidata)}",
+        "de": "{wikipedia(subject:wikidata)}"
+      },
+      "freeform": {
+        "key": "subject:wikidata",
+        "type": "wikidata"
+      }
+    },
+    {
+      "question": {
+        "en": "What is the name of the person, who lived here?",
+        "de": "Wie lautet der Name der Person, die hier lebte?"
+      },
+      "id": "name",
+      "render": {
+        "en": "<b>{name}</b> has lived here",
+        "de": "<b>{name}</b> wohnte hier"
+      },
+      "freeform": {
+        "key": "name"
+      }
+    }
+  ],
+  "filter": [
+    {
+      "id": "has_wikidata",
+      "options": [
+        {
+          "question": {
+            "en": "With or without wikidata",
+            "de": "Mit oder ohne Wikidata"
+          }
+        },
+        {
+          "question": {
+            "en": "Has a link to Wikidata",
+            "de": "Hat einen Link zu Wikidata"
+          },
+          "osmTags": "subject:wikidata~*"
+        },
+        {
+          "question": {
+            "en": "Has no link to Wikidata",
+            "de": "Hat keinen Link zu Wikidata"
+          },
+          "osmTags": "subject:wikidata="
+        }
+      ]
+    }
+  ],
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": false
+  },
+  "credits": "Built at the OSM-Meetup at Wikimedia in Berlin"
+}
