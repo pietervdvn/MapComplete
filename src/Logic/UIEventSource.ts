@@ -9,13 +9,14 @@ export class Stores {
         const source = new UIEventSource<Date>(undefined)
 
         function run() {
+            if(asLong !== undefined && !asLong()){
+                return
+            }
             source.setData(new Date())
             if (Utils.runningFromConsole) {
                 return
             }
-            if (asLong === undefined || asLong()) {
-                window.setTimeout(run, millis)
-            }
+            window.setTimeout(run, millis)
         }
 
         run()
