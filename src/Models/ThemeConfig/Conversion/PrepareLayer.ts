@@ -35,6 +35,7 @@ import { ExpandRewrite } from "./ExpandRewrite"
 import { TagUtils } from "../../../Logic/Tags/TagUtils"
 import { Tag } from "../../../Logic/Tags/Tag"
 import { RegexTag } from "../../../Logic/Tags/RegexTag"
+import { Or } from "../../../Logic/Tags/Or"
 
 class AddFiltersFromTagRenderings extends DesugaringStep<LayerConfigJson> {
     constructor() {
@@ -151,6 +152,9 @@ class ExpandFilter extends DesugaringStep<LayerConfigJson> {
             let osmTags = TagUtils.Tag( mapping.if)
             if(qtr.multiAnswer && osmTags instanceof Tag){
                 osmTags = new RegexTag(osmTags.key, new RegExp("^(.+;)?"+osmTags.value+"(;.+)$","is"))
+            }
+            if(mapping.alsoShowIf){
+                osmTags= new Or([osmTags, TagUtils.Tag(mapping.alsoShowIf)])
             }
 
             return <FilterConfigOptionJson>{

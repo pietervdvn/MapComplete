@@ -151,7 +151,6 @@
         },
         {
           "if": "memorial=stolperstein",
-          "alsoShowIf": "memorial:type=stolperstein",
           "then": {
             "en": "This is a stolperstein (stumbing stone)",
             "de": "Dies ist ein Stolperstein",
@@ -270,7 +269,9 @@
       },
       "freeform": {
         "key": "memorial"
-      }
+      },
+      "filter": true
+
     },
     {
       "id": "inscription",
