@@ -6,7 +6,7 @@
   },
   "description": {
     "en": "Stolpersteine indicate where a person lived. They are intended to commemorate the fate of people who were persecuted, murdered, deported, expelled or driven to suicide during the National Socialist era. These Stolpersteine can be marked on this map and a Wikipedia link or Wikidata can be created.",
-    "de": "Stolpersteine zeigen an, wo ein Mensch gewohnt hat. Sie sollen an das Schicksal der Menschen erinnert werden, die in der Zeit des Nationalsozialismus verfolgt, ermordet, deportiert, vertrieben oder in den Suizid getrieben wurden. Auf dieser Karte können diese Stolpersteine aufgezeichnet werden und ein Wikipedialink bzw. Wikidata erstellt werden"
+    "de": "Stolpersteine zeigen an, wo ein Mensch gewohnt hat. Sie sollen an das Schicksal der Menschen erinnert werden, die in der Zeit des Nationalsozialismus verfolgt, ermordet, deportiert, vertrieben oder in den Suizid getrieben wurden. Auf dieser Karte können diese Stolpersteine aufgezeichnet werden und ein Wikipedia-Link bzw. Wikidata erstellt werden."
   },
   "source": {
     "osmTags": "memorial=stolperstein"
