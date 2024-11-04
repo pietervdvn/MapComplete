@@ -78,23 +78,23 @@
         }
       ],
       "iconSize": {
-        "render": "40,40,center",
+        "render": "30,30,center",
         "mappings": [
           {
             "if": "id~node/.*",
-            "then": "40,40,center"
+            "then": "30,30,center"
           },
           {
             "if": "_size_classification=small",
-            "then": "25,25,center"
+            "then": "20,20,center"
           },
           {
             "if": "_size_classification=medium",
-            "then": "40,40,center"
+            "then": "30,30,center"
           },
           {
             "if": "_size_classification=large",
-            "then": "60,60,center"
+            "then": "40,40,center"
           }
         ]
       },

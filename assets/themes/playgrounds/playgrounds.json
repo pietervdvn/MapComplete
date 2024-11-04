@@ -73,7 +73,8 @@
         "bbq"
       ],
       "override": {
-        "minzoom": 16
+        "minzoom": 16,
+        "isCounted": false
       }
     }
   ],
