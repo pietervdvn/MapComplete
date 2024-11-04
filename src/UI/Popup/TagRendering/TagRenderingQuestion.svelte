@@ -555,7 +555,7 @@
           </Popup>
 
           <div
-            class="interactive sticky bottom-0 flex flex-wrap justify-between"
+            class="sticky bottom-0 flex flex-wrap justify-between"
             style="z-index: 11"
           >
             {#if $settableKeys && $isKnown && !matchesEmpty}
