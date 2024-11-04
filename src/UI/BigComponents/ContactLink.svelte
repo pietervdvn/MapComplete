@@ -6,6 +6,7 @@
   import ToSvelte from "../Base/ToSvelte.svelte"
   import * as native from "../../assets/language_native.json"
   import { TypedTranslation } from "../i18n/Translation"
+  import Tr from "../Base/Tr.svelte"
 
   const availableTranslationTyped: TypedTranslation<{ native: string }> =
     Translations.t.communityIndex.available
@@ -46,7 +47,7 @@
         {resource.resolved?.description}
         {#if resource.languageCodes?.indexOf($language) >= 0}
           <div class="thanks w-fit">
-            <ToSvelte construct={() => availableTranslation.Clone()} />
+            <Tr t={availableTranslation}/>
           </div>
         {/if}
       </div>
