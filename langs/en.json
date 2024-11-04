@@ -596,10 +596,33 @@
             "seeNearby": "Browse nearby pictures",
             "title": "Nearby streetview imagery"
         },
+        "panoramax": {
+            "deletionRequested": "The report has been sent. A moderator will look to it shortly",
+            "freeform": "Is there other relevant information?",
+            "otherFreeform": "Please specify why this image should be removed:",
+            "placeholder": "Explain why the picture should be deleted",
+            "report": {
+                "blur_excess": "To much is blurred, making the picture useless",
+                "blur_missing": "A face or license plate is not blurred in this picture",
+                "copyright": "The picture contains copyrighted content",
+                "inappropriate": "This picture is inappropriate (it contains nudity, calls for hate or is not streetview)",
+                "mislocated": "The picture is from a different location",
+                "other": "Another reason, please specify",
+                "picture_low_quality": "The picture is of low quality",
+                "privacy": "The picture shows a private property"
+            },
+            "requestDeletion": "Request picture deletion",
+            "title": "Why should this image be permanently deleted?"
+        },
         "pleaseLogin": "Please log in to add a picture",
         "processing": "The server is processing your image",
         "respectPrivacy": "Do not upload from Google Maps, Google Streetview or other copyrighted sources.",
         "toBig": "Your image is too large as it is {actual_size}. Please use images of at most {max_size}",
+        "unlink": {
+            "button": "Unlink picture",
+            "explanation": "By unlinking this image, this picture will not be shown anymore with this object. It will still appear in the nearby-images and possibly other objects.",
+            "title": "Unlink this image?"
+        },
         "upload": {
             "failReasons": "You might have lost connection to the internet",
             "failReasonsAdvanced": "Alternatively, make sure your browser and extensions do not block third-party API's.",

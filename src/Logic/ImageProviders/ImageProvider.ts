@@ -88,4 +88,12 @@ export default abstract class ImageProvider {
     }): Promise<LicenseInfo>
 
     public abstract apiUrls(): string[]
+
+    public static async offerImageAsDownload(image: ProvidedImage){
+        const response = await fetch(image.url_hd ?? image.url)
+        const blob = await response.blob()
+        Utils.offerContentsAsDownloadableFile(blob, new URL(image.url).pathname.split("/").at(-1), {
+            mimetype: "image/jpg",
+        })
+    }
 }

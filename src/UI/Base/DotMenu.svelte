@@ -28,7 +28,7 @@
   }
 </script>
 
-<div class="relative" style="z-index: 50">
+<div class="relative" style="z-index: 39">
   <div
     class="sidebar-unit absolute {menuPosition} collapsable normal-background button-unstyled"
     class:transition-background={hideBackground}

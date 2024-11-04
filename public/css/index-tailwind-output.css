@@ -1462,6 +1462,10 @@ input[type="range"].range-lg::-moz-range-thumb {
   margin-right: 4rem;
 }
 
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
 .mt-4 {
   margin-top: 1rem;
 }
@@ -1476,10 +1480,6 @@ input[type="range"].range-lg::-moz-range-thumb {
 
 .mb-16 {
   margin-bottom: 4rem;
-}
-
-.mb-4 {
-  margin-bottom: 1rem;
 }
 
 .ml-1 {
@@ -1698,12 +1698,12 @@ input[type="range"].range-lg::-moz-range-thumb {
   height: 6rem;
 }
 
-.h-full {
-  height: 100%;
-}
-
 .h-screen {
   height: 100vh;
+}
+
+.h-full {
+  height: 100%;
 }
 
 .h-fit {
@@ -2157,6 +2157,11 @@ input[type="range"].range-lg::-moz-range-thumb {
   max-width: 100%;
 }
 
+.max-w-max {
+  max-width: -webkit-max-content;
+  max-width: max-content;
+}
+
 .max-w-fit {
   max-width: -webkit-fit-content;
   max-width: -moz-fit-content;
@@ -2576,16 +2581,16 @@ input[type="range"].range-lg::-moz-range-thumb {
   margin-bottom: calc(0px * var(--tw-space-y-reverse));
 }
 
-.space-x-4 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(1rem * var(--tw-space-x-reverse));
-  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
-}
-
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(0.5rem * var(--tw-space-x-reverse));
   margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.space-x-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1rem * var(--tw-space-x-reverse));
+  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .space-x-3 > :not([hidden]) ~ :not([hidden]) {
@@ -4108,6 +4113,10 @@ input[type="range"].range-lg::-moz-range-thumb {
   text-align: justify;
 }
 
+.text-start {
+  text-align: start;
+}
+
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
@@ -5611,12 +5620,6 @@ svg.apply-fill path {
 }
 
 /************************* LEGACY MARKER - CLEANUP BELOW ********************************/
-
-.slideshow-item img {
-  /* Legacy: should be replace when the image element is ported to Svelte*/
-  height: var(--image-carousel-height);
-  width: unset;
-}
 
 .animate-height {
   /* Legacy: should be replaced by headlessui disclosure in time */

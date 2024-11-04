@@ -66,8 +66,9 @@ export default class AllImageProviders {
         return AllImageProviders.genericImageProvider
     }
 
+    private static readonly _cachedImageStores: Record<string, Store<ProvidedImage[]>> = {}
     /**
-     * Tries to extract all image data for this image
+     * Tries to extract all image data for this image. Cachedon tags?.data?.id
      */
     public static LoadImagesFor(
         tags: Store<Record<string, string>>,
@@ -75,6 +76,10 @@ export default class AllImageProviders {
     ): Store<ProvidedImage[]> {
         if (tags?.data?.id === undefined) {
             return undefined
+        }
+        const id = tags?.data?.id
+        if(this._cachedImageStores[id]){
+            return this._cachedImageStores[id]
         }
 
         const source = new UIEventSource([])
@@ -93,6 +98,7 @@ export default class AllImageProviders {
                 source.set(dedup)
             })
         }
+        this._cachedImageStores[id] = source
         return source
     }
 

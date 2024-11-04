@@ -16,6 +16,7 @@
   import Loading from "../Base/Loading.svelte"
   import Translations from "../i18n/Translations"
   import Tr from "../Base/Tr.svelte"
+  import DotMenu from "../Base/DotMenu.svelte"
 
   export let image: Partial<ProvidedImage>
   let fallbackImage: string = undefined
@@ -36,12 +37,12 @@
       if (!shown) {
         previewedImage.set(undefined)
       }
-    })
+    }),
   )
   onDestroy(
     previewedImage.addCallbackAndRun((previewedImage) => {
       showBigPreview.set(previewedImage?.id === image.id)
-    })
+    }),
   )
 
   function highlight(entered: boolean = true) {
@@ -73,6 +74,7 @@
   <div style="height: 80vh">
     <ImageOperations {image}>
       <slot name="preview-action" />
+      <slot name="dot-menu-actions" slot="dot-menu-actions" />
     </ImageOperations>
   </div>
   <div class="absolute top-4 right-4">
@@ -85,7 +87,7 @@
     />
   </div>
 </Popup>
-{#if image.status !== undefined && image.status !== "ready"}
+{#if image.status !== undefined && image.status !== "ready" && image.status !== "hidden"}
   <div class="flex h-full flex-col justify-center">
     <Loading>
       <Tr t={Translations.t.image.processing} />
@@ -98,6 +100,11 @@
       on:mouseenter={() => highlight()}
       on:mouseleave={() => highlight(false)}
     >
+      {#if $$slots["dot-menu-actions"]}
+        <DotMenu dotsPosition="top-0 left-0 absolute" hideBackground>
+          <slot name="dot-menu-actions" />
+        </DotMenu>
+      {/if}
       <img
         bind:this={imgEl}
         on:load={() => (loaded = true)}
@@ -122,6 +129,8 @@
           <MagnifyingGlassPlusIcon class="h-8 w-8 cursor-zoom-in pl-3 pb-3" color="white" />
         </div>
       {/if}
+
+
     </div>
     <div class="absolute bottom-0 left-0">
       <ImageAttribution {image} {attributionFormat} />

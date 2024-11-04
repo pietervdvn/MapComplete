@@ -15,7 +15,6 @@ import { MapillaryLinkVis } from "./Popup/MapillaryLinkVis"
 import { ImmutableStore, Store, Stores, UIEventSource } from "../Logic/UIEventSource"
 import AllTagsPanel from "./Popup/AllTagsPanel.svelte"
 import AllImageProviders from "../Logic/ImageProviders/AllImageProviders"
-import { ImageCarousel } from "./Image/ImageCarousel"
 import { VariableUiElement } from "./Base/VariableUIElement"
 import { Utils } from "../Utils"
 import Wikidata, { WikidataResponse } from "../Logic/Web/Wikidata"
@@ -83,7 +82,6 @@ import DynLink from "./Base/DynLink.svelte"
 import Locale from "./i18n/Locale"
 import LanguageUtils from "../Utils/LanguageUtils"
 import MarkdownUtils from "../Utils/MarkdownUtils"
-import ArrowDownTray from "@babeard/svelte-heroicons/mini/ArrowDownTray"
 import Trash from "@babeard/svelte-heroicons/mini/Trash"
 import NothingKnown from "./Popup/NothingKnown.svelte"
 import { CombinedFetcher } from "../Logic/Web/NearbyImagesSearch"
@@ -96,6 +94,7 @@ import GroupedView from "./Popup/GroupedView.svelte"
 import { QuestionableTagRenderingConfigJson } from "../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
 import NoteCommentElement from "./Popup/Notes/NoteCommentElement.svelte"
 import FediverseLink from "./Popup/FediverseLink.svelte"
+import ImageCarousel from "./Image/ImageCarousel.svelte"
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -712,11 +711,8 @@ export default class SpecialVisualizations {
                     if (args.length > 0) {
                         imagePrefixes = [].concat(...args.map((a) => a.split(",")))
                     }
-                    return new ImageCarousel(
-                        AllImageProviders.LoadImagesFor(tags, imagePrefixes),
-                        tags,
-                        state,
-                    )
+                    const images = AllImageProviders.LoadImagesFor(tags, imagePrefixes)
+                    return new SvelteUIElement(ImageCarousel, { state, tags, images })
                 },
             },
             {
