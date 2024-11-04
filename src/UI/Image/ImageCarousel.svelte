@@ -1,14 +1,7 @@
 <script lang="ts">
-  import { Store, UIEventSource } from "../../Logic/UIEventSource.js"
+  import { Store } from "../../Logic/UIEventSource.js"
   import type { ProvidedImage } from "../../Logic/ImageProviders/ImageProvider"
-  import AttributedImage from "../Image/AttributedImage.svelte"
   import type { SpecialVisualizationState } from "../SpecialVisualization"
-  import ToSvelte from "../Base/ToSvelte.svelte"
-  import DeleteImage from "./DeleteImage"
-  import Popup from "../Base/Popup.svelte"
-  import TitledPanel from "../Base/TitledPanel.svelte"
-  import AccordionSingle from "../Flowbite/AccordionSingle.svelte"
-  import NextButton from "../Base/NextButton.svelte"
   import DeletableImage from "./DeletableImage.svelte"
 
   export let images: Store<ProvidedImage[]>
