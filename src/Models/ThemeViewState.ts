@@ -76,6 +76,7 @@ import { GeocodeResult, GeocodingUtils } from "../Logic/Search/GeocodingProvider
 import SearchState from "../Logic/State/SearchState"
 import { ShowDataLayerOptions } from "../UI/Map/ShowDataLayerOptions"
 import { PanoramaxUploader } from "../Logic/ImageProviders/Panoramax"
+import { Tag } from "../Logic/Tags/Tag"
 
 /**
  *
@@ -443,9 +444,16 @@ export default class ThemeViewState implements SpecialVisualizationState {
         const filteringFeatureSource = new Map<string, FilteringFeatureSource>()
         this.perLayer.forEach((fs, layerName) => {
             const doShowLayer = this.mapProperties.zoom.map(
-                (z) =>
-                    (fs.layer.isDisplayed?.data ?? true) && z >= (fs.layer.layerDef?.minzoom ?? 0),
-                [fs.layer.isDisplayed]
+                (z) => {
+                    if ((fs.layer.isDisplayed?.data ?? true) && z >= (fs.layer.layerDef?.minzoom ?? 0)){
+                        return true
+                    }
+                    if(this.layerState.globalFilters.data.some(f => f.forceShowOnMatch)){
+                        return true
+                    }
+                    return false
+                },
+                [fs.layer.isDisplayed, this.layerState.globalFilters]
             )
 
             if (!doShowLayer.data && this.featureSwitches.featureSwitchFilter.data === false) {
@@ -984,6 +992,24 @@ export default class ThemeViewState implements SpecialVisualizationState {
         this.userRelatedState.showScale.addCallbackAndRun((showScale) => {
             this.mapProperties.showScale.set(showScale)
         })
+
+
+        this.layerState.filteredLayers.get("favourite").isDisplayed.addCallbackAndRunD(favouritesShown => {
+            const oldGlobal = this.layerState.globalFilters.data
+            const key = "show-favourite"
+            if(favouritesShown){
+                this.layerState.globalFilters.set([...oldGlobal, {
+                    forceShowOnMatch: true,
+                    id:key,
+                    osmTags: new Tag("_favourite","yes"),
+                    state: 0,
+                    onNewPoint: undefined
+                }])
+            }else{
+                this.layerState.globalFilters.set(oldGlobal.filter(gl => gl.id !== key))
+            }
+        })
+
         new ThemeViewStateHashActor(this)
         new MetaTagging(this)
         new TitleHandler(this.selectedElement, this)
