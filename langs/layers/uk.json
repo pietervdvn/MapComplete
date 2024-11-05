@@ -1615,7 +1615,7 @@
                 }
             },
             "toilet-access": {
-                "render": "Доступ - {toiles:access}"
+                "render": "Доступ - {toilets:access}"
             }
         }
     },
