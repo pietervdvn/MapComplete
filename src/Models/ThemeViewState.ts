@@ -994,7 +994,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
         })
 
 
-        this.layerState.filteredLayers.get("favourite").isDisplayed.addCallbackAndRunD(favouritesShown => {
+        this.layerState.filteredLayers.get("favourite")?.isDisplayed?.addCallbackAndRunD(favouritesShown => {
             const oldGlobal = this.layerState.globalFilters.data
             const key = "show-favourite"
             if(favouritesShown){
