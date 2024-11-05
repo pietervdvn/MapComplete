@@ -291,7 +291,8 @@
             "zoomInToSeeThisLayer": "Наблизьтесь, щоб побачити цей шар"
         },
         "levelSelection": {
-            "addNewOnLevel": "Чи нова точка знаходиться на рівні {level}?"
+            "addNewOnLevel": "Чи нова точка знаходиться на рівні {level}?",
+            "confirmLevel": "Так, додати {preset} на рівні {level}"
         },
         "loading": "Завантаження…",
         "loadingTheme": "Завантаження {theme}…",
@@ -388,7 +389,10 @@
         },
         "questions": {
             "emailIs": "Електронна адреса {category}: <a href='mailto:{email}' target='_blank'>{email}</a>",
-            "emailOf": "Яка адреса е-пошти у {category}?"
+            "emailOf": "Яка адреса е-пошти у {category}?",
+            "phoneNumberIs": "Номер телефону цієї {category} є <a href='tel:{phone}' target='_blank'>{phone}</a>",
+            "phoneNumberOf": "Який номер телефону {category}?",
+            "websiteIs": "Веб-сайт: <a href='{website}' target='_blank'>{website}</a>"
         },
         "readYourMessages": "Будь ласка, прочитайте всі ваші OpenStreetMap-повідомлення перед додаванням нового об'єкту.",
         "save": "Зберегти",
@@ -440,6 +444,7 @@
             "title": "Завантажте свій трек на OpenStreetMap.org"
         },
         "uploadPendingSingle": "Очікується одна зміна",
+        "useSearch": "Скористайтеся пошуком вище, щоб побачити більше варіантів",
         "waitingForGeopermission": "Очікуємо вашого дозволу на використання геолокації…",
         "waitingForLocation": "Пошук вашого поточного місцезнаходження…",
         "welcomeBack": "З поверненням!",
