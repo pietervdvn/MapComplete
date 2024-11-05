@@ -7,7 +7,8 @@
     "fr": "Collèges et universités",
     "da": "Gymnasier og universiteter",
     "ca": "Instituts superiors i universitats",
-    "cs": "Vysoké školy a univerzity"
+    "cs": "Vysoké školy a univerzity",
+    "es": "Universidades y colegios"
   },
   "description": "Layer with all tertiary education institutes (ISCED:2011 levels 6,7 and 8)",
   "source": {
@@ -46,7 +47,8 @@
           "fr": "Établissement d'enseignement supérieur non universitaire",
           "pa_PK": "کالج",
           "ca": "Institut superior",
-          "cs": "Vysoká škola"
+          "cs": "Vysoká škola",
+          "es": "Colegio"
         }
       },
       {
@@ -59,7 +61,8 @@
           "da": "Universitet",
           "pa_PK": "یونیورسٹی",
           "ca": "Universitat",
-          "cs": "Univerzita"
+          "cs": "Univerzita",
+          "es": "Universidad"
         }
       },
       {
@@ -71,7 +74,8 @@
           "fr": "École dispensant un enseignement supérieur",
           "da": "Skole, der udbyder videregående uddannelser",
           "ca": "Escola que imparteix educació terciària",
-          "cs": "Škola poskytující terciární vzdělání"
+          "cs": "Škola poskytující terciární vzdělání",
+          "es": "Escuela que imparte educación terciaria"
         }
       }
     ]
@@ -118,7 +122,8 @@
         "fr": "une université",
         "da": "et universitet",
         "ca": "una universitat",
-        "cs": "univerzita"
+        "cs": "univerzita",
+        "es": "una universidad"
       },
       "description": {
         "en": "An institute where tertiary education is given (at the level equivalent of a bachelors degree or higher). A single point per campus is enough - buildings and faculties should not be mapped with different university points.",
@@ -126,7 +131,8 @@
         "de": "Eine Einrichtung, an der tertiäre Bildung vermittelt wird (auf dem Niveau eines Bachelor-Abschlusses oder höher). Ein einziger Punkt pro Campus ist ausreichend - Gebäude und Fakultäten sollten nicht mit Universitätspunkten gekennzeichnet werden.",
         "fr": "Un institut où l'on dispense un enseignement supérieur (au niveau équivalent à un bachelor ou plus). Un simple point par campus est suffisant - les bâtiments et les facultés ne doivent pas être cartographiés avec différents points d'université.",
         "ca": "Un institut on s'imparteix ensenyament terciari (al nivell equivalent de batxillerat o superior). N'hi ha prou amb un únic punt per campus: els edificis i les facultats no s'han de cartografiar amb diferents punts universitaris.",
-        "cs": "Institut, kde se poskytuje terciární vzdělání (na úrovni odpovídající bakalářskému titulu nebo vyšší). Stačí jeden bod na kampus - budovy a fakulty by neměly být mapovány s různými univerzitními body."
+        "cs": "Institut, kde se poskytuje terciární vzdělání (na úrovni odpovídající bakalářskému titulu nebo vyšší). Stačí jeden bod na kampus - budovy a fakulty by neměly být mapovány s různými univerzitními body.",
+        "es": "Un instituto donde se imparte educación terciaria (a nivel equivalente a una licenciatura o superior). Un solo punto por campus es suficiente; los edificios y las facultades no deben cartografiarse con diferentes puntos universitarios."
       },
       "tags": [
         "amenity=university",
@@ -144,7 +150,8 @@
         "fr": "De quel type d'établissement s'agit-il ?",
         "da": "Hvad er det for en institution?",
         "ca": "Quin tipus d'institució és aquesta?",
-        "cs": "Co je to za instituci?"
+        "cs": "Co je to za instituci?",
+        "es": "¿Qué tipo de institución es esta?"
       },
       "mappings": [
         {
@@ -156,7 +163,8 @@
             "fr": "C'est un établissement d'enseignement post-secondaire, non tertiaire. Il faut avoir terminé l'enseignement secondaire pour s'inscrire ici, mais aucun baccalauréat (ou diplôme supérieur) n'est délivré ici",
             "da": "Dette er en institution for post-gymnasial, ikke-tertiær uddannelse. Man skal have gennemført en ungdomsuddannelse for at tilmelde sig her, men her uddeles ingen bachelor (eller højere) grader",
             "ca": "Aquesta és una institució d'educació postsecundària i no terciària. S'ha d'haver completat l'educació secundària per matricular-se aquí, però aquí no s'obtenen títols de batxillerat (o superiors)",
-            "cs": "Jedná se o instituci postsekundárního neterciárního vzdělávání. Podmínkou zápisu je ukončené středoškolské vzdělání, ale bakalářské (ani vyšší) tituly se zde neudělují"
+            "cs": "Jedná se o instituci postsekundárního neterciárního vzdělávání. Podmínkou zápisu je ukončené středoškolské vzdělání, ale bakalářské (ani vyšší) tituly se zde neudělují",
+            "es": "Esta es una institución de educación postsecundaria, no terciaria. Hay que haber completado la educación secundaria para inscribirse aquí, pero no se otorgan títulos de licenciatura (o superiores) aquí"
           }
         },
         {
@@ -168,7 +176,8 @@
             "fr": "C'est une université, d'un établissement d'enseignement supérieur où sont délivrés des diplômes de bachelor ou plus.",
             "da": "Dette er et universitet, en institution for videregående uddannelse, hvor der tildeles bachelorgrader eller højere.",
             "ca": "Açò és una universitat, una institució d'educació terciaria on s'imparteixen carreres universitàries o superior.",
-            "cs": "Jedná se o univerzitu, instituci terciárního vzdělávání, kde se uděluje titul bakalář nebo vyšší."
+            "cs": "Jedná se o univerzitu, instituci terciárního vzdělávání, kde se uděluje titul bakalář nebo vyšší.",
+            "es": "Esta es una universidad, una institución de educación terciaria donde se otorgan títulos de licenciatura o superiores."
           }
         }
       ]
@@ -182,7 +191,8 @@
         "fr": "Quel niveau d'éducation est donné ici ?",
         "da": "Hvilket uddannelsesniveau gives her?",
         "ca": "Quin nivell d'educació és dona aquí?",
-        "cs": "Jaký stupeň vzdělání je zde uveden?"
+        "cs": "Jaký stupeň vzdělání je zde uveden?",
+        "es": "¿Qué nivel de educación se imparte aquí?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -195,7 +205,8 @@
             "fr": "Les diplômes de bachelor y sont décernés",
             "da": "Her udstedes bachelorgrader",
             "ca": "Aquí s'imparteixen carreres universitàries",
-            "cs": "Zde se udělují bakalářské tituly"
+            "cs": "Zde se udělují bakalářské tituly",
+            "es": "Aquí se otorgan títulos de licenciatura"
           }
         },
         {
@@ -207,7 +218,8 @@
             "fr": "Des masters y sont décernés",
             "da": "Mastergrader udstedes her",
             "ca": "Aquí s'imparteixen masters",
-            "cs": "Zde se udělují magisterské tituly"
+            "cs": "Zde se udělují magisterské tituly",
+            "es": "Aquí se otorgan títulos de maestría"
           }
         },
         {
@@ -218,7 +230,8 @@
             "de": "Hier werden die Doktortitel verliehen",
             "fr": "Des doctorats y sont décernés",
             "ca": "Aquí s'imparteixen doctorats",
-            "cs": "Zde se udělují doktoráty"
+            "cs": "Zde se udělují doktoráty",
+            "es": "Aquí se otorgan títulos de doctorado"
           }
         }
       ],

@@ -6,14 +6,16 @@
     "da": "Transitstationer",
     "fr": "Arrêts de transport en commun",
     "ca": "Parades de transport públic",
-    "cs": "Tranzitní zastávky"
+    "cs": "Tranzitní zastávky",
+    "es": "Paradas de transporte"
   },
   "description": {
     "en": "Layer showing different types of transit stops.",
     "de": "Ebene mit verschiedenen Arten von Haltestellen.",
     "da": "Lag, der viser forskellige typer transitstop.",
     "ca": "Capa que mostra diferents tipus de parades de transport públic.",
-    "cs": "Vrstva zobrazující různé typy zastávek veřejné dopravy."
+    "cs": "Vrstva zobrazující různé typy zastávek veřejné dopravy.",
+    "es": "Capa que muestra diferentes tipos de paradas de transporte."
   },
   "source": {
     "osmTags": {
@@ -30,7 +32,8 @@
       "da": "Transit Stop",
       "nl": "Bushalte",
       "ca": "Parada de transport públic",
-      "cs": "Tranzitní zastávka"
+      "cs": "Tranzitní zastávka",
+      "es": "Parada de transporte"
     },
     "mappings": [
       {
@@ -41,7 +44,8 @@
           "da": "Stop {name}",
           "nl": "Halte {name}",
           "ca": "Parada {name}",
-          "cs": "Zastávka {name}"
+          "cs": "Zastávka {name}",
+          "es": "Parada {name}"
         }
       }
     ]
@@ -74,7 +78,8 @@
         "nl": "Deze halte heet <b>{name}</b>",
         "ca": "Aquesta parada es diu <b>{name}</b>",
         "fr": "Cet arrêt est nommé <b>{name}</b>",
-        "cs": "Tato zastávka se jmenuje <b>{name}</b>"
+        "cs": "Tato zastávka se jmenuje <b>{name}</b>",
+        "es": "Esta parada se llama <b>{name}</b>"
       },
       "freeform": {
         "key": "name",
@@ -88,7 +93,8 @@
           "da": "Navn på stoppestedet",
           "nl": "Naam van de halte",
           "ca": "Nom de la parada",
-          "cs": "Název zastávky"
+          "cs": "Název zastávky",
+          "es": "Nombre de la parada"
         }
       },
       "mappings": [
@@ -105,7 +111,8 @@
             "da": "Dette stop har intet navn",
             "nl": "Deze halte heeft geen naam",
             "ca": "Aquesta parada no té nom",
-            "cs": "Tato zastávka nemá jméno"
+            "cs": "Tato zastávka nemá jméno",
+            "es": "Esta parada no tiene nombre"
           }
         }
       ],
@@ -115,7 +122,8 @@
         "da": "Hvad er navnet på dette stop?",
         "nl": "Wat is de naam van deze halte?",
         "ca": "Quin és el nom d'aquesta parada?",
-        "cs": "Jak se tato zastávka jmenuje?"
+        "cs": "Jak se tato zastávka jmenuje?",
+        "es": "¿Cuál es el nombre de esta parada?"
       }
     },
     "images",
@@ -131,7 +139,8 @@
             "nl": "Deze halte heeft een schuilplaats",
             "ca": "Aquesta parada té una coberta",
             "fr": "Cet arrêt a un abri",
-            "cs": "Tato zastávka má přístřešek"
+            "cs": "Tato zastávka má přístřešek",
+            "es": "Esta parada tiene un refugio"
           }
         },
         {
@@ -143,7 +152,8 @@
             "nl": "Deze halte heeft <b>geen</b> schuilplaats",
             "ca": "Aquesta parada <b>no</b> té una coberta",
             "fr": "Cet arrêt <b>n'a pas</b> d'abri",
-            "cs": "Tato zastávka <b>nemá</b> přístřešek"
+            "cs": "Tato zastávka <b>nemá</b> přístřešek",
+            "es": "Esta parada <b>no</b> tiene un refugio"
           }
         },
         {
@@ -153,7 +163,8 @@
             "de": "Die Haltestelle hat einen Unterstand, der separat kariert ist",
             "nl": "Deze halte heeft een schuilplaats, die apart op de kaart staat",
             "ca": "Aquesta parada té un refugi que està mapejat separadament",
-            "cs": "Tato zastávka má přístřešek, který je samostatně zmapován"
+            "cs": "Tato zastávka má přístřešek, který je samostatně zmapován",
+            "es": "Esta parada tiene un refugio, que está mapeado por separado"
           },
           "hideInAnswer": true
         }
@@ -165,7 +176,8 @@
         "nl": "Heeft deze halte een schuilplaats?",
         "ca": "Aquesta parada té una coberta?",
         "fr": "Cet arrêt a-t-il un abri ?",
-        "cs": "Má tato zastávka přístřešek?"
+        "cs": "Má tato zastávka přístřešek?",
+        "es": "¿Tiene esta parada un refugio?"
       }
     },
     {
@@ -180,7 +192,8 @@
             "nl": "Deze halte heeft een zitbank",
             "ca": "Aquesta parada té un banc",
             "fr": "Cet arrêt a un banc",
-            "cs": "Tato zastávka má lavičku"
+            "cs": "Tato zastávka má lavičku",
+            "es": "Esta parada tiene un banco"
           }
         },
         {
@@ -192,7 +205,8 @@
             "nl": "Deze halte heeft <b>geen</b> zitbank",
             "ca": "Aquesta parada <b>no</b> té un banc",
             "fr": "Cet arrêt <b>n'a pas</b> de banc",
-            "cs": "Tato zastávka <b>nemá</b> lavičku"
+            "cs": "Tato zastávka <b>nemá</b> lavičku",
+            "es": "Esta parada <b>no</b> tiene un banco"
           }
         },
         {
@@ -203,7 +217,8 @@
             "nl": "Deze halte heeft een zitbank, die los aangegeven is op de kaart",
             "fr": "Cet arrêt a un banc, cartographié séparément",
             "ca": "Aquesta parada té un banc que està mapejat separadament",
-            "cs": "Tato zastávka má lavičku, která je samostatně zmapována"
+            "cs": "Tato zastávka má lavičku, která je samostatně zmapována",
+            "es": "Esta parada tiene un banco, que está mapeado por separado"
           },
           "hideInAnswer": true
         }
@@ -215,7 +230,8 @@
         "nl": "Heeft deze halte een zitbank?",
         "ca": "Aquesta parada té un banc?",
         "fr": "Est-ce que cet arrêt a un banc ?",
-        "cs": "Má tato zastávka lavičku?"
+        "cs": "Má tato zastávka lavičku?",
+        "es": "¿Tiene esta parada un banco?"
       }
     },
     {
@@ -230,7 +246,8 @@
             "nl": "Deze halte heeft een vuilnisbak",
             "ca": "Aquesta parada té una paperera",
             "fr": "Cet arrêt a un poubelle",
-            "cs": "Tato zastávka má odpadkový koš"
+            "cs": "Tato zastávka má odpadkový koš",
+            "es": "Esta parada tiene una papelera"
           }
         },
         {
@@ -242,7 +259,8 @@
             "nl": "Deze halte heeft <b>geen</b> vuilnisbak",
             "ca": "Aquesta parada <b>no</b> té paperera",
             "fr": "Cet arrêt <b>n'a pas</b> de poubelle",
-            "cs": "Tato zastávka <b>nemá</b> koš"
+            "cs": "Tato zastávka <b>nemá</b> koš",
+            "es": "Esta parada <b>no</b> tiene una papelera"
           }
         },
         {
@@ -252,7 +270,8 @@
             "de": "Die Haltestelle hat einen Mülleimer, der separat kartiert ist",
             "nl": "Deze heeft een vuilnisbak, die los op de kaart staat",
             "ca": "Aquesta parada té una paperera que està mapejada separadament",
-            "cs": "Tato zastávka má koš, který je mapován samostatně"
+            "cs": "Tato zastávka má koš, který je mapován samostatně",
+            "es": "Esta parada tiene una papelera, que está mapeada por separado"
           },
           "hideInAnswer": true
         }
@@ -263,7 +282,8 @@
         "da": "Har dette stop en skraldespand?",
         "nl": "Heeft deze halte een vuilnisbak?",
         "ca": "Aquesta parada té una paperera?",
-        "cs": "Má tato zastávka koš?"
+        "cs": "Má tato zastávka koš?",
+        "es": "¿Tiene esta parada una papelera?"
       }
     },
     "wheelchair-access",
@@ -278,7 +298,8 @@
             "ca": "Aquesta parada té una superfície podotàctil",
             "nl": "Deze halte heeft een geleidelijn",
             "fr": "Cet arrêt a une surface podotactile",
-            "cs": "Tato zastávka má hmatovou dlažbu"
+            "cs": "Tato zastávka má hmatovou dlažbu",
+            "es": "Esta parada tiene pavimento táctil"
           }
         },
         {
@@ -289,7 +310,8 @@
             "ca": "Aquesta parada <b>no</b> té superfície podotàctil",
             "nl": "Deze halte heeft <b>geen</b> geleidelijn",
             "fr": "Cet arrêt <b>n'a pas</b> de surface podotactile",
-            "cs": "Tato zastávka <b>nemá</b> hmatovou dlažbu"
+            "cs": "Tato zastávka <b>nemá</b> hmatovou dlažbu",
+            "es": "Esta parada <b>no</b> tiene pavimento táctil"
           }
         }
       ],
@@ -299,7 +321,8 @@
         "ca": "Aquesta parada té una superfície podotàctil?",
         "nl": "Heeft deze halte een geleidelijn?",
         "fr": "Cet arrêt a-t-il une surface podotactile ?",
-        "cs": "Má tato zastávka hmatovou dlažbu?"
+        "cs": "Má tato zastávka hmatovou dlažbu?",
+        "es": "¿Tiene esta parada pavimento táctil?"
       }
     },
     {
@@ -313,7 +336,8 @@
             "nl": "Deze halte is verlicht",
             "ca": "Aquesta parada té il·luminació",
             "fr": "Cet arrêt est éclairé",
-            "cs": "Tato zastávka je osvětlena"
+            "cs": "Tato zastávka je osvětlena",
+            "es": "Esta parada está iluminada"
           }
         },
         {
@@ -325,7 +349,8 @@
             "nl": "Deze halte is <b>niet</b> verlicht",
             "ca": "Aquesta parada <b>no</b> té il·luminació",
             "fr": "Cet arrêt <b>n'est pas</b> éclairé",
-            "cs": "Tato zastávka <b>není osvětlena</b>"
+            "cs": "Tato zastávka <b>není osvětlena</b>",
+            "es": "Esta parada <b>no</b> está iluminada"
           }
         }
       ],
@@ -335,7 +360,8 @@
         "nl": "Is deze halte verlicht?",
         "ca": "Aquesta parada té il·luminació?",
         "fr": "Cet arrêt est-il éclairé ?",
-        "cs": "Je tato zastávka osvětlena?"
+        "cs": "Je tato zastávka osvětlena?",
+        "es": "¿Está iluminada esta parada?"
       }
     },
     {
@@ -348,7 +374,8 @@
             "de": "Die Haltestelle hat einen Fahrplan, der nicht näher definiert ist",
             "da": "Dette stoppested har en afgangstavle af ukendt type",
             "ca": "Aquesta parada té un tauler de sortides de tipus desconegut",
-            "cs": "Tato zastávka má odjezdovou tabuli neznámého typu"
+            "cs": "Tato zastávka má odjezdovou tabuli neznámého typu",
+            "es": "Esta parada tiene un panel de salidas de tipo desconocido"
           },
           "hideInAnswer": true
         },
@@ -360,7 +387,8 @@
             "da": "Dette stop har en tavle med oplysninger om afgang i realtid",
             "fr": "Cet arrêt a un panneau indiquant les départs en temps réel",
             "ca": "Aquesta parada té un tauló amb els horaris en temps real",
-            "cs": "Tato zastávka má tabuli zobrazující informace o odjezdu v reálném čase"
+            "cs": "Tato zastávka má tabuli zobrazující informace o odjezdu v reálném čase",
+            "es": "Esta parada tiene un panel que muestra información de salida en tiempo real"
           }
         },
         {
@@ -370,7 +398,8 @@
             "de": "Die Haltestelle hat einen Fahrplan, der Abfahrtszeiten in Echtzeit anzeigt",
             "da": "Dette stop har en tavle med oplysninger om afgang i realtid",
             "ca": "Aquesta parada té un tauló amb els horaris en temps real",
-            "cs": "Tato zastávka má tabuli zobrazující informace o odjezdu v reálném čase"
+            "cs": "Tato zastávka má tabuli zobrazující informace o odjezdu v reálném čase",
+            "es": "Esta parada tiene un panel que muestra información de salida en tiempo real"
           },
           "hideInAnswer": true
         },
@@ -381,7 +410,8 @@
             "de": "Die Haltestelle hat einen Fahrplan, der die regulären Abfahrtszeiten anzeigt",
             "da": "Dette stop har en køreplan, der viser regelmæssige afgange",
             "ca": "Aquesta parada té un horari que mostra les sortides regulars",
-            "cs": "Tato zastávka má jízdní řád s pravidelnými odjezdy"
+            "cs": "Tato zastávka má jízdní řád s pravidelnými odjezdy",
+            "es": "Esta parada tiene un horario que muestra las salidas regulares"
           }
         },
         {
@@ -391,7 +421,8 @@
             "de": "Die Haltestelle hat einen Fahrplan, der den Abstand zwischen Abfahrten anzeigt",
             "da": "Dette stop har en køreplan, der kun indeholder intervallet mellem afgangene",
             "ca": "Aquesta parada té un horari que conté només l'interval entre sortides",
-            "cs": "Tato zastávka má jízdní řád obsahující pouze interval mezi odjezdy"
+            "cs": "Tato zastávka má jízdní řád obsahující pouze interval mezi odjezdy",
+            "es": "Esta parada tiene un horario que contiene solo el intervalo entre salidas"
           }
         },
         {
@@ -401,7 +432,8 @@
             "de": "Die Haltestelle hat <b>keinen</b> Fahrplan",
             "da": "Dette stop har ikke en afgangstavle",
             "ca": "Aquesta parada <b>no</b> té un tauler de sortides",
-            "cs": "Tato zastávka <b>nemá</b> tabulku odjezdů"
+            "cs": "Tato zastávka <b>nemá</b> tabulku odjezdů",
+            "es": "Esta parada <b>no</b> tiene un panel de salidas"
           }
         }
       ]
@@ -413,7 +445,8 @@
         "da": "<h3>{_contained_routes_count} ruter stopper ved dette stoppested</h3> <ul>{_contained_routes}</ul>",
         "nl": "<h3>{_contained_routes_count} lijnen stoppen bij deze halte</h3> <ul>{_contained_routes}</ul>",
         "ca": "<h3>{_contained_routes_count} rutes paren a aquesta parada</h3> <ul>{_contained_routes}</ul>",
-        "cs": "Na této zastávce staví <h3>{_contained_routes_count} tras</h3> <ul>{_contained_routes}</ul>"
+        "cs": "Na této zastávce staví <h3>{_contained_routes_count} tras</h3> <ul>{_contained_routes}</ul>",
+        "es": "<h3>{_contained_routes_count} rutas paran en esta parada</h3> <ul>{_contained_routes}</ul>"
       },
       "condition": "_contained_routes~*",
       "id": "contained_routes"
@@ -435,7 +468,8 @@
             "de": "Mit Unterstand",
             "fr": "Avec un abri",
             "ca": "Amb refugi",
-            "cs": "S přístřeškem"
+            "cs": "S přístřeškem",
+            "es": "Con refugio"
           }
         }
       ]
@@ -455,7 +489,8 @@
             "de": "Mit Sitzbank",
             "fr": "Avec un banc",
             "ca": "Amb un banc",
-            "cs": "S lavičkou"
+            "cs": "S lavičkou",
+            "es": "Con banco"
           }
         }
       ]
@@ -475,7 +510,8 @@
             "de": "Mit Mülleimer",
             "fr": "Avec un poubelle",
             "ca": "Amb paperera",
-            "cs": "S košem"
+            "cs": "S košem",
+            "es": "Con papelera"
           }
         }
       ]

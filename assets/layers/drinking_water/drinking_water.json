@@ -133,13 +133,15 @@
         "id": "air minum",
         "hu": "ivóvíz",
         "ca": "una font d'aigua potable",
-        "cs": "pitná voda"
+        "cs": "pitná voda",
+        "es": "una fuente de agua potable"
       },
       "description": {
         "en": "Typically a drinking fountain, water tap, water well or natural spring",
         "de": "Typischerweise ein Trinkbrunnen, Wasserhahn, Brunnen oder eine natürliche Quelle",
         "nl": "Meestal een drinkwaterfonteintje, waterkraan, waterput of natuurlijke bron",
-        "ca": "Normalment una font d'aigua, aixeta, pou d'aigua o font natural"
+        "ca": "Normalment una font d'aigua, aixeta, pou d'aigua o font natural",
+        "es": "Típicamente una fuente de agua potable, toma de agua, pozo de agua o manantial natural"
       },
       "tags": [
         "amenity=drinking_water"
@@ -156,7 +158,7 @@
         "fr": "Ce point d'eau potable est-il toujours opérationnel ?",
         "de": "Ist diese Trinkwasserstelle noch in Betrieb?",
         "hu": "Működik-e még ez az ivóvíznyerő hely?",
-        "es": "¿Todavía esta operativo este punto de agua potable?",
+        "es": "¿Sigue funcionando este punto de agua potable?",
         "ca": "Aquest punt d'aigua potable continua operatiu?",
         "cs": "Je toto místo na pitnou vodu stále funkční?",
         "uk": "Чи працює цей пункт з питною водою?"
@@ -168,7 +170,7 @@
         "fr": "L'état opérationnel est <i>{operational_status}</i>",
         "de": "Der Betriebsstatus ist <i>{operational_status}</i>",
         "hu": "Működési állapota: <i>{operational_status}</i>",
-        "es": "El estado operacional es <i>{operational_status}</i>",
+        "es": "El estado operativo es <i>{operational_status}</i>",
         "ca": "L'estat operatiu és <i>{operational_status}</i>",
         "cs": "Provozní stav je <i>{operational_status}</i>",
         "pt": "O estado operacional é: <i>{operational_status}</i>",
@@ -195,7 +197,7 @@
             "fr": "Cette fontaine fonctionne",
             "de": "Diese Trinkwasserstelle ist in Betrieb",
             "hu": "Ez az ivóvízkút működik",
-            "es": "Esta agua potable funciona",
+            "es": "Esta fuente de agua potable funciona",
             "ca": "La font d'aigua funciona",
             "cs": "Tato pitná voda funguje",
             "uk": "Ця питна вода працює"
@@ -210,7 +212,7 @@
             "fr": "Cette fontaine est cassée",
             "de": "Diese Trinkwasserstelle ist kaputt",
             "hu": "Ez az ivóvízkút elromlott",
-            "es": "Esta agua potable está rota",
+            "es": "Esta fuente de agua potable está rota",
             "ca": "Aquesta font d'aigua potable està trencada",
             "cs": "Tato pitná voda je rozbitá",
             "uk": "Цей пункт питної води зіпсований"
@@ -225,7 +227,7 @@
             "fr": "Cette fontaine est fermée",
             "de": "Diese Trinkwasserstelle wurde geschlossen",
             "hu": "Ez az ivóvízkút el van zárva",
-            "es": "Esta agua potable está cerrada",
+            "es": "Esta fuente de agua potable está cerrada",
             "ca": "Aquesta font d'aigua potable està tancada",
             "cs": "Tato pitná voda je uzavřena",
             "uk": "Цей пункт питної води закритий"
@@ -239,7 +241,8 @@
           "then": {
             "en": "This drinking water is permanently closed",
             "de": "Die Trinkwasserstelle ist dauerhaft geschlossen",
-            "uk": "Цей пункт питної води постійно закритий"
+            "uk": "Цей пункт питної води постійно закритий",
+            "es": "Esta fuente de agua potable está cerrada permanentemente"
           }
         }
       ],
@@ -252,7 +255,8 @@
         "nl": "Wat voor soort drinkwaterpunt is dit?",
         "de": "Um welche Art von Trinkwasserentnahmestelle handelt es sich?",
         "ca": "Quin tipus de punt d'aigua potable és aquest?",
-        "uk": "Що це за тип пункту питної води?"
+        "uk": "Що це за тип пункту питної води?",
+        "es": "¿Qué tipo de punto de agua potable es este?"
       },
       "mappings": [
         {
@@ -262,7 +266,8 @@
             "en": "This is a bubbler fountain. A water jet to drink from is sent upwards, typically controlled by a push button.",
             "nl": "Dit is een waterhappertje - een drinkwaterfonteintje waarbij een waterstraaltje omhoog spuit. Dit kan permanent werken of door op een drukknop te duwen.",
             "de": "Dies ist ein Sprudelbrunnen. Ein Wasserstrahl zum Trinken wird nach oben gerichtet und in der Regel durch einen Druckknopf gesteuert.",
-            "uk": "Це барботажний фонтан. Струмінь води, з якого можна пити, спрямовується вгору, зазвичай керується кнопкою."
+            "uk": "Це барботажний фонтан. Струмінь води, з якого можна пити, спрямовується вгору, зазвичай керується кнопкою.",
+            "es": "Esta es una fuente de chorro. Un chorro de agua para beber se envía hacia arriba, típicamente controlado por un botón."
           },
           "addExtraTags": [
             "man_made="
@@ -276,7 +281,8 @@
             "nl": "Dit is een hervulpunt voor drinkwaterflessen. De waterstraal wordt omlaag gestuurd wanneer op een drukknop geduwd wordt of wanneer er beweging gedetecteerd wordt. Rechtstreeks van de waterstraal drinking kan moeilijk of zelfs onmogelijk zijn.",
             "de": "Dies ist eine Flaschenauffüllstation, an der das Wasser nach unten geleitet wird, in der Regel durch einen Druckknopf oder einen Bewegungssensor gesteuert. Direkt aus dem Wasserstrahl zu trinken, kann sehr schwierig oder unmöglich sein.",
             "ca": "Aquest és un punt de reomplida d'ampolles on l'aigua s'envia cap avall, normalment controlat per un polsador o un sensor de moviment. Beure directament del raig pot ser molt difícil o impossible.",
-            "uk": "Це пункт наповнення пляшок, де вода спрямовується вниз, як правило, за допомогою кнопки або датчика руху. Пити безпосередньо зі струмка може бути дуже важко або неможливо."
+            "uk": "Це пункт наповнення пляшок, де вода спрямовується вниз, як правило, за допомогою кнопки або датчика руху. Пити безпосередньо зі струмка може бути дуже важко або неможливо.",
+            "es": "Este es un punto de recarga de botellas donde el agua se envía hacia abajo, normalmente controlado por un botón o un sensor de movimiento. Beber directamente del flujo podría ser muy difícil o imposible."
           },
           "addExtraTags": [
             "man_made=",
@@ -291,7 +297,8 @@
             "nl": "Dit is een waterkraan. Het water strooomt naar beneden en het volume wordt door een knop of draaimechanisme geregeld.",
             "de": "Dies ist ein Wasserhahn. Das Wasser fließt nach unten und der Wasserstrahl wird durch ein Ventil oder einen Druckknopf gesteuert.",
             "ca": "Això és una aixeta d'aigua. L'aigua flueix cap avall i el corrent és controlat per una vàlvula o polsador.",
-            "uk": "Це водопровідний кран. Вода тече вниз, а керує потоком вентиль або кнопка."
+            "uk": "Це водопровідний кран. Вода тече вниз, а керує потоком вентиль або кнопка.",
+            "es": "Esta es una toma de agua. El agua fluye hacia abajo y el chorro está controlado por una válvula o un botón."
           },
           "addExtraTags": [
             "fountain="
@@ -307,7 +314,7 @@
         "it": "Quanto è facile riempire d’acqua le bottiglie?",
         "fr": "Est-il facile de remplir des bouteilles d'eau ?",
         "hu": "Mennyire könnyű itt vizespalackot tölteni?",
-        "es": "¿Cómo de fácil es rellenar botellas de agua?",
+        "es": "¿Qué tan fácil es rellenar botellas de agua?",
         "ca": "Com de fàcil és reomplir botelles d'aigua?",
         "ru": "Поместится ли здесь бутылка для воды?",
         "cs": "Jak snadné je plnit láhve s vodou?"
@@ -337,7 +344,7 @@
             "it": "Le bottiglie d’acqua potrebbero non entrare",
             "fr": "Les bouteilles d'eau peuvent ne pas passer",
             "hu": "Lehet, hogy nem fér alá egy vizespalack",
-            "es": "Las botellas de agua pueden no caber",
+            "es": "Es posible que las botellas no quepan",
             "ca": "Les botelles d'aigua podrien no cabre",
             "ru": "Бутылка для воды может не поместиться",
             "cs": "Láhve s vodou nemusí pasovat"
@@ -353,7 +360,8 @@
         "en": "Is this drinking water point free to use?",
         "nl": "Is dit drinkwaterpunt gratis te gebruiken?",
         "de": "Kann diese Trinkwasserstelle kostenlos genutzt werden?",
-        "ca": "Aquest punt d'aigua potable és d'ús gratuït?"
+        "ca": "Aquest punt d'aigua potable és d'ús gratuït?",
+        "es": "¿Es de libre uso este punto de agua potable?"
       },
       "mappings": [
         {
@@ -362,7 +370,8 @@
             "en": "Free to use",
             "nl": "Gratis te gebruiken",
             "de": "Die Nutzung ist kostenlos",
-            "ca": "D'us gratuït"
+            "ca": "D'us gratuït",
+            "es": "Libre de uso"
           }
         },
         {
@@ -371,7 +380,8 @@
             "en": "One needs to pay to use this drinking water point",
             "nl": "Men moet betalen om dit drinkwaterpunt te gebruiken",
             "de": "Die Nutzung ist kostenpflichtig",
-            "ca": "Cal pagar per utilitzar aquest punt d'aigua potable"
+            "ca": "Cal pagar per utilitzar aquest punt d'aigua potable",
+            "es": "Hay que pagar para usar este punto de agua potable"
           }
         }
       ]
@@ -383,7 +393,8 @@
           "en": "Is this drinking water point available all year round?",
           "nl": "Is dit drinkwaterpunt heel het jaar door beschikbaar?",
           "de": "Ist die Trinkwasserstelle ganzjährig in Betrieb?",
-          "ca": "Aquest punt d'aigua potable està disponible tot l'any?"
+          "ca": "Aquest punt d'aigua potable està disponible tot l'any?",
+          "es": "¿Este punto de agua potable está disponible durante todo el año?"
         }
       }
     },
@@ -394,7 +405,9 @@
           "en": "These are the opening hours if the drinking water fountain is operational.",
           "nl": "Tijdens deze openingsuren is dit drinkwaterpunt bruikbaar.",
           "de": "Dies sind die Öffnungszeiten des Trinkwasserbrunnens, wenn dieser in Betrieb ist.",
-          "ca": "Aquests són els horaris d'obertura si la font d'aigua potable està operativa."
+          "ca": "Aquests són els horaris d'obertura si la font d'aigua potable està operativa.",
+          "es": "Estos son los horarios de apertura si la fuente de agua potable está operativa.",
+          "uk": "Це години роботи фонтанчика з питною водою, якщо він працює."
         },
         "+mappings": [
           {
@@ -436,7 +449,9 @@
               "en": "This drinking water fountain is closed this season. As such, the opening hours are not shown.",
               "nl": "Dit drinkwaterpunt is dit seizoen gesloten. De openingsuren worden dus niet weergegeven.",
               "de": "Der Trinkwasserbrunnen ist derzeit nicht in Betrieb. Deshalb werden keine Öffnungszeiten angezeigt.",
-              "ca": "Aquesta font d'aigua potable està tancada aquesta temporada. Com a tal, l'horari d'obertura no es mostra."
+              "ca": "Aquesta font d'aigua potable està tancada aquesta temporada. Com a tal, l'horari d'obertura no es mostra.",
+              "es": "Esta fuente de agua potable está cerrada esta temporada, por lo que no se muestran los horarios de apertura.",
+              "uk": "У цьому сезоні фонтан з питною водою закритий. Тому години роботи не вказані."
             },
             "hideInAnswer": true
           }
@@ -449,7 +464,8 @@
         "en": "Does this drinking water fountain have an artistic element?",
         "nl": "Heeft dit drinkwaterpunt een geintegreerd kunstwerk?",
         "de": "Verfügt der Trinkwasserbrunnen über ein künstlerisches Element?",
-        "ca": "Aquesta font d'aigua potable té un element artístic?"
+        "ca": "Aquesta font d'aigua potable té un element artístic?",
+        "es": "¿Tiene esta fuente de agua potable un elemento artístico?"
       },
       "mappings": [
         {
@@ -461,7 +477,8 @@
             "en": "This drinking water point has an integrated artwork",
             "nl": "Dit drinkwaterpunt heeft een geintegreerd kunstwerk",
             "de": "Die Trinkwasserstelle hat ein integriertes Kunstwerk",
-            "ca": "Aquest punt d'aigua potable té una obra d'art integrada"
+            "ca": "Aquest punt d'aigua potable té una obra d'art integrada",
+            "es": "Este punto de agua potable tiene una obra de arte integrada"
           }
         },
         {
@@ -470,7 +487,8 @@
             "en": "This drinking water point does not have an integrated artwork",
             "nl": "Dit drinkwaterpunt heeft geen geïntegreerd kunstwerk",
             "de": "Die Trinkwasserstelle hat kein integriertes Kunstwerk",
-            "ca": "Aquest punt d'aigua potable no té una obra d'art integrada"
+            "ca": "Aquest punt d'aigua potable no té una obra d'art integrada",
+            "es": "Este punto de agua potable no tiene una obra de arte integrada"
           },
           "addExtraTags": [
             "tourism="
@@ -483,7 +501,8 @@
             "nl": "Dit drinkwaterpunt heeft <span class=\"subtle\">waarschijnlijk</span> geen geïntegreerd kunstwerk",
             "de": "Die Trinkwasserstelle hat <span class=\"subtle\">wahrscheinlich</span> kein integriertes Kunstwerk",
             "ca": "Aquest punt d'aigua potable <span class=\"subtle\">probablement</span> no té una obra d'art integrada",
-            "uk": "Ця точка питної води <span class=\"subtle\"> ймовірно, </span> не має інтегрованого художнього твору"
+            "uk": "Ця точка питної води <span class=\"subtle\"> ймовірно, </span> не має інтегрованого художнього твору",
+            "es": "Este punto de agua potable <span class=\"subtle\">probablemente</span> no tiene una obra de arte integrada"
           },
           "hideInAnswer": true
         }
@@ -492,7 +511,8 @@
         "en": "E.g. it has an integrated statue or other non-trivial, creative work",
         "nl": "Bijvoorbeeld een standbeeld of ander, niet-triviaal kunstwerk",
         "de": "Z.B. eine integrierte Statue oder andere künstlerische Werke",
-        "ca": "P. ex. té una estàtua integrada o un altre treball creatiu no trivial"
+        "ca": "P. ex. té una estàtua integrada o un altre treball creatiu no trivial",
+        "es": "Por ejemplo, tiene una estatua integrada u otra obra creativa no trivial"
       }
     },
     {
@@ -537,7 +557,7 @@
           "en": "This is a decorative fountain of which the water is not drinkable by humans",
           "nl": "Dit is een decoratieve fontein waarvan het water niet geschikt is om te drinken door mensen",
           "de": "Dies ist ein Zierbrunnen, dessen Wasser für den Menschen nicht trinkbar ist",
-          "es": "Esta es una fuente decorativa con agua no potable",
+          "es": "Esta es una fuente decorativa, cuyo agua no es potable para humanos",
           "ca": "Es tracta d'una font decorativa amb aigua no potable",
           "cs": "Jedná se o dekorativní fontánu, jejíž voda není pro lidi pitná",
           "uk": "Це декоративний фонтан, вода з якого не придатна для пиття"
@@ -555,7 +575,7 @@
           "en": "This is a water tap or water pump with non-drinkable water.<div class='subtle'>Examples are water taps with rain water to tap water for nearby plants</div>",
           "nl": "Dit is een waterkraan of waterpomp met ondrinkbaar water.<div class='subtle'>Bijvoorbeeld een waterkraan met regenwater om planten water mee te geven</div",
           "de": "Dies ist ein Wasserhahn oder eine Wasserpumpe mit nicht trinkbarem Wasser.<div class='subtle'>Beispiele sind Wasserhähne mit Regenwasser zum Zapfen von Wasser für nahe gelegene Pflanzen</div>",
-          "es": "Este es un grifo de agua o una bomba de agua con agua no potable.<div class='subtle'>Ejemplos son grifos con agua de lluvia o agua del grifo para plantas cercanas</div>",
+          "es": "Esta es una toma de agua o bomba de agua con agua no potable.<div class='subtle'>Ejemplos son tomas de agua con agua de lluvia o agua para regar plantas cercanas</div>",
           "ca": "Es tracta d'una aixeta d'aigua o bomba d'aigua amb aigua no potable. <div class='subtle'> Per exemple les aixetes d'aigua amb aigua de pluja per aprofitar i regar les plantes properes</div>",
           "cs": "Jedná se o vodovodní kohoutek nebo vodní čerpadlo s nepitnou vodou.<div class='subtle'>Příkladem jsou vodovodní kohoutky s dešťovou vodou pro zalévání rostlin v okolí</div>",
           "uk": "Це водопровідний кран або водяний насос з непитною водою.<div class='subtle'>Прикладами є водопровідні крани з дощовою водою для поливу прилеглих рослин</div>"
@@ -574,7 +594,8 @@
           "en": "This is a historic, manual water pump where no drinking water can be found",
           "nl": "Dit is een historische, manuele waterpomp waar geen drinkwater uitkomt",
           "de": "Dies ist eine historische, manuelle Wasserpumpe, an der kein Trinkwasser zu finden ist",
-          "ca": "Es tracta d'una bomba d'aigua manual històrica on no hi ha aigua potable"
+          "ca": "Es tracta d'una bomba d'aigua manual històrica on no hi ha aigua potable",
+          "es": "Esta es una bomba de agua histórica y manual donde no se puede encontrar agua potable"
         }
       }
     ]

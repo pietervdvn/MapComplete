@@ -5,13 +5,15 @@
     "de": "OSM-Objekte mit FIXME-Tags",
     "pl": "Obiekty OSM z znacznikami FIXME",
     "ca": "Objectes d'OSM amb etiquetes FIXME",
-    "cs": "Objekty OSM se značkami FIXME"
+    "cs": "Objekty OSM se značkami FIXME",
+    "es": "Objetos OSM con etiquetas FIXME"
   },
   "description": {
     "en": "OSM objects that likely need to be fixed, based on a FIXME tag.",
     "de": "OSM-Objekte, die wahrscheinlich korrigiert werden müssen, basierend auf einem FIXME-Tag.",
     "ca": "Objectes OSM que probablement s'han de solucionar, basats en una etiqueta FIXME.",
-    "cs": "Objekty OSM, které je pravděpodobně nutné opravit na základě značky FIXME."
+    "cs": "Objekty OSM, které je pravděpodobně nutné opravit na základě značky FIXME.",
+    "es": "Objetos OSM que probablemente necesitan ser arreglados, basándose en una etiqueta FIXME."
   },
   "source": {
     "osmTags": {
@@ -28,7 +30,8 @@
       "de": "OSM-Objekt mit FIXME-Tags",
       "pl": "Obiekt OSM z znacznikiem FIXME",
       "ca": "Objecte OSM amb etiqueta FIXME",
-      "cs": "Objekt OSM s tagem FIXME"
+      "cs": "Objekt OSM s tagem FIXME",
+      "es": "Objeto OSM con etiqueta FIXME"
     }
   },
   "pointRendering": [
@@ -64,7 +67,8 @@
         "de": "Was stimmt mit diesem Objekt nicht?",
         "pl": "Co jest nie tak z tym obiektem?",
         "ca": "Que hi ha mal amb aquest element?",
-        "cs": "Co je na této funkci špatného?"
+        "cs": "Co je na této funkci špatného?",
+        "es": "¿Qué está mal con este elemento?"
       },
       "mappings": [
         {
@@ -74,7 +78,8 @@
             "de": "Dieses Problem wurde behoben",
             "pl": "Ten problem został rozwiązany",
             "ca": "Aquest problema s'ha resolt",
-            "cs": "Tento problém byl vyřešen"
+            "cs": "Tento problém byl vyřešen",
+            "es": "Este problema ha sido resuelto"
           }
         }
       ],
@@ -82,7 +87,8 @@
         "en": "Fixme Text: {fixme}",
         "de": "Fixme Text: {fixme}",
         "ca": "Text Fixme: {fixme}",
-        "cs": "Fixme Text: {fixme}"
+        "cs": "Fixme Text: {fixme}",
+        "es": "Texto Fixme: {fixme}"
       }
     },
     {
@@ -94,7 +100,8 @@
         "fr": "Texte de la note : {note}",
         "pl": "Tekst notatki: {note}",
         "ca": "Text de la nota: {note}",
-        "cs": "Text poznámky: {note}"
+        "cs": "Text poznámky: {note}",
+        "es": "Texto Nota: {note}"
       }
     },
     "all_tags"

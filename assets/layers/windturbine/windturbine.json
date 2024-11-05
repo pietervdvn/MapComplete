@@ -10,7 +10,8 @@
     "hu": "Szélerőmű",
     "da": "vindmølle",
     "ca": "Turbina Eòlica",
-    "cs": "větrná turbína"
+    "cs": "větrná turbína",
+    "es": "aerogenerador"
   },
   "description": {
     "en": "Modern windmills generating electricity",
@@ -20,7 +21,8 @@
     "ca": "Molins de vent moderns que generen electricitat",
     "cs": "Moderní větrné mlýny vyrábějící elektřinu",
     "pl": "Nowoczesne wiatraki wytwarzające energię elektryczną",
-    "zh_Hant": "現代風車產生電力"
+    "zh_Hant": "現代風車產生電力",
+    "es": "Molinos de viento modernos que generan electricidad"
   },
   "source": {
     "osmTags": "generator:source=wind"
@@ -39,7 +41,8 @@
       "da": "vindmølle",
       "pl": "turbina wiatrowa",
       "ca": "Turbina eòlica",
-      "cs": "větrná turbína"
+      "cs": "větrná turbína",
+      "es": "aerogenerador"
     },
     "mappings": [
       {
@@ -58,7 +61,8 @@
           "da": "{name}",
           "pl": "{name}",
           "cs": "{name}",
-          "pt": "{name}"
+          "pt": "{name}",
+          "es": "{name}"
         }
       }
     ]
@@ -103,7 +107,8 @@
         "hu": "Szélerőmű",
         "da": "en vindmølle",
         "ca": "una turbina eòlica",
-        "cs": "větrná turbína"
+        "cs": "větrná turbína",
+        "es": "un aerogenerador"
       }
     }
   ],
@@ -121,7 +126,8 @@
         "nl": "Deze windturbine genereert {generator:output:electricity}",
         "da": "Denne vindmølle har en effekt på {generator:output:electricity}.",
         "ca": "La potència de sortida d'aquest aerogenerador és {generator:output:electricity}.",
-        "cs": "Výkon této větrné turbíny je {generator:output:electricity}."
+        "cs": "Výkon této větrné turbíny je {generator:output:electricity}.",
+        "es": "La potencia de este aerogenerador es de {generator:output:electricity}."
       },
       "question": {
         "en": "What is the power output of this wind turbine? (e.g. 2.3 MW)",
@@ -135,7 +141,8 @@
         "da": "Hvad er effekten af denne vindmølle? (f.eks. 2,3 MW)",
         "ca": "Quina és la potència de sortida d'aquest aerogenerador? (p. ex. 2,3 MW)",
         "cs": "Jaký je výkon této větrné turbíny? (např. 2,3 MW)",
-        "pl": "Jaka jest moc wyjściowa tej turbiny wiatrowej? (np. 2,3 MW)"
+        "pl": "Jaka jest moc wyjściowa tej turbiny wiatrowej? (np. 2,3 MW)",
+        "es": "¿Cuál es la potencia de este aerogenerador? (por ejemplo, 2.3 MW)"
       },
       "freeform": {
         "key": "generator:output:electricity",
@@ -155,7 +162,8 @@
         "da": "Denne vindmølle drives af {operator}.",
         "nl": "Deze windturbine wordt beheerd door {operator}.",
         "ca": "{operator} gestiona aquest aerogenerador.",
-        "cs": "Tuto větrnou turbínu provozuje {operator}."
+        "cs": "Tuto větrnou turbínu provozuje {operator}.",
+        "es": "Este aerogenerador es operado por {operator}."
       },
       "question": {
         "en": "Who operates this wind turbine?",
@@ -169,7 +177,8 @@
         "nl": "Wie beheert deze windturbine?",
         "ca": "Qui opera aquest aerogenerador?",
         "cs": "Kdo provozuje tuto větrnou turbínu?",
-        "pl": "Kto obsługuje tę turbinę wiatrową?"
+        "pl": "Kto obsługuje tę turbinę wiatrową?",
+        "es": "¿Quién opera este aerogenerador?"
       },
       "freeform": {
         "key": "operator"
@@ -187,7 +196,8 @@
         "da": "Den samlede højde (inklusive rotorradius) for denne vindmølle er {height} meter.",
         "nl": "De totale hoogte (inclusief rotor-radius) van deze windturbine is {height} meter",
         "ca": "L'alçada total (inclòs el radi del rotor) d'aquest aerogenerador és de {height} metres.",
-        "cs": "Celková výška (včetně poloměru rotoru) této větrné turbíny je {height} metrů."
+        "cs": "Celková výška (včetně poloměru rotoru) této větrné turbíny je {height} metrů.",
+        "es": "La altura total (incluido el radio del rotor) de este aerogenerador es de {height} metros."
       },
       "question": {
         "en": "What is the total height of this wind turbine (including rotor radius), in metres?",
@@ -199,7 +209,8 @@
         "da": "Hvad er den samlede højde af denne vindmølle (inklusive rotorradius), i meter?",
         "nl": "Wat is de totale hoogte in meter van deze windturbine (inclusief rotor-radius)?",
         "ca": "Quina és l'alçada total d'aquest aerogenerador (inclòs el radi del rotor), en metres?",
-        "cs": "Jaká je celková výška této větrné elektrárny (včetně poloměru rotoru) v metrech?"
+        "cs": "Jaká je celková výška této větrné elektrárny (včetně poloměru rotoru) v metrech?",
+        "es": "¿Cuál es la altura total de este aerogenerador (incluido el radio del rotor), en metros?"
       },
       "freeform": {
         "key": "height",
@@ -218,7 +229,8 @@
         "nl": "De rotordiameter van deze windturbine is {rotor:diameter} meter.",
         "da": "Rotordiameteren på denne vindmølle er {rotor:diameter} meter.",
         "ca": "El diàmetre del rotor d'aquest aerogenerador és de {rotor:diameter} metres.",
-        "cs": "Průměr rotoru této větrné turbíny je {rotor:diameter} metrů."
+        "cs": "Průměr rotoru této větrné turbíny je {rotor:diameter} metrů.",
+        "es": "El diámetro del rotor de este aerogenerador es de {rotor:diameter} metros."
       },
       "question": {
         "en": "What is the rotor diameter of this wind turbine, in metres?",
@@ -230,7 +242,8 @@
         "nl": "Wat is de rotordiameter van deze windturbine?",
         "da": "Hvad er rotordiameteren på denne vindmølle i meter?",
         "ca": "Quin és el diàmetre del rotor d'aquest aerogenerador en metres?",
-        "cs": "Jaký je průměr rotoru této větrné turbíny v metrech?"
+        "cs": "Jaký je průměr rotoru této větrné turbíny v metrech?",
+        "es": "¿Cuál es el diámetro del rotor de este aerogenerador, en metros?"
       },
       "freeform": {
         "key": "rotor:diameter",
@@ -250,7 +263,8 @@
         "nl": "Deze windturbine werd op {start_date} in gebruik genomen",
         "da": "Denne vindmølle blev sat i drift den/den {start_date}.",
         "ca": "Aquest aerogenerador va entrar en funcionament el dia {start_date}.",
-        "cs": "Tato větrná turbína byla uvedena do provozu dne/v {start_date}."
+        "cs": "Tato větrná turbína byla uvedena do provozu dne/v {start_date}.",
+        "es": "Este aerogenerador entró en funcionamiento el/en {start_date}."
       },
       "question": {
         "en": "When did this wind turbine go into operation?",
@@ -264,7 +278,8 @@
         "da": "Hvornår blev denne vindmølle taget i brug?",
         "ca": "Quan va entrar en funcionament aquest aerogenerador?",
         "cs": "Kdy byla tato větrná turbína uvedena do provozu?",
-        "pl": "Kiedy ta turbina wiatrowa została uruchomiona?"
+        "pl": "Kiedy ta turbina wiatrowa została uruchomiona?",
+        "es": "¿Cuándo entró en funcionamiento este aerogenerador?"
       },
       "freeform": {
         "key": "start_date",
@@ -280,7 +295,7 @@
         "de": "Zusätzliche Informationen für OpenStreetMap-Experten: {fixme}",
         "ru": "Дополнительная информация для экспертов OpenStreetMap: {fixme}",
         "sl": "Dodatne informacije za OpenStreetMap strokovnjake: {fixme}",
-        "es": "Información extra para expertos en OpenStreetMap: {fixme}",
+        "es": "Información adicional para expertos de OpenStreetMap: {fixme}",
         "ca": "Informació addicional per als experts en OpenStreetMap: {fixme}",
         "cs": "Další informace pro odborníky na OpenStreetMap: {fixme}",
         "zh_Hant": "為 OpenStreetMap 專家提供的額外資訊：{fixme}"
@@ -291,7 +306,8 @@
         "de": "Gibt es einen Fehler in der Kartierung, den Sie hier nicht beheben konnten? (hinterlassen Sie eine Nachricht an OpenStreetMap-Experten)",
         "ca": "Hi ha alguna cosa malament en la manera que està mapejat això que no heu pogut solucionar aquí? (deixeu una nota als experts d'OpenStreetMap)",
         "cs": "Je něco špatně s tím, jak je to mapováno, a vy jste to zde nedokázali opravit? (zanechte poznámku odborníkům na OpenStreetMap)",
-        "pl": "Czy jest coś nie tak z mapowaniem tego, czego nie mogłeś tutaj naprawić? (zostaw wiadomość ekspertom OpenStreetMap)"
+        "pl": "Czy jest coś nie tak z mapowaniem tego, czego nie mogłeś tutaj naprawić? (zostaw wiadomość ekspertom OpenStreetMap)",
+        "es": "¿Hay algo mal en cómo está mapeado esto, que no pudiste solucionar aquí? (deja una nota para los expertos de OpenStreetMap)"
       },
       "freeform": {
         "key": "fixme",

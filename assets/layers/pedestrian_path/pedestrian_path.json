@@ -6,7 +6,8 @@
     "de": "Fußgängerwege",
     "fr": "Sentiers piétons",
     "ca": "Camins per a vianants",
-    "cs": "Cesty pro chodce"
+    "cs": "Cesty pro chodce",
+    "es": "Aceras peatonales"
   },
   "description": {
     "en": "Pedestrian footpaths, especially used for indoor navigation and snapping entrances to this layer",
@@ -14,7 +15,8 @@
     "de": "Fußgängerwege, insbesondere für die Navigation in Gebäuden und die Aufnahme von Eingängen in diese Ebene",
     "fr": "Sentiers piétonniers, particulièrement utilisés pour la navigation intérieure et les entrées d'accrochage à cette couche",
     "ca": "Senderes per a vianants, especialment utilitzades per a la navegació interior i les entrades ràpides a aquesta capa",
-    "cs": "Chodníky pro pěší, používané zejména pro navigaci v interiéru a zachycení vstupů do této vrstvy"
+    "cs": "Chodníky pro pěší, používané zejména pro navigaci v interiéru a zachycení vstupů do této vrstvy",
+    "es": "Aceras peatonales, especialmente usadas para navegación interior y para ajustar entradas a esta capa"
   },
   "source": {
     "osmTags": {
@@ -49,6 +51,7 @@
   "allowMove": false,
   "snapName": {
     "en": "a pedestrian path",
-    "de": "ein Fußweg"
+    "de": "ein Fußweg",
+    "es": "una acera peatonal"
   }
 }

@@ -30,7 +30,7 @@
       "name": {
         "en": "Changeset centers",
         "de": "Changeset-Zentren",
-        "es": "Centro del conjunto de cambios"
+        "es": "Centros de conjuntos de cambios"
       },
       "minzoom": 0,
       "source": {
@@ -86,7 +86,7 @@
             "en": "What theme was used to make this change?",
             "de": "Welches Thema wurde für diese Änderung verwendet?",
             "cs": "Jaký motiv byl použit k provedení této změny?",
-            "es": "¿Qué tema se utilizó para hacer este cambio?"
+            "es": "¿Qué tema se utilizó para realizar este cambio?"
           },
           "freeform": {
             "key": "theme"
@@ -94,7 +94,7 @@
           "render": {
             "en": "Change with theme <a href='https://mapcomplete.org/{theme}'>{theme}</a>",
             "de": "Änderung mit Thema <a href='https://mapcomplete.org/{theme}'>{theme}</a>",
-            "es": "Cambiar con el tema <a href='https://mapcomplete.org/{theme}'>{theme}</a>"
+            "es": "Cambio con el tema <a href='https://mapcomplete.org/{theme}'>{theme}</a>"
           }
         },
         {
@@ -106,13 +106,13 @@
             "en": "What locale (language) was this change made in?",
             "de": "In welcher Sprache (Locale) wurde diese Änderung vorgenommen?",
             "cs": "V jakém prostředí (jazyce) byla tato změna provedena?",
-            "es": "¿En qué idioma (ubicación) se realizó este cambio?"
+            "es": "¿En qué configuración regional (idioma) se realizó este cambio?"
           },
           "render": {
             "en": "User locale is {locale}",
             "de": "Die Benutzersprache ist {locale}",
             "cs": "Uživatelské prostředí je {locale}",
-            "es": "La configuración local del usuario es {locale}"
+            "es": "Configuración regional del usuario es {locale}"
           }
         },
         {
@@ -121,13 +121,13 @@
             "en": "Change with with <a href='{host}'>{host}</a>",
             "de": "Änderung mit <a href='{host}'>{host}</a>",
             "cs": "Změnit pomocí <a href='{host}'>{host}</a>",
-            "es": "Cambiado con <a href='{host}'>{host}</a>"
+            "es": "Cambio realizado con <a href='{host}'>{host}</a>"
           },
           "question": {
             "en": "What host (website) was this change made with?",
             "de": "Bei welchem Host (Website) wurde diese Änderung vorgenommen?",
             "cs": "U jakého hostitele (webové stránky) byla tato změna provedena?",
-            "es": "¿Con qué host (página web) se hizo este cambio?"
+            "es": "¿Con qué anfitrión (sitio web) se realizó este cambio?"
           },
           "freeform": {
             "key": "host"
@@ -151,7 +151,7 @@
             "en": "What version of MapComplete was used to make this change?",
             "de": "Welche Version von MapComplete wurde verwendet, um diese Änderung vorzunehmen?",
             "cs": "Jaká verze aplikace MapComplete byla použita k provedení této změny?",
-            "es": "¿Qué versión de MapComplete se utilizó para hacer este cambio?"
+            "es": "¿Qué versión de MapComplete se utilizó para realizar este cambio?"
           },
           "render": {
             "en": "Made with {editor}",
@@ -195,7 +195,7 @@
               "question": {
                 "en": "Themename contains {search}",
                 "de": "Themenname enthält {search}",
-                "es": "El nombre contiene {search}",
+                "es": "El nombre del tema contiene {search}",
                 "pl": "Nazwa tematu zawiera {search}",
                 "cs": "Název obsahuje {search}"
               }
@@ -253,7 +253,7 @@
               "question": {
                 "en": "<b>Not</b> made by contributor {search}",
                 "de": "<b>Nicht</b> erstellt von Mitwirkendem {search}",
-                "es": "<b>No</b> realizado por el colaborador {search}",
+                "es": "<b>No</b> hecho por el colaborador {search}",
                 "cs": "<b>Nevytvořeno</b> přispěvatelem {search}"
               }
             }
@@ -273,7 +273,7 @@
               "question": {
                 "en": "Made before {search}",
                 "de": "Erstellt vor {search}",
-                "es": "Realizado antes de {search}",
+                "es": "Hecho antes de {search}",
                 "cs": "Vytvořeno před {search}"
               }
             }
@@ -293,7 +293,7 @@
               "question": {
                 "en": "Made after {search}",
                 "de": "Erstellt nach {search}",
-                "es": "Realizado después de {search}",
+                "es": "Hecho después de {search}",
                 "cs": "Vytvořeno po {search}"
               }
             }
@@ -312,7 +312,7 @@
               "question": {
                 "en": "User language (iso-code) {search}",
                 "de": "Benutzersprache (ISO-Code) {search}",
-                "es": "Idioma del usuario (código iso) {search}",
+                "es": "Idioma del usuario (código ISO) {search}",
                 "cs": "Jazyk uživatele (iso-kód) {search}"
               }
             }
@@ -332,7 +332,7 @@
                 "en": "Made with host {search}",
                 "de": "Erstellt mit Host {search}",
                 "cs": "Vytvořeno pomocí hostitele {search}",
-                "es": "Hecho con host {search}"
+                "es": "Hecho con el anfitrión {search}"
               }
             }
           ]
@@ -346,7 +346,7 @@
                 "en": "Changeset added at least one image",
                 "de": "Changeset hat mindestens ein Bild hinzugefügt",
                 "cs": "Sada změn přidala alespoň jeden obrázek",
-                "es": "El conjunto de cambios ha añadido al menos una imagen"
+                "es": "El conjunto de cambios agregó al menos una imagen"
               }
             }
           ]
@@ -360,7 +360,7 @@
                 "en": "Exclude GRB theme",
                 "de": "GRB-Thema ausschließen",
                 "cs": "Vyloučit motiv GRB",
-                "es": "Excluir tema GRB"
+                "es": "Excluir el tema GRB"
               }
             }
           ]
@@ -373,7 +373,7 @@
               "question": {
                 "en": "Exclude etymology theme",
                 "de": "Etymologie-Thema ausschließen",
-                "es": "Excluir el tema de la etimología",
+                "es": "Excluir el tema de etimología",
                 "cs": "Vyloučit etymologii tématu"
               }
             }
@@ -392,7 +392,7 @@
               "en": "More statistics can be found <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>here</a>",
               "de": "Weitere Statistiken findest du <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>hier</a>",
               "cs": "Další statistiky najdete <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>zde</a>",
-              "es": "Se pueden encontrar más estadísticas <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>aquí</a>"
+              "es": "Puedes encontrar más estadísticas <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>aquí</a>"
             }
           },
           {

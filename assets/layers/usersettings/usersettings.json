@@ -8,7 +8,8 @@
     "ca": "Una capa especial que no està pensada per mostrar-se en un mapa, però que s'utilitza per configurar la configuració de l'usuari",
     "cs": "Speciální vrstva, která není určena k zobrazení na mapě, ale slouží k nastavení uživatelských nastavení",
     "uk": "Спеціальний шар, який не призначений для відображення на карті, але використовується для встановлення користувацьких налаштувань",
-    "hu": "Egy speciális réteg, amelyet nem a térképen való megjelenítésre szántak, hanem a felhasználói beállítások megadására szolgál"
+    "hu": "Egy speciális réteg, amelyet nem a térképen való megjelenítésre szántak, hanem a felhasználói beállítások megadására szolgál",
+    "es": "Una capa especial que no está destinada a mostrarse en un mapa, pero que se utiliza para configurar la configuración del usuario"
   },
   "source": "special",
   "calculatedTags": [
@@ -33,7 +34,8 @@
       "sl": "Nastavitve",
       "ru": "Настройки",
       "hu": "Beállítások",
-      "uk": "Налаштування"
+      "uk": "Налаштування",
+      "es": "Configuración"
     }
   },
   "pointRendering": null,
@@ -97,7 +99,8 @@
                 "pl": "Dodaj opis profilu",
                 "pt": "Adicionar uma descrição do perfil",
                 "zh_Hant": "新增個人檔敘述",
-                "hu": "Profilleírás hozzáadása"
+                "hu": "Profilleírás hozzáadása",
+                "es": "Agregar una descripción de perfil"
               }
             }
           }
@@ -129,7 +132,8 @@
             "pl": "Edytuj opis swojego profilu",
             "pt": "Editar a descrição do seu perfil",
             "zh_Hant": "編輯你的個人檔敘述",
-            "hu": "Profilleírás szerkesztése"
+            "hu": "Profilleírás szerkesztése",
+            "es": "Editar la descripción de tu perfil"
           }
         }
       }
@@ -150,7 +154,8 @@
             "fr": "Un lien vers votre profil Mastodon a été trouvé : <a href='{_mastodon_link}' target='_blank' rel='noopener'>{_mastodon_link}</a>",
             "ca": "S'ha trobat un enllaç al vostre perfil de Mastodon: <a href='{_mastodon_link}' target='_blank' rel='noopener'>{_mastodon_link}</a>",
             "cs": "Byl nalezen odkaz na váš profil Mastodon: <a href='{_mastodon_link}' target='_blank' rel='noopener'>{_mastodon_link}</a>",
-            "hu": "Megtaláltuk a Mastodon-profilodra mutató linket : <a href='{_mastodon_link}' target='_blank' rel='noopener'>{_mastodon_link}</a>"
+            "hu": "Megtaláltuk a Mastodon-profilodra mutató linket : <a href='{_mastodon_link}' target='_blank' rel='noopener'>{_mastodon_link}</a>",
+            "es": "Se encontró un enlace a tu perfil de Mastodon: <a href='{_mastodon_link}' target='_blank' rel='noopener'>{_mastodon_link}</a>"
           },
           "icon": "mastodon"
         },
@@ -162,7 +167,8 @@
             "nl": "Je profielbeschrijving bevat een link die vermoedelijk naar je Mastodon gaat, maar deze link is niet verifieerdbaar voor Mastodon.<a href='https://www.openstreetmap.org/profile/edit' target='_blank' rel='noopener'>Pas je profielbeschrijving aan</a> en plaats er de volgende code: <span class='code'>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt",
             "ca": "Hem trobat un enllaç al que sembla ser un compte de mastodon, però no està verificat. <a href='https://www.openstreetmap.org/profile/edit' target='_blank' rel='noopener'>Editeu la descripció del vostre perfil</a> i col·loqueu-hi el següent: <span class='code '>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt",
             "cs": "Našli jsme odkaz na to, co vypadá jako účet mastodon, ale je neověřený. <a href='https://www.openstreetmap.org/profile/edit' target='_blank' rel='noopener'>Upravte popis svého profilu</a> a umístěte tam následující: <span class='code '>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt",
-            "hu": "Találtunk egy linket, ami egy Mastodon-fióknak tűnik, de nem ellenőrzött. <a href='https://www.openstreetmap.org/profile/edit' target='_blank' rel='noopener'>Lépj be a profilod szerkesztéséhez</a>, és add meg a következőt: <span class='code'>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt"
+            "hu": "Találtunk egy linket, ami egy Mastodon-fióknak tűnik, de nem ellenőrzött. <a href='https://www.openstreetmap.org/profile/edit' target='_blank' rel='noopener'>Lépj be a profilod szerkesztéséhez</a>, és add meg a következőt: <span class='code'>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt",
+            "es": "Encontramos un enlace a lo que parece ser una cuenta de Mastodon, pero no está verificada. <a href='https://www.openstreetmap.org/profile/edit' target='_blank' rel='noopener'>Edita la descripción de tu perfil</a> y coloca lo siguiente allí: <span class='code'><a href=\"{_mastodon_candidate}\" rel=\"me\">Mastodon</a>"
           },
           "icon": "invalid"
         }
@@ -185,7 +191,7 @@
             "pt": "Você fez alterações em {_csCount} ocasiões diferentes! Isso é incrível!",
             "nl": "Je hebt {_csCount} verschillende keren bijgedragen! Dat is indrukwekkend!",
             "da": "Du har lavet ændringer ved {_csCount} forskellige begivenheder! Det er fantastisk!",
-            "es": "Has hecho cambios en {_csCount} ocasiones diferentes. ¡Es alucinante!",
+            "es": "¡Has realizado cambios en {_csCount} ocasiones diferentes! ¡Eso es increíble!",
             "cs": "Změny jste provedli při {_csCount} různých příležitostech! To je úžasné!",
             "hu": "Eddig {_csCount} szerkesztést végeztél a térképen! Fantasztikus!",
             "uk": "Ви вносили зміни {_csCount} разів! Це чудово!"
@@ -209,7 +215,8 @@
             "de": "Du hast mit {_translation_contributions} Änderungen zur Übersetzung von MapComplete beigetragen! Das ist großartig!",
             "ca": "Has contribuït a traduir MapComplete amb {_translation_contributions} canvis! Això és fantàstic!",
             "hu": "A MapComplete fordításához {_translation_contributions} elemmel járultál hozzá! Fantasztikus!",
-            "uk": "Ви зробили внесок у переклад MapComplete за допомогою {_translation_contributions} комітів! Це чудово!"
+            "uk": "Ви зробили внесок у переклад MapComplete за допомогою {_translation_contributions} комітів! Це чудово!",
+            "es": "¡Has contribuido a la traducción de MapComplete con {_translation_contributions} confirmaciones! ¡Eso es increíble!"
           },
           "icon": "party"
         }
@@ -232,7 +239,8 @@
             "cs": "Přispěli jste do MapComplete kódem s {_code_contributions} revizemi! To je úžasné!",
             "da": "Du har bidraget kode til MapComplete med {_code_contributions} commits! Det er fantastisk!",
             "hu": "{_code_contributions} elemmel járultál hozzá a MapComplete kódjához! Fantasztikus!",
-            "uk": "Ви внесли код до MapComplete за допомогою {_code_contributions} коммітів! Це чудово!"
+            "uk": "Ви внесли код до MapComplete за допомогою {_code_contributions} коммітів! Це чудово!",
+            "es": "¡Has contribuido con código a MapComplete con {_code_contributions} confirmaciones! ¡Eso es increíble!"
           },
           "icon": "party",
           "hideInAnswer": true
@@ -255,7 +263,8 @@
             "cs": "Jazyk byl nastaven pomocí parametru URL a uživatel jej nemůže nastavit.",
             "nl": "De taal werd ingesteld via een URL-parameter en kan niet manueel ingesteld worden.",
             "da": "Sproget er angivet vha. en URL-parameter og kan ikke angives af brugeren.",
-            "hu": "A nyelv egy URL-paraméterrel lett megadva ezért felhasználó nem tudja beállítani."
+            "hu": "A nyelv egy URL-paraméterrel lett megadva ezért felhasználó nem tudja beállítani.",
+            "es": "El idioma se configuró mediante un parámetro de URL y el usuario no puede configurarlo."
           }
         }
       ]
@@ -276,7 +285,8 @@
                 "ca": "Obre la teva safata d'entrada",
                 "cs": "Otevřít schránku",
                 "da": "Åbn din indbakke",
-                "hu": "Beérkezett levelet megnyitása"
+                "hu": "Beérkezett levelet megnyitása",
+                "es": "Abrir tu bandeja de entrada"
               }
             }
           }
@@ -293,7 +303,8 @@
                 "cs": "<b class='alert'>Máte {_unreadMessages}</b><br/>Otevřít schránku",
                 "nl": "<b class='alert'>Je hebt {_unreadMessages} ongelezen berichten</b><br/>Ga naar je inbox",
                 "da": "<b class='alert'>Du har {_unreadMessages} beskeder</b><br/>Åbn din indbakke",
-                "hu": "<b class='alert'>{_unreadMessages} üzeneted van</b><br/>Nyisd meg a bejövő üzeneteket"
+                "hu": "<b class='alert'>{_unreadMessages} üzeneted van</b><br/>Nyisd meg a bejövő üzeneteket",
+                "es": "<b class='alert'>Tienes {_unreadMessages} mensajes</b><br/>Abrir tu bandeja de entrada"
               },
               "href": "{_backend}/messages/inbox"
             }
@@ -313,7 +324,8 @@
             "cs": "Otevřít vaše nastavení na OpenStreetMap.org",
             "nl": "Open je instellingen op OpenStreetMap.org",
             "da": "Åbn dine indstillinger på OpenStreetMap.org",
-            "hu": "Beállításaid megnyitása az OpenStreetMap.org-on"
+            "hu": "Beállításaid megnyitása az OpenStreetMap.org-on",
+            "es": "Abrir tu configuración en OpenStreetMap.org"
           },
           "href": "{_backend}/account/edit"
         }
@@ -331,7 +343,8 @@
         "en": "<h3>Configure map</h3>",
         "de": "<h3>Karte konfigurieren</h3>",
         "hu": "<h3>Térkép beállítása</h3>",
-        "uk": "<h3>Налаштування мапи</h3>"
+        "uk": "<h3>Налаштування мапи</h3>",
+        "es": "<h3>Configurar mapa</h3>"
       }
     },
     {
@@ -342,7 +355,8 @@
         "de": "Welche Barrierefrei-Funktionen sollen angewendet werden?",
         "da": "Hvilke tilgængelighedsfunktioner skal anvendes?",
         "uk": "Які елементи доступності слід застосовувати?",
-        "hu": "Milyen elérhetőségi jellemzők jelenjenek meg?"
+        "hu": "Milyen elérhetőségi jellemzők jelenjenek meg?",
+        "es": "¿Qué funciones de accesibilidad se deben aplicar?"
       },
       "mappings": [
         {
@@ -357,7 +371,8 @@
             "cs": "Povolení funkcí přístupnosti při použití kláves se šipkami k navigaci na mapě",
             "uk": "Увімкніть функції доступності, коли для навігації мапою використовуються клавіші зі стрілками",
             "fr": "Activer les fonctions d'accessibilité lorsque les touches directionnelles sont utilisées pour naviguer sur la carte",
-            "hu": "Elérhető objektumok megjelenítése, amikor a térképen a nyílbillentyűkkel navigálsz"
+            "hu": "Elérhető objektumok megjelenítése, amikor a térképen a nyílbillentyűkkel navigálsz",
+            "es": "Activar funciones de accesibilidad cuando se usan las teclas de flecha para navegar por el mapa"
           }
         },
         {
@@ -369,7 +384,8 @@
             "de": "Barrierefrei-Modus immer aktivieren",
             "da": "Aktiver altid tilgængelighedsfunktioner",
             "uk": "Завжди вмикайте функції доступності",
-            "hu": "Mindig jelenjenek meg az elérhető objektumok"
+            "hu": "Mindig jelenjenek meg az elérhető objektumok",
+            "es": "Activar siempre las funciones de accesibilidad"
           }
         },
         {
@@ -380,7 +396,8 @@
             "de": "Barrierefrei-Modus niemals aktivieren",
             "da": "Aktiver aldrig tilgængelighedsfunktioner",
             "uk": "Ніколи не вмикайте функції доступності",
-            "hu": "Soha ne jelenjenek meg az elérhető objektumok"
+            "hu": "Soha ne jelenjenek meg az elérhető objektumok",
+            "es": "Nunca activar las funciones de accesibilidad"
           }
         }
       ]
@@ -401,7 +418,8 @@
         "cs": "Tato tematická mapa má předdefinovanou sadu podkladových vrstev. Vaše výchozí nastavení tématu se nepoužije",
         "nl": "Deze kaart heeft een achtegrondlaag instgesteld. Je instellingen worden niet gebruikt",
         "da": "Dette temakort har angivet et foruddefineret baggrundslag. Dine standardindstillinger benyttes ikke",
-        "hu": "Ennek a tematikus térképnek van előre meghatározott háttérrétegkészlete. Itt ezért nem alkalmazható az általad beállított alapértelmezett tematikustérkép-beállítás"
+        "hu": "Ennek a tematikus térképnek van előre meghatározott háttérrétegkészlete. Itt ezért nem alkalmazható az általad beállított alapértelmezett tematikustérkép-beállítás",
+        "es": "Este mapa temático tiene una capa de fondo predefinida. Tu configuración de tema predeterminada no se aplica"
       }
     },
     {
@@ -415,12 +433,14 @@
         "fr": "Quel fond souhaitez-vous utiliser par défaut ?",
         "da": "Hvilket baggrundslag skal vises som standard?",
         "hu": "Milyen háttérréteg jelenjék meg alapértelmezés szerint?",
-        "uk": "Який фоновий шар повинен бути показаний стандартно?"
+        "uk": "Який фоновий шар повинен бути показаний стандартно?",
+        "es": "¿Qué capa de fondo se debe mostrar de forma predeterminada?"
       },
       "questionHint": {
         "en": "To set a specific background as default, select it in the background menu first after which it will appear here.",
         "de": "Um einen bestimmten Hintergrund als Standard festzulegen, wähle ihn zuerst im Hintergrundmenü aus, danach wird er hier angezeigt.",
-        "hu": "Ha szeretnél egy adott hátteret alapértelmezettként beállítani, először válaszd ki a háttér menüben, és ez után fog itt megjelenni."
+        "hu": "Ha szeretnél egy adott hátteret alapértelmezettként beállítani, először válaszd ki a háttér menüben, és ez után fog itt megjelenni.",
+        "es": "Para establecer un fondo específico como predeterminado, selecciónalo primero en el menú de fondo, después aparecerá aquí."
       },
       "condition": "_theme:backgroundLayer=",
       "mappings": [
@@ -437,7 +457,8 @@
             "fr": "Utiliser le fond par défaut",
             "da": "Vis standardbaggrundslaget",
             "uk": "Використовувати стандартний фоновий шар",
-            "hu": "Alapértelmezett háttér: az alapértelmezés szerinti"
+            "hu": "Alapértelmezett háttér: az alapértelmezés szerinti",
+            "es": "Usar la capa de fondo predeterminada"
           }
         },
         {
@@ -454,7 +475,8 @@
             "fr": "Utiliser le fond OpenStreetMap-carto par défaut",
             "da": "Brug OpenStreetMap-carto som standardlag",
             "uk": "Використовувати OpenStreetMap-carto як стандартний шар",
-            "hu": "Alapértelmezett háttér: OpenStreetMap-carto"
+            "hu": "Alapértelmezett háttér: OpenStreetMap-carto",
+            "es": "Usar OpenStreetMap-carto como capa predeterminada"
           }
         },
         {
@@ -469,7 +491,8 @@
             "fr": "Utiliser le fond imagerie aérienne par défaut",
             "da": "Brug luftfoto som standardbaggrund",
             "uk": "Використовувати аерофотознімки як стандартний фон",
-            "hu": "Alapértelmezett háttér: légi felvételek"
+            "hu": "Alapértelmezett háttér: légi felvételek",
+            "es": "Usar imágenes aéreas como fondo predeterminado"
           }
         },
         {
@@ -484,7 +507,8 @@
             "fr": "Utiliser un fond non basé sur OpenStreetMap par défaut",
             "da": "Brug et ikke-OpenSreetMap-baseret kort som standardbaggrund",
             "uk": "Використовувати мапу на основі не-openstreetmap як стандартний фон",
-            "hu": "Alapértelmezett háttér: egy nem OpenStreetMap-alapú réteg"
+            "hu": "Alapértelmezett háttér: egy nem OpenStreetMap-alapú réteg",
+            "es": "Usar un mapa que no sea de OpenStreetMap como fondo predeterminado"
           }
         },
         {
@@ -498,7 +522,8 @@
             "fr": "Utiliser le fond actuel (<span class='code'>{__current_background}</span>) par défaut",
             "da": "Brug det nuværende baggrundslag (<span class='code'>{__current_background}</span>) som standardbaggrund",
             "uk": "Використовувати поточний фоновий шар (<span class='code'>{__current_background}</span>) як фон за замовчуванням",
-            "hu": "Alapértelmezett háttér: a jelenlegi <span class='code'>{__current_background}</span> háttérréteg"
+            "hu": "Alapértelmezett háttér: a jelenlegi <span class='code'>{__current_background}</span> háttérréteg",
+            "es": "Usar la capa de fondo actual (<span class='code'>{__current_background}</span>) como fondo predeterminado"
           },
           "hideInAnswer": {
             "or": [
@@ -519,7 +544,8 @@
             "fr": "Utiliser le fond (<span class='code'>{mapcomplete-preferred-background-layer}</span>)par défaut",
             "da": "Brug baggrundslaget <span class='code'>{mapcomplete-preferred-background-layer}</span> som standardbaggrund",
             "uk": "Використовувати фоновий шар <span class='code'>{mapcomplete-preferred-background-layer}</span> як фон за замовчуванням",
-            "hu": "Alapértelmezett háttér: <span class='code'>{mapcomplete-preferred-background-layer}</span> háttérréteg"
+            "hu": "Alapértelmezett háttér: <span class='code'>{mapcomplete-preferred-background-layer}</span> háttérréteg",
+            "es": "Usar la capa de fondo <span class='code'>{mapcomplete-preferred-background-layer}</span> como fondo predeterminado"
           },
           "hideInAnswer": true
         }
@@ -533,7 +559,8 @@
         "de": "Soll ein Fadenkreuz in der Mitte des Bildschirms angezeigt werden?",
         "nl": "Moet er een kruisje getoond worden in het centrum van je display?",
         "hu": "Megjelenjék-e egy célkereszt a kijelző közepén?",
-        "uk": "Чи потрібно показувати перехрестя по центру екрана?"
+        "uk": "Чи потрібно показувати перехрестя по центру екрана?",
+        "es": "¿Se debe mostrar una cruz en el centro de la pantalla?"
       },
       "questionHint": {
         "en": "This can help to accurately position a new element",
@@ -542,7 +569,8 @@
         "nl": "Dit kan helpen om nieuwe elementen accuraat te plaatsen",
         "ca": "Això pot ajudar a posicionar amb precisió un nou element",
         "hu": "Segíthet egy-egy új elem pontos elhelyezésében",
-        "uk": "Це може допомогти точно позиціонувати новий елемент"
+        "uk": "Це може допомогти точно позиціонувати новий елемент",
+        "es": "Esto puede ayudar a posicionar con precisión un nuevo elemento"
       },
       "mappings": [
         {
@@ -574,7 +602,8 @@
         "nl": "Moet het noorden altijd naar boven getoond worden?",
         "da": "Skal nord altid pege opad?",
         "hu": "Északnak mindig fent kell lennie?",
-        "uk": "Чи завжди північ має бути вгорі?"
+        "uk": "Чи завжди північ має бути вгорі?",
+        "es": "¿Debe estar el norte siempre arriba?"
       },
       "mappings": [
         {
@@ -590,7 +619,8 @@
             "cs": "Umožnit otáčení mapy",
             "nl": "Sta kaartrotatie toe",
             "hu": "Térkép forgatásának engedélyezése",
-            "uk": "Дозволити обертання мапи"
+            "uk": "Дозволити обертання мапи",
+            "es": "Permitir rotar el mapa"
           }
         },
         {
@@ -605,7 +635,8 @@
             "nl": "Hou het noorden altijd naar boven",
             "da": "Nord peger altid opad",
             "hu": "Mindig fölfelé legyen észak",
-            "uk": "Завжди тримати північ угорі"
+            "uk": "Завжди тримати північ угорі",
+            "es": "Mantener siempre el norte hacia arriba"
           }
         }
       ]
@@ -618,7 +649,8 @@
         "de": "Kartenmaßstab anzeigen?",
         "cs": "Má být na mapě zobrazeno měřítko?",
         "hu": "Megjelenjék-e a méretarány a térképen?",
-        "uk": "Чи потрібно показувати масштабну лінійку на карті?"
+        "uk": "Чи потрібно показувати масштабну лінійку на карті?",
+        "es": "¿Se debe mostrar una barra de escala en el mapa?"
       },
       "mappings": [
         {
@@ -628,7 +660,8 @@
             "nl": "Toon de schaalbalk",
             "de": "Maßstab anzeigen",
             "hu": "Méretarány megjelenítése",
-            "uk": "Показати масштабну лінійку"
+            "uk": "Показати масштабну лінійку",
+            "es": "Mostrar la barra de escala"
           }
         },
         {
@@ -641,7 +674,8 @@
             "cs": "Skrytí panelu měřítka",
             "fr": "Masquer la barre d'échelle",
             "hu": "Méretarány elrejtése",
-            "uk": "Приховати лінійку масштабу"
+            "uk": "Приховати лінійку масштабу",
+            "es": "Ocultar la barra de escala"
           }
         }
       ]
@@ -653,7 +687,8 @@
         "de": "<h3> Einstellungen bearbeiten</h3>",
         "cs": "<h3>Úprava nastavení</h3>",
         "hu": "<h3>Szerkesztési beállítások</h3>",
-        "uk": "<h3>Налаштування редагування</h3>"
+        "uk": "<h3>Налаштування редагування</h3>",
+        "es": "<h3>Configuración de edición</h3>"
       }
     },
     {
@@ -668,7 +703,8 @@
         "cs": "Mají se otázky pro neznámá datová pole zobrazovat jednotlivě, nebo společně?",
         "da": "Skal spørgsmål for ukendte oplysninger vises ét ad gangen eller alle på én gang?",
         "uk": "Чи повинні питання для невідомих полів даних з'являтися по одному або разом?",
-        "hu": "Egyenként vagy együttesen jelenjenek meg az ismeretlen adatokra vonatkozó kérdések?"
+        "hu": "Egyenként vagy együttesen jelenjenek meg az ismeretlen adatokra vonatkozó kérdések?",
+        "es": "¿Deben aparecer las preguntas para campos de datos desconocidos una por una o juntas?"
       },
       "mappings": [
         {
@@ -683,7 +719,8 @@
             "cs": "Zobrazit všechny otázky v infoboxu dohromady",
             "da": "Vis alle spørgsmål i infoboksen på én gang",
             "uk": "Показати всі питання в інфобокс разом",
-            "hu": "Az infoboxban szereplő összes kérdés egyszerre jelenjék meg"
+            "hu": "Az infoboxban szereplő összes kérdés egyszerre jelenjék meg",
+            "es": "Mostrar todas las preguntas juntas en el cuadro de información"
           }
         },
         {
@@ -698,7 +735,8 @@
             "cs": "Zobrazit otázky jednu po druhé",
             "da": "Vis spørgsmål ét ad gangen",
             "uk": "Показувати питання по черзі",
-            "hu": "A kérdések egymás után jelenjenek meg"
+            "hu": "A kérdések egymás után jelenjenek meg",
+            "es": "Mostrar las preguntas una por una"
           }
         }
       ]
@@ -713,7 +751,8 @@
         "cs": "Zobrazit nezpracované/raw tagy OpenStreetMap?",
         "nl": "Moeten de data-attributen getoond worden?",
         "hu": "Megjelenjenek-e a nyers OpenStreetMap-címkék?",
-        "uk": "Показувати необроблені OpenStreetMap-теги?"
+        "uk": "Показувати необроблені OpenStreetMap-теги?",
+        "es": "¿Mostrar las etiquetas de OpenStreetMap?"
       },
       "questionHint": {
         "en": "<b>Tags</b> are attributes that every element has. This is the technical data that is stored in the database. You don't need this information to edit with MapComplete, but advanced users might want to use this as reference.",
@@ -723,7 +762,8 @@
         "nl": "<b>Data-attributen</b> zijn stukjes data die elk element in OpenStreetMap heeft. Dit is technische data die in de databank komt. Je hoeft deze informatie niet te kennen om aanpassingen te maken met MapComplete, maar geavanceerde gebruikers kunnen dit als referentie gebruiken.",
         "fr": "Les<b>Tags</b> ou étiquettes sont des attributs rattachés à chaque élément. C'est une donnée technique qui est stockée dans une base de données. Vous n'avez pas besoin de connaître ces étiquettes pour utiliser MapComplete, mais certains utilisateurs préfèrent les afficher.",
         "hu": "A <b>címkék</b> olyan tulajdonságok, amelyekkel minden térképobjektum rendelkezik. Ezek az adatbázisban tárolt technikai adatok. A MapComplete programmal történő szerkesztéshez nincs szükség ezekre az adatokra, haladó felhasználóknak azonban érdemes lehet referenciaként használniuk.",
-        "uk": "<b>Теги</b> - це атрибути, які має кожен елемент. Це технічні дані, які зберігаються в базі даних. Вам не потрібна ця інформація для редагування у MapComplete, але досвідчені користувачі можуть використовувати її як довідкову."
+        "uk": "<b>Теги</b> - це атрибути, які має кожен елемент. Це технічні дані, які зберігаються в базі даних. Вам не потрібна ця інформація для редагування у MapComplete, але досвідчені користувачі можуть використовувати її як довідкову.",
+        "es": "Las <b>etiquetas</b> son atributos que tiene cada elemento. Estos son los datos técnicos que se almacenan en la base de datos. No necesitas esta información para editar con MapComplete, pero los usuarios avanzados pueden querer usarla como referencia."
       },
       "mappings": [
         {
@@ -736,7 +776,8 @@
             "nl": "Verberg data-attributen",
             "fr": "Ne jamais voir les étiquettes.",
             "hu": "Soha ne jelenjenek meg a címkék.",
-            "uk": "Ніколи не показуйте теги."
+            "uk": "Ніколи не показуйте теги.",
+            "es": "Nunca mostrar las etiquetas."
           }
         },
         {
@@ -749,7 +790,8 @@
             "nl": "Toon data-attributen bij wijzigingen indien je meer dan {__userjourney_tagsVisibleAt} changesets hebt gemaakt",
             "fr": "Voir les étiquettes au bout de  {__userjourney_tagsVisibleAt} modifications",
             "hu": "Azok a címkék jelenjenek meg, amelyeket {__userjourney_tagsVisibleAt} módosításkészlet elvégzését követően alkalmaztam",
-            "uk": "Показувати теґи, які будуть застосовані після того, як я зроблю {__userjourney_tagsVisibleAt} набори(ів) змін"
+            "uk": "Показувати теґи, які будуть застосовані після того, як я зроблю {__userjourney_tagsVisibleAt} набори(ів) змін",
+            "es": "Mostrar las etiquetas que se aplicarán una vez que haya realizado {__userjourney_tagsVisibleAt} conjuntos de cambios"
           }
         },
         {
@@ -762,7 +804,8 @@
             "nl": "Toon de data-attributen die toegepast zullen worden bij wijzigingen",
             "fr": "Voir les étiquettes quand je fais une modification",
             "hu": "A módosításkor alkalmazott címkék jelenjenek meg",
-            "uk": "Показати теги, які будуть застосовані при внесенні змін"
+            "uk": "Показати теги, які будуть застосовані при внесенні змін",
+            "es": "Mostrar las etiquetas que se aplicarán al realizar un cambio"
           }
         },
         {
@@ -775,7 +818,8 @@
             "nl": "Toon de data-attributen die toegepast zullen worden bij wijzigingen en toon een tabel met alle data-attributen bij elk object.",
             "fr": "Voir les étiquettes quand je fais une modification et toujours voir les étiquettes pour chaque élément",
             "hu": "A módosításkor alkalmazott címkék jelenjenek meg és minden objektumon jelenjék meg a címketáblázat",
-            "uk": "Показати теги, які будуть застосовані при внесенні змін, і показати таблицю тегів для кожного елемента"
+            "uk": "Показати теги, які будуть застосовані при внесенні змін, і показати таблицю тегів для кожного елемента",
+            "es": "Mostrar las etiquetas que se aplicarán al realizar un cambio y mostrar la tabla de etiquetas en cada elemento"
           }
         }
       ]
@@ -786,7 +830,8 @@
         "en": "How should the menu to add a new feature be opened?",
         "de": "Wie soll das Menü zum Hinzufügen eines neuen Objekts geöffnet werden?",
         "uk": "Як має відкриватися меню для додавання нового об'єкту?",
-        "hu": "Hogyan nyíljék meg az új objektum hozzáadására szolgáló menü?"
+        "hu": "Hogyan nyíljék meg az új objektum hozzáadására szolgáló menü?",
+        "es": "¿Cómo se debe abrir el menú para agregar un nuevo elemento?"
       },
       "mappings": [
         {
@@ -795,7 +840,8 @@
             "en": "Adding a new feature is done with the button at the bottom left. Clicking the map does nothing",
             "de": "Das Hinzufügen eines neuen Objekts erfolgt über die Schaltfläche unten links. Ein Klick auf die Karte bewirkt nichts",
             "uk": "Додавання нового об'єкта здійснюється за допомогою кнопки внизу ліворуч. Клацання по карті нічого не робить",
-            "hu": "Új objektum a bal alsó sarokban található gombbal vihető fel. A térképre kattintva nem történik semmi"
+            "hu": "Új objektum a bal alsó sarokban található gombbal vihető fel. A térképre kattintva nem történik semmi",
+            "es": "Agregar un nuevo elemento se hace con el botón en la parte inferior izquierda. Hacer clic en el mapa no hace nada"
           }
         },
         {
@@ -805,7 +851,8 @@
             "de": "Wenn Sie auf die Karte klicken oder tippen, wird eine Markierung eingeblendet, an der ein neues Objekt hinzugefügt wird",
             "ca": "En fer clic o tocar el mapa, apareix un marcador on s'afegeix un element nou",
             "uk": "При натисканні або торканні мапи з'являється маркер, де додається новий об'єкт",
-            "hu": "Kattintás vagy koppintás után a térképen megjelenik egy jelölő ott, ahol fel lehet vinni egy új objektumot"
+            "hu": "Kattintás vagy koppintás után a térképen megjelenik egy jelölő ott, ahol fel lehet vinni egy új objektumot",
+            "es": "Al hacer clic o tocar el mapa, aparece un marcador donde se agrega un nuevo elemento"
           }
         },
         {
@@ -814,7 +861,8 @@
             "en": "When right-clicking or long-pressing the map, a marker pops up where a new feature can be added",
             "de": "Beim Rechtsklick oder einem langen Druck auf die Karte erscheint eine Markierung, mit der ein neues Objekt hinzugefügt werden kann",
             "uk": "При натисканні правою кнопкою миші або тривалому утриманні мапи з'являється маркер, де можна додати новий об'єкт",
-            "hu": "Jobb egérgombbal kattintva vagy hosszú nyomás után a térképen megjelenik egy jelölő ott, ahol fel lehet vinni egy új objektumot"
+            "hu": "Jobb egérgombbal kattintva vagy hosszú nyomás után a térképen megjelenik egy jelölő ott, ahol fel lehet vinni egy új objektumot",
+            "es": "Al hacer clic derecho o presionar prolongadamente el mapa, aparece un marcador donde se puede agregar un nuevo elemento"
           }
         },
         {
@@ -823,7 +871,8 @@
             "en": "When clicking or tapping the map, a marker pops up where a new feature can be added. Additionally, a button at the bottom left is shown",
             "de": "Beim Klicken oder Tippen auf die Karte wird eine Markierung eingeblendet, an der ein neues Objekt hinzugefügt werden kann. Zusätzlich wird unten links eine Schaltfläche angezeigt",
             "uk": "При натисканні або торканні мапи з'являється маркер, де можна додати новий об'єкт. Крім того, внизу ліворуч відображається кнопка",
-            "hu": "Kattintás vagy koppintás után a térképen megjelenik egy jelölő ott, ahol fel lehet vinni egy új objektumot. Ezen kívül a bal alsó sarokban is látható egy gomb"
+            "hu": "Kattintás vagy koppintás után a térképen megjelenik egy jelölő ott, ahol fel lehet vinni egy új objektumot. Ezen kívül a bal alsó sarokban is látható egy gomb",
+            "es": "Al hacer clic o tocar el mapa, aparece un marcador donde se puede agregar un nuevo elemento. Además, se muestra un botón en la parte inferior izquierda"
           }
         },
         {
@@ -833,7 +882,8 @@
             "de": "Beim Rechtsklick oder einem langen Druck auf die Karte erscheint eine Markierung, an der ein neues Objekt hinzugefügt werden kann. Zusätzlich wird unten links eine Schaltfläche angezeigt",
             "cs": "Po kliknutí pravým tlačítkem myši nebo dlouhém stisknutí mapy se zobrazí značka, kam lze přidat nový prvek. Kromě toho se vlevo dole zobrazí tlačítko",
             "uk": "При натисканні правою кнопкою миші або тривалому утриманні на мапі зʼявляється маркер, куди можна додати новий обʼєкт. Крім того, внизу ліворуч показується кнопка",
-            "hu": "Jobb egérgombbal kattintva vagy hosszú nyomás után a térképen megjelenik egy jelölő ott, ahol fel lehet vinni egy új objektumot. Ezen kívül a bal alsó sarokban is látható egy gomb"
+            "hu": "Jobb egérgombbal kattintva vagy hosszú nyomás után a térképen megjelenik egy jelölő ott, ahol fel lehet vinni egy új objektumot. Ezen kívül a bal alsó sarokban is látható egy gomb",
+            "es": "Al hacer clic derecho o presionar prolongadamente el mapa, aparece un marcador donde se puede agregar un nuevo elemento. Además, se muestra un botón en la parte inferior izquierda"
           }
         }
       ]
@@ -845,7 +895,8 @@
         "de": "<h3>Datenschutz und Rechtliches</h3>",
         "cs": "<h3>Soukromí a právní záležitosti</h3>",
         "hu": "<h3>Adatvédelem és jog</h3>",
-        "uk": "<h3>Захист персональних даних </h3>"
+        "uk": "<h3>Захист персональних даних </h3>",
+        "es": "<h3>Privacidad y legal</h3>"
       }
     },
     {
@@ -858,7 +909,8 @@
             "de": "Dieses Thema ist sensibel. Wenn du Änderungen vornimmst, wird nicht angezeigt, ob du explizit in der Nähe warst.",
             "nl": "Dit thema ligt gevoelig. Wijzigingen aan objecten zullen niet aangeven of je in de buurt was.",
             "hu": "Ez a tematikus térkép érzékeny. A módosításból nem fog kiderülni, hogy kifejezetten a közelben voltál-e.",
-            "uk": "Ця тема є делікатною. Внесення змін не вказуватиме на те, що ви були поруч."
+            "uk": "Ця тема є делікатною. Внесення змін не вказуватиме на те, що ви були поруч.",
+            "es": "Este tema es sensible. Al realizar cambios, no se indicará explícitamente si estabas cerca."
           }
         }
       ]
@@ -870,14 +922,16 @@
         "de": "Sollte bei Änderungen eine grobe Angabe gemacht werden, wie weit du vom Objekt entfernt warst?",
         "nl": "Mag er opgeslaan worden hoever je je van een object bevindt wanneer je aanpassingen maakt aan dit object?",
         "hu": "A szerkesztéseknél megjelenjék-e egy hozzávetőleges jelzés arról, hogy milyen messze voltál az objektumtól?",
-        "uk": "Вносячи зміни, чи потрібно приблизно вказувати, як далеко ви знаходилися від об'єкта?"
+        "uk": "Вносячи зміни, чи потрібно приблизно вказувати, як далеко ви знаходилися від об'єкта?",
+        "es": "Al realizar cambios, ¿se debe dar una indicación aproximada de qué tan lejos estabas del objeto?"
       },
       "questionHint": {
         "en": "If you make a change to one or more objects and you enabled your location, a rough indication of where you made will be saved: it is indicated if you were closer then 25m, 500m, 5km or further away then 5km. This helps mappers understand your context when making changes, but gives an indication of where you were at this time. ",
         "de": "Wenn du eine Änderung an einem oder mehreren Objekten vornimmst und deinen Standort aktivierst, wird eine ungefähre Angabe darüber gespeichert, wo du dich befunden hast: Es wird angezeigt, ob du näher als 25m, 500m, 5km oder weiter als 5km entfernt warst. Das hilft den Kartierern, deinen Kontext zu verstehen, wenn du Änderungen vornimmst, gibt aber auch einen Hinweis darauf, wo du zu diesem Zeitpunkt warst. ",
         "nl": "Wanneer je een wijziging maakt aan één of meer interessepunten en als MapComplete toont waar je bent, dan kan opgeslaan worden hoever je je ongeveer van deze objecten bevindt. Er wordt aangeduid of je dichter dan 25m, 500m, 5km of verder dan 5km was. Dit helpt om andere bijdragers te begrijpen hoe je je bijdragen deed, maar geeft natuurlijk ook aan waar je op dat moment was. ",
         "hu": "Ha módosítasz egy objektumot, és engedélyezed a helymeghatározást, akkor a rendszer elmenti a körülbelüli helyedet: jelzi, hogy 25 méteren, 500 méteren vagy 5 kilométeren belül vagy 5 km-nél távolabb voltál. A többi térképész így jobban látja, milyen körülmények között szerkesztetted a térképet, de egyúttal azt is jelzi, hogy hol voltál ebben az időpontban. ",
-        "uk": "Якщо ви вносите зміни до одного або декількох об'єктів і ввімкнули функцію визначення вашого місцезнаходження, буде збережено приблизну інформацію про те, де ви перебували: чи були ви ближче 25 м, 500 м, 5 км або далі 5 км від об'єкта. Це допомагає картографам зрозуміти ваш контекст при внесенні змін, але дає уявлення про те, де ви були в цей час. "
+        "uk": "Якщо ви вносите зміни до одного або декількох об'єктів і ввімкнули функцію визначення вашого місцезнаходження, буде збережено приблизну інформацію про те, де ви перебували: чи були ви ближче 25 м, 500 м, 5 км або далі 5 км від об'єкта. Це допомагає картографам зрозуміти ваш контекст при внесенні змін, але дає уявлення про те, де ви були в цей час. ",
+        "es": "Si realizas un cambio en uno o más objetos y has activado tu ubicación, se guardará una indicación aproximada de dónde lo hiciste: se indica si estabas a menos de 25 m, 500 m, 5 km o más de 5 km. Esto ayuda a los mapeadores a comprender tu contexto al realizar cambios, pero da una indicación de dónde te encontrabas en ese momento. "
       },
       "mappings": [
         {
@@ -889,7 +943,8 @@
             "nl": "Geef niet aan hoever je je van de gewijzigde objecten bevindt wanneer je wijzigingen maakt met MapComplete.",
             "cs": "Při provádění změn v OpenStreetMap neuvádějte, jak daleko jste byli od změněných objektů.",
             "hu": "Az OpenStreetMap szerkesztésekor ne jelenjék meg, hogy milyen messze voltál a módosított objektumoktól.",
-            "uk": "Вносячи зміни до OpenStreetMap, не вказуйте, як далеко ви знаходилися від змінених об'єктів."
+            "uk": "Вносячи зміни до OpenStreetMap, не вказуйте, як далеко ви знаходилися від змінених об'єктів.",
+            "es": "Al realizar cambios en OpenStreetMap, no indicar qué tan lejos estabas de los objetos modificados."
           }
         },
         {
@@ -901,7 +956,8 @@
             "nl": "Geef aan hoever je je ongeveer bevindt ten opzichte van objecten die je wijzigt in OpenStreetMap. Dit helpt andere bijdagers te begrijpen welke wijzigingen je waarom maakt.",
             "cs": "Při provádění změn v OpenStreetMap zhruba uveďte, jak daleko jste byli od změněných objektů. To pomůže ostatním přispěvatelům pochopit, jak jste změnu provedli",
             "hu": "Az OpenStreetMap szerkesztésekor hozzávetőlegesen jelenjék meg, hogy milyen messze voltál a módosított objektumoktól. A többi térképész így jobban látja, hogy hogyan végezted a szerkesztést",
-            "uk": "Вносячи зміни до OpenStreetMap, приблизно вказуйте, як далеко ви знаходилися від змінених обʼєктів. Це допоможе іншим учасникам зрозуміти, як ви внесли зміни"
+            "uk": "Вносячи зміни до OpenStreetMap, приблизно вказуйте, як далеко ви знаходилися від змінених обʼєктів. Це допоможе іншим учасникам зрозуміти, як ви внесли зміни",
+            "es": "Al realizar cambios en OpenStreetMap, indicar aproximadamente qué tan lejos estabas de los objetos modificados. Esto ayuda a otros colaboradores a comprender cómo realizaste el cambio"
           }
         }
       ]
@@ -912,13 +968,15 @@
         "en": "Should the thematic maps you visit be saved?",
         "de": "Sollen besuchte Themenkarten gespeichert werden?",
         "hu": "El legyenek-e mentve a meglátogatott tematikus térképek?",
-        "uk": "Чи потрібно зберігати тематичні карти, які ви відвідуєте?"
+        "uk": "Чи потрібно зберігати тематичні карти, які ви відвідуєте?",
+        "es": "¿Se deben guardar los mapas temáticos que visitas?"
       },
       "questionHint": {
         "en": "If you visit a map about a certain topic, MapComplete can remember this and offer this as suggestion.",
         "de": "Besuchte Themenkarten, können von MapComplete gespeichert und als Vorschlag angeboten werden.",
         "hu": "A MapComplete meg tudja jegyezni, hogy megnéztél egy bizonyos témájú térképet, és ezt később felajánlja javaslatként.",
-        "uk": "Якщо ви відвідуєте мапу на певну тему, MapComplete може запам'ятати це і запропонувати її як підказку."
+        "uk": "Якщо ви відвідуєте мапу на певну тему, MapComplete може запам'ятати це і запропонувати її як підказку.",
+        "es": "Si visitas un mapa sobre un tema determinado, MapComplete puede recordarlo y ofrecerlo como sugerencia."
       },
       "mappings": [
         {
@@ -929,7 +987,8 @@
             "de": "Besuchte Themenkarten speichern und über opentreetmap.org synchronisieren. OpenStreetMap und alle verwendeten Programme können diesen Verlauf sehen",
             "cs": "Uložit navštívené tematické mapy a synchronizovat je prostřednictvím openstreetmap.org. OpenStreetMap a všechny aplikace, které používáte, mohou tuto historii vidět",
             "hu": "Az openstreetmap.org-on legyenek elmentve és szinkronizálva az általam megnézett tematikus térképek. Ezeket az előzményeket az OpenStreetMap és az összes hozzá kapcsolódó alkalmazás láthatja",
-            "uk": "Зберігайте відвідані тематичні карти та синхронізуйте їх через openstreetmap.org. OpenStreetMap та всі програми, якими ви користуєтесь, можуть бачити цю історію"
+            "uk": "Зберігайте відвідані тематичні карти та синхронізуйте їх через openstreetmap.org. OpenStreetMap та всі програми, якими ви користуєтесь, можуть бачити цю історію",
+            "es": "Guardar los mapas temáticos visitados y sincronizarlos a través de openstreetmap.org. OpenStreetMap y todas las aplicaciones que uses pueden ver este historial"
           }
         },
         {
@@ -938,7 +997,8 @@
             "en": "Save the visited thematic maps on my device",
             "de": "Besuchte Themenkarten auf meinem Gerät speichern",
             "hu": "A saját készülékemen legyenek elmentve a meglátogatott tematikus térképek",
-            "uk": "Зберегти відвідані тематичні карти на моєму пристрої"
+            "uk": "Зберегти відвідані тематичні карти на моєму пристрої",
+            "es": "Guardar los mapas temáticos visitados en mi dispositivo"
           }
         },
         {
@@ -947,7 +1007,8 @@
             "en": "Don't save visited thematic maps",
             "de": "Besuchte Themenkarten nicht auf meinem Gerät speichern",
             "hu": "Ne legyenek elmentve a megnézett térképek",
-            "uk": "Не зберігайте відвідані тематичні мапи"
+            "uk": "Не зберігайте відвідані тематичні мапи",
+            "es": "No guardar los mapas temáticos visitados"
           }
         }
       ]
@@ -958,13 +1019,15 @@
         "en": "Should the locations you search for and inspect be remembered?",
         "de": "Sollen die gesuchten und überprüften Orte gespeichert werden?",
         "hu": "Meg legyenek-e jegyezve az általad megkeresett és szerkesztett helyek?",
-        "uk": "Чи потрібно запам'ятовувати місця, які ви шукаєте та оглядаєте?"
+        "uk": "Чи потрібно запам'ятовувати місця, які ви шукаєте та оглядаєте?",
+        "es": "¿Se deben recordar las ubicaciones que buscas e inspeccionas?"
       },
       "questionHint": {
         "en": "Those locations will be offered in the search menu",
         "de": "Diese Orte werden im Suchmenü angezeigt",
         "hu": "Ezek a helyszínek a keresési menüben lesznek felajánlva",
-        "uk": "Ці локації будуть запропоновані в меню пошуку"
+        "uk": "Ці локації будуть запропоновані в меню пошуку",
+        "es": "Esas ubicaciones se ofrecerán en el menú de búsqueda"
       },
       "mappings": [
         {
@@ -974,7 +1037,8 @@
             "en": "Save the locations you search for and inspect and sync them via openstreetmap.org. OpenStreetMap and all apps you use can see this history",
             "de": "Gesuchte und überprüfte Orte speichern und über openstreetmap.org synchronisieren. OpenStreetMap und alle verwendeten Programme können diesen Verlauf sehen",
             "hu": "Az openstreetmap.org-on legyenek elmentve az általam megkeresett és szerkesztett helyek. Ezeket az előzményeket az OpenStreetMap és az összes hozzá kapcsolódó alkalmazás láthatja",
-            "uk": "Зберігайте місця, які ви шукаєте, переглядайте та синхронізуйте їх через openstreetmap.org. OpenStreetMap та всі програми, якими ви користуєтесь, можуть бачити цю історію"
+            "uk": "Зберігайте місця, які ви шукаєте, переглядайте та синхронізуйте їх через openstreetmap.org. OpenStreetMap та всі програми, якими ви користуєтесь, можуть бачити цю історію",
+            "es": "Guardar las ubicaciones que buscas e inspeccionas y sincronizarlas a través de openstreetmap.org. OpenStreetMap y todas las aplicaciones que uses pueden ver este historial"
           }
         },
         {
@@ -983,7 +1047,8 @@
             "en": "Save the locations you search for and inspect on my device",
             "de": "Gesuchte und überprüfte Orte auf meinem Gerät speichern",
             "hu": "A saját készülékemen legyenek elmentve az általam megkeresett és szerkesztett helyek",
-            "uk": "Зберігайте місця, які ви шукаєте та перевіряєте, на моєму пристрої"
+            "uk": "Зберігайте місця, які ви шукаєте та перевіряєте, на моєму пристрої",
+            "es": "Guardar las ubicaciones que buscas e inspeccionas en mi dispositivo"
           }
         },
         {
@@ -992,7 +1057,8 @@
             "en": "Don't save the locations you search for and inspect ",
             "de": "Gesuchte und überprüfte Orte nicht auf meinem Gerät speichern ",
             "hu": "Ne legyenek elmentve az általam megkeresett és szerkesztett helyek ",
-            "uk": "Не зберігайте місця, які ви шукаєте та перевіряєте "
+            "uk": "Не зберігайте місця, які ви шукаєте та перевіряєте ",
+            "es": "No guardar las ubicaciones que buscas e inspeccionas "
           }
         }
       ]
@@ -1003,7 +1069,8 @@
         "en": "<h3>Mangrove ID management</h3>",
         "de": "<h3>Mangrove ID Management</h3>",
         "hu": "<h3>Mangrove ID (azonosító) kezelése</h3>",
-        "uk": "<h3>Керування ідентифікатором Mangrove</h3>"
+        "uk": "<h3>Керування ідентифікатором Mangrove</h3>",
+        "es": "<h3>Gestión de ID de Mangrove</h3>"
       }
     },
     {
@@ -1022,7 +1089,8 @@
             "ca": "Baixeu la clau privada del vostre compte de Mangrove",
             "cs": "Stáhnout soukromý klíč pro Mangrove účet",
             "nl": "Download de private sleutel van je Mangrove-account",
-            "hu": "Mangrove-fiók privát kulcsának letöltése"
+            "hu": "Mangrove-fiók privát kulcsának letöltése",
+            "es": "Descargar la clave privada para tu cuenta de Mangrove"
           }
         },
         "class": "button",
@@ -1034,7 +1102,8 @@
           "cs": "Kdokoli, kdo má tento soubor, může provádět recenze s vaší identitou",
           "nl": "Iedereen die dit bestand bezit, kan met jouw identiteit wijzigingen maken",
           "hu": "Bárki, aki birtokában van ennek a fájlnak, a te személyazonosságoddal írhat értékelést",
-          "uk": "Будь-хто, хто має цей файл, може робити рецензії з вашим ім'ям"
+          "uk": "Будь-хто, хто має цей файл, може робити рецензії з вашим ім'ям",
+          "es": "Cualquier persona que posea este archivo puede hacer revisiones con tu identidad"
         }
       }
     },
@@ -1049,7 +1118,8 @@
             "nl": "Herstel een Mangrove Private sleutel van backup",
             "de": "Privaten Mangrove-Schlüssel aus Backup importieren",
             "da": "Indlæs en privat Mangrove-nøgle fra backup",
-            "hu": "Mangrove privát kulcs importálása biztonsági mentésből"
+            "hu": "Mangrove privát kulcs importálása biztonsági mentésből",
+            "es": "Importar una clave privada de Mangrove desde una copia de seguridad"
           }
         },
         "after": {
@@ -1058,7 +1128,8 @@
           "nl": "Een private sleutel uploaden overschrijft je huidige private sleutel. Indien je beoordelingen maakte met je huidige private sleutel, download deze dan eerst",
           "da": "Når du uploader en privat nøgle, slettes din nuværende private nøgle. Hvis du har brugt den til at lave anmeldelser, kan du downloade din private nøgle først",
           "hu": "A privát kulcs feltöltése törli a jelenlegi privát kulcsot. Ha írtál vele értékelést, akkor először töltsd le a jelenlegi privát kulcsodat",
-          "uk": "Завантаження приватного ключа видаляє ваш поточний приватний ключ. Якщо ви робили відгуки з його допомогою, спочатку завантажте поточний приватний ключ"
+          "uk": "Завантаження приватного ключа видаляє ваш поточний приватний ключ. Якщо ви робили відгуки з його допомогою, спочатку завантажте поточний приватний ключ",
+          "es": "Subir una clave privada borra tu clave privada actual. Si hiciste revisiones con ella, descarga primero tu clave privada actual"
         }
       }
     },
@@ -1084,7 +1155,8 @@
         "nl": "Wil je MapComplete helpen vertalen?",
         "da": "Vil du hjælpe med at oversætte MapComplete?",
         "hu": "Szívesen segítenél a MapComplete fordításában?",
-        "uk": "Ви хочете допомогти з перекладом MapComplete?"
+        "uk": "Ви хочете допомогти з перекладом MapComplete?",
+        "es": "¿Quieres ayudar a traducir MapComplete?"
       },
       "mappings": [
         {
@@ -1099,7 +1171,8 @@
             "cs": "Nezobrazovat tlačítko pro rychlou změnu překladů",
             "nl": "Verberg de knoppen om een vertaling in te voeren.",
             "hu": "Ne jelenjék meg a fordítások gyors módosítására szolgáló gomb",
-            "uk": "Не показувати кнопку для швидкої зміни перекладу"
+            "uk": "Не показувати кнопку для швидкої зміни перекладу",
+            "es": "No mostrar un botón para cambiar rápidamente las traducciones"
           }
         },
         {
@@ -1115,7 +1188,8 @@
             "cs": "Zobrazit tlačítko pro rychlé otevření překladů při použití MapComplete na velké obrazovce",
             "nl": "Toon een knopje om snel vertalingen te maken indien MapComplete op een groot scherm is geopend",
             "hu": "Jelenítsen meg egy gombot a fordítások gyors megnyitásához a MapComplete nagy képernyőn történő használatakor",
-            "uk": "Показати кнопку для швидкого відкриття перекладів при використанні MapComplete на великому екрані"
+            "uk": "Показати кнопку для швидкого відкриття перекладів при використанні MapComplete на великому екрані",
+            "es": "Mostrar un botón para abrir rápidamente las traducciones cuando se usa MapComplete en una pantalla grande"
           }
         },
         {
@@ -1130,7 +1204,8 @@
             "cs": "Vždy zobrazovat tlačítka překladu, a to i na mobilu",
             "nl": "Toon een knopje om snel vertalingen te maken op mobiel en op grote schermen",
             "hu": "Mindig jelenítse meg a fordítási gombokat, mobilon is",
-            "uk": "Завжди показуйте кнопки перекладу, в тому числі на мобільних пристроях"
+            "uk": "Завжди показуйте кнопки перекладу, в тому числі на мобільних пристроях",
+            "es": "Mostrar siempre los botones de traducción, incluso en dispositivos móviles"
           }
         }
       ]
@@ -1154,7 +1229,7 @@
             "da": "Klik på 'oversæt'-ikonet ved siden af en streng for at indtaste eller opdatere et stykke tekst. Du skal have en Weblate-konto for at kunne gøre dette. Opret en med dit OSM-brugernavn for automatisk at låse oversættelsestilstanden op.",
             "de": "Klicken Sie auf das Übersetzungssymbol neben einer Zeichenfolge, um den Übersetzungstext einzugeben oder zu aktualisieren. Dazu benötigen Sie ein Weblate-Konto. Erstellen Sie eines mit Ihrem OSM-Benutzernamen, um den Übersetzungsmodus automatisch freizuschalten.",
             "en": "Click the 'translate'-icon next to a string to enter or update a piece of text. You need a Weblate-account for this. Create one with your OSM-username to automatically unlock translation mode.",
-            "es": "Haz clic en el icono 'traducir' al lado de una cadena para introducir o actualizar un texto. Necesitas una cuenta de Weblate para esto. Crea una con tu usuario de OSM para desbloquear el modo de traducción automáticamente.",
+            "es": "Haz clic en el icono 'traducir' junto a una cadena para ingresar o actualizar un fragmento de texto. Necesitas una cuenta de Weblate para esto. Crea una con tu nombre de usuario de OSM para desbloquear automáticamente el modo de traducción.",
             "fr": "Cliquez sur l'icône \"traduire\" à côté d'une chaîne de caractères pour saisir ou mettre à jour la chaine de texte. Vous aurez besoin d'un compte Weblate pour cela. Créez-en un avec votre nom d'utilisateur OSM pour déverrouiller automatiquement le mode traduction.",
             "nl": "Klik op het 'vertaal'-icoontje die naast een stukje tekst staat om deze tekst te vertalen of aan te passen. Hiervoor heb je een (gratis) Weblate-account nodig. Indien je jouw account maakt met dezelfde naam als je OSM-gebruikersnaam, dan zullen de vertaalknoppen automatisch verschijnen.",
             "zh_Hant": "點字串旁邊的 'translate'-icon 來輸入或是更新一段文字。你需要 Weblate 帳號。用你 OSM 帳號名稱來創建帳號，並且自動解鎖翻譯模式。",
@@ -1204,7 +1279,8 @@
             "ca": "Completament traduït",
             "pt": "Traduzido completamente",
             "cs": "Kompletně přeloženo",
-            "hu": "Teljesen le van fordítva"
+            "hu": "Teljesen le van fordítva",
+            "es": "Traducido completamente"
           }
         }
       ]
@@ -1239,7 +1315,8 @@
         "en": "<h3>Debugging options</h3>",
         "de": "<h3>Debugging-Optionen</h3>",
         "hu": "<h3>Hibakeresési lehetőségek</h3>",
-        "uk": "<h3>Опції налагодження</h3>"
+        "uk": "<h3>Опції налагодження</h3>",
+        "es": "<h3>Opciones de depuración</h3>"
       }
     },
     {
@@ -1251,14 +1328,16 @@
           "text": {
             "en": "Clear caches",
             "de": "Caches löschen",
-            "hu": "Gyorsítótárak törlése"
+            "hu": "Gyorsítótárak törlése",
+            "es": "Limpiar cachés"
           }
         },
         "after": {
           "en": "Clearing the caches will delete locally downloaded data and code. You will remain logged in and your settings will be preserved. No data should be lost",
           "de": "Wenn du die Caches löschst, werden lokal heruntergeladene Daten und Code gelöscht. Du bleibst eingeloggt und deine Einstellungen bleiben erhalten. Es sollten keine Daten verloren gehen",
           "hu": "A gyorsítótárak törlése a helyileg letöltött adatokat és kódot is törli. Ugyanakkor továbbra is bejelentkezve maradsz, és a beállításaid megmaradnak. Adat nem vész el",
-          "uk": "Очищення кешу призведе до видалення локально завантажених даних і коду. Ви залишитеся в системі, і ваші налаштування будуть збережені. Дані не будуть втрачені"
+          "uk": "Очищення кешу призведе до видалення локально завантажених даних і коду. Ви залишитеся в системі, і ваші налаштування будуть збережені. Дані не будуть втрачені",
+          "es": "Limpiar las cachés eliminará los datos y el código descargados localmente. Seguirás conectado y tus configuraciones se conservarán. No se deben perder datos"
         }
       }
     },
@@ -1278,7 +1357,8 @@
         "pt": "Mostrar informações de depuração das configurações do usuário?",
         "nl": "Moet debug-informatie getoond worden?",
         "hu": "Megjelenjenek-e a felhasználónak a hibakeresési (debug) információk?",
-        "uk": "Показувати інформацію про налагодження налаштувань користувача?"
+        "uk": "Показувати інформацію про налагодження налаштувань користувача?",
+        "es": "¿Mostrar información de depuración de la configuración del usuario?"
       },
       "mappings": [
         {
@@ -1292,7 +1372,8 @@
             "pt": "Mostrar informações de depuração",
             "nl": "Toon debug-informatie",
             "hu": "Jelenjenek meg a hibakeresési információk",
-            "uk": "Показати інформацію про налагодження"
+            "uk": "Показати інформацію про налагодження",
+            "es": "Mostrar información de depuración"
           }
         },
         {
@@ -1306,7 +1387,8 @@
             "pt": "Não mostrar informações de depuração",
             "nl": "Verberg debug-informatie",
             "hu": "Ne jelenjenek meg hibakeresési információk",
-            "uk": "Не показувати інформацію про налагодження"
+            "uk": "Не показувати інформацію про налагодження",
+            "es": "No mostrar información de depuración"
           }
         },
         {
@@ -1320,7 +1402,8 @@
             "ca": "No mostris informació de depuració",
             "nl": "Verberg debug-informatie",
             "hu": "Ne jelenjenek meg hibakeresési információk",
-            "uk": "Не показувати інформацію про налагодження"
+            "uk": "Не показувати інформацію про налагодження",
+            "es": "No mostrar información de depuración"
           },
           "hideInAnswer": true
         }

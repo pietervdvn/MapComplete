@@ -22,7 +22,7 @@
     "nl": "Op deze kaart kan je informatie rond rolstoeltoegankelijkheid zien, zoals toegangsdeuren met hun breedte en drempelhoogte, toiletten met toegankelijkheidsinformatie, recepties maar ook winkels, cafés en restaurants.",
     "da": "På dette kort vises steder, der er offentligt tilgængelige for kørestolsbrugere, og de kan nemt tilføjes",
     "cs": "Na této mapě jsou zobrazena veřejně přístupná místa pro vozíčkáře, a lze je také snadno přidat",
-    "es": "En este mapa se muestran los lugares accesibles al público en silla de ruedas, que pueden añadirse fácilmente",
+    "es": "En este mapa, se muestran y se pueden agregar fácilmente lugares accesibles para sillas de ruedas",
     "ca": "En aquest mapa, es mostren llocs públics accessibles per a cadira de rodes i es poden afegir fàcilment",
     "pl": "Na tej mapie pokazane są miejsca publicznie dostępne dla wózków inwalidzkich, które można łatwo dodać",
     "it": "Su questa mappa sono indicati i luoghi pubblici accessibili con sedia a rotelle e possono essere facilmente aggiunti",
@@ -107,7 +107,7 @@
                   "fr": "Toute/aucune information sur la largeur",
                   "da": "Eventuelle/ingen bredde info",
                   "cs": "Jakékoliv/žádné informace o šířce",
-                  "es": "Cualquiera/Sin información de anchura",
+                  "es": "Información de ancho/sin información de ancho",
                   "ca": "Qualsevol/Sense informació d'amplada",
                   "pl": "Dowolna/brak informacji o szerokości"
                 }
@@ -123,7 +123,7 @@
                   "cs": "Bez informací o šířce",
                   "nb_NO": "Uten breddeinfo",
                   "ca": "Sense informació de l'amplada",
-                  "es": "Sin información de anchura",
+                  "es": "Sin información de ancho",
                   "pl": "Bez informacji o szerokości"
                 }
               }
@@ -218,7 +218,7 @@
                   "fr": "Ressaut à niveau (~ 0 cm)",
                   "da": "Skyl kantsten (~0 cm)",
                   "cs": "Zapuštěný obrubník (~0 cm)",
-                  "es": "Bordillo enrasado (~0 cm)",
+                  "es": "Bordillo a ras (~0cm)",
                   "ca": "Voral ras (~0 cm)",
                   "pl": "Krawężnik zlicowany (~0cm)"
                 }
@@ -281,7 +281,7 @@
           "nl": "Parkeerplaatsen voor personen met een beperking",
           "fr": "Places de stationnement pour personnes handicapées",
           "cs": "Parkovací místa pro osoby se zdravotním postižením",
-          "es": "Plazas de aparcamiento para discapacitados",
+          "es": "Plazas de estacionamiento para discapacitados",
           "ca": "Places d'aparcament per a minusvàlids",
           "pl": "Miejsca parkingowe dla niepełnosprawnych",
           "da": "Handikapparkeringspladser",
@@ -557,7 +557,7 @@
                   "nb_NO": "Legg til alle foreslåtte",
                   "nl": "Voeg alle gesuggereerde tags toe",
                   "cs": "Přidat všechny navrhované značky",
-                  "es": "Añadir todas las etiquetas sugeridas",
+                  "es": "Agregar todas las etiquetas sugeridas",
                   "ca": "Afegiu totes les etiquetes suggerides",
                   "pl": "Dodaj wszystkie sugerowane znaczniki"
                 },

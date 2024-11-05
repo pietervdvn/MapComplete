@@ -5,14 +5,16 @@
     "de": "Fitnessstudios",
     "ca": "Centre de fitnes o gimnàs",
     "nl": "Fitnesscentra",
-    "cs": "Fitness centra"
+    "cs": "Fitness centra",
+    "es": "Centros de Fitness"
   },
   "description": {
     "en": "Layer showing fitness centres",
     "de": "Ebene mit Fitnessstudios",
     "ca": "Capa que mostra centres de fitnes o gimnasos",
     "nl": "Laag die fitnesscentra toon",
-    "cs": "Vrstva zobrazující fitness centra"
+    "cs": "Vrstva zobrazující fitness centra",
+    "es": "Capa que muestra centros de fitness"
   },
   "source": {
     "osmTags": "leisure=fitness_centre"
@@ -24,7 +26,8 @@
       "de": "Fitnessstudio",
       "nl": "Fitness-centrum",
       "ca": "Centre de fitness",
-      "cs": "Fitness centrum"
+      "cs": "Fitness centrum",
+      "es": "Centro de Fitness"
     },
     "mappings": [
       {
@@ -70,7 +73,8 @@
         "de": "ein Fitnessstudio",
         "nl": "een fitness-centrum",
         "ca": "un centre de fitness",
-        "cs": "fitness centra"
+        "cs": "fitness centra",
+        "es": "un centro de fitness"
       },
       "icon": "./assets/layers/fitness_centre/gym.svg"
     }
@@ -83,7 +87,8 @@
         "de": "Wie lautet der Name des Fitnessstudios?",
         "nl": "Wat is de naam van dit fitness-centrum?",
         "ca": "Quin és el nom d'aquest centre de fitness?",
-        "cs": "Jak se jmenuje toto fitness centrum?"
+        "cs": "Jak se jmenuje toto fitness centrum?",
+        "es": "¿Cuál es el nombre de este centro de fitness?"
       },
       "freeform": {
         "key": "name",
@@ -92,7 +97,8 @@
           "de": "Name des Fitnessstudios",
           "nl": "Naam van dit fitness-centrum",
           "ca": "Nom del centre de fitness",
-          "cs": "Název fitness centra"
+          "cs": "Název fitness centra",
+          "es": "Nombre del centro de fitness"
         },
         "type": "string"
       },
@@ -104,7 +110,8 @@
             "de": "Das Fitnessstudio hat keinen Namen",
             "nl": "Dit fitness-centrum heeft geen naam",
             "ca": "Aquest centre de fitness no té nom",
-            "cs": "Tento fitness centrum nemá žádné jméno"
+            "cs": "Tento fitness centrum nemá žádné jméno",
+            "es": "Este centro de fitness no tiene nombre"
           }
         }
       ],
@@ -113,7 +120,8 @@
         "de": "Das Fitnessstudio heißt {name}",
         "nl": "Dit fitness-centrum heet {name}",
         "ca": "Aquest gimnàs / centre de fitness s'anomena {name}",
-        "cs": "Toto fitness centrum se jmenuje {name}"
+        "cs": "Toto fitness centrum se jmenuje {name}",
+        "es": "Este centro de fitness se llama {name}"
       }
     },
     "images",

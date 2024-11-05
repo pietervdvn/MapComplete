@@ -2,7 +2,8 @@
   "id": "unit",
   "description": {
     "en": "Library layer with all common units.  Units can _only_ be imported from this file.",
-    "de": "Bibliotheksebene mit allen gängigen Einrichtungen.  Einrichtungen können _nur_ aus dieser Datei importiert werden."
+    "de": "Bibliotheksebene mit allen gängigen Einrichtungen.  Einrichtungen können _nur_ aus dieser Datei importiert werden.",
+    "es": "Capa de biblioteca con todas las unidades comunes. Las unidades solo se pueden importar de este archivo."
   },
   "source": "special:library",
   "pointRendering": null,
@@ -31,7 +32,8 @@
             "hu": "{quantity} megawatt",
             "ca": "{quantity} megavats",
             "da": "{quantity} Megawatt",
-            "cs": "{quantity} megawatty"
+            "cs": "{quantity} megawatty",
+            "es": "{quantity} megavatios"
           }
         },
         {
@@ -54,7 +56,8 @@
             "hu": "{quantity} kilowatt",
             "ca": "{quantity} quilovats",
             "da": "{quantity} Kilowatt",
-            "cs": "{quantity} kilowatty"
+            "cs": "{quantity} kilowatty",
+            "es": "{quantity} kilovatios"
           }
         },
         {
@@ -76,7 +79,8 @@
             "ca": "{quantity} vats",
             "da": "{quantity} Watt",
             "cs": "{quantity} watty",
-            "zh_Hant": "{quantity} 瓦"
+            "zh_Hant": "{quantity} 瓦",
+            "es": "{quantity} vatios"
           }
         },
         {
@@ -98,7 +102,8 @@
             "ca": "{quantity} gigavats",
             "da": "{quantity} Gigawatt",
             "cs": "{quantity} gigawatty",
-            "zh_Hant": "{quantity} 千兆瓦"
+            "zh_Hant": "{quantity} 千兆瓦",
+            "es": "{quantity} gigavatios"
           }
         }
       ],
@@ -119,7 +124,8 @@
             "en": "{quantity} Volt",
             "nl": "{quantity} volt",
             "de": "{quantity} Volt",
-            "hu": "{quantity} Volt"
+            "hu": "{quantity} Volt",
+            "es": "{quantity} voltios"
           }
         }
       ],
@@ -141,7 +147,8 @@
             "nl": "{quantity} A",
             "ca": "{quantity} A",
             "de": "{quantity} A",
-            "hu": "{quantity} A"
+            "hu": "{quantity} A",
+            "es": "{quantity} amperios"
           }
         }
       ],
@@ -184,7 +191,8 @@
             "nl": "één meter",
             "de": "ein Meter",
             "ca": "un metre",
-            "hu": "egy méter"
+            "hu": "egy méter",
+            "es": "un metro"
           }
         },
         {
@@ -205,14 +213,16 @@
             "pl": "{quantity} centymetr",
             "ru": "{quantity} сантиметры",
             "pa_PK": " {quantity}سینٹیمیٹر",
-            "hu": "{quantity} centiméter"
+            "hu": "{quantity} centiméter",
+            "es": "{quantity} centímetros"
           },
           "humanSingular": {
             "en": "one centimeter",
             "nl": "één centimeter",
             "ca": "un centímetre",
             "de": "ein Zentimeter",
-            "hu": "egy centiméter"
+            "hu": "egy centiméter",
+            "es": "un centímetro"
           }
         },
         {
@@ -229,14 +239,16 @@
             "ca": "{quantity} mil·límetres",
             "cs": "{quantity} milimetry",
             "pa_PK": "{quantity} ملیمیٹر",
-            "hu": "{quantity} milliméter"
+            "hu": "{quantity} milliméter",
+            "es": "{quantity} milímetros"
           },
           "humanSingular": {
             "en": "one millimeter",
             "nl": "één millimeter",
             "de": "ein Millimeter",
             "ca": "un mil·límetre",
-            "hu": "egy milliméter"
+            "hu": "egy milliméter",
+            "es": "un milímetro"
           }
         },
         {
@@ -357,7 +369,8 @@
             "ca": "{quantity} minuts",
             "de": "{quantity} Minuten",
             "fr": "{quantity} minutes",
-            "hu": "{quantity} perc"
+            "hu": "{quantity} perc",
+            "es": "{quantity} minutos"
           },
           "humanSingular": {
             "en": "one minute",
@@ -365,7 +378,8 @@
             "ca": "un minut",
             "de": "eine Minute",
             "fr": "une minute",
-            "hu": "egy perc"
+            "hu": "egy perc",
+            "es": "un minuto"
           }
         },
         {
@@ -386,7 +400,8 @@
             "ca": "{quantity} hores",
             "de": "{quantity} Stunden",
             "fr": "{quantity} heures",
-            "hu": "{quantity} óra"
+            "hu": "{quantity} óra",
+            "es": "{quantity} horas"
           },
           "humanSingular": {
             "en": "one hour",
@@ -394,7 +409,8 @@
             "ca": "una hora",
             "de": "eine Stunde",
             "fr": "une heure",
-            "hu": "egy óra"
+            "hu": "egy óra",
+            "es": "una hora"
           }
         },
         {
@@ -412,14 +428,16 @@
             "ca": "{quantity} dies",
             "de": "{quantity} Tage",
             "fr": "{quantity} jours",
-            "hu": "{quantity} nap"
+            "hu": "{quantity} nap",
+            "es": "{quantity} días"
           },
           "humanSingular": {
             "en": "one day",
             "nl": "één dag",
             "de": "ein Tag",
             "fr": "un jour",
-            "hu": "egy nap"
+            "hu": "egy nap",
+            "es": "un día"
           }
         },
         {
@@ -431,14 +449,16 @@
             "nl": "één week",
             "de": "ein Woche",
             "fr": "une semaine",
-            "hu": "egy hét"
+            "hu": "egy hét",
+            "es": "una semana"
           },
           "human": {
             "en": "{quantity} weeks",
             "nl": "{quantity} weken",
             "de": "{quantity} Wochen",
             "fr": "{quantity} semaines",
-            "hu": "{quantity} hét"
+            "hu": "{quantity} hét",
+            "es": "{quantity} semanas"
           }
         },
         {
@@ -450,14 +470,16 @@
             "nl": "één maand",
             "de": "ein Monat",
             "fr": "un mois",
-            "hu": "egy hónap"
+            "hu": "egy hónap",
+            "es": "un mes"
           },
           "human": {
             "en": "{quantity} months",
             "nl": "{quantity} maanden",
             "de": "{quantity} Monate",
             "fr": "{quantity} mois",
-            "hu": "{quantity} hónap"
+            "hu": "{quantity} hónap",
+            "es": "{quantity} meses"
           }
         },
         {
@@ -470,7 +492,8 @@
             "de": "ein Jahr",
             "fr": "un an",
             "ca": "un any",
-            "hu": "egy év"
+            "hu": "egy év",
+            "es": "un año"
           },
           "human": {
             "en": "{quantity} years",
@@ -478,7 +501,8 @@
             "de": "{quantity} Jahre",
             "fr": "{quantity} années",
             "ca": "{quantity} anys",
-            "hu": "{quantity} év"
+            "hu": "{quantity} év",
+            "es": "{quantity} años"
           }
         }
       ]

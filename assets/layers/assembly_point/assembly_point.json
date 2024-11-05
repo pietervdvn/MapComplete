@@ -5,14 +5,15 @@
     "it": "Punti di raccolta per emergenze",
     "de": "Notfallsammelplätze",
     "cs": "Nouzová shromaždiště",
-    "es": "Puntos de encuentro por emergencia"
+    "es": "Puntos de reunión en caso de emergencia"
   },
   "description": {
     "en": "This layer contains assembly points and waiting areas where all employees, passengers or a large crowd assemble in case of an emergency.",
     "it": "Questo livello contiene punti di raccolta e aree di attesa in cui tutti i dipendenti, i passeggeri o una grande folla si riuniscono in caso di emergenza.",
     "de": "Diese Ebene enthält Sammelplätze und Wartebereiche, in denen sich alle Mitarbeiter, Fahrgäste oder eine große Menschenmenge im Notfall versammeln.",
     "pl": "Ta warstwa zawiera punkty zbiórki oraz miejsca oczekiwania, gdzie wszyscy pracownicy, pasażerowie lub duży tłum gromadzą się w przypadku zagrożenia.",
-    "cs": "Tato vrstva obsahuje shromaždiště a čekací prostory, kde se v případě nouze shromažďují všichni zaměstnanci, cestující nebo velký dav lidí."
+    "cs": "Tato vrstva obsahuje shromaždiště a čekací prostory, kde se v případě nouze shromažďují všichni zaměstnanci, cestující nebo velký dav lidí.",
+    "es": "Esta capa contiene puntos de reunión y áreas de espera donde todos los empleados, pasajeros o una gran multitud se reúnen en caso de emergencia."
   },
   "source": {
     "osmTags": {
@@ -27,7 +28,7 @@
       "en": "Assembly point during emergencies",
       "de": "Sammelplatz bei Notfällen",
       "cs": "Shromaždiště při mimořádných událostech",
-      "es": "Punto de encuentro durante emergencias"
+      "es": "Punto de reunión en caso de emergencia"
     }
   },
   "pointRendering": [
@@ -53,7 +54,7 @@
         "de": "ein Sammelplatz",
         "pl": "punkt zbiórki",
         "cs": "shromaždiště",
-        "es": "un punto de encuentro"
+        "es": "un punto de reunión"
       },
       "tags": [
         "emergency=assembly_point"
@@ -73,7 +74,7 @@
         "de": "Wie lautet der Name dieser Sammelstelle?",
         "pl": "Jak nazywa się ten punkt zbiórki?",
         "cs": "Jak se jmenuje toto shromaždiště?",
-        "es": "¿Cuál es el nombre de este punto de encuentro?"
+        "es": "¿Cuál es el nombre de este punto de reunión?"
       },
       "render": {
         "en": "This assembly point is named <b>{name}</b>",
@@ -81,7 +82,7 @@
         "de": "Diese Sammelstelle hat den Namen <b>{name}</b>",
         "pl": "Ten punkt zbiórki nazywa się <b>{name}</b>",
         "cs": "Toto shromaždiště se jmenuje <b>{name}</b>",
-        "es": "Este punto de encuentro se llama <b>{name}</b>"
+        "es": "Este punto de reunión se llama <b>{name}</b>"
       }
     },
     {
@@ -91,14 +92,14 @@
         "it": "Questo punto di raccolta è gestita da <b>{operator}</b>",
         "de": "Diese Sammelstelle wird von <b>{operator}</b> betrieben",
         "cs": "Toto shromaždiště provozuje <b>{operator}</b>",
-        "es": "Este punto de encuentro lo opera <b>{operator}</b>"
+        "es": "Este punto de reunión es operado por <b>{operator}</b>"
       },
       "question": {
         "en": "What organization operates this assembly point?",
         "it": "Quale organizzazione gestisce questo punto di raccolta?",
         "de": "Welche Organisation betreibt diese Sammelstelle?",
         "cs": "Jaká organizace provozuje toto shromaždiště?",
-        "es": "¿Qué organización opera este punto de encuentro?"
+        "es": "¿Qué organización opera este punto de reunión?"
       },
       "freeform": {
         "key": "operator",
@@ -112,7 +113,7 @@
         "it": "Per quali tipi di disastro è pensato questo punto di raccolta?",
         "de": "Für welche Art von Katastrophe ist diese Sammelstelle gedacht?",
         "cs": "Pro jaký typ katastrofy je toto shromaždiště určeno?",
-        "es": "¿A qué tipo de catástrofe está destinado este punto de encuentro?"
+        "es": "¿Para qué tipo de desastre está destinado este punto de reunión?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -141,7 +142,7 @@
             "de": "Flut",
             "pl": "Powódź",
             "cs": "Povodně",
-            "es": "Riada"
+            "es": "Inundación"
           },
           "icon": {
             "path": "./assets/layers/assembly_point/flood.svg",
@@ -173,7 +174,7 @@
             "de": "Erdrutsch",
             "pl": "Osuwisko",
             "cs": "Sesuv půdy",
-            "es": "Deslizamiento de tierra"
+            "es": "Deslave"
           },
           "icon": {
             "path": "./assets/layers/assembly_point/landslide.svg",

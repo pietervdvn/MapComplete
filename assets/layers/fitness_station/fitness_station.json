@@ -5,14 +5,16 @@
     "de": "Fitness-Stationen",
     "nl": "Fitness-toestel",
     "ca": "Estacions de fitness",
-    "cs": "Fitness stanice"
+    "cs": "Fitness stanice",
+    "es": "Estaciones de Fitness"
   },
   "description": {
     "en": "Find a fitness station near you, and add missing ones.",
     "de": "Finden Sie eine Fitness-Station in der Nähe und fügen Sie fehlende hinzu.",
     "nl": "Vind een fitness-centrum in je buurt en voeg ontbrekende fitness-centra toe",
     "ca": "Troba una estació de fitness a prop teu i afegeix-ne les que falten.",
-    "cs": "Najděte fitness stanici ve svém okolí a přidejte chybějící."
+    "cs": "Najděte fitness stanici ve svém okolí a přidejte chybějící.",
+    "es": "Encuentra una estación de fitness cerca de ti y agrega las que faltan."
   },
   "source": {
     "osmTags": "leisure=fitness_station"
@@ -23,7 +25,8 @@
       "en": "Fitness Station",
       "de": "Fitness-Station",
       "ca": "Estació de fitness",
-      "cs": "Fitness stanice"
+      "cs": "Fitness stanice",
+      "es": "Estación de Fitness"
     },
     "mappings": [
       {
@@ -32,7 +35,8 @@
           "en": "Fitness Station {name}",
           "de": "Fitness-Station {name}",
           "ca": "Estació de fitness {name}",
-          "cs": "Fitness stanice {name}"
+          "cs": "Fitness stanice {name}",
+          "es": "Estación de Fitness {name}"
         }
       }
     ]
@@ -79,7 +83,8 @@
         "de": "eine Fitness-Station",
         "nl": "een fitness-toestel",
         "ca": "una estació de fitness",
-        "cs": "fitness stanice"
+        "cs": "fitness stanice",
+        "es": "una estación de fitness"
       },
       "icon": "./assets/layers/fitness_station/fitness.svg"
     }
@@ -93,7 +98,8 @@
         "de": "Wie lautet der Name der Fitness-Station?",
         "nl": "Wat is de naam van dit fitness-toestel?",
         "ca": "Quin és el nom d'aquesta estació de fitness?",
-        "cs": "Jak se tato fitness stanice jmenuje?"
+        "cs": "Jak se tato fitness stanice jmenuje?",
+        "es": "¿Cuál es el nombre de esta estación de fitness?"
       },
       "freeform": {
         "key": "name",
@@ -102,7 +108,8 @@
           "de": "Name der Fitness-Station",
           "nl": "Naam van het fitness-toestell",
           "ca": "Nom de l'estació de fitness",
-          "cs": "Název fitness stanice"
+          "cs": "Název fitness stanice",
+          "es": "Nombre de la estación de fitness"
         },
         "type": "string"
       },
@@ -114,7 +121,8 @@
             "de": "Die Fitness-Station hat keinen Namen",
             "nl": "Dit fitness-toestel heeft geen naam",
             "ca": "L'estació de fitness no té nom",
-            "cs": "Tato fitness stanice nemá jméno"
+            "cs": "Tato fitness stanice nemá jméno",
+            "es": "Esta estación de fitness no tiene nombre"
           }
         }
       ],
@@ -123,7 +131,8 @@
         "de": "Die Fitness-Station heißt {name}",
         "nl": "Dit fitness-toestel heet {name}",
         "ca": "L'estació de fitness es diu {name}",
-        "cs": "Tato fitness stanice se jmenuje {name}"
+        "cs": "Tato fitness stanice se jmenuje {name}",
+        "es": "Esta estación de fitness se llama {name}"
       }
     },
     {
@@ -131,7 +140,8 @@
       "question": {
         "en": "What kind of equipment does this fitness station have?",
         "de": "Welche Übungsgeräte gibt es an dieser Fitness-Station?",
-        "cs": "Jaké vybavení má tato fitness stanice?"
+        "cs": "Jaké vybavení má tato fitness stanice?",
+        "es": "¿Qué tipo de equipo tiene esta estación de fitness?"
       },
       "mappings": [
         {
@@ -140,7 +150,8 @@
             "en": "This fitness station has a horizontal bar, high enough for pull-ups.",
             "de": "Die Fitness-Station hat eine Reckstange für Klimmzüge.",
             "ca": "Aquesta estació de fitness té una barra horitzontal, prou alta per a fer traccions.",
-            "cs": "Tato posilovací stanice má hrazdu, dostatečně vysokou pro přítahy."
+            "cs": "Tato posilovací stanice má hrazdu, dostatečně vysokou pro přítahy.",
+            "es": "Esta estación de fitness tiene una barra horizontal, lo suficientemente alta para hacer dominadas."
           },
           "icon": {
             "path": "./assets/layers/fitness_station/Trimm-Dich-Pfad_Grünwalder_Forst_Klimmzüge.jpg",
@@ -153,7 +164,8 @@
             "en": "This fitness station has a sign with instructions for a specific exercise.",
             "de": "Die Fitness-Station hat ein Schild mit Anweisungen für eine bestimmte Übung.",
             "ca": "Aquesta estació de fitness té un cartell amb instruccions per a un exercici concret.",
-            "cs": "Tato fitness stanice má ceduli s pokyny pro konkrétní cvičení."
+            "cs": "Tato fitness stanice má ceduli s pokyny pro konkrétní cvičení.",
+            "es": "Esta estación de fitness tiene un cartel con instrucciones para un ejercicio específico."
           },
           "icon": {
             "path": "./assets/layers/fitness_station/Outdoor_fitness_station_sign.jpg",
@@ -166,7 +178,8 @@
             "en": "This fitness station has a facility for sit-ups.",
             "de": "Die Fitness-Station hat eine Einrichtung für Sit-ups.",
             "ca": "Aquesta estació de fitness té una instal·lació per fer abdominals.",
-            "cs": "Tato posilovna má zařízení pro sedy-lehy."
+            "cs": "Tato posilovna má zařízení pro sedy-lehy.",
+            "es": "Esta estación de fitness tiene un dispositivo para abdominales."
           },
           "icon": {
             "path": "./assets/layers/fitness_station/Inclined_sit-up_bench.jpg",
@@ -179,7 +192,8 @@
             "en": "This fitness station has a facility for push-ups. Usually consists of one or more low horizontal bars.",
             "de": "Die Fitness-Station hat eine Vorrichtung für Liegestütze. In der Regel eine oder mehrere niedrige Reckstangen.",
             "ca": "Aquest estació de fitness té una instal·lació per a flexions. Normalment consta d'una o més barres horitzontals baixes.",
-            "cs": "Tato posilovna má zařízení pro kliky. Obvykle se skládá z jedné nebo více nízkých vodorovných tyčí."
+            "cs": "Tato posilovna má zařízení pro kliky. Obvykle se skládá z jedné nebo více nízkých vodorovných tyčí.",
+            "es": "Esta estación de fitness tiene un dispositivo para flexiones. Normalmente consiste en una o más barras horizontales bajas."
           },
           "icon": {
             "path": "./assets/layers/fitness_station/Push-up_bars.jpg",
@@ -192,7 +206,8 @@
             "en": "This fitness station has bars for stretching.",
             "de": "Die Fitness-Station hat Stangen zum Dehnen.",
             "ca": "Aquesta estació de fitness disposa de barres per fer estiraments.",
-            "cs": "Tato posilovací stanice má tyče pro strečink."
+            "cs": "Tato posilovací stanice má tyče pro strečink.",
+            "es": "Esta estación de fitness tiene barras para estirar."
           },
           "icon": {
             "path": "./assets/layers/fitness_station/Fitness_station_stretch_bars.jpg",
@@ -205,7 +220,8 @@
             "en": "This fitness station has a station for making hyperextensions.",
             "de": "Die Fitness-Station hat eine Vorrichtung für Rückenstrecker (Hyperextensions).",
             "ca": "Aquesta estació de fitness disposa d'una estació per fer hiperextensions.",
-            "cs": "Tato fitness stanice má stanici pro vytváření hyperextenzí."
+            "cs": "Tato fitness stanice má stanici pro vytváření hyperextenzí.",
+            "es": "Esta estación de fitness tiene una estación para realizar hiperextensiones."
           },
           "icon": {
             "path": "./assets/layers/fitness_station/Inclined_sit-up_and_hyperextension_bench.jpg",
@@ -218,7 +234,8 @@
             "en": "This fitness station has rings for gymnastic exercises.",
             "de": "Die Fitness-Station hat Ringe für Gymnastikübungen.",
             "ca": "Aquesta estació de fitness disposa d'anelles per fer exercicis de gimnàstica.",
-            "cs": "Tato posilovací stanice má kruhy pro gymnastická cvičení."
+            "cs": "Tato posilovací stanice má kruhy pro gymnastická cvičení.",
+            "es": "Esta estación de fitness tiene anillas para ejercicios de gimnasia."
           },
           "icon": {
             "path": "./assets/layers/fitness_station/Exercise9159.jpg",
@@ -231,7 +248,8 @@
             "en": "This fitness station has a horizontal ladder, also known as monkey bars.",
             "de": "Die Fitness-Station hat eine horizontale Leiter (Monkey Bars).",
             "ca": "Aquest gimnàs té una escala horitzontal, també coneguda com a barres de mico.",
-            "cs": "Tato fitness stanice má horizontální žebřík, známý také jako ručkovací žebřík."
+            "cs": "Tato fitness stanice má horizontální žebřík, známý také jako ručkovací žebřík.",
+            "es": "Esta estación de fitness tiene una escalera horizontal, también conocida como barras de mono."
           },
           "icon": {
             "path": "./assets/layers/fitness_station/Horizontal_ladder.jpg",
@@ -244,7 +262,8 @@
             "en": "This fitness station has wall bars to climb on.",
             "de": "Die Fitness-Station hat eine Sprossenwand zum Klettern.",
             "ca": "Aquesta estació de fitness té barres per pujar-hi.",
-            "cs": "Tato fitness stanice má nástěnné tyče, na které lze lézt."
+            "cs": "Tato fitness stanice má nástěnné tyče, na které lze lézt.",
+            "es": "Esta estación de fitness tiene barras de pared para escalar."
           },
           "icon": {
             "path": "./assets/layers/fitness_station/RIAN_archive_493268_Sports_at_a_kindergarten.jpg",
@@ -257,7 +276,8 @@
             "en": "This fitness station has posts for performing slalom exercises.",
             "de": "Die Fitness-Station hat Pfosten für Slalomübungen.",
             "ca": "Aquesta estació de fitness té llocs per fer exercicis d'eslàlom.",
-            "cs": "Tato fitness stanice má sloupky pro provádění slalomových cvičení."
+            "cs": "Tato fitness stanice má sloupky pro provádění slalomových cvičení.",
+            "es": "Esta estación de fitness tiene postes para realizar ejercicios de slalom."
           },
           "icon": {
             "path": "./assets/layers/fitness_station/Fitness_station_slalom.jpg",
@@ -270,7 +290,8 @@
             "en": "This fitness station has stepping stones.",
             "de": "Die Fitness-Station hat Trittsteine.",
             "ca": "Aquesta estació de gimnàs té esglaons.",
-            "cs": "Tato fitness stanice má odrazové můstky."
+            "cs": "Tato fitness stanice má odrazové můstky.",
+            "es": "Esta estación de fitness tiene piedras para escalar."
           },
           "icon": {
             "path": "./assets/layers/fitness_station/Fitness_station_stepping_stone.jpg",
@@ -283,7 +304,8 @@
             "en": "This fitness station has cones for performing leapfrog jumps.",
             "de": "Die Fitness-Station hat Hütchen für Bocksprünge.",
             "ca": "Aquesta estació de fitness disposa de cons per fer salts de granota.",
-            "cs": "Na této fitness stanici jsou kužely pro provádění skoků přes překážky."
+            "cs": "Na této fitness stanici jsou kužely pro provádění skoků přes překážky.",
+            "es": "Esta estación de fitness tiene conos para realizar saltos de rana."
           },
           "icon": {
             "path": "./assets/layers/fitness_station/Fitness_station_leapfrog.jpg",
@@ -296,7 +318,8 @@
             "en": "This fitness station has beams to jump over.",
             "de": "Die Fitness-Station hat Balken zum überspringen.",
             "ca": "Aquesta estació de fitness té bigues per saltar.",
-            "cs": "Tato fitness stanice má trámy, přes které se skáče."
+            "cs": "Tato fitness stanice má trámy, přes které se skáče.",
+            "es": "Esta estación de fitness tiene vigas para saltar."
           },
           "icon": {
             "path": "./assets/layers/fitness_station/Fitness_station_beam_jump.jpg",
@@ -309,7 +332,8 @@
             "en": "This fitness station has hurdles to cross.",
             "de": "Die Fitnessstation hat Hürden zum überspringen.",
             "ca": "Aquesta estació de fitness té obstacles per a travesar.",
-            "cs": "Tato fitness stanice má překážky, které je třeba překonat."
+            "cs": "Tato fitness stanice má překážky, které je třeba překonat.",
+            "es": "Esta estación de fitness tiene vallas para cruzar."
           },
           "icon": {
             "path": "./assets/layers/fitness_station/Fitness_station_hurdling.jpg",
@@ -322,7 +346,8 @@
             "en": "This fitness station has a wall to climb on.",
             "de": "Die Fitness-Station hat eine Kletterwand.",
             "ca": "Aquesta estació de fitness té una paret per enfilar-se.",
-            "cs": "Tato fitness stanice má stěnu, na kterou se dá lézt."
+            "cs": "Tato fitness stanice má stěnu, na kterou se dá lézt.",
+            "es": "Esta estación de fitness tiene una pared para escalar."
           },
           "icon": {
             "path": "./assets/layers/fitness_station/Fitness_station_wall.jpg",
@@ -334,7 +359,8 @@
           "then": {
             "en": "This fitness station has a balance beam.",
             "de": "Die Fitness-Station hat einen Schwebebalken.",
-            "cs": "Tato posilovací stanice má kladinu."
+            "cs": "Tato posilovací stanice má kladinu.",
+            "es": "Esta estación de fitness tiene una viga de equilibrio."
           },
           "icon": {
             "path": "./assets/layers/fitness_station/Exercise9170.jpg",
@@ -346,7 +372,8 @@
           "then": {
             "en": "This fitness station has a log with a handle on the end to lift.",
             "de": "Die Fitness-Station hat einen Baumstamm mit Griff zum Anheben.",
-            "cs": "Tato posilovací stanice má na konci kládu s rukojetí ke zvedání."
+            "cs": "Tato posilovací stanice má na konci kládu s rukojetí ke zvedání.",
+            "es": "Esta estación de fitness tiene un tronco con un asa en el extremo para levantar."
           },
           "icon": {
             "path": "./assets/layers/fitness_station/Log_lifting_exercise.jpg",
@@ -358,7 +385,8 @@
           "then": {
             "en": "This fitness station has a chair with only elbow supports and a rear (without seat), for performing leg raises.",
             "de": "Die Fitness-Station hat einen Stuhl ohne Sitzfläche, nur mit Arm- und Rückenlehne, für Beinheber.",
-            "cs": "Tato posilovací stanice má židli pouze s loketními opěrkami a zadní část (bez sedáku) pro provádění zvedání nohou."
+            "cs": "Tato posilovací stanice má židli pouze s loketními opěrkami a zadní část (bez sedáku) pro provádění zvedání nohou.",
+            "es": "Esta estación de fitness tiene una silla con solo soportes para los codos y una parte trasera (sin asiento), para realizar elevaciones de piernas."
           },
           "icon": {
             "path": "./assets/layers/fitness_station/Captains_chair.jpg",
@@ -370,7 +398,8 @@
           "then": {
             "en": "This fitness station has a box that can be used for jumping.",
             "de": "Die Fitness-Station hat einen Kasten für Sprungübungen.",
-            "cs": "Tato fitness stanice má box, který lze použít pro skákání."
+            "cs": "Tato fitness stanice má box, který lze použít pro skákání.",
+            "es": "Esta estación de fitness tiene una caja que se puede usar para saltar."
           },
           "icon": {
             "path": "./assets/layers/fitness_station/Exercise_Box.jpg",
@@ -382,7 +411,8 @@
           "then": {
             "en": "This fitness station has battling ropes.",
             "de": "Die Fitness-Station hat Kampfseile (battle ropes).",
-            "cs": "Tato fitness stanice má bojová lana."
+            "cs": "Tato fitness stanice má bojová lana.",
+            "es": "Esta estación de fitness tiene cuerdas de batalla."
           },
           "icon": {
             "path": "./assets/layers/fitness_station/Battling_ropes.jpg",
@@ -394,7 +424,8 @@
           "then": {
             "en": "This fitness station has a stationary bicycle.",
             "de": "Die Fitness-Station hat ein Fahrradergometer.",
-            "cs": "Tato posilovna má stacionární kolo."
+            "cs": "Tato posilovna má stacionární kolo.",
+            "es": "Esta estación de fitness tiene una bicicleta estática."
           },
           "icon": {
             "path": "./assets/layers/fitness_station/Outdoor_stationary_bicycle.jpg",
@@ -406,7 +437,8 @@
           "then": {
             "en": "This fitness station has a cross-trainer.",
             "de": "Die Fitness-Station hat einen Crosstrainer.",
-            "cs": "Tato fitness stanice má crossový trenažér."
+            "cs": "Tato fitness stanice má crossový trenažér.",
+            "es": "Esta estación de fitness tiene una elíptica."
           },
           "icon": {
             "path": "./assets/layers/fitness_station/07-12-2016,_Fitness_trail,_Parque_da_Alfarrobeira,_Albufeira_2.jpg",
@@ -418,7 +450,8 @@
           "then": {
             "en": "This fitness station has an air walker.",
             "de": "Die Fitness-Station hat einen Air-Walker.",
-            "cs": "Tato posilovací stanice má chodítko ve vzduchu."
+            "cs": "Tato posilovací stanice má chodítko ve vzduchu.",
+            "es": "Esta estación de fitness tiene un caminador de aire."
           },
           "icon": {
             "path": "./assets/layers/fitness_station/Ansan_Park_beind_the_city_hall_022.jpg",
@@ -430,7 +463,8 @@
           "then": {
             "en": "This fitness station has a rower.",
             "de": "Die Fitness-Station hat ein Rudergerät.",
-            "cs": "Tato fitness stanice má veslař."
+            "cs": "Tato fitness stanice má veslař.",
+            "es": "Esta estación de fitness tiene una máquina de remo."
           },
           "icon": {
             "path": "./assets/layers/fitness_station/Annecy_-_rower.jpg",
@@ -442,7 +476,8 @@
           "then": {
             "en": "This fitness station has a slackline.",
             "de": "Die Fitness-Station hat eine Slackline.",
-            "cs": "Tato fitness stanice má slackline."
+            "cs": "Tato fitness stanice má slackline.",
+            "es": "Esta estación de fitness tiene una slackline."
           },
           "icon": {
             "path": "./assets/layers/fitness_station/Slacklineanlage_im_Dietenbachpark.jpg",
@@ -459,7 +494,8 @@
         "de": "Wer betreibt die Fitness-Station?",
         "nl": "Wie beheert dit fitness-toestel?",
         "ca": "Qui manté l'estació de fitness?",
-        "cs": "Kdo spravuje tuto fitness stanici?"
+        "cs": "Kdo spravuje tuto fitness stanici?",
+        "es": "¿Quién mantiene esta estación de fitness?"
       },
       "freeform": {
         "key": "operator",
@@ -467,7 +503,8 @@
           "en": "Operator of the fitness station",
           "de": "Betreiber der Fitness-Station",
           "nl": "Beheerder van het fitness-toestel",
-          "cs": "Provozovatel fitness stanice"
+          "cs": "Provozovatel fitness stanice",
+          "es": "Operador de la estación de fitness"
         },
         "type": "string"
       },
@@ -476,7 +513,8 @@
         "de": "Die Fitness-Station wird betrieben von {operator}.",
         "nl": "Dit fitness-toestel wordt beheerd door {operator}",
         "ca": "{operator} manté l'estació de fitness.",
-        "cs": "Fitness stanici spravuje {operator}."
+        "cs": "Fitness stanici spravuje {operator}.",
+        "es": "La estación de fitness es mantenida por {operator}."
       }
     },
     "opening_hours_24_7"

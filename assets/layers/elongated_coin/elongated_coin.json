@@ -3,14 +3,14 @@
   "name": {
     "en": "Penny Presses",
     "de": "Münzprägeautomaten",
-    "es": "Prensas de centavo",
+    "es": "Prensa de Monedas",
     "ca": "Premses de cèntims",
     "cs": "Ražby mincí"
   },
   "description": {
     "en": "Layer showing penny presses.",
     "de": "Ebene mit Münzprägeautomaten.",
-    "es": "Capa que muestra prensas de centavos.",
+    "es": "Capa que muestra prensas de monedas.",
     "ca": "Capa que mostra premses de cèntims.",
     "cs": "Vrstva zobrazující ražbu mincí."
   },
@@ -26,7 +26,7 @@
     "render": {
       "en": "Penny Press",
       "de": "Prägeautomat",
-      "es": "Prensa de centavo",
+      "es": "Prensa de Monedas",
       "ca": "Premsa de cèntims",
       "cs": "Ražba mincí"
     }
@@ -60,7 +60,7 @@
       "title": {
         "en": "a penny press",
         "de": "Einen Münzprägeautomaten",
-        "es": "una prensa de centavo",
+        "es": "una prensa de monedas",
         "ca": "una premsa de cèntim",
         "cs": "ražba mincí"
       },
@@ -79,7 +79,7 @@
       "question": {
         "en": "How many designs are available?",
         "de": "Wieviele Motive sind verfügbar?",
-        "es": "Cuántos diseños hay disponibles?",
+        "es": "¿Cuántos diseños hay disponibles?",
         "ca": "Quants dissenys hi han disponibles?",
         "cs": "Kolik designů je k dispozici?"
       },
@@ -89,7 +89,7 @@
         "placeholder": {
           "en": "Number of designs (e.g. 5)",
           "de": "Motivanzahl (z.B. 5)",
-          "es": "Número de diseños (por ejemplo, 5)",
+          "es": "Número de diseños (ej. 5)",
           "ca": "Nombre de dissenys (p. e. 5)",
           "cs": "Počet vzorů (např. 5)"
         }
@@ -97,7 +97,7 @@
       "render": {
         "en": "This penny press has {coin:design_count} designs available.",
         "de": "Der Prägeautomat hat {coin:design_count} Motive zur Auswahl.",
-        "es": "Esta prensa tiene {coin:design_count} diseños disponibles.",
+        "es": "Esta prensa de monedas tiene {coin:design_count} diseños disponibles.",
         "ca": "Esta premsa té {coin:design_count} dissenys disponibles.",
         "cs": "Tento lis na centy má k dispozici {coin:design_count} vzory."
       },
@@ -107,7 +107,7 @@
           "then": {
             "en": "This penny press has one design available.",
             "de": "Der Prägeautomat hat ein Motiv zur Auswahl.",
-            "es": "Esta prensa tiene un diseño disponible.",
+            "es": "Esta prensa de monedas tiene un diseño disponible.",
             "ca": "Esta premsa té un disseny disponible.",
             "cs": "Tento lis na peníze má k dispozici jeden design."
           }
@@ -117,7 +117,7 @@
           "then": {
             "en": "This penny press has two designs available.",
             "de": "Der Prägeautomat hat zwei Motive zur Auswahl.",
-            "es": "Esta prensa tiene dos diseños disponibles.",
+            "es": "Esta prensa de monedas tiene dos diseños disponibles.",
             "ca": "Esta premsa té dos dissenys disponibles.",
             "cs": "Tento lis na peníze má k dispozici dvě provedení."
           }
@@ -127,7 +127,7 @@
           "then": {
             "en": "This penny press has three designs available.",
             "de": "Der Prägeautomat hat drei Motive zur Auswahl.",
-            "es": "Esta prensa tiene tres diseños disponibles.",
+            "es": "Esta prensa de monedas tiene tres diseños disponibles.",
             "ca": "Esta premsa té tres dissenys disponibles.",
             "cs": "Tento lis na peníze má k dispozici tři provedení."
           }
@@ -137,7 +137,7 @@
           "then": {
             "en": "This penny press has four designs available.",
             "de": "Der Prägeautomat hat vier Motive zur Auswahl.",
-            "es": "Esta prensa tiene cuatro diseños disponibles.",
+            "es": "Esta prensa de monedas tiene cuatro diseños disponibles.",
             "ca": "Esta premsa té quatre dissenys disponibles.",
             "cs": "Tento lis na peníze má k dispozici čtyři provedení."
           }
@@ -150,7 +150,8 @@
         "en": "Does it cost money to press a penny?",
         "ca": "Costa diners premsar una moneda?",
         "de": "Ist das Prägen kostenpflichtig?",
-        "cs": "Ražba mincí stojí peníze?"
+        "cs": "Ražba mincí stojí peníze?",
+        "es": "¿Cuesta dinero prensar una moneda?"
       },
       "mappings": [
         {
@@ -159,7 +160,8 @@
             "en": "It costs money to press a penny.",
             "ca": "Costa diners premsar una moneda.",
             "de": "Das Prägen ist kostenpflichtig.",
-            "cs": "Ražba mincí stojí peníze."
+            "cs": "Ražba mincí stojí peníze.",
+            "es": "Cuesta dinero prensar una moneda."
           }
         },
         {
@@ -168,7 +170,8 @@
             "en": "It costs money to press a penny.",
             "ca": "Costa diners premsar una moneda.",
             "de": "Das Prägen ist kostenpflichtig.",
-            "cs": "Ražba mincí stojí peníze."
+            "cs": "Ražba mincí stojí peníze.",
+            "es": "Cuesta dinero prensar una moneda."
           }
         },
         {
@@ -177,7 +180,8 @@
             "en": "It is free to press a penny.",
             "ca": "És gratuït premsar una moneda.",
             "de": "Das Prägen ist kostenlos.",
-            "cs": "Ražba mincí je zdarma."
+            "cs": "Ražba mincí je zdarma.",
+            "es": "Es gratis prensar una moneda."
           },
           "addExtraTags": [
             "payment:qr_code=",
@@ -205,7 +209,7 @@
       "question": {
         "en": "What coin is used for pressing?",
         "de": "Welche Münzen können geprägt werden?",
-        "es": "Qué moneda se utiliza para prensar?",
+        "es": "¿Qué moneda se usa para prensar?",
         "ca": "Quina moneda s'utilitza per a premsar?",
         "cs": "Jaká mince se používá k ražbě?"
       },
@@ -215,7 +219,7 @@
         "placeholder": {
           "en": "Coin type (e.g. 10cent)",
           "de": "Münzenart (z.B. 10 Cent)",
-          "es": "Tipo de moneda (por ejemplo, 10 centavos)",
+          "es": "Tipo de moneda (ej. 10 céntimos)",
           "pl": "Rodzaj monety (np. 10 centów)",
           "ca": "Tipus de moneda (p. e. 10 cèntims)",
           "cs": "Typ mince (např. 10 centů)"
@@ -227,7 +231,7 @@
           "then": {
             "en": "This penny press uses a 2 cent coin for pressing.",
             "de": "Der Automat prägt 2 Cent Münzen.",
-            "es": "Esta prensa de centavo utiliza una moneda de 2 centavos para prensar.",
+            "es": "Esta prensa de monedas usa una moneda de 2 céntimos para prensar.",
             "ca": "Esta premsa de cèntims utilitza una moneda de 2 cèntims per a premsar.",
             "cs": "Tento lis na haléře používá k lisování minci v hodnotě 2 centů."
           },
@@ -243,7 +247,7 @@
           "then": {
             "en": "This penny press uses a 5 cent coin for pressing.",
             "de": "Der Automat prägt 5 Cent Münzen.",
-            "es": "Esta prensa de centavo utiliza una moneda de 5 centavos para prensar.",
+            "es": "Esta prensa de monedas usa una moneda de 5 céntimos para prensar.",
             "ca": "Esta premsa de cèntims utilitza una moneda de 5 cèntims per a premsar.",
             "cs": "Tento lis na haléře používá k lisování minci v hodnotě 5 centů."
           },
@@ -259,7 +263,7 @@
           "then": {
             "en": "This penny press uses a 10 cent coin for pressing.",
             "de": "Der Automat prägt 10 Cent Münzen.",
-            "es": "Esta prensa de centavo utiliza una moneda de 10 centavos para prensar.",
+            "es": "Esta prensa de monedas usa una moneda de 10 céntimos para prensar.",
             "ca": "Esta premsa de cèntims utilitza una moneda de 10 cèntims per a premsar.",
             "cs": "Tento lis na haléře používá k lisování minci v hodnotě 10 centů."
           },
@@ -275,7 +279,7 @@
           "then": {
             "en": "This penny press uses a 25 cent coin for pressing.",
             "de": "Der Automat prägt 25 Cent Münzen.",
-            "es": "Esta prensa de centavo utiliza una moneda de 25 centavos para prensar.",
+            "es": "Esta prensa de monedas usa una moneda de 25 céntimos para prensar.",
             "ca": "Esta premsa de cèntims utilitza una moneda de 25 cèntims per a premsar.",
             "cs": "Tento lis na haléře používá k lisování minci v hodnotě 25 centů."
           },
@@ -286,7 +290,7 @@
           "then": {
             "en": "This penny press uses a 50 cent coin for pressing.",
             "de": "Der Automat prägt 50 Cent Münzen.",
-            "es": "Esta prensa de centavo utiliza una moneda de 50 centavos para prensar.",
+            "es": "Esta prensa de monedas usa una moneda de 50 céntimos para prensar.",
             "ca": "Esta premsa de cèntims utilitza una moneda de 50 cèntims per a premsar.",
             "cs": "Tento lis na haléře používá k lisování minci v hodnotě 50 centů."
           },
@@ -297,7 +301,8 @@
           "then": {
             "en": "This penny press uses a 10 centimes coin for pressing.",
             "ca": "Esta premsa de cèntims utilitza una moneda de 10 cèntims per a premsar.",
-            "de": "Der Automat prägt 10 Centime Münzen."
+            "de": "Der Automat prägt 10 Centime Münzen.",
+            "es": "Esta prensa de monedas usa una moneda de 10 céntimos para prensar."
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         },
@@ -306,7 +311,8 @@
           "then": {
             "en": "This penny press uses a 20 centimes coin for pressing.",
             "ca": "Esta premsa de cèntims utilitza una moneda de 20 cèntims per a premsar.",
-            "de": "Der Automat prägt 5 Centime Münzen."
+            "de": "Der Automat prägt 5 Centime Münzen.",
+            "es": "Esta prensa de monedas usa una moneda de 20 céntimos para prensar."
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         }
@@ -314,7 +320,7 @@
       "render": {
         "en": "This penny press uses a {coin:type} coin for pressing.",
         "de": "Der Automat prägt {coin:type} Cent Münzen.",
-        "es": "Esta prensa de centavo utiliza una moneda {coin:type} para prensar.",
+        "es": "Esta prensa de monedas usa una moneda de {coin:type} para prensar.",
         "ca": "Esta premsa de cèntims utilitza una moneda de {coin:type} per a premsar.",
         "cs": "Tento lis na centy používá k lisování minci {coin:type}."
       }
@@ -331,7 +337,7 @@
       "question": {
         "en": "How much does it cost to press a penny?",
         "de": "Wieviel kostet die Prägung einer Münze?",
-        "es": "¿Cuánto cuesta prensar un centavo?",
+        "es": "¿Cuánto cuesta prensar una moneda?",
         "ca": "Quant costa premsar un cèntim?",
         "cs": "Kolik stojí ražba mince?"
       },
@@ -341,7 +347,7 @@
           "en": "Cost (e.g. 0.50 EUR)",
           "de": "Gebühr (z.B. 0,50 €)",
           "fr": "Coût (par ex. 0.50 EUR)",
-          "es": "Costo (por ejemplo, 0.50 euros)",
+          "es": "Costo (ej. 0,50 EUR)",
           "ca": "Cost (p. e, 0.50 euros)",
           "cs": "Cena (např. 0,50 EUR)"
         }
@@ -352,7 +358,7 @@
           "then": {
             "en": "It costs 1 euro to press a penny.",
             "de": "Die Prägung einer Münze kostet 1,00 €.",
-            "es": "Cuesta 1 euro prensar un centavo.",
+            "es": "Cuesta 1 euro prensar una moneda.",
             "ca": "Costa 1 euro premsar un cèntim.",
             "cs": "Ražba mince stojí 1 euro."
           },
@@ -363,7 +369,7 @@
           "then": {
             "en": "It costs 2 euros to press a penny.",
             "de": "Die Prägung einer Münze kostet 2,00 €.",
-            "es": "Cuesta 2 euros prensa un centavo.",
+            "es": "Cuesta 2 euros prensar una moneda.",
             "ca": "Costa 2 euros premsar un cèntim.",
             "cs": "Ražba mince stojí 2 eura."
           },
@@ -375,7 +381,8 @@
             "en": "It costs 2 Swiss francs to press a penny.",
             "ca": "Costa 2 francs suïssos premsar un cèntim.",
             "de": "Die Prägung einer Münze kostet 2 Schweizer Franken.",
-            "cs": "Ražba mince stojí 2 Švýcarské franky."
+            "cs": "Ražba mince stojí 2 Švýcarské franky.",
+            "es": "Cuesta 2 francos suizos prensar una moneda."
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         },
@@ -385,7 +392,8 @@
             "en": "It costs 1 Swiss franc to press a penny.",
             "ca": "Costa 1 franc suís premsar un cèntim.",
             "de": "Die Prägung einer Münze kostet 1 Schweizer Franken.",
-            "cs": "Ražba mince stojí 1 Švýcarský frank."
+            "cs": "Ražba mince stojí 1 Švýcarský frank.",
+            "es": "Cuesta 1 franco suizo prensar una moneda."
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         }
@@ -393,7 +401,7 @@
       "render": {
         "en": "It costs {charge} to press a penny.",
         "de": "Die Prägung einer Münze kostet {charge}.",
-        "es": "Cuesta {charge} prensar un centavo.",
+        "es": "Cuesta {charge} prensar una moneda.",
         "ca": "Costa {charge} premsar un cèntim.",
         "cs": "Ražba mince stojí {charge}."
       }
@@ -404,7 +412,7 @@
       "question": {
         "en": "Is the penny press indoors?",
         "de": "Befindet sich der Prägeautomat im Inneren?",
-        "es": "La prensa de centavo esta al interior?",
+        "es": "¿Está la prensa de monedas en interiores?",
         "ca": "La premsa de cèntims està a l'interior?",
         "cs": "Je lis na mince uvnitř?"
       },
@@ -414,7 +422,7 @@
           "then": {
             "en": "This penny press is located indoors.",
             "de": "Der Prägeautomat befindet sich im Inneren.",
-            "es": "Esta prensa está ubicada en interior.",
+            "es": "Esta prensa de monedas está ubicada en interiores.",
             "ca": "Esta premsa està ubicada en interior.",
             "cs": "Tento lis na mince je umístěn v interiéru.",
             "uk": "Цей копійчаний прес розташований у приміщенні."
@@ -425,7 +433,7 @@
           "then": {
             "en": "This penny press is located outdoors.",
             "de": "Der Prägeautomat befindet sich im Freien.",
-            "es": "Esta prensa está ubicada al aire libre.",
+            "es": "Esta prensa de monedas está ubicada en exteriores.",
             "ca": "Esta premsa està ubicada a l'exterior.",
             "cs": "Tento lis na mince je umístěn venku.",
             "uk": "Цей копійчаний прес розташований на відкритому повітрі."
