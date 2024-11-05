@@ -9,6 +9,7 @@ There are multiple ways to contribute:
   on [the Weblate website](https://hosted.weblate.org/projects/mapcomplete/)
 - If you encounter a bug, the [issue tracker](https://github.com/pietervdvn/MapComplete/issues) is the place to be
 - A good start to contribute is to create a single map layer showing features which interest you. Read more about [making your own theme](/Docs/Making_Your_Own_Theme.md).
+- Feel free to hop in [our chat channel on matrix](https://app.element.io/#/room/#MapComplete:matrix.org)
 - If you want to improve a theme, create a new theme, spot a typo in the repo... the best way is to open a pull request. 
 
 People who stick around and contribute in a meaningful way, _might_ be granted write access to the repository (except the branches *master* and *develop*). This is
