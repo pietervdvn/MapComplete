@@ -1524,7 +1524,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         const error = new Error("No error")
         const stack = error.stack.split("\n")
         stack.shift() // Remove "Error: No error"
-        const regex = /at (.*) \(([a-zA-Z0-9/.]+):([0-9]+):([0-9]+)\)/
+        const regex = /at (.*) \(([a-zA-Z0-9-/.]+):([0-9]+):([0-9]+)\)/
         const stackItem = stack[Math.abs(offset) + 1]
 
         let functionName: string
@@ -1534,10 +1534,10 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         let _: string
         const matchWithFuncName = stackItem.match(regex)
         if (matchWithFuncName) {
-            ;[_, functionName, path, line, column] = matchWithFuncName
+            [_, functionName, path, line, column] = matchWithFuncName
         } else {
-            const regexNoFuncName: RegExp = new RegExp("at ([a-zA-Z0-9/.]+):([0-9]+):([0-9]+)")
-            ;[_, path, line, column] = stackItem.match(regexNoFuncName)
+            const regexNoFuncName: RegExp = new RegExp("at ([a-zA-Z0-9-/.]+):([0-9]+):([0-9]+)");
+            [_, path, line, column] = stackItem.match(regexNoFuncName)
         }
 
         const markdownLocation = path.substring(path.indexOf("MapComplete/src") + 11) + "#L" + line
