@@ -1324,6 +1324,25 @@
             }
         }
     },
+    "school": {
+        "tagRenderings": {
+            "capacity": {
+                "question": "Скільки учнів можна зарахувати до цієї школи?",
+                "render": "Ця школа може зарахувати максимум {capacity} учнів"
+            },
+            "school-language": {
+                "render": {
+                    "special": {
+                        "question": "Яка основна мова цієї школи?<div class='subtle'>Якою мовою розмовляють зі студентами на немовних курсах та з адміністрацією?</div>"
+                    }
+                }
+            },
+            "school-name": {
+                "question": "Як називається ця школа?",
+                "render": "Ця школа називається {name}"
+            }
+        }
+    },
     "shelter": {
         "tagRenderings": {
             "shelter-type": {
