@@ -3,6 +3,7 @@ import { LocalStorageSource } from "../Web/LocalStorageSource"
 import { QueryParameters } from "../Web/QueryParameters"
 import { Translation } from "../../UI/i18n/Translation"
 import Translations from "../../UI/i18n/Translations"
+import { Geolocation } from "@capacitor/geolocation"
 
 export type GeolocationPermissionState = "prompt" | "requested" | "granted" | "denied"
 
@@ -24,7 +25,7 @@ export class GeoLocationState {
      * 'denied' means that we don't have access
      */
     public readonly permission: UIEventSource<GeolocationPermissionState> = new UIEventSource(
-        "prompt"
+        "prompt",
     )
 
     /**
@@ -69,6 +70,7 @@ export class GeoLocationState {
      * A human explanation of the current gps state, to be shown on the home screen or as tooltip
      */
     public readonly gpsStateExplanation: Store<Translation>
+
     constructor() {
         const self = this
 
@@ -128,7 +130,7 @@ export class GeoLocationState {
                 }
                 return Translations.t.general.waitingForLocation
             },
-            [this.allowMoving, this.permission, this.currentGPSLocation]
+            [this.allowMoving, this.permission, this.currentGPSLocation],
         )
     }
 
@@ -201,29 +203,46 @@ export class GeoLocationState {
      * @private
      */
     private async startWatching() {
+        console.log("Starts watching", navigator.geolocation, Geolocation)
         const self = this
-        navigator.geolocation.watchPosition(
-            function (position) {
-                self._gpsAvailable.set(true)
-                self.currentGPSLocation.setData(position.coords)
-                self._previousLocationGrant.setData(true)
-            },
-            function (e) {
-                if (e.code === 2 || e.code === 3) {
-                    self._gpsAvailable.set(false)
-                    return
-                }
-                self._gpsAvailable.set(true) // We go back to the default assumption that the location is physically available
-                if (e.code === 1) {
-                    self.permission.set("denied")
-                    self._grantedThisSession.setData(false)
-                    return
-                }
-                console.warn("Could not get location with navigator.geolocation due to", e)
-            },
-            {
-                enableHighAccuracy: true,
-            }
-        )
+        try {
+            await Geolocation.requestPermissions({ permissions: ["location"] })
+            console.log("Requested permission")
+        } catch (e) {
+            // pass
+        }
+        try {
+            await Geolocation.watchPosition(
+                {
+                    enableHighAccuracy: true,
+                    maximumAge: 120000,
+                },
+                (position: GeolocationPosition, error: GeolocationPositionError) => {
+                    if (error) {
+                        if (error.code === 2 || error.code === 3) {
+                            self._gpsAvailable.set(false)
+                            return
+                        }
+                        self._gpsAvailable.set(true) // We go back to the default assumption that the location is physically available
+                        if (error.code === 1) {
+                            self.permission.set("denied")
+                            self._grantedThisSession.setData(false)
+                            return
+                        }
+                        console.warn("Could not get location with navigator.geolocation due to", error)
+                    }
+
+
+                    console.log("Got position:", position, JSON.stringify(position))
+                    if (!position) {
+                        return
+                    }
+                    this._gpsAvailable.set(true)
+                    this.currentGPSLocation.setData(position.coords)
+                    this._previousLocationGrant.setData(true)
+                })
+        } catch (e) {
+            console.error("Could not get geolocation due to", e)
+        }
     }
 }

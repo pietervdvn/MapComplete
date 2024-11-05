@@ -25,7 +25,7 @@ else
 fi
 
 
-export NODE_OPTIONS=--max-old-space-size=16000
+export NODE_OPTIONS=--max-old-space-size=20000
 which vite
 vite --version
 vite build --sourcemap || { echo 'Vite build failed' ; exit 1; }

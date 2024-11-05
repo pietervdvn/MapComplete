@@ -156,6 +156,9 @@
     "not op_mini all"
   ],
   "dependencies": {
+    "@capacitor/android": "^6.1.2",
+    "@capacitor/core": "^6.1.2",
+    "@capacitor/geolocation": "^6.0.1",
     "@comunica/core": "^3.0.1",
     "@comunica/query-sparql": "^3.0.1",
     "@comunica/query-sparql-link-traversal": "^0.3.0",
@@ -235,6 +238,7 @@
     "@babeard/svelte-heroicons": "^2.0.0-rc.0",
     "@babel/polyfill": "^7.10.4",
     "@babel/preset-env": "7.13.8",
+    "@capacitor/cli": "^6.1.2",
     "@monaco-editor/loader": "^1.4.0",
     "@parcel/service-worker": "^2.6.0",
     "@rollup/plugin-json": "^6.0.0",
