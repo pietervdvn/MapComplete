@@ -114,8 +114,6 @@ A typical user journey would be:
 
 7. At 250 changesets, the tags get linked to the wiki.
 
-8. At 500 changesets, I expect contributors to be power users and to be comfortable with tagging schemes and such. The
-   custom theme generator is unlocked.
 
 ## License
 

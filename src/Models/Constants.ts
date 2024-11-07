@@ -68,7 +68,6 @@ export default class Constants {
 
         mapCompleteHelpUnlock: 50,
         themeGeneratorReadOnlyUnlock: 50,
-        themeGeneratorFullUnlock: 500,
         addNewPointWithUnreadMessagesUnlock: 500,
 
         importHelperUnlock: 5000,
