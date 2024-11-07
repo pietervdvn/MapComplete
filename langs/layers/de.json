@@ -3294,7 +3294,10 @@
                         "then": "Diese Uhr ist auf einem Mast montiert"
                     },
                     "1": {
-                        "then": "Diese Uhr ist an einer Wand montiert"
+                        "then": "Diese Uhr wird an der Wand befestigt, in der Regel durch einen Träger, der senkrecht zur Wand steht"
+                    },
+                    "2": {
+                        "then": "Diese Uhr ist direkt an einer Wand montiert"
                     },
                     "3": {
                         "then": "Diese Uhr ist Teil einer Werbetafel"
