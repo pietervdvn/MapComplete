@@ -596,10 +596,33 @@
             "seeNearby": "Bilder in der Nähe durchsuchen",
             "title": "Straßenbilder in der Nähe"
         },
+        "panoramax": {
+            "deletionRequested": "Der Bericht wurde abgeschickt. Ein Moderator wird sich in Kürze darum kümmern",
+            "freeform": "Gibt es weitere relevante Informationen?",
+            "otherFreeform": "Bitte gib an, warum dieses Bild entfernt werden soll:",
+            "placeholder": "Erkläre, warum das Bild gelöscht werden sollte",
+            "report": {
+                "blur_excess": "Zu viel ist unscharf und macht das Bild unbrauchbar",
+                "blur_missing": "Ein Gesicht oder Nummernschild ist auf diesem Bild nicht unscharf",
+                "copyright": "Das Bild enthält urheberrechtlich geschützte Inhalte",
+                "inappropriate": "Dieses Bild ist unangemessen (es enthält Nacktheit, ruft nach Hass oder ist nicht Streetview)",
+                "mislocated": "Das Bild ist von einem anderen Ort",
+                "other": "Ein weiterer Grund, bitte angeben",
+                "picture_low_quality": "Das Bild ist von geringer Qualität",
+                "privacy": "Das Bild zeigt eine private Immobilie"
+            },
+            "requestDeletion": "Bildlöschung beantragen",
+            "title": "Warum sollte dieses Bild dauerhaft gelöscht werden?"
+        },
         "pleaseLogin": "Bitte anmelden, um ein Bild hinzuzufügen",
         "processing": "Der Server verarbeitet das Bild",
         "respectPrivacy": "Laden Sie keine Bilder von Google Maps, Google Streetview oder anderen urheberrechtlich geschützten Quellen hoch.",
         "toBig": "Ihr Bild ist mit {actual_size} zu groß. Die maximale Bildgröße ist {max_size}",
+        "unlink": {
+            "button": "Bild entkoppeln",
+            "explanation": "Wenn du die Verknüpfung dieses Bildes aufhebst, wird das Bild nicht mehr mit diesem Objekt angezeigt. Es wird aber weiterhin in den Nachbarschaftsbildern und möglicherweise in anderen Objekten angezeigt.",
+            "title": "Dieses Bild entkoppeln?"
+        },
         "upload": {
             "failReasons": "Keine Internetverbindung",
             "failReasonsAdvanced": "Alternativ dazu können Sie einstellen, dass Ihr Browser und Ihre Erweiterungen die APIs von Drittanbietern nicht blockieren.",
