@@ -3294,12 +3294,15 @@
                         "then": "Este reloj está montado en un poste"
                     },
                     "1": {
-                        "then": "Este reloj está montado en una pared"
+                        "then": "Este reloj está montado en una pared, generalmente a través de un soporte perpendicular a la pared"
                     },
                     "2": {
-                        "then": "Este reloj forma parte de una cartelera"
+                        "then": "Este reloj está montado directamente en una pared"
                     },
                     "3": {
+                        "then": "Este reloj es parte de un cartel"
+                    },
+                    "4": {
                         "then": "Este reloj está en el suelo"
                     },
                     "4": {
