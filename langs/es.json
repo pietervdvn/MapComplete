@@ -596,10 +596,33 @@
             "seeNearby": "Ver imágenes cercanas",
             "title": "Imágenes a nivel calle cercanas"
         },
+        "panoramax": {
+            "deletionRequested": "El informe ha sido enviado. Un moderador lo examinará en breve",
+            "freeform": "¿Hay alguna otra información pertinente?",
+            "otherFreeform": "Por favor, especifique por qué debe eliminarse esta imagen:",
+            "placeholder": "Explicar por qué la imagen debe ser eliminada",
+            "report": {
+                "blur_excess": "Demasiado borrosa, haciendo la imagen inútil",
+                "blur_missing": "Una cara o placa de matrícula no está borrosa en esta imagen",
+                "copyright": "La imagen contiene contenido protegido por derechos de autor",
+                "inappropriate": "Esta imagen es inapropiada (contiene desnudez, incita al odio o no es streetview)",
+                "mislocated": "La imagen es de una ubicación diferente",
+                "other": "Otra razón, por favor especifíquese",
+                "picture_low_quality": "La imagen es de baja calidad",
+                "privacy": "La imagen muestra una propiedad privada"
+            },
+            "requestDeletion": "Solicitar la eliminación de una imagen",
+            "title": "¿Por qué debería esta imagen ser eliminada permanentemente?"
+        },
         "pleaseLogin": "Por favor, inicia sesión para agregar una imagen",
         "processing": "El servidor está procesando tu imagen",
         "respectPrivacy": "No subas imágenes de Google Maps, Google Street View u otras fuentes con derechos de autor.",
         "toBig": "Tu imagen es demasiado grande, tiene {actual_size}. Por favor, usa imágenes de como máximo {max_size}",
+        "unlink": {
+            "button": "Desvincular imagen",
+            "explanation": "Al desvincular esta imagen, esta imagen ya no se mostrará con este objeto. Todavía aparecerá en las imágenes cercanas y posiblemente otros objetos.",
+            "title": "¿Desvincular esta imagen?"
+        },
         "upload": {
             "failReasons": "Podrías haber perdido la conexión a internet",
             "failReasonsAdvanced": "Alternativamente, asegúrate de que tu navegador y extensiones no bloqueen las API de terceros.",
@@ -781,7 +804,7 @@
         "title": "{count} reseñas",
         "title_singular": "Una reseña",
         "too_long": "Se permiten como máximo {max} caracteres. Tu reseña tiene {amount} caracteres.",
-        "tos": "Si creas una reseña, aceptas <a href='https://mangrove.reviews/terms' target='_blank'>los T&C y la política de privacidad de Mangrove.reviews</a>",
+        "tos": "Si creas una revisión, aceptas <a href='https://mangrove.reviews/terms' target='_blank'>los TOS y la política de privacidad de Mangrove.reviews</a>",
         "write_a_comment": "Deja una reseña…",
         "your_reviews": "Tus reseñas anteriores",
         "your_reviews_empty": "No pudimos encontrar ninguna de tus reseñas anteriores"
