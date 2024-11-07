@@ -2,11 +2,13 @@
   "id": "souvenir_coin",
   "name": {
     "en": "Souvenir Coin Machines",
-    "de": "Souvenir-Münzautomaten"
+    "de": "Souvenir-Münzautomaten",
+    "es": "Máquinas de Monedas de Recuerdo"
   },
   "description": {
     "en": "Layer showing machines selling souvenir coins",
-    "de": "Ebene mit Automaten, die Souvenir-Münzen verkaufen"
+    "de": "Ebene mit Automaten, die Souvenir-Münzen verkaufen",
+    "es": "Capa que muestra máquinas expendedoras de monedas de recuerdo"
   },
   "source": {
     "osmTags": {
@@ -19,7 +21,8 @@
   "title": {
     "render": {
       "en": "Souvenir Coin Machine",
-      "de": "Souvenir-Münzautomat"
+      "de": "Souvenir-Münzautomat",
+      "es": "Máquina de Monedas de Recuerdo"
     }
   },
   "pointRendering": [
@@ -55,11 +58,13 @@
     {
       "title": {
         "en": "a souvenir coin machine",
-        "de": "ein Souvenir-Münzautomaten"
+        "de": "ein Souvenir-Münzautomaten",
+        "es": "una máquina de monedas de recuerdo"
       },
       "description": {
         "en": "Add a machine selling souvenir coins",
-        "de": "Hinzufügen eines Automaten für Souvenirmünzen"
+        "de": "Hinzufügen eines Automaten für Souvenirmünzen",
+        "es": "Añadir una máquina expendedora de monedas de recuerdo"
       },
       "tags": [
         "amenity=vending_machine",
@@ -76,35 +81,40 @@
       "override": {
         "render": {
           "en": "This machine has {coin:design_count} designs available",
-          "de": "Diese Maschine hat {coin:design_count} Designs verfügbar"
+          "de": "Diese Maschine hat {coin:design_count} Designs verfügbar",
+          "es": "Esta máquina tiene {coin:design_count} diseños disponibles"
         },
         "mappings": [
           {
             "if": "coin:design_count=1",
             "then": {
               "en": "This machine has one design available",
-              "de": "Diese Maschine hat ein Design zur Verfügung"
+              "de": "Diese Maschine hat ein Design zur Verfügung",
+              "es": "Esta máquina tiene un diseño disponible"
             }
           },
           {
             "if": "coin:design_count=2",
             "then": {
               "en": "This machine has two designs available",
-              "de": "Diese Maschine hat zwei Designs verfügbar"
+              "de": "Diese Maschine hat zwei Designs verfügbar",
+              "es": "Esta máquina tiene dos diseños disponibles"
             }
           },
           {
             "if": "coin:design_count=3",
             "then": {
               "en": "This machine has three designs available",
-              "de": "Diese Maschine hat drei Designs verfügbar"
+              "de": "Diese Maschine hat drei Designs verfügbar",
+              "es": "Esta máquina tiene tres diseños disponibles"
             }
           },
           {
             "if": "coin:design_count=4",
             "then": {
               "en": "This machine has four designs available",
-              "de": "Diese Maschine hat vier Designs verfügbar"
+              "de": "Diese Maschine hat vier Designs verfügbar",
+              "es": "Esta máquina tiene cuatro diseños disponibles"
             }
           }
         ]
@@ -115,18 +125,21 @@
     {
       "question": {
         "en": "How much does a souvenir coin cost?",
-        "de": "Wie viel kostet eine Souvenirmünze?"
+        "de": "Wie viel kostet eine Souvenirmünze?",
+        "es": "¿Cuánto cuesta una moneda de recuerdo?"
       },
       "id": "charge",
       "render": {
         "en": "A souvenir coins costs {charge}",
-        "de": "Eine Souvenirmünze kostet {charge}"
+        "de": "Eine Souvenirmünze kostet {charge}",
+        "es": "Una moneda de recuerdo cuesta {charge}"
       },
       "freeform": {
         "key": "charge",
         "placeholder": {
           "en": "Cost (e.g. 2 EUR)",
-          "de": "Kosten (z.B. 2 EUR)"
+          "de": "Kosten (z.B. 2 EUR)",
+          "es": "Coste (ej. 2 EUR)"
         }
       },
       "mappings": [
@@ -134,7 +147,8 @@
           "if": "charge=2 EUR",
           "then": {
             "en": "A souvenir coin costs 2 euro",
-            "de": "Eine Souvenirmünze kostet 2 Euro"
+            "de": "Eine Souvenirmünze kostet 2 Euro",
+            "es": "Una moneda de recuerdo cuesta 2 euros"
           },
           "hideInAnswer": "_currency!~.*EUR.*"
         }
@@ -144,7 +158,8 @@
     {
       "question": {
         "en": "Is this machine located indoors?",
-        "de": "Ist diese Maschine im Innenbereich?"
+        "de": "Ist diese Maschine im Innenbereich?",
+        "es": "¿Está esta máquina ubicada en interiores?"
       },
       "id": "indoor",
       "mappings": [
@@ -152,14 +167,16 @@
           "if": "indoor=yes",
           "then": {
             "en": "This machine is located indoors.",
-            "de": "Diese Maschine befindet sich im Innenbereich."
+            "de": "Diese Maschine befindet sich im Innenbereich.",
+            "es": "Esta máquina está ubicada en interiores."
           }
         },
         {
           "if": "indoor=no",
           "then": {
             "en": "This machine is located outdoors.",
-            "de": "Diese Maschine befindet sich im Freien."
+            "de": "Diese Maschine befindet sich im Freien.",
+            "es": "Esta máquina está ubicada en exteriores."
           }
         }
       ]

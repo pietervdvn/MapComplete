@@ -69,7 +69,7 @@ export class PrevalidateLayer extends DesugaringStep<LayerConfigJson> {
                     context
                         .enters("source", "osmTags")
                         .err(
-                            "The source states tags which give a very wide selection: it only uses negative expressions, which will result in too much and unexpected data. Add at least one required tag. The tags are:\n\t" +
+                            "The tags that will be used to load data from OpenStreetMap are all negative - this means that they all match something that _doesn't_ have a certain tag. For example, `key=` means anything without `key`. Did you perhaps mean to use `key~*`, meaning anything _with_ this key set? The tags are:\n\t" +
                                 osmTags.asHumanString(false, false, {})
                         )
                 }

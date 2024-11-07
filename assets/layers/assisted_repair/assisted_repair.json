@@ -3,12 +3,14 @@
   "name": {
     "en": "Repair cafés and assisted repair workshops",
     "de": "Repair-Cafés und unterstützte Reparaturwerkstätten",
-    "cs": "Opravárenské kavárny a asistované opravárenské dílny"
+    "cs": "Opravárenské kavárny a asistované opravárenské dílny",
+    "es": "Cafés de reparación y talleres de reparación asistida"
   },
   "description": {
     "en": "A self-assisted workshop is a location where people can come and repair their goods with help of volunteers and with the tools available at the given location.  A repair café is a type of event organized regularly along the same principles.",
     "de": "Eine Selbsthilfewerkstatt ist ein Ort, an dem Menschen ihre Gegenstände mit Hilfe von Freiwilligen und den vor Ort verfügbaren Werkzeugen reparieren können. Ein Repair-Café ist eine Art von Veranstaltung, die regelmäßig nach denselben Prinzipien organisiert wird.",
-    "cs": "Svépomocná dílna je místo, kam mohou lidé přijít a opravit si své zboží s pomocí dobrovolníků a nástrojů, které jsou na daném místě k dispozici.  Opravárenská kavárna je typ akce, která se pravidelně pořádá na stejných principech."
+    "cs": "Svépomocná dílna je místo, kam mohou lidé přijít a opravit si své zboží s pomocí dobrovolníků a nástrojů, které jsou na daném místě k dispozici.  Opravárenská kavárna je typ akce, která se pravidelně pořádá na stejných principech.",
+    "es": "Un taller de reparación asistida es un lugar donde la gente puede venir y reparar sus bienes con la ayuda de voluntarios y con las herramientas disponibles en el lugar. Un café de reparación es un tipo de evento organizado regularmente con los mismos principios."
   },
   "source": {
     "osmTags": "repair=assisted_self_service"
@@ -18,7 +20,8 @@
     "render": {
       "en": "Workshop for assisted repair",
       "de": "Werkstatt für unterstützte Reparaturen",
-      "cs": "Dílna pro asistované opravy"
+      "cs": "Dílna pro asistované opravy",
+      "es": "Taller de reparación asistida"
     },
     "mappings": [
       {
@@ -73,7 +76,8 @@
       "title": {
         "en": "an assisted repair workshop",
         "de": "Eine unterstützte Reparaturwerkstatt",
-        "cs": "asistovaná opravárenská dílna"
+        "cs": "asistovaná opravárenská dílna",
+        "es": "un taller de reparación asistida"
       },
       "tags": [
         "amenity=workshop",
@@ -82,7 +86,8 @@
       "description": {
         "en": "A location with a permanent workshop where people can come to repair items with the help of volunteers.",
         "de": "Ein Ort mit einer festen Werkstatt, in der Menschen mit Hilfe von Freiwilligen Gegenstände reparieren können.",
-        "cs": "Místo se stálou dílnou, kam mohou lidé přijít a s pomocí dobrovolníků opravovat předměty."
+        "cs": "Místo se stálou dílnou, kam mohou lidé přijít a s pomocí dobrovolníků opravovat předměty.",
+        "es": "Un lugar con un taller permanente donde la gente puede venir a reparar artículos con la ayuda de voluntarios."
       }
     }
   ],
@@ -116,7 +121,7 @@
         "en": "What type of items are repaired here?",
         "de": "Welche Art von Gegenständen wird hier repariert?",
         "cs": "Jaké předměty se zde opravují?",
-        "es": "¿Qué tipo de objetos se reparan aquí?"
+        "es": "¿Qué tipo de artículos se reparan aquí?"
       },
       "id": "item:repair",
       "mappings": [
@@ -202,7 +207,7 @@
             "en": "Clothes are repaired here",
             "de": "Kleidung wird hier repariert",
             "cs": "Zde se opravují oděvy",
-            "es": "Aquí se reparan prendas textiles"
+            "es": "Aquí se repara ropa"
           },
           "ifnot": "service:clothes:repair=no",
           "icon": "./assets/layers/recycling/clothes.svg"

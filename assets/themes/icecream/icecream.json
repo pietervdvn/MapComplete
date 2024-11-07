@@ -5,7 +5,7 @@
     "de": "Eiscreme",
     "cs": "Zmrzlina",
     "ca": "Gelat",
-    "es": "Helado",
+    "es": "Helados",
     "da": "Is",
     "it": "Gelato",
     "ru": "Мороженое",
@@ -17,7 +17,7 @@
     "de": "Eine Karte, die Eisdielen und Eisautomaten zeigt",
     "cs": "Mapa zobrazující prodej zmrzliny a automaty na zmrzlinu",
     "ca": "Un mapa que mostra les gelateries i les màquines expenedores de gelats",
-    "es": "Mapa de heladerías y máquinas expendedoras de helados",
+    "es": "Un mapa que muestra heladerías y máquinas expendedoras de helados",
     "it": "Una mappa che mostra le gelaterie e i distributori automatici di gelato"
   },
   "icon": "./assets/layers/ice_cream/ice_cream.svg",

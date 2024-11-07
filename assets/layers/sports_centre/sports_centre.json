@@ -4,13 +4,15 @@
     "en": "Sports centres",
     "de": "Sportzentren",
     "ca": "Centres esportius",
-    "cs": "Sportovní centra"
+    "cs": "Sportovní centra",
+    "es": "Centros deportivos"
   },
   "description": {
     "en": "Indoor and outdoor sports centres can be found on this layer",
     "de": "Hallen- und Freiluftsportzentren sind auf dieser Ebene zu finden",
     "ca": "En aquesta capa es poden trobar centres esportius interiors i exteriors",
-    "cs": "Na této vrstvě najdete krytá a venkovní sportovní centra"
+    "cs": "Na této vrstvě najdete krytá a venkovní sportovní centra",
+    "es": "En esta capa se pueden encontrar centros deportivos interiores y exteriores"
   },
   "source": {
     "osmTags": "leisure=sports_centre"
@@ -22,7 +24,8 @@
       "de": "Sportzentrum",
       "ca": "Centre esportiu",
       "cs": "Sportovní centrum",
-      "id": "Pusat olahraga"
+      "id": "Pusat olahraga",
+      "es": "Centro deportivo"
     },
     "mappings": [
       {
@@ -67,7 +70,8 @@
         "de": "ein Sportzentrum",
         "ca": "un centre esportiu",
         "cs": "sportovní centra",
-        "id": "pusat olahraga"
+        "id": "pusat olahraga",
+        "es": "un centro deportivo"
       },
       "tags": [
         "leisure=sports_centre"

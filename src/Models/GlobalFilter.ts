@@ -4,6 +4,10 @@ import { TagsFilter } from "../Logic/Tags/TagsFilter"
 
 export interface GlobalFilter {
     osmTags: TagsFilter
+    /**
+     * If set, this object will be shown instead of hidden, even if the layer is not displayed
+     */
+    forceShowOnMatch?: boolean,
     state: number | string | undefined
     id: string
     onNewPoint: {

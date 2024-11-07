@@ -3,12 +3,14 @@
   "name": {
     "en": "Guideposts",
     "cs": "Rozcestníky",
-    "de": "Wegweiser"
+    "de": "Wegweiser",
+    "es": "Postes indicadores"
   },
   "description": {
     "en": "Guideposts (also known as fingerposts or finger posts) are often found along official hiking/cycling/riding/skiing routes to indicate the directions to different destinations",
     "cs": "Podél oficiálních turistických/cyklistických/jezdeckých/lyžařských tras se často nacházejí rozcestníky (také známé jako ukazatel směru nebo značky), které ukazují směry k různým cílům",
-    "de": "Wegweiser (auch als Wegzeiger oder Fingerschilder bekannt) sind entlang offizieller Wander-, Radfahr-, Reit- oder Skirouten oft zu finden, um die Richtungen zu verschiedenen Zielen anzuzeigen"
+    "de": "Wegweiser (auch als Wegzeiger oder Fingerschilder bekannt) sind entlang offizieller Wander-, Radfahr-, Reit- oder Skirouten oft zu finden, um die Richtungen zu verschiedenen Zielen anzuzeigen",
+    "es": "Los postes indicadores (también conocidos como señales o hitos) a menudo se encuentran a lo largo de rutas oficiales de senderismo/ciclismo/equitación/esquí para indicar las direcciones a diferentes destinos"
   },
   "source": {
     "osmTags": "information=guidepost"
@@ -17,7 +19,8 @@
   "title": {
     "en": "Guideposts",
     "cs": "Rozcestník",
-    "de": "Wegweiser"
+    "de": "Wegweiser",
+    "es": "Postes indicadores"
   },
   "pointRendering": [
     {
@@ -38,7 +41,8 @@
       "title": {
         "en": "a guidepost",
         "cs": "rozcestník",
-        "de": "ein Wegweiser"
+        "de": "ein Wegweiser",
+        "es": "un poste indicador"
       },
       "tags": [
         "information=guidepost",
@@ -47,7 +51,8 @@
       "description": {
         "en": "A guidepost (also known as fingerpost) is often found along official hiking/cycling/riding/skiing routes to indicate the directions to different destinations",
         "cs": "Rozcestník (také známý jako ukazatel směru) se často nachází podél oficiálních turistických / cyklistických / jezdeckých / lyžařských tras, které ukazují směry k různým destinacím",
-        "de": "Ein Wegweiser (auch bekannt als Fingerschild) wird oft entlang offizieller Wander-, Radfahr-, Reit- oder Skirouten gefunden, um die Richtungen zu verschiedenen Zielen anzuzeigen"
+        "de": "Ein Wegweiser (auch bekannt als Fingerschild) wird oft entlang offizieller Wander-, Radfahr-, Reit- oder Skirouten gefunden, um die Richtungen zu verschiedenen Zielen anzuzeigen",
+        "es": "Un poste indicador (también conocido como señal) a menudo se encuentra a lo largo de rutas oficiales de senderismo/ciclismo/equitación/esquí para indicar las direcciones a diferentes destinos"
       },
       "exampleImages": [
         "./assets/layers/guidepost/guidepost_example.jpg"
@@ -61,7 +66,8 @@
       "question": {
         "en": "What kind of routes are shown on this guidepost?",
         "de": "Welche Arten von Routen werden auf diesem Wegweiser angezeigt?",
-        "fr": "Quel type d'itinéraire indique ce panneau ?"
+        "fr": "Quel type d'itinéraire indique ce panneau ?",
+        "es": "¿Qué tipo de rutas se muestran en este poste indicador?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -71,7 +77,8 @@
           "then": {
             "en": "This guidepost shows bicycle routes",
             "de": "Dieser Wegweiser zeigt Fahrradwege",
-            "fr": "Un itinéraire vélo"
+            "fr": "Un itinéraire vélo",
+            "es": "Este poste indicador muestra rutas de bicicleta"
           }
         },
         {
@@ -80,7 +87,8 @@
           "then": {
             "en": "This guidepost shows hiking routes",
             "de": "Dieser Wegweiser zeigt Wanderwege",
-            "fr": "un itinéraire de randonnée"
+            "fr": "un itinéraire de randonnée",
+            "es": "Este poste indicador muestra rutas de senderismo"
           }
         },
         {
@@ -89,7 +97,8 @@
           "then": {
             "en": "This guidepost shows mountain bike routes",
             "de": "Dieser Wegweiser zeigt Mountainbike-Routen",
-            "fr": "un itinéraire de vtt"
+            "fr": "un itinéraire de vtt",
+            "es": "Este poste indicador muestra rutas de bicicleta de montaña"
           }
         },
         {
@@ -98,7 +107,8 @@
           "then": {
             "en": "This guidepost shows horse riding routes",
             "de": "Dieser Wegweiser zeigt Reitwege",
-            "fr": "un itinéraire équestre"
+            "fr": "un itinéraire équestre",
+            "es": "Este poste indicador muestra rutas a caballo"
           }
         },
         {
@@ -107,7 +117,8 @@
           "then": {
             "en": "This guidepost shows ski routes",
             "de": "Dieser Wegweiser zeigt Skirouten",
-            "fr": "un itinéraire de pistes de ski"
+            "fr": "un itinéraire de pistes de ski",
+            "es": "Este poste indicador muestra rutas de esquí"
           }
         }
       ]

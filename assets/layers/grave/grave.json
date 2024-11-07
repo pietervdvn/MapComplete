@@ -2,11 +2,13 @@
   "id": "grave",
   "name": {
     "en": "Gravestones",
-    "de": "Grabsteine"
+    "de": "Grabsteine",
+    "es": "Lápidas"
   },
   "description": {
     "en": "Tombstones (and graves) indicate where a person was buried. On this map, those can be recorded and a link to Wikipedia can be made",
-    "de": "Grabsteine (und Gräber) zeigen an, wo eine Person begraben wurde. Auf dieser Karte können diese aufgezeichnet werden und ein Wikipedialink erstellt werden"
+    "de": "Grabsteine (und Gräber) zeigen an, wo eine Person begraben wurde. Auf dieser Karte können diese aufgezeichnet werden und ein Wikipedialink erstellt werden",
+    "es": "Las lápidas (y las tumbas) indican dónde fue enterrada una persona. En este mapa, estas pueden registrarse y se puede establecer un enlace a Wikipedia"
   },
   "source": {
     "osmTags": "historic=tomb"
@@ -15,7 +17,8 @@
   "title": {
     "render": {
       "en": "Tombstone",
-      "de": "Grabstein"
+      "de": "Grabstein",
+      "es": "Lápida"
     }
   },
   "pointRendering": [
@@ -39,7 +42,8 @@
     {
       "title": {
         "en": "a tombstone",
-        "de": "ein Grabstein"
+        "de": "ein Grabstein",
+        "es": "una lápida"
       },
       "tags": [
         "historic=tomb"
@@ -47,7 +51,8 @@
       "description": {
         "en": "A tombstone is a physical object which indicates that one or more persons are buried here. It generally has the name, birth date and death date of the person or persons as inscription.",
         "de": "Ein Grabstein ist ein physischer Gegenstand, der anzeigt, dass eine oder mehrere Personen hier begraben sind. Er trägt in der Regel den Namen, das Geburts- und das Sterbedatum der Person oder Personen als Inschrift.",
-        "uk": "Надгробок - це фізичний об'єкт, який вказує на те, що тут похована одна або кілька осіб. Як правило, на ньому викарбувано ім'я, дату народження та дату смерті особи чи осіб."
+        "uk": "Надгробок - це фізичний об'єкт, який вказує на те, що тут похована одна або кілька осіб. Як правило, на ньому викарбувано ім'я, дату народження та дату смерті особи чи осіб.",
+        "es": "Una lápida es un objeto físico que indica que una o más personas están enterradas aquí. Generalmente tiene el nombre, la fecha de nacimiento y la fecha de defunción de la persona o personas como inscripción."
       }
     }
   ],
@@ -56,12 +61,14 @@
     {
       "question": {
         "en": "What is the Wikipedia page of the person buried here?",
-        "de": "Wie lautet die Wikipedia-Seite der Person, die hier begraben ist?"
+        "de": "Wie lautet die Wikipedia-Seite der Person, die hier begraben ist?",
+        "es": "¿Cuál es la página de Wikipedia de la persona enterrada aquí?"
       },
       "id": "buried:wikidata",
       "render": {
         "en": "{wikipedia(buried:wikidata)}",
-        "de": "{wikipedia(buried:wikidata)}"
+        "de": "{wikipedia(buried:wikidata)}",
+        "es": "{wikipedia(buried:wikidata)}"
       },
       "freeform": {
         "key": "buried:wikidata",
@@ -71,12 +78,14 @@
     {
       "question": {
         "en": "What is the name of the person buried here?",
-        "de": "Wie lautet der Name der hier begrabenen Person?"
+        "de": "Wie lautet der Name der hier begrabenen Person?",
+        "es": "¿Cuál es el nombre de la persona enterrada aquí?"
       },
       "id": "name",
       "render": {
         "en": "<b>{name}</b> is buried here",
-        "de": "<b>{name}</b> ist hier begraben"
+        "de": "<b>{name}</b> ist hier begraben",
+        "es": "<b>{name}</b> está enterrado aquí"
       },
       "freeform": {
         "key": "name"
@@ -90,20 +99,23 @@
         {
           "question": {
             "en": "With or without wikidata",
-            "de": "Mit oder ohne Wikidata"
+            "de": "Mit oder ohne Wikidata",
+            "es": "Con o sin Wikidata"
           }
         },
         {
           "question": {
             "en": "Has a link to Wikidata",
-            "de": "Hat einen Link zu Wikidata"
+            "de": "Hat einen Link zu Wikidata",
+            "es": "Tiene enlace a Wikidata"
           },
           "osmTags": "buried:wikidata~*"
         },
         {
           "question": {
             "en": "Has no link to Wikidata",
-            "de": "Hat keinen Link zu Wikidata"
+            "de": "Hat keinen Link zu Wikidata",
+            "es": "No tiene enlace a Wikidata"
           },
           "osmTags": "buried:wikidata="
         }

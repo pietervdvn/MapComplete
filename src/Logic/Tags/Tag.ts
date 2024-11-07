@@ -170,8 +170,12 @@ export class Tag extends TagsFilter {
         return <any>this
     }
 
+    /**
+     * new Tag("panoramax", "").isNegative() // => true
+     * new Tag("x","y").isNegative() // => false
+     */
     isNegative(): boolean {
-        return false
+        return this.value === ""
     }
 
     visit(f: (tagsFilter: TagsFilter) => void) {

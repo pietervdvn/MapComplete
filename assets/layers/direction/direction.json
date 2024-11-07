@@ -8,7 +8,8 @@
     "ru": "Визуализация направления",
     "de": "Aufnahmewinkel der Kamera anzeigen",
     "ca": "Direcció de la visualització",
-    "cs": "Vizualizace směru"
+    "cs": "Vizualizace směru",
+    "es": "Visualización de direcciones"
   },
   "description": {
     "en": "This layer visualizes directions",
@@ -18,7 +19,8 @@
     "de": "Diese Ebene visualisiert Richtungen",
     "ru": "Этот слой визуализирует направление",
     "ca": "Aquesta capa visualitza direccions",
-    "cs": "Tato vrstva zobrazuje směry"
+    "cs": "Tato vrstva zobrazuje směry",
+    "es": "Esta capa visualiza las direcciones"
   },
   "source": {
     "osmTags": {

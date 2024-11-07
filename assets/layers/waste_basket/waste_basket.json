@@ -11,7 +11,8 @@
     "id": "Keranjang Sampah",
     "da": "Affaldskurv",
     "fr": "Poubelle",
-    "cs": "Odpadkový koš"
+    "cs": "Odpadkový koš",
+    "es": "Contenedor de basura"
   },
   "description": {
     "en": "This is a public waste basket, thrash can, where you can throw away your thrash.",
@@ -19,7 +20,7 @@
     "de": "Dies ist ein öffentlicher Abfalleimer, in den Sie Ihren Müll entsorgen können.",
     "hu": "Ez egy nyilvános szemétkosár vagy kuka, ahová kidobhatod a szemetedet.",
     "it": "Questo è un cestino, un bidone dei rifiuti pubblico, dove puoi buttare via la tua spazzatura.",
-    "es": "Esta es una papelera pública, donde puedes tirar tu basura.",
+    "es": "Este es un contenedor de basura público, donde puedes tirar tu basura.",
     "da": "Dette er en offentlig affaldskurv, en skraldespand, hvor du kan smide dit affald.",
     "fr": "C'est une poubelle dans laquelle vous pouvez jeter vos mégots.",
     "ca": "Es tracta d'una paperera pública, una paperera, on pots llençar la teva paperera.",
@@ -44,7 +45,8 @@
       "id": "Keranjang Sampah",
       "da": "Affaldskurv",
       "fr": "Poubelle",
-      "cs": "Odpadkový koš"
+      "cs": "Odpadkový koš",
+      "es": "Contenedor de basura"
     }
   },
   "pointRendering": [
@@ -83,7 +85,8 @@
         "da": "en affaldskurv",
         "ca": "una paperera",
         "fr": "une poubelle",
-        "cs": "odpadkový koš"
+        "cs": "odpadkový koš",
+        "es": "un contenedor de basura"
       },
       "presiceInput": {
         "preferredBackground": "photo"
@@ -103,7 +106,8 @@
         "da": "Hvad er det for en affaldskurv?",
         "fr": "De quel type de poubelle s'agit-il ?",
         "ca": "Quin tipus de paperera és aquesta?",
-        "cs": "Jaký druh koše na odpad je to?"
+        "cs": "Jaký druh koše na odpad je to?",
+        "es": "¿Qué tipo de contenedor de basura es este?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -118,7 +122,8 @@
             "da": "En affaldskurv til almindeligt affald",
             "ca": "Una paperera per a residus generals",
             "fr": "Une poubelle pour tout type d'ordures",
-            "cs": "Odpadkový koš na běžný odpad"
+            "cs": "Odpadkový koš na běžný odpad",
+            "es": "Un contenedor para basura general"
           },
           "hideInAnswer": true
         },
@@ -134,7 +139,8 @@
             "fr": "Une poubelle pour tout type d'ordures",
             "ca": "Una paperera per a residus generals",
             "cs": "Odpadkový koš na běžný odpad",
-            "ru": "Корзина для общих отходов"
+            "ru": "Корзина для общих отходов",
+            "es": "Un contenedor para basura general"
           }
         },
         {
@@ -149,7 +155,8 @@
             "fr": "Une poubelle pour déjections canines",
             "ca": "Una paperera per a excrements de gossos",
             "cs": "Odpadkový koš na psí exkrementy",
-            "ru": "Корзина для собачьих экскрементов"
+            "ru": "Корзина для собачьих экскрементов",
+            "es": "Un contenedor para excrementos de perro"
           }
         },
         {
@@ -164,7 +171,8 @@
             "fr": "Une poubelle pour mégots",
             "ca": "Una paperera per a cigarrets",
             "cs": "Odpadkový koš na cigarety",
-            "ru": "Корзина для сигарет"
+            "ru": "Корзина для сигарет",
+            "es": "Un contenedor para cigarrillos"
           }
         },
         {
@@ -179,7 +187,8 @@
             "ca": "Una paperera per a medicaments",
             "fr": "Une poubelle pour médicaments",
             "cs": "Odpadkový koš na léky",
-            "ru": "Корзина для наркотиков"
+            "ru": "Корзина для наркотиков",
+            "es": "Un contenedor para drogas"
           }
         },
         {
@@ -194,7 +203,8 @@
             "fr": "Une poubelle pour aiguilles et autres objets tranchants",
             "ca": "Una paperera per a agulles i altres objectes punxants",
             "cs": "Odpadkový koš na jehly a jiné ostré předměty",
-            "ru": "Корзина для иголок и других острых предметов"
+            "ru": "Корзина для иголок и других острых предметов",
+            "es": "Un contenedor para agujas y otros objetos punzantes"
           }
         },
         {
@@ -209,7 +219,8 @@
             "fr": "Une poubelle pour plastiques",
             "ca": "Una paperera per a plàstic",
             "cs": "Odpadkový koš na plasty",
-            "ru": "Корзина для пластика"
+            "ru": "Корзина для пластика",
+            "es": "Un contenedor para plástico"
           }
         },
         {
@@ -218,7 +229,8 @@
             "en": "A waste basket for plastic packaging, metal packaging and drink cartons (PMD)",
             "nl": "Een vuilnisbak voor plastic verpakkingen, metalen verpakkingen en drankpakken (PMD)",
             "de": "Ein Papierkorb für Kunststoffverpackungen, Metallverpackungen und Getränkekartons (Tetrapak)",
-            "ru": "Корзина для пластиковой упаковки, металлической упаковки и картонной упаковки из-под напитков (PMD)"
+            "ru": "Корзина для пластиковой упаковки, металлической упаковки и картонной упаковки из-под напитков (PMD)",
+            "es": "Un contenedor para envases de plástico, envases metálicos y cartones de bebidas (PMD)"
           }
         },
         {
@@ -233,7 +245,8 @@
             "fr": "Une poubelle pour papier",
             "ca": "Una paperera per a paper",
             "cs": "Odpadový koš na papír",
-            "ru": "Корзина для бумаг"
+            "ru": "Корзина для бумаг",
+            "es": "Un contenedor para papel"
           }
         }
       ]
@@ -249,7 +262,8 @@
         "da": "Har denne affaldskurv en dispenser til poser med ekskrementer til hunde?",
         "fr": "Est-ce que cette poubelle a un distributeur de sacs pour ramasser les déjections canines ?",
         "ca": "Aquesta paperera té un dispensador per a bosses per a excrements de gossos?",
-        "cs": "Má tento odpadkový koš zásobník na sáčky na psí exkrementy?"
+        "cs": "Má tento odpadkový koš zásobník na sáčky na psí exkrementy?",
+        "es": "¿Este contenedor tiene un dispensador de bolsas para excrementos de perro?"
       },
       "condition": {
         "or": [
@@ -275,7 +289,8 @@
             "da": "Denne affaldskurv har en dispenser til poser til (hunde)ekskrementer",
             "fr": "Cette poubelle a un distributeur de sacs pour ramasser les déjections canines",
             "ca": "Aquesta paperera té un dispensador per a bosses d'excrements (de gossos)",
-            "cs": "Tento odpadkový koš má zásobník na sáčky na (psí) exkrementy"
+            "cs": "Tento odpadkový koš má zásobník na sáčky na (psí) exkrementy",
+            "es": "Este contenedor tiene un dispensador de bolsas para excrementos (de perro)"
           }
         },
         {
@@ -294,7 +309,8 @@
             "da": "Denne affaldskurv <b>har ikke</b> en dispenser til poser til (hunde)ekskrementer",
             "ca": "Aquesta paperera <b>no</b> té un dispensador per a bosses d'excrements (gossos)",
             "fr": "Cette poubelle <b>n'a pas</b> un distributeur de sacs pour ramasser les déjections canines",
-            "cs": "Tento odpadkový koš <b>nemá</b> zásobník na sáčky na (psí) exkrementy"
+            "cs": "Tento odpadkový koš <b>nemá</b> zásobník na sáčky na (psí) exkrementy",
+            "es": "Este contenedor <b>no</b> tiene un dispensador de bolsas para excrementos (de perro)"
           }
         },
         {
@@ -308,7 +324,8 @@
             "da": "Denne affaldskurv <b>har ikke</b> en dispenser til poser til (hunde)ekskrementer",
             "fr": "Cette poubelle <b>n'a pas</b> de distributeur de sac pour ramasser les déjections canines",
             "ca": "Aquesta paperera <b>no</b> té un dispensador per a bosses d'excrements (gossos)",
-            "cs": "Tento odpadkový koš <b>nemá</b> zásobník na sáčky na (psí) exkrementy"
+            "cs": "Tento odpadkový koš <b>nemá</b> zásobník na sáčky na (psí) exkrementy",
+            "es": "Este contenedor <b>no</b> tiene un dispensador de bolsas para excrementos (de perro)"
           },
           "hideInAnswer": true
         }
@@ -356,7 +373,8 @@
             "da": "Affaldskurv til stoffer",
             "ca": "Paperera per a medicaments",
             "fr": "Poubelle pour médicaments",
-            "cs": "Odpadový koš pro léky"
+            "cs": "Odpadový koš pro léky",
+            "es": "Contenedor para drogas"
           },
           "osmTags": "waste~i~.*drugs.*"
         },
@@ -365,7 +383,7 @@
             "en": "Waste basket for dog excrement",
             "nl": "Vuilnisbak voor hondenuitwerpselen",
             "de": "Mülleimer für Hundekot",
-            "es": "Papelera para excrementos de perro",
+            "es": "Contenedor para excrementos de perro",
             "it": "Cestino per escrementi dei cani",
             "da": "Affaldskurv til hundeekskrementer",
             "ca": "Paperera per a excrements de gossos",
@@ -379,7 +397,7 @@
             "en": "Waste basket for trash",
             "nl": "Vuilnisbak voor zwerfvuil",
             "de": "Mülleimer für allgemeinen Müll",
-            "es": "Papelera para basura",
+            "es": "Contenedor para basura",
             "it": "Cestino per la spazzatura",
             "da": "Affaldskurv til affald",
             "ca": "Paperera per a brossa",
@@ -397,7 +415,8 @@
             "da": "Affaldskurv til spidse og skarpe genstande",
             "ca": "Paperera per a objectes punxants",
             "fr": "Poubelle pour objets tranchants",
-            "cs": "Odpadkový koš na ostré předměty"
+            "cs": "Odpadkový koš na ostré předměty",
+            "es": "Contenedor para objetos punzantes"
           },
           "osmTags": "waste~i~.*sharps.*"
         },
@@ -406,7 +425,7 @@
             "en": "Waste basket for plastic",
             "nl": "Vuilnisbak voor plastic",
             "de": "Mülleimer für Plastik",
-            "es": "Papelera para plástico",
+            "es": "Contenedor para plástico",
             "it": "Cestino per la plastica",
             "da": "Affaldskurv til plast",
             "ca": "Paperera per a plàstics",
@@ -419,7 +438,8 @@
           "question": {
             "en": "Waste basket for plastic packaging, metal packaging and drink cartons (PMD)",
             "nl": "Vuilnisbak voor plastic verpakkingen, metalen verpakkingen en drankpakken (PMD)",
-            "de": "Papierkorb für Kunststoffverpackungen, Metallverpackungen und Getränkekartons (Tetrapak)"
+            "de": "Papierkorb für Kunststoffverpackungen, Metallverpackungen und Getränkekartons (Tetrapak)",
+            "es": "Contenedor para envases de plástico, envases metálicos y cartones de bebidas (PMD)"
           },
           "osmTags": "waste~i~.*pmd.*"
         },
@@ -427,7 +447,8 @@
           "question": {
             "en": "Waste basket for paper",
             "nl": "Vuilnisbak voor papier",
-            "de": "Papierkorb für Papier"
+            "de": "Papierkorb für Papier",
+            "es": "Contenedor para papel"
           },
           "osmTags": "waste~i~.*paper.*"
         }
@@ -441,7 +462,7 @@
             "en": "Waste basket with dispenser for (dog) excrement bags",
             "nl": "Vuilnisbak met verdeler voor hondenpoepzakjes",
             "de": "Abfalleimer mit Spender für (Hunde-)Kotbeutel",
-            "es": "Papelera con dispensador de bolsas de excrementos (para perros)",
+            "es": "Contenedor con dispensador de bolsas para excrementos (de perro)",
             "it": "Cestino per rifiuti con dispenser per sacchetti per escrementi dei cani",
             "da": "Affaldskurv med dispenser til poser til (hunde)ekskrementer",
             "ca": "Papereres amb dispensador de bosses d'excrements (per a gossos)",

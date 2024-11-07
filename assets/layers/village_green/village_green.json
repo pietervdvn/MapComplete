@@ -8,7 +8,8 @@
     "nl": "Een laag die dorpsgroen toont (gemeenschapsgroen, maar niet echt een park)",
     "de": "Eine Ebene mit Dorfangern (kommunale Grünflächen, aber nicht wirklich Parks)",
     "ca": "Una capa que mostra “village-green” (que són zones verdes comunals, però no parcs del tot)",
-    "cs": "Vrstva zobrazující městskou zeleň (což jsou společné zelené plochy, ale ne tak docela parky)"
+    "cs": "Vrstva zobrazující městskou zeleň (což jsou společné zelené plochy, ale ne tak docela parky)",
+    "es": "Una capa que muestra zonas verdes (que son áreas verdes comunitarias, pero no exactamente parques)"
   },
   "source": {
     "osmTags": "landuse=village_green"

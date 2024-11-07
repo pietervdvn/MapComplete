@@ -3,7 +3,8 @@
   "description": {
     "en": "Priviliged layer showing the search results",
     "de": "Priorisierte Ebene, die Suchergebnissen anzeigt",
-    "cs": "Soukromá vrstva zobrazující výsledky hledání"
+    "cs": "Soukromá vrstva zobrazující výsledky hledání",
+    "es": "Capa privilegiada que muestra los resultados de la búsqueda"
   },
   "source": "special",
   "title": "{display_name}",
@@ -13,7 +14,8 @@
       "render": {
         "en": "Search result",
         "de": "Suchergebnis",
-        "cs": "Výsledek hledání"
+        "cs": "Výsledek hledání",
+        "es": "Resultado de búsqueda"
       }
     },
     {
