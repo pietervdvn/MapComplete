@@ -2,6 +2,36 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.47.9](https://github.com/pietervdvn/mapcomplete/compare/v0.47.8...v0.47.9) (2024-11-07)
+
+
+### Features
+
+* **filters:** show tags that are filtered on, deal with multi-answer tags to allow having this option with auto-filters ([69a6ec6](https://github.com/pietervdvn/mapcomplete/commits69a6ec6b0291bf1a5ec0bdcece605c7cf9f6ea0a))
+
+
+### Bug Fixes
+
+* better support for complicated regex tags ([b4817f7](https://github.com/pietervdvn/mapcomplete/commitsb4817f7a7faafffe716619a4d6908c013d58efd6))
+* build ([70612f1](https://github.com/pietervdvn/mapcomplete/commits70612f1c12ef69209205a29828694c16a9bbc177))
+* build by fixing licenses ([62936b9](https://github.com/pietervdvn/mapcomplete/commits62936b916b238f7ddf4edb841383d4e2cb1bf3da))
+* deal with dashes in the path ([5127609](https://github.com/pietervdvn/mapcomplete/commits51276091203d48cecb154271e69be0ce784ed01d))
+* fix build by having correct regextag.asJson() ([0dd96f4](https://github.com/pietervdvn/mapcomplete/commits0dd96f469b8ed7fd83da4543998b0b473bcc2206))
+* fix fediverse link ([3683780](https://github.com/pietervdvn/mapcomplete/commits3683780f9d19016ee0972cffb6ee55997a0b60c5))
+* hide items if the layer is disabled and favourites is enabled ([7bdd308](https://github.com/pietervdvn/mapcomplete/commits7bdd30879b870406cf5ebf3a23edfc3fbeb52a47))
+* increase timeout when opening a new POI ([e8e4ae1](https://github.com/pietervdvn/mapcomplete/commitse8e4ae1f47514b1b7769e701bdf5a7581c231aa8))
+* show favourites in loaded layers if favourites are enabled ([e65f61d](https://github.com/pietervdvn/mapcomplete/commitse65f61d2962eba8301afa51e27f0e085e8db2ff7))
+* when using Chronic, check the `aslong` condition before actually running instead of using it to reset the clock. ([10e9416](https://github.com/pietervdvn/mapcomplete/commits10e9416f8f1abe4cda334242821157bd7c486986))
+
+
+### Theme improvements
+
+* **education:** add images, move contact information up ([d77bb7e](https://github.com/pietervdvn/mapcomplete/commitsd77bb7e22525aef3b64ce3a9aa57a39351ebb441))
+* **memorial:** add filter on type of memorial, remove obsolete 'memorial:type=stolperstein' ([1415fcd](https://github.com/pietervdvn/mapcomplete/commits1415fcdfecb4be757ea9611b08a1b473e5d50be7))
+* **playgrounds:** don't show counts for small POI, only for playgrounds; make icons smaller ([f3335c9](https://github.com/pietervdvn/mapcomplete/commitsf3335c93711bd224ad3dfa611b95a40039596746))
+* **postboxes:** add contact info, add condition for post partner ([8fcc747](https://github.com/pietervdvn/mapcomplete/commits8fcc747370fab69e93fac2e00c1886261cb6e08f))
+* **postboxes:** add option to snap to wall and rendering, add "operator" to post boxes ([f7b5db9](https://github.com/pietervdvn/mapcomplete/commitsf7b5db9ec34676f834a3b2d8966649f09b34c1b1))
+
 ### [0.47.8](https://github.com/pietervdvn/mapcomplete/compare/v0.47.7...v0.47.8) (2024-11-01)
 
 
