@@ -58,7 +58,7 @@ export default class DeleteConfig {
             } else if (json.omitDefaultDeleteReasons) {
                 const forbidden = <string[]>json.omitDefaultDeleteReasons
                 deleteReasons = deleteReasons.filter(
-                    (dl) => forbidden.indexOf(dl.changesetMessage) < 0,
+                    (dl) => forbidden.indexOf(dl.changesetMessage) < 0
                 )
             }
             for (const defaultDeleteReason of deleteReasons) {
@@ -90,7 +90,7 @@ export default class DeleteConfig {
         if (json.softDeletionTags !== undefined) {
             this.softDeletionTags = TagUtils.Tag(
                 json.softDeletionTags,
-                `${context}.softDeletionTags`,
+                `${context}.softDeletionTags`
             )
         }
 

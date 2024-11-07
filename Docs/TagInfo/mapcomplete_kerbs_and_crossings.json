@@ -657,18 +657,87 @@
     },
     {
       "key": "crossing",
-      "description": "Layer 'Crossings' shows crossing=unmarked with a fixed text, namely 'Crossing without crossing markings' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if highway=crossing)",
+      "description": "Layer 'Crossings' shows crossing=unmarked with a fixed text, namely 'Crossing without crossing markings' (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if highway=crossing)",
       "value": "unmarked"
     },
     {
-      "key": "crossing_ref",
-      "description": "Layer 'Crossings' shows crossing_ref=zebra with a fixed text, namely 'This is a zebra crossing' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') (This is only shown if crossing=uncontrolled)",
+      "key": "crossing:markings",
+      "description": "Layer 'Crossings' shows and asks freeform values for key 'crossing:markings' (in the mapcomplete.org theme 'Kerbs and crossings')"
+    },
+    {
+      "key": "crossing:markings",
+      "description": "Layer 'Crossings' shows crossing:markings=no with a fixed text, namely 'This crossing has no markings' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings')",
+      "value": "no"
+    },
+    {
+      "key": "crossing:markings",
+      "description": "Layer 'Crossings' shows crossing:markings=zebra with a fixed text, namely 'This crossing has zebra markings' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings')",
       "value": "zebra"
     },
     {
-      "key": "crossing_ref",
-      "description": "Layer 'Crossings' shows crossing_ref= with a fixed text, namely 'This is not a zebra crossing' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings') Picking this answer will delete the key crossing_ref. (This is only shown if crossing=uncontrolled)",
-      "value": ""
+      "key": "crossing:markings",
+      "description": "Layer 'Crossings' shows crossing:markings=yes with a fixed text, namely 'This crossing has markings of an unknown type' (in the mapcomplete.org theme 'Kerbs and crossings')",
+      "value": "yes"
+    },
+    {
+      "key": "crossing:markings",
+      "description": "Layer 'Crossings' shows crossing:markings=lines with a fixed text, namely 'This crossings has lines on either side of the crossing' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings')",
+      "value": "lines"
+    },
+    {
+      "key": "crossing:markings",
+      "description": "Layer 'Crossings' shows crossing:markings=ladder with a fixed text, namely 'This crossing has lines on either side of the crossing, along with bars connecting them' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings')",
+      "value": "ladder"
+    },
+    {
+      "key": "crossing:markings",
+      "description": "Layer 'Crossings' shows crossing:markings=dashes with a fixed text, namely 'This crossing has dashed lines on either sides of the crossing' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings')",
+      "value": "dashes"
+    },
+    {
+      "key": "crossing:markings",
+      "description": "Layer 'Crossings' shows crossing:markings=dots with a fixed text, namely 'This crossing has dotted lines on either sides of the crossing' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings')",
+      "value": "dots"
+    },
+    {
+      "key": "crossing:markings",
+      "description": "Layer 'Crossings' shows crossing:markings=surface with a fixed text, namely 'This crossing is marked by using a different coloured surface' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings')",
+      "value": "surface"
+    },
+    {
+      "key": "crossing:markings",
+      "description": "Layer 'Crossings' shows crossing:markings=ladder:skewed with a fixed text, namely 'This crossing has lines on either side of the crossing, along with angled bars connecting them' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings')",
+      "value": "ladder:skewed"
+    },
+    {
+      "key": "crossing:markings",
+      "description": "Layer 'Crossings' shows crossing:markings=zebra:paired with a fixed text, namely 'This crossing has zebra markings with an interruption in every bar' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings')",
+      "value": "zebra:paired"
+    },
+    {
+      "key": "crossing:markings",
+      "description": "Layer 'Crossings' shows crossing:markings=zebra:bicolour with a fixed text, namely 'This crossing has zebra markings in alternating colours' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings')",
+      "value": "zebra:bicolour"
+    },
+    {
+      "key": "crossing:markings",
+      "description": "Layer 'Crossings' shows crossing:markings=zebra:double with a fixed text, namely 'This crossing has double zebra markings' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings')",
+      "value": "zebra:double"
+    },
+    {
+      "key": "crossing:markings",
+      "description": "Layer 'Crossings' shows crossing:markings=pictograms with a fixed text, namely 'This crossing has pictograms on the road' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings')",
+      "value": "pictograms"
+    },
+    {
+      "key": "crossing:markings",
+      "description": "Layer 'Crossings' shows crossing:markings=ladder:paired with a fixed text, namely 'This crossing has lines on either side of the crossing, along with bars connecting them, with an interruption in every bar' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings')",
+      "value": "ladder:paired"
+    },
+    {
+      "key": "crossing:markings",
+      "description": "Layer 'Crossings' shows crossing:markings=lines:paired with a fixed text, namely 'This crossing has double lines on either side of the crossing' and allows to pick this as a default answer (in the mapcomplete.org theme 'Kerbs and crossings')",
+      "value": "lines:paired"
     },
     {
       "key": "bicycle",

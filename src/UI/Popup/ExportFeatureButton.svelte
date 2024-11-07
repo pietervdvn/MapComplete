@@ -1,5 +1,4 @@
 <script lang="ts">
-
   import ArrowDownTray from "@babeard/svelte-heroicons/mini/ArrowDownTray"
   import Tr from "../Base/Tr.svelte"
   import Translations from "../i18n/Translations"
@@ -20,23 +19,21 @@
   export let extension: string
   export let maintext: Translation
   export let helpertext: Translation
-  export let construct: (feature: Feature, title: string) => (Blob | string)
+  export let construct: (feature: Feature, title: string) => Blob | string
   function exportGpx() {
     console.log("Exporting as GPX!")
     const tgs = tags.data
     const title = layer.title?.GetRenderValue(tgs)?.Subs(tgs)?.txt ?? "gpx_track"
     const data = construct(feature, title)
-    Utils.offerContentsAsDownloadableFile(data, title + "_mapcomplete_export."+extension, {
+    Utils.offerContentsAsDownloadableFile(data, title + "_mapcomplete_export." + extension, {
       mimetype,
     })
   }
-
 </script>
 
-
 <button class="w-full" on:click={() => exportGpx()}>
-  <ArrowDownTray class="w-11 h-11 mr-2"/>
-  <div class="flex flex-col items-start w-full">
+  <ArrowDownTray class="mr-2 h-11 w-11" />
+  <div class="flex w-full flex-col items-start">
     <Tr t={maintext} cls="font-bold text-lg" />
     <Tr t={helpertext} cls="subtle text-start" />
   </div>

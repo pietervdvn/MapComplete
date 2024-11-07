@@ -7,6 +7,7 @@ All infrastructure that someone can cycle over, accompanied with questions about
  - This layer is shown at zoomlevel **16** and higher
  - This layer is needed as dependency for layer [barrier](#barrier)
  - This layer is needed as dependency for layer [crossings](#crossings)
+ - This layer is needed as dependency for layer [cyclist_waiting_aid](#cyclist_waiting_aid)
  - This layer is needed as dependency for layer [kerbs](#kerbs)
  - This layer is needed as dependency for layer [rainbow_crossings](#rainbow_crossings)
  - This layer is needed as dependency for layer [crossings_no_traffic_lights](#crossings_no_traffic_lights)

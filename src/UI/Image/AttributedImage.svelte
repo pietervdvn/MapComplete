@@ -37,12 +37,12 @@
       if (!shown) {
         previewedImage.set(undefined)
       }
-    }),
+    })
   )
   onDestroy(
     previewedImage.addCallbackAndRun((previewedImage) => {
       showBigPreview.set(previewedImage?.id === image.id)
-    }),
+    })
   )
 
   function highlight(entered: boolean = true) {
@@ -129,8 +129,6 @@
           <MagnifyingGlassPlusIcon class="h-8 w-8 cursor-zoom-in pl-3 pb-3" color="white" />
         </div>
       {/if}
-
-
     </div>
     <div class="absolute bottom-0 left-0">
       <ImageAttribution {image} {attributionFormat} />

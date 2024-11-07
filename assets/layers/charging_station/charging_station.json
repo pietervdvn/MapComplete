@@ -75,8 +75,8 @@
     "nl": "Oplaadpunten",
     "ca": "Una estació de càrrega",
     "de": "Eine Ladestation",
-    "fr": "Une station de recharge",
-    "es": "Un punto de carga"
+    "es": "Un punto de carga",
+    "fr": "Une station de recharge"
   },
   "#": "no-question-hint-check",
   "tagRenderings": [
@@ -89,8 +89,8 @@
         "nl": "Welke voertuigen kunnen hier opgeladen worden?",
         "ca": "Quins vehicles tenen permesa la càrrega aquí?",
         "de": "Welche Fahrzeuge können hier laden?",
-        "pl": "Jakie pojazdy mogą być tutaj ładowane?",
-        "es": "¿Qué vehículos pueden cargar aquí?"
+        "es": "¿Qué vehículos pueden cargar aquí?",
+        "pl": "Jakie pojazdy mogą być tutaj ładowane?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -102,8 +102,8 @@
             "nl": "<b>Elektrische fietsen</b> kunnen hier opgeladen worden",
             "ca": "Aquí es poden carregar <b>bicicletes</b>",
             "de": "Hier können <b>Fahrräder</b> laden",
-            "pl": "Mogą tutaj być ładowane <b>rowery</b>",
-            "es": "Aquí se pueden cargar <b>bicicletas</b>"
+            "es": "Aquí se pueden cargar <b>bicicletas</b>",
+            "pl": "Mogą tutaj być ładowane <b>rowery</b>"
           }
         },
         {
@@ -114,8 +114,8 @@
             "nl": "<b>Elektrische auto's</b> kunnen hier opgeladen worden",
             "ca": "Aquí es poden carregar <b>cotxes</b>",
             "de": "Hier können <b>Autos</b> laden",
-            "pl": "Mogą tutaj być ładowane <b>samochody</b>",
-            "es": "Aquí se pueden cargar <b>coches</b>"
+            "es": "Aquí se pueden cargar <b>coches</b>",
+            "pl": "Mogą tutaj być ładowane <b>samochody</b>"
           }
         },
         {
@@ -126,8 +126,8 @@
             "nl": "<b>Elektrische scooters</b> (snorfiets of bromfiets) kunnen hier opgeladen worden",
             "ca": "Aquí es poden carregar <b>Scooters</b>",
             "de": "Hier können <b>Roller</b> laden",
-            "pl": "Mogą być tutaj ładowane <b>hulajnogi<b>",
-            "es": "Aquí se pueden cargar <b>patinetes</b>"
+            "es": "Aquí se pueden cargar <b>patinetes</b>",
+            "pl": "Mogą być tutaj ładowane <b>hulajnogi<b>"
           }
         },
         {
@@ -149,8 +149,8 @@
             "nl": "<b>Bussen</b> kunnen hier opgeladen worden",
             "ca": "Aquí es poden carregar <b>autobusos</b>",
             "de": "Hier können <b>Busse</b> laden",
-            "pl": "Mogą być tutaj ładowane <b>autobusy</b>",
-            "es": "Aquí se pueden cargar <b>autobuses</b>"
+            "es": "Aquí se pueden cargar <b>autobuses</b>",
+            "pl": "Mogą być tutaj ładowane <b>autobusy</b>"
           }
         }
       ]
@@ -162,8 +162,8 @@
         "nl": "Wie mag er dit oplaadpunt gebruiken?",
         "ca": "Qui pot utilitzar aquesta estació de càrrega?",
         "de": "Wer darf diese Ladestation benutzen?",
-        "pl": "Kto może używać tej stacji ładowania?",
-        "es": "¿Quién puede usar este punto de carga?"
+        "es": "¿Quién puede usar este punto de carga?",
+        "pl": "Kto może używać tej stacji ładowania?"
       },
       "render": {
         "en": "Access is {access}",
@@ -187,8 +187,8 @@
             "nl": "Toegankelijk voor iedereen (mogelijks met aanmelden en/of te betalen)",
             "ca": "Qualsevol persona pot utilitzar aquesta estació de recàrrega (pot ser calgui un pagament)",
             "de": "Jeder kann die Station nutzen (eventuell gegen Bezahlung)",
-            "pl": "Każdy może używać tej stacji ładowania (opłata może być wymagana)",
-            "es": "Cualquiera puede usar este punto de carga (puede ser necesario el pago)"
+            "es": "Cualquiera puede usar este punto de carga (puede ser necesario el pago)",
+            "pl": "Każdy może używać tej stacji ładowania (opłata może być wymagana)"
           }
         },
         {
@@ -198,8 +198,8 @@
             "nl": "Toegankelijk voor iedereen (mogelijks met aanmelden en/of te betalen)",
             "ca": "Qualsevol persona pot utilitzar aquesta estació de recàrrega (pot ser calgui un pagament)",
             "de": "Jeder kann diese Ladestation nutzen (eventuell gegen Bezahlung)",
-            "pl": "Każdy może używać tej stacji ładowania (opłata może być wymagana)",
-            "es": "Cualquiera puede usar este punto de carga (puede ser necesario el pago)"
+            "es": "Cualquiera puede usar este punto de carga (puede ser necesario el pago)",
+            "pl": "Każdy może używać tej stacji ładowania (opłata może być wymagana)"
           },
           "hideInAnswer": true
         },
@@ -252,16 +252,16 @@
         "nl": "{capacity} voertuigen kunnen hier op hetzelfde moment opgeladen worden",
         "ca": "Aquí poden carregar {capacity} vehicles a l'hora",
         "de": "Hier können {capacity} Fahrzeuge gleichzeitig laden",
-        "pl": "{capacity} pojazdów może być tutaj ładowanych jednocześnie",
-        "es": "{capacity} vehículos se pueden cargar aquí al mismo tiempo"
+        "es": "{capacity} vehículos se pueden cargar aquí al mismo tiempo",
+        "pl": "{capacity} pojazdów może być tutaj ładowanych jednocześnie"
       },
       "question": {
         "en": "How much vehicles can be charged here at the same time?",
         "nl": "Hoeveel voertuigen kunnen hier opgeladen worden?",
         "ca": "Quants vehicles poden carregar a la vegada?",
         "de": "Wie viele Fahrzeuge können hier gleichzeitig laden?",
-        "pl": "Ile pojazdów może być tutaj ładowanych jednocześnie?",
-        "es": "¿Cuántos vehículos se pueden cargar aquí al mismo tiempo?"
+        "es": "¿Cuántos vehículos se pueden cargar aquí al mismo tiempo?",
+        "pl": "Ile pojazdów może być tutaj ładowanych jednocześnie?"
       },
       "freeform": {
         "key": "capacity",
@@ -2252,8 +2252,8 @@
           "nl": "Wanneer is dit oplaadpunt beschikbaar??",
           "ca": "Quan està oberta aquesta estació de càrrega?",
           "de": "Wann ist die Ladestation geöffnet?",
-          "pl": "Kiedy jest otwarta ta stacja ładowania?",
-          "es": "¿Cuándo está abierto este punto de carga?"
+          "es": "¿Cuándo está abierto este punto de carga?",
+          "pl": "Kiedy jest otwarta ta stacja ładowania?"
         }
       },
       "id": "OH"
@@ -2313,8 +2313,8 @@
             "en": "Free to use",
             "ca": "Ús gratuït",
             "de": "Kostenlose Nutzung",
-            "pl": "Darmowa",
-            "es": "De uso gratuito"
+            "es": "De uso gratuito",
+            "pl": "Darmowa"
           },
           "hideInAnswer": true
         },
@@ -2403,8 +2403,8 @@
             "nl": "Aanmelden met een lidkaart is mogelijk",
             "ca": "Autenticació mitjançant una targeta de soci",
             "de": "Authentifizierung durch eine Mitgliedskarte",
-            "fr": "Authentification par carte de membre",
-            "es": "Autenticación mediante tarjeta de socio"
+            "es": "Autenticación mediante tarjeta de socio",
+            "fr": "Authentification par carte de membre"
           }
         },
         {
@@ -2415,8 +2415,8 @@
             "nl": "Aanmelden via een applicatie is mogelijk",
             "ca": "Autenticació mitjançant una aplicació",
             "de": "Authentifizierung per App",
-            "fr": "Authentification par une application",
-            "es": "Autenticación mediante una aplicación"
+            "es": "Autenticación mediante una aplicación",
+            "fr": "Authentification par une application"
           }
         },
         {
@@ -2426,8 +2426,8 @@
             "en": "Authentication via phone call is available",
             "nl": "Aanmelden door te bellen naar een telefoonnummer is mogelijk",
             "de": "Authentifizierung per Anruf ist möglich",
-            "fr": "Authentification possible par appel téléphonique",
-            "es": "Hay disponible autenticación por llamada telefónica"
+            "es": "Hay disponible autenticación por llamada telefónica",
+            "fr": "Authentification possible par appel téléphonique"
           }
         },
         {
@@ -2437,8 +2437,8 @@
             "en": "Authentication via SMS is available",
             "nl": "Aanmelden via SMS is mogelijk",
             "de": "Authentifizierung per SMS ist möglich",
-            "fr": "Authentification possible par SMS",
-            "es": "Hay disponible autenticación por SMS"
+            "es": "Hay disponible autenticación por SMS",
+            "fr": "Authentification possible par SMS"
           }
         },
         {
@@ -2568,18 +2568,18 @@
         "nl": "Maakt deel uit van het <b>{network}</b>-netwerk",
         "ca": "Part de la xarxa <b>{network}</b>",
         "de": "Teil des Netzwerks <b>{network}</b>",
+        "es": "Parte de la red <b>{network}</b>",
         "pl": "Część sieci <b>{network}</b>",
-        "uk": "Частина мережі <b>{network}</b>",
-        "es": "Parte de la red <b>{network}</b>"
+        "uk": "Частина мережі <b>{network}</b>"
       },
       "question": {
         "en": "Is this charging station part of a network?",
         "nl": "Is dit oplaadpunt deel van een groter netwerk?",
         "ca": "Aquesta estació de càrrega forma part d'una xarxa?",
         "de": "Ist diese Ladestation Teil eines Netzwerks?",
+        "es": "¿Este punto de carga forma parte de una red?",
         "pl": "Czy ta stacja ładowania jest częścią sieci?",
-        "uk": "Чи є ця зарядна станція частиною мережі?",
-        "es": "¿Este punto de carga forma parte de una red?"
+        "uk": "Чи є ця зарядна станція частиною мережі?"
       },
       "freeform": {
         "key": "network"
@@ -2591,8 +2591,8 @@
             "en": "Not part of a bigger network, e.g. because the charging station is maintained by a local business",
             "nl": "Maakt geen deel uit van een groter netwerk, een lokale zaak of organisatie beheert dit oplaadpunt",
             "de": "Nicht Teil eines größeren Netzwerks, z. B. weil die Ladestation von einem lokalen Unternehmen betrieben wird",
-            "uk": "Не є частиною більшої мережі, наприклад, тому що зарядна станція обслуговується місцевим підприємством",
-            "es": "No forma parte de una red mayor, por ejemplo, porque el punto de carga es mantenido por un negocio local"
+            "es": "No forma parte de una red mayor, por ejemplo, porque el punto de carga es mantenido por un negocio local",
+            "uk": "Не є частиною більшої мережі, наприклад, тому що зарядна станція обслуговується місцевим підприємством"
           }
         },
         {
@@ -2601,9 +2601,9 @@
             "en": "Not part of a bigger network",
             "nl": "Maakt geen deel uit van een groter netwerk",
             "de": "Nicht Teil eines größeren Netzwerks",
+            "es": "No forma parte de una red mayor",
             "pl": "Nie jest częścią większej sieci",
-            "uk": "Не є частиною великої мережі",
-            "es": "No forma parte de una red mayor"
+            "uk": "Не є частиною великої мережі"
           },
           "hideInAnswer": true
         },
@@ -2659,8 +2659,8 @@
         "nl": "Wordt beheerd door {operator}",
         "ca": "Aquesta estació de càrrega l'opera {operator}",
         "de": "Die Station wird betrieben von {operator}",
-        "pl": "Ta stacja ładowania jest obsługiwana przez {operator}",
-        "es": "Este punto de carga es operado por {operator}"
+        "es": "Este punto de carga es operado por {operator}",
+        "pl": "Ta stacja ładowania jest obsługiwana przez {operator}"
       },
       "freeform": {
         "key": "operator"
@@ -2694,16 +2694,16 @@
         "nl": "Wat is het telefoonnummer van de beheerder van dit oplaadpunt?",
         "ca": "A quin número es pot cridar si hi ha algun problema amb aquest punt de càrrega?",
         "de": "Welche Nummer kann man anrufen, wenn es ein Problem mit dieser Ladestation gibt?",
-        "pl": "Na jaki numer można zadzwonić w przypadku problemów z tą stacją ładowania?",
-        "es": "¿A qué número se puede llamar si hay un problema con este punto de carga?"
+        "es": "¿A qué número se puede llamar si hay un problema con este punto de carga?",
+        "pl": "Na jaki numer można zadzwonić w przypadku problemów z tą stacją ładowania?"
       },
       "render": {
         "en": "In case of problems, call <a href='tel:{phone}'>{phone}</a>",
         "nl": "Bij problemen, bel naar <a href='tel:{phone}'>{phone}</a>",
         "ca": "En cas de problemes, truqueu a <a href='tel:{phone}'>{phone}</a>",
         "de": "Bei Problemen, anrufen unter <a href='tel:{phone}'>{phone}</a>",
-        "pl": "W przypadku problemów zadzwoń na <a href='tel:{phone}'>{phone}</a>",
-        "es": "En caso de problemas, llama a <a href='tel:{phone}'>{phone}</a>"
+        "es": "En caso de problemas, llama a <a href='tel:{phone}'>{phone}</a>",
+        "pl": "W przypadku problemów zadzwoń na <a href='tel:{phone}'>{phone}</a>"
       },
       "freeform": {
         "key": "phone",
@@ -2725,8 +2725,8 @@
         "nl": "Bij problemen, email naar <a href='mailto:{email}'>{email}</a>",
         "ca": "En cas de problemes, envia un email a <a href='mailto:{email}'>{email}</a>",
         "de": "Bei Problemen senden Sie bitte eine E-Mail an <a href='mailto:{email}'>{email}</a>",
-        "pl": "W przypadku problemów, wyślij emaila do <a href='mailto:{email}'>{email}</a>",
-        "es": "En caso de problemas, envía un correo electrónico a <a href='mailto:{email}'>{email}</a>"
+        "es": "En caso de problemas, envía un correo electrónico a <a href='mailto:{email}'>{email}</a>",
+        "pl": "W przypadku problemów, wyślij emaila do <a href='mailto:{email}'>{email}</a>"
       },
       "freeform": {
         "key": "email",
@@ -2759,15 +2759,15 @@
         "en": "What is the reference number of this charging station?",
         "nl": "Wat is het referentienummer van dit oplaadstation?",
         "de": "Welche Kennnummer hat die Ladestation?",
-        "pl": "Jaki jest numer referencyjny tej stacji ładowania?",
-        "es": "¿Cuál es el número de referencia de este punto de carga?"
+        "es": "¿Cuál es el número de referencia de este punto de carga?",
+        "pl": "Jaki jest numer referencyjny tej stacji ładowania?"
       },
       "render": {
         "en": "Reference number is <b>{ref}</b>",
         "nl": "Het referentienummer van dit oplaadpunt is <b>{ref}</b>",
         "de": "Die Kennziffer ist <b>{ref}</b>",
-        "pl": "Numer referencyjny to <b>{ref}</b>",
-        "es": "El número de referencia es <b>{ref}</b>"
+        "es": "El número de referencia es <b>{ref}</b>",
+        "pl": "Numer referencyjny to <b>{ref}</b>"
       },
       "freeform": {
         "key": "ref"
@@ -2800,9 +2800,9 @@
             "nl": "Dit oplaadpunt werkt",
             "ca": "Aquesta estació de càrrega funciona",
             "de": "Die Station ist in Betrieb",
+            "es": "Este punto de carga funciona",
             "fr": "Cette station de recharge fonctionne",
-            "pl": "Ta stacja ładowania działa",
-            "es": "Este punto de carga funciona"
+            "pl": "Ta stacja ładowania działa"
           }
         },
         {
@@ -2820,8 +2820,8 @@
             "nl": "Dit oplaadpunt is kapot",
             "ca": "Aquesta estació de carrega està trencada",
             "de": "Die Station ist defekt",
-            "pl": "Ta stacja ładowania jest zepsuta",
-            "es": "Este punto de carga está roto"
+            "es": "Este punto de carga está roto",
+            "pl": "Ta stacja ładowania jest zepsuta"
           }
         },
         {
@@ -2839,8 +2839,8 @@
             "nl": "Hier zal binnenkort een oplaadpunt gebouwd worden",
             "ca": "Aquí està prevista una estació de recàrrega",
             "de": "Die Station ist erst in Planung",
-            "pl": "Planowana jest tutaj stacja ładowania",
-            "es": "Aquí se planea un punto de carga"
+            "es": "Aquí se planea un punto de carga",
+            "pl": "Planowana jest tutaj stacja ładowania"
           }
         },
         {
@@ -2857,8 +2857,8 @@
             "en": "A charging station is constructed here",
             "nl": "Hier wordt op dit moment een oplaadpunt gebouwd",
             "de": "Die Station ist aktuell im Bau",
-            "pl": "Budowana jest tutaj stacja ładowania",
-            "es": "Aquí se está construyendo un punto de carga"
+            "es": "Aquí se está construyendo un punto de carga",
+            "pl": "Budowana jest tutaj stacja ładowania"
           }
         },
         {
@@ -3049,9 +3049,9 @@
             "nl": "Alle voertuigen",
             "ca": "Tots els tipus de vehicles",
             "de": "Ladestationen für alle Fahrzeugtypen",
+            "es": "Todos los tipos de vehículos",
             "fr": "Tous les types de véhicules",
-            "it": "Tutti i tipi di veicoli",
-            "es": "Todos los tipos de vehículos"
+            "it": "Tutti i tipi di veicoli"
           }
         },
         {
@@ -3060,9 +3060,9 @@
             "nl": "Oplaadpunten voor fietsen",
             "ca": "Punt de recàrrega per a bicicletes",
             "de": "Ladestationen für Fahrräder",
+            "es": "Punto de carga para bicicletas",
             "fr": "Station de recharge pour vélos",
-            "it": "Stazione di ricarica per biciclette",
-            "es": "Punto de carga para bicicletas"
+            "it": "Stazione di ricarica per biciclette"
           },
           "osmTags": "bicycle=yes"
         },
@@ -3072,9 +3072,9 @@
             "nl": "Oplaadpunten voor auto's",
             "ca": "Estació de càrrega per a cotxes",
             "de": "Ladestationen für Autos",
+            "es": "Punto de carga para coches",
             "fr": "Station de recharge pour voitures",
-            "it": "Stazione di ricarica per auto",
-            "es": "Punto de carga para coches"
+            "it": "Stazione di ricarica per auto"
           },
           "osmTags": {
             "or": [
@@ -3094,9 +3094,9 @@
             "nl": "Enkel werkende oplaadpunten",
             "ca": "Només estacions de recàrrega en funcionament",
             "de": "Nur Ladestationen in Betrieb",
+            "es": "Solo puntos de carga en funcionamiento",
             "fr": "Seulement les stations de recharge qui fonctionnent",
-            "it": "Solo stazioni di ricarica funzionanti",
-            "es": "Solo puntos de carga en funcionamiento"
+            "it": "Solo stazioni di ricarica funzionanti"
           },
           "osmTags": {
             "and": [
@@ -3116,8 +3116,8 @@
             "nl": "Alle types",
             "ca": "Tots els connectors",
             "de": "Alle Anschlüsse",
-            "it": "Tutti i connettori",
-            "es": "Todos los conectores"
+            "es": "Todos los conectores",
+            "it": "Tutti i connettori"
           }
         },
         {

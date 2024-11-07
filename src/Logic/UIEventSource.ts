@@ -9,7 +9,7 @@ export class Stores {
         const source = new UIEventSource<Date>(undefined)
 
         function run() {
-            if(asLong !== undefined && !asLong()){
+            if (asLong !== undefined && !asLong()) {
                 return
             }
             source.setData(new Date())

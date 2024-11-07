@@ -23,7 +23,14 @@
   let isDisplayed: UIEventSource<boolean> = filteredLayer.isDisplayed
 
   let isDebugging = state?.featureSwitches?.featureSwitchIsDebugging ?? new ImmutableStore(false)
-  let showTags = state?.userRelatedState?.showTags?.map(s => (s === "yes" && state?.userRelatedState?.osmConnection?.userDetails?.data?.csCount >= Constants.userJourney.tagsVisibleAt) || s === "always" || s === "full")
+  let showTags = state?.userRelatedState?.showTags?.map(
+    (s) =>
+      (s === "yes" &&
+        state?.userRelatedState?.osmConnection?.userDetails?.data?.csCount >=
+          Constants.userJourney.tagsVisibleAt) ||
+      s === "always" ||
+      s === "full"
+  )
 
   /**
    * Gets a UIEventSource as boolean for the given option, to be used with a checkbox
@@ -33,7 +40,7 @@
     return state.sync(
       (f) => f === 0,
       [],
-      (b) => (b ? 0 : undefined),
+      (b) => (b ? 0 : undefined)
     )
   }
 
@@ -72,7 +79,6 @@
                 <span class="subtle">
                   {filter.options[0].osmTags.asHumanString()}
                 </span>
-
               </Checkbox>
             {/if}
 
@@ -89,7 +95,7 @@
                     {/if}
                     <Tr t={option.question} />
                     {#if $showTags && option.osmTags !== undefined}
-                     &nbsp;({option.osmTags.asHumanString()})
+                      &nbsp;({option.osmTags.asHumanString()})
                     {/if}
                   </option>
                 {/each}

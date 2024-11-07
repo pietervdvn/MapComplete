@@ -40,6 +40,10 @@
       "description": "The layer 'Postboxes allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
+      "key": "operator",
+      "description": "Layer 'Postboxes' shows and asks freeform values for key 'operator' (in the mapcomplete.org theme 'Postbox and Post Office Map')"
+    },
+    {
       "key": "amenity",
       "description": "The MapComplete theme Postbox and Post Office Map has a layer Post offices showing features with this tag",
       "value": "post_office"

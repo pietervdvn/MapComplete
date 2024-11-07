@@ -102,12 +102,12 @@ export class TagUtils {
         "~i~~": {
             name: "Key and value should match a given regex; value is case-invariant",
             overpassSupport: true,
-            docs: "Similar to ~~, except that the value is case-invariant"
+            docs: "Similar to ~~, except that the value is case-invariant",
         },
         "!~i~~": {
             name: "Key and value should match a given regex; value is case-invariant",
             overpassSupport: true,
-            docs: "Similar to !~~, except that the value is case-invariant"
+            docs: "Similar to !~~, except that the value is case-invariant",
         },
         ":=": {
             name: "Substitute `... {some_key} ...` and match `key`",
@@ -802,7 +802,7 @@ export class TagUtils {
 
         if (tag.indexOf("~~") >= 0 || tag.indexOf("~i~~") >= 0) {
             const caseInvariant = tag.indexOf("~i~~") >= 0
-            const split =  Utils.SplitFirst(tag,  caseInvariant ? "~i~~" : "~~")
+            const split = Utils.SplitFirst(tag, caseInvariant ? "~i~~" : "~~")
             let keyRegex: RegExp
             if (split[0] === "*") {
                 keyRegex = new RegExp(".+", "i")
@@ -813,7 +813,7 @@ export class TagUtils {
             if (split[1] === "*") {
                 valueRegex = new RegExp(".+", "s")
             } else {
-                valueRegex = new RegExp("^(" + split[1] + ")$",caseInvariant ? "si": "s" )
+                valueRegex = new RegExp("^(" + split[1] + ")$", caseInvariant ? "si" : "s")
             }
             return new RegexTag(keyRegex, valueRegex)
         }

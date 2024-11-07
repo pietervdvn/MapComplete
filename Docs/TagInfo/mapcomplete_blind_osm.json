@@ -662,18 +662,87 @@
     },
     {
       "key": "crossing",
-      "description": "Layer 'Crossings' shows crossing=unmarked with a fixed text, namely 'Crossing without crossing markings' and allows to pick this as a default answer (in the mapcomplete.org theme 'OSM for the blind') (This is only shown if highway=crossing)",
+      "description": "Layer 'Crossings' shows crossing=unmarked with a fixed text, namely 'Crossing without crossing markings' (in the mapcomplete.org theme 'OSM for the blind') (This is only shown if highway=crossing)",
       "value": "unmarked"
     },
     {
-      "key": "crossing_ref",
-      "description": "Layer 'Crossings' shows crossing_ref=zebra with a fixed text, namely 'This is a zebra crossing' and allows to pick this as a default answer (in the mapcomplete.org theme 'OSM for the blind') (This is only shown if crossing=uncontrolled)",
+      "key": "crossing:markings",
+      "description": "Layer 'Crossings' shows and asks freeform values for key 'crossing:markings' (in the mapcomplete.org theme 'OSM for the blind')"
+    },
+    {
+      "key": "crossing:markings",
+      "description": "Layer 'Crossings' shows crossing:markings=no with a fixed text, namely 'This crossing has no markings' and allows to pick this as a default answer (in the mapcomplete.org theme 'OSM for the blind')",
+      "value": "no"
+    },
+    {
+      "key": "crossing:markings",
+      "description": "Layer 'Crossings' shows crossing:markings=zebra with a fixed text, namely 'This crossing has zebra markings' and allows to pick this as a default answer (in the mapcomplete.org theme 'OSM for the blind')",
       "value": "zebra"
     },
     {
-      "key": "crossing_ref",
-      "description": "Layer 'Crossings' shows crossing_ref= with a fixed text, namely 'This is not a zebra crossing' and allows to pick this as a default answer (in the mapcomplete.org theme 'OSM for the blind') Picking this answer will delete the key crossing_ref. (This is only shown if crossing=uncontrolled)",
-      "value": ""
+      "key": "crossing:markings",
+      "description": "Layer 'Crossings' shows crossing:markings=yes with a fixed text, namely 'This crossing has markings of an unknown type' (in the mapcomplete.org theme 'OSM for the blind')",
+      "value": "yes"
+    },
+    {
+      "key": "crossing:markings",
+      "description": "Layer 'Crossings' shows crossing:markings=lines with a fixed text, namely 'This crossings has lines on either side of the crossing' and allows to pick this as a default answer (in the mapcomplete.org theme 'OSM for the blind')",
+      "value": "lines"
+    },
+    {
+      "key": "crossing:markings",
+      "description": "Layer 'Crossings' shows crossing:markings=ladder with a fixed text, namely 'This crossing has lines on either side of the crossing, along with bars connecting them' and allows to pick this as a default answer (in the mapcomplete.org theme 'OSM for the blind')",
+      "value": "ladder"
+    },
+    {
+      "key": "crossing:markings",
+      "description": "Layer 'Crossings' shows crossing:markings=dashes with a fixed text, namely 'This crossing has dashed lines on either sides of the crossing' and allows to pick this as a default answer (in the mapcomplete.org theme 'OSM for the blind')",
+      "value": "dashes"
+    },
+    {
+      "key": "crossing:markings",
+      "description": "Layer 'Crossings' shows crossing:markings=dots with a fixed text, namely 'This crossing has dotted lines on either sides of the crossing' and allows to pick this as a default answer (in the mapcomplete.org theme 'OSM for the blind')",
+      "value": "dots"
+    },
+    {
+      "key": "crossing:markings",
+      "description": "Layer 'Crossings' shows crossing:markings=surface with a fixed text, namely 'This crossing is marked by using a different coloured surface' and allows to pick this as a default answer (in the mapcomplete.org theme 'OSM for the blind')",
+      "value": "surface"
+    },
+    {
+      "key": "crossing:markings",
+      "description": "Layer 'Crossings' shows crossing:markings=ladder:skewed with a fixed text, namely 'This crossing has lines on either side of the crossing, along with angled bars connecting them' and allows to pick this as a default answer (in the mapcomplete.org theme 'OSM for the blind')",
+      "value": "ladder:skewed"
+    },
+    {
+      "key": "crossing:markings",
+      "description": "Layer 'Crossings' shows crossing:markings=zebra:paired with a fixed text, namely 'This crossing has zebra markings with an interruption in every bar' and allows to pick this as a default answer (in the mapcomplete.org theme 'OSM for the blind')",
+      "value": "zebra:paired"
+    },
+    {
+      "key": "crossing:markings",
+      "description": "Layer 'Crossings' shows crossing:markings=zebra:bicolour with a fixed text, namely 'This crossing has zebra markings in alternating colours' and allows to pick this as a default answer (in the mapcomplete.org theme 'OSM for the blind')",
+      "value": "zebra:bicolour"
+    },
+    {
+      "key": "crossing:markings",
+      "description": "Layer 'Crossings' shows crossing:markings=zebra:double with a fixed text, namely 'This crossing has double zebra markings' and allows to pick this as a default answer (in the mapcomplete.org theme 'OSM for the blind')",
+      "value": "zebra:double"
+    },
+    {
+      "key": "crossing:markings",
+      "description": "Layer 'Crossings' shows crossing:markings=pictograms with a fixed text, namely 'This crossing has pictograms on the road' and allows to pick this as a default answer (in the mapcomplete.org theme 'OSM for the blind')",
+      "value": "pictograms"
+    },
+    {
+      "key": "crossing:markings",
+      "description": "Layer 'Crossings' shows crossing:markings=ladder:paired with a fixed text, namely 'This crossing has lines on either side of the crossing, along with bars connecting them, with an interruption in every bar' and allows to pick this as a default answer (in the mapcomplete.org theme 'OSM for the blind')",
+      "value": "ladder:paired"
+    },
+    {
+      "key": "crossing:markings",
+      "description": "Layer 'Crossings' shows crossing:markings=lines:paired with a fixed text, namely 'This crossing has double lines on either side of the crossing' and allows to pick this as a default answer (in the mapcomplete.org theme 'OSM for the blind')",
+      "value": "lines:paired"
     },
     {
       "key": "crossing:island",
@@ -1291,6 +1360,132 @@
       "key": "incline",
       "description": "Layer 'Stairs' shows incline=down with a fixed text, namely 'The downward direction is {direction_absolute()}' (in the mapcomplete.org theme 'OSM for the blind')",
       "value": "down"
+    },
+    {
+      "key": "information",
+      "description": "The MapComplete theme OSM for the blind has a layer Tactile Maps showing features with this tag",
+      "value": "tactile_map"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Tactile Maps' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'OSM for the blind') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Tactile Maps allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Tactile Maps allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Tactile Maps allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Tactile Maps allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Tactile Maps allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "blind:description:en",
+      "description": "Layer 'Tactile Maps' shows and asks freeform values for key 'blind:description:en' (in the mapcomplete.org theme 'OSM for the blind')"
+    },
+    {
+      "key": "braille",
+      "description": "Layer 'Tactile Maps' shows braille=yes with a fixed text, namely 'This tactile map has braille text.' and allows to pick this as a default answer (in the mapcomplete.org theme 'OSM for the blind')",
+      "value": "yes"
+    },
+    {
+      "key": "braille",
+      "description": "Layer 'Tactile Maps' shows braille=no with a fixed text, namely 'This tactile map does not have braille text.' and allows to pick this as a default answer (in the mapcomplete.org theme 'OSM for the blind')",
+      "value": "no"
+    },
+    {
+      "key": "embossed_letters",
+      "description": "Layer 'Tactile Maps' shows embossed_letters=yes with a fixed text, namely 'This tactile map has embossed letters.' and allows to pick this as a default answer (in the mapcomplete.org theme 'OSM for the blind')",
+      "value": "yes"
+    },
+    {
+      "key": "embossed_letters",
+      "description": "Layer 'Tactile Maps' shows embossed_letters=no with a fixed text, namely 'This tactile map does not have embossed letters.' and allows to pick this as a default answer (in the mapcomplete.org theme 'OSM for the blind')",
+      "value": "no"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Tactile Maps' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'OSM for the blind')"
+    },
+    {
+      "key": "contact:website",
+      "description": "Layer 'Tactile Maps' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the mapcomplete.org theme 'OSM for the blind')"
+    },
+    {
+      "key": "information",
+      "description": "The MapComplete theme OSM for the blind has a layer Tactile Models showing features with this tag",
+      "value": "tactile_model"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Tactile Models' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'OSM for the blind') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Tactile Models allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Tactile Models allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Tactile Models allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Tactile Models allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Tactile Models allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "blind:description:en",
+      "description": "Layer 'Tactile Models' shows and asks freeform values for key 'blind:description:en' (in the mapcomplete.org theme 'OSM for the blind')"
+    },
+    {
+      "key": "braille",
+      "description": "Layer 'Tactile Models' shows braille=yes with a fixed text, namely 'There is a braille description.' and allows to pick this as a default answer (in the mapcomplete.org theme 'OSM for the blind')",
+      "value": "yes"
+    },
+    {
+      "key": "braille",
+      "description": "Layer 'Tactile Models' shows braille=no with a fixed text, namely 'There is no braille description.' and allows to pick this as a default answer (in the mapcomplete.org theme 'OSM for the blind')",
+      "value": "no"
+    },
+    {
+      "key": "embossed_letters",
+      "description": "Layer 'Tactile Models' shows embossed_letters=yes with a fixed text, namely 'There are embossed letters describing the model.' and allows to pick this as a default answer (in the mapcomplete.org theme 'OSM for the blind')",
+      "value": "yes"
+    },
+    {
+      "key": "embossed_letters",
+      "description": "Layer 'Tactile Models' shows embossed_letters=no with a fixed text, namely 'There are no embossed letters describing the model.' and allows to pick this as a default answer (in the mapcomplete.org theme 'OSM for the blind')",
+      "value": "no"
+    },
+    {
+      "key": "scale",
+      "description": "Layer 'Tactile Models' shows and asks freeform values for key 'scale' (in the mapcomplete.org theme 'OSM for the blind')"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Tactile Models' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'OSM for the blind')"
+    },
+    {
+      "key": "contact:website",
+      "description": "Layer 'Tactile Models' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the mapcomplete.org theme 'OSM for the blind')"
     }
   ]
 }

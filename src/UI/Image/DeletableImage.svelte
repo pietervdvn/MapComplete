@@ -23,11 +23,13 @@
   export let state: SpecialVisualizationState
   export let tags: UIEventSource<Record<string, string>>
   let showDeleteDialog = new UIEventSource(false)
-  onDestroy(showDeleteDialog.addCallbackAndRunD(shown => {
-    if (shown) {
-      state.previewedImage.set(undefined)
-    }
-  }))
+  onDestroy(
+    showDeleteDialog.addCallbackAndRunD((shown) => {
+      if (shown) {
+        state.previewedImage.set(undefined)
+      }
+    })
+  )
 
   let reportReason = new UIEventSource<ReportReason>(REPORT_REASONS[0])
   let reportFreeText = new UIEventSource<string>(undefined)
@@ -58,12 +60,10 @@
 
   async function unlink() {
     await state?.changes?.applyAction(
-      new ChangeTagAction(tags.data.id,
-        new Tag(image.key, ""),
-        tags.data, {
-          changeType: "delete-image",
-          theme: state.theme.id,
-        }),
+      new ChangeTagAction(tags.data.id, new Tag(image.key, ""), tags.data, {
+        changeType: "delete-image",
+        theme: state.theme.id,
+      })
     )
   }
 
@@ -72,23 +72,21 @@
   const placeholder = t.placeholder.current
 </script>
 
-
 <Popup shown={showDeleteDialog}>
   <Tr slot="header" t={tu.title} />
 
-  <div class="flex flex-col sm:flex-row gap-x-4">
+  <div class="flex flex-col gap-x-4 sm:flex-row">
     <img class="w-32 sm:w-64" src={image.url} />
     <div>
-      <div class="flex flex-col justify-between h-full">
+      <div class="flex h-full flex-col justify-between">
         <Tr t={tu.explanation} />
         {#if $reported}
           <Tr cls="thanks p-2" t={t.deletionRequested} />
         {:else if image.provider.name === "panoramax"}
           <div class="my-4">
             <AccordionSingle noBorder>
-              <div slot="header" class="text-sm flex">Report inappropriate picture</div>
-              <div class="interactive p-2 flex flex-col">
-
+              <div slot="header" class="flex text-sm">Report inappropriate picture</div>
+              <div class="interactive flex flex-col p-2">
                 <h3>
                   <Tr t={t.title} />
                 </h3>
@@ -118,71 +116,57 @@
                   placeholder={$placeholder}
                 />
 
-                <button class="primary self-end" class:disabled={$reportReason === "other" && !$reportFreeText}
-                        on:click={() => requestDeletion()}>
+                <button
+                  class="primary self-end"
+                  class:disabled={$reportReason === "other" && !$reportFreeText}
+                  on:click={() => requestDeletion()}
+                >
                   <Tr t={t.requestDeletion} />
                 </button>
-
               </div>
-
             </AccordionSingle>
           </div>
         {/if}
-
       </div>
     </div>
-
   </div>
 
-  <div slot="footer" class="flex justify-end flex-wrap">
+  <div slot="footer" class="flex flex-wrap justify-end">
     <button on:click={() => showDeleteDialog.set(false)}>
       <Tr t={Translations.t.general.cancel} />
     </button>
 
-    <NextButton clss={"primary "+($reported ? "disabled" : "") } on:click={() => unlink()}>
-      <TrashIcon class="w-6 h-6 mr-2" />
+    <NextButton clss={"primary " + ($reported ? "disabled" : "")} on:click={() => unlink()}>
+      <TrashIcon class="mr-2 h-6 w-6" />
       <Tr t={tu.button} />
     </NextButton>
   </div>
-
 </Popup>
 
-<div
-  class="w-fit shrink-0 relative"
-  style="scroll-snap-align: start"
->
-  <div class="relative bg-gray-200 max-w-max flex items-center">
-
+<div class="relative w-fit shrink-0" style="scroll-snap-align: start">
+  <div class="relative flex max-w-max items-center bg-gray-200">
     <AttributedImage
       imgClass="carousel-max-height"
       {image}
       {state}
       previewedImage={state?.previewedImage}
     >
-
       <svelte:fragment slot="dot-menu-actions">
-
         <button on:click={() => ImageProvider.offerImageAsDownload(image)}>
           <DownloadIcon />
           <Tr t={Translations.t.general.download.downloadImage} />
         </button>
-        <button
-          on:click={() => showDeleteDialog.set(true)}
-          class="flex items-center"
-        >
+        <button on:click={() => showDeleteDialog.set(true)} class="flex items-center">
           <TrashIcon />
           <Tr t={tu.button} />
         </button>
       </svelte:fragment>
-
-
     </AttributedImage>
   </div>
 </div>
 
 <style>
-    :global(.carousel-max-height) {
-        max-height: var(--image-carousel-height);
-    }
+  :global(.carousel-max-height) {
+    max-height: var(--image-carousel-height);
+  }
 </style>
-

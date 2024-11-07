@@ -138,12 +138,19 @@ export default class PanoramaxImageProvider extends ImageProvider {
             }
             return data?.some(
                 (img) =>
-                    img?.status !== undefined && img?.status !== "ready" && img?.status !== "broken" && img?.status !== "hidden"
+                    img?.status !== undefined &&
+                    img?.status !== "ready" &&
+                    img?.status !== "broken" &&
+                    img?.status !== "hidden"
             )
         }
 
         Stores.Chronic(1500, () => hasLoading(source.data)).addCallback((_) => {
-            console.log("Testing panoramax URLS again as some were loading", source.data, hasLoading(source.data))
+            console.log(
+                "Testing panoramax URLS again as some were loading",
+                source.data,
+                hasLoading(source.data)
+            )
             super.getRelevantUrlsFor(tags, prefixes).then((data) => {
                 source.set(data)
                 return !hasLoading(data)
@@ -170,12 +177,12 @@ export default class PanoramaxImageProvider extends ImageProvider {
         return ["https://panoramax.mapcomplete.org", "https://panoramax.xyz"]
     }
 
-    public static getPanoramaxInstance (host: string){
+    public static getPanoramaxInstance(host: string) {
         host = new URL(host).host
-        if(new URL(this.defaultPanoramax.host).host === host){
+        if (new URL(this.defaultPanoramax.host).host === host) {
             return this.defaultPanoramax
         }
-        if(new URL(this.xyz.host).host === host){
+        if (new URL(this.xyz.host).host === host) {
             return this.xyz
         }
         return new Panoramax(host)

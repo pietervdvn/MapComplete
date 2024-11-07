@@ -554,10 +554,7 @@
             </div>
           </Popup>
 
-          <div
-            class="sticky bottom-0 flex flex-wrap justify-between"
-            style="z-index: 11"
-          >
+          <div class="sticky bottom-0 flex flex-wrap justify-between" style="z-index: 11">
             {#if $settableKeys && $isKnown && !matchesEmpty}
               <button class="as-link small text-sm" on:click={() => unknownModal.set(true)}>
                 <Tr t={Translations.t.unknown.markUnknown} />

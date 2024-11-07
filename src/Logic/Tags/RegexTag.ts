@@ -127,10 +127,9 @@ export class RegexTag extends TagsFilter {
                 return `${this.key}${invert}~${v}`
             }
             return `${this.key}${invert}~i~${v}`
-
         }
 
-        const key :string = RegexTag.source(this.key, false)
+        const key: string = RegexTag.source(this.key, false)
         return `${key}${invert}~${caseInvariant ? "i~" : ""}~${v}`
     }
 

@@ -19,7 +19,6 @@
   export let clss: string = undefined
 
   let isLoaded = new UIEventSource(false)
-
 </script>
 
 <div class={twMerge("relative h-full w-full", clss)}>
@@ -36,12 +35,11 @@
     <slot name="dot-menu-actions">
       <button
         class="no-image-background pointer-events-auto flex items-center"
-        on:click={() =>  ImageProvider.offerImageAsDownload(image)}
+        on:click={() => ImageProvider.offerImageAsDownload(image)}
       >
         <DownloadIcon class="h-6 w-6 px-2 opacity-100" />
         <Tr t={Translations.t.general.download.downloadImage} />
       </button>
-
     </slot>
   </DotMenu>
   <div

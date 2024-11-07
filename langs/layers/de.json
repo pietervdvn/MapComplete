@@ -3410,17 +3410,6 @@
                 },
                 "question": "Gibt es an diesem Übergang eine Verkehrsinsel?"
             },
-            "crossing-is-zebra": {
-                "mappings": {
-                    "0": {
-                        "then": "Dies ist ein Zebrastreifen"
-                    },
-                    "1": {
-                        "then": "Dies ist kein Zebrastreifen"
-                    }
-                },
-                "question": "Ist das ein Zebrastreifen?"
-            },
             "crossing-minimap": {
                 "mappings": {
                     "0": {

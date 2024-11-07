@@ -49,8 +49,19 @@
     }
   },
   "keywords": {
-    "en": ["post","post box","letter","letterbox"],
-    "nl": ["brieven","post","brief","brievenbus","pakjes"]
+    "en": [
+      "post",
+      "post box",
+      "letter",
+      "letterbox"
+    ],
+    "nl": [
+      "brieven",
+      "post",
+      "brief",
+      "brievenbus",
+      "pakjes"
+    ]
   },
   "pointRendering": [
     {

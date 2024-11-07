@@ -3301,6 +3301,9 @@
                     },
                     "3": {
                         "then": "Este reloj está en el suelo"
+                    },
+                    "4": {
+                        "then": "Este reloj está en el suelo"
                     }
                 },
                 "question": "¿De qué manera está montado el reloj?"
@@ -3409,17 +3412,6 @@
                     }
                 },
                 "question": "¿Este cruce tiene una isla en el medio?"
-            },
-            "crossing-is-zebra": {
-                "mappings": {
-                    "0": {
-                        "then": "Este es un paso de peatones"
-                    },
-                    "1": {
-                        "then": "Este no es un paso de peatones"
-                    }
-                },
-                "question": "¿Es este un paso de peatones?"
             },
             "crossing-minimap": {
                 "mappings": {

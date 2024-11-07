@@ -728,7 +728,7 @@ This tagrendering has labels
 | id | question | osmTags |
 -----|-----|----- |
 | shop_types.0 | *What kind of shop is this?* (default) |  |
-| shop_types.1 | Bicycle rental shop | shop=bicycle_rental |
+| shop_types.1 | Bicycle rental shop | shop=bicycle_rental | ((shop=rental & amenity=bicycle_rental)) |
 | shop_types.2 | Farm Supply Shop | shop=agrarian |
 | shop_types.3 | Liquor Store | shop=alcohol |
 | shop_types.4 | Anime / Manga Shop | shop=anime |

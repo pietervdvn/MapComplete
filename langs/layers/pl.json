@@ -1398,13 +1398,6 @@
             "render": "Zegar"
         }
     },
-    "crossings": {
-        "tagRenderings": {
-            "crossing-is-zebra": {
-                "question": "Czy to jest przejście dla pieszych typu \"zebra\"?"
-            }
-        }
-    },
     "cycle_highways": {
         "name": "ścieżki rowerowe",
         "title": {

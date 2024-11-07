@@ -2866,17 +2866,6 @@
                 },
                 "question": "Má tento přechod uprostřed ostrůvek?"
             },
-            "crossing-is-zebra": {
-                "mappings": {
-                    "0": {
-                        "then": "Toto je zebra přechod"
-                    },
-                    "1": {
-                        "then": "Tohle není zebra přechod"
-                    }
-                },
-                "question": "Jedná se o zebra přechod?"
-            },
             "crossing-minimap": {
                 "mappings": {
                     "0": {

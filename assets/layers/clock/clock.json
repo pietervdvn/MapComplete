@@ -101,8 +101,8 @@
         "support=wall_mounted"
       ],
       "title": {
-        "en": "a wall-mounted clock, mounted using a support perpendicular to the wall",
-        "nl": "een klok aan een muur, bevestigd met een steun loodrecht op de muur",
+        "en": "a wall-mounted clock",
+        "nl": "een klok aan een muur",
         "de": "eine an der Wand montierte Uhr",
         "ca": "un rellotge muntat en un paret",
         "fr": "une horloge fixée au mur",
@@ -187,7 +187,8 @@
           "if": "support=wall",
           "then": {
             "en": "This clock is mounted directly on a wall",
-            "nl": "Deze klok is rechtstreeks aan een muur bevestigd"
+            "nl": "Deze klok is rechtstreeks aan een muur bevestigd",
+            "es": "Este reloj forma parte de una cartelera"
           }
         },
         {
@@ -201,7 +202,7 @@
             "pl": "Ten zegar jest częścią bilbordu",
             "cs": "Tyto hodiny jsou součástí billboardu",
             "uk": "Цей годинник є частиною білборду",
-            "es": "Este reloj forma parte de una cartelera"
+            "es": "Este reloj está en el suelo"
           }
         },
         {

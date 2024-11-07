@@ -2364,17 +2364,6 @@
                 },
                 "question": "Est-ce que ce passage a un refuge au milieu ?"
             },
-            "crossing-is-zebra": {
-                "mappings": {
-                    "0": {
-                        "then": "C'est un passage piéton"
-                    },
-                    "1": {
-                        "then": "Ce n'est pas un passage piéton"
-                    }
-                },
-                "question": "Est-ce un passage piéton ?"
-            },
             "crossing-right-turn-through-red": {
                 "mappings": {
                     "0": {

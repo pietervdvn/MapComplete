@@ -445,10 +445,13 @@ export default class ThemeViewState implements SpecialVisualizationState {
         this.perLayer.forEach((fs, layerName) => {
             const doShowLayer = this.mapProperties.zoom.map(
                 (z) => {
-                    if ((fs.layer.isDisplayed?.data ?? true) && z >= (fs.layer.layerDef?.minzoom ?? 0)){
+                    if (
+                        (fs.layer.isDisplayed?.data ?? true) &&
+                        z >= (fs.layer.layerDef?.minzoom ?? 0)
+                    ) {
                         return true
                     }
-                    if(this.layerState.globalFilters.data.some(f => f.forceShowOnMatch)){
+                    if (this.layerState.globalFilters.data.some((f) => f.forceShowOnMatch)) {
                         return true
                     }
                     return false
@@ -993,22 +996,26 @@ export default class ThemeViewState implements SpecialVisualizationState {
             this.mapProperties.showScale.set(showScale)
         })
 
-
-        this.layerState.filteredLayers.get("favourite")?.isDisplayed?.addCallbackAndRunD(favouritesShown => {
-            const oldGlobal = this.layerState.globalFilters.data
-            const key = "show-favourite"
-            if(favouritesShown){
-                this.layerState.globalFilters.set([...oldGlobal, {
-                    forceShowOnMatch: true,
-                    id:key,
-                    osmTags: new Tag("_favourite","yes"),
-                    state: 0,
-                    onNewPoint: undefined
-                }])
-            }else{
-                this.layerState.globalFilters.set(oldGlobal.filter(gl => gl.id !== key))
-            }
-        })
+        this.layerState.filteredLayers
+            .get("favourite")
+            ?.isDisplayed?.addCallbackAndRunD((favouritesShown) => {
+                const oldGlobal = this.layerState.globalFilters.data
+                const key = "show-favourite"
+                if (favouritesShown) {
+                    this.layerState.globalFilters.set([
+                        ...oldGlobal,
+                        {
+                            forceShowOnMatch: true,
+                            id: key,
+                            osmTags: new Tag("_favourite", "yes"),
+                            state: 0,
+                            onNewPoint: undefined,
+                        },
+                    ])
+                } else {
+                    this.layerState.globalFilters.set(oldGlobal.filter((gl) => gl.id !== key))
+                }
+            })
 
         new ThemeViewStateHashActor(this)
         new MetaTagging(this)

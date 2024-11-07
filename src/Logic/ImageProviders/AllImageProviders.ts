@@ -78,7 +78,7 @@ export default class AllImageProviders {
             return undefined
         }
         const id = tags?.data?.id
-        if(this._cachedImageStores[id]){
+        if (this._cachedImageStores[id]) {
             return this._cachedImageStores[id]
         }
 

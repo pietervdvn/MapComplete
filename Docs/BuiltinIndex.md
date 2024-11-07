@@ -40,6 +40,7 @@
  - clock
  - crossings
  - cycleways_and_roads
+ - cyclist_waiting_aid
  - defibrillator
  - dentist
  - disaster_response
@@ -94,6 +95,7 @@
  - reception_desk
  - recycling
  - route_marker
+ - school
  - shelter
  - shops
  - shower
@@ -108,6 +110,8 @@
  - street_lamps
  - stripclub
  - surveillance_camera
+ - tactile_map
+ - tactile_model
  - ticket_machine
  - ticket_validator
  - toilet
@@ -211,11 +215,12 @@
  - physiotherapist
  - playground
  - recycling
- - school
  - shops
  - souvenir_coin
  - souvenir_note
  - sports_centre
+ - tactile_map
+ - tactile_model
  - tertiary_education
  - vending_machine
  - veterinary
@@ -241,7 +246,6 @@
  - kindergarten_childcare
  - physiotherapist
  - recycling
- - school
  - shops
  - sports_centre
  - tertiary_education
@@ -268,7 +272,6 @@
  - kindergarten_childcare
  - physiotherapist
  - recycling
- - school
  - shops
  - sports_centre
  - tertiary_education
@@ -319,6 +322,8 @@
  - love_hotel
  - pharmacy
  - police
+ - postoffices
+ - school
  - stripclub
  - tool_library
  - tourism_accomodation
@@ -526,6 +531,10 @@
             ### shower
 
              - climbing_gym
+            
+            ### indoor
+
+             - clock
             
             ### all_tags
 
