@@ -2,7 +2,7 @@
   "id": "maxspeed",
   "name": {
     "en": "Maxspeed",
-    "es": "Velocidad",
+    "es": "Velocidad máxima",
     "ca": "Velocitat",
     "de": "Höchstgeschwindigkeiten",
     "nl": "Maximumsnelheid",
@@ -63,7 +63,8 @@
           "fr": "Route sans nom",
           "ca": "Carretera sense nom",
           "cs": "Silnice bez názvu",
-          "pl": "Droga bez nazwy"
+          "pl": "Droga bez nazwy",
+          "es": "Carretera sin nombre"
         }
       }
     ]
@@ -118,10 +119,11 @@
         "ca": "La velocitat màxima permesa a aquesta via és {canonical(maxspeed)}",
         "fr": "La vitesse maximum autorisée sur cette route est {canonical(maxspeed)}",
         "cs": "Maximální povolená rychlost na této cestě je {canonical(maxspeed)}",
-        "pl": "Maksymalna prędkość dopuszczona na tej drodze to {canonical(maxspeed)}"
+        "pl": "Maksymalna prędkość dopuszczona na tej drodze to {canonical(maxspeed)}",
+        "es": "La velocidad máxima permitida en esta carretera es {canonical(maxspeed)}"
       },
       "question": {
-        "es": "Qué es la velocidad máxima legal uno está permitido conducir en esta carretera?",
+        "es": "¿Cuál es la velocidad máxima legal a la que se permite conducir en esta carretera?",
         "ca": "Quina és la velocitat màxima legal que es permet conduir en aquesta carretera?",
         "en": "What is the legal maximum speed one is allowed to drive on this road?",
         "de": "Wie hoch ist die zulässige Höchstgeschwindigkeit, die man auf dieser Straße fahren darf?",
@@ -149,7 +151,8 @@
             "de": "Dies ist eine Wohnstraße, auf der eine Höchstgeschwindigkeit von 20 km/h gilt",
             "fr": "C'est une zone de rencontre, avec une vitesse maximale de 20 km/h",
             "ca": "Aquest és un carrer residencial, que té una velocitat màxima de 20 km/h",
-            "cs": "Toto je obytná zóna, která má maximální rychlost 20 km/h"
+            "cs": "Toto je obytná zóna, která má maximální rychlost 20 km/h",
+            "es": "Esta es una calle residencial, que tiene una velocidad máxima de 20 km/h"
           },
           "icon": {
             "path": "./assets/layers/maxspeed/living_street_be.svg",

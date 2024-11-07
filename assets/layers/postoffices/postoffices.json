@@ -9,7 +9,7 @@
     "hu": "Posták",
     "nl": "Postkantoren",
     "ca": "Oficines de correus",
-    "es": "Oficinas de correo",
+    "es": "Oficinas de Correos",
     "fr": "Bureaux de poste",
     "nb_NO": "Postkontor",
     "cs": "Pošty"
@@ -21,7 +21,7 @@
     "id": "Layer yang menunjukkan kantor pos.",
     "hu": "Postákat megjelenítő réteg.",
     "nl": "Een laag die postkantoren toont.",
-    "es": "Una capa que muestra oficinas postales.",
+    "es": "Una capa que muestra oficinas de correos.",
     "fr": "Un claque montrant les bureaux de poste.",
     "nb_NO": "Et lag som viser postkontor.",
     "ca": "Una capa que mostra oficines postals.",
@@ -46,7 +46,7 @@
       "hu": "Posta",
       "nl": "Postkantoor",
       "ca": "Oficina postal",
-      "es": "Oficina de Correo",
+      "es": "Oficina de Correos",
       "fr": "Bureau de poste",
       "nb_NO": "Postkontor",
       "cs": "Pošta"
@@ -63,7 +63,8 @@
           "en": "Post partner at a shop",
           "de": "Postfiliale im Einzelhandel",
           "nl": "Postpartner in een winkel",
-          "cs": "Poštovní partner v obchodě"
+          "cs": "Poštovní partner v obchodě",
+          "es": "Socio postal en una tienda"
         }
       },
       {
@@ -77,7 +78,8 @@
           "en": "Post partner at {name}",
           "de": "Postfiliale im {name}",
           "ca": "Col·laborador postal a {name}",
-          "cs": "Poštovní partner v {name}"
+          "cs": "Poštovní partner v {name}",
+          "es": "Socio postal en {name}"
         }
       }
     ]
@@ -131,7 +133,7 @@
         "hu": "Posta",
         "nl": "een postkantoor",
         "ca": "una oficina de correus",
-        "es": "una oficina de correo",
+        "es": "una oficina de correos",
         "nb_NO": "et postkontor",
         "fr": "un bureau de poste",
         "cs": "pošta"
@@ -150,7 +152,7 @@
           "id": "Jam berapa kantor pos ini buka?",
           "hu": "Mikor van nyitva ez a posta?",
           "de": "Wie sind die Öffnungszeiten dieser Poststelle?",
-          "es": "¿Cuáles son las horas de apertura para esta oficina postal?",
+          "es": "¿Cuál es el horario de atención de esta oficina de correos?",
           "nl": "Wat zijn de openingsuren voor dit postkantoor?",
           "fr": "Quelles sont les heures d’ouverture de ce bureau de poste ?",
           "ca": "Quines son els horaris d'apertura per a aquesta oficina postal?",
@@ -166,7 +168,8 @@
         "de": "Ist dies ein Post-Partner?",
         "ca": "Aquesta botiga és un col·laborador postal?",
         "cs": "Jedná se o partnerskou poštu?",
-        "nl": "Is dit een postkantoor?"
+        "nl": "Is dit een postkantoor?",
+        "es": "¿Es un socio postal?"
       },
       "#condition": "If it is a post office, it'll won't be a post partner...",
       "condition": "amenity!=post_office",
@@ -178,7 +181,8 @@
             "de": "Dieses Geschäft ist ein Post-Partner",
             "ca": "Aquesta botiga és un col·laborador postal",
             "cs": "Tento obchod je poštovním partnerem",
-            "nl": "Deze winkel is een geen postkantoor, maar heeft een post- en/of pakketpunt"
+            "nl": "Deze winkel is een geen postkantoor, maar heeft een post- en/of pakketpunt",
+            "es": "Esta tienda es un socio postal"
           }
         },
         {
@@ -187,7 +191,8 @@
             "en": "This shop is not a post partner",
             "de": "Dieses Geschäft ist kein Post-Partner",
             "ca": "Aquesta botiga no és un col·laborador postal",
-            "cs": "Tento obchod není poštovním partnerem"
+            "cs": "Tento obchod není poštovním partnerem",
+            "es": "Esta tienda no es un socio postal"
           },
           "addExtraTags": [
             "was:post_office=post_partner"
@@ -200,18 +205,21 @@
       "condition": "amenity=post_office",
       "question": {
         "en": "To which brand does this post office belong?",
-        "de": "Zu welcher Marke gehört die Poststelle?"
+        "de": "Zu welcher Marke gehört die Poststelle?",
+        "es": "¿A qué marca pertenece esta oficina de correos?"
       },
       "render": {
         "en": "This is a {brand} post office",
-        "de": "Dies ist eine Poststelle von {brand}"
+        "de": "Dies ist eine Poststelle von {brand}",
+        "es": "Esta es una oficina de correos {brand}"
       },
       "freeform": {
         "type": "nsi",
         "key": "brand",
         "placeholder": {
           "en": "Brand of the post office",
-          "de": "Marke der Poststelle"
+          "de": "Marke der Poststelle",
+          "es": "Marca de la oficina de correos"
         },
         "helperArgs": [
           "amenity=post_office"
@@ -223,13 +231,15 @@
       "render": {
         "en": "This location offers services for {post_office:brand}",
         "de": "Dieser Standort bietet Dienstleistungen für {post_office:brand} an",
-        "cs": "Toto místo nabízí služby pro {post_office:brand}"
+        "cs": "Toto místo nabízí služby pro {post_office:brand}",
+        "es": "Este lugar ofrece servicios para {post_office:brand}"
       },
       "question": {
         "en": "For which brand does this location offer services?",
         "de": "Für welche Marke bietet dieser Standort Dienstleistungen an?",
         "ca": "Per a quina marca ofereix serveis aquesta localització?",
-        "cs": "Pro jakou značku nabízí toto místo služby?"
+        "cs": "Pro jakou značku nabízí toto místo služby?",
+        "es": "¿Para qué marca ofrece servicios este lugar?"
       },
       "condition": "post_office=post_partner",
       "freeform": {
@@ -246,7 +256,8 @@
             "nl": "Deze locatie biedt diensten aan voor DHL",
             "ca": "Aquesta localització ofereix serveis per a DHL",
             "cs": "Toto místo nabízí služby pro společnost DHL",
-            "uk": "У цьому приміщенні надаються послуги для DHL"
+            "uk": "У цьому приміщенні надаються послуги для DHL",
+            "es": "Este lugar ofrece servicios para DHL"
           },
           "hideInAnswer": "_country=de"
         },
@@ -258,7 +269,8 @@
             "nl": "Deze locatie biedt diensten aan voor DPD",
             "ca": "Aquesta localització ofereix serveis per a DPD",
             "cs": "Toto místo nabízí služby pro společnost DPD",
-            "uk": "У цій локації надаються послуги для DPD"
+            "uk": "У цій локації надаються послуги для DPD",
+            "es": "Este lugar ofrece servicios para DPD"
           }
         },
         {
@@ -269,7 +281,8 @@
             "nl": "Deze locatie biedt diensten aan voor GLS",
             "ca": "Aquesta localització ofereix serveis per a GLS",
             "cs": "Toto místo nabízí služby pro společnost GLS",
-            "uk": "Ця локація пропонує послуги для GLS"
+            "uk": "Ця локація пропонує послуги для GLS",
+            "es": "Este lugar ofrece servicios para GLS"
           }
         },
         {
@@ -280,7 +293,8 @@
             "nl": "Deze locatie biedt diensten aan voor UPS",
             "ca": "Aquesta localització ofereix serveis per a UPS",
             "cs": "Toto místo nabízí služby pro společnost UPS",
-            "uk": "У цьому місці надаються послуги для UPS"
+            "uk": "У цьому місці надаються послуги для UPS",
+            "es": "Este lugar ofrece servicios para UPS"
           }
         },
         {
@@ -290,7 +304,8 @@
             "de": "Dieser Standort ist ein DHL Paketshop",
             "ca": "Aquesta ubicació és una botiga DHL Paketshop",
             "cs": "Tato lokalita je DHL Paketshop",
-            "uk": "Це відділення DHL Paketshop"
+            "uk": "Це відділення DHL Paketshop",
+            "es": "Este lugar es un DHL Paketshop"
           },
           "hideInAnswer": "_country!=de"
         },
@@ -301,7 +316,8 @@
             "de": "Dieser Standort ist ein Hermes PaketShop",
             "ca": "Aquesta ubicació és una botiga Hermes PaketShop",
             "cs": "Tato lokalita je Hermes Paketshop",
-            "uk": "Ця локація є магазином Hermes PaketShop"
+            "uk": "Ця локація є магазином Hermes PaketShop",
+            "es": "Este lugar es un Hermes PaketShop"
           },
           "hideInAnswer": "_country!=de"
         },
@@ -313,7 +329,8 @@
             "nl": "Deze locatie is een PostNL-punt",
             "ca": "Aquesta ubicació és un punt PostNL",
             "cs": "Toto umístění je bod PostNL",
-            "uk": "Це місце є PostNL-пунктом"
+            "uk": "Це місце є PostNL-пунктом",
+            "es": "Este lugar es un punto de PostNL"
           },
           "hideInAnswer": {
             "and": [
@@ -329,7 +346,8 @@
             "de": "Dieser Standort bietet Dienstleistungen für bpost an",
             "nl": "Deze locatie biedt diensten aan voor bpost",
             "cs": "Toto místo nabízí služby pro společnost bpost",
-            "uk": "Ця локація пропонує послуги для bpost"
+            "uk": "Ця локація пропонує послуги для bpost",
+            "es": "Este lugar ofrece servicios para bpost"
           },
           "hideInAnswer": "_country!=be"
         }
@@ -342,14 +360,16 @@
         "de": "Mit diesen Unternehmen können Sie Briefe aufgeben: {post_office:letter_from}",
         "nl": "Je kan brieven posten met de volgende bedrijven: {post_office:letter_from}",
         "ca": "Podeu enviar cartes amb aquestes empreses: {post_office:letter_from}",
-        "cs": "U těchto společností můžete zasílat dopisy: {post_office:letter_from}"
+        "cs": "U těchto společností můžete zasílat dopisy: {post_office:letter_from}",
+        "es": "Puedes echar cartas con estas empresas: {post_office:letter_from}"
       },
       "question": {
         "en": "Can you post a letter here?",
         "de": "Können Sie hier einen Brief aufgeben?",
         "nl": "Kan je hier een brief posten?",
         "ca": "Pots enviar cartes des d'aquí?",
-        "cs": "Můžete zde poslat dopis?"
+        "cs": "Můžete zde poslat dopis?",
+        "es": "¿Puedes echar una carta aquí?"
       },
       "freeform": {
         "key": "post_office:letter_from",
@@ -363,7 +383,8 @@
             "de": "Sie können Briefe hier aufgeben",
             "nl": "Je kan hier brieven posten",
             "ca": "Pots enviar cartes des d'aquí",
-            "cs": "Zde můžete posílat dopisy"
+            "cs": "Zde můžete posílat dopisy",
+            "es": "Puedes echar cartas aquí"
           }
         },
         {
@@ -373,7 +394,8 @@
             "de": "Sie können hier keine Briefe aufgeben",
             "nl": "Je kan hier geen brieven posten",
             "ca": "No pots enviar cartes des d'aquí",
-            "cs": "Zde nemůžete posílat dopisy"
+            "cs": "Zde nemůžete posílat dopisy",
+            "es": "No puedes echar cartas aquí"
           }
         }
       ]
@@ -385,7 +407,8 @@
         "de": "Sie können Pakete mit diesen Unternehmen versenden: {post_office:parcel_from}",
         "nl": "Je kan pakketten versturen met deze bedrijven: {post_office:parcel_from}",
         "ca": "Podeu enviar paquets amb aquestes empreses: {post_office:parcel_from}",
-        "cs": "U těchto společností můžete posílat balíky: {post_office:parcel_from}"
+        "cs": "U těchto společností můžete posílat balíky: {post_office:parcel_from}",
+        "es": "Puedes enviar paquetes con estas empresas: {post_office:parcel_from}"
       },
       "question": {
         "en": "Can you send a parcel here?",
@@ -393,7 +416,8 @@
         "nl": "Kan je hier pakketten versturen?",
         "ca": "Pots enviar un paquet des d'aquí?",
         "pl": "Czy można tutaj wysłać paczkę?",
-        "cs": "Můžete zde odeslat balík?"
+        "cs": "Můžete zde odeslat balík?",
+        "es": "¿Puedes enviar un paquete aquí?"
       },
       "freeform": {
         "key": "post_office:parcel_from",
@@ -408,7 +432,8 @@
             "nl": "Je kan hier pakketten versturen",
             "ca": "Pots enviar paquets des d'aquí",
             "pl": "Można tutaj wysłać paczki",
-            "cs": "Zde můžete posílat balíky"
+            "cs": "Zde můžete posílat balíky",
+            "es": "Puedes enviar paquetes aquí"
           }
         },
         {
@@ -419,7 +444,8 @@
             "nl": "Je kan hier geen pakketten versturen",
             "ca": "No pots enviar paquets des d'aquí",
             "pl": "Nie można tutaj wysłać paczek",
-            "cs": "Zde nemůžete posílat balíky"
+            "cs": "Zde nemůžete posílat balíky",
+            "es": "No puedes enviar paquetes aquí"
           }
         }
       ]
@@ -430,13 +456,15 @@
         "en": "You can pick up parcels from these companies: {post_office:parcel_pickup}",
         "de": "Sie können Pakete von diesen Unternehmen abholen: {post_office:parcel_pickup}",
         "ca": "Podeu recollir paquets d'aquestes empreses: {post_office:parcel_pickup}",
-        "cs": "Můžete si zde vyzvednout zásilky těchto společností: {post_office:parcel_pickup}"
+        "cs": "Můžete si zde vyzvednout zásilky těchto společností: {post_office:parcel_pickup}",
+        "es": "Puedes recoger paquetes de estas empresas: {post_office:parcel_pickup}"
       },
       "question": {
         "en": "Can you pick up missed parcels here?",
         "de": "Können Sie hier verpasste Pakete abholen?",
         "ca": "Es poden recollir els paquets perduts aquí?",
-        "cs": "Můžete si zde vyzvednout zmeškané zásilky?"
+        "cs": "Můžete si zde vyzvednout zmeškané zásilky?",
+        "es": "¿Puedes recoger paquetes perdidos aquí?"
       },
       "freeform": {
         "key": "post_office:parcel_pickup",
@@ -450,7 +478,8 @@
             "de": "Hier können Sie verpasste Pakete abholen",
             "ca": "Podeu recollir els paquets perduts aquí",
             "cs": "Zmeškané zásilky si můžete vyzvednout zde",
-            "nl": "Je kunt hier gemiste pakjes ophalen"
+            "nl": "Je kunt hier gemiste pakjes ophalen",
+            "es": "Puedes recoger paquetes perdidos aquí"
           }
         },
         {
@@ -459,7 +488,8 @@
             "en": "You can't pick up missed parcels here",
             "de": "Sie können hier keine verpassten Pakete abholen",
             "ca": "No podeu recollir paquets perduts aquí",
-            "cs": "Zmeškané zásilky si zde nemůžete vyzvednout"
+            "cs": "Zmeškané zásilky si zde nemůžete vyzvednout",
+            "es": "No puedes recoger paquetes perdidos aquí"
           }
         }
       ]
@@ -469,13 +499,15 @@
       "render": {
         "en": "You can send parcels to here for pickup with these companies: {post_office:parcel_to}",
         "de": "Mit diesen Unternehmen können Sie Pakete zur Abholung hierher senden: {post_office:parcel_to}",
-        "ca": "Podeu enviar paquets aquí per recollir-los amb aquestes empreses: {post_office:parcel_to}"
+        "ca": "Podeu enviar paquets aquí per recollir-los amb aquestes empreses: {post_office:parcel_to}",
+        "es": "Puedes enviar paquetes aquí para su recogida con estas empresas: {post_office:parcel_to}"
       },
       "question": {
         "en": "Can you send parcels to here for pickup?",
         "de": "Können Sie Pakete zur Abholung hierher schicken?",
         "ca": "Pots enviar paquets aquí per a arreplegar-los?",
-        "nl": "Kun je deze plaats gebruiken als afhaalpunt?"
+        "nl": "Kun je deze plaats gebruiken als afhaalpunt?",
+        "es": "¿Puedes enviar paquetes aquí para su recogida?"
       },
       "freeform": {
         "key": "post_office:parcel_to",
@@ -488,7 +520,8 @@
             "en": "You can send parcels to here for pickup",
             "de": "Sie können Pakete zur Abholung hierher schicken",
             "ca": "Pots enviar paquets aquí per a arreplegar-los",
-            "nl": "Je kunt pakketten naar dit afhaalpunt sturen"
+            "nl": "Je kunt pakketten naar dit afhaalpunt sturen",
+            "es": "Puedes enviar paquetes aquí para su recogida"
           }
         },
         {
@@ -496,7 +529,8 @@
           "then": {
             "en": "You can't send parcels to here for pickup",
             "de": "Sie können keine Pakete zur Abholung hierher schicken",
-            "ca": "No pots enviar paquets ací per a arreplegar-los"
+            "ca": "No pots enviar paquets ací per a arreplegar-los",
+            "es": "No puedes enviar paquetes aquí para su recogida"
           }
         }
       ]
@@ -507,14 +541,16 @@
         "en": "You can buy stamps from companies: {post_office:stamps}",
         "de": "Sie können Briefmarken folgender Unternehmen kaufen: {post_office:stamps}",
         "nl": "Je kan hier postzegels kopen van de volgende bedrijven: {post_office:stamps}",
-        "cs": "Známky si můžete zakoupit u firem: {post_office:stamps}"
+        "cs": "Známky si můžete zakoupit u firem: {post_office:stamps}",
+        "es": "Puedes comprar sellos de las empresas: {post_office:stamps}"
       },
       "question": {
         "en": "Can you buy stamps here?",
         "de": "Kann man hier Briefmarken kaufen?",
         "nl": "Kan je hier postzegels kopen?",
         "ca": "Pots comprar segells aquí?",
-        "cs": "Mohu si zde zakoupit známky?"
+        "cs": "Mohu si zde zakoupit známky?",
+        "es": "¿Puedes comprar sellos aquí?"
       },
       "freeform": {
         "key": "post_office:stamps",
@@ -528,7 +564,8 @@
             "de": "Sie können hier Briefmarken kaufen",
             "nl": "Je kan hier postzegels kopen",
             "ca": "Pots comprar segells aquí",
-            "cs": "Zde si můžete zakoupit známky"
+            "cs": "Zde si můžete zakoupit známky",
+            "es": "Puedes comprar sellos aquí"
           }
         },
         {
@@ -538,7 +575,8 @@
             "de": "Sie können hier keine Briefmarken kaufen",
             "nl": "Je kan hier geen postzegels kopen",
             "ca": "No pots comprar segells aquí",
-            "cs": "Zde si nemůžete zakoupit známky"
+            "cs": "Zde si nemůžete zakoupit známky",
+            "es": "No puedes comprar sellos aquí"
           }
         }
       ]
@@ -550,7 +588,8 @@
         "nl": "Heeft dit postkantoor een bankautomaat?",
         "de": "Verfügt die Postfiliale über einen Geldautomat?",
         "ca": "Aquesta oficina postal té un caixer automàtic?",
-        "cs": "Má tato pošta bankomat?"
+        "cs": "Má tato pošta bankomat?",
+        "es": "¿Tiene esta oficina de correos un cajero automático?"
       },
       "mappings": [
         {
@@ -560,7 +599,8 @@
             "nl": "Dit postkantoor heeft een bankautomaat",
             "de": "Die Postfiliale verfügt über einen Geldautomat",
             "ca": "Aquesta oficina postal té un caixer automàtic",
-            "cs": "Tato pošta má bankomat"
+            "cs": "Tato pošta má bankomat",
+            "es": "Esta oficina de correos tiene un cajero automático"
           }
         },
         {
@@ -570,7 +610,8 @@
             "nl": "Dit postkantoor heeft <b>geen</b> bankautomaaat",
             "de": "Die Postfiliale verfügt <b>nicht</b> über einen Geldautomat",
             "ca": "Aquesta oficina postal <b>no</b> té un caixer automàtic",
-            "cs": "Tato pošta <b>nemá</b> bankomat"
+            "cs": "Tato pošta <b>nemá</b> bankomat",
+            "es": "Esta oficina de correos <b>no</b> tiene un cajero automático"
           }
         },
         {
@@ -580,7 +621,8 @@
             "nl": "Dit postkantoor heeft een bankautomaat, maar deze staat apart op de kaart aangeduid",
             "de": "Die Postfiliale verfügt über einen Geldautomat, der aber bereits separat kartiert ist",
             "ca": "Aquesta oficina postal té un caixer automàtic, però està mapejat com a un element diferent",
-            "cs": "Tato pošta má bankomat, ale je namapován jako jiná ikona"
+            "cs": "Tato pošta má bankomat, ale je namapován jako jiná ikona",
+            "es": "Esta oficina de correos tiene un cajero automático, pero está mapeado como un icono diferente"
           }
         }
       ]
@@ -594,7 +636,8 @@
         {
           "question": {
             "en": "Offers letter posting",
-            "de": "Bietet Briefpost an"
+            "de": "Bietet Briefpost an",
+            "es": "¿Ofrece envío de cartas?"
           },
           "osmTags": {
             "and": [
@@ -611,7 +654,8 @@
         {
           "question": {
             "en": "Offers parcel posting",
-            "de": "Bietet Paketaufgabe an"
+            "de": "Bietet Paketaufgabe an",
+            "es": "¿Ofrece envío de paquetes?"
           },
           "osmTags": {
             "and": [
@@ -628,7 +672,8 @@
         {
           "question": {
             "en": "Offers pickup of missed parcels",
-            "de": "Bietet die Abholung von verpassten Paketen an"
+            "de": "Bietet die Abholung von verpassten Paketen an",
+            "es": "¿Ofrece recogida de paquetes perdidos?"
           },
           "osmTags": {
             "and": [
@@ -645,7 +690,8 @@
         {
           "question": {
             "en": "Accepts pickup of parcels sent here",
-            "de": "Akzeptiert die Abholung von Paketen, die hierher geschickt werden"
+            "de": "Akzeptiert die Abholung von Paketen, die hierher geschickt werden",
+            "es": "¿Acepta la recogida de paquetes enviados aquí?"
           },
           "osmTags": {
             "and": [
@@ -662,7 +708,8 @@
         {
           "question": {
             "en": "Sells stamps",
-            "de": "Verkauft Briefmarken"
+            "de": "Verkauft Briefmarken",
+            "es": "¿Vende sellos?"
           },
           "osmTags": {
             "and": [

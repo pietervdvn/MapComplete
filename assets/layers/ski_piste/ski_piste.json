@@ -3,12 +3,14 @@
   "name": {
     "en": "Ski and snowboard pistes",
     "de": "Ski- und Snowboardpisten",
-    "fr": "Pistes de ski et de snowboard"
+    "fr": "Pistes de ski et de snowboard",
+    "es": "Pistas de esquí y snowboard"
   },
   "description": {
     "en": "Ski and snowboard pistes",
     "de": "Ski- und Snowboardpisten",
-    "fr": "Pistes de ski et de snowboard"
+    "fr": "Pistes de ski et de snowboard",
+    "es": "Pistas de esquí y snowboard"
   },
   "source": {
     "osmTags": {
@@ -28,7 +30,8 @@
     "render": {
       "en": "Ski piste {name}",
       "de": "Skipiste {name}",
-      "fr": "Piste de ski {name}"
+      "fr": "Piste de ski {name}",
+      "es": "Pista de esquí {name}"
     }
   },
   "pointRendering": [
@@ -84,7 +87,8 @@
       "question": {
         "en": "What is the difficulty of this piste?",
         "de": "Was ist der Schwierigkeitsgrad der Piste?",
-        "fr": "Quelle est la difficulté de cette piste ?"
+        "fr": "Quelle est la difficulté de cette piste ?",
+        "es": "¿Cuál es la dificultad de esta pista?"
       },
       "id": "piste_difficulty",
       "condition": "piste:type!=connection",
@@ -94,7 +98,8 @@
           "then": {
             "en": "Novice (green)",
             "de": "Anfänger (grün)",
-            "fr": "Débutant (vert)"
+            "fr": "Débutant (vert)",
+            "es": "Principiante (verde)"
           }
         },
         {
@@ -102,7 +107,8 @@
           "then": {
             "en": "Easy (blue)",
             "de": "Einfach (blau)",
-            "fr": "Facile (bleu)"
+            "fr": "Facile (bleu)",
+            "es": "Fácil (azul)"
           }
         },
         {
@@ -110,7 +116,8 @@
           "then": {
             "en": "Intermediate (red)",
             "de": "Mittel (rot)",
-            "fr": "Intermédiaire (rouge)"
+            "fr": "Intermédiaire (rouge)",
+            "es": "Intermedio (rojo)"
           }
         },
         {
@@ -118,7 +125,8 @@
           "then": {
             "en": "Advanced (black)",
             "de": "Fortgeschritten (schwarz)",
-            "fr": "Avancé (noir)"
+            "fr": "Avancé (noir)",
+            "es": "Avanzado (negro)"
           }
         },
         {
@@ -126,7 +134,8 @@
           "then": {
             "en": "Expert (orange/double black)",
             "de": "Experte (orange/doppel schwarz)",
-            "fr": "Expert (orange/double noir)"
+            "fr": "Expert (orange/double noir)",
+            "es": "Experto (naranja/doble negro)"
           }
         },
         {
@@ -134,7 +143,8 @@
           "then": {
             "en": "Freeride",
             "de": "Freeride",
-            "fr": "Hors piste"
+            "fr": "Hors piste",
+            "es": "Freeride"
           }
         }
       ]
@@ -144,7 +154,9 @@
       "render": {
         "en": "This part of the ski piste is {_length:km} kilometer long",
         "de": "Dieser Teil der Skipiste hat eine Länge von {_length:km} km",
-        "fr": "Ce tronçon de piste de ski mesure {_length:km} kilomètres de long"
+        "fr": "Ce tronçon de piste de ski mesure {_length:km} kilomètres de long",
+        "es": "Esta parte de la pista de esquí tiene {_length:km} kilómetros de largo",
+        "uk": "Ця частина лижної траси має довжину {_length:km} кілометрів"
       }
     }
   ],

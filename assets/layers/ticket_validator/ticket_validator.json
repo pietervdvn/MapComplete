@@ -4,13 +4,15 @@
     "en": "Ticket Validators",
     "de": "Fahrkartenentwerter",
     "ca": "Validadors de bitllets",
-    "cs": "Ověřovače jízdenek"
+    "cs": "Ověřovače jízdenek",
+    "es": "Validadores de billetes"
   },
   "description": {
     "en": "Find ticket validators to validate public transport tickets",
     "de": "Finden Sie Fahrkartenentwerter, um Tickets für den öffentlichen Nahverkehr zu entwerten",
     "ca": "Trobeu validadors de bitllets per validar bitllets de transport públic",
-    "cs": "Najděte validátory jízdenek pro ověření jízdenek pro veřejnou dopravu"
+    "cs": "Najděte validátory jízdenek pro ověření jízdenek pro veřejnou dopravu",
+    "es": "Encuentra validadores de billetes para validar los billetes de transporte público"
   },
   "source": {
     "osmTags": "amenity=ticket_validator"
@@ -21,7 +23,8 @@
       "en": "Ticket Validator",
       "de": "Fahrkartenentwerter",
       "ca": "Validador de bitllets",
-      "cs": "Validátor jízdenek"
+      "cs": "Validátor jízdenek",
+      "es": "Validador de billetes"
     }
   },
   "pointRendering": [
@@ -53,13 +56,15 @@
         "en": "a ticket validator",
         "de": "einen Fahrkartenentwerter",
         "ca": "un validador de bitllets",
-        "cs": "validátor jízdenek"
+        "cs": "validátor jízdenek",
+        "es": "un validador de billetes"
       },
       "description": {
         "en": "A ticket validator to validate a public transport ticket. This can be either a digital reader, reading a card or ticket, or a machine stamping or punching a ticket.",
         "de": "Ein Fahrkartenentwerter zur Entwertung einer Fahrkarte für öffentliche Verkehrsmittel. Dabei kann es sich entweder um ein digitales Lesegerät handeln, das eine Karte oder einen Fahrschein liest, oder um eine Maschine, die einen Fahrschein stempelt oder locht.",
         "ca": "Un validador de bitllets per validar un bitllet de transport públic. Pot ser un lector digital, llegir una targeta o un bitllet, o una màquina que estampa o perfora un bitllet.",
-        "cs": "Ověřovač jízdenek k ověření platnosti jízdenky na veřejnou dopravu. Může to být buď digitální čtečka, která čte kartu nebo jízdenku, nebo stroj, který jízdenku orazítkuje nebo vyrazí."
+        "cs": "Ověřovač jízdenek k ověření platnosti jízdenky na veřejnou dopravu. Může to být buď digitální čtečka, která čte kartu nebo jízdenku, nebo stroj, který jízdenku orazítkuje nebo vyrazí.",
+        "es": "Un validador de billetes para validar un billete de transporte público. Puede ser un lector digital, que lee una tarjeta o un billete, o una máquina que estampa o perfora un billete."
       }
     }
   ],
@@ -73,7 +78,9 @@
         "en": "This ticket validator is part of a barrier of type {barrier}",
         "de": "Dieser Fahrkartenentwerter ist Teil einer Zugangsbarriere vom Typ {barrier}",
         "ca": "Aquest validador de bitllets forma part d'una barrera de tipus {barrier}",
-        "cs": "Tento validátor vstupenek je součástí bariéry typu {barrier}"
+        "cs": "Tento validátor vstupenek je součástí bariéry typu {barrier}",
+        "es": "Este validador de billetes forma parte de una barrera de tipo {barrier}",
+        "uk": "Цей валідатор квитків є частиною шлагбаума типу {barrier}"
       },
       "mappings": [
         {
@@ -82,7 +89,9 @@
             "en": "This ticket validator is part of a gate",
             "de": "Dieser Fahrscheinentwerter ist Teil einer Zugangsbarriere",
             "ca": "Aquest validador de bitllets forma part d'una porta",
-            "cs": "Tento validátor jízdenek je součástí brány"
+            "cs": "Tento validátor jízdenek je součástí brány",
+            "es": "Este validador de billetes forma parte de una puerta",
+            "uk": "Цей валідатор квитків є частиною воріт"
           }
         }
       ]
@@ -93,13 +102,15 @@
         "en": "Who is the operator of this ticket validator?",
         "de": "Wer ist der Betreiber dieses Fahrkartenentwerters?",
         "ca": "Qui és l'operador d'aquest validador de bitllets?",
-        "cs": "Kdo je provozovatelem tohoto validátoru jízdenek?"
+        "cs": "Kdo je provozovatelem tohoto validátoru jízdenek?",
+        "es": "¿Quién es el operador de este validador de billetes?"
       },
       "render": {
         "en": "This ticket validator is operated by {operator}",
         "de": "Dieser Fahrkartenentwerter wird betrieben von {operator}",
         "ca": "{operator} opera aquest validador de bitllets",
-        "cs": "Tento validátor jízdenek provozuje {operator}"
+        "cs": "Tento validátor jízdenek provozuje {operator}",
+        "es": "Este validador de billetes está operado por {operator}"
       },
       "freeform": {
         "key": "operator",
@@ -109,7 +120,8 @@
           "de": "Name des Betreibers",
           "nl": "Naam van de beheerder",
           "ca": "Nom de l'operador",
-          "cs": "Jméno operátora"
+          "cs": "Jméno operátora",
+          "es": "Nombre del operador"
         }
       },
       "mappings": [
@@ -120,7 +132,8 @@
             "nl": "Nederlandse Spoorwegen (NS)",
             "de": "Niederländische Eisenbahn (NS)",
             "ca": "Ferrocarrils holandesos (NS)",
-            "cs": "Nizozemské dráhy (NS)"
+            "cs": "Nizozemské dráhy (NS)",
+            "es": "Ferrocarriles Holandeses (NS)"
           },
           "addExtraTags": [
             "operator:wikidata=Q23076"
@@ -140,7 +153,8 @@
               "en": "This ticket validator accepts OV-Chipkaart",
               "de": "Dieser Fahrkartenentwerter akzeptiert die OV-Chipkaart",
               "ca": "Aquest validador de bitllets accepta OV-Chipkaart",
-              "cs": "Tento ověřovač jízdenek přijímá OV-Chipkaart"
+              "cs": "Tento ověřovač jízdenek přijímá OV-Chipkaart",
+              "es": "Este validador de billetes acepta OV-Chipkaart"
             },
             "hideInAnswer": true
           },
@@ -151,7 +165,8 @@
               "en": "This ticket validator accepts OV-Chipkaart",
               "de": "Dieser Ticketentwerter akzeptiert die OV-Chipkaart",
               "ca": "Aquest validador de bitllets accepta OV-Chipkaart",
-              "cs": "Tento ověřovač jízdenek přijímá OV-Chipkaart"
+              "cs": "Tento ověřovač jízdenek přijímá OV-Chipkaart",
+              "es": "Este validador de billetes acepta OV-Chipkaart"
             },
             "hideInAnswer": "_country!=nl"
           }

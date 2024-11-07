@@ -5,14 +5,16 @@
     "de": "Geschwindigkeitsanzeigen",
     "nl": "Snelheidsdisplay",
     "ca": "Radar pedagògic",
-    "cs": "Ukazatel rychlosti"
+    "cs": "Ukazatel rychlosti",
+    "es": "Pantalla de Velocidad"
   },
   "description": {
     "en": "Layer showing speed displays that alert drivers of their speed.",
     "de": "Ebene mit Geschwindigkeitsanzeigen, die Fahrer auf ihre Geschwindigkeit hinweisen.",
     "nl": "Laag met snelheidsdisplays om bestuurders op hun snelheid te wijzen.",
     "ca": "Capa que mostra radars pedagògics que alerten als conductors de la seva velocitat.",
-    "cs": "Vrstva zobrazující ukazatele rychlosti, které řidiče upozorňují na jejich rychlost."
+    "cs": "Vrstva zobrazující ukazatele rychlosti, které řidiče upozorňují na jejich rychlost.",
+    "es": "Capa que muestra pantallas de velocidad que alertan a los conductores de su velocidad."
   },
   "source": {
     "osmTags": "highway=speed_display"
@@ -23,7 +25,8 @@
       "en": "Speed Display",
       "de": "Geschwindigkeitsanzeige",
       "nl": "Snelheidsdisplay",
-      "cs": "Ukazatel rychlosti"
+      "cs": "Ukazatel rychlosti",
+      "es": "Pantalla de Velocidad"
     }
   },
   "pointRendering": [
@@ -47,7 +50,8 @@
         "de": "eine Geschwindigkeitsanzeige",
         "nl": "een snelheidsdisplay",
         "ca": "un radar pedagògic",
-        "cs": "ukazatel rychlosti"
+        "cs": "ukazatel rychlosti",
+        "es": "una pantalla de velocidad"
       },
       "tags": [
         "highway=speed_display"
@@ -62,7 +66,8 @@
         "de": "Wie hoch ist die zulässige Höchstgeschwindigkeit bei dieser Geschwindigkeitsanzeige?",
         "nl": "Wat is de maximum toegestane snelheid bij dit snelheidsdisplay?",
         "fr": "Quelle est la vitesse maximale autorisée au niveau de ce radar pédagogique ?",
-        "cs": "Jaká je maximální povolená rychlost na tomto ukazateli rychlosti?"
+        "cs": "Jaká je maximální povolená rychlost na tomto ukazateli rychlosti?",
+        "es": "¿Cuál es la velocidad máxima permitida en esta pantalla de velocidad?"
       },
       "freeform": {
         "key": "maxspeed",
@@ -72,7 +77,8 @@
           "de": "Zulässige Geschwindigkeit bei Geschwindigkeitsanzeige",
           "nl": "Maximum toegestane snelheid bij snelheidsdisplay",
           "fr": "Vitesse autorisée au niveau de ce radar pédagogique",
-          "cs": "Povolená rychlost na ukazateli rychlosti"
+          "cs": "Povolená rychlost na ukazateli rychlosti",
+          "es": "Velocidad permitida en la pantalla de velocidad"
         }
       },
       "render": {
@@ -81,7 +87,8 @@
         "ca": "La velocitat màxima permesa a aquest radar pedagògic és {canonical(maxspeed)}",
         "nl": "De maximum toegestane snelheid bij dit snelheidsdisplay is {canonical(maxspeed)}",
         "fr": "La vitesse maximale autorisée au niveau de ce radar pédagogique est {canonical(maxspeed)}",
-        "cs": "Maximální povolená rychlost na tomto ukazateli rychlosti je {canonical(maxspeed)}"
+        "cs": "Maximální povolená rychlost na tomto ukazateli rychlosti je {canonical(maxspeed)}",
+        "es": "La velocidad máxima permitida en esta pantalla de velocidad es {canonical(maxspeed)}"
       }
     },
     {
@@ -92,7 +99,8 @@
         "ca": "Quin text es mostra al radar pedagògic?",
         "nl": "Wat is de tekst op dit snelheidsdisplay?",
         "cs": "Jaký je text na tomto ukazateli rychlosti?",
-        "uk": "Який текст відображається на цьому дисплеї швидкості?"
+        "uk": "Який текст відображається на цьому дисплеї швидкості?",
+        "es": "¿Cuál es el texto en esta pantalla de velocidad?"
       },
       "freeform": {
         "key": "inscription",
@@ -103,7 +111,8 @@
           "nl": "Tekst op snelheidsdisplay (b.v. 'Uw snelheid')",
           "ca": "Text al radar pedagògic (p. e. 'La seva velocitat')",
           "cs": "Text na displeji rychlosti (např. \"Vaše rychlost\")",
-          "uk": "Текст на дисплеї швидкості (наприклад, \"Ваша швидкість\")"
+          "uk": "Текст на дисплеї швидкості (наприклад, \"Ваша швидкість\")",
+          "es": "Texto en la pantalla de velocidad (ej. 'Su velocidad')"
         }
       },
       "render": {
@@ -112,7 +121,8 @@
         "nl": "De tekst op dit snelheidsdisplay is {inscription}",
         "ca": "El text a aquest radar pedagogic és {inscription}",
         "cs": "Text na tomto ukazateli rychlosti je {inscription}",
-        "uk": "Текст на цьому дисплеї швидкості має вигляд {inscription}"
+        "uk": "Текст на цьому дисплеї швидкості має вигляд {inscription}",
+        "es": "El texto en esta pantalla de velocidad es {inscription}"
       }
     }
   ],

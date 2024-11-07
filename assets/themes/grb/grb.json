@@ -9,7 +9,7 @@
     "hu": "Ez a sablon a flandriai GRB épületimportálás automatizlását kívánja megkönnyíteni.",
     "de": "Dieses Thema ist ein Versuch, die Automatisierung des GRB-Imports zu unterstützen.",
     "fr": "Ce thème tente d’aider l’import automatique GRB.",
-    "es": "Este tema es un intento de automatizar la importación GRB.",
+    "es": "Este tema es un intento de ayudar a automatizar la importación de GRB.",
     "da": "Dette tema er et forsøg på at hjælpe med at automatisere GRB-importen.",
     "ca": "Aquest tema és un intent d'automatitzar la importació GRB.",
     "cs": "Toto téma je pokusem o automatizaci importu GRB.",
@@ -162,7 +162,7 @@
             "de": "Wurde von GRB importiert, Referenznummer ist {source:geometry:ref}",
             "ca": "Ha estat importat des de GRB, el número de referència és {source:geometry:ref}",
             "cs": "Byl importován z GRB, referenční číslo je {source:geometry:ref}",
-            "es": "Se ha importado de GRB, el número de referencia es {source:geometry:ref}",
+            "es": "Ha sido importado de GRB, el número de referencia es {source:geometry:ref}",
             "pl": "Został zaimportowany z GRB, numer referencyjny to {source:geometry:ref}"
           },
           "condition": "source:geometry:ref~*"
@@ -331,7 +331,7 @@
                 "fr": "Les balises meta ne sont pas encore calculées ... Rouvrir cette fenêtre pop-up",
                 "da": "Har endnu ikke beregnet metatags... Genåbn denne popup",
                 "cs": "Metatags ještě nebyly vypočítány... Znovu otevřete toto vyskakovací okno",
-                "es": "Aún no se han calculado los metatags... Reabrir esta ventana emergente",
+                "es": "Aún no se calcularon las metaetiquetas... Vuelve a abrir esta ventana emergente",
                 "ca": "Encara no s'han calculat les metaetiquetes... Torneu a obrir aquesta finestra emergent",
                 "pl": "Jeszcze nie obliczono metaznaczników... Otwórz to okienko ponownie"
               }
@@ -348,7 +348,7 @@
               "then": {
                 "en": "This building has holes and is modeled as a relation. As such, it cannot be conflated. Conflate it manually via <a href='https://buildings.osm.be/#/'>the building export site</a> {open_in_josm()}",
                 "de": "Dieses Gebäude hat Löcher und ist als Relation modelliert. Als solches kann es nicht zusammengeführt werden. Es kann manuell zusammengeführt werden über die <a href='https://buildings.osm.be/#/'>Gebäudeexportseite</a> {open_in_josm()}",
-                "es": "Este edificio tiene agujeros y está modelado como una relación. Por lo tanto, no se puede combinar. Combínalo manualmente a través <a href='https://buildings.osm.be/#/'>el sitio de exportación de edificios</a> {open_in_josm()}",
+                "es": "Este edificio tiene huecos y se modela como una relación. Como tal, no se puede fusionar. Fusionarlo manualmente a través de <a href='https://buildings.osm.be/#/'>el sitio de exportación de edificios</a> {open_in_josm()}",
                 "fr": "Ce bâtiment a des ouvertures et est modélisé comme une relation. Il ne peut être fusionné. Fusionnez-le manuellement via <a href='https://buildings.osm.be/#/'>le site d’export de bâtiment</a> {open_in_josm()}",
                 "nl": "Dit gebouw heeft openingen en is gemodelleerd als een relatie. Bijgevolg kan het niet worden samengevoegd. Voeg het manueel samen via <a href='https://buildings.osm.be/#/'>de export-site voor gebouwen</a> {open_in_josm()}",
                 "da": "Denne bygning har huller og er modelleret som en relation. Som sådan kan det ikke sammenblandes. Sammensæt det manuelt via <a href='https://buildings.osm.be/#/'>bygningseksportwebstedet</a> {open_in_josm()}",

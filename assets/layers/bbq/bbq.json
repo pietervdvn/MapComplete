@@ -69,7 +69,8 @@
       "question": {
         "en": "What is the permitted access?",
         "de": "Was ist der erlaubte Zugang?",
-        "cs": "Jaký přístup je povolen?"
+        "cs": "Jaký přístup je povolen?",
+        "es": "¿Cuál es el acceso permitido?"
       },
       "mappings": [
         {
@@ -78,7 +79,7 @@
             "de": "Öffentlich",
             "en": "Public",
             "cs": "Veřejné",
-            "es": "Pública"
+            "es": "Público"
           }
         },
         {
@@ -96,7 +97,7 @@
             "de": "Privat",
             "en": "Private",
             "cs": "Soukromé",
-            "es": "Privada"
+            "es": "Privado"
           }
         },
         {
@@ -105,7 +106,7 @@
             "de": "Zugang bis auf Widerruf",
             "en": "Access until revoked",
             "cs": "Přístup až do odvolání",
-            "es": "Acceso hasta que se anule"
+            "es": "Acceso hasta que se revoque"
           }
         },
         {
@@ -114,7 +115,7 @@
             "de": "Zugang nur für Kunden",
             "en": "Access only for customers",
             "cs": "Přístup pouze pro zákazníky",
-            "es": "Acceso exclusivo para clientes"
+            "es": "Acceso solo para clientes"
           }
         },
         {
@@ -123,7 +124,7 @@
             "de": "Zugang nur für Berechtigte",
             "en": "Access only for authorized persons",
             "cs": "Přístup pouze pro oprávněné osoby",
-            "es": "Acceso exclusivo a personal autorizado"
+            "es": "Acceso solo para personas autorizadas"
           }
         }
       ]

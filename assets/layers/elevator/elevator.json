@@ -8,7 +8,8 @@
     "pa_PK": "ایلیویٹر",
     "ca": "Ascensor",
     "pl": "Winda",
-    "cs": "Výtah"
+    "cs": "Výtah",
+    "es": "Ascensor"
   },
   "description": {
     "en": "This layer show elevators and asks for operational status and elevator dimensions. Useful for wheelchair accessibility information",
@@ -17,7 +18,8 @@
     "nl": "Deze laag toont liften en vraagt praktische info over de grootte van de lift en ofdat deze werkt, vooral met het oog op of de lift werkt of niet.",
     "ca": "Aquesta capa mostra ascensors i demana l'estat operatiu i les dimensions de l'ascensor. Útil per obtenir informació sobre l'accessibilitat en cadira de rodes",
     "cs": "Tato vrstva zobrazuje výtahy a ptá se na provozní stav a rozměry výtahu. Užitečné pro informace o bezbariérovém přístupu",
-    "pl": "Ta warstwa pokazuje windy i zadaje pytania o ich status i wymiary. Przydatne do informacji o dostępności dla wózków"
+    "pl": "Ta warstwa pokazuje windy i zadaje pytania o ich status i wymiary. Przydatne do informacji o dostępności dla wózków",
+    "es": "Esta capa muestra ascensores y solicita el estado operativo y las dimensiones del ascensor. Útil para información de accesibilidad para sillas de ruedas"
   },
   "source": {
     "osmTags": "highway=elevator"
@@ -32,7 +34,8 @@
       "pa_PK": "ایلیویٹر",
       "pl": "Winda",
       "ca": "Ascensor",
-      "cs": "Výtah"
+      "cs": "Výtah",
+      "es": "Ascensor"
     }
   },
   "pointRendering": [
@@ -75,7 +78,8 @@
         "de": "einen Aufzug",
         "ca": "un ascensor",
         "pl": "winda",
-        "cs": "výtah"
+        "cs": "výtah",
+        "es": "un ascensor"
       },
       "tags": [
         "highway=elevator"
@@ -94,7 +98,8 @@
         "nl": "Werkt deze lift?",
         "pl": "Czy ta winda działa?",
         "ca": "Funciona aquest ascensor?",
-        "cs": "Funguje tento výtah?"
+        "cs": "Funguje tento výtah?",
+        "es": "¿Funciona este ascensor?"
       },
       "mappings": [
         {
@@ -106,7 +111,8 @@
             "nl": "Deze lift is kapot",
             "pl": "Ta winda jest zepsuta",
             "ca": "L'ascensor està trencat",
-            "cs": "Tento výtah je rozbitý"
+            "cs": "Tento výtah je rozbitý",
+            "es": "Este ascensor está roto"
           },
           "icon": "close:red"
         },
@@ -119,7 +125,8 @@
             "nl": "Deze lift is tijdelijk gesloten <span class='subtle'>bijvoorbeeld door renovatiewerken</span>",
             "pl": "Ta winda jest nieczynna <span class='subtle'>np. z powodu renowacji</span>",
             "ca": "L'ascensor està tancat <span class='subtle'>p.e. perquè s'estan fent obres de reforma</span>",
-            "cs": "Tento výtah je uzavřen <span class='subtle'>např. protože probíhají renovační práce</span>"
+            "cs": "Tento výtah je uzavřen <span class='subtle'>např. protože probíhají renovační práce</span>",
+            "es": "Este ascensor está cerrado <span class='subtle'>ej. porque se están realizando obras de renovación</span>"
           },
           "icon": "invalid:red"
         },
@@ -132,7 +139,8 @@
             "nl": "Deze lift werkt",
             "pl": "Ta winda działa",
             "ca": "L'ascesor funciona",
-            "cs": "Tento výtah funguje"
+            "cs": "Tento výtah funguje",
+            "es": "Este ascensor funciona"
           }
         },
         {
@@ -144,7 +152,8 @@
             "nl": "Deze lift werkt",
             "ca": "Aquest ascensor funciona",
             "pl": "Ta winda działa",
-            "cs": "Tento výtah funguje"
+            "cs": "Tento výtah funguje",
+            "es": "Este ascensor funciona"
           },
           "hideInAnswer": true
         }
@@ -159,7 +168,8 @@
         "nl": "De breedte van de liftdeur is {canonical(door:width)}",
         "pl": "Drzwi tej windy mają szerokość {canonical(door:width)}",
         "ca": "Les portes de l'ascensor tenen un amplada de {canonical(door:width)}",
-        "cs": "Dveře tohoto výtahu mají šířku {canonical(door:width)}"
+        "cs": "Dveře tohoto výtahu mají šířku {canonical(door:width)}",
+        "es": "Las puertas de este ascensor tienen un ancho de {canonical(door:width)}"
       },
       "question": {
         "en": "What is the width of this elevator's entrance?",
@@ -168,7 +178,8 @@
         "nl": "Wat is de breedte van de liftdeur?",
         "ca": "Quina és l'amplada de l'entrada d'aquest ascensor?",
         "pl": "Jaka jest szerokość drzwi windy?",
-        "cs": "Jaká je šířka vstupu do tohoto výtahu?"
+        "cs": "Jaká je šířka vstupu do tohoto výtahu?",
+        "es": "¿Cuál es el ancho de la entrada de este ascensor?"
       },
       "freeform": {
         "key": "door:width",
@@ -181,7 +192,8 @@
         "en": "What shape does this elevator have?",
         "de": "Welche Form hat dieser Aufzug?",
         "pl": "Jaki kształt ma ta winda?",
-        "ca": "Quina forma té aquest ascensor?"
+        "ca": "Quina forma té aquest ascensor?",
+        "es": "¿Qué forma tiene este ascensor?"
       },
       "mappings": [
         {
@@ -192,7 +204,8 @@
             "de": "Dieser Aufzug hat eine rechteckige Form",
             "fr": "Cet ascenseur est de forme rectangulaire",
             "pl": "Ta winda ma prostokątny kształt",
-            "ca": "Aquest ascensor té una forma rectangular"
+            "ca": "Aquest ascensor té una forma rectangular",
+            "es": "Este ascensor tiene forma rectangular"
           },
           "icon": "./assets/svg/square.svg"
         },
@@ -202,7 +215,8 @@
             "en": "This elevator has a circular shape",
             "de": "Dieser Aufzug hat eine kreisförmige Form",
             "pl": "Ta winda ma okrągły kształt",
-            "ca": "Aquest ascensor té una forma circular"
+            "ca": "Aquest ascensor té una forma circular",
+            "es": "Este ascensor tiene forma circular"
           },
           "icon": "./assets/svg/circle.svg"
         }
@@ -223,7 +237,8 @@
         "nl": "Deze lift heeft een breedte van {canonical(width)}",
         "pl": "Szerokość tej windy to {canonical(width)}",
         "ca": "L'ascensor té una amplada de {canonical(width)}",
-        "cs": "Tento výtah má šířku {canonical(width)}"
+        "cs": "Tento výtah má šířku {canonical(width)}",
+        "es": "Este ascensor tiene un ancho de {canonical(width)}"
       },
       "question": {
         "en": "What is the width of this elevator?",
@@ -232,7 +247,8 @@
         "nl": "Wat is de breedte van deze lift?",
         "pl": "Jaka jest szerokość tej windy?",
         "ca": "Quina és l'amplada d'aquest ascensor?",
-        "cs": "Jaká je šířka tohoto výtahu?"
+        "cs": "Jaká je šířka tohoto výtahu?",
+        "es": "¿Cuál es el ancho de este ascensor?"
       },
       "freeform": {
         "key": "width",
@@ -253,7 +269,8 @@
         "de": "Dieser Aufzug hat eine Kabinentiefe von {canonical(length)}",
         "nl": "Deze lift heeft een diepte van {canonical(length)}",
         "ca": "L'ascensor té un profunditat de {canonical(length)}",
-        "cs": "Tento výtah má hloubku {canonical(length)}"
+        "cs": "Tento výtah má hloubku {canonical(length)}",
+        "es": "Este ascensor tiene una profundidad de {canonical(length)}"
       },
       "question": {
         "en": "What is the depth of this elevator?",
@@ -261,7 +278,8 @@
         "de": "Wie tief ist die Kabine dieses Aufzugs?",
         "nl": "Wat is de diepte van deze lift?",
         "ca": "Quina és la profunditat de l'ascensor?",
-        "cs": "Jaká je hloubka tohoto výtahu?"
+        "cs": "Jaká je hloubka tohoto výtahu?",
+        "es": "¿Cuál es la profundidad de este ascensor?"
       },
       "freeform": {
         "key": "length",
@@ -277,11 +295,13 @@
       },
       "render": {
         "en": "This elevator has a diameter of {canonical(diameter)}",
-        "de": "Dieser Aufzug hat einen Durchmesser von {canonical(diameter)}"
+        "de": "Dieser Aufzug hat einen Durchmesser von {canonical(diameter)}",
+        "es": "Este ascensor tiene un diámetro de {canonical(diameter)}"
       },
       "question": {
         "en": "What is the diameter of this elevator?",
-        "de": "Was ist der Durchmesser dieses Aufzugs?"
+        "de": "Was ist der Durchmesser dieses Aufzugs?",
+        "es": "¿Cuál es el diámetro de este ascensor?"
       },
       "freeform": {
         "key": "diameter",
@@ -295,7 +315,8 @@
         "en": "Has this elevator tactile writing?",
         "ca": "Aquest ascensor té escriptura tàctil?",
         "de": "Hat dieser Aufzug taktile Schrift?",
-        "cs": "Má tento výtah hmatové písmo?"
+        "cs": "Má tento výtah hmatové písmo?",
+        "es": "¿Tiene este ascensor escritura táctil?"
       },
       "mappings": [
         {
@@ -304,7 +325,8 @@
             "en": "This elevator has tactile writing in Braille",
             "ca": "L'ascensor té escriptura tàctil en Braille",
             "de": "Dieser Aufzug hat eine taktile Schrift in Brailleschrift",
-            "cs": "Tento výtah má hmatové písmo v Braillově písmu"
+            "cs": "Tento výtah má hmatové písmo v Braillově písmu",
+            "es": "Este ascensor tiene escritura táctil en Braille"
           }
         },
         {
@@ -313,7 +335,8 @@
             "en": "This elevator does not have tactile writing",
             "ca": "Aquest ascensor no té escriptura tàctil",
             "de": "Dieser Aufzug hat keine taktile Schrift",
-            "cs": "Tento výtah nemá hmatové psaní"
+            "cs": "Tento výtah nemá hmatové psaní",
+            "es": "Este ascensor no tiene escritura táctil"
           }
         }
       ]
@@ -330,21 +353,24 @@
             "de": "In welchen Sprachen hat der Aufzug taktile Schrift (Braille)?",
             "nl": "In welke talen heeft deze lift voelbaar schrift (braille)?",
             "ca": "Aquest ascensor en quins idiomes té l'escriptura tàctil (braille)?",
-            "cs": "Ve kterých jazycích má tento výtah hmatové písmo (braillovo písmo)?"
+            "cs": "Ve kterých jazycích má tento výtah hmatové písmo (braillovo písmo)?",
+            "es": "¿En qué idiomas tiene escritura táctil (Braille) este ascensor?"
           },
           "render_list_item": {
             "en": "This elevator has tactile writing in {language()}",
             "de": "Der Aufzug hat taktile Schrift in {language()}",
             "nl": "Deze lift heeft voelbaar schrift in het {language()}",
             "ca": "Aquest ascensor té l'escriptura tàctil en {language()}",
-            "cs": "Tento výtah má hmatové písmo v {language()}"
+            "cs": "Tento výtah má hmatové písmo v {language()}",
+            "es": "Este ascensor tiene escritura táctil en {language()}"
           },
           "render_single_language": {
             "en": "This elevator has tactile writing in {language()}",
             "de": "Der Aufzug hat taktile Schrift in {language()}",
             "nl": "Deze lift heeft voelbaar schrift in het {language()}",
             "ca": "Aquest ascensor té l'escriptura tàctil en {language()}",
-            "cs": "Tento výtah má hmatové písmo v {language()}"
+            "cs": "Tento výtah má hmatové písmo v {language()}",
+            "es": "Este ascensor tiene escritura táctil en {language()}"
           }
         }
       }
@@ -354,14 +380,16 @@
       "question": {
         "en": "Has this elevator speech output?",
         "de": "Verfügt der Aufzug über eine Sprachausgabe?",
-        "cs": "Má tento výtah hlasový výstup?"
+        "cs": "Má tento výtah hlasový výstup?",
+        "es": "¿Tiene este ascensor salida de voz?"
       },
       "questionHint": {
         "en": "E.g. it announces the current floor",
         "de": "Z.B. werden Stockwerke angesagt",
         "ca": "P. e. anuncia la planta actual",
         "cs": "Např. oznamuje aktuální podlaží",
-        "pl": "Np. informuje o aktualnym piętrze"
+        "pl": "Np. informuje o aktualnym piętrze",
+        "es": "Ej. anuncia la planta actual"
       },
       "mappings": [
         {
@@ -369,7 +397,8 @@
           "then": {
             "en": "This elevator has speech output",
             "de": "Der Aufzug verfügt über eine Sprachausgabe",
-            "cs": "Tento výtah má hlasový výstup"
+            "cs": "Tento výtah má hlasový výstup",
+            "es": "Este ascensor tiene salida de voz"
           }
         },
         {
@@ -377,7 +406,8 @@
           "then": {
             "en": "This elevator does not have speech output",
             "de": "Der Aufzug verfügt über keine Sprachausgabe",
-            "cs": "Tento výtah nemá hlasový výstup"
+            "cs": "Tento výtah nemá hlasový výstup",
+            "es": "Este ascensor no tiene salida de voz"
           }
         }
       ]
@@ -394,21 +424,24 @@
             "nl": "In welke talen heeft deze lift gesproken tekst?",
             "de": "In welchen Sprachen verfügt der Aufzug über eine Sprachausgabe?",
             "ca": "Aquest ascensor en quins idiomes té sortida de veu?",
-            "cs": "Ve kterých jazycích má tento výtah hlasový výstup?"
+            "cs": "Ve kterých jazycích má tento výtah hlasový výstup?",
+            "es": "¿En qué idiomas tiene salida de voz este ascensor?"
           },
           "render_list_item": {
             "en": "This elevator has speech output in {language()}",
             "nl": "Deze lift heeft gesproken tekst in het {language()}",
             "de": "Der Aufzug hat eine Sprachausgabe in {language()}",
             "ca": "Aquest ascensor té sortida de veu en {language()}",
-            "cs": "Tento výtah má hlasový výstup v {language()}"
+            "cs": "Tento výtah má hlasový výstup v {language()}",
+            "es": "Este ascensor tiene salida de voz en {language()}"
           },
           "render_single_language": {
             "en": "This elevator has speech output in {language()}",
             "nl": "Deze lift heeft gesproken tekst in het {language()}",
             "de": "Der Aufzug hat eine Sprachausgabe in {language()}",
             "ca": "Aquest ascensor té sortida de veu en {language()}",
-            "cs": "Tento výtah má hlasový výstup v {language()}"
+            "cs": "Tento výtah má hlasový výstup v {language()}",
+            "es": "Este ascensor tiene salida de voz en {language()}"
           }
         }
       }

@@ -7,14 +7,16 @@
     "pa_PK": "ہسپتال",
     "ca": "Hospitals",
     "ru": "Больницы",
-    "cs": "Nemocnice"
+    "cs": "Nemocnice",
+    "es": "Hospitales"
   },
   "description": {
     "en": "A layer showing hospital grounds",
     "de": "Eine Ebene mit Krankenhäusern",
     "nl": "Een laag die ziekehuizen toont",
     "ca": "Una capa que mostra els terrenys de l'hospital",
-    "cs": "Vrstva zobrazující areál nemocnice"
+    "cs": "Vrstva zobrazující areál nemocnice",
+    "es": "Una capa que muestra los terrenos del hospital"
   },
   "source": {
     "osmTags": {
@@ -34,7 +36,8 @@
       "ru": "Больница",
       "ca": "Hospital",
       "cs": "Nemocnice",
-      "pl": "Szpital"
+      "pl": "Szpital",
+      "es": "Hospital"
     },
     "mappings": [
       {
@@ -79,7 +82,8 @@
         "ru": "Эта больница называется {name}",
         "cs": "Tato nemocnice se jmenuje {name}",
         "pl": "Nazwa tego szpitala to {name}",
-        "uk": "Ця лікарня називається {name}"
+        "uk": "Ця лікарня називається {name}",
+        "es": "Este hospital se llama {name}"
       },
       "question": {
         "en": "What is the name of this hospital?",
@@ -89,7 +93,8 @@
         "ru": "Как называется эта больница?",
         "cs": "Jak se jmenuje tato nemocnice?",
         "pl": "Jak nazywa się ten szpital?",
-        "uk": "Як називається ця лікарня?"
+        "uk": "Як називається ця лікарня?",
+        "es": "¿Cuál es el nombre de este hospital?"
       },
       "freeform": {
         "key": "name"
@@ -102,7 +107,8 @@
         "de": "Nimmt die Einrichtung stationäre Patienten auf?",
         "ca": "Aquesta instal·lació admet hospitalitzacions?",
         "cs": "Přijímá toto zařízení pacienty na lůžko?",
-        "uk": "Чи приймає цей заклад стаціонарних пацієнтів?"
+        "uk": "Чи приймає цей заклад стаціонарних пацієнтів?",
+        "es": "¿Esta instalación admite pacientes internados?"
       },
       "mappings": [
         {
@@ -112,7 +118,8 @@
             "de": "Dies ist ein Medizinisches Versorgungszentrum - Patienten können nicht über Nacht bleiben",
             "ca": "Açò és una clínica: els pacients no poden passar la nit",
             "cs": "Toto je klinika - pacienti nemohou zůstat přes noc",
-            "uk": "Це клініка - пацієнти не можуть залишатися на ніч"
+            "uk": "Це клініка - пацієнти не можуть залишатися на ніч",
+            "es": "Esta es una clínica: los pacientes no pueden pasar la noche"
           }
         },
         {
@@ -122,7 +129,8 @@
             "de": "Dies ist ein Krankenhaus - Patienten können hier für mehrere Tage aufgenommen werden",
             "ca": "Es tracta d'un hospital: els pacients poden estar ingressats aquí durant diversos dies",
             "cs": "Jedná se o nemocnici – pacienti zde mohou být přijímáni na více dní",
-            "uk": "Це лікарня - пацієнти можуть перебувати тут кілька днів"
+            "uk": "Це лікарня - пацієнти можуть перебувати тут кілька днів",
+            "es": "Este es un hospital: los pacientes pueden ser ingresados aquí por varios días"
           }
         }
       ],
@@ -130,7 +138,8 @@
         "en": "An inpatient is a patient which stays for multiple days in the facility",
         "de": "Ein stationärer Patient ist ein Patient, der mehrere Tage in der Einrichtung bleibt",
         "ca": "Un pacient hospitalitzat és un pacient que roman diversos dies a la instal·lació",
-        "cs": "Hospitalizovaný pacient je pacient, který v zařízení pobývá více dní"
+        "cs": "Hospitalizovaný pacient je pacient, který v zařízení pobývá více dní",
+        "es": "Un paciente internado es un paciente que permanece varios días en la instalación"
       }
     },
     "contact",
@@ -140,13 +149,15 @@
         "en": "When are visitors allowed to visit?",
         "de": "Wann ist der Besuch für Besucher gestattet?",
         "ca": "Quan poden anar els visitants?",
-        "cs": "Kdy je povolena návštěva?"
+        "cs": "Kdy je povolena návštěva?",
+        "es": "¿Cuándo se permite a los visitantes realizar visitas?"
       },
       "questionHint": {
         "en": "These are the regular visitor hours. Some wands have different visitor hours or might allow visitors in emergencies",
         "de": "Dies sind die regulären Besuchszeiten. Einige Stationen haben andere Besuchszeiten oder erlauben Besucher in Notfällen",
         "ca": "Aquests són els horaris habituals dels visitants. Algunes plantes tenen diferents horaris de visita o poden permetre els visitants en cas d'emergència",
-        "cs": "Jedná se o pravidelné návštěvní hodiny. Některé oddělení mají jiné návštěvní hodiny nebo mohou povolit návštěvy v naléhavých případech"
+        "cs": "Jedná se o pravidelné návštěvní hodiny. Některé oddělení mají jiné návštěvní hodiny nebo mohou povolit návštěvy v naléhavých případech",
+        "es": "Este es el horario regular de visitas. Algunas varillas tienen horarios de visita diferentes o pueden permitir visitas en caso de emergencia"
       },
       "freeform": {
         "key": "opening_hours:visitors",
@@ -156,7 +167,8 @@
         "en": "<h3>Opening hours for visitors</h3>Regular visitors are allowed at the following moments: {opening_hours_table(opening_hours:visitors)}<p class='subtle'>Some wands might have different opening hours. Many hospitals allow visits during emergencies too.</p>",
         "de": "<h3>Öffnungszeiten für Besucher</h3>Regelmäßige Besucher sind zu den folgenden Zeiten zugelassen: {opening_hours_table(opening_hours:visitors)}<p class='subtle'>Einige Krankenhäuser haben möglicherweise andere Öffnungszeiten. Viele Krankenhäuser erlauben Besuche auch in Notfällen.</p>",
         "ca": "<h3>Horari d'obertura per a visitants</h3>S'admeten visitants habituals en els moments següents: {opening_hours_table(opening_hours:visitors)}<p class='subtle'>Algunes palntes poden tenir un horari d'obertura diferent. Molts hospitals també permeten visites en cas d'emergència.</p>",
-        "cs": "<h3>Otevírací doba pro návštěvníky</h3>Běžným návštěvníkům je vstup povolen v následujících časech: {opening_hours_table(opening_hours:visitors)}<p class='subtle'>Některá oddělení mohou mít jinou otevírací dobu. Mnohé nemocnice povolují návštěvy i v době pohotovosti.</p>"
+        "cs": "<h3>Otevírací doba pro návštěvníky</h3>Běžným návštěvníkům je vstup povolen v následujících časech: {opening_hours_table(opening_hours:visitors)}<p class='subtle'>Některá oddělení mohou mít jinou otevírací dobu. Mnohé nemocnice povolují návštěvy i v době pohotovosti.</p>",
+        "es": "<h3>Horario de visita para visitantes</h3>Los visitantes regulares están permitidos en los siguientes momentos: {opening_hours_table(opening_hours:visitors)}<p class='subtle'>Algunas varillas pueden tener horarios de apertura diferentes. Muchos hospitales también permiten visitas en caso de emergencia.</p>"
       }
     }
   ],

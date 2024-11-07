@@ -2,7 +2,8 @@
   "id": "lighthouse",
   "name": {
     "en": "lighthouse",
-    "de": "Leuchtturm"
+    "de": "Leuchtturm",
+    "es": "faro"
   },
   "source": {
     "osmTags": "man_made=lighthouse"
@@ -11,14 +12,16 @@
   "title": {
     "render": {
       "en": "lighthouse",
-      "de": "Leuchtturm"
+      "de": "Leuchtturm",
+      "es": "faro"
     },
     "mappings": [
       {
         "if": "name~*",
         "then": {
           "en": "{name}",
-          "de": "{name}"
+          "de": "{name}",
+          "es": "{name}"
         }
       }
     ]
@@ -45,7 +48,8 @@
       ],
       "title": {
         "en": "a lighthouse",
-        "de": "ein Leuchtturm"
+        "de": "ein Leuchtturm",
+        "es": "un faro"
       }
     }
   ],
@@ -55,11 +59,13 @@
     {
       "render": {
         "en": "The height of this lighthouse is {height} metres.",
-        "de": "Die Höhe dieses Leuchtturms beträgt {height} Meter."
+        "de": "Die Höhe dieses Leuchtturms beträgt {height} Meter.",
+        "es": "La altura de este faro es de {height} metros."
       },
       "question": {
         "en": "What is the height of this lighthouse, in metres?",
-        "de": "Wie hoch ist dieser Leuchtturm in Metern?"
+        "de": "Wie hoch ist dieser Leuchtturm in Metern?",
+        "es": "¿Cuál es la altura de este faro, en metros?"
       },
       "freeform": {
         "key": "height",
