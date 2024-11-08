@@ -57,7 +57,7 @@
             file,
             "image",
             noBlur,
-            feature
+            feature,
           )
           if (!uploadResult) {
             return
@@ -78,47 +78,55 @@
     }
     errors.setData(errs)
   }
+
+  let maintenanceBusy = true
 </script>
 
 <LoginToggle {state}>
   <LoginButton clss="small w-full" osmConnection={state.osmConnection} slot="not-logged-in">
     <Tr t={Translations.t.image.pleaseLogin} />
   </LoginButton>
-  <div class="my-4 flex flex-col">
-    <UploadingImageCounter {state} {tags} />
-    {#each $errors as error}
-      <Tr t={error} cls="alert" />
-    {/each}
-    <FileSelector
-      accept="image/*"
-      cls="button border-2 flex flex-col"
-      multiple={true}
-      on:submit={(e) => handleFiles(e.detail)}
-    >
-      <div class="flex w-full items-center justify-center text-2xl">
-        {#if image !== undefined}
-          <img src={image} aria-hidden="true" />
-        {:else}
-          <Camera class="h-12 w-12 p-1" aria-hidden="true" />
-        {/if}
-        {#if labelText}
-          {labelText}
-        {:else}
-          <div class="flex flex-col">
-            <Tr t={t.addPicture} />
-            {#if noBlur}
+  {#if maintenanceBusy}
+    <div class="alert">
+      Due to maintenance, uploading images is currently not possible. Sorry about this!
+    </div>
+  {:else}
+    <div class="my-4 flex flex-col">
+      <UploadingImageCounter {state} {tags} />
+      {#each $errors as error}
+        <Tr t={error} cls="alert" />
+      {/each}
+      <FileSelector
+        accept="image/*"
+        cls="button border-2 flex flex-col"
+        multiple={true}
+        on:submit={(e) => handleFiles(e.detail)}
+      >
+        <div class="flex w-full items-center justify-center text-2xl">
+          {#if image !== undefined}
+            <img src={image} aria-hidden="true" />
+          {:else}
+            <Camera class="h-12 w-12 p-1" aria-hidden="true" />
+          {/if}
+          {#if labelText}
+            {labelText}
+          {:else}
+            <div class="flex flex-col">
+              <Tr t={t.addPicture} />
+              {#if noBlur}
               <span class="subtle text-sm">
                 <Tr t={t.upload.noBlur} />
               </span>
-            {/if}
-          </div>
-        {/if}
+              {/if}
+            </div>
+          {/if}
+        </div>
+      </FileSelector>
+      <div class="subtle text-xs italic">
+        <Tr t={Translations.t.general.attribution.panoramaxLicenseCCBYSA} />
+        <span class="mx-1">—</span>
+        <Tr t={t.respectPrivacy} />
       </div>
-    </FileSelector>
-    <div class="subtle text-xs italic">
-      <Tr t={Translations.t.general.attribution.panoramaxLicenseCCBYSA} />
-      <span class="mx-1">—</span>
-      <Tr t={t.respectPrivacy} />
     </div>
-  </div>
+  {/if}
 </LoginToggle>
