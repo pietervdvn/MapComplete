@@ -596,10 +596,33 @@
             "seeNearby": "Közeli képek böngészése",
             "title": "Közeli utcakép"
         },
+        "panoramax": {
+            "deletionRequested": "A jelentés be lett küldve; egy moderátor rövidesen megvizsgálja",
+            "freeform": "Van-e további lényeges információ?",
+            "otherFreeform": "Írd le, miért kellene eltávolítani ezt a képet:",
+            "placeholder": "Fejtsd ki, miért kellene törölni ezt a képet",
+            "report": {
+                "blur_excess": "A kép használhatatlan, mert túl nagy része homályos",
+                "blur_missing": "A képen nincs elhomályosítva egy arc vagy egy rendszámtábla",
+                "copyright": "A kép szerzői jog hatálya alá tartozó tartalmat jelenít meg",
+                "inappropriate": "A kép nem megfelelő (meztelenséget tartalmaz, gyűlöletre hív vagy nem utcakép)",
+                "mislocated": "A kép egy másik helyet ábrázol",
+                "other": "Más ok, kérjük, fejtsd ki",
+                "picture_low_quality": "A kép gyatra minőségű",
+                "privacy": "A kép magánterületet ábrázol"
+            },
+            "requestDeletion": "Képtörlés kérése",
+            "title": "Miért kellene ezt a képet véglegesen törölni?"
+        },
         "pleaseLogin": "Kép hozzáadásához be kell jelentkezni",
         "processing": "A szerver feldolgozza a képet",
         "respectPrivacy": "Ne tölts fel képet a Google térképről, a Google Streetview-ról (utcaképről) és egyéb szerzői jog által védett forrásokból.",
         "toBig": "A kép túl nagy ({actual_size}). Kérjük, legfeljebb {max_size} méretű képeket használj",
+        "unlink": {
+            "button": "Kép leválasztása",
+            "explanation": "A kép belinkeltségének feloldásával ez a kép nem jelenik meg többé ezzel az objektummal együtt. A közeli képek között és esetleg más objektumokban azonban továbbra is meg fog jelenni.",
+            "title": "Megszűnjék a kép belinkelése?"
+        },
         "upload": {
             "failReasons": "Lehet, hogy megszakadt az internetkapcsolatod",
             "failReasonsAdvanced": "Másik lehetőségként győződj meg arról, hogy a böngésződ vagy bővítményei nem blokkolnak-e harmadik féltől származó API-kat.",
