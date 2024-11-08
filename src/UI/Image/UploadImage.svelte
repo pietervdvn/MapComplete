@@ -79,7 +79,7 @@
     errors.setData(errs)
   }
 
-  let maintenanceBusy = true
+  let maintenanceBusy = false
 </script>
 
 <LoginToggle {state}>
