@@ -1529,10 +1529,14 @@
             },
             "self_service": {
                 "mappings": {
+                    "0": {
+                        "then": "Die Reinigung erfolgt selbständig"
+                    },
                     "1": {
                         "then": "Dieser Reinigungsdienst wird von einem Angestellten betrieben"
                     }
-                }
+                },
+                "question": "Muss die Reinigung selbständig erfolgen?"
             }
         },
         "title": {
@@ -10624,9 +10628,11 @@
         }
     },
     "tactile_map": {
+        "description": "Ebene mit taktilen Karten, die von sehbehinderten Menschen zur Navigation in der Stadt verwendet werden können.",
         "name": "Taktile Karten",
         "presets": {
             "0": {
+                "description": "Eine taktile Karte, die durch Berühren gelesen werden kann. Im Gegensatz zu einem taktilen Modell ist diese Karte relativ flach und enthält keine dreidimensionalen Gebäude oder ähnliches.",
                 "title": "eine taktile Karte"
             }
         },
@@ -10670,6 +10676,9 @@
                 "question": "Gibt es auf dieser taktilen Karte geprägte Buchstaben?"
             }
         }
+    },
+    "tactile_model": {
+        "description": "Ebene mit dreidimensionalen ertastbaren Modellen der Umgebung."
     },
     "tertiary_education": {
         "name": "Hochschulen und Universitäten",
