@@ -3549,6 +3549,9 @@
                     "12": {
                         "then": "Diese Kreuzung hat Piktogramme auf der Straße"
                     },
+                    "13": {
+                        "then": "Diese Kreuzung hat Linien auf beiden Seiten der Kreuzung und Balken, die sie verbinden, mit einer Unterbrechung in jedem Balken"
+                    },
                     "14": {
                         "then": "Dieser Übergang hat doppelte Linien auf beiden Seiten des Übergangs"
                     },
@@ -3558,6 +3561,9 @@
                     "3": {
                         "then": "Dieser Übergang hat Linien auf beiden Seiten des Übergangs"
                     },
+                    "4": {
+                        "then": "Diese Kreuzung hat Linien auf beiden Seiten der Kreuzung, zusammen mit Stangen, die sie verbinden"
+                    },
                     "5": {
                         "then": "Dieser Übergang hat gestrichelte Linien auf beiden Seiten des Übergangs"
                     },
@@ -3566,6 +3572,9 @@
                     },
                     "7": {
                         "then": "Dieser Übergang wird durch eine andersfarbige Oberfläche gekennzeichnet"
+                    },
+                    "8": {
+                        "then": "Diese Kreuzung hat Linien auf beiden Seiten der Kreuzung, zusammen mit abgewinkelten Stangen, die sie verbinden"
                     },
                     "9": {
                         "then": "Dieser Übergang hat Zebrastreifen mit einer Unterbrechung in jedem Balken"
