@@ -3317,10 +3317,14 @@
             "indoor": {
                 "override": {
                     "mappings": {
+                        "0": {
+                            "then": "Diese Uhr befindet sich in Innenräumen"
+                        },
                         "1": {
                             "then": "Diese Uhr ist im Freien"
                         }
-                    }
+                    },
+                    "question": "Befindet sich diese Uhr in Innenräumen?"
                 }
             },
             "support": {
@@ -10683,11 +10687,85 @@
                     }
                 },
                 "question": "Gibt es auf dieser taktilen Karte geprägte Buchstaben?"
+            },
+            "embossed_letters_languages": {
+                "render": {
+                    "special": {
+                        "question": "In welchen Sprachen sind die geprägten Buchstaben auf dieser taktilen Karte?",
+                        "render_list_item": "Diese Karte hat geprägte Buchstaben in {language}",
+                        "render_single_language": "Diese Karte hat geprägte Buchstaben in {language}"
+                    }
+                }
             }
-        }
+        },
+        "title": "Taktile Karte"
     },
     "tactile_model": {
-        "description": "Ebene mit dreidimensionalen ertastbaren Modellen der Umgebung."
+        "description": "Ebene mit dreidimensionalen ertastbaren Modellen der Umgebung.",
+        "name": "Taktile Modelle",
+        "presets": {
+            "0": {
+                "description": "Ein taktiles Modell ist ein dreidimensionales Modell eines Gebiets, das es den Menschen ermöglicht, ein Gebiet durch Berührung zu erkunden/sehen.",
+                "title": "ein taktiles Modell"
+            }
+        },
+        "tagRenderings": {
+            "braille": {
+                "mappings": {
+                    "0": {
+                        "then": "Es gibt eine Beschreibung in Blindenschrift."
+                    },
+                    "1": {
+                        "then": "Es gibt keine Beschreibung in Blindenschrift."
+                    }
+                },
+                "question": "Gibt es eine Beschreibung in Blindenschrift?"
+            },
+            "braille_languages": {
+                "render": {
+                    "special": {
+                        "question": "In welchen Sprachen gibt es eine Beschreibung in Blindenschrift?",
+                        "render_list_item": "Dieses Modell hat eine Beschreibung in Brailleschrift in {language()}",
+                        "render_single_language": "Dieses Modell hat eine Beschreibung in Brailleschrift in {language}"
+                    }
+                }
+            },
+            "description": {
+                "freeform": {
+                    "placeholder": "z.B. Taktiles Modell des Stadtzentrums"
+                },
+                "question": "Was zeigt dieses taktile Modell?",
+                "render": "Beschreibung: {blind:description:en}."
+            },
+            "embossed_letters": {
+                "mappings": {
+                    "0": {
+                        "then": "Das Modell ist mit geprägten Buchstaben beschrieben."
+                    },
+                    "1": {
+                        "then": "Es gibt keine eingeprägten Buchstaben, die das Modell beschreiben."
+                    }
+                },
+                "question": "Gibt es eingeprägte Buchstaben, die das Modell beschreiben?"
+            },
+            "embossed_letters_languages": {
+                "render": {
+                    "special": {
+                        "question": "In welchen Sprachen gibt es geprägte Buchstaben?",
+                        "render_list_item": "Dieses Modell hat geprägte Buchstaben in {language()}",
+                        "render_single_language": "Dieses Modell hat geprägte Buchstaben in {language}"
+                    }
+                }
+            },
+            "scale": {
+                "freeform": {
+                    "placeholder": "z.B. 1:1000"
+                },
+                "question": "Welchen Maßstab hat das Modell?",
+                "render": "Der Maßstab dieses Modells ist {scale}."
+            }
+        },
+        "title": "Taktiles Modell"
     },
     "tertiary_education": {
         "name": "Hochschulen und Universitäten",
