@@ -11,6 +11,7 @@ export class Imgur extends ImageProvider {
     public readonly defaultKeyPrefixes: string[] = ["image"]
     public static readonly apiUrl = "https://api.imgur.com/3/image"
     public static readonly supportingUrls = ["https://i.imgur.com"]
+
     private constructor() {
         super()
     }
@@ -30,11 +31,42 @@ export class Imgur extends ImageProvider {
                     url: value,
                     key: key,
                     provider: this,
-                    id: value,
-                },
+                    id: value
+                }
             ]
         }
         return undefined
+    }
+
+    public static parseLicense(descr: string) {
+        const data: Record<string, string> = {}
+
+        if (!descr) {
+            return undefined
+        }
+        if (descr.toLowerCase() === "cc0") {
+            data.author = "Unknown"
+            data.license = "CC0"
+        } else {
+            for (const tag of descr.split("\n")) {
+                const kv = tag.split(":")
+                if (kv.length < 2) {
+                    continue
+                }
+                const k = kv[0]
+                data[k] = kv[1]?.replace(/\r/g, "")
+            }
+        }
+        if (Object.keys(data).length === 0) {
+            return undefined
+        }
+
+        const licenseInfo = new LicenseInfo()
+
+        licenseInfo.licenseShortName = data.license
+        licenseInfo.artist = data.author
+
+        return licenseInfo
     }
 
     /**
@@ -56,7 +88,9 @@ export class Imgur extends ImageProvider {
      *
      *
      */
-    public async DownloadAttribution(providedImage: { url: string }): Promise<LicenseInfo> {
+    public async DownloadAttribution(providedImage: {
+        url: string
+    }, withResponse?: (obj) => void): Promise<LicenseInfo> {
         const url = providedImage.url
         const hash = url.substr("https://i.imgur.com/".length).split(/\.jpe?g/i)[0]
 
@@ -64,26 +98,17 @@ export class Imgur extends ImageProvider {
         const response = await Utils.downloadJsonCached<{
             data: { description: string; datetime: string; views: number }
         }>(apiUrl, 365 * 24 * 60 * 60, {
-            Authorization: "Client-ID " + Constants.ImgurApiKey,
+            Authorization: "Client-ID " + Constants.ImgurApiKey
         })
-
-        const descr = response.data.description ?? ""
-        const data: any = {}
-        const imgurData = response.data
-
-        for (const tag of descr.split("\n")) {
-            const kv = tag.split(":")
-            const k = kv[0]
-            data[k] = kv[1]?.replace(/\r/g, "")
+        if (withResponse) {
+            withResponse(response)
         }
 
-        const licenseInfo = new LicenseInfo()
+        const imgurData = response.data
+        const license= Imgur.parseLicense(imgurData.description ?? "")
+        license.views = imgurData.views
+        license.date = new Date(Number(imgurData.datetime) * 1000)
 
-        licenseInfo.licenseShortName = data.license
-        licenseInfo.artist = data.author
-        licenseInfo.date = new Date(Number(imgurData.datetime) * 1000)
-        licenseInfo.views = imgurData.views
-
-        return licenseInfo
+        return license
     }
 }
