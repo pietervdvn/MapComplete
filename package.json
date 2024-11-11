@@ -15,6 +15,7 @@
       "Use `https://<your domain name>/<path to mapcomplete>/land.html` as redirect URIs. You can add `http://127.0.0.1:1234/land.html` too for local development.",
       "Alternatively, you can override the `osm` credentials using the environment variables `VITE_OSM_OAUTH_CLIENT_ID` and `VITE_OSM_OAUTH_SECRET`"
     ],
+    "oauth_landing": null,
     "oauth_credentials": {
       "#": "This client-id is registered by 'MapComplete' on OpenStreetMap.org",
       "oauth_client_id": "K93H1d8ve7p-tVLE1ZwsQ4lAFLQk8INx5vfTLMu5DWk",
