@@ -1,0 +1,3 @@
+[submodule "android"]
+	path = android
+	url = git@github.com:MapComplete/android.git
