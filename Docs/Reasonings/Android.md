@@ -23,4 +23,14 @@ Quick to setup, but opens in Fennec/Brave/some default browser... _with_ a UI El
 
 Seems to only support chrome
 
-## 2. Writing our own webview
+## 2. Capacitor
+
+Seemingly works. Some drawbacks: 
+
+- Geolocation plugin relies on Google Play Services (but this can be fixed)
+- Login doesn't work out of the box (but this can be fixed)
+
+## 3. Svelte Native
+
+Svelte native is unmaintained. The example projects are from 5 years ago.
+I didn't look very hard, but I didn't see a lot of apps using this tech
