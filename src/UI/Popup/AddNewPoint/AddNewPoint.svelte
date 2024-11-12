@@ -64,7 +64,7 @@
   onDestroy(
     globalFilter.addCallbackAndRun((globalFilter) => {
       console.log("Global filters are", globalFilter)
-      _globalFilter = globalFilter ?? []
+      _globalFilter = globalFilter?.filter(gf => gf.onNewPoint !== undefined) ?? []
     })
   )
   $: {
