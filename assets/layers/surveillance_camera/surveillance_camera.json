@@ -68,6 +68,10 @@
                 "then": "./assets/themes/surveillance/dome.svg"
               },
               {
+                "if": "camera:type=doorbell",
+                "then": "./assets/layers/surveillance_camera/doorbell.svg"
+              },
+              {
                 "if": "_direction:leftright=right",
                 "then": "./assets/themes/surveillance/cam_right.svg"
               },
@@ -314,11 +318,7 @@
           "icon": "./assets/themes/surveillance/dome.svg"
         },
         {
-          "if": {
-            "and": [
-              "camera:type=panning"
-            ]
-          },
+          "if": "camera:type=panning",
           "then": {
             "en": "A panning camera",
             "nl": "Een camera die (met een motor) van links naar rechts kan draaien",
@@ -329,6 +329,16 @@
             "ca": "Una càmera panoràmica",
             "es": "Una cámara panorámica",
             "cs": "Otáčecí kamera"
+          }
+        },
+        {
+          "if": "camera:type=doorbell",
+          "icon": {
+            "path": "./assets/layers/surveillance_camera/doorbell.svg",
+            "size": "large"
+          },
+          "then": {
+            "en": "A doorbell which might be turned on remotely at any time or by motion detection. These are typically <i>Smart</i>, internet-connected doorbells. Typical brands are Ring, Google Nest, Eufy, ..."
           }
         }
       ],
