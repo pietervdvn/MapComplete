@@ -65,7 +65,7 @@
     {
       "color": "gray",
       "width": 10,
-      "dashArray": "6 12"
+      "dashArray": "1 1"
     }
   ],
   "tagRenderings": [
