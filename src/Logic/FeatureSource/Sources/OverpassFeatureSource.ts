@@ -49,14 +49,15 @@ export default class OverpassFeatureSource implements UpdatableFeatureSource {
         },
         options?: {
             padToTiles?: Store<number>
-            isActive?: Store<boolean>
+            isActive?: Store<boolean>,
+            ignoreZoom?: boolean
         }
     ) {
         this.state = state
         this._isActive = options?.isActive ?? new ImmutableStore(true)
         this.padToZoomLevel = options?.padToTiles
         const self = this
-        this._layersToDownload = state.zoom.map((zoom) => this.layersToDownload(zoom))
+        this._layersToDownload = options?.ignoreZoom? new ImmutableStore(state.layers) : state.zoom.map((zoom) => this.layersToDownload(zoom))
 
         state.bounds.mapD(
             (_) => {
@@ -103,7 +104,7 @@ export default class OverpassFeatureSource implements UpdatableFeatureSource {
      * Download the relevant data from overpass. Attempt to use a different server if one fails; only downloads the relevant layers
      * @private
      */
-    public async updateAsync(): Promise<void> {
+    public async updateAsync(overrideBounds?: BBox): Promise<void> {
         let data: any = undefined
         let lastUsed = 0
         const start = new Date()
@@ -122,7 +123,7 @@ export default class OverpassFeatureSource implements UpdatableFeatureSource {
         let bounds: BBox
         do {
             try {
-                bounds = this.state.bounds.data
+                bounds = overrideBounds ?? this.state.bounds.data
                     ?.pad(this.state.widenFactor)
                     ?.expandToTileBounds(this.padToZoomLevel?.data)
                 if (!bounds) {
