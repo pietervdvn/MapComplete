@@ -1492,6 +1492,17 @@
             }
         },
         "tagRenderings": {
+            "automated": {
+                "mappings": {
+                    "0": {
+                        "then": "Dies ist eine manuelle Fahrradwaschanlage"
+                    },
+                    "1": {
+                        "then": "Dies ist eine automatische Fahrradwaschanlage"
+                    }
+                },
+                "question": "Ist dieser Fahrradreinigungsdienst automatisiert?"
+            },
             "bike_cleaning-charge": {
                 "mappings": {
                     "0": {
@@ -1515,6 +1526,17 @@
                 },
                 "question": "Wie viel kostet die Nutzung des Reinigungsdienstes?",
                 "render": "Der Reinigungsservice kostet {service:bicycle:cleaning:charge}"
+            },
+            "self_service": {
+                "mappings": {
+                    "0": {
+                        "then": "Die Reinigung erfolgt selbständig"
+                    },
+                    "1": {
+                        "then": "Dieser Reinigungsdienst wird von einem Angestellten betrieben"
+                    }
+                },
+                "question": "Muss die Reinigung selbständig erfolgen?"
             }
         },
         "title": {
@@ -3208,6 +3230,10 @@
             "1": {
                 "description": "Eine öffentlich sichtbare Uhr an einer Wand",
                 "title": "eine an der Wand montierte Uhr"
+            },
+            "2": {
+                "description": "Eine öffentlich sichtbare Uhr, die direkt an einer Wand angebracht ist",
+                "title": "eine Wanduhr, die direkt an der Wand angebracht ist"
             }
         },
         "tagRenderings": {
@@ -3288,13 +3314,29 @@
                 },
                 "question": "Zeigt diese Uhr auch die Luftfeuchtigkeit an?"
             },
+            "indoor": {
+                "override": {
+                    "mappings": {
+                        "0": {
+                            "then": "Diese Uhr befindet sich in Innenräumen"
+                        },
+                        "1": {
+                            "then": "Diese Uhr ist im Freien"
+                        }
+                    },
+                    "question": "Befindet sich diese Uhr in Innenräumen?"
+                }
+            },
             "support": {
                 "mappings": {
                     "0": {
                         "then": "Diese Uhr ist auf einem Mast montiert"
                     },
                     "1": {
-                        "then": "Diese Uhr ist an einer Wand montiert"
+                        "then": "Diese Uhr wird an der Wand befestigt, in der Regel durch einen Träger, der senkrecht zur Wand steht"
+                    },
+                    "2": {
+                        "then": "Diese Uhr ist direkt an einer Wand montiert"
                     },
                     "3": {
                         "then": "Diese Uhr ist Teil einer Werbetafel"
@@ -3493,6 +3535,57 @@
                     }
                 },
                 "question": "Gibt die Ampel ein Vibrationssignal, um das Überqueren zu erleichtern? (in der Regel am unteren Ende der Ampeltaste)"
+            },
+            "markings": {
+                "mappings": {
+                    "0": {
+                        "then": "Diese Kreuzung hat keine Markierungen"
+                    },
+                    "1": {
+                        "then": "Dieser Übergang ist mit Zebrastreifen markiert"
+                    },
+                    "10": {
+                        "then": "Dieser Übergang hat Zebrastreifen in wechselnden Farben"
+                    },
+                    "11": {
+                        "then": "Dieser Übergang hat doppelte Zebrastreifen"
+                    },
+                    "12": {
+                        "then": "Diese Kreuzung hat Piktogramme auf der Straße"
+                    },
+                    "13": {
+                        "then": "Diese Kreuzung hat Linien auf beiden Seiten der Kreuzung und Balken, die sie verbinden, mit einer Unterbrechung in jedem Balken"
+                    },
+                    "14": {
+                        "then": "Dieser Übergang hat doppelte Linien auf beiden Seiten des Übergangs"
+                    },
+                    "2": {
+                        "then": "Dieser Übergang weist Markierungen unbekannter Art auf"
+                    },
+                    "3": {
+                        "then": "Dieser Übergang hat Linien auf beiden Seiten des Übergangs"
+                    },
+                    "4": {
+                        "then": "Diese Kreuzung hat Linien auf beiden Seiten der Kreuzung, zusammen mit Stangen, die sie verbinden"
+                    },
+                    "5": {
+                        "then": "Dieser Übergang hat gestrichelte Linien auf beiden Seiten des Übergangs"
+                    },
+                    "6": {
+                        "then": "Dieser Übergang hat gestrichelte Linien auf beiden Seiten des Übergangs"
+                    },
+                    "7": {
+                        "then": "Dieser Übergang wird durch eine andersfarbige Oberfläche gekennzeichnet"
+                    },
+                    "8": {
+                        "then": "Diese Kreuzung hat Linien auf beiden Seiten der Kreuzung, zusammen mit abgewinkelten Stangen, die sie verbinden"
+                    },
+                    "9": {
+                        "then": "Dieser Übergang hat Zebrastreifen mit einer Unterbrechung in jedem Balken"
+                    }
+                },
+                "question": "Welche Art von Markierungen gibt es an diesem Übergang?",
+                "render": "Dieser Übergang hat {crossing:markings} Markierungen"
             }
         },
         "title": {
@@ -3906,6 +3999,57 @@
                 }
             },
             "render": "Weg"
+        }
+    },
+    "cyclist_waiting_aid": {
+        "description": "Verschiedene Infrastruktureinrichtungen, die Radfahrern helfen, während sie an einer Ampel warten.",
+        "name": "Radfahrer-Wartehilfen",
+        "presets": {
+            "0": {
+                "description": "Eine Fußstütze, ein Handlauf oder ein anderes Hilfsmittel zur Verbesserung des Komforts beim Warten an der Ampel",
+                "title": "eine Radfahrer-Wartehilfe"
+            }
+        },
+        "tagRenderings": {
+            "direction": {
+                "mappings": {
+                    "0": {
+                        "then": "Diese Wartehilfe kann bei der Weiterfahrt auf diesem Weg genutzt werden"
+                    },
+                    "1": {
+                        "then": "Diese Wartehilfe kann beim Rückwärtsfahren auf diesem Weg benutzt werden"
+                    }
+                },
+                "render": "Diese Wartehilfe kann in Fahrtrichtung {direction} benutzt werden"
+            },
+            "side": {
+                "mappings": {
+                    "0": {
+                        "then": "Diese Wartehilfe befindet sich auf der linken Seite"
+                    },
+                    "1": {
+                        "then": "Diese Wartehilfe befindet sich auf der rechten Seite"
+                    },
+                    "2": {
+                        "then": "Auf beiden Seiten der Straße gibt es Wartehilfen"
+                    }
+                },
+                "question": "Auf welcher Straßenseite befindet sich dies?"
+            },
+            "type": {
+                "mappings": {
+                    "0": {
+                        "then": "Hier gibt es ein Brett oder einen Pflock zum Abstützen des Fußes"
+                    },
+                    "1": {
+                        "then": "Hier gibt es eine Schiene oder einen Griff zum Festhalten"
+                    }
+                },
+                "question": "Aus welchen Bestandteilen besteht diese Wartehilfe?"
+            }
+        },
+        "title": {
+            "render": "Radfahrer-Wartehilfe"
         }
     },
     "defibrillator": {
@@ -7891,6 +8035,15 @@
         "presets": {
             "0": {
                 "title": "ein Briefkasten"
+            },
+            "1": {
+                "title": "ein Briefkasten an einer Wand"
+            }
+        },
+        "tagRenderings": {
+            "operator": {
+                "question": "Wer betreibt diesen Briefkasten?",
+                "render": "Dieser Briefkasten wird von <b>{operator}</b> betrieben"
             }
         },
         "title": {
@@ -8385,6 +8538,17 @@
                     }
                 },
                 "question": "Verkauft das Geschäft glutenfreie Produkte?"
+            },
+            "indoor": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieses Objekt befindet sich in einem Innenraum"
+                    },
+                    "1": {
+                        "then": "Dieses Objekt befindet sich im Freien"
+                    }
+                },
+                "question": "Befindet sich das Objekt in einem Innenraum?"
             },
             "induction-loop": {
                 "mappings": {
@@ -10475,6 +10639,133 @@
         "title": {
             "render": "Überwachungskamera"
         }
+    },
+    "tactile_map": {
+        "description": "Ebene mit taktilen Karten, die von sehbehinderten Menschen zur Navigation in der Stadt verwendet werden können.",
+        "name": "Taktile Karten",
+        "presets": {
+            "0": {
+                "description": "Eine taktile Karte, die durch Berühren gelesen werden kann. Im Gegensatz zu einem taktilen Modell ist diese Karte relativ flach und enthält keine dreidimensionalen Gebäude oder ähnliches.",
+                "title": "eine taktile Karte"
+            }
+        },
+        "tagRenderings": {
+            "braille": {
+                "mappings": {
+                    "0": {
+                        "then": "Diese taktile Karte hat einen Text in Blindenschrift."
+                    },
+                    "1": {
+                        "then": "Diese taktile Karte hat keinen Text in Blindenschrift."
+                    }
+                },
+                "question": "Gibt es einen Text in Blindenschrift auf dieser taktilen Karte?"
+            },
+            "braille_languages": {
+                "render": {
+                    "special": {
+                        "question": "In welchen Sprachen ist der Text in Blindenschrift auf dieser taktilen Karte?",
+                        "render_list_item": "Diese Karte hat Text in Blindenschrift in {language}",
+                        "render_single_language": "Diese Karte hat Text in Blindenschrift in {language}"
+                    }
+                }
+            },
+            "description": {
+                "freeform": {
+                    "placeholder": "z.B. Taktile Karte des Stadtzentrums"
+                },
+                "question": "Was zeigt diese taktile Karte?",
+                "render": "Beschreibung: {blind:description:en}."
+            },
+            "embossed_letters": {
+                "mappings": {
+                    "0": {
+                        "then": "Diese taktile Karte hat geprägte Buchstaben."
+                    },
+                    "1": {
+                        "then": "Diese taktile Karte hat keine geprägten Buchstaben."
+                    }
+                },
+                "question": "Gibt es auf dieser taktilen Karte geprägte Buchstaben?"
+            },
+            "embossed_letters_languages": {
+                "render": {
+                    "special": {
+                        "question": "In welchen Sprachen sind die geprägten Buchstaben auf dieser taktilen Karte?",
+                        "render_list_item": "Diese Karte hat geprägte Buchstaben in {language}",
+                        "render_single_language": "Diese Karte hat geprägte Buchstaben in {language}"
+                    }
+                }
+            }
+        },
+        "title": "Taktile Karte"
+    },
+    "tactile_model": {
+        "description": "Ebene mit dreidimensionalen ertastbaren Modellen der Umgebung.",
+        "name": "Taktile Modelle",
+        "presets": {
+            "0": {
+                "description": "Ein taktiles Modell ist ein dreidimensionales Modell eines Gebiets, das es den Menschen ermöglicht, ein Gebiet durch Berührung zu erkunden/sehen.",
+                "title": "ein taktiles Modell"
+            }
+        },
+        "tagRenderings": {
+            "braille": {
+                "mappings": {
+                    "0": {
+                        "then": "Es gibt eine Beschreibung in Blindenschrift."
+                    },
+                    "1": {
+                        "then": "Es gibt keine Beschreibung in Blindenschrift."
+                    }
+                },
+                "question": "Gibt es eine Beschreibung in Blindenschrift?"
+            },
+            "braille_languages": {
+                "render": {
+                    "special": {
+                        "question": "In welchen Sprachen gibt es eine Beschreibung in Blindenschrift?",
+                        "render_list_item": "Dieses Modell hat eine Beschreibung in Brailleschrift in {language()}",
+                        "render_single_language": "Dieses Modell hat eine Beschreibung in Brailleschrift in {language}"
+                    }
+                }
+            },
+            "description": {
+                "freeform": {
+                    "placeholder": "z.B. Taktiles Modell des Stadtzentrums"
+                },
+                "question": "Was zeigt dieses taktile Modell?",
+                "render": "Beschreibung: {blind:description:en}."
+            },
+            "embossed_letters": {
+                "mappings": {
+                    "0": {
+                        "then": "Das Modell ist mit geprägten Buchstaben beschrieben."
+                    },
+                    "1": {
+                        "then": "Es gibt keine eingeprägten Buchstaben, die das Modell beschreiben."
+                    }
+                },
+                "question": "Gibt es eingeprägte Buchstaben, die das Modell beschreiben?"
+            },
+            "embossed_letters_languages": {
+                "render": {
+                    "special": {
+                        "question": "In welchen Sprachen gibt es geprägte Buchstaben?",
+                        "render_list_item": "Dieses Modell hat geprägte Buchstaben in {language()}",
+                        "render_single_language": "Dieses Modell hat geprägte Buchstaben in {language}"
+                    }
+                }
+            },
+            "scale": {
+                "freeform": {
+                    "placeholder": "z.B. 1:1000"
+                },
+                "question": "Welchen Maßstab hat das Modell?",
+                "render": "Der Maßstab dieses Modells ist {scale}."
+            }
+        },
+        "title": "Taktiles Modell"
     },
     "tertiary_education": {
         "name": "Hochschulen und Universitäten",
