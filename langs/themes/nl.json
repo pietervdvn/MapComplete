@@ -96,6 +96,10 @@
         "shortDescription": "Een kaart van zitbanken",
         "title": "Zitbanken"
     },
+    "bicycle_parkings": {
+        "description": "Een kaart met alle soorten fietsenstallingen",
+        "title": "Fietsenstallingen"
+    },
     "bicycle_rental": {
         "description": "Op deze kaart vind je verschillende fietsverhuurpunten en fietsverhuurzaken",
         "shortDescription": "Een kaart met fietsverhuurpunten en fietsverhuurzaken",
@@ -119,11 +123,11 @@
         "title": "Boekenruilkasten"
     },
     "cafes_and_pubs": {
-        "description": "Cafés, kroegen en drinkgelegenheden",
+        "description": "Koffiehuizen, Cafés, en drinkgelegenheden",
         "title": "Cafés"
     },
     "campersite": {
-        "description": "Deze website verzamelt en toont alle officiële plaatsen waar een camper mag overnachten en afvalwater kan lozen. Ook jij kan extra gegevens toevoegen, zoals welke services er geboden worden en hoeveel dit kot, ook afbeeldingen en reviews kan je toevoegen. De data wordt op OpenStreetMap opgeslagen en is dus altijd gratis te hergebruiken, ook door andere applicaties.",
+        "description": "Deze website verzamelt en toont alle officiële plaatsen waar een camper mag overnachten en afvalwater kan lozen. Ook jij kan extra gegevens toevoegen, zoals welke services er geboden worden en hoeveel dit kost. Voeg afbeeldingen en reviews toe.",
         "overrideAll": {
             "tagRenderings+": {
                 "0": {
@@ -150,6 +154,17 @@
         "description": "Met deze kaart kan je informatie over oplaadpunten vinden en toevoegen",
         "shortDescription": "Een wereldwijde kaart van oplaadpunten",
         "title": "Oplaadpunten"
+    },
+    "circular_economy": {
+        "description": "Verschillende items die mensen helpen om te delen, te hergebruiken of te recycleren.",
+        "layers": {
+            "5": {
+                "override": {
+                    "=name": "Tweedehandswinkels"
+                }
+            }
+        },
+        "title": "Circulaire economie"
     },
     "climbing": {
         "description": "Op deze kaart vind je verschillende klimgelegenheden, zoals klimzalen, bolderzalen en klimmen in de natuur",
@@ -190,6 +205,45 @@
                                 }
                             },
                             "question": "Wie heeft hier toegang toe?"
+                        }
+                    }
+                }
+            },
+            "1": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "Deze winkel repareert bergschoenen"
+                                },
+                                "1": {
+                                    "then": "Deze winkel repareert geen bergschoenen"
+                                }
+                            },
+                            "question": "Repareert deze schoenwinkel bergschoenen?"
+                        }
+                    }
+                }
+            },
+            "2": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "Deze winkel repareert bergschoenen"
+                                },
+                                "1": {
+                                    "then": "Deze winkel repareert geen bergschoenen"
+                                }
+                            },
+                            "question": "Repareert deze schoenmaker ook bergschoenen?"
+                        }
+                    },
+                    "=presets": {
+                        "0": {
+                            "title": "een schoenmaker"
                         }
                     }
                 }
@@ -271,6 +325,23 @@
                         }
                     },
                     "render": "Fietsknooppunt"
+                }
+            },
+            "2": {
+                "override": {
+                    "name": "Fietswegwijzers",
+                    "title": {
+                        "render": "Fietswegwijzer"
+                    }
+                }
+            },
+            "3": {
+                "override": {
+                    "presets": {
+                        "0": {
+                            "title": "een knooppuntwegwijzer"
+                        }
+                    }
                 }
             }
         },
@@ -361,8 +432,12 @@
         "title": "Fietsstraten en fietszones"
     },
     "cyclofix": {
-        "description": "Het doel van deze kaart is om fietsers een gebruiksvriendelijke oplossing te bieden voor het vinden van de juiste infrastructuur voor hun behoeften.<br><br>U kunt uw exacte locatie volgen (enkel mobiel) en in de linkerbenedenhoek categorieën selecteren die voor u relevant zijn. U kunt deze tool ook gebruiken om 'spelden' aan de kaart toe te voegen of te bewerken en meer gegevens te verstrekken door de vragen te beantwoorden.<br><br>Alle wijzigingen die u maakt worden automatisch opgeslagen in de wereldwijde database van OpenStreetMap en kunnen  door anderen vrij worden hergebruikt.<br><br>Bekijk voor meer info over cyclofix ook <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
+        "description": "Een kaart waarop fietsers gepaste infrastructuur kunnen vinden zoals fietspompen, drinkwater, fietsenwinkels, reparatiepunten of stallingen.",
         "title": "Cyclofix - een kaart voor fietsers"
+    },
+    "disaster_response": {
+        "description": "Deze kaart bevat elementen die bedoeld zijn voor rampbestrijding en -voorbereiding.",
+        "title": "Rampbestrijding en hulpdiensten"
     },
     "drinking_water": {
         "description": "Op deze kaart staan publiek toegankelijke drinkwaterpunten en kan je makkelijk een nieuw drinkwaterpunt toevoegen",
@@ -412,7 +487,7 @@
             }
         },
         "shortDescription": "Wat is de oorsprong van een plaatsnaam?",
-        "title": "Etymologie - waarnaar is een straat vernoemd?"
+        "title": "Etymologie - waarnaar is een plaats naar vernoemd?"
     },
     "facadegardens": {
         "description": "Ontharde voortuintjes, groene gevels en bomen ín de stad brengen naast rust ook een mooiere stad, een grotere biodiversiteit, een verkoelend effect en een betere luchtkwaliteit. <br/> Klimaan VZW en 'Mechelen Klimaatneutraal' willen met het project Klim(t)aan je Gevel bestaande en nieuwe geveltuintjes in kaart brengen als voorbeeld voor mensen zelf een tuintje willen aanleggen of voor stadwandelaars die houden van de natuur. <br/>Meer info over het project op <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
@@ -500,6 +575,9 @@
         },
         "shortDescription": "Deze kaart toont geveltuintjes met foto's en bruikbare info over oriëntatie, zonlicht en planttypes.",
         "title": "Straatgeveltuintjes"
+    },
+    "fireplace": {
+        "description": "Buitenruimte om een vuur te maken of een vaste barbecue op een officiële plaats."
     },
     "food": {
         "description": "Restaurants en fast food",
