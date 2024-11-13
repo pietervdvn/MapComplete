@@ -43,7 +43,8 @@
         },
         "safeDelete": "Dit object kan veilig verwijderd worden van de kaart.",
         "useSomethingElse": "Gebruik een ander OpenStreetMap-bewerkprogramma om dit object te verwijderen",
-        "whyDelete": "Waarom moet dit object van de kaart verwijderd worden?"
+        "whyDelete": "Waarom moet dit object van de kaart verwijderd worden?",
+        "deletedTitle": "Verwijderd item"
     },
     "external": {
         "error": "Kon geen gestructureerde informatie uit de website ophalen"
