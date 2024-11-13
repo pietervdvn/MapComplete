@@ -1,0 +1,291 @@
+{
+  "credits": "Osmwithspace",
+  "filter": [
+    {
+      "id": "association",
+      "options": [
+        {
+          "question": {
+            "en": "scout association",
+            "de": "Bund/Verband"
+          }
+        },
+        {
+          "question": {
+            "en": "Bund der Pfadfinderinnen und Pfadfinder"
+          },
+          "osmTags": "brand=Bund der Pfadfinderinnen und Pfadfinder"
+        },
+        {
+          "question": {
+            "en": "Bund Muslimischer Pfadfinderinnen und Pfadfinder Deutschlands"
+          },
+          "osmTags": "brand=Bund Muslimischer Pfadfinderinnen und Pfadfinder Deutschlands"
+        },
+        {
+          "question": {
+            "en": "Deutsche Pfadfinderschaft Sankt Georg"
+          },
+          "osmTags": "brand=Deutsche Pfadfinderschaft Sankt Georg"
+        },
+        {
+          "question": {
+            "en": "Norges KFUK-KFUM-speidere"
+          },
+          "osmTags": "brand=Norges KFUK-KFUM-speidere"
+        },
+        {
+          "question": {
+            "en": "Pfadfinderinnenschaft St. Georg"
+          },
+          "osmTags": "brand=Pfadfinderinnenschaft St. Georg"
+        },
+        {
+          "question": {
+            "en": "The Scout Association"
+          },
+          "osmTags": "brand=The Scout Association"
+        },
+        {
+          "question": {
+            "en": "Verband Christlicher Pfadfinder*innen"
+          },
+          "osmTags": "brand=Verband Christlicher Pfadfinder*innen"
+        },
+        {
+          "question": {
+            "en": "other",
+            "de": "andere"
+          },
+          "osmTags": {
+            "and": [
+              "brand!=Bund der Pfadfinderinnen und Pfadfinder",
+              "brand!=Bund Muslimischer Pfadfinderinnen und Pfadfinder Deutschlands",
+              "brand!=Deutsche Pfadfinderschaft Sankt Georg",
+              "brand!=Norges KFUK-KFUM-speidere",
+              "brand!=Pfadfinderinnenschaft St. Georg",
+              "brand!=The Scout Association",
+              "brand!=Verband Christlicher Pfadfinder*innen"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "minzoom": 7,
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": {
+            "render": "https://upload.wikimedia.org/wikipedia/commons/2/22/WikiProject_Scouting_fleur-de-lis_outline.svg",
+            "mappings": [
+              {
+                "if": {
+                  "or": [
+                    "brand=Bund der Pfadfinderinnen und Pfadfinder",
+                    "name~.*BdP.*",
+                    "name~.*Bund der Pfadfinderinnen und Pfadfinder.*",
+                    "operator~.*BdP.*",
+                    "operator~.*Bund der Pfadfinderinnen und Pfadfinder.*"
+                  ]
+                },
+                "then": "https://upload.wikimedia.org/wikipedia/de/7/72/Bund_der_Pfadfinderinnen_und_Pfadfinder_Lilie_logo.svg"
+              },
+              {
+                "if": {
+                  "or": [
+                    "brand=Deutsche Pfadfinderschaft Sankt Georg",
+                    "name~.*DPSG.*",
+                    "name~.*Deutsche Pfadfinderschaft Sankt Georg.*",
+                    "operator~.*DPSG.*",
+                    "operator~.*Deutsche Pfadfinderschaft Sankt Georg.*"
+                  ]
+                },
+                "then": "https://upload.wikimedia.org/wikipedia/de/c/c6/DPSG_Lilie.svg"
+              },
+              {
+                "if": "brand=Norges KFUK-KFUM-speidere",
+                "then": "https://upload.wikimedia.org/wikipedia/en/d/d8/YWCA-YMCA_Guides_and_Scouts_of_Norway.svg"
+              },
+              {
+                "if": "brand=The Scout Association",
+                "then": "https://upload.wikimedia.org/wikipedia/en/c/c5/The_Scout_Association_logo_2018.svg"
+              },
+              {
+                "if": {
+                  "or": [
+                    "brand=Verband Christlicher Pfadfinder*innen",
+                    "name~.*VCP.*",
+                    "name~.*Verband Christlicher Pfadfinder*innen.*",
+                    "operator~.*VCP.*",
+                    "operator~.*Verband Christlicher Pfadfinder*innen.*"
+                  ]
+                },
+                "then": "https://upload.wikimedia.org/wikipedia/commons/8/87/Verband_Christlicher_Pfadfinderinnen_und_Pfadfinder_%28VCP%29_Logo_%28Lilie%29.svg"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "tagRenderings": [
+    {
+      "question": {
+        "de": "Was ist der Stammesname?",
+        "en": "What is the name of this group?"
+      },
+      "render": {
+        "en": "The name of this group is {name}",
+        "de": "Dieser Stamm heißt {name}"
+      },
+      "freeform": {
+        "key": "name"
+      },
+      "id": "Name"
+    },
+    {
+      "question": {
+        "de": "Zu welchem Verband/Bund gehört {name}",
+        "en": "To which scout association does {name} belong?"
+      },
+      "render": {
+        "en": "The scout association of this group is {brand}",
+        "de": "Dieser Stamm ist im Verband {brand}"
+      },
+      "freeform": {
+        "key": "brand"
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "brand=Bund der Pfadfinderinnen und Pfadfinder",
+              "brand:wikidata=Q1005225"
+            ]
+          },
+          "then": {
+            "en": "Bund der Pfadfinderinnen und Pfadfinder"
+          },
+          "hideInAnswer": "_country!=de"
+        },
+        {
+          "if": {
+            "and": [
+              "brand=Bund Muslimischer Pfadfinderinnen und Pfadfinder Deutschlands",
+              "brand:wikidata=Q16318690"
+            ]
+          },
+          "then": {
+            "en": "Bund Muslimischer Pfadfinderinnen und Pfadfinder Deutschlands"
+          },
+          "hideInAnswer": "_country!=de"
+        },
+        {
+          "if": {
+            "and": [
+              "brand=Deutsche Pfadfinderschaft Sankt Georg",
+              "brand:wikidata=Q1203670"
+            ]
+          },
+          "then": {
+            "en": "Deutsche Pfadfinderschaft Sankt Georg"
+          },
+          "hideInAnswer": "_country!=de"
+        },
+        {
+          "if": {
+            "and": [
+              "brand=Norges KFUK-KFUM-speidere",
+              "brand:wikidata=Q8046067"
+            ]
+          },
+          "then": {
+            "en": "Norges KFUK-KFUM-speidere"
+          },
+          "hideInAnswer": "_country!=no"
+        },
+        {
+          "if": {
+            "and": [
+              "brand=Pfadfinderinnenschaft St. Georg",
+              "brand:wikidata=Q2081993"
+            ]
+          },
+          "then": {
+            "en": "Pfadfinderinnenschaft St. Georg"
+          },
+          "hideInAnswer": "_country!=de"
+        },
+        {
+          "if": {
+            "and": [
+              "brand=The Scout Association",
+              "brand:wikidata=Q849740"
+            ]
+          },
+          "then": {
+            "en": "The Scout Association"
+          },
+          "hideInAnswer": "_country!=gb"
+        },
+        {
+          "if": {
+            "and": [
+              "brand=Verband Christlicher Pfadfinder*innen",
+              "brand:wikidata=Q1316309"
+            ]
+          },
+          "then": {
+            "en": "Verband Christlicher Pfadfinder*innen"
+          },
+          "hideInAnswer": "_country!=de"
+        }
+      ],
+      "id": "Verband"
+    },
+    "contact",
+    "questions",
+    "mastodon"
+  ],
+  "lineRendering": [
+    {
+      "width": 1,
+      "color": "blue"
+    }
+  ],
+  "id": "scouting_groups",
+  "name": {
+    "en": "scouting groups",
+    "de": "Pfadfinder:innenstämme"
+  },
+  "source": {
+    "osmTags": "club=scout"
+  },
+  "description": {
+    "en": "A map showing scouting groups."
+  },
+  "title": {
+    "render": {
+      "en": "{name}"
+    }
+  },
+  "presets": [
+    {
+      "title": {
+        "en": "scouting group",
+        "de": "Pfadfinder:innenstamm"
+      },
+      "tags": [
+        "club=scout"
+      ]
+    }
+  ],
+  "credits:uid": 8770388,
+  "allowMove": false
+}
