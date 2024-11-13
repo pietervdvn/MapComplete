@@ -869,7 +869,7 @@
     "open_now"
   ],
   "allowMove": {
-    "enableImproveAccuracy": false
+    "enableImproveAccuracy": true
   },
   "credits": "ochnygosch",
   "credits:uid": 63804
