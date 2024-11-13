@@ -27,12 +27,42 @@
     "advertising": {
         "name": "Reclame",
         "presets": {
+            "0": {
+                "description": "Een grote structuur voor reclame, meestal te vinden in gebieden met veel verkeer, zoals langs drukke wegen",
+                "title": "een reclamebord"
+            },
+            "1": {
+                "description": "Een grote structuur voor reclame, meestal te vinden in verkeersrijke gebieden zoals langs drukke wegen, bevestigd op een muur",
+                "title": "een reclamebord bevestigd aan een muur"
+            },
+            "10": {
+                "title": "een scherm gemonteerd op een schuilhokje"
+            },
             "11": {
                 "description": "Een stuk groot, weerbestendig textiel met opgedrukte reclameboodschap die permanent aan de muur hangt",
                 "title": "een spandoek"
             },
+            "12": {
+                "title": "een totem"
+            },
+            "13": {
+                "description": "Gebruikt voor reclameborden, neonborden, logo's & toegangsborden voor instellingen",
+                "title": "een bord"
+            },
+            "14": {
+                "title": "een beeldhouwwerk"
+            },
             "15": {
                 "title": "een muurschildering"
+            },
+            "2": {
+                "title": "een vrijstaande posterbak"
+            },
+            "3": {
+                "title": "een aan de muur gemonteerde posterbak"
+            },
+            "4": {
+                "title": "een posterbak die deel uitmaakt van een bushokje"
             },
             "5": {
                 "description": "Een klein uithangbord voor buurtadvertenties, meestal gericht op voetgangers",
@@ -53,6 +83,48 @@
             }
         },
         "tagRenderings": {
+            "Sides": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit object heeft reclame aan een enkele zijde"
+                    },
+                    "1": {
+                        "then": "Dit object heeft reclame aan beide zijdes"
+                    }
+                },
+                "question": "Vanaf hoeveel kanten kun je naar reclame kijken?"
+            },
+            "animated": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Statisch</b>, toont altijd hetzelfde bericht"
+                    },
+                    "1": {
+                        "then": "Dit object heeft een ingebouwd <b>digitaal scherm</b> om prijzen of andere berichten weer te geven"
+                    },
+                    "2": {
+                        "then": "<b>Trivision</b> - het reclamebord bestaat uit verschillende driehoekige prisma's die regelmatig ronddraaien"
+                    },
+                    "3": {
+                        "then": "<b>Roterende</b> posters"
+                    },
+                    "4": {
+                        "then": "<b>Roteert</b> vanzelf"
+                    }
+                },
+                "question": "Doorloopt deze advertentie meerdere berichten?"
+            },
+            "historic": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit is een historisch reclamebord (een advertentie voor een bedrijf dat niet meer bestaat of een heel oud bord met erfgoedwaarde)"
+                    },
+                    "1": {
+                        "then": "Dit reclamebord heeft geen historische waarde (het bedrijf bestaat nog steeds en heeft geen erfgoedwaarde)"
+                    }
+                },
+                "question": "Is dit bord voor een bedrijf dat niet meer bestaat of niet meer wordt onderhouden?"
+            },
             "luminous_or_lit_advertising": {
                 "override": {
                     "+mappings": {
@@ -70,14 +142,26 @@
                     "1": {
                         "then": "Lokale informatie"
                     },
+                    "2": {
+                        "then": "Veiligheidsinformatie"
+                    },
+                    "3": {
+                        "then": "Verkiezingsadvertentie"
+                    },
                     "4": {
                         "then": "Informatie over cultuurevenementen zoals theaters, optredens, …"
                     },
                     "5": {
                         "then": "Boodschap van NGO-organisaties"
                     },
+                    "6": {
+                        "then": "Om je mening te geven"
+                    },
                     "7": {
                         "then": "Religieuze boodschap"
+                    },
+                    "8": {
+                        "then": "Financieringsteken"
                     },
                     "9": {
                         "then": "Een kaart"
@@ -95,11 +179,38 @@
             },
             "type": {
                 "mappings": {
+                    "0": {
+                        "then": "Dit is een reclamebord"
+                    },
+                    "1": {
+                        "then": "Dit is een bord"
+                    },
+                    "10": {
+                        "then": "Dit is een muurschildering"
+                    },
+                    "11": {
+                        "then": "Dit is betegeling - de reclame is op tegels geschilderd"
+                    },
+                    "12": {
+                        "then": "Dit is een reliëf"
+                    },
                     "2": {
                         "then": "Dit is een aanplakzuil"
                     },
                     "3": {
                         "then": "Dit is een vlag"
+                    },
+                    "4": {
+                        "then": "Dit is een posterbak"
+                    },
+                    "5": {
+                        "then": "Dit is een scherm"
+                    },
+                    "6": {
+                        "then": "Dit is een beeldhouwerk"
+                    },
+                    "7": {
+                        "then": "Dit is een teken"
                     }
                 },
                 "render": "Dit is een {advertising}"
