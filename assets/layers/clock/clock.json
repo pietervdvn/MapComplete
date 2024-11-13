@@ -131,11 +131,13 @@
       ],
       "title": {
         "en": "a wall-mounted clock, mounted directly on a wall",
-        "nl": "een klok aan een muur, rechtstreeks bevestigd aan een muur"
+        "nl": "een klok aan een muur, rechtstreeks bevestigd aan een muur",
+        "de": "eine Wanduhr, die direkt an der Wand angebracht ist"
       },
       "description": {
         "en": "A publicly visible clock mounted directly on a wall",
-        "nl": "Een publiekelijk zichtbare klok rechtstreeks bevestigd aan een muur"
+        "nl": "Een publiekelijk zichtbare klok rechtstreeks bevestigd aan een muur",
+        "de": "Eine öffentlich sichtbare Uhr, die direkt an einer Wand angebracht ist"
       },
       "snapToLayer": [
         "walls_and_buildings"
@@ -175,12 +177,12 @@
           "then": {
             "en": "This clock is mounted on a wall, usually through a support perpendicular to the wall",
             "nl": "Deze klok is bevestigd aan een muur, meestal met een steun loodrecht op de muur",
-            "de": "Diese Uhr ist an einer Wand montiert",
+            "de": "Diese Uhr wird an der Wand befestigt, in der Regel durch einen Träger, der senkrecht zur Wand steht",
             "ca": "Aquest rellotge està muntat en una paret",
             "fr": "Cette horloge est fixée sur un mur",
             "pl": "Ten zegar jest zamontowany na ścianie",
             "cs": "Tyto hodiny jsou namontovány na stěně",
-            "es": "Este reloj está montado en una pared"
+            "es": "Este reloj está montado en una pared, generalmente a través de un soporte perpendicular a la pared"
           }
         },
         {
@@ -188,7 +190,8 @@
           "then": {
             "en": "This clock is mounted directly on a wall",
             "nl": "Deze klok is rechtstreeks aan een muur bevestigd",
-            "es": "Este reloj forma parte de una cartelera"
+            "es": "Este reloj está montado directamente en una pared",
+            "de": "Diese Uhr ist direkt an einer Wand montiert"
           }
         },
         {
@@ -202,7 +205,7 @@
             "pl": "Ten zegar jest częścią bilbordu",
             "cs": "Tyto hodiny jsou součástí billboardu",
             "uk": "Цей годинник є частиною білборду",
-            "es": "Este reloj está en el suelo"
+            "es": "Este reloj es parte de un cartel"
           }
         },
         {
@@ -291,20 +294,23 @@
       "override": {
         "question": {
           "en": "Is this clock indoors?",
-          "nl": "Is deze klok binnen?"
+          "nl": "Is deze klok binnen?",
+          "de": "Befindet sich diese Uhr in Innenräumen?"
         },
         "mappings": [
           {
             "then": {
               "en": "This clock is indoors",
-              "nl": "Deze klok is binnen"
+              "nl": "Deze klok is binnen",
+              "de": "Diese Uhr befindet sich in Innenräumen"
             }
           },
           {
             "if": "indoor=no",
             "then": {
               "en": "This clock is outdoors",
-              "nl": "Deze klok is buiten"
+              "nl": "Deze klok is buiten",
+              "de": "Diese Uhr ist im Freien"
             }
           }
         ]

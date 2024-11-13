@@ -3304,9 +3304,6 @@
                     },
                     "4": {
                         "then": "Este reloj está en el suelo"
-                    },
-                    "4": {
-                        "then": "Este reloj está en el suelo"
                     }
                 },
                 "question": "¿De qué manera está montado el reloj?"

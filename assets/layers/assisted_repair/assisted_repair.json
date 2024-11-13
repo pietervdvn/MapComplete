@@ -135,7 +135,8 @@
             "en": "Mobile phones are repaired here",
             "de": "Mobiltelefone werden hier repariert",
             "cs": "Zde se opravují mobilní telefony",
-            "es": "Aquí se reparan teléfonos móviles"
+            "es": "Aquí se reparan teléfonos móviles",
+            "uk": "Тут ремонтують мобільні телефони"
           },
           "ifnot": "service:mobile_phone:repair=no"
         },

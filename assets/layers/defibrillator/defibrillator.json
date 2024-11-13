@@ -605,7 +605,8 @@
         "sl": "Telefonska številka za vprašanja o tem defibrilatorju: <a href='tel:{phone}'>{phone}</a>",
         "ca": "Telèfon per a dubtes sobre aquest desfibril·lador: <a href='tel:{phone}'>{phone}</a>",
         "cs": "Telefon pro dotazy ohledně tohoto defibrilátoru: <a href='tel:{phone}'>{phone}</a>",
-        "es": "Teléfono para preguntas sobre este desfibrilador: <a href='tel:{phone}'>{phone}</a>"
+        "es": "Teléfono para preguntas sobre este desfibrilador: <a href='tel:{phone}'>{phone}</a>",
+        "uk": "Телефонуйте з питань щодо цього дефібрилятора: <a href='tel:{phone}'>{phone}</a>"
       },
       "question": {
         "en": "What is the phone number for questions about this defibrillator?",
@@ -616,7 +617,8 @@
         "sl": "Kakšna je telefonska številka za vprašanja o tem defibrilatorju?",
         "es": "¿Cuál es el número de teléfono para preguntas sobre este desfibrilador?",
         "ca": "Quin és el número de telèfon on preguntar sobre aquest desfibril·lador?",
-        "cs": "Jaké je telefonní číslo pro dotazy k tomuto defibrilátoru?"
+        "cs": "Jaké je telefonní číslo pro dotazy k tomuto defibrilátoru?",
+        "uk": "Який номер телефону для запитань щодо цього дефібрилятора?"
       },
       "freeform": {
         "key": "phone",
