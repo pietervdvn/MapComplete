@@ -273,7 +273,7 @@ it is not a surprise that Dutch is over-represented.
 Catalan is also slightly overrepresented, but that is because a proud catalan took the time to translate it to catalan early on and 
 uses it frequently.
 
-If you want to see MapComplete in _your_ language, head over to [Weblate](https://hosted.weblate.org/projects/mapcomplete/), create an account
+If you want to see MapComplete in _your_ language, head over to [Weblate](https://translate.mapcomplete.org/projects/mapcomplete/), create an account
 and start translating!
 There is, in settings, also an option to enable 'translation mode' in MapComplete. 
 Many pieces of text in the interface will gain a small 'translate'-button which you can click to immediately translate or correct that piece of text.
