@@ -12,7 +12,7 @@
     },
     "communityIndex": {
         "available": "Op dit communicatiekanaal spreekt men {native}",
-        "intro": "Contacteer anderen die bezig zijn met OpenStreetMap om kennis te maken, tips uit te wisselen of van elkaar bij te leren.",
+        "intro": "Contacteer anderen om kennis te maken, tips uit te wisselen, …",
         "notAvailable": "Op dit communicatiekanaal spreekt men geen {native}",
         "title": "Kom in contact met anderen"
     },
@@ -22,7 +22,7 @@
         "delete": "Verwijder",
         "deletedTitle": "Verwijderd item",
         "explanations": {
-            "hardDelete": "Dit object zal verwijderd worden in OpenStreetMap. Een ervaren bijdrager kan dit ongedaan maken.",
+            "hardDelete": "Dit object zal verwijderd worden in OpenStreetMap. Een ervaren bijdrager kan dit ongedaan maken",
             "retagNoOtherThemes": "Dit object zal anders aangeduid worden en niet meer getoond worden in deze applicatie",
             "retagOtherThemes": "Dit object zal aangepast worden en zichtbaar zijn in {otherThemes}",
             "selectReason": "Gelieve aan te duiden waarom dit object verwijderd moet worden",
@@ -44,7 +44,8 @@
         },
         "safeDelete": "Dit object kan veilig verwijderd worden van de kaart.",
         "useSomethingElse": "Gebruik een ander OpenStreetMap-bewerkprogramma om dit object te verwijderen",
-        "whyDelete": "Waarom moet dit object van de kaart verwijderd worden?"
+        "whyDelete": "Waarom moet dit object van de kaart verwijderd worden?",
+        "isChanged": "Deze eigenschap is gewijzigd en komt niet langer overeen met deze laag"
     },
     "external": {
         "error": "Kon geen gestructureerde informatie uit de website ophalen"
@@ -72,7 +73,7 @@
         "cyclofix": "Fietspompen, -winkels, -bandenautomaten en drinkwaterkraantjes vind je op Cyclofix",
         "description": "Een horizontale A4 flyer om MapComplete te promoten",
         "editing": {
-            "ex": "Een (vereenvoudigd) voorbeeld voor een natuurgebied wordt hieronder getoond:",
+            "ex": "Een (vereenvoudigd) voorbeeld voor een natuurgebied wordt hieronder getoond.",
             "intro": "De gebruiker krijgt eerst een kaart met interessepunten te zien. Klik je op een punt, dan wordt de interface met informatie over het interessepunt geopend.",
             "title": "Hoe ziet de interface eruit?"
         },
@@ -307,7 +308,7 @@
             "generatedWith": "Gemaakt met mapcomplete.org/{layoutid}",
             "versionInfo": "v{version} - gemaakt op {date}"
         },
-        "pickLanguage": "Kies je taal: ",
+        "pickLanguage": "Kies je taal",
         "poweredByOsm": "Gebouwd met OpenStreetMap",
         "questionBox": {
             "answeredMultiple": "Je beantwoordde {answered} vragen",
