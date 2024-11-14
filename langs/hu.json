@@ -106,7 +106,7 @@
         "fakeui": {
             "add_images": "Kép hozzáadása néhány kattintással",
             "attributes": "Barátságos módon jelenít meg tulajdonságokat",
-            "edit": "Téves vagy elavult az információ? A szerkesztés gomb ott van!",
+            "edit": "Téves vagy elavult az információ? A szerkesztés gomb ott van.",
             "question": "Ha egy tulajdonság még nem ismert, a MapComplete feldob egy kérdést",
             "see_images": "Megjelenít képeket korábbi szerkesztőktől, a Wikipédiáról, a Mapillaryről stb.",
             "wikipedia": "Láthatók a belinkelt Wikipédia-szócikkek"
