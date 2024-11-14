@@ -74,6 +74,7 @@
     "en": "A charging station",
     "nl": "Oplaadpunten",
     "ca": "Una estació de càrrega",
+    "cs": "Nabíjecí stanice",
     "de": "Eine Ladestation",
     "es": "Un punto de carga",
     "fr": "Une station de recharge"
@@ -2747,13 +2748,15 @@
         "en": "What is the website where one can find more information about this charging station?",
         "nl": "Wat is de website waar men meer info kan vinden over dit oplaadpunt?",
         "de": "Auf welcher Webseite kann man weitere Informationen über diese Ladestation finden?",
-        "es": "¿Cuál es la página web donde se puede encontrar más información sobre este punto de carga?"
+        "es": "¿Cuál es la página web donde se puede encontrar más información sobre este punto de carga?",
+        "uk": "На якому веб-сайті можна знайти більше інформації про цю зарядну станцію?"
       },
       "render": {
         "en": "More info on <a href='{website}'>{website}</a>",
         "nl": "Meer informatie op <a href='{website}'>{website}</a>",
         "de": "Weitere Informationen unter <a href='{website}'>{website}</a>",
-        "es": "Más información en <a href='{website}'>{website}</a>"
+        "es": "Más información en <a href='{website}'>{website}</a>",
+        "uk": "Більше інформації на <a href='{website}'>{website}</a>"
       },
       "freeform": {
         "key": "website",

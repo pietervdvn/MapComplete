@@ -1295,8 +1295,10 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      *
      * {"a": "b", "c":"d"} // => {"b":"a", "d":"c"}
      */
-    public static transposeMapSimple<K extends  string, V extends string>(d: Record<K, V>): Record<V, K>{
-        const inv = <Record<V, K>> {}
+    public static transposeMapSimple<K extends string, V extends string>(
+        d: Record<K, V>
+    ): Record<V, K> {
+        const inv = <Record<V, K>>{}
         for (const k in d) {
             const v = d[k]
             inv[v] = k

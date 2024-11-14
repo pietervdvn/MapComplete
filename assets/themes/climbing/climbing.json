@@ -359,7 +359,8 @@
               "pl": "Czy ten warsztat szewski naprawia buty wspinaczkowe?",
               "da": "Reparerer denne butik klatresko?",
               "it": "Questo negozio ripara scarpe da arrampicata?",
-              "uk": "Чи ремонтує ця майстерня альпіністське взуття?"
+              "uk": "Чи ремонтує ця майстерня альпіністське взуття?",
+              "nl": "Repareert deze schoenwinkel bergschoenen?"
             },
             "mappings": [
               {
@@ -374,7 +375,8 @@
                   "pl": "Ten warsztat naprawia buty wspinaczkowe",
                   "da": "Denne butik reparerer klatresko",
                   "it": "Questo negozio ripara scarpe da arrampicata",
-                  "uk": "У цій майстерні ремонтують альпіністське взуття"
+                  "uk": "У цій майстерні ремонтують альпіністське взуття",
+                  "nl": "Deze winkel repareert bergschoenen"
                 }
               },
               {
@@ -389,7 +391,8 @@
                   "pl": "Ten warsztat nie naprawia butów wspinaczkowych",
                   "da": "Denne butik reparerer ikke klatresko",
                   "it": "Questo negozio non ripara scarpe da arrampicata",
-                  "uk": "Цей магазин не займається ремонтом альпіністського взуття"
+                  "uk": "Цей магазин не займається ремонтом альпіністського взуття",
+                  "nl": "Deze winkel repareert geen bergschoenen"
                 }
               }
             ]
@@ -424,7 +427,8 @@
               "pl": "Czy ten warsztat obuwniczy naprawia również buty wspinaczkowe?",
               "da": "Reparerer denne skomager klatresko?",
               "it": "Questo negozio ripara scarpe da arrampicata?",
-              "uk": "Чи ремонтує ця майстерня також альпіністське взуття?"
+              "uk": "Чи ремонтує ця майстерня також альпіністське взуття?",
+              "nl": "Repareert deze schoenmaker ook bergschoenen?"
             },
             "mappings": [
               {
@@ -439,7 +443,8 @@
                   "pl": "Ten warsztat naprawia buty wspinaczkowe",
                   "da": "Denne butik reparerer klatresko",
                   "it": "Questo negozio ripara scarpe da arrampicata",
-                  "uk": "У цій майстерні ремонтують альпіністське взуття"
+                  "uk": "У цій майстерні ремонтують альпіністське взуття",
+                  "nl": "Deze winkel repareert bergschoenen"
                 }
               },
               {
@@ -454,7 +459,8 @@
                   "pl": "Ten warsztat nie naprawia butów wspinaczkowych",
                   "da": "Denne butik reparerer ikke klatresko",
                   "it": "Questo negozio non ripara scarpe da arrampicata",
-                  "uk": "Цей магазин не займається ремонтом альпіністського взуття"
+                  "uk": "Цей магазин не займається ремонтом альпіністського взуття",
+                  "nl": "Deze winkel repareert geen bergschoenen"
                 }
               }
             ]
@@ -476,7 +482,8 @@
               "da": "en skomager",
               "it": "un calzolaio",
               "uk": "майстерня по ремонту взуття",
-              "hu": "egy cipészműhely"
+              "hu": "egy cipészműhely",
+              "nl": "een schoenmaker"
             }
           }
         ]

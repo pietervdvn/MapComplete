@@ -58,7 +58,7 @@ export default class LinkToWeblate extends VariableUiElement {
         const [category, ...rest] = contextKey.split(":")
         const key = rest.join(":")
 
-        const baseUrl = Constants.weblate+"translate/mapcomplete/"
+        const baseUrl = Constants.weblate + "translate/mapcomplete/"
         return baseUrl + category + "/" + language + "/?offset=1&q=context%3A%3D%22" + key + "%22"
     }
 

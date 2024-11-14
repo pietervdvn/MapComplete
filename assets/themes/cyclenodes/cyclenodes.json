@@ -373,14 +373,16 @@
           "en": "Cycling guideposts",
           "de": "Fahrrad-Wegweiser",
           "cs": "Cyklistické ukazatele",
-          "es": "Señalización ciclista"
+          "es": "Señalización ciclista",
+          "nl": "Fietswegwijzers"
         },
         "title": {
           "render": {
             "en": "Cycling guidepost",
             "de": "Fahrrad-Wegweiser",
             "cs": "Cyklistický ukazatel",
-            "es": "Hito ciclista"
+            "es": "Hito ciclista",
+            "nl": "Fietswegwijzer"
           }
         }
       },
@@ -409,7 +411,8 @@
               "en": "a route marker for a node to node link",
               "de": "Eine Routenmarkierung für eine Verbindung von Knoten zu Knoten",
               "cs": "značka trasy pro spojení mezi uzly",
-              "es": "un marcador de ruta para un enlace de nodo a nodo"
+              "es": "un marcador de ruta para un enlace de nodo a nodo",
+              "nl": "een knooppuntwegwijzer"
             },
             "=exampleImages": [
               "./assets/layers/route_marker/bicycle_route_marker.jpg"

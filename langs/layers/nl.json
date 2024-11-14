@@ -242,6 +242,20 @@
             }
         }
     },
+    "aerialway": {
+        "tagRenderings": {
+            "type": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit is een kabelbaan waar de gondel op dezelfde kabel naar boven en naar beneden gaat."
+                    },
+                    "1": {
+                        "then": "Dit is een kabellift waar de gondel in een continue circuit gaat"
+                    }
+                }
+            }
+        }
+    },
     "ambulancestation": {
         "description": "Een ambulancestation is een plaats waar ambulances, medisch materiaal, persoonlijk beschermingsmateriaal en aanverwanten worden bewaard.",
         "name": "Kaart van ambulancestations",
@@ -289,6 +303,53 @@
         },
         "title": {
             "render": "Ambulancestation"
+        }
+    },
+    "animal_shelter": {
+        "tagRenderings": {
+            "6": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieren worden hier gehouden totdat ze geadopteerd worden"
+                    },
+                    "1": {
+                        "then": "Dieren worden hier verzorgd voor de rest van hun leven"
+                    },
+                    "2": {
+                        "then": "Gewonde dieren worden hier gerevalideerd totdat ze terug in het wild vrijgelaten worden "
+                    }
+                },
+                "question": "Wat is het doel van dit dierenasiel?"
+            },
+            "boarded_animals": {
+                "mappings": {
+                    "0": {
+                        "then": "Honden worden hier opgevangen"
+                    },
+                    "1": {
+                        "then": "Katten worden hier opgevangen"
+                    },
+                    "2": {
+                        "then": "Paarden worden hier opgevangen"
+                    },
+                    "3": {
+                        "then": "Vogels worden hier opgevangen"
+                    },
+                    "4": {
+                        "then": "Wilde dieren worden hier opgevangen"
+                    }
+                },
+                "question": "Welke dieren worden hier opgevangen?",
+                "render": "{animal_shelter} worden hier opgevangen"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
+            "render": "Dierenasiel"
         }
     },
     "artwork": {
@@ -1668,6 +1729,9 @@
         },
         "title": {
             "mappings": {
+                "0": {
+                    "then": "{name}"
+                },
                 "1": {
                     "then": "Vogelkijkhut {name}"
                 },
@@ -5745,6 +5809,11 @@
             }
         },
         "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
             "render": "Natuurgebied"
         }
     },
@@ -6288,6 +6357,21 @@
         },
         "title": {
             "render": "Picknicktafel"
+        }
+    },
+    "play_forest": {
+        "description": "Een speelbos is een vrij toegankelijke zone in een bos",
+        "name": "Speelbossen",
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                },
+                "1": {
+                    "then": "Speelbos {name}"
+                }
+            },
+            "render": "Speelbos"
         }
     },
     "playground": {
@@ -7824,6 +7908,9 @@
         },
         "title": {
             "mappings": {
+                "0": {
+                    "then": "{name}"
+                },
                 "1": {
                     "then": "Voetpad"
                 },
@@ -9836,13 +9923,25 @@
         }
     },
     "village_green": {
-        "description": "Een laag die dorpsgroen toont (gemeenschapsgroen, maar niet echt een park)"
+        "description": "Een laag die dorpsgroen toont (gemeenschapsgroen, maar niet echt een park)",
+        "name": "Speelweide",
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
+            "render": "Speelweide"
+        }
     },
     "visitor_information_centre": {
         "description": "Een bezoekerscentrum biedt informatie over een specifieke attractie of bezienswaardigheid waar het is gevestigd.",
         "name": "Bezoekerscentrum",
         "title": {
             "mappings": {
+                "0": {
+                    "then": "{name:nl}"
+                },
                 "1": {
                     "then": "{name}"
                 }
@@ -10070,67 +10169,6 @@
                 }
             },
             "render": "windturbine"
-        }
-    },
-    "aerialway": {
-        "tagRenderings": {
-            "type": {
-                "mappings": {
-                    "0": {
-                        "then": "Dit is een kabelbaan waar de gondel op dezelfde kabel naar boven en naar beneden gaat."
-                    },
-                    "1": {
-                        "then": "Dit is een kabellift waar de gondel in een continue circuit gaat"
-                    }
-                }
-            }
-        }
-    },
-    "animal_shelter": {
-        "tagRenderings": {
-            "6": {
-                "mappings": {
-                    "0": {
-                        "then": "Dieren worden hier gehouden totdat ze geadopteerd worden"
-                    },
-                    "2": {
-                        "then": "Gewonde dieren worden hier gerevalideerd totdat ze terug in het wild vrijgelaten worden "
-                    },
-                    "1": {
-                        "then": "Dieren worden hier verzorgd voor de rest van hun leven"
-                    }
-                },
-                "question": "Wat is het doel van dit dierenasiel?"
-            },
-            "boarded_animals": {
-                "mappings": {
-                    "0": {
-                        "then": "Honden worden hier opgevangen"
-                    },
-                    "1": {
-                        "then": "Katten worden hier opgevangen"
-                    },
-                    "2": {
-                        "then": "Paarden worden hier opgevangen"
-                    },
-                    "3": {
-                        "then": "Vogels worden hier opgevangen"
-                    },
-                    "4": {
-                        "then": "Wilde dieren worden hier opgevangen"
-                    }
-                },
-                "question": "Welke dieren worden hier opgevangen?",
-                "render": "{animal_shelter} worden hier opgevangen"
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "{name}"
-                }
-            },
-            "render": "Dierenasiel"
         }
     }
 }

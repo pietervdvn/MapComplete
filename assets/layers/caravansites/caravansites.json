@@ -762,7 +762,8 @@
         "da": "Officiel hjemmeside: <a href='{website}'>{website}</a>",
         "cs": "Oficiální webové stránky: <a href='{website}'>{website}</a>",
         "pl": "Official website: <a href='{website}'>{website}</a>",
-        "pt": "Site oficial: <a href='{website}'>{website}</a>"
+        "pt": "Site oficial: <a href='{website}'>{website}</a>",
+        "uk": "Офіційний веб-сайт: <a href='{website}'>{website}</a>"
       },
       "freeform": {
         "type": "url",
@@ -786,7 +787,8 @@
         "cs": "Má toto místo webové stránky?",
         "eu": "Toki honek webgunerik ba al du?",
         "pl": "Czy to miejsce ma stronę internetową?",
-        "pt": "Este lugar tem um website?"
+        "pt": "Este lugar tem um website?",
+        "uk": "Це місце має веб-сайт?"
       },
       "id": "caravansites-website"
     },

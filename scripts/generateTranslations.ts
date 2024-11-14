@@ -263,7 +263,9 @@ class TranslationPart {
                     lang = weblatepart
                     weblatepart = "core"
                 }
-                const fixLink = `Fix it on ${Constants.weblate}translate/mapcomplete/${weblatepart}/${lang}/?offset=1&q=context%3A%3D%22${encodeURIComponent(
+                const fixLink = `Fix it on ${
+                    Constants.weblate
+                }translate/mapcomplete/${weblatepart}/${lang}/?offset=1&q=context%3A%3D%22${encodeURIComponent(
                     path.join(".")
                 )}%22`
                 let subparts: string[] = value.match(/{[^}]*}/g)

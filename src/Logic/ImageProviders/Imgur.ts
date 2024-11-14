@@ -31,8 +31,8 @@ export class Imgur extends ImageProvider {
                     url: value,
                     key: key,
                     provider: this,
-                    id: value
-                }
+                    id: value,
+                },
             ]
         }
         return undefined
@@ -88,9 +88,12 @@ export class Imgur extends ImageProvider {
      *
      *
      */
-    public async DownloadAttribution(providedImage: {
-        url: string
-    }, withResponse?: (obj) => void): Promise<LicenseInfo> {
+    public async DownloadAttribution(
+        providedImage: {
+            url: string
+        },
+        withResponse?: (obj) => void
+    ): Promise<LicenseInfo> {
         const url = providedImage.url
         const hash = url.substr("https://i.imgur.com/".length).split(/\.jpe?g/i)[0]
 
@@ -98,15 +101,15 @@ export class Imgur extends ImageProvider {
         const response = await Utils.downloadJsonCached<{
             data: { description: string; datetime: string; views: number }
         }>(apiUrl, 365 * 24 * 60 * 60, {
-            Authorization: "Client-ID " + Constants.ImgurApiKey
+            Authorization: "Client-ID " + Constants.ImgurApiKey,
         })
         if (withResponse) {
             withResponse(response)
         }
 
         const imgurData = response.data
-        const license= Imgur.parseLicense(imgurData.description ?? "")
-        if(license){
+        const license = Imgur.parseLicense(imgurData.description ?? "")
+        if (license) {
             license.views = imgurData.views
             license.date = new Date(Number(imgurData.datetime) * 1000)
         }

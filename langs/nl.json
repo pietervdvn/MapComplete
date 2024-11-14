@@ -20,6 +20,7 @@
         "cancel": "Annuleren",
         "cannotBeDeleted": "Dit object kan niet van de kaart verwijderd worden",
         "delete": "Verwijder",
+        "deletedTitle": "Verwijderd item",
         "explanations": {
             "hardDelete": "Dit object zal verwijderd worden in OpenStreetMap. Een ervaren bijdrager kan dit ongedaan maken.",
             "retagNoOtherThemes": "Dit object zal anders aangeduid worden en niet meer getoond worden in deze applicatie",
@@ -43,8 +44,7 @@
         },
         "safeDelete": "Dit object kan veilig verwijderd worden van de kaart.",
         "useSomethingElse": "Gebruik een ander OpenStreetMap-bewerkprogramma om dit object te verwijderen",
-        "whyDelete": "Waarom moet dit object van de kaart verwijderd worden?",
-        "deletedTitle": "Verwijderd item"
+        "whyDelete": "Waarom moet dit object van de kaart verwijderd worden?"
     },
     "external": {
         "error": "Kon geen gestructureerde informatie uit de website ophalen"

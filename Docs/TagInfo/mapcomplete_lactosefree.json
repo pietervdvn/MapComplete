@@ -2108,21 +2108,21 @@
     },
     {
       "key": "service:bicycle:cleaning:charge",
-      "description": "Layer 'Shop' shows and asks freeform values for key 'service:bicycle:cleaning:charge' (in the mapcomplete.org theme 'Lactose free shops and restaurants') (This is only shown if amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)"
+      "description": "Layer 'Shop' shows and asks freeform values for key 'service:bicycle:cleaning:charge' (in the mapcomplete.org theme 'Lactose free shops and restaurants') (This is only shown if amenity!=bike_wash & amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)"
     },
     {
       "key": "service:bicycle:cleaning:fee",
-      "description": "Layer 'Shop' shows service:bicycle:cleaning:fee=no with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer (in the mapcomplete.org theme 'Lactose free shops and restaurants') (This is only shown if amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)",
+      "description": "Layer 'Shop' shows service:bicycle:cleaning:fee=no with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer (in the mapcomplete.org theme 'Lactose free shops and restaurants') (This is only shown if amenity!=bike_wash & amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)",
       "value": "no"
     },
     {
       "key": "service:bicycle:cleaning:fee",
-      "description": "Layer 'Shop' shows service:bicycle:cleaning:fee=yes & service:bicycle:cleaning:charge= with a fixed text, namely 'Free to use' (in the mapcomplete.org theme 'Lactose free shops and restaurants') (This is only shown if amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)",
+      "description": "Layer 'Shop' shows service:bicycle:cleaning:fee=yes & service:bicycle:cleaning:charge= with a fixed text, namely 'Free to use' (in the mapcomplete.org theme 'Lactose free shops and restaurants') (This is only shown if amenity!=bike_wash & amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)",
       "value": "yes"
     },
     {
       "key": "service:bicycle:cleaning:charge",
-      "description": "Layer 'Shop' shows service:bicycle:cleaning:fee=yes & service:bicycle:cleaning:charge= with a fixed text, namely 'Free to use' (in the mapcomplete.org theme 'Lactose free shops and restaurants') Picking this answer will delete the key service:bicycle:cleaning:charge. (This is only shown if amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)",
+      "description": "Layer 'Shop' shows service:bicycle:cleaning:fee=yes & service:bicycle:cleaning:charge= with a fixed text, namely 'Free to use' (in the mapcomplete.org theme 'Lactose free shops and restaurants') Picking this answer will delete the key service:bicycle:cleaning:charge. (This is only shown if amenity!=bike_wash & amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)",
       "value": ""
     },
     {

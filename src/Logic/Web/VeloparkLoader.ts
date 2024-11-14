@@ -17,7 +17,7 @@ export default class VeloparkLoader {
 
     private static readonly coder = new CountryCoder(
         Constants.countryCoderEndpoint,
-        Utils.downloadJson,
+        Utils.downloadJson
     )
 
     public static convert(veloparkData: VeloparkData): Feature {
@@ -46,14 +46,14 @@ export default class VeloparkLoader {
 
         if (veloparkData.contactPoint?.email) {
             properties["operator:email"] = VeloparkLoader.emailReformatting.reformat(
-                veloparkData.contactPoint?.email,
+                veloparkData.contactPoint?.email
             )
         }
 
         if (veloparkData.contactPoint?.telephone) {
             properties["operator:phone"] = VeloparkLoader.phoneValidator.reformat(
                 veloparkData.contactPoint?.telephone,
-                () => "be",
+                () => "be"
             )
         }
 
@@ -78,7 +78,7 @@ export default class VeloparkLoader {
             ) {
                 const duration = g.maximumParkingDuration.substring(
                     1,
-                    g.maximumParkingDuration.length - 1,
+                    g.maximumParkingDuration.length - 1
                 )
                 if (duration !== "30") {
                     // We don't set maxstay if it is 30, they are the default value that velopark chose for "unknown"
@@ -97,11 +97,11 @@ export default class VeloparkLoader {
                             const startHour = spec.opens
                             const endHour = spec.closes === "23:59" ? "24:00" : spec.closes
                             const merged = OH.MergeTimes(
-                                OH.ParseRule(dayOfWeek + " " + startHour + "-" + endHour),
+                                OH.ParseRule(dayOfWeek + " " + startHour + "-" + endHour)
                             )
                             return OH.ToString(merged)
                         })
-                        .join("; "),
+                        .join("; ")
                 )
                 properties.opening_hours = oh
             }

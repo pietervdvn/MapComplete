@@ -184,7 +184,7 @@
 {{service_item
 |name= [https://mapcomplete.org/circular_economy circular_economy]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:es|en}}, {{#language:de|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:uk|en}}, {{#language:pl|en}}
+|lang= {{#language:en|en}}, {{#language:es|en}}, {{#language:de|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:uk|en}}, {{#language:pl|en}}, {{#language:nl|en}}
 |descr= A MapComplete theme: Various items which help people to share, reuse or recycle
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -211,7 +211,7 @@
 {{service_item
 |name= [https://mapcomplete.org/bicycle_parkings bicycle_parkings]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:es|en}}, {{#language:zh_Hans|en}}, {{#language:it|en}}, {{#language:fil|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:uk|en}}, {{#language:pl|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:es|en}}, {{#language:zh_Hans|en}}, {{#language:it|en}}, {{#language:fil|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:uk|en}}, {{#language:pl|en}}, {{#language:nl|en}}
 |descr= A MapComplete theme: A map showing all types of bicycle parkings
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -292,7 +292,7 @@
 {{service_item
 |name= [https://mapcomplete.org/disaster_response disaster_response]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:it|en}}, {{#language:de|en}}, {{#language:es|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:uk|en}}
+|lang= {{#language:en|en}}, {{#language:it|en}}, {{#language:de|en}}, {{#language:es|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:uk|en}}, {{#language:nl|en}}
 |descr= A MapComplete theme: This map contains elements meant for disaster preparedness and response
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -328,7 +328,7 @@
 {{service_item
 |name= [https://mapcomplete.org/fireplace fireplace]
 |region= Worldwide
-|lang= {{#language:de|en}}, {{#language:en|en}}, {{#language:es|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:uk|en}}
+|lang= {{#language:de|en}}, {{#language:en|en}}, {{#language:es|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:uk|en}}, {{#language:nl|en}}
 |descr= A MapComplete theme: Outdoor place to make a fire or a fixed barbecue in an official place
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png

@@ -32,7 +32,8 @@
       "ca": "Refugi d'animals",
       "pl": "Schronisko dla zwierząt",
       "fr": "Un refuge animalier",
-      "cs": "Útulek pro zvířata"
+      "cs": "Útulek pro zvířata",
+      "nl": "Dierenasiel"
     },
     "mappings": [
       {
@@ -44,7 +45,8 @@
           "zh_Hans": "{name}",
           "ca": "{name}",
           "pl": "{name}",
-          "cs": "{name}"
+          "cs": "{name}",
+          "nl": "{name}"
         }
       }
     ]
@@ -131,7 +133,8 @@
         "zh_Hans": "动物收容所的目的是什么？",
         "ca": "Quina és la finalitat del refugi d'animals?",
         "pl": "Jaki jest cel tego schroniska dla zwierząt?",
-        "cs": "Jaký je účel útulku pro zvířata?"
+        "cs": "Jaký je účel útulku pro zvířata?",
+        "nl": "Wat is het doel van dit dierenasiel?"
       },
       "mappings": [
         {
@@ -143,7 +146,8 @@
             "ca": "Els animals romanen ací fins que son adoptats per un nou propietari",
             "pl": "Zwierzęta są tutaj dopóki nie znajdą nowego właściciela",
             "fr": "Les animaux sont gardés jusqu'à ce qu'ils soient adoptés par un nouveau maître",
-            "cs": "Zvířata jsou zde držena do doby, než si je osvojí nový majitel"
+            "cs": "Zvířata jsou zde držena do doby, než si je osvojí nový majitel",
+            "nl": "Dieren worden hier gehouden totdat ze geadopteerd worden"
           },
           "if": "purpose=adoption"
         },
@@ -155,7 +159,8 @@
             "zh_Hans": "动物的余生都得到照顾",
             "ca": "Els animals reben cures per a la resta de la seva vida",
             "fr": "Les animaux sont recueillis pour le reste de leur vie",
-            "cs": "Zvířata jsou v péči po zbytek života"
+            "cs": "Zvířata jsou v péči po zbytek života",
+            "nl": "Dieren worden hier verzorgd voor de rest van hun leven"
           },
           "if": "purpose=sanctuary"
         },
@@ -168,7 +173,8 @@
             "ca": "Els animals ferits es rehabiliten aquí fins que puguen ser alliberats de nou a la natura ",
             "pl": "Ranne zwierzęta przechodzą tutaj rehabilitację do momentu, kiedy mogą zostać wypuszczone na wolność ",
             "fr": "Les animaux blessés sont soignés jusqu'à ce qu'ils soient en état d'être relâchés dans la nature ",
-            "cs": "Zraněná zvířata jsou zde rehabilitována do doby, než mohou být opět vypuštěna do přírody "
+            "cs": "Zraněná zvířata jsou zde rehabilitována do doby, než mohou být opět vypuštěna do přírody ",
+            "nl": "Gewonde dieren worden hier gerevalideerd totdat ze terug in het wild vrijgelaten worden "
           },
           "if": "purpose=release"
         }
@@ -183,7 +189,8 @@
         "pl": "Jakie zwierzęta są tutaj przyjmowane?",
         "ca": "Quins animals s'accepten aquí?",
         "cs": "Která zvířata jsou zde přijímána?",
-        "es": "¿Qué animales son aceptados aquí?"
+        "es": "¿Qué animales son aceptados aquí?",
+        "nl": "Welke dieren worden hier opgevangen?"
       },
       "id": "boarded_animals",
       "mappings": [
@@ -194,7 +201,8 @@
             "de": "Hunde werden hier gehalten",
             "pl": "Są tutaj trzymane psy",
             "cs": "Chovají se zde psi",
-            "es": "Aquí se mantienen perros"
+            "es": "Aquí se mantienen perros",
+            "nl": "Honden worden hier opgevangen"
           }
         },
         {
@@ -204,7 +212,8 @@
             "de": "Katzen werden hier gehalten",
             "pl": "Są tutaj trzymane koty",
             "cs": "Chovají se zde kočky",
-            "es": "Aquí se mantienen gatos"
+            "es": "Aquí se mantienen gatos",
+            "nl": "Katten worden hier opgevangen"
           }
         },
         {
@@ -214,7 +223,8 @@
             "de": "Pferde werden hier gehalten",
             "pl": "Są tutaj trzymane konie",
             "cs": "Chovají se zde koně",
-            "es": "Aquí se mantienen caballos"
+            "es": "Aquí se mantienen caballos",
+            "nl": "Paarden worden hier opgevangen"
           }
         },
         {
@@ -224,7 +234,8 @@
             "de": "Vögel werden hier gehalten",
             "pl": "Są tutaj trzymane ptaki",
             "cs": "Chovají se zde ptáci",
-            "es": "Aquí se mantienen aves"
+            "es": "Aquí se mantienen aves",
+            "nl": "Vogels worden hier opgevangen"
           }
         },
         {
@@ -234,7 +245,8 @@
             "de": "Wildtiere werden hier gehalten",
             "pl": "Są tutaj trzymane dzikie zwierzęta",
             "cs": "Chovají se zde divoká zvířata",
-            "es": "Aquí se mantienen animales salvajes"
+            "es": "Aquí se mantienen animales salvajes",
+            "nl": "Wilde dieren worden hier opgevangen"
           }
         }
       ],
@@ -242,7 +254,8 @@
         "en": "{animal_shelter} is kept here",
         "de": "{animal_shelter} wird hier gehalten",
         "cs": "{animal_shelter} je uložen zde",
-        "es": "{animal_shelter} se mantiene aquí"
+        "es": "{animal_shelter} se mantiene aquí",
+        "nl": "{animal_shelter} worden hier opgevangen"
       },
       "freeform": {
         "key": "animal_shelter"

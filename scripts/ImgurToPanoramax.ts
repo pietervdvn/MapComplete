@@ -32,7 +32,9 @@ export class ImgurToPanoramax extends Script {
     private licenseChecker = new PanoramaxImageProvider()
 
     private readonly alreadyUploaded: Record<string, string> = this.readAlreadyUploaded()
-    private readonly alreadyUploadedInv: Record<string, string> = Utils.transposeMapSimple(this.alreadyUploaded)
+    private readonly alreadyUploadedInv: Record<string, string> = Utils.transposeMapSimple(
+        this.alreadyUploaded
+    )
     private _imageDirectory: string
     private _licenseDirectory: string
 
@@ -40,7 +42,7 @@ export class ImgurToPanoramax extends Script {
         test: "7f34cf53-27ff-46c9-ac22-78511fa8457a",
         cc0: "1de6f4a1-73ac-4c75-ab7f-2a2aabddf50a", // "f0d6f78a-ff95-4db1-8494-6eb44a17bb37",
         ccby: "288a8052-b475-422c-811a-4f6f1a00015e",
-        ccbysa: "f3d02893-b4c1-4cd6-8b27-e27ab57eb59a"
+        ccbysa: "f3d02893-b4c1-4cd6-8b27-e27ab57eb59a",
     } as const
 
     constructor() {
@@ -49,21 +51,20 @@ export class ImgurToPanoramax extends Script {
         )
     }
 
-
-    private async getRawInfo(imgurUrl): Promise<{ description?: string, datetime: number }> {
-        const fallbackpath = this._licenseDirectory + "/raw/" + imgurUrl.replaceAll(/[^a-zA-Z0-9]/g, "_") + ".json"
+    private async getRawInfo(imgurUrl): Promise<{ description?: string; datetime: number }> {
+        const fallbackpath =
+            this._licenseDirectory + "/raw/" + imgurUrl.replaceAll(/[^a-zA-Z0-9]/g, "_") + ".json"
         if (existsSync(fallbackpath)) {
             console.log("Loaded raw info from fallback path")
             return JSON.parse(readFileSync(fallbackpath, "utf8"))["data"]
         }
         // No local data available; lets ask imgur themselves
         return new Promise((resolve) => {
-            Imgur.singleton.DownloadAttribution({ url: imgurUrl },
-                raw => {
-                    console.log("Writing fallback to", fallbackpath, "(via raw)")
-                    writeFileSync(fallbackpath, JSON.stringify(raw), "utf8")
-                    resolve(raw["data"])
-                })
+            Imgur.singleton.DownloadAttribution({ url: imgurUrl }, (raw) => {
+                console.log("Writing fallback to", fallbackpath, "(via raw)")
+                writeFileSync(fallbackpath, JSON.stringify(raw), "utf8")
+                resolve(raw["data"])
+            })
         })
     }
 
@@ -76,7 +77,6 @@ export class ImgurToPanoramax extends Script {
                 return { licenseShortName: "CC0", artist: "Unknown" }
             }
             try {
-
                 const licenseText: LicenseInfo = JSON.parse(rawText)
                 if (licenseText.licenseShortName) {
                     return licenseText
@@ -84,33 +84,46 @@ export class ImgurToPanoramax extends Script {
                 console.log("<<< No valid license found in text", rawText)
                 return undefined
             } catch (e) {
-                console.error("Could not read ", rawText.slice(0, 20), "as json for image", imgurUrl, "from", licensePath)
+                console.error(
+                    "Could not read ",
+                    rawText.slice(0, 20),
+                    "as json for image",
+                    imgurUrl,
+                    "from",
+                    licensePath
+                )
             }
         }
 
-
         // We didn't find the expected license in the expected location; search for the fallback (raw) license
-        const fallbackpath = this._licenseDirectory + "/raw/" + imgurUrl.replaceAll(/[^a-zA-Z0-9]/g, "_") + ".json"
+        const fallbackpath =
+            this._licenseDirectory + "/raw/" + imgurUrl.replaceAll(/[^a-zA-Z0-9]/g, "_") + ".json"
         if (existsSync(fallbackpath)) {
-            const fallbackRaw: string = JSON.parse(readFileSync(fallbackpath, "utf8"))["data"]?.description
-            if (fallbackRaw?.toLowerCase()?.startsWith("cc0") || fallbackRaw?.toLowerCase()?.indexOf("#cc0") >= 0) {
+            const fallbackRaw: string = JSON.parse(readFileSync(fallbackpath, "utf8"))["data"]
+                ?.description
+            if (
+                fallbackRaw?.toLowerCase()?.startsWith("cc0") ||
+                fallbackRaw?.toLowerCase()?.indexOf("#cc0") >= 0
+            ) {
                 return { licenseShortName: "CC0", artist: "Unknown" }
             }
-           const license = Imgur.parseLicense(fallbackRaw)
-            if(license){
+            const license = Imgur.parseLicense(fallbackRaw)
+            if (license) {
                 return license
             }
-            console.log("No (fallback) license found for (but file exists), not uploading", imgurUrl, fallbackRaw)
+            console.log(
+                "No (fallback) license found for (but file exists), not uploading",
+                imgurUrl,
+                fallbackRaw
+            )
             return undefined
         }
 
-
         // No local data available; lets ask imgur themselves
-        const attr = await Imgur.singleton.DownloadAttribution({ url: imgurUrl },
-            raw => {
-                console.log("Writing fallback to", fallbackpath)
-                writeFileSync(fallbackpath, JSON.stringify(raw), "utf8")
-            })
+        const attr = await Imgur.singleton.DownloadAttribution({ url: imgurUrl }, (raw) => {
+            console.log("Writing fallback to", fallbackpath)
+            writeFileSync(fallbackpath, JSON.stringify(raw), "utf8")
+        })
         console.log("Got license via API:", attr?.licenseShortName)
         await ScriptUtils.sleep(500)
         if (attr?.licenseShortName) {
@@ -119,10 +132,7 @@ export class ImgurToPanoramax extends Script {
         return undefined
     }
 
-    async uploadImage(
-        key: string,
-        feat: Feature
-    ): Promise<UploadableTag | undefined> {
+    async uploadImage(key: string, feat: Feature): Promise<UploadableTag | undefined> {
         const v = feat.properties[key]
         if (!v) {
             return undefined
@@ -133,7 +143,10 @@ export class ImgurToPanoramax extends Script {
             const panohash = this.alreadyUploaded[imageHash]
             if (panohash) {
                 console.log("Already uploaded", panohash)
-                return new And([new Tag(key.replace("image", "panoramax"), panohash), new Tag(key, "")])
+                return new And([
+                    new Tag(key.replace("image", "panoramax"), panohash),
+                    new Tag(key, ""),
+                ])
             }
         }
 
@@ -163,7 +176,7 @@ export class ImgurToPanoramax extends Script {
 
         const file = new MyFile([], path)
 
-        file.stream = function() {
+        file.stream = function () {
             return handle.readableWebStream()
         }
 
@@ -200,48 +213,46 @@ export class ImgurToPanoramax extends Script {
         const license = await this.getRawInfo("https://i.imgur.com/" + imgurkey + ".jpg")
         const date = new Date(license.datetime * 1000)
         const panolicense = await this.panoramax.panoramax.search({
-            ids: [panokey]
+            ids: [panokey],
         })
         const panodata = panolicense[0]
         const collection: string = panodata.collection
         console.log({ imgurkey, date, panodata, datetime: license.datetime })
         const p = this.panoramax.panoramax
-        const url = p.host+"/collections/" + collection + "/items/" + panokey
+        const url = p.host + "/collections/" + collection + "/items/" + panokey
         const result = await p.fetch(url, {
             method: "PATCH",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({
                 ts: date.getTime(),
-            })
+            }),
         })
-        console.log("Patched date of ", p.createViewLink({
-            imageId: panokey,
-        }), url, "result is", result.status, await result.text())
+        console.log(
+            "Patched date of ",
+            p.createViewLink({
+                imageId: panokey,
+            }),
+            url,
+            "result is",
+            result.status,
+            await result.text()
+        )
     }
-
 
     async main(args: string[]): Promise<void> {
         this._imageDirectory = args[0] ?? "/home/pietervdvn/data/imgur-image-backup"
         this._licenseDirectory = args[1] ?? "/home/pietervdvn/git/MapComplete-data/ImageLicenseInfo"
 
-      //  await this.panoramax.panoramax.createCollection("CC0 - part 2")
-      //  return
-      /*  for (const panohash in this.alreadyUploadedInv) {
+        //  await this.panoramax.panoramax.createCollection("CC0 - part 2")
+        //  return
+        /*  for (const panohash in this.alreadyUploadedInv) {
             await this.patchDate(panohash)
             break
         }*/
 
-
-
         const bounds = new BBox([
-            [
-                4.025057189545606,
-                49.588777455920024
-            ],
-            [
-                -16.063346185815476,
-                61.187350355346894
-            ]
+            [4.025057189545606, 49.588777455920024],
+            [-16.063346185815476, 61.187350355346894],
         ])
         const maxcount = 10000
         const overpassfilters: RegexTag[] = []
@@ -252,7 +263,12 @@ export class ImgurToPanoramax extends Script {
                 overpassfilters.push(new RegexTag(k + ":" + i, r))
             }
         }
-        const overpass = new Overpass(new Or(overpassfilters), [], Constants.defaultOverpassUrls[0], new ImmutableStore(500) )
+        const overpass = new Overpass(
+            new Or(overpassfilters),
+            [],
+            Constants.defaultOverpassUrls[0],
+            new ImmutableStore(500)
+        )
         const features = (await overpass.queryGeoJson(bounds))[0].features
         const featuresCopy = [...features]
         let converted = 0
@@ -266,11 +282,18 @@ export class ImgurToPanoramax extends Script {
                 break
             }
             if (converted % 100 === 0) {
-                console.log("Converted:", converted, "total:", total, "progress:", Math.round(converted * 100 / total) + "%")
+                console.log(
+                    "Converted:",
+                    converted,
+                    "total:",
+                    total,
+                    "progress:",
+                    Math.round((converted * 100) / total) + "%"
+                )
             }
 
             let changedTags: (UploadableTag | undefined)[] = []
-            console.log(converted+"/"+total, " handling "+f.properties.id)
+            console.log(converted + "/" + total, " handling " + f.properties.id)
             for (const k of ["image", "image:menu", "image:streetsign"]) {
                 changedTags.push(await this.uploadImage(k, f))
                 for (let i = 0; i < 20; i++) {
@@ -285,7 +308,7 @@ export class ImgurToPanoramax extends Script {
                     f.properties,
                     {
                         theme: "image-mover",
-                        changeType: "link-image"
+                        changeType: "link-image",
                     }
                 )
                 changes.push(...(await action.CreateChangeDescriptions()))
@@ -300,7 +323,13 @@ export class ImgurToPanoramax extends Script {
         const dloader = new OsmObjectDownloader()
         for (let i = 0; i < modif.length; i++) {
             if (i % 100 === 0) {
-                console.log("Downloaded osm object", i, "/", modif.length, "(" + Math.round(i * 100 / modif.length) + "%)")
+                console.log(
+                    "Downloaded osm object",
+                    i,
+                    "/",
+                    modif.length,
+                    "(" + Math.round((i * 100) / modif.length) + "%)"
+                )
             }
             const id = modif[i]
             const obj = await dloader.DownloadObjectAsync(id)
@@ -318,11 +347,10 @@ export class ImgurToPanoramax extends Script {
         const cs = Changes.buildChangesetXML("0", modifiedObjects)
         writeFileSync("imgur_to_panoramax.osc", cs, "utf8")
 
-
-        const usernames = featuresCopy.map(f => f.properties.user)
-        const hist : Record<string,number> = {}
+        const usernames = featuresCopy.map((f) => f.properties.user)
+        const hist: Record<string, number> = {}
         for (const username of usernames) {
-            hist[username] = (hist[username] ?? 0)+ 1
+            hist[username] = (hist[username] ?? 0) + 1
         }
         console.log(hist)
     }

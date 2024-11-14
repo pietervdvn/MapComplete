@@ -8,7 +8,8 @@
     "cs": "Cirkulární ekonomika",
     "uk": "Переробна економіка",
     "hu": "Körforgásos gazdaság",
-    "pl": "Gospodarka o obiegu zamkniętym"
+    "pl": "Gospodarka o obiegu zamkniętym",
+    "nl": "Circulaire economie"
   },
   "description": {
     "en": "Various items which help people to share, reuse or recycle.",
@@ -17,7 +18,8 @@
     "ca": "Varios elements que ajuden a la gent a compartir, reutilitzar o reciclar.",
     "cs": "Různé předměty, které pomáhají lidem sdílet, znovu používat nebo recyklovat.",
     "uk": "Різноманітні предмети, які допомагають людям ділитися, повторно використовувати або переробляти.",
-    "pl": "Różne przedmioty, które pomagają ludziom się dzielić, ponownie używać lub poddawać recyklingowi."
+    "pl": "Różne przedmioty, które pomagają ludziom się dzielić, ponownie używać lub poddawać recyklingowi.",
+    "nl": "Verschillende items die mensen helpen om te delen, te hergebruiken of te recycleren."
   },
   "icon": "./assets/themes/circular_economy/circular.svg",
   "layers": [
@@ -50,7 +52,8 @@
           "ca": "Tendes de segona mà",
           "cs": "Obchody s použitým zbožím",
           "uk": "Магазини секонд-хенду",
-          "pl": "Sklepy second-hand"
+          "pl": "Sklepy second-hand",
+          "nl": "Tweedehandswinkels"
         },
         "filter": null,
         "source": {
