@@ -50,7 +50,8 @@
     "external": {
         "allAreApplied": "Tots els valors externs que faltaven s'han copiat a OpenStreetMap",
         "conflicting": {
-            "title": "Elements conflictius"
+            "title": "Elements conflictius",
+            "intro": "OpenStreetMap té un valor diferent al del lloc web d'origen per als següents valors."
         },
         "currentInOsmIs": "Pel moment, OpenStreetMap té el següent valor registrat:",
         "done": "Fet",
@@ -58,7 +59,12 @@
             "intro": "OpenStreetMap no té informació sobre els següents atributs",
             "title": "Elements que falten"
         },
-        "noDataLoaded": "El lloc web extern no té dades vinculades que es puguen carregar"
+        "noDataLoaded": "El lloc web extern no té dades vinculades que es puguen carregar",
+        "apply": "Aplicar",
+        "applyAll": "Aplica tots els valors que falten",
+        "error": "No s'han pogut carregar les dades vinculades des del lloc web",
+        "lastModified": "Les dades externes s'han modificat per darrera vegada a {date}",
+        "allIncluded": "Les dades carregades des de {source} estan contingudes a OpenStreetMap"
     },
     "favourite": {
         "loginNeeded": "<h3>Entrar</h3>El disseny personalitzat només està disponible pels usuaris d'OpenstreetMap",
@@ -377,7 +383,16 @@
                 "left": "esquerra",
                 "right": "dreta"
             },
-            "fromGps": "{distance} {direction} de la seva ubicació"
+            "fromGps": "{distance} {direction} de la seva ubicació",
+            "directionsAbsolute": {
+                "NW": "nord-oest",
+                "NE": "nord-est",
+                "S": "sud",
+                "SE": "sud-est",
+                "SW": "sud-oest",
+                "W": "oest",
+                "N": "nord"
+            }
         },
         "waitingForGeopermission": "Esperant al vostre permís per a utilitzar la geolocalització…",
         "waitingForLocation": "Buscant la vostra ubicació actual…",
