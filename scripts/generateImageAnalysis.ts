@@ -88,7 +88,7 @@ export default class GenerateImageAnalysis extends Script {
         if (image === undefined) {
             return false
         }
-        if (!image.match(/https:\/\/i\.imgur\.com\/[a-zA-Z0-9]+\.jpg/)) {
+        if (!image.match(/https:\/\/i\.imgur\.com\/[a-zA-Z0-9]+(\.jpe?g)|(\.png)/)) {
             return false
         }
         const filename = image.replace(/[\/:.\-%]/g, "_") + ".json"

@@ -111,9 +111,9 @@ export class ImgurToPanoramax extends Script {
                 console.log("Writing fallback to", fallbackpath)
                 writeFileSync(fallbackpath, JSON.stringify(raw), "utf8")
             })
-        console.log("Got license via API:", attr.licenseShortName)
+        console.log("Got license via API:", attr?.licenseShortName)
         await ScriptUtils.sleep(500)
-        if (attr.licenseShortName) {
+        if (attr?.licenseShortName) {
             return attr
         }
         return undefined
@@ -235,12 +235,12 @@ export class ImgurToPanoramax extends Script {
 
         const bounds = new BBox([
             [
-                1.7217767788980893,
-                41.00219164121438
+                4.025057189545606,
+                49.588777455920024
             ],
             [
-                2.7238939148245436,
-                41.9258679932085
+                -16.063346185815476,
+                61.187350355346894
             ]
         ])
         const maxcount = 10000
@@ -270,7 +270,7 @@ export class ImgurToPanoramax extends Script {
             }
 
             let changedTags: (UploadableTag | undefined)[] = []
-            console.log("Handling "+f.properties.id)
+            console.log(converted+"/"+total, " handling "+f.properties.id)
             for (const k of ["image", "image:menu", "image:streetsign"]) {
                 changedTags.push(await this.uploadImage(k, f))
                 for (let i = 0; i < 20; i++) {

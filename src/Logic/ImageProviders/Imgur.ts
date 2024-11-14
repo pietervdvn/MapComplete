@@ -106,8 +106,10 @@ export class Imgur extends ImageProvider {
 
         const imgurData = response.data
         const license= Imgur.parseLicense(imgurData.description ?? "")
-        license.views = imgurData.views
-        license.date = new Date(Number(imgurData.datetime) * 1000)
+        if(license){
+            license.views = imgurData.views
+            license.date = new Date(Number(imgurData.datetime) * 1000)
+        }
 
         return license
     }
