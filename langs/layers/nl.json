@@ -240,7 +240,8 @@
                     "then": "Aanplakzuil"
                 }
             }
-        }
+        },
+        "description": "We vullen de informatie over de advertentie aan met de referentie, de operator en de verlichting"
     },
     "aerialway": {
         "tagRenderings": {
