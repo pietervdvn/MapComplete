@@ -677,6 +677,7 @@
         "title": "Phares"
     },
     "mapcomplete-changes": {
+        "description": "Cette carte montre tous les changements effectués avec MapComplete",
         "layers": {
             "0": {
                 "filter": {
