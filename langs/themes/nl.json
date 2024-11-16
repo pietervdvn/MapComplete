@@ -1134,6 +1134,15 @@
                         "render": "Wandelwegwijzer"
                     }
                 }
+            },
+            "3": {
+                "override": {
+                    "presets": {
+                        "0": {
+                            "title": "een knooppuntwegwijzer"
+                        }
+                    }
+                }
             }
         },
         "title": "Wandelknooppuntnetwerken"
@@ -1206,8 +1215,21 @@
                             "mappings": {
                                 "0": {
                                     "then": "Deze winkel biedt <b>soft BDSM-accessoires</b>, zoals zachte handboeien, een 'fifty-shade-of-grey'-starterset, ..."
+                                },
+                                "3": {
+                                    "then": "Deze winkel biedt <b>leren kledij</b> aan, waaronder broeken en shirts die je in het dagelijks leven kunt gebruiken tot en met leren harnassen"
+                                },
+                                "4": {
+                                    "then": "Deze winkel biedt <b>uniformen</b> voor rollenspelen aan, zoals verpleegsteruniformen, militaire uniformen, politie, schoolmeisje, Franse dienstmeid, ..."
+                                },
+                                "2": {
+                                    "then": "Deze winkel biedt '<b>pet play</b>'-accessoires, zoals puppymaskers, dierenmaskers, ponyspellen, staarten, hoefschoenen, ..."
+                                },
+                                "1": {
+                                    "then": "Deze winkel biedt <b>gespecialiseerde BDSM-benodigdheden</b>, zoals spreidstangen, benodigdheden voor naaldspellen, medische bondagebenodigdheden, slagwerktuigen, kluisters, metalen kleuren, boeien, tepelklemmen, shibari-accessoires, ..."
                                 }
-                            }
+                            },
+                            "question": "Biedt deze winkel fetisjspullen aan?"
                         }
                     }
                 }
@@ -1330,6 +1352,20 @@
                                 "question": "Themanaam bevat <b>geen</b> {search}"
                             }
                         }
+                    },
+                    "7": {
+                        "options": {
+                            "0": {
+                                "question": "Gemaakt met {search}"
+                            }
+                        }
+                    },
+                    "8": {
+                        "options": {
+                            "0": {
+                                "question": "Changeset voegde minstens één afbeelding toe"
+                            }
+                        }
                     }
                 },
                 "tagRenderings": {
@@ -1338,7 +1374,8 @@
                         "render": "Wijziging aangebracht door <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>"
                     },
                     "host": {
-                        "render": "Gewijzigd met <a href='{host}'>{host}</a>"
+                        "render": "Gewijzigd met <a href='{host}'>{host}</a>",
+                        "question": "Met welke host (website) is deze wijziging gemaakt?"
                     },
                     "locale": {
                         "question": "In welke 'locale' (taal) is deze wijziging gemaakt?",
@@ -1351,7 +1388,14 @@
                     "version": {
                         "question": "Welke versie van MapComplete is gebruikt voor deze wijziging?",
                         "render": "Gemaakt met {editor}"
+                    },
+                    "show_changeset_id": {
+                        "render": "Changeset <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
                     }
+                },
+                "name": "Changeset centra",
+                "title": {
+                    "render": "Changeset voor {theme}"
                 }
             },
             "1": {
