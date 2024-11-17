@@ -21,7 +21,7 @@ export class StackedRenderingChart extends ChartJs {
             period: "day" | "month"
             groupToOtherCutoff?: 3 | number
             // If given, take the sum of these fields to get the feature weight
-            sumFields?: string[]
+            sumFields?: ReadonlyArray<string>
             hideUnknown?: boolean
             hideNotApplicable?: boolean
         }
@@ -57,9 +57,9 @@ export class StackedRenderingChart extends ChartJs {
             backgroundColor: string
         }[] = []
         const allDays = StackedRenderingChart.getAllDays(features)
-        let trimmedDays = allDays.map((d) => d.substr(0, 10))
+        let trimmedDays = allDays.map((d) => d.substring(0, 10))
         if (options?.period === "month") {
-            trimmedDays = trimmedDays.map((d) => d.substr(0, 7))
+            trimmedDays = trimmedDays.map((d) => d.substring(0, 7))
         }
         trimmedDays = Utils.Dedup(trimmedDays)
 
@@ -156,7 +156,7 @@ export class StackedRenderingChart extends ChartJs {
     ): string[] {
         let earliest: Date = undefined
         let latest: Date = undefined
-        let allDates = new Set<string>()
+        const allDates = new Set<string>()
         features.forEach((value) => {
             const d = new Date(value.properties.date)
             Utils.SetMidnight(d)
@@ -290,10 +290,10 @@ export default class TagRenderingChart extends Combine {
         const mappings = tagRendering.mappings ?? []
 
         options = options ?? {}
-        let unknownCount: T[] = []
-        const categoryCounts: T[][] = mappings.map((_) => [])
+        const unknownCount: T[] = []
+        const categoryCounts: T[][] = mappings.map(() => [])
         const otherCounts: Record<string, T[]> = {}
-        let notApplicable: T[] = []
+        const notApplicable: T[] = []
         for (const feature of features) {
             const props = feature.properties
             if (
@@ -346,7 +346,7 @@ export default class TagRenderingChart extends Combine {
             return { labels: undefined, data: undefined }
         }
 
-        let otherGrouped: T[] = []
+        const otherGrouped: T[] = []
         const otherLabels: string[] = []
         const otherData: T[][] = []
         const sortedOtherCounts: [string, T[]][] = []
