@@ -137,6 +137,7 @@ export class ImgurToPanoramax extends Script {
         if (!v) {
             return undefined
         }
+        const isPng = v.endsWith(".png")
 
         const imageHash = v.split("/").at(-1).split(".").at(0)
         {
@@ -151,7 +152,9 @@ export class ImgurToPanoramax extends Script {
         }
 
         let path: string = undefined
-        if (existsSync(this._imageDirectory + "/" + imageHash + ".jpg")) {
+        if (isPng) {
+            path = this._imageDirectory + "/../imgur_png_images/jpg/" + imageHash + ".jpg"
+        } else if (existsSync(this._imageDirectory + "/" + imageHash + ".jpg")) {
             path = this._imageDirectory + "/" + imageHash + ".jpg"
         } else if (existsSync(this._imageDirectory + "/" + imageHash + ".jpeg")) {
             path = this._imageDirectory + "/" + imageHash + ".jpeg"
@@ -164,7 +167,7 @@ export class ImgurToPanoramax extends Script {
             license = await this.getLicenseFor(v)
         } catch (e) {
             console.error("Could not fetch license due to", e)
-            if(e === 404){
+            if (e === 404) {
                 console.log("NOT FOUND")
                 return new Tag(key, "")
             }
@@ -174,6 +177,10 @@ export class ImgurToPanoramax extends Script {
             return undefined
         }
         const sequence = this.sequenceIds[license.licenseShortName?.toLowerCase()]
+        console.log("Reading ",path)
+        if(!existsSync(path)){
+            return undefined
+        }
         const handle = await open(path)
         const stat = await handle.stat()
 
@@ -262,12 +269,12 @@ export class ImgurToPanoramax extends Script {
 
         const bounds = new BBox([
             [
-                5.051208080670676,
-                45.55085138791583
+                -180,
+                -90
             ],
             [
-                14.998934008628453,
-                55.163232765096495
+                180,
+                90
             ]
         ])
         const maxcount = 10000

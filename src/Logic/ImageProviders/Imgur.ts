@@ -95,7 +95,7 @@ export class Imgur extends ImageProvider {
         withResponse?: (obj) => void
     ): Promise<LicenseInfo> {
         const url = providedImage.url
-        const hash = url.substr("https://i.imgur.com/".length).split(/\.jpe?g/i)[0]
+        const hash = url.substr("https://i.imgur.com/".length).split(/(\.jpe?g)|(\.png)/i)[0]
 
         const apiUrl = "https://api.imgur.com/3/image/" + hash
         const response = await Utils.downloadJsonCached<{
