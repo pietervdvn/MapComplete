@@ -57,7 +57,17 @@
         },
         "done": "Klaar",
         "allIncluded": "Gegevens geladen van {source} staan in OpenStreetMap",
-        "applyAll": "Alle ontbrekende waarden toepassen"
+        "applyAll": "Alle ontbrekende waarden toepassen",
+        "currentInOsmIs": "Op dit moment heeft OpenStreetMap de volgende waarde geregistreerd:",
+        "lastModified": "Externe gegevens zijn voor het laatst gewijzigd op {date}",
+        "loadedFrom": "De volgende gegevens worden geladen van <a href={url}>{source}</a> met behulp van de ingesloten JSON-LD",
+        "missing": {
+            "intro": "OpenStreetMap heeft geen informatie over de volgende attributen",
+            "title": "Ontbrekende items"
+        },
+        "noDataLoaded": "De externe website heeft geen gekoppelde gegevens die kunnen worden geladen",
+        "overwrite": "Overschrijven in OpenStreetMap",
+        "title": "Gestructureerde gegevens geladen van de externe website"
     },
     "favourite": {
         "loginNeeded": "<h3>Log in</h3>Je moet je aanmelden met OpenStreetMap om een persoonlijk thema te gebruiken",
@@ -74,7 +84,13 @@
             "unmark": "Verwijder van je persoonlijke lijst van favorieten",
             "unmarkNotDeleted": "Dit item wordt niet verwijderd en is nog steeds zichtbaar op de gepaste kaarten voor jou en anderen"
         },
-        "tab": "Jouw favorieten en beoordelingen"
+        "tab": "Jouw favorieten en beoordelingen",
+        "downloadGeojson": "Download je favorieten als geojson",
+        "downloadGpx": "Download je favorieten als GPX",
+        "intro": "Je hebt {lengte} locaties gemarkeerd als favoriete locatie.",
+        "introPrivacy": "Deze lijst is alleen voor jou zichtbaar",
+        "title": "Je favoriete locaties",
+        "loginToSeeList": "Log in om de lijst met locaties te zien die je als favoriet hebt gemarkeerd"
     },
     "flyer": {
         "aerial": "Deze kaart gebruikt luchtfoto's van het Agentschap Informatie Vlaanderen als achtergrond.\nOok het GRB is beschikbaar als achtergrondlaag.",
@@ -154,7 +170,8 @@
             "warnVisibleForEveryone": "Je toevoeging is voor iedereen zichtbaar",
             "wrongType": "Dit object is geen punt of lijn en kan daarom niet geïmporteerd worden",
             "zoomInFurther": "Gelieve verder in te zoomen om een object toe te voegen.",
-            "zoomInMore": "Zoom meer in om dit object te importeren"
+            "zoomInMore": "Zoom meer in om dit object te importeren",
+            "creating": "Een nieuw punt aan het maken..."
         },
         "apply_button": {
             "appliedOnAnotherObject": "Object {id} zal deze tags ontvangen: {tags}",
@@ -187,7 +204,12 @@
             "panoramaxLicenseCCBYSA": "Je foto wordt gepubliceerd met een CC-BY-SA-licentie. Iedereen mag je afbeelding hergebruiken mits naamsvermelding.",
             "themeBy": "Thema gemaakt door {author}",
             "title": "Copyright en attributie",
-            "translatedBy": "MapComplete werd vertaald door {contributors} en <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} meer vertalers</a>"
+            "translatedBy": "MapComplete werd vertaald door {contributors} en <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} meer vertalers</a>",
+            "madeBy": "Gemaakt door <b>{author}</b>",
+            "emailCreators": "Stuur een e-mail naar de makers",
+            "openPanoramax": "Open Panoramax hier",
+            "openThemeDocumentation": "Open de documentatie voor themakaart {naam}",
+            "panoramaxHelp": "<b>Panoramax</b> is een online service die foto's van op straat verzamelt en deze onder een vrije licentie beschikbaar stelt. Bijdragers mogen deze foto's gebruiken om OpenStreetMap te verbeteren"
         },
         "back": "Vorige",
         "backToIndex": "Bekijk alle thematische kaarten",
