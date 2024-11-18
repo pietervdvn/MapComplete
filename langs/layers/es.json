@@ -1492,6 +1492,17 @@
             }
         },
         "tagRenderings": {
+            "automated": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta es una estación manual de lavado de bicicletas"
+                    },
+                    "1": {
+                        "then": "Esta es una estación automática de lavado de bicicletas"
+                    }
+                },
+                "question": "¿Está este servicio de limpieza de bicicletas automatizado?"
+            },
             "bike_cleaning-charge": {
                 "mappings": {
                     "0": {
@@ -1515,17 +1526,6 @@
                 },
                 "question": "¿Cuánto cuesta usar el servicio de limpieza?",
                 "render": "Usar el servicio de limpieza cuesta {service:bicycle:cleaning:charge}"
-            },
-            "automated": {
-                "mappings": {
-                    "1": {
-                        "then": "Esta es una estación automática de lavado de bicicletas"
-                    },
-                    "0": {
-                        "then": "Esta es una estación manual de lavado de bicicletas"
-                    }
-                },
-                "question": "¿Está este servicio de limpieza de bicicletas automatizado?"
             },
             "self_service": {
                 "mappings": {
@@ -3314,6 +3314,19 @@
                 },
                 "question": "¿Este reloj también muestra la humedad?"
             },
+            "indoor": {
+                "override": {
+                    "mappings": {
+                        "0": {
+                            "then": "Este reloj está en un espacio interior"
+                        },
+                        "1": {
+                            "then": "Este reloj está en un espacio exterior"
+                        }
+                    },
+                    "question": "¿Este reloj está en el interior?"
+                }
+            },
             "support": {
                 "mappings": {
                     "0": {
@@ -3361,18 +3374,6 @@
                     }
                 },
                 "question": "¿Qué tan visible es este reloj?"
-            },
-            "indoor": {
-                "override": {
-                    "mappings": {
-                        "1": {
-                            "then": "Este reloj está en un espacio exterior"
-                        },
-                        "0": {
-                            "then": "Este reloj está en un espacio interior"
-                        }
-                    }
-                }
             }
         },
         "title": {
@@ -3534,6 +3535,57 @@
                     }
                 },
                 "question": "¿Este semáforo tiene señales de vibración para ayudar a cruzar? (normalmente ubicado en la parte inferior del botón de cruce)"
+            },
+            "markings": {
+                "mappings": {
+                    "0": {
+                        "then": "Este cruce no está señalizado"
+                    },
+                    "1": {
+                        "then": "Este paso de cebra está señalizado"
+                    },
+                    "10": {
+                        "then": "Este paso tiene marcas de cebra en colores alternos"
+                    },
+                    "11": {
+                        "then": "Este paso de cebra tiene doble señalización"
+                    },
+                    "12": {
+                        "then": "Este cruce tiene pictogramas en la calzada"
+                    },
+                    "13": {
+                        "then": "Este cruce tiene líneas a cada lado del cruce, junto con barras que las conectan, con una interrupción en cada barra"
+                    },
+                    "14": {
+                        "then": "Este cruce tiene líneas dobles a cada lado del cruce"
+                    },
+                    "2": {
+                        "then": "Este cruce tiene marcas de tipo desconocido"
+                    },
+                    "3": {
+                        "then": "Este cruce tiene líneas a ambos lados del cruce"
+                    },
+                    "4": {
+                        "then": "Este cruce tiene líneas a ambos lados, junto con barras que las conectan"
+                    },
+                    "5": {
+                        "then": "Este cruce tiene líneas discontinuas a ambos lados del cruce"
+                    },
+                    "6": {
+                        "then": "Este cruce tiene líneas de puntos a ambos lados del cruce"
+                    },
+                    "7": {
+                        "then": "Este cruce se marca utilizando una superficie de color diferente"
+                    },
+                    "8": {
+                        "then": "Este cruce tiene líneas a ambos lados, junto con barras en ángulo que las conectan"
+                    },
+                    "9": {
+                        "then": "Este paso tiene marcas de cebra con una interrupción en cada barra"
+                    }
+                },
+                "question": "¿Qué tipo de señalización tiene este cruce?",
+                "render": "Este cruce tiene marcas {crossing:markings}"
             }
         },
         "title": {
@@ -3947,6 +3999,43 @@
                 }
             },
             "render": "Vía"
+        }
+    },
+    "cyclist_waiting_aid": {
+        "description": "Diversas infraestructuras que ayudan a los ciclistas mientras esperan en un semáforo.",
+        "name": "Ayudas a la espera de ciclistas",
+        "presets": {
+            "0": {
+                "description": "Reposapiés, pasamanos u otro tipo de ayuda para mejorar la comodidad durante la espera en los semáforos",
+                "title": "un ciclista espera ayuda"
+            }
+        },
+        "tagRenderings": {
+            "direction": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta ayuda a la espera puede utilizarse cuando se avanza por esta vía"
+                    },
+                    "1": {
+                        "then": "Esta ayuda a la espera puede utilizarse cuando se retrocede por este camino"
+                    }
+                },
+                "render": "Esta ayuda a la espera puede utilizarse cuando se va en dirección {direction}"
+            },
+            "side": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta ayuda a la espera se encuentra en el lado izquierdo"
+                    },
+                    "1": {
+                        "then": "Esta ayuda a la espera se encuentra en el lado derecho"
+                    },
+                    "2": {
+                        "then": "Hay ayudas a la espera a ambos lados de la carretera"
+                    }
+                },
+                "question": "¿En qué lado de la carretera se encuentra?"
+            }
         }
     },
     "defibrillator": {
