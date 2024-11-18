@@ -34,6 +34,8 @@ export default class OverpassFeatureSource implements UpdatableFeatureSource {
     private readonly _isActive: Store<boolean>
     private readonly padToZoomLevel?: Store<number>
     private _lastQueryBBox: BBox
+    private _lastRequestedLayers: LayerConfig[]
+    private readonly _layersToDownload: Store<LayerConfig[]>
 
     constructor(
         state: {
@@ -47,27 +49,26 @@ export default class OverpassFeatureSource implements UpdatableFeatureSource {
         },
         options?: {
             padToTiles?: Store<number>
-            isActive?: Store<boolean>
+            isActive?: Store<boolean>,
+            ignoreZoom?: boolean
         }
     ) {
         this.state = state
         this._isActive = options?.isActive ?? new ImmutableStore(true)
         this.padToZoomLevel = options?.padToTiles
         const self = this
-        state.bounds.addCallbackD((_) => {
-            self.updateAsyncIfNeeded()
-        })
+        this._layersToDownload = options?.ignoreZoom? new ImmutableStore(state.layers) : state.zoom.map((zoom) => this.layersToDownload(zoom))
+
+        state.bounds.mapD(
+            (_) => {
+                self.updateAsyncIfNeeded()
+            },
+            [this._layersToDownload]
+        )
     }
 
-    /**
-     * Download the relevant data from overpass. Attempt to use a different server; only downloads the relevant layers
-     * @private
-     */
-    public async updateAsync(): Promise<void> {
-        let data: any = undefined
-        let lastUsed = 0
-
-        const layersToDownload = []
+    private layersToDownload(zoom: number): LayerConfig[] {
+        const layersToDownload: LayerConfig[] = []
         for (const layer of this.state.layers) {
             if (typeof layer === "string") {
                 throw "A layer was not expanded!"
@@ -75,7 +76,7 @@ export default class OverpassFeatureSource implements UpdatableFeatureSource {
             if (layer.source === undefined) {
                 continue
             }
-            if (this.state.zoom.data < layer.minzoom) {
+            if (zoom < layer.minzoom) {
                 continue
             }
             if (layer.doNotDownload) {
@@ -96,6 +97,19 @@ export default class OverpassFeatureSource implements UpdatableFeatureSource {
             layersToDownload.push(layer)
         }
 
+        return layersToDownload
+    }
+
+    /**
+     * Download the relevant data from overpass. Attempt to use a different server if one fails; only downloads the relevant layers
+     * @private
+     */
+    public async updateAsync(overrideBounds?: BBox): Promise<void> {
+        let data: any = undefined
+        let lastUsed = 0
+        const start = new Date()
+        const layersToDownload = this._layersToDownload.data
+
         if (layersToDownload.length == 0) {
             return
         }
@@ -109,12 +123,11 @@ export default class OverpassFeatureSource implements UpdatableFeatureSource {
         let bounds: BBox
         do {
             try {
-                bounds = this.state.bounds.data
+                bounds = overrideBounds ?? this.state.bounds.data
                     ?.pad(this.state.widenFactor)
                     ?.expandToTileBounds(this.padToZoomLevel?.data)
-
-                if (bounds === undefined) {
-                    return undefined
+                if (!bounds) {
+                    return
                 }
 
                 const overpass = this.GetFilter(overpassUrls[lastUsed], layersToDownload)
@@ -154,9 +167,18 @@ export default class OverpassFeatureSource implements UpdatableFeatureSource {
             // Some metatags are delivered by overpass _without_ underscore-prefix; we fix them below
             // TODO FIXME re-enable this data.features.forEach((f) => SimpleMetaTaggers.objectMetaInfo.applyMetaTagsOnFeature(f))
 
-            console.log("Overpass returned", data.features.length, "features")
+            const end = new Date()
+            const timeNeeded = (end.getTime() - start.getTime()) / 1000
+            console.log(
+                "Overpass returned",
+                data.features.length,
+                "features in",
+                timeNeeded,
+                "seconds"
+            )
             self.features.setData(data.features)
             this._lastQueryBBox = bounds
+            this._lastRequestedLayers = layersToDownload
         } catch (e) {
             console.error("Got the overpass response, but could not process it: ", e, e.stack)
         } finally {
@@ -201,6 +223,7 @@ export default class OverpassFeatureSource implements UpdatableFeatureSource {
         const requestedBounds = this.state.bounds.data
         if (
             this._lastQueryBBox !== undefined &&
+            Utils.sameList(this._layersToDownload.data, this._lastRequestedLayers) &&
             requestedBounds.isContainedIn(this._lastQueryBBox)
         ) {
             return undefined

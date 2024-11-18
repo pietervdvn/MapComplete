@@ -30,6 +30,9 @@ export default class FilteringFeatureSource implements FeatureSource {
         upstream.features.addCallback(() => {
             self.update()
         })
+        layer.isDisplayed.addCallback(() => {
+            self.update()
+        })
 
         layer.appliedFilters.forEach((value) =>
             value.addCallback((_) => {

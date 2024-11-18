@@ -2,19 +2,9 @@
 
 # parking_spaces
 
-
-
-
 Layer showing individual parking spaces.
 
-
-
-
-
-
  - This layer is shown at zoomlevel **18** and higher
-
-
 
 ## Table of contents
 
@@ -25,16 +15,13 @@ Layer showing individual parking spaces.
   - [type](#type)
   - [capacity](#capacity)
   - [leftover-questions](#leftover-questions)
+  - [move-button](#move-button)
   - [lod](#lod)
 
 ## Themes using this layer
 
-
-
  - [parkings](https://mapcomplete.org/parkings)
  - [personal](https://mapcomplete.org/personal)
-
-
 
 ## Basic tags for this layer
 
@@ -51,22 +38,14 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/parking_space#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/parking_space/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [parking_space](https://wiki.openstreetmap.org/wiki/Key:parking_space) | Multiple choice | [normal](https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Dnormal) [disabled](https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Ddisabled) [charging](https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Dcharging) [delivery](https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Ddelivery) [hgv](https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Dhgv) [caravan](https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Dcaravan) [bus](https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Dbus) [motorcycle](https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Dmotorcycle) [parent](https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Dparent) [staff](https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Dstaff) [taxi](https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Dtaxi) [trailer](https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Dtrailer) [car_sharing](https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Dcar_sharing) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/capacity#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/capacity/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [capacity](https://wiki.openstreetmap.org/wiki/Key:capacity) | Multiple choice | [1](https://wiki.openstreetmap.org/wiki/Tag:capacity%3D1) |
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
 
-
-
-
 ### type
 
 The question is `What kind of parking space is this?`
-
-
 
  -  *This is a normal parking space.* is shown if with parking_space=. _This option cannot be chosen as answer_
  -  *This is a normal parking space.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:parking_space' target='_blank'>parking_space</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Dnormal' target='_blank'>normal</a>
@@ -83,35 +62,27 @@ The question is `What kind of parking space is this?`
  -  *This is a parking space reserved for vehicles towing a trailer.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:parking_space' target='_blank'>parking_space</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Dtrailer' target='_blank'>trailer</a>
  -  *This is a parking space reserved for car sharing.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:parking_space' target='_blank'>parking_space</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parking_space%3Dcar_sharing' target='_blank'>car_sharing</a>
 
-
-
-
-
 ### capacity
 
 _This tagrendering has no question and is thus read-only_
 *This parking spaces has {capacity} spaces.*
 
-
  -  *This parking space has 1 space.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:capacity' target='_blank'>capacity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:capacity%3D1' target='_blank'>1</a>
-
-
-
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
+### move-button
 
-
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
 
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

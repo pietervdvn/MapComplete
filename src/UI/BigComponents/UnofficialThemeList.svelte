@@ -12,21 +12,5 @@
     osmConnection: OsmConnection
   }
 
-  const t = Translations.t.general
-  const currentIds: Store<string[]> = state.installedUserThemes
-  const stableIds = Stores.ListStabilized<string>(currentIds)
   let customThemes
-  $: customThemes = Utils.NoNull($stableIds.map((id) => state.GetUnofficialTheme(id)))
-  $: console.log("Custom themes are", customThemes)
 </script>
-
-{#if customThemes.length > 0}
-  <ThemesList {search} {state} themes={customThemes} isCustom={true} hideThemes={false}>
-    <svelte:fragment slot="title">
-      <h3>
-        <Tr t={t.customThemeTitle} />
-      </h3>
-      <Tr t={t.customThemeIntro} />
-    </svelte:fragment>
-  </ThemesList>
-{/if}

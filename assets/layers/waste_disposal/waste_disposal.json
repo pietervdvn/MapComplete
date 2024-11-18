@@ -9,7 +9,8 @@
     "da": "Affaldsspande",
     "ca": "Contenidor de brossa",
     "fr": "Réceptacles destinés à recevoir des déchets",
-    "cs": "Odpadkové koše"
+    "cs": "Odpadkové koše",
+    "es": "Contenedores de residuos"
   },
   "description": {
     "en": "Waste Disposal Bin, medium to large bin for disposal of (household) waste",
@@ -19,7 +20,8 @@
     "da": "Affaldsspande, mellemstor til stor skraldespand til bortskaffelse af (husholdnings)affald",
     "fr": "Réceptacle destiné à recevoir des déchets (domestiques) enveloppés dans des sacs en plastique",
     "ca": "Contenidor de fem, contenidor mitjà o gran per a l'eliminació de residus (domèstics)",
-    "cs": "Odpadkový koš, střední až velký koš na likvidaci (domácího) odpadu"
+    "cs": "Odpadkový koš, střední až velký koš na likvidaci (domácího) odpadu",
+    "es": "Contenedor de residuos, contenedor mediano o grande para la eliminación de residuos (domésticos)"
   },
   "source": {
     "osmTags": "amenity=waste_disposal"
@@ -36,7 +38,9 @@
       "da": "Bortskaffelse af affald",
       "ca": "Contenidor de fem",
       "cs": "Nakládání s odpady",
-      "zh_Hant": "廢棄物處理"
+      "zh_Hant": "廢棄物處理",
+      "uk": "Утилізація відходів",
+      "es": "Eliminación de residuos"
     }
   },
   "pointRendering": [
@@ -70,7 +74,8 @@
         "ca": "un contenidor de basura",
         "cs": "koš na odpadky",
         "pl": "kosz na śmieci",
-        "zh_Hant": "廢棄物處理桶"
+        "zh_Hant": "廢棄物處理桶",
+        "es": "un contenedor de residuos"
       },
       "tags": [
         "amenity=waste_disposal"
@@ -83,7 +88,8 @@
         "id": "Tempat sampah sedang hingga besar untuk pembuangan limbah (rumah tangga)",
         "da": "Mellemstor til stor skraldespand til bortskaffelse af (husholdnings)affald",
         "ca": "Contenidor mitjà o gran per a dipositar residus (domèstics)",
-        "cs": "Střední až velký kontejner na odpad (z domácností)"
+        "cs": "Střední až velký kontejner na odpad (z domácností)",
+        "es": "Contenedor mediano o grande para la eliminación de residuos (domésticos)"
       }
     }
   ],
@@ -98,7 +104,9 @@
         "ca": "Quin tipus de contenidor de brossa és aquest?",
         "cs": "Co je to za odpadkový koš?",
         "pl": "Co to za pojemnik na śmieci?",
-        "zh_Hant": "這是甚麼種類的廢棄物處理箱？"
+        "zh_Hant": "這是甚麼種類的廢棄物處理箱？",
+        "uk": "Що це за контейнер для сміття?",
+        "es": "¿Qué tipo de contenedor de residuos es este?"
       },
       "mappings": [
         {
@@ -108,7 +116,9 @@
             "de": "Dies ist eine Mülltonne oder ein Müllcontainer für (Haushalts-)Abfälle",
             "ca": "Es tracta d'un contenidor mitjà o gran per a dipositar residus (domèstics)",
             "cs": "Jedná se o střední až velkou popelnici na (domovní) odpad",
-            "zh_Hant": "這是一個中型至大型的桶，用於處理（家庭）廢棄物"
+            "zh_Hant": "這是一個中型至大型的桶，用於處理（家庭）廢棄物",
+            "uk": "Це середній або великий контейнер для утилізації (побутових) відходів",
+            "es": "Este es un contenedor mediano o grande para la eliminación de residuos (domésticos)"
           }
         },
         {
@@ -119,7 +129,9 @@
             "ca": "En realitat es tracta d'un contenidor de reciclatge",
             "cs": "To je vlastně recyklační kontejner",
             "pl": "W rzeczywistości jest to pojemnik do recyklingu",
-            "zh_Hant": "這實際上是一個回收容器"
+            "zh_Hant": "這實際上是一個回收容器",
+            "uk": "Це, власне, контейнер для переробки сміття",
+            "es": "Este es en realidad un contenedor de reciclaje"
           },
           "addExtraTags": [
             "recycling_type=container"
@@ -138,7 +150,9 @@
         "da": "Adgang: {access}",
         "ca": "Accés: {access}",
         "cs": "Přístup: {access}",
-        "zh_Hant": "存取：{access}"
+        "zh_Hant": "存取：{access}",
+        "uk": "Доступ: {access}",
+        "es": "Acceso: {access}"
       },
       "question": {
         "en": "Who can use this waste disposal bin?",
@@ -150,7 +164,9 @@
         "ca": "Qui pot utilitzar aquest contenidor de brossa?",
         "cs": "Kdo může používat tento koš na odpadky?",
         "pl": "Kto może korzystać z tego pojemnika na odpady?",
-        "zh_Hant": "誰可以使用這個廢棄物處理桶？"
+        "zh_Hant": "誰可以使用這個廢棄物處理桶？",
+        "uk": "Хто може користуватися цим сміттєвим баком?",
+        "es": "¿Quién puede usar este contenedor de residuos?"
       },
       "freeform": {
         "key": "access",
@@ -169,7 +185,9 @@
             "ca": "Aquest contenidor es pot utilitzat per qualsevol",
             "cs": "Tento koš může používat kdokoli",
             "pl": "Z tego pojemnika może korzystać każdy",
-            "zh_Hant": "這個桶可以給任何人使用"
+            "zh_Hant": "這個桶可以給任何人使用",
+            "uk": "Цим смітником може користуватися будь-хто",
+            "es": "Este contenedor puede ser usado por cualquiera"
           }
         },
         {
@@ -184,7 +202,9 @@
             "ca": "Aquest contenidor és privat",
             "cs": "Tento koš je soukromý",
             "pl": "Ten kosz jest prywatny",
-            "zh_Hant": "這個桶是私人的"
+            "zh_Hant": "這個桶是私人的",
+            "uk": "Ця скринька є приватною",
+            "es": "Este contenedor es privado"
           }
         },
         {
@@ -199,7 +219,9 @@
             "ca": "Aquest contenidor és només per als residents",
             "cs": "Tento koš je určen pouze pro obyvatele",
             "pl": "Ten kosz jest przeznaczony wyłącznie dla mieszkańców",
-            "zh_Hant": "這個桶僅供居民使用"
+            "zh_Hant": "這個桶僅供居民使用",
+            "uk": "Цей контейнер призначений лише для мешканців",
+            "es": "Este contenedor es solo para residentes"
           }
         }
       ]
@@ -216,7 +238,9 @@
         "ca": "On es troba aquest contenidor?",
         "cs": "Kde se nachází tento kontejner?",
         "pl": "Gdzie znajduje się ten kontener?",
-        "zh_Hant": "這個容器位於哪裡？"
+        "zh_Hant": "這個容器位於哪裡？",
+        "uk": "Де знаходиться цей контейнер?",
+        "es": "¿Dónde se encuentra este contenedor?"
       },
       "mappings": [
         {
@@ -231,7 +255,9 @@
             "ca": "Aquest contenidor està soterrat",
             "cs": "Jedná se o podzemní kontejner",
             "pl": "To jest podziemny kontener",
-            "zh_Hant": "這是一個地下容器"
+            "zh_Hant": "這是一個地下容器",
+            "uk": "Це підземний контейнер",
+            "es": "Este es un contenedor subterráneo"
           }
         },
         {
@@ -246,7 +272,9 @@
             "ca": "Aquest contenidor està situat a l'interior",
             "cs": "Tento kontejner se nachází uvnitř",
             "pl": "Kontener ten znajduje się w pomieszczeniu zamkniętym",
-            "zh_Hant": "這個容器位於室內"
+            "zh_Hant": "這個容器位於室內",
+            "uk": "Цей контейнер знаходиться в приміщенні",
+            "es": "Este contenedor está ubicado en interiores"
           }
         },
         {
@@ -261,7 +289,9 @@
             "ca": "Aquest contenidor està situat a l'aire lliure",
             "cs": "Tento kontejner se nachází venku",
             "pl": "Kontener ten znajduje się na zewnątrz",
-            "zh_Hant": "這個容器位於室外"
+            "zh_Hant": "這個容器位於室外",
+            "uk": "Цей контейнер розташований на відкритому повітрі",
+            "es": "Este contenedor está ubicado en exteriores"
           }
         }
       ]
@@ -281,7 +311,8 @@
             "id": "Hanya akses publik",
             "da": "Kun offentlig adgang",
             "ca": "Només amb accés públic",
-            "cs": "Pouze veřejný přístup"
+            "cs": "Pouze veřejný přístup",
+            "es": "Solo acceso público"
           },
           "osmTags": "access=yes"
         }

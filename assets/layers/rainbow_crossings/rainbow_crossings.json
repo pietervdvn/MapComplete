@@ -5,7 +5,8 @@
     "de": "Fußgängerüberwege in Regenbogenfarben",
     "fr": "Passages avec peinture arc-en-ciel",
     "ca": "Pasos de vianants pintats amb l'arc de Sant Martí",
-    "cs": "Přechody s duhovými malbami"
+    "cs": "Přechody s duhovými malbami",
+    "es": "Pasos de peatones con pinturas de arcoíris"
   },
   "description": {
     "en": "A layer showing pedestrian crossings with rainbow paintings",
@@ -14,7 +15,7 @@
     "ca": "Una capa que mostra els passos de vianants pintats amb de l'arc de Sant Martí",
     "cs": "Vrstva zobrazující přechody pro chodce s duhovými malbami",
     "pl": "Warstwa przedstawiająca przejścia dla pieszych z tęczowym malowaniem",
-    "es": "Una capa que muestra cruces peatonales con pinturas arco iris"
+    "es": "Una capa que muestra los pasos de peatones con pinturas de arcoíris"
   },
   "source": {
     "osmTags": {
@@ -39,7 +40,8 @@
       "pa_PK": "کراسنگ",
       "fr": "Passage",
       "ca": "Creuament",
-      "cs": "Přechod"
+      "cs": "Přechod",
+      "es": "Paso de peatones"
     }
   },
   "pointRendering": [
@@ -81,7 +83,8 @@
         "nl": "een oversteekplaats",
         "fr": "un passage",
         "ca": "un creuament",
-        "cs": "přechod"
+        "cs": "přechod",
+        "es": "un paso de peatones"
       },
       "tags": [
         "highway=footway",
@@ -94,7 +97,8 @@
         "fr": "Passage piéton",
         "ca": "Pas de vianants",
         "cs": "Přechod pro chodce",
-        "pl": "Przejście dla pieszych"
+        "pl": "Przejście dla pieszych",
+        "es": "Paso de peatones"
       },
       "snapToLayer": [
         "cycleways_and_roads"
@@ -111,7 +115,8 @@
         "de": "Hat der Überweg eine Markierung in Regenbogenfarben?",
         "fr": "Ce passage a-t-il une peinture arc-en-ciel ?",
         "ca": "Aquest pas de vianants està pintat amb l'arc de Sant Martí?",
-        "cs": "Má tento přechod duhové malby?"
+        "cs": "Má tento přechod duhové malby?",
+        "es": "¿Tiene este paso de peatones pinturas de arcoíris?"
       },
       "mappings": [
         {
@@ -121,7 +126,8 @@
             "de": "Der Überweg hat eine Markierung in Regenbogenfarben",
             "fr": "Ce passage a une peinture arc-en-ciel",
             "ca": "Aquest pas de vianants està pintat amb l'arc de Sant Martí",
-            "cs": "Tento přechod má duhové malby"
+            "cs": "Tento přechod má duhové malby",
+            "es": "Este paso de peatones tiene pinturas de arcoíris"
           },
           "icon": {
             "path": "./assets/themes/rainbow_crossings/logo.svg",
@@ -135,7 +141,8 @@
             "de": "Hier gibt es kein Markierung in Regenbogenfarben",
             "fr": "Pas de peinture arc-en-ciel ici",
             "ca": "No està pintat amb l'arc de Sant Martí",
-            "cs": "Žádné duhové malby"
+            "cs": "Žádné duhové malby",
+            "es": "No hay pinturas de arcoíris aquí"
           },
           "icon": "./assets/themes/rainbow_crossings/crossing.svg"
         },
@@ -146,12 +153,17 @@
             "de": "Hier gibt es kein Markierung in Regenbogenfarben",
             "fr": "Pas de peinture arc-en-ciel ici",
             "ca": "No està pintat amb l'arc de Sant Martí",
-            "cs": "Žádné duhové malby"
+            "cs": "Žádné duhové malby",
+            "es": "No hay pinturas de arcoíris aquí"
           },
           "icon": "./assets/themes/rainbow_crossings/crossing.svg",
           "hideInAnswer": true
         }
       ]
     }
-  ]
+  ],
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": false
+  }
 }

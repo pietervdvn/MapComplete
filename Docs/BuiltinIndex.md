@@ -10,7 +10,6 @@
  - aerialway
  - ambulancestation
  - animal_shelter
- - artwork
  - assembly_point
  - assisted_repair
  - atm
@@ -19,6 +18,7 @@
  - bbq
  - bench
  - bench_at_pt
+ - bicycle_counter
  - bicycle_library
  - bicycle_rental
  - bike_cafe
@@ -31,6 +31,7 @@
  - brothel
  - cafe_pub
  - car_rental
+ - caravansites
  - charging_station
  - cinema
  - climbing_area
@@ -39,12 +40,14 @@
  - clock
  - crossings
  - cycleways_and_roads
+ - cyclist_waiting_aid
  - defibrillator
  - dentist
  - disaster_response
  - doctors
  - dogpark
  - drinking_water
+ - dumpstations
  - elevator
  - elongated_coin
  - entrance
@@ -56,7 +59,7 @@
  - fitness_station
  - food
  - food_courts
- - ghost_bike
+ - ghostsign
  - governments
  - grave
  - guidepost
@@ -70,7 +73,6 @@
  - lighthouse
  - love_hotel
  - map
- - memorial
  - mountain_rescue
  - nature_reserve
  - observation_tower
@@ -85,6 +87,7 @@
  - play_forest
  - playground
  - playground_equipment
+ - police
  - postboxes
  - postoffices
  - public_bookcase
@@ -92,6 +95,7 @@
  - reception_desk
  - recycling
  - route_marker
+ - school
  - shelter
  - shops
  - shower
@@ -106,6 +110,8 @@
  - street_lamps
  - stripclub
  - surveillance_camera
+ - tactile_map
+ - tactile_model
  - ticket_machine
  - ticket_validator
  - toilet
@@ -145,6 +151,7 @@
  - ice_cream
  - kindergarten_childcare
  - pharmacy
+ - police
  - postoffices
  - questions
  - questions
@@ -160,6 +167,7 @@
              - animal_shelter
  - brothel
  - cafe_pub
+ - caravansites
  - cinema
  - climbing_area
  - climbing_gym
@@ -172,6 +180,7 @@
  - love_hotel
  - pharmacy
  - playground
+ - police
  - shops
  - stripclub
  - tourism_accomodation
@@ -203,15 +212,15 @@
  - nature_reserve
  - observation_tower
  - outdoor_seating
- - pharmacy
  - physiotherapist
  - playground
  - recycling
- - school
  - shops
  - souvenir_coin
  - souvenir_note
  - sports_centre
+ - tactile_map
+ - tactile_model
  - tertiary_education
  - vending_machine
  - veterinary
@@ -235,10 +244,8 @@
  - governments
  - hackerspace
  - kindergarten_childcare
- - pharmacy
  - physiotherapist
  - recycling
- - school
  - shops
  - sports_centre
  - tertiary_education
@@ -263,10 +270,8 @@
  - governments
  - hackerspace
  - kindergarten_childcare
- - pharmacy
  - physiotherapist
  - recycling
- - school
  - shops
  - sports_centre
  - tertiary_education
@@ -278,6 +283,12 @@
  - doctors
  - physiotherapist
  - tool_library
+            
+            ### images_no_blur
+
+             - artwork
+ - ghost_bike
+ - memorial
             
             ### wikipedia
 
@@ -309,6 +320,10 @@
  - hospital
  - ice_cream
  - love_hotel
+ - pharmacy
+ - police
+ - postoffices
+ - school
  - stripclub
  - tool_library
  - tourism_accomodation
@@ -365,6 +380,7 @@
  - food
  - ice_cream
  - observation_tower
+ - pharmacy
  - questions
  - questions
  - shops
@@ -465,7 +481,8 @@
             
             ### questions
 
-             - charging_station
+             - caravansites
+ - charging_station
  - etymology
  - favourite
  - hackerspace
@@ -515,10 +532,15 @@
 
              - climbing_gym
             
+            ### indoor
+
+             - clock
+            
             ### all_tags
 
              - cycle_highways
  - fixme
+ - search
  - summary
             
             ### seasonal
@@ -578,6 +600,14 @@
              - food
  - shops
             
+            ### advertising.historic
+
+             - ghostsign
+            
+            ### advertising.type
+
+             - ghostsign
+            
             ### export_as_gpx
 
              - gps_track
@@ -613,6 +643,11 @@
              - parking_ticket_machine
  - ticket_machine
  - vending_machine
+            
+            ### {preset_type_select()}
+
+             - police
+ - tourism_accomodation
             
             ### single_level
 
@@ -673,10 +708,6 @@
             ### toilet.menstrual_products_location
 
              - toilet_at_amenity
-            
-            ### {preset_type_select()}
-
-             - tourism_accomodation
             
             ### brand
 

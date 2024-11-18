@@ -8,16 +8,15 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [mapcomplete-changes (defined in this theme)](#mapcomplete-changes)
  - [current_view](../Layers/current_view.md)
 
-
 Available languages:
 
-
  - en
-
+ - de
+ - cs
+ - es
 
 # Table of contents
 
@@ -40,15 +39,7 @@ Available languages:
 These layers can not be reused in different themes.
 # mapcomplete-changes
 
-
-
-
 Shows all MapComplete changes
-
-
-
-
-
 
  - This layer is shown at zoomlevel **0** and higher
  - <img src='../warning.svg' height='1rem'/>
@@ -56,8 +47,6 @@ Shows all MapComplete changes
 This layer is loaded from an external source, namely 
 
 `https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/mapcomplete-changes/tile_{z}_{x}_{y}.geojson`
-
-
 
 No themes use this layer
 
@@ -79,177 +68,97 @@ Elements must match the expression **editor~.+**
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/host#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/host/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [host](https://wiki.openstreetmap.org/wiki/Key:host) | [string](../SpecialInputElements.md#string) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/editor#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/editor/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [editor](https://wiki.openstreetmap.org/wiki/Key:editor) | [string](../SpecialInputElements.md#string) |  |
 
-
-
-
 ### show_changeset_id
 
 _This tagrendering has no question and is thus read-only_
 *Changeset <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>*
-
-
-
 
 ### contributor
 
 The question is `What contributor did make this change?`
 *Change made by <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>* is shown if `user` is set
 
-
-
-
 ### theme-id
 
 The question is `What theme was used to make this change?`
 *Change with theme <a href='https://mapcomplete.org/{theme}'>{theme}</a>* is shown if `theme` is set
-
-
-
 
 ### locale
 
 The question is `What locale (language) was this change made in?`
 *User locale is {locale}* is shown if `locale` is set
 
-
-
-
 ### host
 
 The question is `What host (website) was this change made with?`
 *Change with with <a href='{host}'>{host}</a>* is shown if `host` is set
 
-
  -  *waldbrand-app.de* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:host' target='_blank'>host</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:host%3Dwww.waldbrand-app.de' target='_blank'>www.waldbrand-app.de</a>. _This option cannot be chosen as answer_
  -  *Develop* is shown if with host~^(https:\/\/pietervdvn.github.io\/mc\/develop\/.*)$. _This option cannot be chosen as answer_
-
-
-
-
 
 ### version
 
 The question is `What version of MapComplete was used to make this change?`
 *Made with {editor}* is shown if `editor` is set
 
-
-
-
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
-
-
-
 
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
 
-
 This tagrendering has labels 
 `added_by_default`
 
 ## Filters
 
-
+| id | question | osmTags | fields |
+-----|-----|-----|----- |
+| theme-search.0 | Themename contains {search} |  | search (regex) |
 
 | id | question | osmTags | fields |
 -----|-----|-----|----- |
-| theme-search.0 | Themename contains {search} |  | search (string) |
-
-
-
-
-
+| theme-not-search.0 | Themename does <b>not</b> contain {search} |  | search (regex) |
 
 | id | question | osmTags | fields |
 -----|-----|-----|----- |
-| theme-not-search.0 | Themename does <b>not</b> contain {search} |  | search (string) |
-
-
-
-
-
+| created_by.0 | Made by contributor {search} |  | search (regex) |
 
 | id | question | osmTags | fields |
 -----|-----|-----|----- |
-| created_by.0 | Made by contributor {search} |  | search (string) |
-
-
-
-
-
-
-| id | question | osmTags | fields |
------|-----|-----|----- |
-| not_created_by.0 | <b>Not</b> made by contributor {search} |  | search (string) |
-
-
-
-
-
+| not_created_by.0 | <b>Not</b> made by contributor {search} |  | search (regex) |
 
 | id | question | osmTags | fields |
 -----|-----|-----|----- |
 | made_before.0 | Made before {search} |  | search (date) |
 
-
-
-
-
-
 | id | question | osmTags | fields |
 -----|-----|-----|----- |
 | made_after.0 | Made after {search} |  | search (date) |
 
-
-
-
-
+| id | question | osmTags | fields |
+-----|-----|-----|----- |
+| locale-filter.0 | User language (iso-code) {search} |  | search (regex) |
 
 | id | question | osmTags | fields |
 -----|-----|-----|----- |
-| locale-filter.0 | User language (iso-code) {search} |  | search (string) |
-
-
-
-
-
-
-| id | question | osmTags | fields |
------|-----|-----|----- |
-| host_name.0 | Made with host {search} |  | search (string) |
-
-
-
-
-
+| host_name.0 | Made with host {search} |  | search (regex) |
 
 | id | question | osmTags |
 -----|-----|----- |
 | added-image.0 | Changeset added at least one image | add-image>0 |
 
-
-
-
-
-
 | id | question | osmTags |
 -----|-----|----- |
 | exclude_grb.0 | Exclude GRB theme | theme!=grb |
 
-
-
-
-
-
 | id | question | osmTags |
 -----|-----|----- |
 | exclude_etymology.0 | Exclude etymology theme | theme!=etymology |
-
 
 
 

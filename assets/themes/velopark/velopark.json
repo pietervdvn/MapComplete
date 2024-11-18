@@ -234,7 +234,7 @@
         {
           "id": "nearby_images",
           "render": {
-            "*": "{nearby_images(open,readonly)}"
+            "*": "{nearby_images(,readonly)}"
           }
         }
       ],
@@ -249,6 +249,19 @@
                 "nl": "Enkel onafgewerkte taken"
               },
               "osmTags": "mr_taskStatus=Created",
+              "default": true
+            }
+          ]
+        },
+        {
+          "id": "nmbs-only",
+          "options": [
+            {
+              "question": {
+                "en": "Only non-SNCB-bicycle parkings",
+                "nl": "Enkel niet-NMBS fietsstallingen"
+              },
+              "osmTags": "ref:velopark!~i~https://data.velopark.be/data/NMBS.*",
               "default": true
             }
           ]
@@ -397,7 +410,7 @@
         "leftover-questions"
       ],
       "override": {
-        "doCount": false,
+        "isCounted": false,
         "minzoom": 14,
         "+tagRenderings": [
           "questions",
@@ -427,7 +440,7 @@
         "+tagRenderings": [
           "questions"
         ],
-        "doCount": false,
+        "isCounted": false,
         "minzoom": 18
       }
     },

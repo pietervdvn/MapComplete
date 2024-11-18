@@ -264,7 +264,7 @@ export class Or extends TagsFilter {
         if (containedAnds.length === 1) {
             newOrs.push(containedAnds[0])
         } else if (containedAnds.length > 1) {
-            let commonValues: TagsFilter[] = [...(containedAnds[0].and)]
+            let commonValues: TagsFilter[] = [...containedAnds[0].and]
             for (let i = 1; i < containedAnds.length && commonValues.length > 0; i++) {
                 const containedAnd = containedAnds[i]
                 commonValues = commonValues.filter((cv) =>

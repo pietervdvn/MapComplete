@@ -8,16 +8,18 @@ import { UIEventSource } from "../../Logic/UIEventSource"
 import { QueryParameters } from "../../Logic/Web/QueryParameters"
 import { Utils } from "../../Utils"
 import { RegexTag } from "../../Logic/Tags/RegexTag"
-import BaseUIElement from "../../UI/BaseUIElement"
-import Table from "../../UI/Base/Table"
-import Combine from "../../UI/Base/Combine"
 import MarkdownUtils from "../../Utils/MarkdownUtils"
+import Validators, { ValidatorType } from "../../UI/InputElement/Validators"
+
 export type FilterConfigOption = {
     question: Translation
+    searchTerms: Record<string, string[]>
+    icon?: string
+    emoji?: string
     osmTags: TagsFilter | undefined
     /* Only set if fields are present. Used to create `osmTags` (which are used to _actually_ filter) when the field is written*/
     readonly originalTagsSpec: TagConfigJson
-    fields: { name: string; type: string }[]
+    fields: { name: string; type: ValidatorType }[]
 }
 export default class FilterConfig {
     public readonly id: string
@@ -57,20 +59,33 @@ export default class FilterConfig {
                 throw `Invalid filter: no question given at ${ctx}`
             }
 
-            const fields: { name: string; type: string }[] = (option.fields ?? []).map((f, i) => {
-                const type = f.type ?? "string"
-                // Type is validated against 'ValidatedTextField' in Validation.ts, in ValidateFilterConfig
-                if (f.name === undefined || f.name === "" || f.name.match(/[a-z0-9_-]+/) == null) {
-                    throw `Invalid filter: a variable name should match [a-z0-9_-]+ at ${ctx}.fields[${i}]`
+            const fields: { name: string; type: ValidatorType }[] = (option.fields ?? []).map(
+                (f, i) => {
+                    const type = <ValidatorType>f.type ?? "regex"
+                    if (Validators.availableTypes.indexOf(type) < 0) {
+                        throw `Invalid filter: type is not a valid validator. Did you mean one of ${Utils.sortedByLevenshteinDistance(
+                            type,
+                            <ReadonlyArray<string>>Validators.availableTypes,
+                            (x) => x
+                        ).slice(0, 3)}`
+                    }
+                    // Type is validated against 'ValidatedTextField' in Validation.ts, in ValidateFilterConfig
+                    if (
+                        f.name === undefined ||
+                        f.name === "" ||
+                        f.name.match(/[a-z0-9_-]+/) == null
+                    ) {
+                        throw `Invalid filter: a variable name should match [a-z0-9_-]+ at ${ctx}.fields[${i}]`
+                    }
+                    return {
+                        name: f.name,
+                        type,
+                    }
                 }
-                return {
-                    name: f.name,
-                    type,
-                }
-            })
+            )
 
             for (const field of fields) {
-                for (let ln in question.translations) {
+                for (const ln in question.translations) {
                     const txt = question.translations[ln]
                     if (ln.startsWith("_")) {
                         continue
@@ -105,8 +120,11 @@ export default class FilterConfig {
             return {
                 question: question,
                 osmTags: osmTags,
+                searchTerms: option.searchTerms,
                 fields,
                 originalTagsSpec: option.osmTags,
+                icon: option.icon,
+                emoji: option.emoji,
             }
         })
 
@@ -151,7 +169,7 @@ export default class FilterConfig {
     }
 
     public initState(layerId: string): UIEventSource<undefined | number | string> {
-        let defaultValue = ""
+        let defaultValue: string
         if (this.options.length > 1) {
             defaultValue = "" + (this.defaultSelection ?? 0)
         } else if (this.options[0].fields?.length > 0) {

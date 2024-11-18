@@ -2,19 +2,11 @@
 
 # toursistic_places_without_etymology
 
-
 This layer is based on [etymology](../Layers/etymology.md)
 
 All objects which have an etymology known
 
-
-
-
-
-
  - This layer is shown at zoomlevel **18** and higher
-
-
 
 ## Table of contents
 
@@ -35,11 +27,7 @@ All objects which have an etymology known
 
 ## Themes using this layer
 
-
-
  - [etymology](https://mapcomplete.org/etymology)
-
-
 
 ## Basic tags for this layer
 
@@ -59,24 +47,15 @@ Elements must match **all** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/name:etymology:wikidata#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/name%3Aetymology%3Awikidata/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [name:etymology:wikidata](https://wiki.openstreetmap.org/wiki/Key:name:etymology:wikidata) | [wikidata](../SpecialInputElements.md#wikidata) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/name:etymology#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/name%3Aetymology/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [name:etymology](https://wiki.openstreetmap.org/wiki/Key:name:etymology) | [text](../SpecialInputElements.md#text) | [unknown](https://wiki.openstreetmap.org/wiki/Tag:name:etymology%3Dunknown) |
 
-
-
-
 ### etymology-images-from-wikipedia
 
 _This tagrendering has no question and is thus read-only_
 *{image_carousel(name:etymology:wikidata)}*
 
-
-
-
 ### wikipedia-etymology
 
 The question is `What is the Wikidata-item that this object is named after?`
 *<h3>Wikipedia article of the name giver</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}* is shown if `name:etymology:wikidata` is set
-
-
-
 
 ### zoeken op inventaris onroerend erfgoed
 
@@ -85,50 +64,32 @@ _This tagrendering has no question and is thus read-only_
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:_country' target='_blank'>_country</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_country%3Dbe' target='_blank'>be</a>
 
-
 ### simple etymology
 
 The question is `What is this object named after?`
 *Named after {name:etymology}* is shown if `name:etymology` is set
 
-
  -  *The origin of this name is unknown in all literature* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:name:etymology' target='_blank'>name:etymology</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:name:etymology%3Dunknown' target='_blank'>unknown</a>
-
-
-
-
 
 ### questions
 Show the questions block at this location
 _This tagrendering has no question and is thus read-only_
 *{questions()}*
 
-
-
-
 ### street-name-sign-image
 
 _This tagrendering has no question and is thus read-only_
 *{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Add image of a street name sign)}*
-
-
-
 
 ### minimap
 
 _This tagrendering has no question and is thus read-only_
 *{minimap(18, id, _same_name_ids):height:10rem}*
 
-
-
-
 ### etymology_multi_apply
 
 _This tagrendering has no question and is thus read-only_
 *{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Auto-applying data on all segments with the same name, true)}*
-
-
-
 
 ### wikipedia
 
@@ -137,12 +98,10 @@ _This tagrendering has no question and is thus read-only_
 
 This tagrendering is only visible in the popup if the following condition is met: wikidata~.+
 
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

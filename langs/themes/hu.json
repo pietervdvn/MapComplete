@@ -1,16 +1,28 @@
 {
+    "advertising": {
+        "title": "Reklámok"
+    },
     "aed": {
         "description": "Ezen a térképen a közeli defibrillátorokat lehet megtalálni és feltüntetni",
-        "title": "Defibrillátor-térkép"
+        "title": "Defibrillátorok"
     },
     "artwork": {
         "description": "Szobrok, mellszobrok, graffitik és egyéb műalkotások nyílt világtérképe",
-        "title": "Műalkotástérkép"
+        "title": "Műalkotás"
+    },
+    "atm": {
+        "title": "Bankautomaták"
     },
     "benches": {
         "description": "Ez a térkép megjeleníti az OpenStreetMap-en rögzített összes padot: egyes padokat, valamint tömegközlekedési megállókban vagy menedékhelyeken található padokat. OpenStreetMap-fiókkal Ön is felrajzolhat új padokat, vagy szerkesztheti a meglévő padok részleteit.",
         "shortDescription": "Padtérkép",
         "title": "Padok"
+    },
+    "bicycle_parkings": {
+        "title": "Kerékpártárolók"
+    },
+    "bicycle_rental": {
+        "title": "Kerékpárkölcsönzők"
     },
     "bicyclelib": {
         "description": "A kerékpárkönyvtárak olyan helyek, ahol kerékpárokat lehet kölcsönözni, gyakran egy kis éves díj ellenében. Figyelemre méltó felhasználásuk a gyerekeknek szánt kerékpárkönyvtárak, amelyek segítségével nagyobb kerékpárra válthatnak, amikor jelenlegi kerékpárjukat kinőtték",
@@ -21,6 +33,9 @@
         "shortDescription": "Rögzített távcsövek (binokulárok) térképe",
         "title": "Távcsövek"
     },
+    "blind_osm": {
+        "title": "OSM vakoknak"
+    },
     "bookcases": {
         "description": "A nyilvános könyvespolc egy kis utcai szekrény, doboz, régi telefonfülke vagy más tárgy, ahol könyveket tárolnak. Bárki tehet rá vagy vihet el róla könyvet. Ez a térkép ezeket a könyvespolcokat kívánja összegyűjteni. Ha felfedezett egy új könyvespolcot a közelben, akkor egy ingyenes OpenStreetMap-fiókkal gyorsan fel is rajzolhatja a térképre.",
         "title": "Könyvespolctérkép"
@@ -30,51 +45,6 @@
     },
     "campersite": {
         "description": "Ez az oldal az összes olyan hivatalos lakóautós megállóhelyet és helyet gyűjti össze, ahol szürke és fekete szennyvizet lehet üríteni. Hozzáadhat részleteket a nyújtott szolgáltatásokról és a költségekről, valamint képeket és értékeléseket. Ez egyszerre egy weboldal és egy webes alkalmazás. Az adatokat az OpenStreetMapen tároljuk, így mindig ingyenesek lesznek, és bármelyik alkalmazás újra felhasználhatja őket.",
-        "layers": {
-            "0": {
-                "description": "Lakóautós megállóhelyek",
-                "name": "Lakóautós megállóhely",
-                "presets": {
-                    "0": {
-                        "description": "Új hivatalos lakóautóhely hozzáadása. Ez arra vannak kijelölve, hogy lakóautóval ott éjszakázzunk. Lehet, hogy úgy néz ki, mint egy igazi kemping, de az is lehet, hogy csak olyan, mint egy parkoló. Előfordulhat, hogy egyáltalán nem jelzik őket, hanem csak egy önkormányzati határozatban vannak kijelölve. A lakóautósoknak szánt olyan hagyományos parkolók, ahol nem várhatóan nem fognak éjszakázni, -nem minősül- lakóautóhelynek. ",
-                        "title": "lakóautós megállóhely"
-                    }
-                },
-                "tagRenderings": {
-                    "caravansites-toilets": {
-                        "mappings": {
-                            "0": {
-                                "then": "Itt van WC"
-                            },
-                            "1": {
-                                "then": "Itt nincs WC"
-                            }
-                        },
-                        "question": "Van-e itt WC?"
-                    }
-                }
-            },
-            "1": {
-                "presets": {
-                    "0": {
-                        "description": "Új egészségügyihulldék-lerakó hozzáadása. Ez egy olyan hely, ahol a lakókocsisok a szennyvizet vagy a vegyi WC hulladékát kiüríthetik. Gyakran van ivóvíz és áram is."
-                    }
-                },
-                "tagRenderings": {
-                    "dumpstations-chemical-waste": {
-                        "mappings": {
-                            "0": {
-                                "then": "Itt ártalmatlanítható a vegyi WC hulladéka"
-                            },
-                            "1": {
-                                "then": "Itt nem ártalmatlanítható a vegyi WC hulladéka"
-                            }
-                        },
-                        "question": "Elhelyezhető-e itt a vegyi WC hulladéka?"
-                    }
-                }
-            }
-        },
         "overrideAll": {
             "tagRenderings+": {
                 "1": {
@@ -90,10 +60,27 @@
         "shortDescription": "Elektromos töltőpontok világtérképe",
         "title": "Elektromos töltőpontok"
     },
+    "circular_economy": {
+        "title": "Körforgásos gazdaság"
+    },
     "climbing": {
         "description": "Ezen a térképen különböző mászási lehetőségeket talál, például falmászótermeket, bouldertermeket és sziklákat a természetben.",
         "descriptionTail": "A mászótérképet eredetileg <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a> készítette. Ha észrevétele vagy kérdése van, kérjük, <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>vele lépjen kapcsolatba</a>.</p> <p>A projekt az <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a> adatait használja</p>",
-        "title": "Mászótérkép"
+        "layers": {
+            "2": {
+                "override": {
+                    "=presets": {
+                        "0": {
+                            "title": "egy cipészműhely"
+                        }
+                    }
+                }
+            }
+        },
+        "title": "Falmászás: tornacsarnokok, klubok és helyek"
+    },
+    "clock": {
+        "title": "Órák"
     },
     "cycle_infra": {
         "description": "Kerékpáros infrastruktúrával kapcsolatos dolgokat megjelenítő és szerkesztésre felkínáló térkép. Az #osoc21 (Open Summer of Code) alatt készült.",
@@ -159,9 +146,18 @@
         "description": "Ez a térkép kerékpárosoknak kíván könnyen használható megoldást nyújtani a számukra fontos infrastruktúra megtalálásához.<br><br>A bal alsó sarokban nyomon követheti pontos tartózkodási helyét (csak mobilon), és kiválaszthatja az Ön számára fontos rétegeket. Az eszköz segítségével gombostűket (érdekes pontokat, POI-kat) is szerkeszthet vagy felrajzolhat a térképre, a kérdések megválaszolásával pedig további adatokat szolgáltathat.<br><br>Minden módosítás automatikusan elmentődik az OpenStreetMap globális adatbázisában, és mások szabadon újra felhasználhatják.<br><br>A cyclofix projektről további információkat a <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a> oldalon talál.",
         "title": "Cyclofix – nyílt térkép kerékpárosoknak"
     },
+    "disaster_response": {
+        "title": "Katasztrófaelhárítás és sürgősségi szolgálatok"
+    },
     "drinking_water": {
         "description": "Ezen a térképen a nyilvánosan hozzáférhető ivóvíznyerő helyek láthatók, szerkeszthetők és rajzolhatók fel könnyedén",
         "title": "Ivóvíz"
+    },
+    "education": {
+        "title": "Oktatás"
+    },
+    "elongated_coin": {
+        "title": "Kinyújtottérem-automaták"
     },
     "etymology": {
         "description": "Ezen a térképen az látható, hogy egy objektum milyen névre hallgat. Az utcák, épületek stb. az OpenStreetMapről származnak, amely össze van kapcsolva a Wikidata adatbázissal. A felugró ablakban megjelenik a megfelelő Wikipedia-szócikk (ha van) vagy egy Wikidata-doboz arról, amiről az objektumot elnevezték. Ha magának az objektumnak van Wikipédia-oldala, az is megjelenik.<br/><br/><b>A térképet Ön is szerkesztheti!</b>nagyítson rá, és <i>az összes</i> utca megjelenik. Ha valamelyikre rákattint, megjelenik Wikidata-kereső doboz. Néhány kattintással hozzáadhat egy etimológiai linket. Ne feledje, hogy ehhez szüksége van egy ingyenes OpenStreetMap-fiókra.",
@@ -178,7 +174,7 @@
             }
         },
         "shortDescription": "Mi az eredete egy helynévnek?",
-        "title": "Etimológiai térkép"
+        "title": "Etimológiai térkép – miről kapta a nevét ez a hely?"
     },
     "facadegardens": {
         "description": "A <a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>homlokzatkertek</a>, zöld homlokzatok és fák a városban nemcsak békét és nyugalmat, hanem szebb várost, nagyobb biológiai sokféleséget, hűsítő hatást és jobb levegőminőséget is hoznak. <br/> A Klimaan VZW és a Mechelen Klimaatneutraal a meglévő és új homlokzati kerteket szeretné feltérképezni, hogy példaként szolgáljanak a saját kertet építeni vágyóknak vagy a természetet kedvelő városi sétálóknak.<br/>További információ a projektről a <a href='https://klimaan.be/' target=_blank>klimaan.be</a> oldalon.",
@@ -267,6 +263,9 @@
         "shortDescription": "Ez a térkép homlokzati kerteket jelenít meg képekkel, valamint adatokkal a tájolásukról, a napsütésnek való kitettségükről és a bennük található növényzetről.",
         "title": "Homlokzati kertek"
     },
+    "fireplace": {
+        "title": "Tűzrakó- és grillezőhelyek"
+    },
     "food": {
         "title": "Éttermek és büfék"
     },
@@ -280,8 +279,11 @@
         }
     },
     "ghostbikes": {
-        "description": "A <b>szellemkerékpár</b> egy közlekedési balesetben elhunyt kerékpáros emlékműve: egy fehér kerékpár, amelyet állandó jelleggel a baleset helyszínének közelében helyeznek el.<br/><br/>A térképen az OpenStreetMap által ismert összes szellemkerékpár megtekinthető. Hiányzik róla egy szellemkerékpár? Bárki hozzáadhat vagy frissíthet adatokat – csak egy (ingyenes) OpenStreetMap-fiókra van szükség hozzá.",
+        "description": "A <b>szellemkerékpár</b> egy közlekedési balesetben elhunyt kerékpáros emlékműve: egy fehér kerékpár, amelyet állandó jelleggel a baleset helyszínének közelében helyeznek el.<br/><br/>A térképen az OpenStreetMap által ismert összes szellemkerékpár megtekinthető. Hiányzik róla egy szellemkerékpár? Bárki hozzáadhat vagy frissíthet adatokat – csak egy (ingyenes) OpenStreetMap-fiókra van szükség hozzá.<p><a href='https://masto.bike/@ghostbikebot' target='_blank'>A Mastodonon van egy automatizált fiók, amely havonta közzétesz egy áttekintést a szellemkerékpárokról világszerte</a>.</p>",
         "title": "Szellemkerékpárok"
+    },
+    "glutenfree": {
+        "title": "Gluténmentes helyek"
     },
     "grb": {
         "description": "Ez a sablon a flandriai GRB épületimportálás automatizlását kívánja megkönnyíteni."
@@ -292,9 +294,48 @@
         "title": "Hackerspace-ek"
     },
     "hailhydrant": {
-        "description": "Ezen a térképen tűzcsapokat, tűzoltóállomásokat, mentőállomásokat és tűzoltóállomásokat találhat és szerkeszthet kedvenc városrészeiben (vagy másutt).\n\nA bal alsó sarokban nyomon követheti pontos tartózkodási helyét (csak mobilon), és kiválaszthatja az Ön számára releváns rétegeket. Ezzel az eszközzel gombostűket (érdekes pontokat, POI-kat) is szerkeszthet vagy felrajzolhat a térképre, a rendelkezésre álló kérdések megválaszolásával pedig további részleteket adhat meg.\n\nAz Ön által elvégzett módosítások automatikusan elmentődnek az OpenStreetMap globális adatbázisában, és mások szabadon újra felhasználhatják azokat.",
+        "description": "Ezen a térképen tűzcsapokat, tűzoltóállomásokat, mentőállomásokat és tűzoltó készülékeket találhatsz és aktualizálhatsz a kedvenc környékeden.",
         "shortDescription": "Térkép tűzcsapok, tűzoltó készülékek, tűzoltóságok és mentőállomások megjelenítéséhez.",
-        "title": "Tűzcsapok, tűzoltó készülékek, tűzoltóságok és mentőállomások."
+        "title": "Tűzcsapok, tűzoltó készülékek, tűzoltóságok és mentőállomások"
+    },
+    "healthcare": {
+        "title": "Egészségügy"
+    },
+    "hotels": {
+        "title": "Szállodák"
+    },
+    "icecream": {
+        "title": "Fagylalt"
+    },
+    "indoors": {
+        "title": "Beltéri létesítmények"
+    },
+    "items_with_image": {
+        "title": "Minden képpel rendelkező térképobjektum"
+    },
+    "kerbs_and_crossings": {
+        "title": "Járdaszegélyek és gyalogosátkelők"
+    },
+    "lactosefree": {
+        "title": "Laktózmentes boltok és éttermek"
+    },
+    "lighthouses": {
+        "title": "Világítótornyok"
+    },
+    "maproulette": {
+        "title": "MapRoulette-feladatok"
+    },
+    "maps": {
+        "title": "Térképek térképe"
+    },
+    "maxspeed": {
+        "title": "Sebességkorlátozások"
+    },
+    "memorials": {
+        "title": "Emlékművek"
+    },
+    "nature": {
+        "title": "Ki a természetbe"
     },
     "notes": {
         "description": "A jegyzet egy gombostű a térképen egy szöveggel, amely azt jelzi, hogy valami nem stimmel.<br/><br/>Felhasználók vagy szövegek kereséséhez nézd meg a <a href='#filters'>szűrő nézetet</a>.",
@@ -305,14 +346,46 @@
         "shortDescription": "Nyilvános tornyok, hogy gyönyörködhessünk a kilátásban",
         "title": "Kilátótornyok"
     },
+    "onwheels": {
+        "layers": {
+            "19": {
+                "override": {
+                    "=title": {
+                        "render": "Statisztika"
+                    }
+                }
+            }
+        }
+    },
+    "openlovemap": {
+        "title": "Open Love Map - szerelemtérkép"
+    },
     "openwindpowermap": {
         "description": "Szélerőművek megjelenítésére és szerkesztésére szolgáló térkép.",
-        "title": "OpenWindPowerMap"
+        "title": "Szélerőművek"
+    },
+    "osm_community_index": {
+        "title": "OSM-közösségek jegyzéke"
     },
     "parkings": {
         "description": "Ez a térkép különböző parkolókat jelenít meg",
         "shortDescription": "Ez a térkép különböző parkolókat jelenít meg",
         "title": "Parkolás"
+    },
+    "personal": {
+        "title": "Személyes téma"
+    },
+    "pets": {
+        "layers": {
+            "2": {
+                "override": {
+                    "title": {
+                        "render": "Kutyabarát üzletek"
+                    }
+                }
+            }
+        },
+        "title": "Állatorvosok, kutyafuttatók és hasonló, kedvtelésből tartott állatoknak szóló létesítmények"
     },
     "playgrounds": {
         "description": "Ezen a térképen játszótereket találsz, és további információkat adhatsz hozzájuk",
@@ -344,19 +417,31 @@
         "title": "Irányítószámok"
     },
     "postboxes": {
-        "description": "Ezen a térképen postahivatalok és postaládák adatait találod és egészítheted ki. Utánanézhetsz, hogy hol adhatod fel a következő képeslapodat! :)<br/>Hibát találtál, vagy hiányzik egy postaláda? Ezt a térképet mindössze egy ingyenes OpenStreetMap-fiókkal szerkesztheted. ",
+        "description": "Ezen a térképen postahivatalok és postaládák adatait találod és viheted föl. A térkép segítségével utánanézhetsz, hogy hol adhatod fel a következő képeslapodat! :)<br/>Hibát találtál, vagy hiányzik egy postaláda? A térképet mindössze egy ingyenes OpenStreetMap-fiókkal szerkesztheted.",
         "shortDescription": "Posták és postaládák térképe",
         "title": "Posta- és postaládatérkép"
     },
+    "rainbow_crossings": {
+        "title": "Szivárványos gyalogosátkelők"
+    },
     "shops": {
-        "description": "Ezen a térképen az üzletek alapvető adatait lehet megadni, például nyitvatartási időt és telefonszámokat.",
+        "description": "Ezen a térképen az üzletek alapvető adatait lehet megadni, például nyitvatartási időt és telefonszámokat",
         "shortDescription": "Szerkeszthető térkép üzletek alapvető adataival",
-        "title": "Bolttérkép"
+        "title": "Boltok"
+    },
+    "ski": {
+        "title": "Sípályák és felvonók"
     },
     "sport_pitches": {
         "description": "A sportpálya egy olyan terület, amelyen valamilyen sportot űznek",
         "shortDescription": "Sportpályatérkép",
         "title": "Sportpályák"
+    },
+    "sports": {
+        "title": "Sporttérkép"
+    },
+    "stations": {
+        "title": "Vasútállomások"
     },
     "street_lighting": {
         "description": "Ezen a térképen minden megtalálható, ami a közvilágítással kapcsolatos",
@@ -421,15 +506,27 @@
     },
     "toilets": {
         "description": "Nyilvános WC-k térképe",
-        "title": "WC-térkép"
+        "title": "Nyilvános illemhelyek"
+    },
+    "transit": {
+        "title": "Buszjáratok"
     },
     "trees": {
         "description": "Térképezzünk fel minden fát!",
         "shortDescription": "Az összes fa feltérképezése",
         "title": "Fatérkép"
     },
+    "vending_machine": {
+        "title": "Árusító automaták"
+    },
+    "walls_and_buildings": {
+        "title": "Falak és épületek"
+    },
+    "waste": {
+        "title": "Hulladék"
+    },
     "waste_basket": {
-        "description": "Ezen a térképen megtalálhatod a közeledben lévő szemeteskosarakat. Ha hiányzik egy kuka a térképről, te is felrajzolhatod",
+        "description": "Ezen a térképen megtalálhatod a közeledben lévő szemeteskosarakat. Ha hiányzik egy kuka a térképről, te is felrajzolhatod.",
         "shortDescription": "Szemeteskosarakat ábrázoló térkép",
         "title": "Kukatérkép"
     }

@@ -2,25 +2,16 @@
 
 # play_forest
 
-
-
-
 Een speelbos is een vrij toegankelijke zone in een bos
 
-
-
-
-
-
  - This layer is shown at zoomlevel **13** and higher
-
-
 
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [play_forest-operator](#play_forest-operator)
   - [play_forest-opening_hours](#play_forest-opening_hours)
@@ -28,16 +19,19 @@ Een speelbos is een vrij toegankelijke zone in een bos
   - [play_forest-phone](#play_forest-phone)
   - [questions](#questions)
   - [play_forest-reviews](#play_forest-reviews)
+  - [move-button](#move-button)
   - [lod](#lod)
 
 ## Themes using this layer
 
-
-
  - [play_forests](https://mapcomplete.org/play_forests)
  - [speelplekken](https://mapcomplete.org/speelplekken)
 
+## Presets
 
+The following options to create new points are included:
+
+ - **Speelbos** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dplayground' target='_blank'>playground</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:playground' target='_blank'>playground</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:playground%3Dforest' target='_blank'>forest</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:fixme' target='_blank'>fixme</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fixme%3DToegevoegd met MapComplete, geometry nog uit te tekenen' target='_blank'>Toegevoegd met MapComplete, geometry nog uit te tekenen</a>
 
 ## Basic tags for this layer
 
@@ -56,80 +50,55 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/email#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/email/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [email](https://wiki.openstreetmap.org/wiki/Key:email) | [email](../SpecialInputElements.md#email) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/phone#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/phone/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [phone](https://wiki.openstreetmap.org/wiki/Key:phone) | [phone](../SpecialInputElements.md#phone) |  |
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
-
-
-
 
 ### play_forest-operator
 
 The question is `Wie beheert dit gebied?`
 *Dit gebied wordt beheerd door {operator}* is shown if `operator` is set
 
-
  -  *Dit gebied wordt beheerd door het <a href='https://www.natuurenbos.be/spelen'>Agentschap Natuur en Bos</a>* is shown if with operator~^([aA][nN][bB])$. _This option cannot be chosen as answer_
  -  *Dit gebied wordt beheerd door het <a href='https://www.natuurenbos.be/spelen'>Agentschap Natuur en Bos</a>* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:operator' target='_blank'>operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator%3DAgenstchap Natuur en Bos' target='_blank'>Agenstchap Natuur en Bos</a>
-
-
-
-
 
 ### play_forest-opening_hours
 
 The question is `Wanneer is deze speelzone toegankelijk?`
 
-
-
  -  *Het hele jaar door overdag toegankelijk (van 08:00 tot 22:00)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D08:00-22:00' target='_blank'>08:00-22:00</a>
  -  *Enkel in de <b>zomervakantie</b> en overdag toegankelijk (van 1 juli tot 31 augustus, van 08:00 tot 22:00* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3DJul-Aug 08:00-22:00' target='_blank'>Jul-Aug 08:00-22:00</a>
-
-
-
-
 
 ### play_forest-email
 
 The question is `Wie kan men emailen indien er problemen zijn met de speelzone?`
 *De bevoegde dienst kan bereikt worden via {email}* is shown if `email` is set
 
-
-
-
 ### play_forest-phone
 
 The question is `Wie kan men bellen indien er problemen zijn met de speelzone?`
 *De bevoegde dienst kan getelefoneerd worden via {phone}* is shown if `phone` is set
-
-
-
 
 ### questions
 Show the questions block at this location
 _This tagrendering has no question and is thus read-only_
 *{questions()}*
 
-
-
-
 ### play_forest-reviews
 
 _This tagrendering has no question and is thus read-only_
 *{reviews(name, play_forest)}*
 
+### move-button
 
-
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
 
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

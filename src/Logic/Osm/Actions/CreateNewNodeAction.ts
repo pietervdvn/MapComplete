@@ -5,6 +5,7 @@ import { ChangeDescription } from "./ChangeDescription"
 import { And } from "../../Tags/And"
 import { OsmWay } from "../OsmObject"
 import { GeoOperations } from "../../GeoOperations"
+import InsertPointIntoWayAction from "./InsertPointIntoWayAction"
 
 export default class CreateNewNodeAction extends OsmCreateAction {
     /**
@@ -101,73 +102,12 @@ export default class CreateNewNodeAction extends OsmCreateAction {
             return [newPointChange]
         }
 
-        // Project the point onto the way
-        console.log("Snapping a node onto an existing way...")
-        const geojson = this._snapOnto.asGeoJson()
-        const projected = GeoOperations.nearestPoint(GeoOperations.outerRing(geojson), [
-            this._lon,
-            this._lat,
-        ])
-        const projectedCoor = <[number, number]>projected.geometry.coordinates
-        const index = projected.properties.index
-        console.log("Attempting to snap:", { geojson, projected, projectedCoor, index })
-        // We check that it isn't close to an already existing point
-        let reusedPointId = undefined
-        let reusedPointCoordinates: [number, number] = undefined
-        let outerring: [number, number][]
+        const change = new InsertPointIntoWayAction(this._lat, this._lon, id, this._snapOnto, {
+            reusePointWithinMeters: this._reusePointDistance,
+            allowReuseOfPreviouslyCreatedPoints: this._reusePreviouslyCreatedPoint,
+        }).prepareChangeDescription()
 
-        if (geojson.geometry.type === "LineString") {
-            outerring = <[number, number][]>geojson.geometry.coordinates
-        } else if (geojson.geometry.type === "Polygon") {
-            outerring = <[number, number][]>geojson.geometry.coordinates[0]
-        }
-
-        const prev = outerring[index]
-        if (GeoOperations.distanceBetween(prev, projectedCoor) < this._reusePointDistance) {
-            // We reuse this point instead!
-            reusedPointId = this._snapOnto.nodes[index]
-            reusedPointCoordinates = this._snapOnto.coordinates[index]
-        }
-        const next = outerring[index + 1]
-        if (GeoOperations.distanceBetween(next, projectedCoor) < this._reusePointDistance) {
-            // We reuse this point instead!
-            reusedPointId = this._snapOnto.nodes[index + 1]
-            reusedPointCoordinates = this._snapOnto.coordinates[index + 1]
-        }
-        if (reusedPointId !== undefined) {
-            this.setElementId(reusedPointId)
-            return [
-                {
-                    tags: new And(this._basicTags).asChange(properties),
-                    type: "node",
-                    id: reusedPointId,
-                    meta: this.meta,
-                    changes: { lat: reusedPointCoordinates[0], lon: reusedPointCoordinates[1] },
-                },
-            ]
-        }
-
-        const locations = [
-            ...this._snapOnto.coordinates?.map(([lat, lon]) => <[number, number]>[lon, lat]),
-        ]
-        const ids = [...this._snapOnto.nodes]
-
-        locations.splice(index + 1, 0, [this._lon, this._lat])
-        ids.splice(index + 1, 0, id)
-
-        // Allright, we have to insert a new point in the way
-        return [
-            newPointChange,
-            {
-                type: "way",
-                id: this._snapOnto.id,
-                changes: {
-                    coordinates: locations,
-                    nodes: ids,
-                },
-                meta: this.meta,
-            },
-        ]
+        return [newPointChange, { ...change, meta: this.meta }]
     }
 
     private setElementId(id: number) {

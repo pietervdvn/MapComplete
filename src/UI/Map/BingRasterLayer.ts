@@ -48,7 +48,7 @@ export class BingRasterLayerProperties implements Partial<RasterLayerProperties>
         // "imageHeight": 256, "imageWidth": 256,
         // "imageUrlSubdomains": ["t0","t1","t2","t3"],
         // "zoomMax": 21,
-        const imageryResource = metadata.resourceSets[0].resources[0]
+        const imageryResource = metadata["resourceSets"][0].resources[0]
         const template = new URL(imageryResource.imageUrl)
         // Add tile image strictness param (n=)
         // • n=f -> (Fail) returns a 404

@@ -9,14 +9,16 @@
     "zh_Hant": "望遠鏡",
     "hu": "Távcsövek",
     "fr": "Jumelles",
-    "es": "Binoculares",
+    "es": "Prismáticos",
     "da": "Kikkerter",
     "ca": "Prismàtics",
     "pa_PK": "بائینوکولر",
     "cs": "Dalekohledy",
     "eu": "Binokularrak",
     "pl": "Lornetki",
-    "zh_Hans": "望远镜"
+    "zh_Hans": "望远镜",
+    "ru": "Бинокли",
+    "uk": "Біноклі"
   },
   "description": {
     "en": "A map with binoculars fixed in place with a pole. It can typically be found on touristic locations, viewpoints, on top of panoramic towers or occasionally on a nature reserve.",
@@ -26,14 +28,15 @@
     "zh_Hant": "固定一地的望遠鏡地圖，特別是能夠在旅遊景點、觀景點、城鎮環景點，或是自然保護區找到。",
     "hu": "Rúdra rögzített távcsövek térképe. Jellemzően turisztikailag érdekes, panorámás helyeken, kilátótornyok tetején vagy természetvédelmi területen találhatók.",
     "fr": "Une carte des longue-vues fixes. Se trouve typiquement sur les sites touristiques, les points de vue, les tours panoramiques ou dans les réserves naturelles.",
-    "es": "Un mapa con prismáticos fijos en un poste. Suele encontrarse en lugares turísticos, miradores, en lo alto de torres panorámicas u ocasionalmente en una reserva natural.",
+    "es": "Un mapa con prismáticos fijos en su lugar con un poste. Normalmente se pueden encontrar en lugares turísticos, miradores, en la cima de torres panorámicas o ocasionalmente en una reserva natural.",
     "nb_NO": "Stedsbundne kikkerter på påle. Vanligvis på turiststeder, utkikkspunkter, på toppen av utsiktstårn, og noen ganger i naturreservat.",
     "ca": "Un mapa amb prismàtics fixos en un pal. Sol trobar-se en llocs turístics, miradors, a la part alta de torres panoràmiques o ocasionalment en una reserva natural.",
     "da": "Et kort over udsigtskikkert fastgjort på en stang. Det kan typisk findes på turistmæssige steder, udsigtspunkter, på toppen af panoramatårne eller lejlighedsvis på et naturreservat.",
     "cs": "Mapa s dalekohledem upevněným na místě pomocí tyče. Obvykle se nachází na turistických místech, rozhlednách, vrcholech panoramatických věží nebo příležitostně v přírodních rezervacích.",
     "eu": "Zutoin batean prismatiko finkoak dituen mapa. Leku turistikoetan, begiratokietan, dorre panoramikoen gainean edo, batzuetan, erreserba natural batean egoten da.",
     "pl": "Mapa z lornetkami zamocowanymi na słupku. Zwykle można je odnaleźć w lokalizacjach turystycznych, punktach widokowych, na szczytach wież panoramicznych lub czasami w rezerwacie przyrody.",
-    "zh_Hans": "一张显示固定在杆子上的望远镜的地图。这种望远镜通常可以在旅游景点、观景点、全景塔顶部或偶尔在自然保护区找到。"
+    "zh_Hans": "一张显示固定在杆子上的望远镜的地图。这种望远镜通常可以在旅游景点、观景点、全景塔顶部或偶尔在自然保护区找到。",
+    "uk": "Мапа стаціонарних біноклів. Зазвичай їх можна знайти в туристичних місцях, на оглядових майданчиках, на вершинах панорамних веж та іноді в природних заповідниках."
   },
   "shortDescription": {
     "en": "A map with fixed binoculars",
@@ -50,7 +53,8 @@
     "cs": "Mapa s pevnými dalekohledy",
     "eu": "Prismatiko finkoak dituen mapa",
     "pl": "Mapa ze stałymi lornetkami",
-    "zh_Hans": "一张显示固定望远镜的地图"
+    "zh_Hans": "一张显示固定望远镜的地图",
+    "uk": "Мапа стаціонарних біноклів"
   },
   "icon": "./assets/layers/binocular/telescope.svg",
   "layers": [

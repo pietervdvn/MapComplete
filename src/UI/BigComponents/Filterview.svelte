@@ -7,18 +7,30 @@
   import ToSvelte from "../Base/ToSvelte.svelte"
   import Checkbox from "../Base/Checkbox.svelte"
   import FilterConfig from "../../Models/ThemeConfig/FilterConfig"
-  import If from "../Base/If.svelte"
   import Dropdown from "../Base/Dropdown.svelte"
   import { ImmutableStore, Store, UIEventSource } from "../../Logic/UIEventSource"
   import FilterviewWithFields from "./FilterviewWithFields.svelte"
   import Tr from "../Base/Tr.svelte"
   import Translations from "../i18n/Translations"
+  import type { SpecialVisualizationState } from "../SpecialVisualization"
+  import Constants from "../../Models/Constants"
 
+  export let state: SpecialVisualizationState
   export let filteredLayer: FilteredLayer
   export let highlightedLayer: Store<string | undefined> = new ImmutableStore(undefined)
   export let zoomlevel: Store<number> = new ImmutableStore(22)
   let layer: LayerConfig = filteredLayer.layerDef
   let isDisplayed: UIEventSource<boolean> = filteredLayer.isDisplayed
+
+  let isDebugging = state?.featureSwitches?.featureSwitchIsDebugging ?? new ImmutableStore(false)
+  let showTags = state?.userRelatedState?.showTags?.map(
+    (s) =>
+      (s === "yes" &&
+        state?.userRelatedState?.osmConnection?.userDetails?.data?.csCount >=
+          Constants.userJourney.tagsVisibleAt) ||
+      s === "always" ||
+      s === "full"
+  )
 
   /**
    * Gets a UIEventSource as boolean for the given option, to be used with a checkbox
@@ -64,6 +76,9 @@
             {#if filter.options.length === 1 && filter.options[0].fields.length === 0}
               <Checkbox selected={getBooleanStateFor(filter)}>
                 <Tr t={filter.options[0].question} />
+                <span class="subtle">
+                  {filter.options[0].osmTags.asHumanString()}
+                </span>
               </Checkbox>
             {/if}
 
@@ -75,7 +90,13 @@
               <Dropdown value={getStateFor(filter)}>
                 {#each filter.options as option, i}
                   <option value={i}>
+                    {#if option.emoji}
+                      {option.emoji}
+                    {/if}
                     <Tr t={option.question} />
+                    {#if $showTags && option.osmTags !== undefined}
+                      &nbsp;({option.osmTags.asHumanString()})
+                    {/if}
                   </option>
                 {/each}
               </Dropdown>
@@ -84,5 +105,9 @@
         {/each}
       </div>
     {/if}
+  </div>
+{:else if $isDebugging}
+  <div class="code">
+    {layer.id} (no name)
   </div>
 {/if}

@@ -8,7 +8,7 @@ import QueryParameterDocumentation from "../src/UI/QueryParameterDocumentation"
 import ScriptUtils from "./ScriptUtils"
 import Translations from "../src/UI/i18n/Translations"
 import themeOverview from "../src/assets/generated/theme_overview.json"
-import LayoutConfig from "../src/Models/ThemeConfig/LayoutConfig"
+import ThemeConfig from "../src/Models/ThemeConfig/ThemeConfig"
 import bookcases from "../src/assets/generated/themes/bookcases.json"
 import fakedom from "fake-dom"
 import unit from "../src/assets/generated/layers/unit.json"
@@ -29,6 +29,7 @@ import { Changes } from "../src/Logic/Osm/Changes"
 import TableOfContents from "../src/UI/Base/TableOfContents"
 import MarkdownUtils from "../src/Utils/MarkdownUtils"
 import { parse as parse_html } from "node-html-parser"
+import { AvailableRasterLayers } from "../src/Models/RasterLayers"
 
 /**
  * Converts a markdown-file into a .json file, which a walkthrough/slideshow element can use
@@ -85,7 +86,7 @@ class WikiPageGenerator {
             "! Name, link !! Genre !! Covered region !! Language !! Description !! Free materials !! Image\n" +
             "|-"
 
-        for (const layout of themeOverview) {
+        for (const layout of themeOverview.themes) {
             if (layout.hideFromOverview) {
                 continue
             }
@@ -180,6 +181,26 @@ export class GenerateDocs extends Script {
             "src/Logic/Osm/Changes.ts",
             "src/Logic/Osm/ChangesetHandler.ts",
         ])
+        const eli = await AvailableRasterLayers.editorLayerIndex()
+        this.WriteMarkdownFile(
+            "./Docs/ELI-overview.md",
+            [
+                "# Layers in the Editor Layer Index",
+                "This table gives a summary of ids, names and other metainformation. [See the online, interactive map here](https://osmlab.github.io/editor-layer-index/) or [visit the repository](https://github.com/osmlab/editor-layer-index)",
+                MarkdownUtils.table(
+                    ["id", "name", "category", "Best", "attribution"],
+                    eli.map((f) => [
+                        f.properties.id,
+                        f.properties.name,
+                        f.properties.category,
+                        f.properties.best ? "⭐" : "",
+                        f.properties.attribution?.html ?? f.properties.attribution?.text,
+                    ])
+                ),
+            ].join("\n\n"),
+            ["./public/assets/data/editor-layer-index.json"]
+        )
+
         new WikiPageGenerator().generate()
 
         console.log("Generated docs")
@@ -212,7 +233,7 @@ export class GenerateDocs extends Script {
             md = TableOfContents.insertTocIntoMd(md)
         }
 
-        md.replace(/\n\n\n+/g, "\n\n")
+        md = md.replace(/\n\n\n+/g, "\n\n")
 
         if (!md.endsWith("\n")) {
             md += "\n"
@@ -232,7 +253,7 @@ export class GenerateDocs extends Script {
     }
 
     private generateHotkeyDocs() {
-        new ThemeViewState(new LayoutConfig(<any>bookcases), new Set())
+        new ThemeViewState(new ThemeConfig(<any>bookcases), new Set())
         this.WriteMarkdownFile("./Docs/Hotkeys.md", Hotkeys.generateDocumentation(), [
             "src/UI/Base/Hotkeys.ts",
         ])
@@ -434,13 +455,10 @@ export class GenerateDocs extends Script {
         )
     }
 
-    private generateForTheme(theme: LayoutConfig): void {
+    private generateForTheme(theme: ThemeConfig): void {
         const allLayers = AllSharedLayers.getSharedLayersConfigs()
         const layersToShow = theme.layers.filter(
-            (l) =>
-                !l.id.startsWith("note_import_") &&
-                l.id !== "favourite" &&
-                Constants.added_by_default.indexOf(<any>l.id) < 0
+            (l) => l.id !== "favourite" && Constants.added_by_default.indexOf(<any>l.id) < 0
         )
         const layersToInline = layersToShow.filter((l) => !allLayers.has(l.id))
         const el = [

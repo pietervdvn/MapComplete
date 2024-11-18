@@ -18,6 +18,7 @@
   import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeatureSource"
   import { Tag } from "../../Logic/Tags/Tag"
   import { TagUtils } from "../../Logic/Tags/TagUtils"
+  import type { WayId } from "../../Models/OsmFeature"
 
   /**
    * An advanced location input, which has support to:
@@ -33,7 +34,12 @@
   export let coordinate: { lon: number; lat: number } = undefined
 
   /**
-   * The center of the map at all times
+   * Max distance that one is allowed to move, to prevent to stray too much
+   */
+  export let maxDistanceInMeters = 50
+
+  /**
+   * The resulting location; either the map center or the snapped coordinate
    * If undefined at the beginning, 'coordinate' will be used
    */
   export let value: UIEventSource<{ lon: number; lat: number }>
@@ -45,28 +51,25 @@
   }
   export let snapToLayers: string[] | undefined = undefined
   export let targetLayer: LayerConfig | undefined = undefined
+  /**
+   * If a 'targetLayer' is given, objects of this layer will be shown as well to avoid duplicates
+   * If you want to hide some of them, blacklist them here
+   */
+  export let dontShow: string[] = []
   export let maxSnapDistance: number = undefined
   export let presetProperties: Tag[] = []
   let presetPropertiesUnpacked = TagUtils.KVtoProperties(presetProperties)
 
-  export let snappedTo: UIEventSource<string | undefined>
-
-  let preciseLocation: UIEventSource<{ lon: number; lat: number }> = new UIEventSource<{
-    lon: number
-    lat: number
-  }>(undefined)
+  export let snappedTo: UIEventSource<WayId | undefined>
 
   const map: UIEventSource<MlMap> = new UIEventSource<MlMap>(undefined)
-  let initialMapProperties: Partial<MapProperties> & { location } = {
+  export let mapProperties: Partial<MapProperties> & { location } = {
     zoom: new UIEventSource<number>(19),
     maxbounds: new UIEventSource(undefined),
     /*If no snapping needed: the value is simply the map location;
      * If snapping is needed: the value will be set later on by the snapping feature source
      * */
-    location:
-      snapToLayers?.length > 0
-        ? new UIEventSource<{ lon: number; lat: number }>(coordinate)
-        : value,
+    location: new UIEventSource<{ lon: number; lat: number }>(coordinate),
     bounds: new UIEventSource<BBox>(undefined),
     allowMoving: new UIEventSource<boolean>(true),
     allowZooming: new UIEventSource<boolean>(true),
@@ -77,8 +80,15 @@
 
   if (targetLayer) {
     // Show already existing items
-    const featuresForLayer = state.perLayer.get(targetLayer.id)
+    let featuresForLayer: FeatureSource = state.perLayer.get(targetLayer.id)
     if (featuresForLayer) {
+      if (dontShow) {
+        featuresForLayer = new StaticFeatureSource(
+          featuresForLayer.features.map((feats) =>
+            feats.filter((f) => dontShow.indexOf(f.properties.id) < 0)
+          )
+        )
+      }
       new ShowDataLayer(map, {
         layer: targetLayer,
         features: featuresForLayer,
@@ -104,7 +114,7 @@
     const snappedLocation = new SnappingFeatureSource(
       new FeatureSourceMerger(...Utils.NoNull(snapSources)),
       // We snap to the (constantly updating) map location
-      initialMapProperties.location,
+      mapProperties.location,
       {
         maxDistance: maxSnapDistance ?? 15,
         allowUnsnapped: true,
@@ -139,10 +149,10 @@
 <LocationInput
   {map}
   on:click
-  mapProperties={initialMapProperties}
-  value={preciseLocation}
+  {mapProperties}
+  value={snapToLayers?.length > 0 ? new UIEventSource(undefined) : value}
   initialCoordinate={coordinate}
-  maxDistanceInMeters={50}
+  {maxDistanceInMeters}
 >
   <slot name="image" slot="image">
     <Move_arrows class="h-full max-h-24" />

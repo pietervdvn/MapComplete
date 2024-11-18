@@ -11,17 +11,18 @@
     "fr": "Carte des bureaux de poste et boîtes à lettres",
     "da": "Postkasser og posthuse",
     "ca": "Mapa de bústies i oficines de correus",
-    "es": "Mapa de Buzones y Oficinas de Correos",
+    "es": "Mapa de buzones y oficinas de correos",
     "cs": "Mapa poštovních schránek a pošt",
-    "pl": "Mapa skrzynek i urzędów pocztowych"
+    "pl": "Mapa skrzynek i urzędów pocztowych",
+    "uk": "Мапа поштових скриньок та поштових відділень"
   },
   "description": {
     "en": "On this map you can find and add data of post offices and post boxes. You can use this map to find where you can mail your next postcard! :)<br/>Spotted an error or is a post box missing? You can edit this map with a free OpenStreetMap account.",
     "it": "In questa mappa puoi veder e modificare gli uffici postali e le buche delle lettere. Puoi usare questa mappa per scoprire dove imbucare la tua prossima cartolina! :)<br/>Hai trovato un errore o una buca delle lettere mancante? Puoi modificare questa cartina con un account gratuito su OpenStreetMap.",
     "zh_Hant": "在這份地圖你能找到與新增有關郵局與郵筒的資料，你可以用這份地圖找到寄送您下張明信片的地方！:)<br/>發現錯誤或是有郵筒遺漏嗎？你可以用免費的開放街圖帳號來編輯。",
-    "hu": "Ezen a térképen postahivatalok és postaládák adatait találod és egészítheted ki. Utánanézhetsz, hogy hol adhatod fel a következő képeslapodat! :)<br/>Hibát találtál, vagy hiányzik egy postaláda? Ezt a térképet mindössze egy ingyenes OpenStreetMap-fiókkal szerkesztheted. ",
+    "hu": "Ezen a térképen postahivatalok és postaládák adatait találod és viheted föl. A térkép segítségével utánanézhetsz, hogy hol adhatod fel a következő képeslapodat! :)<br/>Hibát találtál, vagy hiányzik egy postaláda? A térképet mindössze egy ingyenes OpenStreetMap-fiókkal szerkesztheted.",
     "de": "Auf dieser Karte können Sie Daten von Poststellen und Briefkästen finden und ergänzen. Sie können diese Karte nutzen, um herauszufinden, wo Sie Ihre nächste Postkarte versenden können :)<br/>Haben Sie einen Fehler entdeckt oder fehlt ein Briefkasten? Sie können die Kartenddaten mit einem kostenlosen OpenStreetMap-Konto bearbeiten.",
-    "es": "En este mapa podrás buscar y añadir los datos de las oficinas de correos y buzones de correo. ¡Puedes utilizar este mapa para encontrar dónde enviar tu próxima postal! :)<br/>¿Has detectado un error o falta algún buzón de correo? Puedes editar este mapa con una cuenta gratuita de OpenStreetMap.",
+    "es": "En este mapa puedes encontrar y agregar datos de oficinas de correos y buzones. ¡Puedes usar este mapa para encontrar dónde enviar tu próxima postal! :)<br/>¿Viste un error o falta un buzón? Puedes editar este mapa con una cuenta gratuita de OpenStreetMap.",
     "nl": "Op deze kaart kan je informatie over brievenbussen en postkantoren vinden en toevoegen. Je kan deze kaart gebruiken om te achterhalen waar je je volgende postkaart naar kan sturen! :)<br/>Zie je een fout of ontbreekt een brievenbus? Dan kan je deze kaart aanpassen met een gratis OpenStreetMap account. ",
     "fr": "Trouvez et ajoutez des bureaux de poste et boîtes à lettres sur cette carte. Utilisez cette carte où vous pouvez envoyer vos cartes postales ! :)<br/>Vous avez trouvez une erreur ou une boîte à lettres est manquante ? Vous pouvez modifier cette carte avec un compte OpenStreetMap gratuit.",
     "da": "På dette kort kan du finde og tilføje data for posthuse og postkasser. Du kan bruge dette kort til at finde, hvor du kan sende dit næste postkort! :)<br/>Har du fundet en fejl, eller mangler der en postboks? Du kan redigere dette kort med en gratis OpenStreetMap-konto. ",
@@ -35,14 +36,15 @@
     "it": "Una cartina che mostra le buche delle lettere e gli uffici postali",
     "zh_Hant": "顯示郵筒與郵局的地圖",
     "hu": "Posták és postaládák térképe",
-    "es": "Un mapa que muestra buzones y oficinas de correo",
+    "es": "Un mapa que muestra buzones y oficinas de correos",
     "nl": "Een kaart die brievenbussen en postkantoren toont",
     "fr": "Une carte des bureaux de poste et des boîtes à lettres",
     "nb_NO": "Postbokser og postkontor",
     "da": "Et kort med postkasser og posthuse",
     "ca": "Un mapa que mostra bústies i oficines de correus",
     "cs": "Mapa s poštovními schránkami a poštami",
-    "pl": "Mapa pokazująca skrzynki pocztowe i urzędy pocztowe"
+    "pl": "Mapa pokazująca skrzynki pocztowe i urzędy pocztowe",
+    "uk": "Мапа з позначенням поштових скриньок та поштових відділень"
   },
   "icon": "./assets/layers/postboxes/postbox.svg",
   "startZoom": 13,
@@ -62,7 +64,9 @@
         "minzoomVisible": 18,
         "description": {
           "en": "Add a new post partner to the map in an existing shop",
-          "de": "Hinzufügen eines neuen Post-Partners auf der Karte in einem bestehenden Geschäft"
+          "de": "Hinzufügen eines neuen Post-Partners auf der Karte in einem bestehenden Geschäft",
+          "es": "Agregar un nuevo socio postal al mapa en una tienda existente",
+          "cs": "Přidání nového poštovního partnera do mapy v existujícím obchodě"
         },
         "+tagRenderings": [
           {
@@ -70,7 +74,9 @@
             "question": {
               "en": "Is this shop a post partner?",
               "de": "Ist dieses Geschäft ein Post-Partner?",
-              "nl": "Is deze winkel een post-partner?"
+              "nl": "Is deze winkel een post-partner?",
+              "es": "¿Es esta tienda un socio postal?",
+              "cs": "Je tento obchod partnerem pošty?"
             },
             "mappings": [
               {
@@ -78,7 +84,9 @@
                 "then": {
                   "en": "This shop is a post partner",
                   "de": "Dieses Geschäft ist ein Post-Partner",
-                  "nl": "Deze winkel is een post-partner"
+                  "nl": "Deze winkel is een post-partner",
+                  "es": "Esta tienda es un socio postal",
+                  "cs": "Tento obchod je partnerem pošty"
                 }
               },
               {
@@ -86,7 +94,9 @@
                 "then": {
                   "en": "This shop is not a post partner",
                   "de": "Dieses Geschäft ist kein Post-Partner",
-                  "nl": "Deze winkel is geen post-partner"
+                  "nl": "Deze winkel is geen post-partner",
+                  "es": "Esta tienda no es un socio postal",
+                  "cs": "Tento obchod není partnerem pošty"
                 }
               }
             ]
@@ -101,11 +111,15 @@
             ],
             "title": {
               "en": "a missing shop that is a post partner",
-              "de": "ein fehlendes Geschäft, das ein Post-Partner ist"
+              "de": "ein fehlendes Geschäft, das ein Post-Partner ist",
+              "es": "una tienda que falta y que es un socio postal",
+              "cs": "chybějící obchod, který je partnerem pošty"
             },
             "description": {
               "en": "If a shop is not yet on the map and is a post partner, you can add it here.",
-              "de": "Wenn ein Laden noch nicht auf der Karte ist und ein Post-Partner ist, kannst du ihn hier hinzufügen."
+              "de": "Wenn ein Laden noch nicht auf der Karte ist und ein Post-Partner ist, kannst du ihn hier hinzufügen.",
+              "es": "Si una tienda aún no está en el mapa y es un socio postal, puedes agregarla aquí.",
+              "cs": "Pokud obchod ještě není na mapě a je partnerem pošty, můžete jej přidat zde."
             }
           }
         ]

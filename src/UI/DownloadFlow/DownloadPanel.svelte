@@ -22,7 +22,7 @@
 
   let metaIsIncluded = false
 
-  let numberOfFeatures = state.featureSummary.totalNumberOfFeatures
+  let numberOfFeatures = state.featureSummary?.totalNumberOfFeatures
 
   async function getGeojson() {
     await state.indexedFeatures.downloadAll()
@@ -42,8 +42,8 @@
     })
   }
 
-  let customWidth = LocalStorageSource.Get("custom-png-width", "20")
-  let customHeight = LocalStorageSource.Get("custom-png-height", "20")
+  let customWidth = LocalStorageSource.get("custom-png-width", "20")
+  let customHeight = LocalStorageSource.get("custom-png-height", "20")
 
   async function offerCustomPng(): Promise<Blob> {
     console.log(
@@ -65,10 +65,6 @@
   <Tr cls="alert" t={Translations.t.general.download.toMuch} />
 {:else}
   <div class="flex w-full flex-col" />
-  <h3>
-    <Tr t={t.title} />
-  </h3>
-
   <DownloadButton
     {state}
     extension="geojson"

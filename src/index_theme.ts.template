@@ -1,6 +1,6 @@
 import ThemeViewState from "./src/Models/ThemeViewState"
 import ThemeViewGUI from "./src/UI/ThemeViewGUI.svelte"
-import LayoutConfig from "./src/Models/ThemeConfig/LayoutConfig";
+import ThemeConfig from "./src/Models/ThemeConfig/ThemeConfig";
 import MetaTagging from "./src/Logic/MetaTagging";
 import { FixedUiElement } from "./src/UI/Base/FixedUiElement";
 import { Utils } from "./src/Utils"
@@ -25,8 +25,11 @@ async function timeout(timeMS: number): Promise<{ layers: string[] }> {
 
 
 async function getAvailableLayers(): Promise<Set<string>> {
+    if(!Constants.SummaryServer){
+        return new Set<string>()
+    }
     try {
-        const host = new URL(Constants.VectorTileServer).host
+        const host = new URL(Constants.SummaryServer).host
         const status = await Promise.any([
                                    Utils.downloadJson("https://" + host + "/summary/status.json"),
                                    timeout(0)
@@ -46,7 +49,7 @@ async function main() {
         MetaTagging.setThemeMetatagging(new ThemeMetaTagging())
         // LAYOUT.ADD_LAYERS
         // LAYOUT.ADD_CONFIG
-        const state = new ThemeViewState(new LayoutConfig(<any> layout), availableLayers)
+        const state = new ThemeViewState(new ThemeConfig(<any> layout), availableLayers)
         const target =  document.getElementById("maindiv")
         const childs = Array.from(target.children)
         new ThemeViewGUI({

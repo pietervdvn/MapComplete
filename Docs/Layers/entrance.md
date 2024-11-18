@@ -2,15 +2,7 @@
 
 # entrance
 
-
-
-
 A layer showing entrances and offering capabilities to survey some advanced data which is important for e.g. wheelchair users (but also bicycle users, people who want to deliver, …)
-
-
-
-
-
 
  - This layer is shown at zoomlevel **14** and higher
  - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  preset `an entrance` snaps to this layer (entrance.presets[0])
@@ -18,13 +10,12 @@ A layer showing entrances and offering capabilities to survey some advanced data
  - This layer will automatically load  [indoors](./indoors.md)  into the layout as it depends on it:  preset `an indoor door` snaps to this layer (entrance.presets[1])
  - This layer is needed as dependency for layer [walls_and_buildings](#walls_and_buildings)
 
-
-
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [repeated](#repeated)
   - [single_level](#single_level)
@@ -34,11 +25,10 @@ A layer showing entrances and offering capabilities to survey some advanced data
   - [width](#width)
   - [kerb-height](#kerb-height)
   - [leftover-questions](#leftover-questions)
+  - [move-button](#move-button)
   - [lod](#lod)
 
 ## Themes using this layer
-
-
 
  - [indoors](https://mapcomplete.org/indoors)
  - [onwheels](https://mapcomplete.org/onwheels)
@@ -46,7 +36,12 @@ A layer showing entrances and offering capabilities to survey some advanced data
  - [stations](https://mapcomplete.org/stations)
  - [walls_and_buildings](https://mapcomplete.org/walls_and_buildings)
 
+## Presets
 
+The following options to create new points are included:
+
+ - **an entrance** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:entrance' target='_blank'>entrance</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:entrance%3Dyes' target='_blank'>yes</a> (snaps to layers `walls_and_buildings`, `pedestrian_path`)
+ - **an indoor door** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Ddoor' target='_blank'>door</a> (snaps to layers `indoors`)
 
 ## Basic tags for this layer
 
@@ -71,16 +66,10 @@ Elements must match **any** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/width#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/width/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [width](https://wiki.openstreetmap.org/wiki/Key:width) | [pfloat](../SpecialInputElements.md#pfloat) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/kerb:height#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/kerb%3Aheight/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [kerb:height](https://wiki.openstreetmap.org/wiki/Key:kerb:height) | [pnat](../SpecialInputElements.md#pnat) | [0](https://wiki.openstreetmap.org/wiki/Tag:kerb:height%3D0) |
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
-
-
-
 
 ### repeated
 
@@ -96,14 +85,11 @@ This tagrendering has labels
 The question is `On what level is this feature located?`
 *Located on the {level}th floor* is shown if `level` is set
 
-
  -  *Located underground* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>. _This option cannot be chosen as answer_
  -  *Located on the ground floor* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D0' target='_blank'>0</a>
  -  *Located on the ground floor* is shown if with level=. _This option cannot be chosen as answer_
  -  *Located on the first floor* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>
  -  *Located on the first basement level* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D-1' target='_blank'>-1</a>
-
-
 
 This tagrendering has labels 
 `level`
@@ -111,8 +97,6 @@ This tagrendering has labels
 ### Entrance type
 
 The question is `What type of entrance is this?`
-
-
 
  -  *No specific entrance type is known* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:entrance' target='_blank'>entrance</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:entrance%3Dyes' target='_blank'>yes</a>. _This option cannot be chosen as answer_
  -  *This is an indoor door, separating a room or a corridor within a single building* is shown if with entrance= & <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Ddoor' target='_blank'>door</a>
@@ -124,15 +108,9 @@ The question is `What type of entrance is this?`
  -  *This is emergency exit* is shown if with indoor= & <a href='https://wiki.openstreetmap.org/wiki/Key:entrance' target='_blank'>entrance</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:entrance%3Demergency' target='_blank'>emergency</a>
  -  *This is the entrance to a private home* is shown if with indoor= & <a href='https://wiki.openstreetmap.org/wiki/Key:entrance' target='_blank'>entrance</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:entrance%3Dhome' target='_blank'>home</a>
 
-
-
-
-
 ### Door_type
 
 The question is `What is the type of this door?`
-
-
 
  -  *The door type is not known* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:door' target='_blank'>door</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:door%3Dyes' target='_blank'>yes</a>. _This option cannot be chosen as answer_
  -  *A classical, hinged door supported by joints* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:door' target='_blank'>door</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:door%3Dhinged' target='_blank'>hinged</a>
@@ -141,15 +119,9 @@ The question is `What is the type of this door?`
  -  *A door which rolls from overhead, typically seen for garages* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:door' target='_blank'>door</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:door%3Doverhead' target='_blank'>overhead</a>
  -  *This is an entrance without a physical door* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:door' target='_blank'>door</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:door%3Dno' target='_blank'>no</a>
 
-
-
-
-
 ### automatic_door
 
 The question is `Is this door automated?`
-
-
 
  -  *This is an automatic door* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:automatic_door' target='_blank'>automatic_door</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:automatic_door%3Dyes' target='_blank'>yes</a>. _This option cannot be chosen as answer_
  -  *This door is <b>not</b> automated* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:automatic_door' target='_blank'>automatic_door</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:automatic_door%3Dno' target='_blank'>no</a>
@@ -161,43 +133,32 @@ The question is `Is this door automated?`
  -  *This door will be opened by staff when requested by <b>pressing a button</b>* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:automatic_door' target='_blank'>automatic_door</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:automatic_door%3Dserviced_on_button_press' target='_blank'>serviced_on_button_press</a>
  -  *This door will be opened by staff when requested* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:automatic_door' target='_blank'>automatic_door</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:automatic_door%3Dserviced_on_request' target='_blank'>serviced_on_request</a>
 
-
-
-
-
 ### width
 
 The question is `What is the width of this door/entrance?`
 *This door has a width of {canonical(width)}* is shown if `width` is set
-
-
-
 
 ### kerb-height
 
 The question is `What is the height of this kerb?`
 *The kerb height of this door is {kerb:height}* is shown if `kerb:height` is set
 
-
  -  *This door does not have a kerb* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:kerb:height' target='_blank'>kerb:height</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:kerb:height%3D0' target='_blank'>0</a>
-
-
-
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
+### move-button
 
-
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
 
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

@@ -2,11 +2,13 @@
   "id": "trolley_bay",
   "name": {
     "en": "Trolley Bays",
-    "de": "Einkaufswagenbuchten"
+    "de": "Einkaufswagenbuchten",
+    "es": "Aparcaderos de carros"
   },
   "description": {
     "en": "Find trolley bays for shopping trolleys.",
-    "de": "Finde Einkaufswagenbuchten für Einkaufswagen."
+    "de": "Finde Einkaufswagenbuchten für Einkaufswagen.",
+    "es": "Encuentra aparcaderos para carros de compra."
   },
   "source": {
     "osmTags": "amenity=trolley_bay"
@@ -14,7 +16,8 @@
   "minzoom": 18,
   "title": {
     "en": "Trolley Bay",
-    "de": "Einkaufswagenbucht"
+    "de": "Einkaufswagenbucht",
+    "es": "Aparcadero de carros"
   },
   "pointRendering": [
     {
@@ -33,14 +36,16 @@
     {
       "title": {
         "en": "a trolley bay",
-        "de": "eine Einkaufswagenbucht"
+        "de": "eine Einkaufswagenbucht",
+        "es": "un aparcadero de carros"
       },
       "tags": [
         "amenity=trolley_bay"
       ],
       "description": {
         "en": "A trolley bay for parking shopping carts.",
-        "de": "Ein Platz zum Abstellen von Einkaufswagen."
+        "de": "Ein Platz zum Abstellen von Einkaufswagen.",
+        "es": "Un aparcadero para carros de compra."
       }
     }
   ],
@@ -49,21 +54,24 @@
       "id": "covered",
       "question": {
         "en": "Is this trolley bay covered?",
-        "de": "Ist dieser Einkaufswagenplatz überdacht?"
+        "de": "Ist dieser Einkaufswagenplatz überdacht?",
+        "es": "¿Está cubierto este aparcadero de carros?"
       },
       "mappings": [
         {
           "if": "covered=yes",
           "then": {
             "en": "This trolley bay is covered",
-            "de": "Dieser Einkaufswagenplatz ist überdacht"
+            "de": "Dieser Einkaufswagenplatz ist überdacht",
+            "es": "Este aparcadero de carros está cubierto"
           }
         },
         {
           "if": "covered=no",
           "then": {
             "en": "This trolley bay is not covered",
-            "de": "Dieser Einkaufswagenplatz ist nicht überdacht"
+            "de": "Dieser Einkaufswagenplatz ist nicht überdacht",
+            "es": "Este aparcadero de carros no está cubierto"
           }
         }
       ]
@@ -72,21 +80,24 @@
       "id": "deposit",
       "question": {
         "en": "Is a deposit (e.g. a coin) required for the trolleys?",
-        "de": "Ist für die Einkaufswagen ein Pfand (z.B. eine Münze) erforderlich?"
+        "de": "Ist für die Einkaufswagen ein Pfand (z.B. eine Münze) erforderlich?",
+        "es": "¿Se requiere un depósito (ej. una moneda) para los carros?"
       },
       "mappings": [
         {
           "if": "trolley:deposit=yes",
           "then": {
             "en": "A deposit is required for the trolleys",
-            "de": "Für die Einkaufswagen ist ein Pfand zu hinterlegen"
+            "de": "Für die Einkaufswagen ist ein Pfand zu hinterlegen",
+            "es": "Se requiere un depósito para los carros"
           }
         },
         {
           "if": "trolley:deposit=no",
           "then": {
             "en": "No deposit is required for the trolleys",
-            "de": "Für die Einkaufswagen ist kein Pfand erforderlich"
+            "de": "Für die Einkaufswagen ist kein Pfand erforderlich",
+            "es": "No se requiere un depósito para los carros"
           }
         }
       ]
@@ -101,7 +112,8 @@
       },
       "question": {
         "en": "What coins are accepted for the deposit?",
-        "de": "Welche Münzen werden für die Pfandgebühr akzeptiert?"
+        "de": "Welche Münzen werden für die Pfandgebühr akzeptiert?",
+        "es": "¿Qué monedas se aceptan para el depósito?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -159,7 +171,8 @@
       "id": "cart_types",
       "question": {
         "en": "What kind of special trolleys are available?",
-        "de": "Welche Art von speziellen Einkaufswagen gibt es?"
+        "de": "Welche Art von speziellen Einkaufswagen gibt es?",
+        "es": "¿Qué tipo de carros especiales hay disponibles?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -168,7 +181,8 @@
           "ifnot": "trolley:magnifier=no",
           "then": {
             "en": "Trolleys with a magnifier are available",
-            "de": "Einkaufswagen mit Lupe sind erhältlich"
+            "de": "Einkaufswagen mit Lupe sind erhältlich",
+            "es": "Hay carros con lupa disponibles"
           }
         },
         {
@@ -176,7 +190,8 @@
           "ifnot": "trolley:wheelchair=no",
           "then": {
             "en": "Trolleys for wheelchair users are available",
-            "de": "Einkaufswagen für Rollstuhlfahrer sind verfügbar"
+            "de": "Einkaufswagen für Rollstuhlfahrer sind verfügbar",
+            "es": "Hay carros para usuarios de sillas de ruedas disponibles"
           }
         },
         {
@@ -184,7 +199,8 @@
           "ifnot": "trolley:children=no",
           "then": {
             "en": "Trolleys for children are available",
-            "de": "Einkaufswagen für Kinder sind verfügbar"
+            "de": "Einkaufswagen für Kinder sind verfügbar",
+            "es": "Hay carros para niños disponibles"
           }
         },
         {
@@ -192,7 +208,8 @@
           "ifnot": "trolley:seats=no",
           "then": {
             "en": "Trolleys with seats for children are available",
-            "de": "Einkaufswagen mit Sitzen für Kinder sind verfügbar"
+            "de": "Einkaufswagen mit Sitzen für Kinder sind verfügbar",
+            "es": "Hay carros con asientos para niños disponibles"
           }
         },
         {
@@ -200,7 +217,8 @@
           "ifnot": "trolley:flatbed=no",
           "then": {
             "en": "Trolleys with a flatbed are available",
-            "de": "Einkaufswagen mit Flachbett sind verfügbar"
+            "de": "Einkaufswagen mit Flachbett sind verfügbar",
+            "es": "Hay carros con plataforma disponibles"
           }
         },
         {
@@ -208,7 +226,8 @@
           "ifnot": "trolley:vertical=no",
           "then": {
             "en": "Vertical trolleys for sheet-like goods are available",
-            "de": "Vertikale Einkaufswagen für plattenförmige Güter sind verfügbar"
+            "de": "Vertikale Einkaufswagen für plattenförmige Güter sind verfügbar",
+            "es": "Hay carros verticales para mercancías laminares disponibles"
           }
         }
       ]

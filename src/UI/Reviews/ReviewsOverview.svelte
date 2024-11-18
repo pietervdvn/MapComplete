@@ -28,39 +28,41 @@
   {#if $reviews === undefined}
     <Loading />
   {:else}
-    {#if $reviews?.length > 0}
-      <div class="flex flex-col gap-y-1" on:keypress={(e) => console.log("Got keypress", e)}>
-        {#each $reviews as review (review.sub)}
-          <SingleReview {review} showSub={true} {state} />
-        {/each}
-      </div>
-    {:else}
-      <Tr t={t.your_reviews_empty} />
-    {/if}
-
-    {#if $allReviews?.length > $reviews?.length}
-      {#if $allReviews?.length - $reviews?.length === 1}
-        <Tr t={t.non_place_review} />
+    <div class="flex flex-col">
+      {#if $reviews?.length > 0}
+        <div class="flex flex-col gap-y-1" on:keypress={(e) => console.log("Got keypress", e)}>
+          {#each $reviews as review (review.sub)}
+            <SingleReview {review} showSub={true} {state} />
+          {/each}
+        </div>
       {:else}
-        <Tr t={t.non_place_reviews.Subs({ n: $allReviews?.length - $reviews?.length })} />
+        <Tr t={t.your_reviews_empty} />
+      {/if}
+
+      {#if $allReviews?.length > $reviews?.length}
+        {#if $allReviews?.length - $reviews?.length === 1}
+          <Tr t={t.non_place_review} />
+        {:else}
+          <Tr t={t.non_place_reviews.Subs({ n: $allReviews?.length - $reviews?.length })} />
+        {/if}
+        <a
+          target="_blank"
+          class="link-underline"
+          rel="noopener nofollow"
+          href={`https://mangrove.reviews/list?kid=${encodeURIComponent($kid)}`}
+        >
+          <Tr t={t.see_all} />
+        </a>
       {/if}
       <a
-        target="_blank"
         class="link-underline"
-        rel="noopener nofollow"
-        href={`https://mangrove.reviews/list?kid=${encodeURIComponent($kid)}`}
+        href="https://github.com/pietervdvn/MapComplete/issues/1782"
+        target="_blank"
+        rel="noopener noreferrer"
       >
-        <Tr t={t.see_all} />
+        <Tr t={t.reviews_bug} />
       </a>
-    {/if}
-    <a
-      class="link-underline"
-      href="https://github.com/pietervdvn/MapComplete/issues/1782"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <Tr t={t.reviews_bug} />
-    </a>
+    </div>
   {/if}
   <div class="flex justify-end">
     <Mangrove_logo class="h-6 w-6 shrink-0 p-1" />

@@ -43,10 +43,9 @@ class LuaSnippets {
                 or.push(new RegexTag(k, v))
             })
         })
-        console.log(
-            "Polygon features are:",
-            or.map((t) => t.asHumanString(false, false, {}))
-        )
+        const features = or.map((t) => t.asHumanString(false, false, {}))
+        features.sort()
+        console.log("Polygon features are:", features)
         return { blacklist: new Or(blacklisted), whitelisted: new Or(or) }
     }
 

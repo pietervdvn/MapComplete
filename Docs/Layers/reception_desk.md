@@ -2,41 +2,35 @@
 
 # reception_desk
 
-
-
-
 A layer showing where the reception desks are and which asks some accessibility information
 
-
-
-
-
-
  - This layer is shown at zoomlevel **0** and higher
-
-
 
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [repeated](#repeated)
   - [single_level](#single_level)
   - [desk-height](#desk-height)
   - [induction-loop](#induction-loop)
   - [leftover-questions](#leftover-questions)
+  - [move-button](#move-button)
   - [lod](#lod)
 
 ## Themes using this layer
 
-
-
  - [onwheels](https://mapcomplete.org/onwheels)
  - [personal](https://mapcomplete.org/personal)
 
+## Presets
 
+The following options to create new points are included:
+
+ - **a reception desk** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dreception_desk' target='_blank'>reception_desk</a>
 
 ## Basic tags for this layer
 
@@ -54,16 +48,10 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/desk:height#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/desk%3Aheight/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [desk:height](https://wiki.openstreetmap.org/wiki/Key:desk:height) | [pfloat](../SpecialInputElements.md#pfloat) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/hearing_loop#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/hearing_loop/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [hearing_loop](https://wiki.openstreetmap.org/wiki/Key:hearing_loop) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:hearing_loop%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:hearing_loop%3Dno) |
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
-
-
-
 
 ### repeated
 
@@ -79,14 +67,11 @@ This tagrendering has labels
 The question is `On what level is this feature located?`
 *Located on the {level}th floor* is shown if `level` is set
 
-
  -  *Located underground* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>. _This option cannot be chosen as answer_
  -  *Located on the ground floor* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D0' target='_blank'>0</a>
  -  *Located on the ground floor* is shown if with level=. _This option cannot be chosen as answer_
  -  *Located on the first floor* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>
  -  *Located on the first basement level* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D-1' target='_blank'>-1</a>
-
-
 
 This tagrendering has labels 
 `level`
@@ -96,35 +81,27 @@ This tagrendering has labels
 The question is `What is the height of the reception desk? `
 *The height of the desk is <b>{canonical(desk:height)}</b>* is shown if `desk:height` is set
 
-
-
-
 ### induction-loop
 An accessibility feature: induction loops are for hard-hearing persons which have an FM-receiver.
 The question is `Does this place have an audio induction loop for people with reduced hearing?`
 
-
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/audio_induction_loop.svg' style='width: 3rem; height: 3rem'> *This place has an audio induction loop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:hearing_loop' target='_blank'>hearing_loop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hearing_loop%3Dyes' target='_blank'>yes</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/audio_induction_loop_missing.svg' style='width: 3rem; height: 3rem'> *This place <b>does not</b> have an audio induction loop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:hearing_loop' target='_blank'>hearing_loop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hearing_loop%3Dno' target='_blank'>no</a>
-
-
-
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
+### move-button
 
-
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
 
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

@@ -5,11 +5,14 @@
   import { MapLibreAdaptor } from "../../Map/MapLibreAdaptor"
   import MaplibreMap from "../../Map/MaplibreMap.svelte"
   import Direction_stroke from "../../../assets/svg/Direction_stroke.svelte"
+  import type { SpecialVisualizationState } from "../../SpecialVisualization"
 
   /**
    * A visualisation to pick a direction on a map background.
    */
   export let value: UIEventSource<undefined | string>
+  export let state: SpecialVisualizationState = undefined
+
   export let mapProperties: Partial<MapProperties> & {
     readonly location: UIEventSource<{ lon: number; lat: number }>
   }
@@ -17,6 +20,8 @@
   let mla = new MapLibreAdaptor(map, mapProperties)
   mla.allowMoving.setData(false)
   mla.allowZooming.setData(false)
+  state?.mapProperties?.rasterLayer?.addCallbackAndRunD((l) => mla.rasterLayer.set(l))
+
   let directionElem: HTMLElement | undefined
   $: value.addCallbackAndRunD((degrees) => {
     if (directionElem === undefined) {

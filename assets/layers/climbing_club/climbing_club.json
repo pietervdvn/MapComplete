@@ -12,7 +12,8 @@
     "it": "Club di arrampicata",
     "hu": "Mászóegyesület",
     "ca": "Club d'escalada",
-    "cs": "Lezecký klub"
+    "cs": "Lezecký klub",
+    "es": "Club de escalada"
   },
   "description": {
     "de": "Ein Kletterverein oder -organisation",
@@ -25,7 +26,8 @@
     "it": "Un club o associazione di arrampacata",
     "hu": "Mászóegyesület vagy -szervezet",
     "ca": "Un club d'escalada o organització",
-    "cs": "Lezecký klub nebo organizace"
+    "cs": "Lezecký klub nebo organizace",
+    "es": "Un club u organización de escalada"
   },
   "source": {
     "osmTags": {
@@ -58,7 +60,8 @@
       "fr": "Club d’escalade",
       "it": "Club di arrampicata",
       "ca": "Club d'escalada",
-      "cs": "Lezecký klub"
+      "cs": "Lezecký klub",
+      "es": "Club de escalada"
     },
     "mappings": [
       {
@@ -72,7 +75,8 @@
           "fr": "Association d’escalade",
           "it": "Associazione di arrampicata",
           "hu": "Mászószervezet",
-          "cs": "Nevládní lezecká organizace"
+          "cs": "Nevládní lezecká organizace",
+          "es": "ONG de escalada"
         }
       }
     ]
@@ -124,7 +128,8 @@
         "it": "una club di arrampicata",
         "hu": "Mászóegyesület",
         "ca": "un club d'escalada",
-        "cs": "lezecký klub"
+        "cs": "lezecký klub",
+        "es": "un club de escalada"
       },
       "description": {
         "de": "Ein Kletterverein",
@@ -137,7 +142,8 @@
         "it": "Un club di arrampicata",
         "hu": "Egy mászóegyesület",
         "ca": "Un club d'escalada",
-        "cs": "Lezecký klub"
+        "cs": "Lezecký klub",
+        "es": "Un club de escalada"
       }
     },
     {
@@ -153,7 +159,8 @@
         "fr": "une association d’escalade",
         "it": "una associazione di arrampicata",
         "hu": "Mászószervezet",
-        "cs": "lezecká nezisková organizace"
+        "cs": "lezecká nezisková organizace",
+        "es": "una ONG de escalada"
       },
       "description": {
         "de": "Eine Organisation, die sich mit dem Klettern beschäftigt",
@@ -163,7 +170,8 @@
         "fr": "Une association d’escalade",
         "it": "Un’associazione che ha a che fare con l’arrampicata",
         "hu": "Mászással foglalkozó civil szervezet",
-        "cs": "Nevládní organizace působící v oblasti lezení"
+        "cs": "Nevládní organizace působící v oblasti lezení",
+        "es": "Una ONG que trabaja en torno a la escalada"
       }
     }
   ],
@@ -181,7 +189,8 @@
         "zh_Hant": "<strong>{name}</strong>",
         "it": "<strong>{name}</strong>",
         "hu": "<strong>{name}</strong>",
-        "cs": "<strong>{name}</strong>"
+        "cs": "<strong>{name}</strong>",
+        "es": "<strong>{name}</strong>"
       },
       "question": {
         "en": "What is the name of this climbing club or NGO?",
@@ -191,7 +200,8 @@
         "fr": "Quel est le nom du club ou de l’association ?",
         "it": "Qual è il nome di questo club o associazione di arrampicata?",
         "hu": "Mi a neve ennek a mászóegyesületnek vagy szervezetnek?",
-        "cs": "Jak se jmenuje tento lezecký klub nebo nevládní organizace?"
+        "cs": "Jak se jmenuje tento lezecký klub nebo nevládní organizace?",
+        "es": "¿Cuál es el nombre de este club u ONG de escalada?"
       },
       "freeform": {
         "key": "name"
@@ -202,5 +212,6 @@
     "email",
     "phone",
     "opening_hours"
-  ]
+  ],
+  "allowMove": true
 }

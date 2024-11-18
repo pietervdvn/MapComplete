@@ -1,11 +1,13 @@
 import { Feature, Polygon } from "geojson"
 import * as globallayers from "../assets/global-raster-layers.json"
+import * as globallayersEli from "../assets/generated/editor-layer-index-global.json"
+
 import * as bingJson from "../assets/bing.json"
 
 import { BBox } from "../Logic/BBox"
 import { Store, Stores, UIEventSource } from "../Logic/UIEventSource"
 import { GeoOperations } from "../Logic/GeoOperations"
-import { RasterLayerProperties } from "./RasterLayerProperties"
+import { EliCategory, RasterLayerProperties } from "./RasterLayerProperties"
 import { Utils } from "../Utils"
 
 export type EditorLayerIndex = (Feature<Polygon, EditorLayerIndexProperties> & RasterLayerPolygon)[]
@@ -23,17 +25,26 @@ export class AvailableRasterLayers {
         const eli = await Utils.downloadJson<{ features: EditorLayerIndex }>(
             "./assets/data/editor-layer-index.json"
         )
-        this._editorLayerIndex = eli.features.filter((l) => l.properties.id !== "Bing")
+        this._editorLayerIndex = eli.features?.filter((l) => l.properties.id !== "Bing") ?? []
         this._editorLayerIndexStore.set(this._editorLayerIndex)
         return this._editorLayerIndex
     }
 
-    public static globalLayers: ReadonlyArray<RasterLayerPolygon> = globallayers.layers
-        .filter(
+    public static readonly globalLayers: ReadonlyArray<RasterLayerPolygon> =
+        AvailableRasterLayers.initGlobalLayers()
+
+    private static initGlobalLayers(): RasterLayerPolygon[] {
+        const gl: RasterLayerProperties[] = (globallayers["default"] ?? globallayers).layers.filter(
             (properties) =>
                 properties.id !== "osm.carto" && properties.id !== "Bing" /*Added separately*/
         )
-        .map(
+        const glEli: RasterLayerProperties[] = globallayersEli["default"] ?? globallayersEli
+        const joined = gl.concat(glEli)
+        if (joined.some((j) => !j.id)) {
+            console.log("Invalid layers:", JSON.stringify(joined.filter((l) => !l.id)))
+            throw "Detected invalid global layer with invalid id"
+        }
+        return joined.map(
             (properties) =>
                 <RasterLayerPolygon>{
                     type: "Feature",
@@ -41,6 +52,8 @@ export class AvailableRasterLayers {
                     geometry: BBox.global.asGeometry(),
                 }
         )
+    }
+
     public static bing = <RasterLayerPolygon>bingJson
     public static readonly osmCartoProperties: RasterLayerProperties = {
         id: "osm",
@@ -148,16 +161,19 @@ export class RasterLayerUtils {
         ignoreLayer?: RasterLayerPolygon,
         skipLayers: number = 0
     ): RasterLayerPolygon {
-        const inCategory = available.filter(l => l.properties.category === preferredCategory)
-        const best : RasterLayerPolygon[] = inCategory.filter(l => l.properties.best)
-        const others : RasterLayerPolygon[] = inCategory.filter(l => !l.properties.best)
+        const inCategory = available.filter((l) => l.properties.category === preferredCategory)
+        const best: RasterLayerPolygon[] = inCategory.filter((l) => l.properties.best)
+        const others: RasterLayerPolygon[] = inCategory.filter((l) => !l.properties.best)
         let all = best.concat(others)
-        console.log("Selected layers are:", all.map(l => l.properties.id))
-        if(others.length > skipLayers){
+        console.log(
+            "Selected layers are:",
+            all.map((l) => l.properties.id)
+        )
+        if (others.length > skipLayers) {
             all = all.slice(skipLayers)
         }
 
-        return all.find(l => l !== ignoreLayer)
+        return all.find((l) => l !== ignoreLayer)
     }
 }
 
@@ -189,15 +205,8 @@ export interface EditorLayerIndexProperties extends RasterLayerProperties {
     /**
      * A rough categorisation of different types of layers. See https://github.com/osmlab/editor-layer-index/blob/gh-pages/CONTRIBUTING.md#categories for a description of the individual categories.
      */
-    readonly category?:
-        | "photo"
-        | "map"
-        | "historicmap"
-        | "osmbasedmap"
-        | "historicphoto"
-        | "qa"
-        | "elevation"
-        | "other"
+    readonly category?: EliCategory
+
     /**
      * A URL template for imagery tiles
      */

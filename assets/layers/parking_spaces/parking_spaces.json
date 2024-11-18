@@ -6,7 +6,8 @@
     "nl": "Parkeerplekken",
     "pl": "Miejsca parkingowe",
     "ca": "Places d'aparcament",
-    "cs": "Parkovací místa"
+    "cs": "Parkovací místa",
+    "es": "Plazas de Aparcamiento"
   },
   "description": {
     "en": "Layer showing individual parking spaces.",
@@ -14,7 +15,8 @@
     "nl": "Laag met individuele parkeerplekken.",
     "pl": "Warstwa pokazująca pojedyncze miejsca parkingowe.",
     "ca": "Capa que mostra aparcaments de cotxes individuals.",
-    "cs": "Vrstva zobrazující jednotlivá parkovací místa."
+    "cs": "Vrstva zobrazující jednotlivá parkovací místa.",
+    "es": "Capa que muestra plazas de aparcamiento individuales."
   },
   "source": {
     "osmTags": "amenity=parking_space"
@@ -26,7 +28,8 @@
       "de": "Stellplatz",
       "nl": "Parkeerplek",
       "ca": "Espai d'aparcament",
-      "cs": "Parkovací místo"
+      "cs": "Parkovací místo",
+      "es": "Plaza de Aparcamiento"
     },
     "mappings": [
       {
@@ -35,7 +38,8 @@
           "en": "Disabled Parking Space",
           "nl": "Parkeerplek voor gehandicapten",
           "de": "Behindertenparkplatz",
-          "cs": "Parkovací místo pro osoby se zdravotním postižením"
+          "cs": "Parkovací místo pro osoby se zdravotním postižením",
+          "es": "Plaza de Aparcamiento para Discapacitados"
         }
       },
       {
@@ -43,7 +47,8 @@
         "then": {
           "en": "Electric Vehicle Charging Parking Space",
           "nl": "Parkeerplek voor opladen van elektrische voertuigen",
-          "de": "Parkplatz zum Laden von Elektrofahrzeugen"
+          "de": "Parkplatz zum Laden von Elektrofahrzeugen",
+          "es": "Plaza de Aparcamiento para Vehículos Eléctricos"
         }
       }
     ]
@@ -98,7 +103,8 @@
         "de": "Welche Art von Stellplatz ist dies?",
         "nl": "Wat voor parkeerplek is dit?",
         "ca": "Quin tipus d'espai d'aparcament és aquest?",
-        "cs": "Co je to za parkovací místo?"
+        "cs": "Co je to za parkovací místo?",
+        "es": "¿Qué tipo de plaza de aparcamiento es esta?"
       },
       "mappings": [
         {
@@ -109,7 +115,8 @@
             "nl": "Dit is een normale parkeerplek.",
             "ca": "És un lloc normal d'aparcament.",
             "pl": "To jest zwykłe miejsce parkingowe.",
-            "cs": "To je normální parkovací místo."
+            "cs": "To je normální parkovací místo.",
+            "es": "Esta es una plaza de aparcamiento normal."
           },
           "hideInAnswer": true
         },
@@ -121,7 +128,8 @@
             "nl": "Dit is een normale parkeerplek.",
             "pl": "To jest zwykłe miejsce parkingowe.",
             "ca": "Aquesta és una plaça d'aparcament normal.",
-            "cs": "To je normální parkovací místo."
+            "cs": "To je normální parkovací místo.",
+            "es": "Esta es una plaza de aparcamiento normal."
           }
         },
         {
@@ -132,7 +140,8 @@
             "nl": "Dit is een gehandicaptenparkeerplaats.",
             "pl": "To jest miejsce parkingowe dla niepełnosprawnych.",
             "ca": "Aquesta és una plaça d'aparcament per a minusvàlids.",
-            "cs": "Jedná se o parkovací místo pro osoby se zdravotním postižením."
+            "cs": "Jedná se o parkovací místo pro osoby se zdravotním postižením.",
+            "es": "Esta es una plaza de aparcamiento para discapacitados."
           }
         },
         {
@@ -143,7 +152,8 @@
             "nl": "Deze parkeerplek is gereserveerd voor het opladen van voertuigen.",
             "pl": "To miejsce parkingowe jest zarezerwowane dla ładowania pojazdów.",
             "ca": "Es tracta d'una plaça d'aparcament reservada per a la recàrrega de vehicles.",
-            "cs": "Jedná se o parkovací místo vyhrazené pro nabíjení vozidel."
+            "cs": "Jedná se o parkovací místo vyhrazené pro nabíjení vozidel.",
+            "es": "Esta es una plaza de aparcamiento reservada para la carga de vehículos."
           }
         },
         {
@@ -154,7 +164,8 @@
             "nl": "Deze parkeerplek is gereserveerd voor leveringen.",
             "pl": "To miejsce parkingowe jest przeznaczone dla dostaw.",
             "ca": "Es tracta d'una plaça d'aparcament reservada per a repartidors.",
-            "cs": "Jedná se o parkovací místo vyhrazené pro dodávky."
+            "cs": "Jedná se o parkovací místo vyhrazené pro dodávky.",
+            "es": "Esta es una plaza de aparcamiento reservada para entregas."
           }
         },
         {
@@ -163,7 +174,8 @@
             "en": "This is parking space reserved for heavy goods vehicles.",
             "de": "Dies ist ein Stellplatz, der für Lastkraftwagen reserviert ist.",
             "nl": "Deze parkeerplek is gereserveerd voor vrachtwagens.",
-            "cs": "Jedná se o parkovací místo vyhrazené pro těžká nákladní vozidla."
+            "cs": "Jedná se o parkovací místo vyhrazené pro těžká nákladní vozidla.",
+            "es": "Esta es una plaza de aparcamiento reservada para vehículos pesados."
           }
         },
         {
@@ -172,7 +184,8 @@
             "en": "This is parking space reserved for caravans or RVs.",
             "de": "Dieser Stellplatz ist für Wohnwagen oder Wohnmobile reserviert.",
             "nl": "Deze parkeerplek is gereserveerd voor caravans of campers.",
-            "cs": "Jedná se o parkovací místo vyhrazené pro karavany nebo obytná vozidla."
+            "cs": "Jedná se o parkovací místo vyhrazené pro karavany nebo obytná vozidla.",
+            "es": "Esta es una plaza de aparcamiento reservada para caravanas o autocaravanas."
           }
         },
         {
@@ -183,7 +196,8 @@
             "nl": "Deze parkeerplek is gereserveerd voor bussen.",
             "pl": "To miejsce parkingowe jest przeznaczone dla busów.",
             "ca": "Es tracta d'una plaça d'aparcament reservada per a autobusos.",
-            "cs": "Jedná se o parkovací místo vyhrazené pro autobusy."
+            "cs": "Jedná se o parkovací místo vyhrazené pro autobusy.",
+            "es": "Esta es una plaza de aparcamiento reservada para autobuses."
           }
         },
         {
@@ -194,7 +208,8 @@
             "nl": "Deze parkeerplek is gereserveerd voor motoren.",
             "pl": "To miejsce parkingowe jest przeznaczone dla motocykli.",
             "ca": "Es tracta d'una plaça d'aparcament reservada per a motos.",
-            "cs": "Jedná se o parkovací místo vyhrazené pro motocykly."
+            "cs": "Jedná se o parkovací místo vyhrazené pro motocykly.",
+            "es": "Esta es una plaza de aparcamiento reservada para motocicletas."
           }
         },
         {
@@ -205,7 +220,8 @@
             "nl": "Deze parkeerplek is gereserveerd voor ouders met kinderen.",
             "pl": "To miejsce jest przeznaczone dla rodziców z dziećmi.",
             "ca": "Es tracta d'una plaça d'aparcament reservada per a pares amb fills.",
-            "cs": "Jedná se o parkovací místo vyhrazené pro rodiče s dětmi."
+            "cs": "Jedná se o parkovací místo vyhrazené pro rodiče s dětmi.",
+            "es": "Esta es una plaza de aparcamiento reservada para padres con niños."
           }
         },
         {
@@ -216,7 +232,8 @@
             "nl": "Deze parkeerplek is gereserveerd voor personeel.",
             "pl": "To jest miejsce parkingowe przeznaczone dla pracowników.",
             "ca": "Es tracta d'una plaça d'aparcament reservada al personal.",
-            "cs": "Jedná se o parkovací místo vyhrazené pro zaměstnance."
+            "cs": "Jedná se o parkovací místo vyhrazené pro zaměstnance.",
+            "es": "Esta es una plaza de aparcamiento reservada para el personal."
           }
         },
         {
@@ -227,7 +244,8 @@
             "nl": "Deze parkeerplek is gereserveerd voor taxis.",
             "pl": "To miejsce parkingowe jest przeznaczone dla taksówek.",
             "ca": "Aquest espai d'aparcament està reservat per a taxi.",
-            "cs": "Jedná se o parkovací místo vyhrazené pro taxíky."
+            "cs": "Jedná se o parkovací místo vyhrazené pro taxíky.",
+            "es": "Esta es una plaza de aparcamiento reservada para taxis."
           }
         },
         {
@@ -236,7 +254,8 @@
             "en": "This is a parking space reserved for vehicles towing a trailer.",
             "de": "Dies ist ein Stellplatz, der für Fahrzeuge mit Anhänger reserviert ist.",
             "nl": "Deze parkeerplek is gereserveerd voor voertuigen met een aanhanger.",
-            "cs": "Jedná se o parkovací místo vyhrazené pro vozidla táhnoucí přívěs."
+            "cs": "Jedná se o parkovací místo vyhrazené pro vozidla táhnoucí přívěs.",
+            "es": "Esta es una plaza de aparcamiento reservada para vehículos que remolcan un remolque."
           }
         },
         {
@@ -245,7 +264,8 @@
             "en": "This is a parking space reserved for car sharing.",
             "de": "Dies ist ein Stellplatz, der für Carsharing reserviert ist.",
             "nl": "Deze parkeerplek is gereserveerd voor autodelen.",
-            "cs": "Jedná se o parkovací místo vyhrazené pro sdílení automobilů."
+            "cs": "Jedná se o parkovací místo vyhrazené pro sdílení automobilů.",
+            "es": "Esta es una plaza de aparcamiento reservada para coches compartidos."
           }
         }
       ]
@@ -257,7 +277,8 @@
         "de": "Dieser Parkplatz hat {capacity} Stellplätze.",
         "nl": "Deze parkeerplek heeft {capacity} plaatsen.",
         "ca": "Aquests espais d'aparcament tenen {capacity} places.",
-        "cs": "Toto parkoviště má {capacity} míst."
+        "cs": "Toto parkoviště má {capacity} míst.",
+        "es": "Esta plaza de aparcamiento tiene {capacity} plazas."
       },
       "mappings": [
         {
@@ -267,10 +288,15 @@
             "de": "Dieser Parkplatz hat 1 Stellplatz.",
             "nl": "Deze parkeerplek heeft 1 plaats.",
             "ca": "Aquest espai d'aparcament té 1 plaça.",
-            "cs": "Toto parkoviště má 1 místo."
+            "cs": "Toto parkoviště má 1 místo.",
+            "es": "Esta plaza de aparcamiento tiene 1 plaza."
           }
         }
       ]
     }
-  ]
+  ],
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": false
+  }
 }

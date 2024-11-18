@@ -8,12 +8,9 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [sport_pitch](../Layers/sport_pitch.md)
 
-
 Available languages:
-
 
  - en
  - nl
@@ -29,7 +26,7 @@ Available languages:
  - da
  - cs
  - pl
-
+ - uk
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

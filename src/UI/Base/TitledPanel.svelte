@@ -6,4 +6,6 @@
   <div class="flex h-full flex-col overflow-auto border-b-2 p-4">
     <slot />
   </div>
+
+  <slot class="mt-1 border-t-gray-300" name="footer" />
 </div>

@@ -12,5 +12,9 @@
       "fill": "no",
       "color": "#cc00cc"
     }
-  ]
+  ],
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": false
+  }
 }

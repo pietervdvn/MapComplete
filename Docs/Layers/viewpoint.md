@@ -2,39 +2,33 @@
 
 # viewpoint
 
-
-
-
 A nice viewpoint or nice view. Ideal to add an image if no other category fits
 
-
-
-
-
-
  - This layer is shown at zoomlevel **14** and higher
-
-
 
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [viewpoint-description](#viewpoint-description)
   - [leftover-questions](#leftover-questions)
+  - [move-button](#move-button)
   - [lod](#lod)
 
 ## Themes using this layer
-
-
 
  - [buurtnatuur](https://mapcomplete.org/buurtnatuur)
  - [personal](https://mapcomplete.org/personal)
  - [ski](https://mapcomplete.org/ski)
 
+## Presets
 
+The following options to create new points are included:
+
+ - **a viewpoint** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:tourism' target='_blank'>tourism</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dviewpoint' target='_blank'>viewpoint</a>
 
 ## Basic tags for this layer
 
@@ -50,38 +44,30 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 -----|-----|----- |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/description#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/description/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [description](https://wiki.openstreetmap.org/wiki/Key:description) | [string](../SpecialInputElements.md#string) |  |
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
-
-
-
 
 ### viewpoint-description
 
 The question is `Do you want to add a description?`
 *{description}* is shown if `description` is set
 
-
-
-
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
+### move-button
 
-
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
 
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

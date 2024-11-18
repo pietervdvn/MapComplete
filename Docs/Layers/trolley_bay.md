@@ -2,25 +2,16 @@
 
 # trolley_bay
 
-
-
-
 Find trolley bays for shopping trolleys.
 
-
-
-
-
-
  - This layer is shown at zoomlevel **18** and higher
-
-
 
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [covered](#covered)
   - [deposit](#deposit)
   - [denominations](#denominations)
@@ -33,12 +24,14 @@ Find trolley bays for shopping trolleys.
 
 ## Themes using this layer
 
-
-
  - [personal](https://mapcomplete.org/personal)
  - [shops](https://mapcomplete.org/shops)
 
+## Presets
 
+The following options to create new points are included:
+
+ - **a trolley bay** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dtrolley_bay' target='_blank'>trolley_bay</a>
 
 ## Basic tags for this layer
 
@@ -56,54 +49,33 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/trolley:deposit#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/trolley%3Adeposit/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [trolley:deposit](https://wiki.openstreetmap.org/wiki/Key:trolley:deposit) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:trolley:deposit%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:trolley:deposit%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/trolley:deposit:denominations#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/trolley%3Adeposit%3Adenominations/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [trolley:deposit:denominations](https://wiki.openstreetmap.org/wiki/Key:trolley:deposit:denominations) | Multiple choice | [0.50 EUR](https://wiki.openstreetmap.org/wiki/Tag:trolley:deposit:denominations%3D0.50 EUR) [1 EUR](https://wiki.openstreetmap.org/wiki/Tag:trolley:deposit:denominations%3D1 EUR) [2 EUR](https://wiki.openstreetmap.org/wiki/Tag:trolley:deposit:denominations%3D2 EUR) |
 
-
-
-
 ### covered
 
 The question is `Is this trolley bay covered?`
 
-
-
  -  *This trolley bay is covered* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:covered' target='_blank'>covered</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:covered%3Dyes' target='_blank'>yes</a>
  -  *This trolley bay is not covered* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:covered' target='_blank'>covered</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:covered%3Dno' target='_blank'>no</a>
-
-
-
-
 
 ### deposit
 
 The question is `Is a deposit (e.g. a coin) required for the trolleys?`
 
-
-
  -  *A deposit is required for the trolleys* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:trolley:deposit' target='_blank'>trolley:deposit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:trolley:deposit%3Dyes' target='_blank'>yes</a>
  -  *No deposit is required for the trolleys* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:trolley:deposit' target='_blank'>trolley:deposit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:trolley:deposit%3Dno' target='_blank'>no</a>
-
-
-
-
 
 ### denominations
 
 The question is `What coins are accepted for the deposit?`
 
-
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/denominations/eur/50cent.svg' style='width: 3rem; height: 3rem'> *50 cent coins are accepted* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:trolley:deposit:denominations' target='_blank'>trolley:deposit:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:trolley:deposit:denominations%3D0.50 EUR' target='_blank'>0.50 EUR</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/denominations/eur/1euro.svg' style='width: 3rem; height: 3rem'> *1 euro coins are accepted* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:trolley:deposit:denominations' target='_blank'>trolley:deposit:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:trolley:deposit:denominations%3D1 EUR' target='_blank'>1 EUR</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/denominations/eur/2euro.svg' style='width: 3rem; height: 3rem'> *2 euro coins are accepted* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:trolley:deposit:denominations' target='_blank'>trolley:deposit:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:trolley:deposit:denominations%3D2 EUR' target='_blank'>2 EUR</a>
 
-
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:trolley:deposit' target='_blank'>trolley:deposit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:trolley:deposit%3Dyes' target='_blank'>yes</a> & _currency~^(.*EUR.*)$
-
 
 ### cart_types
 
 The question is `What kind of special trolleys are available?`
-
-
 
  -  *Trolleys with a magnifier are available* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:trolley:magnifier' target='_blank'>trolley:magnifier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:trolley:magnifier%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:trolley:magnifier' target='_blank'>trolley:magnifier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:trolley:magnifier%3Dno' target='_blank'>no</a>
  -  *Trolleys for wheelchair users are available* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:trolley:wheelchair' target='_blank'>trolley:wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:trolley:wheelchair%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:trolley:wheelchair' target='_blank'>trolley:wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:trolley:wheelchair%3Dno' target='_blank'>no</a>
@@ -112,47 +84,29 @@ The question is `What kind of special trolleys are available?`
  -  *Trolleys with a flatbed are available* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:trolley:flatbed' target='_blank'>trolley:flatbed</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:trolley:flatbed%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:trolley:flatbed' target='_blank'>trolley:flatbed</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:trolley:flatbed%3Dno' target='_blank'>no</a>
  -  *Vertical trolleys for sheet-like goods are available* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:trolley:vertical' target='_blank'>trolley:vertical</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:trolley:vertical%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:trolley:vertical' target='_blank'>trolley:vertical</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:trolley:vertical%3Dno' target='_blank'>no</a>
 
-
-
-
-
 ### indoor
 
 _This tagrendering has no question and is thus read-only_
-
-
-
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### move-button
 
 _This tagrendering has no question and is thus read-only_
 *{move_button()}*
-
-
-
 
 ### delete-button
 
 _This tagrendering has no question and is thus read-only_
 *{delete_button()}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

@@ -2,25 +2,16 @@
 
 # waste_disposal
 
-
-
-
 Waste Disposal Bin, medium to large bin for disposal of (household) waste
 
-
-
-
-
-
  - This layer is shown at zoomlevel **12** and higher
-
-
 
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [type](#type)
   - [access](#access)
@@ -29,17 +20,19 @@ Waste Disposal Bin, medium to large bin for disposal of (household) waste
   - [move-button](#move-button)
   - [delete-button](#delete-button)
   - [lod](#lod)
-4. [Filters](#filters)
+5. [Filters](#filters)
 
 ## Themes using this layer
-
-
 
  - [personal](https://mapcomplete.org/personal)
  - [waste](https://mapcomplete.org/waste)
  - [waste_assen](https://mapcomplete.org/waste_assen)
 
+## Presets
 
+The following options to create new points are included:
+
+ - **a waste disposal bin** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dwaste_disposal' target='_blank'>waste_disposal</a>
 
 ## Basic tags for this layer
 
@@ -57,99 +50,63 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/access#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/access/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [access](https://wiki.openstreetmap.org/wiki/Key:access) | [string](../SpecialInputElements.md#string) | [yes](https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:access%3Dno) [residents](https://wiki.openstreetmap.org/wiki/Tag:access%3Dresidents) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/location#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/location/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [location](https://wiki.openstreetmap.org/wiki/Key:location) | Multiple choice | [underground](https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground) [indoor](https://wiki.openstreetmap.org/wiki/Tag:location%3Dindoor) [](https://wiki.openstreetmap.org/wiki/Tag:location%3D) |
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
 
-
-
-
 ### type
 Mapping allowing to change between waste_disposal and recycling
 The question is `What kind of waste disposal bin is this?`
 
-
-
  -  *This is a medium to large bin for disposal of (household) waste* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dwaste_disposal' target='_blank'>waste_disposal</a>
  -  *This is actually a recycling container* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Drecycling' target='_blank'>recycling</a>
-
-
-
-
 
 ### access
 
 The question is `Who can use this waste disposal bin?`
 *Access: {access}* is shown if `access` is set
 
-
  -  *This bin can be used by anyone* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
  -  *This bin is private* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dno' target='_blank'>no</a>
  -  *This bin is only for residents* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dresidents' target='_blank'>residents</a>
-
-
-
-
 
 ### disposal-location
 
 The question is `Where is this container located?`
 
-
-
  -  *This is an underground container* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>
  -  *This container is located indoors* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dindoor' target='_blank'>indoor</a>
  -  *This container is located outdoors* is shown if with location=
-
-
-
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### move-button
 
 _This tagrendering has no question and is thus read-only_
 *{move_button()}*
-
-
-
 
 ### delete-button
 
 _This tagrendering has no question and is thus read-only_
 *{delete_button()}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`
 
 ## Filters
 
-
-
 | id | question | osmTags |
 -----|-----|----- |
 | public-access.0 | Only public access | access=yes |
-
 
 
 

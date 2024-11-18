@@ -2,25 +2,16 @@
 
 # guidepost
 
-
-
-
 Guideposts (also known as fingerposts or finger posts) are often found along official hiking/cycling/riding/skiing routes to indicate the directions to different destinations
 
-
-
-
-
-
  - This layer is shown at zoomlevel **14** and higher
-
-
 
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [type](#type)
   - [leftover-questions](#leftover-questions)
@@ -30,15 +21,17 @@ Guideposts (also known as fingerposts or finger posts) are often found along off
 
 ## Themes using this layer
 
-
-
  - [climbing](https://mapcomplete.org/climbing)
  - [guideposts](https://mapcomplete.org/guideposts)
  - [nature](https://mapcomplete.org/nature)
  - [personal](https://mapcomplete.org/personal)
  - [ski](https://mapcomplete.org/ski)
 
+## Presets
 
+The following options to create new points are included:
+
+ - **a guidepost** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:information' target='_blank'>information</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost' target='_blank'>guidepost</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:tourism' target='_blank'>tourism</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dinformation' target='_blank'>information</a>
 
 ## Basic tags for this layer
 
@@ -48,21 +41,14 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 
 ## Supported attributes
 
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
 
-
-
-
 ### type
 
 The question is `What kind of routes are shown on this guidepost?`
-
-
 
  -  *This guidepost shows bicycle routes* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle' target='_blank'>bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add bicycle=
  -  *This guidepost shows hiking routes* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:hiking' target='_blank'>hiking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hiking%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add hiking=
@@ -70,39 +56,25 @@ The question is `What kind of routes are shown on this guidepost?`
  -  *This guidepost shows horse riding routes* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:horse' target='_blank'>horse</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:horse%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add horse=
  -  *This guidepost shows ski routes* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:ski' target='_blank'>ski</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:ski%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add ski=
 
-
-
-
-
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
-
-
-
 
 ### move-button
 
 _This tagrendering has no question and is thus read-only_
 *{move_button()}*
 
-
-
-
 ### delete-button
 
 _This tagrendering has no question and is thus read-only_
 *{delete_button()}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

@@ -24,7 +24,7 @@ export default class FavouritesFeatureSource extends StaticFeatureSource {
 
     constructor(state: SpecialVisualizationState) {
         const features: Store<Feature[]> = Stores.ListStabilized(
-            state.osmConnection.preferencesHandler.preferences.map((prefs) => {
+            state.osmConnection.preferencesHandler.allPreferences.map((prefs) => {
                 const feats: Feature[] = []
                 const allIds = new Set<string>()
                 for (const key in prefs) {
@@ -49,7 +49,7 @@ export default class FavouritesFeatureSource extends StaticFeatureSource {
 
         const featuresWithoutAlreadyPresent = features.map((features) =>
             features.filter(
-                (feat) => !state.layout.layers.some((l) => l.id === feat.properties._orig_layer)
+                (feat) => !state.theme.layers.some((l) => l.id === feat.properties._orig_layer)
             )
         )
 

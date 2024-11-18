@@ -10,7 +10,7 @@
   export let i: number = undefined
   let id = feature.properties.id
   let tags = state.featureProperties.getStore(id)
-  let layer: LayerConfig = state.layout.getMatchingLayer(tags.data)
+  let layer: LayerConfig = state.theme.getMatchingLayer(tags.data)
 </script>
 
 <span class="inline-flex gap-x-1">

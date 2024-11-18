@@ -6,12 +6,14 @@
     "nl": "Schuilplaats",
     "ca": "Refugi",
     "fr": "Abri",
-    "cs": "Přístřešek"
+    "cs": "Přístřešek",
+    "es": "Refugio"
   },
   "description": {
     "en": "Layer showing shelter structures",
     "de": "Eine Ebene, die verschiedene Bauformen von Unterständen zeigt",
-    "cs": "Vrstva zobrazující přístřešky"
+    "cs": "Vrstva zobrazující přístřešky",
+    "es": "Capa que muestra estructuras de refugio"
   },
   "source": {
     "osmTags": {
@@ -27,7 +29,8 @@
       "de": "Unterstand",
       "nl": "Schuilplaats",
       "ca": "Refugi",
-      "cs": "Přístřešek"
+      "cs": "Přístřešek",
+      "es": "Refugio"
     }
   },
   "pointRendering": [
@@ -55,7 +58,9 @@
             "en": "This is a shelter at a public transport stop.",
             "de": "Das ist ein Unterstand an einer Haltestelle für öffentliche Verkehrsmittel.",
             "nl": "Dit is een schuilplaats bij een halte voor openbaar vervoer.",
-            "cs": "Jedná se o přístřešek u zastávky MHD."
+            "cs": "Jedná se o přístřešek u zastávky MHD.",
+            "uk": "Це притулок на зупинці громадського транспорту.",
+            "es": "Este es un refugio en una parada de transporte público."
           }
         },
         {
@@ -63,7 +68,9 @@
           "then": {
             "en": "This is a shelter protecting from rain at a picnic site.",
             "de": "Dies ist ein Unterstand zum Schutz vor Regen auf einem Picknickplatz.",
-            "cs": "Jedná se o přístřešek chránící před deštěm na piknikovém místě."
+            "cs": "Jedná se o přístřešek chránící před deštěm na piknikovém místě.",
+            "uk": "Це накриття, що захищає від дощу на місці для пікніка.",
+            "es": "Este es un refugio que protege de la lluvia en un área de picnic."
           }
         },
         {
@@ -71,7 +78,9 @@
           "then": {
             "en": "This is a gazebo.",
             "de": "Das ist ein offener Gartenpavillon.",
-            "cs": "Toto je altán."
+            "cs": "Toto je altán.",
+            "uk": "Це альтанка.",
+            "es": "Este es un cenador."
           }
         },
         {
@@ -79,7 +88,10 @@
           "then": {
             "en": "This is a small shelter, primarily intended for short breaks. Usually found in the mountains or alongside roads.",
             "de": "Dies ist ein kleiner Unterstand, der vor allem für kurze Pausen gedacht ist. Normalerweise findet man ihn in Bergen oder an Straßen.",
-            "cs": "Jedná se o malý přístřešek, primárně určený pro krátké přestávky. Obvykle se vyskytuje v horách nebo podél silnic."
+            "cs": "Jedná se o malý přístřešek, primárně určený pro krátké přestávky. Obvykle se vyskytuje v horách nebo podél silnic.",
+            "ca": "Es tracta d'un petit refugi, principalment destinat a descansos curts. Normalment es troba a les muntanyes o al costat de les carreteres.",
+            "uk": "Це невеликий притулок, призначений насамперед для коротких перерв. Зазвичай знаходиться в горах або вздовж доріг.",
+            "es": "Este es un refugio pequeño, principalmente destinado a descansos cortos. Normalmente se encuentra en las montañas o al lado de las carreteras."
           }
         },
         {
@@ -88,7 +100,9 @@
             "en": "This is a shed with 3 walls, primarily intended for camping.",
             "de": "Es handelt sich um einen an 3 Seiten geschlossenen Unterstand, der in erster Linie zum Campen gedacht ist.",
             "ca": "Es tracta d'un cobert amb 3 parets, destinat principalment a l'acampada.",
-            "cs": "Jedná se o přístřešek se 3 stěnami, primárně určený pro kempování."
+            "cs": "Jedná se o přístřešek se 3 stěnami, primárně určený pro kempování.",
+            "uk": "Це сарай з 3-ма стінами, в першу чергу призначений для кемпінгу.",
+            "es": "Este es un cobertizo con 3 paredes, principalmente destinado para acampar."
           }
         },
         {
@@ -96,7 +110,9 @@
           "then": {
             "en": "This is a pavilion",
             "de": "Das ist ein Pavillon",
-            "cs": "Toto je pavilon"
+            "cs": "Toto je pavilon",
+            "uk": "Це павільйон",
+            "es": "Este es un pabellón"
           }
         },
         {
@@ -109,12 +125,16 @@
         "de": "Um welche Art von Unterstand handelt es sich?",
         "nl": "Wat voor schuilplaats is dit?",
         "ca": "Quin tipus de refugi és aquest?",
-        "cs": "Co je to za přístřešek?"
+        "cs": "Co je to za přístřešek?",
+        "uk": "Що це за притулок?",
+        "es": "¿Qué tipo de refugio es este?"
       },
       "render": {
         "en": "Shelter type: {shelter_type}",
         "de": "Art des Unterstands: {shelter_type}",
-        "cs": "Typ přístřešku: {shelter_type}"
+        "cs": "Typ přístřešku: {shelter_type}",
+        "uk": "Тип притулку: {shelter_type}",
+        "es": "Tipo de refugio: {shelter_type}"
       },
       "freeform": {
         "key": "shelter_type",
@@ -125,5 +145,10 @@
   "allowMove": {
     "enableRelocation": false,
     "enableImproveAccuracy": true
+  },
+  "snapName": {
+    "en": "a shelter",
+    "de": "ein Unterstand",
+    "es": "un refugio"
   }
 }

@@ -30,7 +30,7 @@
    * Class which is applied onto the individual icons
    */
   export let clss = ""
-  export let emojiHeight : string = "40px"
+  export let emojiHeight: string = "40px"
 
   /**
    * Class applied onto the entire element

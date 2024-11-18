@@ -1,0 +1,148 @@
+{
+  "credits": "Robin van der Linde",
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "pin",
+          "color": "#538EE8"
+        },
+        {
+          "icon": "./assets/layers/cyclist_waiting_aid/waiting_aid.svg"
+        }
+      ],
+      "anchor": "bottom"
+    }
+  ],
+  "tagRenderings": [
+    "images",
+    {
+      "question": {
+        "en": "What kind of components does this waiting aid have?"
+      },
+      "id": "type",
+      "multiAnswer": true,
+      "mappings": [
+        {
+          "if": "footrest=yes",
+          "then": {
+            "en": "There is a board or peg to rest your foot on here"
+          },
+          "ifnot": "footrest="
+        },
+        {
+          "if": "handrest=yes",
+          "then": {
+            "en": "There is a rail or a handle to hold on to here"
+          },
+          "ifnot": "handrest="
+        }
+      ]
+    },
+    {
+      "question": {
+        "en": "On what side of the road is this located?"
+      },
+      "id": "side",
+      "mappings": [
+        {
+          "if": "side=left",
+          "then": {
+            "en": "This waiting aid is located on the left side"
+          }
+        },
+        {
+          "if": "side=right",
+          "then": {
+            "en": "This waiting aid is located on the right side"
+          }
+        },
+        {
+          "if": "side=both",
+          "then": {
+            "en": "There are waiting aids on both sides of the road"
+          }
+        }
+      ]
+    },
+    {
+      "condition": "direction~*",
+      "id": "direction",
+      "mappings": [
+        {
+          "if": "direction=forward",
+          "then": {
+            "en": "This waiting aid can be used when going forward on this way"
+          }
+        },
+        {
+          "if": "direction=backward",
+          "then": {
+            "en": "This waiting aid can be used when going backward on this way"
+          }
+        }
+      ],
+      "render": {
+        "en": "This waiting aid can be used when going in {direction} direction"
+      }
+    }
+  ],
+  "lineRendering": [
+    {
+      "width": 1,
+      "color": "blue"
+    }
+  ],
+  "credits:uid": 5093765,
+  "id": "cyclist_waiting_aid",
+  "description": {
+    "en": "Various pieces of infrastructure that aid cyclists while they wait at a traffic light."
+  },
+  "source": {
+    "osmTags": "highway=cyclist_waiting_aid"
+  },
+  "name": {
+    "en": "Cyclist Waiting Aids"
+  },
+  "title": {
+    "render": {
+      "en": "Cyclist Waiting Aid"
+    }
+  },
+  "deletion": {
+    "softDeletionTags": {
+      "and": [
+        "highway=",
+        "side=",
+        "footrest=",
+        "handrest=",
+        "material=",
+        "height=",
+        "support=",
+        "count=",
+        "capacity="
+      ]
+    }
+  },
+  "allowMove": false,
+  "presets": [
+    {
+      "title": {
+        "en": "a cyclist waiting aid"
+      },
+      "tags": [
+        "highway=cyclist_waiting_aid"
+      ],
+      "description": {
+        "en": "A footrest, handrail or other aid, to improve comfort while waiting at traffic lights"
+      },
+      "snapToLayer": [
+        "cycleways_and_roads"
+      ]
+    }
+  ]
+}

@@ -31,19 +31,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Drinking water allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Drinking water allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Drinking water allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Drinking water allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Drinking water allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Drinking water allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Drinking water allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Drinking water allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Drinking water allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "operational_status",
@@ -51,7 +55,12 @@
     },
     {
       "key": "operational_status",
-      "description": "Layer 'Drinking water' shows operational_status= with a fixed text, namely 'This drinking water works' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') Picking this answer will delete the key operational_status.",
+      "description": "Layer 'Drinking water' shows operational_status= & disused:amenity= with a fixed text, namely 'This drinking water works' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') Picking this answer will delete the key operational_status.",
+      "value": ""
+    },
+    {
+      "key": "disused:amenity",
+      "description": "Layer 'Drinking water' shows operational_status= & disused:amenity= with a fixed text, namely 'This drinking water works' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') Picking this answer will delete the key disused:amenity.",
       "value": ""
     },
     {
@@ -63,6 +72,11 @@
       "key": "operational_status",
       "description": "Layer 'Drinking water' shows operational_status=closed with a fixed text, namely 'This drinking water is closed' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
       "value": "closed"
+    },
+    {
+      "key": "disused:amenity",
+      "description": "Layer 'Drinking water' shows disused:amenity=drinking_water with a fixed text, namely 'This drinking water is permanently closed' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "value": "drinking_water"
     },
     {
       "key": "fountain",
@@ -148,6 +162,91 @@
       "value": ""
     },
     {
+      "key": "artwork_type",
+      "description": "Layer 'Drinking water' shows and asks freeform values for key 'artwork_type' (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Drinking water' shows artwork_type=architecture with a fixed text, namely 'Architecture' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
+      "value": "architecture"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Drinking water' shows artwork_type=mural with a fixed text, namely 'Mural' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
+      "value": "mural"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Drinking water' shows artwork_type=painting with a fixed text, namely 'Painting' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
+      "value": "painting"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Drinking water' shows artwork_type=sculpture with a fixed text, namely 'Sculpture' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
+      "value": "sculpture"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Drinking water' shows artwork_type=statue with a fixed text, namely 'Statue' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
+      "value": "statue"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Drinking water' shows artwork_type=bust with a fixed text, namely 'Bust' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
+      "value": "bust"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Drinking water' shows artwork_type=stone with a fixed text, namely 'Stone' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
+      "value": "stone"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Drinking water' shows artwork_type=installation with a fixed text, namely 'Installation' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
+      "value": "installation"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Drinking water' shows artwork_type=graffiti with a fixed text, namely 'Graffiti' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
+      "value": "graffiti"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Drinking water' shows artwork_type=relief with a fixed text, namely 'Relief' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
+      "value": "relief"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Drinking water' shows artwork_type=azulejo with a fixed text, namely 'Azulejo (Spanish decorative tilework)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
+      "value": "azulejo"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Drinking water' shows artwork_type=tilework with a fixed text, namely 'Tilework' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
+      "value": "tilework"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Drinking water' shows artwork_type=woodcarving with a fixed text, namely 'Woodcarving' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
+      "value": "woodcarving"
+    },
+    {
+      "key": "artist:wikidata",
+      "description": "Layer 'Drinking water' shows and asks freeform values for key 'artist:wikidata' (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)"
+    },
+    {
+      "key": "artist_name",
+      "description": "Layer 'Drinking water' shows and asks freeform values for key 'artist_name' (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Drinking water' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)"
+    },
+    {
+      "key": "subject:wikidata",
+      "description": "Layer 'Drinking water' shows and asks freeform values for key 'subject:wikidata' (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)"
+    },
+    {
       "key": "leisure",
       "description": "The MapComplete theme Into nature has a layer Bird watching places showing features with this tag",
       "value": "bird_hide"
@@ -158,19 +257,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Bird watching places allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bird watching places allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Bird watching places allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Bird watching places allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bird watching places allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Bird watching places allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bird watching places allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Bird watching places allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bird watching places allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "shelter",
@@ -277,19 +380,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Nature reserve allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Nature reserve allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Nature reserve allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Nature reserve allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Nature reserve allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Nature reserve allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Nature reserve allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Nature reserve allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Nature reserve allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "access:description",
@@ -459,19 +566,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Maps allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Maps allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Maps allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Maps allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Maps allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Maps allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Maps allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Maps allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Maps allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "map_type",
@@ -510,7 +621,7 @@
     },
     {
       "key": "map_size",
-      "description": "Layer 'Maps' shows map_size=city with a fixed text, namely ' A map of a city' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "description": "Layer 'Maps' shows map_size=city with a fixed text, namely 'A map of a city' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
       "value": "city"
     },
     {
@@ -568,19 +679,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Information boards allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Information boards allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Information boards allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Information boards allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Information boards allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Information boards allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Information boards allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Information boards allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Information boards allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "amenity",
@@ -593,19 +708,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Benches allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Benches allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Benches allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Benches allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Benches allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Benches allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Benches allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Benches allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Benches allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "backrest",
@@ -782,6 +901,91 @@
       "value": "memorial"
     },
     {
+      "key": "artwork_type",
+      "description": "Layer 'Benches' shows and asks freeform values for key 'artwork_type' (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Benches' shows artwork_type=architecture with a fixed text, namely 'Architecture' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
+      "value": "architecture"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Benches' shows artwork_type=mural with a fixed text, namely 'Mural' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
+      "value": "mural"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Benches' shows artwork_type=painting with a fixed text, namely 'Painting' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
+      "value": "painting"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Benches' shows artwork_type=sculpture with a fixed text, namely 'Sculpture' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
+      "value": "sculpture"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Benches' shows artwork_type=statue with a fixed text, namely 'Statue' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
+      "value": "statue"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Benches' shows artwork_type=bust with a fixed text, namely 'Bust' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
+      "value": "bust"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Benches' shows artwork_type=stone with a fixed text, namely 'Stone' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
+      "value": "stone"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Benches' shows artwork_type=installation with a fixed text, namely 'Installation' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
+      "value": "installation"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Benches' shows artwork_type=graffiti with a fixed text, namely 'Graffiti' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
+      "value": "graffiti"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Benches' shows artwork_type=relief with a fixed text, namely 'Relief' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
+      "value": "relief"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Benches' shows artwork_type=azulejo with a fixed text, namely 'Azulejo (Spanish decorative tilework)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
+      "value": "azulejo"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Benches' shows artwork_type=tilework with a fixed text, namely 'Tilework' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
+      "value": "tilework"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Benches' shows artwork_type=woodcarving with a fixed text, namely 'Woodcarving' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)",
+      "value": "woodcarving"
+    },
+    {
+      "key": "artist:wikidata",
+      "description": "Layer 'Benches' shows and asks freeform values for key 'artist:wikidata' (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)"
+    },
+    {
+      "key": "artist_name",
+      "description": "Layer 'Benches' shows and asks freeform values for key 'artist_name' (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Benches' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)"
+    },
+    {
+      "key": "subject:wikidata",
+      "description": "Layer 'Benches' shows and asks freeform values for key 'subject:wikidata' (in the mapcomplete.org theme 'Into nature') (This is only shown if tourism=artwork)"
+    },
+    {
       "key": "leisure",
       "description": "The MapComplete theme Into nature has a layer Picnic tables showing features with this tag",
       "value": "picnic_table"
@@ -792,19 +996,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Picnic tables allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Picnic tables allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Picnic tables allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Picnic tables allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Picnic tables allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Picnic tables allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Picnic tables allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Picnic tables allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Picnic tables allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "level",
@@ -855,6 +1063,11 @@
       "value": "plastic"
     },
     {
+      "key": "material",
+      "description": "Layer 'Picnic tables' shows material=metal with a fixed text, namely 'This picnic table is made from metal' and allows to pick this as a default answer (in the mapcomplete.org theme 'Into nature')",
+      "value": "metal"
+    },
+    {
       "key": "amenity",
       "description": "The MapComplete theme Into nature has a layer Toilets showing features with this tag",
       "value": "toilets"
@@ -865,19 +1078,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Toilets allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Toilets allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Toilets allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Toilets allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Toilets allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Toilets allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Toilets allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Toilets allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Toilets allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "level",
@@ -1152,19 +1369,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Guideposts allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Guideposts allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Guideposts allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Guideposts allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Guideposts allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Guideposts allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Guideposts allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Guideposts allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Guideposts allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "bicycle",
@@ -1202,19 +1423,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Shelter allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Shelter allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Shelter allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Shelter allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Shelter allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Shelter allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Shelter allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Shelter allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Shelter allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "shelter_type",
@@ -1266,19 +1491,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'BBQ allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'BBQ allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'BBQ allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'BBQ allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'BBQ allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'BBQ allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'BBQ allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'BBQ allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'BBQ allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "access",
@@ -1351,19 +1580,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Firepit allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Firepit allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Firepit allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Firepit allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Firepit allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Firepit allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Firepit allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Firepit allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Firepit allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "access",

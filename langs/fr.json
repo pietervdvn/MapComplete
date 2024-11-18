@@ -46,6 +46,7 @@
         "whyDelete": "Pourquoi cet élément devrait-il être supprimé ?"
     },
     "external": {
+        "apply": "Appliquer",
         "done": "Fait",
         "missing": {
             "title": "Éléments manquants"
@@ -58,9 +59,10 @@
     },
     "favouritePoi": {
         "button": {
-            "markAsFavouriteTitle": "Sauvegarder ce lieu comme favori",
+            "markAsFavouriteTitle": "Enregistrer ce lieu comme favori",
             "markDescription": "Ajouter ce lieu à votre liste personnelle de favoris",
-            "unmark": "Supprimer de votre liste de favoris"
+            "unmark": "Supprimer de votre liste de favoris",
+            "unmarkNotDeleted": "Ce point ne sera pas supprimé et restera visible pour tout le monde sur les cartes dédiées"
         },
         "downloadGeojson": "Télécharger vos lieux favoris en geojson",
         "downloadGpx": "Télécharger vos lieux favoris en GPX",
@@ -161,6 +163,7 @@
         "back": "Retour",
         "backToIndex": "Revenir vers l'aperçu de toutes les cartes thématiques",
         "backgroundMap": "Fond de plan",
+        "backgroundSwitch": "Changer de fond de plan",
         "cancel": "Annuler",
         "confirm": "Confirmer",
         "customThemeIntro": "<h3>Thèmes personnalisés</h3>Vous avez déjà visité ces thèmes personnalisés.",
@@ -195,6 +198,9 @@
         "histogram": {
             "error_loading": "Erreur de chargement de l’histograme"
         },
+        "labels": {
+            "jumpToLocation": "Aller à votre emplacement"
+        },
         "layerSelection": {
             "title": "Selectionner des couches",
             "zoomInToSeeThisLayer": "Zoomer pour voir cette couche"
@@ -207,14 +213,16 @@
         "loginWithOpenStreetMap": "Se connecter avec OpenStreetMap",
         "logout": "Déconnexion",
         "menu": {
+            "aboutCurrentThemeTitle": "À propos de cette carte",
             "aboutMapComplete": "À propos de MapComplete",
-            "filter": "Filtrer les données"
+            "filter": "Filtrer les données",
+            "moreUtilsTitle": "En savoir plus",
+            "showIntroduction": "Voir la page d'introduction"
         },
         "morescreen": {
             "createYourOwnTheme": "Créez votre propre thème MapComplete à partir de zéro",
             "enterToOpen": "Appuyez sur Entrée pour ouvrir le thème",
             "hiddenExplanation": "Ces thèmes sont seulement accessibles par lien. Vous avez découvert {hidden_discovered} des {total_hidden} thèmes cachés.",
-            "intro": "<h3>Plus de thèmes ?</h3>Vous aimez collecter des données géographiques ?<br>Il y a plus de thèmes disponibles.",
             "noMatchingThemes": "Aucun thème ne correspond à vos critères de recherche",
             "noSearch": "Afficher tous les thèmes",
             "previouslyHiddenTitle": "Thèmes précédemment utilisés",
@@ -509,7 +517,7 @@
         "splitTitle": "Choisissez sur la carte où couper cette route"
     },
     "translations": {
-        "activateButton": "Aidez à traduire MapComplete",
+        "activateButton": "Aider à traduire MapComplete",
         "missing": "{count} segments non traduits"
     },
     "userinfo": {

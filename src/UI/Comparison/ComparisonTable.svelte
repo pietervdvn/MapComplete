@@ -42,7 +42,7 @@
     currentStep = "applying_all"
     const tagsToApply = missing.data.map((k) => new Tag(k, externalProperties[k]))
     const change = new ChangeTagAction(tags.data.id, new And(tagsToApply), tags.data, {
-      theme: state.layout.id,
+      theme: state.theme.id,
       changeType: "import",
     })
     await state.changes.applyChanges(await change.CreateChangeDescriptions())
@@ -132,6 +132,7 @@
         <div class="flex h-32 w-max gap-x-2">
           {#each $unknownImages as image (image)}
             <AttributedImage
+              {state}
               imgClass="h-32 w-max shrink-0"
               image={{ url: image }}
               previewedImage={state.previewedImage}

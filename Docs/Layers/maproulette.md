@@ -2,15 +2,7 @@
 
 # maproulette
 
-
-
-
 Layer showing all tasks in MapRoulette
-
-
-
-
-
 
  - This layer is shown at zoomlevel **15** and higher
  - <img src='../warning.svg' height='1rem'/>
@@ -18,8 +10,6 @@ Layer showing all tasks in MapRoulette
 This layer is loaded from an external source, namely 
 
 `https://maproulette.org/api/v2/tasks/box/{x_min}/{y_min}/{x_max}/{y_max}`
-
-
 
 ## Table of contents
 
@@ -36,11 +26,7 @@ This layer is loaded from an external source, namely
 
 ## Themes using this layer
 
-
-
  - [maproulette](https://mapcomplete.org/maproulette)
-
-
 
 ## Basic tags for this layer
 
@@ -56,14 +42,9 @@ Elements must match the expression **title~.+**
 -----|-----|----- |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/status#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/status/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [status](https://wiki.openstreetmap.org/wiki/Key:status) | Multiple choice | [0](https://wiki.openstreetmap.org/wiki/Tag:status%3D0) [1](https://wiki.openstreetmap.org/wiki/Tag:status%3D1) [2](https://wiki.openstreetmap.org/wiki/Tag:status%3D2) [3](https://wiki.openstreetmap.org/wiki/Tag:status%3D3) [4](https://wiki.openstreetmap.org/wiki/Tag:status%3D4) [5](https://wiki.openstreetmap.org/wiki/Tag:status%3D5) [6](https://wiki.openstreetmap.org/wiki/Tag:status%3D6) [9](https://wiki.openstreetmap.org/wiki/Tag:status%3D9) |
 
-
-
-
 ### status
 
 _This tagrendering has no question and is thus read-only_
-
-
 
  -  *Task is created* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:status' target='_blank'>status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:status%3D0' target='_blank'>0</a>
  -  *Task is fixed* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:status' target='_blank'>status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:status%3D1' target='_blank'>1</a>
@@ -74,15 +55,10 @@ _This tagrendering has no question and is thus read-only_
  -  *Task is marked as too hard* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:status' target='_blank'>status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:status%3D6' target='_blank'>6</a>
  -  *Task is disabled* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:status' target='_blank'>status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:status%3D9' target='_blank'>9</a>
 
-
-
-
-
 ### mark_fixed
 
 _This tagrendering has no question and is thus read-only_
 *{maproulette_set_status(Mark as fixed,,,,,)}*
-
 
 This tagrendering has labels 
 `controls`
@@ -92,7 +68,6 @@ This tagrendering has labels
 _This tagrendering has no question and is thus read-only_
 *{maproulette_set_status(Mark as not found or false positive,close,,2,,)}*
 
-
 This tagrendering has labels 
 `controls`
 
@@ -100,7 +75,6 @@ This tagrendering has labels
 
 _This tagrendering has no question and is thus read-only_
 *{maproulette_set_status(Mark as too hard,./assets/svg/not_found.svg,,6,,)}*
-
 
 This tagrendering has labels 
 `controls`
@@ -110,21 +84,15 @@ This tagrendering has labels
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
 
-
 This tagrendering has labels 
 `added_by_default`
 
 ## Filters
-
-
 
 | id | question | osmTags |
 -----|-----|----- |
@@ -138,24 +106,13 @@ This tagrendering has labels
 | status.7 | Show tasks that are marked as too hard | status=6 |
 | status.8 | Show tasks that are disabled | status=9 |
 
-
-
-
-
+| id | question | osmTags | fields |
+-----|-----|-----|----- |
+| parent-name.0 | Challenge name contains {search} |  | search (regex) |
 
 | id | question | osmTags | fields |
 -----|-----|-----|----- |
-| parent-name.0 | Challenge name contains {search} |  | search (string) |
-
-
-
-
-
-
-| id | question | osmTags | fields |
------|-----|-----|----- |
-| parent-id.0 | Challenge ID matches {search} |  | search (string) |
-
+| parent-id.0 | Challenge ID matches {search} |  | search (regex) |
 
 
 

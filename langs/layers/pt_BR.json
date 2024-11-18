@@ -32,45 +32,45 @@
                 "description": "Uma grande estrutura de publicidade outdoor, geralmente encontrada em áreas com alto tráfego, como ao longo de estradas movimentadas",
                 "title": "um outdoor"
             },
-            "1": {
-                "title": "uma caixa expositora independente"
-            },
-            "2": {
-                "title": "uma caixa de pôster montada em uma parede"
-            },
-            "4": {
-                "description": "Pequeno outdoor para publicidade local, geralmente destinado a pedestres",
-                "title": "um painel publicitário"
-            },
-            "5": {
-                "description": "Uma estrutura cilíndrica ao ar livre que exibe anúncios",
-                "title": "uma coluna"
-            },
-            "6": {
-                "title": "uma bandeira"
-            },
-            "7": {
-                "title": "uma tela"
-            },
-            "8": {
-                "title": "uma tela montada em uma parede"
-            },
-            "10": {
+            "11": {
                 "description": "Um pedaço de tecido impermeável com uma mensagem impressa, permanentemente fixado a uma parede",
                 "title": "uma lona"
             },
-            "11": {
+            "12": {
                 "title": "um totem"
             },
-            "12": {
+            "13": {
                 "description": "Usado para placas de publicidade, letreiros de neon, logotipos e placas de entrada institucionais",
                 "title": "uma placa"
             },
-            "13": {
+            "14": {
                 "title": "uma escultura"
             },
-            "14": {
+            "15": {
                 "title": "uma pintura mural"
+            },
+            "2": {
+                "title": "uma caixa expositora independente"
+            },
+            "3": {
+                "title": "uma caixa de pôster montada em uma parede"
+            },
+            "5": {
+                "description": "Pequeno outdoor para publicidade local, geralmente destinado a pedestres",
+                "title": "um painel publicitário"
+            },
+            "6": {
+                "description": "Uma estrutura cilíndrica ao ar livre que exibe anúncios",
+                "title": "uma coluna"
+            },
+            "7": {
+                "title": "uma bandeira"
+            },
+            "8": {
+                "title": "uma tela"
+            },
+            "9": {
+                "title": "uma tela montada em uma parede"
             }
         },
         "tagRenderings": {
@@ -165,6 +165,9 @@
                     "1": {
                         "then": "Isso é uma placa"
                     },
+                    "10": {
+                        "then": "Isso é uma pintura mural"
+                    },
                     "2": {
                         "then": "Isto é uma coluna"
                     },
@@ -188,9 +191,6 @@
                     },
                     "9": {
                         "then": "Isso é um totem"
-                    },
-                    "10": {
-                        "then": "Isso é uma pintura mural"
                     }
                 },
                 "question": "Que tipo de recurso de publicitário é este?",
@@ -204,6 +204,9 @@
                 },
                 "1": {
                     "then": "Quadro"
+                },
+                "10": {
+                    "then": "Pintura mural"
                 },
                 "2": {
                     "then": "Caixa de pôster"
@@ -228,9 +231,6 @@
                 },
                 "9": {
                     "then": "Totem"
-                },
-                "10": {
-                    "then": "Pintura mural"
                 }
             }
         }
@@ -312,6 +312,15 @@
                     "1": {
                         "then": "Mural"
                     },
+                    "10": {
+                        "then": "Azulejo (Revestimento de azulejos decorativos espanhóis)"
+                    },
+                    "11": {
+                        "then": "Azulejaria"
+                    },
+                    "12": {
+                        "then": "Entalhe"
+                    },
                     "2": {
                         "then": "Pintura"
                     },
@@ -335,15 +344,6 @@
                     },
                     "9": {
                         "then": "Relevo"
-                    },
-                    "10": {
-                        "then": "Azulejo (Revestimento de azulejos decorativos espanhóis)"
-                    },
-                    "11": {
-                        "then": "Azulejaria"
-                    },
-                    "12": {
-                        "then": "Entalhe"
                     }
                 },
                 "question": "Qual é o tipo dessa obra de arte?",
@@ -1134,9 +1134,6 @@
                     },
                     "2": {
                         "then": "Acesso é limitado aos membros de uma escola, companhia ou organização"
-                    },
-                    "3": {
-                        "then": "Acesso é limitado aos membros de uma escola, companhia ou organização"
                     }
                 },
                 "question": "Quem pode usar este estacionamento de bicicletas?",
@@ -1147,25 +1144,25 @@
                     "0": {
                         "then": "Racks para prender a bicicleta"
                     },
-                    "1": {
+                    "2": {
                         "then": "Suporte de rodas/loops"
                     },
-                    "2": {
+                    "3": {
                         "then": "Suporte para guidão"
                     },
-                    "3": {
+                    "4": {
                         "then": "Suporte"
                     },
-                    "4": {
+                    "5": {
                         "then": "De dois níveis"
                     },
-                    "5": {
+                    "6": {
                         "then": "Cabana"
                     },
-                    "6": {
+                    "7": {
                         "then": "Pilar"
                     },
-                    "7": {
+                    "8": {
                         "then": "Uma área no chão que é marcada para o estacionamento de bicicletas"
                     }
                 },
@@ -1348,6 +1345,153 @@
                 }
             },
             "render": "Reparo/loja de bicicletas"
+        }
+    },
+    "caravansites": {
+        "description": "Locais de acampamento",
+        "name": "Locais de acampamento",
+        "presets": {
+            "0": {
+                "title": "uma local de acampamento"
+            }
+        },
+        "tagRenderings": {
+            "caravansites-capacity": {
+                "question": "Quantos campistas podem ficar aqui? (pule se não houver um número óbvio de vagas ou veículos permitidos)",
+                "render": "{capacity} campistas podem usar este lugar ao mesmo tempo"
+            },
+            "caravansites-charge": {
+                "question": "Quanto este lugar cobra?",
+                "render": "Este lugar cobra {charge}"
+            },
+            "caravansites-description": {
+                "render": "Mais detalhes sobre este lugar: {description}"
+            },
+            "caravansites-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Você precisa pagar para usar"
+                    },
+                    "1": {
+                        "then": "Pode ser usado de graça"
+                    }
+                },
+                "question": "Este lugar cobra alguma taxa?"
+            },
+            "caravansites-internet": {
+                "mappings": {
+                    "0": {
+                        "then": "Há acesso à internet"
+                    },
+                    "1": {
+                        "then": "Há acesso à Internet"
+                    },
+                    "2": {
+                        "then": "Não há acesso à internet"
+                    }
+                },
+                "question": "Este lugar fornece acesso a internet?"
+            },
+            "caravansites-internet-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Você precisa pagar um extra pelo acesso à internet"
+                    },
+                    "1": {
+                        "then": "Você não precisa pagar um extra pelo acesso à internet"
+                    }
+                },
+                "question": "Você tem que pagar pelo acesso à internet?"
+            },
+            "caravansites-long-term": {
+                "mappings": {
+                    "0": {
+                        "then": "Sim, há alguns pontos para aluguel a longo prazo, mas você também pode ficar em uma base diária"
+                    },
+                    "1": {
+                        "then": "Não, não há hóspedes permanentes aqui"
+                    }
+                },
+                "question": "Este lugar oferece vagas para aluguel a longo prazo?"
+            },
+            "caravansites-name": {
+                "question": "Qual o nome deste lugar?",
+                "render": "Este lugar é chamado de {name}"
+            },
+            "caravansites-sanitary-dump": {
+                "mappings": {
+                    "0": {
+                        "then": "Este local tem uma estação de aterro sanitário"
+                    },
+                    "1": {
+                        "then": "Este local não tem uma estação de aterro sanitário"
+                    }
+                },
+                "question": "Este local tem uma estação de aterro sanitário?"
+            },
+            "caravansites-toilets": {
+                "mappings": {
+                    "0": {
+                        "then": "Este lugar tem banheiros"
+                    },
+                    "1": {
+                        "then": "Este lugar não tem banheiros"
+                    }
+                },
+                "question": "Este lugar tem banheiros?"
+            },
+            "caravansites-website": {
+                "question": "Este lugar tem um website?",
+                "render": "Site oficial: <a href='{website}'>{website}</a>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Locais de acampamento sem nome"
+                }
+            },
+            "render": "Local de acampamento {name}"
+        }
+    },
+    "dumpstations": {
+        "description": "Estações de despejo sanitário",
+        "name": "Estações de despejo sanitário",
+        "tagRenderings": {
+            "dumpstations-charge": {
+                "question": "Quanto este lugar cobra?",
+                "render": "Este lugar cobra {charge}"
+            },
+            "dumpstations-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Você precisa pagar pelo uso"
+                    },
+                    "1": {
+                        "then": "Pode ser usado gratuitamente"
+                    }
+                },
+                "question": "Este lugar cobra alguma taxa?"
+            },
+            "dumpstations-waterpoint": {
+                "mappings": {
+                    "0": {
+                        "then": "Este lugar tem um ponto de água"
+                    },
+                    "1": {
+                        "then": "Este lugar não tem um ponto de água"
+                    }
+                },
+                "question": "Este lugar tem um ponto de água?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Estação de despejo"
+                }
+            },
+            "render": "Estação de despejo {name}"
         }
     },
     "ghost_bike": {
@@ -1543,23 +1687,23 @@
             },
             "vending": {
                 "mappings": {
-                    "8": {
-                        "then": "Câmaras de ar para bicicletas são vendidas aqui"
-                    },
-                    "22": {
+                    "23": {
                         "then": "Luzes para bicicleta são vendidas aqui"
                     },
-                    "23": {
+                    "24": {
                         "then": "Luvas são vendidas aqui"
                     },
-                    "24": {
+                    "25": {
                         "then": "Kits para reparo de bicicleta são vendidos aqui"
                     },
-                    "25": {
+                    "26": {
                         "then": "Bombas de ar para bicicleta são vendidas aqui"
                     },
-                    "26": {
+                    "27": {
                         "then": "Cadeados para bicicleta são vendidos aqui"
+                    },
+                    "8": {
+                        "then": "Câmaras de ar para bicicletas são vendidas aqui"
                     }
                 }
             }

@@ -57,6 +57,71 @@ export default {
         "or"
       ]
     },
+    "FilterConfigOptionJson": {
+      "type": "object",
+      "properties": {
+        "question": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Record<string,string>"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "searchTerms": {
+          "$ref": "#/definitions/Record<string,string[]>"
+        },
+        "emoji": {
+          "type": "string"
+        },
+        "icon": {
+          "type": "string"
+        },
+        "osmTags": {
+          "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation\n\ntype: tag",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/{and:TagConfigJson[];}"
+            },
+            {
+              "$ref": "#/definitions/{or:TagConfigJson[];}"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "default": {
+          "type": "boolean"
+        },
+        "fields": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "If name is `search`, use  \"_first_comment~.*{search}.*\" as osmTags",
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name"
+            ]
+          }
+        }
+      },
+      "required": [
+        "question"
+      ]
+    },
+    "Record<string,string[]>": {
+      "type": "object"
+    },
     "Record<string,string|Record<string,string>>": {
       "type": "object"
     },

@@ -8,17 +8,16 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [cycleways_and_roads](../Layers/cycleways_and_roads.md)
  - [crossings](../Layers/crossings.md)
  - [kerbs](../Layers/kerbs.md)
  - [transit_stops](../Layers/transit_stops.md)
  - [elevator](../Layers/elevator.md)
  - [stairs](../Layers/stairs.md)
-
+ - [tactile_map](../Layers/tactile_map.md)
+ - [tactile_model](../Layers/tactile_model.md)
 
 Available languages:
-
 
  - en
  - de
@@ -34,7 +33,9 @@ Available languages:
  - pl
  - da
  - zh_Hans
-
+ - fil
+ - uk
+ - hu
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

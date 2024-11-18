@@ -11,118 +11,101 @@
   import LayerConfig from "../Models/ThemeConfig/LayerConfig"
   import ThemeViewState from "../Models/ThemeViewState"
   import type { MapProperties } from "../Models/MapProperties"
-  import Geosearch from "./BigComponents/Geosearch.svelte"
   import Translations from "./i18n/Translations"
-  import usersettings from "../assets/generated/layers/usersettings.json"
-  import {
-    CogIcon,
-    EyeIcon,
-    HeartIcon,
-    MenuIcon,
-    XCircleIcon,
-  } from "@rgossiaux/svelte-heroicons/solid"
+  import { MenuIcon } from "@rgossiaux/svelte-heroicons/solid"
   import Tr from "./Base/Tr.svelte"
-  import CommunityIndexView from "./BigComponents/CommunityIndexView.svelte"
   import FloatOver from "./Base/FloatOver.svelte"
   import Constants from "../Models/Constants"
-  import TabbedGroup from "./Base/TabbedGroup.svelte"
-  import UserRelatedState from "../Logic/State/UserRelatedState"
   import LoginToggle from "./Base/LoginToggle.svelte"
-  import LoginButton from "./Base/LoginButton.svelte"
-  import CopyrightPanel from "./BigComponents/CopyrightPanel.svelte"
-  import DownloadPanel from "./DownloadFlow/DownloadPanel.svelte"
-  import ModalRight from "./Base/ModalRight.svelte"
   import LevelSelector from "./BigComponents/LevelSelector.svelte"
-  import ThemeIntroPanel from "./BigComponents/ThemeIntroPanel.svelte"
   import type { RasterLayerPolygon } from "../Models/RasterLayers"
   import { AvailableRasterLayers } from "../Models/RasterLayers"
-  import RasterLayerOverview from "./Map/RasterLayerOverview.svelte"
-  import IfHidden from "./Base/IfHidden.svelte"
   import { onDestroy } from "svelte"
   import OpenBackgroundSelectorButton from "./BigComponents/OpenBackgroundSelectorButton.svelte"
   import StateIndicator from "./BigComponents/StateIndicator.svelte"
-  import ShareScreen from "./BigComponents/ShareScreen.svelte"
   import UploadingImageCounter from "./Image/UploadingImageCounter.svelte"
   import PendingChangesIndicator from "./BigComponents/PendingChangesIndicator.svelte"
   import Cross from "../assets/svg/Cross.svelte"
-  import LanguagePicker from "./InputElement/LanguagePicker.svelte"
   import Min from "../assets/svg/Min.svelte"
   import Plus from "../assets/svg/Plus.svelte"
   import Filter from "../assets/svg/Filter.svelte"
-  import Community from "../assets/svg/Community.svelte"
-  import Favourites from "./Favourites/Favourites.svelte"
-  import ImageOperations from "./Image/ImageOperations.svelte"
   import VisualFeedbackPanel from "./BigComponents/VisualFeedbackPanel.svelte"
   import { Orientation } from "../Sensors/Orientation"
   import GeolocationIndicator from "./BigComponents/GeolocationIndicator.svelte"
   import Compass_arrow from "../assets/svg/Compass_arrow.svelte"
   import ReverseGeocoding from "./BigComponents/ReverseGeocoding.svelte"
-  import FilterPanel from "./BigComponents/FilterPanel.svelte"
-  import PrivacyPolicy from "./BigComponents/PrivacyPolicy.svelte"
   import { BBox } from "../Logic/BBox"
-  import ReviewsOverview from "./Reviews/ReviewsOverview.svelte"
   import ExtraLinkButton from "./BigComponents/ExtraLinkButton.svelte"
-  import CloseAnimation from "./Base/CloseAnimation.svelte"
-  import { LastClickFeatureSource } from "../Logic/FeatureSource/Sources/LastClickFeatureSource"
-  import ArrowDownTray from "@babeard/svelte-heroicons/mini/ArrowDownTray"
-  import Share from "@babeard/svelte-heroicons/solid/Share"
-  import ChevronRight from "@babeard/svelte-heroicons/solid/ChevronRight"
   import Marker from "./Map/Marker.svelte"
-  import AboutMapComplete from "./BigComponents/AboutMapComplete.svelte"
-  import HotkeyTable from "./BigComponents/HotkeyTable.svelte"
   import SelectedElementPanel from "./Base/SelectedElementPanel.svelte"
-  import type { LayerConfigJson } from "../Models/ThemeConfig/Json/LayerConfigJson"
-  import OverlayOverview from "./Map/OverlayOverview.svelte"
+  import MenuDrawer from "./BigComponents/MenuDrawer.svelte"
+  import DrawerLeft from "./Base/DrawerLeft.svelte"
+  import DrawerRight from "./Base/DrawerRight.svelte"
+  import SearchResults from "./Search/SearchResults.svelte"
+  import { CloseButton } from "flowbite-svelte"
+  import Hash from "../Logic/Web/Hash"
+  import Searchbar from "./Base/Searchbar.svelte"
+  import ChevronRight from "@babeard/svelte-heroicons/mini/ChevronRight"
+  import ChevronLeft from "@babeard/svelte-heroicons/solid/ChevronLeft"
+  import { Drawer } from "flowbite-svelte"
+  import { linear } from "svelte/easing"
 
   export let state: ThemeViewState
-  let layout = state.layout
+
+  let theme = state.theme
   let maplibremap: UIEventSource<MlMap> = state.map
+  let state_selectedElement = state.selectedElement
   let selectedElement: UIEventSource<Feature> = new UIEventSource<Feature>(undefined)
   let compass = Orientation.singleton.alpha
   let compassLoaded = Orientation.singleton.gotMeasurement
-  Orientation.singleton.startMeasurements()
-
-  state.selectedElement.addCallback((selected) => {
-    if (!selected) {
-      selectedElement.setData(selected)
-      return
-    }
-    if (selected !== selectedElement.data) {
-      // We first set the selected element to 'undefined' to force the popup to close...
-      selectedElement.setData(undefined)
-    }
-    // ... we give svelte some time to update with requestAnimationFrame ...
-    window.requestAnimationFrame(() => {
-      // ... and we force a fresh popup window
-      selectedElement.setData(selected)
-    })
-  })
-
-  let selectedLayer: Store<LayerConfig> = state.selectedElement.mapD((element) => {
-    const id = element.properties.id
-    if (id.startsWith("current_view")) {
-      return currentViewLayer
-    }
-    if (id.startsWith("summary_")) {
-      console.log("Not selecting a summary object. The summary object is", element)
-      return undefined
-    }
-    if (id.startsWith(LastClickFeatureSource.newPointElementId)) {
-      return layout.layers.find((l) => l.id === "last_click")
-    }
-    if (id === "location_track") {
-      return layout.layers.find((l) => l.id === "gps_track")
-    }
-
-    return state.layout.getMatchingLayer(element.properties)
-  })
+  let hash = Hash.hash
+  let addNewFeatureMode = state.userRelatedState.addNewFeatureMode
+  let gpsAvailable = state.geolocation.geolocationState.gpsAvailable
+  let gpsButtonAriaLabel = state.geolocation.geolocationState.gpsStateExplanation
+  let debug = state.featureSwitches.featureSwitchIsDebugging
+  let featureSwitches: FeatureSwitchState = state.featureSwitches
+  let currentViewLayer: LayerConfig = theme.layers.find((l) => l.id === "current_view")
+  let rasterLayer: Store<RasterLayerPolygon> = state.mapProperties.rasterLayer
   let currentZoom = state.mapProperties.zoom
   let showCrosshair = state.userRelatedState.showCrosshair
   let visualFeedback = state.visualFeedback
   let viewport: UIEventSource<HTMLDivElement> = new UIEventSource<HTMLDivElement>(undefined)
   let mapproperties: MapProperties = state.mapProperties
-  let usersettingslayer = new LayerConfig(<LayerConfigJson>usersettings, "usersettings", true)
+  let searchOpened = state.searchState.showSearchDrawer
+
+  Orientation.singleton.startMeasurements()
+
+  let slideDuration = 150 // ms
+  state.selectedElement.addCallback((value) => {
+    if (!value) {
+      selectedElement.setData(undefined)
+      return
+    }
+    if (!selectedElement.data) {
+      // The store for this component doesn't have value right now, so we can simply set it
+      selectedElement.set(value)
+      return
+    }
+    // We first set the selected element to 'undefined' to force the popup to close...
+    selectedElement.setData(undefined)
+    // ... and we give svelte some time to update with requestAnimationFrame ...
+    window.setTimeout(() => {
+      window.requestAnimationFrame(() => {
+        // ... and we force a fresh popup window
+        selectedElement.setData(value)
+      })
+    }, slideDuration * 2)
+  })
+
   state.mapProperties.installCustomKeyboardHandler(viewport)
+
+  let selectedLayer: Store<LayerConfig> = state.selectedElement.mapD((element) => {
+    if (element.properties.id.startsWith("current_view")) {
+      return currentViewLayer
+    }
+    return state.getMatchingLayer(element.properties)
+  })
+
   let canZoomIn = mapproperties.maxzoom.map(
     (mz) => mapproperties.zoom.data < mz,
     [mapproperties.zoom]
@@ -131,6 +114,23 @@
     (mz) => mapproperties.zoom.data > mz,
     [mapproperties.zoom]
   )
+
+  let rasterLayerName =
+    rasterLayer.data?.properties?.name ??
+    AvailableRasterLayers.defaultBackgroundLayer.properties.name
+  onDestroy(
+    rasterLayer.addCallbackAndRunD((l) => {
+      rasterLayerName = l.properties.name
+    })
+  )
+
+  debug.addCallbackAndRun((dbg) => {
+    if (dbg) {
+      document.body.classList.add("debug")
+    } else {
+      document.body.classList.remove("debug")
+    }
+  })
 
   function updateViewport() {
     const rect = viewport.data?.getBoundingClientRect()
@@ -156,28 +156,6 @@
   mapproperties.bounds.addCallbackAndRunD(() => {
     updateViewport()
   })
-  let featureSwitches: FeatureSwitchState = state.featureSwitches
-  let availableLayers = state.availableLayers
-  let currentViewLayer: LayerConfig = layout.layers.find((l) => l.id === "current_view")
-  let rasterLayer: Store<RasterLayerPolygon> = state.mapProperties.rasterLayer
-  let rasterLayerName =
-    rasterLayer.data?.properties?.name ??
-    AvailableRasterLayers.defaultBackgroundLayer.properties.name
-  onDestroy(
-    rasterLayer.addCallbackAndRunD((l) => {
-      rasterLayerName = l.properties.name
-    })
-  )
-  let previewedImage = state.previewedImage
-
-  let debug = state.featureSwitches.featureSwitchIsDebugging
-  debug.addCallbackAndRun((dbg) => {
-    if (dbg) {
-      document.body.classList.add("debug")
-    } else {
-      document.body.classList.remove("debug")
-    }
-  })
 
   function forwardEventToMap(e: KeyboardEvent) {
     const mlmap = state.map.data
@@ -190,33 +168,27 @@
     const animation = mlmap.keyboard?.keydown(e)
     animation?.cameraAnimation(mlmap)
   }
-
-  /**
-   * Needed for the animations
-   */
-  let openMapButton: UIEventSource<HTMLElement> = new UIEventSource<HTMLElement>(undefined)
-  let openMenuButton: UIEventSource<HTMLElement> = new UIEventSource<HTMLElement>(undefined)
-  let openCurrentViewLayerButton: UIEventSource<HTMLElement> = new UIEventSource<HTMLElement>(
-    undefined
-  )
-  let _openNewElementButton: HTMLButtonElement
-  let openNewElementButton: UIEventSource<HTMLElement> = new UIEventSource<HTMLElement>(undefined)
-
-  $: {
-    openNewElementButton.setData(_openNewElementButton)
-  }
-  let openFilterButton: UIEventSource<HTMLElement> = new UIEventSource<HTMLElement>(undefined)
-  let openBackgroundButton: UIEventSource<HTMLElement> = new UIEventSource<HTMLElement>(undefined)
-  let addNewFeatureMode = state.userRelatedState.addNewFeatureMode
-
-  let gpsAvailable = state.geolocation.geolocationState.gpsAvailable
-  let gpsButtonAriaLabel = state.geolocation.geolocationState.gpsStateExplanation
 </script>
 
 <main>
-  <div class="absolute left-0 top-0 h-screen w-screen overflow-hidden">
-    <MaplibreMap map={maplibremap} mapProperties={mapproperties} />
+  <!-- Main map -->
+  <div class="absolute top-0 left-0 h-screen w-screen overflow-hidden">
+    <MaplibreMap map={maplibremap} mapProperties={mapproperties} autorecovery={true} />
   </div>
+
+  <LoginToggle ignoreLoading={true} {state}>
+    {#if ($showCrosshair === "yes" && $currentZoom >= 17) || $showCrosshair === "always" || $visualFeedback}
+      <!-- Don't use h-full: h-full does _not_ include the area under the URL-bar, which offsets the crosshair a bit -->
+      <div
+        class="pointer-events-none absolute top-0 left-0 flex w-full items-center justify-center"
+        style="height: 100vh"
+      >
+        <Cross class="h-4 w-4" />
+      </div>
+    {/if}
+    <!-- Add in an empty container to remove error messages if login fails -->
+    <svelte:fragment slot="error" />
+  </LoginToggle>
 
   {#if $visualFeedback}
     <div
@@ -230,100 +202,15 @@
     </div>
   {/if}
 
-  <div class="pointer-events-none absolute left-0 top-0 w-full">
-    <!-- Top components -->
-
-    <div class="pointer-events-auto float-right mt-1 flex flex-col px-1 max-[480px]:w-full sm:m-2">
-      <If condition={state.visualFeedback}>
-        {#if $selectedElement === undefined}
-          <div class="w-fit">
-            <VisualFeedbackPanel {state} />
-          </div>
-        {/if}
-      </If>
-      <If condition={state.featureSwitches.featureSwitchSearch}>
-        <Geosearch
-          bounds={state.mapProperties.bounds}
-          on:searchCompleted={() => {
-            state.map?.data?.getCanvas()?.focus()
-          }}
-          perLayer={state.perLayer}
-          selectedElement={state.selectedElement}
-          geolocationState={state.geolocation.geolocationState}
-        />
-      </If>
-    </div>
-    <div class="float-left m-1 flex flex-col sm:mt-2">
-      <If condition={state.featureSwitches.featureSwitchWelcomeMessage}>
-        <MapControlButton
-          on:click={() => state.guistate.themeIsOpened.setData(true)}
-          on:keydown={forwardEventToMap}
-          htmlElem={openMapButton}
-        >
-          <div
-            class="m-0.5 mx-1 flex cursor-pointer items-center max-[480px]:w-full sm:mx-1 md:mx-2"
-          >
-            <Marker icons={layout.icon} size="h-4 w-4 md:h-8 md:w-8 mr-0.5 sm:mr-1 md:mr-2" />
-            <b class="mr-1">
-              <Tr t={layout.title} />
-            </b>
-            <ChevronRight class="h-4 w-4" />
-          </div>
-        </MapControlButton>
-
-        <MapControlButton
-          arialabel={Translations.t.general.labels.menu}
-          on:click={() => state.guistate.menuIsOpened.setData(true)}
-          on:keydown={forwardEventToMap}
-          htmlElem={openMenuButton}
-        >
-          <MenuIcon class="h-8 w-8 cursor-pointer" />
-        </MapControlButton>
-      </If>
-      {#if currentViewLayer?.tagRenderings && currentViewLayer.defaultIcon()}
-        <MapControlButton
-          on:click={() => {
-            state.selectCurrentView()
-          }}
-          on:keydown={forwardEventToMap}
-          htmlElem={openCurrentViewLayerButton}
-        >
-          <div class="h-8 w-8 cursor-pointer">
-            <ToSvelte construct={() => currentViewLayer.defaultIcon()} />
-          </div>
-        </MapControlButton>
-      {/if}
-      <ExtraLinkButton {state} />
-      <UploadingImageCounter featureId="*" showThankYou={false} {state} />
-      <PendingChangesIndicator {state} />
-      <If condition={state.featureSwitchIsTesting}>
-        <div class="alert w-fit">Testmode</div>
-      </If>
-      {#if state.osmConnection.Backend().startsWith("https://master.apis.dev.openstreetmap.org")}
-        <div class="thanks">Testserver</div>
-      {/if}
-      <If condition={state.featureSwitches.featureSwitchFakeUser}>
-        <div class="alert w-fit">Faking a user (Testmode)</div>
-      </If>
-    </div>
-    <div class="flex w-full flex-col items-center justify-center">
-      <!-- Flex and w-full are needed for the positioning -->
-      <!-- Centermessage -->
-      <StateIndicator {state} />
-      <ReverseGeocoding {state} />
-    </div>
-  </div>
-
   <div class="pointer-events-none absolute bottom-0 left-0 mb-4 w-screen">
     <!-- bottom controls -->
     <div class="flex w-full items-end justify-between px-4">
       <div class="flex flex-col">
         <If condition={featureSwitches.featureSwitchEnableLogin}>
-          {#if $addNewFeatureMode.indexOf("button") >= 0 && ((state.layout.hasPresets() && state.layout.enableAddNewPoints) || state.layout.hasNoteLayer())}
+          {#if $addNewFeatureMode.indexOf("button") >= 0 && ((state.theme.hasPresets() && state.theme.enableAddNewPoints) || state.theme.hasNoteLayer())}
             <button
               class="low-interaction pointer-events-auto w-fit"
               class:disabled={$currentZoom < Constants.minZoomLevelToAddNewPoint}
-              bind:this={_openNewElementButton}
               on:click={() => {
                 state.openNewDialog()
               }}
@@ -331,8 +218,8 @@
             >
               {#if $currentZoom < Constants.minZoomLevelToAddNewPoint}
                 <Tr t={Translations.t.general.add.zoomInFurther} />
-              {:else if state.layout.hasPresets()}
-                <Tr t={Translations.t.general.add.title} />
+              {:else if state.theme.hasPresets()}
+                ✨ <Tr t={Translations.t.general.add.title} />
               {:else}
                 <Tr t={Translations.t.notes.addAComment} />
               {/if}
@@ -347,34 +234,25 @@
               arialabel={Translations.t.general.labels.filter}
               on:click={() => state.guistate.openFilterView()}
               on:keydown={forwardEventToMap}
-              htmlElem={openFilterButton}
             >
               <Filter class="h-6 w-6" />
             </MapControlButton>
           </If>
           <If condition={state.featureSwitches.featureSwitchBackgroundSelection}>
-            <OpenBackgroundSelectorButton
-              hideTooltip={true}
-              {state}
-              htmlElem={openBackgroundButton}
-            />
+            <OpenBackgroundSelectorButton hideTooltip={true} {state} />
           </If>
-          <a
-            class="bg-black-transparent pointer-events-auto ml-1 h-fit max-h-12 cursor-pointer self-end self-center overflow-hidden rounded-2xl px-1 text-white opacity-50 hover:opacity-100"
+          <button
+            class="unstyled bg-black-transparent pointer-events-auto ml-1 h-fit max-h-12 cursor-pointer overflow-hidden rounded-2xl px-1 text-white opacity-50 hover:opacity-100"
+            style="background: #00000088; padding: 0.25rem; border-radius: 2rem;"
             on:click={() => {
-              if (featureSwitches.featureSwitchWelcomeMessage.data) {
-                state.guistate.themeViewTab.setData("copyright")
-                state.guistate.themeIsOpened.setData(true)
-              } else {
-                state.guistate.copyrightPanelIsOpened.setData(true)
-              }
+              state.guistate.pageStates.copyright.set(true)
             }}
           >
             © <span class="hidden sm:inline sm:pr-2">
               OpenStreetMap
               <span class="hidden w-24 md:inline md:pr-2">, {rasterLayerName}</span>
             </span>
-          </a>
+          </button>
         </div>
       </div>
 
@@ -426,34 +304,162 @@
             {/if}
           </div>
         </If>
+        <If condition={state.mapProperties.showScale}>
+          <div class="h-6">
+            <!-- Empty. We just provide some space for the maplibre scalecontrol -->
+          </div>
+        </If>
       </div>
     </div>
   </div>
 
-  <LoginToggle ignoreLoading={true} {state}>
-    {#if ($showCrosshair === "yes" && $currentZoom >= 17) || $showCrosshair === "always" || $visualFeedback}
-      <!-- Don't use h-full: h-full does _not_ include the area under the URL-bar, which offsets the crosshair a bit -->
-      <div
-        class="pointer-events-none absolute left-0 top-0 flex w-full items-center justify-center"
-        style="height: 100vh"
-      >
-        <Cross class="h-4 w-4" />
+  <DrawerRight shown={state.searchState.showSearchDrawer}>
+    <SearchResults {state} />
+  </DrawerRight>
+
+  <!-- Top components -->
+  <div class="z-4 pointer-events-none absolute top-0 left-0 w-full">
+    <div
+      id="top-bar"
+      class="bg-black-light-transparent pointer-events-auto flex flex-wrap items-center justify-between px-4 py-1"
+    >
+      <!-- Top bar with tools -->
+      <div class="flex items-center">
+        <MapControlButton
+          cls="m-0.5 p-0.5 sm:p-1"
+          arialabel={Translations.t.general.labels.menu}
+          on:click={() => {
+            console.log("Opening....")
+            state.guistate.pageStates.menu.setData(true)
+          }}
+          on:keydown={forwardEventToMap}
+        >
+          <MenuIcon class="h-6 w-6 cursor-pointer" />
+        </MapControlButton>
+
+        <MapControlButton
+          on:click={() => state.guistate.pageStates.about_theme.set(true)}
+          on:keydown={forwardEventToMap}
+        >
+          <div class="m-0.5 mx-1 mr-2 flex cursor-pointer items-center max-[480px]:w-full sm:mx-1">
+            <Marker icons={theme.icon} size="h-6 w-6 shrink-0 mr-0.5 sm:mr-1 md:mr-2" />
+            <b class="mr-1">
+              <Tr t={theme.title} />
+            </b>
+          </div>
+        </MapControlButton>
       </div>
-    {/if}
-    <!-- Add in an empty container to remove error messages if login fails -->
-    <svelte:fragment slot="error" />
-  </LoginToggle>
+
+      {#if $debug && $hash}
+        <div class="alert">
+          {$hash}
+        </div>
+      {/if}
+
+      <If condition={state.featureSwitches.featureSwitchSearch}>
+        <div class="flex flex-grow items-center justify-end">
+          <div class="w-full sm:w-64">
+            <Searchbar
+              value={state.searchState.searchTerm}
+              isFocused={state.searchState.searchIsFocused}
+            />
+          </div>
+          <MapControlButton
+            on:keydown={forwardEventToMap}
+            on:click={() => {
+              if (searchOpened.data) {
+                searchOpened.set(false)
+              } else {
+                state.searchState.searchIsFocused.set(true)
+              }
+            }}
+          >
+            <ChevronRight
+              class="m-0 h-7 w-7 p-0 transition-all"
+              style={"rotate: " + ($searchOpened ? "0deg" : "180deg")}
+            />
+          </MapControlButton>
+        </div>
+      </If>
+    </div>
+
+    <div class="pointer-events-auto float-right mt-1 flex flex-col px-1 max-[480px]:w-full sm:m-2">
+      <If condition={state.visualFeedback}>
+        {#if $selectedElement === undefined}
+          <div class="w-fit">
+            <VisualFeedbackPanel {state} />
+          </div>
+        {/if}
+      </If>
+    </div>
+
+    <div class="float-left m-1 flex flex-col sm:mt-2">
+      <!-- Current view tools -->
+      {#if currentViewLayer?.tagRenderings && currentViewLayer.defaultIcon()}
+        <MapControlButton
+          on:click={() => {
+            state.selectCurrentView()
+          }}
+          on:keydown={forwardEventToMap}
+        >
+          <div class="h-8 w-8 cursor-pointer">
+            <ToSvelte construct={() => currentViewLayer.defaultIcon()} />
+          </div>
+        </MapControlButton>
+      {/if}
+
+      <ExtraLinkButton {state} />
+      <UploadingImageCounter featureId="*" showThankYou={false} {state} />
+      <PendingChangesIndicator {state} />
+      <If condition={state.featureSwitchIsTesting}>
+        <div class="alert w-fit">Testmode</div>
+      </If>
+      {#if state.osmConnection.Backend().startsWith("https://master.apis.dev.openstreetmap.org")}
+        <div class="thanks">Testserver</div>
+      {/if}
+      <If condition={state.featureSwitches.featureSwitchFakeUser}>
+        <div class="alert w-fit">Faking a user (Testmode)</div>
+      </If>
+    </div>
+
+    <div class="flex w-full flex-col items-center justify-center">
+      <!-- Flex and w-full are needed for the positioning -->
+      <!-- Centermessage -->
+      <StateIndicator {state} />
+      <ReverseGeocoding {state} />
+    </div>
+  </div>
+
+  <DrawerLeft shown={state.guistate.pageStates.menu}>
+    <div class="h-screen overflow-y-auto">
+      <MenuDrawer onlyLink={true} {state} />
+    </div>
+  </DrawerLeft>
 
   {#if $selectedElement !== undefined && $selectedLayer !== undefined && !$selectedLayer.popupInFloatover}
     <!-- right modal with the selected element view -->
-    <ModalRight
+    <Drawer
+      placement="right"
+      transitionType="fly"
+      activateClickOutside={false}
+      backdrop={false}
+      id="drawer-right"
+      width="w-full md:w-6/12 lg:w-5/12 xl:w-4/12"
+      rightOffset="inset-y-0 right-0"
+      transitionParams={{
+        x: 640,
+        duration: slideDuration,
+        easing: linear,
+      }}
+      divClass="overflow-y-auto z-50 "
+      hidden={$selectedElement === undefined}
       on:close={() => {
-        selectedElement.setData(undefined)
+        state.selectedElement.setData(undefined)
       }}
     >
       <div slot="close-button" />
-      <SelectedElementPanel {state} selected={$selectedElement} />
-    </ModalRight>
+      <SelectedElementPanel {state} selected={$state_selectedElement} />
+    </Drawer>
   {/if}
 
   {#if $selectedElement !== undefined && $selectedLayer !== undefined && $selectedLayer.popupInFloatover}
@@ -466,7 +472,7 @@
         }}
       >
         <span slot="close-button" />
-        <SelectedElementPanel absolute={false} {state} selected={$selectedElement} />
+        <SelectedElementPanel absolute={false} {state} selected={$state_selectedElement} />
       </FloatOver>
     {:else}
       <FloatOver
@@ -474,267 +480,14 @@
           state.selectedElement.setData(undefined)
         }}
       >
-        <SelectedElementView {state} layer={$selectedLayer} selectedElement={$selectedElement} />
+        <SelectedElementView
+          {state}
+          layer={$selectedLayer}
+          selectedElement={$state_selectedElement}
+        />
       </FloatOver>
     {/if}
   {/if}
 
-  <!-- Image preview -->
-  <If condition={state.previewedImage.map((i) => i !== undefined)}>
-    <FloatOver on:close={() => state.previewedImage.setData(undefined)}>
-      <ImageOperations image={$previewedImage} />
-    </FloatOver>
-  </If>
-
-  <!-- big theme menu -->
-  <If condition={state.guistate.themeIsOpened}>
-    <FloatOver on:close={() => state.guistate.themeIsOpened.setData(false)}>
-      <span slot="close-button"><!-- Disable the close button --></span>
-      <TabbedGroup
-        condition1={state.featureSwitches.featureSwitchEnableExport}
-        tab={state.guistate.themeViewTabIndex}
-      >
-        <div slot="post-tablist">
-          <XCircleIcon
-            class="mr-2 h-8 w-8"
-            on:click={() => state.guistate.themeIsOpened.setData(false)}
-          />
-        </div>
-
-        <div class="flex" slot="title0">
-          <Marker icons={layout.icon} size="h-4 w-4" />
-          <Tr t={layout.title} />
-        </div>
-
-        <div class="m-4 h-full" slot="content0">
-          <ThemeIntroPanel {state} />
-        </div>
-
-        <div class="flex" slot="title1">
-          <If condition={state.featureSwitches.featureSwitchEnableExport}>
-            <ArrowDownTray class="h-4 w-4" />
-            <Tr t={Translations.t.general.download.title} />
-          </If>
-        </div>
-        <div class="m-4" slot="content1">
-          <DownloadPanel {state} />
-        </div>
-
-        <div slot="title2">
-          <Tr t={Translations.t.general.attribution.title} />
-        </div>
-
-        <div slot="content2" class="m-2 flex flex-col">
-          <ToSvelte construct={() => new CopyrightPanel(state)} />
-        </div>
-
-        <div class="flex" slot="title3">
-          <Share class="h-4 w-4" />
-          <Tr t={Translations.t.general.sharescreen.title} />
-        </div>
-        <div class="m-2" slot="content3">
-          <ShareScreen {state} />
-        </div>
-      </TabbedGroup>
-    </FloatOver>
-  </If>
-
-  <!-- Filterpane -->
-  <If condition={state.guistate.filtersPanelIsOpened}>
-    <FloatOver on:close={() => state.guistate.filtersPanelIsOpened.setData(false)}>
-      <FilterPanel {state} />
-    </FloatOver>
-  </If>
-
-  <!-- background layer selector -->
-  <IfHidden condition={state.guistate.backgroundLayerSelectionIsOpened}>
-    <FloatOver
-      on:close={() => {
-        state.guistate.backgroundLayerSelectionIsOpened.setData(false)
-      }}
-    >
-      <div class="h-full p-2">
-        <RasterLayerOverview
-          {availableLayers}
-          map={state.map}
-          mapproperties={state.mapProperties}
-          userstate={state.userRelatedState}
-          visible={state.guistate.backgroundLayerSelectionIsOpened}
-          menuState={state.guistate}
-        />
-      </div>
-    </FloatOver>
-  </IfHidden>
-
-  <IfHidden condition={state.guistate.overlaySelectionIsOpened}>
-    <!-- overlay selector -->
-    <FloatOver
-      on:close={() => {
-        state.guistate.overlaySelectionIsOpened.setData(false)
-      }}
-    >
-      <div class="h-full p-2">
-        <!-- <OverlayOverview
-          {availableLayers}
-          map={state.map}
-          mapproperties={state.mapProperties}
-          userstate={state.userRelatedState}
-        /> -->
-        <RasterLayerOverview
-          {availableLayers}
-          map={state.map}
-          mapproperties={state.mapProperties}
-          userstate={state.userRelatedState}
-          visible={state.guistate.backgroundLayerSelectionIsOpened}
-          menuState={state.guistate}
-          layerType="overlay"
-        />
-      </div>
-    </FloatOver>
-  </IfHidden>
-
-  <!-- Menu page -->
-  <If condition={state.guistate.menuIsOpened}>
-    <FloatOver on:close={() => state.guistate.menuIsOpened.setData(false)}>
-      <span slot="close-button"><!-- Hide the default close button --></span>
-      <TabbedGroup
-        condition1={featureSwitches.featureSwitchEnableLogin}
-        condition2={state.featureSwitches.featureSwitchCommunityIndex}
-        tab={state.guistate.menuViewTabIndex}
-      >
-        <div slot="post-tablist">
-          <XCircleIcon
-            class="mr-2 h-8 w-8"
-            on:click={() => state.guistate.menuIsOpened.setData(false)}
-          />
-        </div>
-        <div class="flex" slot="title0">
-          <Tr t={Translations.t.general.menu.aboutMapComplete} />
-        </div>
-
-        <div slot="content0" class="flex flex-col">
-          <AboutMapComplete {state} />
-          <div class="m-2 flex flex-col">
-            <HotkeyTable />
-          </div>
-        </div>
-
-        <div class="flex" slot="title1">
-          <CogIcon class="h-6 w-6" />
-          <Tr t={UserRelatedState.usersettingsConfig.title.GetRenderValue({})} />
-        </div>
-
-        <div class="links-as-button py-8" slot="content1">
-          <!-- All shown components are set by 'usersettings.json', which happily uses some special visualisations created specifically for it -->
-          <LoginToggle {state}>
-            <div class="flex flex-col" slot="not-logged-in">
-              <LanguagePicker availableLanguages={layout.language} />
-              <Tr cls="alert" t={Translations.t.userinfo.notLoggedIn} />
-              <LoginButton clss="primary" osmConnection={state.osmConnection} />
-            </div>
-            <SelectedElementView
-              highlightedRendering={state.guistate.highlightedUserSetting}
-              layer={usersettingslayer}
-              selectedElement={{
-                type: "Feature",
-                properties: { id: "settings" },
-                geometry: { type: "Point", coordinates: [0, 0] },
-              }}
-              {state}
-              tags={state.userRelatedState.preferencesAsTags}
-            />
-          </LoginToggle>
-        </div>
-
-        <div class="flex" slot="title2">
-          <HeartIcon class="h-6 w-6" />
-          <Tr t={Translations.t.favouritePoi.tab} />
-        </div>
-
-        <div class="m-2 flex flex-col" slot="content2">
-          <h3>
-            <Tr t={Translations.t.favouritePoi.title} />
-          </h3>
-          <Favourites {state} />
-          <h3>
-            <Tr t={Translations.t.reviews.your_reviews} />
-          </h3>
-          <ReviewsOverview {state} />
-        </div>
-      </TabbedGroup>
-    </FloatOver>
-  </If>
-
-  <!-- Privacy policy -->
-  <If condition={state.guistate.privacyPanelIsOpened}>
-    <FloatOver on:close={() => state.guistate.privacyPanelIsOpened.setData(false)}>
-      <div class="flex h-full flex-col overflow-hidden">
-        <h2 class="low-interaction m-0 flex items-center p-4 drop-shadow-md">
-          <EyeIcon class="w-6 pr-2" />
-          <Tr t={Translations.t.privacy.title} />
-        </h2>
-        <div class="overflow-auto p-4">
-          <PrivacyPolicy {state} />
-        </div>
-      </div>
-    </FloatOver>
-  </If>
-
-  <!-- Attribution, copyright and about MapComplete (no menu case) -->
-  <If condition={state.guistate.copyrightPanelIsOpened}>
-    <FloatOver on:close={() => state.guistate.copyrightPanelIsOpened.setData(false)}>
-      <div class="flex h-full flex-col overflow-hidden">
-        <h1 class="low-interaction m-0 flex items-center p-4 drop-shadow-md">
-          <Tr t={Translations.t.general.attribution.title} />
-        </h1>
-        <div class="overflow-auto p-4">
-          <h2>
-            <Tr t={Translations.t.general.menu.aboutMapComplete} />
-          </h2>
-          <AboutMapComplete {state} />
-          <ToSvelte construct={() => new CopyrightPanel(state)} />
-        </div>
-      </div>
-    </FloatOver>
-  </If>
-
-  <!-- Community index -->
-  <If condition={state.guistate.communityIndexPanelIsOpened}>
-    <FloatOver on:close={() => state.guistate.communityIndexPanelIsOpened.setData(false)}>
-      <div class="flex h-full flex-col overflow-hidden">
-        <h2 class="low-interaction m-0 flex items-center p-4">
-          <Community class="h-6 w-6" />
-          <Tr t={Translations.t.communityIndex.title} />
-        </h2>
-        <div class="overflow-auto p-4">
-          <CommunityIndexView location={state.mapProperties.location} />
-        </div>
-      </div>
-    </FloatOver>
-  </If>
-
-  <CloseAnimation isOpened={state.guistate.themeIsOpened} moveTo={openMapButton} debug="theme" />
-  <CloseAnimation isOpened={state.guistate.menuIsOpened} moveTo={openMenuButton} debug="menu" />
-  <CloseAnimation
-    isOpened={selectedLayer.map((sl) => sl !== undefined && sl === currentViewLayer)}
-    moveTo={openCurrentViewLayerButton}
-    debug="currentViewLayer"
-  />
-  <CloseAnimation
-    isOpened={selectedElement.map(
-      (sl) => sl !== undefined && sl?.properties?.id === LastClickFeatureSource.newPointElementId
-    )}
-    moveTo={openNewElementButton}
-    debug="newElement"
-  />
-  <CloseAnimation
-    isOpened={state.guistate.filtersPanelIsOpened}
-    moveTo={openFilterButton}
-    debug="filter"
-  />
-  <CloseAnimation
-    isOpened={state.guistate.backgroundLayerSelectionIsOpened}
-    moveTo={openBackgroundButton}
-    debug="bg"
-  />
+  <MenuDrawer onlyLink={false} {state} />
 </main>

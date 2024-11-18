@@ -10,7 +10,7 @@ import { GeoOperations } from "../../../Logic/GeoOperations"
 import { TagUtils } from "../../../Logic/Tags/TagUtils"
 import { MergePointConfig } from "../../../Logic/Osm/Actions/CreateWayWithPointReuseAction"
 import { And } from "../../../Logic/Tags/And"
-import LayoutConfig from "../../../Models/ThemeConfig/LayoutConfig"
+import ThemeConfig from "../../../Models/ThemeConfig/ThemeConfig"
 import { Changes } from "../../../Logic/Osm/Changes"
 import { FeatureSource, IndexedFeatureSource } from "../../../Logic/FeatureSource/FeatureSource"
 import FullNodeDatabaseSource from "../../../Logic/FeatureSource/TiledFeatureSource/FullNodeDatabaseSource"
@@ -61,7 +61,7 @@ export default class ConflateImportFlowState extends ImportFlow<ConflateFlowArgu
         args: ConflateFlowArguments,
         state: {
             osmConnection: OsmConnection
-            layout: LayoutConfig
+            theme: ThemeConfig
             changes: Changes
             indexedFeatures: IndexedFeatureSource
             fullNodeDatabase?: FullNodeDatabaseSource
@@ -88,7 +88,7 @@ export default class ConflateImportFlowState extends ImportFlow<ConflateFlowArgu
             GeoOperations.removeOvernoding(feature),
             idOfFeatureToReplaceGeometry,
             {
-                theme: state.layout.id,
+                theme: state.theme.id,
                 newTags: tagsToApply.data,
             }
         )

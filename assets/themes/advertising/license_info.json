@@ -250,6 +250,26 @@
     ]
   },
   {
+    "path": "billboard_wall.jpg",
+    "license": "CC0-1.0",
+    "authors": [
+      "https://www.openstreetmap.org/user/GEO%20ECLA"
+    ],
+    "sources": [
+      "https://imgur.com/billboard-eHdb1ir"
+    ]
+  },
+  {
+    "path": "billboard_wall.svg",
+    "license": "CC-BY-SA-3.0",
+    "authors": [
+      "Barnes38"
+    ],
+    "sources": [
+      "https://wiki.openstreetmap.org/wiki/File:Billboard_trunk.svg"
+    ]
+  },
+  {
     "path": "board.svg",
     "license": "CC-BY-SA-3.0",
     "authors": [

@@ -1,4 +1,4 @@
-import { LayoutConfigJson } from "../Json/LayoutConfigJson"
+import { ThemeConfigJson } from "../Json/ThemeConfigJson"
 import { Utils } from "../../../Utils"
 import LineRenderingConfigJson from "../Json/LineRenderingConfigJson"
 import { LayerConfigJson } from "../Json/LayerConfigJson"
@@ -25,7 +25,7 @@ export class UpdateLegacyLayer extends DesugaringStep<
         context = context.enter(json.id)
         let config = { ...json }
 
-        if(config["credits"] === "Not logged in"){
+        if (config["credits"] === "Not logged in") {
             delete config["credits"]
         }
 
@@ -146,7 +146,7 @@ export class UpdateLegacyLayer extends DesugaringStep<
         delete config["wayHandling"]
         delete config["hideUnderlayingFeaturesMinPercentage"]
         const src = config.source
-        if(src){
+        if (src) {
             delete src["isOsmCache"]
             delete src["maxCacheAge"]
             delete src["widenFactor"]
@@ -257,12 +257,12 @@ export class UpdateLegacyLayer extends DesugaringStep<
     }
 }
 
-class UpdateLegacyTheme extends DesugaringStep<LayoutConfigJson> {
+class UpdateLegacyTheme extends DesugaringStep<ThemeConfigJson> {
     constructor() {
         super("Small fixes in the theme config", ["roamingRenderings"], "UpdateLegacyTheme")
     }
 
-    convert(json: LayoutConfigJson, context: ConversionContext): LayoutConfigJson {
+    convert(json: ThemeConfigJson, context: ConversionContext): ThemeConfigJson {
         const oldThemeConfig = { ...json }
 
         if (oldThemeConfig.socialImage === "") {
@@ -311,7 +311,7 @@ class UpdateLegacyTheme extends DesugaringStep<LayoutConfigJson> {
     }
 }
 
-export class FixLegacyTheme extends Fuse<LayoutConfigJson> {
+export class FixLegacyTheme extends Fuse<ThemeConfigJson> {
     constructor() {
         super(
             "Fixes a legacy theme to the modern JSON format geared to humans. Syntactic sugars are kept (i.e. no tagRenderings are expandend, no dependencies are automatically gathered)",

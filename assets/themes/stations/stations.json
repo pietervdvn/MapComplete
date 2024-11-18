@@ -12,7 +12,8 @@
     "zh_Hant": "火車站",
     "pl": "Stacje Kolejowe",
     "da": "Togstationer",
-    "it": "Stazioni ferroviarie"
+    "it": "Stazioni ferroviarie",
+    "hu": "Vasútállomások"
   },
   "description": {
     "en": "View, edit and add details to a train station",
@@ -20,7 +21,7 @@
     "nl": "Bekijk, bewerk en voeg details to aan een treinstation",
     "fr": "Voir, modifier et ajouter des détails à une gare ferroviaire",
     "ca": "Veure, editar i afegir detalls a una estació de tren",
-    "es": "Ver, editar y añadir detalles a una estación de tren",
+    "es": "Ver, editar y agregar detalles a una estación de tren",
     "cs": "Zobrazení, úprava a přidání podrobností o vlakovém nádraží",
     "pl": "Przeglądaj, edytuj i dodawaj szczegóły do stacji kolejowej",
     "it": "Visualizza, modifica e aggiungi informazioni su una stazione ferroviaria"
@@ -71,7 +72,7 @@
         "nb_NO": "Togstasjoner",
         "fr": "Gares ferroviaires",
         "ca": "Estació de tren",
-        "es": "Estación de Tren",
+        "es": "Estaciones de tren",
         "cs": "Vlaková nádraží",
         "it": "Stazioni ferroviarie",
         "pl": "Stacje Kolejowe",
@@ -115,7 +116,8 @@
         {
           "color": "green"
         }
-      ]
+      ],
+      "allowMove": false
     },
     {
       "builtin": [
@@ -345,7 +347,7 @@
             "nl": "Wat voor vertrektijdenbord is dit?",
             "fr": "De quel type de panneau de départs s'agit-il ?",
             "ca": "Quin tipus de tauler de sortides és aquest?",
-            "es": "¿Qué tipo de tablero de salidas es éste?",
+            "es": "¿Qué tipo de tablero de salidas es este?",
             "cs": "Co je to za odjezdovou tabuli?",
             "zh_Hant": "這是那種類型的時刻表？",
             "pl": "Co to za tablica odjazdów?",
@@ -360,7 +362,7 @@
                 "nl": "Dit is een vertrektijdenbord van een onbekend type",
                 "fr": "Panneau des départs de type inconnu",
                 "ca": "Aquest tauler de sortides és de tipus desconegut",
-                "es": "Este es un panel de salidas de tipo desconocido",
+                "es": "Este es un tablero de salidas de un tipo desconocido",
                 "cs": "Toto je odjezdová tabule neznámého typu",
                 "pl": "Jest to tablica odjazdów nieznanego typu"
               }
@@ -373,7 +375,7 @@
                 "nl": "Dit is een elektronisch bord, met realtime vertrektijden",
                 "fr": "Panneau électronique, affichant les prochains départs en temps réel",
                 "ca": "Aquest és un tauler electrònic que mostra les pròximes sortides en temps real",
-                "es": "Este es un tablero electrónico que muestra las próximas salidas en tiempo real",
+                "es": "Este es un tablero electrónico, que muestra las próximas salidas en tiempo real",
                 "cs": "Jedná se o elektronickou tabuli, která v reálném čase zobrazuje příští odjezdy",
                 "pl": "To elektroniczna tablica, pokazująca w czasie rzeczywistym kolejne odjazdy"
               }
@@ -433,7 +435,7 @@
             "nl": "Voeg een bord met vertrektijden toe, elektronisch of op papier",
             "fr": "Ajouter un panneau indiquant les départs, qu'il soit électronique ou papier",
             "ca": "Afegeix un tauler que mostra les sortides, de forma electrònica o en paper",
-            "es": "Añadir un panel de salidas, electrónico o en papel",
+            "es": "Agregar un tablero que muestre las salidas, ya sea electrónico o en papel",
             "cs": "Přidejte tabuli s odjezdy, ať už v elektronické nebo papírové podobě",
             "pl": "Dodaj tablicę pokazującą odjazdy, w wersji elektronicznej lub papierowej"
           }
@@ -454,7 +456,11 @@
       ],
       "lineRendering": [
         {}
-      ]
+      ],
+      "allowMove": {
+        "enableImproveAccuracy": true,
+        "enableRelocation": false
+      }
     }
   ]
 }

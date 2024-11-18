@@ -2,11 +2,15 @@
   "id": "brothel",
   "name": {
     "en": "Brothels",
-    "de": "Bordelle"
+    "de": "Bordelle",
+    "cs": "Nevěstince",
+    "es": "Burdeles"
   },
   "description": {
     "en": "An establishment specifically dedicated to prostitution. ",
-    "de": "Eine Einrichtung, die speziell der Prostitution gewidmet ist. "
+    "de": "Eine Einrichtung, die speziell der Prostitution gewidmet ist. ",
+    "cs": "Zařízení zaměřené speciálně na prostituci. ",
+    "es": "Un establecimiento dedicado específicamente a la prostitución "
   },
   "source": {
     "osmTags": "amenity=brothel"
@@ -15,7 +19,10 @@
   "title": {
     "render": {
       "en": "Brothel",
-      "de": "Bordell"
+      "de": "Bordell",
+      "ca": "Bordell",
+      "cs": "Nevěstinec",
+      "es": "Burdel"
     },
     "mappings": [
       {
@@ -61,7 +68,9 @@
     {
       "title": {
         "en": "a brothel",
-        "de": "ein Bordell"
+        "de": "ein Bordell",
+        "cs": "nevěstinec",
+        "es": "un burdel"
       },
       "tags": [
         "amenity=brothel"
@@ -80,11 +89,16 @@
       },
       "question": {
         "en": "What is the name of this brothel?",
-        "de": "Wie lautet der Name des Bordells?"
+        "de": "Wie lautet der Name des Bordells?",
+        "ca": "Com es diu aquest bordell?",
+        "cs": "Jak se jmenuje tento nevěstinec?",
+        "es": "¿Cuál es el nombre de este burdel?"
       },
       "render": {
         "en": "This brothel is named <b>{name}</b>",
-        "de": "Der Name des Bordells lautet <b>{name}</b>"
+        "de": "Der Name des Bordells lautet <b>{name}</b>",
+        "cs": "Tento nevěstinec se jmenuje <b>{name}</b>",
+        "es": "Este burdel se llama <b>{name}</b>"
       }
     },
     "opening_hours",

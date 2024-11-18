@@ -2,25 +2,16 @@
 
 # mountain_rescue
 
-
-
-
 A building where first aid responders store material and might be on watch
 
-
-
-
-
-
  - This layer is shown at zoomlevel **10** and higher
-
-
 
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [leftover-questions](#leftover-questions)
   - [move-button](#move-button)
@@ -29,12 +20,14 @@ A building where first aid responders store material and might be on watch
 
 ## Themes using this layer
 
-
-
  - [personal](https://mapcomplete.org/personal)
  - [ski](https://mapcomplete.org/ski)
 
+## Presets
 
+The following options to create new points are included:
+
+ - **a mountain rescue station** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:emergency' target='_blank'>emergency</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:emergency%3Dmountain_rescue' target='_blank'>mountain_rescue</a>
 
 ## Basic tags for this layer
 
@@ -44,45 +37,30 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 
 ## Supported attributes
 
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
-
-
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### move-button
 
 _This tagrendering has no question and is thus read-only_
 *{move_button()}*
-
-
-
 
 ### delete-button
 
 _This tagrendering has no question and is thus read-only_
 *{delete_button()}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

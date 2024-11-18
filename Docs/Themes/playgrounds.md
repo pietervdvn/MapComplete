@@ -8,15 +8,15 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [playground](../Layers/playground.md)
  - [playground_equipment](../Layers/playground_equipment.md)
  - [bench](../Layers/bench.md)
  - [picnic_table](../Layers/picnic_table.md)
-
+ - [waste_basket](../Layers/waste_basket.md)
+ - [toilet](../Layers/toilet.md)
+ - [bbq](../Layers/bbq.md)
 
 Available languages:
-
 
  - en
  - nl
@@ -35,7 +35,7 @@ Available languages:
  - cs
  - eu
  - pl
-
+ - uk
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

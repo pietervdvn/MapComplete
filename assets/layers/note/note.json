@@ -13,18 +13,21 @@
   "source": {
     "osmTags": "date_created~*",
     "geoJson": "https://api.openstreetmap.org/api/0.6/notes.json?limit=10000&closed=7&bbox={x_min},{y_min},{x_max},{y_max}",
-    "geoJsonZoomLevel": 12
+    "geoJsonZoomLevel": 10
   },
   "calculatedTags": [
     "_total_comments:=get(feat)('comments').length",
     "_first_comment:=get(feat)('comments')[0].text",
+    "_all_comments:=get(feat)('comments').map(c => c.text ?? '').join('\\n')",
+    "_all_usernames:=get(feat)('comments').map(c => c.user ?? 'Anonymous').join('\\n')",
     "_opened_by_anonymous_user:=get(feat)('comments')[0].user === undefined",
     "_first_user:=get(feat)('comments')[0].user",
     "_last_user:=(() => {const comms = get(feat)('comments'); return comms[comms.length - 1].user})()",
+    "_last_change_date:=(() => {const comms = get(feat)('comments'); return comms[comms.length - 1].date})()",
     "_first_user_id:=get(feat)('comments')[0].uid",
     "_is_import_note:=(() => {const lines = feat.properties['_first_comment'].split('\\n'); const matchesMapCompleteURL = lines.map(l => l.match(\".*https://mapcomplete.\\(osm.be|org\\)/\\([a-zA-Z_-]+\\)\\(.html\\).*#import\")); const matchedIndexes = matchesMapCompleteURL.map((doesMatch, i) => [doesMatch !== null, i]).filter(v => v[0]).map(v => v[1]); return matchedIndexes[0] })()"
   ],
-  "minzoom": 10,
+  "minzoom": 7,
   "title": {
     "render": {
       "en": "Note",
@@ -60,7 +63,9 @@
         "nl": "Bekijk op OpenStreetMap.org",
         "de": "Auf OpenStreetMap.org ansehen",
         "da": "Se på OpenStreetMap.org",
-        "fr": "Voir sur OpenStreetMap.org"
+        "fr": "Voir sur OpenStreetMap.org",
+        "cs": "Zobrazit na OpenStreetMap.org",
+        "es": "Ver en OpenStreetMap.org"
       },
       "render": "<a href='https://openstreetmap.org/note/{id}' target='_blank'><img src='./assets/svg/osm-logo-us.svg'></a>"
     }
@@ -119,7 +124,7 @@
         "before": {
           "en": "<h3>Nearby images</h3>The pictures below are nearby geotagged images and might be helpful to handle this note.",
           "de": "<h3>Bilder aus der Nähe</h3>Die folgenden Bilder sind mit Geotags versehene Bilder aus der Nähe und könnten für die Bearbeitung dieser Notiz hilfreich sein.",
-          "es": "<h3>Imágenes cercanas</h3>Las imágenes de debajo son imágenes geoetiquetadas cercanas y pueden ser útiles para encargarse de esta nota.",
+          "es": "<h3>Imágenes cercanas</h3>Las imágenes que aparecen a continuación son imágenes geoetiquetadas cercanas y pueden ser útiles para gestionar esta nota.",
           "nl": "<h3>Afbeeldingen in de buurt</h3>Onderstaande afbeeldingen zijn afbeeldingen met geo-referentie en die in de buurt genomen zijn. Mogelijks zijn ze nuttig om deze kaartnota af te handelen.",
           "ca": "<h3>Imatges properes</h3>Les imatges de sota són imatges geoetiquetades properes i poden ser útils per a encarregar-se d'aquesta nota.",
           "cs": "<h3>Obrázky v okolí</h3>Obrázky níže jsou obrázky s geografickými značkami v okolí a mohou vám pomoci s touto poznámkou.",
@@ -137,7 +142,7 @@
         "en": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>Report {_first_user} for spam or inappropriate messages</a>",
         "nl": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>{_first_user} melden voor spam of ongepaste opmerkingen</a>",
         "de": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle' {_first_user} für Spam oder unangemessene Nachrichten melden</a>",
-        "es": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>Reportar {_first_user} por spam o mensajes inapropiados</a>",
+        "es": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>Denunciar a {_first_user} por correo basura o mensajes inapropiados</a>",
         "ca": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>Reporta {_first_user} per spam o missatges inapropiats</a>",
         "cs": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>Nahlásit uživateli {_first_user} spam nebo nevhodné zprávy</ a>",
         "fr": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={_first_user_id}&reportable_type=User' target='_blank' class='subtle'>Signaler {_first_user} pour du spam ou des messages inapropriés</a>"
@@ -150,7 +155,7 @@
         "en": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Report this note as spam or inappropriate</a>",
         "nl": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Deze note melden als spam of ongepast</a>",
         "de": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Notiz als Spam oder unangemessen melden</a>",
-        "es": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Reporta esta nota como spam o inapropiada</a>",
+        "es": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Denunciar esta nota como correo basura o inapropiada</a>",
         "ca": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Reporta aquesta nota com spam o inapropiada</a>",
         "cs": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Nahlásit tuto poznámku jako spam nebo nevhodnou</a>",
         "fr": "<a href='https://www.openstreetmap.org/reports/new?reportable_id={id}&reportable_type=Note' target='_blank'>Signaler cette note comme spam ou contenu inapproprié</a>"
@@ -158,183 +163,6 @@
     }
   ],
   "filter": [
-    {
-      "id": "search",
-      "options": [
-        {
-          "osmTags": "_first_comment~i~.*{search}.*",
-          "fields": [
-            {
-              "name": "search"
-            }
-          ],
-          "question": {
-            "en": "Should mention {search} in the first comment",
-            "nl": "Moet in de eerste opmerking \"{search}\" bevatten",
-            "de": "Sollte {search} im ersten Kommentar erwähnen",
-            "es": "Debe mencionar {search} en el primer comentario",
-            "ca": "Has de mencionar {search} en el primer comentari",
-            "cs": "Měl by se zmínit {search} v prvním komentáři"
-          }
-        }
-      ]
-    },
-    {
-      "id": "not",
-      "options": [
-        {
-          "osmTags": "_first_comment!~i~.*{search}.*",
-          "fields": [
-            {
-              "name": "search"
-            }
-          ],
-          "question": {
-            "en": "Should <b>not</b> mention {search} in the first comment",
-            "nl": "Mag in de eerste opmerking <b>niet</b> \"{search}\" bevatten",
-            "de": "Sollte <b>nicht</b> {search} im ersten Kommentar erwähnen",
-            "es": "<b>No</b> debe mencionar {search} en el primer comentario",
-            "ca": "<b>No</b> s'ha de mencionar {search} al primer comentari",
-            "cs": "V prvním komentáři by jste <b>neměli</b> zmiňovat {search}"
-          }
-        }
-      ]
-    },
-    {
-      "id": "opened_by",
-      "options": [
-        {
-          "osmTags": "_first_user~i~.*{search}.*",
-          "fields": [
-            {
-              "name": "search"
-            }
-          ],
-          "question": {
-            "en": "Opened by contributor {search}",
-            "nl": "Geopend door bijdrager {search}",
-            "de": "Erstellt von {search}",
-            "es": "Abierto por el contributor {search}",
-            "fr": "Ouverte par {search}",
-            "ca": "Obert pel contribuïdor {search}",
-            "cs": "Otevřeno přispěvatelem {search}"
-          }
-        }
-      ]
-    },
-    {
-      "id": "not_opened_by",
-      "options": [
-        {
-          "osmTags": "_first_user!~i~.*{search}.*",
-          "fields": [
-            {
-              "name": "search"
-            }
-          ],
-          "question": {
-            "en": "<b>Not</b> opened by contributor {search}",
-            "nl": "<b>Niet</b> geopend door bijdrager {search}",
-            "de": "<b>Nicht</b> erstellt von {search}",
-            "es": "<b>No</b> abierto por el contributor {search}",
-            "ca": "<b>No</b> obert pel contribuïdor {search}",
-            "cs": "<b>Není</b> otevřeno přispěvatelem {search}",
-            "fr": "<b>Exclure</b>les notes ouvertes par {search}"
-          }
-        }
-      ]
-    },
-    {
-      "id": "edited_by",
-      "options": [
-        {
-          "osmTags": "_last_user~i~.*{search}.*",
-          "fields": [
-            {
-              "name": "search"
-            }
-          ],
-          "question": {
-            "en": "Last edited by contributor {search}",
-            "nl": "Laatst bewerkt door bijdrager {search}",
-            "de": "Zuletzt bearbeitet von {search}",
-            "es": "Editada por última vez por el contributor {search}",
-            "ca": "Editat per última vega pel contribuïdor {search}",
-            "cs": "Naposledy upravil přispěvatel {search}",
-            "da": "Senest redigeret af bidragsyder {search}",
-            "fr": "Dernière modification par {search}"
-          }
-        }
-      ]
-    },
-    {
-      "id": "not_edited_by",
-      "options": [
-        {
-          "osmTags": "_last_user!~i~.*{search}.*",
-          "fields": [
-            {
-              "name": "search"
-            }
-          ],
-          "question": {
-            "en": "Opened after {search}",
-            "nl": "Geopend na {search}",
-            "de": "Zuletzt bearbeitet nach dem {search}",
-            "es": "Abierta después de {search}",
-            "ca": "Oberta després de {search}",
-            "cs": "Otevřeno po {search}",
-            "fr": "Ouverte après le {search}"
-          }
-        }
-      ]
-    },
-    {
-      "id": "opened_before",
-      "options": [
-        {
-          "osmTags": "date_created<{search}",
-          "fields": [
-            {
-              "name": "search",
-              "type": "date"
-            }
-          ],
-          "question": {
-            "en": "Created before {search}",
-            "nl": "Aangemaakt voor {search}",
-            "de": "Erstellt vor dem {search}",
-            "es": "Creada antes de {search}",
-            "ca": "Creada abans de {search}",
-            "cs": "Vytvořeno před {search}",
-            "fr": "Créée avant le {search}"
-          }
-        }
-      ]
-    },
-    {
-      "id": "opened_after",
-      "options": [
-        {
-          "osmTags": "date_created>{search}",
-          "fields": [
-            {
-              "name": "search",
-              "type": "date"
-            }
-          ],
-          "question": {
-            "en": "Created after {search}",
-            "nl": "Aangemaakt na {search}",
-            "de": "Erstellt nach dem {search}",
-            "es": "Creada después de {search}",
-            "ca": "Creada després de {search}",
-            "cs": "Vytvořeno po {search}",
-            "fr": "Créée après le {search}"
-          }
-        }
-      ]
-    },
     {
       "id": "anonymous",
       "options": [
@@ -344,7 +172,7 @@
             "en": "Only show notes opened by an anonymous contributor",
             "nl": "Toon enkel de Notes geopend door een anonieme bijdrager",
             "de": "Nur Notizen anzeigen, die anonym erstellt wurden",
-            "es": "Solo mostrar las notas abiertas por contributores anómimos",
+            "es": "Sólo mostrar notas abiertas por un colaborador anónimo",
             "ca": "Sols mostrar les notes obertes per contribuïdors anònims",
             "cs": "Zobrazovat pouze poznámky otevřené anonymním přispěvatelem",
             "fr": "Montrer uniquement les notes ouvertes par un contributeur anonyme"
@@ -361,7 +189,7 @@
             "en": "Only show open notes",
             "nl": "Toon enkel open Notes",
             "de": "Nur offene Notizen anzeigen",
-            "es": "Solo mostrar las notas abiertas",
+            "es": "Sólo mostrar notas abiertas",
             "ca": "Sols mostra les notes obertes",
             "cs": "Zobrazit pouze otevřené poznámky",
             "fr": "Montrer uniquement les notes ouvertes"
@@ -389,7 +217,7 @@
             "en": "Hide import notes",
             "nl": "Verberg import Notes",
             "de": "Importnotizen ausblenden",
-            "es": "Ocultar las notas de importación",
+            "es": "Ocultar notas de importación",
             "ca": "Oculta les notes d'importació",
             "cs": "Skrýt poznámky k importu"
           }
@@ -400,12 +228,282 @@
             "en": "Show only import Notes",
             "nl": "Toon enkel import Notes",
             "de": "Nur Importnotizen anzeigen",
-            "es": "Solo mostrar las notas de importación",
+            "es": "Mostrar sólo notas de importación",
             "ca": "Mostrar només les notes d'importació",
             "cs": "Zobrazit pouze poznámky k importu"
           }
         }
       ]
+    },
+    {
+      "id": "search",
+      "options": [
+        {
+          "osmTags": "_first_comment~i~.*{search}.*",
+          "fields": [
+            {
+              "name": "search"
+            }
+          ],
+          "question": {
+            "en": "Should mention {search} in the first comment",
+            "nl": "Moet in de eerste opmerking \"{search}\" bevatten",
+            "de": "Sollte {search} im ersten Kommentar erwähnen",
+            "es": "Debe mencionar {search} en el primer comentario",
+            "ca": "Has de mencionar {search} en el primer comentari",
+            "cs": "Měl by se zmínit {search} v prvním komentáři"
+          }
+        }
+      ]
+    },
+    {
+      "id": "search_any",
+      "options": [
+        {
+          "osmTags": "_all_comments~i~.*{search}.*",
+          "fields": [
+            {
+              "name": "search"
+            }
+          ],
+          "question": {
+            "en": "Should mention {search} in any comment",
+            "de": "Sollte {search} in jedem Kommentar erwähnen",
+            "es": "Debe mencionar {search} en cualquier comentario"
+          }
+        }
+      ]
+    },
+    {
+      "id": "not",
+      "options": [
+        {
+          "osmTags": "_first_comment!~i~.*{search}.*",
+          "fields": [
+            {
+              "name": "search"
+            }
+          ],
+          "question": {
+            "en": "Should <b>not</b> mention {search} in the first comment",
+            "nl": "Mag in de eerste opmerking <b>niet</b> \"{search}\" bevatten",
+            "de": "Sollte <b>nicht</b> {search} im ersten Kommentar erwähnen",
+            "es": "No debe mencionar {search} en el primer comentario",
+            "ca": "<b>No</b> s'ha de mencionar {search} al primer comentari",
+            "cs": "V prvním komentáři by jste <b>neměli</b> zmiňovat {search}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "search_not_any",
+      "options": [
+        {
+          "osmTags": "_all_comments!~i~.*{search}.*",
+          "fields": [
+            {
+              "name": "search"
+            }
+          ],
+          "question": {
+            "en": "Should <b>not</b> mention {search} in <b>any</b> comment",
+            "de": "Sollte {search} in <b>keinem</b> Kommentar erwähnen",
+            "es": "No debe mencionar {search} en ningún comentario"
+          }
+        }
+      ]
+    },
+    {
+      "id": "opened_by",
+      "options": [
+        {
+          "osmTags": "_first_user~i~.*{search}.*",
+          "fields": [
+            {
+              "name": "search"
+            }
+          ],
+          "question": {
+            "en": "Opened by contributor {search}",
+            "nl": "Geopend door bijdrager {search}",
+            "de": "Erstellt von {search}",
+            "es": "Abierto por el colaborador {search}",
+            "fr": "Ouverte par {search}",
+            "ca": "Obert pel contribuïdor {search}",
+            "cs": "Otevřeno přispěvatelem {search}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "not_opened_by",
+      "options": [
+        {
+          "osmTags": "_first_user!~i~.*{search}.*",
+          "fields": [
+            {
+              "name": "search"
+            }
+          ],
+          "question": {
+            "en": "<b>Not</b> opened by contributor {search}",
+            "nl": "<b>Niet</b> geopend door bijdrager {search}",
+            "de": "<b>Nicht</b> geöffnet von Beitragendem {search}",
+            "es": "No abierto por el colaborador {search}",
+            "ca": "<b>No</b> obert pel contribuïdor {search}",
+            "cs": "<b>Není</b> otevřeno přispěvatelem {search}",
+            "fr": "<b>Exclure</b>les notes ouvertes par {search}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "edited_by_any",
+      "options": [
+        {
+          "osmTags": "_all_usernames~i~.*{search}.*",
+          "fields": [
+            {
+              "name": "search"
+            }
+          ],
+          "question": {
+            "en": "Edited or commented on by any user with name {search}",
+            "de": "Bearbeitet oder kommentiert von jedem Benutzer mit Namen {search}",
+            "es": "Editado o comentado por cualquier usuario con el nombre {search}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "last_edited_by",
+      "options": [
+        {
+          "osmTags": "_last_user~i~.*{search}.*",
+          "fields": [
+            {
+              "name": "search"
+            }
+          ],
+          "question": {
+            "en": "Last edited by contributor {search}",
+            "nl": "Laatst bewerkt door bijdrager {search}",
+            "de": "Zuletzt bearbeitet von {search}",
+            "es": "Última edición por el colaborador {search}",
+            "ca": "Editat per última vega pel contribuïdor {search}",
+            "cs": "Naposledy upravil přispěvatel {search}",
+            "da": "Senest redigeret af bidragsyder {search}",
+            "fr": "Dernière modification par {search}",
+            "hu": "Legutóbb {search} felhasználó szerkesztette"
+          }
+        }
+      ]
+    },
+    {
+      "id": "not_last_edited_by",
+      "options": [
+        {
+          "osmTags": "_last_user!~i~.*{search}.*",
+          "fields": [
+            {
+              "name": "search"
+            }
+          ],
+          "question": {
+            "en": "Not edited as last by {search}",
+            "de": "Nicht zuletzt bearbeitet von {search}",
+            "hu": "Legutóbb nem {search} felhasználó szerkesztette",
+            "es": "No editado por última vez por {search}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "opened_before",
+      "options": [
+        {
+          "osmTags": "date_created<{search}",
+          "fields": [
+            {
+              "name": "search",
+              "type": "date"
+            }
+          ],
+          "question": {
+            "en": "Created before {search}",
+            "nl": "Aangemaakt voor {search}",
+            "de": "Erstellt vor dem {search}",
+            "es": "Creado antes de {search}",
+            "ca": "Creada abans de {search}",
+            "cs": "Vytvořeno před {search}",
+            "fr": "Créée avant le {search}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "opened_after",
+      "options": [
+        {
+          "osmTags": "date_created>{search}",
+          "fields": [
+            {
+              "name": "search",
+              "type": "date"
+            }
+          ],
+          "question": {
+            "en": "Created after {search}",
+            "nl": "Aangemaakt na {search}",
+            "de": "Erstellt nach dem {search}",
+            "es": "Creado después de {search}",
+            "ca": "Creada després de {search}",
+            "cs": "Vytvořeno po {search}",
+            "fr": "Créée après le {search}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "last_edited_before",
+      "options": [
+        {
+          "osmTags": "_last_change_date<{search}",
+          "fields": [
+            {
+              "name": "search",
+              "type": "date"
+            }
+          ],
+          "question": {
+            "en": "Last edited before {search}",
+            "de": "Zuletzt bearbeitet vor dem {search}",
+            "hu": "Legutóbb {search} előtt szerkesztették",
+            "es": "Última edición antes de {search}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "last_edited_after",
+      "options": [
+        {
+          "osmTags": "_last_change_date>{search}",
+          "fields": [
+            {
+              "name": "search",
+              "type": "date"
+            }
+          ],
+          "question": {
+            "en": "Last edited after {search}",
+            "de": "Zuletzt bearbeitet nach dem {search}",
+            "hu": "Legutóbb {search} után szerkesztették",
+            "es": "Última edición después de {search}"
+          }
+        }
+      ]
     }
-  ]
+  ],
+  "allowMove": false
 }

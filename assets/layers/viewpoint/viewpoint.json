@@ -11,7 +11,8 @@
     "eo": "Vidpunkto",
     "ca": "Mirador",
     "da": "Udsigtspunkt",
-    "cs": "Vyhlídka"
+    "cs": "Vyhlídka",
+    "es": "Mirador"
   },
   "description": {
     "en": "A nice viewpoint or nice view. Ideal to add an image if no other category fits",
@@ -19,7 +20,7 @@
     "de": "Ein schöner Aussichtspunkt oder eine schöne Aussicht. Ideal zum Hinzufügen eines Bildes, wenn keine andere Kategorie passt",
     "fr": "Un beau point de vue ou une belle vue. Idéal pour ajouter une image si aucune autre catégorie ne convient",
     "it": "Un punto panoramico che offre una bella vista. L'ideale è aggiungere un'immagine, se nessun'altra categoria è appropriata",
-    "es": "Un buen mirador o una buena vista. Ideal para añadir una imagen si no encaja en ninguna otra categoría",
+    "es": "Un buen mirador o una buena vista. Ideal para agregar una imagen si ninguna otra categoría encaja",
     "da": "Et dejligt synspunkt eller flot udsigt. Ideel til at tilføje et billede, hvis ingen anden kategori passer",
     "ca": "Un bon mirador o una bonica vista. Ideal per afegir una imatge si no hi caben cap altra categoria",
     "cs": "Pěkný výhled nebo pěkný pohled. Ideální pro přidání obrázku, pokud se nehodí žádná jiná kategorie"
@@ -40,7 +41,8 @@
       "eo": "Vidpunkto",
       "ca": "Mirador",
       "da": "Udsigtspunkt",
-      "cs": "Vyhlídka"
+      "cs": "Vyhlídka",
+      "es": "Mirador"
     }
   },
   "pointRendering": [
@@ -74,7 +76,8 @@
         "it": "una punto panoramico",
         "id": "Sudut pandang",
         "ca": "un mirador",
-        "cs": "vyhlídka"
+        "cs": "vyhlídka",
+        "es": "un mirador"
       },
       "tags": [
         "tourism=viewpoint"
@@ -92,7 +95,7 @@
         "fr": "Voulez-vous ajouter une description ?",
         "it": "Vuoi aggiungere una descrizione?",
         "id": "Apakah Anda ingin menambahkan deskripsi?",
-        "es": "¿Quieres añadir una descripción?",
+        "es": "¿Quieres agregar una descripción?",
         "da": "Ønsker du at tilføje en beskrivelse?",
         "ca": "Vols afegir una descripció?",
         "cs": "Chcete přidat popis?"
@@ -104,5 +107,9 @@
       "id": "viewpoint-description"
     }
   ],
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": false
+  },
   "wayhandling": 2
 }

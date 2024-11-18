@@ -97,10 +97,10 @@ export class WikimediaImageProvider extends ImageProvider {
         return this.UrlForImage("File:" + value)
     }
 
-    public async ExtractUrls(key: string, value: string): Promise<Promise<ProvidedImage>[]> {
+    public async ExtractUrls(key: string, value: string): undefined | Promise<ProvidedImage[]> {
         const hasCommonsPrefix = WikimediaImageProvider.startsWithCommonsPrefix(value)
         if (key !== undefined && key !== this.commons_key && !hasCommonsPrefix) {
-            return []
+            return undefined
         }
 
         value = WikimediaImageProvider.removeCommonsPrefix(value)
@@ -108,17 +108,17 @@ export class WikimediaImageProvider extends ImageProvider {
             const urls = await Wikimedia.GetCategoryContents(value)
             return urls
                 .filter((url) => url.startsWith("File:"))
-                .map((image) => Promise.resolve(this.UrlForImage(image)))
+                .map((image) => this.UrlForImage(image))
         }
         if (value.startsWith("File:")) {
-            return [Promise.resolve(this.UrlForImage(value))]
+            return [this.UrlForImage(value)]
         }
         if (value.startsWith("http")) {
-            // PRobably an error
-            return []
+            // Probably an error
+            return undefined
         }
         // We do a last effort and assume this is a file
-        return [Promise.resolve(this.UrlForImage("File:" + value))]
+        return [this.UrlForImage("File:" + value)]
     }
 
     public async DownloadAttribution(img: { url: string }): Promise<LicenseInfo> {

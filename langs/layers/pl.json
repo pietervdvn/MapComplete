@@ -33,44 +33,47 @@
                 "title": "bilbord"
             },
             "1": {
-                "title": "wolnostojąca skrzynka plakatowa"
+                "description": "Duży obiekt reklamowy na zewnątrz, zazwyczaj znajduje się w obszarach z dużym ruchem, np. obok ruchliwych dróg na ścianie"
             },
-            "2": {
-                "title": "skrzynka plakatowa montowana na ścianie"
-            },
-            "4": {
-                "description": "Mały bilbord dla reklam lokalnych, przeznaczony głównie dla pieszych",
-                "title": "tablica"
-            },
-            "5": {
-                "description": "Cylindryczna konstrukcja zewnętrzna, na której pokazywane są reklamy",
-                "title": "kolumna"
-            },
-            "6": {
-                "title": "flaga"
-            },
-            "7": {
-                "title": "ekran"
-            },
-            "8": {
-                "title": "ekran zamontowany na ścianie"
-            },
-            "10": {
+            "11": {
                 "description": "Kawałek wodoodpornej tkaniny z nadrukowanym przesłaniem, trwale przymocowany do ściany",
                 "title": "plandeka"
             },
-            "11": {
+            "12": {
                 "title": "totem"
             },
-            "12": {
+            "13": {
                 "description": "Używany do znaków reklamowych, neonów, logo i znaków wejściowych do instytucji",
                 "title": "znak"
             },
-            "13": {
+            "14": {
                 "title": "rzeźba"
             },
-            "14": {
+            "15": {
                 "title": "mural ścienny"
+            },
+            "2": {
+                "title": "wolnostojąca skrzynka plakatowa"
+            },
+            "3": {
+                "title": "skrzynka plakatowa montowana na ścianie"
+            },
+            "5": {
+                "description": "Mały bilbord dla reklam lokalnych, przeznaczony głównie dla pieszych",
+                "title": "tablica"
+            },
+            "6": {
+                "description": "Cylindryczna konstrukcja zewnętrzna, na której pokazywane są reklamy",
+                "title": "kolumna"
+            },
+            "7": {
+                "title": "flaga"
+            },
+            "8": {
+                "title": "ekran"
+            },
+            "9": {
+                "title": "ekran zamontowany na ścianie"
             }
         },
         "tagRenderings": {
@@ -156,6 +159,9 @@
                     "1": {
                         "then": "To jest tablica"
                     },
+                    "10": {
+                        "then": "To jest mural ścienny"
+                    },
                     "2": {
                         "then": "To jest kolumna"
                     },
@@ -179,9 +185,6 @@
                     },
                     "9": {
                         "then": "To jest totem"
-                    },
-                    "10": {
-                        "then": "To jest mural ścienny"
                     }
                 },
                 "question": "Jakiego rodzaju jest to obiekt reklamowy?",
@@ -195,6 +198,9 @@
                 },
                 "1": {
                     "then": "Tablica"
+                },
+                "10": {
+                    "then": "Mural ścienny"
                 },
                 "2": {
                     "then": "Pudełko plakatowe"
@@ -219,9 +225,6 @@
                 },
                 "9": {
                     "then": "Totem"
-                },
-                "10": {
-                    "then": "Mural ścienny"
                 }
             }
         }
@@ -247,11 +250,11 @@
             },
             "type": {
                 "mappings": {
-                    "4": {
-                        "then": "Wyciąg orczykowy"
-                    },
                     "10": {
                         "then": "Tyrolka. (Atrakcja turystyczna, która pozwala żądnym przygód zjechać z dużą szybkością) "
+                    },
+                    "4": {
+                        "then": "Wyciąg orczykowy"
                     }
                 }
             }
@@ -381,6 +384,15 @@
                     "1": {
                         "then": "Mural"
                     },
+                    "10": {
+                        "then": "Azulejo (hiszpańskie płytka dekoracyjna)"
+                    },
+                    "11": {
+                        "then": "Płyta ceramiczna (fliza)"
+                    },
+                    "12": {
+                        "then": "Rzeźbienie w drewnie"
+                    },
                     "2": {
                         "then": "Obraz"
                     },
@@ -404,15 +416,6 @@
                     },
                     "9": {
                         "then": "Płaskorzeźba"
-                    },
-                    "10": {
-                        "then": "Azulejo (hiszpańskie płytka dekoracyjna)"
-                    },
-                    "11": {
-                        "then": "Płyta ceramiczna (fliza)"
-                    },
-                    "12": {
-                        "then": "Rzeźbienie w drewnie"
                     }
                 },
                 "question": "Jakiego rodzaju jest to dzieło sztuki?",
@@ -842,7 +845,7 @@
                     "0": {
                         "then": "Stojaki"
                     },
-                    "5": {
+                    "6": {
                         "then": "Wiata"
                     }
                 },
@@ -925,6 +928,11 @@
                 "question": "Czy pompka posiada wskaźnik ciśnienia lub manometr?"
             },
             "bike_repair_station-valves": {
+                "mappings": {
+                    "1": {
+                        "then": "Dunlop"
+                    }
+                },
                 "question": "Jakie zawory są obsługiwane?",
                 "render": "Ta pompka obsługuje następujące zawory: {valves}"
             },
@@ -1005,6 +1013,11 @@
             }
         },
         "title": {
+            "mappings": {
+                "0": {
+                    "then": "<i>{name}</i>"
+                }
+            },
             "render": "Pub"
         }
     },
@@ -1033,6 +1046,118 @@
         },
         "title": {
             "render": "Wypożyczalnia samochodów"
+        }
+    },
+    "caravansites": {
+        "description": "miejsca dla kamperów",
+        "name": "Miejsca kamperowe",
+        "presets": {
+            "0": {
+                "description": "Dodaj nowe oficjalne miejsce dla kamperów. Są to wyznaczone miejsca, w których można przenocować w swoim kamperze. Mogą wyglądać jak prawdziwy kemping lub po prostu wyglądać jak parking. Mogą one w ogóle nie być oznakowane, a jedynie określone w decyzji gminy. Zwykły parking przeznaczony dla kamperów, na którym nie przewiduje się nocowania, nie jest miejscem dla kamperów ",
+                "title": "miejsce dla kampera"
+            }
+        },
+        "tagRenderings": {
+            "caravansites-capacity": {
+                "question": "Ile kamperów może tu przebywać? (pomiń, jeśli nie ma oczywistej liczby miejsc lub dozwolonych pojazdów)",
+                "render": "{capacity} kamperów może z tego miejsca korzystać jednocześnie"
+            },
+            "caravansites-charge": {
+                "question": "Ile kosztuje to miejsce?",
+                "render": "To miejsce pobiera opłatę w wysokości {charge}"
+            },
+            "caravansites-description": {
+                "question": "Chcesz dodać ogólny opis tego miejsca? (Nie powtarzaj informacji zadanych wcześniej lub pokazanych powyżej. Zachowaj obiektywizm – opinie trafiają do recenzji)",
+                "render": "Więcej szczegółów o tym miejscu: {description}"
+            },
+            "caravansites-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Wymagana jest opłata, aby skorzystać"
+                    },
+                    "1": {
+                        "then": "Można skorzystać za darmo"
+                    }
+                },
+                "question": "Czy to miejsce pobiera opłatę?"
+            },
+            "caravansites-internet": {
+                "mappings": {
+                    "0": {
+                        "then": "Jest dostęp do internetu"
+                    },
+                    "1": {
+                        "then": "Jest dostęp do internetu"
+                    },
+                    "2": {
+                        "then": "Nie ma dostępu do internetu"
+                    }
+                },
+                "question": "Czy to miejsce oferuje dostęp do internetu?"
+            },
+            "caravansites-internet-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Dostęp do internetu jest dodatkowo płatny"
+                    },
+                    "1": {
+                        "then": "Dostęp do internetu nie jest dodatkowo płatny"
+                    }
+                },
+                "question": "Czy trzeba płacić za dostęp do internetu?"
+            },
+            "caravansites-long-term": {
+                "mappings": {
+                    "0": {
+                        "then": "Są miejsca na wynajem długoterminowy, ale można też wynajmować na co dzień"
+                    },
+                    "1": {
+                        "then": "Nie ma tu stałych gości"
+                    },
+                    "2": {
+                        "then": "Zakwaterowanie tutaj jest możliwe tylko jeśli masz umowę długoterminową (jeśli wybierzesz tę opcję, to miejsce zniknie z mapy)"
+                    }
+                },
+                "question": "Czy to miejsce oferuje miejsca do wynajęcia długoterminowego?"
+            },
+            "caravansites-name": {
+                "question": "Jak nazywa się to miejsce?",
+                "render": "To miejsce nazywa się {name}"
+            },
+            "caravansites-sanitary-dump": {
+                "mappings": {
+                    "0": {
+                        "then": "W tym miejscu znajduje się stacja zrzutu ścieków sanitarnych"
+                    },
+                    "1": {
+                        "then": "Miejsce to nie posiada stacji zrzutu ścieków sanitarnych"
+                    }
+                },
+                "question": "Czy w tym miejscu znajduje się stacja zrzutu ścieków sanitarnych?"
+            },
+            "caravansites-toilets": {
+                "mappings": {
+                    "0": {
+                        "then": "To miejsce ma toalety"
+                    },
+                    "1": {
+                        "then": "To miejsce nie ma toalet"
+                    }
+                },
+                "question": "Czy to miejsce ma toalety?"
+            },
+            "caravansites-website": {
+                "question": "Czy to miejsce ma stronę internetową?",
+                "render": "Official website: <a href='{website}'>{website}</a>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Nienazwane miejsce dla kamperów"
+                }
+            },
+            "render": "Pole kamperowe {name}"
         }
     },
     "charging_station": {
@@ -1119,6 +1244,17 @@
             "ref": {
                 "question": "Jaki jest numer referencyjny tej stacji ładowania?",
                 "render": "Numer referencyjny to <b>{ref}</b>"
+            }
+        }
+    },
+    "climbing_area": {
+        "tagRenderings": {
+            "Rock type (crag/rock/cliff only)": {
+                "mappings": {
+                    "0": {
+                        "then": "Wapień"
+                    }
+                }
             }
         }
     },
@@ -1220,10 +1356,10 @@
                     "1": {
                         "then": "Ten zegar jest zamontowany na ścianie"
                     },
-                    "2": {
+                    "3": {
                         "then": "Ten zegar jest częścią bilbordu"
                     },
-                    "3": {
+                    "4": {
                         "then": "Ten zegar jest na ziemi"
                     }
                 },
@@ -1260,13 +1396,6 @@
         },
         "title": {
             "render": "Zegar"
-        }
-    },
-    "crossings": {
-        "tagRenderings": {
-            "crossing-is-zebra": {
-                "question": "Czy to jest przejście dla pieszych typu \"zebra\"?"
-            }
         }
     },
     "cycle_highways": {
@@ -1461,6 +1590,95 @@
             }
         }
     },
+    "dumpstations": {
+        "description": "Stacje zrzutów sanitarnych",
+        "name": "Stacje zrzutów sanitarnych",
+        "presets": {
+            "0": {
+                "description": "Dodaj nową stację zrzutu sanitarnego. To miejsce, w którym kierowcy kamperów mogą wyrzucać ścieki lub odpady z toalet chemicznych. Często jest tam też woda pitna i prąd.",
+                "title": "stacja zrzutu sanitarnego"
+            }
+        },
+        "tagRenderings": {
+            "dumpstations-access": {
+                "mappings": {
+                    "0": {
+                        "then": "Aby z tego skorzystać, potrzebny jest klucz/kod sieci"
+                    },
+                    "1": {
+                        "then": "Aby korzystać z tego miejsca, musisz być klientem kempingu/miejsca dla kamperów"
+                    },
+                    "2": {
+                        "then": "Każdy może korzystać z tej stacji zrzutu"
+                    },
+                    "3": {
+                        "then": "Każdy może korzystać z tej stacji zrzutu"
+                    }
+                },
+                "question": "Kto może korzystać z tej stacji zrzutów?"
+            },
+            "dumpstations-charge": {
+                "question": "Ile kosztuje to miejsce?",
+                "render": "To miejsce pobiera opłatę w wysokości {charge}"
+            },
+            "dumpstations-chemical-waste": {
+                "mappings": {
+                    "0": {
+                        "then": "Tutaj możesz wyrzucić odpady chemiczne z toalet"
+                    },
+                    "1": {
+                        "then": "Nie można tutaj wyrzucać odpadów chemicznych z toalet"
+                    }
+                },
+                "question": "Czy można tutaj wyrzucać odpady chemiczne z toalet?"
+            },
+            "dumpstations-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Trzeba zapłacić, aby użyć"
+                    },
+                    "1": {
+                        "then": "Może być użyte za darmo"
+                    }
+                },
+                "question": "Czy to miejsce pobiera opłatę?"
+            },
+            "dumpstations-grey-water": {
+                "mappings": {
+                    "0": {
+                        "then": "Tutaj możesz pozbyć się szarej wody"
+                    },
+                    "1": {
+                        "then": "Nie można tu wylewać szarej wody"
+                    }
+                },
+                "question": "Czy można tutaj pozbyć się szarej wody?"
+            },
+            "dumpstations-network": {
+                "question": "Do jakiej sieci należy to miejsce? (pomiń, jeśli nie ma)",
+                "render": "Ta stacja jest częścią sieci {network}"
+            },
+            "dumpstations-waterpoint": {
+                "mappings": {
+                    "0": {
+                        "then": "To miejsce ma punkt poboru wody"
+                    },
+                    "1": {
+                        "then": "To miejsce nie ma punktu poboru wody"
+                    }
+                },
+                "question": "Czy to miejsce ma punkt z wodą?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Stacja zrzutowa"
+                }
+            },
+            "render": "Stacja zrzutów {name}"
+        }
+    },
     "elevator": {
         "description": "Ta warstwa pokazuje windy i zadaje pytania o ich status i wymiary. Przydatne do informacji o dostępności dla wózków",
         "name": "Winda",
@@ -1524,6 +1742,7 @@
         }
     },
     "entrance": {
+        "name": "Wejście",
         "tagRenderings": {
             "Entrance type": {
                 "mappings": {
@@ -1772,7 +1991,7 @@
             "Cuisine": {
                 "mappings": {
                     "0": {
-                        "then": "To jest pizzeria"
+                        "then": "Pizzeria"
                     },
                     "2": {
                         "then": "Podaje głównie makarony"
@@ -1844,6 +2063,9 @@
             "mappings": {
                 "0": {
                     "then": "Restauracja <i>{name}</i>"
+                },
+                "2": {
+                    "then": "Fastfood"
                 }
             },
             "render": "Restauracja"
@@ -1858,6 +2080,9 @@
             }
         },
         "tagRenderings": {
+            "ghost_bike-inscription": {
+                "render": "<i>{inscription}</i>"
+            },
             "ghost_bike-name": {
                 "mappings": {
                     "0": {
@@ -1948,6 +2173,13 @@
                                 "arialabel": "Otwórz na openstreetmap.org"
                             }
                         }
+                    },
+                    "2": {
+                        "then": {
+                            "special": {
+                                "arialabel": "Otwórz na openstreetmap.org"
+                            }
+                        }
                     }
                 },
                 "render": {
@@ -1997,8 +2229,38 @@
             },
             "room-type": {
                 "mappings": {
+                    "10": {
+                        "then": "To jest laboratorium"
+                    },
+                    "11": {
+                        "then": "To jest biblioteka"
+                    },
+                    "14": {
+                        "then": "To jest biuro"
+                    },
+                    "16": {
+                        "then": "To jest cela więzienna"
+                    },
+                    "17": {
+                        "then": "To jest restauracja"
+                    },
+                    "18": {
+                        "then": "To jest pomieszczenie do wykonywania kontroli bezpieczeństwa"
+                    },
                     "2": {
                         "then": "To jest sypialnia"
+                    },
+                    "20": {
+                        "then": "To jest magazyn"
+                    },
+                    "21": {
+                        "then": "To jest pomieszczenie techniczne"
+                    },
+                    "22": {
+                        "then": "To są toalety"
+                    },
+                    "23": {
+                        "then": "To jest poczekalnia"
                     },
                     "3": {
                         "then": "To jest kaplica"
@@ -2017,36 +2279,6 @@
                     },
                     "9": {
                         "then": "To jest kuchnia"
-                    },
-                    "10": {
-                        "then": "To jest laboratorium"
-                    },
-                    "11": {
-                        "then": "To jest biblioteka"
-                    },
-                    "14": {
-                        "then": "To jest biuro"
-                    },
-                    "15": {
-                        "then": "To jest cela więzienna"
-                    },
-                    "16": {
-                        "then": "To jest restauracja"
-                    },
-                    "17": {
-                        "then": "To jest pomieszczenie do wykonywania kontroli bezpieczeństwa"
-                    },
-                    "19": {
-                        "then": "To jest magazyn"
-                    },
-                    "20": {
-                        "then": "To jest pomieszczenie techniczne"
-                    },
-                    "21": {
-                        "then": "To są toalety"
-                    },
-                    "22": {
-                        "then": "To jest poczekalnia"
                     }
                 },
                 "question": "Jakiego rodzaju jest to pomieszczenie?"
@@ -2698,6 +2930,12 @@
                     "1": {
                         "then": "To jest zwykłe miejsce parkingowe."
                     },
+                    "10": {
+                        "then": "To jest miejsce parkingowe przeznaczone dla pracowników."
+                    },
+                    "11": {
+                        "then": "To miejsce parkingowe jest przeznaczone dla taksówek."
+                    },
                     "2": {
                         "then": "To jest miejsce parkingowe dla niepełnosprawnych."
                     },
@@ -2715,12 +2953,6 @@
                     },
                     "9": {
                         "then": "To miejsce jest przeznaczone dla rodziców z dziećmi."
-                    },
-                    "10": {
-                        "then": "To jest miejsce parkingowe przeznaczone dla pracowników."
-                    },
-                    "11": {
-                        "then": "To miejsce parkingowe jest przeznaczone dla taksówek."
                     }
                 }
             }
@@ -2832,6 +3064,12 @@
                     "1": {
                         "then": "To jest struktura składająca się z wielu połączonych urządzeń"
                     },
+                    "10": {
+                        "then": "To jest tyrolka"
+                    },
+                    "15": {
+                        "then": "To jest mapa"
+                    },
                     "2": {
                         "then": "To jest zjeżdżalnia"
                     },
@@ -2840,12 +3078,6 @@
                     },
                     "8": {
                         "then": "To jest rondo"
-                    },
-                    "10": {
-                        "then": "To jest tyrolka"
-                    },
-                    "15": {
-                        "then": "To jest mapa"
                     }
                 }
             }
@@ -3229,6 +3461,7 @@
         }
     },
     "recycling": {
+        "name": "Recykling",
         "tagRenderings": {
             "recycling-accepts": {
                 "mappings": {
@@ -3274,6 +3507,17 @@
             "render": "Szkoła <i>{name}</i>"
         }
     },
+    "shops": {
+        "name": "Sklep",
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
+            "render": "Sklep"
+        }
+    },
     "surveillance_camera": {
         "tagRenderings": {
             "Camera type: fixed; panning; dome": {
@@ -3294,6 +3538,26 @@
             "mappings": {
                 "0": {
                     "then": "Hotel {name}"
+                }
+            }
+        }
+    },
+    "trail": {
+        "name": "Ścieżki",
+        "title": {
+            "render": "Ścieżka"
+        }
+    },
+    "tree_node": {
+        "tagRenderings": {
+            "tree-leaf_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Szerokolistne"
+                    },
+                    "1": {
+                        "then": "Iglaste"
+                    }
                 }
             }
         }
@@ -3352,6 +3616,22 @@
                     }
                 }
             }
+        }
+    },
+    "veterinary": {
+        "name": "weterynaryjny",
+        "title": {
+            "render": "Weterynaryjny"
+        }
+    },
+    "visitor_information_centre": {
+        "title": {
+            "mappings": {
+                "1": {
+                    "then": "{name}"
+                }
+            },
+            "render": "{name}"
         }
     },
     "walls_and_buildings": {

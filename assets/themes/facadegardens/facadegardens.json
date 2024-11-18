@@ -13,7 +13,9 @@
     "es": "Jardines de fachada",
     "da": "Facadehaver",
     "cs": "Fasádní zahrady",
-    "pl": "Ogrody fasadowe"
+    "pl": "Ogrody fasadowe",
+    "ru": "Фасадные сады",
+    "uk": "Фасадні сади"
   },
   "description": {
     "nl": "Ontharde voortuintjes, groene gevels en bomen ín de stad brengen naast rust ook een mooiere stad, een grotere biodiversiteit, een verkoelend effect en een betere luchtkwaliteit. <br/> Klimaan VZW en 'Mechelen Klimaatneutraal' willen met het project Klim(t)aan je Gevel bestaande en nieuwe geveltuintjes in kaart brengen als voorbeeld voor mensen zelf een tuintje willen aanleggen of voor stadwandelaars die houden van de natuur. <br/>Meer info over het project op <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
@@ -25,7 +27,7 @@
     "hu": "A <a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>homlokzatkertek</a>, zöld homlokzatok és fák a városban nemcsak békét és nyugalmat, hanem szebb várost, nagyobb biológiai sokféleséget, hűsítő hatást és jobb levegőminőséget is hoznak. <br/> A Klimaan VZW és a Mechelen Klimaatneutraal a meglévő és új homlokzati kerteket szeretné feltérképezni, hogy példaként szolgáljanak a saját kertet építeni vágyóknak vagy a természetet kedvelő városi sétálóknak.<br/>További információ a projektről a <a href='https://klimaan.be/' target=_blank>klimaan.be</a> oldalon.",
     "da": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Facadehaver</a>, grønne facader og træer i byen bringer ikke kun fred og ro, men også en smukkere by , større biodiversitet, en kølende effekt og bedre luftkvalitet. <br/> Klimaan VZW og Mechelen Klimaatneutraal ønsker at kortlægge eksisterende og nye facadehaver som et eksempel for folk, der vil bygge deres egen have eller for byvandrere, der elsker naturen.<br/>Mere info om projektet på <a href ='https://klimaan.be/' target=_blank>klimaan.be</a>.",
     "cs": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Fasádní zahrady</a>, zelené fasády a stromy ve městě přinášejí nejen klid a pohodu, ale také krásnější město, větší biodiverzitu, ochlazující efekt a lepší kvalitu ovzduší. <br/> Klimaan VZW a Mechelen Klimaatneutraal chtějí zmapovat stávající i nové fasádní zahrady jako příklad pro lidi, kteří si chtějí vybudovat vlastní zahradu, nebo pro městské chodce, kteří mají rádi přírodu.<br/>Více informací o projektu najdete na <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
-    "es": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Los jardines de fachada</a>, las fachadas verdes y los árboles en la ciudad no sólo aportan paz y tranquilidad, sino también una ciudad más bella, una mayor biodiversidad, un efecto refrescante y una mejor calidad del aire. <br/> Klimaan VZW y Mechelen Klimaatneutraal quieren trazar un mapa de los jardines de fachada existentes y nuevos como ejemplo para las personas que quieran construir su propio jardín o para los paseantes urbanos amantes de la naturaleza. <br/>Más información sobre el proyecto en <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
+    "es": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Jardines de fachada</a>, fachadas verdes y árboles en la ciudad no solo traen paz y tranquilidad, sino también una ciudad más hermosa, una mayor biodiversidad, un efecto de enfriamiento y una mejor calidad del aire. <br/> Klimaan VZW y Mechelen Klimaatneutraal quieren mapear los jardines de fachada existentes y nuevos como un ejemplo para las personas que quieren construir su propio jardín o para los paseantes de la ciudad que aman la naturaleza.<br/>Más información sobre el proyecto en <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
     "ca": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Els Jardins de façana</a>, façanes verdes i arbres de la ciutat no només aporten pau i tranquil·litat, sinó també una ciutat més bella , una major biodiversitat, un efecte de refredament i una millor qualitat de l'aire. <br/> Klimaan VZW i Mechelen Klimaatneutraal volen cartografiar els jardins de façana existents i nous com a exemple per a les persones que volen construir el seu propi jardí o per als excursionistes de la ciutat que estimen la natura.<br/>Més informació sobre el projecte a <a href ='https://klimaan.be/' target=_blank>klimaan.be</a>.",
     "pl": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Ogrody fasadowe</a>, zielone fasady i drzewa w mieście nie tylko zapewniają ciszę i spokój, ale także piękniejsze miasto, większą różnorodność biologiczną, efekt chłodzący i lepszą jakość powietrza. <br/> Klimaan VZW i Mechelen Klimaatneutraal chcą zmapować istniejące i nowe ogrody fasadowe jako przykład dla osób chcących zbudować własny ogród lub dla spacerowiczów kochających przyrodę.<br/>Więcej informacji o projekcie na <a href ='https://klimaan.be/' target=_blank>klimaan.be</a>."
   },
@@ -38,11 +40,12 @@
     "fr": "Cette carte indique les murs végétalisés avec des photos et des informations comme leur orientation, l’ensoleillement et le type de plantes.",
     "de": "Diese Karte zeigt Fassadengärten mit Bildern und Details zu Ausrichtung, Sonneneinstrahlung und Pflanzen.",
     "hu": "Ez a térkép homlokzati kerteket jelenít meg képekkel, valamint adatokkal a tájolásukról, a napsütésnek való kitettségükről és a bennük található növényzetről.",
-    "es": "Este mapa muestra jardines de fachada con fotografías e información útil sobre la orientación, la luz del sol y los tipos de plantas.",
+    "es": "Este mapa muestra jardines de fachada con imágenes e información útil sobre la orientación, la luz solar y los tipos de plantas.",
     "da": "Dette kort viser facadehaver med billeder og nyttig info om orientering, solskin og plantetyper.",
     "cs": "Tato mapa zobrazuje fasádní zahrady s obrázky a užitečnými informacemi o orientaci, oslunění a druzích rostlin.",
     "ca": "Aquest mapa mostra jardins a façanes amb fotografies i informació útil sobre l'orientació, llum del sol i els tipus de plantes.",
-    "pl": "Mapa przedstawia ogrody fasadowe ze zdjęciami i przydatnymi informacjami na temat orientacji, nasłonecznienia i rodzajów roślin."
+    "pl": "Mapa przedstawia ogrody fasadowe ze zdjęciami i przydatnymi informacjami na temat orientacji, nasłonecznienia i rodzajów roślin.",
+    "uk": "На цій мапі показані фасадні сади з фотографіями та корисною інформацією про орієнтацію, сонячне освітлення та типи рослин."
   },
   "icon": "./assets/themes/facadegardens/geveltuin.svg",
   "startZoom": 15,
@@ -135,7 +138,7 @@
             "de": "Wie ist der Garten ausgerichtet?",
             "it": "Com’è orientato questo giardino?",
             "hu": "Milyen a kert tájolása?",
-            "es": "¿Cual es la orientación del jardín?",
+            "es": "¿Cuál es la orientación del jardín?",
             "da": "Hvad er havens orientering?",
             "ca": "Quina és l'orientació del jardí?",
             "cs": "Jaká je orientace zahrady?",
@@ -164,7 +167,7 @@
                 "fr": "Le jardin est en plein soleil",
                 "de": "Der Garten liegt in voller Sonne",
                 "hu": "A kert teljesen a napon van",
-                "es": "El jardín está completamente al sol",
+                "es": "El jardín está a pleno sol",
                 "nb_NO": "Hagen er ikke i skyggen",
                 "da": "Haven er i fuld sol",
                 "cs": "Zahrada je na přímém slunci",
@@ -226,7 +229,7 @@
             "fr": "Quel est l’ensoleillement du jardin ?",
             "de": "Ist der Garten schattig oder sonnig?",
             "hu": "Árnyékban vagy napon van a kert?",
-            "es": "¿El jardín está al sol o a la sombra?",
+            "es": "¿El jardín está a la sombra o soleado?",
             "nb_NO": "Er hagen i skygge eller ei?",
             "da": "Er haven skyggefuld eller solrig?",
             "cs": "Je zahrada zastíněná nebo slunná?",
@@ -297,7 +300,7 @@
                 "da": "Der er ingen regntønde",
                 "cs": "Sud na dešťovou vodu není k dispozici",
                 "ca": "No hi ha un barril de pluja",
-                "es": "No hay barril de lluvia",
+                "es": "No hay un barril de lluvia",
                 "pl": "Nie ma beczki na deszczówkę"
               }
             }
@@ -328,7 +331,7 @@
             "fr": "Quand le jardin a-t’il été construit ? (L’année suffit)",
             "de": "Wann wurde der Garten angelegt? (Jahr ist ausreichend)",
             "hu": "Mikor épült a kert? (Év megadása is elegendő)",
-            "es": "¿Cuándo se construyó el jardín? (el año es suficiente)",
+            "es": "¿Cuándo se construyó el jardín? (un año es suficiente)",
             "nb_NO": "Når ble hagen opprettet? (Årstall holder.)",
             "da": "Hvornår blev haven bygget? (et år er nok)",
             "cs": "Kdy byla zahrada postavena? (rok je postačující)",
@@ -397,7 +400,7 @@
             "fr": "Y-a-t’il des plantes comestibles ?",
             "de": "Gibt es essbare Pflanzen?",
             "hu": "Van-e benne ehető növény?",
-            "es": "¿Hay alguna planta comestible?",
+            "es": "¿Hay plantas comestibles?",
             "nb_NO": "Finnes det noen spisbare planter?",
             "da": "Er der nogle spiselige planter?",
             "cs": "Jsou zde jedlé rostliny?",
@@ -436,7 +439,7 @@
                 "hu": "Van benne szőlő",
                 "da": "Der er vinstokke",
                 "cs": "Zde jsou révy",
-                "es": "Esto son viñedos",
+                "es": "Hay vides",
                 "ca": "Hi ha vinyes",
                 "pl": "Są winorośle"
               }
@@ -487,7 +490,7 @@
                 "hu": "Van benne talajtakaró növény",
                 "da": "Der er bunddækkende planter",
                 "cs": "Jsou zde půdopokryvné rostliny",
-                "es": "Hay plantas cubresuelos",
+                "es": "Hay plantas tapizantes",
                 "ca": "Hi ha plantes que cobreixen el sòl",
                 "pl": "Istnieją rośliny okrywowe"
               }
@@ -522,7 +525,7 @@
             "fr": "Détails supplémentaires sur le jardin (si nécessaire et non décrit précédemment)",
             "de": "Zusätzliche Informationen über den Garten (falls erforderlich und oben noch nicht beschrieben)",
             "hu": "További leíró jellegű információ a kertről (ha szükséges, és följebb nincs leírva)",
-            "es": "Información descriptiva complementaria sobre el jardín (si es necesaria pero no se describe arriba)",
+            "es": "Información adicional que describe el jardín (si es necesario y aún no se describe arriba)",
             "nb_NO": "Ekstra beskrivende info om hagen (hvis det trengs og ikke er gjengitt ovenfor)",
             "da": "Ekstra beskrivende info om haven (hvis nødvendigt og endnu ikke beskrevet ovenfor)",
             "cs": "Další popisné informace o zahradě (pokud jsou potřeba a nejsou popsány výše)",
@@ -569,7 +572,7 @@
             "de": "Einen Fassadengarten hinzufügen",
             "hu": "Homlokzatkert hozzáadása",
             "ca": "Afegeix un jardí vertical",
-            "es": "Añadir un jardín de fachada",
+            "es": "Agregar un jardín de fachada",
             "nb_NO": "Legg til en fronthage",
             "da": "Tilføj en facadehave",
             "cs": "Přidat fasádní zahradu",

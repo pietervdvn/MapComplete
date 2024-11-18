@@ -6,7 +6,8 @@
     "de": "Physiotherapeuten",
     "ca": "Fisioterapeuta",
     "cs": "Fyzioterapeut",
-    "pl": "Fizjoterapeuta"
+    "pl": "Fizjoterapeuta",
+    "es": "Fisioterapeuta"
   },
   "description": {
     "en": "This layer shows physiotherapists",
@@ -14,7 +15,8 @@
     "de": "Diese Ebene zeigt Physiotherapeuten",
     "ca": "Aquesta capa mostra fisioterapeutes",
     "cs": "Tato vrstva zobrazuje fyzioterapeuty",
-    "pl": "Ta warstwa pokazuje fizjoterapeutów"
+    "pl": "Ta warstwa pokazuje fizjoterapeutów",
+    "es": "Esta capa muestra fisioterapeutas"
   },
   "source": {
     "osmTags": "healthcare=physiotherapist"
@@ -27,7 +29,8 @@
       "de": "Physiotherapeut {name}",
       "ca": "Fisioterapeuta {name}",
       "cs": "Fyzioterapeut {name}",
-      "pl": "Fizjoterapeuta {name}"
+      "pl": "Fizjoterapeuta {name}",
+      "es": "Fisioterapeuta {name}"
     }
   },
   "pointRendering": [
@@ -58,7 +61,8 @@
         "nl": "een fysiotherapeutenpraktijk",
         "fr": "un cabinet de kinésithérapeutes",
         "ca": "una consulta fisioterapèutica",
-        "cs": "ordinace fyzioterapeuta"
+        "cs": "ordinace fyzioterapeuta",
+        "es": "un consultorio de fisioterapia"
       },
       "tags": [
         "healthcare=physiotherapist"
@@ -73,14 +77,16 @@
         "nl": "Wat is de naam van deze kinesistenpraktijk?",
         "de": "Wie heißt die Praxis des Physiotherapeuten?",
         "ca": "Quin és el nom d'aquesta consulta fisioterapèutica?",
-        "cs": "Jak se jmenuje ordinace fyzioterapeuta?"
+        "cs": "Jak se jmenuje ordinace fyzioterapeuta?",
+        "es": "¿Cuál es el nombre de este consultorio de fisioterapia?"
       },
       "render": {
         "en": "This physiotherapists office is called {name}",
         "nl": "Deze kinesistenpraktijk heet {name}",
         "de": "Die Praxis des Physiotherapeuten heißt {name}",
         "ca": "Aquesta consulta fisioterapèutica es diu {name}",
-        "cs": "Tato ordinace fyzioterapeuta se jmenuje {name}"
+        "cs": "Tato ordinace fyzioterapeuta se jmenuje {name}",
+        "es": "Este consultorio de fisioterapia se llama {name}"
       },
       "freeform": {
         "key": "name"

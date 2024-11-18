@@ -5,14 +5,16 @@
     "de": "Toiletten in anderen Einrichtungen",
     "nl": "Toilet in een voorziening",
     "ca": "Lavabos a altres instal·lacions",
-    "cs": "Toalety u ostatního vybavení"
+    "cs": "Toalety u ostatního vybavení",
+    "es": "Baños en otros servicios"
   },
   "description": {
     "en": "A layer showing (public) toilets located at different places.",
     "de": "Eine Ebene mit (öffentlichen) Toiletten an verschiedenen Orten.",
     "nl": "Een laag die (publiek toegankelijke) toiletten toont in verschillende andere voorzieningen.",
     "ca": "Una capa que mostra banys (públics) ubicats en diferents llocs.",
-    "cs": "Vrstva zobrazující (veřejné) toalety umístěné na různých místech."
+    "cs": "Vrstva zobrazující (veřejné) toalety umístěné na různých místech.",
+    "es": "Una capa que muestra los baños (públicos) ubicados en diferentes lugares."
   },
   "source": {
     "osmTags": {
@@ -29,7 +31,8 @@
       "de": "Toilette in Einrichtung",
       "nl": "Toilet in een voorziening",
       "ca": "Lavabo a la instal·lació",
-      "cs": "Toaleta v objektu"
+      "cs": "Toaleta v objektu",
+      "es": "Baño en servicio"
     },
     "mappings": [
       {
@@ -40,7 +43,8 @@
           "nl": "Toilet bij {name}",
           "ca": "Bany a {name}",
           "cs": "Toaleta v {name}",
-          "sl": "Stranišče v {name}"
+          "sl": "Stranišče v {name}",
+          "es": "Baño en {name}"
         }
       }
     ]
@@ -146,7 +150,8 @@
         "fr": "Ces toilettes sont-elles librement accessibles ?",
         "ca": "Aquests serveis són d'accés públic?",
         "cs": "Jsou tyto toalety veřejně přístupné?",
-        "sl": "Ali so ta stranišča javno dostopna?"
+        "sl": "Ali so ta stranišča javno dostopna?",
+        "es": "¿Son estos baños de acceso público?"
       },
       "render": {
         "en": "Access is {toilets:access}",
@@ -158,7 +163,8 @@
         "da": "Adgang er {toilets:access}",
         "ca": "L'accés és {toilets:access}",
         "cs": "Přístup je {toilets:access}",
-        "sl": "Dostop je {toilets:access}"
+        "sl": "Dostop je {toilets:access}",
+        "uk": "Доступ - {toilets:access}"
       },
       "freeform": {
         "key": "toilets:access",
@@ -192,7 +198,8 @@
             "fr": "Accessibles uniquement au clients du lieu",
             "ca": "Només accessible a clients de l'instal·lació",
             "cs": "Přístup pouze zákazníkům zařízení občanské vybavenosti",
-            "sl": "Samo za stranke lokala"
+            "sl": "Samo za stranke lokala",
+            "es": "Solo acceso para clientes del servicio"
           }
         },
         {
@@ -204,7 +211,8 @@
             "fr": "Non accessibles, même pour les clients du lieu",
             "ca": "No accessible, inclús per als clients de la instal·lació",
             "cs": "Není přístupný, a to ani pro zákazníky občanské vybavenosti",
-            "sl": "Ni dostopno niti za stranke lokala"
+            "sl": "Ni dostopno niti za stranke lokala",
+            "es": "Inaccesible, incluso para clientes del servicio"
           }
         },
         {
@@ -215,7 +223,7 @@
             "fr": "Accessibles, mais vous devez demander la clé",
             "nl": "Toegankelijk na het vragen van de sleutel",
             "it": "Accessibile, ma occorre chiedere una chiave per accedere",
-            "es": "Accesible, pero hay que pedir la llave para entrar",
+            "es": "Accesible, pero hay que pedir una llave para entrar",
             "da": "Tilgængelig, men man skal bede om en nøgle for at komme ind",
             "ca": "Accessible, però hi ha que demanar la clau per a entrar",
             "cs": "Přístupné, ale ke vstupu musíte požádat o klíč",
@@ -253,7 +261,8 @@
         "da": "Er det gratis at benytte disse toiletter?",
         "ca": "Aquest serveis són gratuïts?",
         "cs": "Jsou tyto toalety zdarma k použití?",
-        "sl": "Ali so ta stranišča brezplačna za uporabo?"
+        "sl": "Ali so ta stranišča brezplačna za uporabo?",
+        "es": "¿Son estos baños de uso gratuito?"
       },
       "mappings": [
         {
@@ -284,7 +293,8 @@
             "ca": "Gratuït",
             "cs": "Zdarma k použití",
             "pt": "Grátis para usar",
-            "sl": "Brezplačna uporaba"
+            "sl": "Brezplačna uporaba",
+            "es": "De uso gratuito"
           }
         }
       ]
@@ -297,7 +307,7 @@
         "nl": "Hoeveel moet men betalen om deze toiletten te gebruiken?",
         "it": "Quanto costa l'accesso a questi servizi igienici?",
         "ru": "Сколько стоит посещение туалета?",
-        "es": "¿Cuánto hay que pagar para estos baños?",
+        "es": "¿Cuánto hay que pagar por estos baños?",
         "da": "Hvor meget skal man betale for disse toiletter?",
         "ca": "Quant s'ha de pagar per aquests lavabos?",
         "cs": "Kolik se platí za tyto toalety?",
@@ -310,7 +320,7 @@
         "nl": "De toiletten gebruiken kost {toilets:charge}",
         "it": "La tariffa è {toilets:charge}",
         "ru": "Стоимость {toilets:charge}",
-        "es": "La tasa es {toilets:charge}",
+        "es": "La tarifa es {toilets:charge}",
         "da": "Gebyret er {toilets:charge}",
         "ca": "La taxa és {toilets:charge}",
         "cs": "Poplatek je {toilets:charge}",
@@ -331,7 +341,9 @@
           "en": "When is the amenity where these toilets are located open?",
           "de": "Wann ist der Ort, an dem sich diese Toiletten befinden, geöffnet?",
           "ca": "Quan està oberta la instal·lació on es troben aquests lavabos?",
-          "cs": "Kdy je otevřeno zařízení, kde se tyto toalety nacházejí?"
+          "cs": "Kdy je otevřeno zařízení, kde se tyto toalety nacházejí?",
+          "uk": "Коли відкрито приміщення, де розташовані ці туалети?",
+          "es": "¿Cuándo está abierto el servicio donde se ubican estos baños?"
         }
       }
     },
@@ -346,7 +358,8 @@
         "da": "Er der et særligt toilet til kørestolsbrugere?",
         "ca": "Hi ha un lavabo específic per a usuaris amb cadira de rodes?",
         "cs": "Existuje vyhrazená toaleta pro vozíčkáře?",
-        "sl": "Ali je tu stranišče namenjeno invalidom na vozičku?"
+        "sl": "Ali je tu stranišče namenjeno invalidom na vozičku?",
+        "es": "¿Hay un baño dedicado para usuarios de sillas de ruedas?"
       },
       "mappings": [
         {
@@ -356,7 +369,7 @@
             "fr": "Il y a des toilettes réservées pour les personnes à mobilité réduite",
             "nl": "Er is een toilet voor rolstoelgebruikers",
             "it": "C'è un WC riservato alle persone in sedia a rotelle",
-            "es": "Hay un baño dedicado para usuarios con sillas de ruedas",
+            "es": "Hay un baño dedicado para usuarios de sillas de ruedas",
             "da": "Der er et særligt toilet til kørestolsbrugere",
             "ca": "Hi ha un lavabo dedicat per a usuaris amb cadira de rodes",
             "cs": "K dispozici je vyhrazená toaleta pro vozíčkáře"
@@ -387,7 +400,8 @@
             "de": "Es gibt nur eine barrierefreie Toilette für Rollstuhlfahrer",
             "da": "Der er kun et særligt toilet til kørestolsbrugere",
             "ca": "Sols hi ha un lavabo per a usuaris amb cadira de rodes",
-            "cs": "K dispozici je pouze vyhrazená toaleta pro vozíčkáře"
+            "cs": "K dispozici je pouze vyhrazená toaleta pro vozíčkáře",
+            "es": "Solo hay un baño dedicado para usuarios de sillas de ruedas"
           }
         }
       ]
@@ -408,7 +422,8 @@
         "da": "Hvad er bredden på døren til det kørestolsvenlige toilet?",
         "ca": "Quina és l'amplada de la porta del lavabo accessible per a cadira de rodes?",
         "cs": "Jaká je šířka dveří na bezbariérovou toaletu?",
-        "sl": "Koliko so široka vrata v stranišče za invalide na vozičku?"
+        "sl": "Koliko so široka vrata v stranišče za invalide na vozičku?",
+        "es": "¿Cuál es el ancho de la puerta del baño accesible para sillas de ruedas?"
       },
       "render": {
         "en": "The door to the wheelchair-accessible toilet is {canonical(toilets:door:width)} wide",
@@ -418,7 +433,8 @@
         "da": "Døren til det kørestolsvenlige toilet er {canonical(toilets:door:width)} bred",
         "ca": "La porta del vàter accessible amb cadira de rodes és {canonical(toilets:door:width)} d'ample",
         "cs": "Dveře na toaletu pro vozíčkáře jsou {canonical(toilets:door:width)} široké",
-        "sl": "Vrata v stranišče za invalide na vozičku so široka {canonical(toilets:door:width)}"
+        "sl": "Vrata v stranišče za invalide na vozičku so široka {canonical(toilets:door:width)}",
+        "es": "La puerta del baño accesible para sillas de ruedas tiene {canonical(toilets:door:width)} de ancho"
       },
       "freeform": {
         "key": "toilets:door:width",
@@ -452,7 +468,7 @@
             "en": "Wheelchair accessible",
             "nl": "Rolstoel toegankelijk",
             "de": "Barrierefrei",
-            "es": "Accesible con sillas de ruedas",
+            "es": "Accesible para sillas de ruedas",
             "fr": "Accessible aux fauteuils roulants",
             "da": "Tilgængelig for kørestolsbrugere",
             "ca": "Accessible amb cadira de rodes",
@@ -479,7 +495,8 @@
             "fr": "Utilisation gratuite",
             "da": "Gratis at bruge",
             "ca": "Ús gratuït",
-            "cs": "Zdarma k použití"
+            "cs": "Zdarma k použití",
+            "es": "De uso gratuito"
           },
           "osmTags": {
             "or": [
@@ -502,6 +519,7 @@
     },
     "neededChangesets": 1
   },
+  "allowMove": false,
   "units": [
     {
       "toilets:door:width": {

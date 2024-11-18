@@ -21,13 +21,13 @@
     "fr": "Un lieu où des vélos peuvent être empruntés pour un temps plus long",
     "hu": "Létesítmény, ahonnan kerékpár kölcsönözhető hosszabb időre",
     "it": "Una struttura dove le biciclette possono essere prestate per periodi di tempo più lunghi",
-    "de": "Eine Einrichtung, in der Fahrräder für längere Zeit geliehen werden können",
+    "de": "Eine Einrichtung, um Fahrräder längere Zeit auszuleihen",
     "ru": "Учреждение, где велосипед может быть арендован на более длительный срок",
     "zh_Hant": "能夠長期租用單車的設施",
     "pt_BR": "Uma instalação onde as bicicletas podem ser emprestadas por períodos mais longos",
     "pl": "Obiekt, w którym rowery można wypożyczyć na dłuższy okres",
     "pt": "Uma instalação onde as bicicletas podem ser emprestadas por períodos mais longos",
-    "es": "Una instalación donde se pueden alquilar bicicletas durante largos periodos de tiempo",
+    "es": "Una instalación donde se pueden prestar bicicletas por períodos de tiempo más largos",
     "da": "En facilitet, hvor cykler kan lånes i længere perioder",
     "cs": "Zařízení, kde si lze půjčit jízdní kola na delší dobu",
     "ca": "Una instal·lació on es poden cedir bicicletes per llargs períodes de temps"
@@ -202,7 +202,7 @@
         "pt_BR": "Quanto custa um empréstimo de bicicleta?",
         "pt": "Quanto custa um empréstimo de bicicleta?",
         "da": "Hvor meget koster det at leje en cykel?",
-        "es": "¿Cuánto cuesta alquilar una bicicleta?",
+        "es": "¿Cuánto cuesta prestar una bicicleta?",
         "cs": "Kolik stojí půjčení kola?",
         "ca": "Quant costa el préstec d'una bicicleta?"
       },
@@ -218,7 +218,7 @@
         "zh_Hant": "租借單車需要 {charge}",
         "pt_BR": "Custos de empréstimo de bicicleta {charge}",
         "pt": "Custos de empréstimo de bicicleta {charge}",
-        "es": "Alquilar una bicicleta cuesta {charge}",
+        "es": "Prestar una bicicleta cuesta {charge}",
         "da": "Cykelleje koster {charge}",
         "cs": "Půjčení kola stojí {charge}",
         "ca": "El préstec d'una bicicleta costa {charge}"
@@ -250,7 +250,7 @@
             "pt_BR": "Emprestar uma bicicleta é grátis",
             "pt": "Emprestar uma bicicleta é grátis",
             "da": "Det er gratis at låne en cykel",
-            "es": "Alquilar una bicicleta es gratis",
+            "es": "Prestar una bicicleta es gratis",
             "cs": "Půjčení jízdního kola je zdarma",
             "ca": "El préstec d'una bicicleta és gratuït"
           }
@@ -272,7 +272,7 @@
             "ru": "Прокат велосипеда стоит €20/год и €20 залог",
             "pt_BR": "Emprestar uma bicicleta custa €20/ano e €20 de garantia",
             "pt": "Emprestar uma bicicleta custa €20/ano e €20 de garantia",
-            "es": "Alquilar una bicicleta cuesta 20€/año y 20€ de garantía",
+            "es": "Prestar una bicicleta cuesta €20/año y €20 de garantía",
             "da": "Udlån af en cykel koster 20 €/år og 20 € garanti",
             "cs": "Půjčení kola stojí 20 €/rok a 20 € záloha",
             "ca": "El préstec d'una bicicleta costa 20€/any i 20€ de garantia"
@@ -296,7 +296,7 @@
         "pt_BR": "Quem pode emprestar bicicletas aqui?",
         "pt": "Quem pode emprestar bicicletas aqui?",
         "da": "Hvem kan låne cykler her?",
-        "es": "¿Quién puede alquilar bicicletas aquí?",
+        "es": "¿Quién puede pedir prestadas bicicletas aquí?",
         "cs": "Kdo si zde může půjčit jízdní kolo?",
         "ca": "Qui pot llogar bicicletes aquí?"
       },
@@ -350,7 +350,7 @@
             "zh_Hant": "有提供行動不便人士的單車",
             "pt_BR": "Bicicletas para deficientes físicos disponíveis",
             "pt": "Bicicletas para deficientes físicos disponíveis",
-            "es": "Bicicletas para discapacitados disponibles",
+            "es": "Bicicletas para personas con discapacidad disponibles",
             "da": "Cykler til handicappede til rådighed",
             "cs": "K dispozici jsou kola pro osoby se zdravotním postižením",
             "ca": "Bicicletes per a discapacitats disponibles"

@@ -11,10 +11,11 @@
     "it": "Campi sportivi",
     "hu": "Sportpályák",
     "ca": "Camps d'esports",
-    "es": "Pistas de deportes",
+    "es": "Canchas deportivas",
     "da": "Sportspladser",
     "cs": "Sportovní hřiště",
-    "pl": "Boiska sportowe"
+    "pl": "Boiska sportowe",
+    "uk": "Спортивні майданчики"
   },
   "description": {
     "nl": "Een sportveld is een ingerichte plaats met infrastructuur om een sport te beoefenen",
@@ -26,7 +27,7 @@
     "it": "Un campo sportivo è un'area dove vengono praticati degli sport",
     "hu": "A sportpálya egy olyan terület, amelyen valamilyen sportot űznek",
     "ru": "Спортивная площадка - пространство для занятий спортом",
-    "es": "Una pista de deportes es una área donde se practican deportes",
+    "es": "Una cancha deportiva es un área donde se practican deportes",
     "da": "En sportsplads er et område, hvor der dyrkes sport",
     "ca": "Una pista d'esports és un àrea on es practiquen esports",
     "cs": "Sportovní hřiště je plocha, na které se provozují sporty",
@@ -42,11 +43,12 @@
     "de": "Eine Karte mit Sportplätzen",
     "it": "Una cartina che mostra i campi sportivi",
     "hu": "Sportpályatérkép",
-    "es": "Un mapa que muestra pistas de deportes",
+    "es": "Un mapa que muestra canchas deportivas",
     "da": "Et kort, der viser sportspladser",
     "ca": "Un mapa que mostra pistes d'esports",
     "cs": "Mapa sportovních hřišť",
-    "pl": "Mapa przedstawiająca boiska sportowe"
+    "pl": "Mapa przedstawiająca boiska sportowe",
+    "uk": "Мапа з позначенням спортивних майданчиків"
   },
   "icon": "./assets/layers/sport_pitch/table_tennis.svg",
   "layers": [

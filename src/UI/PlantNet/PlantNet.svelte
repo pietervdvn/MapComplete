@@ -9,8 +9,8 @@
   import BackButton from "../Base/BackButton.svelte"
   import NextButton from "../Base/NextButton.svelte"
   import WikipediaPanel from "../Wikipedia/WikipediaPanel.svelte"
-  import { createEventDispatcher } from "svelte"
   import Plantnet_logo from "../../assets/svg/Plantnet_logo.svelte"
+  import ArrowPath from "@babeard/svelte-heroicons/mini/ArrowPath"
 
   /**
    * The main entry point for the plantnet wizard
@@ -23,7 +23,6 @@
    */
   export let imageUrls: Store<string[]>
   export let onConfirm: (wikidataId: string) => void
-  const dispatch = createEventDispatcher<{ selected: string }>()
   let collapsedMode = true
   let options: UIEventSource<PlantNetSpeciesMatch[]> = new UIEventSource<PlantNetSpeciesMatch[]>(
     undefined
@@ -38,18 +37,20 @@
 
   let done = false
 
-  function speciesSelected(species: PlantNetSpeciesMatch) {
+  function speciesSelected(species: string) {
     console.log("Selected:", species)
     selectedOption = species
   }
 
   async function detectSpecies() {
+    error = undefined
     collapsedMode = false
 
     try {
       const result = await PlantNet.query(imageUrls.data.slice(0, 5))
       options.set(result.results.filter((r) => r.score > 0.005).slice(0, 8))
     } catch (e) {
+      console.error("Caught", e)
       error = e
     }
   }
@@ -60,8 +61,12 @@
     <button class="w-full" on:click={detectSpecies}>
       <Tr t={t.button} />
     </button>
-  {:else if $error !== undefined}
+  {:else if error !== undefined}
     <Tr cls="alert" t={t.error.Subs({ error })} />
+    <button on:click={() => detectSpecies()}>
+      <ArrowPath class="h-6 w-6" />
+      <Tr t={Translations.t.general.retry} />
+    </button>
   {:else if $imageUrls.length === 0}
     <!-- No urls are available, show the explanation instead-->
     <div class=" border-region relative mb-1 p-2">

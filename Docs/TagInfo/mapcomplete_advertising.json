@@ -20,19 +20,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Advertisement allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Advertisement allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Advertisement allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Advertisement allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Advertisement allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Advertisement allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Advertisement allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Advertisement allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Advertisement allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "advertising",
@@ -92,6 +96,16 @@
       "key": "advertising",
       "description": "Layer 'Advertisement' shows advertising=wall_painting with a fixed text, namely 'This is a wall painting' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising')",
       "value": "wall_painting"
+    },
+    {
+      "key": "advertising",
+      "description": "Layer 'Advertisement' shows advertising=tilework with a fixed text, namely 'This is tilework - the advertisement is painted on tiles' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising')",
+      "value": "tilework"
+    },
+    {
+      "key": "advertising",
+      "description": "Layer 'Advertisement' shows advertising=relief with a fixed text, namely 'This is a relief' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising')",
+      "value": "relief"
     },
     {
       "key": "animated",
@@ -222,6 +236,16 @@
       "description": "Layer 'Advertisement' shows and asks freeform values for key 'ref' (in the mapcomplete.org theme 'Advertising') (This is only shown if advertising!=sign)"
     },
     {
+      "key": "historic",
+      "description": "Layer 'Advertisement' shows historic=advertising with a fixed text, namely 'This is a historic advertisement sign (an advertisement for a business that no longer exists or a very old sign with heritage value)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising')",
+      "value": "advertising"
+    },
+    {
+      "key": "historic",
+      "description": "Layer 'Advertisement' shows historic= with a fixed text, namely 'This advertisement sign has no historic value (the business still exists and has no heritage value)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Advertising') Picking this answer will delete the key historic.",
+      "value": ""
+    },
+    {
       "key": "amenity",
       "description": "The MapComplete theme Advertising has a layer Shelter showing features with this tag",
       "value": "shelter"
@@ -232,19 +256,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Shelter allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Shelter allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Shelter allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Shelter allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Shelter allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Shelter allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Shelter allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Shelter allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Shelter allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "shelter_type",

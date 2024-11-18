@@ -27,28 +27,28 @@
     "advertising": {
         "name": "Reclame",
         "presets": {
-            "10": {
+            "11": {
                 "description": "Een stuk groot, weerbestendig textiel met opgedrukte reclameboodschap die permanent aan de muur hangt",
                 "title": "een spandoek"
             },
-            "14": {
+            "15": {
                 "title": "een muurschildering"
             },
-            "4": {
+            "5": {
                 "description": "Een klein uithangbord voor buurtadvertenties, meestal gericht op voetgangers",
                 "title": "een uithangbord"
             },
-            "5": {
+            "6": {
                 "description": "Een cylindervormige structuur die buiten staat waarop advertenties staan",
                 "title": "een aanplakzuil"
             },
-            "6": {
+            "7": {
                 "title": "een vlag"
             },
-            "7": {
+            "8": {
                 "title": "een scherm"
             },
-            "8": {
+            "9": {
                 "title": "een scherm op een muur"
             }
         },
@@ -752,6 +752,9 @@
             "render": "Zitbank"
         }
     },
+    "bicycle_counter": {
+        "description": "Automatische fietstelpunten"
+    },
     "bicycle_library": {
         "description": "Een plaats waar men voor langere tijd een fiets kan lenen",
         "name": "Fietsbibliotheek",
@@ -991,6 +994,17 @@
             }
         },
         "tagRenderings": {
+            "automated": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit is een handmatig fietsschoonmaakpunt"
+                    },
+                    "1": {
+                        "then": "Dit is een automatisch fietsschoonmaakpunt"
+                    }
+                },
+                "question": "Is dit fietsschoonmaakpunt geautomatiseerd?"
+            },
             "bike_cleaning-charge": {
                 "mappings": {
                     "0": {
@@ -1014,6 +1028,17 @@
                 },
                 "question": "Hoeveel kost het gebruik van het fietsschoonmaakpunt?",
                 "render": "Het gebruik van het fietsschoonmaakpunt kost {service:bicycle:cleaning:charge}"
+            },
+            "self_service": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit fietsschoonmaakpunt is zelfbediening"
+                    },
+                    "1": {
+                        "then": "Dit fietsschoonmaakpunt wordt bediend door aanwezig personeel"
+                    }
+                },
+                "question": "Is dit fietsschoonmaakpunt zelfbediening?"
             }
         },
         "title": {
@@ -1046,7 +1071,7 @@
                         "then": "Private fietsenstalling van een school, een bedrijf, ..."
                     },
                     "3": {
-                        "then": "Private fietsenstalling van een school, een bedrijf, ..."
+                        "then": "Private fietsenstalling die niet voor het grote publiek toegankelijk is (dus ook niet met bv. een abonnement)"
                     }
                 },
                 "question": "Wie mag er deze fietsenstalling gebruiken?",
@@ -1058,27 +1083,33 @@
                         "then": "Nietjes"
                     },
                     "1": {
-                        "then": "Wielrek/lussen"
+                        "then": "Rek met zijbeugel"
+                    },
+                    "10": {
+                        "then": "Een aanleunbeugel met klem waarbij je de zadelbuis in een anker kan vastklikken. Er is meestal een oog om een slot door te steken"
                     },
                     "2": {
-                        "then": "Stuurhouder"
+                        "then": "Wielrek/lussen"
                     },
                     "3": {
-                        "then": "Rek"
+                        "then": "Stuurhouder"
                     },
                     "4": {
-                        "then": "Dubbel (twee verdiepingen)"
+                        "then": "Rek"
                     },
                     "5": {
-                        "then": "Schuur"
+                        "then": "Dubbel (twee verdiepingen)"
                     },
                     "6": {
-                        "then": "Paal met ring"
+                        "then": "Schuur"
                     },
                     "7": {
-                        "then": "Een oppervlakte die gemarkeerd is om fietsen te parkeren"
+                        "then": "Paal met ring"
                     },
                     "8": {
+                        "then": "Een oppervlakte die gemarkeerd is om fietsen te parkeren"
+                    },
+                    "9": {
                         "then": "Een fietskluis waar één of enkele fietsen staan en op slot kan en die te klein is om in recht te staan."
                     }
                 },
@@ -1623,6 +1654,118 @@
         },
         "title": {
             "render": "Autoverhuur"
+        }
+    },
+    "caravansites": {
+        "description": "camperplaatsen",
+        "name": "Camperplaatsen",
+        "presets": {
+            "0": {
+                "description": "Voeg een nieuwe officiële camperplaats toe. Dit zijn speciaal aangeduide plaatsen waar het toegestaan is om te overnachten met een camper. Ze kunnen er uitzien als een parking, of soms eerder als een camping. Soms staan ze niet ter plaatse aangeduid, maar heeft de gemeente wel degelijk beslist dat dit een camperplaats is. Een parking voor campers waar je niet mag overnachten is géén camperplaats. ",
+                "title": "een camperplaats"
+            }
+        },
+        "tagRenderings": {
+            "caravansites-capacity": {
+                "question": "Hoeveel campers kunnen hier overnachten? (sla dit over als er geen duidelijk aantal plaatsen of aangeduid maximum is)",
+                "render": "{capacity} campers kunnen deze plaats tegelijk gebruiken"
+            },
+            "caravansites-charge": {
+                "question": "Hoeveel kost deze plaats?",
+                "render": "Deze plaats vraagt {charge}"
+            },
+            "caravansites-description": {
+                "question": "Wil je graag een algemene beschrijving toevoegen van deze plaats? (Herhaal hier niet de antwoorden op de vragen die reeds gesteld zijn. Hou het objectief - je kan je mening geven via een review)",
+                "render": "Meer details over deze plaats: {description}"
+            },
+            "caravansites-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Gebruik is betalend"
+                    },
+                    "1": {
+                        "then": "Kan gratis gebruikt worden"
+                    }
+                },
+                "question": "Moet men betalen om deze camperplaats te gebruiken?"
+            },
+            "caravansites-internet": {
+                "mappings": {
+                    "0": {
+                        "then": "Er is internettoegang"
+                    },
+                    "1": {
+                        "then": "Er is internettoegang"
+                    },
+                    "2": {
+                        "then": "Er is geen internettoegang"
+                    }
+                },
+                "question": "Biedt deze plaats internettoegang?"
+            },
+            "caravansites-internet-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Je moet extra betalen voor internettoegang"
+                    },
+                    "1": {
+                        "then": "Je hoeft niet extra te betalen voor internettoegang"
+                    }
+                },
+                "question": "Moet je betalen voor internettoegang?"
+            },
+            "caravansites-long-term": {
+                "mappings": {
+                    "0": {
+                        "then": "Er zijn enkele plaatsen om op lange termijn te huren, maar je kan ook enkele dagen blijven"
+                    },
+                    "1": {
+                        "then": "Hier wonen geen permanente gasten"
+                    },
+                    "2": {
+                        "then": "Hier kan je enkel verblijven met een langetermijnscontract (deze plaats verdwijnt van deze kaart als je dit kiest)"
+                    }
+                },
+                "question": "Kan men hier plekken huren voor langere termijn?"
+            },
+            "caravansites-name": {
+                "question": "Wat is de naam van deze plaats?",
+                "render": "Deze plaats heet {name}"
+            },
+            "caravansites-sanitary-dump": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze plaats heeft een loosplaats"
+                    },
+                    "1": {
+                        "then": "Deze plaats heeft geen loosplaats"
+                    }
+                },
+                "question": "Heeft deze plaats een loosplaats?"
+            },
+            "caravansites-toilets": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze plaats heeft toiletten"
+                    },
+                    "1": {
+                        "then": "Deze plaats heeft geen toiletten"
+                    }
+                },
+                "question": "Heeft deze plaats toiletten?"
+            },
+            "caravansites-website": {
+                "question": "Heeft deze plaats een website?",
+                "render": "Officiële website: : <a href='{website}'>{website}</a>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Camper site"
+                }
+            },
+            "render": "Camperplaats {name}"
         }
     },
     "charging_station": {
@@ -2541,6 +2684,10 @@
             "1": {
                 "description": "Een publiekelijk zichtbare klok aan een muur",
                 "title": "een klok aan een muur"
+            },
+            "2": {
+                "description": "Een publiekelijk zichtbare klok rechtstreeks bevestigd aan een muur",
+                "title": "een klok aan een muur, rechtstreeks bevestigd aan een muur"
             }
         },
         "tagRenderings": {
@@ -2621,18 +2768,34 @@
                 },
                 "question": "Toont deze klok ook de luchtvochtigheid?"
             },
+            "indoor": {
+                "override": {
+                    "mappings": {
+                        "0": {
+                            "then": "Deze klok is binnen"
+                        },
+                        "1": {
+                            "then": "Deze klok is buiten"
+                        }
+                    },
+                    "question": "Is deze klok binnen?"
+                }
+            },
             "support": {
                 "mappings": {
                     "0": {
                         "then": "Deze klok is bevestigd aan een paal"
                     },
                     "1": {
-                        "then": "Deze klok is bevestigd aan een muur"
+                        "then": "Deze klok is bevestigd aan een muur, meestal met een steun loodrecht op de muur"
                     },
                     "2": {
-                        "then": "Deze klok is onderdeel van een reclamebord"
+                        "then": "Deze klok is rechtstreeks aan een muur bevestigd"
                     },
                     "3": {
+                        "then": "Deze klok is onderdeel van een reclamebord"
+                    },
+                    "4": {
                         "then": "Deze klok staat op de grond"
                     }
                 },
@@ -2732,17 +2895,6 @@
                 },
                 "question": "Heeft deze oversteekplaats een verkeerseiland in het midden?"
             },
-            "crossing-is-zebra": {
-                "mappings": {
-                    "0": {
-                        "then": "Dit is een zebrapad"
-                    },
-                    "1": {
-                        "then": "Dit is geen zebrapad"
-                    }
-                },
-                "question": "Is dit een zebrapad?"
-            },
             "crossing-minimap": {
                 "mappings": {
                     "0": {
@@ -2825,6 +2977,57 @@
                     }
                 },
                 "question": "Heeft dit verkeerslicht een element dat trilt om te helpen bij het oversteken? (meestal onderaan de oversteekknop geplaatst)"
+            },
+            "markings": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze oversteekplaats heeft geen markeringen"
+                    },
+                    "1": {
+                        "then": "Deze oversteekplaats heeft een zebramarkering"
+                    },
+                    "10": {
+                        "then": "Deze oversteekplaats heeft een zebramarkering in afwisselende kleuren"
+                    },
+                    "11": {
+                        "then": "Deze oversteekplaats heeft een dubbele zebramarkering"
+                    },
+                    "12": {
+                        "then": "Deze oversteekplaats heeft pictogrammen op de weg"
+                    },
+                    "13": {
+                        "then": "Deze oversteekplaats heeft lijnen aan beide kanten van de oversteekplaats, met strepen die ze verbinden, met een onderbreking van elke streep"
+                    },
+                    "14": {
+                        "then": "Deze oversteekplaats heeft dubbele lijnen aan beide kanten van de oversteekplaats"
+                    },
+                    "2": {
+                        "then": "Deze oversteekplaats heeft markeringen van een onbekend type"
+                    },
+                    "3": {
+                        "then": "Deze oversteekplaats heeft lijnen aan beide kanten van de oversteekplaats"
+                    },
+                    "4": {
+                        "then": "Deze oversteekplaats heeft lijnen aan beide kanten van de oversteekplaats, met strepen die ze verbinden"
+                    },
+                    "5": {
+                        "then": "Deze oversteekplaats heeft onderbroken lijnen aan beide kanten van de oversteekplaats"
+                    },
+                    "6": {
+                        "then": "Deze oversteekplaats heeft stippellijnen aan beide kanten van de oversteekplaats"
+                    },
+                    "7": {
+                        "then": "Deze oversteekplaats is gemarkeerd door een anders gekleurd wegdek"
+                    },
+                    "8": {
+                        "then": "Deze oversteekplaats heeft lijnen aan beide kanten van de oversteekplaats, met schuine strepen die ze verbinden"
+                    },
+                    "9": {
+                        "then": "Deze oversteekplaats heeft zebramarkeringen met een onderbreking van elke streep"
+                    }
+                },
+                "question": "Wat voor markering heeft deze oversteekplaats?",
+                "render": "Deze oversteekplaats heeft {crossing:markings} markeringen"
             }
         },
         "title": {
@@ -2848,6 +3051,7 @@
     "cycleways_and_roads": {
         "description": "Alle infrastructuur waar je over kunt fietsen, met vragen over die infrastructuur",
         "name": "Fietspaden, straten en wegen",
+        "snapName": "een weg, straat of fietspad",
         "tagRenderings": {
             "Cycleway type for a road": {
                 "mappings": {
@@ -3171,7 +3375,7 @@
             "incline": {
                 "mappings": {
                     "0": {
-                        "then": "De straat hier is (waarschijnlijk) zonder helling"
+                        "then": "De straat heeft hier (waarschijnlijk) geen helling"
                     }
                 }
             },
@@ -3571,6 +3775,95 @@
             "render": "Drinkbaar water"
         }
     },
+    "dumpstations": {
+        "description": "Loosplaatsen",
+        "name": "Loostplaatsen",
+        "presets": {
+            "0": {
+                "description": "Voeg een nieuwe loosplaats toe. Dat is een plaats waar campers hun grijs water en toiletten kunnen lozen. Vaak is er ook een kraan om water te tanken en een stopcontact.",
+                "title": "een loosplaats"
+            }
+        },
+        "tagRenderings": {
+            "dumpstations-access": {
+                "mappings": {
+                    "0": {
+                        "then": "Netwerksleutel of -code nodig om dit te gebruiken"
+                    },
+                    "1": {
+                        "then": "Je moet een klant van de kampeerplaats zijn om dit te gebruiken"
+                    },
+                    "2": {
+                        "then": "Deze loosplaats is voor iedereen toegankelijk"
+                    },
+                    "3": {
+                        "then": "Deze loosplaats is toegankelijk voor iedereen"
+                    }
+                },
+                "question": "Wie mag deze loosplaats gebruiken?"
+            },
+            "dumpstations-charge": {
+                "question": "Hoeveel kost het gebruik van deze loosplaats?",
+                "render": "Deze loosplaats rekent {charge} aan"
+            },
+            "dumpstations-chemical-waste": {
+                "mappings": {
+                    "0": {
+                        "then": "Je kan hier een chemisch toilet lozen"
+                    },
+                    "1": {
+                        "then": "Je kan hier geen chemisch toilet lozen"
+                    }
+                },
+                "question": "Mag je hier je chemisch toilet lozen?"
+            },
+            "dumpstations-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Je moet betalen voor het gebruik"
+                    },
+                    "1": {
+                        "then": "Kan gratis gebruikt worden"
+                    }
+                },
+                "question": "Vraagt deze plaats een vergoeding?"
+            },
+            "dumpstations-grey-water": {
+                "mappings": {
+                    "0": {
+                        "then": "Je kan hier grijs water lozen"
+                    },
+                    "1": {
+                        "then": "Je kan hier geen grijs water lozen"
+                    }
+                },
+                "question": "Mag je hier grijs water lozen?"
+            },
+            "dumpstations-network": {
+                "question": "Van welk netwerk vormt deze plaats een deel? (Sla over als het geen deel uitmaakt van een netwerk)",
+                "render": "Deze loosplaats is deel van het {network} netwerk"
+            },
+            "dumpstations-waterpoint": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze loosplaats heeft een waterkraan om je camper bij te vullen"
+                    },
+                    "1": {
+                        "then": "Deze loosplaats heeft geen waterkraan om je camper bij te vullen"
+                    }
+                },
+                "question": "Heeft deze loosplaats een waterkraan om je camper bij te vullen?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Loosplaats"
+                }
+            },
+            "render": "Loosplaats {name}"
+        }
+    },
     "elevator": {
         "description": "Deze laag toont liften en vraagt praktische info over de grootte van de lift en ofdat deze werkt, vooral met het oog op of de lift werkt of niet.",
         "name": "Lift",
@@ -3827,6 +4120,19 @@
                     }
                 }
             },
+            "10": {
+                "options": {
+                    "0": {
+                        "question": "Geen voorkeur voor honden"
+                    },
+                    "1": {
+                        "question": "Honden toegelaten"
+                    },
+                    "2": {
+                        "question": "Geen honden toegelaten"
+                    }
+                }
+            },
             "2": {
                 "options": {
                     "0": {
@@ -4071,49 +4377,61 @@
             "Cuisine": {
                 "mappings": {
                     "0": {
-                        "then": "Dit is een pizzeria"
+                        "then": "Pizzeria"
                     },
                     "1": {
-                        "then": "Dit is een frituur"
+                        "then": "Frituur"
                     },
                     "10": {
-                        "then": "Dit is een Chinees restaurant"
+                        "then": "Chinees restaurant"
                     },
                     "11": {
-                        "then": "Dit is een Grieks restaurant"
+                        "then": "Grieks restaurant"
                     },
                     "12": {
-                        "then": "Dit is een Indisch restaurant"
+                        "then": "Indisch restaurant"
                     },
                     "13": {
-                        "then": "Dit is een Turks restaurant (dat meer dan enkel kebab verkoopt)"
+                        "then": "Turks restaurant"
                     },
                     "14": {
-                        "then": "Dit is een Thaïs restaurant"
+                        "then": "Thaïs restaurant"
+                    },
+                    "15": {
+                        "then": "Dit is een mexicaans restaurant"
+                    },
+                    "16": {
+                        "then": "Dit is een japans restaurant"
+                    },
+                    "17": {
+                        "then": "Dit is een kiprestaurant"
+                    },
+                    "18": {
+                        "then": "Dit is een vis- en zeerestaurant"
                     },
                     "2": {
-                        "then": "Dit is een pastazaak"
+                        "then": "Pastazaak"
                     },
                     "3": {
-                        "then": "Dit is een kebabzaak"
+                        "then": "Kebabzaak"
                     },
                     "4": {
-                        "then": "Dit is een broodjeszaak"
+                        "then": "Broodjeszaak"
                     },
                     "5": {
-                        "then": "Dit is een hamburgerrestaurant"
+                        "then": "Hamburgerrestaurant"
                     },
                     "6": {
-                        "then": "Dit is een sushirestaurant"
+                        "then": "Sushirestaurant"
                     },
                     "7": {
-                        "then": "Dit is een koffiezaak"
+                        "then": "Koffiezaak"
                     },
                     "8": {
-                        "then": "Dit is een Italiaans restaurant (dat meer dan enkel pasta of pizza verkoopt)"
+                        "then": "Italiaans restaurant (dat meer dan enkel pasta of pizza verkoopt)"
                     },
                     "9": {
-                        "then": "Dit is een Frans restaurant"
+                        "then": "Frans restaurant"
                     }
                 },
                 "question": "Welk soort gerechten worden hier geserveerd?",
@@ -4264,13 +4582,13 @@
             },
             "friture-vegan": {
                 "mappings": {
-                    "0": {
+                    "1": {
                         "then": "Er zijn veganistische snacks aanwezig"
                     },
-                    "1": {
+                    "2": {
                         "then": "Slechts enkele veganistische snacks"
                     },
-                    "2": {
+                    "3": {
                         "then": "Geen veganistische snacks beschikbaar"
                     }
                 },
@@ -4278,13 +4596,13 @@
             },
             "friture-vegetarian": {
                 "mappings": {
-                    "0": {
+                    "1": {
                         "then": "Er zijn vegetarische snacks aanwezig"
                     },
-                    "1": {
+                    "2": {
                         "then": "Slechts enkele vegetarische snacks"
                     },
-                    "2": {
+                    "3": {
                         "then": "Geen vegetarische snacks beschikbaar"
                     }
                 },
@@ -4647,11 +4965,27 @@
         }
     },
     "ice_cream": {
+        "description": "Een plaats waar voornamelijk ijsjes verkocht worden, bedoeld voor onmiddelijke consumptie",
+        "name": "IJssalon",
+        "presets": {
+            "0": {
+                "description": "Een plaats waar men voornamelijk ijsjes koopt, meestal met de hand geschept en bedoeld om onmiddellijk op te eten.",
+                "title": "een ijssalon"
+            }
+        },
         "tagRenderings": {
             "1": {
                 "question": "Wat is de naam van dit ijssalon?",
                 "render": "Dit ijssalon heet <b>{name}</b>"
             }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
+            "render": "IJssalon"
         }
     },
     "icons": {
@@ -4659,6 +4993,13 @@
             "osmlink": {
                 "mappings": {
                     "1": {
+                        "then": {
+                            "special": {
+                                "arialabel": "Bekijk op openstreetmap.org"
+                            }
+                        }
+                    },
+                    "2": {
                         "then": {
                             "special": {
                                 "arialabel": "Bekijk op openstreetmap.org"
@@ -4693,6 +5034,7 @@
     "indoors": {
         "description": "Een basis voor indoor-navigatie: toont binnenruimtes",
         "name": "Binnenruimtes",
+        "snapName": "een binnenmuur",
         "tagRenderings": {
             "name": {
                 "freeform": {
@@ -5301,18 +5643,39 @@
             "0": {
                 "options": {
                     "0": {
-                        "question": "Moet in de eerste opmerking \"{search}\" bevatten"
+                        "question": "Toon enkel de Notes geopend door een anonieme bijdrager"
                     }
                 }
             },
             "1": {
                 "options": {
                     "0": {
-                        "question": "Mag in de eerste opmerking <b>niet</b> \"{search}\" bevatten"
+                        "question": "Toon enkel open Notes"
                     }
                 }
             },
             "10": {
+                "options": {
+                    "0": {
+                        "question": "Laatst bewerkt door bijdrager {search}"
+                    }
+                }
+            },
+            "12": {
+                "options": {
+                    "0": {
+                        "question": "Aangemaakt voor {search}"
+                    }
+                }
+            },
+            "13": {
+                "options": {
+                    "0": {
+                        "question": "Aangemaakt na {search}"
+                    }
+                }
+            },
+            "2": {
                 "options": {
                     "0": {
                         "question": "Alle Notes"
@@ -5325,59 +5688,31 @@
                     }
                 }
             },
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "Geopend door bijdrager {search}"
-                    }
-                }
-            },
             "3": {
                 "options": {
                     "0": {
-                        "question": "<b>Niet</b> geopend door bijdrager {search}"
-                    }
-                }
-            },
-            "4": {
-                "options": {
-                    "0": {
-                        "question": "Laatst bewerkt door bijdrager {search}"
+                        "question": "Moet in de eerste opmerking \"{search}\" bevatten"
                     }
                 }
             },
             "5": {
                 "options": {
                     "0": {
-                        "question": "Geopend na {search}"
-                    }
-                }
-            },
-            "6": {
-                "options": {
-                    "0": {
-                        "question": "Aangemaakt voor {search}"
+                        "question": "Mag in de eerste opmerking <b>niet</b> \"{search}\" bevatten"
                     }
                 }
             },
             "7": {
                 "options": {
                     "0": {
-                        "question": "Aangemaakt na {search}"
+                        "question": "Geopend door bijdrager {search}"
                     }
                 }
             },
             "8": {
                 "options": {
                     "0": {
-                        "question": "Toon enkel de Notes geopend door een anonieme bijdrager"
-                    }
-                }
-            },
-            "9": {
-                "options": {
-                    "0": {
-                        "question": "Toon enkel open Notes"
+                        "question": "<b>Niet</b> geopend door bijdrager {search}"
                     }
                 }
             }
@@ -5832,6 +6167,9 @@
                     },
                     "2": {
                         "then": "Deze picknictafel is gemaakt uit (gerecycleerd) plastiek"
+                    },
+                    "3": {
+                        "then": "Deze picnictafel is gemaakt uit metaal"
                     }
                 },
                 "question": "Van welk materiaal is deze picknicktafel gemaakt?",
@@ -5886,6 +6224,17 @@
                     }
                 },
                 "question": "Is deze speeltuin toegankelijk voor rolstoelgebruikers?"
+            },
+            "fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Gratis te gebruiken"
+                    },
+                    "1": {
+                        "then": "Betalend"
+                    }
+                },
+                "question": "Moet men betalen om deze speeltuin te gebruiken?"
             },
             "playground-access": {
                 "mappings": {
@@ -6035,6 +6384,9 @@
         "presets": {
             "0": {
                 "title": "een brievenbus"
+            },
+            "1": {
+                "title": "een brievenbus tegen een muur"
             }
         },
         "title": {
@@ -6422,6 +6774,17 @@
                 "editButtonAriaLabel": "Pas emailadres aan",
                 "question": "Wat is het e-mailadres van {title()}?"
             },
+            "indoor": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit object bevindt zich binnen"
+                    },
+                    "1": {
+                        "then": "Dit object bevindt zich buiten"
+                    }
+                },
+                "question": "Bevindt dit object zich binnen?"
+            },
             "induction-loop": {
                 "mappings": {
                     "0": {
@@ -6733,6 +7096,13 @@
                 "options": {
                     "0": {
                         "question": "Alle recyclingtypes"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Enkel publiek toegankelijke afvalcontainers"
                     },
                     "1": {
                         "question": "Recycling van batterijen"
@@ -6802,7 +7172,7 @@
                     }
                 }
             },
-            "2": {
+            "3": {
                 "options": {
                     "0": {
                         "question": "Enkel publiek toegankelijke afvalcontainers"
@@ -7120,22 +7490,6 @@
             }
         },
         "description": "Een winkel",
-        "filter": {
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Toon enkel winkels die {search} verkopen"
-                    }
-                }
-            },
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "Toon enkel winkels met naam {search}"
-                    }
-                }
-            }
-        },
         "name": "Winkel",
         "presets": {
             "0": {
@@ -7460,28 +7814,6 @@
                 "options": {
                     "0": {
                         "question": "Publiek toegankelijk"
-                    }
-                }
-            },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Alle sporten"
-                    },
-                    "1": {
-                        "question": "Basketbalvelden"
-                    },
-                    "2": {
-                        "question": "Voetbalvelden"
-                    },
-                    "3": {
-                        "question": "Pingpong-tafel"
-                    },
-                    "4": {
-                        "question": "Tennisveld"
-                    },
-                    "5": {
-                        "question": "Badmintonveld"
                     }
                 }
             }
@@ -8890,7 +9222,7 @@
                         "then": "Gebruik luchtfoto's als standaard achtergrondlaag"
                     },
                     "3": {
-                        "then": "Gebruik altijd een kaart di niet op OpenStreetMap gebaseerd is als achtergrond"
+                        "then": "Gebruik altijd een kaart die niet op OpenStreetMap gebaseerd is als achtergrond"
                     },
                     "4": {
                         "then": "Gebruik altijd <span class='code'>{__current_background}</span> als achtergrondlaag. Dit is de huidige achtergrond."
@@ -8996,23 +9328,6 @@
                     }
                 }
             },
-            "picture-license": {
-                "mappings": {
-                    "0": {
-                        "then": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC0</b>-licentie en dus aan het publieke domein toegevoegd worden. Dit betekent dat iedereen je afbeeldingen kan gebruiken voor elk mogelijks gebruik. <span class='subtle'>Dit is de standaard-instelling</span>"
-                    },
-                    "1": {
-                        "then": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC0</b>-licentie en dus aan het publieke domein toegevoegd worden. Dit betekent dat iedereen je afbeeldingen kan gebruiken voor elk mogelijks gebruik."
-                    },
-                    "2": {
-                        "then": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC-BY 4.0</b>-licentie. Dit betekent dat iedereen je afbeelding mag gebruiken voor elke toepassing mits het vermelden van je naam"
-                    },
-                    "3": {
-                        "then": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC-BY-SA 4.0</b>-licentie. Dit betekent dat iedereen je afbeelding mag gebruiken voor elke toepassing mits het vermelden van je naam en dat afgeleide werken van je afbeelding ook ondere deze licentie moeten gepubliceerd worden."
-                    }
-                },
-                "question": "Met welke licentie wil je je afbeeldingen toevoegen?"
-            },
             "profile-description": {
                 "mappings": {
                     "0": {
@@ -9023,6 +9338,17 @@
                         }
                     }
                 }
+            },
+            "scalebar": {
+                "mappings": {
+                    "0": {
+                        "then": "Toon de schaalbalk"
+                    },
+                    "1": {
+                        "then": "Verberg de schaalbalk"
+                    }
+                },
+                "question": "Moet er een schaalbalk weergegeven worden?"
             },
             "settings-link": {
                 "render": {
@@ -9139,42 +9465,45 @@
                         "question": "Verkoop van eieren"
                     },
                     "13": {
-                        "question": "Verkoop van kaas"
+                        "question": "Verkoop van ijs"
                     },
                     "14": {
-                        "question": "Verkoop van honing"
+                        "question": "Verkoop van kaas"
                     },
                     "15": {
-                        "question": "Verkoop van aardappelen"
+                        "question": "Verkoop van honing"
                     },
                     "16": {
-                        "question": "Verkoop van vlees"
+                        "question": "Verkoop van aardappelen"
                     },
                     "17": {
-                        "question": "Verkoop van fruit"
+                        "question": "Verkoop van vlees"
                     },
                     "18": {
-                        "question": "Verkoop van aardbeien"
+                        "question": "Verkoop van fruit"
                     },
                     "19": {
-                        "question": "Verkoop van bloemen"
+                        "question": "Verkoop van aardbeien"
                     },
                     "2": {
                         "question": "Verkoop van snoep"
                     },
-                    "23": {
-                        "question": "Verkoop van fietslampjes"
+                    "20": {
+                        "question": "Verkoop van bloemen"
                     },
                     "24": {
-                        "question": "Verkoop van handschoenen"
+                        "question": "Verkoop van fietslampjes"
                     },
                     "25": {
-                        "question": "Verkoop van fietsreparatiesets"
+                        "question": "Verkoop van handschoenen"
                     },
                     "26": {
-                        "question": "Verkoop van fietspompen"
+                        "question": "Verkoop van fietsreparatiesets"
                     },
                     "27": {
+                        "question": "Verkoop van fietspompen"
+                    },
+                    "28": {
                         "question": "Verkoop van fietssloten"
                     },
                     "3": {
@@ -9294,48 +9623,51 @@
                         "then": "Eieren worden verkocht"
                     },
                     "12": {
-                        "then": "Kaas wordt verkocht"
+                        "then": "IJs wordt verkocht"
                     },
                     "13": {
-                        "then": "Honing wordt verkocht"
+                        "then": "Kaas wordt verkocht"
                     },
                     "14": {
-                        "then": "Aardappelen worden verkocht"
+                        "then": "Honing wordt verkocht"
                     },
                     "15": {
-                        "then": "Vlees wordt verkocht"
+                        "then": "Aardappelen worden verkocht"
                     },
                     "16": {
-                        "then": "Fruit wordt verkocht"
+                        "then": "Vlees wordt verkocht"
                     },
                     "17": {
-                        "then": "Aardbeien worden verkocht"
+                        "then": "Fruit wordt verkocht"
                     },
                     "18": {
-                        "then": "Bloemen worden verkocht"
+                        "then": "Aardbeien worden verkocht"
                     },
                     "19": {
-                        "then": "Parkeerkaarten worden verkocht"
+                        "then": "Bloemen worden verkocht"
                     },
                     "2": {
                         "then": "Eten wordt verkocht"
                     },
-                    "21": {
-                        "then": "Openbaar vervoerkaartjes worden verkocht"
+                    "20": {
+                        "then": "Parkeerkaarten worden verkocht"
                     },
                     "22": {
-                        "then": "Fietslampjes worden verkocht"
+                        "then": "Openbaar vervoerkaartjes worden verkocht"
                     },
                     "23": {
-                        "then": "Handschoenen worden verkocht"
+                        "then": "Fietslampjes worden verkocht"
                     },
                     "24": {
-                        "then": "Fietsreparatiesets worden verkocht"
+                        "then": "Handschoenen worden verkocht"
                     },
                     "25": {
-                        "then": "Fietspompen worden verkocht"
+                        "then": "Fietsreparatiesets worden verkocht"
                     },
                     "26": {
+                        "then": "Fietspompen worden verkocht"
+                    },
+                    "27": {
                         "then": "Fietssloten worden verkocht"
                     },
                     "3": {
@@ -9440,6 +9772,7 @@
     },
     "walls_and_buildings": {
         "description": "Speciale ingebouwde laag voor alle muren en gebouwen. Deze laag is nuttig in voorkeuzen voor objecten die tegen muren geplaatst kunnen worden (bv. AEDs, brievenbussen, ingangen, adressen, beveiligingscamera's,…). Deze laag is standaard onzichtbaar en niet in te schakelen door de gebruiker.",
+        "snapName": "een muur of gebouw",
         "tagRenderings": {
             "entrance_info": {
                 "mappings": {

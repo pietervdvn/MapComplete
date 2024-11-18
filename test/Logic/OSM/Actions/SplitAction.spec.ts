@@ -2,8 +2,6 @@ import { Utils } from "../../../../src/Utils"
 import SplitAction from "../../../../src/Logic/Osm/Actions/SplitAction"
 import { Changes } from "../../../../src/Logic/Osm/Changes"
 import { describe, expect, it } from "vitest"
-import { OsmConnection } from "../../../../src/Logic/Osm/OsmConnection"
-import { ImmutableStore } from "../../../../src/Logic/UIEventSource"
 
 describe("SplitAction", () => {
     {
@@ -2683,25 +2681,22 @@ describe("SplitAction", () => {
     }
 
     it("split 295132739", async () => {
-        // Lets split road https://www.openstreetmap.org/way/295132739
+        // Let's split road https://www.openstreetmap.org/way/295132739
         const id = "way/295132739"
         const splitPoint: [number, number] = [3.246733546257019, 51.181710380278176]
         const splitter = new SplitAction(id, [splitPoint], {
             theme: "test",
         })
         const changeDescription = await splitter.CreateChangeDescriptions(
-            new Changes({
-                dryRun: new ImmutableStore(true),
-                osmConnection: new OsmConnection(),
-            })
+            Changes.createTestObject()
         )
 
         expect(changeDescription[0].type).toBe("node")
-        expect(changeDescription[0].id).toBe(-1)
+        expect(changeDescription[0].id).toBe(-2)
         expect(changeDescription[0].changes["lat"]).toBe(51.181710380278176)
         expect(changeDescription[0].changes["lon"]).toBe(3.246733546257019)
         expect(changeDescription[1].type).toBe("way")
-        expect(changeDescription[1].id).toBe(-2)
+        expect(changeDescription[1].id).toBe(-3)
         expect(changeDescription[1].changes["coordinates"].length).toBe(6)
         expect(changeDescription[1].changes["coordinates"][5][0]).toBe(splitPoint[0])
         expect(changeDescription[1].changes["coordinates"][5][1]).toBe(splitPoint[1])
@@ -2720,10 +2715,7 @@ describe("SplitAction", () => {
             theme: "test",
         })
         const changeDescription = await splitter.CreateChangeDescriptions(
-            new Changes({
-                dryRun: new ImmutableStore(true),
-                osmConnection: new OsmConnection(),
-            })
+            Changes.createTestObject()
         )
 
         expect(changeDescription.length).toBe(2)
@@ -2742,10 +2734,7 @@ describe("SplitAction", () => {
             theme: "test",
         })
         const changeDescription = await splitter.CreateChangeDescriptions(
-            new Changes({
-                dryRun: new ImmutableStore(true),
-                osmConnection: new OsmConnection(),
-            })
+            Changes.createTestObject()
         )
 
         // Should be a new node
@@ -2759,12 +2748,7 @@ describe("SplitAction", () => {
         const splitAction = new SplitAction("way/941079939", [splitPointAroundP3], {
             theme: "test",
         })
-        const changes = await splitAction.Perform(
-            new Changes({
-                dryRun: new ImmutableStore(true),
-                osmConnection: new OsmConnection(),
-            })
-        )
+        const changes = await splitAction.Perform(Changes.createTestObject())
         console.log(changes)
         // 8715440368 is the expected point of the split
 
@@ -2802,23 +2786,18 @@ describe("SplitAction", () => {
             { theme: "test" },
             1
         )
-        const changes = await splitAction.Perform(
-            new Changes({
-                dryRun: new ImmutableStore(true),
-                osmConnection: new OsmConnection(),
-            })
-        )
+        const changes = await splitAction.Perform(Changes.createTestObject())
 
         // THe first change is the creation of the new node
         expect(changes[0].type).toEqual("node")
-        expect(changes[0].id).toEqual(-1)
+        expect(changes[0].id).toEqual(-2)
 
         expect(changes[1].changes["nodes"]).toEqual([
             6490126559, 8715440375, 8715440374, 8715440373, 8715440372, 8715440371, 8715440370,
-            8715440369, -1,
+            8715440369, -2,
         ])
         expect(changes[2].changes["nodes"]).toEqual([
-            -1, 8715440368, 8715440367, 8715440366, 8715440365, 8715440364, 8715440363,
+            -2, 8715440368, 8715440367, 8715440366, 8715440365, 8715440364, 8715440363,
         ])
     })
 })

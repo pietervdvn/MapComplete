@@ -19,11 +19,12 @@
   import Loading from "../../Base/Loading.svelte"
   import NextButton from "../../Base/NextButton.svelte"
   import Note from "../../../assets/svg/Note.svelte"
+  import TitledPanel from "../../Base/TitledPanel.svelte"
 
   export let coordinate: UIEventSource<{ lon: number; lat: number }>
   export let state: SpecialVisualizationState
 
-  let comment: UIEventSource<string> = LocalStorageSource.Get("note-text")
+  let comment: UIEventSource<string> = LocalStorageSource.get("note-text")
   let created = false
 
   let notelayer: FilteredLayer = state.layerState.filteredLayers.get("note")
@@ -32,6 +33,8 @@
   let isDisplayed = notelayer?.isDisplayed
 
   let submitted = false
+  let textEntered = false
+
   function enableNoteLayer() {
     state.guistate.closeAll()
     isDisplayed.setData(true)
@@ -44,7 +47,7 @@
       return
     }
     const loc = coordinate.data
-    txt += "\n\n #MapComplete #" + state?.layout?.id
+    txt += "\n\n #MapComplete #" + state?.theme?.id
     const id = await state?.osmConnection?.openNote(loc.lat, loc.lon, txt)
     console.log("Created a note, got id", id)
     const feature = <Feature<Point, OsmTags>>{
@@ -91,34 +94,55 @@
     <Tr t={Translations.t.notes.isCreated} />
   </div>
 {:else}
-  <h3>
-    <Tr t={Translations.t.notes.createNoteTitle} />
-  </h3>
+  <TitledPanel>
+    <Tr slot="title" t={Translations.t.notes.createNoteTitle} />
 
-  {#if $isDisplayed}
-    <!-- The layer is displayed, so we can add a note without worrying for duplicates -->
-    {#if $hasFilter}
-      <div class="flex flex-col">
-        <!-- ...but a filter is set ...-->
-        <div class="alert">
-          <Tr t={Translations.t.notes.noteLayerHasFilters} />
-        </div>
-        <SubtleButton on:click={() => notelayer.disableAllFilters()}>
-          <Layers class="mr-4 h-8 w-8" />
-          <Tr slot="message" t={Translations.t.notes.disableAllNoteFilters} />
-        </SubtleButton>
+    {#if !$isDisplayed}
+      <div class="alert">
+        <Tr t={Translations.t.notes.noteLayerNotEnabled} />
       </div>
+      <SubtleButton on:click={enableNoteLayer}>
+        <Layers slot="image" class="mr-4 h-8 w-8" />
+        <Tr slot="message" t={Translations.t.notes.noteLayerDoEnable} />
+      </SubtleButton>
+    {:else if $hasFilter}
+      <!-- ...but a filter is set ...-->
+      <div class="alert">
+        <Tr t={Translations.t.notes.noteLayerHasFilters} />
+      </div>
+      <SubtleButton on:click={() => notelayer.disableAllFilters()}>
+        <Layers class="mr-4 h-8 w-8" />
+        <Tr slot="message" t={Translations.t.notes.disableAllNoteFilters} />
+      </SubtleButton>
     {:else}
-      <form
-        class="low-interaction flex flex-col rounded-sm p-2"
-        on:submit|preventDefault={uploadNote}
-      >
-        <label class="neutral-label">
-          <Tr t={Translations.t.notes.createNoteIntro} />
-          <div class="w-full p-1">
-            <ValidatedInput autofocus={true} type="text" value={comment} />
-          </div>
-        </label>
+      <!-- The layer with notes is displayed without filters, so we can add a note without worrying for duplicates -->
+      <div class="flex h-full flex-col justify-between">
+        <form class="flex flex-col rounded-sm p-2" on:submit|preventDefault={uploadNote}>
+          <label class="neutral-label">
+            <Tr t={Translations.t.notes.createNoteIntro} />
+            <div class="w-full p-1">
+              <ValidatedInput autofocus={true} type="text" value={comment} />
+            </div>
+          </label>
+
+          <LoginToggle {state}>
+            <span slot="loading"><!--empty: don't show a loading message--></span>
+            <div slot="not-logged-in" class="alert">
+              <Tr t={Translations.t.notes.warnAnonymous} />
+            </div>
+          </LoginToggle>
+
+          {#if $comment?.length >= 3}
+            <NextButton on:click={uploadNote} clss="self-end primary">
+              <AddSmall slot="image" class="mr-4 h-8 w-8" />
+              <Tr t={Translations.t.notes.createNote} />
+            </NextButton>
+          {:else}
+            <div class="alert">
+              <Tr t={Translations.t.notes.textNeeded} />
+            </div>
+          {/if}
+        </form>
 
         <div class="h-56 w-full">
           <NewPointLocationInput value={coordinate} {state}>
@@ -127,35 +151,7 @@
             </div>
           </NewPointLocationInput>
         </div>
-
-        <LoginToggle {state}>
-          <span slot="loading"><!--empty: don't show a loading message--></span>
-          <div slot="not-logged-in" class="alert">
-            <Tr t={Translations.t.notes.warnAnonymous} />
-          </div>
-        </LoginToggle>
-
-        {#if $comment?.length >= 3}
-          <NextButton on:click={uploadNote} clss="self-end primary">
-            <AddSmall slot="image" class="mr-4 h-8 w-8" />
-            <Tr t={Translations.t.notes.createNote} />
-          </NextButton>
-        {:else}
-          <div class="alert">
-            <Tr t={Translations.t.notes.textNeeded} />
-          </div>
-        {/if}
-      </form>
-    {/if}
-  {:else}
-    <div class="flex flex-col">
-      <div class="alert">
-        <Tr t={Translations.t.notes.noteLayerNotEnabled} />
       </div>
-      <SubtleButton on:click={enableNoteLayer}>
-        <Layers slot="image" class="mr-4 h-8 w-8" />
-        <Tr slot="message" t={Translations.t.notes.noteLayerDoEnable} />
-      </SubtleButton>
-    </div>
-  {/if}
+    {/if}
+  </TitledPanel>
 {/if}

@@ -2,25 +2,16 @@
 
 # ticket_machine
 
-
-
-
 Find ticket machines for public transport tickets
 
-
-
-
-
-
  - This layer is shown at zoomlevel **18** and higher
-
-
 
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [repeated](#repeated)
   - [single_level](#single_level)
@@ -32,16 +23,19 @@ Find ticket machines for public transport tickets
   - [move-button](#move-button)
   - [delete-button](#delete-button)
   - [lod](#lod)
+5. [Filters](#filters)
 
 ## Themes using this layer
-
-
 
  - [personal](https://mapcomplete.org/personal)
  - [stations](https://mapcomplete.org/stations)
  - [vending_machine](https://mapcomplete.org/vending_machine)
 
+## Presets
 
+The following options to create new points are included:
+
+ - **a ticket machine** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dvending_machine' target='_blank'>vending_machine</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Dpublic_transport_tickets' target='_blank'>public_transport_tickets</a>
 
 ## Basic tags for this layer
 
@@ -63,16 +57,10 @@ Elements must match **all** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/payment:coins:denominations#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/payment%3Acoins%3Adenominations/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [payment:coins:denominations](https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations) | Multiple choice | [0.01 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.01 EUR) [0.02 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.02 EUR) [0.05 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.05 EUR) [0.10 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.10 EUR) [0.20 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.20 EUR) [0.50 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.50 EUR) [1 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D1 EUR) [2 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D2 EUR) [0.05 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.05 CHF) [0.10 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.10 CHF) [0.20 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.20 CHF) [0.50 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.50 CHF) [1 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D1 CHF) [2 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D2 CHF) [5 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D5 CHF) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/payment:notes:denominations#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/payment%3Anotes%3Adenominations/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [payment:notes:denominations](https://wiki.openstreetmap.org/wiki/Key:payment:notes:denominations) | Multiple choice | [5 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D5 EUR) [10 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D10 EUR) [20 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D20 EUR) [50 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D50 EUR) [100 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D100 EUR) [200 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D200 EUR) [500 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D500 EUR) [10 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D10 CHF) [20 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D20 CHF) [50 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D50 CHF) [100 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D100 CHF) [200 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D200 CHF) [1000 CHF](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D1000 CHF) |
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
-
-
-
 
 ### repeated
 
@@ -88,14 +76,11 @@ This tagrendering has labels
 The question is `On what level is this feature located?`
 *Located on the {level}th floor* is shown if `level` is set
 
-
  -  *Located underground* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>. _This option cannot be chosen as answer_
  -  *Located on the ground floor* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D0' target='_blank'>0</a>
  -  *Located on the ground floor* is shown if with level=. _This option cannot be chosen as answer_
  -  *Located on the first floor* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>
  -  *Located on the first basement level* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D-1' target='_blank'>-1</a>
-
-
 
 This tagrendering has labels 
 `level`
@@ -105,18 +90,11 @@ This tagrendering has labels
 The question is `Who is the operator of this ticket machine?`
 *This ticket machine is operated by {operator}* is shown if `operator` is set
 
-
  -  *Dutch Railways (NS)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:operator' target='_blank'>operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator%3DNederlandse Spoorwegen' target='_blank'>Nederlandse Spoorwegen</a>
-
-
-
-
 
 ### payment-options-split
 
 The question is `Which methods of payment are accepted here?`
-
-
 
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/cash.svg' style='width: 3rem; height: 3rem'> *Cash is accepted here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dyes' target='_blank'>yes</a>. _This option cannot be chosen as answer_. Unselecting this answer will add payment:cash=
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/payment_card.svg' style='width: 3rem; height: 3rem'> *Payment cards are accepted here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dyes' target='_blank'>yes</a>. _This option cannot be chosen as answer_. Unselecting this answer will add payment:cards=
@@ -126,15 +104,9 @@ The question is `Which methods of payment are accepted here?`
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/payment_card.svg' style='width: 3rem; height: 3rem'> *Debit cards are accepted here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:debit_cards' target='_blank'>payment:debit_cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:debit_cards%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:debit_cards' target='_blank'>payment:debit_cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:debit_cards%3Dno' target='_blank'>no</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/payment_card.svg' style='width: 3rem; height: 3rem'> *Credit cards are accepted here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:credit_cards' target='_blank'>payment:credit_cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:credit_cards%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:credit_cards' target='_blank'>payment:credit_cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:credit_cards%3Dno' target='_blank'>no</a>
 
-
-
-
-
 ### denominations-coins
 
 The question is `What coins can you use to pay here?`
-
-
 
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/denominations/eur/1cent.svg' style='width: 3rem; height: 3rem'> *1 cent coins are accepted* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.01 EUR' target='_blank'>0.01 EUR</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/denominations/eur/2cent.svg' style='width: 3rem; height: 3rem'> *2 cent coins are accepted* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.02 EUR' target='_blank'>0.02 EUR</a>
@@ -152,15 +124,11 @@ The question is `What coins can you use to pay here?`
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/denominations/chf/2fr-2019-800px.png' style='width: 3rem; height: 3rem'> *2 francs coins are accepted* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D2 CHF' target='_blank'>2 CHF</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/denominations/chf/5fr-2019-800px.png' style='width: 3rem; height: 3rem'> *5 francs coins are accepted* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations' target='_blank'>payment:coins:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D5 CHF' target='_blank'>5 CHF</a>
 
-
 This tagrendering is only visible in the popup if the following condition is met: (<a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins' target='_blank'>payment:coins</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins%3Dyes' target='_blank'>yes</a>) & (_currency~^(.*EUR.*)$ | _currency~^(.*CHF.*)$)
-
 
 ### denominations-notes
 
 The question is `what notes can you use to pay here?`
-
-
 
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/denominations/eur/5euro.svg' style='width: 3rem; height: 3rem'> *5 euro notes are accepted* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes:denominations' target='_blank'>payment:notes:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D5 EUR' target='_blank'>5 EUR</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/denominations/eur/10euro.svg' style='width: 3rem; height: 3rem'> *10 euro notes are accepted* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes:denominations' target='_blank'>payment:notes:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D10 EUR' target='_blank'>10 EUR</a>
@@ -176,42 +144,41 @@ The question is `what notes can you use to pay here?`
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/denominations/chf/200chf.svg' style='width: 3rem; height: 3rem'> *200 francs notes are accepted* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes:denominations' target='_blank'>payment:notes:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D200 CHF' target='_blank'>200 CHF</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/denominations/chf/1000chf.svg' style='width: 3rem; height: 3rem'> *1000 francs notes are accepted* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes:denominations' target='_blank'>payment:notes:denominations</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D1000 CHF' target='_blank'>1000 CHF</a>
 
-
 This tagrendering is only visible in the popup if the following condition is met: (<a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes' target='_blank'>payment:notes</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes%3Dyes' target='_blank'>yes</a>) & (_currency~^(.*EUR.*)$ | _currency~^(.*CHF.*)$)
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### move-button
 
 _This tagrendering has no question and is thus read-only_
 *{move_button()}*
-
-
-
 
 ### delete-button
 
 _This tagrendering has no question and is thus read-only_
 *{delete_button()}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
 
-
 This tagrendering has labels 
 `added_by_default`
+
+## Filters
+
+| id | question | osmTags |
+-----|-----|----- |
+| accepts_cash.0 | Accepts cash | payment:cash=yes |
+
+| id | question | osmTags |
+-----|-----|----- |
+| accepts_cards.0 | Accepts payment cards | payment:cards=yes |
+
 
 
 This document is autogenerated from [assets/layers/ticket_machine/ticket_machine.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/ticket_machine/ticket_machine.json)

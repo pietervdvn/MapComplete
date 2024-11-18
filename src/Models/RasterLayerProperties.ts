@@ -1,13 +1,15 @@
-export type EliCategory =
-    | "photo"
-    | "map"
-    | "historicmap"
-    | "osmbasedmap"
-    | "historicphoto"
-    | "qa"
-    | "elevation"
-    | "overlay"
-    | "other"
+export const eliCategory = [
+    "photo",
+    "map",
+    "historicmap",
+    "osmbasedmap",
+    "historicphoto",
+    "qa",
+    "elevation",
+    "overlay",
+    "other",
+] as const
+export type EliCategory = (typeof eliCategory)[number]
 
 /**
  * This class has grown beyond the point of only containing Raster Layers

@@ -8,12 +8,9 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [maproulette](../Layers/maproulette.md)
 
-
 Available languages:
-
 
  - en
  - de
@@ -26,7 +23,7 @@ Available languages:
  - cs
  - zh_Hant
  - pl
-
+ - hu
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

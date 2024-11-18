@@ -2,25 +2,16 @@
 
 # ambulancestation
 
-
-
-
 An ambulance station is an area for storage of ambulance vehicles, medical equipment, personal protective equipment, and other medical supplies.
 
-
-
-
-
-
  - This layer is shown at zoomlevel **12** and higher
-
-
 
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [ambulance-name](#ambulance-name)
   - [ambulance-street](#ambulance-street)
   - [ambulance-place](#ambulance-place)
@@ -28,16 +19,20 @@ An ambulance station is an area for storage of ambulance vehicles, medical equip
   - [ambulance-operator-type](#ambulance-operator-type)
   - [images](#images)
   - [leftover-questions](#leftover-questions)
+  - [move-button](#move-button)
   - [lod](#lod)
 
 ## Themes using this layer
 
-
-
+ - [disaster_response](https://mapcomplete.org/disaster_response)
  - [hailhydrant](https://mapcomplete.org/hailhydrant)
  - [personal](https://mapcomplete.org/personal)
 
+## Presets
 
+The following options to create new points are included:
+
+ - **an ambulance station** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:emergency' target='_blank'>emergency</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:emergency%3Dambulance_station' target='_blank'>ambulance_station</a>
 
 ## Basic tags for this layer
 
@@ -57,77 +52,55 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/operator#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/operator/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [operator](https://wiki.openstreetmap.org/wiki/Key:operator) | [string](../SpecialInputElements.md#string) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/operator:type#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/operator%3Atype/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [operator:type](https://wiki.openstreetmap.org/wiki/Key:operator:type) | [string](../SpecialInputElements.md#string) | [government](https://wiki.openstreetmap.org/wiki/Tag:operator:type%3Dgovernment) [community](https://wiki.openstreetmap.org/wiki/Tag:operator:type%3Dcommunity) [ngo](https://wiki.openstreetmap.org/wiki/Tag:operator:type%3Dngo) [private](https://wiki.openstreetmap.org/wiki/Tag:operator:type%3Dprivate) |
 
-
-
-
 ### ambulance-name
 
 The question is `What is the name of this ambulance station?`
 *This station is called {name}.* is shown if `name` is set
-
-
-
 
 ### ambulance-street
 
 The question is `What is the street name where the station located?`
 *This station is along a highway called {addr:street}.* is shown if `addr:street` is set
 
-
-
-
 ### ambulance-place
 
 The question is `Where is the station located? (e.g. name of neighborhood, villlage, or town)`
 *This station is found within {addr:place}.* is shown if `addr:place` is set
-
-
-
 
 ### ambulance-agency
 
 The question is `What agency operates this station?`
 *This station is operated by {operator}.* is shown if `operator` is set
 
-
-
-
 ### ambulance-operator-type
 
 The question is `How is the station operator classified?`
 *The operator is a(n) {operator:type} entity.* is shown if `operator:type` is set
-
 
  -  *The station is operated by the government.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:operator:type' target='_blank'>operator:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator:type%3Dgovernment' target='_blank'>government</a>
  -  *The station is operated by a community-based, or informal organization.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:operator:type' target='_blank'>operator:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator:type%3Dcommunity' target='_blank'>community</a>
  -  *The station is operated by a formal group of volunteers.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:operator:type' target='_blank'>operator:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator:type%3Dngo' target='_blank'>ngo</a>
  -  *The station is privately operated.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:operator:type' target='_blank'>operator:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator:type%3Dprivate' target='_blank'>private</a>
 
-
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
-
-
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
+### move-button
 
-
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
 
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

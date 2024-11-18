@@ -5,7 +5,8 @@
     "nl": "Een dummy-laag die tagrenderings bevat, gedeeld over de verschillende klimsport lagen",
     "de": "Eine Dummy-Ebene, die Tagrenderings enthält, die von den Kletterebenen gemeinsam genutzt werden",
     "cs": "Falešná vrstva, která obsahuje tagrenderingy sdílené mezi lezeckými vrstvami",
-    "ca": "Una capa fictícia que conté renderització d'etiquetes compartides entre les capes d'escalada"
+    "ca": "Una capa fictícia que conté renderització d'etiquetes compartides entre les capes d'escalada",
+    "es": "Una capa ficticia que contiene representaciones de etiquetas, compartidas entre las capas de escalada"
   },
   "source": "special:library",
   "minzoom": 18,
@@ -23,7 +24,8 @@
         "ru": "Есть ли (неофициальный) веб-сайт с более подробной информацией (напр., topos)?",
         "fr": "Existe-t’il un site avec plus d’informations (ex : topographie) ?",
         "it": "C’è un sito web (anche non ufficiale) con qualche informazione in più (ad es. topografie)?",
-        "cs": "Existuje (neoficiální) webová stránka s více informacemi (např. topos)?"
+        "cs": "Existuje (neoficiální) webová stránka s více informacemi (např. topos)?",
+        "es": "¿Hay una página web (no oficial) con más información (p. ej., croquis)?"
       },
       "condition": {
         "and": [
@@ -48,7 +50,7 @@
         "ja": "ルートの長さは平均で<b>{canonical(climbing:length)}</b>です",
         "fr": "Les voies font <b>{canonical(climbing:length)}</b> de long en moyenne",
         "it": "Le vie sono lunghe mediamente <b>{canonical(climbing:length)}</b>",
-        "es": "Las rutas miden <b>{canonical(climbing:length)}</b> de media",
+        "es": "Las vías tienen una longitud promedio de <b>{canonical(climbing:length)}</b>",
         "ca": "Les rutes mesuren <b>{canonical(climbing:length)}</b> de mitja",
         "cs": "Cesty jsou <b>{canonical(climbing:length)}</b> v průměru dlouhé"
       },
@@ -59,7 +61,7 @@
         "ja": "ルートの(平均)長さはメートル単位でいくつですか?",
         "fr": "Quelle est la longueur moyenne des voies en mètres ?",
         "it": "Quale è la lunghezza (media) delle vie in metri?",
-        "es": "¿Cual es la longitud (media) de las rutas en metros?",
+        "es": "¿Cuál es la longitud (promedio) de las vías en metros?",
         "ca": "Quina és la longitud (mitjana) de les rutes en metres?",
         "cs": "Jaká je (průměrná) délka tras v metrech?"
       },
@@ -77,7 +79,8 @@
         "ja": "ここで一番簡単なルートのレベルは、フランスのランク評価システムで何ですか?",
         "fr": "Quel est le niveau de la voie la plus simple selon la classification franco-belge ?",
         "it": "Qual è il livello della via più facile qua, secondo il sistema di classificazione francese?",
-        "cs": "Jaký je stupeň nejjednodušší trasy podle francouzského klasifikačního systému?"
+        "cs": "Jaký je stupeň nejjednodušší trasy podle francouzského klasifikačního systému?",
+        "es": "¿Cuál es el grado de la vía más fácil aquí, según el sistema de clasificación francés?"
       },
       "render": {
         "de": "Die leichteste Route hat hier die Schwierigkeit {climbing:grade:french:min} (französisch/belgisches System)",
@@ -86,7 +89,8 @@
         "ja": "フランス/ベルギーのランク評価システムでは、最小の難易度は{climbing:grade:french:min}です",
         "fr": "La difficulté minimale est {climbing:grade:french:min} selon la classification franco-belge",
         "it": "Il minimo livello di difficoltà è {climbing:grade:french:min} secondo il sistema francese/belga",
-        "cs": "Nejnižší stupeň je {climbing:grade:french:min} podle francouzského/belgického systému"
+        "cs": "Nejnižší stupeň je {climbing:grade:french:min} podle francouzského/belgického systému",
+        "es": "El grado más bajo es {climbing:grade:french:min} según el sistema francés/belga"
       },
       "freeform": {
         "key": "climbing:grade:french:min"
@@ -101,7 +105,8 @@
         "ja": "フランスのランク評価によると、ここで一番難しいルートのレベルはどれくらいですか?",
         "fr": "Quel est le niveau de la voie la plus difficile selon la classification franco-belge ?",
         "it": "Qual è il livello della via più difficile qua, secondo il sistema di classificazione francese?",
-        "cs": "Jaká je zde trasa nejvyššího stupně podle francouzského klasifikačního systému?"
+        "cs": "Jaká je zde trasa nejvyššího stupně podle francouzského klasifikačního systému?",
+        "es": "¿Cuál es la vía de mayor grado aquí, según el sistema de clasificación francés?"
       },
       "render": {
         "de": "Die schwierigste Route hat hier die Schwierigkeitsstufe {climbing:grade:french:max} (französisch/belgisches System)",
@@ -110,7 +115,8 @@
         "ja": "フランス/ベルギーのランク評価システムでは、最大の難易度は{climbing:grade:french:max}です",
         "fr": "La difficulté maximale est {climbing:grade:french:max} selon la classification franco-belge",
         "it": "Il massimo livello di difficoltà è {climbing:grade:french:max} secondo il sistema francese/belga",
-        "cs": "Nejvyšší stupeň je {climbing:grade:french:max} podle francouzského/belgického systému"
+        "cs": "Nejvyšší stupeň je {climbing:grade:french:max} podle francouzského/belgického systému",
+        "es": "El grado más alto es {climbing:grade:french:max} según el sistema francés/belga"
       },
       "freeform": {
         "key": "climbing:grade:french:max"
@@ -140,7 +146,8 @@
         "fr": "L’escalade de bloc est-elle possible ici ?",
         "it": "È possibile praticare ‘bouldering’ qua?",
         "ca": "És possible fer escalda en bloc aquí?",
-        "cs": "Je zde možný bouldering?"
+        "cs": "Je zde možný bouldering?",
+        "es": "¿Es posible el búlder aquí?"
       },
       "mappings": [
         {
@@ -154,7 +161,8 @@
             "fr": "L’escalade de bloc est possible",
             "it": "L’arrampicata su massi è possibile qua",
             "ca": "Aquí és possible l'escalada en bloc",
-            "cs": "Bouldering je zde možný"
+            "cs": "Bouldering je zde možný",
+            "es": "El búlder es posible aquí"
           }
         },
         {
@@ -168,7 +176,8 @@
             "fr": "L’escalade de bloc n’est pas possible",
             "it": "L’arrampicata su massi non è possibile qua",
             "ca": "Aquí no és possible l'escalada en bloc",
-            "cs": "Bouldering zde není možný"
+            "cs": "Bouldering zde není možný",
+            "es": "El búlder no es posible aquí"
           }
         },
         {
@@ -181,7 +190,8 @@
             "fr": "L’escalade de bloc est possible, mais il n’y a que quelques problèmes",
             "it": "L’arrampicata su massi è possibile anche se su poche vie",
             "ca": "L'escalada en bloc és possible, tot i que només hi ha unes poques rutes",
-            "cs": "Bouldering je možný, i když je zde jen několik problémů"
+            "cs": "Bouldering je možný, i když je zde jen několik problémů",
+            "es": "El búlder es posible, aunque solo hay algunos problemas"
           }
         },
         {
@@ -194,7 +204,8 @@
             "fr": "Il y a {climbing:boulder} problèmes de bloc",
             "it": "Sono presenti {climbing:boulder} vie di arrampicata su massi",
             "ca": "Hi han {climbing:boulder} problemes d'escalada en bloc",
-            "cs": "Existují {climbing:boulder} boulderové problémy"
+            "cs": "Existují {climbing:boulder} boulderové problémy",
+            "es": "Hay {climbing:boulder} problemas de búlder"
           },
           "hideInAnswer": true
         }
@@ -209,7 +220,8 @@
         "ja": "ここでtoprope登坂はできますか?",
         "fr": "Est-il possible d’escalader à la moulinette ?",
         "it": "È possibile arrampicarsi con la corda dall’alto qua?",
-        "cs": "Je zde možné lezení po laně?"
+        "cs": "Je zde možné lezení po laně?",
+        "es": "¿Es posible la escalada con cuerda desde arriba aquí?"
       },
       "mappings": [
         {
@@ -221,7 +233,8 @@
             "ja": "ここでToprope登坂ができます",
             "fr": "L’escalade à la moulinette est possible",
             "it": "È possibile arrampicarsi con moulinette qua",
-            "cs": "Lezení po laně je zde možné"
+            "cs": "Lezení po laně je zde možné",
+            "es": "La escalada con cuerda desde arriba es posible aquí"
           }
         },
         {
@@ -233,7 +246,8 @@
             "ja": "ここではToprope登坂はできません",
             "fr": "L’escalade à la moulinette n’est pas possible",
             "it": "Non è possibile arrampicarsi con moulinette qua",
-            "cs": "Lezení po laně zde není možné"
+            "cs": "Lezení po laně zde není možné",
+            "es": "La escalada con cuerda desde arriba no es posible aquí"
           }
         },
         {
@@ -245,7 +259,8 @@
             "ja": "{climbing:toprope} 登坂ルートがある",
             "fr": "{climbing:toprope} voies sont équipées de moulinettes",
             "it": "Sono presenti {climbing:toprope} vie con moulinette",
-            "cs": "Je zde {climbing:toprope} tras pro lezení na laně"
+            "cs": "Je zde {climbing:toprope} tras pro lezení na laně",
+            "es": "Hay {climbing:toprope} vías de escalada con cuerda desde arriba"
           },
           "hideInAnswer": true
         }
@@ -259,7 +274,8 @@
         "nl": "Is het mogelijk om hier te sportklimmen/voorklimmen op reeds aangebrachte haken?",
         "ja": "ここでは固定アンカー式のスポーツクライミングはできますか?",
         "it": "È possibile arrampicarsi qua con ancoraggi fissi?",
-        "cs": "Je zde možné sportovní lezení na fixní kotvy?"
+        "cs": "Je zde možné sportovní lezení na fixní kotvy?",
+        "es": "¿Es posible la escalada deportiva aquí en anclajes fijos?"
       },
       "mappings": [
         {
@@ -273,7 +289,8 @@
             "it": "L’arrampicata sportiva è possibile qua",
             "hu": "Itt lehetőség van sportmászásra",
             "fr": "De l’escalade est possible ici",
-            "cs": "Sportovní lezení je zde možné"
+            "cs": "Sportovní lezení je zde možné",
+            "es": "La escalada deportiva es posible aquí"
           }
         },
         {
@@ -287,7 +304,8 @@
             "it": "L’arrampicata sportiva non è possibile qua",
             "hu": "Itt nincs lehetőség sportmászásra",
             "fr": "L’escalade est impossible ici",
-            "cs": "Sportovní lezení zde není možné"
+            "cs": "Sportovní lezení zde není možné",
+            "es": "La escalada deportiva no es posible aquí"
           }
         },
         {
@@ -298,7 +316,8 @@
             "nl": "Er zijn hier {climbing:sport} sportklimroutes/voorklimroutes",
             "ja": "スポーツクライミングの {climbing:sport} ルートがある",
             "it": "Sono presenti {climbing:sport} vie di arrampicata sportiva",
-            "cs": "Existují {climbing:sport} sportovních lezeckých cest"
+            "cs": "Existují {climbing:sport} sportovních lezeckých cest",
+            "es": "Hay {climbing:sport} vías de escalada deportiva"
           },
           "hideInAnswer": true
         }
@@ -312,7 +331,8 @@
         "nl": "Is het mogelijk om hier traditioneel te klimmen? ",
         "ja": "伝統的な登山はここで可能ですか？",
         "it": "È possibile arrampicarsi in maniera tradizionale qua?",
-        "cs": "Je zde možné tradiční lezení?"
+        "cs": "Je zde možné tradiční lezení?",
+        "es": "¿Es posible la escalada tradicional aquí?"
       },
       "questionHint": {
         "en": "Using your own gear, e.g. chocks",
@@ -320,7 +340,8 @@
         "nl": "Dit is klimmen met klemblokjes en friends",
         "ja": "例えば、チョックのような独自のギアを使用して",
         "it": "usando attrezzi propri, ad es. dadi",
-        "cs": "Pomocí vlastního zařízení, např. klíny"
+        "cs": "Pomocí vlastního zařízení, např. klíny",
+        "es": "Usando tu propio equipo, p. ej., fisureros"
       },
       "mappings": [
         {
@@ -331,7 +352,8 @@
             "nl": "Traditioneel klimmen kan hier",
             "ja": "ここでは伝統的な登山が可能です",
             "it": "L’arrampicata tradizionale è possibile qua",
-            "cs": "Zde je možné provozovat tradiční lezení"
+            "cs": "Zde je možné provozovat tradiční lezení",
+            "es": "La escalada tradicional es posible aquí"
           }
         },
         {
@@ -342,7 +364,8 @@
             "nl": "Traditioneel klimmen kan hier niet",
             "ja": "伝統的な登山はここではできない",
             "it": "L’arrampicata tradizionale non è possibile qua",
-            "cs": "Tradiční lezení zde není možné"
+            "cs": "Tradiční lezení zde není možné",
+            "es": "La escalada tradicional no es posible aquí"
           }
         },
         {
@@ -353,7 +376,8 @@
             "nl": "Er zijn hier {climbing:traditional} traditionele klimroutes",
             "ja": "{climbing:traditional} の伝統的な登山ルートがある",
             "it": "Sono presenti {climbing:traditional} vie di arrampicata tradizionale",
-            "cs": "Existují {climbing:traditional} tradiční lezecké cesty"
+            "cs": "Existují {climbing:traditional} tradiční lezecké cesty",
+            "es": "Hay {climbing:traditional} vías de escalada tradicional"
           },
           "hideInAnswer": true
         }
@@ -365,12 +389,14 @@
         "en": "How many bolts do routes in {title()} have at most?",
         "de": "Wie viele Haken haben die Routen in {title()} maximal?",
         "nl": "Wat is het maximum aantal bouten in routes ban {title()}?",
-        "cs": "Kolik šroubů na trasu {title()} je potřeba?"
+        "cs": "Kolik šroubů na trasu {title()} je potřeba?",
+        "es": "¿Cuántos parabolts tienen como máximo las vías en {title()}?"
       },
       "render": {
         "en": "The sport climbing routes here have at most {climbing:bolts:max} bolts.<div class='subtle'>This is without relays and indicates how much quickdraws a climber needs</div>",
         "de": "Die Sportkletterrouten hier haben maximal {climbing:bolts:max} Haken.<div class='subtle'>Dies ist ohne Relais und gibt an, wie viel Schnellspanner ein Kletterer braucht</div>",
-        "nl": "De sportklimroutes hebben maximaal {climbing:bolts:max} bouten. <div class='subtle'>Hierbij worden relays niet meegteld. Dit geeft aan hoeveel klimsetjes een klimmer nodig heeft</div>"
+        "nl": "De sportklimroutes hebben maximaal {climbing:bolts:max} bouten. <div class='subtle'>Hierbij worden relays niet meegteld. Dit geeft aan hoeveel klimsetjes een klimmer nodig heeft</div>",
+        "es": "Las vías de escalada deportiva aquí tienen como máximo {climbing:bolts:max} parabolts.<div class='subtle'>Esto es sin reuniones e indica cuántos cintas exprés necesita un escalador</div>"
       },
       "freeform": {
         "key": "climbing:bolts:max",
@@ -385,7 +411,7 @@
       "id": "fee",
       "question": {
         "en": "Is a fee required to climb here?",
-        "es": "¿Se requiere una tasa para escalar aquí?",
+        "es": "¿Se requiere una tarifa para escalar aquí?",
         "de": "Ist das Klettern hier gebührenpflichtig?",
         "nl": "Moet men betalen om hier te klimmen?",
         "fr": "Est-ce que la grimpe sur ce site est payante ?",
@@ -395,7 +421,7 @@
       "render": {
         "en": "A fee of {charge} should be paid for climbing here",
         "de": "Zum Klettern wird eine Gebühr von {charge} erhoben",
-        "es": "Se debe de pagar una tasa de {charge} para escalar aquí",
+        "es": "Se debe pagar una tarifa de {charge} para escalar aquí",
         "nl": "Men moet {charge} betalen om hier te klimmen",
         "fr": "Une taxe de {charge} doit être payée pour grimper ici",
         "ca": "S'ha de pagar una tarifa de {charge} per a escalar aquí",
@@ -417,7 +443,7 @@
           "then": {
             "en": "Climbing here is free of charge",
             "de": "Das Klettern ist hier kostenlos",
-            "es": "La escalada es gratis",
+            "es": "Escalar aquí es gratuito",
             "nl": "Hier klimmen is gratis",
             "fr": "Grimper ici est gratuit",
             "ca": "L'escalada en bloc aquí és gratuïta",
@@ -433,7 +459,7 @@
           },
           "then": {
             "en": "Paying a fee is required to climb here",
-            "es": "Hay que pagar una tasa para escalar aquí",
+            "es": "Se requiere pagar una tarifa para escalar aquí",
             "de": "Zum Klettern ist eine Gebühr zu zahlen",
             "nl": "Men moet betalen om hier te klimmen",
             "fr": "Il faut payer une taxe pour grimper ici",
@@ -444,5 +470,9 @@
         }
       ]
     }
-  ]
+  ],
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": false
+  }
 }

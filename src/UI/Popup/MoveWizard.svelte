@@ -10,17 +10,16 @@
   import type { MapProperties } from "../../Models/MapProperties"
   import type { Feature, Point } from "geojson"
   import { GeoOperations } from "../../Logic/GeoOperations"
-  import LocationInput from "../InputElement/Helpers/LocationInput.svelte"
   import OpenBackgroundSelectorButton from "../BigComponents/OpenBackgroundSelectorButton.svelte"
-  import Geosearch from "../BigComponents/Geosearch.svelte"
   import If from "../Base/If.svelte"
   import Constants from "../../Models/Constants"
   import LoginToggle from "../Base/LoginToggle.svelte"
   import AccordionSingle from "../Flowbite/AccordionSingle.svelte"
-  import BackButton from "../Base/BackButton.svelte"
   import ChevronLeft from "@babeard/svelte-heroicons/solid/ChevronLeft"
   import ThemeViewState from "../../Models/ThemeViewState"
   import Icon from "../Map/Icon.svelte"
+  import NewPointLocationInput from "../BigComponents/NewPointLocationInput.svelte"
+  import type { WayId } from "../../Models/OsmFeature"
 
   export let state: ThemeViewState
 
@@ -36,20 +35,22 @@
 
   let newLocation = new UIEventSource<{ lon: number; lat: number }>(undefined)
 
-  function initMapProperties() {
+  let snappedTo = new UIEventSource<WayId | undefined>(undefined)
+
+  function initMapProperties(reason: MoveReason) {
     return <any>{
       allowMoving: new UIEventSource(true),
       allowRotating: new UIEventSource(false),
       allowZooming: new UIEventSource(true),
       bounds: new UIEventSource(undefined),
       location: new UIEventSource({ lon, lat }),
-      minzoom: new UIEventSource($reason.minZoom),
+      minzoom: new UIEventSource(reason.minZoom),
       rasterLayer: state.mapProperties.rasterLayer,
-      zoom: new UIEventSource($reason?.startZoom ?? 16),
+      zoom: new UIEventSource(reason?.startZoom ?? 16),
     }
   }
 
-  let moveWizardState = new MoveWizardState(id, layer.allowMove, state)
+  let moveWizardState = new MoveWizardState(id, layer.allowMove, layer, state)
   if (moveWizardState.reasons.length === 1) {
     reason.setData(moveWizardState.reasons[0])
   }
@@ -57,8 +58,8 @@
   let currentMapProperties: MapProperties = undefined
 </script>
 
-<LoginToggle {state}>
-  {#if moveWizardState.reasons.length > 0}
+{#if moveWizardState.reasons.length > 0}
+  <LoginToggle {state}>
     {#if $notAllowed}
       <div class="m-2 flex rounded-lg bg-gray-200 p-2">
         <Move_not_allowed class="m-2 h-8 w-8" />
@@ -82,6 +83,7 @@
           {#if currentStep === "reason" && moveWizardState.reasons.length > 1}
             {#each moveWizardState.reasons as reasonSpec}
               <button
+                class="flex justify-start"
                 on:click={() => {
                   reason.setData(reasonSpec)
                   currentStep = "pick_location"
@@ -93,10 +95,17 @@
             {/each}
           {:else if currentStep === "pick_location" || currentStep === "reason"}
             <div class="relative h-64 w-full">
-              <LocationInput
-                mapProperties={(currentMapProperties = initMapProperties())}
+              <NewPointLocationInput
+                mapProperties={(currentMapProperties = initMapProperties($reason))}
                 value={newLocation}
-                initialCoordinate={{ lon, lat }}
+                {state}
+                coordinate={{ lon, lat }}
+                {snappedTo}
+                maxSnapDistance={$reason.maxSnapDistance ?? 5}
+                snapToLayers={$reason.snapTo}
+                targetLayer={layer}
+                dontShow={[id]}
+                maxDistanceInMeters={200}
               />
               <div class="absolute bottom-0 left-0">
                 <OpenBackgroundSelectorButton {state} />
@@ -104,7 +113,7 @@
             </div>
 
             {#if $reason.includeSearch}
-              <Geosearch bounds={currentMapProperties.bounds} clearAfterView={false} />
+              <!-- TODO -->
             {/if}
 
             <div class="flex flex-wrap">
@@ -116,7 +125,12 @@
                 <button
                   class="primary w-full"
                   on:click={() => {
-                    moveWizardState.moveFeature(newLocation.data, reason.data, featureToMove)
+                    moveWizardState.moveFeature(
+                      newLocation.data,
+                      snappedTo.data,
+                      reason.data,
+                      featureToMove
+                    )
                     currentStep = "moved"
                   }}
                 >
@@ -155,5 +169,5 @@
         </span>
       </AccordionSingle>
     {/if}
-  {/if}
-</LoginToggle>
+  </LoginToggle>
+{/if}

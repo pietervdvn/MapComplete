@@ -8,15 +8,12 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [artwork](../Layers/artwork.md)
  - [memorial](../Layers/memorial.md)
  - [bench](../Layers/bench.md)
  - [walls_and_buildings](../Layers/walls_and_buildings.md)
 
-
 Available languages:
-
 
  - en
  - nl
@@ -40,7 +37,7 @@ Available languages:
  - zgh
  - es
  - eu
-
+ - uk
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

@@ -2,40 +2,34 @@
 
 # grave
 
-
-
-
 Tombstones (and graves) indicate where a person was buried. On this map, those can be recorded and a link to Wikipedia can be made
 
-
-
-
-
-
  - This layer is shown at zoomlevel **15** and higher
-
-
 
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [buried:wikidata](#buriedwikidata)
   - [name](#name)
   - [leftover-questions](#leftover-questions)
+  - [move-button](#move-button)
   - [lod](#lod)
-4. [Filters](#filters)
+5. [Filters](#filters)
 
 ## Themes using this layer
-
-
 
  - [memorials](https://mapcomplete.org/memorials)
  - [personal](https://mapcomplete.org/personal)
 
+## Presets
 
+The following options to create new points are included:
+
+ - **a tombstone** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:historic' target='_blank'>historic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:historic%3Dtomb' target='_blank'>tomb</a>
 
 ## Basic tags for this layer
 
@@ -52,60 +46,46 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/buried:wikidata#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/buried%3Awikidata/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [buried:wikidata](https://wiki.openstreetmap.org/wiki/Key:buried:wikidata) | [wikidata](../SpecialInputElements.md#wikidata) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/name#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/name/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [name](https://wiki.openstreetmap.org/wiki/Key:name) | [string](../SpecialInputElements.md#string) |  |
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
-
-
-
 
 ### buried:wikidata
 
 The question is `What is the Wikipedia page of the person buried here?`
 *{wikipedia(buried:wikidata)}* is shown if `buried:wikidata` is set
 
-
-
-
 ### name
 
 The question is `What is the name of the person buried here?`
 *<b>{name}</b> is buried here* is shown if `name` is set
-
-
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
+### move-button
 
-
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
 
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
 
-
 This tagrendering has labels 
 `added_by_default`
 
 ## Filters
-
-
 
 | id | question | osmTags |
 -----|-----|----- |
 | has_wikidata.0 | *With or without wikidata* (default) |  |
 | has_wikidata.1 | Has a link to Wikidata | buried:wikidata~.+ |
 | has_wikidata.2 | Has no link to Wikidata | buried:wikidata= |
-
 
 
 

@@ -2,27 +2,18 @@
 
 # surveillance_camera
 
-
-
-
 This layer shows surveillance cameras and allows a contributor to update information and add new cameras
-
-
-
-
-
 
  - This layer is shown at zoomlevel **12** and higher
  - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  preset `a surveillance camera mounted on a wall` snaps to this layer (surveillance_camera.presets[1])
  - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  preset `an ALPR camera (Automatic Number Plate Reader) mounted on a wall` snaps to this layer (surveillance_camera.presets[3])
 
-
-
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [has_alpr](#has_alpr)
   - [Camera type: fixed; panning; dome](#camera-type-fixed;-panning;-dome)
@@ -34,17 +25,23 @@ This layer shows surveillance cameras and allows a contributor to update informa
   - [Surveillance:zone](#surveillancezone)
   - [camera:mount](#cameramount)
   - [leftover-questions](#leftover-questions)
+  - [move-button](#move-button)
   - [delete-button](#delete-button)
   - [lod](#lod)
 
 ## Themes using this layer
 
-
-
  - [personal](https://mapcomplete.org/personal)
  - [surveillance](https://mapcomplete.org/surveillance)
 
+## Presets
 
+The following options to create new points are included:
+
+ - **a surveillance camera** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:man_made' target='_blank'>man_made</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:man_made%3Dsurveillance' target='_blank'>surveillance</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:surveillance:type' target='_blank'>surveillance:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surveillance:type%3Dcamera' target='_blank'>camera</a>
+ - **a surveillance camera mounted on a wall** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:man_made' target='_blank'>man_made</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:man_made%3Dsurveillance' target='_blank'>surveillance</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:surveillance:type' target='_blank'>surveillance:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surveillance:type%3Dcamera' target='_blank'>camera</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:camera:mount' target='_blank'>camera:mount</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:camera:mount%3Dwall' target='_blank'>wall</a> (snaps to layers `walls_and_buildings`)
+ - **an ALPR camera (Automatic Number Plate Reader)** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:man_made' target='_blank'>man_made</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:man_made%3Dsurveillance' target='_blank'>surveillance</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:surveillance:type' target='_blank'>surveillance:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surveillance:type%3DALPR' target='_blank'>ALPR</a>
+ - **an ALPR camera (Automatic Number Plate Reader) mounted on a wall** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:man_made' target='_blank'>man_made</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:man_made%3Dsurveillance' target='_blank'>surveillance</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:surveillance:type' target='_blank'>surveillance:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surveillance:type%3DALPR' target='_blank'>ALPR</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:camera:mount' target='_blank'>camera:mount</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:camera:mount%3Dwall' target='_blank'>wall</a> (snaps to layers `walls_and_buildings`)
 
 ## Basic tags for this layer
 
@@ -71,91 +68,55 @@ Elements must match **all** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/surveillance:zone#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/surveillance%3Azone/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [surveillance:zone](https://wiki.openstreetmap.org/wiki/Key:surveillance:zone) | [string](../SpecialInputElements.md#string) | [parking](https://wiki.openstreetmap.org/wiki/Tag:surveillance:zone%3Dparking) [traffic](https://wiki.openstreetmap.org/wiki/Tag:surveillance:zone%3Dtraffic) [entrance](https://wiki.openstreetmap.org/wiki/Tag:surveillance:zone%3Dentrance) [corridor](https://wiki.openstreetmap.org/wiki/Tag:surveillance:zone%3Dcorridor) [public_transport_platform](https://wiki.openstreetmap.org/wiki/Tag:surveillance:zone%3Dpublic_transport_platform) [shop](https://wiki.openstreetmap.org/wiki/Tag:surveillance:zone%3Dshop) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/camera:mount#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/camera%3Amount/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [camera:mount](https://wiki.openstreetmap.org/wiki/Key:camera:mount) | [string](../SpecialInputElements.md#string) | [wall](https://wiki.openstreetmap.org/wiki/Tag:camera:mount%3Dwall) [pole](https://wiki.openstreetmap.org/wiki/Tag:camera:mount%3Dpole) [ceiling](https://wiki.openstreetmap.org/wiki/Tag:camera:mount%3Dceiling) [street_lamp](https://wiki.openstreetmap.org/wiki/Tag:camera:mount%3Dstreet_lamp) [tree](https://wiki.openstreetmap.org/wiki/Tag:camera:mount%3Dtree) |
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
 
-
-
-
 ### has_alpr
 
 The question is `Can this camera automatically detect license plates?`
 
-
-
  -  *This is a camera without number plate recognition.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:surveillance:type' target='_blank'>surveillance:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surveillance:type%3Dcamera' target='_blank'>camera</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/surveillance_camera/ALPR.svg' style='width: 3rem; height: 3rem'> *This is an ALPR (Automatic License Plate Reader)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:surveillance:type' target='_blank'>surveillance:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surveillance:type%3DALPR' target='_blank'>ALPR</a>
-
-
-
-
 
 ### Camera type: fixed; panning; dome
 
 The question is `What kind of camera is this?`
 
-
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/surveillance/cam_right.svg' style='width: 3rem; height: 3rem'> *A fixed (non-moving) camera* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:camera:type' target='_blank'>camera:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:camera:type%3Dfixed' target='_blank'>fixed</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/surveillance/dome.svg' style='width: 3rem; height: 3rem'> *A dome camera (which can turn)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:camera:type' target='_blank'>camera:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:camera:type%3Ddome' target='_blank'>dome</a>
  -  *A panning camera* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:camera:type' target='_blank'>camera:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:camera:type%3Dpanning' target='_blank'>panning</a>
-
-
-
-
 
 ### camera_direction
 
 The question is `In which geographical direction does this camera film?`
 *Films to a compass heading of {camera:direction}* is shown if `camera:direction` is set
 
-
  -  *Films to a compass heading of {direction}* is shown if with camera:direction= & direction~.+. _This option cannot be chosen as answer_
-
-
-
-
 
 ### Operator
 
 The question is `Who operates this CCTV?`
 *Operated by {operator}* is shown if `operator` is set
 
-
-
-
 ### Surveillance type: public, outdoor, indoor
 
 The question is `What kind of surveillance is this camera?`
-
-
 
  -  *A public area is surveilled, such as a street, a bridge, a square, a park, a train station, a public corridor or tunnel, …* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:surveillance' target='_blank'>surveillance</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surveillance%3Dpublic' target='_blank'>public</a>
  -  *An outdoor, yet private area is surveilled (e.g. a parking lot, a fuel station, courtyard, entrance, private driveway, …)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:surveillance' target='_blank'>surveillance</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surveillance%3Doutdoor' target='_blank'>outdoor</a>
  -  *A private indoor area is surveilled, e.g. a shop, a private underground parking, …* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:surveillance' target='_blank'>surveillance</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surveillance%3Dindoor' target='_blank'>indoor</a>
 
-
-
-
-
 ### is_indoor
 
 The question is `Is the public space surveilled by this camera an indoor or outdoor space?`
-
-
 
  -  *This camera is located indoors* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dyes' target='_blank'>yes</a>
  -  *This camera is located outdoors* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dno' target='_blank'>no</a>
  -  *This camera is probably located outdoors* is shown if with indoor=. _This option cannot be chosen as answer_
 
-
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:surveillance:type' target='_blank'>surveillance:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surveillance:type%3Dpublic' target='_blank'>public</a>
-
 
 ### Level
 
@@ -164,12 +125,10 @@ The question is `On which level is this camera located?`
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:surveillance:type' target='_blank'>surveillance:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surveillance:type%3Dye' target='_blank'>ye</a>
 
-
 ### Surveillance:zone
 
 The question is `What exactly is surveilled here?`
 *Surveills a {surveillance:zone}* is shown if `surveillance:zone` is set
-
 
  -  *Surveills a parking* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:surveillance:zone' target='_blank'>surveillance:zone</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surveillance:zone%3Dparking' target='_blank'>parking</a>
  -  *Surveills the traffic* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:surveillance:zone' target='_blank'>surveillance:zone</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surveillance:zone%3Dtraffic' target='_blank'>traffic</a>
@@ -178,15 +137,10 @@ The question is `What exactly is surveilled here?`
  -  *Surveills a public tranport platform* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:surveillance:zone' target='_blank'>surveillance:zone</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surveillance:zone%3Dpublic_transport_platform' target='_blank'>public_transport_platform</a>
  -  *Surveills a shop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:surveillance:zone' target='_blank'>surveillance:zone</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surveillance:zone%3Dshop' target='_blank'>shop</a>
 
-
-
-
-
 ### camera:mount
 
 The question is `How is this camera placed?`
 *Mounting method: {camera:mount}* is shown if `camera:mount` is set
-
 
  -  *This camera is placed against a wall* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:camera:mount' target='_blank'>camera:mount</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:camera:mount%3Dwall' target='_blank'>wall</a>
  -  *This camera is placed on a pole* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:camera:mount' target='_blank'>camera:mount</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:camera:mount%3Dpole' target='_blank'>pole</a>
@@ -194,31 +148,25 @@ The question is `How is this camera placed?`
  -  *This camera is placed on a street light* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:camera:mount' target='_blank'>camera:mount</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:camera:mount%3Dstreet_lamp' target='_blank'>street_lamp</a>
  -  *This camera is placed on a tree* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:camera:mount' target='_blank'>camera:mount</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:camera:mount%3Dtree' target='_blank'>tree</a>
 
-
-
-
-
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
+### move-button
 
-
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
 
 ### delete-button
 
 _This tagrendering has no question and is thus read-only_
 *{delete_button()}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

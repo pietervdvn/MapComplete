@@ -86,7 +86,7 @@ export default class FilteredLayer {
     ) {
         let isDisplayed: UIEventSource<boolean>
         if (layer.syncSelection === "local") {
-            isDisplayed = LocalStorageSource.GetParsed(
+            isDisplayed = LocalStorageSource.getParsed(
                 context + "-layer-" + layer.id + "-enabled",
                 layer.shownByDefault
             )
@@ -131,6 +131,18 @@ export default class FilteredLayer {
         return values
     }
 
+    /**
+     * import Translations from "../UI/i18n/Translations"
+     * import { RegexTag } from "../Logic/Tags/RegexTag"
+     * import { ComparingTag } from "../Logic/Tags/ComparingTag"
+     *
+     * const option: FilterConfigOption = {question: Translations.T("question"), osmTags: undefined, originalTagsSpec: "key~.*{search}.*", fields: [{name: "search", type: "string"}]  }
+     * FilteredLayer.fieldsToTags(option, {search: "value_regex"}) // => new RegexTag("key", /^(.*(value_regex).*)$/s)
+     *
+     * const option: FilterConfigOption = {question: Translations.T("question"), searchTerms: undefined, osmTags: undefined, originalTagsSpec: "edit_time>{search}", fields: [{name: "search", type: "date"}]  }
+     * const comparingTag = FilteredLayer.fieldsToTags(option, {search: "2024-09-20"})
+     * comparingTag.asJson() // => "edit_time>1726790400000"
+     */
     private static fieldsToTags(
         option: FilterConfigOption,
         fieldstate: string | Record<string, string>
@@ -153,7 +165,12 @@ export default class FilteredLayer {
             }
 
             for (const key in properties) {
-                v = (<string>v).replace("{" + key + "}", properties[key])
+                const needsParentheses = v.match(/[a-zA-Z0-9_:]+~/)
+                if (needsParentheses) {
+                    v = (<string>v).replace("{" + key + "}", "(" + properties[key] + ")")
+                } else {
+                    v = (<string>v).replace("{" + key + "}", properties[key])
+                }
             }
 
             return v
@@ -199,8 +216,14 @@ export default class FilteredLayer {
         }
         for (const globalFilter of globalFilters ?? []) {
             const neededTags = globalFilter.osmTags
-            if (neededTags !== undefined && !neededTags.matchesProperties(properties)) {
-                return false
+            if (neededTags !== undefined) {
+                const doesMatch = neededTags.matchesProperties(properties)
+                if (globalFilter.forceShowOnMatch) {
+                    return doesMatch || this.isDisplayed.data
+                }
+                if (!doesMatch) {
+                    return false
+                }
             }
         }
         {

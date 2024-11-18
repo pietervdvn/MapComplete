@@ -2,26 +2,17 @@
 
 # facadegardens
 
-
-
-
 Facade gardens
-
-
-
-
-
 
  - This layer is shown at zoomlevel **12** and higher
  - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  preset `a facade garden` snaps to this layer (facadegardens.presets[0])
 
-
-
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [facadegardens-direction](#facadegardens-direction)
   - [facadegardens-sunshine](#facadegardens-sunshine)
@@ -37,11 +28,13 @@ Facade gardens
 
 ## Themes using this layer
 
-
-
  - [facadegardens](https://mapcomplete.org/facadegardens)
 
+## Presets
 
+The following options to create new points are included:
+
+ - **a facade garden** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dgarden' target='_blank'>garden</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:garden:type' target='_blank'>garden:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:garden:type%3Dfacade_garden' target='_blank'>facade_garden</a> (snaps to layers `walls_and_buildings`)
 
 ## Basic tags for this layer
 
@@ -66,125 +59,76 @@ Elements must match **all** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/plant#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/plant/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [plant](https://wiki.openstreetmap.org/wiki/Key:plant) | Multiple choice | [vine](https://wiki.openstreetmap.org/wiki/Tag:plant%3Dvine) [flower](https://wiki.openstreetmap.org/wiki/Tag:plant%3Dflower) [shrub](https://wiki.openstreetmap.org/wiki/Tag:plant%3Dshrub) [groundcover](https://wiki.openstreetmap.org/wiki/Tag:plant%3Dgroundcover) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/description#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/description/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [description](https://wiki.openstreetmap.org/wiki/Key:description) | [text](../SpecialInputElements.md#text) |  |
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
-
-
-
 
 ### facadegardens-direction
 
 The question is `What is the orientation of the garden?`
 *Orientation: {direction} (where 0=N and 90=O)* is shown if `direction` is set
 
-
-
-
 ### facadegardens-sunshine
 
 The question is `Is the garden shaded or sunny?`
-
-
 
  -  *The garden is in full sun* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:direct_sunlight' target='_blank'>direct_sunlight</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:direct_sunlight%3Dyes' target='_blank'>yes</a>
  -  *The garden is in partial shade* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:direct_sunlight' target='_blank'>direct_sunlight</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:direct_sunlight%3Dpartial' target='_blank'>partial</a>
  -  *The garden is in the shade* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:direct_sunlight' target='_blank'>direct_sunlight</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:direct_sunlight%3Dno' target='_blank'>no</a>
 
-
-
-
-
 ### facadegardens-rainbarrel
 
 The question is `Is there a water barrel installed for the garden?`
 
-
-
  -  *There is a rain barrel* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:rain_barrel' target='_blank'>rain_barrel</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rain_barrel%3Dyes' target='_blank'>yes</a>
  -  *There is no rain barrel* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:rain_barrel' target='_blank'>rain_barrel</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rain_barrel%3Dno' target='_blank'>no</a>
-
-
-
-
 
 ### facadegardens-start_date
 
 The question is `When was the garden constructed? (a year is sufficient)`
 *Construction date of the garden: {start_date}* is shown if `start_date` is set
 
-
-
-
 ### facadegardens-edible
 
 The question is `Are there any edible plants?`
 
-
-
  -  *There are edible plants* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:edible' target='_blank'>edible</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:edible%3Dyes' target='_blank'>yes</a>
  -  *There are no edible plants* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:edible' target='_blank'>edible</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:edible%3Dno' target='_blank'>no</a>
-
-
-
-
 
 ### facadegardens-plants
 
 The question is `What kinds of plants grow here?`
-
-
 
  -  *There are vines* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:plant' target='_blank'>plant</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:plant%3Dvine' target='_blank'>vine</a>
  -  *There are flowering plants* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:plant' target='_blank'>plant</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:plant%3Dflower' target='_blank'>flower</a>
  -  *There are shrubs* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:plant' target='_blank'>plant</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:plant%3Dshrub' target='_blank'>shrub</a>
  -  *There are groundcovering plants* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:plant' target='_blank'>plant</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:plant%3Dgroundcover' target='_blank'>groundcover</a>
 
-
-
-
-
 ### facadegardens-description
 
 The question is `Extra describing info about the garden (if needed and not yet described above)`
 *More details: {description}* is shown if `description` is set
-
-
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### move-button
 
 _This tagrendering has no question and is thus read-only_
 *{move_button()}*
-
-
-
 
 ### delete-button
 
 _This tagrendering has no question and is thus read-only_
 *{delete_button()}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

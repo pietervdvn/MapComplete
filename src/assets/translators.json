@@ -1,16 +1,24 @@
 {
   "contributors": [
     {
-      "commits": 388,
+      "commits": 488,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 356,
+      "commits": 420,
       "contributor": "kjon"
     },
     {
-      "commits": 188,
+      "commits": 195,
       "contributor": "paunofu"
+    },
+    {
+      "commits": 122,
+      "contributor": "Anonymous"
+    },
+    {
+      "commits": 102,
+      "contributor": "mcliquid"
     },
     {
       "commits": 95,
@@ -21,36 +29,40 @@
       "contributor": "Robin van der Linde"
     },
     {
-      "commits": 76,
-      "contributor": "mcliquid"
-    },
-    {
-      "commits": 63,
+      "commits": 70,
       "contributor": "danieldegroot2"
     },
     {
+      "commits": 64,
+      "contributor": "mike140"
+    },
+    {
+      "commits": 53,
+      "contributor": "Harry Bond"
+    },
+    {
+      "commits": 50,
+      "contributor": "Jiří Podhorecký"
+    },
+    {
       "commits": 49,
-      "contributor": "Anonymous"
+      "contributor": "gallegonovato"
     },
     {
       "commits": 44,
       "contributor": "Supaplex"
     },
     {
-      "commits": 36,
+      "commits": 43,
+      "contributor": "Babos Gábor"
+    },
+    {
+      "commits": 37,
       "contributor": "Lucas"
     },
     {
       "commits": 36,
       "contributor": "Iago"
-    },
-    {
-      "commits": 33,
-      "contributor": "Jiří Podhorecký"
-    },
-    {
-      "commits": 32,
-      "contributor": "Babos Gábor"
     },
     {
       "commits": 29,
@@ -66,14 +78,14 @@
     },
     {
       "commits": 23,
+      "contributor": "Štefan Baebler"
+    },
+    {
+      "commits": 23,
       "contributor": "Marco"
     },
     {
       "commits": 22,
-      "contributor": "gallegonovato"
-    },
-    {
-      "commits": 18,
       "contributor": "Patchanka64"
     },
     {
@@ -82,14 +94,10 @@
     },
     {
       "commits": 18,
-      "contributor": "Štefan Baebler"
-    },
-    {
-      "commits": 18,
       "contributor": "el_libre como el chaval"
     },
     {
-      "commits": 15,
+      "commits": 16,
       "contributor": "macpac"
     },
     {
@@ -106,6 +114,10 @@
     },
     {
       "commits": 13,
+      "contributor": "Ettore Atalan"
+    },
+    {
+      "commits": 13,
       "contributor": "Olivier"
     },
     {
@@ -119,10 +131,6 @@
     {
       "commits": 12,
       "contributor": "hugoalh"
-    },
-    {
-      "commits": 12,
-      "contributor": "Ettore Atalan"
     },
     {
       "commits": 12,
@@ -170,6 +178,10 @@
     },
     {
       "commits": 9,
+      "contributor": "Krzysztof Chorzempa"
+    },
+    {
+      "commits": 9,
       "contributor": "Lasse Liehu"
     },
     {
@@ -195,10 +207,6 @@
     {
       "commits": 8,
       "contributor": "nilocram"
-    },
-    {
-      "commits": 8,
-      "contributor": "Krzysztof Chorzempa"
     },
     {
       "commits": 8,
@@ -266,6 +274,14 @@
     },
     {
       "commits": 5,
+      "contributor": "Ignacio"
+    },
+    {
+      "commits": 5,
+      "contributor": "Thibault Molleman"
+    },
+    {
+      "commits": 5,
       "contributor": "Christian Schmidt"
     },
     {
@@ -327,6 +343,18 @@
     {
       "commits": 4,
       "contributor": "Jan Zabel"
+    },
+    {
+      "commits": 3,
+      "contributor": "Andrii Holovin"
+    },
+    {
+      "commits": 3,
+      "contributor": "Kamborio"
+    },
+    {
+      "commits": 3,
+      "contributor": "Thomas"
     },
     {
       "commits": 3,
@@ -399,6 +427,18 @@
     {
       "commits": 3,
       "contributor": "SiegbjornSitumeang"
+    },
+    {
+      "commits": 2,
+      "contributor": "Kim Minwoo"
+    },
+    {
+      "commits": 2,
+      "contributor": "David Crochet"
+    },
+    {
+      "commits": 2,
+      "contributor": "Ryan C"
     },
     {
       "commits": 2,
@@ -519,6 +559,18 @@
     {
       "commits": 2,
       "contributor": "Leo Alcaraz"
+    },
+    {
+      "commits": 1,
+      "contributor": "Teodor11"
+    },
+    {
+      "commits": 1,
+      "contributor": "Emmanuel Arrechea"
+    },
+    {
+      "commits": 1,
+      "contributor": "tiptoptom"
     },
     {
       "commits": 1,

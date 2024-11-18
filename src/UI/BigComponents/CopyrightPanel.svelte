@@ -4,11 +4,7 @@
   import contributors from "../../assets/contributors.json"
   import translators from "../../assets/translators.json"
   import { Translation, TypedTranslation } from "../i18n/Translation"
-  import AccordionSingle from "../Flowbite/AccordionSingle.svelte"
   import Tr from "../Base/Tr.svelte"
-  import IconCopyrightPanel from "./IconCopyrightPanel.svelte"
-  import licenses from "../../assets/generated/license_info.json"
-  import type SmallLicense from "../../Models/smallLicense"
   import Constants from "../../Models/Constants"
   import ContributorCount from "../../Logic/ContributorCount"
   import BaseUIElement from "../BaseUIElement"
@@ -22,9 +18,7 @@
   export let state: SpecialVisualizationState
 
   const t = Translations.t.general.attribution
-  const layoutToUse = state.layout
-
-  const iconAttributions: string[] = layoutToUse.getUsedImages()
+  const layoutToUse = state.theme
 
   let maintainer: Translation = undefined
   if (layoutToUse.credits !== undefined && layoutToUse.credits !== "") {
@@ -52,12 +46,6 @@
     }
     return Translations.t.general.attribution.attributionBackgroundLayer.Subs(props)
   })
-
-  const allLicenses = {}
-  for (const key in licenses) {
-    const license: SmallLicense = licenses[key]
-    allLicenses[license.path] = license
-  }
 
   function calculateDataContributions(contributions: Map<string, number>): Translation {
     if (contributions === undefined) {
@@ -121,9 +109,6 @@
 </script>
 
 <div class="link-underline flex flex-col gap-y-4">
-  <h3>
-    <Tr t={t.attributionTitle} />
-  </h3>
   <div class="flex items-center gap-x-2">
     <Osm_logo class="h-8 w-8 shrink-0" />
     <Tr t={t.attributionContent} />
@@ -137,7 +122,7 @@
   {/if}
   {#if maintainer !== undefined}
     <div class="flex items-center gap-x-2">
-      <Marker icons={state.layout.icon} size="h-8 w-8 shrink-0" />
+      <Marker icons={state.theme.icon} size="h-8 w-8 shrink-0" />
       <Tr t={maintainer} />
     </div>
   {/if}
@@ -158,15 +143,6 @@
     <TranslateIcon class="h-8 w-8 shrink-0" />
     <Tr t={codeContributors(translators, t.translatedBy)} />
   </div>
-
-  <AccordionSingle>
-    <div slot="header">
-      <Tr t={t.iconAttribution.title} />
-    </div>
-    {#each iconAttributions as iconAttribution}
-      <IconCopyrightPanel iconPath={iconAttribution} license={allLicenses[iconAttribution]} />
-    {/each}
-  </AccordionSingle>
 
   <div class="self-end">
     MapComplete {Constants.vNumber}

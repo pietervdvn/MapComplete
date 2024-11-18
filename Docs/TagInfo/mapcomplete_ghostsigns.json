@@ -16,38 +16,110 @@
     },
     {
       "key": "advertising",
-      "description": "The MapComplete theme Ghost Signs has a layer Ghost Signs showing features with this tag",
-      "value": "wall_painting"
+      "description": "The MapComplete theme Ghost Signs has a layer Ghost Signs showing features with this tag"
     },
     {
       "key": "id",
       "description": "Layer 'Ghost Signs' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
     },
     {
+      "key": "image",
+      "description": "The layer 'Ghost Signs allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Ghost Signs allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Ghost Signs allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Ghost Signs allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Ghost Signs allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
       "key": "historic",
-      "description": "Layer 'Ghost Signs' shows historic=advertising with a fixed text, namely 'This is a ghost sign' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
+      "description": "Layer 'Ghost Signs' shows historic=advertising with a fixed text, namely 'This is a historic advertisement sign (an advertisement for a business that no longer exists or a very old sign with heritage value)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
       "value": "advertising"
     },
     {
       "key": "historic",
-      "description": "Layer 'Ghost Signs' shows historic= with a fixed text, namely 'This is not a ghost sign, answering this will hide the sign from the map' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') Picking this answer will delete the key historic.",
+      "description": "Layer 'Ghost Signs' shows historic= with a fixed text, namely 'This advertisement sign has no historic value (the business still exists and has no heritage value)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') Picking this answer will delete the key historic.",
       "value": ""
     },
     {
-      "key": "image",
-      "description": "The layer 'Ghost Signs allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "key": "advertising",
+      "description": "Layer 'Ghost Signs' shows and asks freeform values for key 'advertising' (in the mapcomplete.org theme 'Ghost Signs')"
     },
     {
-      "key": "mapillary",
-      "description": "The layer 'Ghost Signs allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "key": "advertising",
+      "description": "Layer 'Ghost Signs' shows advertising=billboard with a fixed text, namely 'This is a billboard' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
+      "value": "billboard"
     },
     {
-      "key": "wikidata",
-      "description": "The layer 'Ghost Signs allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "key": "advertising",
+      "description": "Layer 'Ghost Signs' shows advertising=board with a fixed text, namely 'This is a board' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
+      "value": "board"
     },
     {
-      "key": "wikipedia",
-      "description": "The layer 'Ghost Signs allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "key": "advertising",
+      "description": "Layer 'Ghost Signs' shows advertising=column with a fixed text, namely 'This is a column' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
+      "value": "column"
+    },
+    {
+      "key": "advertising",
+      "description": "Layer 'Ghost Signs' shows advertising=flag with a fixed text, namely 'This is a flag' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
+      "value": "flag"
+    },
+    {
+      "key": "advertising",
+      "description": "Layer 'Ghost Signs' shows advertising=poster_box with a fixed text, namely 'This is a poster Box' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
+      "value": "poster_box"
+    },
+    {
+      "key": "advertising",
+      "description": "Layer 'Ghost Signs' shows advertising=screen with a fixed text, namely 'This is a screen' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
+      "value": "screen"
+    },
+    {
+      "key": "advertising",
+      "description": "Layer 'Ghost Signs' shows advertising=sculpture with a fixed text, namely 'This is a sculpture' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
+      "value": "sculpture"
+    },
+    {
+      "key": "advertising",
+      "description": "Layer 'Ghost Signs' shows advertising=sign with a fixed text, namely 'This is a sign' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
+      "value": "sign"
+    },
+    {
+      "key": "advertising",
+      "description": "Layer 'Ghost Signs' shows advertising=tarp with a fixed text, namely 'This is a tarp (a weatherproof piece of textile with an advertising message)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
+      "value": "tarp"
+    },
+    {
+      "key": "advertising",
+      "description": "Layer 'Ghost Signs' shows advertising=totem with a fixed text, namely 'This is a totem' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
+      "value": "totem"
+    },
+    {
+      "key": "advertising",
+      "description": "Layer 'Ghost Signs' shows advertising=wall_painting with a fixed text, namely 'This is a wall painting' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
+      "value": "wall_painting"
+    },
+    {
+      "key": "advertising",
+      "description": "Layer 'Ghost Signs' shows advertising=tilework with a fixed text, namely 'This is tilework - the advertisement is painted on tiles' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
+      "value": "tilework"
+    },
+    {
+      "key": "advertising",
+      "description": "Layer 'Ghost Signs' shows advertising=relief with a fixed text, namely 'This is a relief' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
+      "value": "relief"
     },
     {
       "key": "inscription",
@@ -59,225 +131,238 @@
     },
     {
       "key": "advertising",
-      "description": "The MapComplete theme Ghost Signs has a layer All advertentie wall paintings showing features with this tag",
-      "value": "wall_painting"
-    },
-    {
-      "key": "historic",
-      "description": "Layer 'All advertentie wall paintings' shows historic=advertising with a fixed text, namely 'This is a ghost sign' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
-      "value": "advertising"
-    },
-    {
-      "key": "historic",
-      "description": "Layer 'All advertentie wall paintings' shows historic= with a fixed text, namely 'This is not a ghost sign' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') Picking this answer will delete the key historic.",
-      "value": ""
+      "description": "The MapComplete theme Ghost Signs has a layer Advertisement showing features with this tag"
     },
     {
       "key": "id",
-      "description": "Layer 'All advertentie wall paintings' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+      "description": "Layer 'Advertisement' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
     },
     {
       "key": "image",
-      "description": "The layer 'All advertentie wall paintings allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Advertisement allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Advertisement allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'All advertentie wall paintings allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Advertisement allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'All advertentie wall paintings allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Advertisement allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'All advertentie wall paintings allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Advertisement allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "advertising",
-      "description": "Layer 'All advertentie wall paintings' shows and asks freeform values for key 'advertising' (in the mapcomplete.org theme 'Ghost Signs')"
+      "description": "Layer 'Advertisement' shows and asks freeform values for key 'advertising' (in the mapcomplete.org theme 'Ghost Signs')"
     },
     {
       "key": "advertising",
-      "description": "Layer 'All advertentie wall paintings' shows advertising=billboard with a fixed text, namely 'This is a billboard' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
+      "description": "Layer 'Advertisement' shows advertising=billboard with a fixed text, namely 'This is a billboard' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
       "value": "billboard"
     },
     {
       "key": "advertising",
-      "description": "Layer 'All advertentie wall paintings' shows advertising=board with a fixed text, namely 'This is a board' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
+      "description": "Layer 'Advertisement' shows advertising=board with a fixed text, namely 'This is a board' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
       "value": "board"
     },
     {
       "key": "advertising",
-      "description": "Layer 'All advertentie wall paintings' shows advertising=column with a fixed text, namely 'This is a column' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
+      "description": "Layer 'Advertisement' shows advertising=column with a fixed text, namely 'This is a column' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
       "value": "column"
     },
     {
       "key": "advertising",
-      "description": "Layer 'All advertentie wall paintings' shows advertising=flag with a fixed text, namely 'This is a flag' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
+      "description": "Layer 'Advertisement' shows advertising=flag with a fixed text, namely 'This is a flag' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
       "value": "flag"
     },
     {
       "key": "advertising",
-      "description": "Layer 'All advertentie wall paintings' shows advertising=poster_box with a fixed text, namely 'This is a poster Box' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
+      "description": "Layer 'Advertisement' shows advertising=poster_box with a fixed text, namely 'This is a poster Box' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
       "value": "poster_box"
     },
     {
       "key": "advertising",
-      "description": "Layer 'All advertentie wall paintings' shows advertising=screen with a fixed text, namely 'This is a screen' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
+      "description": "Layer 'Advertisement' shows advertising=screen with a fixed text, namely 'This is a screen' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
       "value": "screen"
     },
     {
       "key": "advertising",
-      "description": "Layer 'All advertentie wall paintings' shows advertising=sculpture with a fixed text, namely 'This is a sculpture' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
+      "description": "Layer 'Advertisement' shows advertising=sculpture with a fixed text, namely 'This is a sculpture' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
       "value": "sculpture"
     },
     {
       "key": "advertising",
-      "description": "Layer 'All advertentie wall paintings' shows advertising=sign with a fixed text, namely 'This is a sign' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
+      "description": "Layer 'Advertisement' shows advertising=sign with a fixed text, namely 'This is a sign' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
       "value": "sign"
     },
     {
       "key": "advertising",
-      "description": "Layer 'All advertentie wall paintings' shows advertising=tarp with a fixed text, namely 'This is a tarp (a weatherproof piece of textile with an advertising message)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
+      "description": "Layer 'Advertisement' shows advertising=tarp with a fixed text, namely 'This is a tarp (a weatherproof piece of textile with an advertising message)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
       "value": "tarp"
     },
     {
       "key": "advertising",
-      "description": "Layer 'All advertentie wall paintings' shows advertising=totem with a fixed text, namely 'This is a totem' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
+      "description": "Layer 'Advertisement' shows advertising=totem with a fixed text, namely 'This is a totem' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
       "value": "totem"
     },
     {
       "key": "advertising",
-      "description": "Layer 'All advertentie wall paintings' shows advertising=wall_painting with a fixed text, namely 'This is a wall painting' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
+      "description": "Layer 'Advertisement' shows advertising=wall_painting with a fixed text, namely 'This is a wall painting' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
       "value": "wall_painting"
     },
     {
+      "key": "advertising",
+      "description": "Layer 'Advertisement' shows advertising=tilework with a fixed text, namely 'This is tilework - the advertisement is painted on tiles' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
+      "value": "tilework"
+    },
+    {
+      "key": "advertising",
+      "description": "Layer 'Advertisement' shows advertising=relief with a fixed text, namely 'This is a relief' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
+      "value": "relief"
+    },
+    {
       "key": "animated",
-      "description": "Layer 'All advertentie wall paintings' shows animated=no with a fixed text, namely '<b>Static</b>, always shows the same message' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if advertising!=screen & advertising!=flag & advertising!=tarp & advertising!=wall_painting & advertising!=sign & advertising!=board)",
+      "description": "Layer 'Advertisement' shows animated=no with a fixed text, namely '<b>Static</b>, always shows the same message' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if advertising!=screen & advertising!=flag & advertising!=tarp & advertising!=wall_painting & advertising!=sign & advertising!=board)",
       "value": "no"
     },
     {
       "key": "animated",
-      "description": "Layer 'All advertentie wall paintings' shows animated=digital_display with a fixed text, namely 'This object has a built-in <b>digital display</b> to show prices or some other message' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if advertising!=screen & advertising!=flag & advertising!=tarp & advertising!=wall_painting & advertising!=sign & advertising!=board)",
+      "description": "Layer 'Advertisement' shows animated=digital_display with a fixed text, namely 'This object has a built-in <b>digital display</b> to show prices or some other message' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if advertising!=screen & advertising!=flag & advertising!=tarp & advertising!=wall_painting & advertising!=sign & advertising!=board)",
       "value": "digital_display"
     },
     {
       "key": "animated",
-      "description": "Layer 'All advertentie wall paintings' shows animated=trivision_blades with a fixed text, namely '<b>Trivision</b> - the billboard consists of many triangular prisms which regularly rotate' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if advertising!=screen & advertising!=flag & advertising!=tarp & advertising!=wall_painting & advertising!=sign & advertising!=board)",
+      "description": "Layer 'Advertisement' shows animated=trivision_blades with a fixed text, namely '<b>Trivision</b> - the billboard consists of many triangular prisms which regularly rotate' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if advertising!=screen & advertising!=flag & advertising!=tarp & advertising!=wall_painting & advertising!=sign & advertising!=board)",
       "value": "trivision_blades"
     },
     {
       "key": "animated",
-      "description": "Layer 'All advertentie wall paintings' shows animated=winding_posters with a fixed text, namely '<b>Scrolling</b> posters' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if advertising!=screen & advertising!=flag & advertising!=tarp & advertising!=wall_painting & advertising!=sign & advertising!=board)",
+      "description": "Layer 'Advertisement' shows animated=winding_posters with a fixed text, namely '<b>Scrolling</b> posters' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if advertising!=screen & advertising!=flag & advertising!=tarp & advertising!=wall_painting & advertising!=sign & advertising!=board)",
       "value": "winding_posters"
     },
     {
       "key": "animated",
-      "description": "Layer 'All advertentie wall paintings' shows animated=revolving with a fixed text, namely '<b>Rotates</b> on itself' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if advertising!=screen & advertising!=flag & advertising!=tarp & advertising!=wall_painting & advertising!=sign & advertising!=board)",
+      "description": "Layer 'Advertisement' shows animated=revolving with a fixed text, namely '<b>Rotates</b> on itself' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if advertising!=screen & advertising!=flag & advertising!=tarp & advertising!=wall_painting & advertising!=sign & advertising!=board)",
       "value": "revolving"
     },
     {
       "key": "luminous",
-      "description": "Layer 'All advertentie wall paintings' shows luminous=neon with a fixed text, namely 'This is a neon-tube light' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if advertising!=screen)",
+      "description": "Layer 'Advertisement' shows luminous=neon with a fixed text, namely 'This is a neon-tube light' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if advertising!=screen)",
       "value": "neon"
     },
     {
       "key": "lit",
-      "description": "Layer 'All advertentie wall paintings' shows lit=yes & luminous=yes with a fixed text, namely 'This object both emits light and is lighted by an external light source' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if advertising!=screen)",
+      "description": "Layer 'Advertisement' shows lit=yes & luminous=yes with a fixed text, namely 'This object both emits light and is lighted by an external light source' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if advertising!=screen)",
       "value": "yes"
     },
     {
       "key": "luminous",
-      "description": "Layer 'All advertentie wall paintings' shows lit=yes & luminous=yes with a fixed text, namely 'This object both emits light and is lighted by an external light source' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if advertising!=screen)",
+      "description": "Layer 'Advertisement' shows lit=yes & luminous=yes with a fixed text, namely 'This object both emits light and is lighted by an external light source' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if advertising!=screen)",
       "value": "yes"
     },
     {
       "key": "luminous",
-      "description": "Layer 'All advertentie wall paintings' shows luminous=yes with a fixed text, namely 'This object emits light' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if advertising!=screen)",
+      "description": "Layer 'Advertisement' shows luminous=yes with a fixed text, namely 'This object emits light' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if advertising!=screen)",
       "value": "yes"
     },
     {
       "key": "lit",
-      "description": "Layer 'All advertentie wall paintings' shows lit=yes with a fixed text, namely 'This object is lit externally, e.g. by a spotlight or other lights' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if advertising!=screen)",
+      "description": "Layer 'Advertisement' shows lit=yes with a fixed text, namely 'This object is lit externally, e.g. by a spotlight or other lights' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if advertising!=screen)",
       "value": "yes"
     },
     {
       "key": "lit",
-      "description": "Layer 'All advertentie wall paintings' shows lit=no & luminous=no with a fixed text, namely 'This object does not emit light and is not lighted by externally' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if advertising!=screen)",
+      "description": "Layer 'Advertisement' shows lit=no & luminous=no with a fixed text, namely 'This object does not emit light and is not lighted by externally' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if advertising!=screen)",
       "value": "no"
     },
     {
       "key": "luminous",
-      "description": "Layer 'All advertentie wall paintings' shows lit=no & luminous=no with a fixed text, namely 'This object does not emit light and is not lighted by externally' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if advertising!=screen)",
+      "description": "Layer 'Advertisement' shows lit=no & luminous=no with a fixed text, namely 'This object does not emit light and is not lighted by externally' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if advertising!=screen)",
       "value": "no"
     },
     {
       "key": "operator",
-      "description": "Layer 'All advertentie wall paintings' shows and asks freeform values for key 'operator' (in the mapcomplete.org theme 'Ghost Signs')"
+      "description": "Layer 'Advertisement' shows and asks freeform values for key 'operator' (in the mapcomplete.org theme 'Ghost Signs')"
     },
     {
       "key": "message",
-      "description": "Layer 'All advertentie wall paintings' shows message=commercial with a fixed text, namely 'Commercial message' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
+      "description": "Layer 'Advertisement' shows message=commercial with a fixed text, namely 'Commercial message' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
       "value": "commercial"
     },
     {
       "key": "message",
-      "description": "Layer 'All advertentie wall paintings' shows message=local with a fixed text, namely 'Local information' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
+      "description": "Layer 'Advertisement' shows message=local with a fixed text, namely 'Local information' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
       "value": "local"
     },
     {
       "key": "message",
-      "description": "Layer 'All advertentie wall paintings' shows message=safety with a fixed text, namely 'Security information' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
+      "description": "Layer 'Advertisement' shows message=safety with a fixed text, namely 'Security information' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
       "value": "safety"
     },
     {
       "key": "message",
-      "description": "Layer 'All advertentie wall paintings' shows message=political with a fixed text, namely 'Electoral advertising' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
+      "description": "Layer 'Advertisement' shows message=political with a fixed text, namely 'Electoral advertising' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
       "value": "political"
     },
     {
       "key": "message",
-      "description": "Layer 'All advertentie wall paintings' shows message=showbiz with a fixed text, namely 'Information related to theatre, concerts, …' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
+      "description": "Layer 'Advertisement' shows message=showbiz with a fixed text, namely 'Information related to theatre, concerts, …' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
       "value": "showbiz"
     },
     {
       "key": "message",
-      "description": "Layer 'All advertentie wall paintings' shows message=non_profit with a fixed text, namely 'Message from non-profit organizations' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
+      "description": "Layer 'Advertisement' shows message=non_profit with a fixed text, namely 'Message from non-profit organizations' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
       "value": "non_profit"
     },
     {
       "key": "message",
-      "description": "Layer 'All advertentie wall paintings' shows message=opinion with a fixed text, namely 'To express your opinion' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
+      "description": "Layer 'Advertisement' shows message=opinion with a fixed text, namely 'To express your opinion' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
       "value": "opinion"
     },
     {
       "key": "message",
-      "description": "Layer 'All advertentie wall paintings' shows message=religion with a fixed text, namely 'Religious message' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
+      "description": "Layer 'Advertisement' shows message=religion with a fixed text, namely 'Religious message' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
       "value": "religion"
     },
     {
       "key": "message",
-      "description": "Layer 'All advertentie wall paintings' shows message=funding with a fixed text, namely 'Funding sign' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
+      "description": "Layer 'Advertisement' shows message=funding with a fixed text, namely 'Funding sign' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
       "value": "funding"
     },
     {
       "key": "information",
-      "description": "Layer 'All advertentie wall paintings' shows information=map with a fixed text, namely 'A map' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
+      "description": "Layer 'Advertisement' shows information=map with a fixed text, namely 'A map' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
       "value": "map"
     },
     {
       "key": "sides",
-      "description": "Layer 'All advertentie wall paintings' shows sides=1 with a fixed text, namely 'This object has advertisements on a single side' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if _referencing_ways= & (advertising=poster_box | advertising=screen | advertising=billboard))",
+      "description": "Layer 'Advertisement' shows sides=1 with a fixed text, namely 'This object has advertisements on a single side' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if _referencing_ways= & (advertising=poster_box | advertising=screen | advertising=billboard))",
       "value": "1"
     },
     {
       "key": "sides",
-      "description": "Layer 'All advertentie wall paintings' shows sides=2 with a fixed text, namely 'This object has advertisements on both sides' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if _referencing_ways= & (advertising=poster_box | advertising=screen | advertising=billboard))",
+      "description": "Layer 'Advertisement' shows sides=2 with a fixed text, namely 'This object has advertisements on both sides' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if _referencing_ways= & (advertising=poster_box | advertising=screen | advertising=billboard))",
       "value": "2"
     },
     {
       "key": "ref",
-      "description": "Layer 'All advertentie wall paintings' shows and asks freeform values for key 'ref' (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if advertising!=sign)"
+      "description": "Layer 'Advertisement' shows and asks freeform values for key 'ref' (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if advertising!=sign)"
+    },
+    {
+      "key": "historic",
+      "description": "Layer 'Advertisement' shows historic=advertising with a fixed text, namely 'This is a historic advertisement sign (an advertisement for a business that no longer exists or a very old sign with heritage value)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs')",
+      "value": "advertising"
+    },
+    {
+      "key": "historic",
+      "description": "Layer 'Advertisement' shows historic= with a fixed text, namely 'This advertisement sign has no historic value (the business still exists and has no heritage value)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') Picking this answer will delete the key historic.",
+      "value": ""
     },
     {
       "key": "tourism",
@@ -330,19 +415,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Artworks allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Artworks allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Artworks allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Artworks allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Artworks allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Artworks allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Artworks allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Artworks allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Artworks allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "artwork_type",
@@ -449,8 +538,96 @@
     },
     {
       "key": "historic",
-      "description": "Layer 'Artworks' shows historic= with a fixed text, namely 'This artwork does not serve as a bench' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') Picking this answer will delete the key historic.",
+      "description": "Layer 'Artworks' shows historic= with a fixed text, namely 'This artwork does not serve as a memorial' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') Picking this answer will delete the key historic.",
       "value": ""
+    },
+    {
+      "key": "memorial",
+      "description": "Layer 'Artworks' shows and asks freeform values for key 'memorial' (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if historic=memorial)"
+    },
+    {
+      "key": "memorial",
+      "description": "Layer 'Artworks' shows memorial=statue with a fixed text, namely 'This is a statue' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if historic=memorial)",
+      "value": "statue"
+    },
+    {
+      "key": "memorial",
+      "description": "Layer 'Artworks' shows memorial=plaque with a fixed text, namely 'This is a plaque' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if historic=memorial)",
+      "value": "plaque"
+    },
+    {
+      "key": "memorial",
+      "description": "Layer 'Artworks' shows memorial=bench with a fixed text, namely 'This is a commemorative bench' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if historic=memorial)",
+      "value": "bench"
+    },
+    {
+      "key": "memorial",
+      "description": "Layer 'Artworks' shows memorial=ghost_bike with a fixed text, namely 'This is a ghost bike - a bicycle painted white to remember a cyclist whom deceased because of a car crash' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if historic=memorial)",
+      "value": "ghost_bike"
+    },
+    {
+      "key": "memorial",
+      "description": "Layer 'Artworks' shows memorial=stolperstein with a fixed text, namely 'This is a stolperstein (stumbing stone)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if historic=memorial)",
+      "value": "stolperstein"
+    },
+    {
+      "key": "memorial",
+      "description": "Layer 'Artworks' shows memorial=stele with a fixed text, namely 'This is a stele' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if historic=memorial)",
+      "value": "stele"
+    },
+    {
+      "key": "memorial",
+      "description": "Layer 'Artworks' shows memorial=stone with a fixed text, namely 'This is a memorial stone' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if historic=memorial)",
+      "value": "stone"
+    },
+    {
+      "key": "memorial",
+      "description": "Layer 'Artworks' shows memorial=bust with a fixed text, namely 'This is a bust' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if historic=memorial)",
+      "value": "bust"
+    },
+    {
+      "key": "memorial",
+      "description": "Layer 'Artworks' shows memorial=sculpture with a fixed text, namely 'This is a sculpture' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if historic=memorial)",
+      "value": "sculpture"
+    },
+    {
+      "key": "memorial",
+      "description": "Layer 'Artworks' shows memorial=obelisk with a fixed text, namely 'This is an obelisk' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if historic=memorial)",
+      "value": "obelisk"
+    },
+    {
+      "key": "memorial",
+      "description": "Layer 'Artworks' shows memorial=cross with a fixed text, namely 'This is a cross' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if historic=memorial)",
+      "value": "cross"
+    },
+    {
+      "key": "memorial",
+      "description": "Layer 'Artworks' shows memorial=blue_plaque with a fixed text, namely 'This is a blue plaque' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if historic=memorial)",
+      "value": "blue_plaque"
+    },
+    {
+      "key": "memorial",
+      "description": "Layer 'Artworks' shows memorial=tank with a fixed text, namely 'This is a historic tank, permanently placed in public space as memorial' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if historic=memorial)",
+      "value": "tank"
+    },
+    {
+      "key": "memorial",
+      "description": "Layer 'Artworks' shows memorial=tree with a fixed text, namely 'This is a memorial tree' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if historic=memorial)",
+      "value": "tree"
+    },
+    {
+      "key": "historic",
+      "description": "Layer 'Artworks' shows historic=tomb with a fixed text, namely 'This is a gravestone; the person is buried here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if historic=memorial)",
+      "value": "tomb"
+    },
+    {
+      "key": "inscription",
+      "description": "Layer 'Artworks' shows and asks freeform values for key 'inscription' (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if memorial!=bench & historic=memorial)"
+    },
+    {
+      "key": "not:inscription",
+      "description": "Layer 'Artworks' shows not:inscription=yes with a fixed text, namely 'This memorial does not have an inscription' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if memorial!=bench & historic=memorial)",
+      "value": "yes"
     },
     {
       "key": "amenity",
@@ -461,6 +638,165 @@
       "key": "amenity",
       "description": "Layer 'Artworks' shows amenity= with a fixed text, namely 'This artwork does not serve as a bench' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') Picking this answer will delete the key amenity.",
       "value": ""
+    },
+    {
+      "key": "backrest",
+      "description": "Layer 'Artworks' shows backrest=yes & two_sided=yes with a fixed text, namely 'This bench is two-sided and shares the backrest' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if amenity=bench)",
+      "value": "yes"
+    },
+    {
+      "key": "two_sided",
+      "description": "Layer 'Artworks' shows backrest=yes & two_sided=yes with a fixed text, namely 'This bench is two-sided and shares the backrest' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if amenity=bench)",
+      "value": "yes"
+    },
+    {
+      "key": "backrest",
+      "description": "Layer 'Artworks' shows backrest=yes with a fixed text, namely 'This bench does have a backrest' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if amenity=bench)",
+      "value": "yes"
+    },
+    {
+      "key": "backrest",
+      "description": "Layer 'Artworks' shows backrest=no with a fixed text, namely 'This bench does <b>not</b> have a backrest' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if amenity=bench)",
+      "value": "no"
+    },
+    {
+      "key": "armrest",
+      "description": "Layer 'Artworks' shows armrest=yes with a fixed text, namely 'This bench does have one or more armrests' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if amenity=bench)",
+      "value": "yes"
+    },
+    {
+      "key": "armrest",
+      "description": "Layer 'Artworks' shows armrest=no with a fixed text, namely 'This bench does <b>not</b> have any armrests' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if amenity=bench)",
+      "value": "no"
+    },
+    {
+      "key": "seats",
+      "description": "Layer 'Artworks' shows and asks freeform values for key 'seats' (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if amenity=bench)"
+    },
+    {
+      "key": "seats:separated",
+      "description": "Layer 'Artworks' shows seats:separated=no with a fixed text, namely 'This bench does not have separated seats' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if amenity=bench)",
+      "value": "no"
+    },
+    {
+      "key": "material",
+      "description": "Layer 'Artworks' shows and asks freeform values for key 'material' (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if amenity=bench)"
+    },
+    {
+      "key": "material",
+      "description": "Layer 'Artworks' shows material=wood with a fixed text, namely 'The seating is made from wood' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if amenity=bench)",
+      "value": "wood"
+    },
+    {
+      "key": "material",
+      "description": "Layer 'Artworks' shows material=metal with a fixed text, namely 'The seating is made from metal' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if amenity=bench)",
+      "value": "metal"
+    },
+    {
+      "key": "material",
+      "description": "Layer 'Artworks' shows material=stone with a fixed text, namely 'The seating is made from stone' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if amenity=bench)",
+      "value": "stone"
+    },
+    {
+      "key": "material",
+      "description": "Layer 'Artworks' shows material=concrete with a fixed text, namely 'The seating is made from concrete' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if amenity=bench)",
+      "value": "concrete"
+    },
+    {
+      "key": "material",
+      "description": "Layer 'Artworks' shows material=plastic with a fixed text, namely 'The seating is made from plastic' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if amenity=bench)",
+      "value": "plastic"
+    },
+    {
+      "key": "material",
+      "description": "Layer 'Artworks' shows material=steel with a fixed text, namely 'The seating is made from steel' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if amenity=bench)",
+      "value": "steel"
+    },
+    {
+      "key": "direction",
+      "description": "Layer 'Artworks' shows and asks freeform values for key 'direction' (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if two_sided!=yes & amenity=bench)"
+    },
+    {
+      "key": "colour",
+      "description": "Layer 'Artworks' shows and asks freeform values for key 'colour' (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if amenity=bench)"
+    },
+    {
+      "key": "colour",
+      "description": "Layer 'Artworks' shows colour=brown with a fixed text, namely 'Colour: brown' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if amenity=bench)",
+      "value": "brown"
+    },
+    {
+      "key": "colour",
+      "description": "Layer 'Artworks' shows colour=green with a fixed text, namely 'Colour: green' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if amenity=bench)",
+      "value": "green"
+    },
+    {
+      "key": "colour",
+      "description": "Layer 'Artworks' shows colour=gray with a fixed text, namely 'Colour: gray' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if amenity=bench)",
+      "value": "gray"
+    },
+    {
+      "key": "colour",
+      "description": "Layer 'Artworks' shows colour=white with a fixed text, namely 'Colour: white' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if amenity=bench)",
+      "value": "white"
+    },
+    {
+      "key": "colour",
+      "description": "Layer 'Artworks' shows colour=red with a fixed text, namely 'Colour: red' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if amenity=bench)",
+      "value": "red"
+    },
+    {
+      "key": "colour",
+      "description": "Layer 'Artworks' shows colour=black with a fixed text, namely 'Colour: black' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if amenity=bench)",
+      "value": "black"
+    },
+    {
+      "key": "colour",
+      "description": "Layer 'Artworks' shows colour=blue with a fixed text, namely 'Colour: blue' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if amenity=bench)",
+      "value": "blue"
+    },
+    {
+      "key": "colour",
+      "description": "Layer 'Artworks' shows colour=yellow with a fixed text, namely 'Colour: yellow' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if amenity=bench)",
+      "value": "yellow"
+    },
+    {
+      "key": "survey:date",
+      "description": "Layer 'Artworks' shows and asks freeform values for key 'survey:date' (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if amenity=bench)"
+    },
+    {
+      "key": "survey:date",
+      "description": "Layer 'Artworks' shows survey:date= with a fixed text, namely 'Surveyed today!' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') Picking this answer will delete the key survey:date. (This is only shown if amenity=bench)",
+      "value": ""
+    },
+    {
+      "key": "inscription",
+      "description": "Layer 'Artworks' shows and asks freeform values for key 'inscription' (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if amenity=bench)"
+    },
+    {
+      "key": "not:inscription",
+      "description": "Layer 'Artworks' shows not:inscription=yes with a fixed text, namely 'This bench does not have an inscription' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if amenity=bench)",
+      "value": "yes"
+    },
+    {
+      "key": "inscription",
+      "description": "Layer 'Artworks' shows inscription= with a fixed text, namely 'This bench <span class='subtle'>probably</span> does not not have an inscription' (in the mapcomplete.org theme 'Ghost Signs') Picking this answer will delete the key inscription. (This is only shown if amenity=bench)",
+      "value": ""
+    },
+    {
+      "key": "historic",
+      "description": "Layer 'Artworks' shows historic=memorial with a fixed text, namely 'This bench is a memorial for someone or something' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if (historic=memorial | inscription~.+ | memorial=bench | tourism=artwork) & amenity=bench)",
+      "value": "memorial"
+    },
+    {
+      "key": "historic",
+      "description": "Layer 'Artworks' shows historic= & not:historic=memorial with a fixed text, namely 'This bench is a <b>not</b> a memorial for someone or something' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') Picking this answer will delete the key historic. (This is only shown if (historic=memorial | inscription~.+ | memorial=bench | tourism=artwork) & amenity=bench)",
+      "value": ""
+    },
+    {
+      "key": "not:historic",
+      "description": "Layer 'Artworks' shows historic= & not:historic=memorial with a fixed text, namely 'This bench is a <b>not</b> a memorial for someone or something' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ghost Signs') (This is only shown if (historic=memorial | inscription~.+ | memorial=bench | tourism=artwork) & amenity=bench)",
+      "value": "memorial"
     }
   ]
 }

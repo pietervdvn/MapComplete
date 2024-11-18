@@ -18,9 +18,15 @@
   /**
    * A visualisation to pick a location on a map background
    */
+  /**
+   * The center of the map. If it contains a value (and initialCoordinate is not given), this will be used as start coordinate
+   */
   export let value: UIEventSource<{ lon: number; lat: number }>
-  export let initialCoordinate: { lon: number; lat: number }
+  export let initialCoordinate: { lon: number; lat: number } = undefined
   initialCoordinate = initialCoordinate ?? value.data
+  /**
+   * Max distance that one is allowed to stray from the initial coordinate
+   */
   export let maxDistanceInMeters: number = undefined
   export let mapProperties: Partial<MapProperties> & {
     readonly location: UIEventSource<{ lon: number; lat: number }>

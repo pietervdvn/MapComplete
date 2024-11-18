@@ -196,7 +196,8 @@
           },
           "width": "9"
         }
-      ]
+      ],
+      "allowMove": false
     }
   ],
   "overrideAll": {

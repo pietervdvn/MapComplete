@@ -8,15 +8,12 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [osm_buildings (defined in this theme)](#osm_buildings)
  - [osm_adresses (defined in this theme)](#osm_adresses)
  - [bag_pand (defined in this theme)](#bag_pand)
  - [bag_verblijfsobject (defined in this theme)](#bag_verblijfsobject)
 
-
 Available languages:
-
 
  - nl
  - en
@@ -29,7 +26,7 @@ Available languages:
  - zh_Hant
  - pl
  - zh_Hans
-
+ - uk
 
 # Table of contents
 
@@ -73,20 +70,10 @@ Available languages:
 These layers can not be reused in different themes.
 # osm_buildings
 
-
-
-
 Layer showing buildings that are in OpenStreetMap
-
-
-
-
-
 
  - This layer is shown at zoomlevel **18** and higher
  - Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`
-
-
 
 No themes use this layer
 
@@ -105,60 +92,35 @@ Elements must match the expression **building~.+**
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/ref:bag#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/ref%3Abag/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [ref:bag](https://wiki.openstreetmap.org/wiki/Key:ref:bag) | Multiple choice | [](https://wiki.openstreetmap.org/wiki/Tag:ref:bag%3D) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/building#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/building/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [building](https://wiki.openstreetmap.org/wiki/Key:building) | [string](../SpecialInputElements.md#string) |  |
 
-
-
-
 ### Reference
 
 _This tagrendering has no question and is thus read-only_
 *The reference in BAG is <b>{ref:bag}</b>*
 
-
  -  *This building has no reference in the BAG* is shown if with ref:bag=
-
-
-
-
 
 ### Building type
 
 The question is `What kind of building is this?`
 *This building is a <b>{building}</b>* is shown if `building` is set
 
-
-
-
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
-
-
-
 
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
 
-
 This tagrendering has labels 
 `added_by_default`
 # osm_adresses
 
-
-
-
 Layer showing adresses that are in OpenStreetMap
 
-
-
-
-
-
  - This layer is shown at zoomlevel **18** and higher
-
-
 
 No themes use this layer
 
@@ -176,13 +138,10 @@ Elements must match **all** of the following expressions:
 
 ## Supported attributes
 
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`
@@ -192,19 +151,9 @@ This tagrendering has labels
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
 # bag_pand
 
-
-
-
 Buildings from BAG register
-
-
-
-
-
 
  - This layer is shown at zoomlevel **18** and higher
  - <img src='../warning.svg' height='1rem'/>
@@ -212,8 +161,6 @@ Buildings from BAG register
 This layer is loaded from an external source, namely 
 
 `https://service.pdok.nl/lv/bag/wfs/v2_0?request=GetFeature&service=WFS&version=2.0.0&outputFormat=application%2Fjson%3B%20subtype%3Dgeojson&typeName=bag%3Apand&bbox={x_min}%2C{y_min}%2C{x_max}%2C{y_max}%2CCRS84&srsName=EPSG%3A4326`
-
-
 
 No themes use this layer
 
@@ -232,54 +179,33 @@ Elements must match the expression **identificatie~.+**
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/_bag_obj:in_construction#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/_bag_obj%3Ain_construction/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [_bag_obj:in_construction](https://wiki.openstreetmap.org/wiki/Key:_bag_obj:in_construction) | Multiple choice | [true](https://wiki.openstreetmap.org/wiki/Tag:_bag_obj:in_construction%3Dtrue) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/_bag_obj:in_construction#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/_bag_obj%3Ain_construction/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [_bag_obj:in_construction](https://wiki.openstreetmap.org/wiki/Key:_bag_obj:in_construction) | Multiple choice | [true](https://wiki.openstreetmap.org/wiki/Tag:_bag_obj:in_construction%3Dtrue) |
 
-
-
-
 ### Import button
 
 _This tagrendering has no question and is thus read-only_
 *{import_way_button(osm_buildings,building=$_bag_obj:building; ref:bag=$_bag_obj:ref:bag; source=BAG; source:date=$_bag_obj:source:date; start_date=$_bag_obj:start_date,{"*":"Upload this building to OpenStreetMap"},,,,,,,)}*
 
-
  -  *Didn't calculate the correct values yet. Refresh this page* is shown if with _bag_obj:building= | _bag_obj:ref:bag=
  -  *{conflate_button(osm_buildings, building=$_bag_obj:building; ref:bag=$_bag_obj:ref:bag; source=BAG; source:date=$_bag_obj:source:date; start_date=$_bag_obj:start_date, Replace the geometry in OpenStreetMap, , _osm_obj:id)}* is shown if with _overlaps_with~.+
  -  *{import_way_button(osm_buildings, building=$_bag_obj:building; construction=$_bag_obj:construction; ref:bag=$_bag_obj:ref:bag; source=BAG; source:date=$_bag_obj:source:date; start_date=$_bag_obj:start_date, Upload this building to OpenStreetMap)}* is shown if with _bag_obj:building~.+ & _bag_obj:ref:bag~.+ & <a href='https://wiki.openstreetmap.org/wiki/Key:_bag_obj:in_construction' target='_blank'>_bag_obj:in_construction</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_bag_obj:in_construction%3Dtrue' target='_blank'>true</a>
-
-
-
-
 
 ### Reference
 
 _This tagrendering has no question and is thus read-only_
 *The reference in BAG is <b>{_bag_obj:ref:bag}</b>*
 
-
-
-
 ### Build year
 
 _This tagrendering has no question and is thus read-only_
 *This building was built in <b>{_bag_obj:start_date}</b>*
 
-
  -  *The building was started in <b>{_bag_obj:start_date}</b>* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:_bag_obj:in_construction' target='_blank'>_bag_obj:in_construction</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_bag_obj:in_construction%3Dtrue' target='_blank'>true</a>
-
-
-
-
 
 ### Building type
 
 _This tagrendering has no question and is thus read-only_
 *The building type is a <b>{_bag_obj:building}</b>*
 
-
  -  *The building type will be a <b>{_bag_obj:construction}</b>* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:_bag_obj:in_construction' target='_blank'>_bag_obj:in_construction</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_bag_obj:in_construction%3Dtrue' target='_blank'>true</a>
-
-
-
-
 
 ### Overlapping building
 
@@ -288,50 +214,31 @@ _This tagrendering has no question and is thus read-only_
 
 This tagrendering is only visible in the popup if the following condition is met: _overlaps_with~.+
 
-
 ### Building status
 
 _This tagrendering has no question and is thus read-only_
 *The current building status is <b>{status}</b>*
-
-
-
 
 ### Buidling function
 
 _This tagrendering has no question and is thus read-only_
 *The current function of the building is <b>{gebruiksdoel}</b>*
 
-
-
-
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
-
-
-
 
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
 
-
 This tagrendering has labels 
 `added_by_default`
 # bag_verblijfsobject
 
-
-
-
 Address information from the BAG register
-
-
-
-
-
 
  - This layer is shown at zoomlevel **18** and higher
  - <img src='../warning.svg' height='1rem'/>
@@ -339,8 +246,6 @@ Address information from the BAG register
 This layer is loaded from an external source, namely 
 
 `https://service.pdok.nl/lv/bag/wfs/v2_0?request=GetFeature&service=WFS&version=2.0.0&outputFormat=application%2Fjson%3B%20subtype%3Dgeojson&typeName=bag%3Averblijfsobject&bbox={x_min}%2C{y_min}%2C{x_max}%2C{y_max}%2CCRS84&srsName=EPSG%3A4326`
-
-
 
 No themes use this layer
 
@@ -352,8 +257,6 @@ Elements must match the expression **identificatie~.+**
 
 ## Supported attributes
 
-
-
 ### Import button
 
 _This tagrendering has no question and is thus read-only_
@@ -361,28 +264,20 @@ _This tagrendering has no question and is thus read-only_
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:_imported_osm_object_found' target='_blank'>_imported_osm_object_found</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_imported_osm_object_found%3Dfalse' target='_blank'>false</a>
 
-
 ### Address
 
 _This tagrendering has no question and is thus read-only_
 *{openbare_ruimte} {_bag_obj:addr:housenumber}, {woonplaats} {postcode}*
-
-
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

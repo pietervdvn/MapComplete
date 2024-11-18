@@ -68,10 +68,7 @@ export class OsmPoiDatabase {
         const metaclient = this.getMetaClient()
         await metaclient.connect()
         try {
-
             const meta = await metaclient.query("SELECT datname FROM pg_database")
-            let latest: string = undefined
-            let latestDate: Date = new Date(0)
             const dbs: string[] = []
             for (const row of meta.rows) {
                 const name: string = row["datname"]
@@ -94,7 +91,7 @@ export class OsmPoiDatabase {
         let latestDate: Date = undefined
         for (const name of dbs) {
             const date = new Date(name)
-            if (latestDate.getTime() < date.getTime()) {
+            if (latestDate === undefined || latestDate.getTime() < date.getTime()) {
                 latest = name
                 latestDate = date
             }
@@ -104,7 +101,7 @@ export class OsmPoiDatabase {
         }
 
         console.log("Latest database is:", latest)
-        return latest
+        return "osm-poi." + latest
     }
 
     async createNew(date: string) {
@@ -113,7 +110,6 @@ export class OsmPoiDatabase {
         const metaclient = this.getMetaClient()
         await metaclient.connect()
         try {
-
             await metaclient.query(`CREATE DATABASE "${dbname}"`)
             console.log("Database created - installing extensions")
             const client = new Client(this._connectionString + "/" + dbname)
@@ -129,7 +125,7 @@ export class OsmPoiDatabase {
         }
     }
 
-    async deleteAllButLatest(){
+    async deleteAllButLatest() {
         const dbs = await this.findSuitableDatabases()
         for (let i = 0; i < dbs.length - 1; i++) {
             await this.deleteDatabase(dbs[i])
@@ -152,7 +148,6 @@ export class OsmPoiDatabase {
         }
     }
 
-
     async connectToLatest() {
         const latest = await this.searchLatest()
         this._client = new Client(this._connectionString + "/" + latest)
@@ -161,7 +156,7 @@ export class OsmPoiDatabase {
 
     async getCount(
         layer: string,
-        bbox: [[number, number], [number, number]] = undefined,
+        bbox: [[number, number], [number, number]] = undefined
     ): Promise<{ count: number; lat: number; lon: number }> {
         await this.connectIfNeeded()
 

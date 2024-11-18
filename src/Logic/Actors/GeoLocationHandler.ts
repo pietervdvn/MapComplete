@@ -183,7 +183,7 @@ export default class GeoLocationHandler {
     }
 
     private initUserLocationTrail() {
-        const features = LocalStorageSource.GetParsed<Feature[]>("gps_location_history", [])
+        const features = LocalStorageSource.getParsed<Feature[]>("gps_location_history", [])
         const now = new Date().getTime()
         features.data = features.data.filter((ff) => {
             if (ff.properties === undefined) {

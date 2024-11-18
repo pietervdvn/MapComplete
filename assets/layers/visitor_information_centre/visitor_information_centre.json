@@ -14,7 +14,7 @@
     "en": "A visitor center offers information about a specific attraction or place of interest where it is located.",
     "nl": "Een bezoekerscentrum biedt informatie over een specifieke attractie of bezienswaardigheid waar het is gevestigd.",
     "de": "Ein Besucherzentrum bietet Informationen über eine bestimmte Attraktion oder Sehenswürdigkeit, an der es sich befindet.",
-    "es": "Un centro de visitantes ofrece información sobre una atracción específica o lugar de interese donde se sitúa.",
+    "es": "Un centro de visitantes ofrece información sobre una atracción o lugar de interés específico donde se encuentra.",
     "ca": "Un centre de visitants ofereix informació sobre una atracció o lloc d'interès específic on es troba.",
     "cs": "Turistické centrum nabízí informace o konkrétní atrakci nebo zajímavém místě, kde se nachází."
   },
@@ -44,7 +44,8 @@
       "es": "{name}",
       "da": "{name}",
       "cs": "{name}",
-      "zh_Hant": "{name}"
+      "zh_Hant": "{name}",
+      "pl": "{name}"
     },
     "mappings": [
       {
@@ -75,7 +76,8 @@
           "es": "{name}",
           "da": "{name}",
           "cs": "{name}",
-          "zh_Hant": "{name}"
+          "zh_Hant": "{name}",
+          "pl": "{name}"
         }
       }
     ]
@@ -97,5 +99,6 @@
   ],
   "lineRendering": [],
   "presets": [],
-  "tagRenderings": []
+  "tagRenderings": [],
+  "allowMove": true
 }

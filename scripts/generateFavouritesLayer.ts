@@ -45,6 +45,7 @@ export class GenerateFavouritesLayer extends Script {
         this.addTagRenderings(proto)
         this.addTitle(proto)
         proto.titleIcons = this.generateTitleIcons()
+        delete proto.filter
         const targetContent = JSON.stringify(proto, null, "  ")
         const path = "./assets/layers/favourite/favourite.json"
         if (existsSync(path)) {

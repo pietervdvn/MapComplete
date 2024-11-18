@@ -1,5 +1,20 @@
 import { TagConfigJson } from "./TagConfigJson"
-
+import { Translatable } from "./Translatable"
+export interface FilterConfigOptionJson {
+    question: Translatable
+    searchTerms?: Record<string, string[]>
+    emoji?: string
+    icon?: string
+    osmTags?: TagConfigJson
+    default?: boolean
+    fields?: {
+        /**
+         * If name is `search`, use  "_first_comment~.*{search}.*" as osmTags
+         */
+        name: string
+        type?: string | "string"
+    }[]
+}
 export default interface FilterConfigJson {
     /**
      * An id/name for this filter, used to set the URL parameters
@@ -33,18 +48,7 @@ export default interface FilterConfigJson {
      *     }
      *     ```
      */
-    options: {
-        question: string | any
-        osmTags?: TagConfigJson
-        default?: boolean
-        fields?: {
-            /**
-             * If name is `search`, use  "_first_comment~.*{search}.*" as osmTags
-             */
-            name: string
-            type?: string | "string"
-        }[]
-    }[]
+    options: FilterConfigOptionJson[]
 
     /**
      * Used for comments or to disable a check

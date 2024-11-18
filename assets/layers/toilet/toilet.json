@@ -18,12 +18,37 @@
     "en": "A layer showing (public) toilets",
     "nl": "Een laag die publieke toiletten toont",
     "de": "Eine Ebene mit (öffentlichen) Toiletten",
-    "es": "Una capa que muestra baños (públicos)",
+    "es": "Una capa que muestra los baños (públicos)",
     "fr": "Un calque montrant les toilettes (publiques)",
     "da": "Et lag, der viser (offentlige) toiletter",
     "ca": "Una capa que mostra banys (publics)",
     "cs": "Vrstva zobrazující (veřejné) toalety",
     "sl": "Prikaz (javnih) stranišč"
+  },
+  "searchTerms": {
+    "en": [
+      "Toilets",
+      "Bathroom",
+      "Lavatory",
+      "Water Closet",
+      "outhouse",
+      "privy",
+      "head",
+      "latrine",
+      "WC",
+      "W.C."
+    ],
+    "nl": [
+      "WC",
+      "WCs",
+      "plee",
+      "gemak",
+      "opschik",
+      "kabinet",
+      "latrine",
+      "retirade",
+      "piesemopsantee"
+    ]
   },
   "source": {
     "osmTags": "amenity=toilets"
@@ -51,6 +76,23 @@
         {
           "if": "opening_hours~*",
           "then": "icons.isOpen"
+        },
+        {
+          "if": {
+            "or": [
+              "access=no",
+              "access=private"
+            ]
+          },
+          "then": "lock"
+        },
+        {
+          "if": "access=key",
+          "then": "key"
+        },
+        {
+          "if": "access=customers",
+          "then": "key:gray"
         }
       ],
       "location": [
@@ -120,7 +162,8 @@
         "ru": "tуалет с доступом для пользователей кресел-колясок",
         "da": "et toilet med kørestolsvenligt toilet",
         "ca": "un lavabo amb lavabo accessible per a cadires de rodes",
-        "cs": "toalety s bezbariérovou toaletou"
+        "cs": "toalety s bezbariérovou toaletou",
+        "es": "un baño con inodoro accesible para sillas de ruedas"
       },
       "tags": [
         "amenity=toilets",
@@ -135,7 +178,8 @@
         "da": "Et toilet, der har mindst et kørestolsvenligt toilet",
         "ca": "Un lavabo que tingui almenys un lavabo accessible per a cadira de rodes",
         "cs": "Toaleta, která má alespoň jednu toaletu pro vozíčkáře",
-        "sl": "Stranišča z vsaj enim invalidom na vozičku dostopnim straniščem"
+        "sl": "Stranišča z vsaj enim invalidom na vozičku dostopnim straniščem",
+        "es": "Un baño que tiene al menos un inodoro accesible para sillas de ruedas"
       }
     }
   ],
@@ -152,7 +196,9 @@
         "ru": "Есть ли свободный доступ к этим туалетам?",
         "da": "Er disse toiletter offentligt tilgængelige?",
         "ca": "Aquests serveis són d'accés públic?",
-        "cs": "Jsou tyto toalety veřejně přístupné?"
+        "cs": "Jsou tyto toalety veřejně přístupné?",
+        "es": "¿Son estos baños de acceso público?",
+        "uk": "Чи є ці туалети загальнодоступними?"
       },
       "render": {
         "en": "Access is {access}",
@@ -163,7 +209,8 @@
         "es": "El acceso es {access}",
         "da": "Adgang er {access}",
         "ca": "L'accés és {access}",
-        "cs": "Přístup je {access}"
+        "cs": "Přístup je {access}",
+        "uk": "Доступ – {access}"
       },
       "freeform": {
         "key": "access",
@@ -184,25 +231,30 @@
             "es": "Acceso público",
             "da": "Offentlig adgang",
             "ca": "Accés públic",
-            "cs": "Veřejný přístup"
+            "cs": "Veřejný přístup",
+            "uk": "Публічний доступ"
           }
         },
         {
           "if": "access=customers",
+          "icon": "key",
           "then": {
             "en": "Only access to customers",
             "de": "Der Zugang ist nur für Kunden",
             "fr": "Accès réservé aux clients",
             "nl": "Enkel toegang voor klanten",
             "it": "Accesso riservato ai clienti e alle clienti",
-            "es": "Solo accesible a clientes",
+            "es": "Solo acceso para clientes",
             "da": "Kun adgang til kunder",
             "ca": "Sols accessible per a clients",
-            "cs": "Přístup pouze pro zákazníky"
+            "cs": "Přístup pouze pro zákazníky",
+            "uk": "Доступ тільки для клієнтів"
           }
         },
         {
           "if": "access=no",
+          "icon": "lock",
+          "alsoShowIf": "access=private",
           "then": {
             "en": "Not accessible",
             "de": "Der Zugang ist nicht erlaubt oder nicht möglich",
@@ -210,24 +262,27 @@
             "nl": "Niet toegankelijk",
             "ru": "Недоступно",
             "it": "Non accessibile",
-            "es": "No accesible",
+            "es": "Inaccesible",
             "da": "Ikke tilgængelig",
             "ca": "No accessible",
-            "cs": "Nepřístupné"
+            "cs": "Nepřístupné",
+            "uk": "Недоступно"
           }
         },
         {
           "if": "access=key",
+          "icon": "key",
           "then": {
             "en": "Accessible, but one has to ask a key to enter",
             "de": "Der Zugang ist möglich, aber man muss nach einen Schlüssel fragen",
             "fr": "Accessible, mais vous devez demander la clé",
             "nl": "Toegankelijk na het vragen van de sleutel",
             "it": "Accessibile, ma occorre chiedere una chiave per accedere",
-            "es": "Accesible, pero hay que pedir la llave para entrar",
+            "es": "Accesible, pero hay que pedir una llave para entrar",
             "da": "Tilgængelig, men man skal bede om en nøgle for at komme ind",
             "ca": "Accessible, però s'ha de demanar la clau per a entrar",
-            "cs": "Přístupné, ale pro vstup je třeba požádat o klíč"
+            "cs": "Přístupné, ale pro vstup je třeba požádat o klíč",
+            "uk": "Доступний, але для входу потрібно попросити ключ"
           }
         },
         {
@@ -239,7 +294,7 @@
             "nl": "Publiek toegankelijk",
             "it": "Accesso pubblico",
             "ru": "Свободный доступ",
-            "es": "De acceso público",
+            "es": "Acceso público",
             "da": "Offentlig adgang",
             "ca": "Accés públic",
             "cs": "Veřejný přístup"
@@ -270,7 +325,8 @@
         "it": "Questi servizi igienici sono gratuiti?",
         "da": "Er det gratis at benytte disse toiletter?",
         "ca": "Aquest serveis són gratuïts?",
-        "cs": "Jsou tyto toalety zdarma?"
+        "cs": "Jsou tyto toalety zdarma?",
+        "es": "¿Son estos baños de uso gratuito?"
       },
       "mappings": [
         {
@@ -298,7 +354,8 @@
             "it": "Gratis",
             "da": "Gratis at bruge",
             "ca": "Gratuït",
-            "cs": "Použití zdarma"
+            "cs": "Použití zdarma",
+            "es": "De uso gratuito"
           }
         }
       ]
@@ -314,7 +371,7 @@
         "nl": "Hoeveel moet men betalen om deze toiletten te gebruiken?",
         "it": "Quanto costa l'accesso a questi servizi igienici?",
         "ru": "Сколько стоит посещение туалета?",
-        "es": "¿Cuánto hay que pagar para estos baños?",
+        "es": "¿Cuánto hay que pagar por estos baños?",
         "da": "Hvor meget skal man betale for disse toiletter?",
         "ca": "Quant s'ha de pagar per aquests lavabos?",
         "cs": "Kolik se za tyto toalety platí?"
@@ -326,7 +383,7 @@
         "nl": "De toiletten gebruiken kost {charge}",
         "it": "La tariffa è {charge}",
         "ru": "Стоимость {charge}",
-        "es": "La tasa es {charge}",
+        "es": "La tarifa es {charge}",
         "da": "Gebyret er {charge}",
         "ca": "La taxa és {charge}",
         "cs": "Poplatek je {charge}"
@@ -344,7 +401,8 @@
           "nl": "bijv. 0.50 EUR",
           "de": "z.B. 0.50 EUR",
           "ca": "p. ex. 0.50 eur",
-          "cs": "např. 0,50 EUR"
+          "cs": "např. 0,50 EUR",
+          "es": "ej. 0.50 EUR"
         }
       },
       "id": "toilet-charge"
@@ -380,7 +438,8 @@
           "fr": "Quand ces toilettes sont-elles ouvertes ?",
           "da": "Hvornår åbnes disse toiletter?",
           "ca": "Quan obrin aquests lavabos?",
-          "cs": "Kdy jsou tyto toalety otevřeny?"
+          "cs": "Kdy jsou tyto toalety otevřeny?",
+          "es": "¿Cuándo están abiertos estos baños?"
         }
       }
     },
@@ -397,7 +456,8 @@
         "it": "C'è un WC riservato alle persone in sedia a rotelle?",
         "da": "Er der et særligt toilet til kørestolsbrugere?",
         "ca": "Hi ha un lavabo específic per a usuaris amb cadira de rodes?",
-        "cs": "Je zde vyhrazená toaleta pro vozíčkáře?"
+        "cs": "Je zde vyhrazená toaleta pro vozíčkáře?",
+        "es": "¿Hay un baño dedicado para usuarios de sillas de ruedas?"
       },
       "mappings": [
         {
@@ -407,7 +467,7 @@
             "fr": "Il y a des toilettes réservées pour les personnes à mobilité réduite",
             "nl": "Er is een toilet voor rolstoelgebruikers",
             "it": "C'è un WC riservato alle persone in sedia a rotelle",
-            "es": "Hay un baño dedicado para usuarios con sillas de ruedas",
+            "es": "Hay un baño dedicado para usuarios de sillas de ruedas",
             "da": "Der er et særligt toilet til kørestolsbrugere",
             "ca": "Hi ha un lavabo dedicat per a usuaris amb cadira de rodes",
             "cs": "K dispozici je speciální toaleta pro vozíčkáře"
@@ -437,7 +497,8 @@
             "de": "Es gibt nur eine barrierefreie Toilette für Rollstuhlfahrer",
             "da": "Der er kun et særligt toilet til kørestolsbrugere",
             "ca": "És només un lavabo per a usuaris amb cadira de rodes",
-            "cs": "K dispozici je pouze vyhrazená toaleta pro vozíčkáře"
+            "cs": "K dispozici je pouze vyhrazená toaleta pro vozíčkáře",
+            "es": "Solo hay un baño dedicado para usuarios de sillas de ruedas"
           }
         }
       ]
@@ -464,7 +525,8 @@
         "de": "Wie breit ist die Tür zur rollstuhlgerechten Toilette?",
         "da": "Hvad er bredden på døren til det kørestolsvenlige toilet?",
         "ca": "Quina és l'amplada de la porta per al lavabo accéssible?",
-        "cs": "Jaká je šířka dveří na bezbariérovou toaletu?"
+        "cs": "Jaká je šířka dveří na bezbariérovou toaletu?",
+        "es": "¿Cuál es el ancho de la puerta del baño accesible para sillas de ruedas?"
       },
       "render": {
         "en": "The door to the wheelchair-accessible toilet is {canonical(door:width)} wide",
@@ -473,7 +535,8 @@
         "de": "Die Tür zur rollstuhlgerechten Toilette ist {canonical(door:width)} breit",
         "da": "Døren til det kørestolsvenlige toilet er {canonical(door:width)} bred",
         "ca": "La porta del vàter accessible amb cadira de rodes té {canonical(door:width)} d'ample",
-        "cs": "Dveře na bezbariérovou toaletu mají šířku {canonical(door:width)}"
+        "cs": "Dveře na bezbariérovou toaletu mají šířku {canonical(door:width)}",
+        "es": "La puerta del baño accesible para sillas de ruedas tiene {canonical(door:width)} de ancho"
       },
       "freeform": {
         "key": "door:width",
@@ -492,7 +555,7 @@
         "nl": "Welke toiletten zijn dit?",
         "it": "Di che tipo di servizi igienici si tratta?",
         "ru": "Какие это туалеты?",
-        "es": "¿Qué tipo de aseos son?",
+        "es": "¿Qué tipo de baños son estos?",
         "da": "Hvilken slags toiletter er det?",
         "ca": "Quin tipus de lavabo són aquests?",
         "cs": "O jaký druh záchodů se jedná?"
@@ -507,7 +570,8 @@
             "nl": "Er zijn enkel WC's om op te zitten",
             "it": "Ci sono solo WC con sedile",
             "ca": "Només hi han lavabos asseguts",
-            "cs": "K dispozici jsou pouze toalety k sezení"
+            "cs": "K dispozici jsou pouze toalety k sezení",
+            "es": "Solo hay inodoros sentados"
           }
         },
         {
@@ -518,7 +582,7 @@
             "fr": "Il y a uniquement des urinoirs",
             "nl": "Er zijn enkel urinoirs",
             "it": "Ci sono solo urinali",
-            "es": "Aquí solo hay orinales",
+            "es": "Solo hay urinarios aquí",
             "da": "Her er kun urinaler",
             "ca": "Aquí només hi han urinals",
             "cs": "Jsou zde pouze pisoáry"
@@ -534,7 +598,8 @@
             "it": "Ci sono solo turche",
             "da": "Der er kun squat-toiletter her",
             "ca": "Aquí només hi han lavabos a la gatzoneta",
-            "cs": "Jsou zde pouze \"turecké\" toalety"
+            "cs": "Jsou zde pouze \"turecké\" toalety",
+            "es": "Solo hay inodoros en cuclillas aquí"
           }
         },
         {
@@ -545,7 +610,7 @@
             "fr": "Il y a des sièges de toilettes et des urinoirs",
             "nl": "Er zijn zowel urinoirs als zittoiletten",
             "it": "Ci sono sia sedili, sia urinali",
-            "es": "Aquí hay tanto váteres de sentarse como orinales",
+            "es": "Aquí hay inodoros sentados y urinarios",
             "da": "Både siddende toiletter og urinaler er tilgængelige her",
             "ca": "Aquí hi ha lavabos per a utilitzar tant de peu com asseguts",
             "cs": "Zde jsou k dispozici sedací toalety i pisoáry"
@@ -559,12 +624,17 @@
       "question": {
         "en": "Are these toilets gender-segregated?",
         "nl": "Zijn deze toiletten gescheiden op basis van geslacht?",
-        "de": "Sind diese Toiletten geschlechtergetrennt?"
+        "de": "Sind diese Toiletten geschlechtergetrennt?",
+        "ca": "Aquests lavabos estan separats per gènere?",
+        "cs": "Jsou tyto toalety rozděleny podle pohlaví?",
+        "es": "¿Estos baños están segregados por género?"
       },
       "questionHint": {
         "en": "Are there separate stalls or separate areas for men and women and are they signposted as such?",
         "nl": "Is er een aparte ruimte voor mannen en vrouwen en zijn deze ruimtes ook expliciet aangegeven?",
-        "de": "Gibt es getrennte Kabinen oder getrennte Bereiche für Männer und Frauen, und sind sie als solche ausgeschildert?"
+        "de": "Gibt es getrennte Kabinen oder getrennte Bereiche für Männer und Frauen, und sind sie als solche ausgeschildert?",
+        "cs": "Existují samostatné stánky nebo oddělené prostory pro muže a ženy a jsou jako takové označeny?",
+        "es": "¿Hay cabinas o áreas separadas para hombres y mujeres, y están señalizadas como tales?"
       },
       "mappings": [
         {
@@ -572,7 +642,10 @@
           "then": {
             "en": "There is a separate, signposted area for men and women",
             "nl": "Er zijn aparte ruimtes of toiletten voor mannen en vrouwen",
-            "de": "Es gibt einen separaten, ausgeschilderten Bereich für Männer und Frauen"
+            "de": "Es gibt einen separaten, ausgeschilderten Bereich für Männer und Frauen",
+            "ca": "Hi ha una zona separada, senyalitzada per a homes i dones",
+            "cs": "K dispozici je oddělený, označený prostor pro muže a ženy",
+            "es": "Hay un área separada e indicada para hombres y mujeres"
           }
         },
         {
@@ -580,7 +653,9 @@
           "then": {
             "en": "There is no separate, signposted area for men and women",
             "nl": "Mannen en vrouwen gebruiken dezelfde ruimtes en toiletten",
-            "de": "Es gibt keinen getrennten, ausgeschilderten Bereich für Männer und Frauen"
+            "de": "Es gibt keinen getrennten, ausgeschilderten Bereich für Männer und Frauen",
+            "cs": "Neexistuje žádný oddělený, označený prostor pro muže a ženy",
+            "es": "No hay un área separada e indicada para hombres y mujeres"
           }
         }
       ]
@@ -590,12 +665,16 @@
       "question": {
         "en": "Are free, menstrual products distributed here?",
         "nl": "Zijn er gratis menstruatieproducten beschikbaar?",
-        "de": "Werden hier kostenlose Menstruationsprodukte verteilt?"
+        "de": "Werden hier kostenlose Menstruationsprodukte verteilt?",
+        "es": "¿Se distribuyen productos menstruales gratuitos aquí?",
+        "uk": "Чи розповсюджуються тут безкоштовні менструальні засоби?"
       },
       "questionHint": {
         "en": "This is only about menstrual products that are free of charge. If e.g. a vending machine is available which charges for menstrual products, ignore it for this question.",
         "nl": "Dit gaat enkel over menstruatieproducten die gratis geschikbaar zijn. Indien er bv. een verkoopautomaat met menstruatieproducten is, negeer deze dan",
-        "de": "Hier geht es nur um Menstruationsprodukte, die kostenlos sind. Wenn es z. B. einen Automaten gibt, an dem Menstruationsprodukte kostenpflichtig sind, wird er bei dieser Frage nicht berücksichtigt."
+        "de": "Hier geht es nur um Menstruationsprodukte, die kostenlos sind. Wenn es z. B. einen Automaten gibt, an dem Menstruationsprodukte kostenpflichtig sind, wird er bei dieser Frage nicht berücksichtigt.",
+        "es": "Esto solo se refiere a productos menstruales gratuitos. Si, por ejemplo, hay una máquina expendedora que cobra por productos menstruales, ignórala para esta pregunta.",
+        "uk": "Йдеться лише про ті менструальні засоби, які є безкоштовними. Якщо, наприклад, поруч є торговий автомат, який бере плату за менструальні засоби, ігноруйте це питання."
       },
       "mappings": [
         {
@@ -604,7 +683,9 @@
             "en": "Free menstrual products are available to all visitors of these toilets",
             "nl": "Er zijn gratis menstruatieprocten beschikbaar voor alle bezoekers van deze toiletten",
             "de": "Für alle Besucher dieser Toiletten stehen kostenlose Menstruationsprodukte zur Verfügung",
-            "fr": "Protections menstruelles gratuites disponibles dans ces toilettes, pour tout le monde"
+            "fr": "Protections menstruelles gratuites disponibles dans ces toilettes, pour tout le monde",
+            "es": "Hay productos menstruales gratuitos disponibles para todos los visitantes de estos baños",
+            "uk": "Безкоштовні менструальні засоби доступні для всіх відвідувачів цих туалетів"
           }
         },
         {
@@ -613,7 +694,9 @@
             "en": "Free menstrual products are available to some visitors of these toilets",
             "nl": "De gratis menstruatieproducten zijn enkel beschikbaar in een deel van de toiletten",
             "de": "Für einige Besucher dieser Toiletten gibt es kostenlose Menstruationsprodukte",
-            "fr": "Protections menstruelles gratuites disponibles dans ces toilettes, réservées à certains visiteurs"
+            "fr": "Protections menstruelles gratuites disponibles dans ces toilettes, réservées à certains visiteurs",
+            "es": "Hay productos menstruales gratuitos disponibles para algunos visitantes de estos baños",
+            "uk": "Деяким відвідувачам цих туалетів доступні безкоштовні менструальні засоби"
           },
           "hideInAnswer": "gender_segregated=yes"
         },
@@ -624,7 +707,9 @@
             "en": "No free menstrual products are available here",
             "nl": "Er zijn geen gratis menstruatieproducten beschikbaar",
             "de": "Hier gibt es keine kostenlosen Menstruationsprodukte",
-            "fr": "Pas protection menstruelle disponible ici"
+            "fr": "Pas protection menstruelle disponible ici",
+            "es": "No hay productos menstruales gratuitos disponibles aquí",
+            "uk": "Тут немає безкоштовних менструальних засобів"
           }
         }
       ]
@@ -634,7 +719,9 @@
       "question": {
         "en": "Where are the free menstrual products located?",
         "nl": "Waar bevinden de gratis menstruatieproducten zich?",
-        "de": "Wo befinden sich die kostenlosen Menstruationsprodukte?"
+        "de": "Wo befinden sich die kostenlosen Menstruationsprodukte?",
+        "uk": "Де знаходяться безкоштовні менструальні засоби?",
+        "es": "¿Dónde se encuentran los productos menstruales gratuitos?"
       },
       "condition": {
         "or": [
@@ -645,7 +732,8 @@
       "render": {
         "en": "The menstrual products are located in {toilets:menstrual_products:location}",
         "nl": "De menstruatieproducten bevinden zich in {toilets:menstrual_products:location}",
-        "de": "Die Menstruationsprodukte befinden sich in {toilets:menstrual_products:location}"
+        "de": "Die Menstruationsprodukte befinden sich in {toilets:menstrual_products:location}",
+        "es": "Los productos menstruales se encuentran en {toilets:menstrual_products:location}"
       },
       "freeform": {
         "key": "toilets:menstrual_products:location",
@@ -656,7 +744,9 @@
           "then": {
             "en": "The free, menstrual products are located in the toilet for women",
             "nl": "De gratis menstruatieproducten bevinden zich in het vrouwentoilet",
-            "de": "Die kostenlosen Menstruationsprodukte befinden sich in der Toilette für Frauen"
+            "de": "Die kostenlosen Menstruationsprodukte befinden sich in der Toilette für Frauen",
+            "uk": "Безкоштовні менструальні засоби знаходяться в туалеті для жінок",
+            "es": "Los productos menstruales gratuitos se encuentran en el baño de mujeres"
           },
           "if": "toilets:menstrual_products:location=female_toilet",
           "alsoShowIf": "toilets:menstrual_products:location="
@@ -665,7 +755,9 @@
           "then": {
             "en": "The free, menstrual products are located in the toilet for men",
             "nl": "De gratis menstruatieproducten bevinden zich in het mannentoilet",
-            "de": "Die kostenlosen Menstruationsprodukte befinden sich in der Toilette für Männer"
+            "de": "Die kostenlosen Menstruationsprodukte befinden sich in der Toilette für Männer",
+            "uk": "Безкоштовні менструальні засоби знаходяться в туалеті для чоловіків",
+            "es": "Los productos menstruales gratuitos se encuentran en el baño de hombres"
           },
           "if": "toilets:menstrual_products:location=male_toilet"
         },
@@ -674,7 +766,9 @@
           "then": {
             "en": "The free, menstrual products are located in the toilet for wheelchair users",
             "nl": "De gratis menstruatieproducten bevinden zich in het rolstoeltoegankelijke toilet",
-            "de": "Die kostenlosen Menstruationsprodukte befinden sich auf der Toilette für Rollstuhlfahrende"
+            "de": "Die kostenlosen Menstruationsprodukte befinden sich auf der Toilette für Rollstuhlfahrende",
+            "uk": "Безкоштовні менструальні засоби знаходяться в туалеті для людей на візках",
+            "es": "Los productos menstruales gratuitos se encuentran en el baño para usuarios de sillas de ruedas"
           }
         }
       ]
@@ -692,7 +786,8 @@
         "it": "È disponibile un fasciatoio (per cambiare i pannolini)?",
         "da": "Findes der puslebord (til bleskift)?",
         "ca": "Hi ha un canviador per a nadons (per a canviar bolquers) disponible?",
-        "cs": "Je k dispozici přebalovací pult (na výměnu plenek)?"
+        "cs": "Je k dispozici přebalovací pult (na výměnu plenek)?",
+        "es": "¿Hay un cambiador (para cambiar pañales) disponible?"
       },
       "mappings": [
         {
@@ -702,7 +797,7 @@
             "fr": "Une table à langer est disponible",
             "nl": "Er is een luiertafel",
             "it": "È disponibile un fasciatoio",
-            "es": "Hay un cambiador",
+            "es": "Hay un cambiador disponible",
             "da": "Et puslebord er tilgængeligt",
             "ca": "Hi ha un canviador per a nadons",
             "cs": "Přebalovací pult je k dispozici"
@@ -718,7 +813,7 @@
             "fr": "Aucune table à langer",
             "nl": "Geen luiertafel",
             "it": "Non è disponibile un fasciatoio",
-            "es": "No hay cambiador",
+            "es": "No hay cambiador disponible",
             "da": "Der er ikke noget puslebord til rådighed",
             "ca": "No hi ha canviador per a nadons",
             "cs": "Přebalovací pult není k dispozici"
@@ -736,10 +831,11 @@
         "fr": "Où se situe la table à langer ?",
         "nl": "Waar bevindt de luiertafel zich?",
         "it": "Dove si trova il fasciatoio?",
-        "es": "¿Dónde está el cambiador?",
+        "es": "¿Dónde se encuentra el cambiador?",
         "da": "Hvor er puslebordet placeret?",
         "ca": "On està el canviador?",
-        "cs": "Kde je umístěn přebalovací pult?"
+        "cs": "Kde je umístěn přebalovací pult?",
+        "uk": "Де знаходиться пеленальний столик?"
       },
       "render": {
         "en": "A changing table is located at {changing_table:location}",
@@ -747,9 +843,9 @@
         "fr": "Emplacement de la table à langer : {changing_table:location}",
         "nl": "Er bevindt zich een luiertafel in {changing_table:location}",
         "it": "Il fasciatoio si trova presso {changing_table:location}",
-        "es": "El cambiador está en {changing_table:location}",
+        "es": "Un cambiador se encuentra en {changing_table:location}",
         "da": "Puslebordet er placeret på {changing_table:location}",
-        "ca": "El cambiador està a {changing_table:location}",
+        "ca": "Hi ha un canviador a {changing_table:location}",
         "cs": "Přebalovací pult se nachází v {changing_table:location}"
       },
       "condition": {
@@ -770,8 +866,9 @@
             "nl": "Er bevindt zich een luiertafel in de vrouwentoiletten ",
             "it": "Un fasciatoio è nei servizi igienici femminili",
             "da": "Puslebordet er på toilettet til kvinder. ",
-            "ca": "El canviador està al lavabo per a dones. ",
-            "cs": "Přebalovací pult je na dámské toaletě. "
+            "ca": "Al lavabo per a dones hi ha un canviador",
+            "cs": "Přebalovací pult je na dámské toaletě",
+            "es": "Hay un cambiador en el baño de mujeres"
           },
           "if": "changing_table:location=female_toilet"
         },
@@ -782,8 +879,9 @@
             "fr": "La table à langer est dans les toilettes pour hommes.",
             "nl": "Er bevindt zich een luiertafel in de herentoiletten ",
             "it": "Un fasciatoio è nei servizi igienici maschili",
-            "ca": "El canviador està al lavabo per a homes. ",
-            "cs": "Přebalovací pult je na pánské toaletě. "
+            "ca": "Al lavabo per a homes hi ha un canviador",
+            "cs": "Přebalovací pult je na pánské toaletě",
+            "es": "Hay un cambiador en el baño de hombres"
           },
           "if": "changing_table:location=male_toilet"
         },
@@ -796,8 +894,9 @@
             "nl": "Er bevindt zich een luiertafel in de rolstoeltoegankelijke toilet ",
             "it": "Un fasciatoio è nei servizi igienici per persone in sedia a rotelle",
             "da": "Puslebordet er på toilettet for kørestolsbrugere. ",
-            "ca": "El canviador està al lavabo per a usuaris de cadira de rodes. ",
-            "cs": "Přebalovací pult je na toaletě pro vozíčkáře. "
+            "ca": "Al lavabo per a usuaris de cadira de rodes hi ha un canviador",
+            "cs": "Přebalovací pult je na toaletě pro vozíčkáře",
+            "es": "Hay un cambiador en el baño para usuarios de sillas de ruedas"
           }
         },
         {
@@ -808,10 +907,10 @@
             "fr": "La table à langer est dans un espace dédié.",
             "nl": "Er bevindt zich een luiertafel in een daartoe voorziene kamer ",
             "it": "Un fasciatoio è in una stanza dedicata",
-            "es": "El cambiador está en una habitación dedicada",
+            "es": "Hay un cambiador en una habitación dedicada",
             "da": "Vuggestuen står i et særligt rum. ",
-            "ca": "El canviador està en una habitació dedicada. ",
-            "cs": "Přebalovací pult je ve vyhrazené místnosti. "
+            "ca": "Hi ha un canviador en una habitació dedicada",
+            "cs": "Přebalovací pult je ve vyhrazené místnosti"
           }
         }
       ],
@@ -827,10 +926,10 @@
         "en": "Do these toilets have a sink to wash your hands?",
         "nl": "Hebben deze toiletten een lavabo om de handen te wassen?",
         "de": "Gibt es hier ein Handwaschbecken?",
-        "es": "¿Esto baños tienen una pileta para lavarte las manos?",
+        "es": "¿Estos baños tienen un lavabo para lavarse las manos?",
         "fr": "Ces toilettes ont-ils un lavabo pour se laver les mains ?",
         "da": "Har disse toiletter en håndvask til at vaske hænder?",
-        "ca": "Aquests lavabos tenen una pica per a rentar-te les mans?",
+        "ca": "Aquests lavabos tenen una pica per a rentar-se les mans?",
         "cs": "Mají tyto toalety umyvadlo na mytí rukou?"
       },
       "mappings": [
@@ -840,10 +939,10 @@
             "en": "These toilets have a sink to wash your hands",
             "nl": "Deze toiletten hebben een lavabo waar men de handen kan wassen",
             "de": "Die Toilette hat ein Handwaschbecken",
-            "es": "Estos aseos tienen un lavabo para lavarse las manos",
+            "es": "Estos baños tienen un lavabo para lavarse las manos",
             "fr": "Ces toilettes ont un lavabo pour se laver les mains",
             "da": "Dette toilet har en vask til at vaske dine hænder",
-            "ca": "Aquests lavabos tenen una pica per a rentar-te les mans",
+            "ca": "Aquests lavabos tenen una pica per a rentar-se les mans",
             "cs": "Tyto toalety mají umyvadlo na mytí rukou"
           }
         },
@@ -853,10 +952,10 @@
             "en": "These toilets <b>don't</b> have a sink to wash your hands",
             "nl": "Deze toiletten hebben <b>geen</b> lavabo waar men de handen kan wassen",
             "de": "Die Toilette hat <b>kein</b> Handwaschbecken",
-            "es": "Estos aseos <b>no tienen lavabo</b> para lavarse las manos",
+            "es": "Estos baños <b>no</b> tienen un lavabo para lavarse las manos",
             "fr": "Ces toilettes <b>n'ont pas</b> de lavabo pour se laver les mains",
             "da": "Disse toiletter <b> har ikke </b> en vask til at vaske dine hænder",
-            "ca": "Aquests lavabos <b>no</b> tenen una pica per a rentar-te les mans",
+            "ca": "Aquests lavabos <b>no</b> tenen una pica per a rentar-se les mans",
             "cs": "Tyto toalety <b>nemají umyvadlo na mytí rukou</b>"
           }
         }
@@ -871,7 +970,7 @@
         "en": "Does one have to bring their own toilet paper to this toilet?",
         "nl": "Moet je je eigen toiletpapier meenemen naar deze toilet?",
         "de": "Ist Toilettenpapier vorhanden?",
-        "es": "¿Hay que traer tu propio papel higiénico a este baño?",
+        "es": "¿Hay que traer su propio papel higiénico a este baño?",
         "fr": "Est-ce qu'il faut apporter son propre papier toilette ?",
         "da": "Skal man selv medbringe toiletpapir til dette toilet?",
         "ca": "Hi ha que portar el teu propi paper higiènic a aquest lavabo?",
@@ -884,7 +983,7 @@
             "en": "This toilet is equipped with toilet paper",
             "nl": "Deze toilet is voorzien van toiletpapier",
             "de": "Die Toilette ist in der Regel mit Toilettenpapier ausgestattet",
-            "es": "Este baño esta equipado con papel higiénico",
+            "es": "Este baño está equipado con papel higiénico",
             "fr": "Ces toilettes sont équipés de papier toilette",
             "da": "Dette toilet er udstyret med toiletpapir",
             "ca": "Aquest lavabo està equipat amb paper higiènic",
@@ -923,7 +1022,7 @@
             "en": "Wheelchair accessible",
             "nl": "Rolstoel toegankelijk",
             "de": "Barrierefrei",
-            "es": "Accesible con sillas de ruedas",
+            "es": "Accesible para sillas de ruedas",
             "fr": "Accessible aux fauteuils roulants",
             "da": "Tilgængelig for kørestolsbrugere",
             "ca": "Accessible amb cadira de rodes",
@@ -947,7 +1046,7 @@
             "en": "Has a changing table",
             "nl": "Heeft een luiertafel",
             "de": "Mit Wickeltisch",
-            "es": "Tiene un cambiador",
+            "es": "Tiene cambiador",
             "fr": "A une table à langer",
             "da": "Har et puslebord",
             "ca": "Té un canviador",

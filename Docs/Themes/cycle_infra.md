@@ -8,14 +8,13 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [cycleways_and_roads](../Layers/cycleways_and_roads.md)
  - [barrier](../Layers/barrier.md)
  - [crossings](../Layers/crossings.md)
-
+ - [bicycle_counter](../Layers/bicycle_counter.md)
+ - [cyclist_waiting_aid](../Layers/cyclist_waiting_aid.md)
 
 Available languages:
-
 
  - en
  - nl
@@ -32,7 +31,7 @@ Available languages:
  - pa_PK
  - cs
  - pl
-
+ - uk
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

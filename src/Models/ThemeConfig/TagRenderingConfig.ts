@@ -18,6 +18,7 @@ import { GeoOperations } from "../../Logic/GeoOperations"
 import { Feature } from "geojson"
 import MarkdownUtils from "../../Utils/MarkdownUtils"
 import { UploadableTag } from "../../Logic/Tags/TagTypes"
+import LayerConfig from "./LayerConfig"
 
 export interface Mapping {
     readonly if: UploadableTag
@@ -898,9 +899,7 @@ export default class TagRenderingConfig {
         ].join("\n")
     }
 
-    public
-
-    usedTags(): TagsFilter[] {
+    public usedTags(): TagsFilter[] {
         const tags: TagsFilter[] = []
         tags.push(
             this.metacondition,
@@ -924,17 +923,48 @@ export default class TagRenderingConfig {
 
     /**
      * The keys that should be erased if one has to revert to 'unknown'.
-     * Might give undefined
+     * Might give undefined if setting to unknown is not possible
      */
-    public settableKeys(): string[] | undefined {
+    public removeToSetUnknown(
+        partOfLayer: LayerConfig,
+        currentTags: Record<string, string>
+    ): string[] | undefined {
+        if (!partOfLayer?.source || !currentTags) {
+            return
+        }
         const toDelete = new Set<string>()
         if (this.freeform) {
             toDelete.add(this.freeform.key)
-        }
-        for (const mapping of this.mappings) {
-            for (const usedKey of mapping.if.usedKeys()) {
-                toDelete.add(usedKey)
+            const extraTags = new And(this.freeform.addExtraTags ?? [])
+                .usedKeys()
+                .filter((k) => k !== "fixme")
+            if (extraTags.length > 0) {
+                return undefined
             }
+        }
+        if (this.mappings?.length > 0) {
+            const mainkey = this.mappings[0].if.usedKeys()
+            mainkey.forEach((k) => toDelete.add(k))
+            for (const mapping of this.mappings) {
+                if (mapping.addExtraTags?.length > 0) {
+                    return undefined
+                }
+                for (const usedKey of mapping.if.usedKeys()) {
+                    if (mainkey.indexOf(usedKey) < 0) {
+                        // This is a complicated case, we ignore this for now
+                        return undefined
+                    }
+                }
+            }
+        }
+
+        currentTags = { ...currentTags }
+        for (const key of toDelete) {
+            delete currentTags[key]
+        }
+        const required = partOfLayer.source.osmTags
+        if (!required.matchesProperties(currentTags)) {
+            return undefined
         }
 
         return Array.from(toDelete)
@@ -973,11 +1003,18 @@ export class TagRenderingConfigUtils {
             }
             const clone: TagRenderingConfig = Object.create(config)
             // The original mappings get "priorityIf" set
-            const oldMappingsCloned = clone.mappings?.map((m) => (<Mapping> {
-                ...m,
-                addExtraTags: [new Tag("nobrand","")],
-                priorityIf: m.priorityIf ?? TagUtils.Tag("id~*"),
-            })) ?? [];
+            const oldMappingsCloned =
+                clone.mappings?.map((m) => {
+                    const mapping = {
+                        ...m,
+                        priorityIf: m.priorityIf ?? TagUtils.Tag("id~*"),
+                    }
+                    if (m.if.usedKeys().indexOf("nobrand") < 0) {
+                        // Erase 'nobrand=yes', unless this option explicitly sets it
+                        mapping["addExtraTags"] = [new Tag("nobrand", "")]
+                    }
+                    return <Mapping>mapping
+                }) ?? []
             clone.mappings = [...oldMappingsCloned, ...extraMappings]
             return clone
         })

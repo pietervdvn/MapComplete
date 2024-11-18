@@ -20,7 +20,7 @@
 
 <MapControlButton
   arialabel={Translations.t.general.labels.background}
-  on:click={() => state.guistate.backgroundLayerSelectionIsOpened.setData(true)}
+  on:click={() => state.guistate.pageStates.background.setData(true)}
   {htmlElem}
 >
   <StyleLoadingIndicator map={map ?? state.map} rasterLayer={state.mapProperties.rasterLayer}>

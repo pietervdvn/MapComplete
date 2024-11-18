@@ -1,5 +1,5 @@
 import { Conversion, DesugaringStep } from "./Conversion"
-import { LayoutConfigJson } from "../Json/LayoutConfigJson"
+import { ThemeConfigJson } from "../Json/ThemeConfigJson"
 import { Utils } from "../../../Utils"
 import metapaths from "../../../assets/schemas/layoutconfigmeta.json"
 import tagrenderingmetapaths from "../../../assets/schemas/questionabletagrenderingconfigmeta.json"
@@ -9,7 +9,7 @@ import { parse as parse_html } from "node-html-parser"
 import { ConversionContext } from "./ConversionContext"
 
 export class ExtractImages extends Conversion<
-    LayoutConfigJson,
+    ThemeConfigJson,
     { path: string; context: string }[]
 > {
     private static readonly layoutMetaPaths = metapaths.filter((mp) => {
@@ -109,7 +109,7 @@ export class ExtractImages extends Conversion<
      *
      */
     convert(
-        json: LayoutConfigJson,
+        json: ThemeConfigJson,
         context: ConversionContext
     ): { path: string; context: string }[] {
         const allFoundImages: { path: string; context: string }[] = []
@@ -243,7 +243,7 @@ export class ExtractImages extends Conversion<
     }
 }
 
-export class FixImages extends DesugaringStep<LayoutConfigJson> {
+export class FixImages extends DesugaringStep<ThemeConfigJson> {
     private readonly _knownImages: Set<string>
 
     constructor(knownImages: Set<string>) {
@@ -289,7 +289,7 @@ export class FixImages extends DesugaringStep<LayoutConfigJson> {
      * fixed.layers[0]["pointRendering"][0].marker[0].icon // => "https://raw.githubusercontent.com/seppesantens/MapComplete-Themes/main/VerkeerdeBordenDatabank/TS_bolt.svg"
      * fixed.layers[0]["pointRendering"][0].iconBadges[0].then.mappings[0].then // => "https://raw.githubusercontent.com/seppesantens/MapComplete-Themes/main/VerkeerdeBordenDatabank/Something.svg"
      */
-    convert(json: LayoutConfigJson, context: ConversionContext): LayoutConfigJson {
+    convert(json: ThemeConfigJson, context: ConversionContext): ThemeConfigJson {
         let url: URL
         try {
             url = new URL(json.id)

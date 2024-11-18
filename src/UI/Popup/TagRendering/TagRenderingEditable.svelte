@@ -48,16 +48,14 @@
   }
 
   let htmlElem: HTMLDivElement
-  $: {
-    if (editMode && htmlElem !== undefined && config.IsKnown($tags)) {
-      // EditMode switched to true yet the answer is already known, so the person wants to make a change
-      // Make sure that the question is in the scrollview!
-
+  function enableEditMode() {
+    editMode = true
+    // EditMode switched to true yet the answer is already known, so the person wants to make a change
+    // Make sure that the question is in the scrollview!
+    window.setTimeout(() => {
       // Some delay is applied to give Svelte the time to render the _question_
-      window.setTimeout(() => {
-        Utils.scrollIntoView(<any>htmlElem)
-      }, 50)
-    }
+      Utils.scrollIntoView(<any>htmlElem)
+    }, 50)
   }
 
   const _htmlElement = new UIEventSource<HTMLElement>(undefined)
@@ -104,7 +102,6 @@
         {state}
         {layer}
         on:saved={() => (editMode = false)}
-        allowDeleteOfFreeform={true}
       >
         <button
           slot="cancel"
@@ -133,9 +130,7 @@
           <EditButton
             arialabel={config.editButtonAriaLabel}
             ariaLabelledBy={answerId}
-            on:click={() => {
-              editMode = true
-            }}
+            on:click={() => enableEditMode()}
           />
         {/if}
       </div>

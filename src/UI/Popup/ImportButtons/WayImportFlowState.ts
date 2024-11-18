@@ -11,7 +11,7 @@ import { TagUtils } from "../../../Logic/Tags/TagUtils"
 import { OsmCreateAction, PreviewableAction } from "../../../Logic/Osm/Actions/OsmChangeAction"
 import { FeatureSource, IndexedFeatureSource } from "../../../Logic/FeatureSource/FeatureSource"
 import CreateMultiPolygonWithPointReuseAction from "../../../Logic/Osm/Actions/CreateMultiPolygonWithPointReuseAction"
-import LayoutConfig from "../../../Models/ThemeConfig/LayoutConfig"
+import ThemeConfig from "../../../Models/ThemeConfig/ThemeConfig"
 import { Changes } from "../../../Logic/Osm/Changes"
 import FullNodeDatabaseSource from "../../../Logic/FeatureSource/TiledFeatureSource/FullNodeDatabaseSource"
 
@@ -52,7 +52,7 @@ export default class WayImportFlowState extends ImportFlow<WayImportFlowArgument
         feature: Feature<LineString | Polygon>,
         args: WayImportFlowArguments,
         state: {
-            layout: LayoutConfig
+            theme: ThemeConfig
             changes: Changes
             indexedFeatures: IndexedFeatureSource
             fullNodeDatabase?: FullNodeDatabaseSource

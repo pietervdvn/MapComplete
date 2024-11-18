@@ -7,7 +7,8 @@
     "ca": "bústies intel·ligents",
     "fr": "Casiers à colis",
     "pl": "Paczkomaty",
-    "cs": "Schránky na balíky"
+    "cs": "Schránky na balíky",
+    "es": "Taquillas de Paquetes"
   },
   "description": {
     "en": "Layer showing parcel lockers for collecting and sending parcels.",
@@ -16,7 +17,8 @@
     "ca": "Capa que mostra les bústies intel·ligents per recollir i enviar paquets.",
     "fr": "Couche affichant les casiers pour récupérer ou envoyer des colis.",
     "pl": "Warstwa pokazująca paczkomaty umożliwiające odbieranie i wysyłanie przesyłek.",
-    "cs": "Vrstva se schránkami na balíky pro vyzvedávání a odesílání balíků."
+    "cs": "Vrstva se schránkami na balíky pro vyzvedávání a odesílání balíků.",
+    "es": "Capa que muestra taquillas para recoger y enviar paquetes."
   },
   "source": {
     "osmTags": {
@@ -40,7 +42,8 @@
       "ca": "Bústia intel·ligent",
       "fr": "Casier à colis",
       "pl": "Paczkomat",
-      "cs": "Schránka na balíky"
+      "cs": "Schránka na balíky",
+      "es": "Taquilla de Paquetes"
     },
     "mappings": [
       {
@@ -52,7 +55,8 @@
           "ca": "{brand} bústia intel·ligent",
           "fr": "Casier à colis {brand}",
           "pl": "Paczkomat {brand}",
-          "cs": "{brand} schránka na balíky"
+          "cs": "{brand} schránka na balíky",
+          "es": "Taquilla de paquetes {brand}"
         }
       }
     ]
@@ -92,7 +96,8 @@
         "ca": "una bústia intel·ligent",
         "fr": "un casier à colis",
         "pl": "paczkomat",
-        "cs": "schránky na balíky"
+        "cs": "schránky na balíky",
+        "es": "una taquilla de paquetes"
       },
       "tags": [
         "amenity=parcel_locker"
@@ -110,7 +115,8 @@
         "ca": "Quina és la marca d'aquesta bústia intel·ligent?",
         "fr": "Quelle est la marque de ce casier à colis ?",
         "pl": "Jakiej marki jest ten paczkomat?",
-        "cs": "Jaká je značka schránky na balíky?"
+        "cs": "Jaká je značka schránky na balíky?",
+        "es": "¿Cuál es la marca de la taquilla de paquetes?"
       },
       "freeform": {
         "key": "brand",
@@ -125,7 +131,8 @@
           "ca": "Marca",
           "fr": "Marque",
           "pl": "Marka",
-          "cs": "Značka"
+          "cs": "Značka",
+          "es": "Marca"
         }
       },
       "render": {
@@ -135,7 +142,8 @@
         "ca": "Açò és una bústia intel·ligent de {brand}",
         "fr": "C'est un casier à colis {brand}",
         "pl": "To jest paczkomat marki {brand}",
-        "cs": "To je {brand} schránka na balíky"
+        "cs": "To je {brand} schránka na balíky",
+        "es": "Esta es una taquilla de paquetes {brand}"
       }
     },
     {
@@ -146,7 +154,8 @@
         "nl": "Wat is de beheerder van deze pakketautomaat?",
         "ca": "Qui gestiona aquesta bústia intel·ligent?",
         "fr": "Quel est l'exploitant de ce casier à colis ?",
-        "cs": "Kdo je provozovatelem schránky na balíky?"
+        "cs": "Kdo je provozovatelem schránky na balíky?",
+        "es": "¿Cuál es el operador de la taquilla de paquetes?"
       },
       "freeform": {
         "key": "operator",
@@ -158,7 +167,8 @@
           "ca": "Gestor",
           "fr": "Exploitant",
           "pl": "Operator",
-          "cs": "Operátor"
+          "cs": "Operátor",
+          "es": "Operador"
         }
       },
       "render": {
@@ -168,7 +178,8 @@
         "ca": "Aquesta bústia intel·ligent la gestiona {operator}",
         "fr": "Ce casier à colis est exploité par {operator}",
         "pl": "Ten paczkomat jest obsługiwany przez {operator}",
-        "cs": "Tuto schránku na balíky provozuje {operator}"
+        "cs": "Tuto schránku na balíky provozuje {operator}",
+        "es": "Esta taquilla de paquetes es operada por {operator}"
       }
     },
     "opening_hours_24_7",
@@ -180,7 +191,8 @@
         "nl": "Wat is het referentienummer/identificator van deze pakketautomaat?",
         "ca": "Quin és el nombre de referència/identificador d'aquesta bústia intel·ligent?",
         "fr": "Quel est le numéro de référence/d'identification de ce casier à colis ?",
-        "cs": "Jaké je referenční číslo/identifikátor této schránky na balíky?"
+        "cs": "Jaké je referenční číslo/identifikátor této schránky na balíky?",
+        "es": "¿Cuál es el número de referencia/identificador de esta taquilla de paquetes?"
       },
       "freeform": {
         "key": "ref",
@@ -192,7 +204,8 @@
           "pa_PK": "ہوالہ",
           "ca": "Referència",
           "fr": "Référence",
-          "cs": "Reference"
+          "cs": "Reference",
+          "es": "Referencia"
         }
       },
       "render": {
@@ -201,7 +214,8 @@
         "nl": "Deze pakketautomaat heeft de referentie {ref}",
         "ca": "Aquesta bústia intel·ligent té la referència {ref}",
         "fr": "Ce casier a colis porte la référence {ref}",
-        "cs": "Tato schránka na balíky má referenční číslo {ref}"
+        "cs": "Tato schránka na balíky má referenční číslo {ref}",
+        "es": "Esta taquilla de paquetes tiene la referencia {ref}"
       }
     },
     {
@@ -213,7 +227,8 @@
         "ca": "Pots enviar paquets des d'aquesta bústia intel·ligent?",
         "fr": "Peut-on envoyer des colis depuis ce casier ?",
         "pl": "Czy z tego paczkomatu można wysyłać przesyłki?",
-        "cs": "Lze z této schránky na balíky odesílat balíky?"
+        "cs": "Lze z této schránky na balíky odesílat balíky?",
+        "es": "¿Puedes enviar paquetes desde esta taquilla?"
       },
       "mappings": [
         {
@@ -225,7 +240,8 @@
             "ca": "Pots enviar paquets des d'aquesta bústia intel·ligent",
             "fr": "On peut envoyer des colis depuis ce casier",
             "pl": "Z tego paczkomatu można wysyłać przesyłki",
-            "cs": "Z této schránky na balíky můžete posílat balíky"
+            "cs": "Z této schránky na balíky můžete posílat balíky",
+            "es": "Puedes enviar paquetes desde esta taquilla"
           }
         },
         {
@@ -237,7 +253,8 @@
             "ca": "<b>No pots</b> enviar paquets des d'aquesta bústia intel·ligent",
             "fr": "On <b>ne peut pas</b> envoyer de colis depuis ce casier",
             "pl": "Z tego paczkomatu <b>nie można</b> wysyłać przesyłek",
-            "cs": "Z této schránky na balíky <b>nemůžete posílat balíky</b>"
+            "cs": "Z této schránky na balíky <b>nemůžete posílat balíky</b>",
+            "es": "No puedes enviar paquetes desde esta taquilla"
           }
         }
       ],
@@ -252,7 +269,8 @@
         "ca": "Pots arreplegar paquets a aquest armari intel·ligent?",
         "fr": "Peut-on retirer des colis depuis ce casier ?",
         "pl": "Czy z tego paczkomatu można odbierać przesyłki?",
-        "cs": "Můžete si vyzvednout balíčky z této schránky na balíky?"
+        "cs": "Můžete si vyzvednout balíčky z této schránky na balíky?",
+        "es": "¿Puedes recoger paquetes de esta taquilla?"
       },
       "mappings": [
         {
@@ -264,7 +282,8 @@
             "ca": "Pots arreplegar paquets a aquesta bústia intel·ligent",
             "fr": "On peut retirer des colis depuis ce casier",
             "pl": "Z tego paczkomatu można odbierać przesyłki",
-            "cs": "Balíčky si můžete vyzvednout v této schránce na balíky"
+            "cs": "Balíčky si můžete vyzvednout v této schránce na balíky",
+            "es": "Puedes recoger paquetes de esta taquilla"
           }
         },
         {
@@ -276,7 +295,8 @@
             "ca": "<b>No pots</b> arreplegar paquets a aquesta bústia intel·ligent",
             "fr": "On <b>ne peut pas</b> retirer de colis depuis ce casier",
             "pl": "Z tego paczkomatu <b>nie można</b> odbierać przesyłek",
-            "cs": "Z této schránky na balíky <b>nemůžete vyzvedávat balíky</b>"
+            "cs": "Z této schránky na balíky <b>nemůžete vyzvedávat balíky</b>",
+            "es": "No puedes recoger paquetes de esta taquilla"
           }
         }
       ],

@@ -2,11 +2,13 @@
   "id": "firepit",
   "name": {
     "en": "Firepit",
-    "de": "Feuerstelle"
+    "de": "Feuerstelle",
+    "es": "Hoguera"
   },
   "description": {
     "en": "An outdoor place to make a fire, typically open to the public.",
-    "de": "Eine Stelle im Freien zum Feuermachen, typischerweise öffentlich zugänglich."
+    "de": "Eine Stelle im Freien zum Feuermachen, typischerweise öffentlich zugänglich.",
+    "es": "Un lugar al aire libre para hacer fuego, normalmente abierto al público."
   },
   "source": {
     "osmTags": "leisure=firepit"
@@ -15,7 +17,8 @@
   "title": {
     "render": {
       "en": "Firepit",
-      "de": "Feuerstelle"
+      "de": "Feuerstelle",
+      "es": "Hoguera"
     }
   },
   "titleIcons": [
@@ -44,11 +47,13 @@
     {
       "title": {
         "en": "Firepit",
-        "de": "Feuerstelle"
+        "de": "Feuerstelle",
+        "es": "Hoguera"
       },
       "description": {
         "de": "Eine Stelle im Freien zum Feuermachen, typischerweise öffentlich zugänglich.",
-        "en": "An outdoor place to make a fire, typically open to the public."
+        "en": "An outdoor place to make a fire, typically open to the public.",
+        "es": "Un lugar al aire libre para hacer fuego, normalmente abierto al público."
       },
       "tags": [
         "leisure=firepit"
@@ -61,49 +66,56 @@
       "id": "access",
       "question": {
         "en": "What is the permitted access?",
-        "de": "Was ist der erlaubte Zugang?"
+        "de": "Was ist der erlaubte Zugang?",
+        "es": "¿Cuál es el acceso permitido?"
       },
       "mappings": [
         {
           "if": "access=yes",
           "then": {
             "de": "Öffentlich",
-            "en": "Public"
+            "en": "Public",
+            "es": "Público"
           }
         },
         {
           "if": "access=no",
           "then": {
             "de": "Kein Zugang",
-            "en": "No access"
+            "en": "No access",
+            "es": "Sin acceso"
           }
         },
         {
           "if": "access=private",
           "then": {
             "de": "Privat",
-            "en": "Private"
+            "en": "Private",
+            "es": "Privado"
           }
         },
         {
           "if": "access=permissive",
           "then": {
             "de": "Zugang bis auf Widerruf",
-            "en": "Access until revoked"
+            "en": "Access until revoked",
+            "es": "Acceso hasta que se revoque"
           }
         },
         {
           "if": "access=customers",
           "then": {
             "de": "Zugang nur für Kunden",
-            "en": "Access only for customers"
+            "en": "Access only for customers",
+            "es": "Acceso solo para clientes"
           }
         },
         {
           "if": "access=permit",
           "then": {
             "de": "Zugang nur für Berechtigte",
-            "en": "Access only for authorized"
+            "en": "Access only for authorized",
+            "es": "Acceso solo para autorizados"
           }
         }
       ]
@@ -114,7 +126,8 @@
         "question": {
           "en": "Is the firepit available all around the year?",
           "nl": "Is deze kampvuurplaats heel het jaar door beschikbaar?",
-          "de": "Ist diese Feuerstelle rund um das Jahr nutzbar?"
+          "de": "Ist diese Feuerstelle rund um das Jahr nutzbar?",
+          "es": "¿Está la hoguera disponible todo el año?"
         }
       }
     }

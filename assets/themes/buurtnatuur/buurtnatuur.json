@@ -137,7 +137,8 @@
           },
           "width": "5"
         }
-      ]
+      ],
+      "allowMove": false
     },
     {
       "id": "parks",
@@ -241,7 +242,8 @@
           },
           "width": "5"
         }
-      ]
+      ],
+      "allowMove": false
     },
     {
       "id": "forest",
@@ -364,7 +366,8 @@
           },
           "width": "5"
         }
-      ]
+      ],
+      "allowMove": false
     },
     "viewpoint"
   ],

@@ -14,12 +14,12 @@
         "available": "Diese Gemeinschaft spricht {native}",
         "intro": "Treten Sie mit anderen Menschen in Kontakt, um sie kennen zu lernen, von ihnen zu lernen, …",
         "notAvailable": "Diese Gemeinschaft spricht nicht {native}",
-        "title": "Mit anderen in Kontakt treten"
+        "title": "Andere Mapper kontaktieren"
     },
     "delete": {
         "cancel": "Abbrechen",
         "cannotBeDeleted": "Dieses Element kann nicht gelöscht werden",
-        "delete": "Löschen",
+        "delete": "Objekt löschen",
         "deletedTitle": "Gelöschtes Objekt",
         "explanations": {
             "hardDelete": "Dieses Objekt wird in OpenStreetMap gelöscht. Es kann von einem erfahrenen Mitwirkenden wiederhergestellt werden",
@@ -35,7 +35,7 @@
         "loginToDelete": "Sie müssen angemeldet sein, um ein Objekt zu löschen",
         "notEnoughExperience": "Dieses Objekt wurde von jemand anderem erstellt.",
         "onlyEditedByLoggedInUser": "Dieses Objekt wurde nur von Ihnen bearbeitet. Sie können es gefahrlos löschen.",
-        "partOfOthers": "Dieser Punkt ist Teil eines Weges oder einer Relation und kann nicht direkt gelöscht werden.",
+        "partOfOthers": "Der Punkt ist Teil eines Wegs oder einer Relation und kann nicht direkt gelöscht werden.",
         "readMessages": "Sie haben ungelesene Nachrichten. Bitte vor dem Löschen des Objekts lesen - vielleicht liegt eine Rückmeldung vor",
         "reasons": {
             "disused": "Dieses Element wird nicht mehr verwendet oder wurde entfernt",
@@ -79,7 +79,7 @@
             "isFavourite": "Der Standort ist derzeit als Favorit markiert und wird auf allen thematischen Karten von MapComplete angezeigt, die Sie besuchen.",
             "isMarkedShort": "Als bevorzugter Standort markiert",
             "isNotMarkedShort": "Nicht als Favorit markiert",
-            "markAsFavouriteTitle": "Diesen Standort als Favorit markieren",
+            "markAsFavouriteTitle": "Standort als Favorit markieren",
             "markDescription": "Diesen Standort zur persönlichen Liste bevorzugter Standorte hinzufügen",
             "unmark": "Standort von Favoritenliste entfernen",
             "unmarkNotDeleted": "Dieser Punkt wird nicht gelöscht und ist weiterhin auf der entsprechenden Karte für dich und andere sichtbar"
@@ -89,8 +89,8 @@
         "intro": "Du hast {length} Orte als Favorit markiert.",
         "introPrivacy": "Diese Liste ist nur für dich sichtbar",
         "loginToSeeList": "Anmelden, um die Liste der Orte zu sehen, die du als Favoriten markiert hast",
-        "tab": "Deine Favoriten und Bewertungen",
-        "title": "Ausgewählte Orte"
+        "tab": "Favoriten und Bewertungen",
+        "title": "Favorisierte Orte"
     },
     "flyer": {
         "aerial": "Diese Karte verwendet einen anderen Hintergrund, nämlich Luftaufnahmen der Agentschap Informatie Vlaanderen",
@@ -137,7 +137,7 @@
         "404": "Diese Seite existiert nicht",
         "about": "OpenStreetMap für ein bestimmtes Thema einfach bearbeiten und hinzufügen",
         "aboutMapComplete": {
-            "intro": "Nutze MapComplete, um Daten zu <b>einem bestimmten Thema</b> auf OpenStreetMap einzutragen. Beantworte Fragen, und in wenigen Minuten sind deine Beiträge überall verfügbar. In den meisten Themen kannst Du Bilder hinzufügen oder sogar eine Bewertung hinterlassen. Die <b>Themen-Verwalter</b> definieren Objekte, Fragen und Begriffe für das jeweilige Thema."
+            "intro": "Nutze MapComplete, um Daten zu <b>einem bestimmten Thema</b> auf OpenStreetMap einzutragen. Beantworte Fragen, und in wenigen Minuten sind deine Beiträge überall verfügbar. In den meisten Themen kannst du Bilder hinzufügen oder eine Bewertung hinterlassen. Der <b>Themen-Verwalter</b> definiert Objekte, Fragen und Begriffe für das jeweilige Thema."
         },
         "add": {
             "addNew": "{category} hinzufügen",
@@ -184,33 +184,38 @@
             "attributionTitle": "Danke",
             "codeContributionsBy": "MapComplete wurde erstellt von {contributors} und <a href='https://github.com/pietervdvn/MapComplete/graphs/contributors' target='_blank'>{hiddenCount} weiteren Personen</a>",
             "donate": "MapComplete finanziell unterstützen",
-            "editId": "Den OpenStreetMap Editor öffnen",
+            "editId": "OpenStreetMap Online Editor öffnen",
             "editJosm": "Mit JOSM bearbeiten",
+            "emailCreators": "E-Mail an Ersteller senden",
             "followOnMastodon": "MapComplete auf Mastodon folgen",
-            "gotoSourceCode": "Quellcode anzeigen",
+            "gotoSourceCode": "Quellcode",
             "iconAttribution": {
                 "title": "Verwendete Symbole"
             },
             "josmNotOpened": "JOSM konnte nicht erreicht werden. Bitte sicherstellen, dass das Programm geöffnet und Remote Control aktiviert ist",
             "josmOpened": "JOSM ist geöffnet",
-            "mapContributionsBy": "Die angezeigten Daten wurden bearbeitet durch {contributors}",
+            "madeBy": "Erstellt von <b>{author}</b>",
+            "mapContributionsBy": "Angezeigte Daten wurden bearbeitet durch {contributors}",
             "mapContributionsByAndHidden": "Die angezeigten Daten wurden bearbeitet von {contributors} und {hiddenCount} weiteren Beitragenden",
             "mapDataByOsm": "Kartendaten: OpenStreetMap",
             "mapillaryHelp": "<b>Mapillary</b> ist ein Online-Dienst, der Straßenbilder sammelt und sie unter einer freien Lizenz anbietet. Mitwirkende dürfen diese Bilder verwenden, um OpenStreetMap zu verbessern",
             "openIssueTracker": "Fehler melden",
             "openMapillary": "Mapillary öffnen",
-            "openOsmcha": "Neueste Bearbeitungen mit {theme} ansehen",
-            "openOsmchaLastWeek": "Bearbeitungen der letzten 7 Tage anzeigen",
-            "openThemeDocumentation": "Dokumentation für Themenkarte {name} öffnen",
+            "openOsmcha": "Neueste Bearbeitungen zur Themenkarte {theme} anzeigen",
+            "openOsmchaLastWeek": "Bearbeitungen der letzten 7 Tage",
+            "openPanoramax": "Panoramax öffnen",
+            "openThemeDocumentation": "Dokumentation zur Themenkarte {name} anzeigen",
+            "panoramaxHelp": "<b>Panoramax</b> ist ein Online-Service, der Straßenbilder sammelt und sie unter einer kostenlosen Lizenz anbietet. Mitwirkende dürfen diese Bilder nutzen, um OpenStreetMap zu verbessern",
+            "panoramaxLicenseCCBYSA": "Ihre Bilder werden unter CC-BY-SA veröffentlicht - jeder kann Ihr Bild weiterverwenden, wenn er Ihren Namen erwähnt",
             "seeOnMapillary": "Dieses Bild auf Mapillary ansehen",
             "themeBy": "Dieses Thema wurde erstellt von {author}",
             "title": "Copyright und Urheberrechtsangabe",
             "translatedBy": "MapComplete wurde übersetzt von {contributors} und <a href='https://github.com/pietervdvn/MapComplete/graphs/contributors' target='_blank'>{hiddenCount} weiteren Personen</a>"
         },
         "back": "Zurück",
-        "backToIndex": "Zur Übersicht aller Themenkarten",
+        "backToIndex": "Alle Themenkarten anzeigen",
         "backToMap": "Zurück zur Karte",
-        "backgroundMap": "Hintergrundkarte auswählen",
+        "backgroundMap": "Hintergrund auswählen",
         "backgroundSwitch": "Hintergrund wechseln",
         "cancel": "Abbrechen",
         "clearPendingChanges": "Ausstehende Änderungen löschen",
@@ -227,7 +232,7 @@
             },
             "downloadAsPdf": "Aktuelle Karte als PDF herunterladen",
             "downloadAsPdfHelper": "Ideal zum Drucken der aktuellen Karte",
-            "downloadAsPng": "Als Bild herunterladen",
+            "downloadAsPng": "Als Bild (PNG) herunterladen",
             "downloadAsPngHelper": "Am besten geeignet, um in Berichten zu verwenden",
             "downloadAsSvg": "Aktuelle Karte als SVG herunterladen",
             "downloadAsSvgHelper": "Kompatibel mit Inkscape oder Adobe Illustrator; Weiterbearbeitung erforderlich",
@@ -241,6 +246,7 @@
             "downloadGeojson": "Sichtbare Daten als GeoJSON herunterladen",
             "downloadGpx": "GPX Datei herunterladen",
             "downloadGpxHelper": "Eine GPX Datei kann von den meisten Geräten und Anwendungen gelesen werden",
+            "downloadImage": "Bild herunterladen",
             "exporting": "Exportieren…",
             "includeMetaData": "Metadaten übernehmen (letzter Bearbeiter, berechnete Werte, ...)",
             "licenseInfo": "<h3>Copyright-Hinweis</h3>Die bereitgestellten Daten sind unter ODbL verfügbar. Die Wiederverwendung ist für jeden Zweck frei, aber <ul><li>die Namensnennung <b>© OpenStreetMap contributors</b> ist darzustellen</li><li>Jede Änderung muss unter der gleichen Lizenz veröffentlicht werden</li></ul> Bitte lesen Sie den vollständigen <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">Copyright-Hinweis</a> für weitere Details.",
@@ -248,22 +254,23 @@
             "pdf": {
                 "current_view_generic": "PDF der aktuellen Karte in {paper_size} im {orientation} Format herunterladen"
             },
-            "title": "Download",
+            "title": "Karte herunterladen",
             "toMuch": "Es gibt zu viele Funktionen, um sie alle herunterzuladen",
             "uploadGpx": "Einen Track auf OpenStreetMap hochladen"
         },
-        "enableGeolocationForSafari": "Hast du das Popup zur Abfrage der Geo-Berechtigung nicht erhalten?",
-        "enableGeolocationForSafariLink": "Erfahre, wie du die Geo-Berechtigung in den Einstellungen aktivieren kannst",
+        "enableGeolocationForSafari": "Hast du das Popup zur Standortabfrage nicht erhalten?",
+        "enableGeolocationForSafariLink": "Wie die Standortberechtigung in den Einstellungen aktiviert werden kann",
         "eraseValue": "Wert löschen",
         "error": "Etwas ist schief gelaufen",
         "example": "Beispiel",
         "examples": "Beispiele",
         "fewChangesBefore": "Bitte beantworten Sie einige Fragen zu bestehenden Objekten, bevor Sie ein neues Objekt hinzufügen.",
         "filterPanel": {
+            "allTypes": "Alle Arten",
             "disableAll": "Alle deaktivieren",
             "enableAll": "Alle aktivieren"
         },
-        "geopermissionDenied": "Die Verwendung der Standortbestimmung wurde verweigert",
+        "geopermissionDenied": "Die Standortbestimmung wurde verweigert",
         "getStartedLogin": "Bei OpenStreetMap anmelden, um loszulegen",
         "getStartedNewAccount": " oder <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">ein neues Konto anlegen</a>",
         "goToInbox": "Posteingang öffnen",
@@ -297,16 +304,20 @@
         "loginToStart": "Anmelden, um diese Frage zu beantworten",
         "loginWithOpenStreetMap": "Bei OpenStreetMap anmelden",
         "logout": "Abmelden",
-        "mappingsAreHidden": "Einige Optionen sind versteckt. Verwende die Suche, um mehr Optionen anzuzeigen.",
+        "mappingsAreHidden": "Suche verwenden, um weitere Auswahlmöglichkeiten anzuzeigen.",
         "menu": {
+            "aboutCurrentThemeTitle": "Über diese Karte",
             "aboutMapComplete": "Über MapComplete",
-            "filter": "Daten filtern"
+            "filter": "Daten filtern",
+            "moreUtilsTitle": "Mehr entdecken",
+            "openHereDifferentApp": "Aktuellen Standort in anderen Anwendungen öffnen",
+            "showIntroduction": "Einführung anzeigen",
+            "title": "Menü"
         },
         "morescreen": {
-            "createYourOwnTheme": "Ein eigenes MapComplete-Thema von Grund auf neu erstellen",
+            "createYourOwnTheme": "Eigene MapComplete Themenkarte erstellen",
             "enterToOpen": "Drücke Enter um Theme zu öffnen",
             "hiddenExplanation": "Diese Themen sind nur für Personen zugänglich, die einen Link erhalten haben. Sie haben {hidden_discovered} von {total_hidden} versteckten Themen entdeckt.",
-            "intro": "<h3>Mehr thematische Karten?</h3>Sammeln Sie gerne Geodaten? <br/>Es sind weitere Themen verfügbar.",
             "noMatchingThemes": "Keine Themen, die Ihren Suchkriterien entsprechen",
             "noSearch": "Alle Themen anzeigen",
             "previouslyHiddenTitle": "Zuvor besuchte versteckte Themen",
@@ -391,8 +402,22 @@
         "save": "Speichern",
         "screenToSmall": "<i>{theme}</i> in einem neuen Fenster öffnen",
         "search": {
+            "activeFilters": "Aktive Filter",
+            "clearFilters": "Filter löschen",
+            "deleteSearchHistory": "Standortverlauf löschen",
+            "deleteThemeHistory": "Früher besuchte Themen löschen",
+            "editSearchSyncSettings": "Synchronisierungseinstellungen bearbeiten",
+            "editThemeSync": "Bearbeitung synchronisieren Lagen",
             "error": "Etwas ist schief gelaufen…",
+            "instructions": "In der oberen Suchleiste kann nach Orten, Filtern oder anderen Themenkarten gesucht werden",
+            "locations": "Orte",
+            "nMoreFilters": "{n} weitere",
             "nothing": "Nichts gefunden…",
+            "nothingFor": "Keine Ergebnisse für {term} gefunden",
+            "otherMaps": "Andere Karten",
+            "pickFilter": "Filter auswählen",
+            "recentThemes": "Kürzlich besuchte Themenkarten",
+            "recents": "Kürzlich angesehene Objekte",
             "search": "Ortssuche",
             "searchShort": "Suche…",
             "searching": "Suchen …"
@@ -409,12 +434,13 @@
             "fsGeolocation": "Geolokalisierung aktivieren",
             "fsUserbadge": "Anmelde-Button aktivieren, um Änderungen vornehmen zu können",
             "fsWelcomeMessage": "Begrüßung und Registerkarten anzeigen",
-            "intro": "<h3>Karte teilen</h3> Mit dem folgenden Link kann die Karte mit Freunden und Familie geteilt werden:",
+            "intro": "Mit dem folgenden Link kann die Karte mit Freunden und Familie geteilt werden:",
+            "openInOtherApplications": "Aktuellen Standort mit einer anderen Kartenanwendung öffnen",
             "openLayers": "Ebenen- und Filterauswahl öffnen",
             "options": "Optionen teilen",
             "stateIsIncluded": "Die aktuelle Ebenen- und Filterauswahl ist im geteilten Link und iFrame enthalten.",
             "thanksForSharing": "Danke für das Teilen!",
-            "title": "Diese Karte teilen"
+            "title": "Karte teilen"
         },
         "skip": "Frage überspringen",
         "testing": "Testen - Änderungen werden nicht gespeichert",
@@ -451,7 +477,7 @@
         "uploadingChanges": "Änderungen werden hochgeladen…",
         "useSearch": "Suche oben verwenden für weitere Optionen",
         "visualFeedback": {
-            "closestFeaturesAre": "{n} Objekte im Anzeigebereich.",
+            "closestFeaturesAre": "{n} Objekte im Kartenausschnitt.",
             "directionsAbsolute": {
                 "E": "Ost",
                 "N": "Nord",
@@ -472,22 +498,22 @@
                 "slight_right": "leicht rechts",
                 "straight": "geradeaus"
             },
-            "east": "Nach Osten bewegen",
+            "east": "Nach Osten",
             "fromGps": "{distance} {direction} von deinem Standort",
             "fromMapCenter": "{distance} {direction} von der Kartenmitte",
             "in": "Hineinzoomen auf Stufe {z}",
             "islocked": "Die Ansicht ist an Ihren GPS-Standort gebunden, Bewegen ist deaktiviert. Drücken Sie zum Entsperren die Geolocation-Taste.",
             "locked": "Die Ansicht ist jetzt an Ihren GPS-Standort gebunden, Bewegen ist deaktiviert.",
             "navigation": "Verwenden Sie die Pfeiltasten, um die Karte zu bewegen, drücken Sie die Leertaste, um das nächstgelegene Objekt auszuwählen. Drücken Sie eine Zahl, um weiter entfernte Objekte auszuwählen.",
-            "noCloseFeatures": "Keine Objekte im Anzeigebereich.",
-            "north": "Nach Norden bewegen",
-            "oneFeatureInView": "Ein Objekt im Anzeigebereich.",
+            "noCloseFeatures": "Keine Objekte im Kartenausschnitt.",
+            "north": "Nach Norden",
+            "oneFeatureInView": "Ein Objekt im Kartenausschnitt.",
             "out": "Herauszoomen auf Stufe {z}",
-            "south": "Nach Süden bewegen",
+            "south": "Nach Süden",
             "unlocked": "Bewegen aktiviert.",
             "viewportCenterCloseToGps": "Die Karte wird um Ihren Standort zentriert.",
             "viewportCenterDetails": "Die Kartenmitte ist {distance} und {bearing} von Ihrem Standort entfernt.",
-            "west": "Nach Westen bewegen"
+            "west": "Nach Westen"
         },
         "waitingForGeopermission": "Warten auf Ihre Erlaubnis, Standortdaten zu verwenden…",
         "waitingForLocation": "Ihr Standort wird gesucht…",
@@ -511,8 +537,8 @@
         },
         "welcomeBack": "Willkommen zurück!",
         "welcomeExplanation": {
-            "addNew": "Fehlt ein Element? Verwende die Schaltfläche unten links, um ein neues Objekt hinzuzufügen.",
-            "general": "Auf dieser Karte können <i>themenspezifische Kartenobjekte</i> angesehen, bearbeitet und hinzugefügt werden. Verschieben Sie den Kartenausschnitt, um Objekte zu entdecken, tippen Sie auf eines, um weitere Informationen zu sehen oder zu bearbeiten. Alle Daten stammen von OpenStreetMap und dürfen frei verwendet werden."
+            "addNew": "Fehlt ein Element? Über die Schaltfläche unten links, kann ein neues Objekt hinzugefügt werden.",
+            "general": "Auf dieser Karte können <i>Objekte</i> angesehen, bearbeitet und hinzugefügt werden. Der Kartenausschnitt kann verschoben werden, um Objekte zu entdecken. Objekte können ausgewählt werden, um weitere Informationen anzuzeigen oder zu bearbeiten. Alle Daten stammen von OpenStreetMap und dürfen frei verwendet werden."
         },
         "wikipedia": {
             "addEntry": "Eine weitere Wikipedia-Seite hinzufügen",
@@ -567,12 +593,36 @@
             "failed": "Abruf von Bildern von {service} fehlgeschlagen",
             "link": "Dieses Bild zeigt das Objekt",
             "noNearbyImages": "Keine nahegelegenen Bilder gefunden",
-            "seeNearby": "Bilder in der Nähe durchsuchen und verlinken",
+            "seeNearby": "Bilder in der Nähe durchsuchen",
             "title": "Straßenbilder in der Nähe"
         },
+        "panoramax": {
+            "deletionRequested": "Der Bericht wurde abgeschickt. Ein Moderator wird sich in Kürze darum kümmern",
+            "freeform": "Gibt es weitere relevante Informationen?",
+            "otherFreeform": "Bitte gib an, warum dieses Bild entfernt werden soll:",
+            "placeholder": "Erkläre, warum das Bild gelöscht werden sollte",
+            "report": {
+                "blur_excess": "Zu viel ist unscharf und macht das Bild unbrauchbar",
+                "blur_missing": "Ein Gesicht oder Nummernschild ist auf diesem Bild nicht unscharf",
+                "copyright": "Das Bild enthält urheberrechtlich geschützte Inhalte",
+                "inappropriate": "Dieses Bild ist unangemessen (es enthält Nacktheit, ruft nach Hass oder ist nicht Streetview)",
+                "mislocated": "Das Bild ist von einem anderen Ort",
+                "other": "Ein weiterer Grund, bitte angeben",
+                "picture_low_quality": "Das Bild ist von geringer Qualität",
+                "privacy": "Das Bild zeigt eine private Immobilie"
+            },
+            "requestDeletion": "Bildlöschung beantragen",
+            "title": "Warum sollte dieses Bild dauerhaft gelöscht werden?"
+        },
         "pleaseLogin": "Bitte anmelden, um ein Bild hinzuzufügen",
-        "respectPrivacy": "Bitte respektieren Sie die Privatsphäre. Fotografieren Sie weder Personen noch Nummernschilder. Benutzen Sie keine urheberrechtlich geschützten Quellen wie z.B. Google Maps oder Google Streetview.",
+        "processing": "Der Server verarbeitet das Bild",
+        "respectPrivacy": "Laden Sie keine Bilder von Google Maps, Google Streetview oder anderen urheberrechtlich geschützten Quellen hoch.",
         "toBig": "Ihr Bild ist mit {actual_size} zu groß. Die maximale Bildgröße ist {max_size}",
+        "unlink": {
+            "button": "Bild entkoppeln",
+            "explanation": "Wenn du die Verknüpfung dieses Bildes aufhebst, wird das Bild nicht mehr mit diesem Objekt angezeigt. Es wird aber weiterhin in den Nachbarschaftsbildern und möglicherweise in anderen Objekten angezeigt.",
+            "title": "Dieses Bild entkoppeln?"
+        },
         "upload": {
             "failReasons": "Keine Internetverbindung",
             "failReasonsAdvanced": "Alternativ dazu können Sie einstellen, dass Ihr Browser und Ihre Erweiterungen die APIs von Drittanbietern nicht blockieren.",
@@ -582,6 +632,7 @@
                 "someFailed": "Entschuldigung, {count} Bilder konnten nicht hochgeladen werden",
                 "uploading": "{count} Bilder werden hochgeladen…"
             },
+            "noBlur": "Die Bilder werden nicht unkenntlich gemacht. Fotografieren Sie keine Menschen",
             "one": {
                 "done": "Bild erfolgreich hochgeladen. Vielen Dank!",
                 "failed": "Entschuldigung, das Bild konnte nicht hochgeladen werden",
@@ -612,7 +663,7 @@
         "#": "Dieser Text wird über der Thema-Auswahlschaltfläche gezeigt, wenn kein Thema geladen ist",
         "about": "Über MapComplete",
         "featuredThemeTitle": "Diese Woche im Blickpunkt",
-        "intro": "Karten zu verschiedenen Themen, zu denen Sie beitragen können",
+        "intro": "Verschiedenen Themenkarten, zu denen Sie beitragen können",
         "learnMore": "Mehr erfahren",
         "logIn": "Anmelden, um Themen anzuzeigen, die Sie bereits besucht haben",
         "pickTheme": "Eines der folgenden Themen auswählen, um zu starten.",
@@ -620,7 +671,7 @@
     },
     "move": {
         "cancel": "Einen anderen Grund auswählen",
-        "cannotBeMoved": "Dieses Element kann nicht verschoben werden.",
+        "cannotBeMoved": "Das Objekt kann nicht verschoben werden.",
         "confirmMove": "Hierhin verschieben",
         "inviteToMove": {
             "generic": "Objekt verschieben",
@@ -632,12 +683,13 @@
         "isWay": "Dieses Element ist ein Weg. Verwenden Sie einen anderen OpenStreetMap-Editor, um ihn zu verschieben.",
         "loginToMove": "Sie müssen angemeldet sein, um einen Punkt zu verschieben",
         "moveTitle": "Diesen Punkt verschieben",
-        "partOfAWay": "Dieses Element ist Teil eines anderen Weges. Verwenden Sie einen anderen Editor, um es zu verschieben.",
+        "partOfAWay": "Das Objekt ist Teil eines anderen Wegs. Zum Verschieben bitte einen anderen Editor verwenden.",
         "partOfRelation": "Dieses Element ist Teil einer Relation. Verwenden Sie einen anderen Editor, um es zu verschieben.",
         "pointIsMoved": "Der Punkt wurde verschoben",
         "reasons": {
             "reasonInaccurate": "Der Standort ist um ein paar Meter ungenau",
-            "reasonRelocation": "Das Element wurde an einen völlig anderen Ort verlegt"
+            "reasonRelocation": "Das Element wurde an einen völlig anderen Ort verlegt",
+            "reasonSnapTo": "Dies sollte auf {name} fixiert werden"
         },
         "selectReason": "Warum verschieben Sie dieses Element?",
         "whyMove": "Warum wollen Sie diesen Punkt verschieben?",
@@ -701,8 +753,8 @@
     },
     "preset_type": {
         "question": "Von welcher Art ist dieses Objekt?",
-        "typeDescription": "Diest ist ein {title}. {description}",
-        "typeTitle": "Dies ist ein {title}"
+        "typeDescription": "Dies ist <b>{title}</b>. <div class='subtle'>{description}</div>",
+        "typeTitle": "Dies ist <b>{title}</b>"
     },
     "privacy": {
         "editingIntro": "Ihre Änderungen werden auf OpenStreetMap gespeichert und sind öffentlich zugänglich. Ein mit MapComplete erstellter Änderungssatz enthält folgende Daten:",
@@ -722,7 +774,7 @@
         "miscCookies": "MapComplete integriert weitere Dienste, insbesondere um Bilder von Objekten zu laden. Diese Bilder werden auf Servern von Drittanbietern gehostet, die möglicherweise eigene Cookies setzen.",
         "miscCookiesTitle": "Andere Cookies",
         "surveillance": "Da Sie die Datenschutzbestimmungen lesen, ist Ihnen der Datenschutz wahrscheinlich wichtig - uns auch! Wir haben sogar <a href=\"https://mapcomplete.org/surveillance\">ein Thema erstellt, das Überwachungskameras zeigt.</a> Zögern Sie nicht, sie alle zu mappen!",
-        "title": "Datenschutzbestimmungen",
+        "title": "Datenschutz",
         "tracking": "Um zu erfahren, wer unsere Webseite besucht, werden technische Informationen gesammelt. Dazu gehören das Land, aus dem Sie die Webseite besucht haben, die Webseite, die Sie auf MapComplete verwiesen hat, der Typ Ihres Geräts und die Bildschirmgröße. Ein Cookie wird auf Ihrem Gerät gespeichert, um anzuzeigen, dass Sie MapComplete heute bereits besucht haben. Diese Daten sind nicht detailliert genug, um Sie persönlich zu identifizieren. Diese Statistiken sind nur in aggregierter Form <a href=\"https://pietervdvn.goatcounter.com\" target=\"_blank\">öffentlich zugänglich</a>",
         "trackingTitle": "Statistische Daten",
         "whileYoureHere": "Datenschutz ist Ihnen wichtig?"
@@ -754,8 +806,8 @@
         "too_long": "Maximal {max} Zeichen sind erlaubt. Ihre Bewertung hat {amount} Zeichen.",
         "tos": "Mit der Bewertung stimmen Sie den <a href=\"https://mangrove.reviews/terms\" target=\"_blank\">AGB und den Datenschutzrichtlinien von Mangrove.reviews zu</a>",
         "write_a_comment": "Bewertung schreiben…",
-        "your_reviews": "Deine vorherigen Bewertungen",
-        "your_reviews_empty": "Wir konnten keine deiner vorherigen Bewertungen finden"
+        "your_reviews": "Deine Bewertungen",
+        "your_reviews_empty": "Keine vorherigen Bewertungen gefunden"
     },
     "split": {
         "cancel": "Abbrechen",
@@ -771,6 +823,14 @@
         "allMissing": "Noch keine Übersetzungen",
         "missing": "{count} nicht übersetzte Zeichenfolgen",
         "notImmediate": "Die Übersetzung wird nicht direkt aktualisiert. Dies dauert in der Regel ein paar Tage"
+    },
+    "unknown": {
+        "clear": "Antwort löschen",
+        "explanation": "Lösche dieses Informationsmerkmal, wenn die aktuelle Antwort falsch ist, aber der tatsächliche Wert nicht bekannt ist. Andere Informationen werden nicht entfernt.",
+        "keep": "Antwort behalten",
+        "markUnknown": "Als unbekannt markieren",
+        "removedKeys": "Die folgenden Einträge werden entfernt:",
+        "title": "Als unbekannt markieren?"
     },
     "userinfo": {
         "gotoInbox": "Deinen Posteingang öffnen",
@@ -835,6 +895,9 @@
             "description": "eine positive, ganze Zahl",
             "noZero": "Null ist nicht erlaubt"
         },
+        "regex": {
+            "description": "ein regulärer Ausdruck"
+        },
         "slope": {
             "inputExplanation": "Legen Sie Ihr Telefon so auf den Boden, dass die Oberseite des Telefons zum oberen Ende des Hangs zeigt.",
             "inputIncorrect": "Für korrekte Messungen achten Sie darauf, dass sich der Pfeil in der grünen Fläche befindet."
@@ -847,8 +910,10 @@
         },
         "tooLong": "Der Text ist zu lang, es sind maximal 255 Zeichen erlaubt. Sie haben bereits {count} Zeichen.",
         "url": {
+            "aggregator": "{host} ist die Website eines Drittanbieters. Wenn möglich, suche auf der offiziellen Website.",
             "description": "Link zu einer Website",
-            "feedback": "Webadresse ungültig"
+            "feedback": "Webadresse ungültig",
+            "spamSite": "{host} ist eine Website von geringer Qualität. Die Nutzung dieser Website ist nicht zulässig."
         },
         "wikidata": {
             "description": "Eine Wikidata-Kennung",

@@ -1,25 +1,61 @@
 {
   "id": "disaster_response",
   "title": {
-    "en": "Disaster response",
+    "en": "Disaster response and emergency services",
     "it": "Risposta ai disastri",
-    "de": "Katastrophenschutz",
-    "es": "Respuesta ante desastres",
-    "ca": "Resposta davant de desastres",
-    "da": "Beredskab"
+    "de": "Katastrophenschutz und Notfalldienste",
+    "es": "Respuesta a desastres y servicios de emergencia",
+    "ca": "Resposta davant de desastres i serveis d'emergència",
+    "da": "Beredskab",
+    "cs": "Reakce na katastrofy a záchranné služby",
+    "ru": "Ликвидация последствий стихийных бедствий и аварийные службы",
+    "hu": "Katasztrófaelhárítás és sürgősségi szolgálatok",
+    "uk": "Реагування на стихійні лиха та аварійні служби"
   },
   "description": {
     "en": "This map contains elements meant for disaster preparedness and response.",
     "it": "Questa mappa contiene elementi pensati per la preparazione e risposta ai disastri.",
     "de": "Diese Karte enthält Elemente, die der Katastrophenvorsorge und dem Katastrophenschutz dienen.",
-    "es": "Este mapa contiene elementos destinados a la preparación y respuesta ante desastres."
+    "es": "Este mapa contiene elementos destinados a la preparación y respuesta ante desastres.",
+    "ca": "Aquest mapa conté elements destinants a la preparació i resposta davant desastres.",
+    "cs": "Tato mapa obsahuje prvky určené pro připravenost na katastrofy a reakci na ně.",
+    "uk": "Ця мапа містить обʼєкти, призначені для забезпечення готовності до стихійних лих та реагування на них."
   },
   "icon": "./assets/themes/disaster_response/CivilDefence.svg",
   "socialImage": "./assets/themes/disaster_response/social.svg",
   "layers": [
-    "hospital",
-    "assembly_point",
-    "disaster_response"
+    {
+      "builtin": [
+        "hospital",
+        "fire_station",
+        "disaster_response",
+        "police"
+      ],
+      "override": {
+        "minzoom": 6
+      }
+    },
+    {
+      "builtin": [
+        "extinguisher",
+        "assembly_point",
+        "defibrillator",
+        "hydrant"
+      ],
+      "override": {
+        "minzoom": 15
+      }
+    },
+    {
+      "builtin": [
+        "doctors",
+        "ambulancestation",
+        "pharmacy"
+      ],
+      "override": {
+        "minzoom": 14
+      }
+    }
   ],
   "docs": "https://wiki.openstreetmap.org/wiki/Emergency_facilities_and_amenities"
 }

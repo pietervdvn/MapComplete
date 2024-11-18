@@ -8,10 +8,11 @@
     "nb_NO": "Murer og bygninger",
     "nl": "Muren en gebouwen",
     "ca": "Murs i edificis",
-    "es": "Muros y edificios",
+    "es": "Paredes y edificios",
     "cs": "Stěny a budovy",
     "zh_Hant": "牆壁與建築",
-    "pl": "Ściany i budynki"
+    "pl": "Ściany i budynki",
+    "hu": "Falak és épületek"
   },
   "description": {
     "en": "Special builtin layer providing all walls and buildings. This layer is useful in presets for objects which can be placed against walls (e.g. AEDs, postboxes, entrances, addresses, surveillance cameras, …). This layer is invisible by default and not toggleable by the user.",
@@ -20,7 +21,7 @@
     "da": "Specielt indbygget lag giver alle vægge og bygninger. Dette lag er nyttigt i forudindstillinger til objekter, der kan placeres mod vægge (f.eks. AED'er, postkasser, indgange, adresser, overvågningskameraer, …). Dette lag er usynligt som standard og kan ikke skiftes af brugeren.",
     "nl": "Speciale ingebouwde laag voor alle muren en gebouwen. Deze laag is nuttig in voorkeuzen voor objecten die tegen muren geplaatst kunnen worden (bv. AEDs, brievenbussen, ingangen, adressen, beveiligingscamera's,…). Deze laag is standaard onzichtbaar en niet in te schakelen door de gebruiker.",
     "ca": "Capa construïda especial que proporciona totes les parets i edificis. Aquesta capa és útil als predefinits per a objectes que es poden col·locar a les parets (p. ex. DEA, bústies de correus, entrades, adreces, càmeres de vigilància, ...). Aquesta capa és invisible per defecte i no es pot activar per l'usuari.",
-    "es": "Capa especial incorporada que proporciona todas las paredes y edificios. Esta capa es útil en los preajustes para objetos que pueden colocarse contra las paredes (por ejemplo: AEDs, buzones de correos, entradas, direcciones, cámaras de vigilancia, ...). Esta capa es invisible por defecto y no puede ser activada por el usuario.",
+    "es": "Capa incorporada especial que proporciona todas las paredes y edificios. Esta capa es útil en los ajustes preestablecidos para objetos que se pueden colocar contra las paredes (por ejemplo, DEA, buzones, entradas, direcciones, cámaras de vigilancia, etc.). Esta capa es invisible de forma predeterminada y el usuario no puede activarla.",
     "cs": "Speciální zabudovaná vrstva poskytující všechny stěny a budovy. Tato vrstva je užitečná v předvolbách pro objekty, které lze umístit ke stěnám (např. AED, poštovní schránky, vchody, adresy, bezpečnostní kamery, …). Tato vrstva je ve výchozím nastavení neviditelná a uživatel ji nemůže přepínat.",
     "zh_Hant": "特殊的內建圖層顯示所有牆壁與建築。這個圖層對於規畫要靠牆的東西 (例如 AED、郵筒、入口、地址、監視器等) 相當實用。這個圖層預設顯示而且無法由使用者開關。",
     "pl": "Specjalna warstwa zabudowana zapewniająca wszystkie mury i budynki. Warstwa ta jest przydatna w ustawieniach wstępnych obiektów, które można umieścić przy ścianach (np. AED, skrzynki pocztowe, wejścia, adresy, kamery monitorujące itp.). Warstwa ta jest domyślnie niewidoczna i użytkownik nie może jej przełączać."

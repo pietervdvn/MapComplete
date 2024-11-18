@@ -1,6 +1,7 @@
 <script lang="ts">
   import { ImmutableStore, Store } from "../../Logic/UIEventSource"
   import Icon from "../Map/Icon.svelte"
+  import { Utils } from "../../Utils"
 
   export let text: Store<string>
   export let href: Store<string>
@@ -13,7 +14,7 @@
 </script>
 
 <a
-  href={$href}
+  href={Utils.prepareHref($href)}
   aria-label={$ariaLabel}
   title={$ariaLabel}
   target={$newTab ? "_blank" : undefined}

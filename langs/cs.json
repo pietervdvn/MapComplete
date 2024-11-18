@@ -130,7 +130,7 @@
         "osm": "OpenStreetMap je online mapa, kterou může kdokoli upravovat a znovu používat k jakémukoli účelu, pokud uvede autora a data zůstanou otevřená.\n\nJedná se o největší geoprostorovou databázi na světě, kterou opakovaně využívají tisíce aplikací a webových stránek.",
         "tagline": "Shromažďování geodat pomocí OpenStreetMap",
         "title": "mapcomplete.org",
-        "toerisme_vlaanderen": "Pro společný projekt s Visit Flanders byl vytvořen projekt \"Pin your point\". Více než 160 přispěvatelů přidalo několik tisíc laviček a piknikových stolů a objevilo 100 nabíjecích stanic pro kola.",
+        "toerisme_vlaanderen": "V rámci společného projektu s Visit Flanders byl vytvořen projekt „Pin your point“. Více než 160 přispěvatelů přidalo několik tisíc laviček a piknikových stolů a objevilo 100 dobíjecích stanic pro kola.",
         "whatIsOsm": "Co je OpenStreetMap?"
     },
     "general": {
@@ -186,6 +186,7 @@
             "donate": "Podpořte MapComplete finančně",
             "editId": "Zde otevřít online editor OpenStreetMap",
             "editJosm": "Upravit zde pomocí JOSM",
+            "emailCreators": "Pošlete e-mail tvůrcům",
             "followOnMastodon": "Sledujte MapComplete na Mastodonu",
             "gotoSourceCode": "Zobrazit zdrojový kód",
             "iconAttribution": {
@@ -193,6 +194,7 @@
             },
             "josmNotOpened": "JOSM se nepodařilo propojit. Ujistěte se, že je otevřený a že je povoleno dálkové ovládání",
             "josmOpened": "JOSM je otevřen",
+            "madeBy": "Vytvořeno od <b>{author}</b>",
             "mapContributionsBy": "Aktuální viditelná data obsahují úpravy provedené uživateli {contributors}",
             "mapContributionsByAndHidden": "Aktuální viditelná data obsahují úpravy provedené {contributors} a {hiddenCount} dalšími přispěvateli",
             "mapDataByOsm": "Mapová data: OpenStreetMap",
@@ -201,14 +203,17 @@
             "openMapillary": "Zde otevřít Mapillary",
             "openOsmcha": "Podívejte se na nejnovější úpravy provedené v tématu {theme}",
             "openOsmchaLastWeek": "Zobrazit úpravy za posledních 7 dní",
+            "openPanoramax": "Zde otevřete Panoramax",
             "openThemeDocumentation": "Otevřít dokumentaci k tematické mapě {name}",
+            "panoramaxHelp": "<b>Panoramax</b> je online služba, která shromažďuje snímky z úrovně ulic a nabízí je pod bezplatnou licencí. Přispěvatelé mohou tyto snímky používat ke zlepšení OpenStreetMap",
+            "panoramaxLicenseCCBYSA": "Vaše obrázky jsou zveřejněny pod licencí CC-BY-SA - každý může váš obrázek znovu použít, pokud uvede vaše jméno",
             "seeOnMapillary": "Podívejte se na tento obrázek na Mapillary",
             "themeBy": "Téma spravuje {author}",
             "title": "Autorská práva a uvedení zdroje",
             "translatedBy": "MapComplete přeložili {contributors} a <a href='https://github.com/pietervdvn/MapComplete/graphs/contributors' target='_blank'>{hiddenCount} dalších přispěvatelů</a>"
         },
         "back": "Zpět",
-        "backToIndex": "Návrat na přehled všech tematických map",
+        "backToIndex": "Zobrazit všechny tematické mapy",
         "backToMap": "Zpět na mapu",
         "backgroundMap": "Vyberte vrstvu pozadí",
         "backgroundSwitch": "Přepnout pozadí",
@@ -219,7 +224,7 @@
         "customThemeTitle": "Vlastní témata",
         "download": {
             "custom": {
-                "download": "Stáhnout PNG o {width} mm na šířku a {height} mm na výšku",
+                "download": "Stáhněte si formát PNG o šířce {width}mm a výšce {height}mm",
                 "downloadHelper": "Toto je určeno pro tisk",
                 "height": "Výška obrázku (v mm):",
                 "title": "Stáhněte si obrázek s vlastní šířkou a výškou",
@@ -241,6 +246,7 @@
             "downloadGeojson": "Stáhnout viditelná data jako GeoJSON",
             "downloadGpx": "Stáhnout jako soubor GPX",
             "downloadGpxHelper": "Soubor GPX lze použít s většinou navigačních zařízení a aplikací",
+            "downloadImage": "Stáhnout obrázek",
             "exporting": "Exportování…",
             "includeMetaData": "Zahrnout metadata (poslední editor, vypočtené hodnoty, ...)",
             "licenseInfo": "<h3>Upozornění na autorská práva</h3>Poskytovaná data jsou dostupná pod ODbL. Opětovné použití je zdarma pro jakýkoli účel, ale <ul><li>musí být uveden zdroj <b>© přispěvatelé OpenStreetMap</b><li><li>Jakákoli změna musí být publikována pod stejnou licencí</li>< /ul> Podrobnosti naleznete v úplném <a href='https://www.openstreetmap.org/copyright' target='_blank'>upozornění na autorská práva</a>.",
@@ -252,18 +258,19 @@
             "toMuch": "Existuje mnoho funkcí, které lze stáhnout všechny",
             "uploadGpx": "Nahrajte svou trasu do OpenStreetMap"
         },
-        "enableGeolocationForSafari": "Nezobrazilo se vám vyskakovací okno s žádostí o geografické povolení?",
-        "enableGeolocationForSafariLink": "Přečtěte si, jak povolit oprávnění ke geolokaci v nastavení",
+        "enableGeolocationForSafari": "Nezobrazilo se vyskakovací okno s žádostí o povolení k umístění?",
+        "enableGeolocationForSafariLink": "Zjistěte, jak povolit oprávnění k poloze v nastavení",
         "eraseValue": "Vymažte tuto hodnotu",
         "error": "Něco se pokazilo",
         "example": "Příklad",
         "examples": "Příklady",
         "fewChangesBefore": "Před přidáním nové funkce prosím odpovězte na několik otázek týkajících se stávajících funkcí.",
         "filterPanel": {
+            "allTypes": "Všechny typy",
             "disableAll": "Zakázat vše",
             "enableAll": "Povolit vše"
         },
-        "geopermissionDenied": "Použití geolokace bylo zamítnuto",
+        "geopermissionDenied": "Povolení k poloze bylo zamítnuto",
         "getStartedLogin": "Přihlaste se pomocí OpenStreetMap a začněte",
         "getStartedNewAccount": " nebo <a href='https://www.openstreetmap.org/user/new' target='_blank'>vytvořte nový účet</a>",
         "goToInbox": "Otevřete složku Doručená pošta",
@@ -299,14 +306,18 @@
         "logout": "Odhlásit se",
         "mappingsAreHidden": "Některé možnosti jsou skryté. Pomocí vyhledávání zobrazíte další možnosti.",
         "menu": {
+            "aboutCurrentThemeTitle": "O této mapě",
             "aboutMapComplete": "O MapComplete",
-            "filter": "Filtrování dat"
+            "filter": "Filtrování dat",
+            "moreUtilsTitle": "Zjistit více",
+            "openHereDifferentApp": "Otevřít aktuální polohu v jiných aplikacích",
+            "showIntroduction": "Zobrazit úvod",
+            "title": "Menu"
         },
         "morescreen": {
             "createYourOwnTheme": "Vytvořte si vlastní téma MapComplete",
             "enterToOpen": "Stisknutím klávesy Enter otevřete objekt",
             "hiddenExplanation": "Tato témata jsou přístupná pouze těm, kteří mají odkaz. Objevili jste {hidden_discovered} ze {total_hidden} skrytých témat.",
-            "intro": "<h3>Více tematických map?</h3>Baví vás sbírat geodata? <br/>K dispozici jsou další tematické mapy.",
             "noMatchingThemes": "Vašim vyhledávacím kritériím neodpovídají žádná témata",
             "noSearch": "Zobrazit všechna témata",
             "previouslyHiddenTitle": "Dříve navštívená skrytá témata",
@@ -391,8 +402,22 @@
         "save": "Uložit",
         "screenToSmall": "Otevřít <i>{theme}</i> v novém okně",
         "search": {
+            "activeFilters": "Aktivní filtry",
+            "clearFilters": "Vymazat filtry",
+            "deleteSearchHistory": "Odstranění historie polohy",
+            "deleteThemeHistory": "Odstranění dříve navštívených témat",
+            "editSearchSyncSettings": "Úprava nastavení synchronizace",
+            "editThemeSync": "Úprava nastavení synchronizace",
             "error": "Něco se pokazilo…",
+            "instructions": "Pro vyhledávání lokalit, filtrů nebo jiných tematických map použijte panel hledání nahoře",
+            "locations": "Lokality",
+            "nMoreFilters": "{n} další",
             "nothing": "Nic nenalezeno…",
+            "nothingFor": "Pro {term} nebyly nalezeny žádné výsledky",
+            "otherMaps": "Další mapy",
+            "pickFilter": "Vyberte filtr",
+            "recentThemes": "Nedávno navštívené mapy",
+            "recents": "Nedávno navštívená místa",
             "search": "Vyhledat místo",
             "searchShort": "Vyhledávání…",
             "searching": "Hledání…"
@@ -409,7 +434,8 @@
             "fsGeolocation": "Povolit geolokaci",
             "fsUserbadge": "Povolit přihlašovací tlačítko a tím i možnost provádět změny",
             "fsWelcomeMessage": "Zobrazit vyskakovací okno s uvítací zprávou a související karty",
-            "intro": "<h3>Sdílejte tuto mapu</h3> Sdílejte tuto mapu zkopírováním níže uvedeného odkazu a jeho zasláním přátelům a rodině:",
+            "intro": "Sdílejte tuto mapu zkopírováním níže uvedeného odkazu a jeho zasláním přátelům a rodině:",
+            "openInOtherApplications": "Otevřete aktuální polohu pomocí jiné mapové aplikace",
             "openLayers": "Otevřete nabídku vrstev a filtrů",
             "options": "Možnosti sdílení",
             "stateIsIncluded": "Aktuální stav vrstev a filtrů je zahrnut ve sdíleném odkazu a prvku iframe.",
@@ -472,6 +498,7 @@
                 "slight_right": "mírně vpravo",
                 "straight": "přímo vpřed"
             },
+            "east": "Pohyb na východ",
             "fromGps": "{distance} {direction} vaší polohy",
             "fromMapCenter": "{distance} {direction} středu mapy",
             "in": "Přiblížení na úroveň {z}",
@@ -479,10 +506,14 @@
             "locked": "Zobrazení je nyní uzamčeno na vaši polohu GPS, pohyb je zakázán.",
             "navigation": "Pomocí kláves se šipkami posouvejte mapu, stisknutím mezerníku vyberte nejbližší objekt. Stisknutím čísla vyberte místa dále.",
             "noCloseFeatures": "Nejsou zobrazeny žádné funkce.",
+            "north": "Pohyb na sever",
             "oneFeatureInView": "Jedna funkce ve výřezu.",
             "out": "Oddálení na úroveň {z}",
+            "south": "Pohyb na jih",
+            "unlocked": "Pohyb povolen.",
             "viewportCenterCloseToGps": "Mapa je vycentrována kolem vaší polohy.",
-            "viewportCenterDetails": "Střed výřezu je vzdálen {distance} a {bearing} od vaší polohy."
+            "viewportCenterDetails": "Střed výřezu je vzdálen {distance} a {bearing} od vaší polohy.",
+            "west": "Pohyb na západ"
         },
         "waitingForGeopermission": "Čekáme na vaše povolení používat geolokaci…",
         "waitingForLocation": "Vyhledávání vaší aktuální polohy…",
@@ -538,11 +569,18 @@
         "openLayersPanel": "Otevírá panel Vrstvy pozadí",
         "queryCurrentLocation": "Zobrazte adresu, která je nejblíže středu mapy",
         "selectAerial": "Nastavte pozadí na letecké nebo satelitní snímky. Přepíná mezi dvěma nejlepšími dostupnými vrstvami",
+        "selectFavourites": "Otevřít stránku oblíbených položek",
+        "selectItem": "Vyberte bod zájmu, který je nejblíže středu mapy (křížek). Pouze při použití klávesnicové navigace",
+        "selectItem2": "Vyberte bod zájmu, který je druhým nejbližším prvkem ke středu mapy (křížek). Pouze při použití klávesnicové navigace",
+        "selectItem3": "Vyberte bod zájmu, který je třetím nejbližším prvkem ke středu mapy (křížek). Pouze při použití klávesnicové navigace",
+        "selectItemI": "Vyberte bod zájmu, který je {i}tým nejbližším prvkem ke středu mapy (křížek). Pouze při použití klávesnicové navigace",
         "selectMap": "Nastavení pozadí na mapu z externích zdrojů. Přepíná mezi dvěma nejlepšími dostupnými vrstvami",
         "selectMapnik": "Nastavení vrstvy pozadí na OpenStreetMap-carto",
         "selectOsmbasedmap": "Nastavení vrstvy pozadí na mapu založenou na OpenStreetMap (nebo vypnutí rastrové vrstvy pozadí)",
         "selectSearch": "Vybere vyhledávací řádek pro vyhledávání míst",
-        "title": "Klávesové zkratky"
+        "shakePhone": "Zatřesení telefonem",
+        "title": "Klávesové zkratky",
+        "translationMode": "Zapnutí nebo vypnutí režimu překladu"
     },
     "image": {
         "addPicture": "Přidat fotku",
@@ -551,12 +589,16 @@
         "dontDelete": "Zrušit",
         "isDeleted": "Smazáno",
         "nearby": {
+            "close": "Sbalení panelu s okolními obrázky",
+            "failed": "Získání obrázků ze služby {service} se nezdařilo",
             "link": "Tento obrázek zobrazuje objekt",
-            "seeNearby": "Procházení a propojování okolních obrázků",
+            "noNearbyImages": "Nebyly nalezeny žádné obrázky v okolí",
+            "seeNearby": "Procházet okolní obrázky",
             "title": "Blízké obrázky streetview"
         },
         "pleaseLogin": "Pro přidání fotky se prosím přihlaste",
-        "respectPrivacy": "Nefotografujte osoby ani poznávací značky. Nevkládejte Mapy Google, Google Streetview ani jiné zdroje chráněné autorskými právy.",
+        "processing": "Server zpracovává váš obrázek",
+        "respectPrivacy": "Nenahrávejte z Map Google, Google Streetview ani z jiných zdrojů chráněných autorskými právy.",
         "toBig": "Váš obrázek je příliš velký, protože má velikost {actual_size}. Používejte prosím obrázky o maximální velikosti {max_size}",
         "upload": {
             "failReasons": "Možná jste ztratili připojení k internetu",
@@ -567,6 +609,7 @@
                 "someFailed": "Litujeme, nepodařilo se nám nahrát {count} obrázků",
                 "uploading": "Nahrává se {count} obrázků…"
             },
+            "noBlur": "Snímky nebudou rozmazané. Nefotografujte lidi",
             "one": {
                 "done": "Váš obrázek byl úspěšně nahrán. Děkuji!",
                 "failed": "Omlouváme se, váš obrázek se nepodařilo nahrát",
@@ -595,14 +638,16 @@
     },
     "index": {
         "#": "Tyto texty se zobrazují nad tlačítky motivu, pokud není načten žádný motiv",
+        "about": "O MapComplete",
         "featuredThemeTitle": "Tento týden",
-        "intro": "MapComplete je prohlížeč a editor OpenStreetMap, který zobrazuje informace o prvcích konkrétního tématu a umožňuje je aktualizovat.",
+        "intro": "Mapy k různým tématům, ke kterým můžete přispět",
+        "learnMore": "Více informací",
         "logIn": "Přihlaste se, abyste viděli další témata, která jste dříve navštívili",
         "pickTheme": "Vyberte si téma níže a začněte.",
-        "title": "Vítejte v MapComplete"
+        "title": "MapComplete"
     },
     "move": {
-        "cancel": "Zrušit přesun",
+        "cancel": "Vyberte jiný důvod",
         "cannotBeMoved": "Tuto funkci nelze přesunout.",
         "confirmMove": "Přesunout sem",
         "inviteToMove": {
@@ -619,8 +664,9 @@
         "partOfRelation": "Tato funkce je součástí vztahu. K přesunutí použijte jiný editor.",
         "pointIsMoved": "Bod byl přesunut",
         "reasons": {
-            "reasonInaccurate": "Umístění tohoto objektu je nepřesné a mělo by být posunuto o několik metrů",
-            "reasonRelocation": "Objekt byl přemístěn na úplně jiné místo"
+            "reasonInaccurate": "Poloha je nepřesná o několik metrů",
+            "reasonRelocation": "Objekt byl přemístěn na úplně jiné místo",
+            "reasonSnapTo": "Toto by mělo být přichyceno k {name}"
         },
         "selectReason": "Proč přesouváte tento objekt?",
         "whyMove": "Proč chcete přesunout tento bod?",
@@ -682,6 +728,11 @@
         "takeImages": "Pořizujte snímky stromu, abyste automaticky zjistili typ stromu",
         "tryAgain": "Vyberte jiný druh"
     },
+    "preset_type": {
+        "question": "Jakého typu je tento objekt?",
+        "typeDescription": "To je <b>{title}</b>. <div class='subtle'>{description}</div>",
+        "typeTitle": "To je <b>{title}</b>"
+    },
     "privacy": {
         "editingIntro": "Když v mapě provedete změnu, tato změna se zaznamená na OpenStreetMap a je veřejně dostupná komukoli. Sada změn provedená pomocí MapComplete obsahuje následující data:",
         "editingOutro": "Viz <a href='https://wiki.osmfoundation.org/wiki/Privacy_Policy' target='_blank'>zásady ochrany osobních údajů na OpenStreetMap.org</a> pro podrobné informace. Rádi bychom vám připomněli, že při registraci můžete použít smyšlené jméno.",
@@ -707,22 +758,33 @@
     },
     "reviews": {
         "affiliated_reviewer_warning": "(Recenze od zaměstnance)",
-        "attribution": "Recenze jsou poskytovány službou <a href='https://mangrove.reviews/' target='_blank'>Mangrove Reviews</a> a jsou k dispozici pod licencí <a href='https://mangrove.reviews/terms#8-licensing-of-content' target='_blank'>CC-BY 4.0</a>.",
+        "attribution": "Od <a href='https://mangrove.reviews/' target='_blank'>Mangrove Reviews</a>",
+        "averageRating": "Průměrné hodnocení {n} hvězdiček",
         "i_am_affiliated": "Jsem spojen s tímto objektem",
         "i_am_affiliated_explanation": "Zkontrolujte, zda jste vlastníkem, tvůrcem, zaměstnancem, …",
         "name_required": "Pro zobrazení a vytváření recenzí je vyžadováno jméno",
-        "no_reviews_yet": "Zatím zde nejsou žádné recenze. Buďte první, kdo ji napíše, a pomozte otevřít data a podnikání!",
+        "no_reviews_yet": "Zatím nejsou žádné recenze. Buďte první!",
+        "non_place_review": "Jedna recenze se netýká místa a není zde uvedena.",
+        "non_place_reviews": "{n} recenzí se netýkají místa a nejsou zde zobrazeny.",
         "question": "Jak byste ohodnotili {title()}?",
         "question_opinion": "Jaká byla vaše zkušenost?",
+        "rate": "Ohodnotit {n} hvězdičkami",
+        "rated": "Hodnoceno {n} hvězdičkami",
+        "reviewPlaceholder": "Popište svou zkušenost…",
         "reviewing_as": "Přezkoumání jako {nickname}",
         "reviewing_as_anonymous": "Kontrola jako anonymní",
-        "save": "Uložit",
+        "reviews_bug": "Očekávali jste více recenzí? Některé recenze se nezobrazují kvůli chybě.",
+        "save": "Uložit recenzi",
         "saved": "Recenze uložena. Díky za sdílení!",
         "saving_review": "Ukládání…",
+        "see_all": "Zobrazit všechny recenze na mangrove.reviews",
         "title": "{count} recenzí",
         "title_singular": "Jedna recenze",
+        "too_long": "Povoleno je maximálně {max} znaků. Vaše recenze má {amount} znaků.",
         "tos": "Zanecháním recenze souhlasíte s <a href='https://mangrove.reviews/terms' target='_blank'>podmínkami a zásadami ochrany osobních údajů služby Mangrove.reviews</a>",
-        "write_a_comment": "Zanechte recenzi…"
+        "write_a_comment": "Zanechte recenzi…",
+        "your_reviews": "Vaše předchozí recenze",
+        "your_reviews_empty": "Nenašli jsme žádné z vašich předchozích hodnocení"
     },
     "split": {
         "cancel": "Zrušit",
@@ -738,6 +800,14 @@
         "allMissing": "Zatím bez překladů",
         "missing": "{count} nepřeložených řetězců",
         "notImmediate": "Překlady nejsou aktualizovány přímo. Obvykle to trvá několik dní"
+    },
+    "unknown": {
+        "clear": "Vymazat odpověď",
+        "explanation": "Vymažte tuto informaci, pokud je aktuální odpověď nesprávná, ale skutečná hodnota není známa. Žádná jiná informace nebude odstraněna.",
+        "keep": "Zachovat odpověď",
+        "markUnknown": "Označit jako neznámé",
+        "removedKeys": "Následující klíče budou odstraněny:",
+        "title": "Označit jako neznámé?"
     },
     "userinfo": {
         "gotoInbox": "Otevřít poštu",
@@ -766,11 +836,17 @@
         "fediverse": {
             "description": "Fediverse adresa, často @username@server.tld",
             "feedback": "Fediverse adresa se skládá z @username@server.tld nebo je odkazem na profil",
-            "invalidHost": "{host} není platný název hostitele"
+            "invalidHost": "{host} není platný název hostitele",
+            "onYourServer": "Zobrazit a sledovat na serveru"
         },
         "float": {
             "description": "nějaké číslo",
             "feedback": "To není číslo"
+        },
+        "id": {
+            "description": "identifikátor",
+            "invalidCharacter": "ID může obsahovat pouze písmena, číslice a podtržítka",
+            "shouldBeLonger": "Id by mělo mít alespoň 3 znaky"
         },
         "int": {
             "description": "celé číslo"
@@ -796,6 +872,13 @@
             "description": "celé kladné číslo",
             "noZero": "Nula není povolena"
         },
+        "regex": {
+            "description": "regulární výraz"
+        },
+        "slope": {
+            "inputExplanation": "Položte telefon na zem tak, aby horní strana telefonu směřovala k horní části svahu.",
+            "inputIncorrect": "Pro správné měření se ujistěte, že se šipka nachází v zelené oblasti."
+        },
         "string": {
             "description": "kus textu"
         },
@@ -804,11 +887,15 @@
         },
         "tooLong": "Text je příliš dlouhý, povoleno je maximálně 255 znaků. Nyní máte {count} znaků.",
         "url": {
+            "aggregator": "{host} je webová stránka třetí strany. Pokud je to možné, vyhledejte oficiální webové stránky.",
             "description": "odkaz na webové stránky",
-            "feedback": "Toto není platná webová adresa"
+            "feedback": "Toto není platná webová adresa",
+            "spamSite": "{host} je považován za nekvalitní webovou stránku. Používání této webové stránky není povoleno."
         },
         "wikidata": {
-            "description": "A Wikidata identifikátor"
+            "description": "A Wikidata identifikátor",
+            "empty": "Zadejte prosím nějaká wikidata",
+            "startsWithQ": "Identifikátor wikidat začíná písmenem Q a následuje za ním číslo"
         }
     }
 }

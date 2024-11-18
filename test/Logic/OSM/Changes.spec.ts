@@ -1,8 +1,6 @@
 import { ChangeDescription } from "../../../src/Logic/Osm/Actions/ChangeDescription"
 import { Changes } from "../../../src/Logic/Osm/Changes"
 import { expect, it } from "vitest"
-import { ImmutableStore } from "../../../src/Logic/UIEventSource"
-import { OsmConnection } from "../../../src/Logic/Osm/OsmConnection"
 
 it("Generate preXML from changeDescriptions", () => {
     const changeDescrs: ChangeDescription[] = [
@@ -29,11 +27,7 @@ it("Generate preXML from changeDescriptions", () => {
             },
         },
     ]
-    const c = new Changes({
-        dryRun: new ImmutableStore(true),
-        osmConnection: new OsmConnection(),
-    })
-    const descr = c.CreateChangesetObjects(changeDescrs, [])
+    const descr = Changes.createTestObject().CreateChangesetObjects(changeDescrs, [])
     expect(descr.modifiedObjects).toHaveLength(0)
     expect(descr.deletedObjects).toHaveLength(0)
     expect(descr.newObjects).toHaveLength(1)

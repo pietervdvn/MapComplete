@@ -4,14 +4,16 @@
     "en": "Paths, carfree and slow roads",
     "nl": "Paadjes, trage wegen en autoluwe straten",
     "de": "Pfade, autofreie und geschwindigkeitsreduzierte Straßen",
-    "fr": "Chemins, routes non carrossables et routes à vitesse réduite"
+    "fr": "Chemins, routes non carrossables et routes à vitesse réduite",
+    "es": "Senderos, caminos lentos y sin coches"
   },
   "description": {
     "en": "All carfree roads",
     "nl": "Alle verkeersvrije wegen",
     "de": "Alle autofreien Straßen",
     "ca": "Totes les carreteres sense cotxe",
-    "fr": "Toutes les routes non carrossables"
+    "fr": "Toutes les routes non carrossables",
+    "es": "Todos los caminos sin coches"
   },
   "source": {
     "osmTags": {
@@ -36,7 +38,8 @@
     "render": {
       "en": "Slow road",
       "nl": "Trage weg",
-      "de": "Geschwindigkeitsreduzierte Straße"
+      "de": "Geschwindigkeitsreduzierte Straße",
+      "es": "Camino lento"
     },
     "mappings": [
       {
@@ -51,7 +54,8 @@
         "then": {
           "en": "Footway",
           "nl": "Voetpad",
-          "de": "Fußweg"
+          "de": "Fußweg",
+          "es": "Acera"
         }
       },
       {
@@ -59,7 +63,8 @@
         "then": {
           "en": "Cycleway",
           "nl": "Fietspad",
-          "de": "Radweg"
+          "de": "Radweg",
+          "es": "Carril bici"
         }
       },
       {
@@ -67,7 +72,8 @@
         "then": {
           "en": "Pedestrian street",
           "nl": "Voetgangersstraat",
-          "de": "Fußgängerzone"
+          "de": "Fußgängerzone",
+          "es": "Calle peatonal"
         }
       },
       {
@@ -75,7 +81,8 @@
         "then": {
           "en": "Living street",
           "nl": "Woonerf",
-          "de": "Wohnstraße"
+          "de": "Wohnstraße",
+          "es": "Calle residencial"
         }
       },
       {
@@ -83,7 +90,8 @@
         "then": {
           "en": "Small path",
           "nl": "Klein pad",
-          "de": "Schmaler Pfad"
+          "de": "Schmaler Pfad",
+          "es": "Sendero pequeño"
         }
       }
     ]
@@ -118,7 +126,8 @@
             "en": "This is a living street",
             "nl": "<div> Dit is een woonerf: <ul><li>Voetgangers mogen hier de volledige breedte van de straat gebruiken</li><li>Gemotoriseerd verkeer mag maximaal <b>20km/h</b> rijden</li></ul></div>",
             "de": "Dies ist eine Wohnstraße",
-            "fr": "C'est une zone de rencontre"
+            "fr": "C'est une zone de rencontre",
+            "es": "Esta es una calle residencial"
           },
           "icon": {
             "path": "./assets/layers/slow_roads/woonerf.svg",
@@ -130,7 +139,8 @@
           "then": {
             "en": "This is a wide, carfree street",
             "nl": "Dit is een brede, autovrije straat",
-            "de": "Dies ist eine breite, autofreie Straße"
+            "de": "Dies ist eine breite, autofreie Straße",
+            "es": "Esta es una calle ancha sin coches"
           }
         },
         {
@@ -139,7 +149,8 @@
             "en": "This is a footway",
             "nl": "Dit is een voetpaadje",
             "de": "Dies ist ein Fußweg",
-            "fr": "C'est un chemin piéton"
+            "fr": "C'est un chemin piéton",
+            "es": "Esta es una acera"
           }
         },
         {
@@ -148,7 +159,8 @@
             "en": "This is a small path",
             "nl": "Dit is een wegeltje of bospad",
             "de": "Dies ist ein schmaler Pfad",
-            "fr": "C'est un petit sentier"
+            "fr": "C'est un petit sentier",
+            "es": "Este es un sendero pequeño"
           }
         },
         {
@@ -157,7 +169,8 @@
             "en": "This is a bridleway",
             "nl": "Dit is een ruiterswegel",
             "de": "Dies ist ein Reitweg",
-            "fr": "C'est une voie équestre"
+            "fr": "C'est une voie équestre",
+            "es": "Este es un camino para cabalgatas"
           }
         },
         {
@@ -165,7 +178,8 @@
           "then": {
             "en": "This is a land access road",
             "nl": "Dit is een tractorspoor of weg om landbouwgrond te bereikken",
-            "de": "Dies ist eine Zufahrtsstraße"
+            "de": "Dies ist eine Zufahrtsstraße",
+            "es": "Este es un camino de acceso a terrenos"
           }
         }
       ]
@@ -174,7 +188,8 @@
       "question": {
         "en": "What surface does this road have?",
         "nl": "Wat is de wegverharding van dit pad?",
-        "de": "Welche Oberfläche hat diese Straße?"
+        "de": "Welche Oberfläche hat diese Straße?",
+        "es": "¿Qué superficie tiene este camino?"
       },
       "render": {
         "nl": "De ondergrond is <b>{surface}</b>",
@@ -184,9 +199,10 @@
         "it": "La superficie è <b>{surface}</b>",
         "de": "Die Oberfläche ist <b>{surface}</b>",
         "eo": "La surfaco estas <b>{surface}</b>",
-        "es": "La superficie es <b>{surface}</b>",
+        "es": "La superficie es de <b>{surface}</b>",
         "ca": "La superfícies és <b>{surface}</b>",
-        "cs": "Povrch je <b>{surface}</b>"
+        "cs": "Povrch je <b>{surface}</b>",
+        "uk": "Поверхня - <b>{surface}</b>"
       },
       "freeform": {
         "key": "surface"
@@ -202,9 +218,10 @@
             "it": "La superficie è <b>erba</b>",
             "de": "Die Oberfläche ist <b>Gras</b>",
             "eo": "La surfaco estas <b>herba</b>",
-            "es": "La superficie es <b>hierba</b>",
+            "es": "La superficie es de <b>césped</b>",
             "ca": "La superfície és <b>herba</b>",
-            "cs": "Povrch je <b>tráva</b>"
+            "cs": "Povrch je <b>tráva</b>",
+            "uk": "Поверхня - <b>трава</b>"
           }
         },
         {
@@ -217,7 +234,9 @@
             "it": "La superficie è <b>terreno</b>",
             "de": "Die Oberfläche ist <b>Erde</b>",
             "ca": "La superfície és <b>terra</b>",
-            "cs": "Povrch je <b>země</b>"
+            "cs": "Povrch je <b>země</b>",
+            "uk": "Поверхня - <b>земля</b>",
+            "es": "La superficie es de <b>tierra</b>"
           }
         },
         {
@@ -228,9 +247,10 @@
             "fr": "La surface est <b>non pavée</b>",
             "it": "La superficie è <b>non pavimentata</b>",
             "de": "Die Oberfläche ist <b>ohne festen Belag</b>",
-            "es": "La superficie está <b>sin pavimentar</b>",
+            "es": "La superficie es <b>sin pavimentar</b>",
             "ca": "La superfície és <b>sense asfaltar</b>",
-            "cs": "Povrch je <b>nezpevněný</b>"
+            "cs": "Povrch je <b>nezpevněný</b>",
+            "uk": "Поверхня -<b>без покриття</b>"
           },
           "hideInAnswer": true
         },
@@ -244,9 +264,10 @@
             "it": "La superficie è <b>sabbia</b>",
             "de": "Die Oberfläche ist <b>Sand</b>",
             "eo": "La surfaco estas <b>sabla</b>",
-            "es": "La superficie es <b>arena</b>",
+            "es": "La superficie es de <b>arena</b>",
             "ca": "La superfície és <b>sorra</b>",
-            "cs": "Povrch je <b>písek</b>"
+            "cs": "Povrch je <b>písek</b>",
+            "uk": "Поверхня - <b>пісок</b>"
           }
         },
         {
@@ -258,8 +279,9 @@
             "it": "La superficie è <b>pietre irregolari</b>",
             "fr": "La surface est en <b>pierres pavées</b>",
             "de": "Die Oberfläche ist aus <b>Pflastersteinen</b>",
-            "es": "La superficie es <b>adoquines</b>",
-            "cs": "Povrch je <b>dlážděný</b>"
+            "es": "La superficie es de <b> adoquines</b>",
+            "cs": "Povrch je <b>dlážděný</b>",
+            "uk": "Покриття - <b>бруківка</b>"
           }
         },
         {
@@ -271,9 +293,10 @@
             "it": "La superficie è <b>asfalto</b>",
             "fr": "La surface est en <b>bitume</b>",
             "de": "Die Oberfläche ist <b>Asphalt</b>",
-            "es": "La superficie es <b>asfalto</b>",
+            "es": "La superficie es de <b>asfalto</b>",
             "ca": "La superfícies és <b>asfalt</b>",
-            "cs": "Povrch je <b>asfalt</b>"
+            "cs": "Povrch je <b>asfalt</b>",
+            "uk": "Покриття - <b>асфальт</b>"
           }
         },
         {
@@ -286,9 +309,10 @@
             "it": "La superficie è <b>calcestruzzo</b>",
             "de": "Die Oberfläche ist <b>Beton</b>",
             "eo": "La surfaco estas <b>betona</b>",
-            "es": "La superficie es <b>hormigón</b>",
+            "es": "La superficie es de <b>hormigón</b>",
             "ca": "La superfície es <b>formigó</b>",
-            "cs": "Povrch je <b>betonový</b>"
+            "cs": "Povrch je <b>betonový</b>",
+            "uk": "Поверхня - <b>бетон</b>"
           }
         },
         {
@@ -299,9 +323,10 @@
             "fr": "La surface est <b>pavée</b>",
             "it": "La superficie è <b>pavimentata</b>",
             "de": "Die Oberfläche ist <b>gepflastert</b>",
-            "es": "La superficie está <b>pavimentada</b>",
+            "es": "La superficie es <b>pavimentada</b>",
             "ca": "La superfície està <b>pavimentada</b>",
-            "cs": "Povrch je <b>zpevněný</b>"
+            "cs": "Povrch je <b>zpevněný</b>",
+            "uk": "Поверхня <b>тверде покриття</b>"
           },
           "hideInAnswer": true
         }
@@ -314,7 +339,8 @@
         "en": "Is this road lit at night?",
         "nl": "Is deze weg 's nachts verlicht?",
         "de": "Ist diese Straße nachts beleuchtet?",
-        "fr": "Cette route est-elle éclairée la nuit ?"
+        "fr": "Cette route est-elle éclairée la nuit ?",
+        "es": "¿Está iluminado este camino por la noche?"
       },
       "mappings": [
         {
@@ -326,10 +352,12 @@
           "then": {
             "en": "Not lit",
             "nl": "Niet verlicht",
-            "de": "Nicht beleuchtet"
+            "de": "Nicht beleuchtet",
+            "es": "Sin iluminación"
           }
         }
       ]
     }
-  ]
+  ],
+  "allowMove": false
 }

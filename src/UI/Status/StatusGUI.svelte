@@ -95,6 +95,22 @@
   }
   {
     services.push({
+      name: Constants.panoramax.url,
+      status: testDownload(Constants.panoramax.url + "/api").mapD((result) => {
+        if (result["success"]?.stac_version === "1.0.0") {
+          return "online"
+        }
+        if (result["error"]) {
+          return "offline"
+        } else {
+          return "degraded"
+        }
+      }),
+      message: simpleMessage(testDownload(Constants.panoramax.url + "/api")),
+    })
+  }
+  {
+    services.push({
       name: Constants.GeoIpServer,
       status: testDownload(Constants.GeoIpServer + "/status").mapD((result) => {
         if (result["success"].online) {
@@ -203,6 +219,44 @@
         return "degraded"
       }),
       message: status.map((s) => JSON.stringify(s)),
+    })
+  }
+
+  {
+    const s = Constants.nominatimEndpoint
+    const status = testDownload(s + "/search.php?q=Brugge")
+    services.push({
+      name: s,
+      message: simpleMessage(status),
+      status: status.mapD((s) => {
+        if (s["error"]) {
+          return "offline"
+        }
+        const data = s["success"]
+        if (Array.isArray(data)) {
+          return "online"
+        }
+        return "degraded"
+      }),
+    })
+  }
+
+  {
+    const s = Constants.photonEndpoint
+    const status = testDownload(s + "/api/?q=Brugge")
+    services.push({
+      name: s,
+      status: status.mapD((s) => {
+        if (s["error"]) {
+          return "offline"
+        }
+        const data = s["success"]
+        if (Array.isArray(data.features) && data.features.length > 0) {
+          return "online"
+        }
+        return "degraded"
+      }),
+      message: simpleMessage(status),
     })
   }
 

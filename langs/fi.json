@@ -271,7 +271,6 @@
             "createYourOwnTheme": "Luo oma MapComplete-teema alusta asti",
             "enterToOpen": "Avaa teema painamalla enter",
             "hiddenExplanation": "Näitä teemoja voi käyttää vain linkin haltijat. Olet löytänyt {hidden_discovered}/{total_hidden} piilotettua teemaa.",
-            "intro": "<h3>Lisää teemakarttoja?</h3>Nautitko paikkatiedon keräämisestä? <br/>Teemoja on lisää.",
             "noMatchingThemes": "Teemaa ei löytynyt hakuehdollasi",
             "noSearch": "Näytä kaikki teemat",
             "previouslyHiddenTitle": "Aiemmin katsotut piilotetut teemat",

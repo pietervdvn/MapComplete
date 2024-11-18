@@ -7,7 +7,10 @@
     "fr": "Votre chemin parcouru",
     "da": "Dit tilbagelagte spor",
     "ca": "La teva traça recorreguda",
-    "cs": "Vaše procestovaná trasa"
+    "cs": "Vaše procestovaná trasa",
+    "ru": "Ваш пройденный путь",
+    "uk": "Твій пройдений шлях",
+    "es": "Tu traza recorrida"
   },
   "description": "Meta layer showing the previous locations of the user as single line with controls, e.g. to erase, upload or download this track. Add this to your theme and override the maprendering to change the appearance of the travelled track.",
   "source": "special",
@@ -20,7 +23,8 @@
       "de": "Deine zurückgelegte Strecke",
       "ca": "El teu camí recorregut",
       "fr": "Votre chemin",
-      "cs": "Ujetá cesta"
+      "cs": "Ujetá cesta",
+      "es": "Tu traza recorrida"
     }
   },
   "pointRendering": [
@@ -54,7 +58,8 @@
         "de": "Dies ist der Weg, den Sie seit dem Besuch dieser Webseite zurückgelegt haben. Keine Sorge - diese Daten sind nur für Sie sichtbar und für niemanden sonst. Ihre Standortdaten werden niemals an ein anderes Gerät gesendet.",
         "fr": "C'est le chemin que vous avez parcouru depuis l'ouverture de ce site. Ne vous inquiétez pas - ceci n'est visible que pour vous et personne d'autre. Vos données de localisation ne sont jamais envoyées hors de l'appareil.",
         "ca": "Aquest és el camí que heu recorregut des que s'ha obert aquest lloc web. No et preocupis: això només és visible per a tu i ningú més. Les vostres dades d'ubicació mai s'envien fora del dispositiu.",
-        "cs": "To je cesta, kterou jste urazili od otevření těchto webových stránek. Nemějte obavy - je viditelná pouze pro vás a pro nikoho jiného. Údaje o vaší poloze nejsou nikdy odesílány mimo zařízení."
+        "cs": "To je cesta, kterou jste urazili od otevření těchto webových stránek. Nemějte obavy - je viditelná pouze pro vás a pro nikoho jiného. Údaje o vaší poloze nejsou nikdy odesílány mimo zařízení.",
+        "es": "Esta es la traza que has recorrido desde que se abrió este sitio web. No te preocupes, solo tú puedes verla y nadie más. Tus datos de ubicación nunca se envían fuera del dispositivo."
       }
     },
     "export_as_gpx",
@@ -69,5 +74,6 @@
       "render": "{clear_location_history()}"
     }
   ],
+  "allowMove": false,
   "syncSelection": "global"
 }

@@ -2,19 +2,11 @@
 
 # icecream_lactosefree
 
-
 This layer is based on [ice_cream](../Layers/ice_cream.md)
 
 A place where ice cream is sold over the counter
 
-
-
-
-
-
  - This layer is shown at zoomlevel **4** and higher
-
-
 
 ## Table of contents
 
@@ -36,15 +28,13 @@ A place where ice cream is sold over the counter
   - [payment-options](#payment-options)
   - [wheelchair-access](#wheelchair-access)
   - [leftover-questions](#leftover-questions)
+  - [move-button](#move-button)
   - [lod](#lod)
+4. [Filters](#filters)
 
 ## Themes using this layer
 
-
-
  - [lactosefree](https://mapcomplete.org/lactosefree)
-
-
 
 ## Basic tags for this layer
 
@@ -73,37 +63,24 @@ Elements must match **all** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/diet:vegan#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/diet%3Avegan/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [diet:vegan](https://wiki.openstreetmap.org/wiki/Key:diet:vegan) | Multiple choice | [only](https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Donly) [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/wheelchair#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/wheelchair/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [wheelchair](https://wiki.openstreetmap.org/wiki/Key:wheelchair) | Multiple choice | [designated](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Ddesignated) [yes](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno) |
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
-
-
-
 
 ### reviews
 Shows the reviews module (including the possibility to leave a review)
 _This tagrendering has no question and is thus read-only_
 *{create_review()}{list_reviews()}*
 
-
-
-
 ### lactose_free
 
 The question is `Does {title()} have a lactose-free offering?`
-
-
 
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/lactose_free.svg' style='width: 3rem; height: 3rem'> *<b>Only sells lactose free</b> products* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:lactose_free' target='_blank'>diet:lactose_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Donly' target='_blank'>only</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/lactose_free.svg' style='width: 3rem; height: 3rem'> *Big lactose free offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:lactose_free' target='_blank'>diet:lactose_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dyes' target='_blank'>yes</a>
  -  *<b>Limited lactose free</b> offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:lactose_free' target='_blank'>diet:lactose_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dlimited' target='_blank'>limited</a>
  -  *No lactose free offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:lactose_free' target='_blank'>diet:lactose_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dno' target='_blank'>no</a>
-
-
 
 This tagrendering has labels 
 `diets`
@@ -113,30 +90,19 @@ This tagrendering has labels
 The question is `What is the name of this ice cream parlor?`
 *This ice cream parlor is named <b>{name}</b>* is shown if `name` is set
 
-
-
-
 ### opening_hours
 
 The question is `What are the opening hours of {title()}?`
 *<h3>Opening hours</h3>{opening_hours_table(opening_hours)}* is shown if `opening_hours` is set
 
-
  -  *Marked as closed for an unspecified time* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>. _This option cannot be chosen as answer_
-
-
-
-
 
 ### phone
 
 The question is `What is the phone number of {title()}?`
-*<a href='tel:{phone}'>{phone}</a>* is shown if `phone` is set
+*{link(&LBRACEphone&RBRACE,tel:&LBRACEphone&RBRACE,,,,)}* is shown if `phone` is set
 
-
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/phone.svg' style='width: 3rem; height: 3rem'> *<a href='tel:{contact:phone}'>{contact:phone}</a>* is shown if with contact:phone~.+. _This option cannot be chosen as answer_
-
-
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/phone.svg' style='width: 3rem; height: 3rem'> *{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}* is shown if with contact:phone~.+. _This option cannot be chosen as answer_
 
 This tagrendering has labels 
 `contact`
@@ -146,11 +112,8 @@ This tagrendering has labels
 The question is `What is the email address of {title()}?`
 *<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>* is shown if `email` is set
 
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/envelope.svg' style='width: 3rem; height: 3rem'> *<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>* is shown if with contact:email~.+. _This option cannot be chosen as answer_
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/envelope.svg' style='width: 3rem; height: 3rem'> *<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>* is shown if with operator:email~.+. _This option cannot be chosen as answer_
-
-
 
 This tagrendering has labels 
 `contact`
@@ -160,10 +123,7 @@ This tagrendering has labels
 The question is `What is the website of {title()}?`
 *<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>* is shown if `website` is set
 
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/icons/website.svg' style='width: 3rem; height: 3rem'> *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>* is shown if with contact:website~.+. _This option cannot be chosen as answer_
-
-
 
 This tagrendering has labels 
 `contact`
@@ -172,14 +132,10 @@ This tagrendering has labels
 
 The question is `Does this shop have a sugar free offering?`
 
-
-
  -  *This shop <b>only sells sugar free</b> products* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:sugar_free' target='_blank'>diet:sugar_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Donly' target='_blank'>only</a>
  -  *This shop has a big sugar free offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:sugar_free' target='_blank'>diet:sugar_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Dyes' target='_blank'>yes</a>
  -  *This shop has a <b>limited sugar free</b> offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:sugar_free' target='_blank'>diet:sugar_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Dlimited' target='_blank'>limited</a>
  -  *This shop has no sugar free offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:sugar_free' target='_blank'>diet:sugar_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Dno' target='_blank'>no</a>
-
-
 
 This tagrendering has labels 
 `diets`
@@ -188,14 +144,10 @@ This tagrendering has labels
 
 The question is `Does this shop have a gluten free offering?`
 
-
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/glutenfree.svg' style='width: 3rem; height: 3rem'> *This shop <b>only sells gluten free</b> products* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:gluten_free' target='_blank'>diet:gluten_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Donly' target='_blank'>only</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/glutenfree.svg' style='width: 3rem; height: 3rem'> *This shop has a big gluten free offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:gluten_free' target='_blank'>diet:gluten_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Dyes' target='_blank'>yes</a>
  -  *This shop has a <b>limited gluten free</b> offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:gluten_free' target='_blank'>diet:gluten_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Dlimited' target='_blank'>limited</a>
  -  *This shop has no gluten free offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:gluten_free' target='_blank'>diet:gluten_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Dno' target='_blank'>no</a>
-
-
 
 This tagrendering has labels 
 `diets`
@@ -204,14 +156,10 @@ This tagrendering has labels
 
 The question is `Does this place offer a vegan option?`
 
-
-
  -  *This place <b>only sells vegan</b> products* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegan' target='_blank'>diet:vegan</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Donly' target='_blank'>only</a>
  -  *This shop has a big vegan offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegan' target='_blank'>diet:vegan</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dyes' target='_blank'>yes</a>
  -  *This shop has a <b>limited vegan</b> offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegan' target='_blank'>diet:vegan</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dlimited' target='_blank'>limited</a>
  -  *This shop has no vegan offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegan' target='_blank'>diet:vegan</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dno' target='_blank'>no</a>
-
-
 
 This tagrendering has labels 
 `diets`
@@ -220,47 +168,63 @@ This tagrendering has labels
 
 The question is `Which methods of payment are accepted here?`
 
-
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/cash.svg' style='width: 3rem; height: 3rem'> *Cash is accepted here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dno' target='_blank'>no</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/payment_card.svg' style='width: 3rem; height: 3rem'> *Payment cards are accepted here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dno' target='_blank'>no</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/qrcode.svg' style='width: 3rem; height: 3rem'> *Payment by QR-code is possible here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dno' target='_blank'>no</a>
 
-
-
-
-
 ### wheelchair-access
 
 The question is `Is this place accessible with a wheelchair?`
-
-
 
  -  *This place is specially adapted for wheelchair users* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Ddesignated' target='_blank'>designated</a>
  -  *This place is easily reachable with a wheelchair* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes' target='_blank'>yes</a>
  -  *It is possible to reach this place in a wheelchair, but it is not easy* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dlimited' target='_blank'>limited</a>
  -  *This place is not reachable with a wheelchair* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno' target='_blank'>no</a>
 
-
-
-
-
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
+### move-button
 
-
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
 
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
 
-
 This tagrendering has labels 
 `added_by_default`
+
+## Filters
+
+| id | question | osmTags |
+-----|-----|----- |
+| open_now.0 | Open now | _isOpen=yes |
+
+| id | question | osmTags |
+-----|-----|----- |
+| sugar_free.0 | Has a sugar-free offering | diet:sugar_free=yes | diet:sugar_free=only | diet:sugar_free=limited |
+
+| id | question | osmTags |
+-----|-----|----- |
+| lactose_free.0 | Has a lactose free offering | diet:lactose_free=yes | diet:lactose_free=only | diet:lactose_free=limited |
+
+| id | question | osmTags |
+-----|-----|----- |
+| gluten_free.0 | Has a gluten free offering | diet:gluten_free=yes | diet:gluten_free=only | diet:gluten_free=limited |
+
+| id | question | osmTags |
+-----|-----|----- |
+| accepts_cash.0 | Accepts cash | payment:cash=yes |
+
+| id | question | osmTags |
+-----|-----|----- |
+| accepts_cards.0 | Accepts payment cards | payment:cards=yes |
+
 
 
 This document is autogenerated from [assets/themes/lactosefree/lactosefree.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/themes/lactosefree/lactosefree.json)

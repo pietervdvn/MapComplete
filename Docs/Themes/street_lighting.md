@@ -8,14 +8,11 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [street_lamps](../Layers/street_lamps.md)
  - [lit_streets (defined in this theme)](#lit_streets)
  - [all_streets (defined in this theme)](#all_streets)
 
-
 Available languages:
-
 
  - en
  - nl
@@ -32,7 +29,7 @@ Available languages:
  - cs
  - it
  - pl
-
+ - uk
 
 # Table of contents
 
@@ -59,20 +56,8 @@ Available languages:
 These layers can not be reused in different themes.
 # lit_streets
 
-
-
-
-
-
-
-
-
-
-
  - This layer is shown at zoomlevel **16** and higher
  - Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`
-
-
 
 No themes use this layer
 
@@ -95,72 +80,41 @@ Elements must match **all** of the following expressions:
 -----|-----|----- |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/lit#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/lit/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [lit](https://wiki.openstreetmap.org/wiki/Key:lit) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:lit%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:lit%3Dno) [24/7](https://wiki.openstreetmap.org/wiki/Tag:lit%3D24/7) |
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
 
-
-
-
 ### lit
 
 The question is `Is this street lit?`
-
-
 
  -  *This street is lit* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:lit' target='_blank'>lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lit%3Dyes' target='_blank'>yes</a>
  -  *This street is not lit* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:lit' target='_blank'>lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lit%3Dno' target='_blank'>no</a>
  -  *This street is lit at night* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:lit' target='_blank'>lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lit%3Dsunset-sunrise' target='_blank'>sunset-sunrise</a>. _This option cannot be chosen as answer_
  -  *This street is lit 24/7* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:lit' target='_blank'>lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lit%3D24/7' target='_blank'>24/7</a>
 
-
-
-
-
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
-
-
-
 
 ### split_button
 
 _This tagrendering has no question and is thus read-only_
 *{split_button()}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
 
-
 This tagrendering has labels 
 `added_by_default`
 # all_streets
 
-
-
-
-
-
-
-
-
-
-
  - This layer is shown at zoomlevel **18** and higher
  - Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`
-
-
 
 No themes use this layer
 
@@ -182,53 +136,34 @@ Elements must match **all** of the following expressions:
 -----|-----|----- |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/lit#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/lit/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [lit](https://wiki.openstreetmap.org/wiki/Key:lit) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:lit%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:lit%3Dno) [24/7](https://wiki.openstreetmap.org/wiki/Tag:lit%3D24/7) |
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
 
-
-
-
 ### lit
 
 The question is `Is this street lit?`
-
-
 
  -  *This street is lit* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:lit' target='_blank'>lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lit%3Dyes' target='_blank'>yes</a>
  -  *This street is not lit* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:lit' target='_blank'>lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lit%3Dno' target='_blank'>no</a>
  -  *This street is lit at night* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:lit' target='_blank'>lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lit%3Dsunset-sunrise' target='_blank'>sunset-sunrise</a>. _This option cannot be chosen as answer_
  -  *This street is lit 24/7* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:lit' target='_blank'>lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lit%3D24/7' target='_blank'>24/7</a>
 
-
-
-
-
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
-
-
-
 
 ### split_button
 
 _This tagrendering has no question and is thus read-only_
 *{split_button()}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

@@ -14,12 +14,16 @@
   import AttributedImage from "./AttributedImage.svelte"
   import SpecialTranslation from "../Popup/TagRendering/SpecialTranslation.svelte"
   import LoginToggle from "../Base/LoginToggle.svelte"
+  import { onDestroy } from "svelte"
+  import { Utils } from "../../Utils"
 
   export let tags: UIEventSource<OsmTags>
   export let state: SpecialVisualizationState
   export let image: P4CPicture
   export let feature: Feature
   export let layer: LayerConfig
+
+  export let highlighted: UIEventSource<string> = undefined
 
   export let linkable = true
   let targetValue = Object.values(image.osmTags)[0]
@@ -41,7 +45,7 @@
     const url = targetValue
     if (isLinked) {
       const action = new LinkImageAction(currentTags.id, key, url, tags, {
-        theme: tags.data._orig_theme ?? state.layout.id,
+        theme: tags.data._orig_theme ?? state.theme.id,
         changeType: "link-image",
       })
       await state.changes.applyAction(action)
@@ -50,7 +54,7 @@
         const v = currentTags[k]
         if (v === url) {
           const action = new ChangeTagAction(currentTags.id, new Tag(k, ""), currentTags, {
-            theme: tags.data._orig_theme ?? state.layout.id,
+            theme: tags.data._orig_theme ?? state.theme.id,
             changeType: "remove-image",
           })
           state.changes.applyAction(action)
@@ -58,17 +62,46 @@
       }
     }
   }
+
   isLinked.addCallback((isLinked) => applyLink(isLinked))
+
+  let element: HTMLDivElement
+  if (highlighted) {
+    onDestroy(
+      highlighted.addCallbackD((highlightedUrl) => {
+        if (highlightedUrl === image.pictureUrl) {
+          Utils.scrollIntoView(element)
+        }
+      })
+    )
+  }
 </script>
 
-<div class="flex w-fit shrink-0 flex-col">
-  <div class="cursor-zoom-in" on:click={() => state.previewedImage.setData(providedImage)}>
-    <AttributedImage
-      image={providedImage}
-      imgClass="max-h-64 w-auto"
-      previewedImage={state.previewedImage}
-    />
-  </div>
+<div
+  class="flex w-fit shrink-0 flex-col overflow-hidden rounded-lg"
+  class:border-interactive={$isLinked || $highlighted === image.pictureUrl}
+  style="border-width: 2px"
+  bind:this={element}
+>
+  <AttributedImage
+    {state}
+    image={providedImage}
+    imgClass="max-h-64 w-auto sm:h-32 md:h-64"
+    previewedImage={state.previewedImage}
+    attributionFormat="minimal"
+  >
+    <!--
+    <div slot="preview-action" class="self-center" >
+    <LoginToggle {state} silentFail={true}>
+      {#if linkable}
+        <label class="normal-background p-2 rounded-full pointer-events-auto">
+          <input bind:checked={$isLinked} type="checkbox" />
+          <SpecialTranslation t={t.link} {tags} {state} {layer} {feature} />
+        </label>
+      {/if}
+    </LoginToggle>
+    </div>-->
+  </AttributedImage>
   <LoginToggle {state} silentFail={true}>
     {#if linkable}
       <label>

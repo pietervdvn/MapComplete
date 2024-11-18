@@ -1,5 +1,10 @@
 import { ImmutableStore, Store, UIEventSource } from "../../Logic/UIEventSource"
-import maplibregl, { Map as MLMap, Map as MlMap, SourceSpecification } from "maplibre-gl"
+import maplibregl, {
+    Map as MLMap,
+    Map as MlMap,
+    ScaleControl,
+    SourceSpecification,
+} from "maplibre-gl"
 import { RasterLayerPolygon } from "../../Models/RasterLayers"
 import { Utils } from "../../Utils"
 import { BBox } from "../../Logic/BBox"
@@ -32,6 +37,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         "touchZoomRotate",
     ]
     readonly location: UIEventSource<{ lon: number; lat: number }>
+    private readonly isFlying = new UIEventSource(false)
     readonly zoom: UIEventSource<number>
     readonly bounds: UIEventSource<BBox>
     readonly rasterLayer: UIEventSource<RasterLayerPolygon>
@@ -48,6 +54,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
     readonly rotation: UIEventSource<number>
     readonly pitch: UIEventSource<number>
     readonly useTerrain: Store<boolean>
+    readonly showScale: UIEventSource<boolean>
 
     private static pmtilesInited = false
     /**
@@ -62,7 +69,6 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         if (!MapLibreAdaptor.pmtilesInited) {
             maplibregl.addProtocol("pmtiles", new Protocol().tile)
             MapLibreAdaptor.pmtilesInited = true
-            console.log("PM-tiles protocol added" + "")
         }
         this._maplibreMap = maplibreMap
 
@@ -94,6 +100,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         this.useTerrain = state?.useTerrain ?? new ImmutableStore<boolean>(false)
         this.rasterLayer =
             state?.rasterLayer ?? new UIEventSource<RasterLayerPolygon | undefined>(undefined)
+        this.showScale = state?.showScale ?? new UIEventSource<boolean>(false)
 
         this.overlays = new UIEventSource<RasterLayerPolygon[]>([])
         const lastClickLocation = new UIEventSource<{
@@ -107,6 +114,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         new RasterLayerHandler(this._maplibreMap, this.rasterLayer)
 
         const clickmodes = ["left", "middle", "right"] as const
+
         function handleClick(e: maplibregl.MapMouseEvent, mode?: "left" | "right" | "middle") {
             if (e.originalEvent["consumed"]) {
                 // Workaround, 'ShowPointLayer' sets this flag
@@ -132,6 +140,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
                 self.setMaxzoom(self.maxzoom.data)
                 self.setBounds(self.bounds.data)
                 self.setTerrain(self.useTerrain.data)
+                self.setScale(self.showScale.data)
                 this.updateStores(true)
             })
             self.MoveMapToCurrentLoc(self.location.data)
@@ -145,8 +154,15 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             self.setBounds(self.bounds.data)
             self.SetRotation(self.rotation.data)
             self.setTerrain(self.useTerrain.data)
+            self.setScale(self.showScale.data)
             this.updateStores(true)
-            map.on("moveend", () => this.updateStores())
+            map.on("movestart", () => {
+                this.isFlying.setData(true)
+            })
+            map.on("moveend", () => {
+                this.isFlying.setData(false)
+                this.updateStores()
+            })
             map.on("click", (e) => {
                 handleClick(e)
             })
@@ -216,6 +232,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         this.allowZooming.addCallbackAndRun((allowZooming) => self.setAllowZooming(allowZooming))
         this.bounds.addCallbackAndRunD((bounds) => self.setBounds(bounds))
         this.useTerrain?.addCallbackAndRun((useTerrain) => self.setTerrain(useTerrain))
+        this.showScale?.addCallbackAndRun((showScale) => self.setScale(showScale))
     }
 
     /**
@@ -503,6 +520,9 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         if (!map || z === undefined) {
             return
         }
+        if (this.isFlying.data) {
+            return
+        }
         if (Math.abs(map.getZoom() - z) > 0.01) {
             map.setZoom(z)
         }
@@ -650,7 +670,20 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         if (!hasDiff) {
             return
         }
+        this.lockZoom()
         map.fitBounds(bounds.toLngLat())
+    }
+
+    /**
+     * Should be called before making an animation.
+     * First, 'isFlying' is set to true. This will disable the zoom control
+     * Then, zoom is set to '1', which is very low. This will generally disable all layers, after which this function will return
+     *
+     * Then, a zoom/pan/... animation can be made; after which a 'moveEnd'-event will trigger the 'isFlying' to be set to false and the zoom to be set correctly
+     */
+    private lockZoom() {
+        this.isFlying.setData(true)
+        this.zoom.setData(1)
     }
 
     private async setTerrain(useTerrain: boolean) {
@@ -680,5 +713,40 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
                 console.error(e)
             }
         }
+    }
+
+    private scaleControl: maplibregl.ScaleControl = undefined
+
+    private setScale(showScale: boolean) {
+        const map = this._maplibreMap.data
+        if (!map) {
+            return
+        }
+        if (!showScale) {
+            if (this.scaleControl) {
+                map.removeControl(this.scaleControl)
+                this.scaleControl = undefined
+            }
+            return
+        }
+        if (this.scaleControl === undefined) {
+            this.scaleControl = new ScaleControl({
+                maxWidth: 100,
+                unit: "metric",
+            })
+        }
+        if (!map.hasControl(this.scaleControl)) {
+            map.addControl(this.scaleControl, "bottom-right")
+        }
+    }
+
+    public flyTo(lon: number, lat: number, zoom: number) {
+        this.lockZoom()
+        window.requestAnimationFrame(() => {
+            this._maplibreMap.data?.flyTo({
+                zoom,
+                center: [lon, lat],
+            })
+        })
     }
 }

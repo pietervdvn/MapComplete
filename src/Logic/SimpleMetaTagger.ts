@@ -1,10 +1,6 @@
 import { GeoOperations } from "./GeoOperations"
 import { Utils } from "../Utils"
 import opening_hours from "opening_hours"
-import Combine from "../UI/Base/Combine"
-import BaseUIElement from "../UI/BaseUIElement"
-import Title from "../UI/Base/Title"
-import { FixedUiElement } from "../UI/Base/FixedUiElement"
 import LayerConfig from "../Models/ThemeConfig/LayerConfig"
 import { CountryCoder } from "latlon2country"
 import Constants from "../Models/Constants"
@@ -12,7 +8,7 @@ import { TagUtils } from "./Tags/TagUtils"
 import { Feature, LineString } from "geojson"
 import { OsmTags } from "../Models/OsmFeature"
 import { UIEventSource } from "./UIEventSource"
-import LayoutConfig from "../Models/ThemeConfig/LayoutConfig"
+import ThemeConfig from "../Models/ThemeConfig/ThemeConfig"
 import OsmObjectDownloader from "./Osm/OsmObjectDownloader"
 import countryToCurrency from "country-to-currency"
 
@@ -20,7 +16,7 @@ import countryToCurrency from "country-to-currency"
  * All elements that are needed to perform metatagging
  */
 export interface MetataggingState {
-    layout: LayoutConfig
+    theme: ThemeConfig
     osmObjectDownloader: OsmObjectDownloader
 }
 
@@ -403,7 +399,7 @@ export default class SimpleMetaTaggers {
         },
         (feature, _, __, state) => {
             const units = Utils.NoNull(
-                [].concat(...(state?.layout?.layers?.map((layer) => layer.units) ?? []))
+                [].concat(...(state?.theme?.layers?.map((layer) => layer.units) ?? []))
             )
             if (units.length == 0) {
                 return

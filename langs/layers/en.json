@@ -33,50 +33,54 @@
                 "title": "a billboard"
             },
             "1": {
-                "title": "a freestanding poster box"
-            },
-            "2": {
-                "title": "a poster box mounted on a wall"
-            },
-            "3": {
-                "title": "a poster box part of a public transport shelter"
-            },
-            "4": {
-                "description": "Small billboard for neighbourhood advertising, generally intended for pedestrians",
-                "title": "a board"
-            },
-            "5": {
-                "description": "A cylindrical outdoor structure which shows advertisements",
-                "title": "a column"
-            },
-            "6": {
-                "title": "a flag"
-            },
-            "7": {
-                "title": "a screen"
-            },
-            "8": {
-                "title": "a screen mounted on a wall"
-            },
-            "9": {
-                "title": "a screen mounted on a transit shelter"
+                "description": "A large outdoor advertising structure, typically found in high-traffic areas such as alongside busy roads mounted on a wall",
+                "title": "a billboard mounted to a wall"
             },
             "10": {
+                "title": "a screen mounted on a transit shelter"
+            },
+            "11": {
                 "description": "A piece of waterproof textile with a printed message, permanently anchored on a wall",
                 "title": "a tarp"
             },
-            "11": {
+            "12": {
                 "title": "a totem"
             },
-            "12": {
+            "13": {
                 "description": "Used for advertising signs, neon signs, logos & institutional entrance signs",
                 "title": "a sign"
             },
-            "13": {
+            "14": {
                 "title": "a sculpture"
             },
-            "14": {
+            "15": {
                 "title": "a wall painting"
+            },
+            "2": {
+                "title": "a freestanding poster box"
+            },
+            "3": {
+                "title": "a poster box mounted on a wall"
+            },
+            "4": {
+                "title": "a poster box part of a public transport shelter"
+            },
+            "5": {
+                "description": "Small billboard for neighbourhood advertising, generally intended for pedestrians",
+                "title": "a board"
+            },
+            "6": {
+                "description": "A cylindrical outdoor structure which shows advertisements",
+                "title": "a column"
+            },
+            "7": {
+                "title": "a flag"
+            },
+            "8": {
+                "title": "a screen"
+            },
+            "9": {
+                "title": "a screen mounted on a wall"
             }
         },
         "tagRenderings": {
@@ -110,6 +114,17 @@
                     }
                 },
                 "question": "Does this advertisement cycle through multiple messages?"
+            },
+            "historic": {
+                "mappings": {
+                    "0": {
+                        "then": "This is a historic advertisement sign (an advertisement for a business that no longer exists or a very old sign with heritage value)"
+                    },
+                    "1": {
+                        "then": "This advertisement sign has no historic value (the business still exists and has no heritage value)"
+                    }
+                },
+                "question": "Is this sign for a business that no longer exists or no longer being maintained?"
             },
             "luminous_or_lit_advertising": {
                 "override": {
@@ -171,6 +186,15 @@
                     "1": {
                         "then": "This is a board"
                     },
+                    "10": {
+                        "then": "This is a wall painting"
+                    },
+                    "11": {
+                        "then": "This is tilework - the advertisement is painted on tiles"
+                    },
+                    "12": {
+                        "then": "This is a relief"
+                    },
                     "2": {
                         "then": "This is a column"
                     },
@@ -194,9 +218,6 @@
                     },
                     "9": {
                         "then": "This is a totem"
-                    },
-                    "10": {
-                        "then": "This is a wall painting"
                     }
                 },
                 "question": "Which type of advertising feature is this?",
@@ -210,6 +231,9 @@
                 },
                 "1": {
                     "then": "Board"
+                },
+                "10": {
+                    "then": "Wall painting"
                 },
                 "2": {
                     "then": "Poster Box"
@@ -234,9 +258,6 @@
                 },
                 "9": {
                     "then": "Totem"
-                },
-                "10": {
-                    "then": "Wall painting"
                 }
             }
         }
@@ -283,6 +304,9 @@
                     "1": {
                         "then": "This is a gondola where the cars go around in continuous circles"
                     },
+                    "10": {
+                        "then": "A zip line. (A touristical attraction where adventurous people go down at high speeds) "
+                    },
                     "2": {
                         "then": "An open chairlift with seats to sit on and open to the outside air."
                     },
@@ -306,9 +330,6 @@
                     },
                     "9": {
                         "then": "A magic carpet (a conveyor belt on the ground)"
-                    },
-                    "10": {
-                        "then": "A zip line. (A touristical attraction where adventurous people go down at high speeds) "
                     }
                 },
                 "question": "What type of aerialway is this?"
@@ -453,6 +474,15 @@
                     "1": {
                         "then": "Mural"
                     },
+                    "10": {
+                        "then": "Azulejo (Spanish decorative tilework)"
+                    },
+                    "11": {
+                        "then": "Tilework"
+                    },
+                    "12": {
+                        "then": "Woodcarving"
+                    },
                     "2": {
                         "then": "Painting"
                     },
@@ -476,15 +506,6 @@
                     },
                     "9": {
                         "then": "Relief"
-                    },
-                    "10": {
-                        "then": "Azulejo (Spanish decorative tilework)"
-                    },
-                    "11": {
-                        "then": "Tilework"
-                    },
-                    "12": {
-                        "then": "Woodcarving"
                     }
                 },
                 "question": "What is the type of this artwork?",
@@ -522,7 +543,7 @@
                         "then": "This artwork also serves as a memorial"
                     },
                     "1": {
-                        "then": "This artwork does not serve as a bench"
+                        "then": "This artwork does not serve as a memorial"
                     }
                 },
                 "question": "Does this artwork serve as a memorial?"
@@ -1160,6 +1181,78 @@
             "render": "Bench"
         }
     },
+    "bicycle_counter": {
+        "description": "Layer showing monitoring stations for bicycle traffic",
+        "name": "Bicycle counters",
+        "presets": {
+            "0": {
+                "title": "a bicycle counter"
+            }
+        },
+        "tagRenderings": {
+            "clock": {
+                "mappings": {
+                    "0": {
+                        "then": "This counter has a clock"
+                    },
+                    "1": {
+                        "then": "This counter has no clock"
+                    }
+                },
+                "question": "Does this bicycle counter have a clock?"
+            },
+            "display": {
+                "mappings": {
+                    "0": {
+                        "then": "This counter has a digital display"
+                    },
+                    "1": {
+                        "then": "This counter has an analog display"
+                    },
+                    "2": {
+                        "then": "This counter has no display"
+                    }
+                },
+                "question": "Does this bicycle counter have a display showing the number of passing bicycles?"
+            },
+            "name": {
+                "freeform": {
+                    "placeholder": "Name of the counted location"
+                },
+                "question": "What is the name of the counted location?",
+                "render": "Name of the counted location: {name}"
+            },
+            "ref": {
+                "freeform": {
+                    "placeholder": "Reference number of the counter"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "This counter has no reference number"
+                    }
+                },
+                "question": "What is the reference number of this counter?",
+                "render": "Reference number of the counter: {ref}"
+            },
+            "start_date": {
+                "freeform": {
+                    "placeholder": "Start date of the counter"
+                },
+                "question": "When did this counter start counting?",
+                "render": "This counter started counting on {start_date}"
+            },
+            "website": {
+                "freeform": {
+                    "placeholder": "Website of the counter"
+                },
+                "question": "Is there a website for this bicycle counter?",
+                "render": "Website of the counter: <a href='{website}'>{website}</a>"
+            }
+        },
+        "title": {
+            "render": "Bicycle counter"
+        }
+    },
     "bicycle_library": {
         "description": "A facility where bicycles can be lent for longer period of times",
         "name": "Bicycle library",
@@ -1399,6 +1492,17 @@
             }
         },
         "tagRenderings": {
+            "automated": {
+                "mappings": {
+                    "0": {
+                        "then": "This is a manual bike washing station"
+                    },
+                    "1": {
+                        "then": "This is an automated bike wash"
+                    }
+                },
+                "question": "Is this bicycle cleaning service automated?"
+            },
             "bike_cleaning-charge": {
                 "mappings": {
                     "0": {
@@ -1422,6 +1526,17 @@
                 },
                 "question": "How much does it cost to use the cleaning service?",
                 "render": "Using the cleaning service costs {service:bicycle:cleaning:charge}"
+            },
+            "self_service": {
+                "mappings": {
+                    "0": {
+                        "then": "This cleaning service is self-service"
+                    },
+                    "1": {
+                        "then": "This cleaning service is operated by an employee"
+                    }
+                },
+                "question": "Is this cleaning service self-service?"
             }
         },
         "title": {
@@ -1454,7 +1569,7 @@
                         "then": "Access is limited to members of a school, company or organisation"
                     },
                     "3": {
-                        "then": "Access is limited to members of a school, company or organisation"
+                        "then": "Private bicycle parking which is never available to the public, also not via a membership fee"
                     }
                 },
                 "question": "Who can use this bicycle parking?",
@@ -1466,27 +1581,33 @@
                         "then": "Stands"
                     },
                     "1": {
-                        "then": "Wheelbenders / rack"
+                        "then": "Rack with side loops"
+                    },
+                    "10": {
+                        "then": "A lean-to bracket with possibility to use a lock through eyelet. The seat tube can be held by the stand by an anchor"
                     },
                     "2": {
-                        "then": "Handlebar holder"
+                        "then": "Wheelbenders / rack"
                     },
                     "3": {
-                        "then": "Rack"
+                        "then": "Handlebar holder"
                     },
                     "4": {
-                        "then": "Two-tiered"
+                        "then": "Rack"
                     },
                     "5": {
-                        "then": "Shed"
+                        "then": "Two-tiered"
                     },
                     "6": {
-                        "then": "Bollard"
+                        "then": "Shed"
                     },
                     "7": {
-                        "then": "An area on the floor which is marked for bicycle parking"
+                        "then": "Bollard"
                     },
                     "8": {
+                        "then": "An area on the floor which is marked for bicycle parking"
+                    },
+                    "9": {
                         "then": "A locker - the bicycles are enclosed completely individually or with a few bicycles together. The locker is too small to fit a person standing.."
                     }
                 },
@@ -2057,6 +2178,118 @@
             "render": "Car Rental"
         }
     },
+    "caravansites": {
+        "description": "camper sites",
+        "name": "Camper sites",
+        "presets": {
+            "0": {
+                "description": "Add a new official camper site. These are designated places to stay overnight with your camper. They might look like a real camping or just look like a parking. They might not be signposted at all, but just be defined in a municipal decision. A regular parking intended for campers where it is not expected to spend the night, is -not- a camper site ",
+                "title": "a camper site"
+            }
+        },
+        "tagRenderings": {
+            "caravansites-capacity": {
+                "question": "How many campers can stay here? (skip if there is no obvious number of spaces or allowed vehicles)",
+                "render": "{capacity} campers can use this place at the same time"
+            },
+            "caravansites-charge": {
+                "question": "How much does this place charge?",
+                "render": "This place charges {charge}"
+            },
+            "caravansites-description": {
+                "question": "Would you like to add a general description of this place? (Do not repeat information previously asked or shown above. Please keep it objective - opinions go into the reviews)",
+                "render": "More details about this place: {description}"
+            },
+            "caravansites-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "You need to pay for use"
+                    },
+                    "1": {
+                        "then": "Can be used for free"
+                    }
+                },
+                "question": "Does this place charge a fee?"
+            },
+            "caravansites-internet": {
+                "mappings": {
+                    "0": {
+                        "then": "There is internet access"
+                    },
+                    "1": {
+                        "then": "There is internet access"
+                    },
+                    "2": {
+                        "then": "There is no internet access"
+                    }
+                },
+                "question": "Does this place provide internet access?"
+            },
+            "caravansites-internet-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "You need to pay extra for internet access"
+                    },
+                    "1": {
+                        "then": "You do not need to pay extra for internet access"
+                    }
+                },
+                "question": "Do you have to pay for the internet access?"
+            },
+            "caravansites-long-term": {
+                "mappings": {
+                    "0": {
+                        "then": "There are some spots for long term rental, but you can also stay on a daily basis"
+                    },
+                    "1": {
+                        "then": "There are no permanent guests here"
+                    },
+                    "2": {
+                        "then": "It is only possible to stay here if you have a long term contract (this place disappears from this map if you choose this)"
+                    }
+                },
+                "question": "Does this place offer spots for long term rental?"
+            },
+            "caravansites-name": {
+                "question": "What is this place called?",
+                "render": "This place is called {name}"
+            },
+            "caravansites-sanitary-dump": {
+                "mappings": {
+                    "0": {
+                        "then": "This place has a sanitary dump station"
+                    },
+                    "1": {
+                        "then": "This place does not have a sanitary dump station"
+                    }
+                },
+                "question": "Does this place have a sanitary dump station?"
+            },
+            "caravansites-toilets": {
+                "mappings": {
+                    "0": {
+                        "then": "This place has toilets"
+                    },
+                    "1": {
+                        "then": "This place does not have toilets"
+                    }
+                },
+                "question": "Does this place have toilets?"
+            },
+            "caravansites-website": {
+                "question": "Does this place have a website?",
+                "render": "Official website: <a href='{website}'>{website}</a>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Unnamed camper site"
+                }
+            },
+            "render": "Camper site {name}"
+        }
+    },
     "charging_station": {
         "description": "A charging station",
         "filter": {
@@ -2088,30 +2321,6 @@
                     "1": {
                         "question": "Has a <div style='display: inline-block'><b><b>Schuko wall plug</b> without ground pin (CEE7/4 type F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div> connector"
                     },
-                    "2": {
-                        "question": "Has a <div style='display: inline-block'><b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> connector"
-                    },
-                    "3": {
-                        "question": "Has a <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> connector"
-                    },
-                    "4": {
-                        "question": "Has a <div style='display: inline-block'><b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> connector"
-                    },
-                    "5": {
-                        "question": "Has a <div style='display: inline-block'><b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> connector"
-                    },
-                    "6": {
-                        "question": "Has a <div style='display: inline-block'><b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> connector"
-                    },
-                    "7": {
-                        "question": "Has a <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> connector"
-                    },
-                    "8": {
-                        "question": "Has a <div style='display: inline-block'><b><b>Type 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> connector"
-                    },
-                    "9": {
-                        "question": "Has a <div style='display: inline-block'><b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> connector"
-                    },
                     "10": {
                         "question": "Has a <div style='display: inline-block'><b><b>Type 2 with cable</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> connector"
                     },
@@ -2142,11 +2351,35 @@
                     "19": {
                         "question": "Has a <div style='display: inline-block'><b><b>SEV 1011 T23</b> (Type J)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/typej.svg'/></div> connector"
                     },
+                    "2": {
+                        "question": "Has a <div style='display: inline-block'><b><b>European wall plug</b> with ground pin (CEE7/4 type E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div> connector"
+                    },
                     "20": {
                         "question": "Has a <div style='display: inline-block'><b><b>AS3112</b> (Type I)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/as3112.svg'/></div> connector"
                     },
                     "21": {
                         "question": "Has a <div style='display: inline-block'><b><b>NEMA 5-20</b> (Type B)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/nema-5-20.svg'/></div> connector"
+                    },
+                    "3": {
+                        "question": "Has a <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> connector"
+                    },
+                    "4": {
+                        "question": "Has a <div style='display: inline-block'><b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> connector"
+                    },
+                    "5": {
+                        "question": "Has a <div style='display: inline-block'><b><b>Type 1 <i>without</i> cable</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> connector"
+                    },
+                    "6": {
+                        "question": "Has a <div style='display: inline-block'><b><b>Type 1 CCS</b> (aka Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> connector"
+                    },
+                    "7": {
+                        "question": "Has a <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> connector"
+                    },
+                    "8": {
+                        "question": "Has a <div style='display: inline-block'><b><b>Type 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> connector"
+                    },
+                    "9": {
+                        "question": "Has a <div style='display: inline-block'><b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> connector"
                     }
                 }
             }
@@ -2202,30 +2435,6 @@
                     "1": {
                         "then": "<b>Schuko wall plug</b> without ground pin (CEE7/4 type F)"
                     },
-                    "2": {
-                        "then": "<b>European wall plug</b> with ground pin (CEE7/4 type E)"
-                    },
-                    "3": {
-                        "then": "<b>European wall plug</b> with ground pin (CEE7/4 type E)"
-                    },
-                    "4": {
-                        "then": "<b>Chademo</b>"
-                    },
-                    "5": {
-                        "then": "<b>Chademo</b>"
-                    },
-                    "6": {
-                        "then": "<b>Type 1 with cable</b> (J1772)"
-                    },
-                    "7": {
-                        "then": "<b>Type 1 with cable</b> (J1772)"
-                    },
-                    "8": {
-                        "then": "<b>Type 1 <i>without</i> cable</b> (J1772)"
-                    },
-                    "9": {
-                        "then": "<b>Type 1 <i>without</i> cable</b> (J1772)"
-                    },
                     "10": {
                         "then": "<b>Type 1 CCS</b> (aka Type 1 Combo)"
                     },
@@ -2255,6 +2464,9 @@
                     },
                     "19": {
                         "then": "<b>Type 2 with cable</b> (mennekes)"
+                    },
+                    "2": {
+                        "then": "<b>European wall plug</b> with ground pin (CEE7/4 type E)"
                     },
                     "20": {
                         "then": "<b>Tesla Supercharger CCS</b> (a branded type2_css)"
@@ -2286,6 +2498,9 @@
                     "29": {
                         "then": "<b>Bosch Active Connect with 3 pins</b> and cable"
                     },
+                    "3": {
+                        "then": "<b>European wall plug</b> with ground pin (CEE7/4 type E)"
+                    },
                     "30": {
                         "then": "<b>Bosch Active Connect with 5 pins</b> and cable"
                     },
@@ -2316,11 +2531,29 @@
                     "39": {
                         "then": "<b>AS3112</b> (Type I)"
                     },
+                    "4": {
+                        "then": "<b>Chademo</b>"
+                    },
                     "40": {
                         "then": "<b>NEMA 5-20</b> (Type B)"
                     },
                     "41": {
                         "then": "<b>NEMA 5-20</b> (Type B)"
+                    },
+                    "5": {
+                        "then": "<b>Chademo</b>"
+                    },
+                    "6": {
+                        "then": "<b>Type 1 with cable</b> (J1772)"
+                    },
+                    "7": {
+                        "then": "<b>Type 1 with cable</b> (J1772)"
+                    },
+                    "8": {
+                        "then": "<b>Type 1 <i>without</i> cable</b> (J1772)"
+                    },
+                    "9": {
+                        "then": "<b>Type 1 <i>without</i> cable</b> (J1772)"
                     }
                 },
                 "question": "Which charging connections are available here?"
@@ -2514,30 +2747,6 @@
                         "1": {
                             "2": "<b>European wall plug</b> with ground pin (CEE7/4 type E)"
                         },
-                        "2": {
-                            "2": "<b>Chademo</b>"
-                        },
-                        "3": {
-                            "2": "<b>Type 1 with cable</b> (J1772)"
-                        },
-                        "4": {
-                            "2": "<b>Type 1 <i>without</i> cable</b> (J1772)"
-                        },
-                        "5": {
-                            "2": "<b>Type 1 CCS</b> (aka Type 1 Combo)"
-                        },
-                        "6": {
-                            "2": "<b>Tesla Supercharger</b>"
-                        },
-                        "7": {
-                            "2": "<b>Type 2</b> (mennekes)"
-                        },
-                        "8": {
-                            "2": "<b>Type 2 CCS</b> (mennekes)"
-                        },
-                        "9": {
-                            "2": "<b>Type 2 with cable</b> (mennekes)"
-                        },
                         "10": {
                             "2": "<b>Tesla Supercharger CCS</b> (a branded type2_css)"
                         },
@@ -2568,8 +2777,32 @@
                         "19": {
                             "2": "<b>AS3112</b> (Type I)"
                         },
+                        "2": {
+                            "2": "<b>Chademo</b>"
+                        },
                         "20": {
                             "2": "<b>NEMA 5-20</b> (Type B)"
+                        },
+                        "3": {
+                            "2": "<b>Type 1 with cable</b> (J1772)"
+                        },
+                        "4": {
+                            "2": "<b>Type 1 <i>without</i> cable</b> (J1772)"
+                        },
+                        "5": {
+                            "2": "<b>Type 1 CCS</b> (aka Type 1 Combo)"
+                        },
+                        "6": {
+                            "2": "<b>Tesla Supercharger</b>"
+                        },
+                        "7": {
+                            "2": "<b>Type 2</b> (mennekes)"
+                        },
+                        "8": {
+                            "2": "<b>Type 2 CCS</b> (mennekes)"
+                        },
+                        "9": {
+                            "2": "<b>Type 2 with cable</b> (mennekes)"
                         }
                     }
                 }
@@ -2742,6 +2975,9 @@
                     },
                     "1": {
                         "then": "A climbing crag - a single rock or cliff with at least a few climbing routes"
+                    },
+                    "2": {
+                        "then": "A climbing area with one or more climbing crags and/or boulders"
                     }
                 }
             },
@@ -2911,6 +3147,7 @@
     "climbing_opportunity": {
         "description": "Fallback layer with items on which climbing _might_ be possible. It is loaded when zoomed in a lot, to prevent duplicate items to be added",
         "name": "Climbing opportunities?",
+        "snapName": "a wall, cliff or rock",
         "tagRenderings": {
             "climbing-opportunity-name": {
                 "render": "<strong>{name}</strong>"
@@ -2993,6 +3230,10 @@
             "1": {
                 "description": "A publicly visible clock mounted on a wall",
                 "title": "a wall-mounted clock"
+            },
+            "2": {
+                "description": "A publicly visible clock mounted directly on a wall",
+                "title": "a wall-mounted clock, mounted directly on a wall"
             }
         },
         "tagRenderings": {
@@ -3073,18 +3314,34 @@
                 },
                 "question": "Does this clock also display the humidity?"
             },
+            "indoor": {
+                "override": {
+                    "mappings": {
+                        "0": {
+                            "then": "This clock is indoors"
+                        },
+                        "1": {
+                            "then": "This clock is outdoors"
+                        }
+                    },
+                    "question": "Is this clock indoors?"
+                }
+            },
             "support": {
                 "mappings": {
                     "0": {
                         "then": "This clock is mounted on a pole"
                     },
                     "1": {
-                        "then": "This clock is mounted on a wall"
+                        "then": "This clock is mounted on a wall, usually through a support perpendicular to the wall"
                     },
                     "2": {
-                        "then": "This clock is part of a billboard"
+                        "then": "This clock is mounted directly on a wall"
                     },
                     "3": {
+                        "then": "This clock is part of a billboard"
+                    },
+                    "4": {
                         "then": "This clock is on the ground"
                     }
                 },
@@ -3195,17 +3452,6 @@
                 },
                 "question": "Does this crossing have an island in the middle?"
             },
-            "crossing-is-zebra": {
-                "mappings": {
-                    "0": {
-                        "then": "This is a zebra crossing"
-                    },
-                    "1": {
-                        "then": "This is not a zebra crossing"
-                    }
-                },
-                "question": "Is this is a zebra crossing?"
-            },
             "crossing-minimap": {
                 "mappings": {
                     "0": {
@@ -3289,6 +3535,57 @@
                     }
                 },
                 "question": "Does this traffic light have vibration signals to aid crossing? (usually located at the bottom of the crossing button)"
+            },
+            "markings": {
+                "mappings": {
+                    "0": {
+                        "then": "This crossing has no markings"
+                    },
+                    "1": {
+                        "then": "This crossing has zebra markings"
+                    },
+                    "10": {
+                        "then": "This crossing has zebra markings in alternating colours"
+                    },
+                    "11": {
+                        "then": "This crossing has double zebra markings"
+                    },
+                    "12": {
+                        "then": "This crossing has pictograms on the road"
+                    },
+                    "13": {
+                        "then": "This crossing has lines on either side of the crossing, along with bars connecting them, with an interruption in every bar"
+                    },
+                    "14": {
+                        "then": "This crossing has double lines on either side of the crossing"
+                    },
+                    "2": {
+                        "then": "This crossing has markings of an unknown type"
+                    },
+                    "3": {
+                        "then": "This crossings has lines on either side of the crossing"
+                    },
+                    "4": {
+                        "then": "This crossing has lines on either side of the crossing, along with bars connecting them"
+                    },
+                    "5": {
+                        "then": "This crossing has dashed lines on either sides of the crossing"
+                    },
+                    "6": {
+                        "then": "This crossing has dotted lines on either sides of the crossing"
+                    },
+                    "7": {
+                        "then": "This crossing is marked by using a different coloured surface"
+                    },
+                    "8": {
+                        "then": "This crossing has lines on either side of the crossing, along with angled bars connecting them"
+                    },
+                    "9": {
+                        "then": "This crossing has zebra markings with an interruption in every bar"
+                    }
+                },
+                "question": "What kind of markings does this crossing have?",
+                "render": "This crossing has {crossing:markings} markings"
             }
         },
         "title": {
@@ -3312,6 +3609,7 @@
     "cycleways_and_roads": {
         "description": "All infrastructure that someone can cycle over, accompanied with questions about this infrastructure",
         "name": "Cycleways and roads",
+        "snapName": "a road or a cycleway",
         "tagRenderings": {
             "Cycleway type for a road": {
                 "mappings": {
@@ -3373,6 +3671,15 @@
                     "1": {
                         "then": "This cycleway is paved"
                     },
+                    "10": {
+                        "then": "This cycleway is made of fine gravel"
+                    },
+                    "11": {
+                        "then": "This cycleway is made of pebblestone"
+                    },
+                    "12": {
+                        "then": "This cycleway is made from raw ground"
+                    },
                     "2": {
                         "then": "This cycleway is made of asphalt"
                     },
@@ -3396,15 +3703,6 @@
                     },
                     "9": {
                         "then": "This cycleway is made of gravel"
-                    },
-                    "10": {
-                        "then": "This cycleway is made of fine gravel"
-                    },
-                    "11": {
-                        "then": "This cycleway is made of pebblestone"
-                    },
-                    "12": {
-                        "then": "This cycleway is made from raw ground"
                     }
                 },
                 "question": "What is the surface of the cycleway made from?",
@@ -3453,6 +3751,15 @@
                     "1": {
                         "then": "This cycleway is paved"
                     },
+                    "10": {
+                        "then": "This cycleway is made of fine gravel"
+                    },
+                    "11": {
+                        "then": "This cycleway is made of pebblestone"
+                    },
+                    "12": {
+                        "then": "This cycleway is made from raw ground"
+                    },
                     "2": {
                         "then": "This cycleway is made of asphalt"
                     },
@@ -3476,15 +3783,6 @@
                     },
                     "9": {
                         "then": "This cycleway is made of gravel"
-                    },
-                    "10": {
-                        "then": "This cycleway is made of fine gravel"
-                    },
-                    "11": {
-                        "then": "This cycleway is made of pebblestone"
-                    },
-                    "12": {
-                        "then": "This cycleway is made from raw ground"
                     }
                 },
                 "question": "What is the surface of the street made from?",
@@ -3701,6 +3999,57 @@
                 }
             },
             "render": "Way"
+        }
+    },
+    "cyclist_waiting_aid": {
+        "description": "Various pieces of infrastructure that aid cyclists while they wait at a traffic light.",
+        "name": "Cyclist Waiting Aids",
+        "presets": {
+            "0": {
+                "description": "A footrest, handrail or other aid, to improve comfort while waiting at traffic lights",
+                "title": "a cyclist waiting aid"
+            }
+        },
+        "tagRenderings": {
+            "direction": {
+                "mappings": {
+                    "0": {
+                        "then": "This waiting aid can be used when going forward on this way"
+                    },
+                    "1": {
+                        "then": "This waiting aid can be used when going backward on this way"
+                    }
+                },
+                "render": "This waiting aid can be used when going in {direction} direction"
+            },
+            "side": {
+                "mappings": {
+                    "0": {
+                        "then": "This waiting aid is located on the left side"
+                    },
+                    "1": {
+                        "then": "This waiting aid is located on the right side"
+                    },
+                    "2": {
+                        "then": "There are waiting aids on both sides of the road"
+                    }
+                },
+                "question": "On what side of the road is this located?"
+            },
+            "type": {
+                "mappings": {
+                    "0": {
+                        "then": "There is a board or peg to rest your foot on here"
+                    },
+                    "1": {
+                        "then": "There is a rail or a handle to hold on to here"
+                    }
+                },
+                "question": "What kind of components does this waiting aid have?"
+            }
+        },
+        "title": {
+            "render": "Cyclist Waiting Aid"
         }
     },
     "defibrillator": {
@@ -4001,6 +4350,9 @@
                     },
                     "2": {
                         "then": "This drinking water is closed"
+                    },
+                    "3": {
+                        "then": "This drinking water is permanently closed"
                     }
                 },
                 "question": "Is this drinking water spot still operational?",
@@ -4067,6 +4419,95 @@
         },
         "title": {
             "render": "Drinking water"
+        }
+    },
+    "dumpstations": {
+        "description": "Sanitary dump stations",
+        "name": "Sanitary dump stations",
+        "presets": {
+            "0": {
+                "description": "Add a new sanitary dump station. This is a place where camper drivers can dump waste water or chemical toilet waste. Often there's also drinking water and electricity.",
+                "title": "a sanitary dump station"
+            }
+        },
+        "tagRenderings": {
+            "dumpstations-access": {
+                "mappings": {
+                    "0": {
+                        "then": "You need a network key/code to use this"
+                    },
+                    "1": {
+                        "then": "You need to be a customer of camping/campersite to use this place"
+                    },
+                    "2": {
+                        "then": "Anyone can use this dump station"
+                    },
+                    "3": {
+                        "then": "Anyone can use this dump station"
+                    }
+                },
+                "question": "Who can use this dump station?"
+            },
+            "dumpstations-charge": {
+                "question": "How much does this place charge?",
+                "render": "This place charges {charge}"
+            },
+            "dumpstations-chemical-waste": {
+                "mappings": {
+                    "0": {
+                        "then": "You can dispose of chemical toilet waste here"
+                    },
+                    "1": {
+                        "then": "You cannot dispose of chemical toilet waste here"
+                    }
+                },
+                "question": "Can you dispose of chemical toilet waste here?"
+            },
+            "dumpstations-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "You need to pay for use"
+                    },
+                    "1": {
+                        "then": "Can be used for free"
+                    }
+                },
+                "question": "Does this place charge a fee?"
+            },
+            "dumpstations-grey-water": {
+                "mappings": {
+                    "0": {
+                        "then": "You can dispose of grey water here"
+                    },
+                    "1": {
+                        "then": "You cannot dispose of gray water here"
+                    }
+                },
+                "question": "Can you dispose of grey water here?"
+            },
+            "dumpstations-network": {
+                "question": "What network is this place a part of? (skip if none)",
+                "render": "This station is part of network {network}"
+            },
+            "dumpstations-waterpoint": {
+                "mappings": {
+                    "0": {
+                        "then": "This place has a water point"
+                    },
+                    "1": {
+                        "then": "This place does not have a water point"
+                    }
+                },
+                "question": "Does this place have a water point?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Dump station"
+                }
+            },
+            "render": "Dump station {name}"
         }
     },
     "elevator": {
@@ -4474,6 +4915,54 @@
                     }
                 }
             },
+            "10": {
+                "options": {
+                    "0": {
+                        "question": "No preference towards dogs"
+                    },
+                    "1": {
+                        "question": "Dogs allowed"
+                    },
+                    "2": {
+                        "question": "No dogs allowed"
+                    }
+                }
+            },
+            "11": {
+                "options": {
+                    "0": {
+                        "question": "Offers internet"
+                    }
+                }
+            },
+            "12": {
+                "options": {
+                    "0": {
+                        "question": "Offers electricity"
+                    }
+                }
+            },
+            "13": {
+                "options": {
+                    "0": {
+                        "question": "Has a sugar-free offering"
+                    }
+                }
+            },
+            "14": {
+                "options": {
+                    "0": {
+                        "question": "Has a gluten free offering"
+                    }
+                }
+            },
+            "15": {
+                "options": {
+                    "0": {
+                        "question": "Has a lactose free offering"
+                    }
+                }
+            },
             "2": {
                 "options": {
                     "0": {
@@ -4542,54 +5031,6 @@
                 "options": {
                     "0": {
                         "question": "Free to use"
-                    }
-                }
-            },
-            "10": {
-                "options": {
-                    "0": {
-                        "question": "No preference towards dogs"
-                    },
-                    "1": {
-                        "question": "Dogs allowed"
-                    },
-                    "2": {
-                        "question": "No dogs allowed"
-                    }
-                }
-            },
-            "11": {
-                "options": {
-                    "0": {
-                        "question": "Offers internet"
-                    }
-                }
-            },
-            "12": {
-                "options": {
-                    "0": {
-                        "question": "Offers electricity"
-                    }
-                }
-            },
-            "13": {
-                "options": {
-                    "0": {
-                        "question": "Has a sugar-free offering"
-                    }
-                }
-            },
-            "14": {
-                "options": {
-                    "0": {
-                        "question": "Has a gluten free offering"
-                    }
-                }
-            },
-            "15": {
-                "options": {
-                    "0": {
-                        "question": "Has a lactose free offering"
                     }
                 }
             }
@@ -4754,30 +5195,6 @@
                     "1": {
                         "then": "This fitness station has a sign with instructions for a specific exercise."
                     },
-                    "2": {
-                        "then": "This fitness station has a facility for sit-ups."
-                    },
-                    "3": {
-                        "then": "This fitness station has a facility for push-ups. Usually consists of one or more low horizontal bars."
-                    },
-                    "4": {
-                        "then": "This fitness station has bars for stretching."
-                    },
-                    "5": {
-                        "then": "This fitness station has a station for making hyperextensions."
-                    },
-                    "6": {
-                        "then": "This fitness station has rings for gymnastic exercises."
-                    },
-                    "7": {
-                        "then": "This fitness station has a horizontal ladder, also known as monkey bars."
-                    },
-                    "8": {
-                        "then": "This fitness station has wall bars to climb on."
-                    },
-                    "9": {
-                        "then": "This fitness station has posts for performing slalom exercises."
-                    },
                     "10": {
                         "then": "This fitness station has stepping stones."
                     },
@@ -4808,6 +5225,9 @@
                     "19": {
                         "then": "This fitness station has battling ropes."
                     },
+                    "2": {
+                        "then": "This fitness station has a facility for sit-ups."
+                    },
                     "20": {
                         "then": "This fitness station has a stationary bicycle."
                     },
@@ -4822,6 +5242,27 @@
                     },
                     "24": {
                         "then": "This fitness station has a slackline."
+                    },
+                    "3": {
+                        "then": "This fitness station has a facility for push-ups. Usually consists of one or more low horizontal bars."
+                    },
+                    "4": {
+                        "then": "This fitness station has bars for stretching."
+                    },
+                    "5": {
+                        "then": "This fitness station has a station for making hyperextensions."
+                    },
+                    "6": {
+                        "then": "This fitness station has rings for gymnastic exercises."
+                    },
+                    "7": {
+                        "then": "This fitness station has a horizontal ladder, also known as monkey bars."
+                    },
+                    "8": {
+                        "then": "This fitness station has wall bars to climb on."
+                    },
+                    "9": {
+                        "then": "This fitness station has posts for performing slalom exercises."
                     }
                 },
                 "question": "What kind of equipment does this fitness station have?"
@@ -4936,49 +5377,61 @@
             "Cuisine": {
                 "mappings": {
                     "0": {
-                        "then": "This is a pizzeria"
+                        "then": "Pizzeria"
                     },
                     "1": {
-                        "then": "This is a friture"
-                    },
-                    "2": {
-                        "then": "Mainly serves pasta"
-                    },
-                    "3": {
-                        "then": "This is kebab shop"
-                    },
-                    "4": {
-                        "then": "This is a sandwich shop"
-                    },
-                    "5": {
-                        "then": "Burgers are served here"
-                    },
-                    "6": {
-                        "then": "Sushi is served here"
-                    },
-                    "7": {
-                        "then": "Coffee is served here"
-                    },
-                    "8": {
-                        "then": "This is an Italian restaurant (which serves more than pasta and pizza)"
-                    },
-                    "9": {
-                        "then": "French dishes are served here"
+                        "then": "Friture"
                     },
                     "10": {
-                        "then": "Chinese dishes are served here"
+                        "then": "Chinese"
                     },
                     "11": {
-                        "then": "Greek dishes are served here"
+                        "then": "Greek"
                     },
                     "12": {
-                        "then": "Indian dishes are served here"
+                        "then": "Indian"
                     },
                     "13": {
-                        "then": "Turkish dishes are served here"
+                        "then": "Turkish restaurant"
                     },
                     "14": {
-                        "then": "Thai dishes are served here"
+                        "then": "Thai restaurant"
+                    },
+                    "15": {
+                        "then": "Mexican dishes are served here"
+                    },
+                    "16": {
+                        "then": "Japanese dishes are served here"
+                    },
+                    "17": {
+                        "then": "Chicken based dishes are served here"
+                    },
+                    "18": {
+                        "then": "Seafood dishes are served here"
+                    },
+                    "2": {
+                        "then": "Serves mainly pasta"
+                    },
+                    "3": {
+                        "then": "Kebab shop"
+                    },
+                    "4": {
+                        "then": "Sandwich shop"
+                    },
+                    "5": {
+                        "then": "Burgersrestaurant"
+                    },
+                    "6": {
+                        "then": "Sushi restaurant"
+                    },
+                    "7": {
+                        "then": "Coffeebar"
+                    },
+                    "8": {
+                        "then": "Italian restaurant (which serves more than pasta and pizza)"
+                    },
+                    "9": {
+                        "then": "French restaurant"
                     }
                 },
                 "question": "What kind of food is served here?",
@@ -5080,7 +5533,7 @@
             "delivery": {
                 "mappings": {
                     "0": {
-                        "then": "This business does home delivery (eventually via a third party)"
+                        "then": "This business does home delivery (possibly via a third party)"
                     },
                     "1": {
                         "then": "This business does not deliver at home"
@@ -5130,12 +5583,15 @@
             "friture-vegan": {
                 "mappings": {
                     "0": {
-                        "then": "Vegan snacks are available"
+                        "then": "Serves only vegan snacks and burgers"
                     },
                     "1": {
-                        "then": "A small selection of vegan snacks are available"
+                        "then": "Vegan snacks are available"
                     },
                     "2": {
+                        "then": "A small selection of vegan snacks are available"
+                    },
+                    "3": {
                         "then": "No vegan snacks are available"
                     }
                 },
@@ -5144,12 +5600,15 @@
             "friture-vegetarian": {
                 "mappings": {
                     "0": {
-                        "then": "Vegetarian snacks are available"
+                        "then": "Serves only vegetarian snacks and burgers"
                     },
                     "1": {
-                        "then": "Only a small selection of snacks are vegetarian"
+                        "then": "Vegetarian snacks are available"
                     },
                     "2": {
+                        "then": "Only a small selection of snacks are vegetarian"
+                    },
+                    "3": {
                         "then": "No vegetarian snacks are available"
                     }
                 },
@@ -5281,6 +5740,34 @@
                 }
             },
             "render": "Ghost bike"
+        }
+    },
+    "ghostsign": {
+        "description": "Layer showing disused signs on buildings",
+        "name": "Ghost Signs",
+        "presets": {
+            "0": {
+                "title": "a ghost sign"
+            }
+        },
+        "tagRenderings": {
+            "brand": {
+                "freeform": {
+                    "placeholder": "Business name"
+                },
+                "question": "For what business was this sign made?",
+                "render": "This sign was made for: {brand}"
+            },
+            "inscription": {
+                "freeform": {
+                    "placeholder": "Text on the sign"
+                },
+                "question": "What is the text on the sign?",
+                "render": "The text on the sign is: {inscription}"
+            }
+        },
+        "title": {
+            "render": "Ghost Sign"
         }
     },
     "governments": {
@@ -5491,6 +5978,9 @@
                     },
                     "1": {
                         "then": "This is a traditional (software oriented) hackerspace"
+                    },
+                    "2": {
+                        "then": "This is a <b>hacklab</b> which is mostly focussed on basic computer skills, using recycled devices and/or providing internet to the community. This is typically located in autonomous spaces, squats or social facilities"
                     }
                 },
                 "question": "Is this a hackerspace or a makerspace?"
@@ -5673,6 +6163,13 @@
                                 "arialabel": "Open on openstreetmap.org"
                             }
                         }
+                    },
+                    "2": {
+                        "then": {
+                            "special": {
+                                "arialabel": "Open on openstreetmap.org"
+                            }
+                        }
                     }
                 },
                 "render": {
@@ -5702,6 +6199,7 @@
     "indoors": {
         "description": "Basic indoor mapping: shows room outlines",
         "name": "Indoors",
+        "snapName": "an indoor wall",
         "tagRenderings": {
             "name": {
                 "freeform": {
@@ -5729,8 +6227,50 @@
                     "1": {
                         "then": "This is a auditorium"
                     },
+                    "10": {
+                        "then": "This is a laboratory"
+                    },
+                    "11": {
+                        "then": "This is a library"
+                    },
+                    "12": {
+                        "then": "This is a locker room"
+                    },
+                    "13": {
+                        "then": "This is a nursery"
+                    },
+                    "14": {
+                        "then": "This is an office"
+                    },
+                    "15": {
+                        "then": "This is a copy room"
+                    },
+                    "16": {
+                        "then": "This is a prison_cell"
+                    },
+                    "17": {
+                        "then": "This is a restaurant"
+                    },
+                    "18": {
+                        "then": "This is a room to perform security checks"
+                    },
+                    "19": {
+                        "then": "This is a sport room"
+                    },
                     "2": {
                         "then": "This is a bedroom"
+                    },
+                    "20": {
+                        "then": "This is a storage room"
+                    },
+                    "21": {
+                        "then": "This is a technical room"
+                    },
+                    "22": {
+                        "then": "These are toilets"
+                    },
+                    "23": {
+                        "then": "This is a waiting room"
                     },
                     "3": {
                         "then": "This is a chapel"
@@ -5752,45 +6292,6 @@
                     },
                     "9": {
                         "then": "This is a kitchen"
-                    },
-                    "10": {
-                        "then": "This is a laboratory"
-                    },
-                    "11": {
-                        "then": "This is a library"
-                    },
-                    "12": {
-                        "then": "This is a locker room"
-                    },
-                    "13": {
-                        "then": "This is a nursery"
-                    },
-                    "14": {
-                        "then": "This is an office"
-                    },
-                    "15": {
-                        "then": "This is a prison_cell"
-                    },
-                    "16": {
-                        "then": "This is a restaurant"
-                    },
-                    "17": {
-                        "then": "This is a room to perform security checks"
-                    },
-                    "18": {
-                        "then": "This is a sport room"
-                    },
-                    "19": {
-                        "then": "This is a storage room"
-                    },
-                    "20": {
-                        "then": "This is a technical room"
-                    },
-                    "21": {
-                        "then": "These are toilets"
-                    },
-                    "22": {
-                        "then": "This is a waiting room"
                     }
                 },
                 "question": "What type of room is this?"
@@ -5871,6 +6372,7 @@
                 "title": "a kerb"
             }
         },
+        "snapName": "a kerb",
         "tagRenderings": {
             "kerb-height": {
                 "freeform": {
@@ -6089,7 +6591,7 @@
                         "then": "A map showing the village or town"
                     },
                     "3": {
-                        "then": " A map of a city"
+                        "then": "A map of a city"
                     },
                     "4": {
                         "then": "The map of an entire region, showing multiple cities and villages"
@@ -6341,6 +6843,21 @@
                     "1": {
                         "then": "This is a plaque"
                     },
+                    "10": {
+                        "then": "This is a cross"
+                    },
+                    "11": {
+                        "then": "This is a blue plaque"
+                    },
+                    "12": {
+                        "then": "This is a historic tank, permanently placed in public space as memorial"
+                    },
+                    "13": {
+                        "then": "This is a memorial tree"
+                    },
+                    "14": {
+                        "then": "This is a gravestone; the person is buried here"
+                    },
                     "2": {
                         "then": "This is a commemorative bench"
                     },
@@ -6364,21 +6881,6 @@
                     },
                     "9": {
                         "then": "This is an obelisk"
-                    },
-                    "10": {
-                        "then": "This is a cross"
-                    },
-                    "11": {
-                        "then": "This is a blue plaque"
-                    },
-                    "12": {
-                        "then": "This is a historic tank, permanently placed in public space as memorial"
-                    },
-                    "13": {
-                        "then": "This is a memorial tree"
-                    },
-                    "14": {
-                        "then": "This is a gravestone; the person is buried here"
                     }
                 },
                 "question": "What type of memorial is this?",
@@ -6551,67 +7053,11 @@
             "0": {
                 "options": {
                     "0": {
-                        "question": "Should mention {search} in the first comment"
-                    }
-                }
-            },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Should <b>not</b> mention {search} in the first comment"
-                    }
-                }
-            },
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "Opened by contributor {search}"
-                    }
-                }
-            },
-            "3": {
-                "options": {
-                    "0": {
-                        "question": "<b>Not</b> opened by contributor {search}"
-                    }
-                }
-            },
-            "4": {
-                "options": {
-                    "0": {
-                        "question": "Last edited by contributor {search}"
-                    }
-                }
-            },
-            "5": {
-                "options": {
-                    "0": {
-                        "question": "Opened after {search}"
-                    }
-                }
-            },
-            "6": {
-                "options": {
-                    "0": {
-                        "question": "Created before {search}"
-                    }
-                }
-            },
-            "7": {
-                "options": {
-                    "0": {
-                        "question": "Created after {search}"
-                    }
-                }
-            },
-            "8": {
-                "options": {
-                    "0": {
                         "question": "Only show notes opened by an anonymous contributor"
                     }
                 }
             },
-            "9": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Only show open notes"
@@ -6621,6 +7067,48 @@
             "10": {
                 "options": {
                     "0": {
+                        "question": "Last edited by contributor {search}"
+                    }
+                }
+            },
+            "11": {
+                "options": {
+                    "0": {
+                        "question": "Not edited as last by {search}"
+                    }
+                }
+            },
+            "12": {
+                "options": {
+                    "0": {
+                        "question": "Created before {search}"
+                    }
+                }
+            },
+            "13": {
+                "options": {
+                    "0": {
+                        "question": "Created after {search}"
+                    }
+                }
+            },
+            "14": {
+                "options": {
+                    "0": {
+                        "question": "Last edited before {search}"
+                    }
+                }
+            },
+            "15": {
+                "options": {
+                    "0": {
+                        "question": "Last edited after {search}"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
                         "question": "All Notes"
                     },
                     "1": {
@@ -6628,6 +7116,55 @@
                     },
                     "2": {
                         "question": "Show only import Notes"
+                    }
+                }
+            },
+            "3": {
+                "options": {
+                    "0": {
+                        "question": "Should mention {search} in the first comment"
+                    }
+                }
+            },
+            "4": {
+                "options": {
+                    "0": {
+                        "question": "Should mention {search} in any comment"
+                    }
+                }
+            },
+            "5": {
+                "options": {
+                    "0": {
+                        "question": "Should <b>not</b> mention {search} in the first comment"
+                    }
+                }
+            },
+            "6": {
+                "options": {
+                    "0": {
+                        "question": "Should <b>not</b> mention {search} in <b>any</b> comment"
+                    }
+                }
+            },
+            "7": {
+                "options": {
+                    "0": {
+                        "question": "Opened by contributor {search}"
+                    }
+                }
+            },
+            "8": {
+                "options": {
+                    "0": {
+                        "question": "<b>Not</b> opened by contributor {search}"
+                    }
+                }
+            },
+            "9": {
+                "options": {
+                    "0": {
+                        "question": "Edited or commented on by any user with name {search}"
                     }
                 }
             }
@@ -7008,6 +7545,18 @@
                     "1": {
                         "then": "This is a normal parking space."
                     },
+                    "10": {
+                        "then": "This is a parking space reserved for staff."
+                    },
+                    "11": {
+                        "then": "This is a parking space reserved for taxis."
+                    },
+                    "12": {
+                        "then": "This is a parking space reserved for vehicles towing a trailer."
+                    },
+                    "13": {
+                        "then": "This is a parking space reserved for car sharing."
+                    },
                     "2": {
                         "then": "This is a disabled parking space."
                     },
@@ -7031,18 +7580,6 @@
                     },
                     "9": {
                         "then": "This is a parking space reserved for parents with children."
-                    },
-                    "10": {
-                        "then": "This is a parking space reserved for staff."
-                    },
-                    "11": {
-                        "then": "This is a parking space reserved for taxis."
-                    },
-                    "12": {
-                        "then": "This is a parking space reserved for vehicles towing a trailer."
-                    },
-                    "13": {
-                        "then": "This is a parking space reserved for car sharing."
                     }
                 },
                 "question": "What kind of parking space is this?"
@@ -7088,7 +7625,8 @@
     },
     "pedestrian_path": {
         "description": "Pedestrian footpaths, especially used for indoor navigation and snapping entrances to this layer",
-        "name": "Pedestrian paths"
+        "name": "Pedestrian paths",
+        "snapName": "a pedestrian path"
     },
     "pharmacy": {
         "description": "A layer showing pharmacies, which (probably) dispense prescription drugs",
@@ -7183,6 +7721,9 @@
                     },
                     "2": {
                         "then": "This picnic table is made from (recycled) plastic"
+                    },
+                    "3": {
+                        "then": "This picnic table is made from metal"
                     }
                 },
                 "question": "What material is this picnic table made of?",
@@ -7222,6 +7763,17 @@
                     }
                 },
                 "question": "Is this playground accessible to wheelchair users?"
+            },
+            "fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Free to use"
+                    },
+                    "1": {
+                        "then": "Paid playground"
+                    }
+                },
+                "question": "Does one have to pay to use this playground?"
             },
             "playground-access": {
                 "mappings": {
@@ -7296,6 +7848,9 @@
                     "1": {
                         "then": "The surface is <b>sand</b>"
                     },
+                    "10": {
+                        "then": "The surface is <b>fine gravel</b> (less then 2 cm per stone)"
+                    },
                     "2": {
                         "then": "The surface consist of <b>woodchips</b>"
                     },
@@ -7319,9 +7874,6 @@
                     },
                     "9": {
                         "then": "The surface is made from rubber, such as rubber tiles, rubber mulch or a big rubber area"
-                    },
-                    "10": {
-                        "then": "The surface is <b>fine gravel</b> (less then 2 cm per stone)"
                     }
                 },
                 "question": "Which is the surface of this playground?",
@@ -7359,30 +7911,6 @@
                     "1": {
                         "then": "This is a structure consisting of several connected playground devices"
                     },
-                    "2": {
-                        "then": "This is a slide"
-                    },
-                    "3": {
-                        "then": "This is a sand pit"
-                    },
-                    "4": {
-                        "then": "This is a spring rider"
-                    },
-                    "5": {
-                        "then": "This is a climbing frame"
-                    },
-                    "6": {
-                        "then": "This is a seesaw"
-                    },
-                    "7": {
-                        "then": "This is a playhouse"
-                    },
-                    "8": {
-                        "then": "This is a roundabout"
-                    },
-                    "9": {
-                        "then": "This is a basket swing"
-                    },
                     "10": {
                         "then": "This is a zip wire"
                     },
@@ -7413,11 +7941,35 @@
                     "19": {
                         "then": "This is a teen shelter"
                     },
+                    "2": {
+                        "then": "This is a slide"
+                    },
                     "20": {
                         "then": "This is a funnel used to play with funnel ball"
                     },
                     "21": {
                         "then": "This is a spinning circle"
+                    },
+                    "3": {
+                        "then": "This is a sand pit"
+                    },
+                    "4": {
+                        "then": "This is a spring rider"
+                    },
+                    "5": {
+                        "then": "This is a climbing frame"
+                    },
+                    "6": {
+                        "then": "This is a seesaw"
+                    },
+                    "7": {
+                        "then": "This is a playhouse"
+                    },
+                    "8": {
+                        "then": "This is a roundabout"
+                    },
+                    "9": {
+                        "then": "This is a basket swing"
                     }
                 },
                 "question": "What kind of device is this?",
@@ -7433,12 +7985,65 @@
             "render": "Playground device"
         }
     },
+    "police": {
+        "description": "Many types of police facilities ",
+        "name": "Police stations",
+        "presets": {
+            "0": {
+                "description": "A police office where the general public can enter for inquiries",
+                "title": "a police office"
+            },
+            "1": {
+                "description": "A place where police performs checks on travelling people",
+                "title": "a police checkpoint"
+            },
+            "2": {
+                "description": "An administrative police office without services for the general public.",
+                "title": "an administrative, police backoffice"
+            },
+            "3": {
+                "description": "A jail run by the police without public services. People are detained here for a short time (at most a few days), e.g. for small misdemeanors, disturbance of the public order or awaiting a trial"
+            },
+            "4": {
+                "description": "A naval or maritime base for the maritime police; often with a pier and police boats nearby"
+            }
+        },
+        "tagRenderings": {
+            "4_z2nrdhy6tyyh4fd": {
+                "mappings": {
+                    "0": {
+                        "then": "This police office has some cells to detain people"
+                    },
+                    "1": {
+                        "then": "This police office does not have cells to detain people"
+                    }
+                },
+                "question": "Does this police office have detention facilities?"
+            },
+            "police_name": {
+                "question": "What is the name of this police facility?",
+                "render": "<b>{name}</b>"
+            }
+        },
+        "title": {
+            "render": "{name}"
+        }
+    },
     "postboxes": {
         "description": "The layer showing postboxes.",
         "name": "Postboxes",
         "presets": {
             "0": {
                 "title": "a postbox"
+            },
+            "1": {
+                "title": "a postbox on a wall"
+            }
+        },
+        "tagRenderings": {
+            "operator": {
+                "question": "Who operates this postbox?",
+                "render": "This postbox is operated by <b>{operator}</b>"
             }
         },
         "title": {
@@ -7794,6 +8399,21 @@
                     "1": {
                         "then": "2 cent coins are accepted"
                     },
+                    "10": {
+                        "then": "20 centimes coins are accepted"
+                    },
+                    "11": {
+                        "then": "½ franc coins are accepted"
+                    },
+                    "12": {
+                        "then": "1 franc coins are accepted"
+                    },
+                    "13": {
+                        "then": "2 francs coins are accepted"
+                    },
+                    "14": {
+                        "then": "5 francs coins are accepted"
+                    },
                     "2": {
                         "then": "5 cent coins are accepted"
                     },
@@ -7817,21 +8437,6 @@
                     },
                     "9": {
                         "then": "10 centimes coins are accepted"
-                    },
-                    "10": {
-                        "then": "20 centimes coins are accepted"
-                    },
-                    "11": {
-                        "then": "½ franc coins are accepted"
-                    },
-                    "12": {
-                        "then": "1 franc coins are accepted"
-                    },
-                    "13": {
-                        "then": "2 francs coins are accepted"
-                    },
-                    "14": {
-                        "then": "5 francs coins are accepted"
                     }
                 },
                 "question": "What coins can you use to pay here?"
@@ -7843,6 +8448,15 @@
                     },
                     "1": {
                         "then": "10 euro notes are accepted"
+                    },
+                    "10": {
+                        "then": "100 francs notes are accepted"
+                    },
+                    "11": {
+                        "then": "200 francs notes are accepted"
+                    },
+                    "12": {
+                        "then": "1000 francs notes are accepted"
                     },
                     "2": {
                         "then": "20 euro notes are accepted"
@@ -7867,15 +8481,6 @@
                     },
                     "9": {
                         "then": "50 francs notes are accepted"
-                    },
-                    "10": {
-                        "then": "100 francs notes are accepted"
-                    },
-                    "11": {
-                        "then": "200 francs notes are accepted"
-                    },
-                    "12": {
-                        "then": "1000 francs notes are accepted"
                     }
                 },
                 "question": "what notes can you use to pay here?"
@@ -7934,6 +8539,17 @@
                 },
                 "question": "Does this shop have a gluten free offering?"
             },
+            "indoor": {
+                "mappings": {
+                    "0": {
+                        "then": "This object is located indoors"
+                    },
+                    "1": {
+                        "then": "This object is located outdoors"
+                    }
+                },
+                "question": "Is this object located indoors?"
+            },
             "induction-loop": {
                 "mappings": {
                     "0": {
@@ -7961,6 +8577,9 @@
                     },
                     "4": {
                         "then": "This place offers wired internet access"
+                    },
+                    "5": {
+                        "then": "This place offers both wireless internet and internet access via a terminal or computer"
                     }
                 },
                 "question": "Does this place offer internet access?"
@@ -8380,33 +8999,16 @@
                 "options": {
                     "0": {
                         "question": "All recycling types"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Only public access"
                     },
                     "1": {
                         "question": "Recycling of batteries"
-                    },
-                    "2": {
-                        "question": "Recycling of beverage cartons"
-                    },
-                    "3": {
-                        "question": "Recycling of cans"
-                    },
-                    "4": {
-                        "question": "Recycling of clothes"
-                    },
-                    "5": {
-                        "question": "Recycling of cooking oil"
-                    },
-                    "6": {
-                        "question": "Recycling of engine oil"
-                    },
-                    "7": {
-                        "question": "Recycling of fluorescent tubes"
-                    },
-                    "8": {
-                        "question": "Recycling of green waste"
-                    },
-                    "9": {
-                        "question": "Recycling of glass bottles"
                     },
                     "10": {
                         "question": "Recycling of glass"
@@ -8438,6 +9040,9 @@
                     "19": {
                         "question": "Recycling of residual waste"
                     },
+                    "2": {
+                        "question": "Recycling of beverage cartons"
+                    },
                     "20": {
                         "question": "Recycling of printer cartridges"
                     },
@@ -8446,10 +9051,31 @@
                     },
                     "22": {
                         "question": "Recycling of plastic packaging, metal packaging and drink cartons (PMD)"
+                    },
+                    "3": {
+                        "question": "Recycling of cans"
+                    },
+                    "4": {
+                        "question": "Recycling of clothes"
+                    },
+                    "5": {
+                        "question": "Recycling of cooking oil"
+                    },
+                    "6": {
+                        "question": "Recycling of engine oil"
+                    },
+                    "7": {
+                        "question": "Recycling of fluorescent tubes"
+                    },
+                    "8": {
+                        "question": "Recycling of green waste"
+                    },
+                    "9": {
+                        "question": "Recycling of glass bottles"
                     }
                 }
             },
-            "2": {
+            "3": {
                 "options": {
                     "0": {
                         "question": "Only public access"
@@ -8513,30 +9139,6 @@
                     "1": {
                         "then": "Beverage cartons can be recycled here"
                     },
-                    "2": {
-                        "then": "Cans can be recycled here"
-                    },
-                    "3": {
-                        "then": "Clothes can be recycled here"
-                    },
-                    "4": {
-                        "then": "Cooking oil can be recycled here"
-                    },
-                    "5": {
-                        "then": "Engine oil can be recycled here"
-                    },
-                    "6": {
-                        "then": "Fluorescent tubes can be recycled here"
-                    },
-                    "7": {
-                        "then": "Green waste can be recycled here"
-                    },
-                    "8": {
-                        "then": "Organic waste can be recycled here"
-                    },
-                    "9": {
-                        "then": "Glass bottles can be recycled here"
-                    },
                     "10": {
                         "then": "Glass can be recycled here"
                     },
@@ -8567,6 +9169,9 @@
                     "19": {
                         "then": "Scrap metal can be recycled here"
                     },
+                    "2": {
+                        "then": "Cans can be recycled here"
+                    },
                     "20": {
                         "then": "Shoes can be recycled here"
                     },
@@ -8584,6 +9189,27 @@
                     },
                     "25": {
                         "then": "Bicycles can be recycled here"
+                    },
+                    "3": {
+                        "then": "Clothes can be recycled here"
+                    },
+                    "4": {
+                        "then": "Cooking oil can be recycled here"
+                    },
+                    "5": {
+                        "then": "Engine oil can be recycled here"
+                    },
+                    "6": {
+                        "then": "Fluorescent tubes can be recycled here"
+                    },
+                    "7": {
+                        "then": "Green waste can be recycled here"
+                    },
+                    "8": {
+                        "then": "Organic waste can be recycled here"
+                    },
+                    "9": {
+                        "then": "Glass bottles can be recycled here"
                     }
                 },
                 "question": "What can be recycled here?"
@@ -8809,12 +9435,21 @@
             "render": "School <i>{name}</i>"
         }
     },
+    "search": {
+        "description": "Priviliged layer showing the search results",
+        "tagRenderings": {
+            "intro": {
+                "render": "Search result"
+            }
+        }
+    },
     "selected_element": {
         "description": "Highlights the currently selected element. Override this layer to have different colors"
     },
     "shelter": {
         "description": "Layer showing shelter structures",
         "name": "Shelter",
+        "snapName": "a shelter",
         "tagRenderings": {
             "shelter-type": {
                 "mappings": {
@@ -8855,21 +9490,7 @@
         },
         "description": "A shop",
         "filter": {
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Only show shops selling {search}"
-                    }
-                }
-            },
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "Only show shops with name {search}"
-                    }
-                }
-            },
-            "3": {
+            "0": {
                 "options": {
                     "0": {
                         "question": "Only show shops selling second-hand items"
@@ -9456,28 +10077,6 @@
                         "question": "Publicly accessible"
                     }
                 }
-            },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "All sports"
-                    },
-                    "1": {
-                        "question": "Basketball fields"
-                    },
-                    "2": {
-                        "question": "Soccer fields"
-                    },
-                    "3": {
-                        "question": "Ping-pong tables"
-                    },
-                    "4": {
-                        "question": "Tennis fields"
-                    },
-                    "5": {
-                        "question": "Badminton fields"
-                    }
-                }
             }
         },
         "name": "Sport pitches",
@@ -9804,6 +10403,12 @@
                     "1": {
                         "then": "This lamp uses LEDs"
                     },
+                    "10": {
+                        "then": "This lamp uses high pressure sodium lamps (orange with white)"
+                    },
+                    "11": {
+                        "then": "This lamp is lit using gas"
+                    },
                     "2": {
                         "then": "This lamp uses incandescent lighting"
                     },
@@ -9827,12 +10432,6 @@
                     },
                     "9": {
                         "then": "This lamp uses low pressure sodium lamps (monochrome orange)"
-                    },
-                    "10": {
-                        "then": "This lamp uses high pressure sodium lamps (orange with white)"
-                    },
-                    "11": {
-                        "then": "This lamp is lit using gas"
                     }
                 },
                 "question": "What kind of lighting does this lamp use?"
@@ -10040,6 +10639,133 @@
         "title": {
             "render": "Surveillance Camera"
         }
+    },
+    "tactile_map": {
+        "description": "Layer showing tactile maps, which can be used by visually impaired people to navigate the city.",
+        "name": "Tactile Maps",
+        "presets": {
+            "0": {
+                "description": "A tactile map that can be read using touch. Unlike a tactile model, this is relatively flat and does not feature three-dimensional buildings and such.",
+                "title": "a tactile map"
+            }
+        },
+        "tagRenderings": {
+            "braille": {
+                "mappings": {
+                    "0": {
+                        "then": "This tactile map has braille text."
+                    },
+                    "1": {
+                        "then": "This tactile map does not have braille text."
+                    }
+                },
+                "question": "Is there braille text on this tactile map?"
+            },
+            "braille_languages": {
+                "render": {
+                    "special": {
+                        "question": "In which languages is the braille text on this tactile map?",
+                        "render_list_item": "This map has braille text in {language}",
+                        "render_single_language": "This map has braille text in {language}"
+                    }
+                }
+            },
+            "description": {
+                "freeform": {
+                    "placeholder": "e.g. Tactile map of the city center"
+                },
+                "question": "What does this tactile map show?",
+                "render": "Description: {blind:description:en}."
+            },
+            "embossed_letters": {
+                "mappings": {
+                    "0": {
+                        "then": "This tactile map has embossed letters."
+                    },
+                    "1": {
+                        "then": "This tactile map does not have embossed letters."
+                    }
+                },
+                "question": "Are there embossed letters on this tactile map?"
+            },
+            "embossed_letters_languages": {
+                "render": {
+                    "special": {
+                        "question": "In which languages are the embossed letters on this tactile map?",
+                        "render_list_item": "This map has embossed letters in {language}",
+                        "render_single_language": "This map has embossed letters in {language}"
+                    }
+                }
+            }
+        },
+        "title": "Tactile Map"
+    },
+    "tactile_model": {
+        "description": "Layer showing tactile models, three-dimensional models of the surrounding area.",
+        "name": "Tactile Models",
+        "presets": {
+            "0": {
+                "description": "A tactile model is a three-dimensional model of an area, allowing people to explore/see an area by touch.",
+                "title": "a tactile model"
+            }
+        },
+        "tagRenderings": {
+            "braille": {
+                "mappings": {
+                    "0": {
+                        "then": "There is a braille description."
+                    },
+                    "1": {
+                        "then": "There is no braille description."
+                    }
+                },
+                "question": "Is there a braille description?"
+            },
+            "braille_languages": {
+                "render": {
+                    "special": {
+                        "question": "In which languages is there a braille description?",
+                        "render_list_item": "This model has a braille description in {language()}",
+                        "render_single_language": "This model has a braille description in {language}"
+                    }
+                }
+            },
+            "description": {
+                "freeform": {
+                    "placeholder": "e.g. Tactile model of the city center"
+                },
+                "question": "What does this tactile model show?",
+                "render": "Description: {blind:description:en}."
+            },
+            "embossed_letters": {
+                "mappings": {
+                    "0": {
+                        "then": "There are embossed letters describing the model."
+                    },
+                    "1": {
+                        "then": "There are no embossed letters describing the model."
+                    }
+                },
+                "question": "Are there embossed letters describing the model?"
+            },
+            "embossed_letters_languages": {
+                "render": {
+                    "special": {
+                        "question": "In which languages are there embossed letters?",
+                        "render_list_item": "This model has embossed letters in {language()}",
+                        "render_single_language": "This model has embossed letters in {language}"
+                    }
+                }
+            },
+            "scale": {
+                "freeform": {
+                    "placeholder": "e.g. 1:1000"
+                },
+                "question": "What scale is the model?",
+                "render": "The scale of this model is {scale}."
+            }
+        },
+        "title": "Tactile Model"
     },
     "tertiary_education": {
         "name": "Colleges and universities",
@@ -10578,6 +11304,9 @@
             },
             "6": {
                 "title": "a small-scale lodging facility, typically operated by the owner"
+            },
+            "7": {
+                "title": "a camp site or camp ground"
             }
         },
         "tagRenderings": {
@@ -11221,7 +11950,8 @@
                         "then": "Use background layer <span class='code'>{mapcomplete-preferred-background-layer}</span> as default background"
                     }
                 },
-                "question": "What background layer should be shown by default?"
+                "question": "What background layer should be shown by default?",
+                "questionHint": "To set a specific background as default, select it in the background menu first after which it will appear here."
             },
             "background-layer-readonly": {
                 "render": "This thematic map has a predefined background layer set. Your default theme setting does not apply"
@@ -11329,23 +12059,6 @@
                     }
                 }
             },
-            "picture-license": {
-                "mappings": {
-                    "0": {
-                        "then": "Pictures you take will be licensed with <b>CC0</b> and added to the public domain. This means that everyone can use your pictures for any purpose. <span class='subtle'>This is the default choice.</span>"
-                    },
-                    "1": {
-                        "then": "Pictures you take will be licensed with <b>CC0</b> and added to the public domain. This means that everyone can use your pictures for any purpose."
-                    },
-                    "2": {
-                        "then": "Pictures you take will be licensed with <b>CC-BY 4.0</b> which requires everyone using your picture that they have to attribute you"
-                    },
-                    "3": {
-                        "then": "Pictures you take will be licensed with <b>CC-BY-SA 4.0</b> which means that everyone using your picture must attribute you and that derivatives of your picture must be reshared with the same license."
-                    }
-                },
-                "question": "Under what license do you want to publish your pictures?"
-            },
             "profile-description": {
                 "mappings": {
                     "0": {
@@ -11356,6 +12069,17 @@
                         }
                     }
                 }
+            },
+            "scalebar": {
+                "mappings": {
+                    "0": {
+                        "then": "Show the scalebar"
+                    },
+                    "1": {
+                        "then": "Hide the scalebar"
+                    }
+                },
+                "question": "Should a scale bar be shown on the map?"
             },
             "settings-link": {
                 "render": {
@@ -11399,6 +12123,48 @@
                 },
                 "question": "Show the raw OpenStreetMap-tags?",
                 "questionHint": "<b>Tags</b> are attributes that every element has. This is the technical data that is stored in the database. You don't need this information to edit with MapComplete, but advanced users might want to use this as reference."
+            },
+            "sync-visited-locations": {
+                "mappings": {
+                    "0": {
+                        "then": "Save the locations you search for and inspect and sync them via openstreetmap.org. OpenStreetMap and all apps you use can see this history"
+                    },
+                    "1": {
+                        "then": "Save the locations you search for and inspect on my device"
+                    },
+                    "2": {
+                        "then": "Don't save the locations you search for and inspect "
+                    }
+                },
+                "question": "Should the locations you search for and inspect be remembered?",
+                "questionHint": "Those locations will be offered in the search menu"
+            },
+            "sync-visited-themes": {
+                "mappings": {
+                    "0": {
+                        "then": "Save the visited thematic maps and sync them via openstreetmap.org. OpenStreetMap and all apps you use can see this history"
+                    },
+                    "1": {
+                        "then": "Save the visited thematic maps on my device"
+                    },
+                    "2": {
+                        "then": "Don't save visited thematic maps"
+                    }
+                },
+                "question": "Should the thematic maps you visit be saved?",
+                "questionHint": "If you visit a map about a certain topic, MapComplete can remember this and offer this as suggestion."
+            },
+            "title-editing": {
+                "render": "<h3>Editing settings</h3>"
+            },
+            "title-id": {
+                "render": "<h3>Mangrove ID management</h3>"
+            },
+            "title-map": {
+                "render": "<h3>Configure map</h3>"
+            },
+            "title-privacy-legal": {
+                "render": "<h3>Privacy and legal</h3>"
             },
             "translation-completeness": {
                 "mappings": {
@@ -11462,8 +12228,65 @@
                     "1": {
                         "question": "Sale of drinks"
                     },
+                    "10": {
+                        "question": "Sale of milk"
+                    },
+                    "11": {
+                        "question": "Sale of bread"
+                    },
+                    "12": {
+                        "question": "Sale of eggs"
+                    },
+                    "13": {
+                        "question": "Sale of ice cream"
+                    },
+                    "14": {
+                        "question": "Sale of cheese"
+                    },
+                    "15": {
+                        "question": "Sale of honey"
+                    },
+                    "16": {
+                        "question": "Sale of potatoes"
+                    },
+                    "17": {
+                        "question": "Sale of meat"
+                    },
+                    "18": {
+                        "question": "Sale of fruit"
+                    },
+                    "19": {
+                        "question": "Sale of strawberries"
+                    },
                     "2": {
                         "question": "Sale of sweets"
+                    },
+                    "20": {
+                        "question": "Sale of flowers"
+                    },
+                    "21": {
+                        "question": "Sale of parking tickets"
+                    },
+                    "22": {
+                        "question": "Sale of pressed pennies"
+                    },
+                    "23": {
+                        "question": "Sale of public transport tickets"
+                    },
+                    "24": {
+                        "question": "Sale of bicycle lights"
+                    },
+                    "25": {
+                        "question": "Sale of gloves"
+                    },
+                    "26": {
+                        "question": "Sale of bicycle repair kits"
+                    },
+                    "27": {
+                        "question": "Sale of bicycle pumps"
+                    },
+                    "28": {
+                        "question": "Sale of bicycle locks"
                     },
                     "3": {
                         "question": "Sale of food"
@@ -11485,60 +12308,6 @@
                     },
                     "9": {
                         "question": "Sale of bicycle inner tubes"
-                    },
-                    "10": {
-                        "question": "Sale of milk"
-                    },
-                    "11": {
-                        "question": "Sale of bread"
-                    },
-                    "12": {
-                        "question": "Sale of eggs"
-                    },
-                    "13": {
-                        "question": "Sale of cheese"
-                    },
-                    "14": {
-                        "question": "Sale of honey"
-                    },
-                    "15": {
-                        "question": "Sale of potatoes"
-                    },
-                    "16": {
-                        "question": "Sale of meat"
-                    },
-                    "17": {
-                        "question": "Sale of fruit"
-                    },
-                    "18": {
-                        "question": "Sale of strawberries"
-                    },
-                    "19": {
-                        "question": "Sale of flowers"
-                    },
-                    "20": {
-                        "question": "Sale of parking tickets"
-                    },
-                    "21": {
-                        "question": "Sale of pressed pennies"
-                    },
-                    "22": {
-                        "question": "Sale of public transport tickets"
-                    },
-                    "23": {
-                        "question": "Sale of bicycle lights"
-                    },
-                    "24": {
-                        "question": "Sale of gloves"
-                    },
-                    "25": {
-                        "question": "Sale of bicycle repair kits"
-                    },
-                    "26": {
-                        "question": "Sale of bicycle pumps"
-                    },
-                    "27": {
-                        "question": "Sale of bicycle locks"
                     }
                 }
             }
@@ -11635,8 +12404,62 @@
                     "1": {
                         "then": "Sweets are sold"
                     },
+                    "10": {
+                        "then": "Bread is sold"
+                    },
+                    "11": {
+                        "then": "Eggs are sold"
+                    },
+                    "12": {
+                        "then": "Ice cream is sold"
+                    },
+                    "13": {
+                        "then": "Cheese is sold"
+                    },
+                    "14": {
+                        "then": "Honey is sold"
+                    },
+                    "15": {
+                        "then": "Potatoes are sold"
+                    },
+                    "16": {
+                        "then": "Meat is sold"
+                    },
+                    "17": {
+                        "then": "Fruit is sold"
+                    },
+                    "18": {
+                        "then": "Strawberries are sold"
+                    },
+                    "19": {
+                        "then": "Flowers are sold"
+                    },
                     "2": {
                         "then": "Food is sold"
+                    },
+                    "20": {
+                        "then": "Parking tickets are sold"
+                    },
+                    "21": {
+                        "then": "Pressed pennies are sold"
+                    },
+                    "22": {
+                        "then": "Public transport tickets are sold"
+                    },
+                    "23": {
+                        "then": "Bicycle lights are sold"
+                    },
+                    "24": {
+                        "then": "Gloves are sold"
+                    },
+                    "25": {
+                        "then": "Bicycle repair kits are sold"
+                    },
+                    "26": {
+                        "then": "Bicycle pumps are sold"
+                    },
+                    "27": {
+                        "then": "Bicycle locks are sold"
                     },
                     "3": {
                         "then": "Cigarettes are sold"
@@ -11658,57 +12481,6 @@
                     },
                     "9": {
                         "then": "Milk is sold"
-                    },
-                    "10": {
-                        "then": "Bread is sold"
-                    },
-                    "11": {
-                        "then": "Eggs are sold"
-                    },
-                    "12": {
-                        "then": "Cheese is sold"
-                    },
-                    "13": {
-                        "then": "Honey is sold"
-                    },
-                    "14": {
-                        "then": "Potatoes are sold"
-                    },
-                    "15": {
-                        "then": "Meat is sold"
-                    },
-                    "16": {
-                        "then": "Fruit is sold"
-                    },
-                    "17": {
-                        "then": "Strawberries are sold"
-                    },
-                    "18": {
-                        "then": "Flowers are sold"
-                    },
-                    "19": {
-                        "then": "Parking tickets are sold"
-                    },
-                    "20": {
-                        "then": "Pressed pennies are sold"
-                    },
-                    "21": {
-                        "then": "Public transport tickets are sold"
-                    },
-                    "22": {
-                        "then": "Bicycle lights are sold"
-                    },
-                    "23": {
-                        "then": "Gloves are sold"
-                    },
-                    "24": {
-                        "then": "Bicycle repair kits are sold"
-                    },
-                    "25": {
-                        "then": "Bicycle pumps are sold"
-                    },
-                    "26": {
-                        "then": "Bicycle locks are sold"
                     }
                 },
                 "question": "What does this vending machine sell?",
@@ -11779,6 +12551,7 @@
     },
     "walls_and_buildings": {
         "description": "Special builtin layer providing all walls and buildings. This layer is useful in presets for objects which can be placed against walls (e.g. AEDs, postboxes, entrances, addresses, surveillance cameras, …). This layer is invisible by default and not toggleable by the user.",
+        "snapName": "a wall or building",
         "tagRenderings": {
             "entrance_info": {
                 "mappings": {

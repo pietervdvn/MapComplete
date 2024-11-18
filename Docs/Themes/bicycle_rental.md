@@ -8,12 +8,9 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [bicycle_rental](../Layers/bicycle_rental.md)
 
-
 Available languages:
-
 
  - en
  - nl
@@ -31,7 +28,9 @@ Available languages:
  - pl
  - zh_Hans
  - it
-
+ - ru
+ - uk
+ - hu
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

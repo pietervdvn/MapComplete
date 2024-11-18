@@ -9,13 +9,14 @@ export class Stores {
         const source = new UIEventSource<Date>(undefined)
 
         function run() {
+            if (asLong !== undefined && !asLong()) {
+                return
+            }
             source.setData(new Date())
             if (Utils.runningFromConsole) {
                 return
             }
-            if (asLong === undefined || asLong()) {
-                window.setTimeout(run, millis)
-            }
+            window.setTimeout(run, millis)
         }
 
         run()
@@ -41,8 +42,25 @@ export class Stores {
         return src
     }
 
-    public static flatten<X>(source: Store<Store<X>>, possibleSources?: Store<any>[]): Store<X> {
-        return UIEventSource.flatten(source, possibleSources)
+    public static concat<T>(stores: Store<T[] | undefined>[]): Store<(T[] | undefined)[]> {
+        const newStore = new UIEventSource<(T[] | undefined)[]>([])
+
+        function update() {
+            if (newStore._callbacks.isDestroyed) {
+                return true // unregister
+            }
+            const results: (T[] | undefined)[] = []
+            for (const store of stores) {
+                results.push(store.data)
+            }
+            newStore.setData(results)
+        }
+
+        for (const store of stores) {
+            store.addCallback(() => update())
+        }
+        update()
+        return newStore
     }
 
     /**
@@ -72,6 +90,20 @@ export class Stores {
             stable.setData(list)
         })
         return stable
+    }
+
+    /**
+     *
+     * Constructs a new store, but tries to keep the value 'defined'
+     * If a defined value was in the stream once, a defined value will be returned
+     * @param store
+     */
+    static holdDefined<T>(store: Store<T | undefined>): Store<T | undefined> {
+        const newStore = new UIEventSource(store.data)
+        store.addCallbackD((t) => {
+            newStore.setData(t)
+        })
+        return newStore
     }
 }
 
@@ -104,21 +136,25 @@ export abstract class Store<T> implements Readable<T> {
         extraStoresToWatch: Store<any>[],
         callbackDestroyFunction: (f: () => void) => void
     ): Store<J>
-    M
+
     public mapD<J>(
         f: (t: Exclude<T, undefined | null>) => J,
         extraStoresToWatch?: Store<any>[],
         callbackDestroyFunction?: (f: () => void) => void
     ): Store<J> {
-        return this.map((t) => {
-            if (t === undefined) {
-                return undefined
-            }
-            if (t === null) {
-                return null
-            }
-            return f(<Exclude<T, undefined | null>>t)
-        }, extraStoresToWatch)
+        return this.map(
+            (t) => {
+                if (t === undefined) {
+                    return undefined
+                }
+                if (t === null) {
+                    return null
+                }
+                return f(<Exclude<T, undefined | null>>t)
+            },
+            extraStoresToWatch,
+            callbackDestroyFunction
+        )
     }
 
     /**
@@ -206,8 +242,8 @@ export abstract class Store<T> implements Readable<T> {
      * src.setData(0)
      * lastValue // => "def"
      */
-    public bind<X>(f: (t: T) => Store<X>): Store<X> {
-        const mapped = this.map(f)
+    public bind<X>(f: (t: T) => Store<X>, extraSources: Store<object>[] = []): Store<X> {
+        const mapped = this.map(f, extraSources)
         const sink = new UIEventSource<X>(undefined)
         const seenEventSources = new Set<Store<X>>()
         mapped.addCallbackAndRun((newEventSource) => {
@@ -229,13 +265,19 @@ export abstract class Store<T> implements Readable<T> {
                 if (mapped.data === newEventSource) {
                     sink.setData(resultData)
                 }
+                if (sink._callbacks.isDestroyed) {
+                    return true // unregister
+                }
             })
         })
 
         return sink
     }
 
-    public bindD<X>(f: (t: Exclude<T, undefined | null>) => Store<X>): Store<X> {
+    public bindD<X>(
+        f: (t: Exclude<T, undefined | null>) => Store<X>,
+        extraSources: UIEventSource<object>[] = []
+    ): Store<X> {
         return this.bind((t) => {
             if (t === null) {
                 return null
@@ -244,8 +286,9 @@ export abstract class Store<T> implements Readable<T> {
                 return undefined
             }
             return f(<Exclude<T, undefined | null>>t)
-        })
+        }, extraSources)
     }
+
     public stabilized(millisToStabilize): Store<T> {
         if (Utils.runningFromConsole) {
             return this
@@ -305,12 +348,25 @@ export abstract class Store<T> implements Readable<T> {
             run(v)
         })
     }
+
+    public abstract destroy()
+
+    when(callback: () => void, condition?: (v: T) => boolean) {
+        condition ??= (v) => v === true
+        this.addCallbackAndRunD((v) => {
+            if (condition(v)) {
+                callback()
+                return true
+            }
+        })
+    }
 }
 
 export class ImmutableStore<T> extends Store<T> {
     public readonly data: T
     static FALSE = new ImmutableStore<boolean>(false)
     static TRUE = new ImmutableStore<boolean>(true)
+
     constructor(data: T) {
         super()
         this.data = data
@@ -356,6 +412,10 @@ export class ImmutableStore<T> extends Store<T> {
     bind<X>(f: (t: T) => Store<X>): Store<X> {
         return f(this.data)
     }
+
+    destroy() {
+        // pass
+    }
 }
 
 /**
@@ -364,6 +424,7 @@ export class ImmutableStore<T> extends Store<T> {
 class ListenerTracker<T> {
     public pingCount = 0
     private readonly _callbacks: ((t: T) => boolean | void | any)[] = []
+    public isDestroyed = false
 
     /**
      * Adds a callback which can be called; a function to unregister is returned
@@ -423,6 +484,11 @@ class ListenerTracker<T> {
 
     length() {
         return this._callbacks.length
+    }
+
+    public destroy() {
+        this.isDestroyed = true
+        this._callbacks.splice(0, this._callbacks.length)
     }
 }
 
@@ -579,10 +645,14 @@ class MappedStore<TIn, T> extends Store<T> {
         this._data = newData
         this._callbacks.ping(this._data)
     }
+
+    destroy() {
+        this.unregisterFromUpstream()
+    }
 }
 
 export class UIEventSource<T> extends Store<T> implements Writable<T> {
-    private static readonly pass: () => {}
+    private static readonly pass: () => void = () => {}
     public data: T
     _callbacks: ListenerTracker<T> = new ListenerTracker<T>()
 
@@ -591,9 +661,13 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
         this.data = data
     }
 
+    public destroy() {
+        this._callbacks.destroy()
+    }
+
     public static flatten<X>(
         source: Store<Store<X>>,
-        possibleSources?: Store<any>[]
+        possibleSources?: Store<object>[]
     ): UIEventSource<X> {
         const sink = new UIEventSource<X>(source.data?.data)
 
@@ -617,12 +691,12 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
     }
 
     /**
-     * Converts a promise into a UIVentsource, sets the UIEVentSource when the result is calculated.
+     * Converts a promise into a UIventsource, sets the UIeventSource when the result is calculated.
      * If the promise fails, the value will stay undefined, but 'onError' will be called
      */
     public static FromPromise<T>(
         promise: Promise<T>,
-        onError: (e: any) => void = undefined
+        onError: (e) => void = undefined
     ): UIEventSource<T> {
         const src = new UIEventSource<T>(undefined)
         promise?.then((d) => src.setData(d))
@@ -666,7 +740,7 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
     public static asInt(source: UIEventSource<string>): UIEventSource<number> {
         return source.sync(
             (str) => {
-                let parsed = parseInt(str)
+                const parsed = parseInt(str)
                 return isNaN(parsed) ? undefined : parsed
             },
             [],
@@ -697,7 +771,7 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
     public static asFloat(source: UIEventSource<string>): UIEventSource<number> {
         return source.sync(
             (str) => {
-                let parsed = parseFloat(str)
+                const parsed = parseFloat(str)
                 return isNaN(parsed) ? undefined : parsed
             },
             [],
@@ -715,6 +789,27 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
             (str) => str === "true",
             [],
             (b) => "" + b
+        )
+    }
+
+    static asObject<T extends object>(
+        stringUIEventSource: UIEventSource<string>,
+        defaultV: T
+    ): UIEventSource<T> {
+        return stringUIEventSource.sync(
+            (str) => {
+                if (str === undefined || str === null || str === "") {
+                    return defaultV
+                }
+                try {
+                    return <T>JSON.parse(str)
+                } catch (e) {
+                    console.error("Could not parse value", str, "due to", e)
+                    return defaultV
+                }
+            },
+            [],
+            (b) => JSON.stringify(b) ?? ""
         )
     }
 

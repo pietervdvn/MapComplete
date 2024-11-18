@@ -2,11 +2,13 @@
   "id": "love_hotel",
   "name": {
     "en": "Love hotels",
-    "de": "Love Hotels"
+    "de": "Love Hotels",
+    "es": "Hoteles del amor"
   },
   "description": {
     "en": "A love hotel is a type of short-stay hotel found around the world operated primarily for the purpose of allowing guests privacy for sexual activities",
-    "de": "Ein Love Hotel ist eine Art Kurzzeithotel, das in erster Linie zu dem Zweck betrieben wird, den Gästen Privatsphäre für sexuelle Aktivitäten zu bieten"
+    "de": "Ein Love Hotel ist eine Art Kurzzeithotel, das in erster Linie zu dem Zweck betrieben wird, den Gästen Privatsphäre für sexuelle Aktivitäten zu bieten",
+    "es": "Un hotel del amor es un tipo de hotel de corta estancia que se encuentra en todo el mundo y que funciona principalmente con el fin de ofrecer a los huéspedes privacidad para las actividades sexuales"
   },
   "source": {
     "osmTags": "amenity=love_hotel"
@@ -15,7 +17,8 @@
   "title": {
     "render": {
       "en": "Love Hotel <i>{name}</i>",
-      "de": "Love Hotel <i>{name}</i>"
+      "de": "Love Hotel <i>{name}</i>",
+      "es": "Hotel del amor <i>{name}</i>"
     }
   },
   "pointRendering": [
@@ -53,11 +56,13 @@
     {
       "title": {
         "en": "a love hotel",
-        "de": "ein Love Hotel"
+        "de": "ein Love Hotel",
+        "es": "un hotel del amor"
       },
       "description": {
         "en": "A love hotel is a type of short-stay hotel found around the world operated primarily for the purpose of allowing guests privacy for sexual activities.",
-        "de": "Ein Love Hotel ist eine Art Kurzzeithotel, das in erster Linie zu dem Zweck betrieben wird, den Gästen Privatsphäre für sexuelle Aktivitäten zu bieten"
+        "de": "Ein Love Hotel ist eine Art Kurzzeithotel, das in erster Linie zu dem Zweck betrieben wird, den Gästen Privatsphäre für sexuelle Aktivitäten zu bieten.",
+        "es": "Un hotel del amor es un tipo de hotel de corta estancia que se encuentra en todo el mundo y que funciona principalmente con el fin de ofrecer a los huéspedes privacidad para las actividades sexuales."
       },
       "tags": [
         "amenity=love_hotel"
@@ -71,11 +76,13 @@
       "id": "name",
       "question": {
         "en": "What is the name of this love hotel?",
-        "de": "Wie lautet der Name des Love Hotels?"
+        "de": "Wie lautet der Name des Love Hotels?",
+        "es": "¿Cuál es el nombre de este hotel del amor?"
       },
       "render": {
         "en": "This love hotel is named <b>{name}</b>",
-        "de": "Der Name des Love Hotels lautet <b>{name}</b>"
+        "de": "Der Name des Love Hotels lautet <b>{name}</b>",
+        "es": "Este hotel del amor se llama <b>{name}</b>"
       },
       "freeform": {
         "key": "name"
@@ -83,6 +90,7 @@
     },
     "contact"
   ],
+  "allowMove": true,
   "enableMorePrivacy": true,
   "credits": "Asteliks"
 }

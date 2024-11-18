@@ -1,5 +1,5 @@
 import { OsmNode, OsmObject, OsmRelation, OsmWay } from "./OsmObject"
-import { Store, UIEventSource } from "../UIEventSource"
+import { ImmutableStore, Store, UIEventSource } from "../UIEventSource"
 import Constants from "../../Models/Constants"
 import OsmChangeAction from "./Actions/OsmChangeAction"
 import { ChangeDescription, ChangeDescriptionTools } from "./Actions/ChangeDescription"
@@ -11,13 +11,12 @@ import { GeoLocationPointProperties } from "../State/GeoLocationState"
 import { GeoOperations } from "../GeoOperations"
 import { ChangesetHandler, ChangesetTag } from "./ChangesetHandler"
 import { OsmConnection } from "./OsmConnection"
-import FeaturePropertiesStore from "../FeatureSource/Actors/FeaturePropertiesStore"
 import OsmObjectDownloader from "./OsmObjectDownloader"
 import ChangeLocationAction from "./Actions/ChangeLocationAction"
 import ChangeTagAction from "./Actions/ChangeTagAction"
-import FeatureSwitchState from "../State/FeatureSwitchState"
 import DeleteAction from "./Actions/DeleteAction"
 import MarkdownUtils from "../../Utils/MarkdownUtils"
+import FeaturePropertiesStore from "../FeatureSource/Actors/FeaturePropertiesStore"
 
 /**
  * Handles all changes made to OSM.
@@ -25,50 +24,62 @@ import MarkdownUtils from "../../Utils/MarkdownUtils"
  */
 export class Changes {
     public readonly pendingChanges: UIEventSource<ChangeDescription[]> =
-        LocalStorageSource.GetParsed<ChangeDescription[]>("pending-changes", [])
+        LocalStorageSource.getParsed<ChangeDescription[]>("pending-changes", [])
     public readonly allChanges = new UIEventSource<ChangeDescription[]>(undefined)
     public readonly state: {
         allElements?: IndexedFeatureSource
         osmConnection: OsmConnection
-        featureSwitches?: FeatureSwitchState
+        featureSwitches?: {
+            featureSwitchMorePrivacy?: Store<boolean>
+        }
     }
     public readonly extraComment: UIEventSource<string> = new UIEventSource(undefined)
     public readonly backend: string
     public readonly isUploading = new UIEventSource(false)
     public readonly errors = new UIEventSource<string[]>([], "upload-errors")
     private readonly historicalUserLocations?: FeatureSource
-    private _nextId: number = -1 // Newly assigned ID's are negative
+    private _nextId: number = 0 // Newly assigned ID's are negative
     private readonly previouslyCreated: OsmObject[] = []
     private readonly _leftRightSensitive: boolean
     public readonly _changesetHandler: ChangesetHandler
-    private readonly _reportError?: (string: string | Error) => void
+    private readonly _reportError?: (string: string | Error, extramessage?: string) => void
 
     constructor(
         state: {
-            dryRun: Store<boolean>
-            allElements?: IndexedFeatureSource
-            featurePropertiesStore?: FeaturePropertiesStore
+            featureSwitches: {
+                featureSwitchMorePrivacy?: Store<boolean>
+                featureSwitchIsTesting?: Store<boolean>
+            }
             osmConnection: OsmConnection
+            reportError?: (error: string) => void
+            featureProperties?: FeaturePropertiesStore
             historicalUserLocations?: FeatureSource
-            featureSwitches?: FeatureSwitchState
+            allElements?: IndexedFeatureSource
         },
         leftRightSensitive: boolean = false,
-        reportError?: (string: string | Error) => void
+        reportError?: (string: string | Error, extramessage?: string) => void
     ) {
         this._leftRightSensitive = leftRightSensitive
         // We keep track of all changes just as well
         this.allChanges.setData([...this.pendingChanges.data])
         // If a pending change contains a negative ID, we save that
-        this._nextId = Math.min(-1, ...(this.pendingChanges.data?.map((pch) => pch.id) ?? []))
+        this._nextId = Math.min(-1, ...(this.pendingChanges.data?.map((pch) => pch.id ?? 0) ?? []))
+        if (isNaN(this._nextId) && state.reportError !== undefined) {
+            state.reportError(
+                "Got a NaN as nextID. Pending changes IDs are:" +
+                    this.pendingChanges.data?.map((pch) => pch?.id).join(".")
+            )
+            this._nextId = -100
+        }
         this.state = state
         this.backend = state.osmConnection.Backend()
         this._reportError = reportError
         this._changesetHandler = new ChangesetHandler(
-            state.dryRun,
+            state.featureSwitches?.featureSwitchIsTesting ?? new ImmutableStore(false),
             state.osmConnection,
-            state.featurePropertiesStore,
+            state.featureProperties,
             this,
-            (e) => this._reportError(e)
+            (e, extramessage: string) => this._reportError(e, extramessage)
         )
         this.historicalUserLocations = state.historicalUserLocations
 
@@ -76,7 +87,16 @@ export class Changes {
         // This doesn't matter however, as the '-1' is per piecewise upload, not global per changeset
     }
 
-    static createChangesetFor(
+    public static createTestObject(): Changes {
+        return new Changes({
+            osmConnection: new OsmConnection(),
+            featureSwitches: {
+                featureSwitchIsTesting: new ImmutableStore(true),
+            },
+        })
+    }
+
+    static buildChangesetXML(
         csId: string,
         allChanges: {
             modifiedObjects: OsmObject[]
@@ -214,7 +234,15 @@ export class Changes {
      * Returns a new ID and updates the value for the next ID
      */
     public getNewID() {
-        return this._nextId--
+        // See #2082. We check for previous rewritings, as a remapping might be from a previous session
+        do {
+            this._nextId--
+        } while (
+            this._changesetHandler._remappings.has("node/" + this._nextId) ||
+            this._changesetHandler._remappings.has("way/" + this._nextId) ||
+            this._changesetHandler._remappings.has("relation/" + this._nextId)
+        )
+        return this._nextId
     }
 
     /**
@@ -233,9 +261,9 @@ export class Changes {
         console.log("Uploading changes due to: ", flushreason)
         this.isUploading.setData(true)
         try {
-            const csNumber = await this.flushChangesAsync()
+            await this.flushChangesAsync()
             this.isUploading.setData(false)
-            console.log("Changes flushed. Your changeset is " + csNumber)
+            console.log("Changes flushed")
             this.errors.setData([])
         } catch (e) {
             this._reportError(e)
@@ -266,7 +294,25 @@ export class Changes {
 
     public CreateChangesetObjects(
         changes: ChangeDescription[],
-        downloadedOsmObjects: OsmObject[]
+        downloadedOsmObjects: OsmObject[],
+        ignoreNoCreate: boolean = false
+    ): {
+        newObjects: OsmObject[]
+        modifiedObjects: OsmObject[]
+        deletedObjects: OsmObject[]
+    } {
+        return Changes.createChangesetObjectsStatic(
+            changes,
+            downloadedOsmObjects,
+            ignoreNoCreate,
+            this.previouslyCreated
+        )
+    }
+    public static createChangesetObjectsStatic(
+        changes: ChangeDescription[],
+        downloadedOsmObjects: OsmObject[],
+        ignoreNoCreate: boolean = false,
+        previouslyCreated: OsmObject[]
     ): {
         newObjects: OsmObject[]
         modifiedObjects: OsmObject[]
@@ -296,7 +342,7 @@ export class Changes {
             states.set(o.type + "/" + o.id, "unchanged")
         }
 
-        for (const o of this.previouslyCreated) {
+        for (const o of previouslyCreated) {
             objects.set(o.type + "/" + o.id, o)
             states.set(o.type + "/" + o.id, "unchanged")
         }
@@ -314,6 +360,9 @@ export class Changes {
                 }
                 if (change.changes === undefined) {
                     // This object is a change to a newly created object. However, we have not seen the creation changedescription yet!
+                    if (ignoreNoCreate) {
+                        continue
+                    }
                     throw "Not a creation of the object: " + JSON.stringify(change)
                 }
                 // This is a new object that should be created
@@ -343,7 +392,7 @@ export class Changes {
                     throw "Hmm? This is a bug"
                 }
                 objects.set(id, osmObj)
-                this.previouslyCreated.push(osmObj)
+                previouslyCreated.push(osmObj)
             }
 
             const state = states.get(id)
@@ -618,14 +667,17 @@ export class Changes {
         openChangeset: UIEventSource<number>
     ): Promise<ChangeDescription[]> {
         const neededIds = Changes.GetNeededIds(pending)
-        // We _do not_ pass in the Changes object itself - we want the data from OSM directly in order to apply the changes
+        /* Download the latest version of the OSM-objects
+         *  We _do not_ pass in the Changes object itself - we want the data from OSM directly in order to apply the changes
+         */
         const downloader = new OsmObjectDownloader(this.backend, undefined)
-        let osmObjects = await Promise.all<{ id: string; osmObj: OsmObject | "deleted" }>(
-            neededIds.map((id) => this.getOsmObject(id, downloader))
+        const osmObjects = Utils.NoNull(
+            await Promise.all<{ id: string; osmObj: OsmObject | "deleted" }>(
+                neededIds.map((id) => this.getOsmObject(id, downloader))
+            )
         )
 
-        osmObjects = Utils.NoNull(osmObjects)
-
+        // Drop changes to deleted items
         for (const { osmObj, id } of osmObjects) {
             if (osmObj === "deleted") {
                 pending = pending.filter((ch) => ch.type + "/" + ch.id !== id)
@@ -645,6 +697,42 @@ export class Changes {
             return undefined
         }
 
+        const metatags = this.buildChangesetTags(pending)
+
+        let { toUpload, refused } = this.fragmentChanges(pending, objects)
+
+        if (toUpload.length === 0) {
+            return refused
+        }
+        await this._changesetHandler.UploadChangeset(
+            (csId, remappings) => {
+                if (remappings.size > 0) {
+                    toUpload = toUpload.map((ch) =>
+                        ChangeDescriptionTools.rewriteIds(ch, remappings)
+                    )
+                }
+
+                const changes: {
+                    newObjects: OsmObject[]
+                    modifiedObjects: OsmObject[]
+                    deletedObjects: OsmObject[]
+                } = this.CreateChangesetObjects(toUpload, objects)
+
+                return Changes.buildChangesetXML("" + csId, changes)
+            },
+            metatags,
+            openChangeset
+        )
+
+        console.log("Upload successful! Refused changes are", refused)
+        return refused
+    }
+
+    /**
+     * Builds all the changeset tags, such as `theme=cyclofix; answer=42; add-image: 5`, ...
+     */
+    private buildChangesetTags(pending: ChangeDescription[]) {
+        // Build statistics for the changeset tags
         const perType = Array.from(
             Utils.Hist(
                 pending
@@ -720,34 +808,7 @@ export class Changes {
             ...motivations,
             ...perBinMessage,
         ]
-
-        let { toUpload, refused } = this.fragmentChanges(pending, objects)
-
-        if (toUpload.length === 0) {
-            return refused
-        }
-        await this._changesetHandler.UploadChangeset(
-            (csId, remappings) => {
-                if (remappings.size > 0) {
-                    toUpload = toUpload.map((ch) =>
-                        ChangeDescriptionTools.rewriteIds(ch, remappings)
-                    )
-                }
-
-                const changes: {
-                    newObjects: OsmObject[]
-                    modifiedObjects: OsmObject[]
-                    deletedObjects: OsmObject[]
-                } = this.CreateChangesetObjects(toUpload, objects)
-
-                return Changes.createChangesetFor("" + csId, changes)
-            },
-            metatags,
-            openChangeset
-        )
-
-        console.log("Upload successful! Refused changes are", refused)
-        return refused
+        return metatags
     }
 
     private async flushChangesAsync(): Promise<void> {
@@ -796,7 +857,16 @@ export class Changes {
             )
 
             // We keep all the refused changes to try them again
-            this.pendingChanges.setData(refusedChanges.flatMap((c) => c))
+            this.pendingChanges.setData(
+                refusedChanges
+                    .flatMap((c) => c)
+                    .filter((c) => {
+                        if (c.id === null || c.id === undefined) {
+                            return false
+                        }
+                        return true
+                    })
+            )
         } catch (e) {
             console.error(
                 "Could not handle changes - probably an old, pending changeset in localstorage with an invalid format; erasing those",

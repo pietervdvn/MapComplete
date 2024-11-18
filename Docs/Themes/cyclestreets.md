@@ -8,14 +8,11 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [fietsstraat (defined in this theme)](#fietsstraat)
  - [toekomstige_fietsstraat (defined in this theme)](#toekomstige_fietsstraat)
  - [not_cyclestreets (defined in this theme)](#not_cyclestreets)
 
-
 Available languages:
-
 
  - en
  - nl
@@ -33,7 +30,8 @@ Available languages:
  - cs
  - eu
  - pl
-
+ - ru
+ - uk
 
 # Table of contents
 
@@ -74,19 +72,9 @@ Available languages:
 These layers can not be reused in different themes.
 # fietsstraat
 
-
-
-
 A cyclestreet is a street where motorized traffic is not allowed to overtake a cyclist
 
-
-
-
-
-
  - This layer is shown at zoomlevel **7** and higher
-
-
 
 No themes use this layer
 
@@ -108,14 +96,9 @@ Elements must match **any** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/traffic_sign#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/traffic_sign/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [traffic_sign](https://wiki.openstreetmap.org/wiki/Key:traffic_sign) | Multiple choice | [DE:244.1,1020-30](https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DDE:244.1,1020-30) [DE:244.1,1022-12,1024-10](https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DDE:244.1,1022-12,1024-10) [DE:244.1,1022-12](https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DDE:244.1,1022-12) [DE:244.1,1024-10](https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DDE:244.1,1024-10) [DE:244.1](https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DDE:244.1) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/cyclestreet:start_date#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/cyclestreet%3Astart_date/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [cyclestreet:start_date](https://wiki.openstreetmap.org/wiki/Key:cyclestreet:start_date) | [date](../SpecialInputElements.md#date) |  |
 
-
-
-
 ### is_cyclestreet
 
 The question is `Is the street <b>{name}</b> a cyclestreet?`
-
-
 
  -  *This street is a cyclestreet (and has a speed limit of 30 km/h)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:cyclestreet' target='_blank'>cyclestreet</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cyclestreet%3Dyes' target='_blank'>yes</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:maxspeed' target='_blank'>maxspeed</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:maxspeed%3D30' target='_blank'>30</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:overtaking:motor_vehicle' target='_blank'>overtaking:motor_vehicle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:overtaking:motor_vehicle%3Dno' target='_blank'>no</a> & proposed:cyclestreet=
  -  *This street is a bicycle road* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_road' target='_blank'>bicycle_road</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_road%3Dyes' target='_blank'>yes</a>. _This option cannot be chosen as answer_
@@ -125,15 +108,9 @@ The question is `Is the street <b>{name}</b> a cyclestreet?`
  -  *This street will become a bicycle road soon* is shown if with bicycle_road= & <a href='https://wiki.openstreetmap.org/wiki/Key:proposed:bicycle_road' target='_blank'>proposed:bicycle_road</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:proposed:bicycle_road%3Dyes' target='_blank'>yes</a>
  -  *This street is not a cyclestreet* is shown if with cyclestreet= & proposed:cyclestreet= & bicycle_road= & proposed:bicycle_road= & overtaking:motor_vehicle=
 
-
-
-
-
 ### supplementary_sign
 
 The question is `What sign does this bicycle road have?`
-
-
 
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/cyclestreets/Zeichen_244_1020-30.svg' style='width: 3rem; height: 3rem'> *Residents allowed* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DDE:244.1,1020-30' target='_blank'>DE:244.1,1020-30</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/cyclestreets/Zeichen_244_KFZ_frei.svg' style='width: 3rem; height: 3rem'> *Motor vehicles allowed* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DDE:244.1,1022-12,1024-10' target='_blank'>DE:244.1,1022-12,1024-10</a>
@@ -141,9 +118,7 @@ The question is `What sign does this bicycle road have?`
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/cyclestreets/Zeichen_244_1024-10.svg' style='width: 3rem; height: 3rem'> *Cars allowed* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DDE:244.1,1024-10' target='_blank'>DE:244.1,1024-10</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/cyclestreets/Zeichen_244.svg' style='width: 3rem; height: 3rem'> *There are no supplementary signs at this bicycle road.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DDE:244.1' target='_blank'>DE:244.1</a>
 
-
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:_country' target='_blank'>_country</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_country%3Dde' target='_blank'>de</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_road' target='_blank'>bicycle_road</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_road%3Dyes' target='_blank'>yes</a>
-
 
 ### future_cyclestreet
 
@@ -152,54 +127,33 @@ The question is `When will this street become a cyclestreet?`
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:proposed:cyclestreet' target='_blank'>proposed:cyclestreet</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:proposed:cyclestreet%3Dyes' target='_blank'>yes</a>
 
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
-
-
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### split_button
 
 _This tagrendering has no question and is thus read-only_
 *{split_button()}*
-
-
-
 
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
 
-
 This tagrendering has labels 
 `added_by_default`
 # toekomstige_fietsstraat
 
-
-
-
 This street will become a cyclestreet soon
 
-
-
-
-
-
  - This layer is shown at zoomlevel **9** and higher
-
-
 
 No themes use this layer
 
@@ -221,14 +175,9 @@ Elements must match **any** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/traffic_sign#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/traffic_sign/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [traffic_sign](https://wiki.openstreetmap.org/wiki/Key:traffic_sign) | Multiple choice | [DE:244.1,1020-30](https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DDE:244.1,1020-30) [DE:244.1,1022-12,1024-10](https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DDE:244.1,1022-12,1024-10) [DE:244.1,1022-12](https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DDE:244.1,1022-12) [DE:244.1,1024-10](https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DDE:244.1,1024-10) [DE:244.1](https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DDE:244.1) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/cyclestreet:start_date#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/cyclestreet%3Astart_date/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [cyclestreet:start_date](https://wiki.openstreetmap.org/wiki/Key:cyclestreet:start_date) | [date](../SpecialInputElements.md#date) |  |
 
-
-
-
 ### is_cyclestreet
 
 The question is `Is the street <b>{name}</b> a cyclestreet?`
-
-
 
  -  *This street is a cyclestreet (and has a speed limit of 30 km/h)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:cyclestreet' target='_blank'>cyclestreet</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cyclestreet%3Dyes' target='_blank'>yes</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:maxspeed' target='_blank'>maxspeed</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:maxspeed%3D30' target='_blank'>30</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:overtaking:motor_vehicle' target='_blank'>overtaking:motor_vehicle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:overtaking:motor_vehicle%3Dno' target='_blank'>no</a> & proposed:cyclestreet=
  -  *This street is a bicycle road* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_road' target='_blank'>bicycle_road</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_road%3Dyes' target='_blank'>yes</a>. _This option cannot be chosen as answer_
@@ -238,15 +187,9 @@ The question is `Is the street <b>{name}</b> a cyclestreet?`
  -  *This street will become a bicycle road soon* is shown if with bicycle_road= & <a href='https://wiki.openstreetmap.org/wiki/Key:proposed:bicycle_road' target='_blank'>proposed:bicycle_road</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:proposed:bicycle_road%3Dyes' target='_blank'>yes</a>
  -  *This street is not a cyclestreet* is shown if with cyclestreet= & proposed:cyclestreet= & bicycle_road= & proposed:bicycle_road= & overtaking:motor_vehicle=
 
-
-
-
-
 ### supplementary_sign
 
 The question is `What sign does this bicycle road have?`
-
-
 
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/cyclestreets/Zeichen_244_1020-30.svg' style='width: 3rem; height: 3rem'> *Residents allowed* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DDE:244.1,1020-30' target='_blank'>DE:244.1,1020-30</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/cyclestreets/Zeichen_244_KFZ_frei.svg' style='width: 3rem; height: 3rem'> *Motor vehicles allowed* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DDE:244.1,1022-12,1024-10' target='_blank'>DE:244.1,1022-12,1024-10</a>
@@ -254,9 +197,7 @@ The question is `What sign does this bicycle road have?`
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/cyclestreets/Zeichen_244_1024-10.svg' style='width: 3rem; height: 3rem'> *Cars allowed* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DDE:244.1,1024-10' target='_blank'>DE:244.1,1024-10</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/cyclestreets/Zeichen_244.svg' style='width: 3rem; height: 3rem'> *There are no supplementary signs at this bicycle road.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DDE:244.1' target='_blank'>DE:244.1</a>
 
-
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:_country' target='_blank'>_country</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_country%3Dde' target='_blank'>de</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_road' target='_blank'>bicycle_road</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_road%3Dyes' target='_blank'>yes</a>
-
 
 ### future_cyclestreet
 
@@ -265,54 +206,33 @@ The question is `When will this street become a cyclestreet?`
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:proposed:cyclestreet' target='_blank'>proposed:cyclestreet</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:proposed:cyclestreet%3Dyes' target='_blank'>yes</a>
 
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
-
-
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### split_button
 
 _This tagrendering has no question and is thus read-only_
 *{split_button()}*
-
-
-
 
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
 
-
 This tagrendering has labels 
 `added_by_default`
 # not_cyclestreets
 
-
-
-
 Layer to mark any street as cyclestreet
 
-
-
-
-
-
  - This layer is shown at zoomlevel **18** and higher
-
-
 
 No themes use this layer
 
@@ -335,14 +255,9 @@ Elements must match **any** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/traffic_sign#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/traffic_sign/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [traffic_sign](https://wiki.openstreetmap.org/wiki/Key:traffic_sign) | Multiple choice | [DE:244.1,1020-30](https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DDE:244.1,1020-30) [DE:244.1,1022-12,1024-10](https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DDE:244.1,1022-12,1024-10) [DE:244.1,1022-12](https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DDE:244.1,1022-12) [DE:244.1,1024-10](https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DDE:244.1,1024-10) [DE:244.1](https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DDE:244.1) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/cyclestreet:start_date#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/cyclestreet%3Astart_date/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [cyclestreet:start_date](https://wiki.openstreetmap.org/wiki/Key:cyclestreet:start_date) | [date](../SpecialInputElements.md#date) |  |
 
-
-
-
 ### is_cyclestreet
 
 The question is `Is the street <b>{name}</b> a cyclestreet?`
-
-
 
  -  *This street is a cyclestreet (and has a speed limit of 30 km/h)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:cyclestreet' target='_blank'>cyclestreet</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cyclestreet%3Dyes' target='_blank'>yes</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:maxspeed' target='_blank'>maxspeed</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:maxspeed%3D30' target='_blank'>30</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:overtaking:motor_vehicle' target='_blank'>overtaking:motor_vehicle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:overtaking:motor_vehicle%3Dno' target='_blank'>no</a> & proposed:cyclestreet=
  -  *This street is a bicycle road* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_road' target='_blank'>bicycle_road</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_road%3Dyes' target='_blank'>yes</a>. _This option cannot be chosen as answer_
@@ -352,15 +267,9 @@ The question is `Is the street <b>{name}</b> a cyclestreet?`
  -  *This street will become a bicycle road soon* is shown if with bicycle_road= & <a href='https://wiki.openstreetmap.org/wiki/Key:proposed:bicycle_road' target='_blank'>proposed:bicycle_road</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:proposed:bicycle_road%3Dyes' target='_blank'>yes</a>
  -  *This street is not a cyclestreet* is shown if with cyclestreet= & proposed:cyclestreet= & bicycle_road= & proposed:bicycle_road= & overtaking:motor_vehicle=
 
-
-
-
-
 ### supplementary_sign
 
 The question is `What sign does this bicycle road have?`
-
-
 
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/cyclestreets/Zeichen_244_1020-30.svg' style='width: 3rem; height: 3rem'> *Residents allowed* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DDE:244.1,1020-30' target='_blank'>DE:244.1,1020-30</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/cyclestreets/Zeichen_244_KFZ_frei.svg' style='width: 3rem; height: 3rem'> *Motor vehicles allowed* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DDE:244.1,1022-12,1024-10' target='_blank'>DE:244.1,1022-12,1024-10</a>
@@ -368,9 +277,7 @@ The question is `What sign does this bicycle road have?`
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/cyclestreets/Zeichen_244_1024-10.svg' style='width: 3rem; height: 3rem'> *Cars allowed* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DDE:244.1,1024-10' target='_blank'>DE:244.1,1024-10</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/cyclestreets/Zeichen_244.svg' style='width: 3rem; height: 3rem'> *There are no supplementary signs at this bicycle road.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DDE:244.1' target='_blank'>DE:244.1</a>
 
-
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:_country' target='_blank'>_country</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_country%3Dde' target='_blank'>de</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_road' target='_blank'>bicycle_road</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_road%3Dyes' target='_blank'>yes</a>
-
 
 ### future_cyclestreet
 
@@ -379,36 +286,25 @@ The question is `When will this street become a cyclestreet?`
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:proposed:cyclestreet' target='_blank'>proposed:cyclestreet</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:proposed:cyclestreet%3Dyes' target='_blank'>yes</a>
 
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
-
-
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### split_button
 
 _This tagrendering has no question and is thus read-only_
 *{split_button()}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

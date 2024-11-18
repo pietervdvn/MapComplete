@@ -2,38 +2,33 @@
 
 # extinguisher
 
-
-
-
 Map layer to show fire extinguishers.
 
-
-
-
-
-
  - This layer is shown at zoomlevel **14** and higher
-
-
 
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [extinguisher-location](#extinguisher-location)
   - [images](#images)
   - [leftover-questions](#leftover-questions)
+  - [move-button](#move-button)
   - [lod](#lod)
 
 ## Themes using this layer
 
-
-
+ - [disaster_response](https://mapcomplete.org/disaster_response)
  - [hailhydrant](https://mapcomplete.org/hailhydrant)
  - [personal](https://mapcomplete.org/personal)
 
+## Presets
 
+The following options to create new points are included:
+
+ - **a fire extinguisher** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:emergency' target='_blank'>emergency</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:emergency%3Dfire_extinguisher' target='_blank'>fire_extinguisher</a>
 
 ## Basic tags for this layer
 
@@ -49,43 +44,33 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 -----|-----|----- |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/location#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/location/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [location](https://wiki.openstreetmap.org/wiki/Key:location) | [string](../SpecialInputElements.md#string) | [indoor](https://wiki.openstreetmap.org/wiki/Tag:location%3Dindoor) [outdoor](https://wiki.openstreetmap.org/wiki/Tag:location%3Doutdoor) |
 
-
-
-
 ### extinguisher-location
 
 The question is `Where is it positioned?`
 *Location: {location}* is shown if `location` is set
 
-
  -  *Found indoors.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dindoor' target='_blank'>indoor</a>
  -  *Found outdoors.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Doutdoor' target='_blank'>outdoor</a>
-
-
-
-
 
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
 
-
-
-
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
+### move-button
 
-
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
 
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

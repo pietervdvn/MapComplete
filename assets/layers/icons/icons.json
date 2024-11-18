@@ -4,7 +4,8 @@
     "en": "A layer acting as library for icon-tagrenderings, especially to show as badge next to a POI",
     "de": "Eine Ebene, die als Bibliothek für Symbol-Tag-Renderings dient, insbesondere um als Abzeichen neben einem POI angezeigt zu werden",
     "ca": "Una capa que actua com a biblioteca per a les icones d'etiquetes, especialment per mostrar-se com a insígnia al costat d'un PDI",
-    "cs": "Vrstva sloužící jako knihovna pro ikony-značky, zejména pro zobrazení jako odznak vedle bodu zájmu"
+    "cs": "Vrstva sloužící jako knihovna pro ikony-značky, zejména pro zobrazení jako odznak vedle bodu zájmu",
+    "es": "Una capa que actúa como biblioteca para representaciones de etiquetas de iconos, especialmente para mostrar como insignia junto a un PDI"
   },
   "source": "special:library",
   "title": null,
@@ -127,7 +128,9 @@
             "en": "phone",
             "nl": "Telefoneer",
             "de": "Telefon",
-            "pl": "telefon"
+            "pl": "telefon",
+            "cs": "telefon",
+            "es": "teléfono"
           }
         }
       },
@@ -144,7 +147,9 @@
                 "en": "phone",
                 "nl": "Telefoneer",
                 "de": "Telefon",
-                "pl": "telefon"
+                "pl": "telefon",
+                "cs": "telefon",
+                "es": "teléfono"
               }
             }
           }
@@ -329,7 +334,9 @@
             "nl": "Bekijk op openstreetmap.org",
             "de": "Auf openstreetmap.org öffnen",
             "pl": "Otwórz na openstreetmap.org",
-            "da": "Åbn på openstreetmap.org"
+            "da": "Åbn på openstreetmap.org",
+            "cs": "Otevřít na openstreetmap.org",
+            "es": "Abrir en openstreetmap.org"
           }
         }
       },
@@ -352,13 +359,40 @@
                 "nl": "Bekijk op openstreetmap.org",
                 "de": "Auf openstreetmap.org öffnen",
                 "pl": "Otwórz na openstreetmap.org",
-                "da": "Åbn på openstreetmap.org"
+                "da": "Åbn på openstreetmap.org",
+                "cs": "Otevřít na openstreetmap.org",
+                "es": "Abrir en openstreetmap.org"
+              }
+            }
+          }
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "osm_id~*",
+          "then": {
+            "special": {
+              "type": "link",
+              "text": "<img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/>",
+              "href": "https://www.openstreetmap.org/{osm_id}",
+              "arialabel": {
+                "en": "Open on openstreetmap.org",
+                "nl": "Bekijk op openstreetmap.org",
+                "de": "Auf openstreetmap.org öffnen",
+                "pl": "Otwórz na openstreetmap.org",
+                "da": "Åbn på openstreetmap.org",
+                "cs": "Otevřít na openstreetmap.org",
+                "es": "Abrir en openstreetmap.org"
               }
             }
           }
         }
       ],
-      "condition": "id~(node|way|relation)/[0-9]*"
+      "condition": {
+        "or": [
+          "id~(node|way|relation)/[0-9]*",
+          "osm_id~*"
+        ]
+      }
     },
     {
       "id": "rating",
@@ -382,5 +416,6 @@
       ],
       "render": "{direction_indicator()}"
     }
-  ]
+  ],
+  "allowMove": false
 }

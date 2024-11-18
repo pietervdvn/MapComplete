@@ -8,14 +8,11 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [waste_basket](../Layers/waste_basket.md)
  - [recycling](../Layers/recycling.md)
  - [waste_disposal](../Layers/waste_disposal.md)
 
-
 Available languages:
-
 
  - en
  - nl
@@ -31,7 +28,8 @@ Available languages:
  - zh_Hant
  - eu
  - pl
-
+ - hu
+ - uk
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

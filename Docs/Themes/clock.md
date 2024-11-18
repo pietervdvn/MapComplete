@@ -8,13 +8,10 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [clock](../Layers/clock.md)
  - [walls_and_buildings](../Layers/walls_and_buildings.md)
 
-
 Available languages:
-
 
  - en
  - nl
@@ -27,7 +24,9 @@ Available languages:
  - pl
  - da
  - it
-
+ - ru
+ - uk
+ - hu
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

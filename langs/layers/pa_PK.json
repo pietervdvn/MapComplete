@@ -50,10 +50,10 @@
         "tagRenderings": {
             "Bicycle parking type": {
                 "mappings": {
-                    "5": {
+                    "6": {
                         "then": "شیڈ"
                     },
-                    "6": {
+                    "7": {
                         "then": "بولارڈ"
                     }
                 }
@@ -70,6 +70,22 @@
     "cafe_pub": {
         "title": {
             "render": "پب"
+        }
+    },
+    "caravansites": {
+        "description": "کیمب‌سائیٹاں",
+        "name": "کیمب‌سائیٹاں",
+        "presets": {
+            "0": {
+                "title": "اِک کیمپ‌سائیٹ"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "بے نام کیمپ‌سائیٹ"
+                }
+            }
         }
     },
     "climbing_area": {

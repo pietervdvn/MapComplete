@@ -13,6 +13,22 @@ export interface ChangesetTag {
     aggregate?: boolean
 }
 
+export type ChangesetMetadata = {
+    id: number
+    created_at: string
+    open: boolean
+    closed_at?: string
+    uid: number
+    user: string
+    changes_count: number
+    tags: Record<string, string>
+    minlat: number
+    minlon: number
+    maxlat: number
+    maxlon: number
+    comments_count: number
+}
+
 export class ChangesetHandler {
     private readonly allElements: FeaturePropertiesStore
     private osmConnection: OsmConnection
@@ -26,7 +42,7 @@ export class ChangesetHandler {
      * @private
      */
     public readonly _remappings = new Map<string, string>()
-    private readonly _reportError: (e: string | Error) => void
+    private readonly _reportError: (e: string | Error, extramsg: string) => void
 
     constructor(
         dryRun: Store<boolean>,
@@ -36,7 +52,7 @@ export class ChangesetHandler {
             | { addAlias: (id0: string, id1: string) => void }
             | undefined,
         changes: Changes,
-        reportError: (e: string | Error) => void
+        reportError: (e: string | Error, extramessage: string) => void
     ) {
         this.osmConnection = osmConnection
         this._reportError = reportError
@@ -94,6 +110,27 @@ export class ChangesetHandler {
         return hasChange
     }
 
+    private async UploadWithNew(
+        generateChangeXML: (csid: number, remappings: Map<string, string>) => string,
+        openChangeset: UIEventSource<number>,
+        extraMetaTags: ChangesetTag[]
+    ) {
+        const csId = await this.OpenChangeset(extraMetaTags)
+        openChangeset.setData(csId)
+        const changeset = generateChangeXML(csId, this._remappings)
+        console.log(
+            "Opened a new changeset (openChangeset.data is undefined):",
+            changeset,
+            extraMetaTags
+        )
+        const changes = await this.UploadChange(csId, changeset)
+        const hasSpecialMotivationChanges = ChangesetHandler.rewriteMetaTags(extraMetaTags, changes)
+        if (hasSpecialMotivationChanges) {
+            // At this point, 'extraMetaTags' will have changed - we need to set the tags again
+            await this.UpdateTags(csId, extraMetaTags)
+        }
+    }
+
     /**
      * The full logic to upload a change to one or more elements.
      *
@@ -130,82 +167,68 @@ export class ChangesetHandler {
             return
         }
 
-        if (openChangeset.data === undefined) {
-            // We have to open a new changeset
+        console.log("Trying to reuse changeset", openChangeset.data)
+        if (openChangeset.data) {
             try {
-                const csId = await this.OpenChangeset(extraMetaTags)
-                openChangeset.setData(csId)
-                const changeset = generateChangeXML(csId, this._remappings)
-                console.log(
-                    "Opened a new changeset (openChangeset.data is undefined):",
-                    changeset,
-                    extraMetaTags
-                )
-                const changes = await this.UploadChange(csId, changeset)
-                const hasSpecialMotivationChanges = ChangesetHandler.rewriteMetaTags(
-                    extraMetaTags,
-                    changes
-                )
-                if (hasSpecialMotivationChanges) {
-                    // At this point, 'extraMetaTags' will have changed - we need to set the tags again
-                    await this.UpdateTags(csId, extraMetaTags)
-                }
-            } catch (e) {
-                if (this._reportError) {
-                    this._reportError(e)
-                }
-                if ((<XMLHttpRequest>e).status === 400) {
-                    // This request is invalid. We simply drop the changes and hope that someone will analyze what went wrong with it in the upload; we pretend everything went fine
-                    return
-                }
-                console.warn(
-                    "Could not open/upload changeset due to ",
-                    e,
-                    "trying again with a another fresh changeset "
-                )
-                openChangeset.setData(undefined)
-
-                throw e
-            }
-        } else {
-            // There still exists an open changeset (or at least we hope so)
-            // Let's check!
-            const csId = openChangeset.data
-            try {
+                const csId = openChangeset.data
                 const oldChangesetMeta = await this.GetChangesetMeta(csId)
-                if (!oldChangesetMeta.open) {
-                    // Mark the CS as closed...
-                    console.log("Could not fetch the metadata from the already open changeset")
-                    openChangeset.setData(undefined)
-                    // ... and try again. As the cs is closed, no recursive loop can exist
-                    await this.UploadChangeset(generateChangeXML, extraMetaTags, openChangeset)
-                    return
+                console.log("Got metadata:", oldChangesetMeta, "isopen", oldChangesetMeta?.open)
+                if (oldChangesetMeta.open) {
+                    // We can hopefully reuse the changeset
+
+                    try {
+                        const rewritings = await this.UploadChange(
+                            csId,
+                            generateChangeXML(csId, this._remappings)
+                        )
+
+                        const rewrittenTags = this.RewriteTagsOf(
+                            extraMetaTags,
+                            rewritings,
+                            oldChangesetMeta
+                        )
+                        await this.UpdateTags(csId, rewrittenTags)
+                        return // We are done!
+                    } catch (e) {
+                        this._reportError(e, "While reusing a changeset " + openChangeset.data)
+                    }
                 }
-
-                const rewritings = await this.UploadChange(
-                    csId,
-                    generateChangeXML(csId, this._remappings)
-                )
-
-                const rewrittenTags = this.RewriteTagsOf(
-                    extraMetaTags,
-                    rewritings,
-                    oldChangesetMeta
-                )
-                await this.UpdateTags(csId, rewrittenTags)
             } catch (e) {
-                if (this._reportError) {
-                    this._reportError(
-                        "Could not reuse changeset " +
-                            csId +
-                            ", might be closed: " +
-                            (e.stacktrace ?? e.status ?? "" + e)
-                    )
-                }
-                console.warn("Could not upload, changeset is probably closed: ", e)
-                openChangeset.setData(undefined)
-                throw e
+                this._reportError(
+                    e,
+                    "While getting metadata from a changeset " + openChangeset.data
+                )
             }
+        }
+
+        // We have to open a new changeset
+        try {
+            return await this.UploadWithNew(generateChangeXML, openChangeset, extraMetaTags)
+        } catch (e) {
+            const req = <XMLHttpRequest>e
+            if (req.status === 403) {
+                // Someone got the banhammer
+                // This is the message that OSM returned, will be something like "you have an important message, go to osm.org"
+                const msg = req.responseText
+                alert(msg + "\n\nWe'll take you to openstreetmap.org now")
+                window.location.replace(this.osmConnection.Backend())
+                return
+            }
+            if (this._reportError) {
+                this._reportError(e, "While opening a new changeset")
+            }
+            if (req.status === 400) {
+                // This request is invalid. We simply drop the changes and hope that someone will analyze what went wrong with it in the upload; we pretend everything went fine
+                return
+            }
+            console.warn(
+                "Could not open/upload changeset due to ",
+                e,
+                "trying again with a another fresh changeset "
+            )
+            openChangeset.setData(undefined)
+
+            throw e
         }
     }
 
@@ -346,16 +369,10 @@ export class ChangesetHandler {
         console.log("Closed changeset ", changesetId)
     }
 
-    private async GetChangesetMeta(csId: number): Promise<{
-        id: number
-        open: boolean
-        uid: number
-        changes_count: number
-        tags: any
-    }> {
+    private async GetChangesetMeta(csId: number): Promise<ChangesetMetadata> {
         const url = `${this.backend}/api/0.6/changeset/${csId}`
-        const csData = await Utils.downloadJson(url)
-        return csData.elements[0]
+        const csData = await Utils.downloadJson<{ changeset: ChangesetMetadata }>(url)
+        return csData.changeset
     }
 
     /**
@@ -384,7 +401,7 @@ export class ChangesetHandler {
         return [
             ["created_by", `MapComplete ${Constants.vNumber}`],
             ["locale", Locale.language.data],
-            ["host", `${window.location.origin}${window.location.pathname}`],
+            ["host", `${window.location.origin}${window.location.pathname}`], // Note: deferred changes might give a different hostpath then the theme with which the changes were made
             ["source", setSourceAsSurvey ? "survey" : undefined],
             ["imagery", this.changes.state["backgroundLayer"]?.data?.id],
         ].map(([key, value]) => ({

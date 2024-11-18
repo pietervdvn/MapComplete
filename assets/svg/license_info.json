@@ -60,6 +60,16 @@
     "sources": []
   },
   {
+    "path": "airport.svg",
+    "license": "CC0-1.0",
+    "authors": [
+      "Maki"
+    ],
+    "sources": [
+      "https://github.com/mapbox/maki/blob/main/icons/airport.svg"
+    ]
+  },
+  {
     "path": "back.svg",
     "license": "CC0-1.0",
     "authors": [
@@ -878,6 +888,26 @@
     ]
   },
   {
+    "path": "panoramax.svg",
+    "license": "LOGO",
+    "authors": [
+      "Panoramax"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Panoramax.svg"
+    ]
+  },
+  {
+    "path": "panoramax_bw.svg",
+    "license": "LOGO",
+    "authors": [
+      "Panoramax"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Panoramax.svg"
+    ]
+  },
+  {
     "path": "party.svg",
     "license": "CC-BY-4.0",
     "authors": [
@@ -1066,6 +1096,14 @@
     ]
   },
   {
+    "path": "snap.svg",
+    "license": "CC0-1.0",
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "sources": []
+  },
+  {
     "path": "speech_bubble.svg",
     "license": "CC-BY-4.0",
     "authors": [
@@ -1176,6 +1214,16 @@
     ]
   },
   {
+    "path": "train.svg",
+    "license": "CC0-1.0",
+    "authors": [
+      "Maki"
+    ],
+    "sources": [
+      "https://labs.mapbox.com/maki-icons/"
+    ]
+  },
+  {
     "path": "translate.svg",
     "license": "CC-BY-SA-3.0",
     "authors": [
@@ -1200,6 +1248,14 @@
     "license": "CC0-1.0",
     "authors": [
       "Robin van der Linde"
+    ],
+    "sources": []
+  },
+  {
+    "path": "unsnap.svg",
+    "license": "CC0-1.0",
+    "authors": [
+      "Pieter Vander Vennet"
     ],
     "sources": []
   },

@@ -10,7 +10,7 @@
     "de": "Hydranten",
     "it": "Mappa degli idranti",
     "nl": "Kaart van brandkranen",
-    "es": "Mapa de bocas de incendios",
+    "es": "Mapa de bocas de incendio",
     "ca": "Mapa d'hidrants",
     "cs": "Mapa hydrantů",
     "pl": "Mapa hydrantów"
@@ -25,7 +25,7 @@
     "de": "Kartenebene zur Anzeige von Hydranten.",
     "it": "Livello della mappa che mostra gli idranti antincendio.",
     "nl": "Kaartlaag met brandkranen.",
-    "es": "Un mapa que muestra bocas de incendios.",
+    "es": "Capa del mapa para mostrar bocas de incendio.",
     "ca": "Una capa que mostra hidrants.",
     "cs": "Mapová vrstva zobrazující požární hydranty.",
     "pl": "Warstwa mapy pokazująca hydranty."
@@ -49,7 +49,7 @@
       "it": "Idrante",
       "nl": "Brandkraan",
       "ca": "Hidrant",
-      "es": "Boca de incendios",
+      "es": "Boca de incendio",
       "pa_PK": "ہائڈرنٹ",
       "cs": "Hydrant",
       "pl": "Hydrant"
@@ -90,7 +90,7 @@
         "de": "einen Hydranten",
         "it": "una idrante antincendio",
         "nl": "een brandkraan",
-        "es": "una boca de incendios",
+        "es": "una boca de incendio",
         "ca": "un hidrant",
         "cs": "požární hydrant",
         "pl": "hydrant"
@@ -102,7 +102,7 @@
         "de": "Ein Hydrant ist ein Anschlusspunkt, an dem die Feuerwehr Wasser zapfen kann. Er kann sich unterirdisch befinden.",
         "it": "Un idrante è un punto di collegamento dove i pompieri possono estrarre acqua. Potrebbe trovarsi sottoterra.",
         "nl": "Een brandkraan is een kraan waar brandweerlieden een brandslang kunnen aansluiten. Soms zit deze ondergronds.",
-        "es": "Una boca de incendios es un punto de conexión en el que los bomberos pueden conseguir agua. Puede situarse bajo tierra.",
+        "es": "Una boca de incendio es un punto de conexión donde los bomberos pueden obtener agua. Puede estar ubicada bajo tierra.",
         "ca": "Un hidrant és un punt de connexió on els bombers poden aconseguir aigua. Pot estar baix terra.",
         "ru": "Гидрант – приспособление, с помощью которого пожарные могут подключаться к водопроводу. Гидранты могут быть под землёй.",
         "cs": "Hydrant je přípojné místo, odkud mohou hasiči čerpat vodu. Může být umístěn pod zemí."
@@ -121,7 +121,7 @@
         "de": "Welche Farbe hat der Hydrant?",
         "it": "Qual è il colore dell’idrante?",
         "nl": "Welke kleur heeft de brandkraan?",
-        "es": "¿De que color es la boca de incendios?",
+        "es": "¿De qué color es la boca de incendio?",
         "ca": "De quin color es l'hidrant?",
         "cs": "Jakou barvu má hydrant?",
         "pl": "Jakiego koloru jest ten hydrant?"
@@ -135,7 +135,7 @@
         "de": "Der Hydrant hat die Farbe {colour}",
         "it": "Il colore dell’idrante è {colour}",
         "nl": "De brandkraan is {colour}",
-        "es": "La boca de incendios es de color {colour}",
+        "es": "El color de la boca de incendio es {colour}",
         "ca": "L'hidrant és de color {colour}",
         "cs": "Barva hydrantu je {colour}",
         "pl": "Kolor tego hydrantu to {colour}"
@@ -158,7 +158,7 @@
             "de": "Die Farbe des Hydranten ist gelb.",
             "it": "Il colore dell’idrante è giallo.",
             "nl": "De brandkraan is geel.",
-            "es": "La boca de incendios es amarilla.",
+            "es": "El color de la boca de incendio es amarillo.",
             "ca": "L'hidrant és de color groc.",
             "cs": "Barva hydrantu je žlutá.",
             "pl": "Ten hydrant ma żółty kolor."
@@ -179,7 +179,7 @@
             "de": "Die Farbe des Hydranten ist rot.",
             "nl": "De brandkraan is rood.",
             "ca": "L'hidrant és de color roig.",
-            "es": "La boca de incendios es roja.",
+            "es": "El color de la boca de incendio es rojo.",
             "cs": "Barva hydrantu je červená.",
             "pl": "Ten hydrant ma czerwony kolor."
           }
@@ -196,7 +196,7 @@
         "fr": "De quel type de borne s’agit-il ?",
         "de": "Welche Bauform hat der Hydrant?",
         "nl": "Wat voor soort brandkraan is dit?",
-        "es": "¿De qué tipo es esta boca de incendios?",
+        "es": "¿Qué tipo de boca de incendio es?",
         "ca": "Quin tipus d'hidrant és?",
         "cs": "O jaký typ hydrantu se jedná?",
         "pl": "Jakiego rodzaju jest to hydrant?"
@@ -212,7 +212,7 @@
         "fr": " Type de borne : {fire_hydrant:type}",
         "de": " Hydranten-Typ: {fire_hydrant:type}",
         "nl": " Het type brandkraan is {fire_hydrant:type}",
-        "es": " Tipo de boca de incendios: {fire_hydrant:type}",
+        "es": " Tipo de boca de incendio: {fire_hydrant:type}",
         "ca": " Tipus d'hidrants: {fire_hydrant:type}",
         "cs": " Typ hydrantu: {fire_hydrant:type}"
       },
@@ -230,7 +230,7 @@
             "de": "Überflurhydrant.",
             "it": "Soprasuolo.",
             "nl": "Pillaar type.",
-            "es": "De pilar.",
+            "es": "Tipo pilar.",
             "ca": "De pilar.",
             "ru": "Наземный.",
             "cs": "Typ sloupek."
@@ -253,7 +253,7 @@
             "de": "Druckloses Rohr.",
             "it": "Tubo.",
             "nl": "Buis type.",
-            "es": "De tubería.",
+            "es": "Tipo tubería.",
             "ca": "De tuberia.",
             "ru": "Труба.",
             "cs": "Typ potrubí."
@@ -278,7 +278,7 @@
             "de": "Wandhydrant.",
             "it": "A muro.",
             "nl": "Muur type.",
-            "es": "De pared.",
+            "es": "Tipo pared.",
             "ca": "De paret.",
             "cs": "Nástěnný typ."
           },
@@ -301,7 +301,7 @@
             "it": "Sottosuolo.",
             "nl": "Ondergronds type.",
             "ca": "Subterrani.",
-            "es": "Bajo tierra.",
+            "es": "Tipo subterráneo.",
             "ru": "Подземный.",
             "cs": "Podzemní typ."
           },
@@ -321,7 +321,7 @@
         "de": "Ist dieser Hydrant noch in Betrieb?",
         "it": "Questo idrante è ancora in funzione?",
         "nl": "Werkt deze brandkraan nog?",
-        "es": "¿Todavía funciona esta boca de incendios?",
+        "es": "¿Esta boca de incendio sigue funcionando?",
         "ca": "Encara funciona aquest hidrant?",
         "ru": "Этот гидрант в рабочем состоянии?",
         "cs": "Je tento hydrant stále funkční?",
@@ -342,7 +342,7 @@
             "de": "Der Hydrant ist (ganz oder teilweise) in Betrieb",
             "it": "L’idrante è (parzialmente o completamente) funzionante",
             "nl": "De brandkraan werkt (minstens gedeeltelijk)",
-            "es": "La boca de incendios funciona (total o parcialmente)",
+            "es": "La boca de incendio está (total o parcialmente) funcionando",
             "ca": "L'hidrant funciona (total o parcialment)",
             "cs": "Hydrant je (plně nebo částečně) funkční",
             "pl": "Ten hydrant (w pełni lub częściowo) działa"
@@ -362,7 +362,7 @@
             "de": "Der Hydrant ist nicht mehr in Betrieb",
             "it": "L’idrante è fuori servizio",
             "nl": "De brandkraan is niet beschikbaar",
-            "es": "La boca de incendios no está disponible",
+            "es": "La boca de incendio no está disponible",
             "ca": "L'hidrant no està disponible",
             "ru": "К гидранту нет доступа",
             "cs": "Hydrant je nedostupný",
@@ -384,7 +384,7 @@
             "de": "Der Hydrant wurde entfernt",
             "it": "L’idrante è stato rimosso",
             "nl": "Deze brandkraan is verwijderd",
-            "es": "La boca de incendios se ha retirado",
+            "es": "La boca de incendio ha sido retirada",
             "ca": "L'hidrant s'ha retirat",
             "cs": "Hydrant byl odstraněn",
             "pl": "Ten hydrant został usunięty"
@@ -401,7 +401,8 @@
         "ca": "Quin és el diàmetre d'aquest hidrant?",
         "ru": "Какой диаметр трубы у этого гидранта?",
         "fr": "Quel est le diamètre du tuyau de cette bouche d'incendie ?",
-        "cs": "Jaký je průměr trubky tohoto hydrantu?"
+        "cs": "Jaký je průměr trubky tohoto hydrantu?",
+        "es": "¿Cuál es el diámetro de la tubería de esta boca de incendio?"
       },
       "freeform": {
         "key": "fire_hydrant:diameter",
@@ -412,7 +413,8 @@
           "ru": "Диаметр трубы",
           "ca": "Diàmetre de la canonada",
           "cs": "Průměr trubky",
-          "pl": "Średnica rury"
+          "pl": "Średnica rury",
+          "es": "Diámetro de la tubería"
         },
         "type": "int"
       },
@@ -422,7 +424,8 @@
         "nl": "Pijpdiameter:{canonical(fire_hydrant:diameter)}",
         "ru": "Диаметр трубы: {canonical(fire_hydrant:diameter)}",
         "ca": "Diàmetre de la canonada: {canonical(fire_hydrant:diameter)}",
-        "cs": "Průměr trubky: {canonical(fire_hydrant:diameter)}"
+        "cs": "Průměr trubky: {canonical(fire_hydrant:diameter)}",
+        "es": "Diámetro de la tubería: {canonical(fire_hydrant:diameter)}"
       }
     },
     {
@@ -433,7 +436,8 @@
         "nl": "Hoe veel koppelingen bezit deze brandkraan?",
         "ca": "Quants acoblaments té aquest hidrant?",
         "fr": "Combien de raccords a cette bouche d'incendie ?",
-        "cs": "Kolik spojek má tento požární hydrant?"
+        "cs": "Kolik spojek má tento požární hydrant?",
+        "es": "¿Cuántos acoplamientos tiene esta boca de incendio?"
       },
       "freeform": {
         "key": "couplings",
@@ -442,7 +446,8 @@
           "de": "Anzahl der Kupplungen",
           "nl": "Aantal koppelingen",
           "ca": "Nombre d'acoblaments",
-          "cs": "Počet spojek"
+          "cs": "Počet spojek",
+          "es": "Número de acoplamientos"
         },
         "type": "int"
       },
@@ -451,7 +456,8 @@
         "de": "Anzahl der Kupplungen: {couplings}",
         "nl": "Aantal koppelingen: {couplings}",
         "ca": "Nombre d'acoblaments: {couplings}",
-        "cs": "Počet spojek: {couplings}"
+        "cs": "Počet spojek: {couplings}",
+        "es": "Número de acoplamientos: {couplings}"
       }
     },
     {
@@ -462,7 +468,8 @@
         "nl": "Welke soort koppeling heeft deze hydrant?",
         "ca": "Quin tipus d‘acoblament té aquest hidrant?",
         "ru": "Какого вида соединительные головки у этого гидранта?",
-        "cs": "Jaký typ spojky má tento hydrant?"
+        "cs": "Jaký typ spojky má tento hydrant?",
+        "es": "¿Qué tipo de acoplamientos tiene esta boca de incendio?"
       },
       "freeform": {
         "key": "couplings:type",
@@ -472,7 +479,8 @@
           "nl": "Soort koppeling",
           "ru": "Тип соединительной головки",
           "ca": "Tipus d'acoblament",
-          "cs": "Typ spoje"
+          "cs": "Typ spoje",
+          "es": "Tipo de acoplamiento"
         },
         "type": "string"
       },
@@ -485,7 +493,8 @@
             "nl": "Storz-koppeling",
             "ca": "Acoblament Storz",
             "ru": "Головка типа Storz",
-            "cs": "Spojka Storz"
+            "cs": "Spojka Storz",
+            "es": "Acoplamiento Storz"
           },
           "icon": {
             "path": "./assets/layers/hydrant/storz.jpg",
@@ -500,7 +509,8 @@
             "nl": "UNI-koppeling",
             "ca": "Acoblament UNI",
             "ru": "Головка типа UNI",
-            "cs": "Spojka UNI"
+            "cs": "Spojka UNI",
+            "es": "Acoplamiento UNI"
           }
         },
         {
@@ -511,7 +521,8 @@
             "nl": "Barcelona-koppeling",
             "ca": "Acoblament Barcelona",
             "ru": "Головка типа Barcelona",
-            "cs": "Spojka Barcelona"
+            "cs": "Spojka Barcelona",
+            "es": "Acoplamiento Barcelona"
           },
           "icon": {
             "path": "./assets/layers/hydrant/barcelona.jpg",
@@ -526,7 +537,8 @@
         "nl": "Koppelingen:{couplings:type}",
         "ru": "Соединительные головки: {couplings:type}",
         "ca": "Acoblaments: {couplings:type}",
-        "cs": "Spojky: {couplings:type}"
+        "cs": "Spojky: {couplings:type}",
+        "es": "Acoplamientos: {couplings:type}"
       }
     },
     {
@@ -537,7 +549,8 @@
         "nl": "Welke diameter hebben de koppelingen van deze hydrant?",
         "ca": "Quin és el diàmetre dels acoblaments d'aquest hidrant?",
         "ru": "Какой диаметр соединительных головок у этого гидранта?",
-        "cs": "Jaký průměr mají spojky tohoto hydrantu?"
+        "cs": "Jaký průměr mají spojky tohoto hydrantu?",
+        "es": "¿Qué diámetro tienen los acoplamientos de esta boca de incendio?"
       },
       "freeform": {
         "key": "couplings:diameters",
@@ -547,7 +560,8 @@
           "nl": "Koppeldiameters",
           "ru": "Диаметры соединительных головок",
           "ca": "Diàmetres d'acoblament",
-          "cs": "Průměr spojek"
+          "cs": "Průměr spojek",
+          "es": "Diámetro de los acoplamientos"
         }
       },
       "render": {
@@ -556,7 +570,8 @@
         "nl": "Koppelingdiameters:{couplings:diameters}",
         "ru": "Диаметр соединительных головок: {couplings:diameters}",
         "ca": "Diàmetres d'acoblament: {couplings:diameters}",
-        "cs": "Průměry spojek: {couplings:diameters}"
+        "cs": "Průměry spojek: {couplings:diameters}",
+        "es": "Diámetro de los acoplamientos: {couplings:diameters}"
       }
     },
     "images"

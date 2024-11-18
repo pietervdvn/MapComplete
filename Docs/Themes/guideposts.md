@@ -8,12 +8,9 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [guidepost](../Layers/guidepost.md)
 
-
 Available languages:
-
 
  - en
  - cs
@@ -21,7 +18,8 @@ Available languages:
  - es
  - pl
  - ca
-
+ - ru
+ - uk
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

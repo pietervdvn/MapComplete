@@ -7,8 +7,6 @@ import {
 import { Changes } from "../../../../src/Logic/Osm/Changes"
 import { describe, expect, it } from "vitest"
 import OsmObjectDownloader from "../../../../src/Logic/Osm/OsmObjectDownloader"
-import { ImmutableStore } from "../../../../src/Logic/UIEventSource"
-import { OsmConnection } from "../../../../src/Logic/Osm/OsmConnection"
 
 describe("RelationSplitHandler", () => {
     Utils.injectJsonDownloadForTests("https://api.openstreetmap.org/api/0.6/node/1124134958/ways", {
@@ -653,10 +651,7 @@ describe("RelationSplitHandler", () => {
             downloader
         )
         const changeDescription = await splitter.CreateChangeDescriptions(
-            new Changes({
-                dryRun: new ImmutableStore(false),
-                osmConnection: new OsmConnection(),
-            })
+            Changes.createTestObject()
         )
         const allIds = changeDescription[0].changes["members"].map((m) => m.ref).join(",")
         const expected = "687866206,295132739,-1,690497698"
@@ -710,10 +705,7 @@ describe("RelationSplitHandler", () => {
             downloader
         )
         const changeDescription = await splitter.CreateChangeDescriptions(
-            new Changes({
-                dryRun: new ImmutableStore(false),
-                osmConnection: new OsmConnection(),
-            })
+            Changes.createTestObject()
         )
         const allIds = changeDescription[0].changes["members"]
             .map((m) => m.type + "/" + m.ref + "-->" + m.role)
@@ -734,10 +726,7 @@ describe("RelationSplitHandler", () => {
             downloader
         )
         const changesReverse = await splitterReverse.CreateChangeDescriptions(
-            new Changes({
-                dryRun: new ImmutableStore(false),
-                osmConnection: new OsmConnection(),
-            })
+            Changes.createTestObject()
         )
         expect(changesReverse.length).toEqual(0)
     })

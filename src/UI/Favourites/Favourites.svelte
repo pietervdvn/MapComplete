@@ -46,23 +46,28 @@
     </LoginButton>
   </div>
 
-  <div class="flex flex-col" on:keypress={(e) => console.log("Got keypress", e)}>
-    <Tr t={Translations.t.favouritePoi.intro.Subs({ length: $favourites?.length ?? 0 })} />
-    <Tr t={Translations.t.favouritePoi.introPrivacy} />
-
+  <div class="flex flex-col">
+    {#if $favourites.length === 0}
+      <Tr t={Translations.t.favouritePoi.noneYet} />
+    {:else}
+      <Tr t={Translations.t.favouritePoi.intro.Subs({ length: $favourites?.length ?? 0 })} />
+      <Tr t={Translations.t.favouritePoi.introPrivacy} />
+    {/if}
     {#each $favourites as feature (feature.properties.id)}
       <FavouriteSummary {feature} {state} />
     {/each}
 
-    <div class="mt-8 flex">
-      <button on:click={() => downloadGeojson()}>
-        <ArrowDownTray class="h-6 w-6" />
-        <Tr t={Translations.t.favouritePoi.downloadGeojson} />
-      </button>
-      <button on:click={() => downloadGPX()}>
-        <ArrowDownTray class="h-6 w-6" />
-        <Tr t={Translations.t.favouritePoi.downloadGpx} />
-      </button>
-    </div>
+    {#if $favourites.length > 0}
+      <div class="mt-8 sm:flex">
+        <button on:click={() => downloadGeojson()}>
+          <ArrowDownTray class="h-6 w-6" />
+          <Tr t={Translations.t.favouritePoi.downloadGeojson} />
+        </button>
+        <button on:click={() => downloadGPX()}>
+          <ArrowDownTray class="h-6 w-6" />
+          <Tr t={Translations.t.favouritePoi.downloadGpx} />
+        </button>
+      </div>
+    {/if}
   </div>
 </LoginToggle>

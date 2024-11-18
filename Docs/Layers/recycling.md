@@ -2,25 +2,16 @@
 
 # recycling
 
-
-
-
 A layer with recycling containers and centres
 
-
-
-
-
-
  - This layer is shown at zoomlevel **10** and higher
-
-
 
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [recycling-type](#recycling-type)
   - [recycling-centre-name](#recycling-centre-name)
@@ -38,17 +29,20 @@ A layer with recycling containers and centres
   - [move-button](#move-button)
   - [delete-button](#delete-button)
   - [lod](#lod)
-4. [Filters](#filters)
+5. [Filters](#filters)
 
 ## Themes using this layer
-
-
 
  - [personal](https://mapcomplete.org/personal)
  - [waste](https://mapcomplete.org/waste)
  - [waste_assen](https://mapcomplete.org/waste_assen)
 
+## Presets
 
+The following options to create new points are included:
+
+ - **a recycling container** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Drecycling' target='_blank'>recycling</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:recycling_type' target='_blank'>recycling_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling_type%3Dcontainer' target='_blank'>container</a>
+ - **a recycling centre** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Drecycling' target='_blank'>recycling</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:recycling_type' target='_blank'>recycling_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling_type%3Dcentre' target='_blank'>centre</a>
 
 ## Basic tags for this layer
 
@@ -72,22 +66,14 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/access#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/access/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [access](https://wiki.openstreetmap.org/wiki/Key:access) | [string](../SpecialInputElements.md#string) | [yes](https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes) [residents](https://wiki.openstreetmap.org/wiki/Tag:access%3Dresidents) [private](https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/survey:date#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/survey%3Adate/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [survey:date](https://wiki.openstreetmap.org/wiki/Key:survey:date) | [date](../SpecialInputElements.md#date) | [](https://wiki.openstreetmap.org/wiki/Tag:survey:date%3D) |
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
 
-
-
-
 ### recycling-type
 
 The question is `What type of recycling is this?`
-
-
 
  -  *This is a recycling container* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:recycling_type' target='_blank'>recycling_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling_type%3Dcontainer' target='_blank'>container</a>
  -  *This is a recycling centre* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:recycling_type' target='_blank'>recycling_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling_type%3Dcentre' target='_blank'>centre</a>
@@ -95,41 +81,28 @@ The question is `What type of recycling is this?`
  -  *This is a pickup point. The waste material is placed here without placing it in a dedicated container.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:recycling_type' target='_blank'>recycling_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling_type%3Dpickup_point' target='_blank'>pickup_point</a>
  -  *This is a dump where the waste material is stacked.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:recycling_type' target='_blank'>recycling_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling_type%3Ddump' target='_blank'>dump</a>
 
-
-
-
-
 ### recycling-centre-name
 
 The question is `What is the name of this recycling centre?`
 *This recycling centre is named <b>{name}</b>* is shown if `name` is set
 
-
  -  *This recycling centre doesn't have a specific name* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:noname' target='_blank'>noname</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:noname%3Dyes' target='_blank'>yes</a>
 
-
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:recycling_type' target='_blank'>recycling_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling_type%3Dcentre' target='_blank'>centre</a>
-
 
 ### container-location
 
 The question is `Where is this container located?`
 
-
-
  -  *This is an underground container* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>
  -  *This container is located indoors* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dindoor' target='_blank'>indoor</a>
  -  *This container is located outdoors* is shown if with location=
 
-
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:recycling_type' target='_blank'>recycling_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling_type%3Dcontainer' target='_blank'>container</a>
-
 
 ### recycling-accepts
 
 The question is `What can be recycled here?`
-
-
 
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/recycling/batteries.svg' style='width: 3rem; height: 3rem'> *Batteries can be recycled here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:batteries' target='_blank'>recycling:batteries</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:batteries%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add recycling:batteries=
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/recycling/beverage_cartons.svg' style='width: 3rem; height: 3rem'> *Beverage cartons can be recycled here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:beverage_cartons' target='_blank'>recycling:beverage_cartons</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:beverage_cartons%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add recycling:beverage_cartons=
@@ -158,26 +131,17 @@ The question is `What can be recycled here?`
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/waste_disposal/waste_disposal.svg' style='width: 3rem; height: 3rem'> *Residual waste can be recycled here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:waste' target='_blank'>recycling:waste</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:waste%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add recycling:waste=
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/recycling/bicycles.svg' style='width: 3rem; height: 3rem'> *Bicycles can be recycled here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:recycling:bicycles' target='_blank'>recycling:bicycles</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:bicycles%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add recycling:bicycles=
 
-
-
-
-
 ### operator
 
 The question is `What company operates this recycling facility?`
 *This recycling facility is operated by {operator}* is shown if `operator` is set
-
-
-
 
 ### website
 
 The question is `What is the website of {title()}?`
 *<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>* is shown if `website` is set
 
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/icons/website.svg' style='width: 3rem; height: 3rem'> *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>* is shown if with contact:website~.+. _This option cannot be chosen as answer_
-
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:recycling_type' target='_blank'>recycling_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling_type%3Dcentre' target='_blank'>centre</a>
 This tagrendering has labels 
@@ -188,10 +152,8 @@ This tagrendering has labels
 The question is `What is the email address of {title()}?`
 *<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>* is shown if `email` is set
 
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/envelope.svg' style='width: 3rem; height: 3rem'> *<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>* is shown if with contact:email~.+. _This option cannot be chosen as answer_
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/envelope.svg' style='width: 3rem; height: 3rem'> *<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>* is shown if with operator:email~.+. _This option cannot be chosen as answer_
-
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:recycling_type' target='_blank'>recycling_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling_type%3Dcentre' target='_blank'>centre</a>
 This tagrendering has labels 
@@ -200,11 +162,9 @@ This tagrendering has labels
 ### phone
 
 The question is `What is the phone number of {title()}?`
-*<a href='tel:{phone}'>{phone}</a>* is shown if `phone` is set
+*{link(&LBRACEphone&RBRACE,tel:&LBRACEphone&RBRACE,,,,)}* is shown if `phone` is set
 
-
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/phone.svg' style='width: 3rem; height: 3rem'> *<a href='tel:{contact:phone}'>{contact:phone}</a>* is shown if with contact:phone~.+. _This option cannot be chosen as answer_
-
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/phone.svg' style='width: 3rem; height: 3rem'> *{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}* is shown if with contact:phone~.+. _This option cannot be chosen as answer_
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:recycling_type' target='_blank'>recycling_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling_type%3Dcentre' target='_blank'>centre</a>
 This tagrendering has labels 
@@ -215,89 +175,61 @@ This tagrendering has labels
 The question is `What are the opening hours of this recycling facility?`
 *<h3>Opening hours</h3>{opening_hours_table(opening_hours)}* is shown if `opening_hours` is set
 
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/open24_7.svg' style='width: 3rem; height: 3rem'> *24/7 opened (including holidays)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
  -  *Marked as closed for an unspecified time* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>. _This option cannot be chosen as answer_
-
-
-
-
 
 ### access
 
 The question is `Who can use this recycling facility?`
 *This recycling facility can be used by {access}* is shown if `access` is set
 
-
  -  *Everyone can use this recycling facility* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
  -  *Only residents can use this recycling facility* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dresidents' target='_blank'>residents</a>
  -  *This recycling facility is only for private use* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate' target='_blank'>private</a>
-
-
-
-
 
 ### survey_date
 
 The question is `When was this object last surveyed?`
 *This object was last surveyed on <b>{survey:date}</b>* is shown if `survey:date` is set
 
-
  -  *This object was last surveyed today* is shown if with survey:date=
-
-
-
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### move-button
 
 _This tagrendering has no question and is thus read-only_
 *{move_button()}*
-
-
-
 
 ### delete-button
 
 _This tagrendering has no question and is thus read-only_
 *{delete_button()}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`
 
 ## Filters
 
-
-
 | id | question | osmTags |
 -----|-----|----- |
 | open_now.0 | Open now | _isOpen=yes |
 
-
-
-
-
+| id | question | osmTags |
+-----|-----|----- |
+| centres_only.0 | All recycling types | recycling_type=centre |
 
 | id | question | osmTags |
 -----|-----|----- |
-| recyclingType.0 | *All recycling types* (default) |  |
+| recyclingType.0 | *Only public access* (default) |  |
 | recyclingType.1 | Recycling of batteries | recycling:batteries=yes |
 | recyclingType.2 | Recycling of beverage cartons | recycling:beverage_cartons=yes |
 | recyclingType.3 | Recycling of cans | recycling:cans=yes |
@@ -321,15 +253,9 @@ This tagrendering has labels
 | recyclingType.21 | Recycling of bicycles | recycling:bicycles=yes |
 | recyclingType.22 | Recycling of plastic packaging, metal packaging and drink cartons (PMD) | recycling:pmd=yes |
 
-
-
-
-
-
 | id | question | osmTags |
 -----|-----|----- |
 | public-access.0 | Only public access | access=yes | access= |
-
 
 
 

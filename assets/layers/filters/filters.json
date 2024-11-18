@@ -9,12 +9,13 @@
       "id": "open_now",
       "options": [
         {
+          "emoji": "⏰",
           "question": {
             "en": "Open now",
             "nl": "Nu open",
             "de": "Jetzt geöffnet",
             "ca": "Obert ara",
-            "es": "Abierto",
+            "es": "Abierto ahora",
             "fr": "Ouvert maintenant",
             "hu": "Most nyitva van",
             "da": "Åbent nu",
@@ -32,6 +33,7 @@
       "id": "accepts_cash",
       "options": [
         {
+          "emoji": "🪙",
           "osmTags": "payment:cash=yes",
           "question": {
             "en": "Accepts cash",
@@ -50,12 +52,13 @@
       "id": "accepts_cards",
       "options": [
         {
+          "emoji": "💳",
           "osmTags": "payment:cards=yes",
           "question": {
             "en": "Accepts payment cards",
             "de": "Akzeptiert Kartenzahlung",
             "nl": "Accepteert betaalkaarten",
-            "es": "Acepta el pago por tarjeta",
+            "es": "Acepta tarjetas de pago",
             "fr": "Accepte les cartes de paiement",
             "pl": "Przyjmuje karty płatnicze",
             "ca": "Accepta el pagament amb targeta",
@@ -68,13 +71,15 @@
       "id": "accepts_debit_cards",
       "options": [
         {
+          "emoji": "💳",
           "osmTags": "payment:debit_cards=yes",
           "question": {
             "en": "Accepts debit cards",
             "de": "Akzeptiert Debitkarten",
             "pl": "Przyjmuje karty debetowe",
             "ca": "Accepta targetes de dèbit",
-            "cs": "Přijímá debetní karty"
+            "cs": "Přijímá debetní karty",
+            "es": "Acepta tarjetas de débito"
           }
         }
       ]
@@ -83,13 +88,15 @@
       "id": "accepts_credit_cards",
       "options": [
         {
+          "emoji": "💳",
           "osmTags": "payment:credit_cards=yes",
           "question": {
             "en": "Accepts credit cards",
             "de": "Akzeptiert Kreditkarten",
             "pl": "Przyjmuje karty kredytowe",
             "ca": "Accepta targetes de crèdit",
-            "cs": "Přijímá kreditní karty"
+            "cs": "Přijímá kreditní karty",
+            "es": "Acepta tarjetas de crédito"
           }
         }
       ]
@@ -104,7 +111,8 @@
             "de": "Mit und ohne Bild",
             "pl": "Z oraz bez zdjęć",
             "ca": "Amb i sense imatges",
-            "cs": "S obrázky i bez nich"
+            "cs": "S obrázky i bez nich",
+            "es": "Con y sin imágenes"
           }
         },
         {
@@ -114,7 +122,8 @@
             "nl": "Heeft minstens één afbeelding",
             "pl": "Ma co najmniej jedno zdjęcie",
             "ca": "Té com a mínim una imatge",
-            "cs": "Má alespoň jeden obrázek"
+            "cs": "Má alespoň jeden obrázek",
+            "es": "Tiene al menos una imagen"
           },
           "osmTags": {
             "or": [
@@ -134,7 +143,8 @@
             "nl": "Heeft waarschijnlijk geen afbeelding",
             "pl": "Prawdopodobnie nie ma zdjęcia",
             "ca": "Probablement no té una imatge",
-            "cs": "Pravděpodobně nemá obrázek"
+            "cs": "Pravděpodobně nemá obrázek",
+            "es": "Probablemente no tiene imagen"
           },
           "osmTags": {
             "and": [
@@ -160,7 +170,8 @@
             "nl": "Met voelbare bestrating",
             "pl": "Z wypustkami dla niewidomych",
             "ca": "Amb superfícies podotàctils",
-            "cs": "S hmatovou dlažbou"
+            "cs": "S hmatovou dlažbou",
+            "es": "Con pavimento táctil"
           },
           "osmTags": "tactile_paving=yes"
         }
@@ -178,7 +189,8 @@
             "nl": "Met of zonder voelbare bestrating",
             "pl": "Z lub bez wypustek dla niewidomych",
             "ca": "Amb o sense superfícies podotàctils",
-            "cs": "S nebo bez hmatové dlažby"
+            "cs": "S nebo bez hmatové dlažby",
+            "es": "Con o sin pavimento táctil"
           }
         },
         {
@@ -189,7 +201,8 @@
             "nl": "Met voelbare bestrating",
             "pl": "Z wypustkami dla niewidomych",
             "ca": "Amb paviments superfícies podotàctils",
-            "cs": "S hmatovou dlažbou"
+            "cs": "S hmatovou dlažbou",
+            "es": "Con pavimento táctil"
           },
           "osmTags": "tactile_paving=yes"
         },
@@ -201,7 +214,8 @@
             "nl": "Zonder voelbare bestrating",
             "pl": "Bez wypustek dla niewidomych",
             "ca": "Sense superfície podotàctil",
-            "cs": "Bez hmatové dlažby"
+            "cs": "Bez hmatové dlažby",
+            "es": "Sin pavimento táctil"
           },
           "osmTags": "tactile_paving=no"
         },
@@ -214,7 +228,8 @@
             "nl": "Geen informatie over voelbare bestrating",
             "pl": "Brak informacji o wypustkach dla niewidomych",
             "ca": "No hi ha informació sobre superfícies podotàctils",
-            "cs": "Žádné informace o hmatové dlažbě"
+            "cs": "Žádné informace o hmatové dlažbě",
+            "es": "Sin información sobre pavimento táctil"
           }
         }
       ]
@@ -234,7 +249,8 @@
             "de": "Bio-Produkte im Angebot",
             "nl": "Heeft biologische opties",
             "ca": "Té opcions orgàniques",
-            "cs": "Má bio možnosti"
+            "cs": "Má bio možnosti",
+            "es": "Tiene opciones orgánicas"
           }
         }
       ]
@@ -250,7 +266,8 @@
             "fr": "Utilisation gratuite",
             "da": "Gratis at bruge",
             "ca": "Ús gratuït",
-            "cs": "Použití zdarma"
+            "cs": "Použití zdarma",
+            "es": "De uso gratuito"
           },
           "osmTags": {
             "or": [
@@ -268,29 +285,39 @@
         {
           "question": {
             "en": "No preference towards dogs",
+            "nl": "Geen voorkeur voor honden",
             "de": "Keine Bevorzugung von Hunden",
-            "cs": "Bez preference psů"
+            "cs": "Bez preference psů",
+            "es": "Sin preferencia por los perros"
           }
         },
         {
           "question": {
             "en": "Dogs allowed",
+            "nl": "Honden toegelaten",
             "de": "Hunde erlaubt",
-            "cs": "Psi povoleny"
+            "cs": "Psi povoleny",
+            "es": "Se permiten perros"
           },
+          "emoji": "🐕",
           "osmTags": {
             "or": [
               "dog=unleashed",
               "dog=yes"
             ]
-          }
+          },
+          "icon": "./assets/layers/questions/dogs_allowed.svg"
         },
         {
           "question": {
             "en": "No dogs allowed",
+            "nl": "Geen honden toegelaten",
             "de": "Keine Hunde erlaubt",
-            "cs": "Psi nejsou povoleni"
+            "cs": "Psi nejsou povoleni",
+            "ca": "No s'admeten gossos",
+            "es": "No se permiten perros"
           },
+          "icon": "./assets/layers/questions/no_dogs.svg",
           "osmTags": "dog=no"
         }
       ]
@@ -302,8 +329,10 @@
           "question": {
             "en": "Offers internet",
             "de": "Internetzugang vorhanden",
-            "cs": "Nabízí internet"
+            "cs": "Nabízí internet",
+            "es": "Ofrece internet"
           },
+          "icon": "wifi",
           "osmTags": {
             "or": [
               "internet_access=wlan",
@@ -321,7 +350,8 @@
           "question": {
             "en": "Offers electricity",
             "de": "Stromanschluss vorhanden",
-            "cs": "Nabízí elektřinu"
+            "cs": "Nabízí elektřinu",
+            "es": "Ofrece electricidad"
           },
           "osmTags": "service:electricity=yes"
         }
@@ -334,7 +364,8 @@
           "question": {
             "en": "Has a sugar-free offering",
             "cs": "Má nabídku bez cukru",
-            "de": "Hat zuckerfreie Angebote"
+            "de": "Hat zuckerfreie Angebote",
+            "es": "Tiene una oferta sin azúcar"
           },
           "osmTags": {
             "or": [
@@ -353,8 +384,10 @@
           "question": {
             "en": "Has a gluten free offering",
             "cs": "Má bezlepkovou nabídku",
-            "de": "Hat glutenfreie Angebote"
+            "de": "Hat glutenfreie Angebote",
+            "es": "Tiene una oferta sin gluten"
           },
+          "icon": "./assets/layers/questions/glutenfree.svg",
           "osmTags": {
             "or": [
               "diet:gluten_free=yes",
@@ -372,8 +405,10 @@
           "question": {
             "en": "Has a lactose free offering",
             "cs": "Má nabídku bez laktózy",
-            "de": "Hat laktosefreie Angebote"
+            "de": "Hat laktosefreie Angebote",
+            "es": "Tiene una oferta sin lactosa"
           },
+          "icon": "./assets/layers/questions/lactose_free.svg",
           "osmTags": {
             "or": [
               "diet:lactose_free=yes",
@@ -384,5 +419,6 @@
         }
       ]
     }
-  ]
+  ],
+  "allowMove": false
 }

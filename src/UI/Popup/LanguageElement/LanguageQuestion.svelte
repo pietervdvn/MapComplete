@@ -60,7 +60,7 @@
     } else if (state.changes) {
       await state.changes.applyAction(
         new ChangeTagAction(tags.data.id, new And(selection), tags.data, {
-          theme: state?.layout?.id ?? "unkown",
+          theme: state?.theme?.id ?? "unkown",
           changeType: "answer",
         })
       )

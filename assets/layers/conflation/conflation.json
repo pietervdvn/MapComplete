@@ -133,5 +133,6 @@
       },
       "color": "#00f"
     }
-  ]
+  ],
+  "allowMove": false
 }

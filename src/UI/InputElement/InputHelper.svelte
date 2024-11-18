@@ -7,7 +7,6 @@
   import { UIEventSource } from "../../Logic/UIEventSource"
   import type { ValidatorType } from "./Validators"
   import InputHelpers from "./InputHelpers"
-  import ToSvelte from "../Base/ToSvelte.svelte"
   import type { Feature } from "geojson"
   import ImageHelper from "./Helpers/ImageHelper.svelte"
   import TranslationInput from "./Helpers/TranslationInput.svelte"
@@ -19,15 +18,14 @@
   import OpeningHoursInput from "./Helpers/OpeningHoursInput.svelte"
   import SlopeInput from "./Helpers/SlopeInput.svelte"
   import type { SpecialVisualizationState } from "../SpecialVisualization"
-  import WikidataInput from "./Helpers/WikidataInput.svelte"
   import WikidataInputHelper from "./WikidataInputHelper.svelte"
 
   export let type: ValidatorType
   export let value: UIEventSource<string | object>
 
-  export let feature: Feature
+  export let feature: Feature = undefined
   export let args: (string | number | boolean)[] = undefined
-  export let state: SpecialVisualizationState
+  export let state: SpecialVisualizationState = undefined
 </script>
 
 {#if type === "translation"}
@@ -35,6 +33,7 @@
 {:else if type === "direction"}
   <DirectionInput
     {value}
+    {state}
     mapProperties={InputHelpers.constructMapProperties({ feature, args: args ?? [] })}
   />
 {:else if type === "date"}
@@ -48,9 +47,11 @@
 {:else if type === "simple_tag"}
   <SimpleTagInput {value} {args} on:submit />
 {:else if type === "opening_hours"}
-  <OpeningHoursInput {value} />
+  <OpeningHoursInput {value} {args} />
 {:else if type === "slope"}
   <SlopeInput {value} {feature} {state} />
 {:else if type === "wikidata"}
   <WikidataInputHelper {value} {feature} {state} {args} />
+{:else}
+  <slot name="fallback" />
 {/if}

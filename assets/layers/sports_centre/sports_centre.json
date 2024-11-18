@@ -4,13 +4,15 @@
     "en": "Sports centres",
     "de": "Sportzentren",
     "ca": "Centres esportius",
-    "cs": "Sportovní centra"
+    "cs": "Sportovní centra",
+    "es": "Centros deportivos"
   },
   "description": {
     "en": "Indoor and outdoor sports centres can be found on this layer",
     "de": "Hallen- und Freiluftsportzentren sind auf dieser Ebene zu finden",
     "ca": "En aquesta capa es poden trobar centres esportius interiors i exteriors",
-    "cs": "Na této vrstvě najdete krytá a venkovní sportovní centra"
+    "cs": "Na této vrstvě najdete krytá a venkovní sportovní centra",
+    "es": "En esta capa se pueden encontrar centros deportivos interiores y exteriores"
   },
   "source": {
     "osmTags": "leisure=sports_centre"
@@ -22,7 +24,8 @@
       "de": "Sportzentrum",
       "ca": "Centre esportiu",
       "cs": "Sportovní centrum",
-      "id": "Pusat olahraga"
+      "id": "Pusat olahraga",
+      "es": "Centro deportivo"
     },
     "mappings": [
       {
@@ -67,7 +70,8 @@
         "de": "ein Sportzentrum",
         "ca": "un centre esportiu",
         "cs": "sportovní centra",
-        "id": "pusat olahraga"
+        "id": "pusat olahraga",
+        "es": "un centro deportivo"
       },
       "tags": [
         "leisure=sports_centre"
@@ -80,12 +84,797 @@
     "phone",
     "website",
     "email",
-    "wheelchair-access"
+    "wheelchair-access",
+    {
+      "multiAnswer": true,
+      "id": "sport_centre-sport",
+      "mappings": [
+        {
+          "if": "sport=9pin",
+          "then": {
+            "en": "Nine-pin bowling"
+          }
+        },
+        {
+          "if": "sport=10pin",
+          "then": {
+            "en": "Ten-pin bowling"
+          }
+        },
+        {
+          "if": "sport=aerobics",
+          "then": {
+            "en": "Aerobics"
+          }
+        },
+        {
+          "if": "sport=american_football",
+          "then": {
+            "en": "American football"
+          }
+        },
+        {
+          "if": "sport=aikido",
+          "then": {
+            "en": "Aikido"
+          }
+        },
+        {
+          "if": "sport=archery",
+          "then": {
+            "en": "Archery"
+          }
+        },
+        {
+          "if": "sport=athletics",
+          "then": {
+            "en": "Athletics"
+          }
+        },
+        {
+          "if": "sport=australian_football",
+          "then": {
+            "en": "Australian rules football"
+          }
+        },
+        {
+          "if": "sport=badminton",
+          "then": {
+            "en": "Badminton"
+          }
+        },
+        {
+          "if": "sport=bandy",
+          "then": {
+            "en": "Bandy"
+          }
+        },
+        {
+          "if": "sport=base",
+          "then": {
+            "en": "BASE jumping"
+          }
+        },
+        {
+          "if": "sport=baseball",
+          "then": {
+            "en": "Baseball"
+          }
+        },
+        {
+          "if": "sport=basketball",
+          "then": {
+            "en": "Basketball"
+          }
+        },
+        {
+          "if": "sport=beachvolleyball",
+          "then": {
+            "en": "Beachvolleyball"
+          }
+        },
+        {
+          "if": "sport=biathlon",
+          "then": {
+            "en": "Biathlon"
+          }
+        },
+        {
+          "if": "sport=billiards",
+          "then": {
+            "en": "Cue sports"
+          }
+        },
+        {
+          "if": "sport=bmx",
+          "then": {
+            "en": "BMX"
+          }
+        },
+        {
+          "if": "sport=bobsleigh",
+          "then": {
+            "en": "Bobsleigh"
+          }
+        },
+        {
+          "if": "sport=boules",
+          "then": {
+            "en": "Boules"
+          }
+        },
+        {
+          "if": "sport=bowls",
+          "then": {
+            "en": "Bowls"
+          }
+        },
+        {
+          "if": "sport=boxing",
+          "then": {
+            "en": "Boxing"
+          }
+        },
+        {
+          "if": "sport=bullfighting",
+          "then": {
+            "en": "Bullfighting"
+          }
+        },
+        {
+          "if": "sport=canadian_football",
+          "then": {
+            "en": "Canadian football"
+          }
+        },
+        {
+          "if": "sport=canoe",
+          "then": {
+            "en": "Canoe"
+          }
+        },
+        {
+          "if": "sport=chess",
+          "then": {
+            "en": "Chess"
+          }
+        },
+        {
+          "if": "sport=cliff_diving",
+          "then": {
+            "en": "Non-competitive diving"
+          }
+        },
+        {
+          "if": "sport=climbing",
+          "then": {
+            "en": "Rock climbing"
+          }
+        },
+        {
+          "if": "sport=climbing_adventure",
+          "then": {
+            "en": "Climbing Adventure"
+          }
+        },
+        {
+          "if": "sport=cockfighting",
+          "then": {
+            "en": "Cockfighting"
+          }
+        },
+        {
+          "if": "sport=cricket",
+          "then": {
+            "en": "Cricket"
+          }
+        },
+        {
+          "if": "sport=crossfit",
+          "then": {
+            "en": "CrossFit"
+          }
+        },
+        {
+          "if": "sport=croquet",
+          "then": {
+            "en": "Croquet"
+          }
+        },
+        {
+          "if": "sport=curling",
+          "then": {
+            "en": "Curling"
+          }
+        },
+        {
+          "if": "sport=cycle_polo",
+          "then": {
+            "en": "Cycle Polo"
+          }
+        },
+        {
+          "if": "sport=cycling",
+          "then": {
+            "en": "Cycling"
+          }
+        },
+        {
+          "if": "sport=dance",
+          "then": {
+            "en": "Dance"
+          }
+        },
+        {
+          "if": "sport=darts",
+          "then": {
+            "en": "Darts"
+          }
+        },
+        {
+          "if": "sport=dog_agility",
+          "then": {
+            "en": "Dog agility"
+          }
+        },
+        {
+          "if": "sport=dog_racing",
+          "then": {
+            "en": "Greyhound racing"
+          }
+        },
+        {
+          "if": "sport=dragon_boat",
+          "then": {
+            "en": "Dragon Boat"
+          }
+        },
+        {
+          "if": "sport=equestrian",
+          "then": {
+            "en": "Equestrianism"
+          }
+        },
+        {
+          "if": "sport=fencing",
+          "then": {
+            "en": "Fencing"
+          }
+        },
+        {
+          "if": "sport=field_hockey",
+          "then": {
+            "en": "Field hockey"
+          }
+        },
+        {
+          "if": "sport=fitness",
+          "then": {
+            "en": "Fitness"
+          }
+        },
+        {
+          "if": "sport=five-a-side",
+          "then": {
+            "en": "5 person soccer"
+          }
+        },
+        {
+          "if": "sport=floorball",
+          "then": {
+            "en": "Floorball"
+          }
+        },
+        {
+          "if": "sport=four_square",
+          "then": {
+            "en": "Four square"
+          }
+        },
+        {
+          "if": "sport=free_flying",
+          "then": {
+            "en": "Paragliding"
+          }
+        },
+        {
+          "if": "sport=futsal",
+          "then": {
+            "en": "Futsal"
+          }
+        },
+        {
+          "if": "sport=gaelic_games",
+          "then": {
+            "en": "Gaelic games"
+          }
+        },
+        {
+          "if": "sport=gaga",
+          "then": {
+            "en": "Gaga ball"
+          }
+        },
+        {
+          "if": "sport=golf",
+          "then": {
+            "en": "Golf"
+          }
+        },
+        {
+          "if": "sport=gymnastics",
+          "then": {
+            "en": "Gymnastics"
+          }
+        },
+        {
+          "if": "sport=handball",
+          "then": {
+            "en": "Handball"
+          }
+        },
+        {
+          "if": "sport=hapkido",
+          "then": {
+            "en": "Hapkido"
+          }
+        },
+        {
+          "if": "sport=hiking",
+          "then": {
+            "en": "Hiking"
+          }
+        },
+        {
+          "if": "sport=horseshoes",
+          "then": {
+            "en": "Horseshoes"
+          }
+        },
+        {
+          "if": "sport=horse_racing",
+          "then": {
+            "en": "Horse racing"
+          }
+        },
+        {
+          "if": "sport=ice_hockey",
+          "then": {
+            "en": "Ice Hockey"
+          }
+        },
+        {
+          "if": "sport=ice_skating",
+          "then": {
+            "en": "Ice skating"
+          }
+        },
+        {
+          "if": "sport=ice_stock",
+          "then": {
+            "en": "Ice stock sport"
+          }
+        },
+        {
+          "if": "sport=judo",
+          "then": {
+            "en": "Judo"
+          }
+        },
+        {
+          "if": "sport=karate",
+          "then": {
+            "en": "Karate"
+          }
+        },
+        {
+          "if": "sport=karting",
+          "then": {
+            "en": "Kart racing"
+          }
+        },
+        {
+          "if": "sport=kickboxing",
+          "then": {
+            "en": "Kickboxing"
+          }
+        },
+        {
+          "if": "sport=kitesurfing",
+          "then": {
+            "en": "Kitesurfing"
+          }
+        },
+        {
+          "if": "sport=korfball",
+          "then": {
+            "en": "Korfball"
+          }
+        },
+        {
+          "if": "sport=krachtball",
+          "then": {
+            "en": "Krachtball"
+          }
+        },
+        {
+          "if": "sport=lacrosse",
+          "then": {
+            "en": "Lacrosse"
+          }
+        },
+        {
+          "if": "sport=laser_tag",
+          "then": {
+            "en": "Laser tag"
+          }
+        },
+        {
+          "if": "sport=martial_arts",
+          "then": {
+            "en": "Martial arts"
+          }
+        },
+        {
+          "if": "sport=miniature_golf",
+          "then": {
+            "en": "Miniature golf"
+          }
+        },
+        {
+          "if": "sport=model_aerodrome",
+          "then": {
+            "en": "Radio-controlled aircraft"
+          }
+        },
+        {
+          "if": "sport=motocross",
+          "then": {
+            "en": "Motocross"
+          }
+        },
+        {
+          "if": "sport=motor",
+          "then": {
+            "en": "Motorsport"
+          }
+        },
+        {
+          "if": "sport=multi",
+          "then": {
+            "en": "Multiple kind of sports"
+          }
+        },
+        {
+          "if": "sport=netball",
+          "then": {
+            "en": "Netball"
+          }
+        },
+        {
+          "if": "sport=obstacle_course",
+          "then": {
+            "en": "Obstacle course"
+          }
+        },
+        {
+          "if": "sport=orienteering",
+          "then": {
+            "en": "Orienteering"
+          }
+        },
+        {
+          "if": "sport=paddle_tennis",
+          "then": {
+            "en": "Paddle tennis"
+          }
+        },
+        {
+          "if": "sport=padel",
+          "then": {
+            "en": "Padel"
+          }
+        },
+        {
+          "if": "sport=paintball",
+          "then": {
+            "en": "Paintball"
+          }
+        },
+        {
+          "if": "sport=parachuting",
+          "then": {
+            "en": "Parachuting"
+          }
+        },
+        {
+          "if": "sport=parkour",
+          "then": {
+            "en": "Parkour"
+          }
+        },
+        {
+          "if": "sport=pelota",
+          "then": {
+            "en": "Palota"
+          }
+        },
+        {
+          "if": "sport=pesäpallo",
+          "then": {
+            "en": "Pesäpallo"
+          }
+        },
+        {
+          "if": "sport=pickleball",
+          "then": {
+            "en": "Pickleball"
+          }
+        },
+        {
+          "if": "sport=pilates",
+          "then": {
+            "en": "Pilates"
+          }
+        },
+        {
+          "if": "sport=pole_dance",
+          "then": {
+            "en": "Pole dance"
+          }
+        },
+        {
+          "if": "sport=racquet",
+          "then": {
+            "en": "Racquetball"
+          }
+        },
+        {
+          "if": "sport=rc_car",
+          "then": {
+            "en": "Radio-controlled car"
+          }
+        },
+        {
+          "if": "sport=roller_skating",
+          "then": {
+            "en": "Roller skating"
+          }
+        },
+        {
+          "if": "sport=rowing",
+          "then": {
+            "en": "Rowing"
+          }
+        },
+        {
+          "if": "sport=rugby_league",
+          "then": {
+            "en": "Rugby league"
+          }
+        },
+        {
+          "if": "sport=rugby_union",
+          "then": {
+            "en": "Rugby union"
+          }
+        },
+        {
+          "if": "sport=running",
+          "then": {
+            "en": "Running"
+          }
+        },
+        {
+          "if": "sport=sailing",
+          "then": {
+            "en": "Sailing"
+          }
+        },
+        {
+          "if": "sport=scuba_diving",
+          "then": {
+            "en": "Scuba diving"
+          }
+        },
+        {
+          "if": "sport=shooting",
+          "then": {
+            "en": "Shooting"
+          }
+        },
+        {
+          "if": "sport=shot-put",
+          "then": {
+            "en": "Shot-put"
+          }
+        },
+        {
+          "if": "sport=skateboard",
+          "then": {
+            "en": "Skateboard"
+          }
+        },
+        {
+          "if": "sport=ski_jumping",
+          "then": {
+            "en": "Ski jumping"
+          }
+        },
+        {
+          "if": "sport=snooker",
+          "then": {
+            "en": "Snooker"
+          }
+        },
+        {
+          "if": "sport=soccer",
+          "then": {
+            "en": "Soccer"
+          }
+        },
+        {
+          "if": "sport=softball",
+          "then": {
+            "en": "Softball"
+          }
+        },
+        {
+          "if": "sport=speedway",
+          "then": {
+            "en": "Motorcycle speedway"
+          }
+        },
+        {
+          "if": "sport=squash",
+          "then": {
+            "en": "Squash"
+          }
+        },
+        {
+          "if": "sport=sumo",
+          "then": {
+            "en": "Sumo"
+          }
+        },
+        {
+          "if": "sport=surfing",
+          "then": {
+            "en": "Surfing"
+          }
+        },
+        {
+          "if": "sport=swimming",
+          "then": {
+            "en": "Swimming"
+          }
+        },
+        {
+          "if": "sport=table_tennis",
+          "then": {
+            "en": "Table tennis"
+          }
+        },
+        {
+          "if": "sport=table_soccer",
+          "then": {
+            "en": "Table soccer"
+          }
+        },
+        {
+          "if": "sport=taekwondo",
+          "then": {
+            "en": "Taekwondo"
+          }
+        },
+        {
+          "if": "sport=tennis",
+          "then": {
+            "en": "Tennis"
+          }
+        },
+        {
+          "if": "sport=teqball",
+          "then": {
+            "en": "Teqball"
+          }
+        },
+        {
+          "if": "sport=toboggan",
+          "then": {
+            "en": "Toboggan"
+          }
+        },
+        {
+          "if": "sport=trampoline",
+          "then": {
+            "en": "Trampoline"
+          }
+        },
+        {
+          "if": "sport=ultimate",
+          "then": {
+            "en": "Ultimate frisbee"
+          }
+        },
+        {
+          "if": "sport=ultralight_aviation",
+          "then": {
+            "en": "Ultralight aviation"
+          }
+        },
+        {
+          "if": "sport=volleyball",
+          "then": {
+            "en": "Volleyball"
+          }
+        },
+        {
+          "if": "sport=wakeboarding",
+          "then": {
+            "en": "Wakeboarding"
+          }
+        },
+        {
+          "if": "sport=water_polo",
+          "then": {
+            "en": "Water polo"
+          }
+        },
+        {
+          "if": "sport=water_ski",
+          "then": {
+            "en": "Waterskiing"
+          }
+        },
+        {
+          "if": "sport=weightlifting",
+          "then": {
+            "en": "Olympic weightlifting"
+          }
+        },
+        {
+          "if": "sport=windsurfing",
+          "then": {
+            "en": "Windsurfing"
+          }
+        },
+        {
+          "if": "sport=wrestling",
+          "then": {
+            "en": "Wrestling"
+          }
+        },
+        {
+          "if": "sport=yoga",
+          "then": {
+            "en": "Yoga"
+          }
+        },
+        {
+          "if": "sport=zurkhaneh_sport",
+          "then": {
+            "en": "Zurkhaneh sport"
+          }
+        }
+      ],
+      "render": {
+        "en": "Sports played here: {sport}"
+      },
+      "freeform": {
+        "key": "sport"
+      },
+      "question": {
+        "en": "What sports are played at this venue?"
+      }
+    }
   ],
   "filter": [
     "open_now"
   ],
   "allowMove": {
     "enableImproveAccuracy": true
-  }
+  },
+  "credits": "ochnygosch",
+  "credits:uid": 63804
 }

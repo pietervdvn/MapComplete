@@ -1,7 +1,6 @@
 import { SpecialVisualization, SpecialVisualizationState } from "../../SpecialVisualization"
 import { UIEventSource } from "../../../Logic/UIEventSource"
 import { Feature, Geometry, LineString, Polygon } from "geojson"
-import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
 import BaseUIElement from "../../BaseUIElement"
 import { ImportFlowArguments, ImportFlowUtils } from "./ImportFlow"
 import Translations from "../../i18n/Translations"
@@ -12,7 +11,7 @@ import ConflateImportFlowState from "./ConflateImportFlowState"
 import { AutoAction } from "../AutoApplyButton"
 import { IndexedFeatureSource } from "../../../Logic/FeatureSource/FeatureSource"
 import { Changes } from "../../../Logic/Osm/Changes"
-import LayoutConfig from "../../../Models/ThemeConfig/LayoutConfig"
+import ThemeConfig from "../../../Models/ThemeConfig/ThemeConfig"
 import { OsmConnection } from "../../../Logic/Osm/OsmConnection"
 
 export interface ConflateFlowArguments extends ImportFlowArguments {
@@ -47,7 +46,7 @@ export default class ConflateImportButtonViz implements SpecialVisualization, Au
         feature: Feature<Geometry, { [name: string]: any }>,
         state: {
             osmConnection: OsmConnection
-            layout: LayoutConfig
+            theme: ThemeConfig
             changes: Changes
             indexedFeatures: IndexedFeatureSource
         },

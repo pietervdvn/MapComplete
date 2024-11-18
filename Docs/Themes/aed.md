@@ -8,13 +8,10 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [defibrillator](../Layers/defibrillator.md)
  - [walls_and_buildings](../Layers/walls_and_buildings.md)
 
-
 Available languages:
-
 
  - en
  - ca
@@ -39,7 +36,7 @@ Available languages:
  - cs
  - zgh
  - eu
-
+ - uk
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

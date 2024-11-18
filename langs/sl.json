@@ -6,12 +6,16 @@
     },
     "delete": {
         "cancel": "Prekliči",
+        "cannotBeDeleted": "Tega elementa ni možno izbrisati",
         "delete": "Izbriši",
-        "loginToDelete": "Za dodajanje novih elemntov morate biti vpisani"
+        "loginToDelete": "Za dodajanje novih elemntov morate biti vpisani",
+        "partOfOthers": "Ta element je del neke poti ali relacije, zato ga ni mogoče enostavno izbrisati.",
+        "useSomethingElse": "Če ga želite izbrisati, uporabite nek drug urejevalnik OpenStreetMap"
     },
     "favouritePoi": {
         "button": {
             "markAsFavouriteTitle": "Označite to lokacijo kot priljubljeno",
+            "markDescription": "Dodaj to lokacijo na moj seznam priljubljenih",
             "unmark": "Odstrani to lokacijo s seznama priljubljenih"
         },
         "introPrivacy": "Ta seznam je viden le vam",
@@ -31,6 +35,7 @@
             "title": "Prenos"
         },
         "getStartedLogin": "Za začetek se vpišite s svojim OpenStreetMap računom",
+        "loading": "Nalaganje…",
         "loginFailed": "Vpis v OpenStreetMap ni uspe",
         "loginFailedOfflineMode": "Zaradi vzdrževanja OpenStreetMap.org trenutno ni na voljo. Urejanje bo kmalu spet mogoče",
         "loginFailedReadonlyMode": "Zaradi vzdrževanja je OpenStreetMap.org trenutno možno samo brati. Urejanje bo kmalu spet mogoče",
@@ -68,6 +73,11 @@
             "wednesday": "Srede {ranges}"
         },
         "pickLanguage": "Izberite jezik",
+        "questionBox": {
+            "reactivate": "Prikaži preskočena vprašanja",
+            "skippedMultiple": "Preskočili ste {skipped} vprašanj",
+            "skippedOne": "Preskočili ste eno vprašanje"
+        },
         "save": "Shrani",
         "search": {
             "error": "Nekaj se je zalomilo…",
@@ -100,6 +110,14 @@
             "thursday": "Četrtek",
             "tuesday": "Torek",
             "wednesday": "Sreda"
+        },
+        "wikipedia": {
+            "previewbox": {
+                "born": "Rojen: {value}",
+                "died": "Umrl: {value}"
+            },
+            "readMore": "Preberi preostanek članka",
+            "searchWikidata": "Išči na Wikidata"
         }
     },
     "image": {
@@ -111,7 +129,12 @@
         "nearby": {
             "seeNearby": "Prebrskaj in poveži bližnje slike"
         },
-        "pleaseLogin": "Vpišite se za dodajanje slik"
+        "pleaseLogin": "Vpišite se za dodajanje slik",
+        "respectPrivacy": "Ne fotografirajte oseb ali registrskih tablic. Ne objavljajte slik z Zemljevidov Google, Streetview ali drugih avtorsko zaščitenih virov.",
+        "toBig": "Vaša slika je prevelika, ker je velika {actual_size}. Prosimo, uporabite slike največ {max_size}",
+        "upload": {
+            "failReasons": "Morda ste izgubili povezavo s spletom"
+        }
     },
     "index": {
         "intro": "MapComplete je pregledovalnik in urejevalnik zemljevida OpenStreetMap, ki prikazuje in omogoča urejanje informacij na določeno tematiko.",
@@ -119,9 +142,11 @@
         "title": "Dobrodošli na MapComplete"
     },
     "move": {
+        "cannotBeMoved": "Tega elementa ni možno premakniti.",
         "inviteToMove": {
             "generic": "Premakni ta element"
         },
+        "partOfRelation": "Ta element je del relacije. Premaknete ga lahko z drugim urejevalnikom.",
         "whyMove": "Zakaj želite premakniti ta element?"
     }
 }

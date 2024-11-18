@@ -8,16 +8,13 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [transit_stops](../Layers/transit_stops.md)
  - [transit_routes](../Layers/transit_routes.md)
  - [bike_parking](../Layers/bike_parking.md)
  - [parking](../Layers/parking.md)
  - [pt_shelter (defined in this theme)](#pt_shelter)
 
-
 Available languages:
-
 
  - en
  - de
@@ -31,7 +28,9 @@ Available languages:
  - cs
  - zh_Hant
  - pl
-
+ - ru
+ - hu
+ - uk
 
 # Table of contents
 
@@ -49,19 +48,11 @@ Available languages:
 These layers can not be reused in different themes.
 # pt_shelter
 
-
 This layer is based on [shelter](../Layers/shelter.md)
 
 Layer showing shelter structures
 
-
-
-
-
-
  - This layer is shown at zoomlevel **18** and higher
-
-
 
 No themes use this layer
 
@@ -76,37 +67,25 @@ Elements must match **all** of the following expressions:
 
 ## Supported attributes
 
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
-
-
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### move-button
 
 _This tagrendering has no question and is thus read-only_
 *{move_button()}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

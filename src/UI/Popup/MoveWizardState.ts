@@ -12,6 +12,8 @@ import { Feature, Point } from "geojson"
 import SvelteUIElement from "../Base/SvelteUIElement"
 import Relocation from "../../assets/svg/Relocation.svelte"
 import Location from "../../assets/svg/Location.svelte"
+import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
+import { WayId } from "../../Models/OsmFeature"
 
 export interface MoveReason {
     text: Translation | string
@@ -24,25 +26,45 @@ export interface MoveReason {
     startZoom: number
     minZoom: number
     eraseAddressFields: false | boolean
+    /**
+     * Snap to these layers
+     */
+    snapTo?: string[]
+    maxSnapDistance?: number
 }
 
 export class MoveWizardState {
     public readonly reasons: ReadonlyArray<MoveReason>
 
     public readonly moveDisallowedReason = new UIEventSource<Translation>(undefined)
+    private readonly layer: LayerConfig
     private readonly _state: SpecialVisualizationState
+    private readonly featureToMoveId: string
 
-    constructor(id: string, options: MoveConfig, state: SpecialVisualizationState) {
+    /**
+     * Initialize the movestate for the feature of the given ID
+     * @param id of the feature that should be moved
+     * @param options
+     * @param layer
+     * @param state
+     */
+    constructor(
+        id: string,
+        options: MoveConfig,
+        layer: LayerConfig,
+        state: SpecialVisualizationState
+    ) {
+        this.layer = layer
         this._state = state
-        this.reasons = MoveWizardState.initReasons(options)
+        this.featureToMoveId = id
+        this.reasons = this.initReasons(options)
         if (this.reasons.length > 0) {
             this.checkIsAllowed(id)
         }
     }
 
-    private static initReasons(options: MoveConfig): MoveReason[] {
+    private initReasons(options: MoveConfig): MoveReason[] {
         const t = Translations.t.move
-
         const reasons: MoveReason[] = []
         if (options.enableRelocation) {
             reasons.push({
@@ -72,20 +94,58 @@ export class MoveWizardState {
                 eraseAddressFields: false,
             })
         }
+
+        const tags = this._state.featureProperties.getStore(this.featureToMoveId).data
+        const matchingPresets = this.layer.presets.filter(
+            (preset) =>
+                preset.preciseInput.snapToLayers && new And(preset.tags).matchesProperties(tags)
+        )
+        const matchingPreset = matchingPresets.flatMap((pr) => pr.preciseInput?.snapToLayers)
+        for (const layerId of matchingPreset) {
+            const snapOntoLayer = this._state.theme.getLayer(layerId)
+            const text = <Translation>(
+                t.reasons.reasonSnapTo.PartialSubsTr("name", snapOntoLayer.snapName)
+            )
+            reasons.push({
+                text,
+                invitingText: text,
+                icon: "snap",
+                changesetCommentValue: "snap",
+                lockBounds: true,
+                includeSearch: false,
+                background: "photo",
+                startZoom: 19,
+                minZoom: 16,
+                eraseAddressFields: false,
+                snapTo: [snapOntoLayer.id],
+                maxSnapDistance: 5,
+            })
+        }
+
         return reasons
     }
 
     public async moveFeature(
         loc: { lon: number; lat: number },
+        snappedTo: WayId,
         reason: MoveReason,
         featureToMove: Feature<Point>
     ) {
         const state = this._state
+        if (snappedTo !== undefined) {
+            this.moveDisallowedReason.set(Translations.t.move.partOfAWay)
+        }
         await state.changes.applyAction(
-            new ChangeLocationAction(featureToMove.properties.id, [loc.lon, loc.lat], {
-                reason: reason.changesetCommentValue,
-                theme: state.layout.id,
-            })
+            new ChangeLocationAction(
+                state,
+                featureToMove.properties.id,
+                [loc.lon, loc.lat],
+                snappedTo,
+                {
+                    reason: reason.changesetCommentValue,
+                    theme: state.theme.id,
+                }
+            )
         )
         featureToMove.properties._lat = loc.lat
         featureToMove.properties._lon = loc.lon
@@ -103,7 +163,7 @@ export class MoveWizardState {
                     featureToMove.properties,
                     {
                         changeType: "relocated",
-                        theme: state.layout.id,
+                        theme: state.theme.id,
                     }
                 )
             )

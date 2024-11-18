@@ -19,6 +19,9 @@ export class Tag extends TagsFilter {
         if (value === undefined) {
             throw `Invalid value while constructing a Tag with key '${key}': value is undefined`
         }
+        if (value.length > 255 || key.length > 255) {
+            throw "Invalid tag: length is over 255"
+        }
         if (value === "*") {
             console.warn(`Got suspicious tag ${key}=*   ; did you mean ${key}~* ?`)
         }
@@ -167,8 +170,12 @@ export class Tag extends TagsFilter {
         return <any>this
     }
 
+    /**
+     * new Tag("panoramax", "").isNegative() // => true
+     * new Tag("x","y").isNegative() // => false
+     */
     isNegative(): boolean {
-        return false
+        return this.value === ""
     }
 
     visit(f: (tagsFilter: TagsFilter) => void) {

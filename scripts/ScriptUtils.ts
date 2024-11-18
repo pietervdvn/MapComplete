@@ -2,7 +2,7 @@ import * as fs from "fs"
 import { existsSync, lstatSync, readdirSync, readFileSync } from "fs"
 import { Utils } from "../src/Utils"
 import { https } from "follow-redirects"
-import { LayoutConfigJson } from "../src/Models/ThemeConfig/Json/LayoutConfigJson"
+import { ThemeConfigJson } from "../src/Models/ThemeConfig/Json/ThemeConfigJson"
 import { LayerConfigJson } from "../src/Models/ThemeConfig/Json/LayerConfigJson"
 import xml2js from "xml2js"
 
@@ -94,14 +94,29 @@ export default class ScriptUtils {
             })
     }
 
-    public static getThemePaths(): string[] {
-        return ScriptUtils.readDirRecSync("./assets/themes")
+    public static getThemePaths(useTranslationPaths = false): string[] {
+        const normalFiles = ScriptUtils.readDirRecSync("./assets/themes")
             .filter((path) => path.endsWith(".json") && !path.endsWith(".proto.json"))
             .filter((path) => path.indexOf("license_info.json") < 0)
+
+        if (!useTranslationPaths) {
+            return normalFiles
+        }
+        const specialfiles = ["./assets/themes/mapcomplete-changes/mapcomplete-changes.proto.json"]
+        const blacklist = ["assets/themes/mapcomplete-changes/mapcomplete-changes.json"]
+
+        const filtered = normalFiles.filter(
+            (path) => !blacklist.some((black) => path.endsWith(black))
+        )
+        return filtered.concat(specialfiles)
     }
 
-    public static getThemeFiles(): { parsed: LayoutConfigJson; path: string; raw: string }[] {
-        return this.getThemePaths().map((path) => {
+    public static getThemeFiles(useTranslationPaths = false): {
+        parsed: ThemeConfigJson
+        path: string
+        raw: string
+    }[] {
+        return this.getThemePaths(useTranslationPaths).map((path) => {
             try {
                 const contents = readFileSync(path, { encoding: "utf8" })
                 if (contents === "") {
@@ -148,6 +163,7 @@ export default class ScriptUtils {
         const data = await ScriptUtils.Download(url, headers)
         return JSON.parse(data["content"])
     }
+
     public static async DownloadFetch(
         url: string,
         headers?: any
@@ -158,6 +174,7 @@ export default class ScriptUtils {
         console.log("Fetched", url, data)
         return { content: data }
     }
+
     public static Download(
         url: string,
         headers?: any

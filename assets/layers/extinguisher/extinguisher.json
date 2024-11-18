@@ -25,7 +25,7 @@
     "it": "Livello della mappa che mostra gli idranti antincendio.",
     "nl": "Kaartlaag met brandblussers.",
     "da": "Kortlag til visning af ildslukkere.",
-    "es": "Capa del mapa que muestra extintores.",
+    "es": "Capa del mapa para mostrar extintores.",
     "ca": "Capa que mostra extintors.",
     "pl": "Warstwa mapy pokazująca gaśnice.",
     "cs": "Mapová vrstva pro zobrazení hasicích přístrojů."
@@ -99,7 +99,7 @@
         "it": "Un estintore è un dispositivo portatile di piccole dimensioni usato per spegnere un incendio",
         "nl": "Een brandblusser is een klein, draagbaar apparaat om een brand te blussen",
         "da": "En ildslukker er en lille, bærbar beholder, der bruges til at stoppe en brand",
-        "es": "Un extintor es un dispositivo pequeño y portátil utilizado para parar un fuego",
+        "es": "Un extintor es un dispositivo pequeño y portátil que se utiliza para detener un incendio",
         "ca": "Un extintor és un dispositiu petit i portàtil utilitzat per a para un foc",
         "pl": "Gaśnica to małe, przenośne urządzenie do gaszenia ognia",
         "cs": "Hasicí přístroj je malé přenosné zařízení používané k zastavení požáru"
@@ -118,7 +118,7 @@
         "eo": "Loko: {location}",
         "it": "Posizione: {location}",
         "nl": "Locatie: {location}",
-        "es": "Localización: {location}",
+        "es": "Ubicación: {location}",
         "ca": "Ubicació: {location}",
         "pl": "Lokalizacja: {location}",
         "cs": "Místo: {location}"
@@ -132,7 +132,7 @@
         "it": "Dove è posizionato?",
         "nl": "Op welke locatie staat dit?",
         "da": "Hvor er den placeret?",
-        "es": "¿Dónde se encuentra?",
+        "es": "¿Dónde está colocado?",
         "ca": "On està situat?",
         "pl": "Gdzie się znajduje?",
         "cs": "Kde je umístěn?"
@@ -153,7 +153,7 @@
             "it": "Si trova all’interno.",
             "nl": "In een gebouw.",
             "da": "Findes indendørs.",
-            "es": "Se encuentra en el interior.",
+            "es": "Encontrado en interiores.",
             "ca": "Es troba a l'interior.",
             "pl": "Znajduje się wewnątrz budynku.",
             "cs": "Nalezen uvnitř."
@@ -174,7 +174,7 @@
             "it": "Si trova all’esterno.",
             "nl": "In open lucht.",
             "da": "Findes udendørs.",
-            "es": "Se encuentra en el exterior.",
+            "es": "Encontrado en exteriores.",
             "ca": "Es troba a l'aire lliure.",
             "pl": "Znajduje się na dworze.",
             "cs": "Nalezeno venku."
@@ -186,5 +186,9 @@
       }
     },
     "images"
-  ]
+  ],
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": false
+  }
 }

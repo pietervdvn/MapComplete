@@ -1,7 +1,7 @@
 import ScriptUtils from "./ScriptUtils"
 import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from "fs"
 import licenses from "../src/assets/generated/license_info.json"
-import { LayoutConfigJson } from "../src/Models/ThemeConfig/Json/LayoutConfigJson"
+import { ThemeConfigJson } from "../src/Models/ThemeConfig/Json/ThemeConfigJson"
 import { LayerConfigJson } from "../src/Models/ThemeConfig/Json/LayerConfigJson"
 import Constants from "../src/Models/Constants"
 import {
@@ -29,11 +29,12 @@ import LayerConfig from "../src/Models/ThemeConfig/LayerConfig"
 import PointRenderingConfig from "../src/Models/ThemeConfig/PointRenderingConfig"
 import { ConversionContext } from "../src/Models/ThemeConfig/Conversion/ConversionContext"
 import { GenerateFavouritesLayer } from "./generateFavouritesLayer"
-import LayoutConfig from "../src/Models/ThemeConfig/LayoutConfig"
+import ThemeConfig, { MinimalThemeInformation } from "../src/Models/ThemeConfig/ThemeConfig"
 import Translations from "../src/UI/i18n/Translations"
 import { Translatable } from "../src/Models/ThemeConfig/Json/Translatable"
 import { ValidateThemeAndLayers } from "../src/Models/ThemeConfig/Conversion/ValidateThemeAndLayers"
 import { ExtractImages } from "../src/Models/ThemeConfig/Conversion/FixImages"
+import { TagRenderingConfigJson } from "../src/Models/ThemeConfig/Json/TagRenderingConfigJson"
 
 // This scripts scans 'src/assets/layers/*.json' for layer definition files and 'src/assets/themes/*.json' for theme definition files.
 // It spits out an overview of those to be used to load them
@@ -82,7 +83,11 @@ class ParseLayer extends Conversion<
         const fixed = this._prepareLayer.convert(parsed, context.inOperation("PrepareLayer"))
 
         if (!fixed.source && fixed.presets?.length < 1) {
-            context.enter("source").err("No source is configured. (Tags might be automatically derived if presets are given)")
+            context
+                .enter("source")
+                .err(
+                    "No source is configured. (Tags might be automatically derived if presets are given)"
+                )
             return undefined
         }
 
@@ -141,14 +146,14 @@ class LayerOverviewUtils extends Script {
         super("Reviews and generates the compiled themes")
     }
 
-    private static publicLayerIdsFrom(themefiles: LayoutConfigJson[]): Set<string> {
+    private static publicLayerIdsFrom(themefiles: ThemeConfigJson[]): Set<string> {
         const publicThemes = [].concat(...themefiles.filter((th) => !th.hideFromOverview))
 
         return new Set([].concat(...publicThemes.map((th) => this.extractLayerIdsFrom(th))))
     }
 
     private static extractLayerIdsFrom(
-        themeFile: LayoutConfigJson,
+        themeFile: ThemeConfigJson,
         includeInlineLayers = true
     ): string[] {
         const publicLayerIds: string[] = []
@@ -181,7 +186,7 @@ class LayerOverviewUtils extends Script {
         return publicLayerIds
     }
 
-    public static cleanTranslation(t: Record<string, string> | Translation): Translatable {
+    public static cleanTranslation(t: string | Record<string, string> | Translation): Translatable {
         return Translations.T(t).OnEveryLanguage((s) => parse_html(s).textContent).translations
     }
 
@@ -204,11 +209,76 @@ class LayerOverviewUtils extends Script {
         return false
     }
 
+    static mergeKeywords(
+        into: Record<string, string[]>,
+        source: Readonly<Record<string, string[]>>
+    ) {
+        for (const key in source) {
+            if (into[key]) {
+                into[key].push(...source[key])
+            } else {
+                into[key] = source[key]
+            }
+        }
+    }
+
+    private layerKeywords(l: LayerConfigJson): Record<string, string[]> {
+        const keywords: Record<string, string[]> = {}
+
+        function addWord(language: string, word: string | string[]) {
+            if (Array.isArray(word)) {
+                word.forEach((w) => addWord(language, w))
+                return
+            }
+
+            word = Utils.SubstituteKeys(word, {})?.trim()
+            if (!word) {
+                return
+            }
+            if (!keywords[language]) {
+                keywords[language] = []
+            }
+            keywords[language].push(word)
+        }
+
+        function addWords(
+            tr: string | Record<string, string> | Record<string, string[]> | TagRenderingConfigJson
+        ) {
+            if (!tr) {
+                return
+            }
+            if (typeof tr === "string") {
+                addWord("*", tr)
+                return
+            }
+            if (tr["render"] !== undefined || tr["mappings"] !== undefined) {
+                tr = <TagRenderingConfigJson>tr
+                addWords(<Translatable>tr.render)
+                for (const mapping of tr.mappings ?? []) {
+                    if (typeof mapping === "string") {
+                        addWords(mapping)
+                        continue
+                    }
+                    addWords(mapping.then)
+                }
+                return
+            }
+            for (const lang in tr) {
+                addWord(lang, tr[lang])
+            }
+        }
+        addWord("*", l.id)
+        addWords(l.title)
+        addWords(l.description)
+        addWords(l.searchTerms)
+        return keywords
+    }
+
     writeSmallOverview(
         themes: {
             id: string
-            title: any
-            shortDescription: any
+            title: Translatable
+            shortDescription: Translatable
             icon: string
             hideFromOverview: boolean
             mustHaveLanguage: boolean
@@ -219,26 +289,35 @@ class LayerOverviewUtils extends Script {
                       builtin
                   }
             )[]
-        }[]
+        }[],
+        sharedLayers: Map<string, LayerConfigJson>
     ) {
-        const perId = new Map<string, any>()
+        const layerKeywords: Record<string, Record<string, string[]>> = {}
+
+        sharedLayers.forEach((layer, id) => {
+            layerKeywords[id] = this.layerKeywords(layer)
+        })
+
+        const perId = new Map<string, MinimalThemeInformation>()
         for (const theme of themes) {
-            const keywords: {}[] = []
+            const keywords: Record<string, string[]> = {}
             for (const layer of theme.layers ?? []) {
                 const l = <LayerConfigJson>layer
-                keywords.push({ "*": l.id })
-                keywords.push(l.title)
-                keywords.push(l.description)
+                if (sharedLayers.has(l.id)) {
+                    continue
+                }
+                LayerOverviewUtils.mergeKeywords(keywords, this.layerKeywords(l))
             }
 
-            const data = {
+            const data = <MinimalThemeInformation>{
                 id: theme.id,
                 title: theme.title,
                 shortDescription: LayerOverviewUtils.cleanTranslation(theme.shortDescription),
                 icon: theme.icon,
                 hideFromOverview: theme.hideFromOverview,
                 mustHaveLanguage: theme.mustHaveLanguage,
-                keywords: Utils.NoNull(keywords),
+                keywords,
+                layers: theme.layers.filter((l) => sharedLayers.has(l["id"])).map((l) => l["id"]),
             }
             perId.set(theme.id, data)
         }
@@ -259,12 +338,12 @@ class LayerOverviewUtils extends Script {
 
         writeFileSync(
             "./src/assets/generated/theme_overview.json",
-            JSON.stringify(sorted, null, "  "),
+            JSON.stringify({ layers: layerKeywords, themes: sorted }, null, "  "),
             { encoding: "utf8" }
         )
     }
 
-    writeTheme(theme: LayoutConfigJson) {
+    writeTheme(theme: ThemeConfigJson) {
         if (!existsSync(LayerOverviewUtils.themePath)) {
             mkdirSync(LayerOverviewUtils.themePath)
         }
@@ -421,8 +500,10 @@ class LayerOverviewUtils extends Script {
         // These two get a free pass
         priviliged.delete("summary")
         priviliged.delete("last_click")
+        priviliged.delete("search")
 
-        if (priviliged.size > 0) {
+        const isBoostrapping = AllSharedLayers.getSharedLayersConfigs().size == 0
+        if (!isBoostrapping && priviliged.size > 0) {
             throw (
                 "Priviliged layer " +
                 Array.from(priviliged).join(", ") +
@@ -439,7 +520,7 @@ class LayerOverviewUtils extends Script {
         )
 
         new ValidateThemeEnsemble().convertStrict(
-            Array.from(sharedThemes.values()).map((th) => new LayoutConfig(th, true))
+            Array.from(sharedThemes.values()).map((th) => new ThemeConfig(th, true))
         )
 
         if (recompiledThemes.length > 0) {
@@ -465,7 +546,7 @@ class LayerOverviewUtils extends Script {
                 if: "theme=" + th.id,
                 then: th.icon,
             }))
-            const proto: LayoutConfigJson = JSON.parse(
+            const proto: ThemeConfigJson = JSON.parse(
                 readFileSync("./assets/themes/mapcomplete-changes/mapcomplete-changes.proto.json", {
                     encoding: "utf8",
                 })
@@ -609,7 +690,7 @@ class LayerOverviewUtils extends Script {
      * @param themeFile
      * @private
      */
-    private extractJavascriptCode(themeFile: LayoutConfigJson) {
+    private extractJavascriptCode(themeFile: ThemeConfigJson) {
         const allCode = [
             "import {Feature} from 'geojson'",
             'import { ExtraFuncType } from "../../../Logic/ExtraFunctions";',
@@ -724,10 +805,10 @@ class LayerOverviewUtils extends Script {
         recompiledThemes: string[],
         forceReload: boolean,
         whitelist: Set<string>
-    ): Map<string, LayoutConfigJson> {
+    ): Map<string, ThemeConfigJson> {
         console.log("   ---------- VALIDATING BUILTIN THEMES ---------")
         const themeFiles = ScriptUtils.getThemeFiles()
-        const fixed = new Map<string, LayoutConfigJson>()
+        const fixed = new Map<string, ThemeConfigJson>()
 
         const publicLayers = LayerOverviewUtils.publicLayerIdsFrom(
             themeFiles.map((th) => th.parsed)
@@ -874,14 +955,15 @@ class LayerOverviewUtils extends Script {
         if (whitelist.size == 0) {
             this.writeSmallOverview(
                 Array.from(fixed.values()).map((t) => {
-                    return {
+                    return <any>{
                         ...t,
                         hideFromOverview: t.hideFromOverview ?? false,
                         shortDescription:
                             t.shortDescription ?? new Translation(t.description).FirstSentence(),
                         mustHaveLanguage: t.mustHaveLanguage?.length > 0,
                     }
-                })
+                }),
+                sharedLayers
             )
         }
 

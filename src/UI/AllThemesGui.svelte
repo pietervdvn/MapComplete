@@ -7,26 +7,24 @@
   import Translations from "./i18n/Translations"
   import Logo from "../assets/svg/Logo.svelte"
   import Tr from "./Base/Tr.svelte"
-  import MoreScreen from "./BigComponents/MoreScreen"
   import LoginToggle from "./Base/LoginToggle.svelte"
   import Pencil from "../assets/svg/Pencil.svelte"
   import Constants from "../Models/Constants"
-  import { Store, UIEventSource } from "../Logic/UIEventSource"
-  import { placeholder } from "../Utils/placeholder"
-  import { SearchIcon } from "@rgossiaux/svelte-heroicons/solid"
+  import { ImmutableStore, Store, Stores, UIEventSource } from "../Logic/UIEventSource"
   import ThemesList from "./BigComponents/ThemesList.svelte"
-  import { LayoutInformation } from "../Models/ThemeConfig/LayoutConfig"
-  import * as themeOverview from "../assets/generated/theme_overview.json"
-  import UnofficialThemeList from "./BigComponents/UnofficialThemeList.svelte"
+  import { MinimalThemeInformation } from "../Models/ThemeConfig/ThemeConfig"
   import Eye from "../assets/svg/Eye.svelte"
   import LoginButton from "./Base/LoginButton.svelte"
-  import ChevronDoubleRight from "@babeard/svelte-heroicons/mini/ChevronDoubleRight"
   import Mastodon from "../assets/svg/Mastodon.svelte"
   import Liberapay from "../assets/svg/Liberapay.svelte"
   import Bug from "../assets/svg/Bug.svelte"
   import Github from "../assets/svg/Github.svelte"
   import { Utils } from "../Utils"
   import { ArrowTrendingUp } from "@babeard/svelte-heroicons/solid/ArrowTrendingUp"
+  import Searchbar from "./Base/Searchbar.svelte"
+  import ThemeSearch from "../Logic/Search/ThemeSearch"
+  import SearchUtils from "../Logic/Search/SearchUtils"
+  import ChevronDoubleRight from "@babeard/svelte-heroicons/mini/ChevronDoubleRight"
 
   const featureSwitches = new OsmConnectionFeatureSwitches()
   const osmConnection = new OsmConnection({
@@ -39,36 +37,83 @@
   })
   const state = new UserRelatedState(osmConnection)
   const t = Translations.t.index
+  const tu = Translations.t.general
   const tr = Translations.t.general.morescreen
 
   let userLanguages = osmConnection.userDetails.map((ud) => ud.languages)
-  let themeSearchText: UIEventSource<string | undefined> = new UIEventSource<string>(undefined)
+  let search: UIEventSource<string | undefined> = new UIEventSource<string>("")
+  let searchStable = search.stabilized(100)
 
+  let searchIsFocused = new UIEventSource(true)
+
+  const officialThemes: MinimalThemeInformation[] = ThemeSearch.officialThemes.themes.filter(
+    (th) => th.hideFromOverview === false
+  )
+  const hiddenThemes: MinimalThemeInformation[] = ThemeSearch.officialThemes.themes.filter(
+    (th) => th.hideFromOverview === true
+  )
+  let visitedHiddenThemes: Store<MinimalThemeInformation[]> =
+    UserRelatedState.initDiscoveredHiddenThemes(state.osmConnection).map((knownIds) =>
+      hiddenThemes.filter(
+        (theme) =>
+          knownIds.indexOf(theme.id) >= 0 ||
+          state.osmConnection.userDetails.data.name === "Pieter Vander Vennet"
+      )
+    )
+
+  const customThemes: Store<MinimalThemeInformation[]> = Stores.ListStabilized<string>(
+    state.installedUserThemes
+  ).mapD((stableIds) => Utils.NoNullInplace(stableIds.map((id) => state.getUnofficialTheme(id))))
+  function filtered(themes: Store<MinimalThemeInformation[]>): Store<MinimalThemeInformation[]> {
+    return searchStable.map(
+      (search) => {
+        if (!search) {
+          return themes.data
+        }
+
+        const start = new Date().getTime()
+        const scores = ThemeSearch.sortedByLowestScores(search, themes.data)
+        const end = new Date().getTime()
+        console.trace("Scores for", search, "are", scores, "searching took", end - start, "ms")
+        const strict = scores.filter((sc) => sc.lowest < 2)
+        if (strict.length > 0) {
+          return strict.map((sc) => sc.theme)
+        }
+        return scores
+          .filter((sc) => sc.lowest < 4)
+          .slice(0, 6)
+          .map((sc) => sc.theme)
+      },
+      [themes]
+    )
+  }
+
+  let officialSearched: Store<MinimalThemeInformation[]> = filtered(
+    new ImmutableStore(officialThemes)
+  )
+  let hiddenSearched: Store<MinimalThemeInformation[]> = filtered(visitedHiddenThemes)
+  let customSearched: Store<MinimalThemeInformation[]> = filtered(customThemes)
+
+  let searchIsFocussed = new UIEventSource(false)
   document.addEventListener("keydown", function (event) {
     if (event.ctrlKey && event.code === "KeyF") {
-      document.getElementById("theme-search")?.focus()
+      searchIsFocussed.set(true)
       event.preventDefault()
     }
   })
 
-  let visitedHiddenThemes: Store<LayoutInformation[]>
-  const hiddenThemes: LayoutInformation[] =
-    (themeOverview["default"] ?? themeOverview)?.filter((layout) => layout.hideFromOverview) ?? []
-  {
-    const prefix = "mapcomplete-hidden-theme-"
-    const userPreferences = state.osmConnection.preferencesHandler.preferences
-    visitedHiddenThemes = userPreferences.map((preferences) => {
-      const knownIds = new Set<string>(
-        Object.keys(preferences)
-          .filter((key) => key.startsWith(prefix))
-          .map((key) => key.substring(prefix.length, key.length - "-enabled".length))
-      )
-      return hiddenThemes.filter(
-        (theme) =>
-          knownIds.has(theme.id) ||
-          state.osmConnection.userDetails.data.name === "Pieter Vander Vennet"
-      )
-    })
+  function applySearch() {
+    const didRedirect = SearchUtils.applySpecialSearch(search.data)
+    if (didRedirect) {
+      return
+    }
+
+    const candidate = officialSearched.data[0] ?? hiddenSearched.data[0] ?? customSearched.data[0]
+    if (!candidate) {
+      return
+    }
+
+    window.location.href = ThemeSearch.createUrlFor(candidate, undefined)
   }
 </script>
 
@@ -101,37 +146,25 @@
       </div>
     </div>
 
-    <form
-      class="flex justify-center"
-      on:submit|preventDefault={(_) => MoreScreen.applySearch(themeSearchText.data)}
-    >
-      <label
-        class="neutral-label my-2 flex w-full items-center rounded-full border-2 border-black sm:w-1/2"
-      >
-        <SearchIcon aria-hidden="true" class="h-8 w-8" />
-        <input
-          autofocus
-          bind:value={$themeSearchText}
-          class="mr-4 w-full outline-none"
-          id="theme-search"
-          type="search"
-          use:placeholder={tr.searchForATheme}
-        />
-      </label>
-    </form>
+    <Searchbar
+      value={search}
+      placeholder={tr.searchForATheme}
+      on:search={() => applySearch()}
+      autofocus
+      isFocused={searchIsFocussed}
+    />
 
-    <ThemesList search={themeSearchText} {state} themes={MoreScreen.officialThemes} />
+    <ThemesList {search} {state} themes={$officialSearched} />
 
     <LoginToggle {state}>
       <LoginButton clss="primary" {osmConnection} slot="not-logged-in">
         <Tr t={t.logIn} />
       </LoginButton>
       <ThemesList
-        hideThemes={false}
-        isCustom={false}
-        search={themeSearchText}
+        {search}
         {state}
-        themes={$visitedHiddenThemes}
+        themes={$hiddenSearched}
+        hasSelection={$officialSearched.length === 0}
       >
         <svelte:fragment slot="title">
           <h3>
@@ -148,7 +181,21 @@
         </svelte:fragment>
       </ThemesList>
 
-      <UnofficialThemeList search={themeSearchText} {state} />
+      {#if $customThemes.length > 0}
+        <ThemesList
+          {search}
+          {state}
+          themes={$customSearched}
+          hasSelection={$officialSearched.length === 0 && $hiddenSearched.length === 0}
+        >
+          <svelte:fragment slot="title">
+            <h3>
+              <Tr t={tu.customThemeTitle} />
+            </h3>
+            <Tr t={tu.customThemeIntro} />
+          </svelte:fragment>
+        </ThemesList>
+      {/if}
     </LoginToggle>
 
     <a

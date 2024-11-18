@@ -4,6 +4,7 @@ import { Utils } from "../Utils"
 import { AuthConfig } from "../Logic/Osm/AuthConfig"
 
 export type PriviligedLayerType = (typeof Constants.priviliged_layers)[number]
+export type DefaultPinIcon = (typeof Constants._defaultPinIcons)[number]
 
 export default class Constants {
     public static vNumber: string = packagefile.version
@@ -25,6 +26,8 @@ export default class Constants {
         "last_click",
         "favourite",
         "summary",
+        "search",
+        "geocoded_image",
     ] as const
     /**
      * Special layers which are not included in a theme by default
@@ -46,10 +49,18 @@ export default class Constants {
         ...Constants.added_by_default,
         ...Constants.no_include,
     ] as const
+
+    public static panoramax: {
+        url: string
+        token: string
+        sequence: string
+        testsequence: string
+    } = packagefile.config.panoramax
+
     // The user journey states thresholds when a new feature gets unlocked
     public static userJourney = {
         moreScreenUnlock: 1,
-        personalLayoutUnlock: 5,
+        personalThemeUnlock: 5,
         historyLinkVisible: 10,
         deletePointsOfOthersUnlock: 20,
         tagsVisibleAt: 25,
@@ -57,7 +68,6 @@ export default class Constants {
 
         mapCompleteHelpUnlock: 50,
         themeGeneratorReadOnlyUnlock: 50,
-        themeGeneratorFullUnlock: 500,
         addNewPointWithUnreadMessagesUnlock: 500,
 
         importHelperUnlock: 5000,
@@ -83,17 +93,30 @@ export default class Constants {
     static distanceToChangeObjectBins = [25, 50, 100, 500, 1000, 5000, Number.MAX_VALUE]
     static themeOrder = [
         "personal",
+
         "cyclofix",
-        "waste",
         "etymology",
+        "waste",
+
         "food",
         "cafes_and_pubs",
         "shops",
-        "playgrounds",
-        "hailhydrant",
-        "toilets",
-        "aed",
+        "healthcare",
+        "sports",
+
+        "artwork",
         "bookcases",
+        "playgrounds",
+        "drinking_water",
+        "toilets",
+        "vending_machine",
+        "aed",
+        "clock",
+        "charging_stations",
+
+        "surveillance",
+        "advertising",
+        "circular_economy",
     ]
     /**
      * Upon initialization, the GPS will search the location.
@@ -113,14 +136,19 @@ export default class Constants {
     public static countryCoderEndpoint: string = Constants.config.country_coder_host
     public static osmAuthConfig: AuthConfig = Constants.config.oauth_credentials
     public static nominatimEndpoint: string = Constants.config.nominatimEndpoint
+    public static photonEndpoint: string = Constants.config.photonEndpoint
+
     public static linkedDataProxy: string = Constants.config["jsonld-proxy"]
     /**
      * These are the values that are allowed to use as 'backdrop' icon for a map pin
      */
-    private static readonly _defaultPinIcons = [
+    public static readonly _defaultPinIcons = [
         "addSmall",
+        "airport",
         "brick_wall_round",
         "brick_wall_square",
+        "building_office_2",
+        "building_storefront",
         "bug",
         "checkmark",
         "checkmark",
@@ -135,18 +163,22 @@ export default class Constants {
         "desktop",
         "direction",
         "gear",
+        "globe_alt",
         "gps_arrow",
         "heart",
         "heart_outline",
         "help",
         "help",
         "home",
+        "house",
+        "key",
         "invalid",
         "invalid",
         "link",
         "location",
         "location_empty",
         "location_locked",
+        "lock",
         "mastodon",
         "not_found",
         "note",
@@ -160,7 +192,9 @@ export default class Constants {
         "square_rounded",
         "teardrop",
         "teardrop_with_hole_green",
+        "train",
         "triangle",
+        "user_circle",
         "wifi",
     ] as const
     public static readonly defaultPinIcons: string[] = <any>Constants._defaultPinIcons
@@ -183,6 +217,7 @@ export default class Constants {
         Constants.countryCoderEndpoint,
         Constants.osmAuthConfig.url,
         Constants.nominatimEndpoint,
+        Constants.photonEndpoint,
         Constants.linkedDataProxy,
         ...Constants.defaultOverpassUrls,
     ]

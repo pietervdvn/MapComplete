@@ -859,6 +859,15 @@ This list will be sorted
         return ranges
     }
 
+    public static isSame(a: OpeningHour, b: OpeningHour) {
+        return (
+            a.weekday === b.weekday &&
+            a.startHour === b.startHour &&
+            a.startMinutes === b.startMinutes &&
+            a.endHour === b.endHour &&
+            a.endMinutes === b.endMinutes
+        )
+    }
     private static multiply(
         weekdays: number[],
         timeranges: {
@@ -912,6 +921,28 @@ This list will be sorted
             }
         }
         return ohs
+    }
+
+    /**
+     * Small utility function for the OH-table. if endHour is '0', rewrite this as '24'
+     *
+     * const oh = {
+     *           weekday: 0,
+     *             endMinutes: 0,
+     *             endHour: 0,
+     *             startHour: 10,
+     *             startMinutes: 0
+     *         }
+     * OH.rangeAs24Hr(oh).endHour // => 24
+     */
+    static rangeAs24Hr(oh: OpeningHour) {
+        if (oh.endHour === 0) {
+            return {
+                ...oh,
+                endHour: 24,
+            }
+        }
+        return oh
     }
 }
 

@@ -30,7 +30,7 @@
     .getSchemaStartingWith(schema.path)
     .filter((part) => part.path.length - 1 === schema.path.length)
 
-  let usesOverride = value["builtin"] !== undefined
+  let usesOverride = value?.["builtin"] !== undefined
 
   function schemaForMultitype() {
     const sch = { ...schema }
@@ -39,16 +39,20 @@
   }
 
   function fusePath(subpartPath: string[]): (string | number)[] {
-    const newPath = [...path]
-    const toAdd = [...subpartPath]
-    for (const part of path) {
-      if (toAdd[0] === part) {
-        toAdd.splice(0, 1)
-      } else {
-        break
+    const newPath = [...path] // has indices, e.g. ["A", 1, "B", "C", 2]
+    const toAdd = [...subpartPath] // doesn't have indices, e.g. ["A", "B", "C", "D"]
+
+    let indexInToAdd = 0
+    for (let i = 0; i < newPath.length; i++) {
+      if (newPath[i] === toAdd[indexInToAdd]) {
+        indexInToAdd++
       }
     }
-    newPath.push(...toAdd)
+
+    // indexToAdd should now point to the last common index, '2' in the example
+    const resting = toAdd.slice(indexInToAdd)
+
+    newPath.push(...resting)
     return newPath
   }
 
@@ -138,7 +142,7 @@
       </div>
     {:else if typeof value === "string"}
       Builtin: <b>{value}</b>
-    {:else if value["builtin"]}
+    {:else if value?.["builtin"]}
       reused tagrendering <span class="font-bold">{JSON.stringify(value["builtin"])}</span>
     {:else}
       <Tr cls="font-bold" t={Translations.T(value?.question ?? value?.render)} />

@@ -3,7 +3,7 @@
   import Translations from "../i18n/Translations"
   import { Store, UIEventSource } from "../../Logic/UIEventSource"
   import { Translation } from "../i18n/Translation"
-  import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
+  import ThemeConfig from "../../Models/ThemeConfig/ThemeConfig"
   import { OsmConnection } from "../../Logic/Osm/OsmConnection"
   import Invalid from "../../assets/svg/Invalid.svelte"
   import Tr from "../Base/Tr.svelte"
@@ -17,7 +17,7 @@
 
   export let trace: (title: string) => string
   export let state: {
-    layout: LayoutConfig
+    layout: ThemeConfig
     osmConnection: OsmConnection
     readonly featureSwitchUserbadge: Store<boolean>
   }

@@ -13,11 +13,12 @@
     "id": "Taman bermain",
     "hu": "Játszóterek",
     "ca": "Parcs infantils",
-    "es": "Parques infanties",
+    "es": "Parques infantiles",
     "da": "Legepladser",
     "cs": "Dětská hřiště",
     "eu": "Jolas parkeak",
-    "pl": "Place zabaw"
+    "pl": "Place zabaw",
+    "uk": "Дитячі майданчики"
   },
   "description": {
     "nl": "Op deze kaart vind je speeltuinen en kan je zelf meer informatie en foto's toevoegen",
@@ -30,11 +31,12 @@
     "it": "In questa cartina vengono mostrati i parchi giochi a cui è possibile aggiungere dettagli",
     "id": "Di peta ini, Anda menemukan taman bermain dan dapat menambahkan lebih banyak informasi",
     "hu": "Ezen a térképen játszótereket találsz, és további információkat adhatsz hozzájuk",
-    "es": "En este mapa, puedes encontrar parques y añadir más información",
+    "es": "En este mapa, encuentras parques infantiles y puedes agregar más información",
     "da": "På dette kort finder du legepladser og kan tilføje flere oplysninger",
     "ca": "A aquest mapa, pots trobar parcs i afegir més informació",
     "cs": "Na této mapě najdete dětská hřiště a můžete k nim přidat další informace",
-    "pl": "Na tej mapie znajdziesz place zabaw, możesz też dodać o nich więcej informacji"
+    "pl": "Na tej mapie znajdziesz place zabaw, możesz też dodać o nich więcej informacji",
+    "uk": "На цій мапі ви знайдете дитячі майданчики та зможете додати додаткову інформацію"
   },
   "shortDescription": {
     "nl": "Een kaart met speeltuinen",
@@ -52,7 +54,8 @@
     "es": "Un mapa con parques infantiles",
     "da": "Et kort med legepladser",
     "cs": "Mapa dětských hřišť",
-    "pl": "Mapa z placami zabaw"
+    "pl": "Mapa z placami zabaw",
+    "uk": "Мапа дитячих майданчиків"
   },
   "icon": "./assets/themes/playgrounds/playground.svg",
   "startZoom": 13,
@@ -64,10 +67,14 @@
     {
       "builtin": [
         "bench",
-        "picnic_table"
+        "picnic_table",
+        "waste_basket",
+        "toilet",
+        "bbq"
       ],
       "override": {
-        "minzoom": 16
+        "minzoom": 16,
+        "isCounted": false
       }
     }
   ],

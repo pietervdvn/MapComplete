@@ -79,7 +79,6 @@
   >([])
 
   async function calculateQuestions() {
-    console.log("Applying questions to ask")
     const qta = questionsToAsk.data
     firstQuestion.setData(undefined)
     //allQuestionsToAsk.setData([])

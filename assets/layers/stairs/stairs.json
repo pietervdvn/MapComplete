@@ -6,7 +6,8 @@
     "de": "Treppen",
     "ca": "Escales",
     "cs": "Schody",
-    "id": "Tangga"
+    "id": "Tangga",
+    "es": "Escaleras"
   },
   "description": {
     "en": "Layer showing stairs and escalators",
@@ -14,7 +15,8 @@
     "nl": "Laag met trappen en roltrappen",
     "ca": "Capa que mostra escales i escales mecàniques",
     "cs": "Vrstva zobrazující schody a eskalátory",
-    "id": "Lapisan ini menunjukkan tangga dan eskalator"
+    "id": "Lapisan ini menunjukkan tangga dan eskalator",
+    "es": "Capa que muestra escaleras y escaleras mecánicas"
   },
   "source": {
     "osmTags": "highway=steps"
@@ -26,7 +28,8 @@
       "nl": "Trap",
       "de": "Treppe",
       "ca": "Escales",
-      "cs": "Schody"
+      "cs": "Schody",
+      "es": "Escaleras"
     },
     "mappings": [
       {
@@ -36,7 +39,8 @@
           "nl": "Roltrap",
           "de": "Rolltreppe",
           "ca": "Escala mecànica",
-          "cs": "Jezdící schody"
+          "cs": "Jezdící schody",
+          "es": "Escalera mecánica"
         }
       }
     ]
@@ -61,7 +65,7 @@
     {
       "color": "gray",
       "width": 10,
-      "dashArray": "6 12"
+      "dashArray": "1 1"
     }
   ],
   "tagRenderings": [
@@ -74,14 +78,16 @@
           "nl": "Tussen welke verdiepingen loopt deze trap?",
           "de": "Zwischen welchen Stockwerken befindet sich diese Treppe?",
           "ca": "Entre quines plantes estan aquestes escales?",
-          "cs": "Mezi kterými podlažími jsou tyto schody?"
+          "cs": "Mezi kterými podlažími jsou tyto schody?",
+          "es": "¿Entre qué niveles están estas escaleras?"
         },
         "render": {
           "en": "These stairs are between the levels {level}",
           "nl": "Deze trap loopt tussen de verdiepingen {level}",
           "de": "Diese Treppe ist zwischen den Stockwerken {level}",
           "ca": "Aquestes escales estan entre les plantes {level}",
-          "cs": "Tyto schody jsou mezi patry {level}"
+          "cs": "Tyto schody jsou mezi patry {level}",
+          "es": "Estas escaleras están entre los niveles {level}"
         }
       }
     },
@@ -96,7 +102,8 @@
             "de": "Das ist eine Rolltreppe",
             "ca": "Açò és una escala mecànica",
             "cs": "Jedná se o eskalátor",
-            "id": "Ini adalah eskalator"
+            "id": "Ini adalah eskalator",
+            "es": "Esta es una escalera mecánica"
           }
         },
         {
@@ -107,7 +114,8 @@
             "de": "Das ist keine Rolltreppe",
             "ca": "Açò no és una escala mecànica",
             "cs": "Nejedná se o eskalátor",
-            "id": "Ini bukan eskalator"
+            "id": "Ini bukan eskalator",
+            "es": "Esta no es una escalera mecánica"
           }
         },
         {
@@ -118,7 +126,8 @@
             "de": "Das ist keine Rolltreppe",
             "ca": "Això no és una escala mecànica",
             "cs": "Nejedná se o eskalátor",
-            "id": "Ini bukan eskalator"
+            "id": "Ini bukan eskalator",
+            "es": "Esta no es una escalera mecánica"
           },
           "hideInAnswer": true
         }
@@ -132,7 +141,8 @@
         "de": "Hat die Treppe einen Handlauf?",
         "ca": "Aquestes escales tenen un passamà?",
         "cs": "Má toto schodiště zábradlí?",
-        "id": "Apakah tangga ini memiliki pegangan?"
+        "id": "Apakah tangga ini memiliki pegangan?",
+        "es": "¿Tiene esta escalera pasamanos?"
       },
       "mappings": [
         {
@@ -143,7 +153,8 @@
             "de": "Die Treppe hat einen Handlauf",
             "ca": "Aquestes escales tenen barana",
             "cs": "Tyto schody mají zábradlí",
-            "id": "Tangga ini memiliki pegangan tangan"
+            "id": "Tangga ini memiliki pegangan tangan",
+            "es": "Estas escaleras tienen pasamanos"
           }
         },
         {
@@ -154,7 +165,8 @@
             "de": "Die Treppe hat <b>keinen</b> Handlauf",
             "ca": "Aquestes escales <b>no</b> tenen un passamà",
             "cs": "Tyto schody <b>nemají</b> zábradlí",
-            "id": "Tangga ini <b>tidak </b>memiliki pegangan tangan"
+            "id": "Tangga ini <b>tidak </b>memiliki pegangan tangan",
+            "es": "Estas escaleras <b>no</b> tienen pasamanos"
           }
         }
       ],
@@ -173,7 +185,8 @@
         "de": "Hat die Treppe eine taktile Schrift am Handlauf?",
         "nl": "Heeft deze trap voelbaar schrift op de leuning?",
         "ca": "Aquestes escales tenen escriptura braille a la barana?",
-        "cs": "Mají tyto schody hmatový nápis na zábradlí?"
+        "cs": "Mají tyto schody hmatový nápis na zábradlí?",
+        "es": "¿Tienen estas escaleras escritura táctil en el pasamanos?"
       },
       "mappings": [
         {
@@ -183,7 +196,8 @@
             "de": "Am Handlauf gibt es taktile Schrift",
             "nl": "Er is voelbaar schrift op de leuning",
             "ca": "Hi ha escriptura braille a la barana",
-            "cs": "Na zábradlí je hmatový nápis"
+            "cs": "Na zábradlí je hmatový nápis",
+            "es": "Hay escritura táctil en el pasamanos"
           }
         },
         {
@@ -193,7 +207,8 @@
             "de": "Am Handlauf gibt es keine taktile Schrift",
             "nl": "Er is geen voelbaar schrift op de leuning",
             "ca": "No hi ha escriptura braille a la barana",
-            "cs": "Na zábradlí není žádné hmatové psaní"
+            "cs": "Na zábradlí není žádné hmatové psaní",
+            "es": "No hay escritura táctil en el pasamanos"
           }
         }
       ]
@@ -210,21 +225,24 @@
             "de": "In welchen Sprachen gibt es taktile Schrift (Braille) für die Navigation? <img src='./assets/layers/stairs/Braille_stairs.jpg' style='height: 300px; width: auto; display: block;' />",
             "nl": "In welke talen is er voelbaar schrift (braille) voor navigatie? <img src='./assets/layers/stairs/Braille_stairs.jpg' style='height: 300px; width: auto; display: block;' />",
             "ca": "En quins idiomes hi ha escriptura tàctil (braille) per a la navegació? <img src='./assets/layers/stairs/Braille_stairs.jpg' style='height: 300px; width: auto; display: block;' />",
-            "cs": "Ve kterých jazycích existuje hmatové písmo (braillské písmo) pro navigaci? <img src='./assets/layers/stairs/Braille_stairs.jpg' style='height: 300px; width: auto; display: block;' />"
+            "cs": "Ve kterých jazycích existuje hmatové písmo (braillské písmo) pro navigaci? <img src='./assets/layers/stairs/Braille_stairs.jpg' style='height: 300px; width: auto; display: block;' />",
+            "es": "¿En qué idiomas hay escritura táctil (braille) para la navegación? <img src='./assets/layers/stairs/Braille_stairs.jpg' style='height: 300px; width: auto; display: block;' />"
           },
           "render_list_item": {
             "en": "These stairs have tactile writing in {language()}",
             "de": "Die Treppe hat taktile Schrift in {language()}",
             "nl": "Deze trap heeft voelbaar schrijft in {language()}",
             "ca": "Aquestes escales tenen escriptura tàctil en {language()}",
-            "cs": "Tyto schody mají hmatové písmo v {language()}"
+            "cs": "Tyto schody mají hmatové písmo v {language()}",
+            "es": "Estas escaleras tienen escritura táctil en {language()}"
           },
           "render_single_language": {
             "en": "These stairs have tactile writing in {language()}",
             "de": "Die Treppe hat taktile Schrift in {language()}",
             "nl": "Deze trap heeft voelbaar schrijft in {language()}",
             "ca": "Aquestes escales tenen escriptura tàctil en {language()}",
-            "cs": "Tyto schody mají hmatové písmo v {language()}"
+            "cs": "Tyto schody mají hmatové písmo v {language()}",
+            "es": "Estas escaleras tienen escritura táctil en {language()}"
           }
         }
       }
@@ -236,7 +254,8 @@
         "de": "Gibt es eine Rampe an dieser Treppe?",
         "nl": "Is er een helling bij deze trap?",
         "ca": "Hi ha una rampa en aquestes escales?",
-        "cs": "Je u těchto schodů rampa?"
+        "cs": "Je u těchto schodů rampa?",
+        "es": "¿Hay una rampa en estas escaleras?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -248,7 +267,8 @@
             "de": "Hier gibt es eine Rampe für Fahrräder",
             "nl": "Er is hier een helling voor fietsen",
             "ca": "Aquí hi ha una rampa per a bicicletes",
-            "cs": "Je zde rampa pro kola"
+            "cs": "Je zde rampa pro kola",
+            "es": "Hay una rampa para bicicletas aquí"
           }
         },
         {
@@ -259,7 +279,8 @@
             "de": "Hier gibt es eine Rampe für Rollstühle",
             "nl": "Er is hier een helling voor rolstoelen",
             "ca": "Aquí hi ha una rampa per a cadires de rodes",
-            "cs": "Je zde rampa pro vozíčkáře"
+            "cs": "Je zde rampa pro vozíčkáře",
+            "es": "Hay una rampa para sillas de ruedas aquí"
           }
         },
         {
@@ -269,7 +290,8 @@
             "de": "Hier gibt es eine Rampe für Rollstühle, die jedoch auf der Karte separat angezeigt wird",
             "nl": "Er is hier een helling voor rolstoelen, maar deze is los aangegeven op de kaart",
             "ca": "Aquí hi ha una rampa per a cadira de rodes, però es mostra separadament al mapa",
-            "cs": "Je zde rampa pro vozíčkáře, ale na mapě je zobrazena samostatně"
+            "cs": "Je zde rampa pro vozíčkáře, ale na mapě je zobrazena samostatně",
+            "es": "Hay una rampa para sillas de ruedas aquí, pero se muestra por separado en el mapa"
           },
           "hideInAnswer": true
         },
@@ -281,7 +303,8 @@
             "de": "Hier gibt es eine Rampe für Kinderwagen",
             "nl": "Er is hier een helling voor kinderwagens",
             "ca": "Aquí hi ha una rampa per als cotxets",
-            "cs": "Je zde rampa pro kočárky"
+            "cs": "Je zde rampa pro kočárky",
+            "es": "Hay una rampa para cochecitos aquí"
           }
         },
         {
@@ -292,7 +315,8 @@
             "de": "An dieser Treppe gibt es keine Rampe",
             "nl": "Er is hier geen helling",
             "ca": "No hi ha cap rampa en aquestes escales",
-            "cs": "U těchto schodů není žádná rampa"
+            "cs": "U těchto schodů není žádná rampa",
+            "es": "No hay rampa en estas escaleras"
           }
         }
       ],
@@ -304,7 +328,8 @@
         "en": "These stairs have an incline of {incline}",
         "ca": "Aquestes escales tenen una inclinació de {incline}",
         "de": "Die Treppe hat eine Steigung von {incline}",
-        "id": "Tangga ini memiliki kemiringan sebesar {incline}"
+        "id": "Tangga ini memiliki kemiringan sebesar {incline}",
+        "es": "Estas escaleras tienen una inclinación de {incline}"
       },
       "freeform": {
         "key": "incline",
@@ -314,7 +339,8 @@
         "en": "What is the incline of these stairs?",
         "ca": "Quina és la inclinació d'aquestes escales?",
         "de": "Welche Steigung hat die Treppe?",
-        "id": "Berapa kemiringan tangga ini?"
+        "id": "Berapa kemiringan tangga ini?",
+        "es": "¿Cuál es la inclinación de estas escaleras?"
       },
       "mappings": [
         {
@@ -323,7 +349,8 @@
             "en": "The upward direction is {direction_absolute()}",
             "ca": "La direcció ascendent és {direction_absolute()}",
             "de": "Die Aufwärtsrichtung ist {direction_absolute()}",
-            "id": "Arah ke atas adalah {direction_absolute()}"
+            "id": "Arah ke atas adalah {direction_absolute()}",
+            "es": "La dirección ascendente es {direction_absolute()}"
           },
           "hideInAnswer": true
         },
@@ -333,11 +360,16 @@
             "en": "The downward direction is {direction_absolute()}",
             "ca": "La direcció descendent és {direction_absolute()}",
             "de": "Die Abwärtsrichtung ist {direction_absolute()}",
-            "id": "Arah ke bawah adalah {direction_absolute()}"
+            "id": "Arah ke bawah adalah {direction_absolute()}",
+            "es": "La dirección descendente es {direction_absolute()}"
           },
           "hideInAnswer": true
         }
       ]
     }
-  ]
+  ],
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": false
+  }
 }

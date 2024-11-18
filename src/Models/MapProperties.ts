@@ -23,6 +23,7 @@ export interface MapProperties {
     readonly lastClickLocation: Store<{ lon: number; lat: number }>
     readonly allowZooming: UIEventSource<true | boolean>
     readonly useTerrain: Store<boolean>
+    readonly showScale: UIEventSource<boolean>
 
     /**
      * Triggered when the user navigated by using the keyboard.
@@ -30,6 +31,8 @@ export interface MapProperties {
      * @param f
      */
     onKeyNavigationEvent(f: (event: KeyNavigationEvent) => void | boolean): () => void
+
+    flyTo(lon: number, lat: number, zoom: number): void
 }
 
 export interface ExportableMap {

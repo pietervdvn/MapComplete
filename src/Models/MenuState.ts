@@ -2,11 +2,10 @@ import LayerConfig from "./ThemeConfig/LayerConfig"
 import { UIEventSource } from "../Logic/UIEventSource"
 import UserRelatedState from "../Logic/State/UserRelatedState"
 import { Utils } from "../Utils"
-import { LocalStorageSource } from "../Logic/Web/LocalStorageSource"
 import Zoomcontrol from "../UI/Zoomcontrol"
+import { LocalStorageSource } from "../Logic/Web/LocalStorageSource"
 
-export type ThemeViewTabStates = (typeof MenuState._themeviewTabs)[number]
-export type MenuViewTabStates = (typeof MenuState._menuviewTabs)[number]
+export type PageType = (typeof MenuState.pageNames)[number]
 
 /**
  * Indicates if a menu is open, and if so, which tab is selected;
@@ -15,143 +14,57 @@ export type MenuViewTabStates = (typeof MenuState._menuviewTabs)[number]
  * Some convenience methods are provided for this as well
  */
 export class MenuState {
-    public static readonly _themeviewTabs = ["intro", "download", "copyright", "share"] as const
-    public static readonly _menuviewTabs = [
-        "about",
-        "settings",
-        "favourites",
-        "community",
+    public static readonly pageNames = [
+        "copyright",
+        "copyright_icons",
+        "community_index",
+        "hotkeys",
         "privacy",
-        "advanced",
+        "filter",
+        "background",
+        "overlay",
+        "about_theme",
+        "download",
+        "favourites",
+        "usersettings",
+        "share",
+        "menu",
     ] as const
-    public readonly themeIsOpened: UIEventSource<boolean>
-    public readonly themeViewTabIndex: UIEventSource<number>
-    public readonly themeViewTab: UIEventSource<ThemeViewTabStates>
-    public readonly menuIsOpened: UIEventSource<boolean>
-    public readonly menuViewTabIndex: UIEventSource<number>
-    public readonly menuViewTab: UIEventSource<MenuViewTabStates>
 
-    public readonly backgroundLayerSelectionIsOpened: UIEventSource<boolean> =
-        new UIEventSource<boolean>(false)
-    public readonly overlaySelectionIsOpened: UIEventSource<boolean> = new UIEventSource<boolean>(
-        false
-    )
-
-    public readonly filtersPanelIsOpened: UIEventSource<boolean> = new UIEventSource<boolean>(false)
-    public readonly privacyPanelIsOpened: UIEventSource<boolean> = new UIEventSource<boolean>(false)
-    /**
-     * Standalone copyright panel
-     */
-    public readonly copyrightPanelIsOpened: UIEventSource<boolean> = new UIEventSource<boolean>(
-        false
-    )
-
-    public readonly communityIndexPanelIsOpened: UIEventSource<boolean> = new UIEventSource(false)
-    public readonly allToggles: {
-        toggle: UIEventSource<boolean>
-        name: string
-        submenu?: UIEventSource<string>
-        showOverOthers?: boolean
-    }[]
+    public readonly pageStates: Record<PageType, UIEventSource<boolean>>
 
     public readonly highlightedLayerInFilters: UIEventSource<string> = new UIEventSource<string>(
         undefined
     )
     public highlightedUserSetting: UIEventSource<string> = new UIEventSource<string>(undefined)
 
-    constructor(shouldOpenWelcomeMessage: boolean, themeid: string = "") {
+    constructor(shouldShowWelcomeMessage: boolean, themeid: string) {
         // Note: this class is _not_ responsible to update the Hash, @see ThemeViewStateHashActor for this
-        if (themeid) {
-            themeid += "-"
+        const states = {}
+        for (const pageName of MenuState.pageNames) {
+            const toggle = new UIEventSource(false)
+            states[pageName] = toggle
         }
-        this.themeIsOpened = LocalStorageSource.GetParsed(
-            themeid + "thememenuisopened",
-            shouldOpenWelcomeMessage
-        )
-        this.themeViewTabIndex = LocalStorageSource.GetParsed(themeid + "themeviewtabindex", 0)
-        this.themeViewTab = this.themeViewTabIndex.sync(
-            (i) => MenuState._themeviewTabs[i],
-            [],
-            (str) => MenuState._themeviewTabs.indexOf(<any>str)
-        )
+        this.pageStates = <Record<PageType, UIEventSource<boolean>>>states
 
-        this.menuIsOpened = LocalStorageSource.GetParsed(themeid + "menuisopened", false)
-        this.menuViewTabIndex = LocalStorageSource.GetParsed(themeid + "menuviewtabindex", 0)
-        this.menuViewTab = this.menuViewTabIndex.sync(
-            (i) => MenuState._menuviewTabs[i],
-            [],
-            (str) => MenuState._menuviewTabs.indexOf(<any>str)
-        )
-        this.menuIsOpened.addCallbackAndRun((isOpen) => {
-            if (!isOpen) {
-                this.highlightedUserSetting.setData(undefined)
+        for (const pageName of MenuState.pageNames) {
+            if (pageName === "menu") {
+                continue
             }
-        })
-        this.menuViewTab.addCallbackD((tab) => {
-            if (tab !== "settings") {
-                this.highlightedUserSetting.setData(undefined)
-            }
-        })
-        this.filtersPanelIsOpened.addCallbackAndRun((isOpen) => {
-            if (!isOpen) {
-                this.highlightedLayerInFilters.setData(undefined)
-            }
-        })
-
-        this.menuIsOpened.addCallbackAndRunD((opened) => {
-            if (opened) {
-                this.themeIsOpened.setData(false)
-            }
-        })
-        this.themeIsOpened.addCallbackAndRunD((opened) => {
-            if (opened) {
-                this.menuIsOpened.setData(false)
-            }
-        })
-
-        this.allToggles = [
-            {
-                toggle: this.privacyPanelIsOpened,
-                name: "privacy",
-                showOverOthers: true,
-            },
-            {
-                toggle: this.copyrightPanelIsOpened,
-                name: "copyright",
-                showOverOthers: true,
-            },
-            {
-                toggle: this.communityIndexPanelIsOpened,
-                name: "community",
-                showOverOthers: true,
-            },
-            {
-                toggle: this.filtersPanelIsOpened,
-                name: "filters",
-                showOverOthers: true,
-            },
-            {
-                toggle: this.menuIsOpened,
-                name: "menu",
-                submenu: this.menuViewTab,
-            },
-            {
-                toggle: this.themeIsOpened,
-                name: "theme-menu",
-                submenu: this.themeViewTab,
-            },
-            {
-                toggle: this.backgroundLayerSelectionIsOpened,
-                name: "background",
-                showOverOthers: true,
-            },
-        ]
-        for (const toggle of this.allToggles) {
-            toggle.toggle.addCallback((isOpen) => {
-                if (!isOpen) {
-                    this.resetZoomIfAllClosed()
+            this.pageStates[pageName].addCallback((enabled) => {
+                if (enabled) {
+                    this.pageStates.menu.set(false)
                 }
             })
+        }
+
+        const visitedBefore = LocalStorageSource.getParsed<boolean>(
+            themeid + "thememenuisopened",
+            false
+        )
+        if (!visitedBefore.data && shouldShowWelcomeMessage) {
+            this.pageStates.about_theme.set(true)
+            visitedBefore.set(true)
         }
     }
 
@@ -163,7 +76,7 @@ export class MenuState {
     }
 
     public openFilterView(highlightLayer?: LayerConfig | string) {
-        this.filtersPanelIsOpened.setData(true)
+        this.pageStates.filter.setData(true)
         if (highlightLayer) {
             if (typeof highlightLayer !== "string") {
                 highlightLayer = highlightLayer.id
@@ -173,8 +86,6 @@ export class MenuState {
     }
 
     public openUsersettings(highlightTagRendering?: string) {
-        this.menuIsOpened.setData(true)
-        this.menuViewTab.setData("settings")
         if (
             highlightTagRendering !== undefined &&
             !UserRelatedState.availableUserSettingsIds.some((tr) => tr === highlightTagRendering)
@@ -189,10 +100,11 @@ export class MenuState {
             )
         }
         this.highlightedUserSetting.setData(highlightTagRendering)
+        this.pageStates.usersettings.set(true)
     }
 
     public isSomethingOpen(): boolean {
-        return this.allToggles.some((t) => t.toggle.data)
+        return Object.values(this.pageStates).some((t) => t.data)
     }
 
     /**
@@ -200,14 +112,18 @@ export class MenuState {
      * Returns 'true' if at least one menu was opened
      */
     public closeAll(): boolean {
-        let somethingWasOpen = false
-        for (const t of this.allToggles) {
-            somethingWasOpen = t.toggle.data
-            t.toggle.setData(false)
-            if (somethingWasOpen) {
-                break
+        const ps = this.pageStates
+        for (const key in ps) {
+            const toggle = ps[key]
+            const wasOpen = toggle.data
+            toggle.setData(false)
+            if (wasOpen) {
+                return true
             }
         }
-        return somethingWasOpen
+        if (ps.menu.data) {
+            ps.menu.set(false)
+            return true
+        }
     }
 }

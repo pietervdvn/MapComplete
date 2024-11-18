@@ -8,7 +8,6 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [drinking_water](../Layers/drinking_water.md)
  - [birdhide](../Layers/birdhide.md)
  - [nature_reserve](../Layers/nature_reserve.md)
@@ -22,9 +21,7 @@ This theme contains the following layers:
  - [bbq](../Layers/bbq.md)
  - [firepit](../Layers/firepit.md)
 
-
 Available languages:
-
 
  - en
  - nl
@@ -37,7 +34,9 @@ Available languages:
  - es
  - zh_Hant
  - pl
-
+ - ru
+ - hu
+ - uk
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

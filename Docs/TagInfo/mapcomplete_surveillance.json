@@ -36,19 +36,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Surveillance camera's allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Surveillance camera's allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Surveillance camera's allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Surveillance camera's allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Surveillance camera's allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Surveillance camera's allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Surveillance camera's allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Surveillance camera's allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Surveillance camera's allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "surveillance:type",
@@ -200,19 +204,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Speed Camera allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Speed Camera allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Speed Camera allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Speed Camera allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Speed Camera allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Speed Camera allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Speed Camera allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Speed Camera allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Speed Camera allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "maxspeed",
@@ -221,6 +229,90 @@
     {
       "key": "direction",
       "description": "Layer 'Speed Camera' shows and asks freeform values for key 'direction' (in the mapcomplete.org theme 'Surveillance under Surveillance')"
+    },
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme Surveillance under Surveillance has a layer Police stations showing features with this tag",
+      "value": "police"
+    },
+    {
+      "key": "police",
+      "description": "The MapComplete theme Surveillance under Surveillance has a layer Police stations showing features with this tag"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Police stations' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Surveillance under Surveillance') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Police stations allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Police stations allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Police stations allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Police stations allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Police stations allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "name",
+      "description": "Layer 'Police stations' shows and asks freeform values for key 'name' (in the mapcomplete.org theme 'Surveillance under Surveillance')"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'Police stations' shows and asks freeform values for key 'phone' (in the mapcomplete.org theme 'Surveillance under Surveillance')"
+    },
+    {
+      "key": "contact:phone",
+      "description": "Layer 'Police stations' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Surveillance under Surveillance')"
+    },
+    {
+      "key": "email",
+      "description": "Layer 'Police stations' shows and asks freeform values for key 'email' (in the mapcomplete.org theme 'Surveillance under Surveillance')"
+    },
+    {
+      "key": "contact:email",
+      "description": "Layer 'Police stations' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Surveillance under Surveillance')"
+    },
+    {
+      "key": "operator:email",
+      "description": "Layer 'Police stations' shows operator:email~.+ with a fixed text, namely '<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>' (in the mapcomplete.org theme 'Surveillance under Surveillance')"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Police stations' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Surveillance under Surveillance')"
+    },
+    {
+      "key": "contact:website",
+      "description": "Layer 'Police stations' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the mapcomplete.org theme 'Surveillance under Surveillance')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Police stations' shows and asks freeform values for key 'opening_hours' (in the mapcomplete.org theme 'Surveillance under Surveillance')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Police stations' shows opening_hours=closed with a fixed text, namely 'Marked as closed for an unspecified time' (in the mapcomplete.org theme 'Surveillance under Surveillance')",
+      "value": "closed"
+    },
+    {
+      "key": "detention",
+      "description": "Layer 'Police stations' shows detention=yes with a fixed text, namely 'This police office has some cells to detain people' and allows to pick this as a default answer (in the mapcomplete.org theme 'Surveillance under Surveillance') (This is only shown if amenity=police)",
+      "value": "yes"
+    },
+    {
+      "key": "detention",
+      "description": "Layer 'Police stations' shows detention=no with a fixed text, namely 'This police office does not have cells to detain people' and allows to pick this as a default answer (in the mapcomplete.org theme 'Surveillance under Surveillance') (This is only shown if amenity=police)",
+      "value": "no"
     }
   ]
 }

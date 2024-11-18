@@ -64,7 +64,7 @@ class MultiApplyExecutor {
         const keysToChange = this.params.keysToApply
         const overwrite = this.params.overwrite
         const selfTags = this.params.tagsSource.data
-        const theme = this.params.state.layout.id
+        const theme = this.params.state.theme.id
         for (const id of featuresToChange) {
             const tagsToApply: Tag[] = []
             const otherFeatureTags = allElements.getStore(id).data

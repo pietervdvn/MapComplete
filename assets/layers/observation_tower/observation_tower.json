@@ -14,7 +14,7 @@
     "en": "Towers with a panoramic view",
     "nl": "Torens om van het uitzicht te genieten",
     "de": "Türme zur Aussicht auf die umgebende Landschaft",
-    "es": "Torres con vista panorámica",
+    "es": "Torres con vistas panorámicas",
     "pl": "Wieże z panoramicznym widokiem",
     "ca": "Torres amb vista panoràmica",
     "cs": "Věže s panoramatickým výhledem"
@@ -81,7 +81,7 @@
         "en": "What is the name of this tower?",
         "nl": "Heeft deze toren een naam?",
         "de": "Wie ist der Name des Turms?",
-        "es": "¿Cual es el nombre de esta torre?",
+        "es": "¿Cuál es el nombre de esta torre?",
         "ca": "Com s'anomena aquesta torre?",
         "pl": "Jaka jest nazwa tej wieży?",
         "cs": "Jak se jmenuje tato věž?"
@@ -119,7 +119,7 @@
         "en": "What is the height of this tower?",
         "nl": "Hoe hoog is deze toren?",
         "de": "Wie hoch ist dieser Turm?",
-        "es": "¿Cual es la altura de esta torre?",
+        "es": "¿Cuál es la altura de esta torre?",
         "ca": "Quina és l'alçada d'aquesta torre?",
         "pl": "Jaka jest wysokość tej wieży?",
         "cs": "Jaká je výška této věže?"
@@ -128,7 +128,7 @@
         "en": "This tower is {height} high",
         "nl": "Deze toren is {height} hoog",
         "de": "Dieser Turm ist {height} hoch",
-        "es": "Esta torre mide {height}",
+        "es": "Esta torre mide {height} de alto",
         "pl": "Ta wieża ma wysokość {height}",
         "ca": "Aquesta torre fa {height}",
         "cs": "Tato věž je {height} vysoká"
@@ -156,7 +156,7 @@
             "en": "This tower is publicly accessible",
             "nl": "Deze toren is publiek toegankelijk",
             "de": "Der Turm ist öffentlich zugänglich",
-            "es": "Esta torre es accesible públicamente",
+            "es": "Esta torre es de acceso público",
             "ca": "Aquesta torre és d'accés públic",
             "pl": "Ta wieża jest publicznie dostępna",
             "cs": "Tato věž je veřejně dostupná"
@@ -168,7 +168,7 @@
             "en": "This tower can only be visited with a guide",
             "nl": "Deze toren can enkel bezocht worden met een gids",
             "de": "Der Turm darf nur in Begleitung eines Führers betreten werden",
-            "es": "A esta torre solo se puede acceder con un guía",
+            "es": "Esta torre sólo se puede visitar con guía",
             "ca": "Aquesta torre només es pot visitar amb un guia",
             "pl": "Ta wieża można być zwiedzana tylko z przewodnikiem",
             "cs": "Tuto věž lze navštívit pouze s průvodcem"
@@ -214,7 +214,8 @@
             "nl": "Gratis te bezoeken",
             "de": "Eintritt kostenlos",
             "pl": "Darmowe wejście",
-            "cs": "Zdarma k návštěvě"
+            "cs": "Zdarma k návštěvě",
+            "es": "Entrada gratuita"
           }
         }
       ],
@@ -258,7 +259,7 @@
         "en": "This tower has {step_count} steps to reach the top",
         "nl": "Deze toren heeft {step_count} traptredes",
         "de": "Dieser Turm hat {step_count} Stufen, um die Spitze zu erreichen",
-        "es": "Esta torre tiene {step_count} escalones para lllegar a l a cima",
+        "es": "Esta torre tiene {step_count} escalones para llegar a la cima",
         "ca": "Aquesta torre té {step_count} esglaons per arribar al cim",
         "pl": "Ta wieża ma {step_count} stopni na górę",
         "cs": "Na vrchol této věže vede {step_count} schodů"
@@ -276,7 +277,7 @@
         "en": "Does this tower have an elevator?",
         "nl": "Heeft deze toren een lift?",
         "de": "Hat dieser Turm einen Aufzug?",
-        "es": "¿Esta torre tiene ascensor?",
+        "es": "¿Tiene esta torre ascensor?",
         "pl": "Czy ta wieża ma windę?",
         "ca": "Aquesta torre té ascensor?",
         "cs": "Má tato věž výtah?"
@@ -328,7 +329,7 @@
         "nl": "Wordt onderhouden door <b>{operator}</b>",
         "en": "Maintained by <b>{operator}</b>",
         "de": "Betrieben von <b>{operator}</b>",
-        "es": "Mantenida por <b>{operator}</b>",
+        "es": "Mantenido por <b>{operator}</b>",
         "pl": "Obsługiwana przez <b>{operator}</b>",
         "ca": "Mantés per <b>{operator}</b>",
         "cs": "Udržováno <b>{operator}</b>"

@@ -2,25 +2,16 @@
 
 # playground_equipment
 
-
-
-
 Layer showing playground equipment
 
-
-
-
-
-
  - This layer is shown at zoomlevel **18** and higher
-
-
 
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [type](#type)
   - [wheelchair-access](#wheelchair-access)
@@ -31,12 +22,14 @@ Layer showing playground equipment
 
 ## Themes using this layer
 
-
-
  - [personal](https://mapcomplete.org/personal)
  - [playgrounds](https://mapcomplete.org/playgrounds)
 
+## Presets
 
+The following options to create new points are included:
+
+ - **a playground device** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:playground' target='_blank'>playground</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:playground%3Dyes' target='_blank'>yes</a>
 
 ## Basic tags for this layer
 
@@ -53,22 +46,15 @@ Elements must match the expression **playground~.+**
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/playground#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/playground/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [playground](https://wiki.openstreetmap.org/wiki/Key:playground) | [string](../SpecialInputElements.md#string) | [swing](https://wiki.openstreetmap.org/wiki/Tag:playground%3Dswing) [structure](https://wiki.openstreetmap.org/wiki/Tag:playground%3Dstructure) [slide](https://wiki.openstreetmap.org/wiki/Tag:playground%3Dslide) [sandpit](https://wiki.openstreetmap.org/wiki/Tag:playground%3Dsandpit) [springy](https://wiki.openstreetmap.org/wiki/Tag:playground%3Dspringy) [climbingframe](https://wiki.openstreetmap.org/wiki/Tag:playground%3Dclimbingframe) [seesaw](https://wiki.openstreetmap.org/wiki/Tag:playground%3Dseesaw) [playhouse](https://wiki.openstreetmap.org/wiki/Tag:playground%3Dplayhouse) [roundabout](https://wiki.openstreetmap.org/wiki/Tag:playground%3Droundabout) [basketswing](https://wiki.openstreetmap.org/wiki/Tag:playground%3Dbasketswing) [zipwire](https://wiki.openstreetmap.org/wiki/Tag:playground%3Dzipwire) [horizontal_bar](https://wiki.openstreetmap.org/wiki/Tag:playground%3Dhorizontal_bar) [hopscotch](https://wiki.openstreetmap.org/wiki/Tag:playground%3Dhopscotch) [splash_pad](https://wiki.openstreetmap.org/wiki/Tag:playground%3Dsplash_pad) [climbingwall](https://wiki.openstreetmap.org/wiki/Tag:playground%3Dclimbingwall) [map](https://wiki.openstreetmap.org/wiki/Tag:playground%3Dmap) [bridge](https://wiki.openstreetmap.org/wiki/Tag:playground%3Dbridge) [cushion](https://wiki.openstreetmap.org/wiki/Tag:playground%3Dcushion) [activitypanel](https://wiki.openstreetmap.org/wiki/Tag:playground%3Dactivitypanel) [teenshelter](https://wiki.openstreetmap.org/wiki/Tag:playground%3Dteenshelter) [funnel_ball](https://wiki.openstreetmap.org/wiki/Tag:playground%3Dfunnel_ball) [spinning_circle](https://wiki.openstreetmap.org/wiki/Tag:playground%3Dspinning_circle) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/wheelchair#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/wheelchair/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [wheelchair](https://wiki.openstreetmap.org/wiki/Key:wheelchair) | Multiple choice | [designated](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Ddesignated) [yes](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno) |
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
 
-
-
-
 ### type
 
 The question is `What kind of device is this?`
 *This is a {playground}* is shown if `playground` is set
-
 
  -  *This is a swing* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:playground' target='_blank'>playground</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:playground%3Dswing' target='_blank'>swing</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/playground_equipment/SunwardCohousingPlayStructure2005.jpg' style='width: 3rem; height: 3rem'> *This is a structure consisting of several connected playground devices* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:playground' target='_blank'>playground</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:playground%3Dstructure' target='_blank'>structure</a>
@@ -93,54 +79,34 @@ The question is `What kind of device is this?`
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/playground_equipment/Funnel_ball.jpg' style='width: 3rem; height: 3rem'> *This is a funnel used to play with funnel ball* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:playground' target='_blank'>playground</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:playground%3Dfunnel_ball' target='_blank'>funnel_ball</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/playground_equipment/Spinning_circle.jpg' style='width: 3rem; height: 3rem'> *This is a spinning circle* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:playground' target='_blank'>playground</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:playground%3Dspinning_circle' target='_blank'>spinning_circle</a>
 
-
-
-
-
 ### wheelchair-access
 
 The question is `Is this device accessible by wheelchair?`
-
-
 
  -  *This place is specially adapted for wheelchair users* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Ddesignated' target='_blank'>designated</a>
  -  *This place is easily reachable with a wheelchair* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes' target='_blank'>yes</a>
  -  *It is possible to reach this place in a wheelchair, but it is not easy* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dlimited' target='_blank'>limited</a>
  -  *This place is not reachable with a wheelchair* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno' target='_blank'>no</a>
 
-
-
-
-
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
-
-
-
 
 ### move-button
 
 _This tagrendering has no question and is thus read-only_
 *{move_button()}*
 
-
-
-
 ### delete-button
 
 _This tagrendering has no question and is thus read-only_
 *{delete_button()}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

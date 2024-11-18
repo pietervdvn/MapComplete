@@ -1,5 +1,15 @@
 {
+    "advanced": {
+        "title": "高级功能"
+    },
     "centerMessage": {
-        "allFilteredAway": "当前视图中没有满足过滤条件的要素"
+        "allFilteredAway": "当前视图中没有满足过滤条件的要素",
+        "loadingData": "加载数据…"
+    },
+    "validation": {
+        "wikidata": {
+            "description": "A Wikidata identifier",
+            "startsWithQ": "A wikidata identifier starts with Q and is followed by a number"
+        }
     }
 }

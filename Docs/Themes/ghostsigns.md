@@ -8,38 +8,26 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
- - [ghostsigns (defined in this theme)](#ghostsigns)
+ - [ghostsign](../Layers/ghostsign.md)
  - [advertising_wall_paintings (defined in this theme)](#advertising_wall_paintings)
  - [artwork_on_wall (defined in this theme)](#artwork_on_wall)
  - [walls_and_buildings](../Layers/walls_and_buildings.md)
 
-
 Available languages:
-
 
  - en
  - de
-
+ - es
+ - cs
+ - uk
 
 # Table of contents
 
   - [Ghost Signs ( ghostsigns )](#ghost-signs-(-ghostsigns-))
 1. [Layers defined in this theme configuration file](#layers-defined-in-this-theme-configuration-file)
-2. [ghostsigns](#ghostsigns)
+2. [advertising_wall_paintings](#advertising_wall_paintings)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
-    + [historic](#historic)
-    + [images](#images)
-    + [name](#name)
-    + [inscription](#inscription)
-    + [brand](#brand)
-    + [leftover-questions](#leftover-questions)
-    + [lod](#lod)
-3. [advertising_wall_paintings](#advertising_wall_paintings)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [historic](#historic)
     + [images](#images)
     + [type](#type)
     + [animated](#animated)
@@ -48,15 +36,16 @@ Available languages:
     + [message_type](#message_type)
     + [Sides](#sides)
     + [ref](#ref)
+    + [historic](#historic)
     + [leftover-questions](#leftover-questions)
     + [move-button](#move-button)
     + [delete-button](#delete-button)
     + [lod](#lod)
-4. [artwork_on_wall](#artwork_on_wall)
+3. [artwork_on_wall](#artwork_on_wall)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
     + [historic_or_not](#historic_or_not)
-    + [images](#images)
+    + [images_no_blur](#images_no_blur)
     + [artwork-artwork_type](#artwork-artwork_type)
     + [artwork-artist-wikidata](#artwork-artist-wikidata)
     + [artwork-artist_name](#artwork-artist_name)
@@ -64,7 +53,18 @@ Available languages:
     + [wikipedia](#wikipedia)
     + [artwork_subject](#artwork_subject)
     + [doubles_as_memorial](#doubles_as_memorial)
+    + [memorial-type](#memorial-type)
+    + [inscription](#inscription)
     + [doubles_as_bench](#doubles_as_bench)
+    + [bench-backrest](#bench-backrest)
+    + [bench-armrest](#bench-armrest)
+    + [bench-seats](#bench-seats)
+    + [bench-material](#bench-material)
+    + [bench-direction](#bench-direction)
+    + [bench-colour](#bench-colour)
+    + [bench-survey:date](#bench-surveydate)
+    + [bench-inscription](#bench-inscription)
+    + [bench-memorial](#bench-memorial)
     + [leftover-questions](#leftover-questions)
     + [move-button](#move-button)
     + [delete-button](#delete-button)
@@ -73,21 +73,13 @@ Available languages:
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.
-# ghostsigns
+# advertising_wall_paintings
 
+This layer is based on [advertising](../Layers/advertising.md)
 
+We will complete data from advertising features with reference, operator and lit
 
-
-Layer showing disused signs on buildings
-
-
-
-
-
-
- - This layer is shown at zoomlevel **10** and higher
-
-
+ - This layer is shown at zoomlevel **18** and higher
 
 No themes use this layer
 
@@ -95,108 +87,10 @@ No themes use this layer
 
 Elements must match **all** of the following expressions:
 
-0. <a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dwall_painting' target='_blank'>wall_painting</a>
-1. historic~.+
+0. advertising~.+
+1. advertising!=no
 
-[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22advertising%22%3D%22wall_painting%22%5D%5B%22historic%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
-
-## Supported attributes
-
-**Warning:**,this quick overview is incomplete,
-
-| attribute | type | values which are supported by this layer |
------|-----|----- |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/historic#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/historic/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [historic](https://wiki.openstreetmap.org/wiki/Key:historic) | Multiple choice | [advertising](https://wiki.openstreetmap.org/wiki/Tag:historic%3Dadvertising) [](https://wiki.openstreetmap.org/wiki/Tag:historic%3D) |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/inscription#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/inscription/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [inscription](https://wiki.openstreetmap.org/wiki/Key:inscription) | [string](../SpecialInputElements.md#string) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/brand#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/brand/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [brand](https://wiki.openstreetmap.org/wiki/Key:brand) | [string](../SpecialInputElements.md#string) |  |
-
-
-
-
-### historic
-
-The question is `Is this a ghost sign?`
-
-
-
- -  *This is a ghost sign* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:historic' target='_blank'>historic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:historic%3Dadvertising' target='_blank'>advertising</a>
- -  *This is not a ghost sign, answering this will hide the sign from the map* is shown if with historic=
-
-
-
-
-
-### images
-This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
-_This tagrendering has no question and is thus read-only_
-*{image_carousel()}{image_upload()}*
-
-
-
-
-### name
-
-_This tagrendering has no question and is thus read-only_
-*{name}*
-
-This tagrendering is only visible in the popup if the following condition is met: name~.+
-
-
-### inscription
-
-The question is `What is the text on the sign?`
-*The text on the sign is: {inscription}* is shown if `inscription` is set
-
-
-
-
-### brand
-
-The question is `For what business was this sign made?`
-*This sign was made for: {brand}* is shown if `brand` is set
-
-
-
-
-### leftover-questions
-
-_This tagrendering has no question and is thus read-only_
-*{questions( ,)}*
-
-
-
-
-### lod
-
-_This tagrendering has no question and is thus read-only_
-*{linked_data_from_website()}*
-
-
-This tagrendering has labels 
-`added_by_default`
-# advertising_wall_paintings
-
-
-This layer is based on [advertising](../Layers/advertising.md)
-
-We will complete data from advertising features with reference, operator and lit
-
-
-
-
-
-
- - This layer is shown at zoomlevel **18** and higher
-
-
-
-No themes use this layer
-
-## Basic tags for this layer
-
-Elements must match the expression **<a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dwall_painting' target='_blank'>wall_painting</a>**
-
-[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22advertising%22%3D%22wall_painting%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22advertising%22%5D%5B%22advertising%22!%3D%22no%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
 ## Supported attributes
 
@@ -204,42 +98,22 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 
 | attribute | type | values which are supported by this layer |
 -----|-----|----- |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/historic#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/historic/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [historic](https://wiki.openstreetmap.org/wiki/Key:historic) | Multiple choice | [advertising](https://wiki.openstreetmap.org/wiki/Tag:historic%3Dadvertising) [](https://wiki.openstreetmap.org/wiki/Tag:historic%3D) |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/advertising#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/advertising/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [advertising](https://wiki.openstreetmap.org/wiki/Key:advertising) | [string](../SpecialInputElements.md#string) | [billboard](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dbillboard) [board](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dboard) [column](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dcolumn) [flag](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dflag) [poster_box](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dposter_box) [screen](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dscreen) [sculpture](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dsculpture) [sign](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dsign) [tarp](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dtarp) [totem](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dtotem) [wall_painting](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dwall_painting) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/advertising#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/advertising/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [advertising](https://wiki.openstreetmap.org/wiki/Key:advertising) | [string](../SpecialInputElements.md#string) | [billboard](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dbillboard) [board](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dboard) [column](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dcolumn) [flag](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dflag) [poster_box](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dposter_box) [screen](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dscreen) [sculpture](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dsculpture) [sign](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dsign) [tarp](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dtarp) [totem](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dtotem) [wall_painting](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dwall_painting) [tilework](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dtilework) [relief](https://wiki.openstreetmap.org/wiki/Tag:advertising%3Drelief) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/animated#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/animated/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [animated](https://wiki.openstreetmap.org/wiki/Key:animated) | Multiple choice | [no](https://wiki.openstreetmap.org/wiki/Tag:animated%3Dno) [digital_display](https://wiki.openstreetmap.org/wiki/Tag:animated%3Ddigital_display) [trivision_blades](https://wiki.openstreetmap.org/wiki/Tag:animated%3Dtrivision_blades) [winding_posters](https://wiki.openstreetmap.org/wiki/Tag:animated%3Dwinding_posters) [revolving](https://wiki.openstreetmap.org/wiki/Tag:animated%3Drevolving) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/operator#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/operator/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [operator](https://wiki.openstreetmap.org/wiki/Key:operator) | [string](../SpecialInputElements.md#string) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/sides#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/sides/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [sides](https://wiki.openstreetmap.org/wiki/Key:sides) | Multiple choice | [1](https://wiki.openstreetmap.org/wiki/Tag:sides%3D1) [2](https://wiki.openstreetmap.org/wiki/Tag:sides%3D2) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/ref#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/ref/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [ref](https://wiki.openstreetmap.org/wiki/Key:ref) | [string](../SpecialInputElements.md#string) |  |
-
-
-
-
-### historic
-
-The question is `Is this a ghost sign?`
-
-
-
- -  *This is a ghost sign* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:historic' target='_blank'>historic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:historic%3Dadvertising' target='_blank'>advertising</a>
- -  *This is not a ghost sign* is shown if with historic=
-
-
-
-
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/historic#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/historic/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [historic](https://wiki.openstreetmap.org/wiki/Key:historic) | Multiple choice | [advertising](https://wiki.openstreetmap.org/wiki/Tag:historic%3Dadvertising) [](https://wiki.openstreetmap.org/wiki/Tag:historic%3D) |
 
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
-
-
-
 
 ### type
 
 The question is `Which type of advertising feature is this?`
 *This is a {advertising}* is shown if `advertising` is set
-
 
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/advertising/billboard.svg' style='width: 3rem; height: 3rem'> *This is a billboard* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dbillboard' target='_blank'>billboard</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/advertising/board.svg' style='width: 3rem; height: 3rem'> *This is a board* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dboard' target='_blank'>board</a>
@@ -252,16 +126,12 @@ The question is `Which type of advertising feature is this?`
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/advertising/tarp.svg' style='width: 3rem; height: 3rem'> *This is a tarp (a weatherproof piece of textile with an advertising message)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dtarp' target='_blank'>tarp</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/advertising/totem.svg' style='width: 3rem; height: 3rem'> *This is a totem* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dtotem' target='_blank'>totem</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/themes/advertising/wall_painting.svg' style='width: 3rem; height: 3rem'> *This is a wall painting* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dwall_painting' target='_blank'>wall_painting</a>
-
-
-
-
+ -  *This is tilework - the advertisement is painted on tiles* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dtilework' target='_blank'>tilework</a>
+ -  *This is a relief* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Drelief' target='_blank'>relief</a>
 
 ### animated
 
 The question is `Does this advertisement cycle through multiple messages?`
-
-
 
  -  *<b>Static</b>, always shows the same message* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:animated' target='_blank'>animated</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:animated%3Dno' target='_blank'>no</a>
  -  *This object has a built-in <b>digital display</b> to show prices or some other message* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:animated' target='_blank'>animated</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:animated%3Ddigital_display' target='_blank'>digital_display</a>
@@ -269,15 +139,9 @@ The question is `Does this advertisement cycle through multiple messages?`
  -  *<b>Scrolling</b> posters* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:animated' target='_blank'>animated</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:animated%3Dwinding_posters' target='_blank'>winding_posters</a>
  -  *<b>Rotates</b> on itself* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:animated' target='_blank'>animated</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:animated%3Drevolving' target='_blank'>revolving</a>
 
-
-
-
-
 ### luminous_or_lit_advertising
 
 The question is `Is this object lit or does it emit light?`
-
-
 
  -  *This is a neon-tube light* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:luminous' target='_blank'>luminous</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:luminous%3Dneon' target='_blank'>neon</a>
  -  *This object both emits light and is lighted by an external light source* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:lit' target='_blank'>lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lit%3Dyes' target='_blank'>yes</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:luminous' target='_blank'>luminous</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:luminous%3Dyes' target='_blank'>yes</a>
@@ -285,23 +149,14 @@ The question is `Is this object lit or does it emit light?`
  -  *This object is lit externally, e.g. by a spotlight or other lights* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:lit' target='_blank'>lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lit%3Dyes' target='_blank'>yes</a>
  -  *This object does not emit light and is not lighted by externally* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:lit' target='_blank'>lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lit%3Dno' target='_blank'>no</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:luminous' target='_blank'>luminous</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:luminous%3Dno' target='_blank'>no</a>
 
-
-
-
-
 ### operator
 
 The question is `Who operates this feature?`
 *Operated by {operator}* is shown if `operator` is set
 
-
-
-
 ### message_type
 
 The question is `What kind of message is shown?`
-
-
 
  -  *Commercial message* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:message' target='_blank'>message</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:message%3Dcommercial' target='_blank'>commercial</a>. Unselecting this answer will add message=
  -  *Local information* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:message' target='_blank'>message</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:message%3Dlocal' target='_blank'>local</a>. Unselecting this answer will add message=
@@ -314,78 +169,56 @@ The question is `What kind of message is shown?`
  -  *Funding sign* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:message' target='_blank'>message</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:message%3Dfunding' target='_blank'>funding</a>. Unselecting this answer will add message=
  -  *A map* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:information' target='_blank'>information</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:information%3Dmap' target='_blank'>map</a>. Unselecting this answer will add information=
 
-
-
-
-
 ### Sides
 
 The question is `From how many sides you can watch advertisments?`
 
-
-
  -  *This object has advertisements on a single side* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:sides' target='_blank'>sides</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sides%3D1' target='_blank'>1</a>
  -  *This object has advertisements on both sides* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:sides' target='_blank'>sides</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sides%3D2' target='_blank'>2</a>
 
-
 This tagrendering is only visible in the popup if the following condition is met: _referencing_ways= & (<a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dposter_box' target='_blank'>poster_box</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dscreen' target='_blank'>screen</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:advertising' target='_blank'>advertising</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:advertising%3Dbillboard' target='_blank'>billboard</a>)
-
 
 ### ref
 
 The question is `Wich is the reference number?`
 *Reference number is {ref}* is shown if `ref` is set
 
+### historic
 
+The question is `Is this sign for a business that no longer exists or no longer being maintained?`
 
+ -  *This is a historic advertisement sign (an advertisement for a business that no longer exists or a very old sign with heritage value)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:historic' target='_blank'>historic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:historic%3Dadvertising' target='_blank'>advertising</a>
+ -  *This advertisement sign has no historic value (the business still exists and has no heritage value)* is shown if with historic=
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### move-button
 
 _This tagrendering has no question and is thus read-only_
 *{move_button()}*
-
-
-
 
 ### delete-button
 
 _This tagrendering has no question and is thus read-only_
 *{delete_button()}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
 
-
 This tagrendering has labels 
 `added_by_default`
 # artwork_on_wall
-
 
 This layer is based on [artwork](../Layers/artwork.md)
 
 An open map of statues, busts, graffitis and other artwork all over the world
 
-
-
-
-
-
  - This layer is shown at zoomlevel **16** and higher
-
-
 
 No themes use this layer
 
@@ -412,37 +245,35 @@ Elements must match **all** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/wikidata#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/wikidata/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [wikidata](https://wiki.openstreetmap.org/wiki/Key:wikidata) | [wikidata](../SpecialInputElements.md#wikidata) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/subject:wikidata#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/subject%3Awikidata/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [subject:wikidata](https://wiki.openstreetmap.org/wiki/Key:subject:wikidata) | [wikidata](../SpecialInputElements.md#wikidata) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/historic#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/historic/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [historic](https://wiki.openstreetmap.org/wiki/Key:historic) | Multiple choice | [memorial](https://wiki.openstreetmap.org/wiki/Tag:historic%3Dmemorial) [](https://wiki.openstreetmap.org/wiki/Tag:historic%3D) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/memorial#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/memorial/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [memorial](https://wiki.openstreetmap.org/wiki/Key:memorial) | [string](../SpecialInputElements.md#string) | [statue](https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dstatue) [plaque](https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dplaque) [bench](https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dbench) [ghost_bike](https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dghost_bike) [stolperstein](https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dstolperstein) [stele](https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dstele) [stone](https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dstone) [bust](https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dbust) [sculpture](https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dsculpture) [obelisk](https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dobelisk) [cross](https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dcross) [blue_plaque](https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dblue_plaque) [tank](https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dtank) [tree](https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dtree) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/inscription#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/inscription/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [inscription](https://wiki.openstreetmap.org/wiki/Key:inscription) | [text](../SpecialInputElements.md#text) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/amenity#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/amenity/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [amenity](https://wiki.openstreetmap.org/wiki/Key:amenity) | Multiple choice | [bench](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbench) [](https://wiki.openstreetmap.org/wiki/Tag:amenity%3D) |
-
-
-
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/backrest#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/backrest/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [backrest](https://wiki.openstreetmap.org/wiki/Key:backrest) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:backrest%3Dyes) [yes](https://wiki.openstreetmap.org/wiki/Tag:backrest%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:backrest%3Dno) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/armrest#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/armrest/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [armrest](https://wiki.openstreetmap.org/wiki/Key:armrest) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:armrest%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:armrest%3Dno) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/seats#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/seats/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [seats](https://wiki.openstreetmap.org/wiki/Key:seats) | [nat](../SpecialInputElements.md#nat) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/material#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/material/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [material](https://wiki.openstreetmap.org/wiki/Key:material) | [string](../SpecialInputElements.md#string) | [wood](https://wiki.openstreetmap.org/wiki/Tag:material%3Dwood) [metal](https://wiki.openstreetmap.org/wiki/Tag:material%3Dmetal) [stone](https://wiki.openstreetmap.org/wiki/Tag:material%3Dstone) [concrete](https://wiki.openstreetmap.org/wiki/Tag:material%3Dconcrete) [plastic](https://wiki.openstreetmap.org/wiki/Tag:material%3Dplastic) [steel](https://wiki.openstreetmap.org/wiki/Tag:material%3Dsteel) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/direction#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/direction/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [direction](https://wiki.openstreetmap.org/wiki/Key:direction) | [direction](../SpecialInputElements.md#direction) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/colour#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/colour/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [colour](https://wiki.openstreetmap.org/wiki/Key:colour) | [color](../SpecialInputElements.md#color) | [brown](https://wiki.openstreetmap.org/wiki/Tag:colour%3Dbrown) [green](https://wiki.openstreetmap.org/wiki/Tag:colour%3Dgreen) [gray](https://wiki.openstreetmap.org/wiki/Tag:colour%3Dgray) [white](https://wiki.openstreetmap.org/wiki/Tag:colour%3Dwhite) [red](https://wiki.openstreetmap.org/wiki/Tag:colour%3Dred) [black](https://wiki.openstreetmap.org/wiki/Tag:colour%3Dblack) [blue](https://wiki.openstreetmap.org/wiki/Tag:colour%3Dblue) [yellow](https://wiki.openstreetmap.org/wiki/Tag:colour%3Dyellow) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/survey:date#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/survey%3Adate/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [survey:date](https://wiki.openstreetmap.org/wiki/Key:survey:date) | [date](../SpecialInputElements.md#date) | [](https://wiki.openstreetmap.org/wiki/Tag:survey:date%3D) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/inscription#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/inscription/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [inscription](https://wiki.openstreetmap.org/wiki/Key:inscription) | [text](../SpecialInputElements.md#text) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/historic#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/historic/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [historic](https://wiki.openstreetmap.org/wiki/Key:historic) | Multiple choice | [memorial](https://wiki.openstreetmap.org/wiki/Tag:historic%3Dmemorial) [](https://wiki.openstreetmap.org/wiki/Tag:historic%3D) |
 
 ### historic_or_not
 
 The question is `Is this artwork a historic advertisement?`
 
-
-
  -  *This artwork is a historic advertisement* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:historic' target='_blank'>historic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:historic%3Dadvertising' target='_blank'>advertising</a>
  -  *This artwork is not a historic advertisement* is shown if with historic=
 
-
-
-
-
-### images
-This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
+### images_no_blur
+Same as `images`, but uploaded request to disable blurring to the panoramax server
 _This tagrendering has no question and is thus read-only_
-*{image_carousel()}{image_upload()}*
-
-
-
+*{image_carousel()}{image_upload(,,,true)}*
 
 ### artwork-artwork_type
 
 The question is `What is the type of this artwork?`
 *This is a {artwork_type}* is shown if `artwork_type` is set
-
 
  -  *Architecture* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Darchitecture' target='_blank'>architecture</a>
  -  *Mural* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dmural' target='_blank'>mural</a>
@@ -458,8 +289,6 @@ The question is `What is the type of this artwork?`
  -  *Tilework* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dtilework' target='_blank'>tilework</a>
  -  *Woodcarving* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dwoodcarving' target='_blank'>woodcarving</a>
 
-
-
 This tagrendering has labels 
 `artwork-question`
 
@@ -467,7 +296,6 @@ This tagrendering has labels
 
 The question is `Who made this artwork?`
 *This artwork was made by {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}* is shown if `artist:wikidata` is set
-
 
 This tagrendering has labels 
 `artwork-question`
@@ -477,7 +305,6 @@ This tagrendering has labels
 The question is `Which artist created this?`
 *Created by {artist_name}* is shown if `artist_name` is set
 
-
 This tagrendering has labels 
 `artwork-question`
 
@@ -485,7 +312,6 @@ This tagrendering has labels
 
 The question is `Is there a website with more information about this artwork?`
 *{link(More information on this website,&LBRACEwebsite&RBRACE,,,,)}* is shown if `website` is set
-
 
 This tagrendering has labels 
 `artwork-question`
@@ -495,13 +321,8 @@ Shows a wikipedia box with the corresponding wikipedia article; the wikidata-ite
 The question is `What is the corresponding Wikidata entity?`
 *{wikipedia():max-height:25rem}* is shown if `wikidata` is set
 
-
  -  *{wikipedia():max-height:25rem}* is shown if with wikipedia~.+. _This option cannot be chosen as answer_
  -  *No Wikipedia page has been linked yet* is shown if with wikidata=. _This option cannot be chosen as answer_
-
-
-
-
 
 ### artwork_subject
 
@@ -516,76 +337,194 @@ This tagrendering has labels
 
 The question is `Does this artwork serve as a memorial?`
 
-
-
  -  *This artwork also serves as a memorial* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:historic' target='_blank'>historic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:historic%3Dmemorial' target='_blank'>memorial</a>
- -  *This artwork does not serve as a bench* is shown if with historic=
+ -  *This artwork does not serve as a memorial* is shown if with historic=
 
+### memorial-type
 
+The question is `What type of memorial is this?`
+*This is a {memorial}* is shown if `memorial` is set
 
+ -  *This is a statue* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:memorial' target='_blank'>memorial</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dstatue' target='_blank'>statue</a>
+ -  *This is a plaque* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:memorial' target='_blank'>memorial</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dplaque' target='_blank'>plaque</a>
+ -  *This is a commemorative bench* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:memorial' target='_blank'>memorial</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dbench' target='_blank'>bench</a>
+ -  *This is a ghost bike - a bicycle painted white to remember a cyclist whom deceased because of a car crash* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:memorial' target='_blank'>memorial</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dghost_bike' target='_blank'>ghost_bike</a>
+ -  *This is a stolperstein (stumbing stone)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:memorial' target='_blank'>memorial</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dstolperstein' target='_blank'>stolperstein</a>
+ -  *This is a stele* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:memorial' target='_blank'>memorial</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dstele' target='_blank'>stele</a>
+ -  *This is a memorial stone* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:memorial' target='_blank'>memorial</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dstone' target='_blank'>stone</a>
+ -  *This is a bust* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:memorial' target='_blank'>memorial</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dbust' target='_blank'>bust</a>
+ -  *This is a sculpture* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:memorial' target='_blank'>memorial</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dsculpture' target='_blank'>sculpture</a>
+ -  *This is an obelisk* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:memorial' target='_blank'>memorial</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dobelisk' target='_blank'>obelisk</a>
+ -  *This is a cross* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:memorial' target='_blank'>memorial</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dcross' target='_blank'>cross</a>
+ -  *This is a blue plaque* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:memorial' target='_blank'>memorial</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dblue_plaque' target='_blank'>blue_plaque</a>
+ -  *This is a historic tank, permanently placed in public space as memorial* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:memorial' target='_blank'>memorial</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dtank' target='_blank'>tank</a>
+ -  *This is a memorial tree* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:memorial' target='_blank'>memorial</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dtree' target='_blank'>tree</a>
+ -  *This is a gravestone; the person is buried here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:historic' target='_blank'>historic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:historic%3Dtomb' target='_blank'>tomb</a>
 
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:historic' target='_blank'>historic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:historic%3Dmemorial' target='_blank'>memorial</a>
+This tagrendering has labels 
+`memorial-questions`
+
+### inscription
+
+The question is `What is the inscription on this memorial?`
+*The inscription on this memorial reads: <p><i>{inscription}<i></p>* is shown if `inscription` is set
+
+ -  *This memorial does not have an inscription* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:not:inscription' target='_blank'>not:inscription</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:not:inscription%3Dyes' target='_blank'>yes</a>
+
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:historic' target='_blank'>historic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:historic%3Dmemorial' target='_blank'>memorial</a> & memorial!=bench
+This tagrendering has labels 
+`memorial-questions`
 
 ### doubles_as_bench
 
 The question is `Does this artwork serve as a bench?`
 
-
-
  -  *This artwork also serves as a bench* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbench' target='_blank'>bench</a>
  -  *This artwork does not serve as a bench* is shown if with amenity=
  -  *This artwork does not serve as a bench* is shown if with amenity!=bench. _This option cannot be chosen as answer_
 
+### bench-backrest
 
+The question is `Does this bench have a backrest?`
 
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/bench/two_sided.svg' style='width: 3rem; height: 3rem'> *This bench is two-sided and shares the backrest* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:backrest' target='_blank'>backrest</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:backrest%3Dyes' target='_blank'>yes</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:two_sided' target='_blank'>two_sided</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:two_sided%3Dyes' target='_blank'>yes</a>
+ -  *This bench does have a backrest* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:backrest' target='_blank'>backrest</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:backrest%3Dyes' target='_blank'>yes</a>
+ -  *This bench does <b>not</b> have a backrest* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:backrest' target='_blank'>backrest</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:backrest%3Dno' target='_blank'>no</a>
 
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbench' target='_blank'>bench</a>
+This tagrendering has labels 
+`bench-questions`
+
+### bench-armrest
+
+The question is `Does this bench have one or more armrests?`
+
+ -  *This bench does have one or more armrests* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:armrest' target='_blank'>armrest</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:armrest%3Dyes' target='_blank'>yes</a>
+ -  *This bench does <b>not</b> have any armrests* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:armrest' target='_blank'>armrest</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:armrest%3Dno' target='_blank'>no</a>
+
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbench' target='_blank'>bench</a>
+This tagrendering has labels 
+`bench-questions`
+
+### bench-seats
+
+The question is `How many seats does this bench have?`
+*This bench has {seats} seats* is shown if `seats` is set
+
+ -  *This bench does not have separated seats* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:seats:separated' target='_blank'>seats:separated</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:seats:separated%3Dno' target='_blank'>no</a>
+
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbench' target='_blank'>bench</a>
+This tagrendering has labels 
+`bench-questions`
+
+### bench-material
+
+The question is `What is the bench (seating) made from?`
+*Material: {material}* is shown if `material` is set
+
+ -  *The seating is made from wood* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:material' target='_blank'>material</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:material%3Dwood' target='_blank'>wood</a>
+ -  *The seating is made from metal* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:material' target='_blank'>material</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:material%3Dmetal' target='_blank'>metal</a>
+ -  *The seating is made from stone* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:material' target='_blank'>material</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:material%3Dstone' target='_blank'>stone</a>
+ -  *The seating is made from concrete* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:material' target='_blank'>material</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:material%3Dconcrete' target='_blank'>concrete</a>
+ -  *The seating is made from plastic* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:material' target='_blank'>material</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:material%3Dplastic' target='_blank'>plastic</a>
+ -  *The seating is made from steel* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:material' target='_blank'>material</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:material%3Dsteel' target='_blank'>steel</a>
+
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbench' target='_blank'>bench</a>
+This tagrendering has labels 
+`bench-questions`
+
+### bench-direction
+
+The question is `In which direction are you looking when sitting on the bench?`
+*When sitting on the bench, one looks towards {direction}°.* is shown if `direction` is set
+
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbench' target='_blank'>bench</a> & two_sided!=yes
+This tagrendering has labels 
+`bench-questions`
+
+### bench-colour
+
+The question is `Which colour does this bench have?`
+*Colour: {colour}* is shown if `colour` is set
+
+ -  *Colour: brown* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dbrown' target='_blank'>brown</a>
+ -  *Colour: green* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dgreen' target='_blank'>green</a>
+ -  *Colour: gray* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dgray' target='_blank'>gray</a>
+ -  *Colour: white* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dwhite' target='_blank'>white</a>
+ -  *Colour: red* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dred' target='_blank'>red</a>
+ -  *Colour: black* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dblack' target='_blank'>black</a>
+ -  *Colour: blue* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dblue' target='_blank'>blue</a>
+ -  *Colour: yellow* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dyellow' target='_blank'>yellow</a>
+
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbench' target='_blank'>bench</a>
+This tagrendering has labels 
+`bench-questions`
+
+### bench-survey:date
+
+The question is `When was this bench last surveyed?`
+*This bench was last surveyed on {survey:date}* is shown if `survey:date` is set
+
+ -  *Surveyed today!* is shown if with survey:date=
+
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbench' target='_blank'>bench</a>
+This tagrendering has labels 
+`bench-questions`
+
+### bench-inscription
+
+The question is `Does this bench have an inscription?`
+*This bench has the following inscription:<br/><p><i>{inscription}</i></p>* is shown if `inscription` is set
+
+ -  *This bench does not have an inscription* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:not:inscription' target='_blank'>not:inscription</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:not:inscription%3Dyes' target='_blank'>yes</a>
+ -  *This bench <span class='subtle'>probably</span> does not not have an inscription* is shown if with inscription=. _This option cannot be chosen as answer_
+
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbench' target='_blank'>bench</a>
+This tagrendering has labels 
+`bench-questions`
+
+### bench-memorial
+
+The question is `Does this bench act as memorial for someone or something?`
+
+ -  *This bench is a memorial for someone or something* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:historic' target='_blank'>historic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:historic%3Dmemorial' target='_blank'>memorial</a>
+ -  *This bench is a <b>not</b> a memorial for someone or something* is shown if with historic= & <a href='https://wiki.openstreetmap.org/wiki/Key:not:historic' target='_blank'>not:historic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:not:historic%3Dmemorial' target='_blank'>memorial</a>
+
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbench' target='_blank'>bench</a> & (<a href='https://wiki.openstreetmap.org/wiki/Key:historic' target='_blank'>historic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:historic%3Dmemorial' target='_blank'>memorial</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:memorial' target='_blank'>memorial</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:memorial%3Dbench' target='_blank'>bench</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:tourism' target='_blank'>tourism</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dartwork' target='_blank'>artwork</a> | inscription~.+)
+This tagrendering has labels 
+`bench-questions`
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### move-button
 
 _This tagrendering has no question and is thus read-only_
 *{move_button()}*
-
-
-
 
 ### delete-button
 
 _This tagrendering has no question and is thus read-only_
 *{delete_button()}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`
 
 ## Filters
 
-
-
 | id | question | osmTags |
 -----|-----|----- |
 | has_image.0 | *With and without images* (default) |  |
 | has_image.1 | Has at least one image | image~.+ | image:0~.+ | image:1~.+ | image:2~.+ | image:3~.+ | mapillary~.+ |
 | has_image.2 | Probably does not have an image | image= & image:0= & image:1= & image:2= & image:3= & mapillary= |
-
-
-
-
-
 
 | id | question | osmTags |
 -----|-----|----- |
@@ -604,6 +543,24 @@ This tagrendering has labels
 | artwork-artwork_type.12 | Tilework | artwork_type=tilework |
 | artwork-artwork_type.13 | Woodcarving | artwork_type=woodcarving |
 
+| id | question | osmTags |
+-----|-----|----- |
+| memorial-type.0 | *What type of memorial is this?* (default) |  |
+| memorial-type.1 | This is a statue | memorial=statue |
+| memorial-type.2 | This is a plaque | memorial=plaque |
+| memorial-type.3 | This is a commemorative bench | memorial=bench |
+| memorial-type.4 | This is a ghost bike - a bicycle painted white to remember a cyclist whom deceased because of a car crash | memorial=ghost_bike |
+| memorial-type.5 | This is a stolperstein (stumbing stone) | memorial=stolperstein |
+| memorial-type.6 | This is a stele | memorial=stele |
+| memorial-type.7 | This is a memorial stone | memorial=stone |
+| memorial-type.8 | This is a bust | memorial=bust |
+| memorial-type.9 | This is a sculpture | memorial=sculpture |
+| memorial-type.10 | This is an obelisk | memorial=obelisk |
+| memorial-type.11 | This is a cross | memorial=cross |
+| memorial-type.12 | This is a blue plaque | memorial=blue_plaque |
+| memorial-type.13 | This is a historic tank, permanently placed in public space as memorial | memorial=tank |
+| memorial-type.14 | This is a memorial tree | memorial=tree |
+| memorial-type.15 | This is a gravestone; the person is buried here | historic=tomb |
 
 
 

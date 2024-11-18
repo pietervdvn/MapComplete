@@ -37,45 +37,29 @@
 
 Alternative denominations:
 
-
-
  - megawatts
  - megawatt
-
-
 
 #### kW
 
 Alternative denominations:
 
-
-
  - kilowatts
  - kilowatt
-
-
 
 #### W
 
 Alternative denominations:
 
-
-
  - watts
  - watt
-
-
 
 #### GW
 
 Alternative denominations:
 
-
-
  - gigawatts
  - gigawatt
-
-
 
 ### voltage
 
@@ -83,14 +67,10 @@ Alternative denominations:
 
 Alternative denominations:
 
-
-
  - v
  - volt
  - voltage
  - Volt
-
-
 
 ### current
 
@@ -98,14 +78,10 @@ Alternative denominations:
 
 Alternative denominations:
 
-
-
  - a
  - amp
  - amperage
  - A
-
-
 
 ### distance
 
@@ -115,46 +91,30 @@ Alternative denominations:
 
 Alternative denominations:
 
-
-
  - meter
  - meters
-
-
 
 #### cm
 
 Alternative denominations:
 
-
-
  - centimeter
  - centimeters
  - cms
-
-
 
 #### mm
 
 Alternative denominations:
 
-
-
  - millimeter
  - millimeters
-
-
 
 #### ft
 
 Alternative denominations:
 
-
-
  - feet
  - voet
-
-
 
 ### speed
 
@@ -162,34 +122,22 @@ Alternative denominations:
 
 Alternative denominations:
 
-
-
  - km/u
  - km/h
  - kph
-
-
 
 #### mph
 
 Default denomination in the following countries:
 
-
-
  - gb
  - us
 
-
-
 Alternative denominations:
-
-
 
  - m/u
  - mh
  - m/ph
-
-
 
 ### duration
 
@@ -197,21 +145,15 @@ Alternative denominations:
 
 Alternative denominations:
 
-
-
  - m
  - min
  - mins
  - minuten
  - mns
 
-
-
 #### hours
 
 Alternative denominations:
-
-
 
  - h
  - hrs
@@ -220,19 +162,13 @@ Alternative denominations:
  - uur
  - uren
 
-
-
 #### days
 
 Alternative denominations:
 
-
-
  - dys
  - dagen
  - dag
-
-
 
 #### weeks
 

@@ -118,6 +118,11 @@
           "icon": "addSmall"
         },
         {
+          "if": "value=airport",
+          "then": "airport",
+          "icon": "airport"
+        },
+        {
           "if": "value=brick_wall_round",
           "then": "brick_wall_round",
           "icon": "brick_wall_round"
@@ -126,6 +131,16 @@
           "if": "value=brick_wall_square",
           "then": "brick_wall_square",
           "icon": "brick_wall_square"
+        },
+        {
+          "if": "value=building_office_2",
+          "then": "building_office_2",
+          "icon": "building_office_2"
+        },
+        {
+          "if": "value=building_storefront",
+          "then": "building_storefront",
+          "icon": "building_storefront"
         },
         {
           "if": "value=bug",
@@ -198,6 +213,11 @@
           "icon": "gear"
         },
         {
+          "if": "value=globe_alt",
+          "then": "globe_alt",
+          "icon": "globe_alt"
+        },
+        {
           "if": "value=gps_arrow",
           "then": "gps_arrow",
           "icon": "gps_arrow"
@@ -228,6 +248,16 @@
           "icon": "home"
         },
         {
+          "if": "value=house",
+          "then": "house",
+          "icon": "house"
+        },
+        {
+          "if": "value=key",
+          "then": "key",
+          "icon": "key"
+        },
+        {
           "if": "value=invalid",
           "then": "invalid",
           "icon": "invalid"
@@ -256,6 +286,11 @@
           "if": "value=location_locked",
           "then": "location_locked",
           "icon": "location_locked"
+        },
+        {
+          "if": "value=lock",
+          "then": "lock",
+          "icon": "lock"
         },
         {
           "if": "value=mastodon",
@@ -323,9 +358,19 @@
           "icon": "teardrop_with_hole_green"
         },
         {
+          "if": "value=train",
+          "then": "train",
+          "icon": "train"
+        },
+        {
           "if": "value=triangle",
           "then": "triangle",
           "icon": "triangle"
+        },
+        {
+          "if": "value=user_circle",
+          "then": "user_circle",
+          "icon": "user_circle"
         },
         {
           "if": "value=wifi",
@@ -603,6 +648,10 @@
           "then": "<b>bench_at_pt</b> (builtin) - A layer showing all public-transport-stops which do have a bench"
         },
         {
+          "if": "value=bicycle_counter",
+          "then": "<b>bicycle_counter</b> (builtin) - Layer showing monitoring stations for bicycle traffic"
+        },
+        {
           "if": "value=bicycle_library",
           "then": "<b>bicycle_library</b> (builtin) - A facility where bicycles can be lent for longer period of times"
         },
@@ -653,6 +702,10 @@
         {
           "if": "value=car_rental",
           "then": "<b>car_rental</b> (builtin) - Places where you can rent a car"
+        },
+        {
+          "if": "value=caravansites",
+          "then": "<b>caravansites</b> (builtin) - camper sites"
         },
         {
           "if": "value=charging_station",
@@ -707,8 +760,16 @@
           "then": "<b>current_view</b> (builtin) - A meta-layer which contains one single feature, namely the bounding box of the current map view. This can be used to trigger special actions. If a popup is defined for this layer, this popup will be accessible via an extra button on screen.\n\nThe icon on the button is the default icon of the layer, but can be customized by detecting 'button=yes'."
         },
         {
+          "if": "value=cycle_highways",
+          "then": "<b>cycle_highways</b> (builtin) - undefined"
+        },
+        {
           "if": "value=cycleways_and_roads",
           "then": "<b>cycleways_and_roads</b> (builtin) - All infrastructure that someone can cycle over, accompanied with questions about this infrastructure"
+        },
+        {
+          "if": "value=cyclist_waiting_aid",
+          "then": "<b>cyclist_waiting_aid</b> (builtin) - Various pieces of infrastructure that aid cyclists while they wait at a traffic light."
         },
         {
           "if": "value=defibrillator",
@@ -737,6 +798,10 @@
         {
           "if": "value=drinking_water",
           "then": "<b>drinking_water</b> (builtin) - A layer showing drinking water fountains"
+        },
+        {
+          "if": "value=dumpstations",
+          "then": "<b>dumpstations</b> (builtin) - Sanitary dump stations"
         },
         {
           "if": "value=elevator",
@@ -791,8 +856,16 @@
           "then": "<b>food_courts</b> (builtin) - Food courts with a variety of food options."
         },
         {
+          "if": "value=geocoded_image",
+          "then": "<b>geocoded_image</b> (builtin) - undefined"
+        },
+        {
           "if": "value=ghost_bike",
           "then": "<b>ghost_bike</b> (builtin) - A layer showing memorials for cyclists, killed in road accidents"
+        },
+        {
+          "if": "value=ghostsign",
+          "then": "<b>ghostsign</b> (builtin) - Layer showing disused signs on buildings"
         },
         {
           "if": "value=governments",
@@ -975,6 +1048,10 @@
           "then": "<b>playground_equipment</b> (builtin) - Layer showing playground equipment"
         },
         {
+          "if": "value=police",
+          "then": "<b>police</b> (builtin) - Many types of police facilities "
+        },
+        {
           "if": "value=postboxes",
           "then": "<b>postboxes</b> (builtin) - The layer showing postboxes."
         },
@@ -1017,6 +1094,10 @@
         {
           "if": "value=school",
           "then": "<b>school</b> (builtin) - Schools giving primary and secondary education and post-secondary, non-tertiary education. Note that this level of education does not imply an age of the pupiles"
+        },
+        {
+          "if": "value=search",
+          "then": "<b>search</b> (builtin) - Priviliged layer showing the search results"
         },
         {
           "if": "value=selected_element",
@@ -1095,6 +1176,14 @@
           "then": "<b>surveillance_camera</b> (builtin) - This layer shows surveillance cameras and allows a contributor to update information and add new cameras"
         },
         {
+          "if": "value=tactile_map",
+          "then": "<b>tactile_map</b> (builtin) - Layer showing tactile maps, which can be used by visually impaired people to navigate the city."
+        },
+        {
+          "if": "value=tactile_model",
+          "then": "<b>tactile_model</b> (builtin) - Layer showing tactile models, three-dimensional models of the surrounding area."
+        },
+        {
           "if": "value=tertiary_education",
           "then": "<b>tertiary_education</b> (builtin) - Layer with all tertiary education institutes (ISCED:2011 levels 6,7 and 8)"
         },
@@ -1120,7 +1209,7 @@
         },
         {
           "if": "value=tourism_accomodation",
-          "then": "<b>tourism_accomodation</b> (builtin) - undefined"
+          "then": "<b>tourism_accomodation</b> (builtin) - Various types of lodging facilities"
         },
         {
           "if": "value=trail",
@@ -1210,7 +1299,7 @@
             ]
           },
           "description": {
-            "description": "A description for the features shown in this layer.\nThis often resembles the introduction of the wiki.osm.org-page for this feature.\n\ngroup: Basic\nquestion: How would you describe the features that are shown on this layer?",
+            "description": "question: How would you describe the features that are shown on this layer?\n\nA description for the features shown in this layer.\nThis often resembles the introduction of the wiki.osm.org-page for this feature.\n\ngroup: Basic",
             "anyOf": [
               {
                 "$ref": "#/definitions/Record<string,string>"
@@ -1220,8 +1309,12 @@
               }
             ]
           },
+          "searchTerms": {
+            "description": "question: What are some other terms used to describe these objects?\n\nThis is used in the search functionality",
+            "$ref": "#/definitions/Record<string,string[]>"
+          },
           "source": {
-            "description": "Question: Where should the data be fetched from?\ntitle: Data Source\n\nThis determines where the data for the layer is fetched: from OSM or from an external geojson dataset.\n\nIf no 'geojson' is defined, data will be fetched from overpass and the OSM-API.\n\nEvery source _must_ define which tags _must_ be present in order to be picked up.\n\nNote: a source must always be defined. 'special' is only allowed if this is a builtin-layer\n\ntypes: Load data with specific tags from OpenStreetMap ; Load data from an external geojson source ;\ntypesdefault: 0\ngroup: Basic",
+            "description": "Question: Where should the data be fetched from?\ntitle: Data Source\n\nThis determines where the data for the layer is fetched: from OSM or from an external geojson dataset.\n\nIf no 'geojson' is defined, data will be fetched from overpass and the OSM-API.\n\nEvery source _must_ define which tags _must_ be present in order to be picked up.\n\nNote: a source must always be defined. 'special' is only allowed if this is a builtin-layer\n\ntypes: Load data with specific tags from OpenStreetMap ; Load data from an external geojson source ;\ntypesdefault: 0\nifunset: Determine the tags automatically based on the presets\ngroup: Basic",
             "anyOf": [
               {
                 "type": "object",
@@ -1483,10 +1576,20 @@
                   },
                   "filter": {
                     "description": "This tagRendering can introduce this builtin filter",
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    }
+                    "anyOf": [
+                      {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "enum": [
+                          true
+                        ],
+                        "type": "boolean"
+                      }
+                    ]
                   }
                 },
                 "additionalProperties": false
@@ -1753,7 +1856,7 @@
                       ]
                     },
                     "labels": {
-                      "description": "A list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer",
+                      "description": "What labels should be applied on this tagRendering?\n\nA list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer\n\nSpecial values:\n- \"hidden\": do not show this tagRendering. Useful in it is used by e.g. an accordion\n- \"description\": this label is a description used in the search",
                       "type": "array",
                       "items": {
                         "type": "string"
@@ -1865,10 +1968,20 @@
                     },
                     "filter": {
                       "description": "This tagRendering can introduce this builtin filter",
-                      "type": "array",
-                      "items": {
-                        "type": "string"
-                      }
+                      "anyOf": [
+                        {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        {
+                          "enum": [
+                            true
+                          ],
+                          "type": "boolean"
+                        }
+                      ]
                     }
                   },
                   "required": [
@@ -1929,7 +2042,7 @@
             }
           },
           "filter": {
-            "description": "All the extra questions for filtering.\nIf a string is given, mapComplete will search in\n1. The tagrenderings for a match on ID and use the mappings as options\n2. search 'filters.json' for the appropriate filter or\n3. will try to parse it as `layername.filterid` and us that one.\n\n\ngroup: filters",
+            "description": "All the extra questions for filtering.\nIf a string is given, mapComplete will search in\n1. The tagrenderings for a match on ID and use the mappings as options\n2. search 'filters.json' for the appropriate filter or\n3. will try to parse it as `layername.filterid` and us that one.\n\nNote: adding \"#filter\":\"no-auto\" will disable the filters added by tagRenderings\n\ngroup: filters",
             "anyOf": [
               {
                 "type": "array",
@@ -1956,6 +2069,13 @@
                 ]
               }
             ]
+          },
+          "#filter": {
+            "description": "Set this to disable the feature that tagRenderings can introduce filters",
+            "enum": [
+              "no-auto"
+            ],
+            "type": "string"
           },
           "deletion": {
             "description": "This block defines under what circumstances the delete dialog is shown for objects of this layer.\nIf set, a dialog is shown to the user to (soft) delete the point.\nThe dialog is built to be user friendly and to prevent mistakes.\nIf deletion is not possible, the dialog will hide itself and show the reason of non-deletability instead.\n\nTo configure, the following values are possible:\n\n- false: never ever show the delete button\n- true: show the default delete button\n- undefined: use the mapcomplete default to show deletion or not. Currently, this is the same as 'false' but this will change in the future\n- or: a hash with options (see below)\n\n### The delete dialog\n\n\n\n#### Hard deletion if enough experience\n\nA feature can only be deleted from OpenStreetMap by mapcomplete if:\n\n- It is a node\n- No ways or relations use the node\n- The logged-in user has enough experience OR the user is the only one to have edited the point previously\n- The logged-in user has no unread messages (or has a ton of experience)\n- The user did not select one of the 'non-delete-options' (see below)\n\nIn all other cases, a 'soft deletion' is used.\n\n#### Soft deletion\n\nA 'soft deletion' is when the point isn't deleted fromOSM but retagged so that it'll won't how up in the mapcomplete theme anymore.\nThis makes it look like it was deleted, without doing damage. A fixme will be added to the point.\n\nNote that a soft deletion is _only_ possible if these tags are provided by the theme creator, as they'll be different for every theme\n\n##### No-delete options\n\nIn some cases, the contributor might want to delete something for the wrong reason (e.g. someone who wants to have a path removed \"because the path is on their private property\").\nHowever, the path exists in reality and should thus be on OSM - otherwise the next contributor will pass by and notice \"hey, there is a path missing here! Let me redraw it in OSM!)\n\nThe correct approach is to retag the feature in such a way that it is semantically correct *and* that it doesn't show up on the theme anymore.\nA no-delete option is offered as 'reason to delete it', but secretly retags.\n\ngroup: editing\ntypes: Use an advanced delete configuration ; boolean\niftrue: Allow deletion\niffalse: Do not allow deletion\nifunset: Do not allow deletion",
@@ -2145,12 +2265,22 @@
           "enableMorePrivacy": {
             "description": "question: Should a theme using this layer leak some location info when making changes?\n\nWhen a changeset is made, a 'distance to object'-class is written to the changeset.\nFor some particular themes and layers, this might leak too much information, and we want to obfuscate this\n\nifunset: Write 'change_within_x_m' as usual and if GPS is enabled\niftrue: Do not write 'change_within_x_m' and do not indicate that this was done by survey",
             "type": "boolean"
+          },
+          "snapName": {
+            "description": "question: When a feature is snapped to this name, how should this item be called?\n\nIn the move wizard, the option `snap object onto {snapName}` is shown\n\ngroup: hidden",
+            "anyOf": [
+              {
+                "$ref": "#/definitions/Record<string,string>"
+              },
+              {
+                "type": "string"
+              }
+            ]
           }
         },
         "required": [
           "id",
-          "pointRendering",
-          "source"
+          "pointRendering"
         ],
         "additionalProperties": false
       },
@@ -2250,14 +2380,27 @@
   {
     "path": [
       "layers",
+      "searchTerms"
+    ],
+    "required": false,
+    "hints": {
+      "question": "What are some other terms used to describe these objects?"
+    },
+    "type": "object",
+    "description": "This is used in the search functionality"
+  },
+  {
+    "path": [
+      "layers",
       "source"
     ],
-    "required": true,
+    "required": false,
     "hints": {
       "types": "Load data with specific tags from OpenStreetMap ; Load data from an external geojson source ;",
       "typesdefault": "0",
       "group": "Basic",
       "question": "Where should the data be fetched from?",
+      "ifunset": "Determine the tags automatically based on the presets",
       "title": "Data Source"
     },
     "type": [
@@ -2755,10 +2898,20 @@
           },
           "filter": {
             "description": "This tagRendering can introduce this builtin filter",
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "enum": [
+                  true
+                ],
+                "type": "boolean"
+              }
+            ]
           }
         },
         "additionalProperties": false
@@ -3267,7 +3420,20 @@
     ],
     "required": false,
     "hints": {},
-    "type": "array",
+    "type": [
+      {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      {
+        "enum": [
+          true
+        ],
+        "type": "boolean"
+      }
+    ],
     "description": "This tagRendering can introduce this builtin filter"
   },
   {
@@ -3855,7 +4021,20 @@
     ],
     "required": false,
     "hints": {},
-    "type": "array",
+    "type": [
+      {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      {
+        "enum": [
+          true
+        ],
+        "type": "boolean"
+      }
+    ],
     "description": "This tagRendering can introduce this builtin filter"
   },
   {
@@ -3952,6 +4131,11 @@
           "icon": "addSmall"
         },
         {
+          "if": "value=airport",
+          "then": "airport",
+          "icon": "airport"
+        },
+        {
           "if": "value=brick_wall_round",
           "then": "brick_wall_round",
           "icon": "brick_wall_round"
@@ -3960,6 +4144,16 @@
           "if": "value=brick_wall_square",
           "then": "brick_wall_square",
           "icon": "brick_wall_square"
+        },
+        {
+          "if": "value=building_office_2",
+          "then": "building_office_2",
+          "icon": "building_office_2"
+        },
+        {
+          "if": "value=building_storefront",
+          "then": "building_storefront",
+          "icon": "building_storefront"
         },
         {
           "if": "value=bug",
@@ -4032,6 +4226,11 @@
           "icon": "gear"
         },
         {
+          "if": "value=globe_alt",
+          "then": "globe_alt",
+          "icon": "globe_alt"
+        },
+        {
           "if": "value=gps_arrow",
           "then": "gps_arrow",
           "icon": "gps_arrow"
@@ -4062,6 +4261,16 @@
           "icon": "home"
         },
         {
+          "if": "value=house",
+          "then": "house",
+          "icon": "house"
+        },
+        {
+          "if": "value=key",
+          "then": "key",
+          "icon": "key"
+        },
+        {
           "if": "value=invalid",
           "then": "invalid",
           "icon": "invalid"
@@ -4090,6 +4299,11 @@
           "if": "value=location_locked",
           "then": "location_locked",
           "icon": "location_locked"
+        },
+        {
+          "if": "value=lock",
+          "then": "lock",
+          "icon": "lock"
         },
         {
           "if": "value=mastodon",
@@ -4157,9 +4371,19 @@
           "icon": "teardrop_with_hole_green"
         },
         {
+          "if": "value=train",
+          "then": "train",
+          "icon": "train"
+        },
+        {
           "if": "value=triangle",
           "then": "triangle",
           "icon": "triangle"
+        },
+        {
+          "if": "value=user_circle",
+          "then": "user_circle",
+          "icon": "user_circle"
         },
         {
           "if": "value=wifi",
@@ -4812,10 +5036,20 @@
           },
           "filter": {
             "description": "This tagRendering can introduce this builtin filter",
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "enum": [
+                  true
+                ],
+                "type": "boolean"
+              }
+            ]
           }
         },
         "additionalProperties": false
@@ -5345,7 +5579,20 @@
     ],
     "required": false,
     "hints": {},
-    "type": "array",
+    "type": [
+      {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      {
+        "enum": [
+          true
+        ],
+        "type": "boolean"
+      }
+    ],
     "description": "This tagRendering can introduce this builtin filter"
   },
   {
@@ -5554,10 +5801,20 @@
           },
           "filter": {
             "description": "This tagRendering can introduce this builtin filter",
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "enum": [
+                  true
+                ],
+                "type": "boolean"
+              }
+            ]
           }
         },
         "additionalProperties": false
@@ -6087,7 +6344,20 @@
     ],
     "required": false,
     "hints": {},
-    "type": "array",
+    "type": [
+      {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      {
+        "enum": [
+          true
+        ],
+        "type": "boolean"
+      }
+    ],
     "description": "This tagRendering can introduce this builtin filter"
   },
   {
@@ -6293,10 +6563,20 @@
           },
           "filter": {
             "description": "This tagRendering can introduce this builtin filter",
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "enum": [
+                  true
+                ],
+                "type": "boolean"
+              }
+            ]
           }
         },
         "additionalProperties": false
@@ -6826,7 +7106,20 @@
     ],
     "required": false,
     "hints": {},
-    "type": "array",
+    "type": [
+      {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      {
+        "enum": [
+          true
+        ],
+        "type": "boolean"
+      }
+    ],
     "description": "This tagRendering can introduce this builtin filter"
   },
   {
@@ -7015,10 +7308,20 @@
           },
           "filter": {
             "description": "This tagRendering can introduce this builtin filter",
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "enum": [
+                  true
+                ],
+                "type": "boolean"
+              }
+            ]
           }
         },
         "additionalProperties": false
@@ -7548,7 +7851,20 @@
     ],
     "required": false,
     "hints": {},
-    "type": "array",
+    "type": [
+      {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      {
+        "enum": [
+          true
+        ],
+        "type": "boolean"
+      }
+    ],
     "description": "This tagRendering can introduce this builtin filter"
   },
   {
@@ -7738,10 +8054,20 @@
           },
           "filter": {
             "description": "This tagRendering can introduce this builtin filter",
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "enum": [
+                  true
+                ],
+                "type": "boolean"
+              }
+            ]
           }
         },
         "additionalProperties": false
@@ -8271,7 +8597,20 @@
     ],
     "required": false,
     "hints": {},
-    "type": "array",
+    "type": [
+      {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      {
+        "enum": [
+          true
+        ],
+        "type": "boolean"
+      }
+    ],
     "description": "This tagRendering can introduce this builtin filter"
   },
   {
@@ -8466,10 +8805,20 @@
           },
           "filter": {
             "description": "This tagRendering can introduce this builtin filter",
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "enum": [
+                  true
+                ],
+                "type": "boolean"
+              }
+            ]
           }
         },
         "additionalProperties": false
@@ -8999,7 +9348,20 @@
     ],
     "required": false,
     "hints": {},
-    "type": "array",
+    "type": [
+      {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      {
+        "enum": [
+          true
+        ],
+        "type": "boolean"
+      }
+    ],
     "description": "This tagRendering can introduce this builtin filter"
   },
   {
@@ -9189,10 +9551,20 @@
           },
           "filter": {
             "description": "This tagRendering can introduce this builtin filter",
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "enum": [
+                  true
+                ],
+                "type": "boolean"
+              }
+            ]
           }
         },
         "additionalProperties": false
@@ -9722,7 +10094,20 @@
     ],
     "required": false,
     "hints": {},
-    "type": "array",
+    "type": [
+      {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      {
+        "enum": [
+          true
+        ],
+        "type": "boolean"
+      }
+    ],
     "description": "This tagRendering can introduce this builtin filter"
   },
   {
@@ -9912,10 +10297,20 @@
           },
           "filter": {
             "description": "This tagRendering can introduce this builtin filter",
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "enum": [
+                  true
+                ],
+                "type": "boolean"
+              }
+            ]
           }
         },
         "additionalProperties": false
@@ -10445,7 +10840,20 @@
     ],
     "required": false,
     "hints": {},
-    "type": "array",
+    "type": [
+      {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      {
+        "enum": [
+          true
+        ],
+        "type": "boolean"
+      }
+    ],
     "description": "This tagRendering can introduce this builtin filter"
   },
   {
@@ -10643,10 +11051,20 @@
           },
           "filter": {
             "description": "This tagRendering can introduce this builtin filter",
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "enum": [
+                  true
+                ],
+                "type": "boolean"
+              }
+            ]
           }
         },
         "additionalProperties": false
@@ -11180,7 +11598,20 @@
     ],
     "required": false,
     "hints": {},
-    "type": "array",
+    "type": [
+      {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      {
+        "enum": [
+          true
+        ],
+        "type": "boolean"
+      }
+    ],
     "description": "This tagRendering can introduce this builtin filter"
   },
   {
@@ -11378,10 +11809,20 @@
           },
           "filter": {
             "description": "This tagRendering can introduce this builtin filter",
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "enum": [
+                  true
+                ],
+                "type": "boolean"
+              }
+            ]
           }
         },
         "additionalProperties": false
@@ -11915,7 +12356,20 @@
     ],
     "required": false,
     "hints": {},
-    "type": "array",
+    "type": [
+      {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      {
+        "enum": [
+          true
+        ],
+        "type": "boolean"
+      }
+    ],
     "description": "This tagRendering can introduce this builtin filter"
   },
   {
@@ -12902,6 +13356,10 @@
           "then": "bench_at_pt - A layer showing all public-transport-stops which do have a bench"
         },
         {
+          "if": "value=bicycle_counter",
+          "then": "bicycle_counter - Layer showing monitoring stations for bicycle traffic"
+        },
+        {
           "if": "value=bicycle_library",
           "then": "bicycle_library - A facility where bicycles can be lent for longer period of times"
         },
@@ -12952,6 +13410,10 @@
         {
           "if": "value=car_rental",
           "then": "car_rental - Places where you can rent a car"
+        },
+        {
+          "if": "value=caravansites",
+          "then": "caravansites - camper sites"
         },
         {
           "if": "value=charging_station",
@@ -13006,8 +13468,16 @@
           "then": "current_view - A meta-layer which contains one single feature, namely the bounding box of the current map view. This can be used to trigger special actions. If a popup is defined for this layer, this popup will be accessible via an extra button on screen.\n\nThe icon on the button is the default icon of the layer, but can be customized by detecting 'button=yes'."
         },
         {
+          "if": "value=cycle_highways",
+          "then": "cycle_highways - undefined"
+        },
+        {
           "if": "value=cycleways_and_roads",
           "then": "cycleways_and_roads - All infrastructure that someone can cycle over, accompanied with questions about this infrastructure"
+        },
+        {
+          "if": "value=cyclist_waiting_aid",
+          "then": "cyclist_waiting_aid - Various pieces of infrastructure that aid cyclists while they wait at a traffic light."
         },
         {
           "if": "value=defibrillator",
@@ -13036,6 +13506,10 @@
         {
           "if": "value=drinking_water",
           "then": "drinking_water - A layer showing drinking water fountains"
+        },
+        {
+          "if": "value=dumpstations",
+          "then": "dumpstations - Sanitary dump stations"
         },
         {
           "if": "value=elevator",
@@ -13090,8 +13564,16 @@
           "then": "food_courts - Food courts with a variety of food options."
         },
         {
+          "if": "value=geocoded_image",
+          "then": "geocoded_image - undefined"
+        },
+        {
           "if": "value=ghost_bike",
           "then": "ghost_bike - A layer showing memorials for cyclists, killed in road accidents"
+        },
+        {
+          "if": "value=ghostsign",
+          "then": "ghostsign - Layer showing disused signs on buildings"
         },
         {
           "if": "value=governments",
@@ -13274,6 +13756,10 @@
           "then": "playground_equipment - Layer showing playground equipment"
         },
         {
+          "if": "value=police",
+          "then": "police - Many types of police facilities "
+        },
+        {
           "if": "value=postboxes",
           "then": "postboxes - The layer showing postboxes."
         },
@@ -13316,6 +13802,10 @@
         {
           "if": "value=school",
           "then": "school - Schools giving primary and secondary education and post-secondary, non-tertiary education. Note that this level of education does not imply an age of the pupiles"
+        },
+        {
+          "if": "value=search",
+          "then": "search - Priviliged layer showing the search results"
         },
         {
           "if": "value=selected_element",
@@ -13394,6 +13884,14 @@
           "then": "surveillance_camera - This layer shows surveillance cameras and allows a contributor to update information and add new cameras"
         },
         {
+          "if": "value=tactile_map",
+          "then": "tactile_map - Layer showing tactile maps, which can be used by visually impaired people to navigate the city."
+        },
+        {
+          "if": "value=tactile_model",
+          "then": "tactile_model - Layer showing tactile models, three-dimensional models of the surrounding area."
+        },
+        {
           "if": "value=tertiary_education",
           "then": "tertiary_education - Layer with all tertiary education institutes (ISCED:2011 levels 6,7 and 8)"
         },
@@ -13419,7 +13917,7 @@
         },
         {
           "if": "value=tourism_accomodation",
-          "then": "tourism_accomodation - undefined"
+          "then": "tourism_accomodation - Various types of lodging facilities"
         },
         {
           "if": "value=trail",
@@ -13633,7 +14131,7 @@
             ]
           },
           "labels": {
-            "description": "A list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer",
+            "description": "What labels should be applied on this tagRendering?\n\nA list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer\n\nSpecial values:\n- \"hidden\": do not show this tagRendering. Useful in it is used by e.g. an accordion\n- \"description\": this label is a description used in the search",
             "type": "array",
             "items": {
               "type": "string"
@@ -13745,10 +14243,20 @@
           },
           "filter": {
             "description": "This tagRendering can introduce this builtin filter",
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "enum": [
+                  true
+                ],
+                "type": "boolean"
+              }
+            ]
           }
         },
         "required": [
@@ -14463,7 +14971,7 @@
         },
         {
           "if": "value=wikidata",
-          "then": "<b>wikidata</b> A wikidata identifier, e.g. Q42. "
+          "then": "<b>wikidata</b> A wikidata identifier, e.g. Q42."
         },
         {
           "if": "value=pnat",
@@ -14491,7 +14999,7 @@
         },
         {
           "if": "value=opening_hours",
-          "then": "<b>opening_hours</b> Has extra elements to easily input when a POI is opened. "
+          "then": "<b>opening_hours</b> Has extra elements to easily input when a POI is opened."
         },
         {
           "if": "value=color",
@@ -14524,6 +15032,10 @@
         {
           "if": "value=currency",
           "then": "<b>currency</b> Validates monetary amounts"
+        },
+        {
+          "if": "value=regex",
+          "then": "<b>regex</b> Validates a regex"
         }
       ]
     },
@@ -14797,7 +15309,7 @@
     "required": false,
     "hints": {},
     "type": "array",
-    "description": "A list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer"
+    "description": "What labels should be applied on this tagRendering?\nA list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer\nSpecial values:\n- \"hidden\": do not show this tagRendering. Useful in it is used by e.g. an accordion\n- \"description\": this label is a description used in the search"
   },
   {
     "path": [
@@ -15137,7 +15649,20 @@
     ],
     "required": false,
     "hints": {},
-    "type": "array",
+    "type": [
+      {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      {
+        "enum": [
+          true
+        ],
+        "type": "boolean"
+      }
+    ],
     "description": "This tagRendering can introduce this builtin filter"
   },
   {
@@ -15820,7 +16345,7 @@
         },
         {
           "if": "value=wikidata",
-          "then": "<b>wikidata</b> A wikidata identifier, e.g. Q42. "
+          "then": "<b>wikidata</b> A wikidata identifier, e.g. Q42."
         },
         {
           "if": "value=pnat",
@@ -15848,7 +16373,7 @@
         },
         {
           "if": "value=opening_hours",
-          "then": "<b>opening_hours</b> Has extra elements to easily input when a POI is opened. "
+          "then": "<b>opening_hours</b> Has extra elements to easily input when a POI is opened."
         },
         {
           "if": "value=color",
@@ -15881,6 +16406,10 @@
         {
           "if": "value=currency",
           "then": "<b>currency</b> Validates monetary amounts"
+        },
+        {
+          "if": "value=regex",
+          "then": "<b>regex</b> Validates a regex"
         }
       ]
     },
@@ -16167,7 +16696,7 @@
     "required": false,
     "hints": {},
     "type": "array",
-    "description": "A list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer"
+    "description": "What labels should be applied on this tagRendering?\nA list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer\nSpecial values:\n- \"hidden\": do not show this tagRendering. Useful in it is used by e.g. an accordion\n- \"description\": this label is a description used in the search"
   },
   {
     "path": [
@@ -16520,7 +17049,20 @@
     ],
     "required": false,
     "hints": {},
-    "type": "array",
+    "type": [
+      {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      {
+        "enum": [
+          true
+        ],
+        "type": "boolean"
+      }
+    ],
     "description": "This tagRendering can introduce this builtin filter"
   },
   {
@@ -17226,7 +17768,7 @@
         },
         {
           "if": "value=wikidata",
-          "then": "<b>wikidata</b> A wikidata identifier, e.g. Q42. "
+          "then": "<b>wikidata</b> A wikidata identifier, e.g. Q42."
         },
         {
           "if": "value=pnat",
@@ -17254,7 +17796,7 @@
         },
         {
           "if": "value=opening_hours",
-          "then": "<b>opening_hours</b> Has extra elements to easily input when a POI is opened. "
+          "then": "<b>opening_hours</b> Has extra elements to easily input when a POI is opened."
         },
         {
           "if": "value=color",
@@ -17287,6 +17829,10 @@
         {
           "if": "value=currency",
           "then": "<b>currency</b> Validates monetary amounts"
+        },
+        {
+          "if": "value=regex",
+          "then": "<b>regex</b> Validates a regex"
         }
       ]
     },
@@ -17573,7 +18119,7 @@
     "required": false,
     "hints": {},
     "type": "array",
-    "description": "A list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer"
+    "description": "What labels should be applied on this tagRendering?\nA list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer\nSpecial values:\n- \"hidden\": do not show this tagRendering. Useful in it is used by e.g. an accordion\n- \"description\": this label is a description used in the search"
   },
   {
     "path": [
@@ -17926,7 +18472,20 @@
     ],
     "required": false,
     "hints": {},
-    "type": "array",
+    "type": [
+      {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      {
+        "enum": [
+          true
+        ],
+        "type": "boolean"
+      }
+    ],
     "description": "This tagRendering can introduce this builtin filter"
   },
   {
@@ -18634,7 +19193,7 @@
         },
         {
           "if": "value=wikidata",
-          "then": "<b>wikidata</b> A wikidata identifier, e.g. Q42. "
+          "then": "<b>wikidata</b> A wikidata identifier, e.g. Q42."
         },
         {
           "if": "value=pnat",
@@ -18662,7 +19221,7 @@
         },
         {
           "if": "value=opening_hours",
-          "then": "<b>opening_hours</b> Has extra elements to easily input when a POI is opened. "
+          "then": "<b>opening_hours</b> Has extra elements to easily input when a POI is opened."
         },
         {
           "if": "value=color",
@@ -18695,6 +19254,10 @@
         {
           "if": "value=currency",
           "then": "<b>currency</b> Validates monetary amounts"
+        },
+        {
+          "if": "value=regex",
+          "then": "<b>regex</b> Validates a regex"
         }
       ]
     },
@@ -18994,7 +19557,7 @@
     "required": false,
     "hints": {},
     "type": "array",
-    "description": "A list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer"
+    "description": "What labels should be applied on this tagRendering?\nA list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer\nSpecial values:\n- \"hidden\": do not show this tagRendering. Useful in it is used by e.g. an accordion\n- \"description\": this label is a description used in the search"
   },
   {
     "path": [
@@ -19360,7 +19923,20 @@
     ],
     "required": false,
     "hints": {},
-    "type": "array",
+    "type": [
+      {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      {
+        "enum": [
+          true
+        ],
+        "type": "boolean"
+      }
+    ],
     "description": "This tagRendering can introduce this builtin filter"
   },
   {
@@ -20043,7 +20619,7 @@
         },
         {
           "if": "value=wikidata",
-          "then": "<b>wikidata</b> A wikidata identifier, e.g. Q42. "
+          "then": "<b>wikidata</b> A wikidata identifier, e.g. Q42."
         },
         {
           "if": "value=pnat",
@@ -20071,7 +20647,7 @@
         },
         {
           "if": "value=opening_hours",
-          "then": "<b>opening_hours</b> Has extra elements to easily input when a POI is opened. "
+          "then": "<b>opening_hours</b> Has extra elements to easily input when a POI is opened."
         },
         {
           "if": "value=color",
@@ -20104,6 +20680,10 @@
         {
           "if": "value=currency",
           "then": "<b>currency</b> Validates monetary amounts"
+        },
+        {
+          "if": "value=regex",
+          "then": "<b>regex</b> Validates a regex"
         }
       ]
     },
@@ -20390,7 +20970,7 @@
     "required": false,
     "hints": {},
     "type": "array",
-    "description": "A list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer"
+    "description": "What labels should be applied on this tagRendering?\nA list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer\nSpecial values:\n- \"hidden\": do not show this tagRendering. Useful in it is used by e.g. an accordion\n- \"description\": this label is a description used in the search"
   },
   {
     "path": [
@@ -20743,7 +21323,20 @@
     ],
     "required": false,
     "hints": {},
-    "type": "array",
+    "type": [
+      {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      {
+        "enum": [
+          true
+        ],
+        "type": "boolean"
+      }
+    ],
     "description": "This tagRendering can introduce this builtin filter"
   },
   {
@@ -21451,7 +22044,7 @@
         },
         {
           "if": "value=wikidata",
-          "then": "<b>wikidata</b> A wikidata identifier, e.g. Q42. "
+          "then": "<b>wikidata</b> A wikidata identifier, e.g. Q42."
         },
         {
           "if": "value=pnat",
@@ -21479,7 +22072,7 @@
         },
         {
           "if": "value=opening_hours",
-          "then": "<b>opening_hours</b> Has extra elements to easily input when a POI is opened. "
+          "then": "<b>opening_hours</b> Has extra elements to easily input when a POI is opened."
         },
         {
           "if": "value=color",
@@ -21512,6 +22105,10 @@
         {
           "if": "value=currency",
           "then": "<b>currency</b> Validates monetary amounts"
+        },
+        {
+          "if": "value=regex",
+          "then": "<b>regex</b> Validates a regex"
         }
       ]
     },
@@ -21811,7 +22408,7 @@
     "required": false,
     "hints": {},
     "type": "array",
-    "description": "A list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer"
+    "description": "What labels should be applied on this tagRendering?\nA list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer\nSpecial values:\n- \"hidden\": do not show this tagRendering. Useful in it is used by e.g. an accordion\n- \"description\": this label is a description used in the search"
   },
   {
     "path": [
@@ -22177,7 +22774,20 @@
     ],
     "required": false,
     "hints": {},
-    "type": "array",
+    "type": [
+      {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      {
+        "enum": [
+          true
+        ],
+        "type": "boolean"
+      }
+    ],
     "description": "This tagRendering can introduce this builtin filter"
   },
   {
@@ -22215,7 +22825,7 @@
         ]
       }
     ],
-    "description": "All the extra questions for filtering.\nIf a string is given, mapComplete will search in\n1. The tagrenderings for a match on ID and use the mappings as options\n2. search 'filters.json' for the appropriate filter or\n3. will try to parse it as `layername.filterid` and us that one."
+    "description": "All the extra questions for filtering.\nIf a string is given, mapComplete will search in\n1. The tagrenderings for a match on ID and use the mappings as options\n2. search 'filters.json' for the appropriate filter or\n3. will try to parse it as `layername.filterid` and us that one.\nNote: adding \"#filter\":\"no-auto\" will disable the filters added by tagRenderings"
   },
   {
     "path": [
@@ -22358,6 +22968,16 @@
     "hints": {},
     "type": "string",
     "description": "Used for comments or to disable a check\n\"ignore-possible-duplicate\": disables a check in `DetectDuplicateFilters` which complains that a filter can be replaced by a filter from the `filters`-library-layer"
+  },
+  {
+    "path": [
+      "layers",
+      "#filter"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "string",
+    "description": "Set this to disable the feature that tagRenderings can introduce filters"
   },
   {
     "path": [
@@ -23081,6 +23701,26 @@
     },
     "type": "boolean",
     "description": "When a changeset is made, a 'distance to object'-class is written to the changeset.\nFor some particular themes and layers, this might leak too much information, and we want to obfuscate this"
+  },
+  {
+    "path": [
+      "layers",
+      "snapName"
+    ],
+    "required": false,
+    "hints": {
+      "group": "hidden",
+      "question": "When a feature is snapped to this name, how should this item be called?"
+    },
+    "type": [
+      {
+        "$ref": "#/definitions/Record<string,string>"
+      },
+      {
+        "type": "string"
+      }
+    ],
+    "description": "In the move wizard, the option `snap object onto {snapName}` is shown"
   },
   {
     "path": [
@@ -23144,6 +23784,19 @@
     "path": [
       "layers",
       "override",
+      "searchTerms"
+    ],
+    "required": false,
+    "hints": {
+      "question": "What are some other terms used to describe these objects?"
+    },
+    "type": "object",
+    "description": "This is used in the search functionality"
+  },
+  {
+    "path": [
+      "layers",
+      "override",
       "source"
     ],
     "required": false,
@@ -23152,6 +23805,7 @@
       "typesdefault": "0",
       "group": "Basic",
       "question": "Where should the data be fetched from?",
+      "ifunset": "Determine the tags automatically based on the presets",
       "title": "Data Source"
     },
     "type": [
@@ -23663,10 +24317,20 @@
           },
           "filter": {
             "description": "This tagRendering can introduce this builtin filter",
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "enum": [
+                  true
+                ],
+                "type": "boolean"
+              }
+            ]
           }
         },
         "additionalProperties": false
@@ -24196,7 +24860,20 @@
     ],
     "required": false,
     "hints": {},
-    "type": "array",
+    "type": [
+      {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      {
+        "enum": [
+          true
+        ],
+        "type": "boolean"
+      }
+    ],
     "description": "This tagRendering can introduce this builtin filter"
   },
   {
@@ -24808,7 +25485,20 @@
     ],
     "required": false,
     "hints": {},
-    "type": "array",
+    "type": [
+      {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      {
+        "enum": [
+          true
+        ],
+        "type": "boolean"
+      }
+    ],
     "description": "This tagRendering can introduce this builtin filter"
   },
   {
@@ -24910,6 +25600,11 @@
           "icon": "addSmall"
         },
         {
+          "if": "value=airport",
+          "then": "airport",
+          "icon": "airport"
+        },
+        {
           "if": "value=brick_wall_round",
           "then": "brick_wall_round",
           "icon": "brick_wall_round"
@@ -24918,6 +25613,16 @@
           "if": "value=brick_wall_square",
           "then": "brick_wall_square",
           "icon": "brick_wall_square"
+        },
+        {
+          "if": "value=building_office_2",
+          "then": "building_office_2",
+          "icon": "building_office_2"
+        },
+        {
+          "if": "value=building_storefront",
+          "then": "building_storefront",
+          "icon": "building_storefront"
         },
         {
           "if": "value=bug",
@@ -24990,6 +25695,11 @@
           "icon": "gear"
         },
         {
+          "if": "value=globe_alt",
+          "then": "globe_alt",
+          "icon": "globe_alt"
+        },
+        {
           "if": "value=gps_arrow",
           "then": "gps_arrow",
           "icon": "gps_arrow"
@@ -25020,6 +25730,16 @@
           "icon": "home"
         },
         {
+          "if": "value=house",
+          "then": "house",
+          "icon": "house"
+        },
+        {
+          "if": "value=key",
+          "then": "key",
+          "icon": "key"
+        },
+        {
           "if": "value=invalid",
           "then": "invalid",
           "icon": "invalid"
@@ -25048,6 +25768,11 @@
           "if": "value=location_locked",
           "then": "location_locked",
           "icon": "location_locked"
+        },
+        {
+          "if": "value=lock",
+          "then": "lock",
+          "icon": "lock"
         },
         {
           "if": "value=mastodon",
@@ -25115,9 +25840,19 @@
           "icon": "teardrop_with_hole_green"
         },
         {
+          "if": "value=train",
+          "then": "train",
+          "icon": "train"
+        },
+        {
           "if": "value=triangle",
           "then": "triangle",
           "icon": "triangle"
+        },
+        {
+          "if": "value=user_circle",
+          "then": "user_circle",
+          "icon": "user_circle"
         },
         {
           "if": "value=wifi",
@@ -25787,10 +26522,20 @@
           },
           "filter": {
             "description": "This tagRendering can introduce this builtin filter",
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "enum": [
+                  true
+                ],
+                "type": "boolean"
+              }
+            ]
           }
         },
         "additionalProperties": false
@@ -26341,7 +27086,20 @@
     ],
     "required": false,
     "hints": {},
-    "type": "array",
+    "type": [
+      {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      {
+        "enum": [
+          true
+        ],
+        "type": "boolean"
+      }
+    ],
     "description": "This tagRendering can introduce this builtin filter"
   },
   {
@@ -26551,10 +27309,20 @@
           },
           "filter": {
             "description": "This tagRendering can introduce this builtin filter",
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "enum": [
+                  true
+                ],
+                "type": "boolean"
+              }
+            ]
           }
         },
         "additionalProperties": false
@@ -27105,7 +27873,20 @@
     ],
     "required": false,
     "hints": {},
-    "type": "array",
+    "type": [
+      {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      {
+        "enum": [
+          true
+        ],
+        "type": "boolean"
+      }
+    ],
     "description": "This tagRendering can introduce this builtin filter"
   },
   {
@@ -27312,10 +28093,20 @@
           },
           "filter": {
             "description": "This tagRendering can introduce this builtin filter",
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "enum": [
+                  true
+                ],
+                "type": "boolean"
+              }
+            ]
           }
         },
         "additionalProperties": false
@@ -27866,7 +28657,20 @@
     ],
     "required": false,
     "hints": {},
-    "type": "array",
+    "type": [
+      {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      {
+        "enum": [
+          true
+        ],
+        "type": "boolean"
+      }
+    ],
     "description": "This tagRendering can introduce this builtin filter"
   },
   {
@@ -28056,10 +28860,20 @@
           },
           "filter": {
             "description": "This tagRendering can introduce this builtin filter",
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "enum": [
+                  true
+                ],
+                "type": "boolean"
+              }
+            ]
           }
         },
         "additionalProperties": false
@@ -28610,7 +29424,20 @@
     ],
     "required": false,
     "hints": {},
-    "type": "array",
+    "type": [
+      {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      {
+        "enum": [
+          true
+        ],
+        "type": "boolean"
+      }
+    ],
     "description": "This tagRendering can introduce this builtin filter"
   },
   {
@@ -28801,10 +29628,20 @@
           },
           "filter": {
             "description": "This tagRendering can introduce this builtin filter",
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "enum": [
+                  true
+                ],
+                "type": "boolean"
+              }
+            ]
           }
         },
         "additionalProperties": false
@@ -29355,7 +30192,20 @@
     ],
     "required": false,
     "hints": {},
-    "type": "array",
+    "type": [
+      {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      {
+        "enum": [
+          true
+        ],
+        "type": "boolean"
+      }
+    ],
     "description": "This tagRendering can introduce this builtin filter"
   },
   {
@@ -29551,10 +30401,20 @@
           },
           "filter": {
             "description": "This tagRendering can introduce this builtin filter",
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "enum": [
+                  true
+                ],
+                "type": "boolean"
+              }
+            ]
           }
         },
         "additionalProperties": false
@@ -30105,7 +30965,20 @@
     ],
     "required": false,
     "hints": {},
-    "type": "array",
+    "type": [
+      {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      {
+        "enum": [
+          true
+        ],
+        "type": "boolean"
+      }
+    ],
     "description": "This tagRendering can introduce this builtin filter"
   },
   {
@@ -30296,10 +31169,20 @@
           },
           "filter": {
             "description": "This tagRendering can introduce this builtin filter",
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "enum": [
+                  true
+                ],
+                "type": "boolean"
+              }
+            ]
           }
         },
         "additionalProperties": false
@@ -30850,7 +31733,20 @@
     ],
     "required": false,
     "hints": {},
-    "type": "array",
+    "type": [
+      {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      {
+        "enum": [
+          true
+        ],
+        "type": "boolean"
+      }
+    ],
     "description": "This tagRendering can introduce this builtin filter"
   },
   {
@@ -31041,10 +31937,20 @@
           },
           "filter": {
             "description": "This tagRendering can introduce this builtin filter",
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "enum": [
+                  true
+                ],
+                "type": "boolean"
+              }
+            ]
           }
         },
         "additionalProperties": false
@@ -31595,7 +32501,20 @@
     ],
     "required": false,
     "hints": {},
-    "type": "array",
+    "type": [
+      {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      {
+        "enum": [
+          true
+        ],
+        "type": "boolean"
+      }
+    ],
     "description": "This tagRendering can introduce this builtin filter"
   },
   {
@@ -31794,10 +32713,20 @@
           },
           "filter": {
             "description": "This tagRendering can introduce this builtin filter",
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "enum": [
+                  true
+                ],
+                "type": "boolean"
+              }
+            ]
           }
         },
         "additionalProperties": false
@@ -32352,7 +33281,20 @@
     ],
     "required": false,
     "hints": {},
-    "type": "array",
+    "type": [
+      {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      {
+        "enum": [
+          true
+        ],
+        "type": "boolean"
+      }
+    ],
     "description": "This tagRendering can introduce this builtin filter"
   },
   {
@@ -32551,10 +33493,20 @@
           },
           "filter": {
             "description": "This tagRendering can introduce this builtin filter",
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "enum": [
+                  true
+                ],
+                "type": "boolean"
+              }
+            ]
           }
         },
         "additionalProperties": false
@@ -33109,7 +34061,20 @@
     ],
     "required": false,
     "hints": {},
-    "type": "array",
+    "type": [
+      {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      {
+        "enum": [
+          true
+        ],
+        "type": "boolean"
+      }
+    ],
     "description": "This tagRendering can introduce this builtin filter"
   },
   {
@@ -34135,6 +35100,10 @@
           "then": "bench_at_pt - A layer showing all public-transport-stops which do have a bench"
         },
         {
+          "if": "value=bicycle_counter",
+          "then": "bicycle_counter - Layer showing monitoring stations for bicycle traffic"
+        },
+        {
           "if": "value=bicycle_library",
           "then": "bicycle_library - A facility where bicycles can be lent for longer period of times"
         },
@@ -34185,6 +35154,10 @@
         {
           "if": "value=car_rental",
           "then": "car_rental - Places where you can rent a car"
+        },
+        {
+          "if": "value=caravansites",
+          "then": "caravansites - camper sites"
         },
         {
           "if": "value=charging_station",
@@ -34239,8 +35212,16 @@
           "then": "current_view - A meta-layer which contains one single feature, namely the bounding box of the current map view. This can be used to trigger special actions. If a popup is defined for this layer, this popup will be accessible via an extra button on screen.\n\nThe icon on the button is the default icon of the layer, but can be customized by detecting 'button=yes'."
         },
         {
+          "if": "value=cycle_highways",
+          "then": "cycle_highways - undefined"
+        },
+        {
           "if": "value=cycleways_and_roads",
           "then": "cycleways_and_roads - All infrastructure that someone can cycle over, accompanied with questions about this infrastructure"
+        },
+        {
+          "if": "value=cyclist_waiting_aid",
+          "then": "cyclist_waiting_aid - Various pieces of infrastructure that aid cyclists while they wait at a traffic light."
         },
         {
           "if": "value=defibrillator",
@@ -34269,6 +35250,10 @@
         {
           "if": "value=drinking_water",
           "then": "drinking_water - A layer showing drinking water fountains"
+        },
+        {
+          "if": "value=dumpstations",
+          "then": "dumpstations - Sanitary dump stations"
         },
         {
           "if": "value=elevator",
@@ -34323,8 +35308,16 @@
           "then": "food_courts - Food courts with a variety of food options."
         },
         {
+          "if": "value=geocoded_image",
+          "then": "geocoded_image - undefined"
+        },
+        {
           "if": "value=ghost_bike",
           "then": "ghost_bike - A layer showing memorials for cyclists, killed in road accidents"
+        },
+        {
+          "if": "value=ghostsign",
+          "then": "ghostsign - Layer showing disused signs on buildings"
         },
         {
           "if": "value=governments",
@@ -34507,6 +35500,10 @@
           "then": "playground_equipment - Layer showing playground equipment"
         },
         {
+          "if": "value=police",
+          "then": "police - Many types of police facilities "
+        },
+        {
           "if": "value=postboxes",
           "then": "postboxes - The layer showing postboxes."
         },
@@ -34549,6 +35546,10 @@
         {
           "if": "value=school",
           "then": "school - Schools giving primary and secondary education and post-secondary, non-tertiary education. Note that this level of education does not imply an age of the pupiles"
+        },
+        {
+          "if": "value=search",
+          "then": "search - Priviliged layer showing the search results"
         },
         {
           "if": "value=selected_element",
@@ -34627,6 +35628,14 @@
           "then": "surveillance_camera - This layer shows surveillance cameras and allows a contributor to update information and add new cameras"
         },
         {
+          "if": "value=tactile_map",
+          "then": "tactile_map - Layer showing tactile maps, which can be used by visually impaired people to navigate the city."
+        },
+        {
+          "if": "value=tactile_model",
+          "then": "tactile_model - Layer showing tactile models, three-dimensional models of the surrounding area."
+        },
+        {
           "if": "value=tertiary_education",
           "then": "tertiary_education - Layer with all tertiary education institutes (ISCED:2011 levels 6,7 and 8)"
         },
@@ -34652,7 +35661,7 @@
         },
         {
           "if": "value=tourism_accomodation",
-          "then": "tourism_accomodation - undefined"
+          "then": "tourism_accomodation - Various types of lodging facilities"
         },
         {
           "if": "value=trail",
@@ -34868,7 +35877,7 @@
             ]
           },
           "labels": {
-            "description": "A list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer",
+            "description": "What labels should be applied on this tagRendering?\n\nA list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer\n\nSpecial values:\n- \"hidden\": do not show this tagRendering. Useful in it is used by e.g. an accordion\n- \"description\": this label is a description used in the search",
             "type": "array",
             "items": {
               "type": "string"
@@ -34980,10 +35989,20 @@
           },
           "filter": {
             "description": "This tagRendering can introduce this builtin filter",
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "enum": [
+                  true
+                ],
+                "type": "boolean"
+              }
+            ]
           }
         },
         "required": [
@@ -35723,7 +36742,7 @@
         },
         {
           "if": "value=wikidata",
-          "then": "<b>wikidata</b> A wikidata identifier, e.g. Q42. "
+          "then": "<b>wikidata</b> A wikidata identifier, e.g. Q42."
         },
         {
           "if": "value=pnat",
@@ -35751,7 +36770,7 @@
         },
         {
           "if": "value=opening_hours",
-          "then": "<b>opening_hours</b> Has extra elements to easily input when a POI is opened. "
+          "then": "<b>opening_hours</b> Has extra elements to easily input when a POI is opened."
         },
         {
           "if": "value=color",
@@ -35784,6 +36803,10 @@
         {
           "if": "value=currency",
           "then": "<b>currency</b> Validates monetary amounts"
+        },
+        {
+          "if": "value=regex",
+          "then": "<b>regex</b> Validates a regex"
         }
       ]
     },
@@ -36070,7 +37093,7 @@
     "required": false,
     "hints": {},
     "type": "array",
-    "description": "A list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer"
+    "description": "What labels should be applied on this tagRendering?\nA list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer\nSpecial values:\n- \"hidden\": do not show this tagRendering. Useful in it is used by e.g. an accordion\n- \"description\": this label is a description used in the search"
   },
   {
     "path": [
@@ -36423,7 +37446,20 @@
     ],
     "required": false,
     "hints": {},
-    "type": "array",
+    "type": [
+      {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      {
+        "enum": [
+          true
+        ],
+        "type": "boolean"
+      }
+    ],
     "description": "This tagRendering can introduce this builtin filter"
   },
   {
@@ -37131,7 +38167,7 @@
         },
         {
           "if": "value=wikidata",
-          "then": "<b>wikidata</b> A wikidata identifier, e.g. Q42. "
+          "then": "<b>wikidata</b> A wikidata identifier, e.g. Q42."
         },
         {
           "if": "value=pnat",
@@ -37159,7 +38195,7 @@
         },
         {
           "if": "value=opening_hours",
-          "then": "<b>opening_hours</b> Has extra elements to easily input when a POI is opened. "
+          "then": "<b>opening_hours</b> Has extra elements to easily input when a POI is opened."
         },
         {
           "if": "value=color",
@@ -37192,6 +38228,10 @@
         {
           "if": "value=currency",
           "then": "<b>currency</b> Validates monetary amounts"
+        },
+        {
+          "if": "value=regex",
+          "then": "<b>regex</b> Validates a regex"
         }
       ]
     },
@@ -37491,7 +38531,7 @@
     "required": false,
     "hints": {},
     "type": "array",
-    "description": "A list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer"
+    "description": "What labels should be applied on this tagRendering?\nA list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer\nSpecial values:\n- \"hidden\": do not show this tagRendering. Useful in it is used by e.g. an accordion\n- \"description\": this label is a description used in the search"
   },
   {
     "path": [
@@ -37857,7 +38897,20 @@
     ],
     "required": false,
     "hints": {},
-    "type": "array",
+    "type": [
+      {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      {
+        "enum": [
+          true
+        ],
+        "type": "boolean"
+      }
+    ],
     "description": "This tagRendering can introduce this builtin filter"
   },
   {
@@ -38590,7 +39643,7 @@
         },
         {
           "if": "value=wikidata",
-          "then": "<b>wikidata</b> A wikidata identifier, e.g. Q42. "
+          "then": "<b>wikidata</b> A wikidata identifier, e.g. Q42."
         },
         {
           "if": "value=pnat",
@@ -38618,7 +39671,7 @@
         },
         {
           "if": "value=opening_hours",
-          "then": "<b>opening_hours</b> Has extra elements to easily input when a POI is opened. "
+          "then": "<b>opening_hours</b> Has extra elements to easily input when a POI is opened."
         },
         {
           "if": "value=color",
@@ -38651,6 +39704,10 @@
         {
           "if": "value=currency",
           "then": "<b>currency</b> Validates monetary amounts"
+        },
+        {
+          "if": "value=regex",
+          "then": "<b>regex</b> Validates a regex"
         }
       ]
     },
@@ -38950,7 +40007,7 @@
     "required": false,
     "hints": {},
     "type": "array",
-    "description": "A list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer"
+    "description": "What labels should be applied on this tagRendering?\nA list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer\nSpecial values:\n- \"hidden\": do not show this tagRendering. Useful in it is used by e.g. an accordion\n- \"description\": this label is a description used in the search"
   },
   {
     "path": [
@@ -39316,7 +40373,20 @@
     ],
     "required": false,
     "hints": {},
-    "type": "array",
+    "type": [
+      {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      {
+        "enum": [
+          true
+        ],
+        "type": "boolean"
+      }
+    ],
     "description": "This tagRendering can introduce this builtin filter"
   },
   {
@@ -40049,7 +41119,7 @@
         },
         {
           "if": "value=wikidata",
-          "then": "<b>wikidata</b> A wikidata identifier, e.g. Q42. "
+          "then": "<b>wikidata</b> A wikidata identifier, e.g. Q42."
         },
         {
           "if": "value=pnat",
@@ -40077,7 +41147,7 @@
         },
         {
           "if": "value=opening_hours",
-          "then": "<b>opening_hours</b> Has extra elements to easily input when a POI is opened. "
+          "then": "<b>opening_hours</b> Has extra elements to easily input when a POI is opened."
         },
         {
           "if": "value=color",
@@ -40110,6 +41180,10 @@
         {
           "if": "value=currency",
           "then": "<b>currency</b> Validates monetary amounts"
+        },
+        {
+          "if": "value=regex",
+          "then": "<b>regex</b> Validates a regex"
         }
       ]
     },
@@ -40422,7 +41496,7 @@
     "required": false,
     "hints": {},
     "type": "array",
-    "description": "A list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer"
+    "description": "What labels should be applied on this tagRendering?\nA list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer\nSpecial values:\n- \"hidden\": do not show this tagRendering. Useful in it is used by e.g. an accordion\n- \"description\": this label is a description used in the search"
   },
   {
     "path": [
@@ -40801,7 +41875,20 @@
     ],
     "required": false,
     "hints": {},
-    "type": "array",
+    "type": [
+      {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      {
+        "enum": [
+          true
+        ],
+        "type": "boolean"
+      }
+    ],
     "description": "This tagRendering can introduce this builtin filter"
   },
   {
@@ -41509,7 +42596,7 @@
         },
         {
           "if": "value=wikidata",
-          "then": "<b>wikidata</b> A wikidata identifier, e.g. Q42. "
+          "then": "<b>wikidata</b> A wikidata identifier, e.g. Q42."
         },
         {
           "if": "value=pnat",
@@ -41537,7 +42624,7 @@
         },
         {
           "if": "value=opening_hours",
-          "then": "<b>opening_hours</b> Has extra elements to easily input when a POI is opened. "
+          "then": "<b>opening_hours</b> Has extra elements to easily input when a POI is opened."
         },
         {
           "if": "value=color",
@@ -41570,6 +42657,10 @@
         {
           "if": "value=currency",
           "then": "<b>currency</b> Validates monetary amounts"
+        },
+        {
+          "if": "value=regex",
+          "then": "<b>regex</b> Validates a regex"
         }
       ]
     },
@@ -41869,7 +42960,7 @@
     "required": false,
     "hints": {},
     "type": "array",
-    "description": "A list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer"
+    "description": "What labels should be applied on this tagRendering?\nA list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer\nSpecial values:\n- \"hidden\": do not show this tagRendering. Useful in it is used by e.g. an accordion\n- \"description\": this label is a description used in the search"
   },
   {
     "path": [
@@ -42235,7 +43326,20 @@
     ],
     "required": false,
     "hints": {},
-    "type": "array",
+    "type": [
+      {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      {
+        "enum": [
+          true
+        ],
+        "type": "boolean"
+      }
+    ],
     "description": "This tagRendering can introduce this builtin filter"
   },
   {
@@ -42968,7 +44072,7 @@
         },
         {
           "if": "value=wikidata",
-          "then": "<b>wikidata</b> A wikidata identifier, e.g. Q42. "
+          "then": "<b>wikidata</b> A wikidata identifier, e.g. Q42."
         },
         {
           "if": "value=pnat",
@@ -42996,7 +44100,7 @@
         },
         {
           "if": "value=opening_hours",
-          "then": "<b>opening_hours</b> Has extra elements to easily input when a POI is opened. "
+          "then": "<b>opening_hours</b> Has extra elements to easily input when a POI is opened."
         },
         {
           "if": "value=color",
@@ -43029,6 +44133,10 @@
         {
           "if": "value=currency",
           "then": "<b>currency</b> Validates monetary amounts"
+        },
+        {
+          "if": "value=regex",
+          "then": "<b>regex</b> Validates a regex"
         }
       ]
     },
@@ -43341,7 +44449,7 @@
     "required": false,
     "hints": {},
     "type": "array",
-    "description": "A list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer"
+    "description": "What labels should be applied on this tagRendering?\nA list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer\nSpecial values:\n- \"hidden\": do not show this tagRendering. Useful in it is used by e.g. an accordion\n- \"description\": this label is a description used in the search"
   },
   {
     "path": [
@@ -43720,7 +44828,20 @@
     ],
     "required": false,
     "hints": {},
-    "type": "array",
+    "type": [
+      {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      {
+        "enum": [
+          true
+        ],
+        "type": "boolean"
+      }
+    ],
     "description": "This tagRendering can introduce this builtin filter"
   },
   {
@@ -43759,7 +44880,7 @@
         ]
       }
     ],
-    "description": "All the extra questions for filtering.\nIf a string is given, mapComplete will search in\n1. The tagrenderings for a match on ID and use the mappings as options\n2. search 'filters.json' for the appropriate filter or\n3. will try to parse it as `layername.filterid` and us that one."
+    "description": "All the extra questions for filtering.\nIf a string is given, mapComplete will search in\n1. The tagrenderings for a match on ID and use the mappings as options\n2. search 'filters.json' for the appropriate filter or\n3. will try to parse it as `layername.filterid` and us that one.\nNote: adding \"#filter\":\"no-auto\" will disable the filters added by tagRenderings"
   },
   {
     "path": [
@@ -43909,6 +45030,17 @@
     "hints": {},
     "type": "string",
     "description": "Used for comments or to disable a check\n\"ignore-possible-duplicate\": disables a check in `DetectDuplicateFilters` which complains that a filter can be replaced by a filter from the `filters`-library-layer"
+  },
+  {
+    "path": [
+      "layers",
+      "override",
+      "#filter"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "string",
+    "description": "Set this to disable the feature that tagRenderings can introduce filters"
   },
   {
     "path": [
@@ -44666,6 +45798,27 @@
     },
     "type": "boolean",
     "description": "When a changeset is made, a 'distance to object'-class is written to the changeset.\nFor some particular themes and layers, this might leak too much information, and we want to obfuscate this"
+  },
+  {
+    "path": [
+      "layers",
+      "override",
+      "snapName"
+    ],
+    "required": false,
+    "hints": {
+      "group": "hidden",
+      "question": "When a feature is snapped to this name, how should this item be called?"
+    },
+    "type": [
+      {
+        "$ref": "#/definitions/Record<string,string>"
+      },
+      {
+        "type": "string"
+      }
+    ],
+    "description": "In the move wizard, the option `snap object onto {snapName}` is shown"
   },
   {
     "path": [

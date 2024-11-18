@@ -2,25 +2,16 @@
 
 # picnic_table
 
-
-
-
 The layer showing picnic tables
 
-
-
-
-
-
  - This layer is shown at zoomlevel **12** and higher
-
-
 
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [repeated](#repeated)
   - [single_level](#single_level)
@@ -32,15 +23,17 @@ The layer showing picnic tables
 
 ## Themes using this layer
 
-
-
  - [benches](https://mapcomplete.org/benches)
  - [nature](https://mapcomplete.org/nature)
  - [personal](https://mapcomplete.org/personal)
  - [playgrounds](https://mapcomplete.org/playgrounds)
  - [toerisme_vlaanderen](https://mapcomplete.org/toerisme_vlaanderen)
 
+## Presets
 
+The following options to create new points are included:
+
+ - **a picnic table** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dpicnic_table' target='_blank'>picnic_table</a>
 
 ## Basic tags for this layer
 
@@ -55,18 +48,12 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 | attribute | type | values which are supported by this layer |
 -----|-----|----- |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/level#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/level/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [level](https://wiki.openstreetmap.org/wiki/Key:level) | [float](../SpecialInputElements.md#float) | [0](https://wiki.openstreetmap.org/wiki/Tag:level%3D0) [1](https://wiki.openstreetmap.org/wiki/Tag:level%3D1) [-1](https://wiki.openstreetmap.org/wiki/Tag:level%3D-1) |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/material#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/material/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [material](https://wiki.openstreetmap.org/wiki/Key:material) | [string](../SpecialInputElements.md#string) | [wood](https://wiki.openstreetmap.org/wiki/Tag:material%3Dwood) [concrete](https://wiki.openstreetmap.org/wiki/Tag:material%3Dconcrete) [plastic](https://wiki.openstreetmap.org/wiki/Tag:material%3Dplastic) |
-
-
-
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/material#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/material/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [material](https://wiki.openstreetmap.org/wiki/Key:material) | [string](../SpecialInputElements.md#string) | [wood](https://wiki.openstreetmap.org/wiki/Tag:material%3Dwood) [concrete](https://wiki.openstreetmap.org/wiki/Tag:material%3Dconcrete) [plastic](https://wiki.openstreetmap.org/wiki/Tag:material%3Dplastic) [metal](https://wiki.openstreetmap.org/wiki/Tag:material%3Dmetal) |
 
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
-
-
-
 
 ### repeated
 
@@ -82,14 +69,11 @@ This tagrendering has labels
 The question is `On what level is this feature located?`
 *Located on the {level}th floor* is shown if `level` is set
 
-
  -  *Located underground* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>. _This option cannot be chosen as answer_
  -  *Located on the ground floor* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D0' target='_blank'>0</a>
  -  *Located on the ground floor* is shown if with level=. _This option cannot be chosen as answer_
  -  *Located on the first floor* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>
  -  *Located on the first basement level* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D-1' target='_blank'>-1</a>
-
-
 
 This tagrendering has labels 
 `level`
@@ -99,44 +83,30 @@ This tagrendering has labels
 The question is `What material is this picnic table made of?`
 *This picnic table is made of {material}* is shown if `material` is set
 
-
  -  *This is a wooden picnic table* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:material' target='_blank'>material</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:material%3Dwood' target='_blank'>wood</a>
  -  *This is a concrete picnic table* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:material' target='_blank'>material</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:material%3Dconcrete' target='_blank'>concrete</a>
  -  *This picnic table is made from (recycled) plastic* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:material' target='_blank'>material</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:material%3Dplastic' target='_blank'>plastic</a>
-
-
-
-
+ -  *This picnic table is made from metal* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:material' target='_blank'>material</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:material%3Dmetal' target='_blank'>metal</a>
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### move-button
 
 _This tagrendering has no question and is thus read-only_
 *{move_button()}*
-
-
-
 
 ### delete-button
 
 _This tagrendering has no question and is thus read-only_
 *{delete_button()}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

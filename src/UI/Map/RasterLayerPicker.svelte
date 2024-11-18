@@ -13,7 +13,7 @@
   export let mapproperties: MapProperties
   export let map: Store<MlMap>
 
-  export let visible: Store<boolean> = undefined
+  export let shown: Store<boolean> = undefined
 
   let dispatch = createEventDispatcher<{ appliedLayer }>()
 
@@ -23,10 +23,9 @@
   let rasterLayerId = rasterLayer.sync(
     (l) => l?.properties?.id,
     [],
-    (id) => availableLayers.find((l) => l.properties.id === id),
+    (id) => availableLayers.find((l) => l.properties.id === id)
   )
   rasterLayer.setData(availableLayers[0])
-  $: rasterLayer.setData(availableLayers[0])
 
   if (favourite) {
     onDestroy(
@@ -36,27 +35,27 @@
           return
         }
         rasterLayer.setData(fav)
-      }),
+      })
     )
 
     onDestroy(
       rasterLayer.addCallbackAndRunD((selected) => {
         favourite?.setData(selected.properties.id)
-      }),
+      })
     )
   }
 
   let rasterLayerOnMap = UIEventSource.feedFrom(rasterLayer)
 
-  if (visible) {
+  if (shown) {
     onDestroy(
-      visible?.addCallbackAndRunD((visible) => {
-        if (visible) {
+      shown?.addCallbackAndRunD((shown) => {
+        if (shown) {
           rasterLayerOnMap.setData(rasterLayer.data ?? availableLayers[0])
         } else {
           rasterLayerOnMap.setData(undefined)
         }
-      }),
+      })
     )
   }
 
@@ -97,7 +96,7 @@
           rasterLayer={rasterLayerOnMap}
           placedOverMap={map}
           placedOverMapProperties={mapproperties}
-          {visible}
+          visible={shown}
         />
       </span>
     </button>

@@ -32,7 +32,7 @@
   ShowDataLayer.showMultipleLayers(
     map,
     new StaticFeatureSource([importFlow.originalFeature]),
-    state.layout.layers,
+    state.theme.layers,
     { zoomToFeatures: false }
   )
 

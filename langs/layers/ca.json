@@ -33,44 +33,54 @@
                 "title": "una tanca publicitària"
             },
             "1": {
-                "title": "un mupi"
-            },
-            "2": {
-                "title": "un mupi sobre la paret"
-            },
-            "4": {
-                "description": "Un xicotet tauló d'anuncics per a anuncis del veïnat, normalment destitat a peatons",
-                "title": "un tauló d'anunis"
-            },
-            "5": {
-                "description": "Una extructura cilíndica exterior que mostra publicitat",
-                "title": "una columna"
-            },
-            "6": {
-                "title": "una bandera"
-            },
-            "7": {
-                "title": "una pantalla"
-            },
-            "8": {
-                "title": "una patalla sobre una paret"
+                "description": "Una gran estructura publicitària exterior, que normalment es troba en zones de gran trànsit, com ara al costat de carreteres transitades muntades a una paret",
+                "title": "un cartell muntat a una paret"
             },
             "10": {
+                "title": "una pantalla muntada en una marquesina"
+            },
+            "11": {
                 "description": "Una peça de tèxtil impermeable amb un missatge imprès, fixada permanentment a una paret",
                 "title": "una lona"
             },
-            "11": {
+            "12": {
                 "title": "un tòtem"
             },
-            "12": {
+            "13": {
                 "description": "S'utilitza per a cartells publicitaris, rètols de neó, logotips i cartells en entrades institucionals",
                 "title": "un lletrer"
             },
-            "13": {
+            "14": {
                 "title": "una escupltura"
             },
-            "14": {
+            "15": {
                 "title": "una paret pintada"
+            },
+            "2": {
+                "title": "un mupi"
+            },
+            "3": {
+                "title": "un mupi sobre la paret"
+            },
+            "4": {
+                "title": "un mupi que forma part d'un refugi de transport públic"
+            },
+            "5": {
+                "description": "Un xicotet tauló d'anuncics per a anuncis del veïnat, normalment destitat a peatons",
+                "title": "un tauló d'anunis"
+            },
+            "6": {
+                "description": "Una extructura cilíndica exterior que mostra publicitat",
+                "title": "una columna"
+            },
+            "7": {
+                "title": "una bandera"
+            },
+            "8": {
+                "title": "una pantalla"
+            },
+            "9": {
+                "title": "una patalla sobre una paret"
             }
         },
         "tagRenderings": {
@@ -165,6 +175,9 @@
                     "1": {
                         "then": "Açò és un tauló d'anuncis"
                     },
+                    "10": {
+                        "then": "Açò és una paret pintada"
+                    },
                     "2": {
                         "then": "Açò és una columna"
                     },
@@ -188,9 +201,6 @@
                     },
                     "9": {
                         "then": "Açò és un tòtem"
-                    },
-                    "10": {
-                        "then": "Açò és una paret pintada"
                     }
                 },
                 "question": "Quin tipus d'element publicitari és aquest?",
@@ -204,6 +214,9 @@
                 },
                 "1": {
                     "then": "Tauló d'anuncis"
+                },
+                "10": {
+                    "then": "Paret Pintada"
                 },
                 "2": {
                     "then": "Mupi"
@@ -228,10 +241,28 @@
                 },
                 "9": {
                     "then": "Tòtem"
-                },
-                "10": {
-                    "then": "Paret Pintada"
                 }
+            }
+        }
+    },
+    "aerialway": {
+        "description": "Diverses formes de transport per a passatgers i mercaderies que utilitzen cables, incloent-hi telefèrics, telecabines, telecadires, teleesquís i tiroleses. ",
+        "name": "Vies aeries",
+        "pointRendering": {
+            "1": {
+                "label": {
+                    "render": "{name}"
+                }
+            }
+        },
+        "tagRenderings": {
+            "duration": {
+                "question": "Quant de temps triga un trajecte amb aquest ascensor?",
+                "questionHint": "Això exclou el temps d'espera.",
+                "render": "Un viatge dura {duration} minuts"
+            },
+            "occupancy": {
+                "question": "Quantes persones caben a la cabina?"
             }
         }
     },
@@ -308,6 +339,9 @@
                     }
                 },
                 "question": "Quina és la finalitat del refugi d'animals?"
+            },
+            "boarded_animals": {
+                "question": "Quins animals s'accepten aquí?"
             }
         },
         "title": {
@@ -347,6 +381,15 @@
                     "1": {
                         "then": "Mural"
                     },
+                    "10": {
+                        "then": "Azulejo (Rajoles decoratives espanyoles i portugueses)"
+                    },
+                    "11": {
+                        "then": "Enrajolat"
+                    },
+                    "12": {
+                        "then": "Tallat a la fusta"
+                    },
                     "2": {
                         "then": "Pintura"
                     },
@@ -370,15 +413,6 @@
                     },
                     "9": {
                         "then": "Relleu"
-                    },
-                    "10": {
-                        "then": "Azulejo (Rajoles decoratives espanyoles i portugueses)"
-                    },
-                    "11": {
-                        "then": "Enrajolat"
-                    },
-                    "12": {
-                        "then": "Tallat a la fusta"
                     }
                 },
                 "question": "Quin tipus d'obra és aquesta peça?",
@@ -409,6 +443,13 @@
                     }
                 },
                 "question": "Aquesta obra d'art serveix com a un banc?"
+            },
+            "doubles_as_memorial": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquesta obra d'art també serveix com a memorial"
+                    }
+                }
             }
         },
         "title": {
@@ -721,10 +762,10 @@
                         "then": "Aquest banc té dues cares i comparteix el respatller"
                     },
                     "1": {
-                        "then": "Té espatller"
+                        "then": "Aquest banc té espatller"
                     },
                     "2": {
-                        "then": "<b>No</b> té espatller"
+                        "then": "Aquest banc <b>No</b> té espatller"
                     }
                 },
                 "question": "Aquest banc té respatller?"
@@ -818,7 +859,7 @@
                     }
                 },
                 "question": "Quants seients té aquest banc?",
-                "render": "{seats} seients"
+                "render": "Aquest banc té {seats} seients"
             },
             "bench-survey:date": {
                 "mappings": {
@@ -1169,9 +1210,6 @@
                     },
                     "2": {
                         "then": "L'accés està limitat a membres d'una escola, companyia o organització"
-                    },
-                    "3": {
-                        "then": "L'accés està limitat a membres d'una escola, companyia o organització"
                     }
                 },
                 "question": "Qui pot utilitzar aquest aparcament de bicicletes?",
@@ -1182,25 +1220,25 @@
                     "0": {
                         "then": "Bastidors"
                     },
-                    "1": {
+                    "2": {
                         "then": "Portarodes/bucles"
                     },
-                    "2": {
+                    "3": {
                         "then": "Suport de manillar"
                     },
-                    "3": {
+                    "4": {
                         "then": "Enganxament"
                     },
-                    "4": {
+                    "5": {
                         "then": "De dos nivells"
                     },
-                    "5": {
+                    "6": {
                         "then": "cobert"
                     },
-                    "6": {
+                    "7": {
                         "then": "Pilona"
                     },
-                    "7": {
+                    "8": {
                         "then": "Una zona al terra que està senyalitzada per a l'aparcament de bicicletes"
                     }
                 },
@@ -1208,7 +1246,7 @@
                 "render": "Aquest és un aparcament de bicicletes del tipus: {bicycle_parking}"
             },
             "Capacity": {
-                "question": "Quantes bicicletes caben en aquest aparcament de bicicletes (incloent possibles bicicletes de càrrega)?",
+                "question": "Quantes bicicletes caben en aquest aparcament de bicicletes?",
                 "render": "Espai per a {capacity} bicis"
             },
             "Cargo bike capacity?": {
@@ -1224,7 +1262,7 @@
                         "then": "Aquest aparcament hi han llocs designats (oficialment) per a bicicletes de càrrega."
                     },
                     "2": {
-                        "then": "No teniu permís per aparcar bicicletes de càrrega"
+                        "then": "No teniu permís per aparcar bicicletes de càrrega o no hi ha places previstes per a bicicletes de càrrega"
                     }
                 },
                 "question": "Aquest aparcament de bicicletes té punts per a bicicletes de càrrega?"
@@ -1256,6 +1294,24 @@
                     }
                 },
                 "question": "Quina és la ubicació relativa d'aquest aparcament per a bicicletes?"
+            },
+            "fee": {
+                "question": "Aquests aparcaments de bicicletes són gratuïts?"
+            },
+            "maxstay": {
+                "question": "Quina és la durada màxima permesa d'estacionament?",
+                "render": "Una bici pot aparcar aquí com a màxim {canonical(maxstay)}"
+            },
+            "operator": {
+                "question": "Qui manté aquest aparcament per a bicis?",
+                "render": "{operator} manté aquest aparcament per a bicis"
+            },
+            "operator_email": {
+                "question": "Quina és l'adreça de correu electrònic de l'operador d'aquest aparcament per a bicis?"
+            },
+            "operator_phone": {
+                "question": "Quin és el número de telèfon de l'operador d'aquest aparcament per a bicis?",
+                "questionHint": "És possible que es pugui trucar a aquest número en cas de problemes, p. per retirar les bicicletes abandonades"
             }
         },
         "title": {
@@ -1603,6 +1659,16 @@
             "render": "Lloc d'observació d'ocells"
         }
     },
+    "brothel": {
+        "tagRenderings": {
+            "name": {
+                "question": "Com es diu aquest bordell?"
+            }
+        },
+        "title": {
+            "render": "Bordell"
+        }
+    },
     "cafe_pub": {
         "deletion": {
             "extraDeleteReasons": {
@@ -1664,6 +1730,12 @@
             "mappings": {
                 "0": {
                     "then": "<i>{name}</i>"
+                },
+                "1": {
+                    "then": "Pub"
+                },
+                "2": {
+                    "then": "CAfè"
                 }
             },
             "render": "Bar"
@@ -1696,6 +1768,118 @@
             "render": "Lloguer de cotxes"
         }
     },
+    "caravansites": {
+        "description": "llocs d'acampada",
+        "name": "Llocs d'acampada",
+        "presets": {
+            "0": {
+                "description": "Afig un nou lloc d'acampada oficial. Són llocs designats per a passar la nit amb la teua caravana. Poden semblar-se a un càmping real o simplement a un aparcament. Pot ser que no estiguen senyalitzats en absolut, sinó que simplement estiguen definits per una decisió municipal. Un aparcament normal destinat als acampadors en el qual no s'espera que es passe la nit, no és un càmping. ",
+                "title": "un lloc d'acampada"
+            }
+        },
+        "tagRenderings": {
+            "caravansites-capacity": {
+                "question": "Quants acampadors poden allotjar-se ací? (ometre si no hi ha un nombre evident de places o vehicles permesos)",
+                "render": "{capacity} els acampadors poden utilitzar aquest lloc al mateix temps"
+            },
+            "caravansites-charge": {
+                "question": "Quant cobra aquest lloc?",
+                "render": "Aquest lloc cobra {charge}"
+            },
+            "caravansites-description": {
+                "question": "T'agradaria afegir una descripció general d'aquest lloc? (No repeteixis informació prèviament preguntada o mostrada a dalt. Si us plau mantín-la objectiva - les opinions van en les «reviews»)",
+                "render": "Més detalls sobre aquest lloc: {description}"
+            },
+            "caravansites-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Heu de pagar per l'ús"
+                    },
+                    "1": {
+                        "then": "Es pot utilitzar gratuïtament"
+                    }
+                },
+                "question": "Aquest lloc cobra una taxa?"
+            },
+            "caravansites-internet": {
+                "mappings": {
+                    "0": {
+                        "then": "Hi ha accés a internet"
+                    },
+                    "1": {
+                        "then": "Hi ha accés a Internet"
+                    },
+                    "2": {
+                        "then": "No hi ha accés a Internet"
+                    }
+                },
+                "question": "Aquest lloc proporciona accés a Internet?"
+            },
+            "caravansites-internet-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Heu de pagar un extra per accedir a Internet"
+                    },
+                    "1": {
+                        "then": "No cal pagar extra per l'accés a Internet"
+                    }
+                },
+                "question": "Has de pagar per l'accés a Internet?"
+            },
+            "caravansites-long-term": {
+                "mappings": {
+                    "0": {
+                        "then": "Hi ha alguns punts per al lloguer a llarg termini, però també es pot romandre diàriament"
+                    },
+                    "1": {
+                        "then": "No hi han hostes permanents aquí"
+                    },
+                    "2": {
+                        "then": "Només és possible romandre aquí si teniu un contracte a llarg termini (aquest lloc desapareixerà d'aquest mapa si trieu això)"
+                    }
+                },
+                "question": "Aquest lloc ofereix llocs de lloguer a llarg termini?"
+            },
+            "caravansites-name": {
+                "question": "Com es diu aquest lloc?",
+                "render": "Aquest lloc s'anomena {name}"
+            },
+            "caravansites-sanitary-dump": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest lloc té una estació d'abocament sanitari"
+                    },
+                    "1": {
+                        "then": "Aquest lloc no té una estació d'abocament sanitari"
+                    }
+                },
+                "question": "Aquest lloc té una estació d'abocament sanitari?"
+            },
+            "caravansites-toilets": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest lloc té lavabos"
+                    },
+                    "1": {
+                        "then": "Aquest lloc no té lavabos"
+                    }
+                },
+                "question": "Aquest lloc té lavabos?"
+            },
+            "caravansites-website": {
+                "question": "Aquest lloc té un lloc web?",
+                "render": "Lloc web oficial: <a href='{website}'>{website}</a>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Lloc d'acampada sense nom"
+                }
+            },
+            "render": "Lloc d'acampada {name}"
+        }
+    },
     "charging_station": {
         "description": "Una estació de càrrega",
         "filter": {
@@ -1706,13 +1890,29 @@
                     },
                     "1": {
                         "question": "Punt de recàrrega per a bicicletes"
+                    },
+                    "2": {
+                        "question": "Estació de càrrega per a cotxes"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Només estacions de recàrrega en funcionament"
                     }
                 }
             },
             "2": {
                 "options": {
+                    "0": {
+                        "question": "Tots els connectors"
+                    },
                     "1": {
                         "question": "Té un connector <div style='display: inline-block'><b><b>Schuko</b> sense pin de terra (CEE7/4 tipus F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div>"
+                    },
+                    "10": {
+                        "question": "Té un connector <div style='display: inline-block'><b><b>Tipus 2 amb cable</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
                     },
                     "2": {
                         "question": "Té un connector <div style='display: inline-block'><b><b>endoll de paret Europeu</b> amb un pin de terra (CEE7/4 tipus F)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div>"
@@ -1723,9 +1923,25 @@
                 }
             }
         },
+        "name": "Estacions de càrrega",
+        "presets": {
+            "1": {
+                "title": "estació de càrrega per a cotxes"
+            }
+        },
         "tagRenderings": {
+            "Auth phone": {
+                "question": "Quin és el número de telèfon per a la trucada d'autenticació o SMS?",
+                "render": "Autentiqueu-vos trucant o enviant SMS a <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>"
+            },
             "Authentication": {
                 "mappings": {
+                    "0": {
+                        "then": "Autenticació mitjançant una targeta de soci"
+                    },
+                    "1": {
+                        "then": "Autenticació mitjançant una aplicació"
+                    },
                     "4": {
                         "then": "L'autenticació mitjançant NFC està disponible"
                     },
@@ -1748,6 +1964,30 @@
                     },
                     "1": {
                         "then": "<b>Endoll de paret Schuko</b> sense pin a terra (CEE7/4 tipus F)"
+                    },
+                    "10": {
+                        "then": "<b>CSS Tipus 1</b> (també conegut com a Tipus 1 Combo)"
+                    },
+                    "11": {
+                        "then": "<b>CSS Tipus 1</b> (també conegut com a Tipus 1 Combo)"
+                    },
+                    "12": {
+                        "then": "<b>Supercarregador de Tesla</b>"
+                    },
+                    "13": {
+                        "then": "<b>Supercarregador de Tesla</b>"
+                    },
+                    "14": {
+                        "then": "<b>Tipus 2</b> (mennekes)"
+                    },
+                    "15": {
+                        "then": "<b>Tipus 2</b> (mennekes)"
+                    },
+                    "16": {
+                        "then": "<b>CSS Tipus 2</b> (mennekes)"
+                    },
+                    "17": {
+                        "then": "<b>CSS Tipus 2</b> (mennekes)"
                     },
                     "2": {
                         "then": "<b>Endoll de paret Europeu</b> amb pin a terra (CEE7/4 tipus E)"
@@ -1772,30 +2012,6 @@
                     },
                     "9": {
                         "then": "<b>Tipus 1 <i>sense</i> cable</b>(J1772)"
-                    },
-                    "10": {
-                        "then": "<b>CSS Tipus 1</b> (també conegut com a Tipus 1 Combo)"
-                    },
-                    "11": {
-                        "then": "<b>CSS Tipus 1</b> (també conegut com a Tipus 1 Combo)"
-                    },
-                    "12": {
-                        "then": "<b>Supercarregador de Tesla"
-                    },
-                    "13": {
-                        "then": "<b>Supercarregador de Tesla</b>"
-                    },
-                    "14": {
-                        "then": "<b>Tipus 2</b> (mennekes)"
-                    },
-                    "15": {
-                        "then": "<b>Tipus 2</b> (mennekes)"
-                    },
-                    "16": {
-                        "then": "<b>CSS Tipus 2</b> (mennekes)"
-                    },
-                    "17": {
-                        "then": "<b>CSS Tipus 2</b> (mennekes)"
                     }
                 }
             },
@@ -2182,10 +2398,10 @@
                     "1": {
                         "then": "Aquest rellotge està muntat en una paret"
                     },
-                    "2": {
+                    "3": {
                         "then": "Aquest rellotge està muntat en una tanca publicitària"
                     },
-                    "3": {
+                    "4": {
                         "then": "Aquest rellotge està al sòl"
                     }
                 },
@@ -2295,17 +2511,6 @@
                     }
                 },
                 "question": "Aquest creuament té una illa al mig?"
-            },
-            "crossing-is-zebra": {
-                "mappings": {
-                    "0": {
-                        "then": "Açò és un pas de vianants"
-                    },
-                    "1": {
-                        "then": "Açò no és un pas de vianants"
-                    }
-                },
-                "question": "Açò és un pas de vianants?"
             },
             "crossing-minimap": {
                 "mappings": {
@@ -2471,6 +2676,9 @@
                     "1": {
                         "then": "Aquesta via ciclista està pavimentada"
                     },
+                    "10": {
+                        "then": "Aquesta via ciclista està feta de grava fina"
+                    },
                     "2": {
                         "then": "Aquesta via ciclista està feta d'asfalt"
                     },
@@ -2494,9 +2702,6 @@
                     },
                     "9": {
                         "then": "Aquesta via ciclista està feta de grava"
-                    },
-                    "10": {
-                        "then": "Aquesta via ciclista està feta de grava fina"
                     }
                 },
                 "question": "De quina superfície està fet aquesta via ciclista?",
@@ -2542,6 +2747,9 @@
                     "1": {
                         "then": "Aquest carril bici està pavimentat"
                     },
+                    "10": {
+                        "then": "Aquesta via ciclista està feta de gravilla"
+                    },
                     "2": {
                         "then": "Aquest carril bici està fet d'asfalt"
                     },
@@ -2553,9 +2761,6 @@
                     },
                     "9": {
                         "then": "Aquesta via ciclista està feta de grava"
-                    },
-                    "10": {
-                        "then": "Aquesta via ciclista està feta de gravilla"
                     }
                 },
                 "question": "De què està feta la superfície d'aquest carrer?",
@@ -2862,6 +3067,17 @@
     "dentist": {
         "description": "Aquesta capa mostra clíniques dentals",
         "name": "Dentista",
+        "pointRendering": {
+            "0": {
+                "label": {
+                    "mappings": {
+                        "0": {
+                            "then": "{name}"
+                        }
+                    }
+                }
+            }
+        },
         "presets": {
             "0": {
                 "title": "una clínica dental"
@@ -2880,6 +3096,23 @@
     "direction": {
         "description": "Aquesta capa visualitza direccions",
         "name": "Direcció de la visualització"
+    },
+    "disaster_response": {
+        "description": "Aquesta capa conté organitzacions que tenen com a objectiu principal ajudar la població civil durant i després de desastres naturals o antropogènics treballant a la zona afectada.",
+        "name": "Organitzacions de resposta a desastres",
+        "presets": {
+            "0": {
+                "title": "una organització de resposta a desastres"
+            }
+        },
+        "tagRenderings": {
+            "disaster_response_name": {
+                "question": "Quin és el nom d'aquesta organització?"
+            }
+        },
+        "title": {
+            "render": "Organització de resposta a desastres"
+        }
     },
     "doctors": {
         "description": "Aquesta capa mostra els consultoris mèdics",
@@ -2968,6 +3201,9 @@
                 },
                 "1": {
                     "then": "Es tracta d'una aixeta d'aigua o bomba d'aigua amb aigua no potable. <div class='subtle'> Per exemple les aixetes d'aigua amb aigua de pluja per aprofitar i regar les plantes properes</div>"
+                },
+                "2": {
+                    "then": "Es tracta d'una bomba d'aigua manual històrica on no hi ha aigua potable"
                 }
             }
         },
@@ -2975,6 +3211,7 @@
         "name": "Aigua potable",
         "presets": {
             "0": {
+                "description": "Normalment una font d'aigua, aixeta, pou d'aigua o font natural",
                 "title": "una font d'aigua potable"
             }
         },
@@ -3005,12 +3242,153 @@
                 "question": "Aquest punt d'aigua potable continua operatiu?",
                 "render": "L'estat operatiu és <i>{operational_status}</i>"
             },
+            "bench-artwork": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest punt d'aigua potable té una obra d'art integrada"
+                    },
+                    "1": {
+                        "then": "Aquest punt d'aigua potable no té una obra d'art integrada"
+                    },
+                    "2": {
+                        "then": "Aquest punt d'aigua potable <span class=\"subtle\">probablement</span> no té una obra d'art integrada"
+                    }
+                },
+                "question": "Aquesta font d'aigua potable té un element artístic?",
+                "questionHint": "P. ex. té una estàtua integrada o un altre treball creatiu no trivial"
+            },
+            "fee": {
+                "mappings": {
+                    "0": {
+                        "then": "D'us gratuït"
+                    },
+                    "1": {
+                        "then": "Cal pagar per utilitzar aquest punt d'aigua potable"
+                    }
+                },
+                "question": "Aquest punt d'aigua potable és d'ús gratuït?"
+            },
+            "opening_hours_24_7": {
+                "override": {
+                    "+mappings": {
+                        "0": {
+                            "then": "Aquesta font d'aigua potable està tancada aquesta temporada. Com a tal, l'horari d'obertura no es mostra."
+                        }
+                    },
+                    "questionHint": "Aquests són els horaris d'obertura si la font d'aigua potable està operativa."
+                }
+            },
             "render-closest-drinking-water": {
                 "render": "<a href='#{_closest_other_drinking_water_id}'>Hi ha una altra font d'aigua potable a {_closest_other_drinking_water_distance} metres</a>"
+            },
+            "seasonal": {
+                "override": {
+                    "question": "Aquest punt d'aigua potable està disponible tot l'any?"
+                }
+            },
+            "type": {
+                "mappings": {
+                    "1": {
+                        "then": "Aquest és un punt de reomplida d'ampolles on l'aigua s'envia cap avall, normalment controlat per un polsador o un sensor de moviment. Beure directament del raig pot ser molt difícil o impossible."
+                    },
+                    "2": {
+                        "then": "Això és una aixeta d'aigua. L'aigua flueix cap avall i el corrent és controlat per una vàlvula o polsador."
+                    }
+                },
+                "question": "Quin tipus de punt d'aigua potable és aquest?"
             }
         },
         "title": {
             "render": "Aigua potable"
+        }
+    },
+    "dumpstations": {
+        "description": "Estacions d'abocament sanitari",
+        "name": "Estacions d'abocament sanitari",
+        "presets": {
+            "0": {
+                "description": "Afegir una nova estació d'abocador sanitari. Aquest és un lloc on els conductors de campers poden abocar aigües residuals o residus de vàter químic. Sovint també hi ha aigua potable i electricitat.",
+                "title": "una estació d'abocament sanitari"
+            }
+        },
+        "tagRenderings": {
+            "dumpstations-access": {
+                "mappings": {
+                    "0": {
+                        "then": "Necessites un codi/clau de xarxa per usar-lo"
+                    },
+                    "1": {
+                        "then": "Heu de ser client del càmping/lloc d'acampada per utilitzar aquest lloc"
+                    },
+                    "2": {
+                        "then": "Qualsevol pot utilitzar aquesta estació d'abocament"
+                    },
+                    "3": {
+                        "then": "Qualsevol pot utilitzar aquesta estació d'abocament"
+                    }
+                },
+                "question": "Qui pot utilitzar aquesta estació d'abocament?"
+            },
+            "dumpstations-charge": {
+                "question": "Quant costa aquest lloc?",
+                "render": "Aquest lloc costa {charge}"
+            },
+            "dumpstations-chemical-waste": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquí pots depositar els residus del vàter químic"
+                    },
+                    "1": {
+                        "then": "Aquí no pots depositar els residus del vàter químic"
+                    }
+                },
+                "question": "Aquí pots depositar els residus del vàter químic?"
+            },
+            "dumpstations-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Has de pagar per a utilitzar-ho"
+                    },
+                    "1": {
+                        "then": "Es pot utilitzar gratuïtament"
+                    }
+                },
+                "question": "Aquest lloc cobra una taxa?"
+            },
+            "dumpstations-grey-water": {
+                "mappings": {
+                    "0": {
+                        "then": "Es pot desfer de les aigües grises aquí"
+                    },
+                    "1": {
+                        "then": "Aquí no pots desfer-te de les aigües grises"
+                    }
+                },
+                "question": "Aquí pots desfer-te de les aigües grises?"
+            },
+            "dumpstations-network": {
+                "question": "A quina xarxa forma part aquest lloc? (Salta si a cap)",
+                "render": "Aquesta estació forma part de la xarxa {network}"
+            },
+            "dumpstations-waterpoint": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest lloc té un punt d'aigua"
+                    },
+                    "1": {
+                        "then": "Aquest lloc no té un punt d'aigua"
+                    }
+                },
+                "question": "Aquest lloc té un punt d'aigua?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Estació d'abocament"
+                }
+            },
+            "render": "Estació d'abocament {name}"
         }
     },
     "elevator": {
@@ -3029,6 +3407,17 @@
             "elevator-depth": {
                 "question": "Quina és la profunditat de l'ascensor?",
                 "render": "L'ascensor té un profunditat de {canonical(length)}"
+            },
+            "elevator-shape": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest ascensor té una forma rectangular"
+                    },
+                    "1": {
+                        "then": "Aquest ascensor té una forma circular"
+                    }
+                },
+                "question": "Quina forma té aquest ascensor?"
             },
             "elevator-width": {
                 "question": "Quina és l'amplada d'aquest ascensor?",
@@ -3388,6 +3777,13 @@
                     }
                 }
             },
+            "10": {
+                "options": {
+                    "2": {
+                        "question": "No s'admeten gossos"
+                    }
+                }
+            },
             "2": {
                 "options": {
                     "0": {
@@ -3574,6 +3970,21 @@
                     "1": {
                         "then": "Aquesta estació de fitness té un cartell amb instruccions per a un exercici concret."
                     },
+                    "10": {
+                        "then": "Aquesta estació de gimnàs té esglaons."
+                    },
+                    "11": {
+                        "then": "Aquesta estació de fitness disposa de cons per fer salts de granota."
+                    },
+                    "12": {
+                        "then": "Aquesta estació de fitness té bigues per saltar."
+                    },
+                    "13": {
+                        "then": "Aquesta estació de fitness té obstacles per a travesar."
+                    },
+                    "14": {
+                        "then": "Aquesta estació de fitness té una paret per enfilar-se."
+                    },
                     "2": {
                         "then": "Aquesta estació de fitness té una instal·lació per fer abdominals."
                     },
@@ -3597,21 +4008,6 @@
                     },
                     "9": {
                         "then": "Aquesta estació de fitness té llocs per fer exercicis d'eslàlom."
-                    },
-                    "10": {
-                        "then": "Aquesta estació de gimnàs té esglaons."
-                    },
-                    "11": {
-                        "then": "Aquesta estació de fitness disposa de cons per fer salts de granota."
-                    },
-                    "12": {
-                        "then": "Aquesta estació de fitness té bigues per saltar."
-                    },
-                    "13": {
-                        "then": "Aquesta estació de fitness té obstacles per a travesar."
-                    },
-                    "14": {
-                        "then": "Aquesta estació de fitness té una paret per enfilar-se."
                     }
                 }
             }
@@ -3725,49 +4121,49 @@
             "Cuisine": {
                 "mappings": {
                     "0": {
-                        "then": "Això és una pizzeria"
+                        "then": "Pizzeria"
                     },
                     "1": {
-                        "then": "Això és una fregiduria"
+                        "then": "Fregiduria"
+                    },
+                    "10": {
+                        "then": "Xinés"
+                    },
+                    "11": {
+                        "then": "Grec"
+                    },
+                    "12": {
+                        "then": "Indi"
+                    },
+                    "13": {
+                        "then": "Turc"
+                    },
+                    "14": {
+                        "then": "Tailandés"
                     },
                     "2": {
                         "then": "Principalment serveix pasta"
                     },
                     "3": {
-                        "then": "Aquesta és una botiga de kebabs"
+                        "then": "Botiga de kebabs"
                     },
                     "4": {
-                        "then": "Això és una botiga d'entrepans"
+                        "then": "Botiga d'entrepans"
                     },
                     "5": {
-                        "then": "Aquí es serveixen hamburgueses"
+                        "then": "Restaurant d'hamburgueses"
                     },
                     "6": {
-                        "then": "Aquí es serveix sushi"
+                        "then": "Restaurant de shushi"
                     },
                     "7": {
-                        "then": "Aquí es serveix cafè"
+                        "then": "Cafeteria"
                     },
                     "8": {
-                        "then": "Això és un restaurant italià (que serveix més que pasta i pizza)"
+                        "then": "Restaurant italià (que serveix més que pasta i pizza)"
                     },
                     "9": {
-                        "then": "Aquí es serveixen plats francesos"
-                    },
-                    "10": {
-                        "then": "Aquí es serveixen plats xinesos"
-                    },
-                    "11": {
-                        "then": "Aquí es serveixen plats grecs"
-                    },
-                    "12": {
-                        "then": "Aquí es serveixen plats indis"
-                    },
-                    "13": {
-                        "then": "Aquí es serveixen plats turcs"
-                    },
-                    "14": {
-                        "then": "Aquí es serveixen plats tailandesos"
+                        "then": "Restaurant francés"
                     }
                 },
                 "question": "Quin tipus de menjar es serveix aquí?",
@@ -3905,13 +4301,13 @@
             },
             "friture-vegan": {
                 "mappings": {
-                    "0": {
+                    "1": {
                         "then": "Hi han snacks vegans disponibles"
                     },
-                    "1": {
+                    "2": {
                         "then": "Hi ha una petita selecció de snacks vegans disponibles"
                     },
-                    "2": {
+                    "3": {
                         "then": "No hi ha snacks vegans disponibles"
                     }
                 },
@@ -3919,13 +4315,13 @@
             },
             "friture-vegetarian": {
                 "mappings": {
-                    "0": {
+                    "1": {
                         "then": "Hi ha snacks vegetarians disponibles"
                     },
-                    "1": {
+                    "2": {
                         "then": "Només una petita selecció de snacks son vegetarians"
                     },
-                    "2": {
+                    "3": {
                         "then": "No hi han sacks disponibles"
                     }
                 },
@@ -3947,6 +4343,9 @@
                     }
                 },
                 "question": "Aquest restaurant ofereix un menú halal?"
+            },
+            "menu-website": {
+                "question": "A quina web està publicat el menú?"
             },
             "organic (no friture)": {
                 "mappings": {
@@ -4028,6 +4427,32 @@
                 }
             },
             "render": "Bicicleta blanca"
+        }
+    },
+    "ghostsign": {
+        "description": "Capa que mostra rètols en desús dels edificis",
+        "presets": {
+            "0": {
+                "title": "un rètol fantasma"
+            }
+        },
+        "tagRenderings": {
+            "brand": {
+                "freeform": {
+                    "placeholder": "Nom comercial"
+                },
+                "question": "Per a quin negoci es va fer aquest rètol?",
+                "render": "El rètol es va fer per a: {brand}"
+            },
+            "inscription": {
+                "freeform": {
+                    "placeholder": "Text en el rètol"
+                },
+                "question": "Quin és el text del rètol?"
+            }
+        },
+        "title": {
+            "render": "Rètols fantasma"
         }
     },
     "governments": {
@@ -4292,8 +4717,23 @@
                     "1": {
                         "then": "Açò és un auditori"
                     },
+                    "10": {
+                        "then": "Açò és un laboratori"
+                    },
+                    "14": {
+                        "then": "Açò és una oficina"
+                    },
+                    "17": {
+                        "then": "Açò és un restaurant"
+                    },
                     "2": {
                         "then": "Açò és un dormitori"
+                    },
+                    "20": {
+                        "then": "Açò és un magatzem"
+                    },
+                    "23": {
+                        "then": "Açò és una sala d'espera"
                     },
                     "3": {
                         "then": "Açò és una capella"
@@ -4312,21 +4752,6 @@
                     },
                     "9": {
                         "then": "Açò és una cuina"
-                    },
-                    "10": {
-                        "then": "Açò és un laboratori"
-                    },
-                    "14": {
-                        "then": "Açò és una oficina"
-                    },
-                    "16": {
-                        "then": "Açò és un restaurant"
-                    },
-                    "19": {
-                        "then": "Açò és un magatzem"
-                    },
-                    "22": {
-                        "then": "Açò és una sala d'espera"
                     }
                 },
                 "question": "Quin tipus d'habitació és aquesta?"
@@ -4782,8 +5207,11 @@
     "memorial": {
         "tagRenderings": {
             "inscription": {
-                "question": "Quina és la inscripció d'aquesta placa?",
-                "render": "La inscripció d'aquesta placa diu: <p><i>{inscription}<i></p>"
+                "question": "Quina és la inscripció d'aquest memorial?",
+                "render": "La inscripció d'aquest memorial diu: <p><i>{inscription}<i></p>"
+            },
+            "memorial-type": {
+                "render": "Això és un {memorial}"
             },
             "start_date": {
                 "render": "Col·locat el {start_date}"
@@ -4925,67 +5353,11 @@
             "0": {
                 "options": {
                     "0": {
-                        "question": "Has de mencionar {search} en el primer comentari"
-                    }
-                }
-            },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "<b>No</b> s'ha de mencionar {search} al primer comentari"
-                    }
-                }
-            },
-            "2": {
-                "options": {
-                    "0": {
-                        "question": "Obert pel contribuïdor {search}"
-                    }
-                }
-            },
-            "3": {
-                "options": {
-                    "0": {
-                        "question": "<b>No</b> obert pel contribuïdor {search}"
-                    }
-                }
-            },
-            "4": {
-                "options": {
-                    "0": {
-                        "question": "Editat per última vega pel contribuïdor {search}"
-                    }
-                }
-            },
-            "5": {
-                "options": {
-                    "0": {
-                        "question": "Oberta després de {search}"
-                    }
-                }
-            },
-            "6": {
-                "options": {
-                    "0": {
-                        "question": "Creada abans de {search}"
-                    }
-                }
-            },
-            "7": {
-                "options": {
-                    "0": {
-                        "question": "Creada després de {search}"
-                    }
-                }
-            },
-            "8": {
-                "options": {
-                    "0": {
                         "question": "Sols mostrar les notes obertes per contribuïdors anònims"
                     }
                 }
             },
-            "9": {
+            "1": {
                 "options": {
                     "0": {
                         "question": "Sols mostra les notes obertes"
@@ -4995,6 +5367,27 @@
             "10": {
                 "options": {
                     "0": {
+                        "question": "Editat per última vega pel contribuïdor {search}"
+                    }
+                }
+            },
+            "12": {
+                "options": {
+                    "0": {
+                        "question": "Creada abans de {search}"
+                    }
+                }
+            },
+            "13": {
+                "options": {
+                    "0": {
+                        "question": "Creada després de {search}"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
                         "question": "Totes les notes"
                     },
                     "1": {
@@ -5002,6 +5395,34 @@
                     },
                     "2": {
                         "question": "Mostrar només les notes d'importació"
+                    }
+                }
+            },
+            "3": {
+                "options": {
+                    "0": {
+                        "question": "Has de mencionar {search} en el primer comentari"
+                    }
+                }
+            },
+            "5": {
+                "options": {
+                    "0": {
+                        "question": "<b>No</b> s'ha de mencionar {search} al primer comentari"
+                    }
+                }
+            },
+            "7": {
+                "options": {
+                    "0": {
+                        "question": "Obert pel contribuïdor {search}"
+                    }
+                }
+            },
+            "8": {
+                "options": {
+                    "0": {
+                        "question": "<b>No</b> obert pel contribuïdor {search}"
                     }
                 }
             }
@@ -5292,6 +5713,12 @@
                     "1": {
                         "then": "Aquesta és una plaça d'aparcament normal."
                     },
+                    "10": {
+                        "then": "Es tracta d'una plaça d'aparcament reservada al personal."
+                    },
+                    "11": {
+                        "then": "Aquest espai d'aparcament està reservat per a taxi."
+                    },
                     "2": {
                         "then": "Aquesta és una plaça d'aparcament per a minusvàlids."
                     },
@@ -5309,12 +5736,6 @@
                     },
                     "9": {
                         "then": "Es tracta d'una plaça d'aparcament reservada per a pares amb fills."
-                    },
-                    "10": {
-                        "then": "Es tracta d'una plaça d'aparcament reservada al personal."
-                    },
-                    "11": {
-                        "then": "Aquest espai d'aparcament està reservat per a taxi."
                     }
                 },
                 "question": "Quin tipus d'espai d'aparcament és aquest?"
@@ -5590,6 +6011,14 @@
                 }
             },
             "render": "Parc infantil"
+        }
+    },
+    "police": {
+        "presets": {
+            "0": {
+                "description": "Una comissaria on pot entrar la ciutadania per a les consultes",
+                "title": "una comissaria"
+            }
         }
     },
     "postboxes": {
@@ -5886,6 +6315,21 @@
                     "1": {
                         "then": "S'accepten monedes de 2 cèntims"
                     },
+                    "10": {
+                        "then": "S'accepten monedes de 20 cèntims"
+                    },
+                    "11": {
+                        "then": "S'accepten monedes de ½ franc"
+                    },
+                    "12": {
+                        "then": "S'accepten monedes d'1 franc"
+                    },
+                    "13": {
+                        "then": "S'accepten monedes de 2 francs"
+                    },
+                    "14": {
+                        "then": "S'accepten monedes de 5 francs"
+                    },
                     "2": {
                         "then": "S'accepten monedes de 5 cèntims"
                     },
@@ -5909,21 +6353,6 @@
                     },
                     "9": {
                         "then": "S'accepten monedes de 10 cèntims"
-                    },
-                    "10": {
-                        "then": "S'accepten monedes de 20 cèntims"
-                    },
-                    "11": {
-                        "then": "S'accepten monedes de ½ franc"
-                    },
-                    "12": {
-                        "then": "S'accepten monedes d'1 franc"
-                    },
-                    "13": {
-                        "then": "S'accepten monedes de 2 francs"
-                    },
-                    "14": {
-                        "then": "S'accepten monedes de 5 francs"
                     }
                 },
                 "question": "Quines monedes es poden utilitzar per a pagar aquí?"
@@ -5935,6 +6364,15 @@
                     },
                     "1": {
                         "then": "S'accepten bitllets de 10 euros"
+                    },
+                    "10": {
+                        "then": "S'accepten bitllets de 100 francs"
+                    },
+                    "11": {
+                        "then": "S'accepten bitllets de 200 francs"
+                    },
+                    "12": {
+                        "then": "S'accepten bitllets de 1000 francs"
                     },
                     "2": {
                         "then": "S'accepten bitllets de 20 euros"
@@ -5959,15 +6397,6 @@
                     },
                     "9": {
                         "then": "S'accepten bitllets de 50 francs"
-                    },
-                    "10": {
-                        "then": "S'accepten bitllets de 100 francs"
-                    },
-                    "11": {
-                        "then": "S'accepten bitllets de 200 francs"
-                    },
-                    "12": {
-                        "then": "S'accepten bitllets de 1000 francs"
                     }
                 },
                 "question": "Amb quins bitllets pot pagar aquí?"
@@ -6318,33 +6747,16 @@
                 "options": {
                     "0": {
                         "question": "Tots els tipus de reciclatge"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Només amb accés públic"
                     },
                     "1": {
                         "question": "Reciclatge de piles"
-                    },
-                    "2": {
-                        "question": "Reciclatge de cartrons de begudes"
-                    },
-                    "3": {
-                        "question": "Reciclatge de llaunes"
-                    },
-                    "4": {
-                        "question": "Reciclatge de roba"
-                    },
-                    "5": {
-                        "question": "Reciclatge d'oli de cuina"
-                    },
-                    "6": {
-                        "question": "Reciclatge d'oli de motor"
-                    },
-                    "7": {
-                        "question": "Reciclatge de tubs fluorescents"
-                    },
-                    "8": {
-                        "question": "Reciclatge de residus verds"
-                    },
-                    "9": {
-                        "question": "Reciclatge d'ampolles de vidre"
                     },
                     "10": {
                         "question": "Reciclatge de vidre"
@@ -6376,15 +6788,39 @@
                     "19": {
                         "question": "Reciclatge del rebuig"
                     },
+                    "2": {
+                        "question": "Reciclatge de cartrons de begudes"
+                    },
                     "20": {
                         "question": "Reciclatge de cartutxos d'impressora"
                     },
                     "21": {
                         "question": "Reciclatge de bicicletes"
+                    },
+                    "3": {
+                        "question": "Reciclatge de llaunes"
+                    },
+                    "4": {
+                        "question": "Reciclatge de roba"
+                    },
+                    "5": {
+                        "question": "Reciclatge d'oli de cuina"
+                    },
+                    "6": {
+                        "question": "Reciclatge d'oli de motor"
+                    },
+                    "7": {
+                        "question": "Reciclatge de tubs fluorescents"
+                    },
+                    "8": {
+                        "question": "Reciclatge de residus verds"
+                    },
+                    "9": {
+                        "question": "Reciclatge d'ampolles de vidre"
                     }
                 }
             },
-            "2": {
+            "3": {
                 "options": {
                     "0": {
                         "question": "Només amb accés públic"
@@ -6448,30 +6884,6 @@
                     "1": {
                         "then": "Aquí es poden reciclar els cartons de begudes"
                     },
-                    "2": {
-                        "then": "Aquí es poden reciclar llaunes"
-                    },
-                    "3": {
-                        "then": "Aquí es pot reciclar roba"
-                    },
-                    "4": {
-                        "then": "Aquí es pot reciclar oli de cuina"
-                    },
-                    "5": {
-                        "then": "Aquí es pot reciclar oli de motor"
-                    },
-                    "6": {
-                        "then": "Aquí es poden reciclar tub fluroescents"
-                    },
-                    "7": {
-                        "then": "Aquí es poden reciclar residus verds"
-                    },
-                    "8": {
-                        "then": "Ací es poden reciclar residus orgànics"
-                    },
-                    "9": {
-                        "then": "Aquí es poden reciclar ampolles de vidre"
-                    },
                     "10": {
                         "then": "Aquí es pot reciclar vidre"
                     },
@@ -6499,6 +6911,9 @@
                     "19": {
                         "then": "Aquí es pot reciclar ferralla"
                     },
+                    "2": {
+                        "then": "Aquí es poden reciclar llaunes"
+                    },
                     "20": {
                         "then": "Aquí es poden reciclar sabates"
                     },
@@ -6516,6 +6931,27 @@
                     },
                     "25": {
                         "then": "Aquí es poden reciclar bicicletes"
+                    },
+                    "3": {
+                        "then": "Aquí es pot reciclar roba"
+                    },
+                    "4": {
+                        "then": "Aquí es pot reciclar oli de cuina"
+                    },
+                    "5": {
+                        "then": "Aquí es pot reciclar oli de motor"
+                    },
+                    "6": {
+                        "then": "Aquí es poden reciclar tub fluroescents"
+                    },
+                    "7": {
+                        "then": "Aquí es poden reciclar residus verds"
+                    },
+                    "8": {
+                        "then": "Ací es poden reciclar residus orgànics"
+                    },
+                    "9": {
+                        "then": "Aquí es poden reciclar ampolles de vidre"
                     }
                 },
                 "question": "Què es pot reciclar aquí?"
@@ -6680,6 +7116,9 @@
         "tagRenderings": {
             "shelter-type": {
                 "mappings": {
+                    "3": {
+                        "then": "Es tracta d'un petit refugi, principalment destinat a descansos curts. Normalment es troba a les muntanyes o al costat de les carreteres."
+                    },
                     "4": {
                         "then": "Es tracta d'un cobert amb 3 parets, destinat principalment a l'acampada."
                     }
@@ -6700,15 +7139,6 @@
             }
         },
         "description": "Una botiga",
-        "filter": {
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Sols mostrar botigues que venen {search}"
-                    }
-                }
-            }
-        },
         "name": "Botiga",
         "presets": {
             "0": {
@@ -7023,25 +7453,6 @@
                 "options": {
                     "0": {
                         "question": "Accés lliure"
-                    }
-                }
-            },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Tots els esports"
-                    },
-                    "1": {
-                        "question": "Camps de bàsquet"
-                    },
-                    "2": {
-                        "question": "Camps de futbol"
-                    },
-                    "3": {
-                        "question": "Taules de ping-pong"
-                    },
-                    "4": {
-                        "question": "Camps de tennis"
                     }
                 }
             }
@@ -7363,6 +7774,12 @@
                     "1": {
                         "then": "Aquest fanal utilitza LED"
                     },
+                    "10": {
+                        "then": "Aquest fanal utilitza làmpades de sodi d'alta pressió (taronja amb blanc)"
+                    },
+                    "11": {
+                        "then": "Aquest fanal s'il·lumina amb gas"
+                    },
                     "2": {
                         "then": "Aquest fanal utilitza il·luminació incandescent"
                     },
@@ -7386,12 +7803,6 @@
                     },
                     "9": {
                         "then": "Aquest fanal utilitza làmpades de sodi de baixa pressió (taronja monocroma)"
-                    },
-                    "10": {
-                        "then": "Aquest fanal utilitza làmpades de sodi d'alta pressió (taronja amb blanc)"
-                    },
-                    "11": {
-                        "then": "Aquest fanal s'il·lumina amb gas"
                     }
                 },
                 "question": "Quin tipus d'il·luminació utilitza aquest fanal?"
@@ -7728,6 +8139,14 @@
             }
         },
         "tagRenderings": {
+            "gender_segregated": {
+                "mappings": {
+                    "0": {
+                        "then": "Hi ha una zona separada, senyalitzada per a homes i dones"
+                    }
+                },
+                "question": "Aquests lavabos estan separats per gènere?"
+            },
             "opening_hours_24_7": {
                 "override": {
                     "question": "Quan obrin aquests lavabos?"
@@ -7757,20 +8176,20 @@
             "toilet-changing_table:location": {
                 "mappings": {
                     "0": {
-                        "then": "El canviador està al lavabo per a dones. "
+                        "then": "Al lavabo per a dones hi ha un canviador"
                     },
                     "1": {
-                        "then": "El canviador està al lavabo per a homes. "
+                        "then": "Al lavabo per a homes hi ha un canviador"
                     },
                     "2": {
-                        "then": "El canviador està al lavabo per a usuaris de cadira de rodes. "
+                        "then": "Al lavabo per a usuaris de cadira de rodes hi ha un canviador"
                     },
                     "3": {
-                        "then": "El canviador està en una habitació dedicada. "
+                        "then": "Hi ha un canviador en una habitació dedicada"
                     }
                 },
                 "question": "On està el canviador?",
-                "render": "El cambiador està a {changing_table:location}"
+                "render": "Hi ha un canviador a {changing_table:location}"
             },
             "toilet-charge": {
                 "freeform": {
@@ -7782,13 +8201,13 @@
             "toilet-handwashing": {
                 "mappings": {
                     "0": {
-                        "then": "Aquests lavabos tenen una pica per a rentar-te les mans"
+                        "then": "Aquests lavabos tenen una pica per a rentar-se les mans"
                     },
                     "1": {
-                        "then": "Aquests lavabos <b>no</b> tenen una pica per a rentar-te les mans"
+                        "then": "Aquests lavabos <b>no</b> tenen una pica per a rentar-se les mans"
                     }
                 },
-                "question": "Aquests lavabos tenen una pica per a rentar-te les mans?"
+                "question": "Aquests lavabos tenen una pica per a rentar-se les mans?"
             },
             "toilet-has-paper": {
                 "mappings": {
@@ -8393,6 +8812,10 @@
                     },
                     "2": {
                         "human": "{quantity} dies"
+                    },
+                    "5": {
+                        "human": "{quantity} anys",
+                        "humanSingular": "un any"
                     }
                 }
             }
@@ -8408,6 +8831,13 @@
                     },
                     "1": {
                         "then": "Sempre habilita les característiques d'accessibilitat"
+                    }
+                }
+            },
+            "add-new-feature": {
+                "mappings": {
+                    "1": {
+                        "then": "En fer clic o tocar el mapa, apareix un marcador on s'afegeix un element nou"
                     }
                 }
             },
@@ -8513,23 +8943,6 @@
                     }
                 }
             },
-            "picture-license": {
-                "mappings": {
-                    "0": {
-                        "then": "Les imatges que feu tindran llicència <b>CC0</b> i s'afegiran al domini públic. Això vol dir que tothom pot utilitzar les vostres imatges per a qualsevol propòsit. <span class='subtle'>Aquesta és l'opció predeterminada. </span>"
-                    },
-                    "1": {
-                        "then": "Les imatges que feu tindran llicència <b>CC0</b> i s'afegiran al domini públic. Això vol dir que tothom pot utilitzar les vostres imatges per a qualsevol propòsit."
-                    },
-                    "2": {
-                        "then": "Les fotografies que facis es publicaran sota <b>CC-BY 4.0</b> que requereix que qualsevol que utilitzi la vostra imatge us ha de donar crèdits"
-                    },
-                    "3": {
-                        "then": "Les imatges que feu tindran una llicència amb <b>CC-BY-SA 4.0</b> el que significa que tothom que utilitzi la vostra imatge us ha d'atribuir i que els derivats de la vostra imatge s'han de tornar a compartir amb la mateixa llicència."
-                    }
-                },
-                "question": "Sota quina llicència vols publicar les teves fotos?"
-            },
             "profile-description": {
                 "mappings": {
                     "0": {
@@ -8612,6 +9025,13 @@
                 },
                 "question": "Vols ajudar a traduir MapComplete?"
             },
+            "translation-thanks": {
+                "mappings": {
+                    "0": {
+                        "then": "Has contribuït a traduir MapComplete amb {_translation_contributions} canvis! Això és fantàstic!"
+                    }
+                }
+            },
             "verified-mastodon": {
                 "mappings": {
                     "0": {
@@ -8638,8 +9058,62 @@
                     "1": {
                         "question": "Venda de begudes"
                     },
+                    "10": {
+                        "question": "Venda de llet"
+                    },
+                    "11": {
+                        "question": "Venda de pa"
+                    },
+                    "12": {
+                        "question": "Venda d'ous"
+                    },
+                    "14": {
+                        "question": "Venda de formatge"
+                    },
+                    "15": {
+                        "question": "Venda de mel"
+                    },
+                    "16": {
+                        "question": "Venda de patates"
+                    },
+                    "17": {
+                        "question": "Venda de productes carnis"
+                    },
+                    "18": {
+                        "question": "Venda de fruites"
+                    },
+                    "19": {
+                        "question": "Venda de maduixes"
+                    },
                     "2": {
                         "question": "Venda de llaminadures"
+                    },
+                    "20": {
+                        "question": "Venda de flors"
+                    },
+                    "21": {
+                        "question": "Venda de tiquets d'aparcament"
+                    },
+                    "22": {
+                        "question": "Venda de monedes premsades"
+                    },
+                    "23": {
+                        "question": "Venda de bitllets de transport públic"
+                    },
+                    "24": {
+                        "question": "Venda de llums de bicicletes"
+                    },
+                    "25": {
+                        "question": "Venda de guants"
+                    },
+                    "26": {
+                        "question": "Venda de kits de reparació de bicicletes"
+                    },
+                    "27": {
+                        "question": "Venda de bombes de bicicletes"
+                    },
+                    "28": {
+                        "question": "Venda de cadenat per a bicicletes"
                     },
                     "3": {
                         "question": "Venda de menjar"
@@ -8661,60 +9135,6 @@
                     },
                     "9": {
                         "question": "Venda de càmeres interiors de bicicletes"
-                    },
-                    "10": {
-                        "question": "Venda de llet"
-                    },
-                    "11": {
-                        "question": "Venda de pa"
-                    },
-                    "12": {
-                        "question": "Venda d'ous"
-                    },
-                    "13": {
-                        "question": "Venda de formatge"
-                    },
-                    "14": {
-                        "question": "Venda de mel"
-                    },
-                    "15": {
-                        "question": "Venda de patates"
-                    },
-                    "16": {
-                        "question": "Venda de productes carnis"
-                    },
-                    "17": {
-                        "question": "Venda de fruites"
-                    },
-                    "18": {
-                        "question": "Venda de maduixes"
-                    },
-                    "19": {
-                        "question": "Venda de flors"
-                    },
-                    "20": {
-                        "question": "Venda de tiquets d'aparcament"
-                    },
-                    "21": {
-                        "question": "Venda de monedes premsades"
-                    },
-                    "22": {
-                        "question": "Venda de bitllets de transport públic"
-                    },
-                    "23": {
-                        "question": "Venda de llums de bicicletes"
-                    },
-                    "24": {
-                        "question": "Venda de guants"
-                    },
-                    "25": {
-                        "question": "Venda de kits de reparació de bicicletes"
-                    },
-                    "26": {
-                        "question": "Venda de bombes de bicicletes"
-                    },
-                    "27": {
-                        "question": "Venda de cadenat per a bicicletes"
                     }
                 }
             }
@@ -8749,6 +9169,9 @@
                     "into": {
                         "0": {
                             "1": "una cambra d'aire de bicicleta"
+                        },
+                        "2": {
+                            "1": "un preservatiu"
                         }
                     }
                 }
@@ -8805,8 +9228,59 @@
                     "1": {
                         "then": "Es venen llaminadures"
                     },
+                    "10": {
+                        "then": "Es ven pa"
+                    },
+                    "11": {
+                        "then": "Es venen ous"
+                    },
+                    "13": {
+                        "then": "Es ven formatge"
+                    },
+                    "14": {
+                        "then": "Es ven mel"
+                    },
+                    "15": {
+                        "then": "Es venen papes"
+                    },
+                    "16": {
+                        "then": "Es venen productes carnis"
+                    },
+                    "17": {
+                        "then": "Es ven fruita"
+                    },
+                    "18": {
+                        "then": "Es venen maduixes"
+                    },
+                    "19": {
+                        "then": "Es venen flors"
+                    },
                     "2": {
                         "then": "Es ven menjar"
+                    },
+                    "20": {
+                        "then": "Es venen tiquets d'aparcament"
+                    },
+                    "21": {
+                        "then": "Es venen cèntims premsats"
+                    },
+                    "22": {
+                        "then": "Es venen bitllets de transport públic"
+                    },
+                    "23": {
+                        "then": "Es venen llums per a bicicletes"
+                    },
+                    "24": {
+                        "then": "Es venen guants"
+                    },
+                    "25": {
+                        "then": "Es venen kits de reparació de bicicletes"
+                    },
+                    "26": {
+                        "then": "Es venen bombes de bicicletes"
+                    },
+                    "27": {
+                        "then": "Es venen cadenats per a bicicletes"
                     },
                     "3": {
                         "then": "Es ven tabaco"
@@ -8828,57 +9302,6 @@
                     },
                     "9": {
                         "then": "Es ven llet"
-                    },
-                    "10": {
-                        "then": "Es ven pa"
-                    },
-                    "11": {
-                        "then": "Es venen ous"
-                    },
-                    "12": {
-                        "then": "Es ven formatge"
-                    },
-                    "13": {
-                        "then": "Es ven mel"
-                    },
-                    "14": {
-                        "then": "Es venen papes"
-                    },
-                    "15": {
-                        "then": "Es venen productes carnis"
-                    },
-                    "16": {
-                        "then": "Es ven fruita"
-                    },
-                    "17": {
-                        "then": "Es venen maduixes"
-                    },
-                    "18": {
-                        "then": "Es venen flors"
-                    },
-                    "19": {
-                        "then": "Es venen tiquets d'aparcament"
-                    },
-                    "20": {
-                        "then": "Es venen cèntims premsats"
-                    },
-                    "21": {
-                        "then": "Es venen bitllets de transport públic"
-                    },
-                    "22": {
-                        "then": "Es venen llums per a bicicletes"
-                    },
-                    "23": {
-                        "then": "Es venen guants"
-                    },
-                    "24": {
-                        "then": "Es venen kits de reparació de bicicletes"
-                    },
-                    "25": {
-                        "then": "Es venen bombes de bicicletes"
-                    },
-                    "26": {
-                        "then": "Es venen cadenats per a bicicletes"
                     }
                 },
                 "question": "Que ven aquesta màquina expenedora?",
@@ -8949,6 +9372,7 @@
     },
     "walls_and_buildings": {
         "description": "Capa construïda especial que proporciona totes les parets i edificis. Aquesta capa és útil als predefinits per a objectes que es poden col·locar a les parets (p. ex. DEA, bústies de correus, entrades, adreces, càmeres de vigilància, ...). Aquesta capa és invisible per defecte i no es pot activar per l'usuari.",
+        "snapName": "un mur o edifici",
         "tagRenderings": {
             "entrance_info": {
                 "mappings": {

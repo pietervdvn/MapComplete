@@ -2,20 +2,10 @@
 
 # address
 
-
-
-
 Addresses
-
-
-
-
-
 
  - This layer is shown at zoomlevel **18** and higher
  - This layer will automatically load  [named_streets](./named_streets.md)  into the layout as it depends on it:  a calculated tag loads features from this layer (calculatedTag[0] which calculates the value for _closest_3_street_names)
-
-
 
 ## Table of contents
 
@@ -26,16 +16,13 @@ Addresses
   - [street](#street)
   - [fixme](#fixme)
   - [leftover-questions](#leftover-questions)
+  - [move-button](#move-button)
   - [lod](#lod)
 
 ## Themes using this layer
 
-
-
  - [grb](https://mapcomplete.org/grb)
  - [uk_addresses](https://mapcomplete.org/uk_addresses)
-
-
 
 ## Basic tags for this layer
 
@@ -56,60 +43,43 @@ Elements must match **any** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/addr:street#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/addr%3Astreet/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [addr:street](https://wiki.openstreetmap.org/wiki/Key:addr:street) | [string](../SpecialInputElements.md#string) | [](https://wiki.openstreetmap.org/wiki/Tag:addr:street%3D) [](https://wiki.openstreetmap.org/wiki/Tag:addr:street%3D) [](https://wiki.openstreetmap.org/wiki/Tag:addr:street%3D) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/fixme#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/fixme/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [fixme](https://wiki.openstreetmap.org/wiki/Key:fixme) | [string](../SpecialInputElements.md#string) | [](https://wiki.openstreetmap.org/wiki/Tag:fixme%3D) |
 
-
-
-
 ### housenumber
 
 The question is `What is the number of this house?`
 *The house number is <b>{addr:housenumber}</b>* is shown if `addr:housenumber` is set
 
-
  -  *This building has no house number* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:nohousenumber' target='_blank'>nohousenumber</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:nohousenumber%3Dyes' target='_blank'>yes</a>
-
-
-
-
 
 ### street
 
 The question is `What street is this address located in?`
 *This address is in street <b>{addr:street}</b>* is shown if `addr:street` is set
 
-
  -  *Located in <b>{_closest_street:0:name}</b>* is shown if with addr:street=
  -  *Located in <b>{_closest_street:1:name}</b>* is shown if with addr:street=
  -  *Located in <b>{_closest_street:2:name}</b>* is shown if with addr:street=
-
-
-
-
 
 ### fixme
 
 The question is `What should be fixed here? Please explain`
 *<b>Fixme description</b>{fixme}* is shown if `fixme` is set
 
-
  -  *No fixme - write something here to explain complicated cases* is shown if with fixme=
-
-
-
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
+### move-button
 
-
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
 
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

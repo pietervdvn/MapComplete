@@ -11,13 +11,14 @@
     "id": "Tempat parkir",
     "hu": "Parkolás",
     "fr": "Stationnement",
-    "es": "Aparcamiento",
+    "es": "Estacionamiento",
     "da": "Parkering",
     "pa_PK": "پارکنگ",
     "ca": "Aparcament",
     "cs": "Parkoviště",
     "eu": "Aparkalekua",
-    "pl": "Parking"
+    "pl": "Parking",
+    "uk": "Парковки"
   },
   "description": {
     "nl": "Deze kaart toont verschillende parkeerplekken",
@@ -28,7 +29,7 @@
     "id": "Peta ini menunjukkan tempat parkir yang berbeda",
     "hu": "Ez a térkép különböző parkolókat jelenít meg",
     "fr": "Cette carte affiche différents lieux de stationnement",
-    "es": "Este mapa muestra diferentes puntos de aparcamiento",
+    "es": "Este mapa muestra diferentes lugares de estacionamiento",
     "nb_NO": "Forskjellige parkeringsplasser",
     "da": "Dette kort viser forskellige parkeringspladser",
     "ca": "Aquest mapa mostra diferents punts d'aparcament",
@@ -44,12 +45,13 @@
     "zh_Hant": "這地圖顯示不同的停車空間",
     "id": "Peta ini menunjukkan tempat parkir yang berbeda",
     "hu": "Ez a térkép különböző parkolókat jelenít meg",
-    "es": "Este mapa muestra diferentes puntos de aparcamiento",
+    "es": "Este mapa muestra diferentes lugares de estacionamiento",
     "fr": "Cette montre les emplacements de parking",
     "da": "Dette kort viser forskellige parkeringspladser",
     "ca": "Aquest mapa mostra diferents punts d'aparcament",
     "cs": "Na této mapě jsou vyznačena různá parkovací místa",
-    "pl": "Ta mapa pokazuje różne miejsca parkingowe"
+    "pl": "Ta mapa pokazuje różne miejsca parkingowe",
+    "uk": "На цій мапі показані різні місця для паркування"
   },
   "icon": "./assets/themes/parkings/parkings.svg",
   "startZoom": 12,

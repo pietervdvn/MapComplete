@@ -2,212 +2,27 @@
   "id": "ghostsigns",
   "title": {
     "en": "Ghost Signs",
-    "de": "Geisterzeichen"
+    "de": "Geisterzeichen",
+    "es": "Letreros fantasma",
+    "cs": "Nápisy na zdech",
+    "uk": "Примарні знаки"
   },
   "description": {
     "en": "A map showing disused signs on buildings",
     "de": "Eine Karte, die ungenutzte Zeichen auf Gebäuden zeigt",
-    "es": "Un mapa que muestra los rótulos en desuso de los edificios"
+    "es": "Un mapa que muestra letreros en desuso en los edificios",
+    "ca": "Un mapa que mostra els rètols en desús dels edificis",
+    "cs": "Mapa zobrazující nepoužívané nápisy na budovách",
+    "uk": "Мапа, на якій показані вивіски на будівлях, що не використовуються"
   },
   "icon": "./assets/themes/advertising/wall_painting.svg",
   "layers": [
-    {
-      "id": "ghostsigns",
-      "title": {
-        "render": {
-          "en": "Ghost Sign",
-          "de": "Geisterzeichen",
-          "es": "Publicidad en una fachada"
-        }
-      },
-      "description": {
-        "en": "Layer showing disused signs on buildings",
-        "de": "Ebene, die ungenutzte Zeichen auf Gebäuden zeigt",
-        "es": "Capa que muestra carteles en desuso en edificios"
-      },
-      "name": {
-        "en": "Ghost Signs",
-        "de": "Geisterzeichen",
-        "es": "Señales fantasma"
-      },
-      "source": {
-        "osmTags": {
-          "and": [
-            "historic~*",
-            "advertising=wall_painting"
-          ]
-        }
-      },
-      "minzoom": 10,
-      "#allowMove": "Normally, a ghost sign is snapped to a wall, so moving won't be possible in most cases",
-      "allowMove": false,
-      "tagRenderings": [
-        {
-          "id": "historic",
-          "question": {
-            "en": "Is this a ghost sign?",
-            "de": "Ist das ein Geisterzeichen?",
-            "es": "¿Es esto una señal fantasma?"
-          },
-          "questionHint": {
-            "en": "Is this sign for a business that no longer exists or no longer being maintained?",
-            "de": "Ist dieses Schild für ein Geschäft, das nicht mehr existiert oder nicht mehr gepflegt wird?",
-            "es": "¿Este cartel es para una empresa que ya no existe o que ya no recibe mantenimiento?"
-          },
-          "mappings": [
-            {
-              "if": "historic=advertising",
-              "then": {
-                "en": "This is a ghost sign",
-                "de": "Das ist ein Geisterzeichen",
-                "es": "Esta es una señal fantasma"
-              },
-              "alsoShowIf": "historic=yes"
-            },
-            {
-              "if": "historic=",
-              "then": {
-                "en": "This is not a ghost sign, answering this will hide the sign from the map",
-                "de": "Dies ist kein Geisterzeichen, die Antwort darauf wird das Schild von der Karte verstecken",
-                "es": "Esta no es una señal fantasma, al responder esto se ocultará la señal del mapa"
-              }
-            }
-          ]
-        },
-        "images",
-        {
-          "id": "name",
-          "condition": "name~*",
-          "render": {
-            "*": "{name}"
-          }
-        },
-        {
-          "id": "inscription",
-          "question": {
-            "en": "What is the text on the sign?",
-            "de": "Was ist der Text auf dem Schild?",
-            "es": "¿Cuál es el texto del cartel?"
-          },
-          "freeform": {
-            "key": "inscription",
-            "type": "string",
-            "placeholder": {
-              "en": "Text on the sign",
-              "de": "Text auf dem Schild",
-              "es": "Texto en el cartel"
-            }
-          },
-          "render": {
-            "en": "The text on the sign is: {inscription}",
-            "de": "Der Text auf dem Schild ist: {inscription}",
-            "es": "El texto del cartel es: {inscription}"
-          }
-        },
-        {
-          "id": "brand",
-          "question": {
-            "en": "For what business was this sign made?",
-            "de": "Für welches Unternehmen wurde dieses Schild angefertigt?",
-            "es": "¿Para qué negocio se hizo este cartel?"
-          },
-          "freeform": {
-            "key": "brand",
-            "type": "string",
-            "placeholder": {
-              "en": "Business name",
-              "de": "Unternehmensname",
-              "es": "Nombre comercial",
-              "it": "Nome dell'attività"
-            }
-          },
-          "render": {
-            "en": "This sign was made for: {brand}",
-            "de": "Dieses Schild wurde gemacht für: {brand}",
-            "es": "Este cartel se hizo para: {brand}"
-          }
-        }
-      ],
-      "lineRendering": [
-        {
-          "color": "blue",
-          "width": 2
-        }
-      ],
-      "pointRendering": [
-        {
-          "location": [
-            "point",
-            "centroid"
-          ],
-          "marker": [
-            {
-              "icon": "./assets/themes/advertising/wall_painting.svg"
-            }
-          ]
-        }
-      ],
-      "presets": [
-        {
-          "tags": [
-            "historic=advertising",
-            "advertising=wall_painting"
-          ],
-          "title": {
-            "en": "a ghost sign",
-            "de": "ein Geisterzeichen",
-            "es": "una señal fantasma"
-          },
-          "snapToLayer": [
-            "walls_and_buildings"
-          ],
-          "maxSnapDistance": 5
-        }
-      ]
-    },
+    "ghostsign",
     {
       "builtin": "advertising",
       "override": {
-        "source": {
-          "osmTags": "advertising=wall_painting"
-        },
         "id": "advertising_wall_paintings",
         "minzoom": 18,
-        "name": {
-          "en": "All advertentie wall paintings",
-          "nl": "Alle adverterende muurschilderingen",
-          "de": "Alle Werbe-Wandbilder"
-        },
-        "+tagRenderings": [
-          {
-            "id": "historic",
-            "question": {
-              "en": "Is this a ghost sign?",
-              "de": "Ist das ein Geisterzeichen?"
-            },
-            "questionHint": {
-              "en": "Is this sign for a business that no longer exists or no longer being maintained?",
-              "de": "Ist dieses Schild für ein Geschäft, das nicht mehr existiert oder nicht mehr gepflegt wird?"
-            },
-            "mappings": [
-              {
-                "if": "historic=advertising",
-                "then": {
-                  "en": "This is a ghost sign",
-                  "de": "Das ist ein Geisterzeichen"
-                },
-                "alsoShowIf": "historic=yes"
-              },
-              {
-                "if": "historic=",
-                "then": {
-                  "en": "This is not a ghost sign",
-                  "de": "Das ist kein Geisterzeichen"
-                }
-              }
-            ]
-          }
-        ],
         "=presets": [],
         "pointRendering": [
           {
@@ -227,7 +42,10 @@
           {
             "id": "historic_or_not",
             "question": {
-              "en": "Is this artwork a historic advertisement?"
+              "en": "Is this artwork a historic advertisement?",
+              "de": "Ist dieses Kunstwerk eine historische Werbung?",
+              "es": "¿Es esta obra de arte un anuncio histórico?",
+              "cs": "Je toto dílo historickou reklamou?"
             },
             "mappings": [
               {
@@ -236,7 +54,10 @@
                   "advertising=wall_painting"
                 ],
                 "then": {
-                  "en": "This artwork is a historic advertisement"
+                  "en": "This artwork is a historic advertisement",
+                  "de": "Dieses Kunstwerk ist eine historische Werbung",
+                  "es": "Esta obra de arte es un anuncio histórico",
+                  "cs": "Toto dílo je historickou reklamou"
                 }
               },
               {
@@ -245,7 +66,10 @@
                   "advertising="
                 ],
                 "then": {
-                  "en": "This artwork is not a historic advertisement"
+                  "en": "This artwork is not a historic advertisement",
+                  "de": "Dieses Kunstwerk ist keine historische Werbung",
+                  "es": "Esta obra de arte no es un anuncio histórico",
+                  "cs": "Toto dílo není historickou reklamou"
                 }
               }
             ]

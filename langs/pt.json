@@ -299,7 +299,6 @@
             "createYourOwnTheme": "Crie o seu próprio tema MapComplete a partir do zero",
             "enterToOpen": "Pressione Enter para abrir o tema",
             "hiddenExplanation": "Estes temas só estão acessíveis a quem tiver a hiperligação. Descobriu {hidden_discovered} de {total_hidden} temas ocultos.",
-            "intro": "<h3>Mais mapas temáticos?</h3>Gosta de colecionar dados geográficos? <br/>Tem mais temas disponíveis.",
             "noMatchingThemes": "Nenhum tema corresponde aos seus critérios de pesquisa",
             "noSearch": "Mostrar todos os temas",
             "previouslyHiddenTitle": "Temas ocultos visitados anteriormente",

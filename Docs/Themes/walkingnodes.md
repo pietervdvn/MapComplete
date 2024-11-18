@@ -8,22 +8,19 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [node2node_hiking (defined in this theme)](#node2node_hiking)
  - [node_hiking (defined in this theme)](#node_hiking)
  - [guidepost_hiking (defined in this theme)](#guidepost_hiking)
  - [route_marker](../Layers/route_marker.md)
  - [cycleways_and_roads](../Layers/cycleways_and_roads.md)
 
-
 Available languages:
-
 
  - en
  - nl
  - de
  - es
-
+ - cs
 
 # Table of contents
 
@@ -37,6 +34,7 @@ Available languages:
     + [leftover-questions](#leftover-questions)
     + [lod](#lod)
 3. [node_hiking](#node_hiking)
+  - [Presets](#presets)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
     + [node-rwn_ref](#node-rwn_ref)
@@ -46,6 +44,7 @@ Available languages:
     + [leftover-questions](#leftover-questions)
     + [lod](#lod)
 4. [guidepost_hiking](#guidepost_hiking)
+  - [Presets](#presets)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
     + [images](#images)
@@ -58,20 +57,8 @@ Available languages:
 These layers can not be reused in different themes.
 # node2node_hiking
 
-
-
-
-
-
-
-
-
-
-
  - This layer is shown at zoomlevel **12** and higher
  - Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`
-
-
 
 No themes use this layer
 
@@ -93,62 +80,41 @@ Elements must match **all** of the following expressions:
 -----|-----|----- |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/survey:date#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/survey%3Adate/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [survey:date](https://wiki.openstreetmap.org/wiki/Key:survey:date) | [date](../SpecialInputElements.md#date) | [](https://wiki.openstreetmap.org/wiki/Tag:survey:date%3D) |
 
-
-
-
 ### node2node-survey:date
 
 The question is `When was this node to node link last surveyed?`
 *This node to node link was last surveyed on {survey:date}* is shown if `survey:date` is set
 
-
  -  *This object was last surveyed today* is shown if with survey:date=
-
-
-
-
 
 ### export_as_gpx
 Shows a button to export this feature as GPX. Especially useful for route relations
 _This tagrendering has no question and is thus read-only_
 *{export_as_gpx()}*
 
-
-
-
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
-
-
-
 
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
 
-
 This tagrendering has labels 
 `added_by_default`
 # node_hiking
 
-
-
-
-
-
-
-
-
-
-
  - This layer is shown at zoomlevel **12** and higher
 
-
-
 No themes use this layer
+
+## Presets
+
+The following options to create new points are included:
+
+ - **a walking node** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:rwn_ref' target='_blank'>rwn_ref</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rwn_ref%3D?' target='_blank'>?</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:network:type' target='_blank'>network:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network' target='_blank'>node_network</a> (snaps to layers `cycleways_and_roads`)
 
 ## Basic tags for this layer
 
@@ -169,9 +135,6 @@ Elements must match **any** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/survey:date#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/survey%3Adate/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [survey:date](https://wiki.openstreetmap.org/wiki/Key:survey:date) | [date](../SpecialInputElements.md#date) | [](https://wiki.openstreetmap.org/wiki/Tag:survey:date%3D) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/expected_rwn_route_relations#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/expected_rwn_route_relations/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [expected_rwn_route_relations](https://wiki.openstreetmap.org/wiki/Key:expected_rwn_route_relations) | [int](../SpecialInputElements.md#int) |  |
 
-
-
-
 ### node-rwn_ref
 
 The question is `What is the reference number of this walking node?`
@@ -179,68 +142,50 @@ The question is `What is the reference number of this walking node?`
 
 This tagrendering is only visible in the popup if the following condition is met: rwn_ref~.+
 
-
 ### survey_date
 
 The question is `When was this walking node last surveyed?`
 *This walking node was last surveyed on {survey:date}* is shown if `survey:date` is set
 
-
  -  *This object was last surveyed today* is shown if with survey:date=
-
-
-
-
 
 ### node-expected_rwn_route_relations
 
 The question is `How many other walking nodes does this node link to?`
 *This node links to {expected_rwn_route_relations} other walking nodes.* is shown if `expected_rwn_route_relations` is set
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
-
-
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
 
-
 This tagrendering has labels 
 `added_by_default`
 # guidepost_hiking
-
 
 This layer is based on [guidepost](../Layers/guidepost.md)
 
 Guideposts (also known as fingerposts or finger posts) are often found along official hiking/cycling/riding/skiing routes to indicate the directions to different destinations
 
-
-
-
-
-
  - This layer is shown at zoomlevel **16** and higher
 
-
-
 No themes use this layer
+
+## Presets
+
+The following options to create new points are included:
+
+ - **a guidepost** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:tourism' target='_blank'>tourism</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dinformation' target='_blank'>information</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:information' target='_blank'>information</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:information%3Dguidepost' target='_blank'>guidepost</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:hiking' target='_blank'>hiking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hiking%3Dyes' target='_blank'>yes</a>
 
 ## Basic tags for this layer
 
@@ -253,45 +198,30 @@ Elements must match **all** of the following expressions:
 
 ## Supported attributes
 
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
-
-
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### move-button
 
 _This tagrendering has no question and is thus read-only_
 *{move_button()}*
-
-
-
 
 ### delete-button
 
 _This tagrendering has no question and is thus read-only_
 *{delete_button()}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

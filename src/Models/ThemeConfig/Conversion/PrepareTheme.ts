@@ -9,19 +9,17 @@ import {
     Pass,
     SetDefault,
 } from "./Conversion"
-import { LayoutConfigJson } from "../Json/LayoutConfigJson"
+import { ThemeConfigJson } from "../Json/ThemeConfigJson"
 import { PrepareLayer } from "./PrepareLayer"
 import { LayerConfigJson } from "../Json/LayerConfigJson"
 import { Utils } from "../../../Utils"
 import Constants from "../../Constants"
-import CreateNoteImportLayer from "./CreateNoteImportLayer"
 import LayerConfig from "../LayerConfig"
 import { TagRenderingConfigJson } from "../Json/TagRenderingConfigJson"
 import DependencyCalculator from "../DependencyCalculator"
 import { AddContextToTranslations } from "./AddContextToTranslations"
 import ValidationUtils from "./ValidationUtils"
 import { ConversionContext } from "./ConversionContext"
-import { PrevalidateTheme } from "./Validation"
 
 class SubstituteLayer extends Conversion<string | LayerConfigJson, LayerConfigJson[]> {
     private readonly _state: DesugaringContext
@@ -40,7 +38,7 @@ class SubstituteLayer extends Conversion<string | LayerConfigJson, LayerConfigJs
 
         function reportNotFound(name: string) {
             const knownLayers = Array.from(state.sharedLayers.keys())
-            const withDistance = knownLayers.map((lname) => [
+            const withDistance: [string, number][] = knownLayers.map((lname) => [
                 lname,
                 Utils.levenshteinDistance(name, lname),
             ])
@@ -177,7 +175,7 @@ class SubstituteLayer extends Conversion<string | LayerConfigJson, LayerConfigJs
     }
 }
 
-class AddDefaultLayers extends DesugaringStep<LayoutConfigJson> {
+class AddDefaultLayers extends DesugaringStep<ThemeConfigJson> {
     private readonly _state: DesugaringContext
 
     constructor(state: DesugaringContext) {
@@ -189,7 +187,7 @@ class AddDefaultLayers extends DesugaringStep<LayoutConfigJson> {
         this._state = state
     }
 
-    convert(json: LayoutConfigJson, context: ConversionContext): LayoutConfigJson {
+    convert(json: ThemeConfigJson, context: ConversionContext): ThemeConfigJson {
         const state = this._state
         json.layers = Utils.NoNull([...(json.layers ?? [])])
         const alreadyLoaded = new Set(json.layers.map((l) => l["id"]))
@@ -221,69 +219,7 @@ class AddDefaultLayers extends DesugaringStep<LayoutConfigJson> {
     }
 }
 
-class AddImportLayers extends DesugaringStep<LayoutConfigJson> {
-    constructor() {
-        super(
-            "For every layer in the 'layers'-list, create a new layer which'll import notes. (Note that priviliged layers and layers which have a geojson-source set are ignored)",
-            ["layers"],
-            "AddImportLayers"
-        )
-    }
-
-    convert(json: LayoutConfigJson, context: ConversionContext): LayoutConfigJson {
-        if (!(json.enableNoteImports ?? true)) {
-            context.info(
-                "Not creating a note import layers for theme " + json.id + " as they are disabled"
-            )
-            return json
-        }
-
-        json = { ...json }
-        const allLayers: LayerConfigJson[] = <LayerConfigJson[]>json.layers
-        json.layers = [...json.layers]
-
-        const creator = new CreateNoteImportLayer()
-        for (let i1 = 0; i1 < allLayers.length; i1++) {
-            const layer = allLayers[i1]
-            if (layer.source === undefined) {
-                // Priviliged layers are skipped
-                continue
-            }
-
-            if (layer.source["geoJson"] !== undefined) {
-                // Layer which don't get their data from OSM are skipped
-                continue
-            }
-
-            if (layer.title === undefined || layer.name === undefined) {
-                // Anonymous layers and layers without popup are skipped
-                continue
-            }
-
-            if (layer.presets === undefined || layer.presets.length == 0) {
-                // A preset is needed to be able to generate a new point
-                continue
-            }
-
-            try {
-                const importLayerResult = creator.convert(
-                    layer,
-                    context.inOperation(this.name).enter(i1)
-                )
-                if (importLayerResult !== undefined) {
-                    json.layers.push(importLayerResult)
-                }
-            } catch (e) {
-                console.error("Error", e)
-                context.err("Could not generate an import-layer for " + layer.id + " due to " + e)
-            }
-        }
-
-        return json
-    }
-}
-
-class AddContextToTranslationsInLayout extends DesugaringStep<LayoutConfigJson> {
+class AddContextToTranslationsInLayout extends DesugaringStep<ThemeConfigJson> {
     constructor() {
         super(
             "Adds context to translations, including the prefix 'themes:json.id'; this is to make sure terms in an 'overrides' or inline layer are linkable too",
@@ -292,8 +228,8 @@ class AddContextToTranslationsInLayout extends DesugaringStep<LayoutConfigJson> 
         )
     }
 
-    convert(json: LayoutConfigJson): LayoutConfigJson {
-        const conversion = new AddContextToTranslations<LayoutConfigJson>("themes:")
+    convert(json: ThemeConfigJson): ThemeConfigJson {
+        const conversion = new AddContextToTranslations<ThemeConfigJson>("themes:")
         // The context is used to generate the 'context' in the translation .It _must_ be `json.id` to correctly link into weblate
         return conversion.convert(
             json,
@@ -302,7 +238,7 @@ class AddContextToTranslationsInLayout extends DesugaringStep<LayoutConfigJson> 
     }
 }
 
-class ApplyOverrideAll extends DesugaringStep<LayoutConfigJson> {
+class ApplyOverrideAll extends DesugaringStep<ThemeConfigJson> {
     constructor() {
         super(
             "Applies 'overrideAll' onto every 'layer'. The 'overrideAll'-field is removed afterwards",
@@ -311,7 +247,7 @@ class ApplyOverrideAll extends DesugaringStep<LayoutConfigJson> {
         )
     }
 
-    convert(json: LayoutConfigJson, ctx: ConversionContext): LayoutConfigJson {
+    convert(json: ThemeConfigJson, ctx: ConversionContext): ThemeConfigJson {
         const overrideAll = json.overrideAll
         if (overrideAll === undefined) {
             return json
@@ -352,17 +288,12 @@ class ApplyOverrideAll extends DesugaringStep<LayoutConfigJson> {
     }
 }
 
-class AddDependencyLayersToTheme extends DesugaringStep<LayoutConfigJson> {
+class AddDependencyLayersToTheme extends DesugaringStep<ThemeConfigJson> {
     private readonly _state: DesugaringContext
 
     constructor(state: DesugaringContext) {
         super(
-            `If a layer has a dependency on another layer, these layers are added automatically on the theme. (For example: defibrillator depends on 'walls_and_buildings' to snap onto. This layer is added automatically)
-
-            Note that these layers are added _at the start_ of the layer list, meaning that they will see _every_ feature.
-            Furthermore, \`passAllFeatures\` will be set, so that they won't steal away features from further layers.
-            Some layers (e.g. \`all_buildings_and_walls\' or \'streets_with_a_name\') are invisible, so by default, \'force_load\' is set too.
-            `,
+            `If a layer has a dependency on another layer, these layers are added automatically on the theme. (For example: defibrillator depends on 'walls_and_buildings' to snap onto. This layer is added automatically)`,
             ["layers"],
             "AddDependencyLayersToTheme"
         )
@@ -391,6 +322,7 @@ class AddDependencyLayersToTheme extends DesugaringStep<LayoutConfigJson> {
                 reason: string
                 context?: string
                 neededBy: string
+                checkHasSnapName: boolean
             }[] = []
 
             for (const layerConfig of alreadyLoaded) {
@@ -413,7 +345,19 @@ class AddDependencyLayersToTheme extends DesugaringStep<LayoutConfigJson> {
             for (const dependency of dependencies) {
                 if (loadedLayerIds.has(dependency.neededLayer)) {
                     // We mark the needed layer as 'mustLoad'
-                    alreadyLoaded.find((l) => l.id === dependency.neededLayer).forceLoad = true
+                    const loadedLayer = alreadyLoaded.find((l) => l.id === dependency.neededLayer)
+                    loadedLayer.forceLoad = true
+                    if (dependency.checkHasSnapName && !loadedLayer.snapName) {
+                        context
+                            .enters("layer dependency")
+                            .err(
+                                "Layer " +
+                                    dependency.neededLayer +
+                                    " is loaded because " +
+                                    dependency.reason +
+                                    "; so it must specify a `snapName`. This is used in the sentence `move this point to snap it to {snapName}`"
+                            )
+                    }
                 }
             }
 
@@ -463,7 +407,7 @@ class AddDependencyLayersToTheme extends DesugaringStep<LayoutConfigJson> {
         return dependenciesToAdd
     }
 
-    convert(theme: LayoutConfigJson, context: ConversionContext): LayoutConfigJson {
+    convert(theme: ThemeConfigJson, context: ConversionContext): ThemeConfigJson {
         const state = this._state
         const allKnownLayers: Map<string, LayerConfigJson> = state.sharedLayers
         const knownTagRenderings: Map<string, TagRenderingConfigJson> = state.tagRenderings
@@ -501,7 +445,7 @@ class AddDependencyLayersToTheme extends DesugaringStep<LayoutConfigJson> {
     }
 }
 
-class PreparePersonalTheme extends DesugaringStep<LayoutConfigJson> {
+class PreparePersonalTheme extends DesugaringStep<ThemeConfigJson> {
     private readonly _state: DesugaringContext
 
     constructor(state: DesugaringContext) {
@@ -509,7 +453,7 @@ class PreparePersonalTheme extends DesugaringStep<LayoutConfigJson> {
         this._state = state
     }
 
-    convert(json: LayoutConfigJson, context: ConversionContext): LayoutConfigJson {
+    convert(json: ThemeConfigJson, context: ConversionContext): ThemeConfigJson {
         if (json.id !== "personal") {
             return json
         }
@@ -525,7 +469,7 @@ class PreparePersonalTheme extends DesugaringStep<LayoutConfigJson> {
     }
 }
 
-class WarnForUnsubstitutedLayersInTheme extends DesugaringStep<LayoutConfigJson> {
+class WarnForUnsubstitutedLayersInTheme extends DesugaringStep<ThemeConfigJson> {
     constructor() {
         super(
             "Generates a warning if a theme uses an unsubstituted layer",
@@ -534,7 +478,7 @@ class WarnForUnsubstitutedLayersInTheme extends DesugaringStep<LayoutConfigJson>
         )
     }
 
-    convert(json: LayoutConfigJson, context: ConversionContext): LayoutConfigJson {
+    convert(json: ThemeConfigJson, context: ConversionContext): ThemeConfigJson {
         if (json.hideFromOverview === true) {
             return json
         }
@@ -576,18 +520,18 @@ class WarnForUnsubstitutedLayersInTheme extends DesugaringStep<LayoutConfigJson>
     }
 }
 
-class PostvalidateTheme extends DesugaringStep<LayoutConfigJson> {
+class PostvalidateTheme extends DesugaringStep<ThemeConfigJson> {
     private readonly _state: DesugaringContext
+
     constructor(state: DesugaringContext) {
         super("Various validation steps when everything is done", [], "PostvalidateTheme")
         this._state = state
     }
 
-    convert(json: LayoutConfigJson, context: ConversionContext): LayoutConfigJson {
+    convert(json: ThemeConfigJson, context: ConversionContext): ThemeConfigJson {
         for (const l of json.layers) {
             const layer = <LayerConfigJson>l
             const basedOn = <string>layer["_basedOn"]
-            const basedOnDef = this._state.sharedLayers.get(basedOn)
             if (!basedOn) {
                 continue
             }
@@ -654,7 +598,8 @@ class PostvalidateTheme extends DesugaringStep<LayoutConfigJson> {
         return json
     }
 }
-export class PrepareTheme extends Fuse<LayoutConfigJson> {
+
+export class PrepareTheme extends Fuse<ThemeConfigJson> {
     private state: DesugaringContext
 
     constructor(
@@ -682,13 +627,13 @@ export class PrepareTheme extends Fuse<LayoutConfigJson> {
                 ? new Pass("AddDefaultLayers is disabled due to the set flag")
                 : new AddDefaultLayers(state),
             new AddDependencyLayersToTheme(state),
-            new AddImportLayers(),
+            //  new AddImportLayers(),
             new PostvalidateTheme(state)
         )
         this.state = state
     }
 
-    convert(json: LayoutConfigJson, context: ConversionContext): LayoutConfigJson {
+    convert(json: ThemeConfigJson, context: ConversionContext): ThemeConfigJson {
         const result = super.convert(json, context)
         if ((this.state.publicLayers?.size ?? 0) === 0) {
             // THis is a bootstrapping run, no need to already set this flag

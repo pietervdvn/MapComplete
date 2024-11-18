@@ -1,4 +1,4 @@
-import { Store, UIEventSource } from "../UIEventSource"
+import { Store, Stores, UIEventSource } from "../UIEventSource"
 import BaseUIElement from "../../UI/BaseUIElement"
 import { LicenseInfo } from "./LicenseInfo"
 import { Utils } from "../../Utils"
@@ -10,6 +10,15 @@ export interface ProvidedImage {
     provider: ImageProvider
     id: string
     date?: Date
+    status?: string | "ready"
+    /**
+     * Compass angle of the taken image
+     * 0 = north, 90° = East
+     */
+    rotation?: number
+    lat?: number
+    lon?: number
+    host?: string
 }
 
 export default abstract class ImageProvider {
@@ -17,58 +26,61 @@ export default abstract class ImageProvider {
 
     public abstract readonly name: string
 
-    public abstract SourceIcon(id?: string, location?: { lon: number; lat: number }): BaseUIElement
+    public abstract SourceIcon(
+        img?: { id: string; url: string; host?: string },
+        location?: { lon: number; lat: number }
+    ): BaseUIElement
 
     /**
-     * Given a properties object, maps it onto _all_ the available pictures for this imageProvider.
-     * This iterates over _all_ tags and matches _anything_ that might be an image
+     * Gets all the relevant URLS for the given tags and for the given prefixes;
+     * extracts the necessary information
+     * @param tags
+     * @param prefixes
      */
-    public GetRelevantUrls(
-        allTags: Store<any>,
-        options?: {
-            prefixes?: string[]
-        }
-    ): UIEventSource<ProvidedImage[]> {
-        const prefixes = options?.prefixes ?? this.defaultKeyPrefixes
-        if (prefixes === undefined) {
-            throw "No `defaultKeyPrefixes` defined by this image provider"
-        }
-        const relevantUrls = new UIEventSource<
-            { id: string; url: string; key: string; provider: ImageProvider }[]
-        >([])
+    public async getRelevantUrlsFor(
+        tags: Record<string, string>,
+        prefixes: string[]
+    ): Promise<ProvidedImage[]> {
+        const relevantUrls: ProvidedImage[] = []
         const seenValues = new Set<string>()
-        allTags.addCallbackAndRunD((tags) => {
-            for (const key in tags) {
-                if (!prefixes.some((prefix) => key.startsWith(prefix))) {
+
+        for (const key in tags) {
+            if (
+                !prefixes.some(
+                    (prefix) => key === prefix || key.match(new RegExp(prefix + ":[0-9]+"))
+                )
+            ) {
+                continue
+            }
+            const values = Utils.NoEmpty(tags[key]?.split(";")?.map((v) => v.trim()) ?? [])
+            for (const value of values) {
+                if (seenValues.has(value)) {
                     continue
                 }
-                const values = Utils.NoEmpty(tags[key]?.split(";")?.map((v) => v.trim()) ?? [])
-                for (const value of values) {
-                    if (seenValues.has(value)) {
-                        continue
-                    }
-                    seenValues.add(value)
-                    this.ExtractUrls(key, value).then((promises) => {
-                        for (const promise of promises ?? []) {
-                            if (promise === undefined) {
-                                continue
-                            }
-                            promise.then((providedImage) => {
-                                if (providedImage === undefined) {
-                                    return
-                                }
-                                relevantUrls.data.push(providedImage)
-                                relevantUrls.ping()
-                            })
-                        }
-                    })
+                seenValues.add(value)
+                let images = this.ExtractUrls(key, value)
+                if (!Array.isArray(images)) {
+                    images = await images
+                }
+                if (images) {
+                    relevantUrls.push(...images)
                 }
             }
-        })
+        }
         return relevantUrls
     }
 
-    public abstract ExtractUrls(key: string, value: string): Promise<Promise<ProvidedImage>[]>
+    public getRelevantUrls(
+        tags: Record<string, string>,
+        prefixes: string[]
+    ): Store<ProvidedImage[]> {
+        return Stores.FromPromise(this.getRelevantUrlsFor(tags, prefixes))
+    }
+
+    public abstract ExtractUrls(
+        key: string,
+        value: string
+    ): undefined | ProvidedImage[] | Promise<ProvidedImage[]>
 
     public abstract DownloadAttribution(providedImage: {
         url: string
@@ -76,4 +88,12 @@ export default abstract class ImageProvider {
     }): Promise<LicenseInfo>
 
     public abstract apiUrls(): string[]
+
+    public static async offerImageAsDownload(image: ProvidedImage) {
+        const response = await fetch(image.url_hd ?? image.url)
+        const blob = await response.blob()
+        Utils.offerContentsAsDownloadableFile(blob, new URL(image.url).pathname.split("/").at(-1), {
+            mimetype: "image/jpg",
+        })
+    }
 }

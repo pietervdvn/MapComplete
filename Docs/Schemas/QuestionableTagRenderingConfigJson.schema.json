@@ -114,7 +114,7 @@
       ]
     },
     "labels": {
-      "description": "A list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer",
+      "description": "What labels should be applied on this tagRendering?\n\nA list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer\n\nSpecial values:\n- \"hidden\": do not show this tagRendering. Useful in it is used by e.g. an accordion\n- \"description\": this label is a description used in the search",
       "type": "array",
       "items": {
         "type": "string"
@@ -226,10 +226,20 @@
     },
     "filter": {
       "description": "This tagRendering can introduce this builtin filter",
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
+      "anyOf": [
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        {
+          "enum": [
+            true
+          ],
+          "type": "boolean"
+        }
+      ]
     }
   },
   "required": [
@@ -293,6 +303,73 @@
       "required": [
         "or"
       ],
+      "additionalProperties": false
+    },
+    "FilterConfigOptionJson": {
+      "type": "object",
+      "properties": {
+        "question": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Record<string,string>"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "searchTerms": {
+          "$ref": "#/definitions/Record<string,string[]>"
+        },
+        "emoji": {
+          "type": "string"
+        },
+        "icon": {
+          "type": "string"
+        },
+        "osmTags": {
+          "description": "The main representation of Tags.\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for more documentation\n\ntype: tag",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/{and:TagConfigJson[];}"
+            },
+            {
+              "$ref": "#/definitions/{or:TagConfigJson[];}"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "default": {
+          "type": "boolean"
+        },
+        "fields": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "If name is `search`, use  \"_first_comment~.*{search}.*\" as osmTags",
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name"
+            ]
+          }
+        }
+      },
+      "required": [
+        "question"
+      ],
+      "additionalProperties": false
+    },
+    "Record<string,string[]>": {
+      "type": "object",
       "additionalProperties": false
     },
     "Record<string,string|Record<string,string>>": {
@@ -628,16 +705,22 @@
         },
         "filter": {
           "description": "This tagRendering can introduce this builtin filter",
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            {
+              "enum": [
+                true
+              ],
+              "type": "boolean"
+            }
+          ]
         }
       },
-      "additionalProperties": false
-    },
-    "Record<string,string[]>": {
-      "type": "object",
       "additionalProperties": false
     },
     "MappingConfigJson": {

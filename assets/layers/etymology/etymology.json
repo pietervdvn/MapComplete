@@ -7,7 +7,9 @@
     "fr": "A une étymologie",
     "ca": "Té etimologia",
     "cs": "Má etymologii",
-    "da": "Har etymologi"
+    "da": "Har etymologi",
+    "uk": "Має етимологію",
+    "es": "Tiene etimología"
   },
   "description": {
     "en": "All objects which have an etymology known",
@@ -17,7 +19,8 @@
     "fr": "Tous les objets dont l’étymologie est connue",
     "ca": "Tots els objectes que tenen una etimologia coneguda",
     "cs": "Všechny objekty, které mají známou etymologii",
-    "da": "Alle objekter med kendt etymologi"
+    "da": "Alle objekter med kendt etymologi",
+    "es": "Todos los objetos que tienen una etimología conocida"
   },
   "source": {
     "osmTags": {
@@ -116,7 +119,8 @@
         "de": "Was ist das Wikidata-Element, nach dem dieses Objekt benannt ist?",
         "fr": "Quel est l'Item Wikidata auquel l'objet fait référence ?",
         "cs": "Po jaké položce Wikidat je tento objekt pojmenován?",
-        "da": "Hvilket Wikidata-emne er dette objekt opkaldt efter?"
+        "da": "Hvilket Wikidata-emne er dette objekt opkaldt efter?",
+        "es": "¿Cuál es el elemento de Wikidata en honor a  el cual se nombra este objeto?"
       },
       "freeform": {
         "key": "name:etymology:wikidata",
@@ -253,7 +257,8 @@
         "fr": "<h3>Article Wikipedia de la référence au nom</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}",
         "ca": "<h3> Article de la Viquipèdia del nom donant</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}",
         "cs": "<h3>Článek autora jména na Wikipedii</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}",
-        "da": "<h3>Wikipedia-artikel om navnets ophav</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}"
+        "da": "<h3>Wikipedia-artikel om navnets ophav</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}",
+        "es": "<h3>Artículo de Wikipedia del que recibe el nombre</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}"
       }
     },
     {
@@ -263,7 +268,8 @@
         "en": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Search on inventaris onroerend erfgoed</a>",
         "de": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Suche auf inventaris onroerend erfgoed</a>",
         "fr": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Chercher sur inventaris onroerend erfgoed</a>",
-        "cs": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Hledání na inventaris onroerend erfgoed</a>"
+        "cs": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Hledání na inventaris onroerend erfgoed</a>",
+        "es": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Buscar en Inventaris Onroerend Erfgoed</a>"
       },
       "condition": "_country=be"
     },
@@ -276,7 +282,8 @@
         "fr": "En référence à quoi cet objet est-il nommé ?",
         "pl": "Po czym nazwany jest ten obiekt?",
         "cs": "Po čem je tento objekt pojmenován?",
-        "da": "Hvad er dette objekt opkaldt efter?"
+        "da": "Hvad er dette objekt opkaldt efter?",
+        "es": "¿A qué se debe el nombre de este objeto?"
       },
       "render": {
         "en": "Named after {name:etymology}",
@@ -285,7 +292,8 @@
         "da": "Opkaldt efter {name:etymology}",
         "fr": "Nommé en référence à {name:etymology}",
         "pl": "Nazwane po {name:etymology}",
-        "cs": "Pojmenováno po {name:etymology}"
+        "cs": "Pojmenováno po {name:etymology}",
+        "es": "Nombrado en honor a {name:etymology}"
       },
       "freeform": {
         "key": "name:etymology",
@@ -301,7 +309,8 @@
             "da": "Oprindelsen af dette navn er ukendt i al litteratur",
             "fr": "L'origine de ce nom est inconnu",
             "ca": "L'origen d'aquest nom és desconegut en tota la literatura",
-            "cs": "Původ tohoto jména je neznámý v celé literatuře"
+            "cs": "Původ tohoto jména je neznámý v celé literatuře",
+            "es": "El origen de este nombre es desconocido en toda la literatura"
           }
         }
       ],
@@ -317,7 +326,8 @@
         "de": "Das könnte auf einem Straßenschild stehen",
         "fr": "Cela peut être indiqué sur le panneau de la rue",
         "ca": "Això podria estar escrit al cartell del nom del carrer",
-        "cs": "To může být napsáno na ceduli s názvem ulice"
+        "cs": "To může být napsáno na ceduli s názvem ulice",
+        "es": "Esto podría estar escrito en el letrero del nombre de la calle"
       }
     },
     "questions",
@@ -330,7 +340,8 @@
         "fr": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Ajouter une photo de la plaque de rue)}",
         "ca": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Afegeix una imatge de la placa amb el nom del carrer)}",
         "cs": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Add image of a street name sign)}",
-        "da": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Tilføj foto af gadenavneskilt)}"
+        "da": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Tilføj foto af gadenavneskilt)}",
+        "es": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Agregar imagen de un letrero de nombre de calle)}"
       }
     },
     {
@@ -348,7 +359,8 @@
         "fr": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Appliquer automatiquement aux segments avec le même nom, true)}",
         "ca": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etimology, aplicació automàtica de dades a tots els segments amb el mateix nom, vertader)}",
         "cs": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Auto-applying data on all segments with the same name, true)}",
-        "da": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Tilføjer automatisk til alle segmenter med samme navn, true)}"
+        "da": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Tilføjer automatisk til alle segmenter med samme navn, true)}",
+        "es": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Aplicando datos automáticamente en todos los segmentos con el mismo nombre, true)}"
       }
     },
     {
@@ -362,10 +374,12 @@
         "pl": "Istnieje artykuł Wikipedii na temat tej <b>ulicy</b>:<br/>{wikipedia():max-height:25rem}",
         "ca": "Existeix un article de la Viquipèdia sobre aquest <b>carrer</b>:<br/>{wikipedia():max-height:25rem}",
         "cs": "Článek na Wikipedii o této <b>ulici</b> existuje:<br/>{wikipedia():max-height:25rem}",
-        "da": "Der findes en Wikipedia-artikel om denne <b>gade</b>:<br/>{wikipedia():max-height:25rem}"
+        "da": "Der findes en Wikipedia-artikel om denne <b>gade</b>:<br/>{wikipedia():max-height:25rem}",
+        "es": "Existe un artículo de Wikipedia sobre esta <b>calle</b>:<br/>{wikipedia():max-height:25rem}"
       },
       "condition": "wikidata~*"
     }
   ],
+  "allowMove": false,
   "#": "A layer showing all objects having etymology info (either via `name:etymology:wikidata` or `name:etymology`. The intention is that this layer is reused for a certain category to also _ask_ for information"
 }

@@ -31,11 +31,20 @@ export default class DependencyCalculator {
      * Returns a set of all other layer-ids that this layer needs to function.
      * E.g. if this layers does snap to another layer in the preset, this other layer id will be mentioned
      */
-    public static getLayerDependencies(
-        layer: LayerConfig
-    ): { neededLayer: string; reason: string; context?: string; neededBy: string }[] {
-        const deps: { neededLayer: string; reason: string; context?: string; neededBy: string }[] =
-            []
+    public static getLayerDependencies(layer: LayerConfig): {
+        neededLayer: string
+        reason: string
+        context?: string
+        neededBy: string
+        checkHasSnapName: boolean
+    }[] {
+        const deps: {
+            neededLayer: string
+            reason: string
+            context?: string
+            neededBy: string
+            checkHasSnapName: boolean
+        }[] = []
 
         for (let i = 0; layer.presets !== undefined && i < layer.presets.length; i++) {
             const preset = layer.presets[i]
@@ -51,6 +60,7 @@ export default class DependencyCalculator {
                     reason: `preset \`${preset.title.textFor("en")}\` snaps to this layer`,
                     context: `${layer.id}.presets[${i}]`,
                     neededBy: layer.id,
+                    checkHasSnapName: true,
                 })
             })
         }
@@ -62,6 +72,7 @@ export default class DependencyCalculator {
                     reason: "a tagrendering needs this layer",
                     context: tr.id,
                     neededBy: layer.id,
+                    checkHasSnapName: false,
                 })
             }
         }
@@ -97,6 +108,7 @@ export default class DependencyCalculator {
                             "] which calculates the value for " +
                             currentKey,
                         neededBy: layer.id,
+                        checkHasSnapName: false,
                     })
 
                     return []

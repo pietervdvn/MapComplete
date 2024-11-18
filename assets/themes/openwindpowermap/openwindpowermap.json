@@ -8,15 +8,16 @@
     "ru": "Открытая карта ветроэнергетики",
     "zh_Hant": "風力發電機",
     "id": "OpenWindPowerMap",
-    "hu": "OpenWindPowerMap",
+    "hu": "Szélerőművek",
     "nl": "Windmolens",
     "ca": "Generadors d'energia eòlica",
     "nb_NO": "ÅpentVindkraftKart",
     "pa_PK": "اوپن‌ونڈ‌پاور‌میپ",
-    "es": "Generadores de energía eólica",
+    "es": "Generadores eólicos",
     "cs": "Větrné elektrárny",
     "pl": "Generatory wiatrowe",
-    "da": "Vindmøller"
+    "da": "Vindmøller",
+    "uk": "Вітрогенератори"
   },
   "description": {
     "en": "A map for showing and editing wind turbines.",
@@ -25,13 +26,14 @@
     "it": "Una cartina per la visione e la modifica delle turbine eoliche.",
     "zh_Hant": "顯示與編輯風機的地圖。",
     "hu": "Szélerőművek megjelenítésére és szerkesztésére szolgáló térkép.",
-    "es": "Mapa para mostrar y editar turbinas de viento.",
+    "es": "Un mapa para mostrar y editar aerogeneradores.",
     "nl": "Een kaart om windturbines te tonen en te bewerken.",
     "da": "Et kort til visning og redigering af vindmøller.",
     "nb_NO": "Et kart for visning og redigering av vindmøller.",
     "cs": "Mapa pro zobrazení a úpravy větrných turbín.",
     "ca": "Un mapa per a mostrar i editar turbines eòliques.",
-    "pl": "Mapa do pokazywania i edytowania turbin wiatrowych."
+    "pl": "Mapa do pokazywania i edytowania turbin wiatrowych.",
+    "uk": "Мапа для показу та редагування вітрових турбін."
   },
   "icon": "./assets/themes/openwindpowermap/logo.svg",
   "startZoom": 8,

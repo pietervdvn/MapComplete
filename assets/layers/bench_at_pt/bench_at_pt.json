@@ -5,7 +5,7 @@
     "de": "Sitzbänke an Haltestellen",
     "fr": "Bancs des arrêts de transport en commun",
     "nl": "Zitbanken aan bushaltes",
-    "es": "Bancos en una parada de transporte público",
+    "es": "Bancos en paradas de transporte público",
     "hu": "Padok megállókban",
     "it": "Panchine alle fermate del trasporto pubblico",
     "ru": "Скамейки на остановках общественного транспорта",
@@ -21,7 +21,7 @@
   },
   "description": {
     "en": "A layer showing all public-transport-stops which do have a bench",
-    "es": "Una capa que muestra todas las paradas de transporte público que tienen bancos",
+    "es": "Una capa que muestra todas las paradas de transporte público que tienen un banco",
     "nl": "Een laag die stopplaatsen van openbaar vervoer toont waar er een zitbank is",
     "fr": "Une couche montrant tous les arrêts de transports publics qui ont un banc",
     "de": "Eine Ebene mit allen Haltestellen des öffentlichen Nahverkehrs, die über eine Sitzbank verfügen",
@@ -93,7 +93,7 @@
           "pt_BR": "Banco em ponto de transporte público",
           "pl": "Ławka na przystanku komunikacji miejskiej",
           "pt": "Banco em ponto de transporte público",
-          "es": "Banco en una parada de transporte público",
+          "es": "Banco en parada de transporte público",
           "da": "Bænk ved offentlig stoppested",
           "cs": "Lavička na zastávce veřejné dopravy",
           "ca": "Banc en una parada de transport públic",
@@ -118,7 +118,7 @@
           "zh_Hant": "涼亭內的長椅",
           "pt_BR": "Banco em abrigo",
           "pt": "Banco em abrigo",
-          "es": "Banco en marquesina",
+          "es": "Banco en refugio",
           "da": "Bænk i læskur",
           "cs": "Lavička v přístřešku",
           "ca": "Banc en marquesina",
@@ -223,7 +223,7 @@
             "ru": "Встаньте на скамейке",
             "zh_Hant": "站立長椅",
             "da": "Stå-op bænk",
-            "es": "Banco de pié",
+            "es": "Banco de pie",
             "cs": "Je zde lavička, o kterou se lze opřít",
             "ca": "Banc dempeus",
             "pt": "banco de pé",
@@ -237,7 +237,7 @@
             "fr": "Il n'y a pas de banc ici",
             "de": "Hier gibt es keine Bank",
             "nl": "Er is hier geen bank",
-            "es": "No hay ningún banco aquí",
+            "es": "No hay banco aquí",
             "da": "Der er ingen bænk her",
             "cs": "Zde není žádná lavička",
             "pt": "Não há nenhum banco aqui",
@@ -255,7 +255,7 @@
         "if": "bench=no",
         "then": {
           "en": "This bus stop does not have a bench (there never was one or it has been removed)",
-          "de": "Diese Bushaltestelle hat keine Bank (es gab nie eine oder sie wurde entfernt)",
+          "de": "Diese Bushaltestelle hat keine Sitzank (es gab nie eine oder sie wurde entfernt)",
           "fr": "Cette station de bus n'a pas de banc (il n'y en a jamais eu ou il a été retiré)",
           "nl": "Deze bushalte heeft geen zitbank (er is er nooit een geweest of deze is verwijderd)",
           "ca": "Aquesta para de bus no té un banc (mai n'ha tingut un o ha estat eliminat)",
@@ -263,7 +263,8 @@
           "pt": "Este ponto de ônibus não tem banco (nunca houve ou foi removido)",
           "pl": "Ten przystanek autobusowy nie ma ławki (nigdy jej nie było lub została usunięta)",
           "pt_BR": "Essa parada de ônibus não tem um banco (nunca teve ou ele foi removido)",
-          "es": "Esta parada de autobús no tiene banco (nunca lo hubo o lo han quitado)"
+          "es": "Esta parada de autobús no tiene banco (nunca lo tuvo o se ha quitado)",
+          "uk": "На цій зупинці немає лавки (ніколи не було або її прибрали)"
         }
       }
     ],
@@ -280,7 +281,8 @@
           "pt": "Este ponto de ônibus não é mais usado",
           "pl": "Ten przystanek autobusowy nie jest już używany",
           "pt_BR": "Essa parada de ônibus não é mais usada",
-          "es": "Esta parada ya no se usa"
+          "es": "Esta parada de autobús ya no se utiliza",
+          "uk": "Ця автобусна зупинка більше не використовується"
         }
       }
     ],
@@ -290,5 +292,6 @@
         "bench=no"
       ]
     }
-  }
+  },
+  "allowMove": false
 }

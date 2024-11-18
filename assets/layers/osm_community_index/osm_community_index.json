@@ -6,7 +6,8 @@
     "ca": "Índex de comunitats d'OSM",
     "fr": "Index des communautés OSM",
     "pl": "Indeks społeczności OSM",
-    "cs": "OSM Community Index"
+    "cs": "OSM Community Index",
+    "es": "Índice de la comunidad OSM"
   },
   "description": {
     "en": "A layer showing the OpenStreetMap Communities",
@@ -14,7 +15,8 @@
     "ca": "Una capa que mostra les comunitats d'OpenStreetMap",
     "fr": "Une couche affichant les communautés OpenStreetMap",
     "pl": "Warstwa pokazująca społeczności OpenStreetMap",
-    "cs": "Vrstva zobrazující komunity OpenStreetMap"
+    "cs": "Vrstva zobrazující komunity OpenStreetMap",
+    "es": "Una capa que muestra las comunidades de OpenStreetMap"
   },
   "source": {
     "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/community_index/tile_{z}_{x}_{y}.geojson",
@@ -31,7 +33,8 @@
       "ca": "Índex de comunitats d'OSM",
       "fr": "Index des communautés OSM",
       "pl": "Indeks społeczności OSM",
-      "cs": "OSM Community Index"
+      "cs": "OSM Community Index",
+      "es": "Índice de la comunidad OSM"
     }
   },
   "pointRendering": [
@@ -84,7 +87,8 @@
             "ca": "País",
             "fr": "Pays",
             "pl": "Kraj",
-            "cs": "Země"
+            "cs": "Země",
+            "es": "País"
           },
           "osmTags": "level=country"
         }
@@ -98,7 +102,8 @@
             "en": "Sub Country Group",
             "de": "Regionale Gruppe",
             "ca": "Subgrup de països",
-            "cs": "Skupina dílčích zemí"
+            "cs": "Skupina dílčích zemí",
+            "es": "Grupo de subpaíses"
           },
           "osmTags": "level=subcountryGroup"
         }
@@ -115,7 +120,8 @@
             "ca": "Regió",
             "fr": "Région",
             "pl": "Region",
-            "cs": "Region"
+            "cs": "Region",
+            "es": "Región"
           },
           "osmTags": "level=region"
         }
@@ -129,7 +135,8 @@
             "en": "Intermediate Region",
             "de": "Mittlere Region",
             "ca": "Regió intermèdia",
-            "cs": "Střední region"
+            "cs": "Střední region",
+            "es": "Región intermedia"
           },
           "osmTags": "level=intermediateRegion"
         }
@@ -145,7 +152,8 @@
             "ca": "Territori",
             "fr": "Territoire",
             "pl": "Terytorium",
-            "cs": "Území"
+            "cs": "Území",
+            "es": "Territorio"
           },
           "osmTags": "level=territory"
         }
@@ -162,7 +170,8 @@
             "ca": "Món",
             "fr": "Monde",
             "pl": "Świat",
-            "cs": "Svět"
+            "cs": "Svět",
+            "es": "Mundo"
           },
           "osmTags": "level=world"
         }
@@ -178,11 +187,13 @@
             "ca": "Altres Comunitats",
             "fr": "Autres communautés",
             "pl": "Inne społeczności",
-            "cs": "Ostatní komunity"
+            "cs": "Ostatní komunity",
+            "es": "Otras comunidades"
           },
           "osmTags": "level="
         }
       ]
     }
-  ]
+  ],
+  "allowMove": false
 }

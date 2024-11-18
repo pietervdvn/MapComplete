@@ -12,14 +12,17 @@
     "zh_Hant": "運動",
     "eu": "Kirolak",
     "pl": "Sporty",
-    "it": "Sport"
+    "it": "Sport",
+    "ru": "Спортивные объекты",
+    "hu": "Sporttérkép",
+    "uk": "Спорт"
   },
   "description": {
     "en": "All about sports, find sport pitches, fitness centres and more.",
     "nl": "Alles over sport: vind sportvelden, fitnesscentra en meer.",
     "de": "Alles über Sport. Finden Sie Sportplätze, Fitnesscenter und vieles mehr.",
     "ca": "Tot sobre esports, troba camps d'esport, gimnasos i molt més.",
-    "es": "Todo sobre deportes, encuentra campos de deporte, gimnasios y mucho más.",
+    "es": "Todo sobre deportes, encuentra canchas deportivas, centros de fitness y más.",
     "cs": "Vše o sportu, sportovní hřiště, fitness centra a další.",
     "fr": "Tout sur les sports, trouver les terrains de sport, les salles de sport et plus encore.",
     "pl": "Wszystko o sporcie, znajdź boiska sportowe, centra fitness i nie tylko.",
@@ -31,11 +34,12 @@
     "de": "Karte mit Sporteinrichtungen.",
     "fr": "Carte des équipements sportifs.",
     "ca": "Mapa amb instal·lacions esportives.",
-    "es": "Mapa con instalaciones deportivas.",
+    "es": "Mapa que muestra instalaciones deportivas.",
     "cs": "Mapa se sportovními zařízeními.",
     "zh_Hant": "顯示運動設施的地圖。",
     "pl": "Mapa pokazująca obiekty sportowe.",
-    "it": "Mappa che mostra gli impianti sportivi."
+    "it": "Mappa che mostra gli impianti sportivi.",
+    "uk": "Мапа спортивних обʼєктів."
   },
   "icon": "./assets/themes/sports/sport.svg",
   "layers": [
@@ -64,7 +68,7 @@
               "nl": "een sportwinkel",
               "de": "ein Sportgeschäft",
               "ca": "una tenda d'esports",
-              "es": "una tienda de deportes",
+              "es": "una tienda de artículos deportivos",
               "cs": "sportovní obchod",
               "zh_Hant": "運動用品店",
               "fr": "une boutique de sport",
@@ -76,7 +80,7 @@
               "de": "Ein neues Geschäft für Sportartikel hinzufügen.",
               "fr": "Ajouter un nouveau commerce vendant des équipements sportifs.",
               "ca": "Afegeix una nova botiga d'articles esportius.",
-              "es": "Añade una nueva tienda de artículos deportivos.",
+              "es": "Agregar una nueva tienda que venda artículos deportivos.",
               "cs": "Přidejte nový obchod se sportovním zbožím.",
               "pl": "Dodaj nowy sklep sprzedający artykuły sportowe."
             }

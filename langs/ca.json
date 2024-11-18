@@ -20,6 +20,7 @@
         "cancel": "Cancel·lar",
         "cannotBeDeleted": "Aquest element no pot ser esborrat",
         "delete": "Esborrar",
+        "deletedTitle": "Element eliminat",
         "explanations": {
             "hardDelete": "Aquest element s'esborrarà a OpenStreetMap. Es podria recuperar per part d'un contribuïdor experimentat",
             "retagNoOtherThemes": "Aquest element serà reclasificada i ocultada a aquesta aplicació",
@@ -46,6 +47,19 @@
         "useSomethingElse": "Utilitza un altre editor d'OpenStreetMap per esborrar-lo",
         "whyDelete": "Per què s'hauria d'esborrar aquest element?"
     },
+    "external": {
+        "allAreApplied": "Tots els valors externs que faltaven s'han copiat a OpenStreetMap",
+        "conflicting": {
+            "title": "Elements conflictius"
+        },
+        "currentInOsmIs": "Pel moment, OpenStreetMap té el següent valor registrat:",
+        "done": "Fet",
+        "missing": {
+            "intro": "OpenStreetMap no té informació sobre els següents atributs",
+            "title": "Elements que falten"
+        },
+        "noDataLoaded": "El lloc web extern no té dades vinculades que es puguen carregar"
+    },
     "favourite": {
         "loginNeeded": "<h3>Entrar</h3>El disseny personalitzat només està disponible pels usuaris d'OpenstreetMap",
         "panelIntro": "<h3>La teva interfície personal</h3>Activa les teves capes favorites de totes les interfícies oficials",
@@ -56,7 +70,11 @@
             "isMarkedShort": "Marcat com a ubicació favorita",
             "isNotMarkedShort": "No marcat com a favorit",
             "markAsFavouriteTitle": "Marca aquesta ubicació com a preferida"
-        }
+        },
+        "introPrivacy": "Aquesta llista nomes és visible per a tu",
+        "loginToSeeList": "Inicia sessió per a veure la llista d'ubicacions marcades com a favorites",
+        "tab": "Els teus favorits i opinions",
+        "title": "Les teues ubicacions favorites"
     },
     "flyer": {
         "aerial": "Aquest mapa utilitza un fons diferent, és a dir, imatges aèries de Agentschap Informatie Vlaanderen",
@@ -151,7 +169,9 @@
             "donate": "Donar suport econòmic a MapComplete",
             "editId": "Obre l'editor en línia d'OpenStreetMap aquí",
             "editJosm": "Editar aquí amb JOSM",
+            "emailCreators": "Envia un correu electrònic als creadors",
             "followOnMastodon": "Segueix MapComplet a Mastodon",
+            "gotoSourceCode": "Veure el codi font",
             "iconAttribution": {
                 "title": "Icones utilitzades"
             },
@@ -164,6 +184,7 @@
             "openIssueTracker": "Registrar un error",
             "openMapillary": "Obrir Mapillary aquí",
             "openOsmcha": "Veure darreres edicions fetes amb {theme}",
+            "openThemeDocumentation": "Obrir la documentació per al mapa temàtic {name}",
             "themeBy": "Tema mantingut per {author}",
             "title": "Copyright i atribució",
             "translatedBy": "MapComplete ha estat traduït per {contributors} i <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} col·laboradors més</a>"
@@ -227,14 +248,16 @@
         "loginWithOpenStreetMap": "Entrar a OpenStreetMap",
         "logout": "Sortir",
         "menu": {
+            "aboutCurrentThemeTitle": "Sobre aquest mapa",
             "aboutMapComplete": "Sobre MapComplete",
-            "filter": "Filtra dades"
+            "filter": "Filtra dades",
+            "moreUtilsTitle": "Descobreix més",
+            "showIntroduction": "Mostra la introducció"
         },
         "morescreen": {
             "createYourOwnTheme": "Crea la teva pròpia petició completa de MapComplete des de zero",
             "enterToOpen": "Premeu Intro per obrir el tema",
             "hiddenExplanation": "Aquestes peticions només funcionen amb l'enllaç. Has descobert {hidden_discovered} de {total_hidden} peticions amagades.",
-            "intro": "<h3>Més mapes temàtics?</h3>T'agrada captar dades? <br/>Hi ha més temes disponibles.",
             "noMatchingThemes": "Cap tema coincideix amb els teus criteris de cerca",
             "noSearch": "Mostra tots els temes",
             "previouslyHiddenTitle": "Peticions visitades i amagades",
@@ -252,6 +275,7 @@
         "openStreetMapIntro": "<h3>Un mapa obert</h3><p>Un que tothom pogués utilitzar i editar lliurement. Un sol lloc on emmagatzemar tota la informació geogràfica. Llavors tots aquests llocs web amb mapes diferents petits i incompatibles (que sempre estaran desactualitzats) ja no serien necessaris.</p><p><b><a href='https://OpenStreetMap.org' target='_blank'>OpenStreetMap</a></b> no és el mapa de l'enemic. Les dades del mapa es poden utilitzar gratuïtament (amb <a href='https://osm.org/copyright' target='_blank'> atribució i publicació de canvis en aquestes dades</a>). A més a més, tothom pot agregar lliurement noves dades i corregir errors. Aquest lloc web també fa servir OpenStreetMap. Totes les dades provenen d'allà i les teves respostes i correccions també s'afegiran allà.</p><p>Moltes persones i aplicacions ja utilitzen OpenStreetMap: <a href='https://organicmaps.app/' target='_blank'>Organic Maps</a>, <a href='https://osmAnd.net' target='_blank'>OsmAnd</a>, però també els mapes de Facebook, Instagram, Apple i Bing són (en part) impulsats per OpenStreetMap .</p>",
         "openTheMap": "Obrir el mapa",
         "openTheMapAtGeolocation": "Amplieu a la vostra ubicació",
+        "openTheMapReason": "per a veure, editar i afegir informació",
         "opening_hours": {
             "closed_permanently": "Tancat - sense dia d'obertura conegut",
             "closed_until": "Tancat fins {date}",
@@ -585,13 +609,16 @@
         "question_opinion": "Com va ser la vostra experiència?",
         "reviewing_as": "Ressenyant com a {nickname}",
         "reviewing_as_anonymous": "Ressenyant com a anònim",
+        "reviews_bug": "Esperaves més opinions? Algunes opinions no es mostren a causa d'una errada.",
         "save": "Desar",
         "saved": "Ressenya compartida. Gràcies per compartir!",
         "saving_review": "Desant…",
         "title": "{count} revisions",
         "title_singular": "Una revisió",
         "tos": "Si crees una ressenya estàs d'acord amb <a href=\"https://mangrove.reviews/terms\" target=\"_blank\"> els Termes de Servei i política de privacitat de Mangrove.reviews</a>",
-        "write_a_comment": "Deixa una ressenya…"
+        "write_a_comment": "Deixa una ressenya…",
+        "your_reviews": "Les vostres opinions anteriors",
+        "your_reviews_empty": "No hem pogut trobar cap de les vostres opinions anteriors"
     },
     "split": {
         "cancel": "Cancel·lar",

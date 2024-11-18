@@ -24,7 +24,7 @@ export default abstract class Script {
             })
             .catch((e) => {
                 console.log(`ERROR in script ${process.argv[1]}:`, e)
-                process.exit(1)
+                // process.exit(1)
             })
     }
 

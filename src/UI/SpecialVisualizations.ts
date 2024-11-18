@@ -19,7 +19,6 @@ import { MapillaryLinkVis } from "./Popup/MapillaryLinkVis"
 import { ImmutableStore, Store, Stores, UIEventSource } from "../Logic/UIEventSource"
 import AllTagsPanel from "./Popup/AllTagsPanel.svelte"
 import AllImageProviders from "../Logic/ImageProviders/AllImageProviders"
-import { ImageCarousel } from "./Image/ImageCarousel"
 import { VariableUiElement } from "./Base/VariableUIElement"
 import { Utils } from "../Utils"
 import Wikidata, { WikidataResponse } from "../Logic/Web/Wikidata"
@@ -27,7 +26,6 @@ import { Translation } from "./i18n/Translation"
 import Translations from "./i18n/Translations"
 import OpeningHoursVisualization from "./OpeningHours/OpeningHoursVisualization"
 import { SubtleButton } from "./Base/SubtleButton"
-import NoteCommentElement from "./Popup/Notes/NoteCommentElement"
 import List from "./Base/List"
 import StatisticsPanel from "./BigComponents/StatisticsPanel"
 import AutoApplyButton from "./Popup/AutoApplyButton"
@@ -36,13 +34,13 @@ import FeatureReviews from "../Logic/Web/MangroveReviews"
 import Maproulette, { MaprouletteTask } from "../Logic/Maproulette"
 import SvelteUIElement from "./Base/SvelteUIElement"
 import { BBoxFeatureSourceForLayer } from "../Logic/FeatureSource/Sources/TouchesBboxFeatureSource"
-import { Feature, GeoJsonProperties } from "geojson"
+import { Feature, GeoJsonProperties, LineString } from "geojson"
 import { GeoOperations } from "../Logic/GeoOperations"
 import CreateNewNote from "./Popup/Notes/CreateNewNote.svelte"
 import AddNewPoint from "./Popup/AddNewPoint/AddNewPoint.svelte"
 import LayerConfig from "../Models/ThemeConfig/LayerConfig"
 import TagRenderingConfig from "../Models/ThemeConfig/TagRenderingConfig"
-import { ExportAsGpxViz } from "./Popup/ExportAsGpxViz"
+import ExportFeatureButton from "./Popup/ExportFeatureButton.svelte"
 import WikipediaPanel from "./Wikipedia/WikipediaPanel.svelte"
 import TagRenderingEditable from "./Popup/TagRendering/TagRenderingEditable.svelte"
 import { PointImportButtonViz } from "./Popup/ImportButtons/PointImportButtonViz"
@@ -50,7 +48,6 @@ import WayImportButtonViz from "./Popup/ImportButtons/WayImportButtonViz"
 import ConflateImportButtonViz from "./Popup/ImportButtons/ConflateImportButtonViz"
 import DeleteWizard from "./Popup/DeleteFlow/DeleteWizard.svelte"
 import OpenIdEditor from "./BigComponents/OpenIdEditor.svelte"
-import FediverseValidator from "./InputElement/Validators/FediverseValidator"
 import SendEmail from "./Popup/SendEmail.svelte"
 import UploadImage from "./Image/UploadImage.svelte"
 import { Imgur } from "../Logic/ImageProviders/Imgur"
@@ -74,7 +71,6 @@ import NearbyImages from "./Image/NearbyImages.svelte"
 import NearbyImagesCollapsed from "./Image/NearbyImagesCollapsed.svelte"
 import MoveWizard from "./Popup/MoveWizard.svelte"
 import { Unit } from "../Models/Unit"
-import Link from "./Base/Link.svelte"
 import OrientationDebugPanel from "./Debug/OrientationDebugPanel.svelte"
 import MaprouletteSetStatus from "./MapRoulette/MaprouletteSetStatus.svelte"
 import DirectionIndicator from "./Base/DirectionIndicator.svelte"
@@ -90,7 +86,6 @@ import DynLink from "./Base/DynLink.svelte"
 import Locale from "./i18n/Locale"
 import LanguageUtils from "../Utils/LanguageUtils"
 import MarkdownUtils from "../Utils/MarkdownUtils"
-import ArrowDownTray from "@babeard/svelte-heroicons/mini/ArrowDownTray"
 import Trash from "@babeard/svelte-heroicons/mini/Trash"
 import NothingKnown from "./Popup/NothingKnown.svelte"
 import { CombinedFetcher } from "../Logic/Web/NearbyImagesSearch"
@@ -101,6 +96,9 @@ import QrCode from "./Popup/QrCode.svelte"
 import ClearCaches from "./Popup/ClearCaches.svelte"
 import GroupedView from "./Popup/GroupedView.svelte"
 import { QuestionableTagRenderingConfigJson } from "../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
+import NoteCommentElement from "./Popup/Notes/NoteCommentElement.svelte"
+import FediverseLink from "./Popup/FediverseLink.svelte"
+import ImageCarousel from "./Image/ImageCarousel.svelte"
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -168,7 +166,7 @@ class StealViz implements SpecialVisualization {
         const tagRenderings: [LayerConfig, TagRenderingConfig][] = []
         for (const layerAndTagRenderingId of layerAndtagRenderingIds.split(";")) {
             const [layerId, tagRenderingId] = layerAndTagRenderingId.trim().split(".")
-            const layer = state.layout.layers.find((l) => l.id === layerId)
+            const layer = state.theme.layers.find((l) => l.id === layerId)
             const tagRendering = layer.tagRenderings.find((tr) => tr.id === tagRenderingId)
             tagRenderings.push([layer, tagRendering])
         }
@@ -254,9 +252,7 @@ class CloseNoteViz implements SpecialVisualization {
     public constr(
         state: SpecialVisualizationState,
         tags: UIEventSource<Record<string, string>>,
-        args: string[],
-        feature: Feature,
-        layer: LayerConfig
+        args: string[]
     ): SvelteUIElement {
         const { text, icon, idkey, comment, minZoom, zoomButton } = Utils.ParseVisArgs(
             this.args,
@@ -450,7 +446,7 @@ export default class SpecialVisualizations {
                         Locale.showLinkToWeblate.map((showTranslations) => {
                             const languages = showTranslations
                                 ? LanguageUtils.usedLanguagesSorted
-                                : state.layout.language
+                                : state.theme.language
                             return new SvelteUIElement(LanguagePicker, {
                                 assignTo: state.userRelatedState.language,
                                 availableLanguages: languages,
@@ -571,7 +567,37 @@ export default class SpecialVisualizations {
                 },
             },
             new ShareLinkViz(),
-            new ExportAsGpxViz(),
+            {
+                funcName: "export_as_gpx",
+                docs: "Exports the selected feature as GPX-file",
+                args: [],
+                needsUrls: [],
+
+                constr(
+                    state: SpecialVisualizationState,
+                    tags: UIEventSource<Record<string, string>>,
+                    argument: string[],
+                    feature: Feature,
+                    layer: LayerConfig
+                ) {
+                    if (feature.geometry.type !== "LineString") {
+                        return undefined
+                    }
+                    const t = Translations.t.general.download
+
+                    return new SvelteUIElement(ExportFeatureButton, {
+                        tags,
+                        feature,
+                        layer,
+                        mimetype: "{gpx=application/gpx+xml}",
+                        extension: "gpx",
+                        construct: (feature: Feature<LineString>, title: string) =>
+                            GeoOperations.toGpx(feature, title),
+                        helpertext: t.downloadGpxHelper,
+                        maintext: t.downloadFeatureAsGpx,
+                    })
+                },
+            },
             new UploadToOsmViz(),
             new MultiApplyViz(),
             new AddNoteCommentViz(),
@@ -692,17 +718,14 @@ export default class SpecialVisualizations {
                     if (args.length > 0) {
                         imagePrefixes = [].concat(...args.map((a) => a.split(",")))
                     }
-                    return new ImageCarousel(
-                        AllImageProviders.LoadImagesFor(tags, imagePrefixes),
-                        tags,
-                        state
-                    )
+                    const images = AllImageProviders.LoadImagesFor(tags, imagePrefixes)
+                    return new SvelteUIElement(ImageCarousel, { state, tags, images })
                 },
             },
             {
                 funcName: "image_upload",
                 docs: "Creates a button where a user can upload an image to IMGUR",
-                needsUrls: [Imgur.apiUrl],
+                needsUrls: [Imgur.apiUrl, ...Imgur.supportingUrls],
                 args: [
                     {
                         name: "image-key",
@@ -714,15 +737,22 @@ export default class SpecialVisualizations {
                         doc: "The text to show on the button",
                         required: false,
                     },
+                    {
+                        name: "disable_blur",
+                        doc: "If set to 'true' or 'yes', then face blurring will be disabled. To be used sparingly",
+                        required: false,
+                    },
                 ],
                 constr: (state, tags, args) => {
                     const targetKey = args[0] === "" ? undefined : args[0]
+                    const noBlur = args[3]?.toLowerCase()?.trim()
                     return new SvelteUIElement(UploadImage, {
                         state,
                         tags,
                         targetKey,
                         labelText: args[1],
                         image: args[2],
+                        noBlur: noBlur === "true" || noBlur === "yes",
                     })
                 },
             },
@@ -970,7 +1000,7 @@ export default class SpecialVisualizations {
                                     return undefined
                                 }
                                 const allUnits: Unit[] = [].concat(
-                                    ...(state?.layout?.layers?.map((lyr) => lyr.units) ?? [])
+                                    ...(state?.theme?.layers?.map((lyr) => lyr.units) ?? [])
                                 )
                                 const unit = allUnits.filter((unit) =>
                                     unit.isApplicableToKey(key)
@@ -989,31 +1019,19 @@ export default class SpecialVisualizations {
                 docs: "Exports the selected feature as GeoJson-file",
                 args: [],
 
-                constr: (state, tagSource, tagsSource, feature, layer) => {
+                constr: (state, tags, args, feature, layer) => {
                     const t = Translations.t.general.download
-
-                    return new SubtleButton(
-                        new SvelteUIElement(ArrowDownTray),
-                        new Combine([
-                            t.downloadFeatureAsGeojson.SetClass("font-bold text-lg"),
-                            t.downloadGeoJsonHelper.SetClass("subtle"),
-                        ]).SetClass("flex flex-col")
-                    )
-                        .onClick(() => {
-                            console.log("Exporting as Geojson")
-                            const tags = tagSource.data
-                            const title =
-                                layer?.title?.GetRenderValue(tags)?.Subs(tags)?.txt ?? "geojson"
-                            const data = JSON.stringify(feature, null, "  ")
-                            Utils.offerContentsAsDownloadableFile(
-                                data,
-                                title + "_mapcomplete_export.geojson",
-                                {
-                                    mimetype: "application/vnd.geo+json",
-                                }
-                            )
-                        })
-                        .SetClass("w-full")
+                    return new SvelteUIElement(ExportFeatureButton, {
+                        tags,
+                        feature,
+                        layer,
+                        mimetype: "application/vnd.geo+json",
+                        extension: "geojson",
+                        construct: (feature: Feature<LineString>) =>
+                            JSON.stringify(feature, null, "  "),
+                        maintext: t.downloadFeatureAsGeojson,
+                        helpertext: t.downloadGeoJsonHelper,
+                    })
                 },
             },
             {
@@ -1083,8 +1101,11 @@ export default class SpecialVisualizations {
                                     comments
                                         .filter((c) => c.text !== "")
                                         .map(
-                                            (c, i) =>
-                                                new NoteCommentElement(c, state, i, comments.length)
+                                            (comment) =>
+                                                new SvelteUIElement(NoteCommentElement, {
+                                                    comment,
+                                                    state,
+                                                })
                                         )
                                 ).SetClass("flex flex-col")
                             })
@@ -1100,13 +1121,12 @@ export default class SpecialVisualizations {
                         defaultValue: "id",
                     },
                 ],
-                needsUrls: [Imgur.apiUrl],
+                needsUrls: [Imgur.apiUrl, ...Imgur.supportingUrls],
 
-                constr: (state, tags, args) => {
+                constr: (state, tags, args, feature, layer) => {
                     const id = tags.data[args[0] ?? "id"]
                     tags = state.featureProperties.getStore(id)
-                    console.log("Id is", id)
-                    return new SvelteUIElement(UploadImage, { state, tags })
+                    return new SvelteUIElement(UploadImage, { state, tags, layer, feature })
                 },
             },
             {
@@ -1125,7 +1145,7 @@ export default class SpecialVisualizations {
                 ) =>
                     new VariableUiElement(
                         tagsSource.map((tags) => {
-                            if (state.layout === undefined) {
+                            if (state.theme === undefined) {
                                 return "<feature title>"
                             }
                             const title = layer?.title?.GetRenderValue(tags)
@@ -1276,7 +1296,7 @@ export default class SpecialVisualizations {
 
                 constr: (state) => {
                     return new Combine(
-                        state.layout.layers
+                        state.theme.layers
                             .filter(
                                 (l) =>
                                     l.name !== null &&
@@ -1363,20 +1383,14 @@ export default class SpecialVisualizations {
                     state: SpecialVisualizationState,
                     tagSource: UIEventSource<Record<string, string>>,
                     args: string[]
-                ): BaseUIElement {
+                ): SvelteUIElement {
                     let [text, href, classnames, download, ariaLabel, icon] = args
                     if (download === "") {
                         download = undefined
                     }
                     const newTab = download === undefined && !href.startsWith("#")
                     const textStore = tagSource.map((tags) => Utils.SubstituteKeys(text, tags))
-                    const hrefStore = tagSource.map(
-                        (tags) =>
-                            Utils.SubstituteKeys(href, tags).replaceAll(
-                                / /g,
-                                "%20"
-                            ) /* Chromium based browsers eat the spaces */
-                    )
+                    const hrefStore = tagSource.map((tags) => Utils.SubstituteKeys(href, tags))
                     return new SvelteUIElement(DynLink, {
                         text: textStore,
                         href: hrefStore,
@@ -1513,52 +1527,13 @@ export default class SpecialVisualizations {
 
                 constr(
                     state: SpecialVisualizationState,
-                    tagSource: UIEventSource<Record<string, string>>,
+                    tags: UIEventSource<Record<string, string>>,
                     argument: string[],
                     feature: Feature,
                     layer: LayerConfig
                 ): BaseUIElement {
                     const key = argument[0]
-                    const validator = new FediverseValidator()
-                    return new VariableUiElement(
-                        tagSource
-                            .map((tags) => tags[key])
-                            .map((fediAccount) => {
-                                fediAccount = validator.reformat(fediAccount)
-                                const [_, username, host] = fediAccount.match(
-                                    FediverseValidator.usernameAtServer
-                                )
-
-                                const normalLink = new SvelteUIElement(Link, {
-                                    text: fediAccount,
-                                    href: "https://" + host + "/@" + username,
-                                    newTab: true,
-                                })
-
-                                const loggedInContributorMastodon =
-                                    state.userRelatedState?.preferencesAsTags?.data?.[
-                                        "_mastodon_link"
-                                    ]
-                                console.log(
-                                    "LoggedinContributorMastodon",
-                                    loggedInContributorMastodon
-                                )
-                                if (!loggedInContributorMastodon) {
-                                    return normalLink
-                                }
-                                const homeUrl = new URL(loggedInContributorMastodon)
-                                const homeHost = homeUrl.protocol + "//" + homeUrl.hostname
-
-                                return new Combine([
-                                    normalLink,
-                                    new SvelteUIElement(Link, {
-                                        href: homeHost + "/" + fediAccount,
-                                        text: Translations.t.validation.fediverse.onYourServer,
-                                        newTab: true,
-                                    }).SetClass("button"),
-                                ])
-                            })
-                    )
+                    return new SvelteUIElement(FediverseLink, { key, tags, state })
                 },
             },
             {
@@ -2001,72 +1976,13 @@ export default class SpecialVisualizations {
                     layer: LayerConfig
                 ): BaseUIElement {
                     const translation = tagSource.map((tags) => {
-                        const presets = state.layout.getMatchingLayer(tags)?.presets
-                        const matchingPresets = presets
-                            .filter((pr) => pr.description !== undefined)
-                            .filter((pr) => new And(pr.tags).matchesProperties(tags))
-                        let mostShadowed = matchingPresets[0]
-                        let mostShadowedTags = new And(mostShadowed.tags)
-                        for (let i = 1; i < matchingPresets.length; i++) {
-                            const pr = matchingPresets[i]
-                            const prTags = new And(pr.tags)
-                            if (mostShadowedTags.shadows(prTags)) {
-                                if (!prTags.shadows(mostShadowedTags)) {
-                                    // We have a new most shadowed item
-                                    mostShadowed = pr
-                                    mostShadowedTags = prTags
-                                } else {
-                                    // Both shadow each other: abort
-                                    mostShadowed = undefined
-                                    break
-                                }
-                            } else if (!prTags.shadows(mostShadowedTags)) {
-                                // The new contender does not win, but it might defeat the current contender
-                                mostShadowed = undefined
-                                break
-                            }
-                        }
-                        return mostShadowed?.description ?? matchingPresets[0]?.description
+                        const layer = state.theme.getMatchingLayer(tags)
+                        return layer?.getMostMatchingPreset(tags)?.description
                     })
                     return new VariableUiElement(translation)
                 },
             },
             {
-                funcName: "preset_type_select",
-                docs: "An editable tag rendering which allows to change the type",
-                args: [],
-                constr(
-                    state: SpecialVisualizationState,
-                    tags: UIEventSource<Record<string, string>>,
-                    argument: string[],
-                    selectedElement: Feature,
-                    layer: LayerConfig
-                ): SvelteUIElement {
-                    const t = Translations.t.preset_type
-                    const question: QuestionableTagRenderingConfigJson = {
-                        id: layer.id + "-type",
-                        question: t.question.translations,
-                        mappings: layer.presets.map((pr) => {
-                            return {
-                                if: new And(pr.tags).asJson(),
-                                then: (pr.description ? t.typeDescription : t.typeTitle).Subs({
-                                    title: pr.title,
-                                    description: pr.description,
-                                }).translations,
-                            }
-                        }),
-                    }
-                    const config = new TagRenderingConfig(question)
-                    return new SvelteUIElement(TagRenderingEditable, {
-                        config,
-                        tags,
-                        selectedElement,
-                        state,
-                        layer,
-                    })
-                },
-            },
-            {
                 funcName: "pending_changes",
                 docs: "A module showing the pending changes, with the option to clear the pending changes",
                 args: [],
@@ -2149,15 +2065,14 @@ export default class SpecialVisualizations {
                     const question: QuestionableTagRenderingConfigJson = {
                         id: layer.id + "-type",
                         question: t.question.translations,
-                        mappings: layer.presets.map((pr) => {
-                            return {
-                                if: new And(pr.tags).asJson(),
-                                then: (pr.description ? t.typeDescription : t.typeTitle).Subs({
-                                    title: pr.title,
-                                    description: pr.description,
-                                }).translations,
-                            }
-                        }),
+                        mappings: layer.presets.map((pr) => ({
+                            if: new And(pr.tags).asJson(),
+                            icon: "auto",
+                            then: (pr.description ? t.typeDescription : t.typeTitle).Subs({
+                                title: pr.title,
+                                description: pr.description,
+                            }).translations,
+                        })),
                     }
                     const config = new TagRenderingConfig(question)
                     return new SvelteUIElement(TagRenderingEditable, {
@@ -2170,9 +2085,15 @@ export default class SpecialVisualizations {
                 },
             },
             {
-                funcName: "pending_changes",
-                docs: "A module showing the pending changes, with the option to clear the pending changes",
-                args: [],
+                funcName: "clear_all",
+                docs: "Clears all user preferences",
+                needsUrls: [],
+                args: [
+                    {
+                        name: "text",
+                        doc: "Text to show on the button",
+                    },
+                ],
                 constr(
                     state: SpecialVisualizationState,
                     tagSource: UIEventSource<Record<string, string>>,
@@ -2180,60 +2101,9 @@ export default class SpecialVisualizations {
                     feature: Feature,
                     layer: LayerConfig
                 ): BaseUIElement {
-                    return new SvelteUIElement(PendingChangesIndicator, { state, compact: false })
-                },
-            },
-            {
-                funcName: "clear_caches",
-                docs: "A button which clears the locally downloaded data and the service worker. Login status etc will be kept",
-                args: [
-                    {
-                        name: "text",
-                        required: true,
-                        doc: "The text to show on the button",
-                    },
-                ],
-                constr(
-                    state: SpecialVisualizationState,
-                    tagSource: UIEventSource<Record<string, string>>,
-                    argument: string[],
-                    feature: Feature,
-                    layer: LayerConfig
-                ): SvelteUIElement {
-                    return new SvelteUIElement<any, any, any>(ClearCaches, {
-                        msg: argument[0] ?? "Clear local caches",
-                    })
-                },
-            },
-            {
-                funcName: "group",
-                docs: "A collapsable group (accordion)",
-                args: [
-                    {
-                        name: "header",
-                        doc: "The _identifier_ of a single tagRendering. This will be used as header",
-                    },
-                    {
-                        name: "labels",
-                        doc: "A `;`-separated list of either identifiers or label names. All tagRenderings matching this value will be shown in the accordion",
-                    },
-                ],
-                constr(
-                    state: SpecialVisualizationState,
-                    tags: UIEventSource<Record<string, string>>,
-                    argument: string[],
-                    selectedElement: Feature,
-                    layer: LayerConfig
-                ): SvelteUIElement {
-                    const [header, labelsStr] = argument
-                    const labels = labelsStr.split(";").map((x) => x.trim())
-                    return new SvelteUIElement<any, any, any>(GroupedView, {
-                        state,
-                        tags,
-                        selectedElement,
-                        layer,
-                        header,
-                        labels,
+                    const text = argument[0]
+                    return new SubtleButton(undefined, text).onClick(() => {
+                        state.osmConnection.preferencesHandler.ClearPreferences()
                     })
                 },
             },
@@ -2245,6 +2115,7 @@ export default class SpecialVisualizations {
         const invalid = specialVisualizations
             .map((sp, i) => ({ sp, i }))
             .filter((sp) => sp.sp.funcName === undefined || !sp.sp.funcName.match(regex))
+
         if (invalid.length > 0) {
             throw (
                 "Invalid special visualisation found: funcName is undefined or doesn't match " +
@@ -2252,6 +2123,16 @@ export default class SpecialVisualizations {
                 invalid.map((sp) => sp.i).join(", ") +
                 '. Did you perhaps type \n  funcName: "funcname" // type declaration uses COLON\ninstead of:\n  funcName = "funcName" // value definition uses EQUAL'
             )
+        }
+
+        const allNames = specialVisualizations.map((f) => f.funcName)
+        const seen = new Set<string>()
+        for (let name of allNames) {
+            name = name.toLowerCase()
+            if (seen.has(name)) {
+                throw "Invalid special visualisations: detected a duplicate name: " + name
+            }
+            seen.add(name)
         }
 
         return specialVisualizations

@@ -1,5 +1,6 @@
 import { Store, UIEventSource } from "../UIEventSource"
 import { AvailableRasterLayers, RasterLayerPolygon } from "../../Models/RasterLayers"
+import { eliCategory } from "../../Models/RasterLayerProperties"
 
 /**
  * Selects the appropriate raster layer as background for the given query parameter, theme setting, user preference or default value.
@@ -29,10 +30,7 @@ export class PreferredRasterLayerSelector {
         const self = this
 
         this._rasterLayerSetting.addCallbackD((layer) => {
-            if (layer.properties.id !== this._queryParameter.data) {
-                this._queryParameter.setData(undefined)
-                return true
-            }
+            this._queryParameter.setData(layer.properties.id)
         })
 
         this._queryParameter.addCallbackAndRunD((_) => {
@@ -63,7 +61,9 @@ export class PreferredRasterLayerSelector {
      */
     private async updateLayer() {
         // What is the ID of the layer we have to (try to) load?
-        const targetLayerId = (this._queryParameter.data ?? this._preferredBackgroundLayer.data)?.toLowerCase()
+        const targetLayerId = (this._queryParameter.data ?? this._preferredBackgroundLayer.data)
+            ?.toLowerCase()
+            ?.toLowerCase()
         if (targetLayerId === undefined || targetLayerId === "default") {
             return
         }
@@ -75,8 +75,7 @@ export class PreferredRasterLayerSelector {
             return
         }
         await AvailableRasterLayers.editorLayerIndex()
-        const isCategory =
-            targetLayerId === "photo" || targetLayerId === "osmbasedmap" || targetLayerId === "map"
+        const isCategory = eliCategory.indexOf(<any>targetLayerId) >= 0
         const available = this._availableLayers.store.data
         const foundLayer = isCategory
             ? available.find((l) => l.properties.category === targetLayerId)

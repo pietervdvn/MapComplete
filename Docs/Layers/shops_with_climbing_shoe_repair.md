@@ -2,19 +2,11 @@
 
 # shops_with_climbing_shoe_repair
 
-
 This layer is based on [shops](../Layers/shops.md)
 
 A shop
 
-
-
-
-
-
  - This layer is shown at zoomlevel **8** and higher
-
-
 
 ## Table of contents
 
@@ -25,6 +17,7 @@ A shop
   - [images](#images)
   - [reviews](#reviews)
   - [shops-name](#shops-name)
+  - [shop_types](#shop_types)
   - [brand](#brand)
   - [second_hand](#second_hand)
   - [opening_hours](#opening_hours)
@@ -42,9 +35,18 @@ A shop
   - [bike_second_hand](#bike_second_hand)
   - [repairs_bikes](#repairs_bikes)
   - [bicycle_rental](#bicycle_rental)
+  - [bicycle-types](#bicycle-types)
+  - [rental-capacity-city_bike](#rental-capacity-city_bike)
+  - [rental-capacity-ebike](#rental-capacity-ebike)
+  - [rental-capacity-kid_bike](#rental-capacity-kid_bike)
+  - [rental-capacity-bmx](#rental-capacity-bmx)
+  - [rental-capacity-mtb](#rental-capacity-mtb)
+  - [rental-capacity-bicycle_pannier](#rental-capacity-bicycle_pannier)
+  - [rental-capacity-tandem_bicycle](#rental-capacity-tandem_bicycle)
   - [bike_pump_service](#bike_pump_service)
   - [bike_repair_tools](#bike_repair_tools)
   - [bike_wash](#bike_wash)
+  - [bike_cleaning-service_bicycle_cleaning_charge](#bike_cleaning-service_bicycle_cleaning_charge)
   - [internet](#internet)
   - [internet-fee](#internet-fee)
   - [internet-ssid](#internet-ssid)
@@ -61,11 +63,7 @@ A shop
 
 ## Themes using this layer
 
-
-
  - [climbing](https://mapcomplete.org/climbing)
-
-
 
 ## Basic tags for this layer
 
@@ -84,6 +82,7 @@ Elements must match **all** of the following expressions:
 -----|-----|----- |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:climbing_shoes:repair#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/service%3Aclimbing_shoes%3Arepair/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [service:climbing_shoes:repair](https://wiki.openstreetmap.org/wiki/Key:service:climbing_shoes:repair) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:climbing_shoes:repair%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:climbing_shoes:repair%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/name#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/name/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [name](https://wiki.openstreetmap.org/wiki/Key:name) | [string](../SpecialInputElements.md#string) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/shop#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/shop/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [shop](https://wiki.openstreetmap.org/wiki/Key:shop) | [string](../SpecialInputElements.md#string) | [bicycle_rental](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbicycle_rental) [agrarian](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dagrarian) [alcohol](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dalcohol) [anime](https://wiki.openstreetmap.org/wiki/Tag:shop%3Danime) [antiques](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dantiques) [appliance](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dappliance) [art](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dart) [baby_goods](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbaby_goods) [bag](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbag) [bakery](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbakery) [bathroom_furnishing](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbathroom_furnishing) [beauty](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbeauty) [bed](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbed) [beverages](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbeverages) [bicycle](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbicycle) [boat](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dboat) [bookmaker](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbookmaker) [books](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbooks) [brewing_supplies](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbrewing_supplies) [butcher](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbutcher) [camera](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcamera) [candles](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcandles) [cannabis](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcannabis) [car](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcar) [car_parts](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcar_parts) [car_repair](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcar_repair) [caravan](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcaravan) [carpet](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcarpet) [catalogue](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcatalogue) [charity](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcharity) [cheese](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcheese) [chemist](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dchemist) [chocolate](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dchocolate) [clothes](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dclothes) [coffee](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcoffee) [collector](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcollector) [computer](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcomputer) [confectionery](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dconfectionery) [convenience](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dconvenience) [copyshop](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcopyshop) [cosmetics](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcosmetics) [country_store](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcountry_store) [craft](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcraft) [curtain](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcurtain) [dairy](https://wiki.openstreetmap.org/wiki/Tag:shop%3Ddairy) [deli](https://wiki.openstreetmap.org/wiki/Tag:shop%3Ddeli) [department_store](https://wiki.openstreetmap.org/wiki/Tag:shop%3Ddepartment_store) [doityourself](https://wiki.openstreetmap.org/wiki/Tag:shop%3Ddoityourself) [doors](https://wiki.openstreetmap.org/wiki/Tag:shop%3Ddoors) [dry_cleaning](https://wiki.openstreetmap.org/wiki/Tag:shop%3Ddry_cleaning) [e-cigarette](https://wiki.openstreetmap.org/wiki/Tag:shop%3De-cigarette) [electrical](https://wiki.openstreetmap.org/wiki/Tag:shop%3Delectrical) [electronics](https://wiki.openstreetmap.org/wiki/Tag:shop%3Delectronics) [erotic](https://wiki.openstreetmap.org/wiki/Tag:shop%3Derotic) [fabric](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dfabric) [farm](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dfarm) [fashion_accessories](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dfashion_accessories) [fireplace](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dfireplace) [fishing](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dfishing) [flooring](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dflooring) [florist](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dflorist) [frame](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dframe) [frozen_food](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dfrozen_food) [fuel](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dfuel) [funeral_directors](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dfuneral_directors) [furniture](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dfurniture) [games](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dgames) [garden_centre](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dgarden_centre) [gas](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dgas) [general](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dgeneral) [gift](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dgift) [greengrocer](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dgreengrocer) [hairdresser](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhairdresser) [hairdresser_supply](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhairdresser_supply) [hardware](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhardware) [health_food](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhealth_food) [hearing_aids](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhearing_aids) [herbalist](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dherbalist) [hifi](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhifi) [honey](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhoney) [household_linen](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhousehold_linen) [houseware](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhouseware) [hunting](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhunting) [interior_decoration](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dinterior_decoration) [jewelry](https://wiki.openstreetmap.org/wiki/Tag:shop%3Djewelry) [kiosk](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dkiosk) [kitchen](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dkitchen) [laundry](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dlaundry) [leather](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dleather) [lighting](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dlighting) [locksmith](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dlocksmith) [lottery](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dlottery) [mall](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmall) [massage](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmassage) [medical_supply](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmedical_supply) [military_surplus](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmilitary_surplus) [mobile_phone](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmobile_phone) [model](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmodel) [money_lender](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmoney_lender) [motorcycle](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmotorcycle) [motorcycle_repair](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmotorcycle_repair) [music](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmusic) [musical_instrument](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmusical_instrument) [newsagent](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dnewsagent) [nutrition_supplements](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dnutrition_supplements) [nuts](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dnuts) [optician](https://wiki.openstreetmap.org/wiki/Tag:shop%3Doptician) [outdoor](https://wiki.openstreetmap.org/wiki/Tag:shop%3Doutdoor) [outpost](https://wiki.openstreetmap.org/wiki/Tag:shop%3Doutpost) [paint](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dpaint) [party](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dparty) [pasta](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dpasta) [pastry](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dpastry) [pawnbroker](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dpawnbroker) [perfumery](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dperfumery) [pet](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dpet) [pet_grooming](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dpet_grooming) [photo](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dphoto) [pottery](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dpottery) [printer_ink](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dprinter_ink) [psychic](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dpsychic) [pyrotechnics](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dpyrotechnics) [radiotechnics](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dradiotechnics) [religion](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dreligion) [rental](https://wiki.openstreetmap.org/wiki/Tag:shop%3Drental) [repair](https://wiki.openstreetmap.org/wiki/Tag:shop%3Drepair) [rice](https://wiki.openstreetmap.org/wiki/Tag:shop%3Drice) [scuba_diving](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dscuba_diving) [seafood](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dseafood) [second_hand](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsecond_hand) [sewing](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsewing) [shoe_repair](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dshoe_repair) [shoes](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dshoes) [spices](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dspices) [sports](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsports) [stationery](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dstationery) [storage_rental](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dstorage_rental) [supermarket](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsupermarket) [swimming_pool](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dswimming_pool) [tailor](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtailor) [tattoo](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtattoo) [tea](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtea) [telecommunication](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtelecommunication) [ticket](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dticket) [tiles](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtiles) [tobacco](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtobacco) [tool_hire](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtool_hire) [toys](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtoys) [trade](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtrade) [travel_agency](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtravel_agency) [trophy](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtrophy) [tyres](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtyres) [vacuum_cleaner](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dvacuum_cleaner) [variety_store](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dvariety_store) [video](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dvideo) [video_games](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dvideo_games) [watches](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dwatches) [water](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dwater) [water_sports](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dwater_sports) [weapons](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dweapons) [wholesale](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dwholesale) [wigs](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dwigs) [window_blind](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dwindow_blind) [wine](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dwine) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/brand#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/brand/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [brand](https://wiki.openstreetmap.org/wiki/Key:brand) | [string](../SpecialInputElements.md#string) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/second_hand#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/second_hand/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [second_hand](https://wiki.openstreetmap.org/wiki/Key:second_hand) | Multiple choice | [only](https://wiki.openstreetmap.org/wiki/Tag:second_hand%3Donly) [yes](https://wiki.openstreetmap.org/wiki/Tag:second_hand%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:second_hand%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/opening_hours#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/opening_hours/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) |  |
@@ -96,105 +95,252 @@ Elements must match **all** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:bicycle:second_hand#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/service%3Abicycle%3Asecond_hand/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [service:bicycle:second_hand](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:second_hand) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:second_hand%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:second_hand%3Dno) [only](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:second_hand%3Donly) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:bicycle:repair#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/service%3Abicycle%3Arepair/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [service:bicycle:repair](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:repair) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dno) [only_sold](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Donly_sold) [brand](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dbrand) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:bicycle:rental#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/service%3Abicycle%3Arental/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [service:bicycle:rental](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:rental) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dno) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/rental#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/rental/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [rental](https://wiki.openstreetmap.org/wiki/Key:rental) | [string](../SpecialInputElements.md#string) | [city_bike](https://wiki.openstreetmap.org/wiki/Tag:rental%3Dcity_bike) [ebike](https://wiki.openstreetmap.org/wiki/Tag:rental%3Debike) [bmx](https://wiki.openstreetmap.org/wiki/Tag:rental%3Dbmx) [mtb](https://wiki.openstreetmap.org/wiki/Tag:rental%3Dmtb) [kid_bike](https://wiki.openstreetmap.org/wiki/Tag:rental%3Dkid_bike) [tandem](https://wiki.openstreetmap.org/wiki/Tag:rental%3Dtandem) [racebike](https://wiki.openstreetmap.org/wiki/Tag:rental%3Dracebike) [bike_helmet](https://wiki.openstreetmap.org/wiki/Tag:rental%3Dbike_helmet) [cargo_bike](https://wiki.openstreetmap.org/wiki/Tag:rental%3Dcargo_bike) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/capacity:city_bike#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/capacity%3Acity_bike/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [capacity:city_bike](https://wiki.openstreetmap.org/wiki/Key:capacity:city_bike) | [pnat](../SpecialInputElements.md#pnat) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/capacity:ebike#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/capacity%3Aebike/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [capacity:ebike](https://wiki.openstreetmap.org/wiki/Key:capacity:ebike) | [pnat](../SpecialInputElements.md#pnat) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/capacity:kid_bike#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/capacity%3Akid_bike/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [capacity:kid_bike](https://wiki.openstreetmap.org/wiki/Key:capacity:kid_bike) | [pnat](../SpecialInputElements.md#pnat) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/capacity:bmx#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/capacity%3Abmx/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [capacity:bmx](https://wiki.openstreetmap.org/wiki/Key:capacity:bmx) | [pnat](../SpecialInputElements.md#pnat) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/capacity:mtb#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/capacity%3Amtb/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [capacity:mtb](https://wiki.openstreetmap.org/wiki/Key:capacity:mtb) | [pnat](../SpecialInputElements.md#pnat) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/capacity:bicycle_pannier#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/capacity%3Abicycle_pannier/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [capacity:bicycle_pannier](https://wiki.openstreetmap.org/wiki/Key:capacity:bicycle_pannier) | [pnat](../SpecialInputElements.md#pnat) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/capacity:tandem_bicycle#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/capacity%3Atandem_bicycle/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [capacity:tandem_bicycle](https://wiki.openstreetmap.org/wiki/Key:capacity:tandem_bicycle) | [pnat](../SpecialInputElements.md#pnat) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:bicycle:pump#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/service%3Abicycle%3Apump/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [service:bicycle:pump](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dno) [separate](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dseparate) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:bicycle:diy#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/service%3Abicycle%3Adiy/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [service:bicycle:diy](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:diy) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Dno) [only_sold](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Donly_sold) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:bicycle:cleaning#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/service%3Abicycle%3Acleaning/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [service:bicycle:cleaning](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning%3Dyes) [diy](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning%3Ddiy) [no](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning%3Dno) |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/internet_access#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/internet_access/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [internet_access](https://wiki.openstreetmap.org/wiki/Key:internet_access) | Multiple choice | [wlan](https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwlan) [no](https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dno) [terminal](https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dterminal) [wired](https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwired) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:bicycle:cleaning:charge#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/service%3Abicycle%3Acleaning%3Acharge/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [service:bicycle:cleaning:charge](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning:charge) | [string](../SpecialInputElements.md#string) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/internet_access#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/internet_access/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [internet_access](https://wiki.openstreetmap.org/wiki/Key:internet_access) | Multiple choice | [wlan](https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwlan) [no](https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dno) [terminal](https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dterminal) [wired](https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwired) [terminal;wifi](https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dterminal;wifi) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/internet_access:fee#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/internet_access%3Afee/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [internet_access:fee](https://wiki.openstreetmap.org/wiki/Key:internet_access:fee) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dno) [customers](https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dcustomers) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/internet_access:ssid#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/internet_access%3Assid/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [internet_access:ssid](https://wiki.openstreetmap.org/wiki/Key:internet_access:ssid) | [string](../SpecialInputElements.md#string) | [Telekom](https://wiki.openstreetmap.org/wiki/Tag:internet_access:ssid%3DTelekom) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/organic#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/organic/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [organic](https://wiki.openstreetmap.org/wiki/Key:organic) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:organic%3Dyes) [only](https://wiki.openstreetmap.org/wiki/Tag:organic%3Donly) [no](https://wiki.openstreetmap.org/wiki/Tag:organic%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/diet:sugar_free#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/diet%3Asugar_free/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [diet:sugar_free](https://wiki.openstreetmap.org/wiki/Key:diet:sugar_free) | Multiple choice | [only](https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Donly) [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/diet:gluten_free#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/diet%3Agluten_free/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [diet:gluten_free](https://wiki.openstreetmap.org/wiki/Key:diet:gluten_free) | Multiple choice | [only](https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Donly) [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/diet:lactose_free#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/diet%3Alactose_free/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [diet:lactose_free](https://wiki.openstreetmap.org/wiki/Key:diet:lactose_free) | Multiple choice | [only](https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Donly) [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dno) |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/description#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/description/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [description](https://wiki.openstreetmap.org/wiki/Key:description) | [string](../SpecialInputElements.md#string) |  |
-
-
-
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/description#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/description/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [description](https://wiki.openstreetmap.org/wiki/Key:description) | [text](../SpecialInputElements.md#text) |  |
 
 ### repairs_climbing_shoes
 
 The question is `Does this shoe repair shop repair climbing shoes?`
 
-
-
  -  *This shop repairs climbing shoes* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_shoes:repair' target='_blank'>service:climbing_shoes:repair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_shoes:repair%3Dyes' target='_blank'>yes</a>
  -  *This shop does not repair climbing shoes* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:climbing_shoes:repair' target='_blank'>service:climbing_shoes:repair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:climbing_shoes:repair%3Dno' target='_blank'>no</a>
-
-
-
-
 
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
 
-
-
-
 ### reviews
 Shows the reviews module (including the possibility to leave a review)
 _This tagrendering has no question and is thus read-only_
 *{create_review()}{list_reviews()}*
-
-
-
 
 ### shops-name
 
 The question is `What is the name of this shop?`
 *This shop is called <i>{name}</i>* is shown if `name` is set
 
+### shop_types
 
+The question is `What kind of shop is this?`
+*This is a {shop}* is shown if `shop` is set
 
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/bicycle_rental.svg' style='width: 3rem; height: 3rem'> *Bicycle rental shop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbicycle_rental' target='_blank'>bicycle_rental</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/fas-tractor.svg' style='width: 3rem; height: 3rem'> *Farm Supply Shop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dagrarian' target='_blank'>agrarian</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/fas-wine-bottle.svg' style='width: 3rem; height: 3rem'> *Liquor Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dalcohol' target='_blank'>alcohol</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/fas-dragon.svg' style='width: 3rem; height: 3rem'> *Anime / Manga Shop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Danime' target='_blank'>anime</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-furniture.svg' style='width: 3rem; height: 3rem'> *Antique Shop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dantiques' target='_blank'>antiques</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-laundry.svg' style='width: 3rem; height: 3rem'> *Appliance Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dappliance' target='_blank'>appliance</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/maki-shop.svg' style='width: 3rem; height: 3rem'> *Art Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dart' target='_blank'>art</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/fas-baby-carriage.svg' style='width: 3rem; height: 3rem'> *Baby Goods Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbaby_goods' target='_blank'>baby_goods</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/fas-suitcase-rolling.svg' style='width: 3rem; height: 3rem'> *Bag/Luggage Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbag' target='_blank'>bag</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/maki-bakery.svg' style='width: 3rem; height: 3rem'> *Bakery* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbakery' target='_blank'>bakery</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/fas-bath.svg' style='width: 3rem; height: 3rem'> *Bathroom Furnishing Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbathroom_furnishing' target='_blank'>bathroom_furnishing</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-lipstick.svg' style='width: 3rem; height: 3rem'> *Beauty Shop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbeauty' target='_blank'>beauty</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/maki-lodging.svg' style='width: 3rem; height: 3rem'> *Bedding/Mattress Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbed' target='_blank'>bed</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-bottles.svg' style='width: 3rem; height: 3rem'> *Beverage Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbeverages' target='_blank'>beverages</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/maki-bicycle.svg' style='width: 3rem; height: 3rem'> *Bicycle Shop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbicycle' target='_blank'>bicycle</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-boat.svg' style='width: 3rem; height: 3rem'> *Boat Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dboat' target='_blank'>boat</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-money_hand.svg' style='width: 3rem; height: 3rem'> *Bookmaker* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbookmaker' target='_blank'>bookmaker</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/fas-book.svg' style='width: 3rem; height: 3rem'> *Bookstore* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbooks' target='_blank'>books</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-storage_fermenter.svg' style='width: 3rem; height: 3rem'> *Brewing Supply Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbrewing_supplies' target='_blank'>brewing_supplies</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-cleaver.svg' style='width: 3rem; height: 3rem'> *Butcher* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbutcher' target='_blank'>butcher</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/fas-camera-retro.svg' style='width: 3rem; height: 3rem'> *Camera Equipment Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcamera' target='_blank'>camera</a>
+ -  *Candle Shop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcandles' target='_blank'>candles</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/fas-cannabis.svg' style='width: 3rem; height: 3rem'> *Cannabis Shop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcannabis' target='_blank'>cannabis</a>
+ -  *Car Dealership* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcar' target='_blank'>car</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/fas-car-battery.svg' style='width: 3rem; height: 3rem'> *Car Parts Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcar_parts' target='_blank'>car_parts</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/maki-car-repair.svg' style='width: 3rem; height: 3rem'> *Car Repair Shop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcar_repair' target='_blank'>car_repair</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-camper_trailer.svg' style='width: 3rem; height: 3rem'> *RV Dealership* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcaravan' target='_blank'>caravan</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/fas-tape.svg' style='width: 3rem; height: 3rem'> *Carpet Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcarpet' target='_blank'>carpet</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/maki-shop.svg' style='width: 3rem; height: 3rem'> *Catalog Shop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcatalogue' target='_blank'>catalogue</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/maki-shop.svg' style='width: 3rem; height: 3rem'> *Charity Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcharity' target='_blank'>charity</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/fas-cheese.svg' style='width: 3rem; height: 3rem'> *Cheese Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcheese' target='_blank'>cheese</a>
+ -  *Drugstore* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dchemist' target='_blank'>chemist</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/maki-confectionery.svg' style='width: 3rem; height: 3rem'> *Chocolate Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dchocolate' target='_blank'>chocolate</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/maki-clothing-store.svg' style='width: 3rem; height: 3rem'> *Clothing Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dclothes' target='_blank'>clothes</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-coffee.svg' style='width: 3rem; height: 3rem'> *Coffee Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcoffee' target='_blank'>coffee</a>
+ -  *Collectibles Shop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcollector' target='_blank'>collector</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/fas-laptop.svg' style='width: 3rem; height: 3rem'> *Computer Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcomputer' target='_blank'>computer</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/maki-confectionery.svg' style='width: 3rem; height: 3rem'> *Candy Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dconfectionery' target='_blank'>confectionery</a>
+ -  *Convenience Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dconvenience' target='_blank'>convenience</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/fas-print.svg' style='width: 3rem; height: 3rem'> *Copy Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcopyshop' target='_blank'>copyshop</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-lipstick.svg' style='width: 3rem; height: 3rem'> *Cosmetics Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcosmetics' target='_blank'>cosmetics</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/fas-hat-cowboy-side.svg' style='width: 3rem; height: 3rem'> *Rural Supplies Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcountry_store' target='_blank'>country_store</a>
+ -  *Arts & Crafts Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcraft' target='_blank'>craft</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-curtains.svg' style='width: 3rem; height: 3rem'> *Curtain Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcurtain' target='_blank'>curtain</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/fas-cheese.svg' style='width: 3rem; height: 3rem'> *Dairy Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Ddairy' target='_blank'>dairy</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/fas-jar.svg' style='width: 3rem; height: 3rem'> *Delicatessen* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Ddeli' target='_blank'>deli</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/maki-shop.svg' style='width: 3rem; height: 3rem'> *Department Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Ddepartment_store' target='_blank'>department_store</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-tools.svg' style='width: 3rem; height: 3rem'> *DIY Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Ddoityourself' target='_blank'>doityourself</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/fas-door-open.svg' style='width: 3rem; height: 3rem'> *Door Shop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Ddoors' target='_blank'>doors</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-clothes_hanger.svg' style='width: 3rem; height: 3rem'> *Dry Cleaner* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Ddry_cleaning' target='_blank'>dry_cleaning</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/maki-shop.svg' style='width: 3rem; height: 3rem'> *E-Cigarette Shop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3De-cigarette' target='_blank'>e-cigarette</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-power.svg' style='width: 3rem; height: 3rem'> *Electrical Equipment Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Delectrical' target='_blank'>electrical</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/fas-plug.svg' style='width: 3rem; height: 3rem'> *Electronics Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Delectronics' target='_blank'>electronics</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/maki-shop.svg' style='width: 3rem; height: 3rem'> *Erotic Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Derotic' target='_blank'>erotic</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/fas-tape.svg' style='width: 3rem; height: 3rem'> *Fabric Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dfabric' target='_blank'>fabric</a>
+ -  *Produce Stand* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dfarm' target='_blank'>farm</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-fashion_accessories.svg' style='width: 3rem; height: 3rem'> *Fashion Accessories Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dfashion_accessories' target='_blank'>fashion_accessories</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-fireplace.svg' style='width: 3rem; height: 3rem'> *Fireplace Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dfireplace' target='_blank'>fireplace</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-ice_fishing.svg' style='width: 3rem; height: 3rem'> *Fishing Shop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dfishing' target='_blank'>fishing</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-tools.svg' style='width: 3rem; height: 3rem'> *Flooring Supply Shop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dflooring' target='_blank'>flooring</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/maki-florist.svg' style='width: 3rem; height: 3rem'> *Florist* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dflorist' target='_blank'>florist</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/fas-vector-square.svg' style='width: 3rem; height: 3rem'> *Framing Shop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dframe' target='_blank'>frame</a>
+ -  *Frozen Food Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dfrozen_food' target='_blank'>frozen_food</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-propane_tank.svg' style='width: 3rem; height: 3rem'> *Fuel Shop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dfuel' target='_blank'>fuel</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/maki-cemetery.svg' style='width: 3rem; height: 3rem'> *Funeral Home* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dfuneral_directors' target='_blank'>funeral_directors</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/fas-couch.svg' style='width: 3rem; height: 3rem'> *Furniture Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dfurniture' target='_blank'>furniture</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/fas-dice.svg' style='width: 3rem; height: 3rem'> *Tabletop Game Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dgames' target='_blank'>games</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/maki-garden-centre.svg' style='width: 3rem; height: 3rem'> *Garden Center* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dgarden_centre' target='_blank'>garden_centre</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-propane_tank.svg' style='width: 3rem; height: 3rem'> *Bottled Gas Shop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dgas' target='_blank'>gas</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/maki-shop.svg' style='width: 3rem; height: 3rem'> *General Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dgeneral' target='_blank'>general</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/maki-gift.svg' style='width: 3rem; height: 3rem'> *Gift Shop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dgift' target='_blank'>gift</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/fas-carrot.svg' style='width: 3rem; height: 3rem'> *Greengrocer* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dgreengrocer' target='_blank'>greengrocer</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-beauty_salon.svg' style='width: 3rem; height: 3rem'> *Hairdresser* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhairdresser' target='_blank'>hairdresser</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-hair_care.svg' style='width: 3rem; height: 3rem'> *Hairdresser Supply Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhairdresser_supply' target='_blank'>hairdresser_supply</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-tools.svg' style='width: 3rem; height: 3rem'> *Hardware Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhardware' target='_blank'>hardware</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/maki-shop.svg' style='width: 3rem; height: 3rem'> *Health Food Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhealth_food' target='_blank'>health_food</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-hearing_aid.svg' style='width: 3rem; height: 3rem'> *Hearing Aids Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhearing_aids' target='_blank'>hearing_aids</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/fas-leaf.svg' style='width: 3rem; height: 3rem'> *Herbalist* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dherbalist' target='_blank'>herbalist</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-speaker.svg' style='width: 3rem; height: 3rem'> *Hifi Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhifi' target='_blank'>hifi</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/maki-shop.svg' style='width: 3rem; height: 3rem'> *Honey Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhoney' target='_blank'>honey</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-cloth.svg' style='width: 3rem; height: 3rem'> *Household Linen Shop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhousehold_linen' target='_blank'>household_linen</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/fas-blender.svg' style='width: 3rem; height: 3rem'> *Houseware Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhouseware' target='_blank'>houseware</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-bow_and_arrow.svg' style='width: 3rem; height: 3rem'> *Hunting Shop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhunting' target='_blank'>hunting</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/maki-shop.svg' style='width: 3rem; height: 3rem'> *Interior Decoration Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dinterior_decoration' target='_blank'>interior_decoration</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/maki-jewelry-store.svg' style='width: 3rem; height: 3rem'> *Jewelry Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Djewelry' target='_blank'>jewelry</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/fas-store.svg' style='width: 3rem; height: 3rem'> *Kiosk* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dkiosk' target='_blank'>kiosk</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-kitchen_sink.svg' style='width: 3rem; height: 3rem'> *Kitchen Design Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dkitchen' target='_blank'>kitchen</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-laundry.svg' style='width: 3rem; height: 3rem'> *Laundry* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dlaundry' target='_blank'>laundry</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-handbag.svg' style='width: 3rem; height: 3rem'> *Leather Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dleather' target='_blank'>leather</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-desk_lamp.svg' style='width: 3rem; height: 3rem'> *Lighting Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dlighting' target='_blank'>lighting</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/fas-key.svg' style='width: 3rem; height: 3rem'> *Locksmith* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dlocksmith' target='_blank'>locksmith</a>
+ -  *Lottery Shop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dlottery' target='_blank'>lottery</a>
+ -  *Mall* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmall' target='_blank'>mall</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-spa.svg' style='width: 3rem; height: 3rem'> *Massage Shop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmassage' target='_blank'>massage</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/fas-crutch.svg' style='width: 3rem; height: 3rem'> *Medical Supply Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmedical_supply' target='_blank'>medical_supply</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-military.svg' style='width: 3rem; height: 3rem'> *Military Surplus Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmilitary_surplus' target='_blank'>military_surplus</a>
+ -  *Mobile Phone Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmobile_phone' target='_blank'>mobile_phone</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/maki-shop.svg' style='width: 3rem; height: 3rem'> *Model Shop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmodel' target='_blank'>model</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-money_hand.svg' style='width: 3rem; height: 3rem'> *Money Lender* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmoney_lender' target='_blank'>money_lender</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/fas-motorcycle.svg' style='width: 3rem; height: 3rem'> *Motorcycle Dealership* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmotorcycle' target='_blank'>motorcycle</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-motorcycle_repair.svg' style='width: 3rem; height: 3rem'> *Motorcycle Repair Shop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmotorcycle_repair' target='_blank'>motorcycle_repair</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/fas-compact-disc.svg' style='width: 3rem; height: 3rem'> *Music Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmusic' target='_blank'>music</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/fas-guitar.svg' style='width: 3rem; height: 3rem'> *Musical Instrument Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmusical_instrument' target='_blank'>musical_instrument</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/fas-newspaper.svg' style='width: 3rem; height: 3rem'> *Newsstand* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dnewsagent' target='_blank'>newsagent</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/fas-pills.svg' style='width: 3rem; height: 3rem'> *Nutrition Supplements Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dnutrition_supplements' target='_blank'>nutrition_supplements</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/maki-shop.svg' style='width: 3rem; height: 3rem'> *Nuts Shop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dnuts' target='_blank'>nuts</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/maki-optician.svg' style='width: 3rem; height: 3rem'> *Optician* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Doptician' target='_blank'>optician</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-compass.svg' style='width: 3rem; height: 3rem'> *Outdoors Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Doutdoor' target='_blank'>outdoor</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/maki-shop.svg' style='width: 3rem; height: 3rem'> *Online Retailer Outpost* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Doutpost' target='_blank'>outpost</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/fas-paint-roller.svg' style='width: 3rem; height: 3rem'> *Paint Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dpaint' target='_blank'>paint</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-balloon.svg' style='width: 3rem; height: 3rem'> *Party Supply Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dparty' target='_blank'>party</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/fas-plate-wheat.svg' style='width: 3rem; height: 3rem'> *Pasta Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dpasta' target='_blank'>pasta</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/maki-bakery.svg' style='width: 3rem; height: 3rem'> *Pastry Shop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dpastry' target='_blank'>pastry</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-money_hand.svg' style='width: 3rem; height: 3rem'> *Pawnshop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dpawnbroker' target='_blank'>pawnbroker</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-perfume.svg' style='width: 3rem; height: 3rem'> *Perfume Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dperfumery' target='_blank'>perfumery</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/fas-cat.svg' style='width: 3rem; height: 3rem'> *Pet Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dpet' target='_blank'>pet</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-pet_grooming.svg' style='width: 3rem; height: 3rem'> *Pet Groomer* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dpet_grooming' target='_blank'>pet_grooming</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/fas-camera-retro.svg' style='width: 3rem; height: 3rem'> *Photography Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dphoto' target='_blank'>photo</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-vase.svg' style='width: 3rem; height: 3rem'> *Pottery Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dpottery' target='_blank'>pottery</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/fas-print.svg' style='width: 3rem; height: 3rem'> *Printer Ink Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dprinter_ink' target='_blank'>printer_ink</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-psychic.svg' style='width: 3rem; height: 3rem'> *Psychic* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dpsychic' target='_blank'>psychic</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-rocket_firework.svg' style='width: 3rem; height: 3rem'> *Fireworks Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dpyrotechnics' target='_blank'>pyrotechnics</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/fas-microchip.svg' style='width: 3rem; height: 3rem'> *Radio/Electronic Component Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dradiotechnics' target='_blank'>radiotechnics</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/maki-shop.svg' style='width: 3rem; height: 3rem'> *Religious Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dreligion' target='_blank'>religion</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/fas-dolly.svg' style='width: 3rem; height: 3rem'> *Rental Shop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Drental' target='_blank'>rental</a>
+ -  *Repair Shop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Drepair' target='_blank'>repair</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/fas-bowl-rice.svg' style='width: 3rem; height: 3rem'> *Rice Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Drice' target='_blank'>rice</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-scuba_diving.svg' style='width: 3rem; height: 3rem'> *Scuba Diving Shop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dscuba_diving' target='_blank'>scuba_diving</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-fish_cleaning.svg' style='width: 3rem; height: 3rem'> *Seafood Shop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dseafood' target='_blank'>seafood</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/maki-shop.svg' style='width: 3rem; height: 3rem'> *Thrift Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsecond_hand' target='_blank'>second_hand</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-needle_and_spool.svg' style='width: 3rem; height: 3rem'> *Sewing Supply Shop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsewing' target='_blank'>sewing</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-hammer_shoe.svg' style='width: 3rem; height: 3rem'> *Shoe Repair Shop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dshoe_repair' target='_blank'>shoe_repair</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/maki-shoe.svg' style='width: 3rem; height: 3rem'> *Shoe Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dshoes' target='_blank'>shoes</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-spice_bottle.svg' style='width: 3rem; height: 3rem'> *Spice Shop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dspices' target='_blank'>spices</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/fas-futbol.svg' style='width: 3rem; height: 3rem'> *Sporting Goods Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsports' target='_blank'>sports</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/fas-paperclip.svg' style='width: 3rem; height: 3rem'> *Stationery Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dstationery' target='_blank'>stationery</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-storage_rental.svg' style='width: 3rem; height: 3rem'> *Storage Rental* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dstorage_rental' target='_blank'>storage_rental</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/maki-grocery.svg' style='width: 3rem; height: 3rem'> *Supermarket* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsupermarket' target='_blank'>supermarket</a>
+ -  *Pool Supply Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dswimming_pool' target='_blank'>swimming_pool</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-needle_and_spool.svg' style='width: 3rem; height: 3rem'> *Tailor* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtailor' target='_blank'>tailor</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-tattoo_machine.svg' style='width: 3rem; height: 3rem'> *Tattoo Parlor* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtattoo' target='_blank'>tattoo</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/maki-teahouse.svg' style='width: 3rem; height: 3rem'> *Tea Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtea' target='_blank'>tea</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/maki-telephone.svg' style='width: 3rem; height: 3rem'> *Telecom Retail Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtelecommunication' target='_blank'>telecommunication</a>
+ -  *Ticket Seller* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dticket' target='_blank'>ticket</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-tiling.svg' style='width: 3rem; height: 3rem'> *Tile Shop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtiles' target='_blank'>tiles</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-pipe.svg' style='width: 3rem; height: 3rem'> *Tobacco Shop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtobacco' target='_blank'>tobacco</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-tools.svg' style='width: 3rem; height: 3rem'> *Tool Rental* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtool_hire' target='_blank'>tool_hire</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/fas-rocket.svg' style='width: 3rem; height: 3rem'> *Toy Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtoys' target='_blank'>toys</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-tools.svg' style='width: 3rem; height: 3rem'> *Trade Shop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtrade' target='_blank'>trade</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/fas-suitcase.svg' style='width: 3rem; height: 3rem'> *Travel Agency* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtravel_agency' target='_blank'>travel_agency</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/fas-trophy.svg' style='width: 3rem; height: 3rem'> *Trophy Shop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtrophy' target='_blank'>trophy</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-tire.svg' style='width: 3rem; height: 3rem'> *Tire Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtyres' target='_blank'>tyres</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-vacuum.svg' style='width: 3rem; height: 3rem'> *Vacuum Cleaner Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dvacuum_cleaner' target='_blank'>vacuum_cleaner</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/maki-shop.svg' style='width: 3rem; height: 3rem'> *Discount Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dvariety_store' target='_blank'>variety_store</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-movie_rental.svg' style='width: 3rem; height: 3rem'> *Video Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dvideo' target='_blank'>video</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/maki-gaming.svg' style='width: 3rem; height: 3rem'> *Video Game Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dvideo_games' target='_blank'>video_games</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/maki-watch.svg' style='width: 3rem; height: 3rem'> *Watches Shop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dwatches' target='_blank'>watches</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-water_bottle.svg' style='width: 3rem; height: 3rem'> *Drinking Water Shop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dwater' target='_blank'>water</a>
+ -  *Watersport/Swim Shop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dwater_sports' target='_blank'>water_sports</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-dagger.svg' style='width: 3rem; height: 3rem'> *Weapon Shop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dweapons' target='_blank'>weapons</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/maki-warehouse.svg' style='width: 3rem; height: 3rem'> *Wholesale Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dwholesale' target='_blank'>wholesale</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/maki-shop.svg' style='width: 3rem; height: 3rem'> *Wig Shop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dwigs' target='_blank'>wigs</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/temaki-window.svg' style='width: 3rem; height: 3rem'> *Window Blind Store* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dwindow_blind' target='_blank'>window_blind</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/maki-alcohol-shop.svg' style='width: 3rem; height: 3rem'> *Wine Shop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dwine' target='_blank'>wine</a>
+
+This tagrendering has labels 
+`description`
 
 ### brand
 
 The question is `What is the brand of this shop?`
 *Part of <b>{brand}</b>* is shown if `brand` is set
 
-
  -  *This shop does not have a specific brand, it is not part of a bigger chain* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:not:brand' target='_blank'>not:brand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:not:brand%3Dyes' target='_blank'>yes</a>
-
-
-
-
 
 ### second_hand
 
 The question is `Does this shop sell second-hand items?`
 
-
-
  -  *This shop sells second-hand items <b>only</b>* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:second_hand' target='_blank'>second_hand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:second_hand%3Donly' target='_blank'>only</a>
  -  *This shop sells second-hand items along with new items* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:second_hand' target='_blank'>second_hand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:second_hand%3Dyes' target='_blank'>yes</a>
  -  *This shop only sells brand-new items* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:second_hand' target='_blank'>second_hand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:second_hand%3Dno' target='_blank'>no</a>
 
-
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dclothes' target='_blank'>clothes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbooks' target='_blank'>books</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcharity' target='_blank'>charity</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dfurniture' target='_blank'>furniture</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmobile_phone' target='_blank'>mobile_phone</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcomputer' target='_blank'>computer</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtoys' target='_blank'>toys</a>
-
 
 ### opening_hours
 
 The question is `What are the opening hours of {title()}?`
 *<h3>Opening hours</h3>{opening_hours_table(opening_hours)}* is shown if `opening_hours` is set
 
-
  -  *Marked as closed for an unspecified time* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>. _This option cannot be chosen as answer_
-
-
-
-
 
 ### website
 
 The question is `What is the website of {title()}?`
 *<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>* is shown if `website` is set
 
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/icons/website.svg' style='width: 3rem; height: 3rem'> *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>* is shown if with contact:website~.+. _This option cannot be chosen as answer_
-
-
 
 This tagrendering has labels 
 `contact`
@@ -204,11 +350,8 @@ This tagrendering has labels
 The question is `What is the email address of {title()}?`
 *<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>* is shown if `email` is set
 
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/envelope.svg' style='width: 3rem; height: 3rem'> *<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>* is shown if with contact:email~.+. _This option cannot be chosen as answer_
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/envelope.svg' style='width: 3rem; height: 3rem'> *<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>* is shown if with operator:email~.+. _This option cannot be chosen as answer_
-
-
 
 This tagrendering has labels 
 `contact`
@@ -216,12 +359,9 @@ This tagrendering has labels
 ### phone
 
 The question is `What is the phone number of {title()}?`
-*<a href='tel:{phone}'>{phone}</a>* is shown if `phone` is set
+*{link(&LBRACEphone&RBRACE,tel:&LBRACEphone&RBRACE,,,,)}* is shown if `phone` is set
 
-
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/phone.svg' style='width: 3rem; height: 3rem'> *<a href='tel:{contact:phone}'>{contact:phone}</a>* is shown if with contact:phone~.+. _This option cannot be chosen as answer_
-
-
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/phone.svg' style='width: 3rem; height: 3rem'> *{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}* is shown if with contact:phone~.+. _This option cannot be chosen as answer_
 
 This tagrendering has labels 
 `contact`
@@ -230,15 +370,9 @@ This tagrendering has labels
 
 The question is `Which methods of payment are accepted here?`
 
-
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/cash.svg' style='width: 3rem; height: 3rem'> *Cash is accepted here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dno' target='_blank'>no</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/payment_card.svg' style='width: 3rem; height: 3rem'> *Payment cards are accepted here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dno' target='_blank'>no</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/qrcode.svg' style='width: 3rem; height: 3rem'> *Payment by QR-code is possible here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dno' target='_blank'>no</a>
-
-
-
-
 
 ### repeated
 
@@ -254,14 +388,11 @@ This tagrendering has labels
 The question is `On what level is this feature located?`
 *Located on the {level}th floor* is shown if `level` is set
 
-
  -  *Located underground* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>. _This option cannot be chosen as answer_
  -  *Located on the ground floor* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D0' target='_blank'>0</a>
  -  *Located on the ground floor* is shown if with level=. _This option cannot be chosen as answer_
  -  *Located on the first floor* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>
  -  *Located on the first basement level* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D-1' target='_blank'>-1</a>
-
-
 
 This tagrendering has labels 
 `level`
@@ -270,155 +401,204 @@ This tagrendering has labels
 
 The question is `What paper formats does this shop offer?`
 
-
-
  -  *This shop can print on papers of size A4* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:print:A4' target='_blank'>service:print:A4</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:print:A4%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:service:print:A4' target='_blank'>service:print:A4</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:print:A4%3Dno' target='_blank'>no</a>
  -  *This shop can print on papers of size A3* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:print:A3' target='_blank'>service:print:A3</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:print:A3%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:service:print:A3' target='_blank'>service:print:A3</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:print:A3%3Dno' target='_blank'>no</a>
  -  *This shop can print on papers of size A2* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:print:A2' target='_blank'>service:print:A2</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:print:A2%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:service:print:A2' target='_blank'>service:print:A2</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:print:A2%3Dno' target='_blank'>no</a>
  -  *This shop can print on papers of size A1* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:print:A1' target='_blank'>service:print:A1</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:print:A1%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:service:print:A1' target='_blank'>service:print:A1</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:print:A1%3Dno' target='_blank'>no</a>
  -  *This shop can print on papers of size A0* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:print:A0' target='_blank'>service:print:A0</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:print:A0%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:service:print:A0' target='_blank'>service:print:A0</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:print:A0%3Dno' target='_blank'>no</a>
 
-
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:service:print' target='_blank'>service:print</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:print%3Dyes' target='_blank'>yes</a> | shop~^(.*copyshop.*)$ | shop~^(.*stationery.*)$
-
 
 ### copyshop-binding
 
 The question is `Does this shop offer a binding service?`
 
-
-
  -  *This shop binds papers into a booklet* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:binding' target='_blank'>service:binding</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:binding%3Dyes' target='_blank'>yes</a>
  -  *This shop does bind books* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:binding' target='_blank'>service:binding</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:binding%3Dno' target='_blank'>no</a>
 
-
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:service:print' target='_blank'>service:print</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:print%3Dyes' target='_blank'>yes</a> | shop~^(.*copyshop.*)$ | shop~^(.*stationery.*)$
-
 
 ### key_cutter
 
 The question is `Does this shop offer key cutting?`
 
-
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/fas-key.svg' style='width: 3rem; height: 3rem'> *This shop is also specialized in key cutting* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:craft' target='_blank'>craft</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:craft%3Dkey_cutter' target='_blank'>key_cutter</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/id_presets/fas-key.svg' style='width: 3rem; height: 3rem'> *This shop offers key cutting as a service* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:key_cutting' target='_blank'>service:key_cutting</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:key_cutting%3Dyes' target='_blank'>yes</a>
  -  *This shops does not offer key cutting as a service* is shown if with craft= & <a href='https://wiki.openstreetmap.org/wiki/Key:service:key_cutting' target='_blank'>service:key_cutting</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:key_cutting%3Dno' target='_blank'>no</a>
 
-
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:craft' target='_blank'>craft</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:craft%3Dkey_cutting' target='_blank'>key_cutting</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dshoe_repair' target='_blank'>shoe_repair</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Ddiy' target='_blank'>diy</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Ddoityourself' target='_blank'>doityourself</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhome_improvement' target='_blank'>home_improvement</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhardware' target='_blank'>hardware</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dlocksmith' target='_blank'>locksmith</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Drepair' target='_blank'>repair</a> | service:key_cutting~.+
-
 
 ### sells_new_bikes
 
 The question is `Does this shop sell bikes?`
 
-
-
  -  *This shop sells new bikes* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:retail' target='_blank'>service:bicycle:retail</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:retail%3Dyes' target='_blank'>yes</a>
  -  *This shop doesn't sell new bikes* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:retail' target='_blank'>service:bicycle:retail</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:retail%3Dno' target='_blank'>no</a>
 
-
-This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Doutdoor' target='_blank'>outdoor</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsport' target='_blank'>sport</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Ddiy' target='_blank'>diy</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Ddoityourself' target='_blank'>doityourself</a> | service:bicycle:retail~.+
-
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Doutdoor' target='_blank'>outdoor</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsport' target='_blank'>sport</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsports' target='_blank'>sports</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Ddiy' target='_blank'>diy</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Ddoityourself' target='_blank'>doityourself</a> | service:bicycle:retail~.+
 
 ### bike_second_hand
 
 The question is `Does this shop sell second-hand bikes?`
 
-
-
  -  *This shop sells second-hand bikes* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:second_hand' target='_blank'>service:bicycle:second_hand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:second_hand%3Dyes' target='_blank'>yes</a>
  -  *This shop doesn't sell second-hand bikes* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:second_hand' target='_blank'>service:bicycle:second_hand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:second_hand%3Dno' target='_blank'>no</a>
  -  *This shop only sells second-hand bikes* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:second_hand' target='_blank'>service:bicycle:second_hand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:second_hand%3Donly' target='_blank'>only</a>
 
-
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbicycle' target='_blank'>bicycle</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcharity' target='_blank'>charity</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsecond_hand' target='_blank'>second_hand</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbicycle_repair' target='_blank'>bicycle_repair</a> | service:bicycle:second_hand~.+
-
 
 ### repairs_bikes
 
 The question is `Does this shop repair bikes?`
-
-
 
  -  *This shop repairs bikes* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:repair' target='_blank'>service:bicycle:repair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dyes' target='_blank'>yes</a>
  -  *This shop doesn't repair bikes* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:repair' target='_blank'>service:bicycle:repair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dno' target='_blank'>no</a>
  -  *This shop only repairs bikes bought here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:repair' target='_blank'>service:bicycle:repair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Donly_sold' target='_blank'>only_sold</a>
  -  *This shop only repairs bikes of a certain brand* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:repair' target='_blank'>service:bicycle:repair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dbrand' target='_blank'>brand</a>
 
-
-This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:retail' target='_blank'>service:bicycle:retail</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:retail%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:second_hand' target='_blank'>service:bicycle:second_hand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:second_hand%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:second_hand' target='_blank'>service:bicycle:second_hand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:second_hand%3Donly' target='_blank'>only</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsport' target='_blank'>sport</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Doutdoor' target='_blank'>outdoor</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbicycle' target='_blank'>bicycle</a> | service:bicycle:repair~.+
-
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:retail' target='_blank'>service:bicycle:retail</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:retail%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:second_hand' target='_blank'>service:bicycle:second_hand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:second_hand%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:second_hand' target='_blank'>service:bicycle:second_hand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:second_hand%3Donly' target='_blank'>only</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsport' target='_blank'>sport</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsports' target='_blank'>sports</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Doutdoor' target='_blank'>outdoor</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbicycle' target='_blank'>bicycle</a> | service:bicycle:repair~.+
 
 ### bicycle_rental
 
 The question is `Does this shop rent out bikes?`
 
-
-
  -  *This shop rents out bikes* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:rental' target='_blank'>service:bicycle:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dyes' target='_blank'>yes</a>
  -  *This shop doesn't rent out bikes* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:rental' target='_blank'>service:bicycle:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dno' target='_blank'>no</a>
 
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbicycle' target='_blank'>bicycle</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsport' target='_blank'>sport</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsports' target='_blank'>sports</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbicycle_repair' target='_blank'>bicycle_repair</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Doutdoor' target='_blank'>outdoor</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Drental' target='_blank'>rental</a> | service:bicycle:rental~.+
 
-This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbicycle' target='_blank'>bicycle</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsport' target='_blank'>sport</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbicycle_repair' target='_blank'>bicycle_repair</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Doutdoor' target='_blank'>outdoor</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Drental' target='_blank'>rental</a> | service:bicycle:rental~.+
+### bicycle-types
 
+The question is `What kind of bicycles and accessories are rented here?`
+*{rental} is rented here* is shown if `rental` is set
+
+ -  *Normal city bikes can be rented here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dcity_bike' target='_blank'>city_bike</a>
+ -  *Electrical bikes can be rented here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Debike' target='_blank'>ebike</a>
+ -  *BMX bikes can be rented here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dbmx' target='_blank'>bmx</a>
+ -  *Mountainbikes can be rented here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dmtb' target='_blank'>mtb</a>
+ -  *Bikes for children can be rented here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dkid_bike' target='_blank'>kid_bike</a>
+ -  *Tandem bicycles can be rented here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dtandem' target='_blank'>tandem</a>
+ -  *Race bicycles can be rented here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dracebike' target='_blank'>racebike</a>
+ -  *Bike helmets can be rented here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dbike_helmet' target='_blank'>bike_helmet</a>
+ -  *Cargo bikes can be rented here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:rental' target='_blank'>rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rental%3Dcargo_bike' target='_blank'>cargo_bike</a>
+
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:rental' target='_blank'>service:bicycle:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dyes' target='_blank'>yes</a> | bicycle_rental~.+
+This tagrendering has labels 
+`bicycle_rental`
+
+### rental-capacity-city_bike
+
+The question is `How many city bikes can be rented here?`
+*{capacity:city_bike} city bikes can be rented here* is shown if `capacity:city_bike` is set
+
+This tagrendering is only visible in the popup if the following condition is met: (<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:rental' target='_blank'>service:bicycle:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dyes' target='_blank'>yes</a> | bicycle_rental~.+) & rental~^(.*city_bike.*)$
+This tagrendering has labels 
+`bicycle_rental`
+
+### rental-capacity-ebike
+
+The question is `How many electrical bikes can be rented here?`
+*{capacity:ebike} electrical bikes can be rented here* is shown if `capacity:ebike` is set
+
+This tagrendering is only visible in the popup if the following condition is met: (<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:rental' target='_blank'>service:bicycle:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dyes' target='_blank'>yes</a> | bicycle_rental~.+) & rental~^(.*ebike.*)$
+This tagrendering has labels 
+`bicycle_rental`
+
+### rental-capacity-kid_bike
+
+The question is `How many bikes for children can be rented here?`
+*{capacity:kid_bike} bikes for children can be rented here* is shown if `capacity:kid_bike` is set
+
+This tagrendering is only visible in the popup if the following condition is met: (<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:rental' target='_blank'>service:bicycle:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dyes' target='_blank'>yes</a> | bicycle_rental~.+) & rental~^(.*kid_bike.*)$
+This tagrendering has labels 
+`bicycle_rental`
+
+### rental-capacity-bmx
+
+The question is `How many BMX bikes can be rented here?`
+*{capacity:bmx} BMX bikes can be rented here* is shown if `capacity:bmx` is set
+
+This tagrendering is only visible in the popup if the following condition is met: (<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:rental' target='_blank'>service:bicycle:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dyes' target='_blank'>yes</a> | bicycle_rental~.+) & rental~^(.*bmx.*)$
+This tagrendering has labels 
+`bicycle_rental`
+
+### rental-capacity-mtb
+
+The question is `How many mountainbikes can be rented here?`
+*{capacity:mtb} mountainbikes can be rented here* is shown if `capacity:mtb` is set
+
+This tagrendering is only visible in the popup if the following condition is met: (<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:rental' target='_blank'>service:bicycle:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dyes' target='_blank'>yes</a> | bicycle_rental~.+) & rental~^(.*mtb.*)$
+This tagrendering has labels 
+`bicycle_rental`
+
+### rental-capacity-bicycle_pannier
+
+The question is `How many bicycle panniers can be rented here?`
+*{capacity:bicycle_pannier} bicycle panniers can be rented here* is shown if `capacity:bicycle_pannier` is set
+
+This tagrendering is only visible in the popup if the following condition is met: (<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:rental' target='_blank'>service:bicycle:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dyes' target='_blank'>yes</a> | bicycle_rental~.+) & rental~^(.*bicycle_pannier.*)$
+This tagrendering has labels 
+`bicycle_rental`
+
+### rental-capacity-tandem_bicycle
+
+The question is `How many tandem can be rented here?`
+*{capacity:tandem_bicycle} tandem can be rented here* is shown if `capacity:tandem_bicycle` is set
+
+This tagrendering is only visible in the popup if the following condition is met: (<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:rental' target='_blank'>service:bicycle:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dyes' target='_blank'>yes</a> | bicycle_rental~.+) & rental~^(.*tandem_bicycle.*)$
+This tagrendering has labels 
+`bicycle_rental`
 
 ### bike_pump_service
 
 The question is `Does this shop offer a bike pump for use by anyone?`
 
-
-
  -  *This shop offers a bike pump for anyone* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump' target='_blank'>service:bicycle:pump</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dyes' target='_blank'>yes</a>
  -  *This shop doesn't offer a bike pump for anyone* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump' target='_blank'>service:bicycle:pump</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dno' target='_blank'>no</a>
  -  *There is bicycle pump, it is shown as a separate point* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump' target='_blank'>service:bicycle:pump</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dseparate' target='_blank'>separate</a>
 
-
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:retail' target='_blank'>service:bicycle:retail</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:retail%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbicycle' target='_blank'>bicycle</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbicycle_repair' target='_blank'>bicycle_repair</a> | ^(service:bicycle:.+)$~~^(yes)$ | service:bicycle:pump~.+
-
 
 ### bike_repair_tools
 
 The question is `Are there tools here to repair your own bike?`
 
-
-
  -  *This shop offers tools for DIY bicycle repair* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:diy' target='_blank'>service:bicycle:diy</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Dyes' target='_blank'>yes</a>
  -  *This shop doesn't offer tools for DIY bicycle repair* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:diy' target='_blank'>service:bicycle:diy</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Dno' target='_blank'>no</a>
  -  *Tools for DIY bicycle repair are only available if you bought/hire the bike in the shop* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:diy' target='_blank'>service:bicycle:diy</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Donly_sold' target='_blank'>only_sold</a>
 
-
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbicycle' target='_blank'>bicycle</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbicycle_repair' target='_blank'>bicycle_repair</a> | service:bicycle:diy~.+ | service:bicycle:repair~^(yes|only)$
-
 
 ### bike_wash
 
 The question is `Are bicycles washed here?`
 
-
-
  -  *This shop cleans bicycles* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning' target='_blank'>service:bicycle:cleaning</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning%3Dyes' target='_blank'>yes</a>
  -  *This shop has an installation where one can clean bicycles themselves* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning' target='_blank'>service:bicycle:cleaning</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning%3Ddiy' target='_blank'>diy</a>
  -  *This shop doesn't offer bicycle cleaning* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning' target='_blank'>service:bicycle:cleaning</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning%3Dno' target='_blank'>no</a>
 
-
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbicycle' target='_blank'>bicycle</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbicycle_repair' target='_blank'>bicycle_repair</a> | ^(service:bicycle:.*)$~~^(yes|only)$ | service:bicycle:cleaning~.+
 
+### bike_cleaning-service_bicycle_cleaning_charge
+
+The question is `How much does it cost to use the cleaning service?`
+*Using the cleaning service costs {service:bicycle:cleaning:charge}* is shown if `service:bicycle:cleaning:charge` is set
+
+ -  *The cleaning service is free to use* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning:fee' target='_blank'>service:bicycle:cleaning:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning:fee%3Dno' target='_blank'>no</a>
+ -  *Free to use* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning:fee' target='_blank'>service:bicycle:cleaning:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning:fee%3Dyes' target='_blank'>yes</a> & service:bicycle:cleaning:charge=. _This option cannot be chosen as answer_
+
+This tagrendering is only visible in the popup if the following condition is met: amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+
 
 ### internet
 
 The question is `Does this place offer internet access?`
-
-
 
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/wifi' style='width: 3rem; height: 3rem'> *This place offers wireless internet access* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwlan' target='_blank'>wlan</a>
  -  *This place <b>does not</b> offer internet access* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dno' target='_blank'>no</a>
  -  *This place offers internet access* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dyes' target='_blank'>yes</a>. _This option cannot be chosen as answer_
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/computer' style='width: 3rem; height: 3rem'> *This place offers internet access via a terminal or computer* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dterminal' target='_blank'>terminal</a>
  -  *This place offers wired internet access* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwired' target='_blank'>wired</a>
-
-
+ -  *This place offers both wireless internet and internet access via a terminal or computer* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dterminal;wifi' target='_blank'>terminal;wifi</a>
 
 This tagrendering has labels 
 `internet-all`
@@ -427,12 +607,9 @@ This tagrendering has labels
 
 The question is `Is there a fee for internet access?`
 
-
-
  -  *There is a fee for the internet access at this place* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:fee' target='_blank'>internet_access:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dyes' target='_blank'>yes</a>
  -  *Internet access is free at this place* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:fee' target='_blank'>internet_access:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dno' target='_blank'>no</a>
  -  *Internet access is free at this place, for customers only* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:fee' target='_blank'>internet_access:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dcustomers' target='_blank'>customers</a>
-
 
 This tagrendering is only visible in the popup if the following condition is met: internet_access!=no & internet_access~.+
 This tagrendering has labels 
@@ -443,11 +620,9 @@ This tagrendering has labels
 The question is `What is the network name for the wireless internet access?`
 *The network name is <b>{internet_access:ssid}</b>* is shown if `internet_access:ssid` is set
 
-
  -  *Telekom* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:ssid' target='_blank'>internet_access:ssid</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:ssid%3DTelekom' target='_blank'>Telekom</a>
 
-
-This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwlan' target='_blank'>wlan</a>
+This tagrendering is only visible in the popup if the following condition is met: internet_access~^(.*wlan.*)$
 This tagrendering has labels 
 `internet-all`
 
@@ -455,27 +630,20 @@ This tagrendering has labels
 
 The question is `Does this shop offer organic products?`
 
-
-
  -  *This shop offers organic products* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:organic' target='_blank'>organic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:organic%3Dyes' target='_blank'>yes</a>
  -  *This shop only offers organic products* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:organic' target='_blank'>organic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:organic%3Donly' target='_blank'>only</a>
  -  *This shop does not offer organic products* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:organic' target='_blank'>organic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:organic%3Dno' target='_blank'>no</a>
 
-
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsupermarket' target='_blank'>supermarket</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dconvenience' target='_blank'>convenience</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dfarm' target='_blank'>farm</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dgreengrocer' target='_blank'>greengrocer</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhealth_food' target='_blank'>health_food</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dclothes' target='_blank'>clothes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dshoes' target='_blank'>shoes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbutcher' target='_blank'>butcher</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcosmetics' target='_blank'>cosmetics</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Ddeli' target='_blank'>deli</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbakery' target='_blank'>bakery</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dalcohol' target='_blank'>alcohol</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dseafood' target='_blank'>seafood</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbeverages' target='_blank'>beverages</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dflorist' target='_blank'>florist</a>
-
 
 ### sugar_free
 
 The question is `Does this shop have a sugar free offering?`
 
-
-
  -  *This shop <b>only sells sugar free</b> products* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:sugar_free' target='_blank'>diet:sugar_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Donly' target='_blank'>only</a>
  -  *This shop has a big sugar free offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:sugar_free' target='_blank'>diet:sugar_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Dyes' target='_blank'>yes</a>
  -  *This shop has a <b>limited sugar free</b> offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:sugar_free' target='_blank'>diet:sugar_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Dlimited' target='_blank'>limited</a>
  -  *This shop has no sugar free offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:sugar_free' target='_blank'>diet:sugar_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Dno' target='_blank'>no</a>
-
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsupermarket' target='_blank'>supermarket</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dconvenience' target='_blank'>convenience</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dfarm' target='_blank'>farm</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dgreengrocer' target='_blank'>greengrocer</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhealth_food' target='_blank'>health_food</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Ddeli' target='_blank'>deli</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbakery' target='_blank'>bakery</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbeverages' target='_blank'>beverages</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbeverages' target='_blank'>beverages</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dpastry' target='_blank'>pastry</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dchocolate' target='_blank'>chocolate</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dfrozen_food' target='_blank'>frozen_food</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dice_cream' target='_blank'>ice_cream</a>
 This tagrendering has labels 
@@ -485,13 +653,10 @@ This tagrendering has labels
 
 The question is `Does this shop have a gluten free offering?`
 
-
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/glutenfree.svg' style='width: 3rem; height: 3rem'> *This shop <b>only sells gluten free</b> products* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:gluten_free' target='_blank'>diet:gluten_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Donly' target='_blank'>only</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/glutenfree.svg' style='width: 3rem; height: 3rem'> *This shop has a big gluten free offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:gluten_free' target='_blank'>diet:gluten_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Dyes' target='_blank'>yes</a>
  -  *This shop has a <b>limited gluten free</b> offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:gluten_free' target='_blank'>diet:gluten_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Dlimited' target='_blank'>limited</a>
  -  *This shop has no gluten free offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:gluten_free' target='_blank'>diet:gluten_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:gluten_free%3Dno' target='_blank'>no</a>
-
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsupermarket' target='_blank'>supermarket</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dconvenience' target='_blank'>convenience</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dfarm' target='_blank'>farm</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dgreengrocer' target='_blank'>greengrocer</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhealth_food' target='_blank'>health_food</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Ddeli' target='_blank'>deli</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbakery' target='_blank'>bakery</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbeverages' target='_blank'>beverages</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbeverages' target='_blank'>beverages</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dpastry' target='_blank'>pastry</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dchocolate' target='_blank'>chocolate</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dfrozen_food' target='_blank'>frozen_food</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dice_cream' target='_blank'>ice_cream</a>
 This tagrendering has labels 
@@ -501,13 +666,10 @@ This tagrendering has labels
 
 The question is `Does {title()} have a lactose-free offering?`
 
-
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/lactose_free.svg' style='width: 3rem; height: 3rem'> *<b>Only sells lactose free</b> products* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:lactose_free' target='_blank'>diet:lactose_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Donly' target='_blank'>only</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/lactose_free.svg' style='width: 3rem; height: 3rem'> *Big lactose free offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:lactose_free' target='_blank'>diet:lactose_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dyes' target='_blank'>yes</a>
  -  *<b>Limited lactose free</b> offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:lactose_free' target='_blank'>diet:lactose_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dlimited' target='_blank'>limited</a>
  -  *No lactose free offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:lactose_free' target='_blank'>diet:lactose_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dno' target='_blank'>no</a>
-
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsupermarket' target='_blank'>supermarket</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dconvenience' target='_blank'>convenience</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dfarm' target='_blank'>farm</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dgreengrocer' target='_blank'>greengrocer</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhealth_food' target='_blank'>health_food</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Ddeli' target='_blank'>deli</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbakery' target='_blank'>bakery</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbeverages' target='_blank'>beverages</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbeverages' target='_blank'>beverages</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dpastry' target='_blank'>pastry</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dchocolate' target='_blank'>chocolate</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dfrozen_food' target='_blank'>frozen_food</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dice_cream' target='_blank'>ice_cream</a>
 This tagrendering has labels 
@@ -518,131 +680,234 @@ This tagrendering has labels
 The question is `Is there still some relevant info that the previous questions did not cover? Feel free to add it here.`
 *{description}* is shown if `description` is set
 
-
-
-
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
-
-
-
 
 ### move-button
 
 _This tagrendering has no question and is thus read-only_
 *{move_button()}*
 
-
-
-
 ### delete-button
 
 _This tagrendering has no question and is thus read-only_
 *{delete_button()}*
-
-
-
 
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
 
-
 This tagrendering has labels 
 `added_by_default`
 
 ## Filters
 
+| id | question | osmTags |
+-----|-----|----- |
+| second_hand.0 | Only show shops selling second-hand items | shop=second_hand | shop=charity | second_hand=yes | second_hand=only | service:bicycle:second_hand~^(yes|only)$ |
 
+| id | question | osmTags |
+-----|-----|----- |
+| has_organic.0 | Has organic options | organic=yes | organic=only |
+
+| id | question | osmTags |
+-----|-----|----- |
+| shop_types.0 | *What kind of shop is this?* (default) |  |
+| shop_types.1 | Bicycle rental shop | shop=bicycle_rental | ((shop=rental & amenity=bicycle_rental)) |
+| shop_types.2 | Farm Supply Shop | shop=agrarian |
+| shop_types.3 | Liquor Store | shop=alcohol |
+| shop_types.4 | Anime / Manga Shop | shop=anime |
+| shop_types.5 | Antique Shop | shop=antiques |
+| shop_types.6 | Appliance Store | shop=appliance |
+| shop_types.7 | Art Store | shop=art |
+| shop_types.8 | Baby Goods Store | shop=baby_goods |
+| shop_types.9 | Bag/Luggage Store | shop=bag |
+| shop_types.10 | Bakery | shop=bakery |
+| shop_types.11 | Bathroom Furnishing Store | shop=bathroom_furnishing |
+| shop_types.12 | Beauty Shop | shop=beauty |
+| shop_types.13 | Bedding/Mattress Store | shop=bed |
+| shop_types.14 | Beverage Store | shop=beverages |
+| shop_types.15 | Bicycle Shop | shop=bicycle |
+| shop_types.16 | Boat Store | shop=boat |
+| shop_types.17 | Bookmaker | shop=bookmaker |
+| shop_types.18 | Bookstore | shop=books |
+| shop_types.19 | Brewing Supply Store | shop=brewing_supplies |
+| shop_types.20 | Butcher | shop=butcher |
+| shop_types.21 | Camera Equipment Store | shop=camera |
+| shop_types.22 | Candle Shop | shop=candles |
+| shop_types.23 | Cannabis Shop | shop=cannabis |
+| shop_types.24 | Car Dealership | shop=car |
+| shop_types.25 | Car Parts Store | shop=car_parts |
+| shop_types.26 | Car Repair Shop | shop=car_repair |
+| shop_types.27 | RV Dealership | shop=caravan |
+| shop_types.28 | Carpet Store | shop=carpet |
+| shop_types.29 | Catalog Shop | shop=catalogue |
+| shop_types.30 | Charity Store | shop=charity |
+| shop_types.31 | Cheese Store | shop=cheese |
+| shop_types.32 | Drugstore | shop=chemist |
+| shop_types.33 | Chocolate Store | shop=chocolate |
+| shop_types.34 | Clothing Store | shop=clothes |
+| shop_types.35 | Coffee Store | shop=coffee |
+| shop_types.36 | Collectibles Shop | shop=collector |
+| shop_types.37 | Computer Store | shop=computer |
+| shop_types.38 | Candy Store | shop=confectionery |
+| shop_types.39 | Convenience Store | shop=convenience |
+| shop_types.40 | Copy Store | shop=copyshop |
+| shop_types.41 | Cosmetics Store | shop=cosmetics |
+| shop_types.42 | Rural Supplies Store | shop=country_store |
+| shop_types.43 | Arts & Crafts Store | shop=craft |
+| shop_types.44 | Curtain Store | shop=curtain |
+| shop_types.45 | Dairy Store | shop=dairy |
+| shop_types.46 | Delicatessen | shop=deli |
+| shop_types.47 | Department Store | shop=department_store |
+| shop_types.48 | DIY Store | shop=doityourself |
+| shop_types.49 | Door Shop | shop=doors |
+| shop_types.50 | Dry Cleaner | shop=dry_cleaning |
+| shop_types.51 | E-Cigarette Shop | shop=e-cigarette |
+| shop_types.52 | Electrical Equipment Store | shop=electrical |
+| shop_types.53 | Electronics Store | shop=electronics |
+| shop_types.54 | Erotic Store | shop=erotic |
+| shop_types.55 | Fabric Store | shop=fabric |
+| shop_types.56 | Produce Stand | shop=farm |
+| shop_types.57 | Fashion Accessories Store | shop=fashion_accessories |
+| shop_types.58 | Fireplace Store | shop=fireplace |
+| shop_types.59 | Fishing Shop | shop=fishing |
+| shop_types.60 | Flooring Supply Shop | shop=flooring |
+| shop_types.61 | Florist | shop=florist |
+| shop_types.62 | Framing Shop | shop=frame |
+| shop_types.63 | Frozen Food Store | shop=frozen_food |
+| shop_types.64 | Fuel Shop | shop=fuel |
+| shop_types.65 | Funeral Home | shop=funeral_directors |
+| shop_types.66 | Furniture Store | shop=furniture |
+| shop_types.67 | Tabletop Game Store | shop=games |
+| shop_types.68 | Garden Center | shop=garden_centre |
+| shop_types.69 | Bottled Gas Shop | shop=gas |
+| shop_types.70 | General Store | shop=general |
+| shop_types.71 | Gift Shop | shop=gift |
+| shop_types.72 | Greengrocer | shop=greengrocer |
+| shop_types.73 | Hairdresser | shop=hairdresser |
+| shop_types.74 | Hairdresser Supply Store | shop=hairdresser_supply |
+| shop_types.75 | Hardware Store | shop=hardware |
+| shop_types.76 | Health Food Store | shop=health_food |
+| shop_types.77 | Hearing Aids Store | shop=hearing_aids |
+| shop_types.78 | Herbalist | shop=herbalist |
+| shop_types.79 | Hifi Store | shop=hifi |
+| shop_types.80 | Honey Store | shop=honey |
+| shop_types.81 | Household Linen Shop | shop=household_linen |
+| shop_types.82 | Houseware Store | shop=houseware |
+| shop_types.83 | Hunting Shop | shop=hunting |
+| shop_types.84 | Interior Decoration Store | shop=interior_decoration |
+| shop_types.85 | Jewelry Store | shop=jewelry |
+| shop_types.86 | Kiosk | shop=kiosk |
+| shop_types.87 | Kitchen Design Store | shop=kitchen |
+| shop_types.88 | Laundry | shop=laundry |
+| shop_types.89 | Leather Store | shop=leather |
+| shop_types.90 | Lighting Store | shop=lighting |
+| shop_types.91 | Locksmith | shop=locksmith |
+| shop_types.92 | Lottery Shop | shop=lottery |
+| shop_types.93 | Mall | shop=mall |
+| shop_types.94 | Massage Shop | shop=massage |
+| shop_types.95 | Medical Supply Store | shop=medical_supply |
+| shop_types.96 | Military Surplus Store | shop=military_surplus |
+| shop_types.97 | Mobile Phone Store | shop=mobile_phone |
+| shop_types.98 | Model Shop | shop=model |
+| shop_types.99 | Money Lender | shop=money_lender |
+| shop_types.100 | Motorcycle Dealership | shop=motorcycle |
+| shop_types.101 | Motorcycle Repair Shop | shop=motorcycle_repair |
+| shop_types.102 | Music Store | shop=music |
+| shop_types.103 | Musical Instrument Store | shop=musical_instrument |
+| shop_types.104 | Newsstand | shop=newsagent |
+| shop_types.105 | Nutrition Supplements Store | shop=nutrition_supplements |
+| shop_types.106 | Nuts Shop | shop=nuts |
+| shop_types.107 | Optician | shop=optician |
+| shop_types.108 | Outdoors Store | shop=outdoor |
+| shop_types.109 | Online Retailer Outpost | shop=outpost |
+| shop_types.110 | Paint Store | shop=paint |
+| shop_types.111 | Party Supply Store | shop=party |
+| shop_types.112 | Pasta Store | shop=pasta |
+| shop_types.113 | Pastry Shop | shop=pastry |
+| shop_types.114 | Pawnshop | shop=pawnbroker |
+| shop_types.115 | Perfume Store | shop=perfumery |
+| shop_types.116 | Pet Store | shop=pet |
+| shop_types.117 | Pet Groomer | shop=pet_grooming |
+| shop_types.118 | Photography Store | shop=photo |
+| shop_types.119 | Pottery Store | shop=pottery |
+| shop_types.120 | Printer Ink Store | shop=printer_ink |
+| shop_types.121 | Psychic | shop=psychic |
+| shop_types.122 | Fireworks Store | shop=pyrotechnics |
+| shop_types.123 | Radio/Electronic Component Store | shop=radiotechnics |
+| shop_types.124 | Religious Store | shop=religion |
+| shop_types.125 | Rental Shop | shop=rental |
+| shop_types.126 | Repair Shop | shop=repair |
+| shop_types.127 | Rice Store | shop=rice |
+| shop_types.128 | Scuba Diving Shop | shop=scuba_diving |
+| shop_types.129 | Seafood Shop | shop=seafood |
+| shop_types.130 | Thrift Store | shop=second_hand |
+| shop_types.131 | Sewing Supply Shop | shop=sewing |
+| shop_types.132 | Shoe Repair Shop | shop=shoe_repair |
+| shop_types.133 | Shoe Store | shop=shoes |
+| shop_types.134 | Spice Shop | shop=spices |
+| shop_types.135 | Sporting Goods Store | shop=sports |
+| shop_types.136 | Stationery Store | shop=stationery |
+| shop_types.137 | Storage Rental | shop=storage_rental |
+| shop_types.138 | Supermarket | shop=supermarket |
+| shop_types.139 | Pool Supply Store | shop=swimming_pool |
+| shop_types.140 | Tailor | shop=tailor |
+| shop_types.141 | Tattoo Parlor | shop=tattoo |
+| shop_types.142 | Tea Store | shop=tea |
+| shop_types.143 | Telecom Retail Store | shop=telecommunication |
+| shop_types.144 | Ticket Seller | shop=ticket |
+| shop_types.145 | Tile Shop | shop=tiles |
+| shop_types.146 | Tobacco Shop | shop=tobacco |
+| shop_types.147 | Tool Rental | shop=tool_hire |
+| shop_types.148 | Toy Store | shop=toys |
+| shop_types.149 | Trade Shop | shop=trade |
+| shop_types.150 | Travel Agency | shop=travel_agency |
+| shop_types.151 | Trophy Shop | shop=trophy |
+| shop_types.152 | Tire Store | shop=tyres |
+| shop_types.153 | Vacuum Cleaner Store | shop=vacuum_cleaner |
+| shop_types.154 | Discount Store | shop=variety_store |
+| shop_types.155 | Video Store | shop=video |
+| shop_types.156 | Video Game Store | shop=video_games |
+| shop_types.157 | Watches Shop | shop=watches |
+| shop_types.158 | Drinking Water Shop | shop=water |
+| shop_types.159 | Watersport/Swim Shop | shop=water_sports |
+| shop_types.160 | Weapon Shop | shop=weapons |
+| shop_types.161 | Wholesale Store | shop=wholesale |
+| shop_types.162 | Wig Shop | shop=wigs |
+| shop_types.163 | Window Blind Store | shop=window_blind |
+| shop_types.164 | Wine Shop | shop=wine |
 
 | id | question | osmTags |
 -----|-----|----- |
 | open_now.0 | Open now | _isOpen=yes |
 
-
-
-
-
-
-| id | question | osmTags | fields |
------|-----|-----|----- |
-| shop-type.0 | Only show shops selling {search} |  | search (string) |
-
-
-
-
-
-
-| id | question | osmTags | fields |
------|-----|-----|----- |
-| shop-name.0 | Only show shops with name {search} |  | search (string) |
-
-
-
-
-
-
-| id | question | osmTags |
------|-----|----- |
-| second_hand.0 | Only show shops selling second-hand items | shop=second_hand | shop=charity | second_hand=yes | second_hand=only | service:bicycle:second_hand~^(yes|only)$ |
-
-
-
-
-
-
 | id | question | osmTags |
 -----|-----|----- |
 | accepts_cash.0 | Accepts cash | payment:cash=yes |
-
-
-
-
-
 
 | id | question | osmTags |
 -----|-----|----- |
 | accepts_cards.0 | Accepts payment cards | payment:cards=yes |
 
-
-
-
-
-
 | id | question | osmTags |
 -----|-----|----- |
 | has_internet.0 | Offers internet | internet_access=wlan | internet_access=yes | internet_access=wired |
-
-
-
-
-
 
 | id | question | osmTags |
 -----|-----|----- |
 | sugar_free.0 | Has a sugar-free offering | diet:sugar_free=yes | diet:sugar_free=only | diet:sugar_free=limited |
 
-
-
-
-
-
 | id | question | osmTags |
 -----|-----|----- |
 | gluten_free.0 | Has a gluten free offering | diet:gluten_free=yes | diet:gluten_free=only | diet:gluten_free=limited |
 
-
-
-
-
-
 | id | question | osmTags |
 -----|-----|----- |
 | lactose_free.0 | Has a lactose free offering | diet:lactose_free=yes | diet:lactose_free=only | diet:lactose_free=limited |
-
 
 
 

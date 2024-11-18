@@ -1,4 +1,4 @@
-import LayoutConfig from "../../../../src/Models/ThemeConfig/LayoutConfig"
+import ThemeConfig from "../../../../src/Models/ThemeConfig/ThemeConfig"
 import { FixLegacyTheme } from "../../../../src/Models/ThemeConfig/Conversion/LegacyJsonConvert"
 import { describe, expect, it } from "vitest"
 
@@ -139,7 +139,7 @@ describe("FixLegacyTheme", () => {
         const fixed = new FixLegacyTheme().convert(<any>walking_node_theme, context)
         // "Could not fix the legacy theme"
         expect(!context.hasErrors())
-        const theme = new LayoutConfig(fixed, false)
+        const theme = new ThemeConfig(fixed, false)
         expect(theme).toBeDefined()
     })
 })

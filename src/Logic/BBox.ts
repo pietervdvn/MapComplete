@@ -249,6 +249,10 @@ export class BBox {
         ]
     }
 
+    toLngLatFlat(): [number, number, number, number] {
+        return [this.minLon, this.minLat, this.maxLon, this.maxLat]
+    }
+
     public asGeojsonCached() {
         if (this["geojsonCache"] === undefined) {
             this["geojsonCache"] = this.asGeoJson({})
@@ -315,5 +319,9 @@ export class BBox {
 
     public overlapsWithFeature(f: Feature) {
         return GeoOperations.calculateOverlap(this.asGeoJson({}), [f]).length > 0
+    }
+
+    center() {
+        return [(this.minLon + this.maxLon) / 2, (this.minLat + this.maxLat) / 2]
     }
 }

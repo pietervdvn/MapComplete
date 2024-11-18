@@ -1,0 +1,70 @@
+{
+  "id": "geocoded_image",
+  "name": null,
+  "source": "special",
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "direction_gradient",
+          "color": {
+            "render": "#44cc22",
+            "mappings": [
+              {
+                "if": "selected=yes",
+                "then": "#cccc22"
+              }
+            ]
+          }
+        }
+      ],
+      "rotation": "{rotation}deg",
+      "rotationAlignment": "map",
+      "pitchAlignment": "map",
+      "iconSize": "60,60"
+    },
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "rotationAlignment": "map",
+      "pitchAlignment": "map",
+      "marker": [
+        {
+          "icon": "circle",
+          "color": {
+            "render": "#44cc22",
+            "mappings": [
+              {
+                "if": "selected=yes",
+                "then": "#cccc22"
+              }
+            ]
+          }
+        }
+      ],
+      "iconSize": "14,14"
+    },
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "rotationAlignment": "map",
+      "pitchAlignment": "map",
+      "marker": [
+        {
+          "icon": "ring",
+          "color": "#000"
+        }
+      ],
+      "iconSize": "14,14"
+    }
+  ],
+  "tagRenderings": []
+}

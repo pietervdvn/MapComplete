@@ -2,25 +2,16 @@
 
 # bike_cafe
 
-
-
-
 A bike café is a café geared towards cyclists, for example with services such as a pump, with lots of bicycle-related decoration, …
 
-
-
-
-
-
  - This layer is shown at zoomlevel **13** and higher
-
-
 
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [bike_cafe-name](#bike_cafe-name)
   - [bike_cafe-bike-pump](#bike_cafe-bike-pump)
@@ -32,17 +23,21 @@ A bike café is a café geared towards cyclists, for example with services such 
   - [opening_hours](#opening_hours)
   - [Opening hours](#opening-hours)
   - [leftover-questions](#leftover-questions)
+  - [move-button](#move-button)
   - [delete-button](#delete-button)
   - [lod](#lod)
+5. [Filters](#filters)
 
 ## Themes using this layer
-
-
 
  - [cyclofix](https://mapcomplete.org/cyclofix)
  - [personal](https://mapcomplete.org/personal)
 
+## Presets
 
+The following options to create new points are included:
+
+ - **a bike cafe** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dpub' target='_blank'>pub</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:pub' target='_blank'>pub</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:pub%3Dcycling' target='_blank'>cycling</a>
 
 ## Basic tags for this layer
 
@@ -68,73 +63,43 @@ Elements must match **all** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/email#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/email/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [email](https://wiki.openstreetmap.org/wiki/Key:email) | [email](../SpecialInputElements.md#email) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/opening_hours#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/opening_hours/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) |  |
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
-
-
-
 
 ### bike_cafe-name
 
 The question is `What is the name of this bike cafe?`
 *This bike cafe is called {name}* is shown if `name` is set
 
-
-
-
 ### bike_cafe-bike-pump
 
 The question is `Does this bike cafe offer a bike pump for use by anyone?`
 
-
-
  -  *This bike cafe offers a bike pump for anyone* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump' target='_blank'>service:bicycle:pump</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dyes' target='_blank'>yes</a>
  -  *This bike cafe doesn't offer a bike pump for anyone* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump' target='_blank'>service:bicycle:pump</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dno' target='_blank'>no</a>
-
-
-
-
 
 ### bike_cafe-repair-tools
 
 The question is `Are tools offered to repair your own bike?`
 
-
-
  -  *This bike cafe offers tools for DIY repair* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:diy' target='_blank'>service:bicycle:diy</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Dyes' target='_blank'>yes</a>
  -  *This bike cafe doesn't offer tools for DIY repair* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:diy' target='_blank'>service:bicycle:diy</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Dno' target='_blank'>no</a>
-
-
-
-
 
 ### bike_cafe-repair-service
 
 The question is `Does this bike cafe repair bikes?`
 
-
-
  -  *This bike cafe repairs bikes* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:repair' target='_blank'>service:bicycle:repair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dyes' target='_blank'>yes</a>
  -  *This bike cafe doesn't repair bikes* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:repair' target='_blank'>service:bicycle:repair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dno' target='_blank'>no</a>
-
-
-
-
 
 ### website
 
 The question is `What is the website of {title()}?`
 *<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>* is shown if `website` is set
 
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/icons/website.svg' style='width: 3rem; height: 3rem'> *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>* is shown if with contact:website~.+. _This option cannot be chosen as answer_
-
-
 
 This tagrendering has labels 
 `contact`
@@ -142,12 +107,9 @@ This tagrendering has labels
 ### phone
 
 The question is `What is the phone number of {title()}?`
-*<a href='tel:{phone}'>{phone}</a>* is shown if `phone` is set
+*{link(&LBRACEphone&RBRACE,tel:&LBRACEphone&RBRACE,,,,)}* is shown if `phone` is set
 
-
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/phone.svg' style='width: 3rem; height: 3rem'> *<a href='tel:{contact:phone}'>{contact:phone}</a>* is shown if with contact:phone~.+. _This option cannot be chosen as answer_
-
-
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/phone.svg' style='width: 3rem; height: 3rem'> *{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}* is shown if with contact:phone~.+. _This option cannot be chosen as answer_
 
 This tagrendering has labels 
 `contact`
@@ -157,11 +119,8 @@ This tagrendering has labels
 The question is `What is the email address of {title()}?`
 *<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>* is shown if `email` is set
 
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/envelope.svg' style='width: 3rem; height: 3rem'> *<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>* is shown if with contact:email~.+. _This option cannot be chosen as answer_
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/envelope.svg' style='width: 3rem; height: 3rem'> *<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>* is shown if with operator:email~.+. _This option cannot be chosen as answer_
-
-
 
 This tagrendering has labels 
 `contact`
@@ -171,37 +130,37 @@ This tagrendering has labels
 The question is `When it this bike café opened?`
 *<h3>Opening hours</h3>{opening_hours_table(opening_hours)}* is shown if `opening_hours` is set
 
-
  -  *Marked as closed for an unspecified time* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>. _This option cannot be chosen as answer_
-
-
-
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
+### move-button
 
-
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
 
 ### delete-button
 
 _This tagrendering has no question and is thus read-only_
 *{delete_button()}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
 
-
 This tagrendering has labels 
 `added_by_default`
+
+## Filters
+
+| id | question | osmTags |
+-----|-----|----- |
+| open_now.0 | Open now | _isOpen=yes |
+
 
 
 This document is autogenerated from [assets/layers/bike_cafe/bike_cafe.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/bike_cafe/bike_cafe.json)

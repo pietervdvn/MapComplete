@@ -8,13 +8,16 @@
     "fr": "Sentiers",
     "ca": "Camins",
     "da": "Stier",
-    "cs": "Stezky"
+    "cs": "Stezky",
+    "pl": "Ścieżki",
+    "es": "Senderos"
   },
   "description": {
     "en": "Waymarked trails",
     "nl": "Aangeduide wandeltochten",
     "de": "Markierte Wanderwege",
-    "ca": "Rutes marcades"
+    "ca": "Rutes marcades",
+    "es": "Senderos señalizados"
   },
   "source": {
     "osmTags": {
@@ -40,7 +43,9 @@
       "fr": "Sentier",
       "ca": "Camí",
       "da": "Sti",
-      "cs": "Stezka"
+      "cs": "Stezka",
+      "pl": "Ścieżka",
+      "es": "Sendero"
     },
     "mappings": [
       {
@@ -101,7 +106,8 @@
         "fr": "Le sentier fait {_length:km} kilomètres de long",
         "da": "Stien er {_length:km} kilometer lang",
         "ca": "El sender té {_length:km} quilòmetres",
-        "cs": "Stezka je dlouhá {_length:km} kilometrů"
+        "cs": "Stezka je dlouhá {_length:km} kilometrů",
+        "es": "El sendero tiene {_length:km} kilómetros de largo"
       }
     },
     {
@@ -109,13 +115,15 @@
         "en": "What is the name of this trail?",
         "nl": "Wat is de naam van deze wandeling?",
         "de": "Wie heißt dieser Weg?",
-        "ca": "Quin és el nom d'aquest sender?"
+        "ca": "Quin és el nom d'aquest sender?",
+        "es": "¿Cuál es el nombre de este sendero?"
       },
       "render": {
         "en": "This trail is called <b>{name}</b>",
         "nl": "Deze wandeling heet <b>{name}</b>",
         "de": "Dieser Weg heißt <b>{name}</b>",
-        "ca": "Aquest sender s'anomena <b>{name}</b>"
+        "ca": "Aquest sender s'anomena <b>{name}</b>",
+        "es": "Este sendero se llama <b>{name}</b>"
       },
       "freeform": {
         "key": "name"
@@ -126,12 +134,14 @@
       "render": {
         "en": "This trail is maintained by {operator}",
         "nl": "Beheer door {operator}",
-        "de": "Dieser Weg wird von {operator} gepflegt"
+        "de": "Dieser Weg wird von {operator} gepflegt",
+        "es": "Este sendero es mantenido por {operator}"
       },
       "question": {
         "en": "Who maintains this trail?",
         "nl": "Wie beheert deze wandeltocht?",
-        "de": "Wer pflegt diesen Weg?"
+        "de": "Wer pflegt diesen Weg?",
+        "es": "¿Quién mantiene este sendero?"
       },
       "freeform": {
         "key": "operator"
@@ -147,7 +157,8 @@
             "en": "This trail is maintained by Natuurpunt",
             "nl": "Dit gebied wordt beheerd door Natuurpunt",
             "de": "Dieser Weg wird von Natuurpunt gepflegt",
-            "ca": "Aquest sender és mantingut per Natuurpunt"
+            "ca": "Aquest sender és mantingut per Natuurpunt",
+            "es": "Este sendero es mantenido por Natuurpunt"
           },
           "icon": {
             "path": "./assets/themes/buurtnatuur/Natuurpunt.jpg",
@@ -163,7 +174,8 @@
           "then": {
             "en": "This trail is maintained by {operator}",
             "nl": "Dit gebied wordt beheerd door {operator}",
-            "de": "Dieser Weg wird von {operator} gepflegt"
+            "de": "Dieser Weg wird von {operator} gepflegt",
+            "es": "Este sendero es mantenido por {operator}"
           },
           "hideInAnswer": true,
           "icon": {
@@ -179,13 +191,15 @@
         "en": "What is the reference colour of this trail?",
         "nl": "Welke kleur heeft deze wandeling?",
         "de": "Was ist die Referenzfarbe dieses Weges?",
-        "ca": "Quin és el color de referència d'aquest sender?"
+        "ca": "Quin és el color de referència d'aquest sender?",
+        "es": "¿Cuál es el color de referencia de este sendero?"
       },
       "render": {
         "en": "The reference colour is {colour}",
         "nl": "Deze wandeling heeft kleur {colour}",
         "de": "Die Referenzfarbe ist {colour}",
-        "ca": "El color de referència és {colour}"
+        "ca": "El color de referència és {colour}",
+        "es": "El color de referencia es {colour}"
       },
       "freeform": {
         "key": "colour",
@@ -201,7 +215,8 @@
             "fr": "Sentier bleu",
             "da": "Blå sti",
             "ca": "Ruta blava",
-            "cs": "Modrá stezka"
+            "cs": "Modrá stezka",
+            "es": "Sendero azul"
           }
         },
         {
@@ -213,7 +228,8 @@
             "fr": "Sentier rouge",
             "da": "Rød sti",
             "ca": "Ruta vermella",
-            "cs": "Červená stezka"
+            "cs": "Červená stezka",
+            "es": "Sendero rojo"
           }
         },
         {
@@ -225,7 +241,8 @@
             "fr": "Sentier vert",
             "da": "Grøn sti",
             "ca": "Ruta verda",
-            "cs": "Zelená stezka"
+            "cs": "Zelená stezka",
+            "es": "Sendero verde"
           }
         },
         {
@@ -237,7 +254,8 @@
             "fr": "Sentier jaune",
             "da": "Gul sti",
             "ca": "Ruta groga",
-            "cs": "Žlutá stezka"
+            "cs": "Žlutá stezka",
+            "es": "Sendero amarillo"
           }
         }
       ],
@@ -247,14 +265,16 @@
       "question": {
         "en": "Is this trail wheelchair accessible?",
         "nl": "Is deze wandeling toegankelijk met de rolstoel?",
-        "de": "Ist dieser Weg rollstuhlgerecht?"
+        "de": "Ist dieser Weg rollstuhlgerecht?",
+        "es": "¿Es este sendero accesible para sillas de ruedas?"
       },
       "mappings": [
         {
           "then": {
             "en": "This trail is wheelchair-accessible",
             "nl": "deze wandeltocht is toegankelijk met de rolstoel",
-            "de": "Dieser Weg ist rollstuhlgerecht"
+            "de": "Dieser Weg ist rollstuhlgerecht",
+            "es": "Este sendero es accesible para sillas de ruedas"
           },
           "if": "wheelchair=yes"
         },
@@ -262,7 +282,8 @@
           "then": {
             "en": "This trail is not wheelchair accessible",
             "nl": "deze wandeltocht is niet toegankelijk met de rolstoel",
-            "de": "Dieser Weg ist nicht rollstuhlgerecht"
+            "de": "Dieser Weg ist nicht rollstuhlgerecht",
+            "es": "Este sendero no es accesible para sillas de ruedas"
           },
           "if": "wheelchair=no"
         }
@@ -273,14 +294,16 @@
       "question": {
         "en": "Is this trail accessible with a pushchair?",
         "nl": "Is deze wandeltocht toegankelijk met de buggy?",
-        "de": "Ist dieser Weg mit einem Kinderwagen zugänglich?"
+        "de": "Ist dieser Weg mit einem Kinderwagen zugänglich?",
+        "es": "¿Es este sendero accesible con una silla de paseo?"
       },
       "mappings": [
         {
           "then": {
             "en": "This trail is accessible with a pushchair",
             "nl": "deze wandeltocht is toegankelijk met de buggy",
-            "de": "Dieser Weg ist mit einem Kinderwagen zugänglich"
+            "de": "Dieser Weg ist mit einem Kinderwagen zugänglich",
+            "es": "Este sendero es accesible con una silla de paseo"
           },
           "if": "pushchair=yes"
         },
@@ -288,12 +311,14 @@
           "then": {
             "en": "This trail is not accessible with a pushchair",
             "nl": "deze wandeltocht is niet toegankelijk met de buggy",
-            "de": "Dieser Weg ist nicht mit einem Kinderwagen zugänglich"
+            "de": "Dieser Weg ist nicht mit einem Kinderwagen zugänglich",
+            "es": "Este sendero no es accesible con una silla de paseo"
           },
           "if": "pushchair=no"
         }
       ],
       "id": "pushchair access"
     }
-  ]
+  ],
+  "allowMove": false
 }

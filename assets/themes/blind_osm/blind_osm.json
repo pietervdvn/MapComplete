@@ -14,7 +14,10 @@
     "it": "OSM per i non vedenti",
     "pl": "OSM dla niewidomych",
     "da": "OSM for blinde",
-    "zh_Hans": "为盲人设计的OSM"
+    "zh_Hans": "为盲人设计的OSM",
+    "fil": "OSM para sa mga bulag",
+    "uk": "OSM для незрячих",
+    "hu": "OSM vakoknak"
   },
   "description": {
     "en": "Help to map features relevant for the blind",
@@ -24,11 +27,12 @@
     "ca": "Ajuda a mapejar elements rellevants per a persones amb discapacitat visual",
     "cs": "Pomozte zmapovat objekty důležité pro nevidomé",
     "nb_NO": "Relevante funksjoner for blinde",
-    "es": "Ayuda para cartografiar elementos relevantes para invidentes",
+    "es": "Ayuda a mapear elementos relevantes para personas ciegas",
     "eu": "Itsuentzako elementu garrantzitsuak kartografiatzeko laguntza",
     "it": "Aiuta a mappare le caratteristiche importanti per i non vedenti",
     "pl": "Pomóż umieszczać na mapie obiekty ważne dla niewidomych",
-    "zh_Hans": "帮助绘制与盲人相关的设施"
+    "zh_Hans": "帮助绘制与盲人相关的设施",
+    "uk": "Допоможіть нанести на мапу обʼєкти, важливі для незрячих"
   },
   "icon": "./assets/themes/blind_osm/Blindicon.svg",
   "startZoom": 20,
@@ -113,6 +117,8 @@
         "minzoom": 17
       }
     },
-    "stairs"
+    "stairs",
+    "tactile_map",
+    "tactile_model"
   ]
 }

@@ -9,6 +9,8 @@ import { Utils } from "../../Utils"
 import { Point } from "geojson"
 import MvtSource from "../FeatureSource/Sources/MvtSource"
 import AllImageProviders from "../ImageProviders/AllImageProviders"
+import { Imgur } from "../ImageProviders/Imgur"
+import { Panoramax, PanoramaxXYZ } from "panoramax-js/dist"
 
 interface ImageFetcher {
     /**
@@ -56,7 +58,7 @@ export interface P4CPicture {
     author?
     license?
     detailsUrl?: string
-    direction?
+    direction?: number
     osmTags?: object /*To copy straight into OSM!*/
     thumbUrl: string
     details: {
@@ -159,6 +161,53 @@ class ImagesInLoadedDataFetcher implements ImageFetcher {
         })
 
         return foundImages
+    }
+}
+
+class ImagesFromPanoramaxFetcher implements ImageFetcher {
+    private readonly _radius: number
+    private readonly _panoramax: Panoramax
+    name: string = "panoramax"
+
+    constructor(url?: string, radius: number = 100) {
+        this._radius = radius
+        if (url) {
+            this._panoramax = new Panoramax(url)
+        } else {
+            this._panoramax = new PanoramaxXYZ()
+        }
+    }
+
+    public async fetchImages(lat: number, lon: number): Promise<P4CPicture[]> {
+        const bboxObj = new BBox([
+            GeoOperations.destination([lon, lat], this._radius * Math.sqrt(2), -45),
+            GeoOperations.destination([lon, lat], this._radius * Math.sqrt(2), 135),
+        ])
+        const bbox: [number, number, number, number] = bboxObj.toLngLatFlat()
+        const images = await this._panoramax.search({ bbox, limit: 1000 })
+
+        return images.map((i) => {
+            const [lng, lat] = i.geometry.coordinates
+            return {
+                pictureUrl: i.assets.sd.href,
+                coordinates: { lng, lat },
+
+                provider: "panoramax",
+                direction: i.properties["view:azimuth"],
+                osmTags: {
+                    panoramax: i.id,
+                },
+                thumbUrl: i.assets.thumb.href,
+                date: new Date(i.properties.datetime).getTime(),
+                license: i.properties["geovisio:license"],
+                author: i.providers.at(-1).name,
+                detailsUrl: i.id,
+                details: {
+                    isSpherical:
+                        i.properties["exif"]["Xmp.GPano.ProjectionType"] === "equirectangular",
+                },
+            }
+        })
     }
 }
 
@@ -353,12 +402,14 @@ type P4CService = (typeof P4CImageFetcher.services)[number]
 
 export class CombinedFetcher {
     private readonly sources: ReadonlyArray<CachedFetcher>
-    public static apiUrls = P4CImageFetcher.apiUrls
+    public static apiUrls = [...P4CImageFetcher.apiUrls, Imgur.apiUrl, ...Imgur.supportingUrls]
 
     constructor(radius: number, maxage: Date, indexedFeatures: IndexedFeatureSource) {
         this.sources = [
             new ImagesInLoadedDataFetcher(indexedFeatures, radius),
             new ImagesFromCacheServerFetcher(radius),
+            new ImagesFromPanoramaxFetcher(),
+            new ImagesFromPanoramaxFetcher(Constants.panoramax.url),
             new MapillaryFetcher({
                 panoramas: "no",
                 max_images: 25,

@@ -21,7 +21,7 @@
     state.mapProperties.location.setData({ lon, lat })
     const z = state.mapProperties.zoom.data
     state.mapProperties.zoom.setData(Math.min(17, Math.max(12, z)))
-    state.guistate.menuIsOpened.setData(false)
+    state.guistate.pageStates.menu.setData(false)
   }
 
   function select() {

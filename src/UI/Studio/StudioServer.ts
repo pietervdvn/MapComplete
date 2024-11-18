@@ -2,7 +2,7 @@ import { Utils } from "../../Utils"
 import Constants from "../../Models/Constants"
 import { LayerConfigJson } from "../../Models/ThemeConfig/Json/LayerConfigJson"
 import { Store, UIEventSource } from "../../Logic/UIEventSource"
-import { LayoutConfigJson } from "../../Models/ThemeConfig/Json/LayoutConfigJson"
+import { ThemeConfigJson } from "../../Models/ThemeConfig/Json/ThemeConfigJson"
 
 /**
  * A small class wrapping around the Server API.
@@ -18,8 +18,9 @@ export default class StudioServer {
         | { error: any }
         | undefined
     >
+    public isDirect: boolean
 
-    constructor(url: string, userId: Store<number>) {
+    constructor(url: string, userId: Store<number | undefined>, isDirect: boolean) {
         this.url = url
         this._userId = userId
         this.overview = UIEventSource.FromPromiseWithErr(this.fetchOverviewRaw())
@@ -70,12 +71,12 @@ export default class StudioServer {
     }
 
     async fetch(layerId: string, category: "layers", uid?: number): Promise<LayerConfigJson>
-    async fetch(layerId: string, category: "themes", uid?: number): Promise<LayoutConfigJson>
+    async fetch(layerId: string, category: "themes", uid?: number): Promise<ThemeConfigJson>
     async fetch(
         layerId: string,
         category: "layers" | "themes",
         uid?: number
-    ): Promise<LayerConfigJson | LayoutConfigJson> {
+    ): Promise<LayerConfigJson | ThemeConfigJson> {
         try {
             return <any>await Utils.downloadJson(this.urlFor(layerId, category, uid))
         } catch (e) {
@@ -123,7 +124,7 @@ export default class StudioServer {
 
     public urlFor(id: string, category: "layers" | "themes", uid?: number) {
         uid ??= this._userId.data
-        const uidStr = uid !== undefined ? "/" + uid : ""
+        const uidStr = uid !== null ? "/" + uid : ""
         return `${this.url}${uidStr}/${category}/${id}/${id}.json`
     }
 }

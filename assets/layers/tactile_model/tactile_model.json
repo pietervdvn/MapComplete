@@ -1,0 +1,157 @@
+{
+  "id": "tactile_model",
+  "name": {
+    "en": "Tactile Models"
+  },
+  "description": {
+    "en": "Layer showing tactile models, three-dimensional models of the surrounding area."
+  },
+  "source": {
+    "osmTags": "information=tactile_model"
+  },
+  "title": {
+    "en": "Tactile Model"
+  },
+  "presets": [
+    {
+      "tags": [
+        "tourism=information",
+        "information=tactile_model"
+      ],
+      "title": {
+        "en": "a tactile model"
+      },
+      "description": {
+        "en": "A tactile model is a three-dimensional model of an area, allowing people to explore/see an area by touch."
+      }
+    }
+  ],
+  "deletion": true,
+  "allowMove": true,
+  "minzoom": 10,
+  "pointRendering": [
+    {
+      "marker": [
+        {
+          "icon": "./assets/layers/tactile_model/tactile_model.svg"
+        }
+      ],
+      "location": [
+        "point",
+        "centroid"
+      ]
+    }
+  ],
+  "tagRenderings": [
+    "images",
+    {
+      "id": "description",
+      "question": {
+        "en": "What does this tactile model show?"
+      },
+      "freeform": {
+        "key": "blind:description:en",
+        "placeholder": {
+          "en": "e.g. Tactile model of the city center"
+        }
+      },
+      "render": {
+        "en": "Description: {blind:description:en}."
+      }
+    },
+    {
+      "id": "braille",
+      "question": {
+        "en": "Is there a braille description?"
+      },
+      "mappings": [
+        {
+          "if": "braille=yes",
+          "then": {
+            "en": "There is a braille description."
+          }
+        },
+        {
+          "if": "braille=no",
+          "then": {
+            "en": "There is no braille description."
+          }
+        }
+      ]
+    },
+    {
+      "id": "braille_languages",
+      "condition": "braille=yes",
+      "render": {
+        "special": {
+          "type": "language_chooser",
+          "key": "tactile_writing:braille",
+          "question": {
+            "en": "In which languages is there a braille description?"
+          },
+          "render_list_item": {
+            "en": "This model has a braille description in {language()}"
+          },
+          "render_single_language": {
+            "en": "This model has a braille description in {language}"
+          }
+        }
+      }
+    },
+    {
+      "id": "embossed_letters",
+      "question": {
+        "en": "Are there embossed letters describing the model?"
+      },
+      "mappings": [
+        {
+          "if": "embossed_letters=yes",
+          "then": {
+            "en": "There are embossed letters describing the model."
+          }
+        },
+        {
+          "if": "embossed_letters=no",
+          "then": {
+            "en": "There are no embossed letters describing the model."
+          }
+        }
+      ]
+    },
+    {
+      "id": "embossed_letters_languages",
+      "condition": "embossed_letters=yes",
+      "render": {
+        "special": {
+          "type": "language_chooser",
+          "key": "tactile_writing:embossed_letters",
+          "question": {
+            "en": "In which languages are there embossed letters?"
+          },
+          "render_list_item": {
+            "en": "This model has embossed letters in {language()}"
+          },
+          "render_single_language": {
+            "en": "This model has embossed letters in {language}"
+          }
+        }
+      }
+    },
+    {
+      "id": "scale",
+      "question": {
+        "en": "What scale is the model?"
+      },
+      "freeform": {
+        "key": "scale",
+        "placeholder": {
+          "en": "e.g. 1:1000"
+        }
+      },
+      "render": {
+        "en": "The scale of this model is {scale}."
+      }
+    },
+    "website"
+  ]
+}

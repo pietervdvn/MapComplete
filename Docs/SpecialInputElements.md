@@ -14,6 +14,7 @@ The listed types here trigger a special input element. Use them in `tagrendering
 8. [Input helper](#input-helper)
 9. [wikidata](#wikidata)
 10. [Helper arguments](#helper-arguments)
+  - [Suboptions](#suboptions)
 11. [Example usage](#example-usage)
 12. [pnat](#pnat)
 13. [float](#float)
@@ -38,6 +39,7 @@ The listed types here trigger a special input element. Use them in `tagrendering
 32. [nsi](#nsi)
 33. [Helper arguments](#helper-arguments)
 34. [currency](#currency)
+35. [regex](#regex)
 
 ### string
 A simple piece of text which is at most 255 characters long
@@ -58,32 +60,28 @@ A geographical direction, in degrees. 0° is north, 90° is east, ... Will retur
 
 This element has an input helper showing a map and 'viewport' indicating the direction. By default, this map is zoomed to zoomlevel 17, but this can be changed with the first argument
 ### wikidata
-A wikidata identifier, e.g. Q42. 
+A wikidata identifier, e.g. Q42.
 
-### Helper arguments 
+### Helper arguments
 
- 
+| name | doc |
+-----|----- |
+| key | the value of this tag will initialize search (default: name). This can be a ';'-separated list in which case every key will be inspected. The non-null value will be used as search |
+| options | A JSON-object of type `{ removePrefixes: Record<string, string[]>, removePostfixes: Record<string, string[]>, ... }`. See the more detailed explanation below |
 
-name | doc
------- | -----
-key | the value of this tag will initialize search (default: name). This can be a ';'-separated list in which case every key will be inspected. The non-null value will be used as search
-options | A JSON-object of type `{ removePrefixes: string[], removePostfixes: string[] }`. 
+#### Suboptions
 
-\| subarg \| doc \|
------\|----- \|
-\| removePrefixes \| remove these snippets of text from the start of the passed string to search. This is either a list OR a hash of languages to a list. The individual strings are interpreted as case ignoring regexes \|
-\| removePostfixes \| remove these snippets of text from the end of the passed string to search. This is either a list OR a hash of languages to a list. The individual strings are interpreted as case ignoring regexes. \|
-\| instanceOf \| A list of Q-identifier which indicates that the search results _must_ be an entity of this type, e.g. [`Q5`](https://www.wikidata.org/wiki/Q5) for humans \|
-\| notInstanceof \| A list of Q-identifiers which indicates that the search results _must not_ be an entity of this type, e.g. [`Q79007`](https://www.wikidata.org/wiki/Q79007) to filter away all streets from the search results \|
-\| multiple \| If 'yes' or 'true', will allow to select multiple values at once \|
+| subarg | doc |
+-----|----- |
+| removePrefixes | remove these snippets of text from the start of the passed string to search. This is either a list OR a hash of languages to a list. The individual strings are interpreted as case ignoring regexes |
+| removePostfixes | remove these snippets of text from the end of the passed string to search. This is either a list OR a hash of languages to a list. The individual strings are interpreted as case ignoring regexes. |
+| instanceOf | A list of Q-identifier which indicates that the search results _must_ be an entity of this type, e.g. [`Q5`](https://www.wikidata.org/wiki/Q5) for humans |
+| notInstanceof | A list of Q-identifiers which indicates that the search results _must not_ be an entity of this type, e.g. [`Q79007`](https://www.wikidata.org/wiki/Q79007) to filter away all streets from the search results |
+| multiple | If 'yes' or 'true', will allow to select multiple values at once |
 
+### Example usage
 
-
- 
-
-### Example usage 
-
- The following is the 'freeform'-part of a layer config which will trigger a search for the wikidata item corresponding with the name of the selected feature. It will also remove '-street', '-square', ... if found at the end of the name
+The following is the 'freeform'-part of a layer config which will trigger a search for the wikidata item corresponding with the name of the selected feature. It will also remove '-street', '-square', ... if found at the end of the name
 
 ```json
 "freeform": {
@@ -138,26 +136,17 @@ The validatedTextField will format URLs to always be valid and have a https://-h
 ### phone
 A phone number
 ### opening_hours
-Has extra elements to easily input when a POI is opened. 
+Has extra elements to easily input when a POI is opened.
+### Helper arguments
+Only one helper argument named `options` can be provided. It is a JSON-object of type `{ prefix: string, postfix: string }`:
 
-### Helper arguments 
+| subarg | doc |
+-----|----- |
+| prefix | Piece of text that will always be added to the front of the generated opening hours. If the OSM-data does not start with this, it will fail to parse. |
+| postfix | Piece of text that will always be added to the end of the generated opening hours |
 
- 
-
-name | doc
------- | -----
-options | A JSON-object of type `{ prefix: string, postfix: string }`.  
-
-subarg \| doc
--------- \| -----
-prefix \| Piece of text that will always be added to the front of the generated opening hours. If the OSM-data does not start with this, it will fail to parse.
-postfix \| Piece of text that will always be added to the end of the generated opening hours
-
- 
-
-### Example usage 
-
- To add a conditional (based on time) access restriction:
+### Example usage
+To add a conditional (based on time) access restriction:
 
 ```
 
@@ -212,9 +201,10 @@ subarg \| doc
 main \| The main tag to give suggestions for, e.g. `amenity=restaurant`.
 addExtraTags \| Extra tags to add to the suggestions, e.g. `nobrand=yes`.
 
-
 ### currency
 Validates monetary amounts
+### regex
+Validates a regex
 
 
 This document is autogenerated from [src/UI/InputElement/Validators.ts](https://github.com/pietervdvn/MapComplete/blob/develop/src/UI/InputElement/Validators.ts)

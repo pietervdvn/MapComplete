@@ -4,32 +4,24 @@
    */
   import { Store, UIEventSource } from "../../Logic/UIEventSource"
   import type { RasterLayerPolygon } from "../../Models/RasterLayers"
-  import type { MapProperties } from "../../Models/MapProperties"
-  import { Map as MlMap } from "maplibre-gl"
   import RasterLayerPicker from "./RasterLayerPicker.svelte"
   import type { EliCategory } from "../../Models/RasterLayerProperties"
-  import UserRelatedState from "../../Logic/State/UserRelatedState"
   import Translations from "../i18n/Translations"
   import Tr from "../Base/Tr.svelte"
-  import { MenuState } from "../../Models/MenuState"
-  import OverlayOverview from "./OverlayOverview.svelte"
-  import TitledPanel from "../Base/TitledPanel.svelte"
   import Loading from "../Base/Loading.svelte"
+  import Page from "../Base/Page.svelte"
+  import ThemeViewState from "../../Models/ThemeViewState"
+  import { Square3Stack3dIcon } from "@babeard/svelte-heroicons/solid"
 
-  export let availableLayers: { store: Store<RasterLayerPolygon[]> }
-  export let mapproperties: MapProperties
-  export let userstate: UserRelatedState
-  export let map: Store<MlMap>
-  export let menuState: MenuState
+  export let state: ThemeViewState
+
+  let map = state.map
+  let mapproperties = state.mapProperties
+  let userstate = state.userRelatedState
+  let shown = state.guistate.pageStates.background
+  let availableLayers: { store: Store<RasterLayerPolygon[]> } = state.availableLayers
   let _availableLayers = availableLayers.store
-  /**
-   * Used to toggle the background layers on/off
-   */
-  export let visible: UIEventSource<boolean> = undefined
-  /**
-   * This can be either "background" or "overlay"
-   */
-  export let layerType: "background" | "overlay" = "background"
+  let layerType: "background" | "overlay" = "background"
 
   type CategoryType = "photo" | "map" | "other" | "osmbasedmap"
   const categories: Record<CategoryType, EliCategory[]> = {
@@ -62,49 +54,33 @@
   const otherLayers = availableForCategory("other")
 
   function onApply() {
-    visible.setData(false)
+    shown.setData(false)
   }
 
   function getPref(type: CategoryType): undefined | UIEventSource<string> {
     return userstate?.osmConnection?.GetPreference("preferred-layer-" + type)
   }
 
-  function openOverlaySelector() {
-    menuState.backgroundLayerSelectionIsOpened.setData(false)
-    menuState.overlaySelectionIsOpened.setData(true)
-  }
+  export let onlyLink: boolean
 </script>
 
-<TitledPanel>
-  {#if layerType == "background"}
-    <Tr t={Translations.t.general.backgroundMap} slot="title" />
-  {:else}
-    <Tr t={Translations.t.general.overlayMap} slot="title" />
-  {/if}
+<Page {onlyLink} {shown} fullscreen={true}>
+  <div slot="header" class="flex">
+    <Square3Stack3dIcon class="h-6 w-6" />
+
+    <Tr t={Translations.t.general.backgroundMap} />
+  </div>
   {#if $_availableLayers?.length < 1}
     <Loading />
   {:else}
-    {#if layerType == "background"}
-      // TODO: Handle enter keypress
-      <button
-        on:click={() => {
-          openOverlaySelector()
-        }}
-      >
-        <Tr t={Translations.t.general.overlayMap} />
-      </button>
-    {:else}
-      <OverlayOverview {mapproperties} />
-    {/if}
-
-    <div class="grid h-full w-full grid-cols-1 gap-2 md:grid-cols-2">
+    <div class="flex flex-col gap-x-2 gap-y-2 sm:flex-row" style="height: calc( 100% - 5rem)">
       <RasterLayerPicker
         availableLayers={$photoLayers}
         favourite={getPref("photo")}
         {map}
         {mapproperties}
         on:appliedLayer={onApply}
-        {visible}
+        {shown}
       />
       <RasterLayerPicker
         availableLayers={$mapLayers}
@@ -112,7 +88,7 @@
         {map}
         {mapproperties}
         on:appliedLayer={onApply}
-        {visible}
+        {shown}
       />
       <RasterLayerPicker
         availableLayers={$osmbasedmapLayers}
@@ -120,7 +96,7 @@
         {map}
         {mapproperties}
         on:appliedLayer={onApply}
-        {visible}
+        {shown}
       />
       <RasterLayerPicker
         availableLayers={$otherLayers}
@@ -128,8 +104,8 @@
         {map}
         {mapproperties}
         on:appliedLayer={onApply}
-        {visible}
+        {shown}
       />
     </div>
   {/if}
-  </TitledPanel>
+</Page>

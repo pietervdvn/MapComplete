@@ -6,7 +6,8 @@
     "nl": "Treinperrons",
     "fr": "Quais de gare",
     "ca": "Andanes ferroviàries",
-    "cs": "Železniční nástupiště"
+    "cs": "Železniční nástupiště",
+    "es": "Andenes de tren"
   },
   "description": {
     "en": "Find every platform in the station, and the train routes that use them.",
@@ -14,7 +15,8 @@
     "nl": "Vind elk perron in het station, en de routes die ze gebruiken.",
     "fr": "Trouvez tous les quais dans la gare, et les lignes ferroviaires qui les utilisent.",
     "ca": "Trobeu totes les andanes de l'estació i les rutes de tren que les fan servir.",
-    "cs": "Najděte všechna nástupiště ve stanici a vlakové trasy, které je používají."
+    "cs": "Najděte všechna nástupiště ve stanici a vlakové trasy, které je používají.",
+    "es": "Encuentra cada andén en la estación y las rutas de tren que los utilizan."
   },
   "source": {
     "osmTags": {
@@ -32,7 +34,8 @@
       "fr": "Quai",
       "ca": "Andana",
       "cs": "Nástupiště",
-      "pl": "Peron"
+      "pl": "Peron",
+      "es": "Andén"
     },
     "mappings": [
       {
@@ -44,7 +47,8 @@
           "fr": "Quai {ref}",
           "ca": "Andana {ref}",
           "cs": "Nástupiště {ref}",
-          "pl": "Peron {ref}"
+          "pl": "Peron {ref}",
+          "es": "Andén {ref}"
         }
       }
     ]
@@ -85,7 +89,8 @@
         "fr": "Quel est le numéro de ce quai ?",
         "ca": "Quin és el número d'aquesta andana?",
         "cs": "Jaké je číslo tohoto nástupiště?",
-        "pl": "Jaki jest numer tego peronu?"
+        "pl": "Jaki jest numer tego peronu?",
+        "es": "¿Cuál es el número de este andén?"
       },
       "freeform": {
         "key": "ref",
@@ -97,7 +102,8 @@
           "fr": "Numéro de quai",
           "ca": "Nombre d'andana",
           "cs": "Číslo nástupiště",
-          "pl": "Numer peronu"
+          "pl": "Numer peronu",
+          "es": "Número de andén"
         }
       },
       "render": {
@@ -107,9 +113,11 @@
         "fr": "Quai {ref}",
         "ca": "Andana {ref}",
         "cs": "Nástupiště {ref}",
-        "pl": "Peron {ref}"
+        "pl": "Peron {ref}",
+        "es": "Andén {ref}"
       }
     },
     "level"
-  ]
+  ],
+  "allowMove": false
 }

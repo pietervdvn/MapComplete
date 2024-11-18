@@ -2,15 +2,7 @@
 
 # osm_community_index
 
-
-
-
 A layer showing the OpenStreetMap Communities
-
-
-
-
-
 
  - This layer is shown at zoomlevel **0** and higher
  - <img src='../warning.svg' height='1rem'/>
@@ -18,8 +10,6 @@ A layer showing the OpenStreetMap Communities
 This layer is loaded from an external source, namely 
 
 `https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/community_index/tile_{z}_{x}_{y}.geojson`
-
-
 
 ## Table of contents
 
@@ -34,12 +24,8 @@ This layer is loaded from an external source, namely
 
 ## Themes using this layer
 
-
-
  - [osm_community_index](https://mapcomplete.org/osm_community_index)
  - [personal](https://mapcomplete.org/personal)
-
-
 
 ## Basic tags for this layer
 
@@ -49,15 +35,12 @@ Elements must match the expression **resources~.+**
 
 ## Supported attributes
 
-
-
 ### country_name
 The name of the country
 _This tagrendering has no question and is thus read-only_
 *{nameEn} {emojiFlag}*
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3Dcountry' target='_blank'>country</a>
-
 
 ### community_links
 Community Links (Discord, meetups, Slack groups, IRC channels, mailing lists etc...)
@@ -66,86 +49,48 @@ _This tagrendering has no question and is thus read-only_
 
 This tagrendering is only visible in the popup if the following condition is met: _community_links~.+
 
-
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
-
-
-
 
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
 
-
 This tagrendering has labels 
 `added_by_default`
 
 ## Filters
 
-
-
 | id | question | osmTags |
 -----|-----|----- |
 | country.0 | Country | level=country |
-
-
-
-
-
 
 | id | question | osmTags |
 -----|-----|----- |
 | sub_country.0 | Sub Country Group | level=subcountryGroup |
 
-
-
-
-
-
 | id | question | osmTags |
 -----|-----|----- |
 | region.0 | Region | level=region |
-
-
-
-
-
 
 | id | question | osmTags |
 -----|-----|----- |
 | intermediate_region.0 | Intermediate Region | level=intermediateRegion |
 
-
-
-
-
-
 | id | question | osmTags |
 -----|-----|----- |
 | territory.0 | Territory | level=territory |
-
-
-
-
-
 
 | id | question | osmTags |
 -----|-----|----- |
 | world.0 | World | level=world |
 
-
-
-
-
-
 | id | question | osmTags |
 -----|-----|----- |
 | other.0 | Other Communities | level= |
-
 
 
 

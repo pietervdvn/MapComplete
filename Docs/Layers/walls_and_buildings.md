@@ -2,15 +2,7 @@
 
 # walls_and_buildings
 
-
-
-
 Special builtin layer providing all walls and buildings. This layer is useful in presets for objects which can be placed against walls (e.g. AEDs, postboxes, entrances, addresses, surveillance cameras, …). This layer is invisible by default and not toggleable by the user.
-
-
-
-
-
 
  - This layer is shown at zoomlevel **18** and higher
  - This layer is not visible by default and must be enabled in the filter by the user. 
@@ -23,12 +15,11 @@ Special builtin layer providing all walls and buildings. This layer is useful in
  - This layer is needed as dependency for layer [clock](#clock)
  - This layer is needed as dependency for layer [defibrillator](#defibrillator)
  - This layer is needed as dependency for layer [entrance](#entrance)
+ - This layer is needed as dependency for layer [ghostsign](#ghostsign)
+ - This layer is needed as dependency for layer [postboxes](#postboxes)
  - This layer is needed as dependency for layer [surveillance_camera](#surveillance_camera)
  - This layer is needed as dependency for layer [facadegardens](#facadegardens)
- - This layer is needed as dependency for layer [ghostsigns](#ghostsigns)
  - This layer is needed as dependency for layer [parking_spaces_disabled](#parking_spaces_disabled)
-
-
 
 ## Table of contents
 
@@ -43,23 +34,21 @@ Special builtin layer providing all walls and buildings. This layer is useful in
 
 ## Themes using this layer
 
-
-
  - [advertising](https://mapcomplete.org/advertising)
  - [aed](https://mapcomplete.org/aed)
  - [artwork](https://mapcomplete.org/artwork)
  - [clock](https://mapcomplete.org/clock)
+ - [disaster_response](https://mapcomplete.org/disaster_response)
  - [facadegardens](https://mapcomplete.org/facadegardens)
  - [ghostsigns](https://mapcomplete.org/ghostsigns)
  - [indoors](https://mapcomplete.org/indoors)
  - [memorials](https://mapcomplete.org/memorials)
  - [onwheels](https://mapcomplete.org/onwheels)
  - [personal](https://mapcomplete.org/personal)
+ - [postboxes](https://mapcomplete.org/postboxes)
  - [stations](https://mapcomplete.org/stations)
  - [surveillance](https://mapcomplete.org/surveillance)
  - [walls_and_buildings](https://mapcomplete.org/walls_and_buildings)
-
-
 
 ## Basic tags for this layer
 
@@ -72,20 +61,13 @@ Elements must match **any** of the following expressions:
 
 ## Supported attributes
 
-
-
 ### entrance_info
 
 _This tagrendering has no question and is thus read-only_
 *<h3>Entrances</h3>This building has {_entrances_count} entrances:{multi(_entrance_properties_with_width,An <a href='#&LBRACEid&RBRACE'>entrance</a> of &LBRACEcanonical&LPARENSwidth&RPARENS&RBRACE,)}{_entrances_count_without_width_count} entrances don't have width information yet*
 
-
  -  *No entrance has been marked* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:_entrances_count' target='_blank'>_entrances_count</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_entrances_count%3D0' target='_blank'>0</a>
  -  *None of the {_entrance_count} entrances have width information yet* is shown if with _entrances_count_without_width=_entrances_count
-
-
-
-
 
 ### biggest_width
 
@@ -94,20 +76,15 @@ _This tagrendering has no question and is thus read-only_
 
 This tagrendering is only visible in the popup if the following condition is met: _biggest_width_id~.+
 
-
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

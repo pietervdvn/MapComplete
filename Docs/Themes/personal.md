@@ -8,7 +8,6 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [advertising](../Layers/advertising.md)
  - [aerialway](../Layers/aerialway.md)
  - [ambulancestation](../Layers/ambulancestation.md)
@@ -22,6 +21,7 @@ This theme contains the following layers:
  - [bbq](../Layers/bbq.md)
  - [bench](../Layers/bench.md)
  - [bench_at_pt](../Layers/bench_at_pt.md)
+ - [bicycle_counter](../Layers/bicycle_counter.md)
  - [bicycle_library](../Layers/bicycle_library.md)
  - [bicycle_rental](../Layers/bicycle_rental.md)
  - [bike_cafe](../Layers/bike_cafe.md)
@@ -33,6 +33,7 @@ This theme contains the following layers:
  - [binocular](../Layers/binocular.md)
  - [birdhide](../Layers/birdhide.md)
  - [cafe_pub](../Layers/cafe_pub.md)
+ - [caravansites](../Layers/caravansites.md)
  - [charging_station](../Layers/charging_station.md)
  - [climbing_area](../Layers/climbing_area.md)
  - [climbing_club](../Layers/climbing_club.md)
@@ -43,12 +44,14 @@ This theme contains the following layers:
  - [crossings](../Layers/crossings.md)
  - [current_view](../Layers/current_view.md)
  - [cycleways_and_roads](../Layers/cycleways_and_roads.md)
+ - [cyclist_waiting_aid](../Layers/cyclist_waiting_aid.md)
  - [defibrillator](../Layers/defibrillator.md)
  - [dentist](../Layers/dentist.md)
  - [disaster_response](../Layers/disaster_response.md)
  - [doctors](../Layers/doctors.md)
  - [dogpark](../Layers/dogpark.md)
  - [drinking_water](../Layers/drinking_water.md)
+ - [dumpstations](../Layers/dumpstations.md)
  - [elevator](../Layers/elevator.md)
  - [elongated_coin](../Layers/elongated_coin.md)
  - [entrance](../Layers/entrance.md)
@@ -62,6 +65,7 @@ This theme contains the following layers:
  - [food](../Layers/food.md)
  - [food_courts](../Layers/food_courts.md)
  - [ghost_bike](../Layers/ghost_bike.md)
+ - [ghostsign](../Layers/ghostsign.md)
  - [governments](../Layers/governments.md)
  - [grave](../Layers/grave.md)
  - [guidepost](../Layers/guidepost.md)
@@ -95,6 +99,7 @@ This theme contains the following layers:
  - [picnic_table](../Layers/picnic_table.md)
  - [playground](../Layers/playground.md)
  - [playground_equipment](../Layers/playground_equipment.md)
+ - [police](../Layers/police.md)
  - [postboxes](../Layers/postboxes.md)
  - [postoffices](../Layers/postoffices.md)
  - [public_bookcase](../Layers/public_bookcase.md)
@@ -115,6 +120,8 @@ This theme contains the following layers:
  - [stairs](../Layers/stairs.md)
  - [street_lamps](../Layers/street_lamps.md)
  - [surveillance_camera](../Layers/surveillance_camera.md)
+ - [tactile_map](../Layers/tactile_map.md)
+ - [tactile_model](../Layers/tactile_model.md)
  - [tertiary_education](../Layers/tertiary_education.md)
  - [ticket_machine](../Layers/ticket_machine.md)
  - [toilet](../Layers/toilet.md)
@@ -133,9 +140,7 @@ This theme contains the following layers:
  - [waste_disposal](../Layers/waste_disposal.md)
  - [windturbine](../Layers/windturbine.md)
 
-
 Available languages:
-
 
  - en
  - nl
@@ -153,7 +158,9 @@ Available languages:
  - pa_PK
  - cs
  - pl
-
+ - ru
+ - hu
+ - uk
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

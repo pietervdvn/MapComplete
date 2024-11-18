@@ -12,20 +12,23 @@
     "da": "Noter på OpenStreetMap",
     "cs": "Poznámky k OpenStreetMap",
     "zh_Hant": "開放街圖上的註解",
-    "pl": "Notatki na OpenStreetMap"
+    "pl": "Notatki na OpenStreetMap",
+    "ru": "Заметки в OpenStreetMap",
+    "uk": "Нотатки OpenStreetMap"
   },
   "description": {
     "en": "A note is a pin on the map with some text to indicate something wrong.<br/><br/>Make sure to checkout the <a href='#filters'>filter view</a> to search for users and text.",
     "hu": "A jegyzet egy gombostű a térképen egy szöveggel, amely azt jelzi, hogy valami nem stimmel.<br/><br/>Felhasználók vagy szövegek kereséséhez nézd meg a <a href='#filters'>szűrő nézetet</a>.",
     "nl": "Een kaartnota bevat tekst op een specifieke locatie om aan te duiden dat er iets mis is of ontbreekt.<br/><br/>Bekijk ook het <a href='#filters'>filtermenu</a> om de notas te filteren op tekst, gebruiker, datum, ...",
     "de": "Eine Notiz enthält eine Fehlerbeschreibung und ist als Markierung auf der Karte sichtbar.<br/><br/>In der <a href='#filters'>Ebenenauswahl</a> kann nach Ersteller, Bearbeiter und Inhalt gesucht werden.",
-    "es": "Una nota es un pin en el mapa con algún texto para indicar algo erróneo.<br/><br/>Asegúrate de comprobar la <a href='#filters'> vista de filtros</a> para buscar usuarios y texto.",
+    "es": "Una nota es un pin en el mapa con algo de texto para indicar algo incorrecto.<br/><br/>Asegúrate de revisar la <a href='#filters'>vista de filtro</a> para buscar usuarios y texto.",
     "fr": "Une note est une épingle sur la carte avec du text pour indiquer une erreur.<br/><br/>Assurez-vous d’utiliser le <a href='#filters'>filtre</a> pour chercher des utilisateurs and du texte.",
     "da": "En note er en nål på kortet med noget tekst, der indikerer, at noget er forkert.<br/><br/>Sørg for at tjekke <a href='#filters'>filtervisningen</a> for at søge efter brugere og tekst .",
     "cs": "Poznámka je špendlík na mapě s textem, jež označuje, že něco není v pořádku.<br/><br/>Nezapomeňte si prohlédnout zobrazení filtru <a href='#filters'></a> pro vyhledávání uživatelů a textu.",
     "ca": "Una nota és un marcador al mapa amb un text per indicar alguna cosa incorrecta.<br/><br/>Assegureu-vos de revisar la <a href='#filters'>visualització de filtres</a> per cercar usuaris i text.",
     "zh_Hant": "註解會散佈在地圖上並且有一些文字說明，來顯示那邊有錯誤。<br/><br/>請確認用<a href='#filter'>過濾檢視</a>來搜尋使用者或是文字。",
-    "pl": "Uwaga to pinezka na mapie z tekstem wskazującym, że coś jest nie tak.<br/><br/>Pamiętaj o skorzystaniu z <a href='#filters'>widoku filtra</a>, aby wyszukać użytkowników i tekst ."
+    "pl": "Uwaga to pinezka na mapie z tekstem wskazującym, że coś jest nie tak.<br/><br/>Pamiętaj o skorzystaniu z <a href='#filters'>widoku filtra</a>, aby wyszukać użytkowników i tekst .",
+    "uk": "Нотатка — це мітка на мапі з певним текстом, яка вказує на те, що щось не так.<br/><br/>Не забудьте переглянути <a href='#filters'>фільтри</a> для пошуку користувачів і тексту."
   },
   "icon": "./assets/themes/notes/logo.svg",
   "layers": [

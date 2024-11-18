@@ -21,19 +21,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Sport pitches allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Sport pitches allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Sport pitches allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Sport pitches allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Sport pitches allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Sport pitches allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Sport pitches allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Sport pitches allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Sport pitches allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "sport",
@@ -219,19 +223,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Fitness Centres allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Fitness Centres allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Fitness Centres allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Fitness Centres allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Fitness Centres allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Fitness Centres allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Fitness Centres allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Fitness Centres allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Fitness Centres allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "phone",
@@ -239,7 +247,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Fitness Centres' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Sports')"
+      "description": "Layer 'Fitness Centres' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Sports')"
     },
     {
       "key": "email",
@@ -330,19 +338,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Fitness Stations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Fitness Stations allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Fitness Stations allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Fitness Stations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Fitness Stations allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Fitness Stations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Fitness Stations allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Fitness Stations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Fitness Stations allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "name",
@@ -507,19 +519,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Sports centres allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Sports centres allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Sports centres allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Sports centres allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Sports centres allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Sports centres allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Sports centres allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Sports centres allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Sports centres allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "opening_hours",
@@ -536,7 +552,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Sports centres' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Sports')"
+      "description": "Layer 'Sports centres' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Sports')"
     },
     {
       "key": "website",
@@ -589,23 +605,851 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Shop allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Shop allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Shop allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Shop allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Shop allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Shop allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Shop allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Shop allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Shop allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "name",
       "description": "Layer 'Shop' shows and asks freeform values for key 'name' (in the mapcomplete.org theme 'Sports')"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows and asks freeform values for key 'shop' (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=bicycle_rental with a fixed text, namely 'Bicycle rental shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "bicycle_rental"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=agrarian with a fixed text, namely 'Farm Supply Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "agrarian"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=alcohol with a fixed text, namely 'Liquor Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "alcohol"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=anime with a fixed text, namely 'Anime / Manga Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "anime"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=antiques with a fixed text, namely 'Antique Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "antiques"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=appliance with a fixed text, namely 'Appliance Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "appliance"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=art with a fixed text, namely 'Art Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "art"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=baby_goods with a fixed text, namely 'Baby Goods Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "baby_goods"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=bag with a fixed text, namely 'Bag/Luggage Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "bag"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=bakery with a fixed text, namely 'Bakery' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "bakery"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=bathroom_furnishing with a fixed text, namely 'Bathroom Furnishing Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "bathroom_furnishing"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=beauty with a fixed text, namely 'Beauty Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "beauty"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=bed with a fixed text, namely 'Bedding/Mattress Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "bed"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=beverages with a fixed text, namely 'Beverage Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "beverages"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=bicycle with a fixed text, namely 'Bicycle Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "bicycle"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=boat with a fixed text, namely 'Boat Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "boat"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=bookmaker with a fixed text, namely 'Bookmaker' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "bookmaker"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=books with a fixed text, namely 'Bookstore' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "books"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=brewing_supplies with a fixed text, namely 'Brewing Supply Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "brewing_supplies"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=butcher with a fixed text, namely 'Butcher' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "butcher"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=camera with a fixed text, namely 'Camera Equipment Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "camera"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=candles with a fixed text, namely 'Candle Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "candles"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=cannabis with a fixed text, namely 'Cannabis Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "cannabis"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=car with a fixed text, namely 'Car Dealership' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "car"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=car_parts with a fixed text, namely 'Car Parts Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "car_parts"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=car_repair with a fixed text, namely 'Car Repair Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "car_repair"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=caravan with a fixed text, namely 'RV Dealership' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "caravan"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=carpet with a fixed text, namely 'Carpet Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "carpet"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=catalogue with a fixed text, namely 'Catalog Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "catalogue"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=charity with a fixed text, namely 'Charity Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "charity"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=cheese with a fixed text, namely 'Cheese Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "cheese"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=chemist with a fixed text, namely 'Drugstore' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "chemist"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=chocolate with a fixed text, namely 'Chocolate Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "chocolate"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=clothes with a fixed text, namely 'Clothing Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "clothes"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=coffee with a fixed text, namely 'Coffee Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "coffee"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=collector with a fixed text, namely 'Collectibles Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "collector"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=computer with a fixed text, namely 'Computer Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "computer"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=confectionery with a fixed text, namely 'Candy Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "confectionery"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=convenience with a fixed text, namely 'Convenience Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "convenience"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=copyshop with a fixed text, namely 'Copy Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "copyshop"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=cosmetics with a fixed text, namely 'Cosmetics Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "cosmetics"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=country_store with a fixed text, namely 'Rural Supplies Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "country_store"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=craft with a fixed text, namely 'Arts & Crafts Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "craft"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=curtain with a fixed text, namely 'Curtain Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "curtain"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=dairy with a fixed text, namely 'Dairy Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "dairy"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=deli with a fixed text, namely 'Delicatessen' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "deli"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=department_store with a fixed text, namely 'Department Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "department_store"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=doityourself with a fixed text, namely 'DIY Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "doityourself"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=doors with a fixed text, namely 'Door Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "doors"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=dry_cleaning with a fixed text, namely 'Dry Cleaner' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "dry_cleaning"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=e-cigarette with a fixed text, namely 'E-Cigarette Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "e-cigarette"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=electrical with a fixed text, namely 'Electrical Equipment Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "electrical"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=electronics with a fixed text, namely 'Electronics Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "electronics"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=erotic with a fixed text, namely 'Erotic Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "erotic"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=fabric with a fixed text, namely 'Fabric Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "fabric"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=farm with a fixed text, namely 'Produce Stand' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "farm"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=fashion_accessories with a fixed text, namely 'Fashion Accessories Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "fashion_accessories"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=fireplace with a fixed text, namely 'Fireplace Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "fireplace"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=fishing with a fixed text, namely 'Fishing Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "fishing"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=flooring with a fixed text, namely 'Flooring Supply Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "flooring"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=florist with a fixed text, namely 'Florist' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "florist"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=frame with a fixed text, namely 'Framing Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "frame"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=frozen_food with a fixed text, namely 'Frozen Food Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "frozen_food"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=fuel with a fixed text, namely 'Fuel Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "fuel"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=funeral_directors with a fixed text, namely 'Funeral Home' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "funeral_directors"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=furniture with a fixed text, namely 'Furniture Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "furniture"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=games with a fixed text, namely 'Tabletop Game Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "games"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=garden_centre with a fixed text, namely 'Garden Center' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "garden_centre"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=gas with a fixed text, namely 'Bottled Gas Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "gas"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=general with a fixed text, namely 'General Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "general"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=gift with a fixed text, namely 'Gift Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "gift"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=greengrocer with a fixed text, namely 'Greengrocer' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "greengrocer"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=hairdresser with a fixed text, namely 'Hairdresser' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "hairdresser"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=hairdresser_supply with a fixed text, namely 'Hairdresser Supply Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "hairdresser_supply"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=hardware with a fixed text, namely 'Hardware Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "hardware"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=health_food with a fixed text, namely 'Health Food Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "health_food"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=hearing_aids with a fixed text, namely 'Hearing Aids Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "hearing_aids"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=herbalist with a fixed text, namely 'Herbalist' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "herbalist"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=hifi with a fixed text, namely 'Hifi Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "hifi"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=honey with a fixed text, namely 'Honey Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "honey"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=household_linen with a fixed text, namely 'Household Linen Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "household_linen"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=houseware with a fixed text, namely 'Houseware Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "houseware"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=hunting with a fixed text, namely 'Hunting Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "hunting"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=interior_decoration with a fixed text, namely 'Interior Decoration Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "interior_decoration"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=jewelry with a fixed text, namely 'Jewelry Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "jewelry"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=kiosk with a fixed text, namely 'Kiosk' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "kiosk"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=kitchen with a fixed text, namely 'Kitchen Design Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "kitchen"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=laundry with a fixed text, namely 'Laundry' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "laundry"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=leather with a fixed text, namely 'Leather Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "leather"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=lighting with a fixed text, namely 'Lighting Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "lighting"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=locksmith with a fixed text, namely 'Locksmith' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "locksmith"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=lottery with a fixed text, namely 'Lottery Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "lottery"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=mall with a fixed text, namely 'Mall' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "mall"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=massage with a fixed text, namely 'Massage Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "massage"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=medical_supply with a fixed text, namely 'Medical Supply Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "medical_supply"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=military_surplus with a fixed text, namely 'Military Surplus Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "military_surplus"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=mobile_phone with a fixed text, namely 'Mobile Phone Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "mobile_phone"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=model with a fixed text, namely 'Model Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "model"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=money_lender with a fixed text, namely 'Money Lender' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "money_lender"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=motorcycle with a fixed text, namely 'Motorcycle Dealership' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "motorcycle"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=motorcycle_repair with a fixed text, namely 'Motorcycle Repair Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "motorcycle_repair"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=music with a fixed text, namely 'Music Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "music"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=musical_instrument with a fixed text, namely 'Musical Instrument Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "musical_instrument"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=newsagent with a fixed text, namely 'Newsstand' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "newsagent"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=nutrition_supplements with a fixed text, namely 'Nutrition Supplements Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "nutrition_supplements"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=nuts with a fixed text, namely 'Nuts Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "nuts"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=optician with a fixed text, namely 'Optician' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "optician"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=outdoor with a fixed text, namely 'Outdoors Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "outdoor"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=outpost with a fixed text, namely 'Online Retailer Outpost' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "outpost"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=paint with a fixed text, namely 'Paint Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "paint"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=party with a fixed text, namely 'Party Supply Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "party"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=pasta with a fixed text, namely 'Pasta Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "pasta"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=pastry with a fixed text, namely 'Pastry Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "pastry"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=pawnbroker with a fixed text, namely 'Pawnshop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "pawnbroker"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=perfumery with a fixed text, namely 'Perfume Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "perfumery"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=pet with a fixed text, namely 'Pet Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "pet"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=pet_grooming with a fixed text, namely 'Pet Groomer' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "pet_grooming"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=photo with a fixed text, namely 'Photography Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "photo"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=pottery with a fixed text, namely 'Pottery Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "pottery"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=printer_ink with a fixed text, namely 'Printer Ink Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "printer_ink"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=psychic with a fixed text, namely 'Psychic' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "psychic"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=pyrotechnics with a fixed text, namely 'Fireworks Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "pyrotechnics"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=radiotechnics with a fixed text, namely 'Radio/Electronic Component Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "radiotechnics"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=religion with a fixed text, namely 'Religious Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "religion"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=rental with a fixed text, namely 'Rental Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "rental"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=repair with a fixed text, namely 'Repair Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "repair"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=rice with a fixed text, namely 'Rice Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "rice"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=scuba_diving with a fixed text, namely 'Scuba Diving Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "scuba_diving"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=seafood with a fixed text, namely 'Seafood Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "seafood"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=second_hand with a fixed text, namely 'Thrift Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "second_hand"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=sewing with a fixed text, namely 'Sewing Supply Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "sewing"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=shoe_repair with a fixed text, namely 'Shoe Repair Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "shoe_repair"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=shoes with a fixed text, namely 'Shoe Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "shoes"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=spices with a fixed text, namely 'Spice Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "spices"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=sports with a fixed text, namely 'Sporting Goods Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "sports"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=stationery with a fixed text, namely 'Stationery Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "stationery"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=storage_rental with a fixed text, namely 'Storage Rental' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "storage_rental"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=supermarket with a fixed text, namely 'Supermarket' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "supermarket"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=swimming_pool with a fixed text, namely 'Pool Supply Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "swimming_pool"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=tailor with a fixed text, namely 'Tailor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "tailor"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=tattoo with a fixed text, namely 'Tattoo Parlor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "tattoo"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=tea with a fixed text, namely 'Tea Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "tea"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=telecommunication with a fixed text, namely 'Telecom Retail Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "telecommunication"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=ticket with a fixed text, namely 'Ticket Seller' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "ticket"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=tiles with a fixed text, namely 'Tile Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "tiles"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=tobacco with a fixed text, namely 'Tobacco Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "tobacco"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=tool_hire with a fixed text, namely 'Tool Rental' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "tool_hire"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=toys with a fixed text, namely 'Toy Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "toys"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=trade with a fixed text, namely 'Trade Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "trade"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=travel_agency with a fixed text, namely 'Travel Agency' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "travel_agency"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=trophy with a fixed text, namely 'Trophy Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "trophy"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=tyres with a fixed text, namely 'Tire Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "tyres"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=vacuum_cleaner with a fixed text, namely 'Vacuum Cleaner Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "vacuum_cleaner"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=variety_store with a fixed text, namely 'Discount Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "variety_store"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=video with a fixed text, namely 'Video Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "video"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=video_games with a fixed text, namely 'Video Game Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "video_games"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=watches with a fixed text, namely 'Watches Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "watches"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=water with a fixed text, namely 'Drinking Water Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "water"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=water_sports with a fixed text, namely 'Watersport/Swim Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "water_sports"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=weapons with a fixed text, namely 'Weapon Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "weapons"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=wholesale with a fixed text, namely 'Wholesale Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "wholesale"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=wigs with a fixed text, namely 'Wig Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "wigs"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=window_blind with a fixed text, namely 'Window Blind Store' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "window_blind"
+    },
+    {
+      "key": "shop",
+      "description": "Layer 'Shop' shows shop=wine with a fixed text, namely 'Wine Shop' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if craft=)",
+      "value": "wine"
     },
     {
       "key": "brand",
@@ -666,7 +1510,7 @@
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Shop' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the mapcomplete.org theme 'Sports')"
+      "description": "Layer 'Shop' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Sports')"
     },
     {
       "key": "payment:cash",
@@ -769,12 +1613,12 @@
     },
     {
       "key": "service:bicycle:retail",
-      "description": "Layer 'Shop' shows service:bicycle:retail=yes with a fixed text, namely 'This shop sells new bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if service:bicycle:retail~.+ | shop=outdoor | shop=sport | shop=diy | shop=doityourself)",
+      "description": "Layer 'Shop' shows service:bicycle:retail=yes with a fixed text, namely 'This shop sells new bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if service:bicycle:retail~.+ | shop=outdoor | shop=sport | shop=sports | shop=diy | shop=doityourself)",
       "value": "yes"
     },
     {
       "key": "service:bicycle:retail",
-      "description": "Layer 'Shop' shows service:bicycle:retail=no with a fixed text, namely 'This shop doesn't sell new bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if service:bicycle:retail~.+ | shop=outdoor | shop=sport | shop=diy | shop=doityourself)",
+      "description": "Layer 'Shop' shows service:bicycle:retail=no with a fixed text, namely 'This shop doesn't sell new bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if service:bicycle:retail~.+ | shop=outdoor | shop=sport | shop=sports | shop=diy | shop=doityourself)",
       "value": "no"
     },
     {
@@ -794,33 +1638,110 @@
     },
     {
       "key": "service:bicycle:repair",
-      "description": "Layer 'Shop' shows service:bicycle:repair=yes with a fixed text, namely 'This shop repairs bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if service:bicycle:repair~.+ | shop=sport | shop=outdoor | shop=bicycle | service:bicycle:retail=yes | service:bicycle:second_hand=yes | service:bicycle:second_hand=only)",
+      "description": "Layer 'Shop' shows service:bicycle:repair=yes with a fixed text, namely 'This shop repairs bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if service:bicycle:repair~.+ | shop=sport | shop=sports | shop=outdoor | shop=bicycle | service:bicycle:retail=yes | service:bicycle:second_hand=yes | service:bicycle:second_hand=only)",
       "value": "yes"
     },
     {
       "key": "service:bicycle:repair",
-      "description": "Layer 'Shop' shows service:bicycle:repair=no with a fixed text, namely 'This shop doesn't repair bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if service:bicycle:repair~.+ | shop=sport | shop=outdoor | shop=bicycle | service:bicycle:retail=yes | service:bicycle:second_hand=yes | service:bicycle:second_hand=only)",
+      "description": "Layer 'Shop' shows service:bicycle:repair=no with a fixed text, namely 'This shop doesn't repair bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if service:bicycle:repair~.+ | shop=sport | shop=sports | shop=outdoor | shop=bicycle | service:bicycle:retail=yes | service:bicycle:second_hand=yes | service:bicycle:second_hand=only)",
       "value": "no"
     },
     {
       "key": "service:bicycle:repair",
-      "description": "Layer 'Shop' shows service:bicycle:repair=only_sold with a fixed text, namely 'This shop only repairs bikes bought here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if service:bicycle:repair~.+ | shop=sport | shop=outdoor | shop=bicycle | service:bicycle:retail=yes | service:bicycle:second_hand=yes | service:bicycle:second_hand=only)",
+      "description": "Layer 'Shop' shows service:bicycle:repair=only_sold with a fixed text, namely 'This shop only repairs bikes bought here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if service:bicycle:repair~.+ | shop=sport | shop=sports | shop=outdoor | shop=bicycle | service:bicycle:retail=yes | service:bicycle:second_hand=yes | service:bicycle:second_hand=only)",
       "value": "only_sold"
     },
     {
       "key": "service:bicycle:repair",
-      "description": "Layer 'Shop' shows service:bicycle:repair=brand with a fixed text, namely 'This shop only repairs bikes of a certain brand' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if service:bicycle:repair~.+ | shop=sport | shop=outdoor | shop=bicycle | service:bicycle:retail=yes | service:bicycle:second_hand=yes | service:bicycle:second_hand=only)",
+      "description": "Layer 'Shop' shows service:bicycle:repair=brand with a fixed text, namely 'This shop only repairs bikes of a certain brand' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if service:bicycle:repair~.+ | shop=sport | shop=sports | shop=outdoor | shop=bicycle | service:bicycle:retail=yes | service:bicycle:second_hand=yes | service:bicycle:second_hand=only)",
       "value": "brand"
     },
     {
       "key": "service:bicycle:rental",
-      "description": "Layer 'Shop' shows service:bicycle:rental=yes with a fixed text, namely 'This shop rents out bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if service:bicycle:rental~.+ | shop=bicycle | shop=sport | shop=bicycle_repair | shop=outdoor | shop=rental)",
+      "description": "Layer 'Shop' shows service:bicycle:rental=yes with a fixed text, namely 'This shop rents out bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if service:bicycle:rental~.+ | shop=bicycle | shop=sport | shop=sports | shop=bicycle_repair | shop=outdoor | shop=rental)",
       "value": "yes"
     },
     {
       "key": "service:bicycle:rental",
-      "description": "Layer 'Shop' shows service:bicycle:rental=no with a fixed text, namely 'This shop doesn't rent out bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if service:bicycle:rental~.+ | shop=bicycle | shop=sport | shop=bicycle_repair | shop=outdoor | shop=rental)",
+      "description": "Layer 'Shop' shows service:bicycle:rental=no with a fixed text, namely 'This shop doesn't rent out bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if service:bicycle:rental~.+ | shop=bicycle | shop=sport | shop=sports | shop=bicycle_repair | shop=outdoor | shop=rental)",
       "value": "no"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Shop' shows and asks freeform values for key 'rental' (in the mapcomplete.org theme 'Sports') (This is only shown if (service:bicycle:rental=yes | bicycle_rental~.+))"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Shop' shows rental=city_bike with a fixed text, namely 'Normal city bikes can be rented here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if (service:bicycle:rental=yes | bicycle_rental~.+))",
+      "value": "city_bike"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Shop' shows rental=ebike with a fixed text, namely 'Electrical bikes can be rented here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if (service:bicycle:rental=yes | bicycle_rental~.+))",
+      "value": "ebike"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Shop' shows rental=bmx with a fixed text, namely 'BMX bikes can be rented here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if (service:bicycle:rental=yes | bicycle_rental~.+))",
+      "value": "bmx"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Shop' shows rental=mtb with a fixed text, namely 'Mountainbikes can be rented here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if (service:bicycle:rental=yes | bicycle_rental~.+))",
+      "value": "mtb"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Shop' shows rental=kid_bike with a fixed text, namely 'Bikes for children can be rented here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if (service:bicycle:rental=yes | bicycle_rental~.+))",
+      "value": "kid_bike"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Shop' shows rental=tandem with a fixed text, namely 'Tandem bicycles can be rented here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if (service:bicycle:rental=yes | bicycle_rental~.+))",
+      "value": "tandem"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Shop' shows rental=racebike with a fixed text, namely 'Race bicycles can be rented here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if (service:bicycle:rental=yes | bicycle_rental~.+))",
+      "value": "racebike"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Shop' shows rental=bike_helmet with a fixed text, namely 'Bike helmets can be rented here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if (service:bicycle:rental=yes | bicycle_rental~.+))",
+      "value": "bike_helmet"
+    },
+    {
+      "key": "rental",
+      "description": "Layer 'Shop' shows rental=cargo_bike with a fixed text, namely 'Cargo bikes can be rented here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if (service:bicycle:rental=yes | bicycle_rental~.+))",
+      "value": "cargo_bike"
+    },
+    {
+      "key": "capacity:city_bike",
+      "description": "Layer 'Shop' shows and asks freeform values for key 'capacity:city_bike' (in the mapcomplete.org theme 'Sports') (This is only shown if rental~^(.*city_bike.*)$ & (service:bicycle:rental=yes | bicycle_rental~.+))"
+    },
+    {
+      "key": "capacity:ebike",
+      "description": "Layer 'Shop' shows and asks freeform values for key 'capacity:ebike' (in the mapcomplete.org theme 'Sports') (This is only shown if rental~^(.*ebike.*)$ & (service:bicycle:rental=yes | bicycle_rental~.+))"
+    },
+    {
+      "key": "capacity:kid_bike",
+      "description": "Layer 'Shop' shows and asks freeform values for key 'capacity:kid_bike' (in the mapcomplete.org theme 'Sports') (This is only shown if rental~^(.*kid_bike.*)$ & (service:bicycle:rental=yes | bicycle_rental~.+))"
+    },
+    {
+      "key": "capacity:bmx",
+      "description": "Layer 'Shop' shows and asks freeform values for key 'capacity:bmx' (in the mapcomplete.org theme 'Sports') (This is only shown if rental~^(.*bmx.*)$ & (service:bicycle:rental=yes | bicycle_rental~.+))"
+    },
+    {
+      "key": "capacity:mtb",
+      "description": "Layer 'Shop' shows and asks freeform values for key 'capacity:mtb' (in the mapcomplete.org theme 'Sports') (This is only shown if rental~^(.*mtb.*)$ & (service:bicycle:rental=yes | bicycle_rental~.+))"
+    },
+    {
+      "key": "capacity:bicycle_pannier",
+      "description": "Layer 'Shop' shows and asks freeform values for key 'capacity:bicycle_pannier' (in the mapcomplete.org theme 'Sports') (This is only shown if rental~^(.*bicycle_pannier.*)$ & (service:bicycle:rental=yes | bicycle_rental~.+))"
+    },
+    {
+      "key": "capacity:tandem_bicycle",
+      "description": "Layer 'Shop' shows and asks freeform values for key 'capacity:tandem_bicycle' (in the mapcomplete.org theme 'Sports') (This is only shown if rental~^(.*tandem_bicycle.*)$ & (service:bicycle:rental=yes | bicycle_rental~.+))"
     },
     {
       "key": "service:bicycle:pump",
@@ -868,6 +1789,25 @@
       "value": "no"
     },
     {
+      "key": "service:bicycle:cleaning:charge",
+      "description": "Layer 'Shop' shows and asks freeform values for key 'service:bicycle:cleaning:charge' (in the mapcomplete.org theme 'Sports') (This is only shown if amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)"
+    },
+    {
+      "key": "service:bicycle:cleaning:fee",
+      "description": "Layer 'Shop' shows service:bicycle:cleaning:fee=no with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)",
+      "value": "no"
+    },
+    {
+      "key": "service:bicycle:cleaning:fee",
+      "description": "Layer 'Shop' shows service:bicycle:cleaning:fee=yes & service:bicycle:cleaning:charge= with a fixed text, namely 'Free to use' (in the mapcomplete.org theme 'Sports') (This is only shown if amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)",
+      "value": "yes"
+    },
+    {
+      "key": "service:bicycle:cleaning:charge",
+      "description": "Layer 'Shop' shows service:bicycle:cleaning:fee=yes & service:bicycle:cleaning:charge= with a fixed text, namely 'Free to use' (in the mapcomplete.org theme 'Sports') Picking this answer will delete the key service:bicycle:cleaning:charge. (This is only shown if amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)",
+      "value": ""
+    },
+    {
       "key": "internet_access",
       "description": "Layer 'Shop' shows internet_access=wlan with a fixed text, namely 'This place offers wireless internet access' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
       "value": "wlan"
@@ -893,6 +1833,11 @@
       "value": "wired"
     },
     {
+      "key": "internet_access",
+      "description": "Layer 'Shop' shows internet_access=terminal;wifi with a fixed text, namely 'This place offers both wireless internet and internet access via a terminal or computer' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "value": "terminal;wifi"
+    },
+    {
       "key": "internet_access:fee",
       "description": "Layer 'Shop' shows internet_access:fee=yes with a fixed text, namely 'There is a fee for the internet access at this place' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if internet_access!=no & internet_access~.+)",
       "value": "yes"
@@ -909,11 +1854,11 @@
     },
     {
       "key": "internet_access:ssid",
-      "description": "Layer 'Shop' shows and asks freeform values for key 'internet_access:ssid' (in the mapcomplete.org theme 'Sports') (This is only shown if internet_access=wlan)"
+      "description": "Layer 'Shop' shows and asks freeform values for key 'internet_access:ssid' (in the mapcomplete.org theme 'Sports') (This is only shown if internet_access~^(.*wlan.*)$)"
     },
     {
       "key": "internet_access:ssid",
-      "description": "Layer 'Shop' shows internet_access:ssid=Telekom with a fixed text, namely 'Telekom' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if internet_access=wlan)",
+      "description": "Layer 'Shop' shows internet_access:ssid=Telekom with a fixed text, namely 'Telekom' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports') (This is only shown if internet_access~^(.*wlan.*)$)",
       "value": "Telekom"
     },
     {

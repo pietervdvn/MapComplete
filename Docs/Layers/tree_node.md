@@ -2,25 +2,16 @@
 
 # tree_node
 
-
-
-
 A layer showing trees
 
-
-
-
-
-
  - This layer is shown at zoomlevel **16** and higher
-
-
 
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [plantnet](#plantnet)
   - [tree-species-wikidata](#tree-species-wikidata)
@@ -41,12 +32,16 @@ A layer showing trees
 
 ## Themes using this layer
 
-
-
  - [personal](https://mapcomplete.org/personal)
  - [trees](https://mapcomplete.org/trees)
 
+## Presets
 
+The following options to create new points are included:
+
+ - **a broadleaved tree** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:natural' target='_blank'>natural</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:natural%3Dtree' target='_blank'>tree</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:leaf_type' target='_blank'>leaf_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leaf_type%3Dbroadleaved' target='_blank'>broadleaved</a>
+ - **a needleleaved tree** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:natural' target='_blank'>natural</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:natural%3Dtree' target='_blank'>tree</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:leaf_type' target='_blank'>leaf_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leaf_type%3Dneedleleaved' target='_blank'>needleleaved</a>
+ - **a tree** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:natural' target='_blank'>natural</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:natural%3Dtree' target='_blank'>tree</a>
 
 ## Basic tags for this layer
 
@@ -71,32 +66,20 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/ref:OnroerendErfgoed#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/ref%3AOnroerendErfgoed/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [ref:OnroerendErfgoed](https://wiki.openstreetmap.org/wiki/Key:ref:OnroerendErfgoed) | [nat](../SpecialInputElements.md#nat) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/wikidata#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/wikidata/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [wikidata](https://wiki.openstreetmap.org/wiki/Key:wikidata) | [wikidata](../SpecialInputElements.md#wikidata) |  |
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
-
-
-
 
 ### plantnet
 
 _This tagrendering has no question and is thus read-only_
 *{plantnet_detection()}*
 
-
-
-
 ### tree-species-wikidata
 
 The question is `What species is this tree?`
 *{wikipedia(species:wikidata):max-height: 25rem}* is shown if `species:wikidata` is set
-
-
-
 
 ### tree-wikipedia
 
@@ -105,28 +88,19 @@ _This tagrendering has no question and is thus read-only_
 
 This tagrendering is only visible in the popup if the following condition is met: wikidata~.+ | wikipedia~.+
 
-
 ### circumference
 
 The question is `What is the circumference of the tree trunk?`
 *The tree trunk has a circumference of {circumference} meter* is shown if `circumference` is set
-
-
-
 
 ### height
 
 The question is `What is the height of this tree?`
 *This tree is {height} meter high* is shown if `height` is set
 
-
-
-
 ### tree-denotation
 
 The question is `How significant is this tree? Choose the first answer that applies.`
-
-
 
  -  *The tree is remarkable due to its size or prominent location. It is useful for navigation.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:denotation' target='_blank'>denotation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:denotation%3Dlandmark' target='_blank'>landmark</a>
  -  *The tree is a natural monument, e.g. because it is especially old, or of a valuable species.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:denotation' target='_blank'>denotation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:denotation%3Dnatural_monument' target='_blank'>natural_monument</a>
@@ -137,54 +111,33 @@ The question is `How significant is this tree? Choose the first answer that appl
  -  *The tree is in an urban area.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:denotation' target='_blank'>denotation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:denotation%3Durban' target='_blank'>urban</a>
  -  *The tree is outside of an urban area.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:denotation' target='_blank'>denotation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:denotation%3Dnone' target='_blank'>none</a>
 
-
-
-
-
 ### tree-leaf_type
 
 The question is `Is this a broadleaved or needleleaved tree?`
-
-
 
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/tree_node/broadleaved.svg' style='width: 3rem; height: 3rem'> *Broadleaved* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:leaf_type' target='_blank'>leaf_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leaf_type%3Dbroadleaved' target='_blank'>broadleaved</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/tree_node/needleleaved.svg' style='width: 3rem; height: 3rem'> *Needleleaved* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:leaf_type' target='_blank'>leaf_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leaf_type%3Dneedleleaved' target='_blank'>needleleaved</a>
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/tree_node/leafless.svg' style='width: 3rem; height: 3rem'> *Permanently leafless* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:leaf_type' target='_blank'>leaf_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leaf_type%3Dleafless' target='_blank'>leafless</a>. _This option cannot be chosen as answer_
 
-
-
-
-
 ### tree-decidouous
 
 The question is `Is this tree evergreen or deciduous?`
 
-
-
  -  *Deciduous: the tree loses its leaves for some time of the year.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:leaf_cycle' target='_blank'>leaf_cycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leaf_cycle%3Ddeciduous' target='_blank'>deciduous</a>
  -  *Evergreen.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:leaf_cycle' target='_blank'>leaf_cycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leaf_cycle%3Devergreen' target='_blank'>evergreen</a>
-
-
-
-
 
 ### tree_node-name
 
 The question is `Does the tree have a name?`
 *Name: {name}* is shown if `name` is set
 
-
  -  *The tree does not have a name.* is shown if with name= & <a href='https://wiki.openstreetmap.org/wiki/Key:noname' target='_blank'>noname</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:noname%3Dyes' target='_blank'>yes</a>
 
-
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:denotation' target='_blank'>denotation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:denotation%3Dlandmark' target='_blank'>landmark</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:denotation' target='_blank'>denotation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:denotation%3Dnatural_monument' target='_blank'>natural_monument</a> | name~.+
-
 
 ### tree-heritage
 
 The question is `Is this tree registered heritage?`
-
-
 
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg' style='width: 3rem; height: 3rem'> *Registered as heritage by <i>Onroerend Erfgoed</i> Flanders* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:heritage' target='_blank'>heritage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:heritage%3D4' target='_blank'>4</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:heritage:operator' target='_blank'>heritage:operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:heritage:operator%3DOnroerendErfgoed' target='_blank'>OnroerendErfgoed</a>
  -  *Registered as heritage by <i>Direction du Patrimoine culturel</i> Brussels* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:heritage' target='_blank'>heritage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:heritage%3D4' target='_blank'>4</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:heritage:operator' target='_blank'>heritage:operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:heritage:operator%3Daatl' target='_blank'>aatl</a>
@@ -192,9 +145,7 @@ The question is `Is this tree registered heritage?`
  -  *Not registered as heritage* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:heritage' target='_blank'>heritage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:heritage%3Dno' target='_blank'>no</a> & heritage:operator=
  -  *Registered as heritage by a different organisation* is shown if with heritage~.+. _This option cannot be chosen as answer_
 
-
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:denotation' target='_blank'>denotation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:denotation%3Dlandmark' target='_blank'>landmark</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:denotation' target='_blank'>denotation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:denotation%3Dnatural_monument' target='_blank'>natural_monument</a>
-
 
 ### tree_node-ref:OnroerendErfgoed
 
@@ -203,7 +154,6 @@ The question is `What is the ID issued by Onroerend Erfgoed Flanders?`
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:heritage' target='_blank'>heritage</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:heritage%3D4' target='_blank'>4</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:heritage:operator' target='_blank'>heritage:operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:heritage:operator%3DOnroerendErfgoed' target='_blank'>OnroerendErfgoed</a>
 
-
 ### tree_node-wikidata
 
 The question is `What is the Wikidata ID for this tree?`
@@ -211,36 +161,25 @@ The question is `What is the Wikidata ID for this tree?`
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:denotation' target='_blank'>denotation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:denotation%3Dlandmark' target='_blank'>landmark</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:denotation' target='_blank'>denotation</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:denotation%3Dnatural_monument' target='_blank'>natural_monument</a> | wikidata~.+
 
-
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
-
-
-
 
 ### move-button
 
 _This tagrendering has no question and is thus read-only_
 *{move_button()}*
 
-
-
-
 ### delete-button
 
 _This tagrendering has no question and is thus read-only_
 *{delete_button()}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

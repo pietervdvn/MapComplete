@@ -13,7 +13,7 @@
         "title": "Kunstwerke"
     },
     "atm": {
-        "description": "Diese Karte zeigt Geldautomaten zum Abheben oder Einzahlen von Geld",
+        "description": "Diese Karte zeigt Geldautomaten zum Abheben oder Einzahlen von Bargeld",
         "layers": {
             "3": {
                 "override": {
@@ -101,7 +101,7 @@
         "title": "Fahrradabstellplätze"
     },
     "bicycle_rental": {
-        "description": "Auf dieser Karte finden Sie alle Fahrradverleihstationen, die in OpenStreetMap eingetragen wurden",
+        "description": "Eine Karte mit allen Fahrradverleihstationen, die in OpenStreetMap eingetragen wurden",
         "shortDescription": "Eine Karte mit Fahrradverleihstationen und Fahrradverleihgeschäften",
         "title": "Fahrradverleih"
     },
@@ -128,209 +128,6 @@
     },
     "campersite": {
         "description": "Eine Karte für offizielle Wohnmobilstellplätze und Orte zur Entsorgung von Schmutzwasser. Sie können Details über die angebotenen Dienstleistungen und die Kosten hinzufügen, oder Bilder und Bewertungen ergänzen.",
-        "layers": {
-            "0": {
-                "description": "Wohnmobilstellplätze",
-                "name": "Wohnmobilstellplätze",
-                "presets": {
-                    "0": {
-                        "description": "Fügen Sie einen neuen offiziellen Wohnmobilstellplatz hinzu. Dies sind ausgewiesene Plätze, an denen Sie in Ihrem Wohnmobil übernachten können. Sie können wie ein richtiger Campingplatz oder nur wie ein Parkplatz aussehen. Möglicherweise sind sie gar nicht ausgeschildert, sondern nur in einem Gemeindebeschluss festgelegt. Ein normaler Parkplatz für Wohnmobile, auf dem übernachten nicht zulässig ist, zählt nicht als Wohnmobilstellplatz. ",
-                        "title": "ein Wohnmobilstellplatz"
-                    }
-                },
-                "tagRenderings": {
-                    "caravansites-capacity": {
-                        "question": "Wie viele Wohnmobile können hier parken? (Überspringen, wenn es keine offensichtliche Anzahl von Stellplätzen oder erlaubten Fahrzeugen gibt)",
-                        "render": "{capacity} Wohnmobile können diesen Platz gleichzeitig nutzen"
-                    },
-                    "caravansites-charge": {
-                        "question": "Wie hoch sind die Gebühren hier?",
-                        "render": "Die Gebühr beträgt {charge}"
-                    },
-                    "caravansites-description": {
-                        "question": "Möchten Sie eine allgemeine Beschreibung für diesen Ort hinzufügen? (Bitte wiederholen Sie keine Informationen, die Sie bereits zuvor angegeben haben. Bitte bleiben Sie objektiv - Meinungen gehen in die Bewertungen ein)",
-                        "render": "Mehr Details über diesen Ort: {description}"
-                    },
-                    "caravansites-fee": {
-                        "mappings": {
-                            "0": {
-                                "then": "Sie müssen für die Nutzung bezahlen"
-                            },
-                            "1": {
-                                "then": "Nutzung kostenlos"
-                            }
-                        },
-                        "question": "Wird hier eine Gebühr erhoben?"
-                    },
-                    "caravansites-internet": {
-                        "mappings": {
-                            "0": {
-                                "then": "Internetzugang ist vorhanden"
-                            },
-                            "1": {
-                                "then": "Internetzugang ist vorhanden"
-                            },
-                            "2": {
-                                "then": "Kein Internetzugang vorhanden"
-                            }
-                        },
-                        "question": "Ist an diesem Ort ein Internetzugang vorhanden?"
-                    },
-                    "caravansites-internet-fee": {
-                        "mappings": {
-                            "0": {
-                                "then": "Der Internetzugang ist gebührenpflichtig"
-                            },
-                            "1": {
-                                "then": "Der Internetzugang ist kostenlos"
-                            }
-                        },
-                        "question": "Ist der Internetzugang gebührenpflichtig?"
-                    },
-                    "caravansites-long-term": {
-                        "mappings": {
-                            "0": {
-                                "then": "Es gibt einige Plätze für Langzeitmieten, aber auch eine tageweise Anmietung ist möglich"
-                            },
-                            "1": {
-                                "then": "Hier gibt es keine Dauergäste"
-                            },
-                            "2": {
-                                "then": "Es sind nur Plätze für Dauercamper vorhanden (wenn Sie diese Antwort auswählen, verschwindet der Ort von der Karte)"
-                            }
-                        },
-                        "question": "Gibt es a diesem Ort Plätze für Dauercamper?"
-                    },
-                    "caravansites-name": {
-                        "question": "Wie heißt dieser Ort?",
-                        "render": "Dieser Ort heißt {name}"
-                    },
-                    "caravansites-sanitary-dump": {
-                        "mappings": {
-                            "0": {
-                                "then": "Dieser Ort hat eine sanitäre Entsorgungsstation"
-                            },
-                            "1": {
-                                "then": "Dieser Ort hat keine sanitäre Entsorgungsstation"
-                            }
-                        },
-                        "question": "Hat dieser Ort eine sanitäre Entsorgungsstation?"
-                    },
-                    "caravansites-toilets": {
-                        "mappings": {
-                            "0": {
-                                "then": "Dieser Ort verfügt über Toiletten"
-                            },
-                            "1": {
-                                "then": "Dieser Ort verfügt nicht über Toiletten"
-                            }
-                        },
-                        "question": "Verfügt dieser Ort über Toiletten?"
-                    },
-                    "caravansites-website": {
-                        "question": "Hat dieser Ort eine Webseite?",
-                        "render": "Offizielle Webseite: <a href='{website}'>{website}</a>"
-                    }
-                },
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "Unbenannter Wohnmobilstellplatz"
-                        }
-                    },
-                    "render": "Wohnmobilstellplatz {name}"
-                }
-            },
-            "1": {
-                "description": "Sanitäre Entsorgungsstationen",
-                "name": "Sanitäre Entsorgungsstationen",
-                "presets": {
-                    "0": {
-                        "description": "Fügen Sie eine neue sanitäre Entsorgungsstation hinzu. Hier können Camper Abwasser oder chemischen Toilettenabfälle entsorgen. Oft gibt es auch Trinkwasser und Strom.",
-                        "title": "eine sanitäre Entsorgungsstation"
-                    }
-                },
-                "tagRenderings": {
-                    "dumpstations-access": {
-                        "mappings": {
-                            "0": {
-                                "then": "Sie benötigen einen Schlüssel/Code zur Benutzung"
-                            },
-                            "1": {
-                                "then": "Sie müssen Kunde des Campingplatzes sein, um diesen Ort nutzen zu können"
-                            },
-                            "2": {
-                                "then": "Jeder darf diese sanitäre Entsorgungsstation nutzen"
-                            },
-                            "3": {
-                                "then": "Jeder darf diese sanitäre Entsorgungsstation nutzen"
-                            }
-                        },
-                        "question": "Wer darf diese sanitäre Entsorgungsstation nutzen?"
-                    },
-                    "dumpstations-charge": {
-                        "question": "Wie hoch ist die Gebühr an diesem Ort?",
-                        "render": "Die Gebühr beträgt {charge}"
-                    },
-                    "dumpstations-chemical-waste": {
-                        "mappings": {
-                            "0": {
-                                "then": "Hier können Sie chemische Toilettenabfälle entsorgen"
-                            },
-                            "1": {
-                                "then": "Hier können Sie keine chemischen Toilettenabfälle entsorgen"
-                            }
-                        },
-                        "question": "Können Sie hier chemische Toilettenabfälle entsorgen?"
-                    },
-                    "dumpstations-fee": {
-                        "mappings": {
-                            "0": {
-                                "then": "Sie müssen für die Nutzung bezahlen"
-                            },
-                            "1": {
-                                "then": "Nutzung kostenlos"
-                            }
-                        },
-                        "question": "Wird hier eine Gebühr erhoben?"
-                    },
-                    "dumpstations-grey-water": {
-                        "mappings": {
-                            "0": {
-                                "then": "Hier können Sie Brauch-/Grauwasser entsorgen"
-                            },
-                            "1": {
-                                "then": "Hier können Sie kein Brauch-/Grauwasser entsorgen"
-                            }
-                        },
-                        "question": "Können Sie hier Brauch-/Grauwasser entsorgen?"
-                    },
-                    "dumpstations-network": {
-                        "question": "Zu welchem Verbund/Netzwerk gehört dieser Ort? (Überspringen, wenn nicht zutreffend)",
-                        "render": "Diese Station gehört zum Verbund/Netzwerk {network}"
-                    },
-                    "dumpstations-waterpoint": {
-                        "mappings": {
-                            "0": {
-                                "then": "Dieser Ort hat eine Wasserzapfstelle"
-                            },
-                            "1": {
-                                "then": "Dieser Ort hat keine Wasserzapfstelle"
-                            }
-                        },
-                        "question": "Hat dieser Ort eine Wasserzapfstelle?"
-                    }
-                },
-                "title": {
-                    "mappings": {
-                        "0": {
-                            "then": "Entsorgungsstation"
-                        }
-                    },
-                    "render": "Entsorgungsstation {name}"
-                }
-            }
-        },
         "overrideAll": {
             "tagRenderings+": {
                 "0": {
@@ -357,6 +154,17 @@
         "description": "Auf dieser freien Karte kann man Informationen zu Ladestationen finden und hinzufügen",
         "shortDescription": "Eine weltweite Karte mit Ladestationen",
         "title": "Ladestationen"
+    },
+    "circular_economy": {
+        "description": "Verschiedene Gegenstände, die den Menschen helfen, zu teilen, wiederzuverwenden oder zu recyceln.",
+        "layers": {
+            "5": {
+                "override": {
+                    "=name": "Second-Hand-Läden"
+                }
+            }
+        },
+        "title": "Kreislaufwirtschaft"
     },
     "climbing": {
         "description": "Eine Karte mit Klettermöglichkeiten wie Kletterhallen, Kletterparks oder Felsen.",
@@ -624,12 +432,12 @@
         "title": "Fahrradstraßen"
     },
     "cyclofix": {
-        "description": "Mit dieser Karte wird Radfahrern eine einfache Lösung bereitgestellt, um die passende Fahrradinfrastruktur zu finden.<br><br>Weitere Informationen über Cyclofix finden Sie unter <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
+        "description": "Eine Karte, die Radfahrern hilft, die für ihre Bedürfnisse geeignete Infrastruktur zu finden, z. B. Fahrradpumpen, Trinkwasser, Fahrradläden, Reparaturstationen oder Parkmöglichkeiten.",
         "title": "Cyclofix - eine Karte für Radfahrer"
     },
     "disaster_response": {
         "description": "Diese Karte enthält Elemente, die der Katastrophenvorsorge und dem Katastrophenschutz dienen.",
-        "title": "Katastrophenschutz"
+        "title": "Katastrophenschutz und Notfalldienste"
     },
     "drinking_water": {
         "description": "Eine Karte zum Anzeigen und Bearbeiten öffentlicher Trinkwasserstellen",
@@ -813,63 +621,21 @@
     "ghostsigns": {
         "description": "Eine Karte, die ungenutzte Zeichen auf Gebäuden zeigt",
         "layers": {
-            "0": {
-                "description": "Ebene, die ungenutzte Zeichen auf Gebäuden zeigt",
-                "name": "Geisterzeichen",
-                "presets": {
-                    "0": {
-                        "title": "ein Geisterzeichen"
-                    }
-                },
-                "tagRenderings": {
-                    "brand": {
-                        "freeform": {
-                            "placeholder": "Unternehmensname"
-                        },
-                        "question": "Für welches Unternehmen wurde dieses Schild angefertigt?",
-                        "render": "Dieses Schild wurde gemacht für: {brand}"
-                    },
-                    "historic": {
-                        "mappings": {
-                            "0": {
-                                "then": "Das ist ein Geisterzeichen"
-                            },
-                            "1": {
-                                "then": "Dies ist kein Geisterzeichen, die Antwort darauf wird das Schild von der Karte verstecken"
-                            }
-                        },
-                        "question": "Ist das ein Geisterzeichen?",
-                        "questionHint": "Ist dieses Schild für ein Geschäft, das nicht mehr existiert oder nicht mehr gepflegt wird?"
-                    },
-                    "inscription": {
-                        "freeform": {
-                            "placeholder": "Text auf dem Schild"
-                        },
-                        "question": "Was ist der Text auf dem Schild?",
-                        "render": "Der Text auf dem Schild ist: {inscription}"
-                    }
-                },
-                "title": {
-                    "render": "Geisterzeichen"
-                }
-            },
-            "1": {
+            "2": {
                 "override": {
                     "+tagRenderings": {
                         "0": {
                             "mappings": {
                                 "0": {
-                                    "then": "Das ist ein Geisterzeichen"
+                                    "then": "Dieses Kunstwerk ist eine historische Werbung"
                                 },
                                 "1": {
-                                    "then": "Das ist kein Geisterzeichen"
+                                    "then": "Dieses Kunstwerk ist keine historische Werbung"
                                 }
                             },
-                            "question": "Ist das ein Geisterzeichen?",
-                            "questionHint": "Ist dieses Schild für ein Geschäft, das nicht mehr existiert oder nicht mehr gepflegt wird?"
+                            "question": "Ist dieses Kunstwerk eine historische Werbung?"
                         }
-                    },
-                    "name": "Alle Werbe-Wandbilder"
+                    }
                 }
             }
         },
@@ -909,7 +675,7 @@
         }
     },
     "guideposts": {
-        "description": "Wegweiser (auch als Wegzeiger oder Fingerschilder bekannt) sind entlang offizieller Wander-, Rad-, Ski- oder Reitstrecken häufig zu finden, um die Richtungen zu verschiedenen Zielen anzuzeigen. Darüber hinaus sind sie oft nach einer Region oder einem Ort benannt und zeigen die Höhe an.\n\nDie Position eines Wegweisers kann von Wanderern, Radfahrern, Reitern oder Skifahrern als Bestätigung der aktuellen Position genutzt werden, insbesondere wenn sie eine gedruckte Karte ohne GPS-Empfänger verwenden. ",
+        "description": "Wegweiser an offiziellen Wander-, Rad-, Ski- oder Reitstrecken, um Richtungen zu verschiedenen Zielen anzuzeigen. Sie sind oft nach einer Region oder einem Ort benannt und zeigen die Höhe an.\n\nDie Position eines Wegweisers kann von Wanderern, Radfahrern, Reitern oder Skifahrern als Bestätigung der aktuellen Position genutzt werden, insbesondere wenn sie eine gedruckte Karte ohne GPS-Empfänger verwenden. ",
         "title": "Wegweiser"
     },
     "hackerspaces": {
@@ -952,7 +718,7 @@
         "title": "Eiscreme"
     },
     "indoors": {
-        "description": "Diese Karte zeigt öffentlich zugängliche Innenräume",
+        "description": "Eine Karte mit öffentlich zugänglichen Innenräumen",
         "title": "Innenräume"
     },
     "items_with_image": {
@@ -975,9 +741,140 @@
         },
         "title": "Bordsteine und Überwege"
     },
+    "lactosefree": {
+        "description": "Eine Crowdsourcing-Karte mit laktosefreien Geschäften und Restaurants",
+        "title": "Laktosefreie Geschäfte und Restaurants"
+    },
     "lighthouses": {
         "description": "Leuchttürme sind hohe Gebäude mit einem Licht an der Spitze, das den Schiffsverkehr leitet.",
         "title": "Leuchttürme"
+    },
+    "mapcomplete-changes": {
+        "description": "Diese Karte zeigt alle mit MapComplete vorgenommenen Änderungen",
+        "layers": {
+            "0": {
+                "description": "Zeigt alle MapComplete-Änderungen",
+                "filter": {
+                    "0": {
+                        "options": {
+                            "0": {
+                                "question": "Themenname enthält {search}"
+                            }
+                        }
+                    },
+                    "1": {
+                        "options": {
+                            "0": {
+                                "question": "Themename enthält <b>nicht</b> {search}"
+                            }
+                        }
+                    },
+                    "10": {
+                        "options": {
+                            "0": {
+                                "question": "Etymologie-Thema ausschließen"
+                            }
+                        }
+                    },
+                    "2": {
+                        "options": {
+                            "0": {
+                                "question": "Erstellt von Mitwirkendem {search}"
+                            }
+                        }
+                    },
+                    "3": {
+                        "options": {
+                            "0": {
+                                "question": "<b>Nicht</b> erstellt von Mitwirkendem {search}"
+                            }
+                        }
+                    },
+                    "4": {
+                        "options": {
+                            "0": {
+                                "question": "Erstellt vor {search}"
+                            }
+                        }
+                    },
+                    "5": {
+                        "options": {
+                            "0": {
+                                "question": "Erstellt nach {search}"
+                            }
+                        }
+                    },
+                    "6": {
+                        "options": {
+                            "0": {
+                                "question": "Benutzersprache (ISO-Code) {search}"
+                            }
+                        }
+                    },
+                    "7": {
+                        "options": {
+                            "0": {
+                                "question": "Erstellt mit Host {search}"
+                            }
+                        }
+                    },
+                    "8": {
+                        "options": {
+                            "0": {
+                                "question": "Changeset hat mindestens ein Bild hinzugefügt"
+                            }
+                        }
+                    },
+                    "9": {
+                        "options": {
+                            "0": {
+                                "question": "GRB-Thema ausschließen"
+                            }
+                        }
+                    }
+                },
+                "name": "Changeset-Zentren",
+                "tagRenderings": {
+                    "contributor": {
+                        "question": "Wer hat zu dieser Änderung beigetragen?",
+                        "render": "Änderung vorgenommen von <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>"
+                    },
+                    "host": {
+                        "question": "Bei welchem Host (Website) wurde diese Änderung vorgenommen?",
+                        "render": "Änderung mit <a href='{host}'>{host}</a>"
+                    },
+                    "locale": {
+                        "question": "In welcher Sprache (Locale) wurde diese Änderung vorgenommen?",
+                        "render": "Die Benutzersprache ist {locale}"
+                    },
+                    "show_changeset_id": {
+                        "render": "Änderungssatz <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
+                    },
+                    "theme-id": {
+                        "question": "Welches Thema wurde für diese Änderung verwendet?",
+                        "render": "Änderung mit Thema <a href='https://mapcomplete.org/{theme}'>{theme}</a>"
+                    },
+                    "version": {
+                        "question": "Welche Version von MapComplete wurde verwendet, um diese Änderung vorzunehmen?",
+                        "render": "Erstellt mit {editor}"
+                    }
+                },
+                "title": {
+                    "render": "Änderungssatz für {theme}"
+                }
+            },
+            "1": {
+                "override": {
+                    "tagRenderings+": {
+                        "0": {
+                            "render": "Weitere Statistiken findest du <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>hier</a>"
+                        }
+                    }
+                }
+            }
+        },
+        "shortDescription": "Zeigt die von MapComplete vorgenommenen Änderungen an",
+        "title": "Änderungen mit MapComplete"
     },
     "maproulette": {
         "description": "Thema mit MapRoulette-Aufgaben, die Sie suchen, filtern und beheben können.",
@@ -1014,6 +911,33 @@
     "onwheels": {
         "description": "Auf dieser Karte können Sie öffentlich zugängliche Orte für Rollstuhlfahrer ansehen, bearbeiten oder hinzufügen",
         "layers": {
+            "19": {
+                "override": {
+                    "=title": {
+                        "render": "Statistik"
+                    }
+                }
+            },
+            "20": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Import"
+                                }
+                            }
+                        },
+                        "1": {
+                            "render": {
+                                "special": {
+                                    "message": "Alle vorgeschlagenen Tags hinzufügen"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "4": {
                 "override": {
                     "filter": {
@@ -1056,33 +980,6 @@
                 "override": {
                     "name": "Barrierefreie Parkplätze"
                 }
-            },
-            "19": {
-                "override": {
-                    "=title": {
-                        "render": "Statistik"
-                    }
-                }
-            },
-            "20": {
-                "override": {
-                    "+tagRenderings": {
-                        "0": {
-                            "render": {
-                                "special": {
-                                    "text": "Import"
-                                }
-                            }
-                        },
-                        "1": {
-                            "render": {
-                                "special": {
-                                    "message": "Alle vorgeschlagenen Tags hinzufügen"
-                                }
-                            }
-                        }
-                    }
-                }
             }
         },
         "title": "Auf Rädern"
@@ -1097,7 +994,29 @@
                             "title": "ein Erotikgeschäft"
                         }
                     },
-                    "name": "Erotikgeschäfte"
+                    "name": "Erotikgeschäfte",
+                    "tagRenderings+": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "Dieser Laden bietet <b>weiches BDSM-Zubehör</b> an, wie zum Beispiel flauschige Handschellen, ein \"Fifty Shades of Grey\"-Starterset, ..."
+                                },
+                                "1": {
+                                    "then": "Dieser Laden bietet <b>spezialisiertes BDSM-Zubehör</b> an, wie zum Beispiel Spreizstangen, Utensilien für Nadelfolter, medizinische Bondage-Ausrüstung, Schlagwerkzeuge, Fesseln, Metallhalsbänder, Handschellen, Nippelklemmen, Shibari-Zubehör, ..."
+                                },
+                                "2": {
+                                    "then": "Dieser Laden bietet <b>Petplay</b>-Zubehör an, wie zum Beispiel Hundemasken, Tiermasken, Ponyplay-Ausrüstung, Schwänze, Hufschuhe, ..."
+                                },
+                                "3": {
+                                    "then": "Dieser Laden bietet <b>Lederkleidung</b> an, darunter Hosen und Hemden für den Alltag bis hin zu Lederharnissen"
+                                },
+                                "4": {
+                                    "then": "Dieser Laden bietet <b>Uniformen</b> für Rollenspiele an, wie Krankenschwester-Uniformen, Militäruniformen, Polizei-, Schulmädchen- und Dienstmädchen-Outfits, ..."
+                                }
+                            },
+                            "question": "Bietet dieser Laden Fetischkleidung an?"
+                        }
+                    }
                 }
             },
             "4": {
@@ -1154,7 +1073,7 @@
     },
     "personal": {
         "description": "Stellen Sie Ihr persönliches Thema zusammen, das auf bereits verfügbaren Ebenen aller Themen basiert. Um diese anzuzeigen, öffnen Sie die <a href='#filter'>Ebenenauswahl</a>",
-        "title": "Persönliches Thema"
+        "title": "Persönliche Themenkarte"
     },
     "pets": {
         "description": "Diese Karte zeigt interessante Orte für Haustierbesitzer: Tierärzte, Hundeparks, Tiergeschäfte, hundefreundliche Restaurants, ...",
@@ -1283,10 +1202,6 @@
     "stations": {
         "description": "Bahnhofsdetails ansehen, bearbeiten und hinzufügen",
         "layers": {
-            "3": {
-                "description": "Ebene mit Bahnhöfen",
-                "name": "Bahnhöfe"
-            },
             "16": {
                 "description": "Anzeigen der Züge, die von diesem Bahnhof abfahren",
                 "name": "Abfahrtstafeln",
@@ -1318,6 +1233,10 @@
                 "title": {
                     "render": "Abfahrtstafel"
                 }
+            },
+            "3": {
+                "description": "Ebene mit Bahnhöfen",
+                "name": "Bahnhöfe"
             }
         },
         "title": "Bahnhöfe"
@@ -1492,7 +1411,7 @@
         "title": "Abfall"
     },
     "waste_basket": {
-        "description": "Auf dieser Karte findest Du Abfalleimer in Deiner Nähe. Wenn ein Abfalleimer auf dieser Karte fehlt, kannst du ihn selbst hinzufügen",
+        "description": "Die Karte zeigt Abfalleimer in der Nähe. Wenn ein Abfalleimer fehlt, kannst du ihn selbst hinzufügen.",
         "shortDescription": "Eine Karte mit Abfalleimern",
         "title": "Abfalleimer"
     }

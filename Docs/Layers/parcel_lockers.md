@@ -2,25 +2,16 @@
 
 # parcel_lockers
 
-
-
-
 Layer showing parcel lockers for collecting and sending parcels.
 
-
-
-
-
-
  - This layer is shown at zoomlevel **12** and higher
-
-
 
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [brand](#brand)
   - [operator](#operator)
@@ -33,16 +24,18 @@ Layer showing parcel lockers for collecting and sending parcels.
   - [move-button](#move-button)
   - [delete-button](#delete-button)
   - [lod](#lod)
-4. [Filters](#filters)
+5. [Filters](#filters)
 
 ## Themes using this layer
-
-
 
  - [personal](https://mapcomplete.org/personal)
  - [postboxes](https://mapcomplete.org/postboxes)
 
+## Presets
 
+The following options to create new points are included:
+
+ - **a parcel locker** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dparcel_locker' target='_blank'>parcel_locker</a>
 
 ## Basic tags for this layer
 
@@ -66,121 +59,80 @@ Elements must match **any** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/parcel_mail_in#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/parcel_mail_in/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [parcel_mail_in](https://wiki.openstreetmap.org/wiki/Key:parcel_mail_in) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:parcel_mail_in%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:parcel_mail_in%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/parcel_pickup#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/parcel_pickup/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [parcel_pickup](https://wiki.openstreetmap.org/wiki/Key:parcel_pickup) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:parcel_pickup%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:parcel_pickup%3Dno) |
 
-
-
-
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
-
-
-
 
 ### brand
 
 The question is `What is the brand of the parcel locker?`
 *This is a {brand} parcel locker* is shown if `brand` is set
 
-
-
-
 ### operator
 
 The question is `What is the operator of the parcel locker?`
 *This parcel locker is operated by {operator}* is shown if `operator` is set
-
-
-
 
 ### opening_hours_24_7
 
 The question is `What are the opening hours of {title()}?`
 *<h3>Opening hours</h3>{opening_hours_table(opening_hours)}* is shown if `opening_hours` is set
 
-
  - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/open24_7.svg' style='width: 3rem; height: 3rem'> *24/7 opened (including holidays)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>
  -  *Marked as closed for an unspecified time* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dclosed' target='_blank'>closed</a>. _This option cannot be chosen as answer_
-
-
-
-
 
 ### ref
 
 The question is `What is the reference number/identifier of this parcel locker?`
 *This parcel locker has the reference {ref}* is shown if `ref` is set
 
-
-
-
 ### mail-in
 
 The question is `Can you send packages from this parcel locker?`
 
-
-
  -  *You can send packages from this parcel locker* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:parcel_mail_in' target='_blank'>parcel_mail_in</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parcel_mail_in%3Dyes' target='_blank'>yes</a>
  -  *You <b>can't</b> send packages from this parcel locker* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:parcel_mail_in' target='_blank'>parcel_mail_in</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parcel_mail_in%3Dno' target='_blank'>no</a>
 
-
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dparcel_locker' target='_blank'>parcel_locker</a>
-
 
 ### pickup
 
 The question is `Can you pick up packages from this parcel locker?`
 
-
-
  -  *You can pick up packages from this parcel locker* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:parcel_pickup' target='_blank'>parcel_pickup</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parcel_pickup%3Dyes' target='_blank'>yes</a>
  -  *You <b>can't</b> pick up packages from this parcel locker* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:parcel_pickup' target='_blank'>parcel_pickup</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parcel_pickup%3Dno' target='_blank'>no</a>
 
-
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dparcel_locker' target='_blank'>parcel_locker</a>
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### move-button
 
 _This tagrendering has no question and is thus read-only_
 *{move_button()}*
-
-
-
 
 ### delete-button
 
 _This tagrendering has no question and is thus read-only_
 *{delete_button()}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`
 
 ## Filters
 
-
-
 | id | question | osmTags |
 -----|-----|----- |
 | open_now.0 | Open now | _isOpen=yes |
-
 
 
 

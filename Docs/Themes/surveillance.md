@@ -8,14 +8,12 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [surveillance_camera](../Layers/surveillance_camera.md)
  - [speed_camera](../Layers/speed_camera.md)
+ - [police](../Layers/police.md)
  - [walls_and_buildings](../Layers/walls_and_buildings.md)
 
-
 Available languages:
-
 
  - en
  - nl
@@ -32,7 +30,8 @@ Available languages:
  - cs
  - pl
  - sl
-
+ - ru
+ - uk
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

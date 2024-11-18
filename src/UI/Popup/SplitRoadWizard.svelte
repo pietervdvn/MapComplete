@@ -58,7 +58,7 @@
       id,
       splitPoints.data.map((ff) => <[number, number]>(<Point>ff.geometry).coordinates),
       {
-        theme: state?.layout?.id,
+        theme: state?.theme?.id,
       },
       5
     )
@@ -108,7 +108,7 @@
       </div>
     </div>
   {:else if step === "has_been_split"}
-    <Tr cls="thanks" t={t.hasBeenSplit.Clone().SetClass("font-bold thanks block w-full")} />
+    <Tr cls="thanks " t={t.hasBeenSplit} />
     <button on:click={() => downloadWay()}>
       <Scissors class="h-6 w-6" />
       <Tr t={t.splitAgain} />

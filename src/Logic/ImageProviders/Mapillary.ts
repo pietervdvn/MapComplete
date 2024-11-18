@@ -118,21 +118,23 @@ export class Mapillary extends ImageProvider {
     }
 
     SourceIcon(
-        id: string,
+        img: { id: string; url: string },
         location?: {
             lon: number
             lat: number
         }
     ): BaseUIElement {
         let url: string = undefined
+        const id = img.id
         if (id) {
             url = Mapillary.createLink(location, 16, "" + id)
         }
         return new SvelteUIElement(MapillaryIcon, { url })
     }
 
-    async ExtractUrls(key: string, value: string): Promise<Promise<ProvidedImage>[]> {
-        return [this.PrepareUrlAsync(key, value)]
+    async ExtractUrls(key: string, value: string): Promise<ProvidedImage[]> {
+        const img = await this.PrepareUrlAsync(key, value)
+        return [img]
     }
 
     public async DownloadAttribution(providedImage: { id: string }): Promise<LicenseInfo> {
@@ -162,12 +164,14 @@ export class Mapillary extends ImageProvider {
         const metadataUrl =
             "https://graph.mapillary.com/" +
             mapillaryId +
-            "?fields=thumb_1024_url,thumb_original_url,captured_at,creator&access_token=" +
+            "?fields=thumb_1024_url,thumb_original_url,captured_at,compass_angle,geometry,creator&access_token=" +
             Constants.mapillary_client_token_v4
         const response = await Utils.downloadJsonCached(metadataUrl, 60 * 60)
         const url = <string>response["thumb_1024_url"]
         const url_hd = <string>response["thumb_original_url"]
         const date = new Date()
+        const rotation = (720 - Number(response["compass_angle"])) % 360
+        const geometry = response["geometry"]
         date.setTime(response["captured_at"])
         return <ProvidedImage>{
             id: "" + mapillaryId,
@@ -176,6 +180,9 @@ export class Mapillary extends ImageProvider {
             provider: this,
             date,
             key,
+            rotation,
+            lat: geometry.coordinates[1],
+            lon: geometry.coordinates[0],
         }
     }
 }

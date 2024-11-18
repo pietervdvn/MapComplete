@@ -226,5 +226,5 @@ export interface TagRenderingConfigJson {
     /**
      * This tagRendering can introduce this builtin filter
      */
-    filter?: string[]
+    filter?: string[] | true
 }

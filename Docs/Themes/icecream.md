@@ -8,12 +8,9 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [ice_cream](../Layers/ice_cream.md)
 
-
 Available languages:
-
 
  - en
  - de
@@ -22,7 +19,9 @@ Available languages:
  - es
  - da
  - it
-
+ - ru
+ - hu
+ - uk
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

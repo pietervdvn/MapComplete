@@ -8,7 +8,6 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [osm_buildings_no_points (defined in this theme)](#osm_buildings_no_points)
  - [grb (defined in this theme)](#grb)
  - [service_ways (defined in this theme)](#service_ways)
@@ -18,12 +17,9 @@ This theme contains the following layers:
  - [current_view](../Layers/current_view.md)
  - [named_streets](../Layers/named_streets.md)
 
-
 Available languages:
 
-
  - nl
-
 
 # Table of contents
 
@@ -75,20 +71,8 @@ Available languages:
 These layers can not be reused in different themes.
 # osm_buildings_no_points
 
-
-
-
-
-
-
-
-
-
-
  - This layer is shown at zoomlevel **17** and higher
  - Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`
-
-
 
 No themes use this layer
 
@@ -114,14 +98,10 @@ Elements must match **all** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/fixme#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/fixme/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [fixme](https://wiki.openstreetmap.org/wiki/Key:fixme) | [string](../SpecialInputElements.md#string) | [](https://wiki.openstreetmap.org/wiki/Tag:fixme%3D) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/building:min_level#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/building%3Amin_level/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [building:min_level](https://wiki.openstreetmap.org/wiki/Key:building:min_level) | [pnat](../SpecialInputElements.md#pnat) |  |
 
-
-
-
 ### building type
 
 The question is `What kind of building is this?`
 *The building type is <b>{building}</b>* is shown if `building` is set
-
 
  -  *A normal house* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:building' target='_blank'>building</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:building%3Dhouse' target='_blank'>house</a>
  -  *A house detached from other building* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:building' target='_blank'>building</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:building%3Ddetached' target='_blank'>detached</a>
@@ -133,41 +113,24 @@ The question is `What kind of building is this?`
  -  *A building containing only garages; typically they are all identical* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:building' target='_blank'>building</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:building%3Dgarages' target='_blank'>garages</a>
  -  *A building - no specification* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:building' target='_blank'>building</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:building%3Dyes' target='_blank'>yes</a>
 
-
-
-
-
 ### grb-housenumber
 
 The question is `Wat is het huisnummer?`
 *Het huisnummer is <b>{addr:housenumber}</b>* is shown if `addr:housenumber` is set
 
-
  -  *Geen huisnummer* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:not:addr:housenumber' target='_blank'>not:addr:housenumber</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:not:addr:housenumber%3Dyes' target='_blank'>yes</a> & addr:housenumber=
-
-
-
-
 
 ### grb-unit
 
 The question is `Wat is de wooneenheid-aanduiding?`
 *De wooneenheid-aanduiding is <b>{addr:unit}</b> * is shown if `addr:unit` is set
 
-
  -  *Geen wooneenheid-nummer* is shown if with addr:unit=
-
-
-
-
 
 ### grb-street
 
 The question is `Wat is de straat?`
 *De straat is <b>{addr:street}</b>* is shown if `addr:street` is set
-
-
-
 
 ### grb-reference
 
@@ -176,82 +139,49 @@ _This tagrendering has no question and is thus read-only_
 
 This tagrendering is only visible in the popup if the following condition is met: source:geometry:ref~.+
 
-
 ### grb-fixme
 
 The question is `Wat zegt de fixme?`
 *De fixme is <b>{fixme}</b>* is shown if `fixme` is set
 
-
  -  *Geen fixme* is shown if with fixme=
-
-
-
-
 
 ### grb-min-level
 
 The question is `Hoeveel verdiepingen ontbreken?`
 *Dit gebouw begint maar op de {building:min_level} verdieping* is shown if `building:min_level` is set
 
-
-
-
 ### all_tags
 Shows a table with all the tags of the feature
 _This tagrendering has no question and is thus read-only_
 *{all_tags()}*
-
-
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`
 
 ## Filters
 
-
-
 | id | question | osmTags |
 -----|-----|----- |
 | has-fixme.0 | Heeft een FIXME | fixme~.+ |
 
-
-
-
-
-
 | id | question | osmTags | fields |
 -----|-----|-----|----- |
-| last-edited-by.0 | Last change made by {username} |  | username (string) |
-
-
+| last-edited-by.0 | Last change made by {username} |  | username (regex) |
 
 # grb
 
-
-
-
 Geometry which comes from GRB with tools to import them
-
-
-
-
-
 
  - This layer is shown at zoomlevel **17** and higher
  - <img src='../warning.svg' height='1rem'/>
@@ -259,8 +189,6 @@ Geometry which comes from GRB with tools to import them
 This layer is loaded from an external source, namely 
 
 `https://betadata.byteless.net/grb?bbox={x_min},{y_min},{x_max},{y_max}`
-
-
 
 No themes use this layer
 
@@ -275,45 +203,30 @@ Elements must match **all** of the following expressions:
 
 ## Supported attributes
 
-
-
 ### Import-button
 
 _This tagrendering has no question and is thus read-only_
 *{import_way_button(osm_buildings_no_points,building=$building;man_made=$man_made; source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref; addr:street=$addr:street; addr:housenumber=$addr:housenumber; building:min_level=$_building:min_level, Upload this building to OpenStreetMap,,_is_part_of_building=true,1,_moveable=true)}*
-
 
  -  *Did not yet calculate the metatags... Reopen this popup* is shown if with _grb_ref=
  -  *This building has holes and is modeled as a relation. As such, it cannot be conflated. Conflate it manually via <a href='https://buildings.osm.be/#/'>the building export site</a> {open_in_josm()}* is shown if with id~^(relation\/*)$ & _overlap_percentage>50 & _reverse_overlap_percentage>50 & _overlaps_with~.+
  -  *{conflate_button(osm_buildings_no_points,building=$_target_building_type; source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref; addr:street=$addr:street; addr:housenumber=$addr:housenumber, Replace the geometry in OpenStreetMap and add the address,,_osm_obj:id)}* is shown if with _overlap_percentage>50 & _reverse_overlap_percentage>50 & _osm_obj:addr:street= & _osm_obj:addr:housenumber= & addr:street~.+ & addr:housenumber~.+ & addr:street!= & addr:housenumber!=
  -  *{conflate_button(osm_buildings_no_points,building=$_target_building_type; source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref, Replace the geometry in OpenStreetMap,,_osm_obj:id)}* is shown if with _overlap_percentage>50 & _reverse_overlap_percentage>50
 
-
-
-
-
 ### Building info
 
 _This tagrendering has no question and is thus read-only_
 *This is a <b>{building}</b> <span class='subtle'>detected by {detection_method}</span>*
-
-
-
 
 ### overlapping building address
 
 _This tagrendering has no question and is thus read-only_
 *The overlapping openstreetmap-building has no address information at all*
 
-
  -  *The overlapping openstreetmap-building has address {_osm_obj:addr:street} {_osm_obj:addr:housenumber}* is shown if with _osm_obj:addr:street~.+ & _osm_obj:addr:housenumber~.+
  -  *The overlapping building only has a street known: {_osm_obj:addr:street}* is shown if with _osm_obj:addr:street~.+
  -  *The overlapping building only has a housenumber known: {_osm_obj:addr:housenumber}* is shown if with _osm_obj:addr:housenumber~.+
  -  *No overlapping OpenStreetMap-building found* is shown if with _osm_obj:id=
-
-
-
-
 
 ### grb_address_diff
 
@@ -322,14 +235,12 @@ _This tagrendering has no question and is thus read-only_
 
 This tagrendering is only visible in the popup if the following condition is met: (addr:street!= | addr:housenumber!=) & _osm_obj:id~.+ & addr:street~.+ & addr:housenumber~.+
 
-
 ### overlapping building id
 
 _This tagrendering has no question and is thus read-only_
 *The overlapping <a href='https://osm.org/{_osm_obj:id}' target='_blank'>openstreetmap-building has id {_osm_obj:id}</a>*
 
 This tagrendering is only visible in the popup if the following condition is met: _osm_obj:id~.+
-
 
 ### overlapping building type
 
@@ -338,14 +249,12 @@ _This tagrendering has no question and is thus read-only_
 
 This tagrendering is only visible in the popup if the following condition is met: _osm_obj:id~.+
 
-
 ### overlapping building map
 
 _This tagrendering has no question and is thus read-only_
 *<h3>GRB geometry:</h3>{minimap(21, id):height:10rem;border-radius:1rem;overflow:hidden}<h3>OSM geometry:</h3>{minimap(21,_osm_obj:id):height:10rem;border-radius:1rem;overflow:hidden}*
 
 This tagrendering is only visible in the popup if the following condition is met: _osm_obj:id~.+
-
 
 ### apply-id
 
@@ -354,7 +263,6 @@ _This tagrendering has no question and is thus read-only_
 
 This tagrendering is only visible in the popup if the following condition is met: _imported!=yes & _overlaps_with~.+
 
-
 ### apply-building-type
 
 _This tagrendering has no question and is thus read-only_
@@ -362,39 +270,24 @@ _This tagrendering has no question and is thus read-only_
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:_osm_obj:building' target='_blank'>_osm_obj:building</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_osm_obj:building%3Dyes' target='_blank'>yes</a> & _overlaps_with~.+ & building!=yes
 
-
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
-
-
-
 
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
 
-
 This tagrendering has labels 
 `added_by_default`
 # service_ways
 
-
-
-
 A seperate layer with service roads, as to remove them from the intersection testing
-
-
-
-
-
 
  - This layer is shown at zoomlevel **17** and higher
  - Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`
-
-
 
 No themes use this layer
 
@@ -406,40 +299,22 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 
 ## Supported attributes
 
-
-
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
-
-
-
 
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
 
-
 This tagrendering has labels 
 `added_by_default`
 # generic_osm_object
 
-
-
-
-
-
-
-
-
-
-
  - This layer is shown at zoomlevel **17** and higher
  - Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`
-
-
 
 No themes use this layer
 
@@ -462,29 +337,20 @@ Elements must match **all** of the following expressions:
 
 ## Supported attributes
 
-
-
 ### all_tags
 Shows a table with all the tags of the feature
 _This tagrendering has no question and is thus read-only_
 *{all_tags()}*
-
-
-
 
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
-
-
-
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

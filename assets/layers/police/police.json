@@ -1,0 +1,192 @@
+{
+  "id": "police",
+  "name": {
+    "en": "Police stations",
+    "de": "Polizeiwachen",
+    "es": "Comisarías de Policía"
+  },
+  "description": {
+    "en": "Many types of police facilities ",
+    "de": "Verschiedene Polizeieinrichtungen ",
+    "es": "Muchos tipos de instalaciones policiales "
+  },
+  "source": {
+    "osmTags": {
+      "or": [
+        "amenity=police",
+        "police~*"
+      ]
+    }
+  },
+  "minzoom": 10,
+  "title": {
+    "render": {
+      "en": "{name}",
+      "de": "{name}",
+      "es": "{name}"
+    }
+  },
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "#00000000"
+        },
+        {
+          "icon": {
+            "render": "./assets/layers/police/police.svg",
+            "mappings": [
+              {
+                "if": "police=checkpoint",
+                "then": "./assets/layers/police/checkpoint.svg"
+              }
+            ]
+          }
+        }
+      ],
+      "iconBadges": [
+        {
+          "if": "detention=yes",
+          "then": "circle:white;./assets/layers/police/jail.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "width": 1,
+      "color": "blue"
+    }
+  ],
+  "presets": [
+    {
+      "tags": [
+        "amenity=police"
+      ],
+      "title": {
+        "en": "a police office",
+        "de": "eine Polizeiwache",
+        "ca": "una comissaria",
+        "es": "una oficina de policía"
+      },
+      "description": {
+        "en": "A police office where the general public can enter for inquiries",
+        "de": "Eine Polizeiwache, die von der Öffentlichkeit für Anfragen genutzt werden kann",
+        "ca": "Una comissaria on pot entrar la ciutadania per a les consultes",
+        "es": "Una oficina de policía donde el público en general puede entrar para realizar consultas"
+      }
+    },
+    {
+      "tags": [
+        "police=checkpoint"
+      ],
+      "title": {
+        "en": "a police checkpoint",
+        "de": "eine Polizeikontrolle",
+        "es": "un puesto de control policial"
+      },
+      "description": {
+        "en": "A place where police performs checks on travelling people",
+        "de": "Ein Ort, an dem die Polizei Kontrollen von Reisenden durchführt",
+        "es": "Un lugar donde la policía realiza controles a las personas que viajan"
+      }
+    },
+    {
+      "tags": [
+        "police=offices"
+      ],
+      "title": {
+        "en": "an administrative, police backoffice",
+        "de": "ein Verwaltungsbüro der Polizei",
+        "es": "una oficina administrativa policial"
+      },
+      "description": {
+        "en": "An administrative police office without services for the general public.",
+        "de": "Ein Verwaltungsbüro der Polizei ohne Dienstleistungen für die Allgemeinheit.",
+        "es": "Una oficina administrativa de policía sin servicios para el público en general."
+      }
+    },
+    {
+      "tags": [
+        "police=detention"
+      ],
+      "title": "a police detention center",
+      "description": {
+        "en": "A jail run by the police without public services. People are detained here for a short time (at most a few days), e.g. for small misdemeanors, disturbance of the public order or awaiting a trial",
+        "de": "Ein von der Polizei betriebenes Gefängnis ohne öffentliche Dienstleistungen. Hier werden Menschen für kurze Zeit (höchstens ein paar Tage) inhaftiert, z. B. wegen kleinerer Vergehen, Störung der öffentlichen Ordnung oder in Erwartung eines Gerichtsverfahrens",
+        "es": "Una cárcel dirigida por la policía sin servicios públicos. Las personas son detenidas aquí por un corto tiempo (como máximo unos pocos días), por ejemplo, por pequeños delitos menores, alteración del orden público o a la espera de un juicio"
+      }
+    },
+    {
+      "tags": [
+        "police=naval_base"
+      ],
+      "title": "a police naval base",
+      "description": {
+        "en": "A naval or maritime base for the maritime police; often with a pier and police boats nearby",
+        "de": "Ein Stützpunkt für die Schifffahrtspolizei; oft mit einem Anleger und Polizeibooten in der Nähe",
+        "es": "Una base naval o marítima para la policía marítima; a menudo con un muelle y barcos de policía cercanos"
+      }
+    }
+  ],
+  "tagRenderings": [
+    "images",
+    "reviews",
+    {
+      "question": {
+        "en": "What is the name of this police facility?",
+        "de": "Wie lautet der Name der Polizeieinrichtung?",
+        "es": "¿Cuál es el nombre de esta instalación policial?"
+      },
+      "id": "police_name",
+      "render": {
+        "en": "<b>{name}</b>",
+        "de": "<b>{name}</b>",
+        "es": "<b>{name}</b>"
+      },
+      "freeform": {
+        "key": "name"
+      }
+    },
+    "{preset_type_select()}",
+    "contact",
+    "opening_hours",
+    {
+      "question": {
+        "en": "Does this police office have detention facilities?",
+        "de": "Verfügt die Polizeidienststelle über Gewahrsamsräume?",
+        "es": "¿Tiene esta oficina de policía instalaciones de detención?"
+      },
+      "filter": true,
+      "id": "4_z2nrdhy6tyyh4fd",
+      "condition": "amenity=police",
+      "mappings": [
+        {
+          "if": "detention=yes",
+          "icon": "./assets/layers/police/jail.svg",
+          "then": {
+            "en": "This police office has some cells to detain people",
+            "de": "Die Polizeidienststelle hat Zellen für die Inhaftierung von Personen",
+            "es": "Esta oficina de policía tiene algunas celdas para detener personas"
+          }
+        },
+        {
+          "if": "detention=no",
+          "then": {
+            "en": "This police office does not have cells to detain people",
+            "de": "Die Polizeidienststelle hat keine Zellen für die Inhaftierung von Personen",
+            "es": "Esta oficina de policía no tiene celdas para detener personas"
+          }
+        }
+      ]
+    }
+  ],
+  "deletion": true,
+  "allowMove": true,
+  "enableMorePrivacy": true
+}

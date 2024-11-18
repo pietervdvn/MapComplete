@@ -8,14 +8,11 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [tertiary_education](../Layers/tertiary_education.md)
  - [school](../Layers/school.md)
  - [kindergarten_childcare](../Layers/kindergarten_childcare.md)
 
-
 Available languages:
-
 
  - en
  - nl
@@ -31,7 +28,9 @@ Available languages:
  - pl
  - zh_Hant
  - it
-
+ - ru
+ - hu
+ - uk
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

@@ -10,9 +10,9 @@ import MarkdownUtils from "../../../Utils/MarkdownUtils"
 export default class WikidataValidator extends Validator {
     public static readonly _searchCache = new Map<string, Promise<WikidataResponse[]>>()
 
-    public static docs = new Combine([
-        new Title("Helper arguments"),
-        new Table(
+    public static docs = [
+        "### Helper arguments",
+        MarkdownUtils.table(
             ["name", "doc"],
             [
                 [
@@ -21,38 +21,36 @@ export default class WikidataValidator extends Validator {
                 ],
                 [
                     "options",
-                    new Combine([
-                        "A JSON-object of type `{ removePrefixes: string[], removePostfixes: string[] }`.",
-                        MarkdownUtils.table(
-                            ["subarg", "doc"],
-                            [
-                                [
-                                    "removePrefixes",
-                                    "remove these snippets of text from the start of the passed string to search. This is either a list OR a hash of languages to a list. The individual strings are interpreted as case ignoring regexes",
-                                ],
-                                [
-                                    "removePostfixes",
-                                    "remove these snippets of text from the end of the passed string to search. This is either a list OR a hash of languages to a list. The individual strings are interpreted as case ignoring regexes.",
-                                ],
-                                [
-                                    "instanceOf",
-                                    "A list of Q-identifier which indicates that the search results _must_ be an entity of this type, e.g. [`Q5`](https://www.wikidata.org/wiki/Q5) for humans",
-                                ],
-                                [
-                                    "notInstanceof",
-                                    "A list of Q-identifiers which indicates that the search results _must not_ be an entity of this type, e.g. [`Q79007`](https://www.wikidata.org/wiki/Q79007) to filter away all streets from the search results",
-                                ],
-                                [
-                                    "multiple",
-                                    "If 'yes' or 'true', will allow to select multiple values at once",
-                                ],
-                            ]
-                        ),
-                    ]),
+                    "A JSON-object of type `{ removePrefixes: Record<string, string[]>, removePostfixes: Record<string, string[]>, ... }`. See the more detailed explanation below",
                 ],
             ]
         ),
-        new Title("Example usage"),
+        "#### Suboptions",
+        MarkdownUtils.table(
+            ["subarg", "doc"],
+            [
+                [
+                    "removePrefixes",
+                    "remove these snippets of text from the start of the passed string to search. This is either a list OR a hash of languages to a list. The individual strings are interpreted as case ignoring regexes",
+                ],
+                [
+                    "removePostfixes",
+                    "remove these snippets of text from the end of the passed string to search. This is either a list OR a hash of languages to a list. The individual strings are interpreted as case ignoring regexes.",
+                ],
+                [
+                    "instanceOf",
+                    "A list of Q-identifier which indicates that the search results _must_ be an entity of this type, e.g. [`Q5`](https://www.wikidata.org/wiki/Q5) for humans",
+                ],
+                [
+                    "notInstanceof",
+                    "A list of Q-identifiers which indicates that the search results _must not_ be an entity of this type, e.g. [`Q79007`](https://www.wikidata.org/wiki/Q79007) to filter away all streets from the search results",
+                ],
+                ["multiple", "If 'yes' or 'true', will allow to select multiple values at once"],
+            ]
+        ),
+    ].join("\n\n")
+    private static readonly docsExampleUsage: string =
+        "### Example usage\n\n" +
         `The following is the 'freeform'-part of a layer config which will trigger a search for the wikidata item corresponding with the name of the selected feature. It will also remove '-street', '-square', ... if found at the end of the name
 
 \`\`\`json
@@ -94,10 +92,15 @@ Another example is to search for species and trees:
         }]
       }
 \`\`\`
-`,
-    ])
+`
+
     constructor() {
-        super("wikidata", new Combine(["A wikidata identifier, e.g. Q42.", WikidataValidator.docs]))
+        super(
+            "wikidata",
+            "A wikidata identifier, e.g. Q42.\n\n" +
+                WikidataValidator.docs +
+                WikidataValidator.docsExampleUsage
+        )
     }
 
     public isValid(str): boolean {

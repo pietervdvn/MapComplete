@@ -55,8 +55,13 @@
     },
     "favouritePoi": {
         "button": {
+            "isFavourite": "Deze locatie is momenteel gemarkeerd als favoriet en zal getoond worden op alle thematische kaarten van MapComplete.",
             "isMarkedShort": "Als favoriet gemarkeerd",
-            "isNotMarkedShort": "Niet als favoriet gemarkeerd"
+            "isNotMarkedShort": "Niet als favoriet gemarkeerd",
+            "markAsFavouriteTitle": "Markeer als favoriet",
+            "markDescription": "Voeg deze locatie toe aan je persoonlijke lijst van favorieten",
+            "unmark": "Verwijder van je persoonlijke lijst van favorieten",
+            "unmarkNotDeleted": "Dit item wordt niet verwijderd en is nog steeds zichtbaar op de gepaste kaarten voor jou en anderen"
         },
         "tab": "Jouw favorieten en beoordelingen"
     },
@@ -168,12 +173,13 @@
             "openMapillary": "Open Mapillary op deze locatie",
             "openOsmcha": "Bekijk de laatste bijdragen gemaakt met {theme}",
             "openOsmchaLastWeek": "Bekijk aanpassingen van de voorbije 7 dagen",
+            "panoramaxLicenseCCBYSA": "Je foto wordt gepubliceerd met een CC-BY-SA-licentie. Iedereen mag je afbeelding hergebruiken mits naamsvermelding.",
             "themeBy": "Thema gemaakt door {author}",
             "title": "Copyright en attributie",
             "translatedBy": "MapComplete werd vertaald door {contributors} en <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} meer vertalers</a>"
         },
         "back": "Vorige",
-        "backToIndex": "Keer terug naar het overzicht met alle thematische kaarten",
+        "backToIndex": "Bekijk alle thematische kaarten",
         "backToMap": "Ga terug naar de kaart",
         "backgroundMap": "Selecteer een achtergrondlaag",
         "backgroundSwitch": "Verander achtergrond",
@@ -246,7 +252,6 @@
             "createYourOwnTheme": "Maak je eigen MapComplete-kaart",
             "enterToOpen": "Druk op enter om thema te openen",
             "hiddenExplanation": "Deze thema's zijn enkel zichtbaar indien je de link kent. Je hebt {hidden_discovered} van {total_hidden} verborgen thema's ontdekt.",
-            "intro": "<h3>Meer thematische kaarten?</h3>Vind je het leuk om geodata te verzamelen? <br> Hier vind je meer kaartthema's.",
             "noMatchingThemes": "Geen enkel thema beantwoordt je zoekopdracht",
             "noSearch": "Toon alle thema's",
             "previouslyHiddenTitle": "Eerder bezochte verborgen themas",
@@ -329,9 +334,21 @@
         "save": "Opslaan",
         "screenToSmall": "Open {theme} in een nieuw venster",
         "search": {
+            "activeFilters": "Actieve filters",
+            "clearFilters": "Verwijder filters",
+            "deleteSearchHistory": "Verwijder geschiedenis",
+            "deleteThemeHistory": "Verwijder geschiedenis",
+            "editSearchSyncSettings": "Stel je geschiedenis-voorkeuren in",
+            "editThemeSync": "Stel je geschiedenis-voorkeuren in",
             "error": "Niet gelukt…",
+            "instructions": "Gebruik de zoekbalk om locaties, filters of om andere kaarten te zoeken",
+            "locations": "Plaatsen",
             "nothing": "Niets gevonden…",
-            "search": "Zoek naar een locatie",
+            "otherMaps": "Andere kaarten",
+            "pickFilter": "Kies een filter",
+            "recentThemes": "Recent bezochte kaarten",
+            "recents": "Recent bekeken plaatsen",
+            "search": "Zoek naar een locatie, filter of kaart",
             "searchShort": "Zoek…",
             "searching": "Aan het zoeken…"
         },
@@ -341,7 +358,7 @@
             "embedIntro": "<h3>Plaats dit op je website</h3>Voeg dit kaartje toe op je eigen website.<br/>We moedigen dit zelfs aan - je hoeft geen toestemming te vragen.<br/> Het is gratis en zal dat altijd blijven. Hoe meer het gebruikt wordt, hoe waardevoller",
             "fsUserbadge": "Activeer de login-knop en dus de mogelijkheid om data aan te passen",
             "fsWelcomeMessage": "Toon het welkomstbericht en de bijhorende tabbladen",
-            "intro": "<h3>Deel deze kaart</h3> Kopieer onderstaande link om deze kaart naar vrienden en familie door te sturen:",
+            "intro": "Kopieer onderstaande link om deze kaart naar vrienden en familie door te sturen:",
             "thanksForSharing": "Bedankt om te delen!",
             "title": "Deel deze kaart"
         },
@@ -477,11 +494,11 @@
         "isDeleted": "Verwijderd",
         "nearby": {
             "link": "Deze afbeelding toont het object",
-            "seeNearby": "Bekijk en link foto's van in de buurt",
+            "seeNearby": "Bekijk foto's in de buurt",
             "title": "Straatafbeeldingen uit de buurt"
         },
         "pleaseLogin": "Gelieve je aan te melden om een foto toe te voegen",
-        "respectPrivacy": "Fotografeer geen mensen of nummerplaten. Voeg geen Google Maps, Google Streetview of foto's met auteursrechten toe.",
+        "respectPrivacy": "Voeg geen Google Maps, Google Streetview of foto's met auteursrechten toe.",
         "toBig": "Je afbeelding is te groot, namelijk {actual_size}. Gelieve afbeeldingen van maximaal {max_size} te gebruiken",
         "uploadDone": "Je afbeelding is toegevoegd. Bedankt om te helpen!",
         "uploadFailed": "Afbeelding uploaden mislukt. Heb je internet? Gebruik je Brave of UMatrix? Dan moet je derde partijen toelaten.",
@@ -576,7 +593,7 @@
             "li1": "neem een foto met een enkel blad",
             "li2": "neem een foto die de schors toont",
             "li3": "neem een foto van de bloesems",
-            "li4": "neem een foto van de fruits"
+            "li4": "neem een foto van het fruit"
         },
         "loadingWikidata": "Informatie over {species} aan het laden",
         "matchPercentage": "{match}% overeenkomst",
@@ -617,6 +634,7 @@
         "i_am_affiliated": "<span>Ik ben persoonlijk betrokken</span><br/><span class='subtle'>Vink aan indien je de oprichter, maker, werknemer, ... of dergelijke bent</span>",
         "name_required": "De naam van dit object moet gekend zijn om een review te kunnen maken",
         "no_reviews_yet": "Er zijn nog geen beoordelingen. Wees de eerste!",
+        "question": "Welke score geef je aan {title()}?",
         "save": "Opslaan",
         "saved": "Bedankt om je beoordeling te delen!",
         "saving_review": "Opslaan...",

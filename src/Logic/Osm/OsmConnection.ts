@@ -137,7 +137,6 @@ export class OsmConnection {
         this.preferencesHandler = new OsmPreferences(this.auth, this, this.fakeUser)
 
         if (options.oauth_token?.data !== undefined) {
-            console.log(options.oauth_token.data)
             this.auth.bootstrapToken(options.oauth_token.data, (err, result) => {
                 console.log("Bootstrap token called back", err, result)
                 this.AttemptLogin()
@@ -160,15 +159,19 @@ export class OsmConnection {
         key: string,
         defaultValue: string = undefined,
         options?: {
-            documentation?: string
             prefix?: string
         }
     ): UIEventSource<T | undefined> {
-        return <UIEventSource<T>>this.preferencesHandler.GetPreference(key, defaultValue, options)
+        const prefix = options?.prefix ?? "mapcomplete-"
+        return <UIEventSource<T>>this.preferencesHandler.getPreference(key, defaultValue, prefix)
     }
 
-    public GetLongPreference(key: string, prefix: string = "mapcomplete-"): UIEventSource<string> {
-        return this.preferencesHandler.GetLongPreference(key, prefix)
+    public getPreference<T extends string = string>(
+        key: string,
+        defaultValue: string = undefined,
+        prefix: string = "mapcomplete-"
+    ): UIEventSource<T | undefined> {
+        return <UIEventSource<T>>this.preferencesHandler.getPreference(key, defaultValue, prefix)
     }
 
     public OnLoggedIn(action: (userDetails: UserDetails) => void) {
@@ -183,7 +186,6 @@ export class OsmConnection {
         this.userDetails.ping()
         console.log("Logged out")
         this.loadingStatus.setData("not-attempted")
-        this.preferencesHandler.preferences.setData(undefined)
     }
 
     /**
@@ -210,7 +212,7 @@ export class OsmConnection {
         console.log("Trying to log in...")
         this.updateAuthObject()
 
-        LocalStorageSource.Get("location_before_login").setData(
+        LocalStorageSource.get("location_before_login").setData(
             Utils.runningFromConsole ? undefined : window.location.href
         )
         this.auth.xhr(
@@ -521,7 +523,7 @@ export class OsmConnection {
         this.auth.authenticate(function () {
             // Fully authed at this point
             console.log("Authentication successful!")
-            const previousLocation = LocalStorageSource.Get("location_before_login")
+            const previousLocation = LocalStorageSource.get("location_before_login")
             callback(previousLocation.data)
         })
     }
@@ -534,7 +536,10 @@ export class OsmConnection {
             redirect_uri: Utils.runningFromConsole
                 ? "https://mapcomplete.org/land.html"
                 : window.location.protocol + "//" + window.location.host + "/land.html",
-            singlepage: true, // We always use 'singlePage', it is the most stable - including in PWA
+            /* We use 'singlePage' as much as possible, it is the most stable - including in PWA.
+             * However, this breaks in iframes so we open a popup in that case
+             */
+            singlepage: !this._iframeMode,
             auto: true,
             apiUrl: this._oauth_config.api_url ?? this._oauth_config.url,
         })

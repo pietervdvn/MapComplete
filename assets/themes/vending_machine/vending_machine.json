@@ -11,7 +11,10 @@
     "pl": "Automaty sprzedające",
     "zh_Hant": "自動販賣機",
     "da": "Salgsautomater",
-    "it": "Distributori automatici"
+    "it": "Distributori automatici",
+    "ru": "Торговые автоматы",
+    "hu": "Árusító automaták",
+    "uk": "Торгові автомати"
   },
   "description": {
     "en": "Find vending machines for everything",
@@ -20,9 +23,10 @@
     "fr": "Trouver tous les distributeurs",
     "ca": "Troba màquines expenedores per a tot",
     "cs": "Najít prodejní automaty na vše",
-    "es": "Encontrar máquinas expendedoras para todo",
+    "es": "Encuentra máquinas expendedoras de todo",
     "pl": "Znajdź wszelakie automaty sprzedające",
-    "it": "Trova distributori automatici per ogni cosa"
+    "it": "Trova distributori automatici per ogni cosa",
+    "uk": "Знайдіть торгові автомати для всього"
   },
   "icon": "./assets/layers/vending_machine/vending_machine.svg",
   "startZoom": 19,
@@ -35,7 +39,7 @@
       "override": {
         "id": "all_vending_machine",
         "name": null,
-        "doCount": false,
+        "isCounted": false,
         "filter": {
           "sameAs": "vending_machine"
         },
@@ -54,7 +58,7 @@
     {
       "builtin": "parking_ticket_machine",
       "override": {
-        "doCount": false,
+        "isCounted": false,
         "name": null,
         "minzoom": 18
       }
@@ -62,7 +66,7 @@
     {
       "builtin": "elongated_coin",
       "override": {
-        "doCount": false,
+        "isCounted": false,
         "name": null,
         "minzoom": 18
       }
@@ -70,7 +74,7 @@
     {
       "builtin": "ticket_machine",
       "override": {
-        "doCount": false,
+        "isCounted": false,
         "name": null,
         "minzoom": 18
       }

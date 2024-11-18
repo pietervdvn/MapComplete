@@ -8,12 +8,9 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [map](../Layers/map.md)
 
-
 Available languages:
-
 
  - en
  - nl
@@ -29,7 +26,8 @@ Available languages:
  - es
  - cs
  - pl
-
+ - hu
+ - uk
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

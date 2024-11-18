@@ -15,7 +15,7 @@ export default class PlantNet {
         for (const image of imageUrls) {
             url += "&images=" + encodeURIComponent(image)
         }
-        return Utils.downloadJsonCached(url, 365 * 24 * 60 * 60 * 1000)
+        return Utils.downloadJsonCached(url, 365 * 24 * 60 * 60 * 1000, undefined, true)
     }
 
     public static exampleResult: PlantNetResult = {

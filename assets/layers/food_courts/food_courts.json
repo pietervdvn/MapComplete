@@ -2,11 +2,13 @@
   "id": "food_courts",
   "name": {
     "en": "Food Courts",
-    "de": "Food Courts"
+    "de": "Food Courts",
+    "es": "Plazas de comida"
   },
   "description": {
     "en": "Food courts with a variety of food options.",
-    "de": "Food-Courts mit einer Vielzahl von Essensmöglichkeiten."
+    "de": "Food-Courts mit einer Vielzahl von Essensmöglichkeiten.",
+    "es": "Plazas de comida con una variedad de opciones gastronómicas."
   },
   "source": {
     "osmTags": "amenity=food_court"
@@ -15,7 +17,8 @@
   "title": {
     "render": {
       "en": "Food Court",
-      "de": "Food Court"
+      "de": "Food Court",
+      "es": "Plaza de comida"
     },
     "mappings": [
       {
@@ -56,19 +59,22 @@
       "id": "name",
       "question": {
         "en": "What is the name of this food court?",
-        "de": "Wie lautet der Name dieses Food-Courts?"
+        "de": "Wie lautet der Name dieses Food-Courts?",
+        "es": "¿Cuál es el nombre de esta plaza de comida?"
       },
       "freeform": {
         "key": "name",
         "type": "string",
         "placeholder": {
           "en": "Name of the food court",
-          "de": "Name des Food-Courts"
+          "de": "Name des Food-Courts",
+          "es": "Nombre de la plaza de comida"
         }
       },
       "render": {
         "en": "This food court is called <b>{name}</b>.",
-        "de": "Dieser Food Court heißt <b>{name}</b>."
+        "de": "Dieser Food Court heißt <b>{name}</b>.",
+        "es": "Esta plaza de comida se llama <b>{name}</b>."
       }
     },
     "reviews",
@@ -78,5 +84,9 @@
     "website",
     "phone",
     "smoking"
-  ]
+  ],
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": false
+  }
 }

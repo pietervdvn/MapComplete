@@ -1,6 +1,7 @@
 {
   "#":"no-translations",
   "#dont-translate": "*",
+  "#filter": "no-auto",
   "pointRendering": [
     {
       "location": [

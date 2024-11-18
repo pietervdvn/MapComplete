@@ -2,38 +2,32 @@
 
 # speed_display
 
-
-
-
 Layer showing speed displays that alert drivers of their speed.
 
-
-
-
-
-
  - This layer is shown at zoomlevel **12** and higher
-
-
 
 ## Table of contents
 
 1. [Themes using this layer](#themes-using-this-layer)
-2. [Basic tags for this layer](#basic-tags-for-this-layer)
-3. [Supported attributes](#supported-attributes)
+2. [Presets](#presets)
+3. [Basic tags for this layer](#basic-tags-for-this-layer)
+4. [Supported attributes](#supported-attributes)
   - [maxspeed](#maxspeed)
   - [inscription](#inscription)
   - [leftover-questions](#leftover-questions)
+  - [move-button](#move-button)
   - [lod](#lod)
 
 ## Themes using this layer
 
-
-
  - [maxspeed](https://mapcomplete.org/maxspeed)
  - [personal](https://mapcomplete.org/personal)
 
+## Presets
 
+The following options to create new points are included:
+
+ - **a speed display** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dspeed_display' target='_blank'>speed_display</a>
 
 ## Basic tags for this layer
 
@@ -50,38 +44,30 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/maxspeed#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/maxspeed/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [maxspeed](https://wiki.openstreetmap.org/wiki/Key:maxspeed) | [pnat](../SpecialInputElements.md#pnat) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/inscription#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/inscription/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [inscription](https://wiki.openstreetmap.org/wiki/Key:inscription) | [string](../SpecialInputElements.md#string) |  |
 
-
-
-
 ### maxspeed
 
 The question is `What is the maximum speed allowed at this speed display?`
 *The maximum speed allowed at this speed display is {canonical(maxspeed)}* is shown if `maxspeed` is set
-
-
-
 
 ### inscription
 
 The question is `What is the text on this speed display?`
 *The text on this speed display is {inscription}* is shown if `inscription` is set
 
-
-
-
 ### leftover-questions
 
 _This tagrendering has no question and is thus read-only_
 *{questions( ,)}*
 
+### move-button
 
-
+_This tagrendering has no question and is thus read-only_
+*{move_button()}*
 
 ### lod
 
 _This tagrendering has no question and is thus read-only_
 *{linked_data_from_website()}*
-
 
 This tagrendering has labels 
 `added_by_default`

@@ -8,7 +8,6 @@ The theme introduction reads:
 
 This theme contains the following layers:
 
-
  - [ski_piste](../Layers/ski_piste.md)
  - [aerialway](../Layers/aerialway.md)
  - [guidepost](../Layers/guidepost.md)
@@ -21,16 +20,16 @@ This theme contains the following layers:
  - [viewpoint](../Layers/viewpoint.md)
  - [binocular](../Layers/binocular.md)
 
-
 Available languages:
-
 
  - en
  - de
  - es
  - da
  - fr
-
+ - cs
+ - hu
+ - uk
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.
