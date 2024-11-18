@@ -1,6 +1,7 @@
 import { Store, UIEventSource } from "../Logic/UIEventSource"
 import { BBox } from "../Logic/BBox"
 import { RasterLayerPolygon } from "./RasterLayers"
+import { Feature } from "geojson"
 
 export interface KeyNavigationEvent {
     date: Date
@@ -19,7 +20,10 @@ export interface MapProperties {
     readonly allowRotating: UIEventSource<true | boolean>
     readonly rotation: UIEventSource<number>
     readonly pitch: UIEventSource<number>
-    readonly lastClickLocation: Store<{ lon: number; lat: number }>
+    readonly lastClickLocation: Store<{ lon: number; lat: number ; /**
+         * The nearest feature from a MapComplete layer
+         */
+        nearestFeature?: Feature}>
     readonly allowZooming: UIEventSource<true | boolean>
     readonly useTerrain: Store<boolean>
     readonly showScale: UIEventSource<boolean>

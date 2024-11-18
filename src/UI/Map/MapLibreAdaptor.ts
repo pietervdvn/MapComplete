@@ -1,10 +1,5 @@
 import { ImmutableStore, Store, UIEventSource } from "../../Logic/UIEventSource"
-import maplibregl, {
-    Map as MLMap,
-    Map as MlMap,
-    ScaleControl,
-    SourceSpecification,
-} from "maplibre-gl"
+import maplibregl, { Map as MLMap, Map as MlMap, ScaleControl, SourceSpecification } from "maplibre-gl"
 import { RasterLayerPolygon } from "../../Models/RasterLayers"
 import { Utils } from "../../Utils"
 import { BBox } from "../../Logic/BBox"
@@ -16,6 +11,8 @@ import * as htmltoimage from "html-to-image"
 import RasterLayerHandler from "./RasterLayerHandler"
 import Constants from "../../Models/Constants"
 import { Protocol } from "pmtiles"
+import { GeoOperations } from "../../Logic/GeoOperations"
+import { Feature, LineString } from "geojson"
 
 /**
  * The 'MapLibreAdaptor' bridges 'MapLibre' with the various properties of the `MapProperties`
@@ -46,7 +43,10 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
     readonly allowRotating: UIEventSource<true | boolean | undefined>
     readonly allowZooming: UIEventSource<true | boolean | undefined>
     readonly lastClickLocation: Store<
-        undefined | { lon: number; lat: number; mode: "left" | "right" | "middle" }
+        undefined | { lon: number; lat: number; mode: "left" | "right" | "middle" , /**
+         * The nearest feature from a MapComplete layer
+         */
+        nearestFeature?: Feature }
     >
     readonly minzoom: UIEventSource<number>
     readonly maxzoom: UIEventSource<number>
@@ -64,7 +64,9 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
 
     private readonly _maplibreMap: Store<MLMap>
 
-    constructor(maplibreMap: Store<MLMap>, state?: Partial<MapProperties>) {
+    constructor(maplibreMap: Store<MLMap>, state?: Partial<MapProperties>, options?:{
+        correctClick?: number
+    }) {
         if (!MapLibreAdaptor.pmtilesInited) {
             maplibregl.addProtocol("pmtiles", new Protocol().tile)
             MapLibreAdaptor.pmtilesInited = true
@@ -104,7 +106,8 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         const lastClickLocation = new UIEventSource<{
             lat: number
             lon: number
-            mode: "left" | "right" | "middle"
+            mode: "left" | "right" | "middle",
+            nearestFeature?: Feature
         }>(undefined)
         this.lastClickLocation = lastClickLocation
         const self = this
@@ -122,8 +125,40 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             const lat = e.lngLat.lat
             const mouseEvent: MouseEvent = e.originalEvent
             mode = mode ?? clickmodes[mouseEvent.button]
+            let nearestFeature: Feature = undefined
+            if(options?.correctClick && maplibreMap.data){
+                const map = maplibreMap.data
+                const point = e.point
+                const buffer = options?.correctClick
+                const features = map.queryRenderedFeatures([
+                    [point.x - buffer, point.y - buffer],
+                    [point.x + buffer, point.y + buffer]
+                ]).filter(f => f.source.startsWith("mapcomplete_"))
+                if(features.length === 1){
+                    nearestFeature = features[0]
+                }else{
+                    let nearestD: number = undefined
+                    for (const feature of features) {
+                        let d: number // in meter
+                        if(feature.geometry.type === "LineString"){
+                            const way = <Feature<LineString>> feature
+                            const lngLat:[number,number] = [e.lngLat.lng, e.lngLat.lat]
+                            const p = GeoOperations.nearestPoint(way, lngLat)
+                            console.log(">>>",p, way, lngLat)
+                            if(!p){
+                                continue
+                            }
+                            d = p.properties.dist * 1000
+                            if(nearestFeature === undefined || d < nearestD){
+                                nearestFeature = way
+                                nearestD = d
+                            }
+                        }
+                    }
+                }
+            }
+            lastClickLocation.setData({ lon, lat, mode, nearestFeature })
 
-            lastClickLocation.setData({ lon, lat, mode })
         }
 
         maplibreMap.addCallbackAndRunD((map) => {

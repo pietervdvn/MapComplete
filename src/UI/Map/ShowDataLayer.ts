@@ -568,7 +568,6 @@ export default class ShowDataLayer {
             return
         }
         const bbox = BBox.bboxAroundAll(features.map(BBox.get))
-        console.debug("Zooming to features", bbox.asGeoJson())
         window.requestAnimationFrame(() => {
             map.resize()
             map.fitBounds(bbox.toLngLat(), {
