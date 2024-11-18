@@ -209,7 +209,8 @@
             "emailCreators": "Stuur een e-mail naar de makers",
             "openPanoramax": "Open Panoramax hier",
             "openThemeDocumentation": "Open de documentatie voor themakaart {naam}",
-            "panoramaxHelp": "<b>Panoramax</b> is een online service die foto's van op straat verzamelt en deze onder een vrije licentie beschikbaar stelt. Bijdragers mogen deze foto's gebruiken om OpenStreetMap te verbeteren"
+            "panoramaxHelp": "<b>Panoramax</b> is een online service die foto's van op straat verzamelt en deze onder een vrije licentie beschikbaar stelt. Bijdragers mogen deze foto's gebruiken om OpenStreetMap te verbeteren",
+            "seeOnMapillary": "Bekijk dit beeld op Mapillary"
         },
         "back": "Vorige",
         "backToIndex": "Bekijk alle thematische kaarten",
@@ -239,7 +240,21 @@
             "licenseInfo": "<h3>Copyright</h3>De voorziene data is beschikbaar onder de ODbL. Het hergebruiken van deze data is gratis voor elke toepassing, maar <ul><li>de bronvermelding <b>© OpenStreetMap bijdragers</b> is vereist</li><li>Elke wijziging aan deze data moet opnieuw gepubliceerd worden onder dezelfde licentie</li></ul> Gelieve de volledige <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">licentie</a> te lezen voor details",
             "noDataLoaded": "Er is nog geen data ingeladen. Downloaden kan zodra de data geladen is.",
             "title": "Download",
-            "uploadGpx": "Track uploaden naar OpenStreetMap"
+            "uploadGpx": "Track uploaden naar OpenStreetMap",
+            "custom": {
+                "download": "Download een PNG van {breedte}mm breed en {hoogte}mm hoog",
+                "downloadHelper": "Dit is bedoeld voor afdrukken",
+                "height": "Hoogte afbeelding (in mm):",
+                "title": "Een afbeelding downloaden met een aangepaste breedte en hoogte",
+                "width": "Breedte van afbeelding (in mm): "
+            },
+            "downloadAsSvgLinesOnly": "Download een SVG van de huidige kaart met uitsluitend lijnen",
+            "downloadAsSvgLinesOnlyHelper": "Zelfdoorsnijdende lijnen worden opgebroken, kan worden gebruikt met bepaalde 3D-software",
+            "toMuch": "Er zijn te veel eigenschappen om ze allemaal te downloaden",
+            "downloadImage": "Download afbeelding",
+            "pdf": {
+                "current_view_generic": "Exporteer een PDF van de huidige weergave naar {paper_size} in {orientation} oriëntatie"
+            }
         },
         "error": "Er ging iets mis",
         "example": "Voorbeeld",
@@ -257,7 +272,8 @@
             "jumpToLocation": "Ga naar jouw locatie",
             "menu": "Menu",
             "zoomIn": "Zoom in",
-            "zoomOut": "Zoom uit"
+            "zoomOut": "Zoom uit",
+            "locationNotAvailable": "GPS-locatie niet beschikbaar. Heeft dit apparaat een locatie of bevindt je je in een tunnel?"
         },
         "layerSelection": {
             "title": "Selecteer lagen",
@@ -503,7 +519,18 @@
             "searchToShort": "Je zoekopdracht is te kort, vul een langere tekst in",
             "searchWikidata": "Zoek op Wikidata",
             "wikipediaboxTitle": "Wikipedia"
-        }
+        },
+        "clearPendingChanges": "Wis hangende wijzigingen",
+        "customThemeTitle": "Eigen thema's",
+        "enableGeolocationForSafari": "Heb je de pop-up niet gekregen om toestemming voor locatie te vragen?",
+        "enableGeolocationForSafariLink": "Leer hoe je toestemming voor locatie kunt inschakelen in de instellingen",
+        "eraseValue": "Wis deze waarde",
+        "filterPanel": {
+            "allTypes": "Alle types",
+            "disableAll": "Alles uitschakelen",
+            "enableAll": "Alles inschakelen"
+        },
+        "geopermissionDenied": "Locatietoestemming werd geweigerd"
     },
     "hotkeyDocumentation": {
         "action": "Actie",
