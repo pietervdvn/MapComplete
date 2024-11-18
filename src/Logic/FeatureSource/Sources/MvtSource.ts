@@ -4,7 +4,6 @@ import { Store, UIEventSource } from "../../UIEventSource"
 import { FeatureSourceForTile, UpdatableFeatureSource } from "../FeatureSource"
 import { MvtToGeojson } from "mvt-to-geojson"
 
-
 export default class MvtSource implements FeatureSourceForTile, UpdatableFeatureSource {
     public readonly features: Store<GeojsonFeature<Geometry, { [name: string]: any }>[]>
     public readonly x: number
@@ -28,7 +27,7 @@ export default class MvtSource implements FeatureSourceForTile, UpdatableFeature
         y: number,
         z: number,
         layerName?: string,
-        isActive?: Store<boolean>,
+        isActive?: Store<boolean>
     ) {
         this._url = url
         this._layerName = layerName
@@ -43,7 +42,7 @@ export default class MvtSource implements FeatureSourceForTile, UpdatableFeature
                 }
                 return fs
             },
-            [isActive],
+            [isActive]
         )
     }
 
@@ -53,7 +52,6 @@ export default class MvtSource implements FeatureSourceForTile, UpdatableFeature
         }
         await this.currentlyRunning
     }
-
 
     private async download(): Promise<void> {
         try {
@@ -66,7 +64,7 @@ export default class MvtSource implements FeatureSourceForTile, UpdatableFeature
             const features = MvtToGeojson.fromBuffer(buffer, this.x, this.y, this.z)
             for (const feature of features) {
                 const properties = feature.properties
-                if(!properties["osm_type"]){
+                if (!properties["osm_type"]) {
                     continue
                 }
                 let type: string = "node"
@@ -90,6 +88,4 @@ export default class MvtSource implements FeatureSourceForTile, UpdatableFeature
             console.error("Could not download MVT " + this._url + " tile due to", e)
         }
     }
-
-
 }

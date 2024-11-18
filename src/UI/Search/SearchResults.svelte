@@ -12,31 +12,45 @@
   import type { FilterSearchResult } from "../../Logic/Search/FilterSearch"
 
   export let state: ThemeViewState
-  let activeFilters: Store<(ActiveFilter & FilterSearchResult)[]> = state.layerState.activeFilters.map(fs => fs.filter(f =>
-    (f.filter.options[0].fields.length === 0) &&
-    Constants.priviliged_layers.indexOf(<any>f.layer.id) < 0)
-    .map(af => {
-      const index = <number> af.control.data
-      const r : FilterSearchResult & ActiveFilter = { ...af, index, option: af.filter.options[index] }
-      return r
-    }))
-  let allowOtherThemes = state.featureSwitches.featureSwitchBackToThemeOverview
+  let activeFilters: Store<(ActiveFilter & FilterSearchResult)[]> =
+    state.layerState.activeFilters.map((fs) =>
+      fs
+        .filter(
+          (f) =>
+            f.filter.options[0].fields.length === 0 &&
+            Constants.priviliged_layers.indexOf(<any>f.layer.id) < 0
+        )
+        .map((af) => {
+          const index = <number>af.control.data
+          const r: FilterSearchResult & ActiveFilter = {
+            ...af,
+            index,
+            option: af.filter.options[index],
+          }
+          return r
+        })
+    )
   let searchTerm = state.searchState.searchTerm
+
+  let allowOtherThemes = state.featureSwitches.featureSwitchBackToThemeOverview
+  let allowFilters = state.featureSwitches.featureSwitchFilter
 </script>
-<div class="p-4 low-interaction flex gap-y-2 flex-col">
 
-  <ActiveFilters {state} activeFilters={$activeFilters} />
-
-  {#if $searchTerm.length === 0 && $activeFilters.length === 0 }
-    <div class="p-8 items-center text-center">
+<div class="low-interaction flex flex-col gap-y-2 p-4">
+  {#if $allowFilters}
+    <ActiveFilters {state} activeFilters={$activeFilters} />
+  {/if}
+  {#if $searchTerm.length === 0 && $activeFilters.length === 0}
+    <div class="items-center p-8 text-center">
       <b>
         <Tr t={Translations.t.general.search.instructions} />
       </b>
     </div>
   {/if}
 
-  <FilterResults {state} />
-
+  {#if $allowFilters}
+    <FilterResults {state} />
+  {/if}
   <GeocodeResults {state} />
 
   {#if $allowOtherThemes}

@@ -14,7 +14,7 @@
   export let state: ThemeViewState
   export let onlyLink: boolean
 
-  let layout = state.layout
+  let theme = state.theme
 
   let allEnabled: boolean
   let allDisabled: boolean
@@ -70,7 +70,7 @@
     </div>
   </div>
 
-  {#each layout.layers as layer}
+  {#each theme.layers as layer}
     <Filterview
       {state}
       zoomlevel={state.mapProperties.zoom}
@@ -79,7 +79,7 @@
     />
   {/each}
 
-  {#each layout.tileLayerSources as tilesource}
+  {#each theme.tileLayerSources as tilesource}
     <OverlayToggle
       layerproperties={tilesource}
       state={state.overlayLayerStates.get(tilesource.id)}

@@ -21,19 +21,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Bike parking allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bike parking allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Bike parking allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Bike parking allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bike parking allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Bike parking allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bike parking allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Bike parking allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bike parking allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "bicycle_parking",
@@ -90,6 +94,11 @@
       "value": "lockers"
     },
     {
+      "key": "bicycle_parking",
+      "description": "Layer 'Bike parking' shows bicycle_parking=lean_and_stick with a fixed text, namely 'A lean-to bracket with possibility to use a lock through eyelet. The seat tube can be held by the stand by an anchor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle parkings')",
+      "value": "lean_and_stick"
+    },
+    {
       "key": "location",
       "description": "Layer 'Bike parking' shows location=underground with a fixed text, namely 'Underground parking' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle parkings')",
       "value": "underground"
@@ -144,7 +153,7 @@
     },
     {
       "key": "access",
-      "description": "Layer 'Bike parking' shows access=private with a fixed text, namely 'Access is limited to members of a school, company or organisation' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle parkings')",
+      "description": "Layer 'Bike parking' shows access=private with a fixed text, namely 'Private bicycle parking which is never available to the public, also not via a membership fee' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle parkings')",
       "value": "private"
     },
     {

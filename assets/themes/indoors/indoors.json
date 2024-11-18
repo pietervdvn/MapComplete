@@ -14,20 +14,24 @@
     "eu": "Barnealdean",
     "pl": "Wewnątrz",
     "zh_Hant": "室內",
-    "it": "Al chiuso"
+    "it": "Al chiuso",
+    "ru": "Внутри помещений",
+    "hu": "Beltéri létesítmények",
+    "uk": "Плани приміщень"
   },
   "description": {
     "en": "On this map, publicly accessible indoor places are shown",
-    "de": "Diese Karte zeigt öffentlich zugängliche Innenräume",
+    "de": "Eine Karte mit öffentlich zugänglichen Innenräumen",
     "fr": "Sur cette carte, les lieux intérieurs accessibles au public sont montrés",
     "da": "På dette kort er offentligt tilgængelige indendørs steder vist",
     "nl": "Op deze kaart worden publiek toegankelijke binnenruimtes getoond",
     "cs": "Na této mapě jsou zobrazeny veřejně přístupné vnitřní prostory",
     "nb_NO": "Viser offentlig tilgjenglige innendørssteder",
-    "es": "En este mapa se muestran los lugares cubiertos de acceso público",
+    "es": "En este mapa, se muestran lugares interiores de acceso público",
     "ca": "En aquest mapa es mostren els llocs interiors accessibles al públic",
     "pl": "Na tej mapie pokazane są publicznie dostępne miejsca w pomieszczeniach zamkniętych",
-    "it": "Su questa mappa sono indicati i luoghi al chiuso accessibili al pubblico"
+    "it": "Su questa mappa sono indicati i luoghi al chiuso accessibili al pubblico",
+    "uk": "На цій мапі показані загальнодоступні плани приміщень"
   },
   "icon": "./assets/layers/entrance/entrance.svg",
   "startZoom": 14,

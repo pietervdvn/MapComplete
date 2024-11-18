@@ -26,6 +26,7 @@ Available languages:
  - zh_Hant
  - pl
  - zh_Hans
+ - uk
 
 # Table of contents
 

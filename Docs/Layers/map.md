@@ -76,7 +76,7 @@ The question is `What is the size of the shown area on the map?`
  -  *A map of the rooms within a building* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:map_size' target='_blank'>map_size</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_size%3Dbuilding' target='_blank'>building</a>
  -  *A map of special site, like of a historical castle, a park, a campus, a forest, ....* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:map_size' target='_blank'>map_size</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_size%3Dsite' target='_blank'>site</a>
  -  *A map showing the village or town* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:map_size' target='_blank'>map_size</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_size%3Dvillage' target='_blank'>village</a>
- -  * A map of a city* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:map_size' target='_blank'>map_size</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_size%3Dcity' target='_blank'>city</a>
+ -  *A map of a city* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:map_size' target='_blank'>map_size</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_size%3Dcity' target='_blank'>city</a>
  -  *The map of an entire region, showing multiple cities and villages* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:map_size' target='_blank'>map_size</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:map_size%3Dregion' target='_blank'>region</a>
 
 ### map-map_source

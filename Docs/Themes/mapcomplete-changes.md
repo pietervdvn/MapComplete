@@ -15,6 +15,8 @@ Available languages:
 
  - en
  - de
+ - cs
+ - es
 
 # Table of contents
 

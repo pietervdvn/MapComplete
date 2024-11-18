@@ -11,7 +11,7 @@
     "pt_BR": "Reparo/loja de bicicletas",
     "pt": "Reparo/loja de bicicletas",
     "ca": "Botiga/reparació de bicicletes",
-    "es": "Taller/tienda de bicis",
+    "es": "Reparación/tienda de bicicletas",
     "da": "Cykelreparation/butik",
     "cs": "Opravna/obchod s jízdními koly"
   },
@@ -24,7 +24,7 @@
     "pt_BR": "Uma loja que vende especificamente bicicletas ou itens relacionados",
     "de": "Ein Geschäft, das speziell Fahrräder oder verwandte Artikel verkauft",
     "pt": "Uma loja que vende especificamente bicicletas ou itens relacionados",
-    "es": "Una tiene que vende específicamente bicis u objetos relacionados",
+    "es": "Una tienda que vende específicamente bicicletas o artículos relacionados",
     "da": "En butik, der specifikt sælger cykler eller relaterede varer",
     "ca": "Una botiga que ven específicament bicicletes o articles relacionats",
     "cs": "Obchod zaměřený na prodej jízdních kol nebo souvisejících předmětů"
@@ -69,7 +69,7 @@
       "pt": "Reparo/loja de bicicletas",
       "ca": "Botiga/reparació de bicicletes",
       "da": "Cykelværksted/butik",
-      "es": "Taller/tienda de bicis",
+      "es": "Reparación/tienda de bicicletas",
       "cs": "Oprava kol/obchod"
     },
     "mappings": [
@@ -88,7 +88,7 @@
           "de": "Sportartikelgeschäft <i>{name}</i>",
           "pt_BR": "Loja de equipamentos esportivos <i>{name}</i>",
           "pt": "Loja de equipamentos desportivos <i>{name}</i>",
-          "es": "Tienda de material deportivo <i>{name}</i>",
+          "es": "Tienda de artículos deportivos <i>{name}</i>",
           "da": "Butik med sportsudstyr <i>{name}</i>",
           "ca": "Botiga d'equipament esportiu <i>{name}</i>",
           "cs": "Obchod se sportovním vybavením <i>{name}</i>"
@@ -119,7 +119,8 @@
           "it": "Noleggio di biciclette <i>{name}</i>",
           "pt": "Aluguel de bicicletas <i>{name}</i>",
           "pt_BR": "Aluguel de bicicletas <i>{name}</i>",
-          "ru": "Прокат велосипедов <i>{name}</i>"
+          "ru": "Прокат велосипедов <i>{name}</i>",
+          "uk": "Пункт прокату велосипедів <i>{name}</i>"
         }
       },
       {
@@ -144,7 +145,7 @@
           "de": "Fahrradwerkstatt <i>{name}</i>",
           "pt_BR": "Reparo de bicicletas <i>{name}</i>",
           "pt": "Reparo de bicicletas <i>{name}</i>",
-          "es": "Reparación de bicis <i>{name}</i>",
+          "es": "Reparación de bicicletas <i>{name}</i>",
           "da": "Cykelreparation <i>{name}</i>",
           "ca": "Reparació de bicis <i>{name}</i>",
           "cs": "Opravy kol <i>{name}</i>",
@@ -168,7 +169,7 @@
           "ru": "Магазин велосипедов <i>{name}</i>",
           "pt_BR": "Loja de bicicletas <i>{name}</i>",
           "pt": "Loja de bicicletas <i>{name}</i>",
-          "es": "Tienda de bicis <i>{name}</i>",
+          "es": "Tienda de bicicletas <i>{name}</i>",
           "da": "Cykelforretning <i>{name}</i>",
           "ca": "Botiga de bicis <i>{name}</i>",
           "cs": "Prodejna kol <i>{name}</i>"
@@ -190,7 +191,7 @@
           "ru": "Магазин велосипедов <i>{name}</i>",
           "pt_BR": "Loja/reparo de bicicletas <i>{name}</i>",
           "pt": "Loja/reparo de bicicletas <i>{name}</i>",
-          "es": "Taller/tienda de bicis <i>{name}</i>",
+          "es": "Reparación/tienda de bicicletas <i>{name}</i>",
           "da": "Cykelværksted<i>{name}</i>",
           "ca": "Taller/botiga de bicis <i>{name}</i>",
           "cs": "Oprava kol/obchod <i>{name}</i>"
@@ -208,7 +209,7 @@
           "pt_BR": "Loja/reparo de bicicletas <i>{name}</i>",
           "pt": "Loja/reparo de bicicletas <i>{name}</i>",
           "da": "Cykelværksted<i>{name}</i>",
-          "es": "Taller/tienda de bicis <i>{name}</i>",
+          "es": "Reparación/tienda de bicicletas <i>{name}</i>",
           "ca": "Taller/botiga de bicis <i>{name}</i>",
           "cs": "Oprava kol/obchod <i>{name}</i>"
         }
@@ -325,7 +326,7 @@
         "de": "eine Fahrradwerkstatt bzw. ein Fahrradgeschäft",
         "it": "una negozio/riparatore di bici",
         "ru": "Обслуживание велосипедов/магазин",
-        "es": "un taller/tienda de bicis",
+        "es": "una reparación/tienda de bicicletas",
         "da": "en cykelværksted/butik",
         "ca": "una botiga/reparació de bicicletes",
         "cs": "opravna/obchod s jízdními koly"
@@ -375,7 +376,7 @@
             "cs": "Nabízí opravy kol \"Udělej si sám\"",
             "fr": "Offre des services DIY",
             "ca": "Ofereix reparar un mateix la bici",
-            "es": "Ofrece herramientas para autorreparación de bicis"
+            "es": "Ofrece reparación de bicicletas DIY"
           },
           "osmTags": {
             "or": [

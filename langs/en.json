@@ -130,7 +130,7 @@
         "osm": "OpenStreetMap is an online map which can be edited and reused by anyone for any purpose as long as attribution is given and the data is kept open.\n\nIt is the biggest geospatial database in the world and is reused by thousands of applications and websites.",
         "tagline": "Collect geodata with OpenStreetMap",
         "title": "mapcomplete.org",
-        "toerisme_vlaanderen": "For joint project with Visit Flanders, 'Pin your point' was created. Over 160 contributors added a few thousand benches and picnictables and spotted 100 charging station for bicycles.",
+        "toerisme_vlaanderen": "For a joint project with Visit Flanders, 'Pin your point' was created. Over 160 contributors added a few thousand benches and picnic tables, and spotted 100 charging stations for bicycles.",
         "whatIsOsm": "What is OpenStreetMap?"
     },
     "general": {
@@ -224,7 +224,7 @@
         "customThemeTitle": "Custom themes",
         "download": {
             "custom": {
-                "download": "Download PNG of {width}mm wide and {height}mm high",
+                "download": "Download a {width}mm wide and {height}mm high PNG",
                 "downloadHelper": "This is meant for print",
                 "height": "Image height (in mm):",
                 "title": "Download an image with a custom width and height",
@@ -258,8 +258,8 @@
             "toMuch": "There are to many features to download them all",
             "uploadGpx": "Upload your track to OpenStreetMap"
         },
-        "enableGeolocationForSafari": "Did you not get the popup to ask for geopermission?",
-        "enableGeolocationForSafariLink": "Learn how to enable the geolocation permission in settings",
+        "enableGeolocationForSafari": "Did you not get the popup to ask for location permission?",
+        "enableGeolocationForSafariLink": "Learn how to enable location permission in settings",
         "eraseValue": "Erase this value",
         "error": "Something went wrong",
         "example": "Example",
@@ -270,7 +270,7 @@
             "disableAll": "Disable all",
             "enableAll": "Enable all"
         },
-        "geopermissionDenied": "Using the geolocation was denied",
+        "geopermissionDenied": "Location permission was denied",
         "getStartedLogin": "Log in with OpenStreetMap to get started",
         "getStartedNewAccount": " or <a href='https://www.openstreetmap.org/user/new' target='_blank'>create a new account</a>",
         "goToInbox": "Open inbox",
@@ -595,10 +595,33 @@
             "seeNearby": "Browse nearby pictures",
             "title": "Nearby streetview imagery"
         },
+        "panoramax": {
+            "deletionRequested": "The report has been sent. A moderator will look to it shortly",
+            "freeform": "Is there other relevant information?",
+            "otherFreeform": "Please specify why this image should be removed:",
+            "placeholder": "Explain why the picture should be deleted",
+            "report": {
+                "blur_excess": "To much is blurred, making the picture useless",
+                "blur_missing": "A face or license plate is not blurred in this picture",
+                "copyright": "The picture contains copyrighted content",
+                "inappropriate": "This picture is inappropriate (it contains nudity, calls for hate or is not streetview)",
+                "mislocated": "The picture is from a different location",
+                "other": "Another reason, please specify",
+                "picture_low_quality": "The picture is of low quality",
+                "privacy": "The picture shows a private property"
+            },
+            "requestDeletion": "Request picture deletion",
+            "title": "Why should this image be permanently deleted?"
+        },
         "pleaseLogin": "Please log in to add a picture",
         "processing": "The server is processing your image",
         "respectPrivacy": "Do not upload from Google Maps, Google Streetview or other copyrighted sources.",
         "toBig": "Your image is too large as it is {actual_size}. Please use images of at most {max_size}",
+        "unlink": {
+            "button": "Unlink picture",
+            "explanation": "By unlinking this image, this picture will not be shown anymore with this object. It will still appear in the nearby-images and possibly other objects.",
+            "title": "Unlink this image?"
+        },
         "upload": {
             "failReasons": "You might have lost connection to the internet",
             "failReasonsAdvanced": "Alternatively, make sure your browser and extensions do not block third-party API's.",
@@ -608,6 +631,7 @@
                 "someFailed": "Sorry, we could not upload {count} images",
                 "uploading": "{count} images are getting uploaded…"
             },
+            "noBlur": "Images will not be blurred. Do not photograph people",
             "one": {
                 "done": "Your image was successfully uploaded. Thank you!",
                 "failed": "Sorry, we could not upload your image",

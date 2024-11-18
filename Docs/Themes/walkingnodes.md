@@ -20,6 +20,7 @@ Available languages:
  - nl
  - de
  - es
+ - cs
 
 # Table of contents
 

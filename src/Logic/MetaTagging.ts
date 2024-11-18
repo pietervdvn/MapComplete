@@ -3,7 +3,7 @@ import { ExtraFuncParams, ExtraFunctions, ExtraFuncType } from "./ExtraFunctions
 import LayerConfig from "../Models/ThemeConfig/LayerConfig"
 import { Feature } from "geojson"
 import FeaturePropertiesStore from "./FeatureSource/Actors/FeaturePropertiesStore"
-import LayoutConfig from "../Models/ThemeConfig/LayoutConfig"
+import ThemeConfig from "../Models/ThemeConfig/ThemeConfig"
 import { GeoIndexedStoreForLayer } from "./FeatureSource/Actors/GeoIndexedStore"
 import { IndexedFeatureSource } from "./FeatureSource/FeatureSource"
 import OsmObjectDownloader from "./Osm/OsmObjectDownloader"
@@ -27,7 +27,7 @@ export default class MetaTagging {
     >()
     private state: {
         readonly selectedElement: Store<Feature>
-        readonly layout: LayoutConfig
+        readonly theme: ThemeConfig
         readonly osmObjectDownloader: OsmObjectDownloader
         readonly perLayer: ReadonlyMap<string, GeoIndexedStoreForLayer>
         readonly indexedFeatures: IndexedFeatureSource
@@ -40,7 +40,7 @@ export default class MetaTagging {
 
     constructor(state: {
         readonly selectedElement: Store<Feature>
-        readonly layout: LayoutConfig
+        readonly theme: ThemeConfig
         readonly osmObjectDownloader: OsmObjectDownloader
         readonly perLayer: ReadonlyMap<string, GeoIndexedStoreForLayer>
         readonly indexedFeatures: IndexedFeatureSource
@@ -48,7 +48,7 @@ export default class MetaTagging {
     }) {
         this.state = state
         const params = (this.params = MetaTagging.createExtraFuncParams(state))
-        for (const layer of state.layout.layers) {
+        for (const layer of state.theme.layers) {
             if (layer.source === null) {
                 continue
             }
@@ -69,7 +69,7 @@ export default class MetaTagging {
                     features,
                     params,
                     layer,
-                    state.layout,
+                    state.theme,
                     state.osmObjectDownloader,
                     state.featureProperties
                 )
@@ -115,7 +115,7 @@ export default class MetaTagging {
             return
         }
         const state = this.state
-        const layer = state.layout.getMatchingLayer(feature.properties)
+        const layer = state.theme.getMatchingLayer(feature.properties)
         if (!layer) {
             return
         }
@@ -124,7 +124,7 @@ export default class MetaTagging {
             [feature],
             this.params,
             layer,
-            state.layout,
+            state.theme,
             state.osmObjectDownloader,
             state.featureProperties,
             {
@@ -161,7 +161,7 @@ export default class MetaTagging {
         features: Feature[],
         params: ExtraFuncParams,
         layer: LayerConfig,
-        layout: LayoutConfig,
+        theme: ThemeConfig,
         osmObjectDownloader: OsmObjectDownloader,
         featurePropertiesStores?: FeaturePropertiesStore,
         options?: {
@@ -190,7 +190,7 @@ export default class MetaTagging {
         // The calculated functions - per layer - which add the new keys
         // Calculated functions are defined by the layer
         const layerFuncs = this.createRetaggingFunc(layer, ExtraFunctions.constructHelpers(params))
-        const state: MetataggingState = { layout, osmObjectDownloader }
+        const state: MetataggingState = { theme: theme, osmObjectDownloader }
 
         let atLeastOneFeatureChanged = false
         let strictlyEvaluated = 0
@@ -424,7 +424,7 @@ export default class MetaTagging {
             }
         }
 
-        if (!window.location.pathname.endsWith("theme.html")) {
+        if (!Utils.runningFromConsole && !window.location.pathname.endsWith("theme.html")) {
             console.warn(
                 "Static MetataggingObject for theme is not set; using `new Function` (aka `eval`) to get calculated tags. This might trip up the CSP"
             )

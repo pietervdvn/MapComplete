@@ -1,6 +1,6 @@
 import { Utils } from "../../Utils"
 import { Store, UIEventSource } from "../UIEventSource"
-import { WBK} from "wikibase-sdk"
+import { WBK } from "wikibase-sdk"
 
 export class WikidataResponse {
     public readonly id: string
@@ -128,10 +128,9 @@ interface SparqlResult {
  * Utility functions around wikidata
  */
 export default class Wikidata {
-
     public static wds = WBK({
         instance: "https://wikidata.org",
-        sparqlEndpoint: "https://query.wikidata.org/bigdata/namespace/wdq/sparql"
+        sparqlEndpoint: "https://query.wikidata.org/bigdata/namespace/wdq/sparql",
     })
 
     public static readonly neededUrls = [
@@ -211,7 +210,7 @@ export default class Wikidata {
             ${instanceOf}
             ${minusPhrases.join("\n    ")}
         } ORDER BY ASC(?num) LIMIT ${options?.maxCount ?? 20}`
-        const url = Wikidata. wds.sparqlQuery(sparql)
+        const url = Wikidata.wds.sparqlQuery(sparql)
 
         const result = await Utils.downloadJson<SparqlResult>(url)
         /*The full uri of the wikidata-item*/
@@ -252,7 +251,7 @@ export default class Wikidata {
             lang +
             "&type=item&origin=*" +
             "&props=" // props= removes some unused values in the result
-        const response = await Utils.downloadJsonCached<{search: any[]}>(url, 10000)
+        const response = await Utils.downloadJsonCached<{ search: any[] }>(url, 10000)
 
         const result = response.search
 
@@ -401,7 +400,7 @@ export default class Wikidata {
             "}"
         const url = Wikidata.wds.sparqlQuery(query)
         const result = await Utils.downloadJsonCached<SparqlResult>(url, 24 * 60 * 60 * 1000)
-        return <any> result.results.bindings
+        return <any>result.results.bindings
     }
 
     private static _cache = new Map<string, Promise<WikidataResponse>>()

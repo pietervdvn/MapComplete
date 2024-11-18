@@ -64,8 +64,7 @@ export default class DeleteConfig {
             for (const defaultDeleteReason of deleteReasons) {
                 this.deleteReasons.push({
                     changesetMessage: defaultDeleteReason.changesetMessage,
-                    explanation:
-                        defaultDeleteReason.explanation.Clone(/*Must clone, hides translation otherwise*/),
+                    explanation: defaultDeleteReason.explanation,
                 })
             }
         }

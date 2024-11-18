@@ -8,7 +8,7 @@ import QueryParameterDocumentation from "../src/UI/QueryParameterDocumentation"
 import ScriptUtils from "./ScriptUtils"
 import Translations from "../src/UI/i18n/Translations"
 import themeOverview from "../src/assets/generated/theme_overview.json"
-import LayoutConfig from "../src/Models/ThemeConfig/LayoutConfig"
+import ThemeConfig from "../src/Models/ThemeConfig/ThemeConfig"
 import bookcases from "../src/assets/generated/themes/bookcases.json"
 import fakedom from "fake-dom"
 import unit from "../src/assets/generated/layers/unit.json"
@@ -253,7 +253,7 @@ export class GenerateDocs extends Script {
     }
 
     private generateHotkeyDocs() {
-        new ThemeViewState(new LayoutConfig(<any>bookcases), new Set())
+        new ThemeViewState(new ThemeConfig(<any>bookcases), new Set())
         this.WriteMarkdownFile("./Docs/Hotkeys.md", Hotkeys.generateDocumentation(), [
             "src/UI/Base/Hotkeys.ts",
         ])
@@ -455,13 +455,10 @@ export class GenerateDocs extends Script {
         )
     }
 
-    private generateForTheme(theme: LayoutConfig): void {
+    private generateForTheme(theme: ThemeConfig): void {
         const allLayers = AllSharedLayers.getSharedLayersConfigs()
         const layersToShow = theme.layers.filter(
-            (l) =>
-                !l.id.startsWith("note_import_") &&
-                l.id !== "favourite" &&
-                Constants.added_by_default.indexOf(<any>l.id) < 0
+            (l) => l.id !== "favourite" && Constants.added_by_default.indexOf(<any>l.id) < 0
         )
         const layersToInline = layersToShow.filter((l) => !allLayers.has(l.id))
         const el = [

@@ -85,12 +85,12 @@ export default class LayerConfig extends WithContextLoader {
         }
 
         this.syncSelection = json.syncSelection ?? "no"
-        if(!json.source) {
-            if(json.presets === undefined){
-                throw "Error while parsing "+json.id+" in "+context+"; no source given"
+        if (!json.source) {
+            if (json.presets === undefined) {
+                throw "Error while parsing " + json.id + " in " + context + "; no source given"
             }
             this.source = new SourceConfig({
-                osmTags: TagUtils.Tag({or: json.presets.map(pr => ({and:pr.tags}))}),
+                osmTags: TagUtils.Tag({ or: json.presets.map((pr) => ({ and: pr.tags })) }),
             })
         } else if (typeof json.source !== "string") {
             this.maxAgeOfCache = json.source["maxCacheAge"] ?? 24 * 60 * 60 * 30
@@ -104,7 +104,7 @@ export default class LayerConfig extends WithContextLoader {
                     mercatorCrs: json.source["mercatorCrs"],
                     idKey: json.source["idKey"],
                 },
-                json.id,
+                json.id
             )
         }
 
@@ -124,7 +124,7 @@ export default class LayerConfig extends WithContextLoader {
         if (json.calculatedTags !== undefined) {
             if (!official) {
                 console.warn(
-                    `Unofficial theme ${this.id} with custom javascript! This is a security risk`,
+                    `Unofficial theme ${this.id} with custom javascript! This is a security risk`
                 )
             }
             this.calculatedTags = []
@@ -194,7 +194,7 @@ export default class LayerConfig extends WithContextLoader {
                 tags: pr.tags.map((t) => TagUtils.SimpleTag(t)),
                 description: Translations.T(
                     pr.description,
-                    `${translationContext}.presets.${i}.description`,
+                    `${translationContext}.presets.${i}.description`
                 ),
                 preciseInput: preciseInput,
                 exampleImages: pr.exampleImages,
@@ -208,7 +208,7 @@ export default class LayerConfig extends WithContextLoader {
 
         if (json.lineRendering) {
             this.lineRendering = Utils.NoNull(json.lineRendering).map(
-                (r, i) => new LineRenderingConfig(r, `${context}[${i}]`),
+                (r, i) => new LineRenderingConfig(r, `${context}[${i}]`)
             )
         } else {
             this.lineRendering = []
@@ -216,7 +216,7 @@ export default class LayerConfig extends WithContextLoader {
 
         if (json.pointRendering) {
             this.mapRendering = Utils.NoNull(json.pointRendering).map(
-                (r, i) => new PointRenderingConfig(r, `${context}[${i}](${this.id})`),
+                (r, i) => new PointRenderingConfig(r, `${context}[${i}](${this.id})`)
             )
         } else {
             this.mapRendering = []
@@ -228,7 +228,7 @@ export default class LayerConfig extends WithContextLoader {
                     r.location.has("centroid") ||
                     r.location.has("projected_centerpoint") ||
                     r.location.has("start") ||
-                    r.location.has("end"),
+                    r.location.has("end")
             )
 
             if (
@@ -250,7 +250,7 @@ export default class LayerConfig extends WithContextLoader {
                 Constants.priviliged_layers.indexOf(<any>this.id) < 0 &&
                 this.source !== null /*library layer*/ &&
                 !this.source?.geojsonSource?.startsWith(
-                    "https://api.openstreetmap.org/api/0.6/notes.json",
+                    "https://api.openstreetmap.org/api/0.6/notes.json"
                 )
             ) {
                 throw (
@@ -269,7 +269,7 @@ export default class LayerConfig extends WithContextLoader {
                     typeof tr !== "string" &&
                     tr["builtin"] === undefined &&
                     tr["id"] === undefined &&
-                    tr["rewrite"] === undefined,
+                    tr["rewrite"] === undefined
             ) ?? []
         if (missingIds?.length > 0 && official) {
             console.error("Some tagRenderings of", this.id, "are missing an id:", missingIds)
@@ -280,8 +280,8 @@ export default class LayerConfig extends WithContextLoader {
             (tr, i) =>
                 new TagRenderingConfig(
                     <QuestionableTagRenderingConfigJson>tr,
-                    this.id + ".tagRenderings[" + i + "]",
-                ),
+                    this.id + ".tagRenderings[" + i + "]"
+                )
         )
         if (json.units !== undefined && !Array.isArray(json.units)) {
             throw (
@@ -291,7 +291,7 @@ export default class LayerConfig extends WithContextLoader {
             )
         }
         this.units = (json.units ?? []).flatMap((unitJson, i) =>
-            Unit.fromJson(unitJson, this.tagRenderings, `${context}.unit[${i}]`),
+            Unit.fromJson(unitJson, this.tagRenderings, `${context}.unit[${i}]`)
         )
 
         if (
@@ -362,14 +362,18 @@ export default class LayerConfig extends WithContextLoader {
         if (mapRenderings.length === 0) {
             return undefined
         }
-        return new Combine(mapRenderings.map(
-            mr => mr.GetBaseIcon(properties ?? this.GetBaseTags()).SetClass("absolute left-0 top-0 w-full h-full"))
+        return new Combine(
+            mapRenderings.map((mr) =>
+                mr
+                    .GetBaseIcon(properties ?? this.GetBaseTags())
+                    .SetClass("absolute left-0 top-0 w-full h-full")
+            )
         ).SetClass("relative block w-full h-full")
     }
 
     public GetBaseTags(): Record<string, string> {
         return TagUtils.changeAsProperties(
-            this.source?.osmTags?.asChange({ id: "node/-1" }) ?? [{ k: "id", v: "node/-1" }],
+            this.source?.osmTags?.asChange({ id: "node/-1" }) ?? [{ k: "id", v: "node/-1" }]
         )
     }
 
@@ -382,7 +386,7 @@ export default class LayerConfig extends WithContextLoader {
             neededLayer: string
         }[] = [],
         addedByDefault = false,
-        canBeIncluded = true,
+        canBeIncluded = true
     ): string {
         const extraProps: string[] = []
         extraProps.push("This layer is shown at zoomlevel **" + this.minzoom + "** and higher")
@@ -390,32 +394,32 @@ export default class LayerConfig extends WithContextLoader {
         if (canBeIncluded) {
             if (addedByDefault) {
                 extraProps.push(
-                    "**This layer is included automatically in every theme. This layer might contain no points**",
+                    "**This layer is included automatically in every theme. This layer might contain no points**"
                 )
             }
             if (this.shownByDefault === false) {
                 extraProps.push(
-                    "This layer is not visible by default and must be enabled in the filter by the user. ",
+                    "This layer is not visible by default and must be enabled in the filter by the user. "
                 )
             }
             if (this.title === undefined) {
                 extraProps.push(
-                    "Elements don't have a title set and cannot be toggled nor will they show up in the dashboard. If you import this layer in your theme, override `title` to make this toggleable.",
+                    "Elements don't have a title set and cannot be toggled nor will they show up in the dashboard. If you import this layer in your theme, override `title` to make this toggleable."
                 )
             }
             if (this.name === undefined && this.shownByDefault === false) {
                 extraProps.push(
-                    "This layer is not visible by default and the visibility cannot be toggled, effectively resulting in a fully hidden layer. This can be useful, e.g. to calculate some metatags. If you want to render this layer (e.g. for debugging), enable it by setting the URL-parameter layer-<id>=true",
+                    "This layer is not visible by default and the visibility cannot be toggled, effectively resulting in a fully hidden layer. This can be useful, e.g. to calculate some metatags. If you want to render this layer (e.g. for debugging), enable it by setting the URL-parameter layer-<id>=true"
                 )
             }
             if (this.name === undefined) {
                 extraProps.push(
-                    "Not visible in the layer selection by default. If you want to make this layer toggable, override `name`",
+                    "Not visible in the layer selection by default. If you want to make this layer toggable, override `name`"
                 )
             }
             if (this.mapRendering.length === 0) {
                 extraProps.push(
-                    "Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`",
+                    "Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`"
                 )
             }
 
@@ -425,12 +429,12 @@ export default class LayerConfig extends WithContextLoader {
                         "<img src='../warning.svg' height='1rem'/>",
                         "This layer is loaded from an external source, namely ",
                         "`" + this.source.geojsonSource + "`",
-                    ].join("\n\n"),
+                    ].join("\n\n")
                 )
             }
         } else {
             extraProps.push(
-                "This layer can **not** be included in a theme. It is solely used by [special renderings](SpecialRenderings.md) showing a minimap with custom data.",
+                "This layer can **not** be included in a theme. It is solely used by [special renderings](SpecialRenderings.md) showing a minimap with custom data."
             )
         }
 
@@ -440,7 +444,7 @@ export default class LayerConfig extends WithContextLoader {
                 usingLayer = [
                     "## Themes using this layer",
                     MarkdownUtils.list(
-                        (usedInThemes ?? []).map((id) => `[${id}](https://mapcomplete.org/${id})`),
+                        (usedInThemes ?? []).map((id) => `[${id}](https://mapcomplete.org/${id})`)
                     ),
                 ]
             } else if (this.source !== null) {
@@ -456,31 +460,43 @@ export default class LayerConfig extends WithContextLoader {
                     " into the layout as it depends on it: ",
                     dep.reason,
                     "(" + dep.context + ")",
-                ].join(" "),
+                ].join(" ")
             )
         }
 
         let presets: string[] = []
         if (this.presets.length > 0) {
-
             presets = [
                 "## Presets",
                 "The following options to create new points are included:",
-                MarkdownUtils.list(this.presets.map(preset => {
-                    let snaps = ""
-                    if (preset.preciseInput?.snapToLayers) {
-                        snaps = " (snaps to layers " + preset.preciseInput.snapToLayers.map(id => `\`${id}\``).join(", ") + ")"
-                    }
-                    return "**" + preset.title.txt + "** which has the following tags:" + new And(preset.tags).asHumanString(true) + snaps
-                })),
+                MarkdownUtils.list(
+                    this.presets.map((preset) => {
+                        let snaps = ""
+                        if (preset.preciseInput?.snapToLayers) {
+                            snaps =
+                                " (snaps to layers " +
+                                preset.preciseInput.snapToLayers
+                                    .map((id) => `\`${id}\``)
+                                    .join(", ") +
+                                ")"
+                        }
+                        return (
+                            "**" +
+                            preset.title.txt +
+                            "** which has the following tags:" +
+                            new And(preset.tags).asHumanString(true) +
+                            snaps
+                        )
+                    })
+                ),
             ]
         }
 
         for (const revDep of Utils.Dedup(layerIsNeededBy?.get(this.id) ?? [])) {
             extraProps.push(
                 ["This layer is needed as dependency for layer", `[${revDep}](#${revDep})`].join(
-                    " ",
-                ),
+                    " "
+                )
             )
         }
 
@@ -491,10 +507,10 @@ export default class LayerConfig extends WithContextLoader {
                 .filter((values) => values.key !== "id")
                 .map((values) => {
                     const embedded: string[] = values.values?.map((v) =>
-                        Link.OsmWiki(values.key, v, true).SetClass("mr-2").AsMarkdown(),
+                        Link.OsmWiki(values.key, v, true).SetClass("mr-2").AsMarkdown()
                     ) ?? ["_no preset options defined, or no values in them_"]
                     const statistics = `https://taghistory.raifer.tech/?#***/${encodeURIComponent(
-                        values.key,
+                        values.key
                     )}/`
                     const tagInfo = `https://taginfo.openstreetmap.org/keys/${values.key}#values`
                     return [
@@ -509,7 +525,7 @@ export default class LayerConfig extends WithContextLoader {
                             : `[${values.type}](../SpecialInputElements.md#${values.type})`,
                         embedded.join(" "),
                     ]
-                }),
+                })
         )
 
         let quickOverview: string[] = []
@@ -519,7 +535,7 @@ export default class LayerConfig extends WithContextLoader {
                 "this quick overview is incomplete",
                 MarkdownUtils.table(
                     ["attribute", "type", "values which are supported by this layer"],
-                    tableRows,
+                    tableRows
                 ),
             ]
         }
@@ -553,19 +569,19 @@ export default class LayerConfig extends WithContextLoader {
                 const parts = neededTags["and"]
                 tagsDescription.push(
                     "Elements must match **all** of the following expressions:",
-                    parts.map((p, i) => i + ". " + p.asHumanString(true, false, {})).join("\n"),
+                    parts.map((p, i) => i + ". " + p.asHumanString(true, false, {})).join("\n")
                 )
             } else if (neededTags["or"]) {
                 const parts = neededTags["or"]
                 tagsDescription.push(
                     "Elements must match **any** of the following expressions:",
-                    parts.map((p) => " - " + p.asHumanString(true, false, {})).join("\n"),
+                    parts.map((p) => " - " + p.asHumanString(true, false, {})).join("\n")
                 )
             } else {
                 tagsDescription.push(
                     "Elements must match the expression **" +
-                    neededTags.asHumanString(true, false, {}) +
-                    "**",
+                        neededTags.asHumanString(true, false, {}) +
+                        "**"
                 )
             }
 
@@ -616,8 +632,7 @@ export default class LayerConfig extends WithContextLoader {
         if (!presets) {
             return undefined
         }
-        const matchingPresets = presets
-            .filter((pr) => new And(pr.tags).matchesProperties(tags))
+        const matchingPresets = presets.filter((pr) => new And(pr.tags).matchesProperties(tags))
         let mostShadowed = matchingPresets[0]
         let mostShadowedTags = new And(mostShadowed.tags)
         for (let i = 1; i < matchingPresets.length; i++) {
@@ -646,18 +661,18 @@ export default class LayerConfig extends WithContextLoader {
      * Indicates if this is a normal layer, meaning that it can be toggled by the user in normal circumstances
      * Thus: name is set, not a note import layer, not synced with another filter, ...
      */
-    public isNormal(){
-        if(this.id.startsWith("note_import")){
+    public isNormal() {
+        if (this.id.startsWith("note_import")) {
             return false
         }
 
-        if(Constants.added_by_default.indexOf(<any> this.id) >=0){
+        if (Constants.added_by_default.indexOf(<any>this.id) >= 0) {
             return false
         }
-        if(this.filterIsSameAs !== undefined){
+        if (this.filterIsSameAs !== undefined) {
             return false
         }
-        if(!this.name ){
+        if (!this.name) {
             return false
         }
         return true

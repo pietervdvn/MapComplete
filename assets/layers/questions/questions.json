@@ -20,6 +20,13 @@
       }
     },
     {
+      "id": "images_no_blur",
+      "description": "Same as `images`, but uploaded request to disable blurring to the panoramax server",
+      "render": {
+        "*": "{image_carousel()}{image_upload(,,,true)}"
+      }
+    },
+    {
       "id": "mapillary",
       "description": "Shows a button to open Mapillary on this location",
       "render": {
@@ -61,7 +68,7 @@
         "pl": "Jaki jest powiązany obiekt Wikidata?",
         "ja": "対応するウィキデータのエンティティは何ですか？",
         "fil": "Ano ang nau-ukol na entidad sa Wikidata?",
-        "es": "¿Cual es la entidad de Wikidata que se corresponde?",
+        "es": "¿Cuál es la entidad Wikidata correspondiente?",
         "zh_Hans": "在Wikidata上对应的实体是什么？",
         "da": "Hvad er den tilsvarende Wikidata-enhed?",
         "id": "Apa entitas Wikidata yang sesuai?",
@@ -76,7 +83,7 @@
             "da": "Der er endnu ikke linket til nogen Wikipedia-side",
             "de": "Es wurde noch keine Wikipedia-Seite verlinkt",
             "en": "No Wikipedia page has been linked yet",
-            "es": "Todavía no se ha enlazado una página de wikipedia",
+            "es": "Aún no se ha enlazado ninguna página de Wikipedia",
             "fil": "Wala pang kawing ng Wikipedia page",
             "fr": "Pas encore de lien vers une page Wikipedia",
             "hu": "Még nincs Wikipédia-oldal belinkelve",
@@ -113,7 +120,7 @@
             "pl": "Link do strony Wikipedii nie został jeszcze określony",
             "ja": "ウィキペディアのページはまだリンクされていません",
             "fil": "Wala pang kawing ng Wikipedia page",
-            "es": "Todavía no se ha enlazado una página de wikipedia",
+            "es": "Aún no se ha enlazado ninguna página de Wikipedia",
             "zh_Hans": "尚未有连接到的维基百科页面",
             "da": "Der er endnu ikke linket til nogen Wikipedia-side",
             "id": "Belum ada halaman Wikipedia yang ditautkan",
@@ -172,7 +179,8 @@
         "es": "¿Cuál es el número de teléfono de {title()}?",
         "zh_Hans": "{title()} 的电话号码为何？",
         "da": "Hvad er telefonnummeret til {title()}?",
-        "cs": "Jaké je telefonní číslo {title()}?"
+        "cs": "Jaké je telefonní číslo {title()}?",
+        "uk": "Який номер телефону {title()}?"
       },
       "render": {
         "special": {
@@ -206,7 +214,8 @@
       "editButtonAriaLabel": {
         "en": "Edit phone number",
         "nl": "Pas telefoonnummer aan",
-        "de": "Telefonnummer bearbeiten"
+        "de": "Telefonnummer bearbeiten",
+        "es": "Editar número de teléfono"
       }
     },
     {
@@ -215,7 +224,8 @@
       "question": {
         "en": "What is the Mastodon-handle of {title()}?",
         "de": "Wie lautet der Mastodon-Handle von {title()}?",
-        "cs": "Co je Mastodon-handle {title()}?"
+        "cs": "Co je Mastodon-handle {title()}?",
+        "es": "¿Cuál es el identificador de Mastodon de {title()}?"
       },
       "freeform": {
         "key": "contact:mastodon",
@@ -231,7 +241,8 @@
       "description": "Shows and asks for the facebook handle",
       "question": {
         "en": "What is the facebook page of of {title()}?",
-        "de": "Was ist die Facebook-Seite von {title()}?"
+        "de": "Was ist die Facebook-Seite von {title()}?",
+        "es": "¿Cuál es la página de Facebook de {title()}"
       },
       "freeform": {
         "key": "contact:facebook",
@@ -243,12 +254,14 @@
           "href": "{contact:facebook}",
           "text": {
             "en": "Facebook page",
-            "de": "Facebook Seite"
+            "de": "Facebook Seite",
+            "es": "Página de Facebook"
           }
         },
         "after": {
           "en": "<div class='subtle text-sm'>Facebook is known to harm mental health, manipulate public opinion and cause hate. Try to use healthier alternatives</div>",
-          "de": "<div class='subtle text-sm'>Facebook ist bekannt dafür, die psychische Gesundheit zu beeinträchtigen, die öffentliche Meinung zu manipulieren und Hass zu verursachen. Versuche, gesündere Alternativen zu nutzen.</div>"
+          "de": "<div class='subtle text-sm'>Facebook ist bekannt dafür, die psychische Gesundheit zu beeinträchtigen, die öffentliche Meinung zu manipulieren und Hass zu verursachen. Versuche, gesündere Alternativen zu nutzen.</div>",
+          "es": "<div class='subtle text-sm'>Se sabe que Facebook perjudica la salud mental, manipula la opinión pública y causa odio. Prueba alternativas más saludables</div>"
         }
       }
     },
@@ -296,7 +309,8 @@
         "es": "¿Cuál es la dirección de correo electrónico de {title()}?",
         "zh_Hans": "{title()} 的电子邮箱地址为何？",
         "da": "Hvad er mailadressen på {title()}?",
-        "cs": "Jaká je e-mailová adresa {title()}?"
+        "cs": "Jaká je e-mailová adresa {title()}?",
+        "uk": "Яка електронна адреса {title()}?"
       },
       "mappings": [
         {
@@ -322,7 +336,8 @@
       "editButtonAriaLabel": {
         "en": "Edit email address",
         "nl": "Pas emailadres aan",
-        "de": "E-Mail Adresse bearbeiten"
+        "de": "E-Mail Adresse bearbeiten",
+        "es": "Editar dirección de correo electrónico"
       }
     },
     {
@@ -351,10 +366,11 @@
         "ca": "Quina és la web de {title()}?",
         "ja": "{title()}のウェブサイトは？",
         "fil": "Ano ang website ng {title()}?",
-        "es": "¿Cual es el sitio web de {title()}?",
+        "es": "¿Cuál es el sitio web de {title()}?",
         "zh_Hans": "{title()} 的网站为何？",
         "da": "Hvad er webstedet for {title()}?",
-        "cs": "Jaká je webová stránka {title()}?"
+        "cs": "Jaká je webová stránka {title()}?",
+        "uk": "Який веб-сайт має {title()}?"
       },
       "render": {
         "*": "<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>"
@@ -378,7 +394,8 @@
         "en": "Edit website",
         "nl": "Pas website aan",
         "de": "Webseite bearbeiten",
-        "pl": "Edytuj stronę internetową"
+        "pl": "Edytuj stronę internetową",
+        "es": "Editar sitio web"
       }
     },
     {
@@ -399,7 +416,7 @@
         "pl": "Czy to miejsce jest dostępne dla osób na wózkach inwalidzkich?",
         "ja": "車いすでのアクセスは可能ですか？",
         "fil": "Kaya bang abutin ang lugar na ito ng naka-wheelchair?",
-        "es": "¿Este lugar es accesible con una silla de ruedas?",
+        "es": "¿Es este lugar accesible en silla de ruedas?",
         "da": "Er stedet tilgængeligt med en kørestol?",
         "id": "Apakah tempat ini dapat diakses dengan kursi roda?",
         "cs": "Je toto místo přístupné pro vozíčkáře?"
@@ -428,7 +445,7 @@
             "pl": "W tym miejscu zainstalowane zostały udogodnienia dla osób na wózkach inwalidzkich",
             "ja": "この場所は、車椅子の方のための特別仕様になっています",
             "fil": "Ang lugar na ito ay angkop sa mga gumagamit ng wheelchair",
-            "es": "Este lugar está especialmente adaptado para usuarios en sillas de ruedas",
+            "es": "Este lugar está especialmente adaptado para usuarios de sillas de ruedas",
             "da": "Dette sted er specielt indrettet til kørestolsbrugere",
             "id": "Tempat ini dirancang khusus untuk pengguna kursi roda",
             "cs": "Toto místo je speciálně upraveno pro vozíčkáře"
@@ -457,7 +474,7 @@
             "pl": "To miejsce jest łatwo dostępne dla osób na wózkach inwalidzkich",
             "ja": "この場所は、車いすで簡単に行くことができます",
             "fil": "Ang lugar na ito ay kayang abutin ng mga naka-wheelchair",
-            "es": "Este lugar es fácilmente accesible con una silla de ruedas",
+            "es": "Este lugar es fácilmente accesible en silla de ruedas",
             "da": "Dette sted er let tilgængeligt med en kørestol",
             "id": "Tempat ini mudah dijangkau dengan kursi roda",
             "cs": "Toto místo je snadno dosažitelné s invalidním vozíkem"
@@ -486,7 +503,7 @@
             "pl": "To miejsce jest dostępne dla osób na wózkach inwalidzkich, ale z pewnymi trudnościami",
             "ja": "車いすでこの場所まで行くことは可能ですが、簡単ではありません",
             "fil": "Kayang abutin ang lugar na ito ng mga naka-wheelchair, pero hindi madali",
-            "es": "Es posible llegar a este lugar con una silla de ruedas, pero no es fácil",
+            "es": "Es posible acceder a este lugar en silla de ruedas, pero no es fácil",
             "da": "Det er muligt at komme til dette sted med en kørestol, men det er ikke let",
             "id": "Dimungkinkan untuk mencapai tempat ini dengan kursi roda, tetapi tidak mudah",
             "cs": "Na toto místo je možné se dostat na invalidním vozíku, ale není to snadné"
@@ -514,7 +531,7 @@
             "pl": "To miejsce jest niedostępne dla osób na wózkach inwalidzkich",
             "ja": "この場所は車いすでは行けません",
             "fil": "Ang lugar na ito ay hindi kayang abutin ng naka-wheelchair",
-            "es": "No es posible llegar a este lugar con una silla de ruedas",
+            "es": "Este lugar no es accesible en silla de ruedas",
             "da": "Dette sted er ikke tilgængeligt med kørestol",
             "id": "Tempat ini tidak bisa dijangkau dengan kursi roda",
             "cs": "Na toto místo se nelze dostat s invalidním vozíkem"
@@ -542,7 +559,7 @@
         "id": "Apakah anjing diperbolehkan dalam bisnis ini?",
         "sl": "Ali so v tem podjetju dovoljeni psi?",
         "fil": "Pinapayagan ba ang mga aso sa establisyementong ito?",
-        "es": "¿Están permitidos los perros en este negocio?",
+        "es": "¿Se admiten perros en este negocio?",
         "zh_Hans": "犬只是否在这个商业体中允许？",
         "da": "Er hunde tilladt i denne virksomhed?",
         "cs": "Jsou v tomto podniku povoleni psi?"
@@ -568,7 +585,7 @@
             "id": "Anjing diperbolehkan",
             "pl": "Psy dozwolone",
             "ja": "ペット同伴可能",
-            "es": "Se permiten perros",
+            "es": "Se admiten perros",
             "sl": "Psi so dovoljeni",
             "fil": "Pinapayagan ang mga aso",
             "zh_Hans": "允许犬只",
@@ -597,7 +614,7 @@
             "ru": "С собаками <b>не</b> впускают",
             "id": "Anjing <b>tidak</b> diperbolehkan",
             "ja": "ペット同伴<b>不可</b>",
-            "es": "<b>No</b> se permiten perros",
+            "es": "Los perros <b>no</b> están permitidos",
             "sl": "Psi <b>niso</b> dovoljeni",
             "fil": "<b>Hindi</b> pinapayagan ang mga aso",
             "zh_Hans": "<b>不</b>允许犬只",
@@ -626,7 +643,7 @@
             "ja": "ペット同伴可能。ただしリード着用",
             "sl": "Psi so dovoljeni, vendar morajo biti na povodcu",
             "fil": "Pinapayagan ang mga aso kung may tali",
-            "es": "Los perros están permitidos, pero tienen que llevar correa",
+            "es": "Se admiten perros, pero deben ir con correa",
             "zh_Hans": "允许犬只，但必须拴绳",
             "da": "Hunde er tilladt, men de skal være i snor",
             "cs": "Psi jsou povoleni, ale musí být na vodítku"
@@ -653,7 +670,7 @@
             "id": "Anjing diperbolehkan dan dapat berkeliaran dengan bebas",
             "sl": "Psi so dovoljeni in lahko prosto tekajo naokoli",
             "fil": "Pinapayayagan ang mga aso, at malayang makatatakbo",
-            "es": "Los perros están permitidos y pueden estar sueltos",
+            "es": "Se admiten perros y pueden correr libremente",
             "zh_Hans": "允许犬只，且可自由放养",
             "da": "Hunde er tilladt og kan løbe frit rundt",
             "cs": "Psi mají vstup povolen a mohou volně pobíhat"
@@ -665,7 +682,8 @@
           "then": {
             "en": "Dogs are allowed only outside",
             "it": "I cani sono ammessi solo all'esterno",
-            "de": "Hunde sind nur draußen erlaubt"
+            "de": "Hunde sind nur draußen erlaubt",
+            "es": "Solo se admiten perros en el exterior"
           }
         }
       ],
@@ -692,7 +710,7 @@
         "sv": "Finns det fortfarande någonting relevant som du inte kunde ge i de föregående frågorna? Lägg till det här.",
         "id": "Apakah masih ada sesuatu yang relevan yang tidak dapat Anda berikan dalam pertanyaan sebelumnya? Tambahkan di sini. ",
         "ja": "前の質問で伝えきれなかった関連事項がまだありますか？ここに追加してください。",
-        "es": "¿Aún hay algo relevante que no ha encajado en las preguntas anteriores? Compártalo aquí.",
+        "es": "¿Hay alguna información relevante que las preguntas anteriores no hayan cubierto? Siéntete libre de añadirla aquí.",
         "sl": "Ali je še kaj pomembnega, česar niste mogli povedati v prejšnjih vprašanjih? Dopišite tukaj.",
         "fil": "Mayroon pa bang mga bagay na nau-ugnay at hindi mo maibigay sa mga nakaraang tanong? Idagdag dito.",
         "da": "Er der stadig noget relevant, du ikke kunne give i de foregående spørgsmål? Tilføj det her.",
@@ -722,7 +740,7 @@
         "sv": "Repetera inte redan angivna fakta",
         "id": "  Jangan ulangi fakta yang sudah dinyatakan ",
         "ja": "今後表示しない",
-        "es": "No repita datos ya expresados",
+        "es": "No repitas datos ya mencionados",
         "sl": "Ne ponavljajte že navedenih dejstev",
         "fil": "Huwag ulitin ang mga nai-saad na",
         "da": "Gentag ikke allerede nævnte fakta",
@@ -749,11 +767,12 @@
         "ja": "{title()}の営業時間は？",
         "sl": "Kakšen odpiralni čas ima {title()}?",
         "fil": "Anong oras nagbubukas ang {title()}?",
-        "es": "¿Cuales son las horas de apertura de {title()}?",
+        "es": "¿Cuál es el horario de apertura de {title()}?",
         "zh_Hans": "{title()} 的开放时间为何？",
         "da": "Hvad er åbningstiderne for {title()}?",
         "id": "Kapan jam buka {title()}?",
-        "cs": "Jaká je otevírací doba {title()}?"
+        "cs": "Jaká je otevírací doba {title()}?",
+        "uk": "Які години роботи {title()}?"
       },
       "render": {
         "de": "<h3>Öffnungszeiten</h3>{opening_hours_table(opening_hours)}",
@@ -774,12 +793,13 @@
         "ja": "<h3>営業時間</h3>{opening_hours_table(opening_hours)}",
         "sl": "<h3>Odpiralni čas</h3>{opening_hours_table(opening_hours)}",
         "fil": "<h3>Mga oras na bukas</h3>{opening_hours_table(opening_hours)}",
-        "es": "<h3>Horas de apertura</h3>{opening_hours_table(opening_hours)}",
+        "es": "<h3>Horario de apertura</h3>{opening_hours_table(opening_hours)}",
         "zh_Hans": "<h3>开放时间</h3> {opening_hours_table(opening_hours)}",
         "da": "<h3> Åbningstider</h3>{opening_hours_table(opening_hours)}",
         "id": "<h3>Jam buka</h3>{opening_hours_table(opening_hours)}",
         "pa_PK": "<h3>کھُلھے گھنٹے</h3>{opening_hours_table(opening_hours)}",
-        "cs": "<h3>Otevírací hodiny</h3>{opening_hours_table(opening_hours)}"
+        "cs": "<h3>Otevírací hodiny</h3>{opening_hours_table(opening_hours)}",
+        "uk": "<h3>Години роботи</h3>{opening_hours_table(opening_hours)}"
       },
       "freeform": {
         "key": "opening_hours",
@@ -792,7 +812,8 @@
           "then": {
             "en": "Marked as closed for an unspecified time",
             "nl": "Gesloten voor onbepaalde duur",
-            "de": "Als geschlossen für eine unbestimmte Zeit markiert"
+            "de": "Als geschlossen für eine unbestimmte Zeit markiert",
+            "es": "Marcado como cerrado por un tiempo no especificado"
           },
           "hideInAnswer": true
         }
@@ -815,7 +836,7 @@
               "zh_Hant": "24/7 開放 (包括假日)",
               "id": "Buka 24 jam (termasuk hari libur)",
               "hu": "Éjjel-nappal nyitva (munkaszüneti napokon is)",
-              "es": "Abierta 24/7 (incluyendo festivos)",
+              "es": "Abierto 24/7 (incluidos los festivos)",
               "nl": "24/7 open (ook tijdens feestdagen)",
               "fr": "Ouvert 24h/24 (jours fériés compris)",
               "nb_NO": "Døgnåpent (inkludert helligdager)",
@@ -852,7 +873,7 @@
               "nl": "Alleen op afspraak",
               "fr": "Uniquement sur rendez-vous",
               "ca": "Sols amb cita prèvia",
-              "es": "Sólo con cita previa",
+              "es": "Solo con cita previa",
               "nb_NO": "Kun ved avtale",
               "pl": "Tylko po wcześniejszym umówieniu się",
               "cs": "Pouze po domluvě"
@@ -866,7 +887,7 @@
               "nl": "Alleen op afspraak",
               "fr": "Uniquement sur rendez-vous",
               "ca": "Sols amb cita prèvia",
-              "es": "Sólo con cita previa",
+              "es": "Solo con cita previa",
               "nb_NO": "Kun ved avtale",
               "pl": "Tylko po wcześniejszym umówieniu się",
               "cs": "Pouze po domluvě"
@@ -892,7 +913,7 @@
         "pl": "Czy w tym przybytku znajdują się gniazdka elektryczne, gdzie klienci mogą naładować swoje urządzenia?",
         "ja": "このアメニティにはコンセントがあり、お客様が店内にいるときにも利用できますか？",
         "fil": "Merong bang mga intsupe (outlet) sa loob, para sa mga suki?",
-        "es": "¿Esta facilidad tiene enchufes eléctricos, disponibles para los clientes cuando están dentro?",
+        "es": "¿Tiene este servicio enchufes eléctricos disponibles para los clientes cuando están en el interior?",
         "nb_NO": "Har denne fasiliteten stikkontakter, tilgjengelig for kunder innendørs?",
         "da": "Har denne faciliteter stikkontakter tilgængelige for kunder, når de er inde?",
         "cs": "Má toto zařízení elektrické zásuvky, které jsou zákazníkům k dispozici, když jsou uvnitř?"
@@ -912,7 +933,7 @@
             "pl": "W budynku znajduje się wiele gniazdek elektrycznych, gdzie klienci mogą naładować swoje urządzenia",
             "ja": "屋内の席に座っているお客様には、家庭用コンセントがたくさん用意されており、そこで電子機器を充電することができます",
             "fil": "Maraming mga intsupe (sockets) na maaring gamitin ng mga suki na nakaupo sa loob, pang-karga ng kanilang mga elektroniks",
-            "es": "Hay numerosos enchufes domésticos disponibles para los clientes sentados en el interior, donde pueden cargar sus dispositivos electrónicos",
+            "es": "Hay muchos enchufes domésticos disponibles para los clientes sentados en el interior, donde pueden cargar sus dispositivos electrónicos",
             "da": "Der er masser af stikkontakter til rådighed for kunder, der sidder indendørs, hvor de kan oplade deres elektroniske udstyr",
             "nb_NO": "Det er massevis av stikkontakter tilgjengelig for kunder som sitter innendørs, der de kan lade elektronikken sin",
             "cs": "V interiéru je k dispozici dostatek el. zásuvek, kde si zákazníci mohou nabíjet elektroniku"
@@ -954,7 +975,7 @@
             "pl": "W budynku nie ma gniazdek elektrycznych dostępnych dla klientów, ale mogą zostać one udostępnione po spytaniu obsługi",
             "ja": "屋内にはコンセントがありませんが、スタッフに声をかければ充電できるかもしれません",
             "fil": "Walang mga intsupe (socket) para sa mga suki, pero maaring tanungin ang kawani kung magpapa-karga",
-            "es": "No hay enchufes disponibles en el interior para los clientes, pero cargar puede ser posible si se pregunta al personal",
+            "es": "No hay enchufes disponibles en el interior para los clientes, pero es posible cargar si se solicita al personal",
             "da": "Der er ingen stikkontakter til rådighed indendørs for kunderne, men opladning kan være mulig, hvis man beder personalet om det",
             "nb_NO": "Det er ingen tilgjengelige stikkontakter for kunder som sitter innendørs, men lading kan være mulig hvis man spør betjeningen",
             "cs": "V interiéru nejsou zákazníkům k dispozici žádné el. zásuvky, ale na požádání personálu je možné nabíjet"
@@ -1035,7 +1056,7 @@
             "ja": "現金利用可能",
             "sl": "Tu sprejemajo gotovino",
             "fil": "Tinatanggap ang salapi rito",
-            "es": "Aquí se acepta el pago en efectivo",
+            "es": "Aquí se acepta efectivo",
             "zh_Hans": "可用现金",
             "da": "Her modtages kontanter",
             "cs": "Přijímá se zde hotovost"
@@ -1064,7 +1085,7 @@
             "ja": "お支払いはこちらで承ります",
             "sl": "Tukaj sprejemajo plačilne kartice",
             "fil": "Tinatanggap ang mga tarhetang pambayad dito",
-            "es": "Aquí se acepta el pago por tarjeta",
+            "es": "Aquí se aceptan tarjetas de pago",
             "zh_Hans": "可用信用卡",
             "da": "Betalingskort accepteres her",
             "cs": "Jsou zde přijímány platební karty"
@@ -1078,7 +1099,7 @@
             "en": "Payment by QR-code is possible here",
             "nl": "Betalen via een QR-code is hier mogelijk",
             "de": "Die Bezahlung per QR-Code ist hier möglich",
-            "es": "Aquí se puede pagar con código QR",
+            "es": "Aquí es posible pagar con código QR",
             "ca": "Aquí es pot pagar amb codi QR",
             "cs": "Platba QR kódem je zde možná"
           }
@@ -1190,7 +1211,7 @@
               "sl": "Plačilo se opravi z namensko aplikacijo",
               "ca": "El pagament es fa amb una app dedicada",
               "fil": "Binabayaran gamit ang sariling app",
-              "es": "El pago se realiza con una aplicación dedicada",
+              "es": "El pago se realiza utilizando una aplicación dedicada",
               "zh_Hans": "使用专用APP支付",
               "da": "Betaling sker ved hjælp af en dedikeret app",
               "nb_NO": "Betaling utføres med et eget program",
@@ -1215,7 +1236,7 @@
               "sl": "Plačilo se izvede s člansko izkaznico",
               "ca": "El pagament es fa amb una targeta de membre",
               "fil": "Binabayaran gamit ang membership card",
-              "es": "El pago se realiza con una tarjeta de membresía",
+              "es": "El pago se realiza utilizando una tarjeta de socio",
               "nb_NO": "Betaling utføres med et medlemskort",
               "zh_Hans": "使用会员卡支付",
               "da": "Betaling sker med medlemskort",
@@ -1253,7 +1274,7 @@
         "fr": "Quelles pièces peut-on utiliser pour payer ici ?",
         "pl": "Jakimi monetami można tutaj zapłacić?",
         "ca": "Quines monedes es poden utilitzar per a pagar aquí?",
-        "es": "¿Qué monedas se pueden usar aquí para pagar?",
+        "es": "¿Qué monedas se pueden usar para pagar aquí?",
         "nb_NO": "Hvilke mynter kan brukes til betaling her?",
         "cs": "Jakými mincemi zde lze platit?"
       },
@@ -1400,7 +1421,8 @@
             "en": "5 centimes coins are accepted",
             "nl": "Munten van 5 rappen worden geaccepteerd",
             "ca": "S'accepten monedes de 5 cèntims",
-            "de": "5-Centime-Münzen werden akzeptiert"
+            "de": "5-Centime-Münzen werden akzeptiert",
+            "es": "Se aceptan monedas de 5 céntimos"
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         },
@@ -1411,7 +1433,8 @@
             "en": "10 centimes coins are accepted",
             "nl": "Munten van 10 rappen worden geaccepteerd",
             "ca": "S'accepten monedes de 10 cèntims",
-            "de": "10-Centime-Münzen werden akzeptiert"
+            "de": "10-Centime-Münzen werden akzeptiert",
+            "es": "Se aceptan monedas de 10 céntimos"
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         },
@@ -1422,7 +1445,8 @@
             "en": "20 centimes coins are accepted",
             "nl": "Munten van 20 rappen worden geaccepteerd",
             "ca": "S'accepten monedes de 20 cèntims",
-            "de": "20-Centime-Münzen werden akzeptiert"
+            "de": "20-Centime-Münzen werden akzeptiert",
+            "es": "Se aceptan monedas de 20 céntimos"
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         },
@@ -1433,7 +1457,8 @@
             "en": "½ franc coins are accepted",
             "nl": "Munten van ½ frank worden geaccepteerd",
             "ca": "S'accepten monedes de ½ franc",
-            "de": "½-Schweizer Franken-Münzen werden akzeptiert"
+            "de": "½-Schweizer Franken-Münzen werden akzeptiert",
+            "es": "Se aceptan monedas de ½ franco"
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         },
@@ -1444,7 +1469,8 @@
             "en": "1 franc coins are accepted",
             "nl": "Munten van 1 frank worden geaccepteerd",
             "ca": "S'accepten monedes d'1 franc",
-            "de": "1-Schweizer Franken-Münzen werden akzeptiert"
+            "de": "1-Schweizer Franken-Münzen werden akzeptiert",
+            "es": "Se aceptan monedas de 1 franco"
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         },
@@ -1455,7 +1481,8 @@
             "en": "2 francs coins are accepted",
             "nl": "Munten van 2 frank worden geaccepteerd",
             "ca": "S'accepten monedes de 2 francs",
-            "de": "2-Schweizer Franken-Münzen werden akzeptiert"
+            "de": "2-Schweizer Franken-Münzen werden akzeptiert",
+            "es": "Se aceptan monedas de 2 francos"
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         },
@@ -1466,7 +1493,8 @@
             "en": "5 francs coins are accepted",
             "nl": "Munten van 5 frank worden geaccepteerd",
             "ca": "S'accepten monedes de 5 francs",
-            "de": "5-Schweizer Franken-Münzen werden akzeptiert"
+            "de": "5-Schweizer Franken-Münzen werden akzeptiert",
+            "es": "Se aceptan monedas de 5 francos"
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         }
@@ -1494,7 +1522,7 @@
         "en": "what notes can you use to pay here?",
         "nl": "Met welke bankbiljetten kan je hier betalen?",
         "de": "Mit welchen Banknoten kann man hier bezahlen?",
-        "es": "¿con qué billetes se puede pagar aquí?",
+        "es": "¿Qué billetes se pueden usar para pagar aquí?",
         "pl": "Jakimi banknotami można tu zapłacić?",
         "cs": "Jakými bankovkami zde lze platit?",
         "ca": "Amb quins bitllets pot pagar aquí?",
@@ -1614,7 +1642,8 @@
             "en": "10 francs notes are accepted",
             "nl": "Biljetten van 10 frank worden geaccepteerd",
             "ca": "S'accepten bitllets de 10 francs",
-            "de": "10-Schweizer Franken-Scheine werden akzeptiert"
+            "de": "10-Schweizer Franken-Scheine werden akzeptiert",
+            "es": "Se aceptan billetes de 10 francos"
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         },
@@ -1625,7 +1654,8 @@
             "en": "20 francs notes are accepted",
             "nl": "Biljetten van 20 frank worden geaccepteerd",
             "ca": "S'accepten bitllets de 20 francs",
-            "de": "20-Schweizer Franken-Scheine werden akzeptiert"
+            "de": "20-Schweizer Franken-Scheine werden akzeptiert",
+            "es": "Se aceptan billetes de 20 francos"
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         },
@@ -1636,7 +1666,8 @@
             "en": "50 francs notes are accepted",
             "nl": "Biljetten van 50 frank worden geaccepteerd",
             "ca": "S'accepten bitllets de 50 francs",
-            "de": "50-Schweizer Franken-Scheine werden akzeptiert"
+            "de": "50-Schweizer Franken-Scheine werden akzeptiert",
+            "es": "Se aceptan billetes de 50 francos"
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         },
@@ -1647,7 +1678,8 @@
             "en": "100 francs notes are accepted",
             "nl": "Biljetten van 100 frank worden geaccepteerd",
             "ca": "S'accepten bitllets de 100 francs",
-            "de": "100-Schweizer Franken-Scheine werden akzeptiert"
+            "de": "100-Schweizer Franken-Scheine werden akzeptiert",
+            "es": "Se aceptan billetes de 100 francos"
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         },
@@ -1658,7 +1690,8 @@
             "en": "200 francs notes are accepted",
             "nl": "Biljetten van 200 frank worden geaccepteerd",
             "ca": "S'accepten bitllets de 200 francs",
-            "de": "200-Schweizer Franken-Scheine werden akzeptiert"
+            "de": "200-Schweizer Franken-Scheine werden akzeptiert",
+            "es": "Se aceptan billetes de 200 francos"
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         },
@@ -1669,7 +1702,8 @@
             "en": "1000 francs notes are accepted",
             "nl": "Biljetten van 1000 frank worden geaccepteerd",
             "ca": "S'accepten bitllets de 1000 francs",
-            "de": "1000-Schweizer Franken-Scheine werden akzeptiert"
+            "de": "1000-Schweizer Franken-Scheine werden akzeptiert",
+            "es": "Se aceptan billetes de 1000 francos"
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         }
@@ -1697,7 +1731,7 @@
           "cs": "Do jakých podlaží tento výtah jezdí?",
           "nb_NO": "Hvilke etasjer går heisen til?",
           "nl": "Naar welke verdiepingen gaat deze lift?",
-          "es": "¿A qué pisos va este ascensor?",
+          "es": "¿A qué plantas va este ascensor?",
           "ca": "A quins pisos va aquest ascensor?",
           "pl": "Na jakie poziomy jedzie ta winda?"
         },
@@ -1711,7 +1745,7 @@
           "cs": "Tento výtah jede do {level} patra",
           "nb_NO": "Heisen går til etasje {level}",
           "nl": "Deze lift gaat naar de verdiepingen {level}",
-          "es": "Este ascensor va a los pisos {level}",
+          "es": "Este ascensor va a las plantas {level}",
           "ca": "Aquest ascensor va als pisos {level}",
           "pl": "Ta winda jedzie na piętra {level}"
         },
@@ -1732,7 +1766,8 @@
         "en": "Multiple, identical objects can be found on floors {repeat_on}.",
         "nl": "Er zijn verschillende, identieke objecten op verdiepingen {repeat_on}.",
         "de": "Mehrere identische Objekte können in Geschossen {repeat_on} gefunden werden.",
-        "cs": "V patrech {repeat_on} lze nalézt více identických objektů."
+        "cs": "V patrech {repeat_on} lze nalézt více identických objektů.",
+        "es": "Se pueden encontrar varios objetos idénticos en las plantas {repeat_on}."
       }
     },
     {
@@ -1758,10 +1793,11 @@
         "sv": "På vilken nivå finns den här funktionen?",
         "ja": "この機能は何階にあるのでしょうか？",
         "fil": "Anong palapag matatagpuan ang tampók?",
-        "es": "¿En qué nivel se encuentra esta característica?",
+        "es": "¿En qué planta se encuentra este elemento?",
         "nb_NO": "Hvilken etasje befinner funksjonen seg i?",
         "da": "På hvilket niveau er denne funktion placeret?",
-        "cs": "V jaké úrovni se tento prvek nachází?"
+        "cs": "V jaké úrovni se tento prvek nachází?",
+        "uk": "На якому поверсі знаходиться цей об'єкт?"
       },
       "render": {
         "en": "Located on the {level}th floor",
@@ -1781,11 +1817,12 @@
         "ja": "{level}階にあります",
         "sl": "Nahaja se v {level}. nadstropju",
         "fil": "Natagpuan sa ika-{level} na palapag",
-        "es": "Localizada en la {level}° planta",
+        "es": "Situado en la planta {level}",
         "da": "Beliggende på {level}. etage",
         "nb_NO": "Ligger i {level} etasje",
         "id": "Terletak di lantai {level}",
-        "cs": "Nachází se v {level}. patře"
+        "cs": "Nachází se v {level}. patře",
+        "uk": "Розташований на {level} поверсі"
       },
       "freeform": {
         "key": "level",
@@ -1813,9 +1850,10 @@
             "id": "Terletak di bawah tanah",
             "sl": "Nahaja se pod zemljo",
             "fil": "Nasa ilalim ng lupa",
-            "es": "Localizado bajo tierra",
+            "es": "Situado bajo tierra",
             "da": "Placeret under jorden",
-            "cs": "Nachází se v podzemí"
+            "cs": "Nachází se v podzemí",
+            "uk": "Розташований під землею"
           },
           "hideInAnswer": true
         },
@@ -1841,9 +1879,10 @@
             "id": "Terletak di lantai dasar",
             "sl": "Nahaja se v pritličju",
             "fil": "Nasa unang palapag",
-            "es": "Localizado en la planta baja",
+            "es": "Situado en la planta baja",
             "da": "Beliggende i stueetagen",
-            "cs": "Nachází se v přízemí"
+            "cs": "Nachází se v přízemí",
+            "uk": "Розташований на рівні землі"
           }
         },
         {
@@ -1869,9 +1908,10 @@
             "id": "Terletak di lantai dasar",
             "sl": "Nahaja se v pritličju",
             "fil": "Nasa unang palapag",
-            "es": "Localizado en la planta baja",
+            "es": "Situado en la planta baja",
             "da": "Beliggende i stueetagen",
-            "cs": "Nachází se v přízemí"
+            "cs": "Nachází se v přízemí",
+            "uk": "Розташований на рівні землі"
           }
         },
         {
@@ -1896,9 +1936,10 @@
             "ja": "1階にあります",
             "sl": "Nahaja se v prvem nadstropju",
             "fil": "Nasa unang palapag",
-            "es": "Localizado en la primera planta",
+            "es": "Situado en la primera planta",
             "da": "Beliggende på første sal",
-            "cs": "Nachází se v prvním patře"
+            "cs": "Nachází se v prvním patře",
+            "uk": "Розташований на другому поверсі"
           }
         },
         {
@@ -1914,12 +1955,13 @@
             "sl": "Nahaja se v prvi kletni etaži",
             "ca": "Localitzat a la planta base",
             "fil": "Nasa silong",
-            "es": "Localizada en el primer sótano",
+            "es": "Situado en el primer sótano",
             "nb_NO": "Er å finne på første kjellernivå",
             "pt": "Localizado no primeiro nível da cave",
             "da": "Beliggende på første kælderetage",
             "cs": "Nachází se v prvním suterénu",
-            "pl": "Położone na pierwszym poziomie piwnicy"
+            "pl": "Położone na pierwszym poziomie piwnicy",
+            "uk": "Розташований на першому підвальному поверсі"
           }
         }
       ]
@@ -1952,7 +1994,7 @@
           "then": {
             "en": "Smoking is <b>allowed</b>",
             "de": "Rauchen ist <b>erlaubt</b>",
-            "es": "Está <b>permitido</b> fumar",
+            "es": "Se permite fumar",
             "fr": "Il est <b>autorisé</b> de fumer",
             "pt": "<b>É permitido</b> fumar",
             "nb_NO": "Røyking er <b>tillatt</b>",
@@ -1974,7 +2016,7 @@
           "then": {
             "en": "Smoking is <b>not allowed</b>",
             "de": "Rauchen ist <b>nicht erlaubt</b>",
-            "es": "<b>No</b> está permitido fumar",
+            "es": "No se permite fumar",
             "fr": "Il est <b>interdit</b> de fumer",
             "pt": "<b>Não é permitido</b> fumar",
             "nb_NO": "Røyking <b>forbudt</b>",
@@ -1991,7 +2033,7 @@
           "then": {
             "en": "Smoking is <b>allowed outside</b>.",
             "de": "Rauchen ist <b> draußen erlaubt</b>.",
-            "es": "Está permitido fumar <b>en el exterior</b>.",
+            "es": "Se permite fumar en el exterior.",
             "fr": "Il est autorisé de fumer <b>à l'extérieur</b>.",
             "pt": "É permitido fumar <b>no exterior</b>.",
             "nb_NO": "Røyking <b>tillates på utsiden</b>.",
@@ -2017,7 +2059,7 @@
         "nb_NO": "Har stedet en teleslynge for folk med redusert hørsel?",
         "nl": "Heeft deze plaats een ringleiding voor slechthorenden?",
         "ca": "Aquest lloc té un bucle magnètic per a la gent amb dificultats auditives?",
-        "es": "¿Este lugar tiene un bucle auditivo para personas con discapacidad auditiva?",
+        "es": "¿Tiene este lugar una bobina de inducción de audio para personas con audición reducida?",
         "pl": "Czy to miejsce ma pętlę indukcyjną dźwięku dla osób niedosłyszących?"
       },
       "mappings": [
@@ -2033,7 +2075,7 @@
             "nl": "Deze plaats heeft een ringleiding",
             "pl": "To miejsce ma pętlę indukcyjną audio",
             "ca": "El lloc té un bucle magnètic",
-            "es": "Este lugar tiene un bucle auditivo"
+            "es": "Este lugar tiene una bobina de inducción de audio"
           },
           "icon": {
             "path": "./assets/layers/questions/audio_induction_loop.svg",
@@ -2051,7 +2093,7 @@
             "nb_NO": "Dette stedet <b>har ikke</b> en teleslynge",
             "nl": "Deze plaats heeft <b>geen</b> ringleiding",
             "ca": "El lloc <b>no</b> té un bucle magnètic",
-            "es": "Este lugar <b>no</b> tiene bucle auditivo",
+            "es": "Este lugar <b>no</b> tiene una bobina de inducción de audio",
             "pl": "To miejsce <b>nie ma</b> pętli indukcyjnej dźwięku"
           },
           "icon": {
@@ -2078,7 +2120,8 @@
         "es": "¿Ofrece este lugar acceso a internet?",
         "fr": "Cet endroit offre-t-il un accès à Internet ?",
         "ca": "Aquest lloc ofereix accés a internet?",
-        "pl": "Czy to miejsce oferuje dostęp do Internetu?"
+        "pl": "Czy to miejsce oferuje dostęp do Internetu?",
+        "uk": "Чи є в цьому місці доступ до Інтернету?"
       },
       "mappings": [
         {
@@ -2096,7 +2139,8 @@
             "nb_NO": "Dette stedet tilbyr trådløs tilgang til Internett",
             "es": "Este lugar ofrece acceso a internet inalámbrico",
             "ca": "Aquest lloc ofereix accés a internet inalàmbric",
-            "pl": "To miejsce oferuje bezprzewodowy dostęp do Internetu"
+            "pl": "To miejsce oferuje bezprzewodowy dostęp do Internetu",
+            "uk": "У цьому місці є бездротовий доступ до Інтернету"
           }
         },
         {
@@ -2147,10 +2191,11 @@
             "id": "Tempat ini menyediakan jaringan internet melalui terminal atau komputer",
             "cs": "Toto místo nabízí přístup k internetu prostřednictvím terminálu nebo počítače",
             "nb_NO": "Dette stedet tilbyr tilgang til Internett via en terminal eller datamaskin",
-            "es": "Este lugar ofrece acceso a internet a través de una terminal o un ordenador",
+            "es": "Este lugar ofrece acceso a internet a través de un terminal o computadora",
             "fr": "Cet endroit offre un accès à Internet via un terminal ou un ordinateur",
             "ca": "Aquest lloc ofereix accés a internet a través d'una terminal o ordinador",
-            "pl": "To miejsce oferuje dostęp do Internetu za pośrednictwem terminala lub komputera"
+            "pl": "To miejsce oferuje dostęp do Internetu za pośrednictwem terminala lub komputera",
+            "uk": "Це місце пропонує доступ до Інтернету через термінал або комп'ютер"
           }
         },
         {
@@ -2167,7 +2212,8 @@
             "es": "Este lugar ofrece acceso a internet por cable",
             "fr": "Cet endroit offre un accès Internet filaire",
             "ca": "Aquest lloc ofereix accés a internet per cable",
-            "pl": "To miejsce oferuje przewodowy dostęp do Internetu"
+            "pl": "To miejsce oferuje przewodowy dostęp do Internetu",
+            "uk": "Цей заклад пропонує дротовий доступ до Інтернету"
           }
         },
         {
@@ -2175,7 +2221,9 @@
           "alsoShowIf": "internet_access=wifi;terminal",
           "then": {
             "en": "This place offers both wireless internet and internet access via a terminal or computer",
-            "de": "Dieser Ort bietet sowohl drahtloses Internet als auch Internetzugang über ein Terminal oder einen Computer"
+            "de": "Dieser Ort bietet sowohl drahtloses Internet als auch Internetzugang über ein Terminal oder einen Computer",
+            "es": "Este lugar ofrece internet inalámbrico y acceso a internet a través de un terminal o computadora",
+            "uk": "Тут можна скористатися як бездротовим інтернетом, так і доступом до інтернету через термінал або комп'ютер"
           }
         }
       ],
@@ -2205,7 +2253,7 @@
         "nb_NO": "Er det et gebyr for bruk av Internett?",
         "fr": "L'accès à l'internet est-il payant ?",
         "ca": "Hi ha que pagar per a accedir a internet?",
-        "es": "¿Hay que pagar para acceder a internet?",
+        "es": "¿Hay un cargo por el acceso a internet?",
         "pl": "Czy dostęp do Internetu jest płatny?"
       },
       "mappings": [
@@ -2222,7 +2270,7 @@
             "nb_NO": "Det er et gebyr for tilgang til Internett på dette stedet",
             "fr": "L'accès à l'internet est payant à cet endroit",
             "ca": "Aquí hi ha que pagar per a accedir a internet",
-            "es": "Hay que pagar para acceder a internet en este lugar",
+            "es": "Hay un cargo por el acceso a internet en este lugar",
             "pl": "W tym miejscu dostęp do Internetu jest płatny"
           }
         },
@@ -2240,7 +2288,8 @@
             "es": "El acceso a internet es gratuito en este lugar",
             "fr": "L'accès à Internet est gratuit dans cet endroit",
             "ca": "Aquí l'accés a internet és gratuït",
-            "pl": "Dostęp do Internetu jest w tym miejscu bezpłatny"
+            "pl": "Dostęp do Internetu jest w tym miejscu bezpłatny",
+            "uk": "Доступ до Інтернету в цьому місці безкоштовний"
           }
         },
         {
@@ -2254,10 +2303,11 @@
             "id": "Jaringan internet tersedia gratis di tempat ini, hanya untuk pelanggan",
             "cs": "Přístup k internetu je na tomto místě zdarma, pouze pro zákazníky",
             "nb_NO": "Tilgang til Internett på dette stedet er gratis, men kun for kunder",
-            "es": "El acceso a internet es gratis en este lugar, solamente para clientes",
+            "es": "El acceso a internet es gratuito en este lugar, solo para clientes",
             "fr": "L'accès à l'internet dans cet endroit est gratuit pour les clients uniquement",
             "ca": "Aquí l'accés a internet és gratuït sols per als clients",
-            "pl": "Dostęp do Internetu jest w tym miejscu bezpłatny, tylko dla klientów"
+            "pl": "Dostęp do Internetu jest w tym miejscu bezpłatny, tylko dla klientów",
+            "uk": "Доступ до Інтернету в цьому місці безкоштовний тільки для клієнтів"
           }
         }
       ]
@@ -2277,7 +2327,7 @@
         "id": "Apa nama jaringan internet nirkabelnya?",
         "cs": "Jaký je název sítě pro bezdrátový přístup k internetu?",
         "nb_NO": "Hva er nettverksnavnet for det trådløse nettverket?",
-        "es": "¿Cuál es el nombre de red para el acceso inalámbrico a internet?",
+        "es": "¿Cuál es el nombre de la red para el acceso inalámbrico a internet?",
         "fr": "Quel est le nom du réseau pour l'accès Internet sans fil ?",
         "ca": "Quin és el nom de la xarxa per a l'accés inalàmbric a internet?",
         "pl": "Jaka jest nazwa sieci dla bezprzewodowego dostępu do Internetu?"
@@ -2295,7 +2345,7 @@
           "cs": "Zadejte název sítě",
           "nb_NO": "Skriv inn nettverksnavnet",
           "pa_PK": "نیٹورک دا ناں پایو",
-          "es": "Introduzca el nombre de red",
+          "es": "Introduce el nombre de la red",
           "fr": "Entrez le nom du réseau",
           "ca": "Intruduixca el nom de la xarxa",
           "pl": "Wprowadź nazwę sieci"
@@ -2317,10 +2367,11 @@
         "id": "Nama jaringan ini adalah <b>{internet_access:ssid}</b>",
         "cs": "Název sítě je <b>{internet_access:ssid}</b>",
         "nb_NO": "Nettverksnavnet er <b>{internet_access:ssid}</b>",
-        "es": "El nombre de red es <b>{internet_access:ssid}</b>",
+        "es": "El nombre de la red es <b>{internet_access:ssid}</b>",
         "fr": "Le nom du réseau est <b>{internet_access:ssid}</b>",
         "ca": "El nom de la xarxa és <b>{internet_access:ssid}</b>",
-        "pl": "Nazwa sieci to <b>{internet_access:ssid}</b>"
+        "pl": "Nazwa sieci to <b>{internet_access:ssid}</b>",
+        "uk": "Назва мережі: <b>{internet_access:ssid}</b>"
       }
     },
     {
@@ -2330,7 +2381,7 @@
         "ca": "Aquest objecte està il·luminat o emet llum?",
         "cs": "Je tento objekt osvětlený nebo vyzařuje světlo?",
         "de": "Wird das Objekt beleuchtet oder leuchtet es selbst?",
-        "es": "¿Está este objeto iluminado o emite luz?",
+        "es": "¿Está iluminado este objeto o emite luz?",
         "fr": "Cet objet est-il éclairé ou émet-il de la lumière ?",
         "pl": "Czy ten obiekt jest oświetlony lub emituje światło?"
       },
@@ -2347,7 +2398,7 @@
             "ca": "Aquest objecte emet llum i també està il·luminat externament",
             "cs": "Tento objekt vyzařuje světlo a je osvětlen vnějším zdrojem světla",
             "de": "Das Objekt leuchtet selbst und wird von außen beleuchtet",
-            "es": "Este objeto emite luz y es también iluminado por una fuente de luz externa",
+            "es": "Este objeto emite luz y está iluminado por una fuente de luz externa",
             "fr": "Cet objet émet de la lumière et est éclairé par l'extérieur",
             "pl": "Ten obiekt zarówno emituje światło, jak i jest oświetlany przez zewnętrzne źródło światła"
           }
@@ -2374,7 +2425,7 @@
             "ca": "Aquest objecte està il·luminat externament, p.e. amb un focus o altres llums",
             "cs": "Tento objekt je osvětlen zvenčí, např. pomocí reflektoru nebo jiných světel",
             "de": "Das Objekt wird von außen beleuchtet, z. B. durch Scheinwerfer oder andere Lichter",
-            "es": "Este objeto recibe iluminación, por ejemplo por un foco u otras luces",
+            "es": "Este objeto está iluminado externamente, por ejemplo, por un foco u otras luces",
             "fr": "Cet objet est éclairé par l'extérieur, par ex. par un projecteur ou d'autres lumières",
             "pl": "Ten obiekt jest oświetlony zewnętrznie, np. przez reflektor lub inne światła"
           },
@@ -2394,7 +2445,7 @@
             "ca": "Aquest objecte no emet llum i no està il·luminat externament",
             "cs": "Tento objekt nevyzařuje světlo a není osvětlen zvenčí",
             "de": "Das Objekt wird weder von außen beleuchtet, noch leuchtet es selbst",
-            "es": "Este objeto ni emite luz ni es iluminado",
+            "es": "Este objeto no emite luz y no está iluminado externamente",
             "fr": "Cet objet n'émet pas de lumière et n'est pas éclairé par l'extérieur",
             "pl": "Obiekt ten nie emituje światła i nie jest oświetlany z zewnątrz"
           }
@@ -2406,7 +2457,8 @@
       "question": {
         "en": "When was this object last surveyed?",
         "de": "Wann wurde dieses Objekt zuletzt geprüft?",
-        "cs": "Kdy byl tento objekt naposledy zkoumán?"
+        "cs": "Kdy byl tento objekt naposledy zkoumán?",
+        "es": "¿Cuándo fue inspeccionado este objeto por última vez?"
       },
       "freeform": {
         "key": "survey:date",
@@ -2415,7 +2467,8 @@
       "render": {
         "en": "This object was last surveyed on <b>{survey:date}</b>",
         "de": "Dieses Objekt wurde zuletzt geprüft am <b>{survey:date}</b>",
-        "cs": "Tento objekt byl naposledy zkoumán dne <b>{survey:date}</b>"
+        "cs": "Tento objekt byl naposledy zkoumán dne <b>{survey:date}</b>",
+        "es": "Este objeto fue inspeccionado por última vez el <b>{survey:date}</b>"
       },
       "mappings": [
         {
@@ -2423,7 +2476,8 @@
           "then": {
             "en": "This object was last surveyed today",
             "de": "Dieses Objekt wurde heute zuletzt geprüft",
-            "cs": "Tento objekt byl naposledy zkoumán dnes"
+            "cs": "Tento objekt byl naposledy zkoumán dnes",
+            "es": "Este objeto fue inspeccionado por última vez hoy"
           }
         }
       ]
@@ -2436,7 +2490,8 @@
         "nl": "Wanneer is dit object voor het laatst gecontroleerd?",
         "pl": "Kiedy ten obiekt został ostatnio sprawdzony?",
         "ca": "Quan es va comprovar per última vegada aquest objecte?",
-        "cs": "Kdy byl tento objekt naposledy zkontrolován?"
+        "cs": "Kdy byl tento objekt naposledy zkontrolován?",
+        "es": "¿Cuándo se revisó este objeto por última vez?"
       },
       "freeform": {
         "key": "check_date",
@@ -2448,7 +2503,8 @@
         "nl": "Dit object is voor het laatst gecontroleerd op <b>{check_date}</b>",
         "pl": "Ten obiekt był ostatnio sprawdzony <b>{check_date}</b>",
         "ca": "Aquest objecte es va comprovar per darrera vegada el <b>{check_date}</b>",
-        "cs": "Tento objekt byl naposledy zkontrolován dne <b>{check_date}</b>"
+        "cs": "Tento objekt byl naposledy zkontrolován dne <b>{check_date}</b>",
+        "es": "Este objeto se revisó por última vez el <b>{check_date}</b>"
       },
       "mappings": [
         {
@@ -2459,7 +2515,8 @@
             "nl": "Dit object is vandaag voor het laatst gecontroleerd",
             "pl": "Ten obiekt został ostatnio sprawdzony dzisiaj",
             "ca": "Aquest objecte es va comprovar per última vegada avui",
-            "cs": "Tento objekt byl naposledy zkontrolován dnes"
+            "cs": "Tento objekt byl naposledy zkontrolován dnes",
+            "es": "Este objeto se revisó por última vez hoy"
           }
         }
       ]
@@ -2472,12 +2529,14 @@
       "question": {
         "en": "Does this shop have a sugar free offering?",
         "de": "Verkauft das Geschäft zuckerfreie Produkte?",
-        "cs": "Nabízí tento obchod nabídku bez cukru?"
+        "cs": "Nabízí tento obchod nabídku bez cukru?",
+        "es": "¿Tiene esta tienda una oferta de productos sin azúcar?"
       },
       "questionHint": {
         "en": "This is important for people following a sugar-free diet, such as people with Diabetes",
         "de": "Dies ist wichtig für Menschen, die eine zuckerfreie Diät einhalten, z. B. für Menschen mit Diabetes",
-        "cs": "To je důležité pro lidi, kteří dodržují dietu bez cukru, jako jsou lidé s diabetem"
+        "cs": "To je důležité pro lidi, kteří dodržují dietu bez cukru, jako jsou lidé s diabetem",
+        "es": "Esto es importante para las personas que siguen una dieta sin azúcar, como las personas con diabetes"
       },
       "mappings": [
         {
@@ -2485,7 +2544,9 @@
           "then": {
             "en": "This shop <b>only sells sugar free</b> products",
             "de": "Das Geschäft verkauft <b>ausschließlich</b> zuckerfreie Produkte",
-            "cs": "Tento obchod <b>prodává pouze produkty bez cukru</b>"
+            "cs": "Tento obchod <b>prodává pouze produkty bez cukru</b>",
+            "es": "Esta tienda <b>solo vende productos sin azúcar</b>",
+            "uk": "У цьому магазині <b>продаються тільки продукти без цукру</b>"
           }
         },
         {
@@ -2493,7 +2554,8 @@
           "then": {
             "en": "This shop has a big sugar free offering",
             "de": "Das Geschäft verkauft <b>viele<b> zuckerfreie Produkte",
-            "cs": "Tento obchod má velkou nabídku bez cukru"
+            "cs": "Tento obchod má velkou nabídku bez cukru",
+            "es": "Esta tienda tiene una gran oferta de productos sin azúcar"
           }
         },
         {
@@ -2501,7 +2563,8 @@
           "then": {
             "en": "This shop has a <b>limited sugar free</b> offering",
             "de": "Das Geschäft verkauft <b>wenige</b> zuckerfreie Produkte",
-            "cs": "Tento obchod má <b>omezenou nabídku bez cukru</b>"
+            "cs": "Tento obchod má <b>omezenou nabídku bez cukru</b>",
+            "es": "Esta tienda tiene una oferta <b>limitada de productos sin azúcar</b>"
           }
         },
         {
@@ -2509,7 +2572,8 @@
           "then": {
             "en": "This shop has no sugar free offering",
             "de": "Das Geschäft verkauft <b>keine<b> zuckerfreie Produkte",
-            "cs": "Tento obchod nemá žádnou nabídku bez cukru"
+            "cs": "Tento obchod nemá žádnou nabídku bez cukru",
+            "es": "Esta tienda no tiene oferta de productos sin azúcar"
           }
         }
       ],
@@ -2525,7 +2589,8 @@
       "question": {
         "en": "Does {title()} have a lactose-free offering?",
         "de": "Verkauft {title()} laktosefreie Produkte?",
-        "cs": "Má {title()} nabídku bez laktózy?"
+        "cs": "Má {title()} nabídku bez laktózy?",
+        "es": "¿Tiene {title()} una oferta sin lactosa?"
       },
       "mappings": [
         {
@@ -2533,7 +2598,8 @@
           "then": {
             "en": "<b>Only sells lactose free</b> products",
             "de": "<b>Ausschließlich</b> laktosefreie Produkte",
-            "cs": "<b>Prodává pouze výrobky bez laktózy</b>"
+            "cs": "<b>Prodává pouze výrobky bez laktózy</b>",
+            "es": "<b>Solo vende productos sin lactosa</b>"
           },
           "icon": "./assets/layers/questions/lactose_free.svg"
         },
@@ -2542,7 +2608,8 @@
           "then": {
             "en": "Big lactose free offering",
             "de": "Viele laktosefreie Produkte",
-            "cs": "Velká nabídka bez laktózy"
+            "cs": "Velká nabídka bez laktózy",
+            "es": "Gran oferta de productos sin lactosa"
           },
           "icon": "./assets/layers/questions/lactose_free.svg"
         },
@@ -2551,7 +2618,8 @@
           "then": {
             "en": "<b>Limited lactose free</b> offering",
             "de": "<b>Wenige</b> laktosefreie Produkte",
-            "cs": "<b>Omezená nabídka bez laktózy</b>"
+            "cs": "<b>Omezená nabídka bez laktózy</b>",
+            "es": "Oferta <b>limitada de productos sin lactosa</b>"
           }
         },
         {
@@ -2559,7 +2627,8 @@
           "then": {
             "en": "No lactose free offering",
             "de": "Keine laktosefreie Produkte",
-            "cs": "Žádná nabídka bez laktózy"
+            "cs": "Žádná nabídka bez laktózy",
+            "es": "No hay oferta de productos sin lactosa"
           }
         }
       ],
@@ -2575,7 +2644,8 @@
       "question": {
         "en": "Does this shop have a gluten free offering?",
         "de": "Verkauft das Geschäft glutenfreie Produkte?",
-        "cs": "Má tento obchod bezlepkovou nabídku?"
+        "cs": "Má tento obchod bezlepkovou nabídku?",
+        "es": "¿Tiene esta tienda una oferta de productos sin gluten?"
       },
       "mappings": [
         {
@@ -2583,7 +2653,9 @@
           "then": {
             "en": "This shop <b>only sells gluten free</b> products",
             "de": "Das Geschäft verkauft <b>ausschließlich glutenfreie</b> Produkte",
-            "cs": "Tento obchod <b>prodává pouze bezlepkové</b> produkty"
+            "cs": "Tento obchod <b>prodává pouze bezlepkové</b> produkty",
+            "es": "Esta tienda <b>solo vende productos sin gluten</b>",
+            "uk": "Цей магазин <b>продає лише безглютенові продукти</b>"
           },
           "icon": "./assets/layers/questions/glutenfree.svg"
         },
@@ -2592,7 +2664,8 @@
           "then": {
             "en": "This shop has a big gluten free offering",
             "de": "Das Geschäft verkauft viele glutenfreie Produkte",
-            "cs": "Tento obchod má velkou bezlepkovou nabídku"
+            "cs": "Tento obchod má velkou bezlepkovou nabídku",
+            "es": "Esta tienda tiene una gran oferta de productos sin gluten"
           },
           "icon": "./assets/layers/questions/glutenfree.svg"
         },
@@ -2601,7 +2674,8 @@
           "then": {
             "en": "This shop has a <b>limited gluten free</b> offering",
             "de": "Das Geschäft verkauft <b>wenige glutenfreie</b> Produkte",
-            "cs": "Tento obchod má <b>omezenou nabídku bezlepkových produktů</b>"
+            "cs": "Tento obchod má <b>omezenou nabídku bezlepkových produktů</b>",
+            "es": "Esta tienda tiene una oferta <b>limitada de productos sin gluten</b>"
           }
         },
         {
@@ -2609,7 +2683,8 @@
           "then": {
             "en": "This shop has no gluten free offering",
             "de": "Das Geschäft verkauft keine glutenfreie Produkte",
-            "cs": "Tento obchod nemá bezlepkovou nabídku"
+            "cs": "Tento obchod nemá bezlepkovou nabídku",
+            "es": "Esta tienda no tiene oferta de productos sin gluten"
           }
         }
       ],
@@ -2625,35 +2700,40 @@
       "question": {
         "en": "Does this place offer a vegan option?",
         "de": "Bietet dieser Ort eine vegane Option an?",
-        "pl": "Czy to miejsce oferuje opcję wegańską?"
+        "pl": "Czy to miejsce oferuje opcję wegańską?",
+        "es": "¿Ofrece este lugar una opción vegana?"
       },
       "mappings": [
         {
           "if": "diet:vegan=only",
           "then": {
             "en": "This place <b>only sells vegan</b> products",
-            "de": "Dieser Ort verkauft <b>nur vegane</b> Produkte"
+            "de": "Dieser Ort verkauft <b>nur vegane</b> Produkte",
+            "es": "Este lugar <b>solo vende productos veganos</b>"
           }
         },
         {
           "if": "diet:vegan=yes",
           "then": {
             "en": "This shop has a big vegan offering",
-            "de": "Dieser Laden hat ein großes veganes Angebot"
+            "de": "Dieser Laden hat ein großes veganes Angebot",
+            "es": "Esta tienda tiene una gran oferta vegana"
           }
         },
         {
           "if": "diet:vegan=limited",
           "then": {
             "en": "This shop has a <b>limited vegan</b> offering",
-            "de": "Dieser Laden hat ein <b>begrenztes veganes</b> Angebot"
+            "de": "Dieser Laden hat ein <b>begrenztes veganes</b> Angebot",
+            "es": "Esta tienda tiene una oferta <b>vegana limitada</b>"
           }
         },
         {
           "if": "diet:vegan=no",
           "then": {
             "en": "This shop has no vegan offering",
-            "de": "Dieser Laden bietet keine veganen Produkte an"
+            "de": "Dieser Laden bietet keine veganen Produkte an",
+            "es": "Esta tienda no tiene oferta vegana"
           }
         }
       ]
@@ -2676,7 +2756,8 @@
             "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
             "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
             "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
-            "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě."
+            "cs": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě.",
+            "es": "¡Acabas de crear este elemento! Gracias por compartir esta información con el mundo y ayudar a personas en todo el mundo."
           }
         }
       ],
@@ -2753,7 +2834,8 @@
           "text": {
             "en": "Share this location",
             "nl": "Deel deze locatie",
-            "de": "Standort teilen"
+            "de": "Standort teilen",
+            "es": "Compartir esta ubicación"
           }
         }
       }
@@ -2774,7 +2856,10 @@
           "nl": "Scan deze code om deze locatie op een ander apparaat te zien",
           "de": "QR Code scannen, um diesen Ort auf einem anderen Gerät zu öffnen",
           "sl": "Skenirajte to kodo, da odprete ta kraj na drugi napravi",
-          "da": "Skan denne kode for at åbne dette sted på en anden enhed"
+          "da": "Skan denne kode for at åbne dette sted på en anden enhed",
+          "hu": "Szkenneld be ezt a kódot, hogy egy másik eszközön is meg tudd nyitni a helyet",
+          "uk": "Відскануйте цей код, щоб відкрити це місце на іншому пристрої",
+          "es": "Escanea este código para abrir esta ubicación en otro dispositivo"
         }
       }
     },
@@ -2809,7 +2894,9 @@
             "de": "Zuletzt bearbeitet am {_last_edit:timestamp} von {_last_edit:contributor}",
             "ca": "Darrera edició el {_last_edit:timestamp} per {_last_edit:contributor}",
             "cs": "Naposledy upravil {_last_edit:timestamp} {_last_edit:contributor}",
-            "da": "Senest redigeret {_last_edit:timestamp} af {_last_edit:contributor}"
+            "da": "Senest redigeret {_last_edit:timestamp} af {_last_edit:contributor}",
+            "hu": "Legutóbb {_last_edit:contributor} szerkesztette ekkor: {_last_edit:timestamp}",
+            "es": "Última edición el {_last_edit:timestamp} por {_last_edit:contributor}"
           },
           "class": "subtle font-small"
         }
@@ -2834,7 +2921,8 @@
           "text": {
             "en": "Nothing is known about this place. Help by filling out the questions",
             "nl": "Er is nog niets geweten. Help mee door de vragen te beantwoorden",
-            "de": "Über diesen Ort ist nichts bekannt. Hilf mit, indem du die Fragen ausfüllst"
+            "de": "Über diesen Ort ist nichts bekannt. Hilf mit, indem du die Fragen ausfüllst",
+            "es": "No se sabe nada sobre este lugar. Ayuda completando las preguntas"
           },
           "cssClasses": "subtle m-4 italic flex items-center justify-center"
         }
@@ -2845,7 +2933,8 @@
       "question": {
         "en": "Is {title()} available all around the year?",
         "nl": "Is {title()} heel het jaar beschikbaar?",
-        "de": "Ist {title()} rund um das Jahr nutzbar?"
+        "de": "Ist {title()} rund um das Jahr nutzbar?",
+        "es": "¿Está {title()} disponible todo el año?"
       },
       "mappings": [
         {
@@ -2853,7 +2942,8 @@
           "then": {
             "en": "Available all around the year",
             "nl": "Heel het jaar door beschikbaar",
-            "de": "Ganzjährig in Betrieb"
+            "de": "Ganzjährig in Betrieb",
+            "es": "Disponible todo el año"
           }
         },
         {
@@ -2861,7 +2951,8 @@
           "then": {
             "en": "Only available in summer",
             "nl": "Enkel in de zomer beschikbaar",
-            "de": "Nur im Sommer in Betrieb"
+            "de": "Nur im Sommer in Betrieb",
+            "es": "Solo disponible en verano"
           }
         },
         {
@@ -2870,7 +2961,8 @@
           "then": {
             "en": "Closed during the winter",
             "nl": "Gesloten in de winter",
-            "de": "Im Winter nicht in Betrieb"
+            "de": "Im Winter nicht in Betrieb",
+            "es": "Cerrado durante el invierno"
           }
         }
       ]
@@ -2879,7 +2971,8 @@
       "id": "shower",
       "question": {
         "en": "Does this facility offer showers?",
-        "de": "Gibt es in dieser Einrichtung Duschen?"
+        "de": "Gibt es in dieser Einrichtung Duschen?",
+        "es": "¿Ofrece esta instalación duchas?"
       },
       "mappings": [
         {
@@ -2887,7 +2980,8 @@
           "icon": "./assets/layers/shower/shower.svg",
           "then": {
             "en": "This facility does have showers with warm water",
-            "de": "Diese Einrichtung verfügt über Duschen mit warmem Wasser"
+            "de": "Diese Einrichtung verfügt über Duschen mit warmem Wasser",
+            "es": "Esta instalación tiene duchas con agua caliente"
           }
         },
         {
@@ -2895,7 +2989,8 @@
           "icon": "./assets/layers/shower/shower.svg",
           "then": {
             "en": "This facility does have showers, but the water is not heated",
-            "de": "Diese Einrichtung verfügt zwar über Duschen, aber das Wasser ist nicht beheizt"
+            "de": "Diese Einrichtung verfügt zwar über Duschen, aber das Wasser ist nicht beheizt",
+            "es": "Esta instalación tiene duchas, pero el agua no está caliente"
           }
         },
         {
@@ -2903,7 +2998,8 @@
           "icon": "./assets/layers/shower/shower.svg",
           "then": {
             "en": "This facility does have showers",
-            "de": "Diese Einrichtung hat Duschen"
+            "de": "Diese Einrichtung hat Duschen",
+            "es": "Esta instalación tiene duchas"
           }
         },
         {
@@ -2911,7 +3007,8 @@
           "icon": "invalid;./assets/layers/shower/shower.svg",
           "then": {
             "en": "This facility does not offer a shower",
-            "de": "Diese Einrichtung hat keine Duschen"
+            "de": "Diese Einrichtung hat keine Duschen",
+            "es": "Esta instalación no ofrece ducha"
           }
         }
       ]
@@ -2926,11 +3023,15 @@
       "id": "brand",
       "question": {
         "en": "Is {title()} part of a bigger brand?",
-        "de": "Ist {title()} Teil einer großen Marke?"
+        "de": "Ist {title()} Teil einer großen Marke?",
+        "es": "¿Forma parte {title()} de una marca más grande?",
+        "uk": "Чи є {title()} частиною більшого бренду?"
       },
       "render": {
         "en": "Part of {brand}",
-        "de": "Teil von {brand}"
+        "de": "Teil von {brand}",
+        "es": "Parte de {brand}",
+        "uk": "Частина {brand}"
       },
       "freeform": {
         "key": "brand",
@@ -2947,7 +3048,32 @@
           ],
           "then": {
             "en": "Not part of a bigger brand",
-            "de": "Nicht Teil einer großen Marke"
+            "de": "Nicht Teil einer großen Marke",
+            "es": "No forma parte de una marca más grande",
+            "uk": "Не є частиною великого бренду"
+          }
+        }
+      ]
+    },
+    {
+      "id": "indoor",
+      "question": {
+        "en": "Is this object located indoors?",
+        "nl": "Bevindt dit object zich binnen?"
+      },
+      "mappings": [
+        {
+          "if": "indoor=yes",
+          "then": {
+            "en": "This object is located indoors",
+            "nl": "Dit object bevindt zich binnen"
+          }
+        },
+        {
+          "if": "indoor=no",
+          "then": {
+            "en": "This object is located outdoors",
+            "nl": "Dit object bevindt zich buiten"
           }
         }
       ]

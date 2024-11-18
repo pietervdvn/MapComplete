@@ -29,6 +29,7 @@ Available languages:
  - da
  - es
  - cs
+ - uk
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

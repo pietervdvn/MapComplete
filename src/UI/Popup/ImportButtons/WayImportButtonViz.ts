@@ -10,7 +10,7 @@ import { FixedUiElement } from "../../Base/FixedUiElement"
 import WayImportFlow from "./WayImportFlow.svelte"
 import WayImportFlowState, { WayImportFlowArguments } from "./WayImportFlowState"
 import { Utils } from "../../../Utils"
-import LayoutConfig from "../../../Models/ThemeConfig/LayoutConfig"
+import ThemeConfig from "../../../Models/ThemeConfig/ThemeConfig"
 import { Changes } from "../../../Logic/Osm/Changes"
 import { IndexedFeatureSource } from "../../../Logic/FeatureSource/FeatureSource"
 import FullNodeDatabaseSource from "../../../Logic/FeatureSource/TiledFeatureSource/FullNodeDatabaseSource"
@@ -87,7 +87,7 @@ export default class WayImportButtonViz implements AutoAction, SpecialVisualizat
     public async applyActionOn(
         feature: Feature,
         state: {
-            layout: LayoutConfig
+            theme: ThemeConfig
             changes: Changes
             indexedFeatures: IndexedFeatureSource
             fullNodeDatabase: FullNodeDatabaseSource

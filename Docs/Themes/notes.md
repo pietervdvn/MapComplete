@@ -25,6 +25,8 @@ Available languages:
  - cs
  - zh_Hant
  - pl
+ - ru
+ - uk
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

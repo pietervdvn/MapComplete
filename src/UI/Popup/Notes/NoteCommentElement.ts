@@ -1,8 +1,6 @@
 import { Store, UIEventSource } from "../../../Logic/UIEventSource"
 
 export default class NoteCommentElement {
-
-
     /**
      * Adds the comment to the _visualisation_ of the given note; doesn't _actually_ upload
      * @param txt

@@ -18,7 +18,7 @@
     "nl": "Een laag die defibrillatoren toont die je kan gebruiken bij noodgevallen. Dit omvat zowel publiek beschikbare toestellen als defibrillatoren waarvoor het toestel enkel door personeel aangeboden kan worden",
     "sl": "Sloj prikazuje defibrilatorje, ki jih je možno uporabiti v primeru sile. Sloj poleg javno dostopnih defibrilatorjev vsebuje tudi tiste, ki za dostop morda potrebujejo pomoč osebja",
     "de": "Eine Ebene mit Defibrillatoren, die in Notfällen eingesetzt werden können. Diese Ebene enthält öffentliche Defibrillatoren, aber auch Defibrillatoren, bei denen möglicherweise Personal benötigt wird, um das Gerät zu holen",
-    "es": "Una capa que muestra desfibriladores que se pueden utilizar en caso de emergencia. Contiene desfibriladores públicos, pero también desfibriladores para los que se puede necesitar que el personal vaya a buscar el dispositivo",
+    "es": "Una capa que muestra desfibriladores que se pueden usar en caso de emergencia Esto incluye desfibriladores públicos, pero también desfibriladores que pueden necesitar personal para obtener el dispositivo real",
     "ca": "Una capa que mostra desfibril·ladors que es poden utilitzar en cas d'emergència. Conté desfibril·ladors públics, però també desfibril·ladors que poden necessitar de personal per agafar el dispositiu",
     "he": "שכבה המציגה דפיברילטורים שניתן להשתמש בהם במקרה חירום. זה מכיל דפיברילטורים ציבוריים, אך גם דפיברילטורים שעשויים להזדקק לצוות כדי להביא את המכשיר בפועל",
     "cs": "Vrstva zobrazující defibrilátory, které lze použít v případě nouze. To zahrnuje veřejné defibrilátory, ale také defibrilátory, které mohou vyžadovat personál, aby přinesl skutečné zařízení"
@@ -123,7 +123,7 @@
       "question": {
         "en": "Is this defibrillator located indoors?",
         "ca": "Està el desfibril·lador a l'interior?",
-        "es": "¿Esté el desfibrilador en interior?",
+        "es": "¿Este desfibrilador está ubicado en el interior?",
         "fr": "Ce défibrillateur est-il disposé en intérieur ?",
         "nl": "Hangt deze defibrillator binnen of buiten?",
         "de": "Befindet sich der Defibrillator in einem Gebäude?",
@@ -138,7 +138,7 @@
           "then": {
             "en": "This defibrillator is located indoors",
             "ca": "Aquest desfibril·lador està a l'interior",
-            "es": "Este desfibrilador está en interior",
+            "es": "Este desfibrilador está ubicado en el interior",
             "fr": "Ce défibrillateur est en intérieur (dans un batiment)",
             "nl": "Deze defibrillator bevindt zich in een gebouw",
             "de": "Der Defibrillator befindet sich in einem Gebäude",
@@ -153,7 +153,7 @@
           "then": {
             "en": "This defibrillator is located outdoors",
             "ca": "Aquest desfibril·lador està a l'exterior",
-            "es": "Este desfibrilador está en exterior",
+            "es": "Este desfibrilador está ubicado en el exterior",
             "fr": "Ce défibrillateur est situé en extérieur",
             "nl": "Deze defibrillator hangt buiten",
             "de": "Der Defibrillator befindet sich im Freien",
@@ -169,7 +169,7 @@
       "question": {
         "en": "Is this defibrillator freely accessible?",
         "ca": "Està el desfibril·lador accessible lliurement?",
-        "es": "¿Está el desfibrilador accesible libremente?",
+        "es": "¿Este desfibrilador es de libre acceso?",
         "fr": "Ce défibrillateur est-il librement accessible ?",
         "nl": "Is deze defibrillator vrij toegankelijk?",
         "de": "Ist der Defibrillator frei zugänglich?",
@@ -188,7 +188,8 @@
         "de": "Zugang ist {access}",
         "it": "Accesso è {access}",
         "sl": "Dostop je {access}",
-        "cs": "Přístup je {access}"
+        "cs": "Přístup je {access}",
+        "uk": "Доступ – {access}"
       },
       "freeform": {
         "key": "access",
@@ -202,7 +203,7 @@
           "then": {
             "en": "Publicly accessible",
             "ca": "Accés lliure",
-            "es": "Acceso libre",
+            "es": "Accesible al público",
             "fr": "Librement accessible",
             "nl": "Publiek toegankelijk",
             "de": "Der Defibrillator ist öffentlich zugänglich",
@@ -219,7 +220,7 @@
           "then": {
             "en": "Publicly accessible",
             "ca": "Publicament accessible",
-            "es": "Publicament accesible",
+            "es": "Accesible al público",
             "fr": "Librement accessible",
             "nl": "Publiek toegankelijk",
             "de": "Öffentlich zugänglich",
@@ -237,7 +238,7 @@
           "then": {
             "en": "Only accessible to customers",
             "ca": "Només accessible a clients",
-            "es": "Sólo accesible a clientes",
+            "es": "Solo accesible para clientes",
             "fr": "Réservé aux clients du lieu",
             "nl": "Enkel toegankelijk voor klanten",
             "de": "Der Defibrillator ist nur für Kunden zugänglich",
@@ -253,7 +254,7 @@
           "then": {
             "en": "Not accessible to the general public (e.g. only accesible to staff, the owners, …)",
             "ca": "No accessible al públic en general (ex. només accesible a treballadors, propietaris, ...)",
-            "es": "No accesible al público en general (por ejemplo, sólo accesible para el personal, los propietarios, ...)",
+            "es": "No accesible al público en general (p. ej., solo accesible para el personal, los propietarios, …)",
             "fr": "Non accessible au public (par exemple réservé au personnel, au propriétaire…)",
             "nl": "Niet toegankelijk voor het publiek (bv. enkel voor personeel, de eigenaar, …)",
             "de": "Der Defibrillator ist nicht öffentlich zugänglich (z.B. nur für Personal, Eigentümer, …)",
@@ -272,7 +273,7 @@
             "it": "Non accessibile, potrebbe essere solo per uso professionale",
             "de": "Der Defibrillator ist nicht zugänglich, möglicherweise nur für betriebliche Nutzung",
             "sl": "Ni dostopen, morda samo za profesionalno rabo",
-            "es": "No accesible, posiblemente solo para el uso profesional",
+            "es": "No accesible, posiblemente solo para uso profesional",
             "ca": "No accessible, posiblemente només d'ús profesional",
             "pl": "Niedostępny, być może tylko do profesjonalnego użytku",
             "cs": "Nepřístupné, případně pouze pro profesionální použití"
@@ -289,7 +290,7 @@
         "it": "Si tratta di un normale defibrillatore automatico o un defibrillatore manuale riservato ai professionisti?",
         "de": "Ist dies ein normaler automatischer Defibrillator oder ein manueller Defibrillator nur für Profis?",
         "sl": "Ali je to navaden avtomatski defibrilator ali ročni defibrilator namenjen poklicnim reševalcem?",
-        "es": "¿Este es un desfibrilador automático normal o un desfibrilador manual solo para profesionales?",
+        "es": "¿Es este un desfibrilador automático normal o un desfibrilador manual solo para profesionales?",
         "ca": "És un desfibril·lador automàtic normal o un desfibril·lador manual només per a professionals?",
         "pl": "Czy to jest zwykły automatyczny defibrylator czy ręczny defibrylator tylko dla profesjonalistów?",
         "cs": "Jedná se o běžný automatický defibrilátor nebo manuální defibrilátor pouze pro profesionály?"
@@ -357,7 +358,7 @@
             "sl": "To je posebna vrsta defibrilatorja: {defibrillator}",
             "da": "Dette er en særlig type hjertestarter: {defibrillator}",
             "de": "Dies ist eine besondere Art von Defibrillator: {defibrillator}",
-            "es": "Este es un tipo de desfibrilador especial: {defibrillator}",
+            "es": "Este es un tipo especial de desfibrilador: {defibrillator}",
             "ca": "Aquest és un tipus especial de desfibril·lador: {defibrillator}",
             "pl": "To jest specjalny rodzaj defibrylatora: {defibrillator}",
             "cs": "Toto je speciální typ defibrilátoru: {defibrillator}"
@@ -371,7 +372,7 @@
       "question": {
         "en": "On which floor is this defibrillator located?",
         "ca": "A quina planta està el ubicat el desfibril·lador?",
-        "es": "¿En qué planta se encuentra el defibrilador localizado?",
+        "es": "¿En qué planta está ubicado este desfibrilador?",
         "fr": "À quel étage est situé ce défibrillateur ?",
         "nl": "Op welke verdieping bevindt deze defibrillator zich?",
         "de": "Auf welcher Etage befindet sich der Defibrillator?",
@@ -392,7 +393,7 @@
       "render": {
         "en": "This defibrillator is on floor {level}",
         "ca": "Aquest desfibril·lador és a la planta {level}",
-        "es": "El desfibrilador se encuentra en la planta {level}",
+        "es": "Este desfibrilador está en la planta {level}",
         "fr": "Ce défibrillateur est à l'étage {level}",
         "nl": "De defibrillator bevindt zicht op verdieping {level}",
         "de": "Dieser Defibrallator befindet sich im {level}. Stockwerk",
@@ -411,7 +412,7 @@
             "it": "Questo defibrillatore è al <b>pian terreno</b>",
             "de": "Der Defibrillator befindet sich im <b>Erdgeschoss</b>",
             "sl": "Ta defibrilator je v <b>pritličju</b>",
-            "es": "Este desfibrilador se encuentra en la <b>planta baja</b>",
+            "es": "Este desfibrilador está en la <b>planta baja</b>",
             "ca": "Aquest desfribil·lador està a la <b>planta baixa</b>",
             "pl": "Ten defibrylator jest na <b>parterze</b>",
             "cs": "Tento defibrilátor se nachází v <b>přízemí</b>"
@@ -426,7 +427,7 @@
             "it": "Questo defibrillatore è al <b>primo piano</b>",
             "de": "Der Defibrillator befindet sich in der <b>ersten Etage</b>",
             "sl": "Ta defibrilator je v <b>prvem nadstropju</b>",
-            "es": "Este desfibrilador se encuentra en la <b>primera planta</b>",
+            "es": "Este desfibrilador está en la <b>primera planta</b>",
             "ca": "Aquest desfribil·lador està a la <b>primera planta</b>",
             "pl": "Ten defibrylator jest na <b>pierwszym piętrze</b>",
             "cs": "Tento defibrilátor je v <b>prvním patře</b>"
@@ -451,7 +452,7 @@
       "question": {
         "en": "Please give some explanation on where the defibrillator can be found (in the local language)",
         "ca": "Dóna detalls d'on es pot trobar el desfibril·lador",
-        "es": "Da detalles de dónde se puede encontrar el desfibrilador (en el idioma local)",
+        "es": "Da una explicación de dónde se puede encontrar el desfibrilador (en el idioma local)",
         "fr": "Veuillez indiquez plus précisément où se situe le défibrillateur (dans la langue local)",
         "nl": "Gelieve meer informatie te geven over de exacte locatie van de defibrillator (in de plaatselijke taal)",
         "de": "Bitte geben Sie einen Hinweis, wo genau der Defibrillator zu finden ist (in lokaler Sprache)",
@@ -474,7 +475,7 @@
         "it": "<i>Informazioni supplementari circa la posizione (in inglese):</i><br/>{defibrillator:location:en}",
         "de": "<i>Zusätzliche Informationen über den Standort (auf Englisch):</i><br/>{defibrillator:location:en}",
         "sl": "<i>Dodatne informacije o lokaciji (v Angleščini):</i><br/>{defibrillator:location:en}",
-        "es": "<i>Información a mayores sobre la localización (en Inglés):</i><br/>{defibrillator:location:en}",
+        "es": "<i>Información adicional sobre la ubicación (en inglés):</i><br/>{defibrillator:location:en}",
         "ca": "<i>Informació addicional sobre la ubicació (en anglès):</i><br/>{defibrillator:location:en}",
         "pl": "<i>Dodatkowe informacje o lokalizacji (po angielsku):</i><br/>{defibrillator:location:en}",
         "cs": "<i>Další informace o místě (v angličtině):</i><br/>{defibrillator:location:en}"
@@ -482,8 +483,8 @@
       "question": {
         "en": "Please give some explanation on where the defibrillator can be found (in English)",
         "ca": "Dona detalls d'on es pot trobar el desfibril·lador (en anglès)",
-        "es": "Da detalles de dónde se puede encontrar el desfibrilador (en ingles)",
-        "fr": "Veuillez indiquez plus précisément où se situe le défibrillateur (en englais)",
+        "es": "Da una explicación de dónde se puede encontrar el desfibrilador (en inglés)",
+        "fr": "Veuillez indiquez plus précisément où se situe le défibrillateur (en anglais)",
         "nl": "Gelieve meer informatie te geven over de exacte locatie van de defibrillator (in het Engels)",
         "de": "Bitte geben Sie einen Hinweis, wo der Defibrillator zu finden ist (auf Englisch)",
         "it": "Indica più precisamente dove si trova il defibrillatore (in inglese)",
@@ -505,7 +506,7 @@
         "it": "<i>Informazioni supplementari circa la posizione (in francese):</i><br/>{defibrillator:location:fr}",
         "de": "<i>Zusätzliche Informationen zum Standort (auf Französisch):</i><br/>{defibrillator:location:fr}",
         "sl": "<i>Dodatne informacije o lokaciji (v Francoščini):</i><br/>{defibrillator:location:fr}",
-        "es": "<i>Información a mayores sobre la localización (en Francés):</i><br/>{defibrillator:location:fr}",
+        "es": "<i>Información adicional sobre la ubicación (en francés):</i><br/>{defibrillator:location:fr}",
         "ca": "<i>Informació addicional sobre la ubicació (en francès):</i><br/>{defibrillator:location:fr}",
         "pl": "<i>Dodatkowe informacje o lokalizacji (po francusku):</i><br/>{defibrillator:location:fr}",
         "cs": "<i>Další informace o místě (ve francouzštině):</i><br/>{defibrillator:location:fr}"
@@ -513,7 +514,7 @@
       "question": {
         "en": "Please give some explanation on where the defibrillator can be found (in French)",
         "ca": "Dóna detalls d'on es pot trobar el desfibril·lador (en francés)",
-        "es": "Da detalles de dónde se puede encontrar el desfibrilador (en frances)",
+        "es": "Da una explicación de dónde se puede encontrar el desfibrilador (en francés)",
         "fr": "Veuillez indiquez plus précisément où se situe le défibrillateur (en français)",
         "nl": "Gelieve meer informatie te geven over de exacte locatie van de defibrillator (in het Frans)",
         "de": "Bitte geben Sie einige Erläuterungen dazu, wo der Defibrillator zu finden ist (auf Französisch)",
@@ -555,7 +556,7 @@
         "it": "Qual è il numero identificativo ufficiale di questo dispositivo? (se visibile sul dispositivo)",
         "de": "Wie lautet die offizielle Identifikationsnummer des Geräts? (falls am Gerät sichtbar)",
         "sl": "Kakšna je uradna identifikacijska številka te naprave? (če je vidna na napravi)",
-        "es": "¿Cual es el número de identificación oficial de este dispositivo? (si está visible en el dispositivo)",
+        "es": "¿Cuál es el número de identificación oficial del dispositivo? (si es visible en el dispositivo)",
         "ca": "Quin és el número d'identificació oficial del dispositiu? (si està visible al dispositiu)",
         "cs": "Jaké je oficiální identifikační číslo zařízení? (pokud je na zařízení vidět)"
       },
@@ -584,7 +585,7 @@
         "it": "Qual è l’indirizzo email per le domande riguardanti questo defibrillatore?",
         "de": "Wie lautet die E-Mail für Fragen zu diesem Defibrillator?",
         "sl": "Kakšen je email naslov za vprašanja o tem defibrilatorju?",
-        "es": "¿Cual es el correo electrónico para preguntas sobre este desfibrilador?",
+        "es": "¿Cuál es el correo electrónico para preguntas sobre este desfibrilador?",
         "ca": "Quin és el correu electrònic on preguntar sobre aquest desfibril·lador?",
         "cs": "Jaký je e-mail pro dotazy týkající se tohoto defibrilátoru?"
       },
@@ -603,7 +604,8 @@
         "de": "Telefonnummer für Fragen zu diesem Defibrillator: <a href='tel:{phone}'>{phone}</a>",
         "sl": "Telefonska številka za vprašanja o tem defibrilatorju: <a href='tel:{phone}'>{phone}</a>",
         "ca": "Telèfon per a dubtes sobre aquest desfibril·lador: <a href='tel:{phone}'>{phone}</a>",
-        "cs": "Telefon pro dotazy ohledně tohoto defibrilátoru: <a href='tel:{phone}'>{phone}</a>"
+        "cs": "Telefon pro dotazy ohledně tohoto defibrilátoru: <a href='tel:{phone}'>{phone}</a>",
+        "es": "Teléfono para preguntas sobre este desfibrilador: <a href='tel:{phone}'>{phone}</a>"
       },
       "question": {
         "en": "What is the phone number for questions about this defibrillator?",
@@ -612,7 +614,7 @@
         "it": "Qual è il numero di telefono per le domande riguardanti questo defibrillatore?",
         "de": "Wie lautet die Telefonnummer für Fragen zu diesem Defibrillator?",
         "sl": "Kakšna je telefonska številka za vprašanja o tem defibrilatorju?",
-        "es": "¿Cual es el número de teléfono para preguntas sobre este desfibrilador?",
+        "es": "¿Cuál es el número de teléfono para preguntas sobre este desfibrilador?",
         "ca": "Quin és el número de telèfon on preguntar sobre aquest desfibril·lador?",
         "cs": "Jaké je telefonní číslo pro dotazy k tomuto defibrilátoru?"
       },
@@ -662,7 +664,7 @@
         "it": "Vi sono altre informazioni utili agli utenti che non è stato possibile aggiungere prima? (lasciare vuoto in caso negativo)",
         "de": "Gibt es nützliche Informationen für Benutzer, die Sie oben nicht beschreiben konnten? (leer lassen, wenn nein)",
         "sl": "Ali imate še kakšne uporabne informacije za uporabnike, ki jih niste mogli podati zgoraj? (pustite prazno če jih nimate)",
-        "es": "¿Hay alguna información útil para los usuarios que no hayas podido describir arriba? (dejar en blanco si no)",
+        "es": "¿Hay alguna información útil para los usuarios que no hayas podido describir anteriormente? (deja en blanco si no)",
         "ca": "Hi ha informació útil per als usuaris que no hagis pogut descriure més amunt? (deixeu en blanc si no)",
         "cs": "Existují nějaké užitečné informace pro uživatele, které jste nebyli schopni výše popsat? (nechte prázdné, pokud ne)"
       },
@@ -680,7 +682,7 @@
         "it": "Quando è stato verificato per l’ultima volta questo defibrillatore?",
         "de": "Wann wurde der Defibrillator zuletzt überprüft?",
         "sl": "Kdaj je bil ta defibrilator nazadnje opažen?",
-        "es": "¿Cuándo se sondeó por última vez este desfibrilador?",
+        "es": "¿Cuándo se revisó por última vez este desfibrilador?",
         "ca": "Quan es va explorar per última vegada aquest desfibril·lador?",
         "cs": "Kdy byl tento defibrilátor naposledy zkoumán?"
       },
@@ -691,7 +693,7 @@
         "it": "Questo defibrillatore è stato verificato per l‘ultima volta in data {survey:date}",
         "de": "Dieser Defibrillator wurde zuletzt am {survey:date} überprüft",
         "sl": "Ta defibrilator je bil nazadnje opažen {survey:date}",
-        "es": "Este desfibrilador se sondeó por última vez el {survey:date}",
+        "es": "Este desfibrilador fue revisado por última vez el {survey:date}",
         "ca": "El desfibrilador és va sondejar per ultima vegada el {survey:date}",
         "cs": "Tento defibrilátor byl naposledy zkoumán dne {survey:date}"
       },
@@ -711,7 +713,7 @@
             "de": "Heute überprüft!",
             "sl": "Preverjeno danes!",
             "ca": "Comprovat avui!",
-            "es": "¡Comprobado hoy!",
+            "es": "¡Revisado hoy!",
             "pl": "Sprawdzone dzisiaj!",
             "cs": "Dnes zkontrolováno!"
           }
@@ -728,7 +730,7 @@
         "de": "Zusätzliche Informationen für OpenStreetMap-Experten: {fixme}",
         "ru": "Дополнительная информация для экспертов OpenStreetMap: {fixme}",
         "sl": "Dodatne informacije za OpenStreetMap strokovnjake: {fixme}",
-        "es": "Información extra para expertos en OpenStreetMap: {fixme}",
+        "es": "Información adicional para expertos de OpenStreetMap: {fixme}",
         "ca": "Informació addicional per als experts en OpenStreetMap: {fixme}",
         "pl": "Więcej informacji dla doświadczonych użytkowników OpenStreetMap: {fixme}",
         "cs": "Další informace pro experty OpenStreetMap: {fixme}"
@@ -740,7 +742,7 @@
         "it": "C’è qualcosa di sbagliato riguardante come è stato mappato, che non si è potuto correggere qua? (lascia una nota agli esperti di OpenStreetMap)",
         "de": "Gibt es einen Fehler in der Kartierung, den Sie hier nicht beheben konnten? (hinterlasse eine Notiz für OpenStreetMap-Experten)",
         "sl": "Ali je kaj narobe s tem vnosom na zemljevid, in tega niste mogli sami popraviti tu? (pustite opombo OpenStreetMap strokovnjakom)",
-        "es": "¿Hay algo mal con como esta mapeado, que no pudiste arreglar aquí? (deja una nota para los expertos de OpenStreetMap)",
+        "es": "¿Hay algo mal en cómo está mapeado esto, que no hayas podido arreglar aquí? (deja una nota para los expertos de OpenStreetMap)",
         "ca": "Hi ha alguna cosa malament en la manera de com està mapejat això, que no heu pogut solucionar aquí? (deixeu una nota als experts d'OpenStreetMap)",
         "cs": "Je na tom, jak je to zmapováno, něco v nepořádku, co jste zde nedokázali opravit? (zanechte poznámku odborníkům na OpenStreetMap)"
       },

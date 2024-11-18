@@ -156,7 +156,7 @@ export default class DownloadHelper {
     private getCleanGeoJsonPerLayer(includeMetaData: boolean): Map<string, Feature[]> {
         const state = this._state
         const featuresPerLayer = new Map<string, any[]>()
-        const neededLayers = state.layout.layers.filter((l) => l.source !== null).map((l) => l.id)
+        const neededLayers = state.theme.layers.filter((l) => l.source !== null).map((l) => l.id)
         const bbox = state.mapProperties.bounds.data
 
         for (const neededLayer of neededLayers) {
@@ -186,7 +186,7 @@ export default class DownloadHelper {
     createImage(key: string, width: string, height: string): HTMLImageElement {
         const img = document.createElement("img")
         const sources = {
-            layouticon: this._state.layout.icon,
+            layouticon: this._state.theme.icon,
         }
         img.src = sources[key]
         if (!img.src) {

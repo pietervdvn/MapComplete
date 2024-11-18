@@ -14,7 +14,8 @@
     "nb_NO": "Observasjonstårn",
     "da": "Udsigtstårne",
     "cs": "Rozhledny",
-    "pl": "Wieże obserwacyjne"
+    "pl": "Wieże obserwacyjne",
+    "uk": "Спостережні вежі"
   },
   "description": {
     "nl": "Publieke uitkijktorens om van het panorama te genieten",
@@ -23,7 +24,7 @@
     "it": "Torri pubblicamente accessibili per godere della vista",
     "zh_Hant": "開放可及能觀景的高塔",
     "hu": "Nyilvános tornyok, hogy gyönyörködhessünk a kilátásban",
-    "es": "Torres accesibles públicamente para disfrutar de la vista",
+    "es": "Torres de acceso público para disfrutar de la vista",
     "fr": "Tours libres d’accès pour admirer la vue",
     "nb_NO": "Offentlig tilgjengelige tårn for å nyte utsikten",
     "da": "Offentligt tilgængelige tårne for at nyde udsigten",
@@ -38,13 +39,15 @@
     "it": "Torri pubblicamente accessibili per godere della vista",
     "zh_Hant": "開發可及能觀景的高塔",
     "hu": "Nyilvános tornyok, hogy gyönyörködhessünk a kilátásban",
-    "es": "Torres accesibles públicamente para disfrutar de la vista",
+    "es": "Torres de acceso público para disfrutar de la vista",
     "fr": "Tours libres d’accès pour admirer la vue",
     "nb_NO": "Offentlig tilgjengelige tårn for å nyte utsikten",
     "da": "Offentligt tilgængelige tårne for at nyde udsigten",
     "cs": "Veřejně přístupné věže s výhledem",
     "ca": "Torres accesibles públicament per a disfrutar de la vista",
-    "pl": "Publicznie dostępne wieże do podziwiania widoku"
+    "pl": "Publicznie dostępne wieże do podziwiania widoku",
+    "ru": "Общедоступные башни, с которых можно любоваться видами",
+    "uk": "Загальнодоступні вежі, з яких можна насолоджуватися краєвидом"
   },
   "icon": "./assets/layers/observation_tower/Tower_observation.svg",
   "layers": [

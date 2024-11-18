@@ -16,6 +16,7 @@ This is a special layer - data is not sourced from OpenStreetMap
 1. [Supported attributes](#supported-attributes)
   - [questions](#questions)
   - [images](#images)
+  - [images_no_blur](#images_no_blur)
   - [mapillary](#mapillary)
   - [export_as_gpx](#export_as_gpx)
   - [export_as_geojson](#export_as_geojson)
@@ -66,6 +67,7 @@ This is a special layer - data is not sourced from OpenStreetMap
   - [shower](#shower)
   - [preset_description](#preset_description)
   - [brand](#brand)
+  - [indoor](#indoor)
 2. [Filters](#filters)
 
 ## Supported attributes
@@ -106,6 +108,7 @@ This is a special layer - data is not sourced from OpenStreetMap
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/seasonal#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/seasonal/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [seasonal](https://wiki.openstreetmap.org/wiki/Key:seasonal) | Multiple choice | [no](https://wiki.openstreetmap.org/wiki/Tag:seasonal%3Dno) [summer](https://wiki.openstreetmap.org/wiki/Tag:seasonal%3Dsummer) [spring;summer;autumn](https://wiki.openstreetmap.org/wiki/Tag:seasonal%3Dspring;summer;autumn) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/shower#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/shower/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [shower](https://wiki.openstreetmap.org/wiki/Key:shower) | Multiple choice | [hot](https://wiki.openstreetmap.org/wiki/Tag:shower%3Dhot) [cold](https://wiki.openstreetmap.org/wiki/Tag:shower%3Dcold) [yes](https://wiki.openstreetmap.org/wiki/Tag:shower%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:shower%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/brand#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/brand/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [brand](https://wiki.openstreetmap.org/wiki/Key:brand) | [string](../SpecialInputElements.md#string) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/indoor#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/indoor/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [indoor](https://wiki.openstreetmap.org/wiki/Key:indoor) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dno) |
 
 ### questions
 Show the questions block at this location
@@ -116,6 +119,11 @@ _This tagrendering has no question and is thus read-only_
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
 _This tagrendering has no question and is thus read-only_
 *{image_carousel()}{image_upload()}*
+
+### images_no_blur
+Same as `images`, but uploaded request to disable blurring to the panoramax server
+_This tagrendering has no question and is thus read-only_
+*{image_carousel()}{image_upload(,,,true)}*
 
 ### mapillary
 Shows a button to open Mapillary on this location
@@ -533,6 +541,13 @@ The question is `Is {title()} part of a bigger brand?`
 *Part of {brand}* is shown if `brand` is set
 
  -  *Not part of a bigger brand* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:nobrand' target='_blank'>nobrand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:nobrand%3Dyes' target='_blank'>yes</a>
+
+### indoor
+
+The question is `Is this object located indoors?`
+
+ -  *This object is located indoors* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dyes' target='_blank'>yes</a>
+ -  *This object is located outdoors* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dno' target='_blank'>no</a>
 
 ## Filters
 

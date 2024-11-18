@@ -7,7 +7,7 @@
     "fr": "Défibrillateurs",
     "nl": "Defibrillatoren en AED",
     "de": "Defibrillatoren",
-    "hu": "Defibrillátor-térkép",
+    "hu": "Defibrillátorok",
     "id": "Buka Peta AED",
     "it": "Mappa dei defibrillatori (DAE)",
     "ru": "Открытая карта АВД (Автоматизированных внешних дефибрилляторов)",
@@ -23,12 +23,13 @@
     "da": "Hjertestartere",
     "cs": "Defibrilátory",
     "zgh": "ⴽⵛⵎ ⵖⵔ ⵜⴽⴰⵕⴹⴰ ⵏ AED",
-    "eu": "Desfibriladoreak"
+    "eu": "Desfibriladoreak",
+    "uk": "Дефібрилятори"
   },
   "description": {
     "en": "On this map, one can find and mark nearby defibrillators",
     "ca": "En aquest mapa , qualsevol pot trobar i marcar els desfibril·ladors externs automàtics més propers",
-    "es": "En este mapa , cualquiera puede encontrar y marcar los desfibriladores externos automáticos más cercanos",
+    "es": "En este mapa, se pueden encontrar y marcar desfibriladores cercanos",
     "fr": "Sur cette carte, vous pouvez trouver et améliorer les informations sur les défibrillateurs",
     "nl": "Op deze kaart kan je informatie over AEDs vinden en verbeteren",
     "de": "Auf dieser Karte kann man nahe gelegene Defibrillatoren finden und markieren",
@@ -49,7 +50,8 @@
     "cs": "Na této mapě lze najít a označit defibrilátory v okolí",
     "zgh": "ⴳ ⵜⴽⴰⵕⴹⴰ ⴰⴷ, ⵉⵣⵎⵔⵏ ⵓⴼⴳⴰⵏ ⴰⴷ ⵢⴰⴼ ⵓⵎⵍⴰⵏ ⵅⴼ ⵡⴰⵍⵍⴰⵍⵏ ⵏ ⵜⵓⴽⴽⵙⴰ ⵏ ⵜⵔⴳⴰⴳⴰⵢⵜ",
     "eu": "Mapa honetan, hurbileko desfibriladoreak aurkitu eta marka daitezke",
-    "pt": "Neste mapa, pode-se encontrar e marcar desfibriladores próximos"
+    "pt": "Neste mapa, pode-se encontrar e marcar desfibriladores próximos",
+    "uk": "На цій мапі можна знайти та позначити дефібрилятори поруч"
   },
   "icon": "./assets/themes/aed/aed.svg",
   "startZoom": 12,

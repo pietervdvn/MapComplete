@@ -106,14 +106,31 @@ export class RegexTag extends TagsFilter {
      *
      * const t = TagUtils.Tag("a=")
      * t.asJson() // => "a="
+     *
+     * const t = TagUtils.Tag("a~i~b")
+     * t.asJson() // => "a~i~b"
+     *
+     * const t = TagUtils.Tag("service:bicycle:.*~~*")
+     * t.asJson() // => "service:bicycle:.*~~.+"
      */
     asJson(): TagConfigJson {
         const v = RegexTag.source(this.value, false)
+        const valueIsString = typeof this.value === "string"
+        const caseInvariant = typeof this.value !== "string" && this.value.ignoreCase
+        const invert = this.invert ? "!" : ""
         if (typeof this.key === "string") {
-            const oper = typeof this.value === "string" ? "=" : "~"
-            return `${this.key}${this.invert ? "!" : ""}${oper}${v}`
+            if (valueIsString) {
+                return `${this.key}${invert}=${v}`
+            }
+
+            if (!caseInvariant) {
+                return `${this.key}${invert}~${v}`
+            }
+            return `${this.key}${invert}~i~${v}`
         }
-        return `${this.key.source}${this.invert ? "!" : ""}~~${v}`
+
+        const key: string = RegexTag.source(this.key, false)
+        return `${key}${invert}~${caseInvariant ? "i~" : ""}~${v}`
     }
 
     isUsableAsAnswer(): boolean {

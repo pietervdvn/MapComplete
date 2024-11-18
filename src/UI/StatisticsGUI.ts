@@ -11,7 +11,7 @@ import BaseUIElement from "./BaseUIElement"
 import Title from "./Base/Title"
 import { FixedUiElement } from "./Base/FixedUiElement"
 import List from "./Base/List"
-import LayoutConfig from "../Models/ThemeConfig/LayoutConfig"
+import ThemeConfig from "../Models/ThemeConfig/ThemeConfig"
 import mcChanges from "../../src/assets/generated/themes/mapcomplete-changes.json"
 import SvelteUIElement from "./Base/SvelteUIElement"
 import Filterview from "./BigComponents/Filterview.svelte"
@@ -24,13 +24,13 @@ import { Feature } from "geojson"
 class StatsticsForOverviewFile extends Combine {
     constructor(homeUrl: string, paths: string[]) {
         paths = paths.filter((p) => !p.endsWith("file-overview.json"))
-        const layer = new LayoutConfig(<any>mcChanges, true).layers[0]
+        const layer = new ThemeConfig(<any>mcChanges, true).layers[0]
         const filteredLayer = new FilteredLayer(layer)
         const filterPanel = new Combine([
             new Title("Filters"),
             new SvelteUIElement(Filterview, { filteredLayer }),
         ])
-        filteredLayer.currentFilter.addCallbackAndRun(tf => {
+        filteredLayer.currentFilter.addCallbackAndRun((tf) => {
             console.log("Filters are", tf)
         })
         const downloaded = new UIEventSource<{ features: ChangeSetData[] }[]>([])

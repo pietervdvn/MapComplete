@@ -297,15 +297,13 @@ export default class NameSuggestionIndex {
                 return true
             }
 
-            if (
-                i.locationSet.include.some((c) => countries.indexOf(c) >= 0)
-            ) {
+            if (i.locationSet.include.some((c) => countries.indexOf(c) >= 0)) {
                 // We prefer the countries provided by lonlat2country, they are more precise and are loaded already anyway (cheap)
                 // Country might contain multiple countries, separated by ';'
                 return true
             }
 
-            if (i.locationSet.exclude?.some(c => countries.indexOf(c) >= 0)) {
+            if (i.locationSet.exclude?.some((c) => countries.indexOf(c) >= 0)) {
                 return false
             }
 
@@ -313,17 +311,19 @@ export default class NameSuggestionIndex {
                 return true
             }
 
-            const hasSpecial = i.locationSet.include?.some(i => i.endsWith(".geojson") || Array.isArray(i)) || i.locationSet.exclude?.some(i => i.endsWith(".geojson") || Array.isArray(i))
+            const hasSpecial =
+                i.locationSet.include?.some((i) => i.endsWith(".geojson") || Array.isArray(i)) ||
+                i.locationSet.exclude?.some((i) => i.endsWith(".geojson") || Array.isArray(i))
             if (!hasSpecial) {
                 return false
             }
             const key = i.locationSet.include?.join(";") + "-" + i.locationSet.exclude?.join(";")
             const fromCache = NameSuggestionIndex.resolvedSets[key]
-            const resolvedSet = fromCache ?? NameSuggestionIndex.loco.resolveLocationSet(i.locationSet)
+            const resolvedSet =
+                fromCache ?? NameSuggestionIndex.loco.resolveLocationSet(i.locationSet)
             if (!fromCache) {
                 NameSuggestionIndex.resolvedSets[key] = resolvedSet
             }
-
 
             if (resolvedSet) {
                 // We actually have a location set, so we can check if the feature is in it, by determining if our point is inside the MultiPolygon using @turf/boolean-point-in-polygon

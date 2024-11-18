@@ -46,95 +46,6 @@ There are also some technicalities in your theme to keep in mind:
 The import button can be tested in an unofficial theme by adding \`test=true\` or \`backend=osm-test\` as [URL-paramter](URL_Parameters.md).
 The import button will show up then. If in testmode, you can read the changeset-XML directly in the web console.
 In the case that MapComplete is pointed to the testing grounds, the edit will be made on https://master.apis.dev.openstreetmap.org`
-    private static knownKeys = [
-        "addExtraTags",
-        "and",
-        "calculatedTags",
-        "changesetmessage",
-        "clustering",
-        "color",
-        "condition",
-        "customCss",
-        "dashArray",
-        "defaultBackgroundId",
-        "description",
-        "descriptionTail",
-        "doNotDownload",
-        "enableAddNewPoints",
-        "enableBackgroundLayerSelection",
-        "enableGeolocation",
-        "enableLayers",
-        "enableMoreQuests",
-        "enableSearch",
-        "enableShareScreen",
-        "enableUserBadge",
-        "freeform",
-        "hideFromOverview",
-        "hideInAnswer",
-        "icon",
-        "iconOverlays",
-        "iconSize",
-        "id",
-        "if",
-        "ifnot",
-        "isShown",
-        "key",
-        "language",
-        "layers",
-        "lockLocation",
-        "maintainer",
-        "mappings",
-        "maxzoom",
-        "maxZoom",
-        "minNeededElements",
-        "minzoom",
-        "multiAnswer",
-        "name",
-        "or",
-        "osmTags",
-        "passAllFeatures",
-        "presets",
-        "question",
-        "render",
-        "roaming",
-        "roamingRenderings",
-        "rotation",
-        "shortDescription",
-        "socialImage",
-        "source",
-        "startLat",
-        "startLon",
-        "startZoom",
-        "tagRenderings",
-        "tags",
-        "then",
-        "title",
-        "titleIcons",
-        "type",
-        "version",
-        "wayHandling",
-        "widenFactor",
-        "width",
-    ]
-    private static extraKeys = [
-        "nl",
-        "en",
-        "fr",
-        "de",
-        "pt",
-        "es",
-        "name",
-        "phone",
-        "email",
-        "amenity",
-        "leisure",
-        "highway",
-        "building",
-        "yes",
-        "no",
-        "true",
-        "false",
-    ]
     private static injectedDownloads = {}
     private static _download_cache = new Map<
         string,
@@ -401,13 +312,13 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return newArr
     }
 
-    public static DedupT<T>(arr: T[]): T[]{
-        if(!arr){
+    public static DedupT<T>(arr: T[]): T[] {
+        if (!arr) {
             return arr
         }
         const items = []
         for (const item of arr) {
-            if(items.indexOf(item) < 0){
+            if (items.indexOf(item) < 0) {
                 items.push(item)
             }
         }
@@ -421,11 +332,11 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      * @param toKey
      * @constructor
      */
-    public static DedupOnId<T>(arr: T[], toKey: ((t:T) => string) ): T[]{
+    public static DedupOnId<T>(arr: T[], toKey: (t: T) => string): T[] {
         const uniq: T[] = []
         const seen = new Set<string>()
         for (const img of arr) {
-            if(!img){
+            if (!img) {
                 continue
             }
             const k = toKey(img)
@@ -942,28 +853,6 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return dict.get(k)
     }
 
-    public static UnMinify(minified: string): string {
-        if (minified === undefined || minified === null) {
-            return undefined
-        }
-
-        const parts = minified.split("|")
-        let result = parts.shift()
-        const keys = Utils.knownKeys.concat(Utils.extraKeys)
-
-        for (const part of parts) {
-            if (part == "") {
-                // Empty string => this was a || originally
-                result += "|"
-                continue
-            }
-            const i = part.charCodeAt(0)
-            result += '"' + keys[i] + '":' + part.substring(1)
-        }
-
-        return result
-    }
-
     public static injectJsonDownloadForTests(url: string, data) {
         Utils.injectedDownloads[url] = data
     }
@@ -1103,12 +992,16 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         headers?: Record<string, string>,
         dontCacheErrors: boolean = false
     ): Promise<T> {
-        const result = await Utils.downloadJsonCachedAdvanced(url, maxCacheTimeMs, headers, dontCacheErrors)
+        const result = await Utils.downloadJsonCachedAdvanced(
+            url,
+            maxCacheTimeMs,
+            headers,
+            dontCacheErrors
+        )
         if (result["content"]) {
             return result["content"]
         }
         throw result["error"]
-
     }
 
     public static async downloadJsonCachedAdvanced<T = object | []>(
@@ -1130,12 +1023,11 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             )
         Utils._download_cache.set(url, { promise, timestamp: new Date().getTime() })
         try {
-
-        return await promise
-        }catch (e) {
-                if(dontCacheErrors){
-                    Utils._download_cache.delete(url)
-                }
+            return await promise
+        } catch (e) {
+            if (dontCacheErrors) {
+                Utils._download_cache.delete(url)
+            }
             throw e
         }
     }
@@ -1333,7 +1225,6 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return withDistance.map((n) => n[0])
     }
 
-
     public static levenshteinDistance(str1: string, str2: string): number {
         const track: number[][] = Array(str2.length + 1)
             .fill(null)
@@ -1484,8 +1375,11 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return d
     }
 
-    public static asRecord<K extends string | number | symbol, V>(keys: K[], f: ((k: K) => V)): Record<K, V> {
-        const results = <Record<K, V>> {}
+    public static asRecord<K extends string | number | symbol, V>(
+        keys: K[],
+        f: (k: K) => V
+    ): Record<K, V> {
+        const results = <Record<K, V>>{}
         for (const key of keys) {
             results[key] = f(key)
         }
@@ -1630,7 +1524,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         const error = new Error("No error")
         const stack = error.stack.split("\n")
         stack.shift() // Remove "Error: No error"
-        const regex = /at (.*) \(([a-zA-Z0-9/.]+):([0-9]+):([0-9]+)\)/
+        const regex = /at (.*) \(([a-zA-Z0-9-/.]+):([0-9]+):([0-9]+)\)/
         const stackItem = stack[Math.abs(offset) + 1]
 
         let functionName: string
@@ -1642,7 +1536,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         if (matchWithFuncName) {
             ;[_, functionName, path, line, column] = matchWithFuncName
         } else {
-            const regexNoFuncName: RegExp = new RegExp("at ([a-zA-Z0-9/.]+):([0-9]+):([0-9]+)")
+            const regexNoFuncName: RegExp = new RegExp("at ([a-zA-Z0-9-/.]+):([0-9]+):([0-9]+)")
             ;[_, path, line, column] = stackItem.match(regexNoFuncName)
         }
 
@@ -1681,7 +1575,9 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      * Utils.simplifyStringForSearch(undefined) // => undefined
      */
     public static simplifyStringForSearch(str: string): string {
-        return Utils.RemoveDiacritics(str)?.toLowerCase()?.replace(/[^a-z0-9]/g, "")
+        return Utils.RemoveDiacritics(str)
+            ?.toLowerCase()
+            ?.replace(/[^a-z0-9]/g, "")
     }
 
     public static randomString(length: number): string {
@@ -1784,13 +1680,6 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return Utils.findParentWithScrolling(<HTMLBaseElement>element.parentElement)
     }
 
-    private static colorDiff(
-        c0: { r: number; g: number; b: number },
-        c1: { r: number; g: number; b: number }
-    ) {
-        return Math.abs(c0.r - c1.r) + Math.abs(c0.g - c1.g) + Math.abs(c0.b - c1.b)
-    }
-
     private static readonly _metrixPrefixes = ["", "k", "M", "G", "T", "P", "E"]
 
     /**
@@ -1825,16 +1714,12 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         }
         if (number < 250) {
             return 10 * Math.round(number / 10)
-
         }
         if (number < 500) {
             return 25 * Math.round(number / 25)
-
         }
         return 50 * Math.round(number / 50)
-
     }
-
 
     public static NoNullInplace<T>(items: T[]): T[] {
         for (let i = items.length - 1; i >= 0; i--) {
@@ -1874,7 +1759,6 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         }
     }
 
-
     private static emojiRegex = /[\p{Extended_Pictographic}🛰️]/u
 
     /**
@@ -1893,6 +1777,5 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      */
     public static isEmojiFlag(string: string) {
         return /[🇦-🇿]{2}/u.test(string) // flags, see https://stackoverflow.com/questions/53360006/detect-with-regex-if-emoji-is-country-flag
-
     }
 }

@@ -72,7 +72,7 @@
   ShowDataLayer.showMultipleLayers(
     mlmap,
     new StaticFeatureSource(featuresToShow),
-    state.layout.layers,
+    state.theme.layers,
     { zoomToFeatures: true }
   )
 </script>

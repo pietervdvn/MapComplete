@@ -9,7 +9,7 @@ import { FeatureSource, IndexedFeatureSource } from "../../FeatureSource/Feature
 import StaticFeatureSource from "../../FeatureSource/Sources/StaticFeatureSource"
 import CreateNewNodeAction from "./CreateNewNodeAction"
 import CreateNewWayAction from "./CreateNewWayAction"
-import LayoutConfig from "../../../Models/ThemeConfig/LayoutConfig"
+import ThemeConfig from "../../../Models/ThemeConfig/ThemeConfig"
 import FullNodeDatabaseSource from "../../FeatureSource/TiledFeatureSource/FullNodeDatabaseSource"
 import { Position } from "geojson"
 
@@ -69,7 +69,7 @@ export default class CreateWayWithPointReuseAction
      */
     private readonly _coordinateInfo: CoordinateInfo[]
     private readonly _state: {
-        layout: LayoutConfig
+        theme: ThemeConfig
         changes: Changes
         indexedFeatures: IndexedFeatureSource
         fullNodeDatabase?: FullNodeDatabaseSource
@@ -80,7 +80,7 @@ export default class CreateWayWithPointReuseAction
         tags: Tag[],
         coordinates: Position[],
         state: {
-            layout: LayoutConfig
+            theme: ThemeConfig
             changes: Changes
             indexedFeatures: IndexedFeatureSource
             fullNodeDatabase?: FullNodeDatabaseSource
@@ -203,7 +203,7 @@ export default class CreateWayWithPointReuseAction
     }
 
     public async CreateChangeDescriptions(changes: Changes): Promise<ChangeDescription[]> {
-        const theme = this._state?.layout?.id
+        const theme = this._state?.theme?.id
         const allChanges: ChangeDescription[] = []
         const nodeIdsToUse: { lat: number; lon: number; nodeId?: number }[] = []
         for (let i = 0; i < this._coordinateInfo.length; i++) {

@@ -6,7 +6,9 @@
     "render": {
       "en": "Summary",
       "de": "Übersicht",
-      "nl": "Samenvatting"
+      "nl": "Samenvatting",
+      "cs": "Souhrn",
+      "es": "Resumen"
     }
   },
   "pointRendering": [

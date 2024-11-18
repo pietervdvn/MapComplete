@@ -2,7 +2,9 @@
   "id": "search",
   "description": {
     "en": "Priviliged layer showing the search results",
-    "de": "Priorisierte Ebene, die Suchergebnissen anzeigt"
+    "de": "Priorisierte Ebene, die Suchergebnissen anzeigt",
+    "cs": "Soukromá vrstva zobrazující výsledky hledání",
+    "es": "Capa privilegiada que muestra los resultados de la búsqueda"
   },
   "source": "special",
   "title": "{display_name}",
@@ -11,7 +13,9 @@
       "id": "intro",
       "render": {
         "en": "Search result",
-        "de": "Suchergebnis"
+        "de": "Suchergebnis",
+        "cs": "Výsledek hledání",
+        "es": "Resultado de búsqueda"
       }
     },
     {

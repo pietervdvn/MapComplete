@@ -18,7 +18,7 @@
   export let state: SpecialVisualizationState
 
   const t = Translations.t.general.attribution
-  const layoutToUse = state.layout
+  const layoutToUse = state.theme
 
   let maintainer: Translation = undefined
   if (layoutToUse.credits !== undefined && layoutToUse.credits !== "") {
@@ -122,7 +122,7 @@
   {/if}
   {#if maintainer !== undefined}
     <div class="flex items-center gap-x-2">
-      <Marker icons={state.layout.icon} size="h-8 w-8 shrink-0" />
+      <Marker icons={state.theme.icon} size="h-8 w-8 shrink-0" />
       <Tr t={maintainer} />
     </div>
   {/if}

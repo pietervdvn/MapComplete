@@ -543,7 +543,7 @@
                         "then": "Toto dílo slouží také jako památník"
                     },
                     "1": {
-                        "then": "Toto dílo neslouží jako lavička"
+                        "then": "Toto umělecké dílo neslouží jako památník"
                     }
                 },
                 "question": "Slouží toto dílo jako památník?"
@@ -1219,8 +1219,38 @@
                 "freeform": {
                     "placeholder": "Název započítávané lokality"
                 },
-                "question": "Jak se jmenuje započítávaná lokalita?"
+                "question": "Jak se jmenuje započítávaná lokalita?",
+                "render": "Název započítávaného místa: {name}"
+            },
+            "ref": {
+                "freeform": {
+                    "placeholder": "Referenční číslo počítadla"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Toto počítadlo nemá referenční číslo"
+                    }
+                },
+                "question": "Jaké je referenční číslo tohoto počítadla?",
+                "render": "Referenční číslo počítadla: {ref}"
+            },
+            "start_date": {
+                "freeform": {
+                    "placeholder": "Datum spuštění počítadla"
+                },
+                "question": "Kdy toto počítadlo začalo počítat?",
+                "render": "Toto počítadlo se začalo počítat dne {start_date}"
+            },
+            "website": {
+                "freeform": {
+                    "placeholder": "Webové stránky počítadla"
+                },
+                "question": "Existuje webová stránka tohoto počítadla jízdních kol?",
+                "render": "Webové stránky počítadla: <a href='{website}'>{website}</a>"
             }
+        },
+        "title": {
+            "render": "Počítadlo jízdních kol"
         }
     },
     "bicycle_library": {
@@ -1318,6 +1348,9 @@
                     },
                     "7": {
                         "then": "Zde si můžete půjčit cyklistické přilby"
+                    },
+                    "8": {
+                        "then": "Nákladní kola si můžete půjčit zde"
                     }
                 },
                 "question": "Jaká jízdní kola a příslušenství se zde půjčují?",
@@ -1514,7 +1547,7 @@
                         "then": "Přístup je omezen na členy školy, společnosti nebo organizace"
                     },
                     "3": {
-                        "then": "Přístup je omezen na členy školy, společnosti nebo organizace"
+                        "then": "Soukromé parkoviště pro kola, které není nikdy přístupné veřejnosti, a to ani za členský poplatek"
                     }
                 },
                 "question": "Kdo může parkoviště pro jízdní kola využívat?",
@@ -1524,6 +1557,12 @@
                 "mappings": {
                     "0": {
                         "then": "Stojany"
+                    },
+                    "1": {
+                        "then": "Stojan s bočními smyčkami"
+                    },
+                    "10": {
+                        "then": "Skloněný držák s možností použití zámku přes očko. Sedlovou trubku lze za stojan uchytit pomocí kotvy"
                     },
                     "2": {
                         "then": "Stojan na kola / smyčky"
@@ -1545,16 +1584,25 @@
                     },
                     "8": {
                         "then": "Plocha na zemi označená pro parkování jízdních kol"
+                    },
+                    "9": {
+                        "then": "Skříňka - kola jsou uzavřena zcela samostatně nebo s několika koly dohromady. Skříňka je příliš malá na to, aby se do ní vešla stojící osoba.."
                     }
                 },
                 "question": "Jaký je typ tohoto parkoviště pro jízdní kola?",
                 "render": "Jde o typ parkoviště pro jízdní kola: {bicycle_parking}"
             },
             "Capacity": {
-                "question": "Kolik jízdních kol se vejde na toto parkoviště (včetně případných nákladních kol)?",
+                "question": "Kolik jízdních kol se vejde na toto parkoviště?",
+                "questionHint": "Patří sem běžná jízdní kola, nákladní kola, elektrokola, ...",
                 "render": "Místo pro {capacity} kol"
             },
             "Cargo bike capacity?": {
+                "mappings": {
+                    "0": {
+                        "then": "Nejsou zde žádná vyhrazená místa pro nákladní kola nebo zde není parkování nákladních kol povoleno"
+                    }
+                },
                 "question": "Kolik nákladních jízdních kol se vejde do tohoto parkoviště pro jízdní kola?",
                 "render": "Toto parkoviště je vhodné pro {capacity:cargo_bike} nákladních kol"
             },
@@ -1567,7 +1615,7 @@
                         "then": "Toto parkoviště má vyhrazená (oficiální) místa pro nákladní kola."
                     },
                     "2": {
-                        "then": "Není povoleno parkovat nákladní kola"
+                        "then": "Parkovat nákladní kola není povoleno nebo nejsou k dispozici žádná místa pro nákladní kola"
                     }
                 },
                 "question": "Má toto parkoviště místa pro nákladní kola?"
@@ -1599,6 +1647,41 @@
                     }
                 },
                 "question": "Jaké je relativní umístění tohoto parkoviště pro jízdní kola?"
+            },
+            "charge": {
+                "question": "Kolik stojí zaparkování kola na tomto místě?",
+                "questionHint": "To je částka, která se účtuje za jedno jízdní kolo",
+                "render": "Parkování kola stojí {charge}"
+            },
+            "fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Za použití tohoto parkoviště pro kola se musí <b>platit</b>"
+                    },
+                    "1": {
+                        "then": "Bezplatné použití"
+                    }
+                },
+                "question": "Jsou tato parkoviště pro jízdní kola zdarma?"
+            },
+            "maxstay": {
+                "question": "Jaká je maximální povolená doba parkování?",
+                "questionHint": "Pokud je kolo zaparkované delší dobu, může ho provozovatel odstranit",
+                "render": "Kolo zde může být zaparkováno maximálně po dobu {canonical(maxstay)}"
+            },
+            "operator": {
+                "question": "Kdo se stará o parkování jízdních kol?",
+                "render": "Toto parkoviště pro jízdní kola spravuje {operator}"
+            },
+            "operator_email": {
+                "question": "Jaká je e-mailová adresa provozovatele tohoto parkoviště pro jízdní kola?"
+            },
+            "operator_phone": {
+                "question": "Jaké je telefonní číslo na provozovatele tohoto parkoviště pro jízdní kola?",
+                "questionHint": "Na toto číslo je možné volat v případě problémů, např. při odstraňování neudržovaných jízdních kol"
+            },
+            "operator_website": {
+                "question": "Jaké je číslo internetové stránky provozovatele tohoto parkoviště pro jízdní kola?"
             }
         },
         "title": {
@@ -1952,6 +2035,24 @@
             "render": "Místo pozorování ptáků"
         }
     },
+    "brothel": {
+        "description": "Zařízení zaměřené speciálně na prostituci. ",
+        "name": "Nevěstince",
+        "presets": {
+            "0": {
+                "title": "nevěstinec"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "question": "Jak se jmenuje tento nevěstinec?",
+                "render": "Tento nevěstinec se jmenuje <b>{name}</b>"
+            }
+        },
+        "title": {
+            "render": "Nevěstinec"
+        }
+    },
     "cafe_pub": {
         "deletion": {
             "extraDeleteReasons": {
@@ -2013,6 +2114,15 @@
             "mappings": {
                 "0": {
                     "then": "<i>{name}</i>"
+                },
+                "1": {
+                    "then": "Bar"
+                },
+                "2": {
+                    "then": "Kavárna"
+                },
+                "3": {
+                    "then": "Noční klub"
                 }
             },
             "render": "Hospoda"
@@ -2642,10 +2752,10 @@
                     "1": {
                         "then": "Tyto hodiny jsou namontovány na stěně"
                     },
-                    "2": {
+                    "3": {
                         "then": "Tyto hodiny jsou součástí billboardu"
                     },
-                    "3": {
+                    "4": {
                         "then": "Tyto hodiny jsou na zemi"
                     }
                 },
@@ -2755,17 +2865,6 @@
                     }
                 },
                 "question": "Má tento přechod uprostřed ostrůvek?"
-            },
-            "crossing-is-zebra": {
-                "mappings": {
-                    "0": {
-                        "then": "Toto je zebra přechod"
-                    },
-                    "1": {
-                        "then": "Tohle není zebra přechod"
-                    }
-                },
-                "question": "Jedná se o zebra přechod?"
             },
             "crossing-minimap": {
                 "mappings": {
@@ -5005,7 +5104,48 @@
         }
     },
     "icons": {
-        "description": "Vrstva sloužící jako knihovna pro ikony-značky, zejména pro zobrazení jako odznak vedle bodu zájmu"
+        "description": "Vrstva sloužící jako knihovna pro ikony-značky, zejména pro zobrazení jako odznak vedle bodu zájmu",
+        "tagRenderings": {
+            "osmlink": {
+                "mappings": {
+                    "1": {
+                        "then": {
+                            "special": {
+                                "arialabel": "Otevřít na openstreetmap.org"
+                            }
+                        }
+                    },
+                    "2": {
+                        "then": {
+                            "special": {
+                                "arialabel": "Otevřít na openstreetmap.org"
+                            }
+                        }
+                    }
+                },
+                "render": {
+                    "special": {
+                        "arialabel": "Otevřít na openstreetmap.org"
+                    }
+                }
+            },
+            "phonelink": {
+                "mappings": {
+                    "0": {
+                        "then": {
+                            "special": {
+                                "arialabel": "telefon"
+                            }
+                        }
+                    }
+                },
+                "render": {
+                    "special": {
+                        "arialabel": "telefon"
+                    }
+                }
+            }
+        }
     },
     "indoors": {
         "description": "Základní mapování interiérů: zobrazuje obrysy místností",
@@ -5350,7 +5490,7 @@
                         "then": "Mapa zobrazující vesnici nebo město"
                     },
                     "3": {
-                        "then": " Mapa města"
+                        "then": "Mapa města"
                     },
                     "4": {
                         "then": "Mapa celého regionu s několika městy a vesnicemi"
@@ -5817,6 +5957,11 @@
                 }
             },
             "render": "Poznámka"
+        },
+        "titleIcons": {
+            "0": {
+                "ariaLabel": "Zobrazit na OpenStreetMap.org"
+            }
         }
     },
     "observation_tower": {
@@ -7532,6 +7677,14 @@
             "render": "Škola <i>{name}</i>"
         }
     },
+    "search": {
+        "description": "Soukromá vrstva zobrazující výsledky hledání",
+        "tagRenderings": {
+            "intro": {
+                "render": "Výsledek hledání"
+            }
+        }
+    },
     "selected_element": {
         "description": "Zvýrazní aktuálně vybraný prvek. Přepište tuto vrstvu, aby měla různé barvy"
     },
@@ -7589,7 +7742,7 @@
         "name": "Obchod",
         "presets": {
             "0": {
-                "description": "Přidat nový obchod",
+                "description": "Později můžete zadat, co tento obchod prodává.",
                 "title": "obchod"
             }
         },
@@ -8299,6 +8452,11 @@
             "render": "Pouliční lampa"
         }
     },
+    "summary": {
+        "title": {
+            "render": "Souhrn"
+        }
+    },
     "surveillance_camera": {
         "description": "Tato vrstva zobrazuje sledovací kamery a umožňuje přispěvateli aktualizovat informace a přidávat nové kamery",
         "name": "Bezpečnostní kamery",
@@ -8591,6 +8749,18 @@
             }
         },
         "tagRenderings": {
+            "gender_segregated": {
+                "mappings": {
+                    "0": {
+                        "then": "K dispozici je oddělený, označený prostor pro muže a ženy"
+                    },
+                    "1": {
+                        "then": "Neexistuje žádný oddělený, označený prostor pro muže a ženy"
+                    }
+                },
+                "question": "Jsou tyto toalety rozděleny podle pohlaví?",
+                "questionHint": "Existují samostatné stánky nebo oddělené prostory pro muže a ženy a jsou jako takové označeny?"
+            },
             "opening_hours_24_7": {
                 "override": {
                     "question": "Kdy jsou tyto toalety otevřeny?"
@@ -8620,16 +8790,16 @@
             "toilet-changing_table:location": {
                 "mappings": {
                     "0": {
-                        "then": "Přebalovací pult je na dámské toaletě. "
+                        "then": "Přebalovací pult je na dámské toaletě"
                     },
                     "1": {
-                        "then": "Přebalovací pult je na pánské toaletě. "
+                        "then": "Přebalovací pult je na pánské toaletě"
                     },
                     "2": {
-                        "then": "Přebalovací pult je na toaletě pro vozíčkáře. "
+                        "then": "Přebalovací pult je na toaletě pro vozíčkáře"
                     },
                     "3": {
-                        "then": "Přebalovací pult je ve vyhrazené místnosti. "
+                        "then": "Přebalovací pult je ve vyhrazené místnosti"
                     }
                 },
                 "question": "Kde je umístěn přebalovací pult?",
@@ -9229,6 +9399,20 @@
     "usersettings": {
         "description": "Speciální vrstva, která není určena k zobrazení na mapě, ale slouží k nastavení uživatelských nastavení",
         "tagRenderings": {
+            "a11y-features": {
+                "mappings": {
+                    "0": {
+                        "then": "Povolení funkcí přístupnosti při použití kláves se šipkami k navigaci na mapě"
+                    }
+                }
+            },
+            "add-new-feature": {
+                "mappings": {
+                    "4": {
+                        "then": "Po kliknutí pravým tlačítkem myši nebo dlouhém stisknutí mapy se zobrazí značka, kam lze přidat nový prvek. Kromě toho se vlevo dole zobrazí tlačítko"
+                    }
+                }
+            },
             "all-questions-at-once": {
                 "mappings": {
                     "0": {
@@ -9319,7 +9503,7 @@
             "language_picker": {
                 "mappings": {
                     "0": {
-                        "then": "Jazyk byl nastaven pomocí parametru URL a uživatel jej nemůže nastavit.²"
+                        "then": "Jazyk byl nastaven pomocí parametru URL a uživatel jej nemůže nastavit."
                     }
                 }
             },
@@ -9331,22 +9515,15 @@
                     }
                 }
             },
-            "picture-license": {
+            "more_privacy": {
                 "mappings": {
                     "0": {
-                        "then": "Pořízené fotografie budou licencovány pod <b>CC0</b> a přidány do veřejné domény. To znamená, že kdokoli může vaše snímky použít k jakémukoli účelu. <span class='subtle'>Toto je výchozí volba.</span>"
+                        "then": "Při provádění změn v OpenStreetMap neuvádějte, jak daleko jste byli od změněných objektů."
                     },
                     "1": {
-                        "then": "Pořízené fotografie budou licencovány pod <b>CC0</b> a přidány do veřejné domény. To znamená, že kdokoli může vaše snímky použít k jakémukoli účelu."
-                    },
-                    "2": {
-                        "then": "Pořízené fotografie budou licencovány pod <b>CC-BY 4.0</b>, což vyžaduje, aby vás uvedl každý, kdo použije vaší fotku"
-                    },
-                    "3": {
-                        "then": "Pořízené fotografie budou licencovány pod <b>CC-BY-SA 4.0</b>, což vyžaduje, aby vás uvedl každý, kdo použije vaší fotku a že odvozené fotky musí být dále sdíleny se stejnou licencí."
+                        "then": "Při provádění změn v OpenStreetMap zhruba uveďte, jak daleko jste byli od změněných objektů. To pomůže ostatním přispěvatelům pochopit, jak jste změnu provedli"
                     }
-                },
-                "question": "Pod jakou licencí chcete své fotografie zveřejnit?"
+                }
             },
             "profile-description": {
                 "mappings": {
@@ -9358,6 +9535,14 @@
                         }
                     }
                 }
+            },
+            "scalebar": {
+                "mappings": {
+                    "1": {
+                        "then": "Skrytí panelu měřítka"
+                    }
+                },
+                "question": "Má být na mapě zobrazeno měřítko?"
             },
             "settings-link": {
                 "render": {
@@ -9401,6 +9586,19 @@
                 },
                 "question": "Zobrazit nezpracované/raw tagy OpenStreetMap?",
                 "questionHint": "<b>Tagy</b> jsou atributy, které má každý element. Jedná se o technické údaje, které jsou uloženy v databázi. K úpravám pomocí MapComplete tyto informace nepotřebujete, ale pokročilí uživatelé by je mohli chtít použít jako referenci."
+            },
+            "sync-visited-themes": {
+                "mappings": {
+                    "0": {
+                        "then": "Uložit navštívené tematické mapy a synchronizovat je prostřednictvím openstreetmap.org. OpenStreetMap a všechny aplikace, které používáte, mohou tuto historii vidět"
+                    }
+                }
+            },
+            "title-editing": {
+                "render": "<h3>Úprava nastavení</h3>"
+            },
+            "title-privacy-legal": {
+                "render": "<h3>Soukromí a právní záležitosti</h3>"
             },
             "translation-completeness": {
                 "mappings": {

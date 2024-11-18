@@ -27,12 +27,14 @@ export default class GenericImageProvider extends ImageProvider {
             return undefined
         }
 
-        return [{
-            key: key,
-            url: value,
-            provider: this,
-            id: value,
-        }]
+        return [
+            {
+                key: key,
+                url: value,
+                provider: this,
+                id: value,
+            },
+        ]
     }
 
     SourceIcon() {

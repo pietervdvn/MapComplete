@@ -1,13 +1,13 @@
 import { DesugaringStep } from "./Conversion"
-import { LayoutConfigJson } from "../Json/LayoutConfigJson"
+import { ThemeConfigJson } from "../Json/ThemeConfigJson"
 import { AvailableRasterLayers } from "../../RasterLayers"
 import { ExtractImages } from "./FixImages"
 import { ConversionContext } from "./ConversionContext"
-import LayoutConfig from "../LayoutConfig"
+import ThemeConfig from "../ThemeConfig"
 import { Utils } from "../../../Utils"
 import { DetectDuplicatePresets, DoesImageExist, ValidateLanguageCompleteness } from "./Validation"
 
-export class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
+export class ValidateTheme extends DesugaringStep<ThemeConfigJson> {
     /**
      * The paths where this layer is originally saved. Triggers some extra checks
      * @private
@@ -33,8 +33,8 @@ export class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
         }
     }
 
-    convert(json: LayoutConfigJson, context: ConversionContext): LayoutConfigJson {
-        const theme = new LayoutConfig(json, this._isBuiltin)
+    convert(json: ThemeConfigJson, context: ConversionContext): ThemeConfigJson {
+        const theme = new ThemeConfig(json, this._isBuiltin)
         {
             // Legacy format checks
             if (this._isBuiltin) {

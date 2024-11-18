@@ -48,8 +48,11 @@ class PointRenderingLayer {
         this._onClick = onClick
         this._selectedElement = selectedElement
         const self = this
-        if(!features?.features){
-            throw "Could not setup a PointRenderingLayer; features?.features is undefined/null. The layer is "+layer.id
+        if (!features?.features) {
+            throw (
+                "Could not setup a PointRenderingLayer; features?.features is undefined/null. The layer is " +
+                layer.id
+            )
         }
         features.features?.addCallbackAndRunD((features) => self.updateFeatures(features))
         visibility?.addCallbackAndRunD((visible) => {
@@ -163,7 +166,7 @@ class PointRenderingLayer {
         })
 
         if (this._onClick) {
-            el.addEventListener("click",  (ev)=> {
+            el.addEventListener("click", (ev) => {
                 ev.preventDefault()
                 this._onClick(feature)
                 // Workaround to signal the MapLibreAdaptor to ignore this click

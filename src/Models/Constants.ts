@@ -27,7 +27,7 @@ export default class Constants {
         "favourite",
         "summary",
         "search",
-        "geocoded_image"
+        "geocoded_image",
     ] as const
     /**
      * Special layers which are not included in a theme by default
@@ -50,12 +50,17 @@ export default class Constants {
         ...Constants.no_include,
     ] as const
 
-    public static panoramax: { url: string, token: string } = packagefile.config.panoramax
+    public static panoramax: {
+        url: string
+        token: string
+        sequence: string
+        testsequence: string
+    } = packagefile.config.panoramax
 
     // The user journey states thresholds when a new feature gets unlocked
     public static userJourney = {
         moreScreenUnlock: 1,
-        personalLayoutUnlock: 5,
+        personalThemeUnlock: 5,
         historyLinkVisible: 10,
         deletePointsOfOthersUnlock: 20,
         tagsVisibleAt: 25,
@@ -63,7 +68,6 @@ export default class Constants {
 
         mapCompleteHelpUnlock: 50,
         themeGeneratorReadOnlyUnlock: 50,
-        themeGeneratorFullUnlock: 500,
         addNewPointWithUnreadMessagesUnlock: 500,
 
         importHelperUnlock: 5000,

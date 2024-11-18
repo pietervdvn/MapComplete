@@ -4,7 +4,7 @@
     "render": {
       "en": "Ghost Sign",
       "de": "Geisterzeichen",
-      "es": "Publicidad en una fachada",
+      "es": "Letrero fantasma",
       "ca": "Rètols fantasma",
       "cs": "Nápisy na zdech"
     }
@@ -12,14 +12,14 @@
   "description": {
     "en": "Layer showing disused signs on buildings",
     "de": "Ebene, die ungenutzte Zeichen auf Gebäuden zeigt",
-    "es": "Capa que muestra carteles en desuso en edificios",
+    "es": "Capa que muestra letreros en desuso en edificios",
     "ca": "Capa que mostra rètols en desús dels edificis",
     "cs": "Vrstva zobrazující nepoužívané nápisy na budovách"
   },
   "name": {
     "en": "Ghost Signs",
     "de": "Geisterzeichen",
-    "es": "Señales fantasma"
+    "es": "Letreros fantasma"
   },
   "source": {
     "osmTags": {
@@ -44,8 +44,9 @@
       "question": {
         "en": "What is the text on the sign?",
         "de": "Was ist der Text auf dem Schild?",
-        "es": "¿Cuál es el texto del cartel?",
-        "ca": "Quin és el text del rètol?"
+        "es": "¿Cuál es el texto en el letrero?",
+        "ca": "Quin és el text del rètol?",
+        "uk": "Який текст на вивісці?"
       },
       "freeform": {
         "key": "inscription",
@@ -53,14 +54,16 @@
         "placeholder": {
           "en": "Text on the sign",
           "de": "Text auf dem Schild",
-          "es": "Texto en el cartel",
-          "ca": "Text en el rètol"
+          "es": "Texto en el letrero",
+          "ca": "Text en el rètol",
+          "uk": "Текст на табличці"
         }
       },
       "render": {
         "en": "The text on the sign is: {inscription}",
         "de": "Der Text auf dem Schild ist: {inscription}",
-        "es": "El texto del cartel es: {inscription}"
+        "es": "El texto en el letrero es: {inscription}",
+        "uk": "Текст на табличці: {inscription}"
       }
     },
     {
@@ -68,7 +71,7 @@
       "question": {
         "en": "For what business was this sign made?",
         "de": "Für welches Unternehmen wurde dieses Schild angefertigt?",
-        "es": "¿Para qué negocio se hizo este cartel?",
+        "es": "¿Para qué negocio se hizo este letrero?",
         "ca": "Per a quin negoci es va fer aquest rètol?",
         "cs": "Pro jaký účel byla tato značka vyrobena?"
       },
@@ -78,7 +81,7 @@
         "placeholder": {
           "en": "Business name",
           "de": "Unternehmensname",
-          "es": "Nombre comercial",
+          "es": "Nombre del negocio",
           "it": "Nome dell'attività",
           "ca": "Nom comercial",
           "cs": "Název firmy"
@@ -87,7 +90,7 @@
       "render": {
         "en": "This sign was made for: {brand}",
         "de": "Dieses Schild wurde gemacht für: {brand}",
-        "es": "Este cartel se hizo para: {brand}",
+        "es": "Este letrero se hizo para: {brand}",
         "ca": "El rètol es va fer per a: {brand}",
         "cs": "Tato cedule byla vyrobena pro: {brand}"
       }
@@ -121,7 +124,7 @@
       "title": {
         "en": "a ghost sign",
         "de": "ein Geisterzeichen",
-        "es": "una señal fantasma",
+        "es": "un letrero fantasma",
         "ca": "un rètol fantasma",
         "cs": "nápis na zdi"
       },

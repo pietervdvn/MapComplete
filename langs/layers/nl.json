@@ -994,6 +994,17 @@
             }
         },
         "tagRenderings": {
+            "automated": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit is een handmatig fietsschoonmaakpunt"
+                    },
+                    "1": {
+                        "then": "Dit is een automatisch fietsschoonmaakpunt"
+                    }
+                },
+                "question": "Is dit fietsschoonmaakpunt geautomatiseerd?"
+            },
             "bike_cleaning-charge": {
                 "mappings": {
                     "0": {
@@ -1017,6 +1028,17 @@
                 },
                 "question": "Hoeveel kost het gebruik van het fietsschoonmaakpunt?",
                 "render": "Het gebruik van het fietsschoonmaakpunt kost {service:bicycle:cleaning:charge}"
+            },
+            "self_service": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit fietsschoonmaakpunt is zelfbediening"
+                    },
+                    "1": {
+                        "then": "Dit fietsschoonmaakpunt wordt bediend door aanwezig personeel"
+                    }
+                },
+                "question": "Is dit fietsschoonmaakpunt zelfbediening?"
             }
         },
         "title": {
@@ -1049,7 +1071,7 @@
                         "then": "Private fietsenstalling van een school, een bedrijf, ..."
                     },
                     "3": {
-                        "then": "Private fietsenstalling van een school, een bedrijf, ..."
+                        "then": "Private fietsenstalling die niet voor het grote publiek toegankelijk is (dus ook niet met bv. een abonnement)"
                     }
                 },
                 "question": "Wie mag er deze fietsenstalling gebruiken?",
@@ -1062,6 +1084,9 @@
                     },
                     "1": {
                         "then": "Rek met zijbeugel"
+                    },
+                    "10": {
+                        "then": "Een aanleunbeugel met klem waarbij je de zadelbuis in een anker kan vastklikken. Er is meestal een oog om een slot door te steken"
                     },
                     "2": {
                         "then": "Wielrek/lussen"
@@ -2659,6 +2684,10 @@
             "1": {
                 "description": "Een publiekelijk zichtbare klok aan een muur",
                 "title": "een klok aan een muur"
+            },
+            "2": {
+                "description": "Een publiekelijk zichtbare klok rechtstreeks bevestigd aan een muur",
+                "title": "een klok aan een muur, rechtstreeks bevestigd aan een muur"
             }
         },
         "tagRenderings": {
@@ -2739,18 +2768,34 @@
                 },
                 "question": "Toont deze klok ook de luchtvochtigheid?"
             },
+            "indoor": {
+                "override": {
+                    "mappings": {
+                        "0": {
+                            "then": "Deze klok is binnen"
+                        },
+                        "1": {
+                            "then": "Deze klok is buiten"
+                        }
+                    },
+                    "question": "Is deze klok binnen?"
+                }
+            },
             "support": {
                 "mappings": {
                     "0": {
                         "then": "Deze klok is bevestigd aan een paal"
                     },
                     "1": {
-                        "then": "Deze klok is bevestigd aan een muur"
+                        "then": "Deze klok is bevestigd aan een muur, meestal met een steun loodrecht op de muur"
                     },
                     "2": {
-                        "then": "Deze klok is onderdeel van een reclamebord"
+                        "then": "Deze klok is rechtstreeks aan een muur bevestigd"
                     },
                     "3": {
+                        "then": "Deze klok is onderdeel van een reclamebord"
+                    },
+                    "4": {
                         "then": "Deze klok staat op de grond"
                     }
                 },
@@ -2850,17 +2895,6 @@
                 },
                 "question": "Heeft deze oversteekplaats een verkeerseiland in het midden?"
             },
-            "crossing-is-zebra": {
-                "mappings": {
-                    "0": {
-                        "then": "Dit is een zebrapad"
-                    },
-                    "1": {
-                        "then": "Dit is geen zebrapad"
-                    }
-                },
-                "question": "Is dit een zebrapad?"
-            },
             "crossing-minimap": {
                 "mappings": {
                     "0": {
@@ -2943,6 +2977,57 @@
                     }
                 },
                 "question": "Heeft dit verkeerslicht een element dat trilt om te helpen bij het oversteken? (meestal onderaan de oversteekknop geplaatst)"
+            },
+            "markings": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze oversteekplaats heeft geen markeringen"
+                    },
+                    "1": {
+                        "then": "Deze oversteekplaats heeft een zebramarkering"
+                    },
+                    "10": {
+                        "then": "Deze oversteekplaats heeft een zebramarkering in afwisselende kleuren"
+                    },
+                    "11": {
+                        "then": "Deze oversteekplaats heeft een dubbele zebramarkering"
+                    },
+                    "12": {
+                        "then": "Deze oversteekplaats heeft pictogrammen op de weg"
+                    },
+                    "13": {
+                        "then": "Deze oversteekplaats heeft lijnen aan beide kanten van de oversteekplaats, met strepen die ze verbinden, met een onderbreking van elke streep"
+                    },
+                    "14": {
+                        "then": "Deze oversteekplaats heeft dubbele lijnen aan beide kanten van de oversteekplaats"
+                    },
+                    "2": {
+                        "then": "Deze oversteekplaats heeft markeringen van een onbekend type"
+                    },
+                    "3": {
+                        "then": "Deze oversteekplaats heeft lijnen aan beide kanten van de oversteekplaats"
+                    },
+                    "4": {
+                        "then": "Deze oversteekplaats heeft lijnen aan beide kanten van de oversteekplaats, met strepen die ze verbinden"
+                    },
+                    "5": {
+                        "then": "Deze oversteekplaats heeft onderbroken lijnen aan beide kanten van de oversteekplaats"
+                    },
+                    "6": {
+                        "then": "Deze oversteekplaats heeft stippellijnen aan beide kanten van de oversteekplaats"
+                    },
+                    "7": {
+                        "then": "Deze oversteekplaats is gemarkeerd door een anders gekleurd wegdek"
+                    },
+                    "8": {
+                        "then": "Deze oversteekplaats heeft lijnen aan beide kanten van de oversteekplaats, met schuine strepen die ze verbinden"
+                    },
+                    "9": {
+                        "then": "Deze oversteekplaats heeft zebramarkeringen met een onderbreking van elke streep"
+                    }
+                },
+                "question": "Wat voor markering heeft deze oversteekplaats?",
+                "render": "Deze oversteekplaats heeft {crossing:markings} markeringen"
             }
         },
         "title": {
@@ -3290,7 +3375,7 @@
             "incline": {
                 "mappings": {
                     "0": {
-                        "then": "De straat hier is (waarschijnlijk) zonder helling"
+                        "then": "De straat heeft hier (waarschijnlijk) geen helling"
                     }
                 }
             },
@@ -6299,6 +6384,9 @@
         "presets": {
             "0": {
                 "title": "een brievenbus"
+            },
+            "1": {
+                "title": "een brievenbus tegen een muur"
             }
         },
         "title": {
@@ -6685,6 +6773,17 @@
             "email": {
                 "editButtonAriaLabel": "Pas emailadres aan",
                 "question": "Wat is het e-mailadres van {title()}?"
+            },
+            "indoor": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit object bevindt zich binnen"
+                    },
+                    "1": {
+                        "then": "Dit object bevindt zich buiten"
+                    }
+                },
+                "question": "Bevindt dit object zich binnen?"
             },
             "induction-loop": {
                 "mappings": {
@@ -9228,23 +9327,6 @@
                         "then": "Dit thema ligt gevoelig. Wijzigingen aan objecten zullen niet aangeven of je in de buurt was."
                     }
                 }
-            },
-            "picture-license": {
-                "mappings": {
-                    "0": {
-                        "then": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC0</b>-licentie en dus aan het publieke domein toegevoegd worden. Dit betekent dat iedereen je afbeeldingen kan gebruiken voor elk mogelijks gebruik. <span class='subtle'>Dit is de standaard-instelling</span>"
-                    },
-                    "1": {
-                        "then": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC0</b>-licentie en dus aan het publieke domein toegevoegd worden. Dit betekent dat iedereen je afbeeldingen kan gebruiken voor elk mogelijks gebruik."
-                    },
-                    "2": {
-                        "then": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC-BY 4.0</b>-licentie. Dit betekent dat iedereen je afbeelding mag gebruiken voor elke toepassing mits het vermelden van je naam"
-                    },
-                    "3": {
-                        "then": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC-BY-SA 4.0</b>-licentie. Dit betekent dat iedereen je afbeelding mag gebruiken voor elke toepassing mits het vermelden van je naam en dat afgeleide werken van je afbeelding ook ondere deze licentie moeten gepubliceerd worden."
-                    }
-                },
-                "question": "Met welke licentie wil je je afbeeldingen toevoegen?"
             },
             "profile-description": {
                 "mappings": {

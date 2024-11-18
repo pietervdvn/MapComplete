@@ -44,6 +44,7 @@ Available languages:
  - da
  - cs
  - pl
+ - uk
 
 # Table of contents
 

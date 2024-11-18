@@ -114,7 +114,7 @@
     }
 
     const newElementAction = new CreateNewNodeAction(tags, location.lat, location.lon, {
-      theme: state.layout?.id ?? "unkown",
+      theme: state.theme?.id ?? "unkown",
       changeType: "create",
       snapOnto: snapToWay,
       reusePointWithinMeters: 1,

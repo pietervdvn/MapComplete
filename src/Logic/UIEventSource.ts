@@ -9,13 +9,14 @@ export class Stores {
         const source = new UIEventSource<Date>(undefined)
 
         function run() {
+            if (asLong !== undefined && !asLong()) {
+                return
+            }
             source.setData(new Date())
             if (Utils.runningFromConsole) {
                 return
             }
-            if (asLong === undefined || asLong()) {
-                window.setTimeout(run, millis)
-            }
+            window.setTimeout(run, millis)
         }
 
         run()
@@ -99,7 +100,7 @@ export class Stores {
      */
     static holdDefined<T>(store: Store<T | undefined>): Store<T | undefined> {
         const newStore = new UIEventSource(store.data)
-        store.addCallbackD(t => {
+        store.addCallbackD((t) => {
             newStore.setData(t)
         })
         return newStore
@@ -141,15 +142,19 @@ export abstract class Store<T> implements Readable<T> {
         extraStoresToWatch?: Store<any>[],
         callbackDestroyFunction?: (f: () => void) => void
     ): Store<J> {
-        return this.map((t) => {
-            if (t === undefined) {
-                return undefined
-            }
-            if (t === null) {
-                return null
-            }
-            return f(<Exclude<T, undefined | null>>t)
-        }, extraStoresToWatch, callbackDestroyFunction)
+        return this.map(
+            (t) => {
+                if (t === undefined) {
+                    return undefined
+                }
+                if (t === null) {
+                    return null
+                }
+                return f(<Exclude<T, undefined | null>>t)
+            },
+            extraStoresToWatch,
+            callbackDestroyFunction
+        )
     }
 
     /**
@@ -269,7 +274,10 @@ export abstract class Store<T> implements Readable<T> {
         return sink
     }
 
-    public bindD<X>(f: (t: Exclude<T, undefined | null>) => Store<X>, extraSources: UIEventSource<object>[] = []): Store<X> {
+    public bindD<X>(
+        f: (t: Exclude<T, undefined | null>) => Store<X>,
+        extraSources: UIEventSource<object>[] = []
+    ): Store<X> {
         return this.bind((t) => {
             if (t === null) {
                 return null
@@ -342,6 +350,16 @@ export abstract class Store<T> implements Readable<T> {
     }
 
     public abstract destroy()
+
+    when(callback: () => void, condition?: (v: T) => boolean) {
+        condition ??= (v) => v === true
+        this.addCallbackAndRunD((v) => {
+            if (condition(v)) {
+                callback()
+                return true
+            }
+        })
+    }
 }
 
 export class ImmutableStore<T> extends Store<T> {
@@ -354,8 +372,7 @@ export class ImmutableStore<T> extends Store<T> {
         this.data = data
     }
 
-    private static readonly pass: () => void = () => {
-    }
+    private static readonly pass: () => void = () => {}
 
     addCallback(_: (data: T) => void): () => void {
         // pass: data will never change
@@ -635,8 +652,7 @@ class MappedStore<TIn, T> extends Store<T> {
 }
 
 export class UIEventSource<T> extends Store<T> implements Writable<T> {
-    private static readonly pass: (() => void) = () => {
-    }
+    private static readonly pass: () => void = () => {}
     public data: T
     _callbacks: ListenerTracker<T> = new ListenerTracker<T>()
 
@@ -776,7 +792,10 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
         )
     }
 
-    static asObject<T extends object>(stringUIEventSource: UIEventSource<string>, defaultV: T): UIEventSource<T> {
+    static asObject<T extends object>(
+        stringUIEventSource: UIEventSource<string>,
+        defaultV: T
+    ): UIEventSource<T> {
         return stringUIEventSource.sync(
             (str) => {
                 if (str === undefined || str === null || str === "") {
@@ -939,7 +958,7 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
 
         const newSource = new UIEventSource<J>(f(this.data), "map(" + this.tag + ")@" + callee)
 
-        const update = function() {
+        const update = function () {
             newSource.setData(f(self.data))
             return allowUnregister && newSource._callbacks.length() === 0
         }

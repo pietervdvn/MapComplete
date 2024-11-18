@@ -24,7 +24,7 @@
   export let coordinate: UIEventSource<{ lon: number; lat: number }>
   export let state: SpecialVisualizationState
 
-  let comment: UIEventSource<string> = LocalStorageSource.Get("note-text")
+  let comment: UIEventSource<string> = LocalStorageSource.get("note-text")
   let created = false
 
   let notelayer: FilteredLayer = state.layerState.filteredLayers.get("note")
@@ -47,7 +47,7 @@
       return
     }
     const loc = coordinate.data
-    txt += "\n\n #MapComplete #" + state?.layout?.id
+    txt += "\n\n #MapComplete #" + state?.theme?.id
     const id = await state?.osmConnection?.openNote(loc.lat, loc.lon, txt)
     console.log("Created a note, got id", id)
     const feature = <Feature<Point, OsmTags>>{
@@ -95,7 +95,6 @@
   </div>
 {:else}
   <TitledPanel>
-
     <Tr slot="title" t={Translations.t.notes.createNoteTitle} />
 
     {#if !$isDisplayed}
@@ -107,57 +106,52 @@
         <Tr slot="message" t={Translations.t.notes.noteLayerDoEnable} />
       </SubtleButton>
     {:else if $hasFilter}
-        <!-- ...but a filter is set ...-->
-        <div class="alert">
-          <Tr t={Translations.t.notes.noteLayerHasFilters} />
-        </div>
-        <SubtleButton on:click={() => notelayer.disableAllFilters()}>
-          <Layers class="mr-4 h-8 w-8" />
-          <Tr slot="message" t={Translations.t.notes.disableAllNoteFilters} />
-        </SubtleButton>
+      <!-- ...but a filter is set ...-->
+      <div class="alert">
+        <Tr t={Translations.t.notes.noteLayerHasFilters} />
+      </div>
+      <SubtleButton on:click={() => notelayer.disableAllFilters()}>
+        <Layers class="mr-4 h-8 w-8" />
+        <Tr slot="message" t={Translations.t.notes.disableAllNoteFilters} />
+      </SubtleButton>
     {:else}
       <!-- The layer with notes is displayed without filters, so we can add a note without worrying for duplicates -->
-      <div class="h-full flex flex-col justify-between">
+      <div class="flex h-full flex-col justify-between">
+        <form class="flex flex-col rounded-sm p-2" on:submit|preventDefault={uploadNote}>
+          <label class="neutral-label">
+            <Tr t={Translations.t.notes.createNoteIntro} />
+            <div class="w-full p-1">
+              <ValidatedInput autofocus={true} type="text" value={comment} />
+            </div>
+          </label>
 
-      <form
-        class="flex flex-col rounded-sm p-2"
-        on:submit|preventDefault={uploadNote}
-      >
-        <label class="neutral-label">
-          <Tr t={Translations.t.notes.createNoteIntro} />
-          <div class="w-full p-1">
-            <ValidatedInput autofocus={true} type="text" value={comment} />
-          </div>
-        </label>
+          <LoginToggle {state}>
+            <span slot="loading"><!--empty: don't show a loading message--></span>
+            <div slot="not-logged-in" class="alert">
+              <Tr t={Translations.t.notes.warnAnonymous} />
+            </div>
+          </LoginToggle>
 
-        <LoginToggle {state}>
-          <span slot="loading"><!--empty: don't show a loading message--></span>
-          <div slot="not-logged-in" class="alert">
-            <Tr t={Translations.t.notes.warnAnonymous} />
-          </div>
-        </LoginToggle>
+          {#if $comment?.length >= 3}
+            <NextButton on:click={uploadNote} clss="self-end primary">
+              <AddSmall slot="image" class="mr-4 h-8 w-8" />
+              <Tr t={Translations.t.notes.createNote} />
+            </NextButton>
+          {:else}
+            <div class="alert">
+              <Tr t={Translations.t.notes.textNeeded} />
+            </div>
+          {/if}
+        </form>
 
-        {#if $comment?.length >= 3}
-          <NextButton on:click={uploadNote} clss="self-end primary">
-            <AddSmall slot="image" class="mr-4 h-8 w-8" />
-            <Tr t={Translations.t.notes.createNote} />
-          </NextButton>
-        {:else}
-          <div class="alert">
-            <Tr t={Translations.t.notes.textNeeded} />
-          </div>
-        {/if}
-      </form>
-
-      <div class="h-56 w-full">
-        <NewPointLocationInput value={coordinate} {state}>
-          <div class="h-20 w-full pb-10" slot="image">
-            <Note class="h-10 w-full" />
-          </div>
-        </NewPointLocationInput>
+        <div class="h-56 w-full">
+          <NewPointLocationInput value={coordinate} {state}>
+            <div class="h-20 w-full pb-10" slot="image">
+              <Note class="h-10 w-full" />
+            </div>
+          </NewPointLocationInput>
+        </div>
       </div>
-      </div>
-
     {/if}
   </TitledPanel>
 {/if}

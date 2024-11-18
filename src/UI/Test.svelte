@@ -1,3 +1,2 @@
 <script lang="ts">
-
 </script>

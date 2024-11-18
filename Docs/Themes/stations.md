@@ -46,6 +46,7 @@ Available languages:
  - pl
  - da
  - it
+ - hu
 
 # Table of contents
 

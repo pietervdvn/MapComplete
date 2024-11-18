@@ -14,15 +14,16 @@ Schools giving primary and secondary education and post-secondary, non-tertiary 
 2. [Presets](#presets)
 3. [Basic tags for this layer](#basic-tags-for-this-layer)
 4. [Supported attributes](#supported-attributes)
+  - [images](#images)
   - [school-name](#school-name)
+  - [phone](#phone)
+  - [email](#email)
+  - [website](#website)
   - [capacity](#capacity)
   - [education-level-belgium](#education-level-belgium)
   - [gender](#gender)
   - [pedagogy](#pedagogy)
   - [target-audience](#target-audience)
-  - [website](#website)
-  - [phone](#phone)
-  - [email](#email)
   - [school-language](#school-language)
   - [leftover-questions](#leftover-questions)
   - [move-button](#move-button)
@@ -53,19 +54,55 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 | attribute | type | values which are supported by this layer |
 -----|-----|----- |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/name#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/name/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [name](https://wiki.openstreetmap.org/wiki/Key:name) | [string](../SpecialInputElements.md#string) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/phone#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/phone/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [phone](https://wiki.openstreetmap.org/wiki/Key:phone) | [phone](../SpecialInputElements.md#phone) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/email#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/email/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [email](https://wiki.openstreetmap.org/wiki/Key:email) | [email](../SpecialInputElements.md#email) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/website#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/website/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [website](https://wiki.openstreetmap.org/wiki/Key:website) | [url](../SpecialInputElements.md#url) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/capacity#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/capacity/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [capacity](https://wiki.openstreetmap.org/wiki/Key:capacity) | [pnat](../SpecialInputElements.md#pnat) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/school#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/school/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [school](https://wiki.openstreetmap.org/wiki/Key:school) | Multiple choice | [kindergarten](https://wiki.openstreetmap.org/wiki/Tag:school%3Dkindergarten) [primary](https://wiki.openstreetmap.org/wiki/Tag:school%3Dprimary) [secondary](https://wiki.openstreetmap.org/wiki/Tag:school%3Dsecondary) [lower_secondary](https://wiki.openstreetmap.org/wiki/Tag:school%3Dlower_secondary) [middle_secondary](https://wiki.openstreetmap.org/wiki/Tag:school%3Dmiddle_secondary) [upper_secondary](https://wiki.openstreetmap.org/wiki/Tag:school%3Dupper_secondary) [post_secondary](https://wiki.openstreetmap.org/wiki/Tag:school%3Dpost_secondary) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/school:gender#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/school%3Agender/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [school:gender](https://wiki.openstreetmap.org/wiki/Key:school:gender) | Multiple choice | [mixed](https://wiki.openstreetmap.org/wiki/Tag:school:gender%3Dmixed) [separated](https://wiki.openstreetmap.org/wiki/Tag:school:gender%3Dseparated) [male](https://wiki.openstreetmap.org/wiki/Tag:school:gender%3Dmale) [female](https://wiki.openstreetmap.org/wiki/Tag:school:gender%3Dfemale) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/pedagogy#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/pedagogy/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [pedagogy](https://wiki.openstreetmap.org/wiki/Key:pedagogy) | [string](../SpecialInputElements.md#string) | [mainstream](https://wiki.openstreetmap.org/wiki/Tag:pedagogy%3Dmainstream) [montessori](https://wiki.openstreetmap.org/wiki/Tag:pedagogy%3Dmontessori) [freinet](https://wiki.openstreetmap.org/wiki/Tag:pedagogy%3Dfreinet) [jenaplan](https://wiki.openstreetmap.org/wiki/Tag:pedagogy%3Djenaplan) [waldorf](https://wiki.openstreetmap.org/wiki/Tag:pedagogy%3Dwaldorf) [dalton](https://wiki.openstreetmap.org/wiki/Tag:pedagogy%3Ddalton) [outdoor](https://wiki.openstreetmap.org/wiki/Tag:pedagogy%3Doutdoor) [reggio_emilia](https://wiki.openstreetmap.org/wiki/Tag:pedagogy%3Dreggio_emilia) [sudbury](https://wiki.openstreetmap.org/wiki/Tag:pedagogy%3Dsudbury) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/school:for#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/school%3Afor/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [school:for](https://wiki.openstreetmap.org/wiki/Key:school:for) | [string](../SpecialInputElements.md#string) | [mainstream](https://wiki.openstreetmap.org/wiki/Tag:school:for%3Dmainstream) [adults](https://wiki.openstreetmap.org/wiki/Tag:school:for%3Dadults) [autism](https://wiki.openstreetmap.org/wiki/Tag:school:for%3Dautism) [learning_disabilities](https://wiki.openstreetmap.org/wiki/Tag:school:for%3Dlearning_disabilities) [blind](https://wiki.openstreetmap.org/wiki/Tag:school:for%3Dblind) [deaf](https://wiki.openstreetmap.org/wiki/Tag:school:for%3Ddeaf) [disabilities](https://wiki.openstreetmap.org/wiki/Tag:school:for%3Ddisabilities) [special_needs](https://wiki.openstreetmap.org/wiki/Tag:school:for%3Dspecial_needs) |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/website#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/website/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [website](https://wiki.openstreetmap.org/wiki/Key:website) | [url](../SpecialInputElements.md#url) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/phone#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/phone/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [phone](https://wiki.openstreetmap.org/wiki/Key:phone) | [phone](../SpecialInputElements.md#phone) |  |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/email#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/email/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [email](https://wiki.openstreetmap.org/wiki/Key:email) | [email](../SpecialInputElements.md#email) |  |
+
+### images
+This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
+_This tagrendering has no question and is thus read-only_
+*{image_carousel()}{image_upload()}*
 
 ### school-name
 
 The question is `What is the name of this school?`
 *This school is named {name}* is shown if `name` is set
+
+### phone
+
+The question is `What is the phone number of {title()}?`
+*{link(&LBRACEphone&RBRACE,tel:&LBRACEphone&RBRACE,,,,)}* is shown if `phone` is set
+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/phone.svg' style='width: 3rem; height: 3rem'> *{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}* is shown if with contact:phone~.+. _This option cannot be chosen as answer_
+
+This tagrendering has labels 
+`contact`
+
+### email
+
+The question is `What is the email address of {title()}?`
+*<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>* is shown if `email` is set
+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/envelope.svg' style='width: 3rem; height: 3rem'> *<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>* is shown if with contact:email~.+. _This option cannot be chosen as answer_
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/envelope.svg' style='width: 3rem; height: 3rem'> *<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>* is shown if with operator:email~.+. _This option cannot be chosen as answer_
+
+This tagrendering has labels 
+`contact`
+
+### website
+
+The question is `What is the website of {title()}?`
+*<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>* is shown if `website` is set
+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/icons/website.svg' style='width: 3rem; height: 3rem'> *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>* is shown if with contact:website~.+. _This option cannot be chosen as answer_
+
+This tagrendering has labels 
+`contact`
 
 ### capacity
 
@@ -127,37 +164,6 @@ The question is `Does this school target students with a special need? Which str
 
 This tagrendering is only visible in the popup if the following condition is met: school:for~.+
 
-### website
-
-The question is `What is the website of {title()}?`
-*<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>* is shown if `website` is set
-
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/icons/website.svg' style='width: 3rem; height: 3rem'> *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>* is shown if with contact:website~.+. _This option cannot be chosen as answer_
-
-This tagrendering has labels 
-`contact`
-
-### phone
-
-The question is `What is the phone number of {title()}?`
-*{link(&LBRACEphone&RBRACE,tel:&LBRACEphone&RBRACE,,,,)}* is shown if `phone` is set
-
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/phone.svg' style='width: 3rem; height: 3rem'> *{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}* is shown if with contact:phone~.+. _This option cannot be chosen as answer_
-
-This tagrendering has labels 
-`contact`
-
-### email
-
-The question is `What is the email address of {title()}?`
-*<a href='mailto:{email}' target='_blank' rel='noopener'>{email}</a>* is shown if `email` is set
-
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/envelope.svg' style='width: 3rem; height: 3rem'> *<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>* is shown if with contact:email~.+. _This option cannot be chosen as answer_
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/svg/envelope.svg' style='width: 3rem; height: 3rem'> *<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>* is shown if with operator:email~.+. _This option cannot be chosen as answer_
-
-This tagrendering has labels 
-`contact`
-
 ### school-language
 
 _This tagrendering has no question and is thus read-only_
@@ -195,6 +201,17 @@ This tagrendering has labels
 | pedagogy.7 | This school uses outdoor learning | pedagogy=outdoor |
 | pedagogy.8 | This school uses the Reggio Emilia approach | pedagogy=reggio_emilia |
 | pedagogy.9 | This school uses the Sudbury system | pedagogy=sudbury |
+
+| id | question | osmTags |
+-----|-----|----- |
+| education-level-belgium.0 | *What level of education is given on this school?* (default) |  |
+| education-level-belgium.1 | This is a school with a kindergarten section where young kids receive some education which prepares reading and writing. | school~^(.+;)?kindergarten(;.+)$ |
+| education-level-belgium.2 | This is a school where one learns primary skills such as basic literacy and numerical skills. <div class='subtle'>Pupils typically enroll from 6 years old till 12 years old</div> | school~^(.+;)?primary(;.+)$ |
+| education-level-belgium.3 | This is a secondary school which offers all grades | school~^(.+;)?secondary(;.+)$ |
+| education-level-belgium.4 | This is a secondary school which does <i>not</i> have all grades, but offers <b>first and second</b> grade | school~^(.+;)?lower_secondary(;.+)$ |
+| education-level-belgium.5 | This is a secondary school which does <i>not</i> have all grades, but offers <b>third and fourth</b> grade | school~^(.+;)?middle_secondary(;.+)$ |
+| education-level-belgium.6 | This is a secondary school which does <i>not</i> have all grades, but offers <b>fifth and sixth</b> grade | school~^(.+;)?upper_secondary(;.+)$ |
+| education-level-belgium.7 | This school offers post-secondary education (e.g. a seventh or eight specialisation year) | school~^(.+;)?post_secondary(;.+)$ |
 
 
 

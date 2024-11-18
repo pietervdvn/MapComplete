@@ -5,8 +5,11 @@ import OSMAuthInstance = OSMAuth.osmAuth
 import { Utils } from "../../Utils"
 
 export class OsmPreferences {
-
-    private preferences: Record<string, UIEventSource<string>> = {}
+    /**
+     * A 'cache' of all the preference stores
+     * @private
+     */
+    private readonly preferences: Record<string, UIEventSource<string>> = {}
 
     private localStorageInited: Set<string> = new Set()
     /**
@@ -15,6 +18,10 @@ export class OsmPreferences {
      */
     private seenKeys: string[] = []
 
+    /**
+     * Contains a dictionary which has all preferences
+     * @private
+     */
     private readonly _allPreferences: UIEventSource<Record<string, string>> = new UIEventSource({})
     public readonly allPreferences: Store<Readonly<Record<string, string>>> = this._allPreferences
     private readonly _fakeUser: boolean
@@ -31,7 +38,6 @@ export class OsmPreferences {
         })
     }
 
-
     private setPreferencesAll(key: string, value: string) {
         if (this._allPreferences.data[key] !== value) {
             this._allPreferences.data[key] = value
@@ -46,11 +52,12 @@ export class OsmPreferences {
             }
             return this.preferences[key]
         }
-        const pref = this.preferences[key] = new UIEventSource(value, "preference: " + key)
+        const pref = (this.preferences[key] = new UIEventSource(value, "preference: " + key))
         if (value) {
             this.setPreferencesAll(key, value)
         }
-        pref.addCallback(v => {
+        pref.addCallback((v) => {
+            console.log("Got an update:", key, "--->", v)
             this.uploadKvSplit(key, v)
             this.setPreferencesAll(key, v)
         })
@@ -62,7 +69,7 @@ export class OsmPreferences {
         this.seenKeys = Object.keys(prefs)
         const legacy = OsmPreferences.getLegacyCombinedItems(prefs)
         const merged = OsmPreferences.mergeDict(prefs)
-        if(Object.keys(legacy).length > 0){
+        if (Object.keys(legacy).length > 0) {
             await this.removeLegacy(legacy)
         }
         for (const key in merged) {
@@ -73,12 +80,7 @@ export class OsmPreferences {
         }
     }
 
-
-    public getPreference(
-        key: string,
-        defaultValue: string = undefined,
-        prefix?: string,
-    ) {
+    public getPreference(key: string, defaultValue: string = undefined, prefix?: string) {
         return this.getPreferenceSeedFromlocal(key, defaultValue, { prefix })
     }
 
@@ -91,27 +93,29 @@ export class OsmPreferences {
         key: string,
         defaultValue: string = undefined,
         options?: {
-            prefix?: string,
+            prefix?: string
             saveToLocalStorage?: true | boolean
-        },
+        }
     ): UIEventSource<string> {
         if (options?.prefix) {
             key = options.prefix + key
         }
         key = key.replace(/[:/"' {}.%\\]/g, "")
 
-
-        const localStorage = LocalStorageSource.Get(key)
+        const localStorage = LocalStorageSource.get(key) // cached
         if (localStorage.data === "null" || localStorage.data === "undefined") {
             localStorage.set(undefined)
         }
-        const pref: UIEventSource<string> = this.initPreference(key, localStorage.data ?? defaultValue)
+        const pref: UIEventSource<string> = this.initPreference(
+            key,
+            localStorage.data ?? defaultValue
+        ) // cached
         if (this.localStorageInited.has(key)) {
             return pref
         }
 
         if (options?.saveToLocalStorage ?? true) {
-            pref.addCallback(v => localStorage.set(v)) // Keep a local copy
+            pref.addCallback((v) => localStorage.set(v)) // Keep a local copy
         }
         this.localStorageInited.add(key)
         return pref
@@ -125,7 +129,7 @@ export class OsmPreferences {
     public async removeLegacy(legacyDict: Record<string, string>) {
         for (const k in legacyDict) {
             const v = legacyDict[k]
-            console.log("Upgrading legacy preference",k )
+            console.log("Upgrading legacy preference", k)
             await this.removeAllWithPrefix(k)
             this.osmConnection.getPreference(k).set(v)
         }
@@ -139,19 +143,18 @@ export class OsmPreferences {
         const newDict = {}
 
         const allKeys: string[] = Object.keys(dict)
-        const normalKeys = allKeys.filter(k => !k.match(/[a-z-_0-9A-Z]*:[0-9]+/))
+        const normalKeys = allKeys.filter((k) => !k.match(/[a-z-_0-9A-Z]*:[0-9]+/))
         for (const normalKey of normalKeys) {
             if (normalKey.match(/-combined-[0-9]*$/) || normalKey.match(/-combined-length$/)) {
                 // Ignore legacy keys
                 continue
             }
             const partKeys = OsmPreferences.keysStartingWith(allKeys, normalKey)
-            const parts = partKeys.map(k => dict[k])
+            const parts = partKeys.map((k) => dict[k])
             newDict[normalKey] = parts.join("")
         }
         return newDict
     }
-
 
     /**
      * Gets all items which have a 'combined'-string, the legacy long preferences
@@ -171,7 +174,9 @@ export class OsmPreferences {
     public static getLegacyCombinedItems(dict: Record<string, string>): Record<string, string> {
         const merged: Record<string, string> = {}
         const keys = Object.keys(dict)
-        const toCheck = Utils.NoNullInplace(Utils.Dedup(keys.map(k => k.match(/(.*)-combined-[0-9]+$/)?.[1])))
+        const toCheck = Utils.NoNullInplace(
+            Utils.Dedup(keys.map((k) => k.match(/(.*)-combined-[0-9]+$/)?.[1]))
+        )
         for (const key of toCheck) {
             let i = 0
             let str = ""
@@ -185,7 +190,6 @@ export class OsmPreferences {
         }
         return merged
     }
-
 
     /**
      * Bulk-downloads all preferences
@@ -212,10 +216,9 @@ export class OsmPreferences {
                         dict[k] = pref.getAttribute("v")
                     }
                     resolve(dict)
-                },
+                }
             )
         })
-
     }
 
     /**
@@ -229,7 +232,7 @@ export class OsmPreferences {
      *
      */
     private static keysStartingWith(allKeys: string[], key: string): string[] {
-        const keys = allKeys.filter(k => k === key || k.match(new RegExp(key + ":[0-9]+")))
+        const keys = allKeys.filter((k) => k === key || k.match(new RegExp(key + ":[0-9]+")))
         keys.sort()
         return keys
     }
@@ -240,13 +243,11 @@ export class OsmPreferences {
      *
      */
     private async uploadKvSplit(k: string, v: string) {
-
         if (v === null || v === undefined || v === "" || v === "undefined" || v === "null") {
             const keysToDelete = OsmPreferences.keysStartingWith(this.seenKeys, k)
-            await Promise.all(keysToDelete.map(k => this.deleteKeyDirectly(k)))
+            await Promise.all(keysToDelete.map((k) => this.deleteKeyDirectly(k)))
             return
         }
-
 
         await this.uploadKeyDirectly(k, v.slice(0, 255))
         v = v.slice(255)
@@ -256,7 +257,6 @@ export class OsmPreferences {
             v = v.slice(255)
             i++
         }
-
     }
 
     /**
@@ -274,25 +274,23 @@ export class OsmPreferences {
             return
         }
         return new Promise<void>((resolve, reject) => {
-
-                this.auth.xhr(
-                    {
-                        method: "DELETE",
-                        path: "/api/0.6/user/preferences/" + encodeURIComponent(k),
-                        headers: { "Content-Type": "text/plain" },
-                    },
-                    (error) => {
-                        if (error) {
-                            console.warn("Could not remove preference", error)
-                            reject(error)
-                            return
-                        }
-                        console.debug("Preference ", k, "removed!")
-                        resolve()
-                    },
-                )
-            },
-        )
+            this.auth.xhr(
+                {
+                    method: "DELETE",
+                    path: "/api/0.6/user/preferences/" + encodeURIComponent(k),
+                    headers: { "Content-Type": "text/plain" },
+                },
+                (error) => {
+                    if (error) {
+                        console.warn("Could not remove preference", error)
+                        reject(error)
+                        return
+                    }
+                    console.debug("Preference ", k, "removed!")
+                    resolve()
+                }
+            )
+        })
     }
 
     /**
@@ -319,7 +317,6 @@ export class OsmPreferences {
         }
 
         return new Promise<void>((resolve, reject) => {
-
             this.auth.xhr(
                 {
                     method: "PUT",
@@ -334,17 +331,18 @@ export class OsmPreferences {
                         return
                     }
                     resolve()
-                },
+                }
             )
         })
     }
 
     async removeAllWithPrefix(prefix: string) {
         const keys = this.seenKeys
-        for (const key in keys) {
+        for (const key of keys) {
+            if (!key.startsWith(prefix)) {
+                continue
+            }
             await this.deleteKeyDirectly(key)
         }
     }
-
-
 }

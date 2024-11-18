@@ -3,23 +3,30 @@ import Locale from "../src/UI/i18n/Locale"
 import Translations from "../src/UI/i18n/Translations"
 import { Translation } from "../src/UI/i18n/Translation"
 import all_known_layouts from "../src/assets/generated/known_themes.json"
-import { LayoutConfigJson } from "../src/Models/ThemeConfig/Json/LayoutConfigJson"
-import LayoutConfig from "../src/Models/ThemeConfig/LayoutConfig"
+import { ThemeConfigJson } from "../src/Models/ThemeConfig/Json/ThemeConfigJson"
+import ThemeConfig from "../src/Models/ThemeConfig/ThemeConfig"
 import xml2js from "xml2js"
 import ScriptUtils from "./ScriptUtils"
 import { Utils } from "../src/Utils"
 import SpecialVisualizations from "../src/UI/SpecialVisualizations"
 import Constants from "../src/Models/Constants"
-import { AvailableRasterLayers, RasterLayerPolygon } from "../src/Models/RasterLayers"
+import {
+    AvailableRasterLayers,
+    EditorLayerIndexProperties,
+    RasterLayerPolygon,
+} from "../src/Models/RasterLayers"
 import { ImmutableStore } from "../src/Logic/UIEventSource"
 import * as eli from "../public/assets/data/editor-layer-index.json"
-import * as eli_global from "../src/assets/global-raster-layers.json"
+import * as layers_global from "../src/assets/global-raster-layers.json"
+import eli_global from "../src/assets/generated/editor-layer-index-global.json"
+import bing from "../src/assets/bing.json"
+
 import ValidationUtils from "../src/Models/ThemeConfig/Conversion/ValidationUtils"
 import { LayerConfigJson } from "../src/Models/ThemeConfig/Json/LayerConfigJson"
 import { QuestionableTagRenderingConfigJson } from "../src/Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
 import Script from "./Script"
 import crypto from "crypto"
-
+import { RasterLayerProperties } from "../src/Models/RasterLayerProperties"
 const sharp = require("sharp")
 
 class GenerateLayouts extends Script {
@@ -100,7 +107,7 @@ class GenerateLayouts extends Script {
         return newname
     }
 
-    async createSocialImage(layout: LayoutConfig, template: "" | "Wide"): Promise<string> {
+    async createSocialImage(layout: ThemeConfig, template: "" | "Wide"): Promise<string> {
         if (!layout.icon.endsWith(".svg")) {
             console.warn(
                 "Not creating a social image for " +
@@ -160,7 +167,7 @@ class GenerateLayouts extends Script {
     }
 
     async createManifest(
-        layout: LayoutConfig,
+        layout: ThemeConfig,
         alreadyWritten: string[]
     ): Promise<{
         manifest: any
@@ -264,10 +271,12 @@ class GenerateLayouts extends Script {
         }
         const urls: string[] = []
         const regex = /{switch:([^}]+)}/
-        const rasterLayers = [
+        const rasterLayers: { properties: RasterLayerProperties }[] = [
             AvailableRasterLayers.defaultBackgroundLayer,
             ...eli.features,
-            ...eli_global.layers.map((properties) => ({ properties })),
+            bing,
+            ...eli_global.map((properties) => ({ properties })),
+            ...layers_global.layers.map((properties) => ({ properties })),
         ]
         for (const feature of rasterLayers) {
             const f = <RasterLayerPolygon>feature
@@ -319,8 +328,8 @@ class GenerateLayouts extends Script {
     }
 
     async generateCsp(
-        layout: LayoutConfig,
-        layoutJson: LayoutConfigJson,
+        layout: ThemeConfig,
+        layoutJson: ThemeConfigJson,
         options: {
             scriptSrcs: string[]
         }
@@ -331,7 +340,7 @@ class GenerateLayouts extends Script {
             "https://api.openstreetmap.org",
             "https://pietervdvn.goatcounter.com",
             "https://api.panoramax.xyz",
-            "https://panoramax.mapcomplete.org"
+            "https://panoramax.mapcomplete.org",
         ].concat(...(await this.eliUrls()))
 
         SpecialVisualizations.specialVisualizations.forEach((sv) => {
@@ -441,8 +450,8 @@ class GenerateLayouts extends Script {
     }
 
     async createLandingPage(
-        layout: LayoutConfig,
-        layoutJson: LayoutConfigJson,
+        layout: ThemeConfig,
+        layoutJson: ThemeConfigJson,
         whiteIcons,
         alreadyWritten
     ) {
@@ -456,7 +465,7 @@ class GenerateLayouts extends Script {
             .replace(/"/g, '\\"')
         let ogImage = layout.socialImage
         let twitterImage = ogImage
-        if (ogImage === LayoutConfig.defaultSocialImage && layout.official) {
+        if (ogImage === ThemeConfig.defaultSocialImage && layout.official) {
             try {
                 ogImage = (await this.createSocialImage(layout, "")) ?? layout.socialImage
                 twitterImage = (await this.createSocialImage(layout, "Wide")) ?? layout.socialImage
@@ -573,7 +582,7 @@ class GenerateLayouts extends Script {
             )
     }
 
-    async createIndexFor(theme: LayoutConfig) {
+    async createIndexFor(theme: ThemeConfig) {
         const filename = "index_" + theme.id + ".ts"
 
         const imports = [
@@ -628,18 +637,18 @@ class GenerateLayouts extends Script {
             "theme",
         ]
         // @ts-ignore
-        const all: LayoutConfigJson[] = all_known_layouts.themes
+        const all: ThemeConfigJson[] = all_known_layouts.themes
         const args = process.argv
         const theme = args[2]
         if (theme !== undefined) {
             console.warn("Only generating layout " + theme)
         }
         for (const i in all) {
-            const layoutConfigJson: LayoutConfigJson = all[i]
+            const layoutConfigJson: ThemeConfigJson = all[i]
             if (theme !== undefined && layoutConfigJson.id !== theme) {
                 continue
             }
-            const layout = new LayoutConfig(layoutConfigJson, true)
+            const layout = new ThemeConfig(layoutConfigJson, true)
             const layoutName = layout.id
             if (blacklist.indexOf(layoutName.toLowerCase()) >= 0) {
                 console.log(`Skipping a layout with name ${layoutName}, it is on the blacklist`)
@@ -668,7 +677,7 @@ class GenerateLayouts extends Script {
         }
 
         const { manifest } = await this.createManifest(
-            new LayoutConfig({
+            new ThemeConfig({
                 icon: "./assets/svg/mapcomplete_logo.svg",
                 id: "index",
                 layers: [],

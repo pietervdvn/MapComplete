@@ -6,6 +6,7 @@ Layer with public clocks
 
  - This layer is shown at zoomlevel **8** and higher
  - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  preset `a wall-mounted clock` snaps to this layer (clock.presets[1])
+ - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  preset `a wall-mounted clock, mounted directly on a wall` snaps to this layer (clock.presets[2])
 
 ## Table of contents
 
@@ -16,6 +17,7 @@ Layer with public clocks
   - [images](#images)
   - [support](#support)
   - [display](#display)
+  - [indoor](#indoor)
   - [visibility](#visibility)
   - [date](#date)
   - [thermometer](#thermometer)
@@ -40,6 +42,7 @@ The following options to create new points are included:
 
  - **a clock** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dclock' target='_blank'>clock</a>
  - **a wall-mounted clock** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dclock' target='_blank'>clock</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:support' target='_blank'>support</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:support%3Dwall_mounted' target='_blank'>wall_mounted</a> (snaps to layers `walls_and_buildings`)
+ - **a wall-mounted clock, mounted directly on a wall** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dclock' target='_blank'>clock</a> & <a href='https://wiki.openstreetmap.org/wiki/Key:support' target='_blank'>support</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:support%3Dwall' target='_blank'>wall</a> (snaps to layers `walls_and_buildings`)
 
 ## Basic tags for this layer
 
@@ -53,8 +56,9 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 
 | attribute | type | values which are supported by this layer |
 -----|-----|----- |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/support#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/support/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [support](https://wiki.openstreetmap.org/wiki/Key:support) | Multiple choice | [pole](https://wiki.openstreetmap.org/wiki/Tag:support%3Dpole) [wall_mounted](https://wiki.openstreetmap.org/wiki/Tag:support%3Dwall_mounted) [billboard](https://wiki.openstreetmap.org/wiki/Tag:support%3Dbillboard) [ground](https://wiki.openstreetmap.org/wiki/Tag:support%3Dground) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/support#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/support/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [support](https://wiki.openstreetmap.org/wiki/Key:support) | Multiple choice | [pole](https://wiki.openstreetmap.org/wiki/Tag:support%3Dpole) [wall_mounted](https://wiki.openstreetmap.org/wiki/Tag:support%3Dwall_mounted) [wall](https://wiki.openstreetmap.org/wiki/Tag:support%3Dwall) [billboard](https://wiki.openstreetmap.org/wiki/Tag:support%3Dbillboard) [ground](https://wiki.openstreetmap.org/wiki/Tag:support%3Dground) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/display#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/display/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [display](https://wiki.openstreetmap.org/wiki/Key:display) | Multiple choice | [analog](https://wiki.openstreetmap.org/wiki/Tag:display%3Danalog) [digital](https://wiki.openstreetmap.org/wiki/Tag:display%3Ddigital) [sundial](https://wiki.openstreetmap.org/wiki/Tag:display%3Dsundial) [unorthodox](https://wiki.openstreetmap.org/wiki/Tag:display%3Dunorthodox) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/indoor#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/indoor/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [indoor](https://wiki.openstreetmap.org/wiki/Key:indoor) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/visibility#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/visibility/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [visibility](https://wiki.openstreetmap.org/wiki/Key:visibility) | Multiple choice | [house](https://wiki.openstreetmap.org/wiki/Tag:visibility%3Dhouse) [street](https://wiki.openstreetmap.org/wiki/Tag:visibility%3Dstreet) [area](https://wiki.openstreetmap.org/wiki/Tag:visibility%3Darea) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/date#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/date/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [date](https://wiki.openstreetmap.org/wiki/Key:date) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:date%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:date%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/thermometer#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/thermometer/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [thermometer](https://wiki.openstreetmap.org/wiki/Key:thermometer) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:thermometer%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:thermometer%3Dno) |
@@ -72,7 +76,8 @@ _This tagrendering has no question and is thus read-only_
 The question is `In what way is the clock mounted?`
 
  -  *This clock is mounted on a pole* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:support' target='_blank'>support</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:support%3Dpole' target='_blank'>pole</a>
- -  *This clock is mounted on a wall* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:support' target='_blank'>support</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:support%3Dwall_mounted' target='_blank'>wall_mounted</a>
+ -  *This clock is mounted on a wall, usually through a support perpendicular to the wall* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:support' target='_blank'>support</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:support%3Dwall_mounted' target='_blank'>wall_mounted</a>
+ -  *This clock is mounted directly on a wall* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:support' target='_blank'>support</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:support%3Dwall' target='_blank'>wall</a>
  -  *This clock is part of a billboard* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:support' target='_blank'>support</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:support%3Dbillboard' target='_blank'>billboard</a>
  -  *This clock is on the ground* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:support' target='_blank'>support</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:support%3Dground' target='_blank'>ground</a>
 
@@ -84,6 +89,13 @@ The question is `How does this clock display the time?`
  -  *This clock displays the time with digits* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:display' target='_blank'>display</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:display%3Ddigital' target='_blank'>digital</a>
  -  *This clock displays the time with a sundial* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:display' target='_blank'>display</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:display%3Dsundial' target='_blank'>sundial</a>
  -  *This clock displays the time in a non-standard way, e.g using binary, water or something else* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:display' target='_blank'>display</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:display%3Dunorthodox' target='_blank'>unorthodox</a>
+
+### indoor
+
+The question is `Is this clock indoors?`
+
+ -  *This clock is indoors* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dyes' target='_blank'>yes</a>
+ -  *This clock is outdoors* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dno' target='_blank'>no</a>
 
 ### visibility
 

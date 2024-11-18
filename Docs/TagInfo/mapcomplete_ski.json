@@ -26,19 +26,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Ski and snowboard pistes allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Ski and snowboard pistes allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Ski and snowboard pistes allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Ski and snowboard pistes allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Ski and snowboard pistes allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Ski and snowboard pistes allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Ski and snowboard pistes allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Ski and snowboard pistes allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Ski and snowboard pistes allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "piste:difficulty",
@@ -80,19 +84,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Aerialways allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Aerialways allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Aerialways allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Aerialways allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Aerialways allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Aerialways allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Aerialways allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Aerialways allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Aerialways allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "aerialway",
@@ -187,19 +195,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Guideposts allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Guideposts allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Guideposts allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Guideposts allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Guideposts allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Guideposts allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Guideposts allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Guideposts allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Guideposts allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "bicycle",
@@ -242,19 +254,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Maps allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Maps allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Maps allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Maps allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Maps allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Maps allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Maps allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Maps allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Maps allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "map_type",
@@ -293,7 +309,7 @@
     },
     {
       "key": "map_size",
-      "description": "Layer 'Maps' shows map_size=city with a fixed text, namely ' A map of a city' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "description": "Layer 'Maps' shows map_size=city with a fixed text, namely 'A map of a city' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
       "value": "city"
     },
     {
@@ -351,19 +367,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Information boards allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Information boards allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Information boards allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Information boards allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Information boards allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Information boards allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Information boards allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Information boards allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Information boards allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "emergency",
@@ -376,19 +396,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Mountain rescue stations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Mountain rescue stations allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Mountain rescue stations allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Mountain rescue stations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Mountain rescue stations allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Mountain rescue stations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Mountain rescue stations allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Mountain rescue stations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Mountain rescue stations allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "amenity",
@@ -401,19 +425,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Toilets allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Toilets allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Toilets allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Toilets allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Toilets allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Toilets allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Toilets allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Toilets allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Toilets allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "level",
@@ -698,19 +726,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Drinking water allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Drinking water allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Drinking water allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Drinking water allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Drinking water allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Drinking water allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Drinking water allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Drinking water allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Drinking water allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "operational_status",
@@ -925,19 +957,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "name",
@@ -1155,35 +1191,43 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Restaurants and fast food shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Restaurants and fast food shows images based on the keys image, image:0, image:1,..., panoramax, panoramax:0, panoramx:1, ... ,  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Restaurants and fast food shows images based on the keys image, image:0, image:1,..., panoramax, panoramax:0, panoramx:1, ... ,  wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Restaurants and fast food shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Restaurants and fast food shows images based on the keys image, image:0, image:1,..., panoramax, panoramax:0, panoramx:1, ... ,  wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Restaurants and fast food shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Restaurants and fast food shows images based on the keys image, image:0, image:1,..., panoramax, panoramax:0, panoramx:1, ... ,  wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Restaurants and fast food shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Restaurants and fast food shows images based on the keys image, image:0, image:1,..., panoramax, panoramax:0, panoramx:1, ... ,  wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "image",
-      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "website:menu",
@@ -1226,7 +1270,7 @@
     },
     {
       "key": "delivery",
-      "description": "Layer 'Restaurants and fast food' shows delivery=yes with a fixed text, namely 'This business does home delivery (eventually via a third party)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
+      "description": "Layer 'Restaurants and fast food' shows delivery=yes with a fixed text, namely 'This business does home delivery (possibly via a third party)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
       "value": "yes"
     },
     {
@@ -1305,6 +1349,101 @@
       "value": "only"
     },
     {
+      "key": "organic",
+      "description": "Layer 'Restaurants and fast food' shows organic=no with a fixed text, namely 'There are no organic options available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine!=friture)",
+      "value": "no"
+    },
+    {
+      "key": "organic",
+      "description": "Layer 'Restaurants and fast food' shows organic=yes with a fixed text, namely 'There is an organic menu' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine!=friture)",
+      "value": "yes"
+    },
+    {
+      "key": "organic",
+      "description": "Layer 'Restaurants and fast food' shows organic=only with a fixed text, namely 'Only organic options are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine!=friture)",
+      "value": "only"
+    },
+    {
+      "key": "diet:vegetarian",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegetarian=only with a fixed text, namely 'Serves only vegetarian snacks and burgers' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine=friture)",
+      "value": "only"
+    },
+    {
+      "key": "diet:vegetarian",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegetarian=yes with a fixed text, namely 'Vegetarian snacks are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine=friture)",
+      "value": "yes"
+    },
+    {
+      "key": "diet:vegetarian",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegetarian=limited with a fixed text, namely 'Only a small selection of snacks are vegetarian' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine=friture)",
+      "value": "limited"
+    },
+    {
+      "key": "diet:vegetarian",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegetarian=no with a fixed text, namely 'No vegetarian snacks are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine=friture)",
+      "value": "no"
+    },
+    {
+      "key": "diet:vegan",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegan=only with a fixed text, namely 'Serves only vegan snacks and burgers' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine=friture)",
+      "value": "only"
+    },
+    {
+      "key": "diet:vegan",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegan=yes with a fixed text, namely 'Vegan snacks are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine=friture)",
+      "value": "yes"
+    },
+    {
+      "key": "diet:vegan",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegan=limited with a fixed text, namely 'A small selection of vegan snacks are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine=friture)",
+      "value": "limited"
+    },
+    {
+      "key": "diet:vegan",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegan=no with a fixed text, namely 'No vegan snacks are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine=friture)",
+      "value": "no"
+    },
+    {
+      "key": "organic",
+      "description": "Layer 'Restaurants and fast food' shows organic=yes with a fixed text, namely 'Organic snacks are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine=friture)",
+      "value": "yes"
+    },
+    {
+      "key": "organic",
+      "description": "Layer 'Restaurants and fast food' shows organic=no with a fixed text, namely 'No organic snacks are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine=friture)",
+      "value": "no"
+    },
+    {
+      "key": "organic",
+      "description": "Layer 'Restaurants and fast food' shows organic=only with a fixed text, namely 'Only organic snacks are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine=friture)",
+      "value": "only"
+    },
+    {
+      "key": "friture:oil",
+      "description": "Layer 'Restaurants and fast food' shows friture:oil=vegetable with a fixed text, namely 'The frying is done with vegetable oil' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine=friture)",
+      "value": "vegetable"
+    },
+    {
+      "key": "friture:oil",
+      "description": "Layer 'Restaurants and fast food' shows friture:oil=animal with a fixed text, namely 'The frying is done with animal oil' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine=friture)",
+      "value": "animal"
+    },
+    {
+      "key": "reusable_packaging:accept",
+      "description": "Layer 'Restaurants and fast food' shows reusable_packaging:accept=yes with a fixed text, namely 'You can bring <b>your own containers</b> to get your order, saving on single-use packaging material and thus waste' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine=friture)",
+      "value": "yes"
+    },
+    {
+      "key": "reusable_packaging:accept",
+      "description": "Layer 'Restaurants and fast food' shows reusable_packaging:accept=no with a fixed text, namely 'Bringing your own container is <b>not allowed</b>' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine=friture)",
+      "value": "no"
+    },
+    {
+      "key": "reusable_packaging:accept",
+      "description": "Layer 'Restaurants and fast food' shows reusable_packaging:accept=only with a fixed text, namely 'You <b>must</b> bring your own container to order here.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine=friture)",
+      "value": "only"
+    },
+    {
       "key": "diet:sugar_free",
       "description": "Layer 'Restaurants and fast food' shows diet:sugar_free=only with a fixed text, namely 'This shop <b>only sells sugar free</b> products' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
       "value": "only"
@@ -1363,101 +1502,6 @@
       "key": "diet:lactose_free",
       "description": "Layer 'Restaurants and fast food' shows diet:lactose_free=no with a fixed text, namely 'No lactose free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways')",
       "value": "no"
-    },
-    {
-      "key": "organic",
-      "description": "Layer 'Restaurants and fast food' shows organic=no with a fixed text, namely 'There are no organic options available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine!=friture)",
-      "value": "no"
-    },
-    {
-      "key": "organic",
-      "description": "Layer 'Restaurants and fast food' shows organic=yes with a fixed text, namely 'There is an organic menu' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine!=friture)",
-      "value": "yes"
-    },
-    {
-      "key": "organic",
-      "description": "Layer 'Restaurants and fast food' shows organic=only with a fixed text, namely 'Only organic options are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine!=friture)",
-      "value": "only"
-    },
-    {
-      "key": "diet:vegetarian",
-      "description": "Layer 'Restaurants and fast food' shows diet:vegetarian=only with a fixed text, namely 'Serves only vegetarian snacks and burgers' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine=friture)",
-      "value": "only"
-    },
-    {
-      "key": "diet:vegetarian",
-      "description": "Layer 'Restaurants and fast food' shows diet:vegetarian=yes with a fixed text, namely 'Vegetarian snacks are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine=friture)",
-      "value": "yes"
-    },
-    {
-      "key": "diet:vegetarian",
-      "description": "Layer 'Restaurants and fast food' shows diet:vegetarian=limited with a fixed text, namely 'Only a small selection of snacks are vegetarian' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine=friture)",
-      "value": "limited"
-    },
-    {
-      "key": "diet:vegetarian",
-      "description": "Layer 'Restaurants and fast food' shows diet:vegetarian=no with a fixed text, namely 'No vegetarian snacks are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine=friture)",
-      "value": "no"
-    },
-    {
-      "key": "diet:vegan",
-      "description": "Layer 'Restaurants and fast food' shows diet:vegan=only with a fixed text, namely 'Servers only vegan snacks and burgers' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine=friture)",
-      "value": "only"
-    },
-    {
-      "key": "diet:vegan",
-      "description": "Layer 'Restaurants and fast food' shows diet:vegan=yes with a fixed text, namely 'Vegan snacks are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine=friture)",
-      "value": "yes"
-    },
-    {
-      "key": "diet:vegan",
-      "description": "Layer 'Restaurants and fast food' shows diet:vegan=limited with a fixed text, namely 'A small selection of vegan snacks are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine=friture)",
-      "value": "limited"
-    },
-    {
-      "key": "diet:vegan",
-      "description": "Layer 'Restaurants and fast food' shows diet:vegan=no with a fixed text, namely 'No vegan snacks are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine=friture)",
-      "value": "no"
-    },
-    {
-      "key": "organic",
-      "description": "Layer 'Restaurants and fast food' shows organic=yes with a fixed text, namely 'Organic snacks are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine=friture)",
-      "value": "yes"
-    },
-    {
-      "key": "organic",
-      "description": "Layer 'Restaurants and fast food' shows organic=no with a fixed text, namely 'No organic snacks are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine=friture)",
-      "value": "no"
-    },
-    {
-      "key": "organic",
-      "description": "Layer 'Restaurants and fast food' shows organic=only with a fixed text, namely 'Only organic snacks are available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine=friture)",
-      "value": "only"
-    },
-    {
-      "key": "friture:oil",
-      "description": "Layer 'Restaurants and fast food' shows friture:oil=vegetable with a fixed text, namely 'The frying is done with vegetable oil' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine=friture)",
-      "value": "vegetable"
-    },
-    {
-      "key": "friture:oil",
-      "description": "Layer 'Restaurants and fast food' shows friture:oil=animal with a fixed text, namely 'The frying is done with animal oil' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine=friture)",
-      "value": "animal"
-    },
-    {
-      "key": "reusable_packaging:accept",
-      "description": "Layer 'Restaurants and fast food' shows reusable_packaging:accept=yes with a fixed text, namely 'You can bring <b>your own containers</b> to get your order, saving on single-use packaging material and thus waste' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine=friture)",
-      "value": "yes"
-    },
-    {
-      "key": "reusable_packaging:accept",
-      "description": "Layer 'Restaurants and fast food' shows reusable_packaging:accept=no with a fixed text, namely 'Bringing your own container is <b>not allowed</b>' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine=friture)",
-      "value": "no"
-    },
-    {
-      "key": "reusable_packaging:accept",
-      "description": "Layer 'Restaurants and fast food' shows reusable_packaging:accept=only with a fixed text, namely 'You <b>must</b> bring your own container to order here.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Ski pistes and aerialways') (This is only shown if cuisine=friture)",
-      "value": "only"
     },
     {
       "key": "smoking",
@@ -1584,19 +1628,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Viewpoint allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Viewpoint allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Viewpoint allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Viewpoint allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Viewpoint allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Viewpoint allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Viewpoint allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Viewpoint allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Viewpoint allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "description",
@@ -1613,19 +1661,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Binoculars allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Binoculars allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Binoculars allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Binoculars allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Binoculars allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Binoculars allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Binoculars allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Binoculars allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Binoculars allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "charge",

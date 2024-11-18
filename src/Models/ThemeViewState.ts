@@ -1,8 +1,12 @@
-import LayoutConfig from "./ThemeConfig/LayoutConfig"
+import ThemeConfig from "./ThemeConfig/ThemeConfig"
 import { SpecialVisualizationState } from "../UI/SpecialVisualization"
 import { Changes } from "../Logic/Osm/Changes"
 import { Store, UIEventSource } from "../Logic/UIEventSource"
-import { FeatureSource, IndexedFeatureSource, WritableFeatureSource } from "../Logic/FeatureSource/FeatureSource"
+import {
+    FeatureSource,
+    IndexedFeatureSource,
+    WritableFeatureSource,
+} from "../Logic/FeatureSource/FeatureSource"
 import { OsmConnection } from "../Logic/Osm/OsmConnection"
 import { ExportableMap, MapProperties } from "./MapProperties"
 import LayerState from "../Logic/State/LayerState"
@@ -18,7 +22,7 @@ import UserRelatedState from "../Logic/State/UserRelatedState"
 import LayerConfig from "./ThemeConfig/LayerConfig"
 import GeoLocationHandler from "../Logic/Actors/GeoLocationHandler"
 import { AvailableRasterLayers, RasterLayerPolygon, RasterLayerUtils } from "./RasterLayers"
-import LayoutSource from "../Logic/FeatureSource/Sources/LayoutSource"
+import ThemeSource from "../Logic/FeatureSource/Sources/ThemeSource"
 import StaticFeatureSource from "../Logic/FeatureSource/Sources/StaticFeatureSource"
 import FeaturePropertiesStore from "../Logic/FeatureSource/Actors/FeaturePropertiesStore"
 import PerLayerFeatureSourceSplitter from "../Logic/FeatureSource/PerLayerFeatureSourceSplitter"
@@ -46,7 +50,9 @@ import BackgroundLayerResetter from "../Logic/Actors/BackgroundLayerResetter"
 import SaveFeatureSourceToLocalStorage from "../Logic/FeatureSource/Actors/SaveFeatureSourceToLocalStorage"
 import BBoxFeatureSource from "../Logic/FeatureSource/Sources/TouchesBboxFeatureSource"
 import ThemeViewStateHashActor from "../Logic/Web/ThemeViewStateHashActor"
-import NoElementsInViewDetector, { FeatureViewState } from "../Logic/Actors/NoElementsInViewDetector"
+import NoElementsInViewDetector, {
+    FeatureViewState,
+} from "../Logic/Actors/NoElementsInViewDetector"
 import FilteredLayer from "./FilteredLayer"
 import { PreferredRasterLayerSelector } from "../Logic/Actors/PreferredRasterLayerSelector"
 import { ImageUploadManager } from "../Logic/ImageProviders/ImageUploadManager"
@@ -70,6 +76,7 @@ import { GeocodeResult, GeocodingUtils } from "../Logic/Search/GeocodingProvider
 import SearchState from "../Logic/State/SearchState"
 import { ShowDataLayerOptions } from "../UI/Map/ShowDataLayerOptions"
 import { PanoramaxUploader } from "../Logic/ImageProviders/Panoramax"
+import { Tag } from "../Logic/Tags/Tag"
 
 /**
  *
@@ -80,7 +87,7 @@ import { PanoramaxUploader } from "../Logic/ImageProviders/Panoramax"
  * It ties up all the needed elements and starts some actors.
  */
 export default class ThemeViewState implements SpecialVisualizationState {
-    readonly layout: LayoutConfig
+    readonly theme: ThemeConfig
     readonly map: UIEventSource<MlMap>
     readonly changes: Changes
     readonly featureSwitches: FeatureSwitchState
@@ -104,7 +111,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
     readonly fullNodeDatabase?: FullNodeDatabaseSource
 
     readonly historicalUserLocations: WritableFeatureSource<Feature<Point>>
-    readonly indexedFeatures: IndexedFeatureSource & LayoutSource
+    readonly indexedFeatures: IndexedFeatureSource & ThemeSource
     readonly currentView: FeatureSource<Feature<Polygon>>
     readonly featuresInView: FeatureSource
     readonly favourites: FavouritesFeatureSource
@@ -160,13 +167,13 @@ export default class ThemeViewState implements SpecialVisualizationState {
      */
     public readonly featureSummary: SummaryTileSourceRewriter
 
-    constructor(layout: LayoutConfig, mvtAvailableLayers: Set<string>) {
+    constructor(layout: ThemeConfig, mvtAvailableLayers: Set<string>) {
         Utils.initDomPurify()
-        this.layout = layout
+        this.theme = layout
         this.featureSwitches = new FeatureSwitchState(layout)
         this.guistate = new MenuState(
             this.featureSwitches.featureSwitchWelcomeMessage.data,
-            layout.id,
+            layout.id
         )
         this.map = new UIEventSource<MlMap>(undefined)
         const geolocationState = new GeoLocationState()
@@ -182,14 +189,14 @@ export default class ThemeViewState implements SpecialVisualizationState {
             oauth_token: QueryParameters.GetQueryParameter(
                 "oauth_token",
                 undefined,
-                "Used to complete the login",
+                "Used to complete the login"
             ),
         })
         this.userRelatedState = new UserRelatedState(
             this.osmConnection,
             layout,
             this.featureSwitches,
-            this.mapProperties,
+            this.mapProperties
         )
         this.userRelatedState.fixateNorth.addCallbackAndRunD((fixated) => {
             this.mapProperties.allowRotating.setData(fixated !== "yes")
@@ -200,29 +207,29 @@ export default class ThemeViewState implements SpecialVisualizationState {
             geolocationState,
             this.selectedElement,
             this.mapProperties,
-            this.userRelatedState.gpsLocationHistoryRetentionTime,
+            this.userRelatedState.gpsLocationHistoryRetentionTime
         )
         this.geolocationControl = new GeolocationControlState(this.geolocation, this.mapProperties)
 
         this.availableLayers = AvailableRasterLayers.layersAvailableAt(
             this.mapProperties.location,
-            this.osmConnection.isLoggedIn,
+            this.osmConnection.isLoggedIn
         )
 
         this.layerState = new LayerState(
             this.osmConnection,
             layout.layers,
             layout.id,
-            this.featureSwitches.featureSwitchLayerDefault,
+            this.featureSwitches.featureSwitchLayerDefault
         )
 
         {
             const overlayLayerStates = new Map<string, { isDisplayed: UIEventSource<boolean> }>()
-            for (const rasterInfo of this.layout.tileLayerSources) {
+            for (const rasterInfo of this.theme.tileLayerSources) {
                 const isDisplayed = QueryParameters.GetBooleanQueryParameter(
                     "overlay-" + rasterInfo.id,
                     rasterInfo.defaultState ?? true,
-                    "Whether or not overlay layer " + rasterInfo.id + " is shown",
+                    "Whether or not overlay layer " + rasterInfo.id + " is shown"
                 )
                 const state = { isDisplayed }
                 overlayLayerStates.set(rasterInfo.id, state)
@@ -236,18 +243,18 @@ export default class ThemeViewState implements SpecialVisualizationState {
              * A bit tricky, as this is heavily intertwined with the 'changes'-element, which generates a stream of new and changed features too
              */
 
-            if (this.layout.layers.some((l) => l._needsFullNodeDatabase)) {
+            if (this.theme.layers.some((l) => l._needsFullNodeDatabase)) {
                 this.fullNodeDatabase = new FullNodeDatabaseSource()
             }
 
-            const layoutSource = new LayoutSource(
+            const layoutSource = new ThemeSource(
                 layout.layers,
                 this.featureSwitches,
                 this.mapProperties,
                 this.osmConnection.Backend(),
                 (id) => this.layerState.filteredLayers.get(id).isDisplayed,
                 mvtAvailableLayers,
-                this.fullNodeDatabase,
+                this.fullNodeDatabase
             )
 
             let currentViewIndex = 0
@@ -265,7 +272,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                             id: "current_view_" + currentViewIndex,
                         }),
                     ]
-                }),
+                })
             )
             this.featuresInView = new BBoxFeatureSource(layoutSource, this.mapProperties.bounds)
 
@@ -276,19 +283,19 @@ export default class ThemeViewState implements SpecialVisualizationState {
             this.changes = new Changes(
                 this,
                 layout?.isLeftRightSensitive() ?? false,
-                (e, extraMsg) => this.reportError(e, extraMsg),
+                (e, extraMsg) => this.reportError(e, extraMsg)
             )
             this.historicalUserLocations = this.geolocation.historicalUserLocations
             this.newFeatures = new NewGeometryFromChangesFeatureSource(
                 this.changes,
                 layoutSource,
-                this.featureProperties,
+                this.featureProperties
             )
             layoutSource.addSource(this.newFeatures)
 
             const perLayer = new PerLayerFeatureSourceSplitter(
                 Array.from(this.layerState.filteredLayers.values()).filter(
-                    (l) => l.layerDef?.source !== null,
+                    (l) => l.layerDef?.source !== null
                 ),
                 new ChangeGeometryApplicator(this.indexedFeatures, this.changes),
                 {
@@ -299,10 +306,10 @@ export default class ThemeViewState implements SpecialVisualizationState {
                             "Got ",
                             features.length,
                             "leftover features, such as",
-                            features[0].properties,
+                            features[0].properties
                         )
                     },
-                },
+                }
             )
             this.perLayer = perLayer.perLayer
         }
@@ -340,14 +347,14 @@ export default class ThemeViewState implements SpecialVisualizationState {
         })
 
         this.lastClickObject = new LastClickFeatureSource(
-            this.layout,
+            this.theme,
             this.mapProperties.lastClickLocation,
-            this.userRelatedState.addNewFeatureMode,
+            this.userRelatedState.addNewFeatureMode
         )
 
         this.osmObjectDownloader = new OsmObjectDownloader(
             this.osmConnection.Backend(),
-            this.changes,
+            this.changes
         )
 
         this.perLayerFiltered = this.showNormalDataOn(this.map)
@@ -357,19 +364,29 @@ export default class ThemeViewState implements SpecialVisualizationState {
             {
                 currentZoom: this.mapProperties.zoom,
                 layerState: this.layerState,
-                bounds: this.visualFeedbackViewportBounds.map(bounds => bounds ?? this.mapProperties.bounds?.data, [this.mapProperties.bounds]),
-            },
+                bounds: this.visualFeedbackViewportBounds.map(
+                    (bounds) => bounds ?? this.mapProperties.bounds?.data,
+                    [this.mapProperties.bounds]
+                ),
+            }
         )
         this.featureSummary = this.setupSummaryLayer()
         this.hasDataInView = new NoElementsInViewDetector(this).hasFeatureInView
         this.imageUploadManager = new ImageUploadManager(
             layout,
-            new PanoramaxUploader(Constants.panoramax.url, Constants.panoramax.token),
+            new PanoramaxUploader(
+                Constants.panoramax.url,
+                Constants.panoramax.token,
+                this.featureSwitchIsTesting.map((t) =>
+                    t ? Constants.panoramax.testsequence : Constants.panoramax.sequence
+                )
+            ),
             this.featureProperties,
             this.osmConnection,
             this.changes,
             this.geolocation.geolocationState.currentGPSLocation,
-            this.indexedFeatures
+            this.indexedFeatures,
+            this.reportError
         )
         this.favourites = new FavouritesFeatureSource(this)
         const longAgo = new Date()
@@ -413,10 +430,10 @@ export default class ThemeViewState implements SpecialVisualizationState {
             const storage = new SaveFeatureSourceToLocalStorage(
                 this.osmConnection.Backend(),
                 fs.layer.layerDef.id,
-                LayoutSource.fromCacheZoomLevel,
+                ThemeSource.fromCacheZoomLevel,
                 fs,
                 this.featureProperties,
-                fs.layer.layerDef.maxAgeOfCache,
+                fs.layer.layerDef.maxAgeOfCache
             )
             toLocalStorage.set(layerId, storage)
         })
@@ -427,9 +444,19 @@ export default class ThemeViewState implements SpecialVisualizationState {
         const filteringFeatureSource = new Map<string, FilteringFeatureSource>()
         this.perLayer.forEach((fs, layerName) => {
             const doShowLayer = this.mapProperties.zoom.map(
-                (z) =>
-                    (fs.layer.isDisplayed?.data ?? true) && z >= (fs.layer.layerDef?.minzoom ?? 0),
-                [fs.layer.isDisplayed],
+                (z) => {
+                    if (
+                        (fs.layer.isDisplayed?.data ?? true) &&
+                        z >= (fs.layer.layerDef?.minzoom ?? 0)
+                    ) {
+                        return true
+                    }
+                    if (this.layerState.globalFilters.data.some((f) => f.forceShowOnMatch)) {
+                        return true
+                    }
+                    return false
+                },
+                [fs.layer.isDisplayed, this.layerState.globalFilters]
             )
 
             if (!doShowLayer.data && this.featureSwitches.featureSwitchFilter.data === false) {
@@ -446,7 +473,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 fs.layer,
                 fs,
                 (id) => this.featureProperties.getStore(id),
-                this.layerState.globalFilters,
+                this.layerState.globalFilters
             )
             filteringFeatureSource.set(layerName, filtered)
 
@@ -508,7 +535,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
             }
         })
 
-        this.userRelatedState.markLayoutAsVisited(this.layout)
+        this.userRelatedState.markLayoutAsVisited(this.theme)
 
         this.selectedElement.addCallback((selected) => {
             if (selected === undefined) {
@@ -516,8 +543,8 @@ export default class ThemeViewState implements SpecialVisualizationState {
             }
         })
 
-        if (this.layout.customCss !== undefined && window.location.pathname.indexOf("theme") >= 0) {
-            Utils.LoadCustomCss(this.layout.customCss)
+        if (this.theme.customCss !== undefined && window.location.pathname.indexOf("theme") >= 0) {
+            Utils.LoadCustomCss(this.theme.customCss)
         }
 
         Hash.hash.addCallbackAndRunD((hash) => {
@@ -531,7 +558,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
      * Selects the feature that is 'i' closest to the map center
      */
     private selectClosestAtCenter(i: number = 0) {
-        console.log("Selecting closest",i)
+        console.log("Selecting closest", i)
         if (this.userRelatedState.a11y.data !== "never") {
             this.visualFeedback.setData(true)
         }
@@ -578,7 +605,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
             this.guistate.pageStates.favourites.set(true)
         })
 
-
         Hotkeys.RegisterHotkey(
             {
                 nomod: " ",
@@ -592,11 +618,14 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 if (this.guistate.isSomethingOpen() || this.previewedImage.data !== undefined) {
                     return
                 }
-                if (document.activeElement.tagName === "button" || document.activeElement.tagName === "input") {
+                if (
+                    document.activeElement.tagName === "button" ||
+                    document.activeElement.tagName === "input"
+                ) {
                     return
                 }
                 this.selectClosestAtCenter(0)
-            },
+            }
         )
 
         for (let i = 1; i < 9; i++) {
@@ -614,15 +643,18 @@ export default class ThemeViewState implements SpecialVisualizationState {
                     onUp: true,
                 },
                 doc,
-                () => this.selectClosestAtCenter(i - 1),
+                () => this.selectClosestAtCenter(i - 1)
             )
         }
 
-
-        Hotkeys.RegisterHotkey({ ctrl: "F" }, Translations.t.hotkeyDocumentation.selectSearch, () => {
-            this.searchState.feedback.set(undefined)
-            this.searchState.searchIsFocused.set(true)
-        })
+        Hotkeys.RegisterHotkey(
+            { ctrl: "F" },
+            Translations.t.hotkeyDocumentation.selectSearch,
+            () => {
+                this.searchState.feedback.set(undefined)
+                this.searchState.searchIsFocused.set(true)
+            }
+        )
 
         this.featureSwitches.featureSwitchBackgroundSelection.addCallbackAndRun((enable) => {
             if (!enable) {
@@ -637,7 +669,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                     if (this.featureSwitches.featureSwitchBackgroundSelection.data) {
                         this.guistate.pageStates.background.setData(true)
                     }
-                },
+                }
             )
             Hotkeys.RegisterHotkey(
                 {
@@ -648,7 +680,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                     if (this.featureSwitches.featureSwitchFilter.data) {
                         this.guistate.openFilterView()
                     }
-                },
+                }
             )
             const setLayerCategory = (category: EliCategory, skipLayers: number = 0) => {
                 const timeOfCall = new Date()
@@ -663,7 +695,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                         available,
                         category,
                         current.data,
-                        skipLayers,
+                        skipLayers
                     )
                     if (!best) {
                         return
@@ -676,43 +708,43 @@ export default class ThemeViewState implements SpecialVisualizationState {
             Hotkeys.RegisterHotkey(
                 { nomod: "O" },
                 Translations.t.hotkeyDocumentation.selectOsmbasedmap,
-                () => setLayerCategory("osmbasedmap"),
+                () => setLayerCategory("osmbasedmap")
             )
 
             Hotkeys.RegisterHotkey(
                 { nomod: "M" },
                 Translations.t.hotkeyDocumentation.selectMap,
-                () => setLayerCategory("map"),
+                () => setLayerCategory("map")
             )
 
             Hotkeys.RegisterHotkey(
                 { nomod: "P" },
                 Translations.t.hotkeyDocumentation.selectAerial,
-                () => setLayerCategory("photo"),
+                () => setLayerCategory("photo")
             )
             Hotkeys.RegisterHotkey(
                 { shift: "O" },
                 Translations.t.hotkeyDocumentation.selectOsmbasedmap,
-                () => setLayerCategory("osmbasedmap", 2),
+                () => setLayerCategory("osmbasedmap", 2)
             )
 
             Hotkeys.RegisterHotkey(
                 { shift: "M" },
                 Translations.t.hotkeyDocumentation.selectMap,
-                () => setLayerCategory("map", 2),
+                () => setLayerCategory("map", 2)
             )
 
             Hotkeys.RegisterHotkey(
                 { shift: "P" },
                 Translations.t.hotkeyDocumentation.selectAerial,
-                () => setLayerCategory("photo", 2),
+                () => setLayerCategory("photo", 2)
             )
             Hotkeys.RegisterHotkey(
                 { nomod: "L" },
                 Translations.t.hotkeyDocumentation.geolocate,
                 () => {
                     this.geolocationControl.handleClick()
-                },
+                }
             )
             return true
         })
@@ -729,7 +761,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 } else {
                     tm.setData("false")
                 }
-            },
+            }
         )
     }
 
@@ -737,19 +769,15 @@ export default class ThemeViewState implements SpecialVisualizationState {
         /**
          * MaxZoom for the summary layer
          */
-        const normalLayers = this.layout.layers.filter(
-            (l) =>
-                Constants.priviliged_layers.indexOf(<any>l.id) < 0 &&
-                !l.id.startsWith("note_import"),
-        )
+        const normalLayers = this.theme.layers.filter((l) => l.isNormal())
 
         const maxzoom = Math.min(...normalLayers.map((l) => l.minzoom))
 
-        const layers = this.layout.layers.filter(
+        const layers = this.theme.layers.filter(
             (l) =>
                 Constants.priviliged_layers.indexOf(<any>l.id) < 0 &&
                 l.source.geojsonSource === undefined &&
-                l.doCount,
+                l.doCount
         )
         if (!Constants.SummaryServer || layers.length === 0) {
             return undefined
@@ -761,7 +789,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
             this.mapProperties,
             {
                 isActive: this.mapProperties.zoom.map((z) => z < maxzoom),
-            },
+            }
         )
 
         return new SummaryTileSourceRewriter(summaryTileSource, this.layerState.filteredLayers)
@@ -783,12 +811,12 @@ export default class ThemeViewState implements SpecialVisualizationState {
             gps_track: this.geolocation.historicalUserLocationsTrack,
             geocoded_image: new StaticFeatureSource(this.geocodedImages),
             selected_element: new StaticFeatureSource(
-                this.selectedElement.map((f) => (f === undefined ? empty : [f])),
+                this.selectedElement.map((f) => (f === undefined ? empty : [f]))
             ),
             range: new StaticFeatureSource(
                 this.mapProperties.maxbounds.map((bbox) =>
-                    bbox === undefined ? empty : <Feature[]>[bbox.asGeoJson({ id: "range" })],
-                ),
+                    bbox === undefined ? empty : <Feature[]>[bbox.asGeoJson({ id: "range" })]
+                )
             ),
             current_view: this.currentView,
             favourite: this.favourites,
@@ -797,18 +825,17 @@ export default class ThemeViewState implements SpecialVisualizationState {
             search: this.searchState.locationResults,
         }
 
-
         this.closestFeatures.registerSource(specialLayers.favourite, "favourite")
-        if (this.layout?.lockLocation) {
-            const bbox = new BBox(<any>this.layout.lockLocation)
+        if (this.theme?.lockLocation) {
+            const bbox = new BBox(<any>this.theme.lockLocation)
             this.mapProperties.maxbounds.setData(bbox)
             ShowDataLayer.showRange(
                 this.map,
                 new StaticFeatureSource([bbox.asGeoJson({ id: "range" })]),
-                this.featureSwitches.featureSwitchIsTesting,
+                this.featureSwitches.featureSwitchIsTesting
             )
         }
-        const currentViewLayer = this.layout.layers.find((l) => l.id === "current_view")
+        const currentViewLayer = this.theme.layers.find((l) => l.id === "current_view")
         if (currentViewLayer?.tagRenderings?.length > 0) {
             const params = MetaTagging.createExtraFuncParams(this)
             this.featureProperties.trackFeatureSource(specialLayers.current_view)
@@ -817,9 +844,9 @@ export default class ThemeViewState implements SpecialVisualizationState {
                     features,
                     params,
                     currentViewLayer,
-                    this.layout,
+                    this.theme,
                     this.osmObjectDownloader,
-                    this.featureProperties,
+                    this.featureProperties
                 )
             })
         }
@@ -851,7 +878,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 layer: flayer.layerDef,
                 metaTags: this.userRelatedState.preferencesAsTags,
                 selectedElement: this.selectedElement,
-
             }
             if (flayer.layerDef.id === "search") {
                 options.onClick = (feature) => {
@@ -866,20 +892,20 @@ export default class ThemeViewState implements SpecialVisualizationState {
         {
             const lastClickLayerConfig = new LayerConfig(
                 <LayerConfigJson>last_click_layerconfig,
-                "last_click",
+                "last_click"
             )
             const lastClickFiltered =
                 lastClickLayerConfig.isShown === undefined
                     ? specialLayers.last_click
                     : specialLayers.last_click.features.mapD((fs) =>
-                        fs.filter((f) => {
-                            const matches = lastClickLayerConfig.isShown.matchesProperties(
-                                f.properties,
-                            )
-                            console.debug("LastClick ", f, "matches", matches)
-                            return matches
-                        }),
-                    )
+                          fs.filter((f) => {
+                              const matches = lastClickLayerConfig.isShown.matchesProperties(
+                                  f.properties
+                              )
+                              console.debug("LastClick ", f, "matches", matches)
+                              return matches
+                          })
+                      )
             // show last click = new point/note marker
             new ShowDataLayer(this.map, {
                 features: new StaticFeatureSource(lastClickFiltered),
@@ -911,6 +937,18 @@ export default class ThemeViewState implements SpecialVisualizationState {
      * Setup various services for which no reference are needed
      */
     private initActors() {
+        if (!this.theme.official) {
+            // Add custom themes to the "visited custom themes"
+            const th = this.theme
+            this.userRelatedState.addUnofficialTheme({
+                id: th.id,
+                icon: th.icon,
+                title: th.title.translations,
+                shortDescription: th.shortDescription.translations,
+                layers: th.layers.filter((l) => l.isNormal()).map((l) => l.id),
+            })
+        }
+
         this.selectedElement.addCallback((selected) => {
             if (selected === undefined) {
                 this.focusOnMap()
@@ -930,30 +968,55 @@ export default class ThemeViewState implements SpecialVisualizationState {
         })
 
         // Add the selected element to the recently visited history
-        this.selectedElement.addCallbackD(selected => {
+        this.selectedElement.addCallbackD((selected) => {
             const [osm_type, osm_id] = selected.properties.id.split("/")
             const [lon, lat] = GeoOperations.centerpointCoordinates(selected)
-            const layer = this.layout.getMatchingLayer(selected.properties)
+            const layer = this.theme.getMatchingLayer(selected.properties)
 
             const nameOptions = [
                 selected?.properties?.name,
-                selected?.properties?.alt_name, selected?.properties?.local_name,
+                selected?.properties?.alt_name,
+                selected?.properties?.local_name,
                 layer?.title.GetRenderValue(selected?.properties ?? {}).txt,
                 selected.properties.display_name,
                 selected.properties.id,
             ]
             const r = <GeocodeResult>{
                 feature: selected,
-                display_name: nameOptions.find(opt => opt !== undefined),
-                osm_id, osm_type,
-                lon, lat,
+                display_name: nameOptions.find((opt) => opt !== undefined),
+                osm_id,
+                osm_type,
+                lon,
+                lat,
             }
             this.userRelatedState.recentlyVisitedSearch.add(r)
         })
 
-        this.userRelatedState.showScale.addCallbackAndRun(showScale => {
+        this.userRelatedState.showScale.addCallbackAndRun((showScale) => {
             this.mapProperties.showScale.set(showScale)
         })
+
+        this.layerState.filteredLayers
+            .get("favourite")
+            ?.isDisplayed?.addCallbackAndRunD((favouritesShown) => {
+                const oldGlobal = this.layerState.globalFilters.data
+                const key = "show-favourite"
+                if (favouritesShown) {
+                    this.layerState.globalFilters.set([
+                        ...oldGlobal,
+                        {
+                            forceShowOnMatch: true,
+                            id: key,
+                            osmTags: new Tag("_favourite", "yes"),
+                            state: 0,
+                            onNewPoint: undefined,
+                        },
+                    ])
+                } else {
+                    this.layerState.globalFilters.set(oldGlobal.filter((gl) => gl.id !== key))
+                }
+            })
+
         new ThemeViewStateHashActor(this)
         new MetaTagging(this)
         new TitleHandler(this.selectedElement, this)
@@ -965,7 +1028,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
             this.mapProperties.rasterLayer,
             this.availableLayers,
             this.featureSwitches.backgroundLayerId,
-            this.userRelatedState.preferredBackgroundLayer,
+            this.userRelatedState.preferredBackgroundLayer
         )
     }
 
@@ -975,10 +1038,9 @@ export default class ThemeViewState implements SpecialVisualizationState {
     }
 
     /**
-     * Searches the appropriate layer - will first try if a special layer matches; if not, a normal layer will be used by delegating to the layout
+     * Searches the appropriate layer - will first try if a special layer matches; if not, a normal layer will be used by delegating to the theme
      */
     public getMatchingLayer(properties: Record<string, string>) {
-
         const id = properties.id
 
         if (id.startsWith("summary_")) {
@@ -990,15 +1052,15 @@ export default class ThemeViewState implements SpecialVisualizationState {
             return UserRelatedState.usersettingsConfig
         }
         if (id.startsWith(LastClickFeatureSource.newPointElementId)) {
-            return this.layout.layers.find((l) => l.id === "last_click")
+            return this.theme.layers.find((l) => l.id === "last_click")
         }
         if (id.startsWith("search_result")) {
             return GeocodingUtils.searchLayer
         }
         if (id === "location_track") {
-            return this.layout.layers.find((l) => l.id === "gps_track")
+            return this.theme.layers.find((l) => l.id === "gps_track")
         }
-        return this.layout.getMatchingLayer(properties)
+        return this.theme.getMatchingLayer(properties)
     }
 
     public async reportError(message: string | Error | XMLHttpRequest, extramessage: string = "") {
@@ -1006,13 +1068,13 @@ export default class ThemeViewState implements SpecialVisualizationState {
             console.error("Got (in themeViewSTate.reportError):", message, extramessage)
             return
         }
-        const isTesting = this.featureSwitchIsTesting.data
+        const isTesting = this.featureSwitchIsTesting?.data
         console.log(
             isTesting
                 ? ">>> _Not_ reporting error to report server as testmode is on"
                 : ">>> Reporting error to",
             Constants.ErrorReportServer,
-            message,
+            message
         )
         if (isTesting) {
             return
@@ -1036,7 +1098,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
         }
 
         if (extramessage) {
-            message += "(" + extramessage + ")"
+            message += " (" + extramessage + ")"
         }
 
         const stacktrace: string = new Error().stack
@@ -1047,7 +1109,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 body: JSON.stringify({
                     stacktrace,
                     message: "" + message,
-                    layout: this.layout.id,
+                    theme: this.theme.id,
                     version: Constants.vNumber,
                     language: this.userRelatedState.language.data,
                     username: this.osmConnection.userDetails.data?.name,

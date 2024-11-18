@@ -65,7 +65,7 @@
         featureId,
         deleteConfig.softDeletionTags,
         {
-          theme: state?.layout?.id ?? "unknown",
+          theme: state?.theme?.id ?? "unknown",
           specialMotivation: deleteReason,
         },
         canBeDeleted.data
@@ -73,7 +73,7 @@
     } else {
       // no _delete_reason is given, which implies that this is _not_ a deletion but merely a retagging via a nonDeleteMapping
       actionToTake = new ChangeTagAction(featureId, selectedTags, tags.data, {
-        theme: state?.layout?.id ?? "unkown",
+        theme: state?.theme?.id ?? "unkown",
         changeType: "special-delete",
       })
     }

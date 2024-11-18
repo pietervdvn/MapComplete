@@ -99,6 +99,16 @@ export class TagUtils {
             overpassSupport: true,
             docs: "Both the `key` and `value` part of this specification are interpreted as regexes, both the key and value musth completely match their respective regexes",
         },
+        "~i~~": {
+            name: "Key and value should match a given regex; value is case-invariant",
+            overpassSupport: true,
+            docs: "Similar to ~~, except that the value is case-invariant",
+        },
+        "!~i~~": {
+            name: "Key and value should match a given regex; value is case-invariant",
+            overpassSupport: true,
+            docs: "Similar to !~~, except that the value is case-invariant",
+        },
         ":=": {
             name: "Substitute `... {some_key} ...` and match `key`",
             overpassSupport: false,
@@ -469,7 +479,7 @@ export class TagUtils {
      * TagUtils.Tag("survey:date:={_date:now}") // => new SubstitutingTag("survey:date", "{_date:now}")
      * TagUtils.Tag("xyz!~\\[\\]") // => new RegexTag("xyz", /^(\[\])$/s, true)
      * TagUtils.Tag("tags~(.*;)?amenity=public_bookcase(;.*)?") // => new RegexTag("tags", /^((.*;)?amenity=public_bookcase(;.*)?)$/s)
-     * TagUtils.Tag("service:bicycle:.*~~*") // => new RegexTag(/^(service:bicycle:.*)$/, /.+/si)
+     * TagUtils.Tag("service:bicycle:.*~i~~*") // => new RegexTag(/^(service:bicycle:.*)$/, /.+/s)
      * TagUtils.Tag("_first_comment~.*{search}.*") //  => new RegexTag('_first_comment', /^(.*{search}.*)$/s)
      *
      * TagUtils.Tag("xyz<5").matchesProperties({xyz: 4}) // => true
@@ -572,7 +582,7 @@ export class TagUtils {
     }
 
     /**
-     * Parses the various parts of a regex tag
+     * Parses the various parts of a regex tag. The key is never considered a regex
      *
      * TagUtils.parseRegexOperator("key~value") // => {invert: false, key: "key", value: "value", modifier: ""}
      * TagUtils.parseRegexOperator("key!~value") // => {invert: true, key: "key", value: "value", modifier: ""}
@@ -590,7 +600,7 @@ export class TagUtils {
         value: string
         modifier: "i" | ""
     } | null {
-        const match = tag.match(/^([_|a-zA-Z0-9: -]+)(!)?~([i]~)?(.*)$/)
+        const match = tag.match(/^([_|a-zA-Z0-9.: -]+)(!)?~([i]~)?(.*)$/)
         if (match == null) {
             return null
         }
@@ -790,8 +800,9 @@ export class TagUtils {
             }
         }
 
-        if (tag.indexOf("~~") >= 0) {
-            const split = Utils.SplitFirst(tag, "~~")
+        if (tag.indexOf("~~") >= 0 || tag.indexOf("~i~~") >= 0) {
+            const caseInvariant = tag.indexOf("~i~~") >= 0
+            const split = Utils.SplitFirst(tag, caseInvariant ? "~i~~" : "~~")
             let keyRegex: RegExp
             if (split[0] === "*") {
                 keyRegex = new RegExp(".+", "i")
@@ -800,9 +811,9 @@ export class TagUtils {
             }
             let valueRegex: RegExp
             if (split[1] === "*") {
-                valueRegex = new RegExp(".+", "si")
+                valueRegex = new RegExp(".+", "s")
             } else {
-                valueRegex = new RegExp("^(" + split[1] + ")$", "s")
+                valueRegex = new RegExp("^(" + split[1] + ")$", caseInvariant ? "si" : "s")
             }
             return new RegexTag(keyRegex, valueRegex)
         }

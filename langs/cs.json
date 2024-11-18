@@ -130,7 +130,7 @@
         "osm": "OpenStreetMap je online mapa, kterou může kdokoli upravovat a znovu používat k jakémukoli účelu, pokud uvede autora a data zůstanou otevřená.\n\nJedná se o největší geoprostorovou databázi na světě, kterou opakovaně využívají tisíce aplikací a webových stránek.",
         "tagline": "Shromažďování geodat pomocí OpenStreetMap",
         "title": "mapcomplete.org",
-        "toerisme_vlaanderen": "Pro společný projekt s Visit Flanders byl vytvořen projekt \"Pin your point\". Více než 160 přispěvatelů přidalo několik tisíc laviček a piknikových stolů a objevilo 100 nabíjecích stanic pro kola.",
+        "toerisme_vlaanderen": "V rámci společného projektu s Visit Flanders byl vytvořen projekt „Pin your point“. Více než 160 přispěvatelů přidalo několik tisíc laviček a piknikových stolů a objevilo 100 dobíjecích stanic pro kola.",
         "whatIsOsm": "Co je OpenStreetMap?"
     },
     "general": {
@@ -206,6 +206,7 @@
             "openPanoramax": "Zde otevřete Panoramax",
             "openThemeDocumentation": "Otevřít dokumentaci k tematické mapě {name}",
             "panoramaxHelp": "<b>Panoramax</b> je online služba, která shromažďuje snímky z úrovně ulic a nabízí je pod bezplatnou licencí. Přispěvatelé mohou tyto snímky používat ke zlepšení OpenStreetMap",
+            "panoramaxLicenseCCBYSA": "Vaše obrázky jsou zveřejněny pod licencí CC-BY-SA - každý může váš obrázek znovu použít, pokud uvede vaše jméno",
             "seeOnMapillary": "Podívejte se na tento obrázek na Mapillary",
             "themeBy": "Téma spravuje {author}",
             "title": "Autorská práva a uvedení zdroje",
@@ -223,7 +224,7 @@
         "customThemeTitle": "Vlastní témata",
         "download": {
             "custom": {
-                "download": "Stáhnout PNG o {width} mm na šířku a {height} mm na výšku",
+                "download": "Stáhněte si formát PNG o šířce {width}mm a výšce {height}mm",
                 "downloadHelper": "Toto je určeno pro tisk",
                 "height": "Výška obrázku (v mm):",
                 "title": "Stáhněte si obrázek s vlastní šířkou a výškou",
@@ -257,8 +258,8 @@
             "toMuch": "Existuje mnoho funkcí, které lze stáhnout všechny",
             "uploadGpx": "Nahrajte svou trasu do OpenStreetMap"
         },
-        "enableGeolocationForSafari": "Nezobrazilo se vám vyskakovací okno s žádostí o geografické povolení?",
-        "enableGeolocationForSafariLink": "Přečtěte si, jak povolit oprávnění ke geolokaci v nastavení",
+        "enableGeolocationForSafari": "Nezobrazilo se vyskakovací okno s žádostí o povolení k umístění?",
+        "enableGeolocationForSafariLink": "Zjistěte, jak povolit oprávnění k poloze v nastavení",
         "eraseValue": "Vymažte tuto hodnotu",
         "error": "Něco se pokazilo",
         "example": "Příklad",
@@ -269,7 +270,7 @@
             "disableAll": "Zakázat vše",
             "enableAll": "Povolit vše"
         },
-        "geopermissionDenied": "Použití geolokace bylo zamítnuto",
+        "geopermissionDenied": "Povolení k poloze bylo zamítnuto",
         "getStartedLogin": "Přihlaste se pomocí OpenStreetMap a začněte",
         "getStartedNewAccount": " nebo <a href='https://www.openstreetmap.org/user/new' target='_blank'>vytvořte nový účet</a>",
         "goToInbox": "Otevřete složku Doručená pošta",
@@ -309,6 +310,7 @@
             "aboutMapComplete": "O MapComplete",
             "filter": "Filtrování dat",
             "moreUtilsTitle": "Zjistit více",
+            "openHereDifferentApp": "Otevřít aktuální polohu v jiných aplikacích",
             "showIntroduction": "Zobrazit úvod",
             "title": "Menu"
         },
@@ -488,6 +490,7 @@
                 "slight_right": "mírně vpravo",
                 "straight": "přímo vpřed"
             },
+            "east": "Pohyb na východ",
             "fromGps": "{distance} {direction} vaší polohy",
             "fromMapCenter": "{distance} {direction} středu mapy",
             "in": "Přiblížení na úroveň {z}",
@@ -495,10 +498,14 @@
             "locked": "Zobrazení je nyní uzamčeno na vaši polohu GPS, pohyb je zakázán.",
             "navigation": "Pomocí kláves se šipkami posouvejte mapu, stisknutím mezerníku vyberte nejbližší objekt. Stisknutím čísla vyberte místa dále.",
             "noCloseFeatures": "Nejsou zobrazeny žádné funkce.",
+            "north": "Pohyb na sever",
             "oneFeatureInView": "Jedna funkce ve výřezu.",
             "out": "Oddálení na úroveň {z}",
+            "south": "Pohyb na jih",
+            "unlocked": "Pohyb povolen.",
             "viewportCenterCloseToGps": "Mapa je vycentrována kolem vaší polohy.",
-            "viewportCenterDetails": "Střed výřezu je vzdálen {distance} a {bearing} od vaší polohy."
+            "viewportCenterDetails": "Střed výřezu je vzdálen {distance} a {bearing} od vaší polohy.",
+            "west": "Pohyb na západ"
         },
         "waitingForGeopermission": "Čekáme na vaše povolení používat geolokaci…",
         "waitingForLocation": "Vyhledávání vaší aktuální polohy…",
@@ -594,6 +601,7 @@
                 "someFailed": "Litujeme, nepodařilo se nám nahrát {count} obrázků",
                 "uploading": "Nahrává se {count} obrázků…"
             },
+            "noBlur": "Snímky nebudou rozmazané. Nefotografujte lidi",
             "one": {
                 "done": "Váš obrázek byl úspěšně nahrán. Děkuji!",
                 "failed": "Omlouváme se, váš obrázek se nepodařilo nahrát",

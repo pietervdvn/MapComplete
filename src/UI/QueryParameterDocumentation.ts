@@ -5,7 +5,7 @@ import List from "./Base/List"
 import Translations from "./i18n/Translations"
 import { QueryParameters } from "../Logic/Web/QueryParameters"
 import FeatureSwitchState from "../Logic/State/FeatureSwitchState"
-import LayoutConfig from "../Models/ThemeConfig/LayoutConfig"
+import ThemeConfig from "../Models/ThemeConfig/ThemeConfig"
 import ThemeViewStateHashActor from "../Logic/Web/ThemeViewStateHashActor"
 import MarkdownUtils from "../Utils/MarkdownUtils"
 
@@ -27,7 +27,7 @@ export default class QueryParameterDocumentation {
     ]
 
     public static UrlParamDocs(): Map<string, string> {
-        const dummyLayout = new LayoutConfig(<any>{
+        const dummyLayout = new ThemeConfig(<any>{
             id: "&gt;theme&lt;",
             title: { en: "<theme>" },
             description: "A theme to generate docs with",

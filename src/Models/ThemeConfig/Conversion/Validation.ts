@@ -4,8 +4,8 @@ import LayerConfig from "../LayerConfig"
 import { Utils } from "../../../Utils"
 import Constants from "../../Constants"
 import { Translation } from "../../../UI/i18n/Translation"
-import { LayoutConfigJson } from "../Json/LayoutConfigJson"
-import LayoutConfig from "../LayoutConfig"
+import { ThemeConfigJson } from "../Json/ThemeConfigJson"
+import ThemeConfig from "../ThemeConfig"
 import { TagRenderingConfigJson } from "../Json/TagRenderingConfigJson"
 import { TagUtils } from "../../../Logic/Tags/TagUtils"
 import { And } from "../../../Logic/Tags/And"
@@ -20,8 +20,10 @@ import { Translatable } from "../Json/Translatable"
 import { ConversionContext } from "./ConversionContext"
 import PointRenderingConfigJson from "../Json/PointRenderingConfigJson"
 import { PrevalidateLayer } from "./PrevalidateLayer"
+import { AvailableRasterLayers } from "../../RasterLayers"
+import { eliCategory } from "../../RasterLayerProperties"
 
-export class ValidateLanguageCompleteness extends DesugaringStep<LayoutConfig> {
+export class ValidateLanguageCompleteness extends DesugaringStep<ThemeConfig> {
     private readonly _languages: string[]
 
     constructor(...languages: string[]) {
@@ -33,7 +35,7 @@ export class ValidateLanguageCompleteness extends DesugaringStep<LayoutConfig> {
         this._languages = languages ?? ["en"]
     }
 
-    convert(obj: LayoutConfig, context: ConversionContext): LayoutConfig {
+    convert(obj: ThemeConfig, context: ConversionContext): ThemeConfig {
         const origLayers = obj.layers
         obj.layers = [...obj.layers].filter((l) => l["id"] !== "favourite")
         const translations = Translation.ExtractAllTranslationsFrom(obj)
@@ -103,7 +105,7 @@ export class DoesImageExist extends DesugaringStep<string> {
             return image
         }
 
-        if(Utils.isEmoji(image)){
+        if (Utils.isEmoji(image)) {
             return image
         }
 
@@ -126,7 +128,7 @@ export class DoesImageExist extends DesugaringStep<string> {
     }
 }
 
-class OverrideShadowingCheck extends DesugaringStep<LayoutConfigJson> {
+class OverrideShadowingCheck extends DesugaringStep<ThemeConfigJson> {
     constructor() {
         super(
             "Checks that an 'overrideAll' does not override a single override",
@@ -135,7 +137,7 @@ class OverrideShadowingCheck extends DesugaringStep<LayoutConfigJson> {
         )
     }
 
-    convert(json: LayoutConfigJson, context: ConversionContext): LayoutConfigJson {
+    convert(json: ThemeConfigJson, context: ConversionContext): ThemeConfigJson {
         const overrideAll = json.overrideAll
         if (overrideAll === undefined) {
             return json
@@ -168,12 +170,12 @@ class OverrideShadowingCheck extends DesugaringStep<LayoutConfigJson> {
     }
 }
 
-class MiscThemeChecks extends DesugaringStep<LayoutConfigJson> {
+class MiscThemeChecks extends DesugaringStep<ThemeConfigJson> {
     constructor() {
         super("Miscelleanous checks on the theme", [], "MiscThemesChecks")
     }
 
-    convert(json: LayoutConfigJson, context: ConversionContext): LayoutConfigJson {
+    convert(json: ThemeConfigJson, context: ConversionContext): ThemeConfigJson {
         if (json.id !== "personal" && (json.layers === undefined || json.layers.length === 0)) {
             context.err("The theme " + json.id + " has no 'layers' defined")
         }
@@ -218,11 +220,41 @@ class MiscThemeChecks extends DesugaringStep<LayoutConfigJson> {
                     "'overrideAll' is spelled with _two_ `r`s. You only wrote a single one of them."
                 )
         }
+
+        if (
+            json.defaultBackgroundId &&
+            ![AvailableRasterLayers.osmCartoProperties.id, ...eliCategory].find(
+                (l) => l === json.defaultBackgroundId
+            )
+        ) {
+            const background = json.defaultBackgroundId
+            const match = AvailableRasterLayers.globalLayers.find(
+                (l) => l.properties.id === background
+            )
+            if (!match) {
+                const suggestions = Utils.sortedByLevenshteinDistance(
+                    background,
+                    AvailableRasterLayers.globalLayers,
+                    (l) => l.properties.id
+                )
+                context.enter("defaultBackgroundId").warn(
+                    "The default background layer with id",
+                    background,
+                    "does not exist or is not a global layer. Perhaps you meant one of:",
+                    suggestions
+                        .slice(0, 5)
+                        .map((l) => l.properties.id)
+                        .join(", "),
+                    "If you want to use a certain category of background image, use",
+                    AvailableRasterLayers.globalLayers.join(", ")
+                )
+            }
+        }
         return json
     }
 }
 
-export class PrevalidateTheme extends Fuse<LayoutConfigJson> {
+export class PrevalidateTheme extends Fuse<ThemeConfigJson> {
     constructor() {
         super(
             "Various consistency checks on the raw JSON",
@@ -887,7 +919,7 @@ export class ValidateFilter extends DesugaringStep<FilterConfigJson> {
 
 export class DetectDuplicateFilters extends DesugaringStep<{
     layers: LayerConfigJson[]
-    themes: LayoutConfigJson[]
+    themes: ThemeConfigJson[]
 }> {
     constructor() {
         super(
@@ -898,15 +930,15 @@ export class DetectDuplicateFilters extends DesugaringStep<{
     }
 
     convert(
-        json: { layers: LayerConfigJson[]; themes: LayoutConfigJson[] },
+        json: { layers: LayerConfigJson[]; themes: ThemeConfigJson[] },
         context: ConversionContext
-    ): { layers: LayerConfigJson[]; themes: LayoutConfigJson[] } {
+    ): { layers: LayerConfigJson[]; themes: ThemeConfigJson[] } {
         const { layers, themes } = json
         const perOsmTag = new Map<
             string,
             {
                 layer: LayerConfigJson
-                layout: LayoutConfigJson | undefined
+                theme: ThemeConfigJson | undefined
                 filter: FilterConfigJson
             }[]
         >()
@@ -937,10 +969,10 @@ export class DetectDuplicateFilters extends DesugaringStep<{
                 return
             }
             let msg = "Possible duplicate filter: " + key
-            for (const { filter, layer, layout } of value) {
+            for (const { filter, layer, theme } of value) {
                 let id = ""
-                if (layout !== undefined) {
-                    id = layout.id + ":"
+                if (theme !== undefined) {
+                    id = theme.id + ":"
                 }
                 msg += `\n      - ${id}${layer.id}.${filter.id}`
             }
@@ -959,11 +991,11 @@ export class DetectDuplicateFilters extends DesugaringStep<{
             string,
             {
                 layer: LayerConfigJson
-                layout: LayoutConfigJson | undefined
+                theme: ThemeConfigJson | undefined
                 filter: FilterConfigJson
             }[]
         >,
-        layout?: LayoutConfigJson | undefined
+        theme?: ThemeConfigJson | undefined
     ): void {
         if (layer.filter === undefined || layer.filter === null) {
             return
@@ -991,14 +1023,14 @@ export class DetectDuplicateFilters extends DesugaringStep<{
                 perOsmTag.get(key).push({
                     layer,
                     filter,
-                    layout,
+                    theme,
                 })
             }
         }
     }
 }
 
-export class DetectDuplicatePresets extends DesugaringStep<LayoutConfig> {
+export class DetectDuplicatePresets extends DesugaringStep<ThemeConfig> {
     constructor() {
         super(
             "Detects mappings which have identical (english) names or identical mappings.",
@@ -1007,7 +1039,7 @@ export class DetectDuplicatePresets extends DesugaringStep<LayoutConfig> {
         )
     }
 
-    convert(json: LayoutConfig, context: ConversionContext): LayoutConfig {
+    convert(json: ThemeConfig, context: ConversionContext): ThemeConfig {
         const presets: PresetConfig[] = [].concat(...json.layers.map((l) => l.presets))
 
         const enNames = presets.map((p) => p.title.textFor("en"))
@@ -1056,7 +1088,7 @@ export class DetectDuplicatePresets extends DesugaringStep<LayoutConfig> {
 }
 
 export class ValidateThemeEnsemble extends Conversion<
-    LayoutConfig[],
+    ThemeConfig[],
     Map<
         string,
         {
@@ -1075,7 +1107,7 @@ export class ValidateThemeEnsemble extends Conversion<
     }
 
     convert(
-        json: LayoutConfig[],
+        json: ThemeConfig[],
         context: ConversionContext
     ): Map<
         string,

@@ -1,7 +1,7 @@
 /**
- * The part of the global state which initializes the feature switches, based on default values and on the layoutToUse
+ * The part of the global state which initializes the feature switches, based on default values and on the theme
  */
-import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
+import ThemeConfig from "../../Models/ThemeConfig/ThemeConfig"
 import { UIEventSource } from "../UIEventSource"
 import { QueryParameters } from "../Web/QueryParameters"
 import Constants from "../../Models/Constants"
@@ -45,11 +45,6 @@ export class OsmConnectionFeatureSwitches {
 }
 
 export default class FeatureSwitchState extends OsmConnectionFeatureSwitches {
-    /**
-     * The layout that is being used in this run
-     */
-    public readonly layoutToUse: LayoutConfig
-
     public readonly featureSwitchEnableLogin: UIEventSource<boolean>
     public readonly featureSwitchSearch: UIEventSource<boolean>
     public readonly featureSwitchBackgroundSelection: UIEventSource<boolean>
@@ -74,9 +69,8 @@ export default class FeatureSwitchState extends OsmConnectionFeatureSwitches {
     public readonly featureSwitchMorePrivacy: UIEventSource<boolean>
     public readonly featureSwitchLayerDefault: UIEventSource<boolean>
 
-    public constructor(layoutToUse?: LayoutConfig) {
+    public constructor(theme?: ThemeConfig) {
         super()
-        this.layoutToUse = layoutToUse
 
         const legacyRewrite: Record<string, string | string[]> = {
             "fs-userbadge": "fs-enable-login",
@@ -102,7 +96,7 @@ export default class FeatureSwitchState extends OsmConnectionFeatureSwitches {
 
         this.featureSwitchEnableLogin = FeatureSwitchUtils.initSwitch(
             "fs-enable-login",
-            layoutToUse?.enableUserBadge ?? true,
+            theme?.enableUserBadge ?? true,
             "Disables/Enables logging in and thus disables editing all together. This effectively puts MapComplete into read-only mode."
         )
         {
@@ -117,18 +111,18 @@ export default class FeatureSwitchState extends OsmConnectionFeatureSwitches {
 
         this.featureSwitchSearch = FeatureSwitchUtils.initSwitch(
             "fs-search",
-            layoutToUse?.enableSearch ?? true,
+            theme?.enableSearch ?? true,
             "Disables/Enables the search bar"
         )
         this.featureSwitchBackgroundSelection = FeatureSwitchUtils.initSwitch(
             "fs-background",
-            layoutToUse?.enableBackgroundLayerSelection ?? true,
+            theme?.enableBackgroundLayerSelection ?? true,
             "Disables/Enables the background layer control where a user can enable e.g. aerial imagery"
         )
 
         this.featureSwitchFilter = FeatureSwitchUtils.initSwitch(
             "fs-filter",
-            layoutToUse?.enableLayers ?? true,
+            theme?.enableLayers ?? true,
             "Disables/Enables the filter view where a user can enable/disable MapComplete-layers or filter for certain properties"
         )
 
@@ -149,17 +143,17 @@ export default class FeatureSwitchState extends OsmConnectionFeatureSwitches {
         )
         this.featureSwitchBackToThemeOverview = FeatureSwitchUtils.initSwitch(
             "fs-homepage-link",
-            layoutToUse?.enableMoreQuests ?? true,
+            theme?.enableMoreQuests ?? true,
             "Disables/Enables the various links which go back to the index page with the theme overview"
         )
         this.featureSwitchShareScreen = FeatureSwitchUtils.initSwitch(
             "fs-share-screen",
-            layoutToUse?.enableShareScreen ?? true,
+            theme?.enableShareScreen ?? true,
             "Disables/Enables the 'Share-screen'-tab in the welcome message"
         )
         this.featureSwitchGeolocation = FeatureSwitchUtils.initSwitch(
             "fs-geolocation",
-            layoutToUse?.enableGeolocation ?? true,
+            theme?.enableGeolocation ?? true,
             "Disables/Enables the geolocation button"
         )
 
@@ -170,19 +164,19 @@ export default class FeatureSwitchState extends OsmConnectionFeatureSwitches {
         )
         this.featureSwitchShowAllQuestions = FeatureSwitchUtils.initSwitch(
             "fs-all-questions",
-            layoutToUse?.enableShowAllQuestions ?? false,
+            theme?.enableShowAllQuestions ?? false,
             "Always show all questions"
         )
 
         this.featureSwitchEnableExport = FeatureSwitchUtils.initSwitch(
             "fs-export",
-            layoutToUse?.enableExportButton ?? true,
+            theme?.enableExportButton ?? true,
             "Enable the export as GeoJSON and CSV button"
         )
 
         this.featureSwitchCache = FeatureSwitchUtils.initSwitch(
             "fs-cache",
-            layoutToUse?.enableCache ?? true,
+            theme?.enableCache ?? true,
             "Enable/disable caching from localStorage"
         )
 
@@ -209,13 +203,13 @@ export default class FeatureSwitchState extends OsmConnectionFeatureSwitches {
 
         this.featureSwitchMorePrivacy = QueryParameters.GetBooleanQueryParameter(
             "moreprivacy",
-            layoutToUse.enableMorePrivacy,
+            theme.enableMorePrivacy,
             "If true, the location distance indication will not be written to the changeset and other privacy enhancing measures might be taken."
         )
 
         this.overpassUrl = QueryParameters.GetQueryParameter(
             "overpassUrl",
-            (layoutToUse?.overpassUrl ?? Constants.defaultOverpassUrls).join(","),
+            (theme?.overpassUrl ?? Constants.defaultOverpassUrls).join(","),
             "Point mapcomplete to a different overpass-instance. Example: https://overpass-api.de/api/interpreter"
         ).sync(
             (param) => param?.split(","),
@@ -226,7 +220,7 @@ export default class FeatureSwitchState extends OsmConnectionFeatureSwitches {
         this.overpassTimeout = UIEventSource.asInt(
             QueryParameters.GetQueryParameter(
                 "overpassTimeout",
-                "" + layoutToUse?.overpassTimeout,
+                "" + theme?.overpassTimeout,
                 "Set a different timeout (in seconds) for queries in overpass"
             )
         )
@@ -234,7 +228,7 @@ export default class FeatureSwitchState extends OsmConnectionFeatureSwitches {
         this.overpassMaxZoom = UIEventSource.asFloat(
             QueryParameters.GetQueryParameter(
                 "overpassMaxZoom",
-                "" + layoutToUse?.overpassMaxZoom,
+                "" + theme?.overpassMaxZoom,
                 " point to switch between OSM-api and overpass"
             )
         )
@@ -242,14 +236,14 @@ export default class FeatureSwitchState extends OsmConnectionFeatureSwitches {
         this.osmApiTileSize = UIEventSource.asInt(
             QueryParameters.GetQueryParameter(
                 "osmApiTileSize",
-                "" + layoutToUse?.osmApiTileSize,
+                "" + theme?.osmApiTileSize,
                 "Tilesize when the OSM-API is used to fetch data within a BBOX"
             )
         )
 
         this.backgroundLayerId = QueryParameters.GetQueryParameter(
             "background",
-            layoutToUse?.defaultBackgroundId,
+            theme?.defaultBackgroundId,
             [
                 "When set, load this raster layer (or a layer of this category) as background layer instead of using the default background. This is as if the user opened the background selection menu and selected the layer with the given id or category.",
                 "Most raster layers are based on the [editor layer index](https://github.com/osmlab/editor-layer-index)",

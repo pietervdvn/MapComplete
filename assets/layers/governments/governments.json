@@ -6,14 +6,16 @@
     "nl": "Overheidsdiensten",
     "pa_PK": "سرکارسں",
     "ca": "Governs",
-    "cs": "vlády"
+    "cs": "vlády",
+    "es": "Edificios gubernamentales"
   },
   "description": {
     "en": "This layer show governmental buildings. It was setup as commissioned layer for the client of OSOC '22",
     "de": "Diese Ebene zeigt Gebäude der öffentlichen Verwaltung. Sie wurde im Auftrag für den Kunden von OSOC '22 erstellt",
     "nl": "Deze laag toont overheidsgebouwen. Opgezet voor OSOC '22",
     "ca": "Aquesta capa mostra edificis governamentals. Es va configurar com a capa encarregada per al client d'OSOC '22",
-    "cs": "Tato vrstva zobrazuje vládní budovy. Byla nastavena jako zprovozněná vrstva pro klienta OSOC '22"
+    "cs": "Tato vrstva zobrazuje vládní budovy. Byla nastavena jako zprovozněná vrstva pro klienta OSOC '22",
+    "es": "Esta capa muestra edificios gubernamentales. Se configuró como capa encargada para el cliente de OSOC '22"
   },
   "source": {
     "osmTags": {
@@ -29,7 +31,8 @@
       "de": "Behörde {name}",
       "nl": "Overheidsdienst {name}",
       "ca": "Oficina governamental {name}",
-      "cs": "Vládní úřad {name}"
+      "cs": "Vládní úřad {name}",
+      "es": "Oficina gubernamental {name}"
     }
   },
   "pointRendering": [
@@ -59,7 +62,8 @@
         "de": "ein Büro der öffentlichen Verwaltung",
         "nl": "een overheidsdienst",
         "ca": "una oficina Governamental",
-        "cs": "vládní úřad"
+        "cs": "vládní úřad",
+        "es": "una oficina gubernamental"
       },
       "tags": [
         "office=government"
@@ -77,14 +81,16 @@
         "de": "Wie lautet der Name dieser Behörde?",
         "nl": "Wat is de naam van deze overheidsdienst?",
         "ca": "Quin és el nom d'aquesta oficina gornavental?",
-        "cs": "Jak se jmenuje tento úřad vlády?"
+        "cs": "Jak se jmenuje tento úřad vlády?",
+        "es": "¿Cuál es el nombre de esta oficina gubernamental?"
       },
       "render": {
         "en": "This Governmental Office is called {name}",
         "de": "Der Name der Behörde lautet {name}",
         "nl": "Deze overheidsdienst heet {name}",
         "ca": "Aquesta Oficina Governamental s'anomena {name}",
-        "cs": "Tento vládní úřad se jmenuje {name}"
+        "cs": "Tento vládní úřad se jmenuje {name}",
+        "es": "Esta oficina gubernamental se llama {name}"
       },
       "freeform": {
         "key": "name"

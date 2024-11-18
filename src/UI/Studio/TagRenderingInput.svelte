@@ -29,7 +29,7 @@
   const store = state.getStoreFor(path)
   let value = store.data
   let hasSeenIntro = UIEventSource.asBoolean(
-    LocalStorageSource.Get("studio-seen-tagrendering-tutorial", "false")
+    LocalStorageSource.get("studio-seen-tagrendering-tutorial", "false")
   )
   onMount(() => {
     if (!hasSeenIntro.data) {

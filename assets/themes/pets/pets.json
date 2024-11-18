@@ -11,7 +11,10 @@
     "cs": "Veterináři, psí parky a další služby pro domácí zvířata",
     "zh_Hant": "獸醫院、寵物公園以及其他寵物設施",
     "pl": "Kliniki weterynaryjne, parki dla psów i inne obiekty dla zwierząt",
-    "it": "Veterinari, parchi accessibili ai cani e altri servizi per animali domestici"
+    "it": "Veterinari, parchi accessibili ai cani e altri servizi per animali domestici",
+    "ru": "Ветеринары, парки для собак и другие удобства для домашних животных",
+    "hu": "Állatorvosok, kutyafuttatók és hasonló, kedvtelésből tartott állatoknak szóló létesítmények",
+    "uk": "Ветеринари, собачі парки та інші зручності для домашніх тварин"
   },
   "description": {
     "en": "On this map, you'll find various interesting places for you pets: veterinarians, dog parks, pet shops, dog-friendly restaurants, ...",
@@ -20,9 +23,11 @@
     "nl": "Deze kaart helpt je op weg met je huisdier: dierenartsen, hondenloopzones, dierenwinkels, hondenvriendelijke restaurants, ...",
     "fr": "Retrouvez sur cette carte des points d’intérêts pour votre animal : vétérinaires, parcs à chien, animaleries, restaurants acceptant les chiens, etc.",
     "ca": "A aquest mapa, trobaràs diferents llocs interesants per a les teves mascotes: veterinaris, parcs per a gossos, botigues d'animals, restaurants amables amb gossos, ...",
-    "es": "En este mapa, encontrarás varios lugares interesantes para tus mascotas: veterinarios, parques para perros, tiendas de mascotas, restaurantes aptos para perros, ...",
+    "es": "En este mapa, encontrarás varios lugares interesantes para tus mascotas: veterinarios, parques para perros, tiendas de mascotas, restaurantes que admiten perros...",
     "cs": "Na této mapě najdete různá zajímavá místa pro vaše domácí mazlíčky: veterináře, psí parky, obchody pro zvířata, restaurace pro psy, ...",
-    "pl": "Na tej mapie znajdziesz różne ciekawe miejsca dla swoich zwierząt: weterynarze, wybiegi dla psów, sklepy zoologiczne, restauracje przyjazne psom, ..."
+    "pl": "Na tej mapie znajdziesz różne ciekawe miejsca dla swoich zwierząt: weterynarze, wybiegi dla psów, sklepy zoologiczne, restauracje przyjazne psom, ...",
+    "ru": "На этой карте вы найдете различные интересные места для ваших питомцев: ветеринарные клиники, парки для собак, зоомагазины, рестораны для собак, ...",
+    "uk": "На цій мапі ви знайдете різні цікаві місця для ваших домашніх улюбленців: ветеринари, парки для собак, зоомагазини, ресторани, дружні до собак, …"
   },
   "icon": "./assets/layers/dogpark/dog-park.svg",
   "startZoom": 10,
@@ -49,7 +54,8 @@
           "cs": "Restaurace vhodné pro vstup se psy",
           "zh_Hant": "寵物友善餐廳",
           "pl": "Restauracje przyjazne psom",
-          "it": "Ristoranti che accettano i cani"
+          "it": "Ristoranti che accettano i cani",
+          "ru": "Заведения, где можно поесть с собаками"
         },
         "pointRendering": [
           {
@@ -101,7 +107,7 @@
           "fr": "Magasins acceptant les chiens",
           "ca": "Botigues amigues dels gossos",
           "pa_PK": "کُتیاں دی اِجازت دیاں دکاناں",
-          "es": "Tiendas aptas para perros",
+          "es": "Tiendas que admiten perros",
           "cs": "Obchody vhodné pro vstup se psy",
           "zh_Hant": "寵物友善商家",
           "pl": "Sklepy przyjazne psom",
@@ -117,11 +123,12 @@
             "fr": "Magasins acceptant les chiens",
             "ca": "Botigues amigues dels gossos",
             "pa_PK": "کُتیاں دی اِجازت دیاں دکاناں",
-            "es": "Tiendas aptas para perros",
+            "es": "Tiendas que admiten perros",
             "cs": "Obchody vhodné pro vstup se psy",
             "zh_Hant": "寵物友善商家",
             "pl": "Sklepy przyjazne psom",
-            "it": "Negozi che accettano i cani"
+            "it": "Negozi che accettano i cani",
+            "hu": "Kutyabarát üzletek"
           },
           "mappings": [
             {
@@ -216,7 +223,7 @@
               "fr": "magasin acceptant les chiens",
               "ca": "botiga amiga dels gossos",
               "pa_PK": "کُتیاں دی اِجازت دی دکان",
-              "es": "Tienda adaptada para perros",
+              "es": "tienda que admite perros",
               "cs": "obchod vhodný pro vstup se psem",
               "zh_Hant": "寵物友善商家",
               "pl": "sklep przyjazny psom"
@@ -232,7 +239,7 @@
               "nl": "Een winkel waar je je hond in bijna heel de winkel mag meenemen",
               "fr": "Un magasin où vous pouvez amener votre chien presque partout",
               "ca": "Una botiga on pots dur al gos gairebé a tot arreu",
-              "es": "Una tienda a la que se puede llevar un perro a casi todas partes",
+              "es": "Una tienda donde puedes llevar a un perro casi a todas partes",
               "cs": "Obchod, ve kterém si můžete vzít psa téměř kamkoli",
               "zh_Hant": "你幾乎可以攜帶寵物到處去的商店",
               "pl": "Sklep, w którym niemal wszędzie można zabrać psa"

@@ -34,10 +34,10 @@ export default class AllImageProviders {
         AllImageProviders.genericImageProvider,
     ]
     public static apiUrls: string[] = [].concat(
-        ...AllImageProviders.ImageAttributionSource.map((src) => src.apiUrls()),
+        ...AllImageProviders.ImageAttributionSource.map((src) => src.apiUrls())
     )
     public static defaultKeys = [].concat(
-        AllImageProviders.ImageAttributionSource.map((provider) => provider.defaultKeyPrefixes),
+        AllImageProviders.ImageAttributionSource.map((provider) => provider.defaultKeyPrefixes)
     )
     private static providersByName = {
         imgur: Imgur.singleton,
@@ -66,17 +66,21 @@ export default class AllImageProviders {
         return AllImageProviders.genericImageProvider
     }
 
+    private static readonly _cachedImageStores: Record<string, Store<ProvidedImage[]>> = {}
     /**
-     * Tries to extract all image data for this image
+     * Tries to extract all image data for this image. Cachedon tags?.data?.id
      */
     public static LoadImagesFor(
         tags: Store<Record<string, string>>,
-        tagKey?: string[],
+        tagKey?: string[]
     ): Store<ProvidedImage[]> {
         if (tags?.data?.id === undefined) {
             return undefined
         }
-
+        const id = tags?.data?.id
+        if (this._cachedImageStores[id]) {
+            return this._cachedImageStores[id]
+        }
 
         const source = new UIEventSource([])
         const allSources: Store<ProvidedImage[]>[] = []
@@ -86,14 +90,15 @@ export default class AllImageProviders {
                 However, we override them if a custom image tag is set, e.g. 'image:menu'
                */
             const prefixes = tagKey ?? imageProvider.defaultKeyPrefixes
-            const singleSource = tags.bindD(tags => imageProvider.getRelevantUrls(tags, prefixes))
+            const singleSource = tags.bindD((tags) => imageProvider.getRelevantUrls(tags, prefixes))
             allSources.push(singleSource)
             singleSource.addCallbackAndRunD((_) => {
                 const all: ProvidedImage[] = [].concat(...allSources.map((source) => source.data))
-                const dedup = Utils.DedupOnId(all, i => i?.id ?? i?.url)
+                const dedup = Utils.DedupOnId(all, (i) => i?.id ?? i?.url)
                 source.set(dedup)
             })
         }
+        this._cachedImageStores[id] = source
         return source
     }
 
@@ -103,7 +108,7 @@ export default class AllImageProviders {
      */
     public static loadImagesFrom(urls: string[]): Store<ProvidedImage[]> {
         const tags = {
-            id:"na"
+            id: "na",
         }
         for (let i = 0; i < urls.length; i++) {
             const url = urls[i]

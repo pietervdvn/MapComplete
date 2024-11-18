@@ -227,7 +227,7 @@ This tagrendering has labels
 | id | question | osmTags |
 -----|-----|----- |
 | fee.0 | *Does one have to pay to use this playground?* (default) |  |
-| fee.1 | Free to use | fee=no |
+| fee.1 | Free to use | fee=no | fee= |
 | fee.2 | Paid playground | fee=yes |
 
 

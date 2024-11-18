@@ -206,6 +206,7 @@
             "openPanoramax": "Panoramax öffnen",
             "openThemeDocumentation": "Dokumentation zur Themenkarte {name} anzeigen",
             "panoramaxHelp": "<b>Panoramax</b> ist ein Online-Service, der Straßenbilder sammelt und sie unter einer kostenlosen Lizenz anbietet. Mitwirkende dürfen diese Bilder nutzen, um OpenStreetMap zu verbessern",
+            "panoramaxLicenseCCBYSA": "Ihre Bilder werden unter CC-BY-SA veröffentlicht - jeder kann Ihr Bild weiterverwenden, wenn er Ihren Namen erwähnt",
             "seeOnMapillary": "Dieses Bild auf Mapillary ansehen",
             "themeBy": "Dieses Thema wurde erstellt von {author}",
             "title": "Copyright und Urheberrechtsangabe",
@@ -257,8 +258,8 @@
             "toMuch": "Es gibt zu viele Funktionen, um sie alle herunterzuladen",
             "uploadGpx": "Einen Track auf OpenStreetMap hochladen"
         },
-        "enableGeolocationForSafari": "Hast du das Popup zur Abfrage der Geo-Berechtigung nicht erhalten?",
-        "enableGeolocationForSafariLink": "Erfahre, wie du die Geo-Berechtigung in den Einstellungen aktivieren kannst",
+        "enableGeolocationForSafari": "Hast du das Popup zur Standortabfrage nicht erhalten?",
+        "enableGeolocationForSafariLink": "Wie die Standortberechtigung in den Einstellungen aktiviert werden kann",
         "eraseValue": "Wert löschen",
         "error": "Etwas ist schief gelaufen",
         "example": "Beispiel",
@@ -269,7 +270,7 @@
             "disableAll": "Alle deaktivieren",
             "enableAll": "Alle aktivieren"
         },
-        "geopermissionDenied": "Die Verwendung der Standortbestimmung wurde verweigert",
+        "geopermissionDenied": "Die Standortbestimmung wurde verweigert",
         "getStartedLogin": "Bei OpenStreetMap anmelden, um loszulegen",
         "getStartedNewAccount": " oder <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">ein neues Konto anlegen</a>",
         "goToInbox": "Posteingang öffnen",
@@ -309,6 +310,7 @@
             "aboutMapComplete": "Über MapComplete",
             "filter": "Daten filtern",
             "moreUtilsTitle": "Mehr entdecken",
+            "openHereDifferentApp": "Aktuellen Standort in anderen Anwendungen öffnen",
             "showIntroduction": "Einführung anzeigen",
             "title": "Menü"
         },
@@ -586,10 +588,33 @@
             "seeNearby": "Bilder in der Nähe durchsuchen",
             "title": "Straßenbilder in der Nähe"
         },
+        "panoramax": {
+            "deletionRequested": "Der Bericht wurde abgeschickt. Ein Moderator wird sich in Kürze darum kümmern",
+            "freeform": "Gibt es weitere relevante Informationen?",
+            "otherFreeform": "Bitte gib an, warum dieses Bild entfernt werden soll:",
+            "placeholder": "Erkläre, warum das Bild gelöscht werden sollte",
+            "report": {
+                "blur_excess": "Zu viel ist unscharf und macht das Bild unbrauchbar",
+                "blur_missing": "Ein Gesicht oder Nummernschild ist auf diesem Bild nicht unscharf",
+                "copyright": "Das Bild enthält urheberrechtlich geschützte Inhalte",
+                "inappropriate": "Dieses Bild ist unangemessen (es enthält Nacktheit, ruft nach Hass oder ist nicht Streetview)",
+                "mislocated": "Das Bild ist von einem anderen Ort",
+                "other": "Ein weiterer Grund, bitte angeben",
+                "picture_low_quality": "Das Bild ist von geringer Qualität",
+                "privacy": "Das Bild zeigt eine private Immobilie"
+            },
+            "requestDeletion": "Bildlöschung beantragen",
+            "title": "Warum sollte dieses Bild dauerhaft gelöscht werden?"
+        },
         "pleaseLogin": "Bitte anmelden, um ein Bild hinzuzufügen",
         "processing": "Der Server verarbeitet das Bild",
         "respectPrivacy": "Laden Sie keine Bilder von Google Maps, Google Streetview oder anderen urheberrechtlich geschützten Quellen hoch.",
         "toBig": "Ihr Bild ist mit {actual_size} zu groß. Die maximale Bildgröße ist {max_size}",
+        "unlink": {
+            "button": "Bild entkoppeln",
+            "explanation": "Wenn du die Verknüpfung dieses Bildes aufhebst, wird das Bild nicht mehr mit diesem Objekt angezeigt. Es wird aber weiterhin in den Nachbarschaftsbildern und möglicherweise in anderen Objekten angezeigt.",
+            "title": "Dieses Bild entkoppeln?"
+        },
         "upload": {
             "failReasons": "Keine Internetverbindung",
             "failReasonsAdvanced": "Alternativ dazu können Sie einstellen, dass Ihr Browser und Ihre Erweiterungen die APIs von Drittanbietern nicht blockieren.",
@@ -599,6 +624,7 @@
                 "someFailed": "Entschuldigung, {count} Bilder konnten nicht hochgeladen werden",
                 "uploading": "{count} Bilder werden hochgeladen…"
             },
+            "noBlur": "Die Bilder werden nicht unkenntlich gemacht. Fotografieren Sie keine Menschen",
             "one": {
                 "done": "Bild erfolgreich hochgeladen. Vielen Dank!",
                 "failed": "Entschuldigung, das Bild konnte nicht hochgeladen werden",

@@ -23,9 +23,7 @@ export class SummaryTileSourceRewriter implements FeatureSource {
         filteredLayers: ReadonlyMap<string, FilteredLayer>
     ) {
         this.filteredLayers = Array.from(filteredLayers.values()).filter(
-            (l) =>
-                Constants.priviliged_layers.indexOf(<any>l.layerDef.id) < 0 &&
-                !l.layerDef.id.startsWith("note_import")
+            (l) => Constants.priviliged_layers.indexOf(<any>l.layerDef.id) < 0
         )
         this._summarySource = summarySource
         filteredLayers.forEach((v) => {

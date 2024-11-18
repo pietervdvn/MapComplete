@@ -1,7 +1,11 @@
 import { Store, UIEventSource } from "../Logic/UIEventSource"
 import BaseUIElement from "./BaseUIElement"
-import LayoutConfig from "../Models/ThemeConfig/LayoutConfig"
-import { FeatureSource, IndexedFeatureSource, WritableFeatureSource } from "../Logic/FeatureSource/FeatureSource"
+import ThemeConfig from "../Models/ThemeConfig/ThemeConfig"
+import {
+    FeatureSource,
+    IndexedFeatureSource,
+    WritableFeatureSource,
+} from "../Logic/FeatureSource/FeatureSource"
 import { OsmConnection } from "../Logic/Osm/OsmConnection"
 import { Changes } from "../Logic/Osm/Changes"
 import { ExportableMap, MapProperties } from "../Models/MapProperties"
@@ -19,7 +23,7 @@ import FavouritesFeatureSource from "../Logic/FeatureSource/Sources/FavouritesFe
 import { ProvidedImage } from "../Logic/ImageProviders/ImageProvider"
 import GeoLocationHandler from "../Logic/Actors/GeoLocationHandler"
 import { SummaryTileSourceRewriter } from "../Logic/FeatureSource/TiledFeatureSource/SummaryTileSource"
-import LayoutSource from "../Logic/FeatureSource/Sources/LayoutSource"
+import ThemeSource from "../Logic/FeatureSource/Sources/ThemeSource"
 import { Map as MlMap } from "maplibre-gl"
 import ShowDataLayer from "./Map/ShowDataLayer"
 import { CombinedFetcher } from "../Logic/Web/NearbyImagesSearch"
@@ -33,13 +37,13 @@ import FeaturePropertiesStore from "../Logic/FeatureSource/Actors/FeaturePropert
  */
 export interface SpecialVisualizationState {
     readonly guistate: MenuState
-    readonly layout: LayoutConfig
+    readonly theme: ThemeConfig
     readonly featureSwitches: FeatureSwitchState
 
     readonly layerState: LayerState
     readonly featureProperties: FeaturePropertiesStore
 
-    readonly indexedFeatures: IndexedFeatureSource & LayoutSource
+    readonly indexedFeatures: IndexedFeatureSource & ThemeSource
     /**
      * Some features will create a new element that should be displayed.
      * These can be injected by appending them to this featuresource (and pinging it)
@@ -80,14 +84,13 @@ export interface SpecialVisualizationState {
     readonly previewedImage: UIEventSource<ProvidedImage>
     readonly nearbyImageSearcher: CombinedFetcher
     readonly geolocation: GeoLocationHandler
-    readonly geocodedImages : UIEventSource<Feature[]>
+    readonly geocodedImages: UIEventSource<Feature[]>
     readonly searchState: SearchState
 
-    getMatchingLayer(properties: Record<string, string>);
+    getMatchingLayer(properties: Record<string, string>)
 
     showCurrentLocationOn(map: Store<MlMap>): ShowDataLayer
     reportError(message: string | Error | XMLHttpRequest, extramessage?: string): Promise<void>
-
 }
 
 export interface SpecialVisualization {
@@ -122,7 +125,7 @@ export interface SpecialVisualization {
 export type RenderingSpecification =
     | string
     | {
-    func: SpecialVisualization
-    args: string[]
-    style: string
-}
+          func: SpecialVisualization
+          args: string[]
+          style: string
+      }

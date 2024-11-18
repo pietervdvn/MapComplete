@@ -154,6 +154,7 @@ export class OsmConnection {
             console.log("Not authenticated")
         }
     }
+
     public GetPreference<T extends string = string>(
         key: string,
         defaultValue: string = undefined,
@@ -161,10 +162,10 @@ export class OsmConnection {
             prefix?: string
         }
     ): UIEventSource<T | undefined> {
-        const prefix =options?.prefix ?? "mapcomplete-"
+        const prefix = options?.prefix ?? "mapcomplete-"
         return <UIEventSource<T>>this.preferencesHandler.getPreference(key, defaultValue, prefix)
-
     }
+
     public getPreference<T extends string = string>(
         key: string,
         defaultValue: string = undefined,
@@ -172,6 +173,7 @@ export class OsmConnection {
     ): UIEventSource<T | undefined> {
         return <UIEventSource<T>>this.preferencesHandler.getPreference(key, defaultValue, prefix)
     }
+
     public OnLoggedIn(action: (userDetails: UserDetails) => void) {
         this._onLoggedIn.push(action)
     }
@@ -210,7 +212,7 @@ export class OsmConnection {
         console.log("Trying to log in...")
         this.updateAuthObject()
 
-        LocalStorageSource.Get("location_before_login").setData(
+        LocalStorageSource.get("location_before_login").setData(
             Utils.runningFromConsole ? undefined : window.location.href
         )
         this.auth.xhr(
@@ -521,7 +523,7 @@ export class OsmConnection {
         this.auth.authenticate(function () {
             // Fully authed at this point
             console.log("Authentication successful!")
-            const previousLocation = LocalStorageSource.Get("location_before_login")
+            const previousLocation = LocalStorageSource.get("location_before_login")
             callback(previousLocation.data)
         })
     }
@@ -534,7 +536,10 @@ export class OsmConnection {
             redirect_uri: Utils.runningFromConsole
                 ? "https://mapcomplete.org/land.html"
                 : window.location.protocol + "//" + window.location.host + "/land.html",
-            singlepage: true, // We always use 'singlePage', it is the most stable - including in PWA
+            /* We use 'singlePage' as much as possible, it is the most stable - including in PWA.
+             * However, this breaks in iframes so we open a popup in that case
+             */
+            singlepage: !this._iframeMode,
             auto: true,
             apiUrl: this._oauth_config.api_url ?? this._oauth_config.url,
         })

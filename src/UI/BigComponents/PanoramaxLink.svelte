@@ -6,7 +6,7 @@
   import { twMerge } from "tailwind-merge"
   import { PanoramaxXYZ, Panoramax } from "panoramax-js/dist"
   import Panoramax_bw from "../../assets/svg/Panoramax_bw.svelte"
-  import {default as Panoramax_svg} from "../../assets/svg/Panoramax.svelte"
+  import { default as Panoramax_svg } from "../../assets/svg/Panoramax.svelte"
 
   /*
       A subtleButton which opens panoramax in a new tab at the current location
@@ -19,11 +19,14 @@
   }
   let location = mapProperties.location
   let zoom = mapProperties.zoom
-  let href = location.mapD(location =>
-    host.createViewLink({
-      location,
-      zoom: zoom.data,
-    }), [zoom])
+  let href = location.mapD(
+    (location) =>
+      host.createViewLink({
+        location,
+        zoom: zoom.data,
+      }),
+    [zoom]
+  )
   export let large: boolean = true
 </script>
 

@@ -1,5 +1,5 @@
 import { Translation } from "../../UI/i18n/Translation"
-import { LayoutConfigJson } from "./Json/LayoutConfigJson"
+import { ThemeConfigJson } from "./Json/ThemeConfigJson"
 import LayerConfig from "./LayerConfig"
 import { LayerConfigJson } from "./Json/LayerConfigJson"
 import Constants from "../Constants"
@@ -13,7 +13,7 @@ import { Translatable } from "./Json/Translatable"
 /**
  * Minimal information about a theme
  **/
-export class MinimalLayoutInformation {
+export class MinimalThemeInformation {
     id: string
     icon: string
     title: Translatable
@@ -23,10 +23,11 @@ export class MinimalLayoutInformation {
     keywords?: Record<string, string[]>
     layers: string[]
 }
+
 /**
  * Minimal information about a theme
  **/
-export class LayoutInformation {
+export class ThemeInformation {
     id: string
     icon: string
     title: Translatable | Translation
@@ -37,9 +38,7 @@ export class LayoutInformation {
     keywords?: (Translatable | Translation)[]
 }
 
-
-
-export default class LayoutConfig implements LayoutInformation {
+export default class ThemeConfig implements ThemeInformation {
     public static readonly defaultSocialImage = "assets/SocialImage.png"
     public readonly id: string
     public readonly credits?: string
@@ -57,7 +56,6 @@ export default class LayoutConfig implements LayoutInformation {
     public readonly startZoom: number
     public readonly startLat: number
     public readonly startLon: number
-    public widenFactor: number
     public defaultBackgroundId?: string
     public layers: LayerConfig[]
     public tileLayerSources: (RasterLayerProperties & { defaultState?: true | boolean })[]
@@ -92,11 +90,11 @@ export default class LayoutConfig implements LayoutInformation {
     public readonly definitionRaw?: string
 
     private readonly layersDict: Map<string, LayerConfig>
-    private readonly source: LayoutConfigJson
+    private readonly source: ThemeConfigJson
     public readonly enableCache: boolean
 
     constructor(
-        json: LayoutConfigJson,
+        json: ThemeConfigJson,
         official = true,
         options?: {
             definedAtUrl?: string
@@ -167,7 +165,7 @@ export default class LayoutConfig implements LayoutInformation {
                 ? undefined
                 : new Translation(json.descriptionTail, "themes:" + context + ".descriptionTail")
         this.icon = json.icon
-        this.socialImage = json.socialImage ?? LayoutConfig.defaultSocialImage
+        this.socialImage = json.socialImage ?? ThemeConfig.defaultSocialImage
         if (this.socialImage === "") {
             if (official) {
                 throw "Theme " + json.id + " has empty string as social image"
@@ -176,7 +174,6 @@ export default class LayoutConfig implements LayoutInformation {
         this.startZoom = json.startZoom
         this.startLat = json.startLat
         this.startLon = json.startLon
-        this.widenFactor = 1.5
 
         this.defaultBackgroundId = json.defaultBackgroundId
         this.tileLayerSources = json.tileLayerSources ?? []
@@ -294,14 +291,7 @@ export default class LayoutConfig implements LayoutInformation {
                         if (!untranslated.has(ln)) {
                             untranslated.set(ln, [])
                         }
-                        untranslated
-                            .get(ln)
-                            .push(
-                                translation.context.replace(
-                                    /^note_import_[a-zA-Z0-9_]*/,
-                                    "note_import"
-                                )
-                            )
+                        untranslated.get(ln).push(translation.context)
                     }
                 })
             },
@@ -315,6 +305,7 @@ export default class LayoutConfig implements LayoutInformation {
 
         return { untranslated, total }
     }
+
     public getMatchingLayer(tags: Record<string, string>): LayerConfig | undefined {
         if (tags === undefined) {
             return undefined
@@ -336,7 +327,12 @@ export default class LayoutConfig implements LayoutInformation {
                 }
             }
         }
-        console.trace("Fallthrough: could not find the appropriate layer for an object with tags", tags, "within layout", this)
+        console.trace(
+            "Fallthrough: could not find the appropriate layer for an object with tags",
+            tags,
+            "within layout",
+            this
+        )
         return undefined
     }
 

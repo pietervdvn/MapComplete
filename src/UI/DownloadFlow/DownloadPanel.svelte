@@ -42,8 +42,8 @@
     })
   }
 
-  let customWidth = LocalStorageSource.Get("custom-png-width", "20")
-  let customHeight = LocalStorageSource.Get("custom-png-height", "20")
+  let customWidth = LocalStorageSource.get("custom-png-width", "20")
+  let customHeight = LocalStorageSource.get("custom-png-height", "20")
 
   async function offerCustomPng(): Promise<Blob> {
     console.log(

@@ -6,7 +6,8 @@
     "nl": "Buslijnen",
     "da": "Buslinjer",
     "ca": "Línies de bus",
-    "cs": "Autobusové linky"
+    "cs": "Autobusové linky",
+    "es": "Líneas de autobús"
   },
   "description": {
     "en": "Layer showing bus lines",
@@ -14,7 +15,8 @@
     "nl": "Laag met buslijnen",
     "da": "Lag, der viser buslinjer",
     "ca": "Capa que mostra les línies d'autobús",
-    "cs": "Vrstva zobrazující autobusové linky"
+    "cs": "Vrstva zobrazující autobusové linky",
+    "es": "Capa que muestra las líneas de autobús"
   },
   "source": {
     "osmTags": {
@@ -35,7 +37,8 @@
       "nl": "Buslijn",
       "da": "Buslinje",
       "ca": "Línia de bus",
-      "cs": "Autobusová linka"
+      "cs": "Autobusová linka",
+      "es": "Línea de autobús"
     },
     "mappings": [
       {
@@ -46,7 +49,8 @@
           "da": "{name}",
           "nl": "{name}",
           "ca": "{name}",
-          "cs": "{name}"
+          "cs": "{name}",
+          "es": "{name}"
         }
       }
     ]
@@ -90,7 +94,8 @@
         "en": "What is the name for this bus line? (i.e. Bus XX: From => Via => To)",
         "de": "Wie lautet der Name der Buslinie? (z.B. Bus XX: Von => Über => Nach)",
         "nl": "Wat is de naam van deze buslijn (bv. Bus XX: Van => Via => Naar)",
-        "cs": "Jak se jmenuje tato autobusová linka? (tj. Autobus XX: Od => Přes => Do)"
+        "cs": "Jak se jmenuje tato autobusová linka? (tj. Autobus XX: Od => Přes => Do)",
+        "es": "¿Cuál es el nombre de esta línea de autobús? (es decir, Autobús XX: Desde => Vía => Hasta)"
       }
     },
     {
@@ -107,7 +112,8 @@
         "da": "Denne buslinje starter kl. {from}",
         "fr": "Cette ligne de bus commence à {from}",
         "ca": "Aquesta línia d'autobús comença a {from}",
-        "cs": "Tato autobusová linka začíná v {from}"
+        "cs": "Tato autobusová linka začíná v {from}",
+        "es": "Esta línea de autobús comienza en {from}"
       },
       "question": {
         "en": "What is the starting point for this bus line?",
@@ -115,7 +121,8 @@
         "nl": "Wat is het beginpunt van deze buslijn?",
         "da": "Hvad er udgangspunktet for denne buslinje?",
         "ca": "Quin és el punt inicial d'aquesta línea d'autobús?",
-        "cs": "Jaký je výchozí bod této autobusové linky?"
+        "cs": "Jaký je výchozí bod této autobusové linky?",
+        "es": "¿Cuál es el punto de partida de esta línea de autobús?"
       }
     },
     {
@@ -132,13 +139,16 @@
         "da": "Denne buslinje går via {via}",
         "fr": "Cette ligne de bus passe par {via}",
         "ca": "Aquesta línia d'autobús passa per {via}",
-        "cs": "Tato autobusová linka jede přes {via}"
+        "cs": "Tato autobusová linka jede přes {via}",
+        "es": "Esta línea de autobús pasa por {via}"
       },
       "question": {
         "en": "What is the via point for this bus line?",
         "de": "Über welchen Zwischenhalt fährt die Buslinie?",
         "nl": "Via welk punt gaat deze buslijn?",
-        "cs": "Jaký je průjezdní bod této autobusové linky?"
+        "cs": "Jaký je průjezdní bod této autobusové linky?",
+        "ru": "Где находится конечный пункт этого автобусного маршрута?",
+        "es": "¿Cuál es el punto intermedio de esta línea de autobús?"
       }
     },
     {
@@ -155,7 +165,8 @@
         "da": "Denne buslinje slutter ved {to}",
         "fr": "Cette ligne de bus termine à {to}",
         "ca": "Aquesta línia d'autobús acaba a {to}",
-        "cs": "Tato autobusová linka končí v {to}"
+        "cs": "Tato autobusová linka končí v {to}",
+        "es": "Esta línea de autobús termina en {to}"
       },
       "question": {
         "en": "What is the ending point for this bus line?",
@@ -163,7 +174,8 @@
         "nl": "Wat is het eindpunt van deze buslijn?",
         "da": "Hvad er endestationen for denne buslinje?",
         "ca": "Quin és el punt final d'aquesta línea d'autobús?",
-        "cs": "Jaký je konečný bod této autobusové linky?"
+        "cs": "Jaký je konečný bod této autobusové linky?",
+        "es": "¿Cuál es el punto final de esta línea de autobús?"
       }
     },
     {
@@ -178,7 +190,8 @@
         "nl": "Deze buslijn heeft de kleur {colour}",
         "da": "Denne buslinje har farven {colour}",
         "ca": "Aquesta línea d'autobús té el color {colour}",
-        "cs": "Tato autobusová linka má barvu {colour}"
+        "cs": "Tato autobusová linka má barvu {colour}",
+        "es": "Esta línea de autobús tiene el color {colour}"
       },
       "question": {
         "en": "What is the colour for this bus line?",
@@ -186,7 +199,8 @@
         "nl": "Wat is de kleur van deze buslijn?",
         "da": "Hvad er farven på denne buslinje?",
         "ca": "Quin és el color d'aquest línia d'autobús?",
-        "cs": "Jakou barvu má tato autobusová linka?"
+        "cs": "Jakou barvu má tato autobusová linka?",
+        "es": "¿Cuál es el color de esta línea de autobús?"
       }
     },
     {
@@ -201,7 +215,9 @@
         "nl": "Deze buslijn is onderdeel van het {network} netwerk",
         "ca": "Aquesta línea d'autobús és part de la xarxa {network}",
         "fr": "Cette ligne de bus fait partie du réseau {network}",
-        "cs": "Tato autobusová linka je součástí sítě {network}"
+        "cs": "Tato autobusová linka je součástí sítě {network}",
+        "es": "Esta línea de autobús es parte de la red {network}",
+        "uk": "Ця автобусна лінія є частиною {network} мережі"
       },
       "question": {
         "en": "What network does this bus line belong to?",
@@ -209,7 +225,8 @@
         "nl": "Bij welk netwerk hoort deze buslijn?",
         "da": "Hvilket netværk tilhører denne buslinje?",
         "ca": "A quina xarxa pertany aquesta línea d'autobús?",
-        "cs": "Do jaké sítě tato autobusová linka patří?"
+        "cs": "Do jaké sítě tato autobusová linka patří?",
+        "es": "¿A qué red pertenece esta línea de autobús?"
       }
     },
     {
@@ -225,7 +242,8 @@
         "da": "Denne buslinje drives af {operator}",
         "ca": "{operator} opera aquesta línea d'autobús",
         "fr": "Cette ligne de bus est gérée par {operator}",
-        "cs": "Tuto autobusovou linku provozuje {operator}"
+        "cs": "Tuto autobusovou linku provozuje {operator}",
+        "es": "Esta línea de autobús es operada por {operator}"
       },
       "question": {
         "en": "What company operates this bus line?",
@@ -233,7 +251,8 @@
         "nl": "Welk bedrijf exploiteert deze buslijn?",
         "da": "Hvilket selskab driver denne buslinje?",
         "ca": "Quina companyia opera aquesta línia d'autobús?",
-        "cs": "Jaká společnost provozuje tuto autobusovou linku?"
+        "cs": "Jaká společnost provozuje tuto autobusovou linku?",
+        "es": "¿Qué compañía opera esta línea de autobús?"
       }
     }
   ],

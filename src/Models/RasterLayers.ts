@@ -1,5 +1,7 @@
 import { Feature, Polygon } from "geojson"
 import * as globallayers from "../assets/global-raster-layers.json"
+import * as globallayersEli from "../assets/generated/editor-layer-index-global.json"
+
 import * as bingJson from "../assets/bing.json"
 
 import { BBox } from "../Logic/BBox"
@@ -28,12 +30,21 @@ export class AvailableRasterLayers {
         return this._editorLayerIndex
     }
 
-    public static globalLayers: ReadonlyArray<RasterLayerPolygon> = globallayers.layers
-        .filter(
+    public static readonly globalLayers: ReadonlyArray<RasterLayerPolygon> =
+        AvailableRasterLayers.initGlobalLayers()
+
+    private static initGlobalLayers(): RasterLayerPolygon[] {
+        const gl: RasterLayerProperties[] = (globallayers["default"] ?? globallayers).layers.filter(
             (properties) =>
                 properties.id !== "osm.carto" && properties.id !== "Bing" /*Added separately*/
         )
-        .map(
+        const glEli: RasterLayerProperties[] = globallayersEli["default"] ?? globallayersEli
+        const joined = gl.concat(glEli)
+        if (joined.some((j) => !j.id)) {
+            console.log("Invalid layers:", JSON.stringify(joined.filter((l) => !l.id)))
+            throw "Detected invalid global layer with invalid id"
+        }
+        return joined.map(
             (properties) =>
                 <RasterLayerPolygon>{
                     type: "Feature",
@@ -41,6 +52,8 @@ export class AvailableRasterLayers {
                     geometry: BBox.global.asGeometry(),
                 }
         )
+    }
+
     public static bing = <RasterLayerPolygon>bingJson
     public static readonly osmCartoProperties: RasterLayerProperties = {
         id: "osm",

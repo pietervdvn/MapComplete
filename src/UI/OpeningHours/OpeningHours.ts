@@ -859,8 +859,14 @@ This list will be sorted
         return ranges
     }
 
-    public static isSame(a: OpeningHour, b: OpeningHour){
-        return a.weekday === b.weekday && a.startHour === b.startHour && a.startMinutes === b.startMinutes && a.endHour === b.endHour && a.endMinutes === b.endMinutes
+    public static isSame(a: OpeningHour, b: OpeningHour) {
+        return (
+            a.weekday === b.weekday &&
+            a.startHour === b.startHour &&
+            a.startMinutes === b.startMinutes &&
+            a.endHour === b.endHour &&
+            a.endMinutes === b.endMinutes
+        )
     }
     private static multiply(
         weekdays: number[],
@@ -930,11 +936,12 @@ This list will be sorted
      * OH.rangeAs24Hr(oh).endHour // => 24
      */
     static rangeAs24Hr(oh: OpeningHour) {
-     if(oh.endHour === 0){
-         return {
-             ...oh, endHour : 24
-         }
-     }
+        if (oh.endHour === 0) {
+            return {
+                ...oh,
+                endHour: 24,
+            }
+        }
         return oh
     }
 }

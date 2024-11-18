@@ -27,6 +27,9 @@ Available languages:
  - it
  - da
  - zh_Hans
+ - ru
+ - uk
+ - hu
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

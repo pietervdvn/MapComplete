@@ -26,10 +26,12 @@ you are building your theme.
 6. [!~ Value should not match regex](#!~-value-should-not-match-regex)
 7. [!~i~ Value does not match case-invariant regex](#!~i~-value-does-not-match-case-invariant-regex)
 8. [~~ Key and value should match given regex](#~~-key-and-value-should-match-given-regex)
-9. [:= Substitute ... {some_key} ... and match key](#=-substitute-...-{some_key}-...-and-match-key)
-10. [!:= Substitute {some_key} should not match key](#!=-substitute-{some_key}-should-not-match-key)
-11. [<= >= < > Logical comparators](#<=->=-<->-logical-comparators)
-12. [Logical operators](#logical-operators)
+9. [~i~~ Key and value should match a given regex; value is case-invariant](#~i~~-key-and-value-should-match-a-given-regex-value-is-case-invariant)
+10. [!~i~~ Key and value should match a given regex; value is case-invariant](#!~i~~-key-and-value-should-match-a-given-regex-value-is-case-invariant)
+11. [:= Substitute ... {some_key} ... and match key](#=-substitute-...-{some_key}-...-and-match-key)
+12. [!:= Substitute {some_key} should not match key](#!=-substitute-{some_key}-should-not-match-key)
+13. [<= >= < > Logical comparators](#<=->=-<->-logical-comparators)
+14. [Logical operators](#logical-operators)
 
 Example
 -------
@@ -111,6 +113,14 @@ A tag can also be tested against a regex with `key~i~regex`, where the case of t
 ## `~~` Key and value should match given regex
 
 Both the `key` and `value` part of this specification are interpreted as regexes, both the key and value musth completely match their respective regexes
+
+## `~i~~` Key and value should match a given regex; value is case-invariant
+
+Similar to ~~, except that the value is case-invariant
+
+## `!~i~~` Key and value should match a given regex; value is case-invariant
+
+Similar to !~~, except that the value is case-invariant
 
 ## `:=` Substitute `... {some_key} ...` and match `key`
 

@@ -203,6 +203,7 @@ This table gives a summary of ids, names and other metainformation. [See the onl
 | nrw_idop_wms | NRW iDOP | photo |  |  |
 | nrw_ortho_wms | NRW Orthophoto (RGB) | photo | ⭐ |  |
 | nrw_vdop_wms | NRW vDOP | photo |  |  |
+| Saarland-DOP20 | Saarland DOP20 | photo | ⭐ | © Saarländer Landesamt für Vermessung, Geoinformation und Landentwicklung - dl-de/by-2-0 (https://www.govdata.de/dl-de/by-2-0) |
 | GEOSN-DOP-RGB | Saxony latest aerial imagery | photo | ⭐ | Staatsbetrieb Geobasisinformation und Vermessung Sachsen |
 | LSA-DOP20 | © GeoBasis-DE/LVermGeo LSA, DOP20 | photo | ⭐ | © GeoBasis-DE/LVermGeo LSA |
 | GEOSN-WebAtlas | Saxony WebAtlasSN | map |  | Staatsbetrieb Geobasisinformation und Vermessung Sachsen |
@@ -212,6 +213,7 @@ This table gives a summary of ids, names and other metainformation. [See the onl
 | GEOSN-DOP-CIR | Saxony latest aerial imagery infrared | photo |  | Staatsbetrieb Geobasisinformation und Vermessung Sachsen |
 | GEOSN-DTK | Saxony topographic map | map |  | Staatsbetrieb Geobasisinformation und Vermessung Sachsen |
 | Stuttgart-latest | Stuttgart Luftbild Stadtmessungsamt | photo | ⭐ |  |
+| Thuringia-DOP20 | Thüringen DOP20 | photo | ⭐ | © Thüringer Landesamt für Bodenmanagement und Geoinformation - dl-de/by-2-0 (https://www.govdata.de/dl-de/by-2-0) |
 | Worms-2003 | Worms 2003 | historicphoto |  | © Nibelungenstadt Worms |
 | Worms-2008 | Worms 2008 | historicphoto |  | © Nibelungenstadt Worms |
 | Worms-2012 | Worms 2012 | historicphoto |  | © Nibelungenstadt Worms |
@@ -391,7 +393,8 @@ This table gives a summary of ids, names and other metainformation. [See the onl
 | Surrey-Air_Survey | Surrey Air Survey | photo |  |  |
 | dgu-dof-2011 | dgu.hr: Croatia 2011 Aerial imagery | historicphoto |  | Sadrži podatke Državne geodetske uprave |
 | dgu-dof-2014-2016 | dgu.hr: Croatia 2014-2016 Aerial imagery | historicphoto |  | Sadrži podatke Državne geodetske uprave |
-| dgu-dof-2019-2020 | dgu.hr: Croatia 2019-2020 aerial imagery | photo | ⭐ | Sadrži podatke Državne geodetske uprave |
+| dgu-dof-2019-2020 | dgu.hr: Croatia 2019-2020 aerial imagery | historicphoto |  | Sadrži podatke Državne geodetske uprave |
+| dgu-dof-2021-2022 | dgu.hr: Croatia 2021-2022 aerial imagery | photo | ⭐ | Sadrži podatke Državne geodetske uprave |
 | dgu-hok | dgu.hr: HOK | map |  | Sadrži podatke Državne geodetske uprave |
 | dgu-topo-100 | dgu.hr: Topo 100 | map |  | Sadrži podatke Državne geodetske uprave |
 | dgu-topo-200 | dgu.hr: Topo 200 | map |  | Sadrži podatke Državne geodetske uprave |
@@ -439,6 +442,8 @@ This table gives a summary of ids, names and other metainformation. [See the onl
 | LV_ORTOFOTO_C5 | Orthophoto (2013-2015), 1:5000, Latvia | photo |  | LĢIA (Latvian Geospatial Information Agency) provided these open data (CC0). WMS service is provided by LVM (Latvian State Forestry). |
 | LV_ORTOFOTO_C6 | Orthophoto (2016–2018), 1:5000, Latvia | photo | ⭐ | LĢIA (Latvian Geospatial Information Agency) provided these open data (CC0). WMS service is provided by LVM (Latvian State Forestry). |
 | LV_TERRAIN_LIDAR_LGIA | Digital terrain model (2013–2019), LĢIA, Latvia | elevation |  | LĢIA (Latvian Geospatial Information Agency) provided these open data (CC0). WMS service is provided by LVM (Latvian State Forestry). |
+| German-1944_Aerial | German Aerial Imagery (1944) | historicphoto |  | © Simpals SRL, Bundesarchiv - Stabsbildabteilung |
+| American-1966_Aerial | American Aerial Imagery (1966) | historicphoto |  | © Simpals SRL, U.S. Geological Survey |
 | Actueel_orthoHR_WMTS | PDOK aerial imagery Beeldmateriaal.nl 8cm (WMTS) latest | photo | ⭐ | Kadaster / Beeldmateriaal.nl, CC BY 4.0 |
 | kartverket-topo4 | Kartverket topo | map |  | © Kartverket |
 | kartverket-ok-1st | Kartverket Economic Maps (historic) | historicmap |  | © Kartverket |
@@ -485,7 +490,7 @@ This table gives a summary of ids, names and other metainformation. [See the onl
 | ORTOS_DGT_2018_WMS | Orthophotos of mainland Portugal - 25cm - 2018 (DGT) | photo | ⭐ | Informação geográfica cedida pela Direção-Geral do Território |
 | ORTOS_DGRF_2004_06 | Orthophotos of mainland Portugal - 50cm - 2004-2006 (DGT) | historicphoto |  | Informação geográfica cedida pela Direção-Geral do Território |
 | ORTOS_DGT_2021_RGB | Orthophotos of the northern portion of mainland Portugal - 25cm - 2021 (DGT) | photo | ⭐ | Informação geográfica cedida pela Direção-Geral do Território |
-| ORTOSAT_DGT_2023_RGB | OrtoSat - Portugal Central - 30cm - 2023 (DGT) | photo | ⭐ | Informação geográfica cedida pela Direção-Geral do Território |
+| ORTOSAT_DGT_2023_RGB | OrtoSat - Portugal Continental - 30cm - 2023 (DGT) | photo |  | Informação geográfica cedida pela Direção-Geral do Território |
 | rs-osm-official-cyr | Official Serbia OSM (cyr) | osmbasedmap |  | openstreetmap.rs |
 | rs-osm-official-lat | Official Serbia OSM (lat) | osmbasedmap |  | openstreetmap.rs |
 | lantmateriet-orto1960 | Lantmäteriet Historic Orthophoto 1960 | historicphoto |  | © Lantmäteriet, CC0 |
@@ -533,7 +538,8 @@ This table gives a summary of ids, names and other metainformation. [See the onl
 | CBJ_Aerial_20230516 | CBJ Aerial Imagery (May 2023) | photo | ⭐ | City and Borough of Juneau |
 | CBJ_Aerial_20230618 | CBJ Aerial Imagery (June 2023) | photo |  | City and Borough of Juneau |
 | FNSB_Aerial_2023 | FNSB Aerial Imagery (2023) | photo | ⭐ | Fairbanks North Star Borough |
-| MOA_Aerial_2021 | MOA Aerial Imagery (2021) | photo |  | Municipality of Anchorage GIS |
+| MOA_Aerial_2021 | MOA Aerial Imagery (2021) | historicphoto |  | Municipality of Anchorage GIS |
+| MOA_Aerial_2024 | MOA Aerial Imagery (2024) | photo | ⭐ | Municipality of Anchorage GIS |
 | MSB_Aerial_2019 | MSB Aerial Imagery - Area 1(2019) | historicphoto |  | Matanuska-Susitna Borough GIS Division |
 | MSB_Aerial_2020 | MSB Aerial Imagery - Area 2 (2020) | historicphoto |  | Matanuska-Susitna Borough GIS Division |
 | MSB_Aerial_2021 | MSB Aerial Imagery - Area 3 (2021) | historicphoto |  | Matanuska-Susitna Borough GIS Division |
@@ -553,20 +559,27 @@ This table gives a summary of ids, names and other metainformation. [See the onl
 | LA_County_Basemap | LA County Basemap | map |  | Los Angeles County |
 | Manhattan_Beach_CA_2023 | City of Manhattan Beach Orthoimagery (2023) | photo |  | City of Manhattan Beach |
 | Manteca_CA_2022 | City of Manteca Orthoimagery (2022) | photo |  | City of Manteca |
-| Modesto_CA_2023 | City of Modesto Orthoimagery (2023) | photo |  | City of Modesto |
+| Modesto_CA_2023 | City of Modesto Orthoimagery (2023) | historicphoto |  | City of Modesto |
+| Modesto_CA_2024 | City of Modesto Orthoimagery (2024) | photo |  | City of Modesto |
 | Orange_CA_2022 | Orange County Orthoimagery (2022) | photo |  | Orange County |
 | Roseville_CA_2023 | City of Roseville Orthoimagery (2023) | historicphoto |  | City of Roseville |
 | Roseville_CA_2024 | City of Roseville Orthoimagery (2024) | photo |  | City of Roseville |
 | Sacramento_CA_2022 | Sacramento County Orthoimagery (2022) | photo |  | Sacramento County |
-| San_Bernardino_CA_2023 | San Bernardino County Orthoimagery (2023) | photo |  | San Bernardino County |
-| San_Francisco_CA_2022 | San Francisco Orthoimagery (2022) | historicphoto |  | City and County of San Francisco |
-| San_Francisco_CA_2022_CIR | San Francisco Orthoimagery CIR (2022) | historicphoto |  | City and County of San Francisco |
-| San_Francisco_Ortho_2023 | San Francisco Orthoimagery (2023) | photo |  | City and County of San Francisco |
+| San_Bernardino_CA_2023 | San Bernardino County Orthoimagery (2023) | historicphoto |  | San Bernardino County |
+| San_Bernardino_CA_2024 | San Bernardino County Orthoimagery (2024) | photo |  | San Bernardino County |
+| San_Francisco_2022 | San Francisco Orthoimagery (2022) | historicphoto |  | City and County of San Francisco |
+| San_Francisco_2022_CIR | San Francisco Orthoimagery CIR (2022) | historicphoto |  | City and County of San Francisco |
+| San_Francisco_2023 | San Francisco Orthoimagery (2023) | historicphoto |  | City and County of San Francisco |
+| San_Francisco_2023_CIR | San Francisco Orthoimagery CIR (2023) | historicphoto |  | City and County of San Francisco |
+| San_Francisco_2024 | San Francisco Orthoimagery (2024) | photo |  | City and County of San Francisco |
+| San_Francisco_2024_CIR | San Francisco Orthoimagery CIR (2024) | photo |  | City and County of San Francisco |
 | San_Mateo_CA_2022 | San Mateo County Orthoimagery (2022) | photo |  | San Mateo County |
 | Santa_Clara_CA_2022 | Santa Clara County Orthoimagery (2022) | photo |  | County of Santa Clara |
 | Santa_Clara_CA_2023 | Santa Clara County Orthoimagery (2023) | photo |  | County of Santa Clara |
 | Santa_Rosa_CA_2022 | City of Santa Rosa Orthoimagery (2022) | photo |  | City of Santa Rosa |
-| Solano_CA_2022 | Solano County Orthoimagery (2022) | photo |  | Solano County |
+| Solano_CA_2022 | Solano County Orthoimagery (2022) | historicphoto |  | Solano County |
+| Solano_CA_2023 | Solano County Orthoimagery (2023) | historicphoto |  | Solano County |
+| Solano_CA_2024 | Solano County Orthoimagery (2024) | photo |  | Solano County |
 | Stockton_CA_2023 | City of Stockton Orthoimagery (2023) | photo |  | City of Stockton |
 | Arapahoe-County-Aerials-Latest | Arapahoe County Aerials Latest | photo |  | Arapahoe County GIS |
 | MCGIS-County-NAIP-Imagery-2015 | Mesa County GIS NAIP 2015 | historicphoto |  | Mesa County GIS |
@@ -574,7 +587,8 @@ This table gives a summary of ids, names and other metainformation. [See the onl
 | MCGIS-County-Valleywide-Imagery-2020 | Mesa County GIS Valleywide 2020 | historicphoto |  | Mesa County GIS |
 | MCGIS-County-Valleywide-Imagery-2022 | Mesa County GIS Valleywide 2022 | photo |  | Mesa County GIS |
 | MCGIS-County-Valleywide-Imagery-2024 | Mesa County GIS Valleywide 2024 | photo |  | Mesa County GIS |
-| CT_ECO_Ortho_2019_RGB | CT ECO Orthoimagery (2019) | photo |  | Connecticut Environmental Conditions Online |
+| CT_ECO_Ortho_2019_RGB | CT ECO Orthoimagery (2019) | historicphoto |  | Connecticut Environmental Conditions Online |
+| CT_ECO_Ortho_2023_RGB | CT ECO Orthoimagery (2023) | photo |  | Connecticut Environmental Conditions Online |
 | CT_ECO_Shaded_relief_2016 | CT ECO Shaded Relief | elevation |  | Connecticut Environmental Conditions Online |
 | MetroCOG_Ortho_2020 | MetroCOG Orthoimagery (2020) | photo |  | Connecticut Metropolitan Council of Governments |
 | DC_From_Above_Ortho_2019 | DC From Above Orthophoto 2019 | historicphoto |  | OCTO, DCGIS |
@@ -749,7 +763,8 @@ This table gives a summary of ids, names and other metainformation. [See the onl
 | Franklin_OH_2021 | Franklin County Orthoimagery (2021) | photo |  | Franklin County Auditor, State of Ohio |
 | Franklin_OH_2023 | Franklin County Orthoimagery (2023) | photo |  | Franklin County Auditor, State of Ohio |
 | Greene_OH_2022 | Greene County Orthoimagery (2022) | historicphoto |  | Greene County, State of Ohio |
-| Greene_OH_2023 | Greene County Orthoimagery (2023) | photo |  | Greene County, State of Ohio |
+| Greene_OH_2023 | Greene County Orthoimagery (2023) | historicphoto |  | Greene County, State of Ohio |
+| Greene_OH_2024 | Greene County Orthoimagery (2024) | photo |  | Greene County, State of Ohio |
 | Licking_OH_2023 | Licking County Orthoimagery (2023) | photo |  | Licking County, State of Ohio |
 | Lorain_OH_2024 | Lorain County Orthoimagery (2024) | photo |  | Lorain County, State of Ohio |
 | Lucas_OH_2023 | Lucas County Orthoimagery (2023) | photo |  | Lucas County, State of Ohio |
@@ -812,7 +827,8 @@ This table gives a summary of ids, names and other metainformation. [See the onl
 | Suan_Juan_WA_2023 | Suan Juan County Aerials (2023) | photo | ⭐ | San Juan County GIS |
 | Suan_Juan_WA_Basemap | Suan Juan County Basemap | map |  | San Juan County GIS |
 | Snohomish_WA_2020 | Snohomish County Orthoimagery (2020) | historicphoto |  | Snohomish County GIS |
-| Snohomish_WA_2022 | Snohomish County Orthoimagery (2022) | photo |  | Snohomish County GIS |
+| Snohomish_WA_2022 | Snohomish County Orthoimagery (2022) | historicphoto |  | Snohomish County GIS |
+| Snohomish_WA_2024 | Snohomish County Orthoimagery (2024) | photo |  | Snohomish County GIS |
 | WISC_DNR_Ortho_Composite | Wisconsin Leaf-Off Orthophotography (DNR) | photo |  | Wisconsin Regional Orthoimagery Consortium, Southeastern Wisconsin Regional Planning Commission, Wisconsin Department of Natural Resources |
 | Monongalia_WV_2022 | Monongalia County 2022 Aerial Imagery | historicphoto |  | Monongalia Morgantown Area Geospatial Information Consortium |
 | Monongalia_WV_2023 | Monongalia County 2023 Aerial Imagery | photo | ⭐ | Monongalia Morgantown Area Geospatial Information Consortium |
@@ -839,6 +855,7 @@ This table gives a summary of ids, names and other metainformation. [See the onl
 | LINZ_Cyclone_Gabrielle_Hawkes_Bay | LINZ Cyclone Gabrielle – Hawke's Bay | photo | ⭐ | Sourced from LINZ CC-BY 4.0 |
 | LINZ_NZ_Aerial_Imagery | LINZ NZ Aerial Imagery | photo | ⭐ | Sourced from LINZ CC-BY 4.0 |
 | LINZ_Auckland_2010 | LINZ Auckland 2010-2012 | historicphoto |  | Sourced from LINZ CC-BY 4.0 |
+| LINZ_Auckland_2023 | LINZ Auckland 2023 | photo | ⭐ | Sourced from LINZ CC-BY 4.0 |
 | LINZ_Bay_of_Plenty_2014 | LINZ Bay of Plenty 2014-2015 | historicphoto |  | Sourced from LINZ CC-BY 4.0 |
 | LINZ_Christchurch_2015 | LINZ Christchurch 2015-2016 | historicphoto |  | Sourced from LINZ CC-BY 4.0 |
 | LINZ_Hamilton_2016 | LINZ Hamilton 2016-2017 | historicphoto |  | Sourced from LINZ CC-BY 4.0 |
@@ -866,16 +883,7 @@ This table gives a summary of ids, names and other metainformation. [See the onl
 | rio2019 | Rio Mosaico 2019 | photo | ⭐ | Instituto Pereira Passos - Prefeitura da Cidade do Rio de Janeiro |
 | rio2022 | Rio Mosaico 2022 | photo |  | Instituto Pereira Passos - Prefeitura da Cidade do Rio de Janeiro |
 | jaragua-do-sul-2020 | Jaraguá do Sul Ortomosaico 2020 | photo |  | Prefeitura de Jaraguá do Sul, SC |
-| cyclosm | CyclOSM | osmbasedmap |  | Rendering: CyclOSM (hosted by OpenStreetMap France) © Map data OpenStreetMap contributors |
-| EsriWorldImagery | Esri World Imagery | photo |  | Terms & Feedback |
-| EsriWorldImageryClarity | Esri World Imagery (Clarity) Beta | photo |  | Terms & Feedback |
-| Mapbox | Mapbox Satellite | photo |  | Terms & Feedback |
-| OpenAerialMapMosaic | OpenAerialMap Mosaic, by Kontur.io | photo |  |  |
-| osmfr-basque | OpenStreetMap (Basque Style) | osmbasedmap |  | Tiles © OpenStreetMap France, data © OpenStreetMap contributors, ODbL |
-| osmfr-breton | OpenStreetMap (Breton Style) | osmbasedmap |  | Tiles © OpenStreetMap France, data © OpenStreetMap contributors, ODbL |
-| osmfr | OpenStreetMap (French Style) | osmbasedmap |  | Tiles © cquest@Openstreetmap France, data © OpenStreetMap contributors, ODBL |
-| HDM_HOT | OpenStreetMap (HOT Style) | osmbasedmap |  | © OpenStreetMap contributors, tiles courtesy of Humanitarian OpenStreetMap Team |
-| osmfr-occitan | OpenStreetMap (Occitan Style) | osmbasedmap |  | Tiles © OpenStreetMap France, data © OpenStreetMap contributors, ODbL |
+| UY-2019-orthophotos | Uruguay IDE.uy Ortofotos 2019 | photo | ⭐ | AGESIC - Agencia de Gobierno Electrónico y Sociedad de la Información y del Conocimiento |
 
 
 

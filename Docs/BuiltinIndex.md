@@ -10,7 +10,6 @@
  - aerialway
  - ambulancestation
  - animal_shelter
- - artwork
  - assembly_point
  - assisted_repair
  - atm
@@ -41,6 +40,7 @@
  - clock
  - crossings
  - cycleways_and_roads
+ - cyclist_waiting_aid
  - defibrillator
  - dentist
  - disaster_response
@@ -59,7 +59,6 @@
  - fitness_station
  - food
  - food_courts
- - ghost_bike
  - ghostsign
  - governments
  - grave
@@ -74,7 +73,6 @@
  - lighthouse
  - love_hotel
  - map
- - memorial
  - mountain_rescue
  - nature_reserve
  - observation_tower
@@ -97,6 +95,7 @@
  - reception_desk
  - recycling
  - route_marker
+ - school
  - shelter
  - shops
  - shower
@@ -111,6 +110,8 @@
  - street_lamps
  - stripclub
  - surveillance_camera
+ - tactile_map
+ - tactile_model
  - ticket_machine
  - ticket_validator
  - toilet
@@ -214,11 +215,12 @@
  - physiotherapist
  - playground
  - recycling
- - school
  - shops
  - souvenir_coin
  - souvenir_note
  - sports_centre
+ - tactile_map
+ - tactile_model
  - tertiary_education
  - vending_machine
  - veterinary
@@ -244,7 +246,6 @@
  - kindergarten_childcare
  - physiotherapist
  - recycling
- - school
  - shops
  - sports_centre
  - tertiary_education
@@ -271,7 +272,6 @@
  - kindergarten_childcare
  - physiotherapist
  - recycling
- - school
  - shops
  - sports_centre
  - tertiary_education
@@ -283,6 +283,12 @@
  - doctors
  - physiotherapist
  - tool_library
+            
+            ### images_no_blur
+
+             - artwork
+ - ghost_bike
+ - memorial
             
             ### wikipedia
 
@@ -316,6 +322,8 @@
  - love_hotel
  - pharmacy
  - police
+ - postoffices
+ - school
  - stripclub
  - tool_library
  - tourism_accomodation
@@ -523,6 +531,10 @@
             ### shower
 
              - climbing_gym
+            
+            ### indoor
+
+             - clock
             
             ### all_tags
 

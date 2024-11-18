@@ -9,14 +9,16 @@
     "fr": "Voies d’escalade",
     "it": "Vie di arrampicata",
     "ca": "Rutes d'escalada",
-    "cs": "Lezecké trasy"
+    "cs": "Lezecké trasy",
+    "es": "Vías de escalada"
   },
   "description": {
     "en": "A single climbing route and its properties. Some properties are derived from the containing features",
     "de": "Eine einzelne Kletterroute und ihre Eigenschaften. Einige Eigenschaften werden von übergeordneten Objekten abgeleitet",
     "nl": "Een klimroute en de eigenschappen van deze klimroute. Sommige eigenschappen worden afgeleid van omliggende kaart-objecten",
     "fr": "Une seule voie d'escalade et ses propriétés. Certaines propriétés sont dérivées des objets qui les contiennent",
-    "cs": "Jedna lezecká cesta a její vlastnosti. Některé vlastnosti jsou odvozeny z obsahujících prvků"
+    "cs": "Jedna lezecká cesta a její vlastnosti. Některé vlastnosti jsou odvozeny z obsahujících prvků",
+    "es": "Una sola vía de escalada y sus propiedades Algunas propiedades se derivan de las características que la contienen"
   },
   "source": {
     "osmTags": {
@@ -37,7 +39,8 @@
       "fr": "Voie d’escalade",
       "da": "Klatrerute",
       "ca": "Ruta d'escalada",
-      "cs": "Lezecká trasa"
+      "cs": "Lezecká trasa",
+      "es": "Vía de escalada"
     },
     "mappings": [
       {
@@ -51,7 +54,8 @@
           "fr": "Voie d’escalade <strong>{name}</strong>",
           "da": "Klatrerute <strong>{name}</strong>",
           "ca": "Ruta d'escalada <strong>{name}</strong>",
-          "cs": "Lezecká trasa <strong>{name}</strong>"
+          "cs": "Lezecká trasa <strong>{name}</strong>",
+          "es": "Vía de escalada <strong>{name}</strong>"
         }
       }
     ]
@@ -107,7 +111,8 @@
         "de": "eine Kletterroute",
         "it": "una via di arrampicata",
         "ca": "una ruta d'escalada",
-        "cs": "lezecká trasa"
+        "cs": "lezecká trasa",
+        "es": "una vía de escalada"
       },
       "snapToLayer": [
         "climbing_opportunity"
@@ -133,7 +138,8 @@
         "it": "<strong>{name}</strong>",
         "nb_NO": "<strong>{name}</strong>",
         "da": "<strong>{name}</strong>",
-        "cs": "<strong>{name}</strong>"
+        "cs": "<strong>{name}</strong>",
+        "es": "<strong>{name}</strong>"
       },
       "question": {
         "en": "What is the name of this climbing route?",
@@ -145,7 +151,8 @@
         "nb_NO": "Hva er navnet på denne klatreruten?",
         "da": "Hvad hedder denne klatrerute?",
         "ca": "Quin és el nom d'aquesta ruta d'escalada?",
-        "cs": "Jak se jmenuje tato lezecká cesta?"
+        "cs": "Jak se jmenuje tato lezecká cesta?",
+        "es": "¿Cuál es el nombre de esta vía de escalada?"
       },
       "freeform": {
         "key": "name"
@@ -167,7 +174,8 @@
             "fr": "Cette voie n’a pas de nom",
             "nb_NO": "Denne klatreruten har ikke noe navn",
             "da": "Denne klatrerute har ikke et navn",
-            "cs": "Tato lezecká trasa nemá jméno"
+            "cs": "Tato lezecká trasa nemá jméno",
+            "es": "Esta vía de escalada no tiene nombre"
           }
         }
       ],
@@ -183,7 +191,8 @@
         "nb_NO": "Hvor mange meter er klatreruten?",
         "da": "Hvor lang er denne klatrerute (i meter)?",
         "ca": "Quant dura aquesta via d'escalada (en metres)?",
-        "cs": "Jak dlouhá je tato lezecká trasa (v metrech)?"
+        "cs": "Jak dlouhá je tato lezecká trasa (v metrech)?",
+        "es": "¿Cuánto mide esta vía de escalada (en metros)?"
       },
       "render": {
         "de": "Diese Route ist {canonical(climbing:length)} lang",
@@ -193,7 +202,8 @@
         "nb_NO": "Denne ruten er {canonical(climbing:length)} lang",
         "it": "Questo percorso è lungo {canonical(climbing:length)}",
         "fr": "Cette voie fait {canonical(climbing:length)} de long",
-        "cs": "Tato trasa je {canonical(climbing:length)} dlouhá"
+        "cs": "Tato trasa je {canonical(climbing:length)} dlouhá",
+        "es": "Esta vía mide {canonical(climbing:length)} de largo"
       },
       "freeform": {
         "key": "climbing:length",
@@ -209,7 +219,8 @@
         "fr": "Quelle est la difficulté de cette voie selon le système franco-belge ?",
         "de": "Wie hoch ist der Schwierigkeitsgrad dieser Kletterroute nach dem französisch/belgischen System?",
         "ca": "Quin és el grau d'aquesta via d'escalada segons el sistema francès/belga?",
-        "cs": "Jaký je stupeň této lezecké cesty podle francouzského/belgického systému?"
+        "cs": "Jaký je stupeň této lezecké cesty podle francouzského/belgického systému?",
+        "es": "¿Cuál es el grado de esta vía de escalada según el sistema francés/belga?"
       },
       "render": {
         "de": "Die Schwierigkeit ist {climbing:grade:french} entsprechend des französisch/belgischen Systems",
@@ -218,7 +229,8 @@
         "ja": "フランス/ベルギーのランク評価システムによると、{climbing:grade:french}の困難度です",
         "it": "Il grado di difficoltà è {climbing:grade:french} nel sistema francese/belga",
         "fr": "Selon le système franco-belge, la difficulté de cette voie est de {climbing:grade:french}",
-        "cs": "Stupeň je {climbing:grade:french} podle francouzského/belgického systému"
+        "cs": "Stupeň je {climbing:grade:french} podle francouzského/belgického systému",
+        "es": "El grado es {climbing:grade:french} según el sistema francés/belga"
       },
       "freeform": {
         "key": "climbing:grade:french"
@@ -233,14 +245,16 @@
         "de": "Wie viele Haken gibt es auf dieser Kletterroute bevor der Umlenker bzw. Standhaken erreicht ist?",
         "it": "Quanti bulloni sono presenti in questo percorso prima di arrivare alla moulinette?",
         "nl": "Hoeveel bouten heeft deze route voordat je het relay bereikt?",
-        "cs": "Kolik šroubů má tato cesta před dosažením kotvy?"
+        "cs": "Kolik šroubů má tato cesta před dosažením kotvy?",
+        "es": "¿Cuántos parabolts tiene esta vía antes de llegar al anclaje?"
       },
       "render": {
         "en": "This route has {climbing:bolts} bolts <div class='subtle'>This is without relays and indicates how much quickdraws a climber needs</div>",
         "fr": "Cette voie a {climbing:bolts} prises <div class='subtle'>C'est sans relai et indique de combien de dégaine un grimpeur a besoin</div>",
         "de": "Diese Route hat {climbing:bolts} Haken <div class='subtle'>Dies ist ohne Relais und gibt an, wie viel Schnellspanner ein Kletterer braucht</div>",
         "it": "Questo percorso ha {climbing:bolts} bulloni <div class='subtle'>Questa è senza collettori e indica di quanti bloccaggi rapidi ha bisogno un arrampicatore</div>",
-        "nl": "Deze route heeft {climbing:bolts} klimbouten. <div class='subtle'>Dit is zonder het relay mee te tellen. Een klimmer heeft dus minstens {climbing:bolts} klimsetjes nodig om boven te raken</div>"
+        "nl": "Deze route heeft {climbing:bolts} klimbouten. <div class='subtle'>Dit is zonder het relay mee te tellen. Een klimmer heeft dus minstens {climbing:bolts} klimsetjes nodig om boven te raken</div>",
+        "es": "Esta vía tiene {climbing:bolts} parabolts <div class='subtle'>Esto es sin reuniones e indica cuántos cintas exprés necesita un escalador</div>"
       },
       "freeform": {
         "key": "climbing:bolts",
@@ -259,7 +273,8 @@
             "de": "Auf dieser Kletterroute sind keine Haken vorhanden",
             "it": "In questo percorso non sono presenti bulloni",
             "nl": "Deze route heeft geen bouten",
-            "cs": "Tato trasa není vyšroubovaná"
+            "cs": "Tato trasa není vyšroubovaná",
+            "es": "Esta vía no tiene parabolts"
           },
           "addExtraTags": [
             "climbing:bolts="
@@ -276,7 +291,8 @@
         "it": "Il tipo di roccia è {_embedding_features_with_rock:rock} come dichiarato sul <a href='#{_embedding_features_with_rock:id}'>muro circostante</a>",
         "de": "Der Gesteinstyp ist {_embedding_features_with_rock:rock}, wie <a href='#{_embedding_features_with_rock:id}'>auf dem umgebenden Felsen angegeben</a>",
         "nl": "De steensoort is {_embedding_features_with_rock:rock} zoals vermeld op <a href='#{_embedding_features_with_rock:id}'>de omliggende klimzone</a>",
-        "cs": "Typ skály je {_embedding_features_with_rock:rock}, jak je uvedeno <a href='#{_embedding_features_with_rock:id}'>na okolní skalní stěně</a>"
+        "cs": "Typ skály je {_embedding_features_with_rock:rock}, jak je uvedeno <a href='#{_embedding_features_with_rock:id}'>na okolní skalní stěně</a>",
+        "es": "El tipo de roca es {_embedding_features_with_rock:rock} como se indica <a href='#{_embedding_features_with_rock:id}'>en la pared circundante</a>"
       },
       "freeform": {
         "key": "_embedding_features_with_rock:rock"

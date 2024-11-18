@@ -111,6 +111,17 @@
                 },
                 "question": "Est-ce que cette publicité fait défiler différent messages ?"
             },
+            "historic": {
+                "mappings": {
+                    "0": {
+                        "then": "C'est une publicité historique (publicité pour un commerce qui n'existe plus ou une très vielle publicité avec un intérêt patrimonial)"
+                    },
+                    "1": {
+                        "then": "Cette publicité n'a pas de valeur historique (le commerce existe toujours, mais n'a pas de valeur patrimoniale particulière)"
+                    }
+                },
+                "question": "Est-ce l'enseigne d'un commerce qui n'existe plus ou n'est plus en activité ?"
+            },
             "luminous_or_lit_advertising": {
                 "override": {
                     "+mappings": {
@@ -425,9 +436,6 @@
                 "mappings": {
                     "0": {
                         "then": "Cette œuvre est un mémorial"
-                    },
-                    "1": {
-                        "then": "Cette œuvre ne sert pas de banc"
                     }
                 },
                 "question": "Cet œuvre a-t-elle un rôle de mémorial ?"
@@ -1115,9 +1123,6 @@
                         "then": "Accès destiné principalement aux visiteurs d'un lieu"
                     },
                     "2": {
-                        "then": "Accès limité aux membres d'une école, entreprise ou organisation"
-                    },
-                    "3": {
                         "then": "Accès limité aux membres d'une école, entreprise ou organisation"
                     }
                 },
@@ -2267,10 +2272,10 @@
                     "1": {
                         "then": "Cette horloge est fixée sur un mur"
                     },
-                    "2": {
+                    "3": {
                         "then": "Cette horloge fait partie d'un panneau publicitaire"
                     },
-                    "3": {
+                    "4": {
                         "then": "Cette horloge est posée au sol"
                     }
                 },
@@ -2358,17 +2363,6 @@
                     }
                 },
                 "question": "Est-ce que ce passage a un refuge au milieu ?"
-            },
-            "crossing-is-zebra": {
-                "mappings": {
-                    "0": {
-                        "then": "C'est un passage piéton"
-                    },
-                    "1": {
-                        "then": "Ce n'est pas un passage piéton"
-                    }
-                },
-                "question": "Est-ce un passage piéton ?"
             },
             "crossing-right-turn-through-red": {
                 "mappings": {
@@ -2890,7 +2884,7 @@
                 "render": "<i>Informations supplémentaires à propos de l'emplacement (dans la langue locale) :</i><br/>{defibrillator:location}"
             },
             "defibrillator-defibrillator:location:en": {
-                "question": "Veuillez indiquez plus précisément où se situe le défibrillateur (en englais)",
+                "question": "Veuillez indiquez plus précisément où se situe le défibrillateur (en anglais)",
                 "render": "<i>Informations supplémentaires à propos de l'emplacement (en anglais) :</i><br/>{defibrillator:location:en}"
             },
             "defibrillator-defibrillator:location:fr": {
@@ -7081,6 +7075,13 @@
     },
     "usersettings": {
         "tagRenderings": {
+            "a11y-features": {
+                "mappings": {
+                    "0": {
+                        "then": "Activer les fonctions d'accessibilité lorsque les touches directionnelles sont utilisées pour naviguer sur la carte"
+                    }
+                }
+            },
             "all-questions-at-once": {
                 "mappings": {
                     "0": {
@@ -7139,13 +7140,10 @@
                     }
                 }
             },
-            "picture-license": {
+            "scalebar": {
                 "mappings": {
                     "1": {
-                        "then": "Les photos que vous avez ajoutées seront sous licence <b>CC0</b>  et mises dans le domaine public. Cela signifie que n'importe qui pourra les utiliser, quel qu'en soit l'usage."
-                    },
-                    "3": {
-                        "then": "Les photos que vous prenez seront sous la licence <b>CC-BY-SA 4.0</b> ce qui signifie que quiconque utilisant votre photo doit vous créditer et que les modifications apportées à votre photo doivent être repartagées avec la même licence."
+                        "then": "Masquer la barre d'échelle"
                     }
                 }
             },

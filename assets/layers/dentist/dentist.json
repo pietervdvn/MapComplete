@@ -15,7 +15,8 @@
     "nl": "Deze laag toont tandartsen",
     "pl": "Ta warstwa pokazuje gabinety dentystyczne",
     "ca": "Aquesta capa mostra clíniques dentals",
-    "cs": "Tato vrstva zobrazuje ordinace zubních lékařů"
+    "cs": "Tato vrstva zobrazuje ordinace zubních lékařů",
+    "es": "Esta capa muestra consultorios dentales"
   },
   "source": {
     "osmTags": "amenity=dentist"
@@ -28,7 +29,9 @@
       "nl": "Tandartspraktijk {name}",
       "fr": "Cabinet medical {name}",
       "ca": "Clínica Dental {name}",
-      "cs": "Zubní ordinace {name}"
+      "cs": "Zubní ordinace {name}",
+      "uk": "Стоматологічний кабінет {name}",
+      "es": "Consultorio Dental {name}"
     }
   },
   "pointRendering": [
@@ -56,7 +59,8 @@
             "then": {
               "en": "{name}",
               "de": "{name}",
-              "ca": "{name}"
+              "ca": "{name}",
+              "es": "{name}"
             }
           }
         ]
@@ -72,7 +76,8 @@
         "nl": "een tandartspraktijk",
         "fr": "un cabinet de dentistes",
         "ca": "una clínica dental",
-        "cs": "zubní ordinace"
+        "cs": "zubní ordinace",
+        "es": "un consultorio dental"
       },
       "tags": [
         "amenity=dentist"
@@ -92,7 +97,9 @@
         "nl": "Hoe heet deze tandarts?",
         "ca": "Com s'anomena aquest dentista?",
         "pl": "Jaka jest nazwa tego gabinetu dentystycznego?",
-        "cs": "Jak se jmenuje tento zubař?"
+        "cs": "Jak se jmenuje tento zubař?",
+        "uk": "Як звуть цього стоматолога?",
+        "es": "¿Cuál es el nombre de este dentista?"
       },
       "render": {
         "en": "This dentist is called {name}",
@@ -100,7 +107,9 @@
         "nl": "Deze tandarts heet {name}",
         "ca": "El dentista s'anomena {name}",
         "pl": "Nazwa tego gabinetu dentystycznego to {name}",
-        "cs": "Tento zubař se jmenuje {name}"
+        "cs": "Tento zubař se jmenuje {name}",
+        "uk": "Цього стоматолога звуть {name}",
+        "es": "Este dentista se llama {name}"
       },
       "freeform": {
         "key": "name"

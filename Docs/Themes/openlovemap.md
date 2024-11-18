@@ -24,6 +24,8 @@ Available languages:
  - en
  - de
  - es
+ - cs
+ - hu
 
 # Table of contents
 
@@ -505,7 +507,7 @@ The question is `Does this shop sell bikes?`
  -  *This shop sells new bikes* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:retail' target='_blank'>service:bicycle:retail</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:retail%3Dyes' target='_blank'>yes</a>
  -  *This shop doesn't sell new bikes* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:retail' target='_blank'>service:bicycle:retail</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:retail%3Dno' target='_blank'>no</a>
 
-This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Doutdoor' target='_blank'>outdoor</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsport' target='_blank'>sport</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Ddiy' target='_blank'>diy</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Ddoityourself' target='_blank'>doityourself</a> | service:bicycle:retail~.+
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Doutdoor' target='_blank'>outdoor</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsport' target='_blank'>sport</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsports' target='_blank'>sports</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Ddiy' target='_blank'>diy</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Ddoityourself' target='_blank'>doityourself</a> | service:bicycle:retail~.+
 
 ### bike_second_hand
 
@@ -526,7 +528,7 @@ The question is `Does this shop repair bikes?`
  -  *This shop only repairs bikes bought here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:repair' target='_blank'>service:bicycle:repair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Donly_sold' target='_blank'>only_sold</a>
  -  *This shop only repairs bikes of a certain brand* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:repair' target='_blank'>service:bicycle:repair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dbrand' target='_blank'>brand</a>
 
-This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:retail' target='_blank'>service:bicycle:retail</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:retail%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:second_hand' target='_blank'>service:bicycle:second_hand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:second_hand%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:second_hand' target='_blank'>service:bicycle:second_hand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:second_hand%3Donly' target='_blank'>only</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsport' target='_blank'>sport</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Doutdoor' target='_blank'>outdoor</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbicycle' target='_blank'>bicycle</a> | service:bicycle:repair~.+
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:retail' target='_blank'>service:bicycle:retail</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:retail%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:second_hand' target='_blank'>service:bicycle:second_hand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:second_hand%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:second_hand' target='_blank'>service:bicycle:second_hand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:second_hand%3Donly' target='_blank'>only</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsport' target='_blank'>sport</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsports' target='_blank'>sports</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Doutdoor' target='_blank'>outdoor</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbicycle' target='_blank'>bicycle</a> | service:bicycle:repair~.+
 
 ### bicycle_rental
 
@@ -535,7 +537,7 @@ The question is `Does this shop rent out bikes?`
  -  *This shop rents out bikes* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:rental' target='_blank'>service:bicycle:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dyes' target='_blank'>yes</a>
  -  *This shop doesn't rent out bikes* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:rental' target='_blank'>service:bicycle:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dno' target='_blank'>no</a>
 
-This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbicycle' target='_blank'>bicycle</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsport' target='_blank'>sport</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbicycle_repair' target='_blank'>bicycle_repair</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Doutdoor' target='_blank'>outdoor</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Drental' target='_blank'>rental</a> | service:bicycle:rental~.+
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbicycle' target='_blank'>bicycle</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsport' target='_blank'>sport</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsports' target='_blank'>sports</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbicycle_repair' target='_blank'>bicycle_repair</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Doutdoor' target='_blank'>outdoor</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Drental' target='_blank'>rental</a> | service:bicycle:rental~.+
 
 ### bicycle-types
 
@@ -657,7 +659,7 @@ The question is `How much does it cost to use the cleaning service?`
  -  *The cleaning service is free to use* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning:fee' target='_blank'>service:bicycle:cleaning:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning:fee%3Dno' target='_blank'>no</a>
  -  *Free to use* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning:fee' target='_blank'>service:bicycle:cleaning:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning:fee%3Dyes' target='_blank'>yes</a> & service:bicycle:cleaning:charge=. _This option cannot be chosen as answer_
 
-This tagrendering is only visible in the popup if the following condition is met: amenity!=bike_wash & amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+
+This tagrendering is only visible in the popup if the following condition is met: amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+
 
 ### internet
 
@@ -799,11 +801,11 @@ This tagrendering has labels
 | id | question | osmTags |
 -----|-----|----- |
 | fetish.0 | *Does this shop offer fetish gear?* (default) |  |
-| fetish.1 | This shop offers <b>soft BDSM-gear</b>, such as fluffy handcuffs, a 'fifty-shade-of-grey'-starterset, ... | fetish:bdsm:soft=yes |
-| fetish.2 | This shop offers <b>specialized BDSM-gear</b>, such as spreader bars, supplies for needle play, medical bondage supplies, impact tools, shackles, metal colors, cuffs, nipple clamps, shibari accessories, ... | fetish:bdsm:specialized=yes |
-| fetish.3 | This shop offers <b>pet play</b> accessories, such as puppy masks, animal masks, pony play, tails, hoof shoes, ... | fetish:pet_play=yes |
-| fetish.4 | This shop offers <b>leather gear</b>, including pants and shirts usable in daily life up till leather harnesses | fetish:leather=yes |
-| fetish.5 | This shop offers <b>uniforms</b> for roleplay, such nurse uniforms, military uniforms, police, school girl, french maid, ... | fetish:uniform=yes |
+| fetish.1 | This shop offers <b>soft BDSM-gear</b>, such as fluffy handcuffs, a 'fifty-shade-of-grey'-starterset, ... | fetish:bdsm:soft~^(.+;)?yes(;.+)$ |
+| fetish.2 | This shop offers <b>specialized BDSM-gear</b>, such as spreader bars, supplies for needle play, medical bondage supplies, impact tools, shackles, metal colors, cuffs, nipple clamps, shibari accessories, ... | fetish:bdsm:specialized~^(.+;)?yes(;.+)$ |
+| fetish.3 | This shop offers <b>pet play</b> accessories, such as puppy masks, animal masks, pony play, tails, hoof shoes, ... | fetish:pet_play~^(.+;)?yes(;.+)$ |
+| fetish.4 | This shop offers <b>leather gear</b>, including pants and shirts usable in daily life up till leather harnesses | fetish:leather~^(.+;)?yes(;.+)$ |
+| fetish.5 | This shop offers <b>uniforms</b> for roleplay, such nurse uniforms, military uniforms, police, school girl, french maid, ... | fetish:uniform~^(.+;)?yes(;.+)$ |
 
 | id | question | osmTags |
 -----|-----|----- |
@@ -816,7 +818,7 @@ This tagrendering has labels
 | id | question | osmTags |
 -----|-----|----- |
 | shop_types.0 | *What kind of shop is this?* (default) |  |
-| shop_types.1 | Bicycle rental shop | shop=bicycle_rental |
+| shop_types.1 | Bicycle rental shop | shop=bicycle_rental | ((shop=rental & amenity=bicycle_rental)) |
 | shop_types.2 | Farm Supply Shop | shop=agrarian |
 | shop_types.3 | Liquor Store | shop=alcohol |
 | shop_types.4 | Anime / Manga Shop | shop=anime |

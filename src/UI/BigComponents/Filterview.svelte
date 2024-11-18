@@ -13,6 +13,7 @@
   import Tr from "../Base/Tr.svelte"
   import Translations from "../i18n/Translations"
   import type { SpecialVisualizationState } from "../SpecialVisualization"
+  import Constants from "../../Models/Constants"
 
   export let state: SpecialVisualizationState
   export let filteredLayer: FilteredLayer
@@ -22,6 +23,14 @@
   let isDisplayed: UIEventSource<boolean> = filteredLayer.isDisplayed
 
   let isDebugging = state?.featureSwitches?.featureSwitchIsDebugging ?? new ImmutableStore(false)
+  let showTags = state?.userRelatedState?.showTags?.map(
+    (s) =>
+      (s === "yes" &&
+        state?.userRelatedState?.osmConnection?.userDetails?.data?.csCount >=
+          Constants.userJourney.tagsVisibleAt) ||
+      s === "always" ||
+      s === "full"
+  )
 
   /**
    * Gets a UIEventSource as boolean for the given option, to be used with a checkbox
@@ -31,7 +40,7 @@
     return state.sync(
       (f) => f === 0,
       [],
-      (b) => (b ? 0 : undefined),
+      (b) => (b ? 0 : undefined)
     )
   }
 
@@ -67,6 +76,9 @@
             {#if filter.options.length === 1 && filter.options[0].fields.length === 0}
               <Checkbox selected={getBooleanStateFor(filter)}>
                 <Tr t={filter.options[0].question} />
+                <span class="subtle">
+                  {filter.options[0].osmTags.asHumanString()}
+                </span>
               </Checkbox>
             {/if}
 
@@ -82,6 +94,9 @@
                       {option.emoji}
                     {/if}
                     <Tr t={option.question} />
+                    {#if $showTags && option.osmTags !== undefined}
+                      &nbsp;({option.osmTags.asHumanString()})
+                    {/if}
                   </option>
                 {/each}
               </Dropdown>
@@ -92,7 +107,7 @@
     {/if}
   </div>
 {:else if $isDebugging}
- <div class="code">
-  {layer.id} (no name)
- </div>
+  <div class="code">
+    {layer.id} (no name)
+  </div>
 {/if}

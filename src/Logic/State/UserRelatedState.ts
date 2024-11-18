@@ -1,4 +1,4 @@
-import LayoutConfig, { MinimalLayoutInformation } from "../../Models/ThemeConfig/LayoutConfig"
+import ThemeConfig, { MinimalThemeInformation } from "../../Models/ThemeConfig/ThemeConfig"
 import { OsmConnection } from "../Osm/OsmConnection"
 import { MangroveIdentity } from "../Web/MangroveReviews"
 import { Store, Stores, UIEventSource } from "../UIEventSource"
@@ -22,9 +22,7 @@ import Showdown from "showdown"
 import { LocalStorageSource } from "../Web/LocalStorageSource"
 import { GeocodeResult } from "../Search/GeocodingProvider"
 
-
 export class OptionallySyncedHistory<T> {
-
     public readonly syncPreference: UIEventSource<"sync" | "local" | "no">
     public readonly value: Store<T[]>
     private readonly synced: UIEventSource<T[]>
@@ -34,18 +32,26 @@ export class OptionallySyncedHistory<T> {
     private readonly _isSame: (a: T, b: T) => boolean
     private osmconnection: OsmConnection
 
-    constructor(key: string, osmconnection: OsmConnection, maxHistory: number = 20, isSame?: (a: T, b: T) => boolean) {
+    constructor(
+        key: string,
+        osmconnection: OsmConnection,
+        maxHistory: number = 20,
+        isSame?: (a: T, b: T) => boolean
+    ) {
         this.osmconnection = osmconnection
         this._maxHistory = maxHistory
         this._isSame = isSame
-        this.syncPreference = osmconnection.getPreference(
-            "preference-" + key + "-history",
-            "sync",
-        )
-        const synced = this.synced = UIEventSource.asObject<T[]>(osmconnection.getPreference(key + "-history"), [])
-        const local = this.local = LocalStorageSource.GetParsed<T[]>(key + "-history", [])
-        const thisSession = this.thisSession = new UIEventSource<T[]>([], "optionally-synced:"+key+"(session only)")
-        this.syncPreference.addCallback(syncmode => {
+        this.syncPreference = osmconnection.getPreference("preference-" + key + "-history", "sync")
+        const synced = (this.synced = UIEventSource.asObject<T[]>(
+            osmconnection.getPreference(key + "-history"),
+            []
+        ))
+        const local = (this.local = LocalStorageSource.getParsed<T[]>(key + "-history", []))
+        const thisSession = (this.thisSession = new UIEventSource<T[]>(
+            [],
+            "optionally-synced:" + key + "(session only)"
+        ))
+        this.syncPreference.addCallback((syncmode) => {
             if (syncmode === "sync") {
                 let list = [...thisSession.data, ...synced.data].slice(0, maxHistory)
                 if (this._isSame) {
@@ -67,9 +73,7 @@ export class OptionallySyncedHistory<T> {
             }
         })
 
-        this.value = this.syncPreference.bind(syncPref => this.getAppropriateStore(syncPref))
-
-
+        this.value = this.syncPreference.bind((syncPref) => this.getAppropriateStore(syncPref))
     }
 
     private getAppropriateStore(syncPref?: string) {
@@ -87,7 +91,7 @@ export class OptionallySyncedHistory<T> {
         const store = this.getAppropriateStore()
         let oldList = store.data ?? []
         if (this._isSame) {
-            oldList = oldList.filter(x => !this._isSame(t, x))
+            oldList = oldList.filter((x) => !this._isSame(t, x))
         }
         store.set([t, ...oldList].slice(0, this._maxHistory))
     }
@@ -100,14 +104,13 @@ export class OptionallySyncedHistory<T> {
         if (t === undefined) {
             return
         }
-        this.osmconnection.isLoggedIn.addCallbackAndRun(loggedIn => {
+        this.osmconnection.isLoggedIn.addCallbackAndRun((loggedIn) => {
             if (!loggedIn) {
                 return
             }
             this.add(t)
             return true
         })
-
     }
 
     clear() {
@@ -157,14 +160,14 @@ export default class UserRelatedState {
      */
     public readonly gpsLocationHistoryRetentionTime = new UIEventSource(
         7 * 24 * 60 * 60,
-        "gps_location_retention",
+        "gps_location_retention"
     )
 
     public readonly addNewFeatureMode = new UIEventSource<
         "button" | "button_click_right" | "button_click" | "click" | "click_right"
     >("button_click_right")
 
-    public readonly showScale : UIEventSource<boolean>
+    public readonly showScale: UIEventSource<boolean>
 
     /**
      * Preferences as tags exposes many preferences and state properties as record.
@@ -180,18 +183,17 @@ export default class UserRelatedState {
     public readonly recentlyVisitedThemes: OptionallySyncedHistory<string>
     public readonly recentlyVisitedSearch: OptionallySyncedHistory<GeocodeResult>
 
-
     constructor(
         osmConnection: OsmConnection,
-        layout?: LayoutConfig,
+        layout?: ThemeConfig,
         featureSwitches?: FeatureSwitchState,
-        mapProperties?: MapProperties,
+        mapProperties?: MapProperties
     ) {
         this.osmConnection = osmConnection
         this._mapProperties = mapProperties
 
         this.showAllQuestionsAtOnce = UIEventSource.asBoolean(
-            this.osmConnection.getPreference("show-all-questions", "false"),
+            this.osmConnection.getPreference("show-all-questions", "false")
         )
         this.language = this.osmConnection.getPreference("language")
         this.showTags = this.osmConnection.getPreference("show_tags")
@@ -202,16 +204,20 @@ export default class UserRelatedState {
         this.a11y = this.osmConnection.getPreference("a11y")
 
         this.mangroveIdentity = new MangroveIdentity(
-            this.osmConnection.getPreference("identity", undefined,"mangrove"),
-            this.osmConnection.getPreference("identity-creation-date", undefined,"mangrove"),
+            this.osmConnection.getPreference("identity", undefined, "mangrove"),
+            this.osmConnection.getPreference("identity-creation-date", undefined, "mangrove")
         )
-        this.preferredBackgroundLayer = this.osmConnection.getPreference("preferred-background-layer")
+        this.preferredBackgroundLayer = this.osmConnection.getPreference(
+            "preferred-background-layer"
+        )
 
         this.addNewFeatureMode = this.osmConnection.getPreference(
             "preferences-add-new-mode",
-            "button_click_right",
+            "button_click_right"
         )
-        this.showScale = UIEventSource.asBoolean(this.osmConnection.GetPreference("preference-show-scale","false"))
+        this.showScale = UIEventSource.asBoolean(
+            this.osmConnection.GetPreference("preference-show-scale", "false")
+        )
 
         this.imageLicense = this.osmConnection.getPreference("pictures-license", "CC0")
         this.installedUserThemes = UserRelatedState.initInstalledUserThemes(osmConnection)
@@ -224,12 +230,13 @@ export default class UserRelatedState {
             "theme",
             this.osmConnection,
             10,
-            (a, b) => a === b,
+            (a, b) => a === b
         )
-        this.recentlyVisitedSearch = new OptionallySyncedHistory<GeocodeResult>("places",
+        this.recentlyVisitedSearch = new OptionallySyncedHistory<GeocodeResult>(
+            "places",
             this.osmConnection,
             15,
-            (a, b) => a.osm_id === b.osm_id && a.osm_type === b.osm_type,
+            (a, b) => a.osm_id === b.osm_id && a.osm_type === b.osm_type
         )
         this.syncLanguage()
         this.recentlyVisitedThemes.addDefferred(layout?.id)
@@ -272,7 +279,17 @@ export default class UserRelatedState {
         }
     }
 
-    public getUnofficialTheme(id: string): (MinimalLayoutInformation & { definition }) | undefined {
+    /**
+     * Adds a newly visited unofficial theme (or update the info).
+     *
+     * @param themeInfo note that themeInfo.id should be the URL where it was found
+     */
+    public addUnofficialTheme(themeInfo: MinimalThemeInformation) {
+        const pref = this.osmConnection.getPreference("unofficial-theme-" + themeInfo.id)
+        this.osmConnection.isLoggedIn.when(() => pref.set(JSON.stringify(themeInfo)))
+    }
+
+    public getUnofficialTheme(id: string): MinimalThemeInformation | undefined {
         const pref = this.osmConnection.getPreference("unofficial-theme-" + id)
         const str = pref.data
 
@@ -282,20 +299,20 @@ export default class UserRelatedState {
         }
 
         try {
-            return <MinimalLayoutInformation & { definition: string }>JSON.parse(str)
+            return JSON.parse(str)
         } catch (e) {
             console.warn(
                 "Removing theme " +
-                id +
-                " as it could not be parsed from the preferences; the content is:",
-                str,
+                    id +
+                    " as it could not be parsed from the preferences; the content is:",
+                str
             )
             pref.setData(null)
             return undefined
         }
     }
 
-    public markLayoutAsVisited(layout: LayoutConfig) {
+    public markLayoutAsVisited(layout: ThemeConfig) {
         if (!layout) {
             console.error("Trying to mark a layout as visited, but ", layout, " got passed")
             return
@@ -318,7 +335,7 @@ export default class UserRelatedState {
                     title: layout.title.translations,
                     shortDescription: layout.shortDescription.translations,
                     definition: layout["definition"],
-                }),
+                })
             )
         }
     }
@@ -328,7 +345,7 @@ export default class UserRelatedState {
         return osmConnection.preferencesHandler.allPreferences.map((prefs) =>
             Object.keys(prefs)
                 .filter((k) => k.startsWith(prefix))
-                .map((k) => k.substring(prefix.length)),
+                .map((k) => k.substring(prefix.length))
         )
     }
 
@@ -342,7 +359,7 @@ export default class UserRelatedState {
         return userPreferences.map((preferences) =>
             Object.keys(preferences)
                 .filter((key) => key.startsWith(prefix))
-                .map((key) => key.substring(prefix.length, key.length - "-enabled".length)),
+                .map((key) => key.substring(prefix.length, key.length - "-enabled".length))
         )
     }
 
@@ -358,7 +375,7 @@ export default class UserRelatedState {
                     return undefined
                 }
                 return [home.lon, home.lat]
-            }),
+            })
         ).map((homeLonLat) => {
             if (homeLonLat === undefined) {
                 return empty
@@ -387,8 +404,8 @@ export default class UserRelatedState {
      * This is inherently a dirty and chaotic method, as it shoves many properties into this EventSource
      * */
     private initAmendedPrefs(
-        layout?: LayoutConfig,
-        featureSwitches?: FeatureSwitchState,
+        layout?: ThemeConfig,
+        featureSwitches?: FeatureSwitchState
     ): UIEventSource<Record<string, string>> {
         const amendedPrefs = new UIEventSource<Record<string, string>>({
             _theme: layout?.id,
@@ -434,19 +451,19 @@ export default class UserRelatedState {
                     const missingLayers = Utils.Dedup(
                         untranslated
                             .filter((k) => k.startsWith("layers:"))
-                            .map((k) => k.slice("layers:".length).split(".")[0]),
+                            .map((k) => k.slice("layers:".length).split(".")[0])
                     )
 
                     const zenLinks: { link: string; id: string }[] = Utils.NoNull([
                         hasMissingTheme
                             ? {
-                                id: "theme:" + layout.id,
-                                link: LinkToWeblate.hrefToWeblateZen(
-                                    language,
-                                    "themes",
-                                    layout.id,
-                                ),
-                            }
+                                  id: "theme:" + layout.id,
+                                  link: LinkToWeblate.hrefToWeblateZen(
+                                      language,
+                                      "themes",
+                                      layout.id
+                                  ),
+                              }
                             : undefined,
                         ...missingLayers.map((id) => ({
                             id: "layer:" + id,
@@ -463,7 +480,7 @@ export default class UserRelatedState {
                 }
                 amendedPrefs.ping()
             },
-            [this.translationMode],
+            [this.translationMode]
         )
 
         this.mangroveIdentity.getKeyId().addCallbackAndRun((kid) => {
@@ -482,7 +499,7 @@ export default class UserRelatedState {
                         .makeHtml(userDetails.description)
                         ?.replace(/&gt;/g, ">")
                         ?.replace(/&lt;/g, "<")
-                        ?.replace(/\n/g, ""),
+                        ?.replace(/\n/g, "")
                 )
             }
 
@@ -493,7 +510,7 @@ export default class UserRelatedState {
                 (c: { contributor: string; commits: number }) => {
                     const replaced = c.contributor.toLowerCase().replace(/\s+/g, "")
                     return replaced === simplifiedName
-                },
+                }
             )
             if (isTranslator) {
                 amendedPrefs.data["_translation_contributions"] = "" + isTranslator.commits
@@ -502,7 +519,7 @@ export default class UserRelatedState {
                 (c: { contributor: string; commits: number }) => {
                     const replaced = c.contributor.toLowerCase().replace(/\s+/g, "")
                     return replaced === simplifiedName
-                },
+                }
             )
             if (isCodeContributor) {
                 amendedPrefs.data["_code_contributions"] = "" + isCodeContributor.commits
@@ -516,10 +533,10 @@ export default class UserRelatedState {
                     // Language is managed separately
                     continue
                 }
-                if(tags[key] === null){
+                if (tags[key] === null) {
                     continue
                 }
-                let pref = this.osmConnection.GetPreference(key, undefined, {prefix: ""})
+                let pref = this.osmConnection.GetPreference(key, undefined, { prefix: "" })
 
                 pref.set(tags[key])
             }

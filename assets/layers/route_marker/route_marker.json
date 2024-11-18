@@ -2,11 +2,13 @@
   "id": "route_marker",
   "name": {
     "en": "Route markers",
-    "de": "Routenmarkierungen"
+    "de": "Routenmarkierungen",
+    "es": "Marcadores de ruta"
   },
   "description": {
     "en": "Route markers are small markers often found along official hiking/cycling/riding/skiing routes to indicate the direction of the route.",
-    "de": "Routenmarkierungen sind kleine Markierungen, die häufig entlang offizieller Wander-/Rad-/Reit-/Skirouten zu finden sind, um die Richtung der Route anzuzeigen."
+    "de": "Routenmarkierungen sind kleine Markierungen, die häufig entlang offizieller Wander-/Rad-/Reit-/Skirouten zu finden sind, um die Richtung der Route anzuzeigen.",
+    "es": "Los marcadores de ruta son pequeños marcadores que a menudo se encuentran a lo largo de rutas oficiales de senderismo/ciclismo/equitación/esquí para indicar la dirección de la ruta."
   },
   "source": {
     "osmTags": "information=route_marker"
@@ -15,7 +17,8 @@
   "title": {
     "render": {
       "en": "Route marker",
-      "de": "Routenmarker"
+      "de": "Routenmarker",
+      "es": "Marcador de ruta"
     }
   },
   "pointRendering": [
@@ -35,7 +38,8 @@
     {
       "title": {
         "en": "a route marker",
-        "de": "ein Routenmarker"
+        "de": "ein Routenmarker",
+        "es": "un marcador de ruta"
       },
       "tags": [
         "tourism=information",
@@ -43,7 +47,8 @@
       ],
       "description": {
         "en": "A route marker is a small marker often found along official hiking/cycling/riding/skiing routes to indicate the direction of the route.",
-        "de": "Ein Routenmarker ist ein kleiner Marker, der oft entlang offizieller Wander-/Fahrrad-/Reit-/Skirouten zu finden ist, um die Richtung der Route anzuzeigen."
+        "de": "Ein Routenmarker ist ein kleiner Marker, der oft entlang offizieller Wander-/Fahrrad-/Reit-/Skirouten zu finden ist, um die Richtung der Route anzuzeigen.",
+        "es": "Un marcador de ruta es un pequeño marcador que a menudo se encuentra a lo largo de rutas oficiales de senderismo/ciclismo/equitación/esquí para indicar la dirección de la ruta."
       },
       "exampleImages": [
         "./assets/layers/route_marker/bicycle_route_marker.jpg",
@@ -57,7 +62,8 @@
       "id": "type",
       "question": {
         "en": "For what kind of route is this marker?",
-        "de": "Für welche Art von Route ist dieser Marker?"
+        "de": "Für welche Art von Route ist dieser Marker?",
+        "es": "¿Para qué tipo de ruta es este marcador?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -66,7 +72,8 @@
           "ifnot": "biycle=",
           "then": {
             "en": "This is a route marker for a bicycle route.",
-            "de": "Dies ist ein Routenmarker für eine Fahrradstrecke."
+            "de": "Dies ist ein Routenmarker für eine Fahrradstrecke.",
+            "es": "Este es un marcador de ruta para una ruta ciclista."
           }
         },
         {
@@ -74,7 +81,8 @@
           "ifnot": "hiking=",
           "then": {
             "en": "This is a route marker for a hiking route.",
-            "de": "Dies ist ein Routenmarker für eine Wanderroute."
+            "de": "Dies ist ein Routenmarker für eine Wanderroute.",
+            "es": "Este es un marcador de ruta para una ruta de senderismo."
           }
         },
         {
@@ -82,7 +90,8 @@
           "ifnot": "mtb=",
           "then": {
             "en": "This is a route marker for a mountain bike route.",
-            "de": "Dies ist ein Routenmarker für eine Mountainbikestrecke."
+            "de": "Dies ist ein Routenmarker für eine Mountainbikestrecke.",
+            "es": "Este es un marcador de ruta para una ruta de bicicleta de montaña."
           }
         },
         {
@@ -90,7 +99,8 @@
           "ifnot": "horse=",
           "then": {
             "en": "This is a route marker for a horse riding route.",
-            "de": "Dies ist ein Routenmarker für eine Reitroute."
+            "de": "Dies ist ein Routenmarker für eine Reitroute.",
+            "es": "Este es un marcador de ruta para una ruta ecuestre."
           }
         },
         {
@@ -98,7 +108,8 @@
           "ifnot": "ski=",
           "then": {
             "en": "This is a route marker for a ski route.",
-            "de": "Dies ist ein Routenmarker für eine Skiroute."
+            "de": "Dies ist ein Routenmarker für eine Skiroute.",
+            "es": "Este es un marcador de ruta para una ruta de esquí."
           }
         }
       ]

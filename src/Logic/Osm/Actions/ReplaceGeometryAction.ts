@@ -217,7 +217,7 @@ export default class ReplaceGeometryAction extends OsmChangeAction implements Pr
             const url = `${
                 this.state.osmConnection?._oauth_config?.url ?? "https://api.openstreetmap.org"
             }/api/0.6/${this.wayToReplaceId}/full`
-            const rawData = await Utils.downloadJsonCached(url, 1000)
+            const rawData = await Utils.downloadJsonCached<{ elements: any[] }>(url, 1000)
             parsed = OsmObject.ParseObjects(rawData.elements)
         }
         const allNodes = parsed.filter((o) => o.type === "node")

@@ -10816,6 +10816,10 @@
           "then": "cycleways_and_roads - All infrastructure that someone can cycle over, accompanied with questions about this infrastructure"
         },
         {
+          "if": "value=cyclist_waiting_aid",
+          "then": "cyclist_waiting_aid - Various pieces of infrastructure that aid cyclists while they wait at a traffic light."
+        },
+        {
           "if": "value=defibrillator",
           "then": "defibrillator - A layer showing defibrillators which can be used in case of emergency. This contains public defibrillators, but also defibrillators which might need staff to fetch the actual device"
         },
@@ -11218,6 +11222,14 @@
         {
           "if": "value=surveillance_camera",
           "then": "surveillance_camera - This layer shows surveillance cameras and allows a contributor to update information and add new cameras"
+        },
+        {
+          "if": "value=tactile_map",
+          "then": "tactile_map - Layer showing tactile maps, which can be used by visually impaired people to navigate the city."
+        },
+        {
+          "if": "value=tactile_model",
+          "then": "tactile_model - Layer showing tactile models, three-dimensional models of the surrounding area."
         },
         {
           "if": "value=tertiary_education",
@@ -12272,7 +12284,7 @@
         },
         {
           "if": "value=wikidata",
-          "then": "<b>wikidata</b> A wikidata identifier, e.g. Q42. "
+          "then": "<b>wikidata</b> A wikidata identifier, e.g. Q42."
         },
         {
           "if": "value=pnat",
@@ -12300,7 +12312,7 @@
         },
         {
           "if": "value=opening_hours",
-          "then": "<b>opening_hours</b> Has extra elements to easily input when a POI is opened. "
+          "then": "<b>opening_hours</b> Has extra elements to easily input when a POI is opened."
         },
         {
           "if": "value=color",
@@ -13595,7 +13607,7 @@
         },
         {
           "if": "value=wikidata",
-          "then": "<b>wikidata</b> A wikidata identifier, e.g. Q42. "
+          "then": "<b>wikidata</b> A wikidata identifier, e.g. Q42."
         },
         {
           "if": "value=pnat",
@@ -13623,7 +13635,7 @@
         },
         {
           "if": "value=opening_hours",
-          "then": "<b>opening_hours</b> Has extra elements to easily input when a POI is opened. "
+          "then": "<b>opening_hours</b> Has extra elements to easily input when a POI is opened."
         },
         {
           "if": "value=color",
@@ -14965,7 +14977,7 @@
         },
         {
           "if": "value=wikidata",
-          "then": "<b>wikidata</b> A wikidata identifier, e.g. Q42. "
+          "then": "<b>wikidata</b> A wikidata identifier, e.g. Q42."
         },
         {
           "if": "value=pnat",
@@ -14993,7 +15005,7 @@
         },
         {
           "if": "value=opening_hours",
-          "then": "<b>opening_hours</b> Has extra elements to easily input when a POI is opened. "
+          "then": "<b>opening_hours</b> Has extra elements to easily input when a POI is opened."
         },
         {
           "if": "value=color",
@@ -16339,7 +16351,7 @@
         },
         {
           "if": "value=wikidata",
-          "then": "<b>wikidata</b> A wikidata identifier, e.g. Q42. "
+          "then": "<b>wikidata</b> A wikidata identifier, e.g. Q42."
         },
         {
           "if": "value=pnat",
@@ -16367,7 +16379,7 @@
         },
         {
           "if": "value=opening_hours",
-          "then": "<b>opening_hours</b> Has extra elements to easily input when a POI is opened. "
+          "then": "<b>opening_hours</b> Has extra elements to easily input when a POI is opened."
         },
         {
           "if": "value=color",
@@ -17714,7 +17726,7 @@
         },
         {
           "if": "value=wikidata",
-          "then": "<b>wikidata</b> A wikidata identifier, e.g. Q42. "
+          "then": "<b>wikidata</b> A wikidata identifier, e.g. Q42."
         },
         {
           "if": "value=pnat",
@@ -17742,7 +17754,7 @@
         },
         {
           "if": "value=opening_hours",
-          "then": "<b>opening_hours</b> Has extra elements to easily input when a POI is opened. "
+          "then": "<b>opening_hours</b> Has extra elements to easily input when a POI is opened."
         },
         {
           "if": "value=color",
@@ -19088,7 +19100,7 @@
         },
         {
           "if": "value=wikidata",
-          "then": "<b>wikidata</b> A wikidata identifier, e.g. Q42. "
+          "then": "<b>wikidata</b> A wikidata identifier, e.g. Q42."
         },
         {
           "if": "value=pnat",
@@ -19116,7 +19128,7 @@
         },
         {
           "if": "value=opening_hours",
-          "then": "<b>opening_hours</b> Has extra elements to easily input when a POI is opened. "
+          "then": "<b>opening_hours</b> Has extra elements to easily input when a POI is opened."
         },
         {
           "if": "value=color",

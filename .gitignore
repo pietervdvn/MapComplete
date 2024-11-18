@@ -49,3 +49,7 @@ error_changeset_*
 public/*.webmanifest
 public/assets/generated/
 public/assets/langs/*
+
+android/
+dist-full/
+public/assets/icons/*.webp

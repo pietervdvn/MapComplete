@@ -58,7 +58,7 @@ export class GeoLocationState {
      * @private
      */
     private readonly _previousLocationGrant: UIEventSource<boolean> =
-        LocalStorageSource.GetParsed<boolean>("geolocation-permissions", false)
+        LocalStorageSource.getParsed<boolean>("geolocation-permissions", false)
 
     /**
      * Used to detect a permission retraction

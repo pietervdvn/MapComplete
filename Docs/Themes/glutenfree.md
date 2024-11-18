@@ -23,6 +23,9 @@ Available languages:
  - es
  - ca
  - cs
+ - ru
+ - hu
+ - uk
 
 # Table of contents
 
@@ -55,14 +58,14 @@ Available languages:
     + [Vegetarian (no friture)](#vegetarian-(no-friture))
     + [Vegan (no friture)](#vegan-(no-friture))
     + [halal (no friture)](#halal-(no-friture))
-    + [sugar_free](#sugar_free)
-    + [lactose_free](#lactose_free)
     + [organic (no friture)](#organic-(no-friture))
     + [friture-vegetarian](#friture-vegetarian)
     + [friture-vegan](#friture-vegan)
     + [friture-organic](#friture-organic)
     + [friture-oil](#friture-oil)
     + [friture-take-your-container](#friture-take-your-container)
+    + [sugar_free](#sugar_free)
+    + [lactose_free](#lactose_free)
     + [smoking](#smoking)
     + [service:electricity](#serviceelectricity)
     + [dog-access](#dog-access)
@@ -190,14 +193,14 @@ Elements must match **all** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/diet:vegetarian#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/diet%3Avegetarian/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [diet:vegetarian](https://wiki.openstreetmap.org/wiki/Key:diet:vegetarian) | Multiple choice | [no](https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Dno) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Dlimited) [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Dyes) [only](https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Donly) [on_demand](https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Don_demand) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/diet:vegan#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/diet%3Avegan/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [diet:vegan](https://wiki.openstreetmap.org/wiki/Key:diet:vegan) | Multiple choice | [no](https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dno) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dlimited) [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dyes) [only](https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Donly) [on_demand](https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Don_demand) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/diet:halal#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/diet%3Ahalal/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [diet:halal](https://wiki.openstreetmap.org/wiki/Key:diet:halal) | Multiple choice | [no](https://wiki.openstreetmap.org/wiki/Tag:diet:halal%3Dno) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:halal%3Dlimited) [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:halal%3Dyes) [only](https://wiki.openstreetmap.org/wiki/Tag:diet:halal%3Donly) |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/diet:sugar_free#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/diet%3Asugar_free/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [diet:sugar_free](https://wiki.openstreetmap.org/wiki/Key:diet:sugar_free) | Multiple choice | [only](https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Donly) [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Dno) |
-| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/diet:lactose_free#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/diet%3Alactose_free/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [diet:lactose_free](https://wiki.openstreetmap.org/wiki/Key:diet:lactose_free) | Multiple choice | [only](https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Donly) [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/organic#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/organic/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [organic](https://wiki.openstreetmap.org/wiki/Key:organic) | Multiple choice | [no](https://wiki.openstreetmap.org/wiki/Tag:organic%3Dno) [yes](https://wiki.openstreetmap.org/wiki/Tag:organic%3Dyes) [only](https://wiki.openstreetmap.org/wiki/Tag:organic%3Donly) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/diet:vegetarian#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/diet%3Avegetarian/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [diet:vegetarian](https://wiki.openstreetmap.org/wiki/Key:diet:vegetarian) | Multiple choice | [only](https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Donly) [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/diet:vegan#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/diet%3Avegan/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [diet:vegan](https://wiki.openstreetmap.org/wiki/Key:diet:vegan) | Multiple choice | [only](https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Donly) [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/organic#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/organic/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [organic](https://wiki.openstreetmap.org/wiki/Key:organic) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:organic%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:organic%3Dno) [only](https://wiki.openstreetmap.org/wiki/Tag:organic%3Donly) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/friture:oil#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/friture%3Aoil/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [friture:oil](https://wiki.openstreetmap.org/wiki/Key:friture:oil) | Multiple choice | [vegetable](https://wiki.openstreetmap.org/wiki/Tag:friture:oil%3Dvegetable) [animal](https://wiki.openstreetmap.org/wiki/Tag:friture:oil%3Danimal) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/reusable_packaging:accept#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/reusable_packaging%3Aaccept/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [reusable_packaging:accept](https://wiki.openstreetmap.org/wiki/Key:reusable_packaging:accept) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:reusable_packaging:accept%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:reusable_packaging:accept%3Dno) [only](https://wiki.openstreetmap.org/wiki/Tag:reusable_packaging:accept%3Donly) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/diet:sugar_free#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/diet%3Asugar_free/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [diet:sugar_free](https://wiki.openstreetmap.org/wiki/Key:diet:sugar_free) | Multiple choice | [only](https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Donly) [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Dno) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/diet:lactose_free#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/diet%3Alactose_free/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [diet:lactose_free](https://wiki.openstreetmap.org/wiki/Key:diet:lactose_free) | Multiple choice | [only](https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Donly) [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/smoking#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/smoking/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [smoking](https://wiki.openstreetmap.org/wiki/Key:smoking) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:smoking%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:smoking%3Dno) [outside](https://wiki.openstreetmap.org/wiki/Tag:smoking%3Doutside) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:electricity#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/service%3Aelectricity/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [service:electricity](https://wiki.openstreetmap.org/wiki/Key:service:electricity) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:electricity%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:service:electricity%3Dlimited) [ask](https://wiki.openstreetmap.org/wiki/Tag:service:electricity%3Dask) [no](https://wiki.openstreetmap.org/wiki/Tag:service:electricity%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/dog#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/dog/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [dog](https://wiki.openstreetmap.org/wiki/Key:dog) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:dog%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:dog%3Dno) [leashed](https://wiki.openstreetmap.org/wiki/Tag:dog%3Dleashed) [unleashed](https://wiki.openstreetmap.org/wiki/Tag:dog%3Dunleashed) [outside](https://wiki.openstreetmap.org/wiki/Tag:dog%3Doutside) |
@@ -350,7 +353,7 @@ _This tagrendering has no question and is thus read-only_
 ### add-menu-image
 
 _This tagrendering has no question and is thus read-only_
-*{image_upload(image:menu,Add an image from the menu)}*
+*{image_upload(image:menu,Add an image from the menu,)}*
 
 ### menu-website
 
@@ -378,7 +381,7 @@ The question is `Does this place offer take-away?`
 
 The question is `Does {title()} deliver food to your home?`
 
- -  *This business does home delivery (eventually via a third party)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:delivery' target='_blank'>delivery</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:delivery%3Dyes' target='_blank'>yes</a>
+ -  *This business does home delivery (possibly via a third party)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:delivery' target='_blank'>delivery</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:delivery%3Dyes' target='_blank'>yes</a>
  -  *This business does not deliver at home* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:delivery' target='_blank'>delivery</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:delivery%3Dno' target='_blank'>no</a>
 
 ### Vegetarian (no friture)
@@ -410,30 +413,6 @@ The question is `Does this restaurant offer a halal menu?`
  -  *There is a halal menu* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:halal' target='_blank'>diet:halal</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:halal%3Dyes' target='_blank'>yes</a>
  -  *Only halal options are available* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:halal' target='_blank'>diet:halal</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:halal%3Donly' target='_blank'>only</a>
 
-### sugar_free
-
-The question is `Does this shop have a sugar free offering?`
-
- -  *This shop <b>only sells sugar free</b> products* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:sugar_free' target='_blank'>diet:sugar_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Donly' target='_blank'>only</a>
- -  *This shop has a big sugar free offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:sugar_free' target='_blank'>diet:sugar_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Dyes' target='_blank'>yes</a>
- -  *This shop has a <b>limited sugar free</b> offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:sugar_free' target='_blank'>diet:sugar_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Dlimited' target='_blank'>limited</a>
- -  *This shop has no sugar free offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:sugar_free' target='_blank'>diet:sugar_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Dno' target='_blank'>no</a>
-
-This tagrendering has labels 
-`diets`
-
-### lactose_free
-
-The question is `Does {title()} have a lactose-free offering?`
-
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/lactose_free.svg' style='width: 3rem; height: 3rem'> *<b>Only sells lactose free</b> products* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:lactose_free' target='_blank'>diet:lactose_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Donly' target='_blank'>only</a>
- - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/lactose_free.svg' style='width: 3rem; height: 3rem'> *Big lactose free offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:lactose_free' target='_blank'>diet:lactose_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dyes' target='_blank'>yes</a>
- -  *<b>Limited lactose free</b> offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:lactose_free' target='_blank'>diet:lactose_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dlimited' target='_blank'>limited</a>
- -  *No lactose free offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:lactose_free' target='_blank'>diet:lactose_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dno' target='_blank'>no</a>
-
-This tagrendering has labels 
-`diets`
-
 ### organic (no friture)
 
 The question is `Does this restaurant offer organic food?`
@@ -457,7 +436,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 The question is `Does this fries shop have vegan snacks?`
 
- -  *Servers only vegan snacks and burgers* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegan' target='_blank'>diet:vegan</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Donly' target='_blank'>only</a>
+ -  *Serves only vegan snacks and burgers* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegan' target='_blank'>diet:vegan</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Donly' target='_blank'>only</a>
  -  *Vegan snacks are available* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegan' target='_blank'>diet:vegan</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dyes' target='_blank'>yes</a>
  -  *A small selection of vegan snacks are available* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegan' target='_blank'>diet:vegan</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dlimited' target='_blank'>limited</a>
  -  *No vegan snacks are available* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegan' target='_blank'>diet:vegan</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dno' target='_blank'>no</a>
@@ -492,6 +471,30 @@ The question is `If you bring your own container (such as a cooking pot and smal
  -  *You <b>must</b> bring your own container to order here.* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:reusable_packaging:accept' target='_blank'>reusable_packaging:accept</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:reusable_packaging:accept%3Donly' target='_blank'>only</a>
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:cuisine' target='_blank'>cuisine</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dfriture' target='_blank'>friture</a>
+
+### sugar_free
+
+The question is `Does this shop have a sugar free offering?`
+
+ -  *This shop <b>only sells sugar free</b> products* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:sugar_free' target='_blank'>diet:sugar_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Donly' target='_blank'>only</a>
+ -  *This shop has a big sugar free offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:sugar_free' target='_blank'>diet:sugar_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Dyes' target='_blank'>yes</a>
+ -  *This shop has a <b>limited sugar free</b> offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:sugar_free' target='_blank'>diet:sugar_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Dlimited' target='_blank'>limited</a>
+ -  *This shop has no sugar free offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:sugar_free' target='_blank'>diet:sugar_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:sugar_free%3Dno' target='_blank'>no</a>
+
+This tagrendering has labels 
+`diets`
+
+### lactose_free
+
+The question is `Does {title()} have a lactose-free offering?`
+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/lactose_free.svg' style='width: 3rem; height: 3rem'> *<b>Only sells lactose free</b> products* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:lactose_free' target='_blank'>diet:lactose_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Donly' target='_blank'>only</a>
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/questions/lactose_free.svg' style='width: 3rem; height: 3rem'> *Big lactose free offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:lactose_free' target='_blank'>diet:lactose_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dyes' target='_blank'>yes</a>
+ -  *<b>Limited lactose free</b> offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:lactose_free' target='_blank'>diet:lactose_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dlimited' target='_blank'>limited</a>
+ -  *No lactose free offering* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:diet:lactose_free' target='_blank'>diet:lactose_free</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:lactose_free%3Dno' target='_blank'>no</a>
+
+This tagrendering has labels 
+`diets`
 
 ### smoking
 
@@ -1250,7 +1253,7 @@ The question is `Does this shop sell bikes?`
  -  *This shop sells new bikes* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:retail' target='_blank'>service:bicycle:retail</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:retail%3Dyes' target='_blank'>yes</a>
  -  *This shop doesn't sell new bikes* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:retail' target='_blank'>service:bicycle:retail</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:retail%3Dno' target='_blank'>no</a>
 
-This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Doutdoor' target='_blank'>outdoor</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsport' target='_blank'>sport</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Ddiy' target='_blank'>diy</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Ddoityourself' target='_blank'>doityourself</a> | service:bicycle:retail~.+
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Doutdoor' target='_blank'>outdoor</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsport' target='_blank'>sport</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsports' target='_blank'>sports</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Ddiy' target='_blank'>diy</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Ddoityourself' target='_blank'>doityourself</a> | service:bicycle:retail~.+
 
 ### bike_second_hand
 
@@ -1271,7 +1274,7 @@ The question is `Does this shop repair bikes?`
  -  *This shop only repairs bikes bought here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:repair' target='_blank'>service:bicycle:repair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Donly_sold' target='_blank'>only_sold</a>
  -  *This shop only repairs bikes of a certain brand* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:repair' target='_blank'>service:bicycle:repair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dbrand' target='_blank'>brand</a>
 
-This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:retail' target='_blank'>service:bicycle:retail</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:retail%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:second_hand' target='_blank'>service:bicycle:second_hand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:second_hand%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:second_hand' target='_blank'>service:bicycle:second_hand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:second_hand%3Donly' target='_blank'>only</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsport' target='_blank'>sport</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Doutdoor' target='_blank'>outdoor</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbicycle' target='_blank'>bicycle</a> | service:bicycle:repair~.+
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:retail' target='_blank'>service:bicycle:retail</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:retail%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:second_hand' target='_blank'>service:bicycle:second_hand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:second_hand%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:second_hand' target='_blank'>service:bicycle:second_hand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:second_hand%3Donly' target='_blank'>only</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsport' target='_blank'>sport</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsports' target='_blank'>sports</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Doutdoor' target='_blank'>outdoor</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbicycle' target='_blank'>bicycle</a> | service:bicycle:repair~.+
 
 ### bicycle_rental
 
@@ -1280,7 +1283,7 @@ The question is `Does this shop rent out bikes?`
  -  *This shop rents out bikes* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:rental' target='_blank'>service:bicycle:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dyes' target='_blank'>yes</a>
  -  *This shop doesn't rent out bikes* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:rental' target='_blank'>service:bicycle:rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:rental%3Dno' target='_blank'>no</a>
 
-This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbicycle' target='_blank'>bicycle</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsport' target='_blank'>sport</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbicycle_repair' target='_blank'>bicycle_repair</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Doutdoor' target='_blank'>outdoor</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Drental' target='_blank'>rental</a> | service:bicycle:rental~.+
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbicycle' target='_blank'>bicycle</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsport' target='_blank'>sport</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsports' target='_blank'>sports</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbicycle_repair' target='_blank'>bicycle_repair</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Doutdoor' target='_blank'>outdoor</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Drental' target='_blank'>rental</a> | service:bicycle:rental~.+
 
 ### bicycle-types
 
@@ -1402,7 +1405,7 @@ The question is `How much does it cost to use the cleaning service?`
  -  *The cleaning service is free to use* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning:fee' target='_blank'>service:bicycle:cleaning:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning:fee%3Dno' target='_blank'>no</a>
  -  *Free to use* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning:fee' target='_blank'>service:bicycle:cleaning:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning:fee%3Dyes' target='_blank'>yes</a> & service:bicycle:cleaning:charge=. _This option cannot be chosen as answer_
 
-This tagrendering is only visible in the popup if the following condition is met: amenity!=bike_wash & amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+
+This tagrendering is only visible in the popup if the following condition is met: amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+
 
 ### internet
 
@@ -1518,7 +1521,7 @@ This tagrendering has labels
 | id | question | osmTags |
 -----|-----|----- |
 | shop_types.0 | *What kind of shop is this?* (default) |  |
-| shop_types.1 | Bicycle rental shop | shop=bicycle_rental |
+| shop_types.1 | Bicycle rental shop | shop=bicycle_rental | ((shop=rental & amenity=bicycle_rental)) |
 | shop_types.2 | Farm Supply Shop | shop=agrarian |
 | shop_types.3 | Liquor Store | shop=alcohol |
 | shop_types.4 | Anime / Manga Shop | shop=anime |

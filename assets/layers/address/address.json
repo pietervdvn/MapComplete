@@ -22,7 +22,8 @@
     "pt_BR": "Endereços conhecidos no OSM",
     "eu": "OSMko helbide ezagunak",
     "pl": "Znane adresy w OSM",
-    "it": "Indirizzo presente su OSM"
+    "it": "Indirizzo presente su OSM",
+    "uk": "Відомі адреси в OSM"
   },
   "description": {
     "en": "Addresses",
@@ -47,7 +48,8 @@
     "pt_BR": "Endereços",
     "he": "כתובות",
     "eu": "Helbideak",
-    "it": "Indirizzi"
+    "it": "Indirizzi",
+    "uk": "Адреси"
   },
   "source": {
     "osmTags": {
@@ -73,7 +75,7 @@
       "fr": "Adresse connue",
       "pl": "Znany adres",
       "ru": "Известный адрес",
-      "es": "Domicilio conocido",
+      "es": "Dirección conocida",
       "zh_Hans": "已知的地址",
       "id": "Alamat yang diketahui",
       "nb_NO": "Kjent adresse",
@@ -85,7 +87,8 @@
       "he": "כתובת ידועה",
       "eu": "Helbide ezaguna",
       "it": "Indirizzo conosciuto",
-      "zh_Hant": "已知的地址"
+      "zh_Hant": "已知的地址",
+      "uk": "Відома адреса"
     }
   },
   "pointRendering": [
@@ -162,7 +165,7 @@
         "ru": "Номер дома <b>{addr:housenumber}</b>",
         "zh_Hans": "门牌号是 <b>{addr:housenumber}</b>",
         "id": "Nomor rumah ini <b>{addr:housenumber}</b>",
-        "es": "El número de puerta es <b>{addr:housenumber}</b>",
+        "es": "El número de la casa es <b>{addr:housenumber}</b>",
         "da": "Husnummeret er <b>{addr:housenumber}</b>",
         "cs": "Číslo domu je <b>{addr:housenumber}</b>",
         "pt": "O número da casa é <b>{addr:housenumber}</b>",
@@ -172,7 +175,8 @@
         "he": "מספר הבית הוא <b>{addr:housenumber}</b>",
         "eu": "Etxearen zenbakia <b>{addr:housenumber}</b> da",
         "it": "Il numero civico della casa è <b>{addr:housenumber}</b>",
-        "zh_Hant": "門牌號碼是 <b>{addr:housenumber}</b>"
+        "zh_Hant": "門牌號碼是 <b>{addr:housenumber}</b>",
+        "uk": "Номер будинку <b>{addr:housenumber}</b>"
       },
       "question": {
         "en": "What is the number of this house?",
@@ -194,7 +198,8 @@
         "he": "מה המספר של הבית הזה?",
         "eu": "Zein da etxe honen zenbakia?",
         "it": "Qual è il numero civico di questa casa?",
-        "zh_Hant": "這間房子的門牌號碼是多少？"
+        "zh_Hant": "這間房子的門牌號碼是多少？",
+        "uk": "Який номер цього будинку?"
       },
       "freeform": {
         "key": "addr:housenumber",
@@ -221,7 +226,7 @@
             "pl": "Ten budynek nie ma numeru",
             "ru": "У этого здания нет номера",
             "id": "Bangunan ini tidak memiliki nomor rumah",
-            "es": "Esta edificación no tiene número",
+            "es": "Este edificio no tiene número",
             "zh_Hans": "这个建筑物没有门牌号",
             "da": "Denne bygning har intet husnummer",
             "zh_Hant": "這棟建築沒有門牌",
@@ -232,7 +237,8 @@
             "pt_BR": "Este prédio não tem número",
             "he": "למבנה זה אין מספר בית",
             "eu": "Eraikin honek ez du etxe zenbakirik",
-            "it": "Questo edificio non ha indirizzo"
+            "it": "Questo edificio non ha indirizzo",
+            "uk": "Ця будівля не має номера будинку"
           }
         }
       ]
@@ -248,7 +254,7 @@
         "pl": "Ten adres znajduje się na ulicy <b>{addr:street}</b>",
         "zh_Hans": "这个地址位于<b>{addr:street}</b>街",
         "id": "Alamat ini ada di jalan <b>{addr:street}</b>",
-        "es": "La dirección está en esta calle <b>{addr:street}</b>",
+        "es": "Esta dirección está en la calle <b>{addr:street}</b>",
         "da": "Denne adresse er på gaden <b>{addr:street}</b>",
         "cs": "Tato adresa se nachází v ulici <b>{addr:street}</b>",
         "ca": "L'adreça està a aquest carrer <b>{addr:street}</b>",
@@ -257,7 +263,8 @@
         "he": "כתובת זו נמצאת ברחוב <b>{addr:street}</b>",
         "eu": "Helbide hau <b>{addr:street}</b> kalean dago",
         "it": "L’indirizzo è in via <b>{addr:street}</b>",
-        "zh_Hant": "此地址位於街道 <b>{addr:street}</b>"
+        "zh_Hant": "此地址位於街道 <b>{addr:street}</b>",
+        "uk": "Ця адреса знаходиться на вулиці <b>{addr:street}</b>"
       },
       "question": {
         "en": "What street is this address located in?",
@@ -278,7 +285,8 @@
         "he": "באיזה רחוב נמצאת הכתובת הזו?",
         "eu": "Zein kaletan dago helbide hori?",
         "it": "Qual è la via in cui si trova?",
-        "zh_Hant": "地址所在的道路是？"
+        "zh_Hant": "地址所在的道路是？",
+        "uk": "На якій вулиці знаходиться ця адреса?"
       },
       "freeform": {
         "key": "addr:street"
@@ -317,7 +325,7 @@
         "fr": "Précisez ce qui devrait être corrigé ici",
         "pl": "Co wymaga naprawy? Proszę wytłumaczyć",
         "id": "Apa yang harus diperbaiki di sini? Tolong jelaskan",
-        "es": "¿Qué debe corregirse aquí? Expóngalo",
+        "es": "¿Qué debería corregirse aquí? Explica",
         "nl": "Wat moet hier gecorrigeerd worden? Leg het uit",
         "zh_Hans": "这里应被如何修复？请做出解释",
         "da": "Hvad skal rettes her? Forklar venligst",
@@ -329,7 +337,8 @@
         "he": "מה צריך לתקן כאן? אנא הסבר",
         "eu": "Zer konpondu behar da hemen? Azaldu mesedez",
         "it": "Indica cosa deve essere corretto qui",
-        "ru": "Что исправить? Пожалуйста, предложите"
+        "ru": "Что исправить? Пожалуйста, предложите",
+        "uk": "Що тут треба виправити? Поясніть, будь ласка"
       },
       "freeform": {
         "key": "fixme"

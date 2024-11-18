@@ -9,8 +9,8 @@
   import Icon from "../Map/Icon.svelte"
 
   export let state: SpecialVisualizationState
-  let theme = state.layout?.id ?? ""
-  let config: ExtraLinkConfig = state.layout.extraLink
+  let theme = state.theme?.id ?? ""
+  let config: ExtraLinkConfig = state.theme.extraLink
   let basepath = window.location.host
   let showWelcomeMessageSwitch = state.featureSwitches.featureSwitchWelcomeMessage
   const isIframe = Utils.isIframe
@@ -42,7 +42,7 @@
       {#if config.text}
         <Tr t={config.text} />
       {:else}
-        <Tr t={t.screenToSmall.Subs({ theme: state.layout.title })} />
+        <Tr t={t.screenToSmall.Subs({ theme: state.theme.title })} />
       {/if}
     </a>
   </div>

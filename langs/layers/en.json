@@ -543,7 +543,7 @@
                         "then": "This artwork also serves as a memorial"
                     },
                     "1": {
-                        "then": "This artwork does not serve as a bench"
+                        "then": "This artwork does not serve as a memorial"
                     }
                 },
                 "question": "Does this artwork serve as a memorial?"
@@ -1492,6 +1492,17 @@
             }
         },
         "tagRenderings": {
+            "automated": {
+                "mappings": {
+                    "0": {
+                        "then": "This is a manual bike washing station"
+                    },
+                    "1": {
+                        "then": "This is an automated bike wash"
+                    }
+                },
+                "question": "Is this bicycle cleaning service automated?"
+            },
             "bike_cleaning-charge": {
                 "mappings": {
                     "0": {
@@ -1515,6 +1526,17 @@
                 },
                 "question": "How much does it cost to use the cleaning service?",
                 "render": "Using the cleaning service costs {service:bicycle:cleaning:charge}"
+            },
+            "self_service": {
+                "mappings": {
+                    "0": {
+                        "then": "This cleaning service is self-service"
+                    },
+                    "1": {
+                        "then": "This cleaning service is operated by an employee"
+                    }
+                },
+                "question": "Is this cleaning service self-service?"
             }
         },
         "title": {
@@ -1547,7 +1569,7 @@
                         "then": "Access is limited to members of a school, company or organisation"
                     },
                     "3": {
-                        "then": "Access is limited to members of a school, company or organisation"
+                        "then": "Private bicycle parking which is never available to the public, also not via a membership fee"
                     }
                 },
                 "question": "Who can use this bicycle parking?",
@@ -1560,6 +1582,9 @@
                     },
                     "1": {
                         "then": "Rack with side loops"
+                    },
+                    "10": {
+                        "then": "A lean-to bracket with possibility to use a lock through eyelet. The seat tube can be held by the stand by an anchor"
                     },
                     "2": {
                         "then": "Wheelbenders / rack"
@@ -3205,6 +3230,10 @@
             "1": {
                 "description": "A publicly visible clock mounted on a wall",
                 "title": "a wall-mounted clock"
+            },
+            "2": {
+                "description": "A publicly visible clock mounted directly on a wall",
+                "title": "a wall-mounted clock, mounted directly on a wall"
             }
         },
         "tagRenderings": {
@@ -3285,18 +3314,34 @@
                 },
                 "question": "Does this clock also display the humidity?"
             },
+            "indoor": {
+                "override": {
+                    "mappings": {
+                        "0": {
+                            "then": "This clock is indoors"
+                        },
+                        "1": {
+                            "then": "This clock is outdoors"
+                        }
+                    },
+                    "question": "Is this clock indoors?"
+                }
+            },
             "support": {
                 "mappings": {
                     "0": {
                         "then": "This clock is mounted on a pole"
                     },
                     "1": {
-                        "then": "This clock is mounted on a wall"
+                        "then": "This clock is mounted on a wall, usually through a support perpendicular to the wall"
                     },
                     "2": {
-                        "then": "This clock is part of a billboard"
+                        "then": "This clock is mounted directly on a wall"
                     },
                     "3": {
+                        "then": "This clock is part of a billboard"
+                    },
+                    "4": {
                         "then": "This clock is on the ground"
                     }
                 },
@@ -3407,17 +3452,6 @@
                 },
                 "question": "Does this crossing have an island in the middle?"
             },
-            "crossing-is-zebra": {
-                "mappings": {
-                    "0": {
-                        "then": "This is a zebra crossing"
-                    },
-                    "1": {
-                        "then": "This is not a zebra crossing"
-                    }
-                },
-                "question": "Is this is a zebra crossing?"
-            },
             "crossing-minimap": {
                 "mappings": {
                     "0": {
@@ -3501,6 +3535,57 @@
                     }
                 },
                 "question": "Does this traffic light have vibration signals to aid crossing? (usually located at the bottom of the crossing button)"
+            },
+            "markings": {
+                "mappings": {
+                    "0": {
+                        "then": "This crossing has no markings"
+                    },
+                    "1": {
+                        "then": "This crossing has zebra markings"
+                    },
+                    "10": {
+                        "then": "This crossing has zebra markings in alternating colours"
+                    },
+                    "11": {
+                        "then": "This crossing has double zebra markings"
+                    },
+                    "12": {
+                        "then": "This crossing has pictograms on the road"
+                    },
+                    "13": {
+                        "then": "This crossing has lines on either side of the crossing, along with bars connecting them, with an interruption in every bar"
+                    },
+                    "14": {
+                        "then": "This crossing has double lines on either side of the crossing"
+                    },
+                    "2": {
+                        "then": "This crossing has markings of an unknown type"
+                    },
+                    "3": {
+                        "then": "This crossings has lines on either side of the crossing"
+                    },
+                    "4": {
+                        "then": "This crossing has lines on either side of the crossing, along with bars connecting them"
+                    },
+                    "5": {
+                        "then": "This crossing has dashed lines on either sides of the crossing"
+                    },
+                    "6": {
+                        "then": "This crossing has dotted lines on either sides of the crossing"
+                    },
+                    "7": {
+                        "then": "This crossing is marked by using a different coloured surface"
+                    },
+                    "8": {
+                        "then": "This crossing has lines on either side of the crossing, along with angled bars connecting them"
+                    },
+                    "9": {
+                        "then": "This crossing has zebra markings with an interruption in every bar"
+                    }
+                },
+                "question": "What kind of markings does this crossing have?",
+                "render": "This crossing has {crossing:markings} markings"
             }
         },
         "title": {
@@ -3914,6 +3999,57 @@
                 }
             },
             "render": "Way"
+        }
+    },
+    "cyclist_waiting_aid": {
+        "description": "Various pieces of infrastructure that aid cyclists while they wait at a traffic light.",
+        "name": "Cyclist Waiting Aids",
+        "presets": {
+            "0": {
+                "description": "A footrest, handrail or other aid, to improve comfort while waiting at traffic lights",
+                "title": "a cyclist waiting aid"
+            }
+        },
+        "tagRenderings": {
+            "direction": {
+                "mappings": {
+                    "0": {
+                        "then": "This waiting aid can be used when going forward on this way"
+                    },
+                    "1": {
+                        "then": "This waiting aid can be used when going backward on this way"
+                    }
+                },
+                "render": "This waiting aid can be used when going in {direction} direction"
+            },
+            "side": {
+                "mappings": {
+                    "0": {
+                        "then": "This waiting aid is located on the left side"
+                    },
+                    "1": {
+                        "then": "This waiting aid is located on the right side"
+                    },
+                    "2": {
+                        "then": "There are waiting aids on both sides of the road"
+                    }
+                },
+                "question": "On what side of the road is this located?"
+            },
+            "type": {
+                "mappings": {
+                    "0": {
+                        "then": "There is a board or peg to rest your foot on here"
+                    },
+                    "1": {
+                        "then": "There is a rail or a handle to hold on to here"
+                    }
+                },
+                "question": "What kind of components does this waiting aid have?"
+            }
+        },
+        "title": {
+            "render": "Cyclist Waiting Aid"
         }
     },
     "defibrillator": {
@@ -5397,7 +5533,7 @@
             "delivery": {
                 "mappings": {
                     "0": {
-                        "then": "This business does home delivery (eventually via a third party)"
+                        "then": "This business does home delivery (possibly via a third party)"
                     },
                     "1": {
                         "then": "This business does not deliver at home"
@@ -7899,6 +8035,15 @@
         "presets": {
             "0": {
                 "title": "a postbox"
+            },
+            "1": {
+                "title": "a postbox on a wall"
+            }
+        },
+        "tagRenderings": {
+            "operator": {
+                "question": "Who operates this postbox?",
+                "render": "This postbox is operated by <b>{operator}</b>"
             }
         },
         "title": {
@@ -8393,6 +8538,17 @@
                     }
                 },
                 "question": "Does this shop have a gluten free offering?"
+            },
+            "indoor": {
+                "mappings": {
+                    "0": {
+                        "then": "This object is located indoors"
+                    },
+                    "1": {
+                        "then": "This object is located outdoors"
+                    }
+                },
+                "question": "Is this object located indoors?"
             },
             "induction-loop": {
                 "mappings": {
@@ -10484,6 +10640,133 @@
             "render": "Surveillance Camera"
         }
     },
+    "tactile_map": {
+        "description": "Layer showing tactile maps, which can be used by visually impaired people to navigate the city.",
+        "name": "Tactile Maps",
+        "presets": {
+            "0": {
+                "description": "A tactile map that can be read using touch. Unlike a tactile model, this is relatively flat and does not feature three-dimensional buildings and such.",
+                "title": "a tactile map"
+            }
+        },
+        "tagRenderings": {
+            "braille": {
+                "mappings": {
+                    "0": {
+                        "then": "This tactile map has braille text."
+                    },
+                    "1": {
+                        "then": "This tactile map does not have braille text."
+                    }
+                },
+                "question": "Is there braille text on this tactile map?"
+            },
+            "braille_languages": {
+                "render": {
+                    "special": {
+                        "question": "In which languages is the braille text on this tactile map?",
+                        "render_list_item": "This map has braille text in {language}",
+                        "render_single_language": "This map has braille text in {language}"
+                    }
+                }
+            },
+            "description": {
+                "freeform": {
+                    "placeholder": "e.g. Tactile map of the city center"
+                },
+                "question": "What does this tactile map show?",
+                "render": "Description: {blind:description:en}."
+            },
+            "embossed_letters": {
+                "mappings": {
+                    "0": {
+                        "then": "This tactile map has embossed letters."
+                    },
+                    "1": {
+                        "then": "This tactile map does not have embossed letters."
+                    }
+                },
+                "question": "Are there embossed letters on this tactile map?"
+            },
+            "embossed_letters_languages": {
+                "render": {
+                    "special": {
+                        "question": "In which languages are the embossed letters on this tactile map?",
+                        "render_list_item": "This map has embossed letters in {language}",
+                        "render_single_language": "This map has embossed letters in {language}"
+                    }
+                }
+            }
+        },
+        "title": "Tactile Map"
+    },
+    "tactile_model": {
+        "description": "Layer showing tactile models, three-dimensional models of the surrounding area.",
+        "name": "Tactile Models",
+        "presets": {
+            "0": {
+                "description": "A tactile model is a three-dimensional model of an area, allowing people to explore/see an area by touch.",
+                "title": "a tactile model"
+            }
+        },
+        "tagRenderings": {
+            "braille": {
+                "mappings": {
+                    "0": {
+                        "then": "There is a braille description."
+                    },
+                    "1": {
+                        "then": "There is no braille description."
+                    }
+                },
+                "question": "Is there a braille description?"
+            },
+            "braille_languages": {
+                "render": {
+                    "special": {
+                        "question": "In which languages is there a braille description?",
+                        "render_list_item": "This model has a braille description in {language()}",
+                        "render_single_language": "This model has a braille description in {language}"
+                    }
+                }
+            },
+            "description": {
+                "freeform": {
+                    "placeholder": "e.g. Tactile model of the city center"
+                },
+                "question": "What does this tactile model show?",
+                "render": "Description: {blind:description:en}."
+            },
+            "embossed_letters": {
+                "mappings": {
+                    "0": {
+                        "then": "There are embossed letters describing the model."
+                    },
+                    "1": {
+                        "then": "There are no embossed letters describing the model."
+                    }
+                },
+                "question": "Are there embossed letters describing the model?"
+            },
+            "embossed_letters_languages": {
+                "render": {
+                    "special": {
+                        "question": "In which languages are there embossed letters?",
+                        "render_list_item": "This model has embossed letters in {language()}",
+                        "render_single_language": "This model has embossed letters in {language}"
+                    }
+                }
+            },
+            "scale": {
+                "freeform": {
+                    "placeholder": "e.g. 1:1000"
+                },
+                "question": "What scale is the model?",
+                "render": "The scale of this model is {scale}."
+            }
+        },
+        "title": "Tactile Model"
+    },
     "tertiary_education": {
         "name": "Colleges and universities",
         "presets": {
@@ -11775,23 +12058,6 @@
                         "then": "This theme is sensitive. Making changes will not indicate if you were nearby explicitly."
                     }
                 }
-            },
-            "picture-license": {
-                "mappings": {
-                    "0": {
-                        "then": "Pictures you take will be licensed with <b>CC0</b> and added to the public domain. This means that everyone can use your pictures for any purpose. <span class='subtle'>This is the default choice.</span>"
-                    },
-                    "1": {
-                        "then": "Pictures you take will be licensed with <b>CC0</b> and added to the public domain. This means that everyone can use your pictures for any purpose."
-                    },
-                    "2": {
-                        "then": "Pictures you take will be licensed with <b>CC-BY 4.0</b> which requires everyone using your picture that they have to attribute you"
-                    },
-                    "3": {
-                        "then": "Pictures you take will be licensed with <b>CC-BY-SA 4.0</b> which means that everyone using your picture must attribute you and that derivatives of your picture must be reshared with the same license."
-                    }
-                },
-                "question": "Under what license do you want to publish your pictures?"
             },
             "profile-description": {
                 "mappings": {

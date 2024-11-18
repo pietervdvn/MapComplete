@@ -124,8 +124,56 @@
       "description": "Layer 'Primary and secondary schools' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Education') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
     },
     {
+      "key": "image",
+      "description": "The layer 'Primary and secondary schools allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Primary and secondary schools allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Primary and secondary schools allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Primary and secondary schools allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Primary and secondary schools allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
       "key": "name",
       "description": "Layer 'Primary and secondary schools' shows and asks freeform values for key 'name' (in the mapcomplete.org theme 'Education')"
+    },
+    {
+      "key": "phone",
+      "description": "Layer 'Primary and secondary schools' shows and asks freeform values for key 'phone' (in the mapcomplete.org theme 'Education')"
+    },
+    {
+      "key": "contact:phone",
+      "description": "Layer 'Primary and secondary schools' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Education')"
+    },
+    {
+      "key": "email",
+      "description": "Layer 'Primary and secondary schools' shows and asks freeform values for key 'email' (in the mapcomplete.org theme 'Education')"
+    },
+    {
+      "key": "contact:email",
+      "description": "Layer 'Primary and secondary schools' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Education')"
+    },
+    {
+      "key": "operator:email",
+      "description": "Layer 'Primary and secondary schools' shows operator:email~.+ with a fixed text, namely '<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>' (in the mapcomplete.org theme 'Education')"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Primary and secondary schools' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Education')"
+    },
+    {
+      "key": "contact:website",
+      "description": "Layer 'Primary and secondary schools' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the mapcomplete.org theme 'Education')"
     },
     {
       "key": "capacity",
@@ -283,34 +331,6 @@
       "key": "school:for",
       "description": "Layer 'Primary and secondary schools' shows school:for=special_needs with a fixed text, namely 'This is a school for students with special needs' and allows to pick this as a default answer (in the mapcomplete.org theme 'Education') (This is only shown if school:for~.+)",
       "value": "special_needs"
-    },
-    {
-      "key": "website",
-      "description": "Layer 'Primary and secondary schools' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Education')"
-    },
-    {
-      "key": "contact:website",
-      "description": "Layer 'Primary and secondary schools' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the mapcomplete.org theme 'Education')"
-    },
-    {
-      "key": "phone",
-      "description": "Layer 'Primary and secondary schools' shows and asks freeform values for key 'phone' (in the mapcomplete.org theme 'Education')"
-    },
-    {
-      "key": "contact:phone",
-      "description": "Layer 'Primary and secondary schools' shows contact:phone~.+ with a fixed text, namely '{link(&LBRACEcontact:phone&RBRACE,tel:&LBRACEcontact:phone&RBRACE,,,,)}' (in the mapcomplete.org theme 'Education')"
-    },
-    {
-      "key": "email",
-      "description": "Layer 'Primary and secondary schools' shows and asks freeform values for key 'email' (in the mapcomplete.org theme 'Education')"
-    },
-    {
-      "key": "contact:email",
-      "description": "Layer 'Primary and secondary schools' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank' rel='noopener'>{contact:email}</a>' (in the mapcomplete.org theme 'Education')"
-    },
-    {
-      "key": "operator:email",
-      "description": "Layer 'Primary and secondary schools' shows operator:email~.+ with a fixed text, namely '<a href='mailto:{operator:email}' target='_blank' rel='noopener'>{operator:email}</a>' (in the mapcomplete.org theme 'Education')"
     },
     {
       "key": "amenity",

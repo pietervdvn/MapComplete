@@ -30,6 +30,8 @@ Available languages:
  - cs
  - pl
  - sl
+ - ru
+ - uk
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

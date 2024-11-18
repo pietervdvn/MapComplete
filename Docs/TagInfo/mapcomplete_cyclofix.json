@@ -31,19 +31,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Repair cafés and assisted repair workshops allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Repair cafés and assisted repair workshops allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Repair cafés and assisted repair workshops allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Repair cafés and assisted repair workshops allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Repair cafés and assisted repair workshops allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Repair cafés and assisted repair workshops allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Repair cafés and assisted repair workshops allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Repair cafés and assisted repair workshops allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Repair cafés and assisted repair workshops allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "name",
@@ -179,19 +183,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Bike cafe allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bike cafe allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Bike cafe allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Bike cafe allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bike cafe allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Bike cafe allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bike cafe allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Bike cafe allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bike cafe allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "name",
@@ -305,19 +313,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Bike repair/shop allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bike repair/shop allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Bike repair/shop allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Bike repair/shop allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bike repair/shop allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Bike repair/shop allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bike repair/shop allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Bike repair/shop allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bike repair/shop allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "name",
@@ -1309,12 +1321,12 @@
     },
     {
       "key": "service:bicycle:retail",
-      "description": "Layer 'Bike repair/shop' shows service:bicycle:retail=yes with a fixed text, namely 'This shop sells new bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if service:bicycle:retail~.+ | shop=outdoor | shop=sport | shop=diy | shop=doityourself)",
+      "description": "Layer 'Bike repair/shop' shows service:bicycle:retail=yes with a fixed text, namely 'This shop sells new bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if service:bicycle:retail~.+ | shop=outdoor | shop=sport | shop=sports | shop=diy | shop=doityourself)",
       "value": "yes"
     },
     {
       "key": "service:bicycle:retail",
-      "description": "Layer 'Bike repair/shop' shows service:bicycle:retail=no with a fixed text, namely 'This shop doesn't sell new bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if service:bicycle:retail~.+ | shop=outdoor | shop=sport | shop=diy | shop=doityourself)",
+      "description": "Layer 'Bike repair/shop' shows service:bicycle:retail=no with a fixed text, namely 'This shop doesn't sell new bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if service:bicycle:retail~.+ | shop=outdoor | shop=sport | shop=sports | shop=diy | shop=doityourself)",
       "value": "no"
     },
     {
@@ -1334,32 +1346,32 @@
     },
     {
       "key": "service:bicycle:repair",
-      "description": "Layer 'Bike repair/shop' shows service:bicycle:repair=yes with a fixed text, namely 'This shop repairs bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if service:bicycle:repair~.+ | shop=sport | shop=outdoor | shop=bicycle | service:bicycle:retail=yes | service:bicycle:second_hand=yes | service:bicycle:second_hand=only)",
+      "description": "Layer 'Bike repair/shop' shows service:bicycle:repair=yes with a fixed text, namely 'This shop repairs bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if service:bicycle:repair~.+ | shop=sport | shop=sports | shop=outdoor | shop=bicycle | service:bicycle:retail=yes | service:bicycle:second_hand=yes | service:bicycle:second_hand=only)",
       "value": "yes"
     },
     {
       "key": "service:bicycle:repair",
-      "description": "Layer 'Bike repair/shop' shows service:bicycle:repair=no with a fixed text, namely 'This shop doesn't repair bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if service:bicycle:repair~.+ | shop=sport | shop=outdoor | shop=bicycle | service:bicycle:retail=yes | service:bicycle:second_hand=yes | service:bicycle:second_hand=only)",
+      "description": "Layer 'Bike repair/shop' shows service:bicycle:repair=no with a fixed text, namely 'This shop doesn't repair bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if service:bicycle:repair~.+ | shop=sport | shop=sports | shop=outdoor | shop=bicycle | service:bicycle:retail=yes | service:bicycle:second_hand=yes | service:bicycle:second_hand=only)",
       "value": "no"
     },
     {
       "key": "service:bicycle:repair",
-      "description": "Layer 'Bike repair/shop' shows service:bicycle:repair=only_sold with a fixed text, namely 'This shop only repairs bikes bought here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if service:bicycle:repair~.+ | shop=sport | shop=outdoor | shop=bicycle | service:bicycle:retail=yes | service:bicycle:second_hand=yes | service:bicycle:second_hand=only)",
+      "description": "Layer 'Bike repair/shop' shows service:bicycle:repair=only_sold with a fixed text, namely 'This shop only repairs bikes bought here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if service:bicycle:repair~.+ | shop=sport | shop=sports | shop=outdoor | shop=bicycle | service:bicycle:retail=yes | service:bicycle:second_hand=yes | service:bicycle:second_hand=only)",
       "value": "only_sold"
     },
     {
       "key": "service:bicycle:repair",
-      "description": "Layer 'Bike repair/shop' shows service:bicycle:repair=brand with a fixed text, namely 'This shop only repairs bikes of a certain brand' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if service:bicycle:repair~.+ | shop=sport | shop=outdoor | shop=bicycle | service:bicycle:retail=yes | service:bicycle:second_hand=yes | service:bicycle:second_hand=only)",
+      "description": "Layer 'Bike repair/shop' shows service:bicycle:repair=brand with a fixed text, namely 'This shop only repairs bikes of a certain brand' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if service:bicycle:repair~.+ | shop=sport | shop=sports | shop=outdoor | shop=bicycle | service:bicycle:retail=yes | service:bicycle:second_hand=yes | service:bicycle:second_hand=only)",
       "value": "brand"
     },
     {
       "key": "service:bicycle:rental",
-      "description": "Layer 'Bike repair/shop' shows service:bicycle:rental=yes with a fixed text, namely 'This shop rents out bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if service:bicycle:rental~.+ | shop=bicycle | shop=sport | shop=bicycle_repair | shop=outdoor | shop=rental)",
+      "description": "Layer 'Bike repair/shop' shows service:bicycle:rental=yes with a fixed text, namely 'This shop rents out bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if service:bicycle:rental~.+ | shop=bicycle | shop=sport | shop=sports | shop=bicycle_repair | shop=outdoor | shop=rental)",
       "value": "yes"
     },
     {
       "key": "service:bicycle:rental",
-      "description": "Layer 'Bike repair/shop' shows service:bicycle:rental=no with a fixed text, namely 'This shop doesn't rent out bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if service:bicycle:rental~.+ | shop=bicycle | shop=sport | shop=bicycle_repair | shop=outdoor | shop=rental)",
+      "description": "Layer 'Bike repair/shop' shows service:bicycle:rental=no with a fixed text, namely 'This shop doesn't rent out bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if service:bicycle:rental~.+ | shop=bicycle | shop=sport | shop=sports | shop=bicycle_repair | shop=outdoor | shop=rental)",
       "value": "no"
     },
     {
@@ -1486,21 +1498,21 @@
     },
     {
       "key": "service:bicycle:cleaning:charge",
-      "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'service:bicycle:cleaning:charge' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if amenity!=bike_wash & amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)"
+      "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'service:bicycle:cleaning:charge' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)"
     },
     {
       "key": "service:bicycle:cleaning:fee",
-      "description": "Layer 'Bike repair/shop' shows service:bicycle:cleaning:fee=no with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if amenity!=bike_wash & amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)",
+      "description": "Layer 'Bike repair/shop' shows service:bicycle:cleaning:fee=no with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)",
       "value": "no"
     },
     {
       "key": "service:bicycle:cleaning:fee",
-      "description": "Layer 'Bike repair/shop' shows service:bicycle:cleaning:fee=yes & service:bicycle:cleaning:charge= with a fixed text, namely 'Free to use' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if amenity!=bike_wash & amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)",
+      "description": "Layer 'Bike repair/shop' shows service:bicycle:cleaning:fee=yes & service:bicycle:cleaning:charge= with a fixed text, namely 'Free to use' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)",
       "value": "yes"
     },
     {
       "key": "service:bicycle:cleaning:charge",
-      "description": "Layer 'Bike repair/shop' shows service:bicycle:cleaning:fee=yes & service:bicycle:cleaning:charge= with a fixed text, namely 'Free to use' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') Picking this answer will delete the key service:bicycle:cleaning:charge. (This is only shown if amenity!=bike_wash & amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)",
+      "description": "Layer 'Bike repair/shop' shows service:bicycle:cleaning:fee=yes & service:bicycle:cleaning:charge= with a fixed text, namely 'Free to use' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') Picking this answer will delete the key service:bicycle:cleaning:charge. (This is only shown if amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)",
       "value": ""
     },
     {
@@ -1647,19 +1659,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Bicycle pump and repair allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bicycle pump and repair allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Bicycle pump and repair allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Bicycle pump and repair allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bicycle pump and repair allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Bicycle pump and repair allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bicycle pump and repair allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Bicycle pump and repair allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bicycle pump and repair allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "service:bicycle:tools",
@@ -1866,19 +1882,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Drinking water allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Drinking water allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Drinking water allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Drinking water allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Drinking water allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Drinking water allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Drinking water allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Drinking water allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Drinking water allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "operational_status",
@@ -2128,19 +2148,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Bike-related object allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bike-related object allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Bike-related object allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Bike-related object allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bike-related object allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Bike-related object allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bike-related object allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Bike-related object allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bike-related object allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "description",
@@ -2199,62 +2223,81 @@
       "value": "bicycle_wash"
     },
     {
-      "key": "amenity",
-      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bike cleaning service showing features with this tag",
-      "value": "bike_wash"
-    },
-    {
       "key": "id",
       "description": "Layer 'Bike cleaning service' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
     },
     {
       "key": "image",
-      "description": "The layer 'Bike cleaning service allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bike cleaning service allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Bike cleaning service allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Bike cleaning service allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bike cleaning service allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Bike cleaning service allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bike cleaning service allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Bike cleaning service allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bike cleaning service allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "service:bicycle:cleaning:charge",
-      "description": "Layer 'Bike cleaning service' shows and asks freeform values for key 'service:bicycle:cleaning:charge' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if amenity!=bike_wash & amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)"
+      "description": "Layer 'Bike cleaning service' shows and asks freeform values for key 'service:bicycle:cleaning:charge' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)"
     },
     {
       "key": "service:bicycle:cleaning:fee",
-      "description": "Layer 'Bike cleaning service' shows service:bicycle:cleaning:fee=no with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if amenity!=bike_wash & amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)",
+      "description": "Layer 'Bike cleaning service' shows service:bicycle:cleaning:fee=no with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)",
       "value": "no"
     },
     {
       "key": "service:bicycle:cleaning:fee",
-      "description": "Layer 'Bike cleaning service' shows service:bicycle:cleaning:fee=yes & service:bicycle:cleaning:charge= with a fixed text, namely 'Free to use' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if amenity!=bike_wash & amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)",
+      "description": "Layer 'Bike cleaning service' shows service:bicycle:cleaning:fee=yes & service:bicycle:cleaning:charge= with a fixed text, namely 'Free to use' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)",
       "value": "yes"
     },
     {
       "key": "service:bicycle:cleaning:charge",
-      "description": "Layer 'Bike cleaning service' shows service:bicycle:cleaning:fee=yes & service:bicycle:cleaning:charge= with a fixed text, namely 'Free to use' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') Picking this answer will delete the key service:bicycle:cleaning:charge. (This is only shown if amenity!=bike_wash & amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)",
+      "description": "Layer 'Bike cleaning service' shows service:bicycle:cleaning:fee=yes & service:bicycle:cleaning:charge= with a fixed text, namely 'Free to use' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') Picking this answer will delete the key service:bicycle:cleaning:charge. (This is only shown if amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)",
       "value": ""
     },
     {
       "key": "charge",
-      "description": "Layer 'Bike cleaning service' shows and asks freeform values for key 'charge' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if amenity=bike_wash | amenity=bicycle_wash)"
+      "description": "Layer 'Bike cleaning service' shows and asks freeform values for key 'charge' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if amenity=bicycle_wash)"
     },
     {
       "key": "fee",
-      "description": "Layer 'Bike cleaning service' shows fee=no with a fixed text, namely 'This cleaning service is free to use' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if amenity=bike_wash | amenity=bicycle_wash)",
+      "description": "Layer 'Bike cleaning service' shows fee=no with a fixed text, namely 'This cleaning service is free to use' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if amenity=bicycle_wash)",
       "value": "no"
     },
     {
       "key": "fee",
-      "description": "Layer 'Bike cleaning service' shows fee=yes with a fixed text, namely 'There is a fee to use this cleaning service' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if amenity=bike_wash | amenity=bicycle_wash)",
+      "description": "Layer 'Bike cleaning service' shows fee=yes with a fixed text, namely 'There is a fee to use this cleaning service' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if amenity=bicycle_wash)",
       "value": "yes"
+    },
+    {
+      "key": "automated",
+      "description": "Layer 'Bike cleaning service' shows automated=no with a fixed text, namely 'This is a manual bike washing station' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if amenity=bicycle_wash)",
+      "value": "no"
+    },
+    {
+      "key": "automated",
+      "description": "Layer 'Bike cleaning service' shows automated=yes with a fixed text, namely 'This is an automated bike wash' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if amenity=bicycle_wash)",
+      "value": "yes"
+    },
+    {
+      "key": "self_service",
+      "description": "Layer 'Bike cleaning service' shows self_service=yes with a fixed text, namely 'This cleaning service is self-service' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if amenity=bicycle_wash)",
+      "value": "yes"
+    },
+    {
+      "key": "self_service",
+      "description": "Layer 'Bike cleaning service' shows self_service=no with a fixed text, namely 'This cleaning service is operated by an employee' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if amenity=bicycle_wash)",
+      "value": "no"
     },
     {
       "key": "amenity",
@@ -2280,19 +2323,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Bicycle rental allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bicycle rental allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Bicycle rental allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Bicycle rental allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bicycle rental allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Bicycle rental allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bicycle rental allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Bicycle rental allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bicycle rental allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "shop",
@@ -2499,19 +2546,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Bicycle library allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bicycle library allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Bicycle library allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Bicycle library allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bicycle library allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Bicycle library allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bicycle library allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Bicycle library allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bicycle library allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "name",
@@ -2608,19 +2659,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Bike parking allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bike parking allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Bike parking allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Bike parking allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bike parking allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Bike parking allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bike parking allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Bike parking allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bike parking allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "bicycle_parking",
@@ -2677,6 +2732,11 @@
       "value": "lockers"
     },
     {
+      "key": "bicycle_parking",
+      "description": "Layer 'Bike parking' shows bicycle_parking=lean_and_stick with a fixed text, namely 'A lean-to bracket with possibility to use a lock through eyelet. The seat tube can be held by the stand by an anchor' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "value": "lean_and_stick"
+    },
+    {
       "key": "location",
       "description": "Layer 'Bike parking' shows location=underground with a fixed text, namely 'Underground parking' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
       "value": "underground"
@@ -2731,7 +2791,7 @@
     },
     {
       "key": "access",
-      "description": "Layer 'Bike parking' shows access=private with a fixed text, namely 'Access is limited to members of a school, company or organisation' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
+      "description": "Layer 'Bike parking' shows access=private with a fixed text, namely 'Private bicycle parking which is never available to the public, also not via a membership fee' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists')",
       "value": "private"
     },
     {
@@ -2853,19 +2913,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Charging stations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Charging stations allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Charging stations allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Charging stations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Charging stations allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Charging stations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Charging stations allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Charging stations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Charging stations allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "bicycle",
@@ -4314,19 +4378,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Vending Machines allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Vending Machines allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Vending Machines allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Vending Machines allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Vending Machines allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Vending Machines allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Vending Machines allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Vending Machines allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Vending Machines allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "level",
@@ -4786,19 +4854,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Bicycle counters allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bicycle counters allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Bicycle counters allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Bicycle counters allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bicycle counters allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Bicycle counters allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bicycle counters allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Bicycle counters allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bicycle counters allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "display",

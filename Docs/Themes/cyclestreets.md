@@ -30,6 +30,8 @@ Available languages:
  - cs
  - eu
  - pl
+ - ru
+ - uk
 
 # Table of contents
 

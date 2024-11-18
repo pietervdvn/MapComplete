@@ -173,6 +173,7 @@
             "openMapillary": "Open Mapillary op deze locatie",
             "openOsmcha": "Bekijk de laatste bijdragen gemaakt met {theme}",
             "openOsmchaLastWeek": "Bekijk aanpassingen van de voorbije 7 dagen",
+            "panoramaxLicenseCCBYSA": "Je foto wordt gepubliceerd met een CC-BY-SA-licentie. Iedereen mag je afbeelding hergebruiken mits naamsvermelding.",
             "themeBy": "Thema gemaakt door {author}",
             "title": "Copyright en attributie",
             "translatedBy": "MapComplete werd vertaald door {contributors} en <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} meer vertalers</a>"
@@ -489,7 +490,7 @@
             "title": "Straatafbeeldingen uit de buurt"
         },
         "pleaseLogin": "Gelieve je aan te melden om een foto toe te voegen",
-        "respectPrivacy": "Fotografeer geen mensen of nummerplaten. Voeg geen Google Maps, Google Streetview of foto's met auteursrechten toe.",
+        "respectPrivacy": "Voeg geen Google Maps, Google Streetview of foto's met auteursrechten toe.",
         "toBig": "Je afbeelding is te groot, namelijk {actual_size}. Gelieve afbeeldingen van maximaal {max_size} te gebruiken",
         "uploadDone": "Je afbeelding is toegevoegd. Bedankt om te helpen!",
         "uploadFailed": "Afbeelding uploaden mislukt. Heb je internet? Gebruik je Brave of UMatrix? Dan moet je derde partijen toelaten.",

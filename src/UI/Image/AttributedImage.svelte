@@ -16,6 +16,7 @@
   import Loading from "../Base/Loading.svelte"
   import Translations from "../i18n/Translations"
   import Tr from "../Base/Tr.svelte"
+  import DotMenu from "../Base/DotMenu.svelte"
 
   export let image: Partial<ProvidedImage>
   let fallbackImage: string = undefined
@@ -31,14 +32,18 @@
   export let canZoom = previewedImage !== undefined
   let loaded = false
   let showBigPreview = new UIEventSource(false)
-  onDestroy(showBigPreview.addCallbackAndRun(shown => {
-    if (!shown) {
-      previewedImage.set(undefined)
-    }
-  }))
-  onDestroy(previewedImage.addCallbackAndRun(previewedImage => {
-    showBigPreview.set(previewedImage?.id === image.id)
-  }))
+  onDestroy(
+    showBigPreview.addCallbackAndRun((shown) => {
+      if (!shown) {
+        previewedImage.set(undefined)
+      }
+    })
+  )
+  onDestroy(
+    previewedImage.addCallbackAndRun((previewedImage) => {
+      showBigPreview.set(previewedImage?.id === image.id)
+    })
+  )
 
   function highlight(entered: boolean = true) {
     if (!entered) {
@@ -69,46 +74,58 @@
   <div style="height: 80vh">
     <ImageOperations {image}>
       <slot name="preview-action" />
+      <slot name="dot-menu-actions" slot="dot-menu-actions" />
     </ImageOperations>
   </div>
   <div class="absolute top-4 right-4">
-    <CloseButton class="normal-background"
-                 on:click={() => {console.log("Closing");previewedImage.set(undefined)}}></CloseButton>
+    <CloseButton
+      class="normal-background"
+      on:click={() => {
+        console.log("Closing")
+        previewedImage.set(undefined)
+      }}
+    />
   </div>
 </Popup>
-{#if image.status !== undefined && image.status !== "ready"}
-  <div class="h-full flex flex-col justify-center">
+{#if image.status !== undefined && image.status !== "ready" && image.status !== "hidden"}
+  <div class="flex h-full flex-col justify-center">
     <Loading>
-      <Tr t={Translations.t.image.processing}/>
+      <Tr t={Translations.t.image.processing} />
     </Loading>
   </div>
 {:else}
   <div class="relative shrink-0">
-    <div class="relative w-fit"
-         on:mouseenter={() => highlight()}
-         on:mouseleave={() => highlight(false)}
+    <div
+      class="relative w-fit"
+      on:mouseenter={() => highlight()}
+      on:mouseleave={() => highlight(false)}
     >
-
+      {#if $$slots["dot-menu-actions"]}
+        <DotMenu dotsPosition="top-0 left-0 absolute" hideBackground>
+          <slot name="dot-menu-actions" />
+        </DotMenu>
+      {/if}
       <img
         bind:this={imgEl}
         on:load={() => (loaded = true)}
         class={imgClass ?? ""}
         class:cursor-zoom-in={canZoom}
         on:click={() => {
-        previewedImage?.set(image)
-    }}
+          previewedImage?.set(image)
+        }}
         on:error={() => {
-        if (fallbackImage) {
-          imgEl.src = fallbackImage
-        }
-      }}
+          if (fallbackImage) {
+            imgEl.src = fallbackImage
+          }
+        }}
         src={image.url}
       />
 
       {#if canZoom && loaded}
         <div
           class="bg-black-transparent absolute right-0 top-0 rounded-bl-full"
-          on:click={() => previewedImage.set(image)}>
+          on:click={() => previewedImage.set(image)}
+        >
           <MagnifyingGlassPlusIcon class="h-8 w-8 cursor-zoom-in pl-3 pb-3" color="white" />
         </div>
       {/if}

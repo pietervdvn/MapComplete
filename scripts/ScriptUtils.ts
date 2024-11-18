@@ -2,7 +2,7 @@ import * as fs from "fs"
 import { existsSync, lstatSync, readdirSync, readFileSync } from "fs"
 import { Utils } from "../src/Utils"
 import { https } from "follow-redirects"
-import { LayoutConfigJson } from "../src/Models/ThemeConfig/Json/LayoutConfigJson"
+import { ThemeConfigJson } from "../src/Models/ThemeConfig/Json/ThemeConfigJson"
 import { LayerConfigJson } from "../src/Models/ThemeConfig/Json/LayerConfigJson"
 import xml2js from "xml2js"
 
@@ -105,14 +105,15 @@ export default class ScriptUtils {
         const specialfiles = ["./assets/themes/mapcomplete-changes/mapcomplete-changes.proto.json"]
         const blacklist = ["assets/themes/mapcomplete-changes/mapcomplete-changes.json"]
 
-        const filtered = normalFiles.filter(path => !blacklist.some(black => path.endsWith(black)))
+        const filtered = normalFiles.filter(
+            (path) => !blacklist.some((black) => path.endsWith(black))
+        )
         return filtered.concat(specialfiles)
-
     }
 
     public static getThemeFiles(useTranslationPaths = false): {
-        parsed: LayoutConfigJson;
-        path: string;
+        parsed: ThemeConfigJson
+        path: string
         raw: string
     }[] {
         return this.getThemePaths(useTranslationPaths).map((path) => {
@@ -209,17 +210,17 @@ export default class ScriptUtils {
                         path: urlObj.pathname + urlObj.search,
 
                         port: urlObj.port,
-                        headers: headers
+                        headers: headers,
                     },
                     (res) => {
                         const parts: string[] = []
                         res.setEncoding("utf8")
-                        res.on("data", function(chunk) {
+                        res.on("data", function (chunk) {
                             // @ts-ignore
                             parts.push(chunk)
                         })
 
-                        res.addListener("end", function() {
+                        res.addListener("end", function () {
                             if (res.statusCode === 301 || res.statusCode === 302) {
                                 console.log("Got a redirect:", res.headers.location)
                                 resolve({ redirect: res.headers.location })
@@ -237,7 +238,7 @@ export default class ScriptUtils {
                         })
                     }
                 )
-                request.on("error", function(e) {
+                request.on("error", function (e) {
                     reject(e)
                 })
             } catch (e) {

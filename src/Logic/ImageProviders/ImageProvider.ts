@@ -9,15 +9,15 @@ export interface ProvidedImage {
     key: string
     provider: ImageProvider
     id: string
-    date?: Date,
+    date?: Date
     status?: string | "ready"
     /**
      * Compass angle of the taken image
      * 0 = north, 90° = East
      */
     rotation?: number
-    lat?: number,
-    lon?: number,
+    lat?: number
+    lon?: number
     host?: string
 }
 
@@ -26,8 +26,10 @@ export default abstract class ImageProvider {
 
     public abstract readonly name: string
 
-    public abstract SourceIcon(img?: {id: string, url: string, host?: string}, location?: { lon: number; lat: number }): BaseUIElement
-
+    public abstract SourceIcon(
+        img?: { id: string; url: string; host?: string },
+        location?: { lon: number; lat: number }
+    ): BaseUIElement
 
     /**
      * Gets all the relevant URLS for the given tags and for the given prefixes;
@@ -35,12 +37,19 @@ export default abstract class ImageProvider {
      * @param tags
      * @param prefixes
      */
-    public async getRelevantUrlsFor(tags: Record<string, string>, prefixes: string[]): Promise<ProvidedImage[]> {
+    public async getRelevantUrlsFor(
+        tags: Record<string, string>,
+        prefixes: string[]
+    ): Promise<ProvidedImage[]> {
         const relevantUrls: ProvidedImage[] = []
         const seenValues = new Set<string>()
 
         for (const key in tags) {
-            if (!prefixes.some((prefix) => key === prefix || key.match(new RegExp(prefix+":[0-9]+")))) {
+            if (
+                !prefixes.some(
+                    (prefix) => key === prefix || key.match(new RegExp(prefix + ":[0-9]+"))
+                )
+            ) {
                 continue
             }
             const values = Utils.NoEmpty(tags[key]?.split(";")?.map((v) => v.trim()) ?? [])
@@ -50,10 +59,10 @@ export default abstract class ImageProvider {
                 }
                 seenValues.add(value)
                 let images = this.ExtractUrls(key, value)
-                if(!Array.isArray(images)){
-                    images = await  images
+                if (!Array.isArray(images)) {
+                    images = await images
                 }
-                if(images){
+                if (images) {
                     relevantUrls.push(...images)
                 }
             }
@@ -61,12 +70,17 @@ export default abstract class ImageProvider {
         return relevantUrls
     }
 
-    public getRelevantUrls(tags: Record<string, string>, prefixes: string[]): Store<ProvidedImage[]> {
+    public getRelevantUrls(
+        tags: Record<string, string>,
+        prefixes: string[]
+    ): Store<ProvidedImage[]> {
         return Stores.FromPromise(this.getRelevantUrlsFor(tags, prefixes))
     }
 
-
-    public abstract ExtractUrls(key: string, value: string): undefined | ProvidedImage[] | Promise<ProvidedImage[]>
+    public abstract ExtractUrls(
+        key: string,
+        value: string
+    ): undefined | ProvidedImage[] | Promise<ProvidedImage[]>
 
     public abstract DownloadAttribution(providedImage: {
         url: string
@@ -74,4 +88,12 @@ export default abstract class ImageProvider {
     }): Promise<LicenseInfo>
 
     public abstract apiUrls(): string[]
+
+    public static async offerImageAsDownload(image: ProvidedImage) {
+        const response = await fetch(image.url_hd ?? image.url)
+        const blob = await response.blob()
+        Utils.offerContentsAsDownloadableFile(blob, new URL(image.url).pathname.split("/").at(-1), {
+            mimetype: "image/jpg",
+        })
+    }
 }

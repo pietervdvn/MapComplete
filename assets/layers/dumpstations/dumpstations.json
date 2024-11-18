@@ -14,7 +14,7 @@
     "ca": "Estacions d'abocament sanitari",
     "da": "Sanitære afleveringspladser",
     "cs": "Sanitární skládky",
-    "es": "Estaciones sanitarias",
+    "es": "Estaciones de vaciado sanitario",
     "pl": "Stacje zrzutów sanitarnych",
     "pt": "Estações de despejo sanitário"
   },
@@ -32,7 +32,7 @@
     "ca": "Estacions d'abocament sanitari",
     "da": "Sanitære afleveringspladser",
     "cs": "Sanitární skládky",
-    "es": "Vertederos Sanitarios",
+    "es": "Estaciones de vaciado sanitario",
     "pl": "Stacje zrzutów sanitarnych",
     "pt": "Estações de despejo sanitário"
   },
@@ -57,7 +57,7 @@
       "zh_Hant": "{name} 垃圾站",
       "nl": "Loosplaats {name}",
       "ca": "Estació d'abocament {name}",
-      "es": "Vertedero {name}",
+      "es": "Estación de vaciado {name}",
       "cs": "Odpadní stanice {name}",
       "pl": "Stacja zrzutów {name}",
       "pt": "Estação de despejo {name}"
@@ -80,7 +80,7 @@
           "zh_Hant": "垃圾站",
           "nl": "Loosplaats",
           "ca": "Estació d'abocament",
-          "es": "Vertedero",
+          "es": "Estación de vaciado",
           "cs": "Odpadní stanice",
           "pl": "Stacja zrzutowa",
           "pt": "Estação de despejo"
@@ -128,7 +128,7 @@
         "da": "en sanitær afleveringsplads",
         "ca": "una estació d'abocament sanitari",
         "cs": "sanitární skládka",
-        "es": "un vertedero sanitario",
+        "es": "una estación de vaciado sanitario",
         "pl": "stacja zrzutu sanitarnego"
       },
       "description": {
@@ -142,7 +142,7 @@
         "nl": "Voeg een nieuwe loosplaats toe. Dat is een plaats waar campers hun grijs water en toiletten kunnen lozen. Vaak is er ook een kraan om water te tanken en een stopcontact.",
         "da": "Tilføj en ny sanitær afleveringsplads. Dette er et sted, hvor autocamperchauffører kan dumpe spildevand eller kemisk toiletaffald. Ofte er der også drikkevand og el.",
         "cs": "Přidejte novou sanitární skládku. Toto je místo, kam mohou řidiči obytných vozů vypouštět odpadní vodu nebo odpad z chemických toalet. Často je zde také dostupná pitná voda a elektřina.",
-        "es": "Añadir un nuevo vertedero sanitario. Se trata de un lugar donde los autocaravanistas pueden verter las aguas residuales o los residuos químicos de los aseos. A menudo también hay agua potable y electricidad.",
+        "es": "Agrega una nueva estación de vaciado sanitario. Este es un lugar donde los autocaravanistas pueden vaciar aguas grises o residuos de inodoros químicos. A menudo también hay agua potable y electricidad.",
         "ca": "Afegir una nova estació d'abocador sanitari. Aquest és un lloc on els conductors de campers poden abocar aigües residuals o residus de vàter químic. Sovint també hi ha aigua potable i electricitat.",
         "pl": "Dodaj nową stację zrzutu sanitarnego. To miejsce, w którym kierowcy kamperów mogą wyrzucać ścieki lub odpady z toalet chemicznych. Często jest tam też woda pitna i prąd."
       }
@@ -162,7 +162,7 @@
         "de": "Wird hier eine Gebühr erhoben?",
         "zh_Hant": "這個地方需要付費嗎？",
         "nl": "Vraagt deze plaats een vergoeding?",
-        "es": "¿Este lugar cobra una tasa?",
+        "es": "¿Este lugar cobra una tarifa?",
         "da": "Opkræver dette sted et gebyr?",
         "ca": "Aquest lloc cobra una taxa?",
         "cs": "Účtuje si toto místo poplatek?",
@@ -189,7 +189,7 @@
             "zh_Hant": "你需要付費才能使用",
             "nb_NO": "Man må betale for bruk",
             "nl": "Je moet betalen voor het gebruik",
-            "es": "Tienes que pagar por el uso",
+            "es": "Hay que pagar por el uso",
             "da": "Du skal betale for brug",
             "ca": "Has de pagar per a utilitzar-ho",
             "cs": "Použití je zpoplatněno",
@@ -215,7 +215,7 @@
             "zh_Hant": "這裡可以免費使用",
             "nl": "Kan gratis gebruikt worden",
             "nb_NO": "Kan brukes gratis",
-            "es": "Se puede utilizar gratis",
+            "es": "Se puede usar gratis",
             "da": "Kan bruges gratis",
             "ca": "Es pot utilitzar gratuïtament",
             "cs": "Lze použít zdarma",
@@ -237,7 +237,7 @@
         "zh_Hant": "這個地方收費 {charge}",
         "nb_NO": "Dette stedet tar {charge}",
         "nl": "Deze loosplaats rekent {charge} aan",
-        "es": "Este lugar cobra {charge}",
+        "es": "Este lugar cuesta {charge}",
         "ca": "Aquest lloc costa {charge}",
         "da": "Dette sted opkræver {charge}",
         "cs": "Toto místo si účtuje {charge}",
@@ -254,7 +254,7 @@
         "de": "Wie hoch ist die Gebühr an diesem Ort?",
         "zh_Hant": "這個地方收費多少？",
         "nl": "Hoeveel kost het gebruik van deze loosplaats?",
-        "es": "¿Cuánto cobra este lugar?",
+        "es": "¿Cuánto cuesta este lugar?",
         "ca": "Quant costa aquest lloc?",
         "da": "Hvor meget koster det at bruge dette sted?",
         "cs": "Kolik si toto místo účtuje?",
@@ -289,7 +289,7 @@
         "da": "Har dette sted et vandpost?",
         "ca": "Aquest lloc té un punt d'aigua?",
         "cs": "Má toto místo vodní zdroj?",
-        "es": "¿Este lugar tiene toma de agua?",
+        "es": "¿Este lugar tiene un punto de agua?",
         "pl": "Czy to miejsce ma punkt z wodą?",
         "pt": "Este lugar tem um ponto de água?"
       },
@@ -314,7 +314,7 @@
             "ca": "Aquest lloc té un punt d'aigua",
             "cs": "Na tomto místě se nachází vodní zdroj",
             "nb_NO": "Dette stedet har en vannpost",
-            "es": "Este lugar tiene una toma de agua",
+            "es": "Este lugar tiene un punto de agua",
             "eu": "Leku honek ur-hartune bat du",
             "pl": "To miejsce ma punkt poboru wody",
             "pt": "Este lugar tem um ponto de água"
@@ -340,7 +340,7 @@
             "ca": "Aquest lloc no té un punt d'aigua",
             "cs": "Toto místo nemá vodní zdroj",
             "nb_NO": "Dette stedet har ikke en vannpost",
-            "es": "Este lugar no tiene toma de agua",
+            "es": "Este lugar no tiene un punto de agua",
             "pl": "To miejsce nie ma punktu poboru wody",
             "pt": "Este lugar não tem um ponto de água"
           }
@@ -362,7 +362,7 @@
         "ca": "Aquí pots desfer-te de les aigües grises?",
         "cs": "Lze na tomto místě likvidovat šedou vodu?",
         "nb_NO": "Kan du kvitte deg med gråvann her?",
-        "es": "¿Puede desechar las aguas grises aquí?",
+        "es": "¿Puedes deshacerte de aguas grises aquí?",
         "pl": "Czy można tutaj pozbyć się szarej wody?"
       },
       "mappings": [
@@ -385,7 +385,7 @@
             "da": "Du kan bortskaffe gråt vand her",
             "cs": "Zde můžete likvidovat šedou vodu",
             "nb_NO": "Du kan kvitte deg med gråvann her",
-            "es": "Las aguas grises pueden eliminarse aquí",
+            "es": "Aquí puedes deshacerte de aguas grises",
             "pl": "Tutaj możesz pozbyć się szarej wody"
           }
         },
@@ -408,7 +408,7 @@
             "ca": "Aquí no pots desfer-te de les aigües grises",
             "cs": "Zde nelze likvidovat šedou vodu",
             "nb_NO": "Du kan ikke kvitte deg med gråvann her",
-            "es": "No se pueden eliminar las aguas grises aquí",
+            "es": "Aquí no puedes deshacerte de aguas grises",
             "pl": "Nie można tu wylewać szarej wody"
           }
         }
@@ -429,7 +429,7 @@
         "da": "Kan man bortskaffe kemisk toiletaffald her?",
         "ca": "Aquí pots depositar els residus del vàter químic?",
         "cs": "Lze na tomto místě likvidovat chemický toaletní odpad?",
-        "es": "¿Se pueden tirar aquí los residuos químicos de los aseos?",
+        "es": "¿Puedes deshacerte de residuos de inodoros químicos aquí?",
         "pl": "Czy można tutaj wyrzucać odpady chemiczne z toalet?"
       },
       "mappings": [
@@ -452,7 +452,7 @@
             "da": "Her kan du bortskaffe kemisk toiletaffald",
             "ca": "Aquí pots depositar els residus del vàter químic",
             "cs": "Zde můžete likvidovat chemický toaletní odpad",
-            "es": "Puede eliminar aquí los residuos químicos de los aseos",
+            "es": "Aquí puedes deshacerte de residuos de inodoros químicos",
             "pl": "Tutaj możesz wyrzucić odpady chemiczne z toalet"
           }
         },
@@ -475,7 +475,7 @@
             "da": "Du kan ikke bortskaffe kemisk toiletaffald her",
             "ca": "Aquí no pots depositar els residus del vàter químic",
             "cs": "Zde nemůžete likvidovat chemický toaletní odpad",
-            "es": "Aquí no se pueden tirar los residuos químicos de los aseos",
+            "es": "Aquí no puedes deshacerte de residuos de inodoros químicos",
             "pl": "Nie można tutaj wyrzucać odpadów chemicznych z toalet"
           }
         }
@@ -495,7 +495,7 @@
         "ca": "Qui pot utilitzar aquesta estació d'abocament?",
         "da": "Hvem kan bruge denne losseplads?",
         "cs": "Kdo může použít tuto skládku?",
-        "es": "¿Quien puede usar el vertedero?",
+        "es": "¿Quién puede usar esta estación de vaciado?",
         "eu": "Nork erabil dezake hondakindegia?",
         "pl": "Kto może korzystać z tej stacji zrzutów?"
       },
@@ -518,7 +518,7 @@
             "da": "Du skal bruge en netværksnøgle/-kode for at bruge dette",
             "ca": "Necessites un codi/clau de xarxa per usar-lo",
             "cs": "K použití potřebujete síťový klíč/kód",
-            "es": "Necesitas una clave/código de red para usarlo",
+            "es": "Necesitas una clave/código de red para usar esto",
             "pl": "Aby z tego skorzystać, potrzebny jest klucz/kod sieci"
           }
         },
@@ -539,7 +539,7 @@
             "ca": "Heu de ser client del càmping/lloc d'acampada per utilitzar aquest lloc",
             "da": "Du skal være kunde hos camping/campingplads for at bruge dette sted",
             "cs": "Abyste mohli toto místo používat, musíte být zákazníkem kempu/kempovacího místa",
-            "es": "Necesitas ser cliente del camping para usar este lugar",
+            "es": "Debes ser cliente del camping/área de acampada para usar este lugar",
             "pl": "Aby korzystać z tego miejsca, musisz być klientem kempingu/miejsca dla kamperów"
           }
         },
@@ -561,7 +561,7 @@
             "ca": "Qualsevol pot utilitzar aquesta estació d'abocament",
             "da": "Alle kan bruge denne losseplads",
             "cs": "Tuto skládku může použít kdokoli",
-            "es": "Cualquiera puede utilizar este vertedero",
+            "es": "Cualquiera puede usar esta estación de vaciado",
             "eu": "Edonork erabil dezake hondakindegi hau",
             "pl": "Każdy może korzystać z tej stacji zrzutu"
           },
@@ -585,7 +585,7 @@
             "ca": "Qualsevol pot utilitzar aquesta estació d'abocament",
             "da": "Alle kan bruge denne losseplads",
             "cs": "Tuto skládku může použít kdokoli",
-            "es": "Cualquiera puede usar este vertedero",
+            "es": "Cualquiera puede usar esta estación de vaciado",
             "eu": "Edonork erabil dezake hondakindegi hau",
             "pl": "Każdy może korzystać z tej stacji zrzutu"
           }
@@ -602,11 +602,12 @@
         "de": "Diese Station gehört zum Verbund/Netzwerk {network}",
         "zh_Hant": "這車站是屬於 {network} 網路的一部分",
         "nl": "Deze loosplaats is deel van het {network} netwerk",
-        "es": "Esta estación forma parte de la red {network}",
+        "es": "Esta estación es parte de la red {network}",
         "da": "Denne station er en del af netværket {network}",
         "ca": "Aquesta estació forma part de la xarxa {network}",
         "cs": "Tato stanice je součástí sítě {network}",
-        "pl": "Ta stacja jest częścią sieci {network}"
+        "pl": "Ta stacja jest częścią sieci {network}",
+        "uk": "Ця станція є частиною мережі {network}"
       },
       "question": {
         "en": "What network is this place a part of? (skip if none)",
@@ -617,11 +618,12 @@
         "de": "Zu welchem Verbund/Netzwerk gehört dieser Ort? (Überspringen, wenn nicht zutreffend)",
         "zh_Hant": "這裡是屬於那個網路的？ (沒有則跳過)",
         "nl": "Van welk netwerk vormt deze plaats een deel? (Sla over als het geen deel uitmaakt van een netwerk)",
-        "es": "¿A qué red forma parte este lugar? (saltar si a ninguna)",
+        "es": "¿De qué red forma parte este lugar? (omitir si no hay ninguna)",
         "da": "Hvilket netværk er dette sted en del af? (spring over hvis ingen)",
         "ca": "A quina xarxa forma part aquest lloc? (Salta si a cap)",
         "cs": "Jaké sítě je toto místo součástí? (přeskočte, pokud žádné)",
-        "pl": "Do jakiej sieci należy to miejsce? (pomiń, jeśli nie ma)"
+        "pl": "Do jakiej sieci należy to miejsce? (pomiń, jeśli nie ma)",
+        "uk": "Частиною якої мережі є цей заклад? (пропустіть, якщо немає)"
       },
       "freeform": {
         "key": "network"

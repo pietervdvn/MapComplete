@@ -48,7 +48,12 @@ export class MoveWizardState {
      * @param layer
      * @param state
      */
-    constructor(id: string, options: MoveConfig, layer: LayerConfig, state: SpecialVisualizationState) {
+    constructor(
+        id: string,
+        options: MoveConfig,
+        layer: LayerConfig,
+        state: SpecialVisualizationState
+    ) {
         this.layer = layer
         this._state = state
         this.featureToMoveId = id
@@ -91,11 +96,16 @@ export class MoveWizardState {
         }
 
         const tags = this._state.featureProperties.getStore(this.featureToMoveId).data
-        const matchingPresets = this.layer.presets.filter(preset => preset.preciseInput.snapToLayers && new And(preset.tags).matchesProperties(tags))
-        const matchingPreset = matchingPresets.flatMap(pr => pr.preciseInput?.snapToLayers)
+        const matchingPresets = this.layer.presets.filter(
+            (preset) =>
+                preset.preciseInput.snapToLayers && new And(preset.tags).matchesProperties(tags)
+        )
+        const matchingPreset = matchingPresets.flatMap((pr) => pr.preciseInput?.snapToLayers)
         for (const layerId of matchingPreset) {
-            const snapOntoLayer = this._state.layout.getLayer(layerId)
-            const text = <Translation> t.reasons.reasonSnapTo.PartialSubsTr("name", snapOntoLayer.snapName)
+            const snapOntoLayer = this._state.theme.getLayer(layerId)
+            const text = <Translation>(
+                t.reasons.reasonSnapTo.PartialSubsTr("name", snapOntoLayer.snapName)
+            )
             reasons.push({
                 text,
                 invitingText: text,
@@ -112,7 +122,6 @@ export class MoveWizardState {
             })
         }
 
-
         return reasons
     }
 
@@ -120,21 +129,23 @@ export class MoveWizardState {
         loc: { lon: number; lat: number },
         snappedTo: WayId,
         reason: MoveReason,
-        featureToMove: Feature<Point>,
+        featureToMove: Feature<Point>
     ) {
         const state = this._state
-        if(snappedTo !== undefined){
+        if (snappedTo !== undefined) {
             this.moveDisallowedReason.set(Translations.t.move.partOfAWay)
         }
         await state.changes.applyAction(
-            new ChangeLocationAction(state,
+            new ChangeLocationAction(
+                state,
                 featureToMove.properties.id,
                 [loc.lon, loc.lat],
                 snappedTo,
                 {
                     reason: reason.changesetCommentValue,
-                    theme: state.layout.id,
-                }),
+                    theme: state.theme.id,
+                }
+            )
         )
         featureToMove.properties._lat = loc.lat
         featureToMove.properties._lon = loc.lon
@@ -152,9 +163,9 @@ export class MoveWizardState {
                     featureToMove.properties,
                     {
                         changeType: "relocated",
-                        theme: state.layout.id,
-                    },
-                ),
+                        theme: state.theme.id,
+                    }
+                )
             )
         }
 

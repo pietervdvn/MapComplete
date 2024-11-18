@@ -111,19 +111,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Cycleways and roads allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Cycleways and roads allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Cycleways and roads allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Cycleways and roads allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Cycleways and roads allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Cycleways and roads allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Cycleways and roads allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Cycleways and roads allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Cycleways and roads allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "cycleway",
@@ -623,19 +627,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Barriers allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Barriers allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Barriers allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Barriers allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Barriers allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Barriers allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Barriers allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Barriers allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Barriers allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "bicycle",
@@ -734,19 +742,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Crossings allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Crossings allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Crossings allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Crossings allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Crossings allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Crossings allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Crossings allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Crossings allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Crossings allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "crossing",
@@ -765,18 +777,87 @@
     },
     {
       "key": "crossing",
-      "description": "Layer 'Crossings' shows crossing=unmarked with a fixed text, namely 'Crossing without crossing markings' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway=crossing)",
+      "description": "Layer 'Crossings' shows crossing=unmarked with a fixed text, namely 'Crossing without crossing markings' (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if highway=crossing)",
       "value": "unmarked"
     },
     {
-      "key": "crossing_ref",
-      "description": "Layer 'Crossings' shows crossing_ref=zebra with a fixed text, namely 'This is a zebra crossing' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if crossing=uncontrolled)",
+      "key": "crossing:markings",
+      "description": "Layer 'Crossings' shows and asks freeform values for key 'crossing:markings' (in the mapcomplete.org theme 'Bicycle infrastructure')"
+    },
+    {
+      "key": "crossing:markings",
+      "description": "Layer 'Crossings' shows crossing:markings=no with a fixed text, namely 'This crossing has no markings' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure')",
+      "value": "no"
+    },
+    {
+      "key": "crossing:markings",
+      "description": "Layer 'Crossings' shows crossing:markings=zebra with a fixed text, namely 'This crossing has zebra markings' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure')",
       "value": "zebra"
     },
     {
-      "key": "crossing_ref",
-      "description": "Layer 'Crossings' shows crossing_ref= with a fixed text, namely 'This is not a zebra crossing' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure') Picking this answer will delete the key crossing_ref. (This is only shown if crossing=uncontrolled)",
-      "value": ""
+      "key": "crossing:markings",
+      "description": "Layer 'Crossings' shows crossing:markings=yes with a fixed text, namely 'This crossing has markings of an unknown type' (in the mapcomplete.org theme 'Bicycle infrastructure')",
+      "value": "yes"
+    },
+    {
+      "key": "crossing:markings",
+      "description": "Layer 'Crossings' shows crossing:markings=lines with a fixed text, namely 'This crossings has lines on either side of the crossing' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure')",
+      "value": "lines"
+    },
+    {
+      "key": "crossing:markings",
+      "description": "Layer 'Crossings' shows crossing:markings=ladder with a fixed text, namely 'This crossing has lines on either side of the crossing, along with bars connecting them' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure')",
+      "value": "ladder"
+    },
+    {
+      "key": "crossing:markings",
+      "description": "Layer 'Crossings' shows crossing:markings=dashes with a fixed text, namely 'This crossing has dashed lines on either sides of the crossing' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure')",
+      "value": "dashes"
+    },
+    {
+      "key": "crossing:markings",
+      "description": "Layer 'Crossings' shows crossing:markings=dots with a fixed text, namely 'This crossing has dotted lines on either sides of the crossing' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure')",
+      "value": "dots"
+    },
+    {
+      "key": "crossing:markings",
+      "description": "Layer 'Crossings' shows crossing:markings=surface with a fixed text, namely 'This crossing is marked by using a different coloured surface' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure')",
+      "value": "surface"
+    },
+    {
+      "key": "crossing:markings",
+      "description": "Layer 'Crossings' shows crossing:markings=ladder:skewed with a fixed text, namely 'This crossing has lines on either side of the crossing, along with angled bars connecting them' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure')",
+      "value": "ladder:skewed"
+    },
+    {
+      "key": "crossing:markings",
+      "description": "Layer 'Crossings' shows crossing:markings=zebra:paired with a fixed text, namely 'This crossing has zebra markings with an interruption in every bar' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure')",
+      "value": "zebra:paired"
+    },
+    {
+      "key": "crossing:markings",
+      "description": "Layer 'Crossings' shows crossing:markings=zebra:bicolour with a fixed text, namely 'This crossing has zebra markings in alternating colours' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure')",
+      "value": "zebra:bicolour"
+    },
+    {
+      "key": "crossing:markings",
+      "description": "Layer 'Crossings' shows crossing:markings=zebra:double with a fixed text, namely 'This crossing has double zebra markings' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure')",
+      "value": "zebra:double"
+    },
+    {
+      "key": "crossing:markings",
+      "description": "Layer 'Crossings' shows crossing:markings=pictograms with a fixed text, namely 'This crossing has pictograms on the road' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure')",
+      "value": "pictograms"
+    },
+    {
+      "key": "crossing:markings",
+      "description": "Layer 'Crossings' shows crossing:markings=ladder:paired with a fixed text, namely 'This crossing has lines on either side of the crossing, along with bars connecting them, with an interruption in every bar' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure')",
+      "value": "ladder:paired"
+    },
+    {
+      "key": "crossing:markings",
+      "description": "Layer 'Crossings' shows crossing:markings=lines:paired with a fixed text, namely 'This crossing has double lines on either side of the crossing' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure')",
+      "value": "lines:paired"
     },
     {
       "key": "bicycle",
@@ -919,19 +1000,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Bicycle counters allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bicycle counters allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Bicycle counters allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Bicycle counters allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bicycle counters allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Bicycle counters allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bicycle counters allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Bicycle counters allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Bicycle counters allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "display",
@@ -978,6 +1063,70 @@
     {
       "key": "website",
       "description": "Layer 'Bicycle counters' shows and asks freeform values for key 'website' (in the mapcomplete.org theme 'Bicycle infrastructure')"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Bicycle infrastructure has a layer Cyclist Waiting Aids showing features with this tag",
+      "value": "cyclist_waiting_aid"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Cyclist Waiting Aids' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Cyclist Waiting Aids allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Cyclist Waiting Aids allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Cyclist Waiting Aids allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Cyclist Waiting Aids allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Cyclist Waiting Aids allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "footrest",
+      "description": "Layer 'Cyclist Waiting Aids' shows footrest=yes with a fixed text, namely 'There is a board or peg to rest your foot on here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure')",
+      "value": "yes"
+    },
+    {
+      "key": "handrest",
+      "description": "Layer 'Cyclist Waiting Aids' shows handrest=yes with a fixed text, namely 'There is a rail or a handle to hold on to here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure')",
+      "value": "yes"
+    },
+    {
+      "key": "side",
+      "description": "Layer 'Cyclist Waiting Aids' shows side=left with a fixed text, namely 'This waiting aid is located on the left side' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure')",
+      "value": "left"
+    },
+    {
+      "key": "side",
+      "description": "Layer 'Cyclist Waiting Aids' shows side=right with a fixed text, namely 'This waiting aid is located on the right side' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure')",
+      "value": "right"
+    },
+    {
+      "key": "side",
+      "description": "Layer 'Cyclist Waiting Aids' shows side=both with a fixed text, namely 'There are waiting aids on both sides of the road' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bicycle infrastructure')",
+      "value": "both"
+    },
+    {
+      "key": "direction",
+      "description": "Layer 'Cyclist Waiting Aids' shows direction=forward with a fixed text, namely 'This waiting aid can be used when going forward on this way' (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if direction~.+)",
+      "value": "forward"
+    },
+    {
+      "key": "direction",
+      "description": "Layer 'Cyclist Waiting Aids' shows direction=backward with a fixed text, namely 'This waiting aid can be used when going backward on this way' (in the mapcomplete.org theme 'Bicycle infrastructure') (This is only shown if direction~.+)",
+      "value": "backward"
     }
   ]
 }

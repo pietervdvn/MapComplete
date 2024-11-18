@@ -5,10 +5,9 @@
   import FilterToggle from "./FilterToggle.svelte"
   import type { SpecialVisualizationState } from "../SpecialVisualization"
 
-
   export let activeFilter: ActiveFilter[]
   let { control, filter } = activeFilter[0]
-  let option = control.map(c => filter.options[c] ?? filter.options[0])
+  let option = control.map((c) => filter.options[c] ?? filter.options[0])
   let loading = false
 
   function clear() {
@@ -24,14 +23,15 @@
   export let state: SpecialVisualizationState
   let debug = state.featureSwitches.featureSwitchIsDebugging
 </script>
+
 {#if loading}
   <Loading />
-{:else }
+{:else}
   <FilterToggle on:click={() => clear()}>
     <FilterOption option={$option} />
     {#if $debug}
       <span class="subtle">
-        ({activeFilter.map(af => af.layer.id).join(", ")})
+        ({activeFilter.map((af) => af.layer.id).join(", ")})
       </span>
     {/if}
   </FilterToggle>

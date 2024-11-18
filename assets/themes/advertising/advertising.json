@@ -13,11 +13,14 @@
     "pl": "Reklamy",
     "it": "Pubblicità",
     "da": "Reklamer",
-    "zh_Hans": "广告"
+    "zh_Hans": "广告",
+    "ru": "Реклама",
+    "uk": "Реклама",
+    "hu": "Reklámok"
   },
   "description": {
     "ca": "Alguna vegada t'has preguntat quanta publictat hi ha als nostres carrers i carreteres? Amb aquest mapa podràs trobar i afegir informació de tots els elements publictaris que t'hi trobes pel carrer",
-    "es": "¿Alguna vez te has preguntado cuanta publicidad hay en nuestras calles y carreteras? Con este mapa podrás encontrar y añadir información de todos los elementos publicitarios que te encuentres por la calle",
+    "es": "¿Alguna vez te preguntaste cuánta publicidad hay en nuestras calles y carreteras? Con este mapa puedes encontrar y agregar información sobre todos los elementos publicitarios que encuentres en la calle",
     "en": "Have you ever wondered how many advertising there are in our streets and roads? With this map you could find and add information about all the advertising features that you can find on the street",
     "de": "Haben Sie sich schon einmal gefragt, wie viele Werbeanlagen es in unseren Straßen und Wegen gibt? Hier können Sie Informationen über alle Werbeeinrichtungen finden und hinzufügen, die Sie auf der Straße begegnen",
     "cs": "Přemýšleli jste někdy o tom, kolik je v našich ulicích a na silnicích reklam? Pomocí této mapy můžete najít a doplnit informace o všech reklamních prvcích, které můžete na ulici najít",
@@ -29,11 +32,12 @@
     "pl": "Czy zastanawiałeś się kiedyś, ile reklam jest na naszych ulicach i drogach? Dzięki tej mapie możesz znaleźć i dodać informacje o wszystkich funkcjach reklamowych, które możesz znaleźć na ulicy",
     "pt": "Já se perguntou quantas propagandas existem nas nossas ruas e estradas? Com este mapa pode encontrar e adicionar informações sobre todos os recursos de publicidade que pode encontrar na rua",
     "it": "Vi siete mai chiesti quante pubblicità ci sono nelle nostre strade e strade? Con questa mappa è possibile trovare e aggiungere informazioni su tutte le caratteristiche pubblicitarie che si possono trovare sulla strada",
-    "zh_Hans": "你是否曾经想过我们的街道和道路上有多少广告？通过这张地图，你可以查找并添加有关街道上所有广告特征的信息"
+    "zh_Hans": "你是否曾经想过我们的街道和道路上有多少广告？通过这张地图，你可以查找并添加有关街道上所有广告特征的信息",
+    "uk": "Чи замислювалися ви будь-коли над тим, скільки реклами знаходиться на наших вулицях та дорогах? За допомогою цієї мапи ви можете знайти та додати інформацію про всі рекламні обʼєкти, які ви можете зустріти на вулиці"
   },
   "shortDescription": {
     "ca": "On puc trobar elements publicitaris?",
-    "es": "Dónde puedo encontrar elementos publicitarios?",
+    "es": "¿Dónde puedo encontrar elementos publicitarios?",
     "en": "Where I can find advertising features?",
     "de": "Wo finde ich Werbeträger?",
     "cs": "Kde najdu reklamní objekty?",
@@ -42,7 +46,8 @@
     "zh_Hant": "我能夠在那裡找到廣告物件？",
     "eu": "Non aurki ditzaket publizitate ezaugarriak?",
     "pl": "Gdzie mogę znaleźć obiekty reklamowe?",
-    "zh_Hans": "我可以在哪里找到广告功能？"
+    "zh_Hans": "我可以在哪里找到广告功能？",
+    "uk": "Де я можу знайти рекламні об'єкти?"
   },
   "icon": "./assets/themes/advertising/icon.svg",
   "credits": [

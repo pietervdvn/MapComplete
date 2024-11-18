@@ -52,8 +52,7 @@
 
   export let state: ThemeViewState
 
-
-  let layout = state.layout
+  let theme = state.theme
   let maplibremap: UIEventSource<MlMap> = state.map
   let state_selectedElement = state.selectedElement
   let selectedElement: UIEventSource<Feature> = new UIEventSource<Feature>(undefined)
@@ -65,7 +64,7 @@
   let gpsButtonAriaLabel = state.geolocation.geolocationState.gpsStateExplanation
   let debug = state.featureSwitches.featureSwitchIsDebugging
   let featureSwitches: FeatureSwitchState = state.featureSwitches
-  let currentViewLayer: LayerConfig = layout.layers.find((l) => l.id === "current_view")
+  let currentViewLayer: LayerConfig = theme.layers.find((l) => l.id === "current_view")
   let rasterLayer: Store<RasterLayerPolygon> = state.mapProperties.rasterLayer
   let currentZoom = state.mapProperties.zoom
   let showCrosshair = state.userRelatedState.showCrosshair
@@ -82,7 +81,7 @@
       selectedElement.setData(undefined)
       return
     }
-    if(!selectedElement.data){
+    if (!selectedElement.data) {
       // The store for this component doesn't have value right now, so we can simply set it
       selectedElement.set(value)
       return
@@ -95,11 +94,10 @@
         // ... and we force a fresh popup window
         selectedElement.setData(value)
       })
-    }, slideDuration + 50)
+    }, slideDuration * 2)
   })
 
   state.mapProperties.installCustomKeyboardHandler(viewport)
-
 
   let selectedLayer: Store<LayerConfig> = state.selectedElement.mapD((element) => {
     if (element.properties.id.startsWith("current_view")) {
@@ -126,7 +124,6 @@
     })
   )
 
-
   debug.addCallbackAndRun((dbg) => {
     if (dbg) {
       document.body.classList.add("debug")
@@ -134,7 +131,6 @@
       document.body.classList.remove("debug")
     }
   })
-
 
   function updateViewport() {
     const rect = viewport.data?.getBoundingClientRect()
@@ -149,7 +145,7 @@
     const bottomRight = mlmap.unproject([rect.right, rect.bottom])
     const bbox = new BBox([
       [topLeft.lng, topLeft.lat],
-      [bottomRight.lng, bottomRight.lat]
+      [bottomRight.lng, bottomRight.lat],
     ])
     state.visualFeedbackViewportBounds.setData(bbox)
   }
@@ -172,7 +168,6 @@
     const animation = mlmap.keyboard?.keydown(e)
     animation?.cameraAnimation(mlmap)
   }
-
 </script>
 
 <main>
@@ -207,13 +202,12 @@
     </div>
   {/if}
 
-
   <div class="pointer-events-none absolute bottom-0 left-0 mb-4 w-screen">
     <!-- bottom controls -->
     <div class="flex w-full items-end justify-between px-4">
       <div class="flex flex-col">
         <If condition={featureSwitches.featureSwitchEnableLogin}>
-          {#if $addNewFeatureMode.indexOf("button") >= 0 && ((state.layout.hasPresets() && state.layout.enableAddNewPoints) || state.layout.hasNoteLayer())}
+          {#if $addNewFeatureMode.indexOf("button") >= 0 && ((state.theme.hasPresets() && state.theme.enableAddNewPoints) || state.theme.hasNoteLayer())}
             <button
               class="low-interaction pointer-events-auto w-fit"
               class:disabled={$currentZoom < Constants.minZoomLevelToAddNewPoint}
@@ -224,7 +218,7 @@
             >
               {#if $currentZoom < Constants.minZoomLevelToAddNewPoint}
                 <Tr t={Translations.t.general.add.zoomInFurther} />
-              {:else if state.layout.hasPresets()}
+              {:else if state.theme.hasPresets()}
                 ✨ <Tr t={Translations.t.general.add.title} />
               {:else}
                 <Tr t={Translations.t.notes.addAComment} />
@@ -317,28 +311,27 @@
         </If>
       </div>
     </div>
-
   </div>
-
 
   <DrawerRight shown={state.searchState.showSearchDrawer}>
     <SearchResults {state} />
   </DrawerRight>
 
-
   <!-- Top components -->
-  <div class="pointer-events-none absolute top-0 left-0 w-full z-4">
-
+  <div class="z-4 pointer-events-none absolute top-0 left-0 w-full">
     <div
       id="top-bar"
-      class="flex bg-black-light-transparent pointer-events-auto items-center justify-between px-4 py-1 flex-wrap">
+      class="bg-black-light-transparent pointer-events-auto flex flex-wrap items-center justify-between px-4 py-1"
+    >
       <!-- Top bar with tools -->
       <div class="flex items-center">
-
         <MapControlButton
           cls="m-0.5 p-0.5 sm:p-1"
           arialabel={Translations.t.general.labels.menu}
-          on:click={() => {console.log("Opening...."); state.guistate.pageStates.menu.setData(true)}}
+          on:click={() => {
+            console.log("Opening....")
+            state.guistate.pageStates.menu.setData(true)
+          }}
           on:keydown={forwardEventToMap}
         >
           <MenuIcon class="h-6 w-6 cursor-pointer" />
@@ -348,12 +341,10 @@
           on:click={() => state.guistate.pageStates.about_theme.set(true)}
           on:keydown={forwardEventToMap}
         >
-          <div
-            class="m-0.5 mx-1 flex cursor-pointer items-center max-[480px]:w-full sm:mx-1 mr-2"
-          >
-            <Marker icons={layout.icon} size="h-6 w-6 shrink-0 mr-0.5 sm:mr-1 md:mr-2" />
+          <div class="m-0.5 mx-1 mr-2 flex cursor-pointer items-center max-[480px]:w-full sm:mx-1">
+            <Marker icons={theme.icon} size="h-6 w-6 shrink-0 mr-0.5 sm:mr-1 md:mr-2" />
             <b class="mr-1">
-              <Tr t={layout.title} />
+              <Tr t={theme.title} />
             </b>
           </div>
         </MapControlButton>
@@ -366,24 +357,30 @@
       {/if}
 
       <If condition={state.featureSwitches.featureSwitchSearch}>
-        <div class="flex items-center flex-grow justify-end">
+        <div class="flex flex-grow items-center justify-end">
           <div class="w-full sm:w-64">
-            <Searchbar value={state.searchState.searchTerm} isFocused={state.searchState.searchIsFocused} />
+            <Searchbar
+              value={state.searchState.searchTerm}
+              isFocused={state.searchState.searchIsFocused}
+            />
           </div>
-          <MapControlButton on:keydown={forwardEventToMap} on:click={() =>{
-            if(searchOpened.data){
-              searchOpened.set(false)
-            }else{
-              state.searchState.searchIsFocused.set(true)
-            }
-            }}>
-            <ChevronRight class="w-7 h-7 p-0 m-0 transition-all"
-                          style={"rotate: " + ($searchOpened ?  "0deg" : "180deg" ) } />
+          <MapControlButton
+            on:keydown={forwardEventToMap}
+            on:click={() => {
+              if (searchOpened.data) {
+                searchOpened.set(false)
+              } else {
+                state.searchState.searchIsFocused.set(true)
+              }
+            }}
+          >
+            <ChevronRight
+              class="m-0 h-7 w-7 p-0 transition-all"
+              style={"rotate: " + ($searchOpened ? "0deg" : "180deg")}
+            />
           </MapControlButton>
         </div>
-
       </If>
-
     </div>
 
     <div class="pointer-events-auto float-right mt-1 flex flex-col px-1 max-[480px]:w-full sm:m-2">
@@ -394,7 +391,6 @@
           </div>
         {/if}
       </If>
-
     </div>
 
     <div class="float-left m-1 flex flex-col sm:mt-2">
@@ -434,7 +430,6 @@
     </div>
   </div>
 
-
   <DrawerLeft shown={state.guistate.pageStates.menu}>
     <div class="h-screen overflow-y-auto">
       <MenuDrawer onlyLink={true} {state} />
@@ -451,15 +446,16 @@
       id="drawer-right"
       width="w-full md:w-6/12 lg:w-5/12 xl:w-4/12"
       rightOffset="inset-y-0 right-0"
-      transitionParams={ {
-    x: 640,
-    duration: slideDuration,
-    easing: linear
-  }}
+      transitionParams={{
+        x: 640,
+        duration: slideDuration,
+        easing: linear,
+      }}
       divClass="overflow-y-auto z-50 "
       hidden={$selectedElement === undefined}
-      on:close={() => {      state.selectedElement.setData(undefined)
-    }}
+      on:close={() => {
+        state.selectedElement.setData(undefined)
+      }}
     >
       <div slot="close-button" />
       <SelectedElementPanel {state} selected={$state_selectedElement} />
@@ -494,5 +490,4 @@
   {/if}
 
   <MenuDrawer onlyLink={false} {state} />
-
 </main>

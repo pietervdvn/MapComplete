@@ -22,7 +22,7 @@
       JSON.stringify(contents),
       "mapcomplete-favourites-" + new Date().toISOString() + ".geojson",
       {
-        mimetype: "application/vnd.geo+json"
+        mimetype: "application/vnd.geo+json",
       }
     )
   }
@@ -33,7 +33,7 @@
       gpx,
       "mapcomplete-favourites-" + new Date().toISOString() + ".gpx",
       {
-        mimetype: "{gpx=application/gpx+xml}"
+        mimetype: "{gpx=application/gpx+xml}",
       }
     )
   }

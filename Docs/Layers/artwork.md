@@ -13,7 +13,7 @@ An open map of statues, busts, graffitis and other artwork all over the world
 2. [Presets](#presets)
 3. [Basic tags for this layer](#basic-tags-for-this-layer)
 4. [Supported attributes](#supported-attributes)
-  - [images](#images)
+  - [images_no_blur](#images_no_blur)
   - [artwork-artwork_type](#artwork-artwork_type)
   - [artwork-artist-wikidata](#artwork-artist-wikidata)
   - [artwork-artist_name](#artwork-artist_name)
@@ -84,10 +84,10 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/inscription#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/inscription/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [inscription](https://wiki.openstreetmap.org/wiki/Key:inscription) | [text](../SpecialInputElements.md#text) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/historic#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/historic/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [historic](https://wiki.openstreetmap.org/wiki/Key:historic) | Multiple choice | [memorial](https://wiki.openstreetmap.org/wiki/Tag:historic%3Dmemorial) [](https://wiki.openstreetmap.org/wiki/Tag:historic%3D) |
 
-### images
-This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
+### images_no_blur
+Same as `images`, but uploaded request to disable blurring to the panoramax server
 _This tagrendering has no question and is thus read-only_
-*{image_carousel()}{image_upload()}*
+*{image_carousel()}{image_upload(,,,true)}*
 
 ### artwork-artwork_type
 
@@ -157,7 +157,7 @@ This tagrendering has labels
 The question is `Does this artwork serve as a memorial?`
 
  -  *This artwork also serves as a memorial* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:historic' target='_blank'>historic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:historic%3Dmemorial' target='_blank'>memorial</a>
- -  *This artwork does not serve as a bench* is shown if with historic=
+ -  *This artwork does not serve as a memorial* is shown if with historic=
 
 ### memorial-type
 
@@ -361,6 +361,25 @@ This tagrendering has labels
 | artwork-artwork_type.11 | Azulejo (Spanish decorative tilework) | artwork_type=azulejo |
 | artwork-artwork_type.12 | Tilework | artwork_type=tilework |
 | artwork-artwork_type.13 | Woodcarving | artwork_type=woodcarving |
+
+| id | question | osmTags |
+-----|-----|----- |
+| memorial-type.0 | *What type of memorial is this?* (default) |  |
+| memorial-type.1 | This is a statue | memorial=statue |
+| memorial-type.2 | This is a plaque | memorial=plaque |
+| memorial-type.3 | This is a commemorative bench | memorial=bench |
+| memorial-type.4 | This is a ghost bike - a bicycle painted white to remember a cyclist whom deceased because of a car crash | memorial=ghost_bike |
+| memorial-type.5 | This is a stolperstein (stumbing stone) | memorial=stolperstein |
+| memorial-type.6 | This is a stele | memorial=stele |
+| memorial-type.7 | This is a memorial stone | memorial=stone |
+| memorial-type.8 | This is a bust | memorial=bust |
+| memorial-type.9 | This is a sculpture | memorial=sculpture |
+| memorial-type.10 | This is an obelisk | memorial=obelisk |
+| memorial-type.11 | This is a cross | memorial=cross |
+| memorial-type.12 | This is a blue plaque | memorial=blue_plaque |
+| memorial-type.13 | This is a historic tank, permanently placed in public space as memorial | memorial=tank |
+| memorial-type.14 | This is a memorial tree | memorial=tree |
+| memorial-type.15 | This is a gravestone; the person is buried here | historic=tomb |
 
 
 

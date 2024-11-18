@@ -5,6 +5,7 @@
 The layer showing postboxes.
 
  - This layer is shown at zoomlevel **12** and higher
+ - This layer will automatically load  [walls_and_buildings](./walls_and_buildings.md)  into the layout as it depends on it:  preset `a postbox on a wall` snaps to this layer (postboxes.presets[1])
 
 ## Table of contents
 
@@ -14,6 +15,7 @@ The layer showing postboxes.
 4. [Supported attributes](#supported-attributes)
   - [images](#images)
   - [minimap](#minimap)
+  - [operator](#operator)
   - [leftover-questions](#leftover-questions)
   - [move-button](#move-button)
   - [delete-button](#delete-button)
@@ -29,6 +31,7 @@ The layer showing postboxes.
 The following options to create new points are included:
 
  - **a postbox** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dpost_box' target='_blank'>post_box</a>
+ - **a postbox on a wall** which has the following tags:<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dpost_box' target='_blank'>post_box</a> (snaps to layers `walls_and_buildings`)
 
 ## Basic tags for this layer
 
@@ -37,6 +40,12 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 [Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22amenity%22%3D%22post_box%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
 ## Supported attributes
+
+**Warning:**,this quick overview is incomplete,
+
+| attribute | type | values which are supported by this layer |
+-----|-----|----- |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/operator#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/operator/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [operator](https://wiki.openstreetmap.org/wiki/Key:operator) | [string](../SpecialInputElements.md#string) |  |
 
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
@@ -47,6 +56,11 @@ _This tagrendering has no question and is thus read-only_
 
 _This tagrendering has no question and is thus read-only_
 *{minimap(18): height: 5rem; overflow: hidden; border-radius:3rem; }*
+
+### operator
+
+The question is `Who operates this postbox?`
+*This postbox is operated by <b>{operator}</b>* is shown if `operator` is set
 
 ### leftover-questions
 

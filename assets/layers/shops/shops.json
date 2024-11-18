@@ -215,14 +215,15 @@
       "description": {
         "en": "You can specify later on what this shop sells.",
         "ca": "Podeu especificar més endavant el que ven aquesta botiga.",
-        "cs": "Přidat nový obchod",
+        "cs": "Později můžete zadat, co tento obchod prodává.",
         "de": "Sie können später angeben, was das Geschäft verkauft.",
         "eo": "Enmeti novan butikon",
-        "es": "Puedes especificar más adelante lo que vende esta tienda.",
+        "es": "Puedes especificar más tarde qué vende esta tienda.",
         "fr": "Ajouter un nouveau magasin",
         "ja": "新しい店を追加する",
         "nl": "Voeg een nieuwe winkel toe",
-        "ru": "Добавить новый магазин"
+        "ru": "Добавить новый магазин",
+        "uk": "Пізніше ви можете уточнити, що саме продає цей магазин."
       }
     }
   ],
@@ -237,9 +238,10 @@
         "ja": "このお店の名前は何ですか?",
         "nl": "Wat is de naam van deze winkel?",
         "de": "Wie ist der Name dieses Geschäfts?",
-        "es": "¿Cual es el nombre de esta tienda?",
+        "es": "¿Cómo se llama esta tienda?",
         "ca": "Quin és el nom d'aquesta botiga?",
-        "cs": "Jak se jmenuje tento obchod?"
+        "cs": "Jak se jmenuje tento obchod?",
+        "uk": "Як називається цей магазин?"
       },
       "render": {
         "en": "This shop is called <i>{name}</i>",
@@ -247,7 +249,9 @@
         "nl": "Deze zaak heet <i>{name}</i>",
         "ca": "La botiga s'anomena <i>{name}</i>",
         "fr": "Ce commerce s'appelle <i>{name}</i>",
-        "cs": "Tento obchod se jmenuje <i>{name}</i>"
+        "cs": "Tento obchod se jmenuje <i>{name}</i>",
+        "uk": "Цей магазин називається <i>{name}</i>",
+        "es": "Esta tienda se llama <i>{name}</i>"
       },
       "freeform": {
         "key": "name"
@@ -266,7 +270,9 @@
           "de": "Um was für ein Geschäft handelt es sich?",
           "fr": "Quel genre de magasin est-ce?",
           "ca": "Quin tipus de botiga és aquesta?",
-          "cs": "Co je to za obchod?"
+          "cs": "Co je to za obchod?",
+          "uk": "Що це за магазин?",
+          "es": "¿Qué tipo de tienda es esta?"
         },
         "render": {
           "en": "This is a {shop}",
@@ -274,7 +280,8 @@
           "fr": "C'est une {shop}",
           "nl": "Dit is een {shop}",
           "ca": "Açò és una {shop}",
-          "cs": "Toto je {shop}"
+          "cs": "Toto je {shop}",
+          "es": "Esta es una {shop}"
         },
         "freeform": {
           "key": "shop",
@@ -302,7 +309,9 @@
             "then": {
               "en": "Bicycle rental shop",
               "nl": "Fietsverhuurzaak",
-              "de": "Fahrradverleih"
+              "de": "Fahrradverleih",
+              "uk": "Пункт прокату велосипедів",
+              "es": "Tienda de alquiler de bicicletas"
             }
           }
         ],
@@ -315,11 +324,15 @@
       "id": "brand",
       "question": {
         "en": "What is the brand of this shop?",
-        "de": "Zu welcher Marke gehört dieses Geschäft?"
+        "de": "Zu welcher Marke gehört dieses Geschäft?",
+        "uk": "Яка марка цього магазину?",
+        "es": "¿Cuál es la marca de esta tienda?"
       },
       "render": {
         "en": "Part of <b>{brand}</b>",
-        "de": "Teil von <b>{brand}</b>"
+        "de": "Teil von <b>{brand}</b>",
+        "es": "Parte de <b>{brand}</b>",
+        "uk": "Частина <b>{brand}</b>"
       },
       "freeform": {
         "key": "brand"
@@ -329,7 +342,9 @@
           "if": "not:brand=yes",
           "then": {
             "en": "This shop does not have a specific brand, it is not part of a bigger chain",
-            "de": "Das Geschäft gehört zu keiner Marke oder Handelskette"
+            "de": "Das Geschäft gehört zu keiner Marke oder Handelskette",
+            "uk": "Цей магазин не має певного бренду, він не є частиною великої мережі",
+            "es": "Esta tienda no tiene una marca específica, no forma parte de una cadena más grande"
           }
         }
       ]
@@ -339,7 +354,9 @@
       "question": {
         "en": "Does this shop sell second-hand items?",
         "de": "Verlauft das Geschäft auch Second-Hand-Produkte?",
-        "cs": "Prodává tento obchod použité zboží?"
+        "cs": "Prodává tento obchod použité zboží?",
+        "es": "¿Esta tienda vende artículos de segunda mano?",
+        "uk": "Чи продає цей магазин вживані речі?"
       },
       "mappings": [
         {
@@ -388,7 +405,8 @@
         "fr": "Quels formats de papier cette boutique propose-t-elle ?",
         "nl": "Op welke papiergroottes kan deze zaak printen?",
         "ca": "Quins formats de paper ofereix aquesta botiga?",
-        "cs": "Jaké formáty papíru tento obchod nabízí?"
+        "cs": "Jaké formáty papíru tento obchod nabízí?",
+        "es": "¿Qué formatos de papel ofrece esta tienda?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -400,7 +418,8 @@
             "fr": "Cette boutique peut imprimer sur des papiers de format A4",
             "nl": "Deze zaak kan printen op A4-formaat",
             "ca": "Aquesta botiga pot imprimir en papers de mida A4",
-            "cs": "Tento obchod umí tisknout na papíry velikosti A4"
+            "cs": "Tento obchod umí tisknout na papíry velikosti A4",
+            "es": "Esta tienda puede imprimir en papeles de tamaño A4"
           },
           "ifnot": "service:print:A4=no"
         },
@@ -412,7 +431,8 @@
             "fr": "Cette boutique peut imprimer sur des papiers de format A3",
             "nl": "Deze zaak kan printen op A3-formaat",
             "ca": "Aquesta botiga pot imprimir en papers de mida A3",
-            "cs": "Tento obchod umí tisknout na papíry velikosti A3"
+            "cs": "Tento obchod umí tisknout na papíry velikosti A3",
+            "es": "Esta tienda puede imprimir en papeles de tamaño A3"
           },
           "ifnot": "service:print:A3=no"
         },
@@ -424,7 +444,8 @@
             "fr": "Cette boutique peut imprimer sur des papiers de format A2",
             "nl": "Deze zaak kan printen op A2-formaat",
             "ca": "Aquesta botiga pot imprimir en papers de mida A2",
-            "cs": "Tento obchod umí tisknout na papíry velikosti A2"
+            "cs": "Tento obchod umí tisknout na papíry velikosti A2",
+            "es": "Esta tienda puede imprimir en papeles de tamaño A2"
           },
           "ifnot": "service:print:A2=no"
         },
@@ -436,7 +457,8 @@
             "fr": "Cette boutique peut imprimer sur des papiers de format A1",
             "nl": "Deze zaak kan printen op A1-formaat",
             "ca": "Aquesta botiga pot imprimir en papers de mida A1",
-            "cs": "Tento obchod umí tisknout na papíry velikosti A1"
+            "cs": "Tento obchod umí tisknout na papíry velikosti A1",
+            "es": "Esta tienda puede imprimir en papeles de tamaño A1"
           },
           "ifnot": "service:print:A1=no"
         },
@@ -448,7 +470,8 @@
             "fr": "Cette boutique peut imprimer sur des papiers de format A0",
             "nl": "Deze zaak kan printen op A0-formaat",
             "ca": "Aquesta botiga pot imprimir en papers de mida A0",
-            "cs": "Tento obchod umí tisknout na papíry velikosti A0"
+            "cs": "Tento obchod umí tisknout na papíry velikosti A0",
+            "es": "Esta tienda puede imprimir en papeles de tamaño A0"
           },
           "ifnot": "service:print:A0=no"
         }
@@ -465,25 +488,29 @@
       },
       "question": {
         "en": "Does this shop offer a binding service?",
-        "de": "Bietet dieser Laden einen Bindeservice an?"
+        "de": "Bietet dieser Laden einen Bindeservice an?",
+        "es": "¿Esta tienda ofrece un servicio de encuadernación?"
       },
       "questionHint": {
         "en": "Does this shop bind a bundle of pages into a small book, e.g. with a comb, a spiral, wire or by gluing?",
-        "de": "Bindet dieser Laden ein Bündel von Seiten zu einem kleinen Buch, z.B. mit einer Kamm-, Spiral-, Drahtbindung oder durch Kleben?"
+        "de": "Bindet dieser Laden ein Bündel von Seiten zu einem kleinen Buch, z.B. mit einer Kamm-, Spiral-, Drahtbindung oder durch Kleben?",
+        "es": "¿Esta tienda encuaderna un conjunto de páginas en un pequeño libro, por ejemplo, con un peine, una espiral, alambre o pegamento?"
       },
       "mappings": [
         {
           "if": "service:binding=yes",
           "then": {
             "en": "This shop binds papers into a booklet",
-            "de": "Dieser Laden bindet Papiere zu einem Heft"
+            "de": "Dieser Laden bindet Papiere zu einem Heft",
+            "es": "Esta tienda encuaderna papeles en un folleto"
           }
         },
         {
           "if": "service:binding=no",
           "then": {
             "en": "This shop does bind books",
-            "de": "Dieser Laden bindet Bücher"
+            "de": "Dieser Laden bindet Bücher",
+            "es": "Esta tienda encuaderna libros"
           }
         }
       ]
@@ -492,7 +519,8 @@
       "id": "key_cutter",
       "question": {
         "en": "Does this shop offer key cutting?",
-        "de": "Bietet dieser Laden Schlüsselschneiden an?"
+        "de": "Bietet dieser Laden Schlüsselschneiden an?",
+        "es": "¿Esta tienda ofrece el corte de llaves?"
       },
       "mappings": [
         {
@@ -502,7 +530,8 @@
           "icon": "./assets/layers/id_presets/fas-key.svg",
           "then": {
             "en": "This shop is also specialized in key cutting",
-            "de": "Dieser Laden ist auch auf das Schlüsselschneiden spezialisiert"
+            "de": "Dieser Laden ist auch auf das Schlüsselschneiden spezialisiert",
+            "es": "Esta tienda también está especializada en el corte de llaves"
           },
           "addExtraTags": [
             "service:key_cutting=yes"
@@ -514,7 +543,8 @@
           "then": {
             "en": "This shop offers key cutting as a service",
             "de": "Dieser Laden bietet Schlüsselschneiden als Dienstleistung an",
-            "nl": "Deze winkel kopieert sleutels"
+            "nl": "Deze winkel kopieert sleutels",
+            "es": "Esta tienda ofrece el corte de llaves como servicio"
           }
         },
         {
@@ -526,7 +556,8 @@
           },
           "then": {
             "en": "This shops does not offer key cutting as a service",
-            "de": "Dieser Laden bietet kein Schlüsselschneiden als Dienstleistung an"
+            "de": "Dieser Laden bietet kein Schlüsselschneiden als Dienstleistung an",
+            "es": "Esta tienda no ofrece el corte de llaves como servicio"
           }
         }
       ],
@@ -556,10 +587,11 @@
         "ru": "Продаются ли велосипеды в этом магазине?",
         "pt_BR": "Esta loja vende bicicletas?",
         "pt": "Esta loja vende bicicletas?",
-        "es": "¿Vende bicis esta tienda?",
+        "es": "¿Esta tienda vende bicicletas?",
         "da": "Sælger denne butik cykler?",
         "ca": "Aquesta botiga ven bicicletes?",
-        "cs": "Prodává tento obchod jízdní kola?"
+        "cs": "Prodává tento obchod jízdní kola?",
+        "uk": "Чи продає цей магазин велосипеди?"
       },
       "condition": {
         "#": "Yes, DIY-stores sometimes sell bikes! E.g.: https://www.hubo.be/nl/zoekresultaten/?q=fiets",
@@ -567,6 +599,7 @@
           "service:bicycle:retail~*",
           "shop=outdoor",
           "shop=sport",
+          "shop=sports",
           "shop=diy",
           "shop=doityourself"
         ]
@@ -578,7 +611,9 @@
             "en": "This shop sells new bikes",
             "nl": "Deze winkel verkoopt nieuwe fietsen",
             "fr": "Ce magasin vend des vélos nouveaux",
-            "de": "Dieses Geschäft verkauft neue Fahrräder"
+            "de": "Dieses Geschäft verkauft neue Fahrräder",
+            "es": "Esta tienda vende bicicletas nuevas",
+            "uk": "У цьому магазині продають нові велосипеди"
           }
         },
         {
@@ -587,7 +622,9 @@
             "en": "This shop doesn't sell new bikes",
             "nl": "Deze winkel verkoopt geen nieuwe fietsen",
             "fr": "Ce magasin ne vend pas de vélo nouveaux",
-            "de": "Dieses Geschäft verkauft keine neuen Fahrräder"
+            "de": "Dieses Geschäft verkauft keine neuen Fahrräder",
+            "es": "Esta tienda no vende bicicletas nuevas",
+            "uk": "Цей магазин не продає нові велосипеди"
           }
         }
       ]
@@ -611,7 +648,7 @@
         "de": "Verkauft dieses Geschäft gebrauchte Fahrräder?",
         "it": "Questo negozio vende bici usate?",
         "ru": "В этом магазине продаются подержанные велосипеды?",
-        "es": "¿Vende bicis de segunda mano esta tienda?",
+        "es": "¿Esta tienda vende bicicletas de segunda mano?",
         "da": "Sælger denne butik brugte cykler?",
         "ca": "Aquesta botiga ven bicicletes de segona mà?",
         "cs": "Prodává tento obchod použitá jízdní kola?"
@@ -628,10 +665,11 @@
             "de": "Das Geschäft verkauft auch gebrauchte Fahrräder",
             "it": "Questo negozio vende bici usate",
             "ru": "В этом магазине продаются подержанные велосипеды",
-            "es": "Esta tienda vende bicis de segunda mano",
+            "es": "Esta tienda vende bicicletas de segunda mano",
             "da": "Denne butik sælger brugte cykler",
             "ca": "Aquesta botiga ven bicis de segona mà",
-            "cs": "Tento obchod prodává použitá jízdní kola"
+            "cs": "Tento obchod prodává použitá jízdní kola",
+            "uk": "У цьому магазині продають вживані велосипеди"
           }
         },
         {
@@ -645,7 +683,7 @@
             "de": "Das Geschäft verkauft keine gebrauchten Fahrräder",
             "it": "Questo negozio non vende bici usate",
             "ru": "В этом магазине не продаются подержанные велосипеды",
-            "es": "Esta tienda no vende bicis de segunda mano",
+            "es": "Esta tienda no vende bicicletas de segunda mano",
             "da": "Denne butik sælger ikke brugte cykler",
             "ca": "Aquesta botiga no ven bicis de segona mà",
             "cs": "Tento obchod neprodává kola z druhé ruky"
@@ -662,10 +700,11 @@
             "de": "Das Geschäft verkauft ausschließlich gebrauchte Fahrräder",
             "it": "Questo negozio vende solamente bici usate",
             "ru": "В этом магазине продаются только подержанные велосипеды",
-            "es": "Esta tienda solo vende bicis de segunda mano",
+            "es": "Esta tienda solo vende bicicletas de segunda mano",
             "da": "Denne butik sælger kun brugte cykler",
             "ca": "Aquesta botiga sols ven bicis de segona mà",
-            "cs": "Tento obchod prodává pouze kola z druhé ruky"
+            "cs": "Tento obchod prodává pouze kola z druhé ruky",
+            "uk": "Цей магазин продає лише вживані велосипеди"
           }
         }
       ]
@@ -677,6 +716,7 @@
         "or": [
           "service:bicycle:repair~*",
           "shop=sport",
+          "shop=sports",
           "shop=outdoor",
           "shop=bicycle",
           "service:bicycle:retail=yes",
@@ -694,7 +734,7 @@
         "ru": "В этом магазине ремонтируют велосипеды?",
         "pt_BR": "Esta loja conserta bicicletas?",
         "pt": "Esta loja conserta bicicletas?",
-        "es": "¿Repara bicis esta tienda?",
+        "es": "¿Esta tienda repara bicicletas?",
         "da": "Reparerer denne butik cykler?",
         "ca": "Aquesta botiga repara bicicletes?",
         "cs": "Opravuje tento obchod jízdní kola?"
@@ -712,7 +752,7 @@
             "ru": "Этот магазин ремонтирует велосипеды",
             "pt_BR": "Esta loja conserta bicicletas",
             "pt": "Esta loja conserta bicicletas",
-            "es": "Esta tienda repara bicis",
+            "es": "Esta tienda repara bicicletas",
             "da": "Denne butik reparerer cykler",
             "ca": "Aquesta botiga repara bicis",
             "cs": "Tento obchod opravuje jízdní kola"
@@ -730,7 +770,7 @@
             "ru": "Этот магазин не ремонтирует велосипеды",
             "pt_BR": "Esta loja não conserta bicicletas",
             "pt": "Esta loja não conserta bicicletas",
-            "es": "Esta tienda no repara bicis",
+            "es": "Esta tienda no repara bicicletas",
             "da": "Denne butik reparerer ikke cykler",
             "ca": "Aquesta botiga no repara bicis",
             "cs": "Tento obchod neopravuje jízdní kola"
@@ -748,7 +788,7 @@
             "ru": "Этот магазин ремонтирует только велосипеды, купленные здесь",
             "pt_BR": "Esta loja conserta bicicletas compradas aqui",
             "pt": "Esta loja conserta bicicletas compradas aqui",
-            "es": "Esta tienda solo repara bicis compradas aquí",
+            "es": "Esta tienda solo repara bicicletas compradas aquí",
             "da": "Denne butik reparerer kun cykler købt her",
             "ca": "Aquesta botiga sols repara bicis comprades aquí",
             "cs": "Tento obchod opravuje pouze zde zakoupená kola"
@@ -766,7 +806,7 @@
             "ru": "В этом магазине обслуживают велосипеды определённого бренда",
             "pt_BR": "Esta loja conserta bicicletas de uma certa marca",
             "pt": "Esta loja conserta bicicletas de uma certa marca",
-            "es": "Esta tienda solo repara bicis de una cierta marca",
+            "es": "Esta tienda solo repara bicicletas de una determinada marca",
             "da": "Dette værksted reparerer kun cykler af et bestemt mærke",
             "ca": "Aquesta tenda sols repara bicis d’una marca concreta",
             "cs": "Tento obchod opravuje pouze kola určité značky"
@@ -782,6 +822,7 @@
           "service:bicycle:rental~*",
           "shop=bicycle",
           "shop=sport",
+          "shop=sports",
           "shop=bicycle_repair",
           "shop=outdoor",
           "shop=rental"
@@ -797,14 +838,17 @@
         "ru": "Этот магазин сдает велосипеды в аренду?",
         "pt_BR": "Esta loja aluga bicicletas?",
         "pt": "Esta loja aluga bicicletas?",
-        "es": "¿Alquila bicicis esta tienda?",
+        "es": "¿Esta tienda alquila bicicletas?",
         "da": "Udlejer denne butik cykler?",
         "ca": "Aquesta botiga alquila bicicletes?",
-        "cs": "Pronajímá tento obchod kola?"
+        "cs": "Pronajímá tento obchod kola?",
+        "uk": "Чи дає цей магазин велосипеди напрокат?"
       },
       "questionHint": {
         "en": "This is about rental for e.g. tourists who need a bike. Some bicycle repair shops offer a bicycle to use while your bicycle is being repaired but this is not considered rental for this question.",
-        "de": "Es geht um die Vermietung, z.B. an Touristen, die ein Fahrrad benötigen. Einige Fahrradwerkstätten bieten ein Fahrrad an, das man benutzen kann, während das eigene Fahrrad repariert wird, aber dies wird für diese Frage nicht als Vermietung betrachtet."
+        "de": "Es geht um die Vermietung, z.B. an Touristen, die ein Fahrrad benötigen. Einige Fahrradwerkstätten bieten ein Fahrrad an, das man benutzen kann, während das eigene Fahrrad repariert wird, aber dies wird für diese Frage nicht als Vermietung betrachtet.",
+        "uk": "Йдеться про прокат для туристів, яким потрібен велосипед. Деякі майстерні з ремонту велосипедів пропонують велосипед на час ремонту, але це не вважається прокатом в даному випадку.",
+        "es": "Esto se refiere al alquiler para, por ejemplo, turistas que necesitan una bicicleta. Algunas tiendas de reparación de bicicletas ofrecen una bicicleta para usar mientras se repara la suya, pero esto no se considera alquiler para esta pregunta."
       },
       "mappings": [
         {
@@ -819,10 +863,11 @@
             "ru": "Этот магазин сдает велосипеды в аренду",
             "pt_BR": "Esta loja aluga bicicletas",
             "pt": "Esta loja aluga bicicletas",
-            "es": "Esta tienda alquila bicis",
+            "es": "Esta tienda alquila bicicletas",
             "da": "Denne butik udlejer cykler",
             "ca": "Aquesta botiga lloga bicis",
-            "cs": "Tento obchod pronajímá jízdní kola"
+            "cs": "Tento obchod pronajímá jízdní kola",
+            "uk": "У цьому магазині можна взяти напрокат велосипеди"
           }
         },
         {
@@ -837,10 +882,11 @@
             "ru": "Этот магазин не сдает велосипеды напрокат",
             "pt_BR": "Esta loja não aluga bicicletas",
             "pt": "Esta loja não aluga bicicletas",
-            "es": "Esta tienda no alquila bicis",
+            "es": "Esta tienda no alquila bicicletas",
             "da": "Denne butik udlejer ikke cykler",
             "ca": "Aquesta botiga no lloga bicis",
-            "cs": "Tento obchod nepronajímá kola"
+            "cs": "Tento obchod nepronajímá kola",
+            "uk": "Цей магазин не дає велосипеди напрокат"
           }
         }
       ]
@@ -870,7 +916,7 @@
         "de": "Gibt es in diesem Geschäft eine öffentlich nutzbare Luftpumpe?",
         "it": "Questo negozio offre l’uso a chiunque di una pompa per bici?",
         "ru": "Предлагается ли в этом магазине велосипедный насос для всеобщего пользования?",
-        "es": "¿Esta tienda ofrece una bomba para que la utilice cualquiera?",
+        "es": "¿Esta tienda ofrece una bomba de bicicleta para uso de cualquiera?",
         "da": "Tilbyder denne butik en cykelpumpe til brug for alle?",
         "ca": "Aquesta botiga ofereix una manxa perquè la utilitzi qualsevol?",
         "cs": "Nabízí tento obchod pumpu na kolo k použití pro kohokoli?"
@@ -895,7 +941,7 @@
             "de": "Im Geschäft gibt es eine öffentlich nutzbare Luftpumpe",
             "it": "Questo negozio offre l’uso pubblico di una pompa per bici",
             "ru": "В этом магазине есть велосипедный насос для всеобщего пользования",
-            "es": "Esta tienda ofrece una bomba para cualquiera",
+            "es": "Esta tienda ofrece una bomba de bicicleta para cualquiera",
             "da": "Denne butik tilbyder en cykelpumpe til alle",
             "ca": "Aquesta botiga ofereix una manxa per a tothom",
             "cs": "Tento obchod nabízí pumpu na kolo pro každého"
@@ -911,7 +957,7 @@
             "de": "Im Geschäft gibt es keine öffentlich nutzbare Luftpumpe",
             "it": "Questo negozio non offre l’uso pubblico di una pompa per bici",
             "ru": "В этом магазине нет велосипедного насоса для всеобщего пользования",
-            "es": "Esta tienda no ofrece una bomba para cualquiera",
+            "es": "Esta tienda no ofrece una bomba de bicicleta para cualquiera",
             "da": "Denne butik tilbyder ikke en cykelpumpe til nogen",
             "ca": "Aquesta botiga no ofereix una manxa per a tothom",
             "cs": "Tento obchod nenabízí pumpičku na kolo pro každého"
@@ -925,7 +971,7 @@
             "fr": "Il y a une pompe à vélo, c'est indiqué comme un point séparé",
             "it": "C’è una pompa per bici, è mostrata come punto separato",
             "de": "Es gibt eine Luftpumpe, sie ist als separater Punkt eingetragen",
-            "es": "Hay una bomba para bicicletas, se muestra como un punto separado",
+            "es": "Hay una bomba de bicicleta, se muestra como un punto separado",
             "da": "Der er cykelpumpe, den er vist som et separat punkt",
             "ca": "Hi ha una manxa, es mostra com a un punt separat",
             "cs": "K dispozici je pumpa na jízdní kola, je zobrazena jako samostatný bod"
@@ -951,7 +997,7 @@
         "de": "Gibt es hier Werkzeug, um das eigene Fahrrad zu reparieren?",
         "it": "Sono presenti degli attrezzi per riparare la propria bici?",
         "ru": "Есть ли здесь инструменты для починки собственного велосипеда?",
-        "es": "¿Hay herramientas para reparar tu propia bici?",
+        "es": "¿Hay herramientas aquí para reparar tu propia bicicleta?",
         "da": "Er der værktøj her til at reparere din egen cykel?",
         "ca": "Hi ha ferramentes perquè reparis la teva bici?",
         "cs": "Jsou zde nástroje na opravu vlastního kola?"
@@ -967,7 +1013,7 @@
             "de": "Das Geschäft bietet Werkzeug an, um das eigene Fahrrad zu reparieren",
             "it": "Questo negozio offre degli attrezzi per la riparazione fai da te",
             "da": "Denne butik tilbyder værktøj til gør-det-selv-reparation",
-            "es": "Esta tienda ofrece herramientas para la reparación DIY",
+            "es": "Esta tienda ofrece herramientas para la reparación de bicicletas por cuenta propia",
             "ca": "Aquesta botiga ofereix ferramentes per a la reparació DIY",
             "cs": "Tento obchod nabízí nářadí pro kutilské opravy"
           }
@@ -982,7 +1028,7 @@
             "de": "Das Geschäft bietet kein Werkzeug an, um das eigene Fahrrad zu reparieren",
             "it": "Questo negozio non offre degli attrezzi per la riparazione fai da te",
             "da": "Denne butik tilbyder ikke værktøj til gør-det-selv reparation",
-            "es": "Esta tienda no ofrece herramientas para la reparación DIY",
+            "es": "Esta tienda no ofrece herramientas para la reparación de bicicletas por cuenta propia",
             "ca": "Aquesta botiga no ofereix ferramentes per a la reparació DIY",
             "cs": "Tento obchod nenabízí nářadí pro opravy svépomocí"
           }
@@ -996,7 +1042,7 @@
             "it": "Gli attrezzi per la riparazione fai da te sono disponibili solamente se hai acquistato/noleggiato la bici nel negozio",
             "de": "Das Geschäft bietet nur Werkzeug an, um das eigene Fahrrad zu reparieren, wenn es dort gekauft/gemietet wurde",
             "ru": "Инструменты для починки доступны только при покупке/аренде велосипеда в магазине",
-            "es": "Las herramientas para reparaciones DIT solo están disponibles si compraste/alquilaste la bicicleta en la tienda",
+            "es": "Las herramientas para la reparación de bicicletas por cuenta propia solo están disponibles si compraste/alquilaste la bicicleta en la tienda",
             "da": "Værktøj til gør-det-selv-reparation er kun tilgængeligt, hvis du har købt/lejet cyklen i butikken",
             "ca": "Les ferramentes per a reparacions DIY sols estan disponibles si vas comprar/llogar la bici a la botiga",
             "cs": "Nářadí pro opravy svépomocí je k dispozici pouze v případě, že jste si kolo koupili/pronajali v prodejně"
@@ -1021,7 +1067,7 @@
         "it": "Vengono lavate le bici qua?",
         "ru": "Здесь моют велосипеды?",
         "de": "Bietet dieses Geschäft Fahrradreinigungen an?",
-        "es": "¿Aquí se lavan bicicletas?",
+        "es": "¿Se lavan bicicletas aquí?",
         "da": "Vaskes cykler her?",
         "ca": "Aquí es renten bicicletes?",
         "cs": "Myjí se zde jízdní kola?"
@@ -1050,7 +1096,7 @@
             "fr": "Ce magasin a une installation pour laver soi même des vélos",
             "it": "Questo negozio ha una struttura dove è possibile pulire la propria bici",
             "de": "Im Geschäft können Fahrräder selbst gereinigt werden",
-            "es": "Esta tienda tiene una instalación donde uno puede limpiar bicicletas por si mismo",
+            "es": "Esta tienda tiene una instalación donde uno puede limpiar las bicicletas por sí mismo",
             "da": "Denne butik har et anlæg, hvor man selv kan rengøre cykler",
             "ca": "Aquesta botiga té una instal·lació on un pot rentar les bicis per un mateix",
             "cs": "Tento obchod má zařízení, kde si můžete sami vyčistit jízdní kola"
@@ -1087,7 +1133,8 @@
         "nl": "Biedt deze winkel biologische producten aan?",
         "ca": "Aquesta botiga ofereix productes orgànics?",
         "fr": "Ce commerce propose-t-il des produits bio ?",
-        "cs": "Nabízí tento obchod bio produkty?"
+        "cs": "Nabízí tento obchod bio produkty?",
+        "es": "¿Esta tienda ofrece productos orgánicos?"
       },
       "mappings": [
         {
@@ -1098,7 +1145,8 @@
             "nl": "Deze winkel biedt biologische producten aan",
             "ca": "Aquesta botiga ofereix productes orgànics",
             "fr": "Ce commerce propose des produits bio",
-            "cs": "Tento obchod nabízí bio produkty"
+            "cs": "Tento obchod nabízí bio produkty",
+            "es": "Esta tienda ofrece productos orgánicos"
           }
         },
         {
@@ -1109,7 +1157,8 @@
             "nl": "Deze winkel biedt uitluitend biologische producten aan",
             "ca": "Aquesta botiga sols ofereix productes orgànics",
             "fr": "Ce commerce ne propose que des produits bio",
-            "cs": "Tento obchod nabízí pouze bio produkty"
+            "cs": "Tento obchod nabízí pouze bio produkty",
+            "es": "Esta tienda solo ofrece productos orgánicos"
           }
         },
         {
@@ -1120,7 +1169,8 @@
             "nl": "Deze winkel heeft geen biologische producten",
             "ca": "Aquesta botiga no ofereix productes orgànics",
             "fr": "Ce commerce ne propose pas de produit bio",
-            "cs": "Tento obchod nenabízí bio produkty"
+            "cs": "Tento obchod nenabízí bio produkty",
+            "es": "Esta tienda no ofrece productos orgánicos"
           }
         }
       ],
@@ -1181,7 +1231,8 @@
           "question": {
             "en": "Only show shops selling second-hand items",
             "de": "Nur Second-Hand-Geschäfte anzeigen",
-            "cs": "Zobrazit pouze obchody prodávající použité zboží"
+            "cs": "Zobrazit pouze obchody prodávající použité zboží",
+            "es": "Mostrar solo tiendas que venden artículos de segunda mano"
           },
           "osmTags": {
             "or": [
@@ -1227,10 +1278,11 @@
           "nl": "{title()} is permanent gestopt",
           "en": "{title()} has closed down permanently",
           "de": "{title()} wurde dauerhaft geschlossen",
-          "es": "{title()} ha cerrado permanentemente",
+          "es": "{title()} ha cerrado definitivamente",
           "fr": "{title()} a fermé définitivement",
           "ca": "{title()} ha tancat permanentment",
-          "cs": "{title()} je trvale uzavřen"
+          "cs": "{title()} je trvale uzavřen",
+          "uk": "{title()} закрився назавжди"
         }
       }
     ]

@@ -10,5 +10,17 @@
       "https://upload.wikimedia.org/wikipedia/commons/6/6d/726-postbox.svg",
       "http://emoji.streamlineicons.com"
     ]
+  },
+  {
+    "path": "postbox_wall.svg",
+    "license": "CC-BY-4.0",
+    "authors": [
+      "Vincent Le Moign",
+      "https://twitter.com/webalys"
+    ],
+    "sources": [
+      "https://upload.wikimedia.org/wikipedia/commons/6/6d/726-postbox.svg",
+      "http://emoji.streamlineicons.com"
+    ]
   }
 ]

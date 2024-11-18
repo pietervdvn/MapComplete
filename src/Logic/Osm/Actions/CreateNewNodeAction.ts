@@ -38,7 +38,7 @@ export default class CreateNewNodeAction extends OsmCreateAction {
             theme: string
             changeType: "create" | "import" | null
             specialMotivation?: string
-        },
+        }
     ) {
         super(null, basicTags !== undefined && basicTags.length > 0)
         this._basicTags = basicTags
@@ -102,21 +102,12 @@ export default class CreateNewNodeAction extends OsmCreateAction {
             return [newPointChange]
         }
 
-        const change = new InsertPointIntoWayAction(
-            this._lat,
-            this._lon,
-            id,
-            this._snapOnto,
-            {
-                reusePointWithinMeters: this._reusePointDistance,
-                allowReuseOfPreviouslyCreatedPoints: this._reusePreviouslyCreatedPoint,
-            },
-        ).prepareChangeDescription()
+        const change = new InsertPointIntoWayAction(this._lat, this._lon, id, this._snapOnto, {
+            reusePointWithinMeters: this._reusePointDistance,
+            allowReuseOfPreviouslyCreatedPoints: this._reusePreviouslyCreatedPoint,
+        }).prepareChangeDescription()
 
-        return [
-            newPointChange,
-            { ...change, meta: this.meta },
-        ]
+        return [newPointChange, { ...change, meta: this.meta }]
     }
 
     private setElementId(id: number) {

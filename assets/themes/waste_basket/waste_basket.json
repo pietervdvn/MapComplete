@@ -15,7 +15,9 @@
     "pa_PK": "کوڑے دی ٹوکری",
     "es": "Papeleras",
     "cs": "Odpadkové koše",
-    "pl": "Kosz na śmieci"
+    "pl": "Kosz na śmieci",
+    "ru": "Корзины для мусора",
+    "uk": "Урни для сміття"
   },
   "description": {
     "en": "On this map, you'll find waste baskets near you. If a waste basket is missing on this map, you can add it yourself.",
@@ -23,13 +25,14 @@
     "de": "Die Karte zeigt Abfalleimer in der Nähe. Wenn ein Abfalleimer fehlt, kannst du ihn selbst hinzufügen.",
     "it": "In questa cartina troverai i cestini dei rifiuti nei tuoi paraggi. Se manca un cestino, puoi inserirlo tu stesso",
     "zh_Hant": "在這份地圖當中，你可以找到你附近的垃圾筒。如果地圖有遺漏垃圾筒，你可以自己加上去",
-    "hu": "Ezen a térképen megtalálhatod a közeledben lévő szemeteskosarakat. Ha hiányzik egy kuka a térképről, te is felrajzolhatod",
+    "hu": "Ezen a térképen megtalálhatod a közeledben lévő szemeteskosarakat. Ha hiányzik egy kuka a térképről, te is felrajzolhatod.",
     "fr": "Retrouvez les poubelles près de vous. Si une poubelle est manquante, vous pouvez l’ajouter vous même",
     "da": "På dette kort finder du skraldespande i nærheden af dig. Hvis der mangler en skraldespand på dette kort, kan du selv tilføje den",
     "ca": "A aquest mapa trobaràs les papereres a prop teua. Si falta una paperera al mapa pots afegir-la tu mateix",
-    "es": "En este mapa, encontrarás las papeleras cercanas a ti. Si falta alguna en el mapa, puedes añadirla tu mismo.",
+    "es": "En este mapa, encontrarás papeleras cerca de ti. Si falta alguna papelera en este mapa, puedes añadirla tú mismo.",
     "cs": "Na této mapě najdete koše na odpadky ve vašem okolí. Pokud na této mapě odpadkový koš chybí, můžete jej přidat sami.",
-    "pl": "Na tej mapie znajdziesz kosze na śmieci w twojej okolicy. Jeśli brakuje kosza, możesz go dodać"
+    "pl": "Na tej mapie znajdziesz kosze na śmieci w twojej okolicy. Jeśli brakuje kosza, możesz go dodać",
+    "uk": "На цій мапі ви знайдете найближчі до вас контейнери для сміття. Якщо на мапі відсутній кошик для сміття, ви можете додати його самостійно."
   },
   "shortDescription": {
     "en": "A map with waste baskets",
@@ -44,7 +47,8 @@
     "ca": "Un mapa amb papereres",
     "es": "Un mapa con papeleras",
     "cs": "Mapa odpadkových košů",
-    "pl": "Mapa koszy na śmieci"
+    "pl": "Mapa koszy na śmieci",
+    "uk": "Мапа з урнами для сміття"
   },
   "icon": "./assets/themes/waste_basket/waste_basket.svg",
   "layers": [

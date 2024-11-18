@@ -3,15 +3,17 @@
   "title": {
     "en": "Ghost Signs",
     "de": "Geisterzeichen",
-    "es": "Señales fantasma",
-    "cs": "Nápisy na zdech"
+    "es": "Letreros fantasma",
+    "cs": "Nápisy na zdech",
+    "uk": "Примарні знаки"
   },
   "description": {
     "en": "A map showing disused signs on buildings",
     "de": "Eine Karte, die ungenutzte Zeichen auf Gebäuden zeigt",
-    "es": "Un mapa que muestra los rótulos en desuso de los edificios",
+    "es": "Un mapa que muestra letreros en desuso en los edificios",
     "ca": "Un mapa que mostra els rètols en desús dels edificis",
-    "cs": "Mapa zobrazující nepoužívané nápisy na budovách"
+    "cs": "Mapa zobrazující nepoužívané nápisy na budovách",
+    "uk": "Мапа, на якій показані вивіски на будівлях, що не використовуються"
   },
   "icon": "./assets/themes/advertising/wall_painting.svg",
   "layers": [

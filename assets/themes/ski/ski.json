@@ -3,16 +3,19 @@
   "title": {
     "en": "Ski pistes and aerialways",
     "de": "Skipisten und Seilbahnen",
-    "es": "Pistas de esquí y vías aéreas",
+    "es": "Pistas de esquí y remontes",
     "da": "Skiløjper og skilifte",
     "fr": "Pistes de ski et remontées mécaniques",
-    "cs": "Sjezdovky a lanové dráhy"
+    "cs": "Sjezdovky a lanové dráhy",
+    "hu": "Sípályák és felvonók",
+    "uk": "Гірськолижні траси та витяги"
   },
   "description": {
     "en": "Everything you need to go skiing",
     "de": "Alles, was Sie zum Skifahren brauchen",
     "es": "Todo lo que necesitas para esquiar",
-    "cs": "Vše, co potřebujete k lyžování"
+    "cs": "Vše, co potřebujete k lyžování",
+    "uk": "Все необхідне для катання на лижах"
   },
   "icon": "./assets/layers/aerialway/chair_lift.svg",
   "layers": [

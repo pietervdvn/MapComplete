@@ -174,7 +174,7 @@ export default abstract class ImportFlow<ArgT extends ImportFlowArguments> {
                     return { error: t.hasBeenImported }
                 }
 
-                if (!state.layout.official && !isTesting) {
+                if (!state.theme.official && !isTesting) {
                     // Unofficial theme - imports not allowed
                     return {
                         error: t.officialThemesOnly,
@@ -183,7 +183,7 @@ export default abstract class ImportFlow<ArgT extends ImportFlowArguments> {
                 }
 
                 if (this.targetLayer === undefined) {
-                    const e = `Target layer not defined: error in import button for theme: ${this.state.layout.id}: layer ${this.args.targetLayer} not found`
+                    const e = `Target layer not defined: error in import button for theme: ${this.state.theme.id}: layer ${this.args.targetLayer} not found`
                     console.error(e)
                     return { error: new Translation({ "*": e }) }
                 }

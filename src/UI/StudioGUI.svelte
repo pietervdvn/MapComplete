@@ -31,7 +31,11 @@
   import Add from "../assets/svg/Add.svelte"
   import { SearchIcon } from "@rgossiaux/svelte-heroicons/solid"
   import Hash from "../Logic/Web/Hash"
-  const directEntry = QueryParameters.GetBooleanQueryParameter("direct",false,"If set, write directly into the theme files")
+  const directEntry = QueryParameters.GetBooleanQueryParameter(
+    "direct",
+    false,
+    "If set, write directly into the theme files"
+  )
 
   export let studioUrl =
     window.location.hostname === "127.0.0.2" || directEntry.data
@@ -60,7 +64,10 @@
   )
   expertMode.addCallbackAndRunD((expert) => console.log("Expert mode is", expert))
   const createdBy = osmConnection.userDetails.data.name
-  const uid = osmConnection.userDetails.map((ud) => directEntry.data ? null : ud?.uid, [directEntry])
+  const uid = osmConnection.userDetails.map(
+    (ud) => (directEntry.data ? null : ud?.uid),
+    [directEntry]
+  )
   const studio = new StudioServer(studioUrl, uid, directEntry.data)
 
   let layersWithErr = studio.fetchOverview()
@@ -288,9 +295,11 @@
         <div class="flex justify-between">
           <Checkbox selected={expertMode}>Enable more options (expert mode)</Checkbox>
           <span class="subtle">MapComplete version {version}</span>
-          <div>{$uid} {studioUrl}
+          <div>
+            {$uid}
+            {studioUrl}
             {#if $directEntry}
-            <b>direct</b>
+              <b>direct</b>
             {/if}
           </div>
         </div>
@@ -375,7 +384,7 @@
       </div>
     {:else if state === "loading"}
       <div class="h-8 w-8">
-        <Loading >Fetching information from {studioUrl}</Loading>
+        <Loading>Fetching information from {studioUrl}</Loading>
       </div>
     {:else if state === "editing_layer"}
       <EditLayer state={editLayerState} {backToStudio}>

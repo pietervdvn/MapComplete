@@ -12,8 +12,5 @@
     osmConnection: OsmConnection
   }
 
-
   let customThemes
 </script>
-
-

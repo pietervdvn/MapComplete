@@ -34,7 +34,7 @@ export default class SelectedElementTagsUpdater {
 
     public static applyUpdate(latestTags: OsmTags, id: string, state: SpecialVisualizationState) {
         try {
-            const leftRightSensitive = state.layout.isLeftRightSensitive()
+            const leftRightSensitive = state.theme.isLeftRightSensitive()
 
             if (leftRightSensitive) {
                 SimpleMetaTagger.removeBothTagging(latestTags)
@@ -111,7 +111,7 @@ export default class SelectedElementTagsUpdater {
     }
     private invalidateCache(s: Feature) {
         const state = this.state
-        const wasPartOfLayer = state.layout.getMatchingLayer(s.properties)
+        const wasPartOfLayer = state.theme.getMatchingLayer(s.properties)
         state.toCacheSavers?.get(wasPartOfLayer.id)?.invalidateCacheAround(BBox.get(s))
     }
     private installCallback() {

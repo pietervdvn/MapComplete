@@ -24,7 +24,7 @@ import FeaturePropertiesStore from "../FeatureSource/Actors/FeaturePropertiesSto
  */
 export class Changes {
     public readonly pendingChanges: UIEventSource<ChangeDescription[]> =
-        LocalStorageSource.GetParsed<ChangeDescription[]>("pending-changes", [])
+        LocalStorageSource.getParsed<ChangeDescription[]>("pending-changes", [])
     public readonly allChanges = new UIEventSource<ChangeDescription[]>(undefined)
     public readonly state: {
         allElements?: IndexedFeatureSource
@@ -49,11 +49,11 @@ export class Changes {
             featureSwitches: {
                 featureSwitchMorePrivacy?: Store<boolean>
                 featureSwitchIsTesting?: Store<boolean>
-            },
-            osmConnection: OsmConnection,
-            reportError?: (error: string) => void,
-            featureProperties?: FeaturePropertiesStore,
-            historicalUserLocations?: FeatureSource,
+            }
+            osmConnection: OsmConnection
+            reportError?: (error: string) => void
+            featureProperties?: FeaturePropertiesStore
+            historicalUserLocations?: FeatureSource
             allElements?: IndexedFeatureSource
         },
         leftRightSensitive: boolean = false,
@@ -64,15 +64,18 @@ export class Changes {
         this.allChanges.setData([...this.pendingChanges.data])
         // If a pending change contains a negative ID, we save that
         this._nextId = Math.min(-1, ...(this.pendingChanges.data?.map((pch) => pch.id ?? 0) ?? []))
-        if(isNaN(this._nextId) && state.reportError !== undefined){
-            state.reportError("Got a NaN as nextID. Pending changes IDs are:" +this.pendingChanges.data?.map(pch => pch?.id).join("."))
+        if (isNaN(this._nextId) && state.reportError !== undefined) {
+            state.reportError(
+                "Got a NaN as nextID. Pending changes IDs are:" +
+                    this.pendingChanges.data?.map((pch) => pch?.id).join(".")
+            )
             this._nextId = -100
         }
         this.state = state
         this.backend = state.osmConnection.Backend()
         this._reportError = reportError
         this._changesetHandler = new ChangesetHandler(
-            state.featureSwitches.featureSwitchIsTesting,
+            state.featureSwitches?.featureSwitchIsTesting ?? new ImmutableStore(false),
             state.osmConnection,
             state.featureProperties,
             this,
@@ -84,12 +87,12 @@ export class Changes {
         // This doesn't matter however, as the '-1' is per piecewise upload, not global per changeset
     }
 
-    public static createTestObject(): Changes{
+    public static createTestObject(): Changes {
         return new Changes({
             osmConnection: new OsmConnection(),
-            featureSwitches:{
-                featureSwitchIsTesting: new ImmutableStore(true)
-            }
+            featureSwitches: {
+                featureSwitchIsTesting: new ImmutableStore(true),
+            },
         })
     }
 
@@ -298,6 +301,23 @@ export class Changes {
         modifiedObjects: OsmObject[]
         deletedObjects: OsmObject[]
     } {
+        return Changes.createChangesetObjectsStatic(
+            changes,
+            downloadedOsmObjects,
+            ignoreNoCreate,
+            this.previouslyCreated
+        )
+    }
+    public static createChangesetObjectsStatic(
+        changes: ChangeDescription[],
+        downloadedOsmObjects: OsmObject[],
+        ignoreNoCreate: boolean = false,
+        previouslyCreated: OsmObject[]
+    ): {
+        newObjects: OsmObject[]
+        modifiedObjects: OsmObject[]
+        deletedObjects: OsmObject[]
+    } {
         /**
          * This is a rather complicated method which does a lot of stuff.
          *
@@ -322,7 +342,7 @@ export class Changes {
             states.set(o.type + "/" + o.id, "unchanged")
         }
 
-        for (const o of this.previouslyCreated) {
+        for (const o of previouslyCreated) {
             objects.set(o.type + "/" + o.id, o)
             states.set(o.type + "/" + o.id, "unchanged")
         }
@@ -372,7 +392,7 @@ export class Changes {
                     throw "Hmm? This is a bug"
                 }
                 objects.set(id, osmObj)
-                this.previouslyCreated.push(osmObj)
+                previouslyCreated.push(osmObj)
             }
 
             const state = states.get(id)
@@ -837,7 +857,16 @@ export class Changes {
             )
 
             // We keep all the refused changes to try them again
-            this.pendingChanges.setData(refusedChanges.flatMap((c) => c))
+            this.pendingChanges.setData(
+                refusedChanges
+                    .flatMap((c) => c)
+                    .filter((c) => {
+                        if (c.id === null || c.id === undefined) {
+                            return false
+                        }
+                        return true
+                    })
+            )
         } catch (e) {
             console.error(
                 "Could not handle changes - probably an old, pending changeset in localstorage with an invalid format; erasing those",

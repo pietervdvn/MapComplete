@@ -20,14 +20,12 @@
   let results = state.searchState.suggestions
   let isSearching = state.searchState.suggestionsSearchRunning
   let recentlySeen: Store<GeocodeResult[]> = state.userRelatedState.recentlyVisitedSearch.value
-const t = Translations.t.general.search
+  const t = Translations.t.general.search
 </script>
 
 {#if $searchTerm.length > 0}
   <SidebarUnit>
-
-    <h3><Tr t={t.locations}/></h3>
-
+    <h3><Tr t={t.locations} /></h3>
 
     {#if $results?.length > 0}
       {#each $results as entry (entry)}
@@ -36,7 +34,7 @@ const t = Translations.t.general.search
     {/if}
 
     {#if $isSearching}
-      <div class="flex justify-center m-4 my-8">
+      <div class="m-4 my-8 flex justify-center">
         <Loading>
           <Tr t={t.searching} />
         </Loading>
@@ -45,26 +43,28 @@ const t = Translations.t.general.search
 
     {#if !$isSearching && $results.length === 0}
       <b class="flex justify-center p-4">
-        <Tr t={t.nothingFor.Subs({term: "<i>"+$searchTerm+"</i>"})} />
+        <Tr t={t.nothingFor.Subs({ term: "<i>" + $searchTerm + "</i>" })} />
       </b>
     {/if}
   </SidebarUnit>
-
 {:else if $recentlySeen?.length > 0}
   <SidebarUnit>
     <div class="flex justify-between">
-
       <h3 class="m-2">
         <Tr t={t.recents} />
       </h3>
       <DotMenu>
-        <button on:click={() => {state.userRelatedState.recentlyVisitedSearch.clear()}}>
+        <button
+          on:click={() => {
+            state.userRelatedState.recentlyVisitedSearch.clear()
+          }}
+        >
           <TrashIcon />
-          <Tr t={t.deleteSearchHistory}/>
+          <Tr t={t.deleteSearchHistory} />
         </button>
         <button on:click={() => state.guistate.openUsersettings("sync-visited-locations")}>
           <CogIcon />
-          <Tr t={t.editSearchSyncSettings}/>
+          <Tr t={t.editSearchSyncSettings} />
         </button>
       </DotMenu>
     </div>

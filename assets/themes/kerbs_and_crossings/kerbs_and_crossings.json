@@ -11,7 +11,9 @@
     "ru": "Бордюры и пешеходные переходы",
     "es": "Bordillos y cruces",
     "ca": "Vorals i encreuaments",
-    "pl": "Krawężniki i przejścia"
+    "pl": "Krawężniki i przejścia",
+    "hu": "Járdaszegélyek és gyalogosátkelők",
+    "uk": "Бордюри та переходи"
   },
   "description": {
     "en": "A map showing kerbs and crossings.",
@@ -23,7 +25,8 @@
     "nb_NO": "Fortauskanter og fotgjengerfelt.",
     "es": "Un mapa que muestra bordillos y cruces.",
     "ca": "Un mapa amb voreres i encreuaments.",
-    "pl": "Mapa pokazująca krawężniki i przejścia."
+    "pl": "Mapa pokazująca krawężniki i przejścia.",
+    "uk": "Мапа з позначенням бордюрів та пішохідних переходів."
   },
   "icon": "./assets/layers/kerbs/KerbIcon.svg",
   "startZoom": 19,

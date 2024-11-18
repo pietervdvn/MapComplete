@@ -26,19 +26,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "diet:gluten_free",
@@ -280,35 +284,43 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Restaurants and fast food shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Restaurants and fast food shows images based on the keys image, image:0, image:1,..., panoramax, panoramax:0, panoramx:1, ... ,  wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Restaurants and fast food shows images based on the keys image, image:0, image:1,..., panoramax, panoramax:0, panoramx:1, ... ,  wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Restaurants and fast food shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Restaurants and fast food shows images based on the keys image, image:0, image:1,..., panoramax, panoramax:0, panoramx:1, ... ,  wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Restaurants and fast food shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Restaurants and fast food shows images based on the keys image, image:0, image:1,..., panoramax, panoramax:0, panoramx:1, ... ,  wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Restaurants and fast food shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Restaurants and fast food shows images based on the keys image, image:0, image:1,..., panoramax, panoramax:0, panoramx:1, ... ,  wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "image",
-      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Restaurants and fast food allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "website:menu",
@@ -351,7 +363,7 @@
     },
     {
       "key": "delivery",
-      "description": "Layer 'Restaurants and fast food' shows delivery=yes with a fixed text, namely 'This business does home delivery (eventually via a third party)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Glutenfree')",
+      "description": "Layer 'Restaurants and fast food' shows delivery=yes with a fixed text, namely 'This business does home delivery (possibly via a third party)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Glutenfree')",
       "value": "yes"
     },
     {
@@ -430,46 +442,6 @@
       "value": "only"
     },
     {
-      "key": "diet:sugar_free",
-      "description": "Layer 'Restaurants and fast food' shows diet:sugar_free=only with a fixed text, namely 'This shop <b>only sells sugar free</b> products' and allows to pick this as a default answer (in the mapcomplete.org theme 'Glutenfree')",
-      "value": "only"
-    },
-    {
-      "key": "diet:sugar_free",
-      "description": "Layer 'Restaurants and fast food' shows diet:sugar_free=yes with a fixed text, namely 'This shop has a big sugar free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Glutenfree')",
-      "value": "yes"
-    },
-    {
-      "key": "diet:sugar_free",
-      "description": "Layer 'Restaurants and fast food' shows diet:sugar_free=limited with a fixed text, namely 'This shop has a <b>limited sugar free</b> offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Glutenfree')",
-      "value": "limited"
-    },
-    {
-      "key": "diet:sugar_free",
-      "description": "Layer 'Restaurants and fast food' shows diet:sugar_free=no with a fixed text, namely 'This shop has no sugar free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Glutenfree')",
-      "value": "no"
-    },
-    {
-      "key": "diet:lactose_free",
-      "description": "Layer 'Restaurants and fast food' shows diet:lactose_free=only with a fixed text, namely '<b>Only sells lactose free</b> products' and allows to pick this as a default answer (in the mapcomplete.org theme 'Glutenfree')",
-      "value": "only"
-    },
-    {
-      "key": "diet:lactose_free",
-      "description": "Layer 'Restaurants and fast food' shows diet:lactose_free=yes with a fixed text, namely 'Big lactose free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Glutenfree')",
-      "value": "yes"
-    },
-    {
-      "key": "diet:lactose_free",
-      "description": "Layer 'Restaurants and fast food' shows diet:lactose_free=limited with a fixed text, namely '<b>Limited lactose free</b> offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Glutenfree')",
-      "value": "limited"
-    },
-    {
-      "key": "diet:lactose_free",
-      "description": "Layer 'Restaurants and fast food' shows diet:lactose_free=no with a fixed text, namely 'No lactose free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Glutenfree')",
-      "value": "no"
-    },
-    {
       "key": "organic",
       "description": "Layer 'Restaurants and fast food' shows organic=no with a fixed text, namely 'There are no organic options available' and allows to pick this as a default answer (in the mapcomplete.org theme 'Glutenfree') (This is only shown if cuisine!=friture)",
       "value": "no"
@@ -506,7 +478,7 @@
     },
     {
       "key": "diet:vegan",
-      "description": "Layer 'Restaurants and fast food' shows diet:vegan=only with a fixed text, namely 'Servers only vegan snacks and burgers' and allows to pick this as a default answer (in the mapcomplete.org theme 'Glutenfree') (This is only shown if cuisine=friture)",
+      "description": "Layer 'Restaurants and fast food' shows diet:vegan=only with a fixed text, namely 'Serves only vegan snacks and burgers' and allows to pick this as a default answer (in the mapcomplete.org theme 'Glutenfree') (This is only shown if cuisine=friture)",
       "value": "only"
     },
     {
@@ -563,6 +535,46 @@
       "key": "reusable_packaging:accept",
       "description": "Layer 'Restaurants and fast food' shows reusable_packaging:accept=only with a fixed text, namely 'You <b>must</b> bring your own container to order here.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Glutenfree') (This is only shown if cuisine=friture)",
       "value": "only"
+    },
+    {
+      "key": "diet:sugar_free",
+      "description": "Layer 'Restaurants and fast food' shows diet:sugar_free=only with a fixed text, namely 'This shop <b>only sells sugar free</b> products' and allows to pick this as a default answer (in the mapcomplete.org theme 'Glutenfree')",
+      "value": "only"
+    },
+    {
+      "key": "diet:sugar_free",
+      "description": "Layer 'Restaurants and fast food' shows diet:sugar_free=yes with a fixed text, namely 'This shop has a big sugar free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Glutenfree')",
+      "value": "yes"
+    },
+    {
+      "key": "diet:sugar_free",
+      "description": "Layer 'Restaurants and fast food' shows diet:sugar_free=limited with a fixed text, namely 'This shop has a <b>limited sugar free</b> offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Glutenfree')",
+      "value": "limited"
+    },
+    {
+      "key": "diet:sugar_free",
+      "description": "Layer 'Restaurants and fast food' shows diet:sugar_free=no with a fixed text, namely 'This shop has no sugar free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Glutenfree')",
+      "value": "no"
+    },
+    {
+      "key": "diet:lactose_free",
+      "description": "Layer 'Restaurants and fast food' shows diet:lactose_free=only with a fixed text, namely '<b>Only sells lactose free</b> products' and allows to pick this as a default answer (in the mapcomplete.org theme 'Glutenfree')",
+      "value": "only"
+    },
+    {
+      "key": "diet:lactose_free",
+      "description": "Layer 'Restaurants and fast food' shows diet:lactose_free=yes with a fixed text, namely 'Big lactose free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Glutenfree')",
+      "value": "yes"
+    },
+    {
+      "key": "diet:lactose_free",
+      "description": "Layer 'Restaurants and fast food' shows diet:lactose_free=limited with a fixed text, namely '<b>Limited lactose free</b> offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Glutenfree')",
+      "value": "limited"
+    },
+    {
+      "key": "diet:lactose_free",
+      "description": "Layer 'Restaurants and fast food' shows diet:lactose_free=no with a fixed text, namely 'No lactose free offering' and allows to pick this as a default answer (in the mapcomplete.org theme 'Glutenfree')",
+      "value": "no"
     },
     {
       "key": "smoking",
@@ -689,19 +701,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Ice cream parlors allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Ice cream parlors allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Ice cream parlors allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Ice cream parlors allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Ice cream parlors allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Ice cream parlors allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Ice cream parlors allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Ice cream parlors allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Ice cream parlors allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "diet:gluten_free",
@@ -883,19 +899,23 @@
     },
     {
       "key": "image",
-      "description": "The layer 'Shop allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Shop allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Shop allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Shop allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Shop allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Shop allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Shop allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Shop allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Shop allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "diet:gluten_free",
@@ -1911,12 +1931,12 @@
     },
     {
       "key": "service:bicycle:retail",
-      "description": "Layer 'Shop' shows service:bicycle:retail=yes with a fixed text, namely 'This shop sells new bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Glutenfree') (This is only shown if service:bicycle:retail~.+ | shop=outdoor | shop=sport | shop=diy | shop=doityourself)",
+      "description": "Layer 'Shop' shows service:bicycle:retail=yes with a fixed text, namely 'This shop sells new bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Glutenfree') (This is only shown if service:bicycle:retail~.+ | shop=outdoor | shop=sport | shop=sports | shop=diy | shop=doityourself)",
       "value": "yes"
     },
     {
       "key": "service:bicycle:retail",
-      "description": "Layer 'Shop' shows service:bicycle:retail=no with a fixed text, namely 'This shop doesn't sell new bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Glutenfree') (This is only shown if service:bicycle:retail~.+ | shop=outdoor | shop=sport | shop=diy | shop=doityourself)",
+      "description": "Layer 'Shop' shows service:bicycle:retail=no with a fixed text, namely 'This shop doesn't sell new bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Glutenfree') (This is only shown if service:bicycle:retail~.+ | shop=outdoor | shop=sport | shop=sports | shop=diy | shop=doityourself)",
       "value": "no"
     },
     {
@@ -1936,32 +1956,32 @@
     },
     {
       "key": "service:bicycle:repair",
-      "description": "Layer 'Shop' shows service:bicycle:repair=yes with a fixed text, namely 'This shop repairs bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Glutenfree') (This is only shown if service:bicycle:repair~.+ | shop=sport | shop=outdoor | shop=bicycle | service:bicycle:retail=yes | service:bicycle:second_hand=yes | service:bicycle:second_hand=only)",
+      "description": "Layer 'Shop' shows service:bicycle:repair=yes with a fixed text, namely 'This shop repairs bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Glutenfree') (This is only shown if service:bicycle:repair~.+ | shop=sport | shop=sports | shop=outdoor | shop=bicycle | service:bicycle:retail=yes | service:bicycle:second_hand=yes | service:bicycle:second_hand=only)",
       "value": "yes"
     },
     {
       "key": "service:bicycle:repair",
-      "description": "Layer 'Shop' shows service:bicycle:repair=no with a fixed text, namely 'This shop doesn't repair bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Glutenfree') (This is only shown if service:bicycle:repair~.+ | shop=sport | shop=outdoor | shop=bicycle | service:bicycle:retail=yes | service:bicycle:second_hand=yes | service:bicycle:second_hand=only)",
+      "description": "Layer 'Shop' shows service:bicycle:repair=no with a fixed text, namely 'This shop doesn't repair bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Glutenfree') (This is only shown if service:bicycle:repair~.+ | shop=sport | shop=sports | shop=outdoor | shop=bicycle | service:bicycle:retail=yes | service:bicycle:second_hand=yes | service:bicycle:second_hand=only)",
       "value": "no"
     },
     {
       "key": "service:bicycle:repair",
-      "description": "Layer 'Shop' shows service:bicycle:repair=only_sold with a fixed text, namely 'This shop only repairs bikes bought here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Glutenfree') (This is only shown if service:bicycle:repair~.+ | shop=sport | shop=outdoor | shop=bicycle | service:bicycle:retail=yes | service:bicycle:second_hand=yes | service:bicycle:second_hand=only)",
+      "description": "Layer 'Shop' shows service:bicycle:repair=only_sold with a fixed text, namely 'This shop only repairs bikes bought here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Glutenfree') (This is only shown if service:bicycle:repair~.+ | shop=sport | shop=sports | shop=outdoor | shop=bicycle | service:bicycle:retail=yes | service:bicycle:second_hand=yes | service:bicycle:second_hand=only)",
       "value": "only_sold"
     },
     {
       "key": "service:bicycle:repair",
-      "description": "Layer 'Shop' shows service:bicycle:repair=brand with a fixed text, namely 'This shop only repairs bikes of a certain brand' and allows to pick this as a default answer (in the mapcomplete.org theme 'Glutenfree') (This is only shown if service:bicycle:repair~.+ | shop=sport | shop=outdoor | shop=bicycle | service:bicycle:retail=yes | service:bicycle:second_hand=yes | service:bicycle:second_hand=only)",
+      "description": "Layer 'Shop' shows service:bicycle:repair=brand with a fixed text, namely 'This shop only repairs bikes of a certain brand' and allows to pick this as a default answer (in the mapcomplete.org theme 'Glutenfree') (This is only shown if service:bicycle:repair~.+ | shop=sport | shop=sports | shop=outdoor | shop=bicycle | service:bicycle:retail=yes | service:bicycle:second_hand=yes | service:bicycle:second_hand=only)",
       "value": "brand"
     },
     {
       "key": "service:bicycle:rental",
-      "description": "Layer 'Shop' shows service:bicycle:rental=yes with a fixed text, namely 'This shop rents out bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Glutenfree') (This is only shown if service:bicycle:rental~.+ | shop=bicycle | shop=sport | shop=bicycle_repair | shop=outdoor | shop=rental)",
+      "description": "Layer 'Shop' shows service:bicycle:rental=yes with a fixed text, namely 'This shop rents out bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Glutenfree') (This is only shown if service:bicycle:rental~.+ | shop=bicycle | shop=sport | shop=sports | shop=bicycle_repair | shop=outdoor | shop=rental)",
       "value": "yes"
     },
     {
       "key": "service:bicycle:rental",
-      "description": "Layer 'Shop' shows service:bicycle:rental=no with a fixed text, namely 'This shop doesn't rent out bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Glutenfree') (This is only shown if service:bicycle:rental~.+ | shop=bicycle | shop=sport | shop=bicycle_repair | shop=outdoor | shop=rental)",
+      "description": "Layer 'Shop' shows service:bicycle:rental=no with a fixed text, namely 'This shop doesn't rent out bikes' and allows to pick this as a default answer (in the mapcomplete.org theme 'Glutenfree') (This is only shown if service:bicycle:rental~.+ | shop=bicycle | shop=sport | shop=sports | shop=bicycle_repair | shop=outdoor | shop=rental)",
       "value": "no"
     },
     {
@@ -2088,21 +2108,21 @@
     },
     {
       "key": "service:bicycle:cleaning:charge",
-      "description": "Layer 'Shop' shows and asks freeform values for key 'service:bicycle:cleaning:charge' (in the mapcomplete.org theme 'Glutenfree') (This is only shown if amenity!=bike_wash & amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)"
+      "description": "Layer 'Shop' shows and asks freeform values for key 'service:bicycle:cleaning:charge' (in the mapcomplete.org theme 'Glutenfree') (This is only shown if amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)"
     },
     {
       "key": "service:bicycle:cleaning:fee",
-      "description": "Layer 'Shop' shows service:bicycle:cleaning:fee=no with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer (in the mapcomplete.org theme 'Glutenfree') (This is only shown if amenity!=bike_wash & amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)",
+      "description": "Layer 'Shop' shows service:bicycle:cleaning:fee=no with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer (in the mapcomplete.org theme 'Glutenfree') (This is only shown if amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)",
       "value": "no"
     },
     {
       "key": "service:bicycle:cleaning:fee",
-      "description": "Layer 'Shop' shows service:bicycle:cleaning:fee=yes & service:bicycle:cleaning:charge= with a fixed text, namely 'Free to use' (in the mapcomplete.org theme 'Glutenfree') (This is only shown if amenity!=bike_wash & amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)",
+      "description": "Layer 'Shop' shows service:bicycle:cleaning:fee=yes & service:bicycle:cleaning:charge= with a fixed text, namely 'Free to use' (in the mapcomplete.org theme 'Glutenfree') (This is only shown if amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)",
       "value": "yes"
     },
     {
       "key": "service:bicycle:cleaning:charge",
-      "description": "Layer 'Shop' shows service:bicycle:cleaning:fee=yes & service:bicycle:cleaning:charge= with a fixed text, namely 'Free to use' (in the mapcomplete.org theme 'Glutenfree') Picking this answer will delete the key service:bicycle:cleaning:charge. (This is only shown if amenity!=bike_wash & amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)",
+      "description": "Layer 'Shop' shows service:bicycle:cleaning:fee=yes & service:bicycle:cleaning:charge= with a fixed text, namely 'Free to use' (in the mapcomplete.org theme 'Glutenfree') Picking this answer will delete the key service:bicycle:cleaning:charge. (This is only shown if amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)",
       "value": ""
     },
     {

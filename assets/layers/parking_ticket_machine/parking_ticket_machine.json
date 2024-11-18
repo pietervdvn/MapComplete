@@ -4,7 +4,8 @@
     "en": "Parking Ticket Machines",
     "nl": "Parkeerkaartautomaten",
     "de": "Parkscheinautomaten",
-    "cs": "Parkovací automaty"
+    "cs": "Parkovací automaty",
+    "es": "Máquinas de Tickets de Aparcamiento"
   },
   "description": {
     "en": "Layer with parking ticket machines to pay for parking.",
@@ -12,7 +13,8 @@
     "de": "Ebene mit Parkscheinautomaten zum Bezahlen des Parkens.",
     "fr": "Couche avec les distributeurs de tickets pour payer le parking.",
     "ca": "Capa amb màquines de bitllets d'aparcament per pagar l'aparcament.",
-    "cs": "Vrstva s parkovacími automaty pro placení parkovného."
+    "cs": "Vrstva s parkovacími automaty pro placení parkovného.",
+    "es": "Capa con máquinas expendedoras de tickets de aparcamiento para pagar el aparcamiento."
   },
   "source": {
     "osmTags": {
@@ -29,7 +31,8 @@
       "nl": "Parkeerkaartautomaat",
       "de": "Parkscheinautomat",
       "ca": "Màquina de bitllets d'aparcament",
-      "cs": "Parkovací automat"
+      "cs": "Parkovací automat",
+      "es": "Máquina de Tickets de Aparcamiento"
     }
   },
   "pointRendering": [
@@ -63,7 +66,8 @@
         "nl": "een parkeerkaartautomaat",
         "de": "Ein Parkscheinautomat",
         "ca": "una màquina de tiquets d'aparcament",
-        "cs": "parkovací automat"
+        "cs": "parkovací automat",
+        "es": "una máquina de tickets de aparcamiento"
       }
     }
   ],
@@ -79,7 +83,8 @@
         "nl": "Wat is het referentienummer van deze parkeerkaartautomaat?",
         "de": "Wie lautet die Referenznummer dieses Parkscheinautomaten?",
         "ca": "Quin és el número de referència d'aquesta màquina de bitllets d'aparcament?",
-        "cs": "Jaké je referenční číslo tohoto parkovacího automatu?"
+        "cs": "Jaké je referenční číslo tohoto parkovacího automatu?",
+        "es": "¿Cuál es el número de referencia de esta máquina de tickets de aparcamiento?"
       },
       "freeform": {
         "key": "ref",
@@ -90,7 +95,8 @@
           "de": "Referenznummer",
           "ca": "Número de referència",
           "fr": "Numéro de référence",
-          "cs": "Referenční číslo"
+          "cs": "Referenční číslo",
+          "es": "Número de referencia"
         }
       },
       "render": {
@@ -98,7 +104,8 @@
         "nl": "Deze parkeerkaartautomaat heeft het referentienummer {ref}",
         "de": "Dieser Parkscheinautomat hat die Referenznummer {ref}",
         "ca": "Aquesta màquina de tiquets d'aparcament té el número de referència {ref}",
-        "cs": "Tento parkovací automat má referenční číslo {ref}"
+        "cs": "Tento parkovací automat má referenční číslo {ref}",
+        "es": "Esta máquina de tickets de aparcamiento tiene el número de referencia {ref}"
       },
       "mappings": [
         {
@@ -108,7 +115,8 @@
             "nl": "Deze parkeerkaartautomaat heeft geen referentienummer",
             "de": "Dieser Parkscheinautomat hat keine Referenznummer",
             "ca": "Aquesta màquina de tiquets d'aparcament no té número de referència",
-            "cs": "Tento parkovací automat nemá žádné referenční číslo"
+            "cs": "Tento parkovací automat nemá žádné referenční číslo",
+            "es": "Esta máquina de tickets de aparcamiento no tiene número de referencia"
           }
         }
       ]

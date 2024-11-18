@@ -5,18 +5,15 @@ import { Feature } from "geojson"
 import { SpecialVisualizationState } from "../../UI/SpecialVisualization"
 
 export default class TitleHandler {
-    constructor(
-        selectedElement: Store<Feature>,
-        state: SpecialVisualizationState
-    ) {
+    constructor(selectedElement: Store<Feature>, state: SpecialVisualizationState) {
         const currentTitle: Store<string> = selectedElement.map(
             (selected) => {
                 const lng = Locale.language.data
-                const defaultTitle = state.layout?.title?.textFor(lng) ?? "MapComplete"
+                const defaultTitle = state.theme?.title?.textFor(lng) ?? "MapComplete"
                 if (selected === undefined) {
                     return defaultTitle
                 }
-                const layer = state.layout.getMatchingLayer(selected.properties)
+                const layer = state.theme.getMatchingLayer(selected.properties)
                 if (layer === undefined) {
                     return defaultTitle
                 }
@@ -34,7 +31,6 @@ export default class TitleHandler {
                 const el = document.createElement("span")
                 el.innerHTML = title
                 return el.textContent + " | " + defaultTitle
-
             },
             [Locale.language]
         )

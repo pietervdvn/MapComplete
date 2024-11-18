@@ -69,7 +69,7 @@ export class PrevalidateLayer extends DesugaringStep<LayerConfigJson> {
                     context
                         .enters("source", "osmTags")
                         .err(
-                            "The source states tags which give a very wide selection: it only uses negative expressions, which will result in too much and unexpected data. Add at least one required tag. The tags are:\n\t" +
+                            "The tags that will be used to load data from OpenStreetMap are all negative - this means that they all match something that _doesn't_ have a certain tag. For example, `key=` means anything without `key`. Did you perhaps mean to use `key~*`, meaning anything _with_ this key set? The tags are:\n\t" +
                                 osmTags.asHumanString(false, false, {})
                         )
                 }
@@ -88,7 +88,7 @@ export class PrevalidateLayer extends DesugaringStep<LayerConfigJson> {
             }
         }
 
-        if(json["doCount"] !== undefined){
+        if (json["doCount"] !== undefined) {
             context.err("Detected 'doCount'. did you mean: isCounted ?")
         }
 
@@ -145,7 +145,11 @@ export class PrevalidateLayer extends DesugaringStep<LayerConfigJson> {
             }
         }
 
-        if(this._isBuiltin && json.allowMove === undefined && json.source["geoJson"] === undefined) {
+        if (
+            this._isBuiltin &&
+            json.allowMove === undefined &&
+            json.source["geoJson"] === undefined
+        ) {
             if (!Constants.priviliged_layers.find((x) => x == json.id)) {
                 context.err("Layer " + json.id + " does not have an explicit 'allowMove'")
             }

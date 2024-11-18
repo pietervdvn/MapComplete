@@ -1,11 +1,11 @@
 {
   "contributors": [
     {
-      "commits": 8127,
+      "commits": 8576,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 481,
+      "commits": 495,
       "contributor": "Robin van der Linde"
     },
     {
@@ -13,7 +13,7 @@
       "contributor": "Tobias"
     },
     {
-      "commits": 39,
+      "commits": 41,
       "contributor": "dependabot[bot]"
     },
     {
@@ -21,7 +21,7 @@
       "contributor": "Win Olario"
     },
     {
-      "commits": 33,
+      "commits": 35,
       "contributor": "Hosted Weblate"
     },
     {
@@ -94,6 +94,10 @@
     },
     {
       "commits": 13,
+      "contributor": "danieldegroot2"
+    },
+    {
+      "commits": 13,
       "contributor": "Nicole"
     },
     {
@@ -115,10 +119,6 @@
     {
       "commits": 11,
       "contributor": "RobJN"
-    },
-    {
-      "commits": 10,
-      "contributor": "danieldegroot2"
     },
     {
       "commits": 10,
@@ -166,6 +166,10 @@
     },
     {
       "commits": 3,
+      "contributor": "Languages add-on"
+    },
+    {
+      "commits": 3,
       "contributor": "Thierry1030"
     },
     {
@@ -175,6 +179,18 @@
     {
       "commits": 3,
       "contributor": "Léo Villeveygoux"
+    },
+    {
+      "commits": 2,
+      "contributor": "Kim Minwoo"
+    },
+    {
+      "commits": 2,
+      "contributor": "Robbert Gurdeep Singh"
+    },
+    {
+      "commits": 2,
+      "contributor": "tiptoptom"
     },
     {
       "commits": 2,
@@ -246,6 +262,10 @@
     },
     {
       "commits": 1,
+      "contributor": "mike140"
+    },
+    {
+      "commits": 1,
       "contributor": "Bart Louwers"
     },
     {
@@ -311,10 +331,6 @@
     {
       "commits": 1,
       "contributor": "Arya"
-    },
-    {
-      "commits": 1,
-      "contributor": "Robbert Gurdeep Singh"
     },
     {
       "commits": 1,

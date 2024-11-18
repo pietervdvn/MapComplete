@@ -13,7 +13,7 @@ A layer showing memorials for cyclists, killed in road accidents
 3. [Basic tags for this layer](#basic-tags-for-this-layer)
 4. [Supported attributes](#supported-attributes)
   - [preset_description](#preset_description)
-  - [images](#images)
+  - [images_no_blur](#images_no_blur)
   - [ghost_bike-name](#ghost_bike-name)
   - [ghost_bike-source](#ghost_bike-source)
   - [ghost_bike-inscription](#ghost_bike-inscription)
@@ -59,10 +59,10 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 _This tagrendering has no question and is thus read-only_
 *{preset_description()}*
 
-### images
-This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
+### images_no_blur
+Same as `images`, but uploaded request to disable blurring to the panoramax server
 _This tagrendering has no question and is thus read-only_
-*{image_carousel()}{image_upload()}*
+*{image_carousel()}{image_upload(,,,true)}*
 
 ### ghost_bike-name
 

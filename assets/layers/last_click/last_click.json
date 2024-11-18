@@ -52,7 +52,8 @@
           "ca": "Afegeix un nou punt o nota",
           "fr": "Ajouter un nouveau point ou ajouter une note",
           "pl": "Dodaj nowy punkt lub dodaj notatkę",
-          "cs": "Přidání nového bodu nebo přidání poznámky"
+          "cs": "Přidání nového bodu nebo přidání poznámky",
+          "es": "Añadir un nuevo punto o añadir una nota"
         }
       },
       {
@@ -64,7 +65,8 @@
           "ca": "Afegeix una nova nota",
           "fr": "Ajouter une nouvelle note",
           "pl": "Dodaj nową notatkę",
-          "cs": "Přidání nové poznámky"
+          "cs": "Přidání nové poznámky",
+          "es": "Añadir una nueva nota"
         }
       },
       {
@@ -76,7 +78,8 @@
           "ca": "Afegeix un nou punt",
           "fr": "Ajouter un nouveau point",
           "pl": "Dodaj nowy punkt",
-          "cs": "Přidání nového bodu"
+          "cs": "Přidání nového bodu",
+          "es": "Añadir un nuevo punto"
         }
       }
     ]
@@ -116,7 +119,7 @@
           "da": "Klik her for at tilføje et nyt punkt",
           "de": "Hier klicken, um ein neues Element hinzuzufügen",
           "en": "Click here to add a new item",
-          "es": "Haga clic aquí para añadir un nuevo ítem",
+          "es": "Haz clic aquí para añadir un nuevo elemento",
           "fil": "I-click ito para mag-dagdag ng bagong bagay",
           "fr": "Cliquez ici pour ajouter un élément",
           "hu": "Új elem hozzáadásához kattints ide",
@@ -126,7 +129,8 @@
           "nl": "Klik hier om een item toe te voegen",
           "pt": "Adicionar novo item",
           "zh_Hant": "點這邊新增新項目",
-          "pl": "Kliknij tutaj, aby dodać nowy obiekt"
+          "pl": "Kliknij tutaj, aby dodać nowy obiekt",
+          "uk": "Натисніть тут, щоб додати новий об'єкт"
         },
         "mappings": [
           {
@@ -143,7 +147,8 @@
               "ca": "Crea una nova nota del mapa",
               "fr": "Créer une nouvelle note de carte",
               "pl": "Utwórz nową notatkę na mapie",
-              "cs": "Vytvoření nové mapové poznámky"
+              "cs": "Vytvoření nové mapové poznámky",
+              "es": "Crear una nueva nota del mapa"
             }
           }
         ]

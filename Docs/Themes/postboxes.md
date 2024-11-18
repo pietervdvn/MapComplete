@@ -12,6 +12,7 @@ This theme contains the following layers:
  - [postoffices](../Layers/postoffices.md)
  - [parcel_lockers](../Layers/parcel_lockers.md)
  - [shops](../Layers/shops.md)
+ - [walls_and_buildings](../Layers/walls_and_buildings.md)
 
 Available languages:
 
@@ -28,6 +29,7 @@ Available languages:
  - es
  - cs
  - pl
+ - uk
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.

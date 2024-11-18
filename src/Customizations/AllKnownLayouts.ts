@@ -1,7 +1,7 @@
 import known_themes from "../assets/generated/known_themes.json"
-import LayoutConfig from "../Models/ThemeConfig/LayoutConfig"
+import ThemeConfig from "../Models/ThemeConfig/ThemeConfig"
 import favourite from "../assets/generated/layers/favourite.json"
-import { LayoutConfigJson } from "../Models/ThemeConfig/Json/LayoutConfigJson"
+import { ThemeConfigJson } from "../Models/ThemeConfig/Json/ThemeConfigJson"
 import { AllSharedLayers } from "./AllSharedLayers"
 import Constants from "../Models/Constants"
 
@@ -9,8 +9,8 @@ import Constants from "../Models/Constants"
  * Somewhat of a dictionary, which lazily parses needed themes
  */
 export class AllKnownLayoutsLazy {
-    private readonly raw: Map<string, LayoutConfigJson> = new Map()
-    private readonly dict: Map<string, LayoutConfig> = new Map()
+    private readonly raw: Map<string, ThemeConfigJson> = new Map()
+    private readonly dict: Map<string, ThemeConfig> = new Map()
 
     constructor(includeFavouriteLayer = true) {
         for (const layoutConfigJson of known_themes["themes"]) {
@@ -32,7 +32,7 @@ export class AllKnownLayoutsLazy {
         }
     }
 
-    public getConfig(key: string): LayoutConfigJson {
+    public getConfig(key: string): ThemeConfigJson {
         return this.raw.get(key)
     }
 
@@ -40,13 +40,13 @@ export class AllKnownLayoutsLazy {
         return this.raw.size
     }
 
-    public get(key: string): LayoutConfig {
+    public get(key: string): ThemeConfig {
         const cached = this.dict.get(key)
         if (cached !== undefined) {
             return cached
         }
 
-        const layout = new LayoutConfig(this.getConfig(key))
+        const layout = new ThemeConfig(this.getConfig(key))
         this.dict.set(key, layout)
         return layout
     }

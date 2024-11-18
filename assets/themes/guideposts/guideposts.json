@@ -4,16 +4,19 @@
     "en": "Guideposts",
     "cs": "Rozcestníky",
     "de": "Wegweiser",
-    "es": "Poste guía",
+    "es": "Postes indicadores",
     "pl": "Drogowskazy",
-    "ca": "Pal guia"
+    "ca": "Pal guia",
+    "ru": "Указатели",
+    "uk": "Вказівники"
   },
   "description": {
     "en": "Guideposts (also known as fingerposts or finger posts) are often found along official hiking, cycling, skiing or horseback riding routes to indicate the directions to different destinations. Additionally, they are often named after a region or place and show the altitude.\n\nThe position of a signpost can be used by a hiker/biker/rider/skier as a confirmation of the current position, especially if they use a printed map without a GPS receiver. ",
     "cs": "Podél oficiálních turistických, cyklistických, lyžařských nebo jezdeckých tras se často nacházejí rozcestníky (také známé jako ukazatel směru), které ukazují směry k různým cílům. Navíc jsou často pojmenovány po regionu nebo místě a ukazují nadmořskou výšku.\n\nPolohu rozcestníku může turista/cyklista/jezdec/lyžař využít jako potvrzení aktuální polohy, zejména pokud používá tištěnou mapu bez GPS přijímače. ",
     "de": "Wegweiser an offiziellen Wander-, Rad-, Ski- oder Reitstrecken, um Richtungen zu verschiedenen Zielen anzuzeigen. Sie sind oft nach einer Region oder einem Ort benannt und zeigen die Höhe an.\n\nDie Position eines Wegweisers kann von Wanderern, Radfahrern, Reitern oder Skifahrern als Bestätigung der aktuellen Position genutzt werden, insbesondere wenn sie eine gedruckte Karte ohne GPS-Empfänger verwenden. ",
-    "es": "Los postes guía o indicadores (también conocidos como \"fingerposts\") suelen encontrarse a lo largo de las rutas oficiales de senderismo, ciclismo, esquí o equitación para indicar las direcciones a los distintos destinos. Además, suelen llevar el nombre de una región o lugar e indican la altitud.\n\nLa posición de un poste indicador puede servir al excursionista, ciclista, jinete o esquiador para confirmar su posición actual, sobre todo si utiliza un mapa impreso sin receptor GPS. ",
-    "pl": "Drogowskazy (znane również jako \"palce na słupkach\") często znajdują się wzdłuż oficjalnych szlaków pieszych, rowerowych, narciarskich lub konnych i wskazują drogę do różnych miejsc. Ponadto często noszą nazwy regionu lub miejsca i wskazują wysokość.\n\nPozycja drogowskazu może być wykorzystana przez turystę/rowerzystę/jeźdźca/narciarza jako potwierdzenie aktualnej pozycji, zwłaszcza jeśli korzysta z drukowanej mapy bez odbiornika GPS. "
+    "es": "Los postes indicadores (también conocidos como señalización o \"fingerposts\") suelen encontrarse a lo largo de rutas oficiales de senderismo, ciclismo, esquí o equitación para indicar las direcciones a diferentes destinos. Además, a menudo llevan el nombre de una región o lugar y muestran la altitud.\n\nLa posición de un poste indicador puede ser utilizada por un excursionista/ciclista/jinete/esquiador como confirmación de la posición actual, especialmente si utiliza un mapa impreso sin un receptor GPS. ",
+    "pl": "Drogowskazy (znane również jako \"palce na słupkach\") często znajdują się wzdłuż oficjalnych szlaków pieszych, rowerowych, narciarskich lub konnych i wskazują drogę do różnych miejsc. Ponadto często noszą nazwy regionu lub miejsca i wskazują wysokość.\n\nPozycja drogowskazu może być wykorzystana przez turystę/rowerzystę/jeźdźca/narciarza jako potwierdzenie aktualnej pozycji, zwłaszcza jeśli korzysta z drukowanej mapy bez odbiornika GPS. ",
+    "uk": "Орієнтири (також відомі як вказівні стовпчики) часто зустрічаються вздовж офіційних пішохідних, велосипедних, лижних або кінних маршрутів, щоб вказати напрямок до різних пунктів призначення. Крім того, вони часто названі на честь регіону або місця і показують висоту над рівнем моря.\n\nПоложення вказівника може використовуватися пішоходом/велосипедистом/вершником/лижником як підтвердження поточного положення, особливо якщо він користується друкованою картою без GPS-приймача. "
   },
   "icon": "./assets/layers/guidepost/guidepost.svg",
   "layers": [

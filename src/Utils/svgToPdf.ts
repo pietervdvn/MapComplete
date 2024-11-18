@@ -915,6 +915,7 @@ export class SvgToPdf {
         | "poster_a3"
         | "poster_a2"
         | "current_view_a4"
+        | "current_view_a4_portrait"
         | "current_view_a3_portrait"
         | "current_view_a3_landscape",
         PdfTemplateInfo
@@ -947,6 +948,12 @@ export class SvgToPdf {
             format: "a4",
             orientation: "landscape",
             pages: ["./assets/templates/CurrentMapWithHeaderA4.svg"],
+            isPublic: true,
+        },
+        current_view_a4_portrait: {
+            format: "a4",
+            orientation: "portrait",
+            pages: ["./assets/templates/CurrentMapWithHeader_A4_Portrait.svg"],
             isPublic: true,
         },
         current_view_a3_landscape: {

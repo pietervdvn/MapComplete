@@ -29,7 +29,7 @@
     "en": "A bench is a wooden, metal, stone, … surface where a human can sit. This layers visualises them and asks a few questions about them.",
     "fr": "Un banc est une surface en bois, métal, pierre… sur laquelle un humain peut s'asseoir. Cette couche permet de les visualiser et pose des questions à leur sujet.",
     "de": "Diese Karte stellt Sitzbänke aus Holz, Metall, Stein, … dar und stellt ein paar Fragen, um weitere Informationen zu ergänzen.",
-    "es": "Un banco es una superficie de madera, metal, piedra, ... donde un humano se puede sentar. Estas capas los visualizan y hacen algunas preguntas sobre ellos.",
+    "es": "Un banco es una superficie de madera, metal, piedra,… donde un humano puede sentarse. Esta capa los visualiza y hace algunas preguntas sobre ellos.",
     "da": "En bænk er en træ-, metal-, sten-, ... overflade, hvor et menneske kan sidde. Dette lag visualiserer dem og stiller et par spørgsmål om dem.",
     "cs": "Lavička je dřevěná, kovová, kamenná, ... plocha, na které může člověk sedět. Tato vrstva je vizualizuje a klade si o nich několik otázek.",
     "ca": "Un banc és una superfície de madera, metall, pedra, … on un humà s’hi pot sentar. Aquesta capa els mostra i fa algunes preguntes sobre ells.",
@@ -103,7 +103,7 @@
         "de": "eine Sitzbank",
         "fr": "un banc",
         "nl": "een zitbank",
-        "es": "una banco",
+        "es": "un banco",
         "it": "una panchina",
         "ru": "cкамейка",
         "id": "bangku",
@@ -140,12 +140,13 @@
             "de": "Diese Bank ist zweiseitig und teilt sich die Rückenlehne",
             "ca": "Aquest banc té dues cares i comparteix el respatller",
             "cs": "Tato lavička je oboustranná a má společné opěradlo",
-            "es": "Este banco tiene dos caras y comparte el respaldo",
+            "es": "Este banco es de dos caras y comparte el respaldo",
             "he": "ספסל זה דו צדדי וחולק את משענת הגב",
             "fr": "Ce banc a deux côtés avec un dossier partagé",
             "pl": "Ta ławka jest dwustronna ze wspólnym oparciem",
             "pt_BR": "Esse banco é de dois lados e compartilha o encosto",
-            "pt": "Esse banco é de dois lados e partilha o encosto"
+            "pt": "Esse banco é de dois lados e partilha o encosto",
+            "uk": "Ця лавка двостороння і має спільну спинку"
           },
           "icon": {
             "path": "./assets/layers/bench/two_sided.svg",
@@ -160,7 +161,7 @@
             "fr": "Ce banc a un dossier",
             "nl": "Heeft een rugleuning",
             "es": "Este banco tiene respaldo",
-            "hu": "Van háttámlája",
+            "hu": "A padnak van háttámlája",
             "id": "Sandaran: Ya",
             "it": "Schienale: Sì",
             "ru": "Со спинкой",
@@ -174,7 +175,8 @@
             "ca": "Aquest banc té espatller",
             "da": "Har et ryglæn",
             "cs": "Tato lavice má opěradlo",
-            "he": "יש משענת גב"
+            "he": "יש משענת גב",
+            "uk": "Ця лавка має спинку"
           },
           "addExtraTags": [
             "two_sided=no"
@@ -191,7 +193,7 @@
             "fr": "Ce banc n'a <b>pas</b> de dossier",
             "nl": "Heeft <b>geen</b> rugleuning",
             "es": "Este banco <b>no</b> tiene respaldo",
-            "hu": "<b>Nincs</b> háttámlája",
+            "hu": "A padnak <b>nincs</b> háttámlája",
             "id": "Sandaran: Tidak",
             "it": "Questa panchina <b>non</b> ha uno schienale",
             "ru": "Без спинки",
@@ -204,7 +206,8 @@
             "pt": "Não <b>not</b> tem um encosto",
             "ca": "Aquest banc <b>No</b> té espatller",
             "da": "Har <b>ikke</b> et ryglæn",
-            "cs": "Tato lavice <b>nemá opěradlo</b>"
+            "cs": "Tato lavice <b>nemá opěradlo</b>",
+            "uk": "Ця лавка <b>не має</b> спинки"
           }
         }
       ],
@@ -213,7 +216,7 @@
         "de": "Hat diese Sitzbank eine Rückenlehne?",
         "fr": "Ce banc dispose-t-il d'un dossier ?",
         "nl": "Heeft deze zitbank een rugleuning?",
-        "es": "¿Tiene este banco respaldo?",
+        "es": "¿Este banco tiene respaldo?",
         "hu": "Van-e háttámlája ennek a padnak?",
         "id": "Apakah bangku ini memiliki sandaran?",
         "it": "Questa panchina ha lo schienale?",
@@ -227,7 +230,8 @@
         "da": "Har denne bænk et ryglæn?",
         "cs": "Má tato lavička opěradlo?",
         "ca": "Aquest banc té respatller?",
-        "he": "האם לספסל הזה יש משענת?"
+        "he": "האם לספסל הזה יש משענת?",
+        "uk": "Чи є у цієї лавки спинка?"
       },
       "id": "bench-backrest",
       "labels": [
@@ -243,7 +247,8 @@
             "de": "Diese Sitzbank hat eine oder mehrere Armlehnen",
             "nl": "Deze bank heeft armleuningen",
             "cs": "Tato lavice má jednu nebo více opěrek na ruce",
-            "es": "Este banco dispone de uno o más reposabrazos"
+            "es": "Este banco tiene uno o más reposabrazos",
+            "uk": "Ця лавка має один або кілька підлокітників"
           }
         },
         {
@@ -253,7 +258,8 @@
             "de": "Diese Sitzbank hat <b>keine</b> Armlehnen",
             "nl": "Deze bank heeft <b>geen</b> armleuningen",
             "cs": "Tato lavice <b>nemá opěrky rukou</b>",
-            "es": "Este banco <b>not</b> dispone de reposabrazos"
+            "es": "Este banco <b>no</b> tiene reposabrazos",
+            "uk": "Ця лавка <b>не</b> має підлокітників"
           }
         }
       ],
@@ -262,7 +268,8 @@
         "de": "Hat diese Sitzbank eine oder mehrere Armlehnen?",
         "nl": "Heeft deze bank armleuningen?",
         "cs": "Má tato lavice jednu nebo více opěrek?",
-        "es": "¿Dispone este banco de uno o más reposabrazos?"
+        "es": "¿Este banco tiene uno o más reposabrazos?",
+        "uk": "Чи має ця лавка один або кілька підлокітників?"
       },
       "id": "bench-armrest",
       "labels": [
@@ -276,7 +283,7 @@
         "fr": "{seats} places",
         "nl": "{seats} zitplaatsen",
         "es": "Este banco tiene {seats} asientos",
-        "hu": "{seats} ülőhely",
+        "hu": "A padra {seats} ember tud leülni",
         "id": "{seats} kursi",
         "it": "{seats} posti",
         "ru": "{seats} мест",
@@ -532,7 +539,7 @@
         "pt_BR": "De que é feito o banco (assento)?",
         "pl": "Z czego wykonana jest ławka (siedzisko)?",
         "pt": "De que é feito o banco (assento)?",
-        "es": "¿De que está hecho el banco (asiento)?",
+        "es": "¿De qué está hecho el banco (el asiento)?",
         "da": "Hvad er bænken (sædet) lavet af?",
         "cs": "Z čeho je vyrobena lavice (sedadlo)?",
         "ca": "De què està fent el banc (seient)?",
@@ -557,7 +564,7 @@
         "pt_BR": "Em que direção você olha quando está sentado no banco?",
         "pl": "W jakim kierunku patrzysz siedząc na ławce?",
         "pt": "Em que direção olha quando está sentado no banco?",
-        "es": "¿En qué dirección miras sentado en el banco?",
+        "es": "¿En qué dirección miras cuando te sientas en el banco?",
         "da": "I hvilken retning kigger du, når du sidder på bænken?",
         "cs": "Kterým směrem se díváte, když sedíte na lavičce?",
         "ca": "En quina direcció mires asseguts al banc?"
@@ -575,7 +582,7 @@
         "pl": "Siedząc na ławce, patrzy się w kierunku {direction}°.",
         "pt_BR": "Ao sentar-se no banco, olha-se para {direction} °.",
         "pt": "Ao sentar-se no banco, olha-se para {direction} °.",
-        "es": "Cuando se está sentado en el banco, se mira hacia a {direction}º.",
+        "es": "Cuando te sientas en el banco, miras hacia {direction}°.",
         "da": "Når man sidder på bænken, kigger man i retningen {direction}°.",
         "cs": "Když sedíte na lavičce, díváte se směrem v úhlu {direction}°.",
         "ca": "Quan s'està assegut al banc, es mira cap a {direction}º."
@@ -861,7 +868,7 @@
         "pt_BR": "Quando esta bancada foi pesquisada pela última vez?",
         "pl": "Kiedy ostatnio badano tę ławkę?",
         "pt": "Quando esta bancada foi pesquisada pela última vez?",
-        "es": "¿Cuándo fue la última vez que se inspeccionó este banco?",
+        "es": "¿Cuándo se inspeccionó por última vez este banco?",
         "da": "Hvornår blev denne bænk sidst kortlagt?",
         "cs": "Kdy byla tato lavička naposledy kontrolována?",
         "ca": "Quan va ser l'últim cop que s'ha inspeccionat aquest banc?",
@@ -879,7 +886,7 @@
         "pt_BR": "Esta bancada foi pesquisada pela última vez em {survey:date}",
         "pl": "Ławka ta była ostatnio badana w dniu {survey:date}",
         "pt": "Esta bancada foi pesquisada pela última vez em {survey:date}",
-        "es": "Este banco se inspeccionó por última vez el {survey:date}",
+        "es": "Este banco fue inspeccionado por última vez el {survey:date}",
         "da": "Denne bænk blev sidst kortlagt den {survey:date}",
         "cs": "Tato lavička byla naposledy zkontrolována dne {survey:date}",
         "ca": "Aquest banc s'ha inspeccionat per últim com el {survey:date}",
@@ -902,7 +909,7 @@
             "pt": "Pesquisado hoje!",
             "he": "נבדק היום!",
             "pt_BR": "Pesquisado hoje!",
-            "es": "¡Encuestado hoy!"
+            "es": "¡Inspeccionado hoy!"
           }
         }
       ],
@@ -925,7 +932,8 @@
         "cs": "Tato lavice má následující nápis:<br/><p><i>{inscription}</i></p>",
         "pt": "Este banco tem a seguinte inscrição:<br/><p><i>{inscription}</i></p>",
         "pt_BR": "Esse banco tem a seguinte inscrição: <br/><p><i>{inscription}</i></p>",
-        "es": "Este banco tiene la siguiente inscripción:<br/><p><i>{inscription}</i></p>"
+        "es": "Este banco tiene la siguiente inscripción:<br/><p><i>{inscription}</i></p>",
+        "uk": "Ця лавка має такий напис:<br/><p><i>{inscription}</i></p>"
       },
       "question": {
         "en": "Does this bench have an inscription?",
@@ -936,7 +944,8 @@
         "cs": "Má tato lavička nápis?",
         "pt": "Esse banco tem inscrição?",
         "pt_BR": "Esse banco tem uma inscrição?",
-        "es": "¿Tiene este banco una inscripción?"
+        "es": "¿Este banco tiene alguna inscripción?",
+        "uk": "Чи є на цій лавці напис?"
       },
       "freeform": {
         "key": "inscription",
@@ -957,7 +966,8 @@
             "cs": "Tato lavička nemá nápis",
             "pt": "Este banco não tem inscrição",
             "pt_BR": "Esse banco não tem uma inscrição",
-            "es": "Este banco no tiene inscripción"
+            "es": "Este banco no tiene ninguna inscripción",
+            "uk": "Ця лавка не має напису"
           },
           "addExtraTags": [
             "inscription="
@@ -970,11 +980,12 @@
             "nl": "Deze bank heeft <span class='subtle'>(waarschijnlijk)</span> geen inscriptie",
             "de": "Diese Bank hat <span class='subtle'>wahrscheinlich</span> keine Inschrift",
             "fr": "Ce banc n'a <span class='subtle'>(probablement)</span> pas d'inscription",
-            "es": "Este banco <span class='subtle'>(probablemente)</span> no tiene inscripción",
+            "es": "Este banco <span class='subtle'>probablemente</span> no tiene ninguna inscripción",
             "ca": "Aquest banc <span class='subtle'>(probablement)</span> no té cap inscripció",
             "cs": "Tato lavička <span class='subtle'>(pravděpodobně)</span> nemá nápis",
             "pt_BR": "Esse banco <span class='subtle'>provavelmente</span> não tem uma inscrição",
-            "pt": "Esse banco <span class='subtle'>provavelmente</span> não tem uma inscrição"
+            "pt": "Esse banco <span class='subtle'>provavelmente</span> não tem uma inscrição",
+            "uk": "Ця лавка <span class='subtle'>імовірно</span> не має напису"
           },
           "hideInAnswer": true
         }
@@ -988,7 +999,8 @@
         "cs": "Např. na připevněné desce, v opěradle, …",
         "pt": "Por exemplo: em placa montada, no encosto, ...",
         "pt_BR": "P. ex. em uma placa montada, no encosto, …",
-        "es": "Por ejemplo, en una placa montada, en el respaldo, …"
+        "es": "Por ejemplo, en una placa montada, en el respaldo,…",
+        "uk": "Наприклад, на вмонтованій табличці, в спинці крісла, …"
       }
     },
     {
@@ -1003,8 +1015,9 @@
         "fr": "Est-ce que ce banc inclut un élément artistique ?",
         "pl": "Czy ta ławka ma wbudowane dzieło sztuki?",
         "pt_BR": "Esse banco tem um elemento artístico?",
-        "es": "¿Tiene este banco un elemento artístico?",
-        "pt": "Este banco tem um elemento artístico?"
+        "es": "¿Este banco tiene un elemento artístico?",
+        "pt": "Este banco tem um elemento artístico?",
+        "uk": "Чи є в цій лавці художній елемент?"
       },
       "mappings": [
         {
@@ -1023,7 +1036,8 @@
             "pl": "Ta ławka ma wbudowane dzieło sztuki",
             "pt_BR": "Esse banco tem uma obra de arte integrada",
             "es": "Este banco tiene una obra de arte integrada",
-            "pt": "Este banco tem uma obra de arte integrada"
+            "pt": "Este banco tem uma obra de arte integrada",
+            "uk": "Ця лавка має інтегрований арт-об'єкт"
           }
         },
         {
@@ -1039,7 +1053,8 @@
             "he": "לספסל זה אין יצירת אמנות משולבת",
             "pl": "Ta ławka nie ma wbudowanego dzieła sztuki",
             "pt_BR": "Esse banco não tem uma obra de arte integrada",
-            "pt": "Este banco não tem uma obra de arte integrada"
+            "pt": "Este banco não tem uma obra de arte integrada",
+            "uk": "Ця лавка не має інтегрованого художнього оформлення"
           },
           "addExtraTags": [
             "tourism="
@@ -1070,8 +1085,9 @@
         "fr": "Par ex. il intègre une peinture, statue ou autre élément non commune, travail créatif",
         "pl": "Np. jest na niej coś namalowane, ma rzeźbę lub inną nietrywialną pracę",
         "pt_BR": "Ex. possui uma pintura integrada, estátua ou outro trabalho criativo não trivial",
-        "es": "Por ejemplo, si lleva integrado un cuadro, una estatua u otra obra creativa no trivial",
-        "pt": "Ex. possui uma pintura integrada, estátua ou outro trabalho criativo não trivial"
+        "es": "Por ejemplo, tiene una pintura, estatua u otra obra creativa no trivial integrada",
+        "pt": "Ex. possui uma pintura integrada, estátua ou outro trabalho criativo não trivial",
+        "uk": "Наприклад, він має інтегровану картину, статую або іншу нетривіальну, творчу роботу"
       }
     },
     {
@@ -1101,7 +1117,7 @@
         "pt": "Este banco serve como memorial para alguém ou algo?",
         "pl": "Czy ta ławka służy jako pomnik upamiętniający kogoś lub coś?",
         "pt_BR": "Esse banco serve como memorial para alguém ou alguma coisa?",
-        "es": "¿Actúa este banco como monumento conmemorativo de alguien o algo?"
+        "es": "¿Este banco actúa como monumento para alguien o algo?"
       },
       "mappings": [
         {
@@ -1116,7 +1132,7 @@
             "pt": "Este banco é um memorial para alguém ou algo",
             "pl": "Ta ławka jest pomnikiem upamiętniającym kogoś lub coś",
             "pt_BR": "Esse banco é um memorial para alguém ou alguma coisa",
-            "es": "Este banco es un memorial para alguien o algo"
+            "es": "Este banco es un monumento para alguien o algo"
           },
           "addExtraTags": [
             "memorial=bench",
@@ -1140,7 +1156,7 @@
             "pt": "Este banco <b>não é</b> um memorial para alguém ou algo",
             "pl": "Ta ławka <b>nie</b> jest pomnikiem upamiętniającym kogoś lub coś",
             "pt_BR": "Esse banco <b>não</b> é um memorial para alguém ou alguma coisa",
-            "es": "Este banco es un <b>no</b> memorial para alguien o algo"
+            "es": "Este banco <b>no</b> es un monumento para alguien o algo"
           },
           "addExtraTags": [
             "memorial="
@@ -1179,7 +1195,7 @@
             "cs": "je památník",
             "he": "הוא אנדרטה",
             "pt_BR": "é um memorial",
-            "es": "es un monumento conmemorativo",
+            "es": "es un monumento",
             "pt": "é um memorial"
           }
         }
@@ -1231,7 +1247,7 @@
             "he": "אין משענת גב",
             "pl": "Nie ma oparcia",
             "pt_BR": "Não tem um encosto",
-            "es": "Sin respaldo",
+            "es": "No tiene respaldo",
             "pt": "Não tem um encosto"
           }
         }

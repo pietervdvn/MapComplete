@@ -648,11 +648,6 @@ svg.apply-fill path {
 
 /************************* LEGACY MARKER - CLEANUP BELOW ********************************/
 
-.slideshow-item img {
-    /* Legacy: should be replace when the image element is ported to Svelte*/
-    height: var(--image-carousel-height);
-    width: unset;
-}
 
 .animate-height {
     /* Legacy: should be replaced by headlessui disclosure in time */

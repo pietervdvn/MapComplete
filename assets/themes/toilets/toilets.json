@@ -11,11 +11,12 @@
     "pl": "Publiczne toalety",
     "it": "Servizi igienici pubblici",
     "nb_NO": "Åpent toalettkart",
-    "hu": "WC-térkép",
+    "hu": "Nyilvános illemhelyek",
     "ca": "Lavabos públics",
     "da": "Offentlige toiletter",
     "es": "Baños públicos",
-    "cs": "Veřejné toalety"
+    "cs": "Veřejné toalety",
+    "uk": "Громадські туалети"
   },
   "description": {
     "en": "A map of public toilets",
@@ -31,8 +32,9 @@
     "nb_NO": "Et kart over offentlige toaletter",
     "da": "Et kort over offentlige toiletter",
     "ca": "Mapa de lavabos públics",
-    "es": "Mapa de aseos públicos",
-    "cs": "Mapa veřejných toalet"
+    "es": "Un mapa de baños públicos",
+    "cs": "Mapa veřejných toalet",
+    "uk": "Мапа показує розташування громадських туалетів"
   },
   "icon": "./assets/themes/toilets/toilets.svg",
   "startZoom": 12,

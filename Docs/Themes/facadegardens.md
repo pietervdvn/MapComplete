@@ -26,6 +26,8 @@ Available languages:
  - da
  - cs
  - pl
+ - ru
+ - uk
 
 # Table of contents
 

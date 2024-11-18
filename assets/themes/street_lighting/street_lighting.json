@@ -15,7 +15,8 @@
     "es": "Alumbrado público",
     "cs": "Pouliční osvětlení",
     "it": "Illuminazione stradale",
-    "pl": "Oświetlenie uliczne"
+    "pl": "Oświetlenie uliczne",
+    "uk": "Вуличне освітлення"
   },
   "description": {
     "en": "On this map you can find everything about street lighting",
@@ -23,14 +24,15 @@
     "zh_Hant": "在這份地圖你可以找到任何有關路燈的事情",
     "hu": "Ezen a térképen minden megtalálható, ami a közvilágítással kapcsolatos",
     "de": "Eine Karte für alles zum Thema Straßenbeleuchtung",
-    "es": "En este mapa puedes encontrar todo sobre la iluminación callejera",
+    "es": "En este mapa puedes encontrar todo sobre el alumbrado público",
     "fr": "Retrouvez tout ce qui touche à l’éclairage de rue sur cette carte",
     "da": "På dette kort kan du finde alt om gadebelysning",
     "ca": "En aquest mapa pots trobar tot el relacionat amb l'enllumenat públic",
     "nb_NO": "Alt om gatebelysning",
     "cs": "Na této mapě najdete vše o pouličním osvětlení",
     "pl": "Na tej mapie możesz znaleźć wszystko o oświetleniu ulicznym",
-    "it": "Su questa mappa puoi trovare tutto ciò che riguarda l'illuminazione stradale"
+    "it": "Su questa mappa puoi trovare tutto ciò che riguarda l'illuminazione stradale",
+    "uk": "На цій мапі можна знайти все про вуличне освітлення"
   },
   "icon": "./assets/layers/street_lamps/street_lamp.svg",
   "startZoom": 19,
@@ -177,7 +179,7 @@
                 "zh_Hant": "這個道路 24/7 有照明",
                 "hu": "Ez az utca éjjel-nappal ki van világítva",
                 "de": "Diese Straße ist durchgehend beleuchtet",
-                "es": "Esta calle está iluminada todo el día",
+                "es": "Esta calle está iluminada 24/7",
                 "nb_NO": "Denne gaten er belyst døgnet rundt",
                 "fr": "Cette rue est éclairée en permanence",
                 "da": "Denne gade er oplyst 24/7",
@@ -201,6 +203,7 @@
     },
     {
       "id": "all_streets",
+      "isCounted": false,
       "name": {
         "en": "All streets",
         "nl": "Alle straten",
@@ -268,7 +271,7 @@
             "fr": "Cette rue est-elle éclairée ?",
             "da": "Er denne gade oplyst?",
             "ca": "Aquest carrer està il·luminat?",
-            "es": "¿Esta calle está iluminada?",
+            "es": "¿Está iluminada esta calle?",
             "cs": "Je tato ulice osvětlená?",
             "it": "Questa strada è illuminata?",
             "pl": "Czy ta ulica jest oświetlona?"

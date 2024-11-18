@@ -2,11 +2,13 @@
   "id": "souvenir_note",
   "name": {
     "en": "Souvenir Banknote Machines",
-    "de": "Souvenir Banknotenmaschinen"
+    "de": "Souvenir Banknotenmaschinen",
+    "es": "Máquinas de Billetes de Recuerdo"
   },
   "description": {
     "en": "Layer showing machines selling souvenir banknotes",
-    "de": "Ebene zeigt Maschinen, die Souvenir-Banknoten verkaufen"
+    "de": "Ebene zeigt Maschinen, die Souvenir-Banknoten verkaufen",
+    "es": "Capa que muestra máquinas expendedoras de billetes de recuerdo"
   },
   "source": {
     "osmTags": {
@@ -19,7 +21,8 @@
   "title": {
     "render": {
       "en": "Souvenir Banknote Machine",
-      "de": "Souvenir-Banknotenautomat"
+      "de": "Souvenir-Banknotenautomat",
+      "es": "Máquina de Billetes de Recuerdo"
     }
   },
   "pointRendering": [
@@ -55,11 +58,13 @@
     {
       "title": {
         "en": "a souvenir banknote machine",
-        "de": "eine Souvenir-Banknotenmaschine"
+        "de": "eine Souvenir-Banknotenmaschine",
+        "es": "una máquina de billetes de recuerdo"
       },
       "description": {
         "en": "Add a machine selling souvenir banknotes",
-        "de": "Hinzufügen eines Automaten, der Souvenir-Banknoten verkauft"
+        "de": "Hinzufügen eines Automaten, der Souvenir-Banknoten verkauft",
+        "es": "Añadir una máquina expendedora de billetes de recuerdo"
       },
       "tags": [
         "amenity=vending_machine",
@@ -74,7 +79,8 @@
       "id": "designs",
       "question": {
         "en": "How many designs are available?",
-        "de": "Wie viele Designs sind verfügbar?"
+        "de": "Wie viele Designs sind verfügbar?",
+        "es": "¿Cuántos diseños están disponibles?"
       },
       "freeform": {
         "key": "note:design_count",
@@ -82,42 +88,47 @@
         "placeholder": {
           "en": "Number of designs (e.g. 5)",
           "de": "Motivanzahl (z.B. 5)",
-          "es": "Número de diseños (por ejemplo, 5)",
+          "es": "Número de diseños (ej. 5)",
           "ca": "Nombre de dissenys (p. e. 5)",
           "cs": "Počet vzorů (např. 5)"
         }
       },
       "render": {
         "en": "This machine has {note:design_count} designs available.",
-        "de": "Diese Maschine verfügt über {note:design_count} Designs."
+        "de": "Diese Maschine verfügt über {note:design_count} Designs.",
+        "es": "Esta máquina tiene {note:design_count} diseños disponibles."
       },
       "mappings": [
         {
           "if": "note:design_count=1",
           "then": {
             "en": "This machine has one design available.",
-            "de": "Diese Maschine hat ein Design zur Verfügung."
+            "de": "Diese Maschine hat ein Design zur Verfügung.",
+            "es": "Esta máquina tiene un diseño disponible."
           }
         },
         {
           "if": "note:design_count=2",
           "then": {
             "en": "This machine has two designs available.",
-            "de": "Diese Maschine hat zwei Designs verfügbar."
+            "de": "Diese Maschine hat zwei Designs verfügbar.",
+            "es": "Esta máquina tiene dos diseños disponibles."
           }
         },
         {
           "if": "note:design_count=3",
           "then": {
             "en": "This machine has three designs available.",
-            "de": "Diese Maschine hat drei Designs verfügbar."
+            "de": "Diese Maschine hat drei Designs verfügbar.",
+            "es": "Esta máquina tiene tres diseños disponibles."
           }
         },
         {
           "if": "note:design_count=4",
           "then": {
             "en": "This machine has four designs available.",
-            "de": "Diese Maschine hat vier Designs verfügbar."
+            "de": "Diese Maschine hat vier Designs verfügbar.",
+            "es": "Esta máquina tiene cuatro diseños disponibles."
           }
         }
       ]
@@ -127,18 +138,21 @@
     {
       "question": {
         "en": "How much does a souvenir note cost?",
-        "de": "Wie viel kostet eine Souvenirnote?"
+        "de": "Wie viel kostet eine Souvenirnote?",
+        "es": "¿Cuánto cuesta un billete de recuerdo?"
       },
       "id": "charge",
       "render": {
         "en": "A souvenir note costs {charge}",
-        "de": "Eine Souvenirnote kostet {charge}"
+        "de": "Eine Souvenirnote kostet {charge}",
+        "es": "Un billete de recuerdo cuesta {charge}"
       },
       "freeform": {
         "key": "charge",
         "placeholder": {
           "en": "Cost (e.g. 2 EUR)",
-          "de": "Kosten (z.B. 2 EUR)"
+          "de": "Kosten (z.B. 2 EUR)",
+          "es": "Coste (ej. 2 EUR)"
         }
       },
       "mappings": [
@@ -146,7 +160,8 @@
           "if": "charge=2 EUR",
           "then": {
             "en": "A souvenir note costs 2 euro",
-            "de": "Eine Souvenirnote kostet 2 Euro"
+            "de": "Eine Souvenirnote kostet 2 Euro",
+            "es": "Un billete de recuerdo cuesta 2 euros"
           },
           "hideInAnswer": "_currency!~.*EUR.*"
         },
@@ -154,7 +169,8 @@
           "if": "charge=3 EUR",
           "then": {
             "en": "A souvenir note costs 3 euro",
-            "de": "Eine Souvenirnote kostet 3 Euro"
+            "de": "Eine Souvenirnote kostet 3 Euro",
+            "es": "Un billete de recuerdo cuesta 3 euros"
           },
           "hideInAnswer": "_currency!~.*EUR.*"
         }
@@ -164,7 +180,8 @@
     {
       "question": {
         "en": "Is this machine located indoors?",
-        "de": "Ist diese Maschine im Innenbereich?"
+        "de": "Ist diese Maschine im Innenbereich?",
+        "es": "¿Está esta máquina ubicada en interiores?"
       },
       "id": "indoor",
       "mappings": [
@@ -172,14 +189,16 @@
           "if": "indoor=yes",
           "then": {
             "en": "This machine is located indoors.",
-            "de": "Diese Maschine befindet sich im Innenbereich."
+            "de": "Diese Maschine befindet sich im Innenbereich.",
+            "es": "Esta máquina está ubicada en interiores."
           }
         },
         {
           "if": "indoor=no",
           "then": {
             "en": "This machine is located outdoors.",
-            "de": "Diese Maschine befindet sich im Freien."
+            "de": "Diese Maschine befindet sich im Freien.",
+            "es": "Esta máquina está ubicada en exteriores."
           }
         }
       ]

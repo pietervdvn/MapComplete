@@ -20,7 +20,8 @@
     "cs": "Stromy",
     "pt_BR": "Árvores",
     "eu": "Zuhaitzak",
-    "pt": "Árvores"
+    "pt": "Árvores",
+    "uk": "Дерева"
   },
   "description": {
     "nl": "Breng bomen in kaart!",
@@ -34,7 +35,7 @@
     "nb_NO": "Kartlegg trærne.",
     "hu": "Térképezzünk fel minden fát!",
     "ca": "Mapeja tots els arbres!",
-    "es": "¡Mapa de los Árboles!",
+    "es": "¡Mapea todos los árboles!",
     "da": "Kortlæg alle træerne!",
     "cs": "Zmapujte všechny stromy!",
     "pt_BR": "Mapeie todas as árvores!",
@@ -54,9 +55,10 @@
     "nb_NO": "Kartlegg alle trærne",
     "hu": "Az összes fa feltérképezése",
     "ca": "Mapeja tots els arbres",
-    "es": "Mapa de los Árboles",
+    "es": "Mapea todos los árboles",
     "da": "Kortlæg alle træer",
-    "cs": "Zmapujte všechny stromy"
+    "cs": "Zmapujte všechny stromy",
+    "uk": "Додайте на мапу всі дерева"
   },
   "icon": "./assets/themes/trees/logo.svg",
   "socialImage": "./assets/themes/trees/logo.svg",
