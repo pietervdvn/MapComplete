@@ -560,7 +560,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
             console.log("Not setting selected, same id", current, feature)
             return // already set
         }
-        // this.selectedElement.setData(undefined)
         this.selectedElement.setData(feature)
     }
 
