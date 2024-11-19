@@ -16,6 +16,7 @@ import PerLayerFeatureSourceSplitter from "../../Logic/FeatureSource/PerLayerFea
 import FilteredLayer from "../../Models/FilteredLayer"
 import SimpleFeatureSource from "../../Logic/FeatureSource/Sources/SimpleFeatureSource"
 import { TagsFilter } from "../../Logic/Tags/TagsFilter"
+import { featureEach } from "@turf/turf"
 
 class PointRenderingLayer {
     private readonly _config: PointRenderingConfig
@@ -38,7 +39,7 @@ class PointRenderingLayer {
         visibility?: Store<boolean>,
         fetchStore?: (id: string) => Store<Record<string, string>>,
         onClick?: (feature: Feature) => void,
-        selectedElement?: Store<{ properties: { id?: string } }>
+        selectedElement?: Store<{ properties: { id?: string } }>,
     ) {
         this._visibility = visibility
         this._config = config
@@ -97,15 +98,31 @@ class PointRenderingLayer {
                         " while rendering",
                         location,
                         "of",
-                        this._config
+                        this._config,
                     )
                 }
                 const id = feature.properties.id + "-" + location
                 unseenKeys.delete(id)
 
+                if (location === "waypoints") {
+                    if (feature.geometry.type === "LineString") {
+                        for (const loc of feature.geometry.coordinates) {
+                            this.addPoint(feature, <[number, number]>loc)
+                        }
+                    }
+                    if (feature.geometry.type === "MultiLineString" || feature.geometry.type === "Polygon") {
+                        for (const coors of feature.geometry.coordinates) {
+                            for (const loc of coors) {
+                                this.addPoint(feature, <[number, number]>loc)
+                            }
+                        }
+                    }
+                    continue
+                }
+
                 const loc = GeoOperations.featureToCoordinateWithRenderingType(
                     <any>feature,
-                    location
+                    location,
                 )
                 if (loc === undefined) {
                     continue
@@ -234,7 +251,7 @@ class LineRenderingLayer {
         config: LineRenderingConfig,
         visibility?: Store<boolean>,
         fetchStore?: (id: string) => Store<Record<string, string>>,
-        onClick?: (feature: Feature) => void
+        onClick?: (feature: Feature) => void,
     ) {
         this._layername = layername
         this._map = map
@@ -254,7 +271,7 @@ class LineRenderingLayer {
 
     private async addSymbolLayer(
         sourceId: string,
-        imageAlongWay: { if?: TagsFilter; then: string }[]
+        imageAlongWay: { if?: TagsFilter; then: string }[],
     ) {
         const map = this._map
         await Promise.allSettled(
@@ -284,7 +301,7 @@ class LineRenderingLayer {
                     spec.filter = filter
                 }
                 map.addLayer(spec)
-            })
+            }),
         )
     }
 
@@ -294,7 +311,7 @@ class LineRenderingLayer {
      * @private
      */
     private calculatePropsFor(
-        properties: Record<string, string>
+        properties: Record<string, string>,
     ): Partial<Record<(typeof LineRenderingLayer.lineConfigKeys)[number], string>> {
         const config = this._config
 
@@ -376,7 +393,7 @@ class LineRenderingLayer {
                     } catch (e) {
                         console.error(
                             `Invalid dasharray in layer ${this._layername}:`,
-                            this._config.dashArray
+                            this._config.dashArray,
                         )
                     }
                 }
@@ -393,15 +410,17 @@ class LineRenderingLayer {
                     }
                     map.setFeatureState(
                         { source: this._layername, id: feature.properties.id },
-                        this.calculatePropsFor(feature.properties)
+                        this.calculatePropsFor(feature.properties),
                     )
                 }
 
-                map.on("click", linelayer, (e) => {
-                    // line-layer-listener
-                    e.originalEvent["consumed"] = true
-                    this._onClick(e.features[0])
-                })
+                if(this._onClick){
+                    map.on("click", linelayer, (e) => {
+                        // line-layer-listener
+                        e.originalEvent["consumed"] = true
+                        this._onClick(e.features[0])
+                    })
+                }
                 const polylayer = this._layername + "_polygon"
 
                 map.addLayer({
@@ -436,7 +455,7 @@ class LineRenderingLayer {
                             "Error while setting visibility of layers ",
                             linelayer,
                             polylayer,
-                            e
+                            e,
                         )
                     }
                 })
@@ -457,7 +476,7 @@ class LineRenderingLayer {
                     console.trace(
                         "Got a feature without ID; this causes rendering bugs:",
                         feature,
-                        "from"
+                        "from",
                     )
                     LineRenderingLayer.missingIdTriggered = true
                 }
@@ -469,7 +488,7 @@ class LineRenderingLayer {
             if (this._fetchStore === undefined) {
                 map.setFeatureState(
                     { source: this._layername, id },
-                    this.calculatePropsFor(feature.properties)
+                    this.calculatePropsFor(feature.properties),
                 )
             } else {
                 const tags = this._fetchStore(id)
@@ -486,7 +505,7 @@ class LineRenderingLayer {
                     }
                     map.setFeatureState(
                         { source: this._layername, id },
-                        this.calculatePropsFor(properties)
+                        this.calculatePropsFor(properties),
                     )
                 })
             }
@@ -510,7 +529,7 @@ export default class ShowDataLayer {
             layer: LayerConfig
             drawMarkers?: true | boolean
             drawLines?: true | boolean
-        }
+        },
     ) {
         this._options = options
         this.onDestroy.push(map.addCallbackAndRunD((map) => this.initDrawFeatures(map)))
@@ -520,7 +539,7 @@ export default class ShowDataLayer {
         mlmap: UIEventSource<MlMap>,
         features: FeatureSource,
         layers: LayerConfig[],
-        options?: Partial<ShowDataLayerOptions>
+        options?: Partial<ShowDataLayerOptions>,
     ) {
         const perLayer: PerLayerFeatureSourceSplitter<FeatureSourceForLayer> =
             new PerLayerFeatureSourceSplitter(
@@ -528,7 +547,7 @@ export default class ShowDataLayer {
                 features,
                 {
                     constructStore: (features, layer) => new SimpleFeatureSource(layer, features),
-                }
+                },
             )
         if (options?.zoomToFeatures) {
             options.zoomToFeatures = false
@@ -552,7 +571,7 @@ export default class ShowDataLayer {
     public static showRange(
         map: Store<MlMap>,
         features: FeatureSource,
-        doShowLayer?: Store<boolean>
+        doShowLayer?: Store<boolean>,
     ): ShowDataLayer {
         return new ShowDataLayer(map, {
             layer: ShowDataLayer.rangeLayer,
@@ -561,7 +580,8 @@ export default class ShowDataLayer {
         })
     }
 
-    public destruct() {}
+    public destruct() {
+    }
 
     private static zoomToCurrentFeatures(map: MlMap, features: Feature[]) {
         if (!features || !map || features.length == 0) {
@@ -585,8 +605,8 @@ export default class ShowDataLayer {
                 this._options.layer.title === undefined
                     ? undefined
                     : (feature: Feature) => {
-                          selectedElement?.setData(feature)
-                      }
+                        selectedElement?.setData(feature)
+                    }
         }
         if (this._options.drawLines !== false) {
             for (let i = 0; i < this._options.layer.lineRendering.length; i++) {
@@ -598,7 +618,7 @@ export default class ShowDataLayer {
                     lineRenderingConfig,
                     doShowLayer,
                     fetchStore,
-                    onClick
+                    onClick,
                 )
                 this.onDestroy.push(l.destruct)
             }
@@ -614,13 +634,13 @@ export default class ShowDataLayer {
                     doShowLayer,
                     fetchStore,
                     onClick,
-                    selectedElement
+                    selectedElement,
                 )
             }
         }
         if (this._options.zoomToFeatures) {
             features.features.addCallbackAndRunD((features) =>
-                ShowDataLayer.zoomToCurrentFeatures(map, features)
+                ShowDataLayer.zoomToCurrentFeatures(map, features),
             )
         }
     }

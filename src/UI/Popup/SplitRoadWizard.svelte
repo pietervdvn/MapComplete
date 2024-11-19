@@ -17,6 +17,7 @@
   export let state: SpecialVisualizationState
   export let id: WayId
   const t = Translations.t.split
+  let snapTolerance = 5 // meter
   let step:
     | "initial"
     | "loading_way"
@@ -60,7 +61,7 @@
       {
         theme: state?.theme?.id,
       },
-      5
+      snapTolerance
     )
     await state.changes?.applyAction(splitAction)
     // We throw away the old map and splitpoints, and create a new map from scratch
@@ -87,7 +88,7 @@
   {:else if step === "splitting"}
     <div class="interactive border-interactive flex flex-col p-2">
       <div class="h-80 w-full">
-        <WaySplitMap {state} {splitPoints} {osmWay} />
+        <WaySplitMap {state} {splitPoints} {osmWay} {snapTolerance} mapProperties={{rasterLayer: state.mapProperties.rasterLayer}}/>
       </div>
       <div class="flex w-full flex-wrap-reverse md:flex-nowrap">
         <BackButton
