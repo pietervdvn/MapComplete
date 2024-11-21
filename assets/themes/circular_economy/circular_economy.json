@@ -9,7 +9,8 @@
     "uk": "Переробна економіка",
     "hu": "Körforgásos gazdaság",
     "pl": "Gospodarka o obiegu zamkniętym",
-    "nl": "Circulaire economie"
+    "nl": "Circulaire economie",
+    "fr": "Économie circulaire"
   },
   "description": {
     "en": "Various items which help people to share, reuse or recycle.",
@@ -53,7 +54,8 @@
           "cs": "Obchody s použitým zbožím",
           "uk": "Магазини секонд-хенду",
           "pl": "Sklepy second-hand",
-          "nl": "Tweedehandswinkels"
+          "nl": "Tweedehandswinkels",
+          "fr": "Commerces de produits d'occasion"
         },
         "filter": null,
         "source": {

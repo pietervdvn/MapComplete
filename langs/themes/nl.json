@@ -447,6 +447,10 @@
         "description": "Deze kaart toont info over scholen en onderwijsinstellingen. Je kan er gemakkelijk meer informatie aan toevoegen",
         "title": "Onderwijs"
     },
+    "elongated_coin": {
+        "description": "Zoek muntpersen om uitgerokken munten te maken.",
+        "title": "Muntpersen"
+    },
     "etymology": {
         "description": "Op deze kaart zie je waar een plaats naar is vernoemd. De straten, gebouwen, ... komen uit OpenStreetMap, waar een link naar Wikidata werd gelegd. In de popup zie je het Wikipedia-artikel van hetgeen naarwaar het vernoemd is of de Wikidata-box.<br/><br/><b>Je kan zelf ook meehelpen!</b>Als je ver inzoomt, krijg je alle straten te zien. Klik je een straat aan, dan krijg je een zoekfunctie waarmee je snel een nieuwe link kan leggen. Je hebt hiervoor een gratis OpenStreetMap account nodig.",
         "layers": {
@@ -589,22 +593,22 @@
         "layers": {
             "0": {
                 "override": {
-                    "name": "Frituren",
                     "filter+": {
                         "0": {
                             "options": {
-                                "2": {
-                                    "question": "Toon enkel frituren die dierlijk frietvet gebruiken"
+                                "0": {
+                                    "question": "Geen voorkeur voor een bepaald type frituurolie"
                                 },
                                 "1": {
                                     "question": "Toon enkel frituren die plantaardige frituurolie gebruiken"
                                 },
-                                "0": {
-                                    "question": "Geen voorkeur voor een bepaald type frituurolie"
+                                "2": {
+                                    "question": "Toon enkel frituren die dierlijk frietvet gebruiken"
                                 }
                             }
                         }
-                    }
+                    },
+                    "name": "Frituren"
                 }
             }
         },
@@ -614,6 +618,33 @@
         "description": "Een <b>Witte Fiets</b> of <b>Spookfiets</b> is een aandenken aan een fietser die bij een verkeersongeval om het leven kwam. Het gaat om een fiets die volledig wit is geschilderd en in de buurt van het ongeval werd geplaatst.<br/><br/>Op deze kaart zie je alle witte fietsen die door OpenStreetMap gekend zijn. Ontbreekt er een Witte Fiets of wens je informatie aan te passen? Meld je dan aan met een (gratis) OpenStreetMap account. <p>Er bestaat een <a href='https://masto.bike/@ghostbikebot' target='_blank'>geautomatiseerd account op Mastodon dat maandelijks een overzicht van spookfietsen wereldwijd post</a></p>",
         "title": "Witte Fietsen"
     },
+    "ghostsigns": {
+        "description": "Een kaart met ongebruikte borden op gebouwen",
+        "layers": {
+            "2": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "Dit kunstwerk is een historische advertentie"
+                                },
+                                "1": {
+                                    "then": "Dit kunstwerk is geen historische advertentie"
+                                }
+                            },
+                            "question": "Is dit kunstwerk een historische advertentie?"
+                        }
+                    }
+                }
+            }
+        },
+        "title": "Spookreclames"
+    },
+    "glutenfree": {
+        "description": "Een gecrowdsourcete kaart met glutenvrije artikelen",
+        "title": "Glutenvrij"
+    },
     "grb": {
         "description": "Dit thema helpt het GRB importeren.",
         "layers": {
@@ -622,8 +653,37 @@
                     "building type": {
                         "question": "Wat voor soort gebouw is dit?"
                     },
+                    "grb-fixme": {
+                        "mappings": {
+                            "0": {
+                                "then": "Geen fixme"
+                            }
+                        },
+                        "question": "Wat zegt de fixme?",
+                        "render": "De fixme is <b>{fixme}</b>"
+                    },
+                    "grb-housenumber": {
+                        "mappings": {
+                            "0": {
+                                "then": "Geen huisnummer"
+                            }
+                        },
+                        "question": "Wat is het huisnummer?",
+                        "render": "Het huisnummer is <b>{addr:housenumber}</b>"
+                    },
+                    "grb-min-level": {
+                        "question": "Hoeveel verdiepingen ontbreken?",
+                        "render": "Dit gebouw begint maar op de {building:min_level} verdieping"
+                    },
                     "grb-reference": {
                         "render": "Werd geïmporteerd vanuit GRB, het referentienummer is {source:geometry:ref}"
+                    },
+                    "grb-street": {
+                        "question": "Wat is de straat?",
+                        "render": "De straat is <b>{addr:street}</b>"
+                    },
+                    "grb-unit": {
+                        "render": "De wooneenheid-aanduiding is <b>{addr:unit}</b> "
                     }
                 }
             },
@@ -640,8 +700,39 @@
                         }
                     }
                 }
+            },
+            "5": {
+                "override": {
+                    "tagRenderings+": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "Geen omliggend OSM-gebouw gevonden"
+                                }
+                            }
+                        },
+                        "3": {
+                            "mappings": {
+                                "0": {
+                                    "then": "Geen omliggend OSM-gebouw gevonden. Een omliggend gebouw is nodig om dit punt als adres punt toe te voegen. <div class=subtle>Importeer eerst de gebouwen. Vernieuw dan de pagina om losse adressen toe te voegen</div>"
+                                }
+                            },
+                            "render": {
+                                "special": {
+                                    "text": "Voeg dit adres als een nieuw adrespunt toe"
+                                }
+                            }
+                        }
+                    }
+                }
             }
-        }
+        },
+        "shortDescription": "Grb import helper tool",
+        "title": "GRB import helper"
+    },
+    "guideposts": {
+        "description": "Wegwijzers (ook wel handwijzer genoemd) zijn vaak te vinden langs officiële wandel-, fiets-, ski- of paardrijroutes om de richtingen naar verschillende bestemmingen aan te geven. Vaak zijn ze vernoemd naar een regio of plaats en geven ze de hoogte aan.\n\nDe positie van een wegwijzer kan door een wandelaar/fietser/renner/skiër worden gebruikt als bevestiging van de huidige positie, vooral als ze een gedrukte kaart zonder GPS-ontvanger gebruiken. ",
+        "title": "Wegwijzers"
     },
     "hackerspaces": {
         "description": "Op deze kaart kan je hackerspaces zien, toevoegen en updaten",
@@ -678,9 +769,17 @@
         "description": "Op deze kaart vind je hotels in je omgeving",
         "title": "Hotels"
     },
+    "icecream": {
+        "description": "Een kaart met ijssalons en ijsautomaten",
+        "title": "IJs"
+    },
     "indoors": {
         "description": "Op deze kaart worden publiek toegankelijke binnenruimtes getoond",
         "title": "Binnenruimtes"
+    },
+    "items_with_image": {
+        "description": "Een kaart die alle items op OSM toont die een afbeelding hebben. Dit thema past heel slecht bij MapComplete omdat het niet mogelijk is een afbeelding toe te voegen. Dit thema is er vooral om alles in de database op te nemen, waardoor het snel afbeeldingen in de buurt kan ophalen voor andere functies",
+        "title": "Alle items met afbeeldingen"
     },
     "kerbs_and_crossings": {
         "description": "Een kaart met stoepranden en oversteekplaatsen.",
@@ -697,6 +796,141 @@
             }
         },
         "title": "Stoepranden en oversteekplaatsen"
+    },
+    "lactosefree": {
+        "description": "Een gecrowdsourcete kaart met lactosevrije winkels en restaurants",
+        "title": "Lactosevrije winkels en restaurants"
+    },
+    "lighthouses": {
+        "description": "Vuurtorens zijn hoge gebouwen met een licht erop om het scheepvaartverkeer te leiden.",
+        "title": "Vuurtorens"
+    },
+    "mapcomplete-changes": {
+        "description": "Deze kaarten tonen alle wijzigingen die zijn gemaakt met MapComplete",
+        "layers": {
+            "0": {
+                "description": "Toon alle MapComplete-wijzigingen",
+                "filter": {
+                    "0": {
+                        "options": {
+                            "0": {
+                                "question": "Themanaam bevat {search}"
+                            }
+                        }
+                    },
+                    "1": {
+                        "options": {
+                            "0": {
+                                "question": "Themanaam bevat <b>geen</b> {search}"
+                            }
+                        }
+                    },
+                    "10": {
+                        "options": {
+                            "0": {
+                                "question": "Thema etymologie uitsluiten"
+                            }
+                        }
+                    },
+                    "2": {
+                        "options": {
+                            "0": {
+                                "question": "Toegevoegd door {search}"
+                            }
+                        }
+                    },
+                    "3": {
+                        "options": {
+                            "0": {
+                                "question": "<b>Niet</b> toegevoegd door {search}"
+                            }
+                        }
+                    },
+                    "4": {
+                        "options": {
+                            "0": {
+                                "question": "Toegevoegd vóór {search}"
+                            }
+                        }
+                    },
+                    "5": {
+                        "options": {
+                            "0": {
+                                "question": "Toegevoegd na {search}"
+                            }
+                        }
+                    },
+                    "6": {
+                        "options": {
+                            "0": {
+                                "question": "Gebruikerstaal (iso-code) {search}"
+                            }
+                        }
+                    },
+                    "7": {
+                        "options": {
+                            "0": {
+                                "question": "Gemaakt met {search}"
+                            }
+                        }
+                    },
+                    "8": {
+                        "options": {
+                            "0": {
+                                "question": "Changeset voegde minstens één afbeelding toe"
+                            }
+                        }
+                    },
+                    "9": {
+                        "options": {
+                            "0": {
+                                "question": "GRB-thema uitsluiten"
+                            }
+                        }
+                    }
+                },
+                "name": "Changeset centra",
+                "tagRenderings": {
+                    "contributor": {
+                        "question": "Welke bijdrager maakte deze verandering?",
+                        "render": "Wijziging aangebracht door <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>"
+                    },
+                    "host": {
+                        "question": "Met welke host (website) is deze wijziging gemaakt?",
+                        "render": "Gewijzigd met <a href='{host}'>{host}</a>"
+                    },
+                    "locale": {
+                        "question": "In welke 'locale' (taal) is deze wijziging gemaakt?",
+                        "render": "De gebruikerstaal (locale) is {locale}"
+                    },
+                    "show_changeset_id": {
+                        "render": "Changeset <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
+                    },
+                    "theme-id": {
+                        "question": "Welk thema werd gebruikt voor deze wijziging?",
+                        "render": "Verander met thema <a href='https://mapcomplete.org/{theme}'>{theme}</a>"
+                    },
+                    "version": {
+                        "question": "Welke versie van MapComplete is gebruikt voor deze wijziging?",
+                        "render": "Gemaakt met {editor}"
+                    }
+                },
+                "title": {
+                    "render": "Changeset voor {theme}"
+                }
+            },
+            "1": {
+                "override": {
+                    "tagRenderings+": {
+                        "0": {
+                            "render": "Meer statistieken vind je <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>hier</a>"
+                        }
+                    }
+                }
+            }
+        },
+        "shortDescription": "Toont wijzigingen gemaakt met MapComplete",
+        "title": "Wijzigingen gemaakt met MapComplete"
     },
     "maproulette": {
         "description": "Thema met MapRoulette taken, waar je ze kunt zoeken, filteren en oplossen.",
@@ -806,6 +1040,79 @@
         },
         "title": "OnWheels"
     },
+    "openlovemap": {
+        "description": "<p><i>Liefde in de palm van je hand</i></p>Open Love Map geeft een overzicht van verschillende items voor volwassenen, zoals bordelen, erotische winkels en stripclubs.",
+        "layers": {
+            "2": {
+                "override": {
+                    "=presets": {
+                        "0": {
+                            "title": "een erotiekwinkel"
+                        }
+                    },
+                    "name": "Erotiekwinkels",
+                    "tagRenderings+": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "Deze winkel biedt <b>soft BDSM-accessoires</b>, zoals zachte handboeien, een 'fifty-shade-of-grey'-starterset, ..."
+                                },
+                                "1": {
+                                    "then": "Deze winkel biedt <b>gespecialiseerde BDSM-benodigdheden</b>, zoals spreidstangen, benodigdheden voor naaldspellen, medische bondagebenodigdheden, slagwerktuigen, kluisters, metalen kleuren, boeien, tepelklemmen, shibari-accessoires, ..."
+                                },
+                                "2": {
+                                    "then": "Deze winkel biedt '<b>pet play</b>'-accessoires, zoals puppymaskers, dierenmaskers, ponyspellen, staarten, hoefschoenen, ..."
+                                },
+                                "3": {
+                                    "then": "Deze winkel biedt <b>leren kledij</b> aan, waaronder broeken en shirts die je in het dagelijks leven kunt gebruiken tot en met leren harnassen"
+                                },
+                                "4": {
+                                    "then": "Deze winkel biedt <b>uniformen</b> voor rollenspelen aan, zoals verpleegsteruniformen, militaire uniformen, politie, schoolmeisje, Franse dienstmeid, ..."
+                                }
+                            },
+                            "question": "Biedt deze winkel fetisjspullen aan?"
+                        }
+                    }
+                }
+            },
+            "4": {
+                "override": {
+                    "=presets": {
+                        "0": {
+                            "title": "een condoomautomaat"
+                        }
+                    }
+                }
+            },
+            "6": {
+                "override": {
+                    "=presets": {
+                        "0": {
+                            "title": "een erotiekcinema"
+                        }
+                    }
+                }
+            },
+            "9": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "question": "Welk type hotel is dit?"
+                        }
+                    }
+                }
+            }
+        },
+        "overrideAll": {
+            "tagRenderings+": {
+                "0": {
+                    "question": "Heeft {title()} een privévideocabine?",
+                    "questionHint": "Dit is voor gebruik door één persoon."
+                }
+            }
+        },
+        "title": "Open Love Kaart"
+    },
     "openwindpowermap": {
         "description": "Een kaart om windturbines te tonen en te bewerken.",
         "title": "Windmolens"
@@ -852,6 +1159,11 @@
             }
         },
         "title": "Dierenartsen, hondenloopzones en andere huisdiervriendelijke plaatsen"
+    },
+    "play_forests": {
+        "description": "Een speelbos is een zone in een bos die vrij toegankelijk is voor spelende kinderen. Deze wordt  in bossen van het Agentschap Natuur en bos altijd aangeduid met het overeenkomstige bord.",
+        "shortDescription": "Deze kaart toont speelbossen",
+        "title": "Speelbossen"
     },
     "playgrounds": {
         "description": "Op deze kaart vind je speeltuinen en kan je zelf meer informatie en foto's toevoegen",
@@ -902,8 +1214,8 @@
                     },
                     "=presets": {
                         "0": {
-                            "title": "een ontbrekende winkel die postpartner is",
-                            "description": "Als een winkel nog niet op de kaart staat en een postpartner is, kun je deze hier toevoegen."
+                            "description": "Als een winkel nog niet op de kaart staat en een postpartner is, kun je deze hier toevoegen.",
+                            "title": "een ontbrekende winkel die postpartner is"
                         }
                     },
                     "description": "Een nieuwe postpartner toevoegen aan de kaart in een bestaande winkel"
@@ -921,6 +1233,51 @@
         "description": "Op deze kaart kan men algemene informatie over winkels toevoegen, evenals openingsuren en telefoonnummers",
         "shortDescription": "Een bewerkbare kaart met simpele informatie over winkels",
         "title": "Winkels"
+    },
+    "ski": {
+        "description": "Alles om te skiën",
+        "title": "Skipistes en kabelbanen"
+    },
+    "speelplekken": {
+        "description": "<h3>Welkom bij de Groendoener!</h3>De Zuidrand dat is spelen, ravotten, chillen, wandelen,… in het groen. Meer dan <b>200 grote en kleine speelplekken</b> liggen er in parken, in bossen en op pleintjes te wachten om ontdekt te worden. De verschillende speelplekken werden getest én goedgekeurd door kinder- en jongerenreporters uit de Zuidrand. Met leuke challenges dagen de reporters jou uit om ook op ontdekking te gaan. Klik op een speelplek op de kaart, bekijk het filmpje en ga op verkenning!<br/><br/>Het project groendoener kadert binnen het strategisch project <a href='https://www.provincieantwerpen.be/aanbod/dlm/samenwerkingsverbanden/zuidrand/projecten/strategisch-project-beleefbare-open-ruimte.html' target='_blank'>Beleefbare Open Ruimte in de Antwerpse Zuidrand</a> en is een samenwerking tussen het departement Leefmilieu van provincie Antwerpen, Sportpret vzw, een OpenStreetMap-België Consultent en Createlli vzw. Het project kwam tot stand met steun van Departement Omgeving van de Vlaamse Overheid.<br/><img class='w-full md:w-1/2' src='./assets/themes/speelplekken/provincie_antwerpen.jpg'/><img class='w-full md:w-1/2' src='./assets/themes/speelplekken/Departement_Omgeving_Vlaanderen.png'/>",
+        "layers": {
+            "6": {
+                "name": "Wandelroutes van provincie Antwerpen",
+                "tagRenderings": {
+                    "walk-description": {
+                        "render": "<h3>Korte beschrijving:</h3>{description}"
+                    },
+                    "walk-length": {
+                        "render": "Deze wandeling is <b>{_length:km}km</b> lang"
+                    },
+                    "walk-operator": {
+                        "question": "Wie beheert deze wandeling en plaatst dus de signalisatiebordjes?"
+                    },
+                    "walk-operator-email": {
+                        "question": "Naar wie kan men emailen bij problemen rond signalisatie?",
+                        "render": "Bij problemen met signalisatie kan men emailen naar <a href='mailto:{operator:email}'>{operator:email}</a>"
+                    },
+                    "walk-type": {
+                        "mappings": {
+                            "0": {
+                                "then": "Dit is een internationale wandelroute"
+                            },
+                            "1": {
+                                "then": "Dit is een nationale wandelroute"
+                            },
+                            "2": {
+                                "then": "Dit is een regionale wandelroute"
+                            },
+                            "3": {
+                                "then": "Dit is een lokale wandelroute"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "shortDescription": "Speelplekken in de Antwerpse Zuidrand",
+        "title": "Welkom bij de groendoener!"
     },
     "sport_pitches": {
         "description": "Een sportveld is een ingerichte plaats met infrastructuur om een sport te beoefenen",
@@ -1042,6 +1399,10 @@
         },
         "title": "Straatverlichting"
     },
+    "street_lighting_assen": {
+        "description": "Op deze kaart vind je alles over straatlantaarns + een dataset van Assen",
+        "title": "Straatverlichting - Assen"
+    },
     "surveillance": {
         "description": "Op deze open kaart kan je bewakingscamera's vinden.",
         "shortDescription": "Bewakingscameras en dergelijke",
@@ -1155,264 +1516,13 @@
         "description": "Kaart met afvalbakken en recyclingfaciliteiten.",
         "title": "Afval"
     },
+    "waste_assen": {
+        "description": "Kaart met afvalbakken en recyclingfaciliteiten + een dataset voor Assen.",
+        "title": "Afval - Assen"
+    },
     "waste_basket": {
         "description": "Op deze kaart vind je afvalbakken bij jou in de buurt. Als er een afvalbak ontbreekt op deze kaart, kun je deze zelf toevoegen",
         "shortDescription": "Een kaart met vuilnisbakken",
         "title": "Vuilnisbakken"
-    },
-    "elongated_coin": {
-        "title": "Muntpersen",
-        "description": "Zoek muntpersen om uitgerokken munten te maken."
-    },
-    "ghostsigns": {
-        "description": "Een kaart met ongebruikte borden op gebouwen",
-        "layers": {
-            "2": {
-                "override": {
-                    "+tagRenderings": {
-                        "0": {
-                            "mappings": {
-                                "1": {
-                                    "then": "Dit kunstwerk is geen historische advertentie"
-                                },
-                                "0": {
-                                    "then": "Dit kunstwerk is een historische advertentie"
-                                }
-                            },
-                            "question": "Is dit kunstwerk een historische advertentie?"
-                        }
-                    }
-                }
-            }
-        },
-        "title": "Spookreclames"
-    },
-    "glutenfree": {
-        "description": "Een gecrowdsourcete kaart met glutenvrije artikelen",
-        "title": "Glutenvrij"
-    },
-    "openlovemap": {
-        "layers": {
-            "4": {
-                "override": {
-                    "=presets": {
-                        "0": {
-                            "title": "een condoomautomaat"
-                        }
-                    }
-                }
-            },
-            "2": {
-                "override": {
-                    "=presets": {
-                        "0": {
-                            "title": "een erotiekwinkel"
-                        }
-                    },
-                    "name": "Erotiekwinkels",
-                    "tagRenderings+": {
-                        "0": {
-                            "mappings": {
-                                "0": {
-                                    "then": "Deze winkel biedt <b>soft BDSM-accessoires</b>, zoals zachte handboeien, een 'fifty-shade-of-grey'-starterset, ..."
-                                },
-                                "3": {
-                                    "then": "Deze winkel biedt <b>leren kledij</b> aan, waaronder broeken en shirts die je in het dagelijks leven kunt gebruiken tot en met leren harnassen"
-                                },
-                                "4": {
-                                    "then": "Deze winkel biedt <b>uniformen</b> voor rollenspelen aan, zoals verpleegsteruniformen, militaire uniformen, politie, schoolmeisje, Franse dienstmeid, ..."
-                                },
-                                "2": {
-                                    "then": "Deze winkel biedt '<b>pet play</b>'-accessoires, zoals puppymaskers, dierenmaskers, ponyspellen, staarten, hoefschoenen, ..."
-                                },
-                                "1": {
-                                    "then": "Deze winkel biedt <b>gespecialiseerde BDSM-benodigdheden</b>, zoals spreidstangen, benodigdheden voor naaldspellen, medische bondagebenodigdheden, slagwerktuigen, kluisters, metalen kleuren, boeien, tepelklemmen, shibari-accessoires, ..."
-                                }
-                            },
-                            "question": "Biedt deze winkel fetisjspullen aan?"
-                        }
-                    }
-                }
-            },
-            "9": {
-                "override": {
-                    "+tagRenderings": {
-                        "0": {
-                            "question": "Welk type hotel is dit?"
-                        }
-                    }
-                }
-            },
-            "6": {
-                "override": {
-                    "=presets": {
-                        "0": {
-                            "title": "een erotiekcinema"
-                        }
-                    }
-                }
-            }
-        },
-        "overrideAll": {
-            "tagRenderings+": {
-                "0": {
-                    "question": "Heeft {title()} een privévideocabine?",
-                    "questionHint": "Dit is voor gebruik door één persoon."
-                }
-            }
-        },
-        "title": "Open Love Kaart",
-        "description": "<p><i>Liefde in de palm van je hand</i></p>Open Love Map geeft een overzicht van verschillende items voor volwassenen, zoals bordelen, erotische winkels en stripclubs."
-    },
-    "guideposts": {
-        "title": "Wegwijzers",
-        "description": "Wegwijzers (ook wel handwijzer genoemd) zijn vaak te vinden langs officiële wandel-, fiets-, ski- of paardrijroutes om de richtingen naar verschillende bestemmingen aan te geven. Vaak zijn ze vernoemd naar een regio of plaats en geven ze de hoogte aan.\n\nDe positie van een wegwijzer kan door een wandelaar/fietser/renner/skiër worden gebruikt als bevestiging van de huidige positie, vooral als ze een gedrukte kaart zonder GPS-ontvanger gebruiken. "
-    },
-    "icecream": {
-        "description": "Een kaart met ijssalons en ijsautomaten",
-        "title": "IJs"
-    },
-    "items_with_image": {
-        "title": "Alle items met afbeeldingen",
-        "description": "Een kaart die alle items op OSM toont die een afbeelding hebben. Dit thema past heel slecht bij MapComplete omdat het niet mogelijk is een afbeelding toe te voegen. Dit thema is er vooral om alles in de database op te nemen, waardoor het snel afbeeldingen in de buurt kan ophalen voor andere functies"
-    },
-    "lactosefree": {
-        "description": "Een gecrowdsourcete kaart met lactosevrije winkels en restaurants",
-        "title": "Lactosevrije winkels en restaurants"
-    },
-    "lighthouses": {
-        "description": "Vuurtorens zijn hoge gebouwen met een licht erop om het scheepvaartverkeer te leiden.",
-        "title": "Vuurtorens"
-    },
-    "mapcomplete-changes": {
-        "description": "Deze kaarten tonen alle wijzigingen die zijn gemaakt met MapComplete",
-        "layers": {
-            "0": {
-                "description": "Toon alle MapComplete-wijzigingen",
-                "filter": {
-                    "10": {
-                        "options": {
-                            "0": {
-                                "question": "Thema etymologie uitsluiten"
-                            }
-                        }
-                    },
-                    "2": {
-                        "options": {
-                            "0": {
-                                "question": "Toegevoegd door {search}"
-                            }
-                        }
-                    },
-                    "3": {
-                        "options": {
-                            "0": {
-                                "question": "<b>Niet</b> toegevoegd door {search}"
-                            }
-                        }
-                    },
-                    "4": {
-                        "options": {
-                            "0": {
-                                "question": "Toegevoegd vóór {search}"
-                            }
-                        }
-                    },
-                    "6": {
-                        "options": {
-                            "0": {
-                                "question": "Gebruikerstaal (iso-code) {search}"
-                            }
-                        }
-                    },
-                    "9": {
-                        "options": {
-                            "0": {
-                                "question": "GRB-thema uitsluiten"
-                            }
-                        }
-                    },
-                    "5": {
-                        "options": {
-                            "0": {
-                                "question": "Toegevoegd na {search}"
-                            }
-                        }
-                    },
-                    "0": {
-                        "options": {
-                            "0": {
-                                "question": "Themanaam bevat {search}"
-                            }
-                        }
-                    },
-                    "1": {
-                        "options": {
-                            "0": {
-                                "question": "Themanaam bevat <b>geen</b> {search}"
-                            }
-                        }
-                    },
-                    "7": {
-                        "options": {
-                            "0": {
-                                "question": "Gemaakt met {search}"
-                            }
-                        }
-                    },
-                    "8": {
-                        "options": {
-                            "0": {
-                                "question": "Changeset voegde minstens één afbeelding toe"
-                            }
-                        }
-                    }
-                },
-                "tagRenderings": {
-                    "contributor": {
-                        "question": "Welke bijdrager maakte deze verandering?",
-                        "render": "Wijziging aangebracht door <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>"
-                    },
-                    "host": {
-                        "render": "Gewijzigd met <a href='{host}'>{host}</a>",
-                        "question": "Met welke host (website) is deze wijziging gemaakt?"
-                    },
-                    "locale": {
-                        "question": "In welke 'locale' (taal) is deze wijziging gemaakt?",
-                        "render": "De gebruikerstaal (locale) is {locale}"
-                    },
-                    "theme-id": {
-                        "question": "Welk thema werd gebruikt voor deze wijziging?",
-                        "render": "Verander met thema <a href='https://mapcomplete.org/{theme}'>{theme}</a>"
-                    },
-                    "version": {
-                        "question": "Welke versie van MapComplete is gebruikt voor deze wijziging?",
-                        "render": "Gemaakt met {editor}"
-                    },
-                    "show_changeset_id": {
-                        "render": "Changeset <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
-                    }
-                },
-                "name": "Changeset centra",
-                "title": {
-                    "render": "Changeset voor {theme}"
-                }
-            },
-            "1": {
-                "override": {
-                    "tagRenderings+": {
-                        "0": {
-                            "render": "Meer statistieken vind je <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>hier</a>"
-                        }
-                    }
-                }
-            }
-        },
-        "shortDescription": "Toont wijzigingen gemaakt met MapComplete",
-        "title": "Wijzigingen gemaakt met MapComplete"
-    },
-    "ski": {
-        "description": "Alles om te skiën",
-        "title": "Skipistes en kabelbanen"
     }
 }

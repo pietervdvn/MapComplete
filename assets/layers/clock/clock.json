@@ -132,12 +132,14 @@
       "title": {
         "en": "a wall-mounted clock, mounted directly on a wall",
         "nl": "een klok aan een muur, rechtstreeks bevestigd aan een muur",
-        "de": "eine Wanduhr, die direkt an der Wand angebracht ist"
+        "de": "eine Wanduhr, die direkt an der Wand angebracht ist",
+        "es": "un reloj, montado directamente en una pared"
       },
       "description": {
         "en": "A publicly visible clock mounted directly on a wall",
         "nl": "Een publiekelijk zichtbare klok rechtstreeks bevestigd aan een muur",
-        "de": "Eine öffentlich sichtbare Uhr, die direkt an einer Wand angebracht ist"
+        "de": "Eine öffentlich sichtbare Uhr, die direkt an einer Wand angebracht ist",
+        "es": "Un reloj visible públicamente montado directamente en una pared"
       },
       "snapToLayer": [
         "walls_and_buildings"
@@ -295,14 +297,16 @@
         "question": {
           "en": "Is this clock indoors?",
           "nl": "Is deze klok binnen?",
-          "de": "Befindet sich diese Uhr in Innenräumen?"
+          "de": "Befindet sich diese Uhr in Innenräumen?",
+          "es": "¿Este reloj está en el interior?"
         },
         "mappings": [
           {
             "then": {
               "en": "This clock is indoors",
               "nl": "Deze klok is binnen",
-              "de": "Diese Uhr befindet sich in Innenräumen"
+              "de": "Diese Uhr befindet sich in Innenräumen",
+              "es": "Este reloj está en un espacio interior"
             }
           },
           {
@@ -310,7 +314,8 @@
             "then": {
               "en": "This clock is outdoors",
               "nl": "Deze klok is buiten",
-              "de": "Diese Uhr ist im Freien"
+              "de": "Diese Uhr ist im Freien",
+              "es": "Este reloj está en un espacio exterior"
             }
           }
         ]

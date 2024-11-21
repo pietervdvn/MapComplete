@@ -17,7 +17,8 @@
     "pt": "Bancos em pontos de transporte público",
     "da": "Bænke ved stoppesteder for offentlig transport",
     "cs": "Lavičky na zastávkách veřejné dopravy",
-    "ca": "Bancs en una parada de transport públic"
+    "ca": "Bancs en una parada de transport públic",
+    "uk": "Лавки на зупинках громадського транспорту"
   },
   "description": {
     "en": "A layer showing all public-transport-stops which do have a bench",
@@ -193,7 +194,8 @@
         "cs": "Co je to za lavičku?",
         "pt": "Que tipo de banco é este?",
         "ca": "Quin tipus de banc és aquest?",
-        "pt_BR": "Qual tipo de banco é esse?"
+        "pt_BR": "Qual tipo de banco é esse?",
+        "uk": "Що це за лавка?"
       },
       "mappings": [
         {
@@ -208,7 +210,8 @@
             "cs": "Zde je normální lavička k sezení",
             "ca": "Aquí hi ha un banc normal",
             "pt_BR": "Há um banco comum, para sentar, aqui",
-            "pt": "Há um banco comum, para sentar, aqui"
+            "pt": "Há um banco comum, para sentar, aqui",
+            "uk": "Тут є звичайна лавка для сидіння"
           }
         },
         {
@@ -242,7 +245,8 @@
             "cs": "Zde není žádná lavička",
             "pt": "Não há nenhum banco aqui",
             "ca": "Aquí no hi ha cap banc",
-            "pt_BR": "Não há banco aqui"
+            "pt_BR": "Não há banco aqui",
+            "uk": "Тут немає лавки"
           }
         }
       ]

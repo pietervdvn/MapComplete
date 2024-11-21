@@ -31,7 +31,8 @@
     "pt_BR": "Completaremos os dados das características de publicidade com referência, operador e iluminação",
     "it": "Completeremo i dati da caratteristiche pubblicitarie, con referenza, operatore e illuminazione",
     "fr": "Nous allons compléter les information sur la publicité avec la référence, l'opérateur et l'éclairage",
-    "uk": "Ми доповнимо дані з рекламних об'єктів посиланням, оператором та освітленням"
+    "uk": "Ми доповнимо дані з рекламних об'єктів посиланням, оператором та освітленням",
+    "nl": "We vullen de informatie over de advertentie aan met de referentie, de operator en de verlichting"
   },
   "source": {
     "osmTags": {

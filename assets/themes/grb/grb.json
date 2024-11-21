@@ -163,7 +163,8 @@
             "ca": "Ha estat importat des de GRB, el número de referència és {source:geometry:ref}",
             "cs": "Byl importován z GRB, referenční číslo je {source:geometry:ref}",
             "es": "Ha sido importado de GRB, el número de referencia es {source:geometry:ref}",
-            "pl": "Został zaimportowany z GRB, numer referencyjny to {source:geometry:ref}"
+            "pl": "Został zaimportowany z GRB, numer referencyjny to {source:geometry:ref}",
+            "nl": "Werd geïmporteerd vanuit GRB, het referentienummer is {source:geometry:ref}"
           },
           "condition": "source:geometry:ref~*"
         },

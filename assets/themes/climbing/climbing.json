@@ -19,7 +19,7 @@
     "uk": "Скелелазні тренажерні зали, клуби та місця"
   },
   "description": {
-    "nl": "Op deze kaart vind je verschillende klimgelegenheden, zoals klimzalen, bolderzalen en klimmen in de natuur",
+    "nl": "Op deze kaart vind je verschillende klimgelegenheden, zoals klimzalen, boulderzalen en klimmen in de natuur.",
     "de": "Eine Karte mit Klettermöglichkeiten wie Kletterhallen, Kletterparks oder Felsen.",
     "en": "On this map you will find various climbing opportunities such as climbing gyms, bouldering halls and rocks in nature.",
     "ru": "На этой карте вы найдете различные возможности для скалолазания, такие как скалодромы, залы для боулдеринга и скалы на природе.",
@@ -420,7 +420,7 @@
             "question": {
               "en": "Does this shoe repair shop also repair climbing shoes?",
               "de": "Repariert dieses Schuhgeschäft auch Kletterschuhe?",
-              "fr": "Est-ce que cette cordonnerie répare les chaussons d'escalade ?",
+              "fr": "Est-ce que cette cordonnerie répare les chaussons d'escalade ?",
               "es": "¿Esta zapatería también repara zapatillas de escalada?",
               "ca": "Aquesta botiga de reparació de calçat també repara sabates d'escalada?",
               "cs": "Opravuje tato opravna obuvy také lezeckou obuv?",

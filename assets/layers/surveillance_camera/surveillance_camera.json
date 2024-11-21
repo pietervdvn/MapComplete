@@ -338,7 +338,8 @@
             "size": "large"
           },
           "then": {
-            "en": "A doorbell which might be turned on remotely at any time or by motion detection. These are typically <i>Smart</i>, internet-connected doorbells. Typical brands are Ring, Google Nest, Eufy, ..."
+            "en": "A doorbell which might be turned on remotely at any time or by motion detection. These are typically <i>Smart</i>, internet-connected doorbells. Typical brands are Ring, Google Nest, Eufy, ...",
+            "de": "Eine Türklingel, die jederzeit oder per Bewegungserkennung ferngeschaltet werden kann. Dies sind typischerweise <i>Smart</i>, internetgebundene Türklingeln. Typische Marken sind Ring, Google Nest, Eufy, ..."
           }
         }
       ],

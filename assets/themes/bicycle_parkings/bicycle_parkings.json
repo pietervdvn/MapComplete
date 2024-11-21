@@ -28,7 +28,8 @@
     "cs": "Mapa všech typů parkovišť pro jízdní kola",
     "uk": "Мапа, що показує всі типи велосипедних парковок",
     "pl": "Mapa pokazująca wszystkie typy parkingów dla rowerów",
-    "nl": "Een kaart met alle soorten fietsenstallingen"
+    "nl": "Een kaart met alle soorten fietsenstallingen",
+    "fr": "Une carte qui présente tous les types de parkings vélos"
   },
   "icon": "./assets/themes/bicycle_parkings/logo.svg",
   "layers": [
