@@ -87,7 +87,7 @@
         "tab": "Jouw favorieten en beoordelingen",
         "downloadGeojson": "Download je favorieten als geojson",
         "downloadGpx": "Download je favorieten als GPX",
-        "intro": "Je hebt {lengte} locaties gemarkeerd als favoriete locatie.",
+        "intro": "Je hebt {length} locaties gemarkeerd als favoriete locatie.",
         "introPrivacy": "Deze lijst is alleen voor jou zichtbaar",
         "title": "Je favoriete locaties",
         "loginToSeeList": "Log in om de lijst met locaties te zien die je als favoriet hebt gemarkeerd"
