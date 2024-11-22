@@ -6098,11 +6098,11 @@
                         "then": "Er zijn geen parkeerplaatsen voor gehandicapten"
                     },
                     "2": {
-                        "then": "Er zijn geen parkeerplaatsen voor gehandicapten"
+                        "then": "Er zijn geen parkeerplaatsen voor personen met een beperking"
                     }
                 },
-                "question": "Hoeveel parkeerplaatsen voor gehandicapten zijn er op deze parking?",
-                "render": "Er zijn {capacity:disabled} parkeerplaatsen voor gehandicapten"
+                "question": "Hoeveel parkeerplaatsen voor personen met een beperking zijn er op deze parking?",
+                "render": "Er zijn {capacity:disabled} parkeerplaatsen voor personen met een beperking"
             },
             "parking-type": {
                 "mappings": {
