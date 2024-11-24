@@ -106,15 +106,13 @@ export default class AllImageProviders {
 
     /**
      * Given a list of URLs, tries to detect the images. Used in e.g. the comments
-     * @param url
      */
     public static loadImagesFrom(urls: string[]): Store<ProvidedImage[]> {
         const tags = {
-            id: "na",
+            id: urls.join(";"),
         }
         for (let i = 0; i < urls.length; i++) {
-            const url = urls[i]
-            tags["image:" + i] = url
+            tags["image:" + i] = urls[i]
         }
         return this.LoadImagesFor(new ImmutableStore(tags))
     }
