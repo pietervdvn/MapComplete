@@ -7,7 +7,8 @@
     "ca": "Xemeneies i barbacoes",
     "cs": "Ohniště a grily",
     "hu": "Tűzrakó- és grillezőhelyek",
-    "uk": "Вогнища та барбекю"
+    "uk": "Вогнища та барбекю",
+    "nl": "Haarden en barbecues"
   },
   "description": {
     "de": "Stelle im Freien zum Feuermachen oder ein ortsfest installierter Grill an einer offizielle Stelle.",
@@ -15,7 +16,9 @@
     "es": "Lugar al aire libre para hacer fuego o una barbacoa/parrilla fija en un lugar oficial.",
     "ca": "Lloc a l'aire lliure adequat per a fer foc i barbacoes.",
     "cs": "Venkovní místo pro rozdělání ohně nebo grilování na oficiálním místě.",
-    "uk": "Відкрите місце для розведення багаття або стаціонарне барбекю в офіційному місці."
+    "uk": "Відкрите місце для розведення багаття або стаціонарне барбекю в офіційному місці.",
+    "nl": "Buitenruimte om een vuur te maken of een vaste barbecue op een officiële plaats.",
+    "fr": "Lieu extérieur pour faire un feu ou barbecue fixe dans un lieu officiel."
   },
   "icon": "./assets/layers/assembly_point/fire.svg",
   "layers": [

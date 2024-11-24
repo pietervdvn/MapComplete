@@ -137,6 +137,7 @@ export default class Constants {
     public static osmAuthConfig: AuthConfig = Constants.config.oauth_credentials
     public static nominatimEndpoint: string = Constants.config.nominatimEndpoint
     public static photonEndpoint: string = Constants.config.photonEndpoint
+    public static weblate: string = "https://translate.mapcomplete.org/"
 
     public static linkedDataProxy: string = Constants.config["jsonld-proxy"]
     /**

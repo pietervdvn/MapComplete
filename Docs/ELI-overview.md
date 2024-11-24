@@ -538,8 +538,7 @@ This table gives a summary of ids, names and other metainformation. [See the onl
 | CBJ_Aerial_20230516 | CBJ Aerial Imagery (May 2023) | photo | ⭐ | City and Borough of Juneau |
 | CBJ_Aerial_20230618 | CBJ Aerial Imagery (June 2023) | photo |  | City and Borough of Juneau |
 | FNSB_Aerial_2023 | FNSB Aerial Imagery (2023) | photo | ⭐ | Fairbanks North Star Borough |
-| MOA_Aerial_2021 | MOA Aerial Imagery (2021) | historicphoto |  | Municipality of Anchorage GIS |
-| MOA_Aerial_2024 | MOA Aerial Imagery (2024) | photo | ⭐ | Municipality of Anchorage GIS |
+| MOA_Aerial_2021 | MOA Aerial Imagery (2021) | photo |  | Municipality of Anchorage GIS |
 | MSB_Aerial_2019 | MSB Aerial Imagery - Area 1(2019) | historicphoto |  | Matanuska-Susitna Borough GIS Division |
 | MSB_Aerial_2020 | MSB Aerial Imagery - Area 2 (2020) | historicphoto |  | Matanuska-Susitna Borough GIS Division |
 | MSB_Aerial_2021 | MSB Aerial Imagery - Area 3 (2021) | historicphoto |  | Matanuska-Susitna Borough GIS Division |
@@ -559,27 +558,20 @@ This table gives a summary of ids, names and other metainformation. [See the onl
 | LA_County_Basemap | LA County Basemap | map |  | Los Angeles County |
 | Manhattan_Beach_CA_2023 | City of Manhattan Beach Orthoimagery (2023) | photo |  | City of Manhattan Beach |
 | Manteca_CA_2022 | City of Manteca Orthoimagery (2022) | photo |  | City of Manteca |
-| Modesto_CA_2023 | City of Modesto Orthoimagery (2023) | historicphoto |  | City of Modesto |
-| Modesto_CA_2024 | City of Modesto Orthoimagery (2024) | photo |  | City of Modesto |
+| Modesto_CA_2023 | City of Modesto Orthoimagery (2023) | photo |  | City of Modesto |
 | Orange_CA_2022 | Orange County Orthoimagery (2022) | photo |  | Orange County |
 | Roseville_CA_2023 | City of Roseville Orthoimagery (2023) | historicphoto |  | City of Roseville |
 | Roseville_CA_2024 | City of Roseville Orthoimagery (2024) | photo |  | City of Roseville |
 | Sacramento_CA_2022 | Sacramento County Orthoimagery (2022) | photo |  | Sacramento County |
-| San_Bernardino_CA_2023 | San Bernardino County Orthoimagery (2023) | historicphoto |  | San Bernardino County |
-| San_Bernardino_CA_2024 | San Bernardino County Orthoimagery (2024) | photo |  | San Bernardino County |
-| San_Francisco_2022 | San Francisco Orthoimagery (2022) | historicphoto |  | City and County of San Francisco |
-| San_Francisco_2022_CIR | San Francisco Orthoimagery CIR (2022) | historicphoto |  | City and County of San Francisco |
-| San_Francisco_2023 | San Francisco Orthoimagery (2023) | historicphoto |  | City and County of San Francisco |
-| San_Francisco_2023_CIR | San Francisco Orthoimagery CIR (2023) | historicphoto |  | City and County of San Francisco |
-| San_Francisco_2024 | San Francisco Orthoimagery (2024) | photo |  | City and County of San Francisco |
-| San_Francisco_2024_CIR | San Francisco Orthoimagery CIR (2024) | photo |  | City and County of San Francisco |
+| San_Bernardino_CA_2023 | San Bernardino County Orthoimagery (2023) | photo |  | San Bernardino County |
+| San_Francisco_CA_2022 | San Francisco Orthoimagery (2022) | historicphoto |  | City and County of San Francisco |
+| San_Francisco_CA_2022_CIR | San Francisco Orthoimagery CIR (2022) | historicphoto |  | City and County of San Francisco |
+| San_Francisco_Ortho_2023 | San Francisco Orthoimagery (2023) | photo |  | City and County of San Francisco |
 | San_Mateo_CA_2022 | San Mateo County Orthoimagery (2022) | photo |  | San Mateo County |
 | Santa_Clara_CA_2022 | Santa Clara County Orthoimagery (2022) | photo |  | County of Santa Clara |
 | Santa_Clara_CA_2023 | Santa Clara County Orthoimagery (2023) | photo |  | County of Santa Clara |
 | Santa_Rosa_CA_2022 | City of Santa Rosa Orthoimagery (2022) | photo |  | City of Santa Rosa |
-| Solano_CA_2022 | Solano County Orthoimagery (2022) | historicphoto |  | Solano County |
-| Solano_CA_2023 | Solano County Orthoimagery (2023) | historicphoto |  | Solano County |
-| Solano_CA_2024 | Solano County Orthoimagery (2024) | photo |  | Solano County |
+| Solano_CA_2022 | Solano County Orthoimagery (2022) | photo |  | Solano County |
 | Stockton_CA_2023 | City of Stockton Orthoimagery (2023) | photo |  | City of Stockton |
 | Arapahoe-County-Aerials-Latest | Arapahoe County Aerials Latest | photo |  | Arapahoe County GIS |
 | MCGIS-County-NAIP-Imagery-2015 | Mesa County GIS NAIP 2015 | historicphoto |  | Mesa County GIS |
@@ -587,8 +579,7 @@ This table gives a summary of ids, names and other metainformation. [See the onl
 | MCGIS-County-Valleywide-Imagery-2020 | Mesa County GIS Valleywide 2020 | historicphoto |  | Mesa County GIS |
 | MCGIS-County-Valleywide-Imagery-2022 | Mesa County GIS Valleywide 2022 | photo |  | Mesa County GIS |
 | MCGIS-County-Valleywide-Imagery-2024 | Mesa County GIS Valleywide 2024 | photo |  | Mesa County GIS |
-| CT_ECO_Ortho_2019_RGB | CT ECO Orthoimagery (2019) | historicphoto |  | Connecticut Environmental Conditions Online |
-| CT_ECO_Ortho_2023_RGB | CT ECO Orthoimagery (2023) | photo |  | Connecticut Environmental Conditions Online |
+| CT_ECO_Ortho_2019_RGB | CT ECO Orthoimagery (2019) | photo |  | Connecticut Environmental Conditions Online |
 | CT_ECO_Shaded_relief_2016 | CT ECO Shaded Relief | elevation |  | Connecticut Environmental Conditions Online |
 | MetroCOG_Ortho_2020 | MetroCOG Orthoimagery (2020) | photo |  | Connecticut Metropolitan Council of Governments |
 | DC_From_Above_Ortho_2019 | DC From Above Orthophoto 2019 | historicphoto |  | OCTO, DCGIS |
@@ -827,8 +818,7 @@ This table gives a summary of ids, names and other metainformation. [See the onl
 | Suan_Juan_WA_2023 | Suan Juan County Aerials (2023) | photo | ⭐ | San Juan County GIS |
 | Suan_Juan_WA_Basemap | Suan Juan County Basemap | map |  | San Juan County GIS |
 | Snohomish_WA_2020 | Snohomish County Orthoimagery (2020) | historicphoto |  | Snohomish County GIS |
-| Snohomish_WA_2022 | Snohomish County Orthoimagery (2022) | historicphoto |  | Snohomish County GIS |
-| Snohomish_WA_2024 | Snohomish County Orthoimagery (2024) | photo |  | Snohomish County GIS |
+| Snohomish_WA_2022 | Snohomish County Orthoimagery (2022) | photo |  | Snohomish County GIS |
 | WISC_DNR_Ortho_Composite | Wisconsin Leaf-Off Orthophotography (DNR) | photo |  | Wisconsin Regional Orthoimagery Consortium, Southeastern Wisconsin Regional Planning Commission, Wisconsin Department of Natural Resources |
 | Monongalia_WV_2022 | Monongalia County 2022 Aerial Imagery | historicphoto |  | Monongalia Morgantown Area Geospatial Information Consortium |
 | Monongalia_WV_2023 | Monongalia County 2023 Aerial Imagery | photo | ⭐ | Monongalia Morgantown Area Geospatial Information Consortium |

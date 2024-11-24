@@ -10529,6 +10529,9 @@
                     },
                     "2": {
                         "then": "A panning camera"
+                    },
+                    "3": {
+                        "then": "A doorbell which might be turned on remotely at any time or by motion detection. These are typically <i>Smart</i>, internet-connected doorbells. Typical brands are Ring, Google Nest, Eufy, ..."
                     }
                 },
                 "question": "What kind of camera is this?"

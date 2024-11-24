@@ -101,7 +101,8 @@
             "fr": "C'est un parking en surface",
             "ca": "Aquest és un aparcament en superfície",
             "cs": "Jedná se o povrchové parkoviště",
-            "es": "Este es un aparcamiento en superficie"
+            "es": "Este es un aparcamiento en superficie",
+            "uk": "Це наземний паркінг"
           }
         },
         {
@@ -113,7 +114,8 @@
             "fr": "C'est un lieu de stationnement à côté d'une route",
             "ca": "Es tracta d'un aparcament al costat d'un carrer",
             "cs": "Jedná se o parkoviště vedle ulice",
-            "es": "Esta es una bahía de aparcamiento junto a una calle"
+            "es": "Esta es una bahía de aparcamiento junto a una calle",
+            "uk": "Це паркувальний майданчик поруч з вулицею"
           }
         },
         {
@@ -126,7 +128,8 @@
             "ca": "Aquest és un aparcament subterrani",
             "pl": "To jest podziemny parking",
             "cs": "Jedná se o podzemní garáž",
-            "es": "Este es un aparcamiento subterráneo"
+            "es": "Este es un aparcamiento subterráneo",
+            "uk": "Це підземний паркінг"
           }
         },
         {
@@ -139,7 +142,8 @@
             "pl": "To jest wielopiętrowy parking",
             "ca": "Es tracta d'un garatge de diverses plantes",
             "cs": "Jedná se o vícepodlažní parkovací garáž",
-            "es": "Este es un aparcamiento de varios pisos"
+            "es": "Este es un aparcamiento de varios pisos",
+            "uk": "Це багатоповерховий паркінг"
           }
         },
         {
@@ -150,7 +154,8 @@
             "de": "Dies ist ein Parkdeck auf dem Dach",
             "fr": "C'est un parking sur le toit",
             "cs": "Jedná se o střešní parkoviště",
-            "es": "Este es un aparcamiento en azotea"
+            "es": "Este es un aparcamiento en azotea",
+            "uk": "Це паркувальний майданчик на даху"
           }
         },
         {
@@ -163,7 +168,8 @@
             "pl": "To jest pas do parkowania na jezdni",
             "ca": "Aquest és un carril per aparcar al carrer",
             "cs": "Jedná se o pruh pro parkování na silnici",
-            "es": "Este es un carril para aparcar en la carretera"
+            "es": "Este es un carril para aparcar en la carretera",
+            "uk": "Це смуга для паркування на дорозі"
           }
         },
         {
@@ -174,7 +180,8 @@
             "de": "Dies ist ein durch Carports überdachter Parkplatz",
             "fr": "C'est un parking couvert avec des abris auto",
             "cs": "Jedná se o parkoviště kryté přístřešky pro auta",
-            "es": "Este aparcamiento está cubierto por cocheras"
+            "es": "Este aparcamiento está cubierto por cocheras",
+            "uk": "Це парковка, закрита навісами для автомобілів"
           }
         },
         {
@@ -185,7 +192,8 @@
             "de": "Dies ist ein Parkplatz bestehend aus Garagenboxen",
             "fr": "C'est un parking composé de box de garage",
             "cs": "Jedná se o parkoviště skládající se z garážových boxů",
-            "es": "Este es un aparcamiento que consta de boxes de garaje"
+            "es": "Este es un aparcamiento que consta de boxes de garaje",
+            "uk": "Це паркінг, що складається з гаражних боксів"
           }
         },
         {
@@ -197,7 +205,8 @@
             "fr": "C'est un parking sur une aire de stationnement",
             "ca": "Aquest és un aparcament en una zona de descans",
             "cs": "Jedná se o parkoviště na odpočívadle",
-            "es": "Este es un aparcamiento en una zona de descanso"
+            "es": "Este es un aparcamiento en una zona de descanso",
+            "uk": "Це парковка на проїжджій частині"
           }
         },
         {
@@ -208,7 +217,8 @@
             "de": "Hier gibt es Parkmöglichkeiten unter einer offenen Dachkonstruktion",
             "fr": "C'est un parking composé de cabanons",
             "cs": "Jedná se o parkoviště tvořené přístřešky",
-            "es": "Este es un aparcamiento que consta de cobertizos"
+            "es": "Este es un aparcamiento que consta de cobertizos",
+            "uk": "Це парковка, що складається з навісів"
           }
         }
       ],
@@ -220,7 +230,8 @@
         "ca": "Quin tipus d'aparcament és aquest?",
         "pl": "Jaki to rodzaj parkingu?",
         "cs": "Jaký je druh parkování?",
-        "es": "¿Qué tipo de aparcamiento es este?"
+        "es": "¿Qué tipo de aparcamiento es este?",
+        "uk": "Що це за парковка?"
       }
     },
     {

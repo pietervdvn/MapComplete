@@ -22,7 +22,8 @@
     "images",
     {
       "question": {
-        "en": "What kind of components does this waiting aid have?"
+        "en": "What kind of components does this waiting aid have?",
+        "de": "Aus welchen Bestandteilen besteht diese Wartehilfe?"
       },
       "id": "type",
       "multiAnswer": true,
@@ -30,14 +31,16 @@
         {
           "if": "footrest=yes",
           "then": {
-            "en": "There is a board or peg to rest your foot on here"
+            "en": "There is a board or peg to rest your foot on here",
+            "de": "Hier gibt es ein Brett oder einen Pflock zum Abstützen des Fußes"
           },
           "ifnot": "footrest="
         },
         {
           "if": "handrest=yes",
           "then": {
-            "en": "There is a rail or a handle to hold on to here"
+            "en": "There is a rail or a handle to hold on to here",
+            "de": "Hier gibt es eine Schiene oder einen Griff zum Festhalten"
           },
           "ifnot": "handrest="
         }
@@ -45,26 +48,34 @@
     },
     {
       "question": {
-        "en": "On what side of the road is this located?"
+        "en": "On what side of the road is this located?",
+        "de": "Auf welcher Straßenseite befindet sich dies?",
+        "es": "¿En qué lado de la carretera se encuentra?"
       },
       "id": "side",
       "mappings": [
         {
           "if": "side=left",
           "then": {
-            "en": "This waiting aid is located on the left side"
+            "en": "This waiting aid is located on the left side",
+            "de": "Diese Wartehilfe befindet sich auf der linken Seite",
+            "es": "Esta ayuda a la espera se encuentra en el lado izquierdo"
           }
         },
         {
           "if": "side=right",
           "then": {
-            "en": "This waiting aid is located on the right side"
+            "en": "This waiting aid is located on the right side",
+            "de": "Diese Wartehilfe befindet sich auf der rechten Seite",
+            "es": "Esta ayuda a la espera se encuentra en el lado derecho"
           }
         },
         {
           "if": "side=both",
           "then": {
-            "en": "There are waiting aids on both sides of the road"
+            "en": "There are waiting aids on both sides of the road",
+            "de": "Auf beiden Seiten der Straße gibt es Wartehilfen",
+            "es": "Hay ayudas a la espera a ambos lados de la carretera"
           }
         }
       ]
@@ -76,18 +87,24 @@
         {
           "if": "direction=forward",
           "then": {
-            "en": "This waiting aid can be used when going forward on this way"
+            "en": "This waiting aid can be used when going forward on this way",
+            "de": "Diese Wartehilfe kann bei der Weiterfahrt auf diesem Weg genutzt werden",
+            "es": "Esta ayuda a la espera puede utilizarse cuando se avanza por esta vía"
           }
         },
         {
           "if": "direction=backward",
           "then": {
-            "en": "This waiting aid can be used when going backward on this way"
+            "en": "This waiting aid can be used when going backward on this way",
+            "de": "Diese Wartehilfe kann beim Rückwärtsfahren auf diesem Weg benutzt werden",
+            "es": "Esta ayuda a la espera puede utilizarse cuando se retrocede por este camino"
           }
         }
       ],
       "render": {
-        "en": "This waiting aid can be used when going in {direction} direction"
+        "en": "This waiting aid can be used when going in {direction} direction",
+        "de": "Diese Wartehilfe kann in Fahrtrichtung {direction} benutzt werden",
+        "es": "Esta ayuda a la espera puede utilizarse cuando se va en dirección {direction}"
       }
     }
   ],
@@ -100,17 +117,22 @@
   "credits:uid": 5093765,
   "id": "cyclist_waiting_aid",
   "description": {
-    "en": "Various pieces of infrastructure that aid cyclists while they wait at a traffic light."
+    "en": "Various pieces of infrastructure that aid cyclists while they wait at a traffic light.",
+    "de": "Verschiedene Infrastruktureinrichtungen, die Radfahrern helfen, während sie an einer Ampel warten.",
+    "es": "Diversas infraestructuras que ayudan a los ciclistas mientras esperan en un semáforo."
   },
   "source": {
     "osmTags": "highway=cyclist_waiting_aid"
   },
   "name": {
-    "en": "Cyclist Waiting Aids"
+    "en": "Cyclist Waiting Aids",
+    "de": "Radfahrer-Wartehilfen",
+    "es": "Ayudas a la espera de ciclistas"
   },
   "title": {
     "render": {
-      "en": "Cyclist Waiting Aid"
+      "en": "Cyclist Waiting Aid",
+      "de": "Radfahrer-Wartehilfe"
     }
   },
   "deletion": {
@@ -132,13 +154,17 @@
   "presets": [
     {
       "title": {
-        "en": "a cyclist waiting aid"
+        "en": "a cyclist waiting aid",
+        "de": "eine Radfahrer-Wartehilfe",
+        "es": "un ciclista espera ayuda"
       },
       "tags": [
         "highway=cyclist_waiting_aid"
       ],
       "description": {
-        "en": "A footrest, handrail or other aid, to improve comfort while waiting at traffic lights"
+        "en": "A footrest, handrail or other aid, to improve comfort while waiting at traffic lights",
+        "de": "Eine Fußstütze, ein Handlauf oder ein anderes Hilfsmittel zur Verbesserung des Komforts beim Warten an der Ampel",
+        "es": "Reposapiés, pasamanos u otro tipo de ayuda para mejorar la comodidad durante la espera en los semáforos"
       },
       "snapToLayer": [
         "cycleways_and_roads"

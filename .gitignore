@@ -53,3 +53,4 @@ public/assets/langs/*
 android/
 dist-full/
 public/assets/icons/*.webp
+uploaded_images.json

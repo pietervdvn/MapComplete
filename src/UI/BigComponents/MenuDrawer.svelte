@@ -276,7 +276,7 @@
       <EnvelopeOpen class="h-6 w-6" />
       <Tr t={Translations.t.general.attribution.emailCreators} />
     </a>
-    <a class="flex" href="https://hosted.weblate.org/projects/mapcomplete/" target="_blank">
+    <a class="flex" href={`${Constants.weblate}projects/mapcomplete/`} target="_blank">
       <TranslateIcon class="h-6 w-6" />
       <Tr t={Translations.t.translations.activateButton} />
     </a>

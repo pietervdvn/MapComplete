@@ -327,14 +327,16 @@
           "en": "Hiking guideposts",
           "de": "Wanderwegweiser",
           "es": "Señalización de senderismo",
-          "cs": "Turistické rozcestníky"
+          "cs": "Turistické rozcestníky",
+          "nl": "Wandelwegwijzers"
         },
         "title": {
           "render": {
             "en": "Hiking guidepost",
             "de": "Wanderwegweiser",
             "es": "Hito de senderismo",
-            "cs": "Turistický rozcestník"
+            "cs": "Turistický rozcestník",
+            "nl": "Wandelwegwijzer"
           }
         }
       },
@@ -367,7 +369,8 @@
               "en": "a route marker for a node to node link",
               "de": "Eine Routenmarkierung für eine Verbindung von Knoten zu Knoten",
               "es": "un marcador de ruta para un enlace de nodo a nodo",
-              "cs": "značka trasy pro spojení mezi uzly"
+              "cs": "značka trasy pro spojení mezi uzly",
+              "nl": "een knooppuntwegwijzer"
             },
             "=exampleImages": [
               "./assets/layers/route_marker/walking_route_marker.jpg"

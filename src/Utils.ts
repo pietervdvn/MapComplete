@@ -1292,6 +1292,21 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
     }
 
     /**
+     *
+     * {"a": "b", "c":"d"} // => {"b":"a", "d":"c"}
+     */
+    public static transposeMapSimple<K extends string, V extends string>(
+        d: Record<K, V>
+    ): Record<V, K> {
+        const inv = <Record<V, K>>{}
+        for (const k in d) {
+            const v = d[k]
+            inv[v] = k
+        }
+        return inv
+    }
+
+    /**
      * Utils.colorAsHex({r: 255, g: 128, b: 0}) // => "#ff8000"
      * Utils.colorAsHex(undefined) // => undefined
      */

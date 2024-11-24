@@ -104,7 +104,8 @@
             "en": "This is a cable car where the car goes up and down again on the same cable.",
             "de": "Es handelt sich um eine Seilbahn, bei der die Kabine auf demselben Seil nach oben und wieder nach unten fährt.",
             "cs": "Jedná se o lanovku, kde vagon jezdí nahoru a dolů po stejném laně.",
-            "es": "Se trata de un teleférico donde la cabina sube y baja por el mismo cable."
+            "es": "Se trata de un teleférico donde la cabina sube y baja por el mismo cable.",
+            "nl": "Dit is een kabelbaan waar de gondel op dezelfde kabel naar boven en naar beneden gaat."
           },
           "icon": "./assets/layers/aerialway/cable_car.svg"
         },
@@ -114,7 +115,8 @@
             "en": "This is a gondola where the cars go around in continuous circles",
             "de": "Es handelt sich um eine Seilbahn, bei der die Kabinen in ständigen Kreisen fahren",
             "cs": "Jedná se o gondolu, kde vozy jezdí v nepřetržitých kruzích",
-            "es": "Se trata de una góndola donde las cabinas giran en círculos continuos"
+            "es": "Se trata de una góndola donde las cabinas giran en círculos continuos",
+            "nl": "Dit is een kabellift waar de gondel in een continue circuit gaat"
           },
           "icon": "./assets/layers/aerialway/gondola_lift.svg"
         },

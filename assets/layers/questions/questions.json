@@ -215,7 +215,8 @@
         "en": "Edit phone number",
         "nl": "Pas telefoonnummer aan",
         "de": "Telefonnummer bearbeiten",
-        "es": "Editar número de teléfono"
+        "es": "Editar número de teléfono",
+        "uk": "Редагувати номер телефону"
       },
       "onSoftDelete": [
         "phone="
@@ -409,7 +410,8 @@
         "nl": "Pas website aan",
         "de": "Webseite bearbeiten",
         "pl": "Edytuj stronę internetową",
-        "es": "Editar sitio web"
+        "es": "Editar sitio web",
+        "uk": "Редагувати веб-сайт"
       },
       "onSoftDelete": [
         "website=",
@@ -866,7 +868,8 @@
               "nb_NO": "Døgnåpent (inkludert helligdager)",
               "cs": "Otevřeno 24/7 (včetně svátků)",
               "ca": "Obert 24/7 (incloent-hi festius)",
-              "pl": "Otwarte 24/7 (również w święta)"
+              "pl": "Otwarte 24/7 (również w święta)",
+              "uk": "Працює 24/7 (включаючи святкові дні)"
             }
           }
         ]
@@ -1056,7 +1059,8 @@
         "es": "¿Qué métodos de pago se aceptan aquí?",
         "zh_Hans": "这里支持哪些支付方式？",
         "da": "Hvilke betalingsmetoder accepteres her?",
-        "cs": "Jaké platební metody jsou zde přijímány?"
+        "cs": "Jaké platební metody jsou zde přijímány?",
+        "uk": "Які способи оплати тут приймаються?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -1128,7 +1132,8 @@
             "de": "Die Bezahlung per QR-Code ist hier möglich",
             "es": "Aquí es posible pagar con código QR",
             "ca": "Aquí es pot pagar amb codi QR",
-            "cs": "Platba QR kódem je zde možná"
+            "cs": "Platba QR kódem je zde možná",
+            "uk": "Оплата за допомогою QR-коду можлива тут"
           }
         }
       ],
@@ -1171,7 +1176,8 @@
               "es": "Aquí se aceptan monedas",
               "nb_NO": "Mynter aksepteres her",
               "pl": "Monety są tutaj akceptowane",
-              "cs": "Jsou zde přijímány mince"
+              "cs": "Jsou zde přijímány mince",
+              "uk": "Монети приймаються тут"
             }
           },
           {
@@ -1187,7 +1193,8 @@
               "es": "Aquí se aceptan billetes",
               "nb_NO": "Sedler aksepteres her",
               "pl": "Banknoty są tutaj akceptowane",
-              "cs": "Jsou zde přijímány bankovky"
+              "cs": "Jsou zde přijímány bankovky",
+              "uk": "Тут приймаються банкноти"
             }
           },
           {
@@ -1203,7 +1210,8 @@
               "es": "Aquí se aceptan tarjetas de débito",
               "nb_NO": "Debetkort aksepteres her",
               "pl": "Akceptowane są tutaj karty debetowe",
-              "cs": "Jsou zde přijímány debetní karty"
+              "cs": "Jsou zde přijímány debetní karty",
+              "uk": "Тут приймаються дебетові картки"
             }
           },
           {
@@ -1219,7 +1227,8 @@
               "es": "Aquí se aceptan tarjetas de crédito",
               "nb_NO": "Kredittkort aksepteres her",
               "pl": "Akceptowane są tutaj karty kredytowe",
-              "cs": "Jsou zde přijímány kreditní karty"
+              "cs": "Jsou zde přijímány kreditní karty",
+              "uk": "Тут приймаються кредитні картки"
             }
           }
         ],
@@ -3149,21 +3158,24 @@
       "id": "indoor",
       "question": {
         "en": "Is this object located indoors?",
-        "nl": "Bevindt dit object zich binnen?"
+        "nl": "Bevindt dit object zich binnen?",
+        "de": "Befindet sich das Objekt in einem Innenraum?"
       },
       "mappings": [
         {
           "if": "indoor=yes",
           "then": {
             "en": "This object is located indoors",
-            "nl": "Dit object bevindt zich binnen"
+            "nl": "Dit object bevindt zich binnen",
+            "de": "Dieses Objekt befindet sich in einem Innenraum"
           }
         },
         {
           "if": "indoor=no",
           "then": {
             "en": "This object is located outdoors",
-            "nl": "Dit object bevindt zich buiten"
+            "nl": "Dit object bevindt zich buiten",
+            "de": "Dieses Objekt befindet sich im Freien"
           }
         }
       ]

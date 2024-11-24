@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.47.10](https://github.com/pietervdvn/mapcomplete/compare/v0.47.9...v0.47.10) (2024-11-14)
+
+
+### Bug Fixes
+
+* actually download all OSM-data when downloading as geojson or CSV ([05298c2](https://github.com/pietervdvn/mapcomplete/commits05298c2498bb908860f49f057b7466f4a8feb5ba))
+* don't show `maxstay=30 days` in velopark, this is actually 'unknown' ([d2237cf](https://github.com/pietervdvn/mapcomplete/commitsd2237cf26c1e3af034f0c3b72bd5ffa878ef1c64))
+* fix image upload ([f1106ad](https://github.com/pietervdvn/mapcomplete/commitsf1106ad4a816c9fb84a92974cb7d88e9aae7633b))
+
+
+### Theme improvements
+
+* **surveillance:** add doorbell as option ([88a4bd5](https://github.com/pietervdvn/mapcomplete/commits88a4bd561952b3d9d0cd8e4ebaab123b739909e8))
+
 ### [0.47.9](https://github.com/pietervdvn/mapcomplete/compare/v0.47.8...v0.47.9) (2024-11-07)
 
 

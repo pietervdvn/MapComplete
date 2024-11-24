@@ -44,7 +44,7 @@
     })
     .filter((link) => !link.startsWith("https://wiki.openstreetmap.org/wiki/File:"))
 
-  const attributedImages = AllImageProviders.loadImagesFrom(images)
+  let attributedImages = AllImageProviders.loadImagesFrom(images)
   /**
    * Class of the little icons indicating 'opened', 'comment' and 'resolved'
    */
