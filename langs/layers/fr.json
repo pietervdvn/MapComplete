@@ -6391,7 +6391,7 @@
                 "question": "Dans quelle direction géographique cette caméra filme-t-elle ?",
                 "render": "Filme dans une direction {camera:direction}"
             },
-            "is_indoor": {
+            "camera_is_indoor": {
                 "mappings": {
                     "0": {
                         "then": "Cette caméra est située à l'intérieur"
@@ -6402,8 +6402,7 @@
                     "2": {
                         "then": "Cette caméra est probablement située à l'extérieur"
                     }
-                },
-                "question": "L'espace public surveillé par cette caméra est-il un espace intérieur ou extérieur ?"
+                }
             }
         },
         "title": {

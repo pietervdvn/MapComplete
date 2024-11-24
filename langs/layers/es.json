@@ -10575,6 +10575,19 @@
                 "question": "¿En qué dirección geográfica graba esta cámara?",
                 "render": "Graba hacia un rumbo de brújula de {camera:direction}"
             },
+            "camera_is_indoor": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta cámara está ubicada en interiores"
+                    },
+                    "1": {
+                        "then": "Esta cámara está ubicada en exteriores"
+                    },
+                    "2": {
+                        "then": "Esta cámara probablemente está ubicada en exteriores"
+                    }
+                }
+            },
             "has_alpr": {
                 "mappings": {
                     "0": {
@@ -10586,20 +10599,6 @@
                 },
                 "question": "¿Puede esta cámara detectar automáticamente las matrículas?",
                 "questionHint": "Un <b>ALPR</b> (lector automático de matrículas) suele tener dos lentes y una serie de LED infrarrojos entre ellas."
-            },
-            "is_indoor": {
-                "mappings": {
-                    "0": {
-                        "then": "Esta cámara está ubicada en interiores"
-                    },
-                    "1": {
-                        "then": "Esta cámara está ubicada en exteriores"
-                    },
-                    "2": {
-                        "then": "Esta cámara probablemente está ubicada en exteriores"
-                    }
-                },
-                "question": "¿El espacio público vigilado por esta cámara es interior o exterior?"
             }
         },
         "title": {

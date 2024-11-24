@@ -2810,7 +2810,7 @@
                 "question": "In quale direzione geografica punta questa videocamera?",
                 "render": "Punta in direzione {camera:direction}"
             },
-            "is_indoor": {
+            "camera_is_indoor": {
                 "mappings": {
                     "0": {
                         "then": "Questa videocamera si trova al chiuso"
@@ -2821,8 +2821,7 @@
                     "2": {
                         "then": "Questa videocamera si trova probabilmente all'esterno"
                     }
-                },
-                "question": "Lo spazio pubblico sorvegliato da questa videocamera è all'aperto o al chiuso?"
+                }
             }
         },
         "title": {

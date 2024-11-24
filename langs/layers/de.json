@@ -10612,6 +10612,19 @@
                 "question": "In welche Himmelsrichtung filmt diese Kamera?",
                 "render": "filmt in Himmelsrichtung {camera:direction}"
             },
+            "camera_is_indoor": {
+                "mappings": {
+                    "0": {
+                        "then": "Diese Kamera befindet sich im Innenraum"
+                    },
+                    "1": {
+                        "then": "Diese Kamera befindet sich im Freien"
+                    },
+                    "2": {
+                        "then": "Diese Kamera ist möglicherweise im Freien"
+                    }
+                }
+            },
             "has_alpr": {
                 "mappings": {
                     "0": {
@@ -10623,20 +10636,6 @@
                 },
                 "question": "Dient diese Kamera der Nummernschilderkennung?",
                 "questionHint": "Eine Kamera zur <b>Nummernschilderkennung</b> hat üblicherweise zwei Linsen mit dazwischenliegenden Infrarot-LEDs."
-            },
-            "is_indoor": {
-                "mappings": {
-                    "0": {
-                        "then": "Diese Kamera befindet sich im Innenraum"
-                    },
-                    "1": {
-                        "then": "Diese Kamera befindet sich im Freien"
-                    },
-                    "2": {
-                        "then": "Diese Kamera ist möglicherweise im Freien"
-                    }
-                },
-                "question": "Handelt es sich bei dem von dieser Kamera überwachten öffentlichen Raum um einen Innen- oder Außenbereich?"
             }
         },
         "title": {

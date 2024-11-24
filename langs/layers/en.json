@@ -10227,6 +10227,398 @@
                 "title": "a sports centre"
             }
         },
+        "tagRenderings": {
+            "sport_centre-sport": {
+                "mappings": {
+                    "0": {
+                        "then": "Nine-pin bowling"
+                    },
+                    "1": {
+                        "then": "Ten-pin bowling"
+                    },
+                    "10": {
+                        "then": "BASE jumping"
+                    },
+                    "100": {
+                        "then": "Skateboard"
+                    },
+                    "101": {
+                        "then": "Ski jumping"
+                    },
+                    "102": {
+                        "then": "Snooker"
+                    },
+                    "103": {
+                        "then": "Soccer"
+                    },
+                    "104": {
+                        "then": "Softball"
+                    },
+                    "105": {
+                        "then": "Motorcycle speedway"
+                    },
+                    "106": {
+                        "then": "Squash"
+                    },
+                    "107": {
+                        "then": "Sumo"
+                    },
+                    "108": {
+                        "then": "Surfing"
+                    },
+                    "109": {
+                        "then": "Swimming"
+                    },
+                    "11": {
+                        "then": "Baseball"
+                    },
+                    "110": {
+                        "then": "Table tennis"
+                    },
+                    "111": {
+                        "then": "Table soccer"
+                    },
+                    "112": {
+                        "then": "Taekwondo"
+                    },
+                    "113": {
+                        "then": "Tennis"
+                    },
+                    "114": {
+                        "then": "Teqball"
+                    },
+                    "115": {
+                        "then": "Toboggan"
+                    },
+                    "116": {
+                        "then": "Trampoline"
+                    },
+                    "117": {
+                        "then": "Ultimate frisbee"
+                    },
+                    "118": {
+                        "then": "Ultralight aviation"
+                    },
+                    "119": {
+                        "then": "Volleyball"
+                    },
+                    "12": {
+                        "then": "Basketball"
+                    },
+                    "120": {
+                        "then": "Wakeboarding"
+                    },
+                    "121": {
+                        "then": "Water polo"
+                    },
+                    "122": {
+                        "then": "Waterskiing"
+                    },
+                    "123": {
+                        "then": "Olympic weightlifting"
+                    },
+                    "124": {
+                        "then": "Windsurfing"
+                    },
+                    "125": {
+                        "then": "Wrestling"
+                    },
+                    "126": {
+                        "then": "Yoga"
+                    },
+                    "127": {
+                        "then": "Zurkhaneh sport"
+                    },
+                    "13": {
+                        "then": "Beachvolleyball"
+                    },
+                    "14": {
+                        "then": "Biathlon"
+                    },
+                    "15": {
+                        "then": "Cue sports"
+                    },
+                    "16": {
+                        "then": "BMX"
+                    },
+                    "17": {
+                        "then": "Bobsleigh"
+                    },
+                    "18": {
+                        "then": "Boules"
+                    },
+                    "19": {
+                        "then": "Bowls"
+                    },
+                    "2": {
+                        "then": "Aerobics"
+                    },
+                    "20": {
+                        "then": "Boxing"
+                    },
+                    "21": {
+                        "then": "Bullfighting"
+                    },
+                    "22": {
+                        "then": "Canadian football"
+                    },
+                    "23": {
+                        "then": "Canoe"
+                    },
+                    "24": {
+                        "then": "Chess"
+                    },
+                    "25": {
+                        "then": "Non-competitive diving"
+                    },
+                    "26": {
+                        "then": "Rock climbing"
+                    },
+                    "27": {
+                        "then": "Climbing Adventure"
+                    },
+                    "28": {
+                        "then": "Cockfighting"
+                    },
+                    "29": {
+                        "then": "Cricket"
+                    },
+                    "3": {
+                        "then": "American football"
+                    },
+                    "30": {
+                        "then": "CrossFit"
+                    },
+                    "31": {
+                        "then": "Croquet"
+                    },
+                    "32": {
+                        "then": "Curling"
+                    },
+                    "33": {
+                        "then": "Cycle Polo"
+                    },
+                    "34": {
+                        "then": "Cycling"
+                    },
+                    "35": {
+                        "then": "Dance"
+                    },
+                    "36": {
+                        "then": "Darts"
+                    },
+                    "37": {
+                        "then": "Dog agility"
+                    },
+                    "38": {
+                        "then": "Greyhound racing"
+                    },
+                    "39": {
+                        "then": "Dragon Boat"
+                    },
+                    "4": {
+                        "then": "Aikido"
+                    },
+                    "40": {
+                        "then": "Equestrianism"
+                    },
+                    "41": {
+                        "then": "Fencing"
+                    },
+                    "42": {
+                        "then": "Field hockey"
+                    },
+                    "43": {
+                        "then": "Fitness"
+                    },
+                    "44": {
+                        "then": "5 person soccer"
+                    },
+                    "45": {
+                        "then": "Floorball"
+                    },
+                    "46": {
+                        "then": "Four square"
+                    },
+                    "47": {
+                        "then": "Paragliding"
+                    },
+                    "48": {
+                        "then": "Futsal"
+                    },
+                    "49": {
+                        "then": "Gaelic games"
+                    },
+                    "5": {
+                        "then": "Archery"
+                    },
+                    "50": {
+                        "then": "Gaga ball"
+                    },
+                    "51": {
+                        "then": "Golf"
+                    },
+                    "52": {
+                        "then": "Gymnastics"
+                    },
+                    "53": {
+                        "then": "Handball"
+                    },
+                    "54": {
+                        "then": "Hapkido"
+                    },
+                    "55": {
+                        "then": "Hiking"
+                    },
+                    "56": {
+                        "then": "Horseshoes"
+                    },
+                    "57": {
+                        "then": "Horse racing"
+                    },
+                    "58": {
+                        "then": "Ice Hockey"
+                    },
+                    "59": {
+                        "then": "Ice skating"
+                    },
+                    "6": {
+                        "then": "Athletics"
+                    },
+                    "60": {
+                        "then": "Ice stock sport"
+                    },
+                    "61": {
+                        "then": "Judo"
+                    },
+                    "62": {
+                        "then": "Karate"
+                    },
+                    "63": {
+                        "then": "Kart racing"
+                    },
+                    "64": {
+                        "then": "Kickboxing"
+                    },
+                    "65": {
+                        "then": "Kitesurfing"
+                    },
+                    "66": {
+                        "then": "Korfball"
+                    },
+                    "67": {
+                        "then": "Krachtball"
+                    },
+                    "68": {
+                        "then": "Lacrosse"
+                    },
+                    "69": {
+                        "then": "Laser tag"
+                    },
+                    "7": {
+                        "then": "Australian rules football"
+                    },
+                    "70": {
+                        "then": "Martial arts"
+                    },
+                    "71": {
+                        "then": "Miniature golf"
+                    },
+                    "72": {
+                        "then": "Radio-controlled aircraft"
+                    },
+                    "73": {
+                        "then": "Motocross"
+                    },
+                    "74": {
+                        "then": "Motorsport"
+                    },
+                    "75": {
+                        "then": "Multiple kind of sports"
+                    },
+                    "76": {
+                        "then": "Netball"
+                    },
+                    "77": {
+                        "then": "Obstacle course"
+                    },
+                    "78": {
+                        "then": "Orienteering"
+                    },
+                    "79": {
+                        "then": "Paddle tennis"
+                    },
+                    "8": {
+                        "then": "Badminton"
+                    },
+                    "80": {
+                        "then": "Padel"
+                    },
+                    "81": {
+                        "then": "Paintball"
+                    },
+                    "82": {
+                        "then": "Parachuting"
+                    },
+                    "83": {
+                        "then": "Parkour"
+                    },
+                    "84": {
+                        "then": "Palota"
+                    },
+                    "85": {
+                        "then": "Pesäpallo"
+                    },
+                    "86": {
+                        "then": "Pickleball"
+                    },
+                    "87": {
+                        "then": "Pilates"
+                    },
+                    "88": {
+                        "then": "Pole dance"
+                    },
+                    "89": {
+                        "then": "Racquetball"
+                    },
+                    "9": {
+                        "then": "Bandy"
+                    },
+                    "90": {
+                        "then": "Radio-controlled car"
+                    },
+                    "91": {
+                        "then": "Roller skating"
+                    },
+                    "92": {
+                        "then": "Rowing"
+                    },
+                    "93": {
+                        "then": "Rugby league"
+                    },
+                    "94": {
+                        "then": "Rugby union"
+                    },
+                    "95": {
+                        "then": "Running"
+                    },
+                    "96": {
+                        "then": "Sailing"
+                    },
+                    "97": {
+                        "then": "Scuba diving"
+                    },
+                    "98": {
+                        "then": "Shooting"
+                    },
+                    "99": {
+                        "then": "Shot-put"
+                    }
+                },
+                "question": "What sports are played at this venue?",
+                "render": "Sports played here: {sport}"
+            }
+        },
         "title": {
             "render": "Sports centre"
         }
@@ -10612,19 +11004,7 @@
                 "question": "In which geographical direction does this camera film?",
                 "render": "Films to a compass heading of {camera:direction}"
             },
-            "has_alpr": {
-                "mappings": {
-                    "0": {
-                        "then": "This is a camera without number plate recognition."
-                    },
-                    "1": {
-                        "then": "This is an ALPR (Automatic License Plate Reader)"
-                    }
-                },
-                "question": "Can this camera automatically detect license plates?",
-                "questionHint": "An <b>ALPR</b> (Automatic License Plate Reader) typically has two lenses and an array of infrared LEDS in between."
-            },
-            "is_indoor": {
+            "camera_is_indoor": {
                 "mappings": {
                     "0": {
                         "then": "This camera is located indoors"
@@ -10636,7 +11016,19 @@
                         "then": "This camera is probably located outdoors"
                     }
                 },
-                "question": "Is the public space surveilled by this camera an indoor or outdoor space?"
+                "question": "Is this camera located inside or outside?"
+            },
+            "has_alpr": {
+                "mappings": {
+                    "0": {
+                        "then": "This is a camera without number plate recognition."
+                    },
+                    "1": {
+                        "then": "This is an ALPR (Automatic License Plate Reader)"
+                    }
+                },
+                "question": "Can this camera automatically detect license plates?",
+                "questionHint": "An <b>ALPR</b> (Automatic License Plate Reader) typically has two lenses and an array of infrared LEDS in between."
             }
         },
         "title": {
