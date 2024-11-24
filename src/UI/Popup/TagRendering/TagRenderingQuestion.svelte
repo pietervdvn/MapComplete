@@ -93,7 +93,7 @@
       return !m.hideInAnswer.matchesProperties(tgs)
     })
     selectedMapping = mappings?.findIndex(
-      (mapping) => mapping.if.matchesProperties(tgs) || mapping.alsoShowIf?.matchesProperties(tgs)
+      (mapping) => mapping.if.matchesProperties(tgs) || mapping.alsoShowIf?.matchesProperties(tgs),
     )
     if (selectedMapping < 0) {
       selectedMapping = undefined
@@ -201,7 +201,7 @@
       if (freeformValue?.length > 0) {
         selectedMapping = config.mappings.length
       }
-    })
+    }),
   )
 
   $: {
@@ -219,7 +219,7 @@
           $freeformInput,
           selectedMapping,
           checkedMappings,
-          tags.data
+          tags.data,
         )
         if (featureSwitchIsDebugging?.data) {
           console.log(
@@ -231,7 +231,7 @@
               currentTags: tags.data,
             },
             " --> ",
-            selectedTags
+            selectedTags,
           )
         }
       } catch (e) {
@@ -253,7 +253,7 @@
         selectedTags = new And([...selectedTags.and, ...extraTagsArray])
       } else {
         console.error(
-          "selectedTags is not of type Tag or And, it is a " + JSON.stringify(selectedTags)
+          "selectedTags is not of type Tag or And, it is a " + JSON.stringify(selectedTags),
         )
       }
     }
@@ -322,7 +322,7 @@
     onDestroy(
       state.osmConnection?.userDetails?.addCallbackAndRun((ud) => {
         numberOfCs = ud.csCount
-      })
+      }),
     )
   }
 
@@ -341,7 +341,7 @@
       .catch(console.error)
   }
 
-  let disabledInTheme = state.userRelatedState.getThemeDisabled(state.layout.id, layer?.id)
+  let disabledInTheme = state.userRelatedState.getThemeDisabled(state.theme.id, layer?.id)
   let menuIsOpened = new UIEventSource(false)
 
   function disableQuestion() {
@@ -361,20 +361,22 @@
   <div class={clss}>
 
     {#if layer.isNormal()}
-    <DotMenu hideBackground={true} open={menuIsOpened}>
-      <SidebarUnit>
-        {#if $disabledInTheme.indexOf(config.id) >= 0}
-          <button on:click={() => enableQuestion()}>
-            <Tr t={Translations.t.general.questions.enable}/>
-          </button>
-        {:else}
-          <button on:click={() => disableQuestion()}>
-            <Tr t={Translations.t.general.questions.disable}/>
-          </button>
-        {/if}
-      </SidebarUnit>
-    </DotMenu>
-      {/if}
+      <LoginToggle {state}>
+        <DotMenu hideBackground={true} open={menuIsOpened}>
+          <SidebarUnit>
+            {#if $disabledInTheme.indexOf(config.id) >= 0}
+              <button on:click={() => enableQuestion()}>
+                <Tr t={Translations.t.general.questions.enable} />
+              </button>
+            {:else}
+              <button on:click={() => disableQuestion()}>
+                <Tr t={Translations.t.general.questions.disable} />
+              </button>
+            {/if}
+          </SidebarUnit>
+        </DotMenu>
+      </LoginToggle>
+    {/if}
     <form
       class="relative flex flex-col overflow-y-auto px-4"
       style="max-height: 75vh"
