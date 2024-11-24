@@ -18,19 +18,3 @@ export default class Toggle extends VariableUiElement {
         this.isEnabled = isEnabled
     }
 }
-
-/**
- * Same as `Toggle`, but will swap on click
- */
-export class ClickableToggle extends Toggle {
-    public declare readonly isEnabled: UIEventSource<boolean>
-
-    constructor(
-        showEnabled: string | BaseUIElement,
-        showDisabled: string | BaseUIElement,
-        isEnabled: UIEventSource<boolean> = new UIEventSource<boolean>(false)
-    ) {
-        super(showEnabled, showDisabled, isEnabled)
-        this.isEnabled = isEnabled
-    }
-}

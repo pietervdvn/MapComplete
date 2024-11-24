@@ -74,6 +74,7 @@
     "en": "A charging station",
     "nl": "Oplaadpunten",
     "ca": "Una estació de càrrega",
+    "cs": "Nabíjecí stanice",
     "de": "Eine Ladestation",
     "es": "Un punto de carga",
     "fr": "Une station de recharge"
@@ -1153,7 +1154,8 @@
             "en": "<b>USB</b> to charge phones and small electronics",
             "nl": "<b>USB</b> om GSMs en kleine electronica op te laden",
             "de": "<b>USB</b> zum Aufladen von Handys und kleinen Elektrogeräten",
-            "es": "<b>USB</b> para cargar teléfonos y pequeños dispositivos electrónicos"
+            "es": "<b>USB</b> para cargar teléfonos y pequeños dispositivos electrónicos",
+            "uk": "<b>USB</b> для зарядки телефонів і дрібної електроніки"
           },
           "icon": {
             "path": "./assets/layers/charging_station/usb_port.svg",
@@ -1171,7 +1173,8 @@
             "en": "<b>USB</b> to charge phones and small electronics",
             "nl": "<b>USB</b> om GSMs en kleine electronica op te laden",
             "de": "<b>USB</b> zum Aufladen von Handys und kleinen Elektrogeräten",
-            "es": "<b>USB</b> para cargar teléfonos y pequeños dispositivos electrónicos"
+            "es": "<b>USB</b> para cargar teléfonos y pequeños dispositivos electrónicos",
+            "uk": "<b>USB</b> для зарядки телефонів і дрібної електроніки"
           },
           "hideInAnswer": true,
           "icon": {
@@ -1947,7 +1950,8 @@
               "en": "<b>USB</b> to charge phones and small electronics",
               "nl": "<b>USB</b> om GSMs en kleine electronica op te laden",
               "de": "<b>USB</b> zum Aufladen von Handys und kleinen Elektrogeräten",
-              "es": "<b>USB</b> para cargar teléfonos y pequeños dispositivos electrónicos"
+              "es": "<b>USB</b> para cargar teléfonos y pequeños dispositivos electrónicos",
+              "uk": "<b>USB</b> для зарядки телефонів і дрібної електроніки"
             },
             "usb_port.svg",
             [
@@ -2427,7 +2431,8 @@
             "nl": "Aanmelden door te bellen naar een telefoonnummer is mogelijk",
             "de": "Authentifizierung per Anruf ist möglich",
             "es": "Hay disponible autenticación por llamada telefónica",
-            "fr": "Authentification possible par appel téléphonique"
+            "fr": "Authentification possible par appel téléphonique",
+            "uk": "Доступна автентифікація за допомогою телефонного дзвінка"
           }
         },
         {
@@ -2500,14 +2505,16 @@
         "nl": "Aanmelden door te bellen of te SMS'en naar <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>",
         "ca": "Autentiqueu-vos trucant o enviant SMS a <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>",
         "de": "Authentifiziere dich, indem du anrufst oder eine SMS sendest an <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>",
-        "es": "Autentifícate llamando o enviando un SMS a <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>"
+        "es": "Autentifícate llamando o enviando un SMS a <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>",
+        "uk": "Авторизуйтесь, зателефонувавши або надіславши SMS на <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>"
       },
       "question": {
         "en": "What's the phone number for authentication call or SMS?",
         "nl": "Wat is het telefoonnummer dat men moet bellen of SMS'en om zich aan te melden?",
         "ca": "Quin és el número de telèfon per a la trucada d'autenticació o SMS?",
         "de": "Wie lautet die Telefonnummer für den Authentifizierungsanruf oder die SMS?",
-        "es": "¿Cuál es el número de teléfono para la llamada o SMS de autenticación?"
+        "es": "¿Cuál es el número de teléfono para la llamada o SMS de autenticación?",
+        "uk": "Який номер телефону для аутентифікаційного дзвінка або SMS?"
       },
       "freeform": {
         "key": "authentication:phone_call:number",
@@ -2695,7 +2702,8 @@
         "ca": "A quin número es pot cridar si hi ha algun problema amb aquest punt de càrrega?",
         "de": "Welche Nummer kann man anrufen, wenn es ein Problem mit dieser Ladestation gibt?",
         "es": "¿A qué número se puede llamar si hay un problema con este punto de carga?",
-        "pl": "Na jaki numer można zadzwonić w przypadku problemów z tą stacją ładowania?"
+        "pl": "Na jaki numer można zadzwonić w przypadku problemów z tą stacją ładowania?",
+        "uk": "За яким номером можна зателефонувати, якщо виникла проблема з цією зарядною станцією?"
       },
       "render": {
         "en": "In case of problems, call <a href='tel:{phone}'>{phone}</a>",
@@ -2703,7 +2711,8 @@
         "ca": "En cas de problemes, truqueu a <a href='tel:{phone}'>{phone}</a>",
         "de": "Bei Problemen, anrufen unter <a href='tel:{phone}'>{phone}</a>",
         "es": "En caso de problemas, llama a <a href='tel:{phone}'>{phone}</a>",
-        "pl": "W przypadku problemów zadzwoń na <a href='tel:{phone}'>{phone}</a>"
+        "pl": "W przypadku problemów zadzwoń na <a href='tel:{phone}'>{phone}</a>",
+        "uk": "У разі виникнення проблем телефонуйте <a href='tel:{phone}'>{phone}</a>"
       },
       "freeform": {
         "key": "phone",
@@ -2739,13 +2748,15 @@
         "en": "What is the website where one can find more information about this charging station?",
         "nl": "Wat is de website waar men meer info kan vinden over dit oplaadpunt?",
         "de": "Auf welcher Webseite kann man weitere Informationen über diese Ladestation finden?",
-        "es": "¿Cuál es la página web donde se puede encontrar más información sobre este punto de carga?"
+        "es": "¿Cuál es la página web donde se puede encontrar más información sobre este punto de carga?",
+        "uk": "На якому веб-сайті можна знайти більше інформації про цю зарядну станцію?"
       },
       "render": {
         "en": "More info on <a href='{website}'>{website}</a>",
         "nl": "Meer informatie op <a href='{website}'>{website}</a>",
         "de": "Weitere Informationen unter <a href='{website}'>{website}</a>",
-        "es": "Más información en <a href='{website}'>{website}</a>"
+        "es": "Más información en <a href='{website}'>{website}</a>",
+        "uk": "Більше інформації на <a href='{website}'>{website}</a>"
       },
       "freeform": {
         "key": "website",
@@ -3246,7 +3257,8 @@
             "en": "Has a <div style='display: inline-block'><b><b>USB</b> to charge phones and small electronics</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> connector",
             "nl": "Heeft een <div style='display: inline-block'><b><b>USB</b> om GSMs en kleine electronica op te laden</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>",
             "de": "Hat einen <div style='display: inline-block'><b><b>USB</b>-Anschluss zum Aufladen von Telefonen und kleinen Elektrogeräten</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>",
-            "es": "Tiene un conector <div style='display: inline-block'><b><b>USB</b> para cargar teléfonos y pequeños dispositivos electrónicos</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>"
+            "es": "Tiene un conector <div style='display: inline-block'><b><b>USB</b> para cargar teléfonos y pequeños dispositivos electrónicos</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>",
+            "uk": "Має <div style='display: inline-block'><b><b>USB</b> для зарядки телефонів і малої електроніки</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> роз'єм"
           },
           "osmTags": "socket:USB-A~*"
         },

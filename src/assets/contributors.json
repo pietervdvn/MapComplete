@@ -1,7 +1,7 @@
 {
   "contributors": [
     {
-      "commits": 8576,
+      "commits": 8594,
       "contributor": "Pieter Vander Vennet"
     },
     {
@@ -154,6 +154,10 @@
     },
     {
       "commits": 4,
+      "contributor": "Languages add-on"
+    },
+    {
+      "commits": 4,
       "contributor": "Daniele Santini"
     },
     {
@@ -166,10 +170,6 @@
     },
     {
       "commits": 3,
-      "contributor": "Languages add-on"
-    },
-    {
-      "commits": 3,
       "contributor": "Thierry1030"
     },
     {
@@ -179,6 +179,10 @@
     {
       "commits": 3,
       "contributor": "Léo Villeveygoux"
+    },
+    {
+      "commits": 2,
+      "contributor": "Jim Kats"
     },
     {
       "commits": 2,

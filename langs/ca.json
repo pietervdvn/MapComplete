@@ -49,11 +49,17 @@
     },
     "external": {
         "allAreApplied": "Tots els valors externs que faltaven s'han copiat a OpenStreetMap",
+        "allIncluded": "Les dades carregades des de {source} estan contingudes a OpenStreetMap",
+        "apply": "Aplicar",
+        "applyAll": "Aplica tots els valors que falten",
         "conflicting": {
+            "intro": "OpenStreetMap té un valor diferent al del lloc web d'origen per als següents valors.",
             "title": "Elements conflictius"
         },
         "currentInOsmIs": "Pel moment, OpenStreetMap té el següent valor registrat:",
         "done": "Fet",
+        "error": "No s'han pogut carregar les dades vinculades des del lloc web",
+        "lastModified": "Les dades externes s'han modificat per darrera vegada a {date}",
         "missing": {
             "intro": "OpenStreetMap no té informació sobre els següents atributs",
             "title": "Elements que falten"
@@ -365,6 +371,15 @@
         },
         "useSearch": "Utilitzeu la cerca de dalt per veure els valors predefinits",
         "visualFeedback": {
+            "directionsAbsolute": {
+                "N": "nord",
+                "NE": "nord-est",
+                "NW": "nord-oest",
+                "S": "sud",
+                "SE": "sud-est",
+                "SW": "sud-oest",
+                "W": "oest"
+            },
             "directionsRelative": {
                 "left": "esquerra",
                 "right": "dreta"

@@ -10561,7 +10561,7 @@
       "title": "value.title"
     },
     "type": "array",
-    "description": "<div class='flex'>\n    <div>\nPresets for this layer.\nA preset consists of one or more attributes (tags), a title and optionally a description and optionally example images.\nWhen the contributor wishes to add a point to OpenStreetMap, they'll:\n1. Press the 'add new point'-button\n2. Choose a preset from the list of all presets\n3. Confirm the choice. In this step, the `description` (if set) and `exampleImages` (if given) will be shown\n4. Confirm the location\n5. A new point will be created with the attributes that were defined in the preset\nIf no presets are defined, the button which invites to add a new preset will not be shown.\n</div>\n<video controls autoplay muted src='./Docs/Screenshots/AddNewItemScreencast.webm' class='w-64'/>\n</div>"
+    "description": "<div class='flex'>\n    <div>\nPresets for this layer.\nA preset consists of one or more attributes (tags), a title and optionally a description and optionally example images.\nWhen the contributor wishes to add a point to OpenStreetMap, they'll:\n1. Press the 'add new point'-button\n2. Choose a preset from the list of all presets\n3. Confirm the choice. In this step, the `description` (if set) and `exampleImages` (if given) will be shown\n4. Confirm the location\n5. A new point will be created with the attributes that were defined in the preset\nIf no presets are defined, the button which invites to add a new preset will not be shown.\n</div>\n<video controls autoplay muted src='https://github.com/pietervdvn/MapComplete/raw/refs/heads/master/Docs/Screenshots/AddNewItemScreencast.webm' class='w-64'/>\n</div>"
   },
   {
     "path": [
@@ -11190,10 +11190,6 @@
         {
           "if": "value=split_point",
           "then": "split_point - Layer rendering the little scissors for the minimap in the 'splitRoadWizard'"
-        },
-        {
-          "if": "value=split_road",
-          "then": "split_road - Layer rendering the way to split in the 'splitRoadWizard'. This one is used instead of the variable rendering by the themes themselves, as they might not always be very visible"
         },
         {
           "if": "value=sport_pitch",

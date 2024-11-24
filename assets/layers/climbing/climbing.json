@@ -25,7 +25,8 @@
         "fr": "Existe-t’il un site avec plus d’informations (ex : topographie) ?",
         "it": "C’è un sito web (anche non ufficiale) con qualche informazione in più (ad es. topografie)?",
         "cs": "Existuje (neoficiální) webová stránka s více informacemi (např. topos)?",
-        "es": "¿Hay una página web (no oficial) con más información (p. ej., croquis)?"
+        "es": "¿Hay una página web (no oficial) con más información (p. ej., croquis)?",
+        "uk": "Чи існує (неофіційний) веб-сайт з додатковою інформацією (наприклад, топос)?"
       },
       "condition": {
         "and": [

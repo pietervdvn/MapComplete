@@ -12,7 +12,7 @@
     },
     "communityIndex": {
         "available": "Op dit communicatiekanaal spreekt men {native}",
-        "intro": "Contacteer anderen die bezig zijn met OpenStreetMap om kennis te maken, tips uit te wisselen of van elkaar bij te leren.",
+        "intro": "Contacteer anderen om kennis te maken, tips uit te wisselen, …",
         "notAvailable": "Op dit communicatiekanaal spreekt men geen {native}",
         "title": "Kom in contact met anderen"
     },
@@ -20,13 +20,15 @@
         "cancel": "Annuleren",
         "cannotBeDeleted": "Dit object kan niet van de kaart verwijderd worden",
         "delete": "Verwijder",
+        "deletedTitle": "Verwijderd item",
         "explanations": {
-            "hardDelete": "Dit object zal verwijderd worden in OpenStreetMap. Een ervaren bijdrager kan dit ongedaan maken.",
+            "hardDelete": "Dit object zal verwijderd worden in OpenStreetMap. Een ervaren bijdrager kan dit ongedaan maken",
             "retagNoOtherThemes": "Dit object zal anders aangeduid worden en niet meer getoond worden in deze applicatie",
             "retagOtherThemes": "Dit object zal aangepast worden en zichtbaar zijn in {otherThemes}",
             "selectReason": "Gelieve aan te duiden waarom dit object verwijderd moet worden",
             "softDelete": "Dit object zal aangepast worden en zal in deze applicatie niet meer getoond worden. <span class=\"subtle\">{reason}</span>"
         },
+        "isChanged": "Deze eigenschap is gewijzigd en komt niet langer overeen met deze laag",
         "isDeleted": "Dit object is verwijderd",
         "isntAPoint": "Enkel punten kunnen verwijderd worden. Het geselecteerde object is een lijn, een oppervlakte of een relatie.",
         "loading": "Aan het bekijken of dit object veilig verwijderd kan worden.",
@@ -46,7 +48,26 @@
         "whyDelete": "Waarom moet dit object van de kaart verwijderd worden?"
     },
     "external": {
-        "error": "Kon geen gestructureerde informatie uit de website ophalen"
+        "allAreApplied": "Alle ontbrekende, externe waarden zijn gekopieerd naar OpenStreetMap",
+        "allIncluded": "Gegevens geladen van {source} staan in OpenStreetMap",
+        "apply": "Pas toe",
+        "applyAll": "Alle ontbrekende waarden toepassen",
+        "conflicting": {
+            "intro": "OpenStreetMap heeft een andere waarde dan de bronwebsite voor de volgende waarden.",
+            "title": "Tegenstrijdige items"
+        },
+        "currentInOsmIs": "Op dit moment heeft OpenStreetMap de volgende waarde geregistreerd:",
+        "done": "Klaar",
+        "error": "Kon geen gestructureerde informatie uit de website ophalen",
+        "lastModified": "Externe gegevens zijn voor het laatst gewijzigd op {date}",
+        "loadedFrom": "De volgende gegevens worden geladen van <a href={url}>{source}</a> met behulp van de ingesloten JSON-LD",
+        "missing": {
+            "intro": "OpenStreetMap heeft geen informatie over de volgende attributen",
+            "title": "Ontbrekende items"
+        },
+        "noDataLoaded": "De externe website heeft geen gekoppelde gegevens die kunnen worden geladen",
+        "overwrite": "Overschrijven in OpenStreetMap",
+        "title": "Gestructureerde gegevens geladen van de externe website"
     },
     "favourite": {
         "loginNeeded": "<h3>Log in</h3>Je moet je aanmelden met OpenStreetMap om een persoonlijk thema te gebruiken",
@@ -63,7 +84,13 @@
             "unmark": "Verwijder van je persoonlijke lijst van favorieten",
             "unmarkNotDeleted": "Dit item wordt niet verwijderd en is nog steeds zichtbaar op de gepaste kaarten voor jou en anderen"
         },
-        "tab": "Jouw favorieten en beoordelingen"
+        "downloadGeojson": "Download je favorieten als geojson",
+        "downloadGpx": "Download je favorieten als GPX",
+        "intro": "Je hebt {length} locaties gemarkeerd als favoriete locatie.",
+        "introPrivacy": "Deze lijst is alleen voor jou zichtbaar",
+        "loginToSeeList": "Log in om de lijst met locaties te zien die je als favoriet hebt gemarkeerd",
+        "tab": "Jouw favorieten en beoordelingen",
+        "title": "Je favoriete locaties"
     },
     "flyer": {
         "aerial": "Deze kaart gebruikt luchtfoto's van het Agentschap Informatie Vlaanderen als achtergrond.\nOok het GRB is beschikbaar als achtergrondlaag.",
@@ -71,7 +98,7 @@
         "cyclofix": "Fietspompen, -winkels, -bandenautomaten en drinkwaterkraantjes vind je op Cyclofix",
         "description": "Een horizontale A4 flyer om MapComplete te promoten",
         "editing": {
-            "ex": "Een (vereenvoudigd) voorbeeld voor een natuurgebied wordt hieronder getoond:",
+            "ex": "Een (vereenvoudigd) voorbeeld voor een natuurgebied wordt hieronder getoond.",
             "intro": "De gebruiker krijgt eerst een kaart met interessepunten te zien. Klik je op een punt, dan wordt de interface met informatie over het interessepunt geopend.",
             "title": "Hoe ziet de interface eruit?"
         },
@@ -119,6 +146,7 @@
             "confirmLocation": "Bevestig deze locatie",
             "confirmTitle": "Voeg een {title} toe?",
             "confirmWarning": "Het object dat je toevoegt, is <b>zichtbaar voor iedereen</b>. Veel applicaties gebruiken deze data, voeg dus enkel punten toe die echt bestaan.",
+            "creating": "Een nieuw punt aan het maken...",
             "disableFilters": "Zet alle filters af",
             "disableFiltersExplanation": "Interessepunten kunnen verborgen zijn door een filter",
             "enableLayer": "Schakel laag {name} in",
@@ -158,6 +186,7 @@
             "donate": "Geef MapComplete financiële steun",
             "editId": "Hier bewerken met de OpenStreetMap online editor",
             "editJosm": "Hier bewerken met JOSM",
+            "emailCreators": "Stuur een e-mail naar de makers",
             "followOnMastodon": "Volg MapComplete op Mastodon",
             "gotoSourceCode": "Bekijk de broncode",
             "iconAttribution": {
@@ -165,6 +194,7 @@
             },
             "josmNotOpened": "JOSM was niet bereikbaar. Controleer of het open staat en remote control is geactiveerd",
             "josmOpened": "JOSM is geopend",
+            "madeBy": "Gemaakt door <b>{author}</b>",
             "mapContributionsBy": "De huidige data is bijgedragen door {contributors}",
             "mapContributionsByAndHidden": "De zichtbare data heeft bijdragen van {contributors} en {hiddenCount} andere bijdragers",
             "mapDataByOsm": "Kaartgegevens: OpenStreetMap",
@@ -173,7 +203,11 @@
             "openMapillary": "Open Mapillary op deze locatie",
             "openOsmcha": "Bekijk de laatste bijdragen gemaakt met {theme}",
             "openOsmchaLastWeek": "Bekijk aanpassingen van de voorbije 7 dagen",
+            "openPanoramax": "Open Panoramax hier",
+            "openThemeDocumentation": "Open de documentatie voor themakaart {name}",
+            "panoramaxHelp": "<b>Panoramax</b> is een online service die foto's van op straat verzamelt en deze onder een vrije licentie beschikbaar stelt. Bijdragers mogen deze foto's gebruiken om OpenStreetMap te verbeteren",
             "panoramaxLicenseCCBYSA": "Je foto wordt gepubliceerd met een CC-BY-SA-licentie. Iedereen mag je afbeelding hergebruiken mits naamsvermelding.",
+            "seeOnMapillary": "Bekijk dit beeld op Mapillary",
             "themeBy": "Thema gemaakt door {author}",
             "title": "Copyright en attributie",
             "translatedBy": "MapComplete werd vertaald door {contributors} en <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} meer vertalers</a>"
@@ -184,15 +218,26 @@
         "backgroundMap": "Selecteer een achtergrondlaag",
         "backgroundSwitch": "Verander achtergrond",
         "cancel": "Annuleren",
+        "clearPendingChanges": "Wis hangende wijzigingen",
         "confirm": "Bevestigen",
         "customThemeIntro": "<h3>Onofficiële thema's</h3>De onderstaande thema's heb je eerder bezocht en zijn gemaakt door andere OpenStreetMappers.",
+        "customThemeTitle": "Eigen thema's",
         "download": {
+            "custom": {
+                "download": "Download een PNG van {width}mm breed en {height}mm hoog",
+                "downloadHelper": "Dit is bedoeld voor afdrukken",
+                "height": "Hoogte afbeelding (in mm):",
+                "title": "Een afbeelding downloaden met een aangepaste breedte en hoogte",
+                "width": "Breedte van afbeelding (in mm): "
+            },
             "downloadAsPdf": "Download een PDF van de huidig zichtbare kaart",
             "downloadAsPdfHelper": "Perfect om de huidige kaart af te printen",
             "downloadAsPng": "Download als afbeelding",
             "downloadAsPngHelper": "Perfect om in rapporten op te nemen",
             "downloadAsSvg": "Download de huidige kaart als SVG",
             "downloadAsSvgHelper": "Compatibel met Inkscape of Adobe Illustrator; deze data moeten nog verder verwerkt worden…",
+            "downloadAsSvgLinesOnly": "Download een SVG van de huidige kaart met uitsluitend lijnen",
+            "downloadAsSvgLinesOnlyHelper": "Zelfdoorsnijdende lijnen worden opgebroken, kan worden gebruikt met bepaalde 3D-software",
             "downloadCSV": "Download de zichtbare data als CSV",
             "downloadCSVHelper": "Compatibel met LibreOffice Calc, Excel, …",
             "downloadFeatureAsGeojson": "Downloaden als GeoJSON bestand",
@@ -201,17 +246,31 @@
             "downloadGeojson": "Download de zichtbare data als GeoJSON",
             "downloadGpx": "Downloaden als GPX-bestand",
             "downloadGpxHelper": "De meeste navigatie toestellen en applicaties kunnen een GPX-bestand openen",
+            "downloadImage": "Download afbeelding",
             "exporting": "Aan het exporteren…",
             "includeMetaData": "Exporteer metadata (zoals laatste aanpassing, berekende waardes, …)",
             "licenseInfo": "<h3>Copyright</h3>De voorziene data is beschikbaar onder de ODbL. Het hergebruiken van deze data is gratis voor elke toepassing, maar <ul><li>de bronvermelding <b>© OpenStreetMap bijdragers</b> is vereist</li><li>Elke wijziging aan deze data moet opnieuw gepubliceerd worden onder dezelfde licentie</li></ul> Gelieve de volledige <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">licentie</a> te lezen voor details",
             "noDataLoaded": "Er is nog geen data ingeladen. Downloaden kan zodra de data geladen is.",
+            "pdf": {
+                "current_view_generic": "Exporteer een PDF van de huidige weergave naar {paper_size} in {orientation} oriëntatie"
+            },
             "title": "Download",
+            "toMuch": "Er zijn te veel eigenschappen om ze allemaal te downloaden",
             "uploadGpx": "Track uploaden naar OpenStreetMap"
         },
+        "enableGeolocationForSafari": "Heb je de pop-up niet gekregen om toestemming voor locatie te vragen?",
+        "enableGeolocationForSafariLink": "Leer hoe je toestemming voor locatie kunt inschakelen in de instellingen",
+        "eraseValue": "Wis deze waarde",
         "error": "Er ging iets mis",
         "example": "Voorbeeld",
         "examples": "Voorbeelden",
         "fewChangesBefore": "Gelieve eerst enkele vragen van bestaande objecten te beantwoorden vooraleer zelf objecten toe te voegen.",
+        "filterPanel": {
+            "allTypes": "Alle types",
+            "disableAll": "Alles uitschakelen",
+            "enableAll": "Alles inschakelen"
+        },
+        "geopermissionDenied": "Locatietoestemming werd geweigerd",
         "getStartedLogin": "Login met OpenStreetMap om te beginnen",
         "getStartedNewAccount": " of <a href='https://www.openstreetmap.org/user/new' target='_blank'>maak een nieuwe account aan</a>",
         "goToInbox": "Ga naar de berichten",
@@ -222,6 +281,7 @@
             "background": "Kies achtergrondlaag",
             "filter": "Filter data",
             "jumpToLocation": "Ga naar jouw locatie",
+            "locationNotAvailable": "GPS-locatie niet beschikbaar. Heeft dit apparaat een locatie of bevindt je je in een tunnel?",
             "menu": "Menu",
             "zoomIn": "Zoom in",
             "zoomOut": "Zoom uit"
@@ -306,7 +366,7 @@
             "generatedWith": "Gemaakt met mapcomplete.org/{layoutid}",
             "versionInfo": "v{version} - gemaakt op {date}"
         },
-        "pickLanguage": "Kies je taal: ",
+        "pickLanguage": "Kies je taal",
         "poweredByOsm": "Gebouwd met OpenStreetMap",
         "questionBox": {
             "answeredMultiple": "Je beantwoordde {answered} vragen",

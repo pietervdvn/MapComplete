@@ -1,7 +1,7 @@
 {
   "id": "bag",
   "title": {
-    "nl": "BAG import helper",
+    "nl": "BAG-importeerhulp",
     "en": "BAG import helper",
     "de": "BAG-Importhilfe",
     "fr": "Facilitateur d'import BAG",
@@ -29,7 +29,7 @@
     "uk": "Ця тема допомагає імпортувати дані з BAG"
   },
   "shortDescription": {
-    "nl": "BAG import helper tool",
+    "nl": "BAG-importeerhulptool",
     "en": "BAG import helper tool",
     "de": "BAG-Import-Hilfswerkzeug",
     "fr": "Outil de facilitation d'import BAG",

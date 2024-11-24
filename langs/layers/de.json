@@ -10529,6 +10529,9 @@
                     },
                     "2": {
                         "then": "Eine bewegliche Kamera"
+                    },
+                    "3": {
+                        "then": "Eine Türklingel, die jederzeit oder per Bewegungserkennung ferngeschaltet werden kann. Dies sind typischerweise <i>Smart</i>, internetgebundene Türklingeln. Typische Marken sind Ring, Google Nest, Eufy, ..."
                     }
                 },
                 "question": "Um welchen Kameratyp handelt es sich?"

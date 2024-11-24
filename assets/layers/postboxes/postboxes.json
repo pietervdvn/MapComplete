@@ -133,7 +133,8 @@
       ],
       "title": {
         "en": "a postbox on a wall",
-        "nl": "een brievenbus tegen een muur"
+        "nl": "een brievenbus tegen een muur",
+        "de": "ein Briefkasten an einer Wand"
       },
       "snapToLayer": [
         "walls_and_buildings"
@@ -149,10 +150,12 @@
     {
       "id": "operator",
       "question": {
-        "en": "Who operates this postbox?"
+        "en": "Who operates this postbox?",
+        "de": "Wer betreibt diesen Briefkasten?"
       },
       "render": {
-        "en": "This postbox is operated by <b>{operator}</b>"
+        "en": "This postbox is operated by <b>{operator}</b>",
+        "de": "Dieser Briefkasten wird von <b>{operator}</b> betrieben"
       },
       "freeform": {
         "key": "operator"

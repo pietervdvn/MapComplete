@@ -57,7 +57,7 @@
             file,
             "image",
             noBlur,
-            feature,
+            feature
           )
           if (!uploadResult) {
             return
@@ -114,9 +114,9 @@
             <div class="flex flex-col">
               <Tr t={t.addPicture} />
               {#if noBlur}
-              <span class="subtle text-sm">
-                <Tr t={t.upload.noBlur} />
-              </span>
+                <span class="subtle text-sm">
+                  <Tr t={t.upload.noBlur} />
+                </span>
               {/if}
             </div>
           {/if}

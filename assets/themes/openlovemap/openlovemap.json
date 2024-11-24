@@ -5,13 +5,17 @@
     "de": "Open Love Map",
     "es": "Open Love Map",
     "cs": "Open Love Map",
-    "hu": "Open Love Map - szerelemtérkép"
+    "hu": "Open Love Map - szerelemtérkép",
+    "fr": "Open Love Map",
+    "nl": "Open Love Kaart"
   },
   "description": {
     "en": "<p><i>Love in the palm of your hand</i></p>Open Love Map lists various adult entries, such as brothels, erotic stores and stripclubs.",
     "de": "<p><i>Liebe in der Hand</i></p>Open Love Map listet verschiedene Einträge für Erwachsene, wie Bordelle, Erotikshops und Stripclubs.",
     "es": "<p><i>Amor en la palma de tu mano</i></p>Open Love Map lista varias entradas para adultos, como burdeles, tiendas eróticas y clubes de striptease.",
-    "cs": "<p><i>Láska na dlani</i></p>Open Love Map obsahuje různé položky pro dospělé, například nevěstince, erotické obchody a striptýzové kluby."
+    "cs": "<p><i>Láska na dlani</i></p>Open Love Map obsahuje různé položky pro dospělé, například nevěstince, erotické obchody a striptýzové kluby.",
+    "fr": "<p><i>L'amour au creux de votre main</i></p>Open Love Map répertorie diverses informations pour adultes telles que des maisons closes, des magasins érotiques ou des clubs de strip-tease.",
+    "nl": "<p><i>Liefde in de palm van je hand</i></p>Open Love Map geeft een overzicht van verschillende items voor volwassenen, zoals bordelen, erotische winkels en stripclubs."
   },
   "icon": "./assets/layers/stripclub/stripclub.svg",
   "hideFromOverview": true,
@@ -36,7 +40,9 @@
           "en": "Erotic shops",
           "de": "Erotikgeschäfte",
           "es": "Tiendas eróticas",
-          "cs": "Erotické obchody"
+          "cs": "Erotické obchody",
+          "fr": "Magasins érotiques",
+          "nl": "Erotiekwinkels"
         },
         "=presets": [
           {
@@ -44,7 +50,9 @@
               "en": "an erotic shop",
               "de": "ein Erotikgeschäft",
               "es": "una tienda erótica",
-              "cs": "erotický obchod"
+              "cs": "erotický obchod",
+              "fr": "un magasin érotique",
+              "nl": "een erotiekwinkel"
             },
             "tags": [
               "shop=erotic"
@@ -59,7 +67,8 @@
               "en": "Does this shop offer fetish gear?",
               "de": "Bietet dieser Laden Fetischkleidung an?",
               "es": "¿Esta tienda ofrece artículos fetiche?",
-              "cs": "Nabízí tento obchod vybavení pro fetišisty?"
+              "cs": "Nabízí tento obchod vybavení pro fetišisty?",
+              "nl": "Biedt deze winkel fetisjspullen aan?"
             },
             "mappings": [
               {
@@ -69,7 +78,8 @@
                   "en": "This shop offers <b>soft BDSM-gear</b>, such as fluffy handcuffs, a 'fifty-shade-of-grey'-starterset, ...",
                   "de": "Dieser Laden bietet <b>weiches BDSM-Zubehör</b> an, wie zum Beispiel flauschige Handschellen, ein \"Fifty Shades of Grey\"-Starterset, ...",
                   "es": "Esta tienda ofrece <b>artículos BDSM suaves</b>, como esposas de peluche, un kit de iniciación 'cincuenta sombras de Grey',...",
-                  "cs": "Tento obchod nabízí <b>měkké BDSM pomůcky</b>, jako jsou chlupatá pouta, sada „padesát odstínů šedi“, ..."
+                  "cs": "Tento obchod nabízí <b>měkké BDSM pomůcky</b>, jako jsou chlupatá pouta, sada „padesát odstínů šedi“, ...",
+                  "nl": "Deze winkel biedt <b>soft BDSM-accessoires</b>, zoals zachte handboeien, een 'fifty-shade-of-grey'-starterset, ..."
                 }
               },
               {
@@ -79,7 +89,8 @@
                   "en": "This shop offers <b>specialized BDSM-gear</b>, such as spreader bars, supplies for needle play, medical bondage supplies, impact tools, shackles, metal colors, cuffs, nipple clamps, shibari accessories, ...",
                   "de": "Dieser Laden bietet <b>spezialisiertes BDSM-Zubehör</b> an, wie zum Beispiel Spreizstangen, Utensilien für Nadelfolter, medizinische Bondage-Ausrüstung, Schlagwerkzeuge, Fesseln, Metallhalsbänder, Handschellen, Nippelklemmen, Shibari-Zubehör, ...",
                   "es": "Esta tienda ofrece <b>artículos BDSM especializados</b>, como barras separadoras, artículos para juegos con agujas, artículos de bondage médico, herramientas de impacto, grilletes, colores metálicos, puños, pinzas para pezones, accesorios shibari,...",
-                  "cs": "Tento obchod nabízí <b>specializované BDSM pomůcky</b>, jako jsou roztahovací tyče, potřeby pro hru na jehlách, potřeby pro lékařskou bondáž, nárazové nástroje, pouta, kovové barvy, pouta, svorky na bradavky, shibari doplňky, ..."
+                  "cs": "Tento obchod nabízí <b>specializované BDSM pomůcky</b>, jako jsou roztahovací tyče, potřeby pro hru na jehlách, potřeby pro lékařskou bondáž, nárazové nástroje, pouta, kovové barvy, pouta, svorky na bradavky, shibari doplňky, ...",
+                  "nl": "Deze winkel biedt <b>gespecialiseerde BDSM-benodigdheden</b>, zoals spreidstangen, benodigdheden voor naaldspellen, medische bondagebenodigdheden, slagwerktuigen, kluisters, metalen kleuren, boeien, tepelklemmen, shibari-accessoires, ..."
                 }
               },
               {
@@ -89,7 +100,8 @@
                   "en": "This shop offers <b>pet play</b> accessories, such as puppy masks, animal masks, pony play, tails, hoof shoes, ...",
                   "de": "Dieser Laden bietet <b>Petplay</b>-Zubehör an, wie zum Beispiel Hundemasken, Tiermasken, Ponyplay-Ausrüstung, Schwänze, Hufschuhe, ...",
                   "es": "Esta tienda ofrece accesorios para <b>juegos con mascotas</b>, como máscaras de cachorro, máscaras de animales, juegos de pony, colas, zapatos de casco,...",
-                  "cs": "Tento obchod nabízí doplňky <b>na hraní si na zvířata</b>, jako jsou masky štěňat, masky zvířat, poníci na hraní, ocasy, boty na kopyta, ..."
+                  "cs": "Tento obchod nabízí doplňky <b>na hraní si na zvířata</b>, jako jsou masky štěňat, masky zvířat, poníci na hraní, ocasy, boty na kopyta, ...",
+                  "nl": "Deze winkel biedt '<b>pet play</b>'-accessoires, zoals puppymaskers, dierenmaskers, ponyspellen, staarten, hoefschoenen, ..."
                 }
               },
               {
@@ -99,7 +111,8 @@
                   "en": "This shop offers <b>leather gear</b>, including pants and shirts usable in daily life up till leather harnesses",
                   "de": "Dieser Laden bietet <b>Lederkleidung</b> an, darunter Hosen und Hemden für den Alltag bis hin zu Lederharnissen",
                   "es": "Esta tienda ofrece <b>artículos de cuero</b>, incluyendo pantalones y camisas utilizables en la vida diaria hasta arneses de cuero",
-                  "cs": "Tento obchod nabízí <b>kožené vybavení</b>, včetně kalhot a košil použitelných v každodenním životě až po kožené postroje"
+                  "cs": "Tento obchod nabízí <b>kožené vybavení</b>, včetně kalhot a košil použitelných v každodenním životě až po kožené postroje",
+                  "nl": "Deze winkel biedt <b>leren kledij</b> aan, waaronder broeken en shirts die je in het dagelijks leven kunt gebruiken tot en met leren harnassen"
                 }
               },
               {
@@ -109,7 +122,8 @@
                   "en": "This shop offers <b>uniforms</b> for roleplay, such nurse uniforms, military uniforms, police, school girl, french maid, ...",
                   "de": "Dieser Laden bietet <b>Uniformen</b> für Rollenspiele an, wie Krankenschwester-Uniformen, Militäruniformen, Polizei-, Schulmädchen- und Dienstmädchen-Outfits, ...",
                   "es": "Esta tienda ofrece <b>uniformes</b> para juegos de rol, como uniformes de enfermera, uniformes militares, policía, colegiala, criada francesa,...",
-                  "cs": "Tento obchod nabízí <b>uniformy</b> pro roleplay, jako jsou uniformy zdravotní sestry, vojenské uniformy, policie, školačky, francouzské pokojské, ..."
+                  "cs": "Tento obchod nabízí <b>uniformy</b> pro roleplay, jako jsou uniformy zdravotní sestry, vojenské uniformy, policie, školačky, francouzské pokojské, ...",
+                  "nl": "Deze winkel biedt <b>uniformen</b> voor rollenspelen aan, zoals verpleegsteruniformen, militaire uniformen, politie, schoolmeisje, Franse dienstmeid, ..."
                 }
               }
             ]
@@ -185,7 +199,9 @@
               "de": "ein Kondomautomat",
               "es": "una máquina expendedora de condones",
               "da": "en kondomautomat",
-              "cs": "automat na kondomy"
+              "cs": "automat na kondomy",
+              "fr": "un distributeur de préservatifs",
+              "nl": "een condoomautomaat"
             },
             "tags": [
               "amenity=vending_machine",
@@ -265,7 +281,9 @@
               "en": "an erotic cinema",
               "de": "Ein Sex-Kino",
               "es": "un cine erótico",
-              "cs": "erotické kino"
+              "cs": "erotické kino",
+              "fr": "un cinéma érotique",
+              "nl": "een erotiekcinema"
             },
             "tags": [
               "amenity=cinema",
@@ -296,7 +314,9 @@
               "en": "What type of hotel is this?",
               "de": "Welche Art von Hotel ist das?",
               "es": "¿Qué tipo de hotel es este?",
-              "cs": "O jaký typ hotelu se jedná?"
+              "cs": "O jaký typ hotelu se jedná?",
+              "fr": "De quel type d'hôtel s'agit-il ?",
+              "nl": "Welk type hotel is dit?"
             },
             "mappings": [
               {
@@ -329,13 +349,15 @@
           "en": "Does {title()} have a private video booth?",
           "de": "Hat {title()} eine private Videokabine?",
           "es": "¿Tiene {title()} una cabina de video privada?",
-          "cs": "Má {title()} soukromou video kabinu?"
+          "cs": "Má {title()} soukromou video kabinu?",
+          "nl": "Heeft {title()} een privévideocabine?"
         },
         "questionHint": {
           "en": "This is for use by a single person.",
           "de": "Dies ist für die Nutzung durch eine einzelne Person vorgesehen.",
           "es": "Esto es para uso de una sola persona.",
-          "cs": "Je určena pro použití jednou osobou."
+          "cs": "Je určena pro použití jednou osobou.",
+          "nl": "Dit is voor gebruik door één persoon."
         },
         "mappings": [
           {

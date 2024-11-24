@@ -145,12 +145,7 @@ export default class PanoramaxImageProvider extends ImageProvider {
             )
         }
 
-        Stores.Chronic(1500, () => hasLoading(source.data)).addCallback((_) => {
-            console.log(
-                "Testing panoramax URLS again as some were loading",
-                source.data,
-                hasLoading(source.data)
-            )
+        Stores.Chronic(1500, () => hasLoading(source.data)).addCallback(() => {
             super.getRelevantUrlsFor(tags, prefixes).then((data) => {
                 source.set(data)
                 return !hasLoading(data)
@@ -192,9 +187,9 @@ export default class PanoramaxImageProvider extends ImageProvider {
 export class PanoramaxUploader implements ImageUploader {
     public readonly panoramax: AuthorizedPanoramax
     maxFileSizeInMegabytes = 100 * 1000 * 1000 // 100MB
-    private readonly _targetSequence: Store<string>
+    private readonly _targetSequence?: Store<string>
 
-    constructor(url: string, token: string, targetSequence: Store<string>) {
+    constructor(url: string, token: string, targetSequence?: Store<string>) {
         this._targetSequence = targetSequence
         this.panoramax = new AuthorizedPanoramax(url, token)
     }
@@ -204,7 +199,8 @@ export class PanoramaxUploader implements ImageUploader {
         currentGps: [number, number],
         author: string,
         noblur: boolean = false,
-        sequenceId?: string
+        sequenceId?: string,
+        datetime?: string
     ): Promise<{
         key: string
         value: string
@@ -213,7 +209,7 @@ export class PanoramaxUploader implements ImageUploader {
         // https://panoramax.openstreetmap.fr/api/docs/swagger#/
 
         let [lon, lat] = currentGps
-        let datetime = new Date().toISOString()
+        datetime ??= new Date().toISOString()
         try {
             const tags = await ExifReader.load(blob)
             const [[latD], [latM], [latS, latSDenom]] = <

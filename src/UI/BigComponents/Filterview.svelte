@@ -19,6 +19,7 @@
   export let filteredLayer: FilteredLayer
   export let highlightedLayer: Store<string | undefined> = new ImmutableStore(undefined)
   export let zoomlevel: Store<number> = new ImmutableStore(22)
+  export let showLayerTitle = true
   let layer: LayerConfig = filteredLayer.layerDef
   let isDisplayed: UIEventSource<boolean> = filteredLayer.isDisplayed
 
@@ -27,7 +28,7 @@
     (s) =>
       (s === "yes" &&
         state?.userRelatedState?.osmConnection?.userDetails?.data?.csCount >=
-          Constants.userJourney.tagsVisibleAt) ||
+        Constants.userJourney.tagsVisibleAt) ||
       s === "always" ||
       s === "full"
   )
@@ -54,19 +55,21 @@
 
 {#if filteredLayer.layerDef.name}
   <div class:focus={$highlightedLayer === filteredLayer.layerDef.id} class="mb-1.5">
-    <Checkbox selected={isDisplayed}>
-      <div class="no-image-background block h-6 w-6" class:opacity-50={!$isDisplayed}>
-        <ToSvelte construct={() => layer.defaultIcon()} />
-      </div>
+    {#if showLayerTitle}
+      <Checkbox selected={isDisplayed}>
+        <div class="no-image-background block h-6 w-6" class:opacity-50={!$isDisplayed}>
+          <ToSvelte construct={() => layer.defaultIcon()} />
+        </div>
 
-      <Tr t={filteredLayer.layerDef.name} />
+        <Tr t={filteredLayer.layerDef.name} />
 
-      {#if $zoomlevel < layer.minzoom}
+        {#if $zoomlevel < layer.minzoom}
         <span class="alert">
           <Tr t={Translations.t.general.layerSelection.zoomInToSeeThisLayer} />
         </span>
-      {/if}
-    </Checkbox>
+        {/if}
+      </Checkbox>
+    {/if}
 
     {#if $isDisplayed && filteredLayer.layerDef.filters?.length > 0}
       <div id="subfilters" class="ml-4 flex flex-col gap-y-1">

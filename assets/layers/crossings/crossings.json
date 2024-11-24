@@ -232,14 +232,18 @@
       "id": "markings",
       "question": {
         "en": "What kind of markings does this crossing have?",
-        "nl": "Wat voor markering heeft deze oversteekplaats?"
+        "nl": "Wat voor markering heeft deze oversteekplaats?",
+        "de": "Welche Art von Markierungen gibt es an diesem Übergang?",
+        "es": "¿Qué tipo de señalización tiene este cruce?"
       },
       "mappings": [
         {
           "if": "crossing:markings=no",
           "then": {
             "en": "This crossing has no markings",
-            "nl": "Deze oversteekplaats heeft geen markeringen"
+            "nl": "Deze oversteekplaats heeft geen markeringen",
+            "de": "Diese Kreuzung hat keine Markierungen",
+            "es": "Este cruce no está señalizado"
           },
           "icon": {
             "class": "large",
@@ -250,7 +254,9 @@
           "if": "crossing:markings=zebra",
           "then": {
             "en": "This crossing has zebra markings",
-            "nl": "Deze oversteekplaats heeft een zebramarkering"
+            "nl": "Deze oversteekplaats heeft een zebramarkering",
+            "de": "Dieser Übergang ist mit Zebrastreifen markiert",
+            "es": "Este paso de cebra está señalizado"
           },
           "icon": {
             "class": "large",
@@ -261,7 +267,9 @@
           "hideInAnswer": true,
           "then": {
             "en": "This crossing has markings of an unknown type",
-            "nl": "Deze oversteekplaats heeft markeringen van een onbekend type"
+            "nl": "Deze oversteekplaats heeft markeringen van een onbekend type",
+            "de": "Dieser Übergang weist Markierungen unbekannter Art auf",
+            "es": "Este cruce tiene marcas de tipo desconocido"
           },
           "if": "crossing:markings=yes"
         },
@@ -269,7 +277,9 @@
           "if": "crossing:markings=lines",
           "then": {
             "en": "This crossings has lines on either side of the crossing",
-            "nl": "Deze oversteekplaats heeft lijnen aan beide kanten van de oversteekplaats"
+            "nl": "Deze oversteekplaats heeft lijnen aan beide kanten van de oversteekplaats",
+            "de": "Dieser Übergang hat Linien auf beiden Seiten des Übergangs",
+            "es": "Este cruce tiene líneas a ambos lados del cruce"
           },
           "icon": {
             "class": "large",
@@ -280,7 +290,9 @@
           "if": "crossing:markings=ladder",
           "then": {
             "en": "This crossing has lines on either side of the crossing, along with bars connecting them",
-            "nl": "Deze oversteekplaats heeft lijnen aan beide kanten van de oversteekplaats, met strepen die ze verbinden"
+            "nl": "Deze oversteekplaats heeft lijnen aan beide kanten van de oversteekplaats, met strepen die ze verbinden",
+            "de": "Diese Kreuzung hat Linien auf beiden Seiten der Kreuzung, zusammen mit Stangen, die sie verbinden",
+            "es": "Este cruce tiene líneas a ambos lados, junto con barras que las conectan"
           },
           "icon": {
             "class": "large",
@@ -291,7 +303,9 @@
           "if": "crossing:markings=dashes",
           "then": {
             "en": "This crossing has dashed lines on either sides of the crossing",
-            "nl": "Deze oversteekplaats heeft onderbroken lijnen aan beide kanten van de oversteekplaats"
+            "nl": "Deze oversteekplaats heeft onderbroken lijnen aan beide kanten van de oversteekplaats",
+            "de": "Dieser Übergang hat gestrichelte Linien auf beiden Seiten des Übergangs",
+            "es": "Este cruce tiene líneas discontinuas a ambos lados del cruce"
           },
           "icon": {
             "class": "large",
@@ -302,7 +316,9 @@
           "if": "crossing:markings=dots",
           "then": {
             "en": "This crossing has dotted lines on either sides of the crossing",
-            "nl": "Deze oversteekplaats heeft stippellijnen aan beide kanten van de oversteekplaats"
+            "nl": "Deze oversteekplaats heeft stippellijnen aan beide kanten van de oversteekplaats",
+            "de": "Dieser Übergang hat gestrichelte Linien auf beiden Seiten des Übergangs",
+            "es": "Este cruce tiene líneas de puntos a ambos lados del cruce"
           },
           "icon": {
             "class": "large",
@@ -313,7 +329,9 @@
           "if": "crossing:markings=surface",
           "then": {
             "en": "This crossing is marked by using a different coloured surface",
-            "nl": "Deze oversteekplaats is gemarkeerd door een anders gekleurd wegdek"
+            "nl": "Deze oversteekplaats is gemarkeerd door een anders gekleurd wegdek",
+            "de": "Dieser Übergang wird durch eine andersfarbige Oberfläche gekennzeichnet",
+            "es": "Este cruce se marca utilizando una superficie de color diferente"
           },
           "icon": {
             "class": "large",
@@ -324,7 +342,9 @@
           "if": "crossing:markings=ladder:skewed",
           "then": {
             "en": "This crossing has lines on either side of the crossing, along with angled bars connecting them",
-            "nl": "Deze oversteekplaats heeft lijnen aan beide kanten van de oversteekplaats, met schuine strepen die ze verbinden"
+            "nl": "Deze oversteekplaats heeft lijnen aan beide kanten van de oversteekplaats, met schuine strepen die ze verbinden",
+            "de": "Diese Kreuzung hat Linien auf beiden Seiten der Kreuzung, zusammen mit abgewinkelten Stangen, die sie verbinden",
+            "es": "Este cruce tiene líneas a ambos lados, junto con barras en ángulo que las conectan"
           },
           "icon": {
             "class": "large",
@@ -335,14 +355,18 @@
           "if": "crossing:markings=zebra:paired",
           "then": {
             "en": "This crossing has zebra markings with an interruption in every bar",
-            "nl": "Deze oversteekplaats heeft zebramarkeringen met een onderbreking van elke streep"
+            "nl": "Deze oversteekplaats heeft zebramarkeringen met een onderbreking van elke streep",
+            "de": "Dieser Übergang hat Zebrastreifen mit einer Unterbrechung in jedem Balken",
+            "es": "Este paso tiene marcas de cebra con una interrupción en cada barra"
           }
         },
         {
           "if": "crossing:markings=zebra:bicolour",
           "then": {
             "en": "This crossing has zebra markings in alternating colours",
-            "nl": "Deze oversteekplaats heeft een zebramarkering in afwisselende kleuren"
+            "nl": "Deze oversteekplaats heeft een zebramarkering in afwisselende kleuren",
+            "de": "Dieser Übergang hat Zebrastreifen in wechselnden Farben",
+            "es": "Este paso tiene marcas de cebra en colores alternos"
           },
           "icon": {
             "class": "large",
@@ -353,7 +377,9 @@
           "if": "crossing:markings=zebra:double",
           "then": {
             "en": "This crossing has double zebra markings",
-            "nl": "Deze oversteekplaats heeft een dubbele zebramarkering"
+            "nl": "Deze oversteekplaats heeft een dubbele zebramarkering",
+            "de": "Dieser Übergang hat doppelte Zebrastreifen",
+            "es": "Este paso de cebra tiene doble señalización"
           },
           "icon": {
             "class": "large",
@@ -364,21 +390,27 @@
           "if": "crossing:markings=pictograms",
           "then": {
             "en": "This crossing has pictograms on the road",
-            "nl": "Deze oversteekplaats heeft pictogrammen op de weg"
+            "nl": "Deze oversteekplaats heeft pictogrammen op de weg",
+            "de": "Diese Kreuzung hat Piktogramme auf der Straße",
+            "es": "Este cruce tiene pictogramas en la calzada"
           }
         },
         {
           "if": "crossing:markings=ladder:paired",
           "then": {
             "en": "This crossing has lines on either side of the crossing, along with bars connecting them, with an interruption in every bar",
-            "nl": "Deze oversteekplaats heeft lijnen aan beide kanten van de oversteekplaats, met strepen die ze verbinden, met een onderbreking van elke streep"
+            "nl": "Deze oversteekplaats heeft lijnen aan beide kanten van de oversteekplaats, met strepen die ze verbinden, met een onderbreking van elke streep",
+            "de": "Diese Kreuzung hat Linien auf beiden Seiten der Kreuzung und Balken, die sie verbinden, mit einer Unterbrechung in jedem Balken",
+            "es": "Este cruce tiene líneas a cada lado del cruce, junto con barras que las conectan, con una interrupción en cada barra"
           }
         },
         {
           "if": "crossing:markings=lines:paired",
           "then": {
             "en": "This crossing has double lines on either side of the crossing",
-            "nl": "Deze oversteekplaats heeft dubbele lijnen aan beide kanten van de oversteekplaats"
+            "nl": "Deze oversteekplaats heeft dubbele lijnen aan beide kanten van de oversteekplaats",
+            "de": "Dieser Übergang hat doppelte Linien auf beiden Seiten des Übergangs",
+            "es": "Este cruce tiene líneas dobles a cada lado del cruce"
           },
           "icon": {
             "class": "large",
@@ -388,7 +420,9 @@
       ],
       "render": {
         "en": "This crossing has {crossing:markings} markings",
-        "nl": "Deze oversteekplaats heeft {crossing:markings} markeringen"
+        "nl": "Deze oversteekplaats heeft {crossing:markings} markeringen",
+        "de": "Dieser Übergang hat {crossing:markings} Markierungen",
+        "es": "Este cruce tiene marcas {crossing:markings}"
       },
       "freeform": {
         "key": "crossing:markings",

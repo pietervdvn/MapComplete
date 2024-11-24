@@ -8,7 +8,8 @@
     "cs": "Stroje na ražbu mincí",
     "pl": "Prasy do groszy",
     "hu": "Kinyújtottérem-automaták",
-    "uk": "Монетні преси"
+    "uk": "Монетні преси",
+    "nl": "Muntpersen"
   },
   "description": {
     "en": "Find penny presses to create your own elongated coins.",
@@ -17,7 +18,8 @@
     "ca": "Trobeu premses de cèntims per crear les vostres pròpies monedes allargades.",
     "cs": "Najděte automaty na ražbu suvenýrových mincí.",
     "pl": "Znajdź prasy do groszy, aby stworzyć własne wydłużone monety.",
-    "uk": "Знайдіть преси для монет, щоб створити власні витягнуті монети."
+    "uk": "Знайдіть преси для монет, щоб створити власні витягнуті монети.",
+    "nl": "Zoek muntpersen om uitgerokken munten te maken."
   },
   "icon": "./assets/themes/elongated_coin/penny.svg",
   "startZoom": 11,

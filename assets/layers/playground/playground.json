@@ -666,7 +666,8 @@
         "it": "<a href='tel:{phone}'>{phone}</a>",
         "es": "<a href='tel:{phone}'>{phone}</a>",
         "cs": "<a href='tel:{phone}'>{phone}</a>",
-        "pl": "<a href='tel:{phone}'>{phone}</a>"
+        "pl": "<a href='tel:{phone}'>{phone}</a>",
+        "uk": "<a href='tel:{phone}'>{phone}</a>"
       },
       "freeform": {
         "key": "phone",
