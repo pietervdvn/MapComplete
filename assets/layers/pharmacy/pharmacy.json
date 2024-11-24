@@ -140,62 +140,15 @@
         "pl": "Nazwa tej apteki to {name}",
         "es": "Esta farmacia se llama {name}",
         "uk": "Ця аптека називається {name}"
-      }
+      },
+      "onSoftDelete": [
+        "name="
+      ]
     },
     "opening_hours",
     "contact",
     "payment-options",
-    {
-      "id": "wheelchair",
-      "question": {
-        "en": "Is this pharmacy easy to access on a wheelchair?",
-        "de": "Ist die Apotheke für Rollstuhlfahrer leicht zugänglich?",
-        "nl": "Is het mogelijk om deze apotheek te bereiken met een rolstoel?",
-        "ca": "És fàcil accedir a aquesta farmàcia amb una cadira de rodes?",
-        "fr": "Cette pharmacie est-elle facilement accessible en chaise roulante ?",
-        "cs": "Je tato lékárna snadno přístupná na invalidním vozíku?",
-        "es": "¿Es esta farmacia de fácil acceso en silla de ruedas?"
-      },
-      "mappings": [
-        {
-          "if": "wheelchair=yes",
-          "then": {
-            "en": "This pharmacy is easy to access on a wheelchair",
-            "ca": "Aquesta farmàcia és fàcil d'accedir en una cadira de rodes",
-            "de": "Die Apotheke ist für Rollstuhlfahrer leicht zugänglich",
-            "nl": "Deze apotheek is makkelijk te bereiken met een rolstoel",
-            "fr": "Cette pharmacie est facile d'accès en chaise roulante",
-            "cs": "Tato lékárna je snadno přístupná na invalidním vozíku",
-            "pl": "Ta apteka jest łatwo dostępna na wózku",
-            "es": "Esta farmacia es de fácil acceso en silla de ruedas"
-          }
-        },
-        {
-          "if": "wheelchair=no",
-          "then": {
-            "en": "This pharmacy is hard to access on a wheelchair",
-            "de": "Die Apotheke ist für Rollstuhlfahrer nur schwer zugänglich",
-            "nl": "Deze apotheek is moeilijk te bereiken met een rolstoel",
-            "ca": "Aquesta farmàcia es difícil d'accedir amb una cadira de rodes",
-            "fr": "Cette pharmacie est difficilement accessible en chaise roulante",
-            "cs": "Tato lékárna je těžko přístupná na invalidním vozíku",
-            "es": "Esta farmacia es de difícil acceso en silla de ruedas"
-          }
-        },
-        {
-          "if": "wheelchair=limited",
-          "then": {
-            "en": "This pharmacy has limited access for wheelchair users",
-            "de": "Die Apotheke ist für Rollstuhlfahrer nur eingeschränkt zugänglich",
-            "nl": "Deze apotheek is bereikbaar met een rolstoel, maar het is niet makkelijk",
-            "ca": "Aquesta farmàcia té un accés limitat per a usuaris amb cadira de rodes",
-            "fr": "L'accès à cette pharmacie est limité en chaise roulante",
-            "cs": "Tato lékárna má omezený přístup pro vozíčkáře",
-            "es": "Esta farmacia tiene acceso limitado para usuarios de silla de ruedas"
-          }
-        }
-      ]
-    }
+    "wheelchair"
   ],
   "filter": [
     {
@@ -234,6 +187,13 @@
     },
     "open_now"
   ],
-  "deletion": true,
+  "deletion": {
+    "softDeletionTags": {
+      "and": [
+        "amenity=",
+        "fixme="
+      ]
+    }
+  },
   "allowMove": true
 }

@@ -216,7 +216,10 @@
         "nl": "Pas telefoonnummer aan",
         "de": "Telefonnummer bearbeiten",
         "es": "Editar número de teléfono"
-      }
+      },
+      "onSoftDelete": [
+        "phone="
+      ]
     },
     {
       "id": "mastodon",
@@ -234,7 +237,11 @@
       "render": {
         "*": "{fediverse_link(contact:mastodon)}"
       },
-      "icon": "./assets/svg/mastodon.svg"
+      "icon": "./assets/svg/mastodon.svg",
+      "onSoftDelete": [
+        "contact:mastodon=",
+        "mastodon="
+      ]
     },
     {
       "id": "facebook",
@@ -263,7 +270,10 @@
           "de": "<div class='subtle text-sm'>Facebook ist bekannt dafür, die psychische Gesundheit zu beeinträchtigen, die öffentliche Meinung zu manipulieren und Hass zu verursachen. Versuche, gesündere Alternativen zu nutzen.</div>",
           "es": "<div class='subtle text-sm'>Se sabe que Facebook perjudica la salud mental, manipula la opinión pública y causa odio. Prueba alternativas más saludables</div>"
         }
-      }
+      },
+      "onSoftDelete": [
+        "contact:facebook="
+      ]
     },
     {
       "id": "osmlink",
@@ -338,7 +348,11 @@
         "nl": "Pas emailadres aan",
         "de": "E-Mail Adresse bearbeiten",
         "es": "Editar dirección de correo electrónico"
-      }
+      },
+      "onSoftDelete": [
+        "email=",
+        "contact:email="
+      ]
     },
     {
       "id": "website",
@@ -396,7 +410,11 @@
         "de": "Webseite bearbeiten",
         "pl": "Edytuj stronę internetową",
         "es": "Editar sitio web"
-      }
+      },
+      "onSoftDelete": [
+        "website=",
+        "contact:website="
+      ]
     },
     {
       "id": "wheelchair-access",
@@ -689,6 +707,9 @@
       ],
       "filter": [
         "filters.dogs"
+      ],
+      "onSoftDelete": [
+        "dog="
       ]
     },
     {
@@ -820,6 +841,9 @@
       ],
       "filter": [
         "filters.open_now"
+      ],
+      "onSoftDelete": [
+        "opening_hours="
       ]
     },
     {
@@ -1003,6 +1027,9 @@
           },
           "if": "service:electricity=no"
         }
+      ],
+      "onSoftDelete": [
+        "service:electricity="
       ]
     },
     {
@@ -1108,6 +1135,12 @@
       "filter": [
         "filters.accepts_cash",
         "filters.accepts_cards"
+      ],
+      "onSoftDelete": [
+        "payment:cash=",
+        "payment:cards=",
+        "payment:payconiq=",
+        "payment:qr_code="
       ]
     },
     {
@@ -1189,6 +1222,11 @@
               "cs": "Jsou zde přijímány kreditní karty"
             }
           }
+        ],
+        "onSoftDelete+": [
+          "payment:coins=",
+          "payment:credit_cards=",
+          "payment:notes="
         ]
       }
     },
@@ -1246,6 +1284,10 @@
               "pl": "Płatność odbywa się za pomocą karty członkowskiej"
             }
           }
+        ],
+        "onSoftDelete+": [
+          "payment:app=",
+          "payment:membership_card="
         ]
       }
     },
@@ -1498,6 +1540,9 @@
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         }
+      ],
+      "onSoftDelete": [
+        "payment:coins:denominations="
       ]
     },
     {
@@ -1707,6 +1752,9 @@
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         }
+      ],
+      "onSoftDelete": [
+        "payment:notes:denominations="
       ]
     },
     {
@@ -1964,6 +2012,9 @@
             "uk": "Розташований на першому підвальному поверсі"
           }
         }
+      ],
+      "onSoftDelete": [
+        "level="
       ]
     },
     {
@@ -2045,6 +2096,9 @@
             "pl": "Palenie jest <b>dozwolone na zewnątrz</b>."
           }
         }
+      ],
+      "onSoftDelete": [
+        "smoking="
       ]
     },
     {
@@ -2229,6 +2283,11 @@
       ],
       "filter": [
         "filters.has_internet"
+      ],
+      "onSoftDelete": [
+        "internet=",
+        "internet_access:fee=",
+        "internet_access:ssid="
       ]
     },
     {
@@ -2310,6 +2369,11 @@
             "uk": "Доступ до Інтернету в цьому місці безкоштовний тільки для клієнтів"
           }
         }
+      ],
+      "onSoftDelete": [
+        "internet=",
+        "internet_access:fee=",
+        "internet_access:ssid="
       ]
     },
     {
@@ -2372,7 +2436,12 @@
         "ca": "El nom de la xarxa és <b>{internet_access:ssid}</b>",
         "pl": "Nazwa sieci to <b>{internet_access:ssid}</b>",
         "uk": "Назва мережі: <b>{internet_access:ssid}</b>"
-      }
+      },
+      "onSoftDelete": [
+        "internet=",
+        "internet_access:fee=",
+        "internet_access:ssid="
+      ]
     },
     {
       "id": "luminous_or_lit",
@@ -2579,6 +2648,9 @@
       ],
       "filter": [
         "filters.sugar_free"
+      ],
+      "onSoftDelete": [
+        "diet:suger_free="
       ]
     },
     {
@@ -2634,6 +2706,9 @@
       ],
       "filter": [
         "filters.lactose_free"
+      ],
+      "onSoftDelete": [
+        "diet:lactose_free="
       ]
     },
     {
@@ -2690,6 +2765,9 @@
       ],
       "filter": [
         "filters.gluten_free"
+      ],
+      "onSoftDelete": [
+        "diet:gluten_free="
       ]
     },
     {
@@ -2736,6 +2814,9 @@
             "es": "Esta tienda no tiene oferta vegana"
           }
         }
+      ],
+      "onSoftDelete": [
+        "diet:vegan="
       ]
     },
     {
@@ -2965,6 +3046,9 @@
             "es": "Cerrado durante el invierno"
           }
         }
+      ],
+      "onSoftDelete": [
+        "seasonal="
       ]
     },
     {
@@ -3011,6 +3095,9 @@
             "es": "Esta instalación no ofrece ducha"
           }
         }
+      ],
+      "onSoftDelete": [
+        "shower="
       ]
     },
     {
@@ -3053,6 +3140,9 @@
             "uk": "Не є частиною великого бренду"
           }
         }
+      ],
+      "onSoftDelete": [
+        "brand="
       ]
     },
     {
