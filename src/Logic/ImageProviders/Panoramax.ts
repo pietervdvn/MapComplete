@@ -192,9 +192,9 @@ export default class PanoramaxImageProvider extends ImageProvider {
 export class PanoramaxUploader implements ImageUploader {
     public readonly panoramax: AuthorizedPanoramax
     maxFileSizeInMegabytes = 100 * 1000 * 1000 // 100MB
-    private readonly _targetSequence: Store<string>
+    private readonly _targetSequence?: Store<string>
 
-    constructor(url: string, token: string, targetSequence: Store<string>) {
+    constructor(url: string, token: string, targetSequence?: Store<string>) {
         this._targetSequence = targetSequence
         this.panoramax = new AuthorizedPanoramax(url, token)
     }
@@ -212,16 +212,16 @@ export class PanoramaxUploader implements ImageUploader {
     }> {
         // https://panoramax.openstreetmap.fr/api/docs/swagger#/
 
-        let [lon, lat] = currentGps
+        let [lon, lat] = currentGps ?? [undefined, undefined]
         let datetime = new Date().toISOString()
         try {
             const tags = await ExifReader.load(blob)
             const [[latD], [latM], [latS, latSDenom]] = <
                 [[number, number], [number, number], [number, number]]
-            >tags?.GPSLatitude.value
+            >tags?.GPSLatitude?.value
             const [[lonD], [lonM], [lonS, lonSDenom]] = <
                 [[number, number], [number, number], [number, number]]
-            >tags?.GPSLongitude.value
+            >tags?.GPSLongitude?.value
             lat = latD + latM / 60 + latS / (3600 * latSDenom)
             lon = lonD + lonM / 60 + lonS / (3600 * lonSDenom)
 
