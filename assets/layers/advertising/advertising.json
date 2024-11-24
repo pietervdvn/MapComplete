@@ -41,7 +41,7 @@
       ]
     }
   },
-  "minzoom": 15,
+  "minzoom": 13,
   "title": {
     "render": {
       "*": "{advertising}"
