@@ -306,7 +306,12 @@
         "logout": "Afmelden",
         "menu": {
             "aboutMapComplete": "Over MapComplete",
-            "filter": "Filter data"
+            "filter": "Filter data",
+            "aboutCurrentThemeTitle": "Over deze kaart",
+            "moreUtilsTitle": "Ontdek meer",
+            "openHereDifferentApp": "Open de huidige locatie in andere toepassingen",
+            "showIntroduction": "Toon introductie",
+            "title": "Menu"
         },
         "morescreen": {
             "createYourOwnTheme": "Maak je eigen MapComplete-kaart",
@@ -410,7 +415,9 @@
             "recents": "Recent bekeken plaatsen",
             "search": "Zoek naar een locatie, filter of kaart",
             "searchShort": "Zoek…",
-            "searching": "Aan het zoeken…"
+            "searching": "Aan het zoeken…",
+            "nMoreFilters": "{n} meer",
+            "nothingFor": "Geen resultaten gevonden voor {term}"
         },
         "share": "Deel deze locatie",
         "sharescreen": {
@@ -420,7 +427,15 @@
             "fsWelcomeMessage": "Toon het welkomstbericht en de bijhorende tabbladen",
             "intro": "Kopieer onderstaande link om deze kaart naar vrienden en familie door te sturen:",
             "thanksForSharing": "Bedankt om te delen!",
-            "title": "Deel deze kaart"
+            "title": "Deel deze kaart",
+            "fsBackground": "Wisselende achtergronden inschakelen",
+            "fsFilter": "De mogelijkheid inschakelen om te wisselen tussen lagen en filters",
+            "fsGeolocation": "Geolocatie inschakelen",
+            "openInOtherApplications": "De huidige locatie openen met een andere kaarttoepassing",
+            "openLayers": "Open het menu met lagen en filters",
+            "options": "Opties voor delen",
+            "stateIsIncluded": "De huidige status van de lagen en filters is opgenomen in de gedeelde link en iframe.",
+            "documentation": "Voor meer informatie over beschikbare URL-parameters, <a href='https://github.com/pietervdvn/MapComplete/blob/develop/Docs/URL_Parameters.md' target='_blank'>raadpleeg de documentatie</a>"
         },
         "skip": "Sla deze vraag over",
         "testing": "Testmode - wijzigingen worden niet opgeslaan",
@@ -530,7 +545,25 @@
             "searchToShort": "Je zoekopdracht is te kort, vul een langere tekst in",
             "searchWikidata": "Zoek op Wikidata",
             "wikipediaboxTitle": "Wikipedia"
-        }
+        },
+        "clearPendingChanges": "Wis hangende wijzigingen",
+        "customThemeTitle": "Eigen thema's",
+        "enableGeolocationForSafari": "Heb je de pop-up niet gekregen om toestemming voor locatie te vragen?",
+        "enableGeolocationForSafariLink": "Leer hoe je toestemming voor locatie kunt inschakelen in de instellingen",
+        "eraseValue": "Wis deze waarde",
+        "filterPanel": {
+            "allTypes": "Alle types",
+            "disableAll": "Alles uitschakelen",
+            "enableAll": "Alles inschakelen"
+        },
+        "geopermissionDenied": "Locatietoestemming werd geweigerd",
+        "retry": "Opnieuw proberen",
+        "searchAnswer": "Zoek een optie…",
+        "seeIndex": "Zie het overzich van alle thematische kaarten",
+        "uploadError": "Fout tijdens het uploaden van wijzigingen: {error}",
+        "mappingsAreHidden": "Sommige opties zijn verborgen. Gebruik zoeken om meer opties te tonen.",
+        "poweredByMapComplete": "Powered by MapComplete - crowdsourced, thematische kaarten met OpenStreetMap",
+        "uploadPending": "{count} wijzigingen in behandeling"
     },
     "hotkeyDocumentation": {
         "action": "Actie",
