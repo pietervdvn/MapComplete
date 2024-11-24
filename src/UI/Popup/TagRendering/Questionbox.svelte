@@ -53,7 +53,7 @@
    * Ids of skipped questions
    */
   let skippedQuestions = new UIEventSource<Set<string>>(new Set<string>())
-  let layerDisabledForTheme = state.userRelatedState.getThemeDisabled(state.layout.id, layer.id)
+  let layerDisabledForTheme = state.userRelatedState.getThemeDisabled(state.theme.id, layer.id)
   layerDisabledForTheme.addCallbackAndRunD(disabled => {
     skippedQuestions.set(new Set(disabled.concat(Array.from(skippedQuestions.data))))
   })
