@@ -17,6 +17,7 @@
     ],
     "oauth_credentials": {
       "#": "This client-id is registered by 'MapComplete' on OpenStreetMap.org",
+      "#fork": "For a fork, you will need to register your own key at https://www.openstreetmap.org/oauth2/applications",
       "oauth_client_id": "K93H1d8ve7p-tVLE1ZwsQ4lAFLQk8INx5vfTLMu5DWk",
       "oauth_secret": "NBWGhWDrD3QDB35xtVuxv4aExnmIt4FA_WgeLtwxasg",
       "url": "https://www.openstreetmap.org",
@@ -37,10 +38,12 @@
     "error_server": "https://report.mapcomplete.org/report",
     "api_keys": {
       "#": "Various API-keys for various services. Feel free to reuse those in another MapComplete-hosted version",
+      "#fork": "Not bound to a domain; can be reused",
       "imgur": "7070e7167f0a25a",
       "mapillary_v4": "MLY|4441509239301885|b40ad2d3ea105435bd40c7e76993ae85"
     },
     "panoramax": {
+      "#fork": "Not bound to a domain; can be reused",
       "url": "https://panoramax.mapcomplete.org",
       "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnZW92aXNpbyIsInN1YiI6IjU5ZjgzOGI0LTM4ZjAtNDdjYi04OWYyLTM3NDQ3MWMxNTUxOCJ9.0rBioZS_48NTjnkIyN9497c3fQdTqtGgH1HDqlz1bWs",
       "sequence": "6e702976-580b-419c-8fb3-cf7bd364e6f8",
@@ -61,6 +64,7 @@
     "photonEndpoint": "https://photon.komoot.io/",
     "jsonld-proxy": "https://lod.mapcomplete.org/extractgraph?url={url}",
     "protomaps": {
+      "#fork": "Bound to https://mapcomplete.org; get your own at https://protomaps.com/",
       "api-key": "2af8b969a9e8b692",
       "endpoint": "https://api.protomaps.com/tiles/",
       "styles": [
