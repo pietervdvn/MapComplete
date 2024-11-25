@@ -283,7 +283,7 @@
           "if": "capacity:disabled=0",
           "then": {
             "en": "There are no disabled parking spots",
-            "nl": "Er zijn geen parkeerplaatsen voor gehandicapten",
+            "nl": "Er zijn geen parkeerplaatsen voor personen met een beperking",
             "de": "Es gibt keine barrierefreien Stellplätze",
             "fr": "Il n'y a pas de places de stationnement pour personnes à mobilité réduite",
             "ca": "No hi ha places d'aparcament per a persones amb mobilitat reduïda",
@@ -295,7 +295,7 @@
       ],
       "question": {
         "en": "How many disabled parking spots are there at this parking?",
-        "nl": "Hoeveel parkeerplaatsen voor gehandicapten zijn er op deze parking?",
+        "nl": "Hoeveel parkeerplaatsen voor personen met een beperking zijn er op deze parking?",
         "de": "Wie viele barrierefreie Stellplätze gibt es auf diesem Parkplatz?",
         "fr": "Combien y a-t-il de places de stationnement pour personnes à mobilité réduite dans ce parking ?",
         "ca": "Quantes places d'aparcament per a persones amb mobilitat reduïda hi ha al parking?",
@@ -305,7 +305,7 @@
       },
       "render": {
         "en": "There are {capacity:disabled} disabled parking spots",
-        "nl": "Er zijn {capacity:disabled} parkeerplaatsen voor gehandicapten",
+        "nl": "Er zijn {capacity:disabled} parkeerplaatsen voor personen met een beperking",
         "de": "Es gibt {capacity:disabled} barrierefreie Stellplätze",
         "fr": "Il y a {capacity:disabled} places de stationnement pour personnes à mobilité réduite",
         "ca": "Hi ha {capacity:disabled} places d'aparcament per a discapacitats",

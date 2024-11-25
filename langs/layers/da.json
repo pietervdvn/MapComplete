@@ -2049,7 +2049,7 @@
                 "question": "I hvilken geografisk retning filmer dette kamera?",
                 "render": "Filmer til en kompasretning af {camera:direction}"
             },
-            "is_indoor": {
+            "camera_is_indoor": {
                 "mappings": {
                     "0": {
                         "then": "Dette kamera er placeret indendørs"
@@ -2060,8 +2060,7 @@
                     "2": {
                         "then": "Dette kamera er sandsynligvis placeret udendørs"
                     }
-                },
-                "question": "Er det offentlige rum, der overvåges af dette kamera, et indendørs eller udendørs rum?"
+                }
             }
         },
         "title": {

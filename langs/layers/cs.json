@@ -8591,6 +8591,19 @@
                 "question": "Ve kterém geografickém směru tato kamera snímá?",
                 "render": "Snímané oblasti podle směru kompasu {camera:direction}"
             },
+            "camera_is_indoor": {
+                "mappings": {
+                    "0": {
+                        "then": "Tato kamera je umístěna ve vnitřním prostoru"
+                    },
+                    "1": {
+                        "then": "Tato kamera je umístěna ve venkovním prostoru"
+                    },
+                    "2": {
+                        "then": "Tato kamera je pravděpodobně umístěna venku"
+                    }
+                }
+            },
             "has_alpr": {
                 "mappings": {
                     "0": {
@@ -8602,20 +8615,6 @@
                 },
                 "question": "Dokáže tato kamera automaticky rozpoznat registrační značky?",
                 "questionHint": "Automatická čtečka registračních značek (<b>ALPR</b>) má obvykle dvě čočky a mezi nimi soustavu infračervených diod LED."
-            },
-            "is_indoor": {
-                "mappings": {
-                    "0": {
-                        "then": "Tato kamera je umístěna ve vnitřním prostoru"
-                    },
-                    "1": {
-                        "then": "Tato kamera je umístěna ve venkovním prostoru"
-                    },
-                    "2": {
-                        "then": "Tato kamera je pravděpodobně umístěna venku"
-                    }
-                },
-                "question": "Je veřejný prostor sledovaný touto kamerou vnitřní nebo venkovní prostor?"
             }
         },
         "title": {

@@ -387,14 +387,6 @@
             "skippedMultiple": "Přeskočili jste {skipped} otázky",
             "skippedOne": "Vynechali jste jednu otázku"
         },
-        "questions": {
-            "emailIs": "E-mailová adresa této {category} je <a href='mailto:{email}' target='_blank'>{email}</a>",
-            "emailOf": "Jaká je e-mailová adresa {category}?",
-            "phoneNumberIs": "Telefonní číslo této {category} je <a href='tel:{phone}' target='_blank'>{phone}</a>",
-            "phoneNumberOf": "Jaké je telefonní číslo na {category}?",
-            "websiteIs": "Web: <a href='{website}' target='_blank'>{website}</a>",
-            "websiteOf": "Jaká je webová stránka {category}?"
-        },
         "readYourMessages": "Před přidáním nové funkce si prosím přečtěte všechny zprávy OpenStreetMap.",
         "removeLocationHistory": "Odstranit historii polohy",
         "retry": "Zkusit znovu",

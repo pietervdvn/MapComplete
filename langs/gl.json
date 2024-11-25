@@ -72,14 +72,6 @@
         },
         "osmLinkTooltip": "Ollar este obxecto no OpenStreetMap para ollar o historial e outras opcións de edición",
         "pickLanguage": "Escoller lingua: ",
-        "questions": {
-            "emailIs": "O enderezo de correo electrónico de {category} é <a href='mailto:{email}' target='_blank'>{email}</a>",
-            "emailOf": "Cal é o enderezo de correo electrónico de {category}?",
-            "phoneNumberIs": "O número de teléfono de {category} é <a href='tel:{phone}' target='_blank'>{phone}</a>",
-            "phoneNumberOf": "Cal é o número de teléfono de {category}?",
-            "websiteIs": "Páxina web: <a href='{website}' target='_blank'>{website}</a>",
-            "websiteOf": "Cal é a páxina web de {category}?"
-        },
         "readYourMessages": "Le todos a túas mensaxes do OpenStreetMap antes de engadir novos puntos.",
         "returnToTheMap": "Voltar ó mapa",
         "save": "Gardar",

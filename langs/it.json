@@ -311,14 +311,6 @@
             "answeredOne": "Hai risposto a una domanda",
             "done": "Non ci sono più domande! Grazie!"
         },
-        "questions": {
-            "emailIs": "L’indirizzo email di questa {category} è <a href=\"mailto:{email}\" target=\"_blank\">{email}</a>",
-            "emailOf": "Qual è l’indirizzo email di {category}?",
-            "phoneNumberIs": "Il numero di telefono di questa {category} è <a href='tel:{phone}' target='_blank'>{phone}</a>",
-            "phoneNumberOf": "Qual è il numero di telefono di {category}?",
-            "websiteIs": "Sito web: <a href=\"{website}\" target=\"_blank\">{website}</a>",
-            "websiteOf": "Qual è il sito web di {category}?"
-        },
         "readYourMessages": "Leggi tutti i tuoi messaggi OpenStreetMap prima di aggiungere un nuovo elemento.",
         "removeLocationHistory": "Elimina la cronologia di geolocalizzazione",
         "retry": "Riprova",

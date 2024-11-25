@@ -1881,7 +1881,7 @@
             "camera:mount": {
                 "question": "Как расположена эта камера?"
             },
-            "is_indoor": {
+            "camera_is_indoor": {
                 "mappings": {
                     "1": {
                         "then": "Эта камера расположена снаружи"

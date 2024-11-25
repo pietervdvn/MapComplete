@@ -335,14 +335,6 @@
             "skippedMultiple": "Ohitit {skipped} kysymystä",
             "skippedOne": "Ohitit yhden kysymyksen"
         },
-        "questions": {
-            "emailIs": "Sähköpostiosoite kohteelle {category} on <a href='mailto:{email}' target='_blank'>{email}</a>",
-            "emailOf": "Mikä on sähköpostiosoite kohteelle {category}?",
-            "phoneNumberIs": "Puhelinnumero kohteelle {category} on <a href='tel:{phone}' target='_blank'>{phone}</a>",
-            "phoneNumberOf": "Mikä on puhelinnumero kohteelle {category}?",
-            "websiteIs": "Verkkosivusto: <a href=\"{website}\" target=\"_blank\">{website}</a>",
-            "websiteOf": "Mikä on verkkosivu kohteelle {category}?"
-        },
         "readYourMessages": "Luethan kaikki OpenStreetMap-viestisi ennen kuin lisäät uutta ominaisuutta.",
         "removeLocationHistory": "Poista sijaintihistoria",
         "returnToTheMap": "Palaa karttaan",

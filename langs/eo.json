@@ -41,9 +41,6 @@
             "versionInfo": "v{version} - generita je {date}"
         },
         "pickLanguage": "Elektu lingvon: ",
-        "questions": {
-            "websiteIs": "Retejo: <a href=\"{website}\" target=\"_blank\">{website}</a>"
-        },
         "returnToTheMap": "Reen al la mapo",
         "save": "Konservi",
         "search": {

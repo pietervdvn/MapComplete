@@ -889,6 +889,14 @@
       ]
     },
     {
+      "id": "disabled-questions",
+      "render": {
+        "special": {
+          "type": "disabled_questions"
+        }
+      }
+    },
+    {
       "id": "title-privacy-legal",
       "render": {
         "en": "<h3>Privacy and legal</h3>",

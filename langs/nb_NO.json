@@ -212,14 +212,6 @@
         },
         "pickLanguage": "Velg språk: ",
         "poweredByOsm": "Med data fra OpenStreetMap",
-        "questions": {
-            "emailIs": "E-postadressen til {category} er <a href=\"mailto:{email}\" target=\"_blank\">{email}</a>",
-            "emailOf": "Hva er e-postadressen til {category}?",
-            "phoneNumberIs": "Telefonnummeret til denne {category} er <a href='tel:{phone}' target='_blank'>{phone}</a>",
-            "phoneNumberOf": "Hva er telefonnummeret til {category}?",
-            "websiteIs": "Nettside: <a href=\"{website}\" target=\"_blank\">{website}</a>",
-            "websiteOf": "Hva er nettsiden til {category}?"
-        },
         "readYourMessages": "Les alle OpenStreetMap-meldingene dine før du legger til et nytt punkt.",
         "removeLocationHistory": "Slett posisjonshistorikken",
         "returnToTheMap": "Gå tilbake til kartet",

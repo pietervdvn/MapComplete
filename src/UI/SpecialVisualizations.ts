@@ -97,6 +97,7 @@ import ClearCaches from "./Popup/ClearCaches.svelte"
 import GroupedView from "./Popup/GroupedView.svelte"
 import { QuestionableTagRenderingConfigJson } from "../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
 import NoteCommentElement from "./Popup/Notes/NoteCommentElement.svelte"
+import DisabledQuestions from "./Popup/DisabledQuestions.svelte"
 import FediverseLink from "./Popup/FediverseLink.svelte"
 import ImageCarousel from "./Image/ImageCarousel.svelte"
 
@@ -2106,6 +2107,16 @@ export default class SpecialVisualizations {
                         state.osmConnection.preferencesHandler.ClearPreferences()
                     })
                 },
+            },
+            {
+                funcName: "disabled_questions",
+                docs: "Shows which questions are disabled for every layer. Used in 'settings'",
+                needsUrls: [],
+                args: [],
+                constr(state) {
+                    return new SvelteUIElement(DisabledQuestions, { state })
+                },
+
             },
         ]
 

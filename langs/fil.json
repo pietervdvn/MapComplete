@@ -92,9 +92,6 @@
         "questionBox": {
             "answeredMultiple": "Sinagutan mo ang {answered} na tanong"
         },
-        "questions": {
-            "emailOf": "Ano ba ang email address ng {category}?"
-        },
         "returnToTheMap": "Bumalik sa mapa",
         "search": {
             "nothing": "Walang nahanap…"

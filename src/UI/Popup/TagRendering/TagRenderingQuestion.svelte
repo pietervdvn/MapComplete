@@ -36,6 +36,8 @@
   import { Modal } from "flowbite-svelte"
   import Popup from "../../Base/Popup.svelte"
   import If from "../../Base/If.svelte"
+  import DotMenu from "../../Base/DotMenu.svelte"
+  import SidebarUnit from "../../Base/SidebarUnit.svelte"
 
   export let config: TagRenderingConfig
   export let tags: UIEventSource<Record<string, string>>
@@ -338,10 +340,41 @@
       .then((changes) => state.changes.applyChanges(changes))
       .catch(console.error)
   }
+
+  let disabledInTheme = state.userRelatedState.getThemeDisabled(state.layout.id, layer?.id)
+  let menuIsOpened = new UIEventSource(false)
+
+  function disableQuestion() {
+    const newList = Utils.Dedup([config.id, ...disabledInTheme.data])
+    disabledInTheme.set(newList)
+    menuIsOpened.set(false)
+  }
+
+  function enableQuestion() {
+    const newList = disabledInTheme.data?.filter(id => id !== config.id)
+    disabledInTheme.set(newList)
+    menuIsOpened.set(false)
+  }
 </script>
 
 {#if question !== undefined}
   <div class={clss}>
+
+    {#if layer.isNormal()}
+    <DotMenu hideBackground={true} open={menuIsOpened}>
+      <SidebarUnit>
+        {#if $disabledInTheme.indexOf(config.id) >= 0}
+          <button on:click={() => enableQuestion()}>
+            <Tr t={Translations.t.general.questions.enable}/>
+          </button>
+        {:else}
+          <button on:click={() => disableQuestion()}>
+            <Tr t={Translations.t.general.questions.disable}/>
+          </button>
+        {/if}
+      </SidebarUnit>
+    </DotMenu>
+      {/if}
     <form
       class="relative flex flex-col overflow-y-auto px-4"
       style="max-height: 75vh"

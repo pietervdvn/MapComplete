@@ -7957,6 +7957,19 @@
                 "question": "En quina direcció geogràfica apunta aquesta càmera?",
                 "render": "Grava en direcció {camera:direction}"
             },
+            "camera_is_indoor": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquesta càmera es troba a l'interior"
+                    },
+                    "1": {
+                        "then": "Aquesta càmera es troba a l'exterior"
+                    },
+                    "2": {
+                        "then": "Aquesta càmera probablement es troba a l'exterior"
+                    }
+                }
+            },
             "has_alpr": {
                 "mappings": {
                     "0": {
@@ -7968,20 +7981,6 @@
                 },
                 "question": "Aquesta càmera pot detectar matrícules automàticament?",
                 "questionHint": "Un <b>ALPR</b> (lector automàtic de matrícules, per les seves sigles en anglès) normalment té dues lents i una sèrie de LEDs infrarojos entremig."
-            },
-            "is_indoor": {
-                "mappings": {
-                    "0": {
-                        "then": "Aquesta càmera es troba a l'interior"
-                    },
-                    "1": {
-                        "then": "Aquesta càmera es troba a l'exterior"
-                    },
-                    "2": {
-                        "then": "Aquesta càmera probablement es troba a l'exterior"
-                    }
-                },
-                "question": "L'espai públic vigilat per aquesta càmera és un espai interior o exterior?"
             }
         },
         "title": {

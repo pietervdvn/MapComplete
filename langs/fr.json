@@ -300,14 +300,6 @@
             "skippedMultiple": "Vous avez passé {skipped} questions",
             "skippedOne": "Vous avez passé une question"
         },
-        "questions": {
-            "emailIs": "L'adresse électronique de {category} est <a href=\"mailto:{email}\" target=\"_blank\">{email}</a>",
-            "emailOf": "Quelle est l'adresse électronique de {category} ?",
-            "phoneNumberIs": "Le numéro de téléphone de {category} est <a href='tel:{phone}' target='_blank'>{phone}</a>",
-            "phoneNumberOf": "Quel est le numéro de téléphone de {category} ?",
-            "websiteIs": "Site Web : <a href=\"{website}\" target=\"_blank\">{website}</a>",
-            "websiteOf": "Quel est le site internet de {category} ?"
-        },
         "readYourMessages": "Merci de lire tous vos messages sur OpenStreetMap avant d'ajouter un nouveau point.",
         "removeLocationHistory": "Supprimer l'historique des positions",
         "returnToTheMap": "Retourner sur la carte",
