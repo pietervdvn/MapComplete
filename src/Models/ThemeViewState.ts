@@ -1040,7 +1040,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
     /**
      * Searches the appropriate layer - will first try if a special layer matches; if not, a normal layer will be used by delegating to the theme
      */
-    public getMatchingLayer(properties: Record<string, string>) {
+    public getMatchingLayer(properties: Record<string, string>): LayerConfig | undefined {
         const id = properties.id
 
         if (id.startsWith("summary_")) {

@@ -352,6 +352,10 @@
                     "then": "./assets/layers/entrance/entrance.svg"
                   },
                   {
+                    "if": "theme=inspector",
+                    "then": "./assets/svg/add.svg"
+                  },
+                  {
                     "if": "theme=items_with_image",
                     "then": "./assets/layers/item_with_image/camera.svg"
                   },

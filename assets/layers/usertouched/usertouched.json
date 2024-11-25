@@ -1,0 +1,67 @@
+{
+  "id": "usertouched",
+  "description": {
+    "en": "Special layer showing all items which were changed by a certain user"
+  },
+  "name": {
+    "en": "Changed by user"
+  },
+  "title": {
+    "render": {
+      "en": "Changed by user"
+    }
+  },
+  "source": "special",
+  "tagRenderings": [
+    {
+      "id": "test",
+      "render": {
+        "en": "Changed by user"
+      }
+    },
+    "all_tags"
+  ],
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "iconSize": "15,15",
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "#aaa"
+        },
+        {
+          "icon": "ring",
+          "color": "#000"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "black",
+      "width": 3,
+      "fillColor": "#00000000"
+    },
+    {
+      "color": "#cccccccc",
+      "width": {
+        "render": 0,
+        "mappings": [
+          {
+            "if": {"or":
+              ["_geometry:type=Polygon","_geometry:type=MultiPolygon"]
+            },
+            "then": 20
+          }
+        ]
+      },
+      "offset": 15,
+      "fillColor": "#00000000"
+    }
+  ],
+  "allowMove": false
+}

@@ -727,6 +727,7 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
     }
 
     /**
+     * Parse the number and round to the nearest int
      *
      * @param source
      * UIEventSource.asInt(new UIEventSource("123")).data // => 123

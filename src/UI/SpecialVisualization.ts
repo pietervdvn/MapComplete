@@ -87,7 +87,7 @@ export interface SpecialVisualizationState {
     readonly geocodedImages: UIEventSource<Feature[]>
     readonly searchState: SearchState
 
-    getMatchingLayer(properties: Record<string, string>)
+    getMatchingLayer(properties: Record<string, string>): LayerConfig | undefined
 
     showCurrentLocationOn(map: Store<MlMap>): ShowDataLayer
     reportError(message: string | Error | XMLHttpRequest, extramessage?: string): Promise<void>
