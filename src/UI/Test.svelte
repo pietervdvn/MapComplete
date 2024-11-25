@@ -32,8 +32,16 @@
       const [[lonD], [lonM], [lonS, lonSDenom]] = <
         [[number, number], [number, number], [number, number]]
         >tags?.GPSLongitude?.value
-      lat = latD + latM / 60 + latS / (3600 * latSDenom)
-      lon = lonD + lonM / 60 + lonS / (3600 * lonSDenom)
+      const exifLat = latD + latM / 60 + latS / (3600 * latSDenom)
+      const exifLon = lonD + lonM / 60 + lonS / (3600 * lonSDenom)
+      if (typeof exifLat === "number" && !isNaN(exifLat) && typeof exifLon === "number" && !isNaN(exifLon)
+        && !(exifLat === 0 && exifLon === 0)) {
+        lat = exifLat
+        lon = exifLon
+        l("Using EXIFLAT + EXIFLON")
+      }else{
+        l("NOT using exifLat and exifLon: invalid value detected")
+      }
       l("Lat and lon are", lat, lon)
       l("Datetime value is", JSON.stringify(tags.DateTime))
       const [date, time] = tags.DateTime.value[0].split(" ")
