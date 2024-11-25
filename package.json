@@ -17,7 +17,7 @@
     ],
     "oauth_credentials": {
       "#": "This client-id is registered by 'MapComplete' on OpenStreetMap.org",
-      "#fork": "For a fork, you will need to register your own key at https://www.openstreetmap.org/oauth2/applications",
+      "#fork": "For a fork, you will need to register your own key at https://www.openstreetmap.org/oauth2/applications ; redirect url is `https://<your-domain>/land.html`, permissions: `read_user_preferences`, `modify preferences`, `modify the map`. For GPS-traces: both, `modify-notes` if you want the notes-theme to work.",
       "oauth_client_id": "K93H1d8ve7p-tVLE1ZwsQ4lAFLQk8INx5vfTLMu5DWk",
       "oauth_secret": "NBWGhWDrD3QDB35xtVuxv4aExnmIt4FA_WgeLtwxasg",
       "url": "https://www.openstreetmap.org",
