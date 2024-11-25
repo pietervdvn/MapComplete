@@ -13,7 +13,7 @@ import SvelteUIElement from "../Base/SvelteUIElement"
 import MaplibreMap from "./MaplibreMap.svelte"
 import { RasterLayerProperties } from "../../Models/RasterLayerProperties"
 import * as htmltoimage from "html-to-image"
-import RasterLayerHandler from "./RasterLayerHandler"
+import RasterLayerHandler, { OverlayHandler } from "./RasterLayerHandler"
 import Constants from "../../Models/Constants"
 import { Protocol } from "pmtiles"
 
@@ -100,6 +100,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         this.useTerrain = state?.useTerrain ?? new ImmutableStore<boolean>(false)
         this.rasterLayer =
             state?.rasterLayer ?? new UIEventSource<RasterLayerPolygon | undefined>(undefined)
+        this.overlays = state?.overlays ?? new UIEventSource<RasterLayerPolygon[]>([])
         this.showScale = state?.showScale ?? new UIEventSource<boolean>(false)
 
         this.overlays = new UIEventSource<RasterLayerPolygon[]>([])
@@ -112,6 +113,8 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         const self = this
 
         new RasterLayerHandler(this._maplibreMap, this.rasterLayer)
+
+        new OverlayHandler(this._maplibreMap, this.overlays)
 
         const clickmodes = ["left", "middle", "right"] as const
 

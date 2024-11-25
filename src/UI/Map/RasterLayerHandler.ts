@@ -41,7 +41,7 @@ class SingleBackgroundHandler {
         })
     }
 
-    private onMove(map: MLMap) {
+    public onMove(map: MLMap) {
         if (!this._deactivationTime) {
             return
         }
@@ -68,7 +68,7 @@ class SingleBackgroundHandler {
         }
     }
 
-    private async update() {
+    public async update() {
         const newTarget: RasterLayerPolygon | undefined = this._background.data
         const targetLayer = this._targetLayer
         if (newTarget?.properties?.id !== targetLayer.properties.id) {
@@ -121,9 +121,19 @@ class SingleBackgroundHandler {
             // The background layer is already an OSM-based map or another map, so we don't want anything from the baselayer
             addLayerBeforeId = undefined
         }
+        if (background.isOverlay) {
+            // This is an overlay, so we want to add it on top of everything
+            addLayerBeforeId = undefined
+            console.debug("Yaay, we're adding an overlay", background.id)
+        }
 
         if (!map.getSource(background.id)) {
             try {
+                console.debug(
+                    "Adding source",
+                    background.id,
+                    RasterLayerHandler.prepareSource(background)
+                )
                 map.addSource(background.id, RasterLayerHandler.prepareSource(background))
             } catch (e) {
                 return false
@@ -237,5 +247,58 @@ export default class RasterLayerHandler {
         }
 
         return url
+    }
+}
+export class OverlayHandler {
+    private _map: Store<MLMap>
+    private _backgrounds: UIEventSource<RasterLayerPolygon[]>
+    private _handlers: Record<string, SingleBackgroundHandler> = {}
+
+    constructor(map: Store<MLMap>, backgrounds: UIEventSource<RasterLayerPolygon[]>) {
+        this._map = map
+        this._backgrounds = backgrounds
+
+        backgrounds.addCallback(async () => {
+            await this.update()
+        })
+        map.addCallbackAndRunD(async (map) => {
+            map.on("load", async () => {
+                await this.update()
+            })
+            await this.update()
+            map.on("moveend", () => this.onMove(map))
+            map.on("zoomend", () => this.onMove(map))
+        })
+    }
+
+    private onMove(map: MLMap) {
+        Object.values(this._handlers).forEach((handler) => handler.onMove(map))
+    }
+
+    private async update() {
+        const newTargets: RasterLayerPolygon[] = this._backgrounds.data
+        const existingKeys = Object.keys(this._handlers)
+
+        // Remove handlers for layers that are no longer present
+        existingKeys.forEach((key) => {
+            if (!newTargets.find((layer) => layer.properties.id === key)) {
+                this._handlers[key].opacity.setData(0)
+                delete this._handlers[key]
+            }
+        })
+
+        // Add or update handlers for new or existing layers
+        newTargets.forEach((layer) => {
+            const key = layer.properties.id
+            if (!this._handlers[key]) {
+                this._handlers[key] = new SingleBackgroundHandler(
+                    this._map,
+                    layer,
+                    new UIEventSource(layer)
+                )
+            } else {
+                this._handlers[key].update()
+            }
+        })
     }
 }

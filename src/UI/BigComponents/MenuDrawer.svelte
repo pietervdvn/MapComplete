@@ -174,6 +174,8 @@
 
     <RasterLayerOverview {onlyLink} {state} />
 
+    <RasterLayerOverview {onlyLink} {state} layerType={"overlay"} />
+
     <Page {onlyLink} shown={pg.share}>
       <svelte:fragment slot="header">
         <Share />

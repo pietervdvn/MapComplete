@@ -12,16 +12,20 @@
   import Page from "../Base/Page.svelte"
   import ThemeViewState from "../../Models/ThemeViewState"
   import { Square3Stack3dIcon } from "@babeard/svelte-heroicons/solid"
+  import OverlayOverview from "./OverlayOverview.svelte"
 
   export let state: ThemeViewState
+  export let layerType: "background" | "overlay" = "background"
 
   let map = state.map
   let mapproperties = state.mapProperties
   let userstate = state.userRelatedState
-  let shown = state.guistate.pageStates.background
+  let shown =
+    layerType === "background"
+      ? state.guistate.pageStates.background
+      : state.guistate.pageStates.overlay
   let availableLayers: { store: Store<RasterLayerPolygon[]> } = state.availableLayers
   let _availableLayers = availableLayers.store
-  let layerType: "background" | "overlay" = "background"
 
   type CategoryType = "photo" | "map" | "other" | "osmbasedmap"
   const categories: Record<CategoryType, EliCategory[]> = {
@@ -54,7 +58,9 @@
   const otherLayers = availableForCategory("other")
 
   function onApply() {
-    shown.setData(false)
+    if (layerType === "background") {
+      shown.setData(false)
+    }
   }
 
   function getPref(type: CategoryType): undefined | UIEventSource<string> {
@@ -68,7 +74,11 @@
   <div slot="header" class="flex">
     <Square3Stack3dIcon class="h-6 w-6" />
 
-    <Tr t={Translations.t.general.backgroundMap} />
+    {#if layerType === "background"}
+      <Tr t={Translations.t.general.backgroundMap} />
+    {:else}
+      <Tr t={Translations.t.general.overlayMap} />
+    {/if}
   </div>
   {#if $_availableLayers?.length < 1}
     <Loading />
@@ -107,5 +117,9 @@
         {shown}
       />
     </div>
+    {#if layerType === "overlay"}
+      <!-- TODO: Fix all styling issues here -->
+      <OverlayOverview {mapproperties} />
+    {/if}
   {/if}
 </Page>

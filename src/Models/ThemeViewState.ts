@@ -673,6 +673,18 @@ export default class ThemeViewState implements SpecialVisualizationState {
             )
             Hotkeys.RegisterHotkey(
                 {
+                    shift: "b",
+                },
+                // TODO: Translate
+                docs.openLayersPanel,
+                () => {
+                    if (this.featureSwitches.featureSwitchBackgroundSelection.data) {
+                        this.guistate.pageStates.overlay.setData(true)
+                    }
+                }
+            )
+            Hotkeys.RegisterHotkey(
+                {
                     nomod: "s",
                 },
                 Translations.t.hotkeyDocumentation.openFilterPanel,
