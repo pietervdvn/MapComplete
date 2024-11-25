@@ -371,7 +371,7 @@ export default class LinkedDataLoader {
             const match = maxstay.match(/P([0-9]+)D/)
             if (match) {
                 const days = Number(match[1])
-                if(days === 30){
+                if (days === 30) {
                     // 30 is the default which is set if velopark didn't know the actual value
                     return undefined
                 }

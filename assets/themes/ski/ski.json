@@ -8,14 +8,17 @@
     "fr": "Pistes de ski et remontées mécaniques",
     "cs": "Sjezdovky a lanové dráhy",
     "hu": "Sípályák és felvonók",
-    "uk": "Гірськолижні траси та витяги"
+    "uk": "Гірськолижні траси та витяги",
+    "nl": "Skipistes en kabelbanen"
   },
   "description": {
     "en": "Everything you need to go skiing",
     "de": "Alles, was Sie zum Skifahren brauchen",
     "es": "Todo lo que necesitas para esquiar",
     "cs": "Vše, co potřebujete k lyžování",
-    "uk": "Все необхідне для катання на лижах"
+    "uk": "Все необхідне для катання на лижах",
+    "fr": "Tout ce dont vous avez besoin pour aller skier",
+    "nl": "Alles om te skiën"
   },
   "icon": "./assets/layers/aerialway/chair_lift.svg",
   "layers": [

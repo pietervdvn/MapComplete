@@ -157,14 +157,15 @@ export class ImageUploadManager {
         blob: File,
         targetKey: string | undefined,
         noblur: boolean,
-        feature?: Feature
+        feature?: Feature,
+        ignoreGps: boolean = false
     ): Promise<UploadResult> {
         this.increaseCountFor(this._uploadStarted, featureId)
         let key: string
         let value: string
         let absoluteUrl: string
         let location: [number, number] = undefined
-        if (this._gps.data) {
+        if (this._gps.data && !ignoreGps) {
             location = [this._gps.data.longitude, this._gps.data.latitude]
         }
         if (location === undefined || location?.some((l) => l === undefined)) {

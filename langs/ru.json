@@ -124,14 +124,6 @@
         },
         "osmLinkTooltip": "Посмотрите этот объект на OpenStreetMap чтобы увидеть его историю или отредактировать",
         "pickLanguage": "Выберите язык: ",
-        "questions": {
-            "emailIs": "Адрес электронной почты у {category}: <a href=\"mailto:{email}\" target=\"_blank\">{email}</a>",
-            "emailOf": "Какой адрес электронной почты у {category}?",
-            "phoneNumberIs": "Телефонный номер {category}: <a target=\"_blank\">{phone}</a>",
-            "phoneNumberOf": "Какой номер телефона у {category}?",
-            "websiteIs": "Сайт: <a href=\"{website}\" target=\"_blank\">{website}</a>",
-            "websiteOf": "Какой сайт у {category}?"
-        },
         "readYourMessages": "Пожалуйста, прочитайте все ваши сообщения на сайте OpenStreetMap перед тем как добавлять новую точку.",
         "returnToTheMap": "Вернуться на карту",
         "save": "Сохранить",

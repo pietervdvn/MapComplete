@@ -193,7 +193,8 @@
         "en": "Is there a website for this bicycle counter?",
         "de": "Gibt es eine Website für die Fahrradzählstelle?",
         "cs": "Existuje webová stránka tohoto počítadla jízdních kol?",
-        "es": "¿Hay un sitio web para este contador de bicicletas?"
+        "es": "¿Hay un sitio web para este contador de bicicletas?",
+        "uk": "Є веб-сайт для цього велосипедного прилавка?"
       },
       "freeform": {
         "key": "website",
@@ -202,7 +203,8 @@
           "en": "Website of the counter",
           "de": "Website der Zählstelle",
           "cs": "Webové stránky počítadla",
-          "es": "Sitio web del contador"
+          "es": "Sitio web del contador",
+          "uk": "Сайт лічильника"
         }
       },
       "render": {

@@ -6,7 +6,7 @@ Hi! Thanks for checking out how to contribute to MapComplete!
 There are multiple ways to contribute:
 
 - Translating MapComplete to your own language can be done
-  on [the Weblate website](https://hosted.weblate.org/projects/mapcomplete/)
+  on [the Weblate website](https://translate.mapcomplete.org/projects/mapcomplete/)
 - If you encounter a bug, the [issue tracker](https://github.com/pietervdvn/MapComplete/issues) is the place to be
 - A good start to contribute is to create a single map layer showing features which interest you. Read more about [making your own theme](/Docs/Making_Your_Own_Theme.md).
 - Feel free to hop in [our chat channel on matrix](https://app.element.io/#/room/#MapComplete:matrix.org)

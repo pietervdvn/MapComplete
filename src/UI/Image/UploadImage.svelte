@@ -38,7 +38,7 @@
 
   let errors = new UIEventSource<Translation[]>([])
 
-  async function handleFiles(files: FileList) {
+  async function handleFiles(files: FileList, ignoreGps: boolean= false) {
     const errs = []
     for (let i = 0; i < files.length; i++) {
       const file = files.item(i)
@@ -58,6 +58,7 @@
             "image",
             noBlur,
             feature,
+            ignoreGps
           )
           if (!uploadResult) {
             return
@@ -98,6 +99,7 @@
       {/each}
       <FileSelector
         accept="image/*"
+        capture="environment"
         cls="button border-2 flex flex-col"
         multiple={true}
         on:submit={(e) => handleFiles(e.detail)}
@@ -112,15 +114,23 @@
             {labelText}
           {:else}
             <div class="flex flex-col">
-              <Tr t={t.addPicture} />
+              <Tr t={t.addPicture}/>
               {#if noBlur}
-              <span class="subtle text-sm">
-                <Tr t={t.upload.noBlur} />
-              </span>
+                <span class="subtle text-sm">
+                  <Tr t={t.upload.noBlur} />
+                </span>
               {/if}
             </div>
           {/if}
         </div>
+      </FileSelector>
+      <FileSelector
+        accept=".jpg, .jpeg"
+        cls="flex justify-center md:hidden button"
+        multiple={true}
+        on:submit={(e) => handleFiles(e.detail, true)}
+      >
+        <Tr t={t.selectFile}/>
       </FileSelector>
       <div class="subtle text-xs italic">
         <Tr t={Translations.t.general.attribution.panoramaxLicenseCCBYSA} />

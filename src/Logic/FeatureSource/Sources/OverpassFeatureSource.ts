@@ -49,7 +49,7 @@ export default class OverpassFeatureSource implements UpdatableFeatureSource {
         },
         options?: {
             padToTiles?: Store<number>
-            isActive?: Store<boolean>,
+            isActive?: Store<boolean>
             ignoreZoom?: boolean
         }
     ) {
@@ -57,7 +57,9 @@ export default class OverpassFeatureSource implements UpdatableFeatureSource {
         this._isActive = options?.isActive ?? new ImmutableStore(true)
         this.padToZoomLevel = options?.padToTiles
         const self = this
-        this._layersToDownload = options?.ignoreZoom? new ImmutableStore(state.layers) : state.zoom.map((zoom) => this.layersToDownload(zoom))
+        this._layersToDownload = options?.ignoreZoom
+            ? new ImmutableStore(state.layers)
+            : state.zoom.map((zoom) => this.layersToDownload(zoom))
 
         state.bounds.mapD(
             (_) => {
@@ -123,9 +125,11 @@ export default class OverpassFeatureSource implements UpdatableFeatureSource {
         let bounds: BBox
         do {
             try {
-                bounds = overrideBounds ?? this.state.bounds.data
-                    ?.pad(this.state.widenFactor)
-                    ?.expandToTileBounds(this.padToZoomLevel?.data)
+                bounds =
+                    overrideBounds ??
+                    this.state.bounds.data
+                        ?.pad(this.state.widenFactor)
+                        ?.expandToTileBounds(this.padToZoomLevel?.data)
                 if (!bounds) {
                     return
                 }

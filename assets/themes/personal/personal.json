@@ -23,7 +23,7 @@
   },
   "description": {
     "en": "Create a personal theme based on all the available layers of all themes. In order to show some data, open <a href='#filter'>layer selection</a>",
-    "nl": "Stel je eigen thema samen door lagen te combineren van alle andere themas",
+    "nl": "Stel je eigen thema samen door lagen te combineren van alle andere themas. Open <a href='#filter'>Selectie lagen</a> om gegevens te tonen",
     "es": "Crea un tema personal basado en todas las capas disponibles de todos los temas. Para mostrar algunos datos, abre la <a href='#filter'>selección de capas</a>",
     "ca": "Crea un tema personal basat en totes les capes disponibles de totes els temes. Per a mostrar les dades, obri <a href='#filter'>selecció de capes</a>",
     "gl": "Crea un tema baseado en todas as capas dispoñíbeis de todos os temas",

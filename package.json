@@ -1,6 +1,6 @@
 {
   "name": "mapcomplete",
-  "version": "0.47.9",
+  "version": "0.47.10",
   "repository": "https://github.com/pietervdvn/MapComplete",
   "description": "A small website to edit OSM easily",
   "bugs": "https://github.com/pietervdvn/MapComplete/issues",
@@ -114,9 +114,6 @@
     "download:editor-layer-index": "vite-node scripts/downloadEli.ts",
     "download:stats": "vite-node scripts/GenerateSeries.ts",
     "download:images": "vite-node scripts/generateImageAnalysis.ts -- ~/data/imgur-image-backup/",
-    "weblate:add-upstream": "git remote add weblate-github git@github.com:weblate/MapComplete.git && git remote add weblate-hosted-core https://hosted.weblate.org/git/mapcomplete/core/ && git remote add weblate-hosted-layers https://hosted.weblate.org/git/mapcomplete/layers/",
-    "weblate:merge": "git remote update weblate-github; git merge weblate-github/weblate-mapcomplete-core weblate-github/weblate-mapcomplete-layers weblate-github/weblate-mapcomplete-layer-translations",
-    "weblate:merge-heavy": "git fetch weblate-hosted-layers; git fetch weblate-hosted-core; git merge weblate-hosted-layers/master weblate-hosted-core/master ",
     "lint": "npm run lint:prettier && npm run lint:eslint && npm run lint:themes",
     "lint:eslint": "eslint ./src",
     "lint:prettier": "prettier  --check '**/*.ts' '**/*.svelte'",
@@ -127,7 +124,7 @@
     "optimize-images-scaledown-jpg": "cd assets/ &&  find . -regextype sed -regex \".*/.*.\\(jpg\\|JPG\\|JPEG\\|jpeg\\)\" -exec mogrify -resize 640x640\\> '{}' \\; && echo 'JPGs are optimized'",
     "generate:schemas": "export NODE_OPTIONS=\"--max-old-space-size=8192\" && ts2json-schema -p src/Models/ThemeConfig/Json/ -o Docs/Schemas/ -t tsconfig.json -R . -m \".*ConfigJson\" && echo 'tsjson is done' && vite-node scripts/fixSchemas.ts ",
     "reuse-compliance": "reuse lint",
-    "housekeeping": "export NODE_OPTIONS=\"--max-old-space-size=1200\" && git pull && npx update-browserslist-db@latest && npm run weblate:merge-heavy && npm run generate && npm run generate:docs && npm run generate:schemas && npm run generate:contributor-list && vite-node scripts/fetchLanguages.ts && vite-node scripts/generateSunnyUnlabeled.ts && npm run format && git add assets/ langs/ Docs/ **/*.ts Docs/* src/* && git commit -m 'chore: automated housekeeping...'",
+    "housekeeping": "export NODE_OPTIONS=\"--max-old-space-size=1200\" && git pull && npx update-browserslist-db@latest && npm run generate && npm run generate:docs && npm run generate:schemas && npm run generate:contributor-list && vite-node scripts/fetchLanguages.ts && vite-node scripts/generateSunnyUnlabeled.ts && npm run format && git add assets/ langs/ Docs/ **/*.ts Docs/* src/* && git commit -m 'chore: automated housekeeping...'",
     "###": "MICROSERVICES AND SERVER MAINTAINENCE",
     "release": "standard-version && git push --follow-tags",
     "release:minor": "standard-version --release-as minor",
@@ -141,7 +138,7 @@
     "generate:summaryCache": "vite-node scripts/generateSummaryTileCache.ts",
     "create:database": "vite-node scripts/osm2pgsql/createNewDatabase.ts",
     "delete:database:old": "vite-node scripts/osm2pgsql/deleteOldDbs.ts",
-    "upload:panoramax": "vite-node scripts/ImgurToPanoramax.ts && josm imgur_to_panoramax.osc"
+    "upload:panoramax": "vite-node scripts/ImgurToPanoramax.ts # && josm imgur_to_panoramax.osc"
   },
   "keywords": [
     "OpenStreetMap",

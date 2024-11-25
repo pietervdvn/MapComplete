@@ -10,7 +10,8 @@
     "cs": "Reakce na katastrofy a záchranné služby",
     "ru": "Ликвидация последствий стихийных бедствий и аварийные службы",
     "hu": "Katasztrófaelhárítás és sürgősségi szolgálatok",
-    "uk": "Реагування на стихійні лиха та аварійні служби"
+    "uk": "Реагування на стихійні лиха та аварійні служби",
+    "nl": "Rampbestrijding en hulpdiensten"
   },
   "description": {
     "en": "This map contains elements meant for disaster preparedness and response.",
@@ -19,7 +20,8 @@
     "es": "Este mapa contiene elementos destinados a la preparación y respuesta ante desastres.",
     "ca": "Aquest mapa conté elements destinants a la preparació i resposta davant desastres.",
     "cs": "Tato mapa obsahuje prvky určené pro připravenost na katastrofy a reakci na ně.",
-    "uk": "Ця мапа містить обʼєкти, призначені для забезпечення готовності до стихійних лих та реагування на них."
+    "uk": "Ця мапа містить обʼєкти, призначені для забезпечення готовності до стихійних лих та реагування на них.",
+    "nl": "Deze kaart bevat elementen die bedoeld zijn voor rampbestrijding en -voorbereiding."
   },
   "icon": "./assets/themes/disaster_response/CivilDefence.svg",
   "socialImage": "./assets/themes/disaster_response/social.svg",

@@ -49,11 +49,17 @@
     },
     "external": {
         "allAreApplied": "Tots els valors externs que faltaven s'han copiat a OpenStreetMap",
+        "allIncluded": "Les dades carregades des de {source} estan contingudes a OpenStreetMap",
+        "apply": "Aplicar",
+        "applyAll": "Aplica tots els valors que falten",
         "conflicting": {
+            "intro": "OpenStreetMap té un valor diferent al del lloc web d'origen per als següents valors.",
             "title": "Elements conflictius"
         },
         "currentInOsmIs": "Pel moment, OpenStreetMap té el següent valor registrat:",
         "done": "Fet",
+        "error": "No s'han pogut carregar les dades vinculades des del lloc web",
+        "lastModified": "Les dades externes s'han modificat per darrera vegada a {date}",
         "missing": {
             "intro": "OpenStreetMap no té informació sobre els següents atributs",
             "title": "Elements que falten"
@@ -312,14 +318,6 @@
             "skippedMultiple": "Heu saltat {skipped} pregutnes",
             "skippedOne": "Heu saltat una pregunta"
         },
-        "questions": {
-            "emailIs": "L'adreça de correu d'aquesta {category} és <a href=\"mailto:{email}\" target=\"_blank\">{email}</a>",
-            "emailOf": "Quina és l'adreça de correu-e de {category}?",
-            "phoneNumberIs": "El número de telèfon de {category} és <a href='tel:{phone}' target='_blank'>{phone}</a>",
-            "phoneNumberOf": "Quin és el telèfon de {category}?",
-            "websiteIs": "Pàgina web: <a href=\"{website}\" target=\"_blank\">{website}</a>",
-            "websiteOf": "Quina és la pàgina web de {category}?"
-        },
         "readYourMessages": "Per favor, llegeix tots els teus missatges d'OpenStreetMap abans d'afegir nous punts.",
         "removeLocationHistory": "Esborrar l'historial d'ubicació",
         "returnToTheMap": "Tornar al mapa",
@@ -373,6 +371,15 @@
         },
         "useSearch": "Utilitzeu la cerca de dalt per veure els valors predefinits",
         "visualFeedback": {
+            "directionsAbsolute": {
+                "N": "nord",
+                "NE": "nord-est",
+                "NW": "nord-oest",
+                "S": "sud",
+                "SE": "sud-est",
+                "SW": "sud-oest",
+                "W": "oest"
+            },
             "directionsRelative": {
                 "left": "esquerra",
                 "right": "dreta"

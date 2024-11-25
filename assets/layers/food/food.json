@@ -625,7 +625,8 @@
         "en": "On what webpage is the menu published?",
         "de": "Auf welcher Webseite wird das Menü veröffentlicht?",
         "ca": "A quina web està publicat el menú?",
-        "es": "¿En qué página web se publica el menú?"
+        "es": "¿En qué página web se publica el menú?",
+        "uk": "На якій веб-сторінці опубліковано меню?"
       },
       "render": {
         "special": {
@@ -634,7 +635,8 @@
           "text": {
             "en": "Consult the menu",
             "de": "Das Menü einsehen",
-            "es": "Consultar el menú"
+            "es": "Consultar el menú",
+            "uk": "Зверніться до меню"
           }
         }
       },

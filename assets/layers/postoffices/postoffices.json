@@ -211,7 +211,8 @@
       "render": {
         "en": "This is a {brand} post office",
         "de": "Dies ist eine Poststelle von {brand}",
-        "es": "Esta es una oficina de correos {brand}"
+        "es": "Esta es una oficina de correos {brand}",
+        "uk": "Це поштове відділення {brand}"
       },
       "freeform": {
         "type": "nsi",

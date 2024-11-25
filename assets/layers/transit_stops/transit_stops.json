@@ -140,7 +140,8 @@
             "ca": "Aquesta parada té una coberta",
             "fr": "Cet arrêt a un abri",
             "cs": "Tato zastávka má přístřešek",
-            "es": "Esta parada tiene un refugio"
+            "es": "Esta parada tiene un refugio",
+            "uk": "На цій зупинці є навіс"
           }
         },
         {
@@ -153,7 +154,8 @@
             "ca": "Aquesta parada <b>no</b> té una coberta",
             "fr": "Cet arrêt <b>n'a pas</b> d'abri",
             "cs": "Tato zastávka <b>nemá</b> přístřešek",
-            "es": "Esta parada <b>no</b> tiene un refugio"
+            "es": "Esta parada <b>no</b> tiene un refugio",
+            "uk": "Ця зупинка <b>не</b> має накриття"
           }
         },
         {
@@ -177,7 +179,8 @@
         "ca": "Aquesta parada té una coberta?",
         "fr": "Cet arrêt a-t-il un abri ?",
         "cs": "Má tato zastávka přístřešek?",
-        "es": "¿Tiene esta parada un refugio?"
+        "es": "¿Tiene esta parada un refugio?",
+        "uk": "Чи є на цій зупинці укриття?"
       }
     },
     {
@@ -193,7 +196,8 @@
             "ca": "Aquesta parada té un banc",
             "fr": "Cet arrêt a un banc",
             "cs": "Tato zastávka má lavičku",
-            "es": "Esta parada tiene un banco"
+            "es": "Esta parada tiene un banco",
+            "uk": "На цій зупинці є лавка"
           }
         },
         {
@@ -231,7 +235,8 @@
         "ca": "Aquesta parada té un banc?",
         "fr": "Est-ce que cet arrêt a un banc ?",
         "cs": "Má tato zastávka lavičku?",
-        "es": "¿Tiene esta parada un banco?"
+        "es": "¿Tiene esta parada un banco?",
+        "uk": "Чи є на цій зупинці лавка?"
       }
     },
     {

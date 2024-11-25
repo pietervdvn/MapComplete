@@ -5,6 +5,7 @@
     "centerMessage": {
         "allFilteredAway": "Aucun objet dans la vue actuelle ne répond aux filtres",
         "loadingData": "Chargement des données…",
+        "noData": "Il n'y a pas d'objet concerné dans la présente vue",
         "ready": "Fini !",
         "retrying": "Le chargement a échoué. Nouvel essai dans {count} secondes…",
         "zoomIn": "Rapprochez-vous sur la carte pour voir ou éditer les données"
@@ -13,12 +14,13 @@
         "available": "Cette communauté parle {native}",
         "intro": "Prenez contact avec d'autres personnes pour les connaître, apprendre d'elles, …",
         "notAvailable": "Cette communauté ne parle pas {native}",
-        "title": "Index communautaire"
+        "title": "Entrer en contact avec d'autres"
     },
     "delete": {
         "cancel": "Annuler",
         "cannotBeDeleted": "Cet objet ne peut être supprimé",
         "delete": "Supprimer",
+        "deletedTitle": "Objet supprimé",
         "explanations": {
             "hardDelete": "Cet élément sera supprimé d’OpenStreetmap. Il pourra être restauré par des méthodes avancées",
             "retagNoOtherThemes": "Cet objet sera re-classifié et caché dans cette application",
@@ -46,8 +48,19 @@
         "whyDelete": "Pourquoi cet élément devrait-il être supprimé ?"
     },
     "external": {
+        "allAreApplied": "Toutes les valeurs externes manquantes ont été copiées dans OpenStreetMap",
+        "allIncluded": "Les données chargées de {source} sont contenues dans OpenStreetMap",
         "apply": "Appliquer",
+        "applyAll": "Appliquer toutes les valeurs manquantes",
+        "conflicting": {
+            "intro": "OpenStreetMap a une valeur différente de celle du site web source pour les valeurs suivantes.",
+            "title": "Éléments contradictoires"
+        },
+        "currentInOsmIs": "À l'heure actuelle, OpenStreetMap a enregistré la valeur suivante :",
         "done": "Fait",
+        "error": "Impossible de charger les données liées du site web",
+        "lastModified": "Les données externes ont été modifiées pour la dernière fois le {date}",
+        "loadedFrom": "Les données suivantes sont chargées à partir de <a href={url}>{source}</a> à l'aide de JSON-LD intégré",
         "missing": {
             "title": "Éléments manquants"
         }
@@ -77,14 +90,24 @@
         "editing": {
             "intro": "L'utilisateur est accueilli par une carte avec des objets. Lorsqu'il en sélectionne un, les informations relatives à cet objet s'affichent."
         },
+        "examples": "Il existe de nombreuses cartes thématiques, dont quelques-unes sont présentées ici.\n\nIl existe de nombreuses autres cartes thématiques en ligne : sur les soins de santé, la navigation intérieure, l'accessibilité en fauteuil roulant, les installations de traitement des déchets, les bibliothèques publiques, les passages pour piétons avec une peinture arc-en-ciel,... Découvrez-les toutes sur mapcomplete.org",
         "fakeui": {
             "add_images": "Ajoutez des images en quelques clics",
-            "edit": "Une info fausse ou pas à jour ? Le bouton de modification est juste ici"
+            "attributes": "Affiche les attributs de manière conviviale",
+            "edit": "Une information inexacte ou pas à jour ? Le bouton de modification est juste ici",
+            "question": "Si un attribut n'est pas encore connu, MapComplete affiche une question",
+            "see_images": "Affiche des images provenant de contributeurs précédents, Wikipedia, Mapillary, …",
+            "wikipedia": "Les articles de Wikipédia liés sont affichés"
         },
+        "frontParagraph": "MapComplete est une application web facile à utiliser pour collecter des géodonnées dans OpenStreetMap, permettant de collecter et de gérer des données pertinentes de manière ouverte, participative et réutilisable.\n\nDe nouvelles catégories et de nouveaux attributs peuvent être ajoutés sur demande.",
+        "lines_too": "Les lignes et les polygones sont également affichés. Des attributs et des images peuvent également être ajoutés et mis à jour sur ces objets.",
         "mapcomplete": {
+            "customize": "MapComplete peut être adapté à vos besoins, avec de nouvelles couches cartographiques, de nouvelles fonctionnalités ou en utilisant les couleurs et la police de votre organisation.\nNous avons également de l'expérience dans le lancement de campagnes de crowdsourcing de géodonnées.\nContactez pietervdvn@posteo.net pour un devis.",
             "intro": "MapComplete est un site qui a {mapCount} carte intéractives. Chaque carte permet d'ajouter et mettre à jour des informations. IL y a de nombreuses fonctionnalités :",
+            "li0": "Montre où se trouvent les points d'intérêt (POI)",
             "li1": "Ajouter de nouveaux points et mettre à jour les infos de ceux existant",
             "li2": "Ajouter facilement des informations de contact et des heures d'ouverture",
+            "li3": "Peut être placé dans d'autres sites web comme iFrame",
             "li5": "Fonction d'import de jeux de données existants",
             "title": "Qu'est-ce que MapComplete ?"
         },
@@ -276,14 +299,6 @@
             "reactivate": "Réactiver les questions passées",
             "skippedMultiple": "Vous avez passé {skipped} questions",
             "skippedOne": "Vous avez passé une question"
-        },
-        "questions": {
-            "emailIs": "L'adresse électronique de {category} est <a href=\"mailto:{email}\" target=\"_blank\">{email}</a>",
-            "emailOf": "Quelle est l'adresse électronique de {category} ?",
-            "phoneNumberIs": "Le numéro de téléphone de {category} est <a href='tel:{phone}' target='_blank'>{phone}</a>",
-            "phoneNumberOf": "Quel est le numéro de téléphone de {category} ?",
-            "websiteIs": "Site Web : <a href=\"{website}\" target=\"_blank\">{website}</a>",
-            "websiteOf": "Quel est le site internet de {category} ?"
         },
         "readYourMessages": "Merci de lire tous vos messages sur OpenStreetMap avant d'ajouter un nouveau point.",
         "removeLocationHistory": "Supprimer l'historique des positions",

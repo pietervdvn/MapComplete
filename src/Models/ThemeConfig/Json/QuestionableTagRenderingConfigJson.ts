@@ -321,7 +321,7 @@ export interface QuestionableTagRenderingConfigJson extends TagRenderingConfigJs
     editButtonAriaLabel?: Translatable
 
     /**
-     * What labels should be applied on this tagRendering?
+     * question: What labels should be applied on this tagRendering?
      *
      * A list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer
      *
@@ -330,4 +330,9 @@ export interface QuestionableTagRenderingConfigJson extends TagRenderingConfigJs
      * - "description": this label is a description used in the search
      */
     labels?: string[]
+
+    /**
+     * question: What tags should be applied when the object is soft-deleted?
+     */
+    onSoftDelete?: string[]
 }

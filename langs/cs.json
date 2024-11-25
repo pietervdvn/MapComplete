@@ -387,14 +387,6 @@
             "skippedMultiple": "Přeskočili jste {skipped} otázky",
             "skippedOne": "Vynechali jste jednu otázku"
         },
-        "questions": {
-            "emailIs": "E-mailová adresa této {category} je <a href='mailto:{email}' target='_blank'>{email}</a>",
-            "emailOf": "Jaká je e-mailová adresa {category}?",
-            "phoneNumberIs": "Telefonní číslo této {category} je <a href='tel:{phone}' target='_blank'>{phone}</a>",
-            "phoneNumberOf": "Jaké je telefonní číslo na {category}?",
-            "websiteIs": "Web: <a href='{website}' target='_blank'>{website}</a>",
-            "websiteOf": "Jaká je webová stránka {category}?"
-        },
         "readYourMessages": "Před přidáním nové funkce si prosím přečtěte všechny zprávy OpenStreetMap.",
         "removeLocationHistory": "Odstranit historii polohy",
         "retry": "Zkusit znovu",
@@ -596,10 +588,33 @@
             "seeNearby": "Procházet okolní obrázky",
             "title": "Blízké obrázky streetview"
         },
+        "panoramax": {
+            "deletionRequested": "Zpráva byla odeslána. Za chvíli se na to podívá moderátor",
+            "freeform": "Jsou k dispozici další relevantní údaje?",
+            "otherFreeform": "Uveďte, proč by měl být tento obrázek odstraněn:",
+            "placeholder": "Vysvětlete, proč by měl být obrázek smazán",
+            "report": {
+                "blur_excess": "Příliš mnoho je rozmazané, takže obrázek je k ničemu",
+                "blur_missing": "Obličej nebo poznávací značka nejsou na tomto obrázku rozmazané",
+                "copyright": "Na obrázku je obsah chráněný autorským právem",
+                "inappropriate": "Tento obrázek je nevhodný (obsahuje nahotu, vyzývá k nenávisti nebo není streetview)",
+                "mislocated": "Obrázek je z jiného místa",
+                "other": "Jiný důvod, prosím uveďte",
+                "picture_low_quality": "Obraz je nízké kvality",
+                "privacy": "Na obrázku je soukromý pozemek"
+            },
+            "requestDeletion": "Žádost o smazání obrázku",
+            "title": "Proč by měl být tento obrázek trvale smazán?"
+        },
         "pleaseLogin": "Pro přidání fotky se prosím přihlaste",
         "processing": "Server zpracovává váš obrázek",
         "respectPrivacy": "Nenahrávejte z Map Google, Google Streetview ani z jiných zdrojů chráněných autorskými právy.",
         "toBig": "Váš obrázek je příliš velký, protože má velikost {actual_size}. Používejte prosím obrázky o maximální velikosti {max_size}",
+        "unlink": {
+            "button": "Odpojit obrázek",
+            "explanation": "Odpojením tohoto obrázku se tento obrázek již nebude zobrazovat s tímto objektem. Stále se bude objevovat v blízkých obrázcích a možná i dalších objektech.",
+            "title": "Odpojit tento obrázek?"
+        },
         "upload": {
             "failReasons": "Možná jste ztratili připojení k internetu",
             "failReasonsAdvanced": "Případně se ujistěte, že váš prohlížeč a rozšíření neblokují rozhraní API třetích stran.",

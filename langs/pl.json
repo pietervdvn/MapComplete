@@ -279,14 +279,6 @@
             "skippedMultiple": "Pominąłeś {skipped} pytania",
             "skippedOne": "Pominąłeś jedno pytanie"
         },
-        "questions": {
-            "emailIs": "Adres e-mail {category} to <a href=\"mailto:{email}\" target=\"_blank\">{email}</a>",
-            "emailOf": "Jaki jest adres e-mail {category}?",
-            "phoneNumberIs": "Numer telefonu tej {category} to <a href='tel:{phone}' target='_blank'>{phone}</a>",
-            "phoneNumberOf": "Jaki jest numer telefonu do {category}?",
-            "websiteIs": "Strona internetowa: <a href=\"{website}\" target=\"_blank\">{website}</a>",
-            "websiteOf": "Jaka jest strona internetowa {category}?"
-        },
         "readYourMessages": "Proszę przeczytać wszystkie wiadomości OpenStreetMap przed dodaniem nowej funkcji.",
         "removeLocationHistory": "Usuń historię lokalizacji",
         "returnToTheMap": "Wróć do mapy",

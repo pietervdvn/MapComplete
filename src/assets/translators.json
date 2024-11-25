@@ -5,7 +5,7 @@
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 420,
+      "commits": 421,
       "contributor": "kjon"
     },
     {
@@ -13,11 +13,11 @@
       "contributor": "paunofu"
     },
     {
-      "commits": 122,
+      "commits": 127,
       "contributor": "Anonymous"
     },
     {
-      "commits": 102,
+      "commits": 105,
       "contributor": "mcliquid"
     },
     {
@@ -33,7 +33,7 @@
       "contributor": "danieldegroot2"
     },
     {
-      "commits": 64,
+      "commits": 67,
       "contributor": "mike140"
     },
     {
@@ -41,20 +41,20 @@
       "contributor": "Harry Bond"
     },
     {
-      "commits": 50,
+      "commits": 52,
       "contributor": "Jiří Podhorecký"
     },
     {
-      "commits": 49,
+      "commits": 51,
       "contributor": "gallegonovato"
     },
     {
       "commits": 44,
-      "contributor": "Supaplex"
+      "contributor": "Babos Gábor"
     },
     {
-      "commits": 43,
-      "contributor": "Babos Gábor"
+      "commits": 44,
+      "contributor": "Supaplex"
     },
     {
       "commits": 37,
@@ -102,6 +102,10 @@
     },
     {
       "commits": 15,
+      "contributor": "Ettore Atalan"
+    },
+    {
+      "commits": 15,
       "contributor": "WaldiS"
     },
     {
@@ -111,10 +115,6 @@
     {
       "commits": 14,
       "contributor": "J. Lavoie"
-    },
-    {
-      "commits": 13,
-      "contributor": "Ettore Atalan"
     },
     {
       "commits": 13,
@@ -430,6 +430,14 @@
     },
     {
       "commits": 2,
+      "contributor": "Weblate Admin"
+    },
+    {
+      "commits": 2,
+      "contributor": "SmallSoap"
+    },
+    {
+      "commits": 2,
       "contributor": "Kim Minwoo"
     },
     {
@@ -559,6 +567,10 @@
     {
       "commits": 2,
       "contributor": "Leo Alcaraz"
+    },
+    {
+      "commits": 1,
+      "contributor": "M1chaelWang"
     },
     {
       "commits": 1,

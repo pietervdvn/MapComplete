@@ -10,7 +10,7 @@ import { TagConfigJson } from "../../Models/ThemeConfig/Json/TagConfigJson"
 import key_counts from "../../assets/key_totals.json"
 
 import { ConversionContext } from "../../Models/ThemeConfig/Conversion/ConversionContext"
-import { TagsFilterClosed, UploadableTag } from "./TagTypes"
+import { FlatTag, TagsFilterClosed, UploadableTag } from "./TagTypes"
 
 type Tags = Record<string, string>
 
@@ -505,6 +505,14 @@ export class TagUtils {
      */
 
     public static Tag(
+        json: string,
+        context?: string | ConversionContext
+    ): FlatTag;
+    public static Tag(
+        json: TagConfigJson,
+        context?: string | ConversionContext
+    ): TagsFilterClosed;
+    public static Tag(
         json: TagConfigJson,
         context: string | ConversionContext = ""
     ): TagsFilterClosed {
@@ -866,7 +874,7 @@ export class TagUtils {
                     tag +
                     ". To indicate a missing tag, use '" +
                     split[0] +
-                    "!=' instead"
+                    "=' instead"
                 )
             }
             if (split[1] === "") {

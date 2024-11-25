@@ -1492,6 +1492,17 @@
             }
         },
         "tagRenderings": {
+            "automated": {
+                "mappings": {
+                    "0": {
+                        "then": "Jedná se o ruční mycí stanici kol"
+                    },
+                    "1": {
+                        "then": "Jedná se o mytí kol bez obsluhy"
+                    }
+                },
+                "question": "Je tato služba čištění kol bez obsluhy?"
+            },
             "bike_cleaning-charge": {
                 "mappings": {
                     "0": {
@@ -1515,6 +1526,17 @@
                 },
                 "question": "Kolik stojí využívání služby mytí?",
                 "render": "Využití služby mytí stojí {service:bicycle:cleaning:charge}"
+            },
+            "self_service": {
+                "mappings": {
+                    "0": {
+                        "then": "Tato mycí služba je samoobslužná"
+                    },
+                    "1": {
+                        "then": "Tuto mycí službu provozuje zaměstnanec"
+                    }
+                },
+                "question": "Je tato mycí služba samoobslužná?"
             }
         },
         "title": {
@@ -1972,7 +1994,8 @@
                 "title": "pozorovatelna"
             },
             "1": {
-                "description": "Obrazovka nebo stěna s otvory pro sledování ptáků"
+                "description": "Obrazovka nebo stěna s otvory pro sledování ptáků",
+                "title": "ptačí pozorovatelna"
             }
         },
         "tagRenderings": {
@@ -2268,6 +2291,7 @@
         }
     },
     "charging_station": {
+        "description": "Nabíjecí stanice",
         "tagRenderings": {
             "rewritten-questions": {
                 "renderings": {
@@ -8567,6 +8591,19 @@
                 "question": "Ve kterém geografickém směru tato kamera snímá?",
                 "render": "Snímané oblasti podle směru kompasu {camera:direction}"
             },
+            "camera_is_indoor": {
+                "mappings": {
+                    "0": {
+                        "then": "Tato kamera je umístěna ve vnitřním prostoru"
+                    },
+                    "1": {
+                        "then": "Tato kamera je umístěna ve venkovním prostoru"
+                    },
+                    "2": {
+                        "then": "Tato kamera je pravděpodobně umístěna venku"
+                    }
+                }
+            },
             "has_alpr": {
                 "mappings": {
                     "0": {
@@ -8578,20 +8615,6 @@
                 },
                 "question": "Dokáže tato kamera automaticky rozpoznat registrační značky?",
                 "questionHint": "Automatická čtečka registračních značek (<b>ALPR</b>) má obvykle dvě čočky a mezi nimi soustavu infračervených diod LED."
-            },
-            "is_indoor": {
-                "mappings": {
-                    "0": {
-                        "then": "Tato kamera je umístěna ve vnitřním prostoru"
-                    },
-                    "1": {
-                        "then": "Tato kamera je umístěna ve venkovním prostoru"
-                    },
-                    "2": {
-                        "then": "Tato kamera je pravděpodobně umístěna venku"
-                    }
-                },
-                "question": "Je veřejný prostor sledovaný touto kamerou vnitřní nebo venkovní prostor?"
             }
         },
         "title": {

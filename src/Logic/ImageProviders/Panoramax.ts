@@ -17,7 +17,7 @@ export default class PanoramaxImageProvider extends ImageProvider {
     private static defaultPanoramax = new AuthorizedPanoramax(
         Constants.panoramax.url,
         Constants.panoramax.token,
-        3000
+        3000,
     )
 
     public defaultKeyPrefixes: string[] = ["panoramax"]
@@ -30,7 +30,7 @@ export default class PanoramaxImageProvider extends ImageProvider {
         location?: {
             lon: number
             lat: number
-        }
+        },
     ): BaseUIElement {
         const p = new Panoramax(img.host)
         return new Link(
@@ -39,7 +39,7 @@ export default class PanoramaxImageProvider extends ImageProvider {
                 imageId: img?.id,
                 location,
             }),
-            true
+            true,
         )
     }
 
@@ -141,16 +141,11 @@ export default class PanoramaxImageProvider extends ImageProvider {
                     img?.status !== undefined &&
                     img?.status !== "ready" &&
                     img?.status !== "broken" &&
-                    img?.status !== "hidden"
+                    img?.status !== "hidden",
             )
         }
 
-        Stores.Chronic(1500, () => hasLoading(source.data)).addCallback((_) => {
-            console.log(
-                "Testing panoramax URLS again as some were loading",
-                source.data,
-                hasLoading(source.data)
-            )
+        Stores.Chronic(1500, () => hasLoading(source.data)).addCallback(() => {
             super.getRelevantUrlsFor(tags, prefixes).then((data) => {
                 source.set(data)
                 return !hasLoading(data)
@@ -192,9 +187,9 @@ export default class PanoramaxImageProvider extends ImageProvider {
 export class PanoramaxUploader implements ImageUploader {
     public readonly panoramax: AuthorizedPanoramax
     maxFileSizeInMegabytes = 100 * 1000 * 1000 // 100MB
-    private readonly _targetSequence: Store<string>
+    private readonly _targetSequence?: Store<string>
 
-    constructor(url: string, token: string, targetSequence: Store<string>) {
+    constructor(url: string, token: string, targetSequence?: Store<string>) {
         this._targetSequence = targetSequence
         this.panoramax = new AuthorizedPanoramax(url, token)
     }
@@ -204,7 +199,8 @@ export class PanoramaxUploader implements ImageUploader {
         currentGps: [number, number],
         author: string,
         noblur: boolean = false,
-        sequenceId?: string
+        sequenceId?: string,
+        datetime?: string,
     ): Promise<{
         key: string
         value: string
@@ -212,22 +208,33 @@ export class PanoramaxUploader implements ImageUploader {
     }> {
         // https://panoramax.openstreetmap.fr/api/docs/swagger#/
 
-        let [lon, lat] = currentGps
-        let datetime = new Date().toISOString()
+        let [lon, lat] = currentGps ?? [undefined, undefined]
+        datetime ??= new Date().toISOString()
         try {
             const tags = await ExifReader.load(blob)
             const [[latD], [latM], [latS, latSDenom]] = <
                 [[number, number], [number, number], [number, number]]
-            >tags?.GPSLatitude.value
+                >tags?.GPSLatitude?.value
             const [[lonD], [lonM], [lonS, lonSDenom]] = <
                 [[number, number], [number, number], [number, number]]
-            >tags?.GPSLongitude.value
-            lat = latD + latM / 60 + latS / (3600 * latSDenom)
-            lon = lonD + lonM / 60 + lonS / (3600 * lonSDenom)
+                >tags?.GPSLongitude?.value
 
+            const exifLat = latD + latM / 60 + latS / (3600 * latSDenom)
+            const exifLon = lonD + lonM / 60 + lonS / (3600 * lonSDenom)
+            if (typeof exifLat === "number" && !isNaN(exifLat) && typeof exifLon === "number" && !isNaN(exifLon)
+                && !(exifLat === 0 && exifLon === 0)) {
+                lat = exifLat
+                lon = exifLon
+            }
             const [date, time] = tags.DateTime.value[0].split(" ")
-            datetime = new Date(date.replaceAll(":", "-") + "T" + time).toISOString()
-
+            const exifDatetime = new Date(date.replaceAll(":", "-") + "T" + time)
+            if(exifDatetime.getFullYear() ===  1970){
+                // The data probably got reset to the epoch
+                // we don't use the value
+                console.log("Datetime from picture is probably invalid:", exifDatetime, "using 'now' instead")
+            }else{
+                datetime = exifDatetime.toISOString()
+            }
             console.log("Tags are", tags)
         } catch (e) {
             console.error("Could not read EXIF-tags")

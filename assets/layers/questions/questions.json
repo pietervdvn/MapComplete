@@ -215,8 +215,12 @@
         "en": "Edit phone number",
         "nl": "Pas telefoonnummer aan",
         "de": "Telefonnummer bearbeiten",
-        "es": "Editar número de teléfono"
-      }
+        "es": "Editar número de teléfono",
+        "uk": "Редагувати номер телефону"
+      },
+      "onSoftDelete": [
+        "phone="
+      ]
     },
     {
       "id": "mastodon",
@@ -234,7 +238,11 @@
       "render": {
         "*": "{fediverse_link(contact:mastodon)}"
       },
-      "icon": "./assets/svg/mastodon.svg"
+      "icon": "./assets/svg/mastodon.svg",
+      "onSoftDelete": [
+        "contact:mastodon=",
+        "mastodon="
+      ]
     },
     {
       "id": "facebook",
@@ -263,7 +271,10 @@
           "de": "<div class='subtle text-sm'>Facebook ist bekannt dafür, die psychische Gesundheit zu beeinträchtigen, die öffentliche Meinung zu manipulieren und Hass zu verursachen. Versuche, gesündere Alternativen zu nutzen.</div>",
           "es": "<div class='subtle text-sm'>Se sabe que Facebook perjudica la salud mental, manipula la opinión pública y causa odio. Prueba alternativas más saludables</div>"
         }
-      }
+      },
+      "onSoftDelete": [
+        "contact:facebook="
+      ]
     },
     {
       "id": "osmlink",
@@ -338,7 +349,11 @@
         "nl": "Pas emailadres aan",
         "de": "E-Mail Adresse bearbeiten",
         "es": "Editar dirección de correo electrónico"
-      }
+      },
+      "onSoftDelete": [
+        "email=",
+        "contact:email="
+      ]
     },
     {
       "id": "website",
@@ -395,8 +410,13 @@
         "nl": "Pas website aan",
         "de": "Webseite bearbeiten",
         "pl": "Edytuj stronę internetową",
-        "es": "Editar sitio web"
-      }
+        "es": "Editar sitio web",
+        "uk": "Редагувати веб-сайт"
+      },
+      "onSoftDelete": [
+        "website=",
+        "contact:website="
+      ]
     },
     {
       "id": "wheelchair-access",
@@ -689,6 +709,9 @@
       ],
       "filter": [
         "filters.dogs"
+      ],
+      "onSoftDelete": [
+        "dog="
       ]
     },
     {
@@ -820,6 +843,9 @@
       ],
       "filter": [
         "filters.open_now"
+      ],
+      "onSoftDelete": [
+        "opening_hours="
       ]
     },
     {
@@ -842,7 +868,8 @@
               "nb_NO": "Døgnåpent (inkludert helligdager)",
               "cs": "Otevřeno 24/7 (včetně svátků)",
               "ca": "Obert 24/7 (incloent-hi festius)",
-              "pl": "Otwarte 24/7 (również w święta)"
+              "pl": "Otwarte 24/7 (również w święta)",
+              "uk": "Працює 24/7 (включаючи святкові дні)"
             }
           }
         ]
@@ -1003,6 +1030,9 @@
           },
           "if": "service:electricity=no"
         }
+      ],
+      "onSoftDelete": [
+        "service:electricity="
       ]
     },
     {
@@ -1029,7 +1059,8 @@
         "es": "¿Qué métodos de pago se aceptan aquí?",
         "zh_Hans": "这里支持哪些支付方式？",
         "da": "Hvilke betalingsmetoder accepteres her?",
-        "cs": "Jaké platební metody jsou zde přijímány?"
+        "cs": "Jaké platební metody jsou zde přijímány?",
+        "uk": "Які способи оплати тут приймаються?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -1101,13 +1132,20 @@
             "de": "Die Bezahlung per QR-Code ist hier möglich",
             "es": "Aquí es posible pagar con código QR",
             "ca": "Aquí es pot pagar amb codi QR",
-            "cs": "Platba QR kódem je zde možná"
+            "cs": "Platba QR kódem je zde možná",
+            "uk": "Оплата за допомогою QR-коду можлива тут"
           }
         }
       ],
       "filter": [
         "filters.accepts_cash",
         "filters.accepts_cards"
+      ],
+      "onSoftDelete": [
+        "payment:cash=",
+        "payment:cards=",
+        "payment:payconiq=",
+        "payment:qr_code="
       ]
     },
     {
@@ -1138,7 +1176,8 @@
               "es": "Aquí se aceptan monedas",
               "nb_NO": "Mynter aksepteres her",
               "pl": "Monety są tutaj akceptowane",
-              "cs": "Jsou zde přijímány mince"
+              "cs": "Jsou zde přijímány mince",
+              "uk": "Монети приймаються тут"
             }
           },
           {
@@ -1154,7 +1193,8 @@
               "es": "Aquí se aceptan billetes",
               "nb_NO": "Sedler aksepteres her",
               "pl": "Banknoty są tutaj akceptowane",
-              "cs": "Jsou zde přijímány bankovky"
+              "cs": "Jsou zde přijímány bankovky",
+              "uk": "Тут приймаються банкноти"
             }
           },
           {
@@ -1170,7 +1210,8 @@
               "es": "Aquí se aceptan tarjetas de débito",
               "nb_NO": "Debetkort aksepteres her",
               "pl": "Akceptowane są tutaj karty debetowe",
-              "cs": "Jsou zde přijímány debetní karty"
+              "cs": "Jsou zde přijímány debetní karty",
+              "uk": "Тут приймаються дебетові картки"
             }
           },
           {
@@ -1186,9 +1227,15 @@
               "es": "Aquí se aceptan tarjetas de crédito",
               "nb_NO": "Kredittkort aksepteres her",
               "pl": "Akceptowane są tutaj karty kredytowe",
-              "cs": "Jsou zde přijímány kreditní karty"
+              "cs": "Jsou zde přijímány kreditní karty",
+              "uk": "Тут приймаються кредитні картки"
             }
           }
+        ],
+        "onSoftDelete+": [
+          "payment:coins=",
+          "payment:credit_cards=",
+          "payment:notes="
         ]
       }
     },
@@ -1246,6 +1293,10 @@
               "pl": "Płatność odbywa się za pomocą karty członkowskiej"
             }
           }
+        ],
+        "onSoftDelete+": [
+          "payment:app=",
+          "payment:membership_card="
         ]
       }
     },
@@ -1498,6 +1549,9 @@
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         }
+      ],
+      "onSoftDelete": [
+        "payment:coins:denominations="
       ]
     },
     {
@@ -1707,6 +1761,9 @@
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         }
+      ],
+      "onSoftDelete": [
+        "payment:notes:denominations="
       ]
     },
     {
@@ -1964,6 +2021,9 @@
             "uk": "Розташований на першому підвальному поверсі"
           }
         }
+      ],
+      "onSoftDelete": [
+        "level="
       ]
     },
     {
@@ -2045,6 +2105,9 @@
             "pl": "Palenie jest <b>dozwolone na zewnątrz</b>."
           }
         }
+      ],
+      "onSoftDelete": [
+        "smoking="
       ]
     },
     {
@@ -2229,6 +2292,11 @@
       ],
       "filter": [
         "filters.has_internet"
+      ],
+      "onSoftDelete": [
+        "internet=",
+        "internet_access:fee=",
+        "internet_access:ssid="
       ]
     },
     {
@@ -2310,6 +2378,11 @@
             "uk": "Доступ до Інтернету в цьому місці безкоштовний тільки для клієнтів"
           }
         }
+      ],
+      "onSoftDelete": [
+        "internet=",
+        "internet_access:fee=",
+        "internet_access:ssid="
       ]
     },
     {
@@ -2372,7 +2445,12 @@
         "ca": "El nom de la xarxa és <b>{internet_access:ssid}</b>",
         "pl": "Nazwa sieci to <b>{internet_access:ssid}</b>",
         "uk": "Назва мережі: <b>{internet_access:ssid}</b>"
-      }
+      },
+      "onSoftDelete": [
+        "internet=",
+        "internet_access:fee=",
+        "internet_access:ssid="
+      ]
     },
     {
       "id": "luminous_or_lit",
@@ -2579,6 +2657,9 @@
       ],
       "filter": [
         "filters.sugar_free"
+      ],
+      "onSoftDelete": [
+        "diet:suger_free="
       ]
     },
     {
@@ -2634,6 +2715,9 @@
       ],
       "filter": [
         "filters.lactose_free"
+      ],
+      "onSoftDelete": [
+        "diet:lactose_free="
       ]
     },
     {
@@ -2690,6 +2774,9 @@
       ],
       "filter": [
         "filters.gluten_free"
+      ],
+      "onSoftDelete": [
+        "diet:gluten_free="
       ]
     },
     {
@@ -2736,6 +2823,9 @@
             "es": "Esta tienda no tiene oferta vegana"
           }
         }
+      ],
+      "onSoftDelete": [
+        "diet:vegan="
       ]
     },
     {
@@ -2965,6 +3055,9 @@
             "es": "Cerrado durante el invierno"
           }
         }
+      ],
+      "onSoftDelete": [
+        "seasonal="
       ]
     },
     {
@@ -3011,6 +3104,9 @@
             "es": "Esta instalación no ofrece ducha"
           }
         }
+      ],
+      "onSoftDelete": [
+        "shower="
       ]
     },
     {
@@ -3053,27 +3149,33 @@
             "uk": "Не є частиною великого бренду"
           }
         }
+      ],
+      "onSoftDelete": [
+        "brand="
       ]
     },
     {
       "id": "indoor",
       "question": {
         "en": "Is this object located indoors?",
-        "nl": "Bevindt dit object zich binnen?"
+        "nl": "Bevindt dit object zich binnen?",
+        "de": "Befindet sich das Objekt in einem Innenraum?"
       },
       "mappings": [
         {
           "if": "indoor=yes",
           "then": {
             "en": "This object is located indoors",
-            "nl": "Dit object bevindt zich binnen"
+            "nl": "Dit object bevindt zich binnen",
+            "de": "Dieses Objekt befindet sich in einem Innenraum"
           }
         },
         {
           "if": "indoor=no",
           "then": {
             "en": "This object is located outdoors",
-            "nl": "Dit object bevindt zich buiten"
+            "nl": "Dit object bevindt zich buiten",
+            "de": "Dieses Objekt befindet sich im Freien"
           }
         }
       ]

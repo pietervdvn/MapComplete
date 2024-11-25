@@ -96,11 +96,6 @@
             "ph_open": "buka"
         },
         "pickLanguage": "Pilih bahasa: ",
-        "questions": {
-            "emailOf": "Apa alamat email {category}?",
-            "phoneNumberOf": "Apakah nombor telepon {category} ini?",
-            "websiteIs": "Website: <a href=\"{website}\" target=\"_blank\">{website}</a>"
-        },
         "search": {
             "searching": "Sdg mencari…"
         },

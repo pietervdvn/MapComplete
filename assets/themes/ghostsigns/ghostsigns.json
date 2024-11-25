@@ -5,7 +5,8 @@
     "de": "Geisterzeichen",
     "es": "Letreros fantasma",
     "cs": "Nápisy na zdech",
-    "uk": "Примарні знаки"
+    "uk": "Примарні знаки",
+    "nl": "Spookreclames"
   },
   "description": {
     "en": "A map showing disused signs on buildings",
@@ -13,7 +14,9 @@
     "es": "Un mapa que muestra letreros en desuso en los edificios",
     "ca": "Un mapa que mostra els rètols en desús dels edificis",
     "cs": "Mapa zobrazující nepoužívané nápisy na budovách",
-    "uk": "Мапа, на якій показані вивіски на будівлях, що не використовуються"
+    "uk": "Мапа, на якій показані вивіски на будівлях, що не використовуються",
+    "fr": "Une carte montrant les enseignes désaffectées sur des bâtiments",
+    "nl": "Een kaart met ongebruikte borden op gebouwen"
   },
   "icon": "./assets/themes/advertising/wall_painting.svg",
   "layers": [
@@ -45,7 +48,9 @@
               "en": "Is this artwork a historic advertisement?",
               "de": "Ist dieses Kunstwerk eine historische Werbung?",
               "es": "¿Es esta obra de arte un anuncio histórico?",
-              "cs": "Je toto dílo historickou reklamou?"
+              "cs": "Je toto dílo historickou reklamou?",
+              "fr": "Est-ce que cette œuvre d'art est une publicité historique ?",
+              "nl": "Is dit kunstwerk een historische advertentie?"
             },
             "mappings": [
               {
@@ -57,7 +62,9 @@
                   "en": "This artwork is a historic advertisement",
                   "de": "Dieses Kunstwerk ist eine historische Werbung",
                   "es": "Esta obra de arte es un anuncio histórico",
-                  "cs": "Toto dílo je historickou reklamou"
+                  "cs": "Toto dílo je historickou reklamou",
+                  "fr": "Cette œuvre d'art est une publicité historique",
+                  "nl": "Dit kunstwerk is een historische advertentie"
                 }
               },
               {
@@ -69,7 +76,9 @@
                   "en": "This artwork is not a historic advertisement",
                   "de": "Dieses Kunstwerk ist keine historische Werbung",
                   "es": "Esta obra de arte no es un anuncio histórico",
-                  "cs": "Toto dílo není historickou reklamou"
+                  "cs": "Toto dílo není historickou reklamou",
+                  "fr": "Cette œuvre d'art n'est pas une publicité historique",
+                  "nl": "Dit kunstwerk is geen historische advertentie"
                 }
               }
             ]

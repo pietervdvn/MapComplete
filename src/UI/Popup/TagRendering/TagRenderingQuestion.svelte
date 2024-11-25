@@ -36,6 +36,8 @@
   import { Modal } from "flowbite-svelte"
   import Popup from "../../Base/Popup.svelte"
   import If from "../../Base/If.svelte"
+  import DotMenu from "../../Base/DotMenu.svelte"
+  import SidebarUnit from "../../Base/SidebarUnit.svelte"
 
   export let config: TagRenderingConfig
   export let tags: UIEventSource<Record<string, string>>
@@ -91,7 +93,7 @@
       return !m.hideInAnswer.matchesProperties(tgs)
     })
     selectedMapping = mappings?.findIndex(
-      (mapping) => mapping.if.matchesProperties(tgs) || mapping.alsoShowIf?.matchesProperties(tgs)
+      (mapping) => mapping.if.matchesProperties(tgs) || mapping.alsoShowIf?.matchesProperties(tgs),
     )
     if (selectedMapping < 0) {
       selectedMapping = undefined
@@ -199,7 +201,7 @@
       if (freeformValue?.length > 0) {
         selectedMapping = config.mappings.length
       }
-    })
+    }),
   )
 
   $: {
@@ -217,7 +219,7 @@
           $freeformInput,
           selectedMapping,
           checkedMappings,
-          tags.data
+          tags.data,
         )
         if (featureSwitchIsDebugging?.data) {
           console.log(
@@ -229,7 +231,7 @@
               currentTags: tags.data,
             },
             " --> ",
-            selectedTags
+            selectedTags,
           )
         }
       } catch (e) {
@@ -251,7 +253,7 @@
         selectedTags = new And([...selectedTags.and, ...extraTagsArray])
       } else {
         console.error(
-          "selectedTags is not of type Tag or And, it is a " + JSON.stringify(selectedTags)
+          "selectedTags is not of type Tag or And, it is a " + JSON.stringify(selectedTags),
         )
       }
     }
@@ -320,7 +322,7 @@
     onDestroy(
       state.osmConnection?.userDetails?.addCallbackAndRun((ud) => {
         numberOfCs = ud.csCount
-      })
+      }),
     )
   }
 
@@ -338,10 +340,43 @@
       .then((changes) => state.changes.applyChanges(changes))
       .catch(console.error)
   }
+
+  let disabledInTheme = state.userRelatedState.getThemeDisabled(state.theme.id, layer?.id)
+  let menuIsOpened = new UIEventSource(false)
+
+  function disableQuestion() {
+    const newList = Utils.Dedup([config.id, ...disabledInTheme.data])
+    disabledInTheme.set(newList)
+    menuIsOpened.set(false)
+  }
+
+  function enableQuestion() {
+    const newList = disabledInTheme.data?.filter(id => id !== config.id)
+    disabledInTheme.set(newList)
+    menuIsOpened.set(false)
+  }
 </script>
 
 {#if question !== undefined}
   <div class={clss}>
+
+    {#if layer.isNormal()}
+      <LoginToggle {state}>
+        <DotMenu hideBackground={true} open={menuIsOpened}>
+          <SidebarUnit>
+            {#if $disabledInTheme.indexOf(config.id) >= 0}
+              <button on:click={() => enableQuestion()}>
+                <Tr t={Translations.t.general.questions.enable} />
+              </button>
+            {:else}
+              <button on:click={() => disableQuestion()}>
+                <Tr t={Translations.t.general.questions.disable} />
+              </button>
+            {/if}
+          </SidebarUnit>
+        </DotMenu>
+      </LoginToggle>
+    {/if}
     <form
       class="relative flex flex-col overflow-y-auto px-4"
       style="max-height: 75vh"

@@ -80,6 +80,11 @@
       "value": "panning"
     },
     {
+      "key": "camera:type",
+      "description": "Layer 'Surveillance camera's' shows camera:type=doorbell with a fixed text, namely 'A doorbell which might be turned on remotely at any time or by motion detection. These are typically <i>Smart</i>, internet-connected doorbells. Typical brands are Ring, Google Nest, Eufy, ...' and allows to pick this as a default answer (in the mapcomplete.org theme 'Surveillance under Surveillance')",
+      "value": "doorbell"
+    },
+    {
       "key": "camera:direction",
       "description": "Layer 'Surveillance camera's' shows and asks freeform values for key 'camera:direction' (in the mapcomplete.org theme 'Surveillance under Surveillance') (This is only shown if camera:direction~.+ | direction~.+ | camera:type!=dome | (camera:type=dome & camera:mount=wall))"
     },

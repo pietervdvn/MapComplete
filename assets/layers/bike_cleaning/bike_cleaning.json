@@ -284,7 +284,10 @@
     {
       "question": {
         "en": "Is this bicycle cleaning service automated?",
-        "nl": "Is dit fietsschoonmaakpunt geautomatiseerd?"
+        "nl": "Is dit fietsschoonmaakpunt geautomatiseerd?",
+        "de": "Ist dieser Fahrradreinigungsdienst automatisiert?",
+        "cs": "Je tato služba čištění kol bez obsluhy?",
+        "es": "¿Está este servicio de limpieza de bicicletas automatizado?"
       },
       "id": "automated",
       "mappings": [
@@ -292,14 +295,20 @@
           "if": "automated=no",
           "then": {
             "en": "This is a manual bike washing station",
-            "nl": "Dit is een handmatig fietsschoonmaakpunt"
+            "nl": "Dit is een handmatig fietsschoonmaakpunt",
+            "de": "Dies ist eine manuelle Fahrradwaschanlage",
+            "cs": "Jedná se o ruční mycí stanici kol",
+            "es": "Esta es una estación manual de lavado de bicicletas"
           }
         },
         {
           "if": "automated=yes",
           "then": {
             "en": "This is an automated bike wash",
-            "nl": "Dit is een automatisch fietsschoonmaakpunt"
+            "nl": "Dit is een automatisch fietsschoonmaakpunt",
+            "de": "Dies ist eine automatische Fahrradwaschanlage",
+            "cs": "Jedná se o mytí kol bez obsluhy",
+            "es": "Esta es una estación automática de lavado de bicicletas"
           }
         }
       ],
@@ -308,7 +317,10 @@
     {
       "question": {
         "nl": "Is dit fietsschoonmaakpunt zelfbediening?",
-        "en": "Is this cleaning service self-service?"
+        "en": "Is this cleaning service self-service?",
+        "de": "Muss die Reinigung selbständig erfolgen?",
+        "cs": "Je tato mycí služba samoobslužná?",
+        "es": "¿Es este servicio de limpieza de autoservicio?"
       },
       "id": "self_service",
       "mappings": [
@@ -316,14 +328,20 @@
           "if": "self_service=yes",
           "then": {
             "nl": "Dit fietsschoonmaakpunt is zelfbediening",
-            "en": "This cleaning service is self-service"
+            "en": "This cleaning service is self-service",
+            "de": "Die Reinigung erfolgt selbständig",
+            "cs": "Tato mycí služba je samoobslužná",
+            "es": "Este servicio de limpieza es de autoservicio"
           }
         },
         {
           "if": "self_service=no",
           "then": {
             "nl": "Dit fietsschoonmaakpunt wordt bediend door aanwezig personeel",
-            "en": "This cleaning service is operated by an employee"
+            "en": "This cleaning service is operated by an employee",
+            "de": "Dieser Reinigungsdienst wird von einem Angestellten betrieben",
+            "cs": "Tuto mycí službu provozuje zaměstnanec",
+            "es": "Este servicio de limpieza está operado por un empleado"
           }
         }
       ],

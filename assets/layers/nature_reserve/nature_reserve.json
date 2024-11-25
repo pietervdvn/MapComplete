@@ -495,7 +495,8 @@
         "de": "Welche Telefonnummer kann man bei Fragen und Problemen zu diesem Gebiet anrufen?",
         "ca": "A quin número de telèfon es pot trucar amb preguntes i problemes amb aquest parc natural?",
         "cs": "Na jaké telefonní číslo lze volat v případě dotazů a problémů s touto přírodní rezervací?",
-        "es": "¿Qué número de teléfono se puede llamar para preguntas y problemas con esta reserva natural?"
+        "es": "¿Qué número de teléfono se puede llamar para preguntas y problemas con esta reserva natural?",
+        "uk": "За яким номером телефону можна звертатися з питаннями та проблемами, пов'язаними з цим заповідником?"
       },
       "render": {
         "*": "<a href='tel:{phone}' target='_blank' rel='noopener'>{phone}</a>"
@@ -513,7 +514,8 @@
         "de": "Respektieren Sie die Privatsphäre. Geben Sie nur dann eine Telefonnummer an, wenn diese allgemein bekannt ist",
         "ca": "Respecteu la privadesa: només empleneu una adreça de número de telèfon personal si es publica àmpliament",
         "cs": "Respektujte soukromí - adresu s osobním telefonním číslem vyplňte pouze v případě, že je široce zveřejněna",
-        "es": "Respeta la privacidad: sólo rellena una dirección de número de teléfono personal si esto se publica ampliamente"
+        "es": "Respeta la privacidad: sólo rellena una dirección de número de teléfono personal si esto se publica ampliamente",
+        "uk": "Поважайте приватність - вказуйте особистий номер телефону лише в тому випадку, якщо він є загальнодоступним"
       }
     },
     {

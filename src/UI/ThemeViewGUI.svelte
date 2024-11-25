@@ -54,7 +54,6 @@
 
   let theme = state.theme
   let maplibremap: UIEventSource<MlMap> = state.map
-  let state_selectedElement = state.selectedElement
   let selectedElement: UIEventSource<Feature> = new UIEventSource<Feature>(undefined)
   let compass = Orientation.singleton.alpha
   let compassLoaded = Orientation.singleton.gotMeasurement
@@ -99,7 +98,7 @@
 
   state.mapProperties.installCustomKeyboardHandler(viewport)
 
-  let selectedLayer: Store<LayerConfig> = state.selectedElement.mapD((element) => {
+  let selectedLayer: Store<LayerConfig> = selectedElement.mapD((element) => {
     if (element.properties.id.startsWith("current_view")) {
       return currentViewLayer
     }
@@ -458,7 +457,7 @@
       }}
     >
       <div slot="close-button" />
-      <SelectedElementPanel {state} selected={$state_selectedElement} />
+      <SelectedElementPanel {state} selected={$selectedElement} />
     </Drawer>
   {/if}
 
@@ -472,7 +471,7 @@
         }}
       >
         <span slot="close-button" />
-        <SelectedElementPanel absolute={false} {state} selected={$state_selectedElement} />
+        <SelectedElementPanel absolute={false} {state} selected={$selectedElement} />
       </FloatOver>
     {:else}
       <FloatOver
@@ -483,7 +482,7 @@
         <SelectedElementView
           {state}
           layer={$selectedLayer}
-          selectedElement={$state_selectedElement}
+          selectedElement={$selectedElement}
         />
       </FloatOver>
     {/if}

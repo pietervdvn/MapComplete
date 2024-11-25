@@ -319,7 +319,7 @@ export interface LayerConfigJson {
      *
      * If no presets are defined, the button which invites to add a new preset will not be shown.
      *</div>
-     * <video controls autoplay muted src='./Docs/Screenshots/AddNewItemScreencast.webm' class='w-64'/>
+     * <video controls autoplay muted src='https://github.com/pietervdvn/MapComplete/raw/refs/heads/master/Docs/Screenshots/AddNewItemScreencast.webm' class='w-64'/>
      *</div>
      *
      * group: presets
