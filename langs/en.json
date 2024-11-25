@@ -588,7 +588,7 @@
         "translationMode": "Toggle translation mode on or off"
     },
     "image": {
-        "addPicture": "Add picture",
+        "addPicture": "Take a picture",
         "currentLicense": "Your images will be published under {license}",
         "doDelete": "Remove image",
         "dontDelete": "Cancel",
@@ -622,6 +622,7 @@
         "pleaseLogin": "Please log in to add a picture",
         "processing": "The server is processing your image",
         "respectPrivacy": "Do not upload from Google Maps, Google Streetview or other copyrighted sources.",
+        "selectFile": "Select a picture from your device",
         "toBig": "Your image is too large as it is {actual_size}. Please use images of at most {max_size}",
         "unlink": {
             "button": "Unlink picture",
