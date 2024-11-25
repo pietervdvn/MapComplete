@@ -2,7 +2,7 @@
   import { createEventDispatcher, onDestroy } from "svelte"
   import { twMerge } from "tailwind-merge"
 
-  export let accept: string
+  export let accept: string | undefined
   export let multiple: boolean = true
 
   const dispatcher = createEventDispatcher<{ submit: FileList }>()

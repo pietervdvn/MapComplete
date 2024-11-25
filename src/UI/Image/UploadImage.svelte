@@ -97,7 +97,7 @@
         <Tr t={error} cls="alert" />
       {/each}
       <FileSelector
-        accept="image/*"
+        accept=".jpg,.jpeg"
         cls="button border-2 flex flex-col"
         multiple={true}
         on:submit={(e) => handleFiles(e.detail)}
@@ -121,6 +121,14 @@
             </div>
           {/if}
         </div>
+      </FileSelector>
+      <FileSelector
+        accept={undefined}
+        cls="subtle as-link flex justify-center md:hidden"
+        multiple={true}
+        on:submit={(e) => handleFiles(e.detail)}
+      >
+        Use the file selector dialog
       </FileSelector>
       <div class="subtle text-xs italic">
         <Tr t={Translations.t.general.attribution.panoramaxLicenseCCBYSA} />
