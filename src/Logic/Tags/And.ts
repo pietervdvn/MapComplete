@@ -18,6 +18,10 @@ export class And extends TagsFilter {
             console.error("Assertion failed: invalid subtags:", and)
             throw "Assertion failed: invalid subtags found"
         }
+        if (and.some((p) => p === undefined)) {
+            console.error("Assertion failed: invalid subtags:", and)
+            throw "Assertion failed: invalid subtags found (undefined)"
+        }
     }
 
     public static construct(and: ReadonlyArray<TagsFilter>): TagsFilter
