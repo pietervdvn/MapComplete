@@ -102,7 +102,7 @@
         capture="environment"
         cls="button border-2 flex flex-col"
         multiple={true}
-        on:submit={(e) => handleFiles(e.detail)}
+        on:submit={(e) =>{   handleFiles(e.detail) ; e.preventDefault(); e.stopPropagation()}}
       >
         <div class="flex w-full items-center justify-center text-2xl">
           {#if image !== undefined}
@@ -128,7 +128,7 @@
         accept=".jpg, .jpeg"
         cls="flex justify-center md:hidden button"
         multiple={true}
-        on:submit={(e) => handleFiles(e.detail, true)}
+        on:submit={(e) =>{  return handleFiles(e.detail, true) ; e.preventDefault(); e.stopPropagation()}}
       >
         <Tr t={t.selectFile}/>
       </FileSelector>
