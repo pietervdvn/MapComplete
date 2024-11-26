@@ -210,7 +210,7 @@ export default class FilteredLayer {
      * - the specified 'global filters'
      * - the 'isShown'-filter set by the layer
      */
-    public isShown(properties: Record<string, string>, globalFilters?: GlobalFilter[]): boolean {
+    public isShown(properties: Record<string, string>, globalFilters?: GlobalFilter[], zoomlevel?: number): boolean {
         if (properties._deleted === "yes") {
             return false
         }
@@ -219,9 +219,10 @@ export default class FilteredLayer {
             if (neededTags !== undefined) {
                 const doesMatch = neededTags.matchesProperties(properties)
                 if (globalFilter.forceShowOnMatch) {
-                    return doesMatch || this.isDisplayed.data
-                }
-                if (!doesMatch) {
+                    if(doesMatch){
+                        return true
+                    }
+                } else if (!doesMatch) {
                     return false
                 }
             }
@@ -238,6 +239,10 @@ export default class FilteredLayer {
             if (neededTags !== undefined && !neededTags.matchesProperties(properties)) {
                 return false
             }
+        }
+
+        if(zoomlevel !== undefined && (this.layerDef.minzoom > zoomlevel || this.layerDef.minzoomVisible < zoomlevel)){
+            return false
         }
 
         return true
