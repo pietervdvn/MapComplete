@@ -68,6 +68,9 @@
   }
 
   export let onlyLink: boolean
+
+  let pickerStyleText =
+    layerType === "background" ? "height: calc( 100% - 5rem)" : "height: calc( 80% - 5rem)"
 </script>
 
 <Page {onlyLink} {shown} fullscreen={true}>
@@ -83,7 +86,7 @@
   {#if $_availableLayers?.length < 1}
     <Loading />
   {:else}
-    <div class="flex flex-col gap-x-2 gap-y-2 sm:flex-row" style="height: calc( 100% - 5rem)">
+    <div class="flex flex-col gap-x-2 gap-y-2 sm:flex-row" style={pickerStyleText}>
       <RasterLayerPicker
         availableLayers={$photoLayers}
         favourite={getPref("photo")}
@@ -119,7 +122,7 @@
     </div>
     {#if layerType === "overlay"}
       <!-- TODO: Fix all styling issues here -->
-      <OverlayOverview {mapproperties} />
+      <div class="h-1/5"><OverlayOverview {mapproperties} /></div>
     {/if}
   {/if}
 </Page>

@@ -366,6 +366,13 @@
             "wednesday": "On wednesday {ranges}"
         },
         "osmLinkTooltip": "Browse this object on OpenStreetMap for history and more editing options",
+        "overlay": {
+            "current": "Currently active overlays",
+            "down": "Move this overlay down",
+            "none": "There aren't any overlays selected. You can add some by selecting them above.",
+            "remove": "Remove this overlay",
+            "up": "Move this overlay up"
+        },
         "overlayMap": "Select map overlays",
         "pdf": {
             "attr": "Map data © OpenStreetMap Contributors, reusable under ODbL",
@@ -573,6 +580,7 @@
         "key": "Key combination",
         "openFilterPanel": "Opens the POI-layers and filter panel",
         "openLayersPanel": "Opens the background layers panel",
+        "openOverlayPanel": "Opens the map overlay panel",
         "queryCurrentLocation": "Display the address which is nearest the map center",
         "selectAerial": "Set the background to aerial or satellite imagery. Toggles between the two best, available layers",
         "selectFavourites": "Open the favourites page",
