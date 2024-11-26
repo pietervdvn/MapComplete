@@ -50,6 +50,7 @@
   import Squares2x2 from "@babeard/svelte-heroicons/mini/Squares2x2"
   import EnvelopeOpen from "@babeard/svelte-heroicons/mini/EnvelopeOpen"
   import PanoramaxLink from "./PanoramaxLink.svelte"
+  import { UIEventSource } from "../../Logic/UIEventSource"
 
   export let state: ThemeViewState
   let userdetails = state.osmConnection.userDetails
@@ -63,9 +64,21 @@
   let location = state.mapProperties.location
   export let onlyLink: boolean
   const t = Translations.t.general.menu
+  let shown = new UIEventSource(state.guistate.pageStates.menu.data)
+  state.guistate.pageStates.menu.addCallback(isShown => {
+    console.log("Setting", isShown)
+    if(isShown){
+      shown.setData(true)
+    }else{
+      Utils.waitFor(250).then(() => {
+        shown.setData(state.guistate.pageStates.menu.data)
+      })
+    }
+  })
+
 </script>
 
-<div class="low-interaction flex h-screen flex-col gap-y-2 overflow-y-auto p-2 sm:gap-y-3 sm:p-3">
+<div class="low-interaction flex h-screen flex-col gap-y-2 overflow-y-auto p-2 sm:gap-y-3 sm:p-3" class:hidden={!$shown}>
   <div class="flex justify-between">
     <h2>
       <Tr t={t.title} />
