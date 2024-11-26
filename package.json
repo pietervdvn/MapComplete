@@ -17,6 +17,7 @@
     ],
     "oauth_credentials": {
       "#": "This client-id is registered by 'MapComplete' on OpenStreetMap.org",
+      "#fork": "For a fork, you will need to register your own key at https://www.openstreetmap.org/oauth2/applications ; redirect url is `https://<your-domain>/land.html`, permissions: `read_user_preferences`, `modify preferences`, `modify the map`. For GPS-traces: both, `modify-notes` if you want the notes-theme to work.",
       "oauth_client_id": "K93H1d8ve7p-tVLE1ZwsQ4lAFLQk8INx5vfTLMu5DWk",
       "oauth_secret": "NBWGhWDrD3QDB35xtVuxv4aExnmIt4FA_WgeLtwxasg",
       "url": "https://www.openstreetmap.org",
@@ -37,10 +38,12 @@
     "error_server": "https://report.mapcomplete.org/report",
     "api_keys": {
       "#": "Various API-keys for various services. Feel free to reuse those in another MapComplete-hosted version",
+      "#fork": "Not bound to a domain; can be reused",
       "imgur": "7070e7167f0a25a",
       "mapillary_v4": "MLY|4441509239301885|b40ad2d3ea105435bd40c7e76993ae85"
     },
     "panoramax": {
+      "#fork": "Not bound to a domain; can be reused",
       "url": "https://panoramax.mapcomplete.org",
       "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnZW92aXNpbyIsInN1YiI6IjU5ZjgzOGI0LTM4ZjAtNDdjYi04OWYyLTM3NDQ3MWMxNTUxOCJ9.0rBioZS_48NTjnkIyN9497c3fQdTqtGgH1HDqlz1bWs",
       "sequence": "6e702976-580b-419c-8fb3-cf7bd364e6f8",
@@ -61,6 +64,7 @@
     "photonEndpoint": "https://photon.komoot.io/",
     "jsonld-proxy": "https://lod.mapcomplete.org/extractgraph?url={url}",
     "protomaps": {
+      "#fork": "Bound to https://mapcomplete.org; get your own at https://protomaps.com/",
       "api-key": "2af8b969a9e8b692",
       "endpoint": "https://api.protomaps.com/tiles/",
       "styles": [
@@ -73,7 +77,7 @@
     }
   },
   "scripts": {
-    "init": "npm ci && npm run prep:layeroverview && npm run generate && npm run download:editor-layer-index && npm run generate:layouts && npm run clean && npm run weblate:add-upstream",
+    "init": "npm ci && npm run prep:layeroverview && npm run generate && npm run download:editor-layer-index && npm run generate:layouts && npm run clean",
     "start": "npm run generate:layeroverview && npm run strt",
     "strt": "vite --host | sed 's/localhost:/127.0.0.1:/g'",
     "build": "./scripts/build.sh",
@@ -114,6 +118,8 @@
     "download:editor-layer-index": "vite-node scripts/downloadEli.ts",
     "download:stats": "vite-node scripts/GenerateSeries.ts",
     "download:images": "vite-node scripts/generateImageAnalysis.ts -- ~/data/imgur-image-backup/",
+    "weblate:add-upstream": "git remote add weblate https://translate.mapcomplete.org/git/mapcomplete/core/ ; git remote update weblate",
+    "weblate:fix": "npm run weblate:add-upstream && git merge weblate/master && git rebase origin/master && git push origin master",
     "lint": "npm run lint:prettier && npm run lint:eslint && npm run lint:themes",
     "lint:eslint": "eslint ./src",
     "lint:prettier": "prettier  --check '**/*.ts' '**/*.svelte'",

@@ -306,7 +306,12 @@
         "logout": "Afmelden",
         "menu": {
             "aboutMapComplete": "Over MapComplete",
-            "filter": "Filter data"
+            "filter": "Filter data",
+            "aboutCurrentThemeTitle": "Over deze kaart",
+            "moreUtilsTitle": "Ontdek meer",
+            "openHereDifferentApp": "Open de huidige locatie in andere toepassingen",
+            "showIntroduction": "Toon introductie",
+            "title": "Menu"
         },
         "morescreen": {
             "createYourOwnTheme": "Maak je eigen MapComplete-kaart",
@@ -402,7 +407,9 @@
             "recents": "Recent bekeken plaatsen",
             "search": "Zoek naar een locatie, filter of kaart",
             "searchShort": "Zoek…",
-            "searching": "Aan het zoeken…"
+            "searching": "Aan het zoeken…",
+            "nMoreFilters": "{n} meer",
+            "nothingFor": "Geen resultaten gevonden voor {term}"
         },
         "share": "Deel deze locatie",
         "sharescreen": {
@@ -412,7 +419,15 @@
             "fsWelcomeMessage": "Toon het welkomstbericht en de bijhorende tabbladen",
             "intro": "Kopieer onderstaande link om deze kaart naar vrienden en familie door te sturen:",
             "thanksForSharing": "Bedankt om te delen!",
-            "title": "Deel deze kaart"
+            "title": "Deel deze kaart",
+            "fsBackground": "Wisselende achtergronden inschakelen",
+            "fsFilter": "De mogelijkheid inschakelen om te wisselen tussen lagen en filters",
+            "fsGeolocation": "Geolocatie inschakelen",
+            "openInOtherApplications": "De huidige locatie openen met een andere kaarttoepassing",
+            "openLayers": "Open het menu met lagen en filters",
+            "options": "Opties voor delen",
+            "stateIsIncluded": "De huidige status van de lagen en filters is opgenomen in de gedeelde link en iframe.",
+            "documentation": "Voor meer informatie over beschikbare URL-parameters, <a href='https://github.com/pietervdvn/MapComplete/blob/develop/Docs/URL_Parameters.md' target='_blank'>raadpleeg de documentatie</a>"
         },
         "skip": "Sla deze vraag over",
         "testing": "Testmode - wijzigingen worden niet opgeslaan",
@@ -479,7 +494,9 @@
             "unlocked": "Bewegen ontgrendeld",
             "viewportCenterCloseToGps": "De kaart is gecentreerd op je huidige GPS-locatie.",
             "viewportCenterDetails": "Het kaartbeeldcentrum is {distance} {bearing} vanaf je huidige locatie.",
-            "west": "Naar het westen"
+            "west": "Naar het westen",
+            "fromGps": "{distance} {direction} van uw locatie",
+            "fromMapCenter": "{distance} {direction} van het midden van de kaart"
         },
         "waitingForLocation": "Je locatie wordt gezocht…",
         "weekdays": {
@@ -522,7 +539,17 @@
             "searchToShort": "Je zoekopdracht is te kort, vul een langere tekst in",
             "searchWikidata": "Zoek op Wikidata",
             "wikipediaboxTitle": "Wikipedia"
-        }
+        },
+        "retry": "Opnieuw proberen",
+        "searchAnswer": "Zoek een optie…",
+        "seeIndex": "Zie het overzich van alle thematische kaarten",
+        "uploadError": "Fout tijdens het uploaden van wijzigingen: {error}",
+        "mappingsAreHidden": "Sommige opties zijn verborgen. Gebruik zoeken om meer opties te tonen.",
+        "poweredByMapComplete": "Powered by MapComplete - crowdsourced, thematische kaarten met OpenStreetMap",
+        "uploadPending": "{count} wijzigingen in behandeling",
+        "uploadPendingSingle": "Eén wijziging in behandeling",
+        "uploadingChanges": "Wijzigingen aan het uploaden…",
+        "waitingForGeopermission": "Aan het wachten op toestemming om geolocatie te gebruiken…"
     },
     "hotkeyDocumentation": {
         "action": "Actie",
@@ -536,7 +563,15 @@
         "selectMapnik": "Gebruik OpenStreetMap-carto als achtergrondlaag",
         "selectOsmbasedmap": "Gebruik een OpenStreetMap-gebaseerde achtergrondkaart (of schakel de achtergrond-rasterlaag uit)",
         "selectSearch": "Selecteer de zoekbalk om locaties te zoeken",
-        "title": "Sneltoetsen"
+        "title": "Sneltoetsen",
+        "queryCurrentLocation": "Toon het adres dichtst bij het midden van de kaart",
+        "selectFavourites": "Open de pagina met favorieten",
+        "selectItem2": "Selecteer het POI het op één na dichtst bij het midden van de kaart (crosshair). Alleen wanneer toetsenbordnavigatie wordt gebruikt",
+        "shakePhone": "Schudden met je telefoon",
+        "translationMode": "Vertaalmodus in- of uitschakelen",
+        "openFilterPanel": "Opent het POI-lagen- en filterpaneel",
+        "selectItem": "Selecteer het POI het dichtst bij het midden van de kaart (crosshair). Alleen wanneer toetsenbordnavigatie wordt gebruikt",
+        "selectItem3": "Selecteer het POI het op twee na dichtst bij het midden van de kaart (crosshair). Alleen wanneer toetsenbordnavigatie wordt gebruikt"
     },
     "image": {
         "addPicture": "Voeg foto toe",
@@ -547,7 +582,10 @@
         "nearby": {
             "link": "Deze afbeelding toont het object",
             "seeNearby": "Bekijk foto's in de buurt",
-            "title": "Straatafbeeldingen uit de buurt"
+            "title": "Straatafbeeldingen uit de buurt",
+            "failed": "Afbeeldingen ophalen van {service} mislukt",
+            "close": "Paneel met nabije afbeeldingen samenvouwen",
+            "noNearbyImages": "Geen afbeeldingen in de buurt gevonden"
         },
         "pleaseLogin": "Gelieve je aan te melden om een foto toe te voegen",
         "respectPrivacy": "Voeg geen Google Maps, Google Streetview of foto's met auteursrechten toe.",
@@ -556,7 +594,34 @@
         "uploadFailed": "Afbeelding uploaden mislukt. Heb je internet? Gebruik je Brave of UMatrix? Dan moet je derde partijen toelaten.",
         "uploadMultipleDone": "{count} afbeeldingen zijn toegevoegd. Bedankt voor je bijdrage!",
         "uploadingMultiple": "Bezig met {count} foto's te uploaden…",
-        "uploadingPicture": "Bezig met een foto te uploaden…"
+        "uploadingPicture": "Bezig met een foto te uploaden…",
+        "panoramax": {
+            "deletionRequested": "Het rapport is verzonden. Een moderator zal er binnenkort naar kijken",
+            "freeform": "Is er andere relevante informatie?",
+            "otherFreeform": "Waarom moet deze afbeelding worden verwijderd:",
+            "report": {
+                "blur_missing": "Op deze foto is een gezicht of nummerplaat niet geblurd",
+                "blur_excess": "Er is te geblurd, waardoor de foto onbruikbaar is",
+                "copyright": "De foto bevat auteursrechtelijk beschermde inhoud",
+                "mislocated": "De foto is van een andere locatie",
+                "other": "Een andere reden, specificeer",
+                "picture_low_quality": "De foto is van lage kwaliteit",
+                "privacy": "De foto toont een privé-eigendom",
+                "inappropriate": "Deze foto is ongepast (bevat naakt, roept op tot haat of is geen straatbeeld)"
+            },
+            "requestDeletion": "Verwijdering van foto aanvragen",
+            "title": "Waarom zou dit beeld permanent verwijderd moeten worden?",
+            "placeholder": "Leg uit waarom de foto verwijderd moet worden"
+        },
+        "processing": "De server is je beeld aan het verwerken",
+        "unlink": {
+            "button": "Link naar foto verwijderen",
+            "title": "Link naar deze afbeelding verwijderen?",
+            "explanation": "Door de link naar deze afbeelding te verwijderen, wordt deze niet meer getoond bij dit object. De afbeelding zal nog steeds verschijnen bij nabije afbeeldingen en mogelijk ook andere objecten."
+        },
+        "upload": {
+            "failReasons": "Mogelijk heb je geen verbinding meer met het internet"
+        }
     },
     "importInspector": {
         "title": "Inspecteer en beheer importeer-notas"

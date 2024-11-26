@@ -106,6 +106,12 @@ If you want to deploy your fork:
 2. Copy the entire `dist` folder to where you host your website. Visiting `index.html` gives you the landing page,
    visiting `yourwebsite/<theme>` should bring you to the appropriate theme.
 
+### Getting your own API-keys
+
+Some services are bound to `https://mapcomplete.org`. In `package.json/config`, search for "#fork" and read the instructions.
+
+
+
 Weird errors
 ------------
 

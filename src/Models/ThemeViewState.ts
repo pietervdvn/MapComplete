@@ -473,7 +473,10 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 fs.layer,
                 fs,
                 (id) => this.featureProperties.getStore(id),
-                this.layerState.globalFilters
+                this.layerState.globalFilters,
+                undefined,
+                this.mapProperties.zoom,
+                this.selectedElement
             )
             filteringFeatureSource.set(layerName, filtered)
 

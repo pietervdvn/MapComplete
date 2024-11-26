@@ -44,7 +44,7 @@
                 "title": "een spandoek"
             },
             "12": {
-                "title": "een totem"
+                "title": "eem reclamezuil"
             },
             "13": {
                 "description": "Gebruikt voor reclameborden, neonborden, logo's & toegangsborden voor instellingen",
@@ -212,6 +212,9 @@
                     },
                     "7": {
                         "then": "Dit is een teken"
+                    },
+                    "9": {
+                        "then": "Dit is een reclamezuil"
                     }
                 },
                 "render": "Dit is een {advertising}"
@@ -238,7 +241,7 @@
                     "then": "Spandoek"
                 },
                 "9": {
-                    "then": "Aanplakzuil"
+                    "then": "Reclamezuil"
                 }
             }
         }
