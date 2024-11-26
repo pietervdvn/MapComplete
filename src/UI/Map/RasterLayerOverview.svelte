@@ -121,7 +121,6 @@
       />
     </div>
     {#if layerType === "overlay"}
-      <!-- TODO: Fix all styling issues here -->
       <div class="h-1/5"><OverlayOverview {mapproperties} /></div>
     {/if}
   {/if}

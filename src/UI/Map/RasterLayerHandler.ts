@@ -13,6 +13,7 @@ class SingleBackgroundHandler {
     private readonly _targetLayer: RasterLayerPolygon
     private _deactivationTime: Date = undefined
     public addBeforeId: UIEventSource<string | undefined>
+    private overlayHandler: OverlayHandler
 
     /**
      * Deactivate a layer after 60 seconds
@@ -24,12 +25,14 @@ class SingleBackgroundHandler {
         map: Store<MLMap>,
         targetLayer: RasterLayerPolygon,
         background: UIEventSource<RasterLayerPolygon | undefined>,
+        overlayHandler?: OverlayHandler | undefined,
         addBeforeId?: UIEventSource<string | undefined>
     ) {
         this._targetLayer = targetLayer
         this._map = map
         this._background = background
         this.addBeforeId = addBeforeId ?? new UIEventSource<string | undefined>(undefined)
+        this.overlayHandler = overlayHandler
 
         background.addCallback(async () => {
             await this.update()
@@ -134,6 +137,11 @@ class SingleBackgroundHandler {
         if (background.category === "osmbasedmap" || background.category === "map") {
             // The background layer is already an OSM-based map or another map, so we don't want anything from the baselayer
             addLayerBeforeId = undefined
+
+            // Check if we have an overlay handler, and if so, make sure we add this layer below the bottom layer
+            if (this.overlayHandler) {
+                addLayerBeforeId = this.overlayHandler.getBottomLayerId()
+            }
         }
         if (background.isOverlay) {
             // This is an overlay, so we want to add it on top of everything
@@ -203,11 +211,20 @@ class SingleBackgroundHandler {
 export default class RasterLayerHandler {
     private _singleLayerHandlers: Record<string, SingleBackgroundHandler> = {}
 
-    constructor(map: Store<MLMap>, background: UIEventSource<RasterLayerPolygon | undefined>) {
+    constructor(
+        map: Store<MLMap>,
+        background: UIEventSource<RasterLayerPolygon | undefined>,
+        overlayHandler: OverlayHandler
+    ) {
         background.addCallbackAndRunD((l) => {
             const key = l.properties.id
             if (!this._singleLayerHandlers[key]) {
-                this._singleLayerHandlers[key] = new SingleBackgroundHandler(map, l, background)
+                this._singleLayerHandlers[key] = new SingleBackgroundHandler(
+                    map,
+                    l,
+                    background,
+                    overlayHandler
+                )
             }
         })
     }
@@ -265,7 +282,6 @@ export default class RasterLayerHandler {
 
 /**
  * Class that handles overlays and their order
- * TODO: Currently if an osm-based map is added, it will be added on top of the overlays, so they're invisible.
  */
 export class OverlayHandler {
     private _map: Store<MLMap>
@@ -326,6 +342,7 @@ export class OverlayHandler {
                     this._map,
                     layer,
                     new UIEventSource(layer),
+                    this,
                     new UIEventSource(addBeforeId)
                 )
             } else {
@@ -334,5 +351,14 @@ export class OverlayHandler {
                 this._handlers[key].addBeforeId.setData(addBeforeId)
             }
         })
+    }
+
+    /**
+     * Find the id of the bottom layer
+     *
+     * @returns The id of the bottom layer, or undefined if there are no layers
+     */
+    public getBottomLayerId(): string | undefined {
+        return this._backgrounds.data[0]?.properties.id
     }
 }
