@@ -68,7 +68,7 @@
       ) {
         return
       } else {
-        mapproperties.overlays.setData([...mapproperties.overlays.data, rasterLayer.data])
+        mapproperties.overlays.setData([rasterLayer.data, ...mapproperties.overlays.data])
       }
     } else {
       mapproperties.rasterLayer.setData(rasterLayer.data)

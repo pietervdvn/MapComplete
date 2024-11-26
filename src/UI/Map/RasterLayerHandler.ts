@@ -12,6 +12,7 @@ class SingleBackgroundHandler {
     private _background: UIEventSource<RasterLayerPolygon | undefined>
     private readonly _targetLayer: RasterLayerPolygon
     private _deactivationTime: Date = undefined
+    public addBeforeId: UIEventSource<string | undefined>
 
     /**
      * Deactivate a layer after 60 seconds
@@ -22,11 +23,13 @@ class SingleBackgroundHandler {
     constructor(
         map: Store<MLMap>,
         targetLayer: RasterLayerPolygon,
-        background: UIEventSource<RasterLayerPolygon | undefined>
+        background: UIEventSource<RasterLayerPolygon | undefined>,
+        addBeforeId?: UIEventSource<string | undefined>
     ) {
         this._targetLayer = targetLayer
         this._map = map
         this._background = background
+        this.addBeforeId = addBeforeId ?? new UIEventSource<string | undefined>(undefined)
 
         background.addCallback(async () => {
             await this.update()
@@ -38,6 +41,17 @@ class SingleBackgroundHandler {
             await this.update()
             map.on("moveend", () => this.onMove(map))
             map.on("zoomend", () => this.onMove(map))
+        })
+        this.addBeforeId.addCallbackAndRunD(async () => {
+            // We need to remove the layer and re-add it (if it exists) to change the order
+            const map = this._map.data
+            if (!map) {
+                return
+            }
+            if (map.getLayer(<string>this._targetLayer.properties.id)) {
+                map.removeLayer(<string>this._targetLayer.properties.id)
+            }
+            this.tryEnable()
         })
     }
 
@@ -124,7 +138,6 @@ class SingleBackgroundHandler {
         if (background.isOverlay) {
             // This is an overlay, so we want to add it on top of everything
             addLayerBeforeId = undefined
-            console.debug("Yaay, we're adding an overlay", background.id)
         }
 
         if (!map.getSource(background.id)) {
@@ -249,6 +262,11 @@ export default class RasterLayerHandler {
         return url
     }
 }
+
+/**
+ * Class that handles overlays and their order
+ * TODO: Currently if an osm-based map is added, it will be added on top of the overlays, so they're invisible.
+ */
 export class OverlayHandler {
     private _map: Store<MLMap>
     private _backgrounds: UIEventSource<RasterLayerPolygon[]>
@@ -258,7 +276,7 @@ export class OverlayHandler {
         this._map = map
         this._backgrounds = backgrounds
 
-        backgrounds.addCallback(async () => {
+        backgrounds.addCallbackAndRunD(async () => {
             await this.update()
         })
         map.addCallbackAndRunD(async (map) => {
@@ -276,28 +294,44 @@ export class OverlayHandler {
     }
 
     private async update() {
-        const newTargets: RasterLayerPolygon[] = this._backgrounds.data
+        const newTargets: RasterLayerPolygon[] = this._backgrounds.data.slice().reverse()
         const existingKeys = Object.keys(this._handlers)
 
-        // Remove handlers for layers that are no longer present
+        // Hide handlers for layers that are no longer in the list
         existingKeys.forEach((key) => {
             if (!newTargets.find((layer) => layer.properties.id === key)) {
                 this._handlers[key].opacity.setData(0)
-                delete this._handlers[key]
             }
         })
 
         // Add or update handlers for new or existing layers
         newTargets.forEach((layer) => {
             const key = layer.properties.id
+
+            // Make sure we set the correct order
+            // For our top overlay (first one in the list), this will be undefined
+            // For all other ones this will be the id of the previous one
+            let addBeforeId: string | undefined = undefined
+
+            if (newTargets[0].properties.id === key) {
+                addBeforeId = undefined
+            } else {
+                const previousLayer =
+                    newTargets[newTargets.findIndex((l) => l.properties.id === key) - 1]
+                addBeforeId = previousLayer.properties.id
+            }
+
             if (!this._handlers[key]) {
                 this._handlers[key] = new SingleBackgroundHandler(
                     this._map,
                     layer,
-                    new UIEventSource(layer)
+                    new UIEventSource(layer),
+                    new UIEventSource(addBeforeId)
                 )
             } else {
+                this._handlers[key].opacity.setData(1)
                 this._handlers[key].update()
+                this._handlers[key].addBeforeId.setData(addBeforeId)
             }
         })
     }
