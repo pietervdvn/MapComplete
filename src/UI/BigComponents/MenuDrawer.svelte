@@ -64,9 +64,11 @@
   let location = state.mapProperties.location
   export let onlyLink: boolean
   const t = Translations.t.general.menu
-  let shown = new UIEventSource(state.guistate.pageStates.menu.data)
+  let shown = new UIEventSource(state.guistate.pageStates.menu.data || !onlyLink)
   state.guistate.pageStates.menu.addCallback(isShown => {
-    console.log("Setting", isShown)
+    if(!onlyLink){
+      return true
+    }
     if(isShown){
       shown.setData(true)
     }else{
