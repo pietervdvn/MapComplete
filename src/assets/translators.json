@@ -17,7 +17,7 @@
       "contributor": "Anonymous"
     },
     {
-      "commits": 105,
+      "commits": 106,
       "contributor": "mcliquid"
     },
     {
@@ -30,11 +30,11 @@
     },
     {
       "commits": 70,
-      "contributor": "danieldegroot2"
+      "contributor": "mike140"
     },
     {
-      "commits": 67,
-      "contributor": "mike140"
+      "commits": 70,
+      "contributor": "danieldegroot2"
     },
     {
       "commits": 53,
@@ -57,7 +57,7 @@
       "contributor": "Supaplex"
     },
     {
-      "commits": 37,
+      "commits": 38,
       "contributor": "Lucas"
     },
     {
@@ -147,6 +147,10 @@
     {
       "commits": 11,
       "contributor": "Túllio Franca"
+    },
+    {
+      "commits": 10,
+      "contributor": "small"
     },
     {
       "commits": 10,
@@ -274,6 +278,10 @@
     },
     {
       "commits": 5,
+      "contributor": "foxandpotatoes"
+    },
+    {
+      "commits": 5,
       "contributor": "Ignacio"
     },
     {
@@ -322,6 +330,10 @@
     },
     {
       "commits": 4,
+      "contributor": "Weblate Admin"
+    },
+    {
+      "commits": 4,
       "contributor": "André Marcelo Alvarenga"
     },
     {
@@ -343,6 +355,10 @@
     {
       "commits": 4,
       "contributor": "Jan Zabel"
+    },
+    {
+      "commits": 3,
+      "contributor": "Eric Armijo"
     },
     {
       "commits": 3,
@@ -390,10 +406,6 @@
     },
     {
       "commits": 3,
-      "contributor": "foxandpotatoes"
-    },
-    {
-      "commits": 3,
       "contributor": "Sasha"
     },
     {
@@ -427,10 +439,6 @@
     {
       "commits": 3,
       "contributor": "SiegbjornSitumeang"
-    },
-    {
-      "commits": 2,
-      "contributor": "Weblate Admin"
     },
     {
       "commits": 2,
@@ -530,10 +538,6 @@
     },
     {
       "commits": 2,
-      "contributor": "Eric Armijo"
-    },
-    {
-      "commits": 2,
       "contributor": "MeblIkea"
     },
     {
@@ -567,6 +571,18 @@
     {
       "commits": 2,
       "contributor": "Leo Alcaraz"
+    },
+    {
+      "commits": 1,
+      "contributor": "Héctor Ochoa Ortiz"
+    },
+    {
+      "commits": 1,
+      "contributor": "Gábor"
+    },
+    {
+      "commits": 1,
+      "contributor": "Roger"
     },
     {
       "commits": 1,

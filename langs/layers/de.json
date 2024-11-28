@@ -7659,20 +7659,6 @@
                 },
                 "question": "Wie lautet der Name der Apotheke?",
                 "render": "Der Name der Apotheke lautet {name}"
-            },
-            "wheelchair": {
-                "mappings": {
-                    "0": {
-                        "then": "Die Apotheke ist für Rollstuhlfahrer leicht zugänglich"
-                    },
-                    "1": {
-                        "then": "Die Apotheke ist für Rollstuhlfahrer nur schwer zugänglich"
-                    },
-                    "2": {
-                        "then": "Die Apotheke ist für Rollstuhlfahrer nur eingeschränkt zugänglich"
-                    }
-                },
-                "question": "Ist die Apotheke für Rollstuhlfahrer leicht zugänglich?"
             }
         },
         "title": {

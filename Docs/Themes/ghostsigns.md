@@ -20,6 +20,7 @@ Available languages:
  - es
  - cs
  - uk
+ - nl
 
 # Table of contents
 
@@ -542,6 +543,25 @@ This tagrendering has labels
 | artwork-artwork_type.11 | Azulejo (Spanish decorative tilework) | artwork_type=azulejo |
 | artwork-artwork_type.12 | Tilework | artwork_type=tilework |
 | artwork-artwork_type.13 | Woodcarving | artwork_type=woodcarving |
+
+| id | question | osmTags |
+-----|-----|----- |
+| memorial-type.0 | *What type of memorial is this?* (default) |  |
+| memorial-type.1 | This is a statue | memorial=statue |
+| memorial-type.2 | This is a plaque | memorial=plaque |
+| memorial-type.3 | This is a commemorative bench | memorial=bench |
+| memorial-type.4 | This is a ghost bike - a bicycle painted white to remember a cyclist whom deceased because of a car crash | memorial=ghost_bike |
+| memorial-type.5 | This is a stolperstein (stumbing stone) | memorial=stolperstein |
+| memorial-type.6 | This is a stele | memorial=stele |
+| memorial-type.7 | This is a memorial stone | memorial=stone |
+| memorial-type.8 | This is a bust | memorial=bust |
+| memorial-type.9 | This is a sculpture | memorial=sculpture |
+| memorial-type.10 | This is an obelisk | memorial=obelisk |
+| memorial-type.11 | This is a cross | memorial=cross |
+| memorial-type.12 | This is a blue plaque | memorial=blue_plaque |
+| memorial-type.13 | This is a historic tank, permanently placed in public space as memorial | memorial=tank |
+| memorial-type.14 | This is a memorial tree | memorial=tree |
+| memorial-type.15 | This is a gravestone; the person is buried here | historic=tomb |
 
 
 

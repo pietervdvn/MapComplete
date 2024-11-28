@@ -20,7 +20,7 @@ This layer shows surveillance cameras and allows a contributor to update informa
   - [camera_direction](#camera_direction)
   - [Operator](#operator)
   - [Surveillance type: public, outdoor, indoor](#surveillance-type-public,-outdoor,-indoor)
-  - [is_indoor](#is_indoor)
+  - [camera_is_indoor](#camera_is_indoor)
   - [Level](#level)
   - [Surveillance:zone](#surveillancezone)
   - [camera:mount](#cameramount)
@@ -109,22 +109,20 @@ The question is `What kind of surveillance is this camera?`
  -  *An outdoor, yet private area is surveilled (e.g. a parking lot, a fuel station, courtyard, entrance, private driveway, …)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:surveillance' target='_blank'>surveillance</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surveillance%3Doutdoor' target='_blank'>outdoor</a>
  -  *A private indoor area is surveilled, e.g. a shop, a private underground parking, …* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:surveillance' target='_blank'>surveillance</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surveillance%3Dindoor' target='_blank'>indoor</a>
 
-### is_indoor
+### camera_is_indoor
 
-The question is `Is the public space surveilled by this camera an indoor or outdoor space?`
+The question is `Is this camera located inside or outside?`
 
  -  *This camera is located indoors* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dyes' target='_blank'>yes</a>
  -  *This camera is located outdoors* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dno' target='_blank'>no</a>
  -  *This camera is probably located outdoors* is shown if with indoor=. _This option cannot be chosen as answer_
-
-This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:surveillance:type' target='_blank'>surveillance:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surveillance:type%3Dpublic' target='_blank'>public</a>
 
 ### Level
 
 The question is `On which level is this camera located?`
 *Located on level {level}* is shown if `level` is set
 
-This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:surveillance:type' target='_blank'>surveillance:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surveillance:type%3Dye' target='_blank'>ye</a>
+This tagrendering is only visible in the popup if the following condition is met: (<a href='https://wiki.openstreetmap.org/wiki/Key:indoor' target='_blank'>indoor</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:surveillance' target='_blank'>surveillance</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surveillance%3Dindoor' target='_blank'>indoor</a>) & (<a href='https://wiki.openstreetmap.org/wiki/Key:surveillance:type' target='_blank'>surveillance:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surveillance:type%3Dalpr' target='_blank'>alpr</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:surveillance:type' target='_blank'>surveillance:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surveillance:type%3Dcamera' target='_blank'>camera</a>) & camera:type!=doorbell
 
 ### Surveillance:zone
 

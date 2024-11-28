@@ -1144,6 +1144,10 @@
           "then": "<b>split_point</b> (builtin) - Layer rendering the little scissors for the minimap in the 'splitRoadWizard'"
         },
         {
+          "if": "value=split_road",
+          "then": "<b>split_road</b> (builtin) - Layer rendering the way to split in the 'splitRoadWizard'. This one is used instead of the variable rendering by the themes themselves, as they might not always be very visible"
+        },
+        {
           "if": "value=sport_pitch",
           "then": "<b>sport_pitch</b> (builtin) - A sport pitch"
         },
@@ -13846,6 +13850,10 @@
         {
           "if": "value=split_point",
           "then": "split_point - Layer rendering the little scissors for the minimap in the 'splitRoadWizard'"
+        },
+        {
+          "if": "value=split_road",
+          "then": "split_road - Layer rendering the way to split in the 'splitRoadWizard'. This one is used instead of the variable rendering by the themes themselves, as they might not always be very visible"
         },
         {
           "if": "value=sport_pitch",
@@ -35586,6 +35594,10 @@
         {
           "if": "value=split_point",
           "then": "split_point - Layer rendering the little scissors for the minimap in the 'splitRoadWizard'"
+        },
+        {
+          "if": "value=split_road",
+          "then": "split_road - Layer rendering the way to split in the 'splitRoadWizard'. This one is used instead of the variable rendering by the themes themselves, as they might not always be very visible"
         },
         {
           "if": "value=sport_pitch",

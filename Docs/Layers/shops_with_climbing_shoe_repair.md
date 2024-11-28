@@ -587,7 +587,7 @@ The question is `How much does it cost to use the cleaning service?`
  -  *The cleaning service is free to use* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning:fee' target='_blank'>service:bicycle:cleaning:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning:fee%3Dno' target='_blank'>no</a>
  -  *Free to use* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning:fee' target='_blank'>service:bicycle:cleaning:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning:fee%3Dyes' target='_blank'>yes</a> & service:bicycle:cleaning:charge=. _This option cannot be chosen as answer_
 
-This tagrendering is only visible in the popup if the following condition is met: amenity!=bike_wash & amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+
+This tagrendering is only visible in the popup if the following condition is met: amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+
 
 ### internet
 

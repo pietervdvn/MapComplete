@@ -178,7 +178,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
         this.map = new UIEventSource<MlMap>(undefined)
         const geolocationState = new GeoLocationState()
         const initial = new InitialMapPositioning(layout, geolocationState)
-        this.mapProperties = new MapLibreAdaptor(this.map, initial, {correctClick: 20})
+        this.mapProperties = new MapLibreAdaptor(this.map, initial, { correctClick: 20 })
 
         this.featureSwitchIsTesting = this.featureSwitches.featureSwitchIsTesting
         this.featureSwitchUserbadge = this.featureSwitches.featureSwitchEnableLogin
@@ -557,9 +557,12 @@ export default class ThemeViewState implements SpecialVisualizationState {
         })
     }
 
-    private setSelectedElement(feature: Feature){
+    private setSelectedElement(feature: Feature) {
         const current = this.selectedElement.data
-        if(current?.properties?.id !== undefined && current.properties.id === feature.properties.id  ){
+        if (
+            current?.properties?.id !== undefined &&
+            current.properties.id === feature.properties.id
+        ) {
             console.log("Not setting selected, same id", current, feature)
             return // already set
         }
@@ -1002,13 +1005,12 @@ export default class ThemeViewState implements SpecialVisualizationState {
             this.userRelatedState.recentlyVisitedSearch.add(r)
         })
 
-        this.mapProperties.lastClickLocation.addCallbackD(lastClick => {
-            if(lastClick.mode !== "left" || !lastClick.nearestFeature){
+        this.mapProperties.lastClickLocation.addCallbackD((lastClick) => {
+            if (lastClick.mode !== "left" || !lastClick.nearestFeature) {
                 return
             }
             const f = lastClick.nearestFeature
             this.setSelectedElement(f)
-
         })
 
         this.userRelatedState.showScale.addCallbackAndRun((showScale) => {

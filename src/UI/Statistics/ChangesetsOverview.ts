@@ -27,9 +27,9 @@ export interface ChangeSetData extends Feature<Polygon> {
         delete: number
         area: number
         is_suspect: boolean
-      //  harmful: any
+        //  harmful: any
         checked: boolean
-     //   check_date: any
+        //   check_date: any
         host: string
         theme: string
         imagery: string
@@ -61,7 +61,7 @@ export class ChangesetsOverview {
         "testing mapcomplete 0.0.0": "buurtnatuur",
         entrances: "indoor",
         "https://raw.githubusercontent.com/osmbe/play/master/mapcomplete/geveltuinen/geveltuinen.json":
-            "geveltuintjes"
+            "geveltuintjes",
     }
 
     public static readonly valuesToSum: ReadonlyArray<string> = [
@@ -88,7 +88,7 @@ export class ChangesetsOverview {
         return new ChangesetsOverview(meta?.map((cs) => ChangesetsOverview.cleanChangesetData(cs)))
     }
 
-    private static cleanChangesetData(cs: ChangeSetData & OsmFeature): (ChangeSetData & OsmFeature) {
+    private static cleanChangesetData(cs: ChangeSetData & OsmFeature): ChangeSetData & OsmFeature {
         if (cs === undefined) {
             return undefined
         }

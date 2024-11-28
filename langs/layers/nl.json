@@ -6288,20 +6288,6 @@
                 },
                 "question": "Wat is de naam van deze apotheek?",
                 "render": "Deze apotheek heet {name}"
-            },
-            "wheelchair": {
-                "mappings": {
-                    "0": {
-                        "then": "Deze apotheek is makkelijk te bereiken met een rolstoel"
-                    },
-                    "1": {
-                        "then": "Deze apotheek is moeilijk te bereiken met een rolstoel"
-                    },
-                    "2": {
-                        "then": "Deze apotheek is bereikbaar met een rolstoel, maar het is niet makkelijk"
-                    }
-                },
-                "question": "Is het mogelijk om deze apotheek te bereiken met een rolstoel?"
             }
         },
         "title": {

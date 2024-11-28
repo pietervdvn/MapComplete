@@ -7645,20 +7645,6 @@
                 },
                 "question": "¿Cuál es el nombre de la farmacia?",
                 "render": "Esta farmacia se llama {name}"
-            },
-            "wheelchair": {
-                "mappings": {
-                    "0": {
-                        "then": "Esta farmacia es de fácil acceso en silla de ruedas"
-                    },
-                    "1": {
-                        "then": "Esta farmacia es de difícil acceso en silla de ruedas"
-                    },
-                    "2": {
-                        "then": "Esta farmacia tiene acceso limitado para usuarios de silla de ruedas"
-                    }
-                },
-                "question": "¿Es esta farmacia de fácil acceso en silla de ruedas?"
             }
         },
         "title": {

@@ -18,10 +18,12 @@
           "icon": "circle",
           "color": {
             "render": "white",
-            "mappings": [{
-              "if": "reuse=yes",
-              "then": "#cccccc"
-            }]
+            "mappings": [
+              {
+                "if": "reuse=yes",
+                "then": "#cccccc"
+              }
+            ]
           }
         },
         {

@@ -8,9 +8,11 @@
    * Shows _all_ disabled questions
    */
   export let state
-  let layers = state.layout.layers.filter(l => l.isNormal())
+  let layers = state.layout.layers.filter((l) => l.isNormal())
 
-  let allDisabled = Stores.concat<string>(layers.map(l => state.userRelatedState.getThemeDisabled(state.layout.id, l.id))).map(l => [].concat(...l))
+  let allDisabled = Stores.concat<string>(
+    layers.map((l) => state.userRelatedState.getThemeDisabled(state.layout.id, l.id))
+  ).map((l) => [].concat(...l))
   const t = Translations.t.general.questions
 </script>
 

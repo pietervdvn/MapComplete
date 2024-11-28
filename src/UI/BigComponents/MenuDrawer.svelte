@@ -65,22 +65,24 @@
   export let onlyLink: boolean
   const t = Translations.t.general.menu
   let shown = new UIEventSource(state.guistate.pageStates.menu.data || !onlyLink)
-  state.guistate.pageStates.menu.addCallback(isShown => {
-    if(!onlyLink){
+  state.guistate.pageStates.menu.addCallback((isShown) => {
+    if (!onlyLink) {
       return true
     }
-    if(isShown){
+    if (isShown) {
       shown.setData(true)
-    }else{
+    } else {
       Utils.waitFor(250).then(() => {
         shown.setData(state.guistate.pageStates.menu.data)
       })
     }
   })
-
 </script>
 
-<div class="low-interaction flex h-screen flex-col gap-y-2 overflow-y-auto p-2 sm:gap-y-3 sm:p-3" class:hidden={!$shown}>
+<div
+  class="low-interaction flex h-screen flex-col gap-y-2 overflow-y-auto p-2 sm:gap-y-3 sm:p-3"
+  class:hidden={!$shown}
+>
   <div class="flex justify-between">
     <h2>
       <Tr t={t.title} />

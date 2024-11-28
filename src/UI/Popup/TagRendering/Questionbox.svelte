@@ -45,16 +45,15 @@
   }
 
   const baseQuestions = (layer?.tagRenderings ?? [])?.filter(
-    (tr) => allowed(tr.labels) && tr.question !== undefined,
+    (tr) => allowed(tr.labels) && tr.question !== undefined
   )
-
 
   /**
    * Ids of skipped questions
    */
   let skippedQuestions = new UIEventSource<Set<string>>(new Set<string>())
   let layerDisabledForTheme = state.userRelatedState.getThemeDisabled(state.theme.id, layer.id)
-  layerDisabledForTheme.addCallbackAndRunD(disabled => {
+  layerDisabledForTheme.addCallbackAndRunD((disabled) => {
     skippedQuestions.set(new Set(disabled.concat(Array.from(skippedQuestions.data))))
   })
   let questionboxElem: HTMLDivElement
@@ -78,10 +77,10 @@
       }
       return questionsToAsk
     },
-    [skippedQuestions],
+    [skippedQuestions]
   )
   let firstQuestion: UIEventSource<TagRenderingConfig> = new UIEventSource<TagRenderingConfig>(
-    undefined,
+    undefined
   )
   let allQuestionsToAsk: UIEventSource<TagRenderingConfig[]> = new UIEventSource<
     TagRenderingConfig[]
@@ -105,7 +104,6 @@
 
   let loginEnabled = state.featureSwitches.featureSwitchEnableLogin
   let debug = state.featureSwitches.featureSwitchIsDebugging
-
 
   function skip(question: { id: string }, didAnswer: boolean = false) {
     skippedQuestions.data.add(question.id) // Must use ID, the config object might be a copy of the original
@@ -131,13 +129,7 @@
     {#if $showAllQuestionsAtOnce}
       <div class="flex flex-col gap-y-1">
         {#each $allQuestionsToAsk as question (question.id)}
-          <TagRenderingQuestionDynamic
-            config={question}
-            {tags}
-            {selectedElement}
-            {state}
-            {layer}
-          />
+          <TagRenderingQuestionDynamic config={question} {tags} {selectedElement} {state} {layer} />
         {/each}
       </div>
     {:else if $firstQuestion !== undefined}
@@ -148,14 +140,14 @@
         {state}
         {tags}
         on:saved={() => {
-              skip($firstQuestion, true)
-            }}
+          skip($firstQuestion, true)
+        }}
       >
         <button
           class="secondary"
           on:click={() => {
-                skip($firstQuestion)
-              }}
+            skip($firstQuestion)
+          }}
           slot="cancel"
         >
           <Tr t={Translations.t.general.skip} />
@@ -170,7 +162,6 @@
     {/if}
 
     <div class="mt-4 mb-8">
-
       {#if skipped + answered > 0}
         <div class="flex justify-center">
           {#if answered === 0}
@@ -198,9 +189,9 @@
           {:else}
             <Tr
               t={Translations.t.general.questionBox.answeredMultipleSkippedMultiple.Subs({
-              answered,
-              skipped,
-            })}
+                answered,
+                skipped,
+              })}
             />
           {/if}
         </div>
@@ -215,7 +206,6 @@
           >
             <Tr t={Translations.t.general.questionBox.reactivate} />
           </button>
-
         {/if}
       {/if}
 
@@ -223,13 +213,12 @@
         <button
           class="w-full"
           on:click={() => {
-              skippedQuestions.setData(new Set())
-              skipped = 0
-            }}
+            skippedQuestions.setData(new Set())
+            skipped = 0
+          }}
         >
           Show the disabled questions for this object
         </button>
-
       {/if}
       {#if $debug}
         Skipped questions are {Array.from($skippedQuestions).join(", ")}

@@ -28,7 +28,7 @@
     (s) =>
       (s === "yes" &&
         state?.userRelatedState?.osmConnection?.userDetails?.data?.csCount >=
-        Constants.userJourney.tagsVisibleAt) ||
+          Constants.userJourney.tagsVisibleAt) ||
       s === "always" ||
       s === "full"
   )
@@ -64,9 +64,9 @@
         <Tr t={filteredLayer.layerDef.name} />
 
         {#if $zoomlevel < layer.minzoom}
-        <span class="alert">
-          <Tr t={Translations.t.general.layerSelection.zoomInToSeeThisLayer} />
-        </span>
+          <span class="alert">
+            <Tr t={Translations.t.general.layerSelection.zoomInToSeeThisLayer} />
+          </span>
         {/if}
       </Checkbox>
     {/if}

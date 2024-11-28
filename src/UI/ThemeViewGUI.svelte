@@ -479,11 +479,7 @@
           state.selectedElement.setData(undefined)
         }}
       >
-        <SelectedElementView
-          {state}
-          layer={$selectedLayer}
-          selectedElement={$selectedElement}
-        />
+        <SelectedElementView {state} layer={$selectedLayer} selectedElement={$selectedElement} />
       </FloatOver>
     {/if}
   {/if}

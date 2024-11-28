@@ -2666,21 +2666,21 @@
     },
     {
       "key": "service:bicycle:cleaning:charge",
-      "description": "Layer 'Shop' shows and asks freeform values for key 'service:bicycle:cleaning:charge' (in the mapcomplete.org theme 'OnWheels') (This is only shown if amenity!=bike_wash & amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)"
+      "description": "Layer 'Shop' shows and asks freeform values for key 'service:bicycle:cleaning:charge' (in the mapcomplete.org theme 'OnWheels') (This is only shown if amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)"
     },
     {
       "key": "service:bicycle:cleaning:fee",
-      "description": "Layer 'Shop' shows service:bicycle:cleaning:fee=no with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if amenity!=bike_wash & amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)",
+      "description": "Layer 'Shop' shows service:bicycle:cleaning:fee=no with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels') (This is only shown if amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)",
       "value": "no"
     },
     {
       "key": "service:bicycle:cleaning:fee",
-      "description": "Layer 'Shop' shows service:bicycle:cleaning:fee=yes & service:bicycle:cleaning:charge= with a fixed text, namely 'Free to use' (in the mapcomplete.org theme 'OnWheels') (This is only shown if amenity!=bike_wash & amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)",
+      "description": "Layer 'Shop' shows service:bicycle:cleaning:fee=yes & service:bicycle:cleaning:charge= with a fixed text, namely 'Free to use' (in the mapcomplete.org theme 'OnWheels') (This is only shown if amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)",
       "value": "yes"
     },
     {
       "key": "service:bicycle:cleaning:charge",
-      "description": "Layer 'Shop' shows service:bicycle:cleaning:fee=yes & service:bicycle:cleaning:charge= with a fixed text, namely 'Free to use' (in the mapcomplete.org theme 'OnWheels') Picking this answer will delete the key service:bicycle:cleaning:charge. (This is only shown if amenity!=bike_wash & amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)",
+      "description": "Layer 'Shop' shows service:bicycle:cleaning:fee=yes & service:bicycle:cleaning:charge= with a fixed text, namely 'Free to use' (in the mapcomplete.org theme 'OnWheels') Picking this answer will delete the key service:bicycle:cleaning:charge. (This is only shown if amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)",
       "value": ""
     },
     {
@@ -3191,21 +3191,6 @@
       "key": "payment:qr_code",
       "description": "Layer 'Pharmacies' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
       "value": "yes"
-    },
-    {
-      "key": "wheelchair",
-      "description": "Layer 'Pharmacies' shows wheelchair=yes with a fixed text, namely 'This pharmacy is easy to access on a wheelchair' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
-      "value": "yes"
-    },
-    {
-      "key": "wheelchair",
-      "description": "Layer 'Pharmacies' shows wheelchair=no with a fixed text, namely 'This pharmacy is hard to access on a wheelchair' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
-      "value": "no"
-    },
-    {
-      "key": "wheelchair",
-      "description": "Layer 'Pharmacies' shows wheelchair=limited with a fixed text, namely 'This pharmacy has limited access for wheelchair users' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
-      "value": "limited"
     },
     {
       "key": "amenity",

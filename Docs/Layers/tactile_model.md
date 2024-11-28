@@ -28,6 +28,7 @@ Layer showing tactile models, three-dimensional models of the surrounding area.
 ## Themes using this layer
 
  - [blind_osm](https://mapcomplete.org/blind_osm)
+ - [maps](https://mapcomplete.org/maps)
  - [personal](https://mapcomplete.org/personal)
 
 ## Presets

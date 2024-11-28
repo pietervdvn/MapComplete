@@ -304,10 +304,11 @@
         "loginToStart": "Meld je aan om deze vraag te beantwoorden",
         "loginWithOpenStreetMap": "Aanmelden met OpenStreetMap",
         "logout": "Afmelden",
+        "mappingsAreHidden": "Sommige opties zijn verborgen. Gebruik zoeken om meer opties te tonen.",
         "menu": {
+            "aboutCurrentThemeTitle": "Over deze kaart",
             "aboutMapComplete": "Over MapComplete",
             "filter": "Filter data",
-            "aboutCurrentThemeTitle": "Over deze kaart",
             "moreUtilsTitle": "Ontdek meer",
             "openHereDifferentApp": "Open de huidige locatie in andere toepassingen",
             "showIntroduction": "Toon introductie",
@@ -372,6 +373,7 @@
             "versionInfo": "v{version} - gemaakt op {date}"
         },
         "pickLanguage": "Kies je taal",
+        "poweredByMapComplete": "Powered by MapComplete - crowdsourced, thematische kaarten met OpenStreetMap",
         "poweredByOsm": "Gebouwd met OpenStreetMap",
         "questionBox": {
             "answeredMultiple": "Je beantwoordde {answered} vragen",
@@ -387,6 +389,7 @@
         },
         "readYourMessages": "Gelieve eerst je berichten op OpenStreetMap te lezen alvorens nieuwe objecten toe te voegen.",
         "removeLocationHistory": "Verwijder de geschiedenis aan locaties",
+        "retry": "Opnieuw proberen",
         "returnToTheMap": "Ga terug naar de kaart",
         "save": "Opslaan",
         "screenToSmall": "Open {theme} in een nieuw venster",
@@ -400,37 +403,40 @@
             "error": "Niet gelukt…",
             "instructions": "Gebruik de zoekbalk om locaties, filters of om andere kaarten te zoeken",
             "locations": "Plaatsen",
+            "nMoreFilters": "{n} meer",
             "nothing": "Niets gevonden…",
+            "nothingFor": "Geen resultaten gevonden voor {term}",
             "otherMaps": "Andere kaarten",
             "pickFilter": "Kies een filter",
             "recentThemes": "Recent bezochte kaarten",
             "recents": "Recent bekeken plaatsen",
             "search": "Zoek naar een locatie, filter of kaart",
             "searchShort": "Zoek…",
-            "searching": "Aan het zoeken…",
-            "nMoreFilters": "{n} meer",
-            "nothingFor": "Geen resultaten gevonden voor {term}"
+            "searching": "Aan het zoeken…"
         },
+        "searchAnswer": "Zoek een optie…",
+        "seeIndex": "Zie het overzich van alle thematische kaarten",
         "share": "Deel deze locatie",
         "sharescreen": {
             "copiedToClipboard": "Link gekopieerd naar klembord",
+            "documentation": "Voor meer informatie over beschikbare URL-parameters, <a href='https://github.com/pietervdvn/MapComplete/blob/develop/Docs/URL_Parameters.md' target='_blank'>raadpleeg de documentatie</a>",
             "embedIntro": "<h3>Plaats dit op je website</h3>Voeg dit kaartje toe op je eigen website.<br/>We moedigen dit zelfs aan - je hoeft geen toestemming te vragen.<br/> Het is gratis en zal dat altijd blijven. Hoe meer het gebruikt wordt, hoe waardevoller",
-            "fsUserbadge": "Activeer de login-knop en dus de mogelijkheid om data aan te passen",
-            "fsWelcomeMessage": "Toon het welkomstbericht en de bijhorende tabbladen",
-            "intro": "Kopieer onderstaande link om deze kaart naar vrienden en familie door te sturen:",
-            "thanksForSharing": "Bedankt om te delen!",
-            "title": "Deel deze kaart",
             "fsBackground": "Wisselende achtergronden inschakelen",
             "fsFilter": "De mogelijkheid inschakelen om te wisselen tussen lagen en filters",
             "fsGeolocation": "Geolocatie inschakelen",
+            "fsUserbadge": "Activeer de login-knop en dus de mogelijkheid om data aan te passen",
+            "fsWelcomeMessage": "Toon het welkomstbericht en de bijhorende tabbladen",
+            "intro": "Kopieer onderstaande link om deze kaart naar vrienden en familie door te sturen:",
             "openInOtherApplications": "De huidige locatie openen met een andere kaarttoepassing",
             "openLayers": "Open het menu met lagen en filters",
             "options": "Opties voor delen",
             "stateIsIncluded": "De huidige status van de lagen en filters is opgenomen in de gedeelde link en iframe.",
-            "documentation": "Voor meer informatie over beschikbare URL-parameters, <a href='https://github.com/pietervdvn/MapComplete/blob/develop/Docs/URL_Parameters.md' target='_blank'>raadpleeg de documentatie</a>"
+            "thanksForSharing": "Bedankt om te delen!",
+            "title": "Deel deze kaart"
         },
         "skip": "Sla deze vraag over",
         "testing": "Testmode - wijzigingen worden niet opgeslaan",
+        "uploadError": "Fout tijdens het uploaden van wijzigingen: {error}",
         "uploadGpx": {
             "choosePermission": "Kies hieronder of je traject gedeeld moet worden:",
             "confirm": "Bevestig upload",
@@ -458,6 +464,9 @@
             "uploadFinished": "Je traject is geupload!",
             "uploading": "Traject uploaden…"
         },
+        "uploadPending": "{count} wijzigingen in behandeling",
+        "uploadPendingSingle": "Eén wijziging in behandeling",
+        "uploadingChanges": "Wijzigingen aan het uploaden…",
         "useSearch": "Gebruik de zoekfunctie hierboven om meer opties te zien",
         "visualFeedback": {
             "closestFeaturesAre": "{n} objecten in beeld.",
@@ -482,6 +491,8 @@
                 "straight": "vooruit"
             },
             "east": "Naar het oosten",
+            "fromGps": "{distance} {direction} van uw locatie",
+            "fromMapCenter": "{distance} {direction} van het midden van de kaart",
             "in": "Aan het inzoomen naar zoomlevel {z}",
             "islocked": "Bewegen vergrendeld rond je huidige locatie. Duw op de geolocatie-knop om te ontgrendelen.",
             "locked": "Bewegen vergrendeld rond jouw huidige locatie.",
@@ -494,10 +505,9 @@
             "unlocked": "Bewegen ontgrendeld",
             "viewportCenterCloseToGps": "De kaart is gecentreerd op je huidige GPS-locatie.",
             "viewportCenterDetails": "Het kaartbeeldcentrum is {distance} {bearing} vanaf je huidige locatie.",
-            "west": "Naar het westen",
-            "fromGps": "{distance} {direction} van uw locatie",
-            "fromMapCenter": "{distance} {direction} van het midden van de kaart"
+            "west": "Naar het westen"
         },
+        "waitingForGeopermission": "Aan het wachten op toestemming om geolocatie te gebruiken…",
         "waitingForLocation": "Je locatie wordt gezocht…",
         "weekdays": {
             "abbreviations": {
@@ -539,17 +549,7 @@
             "searchToShort": "Je zoekopdracht is te kort, vul een langere tekst in",
             "searchWikidata": "Zoek op Wikidata",
             "wikipediaboxTitle": "Wikipedia"
-        },
-        "retry": "Opnieuw proberen",
-        "searchAnswer": "Zoek een optie…",
-        "seeIndex": "Zie het overzich van alle thematische kaarten",
-        "uploadError": "Fout tijdens het uploaden van wijzigingen: {error}",
-        "mappingsAreHidden": "Sommige opties zijn verborgen. Gebruik zoeken om meer opties te tonen.",
-        "poweredByMapComplete": "Powered by MapComplete - crowdsourced, thematische kaarten met OpenStreetMap",
-        "uploadPending": "{count} wijzigingen in behandeling",
-        "uploadPendingSingle": "Eén wijziging in behandeling",
-        "uploadingChanges": "Wijzigingen aan het uploaden…",
-        "waitingForGeopermission": "Aan het wachten op toestemming om geolocatie te gebruiken…"
+        }
     },
     "hotkeyDocumentation": {
         "action": "Actie",
@@ -557,21 +557,21 @@
         "geolocate": "Centreer de map op je huidige positie of zoom verder in naar de huidige positie. Vraagt geolocatie-toegang",
         "intro": "MapComplete ondersteunt de volgende sneltoetsen:",
         "key": "Toets-combinatie",
+        "openFilterPanel": "Opent het POI-lagen- en filterpaneel",
         "openLayersPanel": "Open het paneel met lagen en filters",
+        "queryCurrentLocation": "Toon het adres dichtst bij het midden van de kaart",
         "selectAerial": "Verander de achtergrondlaag naar luchtfoto's of satelietfoto's. Wisselt tussen de twee beste, beschikbare lagen",
+        "selectFavourites": "Open de pagina met favorieten",
+        "selectItem": "Selecteer het POI het dichtst bij het midden van de kaart (crosshair). Alleen wanneer toetsenbordnavigatie wordt gebruikt",
+        "selectItem2": "Selecteer het POI het op één na dichtst bij het midden van de kaart (crosshair). Alleen wanneer toetsenbordnavigatie wordt gebruikt",
+        "selectItem3": "Selecteer het POI het op twee na dichtst bij het midden van de kaart (crosshair). Alleen wanneer toetsenbordnavigatie wordt gebruikt",
         "selectMap": "Gebruik een niet-OpenStreetMap-gebaseerde kaart als achtergrond. Wisselt tussen de twee beste, beschikbare lagen",
         "selectMapnik": "Gebruik OpenStreetMap-carto als achtergrondlaag",
         "selectOsmbasedmap": "Gebruik een OpenStreetMap-gebaseerde achtergrondkaart (of schakel de achtergrond-rasterlaag uit)",
         "selectSearch": "Selecteer de zoekbalk om locaties te zoeken",
-        "title": "Sneltoetsen",
-        "queryCurrentLocation": "Toon het adres dichtst bij het midden van de kaart",
-        "selectFavourites": "Open de pagina met favorieten",
-        "selectItem2": "Selecteer het POI het op één na dichtst bij het midden van de kaart (crosshair). Alleen wanneer toetsenbordnavigatie wordt gebruikt",
         "shakePhone": "Schudden met je telefoon",
-        "translationMode": "Vertaalmodus in- of uitschakelen",
-        "openFilterPanel": "Opent het POI-lagen- en filterpaneel",
-        "selectItem": "Selecteer het POI het dichtst bij het midden van de kaart (crosshair). Alleen wanneer toetsenbordnavigatie wordt gebruikt",
-        "selectItem3": "Selecteer het POI het op twee na dichtst bij het midden van de kaart (crosshair). Alleen wanneer toetsenbordnavigatie wordt gebruikt"
+        "title": "Sneltoetsen",
+        "translationMode": "Vertaalmodus in- of uitschakelen"
     },
     "image": {
         "addPicture": "Voeg foto toe",
@@ -580,48 +580,48 @@
         "dontDelete": "Annuleren",
         "isDeleted": "Verwijderd",
         "nearby": {
-            "link": "Deze afbeelding toont het object",
-            "seeNearby": "Bekijk foto's in de buurt",
-            "title": "Straatafbeeldingen uit de buurt",
-            "failed": "Afbeeldingen ophalen van {service} mislukt",
             "close": "Paneel met nabije afbeeldingen samenvouwen",
-            "noNearbyImages": "Geen afbeeldingen in de buurt gevonden"
+            "failed": "Afbeeldingen ophalen van {service} mislukt",
+            "link": "Deze afbeelding toont het object",
+            "noNearbyImages": "Geen afbeeldingen in de buurt gevonden",
+            "seeNearby": "Bekijk foto's in de buurt",
+            "title": "Straatafbeeldingen uit de buurt"
         },
-        "pleaseLogin": "Gelieve je aan te melden om een foto toe te voegen",
-        "respectPrivacy": "Voeg geen Google Maps, Google Streetview of foto's met auteursrechten toe.",
-        "toBig": "Je afbeelding is te groot, namelijk {actual_size}. Gelieve afbeeldingen van maximaal {max_size} te gebruiken",
-        "uploadDone": "Je afbeelding is toegevoegd. Bedankt om te helpen!",
-        "uploadFailed": "Afbeelding uploaden mislukt. Heb je internet? Gebruik je Brave of UMatrix? Dan moet je derde partijen toelaten.",
-        "uploadMultipleDone": "{count} afbeeldingen zijn toegevoegd. Bedankt voor je bijdrage!",
-        "uploadingMultiple": "Bezig met {count} foto's te uploaden…",
-        "uploadingPicture": "Bezig met een foto te uploaden…",
         "panoramax": {
             "deletionRequested": "Het rapport is verzonden. Een moderator zal er binnenkort naar kijken",
             "freeform": "Is er andere relevante informatie?",
             "otherFreeform": "Waarom moet deze afbeelding worden verwijderd:",
+            "placeholder": "Leg uit waarom de foto verwijderd moet worden",
             "report": {
-                "blur_missing": "Op deze foto is een gezicht of nummerplaat niet geblurd",
                 "blur_excess": "Er is te geblurd, waardoor de foto onbruikbaar is",
+                "blur_missing": "Op deze foto is een gezicht of nummerplaat niet geblurd",
                 "copyright": "De foto bevat auteursrechtelijk beschermde inhoud",
+                "inappropriate": "Deze foto is ongepast (bevat naakt, roept op tot haat of is geen straatbeeld)",
                 "mislocated": "De foto is van een andere locatie",
                 "other": "Een andere reden, specificeer",
                 "picture_low_quality": "De foto is van lage kwaliteit",
-                "privacy": "De foto toont een privé-eigendom",
-                "inappropriate": "Deze foto is ongepast (bevat naakt, roept op tot haat of is geen straatbeeld)"
+                "privacy": "De foto toont een privé-eigendom"
             },
             "requestDeletion": "Verwijdering van foto aanvragen",
-            "title": "Waarom zou dit beeld permanent verwijderd moeten worden?",
-            "placeholder": "Leg uit waarom de foto verwijderd moet worden"
+            "title": "Waarom zou dit beeld permanent verwijderd moeten worden?"
         },
+        "pleaseLogin": "Gelieve je aan te melden om een foto toe te voegen",
         "processing": "De server is je beeld aan het verwerken",
+        "respectPrivacy": "Voeg geen Google Maps, Google Streetview of foto's met auteursrechten toe.",
+        "toBig": "Je afbeelding is te groot, namelijk {actual_size}. Gelieve afbeeldingen van maximaal {max_size} te gebruiken",
         "unlink": {
             "button": "Link naar foto verwijderen",
-            "title": "Link naar deze afbeelding verwijderen?",
-            "explanation": "Door de link naar deze afbeelding te verwijderen, wordt deze niet meer getoond bij dit object. De afbeelding zal nog steeds verschijnen bij nabije afbeeldingen en mogelijk ook andere objecten."
+            "explanation": "Door de link naar deze afbeelding te verwijderen, wordt deze niet meer getoond bij dit object. De afbeelding zal nog steeds verschijnen bij nabije afbeeldingen en mogelijk ook andere objecten.",
+            "title": "Link naar deze afbeelding verwijderen?"
         },
         "upload": {
             "failReasons": "Mogelijk heb je geen verbinding meer met het internet"
-        }
+        },
+        "uploadDone": "Je afbeelding is toegevoegd. Bedankt om te helpen!",
+        "uploadFailed": "Afbeelding uploaden mislukt. Heb je internet? Gebruik je Brave of UMatrix? Dan moet je derde partijen toelaten.",
+        "uploadMultipleDone": "{count} afbeeldingen zijn toegevoegd. Bedankt voor je bijdrage!",
+        "uploadingMultiple": "Bezig met {count} foto's te uploaden…",
+        "uploadingPicture": "Bezig met een foto te uploaden…"
     },
     "importInspector": {
         "title": "Inspecteer en beheer importeer-notas"

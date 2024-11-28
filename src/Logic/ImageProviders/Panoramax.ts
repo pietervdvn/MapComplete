@@ -17,7 +17,7 @@ export default class PanoramaxImageProvider extends ImageProvider {
     private static defaultPanoramax = new AuthorizedPanoramax(
         Constants.panoramax.url,
         Constants.panoramax.token,
-        3000,
+        3000
     )
 
     public defaultKeyPrefixes: string[] = ["panoramax"]
@@ -30,7 +30,7 @@ export default class PanoramaxImageProvider extends ImageProvider {
         location?: {
             lon: number
             lat: number
-        },
+        }
     ): BaseUIElement {
         const p = new Panoramax(img.host)
         return new Link(
@@ -39,7 +39,7 @@ export default class PanoramaxImageProvider extends ImageProvider {
                 imageId: img?.id,
                 location,
             }),
-            true,
+            true
         )
     }
 
@@ -141,7 +141,7 @@ export default class PanoramaxImageProvider extends ImageProvider {
                     img?.status !== undefined &&
                     img?.status !== "ready" &&
                     img?.status !== "broken" &&
-                    img?.status !== "hidden",
+                    img?.status !== "hidden"
             )
         }
 
@@ -200,7 +200,7 @@ export class PanoramaxUploader implements ImageUploader {
         author: string,
         noblur: boolean = false,
         sequenceId?: string,
-        datetime?: string,
+        datetime?: string
     ): Promise<{
         key: string
         value: string
@@ -214,25 +214,34 @@ export class PanoramaxUploader implements ImageUploader {
             const tags = await ExifReader.load(blob)
             const [[latD], [latM], [latS, latSDenom]] = <
                 [[number, number], [number, number], [number, number]]
-                >tags?.GPSLatitude?.value
+            >tags?.GPSLatitude?.value
             const [[lonD], [lonM], [lonS, lonSDenom]] = <
                 [[number, number], [number, number], [number, number]]
-                >tags?.GPSLongitude?.value
+            >tags?.GPSLongitude?.value
 
             const exifLat = latD + latM / 60 + latS / (3600 * latSDenom)
             const exifLon = lonD + lonM / 60 + lonS / (3600 * lonSDenom)
-            if (typeof exifLat === "number" && !isNaN(exifLat) && typeof exifLon === "number" && !isNaN(exifLon)
-                && !(exifLat === 0 && exifLon === 0)) {
+            if (
+                typeof exifLat === "number" &&
+                !isNaN(exifLat) &&
+                typeof exifLon === "number" &&
+                !isNaN(exifLon) &&
+                !(exifLat === 0 && exifLon === 0)
+            ) {
                 lat = exifLat
                 lon = exifLon
             }
             const [date, time] = tags.DateTime.value[0].split(" ")
             const exifDatetime = new Date(date.replaceAll(":", "-") + "T" + time)
-            if(exifDatetime.getFullYear() ===  1970){
+            if (exifDatetime.getFullYear() === 1970) {
                 // The data probably got reset to the epoch
                 // we don't use the value
-                console.log("Datetime from picture is probably invalid:", exifDatetime, "using 'now' instead")
-            }else{
+                console.log(
+                    "Datetime from picture is probably invalid:",
+                    exifDatetime,
+                    "using 'now' instead"
+                )
+            } else {
                 datetime = exifDatetime.toISOString()
             }
             console.log("Tags are", tags)

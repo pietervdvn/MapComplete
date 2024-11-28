@@ -61,11 +61,11 @@
     const changedProperties = TagUtils.changeAsProperties(selectedTags.asChange(tags?.data ?? {}))
     const deleteReason = changedProperties[DeleteConfig.deleteReasonKey]
     if (deleteReason) {
-
       let softDeletionTags: UploadableTag
-      if(hasSoftDeletion){
-        softDeletionTags = new And([deleteConfig.softDeletionTags,
-          ...layer.tagRenderings.flatMap(tr => tr.onSoftDelete ?? []),
+      if (hasSoftDeletion) {
+        softDeletionTags = new And([
+          deleteConfig.softDeletionTags,
+          ...layer.tagRenderings.flatMap((tr) => tr.onSoftDelete ?? []),
         ])
       }
 

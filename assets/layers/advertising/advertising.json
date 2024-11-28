@@ -240,7 +240,7 @@
           "en": "Totem",
           "de": "Totem",
           "cs": "Totem",
-          "nl": "Aanplakzuil",
+          "nl": "Reclamezuil",
           "fr": "Totem",
           "eu": "Totem",
           "pl": "Totem",
@@ -797,7 +797,7 @@
         "zh_Hans": "图腾",
         "it": "un totem",
         "uk": "тотем",
-        "nl": "een totem"
+        "nl": "eem reclamezuil"
       },
       "exampleImages": [
         "./assets/themes/advertising/AdvertisingTotem_004.jpg",
@@ -1139,7 +1139,8 @@
             "pl": "To jest totem",
             "pt_BR": "Isso é um totem",
             "zh_Hans": "这是一个图腾",
-            "pt": "Isto é um totem"
+            "pt": "Isto é um totem",
+            "nl": "Dit is een reclamezuil"
           },
           "icon": {
             "path": "./assets/themes/advertising/totem.svg",

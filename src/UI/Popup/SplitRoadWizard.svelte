@@ -88,7 +88,13 @@
   {:else if step === "splitting"}
     <div class="interactive border-interactive flex flex-col p-2">
       <div class="h-80 w-full">
-        <WaySplitMap {state} {splitPoints} {osmWay} {snapTolerance} mapProperties={{rasterLayer: state.mapProperties.rasterLayer}}/>
+        <WaySplitMap
+          {state}
+          {splitPoints}
+          {osmWay}
+          {snapTolerance}
+          mapProperties={{ rasterLayer: state.mapProperties.rasterLayer }}
+        />
       </div>
       <div class="flex w-full flex-wrap-reverse md:flex-nowrap">
         <BackButton

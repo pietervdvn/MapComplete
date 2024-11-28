@@ -50,7 +50,7 @@
   }
 
   :global(.dots-menu > path) {
-        fill: var(--button-background-hover);
+    fill: var(--button-background-hover);
     transition: fill 350ms linear;
     cursor: pointer;
   }
@@ -73,9 +73,9 @@
     background-color: white;
   }
 
-    .transition-background {
-        transition: background-color 150ms linear;
-    }
+  .transition-background {
+    transition: background-color 150ms linear;
+  }
 
   .transition-background.collapsed {
     background-color: #00000000;

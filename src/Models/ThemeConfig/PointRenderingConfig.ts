@@ -41,7 +41,7 @@ export default class PointRenderingConfig extends WithContextLoader {
         "end",
         "projected_centerpoint",
         "polygon_centroid",
-        "waypoints"
+        "waypoints",
     ])
     public readonly location: Set<
         | "point"

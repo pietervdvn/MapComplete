@@ -2116,7 +2116,6 @@ export default class SpecialVisualizations {
                 constr(state) {
                     return new SvelteUIElement(DisabledQuestions, { state })
                 },
-
             },
         ]
 

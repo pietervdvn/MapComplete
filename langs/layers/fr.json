@@ -4744,20 +4744,6 @@
                 },
                 "question": "Quel est le nom de cette pharmacie ?",
                 "render": "Cette pharmacie s'appelle {name}"
-            },
-            "wheelchair": {
-                "mappings": {
-                    "0": {
-                        "then": "Cette pharmacie est facile d'accès en chaise roulante"
-                    },
-                    "1": {
-                        "then": "Cette pharmacie est difficilement accessible en chaise roulante"
-                    },
-                    "2": {
-                        "then": "L'accès à cette pharmacie est limité en chaise roulante"
-                    }
-                },
-                "question": "Cette pharmacie est-elle facilement accessible en chaise roulante ?"
             }
         },
         "title": {

@@ -93,7 +93,7 @@
       return !m.hideInAnswer.matchesProperties(tgs)
     })
     selectedMapping = mappings?.findIndex(
-      (mapping) => mapping.if.matchesProperties(tgs) || mapping.alsoShowIf?.matchesProperties(tgs),
+      (mapping) => mapping.if.matchesProperties(tgs) || mapping.alsoShowIf?.matchesProperties(tgs)
     )
     if (selectedMapping < 0) {
       selectedMapping = undefined
@@ -201,7 +201,7 @@
       if (freeformValue?.length > 0) {
         selectedMapping = config.mappings.length
       }
-    }),
+    })
   )
 
   $: {
@@ -219,7 +219,7 @@
           $freeformInput,
           selectedMapping,
           checkedMappings,
-          tags.data,
+          tags.data
         )
         if (featureSwitchIsDebugging?.data) {
           console.log(
@@ -231,7 +231,7 @@
               currentTags: tags.data,
             },
             " --> ",
-            selectedTags,
+            selectedTags
           )
         }
       } catch (e) {
@@ -253,7 +253,7 @@
         selectedTags = new And([...selectedTags.and, ...extraTagsArray])
       } else {
         console.error(
-          "selectedTags is not of type Tag or And, it is a " + JSON.stringify(selectedTags),
+          "selectedTags is not of type Tag or And, it is a " + JSON.stringify(selectedTags)
         )
       }
     }
@@ -322,7 +322,7 @@
     onDestroy(
       state.osmConnection?.userDetails?.addCallbackAndRun((ud) => {
         numberOfCs = ud.csCount
-      }),
+      })
     )
   }
 
@@ -351,7 +351,7 @@
   }
 
   function enableQuestion() {
-    const newList = disabledInTheme.data?.filter(id => id !== config.id)
+    const newList = disabledInTheme.data?.filter((id) => id !== config.id)
     disabledInTheme.set(newList)
     menuIsOpened.set(false)
   }
@@ -359,7 +359,6 @@
 
 {#if question !== undefined}
   <div class={clss}>
-
     {#if layer.isNormal()}
       <LoginToggle {state}>
         <DotMenu hideBackground={true} open={menuIsOpened}>

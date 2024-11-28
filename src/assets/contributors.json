@@ -1,7 +1,7 @@
 {
   "contributors": [
     {
-      "commits": 8594,
+      "commits": 8650,
       "contributor": "Pieter Vander Vennet"
     },
     {
@@ -13,7 +13,7 @@
       "contributor": "Tobias"
     },
     {
-      "commits": 41,
+      "commits": 42,
       "contributor": "dependabot[bot]"
     },
     {
@@ -179,6 +179,10 @@
     {
       "commits": 3,
       "contributor": "Léo Villeveygoux"
+    },
+    {
+      "commits": 2,
+      "contributor": "Jens Köcke"
     },
     {
       "commits": 2,

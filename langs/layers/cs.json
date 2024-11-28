@@ -6378,20 +6378,6 @@
                 },
                 "question": "Jak se lékárna jmenuje?",
                 "render": "Tato lékárna se jmenuje {name}"
-            },
-            "wheelchair": {
-                "mappings": {
-                    "0": {
-                        "then": "Tato lékárna je snadno přístupná na invalidním vozíku"
-                    },
-                    "1": {
-                        "then": "Tato lékárna je těžko přístupná na invalidním vozíku"
-                    },
-                    "2": {
-                        "then": "Tato lékárna má omezený přístup pro vozíčkáře"
-                    }
-                },
-                "question": "Je tato lékárna snadno přístupná na invalidním vozíku?"
             }
         },
         "title": {
