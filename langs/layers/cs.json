@@ -2304,6 +2304,50 @@
                         },
                         "question": "Jaké napětí mají zástrčky s {{description}} ?"
                     }
+                },
+                "rewrite": {
+                    "into": {
+                        "6": {
+                            "2": "<b>Tesla Supercharger</b>"
+                        }
+                    }
+                }
+            },
+            "Network": {
+                "question": "Je tato nabíjecí stanice součástí sítě?",
+                "mappings": {
+                    "1": {
+                        "then": "Není součástí větší sítě"
+                    }
+                }
+            }
+        },
+        "filter": {
+            "0": {
+                "options": {
+                    "1": {
+                        "question": "Nabíjecí stanice pro kola"
+                    },
+                    "2": {
+                        "question": "Nabíjecí stanice pro auta"
+                    },
+                    "0": {
+                        "question": "Všechny typy vozidel"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Pouze funkční nabíjecí stanice"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Všechny konektory"
+                    }
                 }
             }
         }
@@ -2628,7 +2672,8 @@
         },
         "title": {
             "render": "Lezecká příležitost?"
-        }
+        },
+        "snapName": "zeď, útes nebo skála"
     },
     "climbing_route": {
         "description": "Jedna lezecká cesta a její vlastnosti. Některé vlastnosti jsou odvozeny z obsahujících prvků",
@@ -2688,6 +2733,10 @@
             "1": {
                 "description": "Veřejně viditelné hodiny umístěné na stěně",
                 "title": "hodiny na stěně"
+            },
+            "2": {
+                "description": "Veřejně viditelné hodiny namontované přímo na stěnu",
+                "title": "nástěnné hodiny, namontované přímo na stěnu"
             }
         },
         "tagRenderings": {
@@ -2781,6 +2830,9 @@
                     },
                     "4": {
                         "then": "Tyto hodiny jsou na zemi"
+                    },
+                    "2": {
+                        "then": "Tyto hodiny jsou připevněné přímo na zeď"
                     }
                 },
                 "question": "Jakým způsobem jsou hodiny namontovány?"
@@ -2812,6 +2864,19 @@
                     }
                 },
                 "question": "Jak viditelné jsou tyto hodiny?"
+            },
+            "indoor": {
+                "override": {
+                    "mappings": {
+                        "1": {
+                            "then": "Tyto hodiny jsou venku"
+                        },
+                        "0": {
+                            "then": "Tyto hodiny jsou uvnitř"
+                        }
+                    },
+                    "question": "Jsou tyto hodiny uvnitř?"
+                }
             }
         },
         "title": {
@@ -2973,6 +3038,46 @@
                     }
                 },
                 "question": "Má tento semafor vibrační signály pro usnadnění přecházení? (obvykle se nachází ve spodní části tlačítka pro přecházení)"
+            },
+            "markings": {
+                "mappings": {
+                    "1": {
+                        "then": "Tento přechod má označení zebra"
+                    },
+                    "11": {
+                        "then": "Tento přechod má dvojité značení zebry"
+                    },
+                    "12": {
+                        "then": "Tento přejezd má na silnici piktogramy"
+                    },
+                    "14": {
+                        "then": "Tento přechod má dvojité čáry na obou stranách přechodu"
+                    },
+                    "2": {
+                        "then": "Tento přejezd má značení neznámého typu"
+                    },
+                    "3": {
+                        "then": "Tento přechod má čáry na obou stranách přechodu"
+                    },
+                    "4": {
+                        "then": "Tento přechod má na obou stranách čáry a spojovací pruhy"
+                    },
+                    "5": {
+                        "then": "Tento přechod má po obou stranách přerušované čáry"
+                    },
+                    "6": {
+                        "then": "Tento přechod má tečkované čáry na obou stranách přechodu"
+                    },
+                    "0": {
+                        "then": "Tento přechod nemá žádné značení"
+                    },
+                    "10": {
+                        "then": "Tento přechod má označení zebry ve střídavých barvách"
+                    },
+                    "13": {
+                        "then": "Tento přechod má na obou stranách čáry a spojovací pruhy, přičemž v každém pruhu je přerušení"
+                    }
+                }
             }
         },
         "title": {
@@ -3373,7 +3478,8 @@
                 }
             },
             "render": "Cesta"
-        }
+        },
+        "snapName": "silnice nebo cyklostezka"
     },
     "defibrillator": {
         "description": "Vrstva zobrazující defibrilátory, které lze použít v případě nouze. To zahrnuje veřejné defibrilátory, ale také defibrilátory, které mohou vyžadovat personál, aby přinesl skutečné zařízení",
@@ -7246,6 +7352,18 @@
                     }
                 },
                 "question": "Jaká je odpovídající entita Wikidata?"
+            },
+            "qr_code": {
+                "render": {
+                    "after": "Naskenováním tohoto kódu otevřete toto umístění na jiném zařízení"
+                }
+            },
+            "share": {
+                "render": {
+                    "special": {
+                        "text": "Sdílet tuto lokalitu"
+                    }
+                }
             }
         }
     },
@@ -7681,6 +7799,39 @@
                 "question": "Zaměřuje se tato škola na studenty se speciálními potřebami? Jaké stavební vybavení má tato škola?",
                 "questionHint": "Ad hoc opatření nestačí k tomu, aby se škola považovala za školu pro žáky se speciálními vzdělávacími potřebami",
                 "render": "Tato škola má zařízení pro studenty se {school:for}"
+            },
+            "pedagogy": {
+                "mappings": {
+                    "1": {
+                        "then": "Tato škola využívá Montessori metodu vzdělávání"
+                    },
+                    "2": {
+                        "then": "Tato škola je spojena s Freinet Modern School Movement"
+                    },
+                    "4": {
+                        "then": "Tato škola využívá filozofii vzdělávání Steiner/Waldorf"
+                    },
+                    "5": {
+                        "then": "Tato škola využívá koncept výuky podle Daltonského plánu"
+                    },
+                    "6": {
+                        "then": "Tato škola využívá venkovní výuku"
+                    },
+                    "7": {
+                        "then": "Tato škola využívá přístup Reggio Emilia"
+                    },
+                    "8": {
+                        "then": "Tato škola používá systém Sudbury"
+                    },
+                    "0": {
+                        "then": "Tato škola nepoužívá specifickou pedagogiku"
+                    },
+                    "3": {
+                        "then": "Tato škola využívá koncept výuky Jenaplan"
+                    }
+                },
+                "question": "Jaká pedagogická teorie je na této škole aplikována?",
+                "render": "Tato škola používá {pedagogy}"
             }
         },
         "title": {
@@ -7729,7 +7880,8 @@
         },
         "title": {
             "render": "Přístřešek"
-        }
+        },
+        "snapName": "úkryt"
     },
     "shops": {
         "deletion": {
@@ -7766,7 +7918,8 @@
                         "then": "Tento obchod nepronajímá kola"
                     }
                 },
-                "question": "Pronajímá tento obchod kola?"
+                "question": "Pronajímá tento obchod kola?",
+                "questionHint": "Jedná se o pronájem např. turisté, kteří potřebují kolo. Některé opravny jízdních kol nabízejí jízdní kolo k použití při opravě kola, ale u této otázky se to nepovažuje za pronájem."
             },
             "bike_pump_service": {
                 "mappings": {
@@ -7847,7 +8000,12 @@
             "id_presets.shop_types": {
                 "override": {
                     "question": "Co je to za obchod?",
-                    "render": "Toto je {shop}"
+                    "render": "Toto je {shop}",
+                    "+mappings": {
+                        "0": {
+                            "then": "Půjčovna jízdních kol"
+                        }
+                    }
                 }
             },
             "organic": {
@@ -7885,11 +8043,54 @@
                 "question": "Prodává tento obchod použité zboží?"
             },
             "sells_new_bikes": {
-                "question": "Prodává tento obchod jízdní kola?"
+                "question": "Prodává tento obchod jízdní kola?",
+                "mappings": {
+                    "0": {
+                        "then": "Tento obchod prodává nová kola"
+                    },
+                    "1": {
+                        "then": "Tento obchod neprodává nová kola"
+                    }
+                }
             },
             "shops-name": {
                 "question": "Jak se jmenuje tento obchod?",
                 "render": "Tento obchod se jmenuje <i>{name}</i>"
+            },
+            "brand": {
+                "mappings": {
+                    "0": {
+                        "then": "Tento obchod nemá konkrétní značku, není součástí většího řetězce"
+                    }
+                },
+                "question": "Jaká je značka tohoto obchodu?",
+                "render": "Část <b>{brand}</b>"
+            },
+            "copyshop-binding": {
+                "mappings": {
+                    "0": {
+                        "then": "Tento obchod váže papíry do brožury"
+                    },
+                    "1": {
+                        "then": "Tento obchod váže knihy"
+                    }
+                },
+                "questionHint": "Váže tento obchod svazek stránek do malé knihy, např. hřebenem, spirálou, drátem nebo lepením?",
+                "question": "Nabízí tento obchod službu vazby?"
+            },
+            "key_cutter": {
+                "mappings": {
+                    "0": {
+                        "then": "Tento obchod se také specializuje na výrobu klíčů"
+                    },
+                    "2": {
+                        "then": "Tyto obchody nenabízejí výrobu klíčů jako službu"
+                    },
+                    "1": {
+                        "then": "Tento obchod nabízí výrobu klíčů jako službu"
+                    }
+                },
+                "question": "Nabízí tento obchod výrobu klíčů?"
             }
         },
         "title": {
@@ -8005,7 +8206,9 @@
                 },
                 "render": "Povrch je <b>{surface}</b>"
             }
-        }
+        },
+        "description": "Všechny cesty bez aut",
+        "name": "Stezky, silnice bez aut a pomalé cesty"
     },
     "souvenir_note": {
         "tagRenderings": {
@@ -9647,6 +9850,13 @@
                         "then": "Našli jsme odkaz na to, co vypadá jako účet mastodon, ale je neověřený. <a href='https://www.openstreetmap.org/profile/edit' target='_blank' rel='noopener'>Upravte popis svého profilu</a> a umístěte tam následující: <span class='code '>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt"
                     }
                 }
+            },
+            "translation-thanks": {
+                "mappings": {
+                    "0": {
+                        "then": "Přispěli jste k překladu MapComplete pomocí {_translation_contributions} příspěvků! To je úžasné!"
+                    }
+                }
             }
         },
         "title": {
@@ -9775,6 +9985,9 @@
                     "into": {
                         "0": {
                             "1": "duše na kolo"
+                        },
+                        "2": {
+                            "1": "kondom"
                         }
                     }
                 }
@@ -9996,7 +10209,8 @@
         },
         "title": {
             "render": "Zeď nebo budova"
-        }
+        },
+        "snapName": "zeď nebo budova"
     },
     "waste_basket": {
         "description": "Jedná se o veřejný odpadkový koš, odpadkový koš, kam můžete vyhodit odpadky.",
@@ -10195,5 +10409,74 @@
             },
             "render": "větrná turbína"
         }
+    },
+    "cinema": {
+        "tagRenderings": {
+            "cinema_type": {
+                "mappings": {
+                    "1": {
+                        "then": "Toto je erotické kino promítající filmy pro dospělé"
+                    },
+                    "0": {
+                        "then": "Toto je normální kino promítající filmy pro všechny věkové kategorie"
+                    }
+                },
+                "question": "O jaký typ kina se jedná?"
+            }
+        },
+        "title": {
+            "render": "Kino"
+        },
+        "name": "Kino"
+    },
+    "route_marker": {
+        "title": {
+            "render": "Značka trasy"
+        },
+        "tagRenderings": {
+            "type": {
+                "question": "Pro jaký druh trasy je tato značka určena?",
+                "mappings": {
+                    "4": {
+                        "then": "Toto je značka trasy pro lyžařskou cestu."
+                    }
+                }
+            }
+        }
+    },
+    "ski_piste": {
+        "tagRenderings": {
+            "length": {
+                "render": "Tato část sjezdovky je dlouhá {_length:km} km"
+            },
+            "piste_difficulty": {
+                "mappings": {
+                    "0": {
+                        "then": "Nováček (zelená)"
+                    },
+                    "1": {
+                        "then": "Snadná (modrá)"
+                    },
+                    "2": {
+                        "then": "Střední (červená)"
+                    },
+                    "3": {
+                        "then": "Pokročilá(černá)"
+                    },
+                    "5": {
+                        "then": "Freeride"
+                    },
+                    "4": {
+                        "then": "Expert (oranžová/dvojitá černá)"
+                    }
+                },
+                "question": "Jaká je obtížnost této sjezdovky?"
+            }
+        },
+        "title": {
+            "render": "Lyžařská sjezdovka {name}"
+        },
+        "name": "Lyžařské a snowboardové sjezdovky",
+        "description": "Lyžařské a snowboardové sjezdovky"
     }
 }
