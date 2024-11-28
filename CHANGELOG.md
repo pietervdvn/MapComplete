@@ -13,7 +13,7 @@ All notable changes to this project will be documented in this file. See [standa
 ### Bug Fixes
 
 * add prevent-defaults ([afce4cb](https://github.com/pietervdvn/mapcomplete/commitsafce4cb5ba6c77c3e076b5390640eb5ed505cf64))
-* allow to items more then 50 meter if relocated ([f63f886](https://github.com/pietervdvn/mapcomplete/commitsf63f886ea57d5ca2fca352b455a4d833537422a5))
+* allow to move items more then 50 meter if relocated ([f63f886](https://github.com/pietervdvn/mapcomplete/commitsf63f886ea57d5ca2fca352b455a4d833537422a5))
 * apply refactoring ([140e966](https://github.com/pietervdvn/mapcomplete/commits140e966de12689b374acc1ec7feaf69065bb1250))
 * attempt to fix image upload on stripped coordinates, see [#2202](https://github.com/pietervdvn/MapComplete/issues/2202) ([a94a7ec](https://github.com/pietervdvn/mapcomplete/commitsa94a7ecd7162b5f49f689d77c5e40219ae7fda05))
 * don't show all items if favourites is shown ([3292307](https://github.com/pietervdvn/mapcomplete/commits32923072081961b5ef9b899267be99b354265d59))
