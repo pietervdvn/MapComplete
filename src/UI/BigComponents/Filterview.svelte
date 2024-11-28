@@ -28,9 +28,9 @@
     (s) =>
       (s === "yes" &&
         state?.userRelatedState?.osmConnection?.userDetails?.data?.csCount >=
-          Constants.userJourney.tagsVisibleAt) ||
+        Constants.userJourney.tagsVisibleAt) ||
       s === "always" ||
-      s === "full"
+      s === "full",
   )
 
   /**
@@ -79,9 +79,11 @@
             {#if filter.options.length === 1 && filter.options[0].fields.length === 0}
               <Checkbox selected={getBooleanStateFor(filter)}>
                 <Tr t={filter.options[0].question} />
+                {#if $showTags && filter.options[0].osmTags !== undefined}
                 <span class="subtle">
                   {filter.options[0].osmTags.asHumanString()}
                 </span>
+                {/if}
               </Checkbox>
             {/if}
 
