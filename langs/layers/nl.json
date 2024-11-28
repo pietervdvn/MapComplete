@@ -1733,9 +1733,6 @@
         },
         "title": {
             "mappings": {
-                "0": {
-                    "then": "{name}"
-                },
                 "1": {
                     "then": "Vogelkijkhut {name}"
                 },
@@ -5813,11 +5810,6 @@
             }
         },
         "title": {
-            "mappings": {
-                "0": {
-                    "then": "{name}"
-                }
-            },
             "render": "Natuurgebied"
         }
     },
@@ -6347,21 +6339,6 @@
         },
         "title": {
             "render": "Picknicktafel"
-        }
-    },
-    "play_forest": {
-        "description": "Een speelbos is een vrij toegankelijke zone in een bos",
-        "name": "Speelbossen",
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "{name}"
-                },
-                "1": {
-                    "then": "Speelbos {name}"
-                }
-            },
-            "render": "Speelbos"
         }
     },
     "playground": {
@@ -7898,9 +7875,6 @@
         },
         "title": {
             "mappings": {
-                "0": {
-                    "then": "{name}"
-                },
                 "1": {
                     "then": "Voetpad"
                 },
@@ -9913,25 +9887,13 @@
         }
     },
     "village_green": {
-        "description": "Een laag die dorpsgroen toont (gemeenschapsgroen, maar niet echt een park)",
-        "name": "Speelweide",
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "{name}"
-                }
-            },
-            "render": "Speelweide"
-        }
+        "description": "Een laag die dorpsgroen toont (gemeenschapsgroen, maar niet echt een park)"
     },
     "visitor_information_centre": {
         "description": "Een bezoekerscentrum biedt informatie over een specifieke attractie of bezienswaardigheid waar het is gevestigd.",
         "name": "Bezoekerscentrum",
         "title": {
             "mappings": {
-                "0": {
-                    "then": "{name:nl}"
-                },
                 "1": {
                     "then": "{name}"
                 }
