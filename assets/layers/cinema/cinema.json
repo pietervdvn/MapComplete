@@ -3,7 +3,8 @@
   "name": {
     "en": "Cinema",
     "de": "Kino",
-    "es": "Cine"
+    "es": "Cine",
+    "cs": "Kino"
   },
   "description": {
     "en": " A place showing movies (films), generally open to the public for a fee. Commonly referred to as a movie theater in the US",
@@ -26,7 +27,8 @@
     "render": {
       "en": "Cinema",
       "de": "Kino",
-      "es": "Cine"
+      "es": "Cine",
+      "cs": "Kino"
     }
   },
   "pointRendering": [
@@ -57,7 +59,8 @@
       "question": {
         "en": "What type of cinema is this?",
         "de": "Um welche Art von Kino handelt es sich?",
-        "es": "¿Qué tipo de cine es este?"
+        "es": "¿Qué tipo de cine es este?",
+        "cs": "O jaký typ kina se jedná?"
       },
       "mappings": [
         {
@@ -65,7 +68,8 @@
           "then": {
             "en": "This is a normal cinema showing movies for all ages",
             "de": "Dies ist ein normales Kino, das Filme für alle Altersgruppen zeigt",
-            "es": "Este es un cine normal que proyecta películas para todas las edades"
+            "es": "Este es un cine normal que proyecta películas para todas las edades",
+            "cs": "Toto je normální kino promítající filmy pro všechny věkové kategorie"
           }
         },
         {
@@ -73,7 +77,8 @@
           "then": {
             "en": "This is an erotic cinema showing adult movies",
             "de": "Dies ist ein Sex-Kino, das Erwachsenenfilme zeigt",
-            "es": "Este es un cine erótico que proyecta películas para adultos"
+            "es": "Este es un cine erótico que proyecta películas para adultos",
+            "cs": "Toto je erotické kino promítající filmy pro dospělé"
           }
         }
       ]

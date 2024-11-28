@@ -833,6 +833,7 @@
                         }
                     }
                 },
+                "name": "Changeset centra",
                 "tagRenderings": {
                     "contributor": {
                         "question": "Který přispěvatel provedl tuto změnu?",
@@ -860,8 +861,7 @@
                 },
                 "title": {
                     "render": "Sada změn pro {theme}"
-                },
-                "name": "Changeset centra"
+                }
             },
             "1": {
                 "override": {

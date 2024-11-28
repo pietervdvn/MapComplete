@@ -1791,7 +1791,8 @@
               "en": "<b>Tesla Supercharger</b>",
               "nl": "<b>Tesla Supercharger</b>",
               "de": "<b>Tesla Supercharger</b>",
-              "es": "<b>Tesla Supercharger</b>"
+              "es": "<b>Tesla Supercharger</b>",
+              "cs": "<b>Tesla Supercharger</b>"
             },
             "Tesla-hpwc-model-s.svg",
             [
@@ -2586,7 +2587,8 @@
         "de": "Ist diese Ladestation Teil eines Netzwerks?",
         "es": "¿Este punto de carga forma parte de una red?",
         "pl": "Czy ta stacja ładowania jest częścią sieci?",
-        "uk": "Чи є ця зарядна станція частиною мережі?"
+        "uk": "Чи є ця зарядна станція частиною мережі?",
+        "cs": "Je tato nabíjecí stanice součástí sítě?"
       },
       "freeform": {
         "key": "network"
@@ -2610,7 +2612,8 @@
             "de": "Nicht Teil eines größeren Netzwerks",
             "es": "No forma parte de una red mayor",
             "pl": "Nie jest częścią większej sieci",
-            "uk": "Не є частиною великої мережі"
+            "uk": "Не є частиною великої мережі",
+            "cs": "Není součástí větší sítě"
           },
           "hideInAnswer": true
         },
@@ -3062,7 +3065,8 @@
             "de": "Ladestationen für alle Fahrzeugtypen",
             "es": "Todos los tipos de vehículos",
             "fr": "Tous les types de véhicules",
-            "it": "Tutti i tipi di veicoli"
+            "it": "Tutti i tipi di veicoli",
+            "cs": "Všechny typy vozidel"
           }
         },
         {
@@ -3073,7 +3077,8 @@
             "de": "Ladestationen für Fahrräder",
             "es": "Punto de carga para bicicletas",
             "fr": "Station de recharge pour vélos",
-            "it": "Stazione di ricarica per biciclette"
+            "it": "Stazione di ricarica per biciclette",
+            "cs": "Nabíjecí stanice pro kola"
           },
           "osmTags": "bicycle=yes"
         },
@@ -3085,7 +3090,8 @@
             "de": "Ladestationen für Autos",
             "es": "Punto de carga para coches",
             "fr": "Station de recharge pour voitures",
-            "it": "Stazione di ricarica per auto"
+            "it": "Stazione di ricarica per auto",
+            "cs": "Nabíjecí stanice pro auta"
           },
           "osmTags": {
             "or": [
@@ -3107,7 +3113,8 @@
             "de": "Nur Ladestationen in Betrieb",
             "es": "Solo puntos de carga en funcionamiento",
             "fr": "Seulement les stations de recharge qui fonctionnent",
-            "it": "Solo stazioni di ricarica funzionanti"
+            "it": "Solo stazioni di ricarica funzionanti",
+            "cs": "Pouze funkční nabíjecí stanice"
           },
           "osmTags": {
             "and": [
@@ -3128,7 +3135,8 @@
             "ca": "Tots els connectors",
             "de": "Alle Anschlüsse",
             "es": "Todos los conectores",
-            "it": "Tutti i connettori"
+            "it": "Tutti i connettori",
+            "cs": "Všechny konektory"
           }
         },
         {

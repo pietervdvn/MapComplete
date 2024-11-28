@@ -2925,7 +2925,8 @@
             "en": "Share this location",
             "nl": "Deel deze locatie",
             "de": "Standort teilen",
-            "es": "Compartir esta ubicación"
+            "es": "Compartir esta ubicación",
+            "cs": "Sdílet tuto lokalitu"
           }
         }
       }
@@ -2949,7 +2950,8 @@
           "da": "Skan denne kode for at åbne dette sted på en anden enhed",
           "hu": "Szkenneld be ezt a kódot, hogy egy másik eszközön is meg tudd nyitni a helyet",
           "uk": "Відскануйте цей код, щоб відкрити це місце на іншому пристрої",
-          "es": "Escanea este código para abrir esta ubicación en otro dispositivo"
+          "es": "Escanea este código para abrir esta ubicación en otro dispositivo",
+          "cs": "Naskenováním tohoto kódu otevřete toto umístění na jiném zařízení"
         }
       }
     },
