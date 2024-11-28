@@ -7,7 +7,7 @@
         "loadingData": "Data wordt geladen…",
         "noData": "Er zijn geen relevante kaart-objecten in de zichtbare regio",
         "ready": "Klaar!",
-        "retrying": "Data inladen mislukt - wordt opnieuw geprobeerd over {count} seconden",
+        "retrying": "Data inladen mislukt. Nieuwe poging binnen {count} seconden…",
         "zoomIn": "Zoom in om de data te zien en te bewerken"
     },
     "communityIndex": {
@@ -93,7 +93,7 @@
         "title": "Je favoriete locaties"
     },
     "flyer": {
-        "aerial": "Deze kaart gebruikt luchtfoto's van het Agentschap Informatie Vlaanderen als achtergrond.\nOok het GRB is beschikbaar als achtergrondlaag.",
+        "aerial": "Deze kaart gebruikt luchtfoto's van het Agentschap Informatie Vlaanderen als achtergrond. Ook het GRB is beschikbaar als achtergrondlaag",
         "callToAction": "Probeer het uit op mapcomplete.org",
         "cyclofix": "Fietspompen, -winkels, -bandenautomaten en drinkwaterkraantjes vind je op Cyclofix",
         "description": "Een horizontale A4 flyer om MapComplete te promoten",
@@ -102,16 +102,16 @@
             "intro": "De gebruiker krijgt eerst een kaart met interessepunten te zien. Klik je op een punt, dan wordt de interface met informatie over het interessepunt geopend.",
             "title": "Hoe ziet de interface eruit?"
         },
-        "examples": "Online zijn verschillende kaarten met diverse thema's beschikbaar, zoals gezondheidszorg, binnenruimtes, rolstoeltoegankelijkheid, afvalcontainers, boekenruilkasten, regenboog-zebrapaden,...\nEnkele zijn hier afgeprint.\n\nOntdek ze allemaal op mapcomplete.org",
+        "examples": "Er zijn veel thematische kaarten , waarvan er hier een paar worden getoond.\n\nOnline zijn er nog meer thematische kaarten zoals: gezondheidszorg, binnenruimtes, rolstoeltoegankelijkheid, afvalcontainers, boekenruilkasten, regenboog-zebrapaden,... Ontdek ze allemaal op mapcomplete.org",
         "fakeui": {
             "add_images": "Voeg foto's toe met een paar klikken",
             "attributes": "Attributen worden getoond op begrijpbare wijze",
             "edit": "Foute of verouderde gegevens? Aanpassen kan hier.",
-            "question": "Is een attribuut nog niet gekend?\nMapComplete toont een vraag",
+            "question": "Is een attribuut nog niet gekend? MapComplete toont een vraag",
             "see_images": "Toont afbeeldingen van eerdere bijdragers, Wikipedia, Mapillary, …",
             "wikipedia": "Gelinkte Wikipedia-artikelen worden getoond"
         },
-        "frontParagraph": "MapComplete is een web-applicatie om OpenStreetMap-data te tonen en aan te passen op thematische kaarten.\nHet maakt het mogelijk om open geodata te crowdsourcen en te managen op een makkelijke manier.\n\nNieuwe categorieën en attributen kunnen op vraag worden toegevoegd.",
+        "frontParagraph": "MapComplete is een eenvoudig te gebruiken webapplicatie voor het verzamelen van geodata in OpenStreetMap. Hiermee kunnen relevante gegevens op een open, crowdsourced en herbruikbare manier worden verzameld en beheerd.\n\nNieuwe categorieën en attributen kunnen op vraag worden toegevoegd.",
         "lines_too": "Lijnobjecten en polygonen worden ook getoond. Afbeeldingen en attributen daarvan kunnen toegevoegd en aangepast worden.",
         "mapcomplete": {
             "customize": "Wil je een versie op maat?\nWil je een versie in jullie huisstijl?\nWil je een nieuwe kaartlaag of functionaliteit?\nWil je een crowdsourcing-campagne opzetten?\nNeem contact op met pietervdvn@posteo.net voor meer info.",
@@ -584,10 +584,11 @@
         "selectSearch": "Selecteer de zoekbalk om locaties te zoeken",
         "shakePhone": "Schudden met je telefoon",
         "title": "Sneltoetsen",
-        "translationMode": "Vertaalmodus in- of uitschakelen"
+        "translationMode": "Vertaalmodus in- of uitschakelen",
+        "selectItemI": "Selecteer de POI die het op {i} na dichtst bij het midden van de kaart (crosshair) ligt. Alleen wanneer toetsenbordnavigatie wordt gebruikt"
     },
     "image": {
-        "addPicture": "Voeg foto toe",
+        "addPicture": "Neem een foto",
         "currentLicense": "Je afbeelding wordt gepubliceerd met de {license}-licentie",
         "doDelete": "Verwijder afbeelding",
         "dontDelete": "Annuleren",
@@ -628,13 +629,28 @@
             "title": "Link naar deze afbeelding verwijderen?"
         },
         "upload": {
-            "failReasons": "Mogelijk heb je geen verbinding meer met het internet"
+            "failReasons": "Mogelijk heb je geen verbinding meer met het internet",
+            "multiple": {
+                "done": "{aantal} afbeeldingen zijn succesvol geüpload. Bedankt!",
+                "someFailed": "Sorry, we konden {aantal} afbeeldingen niet uploaden",
+                "uploading": "{count} afbeeldingen worden geüpload…",
+                "partiallyDone": "{aantal} afbeeldingen worden geüpload, {done} afbeeldingen zijn klaar…"
+            },
+            "noBlur": "Afbeeldingen worden niet geblurred. Fotografeer geen mensen",
+            "one": {
+                "done": "Je afbeelding is succesvol geüpload. Bedankt!",
+                "failed": "Sorry, we konden je afbeelding niet uploaden",
+                "uploading": "Je afbeelding wordt geüpload…",
+                "retrying": "Je afbeelding wordt opnieuw geüpload…"
+            },
+            "failReasonsAdvanced": "Je kunt er ook voor zorgen dat je browser en extensies API's van derden niet blokkeren."
         },
         "uploadDone": "Je afbeelding is toegevoegd. Bedankt om te helpen!",
         "uploadFailed": "Afbeelding uploaden mislukt. Heb je internet? Gebruik je Brave of UMatrix? Dan moet je derde partijen toelaten.",
         "uploadMultipleDone": "{count} afbeeldingen zijn toegevoegd. Bedankt voor je bijdrage!",
         "uploadingMultiple": "Bezig met {count} foto's te uploaden…",
-        "uploadingPicture": "Bezig met een foto te uploaden…"
+        "uploadingPicture": "Bezig met een foto te uploaden…",
+        "selectFile": "Selecteer een foto op je toestel"
     },
     "importInspector": {
         "title": "Inspecteer en beheer importeer-notas"
@@ -655,7 +671,9 @@
         "intro": "MapComplete is een OpenStreetMap-applicatie waar informatie over een specifiek thema bekeken en aangepast kan worden.",
         "logIn": "Log in om andere thema's te zien waar je al in bewerkt hebt",
         "pickTheme": "Kies hieronder een thema om te beginnen.",
-        "title": "Welkom bij MapComplete"
+        "title": "Welkom bij MapComplete",
+        "about": "Over MapComplete",
+        "learnMore": "Lees meer"
     },
     "move": {
         "cancel": "Annuleer verplaatsing",
@@ -676,7 +694,8 @@
         "pointIsMoved": "Dit punt is verplaatst",
         "reasons": {
             "reasonInaccurate": "De locatie van dit object is niet accuraat en moet een paar meter verschoven worden",
-            "reasonRelocation": "Dit object is verhuisd naar een andere locatie"
+            "reasonRelocation": "Dit object is verhuisd naar een andere locatie",
+            "reasonSnapTo": "Dit moet vastgeklikt worden aan {naam}"
         },
         "selectReason": "Waarom verplaats je dit object?",
         "whyMove": "Waarom verplaats je dit punt?",
@@ -733,7 +752,10 @@
         "poweredByPlantnet": "Met dank aan <a href='https://plantnet.org' target='_blank'>plantnet.org</a>",
         "querying": "Plantnet.org aan het bevragen met {length} afbeeldingen",
         "seeInfo": "Bekijk meer informatie van deze plantensoort",
-        "takeImages": "Neem afbeeldingen van de boom om de soort automatisch te herkennen"
+        "takeImages": "Neem afbeeldingen van de boom om de soort automatisch te herkennen",
+        "button": "Detecteer automatisch de plantsoort met behulp van Plantnet.org",
+        "done": "De soort is toegepast",
+        "tryAgain": "Selecteer een andere soort"
     },
     "privacy": {
         "editingIntro": "Wanneer je een wijziging maakt, wordt deze wijziging opgeslaan op OpenStreetMap. Dit is zichtbaar voor iedereen. Een wijzigingenset gemaakt met MapComplete bevat de volgende data:",
@@ -771,7 +793,22 @@
         "title": "{count} beoordelingen",
         "title_singular": "Eén beoordeling",
         "tos": "Als je je review publiceert, ga je akkoord met de <a href='https://mangrove.reviews/terms' target='_blank'>de gebruiksvoorwaarden en privacy policy van Mangrove.reviews</a>",
-        "write_a_comment": "Schrijf een beoordeling…"
+        "write_a_comment": "Schrijf een beoordeling…",
+        "i_am_affiliated_explanation": "Check of je een eigenaar, maker, werknemer, ... bent.",
+        "reviewing_as_anonymous": "Beoordeel anoniem",
+        "averageRating": "Gemiddelde score van {n} sterren",
+        "too_long": "Maximaal {max} tekens zijn toegestaan. Je recensie heeft {amount} tekens.",
+        "non_place_review": "Eén recensie gaat niet over een plaats en wordt hier niet getoond.",
+        "non_place_reviews": "{n} recensies gaan niet over een plaats en worden hier niet getoond.",
+        "question_opinion": "Hoe was je ervaring?",
+        "rate": "Geef {n} sterren",
+        "rated": "Kreeg {n} sterren",
+        "reviewPlaceholder": "Beschrijf je ervaring…",
+        "reviewing_as": "Beoordelen als {nickname}",
+        "reviews_bug": "Verwachtte je meer beoordelingen? Sommige beoordelingen worden niet getoond door een bug.",
+        "see_all": "Bekijk al je recensies op mangrove.reviews",
+        "your_reviews": "Je vorige recensies",
+        "your_reviews_empty": "We konden je eerdere beoordelingen niet vinden"
     },
     "split": {
         "cancel": "Annuleren",
@@ -813,7 +850,10 @@
             "noAt": "Een email-adres moet een @ hebben"
         },
         "fediverse": {
-            "invalidHost": "{host} is geen geldige hostnaam"
+            "invalidHost": "{host} is geen geldige hostnaam",
+            "feedback": "Een fediverse 'handle' bestaat uit @username@server.tld of is een link naar een profiel",
+            "description": "Een fediverse 'handle', vaak in de vorm @username@server.tld",
+            "onYourServer": "Bekijk en volg op uw server"
         },
         "float": {
             "description": "een getal",
@@ -853,10 +893,38 @@
         "url": {
             "aggregator": "{host} is een aggregator-website. Gebruik de officiele website indien mogelijk.",
             "description": "een link naar een webpagina",
-            "feedback": "Dit is geen geldige link"
+            "feedback": "Dit is geen geldige link",
+            "spamSite": "{host} staat bekend als een website van lage kwaliteit. Het gebruik van deze website is niet toegestaan."
         },
         "wikidata": {
-            "description": "Een Wikidata-code"
+            "description": "Een Wikidata-code",
+            "empty": "Voer enkele wikidata-items in",
+            "startsWithQ": "Een wikidata-identificator begint met Q gevolgd door een nummer"
+        },
+        "slope": {
+            "inputExplanation": "Leg je telefoon op de grond met de bovenkant naar de top van de helling.",
+            "inputIncorrect": "Voor een juiste meting moet je ervoor zorgen dat de pijl zich binnen het groene gebied bevindt."
+        },
+        "id": {
+            "description": "een identificatiemiddel",
+            "invalidCharacter": "Een id kan alleen letters, cijfers en underscores bevatten",
+            "shouldBeLonger": "Een id moet minstens 3 tekens lang zijn"
+        },
+        "regex": {
+            "description": "een reguliere expressie"
         }
+    },
+    "unknown": {
+        "removedKeys": "De volgende keys worden verwijderd:",
+        "markUnknown": "Markeer als onbekend",
+        "explanation": "Wis dit stukje informatie als het huidige antwoord onjuist is , maar de werkelijke waarde niet bekend is. Er wordt geen andere informatie verwijderd.",
+        "keep": "Antwoord behouden",
+        "clear": "Wis antwoord",
+        "title": "Als onbekend markeren?"
+    },
+    "preset_type": {
+        "typeDescription": "Dit is <b>{title}</b>. <div class='subtle'>{description}</div>",
+        "typeTitle": "DIt is <b>{title}</b>",
+        "question": "Van welk type is dit object?"
     }
 }
