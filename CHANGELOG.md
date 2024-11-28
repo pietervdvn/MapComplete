@@ -2,6 +2,33 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.47.11](https://github.com/pietervdvn/mapcomplete/compare/v0.47.10...v0.47.11) (2024-11-28)
+
+
+### Features
+
+* allow to disable questions (and to enable them again), fix [#256](https://github.com/pietervdvn/MapComplete/issues/256) ([93ebdd8](https://github.com/pietervdvn/mapcomplete/commits93ebdd8e1688d2424f0e67d03271d46b4c6640b9))
+
+
+### Bug Fixes
+
+* add prevent-defaults ([afce4cb](https://github.com/pietervdvn/mapcomplete/commitsafce4cb5ba6c77c3e076b5390640eb5ed505cf64))
+* allow to items more then 50 meter if relocated ([f63f886](https://github.com/pietervdvn/mapcomplete/commitsf63f886ea57d5ca2fca352b455a4d833537422a5))
+* apply refactoring ([140e966](https://github.com/pietervdvn/mapcomplete/commits140e966de12689b374acc1ec7feaf69065bb1250))
+* attempt to fix image upload on stripped coordinates, see [#2202](https://github.com/pietervdvn/MapComplete/issues/2202) ([a94a7ec](https://github.com/pietervdvn/mapcomplete/commitsa94a7ecd7162b5f49f689d77c5e40219ae7fda05))
+* don't show all items if favourites is shown ([3292307](https://github.com/pietervdvn/mapcomplete/commits32923072081961b5ef9b899267be99b354265d59))
+* fix [#2254](https://github.com/pietervdvn/MapComplete/issues/2254); an image carousel with a different key would not show up due to caching ([c0b11a8](https://github.com/pietervdvn/mapcomplete/commitsc0b11a81e91db1c4eb130db1a722e20211f4ba5e))
+* fix [#2272](https://github.com/pietervdvn/MapComplete/issues/2272) : correct link ([44355f5](https://github.com/pietervdvn/mapcomplete/commits44355f566762a234942b678a21b8686341b2087b))
+* fix [#2278](https://github.com/pietervdvn/MapComplete/issues/2278) ([540e2c2](https://github.com/pietervdvn/mapcomplete/commits540e2c227e5327a501c8ab46fc8c56d0d4bc27bc))
+* fix [#2281](https://github.com/pietervdvn/MapComplete/issues/2281) ([8ef7af6](https://github.com/pietervdvn/mapcomplete/commits8ef7af613f20f265386ccb3d301c43ff49108cb1))
+
+
+### Theme improvements
+
+* **maps:** add tactile maps and tactile models to map theme, fix [#2277](https://github.com/pietervdvn/MapComplete/issues/2277) ([12926e1](https://github.com/pietervdvn/mapcomplete/commits12926e1e9cc3fef81811b6df011f83e2013d3ad5))
+* **stairs:** fix [#2248](https://github.com/pietervdvn/MapComplete/issues/2248) ([a0c63b2](https://github.com/pietervdvn/mapcomplete/commitsa0c63b273423bef6a3aba1106880015b135e4542))
+* **surveillance:** fix tagging ([208d7ec](https://github.com/pietervdvn/mapcomplete/commits208d7ecf4e4386ddbd9d58a71a0b6e4fcb26beaa))
+
 ### [0.47.10](https://github.com/pietervdvn/mapcomplete/compare/v0.47.9...v0.47.10) (2024-11-14)
 
 
