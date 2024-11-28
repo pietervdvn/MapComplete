@@ -549,6 +549,19 @@
             "searchToShort": "Je zoekopdracht is te kort, vul een langere tekst in",
             "searchWikidata": "Zoek op Wikidata",
             "wikipediaboxTitle": "Wikipedia"
+        },
+        "questions": {
+            "disable": "Stel deze vraag niet opnieuw",
+            "emailIs": "Het e-mailadres van deze {category} is <a href='mailto:{email}' target='_blank'>{email}</a>",
+            "emailOf": "Wat is het e-mailadres van {category}?",
+            "noneDisabled": "Als je niet geïnteresseerd bent in een bepaald type vraag, kun je deze uitschakelen. Een vraag uitschakelen doe je door op de drie puntjes in de rechterbovenhoek te klikken en 'uitschakelen' te selecteren",
+            "disabledIntro": "Je hebt sommige typen vragen uitgeschakeld. Klik hier om een vraag weer in te schakelen",
+            "disabledTitle": "Uitgeschakelde vragen",
+            "enable": "Stel deze vraag voor alle kenmerken",
+            "phoneNumberIs": "Het telefoonnummer van deze {category} is <a href='tel:{phone}' target='_blank'>{phone}</a>",
+            "phoneNumberOf": "Wat is het telefoonnummer van {category}?",
+            "websiteIs": "Website: <a href='{website}' target='_blank'>{website}</a>",
+            "websiteOf": "Wat is de website van {category}?"
         }
     },
     "hotkeyDocumentation": {
