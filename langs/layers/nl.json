@@ -1733,9 +1733,6 @@
         },
         "title": {
             "mappings": {
-                "0": {
-                    "then": "{name}"
-                },
                 "1": {
                     "then": "Vogelkijkhut {name}"
                 },
@@ -5813,11 +5810,6 @@
             }
         },
         "title": {
-            "mappings": {
-                "0": {
-                    "then": "{name}"
-                }
-            },
             "render": "Natuurgebied"
         }
     },
@@ -6288,20 +6280,6 @@
                 },
                 "question": "Wat is de naam van deze apotheek?",
                 "render": "Deze apotheek heet {name}"
-            },
-            "wheelchair": {
-                "mappings": {
-                    "0": {
-                        "then": "Deze apotheek is makkelijk te bereiken met een rolstoel"
-                    },
-                    "1": {
-                        "then": "Deze apotheek is moeilijk te bereiken met een rolstoel"
-                    },
-                    "2": {
-                        "then": "Deze apotheek is bereikbaar met een rolstoel, maar het is niet makkelijk"
-                    }
-                },
-                "question": "Is het mogelijk om deze apotheek te bereiken met een rolstoel?"
             }
         },
         "title": {
@@ -6361,21 +6339,6 @@
         },
         "title": {
             "render": "Picknicktafel"
-        }
-    },
-    "play_forest": {
-        "description": "Een speelbos is een vrij toegankelijke zone in een bos",
-        "name": "Speelbossen",
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "{name}"
-                },
-                "1": {
-                    "then": "Speelbos {name}"
-                }
-            },
-            "render": "Speelbos"
         }
     },
     "playground": {
@@ -7912,9 +7875,6 @@
         },
         "title": {
             "mappings": {
-                "0": {
-                    "then": "{name}"
-                },
                 "1": {
                     "then": "Voetpad"
                 },
@@ -9927,25 +9887,13 @@
         }
     },
     "village_green": {
-        "description": "Een laag die dorpsgroen toont (gemeenschapsgroen, maar niet echt een park)",
-        "name": "Speelweide",
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "{name}"
-                }
-            },
-            "render": "Speelweide"
-        }
+        "description": "Een laag die dorpsgroen toont (gemeenschapsgroen, maar niet echt een park)"
     },
     "visitor_information_centre": {
         "description": "Een bezoekerscentrum biedt informatie over een specifieke attractie of bezienswaardigheid waar het is gevestigd.",
         "name": "Bezoekerscentrum",
         "title": {
             "mappings": {
-                "0": {
-                    "then": "{name:nl}"
-                },
                 "1": {
                     "then": "{name}"
                 }

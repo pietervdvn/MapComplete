@@ -8,7 +8,8 @@
     "ca": "Farmàcies",
     "fr": "Pharmacies",
     "cs": "Lékárny",
-    "es": "Farmacias"
+    "es": "Farmacias",
+    "uk": "Аптеки"
   },
   "description": {
     "en": "A layer showing pharmacies, which (probably) dispense prescription drugs",
@@ -162,7 +163,8 @@
             "fr": "A une drive",
             "ca": "Té autoservei",
             "cs": "Má průjezd",
-            "es": "¿Tiene servicio de auto-recogida?"
+            "es": "¿Tiene servicio de auto-recogida?",
+            "uk": "Має проїзд"
           },
           "osmTags": "drive_through=yes"
         }
@@ -179,7 +181,8 @@
             "fr": "Pharmacie pouvant délivrer des médicaments sous prescription",
             "ca": "Farmàcia que subministra medicaments amb recepta",
             "cs": "Lékárna schopná poskytovat léky na předpis",
-            "es": "¿La farmacia puede proporcionar medicamentos con receta?"
+            "es": "¿La farmacia puede proporcionar medicamentos con receta?",
+            "uk": "Аптека, здатна надавати рецептурні ліки"
           },
           "osmTags": "dispensing=yes"
         }

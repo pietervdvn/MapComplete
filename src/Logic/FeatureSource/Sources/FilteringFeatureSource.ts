@@ -61,7 +61,7 @@ export default class FilteringFeatureSource implements FeatureSource {
 
         selectedElement?.addCallback(() => this.update())
 
-        zoomlevel?.mapD(z => Math.floor(z)).addCallback(() => this.update())
+        zoomlevel?.mapD((z) => Math.floor(z)).addCallback(() => this.update())
 
         this.update()
     }
@@ -76,7 +76,7 @@ export default class FilteringFeatureSource implements FeatureSource {
         const newFeatures = (features ?? []).filter((f) => {
             this.registerCallback(f.properties.id)
 
-            if(selectedElement === f.properties.id){
+            if (selectedElement === f.properties.id) {
                 return true
             }
 

@@ -28,18 +28,23 @@
 
       const [[latD], [latM], [latS, latSDenom]] = <
         [[number, number], [number, number], [number, number]]
-        >tags?.GPSLatitude?.value
+      >tags?.GPSLatitude?.value
       const [[lonD], [lonM], [lonS, lonSDenom]] = <
         [[number, number], [number, number], [number, number]]
-        >tags?.GPSLongitude?.value
+      >tags?.GPSLongitude?.value
       const exifLat = latD + latM / 60 + latS / (3600 * latSDenom)
       const exifLon = lonD + lonM / 60 + lonS / (3600 * lonSDenom)
-      if (typeof exifLat === "number" && !isNaN(exifLat) && typeof exifLon === "number" && !isNaN(exifLon)
-        && !(exifLat === 0 && exifLon === 0)) {
+      if (
+        typeof exifLat === "number" &&
+        !isNaN(exifLat) &&
+        typeof exifLon === "number" &&
+        !isNaN(exifLon) &&
+        !(exifLat === 0 && exifLon === 0)
+      ) {
         lat = exifLat
         lon = exifLon
         l("Using EXIFLAT + EXIFLON")
-      }else{
+      } else {
         l("NOT using exifLat and exifLon: invalid value detected")
       }
       l("Lat and lon are", lat, lon)
@@ -54,11 +59,7 @@
     }
 
     try {
-
-      const p = new AuthorizedPanoramax(
-        Constants.panoramax.url,
-        Constants.panoramax.token,
-      )
+      const p = new AuthorizedPanoramax(Constants.panoramax.url, Constants.panoramax.token)
       const sequenceId = "7f34cf53-27ff-46c9-ac22-78511fa8457a" // test-sequence
       l("Fetching sequence number...")
       const sequence: { id: string; "stats:items": { count: number } } = (
@@ -71,7 +72,7 @@
         datetime,
         isBlurred: false,
         exifOverride: {
-          "Artist": "TEST ACCOUNT",
+          Artist: "TEST ACCOUNT",
         },
       })
       l("Upload completed. Adding meta")
@@ -87,7 +88,6 @@
   <div class="border border-black p-1">Select file</div>
 </FileSelector>
 <div class="flex flex-col">
-
   {#each $log as logl}
     <div>{logl}</div>
   {/each}

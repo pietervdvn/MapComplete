@@ -18,7 +18,8 @@
     "render": {
       "en": "Route marker",
       "de": "Routenmarker",
-      "es": "Marcador de ruta"
+      "es": "Marcador de ruta",
+      "cs": "Značka trasy"
     }
   },
   "pointRendering": [
@@ -63,7 +64,8 @@
       "question": {
         "en": "For what kind of route is this marker?",
         "de": "Für welche Art von Route ist dieser Marker?",
-        "es": "¿Para qué tipo de ruta es este marcador?"
+        "es": "¿Para qué tipo de ruta es este marcador?",
+        "cs": "Pro jaký druh trasy je tato značka určena?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -109,7 +111,8 @@
           "then": {
             "en": "This is a route marker for a ski route.",
             "de": "Dies ist ein Routenmarker für eine Skiroute.",
-            "es": "Este es un marcador de ruta para una ruta de esquí."
+            "es": "Este es un marcador de ruta para una ruta de esquí.",
+            "cs": "Toto je značka trasy pro lyžařskou cestu."
           }
         }
       ]

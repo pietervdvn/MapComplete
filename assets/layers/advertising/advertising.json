@@ -64,7 +64,8 @@
           "pl": "Bilbord",
           "pt_BR": "Outdoor",
           "zh_Hans": "广告牌",
-          "pt": "Outdoor"
+          "pt": "Outdoor",
+          "uk": "Білборд"
         }
       },
       {
@@ -83,7 +84,8 @@
           "pl": "Tablica",
           "pt_BR": "Quadro",
           "zh_Hans": "木板",
-          "pt": "Quadro"
+          "pt": "Quadro",
+          "uk": "Дошка оголошень"
         }
       },
       {
@@ -101,7 +103,8 @@
           "pl": "Pudełko plakatowe",
           "pt_BR": "Caixa de pôster",
           "zh_Hans": "海报盒",
-          "pt": "Caixa de pôster"
+          "pt": "Caixa de pôster",
+          "uk": "Поштова скринька"
         }
       },
       {
@@ -240,7 +243,7 @@
           "en": "Totem",
           "de": "Totem",
           "cs": "Totem",
-          "nl": "Aanplakzuil",
+          "nl": "Reclamezuil",
           "fr": "Totem",
           "eu": "Totem",
           "pl": "Totem",
@@ -266,7 +269,8 @@
           "pl": "Mural ścienny",
           "pt_BR": "Pintura mural",
           "zh_Hans": "墙上的画",
-          "pt": "Pintura mural"
+          "pt": "Pintura mural",
+          "uk": "Настінний розпис"
         }
       }
     ]
@@ -797,7 +801,7 @@
         "zh_Hans": "图腾",
         "it": "un totem",
         "uk": "тотем",
-        "nl": "een totem"
+        "nl": "eem reclamezuil"
       },
       "exampleImages": [
         "./assets/themes/advertising/AdvertisingTotem_004.jpg",
@@ -922,7 +926,8 @@
         "pt_BR": "Isso é uma {advertising}",
         "zh_Hans": "这是一个{advertising}",
         "pt": "Isto é uma {advertising}",
-        "fr": "C'est un {advertising}"
+        "fr": "C'est un {advertising}",
+        "uk": "Це {advertising}"
       },
       "question": {
         "ca": "Quin tipus d'element publicitari és aquest?",
@@ -934,7 +939,8 @@
         "pl": "Jakiego rodzaju jest to obiekt reklamowy?",
         "pt_BR": "Que tipo de recurso de publicitário é este?",
         "zh_Hans": "这是哪种类型的广告功能？",
-        "pt": "Que tipo de recurso de publicitário é este?"
+        "pt": "Que tipo de recurso de publicitário é este?",
+        "uk": "Який це тип рекламного об'єкту?"
       },
       "freeform": {
         "key": "advertising"
@@ -996,7 +1002,8 @@
             "pt_BR": "Isto é uma coluna",
             "pl": "To jest kolumna",
             "zh_Hans": "这是一个专栏",
-            "pt": "Isto é uma coluna"
+            "pt": "Isto é uma coluna",
+            "uk": "Це стовпчик"
           },
           "icon": {
             "path": "./assets/themes/advertising/column.svg",
@@ -1101,7 +1108,8 @@
             "pl": "To jest znak",
             "zh_Hans": "这是一个标志",
             "pt": "Isto é uma placa",
-            "nl": "Dit is een teken"
+            "nl": "Dit is een teken",
+            "uk": "Це знак"
           },
           "icon": {
             "path": "./assets/themes/advertising/sign.svg",
@@ -1120,7 +1128,8 @@
             "pl": "To jest plandeka (odporny na warunki atmosferyczne kawałek materiału tekstylnego z przekazem reklamowym)",
             "pt_BR": "Isso é uma lona (uma peça de tecido à prova de intempéries com uma mensagem publicitária)",
             "zh_Hans": "这是防水布（带有广告信息的防风雨纺织品）",
-            "pt": "Isto é uma lona (uma peça de tecido à prova de intempéries com uma mensagem publicitária)"
+            "pt": "Isto é uma lona (uma peça de tecido à prova de intempéries com uma mensagem publicitária)",
+            "uk": "Це брезент (стійкий до погодних умов шматок текстилю з рекламним повідомленням)"
           },
           "icon": {
             "path": "./assets/themes/advertising/tarp.svg",
@@ -1139,7 +1148,9 @@
             "pl": "To jest totem",
             "pt_BR": "Isso é um totem",
             "zh_Hans": "这是一个图腾",
-            "pt": "Isto é um totem"
+            "pt": "Isto é um totem",
+            "nl": "Dit is een reclamezuil",
+            "uk": "Це тотем"
           },
           "icon": {
             "path": "./assets/themes/advertising/totem.svg",

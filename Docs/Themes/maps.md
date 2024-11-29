@@ -9,6 +9,8 @@ The theme introduction reads:
 This theme contains the following layers:
 
  - [map](../Layers/map.md)
+ - [tactile_map](../Layers/tactile_map.md)
+ - [tactile_model](../Layers/tactile_model.md)
 
 Available languages:
 

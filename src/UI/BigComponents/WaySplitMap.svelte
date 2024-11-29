@@ -56,7 +56,7 @@
   /**
    * Reuse a point if the clicked location is within this amount of meter
    */
-  export let  snapTolerance: number = 5
+  export let snapTolerance: number = 5
 
   let map: UIEventSource<MlMap> = new UIEventSource<MlMap>(undefined)
   let adaptor = new MapLibreAdaptor(map, mapProperties)
@@ -101,7 +101,8 @@
   })
   let id = 0
   adaptor.lastClickLocation.addCallbackD(({ lon, lat }) => {
-    let projected: Feature<Point, {index:number, id?: number, reuse?: string}> = GeoOperations.nearestPoint(wayGeojson, [lon, lat])
+    let projected: Feature<Point, { index: number; id?: number; reuse?: string }> =
+      GeoOperations.nearestPoint(wayGeojson, [lon, lat])
 
     console.log("Added splitpoint", projected, id)
 
@@ -110,36 +111,36 @@
     const i = projected.properties.index
     const p = projected.geometry.coordinates
     const way = wayGeojson.geometry.coordinates
-    const nextPoint = <[number,number]> way[i + 1]
+    const nextPoint = <[number, number]>way[i + 1]
     const nextDistance = GeoOperations.distanceBetween(nextPoint, p)
-    const previousPoint = <[number,number]> way[i]
+    const previousPoint = <[number, number]>way[i]
     const previousDistance = GeoOperations.distanceBetween(previousPoint, p)
 
     console.log("ND", nextDistance, "PD", previousDistance)
-    if(nextDistance <= snapTolerance && previousDistance >= nextDistance){
+    if (nextDistance <= snapTolerance && previousDistance >= nextDistance) {
       projected = {
-        type:"Feature",
+        type: "Feature",
         geometry: {
-          type:"Point",
-          coordinates: nextPoint
+          type: "Point",
+          coordinates: nextPoint,
         },
         properties: {
-          index: i+1,
-          reuse: "yes"
-        }
+          index: i + 1,
+          reuse: "yes",
+        },
       }
     }
-    if (previousDistance <= snapTolerance && previousDistance < nextDistance){
+    if (previousDistance <= snapTolerance && previousDistance < nextDistance) {
       projected = {
-        type:"Feature",
+        type: "Feature",
         geometry: {
-          type:"Point",
-          coordinates: previousPoint
+          type: "Point",
+          coordinates: previousPoint,
         },
         properties: {
           index: i,
-          reuse: "yes"
-        }
+          reuse: "yes",
+        },
       }
     }
 

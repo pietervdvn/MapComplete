@@ -42,7 +42,7 @@ export class ImgurToPanoramax extends Script {
         test: "7f34cf53-27ff-46c9-ac22-78511fa8457a",
         cc0: "e9bcb8c0-8ade-4ac9-bc9f-cfa464221fd6", // "1de6f4a1-73ac-4c75-ab7f-2a2aabddf50a", // "f0d6f78a-ff95-4db1-8494-6eb44a17bb37",
         ccby: "288a8052-b475-422c-811a-4f6f1a00015e",
-        ccbysa: "f3d02893-b4c1-4cd6-8b27-e27ab57eb59a"
+        ccbysa: "f3d02893-b4c1-4cd6-8b27-e27ab57eb59a",
     } as const
 
     constructor() {
@@ -146,7 +146,7 @@ export class ImgurToPanoramax extends Script {
                 console.log("Already uploaded", panohash)
                 return new And([
                     new Tag(key.replace("image", "panoramax"), panohash),
-                    new Tag(key, "")
+                    new Tag(key, ""),
                 ])
             }
         }
@@ -177,8 +177,8 @@ export class ImgurToPanoramax extends Script {
             return undefined
         }
         const sequence = this.sequenceIds[license.licenseShortName?.toLowerCase()]
-        console.log("Reading ",path)
-        if(!existsSync(path)){
+        console.log("Reading ", path)
+        if (!existsSync(path)) {
             return undefined
         }
         const handle = await open(path)
@@ -193,7 +193,7 @@ export class ImgurToPanoramax extends Script {
 
         const file = new MyFile([], path)
 
-        file.stream = function() {
+        file.stream = function () {
             return handle.readableWebStream()
         }
 
@@ -230,7 +230,7 @@ export class ImgurToPanoramax extends Script {
         const license = await this.getRawInfo("https://i.imgur.com/" + imgurkey + ".jpg")
         const date = new Date(license.datetime * 1000)
         const panolicense = await this.panoramax.panoramax.search({
-            ids: [panokey]
+            ids: [panokey],
         })
         const panodata = panolicense[0]
         const collection: string = panodata.collection
@@ -241,13 +241,13 @@ export class ImgurToPanoramax extends Script {
             method: "PATCH",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({
-                ts: date.getTime()
-            })
+                ts: date.getTime(),
+            }),
         })
         console.log(
             "Patched date of ",
             p.createViewLink({
-                imageId: panokey
+                imageId: panokey,
             }),
             url,
             "result is",
@@ -268,14 +268,8 @@ export class ImgurToPanoramax extends Script {
         }*/
 
         const bounds = new BBox([
-            [
-                -180,
-                -90
-            ],
-            [
-                180,
-                90
-            ]
+            [-180, -90],
+            [180, 90],
         ])
         const maxcount = 10000
         const overpassfilters: RegexTag[] = []
@@ -331,7 +325,7 @@ export class ImgurToPanoramax extends Script {
                     f.properties,
                     {
                         theme: "image-mover",
-                        changeType: "link-image"
+                        changeType: "link-image",
                     }
                 )
                 changes.push(...(await action.CreateChangeDescriptions()))

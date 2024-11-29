@@ -8,7 +8,8 @@
     "ca": "Hospitals",
     "ru": "Больницы",
     "cs": "Nemocnice",
-    "es": "Hospitales"
+    "es": "Hospitales",
+    "uk": "Лікарні"
   },
   "description": {
     "en": "A layer showing hospital grounds",

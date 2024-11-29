@@ -7659,20 +7659,6 @@
                 },
                 "question": "What is the name of the pharmacy?",
                 "render": "This pharmacy is called {name}"
-            },
-            "wheelchair": {
-                "mappings": {
-                    "0": {
-                        "then": "This pharmacy is easy to access on a wheelchair"
-                    },
-                    "1": {
-                        "then": "This pharmacy is hard to access on a wheelchair"
-                    },
-                    "2": {
-                        "then": "This pharmacy has limited access for wheelchair users"
-                    }
-                },
-                "question": "Is this pharmacy easy to access on a wheelchair?"
             }
         },
         "title": {

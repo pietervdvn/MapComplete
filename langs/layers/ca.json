@@ -5805,20 +5805,6 @@
                 },
                 "question": "Quin és el nom de la farmàcia?",
                 "render": "Aquesta farmàcia es diu {name}"
-            },
-            "wheelchair": {
-                "mappings": {
-                    "0": {
-                        "then": "Aquesta farmàcia és fàcil d'accedir en una cadira de rodes"
-                    },
-                    "1": {
-                        "then": "Aquesta farmàcia es difícil d'accedir amb una cadira de rodes"
-                    },
-                    "2": {
-                        "then": "Aquesta farmàcia té un accés limitat per a usuaris amb cadira de rodes"
-                    }
-                },
-                "question": "És fàcil accedir a aquesta farmàcia amb una cadira de rodes?"
             }
         },
         "title": {

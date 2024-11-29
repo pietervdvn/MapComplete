@@ -35,15 +35,15 @@
       ]
     }
   ],
-  "lineRendering": [    {
-    "width": "13",
-    "color": "black"
-  },
+  "lineRendering": [
+    {
+      "width": "13",
+      "color": "black"
+    },
     {
       "width": "8",
       "color": "white"
     }
-
   ],
   "allowMove": false
 }

@@ -644,6 +644,10 @@
  - ticket_machine
  - vending_machine
             
+            ### wheelchair
+
+             - pharmacy
+            
             ### {preset_type_select()}
 
              - police
