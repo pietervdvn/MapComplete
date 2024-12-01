@@ -5,6 +5,11 @@
   import { OsmObject } from "../../Logic/Osm/OsmObject"
   import Loading from "../Base/Loading.svelte"
   import { HistoryUtils } from "./HistoryUtils"
+  import * as shared_questions from "../../assets/generated/layers/questions.json"
+  import TagRenderingQuestion from "../Popup/TagRendering/TagRenderingQuestion.svelte"
+  import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig"
+  import Tr from "../Base/Tr.svelte"
+  import AccordionSingle from "../Flowbite/AccordionSingle.svelte"
 
   export let onlyShowUsername: string
   export let features: Feature[]
@@ -13,26 +18,28 @@
   let allHistories: UIEventSource<OsmObject[][]> = UIEventSource.FromPromise(
     Promise.all(features.map(f => downloader.downloadHistory(f.properties.id)))
   )
-  let allDiffs: Store<{ key: string; value?: string; oldValue?: string }[]> = allHistories.mapD(histories => {
-    const allDiffs = [].concat(...histories.map(
-      history => {
-        const filtered = history.filter(step => !onlyShowUsername || step.tags["_last_edit:contributor"] === onlyShowUsername)
-        const diffs: {
-          key: string;
-          value?: string;
-          oldValue?: string
-        }[][] = filtered.map(step => HistoryUtils.tagHistoryDiff(step, history))
-        return [].concat(...diffs)
-      }
-    ))
-    return allDiffs
-  })
+  let allDiffs: Store<{
+    key: string;
+    value?: string;
+    oldValue?: string
+  }[]> = allHistories.mapD(histories => HistoryUtils.fullHistoryDiff(histories, onlyShowUsername))
 
-  const mergedCount = allDiffs.mapD(allDiffs => {
+  const trs = shared_questions.tagRenderings.map(tr => new TagRenderingConfig(tr))
+
+  function detectQuestion(key: string): TagRenderingConfig {
+    return trs.find(tr => tr.freeform?.key === key)
+  }
+
+  const mergedCount: Store<{
+    key: string;
+    tr: TagRenderingConfig;
+    count: number;
+    values: { value: string; count: number }[]
+  }[]> = allDiffs.mapD(allDiffs => {
     const keyCounts = new Map<string, Map<string, number>>()
     for (const diff of allDiffs) {
       const k = diff.key
-      if(!keyCounts.has(k)){
+      if (!keyCounts.has(k)) {
         keyCounts.set(k, new Map<string, number>())
       }
       const valueCounts = keyCounts.get(k)
@@ -40,25 +47,28 @@
       valueCounts.set(v, 1 + (valueCounts.get(v) ?? 0))
     }
 
-    const perKey: {key: string, count: number, values:
-        {value: string, count: number}[]
+    const perKey: {
+      key: string, tr: TagRenderingConfig, count: number, values:
+        { value: string, count: number }[]
     }[] = []
     keyCounts.forEach((values, key) => {
-      const keyTotal :   {value: string, count: number}[] = []
+      const keyTotal: { value: string, count: number }[] = []
       values.forEach((count, value) => {
-        keyTotal.push({value, count})
+        keyTotal.push({ value, count })
       })
       let countForKey = 0
-      for (const {count} of keyTotal) {
+      for (const { count } of keyTotal) {
         countForKey += count
       }
       keyTotal.sort((a, b) => b.count - a.count)
-      perKey.push({count: countForKey, key, values: keyTotal})
+      const tr = detectQuestion(key)
+      perKey.push({ count: countForKey, tr, key, values: keyTotal })
     })
     perKey.sort((a, b) => b.count - a.count)
 
     return perKey
   })
+
 
 </script>
 
@@ -66,8 +76,28 @@
   <Loading />
 {:else if $allDiffs !== undefined}
   {#each $mergedCount as diff}
-    <div class="m-1 border-black border p-1">
-      {JSON.stringify(diff)}
-    </div>
+    <h3>
+      {#if diff.tr}
+        <Tr t={diff.tr.question} />
+      {:else}
+        {diff.key}
+      {/if}
+    </h3>
+    <AccordionSingle>
+      <span slot="header">
+
+      Answered {diff.count} times
+      </span>
+      <ul>
+        {#each diff.values as value}
+          <li>
+            <b>{value.value}</b>
+            {#if value.count > 1}
+              - {value.count}
+            {/if}
+          </li>
+        {/each}
+      </ul>
+    </AccordionSingle>
   {/each}
 {/if}

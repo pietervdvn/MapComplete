@@ -8,7 +8,6 @@
   import Loading from "../Base/Loading.svelte"
   import { HistoryUtils } from "./HistoryUtils"
   import ToSvelte from "../Base/ToSvelte.svelte"
-  import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
   import Tr from "../Base/Tr.svelte"
 
   export let onlyShowChangesBy: string
@@ -28,68 +27,76 @@
       console.log("Comparing ", step.tags["_last_edit:contributor"], onlyShowChangesBy, step.tags["_last_edit:contributor"] === onlyShowChangesBy)
       return step.tags["_last_edit:contributor"] === onlyShowChangesBy
 
+    }).map(({ step, layer }) => {
+      const diff = HistoryUtils.tagHistoryDiff(step, fullHistory.data)
+      return { step, layer, diff }
     }))
 
   let lastStep = filteredHistory.mapD(history => history.at(-1))
-let l : LayerConfig
-  // l.title.GetRenderValue({}).Subs({})
+  let allGeometry = filteredHistory.mapD(all => !all.some(x => x.diff.length > 0))
+  /**
+   * These layers are only shown if there are tag changes as well
+   */
+  const ignoreLayersIfNoChanges: ReadonlySet<string> = new Set(["walls_and_buildings"])
 </script>
 
-{#if $lastStep?.layer}
-  <a href={"https://openstreetmap.org/" + $lastStep.step.tags.id} target="_blank">
-  <h3 class="flex items-center gap-x-2">
-  <div class="w-8 h-8 shrink-0 inline-block">
-    <ToSvelte construct={$lastStep.layer?.defaultIcon($lastStep.step.tags)} />
-  </div>
-  <Tr t={$lastStep.layer?.title?.GetRenderValue($lastStep.step.tags)?.Subs($lastStep.step.tags)}/>
-  </h3>
-  </a>
-{/if}
+{#if !$allGeometry || !ignoreLayersIfNoChanges.has($lastStep?.layer?.id)}
+  {#if $lastStep?.layer}
+    <a href={"https://openstreetmap.org/" + $lastStep.step.tags.id} target="_blank">
+      <h3 class="flex items-center gap-x-2">
+        <div class="w-8 h-8 shrink-0 inline-block">
+          <ToSvelte construct={$lastStep.layer?.defaultIcon($lastStep.step.tags)} />
+        </div>
+        <Tr t={$lastStep.layer?.title?.GetRenderValue($lastStep.step.tags)?.Subs($lastStep.step.tags)} />
+      </h3>
+    </a>
+  {/if}
 
-{#if !$filteredHistory}
-  <Loading>Loading history...</Loading>
-{:else if $filteredHistory.length === 0}
-  Only geometry changes found
-{:else}
-  <table class="w-full m-1">
-    {#each $filteredHistory as { step, layer }}
+  {#if !$filteredHistory}
+    <Loading>Loading history...</Loading>
+  {:else if $filteredHistory.length === 0}
+    Only geometry changes found
+  {:else}
+    <table class="w-full m-1">
+      {#each $filteredHistory as { step, layer }}
 
-      {#if step.version === 1}
-        <tr>
-          <td colspan="3">
-            <h3>
-              Created by {step.tags["_last_edit:contributor"]}
-            </h3>
-          </td>
-        </tr>
-      {/if}
-      {#if HistoryUtils.tagHistoryDiff(step, $fullHistory).length === 0}
-        <tr>
-          <td class="font-bold justify-center flex w-full" colspan="3">
-            Only changes in geometry
-          </td>
-        </tr>
-      {:else}
-        {#each HistoryUtils.tagHistoryDiff(step, $fullHistory) as diff}
+        {#if step.version === 1}
           <tr>
-            <td><a href={"https://osm.org/changeset/"+step.tags["_last_edit:changeset"]}
-                   target="_blank">{step.version}</a></td>
-            <td>{layer?.id ?? "Unknown layer"}</td>
-            {#if diff.oldValue === undefined}
-              <td>{diff.key}</td>
-              <td>{diff.value}</td>
-            {:else if diff.value === undefined }
-              <td>{diff.key}</td>
-              <td class="line-through"> {diff.value}</td>
-            {:else}
-              <td>{diff.key}</td>
-              <td><span class="line-through"> {diff.oldValue}</span> → {diff.value}</td>
-            {/if}
-
-
+            <td colspan="3">
+              <h3>
+                Created by {step.tags["_last_edit:contributor"]}
+              </h3>
+            </td>
           </tr>
-        {/each}
-      {/if}
-    {/each}
-  </table>
+        {/if}
+        {#if HistoryUtils.tagHistoryDiff(step, $fullHistory).length === 0}
+          <tr>
+            <td class="font-bold justify-center flex w-full" colspan="3">
+              Only changes in geometry
+            </td>
+          </tr>
+        {:else}
+          {#each HistoryUtils.tagHistoryDiff(step, $fullHistory) as diff}
+            <tr>
+              <td><a href={"https://osm.org/changeset/"+step.tags["_last_edit:changeset"]}
+                     target="_blank">{step.version}</a></td>
+              <td>{layer?.id ?? "Unknown layer"}</td>
+              {#if diff.oldValue === undefined}
+                <td>{diff.key}</td>
+                <td>{diff.value}</td>
+              {:else if diff.value === undefined }
+                <td>{diff.key}</td>
+                <td class="line-through"> {diff.value}</td>
+              {:else}
+                <td>{diff.key}</td>
+                <td><span class="line-through"> {diff.oldValue}</span> → {diff.value}</td>
+              {/if}
+
+
+            </tr>
+          {/each}
+        {/if}
+      {/each}
+    </table>
+  {/if}
 {/if}

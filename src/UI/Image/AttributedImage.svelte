@@ -28,22 +28,24 @@
   export let imgClass: string = undefined
   export let state: SpecialVisualizationState = undefined
   export let attributionFormat: "minimal" | "medium" | "large" = "medium"
-  export let previewedImage: UIEventSource<ProvidedImage>
+  export let previewedImage: UIEventSource<ProvidedImage> = undefined
   export let canZoom = previewedImage !== undefined
   let loaded = false
   let showBigPreview = new UIEventSource(false)
   onDestroy(
     showBigPreview.addCallbackAndRun((shown) => {
       if (!shown) {
-        previewedImage.set(undefined)
+        previewedImage?.set(undefined)
       }
     })
   )
+  if(previewedImage){
   onDestroy(
     previewedImage.addCallbackAndRun((previewedImage) => {
       showBigPreview.set(previewedImage?.id === image.id)
     })
   )
+  }
 
   function highlight(entered: boolean = true) {
     if (!entered) {
@@ -82,7 +84,7 @@
       class="normal-background"
       on:click={() => {
         console.log("Closing")
-        previewedImage.set(undefined)
+        previewedImage?.set(undefined)
       }}
     />
   </div>
@@ -124,7 +126,7 @@
       {#if canZoom && loaded}
         <div
           class="bg-black-transparent absolute right-0 top-0 rounded-bl-full"
-          on:click={() => previewedImage.set(image)}
+          on:click={() => previewedImage?.set(image)}
         >
           <MagnifyingGlassPlusIcon class="h-8 w-8 cursor-zoom-in pl-3 pb-3" color="white" />
         </div>

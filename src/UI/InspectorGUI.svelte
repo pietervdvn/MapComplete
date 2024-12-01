@@ -21,6 +21,8 @@
   import { XCircleIcon } from "@babeard/svelte-heroicons/solid"
   import { Utils } from "../Utils"
   import AggregateView from "./History/AggregateView.svelte"
+  import { HistoryUtils } from "./History/HistoryUtils"
+  import AggregateImages from "./History/AggregateImages.svelte"
 
   let username = QueryParameters.GetQueryParameter("user", undefined, "Inspect this user")
   let step = new UIEventSource<"waiting" | "loading" | "done">("waiting")
@@ -49,18 +51,28 @@
 
   let featuresStore = new UIEventSource<Feature[]>([])
   let features = new StaticFeatureSource(featuresStore)
-  new ShowDataLayer(map,
-    {
-      layer,
-      zoomToFeatures: true,
-      features,
-      onClick: (f: Feature) => {
-        selectedElement.set(undefined)
-        Utils.waitFor(200).then(() => {
-          selectedElement.set(f)
-        })
-      }
-    })
+  ShowDataLayer.showMultipleLayers(map, features, HistoryUtils.personalTheme.layers, {
+    zoomToFeatures: true,
+    onClick: (f: Feature) => {
+      selectedElement.set(undefined)
+      Utils.waitFor(200).then(() => {
+        selectedElement.set(f)
+      })
+    }
+  })
+
+  /*  new ShowDataLayer(map,
+      {
+        layer,
+        zoomToFeatures: true,
+        features,
+        onClick: (f: Feature) => {
+          selectedElement.set(undefined)
+          Utils.waitFor(200).then(() => {
+            selectedElement.set(f)
+          })
+        }
+      })*/
 
   async function load() {
 
@@ -87,7 +99,7 @@
     return true
   })
 
-  let mode: "map" | "table" | "aggregate" = "map"
+  let mode: "map" | "table" | "aggregate" | "images" = "map"
 </script>
 
 <div class="flex flex-col w-full h-full">
@@ -112,6 +124,9 @@
     </button>
     <button class:primary={mode === "aggregate"} on:click={() => mode = "aggregate"}>
       Aggregate
+    </button>
+    <button class:primary={mode === "images"} on:click={() => mode = "images"}>
+      Images
     </button>
   </div>
 
@@ -155,11 +170,18 @@
       <MaplibreMap map={map} mapProperties={maplibremap} autorecovery={true} />
     </div>
   {:else if mode === "table"}
+    <div class="m-2 h-full overflow-y-auto">
     {#each $featuresStore as f}
-      <h3><a href={"https://osm.org/"+f.properties.id} target="_blank">{f.properties.id}</a></h3>
       <History onlyShowChangesBy={$username} id={f.properties.id} />
     {/each}
-  {:else}
-    <AggregateView features={$featuresStore} onlyShowUsername={$username}></AggregateView>
+    </div>
+  {:else if mode === "aggregate"}
+    <div class="m-2 h-full overflow-y-auto">
+    <AggregateView features={$featuresStore} onlyShowUsername={$username} />
+    </div>
+  {:else if mode === "images"}
+    <div class="m-2 h-full overflow-y-auto">
+      <AggregateImages features={$featuresStore} onlyShowUsername={$username} />
+    </div>
   {/if}
 </div>

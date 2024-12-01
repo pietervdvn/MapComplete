@@ -3077,6 +3077,18 @@
           }
         }
       ]
+    },
+    {
+      "id": "name",
+      "question":{
+        "en": "What is the name of this place?"
+      },
+      "render": {
+        "*": "<b>{name}</b>"
+      },
+      "freeform": {
+        "key": "name"
+      }
     }
   ],
   "allowMove": false
