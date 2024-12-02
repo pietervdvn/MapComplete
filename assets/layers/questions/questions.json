@@ -3181,6 +3181,33 @@
           }
         }
       ]
+    },
+    {
+      "id": "seating",
+      "question": {
+        "en": "What kind of seating does {title()} have?",
+        "nl": "Wat voor zitplaatsen heeft {title()}?"
+      },
+      "mappings": [
+        {
+          "if": "outdoor_seating=yes",
+          "ifnot": "outdoor_seating=no",
+          "then": {
+            "en": "This place has outdoor seating",
+            "nl": "Deze plaats heeft zitplaatsen buiten"
+          },
+          "icon": "./assets/layers/outdoor_seating/outdoor_seating.svg"
+        },
+        {
+          "if": "indoor_seating=yes",
+          "ifnot": "indoor_seating=no",
+          "then": {
+            "en": "This place has indoor seating",
+            "nl": "Deze plaats heeft zitplaatsen binnen"
+          }
+        }
+      ],
+      "multiAnswer": true
     }
   ],
   "allowMove": false

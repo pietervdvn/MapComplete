@@ -1341,6 +1341,7 @@
     "lactose_free",
     "smoking",
     "service:electricity",
+    "seating",
     "dog-access",
     "internet",
     "internet-fee",
@@ -1488,6 +1489,8 @@
     "filters.sugar_free",
     "filters.gluten_free",
     "filters.lactose_free",
+    "outdoor_seating",
+    "indoor_seating",
     "accepts_cash",
     "accepts_cards",
     "dogs"

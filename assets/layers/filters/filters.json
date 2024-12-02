@@ -418,6 +418,29 @@
           }
         }
       ]
+    },
+    {
+      "id": "outdoor_seating",
+      "options": [
+        {
+          "question": {
+            "en": "Has outdoor seating"
+          },
+          "icon": "./assets/layers/outdoor_seating.svg",
+          "osmTags": "outdoor_seating=yes"
+        }
+      ]
+    },
+    {
+      "id": "indoor_seating",
+      "options": [
+        {
+          "question": {
+            "en": "Has indoor seating"
+          },
+          "osmTags": "indoor_seating=yes"
+        }
+      ]
     }
   ],
   "allowMove": false
