@@ -350,7 +350,8 @@
         "cs": "Počet parkovacích míst {capacity}",
         "es": "Hay {capacity} plazas de aparcamiento"
       }
-    }
+    },
+    "maxstay"
   ],
   "deletion": {
     "softDeletionTags": {

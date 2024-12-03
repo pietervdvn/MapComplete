@@ -1733,6 +1733,9 @@
         },
         "title": {
             "mappings": {
+                "0": {
+                    "then": "{name}"
+                },
                 "1": {
                     "then": "Vogelkijkhut {name}"
                 },
@@ -2348,15 +2351,6 @@
                     }
                 },
                 "question": "Moet men betalen om dit oplaadpunt te gebruiken?"
-            },
-            "maxstay": {
-                "mappings": {
-                    "0": {
-                        "then": "Geen maximum parkeertijd"
-                    }
-                },
-                "question": "Hoelang mag een voertuig hier blijven staan?",
-                "render": "De maximale parkeertijd hier is <b>{canonical(maxstay)}</b>"
             },
             "phone": {
                 "question": "Wat is het telefoonnummer van de beheerder van dit oplaadpunt?",
@@ -4721,6 +4715,26 @@
                 },
                 "question": "Levert {title()} aan huis?"
             },
+            "drive-through": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit fastfoodrestaurant heeft een drive-through"
+                    },
+                    "1": {
+                        "then": "Dit fastfoodrestaurant heeft geen drive-through"
+                    }
+                },
+                "question": "Heeft dit fastfoodrestaurant een drive-through?"
+            },
+            "drive-through-opening_hours": {
+                "mappings": {
+                    "0": {
+                        "then": "De openingsuren van de drive-through zijn dezelfde als die van het restaurant"
+                    }
+                },
+                "question": "Wat zijn de openingsuren van de drive-through?",
+                "render": "<h3>Openingsuren van de drive-through</h3>{opening_hours_table(opening_hours:drive_through)}"
+            },
             "friture-oil": {
                 "mappings": {
                     "0": {
@@ -5810,6 +5824,11 @@
             }
         },
         "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
             "render": "Natuurgebied"
         }
     },
@@ -6339,6 +6358,21 @@
         },
         "title": {
             "render": "Picknicktafel"
+        }
+    },
+    "play_forest": {
+        "description": "Een speelbos is een vrij toegankelijke zone in een bos",
+        "name": "Speelbossen",
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                },
+                "1": {
+                    "then": "Speelbos {name}"
+                }
+            },
+            "render": "Speelbos"
         }
     },
     "playground": {
@@ -6997,6 +7031,15 @@
                     }
                 }
             },
+            "maxstay": {
+                "mappings": {
+                    "0": {
+                        "then": "Er is geen limiet aan de tijd die je hier mag blijven"
+                    }
+                },
+                "question": "Wat is de maximale tijd die je hier mag blijven?",
+                "render": "Je mag hier maximaal <b>{canonical(maxstay)}</b> blijven"
+            },
             "multilevels": {
                 "override": {
                     "question": "Naar welke verdiepingen gaat deze lift?",
@@ -7109,6 +7152,17 @@
                     }
                 },
                 "question": "Is {title()} heel het jaar beschikbaar?"
+            },
+            "seating": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze plaats heeft zitplaatsen buiten"
+                    },
+                    "1": {
+                        "then": "Deze plaats heeft zitplaatsen binnen"
+                    }
+                },
+                "question": "Wat voor zitplaatsen heeft {title()}?"
             },
             "service:electricity": {
                 "mappings": {
@@ -7875,6 +7929,9 @@
         },
         "title": {
             "mappings": {
+                "0": {
+                    "then": "{name}"
+                },
                 "1": {
                     "then": "Voetpad"
                 },
@@ -8094,12 +8151,19 @@
                         "then": "Dit is een roltrap"
                     },
                     "1": {
-                        "then": "Dit is geen roltrap"
+                        "then": "Dit is een roltrap die beweegt in de richting van de pijlen"
                     },
                     "2": {
+                        "then": "Dit is een roltrap die van richting kan veranderen"
+                    },
+                    "3": {
+                        "then": "Dit is geen roltrap"
+                    },
+                    "4": {
                         "then": "Dit is geen roltrap"
                     }
-                }
+                },
+                "question": "Is dit een roltrap?"
             },
             "handrail": {
                 "mappings": {
@@ -9887,13 +9951,25 @@
         }
     },
     "village_green": {
-        "description": "Een laag die dorpsgroen toont (gemeenschapsgroen, maar niet echt een park)"
+        "description": "Een laag die dorpsgroen toont (gemeenschapsgroen, maar niet echt een park)",
+        "name": "Speelweide",
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
+            "render": "Speelweide"
+        }
     },
     "visitor_information_centre": {
         "description": "Een bezoekerscentrum biedt informatie over een specifieke attractie of bezienswaardigheid waar het is gevestigd.",
         "name": "Bezoekerscentrum",
         "title": {
             "mappings": {
+                "0": {
+                    "then": "{name:nl}"
+                },
                 "1": {
                     "then": "{name}"
                 }

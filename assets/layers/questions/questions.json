@@ -3208,7 +3208,43 @@
         }
       ],
       "multiAnswer": true
+    },
+    {
+      "id": "maxstay",
+      "question": {
+        "en": "What is the maximum amount of time one is allowed to stay here?",
+        "nl": "Wat is de maximale tijd die je hier mag blijven?"
+      },
+      "freeform": {
+        "key": "maxstay",
+        "type": "pfloat"
+      },
+      "render": {
+        "en": "One can stay at most <b>{canonical(maxstay)}</b>",
+        "nl": "Je mag hier maximaal <b>{canonical(maxstay)}</b> blijven"
+      },
+      "mappings": [
+        {
+          "if": "maxstay=unlimited",
+          "then": {
+            "en": "There is no limit to the amount of time one can stay here",
+            "nl": "Er is geen limiet aan de tijd die je hier mag blijven"
+          }
+        }
+      ]
     }
   ],
-  "allowMove": false
+  "allowMove": false,
+  "units": [
+    {
+      "maxstay": {
+        "quantity": "duration",
+        "denominations": [
+          "minutes",
+          "hours",
+          "days"
+        ]
+      }
+    }
+  ]
 }
