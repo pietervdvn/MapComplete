@@ -31,16 +31,18 @@ jobs:
         run: npm run generate:translations
         shell: bash
 
-      - name: Prepare deploy
-        run: npm run prepare-deploy
-        shell: bash
-
       - name: run tests
         run: |
           pwd
           ls
           npm run test
         shell: bash
+
+      - name: Prepare deploy
+        run: npm run prepare-deploy
+        shell: bash
+
+
 
       - name: Upload artefact
         env:
