@@ -393,7 +393,12 @@
             "phoneNumberIs": "El número de teléfono de este/a {category} es <a href='tel:{phone}' target='_blank'>{phone}</a>",
             "phoneNumberOf": "¿Cuál es el número de teléfono de {category}?",
             "websiteIs": "Sitio web: <a href='{website}' target='_blank'>{website}</a>",
-            "websiteOf": "¿Cuál es el sitio web de {category}?"
+            "websiteOf": "¿Cuál es el sitio web de {category}?",
+            "disable": "No vuelva a hacer esta pregunta",
+            "disabledIntro": "Ha desactivado algún tipo de pregunta. Para volver a activar una pregunta, haga clic aquí",
+            "noneDisabled": "Si no le interesa un tipo específico de pregunta, desactívela. Para desactivar una pregunta, haga clic en los tres puntos de la esquina superior derecha y seleccione 'desactivar'.",
+            "disabledTitle": "Preguntas deshabilitadas",
+            "enable": "Haga esta pregunta para todas las prestaciones"
         },
         "readYourMessages": "Por favor, lee todos tus mensajes de OpenStreetMap antes de agregar un nuevo elemento.",
         "removeLocationHistory": "Eliminar el historial de ubicación",
@@ -644,7 +649,8 @@
         "uploadFailed": "No se pudo subir tu imagen. ¿Estás conectado a Internet y permites las API de terceros? El navegador Brave o el complemento uMatrix podrían bloquearlas.",
         "uploadMultipleDone": "{count} imágenes han sido agregadas. ¡Gracias por ayudar!",
         "uploadingMultiple": "Subiendo {count} imágenes…",
-        "uploadingPicture": "Subiendo tu imagen…"
+        "uploadingPicture": "Subiendo tu imagen…",
+        "selectFile": "Seleccione una imagen de su dispositivo"
     },
     "importInspector": {
         "title": "Inspeccionar y gestionar notas de importación"
