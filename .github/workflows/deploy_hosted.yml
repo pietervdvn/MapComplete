@@ -36,7 +36,10 @@ jobs:
         shell: bash
 
       - name: run tests
-        run: npm run test
+        run: |
+          pwd
+          ls
+          npm run test
         shell: bash
 
       - name: Upload artefact
