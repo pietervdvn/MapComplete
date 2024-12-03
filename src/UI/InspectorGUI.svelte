@@ -23,6 +23,9 @@
   import AggregateView from "./History/AggregateView.svelte"
   import { HistoryUtils } from "./History/HistoryUtils"
   import AggregateImages from "./History/AggregateImages.svelte"
+  import Page from "./Base/Page.svelte"
+  import PreviouslySpiedUsers from "./History/PreviouslySpiedUsers.svelte"
+  import { OsmConnection } from "../Logic/Osm/OsmConnection"
 
   let username = QueryParameters.GetQueryParameter("user", undefined, "Inspect this user")
   let step = new UIEventSource<"waiting" | "loading" | "done">("waiting")
@@ -32,8 +35,8 @@
   let lon = UIEventSource.asFloat(QueryParameters.GetQueryParameter("lon", "0"))
   let theme = new ThemeConfig(<any>inspector_theme, true)
   let layer = theme.layers.find(l => l.id === "usertouched")
+  // Is this a dirty hack? Yes it is!
   theme.getMatchingLayer = () => {
-    // Is this a dirty hack? Yes it is!
     return layer
   }
   let loadingData = false
@@ -61,23 +64,35 @@
     }
   })
 
-  /*  new ShowDataLayer(map,
-      {
-        layer,
-        zoomToFeatures: true,
-        features,
-        onClick: (f: Feature) => {
-          selectedElement.set(undefined)
-          Utils.waitFor(200).then(() => {
-            selectedElement.set(f)
-          })
-        }
-      })*/
+  let osmConnection = new OsmConnection()
+  let inspectedContributors: UIEventSource<{
+    name: string,
+    visitedTime: string,
+    label: string
+  }[]> = UIEventSource.asObject(
+    osmConnection.getPreference("spied-upon-users"), [])
 
   async function load() {
+    const user = username.data
+    {
+
+      const inspectedData = inspectedContributors.data
+      const previousEntry = inspectedData.find(e => e.name === user)
+      if (previousEntry) {
+        previousEntry.visitedTime = new Date().toISOString()
+      } else {
+        inspectedData.push({
+          label: undefined,
+          visitedTime: new Date().toISOString(),
+          name: user
+        })
+      }
+      inspectedContributors.ping()
+    }
 
     step.setData("loading")
-    const overpass = new Overpass(undefined, ["nw(user_touched:\"" + username.data + "\");"], Constants.defaultOverpassUrls[0])
+    featuresStore.set([])
+    const overpass = new Overpass(undefined, ["nw(user_touched:\"" + user + "\");"], Constants.defaultOverpassUrls[0])
     if (!maplibremap.bounds.data) {
       return
     }
@@ -100,6 +115,9 @@
   })
 
   let mode: "map" | "table" | "aggregate" | "images" = "map"
+
+  let showPreviouslyVisited = new UIEventSource(true)
+
 </script>
 
 <div class="flex flex-col w-full h-full">
@@ -112,6 +130,9 @@
     {:else}
       <button class="primary" on:click={() => load()}>Load</button>
     {/if}
+    <button on:click={() => showPreviouslyVisited.setData(true)}>
+      Show earlier inspected contributors
+    </button>
     <a href="./index.html" class="button">Back to index</a>
   </div>
 
@@ -171,13 +192,13 @@
     </div>
   {:else if mode === "table"}
     <div class="m-2 h-full overflow-y-auto">
-    {#each $featuresStore as f}
-      <History onlyShowChangesBy={$username} id={f.properties.id} />
-    {/each}
+      {#each $featuresStore as f}
+        <History onlyShowChangesBy={$username} id={f.properties.id} />
+      {/each}
     </div>
   {:else if mode === "aggregate"}
     <div class="m-2 h-full overflow-y-auto">
-    <AggregateView features={$featuresStore} onlyShowUsername={$username} />
+      <AggregateView features={$featuresStore} onlyShowUsername={$username} />
     </div>
   {:else if mode === "images"}
     <div class="m-2 h-full overflow-y-auto">
@@ -185,3 +206,10 @@
     </div>
   {/if}
 </div>
+
+<Page shown={showPreviouslyVisited}>
+  <div slot="header">Earlier inspected constributors</div>
+  <PreviouslySpiedUsers {osmConnection} {inspectedContributors} on:selectUser={(e) => {
+    username.set(e.detail); load();showPreviouslyVisited.set(false)
+  }}  />
+</Page>
