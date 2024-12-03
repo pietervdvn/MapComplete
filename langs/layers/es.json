@@ -4035,7 +4035,21 @@
                     }
                 },
                 "question": "¿En qué lado de la carretera se encuentra?"
+            },
+            "type": {
+                "mappings": {
+                    "0": {
+                        "then": "Hay una tabla o clavija para apoyar el pie."
+                    },
+                    "1": {
+                        "then": "Hay una barandilla o un asa para agarrarse aquí"
+                    }
+                },
+                "question": "¿Qué tipo de componentes tiene esta ayuda a la espera?"
             }
+        },
+        "title": {
+            "render": "Ayuda para ciclistas en espera"
         }
     },
     "defibrillator": {
@@ -8007,10 +8021,19 @@
         "presets": {
             "0": {
                 "title": "un buzón"
+            },
+            "1": {
+                "title": "un buzón en una pared"
             }
         },
         "title": {
             "render": "Buzón"
+        },
+        "tagRenderings": {
+            "operator": {
+                "question": "¿Quién gestiona este buzón?",
+                "render": "Este buzón es operado por <b>{operator}</b>."
+            }
         }
     },
     "postoffices": {
@@ -8872,6 +8895,17 @@
                     }
                 },
                 "question": "¿Cuál es la entidad Wikidata correspondiente?"
+            },
+            "indoor": {
+                "mappings": {
+                    "0": {
+                        "then": "Este objeto se encuentra en el interior"
+                    },
+                    "1": {
+                        "then": "Este objeto se encuentra al aire libre"
+                    }
+                },
+                "question": "¿Se encuentra este objeto en el interior?"
             }
         }
     },
@@ -10181,6 +10215,39 @@
         },
         "title": {
             "render": "Centro deportivo"
+        },
+        "tagRenderings": {
+            "sport_centre-sport": {
+                "mappings": {
+                    "10": {
+                        "then": "Salto BASE"
+                    },
+                    "100": {
+                        "then": "Monopatín"
+                    },
+                    "0": {
+                        "then": "Bolos de nueve bolos"
+                    },
+                    "1": {
+                        "then": "Bolos de diez bolos"
+                    },
+                    "101": {
+                        "then": "Salto de esquí"
+                    },
+                    "102": {
+                        "then": "Snooker"
+                    },
+                    "103": {
+                        "then": "Fútbol"
+                    },
+                    "104": {
+                        "then": "Softball"
+                    },
+                    "105": {
+                        "then": "Circuito de motos"
+                    }
+                }
+            }
         }
     },
     "stairs": {
