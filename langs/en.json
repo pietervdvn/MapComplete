@@ -669,6 +669,9 @@
         "pickTheme": "Pick a theme below to get started.",
         "title": "MapComplete"
     },
+    "inspector": {
+        "menu": "Inspect a contributor"
+    },
     "move": {
         "cancel": "Select a different reason",
         "cannotBeMoved": "This feature cannot be moved.",

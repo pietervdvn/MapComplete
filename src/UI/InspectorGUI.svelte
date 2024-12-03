@@ -26,6 +26,7 @@
   import Page from "./Base/Page.svelte"
   import PreviouslySpiedUsers from "./History/PreviouslySpiedUsers.svelte"
   import { OsmConnection } from "../Logic/Osm/OsmConnection"
+  import MagnifyingGlassCircle from "@babeard/svelte-heroicons/outline/MagnifyingGlassCircle"
 
   let username = QueryParameters.GetQueryParameter("user", undefined, "Inspect this user")
   let step = new UIEventSource<"waiting" | "loading" | "done">("waiting")
@@ -123,7 +124,8 @@
 <div class="flex flex-col w-full h-full">
 
   <div class="flex gap-x-2 items-center low-interaction p-2">
-    <h1 class="flex-shrink-0">Inspect contributor</h1>
+    <MagnifyingGlassCircle class="w-12 h-12"/>
+    <h1 class="flex-shrink-0 m-0 mx-2">Inspect contributor</h1>
     <ValidatedInput type="string" value={username} on:submit={() => load()} />
     {#if loadingData}
       <Loading />
