@@ -301,6 +301,31 @@
           }
         }
       }
+    },
+    {
+      "builtin": "etymology",
+      "override": {
+        "id": "parks_without_etymology",
+        "=name": {
+          "en": "Parks without etymology information"
+        },
+        "minzoom": 18,
+        "isCounted": false,
+        "source": {
+          "osmTags": {
+            "and": [
+              "name~*",
+              {
+                "or": [
+                  "leisure=park",
+                  "landuse=village_green",
+                  "landuse=recreation_ground"
+                ]
+              }
+            ]
+          }
+        }
+      }
     }
   ]
 }

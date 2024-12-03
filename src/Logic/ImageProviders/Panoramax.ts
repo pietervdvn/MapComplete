@@ -231,7 +231,7 @@ export class PanoramaxUploader implements ImageUploader {
                 lat = exifLat
                 lon = exifLon
             }
-            const [date, time] = tags.DateTime.value[0].split(" ")
+            const [date, time] =( tags.DateTime.value[0] ?? tags.DateTimeOriginal.value[0] ?? tags.GPSDateStamp ?? tags["Date Created"]).split(" ")
             const exifDatetime = new Date(date.replaceAll(":", "-") + "T" + time)
             if (exifDatetime.getFullYear() === 1970) {
                 // The data probably got reset to the epoch
