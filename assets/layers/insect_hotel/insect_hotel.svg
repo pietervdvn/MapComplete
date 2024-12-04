@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="541"
+   height="541"
+   viewBox="0 0 541 541"
+   fill="none"
+   version="1.1"
+   id="svg17"
+   sodipodi:docname="insect_hotel.svg"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs17" />
+  <sodipodi:namedview
+     id="namedview17"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="3.3974122"
+     inkscape:cx="212.36752"
+     inkscape:cy="270.5"
+     inkscape:window-width="3840"
+     inkscape:window-height="2091"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg17" />
+  <mask
+     id="path-4-inside-1_1_45"
+     fill="#ffffff">
+    <path
+       d="M 47,241 H 377 V 541 H 47 Z"
+       id="path3" />
+  </mask>
+  <g
+     id="g17"
+     transform="translate(58.367973)">
+    <rect
+       x="-144.99997"
+       y="154.99998"
+       width="290"
+       height="290"
+       transform="rotate(-45)"
+       fill="#ded4c3"
+       stroke="#311710"
+       stroke-width="10"
+       id="rect1" />
+    <path
+       d="M 212.071,77.4264 247.426,42.0711 417.132,211.777 381.777,247.132 Z"
+       stroke="#311710"
+       stroke-width="10"
+       id="path1" />
+    <path
+       d="M 176.777,42.0711 212.132,77.4264 42.4264,247.132 7.07106,211.777 Z"
+       stroke="#311710"
+       stroke-width="10"
+       id="path2" />
+    <path
+       d="M 47,241 H 377 V 541 H 47 Z"
+       fill="#ded4c3"
+       id="path4" />
+    <path
+       d="m 377,541 v 10 h 10 V 541 Z M 47,541 H 37 v 10 H 47 Z M 367,241 v 300 h 20 V 241 Z m 10,290 H 47 v 20 H 377 Z M 57,541 V 241 H 37 v 300 z"
+       fill="#311710"
+       mask="url(#path-4-inside-1_1_45)"
+       id="path5" />
+    <line
+       x1="87.003098"
+       y1="534.00299"
+       x2="87.003098"
+       y2="204.00301"
+       stroke="#311710"
+       stroke-width="10"
+       id="line5" />
+    <line
+       x1="338"
+       y1="204"
+       x2="338"
+       y2="534"
+       stroke="#311710"
+       stroke-width="10"
+       id="line6" />
+    <circle
+       cx="212"
+       cy="199"
+       r="50"
+       fill="#d9d9d9"
+       stroke="#311710"
+       stroke-width="10"
+       id="circle6" />
+    <circle
+       cx="143"
+       cy="279"
+       r="30"
+       fill="#d9d9d9"
+       stroke="#311710"
+       stroke-width="10"
+       id="circle7" />
+    <circle
+       cx="143"
+       cy="431"
+       r="30"
+       fill="#d9d9d9"
+       stroke="#311710"
+       stroke-width="10"
+       id="circle8" />
+    <circle
+       cx="143"
+       cy="355"
+       r="30"
+       fill="#d9d9d9"
+       stroke="#311710"
+       stroke-width="10"
+       id="circle9" />
+    <circle
+       cx="212"
+       cy="304"
+       r="30"
+       fill="#d9d9d9"
+       stroke="#311710"
+       stroke-width="10"
+       id="circle10" />
+    <circle
+       cx="212"
+       cy="456"
+       r="30"
+       fill="#d9d9d9"
+       stroke="#311710"
+       stroke-width="10"
+       id="circle11" />
+    <circle
+       cx="212"
+       cy="380"
+       r="30"
+       fill="#d9d9d9"
+       stroke="#311710"
+       stroke-width="10"
+       id="circle12" />
+    <circle
+       cx="280"
+       cy="279"
+       r="30"
+       fill="#d9d9d9"
+       stroke="#311710"
+       stroke-width="10"
+       id="circle13" />
+    <circle
+       cx="280"
+       cy="431"
+       r="30"
+       fill="#d9d9d9"
+       stroke="#311710"
+       stroke-width="10"
+       id="circle14" />
+    <circle
+       cx="280"
+       cy="355"
+       r="30"
+       fill="#d9d9d9"
+       stroke="#311710"
+       stroke-width="10"
+       id="circle15" />
+    <circle
+       cx="143"
+       cy="499"
+       r="20"
+       fill="#d9d9d9"
+       stroke="#311710"
+       stroke-width="10"
+       id="circle16" />
+    <circle
+       cx="280"
+       cy="499"
+       r="20"
+       fill="#d9d9d9"
+       stroke="#311710"
+       stroke-width="10"
+       id="circle17" />
+  </g>
+</svg>
