@@ -1,0 +1,55 @@
+name: Deploy develop on dev.mapcomplete.org
+on:
+  push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: package-lock.json
+
+      - name: install deps
+        run: npm ci
+        shell: bash
+
+      - name: create generated dir
+        run: mkdir ./assets/generated
+        shell: bash
+
+      - name: create dependencies
+        run: npm run generate:licenses; npm run generate:images; npm run generate:charging-stations; npm run generate:service-worker; npm run download:editor-layer-index
+        shell: bash
+
+      - name: sync translations
+        run: npm run generate:translations
+        shell: bash
+
+      - name: run tests
+        run: |
+          pwd
+          ls
+          npm run test
+        shell: bash
+
+      - name: Prepare deploy
+        run: npm run prepare-deploy
+        shell: bash
+
+
+
+      - name: Upload artefact
+        env:
+          SSH_KEY: ${{ secrets.HETZNER_KEY }}
+        run: |
+          mkdir .ssh
+          echo $SSH_KEY > .ssh/id_ed25519
+          scp dist/* pietervdvn@hosted.mapcomplete.org:/root/public/${{ github.ref_name }}
+          
+

@@ -41,6 +41,7 @@ export default class Constants {
         "usersettings",
         "icons",
         "filters",
+        "usertouched"
     ] as const
     /**
      * Layer IDs of layers which have special properties through built-in hooks

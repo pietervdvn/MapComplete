@@ -12,7 +12,7 @@ import Panoramax_bw from "../../assets/svg/Panoramax_bw.svelte"
 import Link from "../../UI/Base/Link"
 
 export default class PanoramaxImageProvider extends ImageProvider {
-    public static readonly singleton = new PanoramaxImageProvider()
+    public static readonly singleton: PanoramaxImageProvider = new PanoramaxImageProvider()
     private static readonly xyz = new PanoramaxXYZ()
     private static defaultPanoramax = new AuthorizedPanoramax(
         Constants.panoramax.url,
@@ -126,7 +126,11 @@ export default class PanoramaxImageProvider extends ImageProvider {
         if (!Panoramax.isId(value)) {
             return undefined
         }
-        return [await this.getInfoFor(value).then((r) => this.featureToImage(<any>r))]
+        return [await this.getInfo(value)]
+    }
+
+    public async getInfo(hash: string): Promise<ProvidedImage> {
+      return  await this.getInfoFor(hash).then((r) => this.featureToImage(<any>r))
     }
 
     getRelevantUrls(tags: Record<string, string>, prefixes: string[]): Store<ProvidedImage[]> {

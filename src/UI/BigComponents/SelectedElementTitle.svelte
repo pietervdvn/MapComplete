@@ -1,23 +1,21 @@
 <script lang="ts">
   import type { Feature } from "geojson"
-  import { Store, UIEventSource } from "../../Logic/UIEventSource"
+  import { ImmutableStore, Store, UIEventSource } from "../../Logic/UIEventSource"
   import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
   import type { SpecialVisualizationState } from "../SpecialVisualization"
   import TagRenderingAnswer from "../Popup/TagRendering/TagRenderingAnswer.svelte"
   import Translations from "../i18n/Translations"
   import Tr from "../Base/Tr.svelte"
-  import { XCircleIcon } from "@rgossiaux/svelte-heroicons/solid"
-  import { ariaLabel } from "../../Utils/ariaLabel"
   import { CloseButton } from "flowbite-svelte"
 
   export let state: SpecialVisualizationState
   export let layer: LayerConfig
   export let selectedElement: Feature
-  let tags: UIEventSource<Record<string, string>> = state.featureProperties.getStore(
+  let tags: UIEventSource<Record<string, string>> = state?.featureProperties?.getStore(
     selectedElement.properties.id
   )
   $: {
-    tags = state.featureProperties.getStore(selectedElement.properties.id)
+    tags = state?.featureProperties?.getStore(selectedElement.properties.id)
   }
 
   let isTesting = state.featureSwitchIsTesting
