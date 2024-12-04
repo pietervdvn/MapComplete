@@ -549,6 +549,9 @@
             "searchToShort": "Ihre Suchanfrage ist zu kurz, geben Sie einen längeren Text ein",
             "searchWikidata": "Wikidata durchsuchen",
             "wikipediaboxTitle": "Wikipedia"
+        },
+        "questions": {
+            "disable": "Diese Frage nicht mehr stellen"
         }
     },
     "hotkeyDocumentation": {
