@@ -5,11 +5,9 @@
   import OsmObjectDownloader from "../../Logic/Osm/OsmObjectDownloader"
   import { OsmObject } from "../../Logic/Osm/OsmObject"
   import Loading from "../Base/Loading.svelte"
-  import AttributedImage from "../Image/AttributedImage.svelte"
   import AttributedPanoramaxImage from "./AttributedPanoramaxImage.svelte"
-  import History from "./History.svelte"
 
-  export let onlyShowUsername: string
+  export let onlyShowUsername: string[]
   export let features: Feature[]
 
   const downloader = new OsmObjectDownloader()
@@ -23,11 +21,12 @@
     }
     return result
   }))
+  let usernamesSet = new Set(onlyShowUsername)
   let allDiffs: Store<{
     key: string;
     value?: string;
     oldValue?: string
-  }[]> = allHistories.mapD(histories => HistoryUtils.fullHistoryDiff(histories, onlyShowUsername))
+  }[]> = allHistories.mapD(histories => HistoryUtils.fullHistoryDiff(histories, usernamesSet))
 
   let addedImages = allDiffs.mapD(diffs => [].concat(...diffs.filter(({ key }) => imageKeys.has(key))))
 
@@ -37,7 +36,11 @@
 {:else if $addedImages.length === 0}
   No images added by this contributor
 {:else}
-  {#each $addedImages as imgDiff}
-    <AttributedPanoramaxImage hash={imgDiff.value} />
-  {/each}
+  <div class="flex">
+    {#each $addedImages as imgDiff}
+      <div class="w-48 h-48">
+        <AttributedPanoramaxImage hash={imgDiff.value} />
+      </div>
+    {/each}
+  </div>
 {/if}

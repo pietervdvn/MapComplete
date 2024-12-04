@@ -52,8 +52,11 @@
         "render": 0,
         "mappings": [
           {
-            "if": {"or":
-              ["_geometry:type=Polygon","_geometry:type=MultiPolygon"]
+            "if": {
+              "or": [
+                "_geometry:type=Polygon",
+                "_geometry:type=MultiPolygon"
+              ]
             },
             "then": 20
           }

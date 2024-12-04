@@ -9,10 +9,12 @@
   import { HistoryUtils } from "./HistoryUtils"
   import ToSvelte from "../Base/ToSvelte.svelte"
   import Tr from "../Base/Tr.svelte"
+  import Translations from "../i18n/Translations"
 
-  export let onlyShowChangesBy: string
+  export let onlyShowChangesBy: string[]
   export let id: OsmId
 
+  let usernames = new Set(onlyShowChangesBy)
   let fullHistory = UIEventSource.FromPromise(new OsmObjectDownloader().downloadHistory(id))
 
   let partOfLayer = fullHistory.mapD(history => history.map(step => ({
@@ -21,11 +23,11 @@
   })))
   let filteredHistory = partOfLayer.mapD(history =>
     history.filter(({ step }) => {
-      if (!onlyShowChangesBy) {
+      if (usernames.size == 0) {
         return true
       }
-      console.log("Comparing ", step.tags["_last_edit:contributor"], onlyShowChangesBy, step.tags["_last_edit:contributor"] === onlyShowChangesBy)
-      return step.tags["_last_edit:contributor"] === onlyShowChangesBy
+      console.log("Checking if ", step.tags["_last_edit:contributor"],"is contained in", onlyShowChangesBy)
+      return usernames.has(step.tags["_last_edit:contributor"])
 
     }).map(({ step, layer }) => {
       const diff = HistoryUtils.tagHistoryDiff(step, fullHistory.data)
@@ -38,6 +40,8 @@
    * These layers are only shown if there are tag changes as well
    */
   const ignoreLayersIfNoChanges: ReadonlySet<string> = new Set(["walls_and_buildings"])
+  const t = Translations.t.inspector.previousContributors
+
 </script>
 
 {#if !$allGeometry || !ignoreLayersIfNoChanges.has($lastStep?.layer?.id)}
@@ -55,7 +59,7 @@
   {#if !$filteredHistory}
     <Loading>Loading history...</Loading>
   {:else if $filteredHistory.length === 0}
-    Only geometry changes found
+    <Tr t={t.onlyGeometry} />
   {:else}
     <table class="w-full m-1">
       {#each $filteredHistory as { step, layer }}
@@ -64,7 +68,7 @@
           <tr>
             <td colspan="3">
               <h3>
-                Created by {step.tags["_last_edit:contributor"]}
+                <Tr t={t.createdBy.Subs({contributor: step.tags["_last_edit:contributor"]})} />
               </h3>
             </td>
           </tr>
@@ -72,7 +76,7 @@
         {#if HistoryUtils.tagHistoryDiff(step, $fullHistory).length === 0}
           <tr>
             <td class="font-bold justify-center flex w-full" colspan="3">
-              Only changes in geometry
+              <Tr t={t.onlyGeometry} />
             </td>
           </tr>
         {:else}

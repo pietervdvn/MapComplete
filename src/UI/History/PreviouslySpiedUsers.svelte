@@ -88,7 +88,12 @@
       No labels
     {:else}
       {#each $labels as label}
-        <div class="mx-2">{label} </div>
+        <div class="mx-2">{label}
+          <button class:disabled={!$inspectedContributors.some(c => c.label === label)} on:click={() => {dispatch("selectUser",
+        inspectedContributors.data.filter(c =>c.label === label).map(c => c .name).join(";")
+        )}}>See all changes for these users
+          </button>
+        </div>
       {/each}
     {/if}
     <div class="interactive flex m-2 items-center gap-x-2 rounded-lg p-2">

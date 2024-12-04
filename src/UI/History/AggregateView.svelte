@@ -6,13 +6,15 @@
   import Loading from "../Base/Loading.svelte"
   import { HistoryUtils } from "./HistoryUtils"
   import * as shared_questions from "../../assets/generated/layers/questions.json"
-  import TagRenderingQuestion from "../Popup/TagRendering/TagRenderingQuestion.svelte"
   import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig"
   import Tr from "../Base/Tr.svelte"
   import AccordionSingle from "../Flowbite/AccordionSingle.svelte"
+  import Translations from "../i18n/Translations"
 
-  export let onlyShowUsername: string
+  export let onlyShowUsername: string[]
   export let features: Feature[]
+
+  let usernames = new Set(onlyShowUsername)
 
   const downloader = new OsmObjectDownloader()
   let allHistories: UIEventSource<OsmObject[][]> = UIEventSource.FromPromise(
@@ -22,7 +24,7 @@
     key: string;
     value?: string;
     oldValue?: string
-  }[]> = allHistories.mapD(histories => HistoryUtils.fullHistoryDiff(histories, onlyShowUsername))
+  }[]> = allHistories.mapD(histories => HistoryUtils.fullHistoryDiff(histories, usernames))
 
   const trs = shared_questions.tagRenderings.map(tr => new TagRenderingConfig(tr))
 
@@ -69,6 +71,7 @@
     return perKey
   })
 
+  const t = Translations.t.inspector
 
 </script>
 
@@ -85,8 +88,7 @@
     </h3>
     <AccordionSingle>
       <span slot="header">
-
-      Answered {diff.count} times
+<Tr t={t.answeredCountTimes.Subs(diff)} />
       </span>
       <ul>
         {#each diff.values as value}

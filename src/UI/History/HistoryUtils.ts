@@ -33,10 +33,10 @@ export class HistoryUtils {
             }).filter(ch => ch.oldValue !== ch.value)
     }
 
-    public static fullHistoryDiff(histories: OsmObject[][], onlyShowUsername?: string){
+    public static fullHistoryDiff(histories: OsmObject[][], onlyShowUsername?: Set<string>){
         const allDiffs: {key: string, oldValue?: string, value?: string}[] = [].concat(...histories.map(
             history => {
-                const filtered = history.filter(step => !onlyShowUsername || step.tags["_last_edit:contributor"] === onlyShowUsername)
+                const filtered = history.filter(step => !onlyShowUsername || onlyShowUsername?.has(step.tags["_last_edit:contributor"] ))
                 const diffs: {
                     key: string;
                     value?: string;

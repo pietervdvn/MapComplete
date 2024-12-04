@@ -27,6 +27,8 @@
   import PreviouslySpiedUsers from "./History/PreviouslySpiedUsers.svelte"
   import { OsmConnection } from "../Logic/Osm/OsmConnection"
   import MagnifyingGlassCircle from "@babeard/svelte-heroicons/outline/MagnifyingGlassCircle"
+  import Translations from "./i18n/Translations"
+  import Tr from "./Base/Tr.svelte"
 
   let username = QueryParameters.GetQueryParameter("user", undefined, "Inspect this user")
   let step = new UIEventSource<"waiting" | "loading" | "done">("waiting")
@@ -52,10 +54,12 @@
     lon.set(l.lon)
   })
 
-
+  let allLayers = HistoryUtils.personalTheme.layers
+    let layersNoFixme = allLayers.filter(l => l.id !== "fixme")
+let fixme = allLayers.find(l => l.id === "fixme")
   let featuresStore = new UIEventSource<Feature[]>([])
   let features = new StaticFeatureSource(featuresStore)
-  ShowDataLayer.showMultipleLayers(map, features, HistoryUtils.personalTheme.layers, {
+  ShowDataLayer.showMultipleLayers(map, features, [...layersNoFixme, fixme] , {
     zoomToFeatures: true,
     onClick: (f: Feature) => {
       selectedElement.set(undefined)
@@ -75,7 +79,7 @@
 
   async function load() {
     const user = username.data
-    {
+    if(user.indexOf(";")<0){
 
       const inspectedData = inspectedContributors.data
       const previousEntry = inspectedData.find(e => e.name === user)
@@ -93,7 +97,7 @@
 
     step.setData("loading")
     featuresStore.set([])
-    const overpass = new Overpass(undefined, ["nw(user_touched:\"" + user + "\");"], Constants.defaultOverpassUrls[0])
+    const overpass = new Overpass(undefined, user.split(";").map(user => "nw(user_touched:\"" + user + "\");"), Constants.defaultOverpassUrls[0])
     if (!maplibremap.bounds.data) {
       return
     }
@@ -118,38 +122,44 @@
   let mode: "map" | "table" | "aggregate" | "images" = "map"
 
   let showPreviouslyVisited = new UIEventSource(true)
-
+const t = Translations.t.inspector
 </script>
 
 <div class="flex flex-col w-full h-full">
 
   <div class="flex gap-x-2 items-center low-interaction p-2">
     <MagnifyingGlassCircle class="w-12 h-12"/>
-    <h1 class="flex-shrink-0 m-0 mx-2">Inspect contributor</h1>
+    <h1 class="flex-shrink-0 m-0 mx-2">
+      <Tr t={t.title}/>
+    </h1>
     <ValidatedInput type="string" value={username} on:submit={() => load()} />
     {#if loadingData}
       <Loading />
     {:else}
-      <button class="primary" on:click={() => load()}>Load</button>
+      <button class="primary" on:click={() => load()}>
+        <Tr t={t.load}/>
+      </button>
     {/if}
     <button on:click={() => showPreviouslyVisited.setData(true)}>
-      Show earlier inspected contributors
+     <Tr t={t.earlierInspected}/>
     </button>
-    <a href="./index.html" class="button">Back to index</a>
+    <a href="./index.html" class="button">
+      <Tr t={t.backToIndex}/>
+    </a>
   </div>
 
   <div class="flex">
     <button class:primary={mode === "map"} on:click={() => mode = "map"}>
-      Map view
+      <Tr t={t.mapView}/>
     </button>
     <button class:primary={mode === "table"} on:click={() => mode = "table"}>
-      Table view
+      <Tr t={t.tableView}/>
     </button>
     <button class:primary={mode === "aggregate"} on:click={() => mode = "aggregate"}>
-      Aggregate
+      <Tr t={t.aggregateView}/>
     </button>
     <button class:primary={mode === "images"} on:click={() => mode = "images"}>
-      Images
+      <Tr t={t.images}/>
     </button>
   </div>
 
@@ -195,16 +205,16 @@
   {:else if mode === "table"}
     <div class="m-2 h-full overflow-y-auto">
       {#each $featuresStore as f}
-        <History onlyShowChangesBy={$username} id={f.properties.id} />
+        <History onlyShowChangesBy={$username?.split(";")} id={f.properties.id} />
       {/each}
     </div>
   {:else if mode === "aggregate"}
     <div class="m-2 h-full overflow-y-auto">
-      <AggregateView features={$featuresStore} onlyShowUsername={$username} />
+      <AggregateView features={$featuresStore} onlyShowUsername={$username?.split(";")} />
     </div>
   {:else if mode === "images"}
     <div class="m-2 h-full overflow-y-auto">
-      <AggregateImages features={$featuresStore} onlyShowUsername={$username} />
+      <AggregateImages features={$featuresStore} onlyShowUsername={$username?.split(";")} />
     </div>
   {/if}
 </div>
