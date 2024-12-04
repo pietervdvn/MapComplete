@@ -805,6 +805,55 @@
       ]
     },
     {
+      "id": "drive-through",
+      "condition": "amenity=fast_food",
+      "question": {
+        "en": "Does this fast-food restaurant have a drive-through?",
+        "nl": "Heeft dit fastfoodrestaurant een drive-through?"
+      },
+      "mappings": [
+        {
+          "if": "drive_through=yes",
+          "then": {
+            "en": "This fast-food restaurant has a drive-through",
+            "nl": "Dit fastfoodrestaurant heeft een drive-through"
+          }
+        },
+        {
+          "if": "drive_through=no",
+          "then": {
+            "en": "This fast-food restaurant does not have a drive-through",
+            "nl": "Dit fastfoodrestaurant heeft geen drive-through"
+          }
+        }
+      ]
+    },
+    {
+      "id": "drive-through-opening_hours",
+      "condition": "drive_through=yes",
+      "question": {
+        "en": "What are the opening hours of the drive-through?",
+        "nl": "Wat zijn de openingsuren van de drive-through?"
+      },
+      "freeform": {
+        "key": "opening_hours:drive_through",
+        "type": "opening_hours"
+      },
+      "mappings": [
+        {
+          "if": "opening_hours:drive_through=",
+          "then": {
+            "en": "The opening hours of the drive-through are the same as the restaurant",
+            "nl": "De openingsuren van de drive-through zijn dezelfde als die van het restaurant"
+          }
+        }
+      ],
+      "render": {
+        "en": "<h3>Drive-through opening hours</h3>{opening_hours_table(opening_hours:drive_through)}",
+        "nl": "<h3>Openingsuren van de drive-through</h3>{opening_hours_table(opening_hours:drive_through)}"
+      }
+    },
+    {
       "question": {
         "nl": "Heeft deze eetgelegenheid een vegetarische optie?",
         "en": "Does this restaurant have a vegetarian option?",
@@ -1341,6 +1390,7 @@
     "lactose_free",
     "smoking",
     "service:electricity",
+    "seating",
     "dog-access",
     "internet",
     "internet-fee",
@@ -1488,6 +1538,8 @@
     "filters.sugar_free",
     "filters.gluten_free",
     "filters.lactose_free",
+    "outdoor_seating",
+    "indoor_seating",
     "accepts_cash",
     "accepts_cards",
     "dogs"

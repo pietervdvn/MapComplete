@@ -33,7 +33,14 @@
     },
     "mappings": [
       {
-        "if": "conveying=yes",
+        "if": {
+          "or": [
+            "conveying=yes",
+            "conveying=forward",
+            "conveying=backward",
+            "conveying=reversible"
+          ]
+        },
         "then": {
           "en": "Escalator",
           "nl": "Roltrap",
@@ -53,7 +60,22 @@
           "color": "white"
         },
         {
-          "icon": "./assets/layers/stairs/stairs.svg"
+          "icon": {
+            "render": "./assets/layers/stairs/stairs.svg",
+            "mappings": [
+              {
+                "if": {
+                  "or": [
+                    "conveying=yes",
+                    "conveying=forward",
+                    "conveying=backward",
+                    "conveying=reversible"
+                  ]
+                },
+                "then": "./assets/layers/stairs/escalator.svg"
+              }
+            ]
+          }
         }
       ],
       "location": [
@@ -63,9 +85,51 @@
   ],
   "lineRendering": [
     {
-      "color": "gray",
+      "color": {
+        "render": "gray",
+        "mappings": [
+          {
+            "if": {
+              "or": [
+                "conveying=yes",
+                "conveying=forward",
+                "conveying=backward",
+                "conveying=reversible"
+              ]
+            },
+            "then": "blue"
+          }
+        ]
+      },
       "width": 10,
-      "dashArray": "1 1"
+      "dashArray": "1 2",
+      "imageAlongWay": [
+        {
+          "if": {
+            "or": [
+              "conveying=yes",
+              "conveying=forward"
+            ]
+          },
+          "then": "./assets/png/oneway.png"
+        },
+        {
+          "if": {
+            "or": [
+              "conveying=backward"
+            ]
+          },
+          "then": "./assets/png/oneway_reversed.png"
+        },
+        {
+          "if": {
+            "or": [
+              "conveying=reversible"
+            ]
+          },
+          "then": "./assets/png/twoway.png"
+        }
+      ]
     }
   ],
   "tagRenderings": [
@@ -107,6 +171,26 @@
           }
         },
         {
+          "if": {
+            "or": [
+              "conveying=forward",
+              "conveying=backward"
+            ]
+          },
+          "then": {
+            "en": "This is an escalator moving in the direction of the arrows",
+            "nl": "Dit is een roltrap die beweegt in de richting van de pijlen"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "conveying=reversible",
+          "then": {
+            "en": "This is a reversible escalator",
+            "nl": "Dit is een roltrap die van richting kan veranderen"
+          }
+        },
+        {
           "if": "conveying=no",
           "then": {
             "en": "This is not an escalator",
@@ -131,7 +215,11 @@
           },
           "hideInAnswer": true
         }
-      ]
+      ],
+      "question": {
+        "en": "Is this an escalator?",
+        "nl": "Is dit een roltrap?"
+      }
     },
     {
       "id": "handrail",
