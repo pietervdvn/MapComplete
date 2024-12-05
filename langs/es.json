@@ -388,8 +388,13 @@
             "skippedOne": "Saltaste una pregunta"
         },
         "questions": {
+            "disable": "No vuelva a hacer esta pregunta",
+            "disabledIntro": "Ha desactivado algún tipo de pregunta. Para volver a activar una pregunta, haga clic aquí",
+            "disabledTitle": "Preguntas deshabilitadas",
             "emailIs": "El correo electrónico de este/a {category} es <a href='mailto:{email}' target='_blank'>{email}</a>",
             "emailOf": "¿Cuál es el correo electrónico de {category}?",
+            "enable": "Haga esta pregunta para todas las prestaciones",
+            "noneDisabled": "Si no le interesa un tipo específico de pregunta, desactívela. Para desactivar una pregunta, haga clic en los tres puntos de la esquina superior derecha y seleccione 'desactivar'.",
             "phoneNumberIs": "El número de teléfono de este/a {category} es <a href='tel:{phone}' target='_blank'>{phone}</a>",
             "phoneNumberOf": "¿Cuál es el número de teléfono de {category}?",
             "websiteIs": "Sitio web: <a href='{website}' target='_blank'>{website}</a>",
@@ -617,6 +622,7 @@
         "pleaseLogin": "Por favor, inicia sesión para agregar una imagen",
         "processing": "El servidor está procesando tu imagen",
         "respectPrivacy": "No subas imágenes de Google Maps, Google Street View u otras fuentes con derechos de autor.",
+        "selectFile": "Seleccione una imagen de su dispositivo",
         "toBig": "Tu imagen es demasiado grande, tiene {actual_size}. Por favor, usa imágenes de como máximo {max_size}",
         "unlink": {
             "button": "Desvincular imagen",

@@ -247,7 +247,36 @@
         }
     },
     "aerialway": {
+        "name": "Kabelbanen",
+        "pointRendering": {
+            "1": {
+                "label": {
+                    "render": "{name}"
+                }
+            }
+        },
         "tagRenderings": {
+            "duration": {
+                "questionHint": "Dit is exclusief wachttijd.",
+                "render": "Een enkele reis duurt {duration} minuten"
+            },
+            "length": {
+                "render": "Deze kabelbaan is {_length:km} kilometer lang"
+            },
+            "occupancy": {
+                "render": "Er kunnen {aerialway:occupancy} mensen in een cabine"
+            },
+            "oneway": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze kabelbaan kan alleen naar de top worden genomen"
+                    },
+                    "1": {
+                        "then": "Deze kabelbaan kan in beide richtingen genomen worden"
+                    }
+                },
+                "question": "In welke richting kan deze kabelbaan genomen worden?"
+            },
             "type": {
                 "mappings": {
                     "0": {
@@ -255,6 +284,18 @@
                     },
                     "1": {
                         "then": "Dit is een kabellift waar de gondel in een continue circuit gaat"
+                    },
+                    "2": {
+                        "then": "Een open stoeltjeslift met zitjes om op te zitten."
+                    },
+                    "4": {
+                        "then": "Een sleeplift"
+                    },
+                    "5": {
+                        "then": "Een sleeplift met T-vormige armen voor twee passagiers"
+                    },
+                    "6": {
+                        "then": "Een sleeplift met L-vormige stangen voor één passagier"
                     }
                 }
             }

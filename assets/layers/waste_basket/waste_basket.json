@@ -468,7 +468,8 @@
             "ca": "Papereres amb dispensador de bosses d'excrements (per a gossos)",
             "fr": "Poubelle avec distributeur de sacs pour ramasser les déjections canines",
             "cs": "Odpadkový koš se zásobníkem na sáčky na (psí) exkrementy",
-            "ru": "Корзина для мусора с дозатором для пакетов (собачьих) экскрементов"
+            "ru": "Корзина для мусора с дозатором для пакетов (собачьих) экскрементов",
+            "uk": "Кошик для сміття з дозатором для пакетиків з (собачими) екскрементами"
           },
           "osmTags": "vending=dog_excrement_bag"
         }

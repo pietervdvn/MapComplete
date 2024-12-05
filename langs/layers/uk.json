@@ -352,6 +352,15 @@
         }
     },
     "bench": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "це меморіал"
+                    }
+                }
+            }
+        },
         "name": "Лавки",
         "tagRenderings": {
             "bench-armrest": {
@@ -1212,6 +1221,7 @@
         }
     },
     "playground": {
+        "name": "Дитячі майданчики",
         "tagRenderings": {
             "fee": {
                 "mappings": {
@@ -1274,6 +1284,7 @@
         }
     },
     "playground_equipment": {
+        "name": "Обладнання для дитячих майданчиків",
         "tagRenderings": {
             "type": {
                 "mappings": {
@@ -1851,6 +1862,23 @@
         }
     },
     "toilet": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Доступ для інвалідних візків"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Є пеленальний столик"
+                    }
+                }
+            }
+        },
+        "name": "Туалети",
         "tagRenderings": {
             "menstrual_products": {
                 "mappings": {
@@ -2337,6 +2365,17 @@
         },
         "title": {
             "render": "Торговий автомат"
+        }
+    },
+    "waste_basket": {
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Кошик для сміття з дозатором для пакетиків з (собачими) екскрементами"
+                    }
+                }
+            }
         }
     },
     "waste_disposal": {

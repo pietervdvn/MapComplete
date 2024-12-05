@@ -388,8 +388,13 @@
             "skippedOne": "Kihagytál egy kérdést"
         },
         "questions": {
+            "disable": "Ne jelenjék meg többször ez a kérdés",
+            "disabledIntro": "Néhány kérdéstípust letiltottál. Ha újra engedélyezni szeretnél egy kérdést, kattints ide",
+            "disabledTitle": "Letiltott kérdések",
             "emailIs": "{category} e-mail-címe: <a href=\"mailto:{email}\" target=\"_blank\">{email}</a>",
             "emailOf": "Mi az e-mail-címe ennek ({category})?",
+            "enable": "Jelenjék meg ez a kérdés az összes objektumnál",
+            "noneDisabled": "Ha egy adott kérdéstípus nem érdekel, letilthatod. Egy kérdés letiltásához kattints a jobb felső sarokban lévő három pontra, és válaszd a „letiltás” lehetőséget",
             "phoneNumberIs": "{category} telefonszáma: <a href='tel:{phone}' target='_blank'>{phone}</a>",
             "phoneNumberOf": "Mi a telefonszáma ennek ({category})?",
             "websiteIs": "Weboldal: <a href=\"{website}\" target=\"_blank\">{website}</a>",
@@ -583,7 +588,7 @@
         "translationMode": "Fordítási mód be- vagy kikapcsolása"
     },
     "image": {
-        "addPicture": "Kép hozzáadása",
+        "addPicture": "Kép készítése",
         "currentLicense": "Képeid {license} alapján lesznek közzétéve",
         "doDelete": "Kép eltávolítása",
         "dontDelete": "Mégse",
@@ -617,6 +622,7 @@
         "pleaseLogin": "Kép hozzáadásához be kell jelentkezni",
         "processing": "A szerver feldolgozza a képet",
         "respectPrivacy": "Ne tölts fel képet a Google térképről, a Google Streetview-ról (utcaképről) és egyéb szerzői jog által védett forrásokból.",
+        "selectFile": "Kép kiválasztása a készülékedről",
         "toBig": "A kép túl nagy ({actual_size}). Kérjük, legfeljebb {max_size} méretű képeket használj",
         "unlink": {
             "button": "Kép leválasztása",

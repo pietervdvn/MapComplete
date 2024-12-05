@@ -232,6 +232,12 @@ export default class FilteredLayer {
             }
         }
         {
+            if(!this.isDisplayed.data){
+                return false
+            }
+        }
+
+        {
             const isShown: TagsFilter = this.layerDef.isShown
             if (isShown !== undefined && !isShown.matchesProperties(properties)) {
                 return false
