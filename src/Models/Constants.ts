@@ -40,8 +40,7 @@ export default class Constants {
         "import_candidate",
         "usersettings",
         "icons",
-        "filters",
-        "usertouched"
+        "filters"
     ] as const
     /**
      * Layer IDs of layers which have special properties through built-in hooks

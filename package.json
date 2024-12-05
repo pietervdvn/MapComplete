@@ -107,7 +107,7 @@
     "generate": "npm run generate:licenses && npm run generate:images && npm run generate:charging-stations && npm run generate:translations && npm run refresh:layeroverview && npm run generate:service-worker",
     "generate:charging-stations": "cd ./assets/layers/charging_station && vite-node csvToJson.ts && cd -",
     "clean:tests": "find . -type f -name \"*.doctest.ts\" | xargs -r rm",
-    "clean": "rm -rf .cache/ && (find *.html | grep -v \"^\\(404\\|index\\|land\\|privacy\\|test\\|studio\\|theme\\|style_test\\|statistics\\|status\\|leaderboard\\).html\" | xargs -r rm) && (ls | grep \"^index_[a-zA-Z_-]\\+\\.ts$\" | xargs -r rm)",
+    "clean": "rm -rf .cache/ && (find *.html | grep -v \"^\\(404\\|index\\|land\\|privacy\\|test\\|studio\\|theme\\|style_test\\|statistics\\|status\\|leaderboard\\|inspector\\).html\" | xargs -r rm) && (ls | grep \"^index_[a-zA-Z_-]\\+\\.ts$\" | xargs -r rm)",
     "generate:dependency-graph": "node_modules/.bin/depcruise --exclude \"^node_modules\" --output-type dot Logic/State/MapState.ts > dependencies.dot && dot dependencies.dot -T svg -o dependencies.svg && rm dependencies.dot",
     "scrapeWebsites": "vite-node scripts/importscripts/compareWebsiteData.ts -- ~/Downloads/ShopsWithWebsiteNodes.csv ~/data/scraped_websites/",
     "### 0": "VELOPARK",

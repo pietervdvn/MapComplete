@@ -8,14 +8,12 @@
   import { MapLibreAdaptor } from "./Map/MapLibreAdaptor"
   import { Map as MlMap } from "maplibre-gl"
   import ShowDataLayer from "./Map/ShowDataLayer"
-  import * as inspector_theme from "../assets/generated/themes/inspector.json"
 
   import StaticFeatureSource from "../Logic/FeatureSource/Sources/StaticFeatureSource"
   import type { Feature } from "geojson"
   import Loading from "./Base/Loading.svelte"
   import { linear } from "svelte/easing"
   import { Drawer } from "flowbite-svelte"
-  import ThemeConfig from "../Models/ThemeConfig/ThemeConfig"
   import History from "./History/History.svelte"
   import TitledPanel from "./Base/TitledPanel.svelte"
   import { XCircleIcon } from "@babeard/svelte-heroicons/solid"
@@ -36,12 +34,6 @@
   let zoom = UIEventSource.asFloat(QueryParameters.GetQueryParameter("z", "0"))
   let lat = UIEventSource.asFloat(QueryParameters.GetQueryParameter("lat", "0"))
   let lon = UIEventSource.asFloat(QueryParameters.GetQueryParameter("lon", "0"))
-  let theme = new ThemeConfig(<any>inspector_theme, true)
-  let layer = theme.layers.find(l => l.id === "usertouched")
-  // Is this a dirty hack? Yes it is!
-  theme.getMatchingLayer = () => {
-    return layer
-  }
   let loadingData = false
   let selectedElement = new UIEventSource<Feature>(undefined)
 
