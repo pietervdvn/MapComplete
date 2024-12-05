@@ -12,7 +12,8 @@
     "da": "Toiletter",
     "pa_PK": "ٹوئیلٹاں",
     "cs": "Toalety",
-    "sl": "Stranišča"
+    "sl": "Stranišča",
+    "uk": "Туалети"
   },
   "description": {
     "en": "A layer showing (public) toilets",
@@ -1027,7 +1028,8 @@
             "da": "Tilgængelig for kørestolsbrugere",
             "ca": "Accessible amb cadira de rodes",
             "cs": "Bezbariérový přístup",
-            "sl": "Dostopno z vozičkom"
+            "sl": "Dostopno z vozičkom",
+            "uk": "Доступ для інвалідних візків"
           },
           "osmTags": {
             "or": [
@@ -1051,7 +1053,8 @@
             "da": "Har et puslebord",
             "ca": "Té un canviador",
             "cs": "Má přebalovací pult",
-            "sl": "Ima previjalno mizo"
+            "sl": "Ima previjalno mizo",
+            "uk": "Є пеленальний столик"
           },
           "osmTags": "changing_table=yes"
         }

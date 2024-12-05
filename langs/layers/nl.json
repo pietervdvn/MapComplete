@@ -247,40 +247,15 @@
         }
     },
     "aerialway": {
-        "tagRenderings": {
-            "type": {
-                "mappings": {
-                    "0": {
-                        "then": "Dit is een kabelbaan waar de gondel op dezelfde kabel naar boven en naar beneden gaat."
-                    },
-                    "1": {
-                        "then": "Dit is een kabellift waar de gondel in een continue circuit gaat"
-                    },
-                    "6": {
-                        "then": "Een sleeplift met L-vormige stangen voor één passagier"
-                    },
-                    "2": {
-                        "then": "Een open stoeltjeslift met zitjes om op te zitten."
-                    },
-                    "4": {
-                        "then": "Een sleeplift"
-                    },
-                    "5": {
-                        "then": "Een sleeplift met T-vormige armen voor twee passagiers"
-                    }
+        "name": "Kabelbanen",
+        "pointRendering": {
+            "1": {
+                "label": {
+                    "render": "{name}"
                 }
-            },
-            "oneway": {
-                "mappings": {
-                    "1": {
-                        "then": "Deze kabelbaan kan in beide richtingen genomen worden"
-                    },
-                    "0": {
-                        "then": "Deze kabelbaan kan alleen naar de top worden genomen"
-                    }
-                },
-                "question": "In welke richting kan deze kabelbaan genomen worden?"
-            },
+            }
+        },
+        "tagRenderings": {
             "duration": {
                 "questionHint": "Dit is exclusief wachttijd.",
                 "render": "Een enkele reis duurt {duration} minuten"
@@ -290,16 +265,41 @@
             },
             "occupancy": {
                 "render": "Er kunnen {aerialway:occupancy} mensen in een cabine"
-            }
-        },
-        "pointRendering": {
-            "1": {
-                "label": {
-                    "render": "{name}"
+            },
+            "oneway": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze kabelbaan kan alleen naar de top worden genomen"
+                    },
+                    "1": {
+                        "then": "Deze kabelbaan kan in beide richtingen genomen worden"
+                    }
+                },
+                "question": "In welke richting kan deze kabelbaan genomen worden?"
+            },
+            "type": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit is een kabelbaan waar de gondel op dezelfde kabel naar boven en naar beneden gaat."
+                    },
+                    "1": {
+                        "then": "Dit is een kabellift waar de gondel in een continue circuit gaat"
+                    },
+                    "2": {
+                        "then": "Een open stoeltjeslift met zitjes om op te zitten."
+                    },
+                    "4": {
+                        "then": "Een sleeplift"
+                    },
+                    "5": {
+                        "then": "Een sleeplift met T-vormige armen voor twee passagiers"
+                    },
+                    "6": {
+                        "then": "Een sleeplift met L-vormige stangen voor één passagier"
+                    }
                 }
             }
-        },
-        "name": "Kabelbanen"
+        }
     },
     "ambulancestation": {
         "description": "Een ambulancestation is een plaats waar ambulances, medisch materiaal, persoonlijk beschermingsmateriaal en aanverwanten worden bewaard.",
@@ -1774,6 +1774,9 @@
         },
         "title": {
             "mappings": {
+                "0": {
+                    "then": "{name}"
+                },
                 "1": {
                     "then": "Vogelkijkhut {name}"
                 },
@@ -5851,6 +5854,11 @@
             }
         },
         "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
             "render": "Natuurgebied"
         }
     },
@@ -6380,6 +6388,21 @@
         },
         "title": {
             "render": "Picknicktafel"
+        }
+    },
+    "play_forest": {
+        "description": "Een speelbos is een vrij toegankelijke zone in een bos",
+        "name": "Speelbossen",
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                },
+                "1": {
+                    "then": "Speelbos {name}"
+                }
+            },
+            "render": "Speelbos"
         }
     },
     "playground": {
@@ -7916,6 +7939,9 @@
         },
         "title": {
             "mappings": {
+                "0": {
+                    "then": "{name}"
+                },
                 "1": {
                     "then": "Voetpad"
                 },
@@ -9928,13 +9954,25 @@
         }
     },
     "village_green": {
-        "description": "Een laag die dorpsgroen toont (gemeenschapsgroen, maar niet echt een park)"
+        "description": "Een laag die dorpsgroen toont (gemeenschapsgroen, maar niet echt een park)",
+        "name": "Speelweide",
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
+            "render": "Speelweide"
+        }
     },
     "visitor_information_centre": {
         "description": "Een bezoekerscentrum biedt informatie over een specifieke attractie of bezienswaardigheid waar het is gevestigd.",
         "name": "Bezoekerscentrum",
         "title": {
             "mappings": {
+                "0": {
+                    "then": "{name:nl}"
+                },
                 "1": {
                     "then": "{name}"
                 }

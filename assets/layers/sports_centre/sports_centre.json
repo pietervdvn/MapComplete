@@ -92,13 +92,15 @@
         {
           "if": "sport=9pin",
           "then": {
-            "en": "Nine-pin bowling"
+            "en": "Nine-pin bowling",
+            "es": "Bolos de nueve bolos"
           }
         },
         {
           "if": "sport=10pin",
           "then": {
-            "en": "Ten-pin bowling"
+            "en": "Ten-pin bowling",
+            "es": "Bolos de diez bolos"
           }
         },
         {
@@ -152,7 +154,8 @@
         {
           "if": "sport=base",
           "then": {
-            "en": "BASE jumping"
+            "en": "BASE jumping",
+            "es": "Salto BASE"
           }
         },
         {
@@ -692,37 +695,43 @@
         {
           "if": "sport=skateboard",
           "then": {
-            "en": "Skateboard"
+            "en": "Skateboard",
+            "es": "Monopatín"
           }
         },
         {
           "if": "sport=ski_jumping",
           "then": {
-            "en": "Ski jumping"
+            "en": "Ski jumping",
+            "es": "Salto de esquí"
           }
         },
         {
           "if": "sport=snooker",
           "then": {
-            "en": "Snooker"
+            "en": "Snooker",
+            "es": "Snooker"
           }
         },
         {
           "if": "sport=soccer",
           "then": {
-            "en": "Soccer"
+            "en": "Soccer",
+            "es": "Fútbol"
           }
         },
         {
           "if": "sport=softball",
           "then": {
-            "en": "Softball"
+            "en": "Softball",
+            "es": "Softball"
           }
         },
         {
           "if": "sport=speedway",
           "then": {
-            "en": "Motorcycle speedway"
+            "en": "Motorcycle speedway",
+            "es": "Circuito de motos"
           }
         },
         {

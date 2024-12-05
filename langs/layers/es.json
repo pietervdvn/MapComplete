@@ -8026,14 +8026,14 @@
                 "title": "un buzón en una pared"
             }
         },
-        "title": {
-            "render": "Buzón"
-        },
         "tagRenderings": {
             "operator": {
                 "question": "¿Quién gestiona este buzón?",
                 "render": "Este buzón es operado por <b>{operator}</b>."
             }
+        },
+        "title": {
+            "render": "Buzón"
         }
     },
     "postoffices": {
@@ -8525,6 +8525,17 @@
                 },
                 "question": "¿Tiene esta tienda una oferta de productos sin gluten?"
             },
+            "indoor": {
+                "mappings": {
+                    "0": {
+                        "then": "Este objeto se encuentra en el interior"
+                    },
+                    "1": {
+                        "then": "Este objeto se encuentra al aire libre"
+                    }
+                },
+                "question": "¿Se encuentra este objeto en el interior?"
+            },
             "induction-loop": {
                 "mappings": {
                     "0": {
@@ -8895,17 +8906,6 @@
                     }
                 },
                 "question": "¿Cuál es la entidad Wikidata correspondiente?"
-            },
-            "indoor": {
-                "mappings": {
-                    "0": {
-                        "then": "Este objeto se encuentra en el interior"
-                    },
-                    "1": {
-                        "then": "Este objeto se encuentra al aire libre"
-                    }
-                },
-                "question": "¿Se encuentra este objeto en el interior?"
             }
         }
     },
@@ -10213,23 +10213,20 @@
                 "title": "un centro deportivo"
             }
         },
-        "title": {
-            "render": "Centro deportivo"
-        },
         "tagRenderings": {
             "sport_centre-sport": {
                 "mappings": {
-                    "10": {
-                        "then": "Salto BASE"
-                    },
-                    "100": {
-                        "then": "Monopatín"
-                    },
                     "0": {
                         "then": "Bolos de nueve bolos"
                     },
                     "1": {
                         "then": "Bolos de diez bolos"
+                    },
+                    "10": {
+                        "then": "Salto BASE"
+                    },
+                    "100": {
+                        "then": "Monopatín"
                     },
                     "101": {
                         "then": "Salto de esquí"
@@ -10248,6 +10245,9 @@
                     }
                 }
             }
+        },
+        "title": {
+            "render": "Centro deportivo"
         }
     },
     "stairs": {

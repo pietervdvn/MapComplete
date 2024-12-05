@@ -387,6 +387,19 @@
             "skippedMultiple": "Je hebt {skipped} vragen overgeslaan",
             "skippedOne": "Je hebt één vraag beantwoord"
         },
+        "questions": {
+            "disable": "Stel deze vraag niet opnieuw",
+            "disabledIntro": "Je hebt sommige typen vragen uitgeschakeld. Klik hier om een vraag weer in te schakelen",
+            "disabledTitle": "Uitgeschakelde vragen",
+            "emailIs": "Het e-mailadres van deze {category} is <a href='mailto:{email}' target='_blank'>{email}</a>",
+            "emailOf": "Wat is het e-mailadres van {category}?",
+            "enable": "Stel deze vraag voor alle kenmerken",
+            "noneDisabled": "Als je niet geïnteresseerd bent in een bepaald type vraag, kun je deze uitschakelen. Een vraag uitschakelen doe je door op de drie puntjes in de rechterbovenhoek te klikken en 'uitschakelen' te selecteren",
+            "phoneNumberIs": "Het telefoonnummer van deze {category} is <a href='tel:{phone}' target='_blank'>{phone}</a>",
+            "phoneNumberOf": "Wat is het telefoonnummer van {category}?",
+            "websiteIs": "Website: <a href='{website}' target='_blank'>{website}</a>",
+            "websiteOf": "Wat is de website van {category}?"
+        },
         "readYourMessages": "Gelieve eerst je berichten op OpenStreetMap te lezen alvorens nieuwe objecten toe te voegen.",
         "removeLocationHistory": "Verwijder de geschiedenis aan locaties",
         "retry": "Opnieuw proberen",
@@ -549,19 +562,6 @@
             "searchToShort": "Je zoekopdracht is te kort, vul een langere tekst in",
             "searchWikidata": "Zoek op Wikidata",
             "wikipediaboxTitle": "Wikipedia"
-        },
-        "questions": {
-            "disable": "Stel deze vraag niet opnieuw",
-            "emailIs": "Het e-mailadres van deze {category} is <a href='mailto:{email}' target='_blank'>{email}</a>",
-            "emailOf": "Wat is het e-mailadres van {category}?",
-            "noneDisabled": "Als je niet geïnteresseerd bent in een bepaald type vraag, kun je deze uitschakelen. Een vraag uitschakelen doe je door op de drie puntjes in de rechterbovenhoek te klikken en 'uitschakelen' te selecteren",
-            "disabledIntro": "Je hebt sommige typen vragen uitgeschakeld. Klik hier om een vraag weer in te schakelen",
-            "disabledTitle": "Uitgeschakelde vragen",
-            "enable": "Stel deze vraag voor alle kenmerken",
-            "phoneNumberIs": "Het telefoonnummer van deze {category} is <a href='tel:{phone}' target='_blank'>{phone}</a>",
-            "phoneNumberOf": "Wat is het telefoonnummer van {category}?",
-            "websiteIs": "Website: <a href='{website}' target='_blank'>{website}</a>",
-            "websiteOf": "Wat is de website van {category}?"
         }
     },
     "hotkeyDocumentation": {
@@ -578,14 +578,14 @@
         "selectItem": "Selecteer het POI het dichtst bij het midden van de kaart (crosshair). Alleen wanneer toetsenbordnavigatie wordt gebruikt",
         "selectItem2": "Selecteer het POI het op één na dichtst bij het midden van de kaart (crosshair). Alleen wanneer toetsenbordnavigatie wordt gebruikt",
         "selectItem3": "Selecteer het POI het op twee na dichtst bij het midden van de kaart (crosshair). Alleen wanneer toetsenbordnavigatie wordt gebruikt",
+        "selectItemI": "Selecteer de POI die het op {i} na dichtst bij het midden van de kaart (crosshair) ligt. Alleen wanneer toetsenbordnavigatie wordt gebruikt",
         "selectMap": "Gebruik een niet-OpenStreetMap-gebaseerde kaart als achtergrond. Wisselt tussen de twee beste, beschikbare lagen",
         "selectMapnik": "Gebruik OpenStreetMap-carto als achtergrondlaag",
         "selectOsmbasedmap": "Gebruik een OpenStreetMap-gebaseerde achtergrondkaart (of schakel de achtergrond-rasterlaag uit)",
         "selectSearch": "Selecteer de zoekbalk om locaties te zoeken",
         "shakePhone": "Schudden met je telefoon",
         "title": "Sneltoetsen",
-        "translationMode": "Vertaalmodus in- of uitschakelen",
-        "selectItemI": "Selecteer de POI die het op {i} na dichtst bij het midden van de kaart (crosshair) ligt. Alleen wanneer toetsenbordnavigatie wordt gebruikt"
+        "translationMode": "Vertaalmodus in- of uitschakelen"
     },
     "image": {
         "addPicture": "Neem een foto",
@@ -622,6 +622,7 @@
         "pleaseLogin": "Gelieve je aan te melden om een foto toe te voegen",
         "processing": "De server is je beeld aan het verwerken",
         "respectPrivacy": "Voeg geen Google Maps, Google Streetview of foto's met auteursrechten toe.",
+        "selectFile": "Selecteer een foto op je toestel",
         "toBig": "Je afbeelding is te groot, namelijk {actual_size}. Gelieve afbeeldingen van maximaal {max_size} te gebruiken",
         "unlink": {
             "button": "Link naar foto verwijderen",
@@ -630,27 +631,26 @@
         },
         "upload": {
             "failReasons": "Mogelijk heb je geen verbinding meer met het internet",
+            "failReasonsAdvanced": "Je kunt er ook voor zorgen dat je browser en extensies API's van derden niet blokkeren.",
             "multiple": {
                 "done": "{count} afbeeldingen zijn succesvol geüpload. Bedankt!",
+                "partiallyDone": "{count} afbeeldingen worden geüpload, {done} afbeeldingen zijn klaar…",
                 "someFailed": "Sorry, we konden {count} afbeeldingen niet uploaden",
-                "uploading": "{count} afbeeldingen worden geüpload…",
-                "partiallyDone": "{count} afbeeldingen worden geüpload, {done} afbeeldingen zijn klaar…"
+                "uploading": "{count} afbeeldingen worden geüpload…"
             },
             "noBlur": "Afbeeldingen worden niet geblurred. Fotografeer geen mensen",
             "one": {
                 "done": "Je afbeelding is succesvol geüpload. Bedankt!",
                 "failed": "Sorry, we konden je afbeelding niet uploaden",
-                "uploading": "Je afbeelding wordt geüpload…",
-                "retrying": "Je afbeelding wordt opnieuw geüpload…"
-            },
-            "failReasonsAdvanced": "Je kunt er ook voor zorgen dat je browser en extensies API's van derden niet blokkeren."
+                "retrying": "Je afbeelding wordt opnieuw geüpload…",
+                "uploading": "Je afbeelding wordt geüpload…"
+            }
         },
         "uploadDone": "Je afbeelding is toegevoegd. Bedankt om te helpen!",
         "uploadFailed": "Afbeelding uploaden mislukt. Heb je internet? Gebruik je Brave of UMatrix? Dan moet je derde partijen toelaten.",
         "uploadMultipleDone": "{count} afbeeldingen zijn toegevoegd. Bedankt voor je bijdrage!",
         "uploadingMultiple": "Bezig met {count} foto's te uploaden…",
-        "uploadingPicture": "Bezig met een foto te uploaden…",
-        "selectFile": "Selecteer een foto op je toestel"
+        "uploadingPicture": "Bezig met een foto te uploaden…"
     },
     "importInspector": {
         "title": "Inspecteer en beheer importeer-notas"
@@ -667,13 +667,13 @@
     },
     "index": {
         "#": "These texts are shown above the theme buttons when no theme is loaded",
+        "about": "Over MapComplete",
         "featuredThemeTitle": "Thema van de week",
         "intro": "MapComplete is een OpenStreetMap-applicatie waar informatie over een specifiek thema bekeken en aangepast kan worden.",
+        "learnMore": "Lees meer",
         "logIn": "Log in om andere thema's te zien waar je al in bewerkt hebt",
         "pickTheme": "Kies hieronder een thema om te beginnen.",
-        "title": "Welkom bij MapComplete",
-        "about": "Over MapComplete",
-        "learnMore": "Lees meer"
+        "title": "Welkom bij MapComplete"
     },
     "move": {
         "cancel": "Annuleer verplaatsing",
@@ -734,7 +734,9 @@
     },
     "plantDetection": {
         "back": "Ga terug naar het soorten-overzicht",
+        "button": "Detecteer automatisch de plantsoort met behulp van Plantnet.org",
         "confirm": "Selecteer soort",
+        "done": "De soort is toegepast",
         "error": "Er ging iets mis met het detecteren van de soort: {error}",
         "howTo": {
             "intro": "Voor optimale resultaten,",
@@ -753,9 +755,12 @@
         "querying": "Plantnet.org aan het bevragen met {length} afbeeldingen",
         "seeInfo": "Bekijk meer informatie van deze plantensoort",
         "takeImages": "Neem afbeeldingen van de boom om de soort automatisch te herkennen",
-        "button": "Detecteer automatisch de plantsoort met behulp van Plantnet.org",
-        "done": "De soort is toegepast",
         "tryAgain": "Selecteer een andere soort"
+    },
+    "preset_type": {
+        "question": "Van welk type is dit object?",
+        "typeDescription": "Dit is <b>{title}</b>. <div class='subtle'>{description}</div>",
+        "typeTitle": "DIt is <b>{title}</b>"
     },
     "privacy": {
         "editingIntro": "Wanneer je een wijziging maakt, wordt deze wijziging opgeslaan op OpenStreetMap. Dit is zichtbaar voor iedereen. Een wijzigingenset gemaakt met MapComplete bevat de volgende data:",
@@ -783,30 +788,30 @@
     "reviews": {
         "affiliated_reviewer_warning": "(Review door betrokkene)",
         "attribution": "Via <a href='https://mangrove.reviews/' target='_blank'>Mangrove Reviews</a>",
+        "averageRating": "Gemiddelde score van {n} sterren",
         "i_am_affiliated": "<span>Ik ben persoonlijk betrokken</span><br/><span class='subtle'>Vink aan indien je de oprichter, maker, werknemer, ... of dergelijke bent</span>",
+        "i_am_affiliated_explanation": "Check of je een eigenaar, maker, werknemer, ... bent.",
         "name_required": "De naam van dit object moet gekend zijn om een review te kunnen maken",
         "no_reviews_yet": "Er zijn nog geen beoordelingen. Wees de eerste!",
-        "question": "Welke score geef je aan {title()}?",
-        "save": "Opslaan",
-        "saved": "Bedankt om je beoordeling te delen!",
-        "saving_review": "Opslaan...",
-        "title": "{count} beoordelingen",
-        "title_singular": "Eén beoordeling",
-        "tos": "Als je je review publiceert, ga je akkoord met de <a href='https://mangrove.reviews/terms' target='_blank'>de gebruiksvoorwaarden en privacy policy van Mangrove.reviews</a>",
-        "write_a_comment": "Schrijf een beoordeling…",
-        "i_am_affiliated_explanation": "Check of je een eigenaar, maker, werknemer, ... bent.",
-        "reviewing_as_anonymous": "Beoordeel anoniem",
-        "averageRating": "Gemiddelde score van {n} sterren",
-        "too_long": "Maximaal {max} tekens zijn toegestaan. Je recensie heeft {amount} tekens.",
         "non_place_review": "Eén recensie gaat niet over een plaats en wordt hier niet getoond.",
         "non_place_reviews": "{n} recensies gaan niet over een plaats en worden hier niet getoond.",
+        "question": "Welke score geef je aan {title()}?",
         "question_opinion": "Hoe was je ervaring?",
         "rate": "Geef {n} sterren",
         "rated": "Kreeg {n} sterren",
         "reviewPlaceholder": "Beschrijf je ervaring…",
         "reviewing_as": "Beoordelen als {nickname}",
+        "reviewing_as_anonymous": "Beoordeel anoniem",
         "reviews_bug": "Verwachtte je meer beoordelingen? Sommige beoordelingen worden niet getoond door een bug.",
+        "save": "Opslaan",
+        "saved": "Bedankt om je beoordeling te delen!",
+        "saving_review": "Opslaan...",
         "see_all": "Bekijk al je recensies op mangrove.reviews",
+        "title": "{count} beoordelingen",
+        "title_singular": "Eén beoordeling",
+        "too_long": "Maximaal {max} tekens zijn toegestaan. Je recensie heeft {amount} tekens.",
+        "tos": "Als je je review publiceert, ga je akkoord met de <a href='https://mangrove.reviews/terms' target='_blank'>de gebruiksvoorwaarden en privacy policy van Mangrove.reviews</a>",
+        "write_a_comment": "Schrijf een beoordeling…",
         "your_reviews": "Je vorige recensies",
         "your_reviews_empty": "We konden je eerdere beoordelingen niet vinden"
     },
@@ -824,6 +829,14 @@
         "allMissing": "Nog geen vertalingen",
         "missing": "{count} niet-vertaalde teksten",
         "notImmediate": "Vertalingen worden niet onmiddelijk geupdate. Dit duurt gemiddeld enkele dagen"
+    },
+    "unknown": {
+        "clear": "Wis antwoord",
+        "explanation": "Wis dit stukje informatie als het huidige antwoord onjuist is , maar de werkelijke waarde niet bekend is. Er wordt geen andere informatie verwijderd.",
+        "keep": "Antwoord behouden",
+        "markUnknown": "Markeer als onbekend",
+        "removedKeys": "De volgende keys worden verwijderd:",
+        "title": "Als onbekend markeren?"
     },
     "userinfo": {
         "gotoInbox": "Open je inbox",
@@ -850,14 +863,19 @@
             "noAt": "Een email-adres moet een @ hebben"
         },
         "fediverse": {
-            "invalidHost": "{host} is geen geldige hostnaam",
-            "feedback": "Een fediverse 'handle' bestaat uit @username@server.tld of is een link naar een profiel",
             "description": "Een fediverse 'handle', vaak in de vorm @username@server.tld",
+            "feedback": "Een fediverse 'handle' bestaat uit @username@server.tld of is een link naar een profiel",
+            "invalidHost": "{host} is geen geldige hostnaam",
             "onYourServer": "Bekijk en volg op uw server"
         },
         "float": {
             "description": "een getal",
             "feedback": "dit is geen getal"
+        },
+        "id": {
+            "description": "een identificatiemiddel",
+            "invalidCharacter": "Een id kan alleen letters, cijfers en underscores bevatten",
+            "shouldBeLonger": "Een id moet minstens 3 tekens lang zijn"
         },
         "int": {
             "description": "een geheel getal"
@@ -883,6 +901,13 @@
             "description": "een positief, geheel getal",
             "noZero": "Nul is niet toegelaten"
         },
+        "regex": {
+            "description": "een reguliere expressie"
+        },
+        "slope": {
+            "inputExplanation": "Leg je telefoon op de grond met de bovenkant naar de top van de helling.",
+            "inputIncorrect": "Voor een juiste meting moet je ervoor zorgen dat de pijl zich binnen het groene gebied bevindt."
+        },
         "string": {
             "description": "een stukje tekst"
         },
@@ -900,31 +925,6 @@
             "description": "Een Wikidata-code",
             "empty": "Voer enkele wikidata-items in",
             "startsWithQ": "Een wikidata-identificator begint met Q gevolgd door een nummer"
-        },
-        "slope": {
-            "inputExplanation": "Leg je telefoon op de grond met de bovenkant naar de top van de helling.",
-            "inputIncorrect": "Voor een juiste meting moet je ervoor zorgen dat de pijl zich binnen het groene gebied bevindt."
-        },
-        "id": {
-            "description": "een identificatiemiddel",
-            "invalidCharacter": "Een id kan alleen letters, cijfers en underscores bevatten",
-            "shouldBeLonger": "Een id moet minstens 3 tekens lang zijn"
-        },
-        "regex": {
-            "description": "een reguliere expressie"
         }
-    },
-    "unknown": {
-        "removedKeys": "De volgende keys worden verwijderd:",
-        "markUnknown": "Markeer als onbekend",
-        "explanation": "Wis dit stukje informatie als het huidige antwoord onjuist is , maar de werkelijke waarde niet bekend is. Er wordt geen andere informatie verwijderd.",
-        "keep": "Antwoord behouden",
-        "clear": "Wis antwoord",
-        "title": "Als onbekend markeren?"
-    },
-    "preset_type": {
-        "typeDescription": "Dit is <b>{title}</b>. <div class='subtle'>{description}</div>",
-        "typeTitle": "DIt is <b>{title}</b>",
-        "question": "Van welk type is dit object?"
     }
 }

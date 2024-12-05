@@ -5,7 +5,8 @@
     "de": "Seilbahnen",
     "cs": "Letecké trasy",
     "ca": "Vies aeries",
-    "es": "Teleféricos"
+    "es": "Teleféricos",
+    "nl": "Kabelbanen"
   },
   "description": {
     "en": "Various forms of transport for passengers and goods that use wires, including cable cars, gondolas, chair lifts, drag lifts, and zip lines. ",
@@ -58,7 +59,8 @@
           "pl": "{name}",
           "es": "{name}",
           "cs": "{name}",
-          "ca": "{name}"
+          "ca": "{name}",
+          "nl": "{name}"
         },
         "condition": "name~*",
         "classes": "bg-white p-1 px-2 rounded"
@@ -126,7 +128,8 @@
             "en": "An open chairlift with seats to sit on and open to the outside air.",
             "de": "Ein offener Sessellift mit Sitzgelegenheiten und Zugang zur Außenluft.",
             "cs": "Otevřená lanovka se sedačkami k sezení na čerstvém vzduchu.",
-            "es": "Un telesilla abierto con asientos para sentarse y abierto al aire libre."
+            "es": "Un telesilla abierto con asientos para sentarse y abierto al aire libre.",
+            "nl": "Een open stoeltjeslift met zitjes om op te zitten."
           },
           "icon": "./assets/layers/aerialway/chair_lift.svg"
         },
@@ -146,7 +149,8 @@
             "de": "Ein Schlepplift",
             "pl": "Wyciąg orczykowy",
             "cs": "Vlek",
-            "es": "Un remonte"
+            "es": "Un remonte",
+            "nl": "Een sleeplift"
           },
           "hideInAnswer": true
         },
@@ -156,7 +160,8 @@
             "en": "A drag lift with T-shaped carriers for two passengers at a time",
             "de": "Ein Schlepplift mit T-förmigen Trägern für jeweils zwei Passagiere",
             "cs": "Vlek s nosiči ve tvaru T pro dva cestující najednou",
-            "es": "Un remonte con transportadores en forma de T para dos pasajeros a la vez"
+            "es": "Un remonte con transportadores en forma de T para dos pasajeros a la vez",
+            "nl": "Een sleeplift met T-vormige armen voor twee passagiers"
           }
         },
         {
@@ -165,7 +170,8 @@
             "en": "A drag lift with L-shaped bars for a single passenger at a time",
             "de": "Ein Schlepplift mit L-förmigen Trägern für jeweils einen Passagier",
             "cs": "Vlek s tyčemi ve tvaru písmene L pro jednoho cestujícího",
-            "es": "Un remonte con barras en forma de L para un solo pasajero a la vez"
+            "es": "Un remonte con barras en forma de L para un solo pasajero a la vez",
+            "nl": "Een sleeplift met L-vormige stangen voor één passagier"
           }
         },
         {
@@ -225,7 +231,8 @@
         "pl": "To nie włącza czasu oczekiwania.",
         "es": "Esto no incluye el tiempo de espera.",
         "cs": "To nezahrnuje čekací dobu.",
-        "ca": "Això exclou el temps d'espera."
+        "ca": "Això exclou el temps d'espera.",
+        "nl": "Dit is exclusief wachttijd."
       },
       "freeform": {
         "key": "duration"
@@ -237,7 +244,8 @@
         "pl": "Pojedynczy przejazd trwa {duration} minut",
         "es": "Un viaje sencillo tarda {duration} minutos",
         "cs": "Jedna jízda trvá {duration} minut",
-        "ca": "Un viatge dura {duration} minuts"
+        "ca": "Un viatge dura {duration} minuts",
+        "nl": "Een enkele reis duurt {duration} minuten"
       }
     },
     {
@@ -258,7 +266,8 @@
         "de": "{aerialway:occupancy} Leute passen in eine Kabine",
         "pl": "{aerialway:occupancy} osób mieści się w jednym wagonie",
         "cs": "{aerialway:occupancy} osob se vejde do jednoho vozu",
-        "es": "En una sola cabina caben {aerialway:occupancy} personas"
+        "es": "En una sola cabina caben {aerialway:occupancy} personas",
+        "nl": "Er kunnen {aerialway:occupancy} mensen in een cabine"
       }
     },
     "opening_hours",
@@ -268,7 +277,8 @@
         "en": "In what direction can this aerialway be taken?",
         "de": "In welche Richtung kann diese Seilbahn genutzt werden?",
         "cs": "Jakým směrem tato dráha může vést?",
-        "es": "¿En qué dirección se puede tomar este teleférico?"
+        "es": "¿En qué dirección se puede tomar este teleférico?",
+        "nl": "In welke richting kan deze kabelbaan genomen worden?"
       },
       "mappings": [
         {
@@ -278,7 +288,8 @@
             "en": "This aerialway can only be taken to the top",
             "de": "Diese Seilbahn kann nur nach oben gefahren werden",
             "cs": "Touto lanovkou lze vyjet pouze na vrchol",
-            "es": "Este teleférico solo se puede tomar hacia arriba"
+            "es": "Este teleférico solo se puede tomar hacia arriba",
+            "nl": "Deze kabelbaan kan alleen naar de top worden genomen"
           }
         },
         {
@@ -287,7 +298,8 @@
             "en": "This aerialway can be taken in both directions",
             "de": "Diese Seilbahn kann in beide Richtungen befahren werden",
             "cs": "Tuto dráhu lze využít v obou směrech",
-            "es": "Este teleférico se puede tomar en ambas direcciones"
+            "es": "Este teleférico se puede tomar en ambas direcciones",
+            "nl": "Deze kabelbaan kan in beide richtingen genomen worden"
           }
         }
       ]
@@ -299,7 +311,8 @@
         "de": "Die Seilbahn hat eine Länge von {_length:km} km",
         "fr": "Cette voie aérienne fait {_length:km} kilomètre de long",
         "cs": "Tato dráha je dlouhá {_length:km} kilometr",
-        "es": "Este teleférico tiene {_length:km} kilómetros de longitud"
+        "es": "Este teleférico tiene {_length:km} kilómetros de longitud",
+        "nl": "Deze kabelbaan is {_length:km} kilometer lang"
       }
     }
   ],

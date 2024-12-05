@@ -3161,7 +3161,8 @@
       "question": {
         "en": "Is this object located indoors?",
         "nl": "Bevindt dit object zich binnen?",
-        "de": "Befindet sich das Objekt in einem Innenraum?"
+        "de": "Befindet sich das Objekt in einem Innenraum?",
+        "es": "¿Se encuentra este objeto en el interior?"
       },
       "mappings": [
         {
@@ -3169,7 +3170,8 @@
           "then": {
             "en": "This object is located indoors",
             "nl": "Dit object bevindt zich binnen",
-            "de": "Dieses Objekt befindet sich in einem Innenraum"
+            "de": "Dieses Objekt befindet sich in einem Innenraum",
+            "es": "Este objeto se encuentra en el interior"
           }
         },
         {
@@ -3177,7 +3179,8 @@
           "then": {
             "en": "This object is located outdoors",
             "nl": "Dit object bevindt zich buiten",
-            "de": "Dieses Objekt befindet sich im Freien"
+            "de": "Dieses Objekt befindet sich im Freien",
+            "es": "Este objeto se encuentra al aire libre"
           }
         }
       ]
