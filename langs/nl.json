@@ -632,7 +632,7 @@
             "failReasons": "Mogelijk heb je geen verbinding meer met het internet",
             "multiple": {
                 "done": "{aantal} afbeeldingen zijn succesvol geüpload. Bedankt!",
-                "someFailed": "Sorry, we konden {aantal} afbeeldingen niet uploaden",
+                "someFailed": "Sorry, we konden {count} afbeeldingen niet uploaden",
                 "uploading": "{count} afbeeldingen worden geüpload…",
                 "partiallyDone": "{aantal} afbeeldingen worden geüpload, {done} afbeeldingen zijn klaar…"
             },
@@ -695,7 +695,7 @@
         "reasons": {
             "reasonInaccurate": "De locatie van dit object is niet accuraat en moet een paar meter verschoven worden",
             "reasonRelocation": "Dit object is verhuisd naar een andere locatie",
-            "reasonSnapTo": "Dit moet vastgeklikt worden aan {naam}"
+            "reasonSnapTo": "Dit moet vastgeklikt worden aan {name}"
         },
         "selectReason": "Waarom verplaats je dit object?",
         "whyMove": "Waarom verplaats je dit punt?",
