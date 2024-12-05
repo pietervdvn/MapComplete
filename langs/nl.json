@@ -631,10 +631,10 @@
         "upload": {
             "failReasons": "Mogelijk heb je geen verbinding meer met het internet",
             "multiple": {
-                "done": "{aantal} afbeeldingen zijn succesvol geüpload. Bedankt!",
+                "done": "{count} afbeeldingen zijn succesvol geüpload. Bedankt!",
                 "someFailed": "Sorry, we konden {count} afbeeldingen niet uploaden",
                 "uploading": "{count} afbeeldingen worden geüpload…",
-                "partiallyDone": "{aantal} afbeeldingen worden geüpload, {done} afbeeldingen zijn klaar…"
+                "partiallyDone": "{count} afbeeldingen worden geüpload, {done} afbeeldingen zijn klaar…"
             },
             "noBlur": "Afbeeldingen worden niet geblurred. Fotografeer geen mensen",
             "one": {
