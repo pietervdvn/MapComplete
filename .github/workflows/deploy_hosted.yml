@@ -35,7 +35,12 @@ jobs:
         run: |
           pwd
           ls
-          npm run test
+          # This is the same as `npm run test`, but `vitest` doesn't want to run within npm :shrug:
+          export NODE_OPTIONS="--max-old-space-size=8192"
+          npm run clean:tests
+          npm run generate:doctests 2>&1 | grep -v "No doctests found in"
+          vitest --run test
+          npm run clean:tests
         shell: bash
 
       - name: Prepare deploy
