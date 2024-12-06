@@ -2,7 +2,7 @@ import ChangeTagAction from "./ChangeTagAction"
 import { Tag } from "../../Tags/Tag"
 import OsmChangeAction from "./OsmChangeAction"
 import { ChangeDescription } from "./ChangeDescription"
-import { Store, UIEventSource } from "../../UIEventSource"
+import { UIEventSource } from "../../UIEventSource"
 
 export default class LinkImageAction extends OsmChangeAction {
     private readonly _proposedKey: "image" | "mapillary" | "wiki_commons" | string

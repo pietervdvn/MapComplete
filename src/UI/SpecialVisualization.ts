@@ -1,18 +1,13 @@
 import { Store, UIEventSource } from "../Logic/UIEventSource"
 import BaseUIElement from "./BaseUIElement"
 import ThemeConfig from "../Models/ThemeConfig/ThemeConfig"
-import {
-    FeatureSource,
-    IndexedFeatureSource,
-    WritableFeatureSource,
-} from "../Logic/FeatureSource/FeatureSource"
+import { FeatureSource, IndexedFeatureSource, WritableFeatureSource } from "../Logic/FeatureSource/FeatureSource"
 import { OsmConnection } from "../Logic/Osm/OsmConnection"
 import { Changes } from "../Logic/Osm/Changes"
 import { ExportableMap, MapProperties } from "../Models/MapProperties"
 import LayerState from "../Logic/State/LayerState"
 import { Feature, Geometry, Point, Polygon } from "geojson"
 import FullNodeDatabaseSource from "../Logic/FeatureSource/TiledFeatureSource/FullNodeDatabaseSource"
-import { MangroveIdentity } from "../Logic/Web/MangroveReviews"
 import { GeoIndexedStoreForLayer } from "../Logic/FeatureSource/Actors/GeoIndexedStore"
 import LayerConfig from "../Models/ThemeConfig/LayerConfig"
 import FeatureSwitchState from "../Logic/State/FeatureSwitchState"
@@ -22,14 +17,12 @@ import { ImageUploadManager } from "../Logic/ImageProviders/ImageUploadManager"
 import FavouritesFeatureSource from "../Logic/FeatureSource/Sources/FavouritesFeatureSource"
 import { ProvidedImage } from "../Logic/ImageProviders/ImageProvider"
 import GeoLocationHandler from "../Logic/Actors/GeoLocationHandler"
-import { SummaryTileSourceRewriter } from "../Logic/FeatureSource/TiledFeatureSource/SummaryTileSource"
 import ThemeSource from "../Logic/FeatureSource/Sources/ThemeSource"
 import { Map as MlMap } from "maplibre-gl"
 import ShowDataLayer from "./Map/ShowDataLayer"
 import { CombinedFetcher } from "../Logic/Web/NearbyImagesSearch"
 import SearchState from "../Logic/State/SearchState"
-import UserRelatedState, { OptionallySyncedHistory } from "../Logic/State/UserRelatedState"
-import GeocodeResult from "./Search/GeocodeResult.svelte"
+import UserRelatedState from "../Logic/State/UserRelatedState"
 import FeaturePropertiesStore from "../Logic/FeatureSource/Actors/FeaturePropertiesStore"
 
 /**
