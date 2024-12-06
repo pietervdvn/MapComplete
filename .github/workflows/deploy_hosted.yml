@@ -49,15 +49,10 @@ jobs:
         shell: bash
 
       - name: Upload artefact
-        env:
-          SSH_KEY: ${{ secrets.HETZNER_KEY }}
         run: |
-          mkdir .ssh
-          echo -e $SSH_KEY > .ssh/id_ed25519
-          chmod 500 .ssh/id_ed25519
-          ssh -i .ssh/id_ed25519 root@hosted.mapcomplete.org "mkdir /root/staging/${{ github.ref_name }}"
-          scp -r -i .ssh/id_ed25519 dist/* root@hosted.mapcomplete.org:/root/staging/${{ github.ref_name }}
-          ssh -i .ssh/id_ed25519 root@hosted.mapcomplete.org "rm -rf /root/public/${{ github.ref_name }} && mv /root/staging/${{ github.ref_name }}/ /root/public/"
+          ssh hetzner "mkdir /root/staging/${{ github.ref_name }}"
+          scp hetzner:/root/staging/${{ github.ref_name }}
+          ssh hetzner "rm -rf /root/public/${{ github.ref_name }} && mv /root/staging/${{ github.ref_name }}/ /root/public/"
           
           
 
