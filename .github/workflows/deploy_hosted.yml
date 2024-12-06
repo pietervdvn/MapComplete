@@ -51,7 +51,7 @@ jobs:
       - name: Upload artefact
         run: |
           ssh hetzner "mkdir /root/staging/${{ github.ref_name }}"
-          scp hetzner:/root/staging/${{ github.ref_name }}
+          scp -r dist/* hetzner:/root/staging/${{ github.ref_name }}/
           ssh hetzner "rm -rf /root/public/${{ github.ref_name }} && mv /root/staging/${{ github.ref_name }}/ /root/public/"
           
           
