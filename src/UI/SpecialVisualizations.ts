@@ -744,13 +744,14 @@ export default class SpecialVisualizations {
                         required: false,
                     },
                 ],
-                constr: (state, tags, args) => {
+                constr: (state, tags, args, feature) => {
                     const targetKey = args[0] === "" ? undefined : args[0]
                     const noBlur = args[3]?.toLowerCase()?.trim()
                     return new SvelteUIElement(UploadImage, {
                         state,
                         tags,
                         targetKey,
+                        feature,
                         labelText: args[1],
                         image: args[2],
                         noBlur: noBlur === "true" || noBlur === "yes",
