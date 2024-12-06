@@ -170,6 +170,9 @@ export class ImageUploadManager {
         }
         if (location === undefined || location?.some((l) => l === undefined)) {
             feature ??= this._indexedFeatures.featuresById.data.get(featureId)
+            if(feature === undefined){
+                throw "ImageUploadManager: no feature given and no feature found in the indexedFeature. Cannot upload this image"
+            }
             location = GeoOperations.centerpointCoordinates(feature)
         }
         try {
