@@ -132,7 +132,8 @@
         },
         "special": {
           "type": "nearby_images",
-          "mode": "open"
+          "mode": "open",
+          "readonly": "yes"
         }
       }
     },
