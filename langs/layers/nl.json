@@ -2972,7 +2972,7 @@
                         "then": "Deze klok heeft vier klokken"
                     }
                 },
-                "question": "Hoeveel klokken heeft deze klok?",
+                "question": "Hoeveel zijden heeft deze klok?",
                 "render": "Deze klok heeft {faces} klokken"
             },
             "hygrometer": {
