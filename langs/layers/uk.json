@@ -938,6 +938,9 @@
             },
             "wikipedia-etymology": {
                 "question": "На честь якого елемента Вікіданих названо цей об'єкт?"
+            },
+            "etymology_multi_apply": {
+                "render": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Автоматичне застосування даних до всіх сегментів з однаковою назвою, true)}"
             }
         }
     },
@@ -1509,6 +1512,13 @@
                 "render": {
                     "special": {
                         "text": "Востаннє редаговано {_last_edit:timestamp} користувачем {_last_edit:contributor}"
+                    }
+                }
+            },
+            "share": {
+                "render": {
+                    "special": {
+                        "text": "Поділіться цією локацією"
                     }
                 }
             }
