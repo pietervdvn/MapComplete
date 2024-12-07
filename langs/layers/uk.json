@@ -931,7 +931,15 @@
         }
     },
     "etymology": {
-        "name": "Має етимологію"
+        "name": "Має етимологію",
+        "tagRenderings": {
+            "street-name-sign-image": {
+                "render": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Додати зображення таблички з назвою вулиці)}"
+            },
+            "wikipedia-etymology": {
+                "question": "На честь якого елемента Вікіданих названо цей об'єкт?"
+            }
+        }
     },
     "fire_station": {
         "presets": {
@@ -1496,6 +1504,13 @@
             "website": {
                 "editButtonAriaLabel": "Редагувати веб-сайт",
                 "question": "Який веб-сайт має {title()}?"
+            },
+            "last_edit": {
+                "render": {
+                    "special": {
+                        "text": "Востаннє редаговано {_last_edit:timestamp} користувачем {_last_edit:contributor}"
+                    }
+                }
             }
         }
     },
@@ -2423,6 +2438,38 @@
         },
         "title": {
             "render": "Утилізація відходів"
+        }
+    },
+    "note": {
+        "filter": {
+            "10": {
+                "options": {
+                    "0": {
+                        "question": "Останнє редагування дописувачем {search}"
+                    }
+                }
+            },
+            "11": {
+                "options": {
+                    "0": {
+                        "question": "Не відредаговано як останнє {пошук}"
+                    }
+                }
+            },
+            "14": {
+                "options": {
+                    "0": {
+                        "question": "Останнє редагування зроблено до {пошук}"
+                    }
+                }
+            },
+            "15": {
+                "options": {
+                    "0": {
+                        "question": "Останнє редагування після {search}"
+                    }
+                }
+            }
         }
     }
 }
