@@ -103,7 +103,7 @@
         "lines_too": "Les lignes et les polygones sont également affichés. Des attributs et des images peuvent également être ajoutés et mis à jour sur ces objets.",
         "mapcomplete": {
             "customize": "MapComplete peut être adapté à vos besoins, avec de nouvelles couches cartographiques, de nouvelles fonctionnalités ou en utilisant les couleurs et la police de votre organisation.\nNous avons également de l'expérience dans le lancement de campagnes de crowdsourcing de géodonnées.\nContactez pietervdvn@posteo.net pour un devis.",
-            "intro": "MapComplete est un site qui a {mapCount} carte intéractives. Chaque carte permet d'ajouter et mettre à jour des informations. IL y a de nombreuses fonctionnalités :",
+            "intro": "MapComplete est un site qui a {mapCount} carte intéractives. Chaque carte permet d'ajouter et mettre à jour des informations. Il y a de nombreuses fonctionnalités :",
             "li0": "Montre où se trouvent les points d'intérêt (POI)",
             "li1": "Ajouter de nouveaux points et mettre à jour les infos de ceux existant",
             "li2": "Ajouter facilement des informations de contact et des heures d'ouverture",
