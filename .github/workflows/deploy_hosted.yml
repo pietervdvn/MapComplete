@@ -1,6 +1,7 @@
 name: Deploy develop on dev.mapcomplete.org
 on:
-  push
+  - push
+  - pull_request
 
 jobs:
   build:
