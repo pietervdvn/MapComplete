@@ -217,7 +217,8 @@
                         "then": "Dit is een reclamezuil"
                     }
                 },
-                "render": "Dit is een {advertising}"
+                "render": "Dit is een {advertising}",
+                "question": "Wat voor advertentieobject is dit?"
             }
         },
         "title": {
@@ -242,6 +243,12 @@
                 },
                 "9": {
                     "then": "Reclamezuil"
+                },
+                "0": {
+                    "then": "Billboard"
+                },
+                "2": {
+                    "then": "Afficheframe"
                 }
             }
         }
@@ -258,13 +265,15 @@
         "tagRenderings": {
             "duration": {
                 "questionHint": "Dit is exclusief wachttijd.",
-                "render": "Een enkele reis duurt {duration} minuten"
+                "render": "Een enkele reis duurt {duration} minuten",
+                "question": "Hoe lang duurt een rit met deze lift?"
             },
             "length": {
                 "render": "Deze kabelbaan is {_length:km} kilometer lang"
             },
             "occupancy": {
-                "render": "Er kunnen {aerialway:occupancy} mensen in een cabine"
+                "render": "Er kunnen {aerialway:occupancy} mensen in een cabine",
+                "question": "Hoeveel mensen kunnen in één cabine?"
             },
             "oneway": {
                 "mappings": {
@@ -296,9 +305,26 @@
                     },
                     "6": {
                         "then": "Een sleeplift met L-vormige stangen voor één passagier"
+                    },
+                    "10": {
+                        "then": "Een tokkelbaan. (Ook bekend als deathride; een toeristische attractie waarbij avontuurlijk mensen aan hoge snelheid afdalen)"
+                    },
+                    "3": {
+                        "then": "Een kabelbaan met zowel stoeltjes als gondels in dezelfde baan"
+                    },
+                    "7": {
+                        "then": "Een sleeplift met stangen om skiërs naar boven te slepen"
+                    },
+                    "8": {
+                        "then": "Een sleeplijn waar skiërs zich aan vasthouden of vastmaken"
                     }
-                }
+                },
+                "question": "Wat voor kabelbaan is dit?"
             }
+        },
+        "description": "Verschillende vormen van passagiers- en goederentransport die gebruikmaken van kabels, waaronder kabelbanen, gondelbanen, sleepliften en tokkelbanen.",
+        "title": {
+            "render": "Kabelbaan {name}"
         }
     },
     "ambulancestation": {
@@ -386,6 +412,10 @@
                 },
                 "question": "Welke dieren worden hier opgevangen?",
                 "render": "{animal_shelter} worden hier opgevangen"
+            },
+            "2": {
+                "question": "Wat is de naam van dit dierenasiel?",
+                "render": "De naam van dit dierenasiel is <b>{name}</b>"
             }
         },
         "title": {
@@ -395,6 +425,13 @@
                 }
             },
             "render": "Dierenasiel"
+        },
+        "description": "Een dierenasiel is een instelling waar dieren in nood binnengebracht worden en door de medewerkers gevoederd en verzorgd worden, eventueel met het oog op uitzetting. Hieronder vallen asielen voor achtergelaten huisdieren en opvangcentra voor wilde dieren.",
+        "name": "Dierenasielen",
+        "presets": {
+            "0": {
+                "title": "een dierenasiel"
+            }
         }
     },
     "artwork": {
@@ -492,8 +529,12 @@
                 "mappings": {
                     "0": {
                         "then": "Dit kunstwerk doet ook dienst als herdenkingsmonument"
+                    },
+                    "1": {
+                        "then": "Dit kunstwerk fungeert niet als gedenkteken"
                     }
-                }
+                },
+                "question": "Dient dit kunstwerk als gedenkteken?"
             }
         },
         "title": {
@@ -2524,7 +2565,7 @@
         }
     },
     "climbing": {
-        "description": "Een dummy-laag die tagrenderings bevat, gedeeld over de verschillende klimsport lagen",
+        "description": "Een dummy-laag die tagrenderings bevat, gedeeld over de verschillende klimsportlagen",
         "tagRenderings": {
             "average_length": {
                 "question": "Wat is de (gemiddelde) lengte van de klimroutes, in meter?",
@@ -2654,6 +2695,9 @@
                     },
                     "1": {
                         "then": "Een klimzone - een enkele rots of klif met klimroutes"
+                    },
+                    "2": {
+                        "then": "Een klimgebied met een of meer klimrotsen en/of boulders"
                     }
                 }
             },
@@ -2774,7 +2818,7 @@
                 "question": "Kan een klimgordel hier gehuurd worden?"
             },
             "name": {
-                "question": "Wat is de naam van dit Klimzaal?"
+                "question": "Wat is de naam van deze klimzaal?"
             },
             "rope_rental": {
                 "mappings": {
@@ -2844,7 +2888,8 @@
         },
         "title": {
             "render": "Klimgelegenheid?"
-        }
+        },
+        "snapName": "een muur, klif of rots"
     },
     "climbing_route": {
         "description": "Een klimroute en de eigenschappen van deze klimroute. Sommige eigenschappen worden afgeleid van omliggende kaart-objecten",
@@ -2959,21 +3004,21 @@
             },
             "faces": {
                 "freeform": {
-                    "placeholder": "Aantal klokken"
+                    "placeholder": "Aantal wijzerplaten"
                 },
                 "mappings": {
                     "0": {
-                        "then": "Deze klok heeft één klok"
+                        "then": "Deze klok heeft één wijzerplaat"
                     },
                     "1": {
-                        "then": "Deze klok heeft twee klokken"
+                        "then": "Deze klok heeft twee wijzerplaten"
                     },
                     "2": {
-                        "then": "Deze klok heeft vier klokken"
+                        "then": "Deze klok heeft vier wijzerplaten"
                     }
                 },
-                "question": "Hoeveel zijden heeft deze klok?",
-                "render": "Deze klok heeft {faces} klokken"
+                "question": "Hoeveel wijzerplaten heeft deze klok?",
+                "render": "Deze klok heeft {faces} wijzerplaten"
             },
             "hygrometer": {
                 "mappings": {
@@ -6559,6 +6604,9 @@
                     },
                     "6": {
                         "then": "Dit is een wipwap"
+                    },
+                    "14": {
+                        "then": "Dit is een klimmuur"
                     }
                 },
                 "question": "Wat voor speeltoestel is dit?"
@@ -10162,6 +10210,59 @@
                 }
             },
             "render": "windturbine"
+        }
+    },
+    "assembly_point": {
+        "tagRenderings": {
+            "assembly_point_name": {
+                "render": "De naam van deze verzamelplaats is <b>{name}</b>",
+                "question": "Wat is de naam van deze verzamelplaats?"
+            },
+            "assembly_point_operator": {
+                "question": "Welke organisatie beheert dit verzamelpunt?",
+                "render": "Dit verzamelpunt wordt beheerd door <b>{operator}</b>"
+            },
+            "disaster_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Aardbeving"
+                    },
+                    "1": {
+                        "then": "Overstroming"
+                    },
+                    "2": {
+                        "then": "Brand"
+                    },
+                    "3": {
+                        "then": "Aardverschuiving"
+                    }
+                },
+                "question": "Voor welk soort ramp is dit verzamelpunt bedoeld?"
+            }
+        },
+        "description": "Deze laag bevat verzamelplaatsen en wachtzones waar werknemers, passagiers of menigten verzameld worden in een noodsituatie.",
+        "name": "Noodverzamelplaatsen",
+        "presets": {
+            "0": {
+                "title": "een verzamelplaats"
+            }
+        },
+        "title": {
+            "render": "Verzamelpunt voor bij noodsituaties"
+        }
+    },
+    "sports_centre": {
+        "tagRenderings": {
+            "sport_centre-sport": {
+                "mappings": {
+                    "26": {
+                        "then": "Klimmen"
+                    },
+                    "27": {
+                        "then": "Hoogteparcours"
+                    }
+                }
+            }
         }
     }
 }
