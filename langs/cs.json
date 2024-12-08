@@ -549,6 +549,19 @@
             "searchToShort": "Váš vyhledávací dotaz je příliš krátký, zadejte delší text",
             "searchWikidata": "Hledat na Wikidatech",
             "wikipediaboxTitle": "Wikipedie"
+        },
+        "questions": {
+            "disable": "Tuto otázku už nepokládejte",
+            "disabledIntro": "Zakázali jste některé typy otázek. Chcete-li otázku znovu povolit, klikněte na ni zde",
+            "noneDisabled": "Pokud vás určitý typ otázky nezajímá, zakažte ji. Chcete-li otázku zakázat, klikněte na tři tečky v pravém horním rohu a vyberte možnost \"zakázat\"",
+            "disabledTitle": "Zakázané otázky",
+            "emailIs": "E-mailová adresa této {category} je <a href='mailto:{email}' target='_blank'>{email}</a>",
+            "emailOf": "Jaká je e-mailová adresa {category}?",
+            "enable": "Tuto otázku položte u všech funkcí",
+            "phoneNumberIs": "Telefonní číslo této {category} je <a href='tel:{phone}' target='_blank'>{phone}</a>",
+            "phoneNumberOf": "Jaké je telefonní číslo na {category}?",
+            "websiteIs": "Webová strana: <a href='{website}' target='_blank'>{website}</a>",
+            "websiteOf": "Jaká je webová stránka {category}?"
         }
     },
     "hotkeyDocumentation": {
@@ -575,7 +588,7 @@
         "translationMode": "Zapnutí nebo vypnutí režimu překladu"
     },
     "image": {
-        "addPicture": "Přidat fotku",
+        "addPicture": "Udělat fotku",
         "currentLicense": "Vaše snímky budou zveřejněny pod {license}",
         "doDelete": "Odebrat obrázek",
         "dontDelete": "Zrušit",
@@ -636,7 +649,8 @@
         "uploadFailed": "Obrázek se nepodařilo nahrát. Jste připojeni k internetu a máte povoleno rozhraní API třetích stran? Prohlížeč Brave nebo zásuvný modul uMatrix je mohou blokovat.",
         "uploadMultipleDone": "Bylo přidáno {count} fotek. Děkujeme za pomoc!",
         "uploadingMultiple": "Nahrávání {count} obrázků…",
-        "uploadingPicture": "Nahrávání obrázku…"
+        "uploadingPicture": "Nahrávání obrázku…",
+        "selectFile": "Vybrat obrázek ze svého zařízení"
     },
     "importInspector": {
         "title": "Kontrola a správa poznámek k importu"
