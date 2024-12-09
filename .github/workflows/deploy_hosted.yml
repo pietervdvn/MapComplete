@@ -56,13 +56,15 @@ jobs:
         shell: bash
 
       - name: Zipping dist file
-        run: zip ${{ github.ref_name }}.zip -r dist/
+        run: |
+          mv dist ${{ github.ref_name }}
+          zip ${{ github.ref_name }}.zip -r ${{ github.ref_name }}/*
 
       - name: uploading file
         run: scp ${{ github.ref_name }}.zip hetzner:/root/staging/
 
       - name: unzipping remote file
-        run: ssh hetzner "cd /root/staging && unzip ${{ github.ref_name }}.zip && rm -rf /root/public/${{ github.ref_name }} && mv /root/staging/${{ github.ref_name }}/ /root/public/"
+        run: ssh hetzner "cd /root/staging && unzip ${{ github.ref_name }}.zip && rm -rf /root/public/${{ github.ref_name }} && mv /root/staging/${{ github.ref_name }}/ /root/public/ && rm ${{ github.ref_name }}.zip"
 
           
 
