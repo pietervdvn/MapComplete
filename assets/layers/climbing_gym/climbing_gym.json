@@ -242,8 +242,24 @@
       },
       "condition": {
         "or": [
-          "climbing:sport!=no",
-          "climbing:toprope!=no"
+          {
+            "and": [
+              "climbing:sport!=",
+              "climbing:sport!=no"
+            ]
+          },
+          {
+            "and": [
+              "climbing:toprope!=",
+              "climbing:toprope!=no"
+            ]
+          },
+          {
+            "and": [
+              "climbing:speed!=",
+              "climbing:speed!=no"
+            ]
+          }
         ]
       },
       "mappings": [
@@ -327,8 +343,18 @@
       },
       "condition": {
         "or": [
-          "climbing:sport!=no",
-          "climbing:toprope!=no"
+          {
+            "and": [
+              "climbing:sport!=",
+              "climbing:sport!=no"
+            ]
+          },
+          {
+            "and": [
+              "climbing:toprope!=",
+              "climbing:toprope!=no"
+            ]
+          }
         ]
       },
       "mappings": [
