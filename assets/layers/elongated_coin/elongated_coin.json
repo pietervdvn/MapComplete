@@ -5,14 +5,16 @@
     "de": "Münzprägeautomaten",
     "es": "Prensa de Monedas",
     "ca": "Premses de cèntims",
-    "cs": "Ražby mincí"
+    "cs": "Ražby mincí",
+    "nl": "Muntpersen"
   },
   "description": {
     "en": "Layer showing penny presses.",
     "de": "Ebene mit Münzprägeautomaten.",
     "es": "Capa que muestra prensas de monedas.",
     "ca": "Capa que mostra premses de cèntims.",
-    "cs": "Vrstva zobrazující ražbu mincí."
+    "cs": "Vrstva zobrazující ražbu mincí.",
+    "nl": "Laag met muntpersen."
   },
   "source": {
     "osmTags": {
@@ -62,7 +64,8 @@
         "de": "Einen Münzprägeautomaten",
         "es": "una prensa de monedas",
         "ca": "una premsa de cèntim",
-        "cs": "ražba mincí"
+        "cs": "ražba mincí",
+        "nl": "een muntpers"
       },
       "tags": [
         "amenity=vending_machine",
@@ -91,7 +94,8 @@
           "de": "Motivanzahl (z.B. 5)",
           "es": "Número de diseños (ej. 5)",
           "ca": "Nombre de dissenys (p. e. 5)",
-          "cs": "Počet vzorů (např. 5)"
+          "cs": "Počet vzorů (např. 5)",
+          "nl": "Aantal ontwerpen (bijv. 5)"
         }
       },
       "render": {
@@ -109,7 +113,8 @@
             "de": "Der Prägeautomat hat ein Motiv zur Auswahl.",
             "es": "Esta prensa de monedas tiene un diseño disponible.",
             "ca": "Esta premsa té un disseny disponible.",
-            "cs": "Tento lis na peníze má k dispozici jeden design."
+            "cs": "Tento lis na peníze má k dispozici jeden design.",
+            "nl": "Deze muntpers heeft één ontwerp beschikbaar."
           }
         },
         {
@@ -119,7 +124,8 @@
             "de": "Der Prägeautomat hat zwei Motive zur Auswahl.",
             "es": "Esta prensa de monedas tiene dos diseños disponibles.",
             "ca": "Esta premsa té dos dissenys disponibles.",
-            "cs": "Tento lis na peníze má k dispozici dvě provedení."
+            "cs": "Tento lis na peníze má k dispozici dvě provedení.",
+            "nl": "Deze muntpers heeft twee ontwerpen beschikbaar."
           }
         },
         {
@@ -129,7 +135,8 @@
             "de": "Der Prägeautomat hat drei Motive zur Auswahl.",
             "es": "Esta prensa de monedas tiene tres diseños disponibles.",
             "ca": "Esta premsa té tres dissenys disponibles.",
-            "cs": "Tento lis na peníze má k dispozici tři provedení."
+            "cs": "Tento lis na peníze má k dispozici tři provedení.",
+            "nl": "Deze muntpers heeft drie ontwerpen beschikbaar."
           }
         },
         {
@@ -211,7 +218,8 @@
         "de": "Welche Münzen können geprägt werden?",
         "es": "¿Qué moneda se usa para prensar?",
         "ca": "Quina moneda s'utilitza per a premsar?",
-        "cs": "Jaká mince se používá k ražbě?"
+        "cs": "Jaká mince se používá k ražbě?",
+        "nl": "Welk muntstuk wordt gebruikt voor het persen?"
       },
       "freeform": {
         "key": "coin:type",
@@ -222,7 +230,8 @@
           "es": "Tipo de moneda (ej. 10 céntimos)",
           "pl": "Rodzaj monety (np. 10 centów)",
           "ca": "Tipus de moneda (p. e. 10 cèntims)",
-          "cs": "Typ mince (např. 10 centů)"
+          "cs": "Typ mince (např. 10 centů)",
+          "nl": "Munttype (bijv. 10 cent)"
         }
       },
       "mappings": [
@@ -233,7 +242,8 @@
             "de": "Der Automat prägt 2 Cent Münzen.",
             "es": "Esta prensa de monedas usa una moneda de 2 céntimos para prensar.",
             "ca": "Esta premsa de cèntims utilitza una moneda de 2 cèntims per a premsar.",
-            "cs": "Tento lis na haléře používá k lisování minci v hodnotě 2 centů."
+            "cs": "Tento lis na haléře používá k lisování minci v hodnotě 2 centů.",
+            "nl": "Deze muntpers gebruikt een muntstuk van 2 cent voor het persen."
           },
           "hideInAnswer": {
             "and": [
@@ -249,7 +259,8 @@
             "de": "Der Automat prägt 5 Cent Münzen.",
             "es": "Esta prensa de monedas usa una moneda de 5 céntimos para prensar.",
             "ca": "Esta premsa de cèntims utilitza una moneda de 5 cèntims per a premsar.",
-            "cs": "Tento lis na haléře používá k lisování minci v hodnotě 5 centů."
+            "cs": "Tento lis na haléře používá k lisování minci v hodnotě 5 centů.",
+            "nl": "Deze muntpers gebruikt een muntstuk van 5 cent voor het persen."
           },
           "hideInAnswer": {
             "and": [
@@ -265,7 +276,8 @@
             "de": "Der Automat prägt 10 Cent Münzen.",
             "es": "Esta prensa de monedas usa una moneda de 10 céntimos para prensar.",
             "ca": "Esta premsa de cèntims utilitza una moneda de 10 cèntims per a premsar.",
-            "cs": "Tento lis na haléře používá k lisování minci v hodnotě 10 centů."
+            "cs": "Tento lis na haléře používá k lisování minci v hodnotě 10 centů.",
+            "nl": "Deze muntpers gebruikt een muntstuk van 10 cent voor het persen."
           },
           "hideInAnswer": {
             "and": [
@@ -281,7 +293,8 @@
             "de": "Der Automat prägt 25 Cent Münzen.",
             "es": "Esta prensa de monedas usa una moneda de 25 céntimos para prensar.",
             "ca": "Esta premsa de cèntims utilitza una moneda de 25 cèntims per a premsar.",
-            "cs": "Tento lis na haléře používá k lisování minci v hodnotě 25 centů."
+            "cs": "Tento lis na haléře používá k lisování minci v hodnotě 25 centů.",
+            "nl": "Deze muntpers gebruikt een muntstuk van 25 cent voor het persen."
           },
           "hideInAnswer": "_currency!~.*USD.*"
         },
@@ -292,7 +305,8 @@
             "de": "Der Automat prägt 50 Cent Münzen.",
             "es": "Esta prensa de monedas usa una moneda de 50 céntimos para prensar.",
             "ca": "Esta premsa de cèntims utilitza una moneda de 50 cèntims per a premsar.",
-            "cs": "Tento lis na haléře používá k lisování minci v hodnotě 50 centů."
+            "cs": "Tento lis na haléře používá k lisování minci v hodnotě 50 centů.",
+            "nl": "Deze muntpers gebruikt een muntstuk van 50 cent voor het persen."
           },
           "hideInAnswer": "_currency!~.*USD.*"
         },
@@ -302,7 +316,8 @@
             "en": "This penny press uses a 10 centimes coin for pressing.",
             "ca": "Esta premsa de cèntims utilitza una moneda de 10 cèntims per a premsar.",
             "de": "Der Automat prägt 10 Centime Münzen.",
-            "es": "Esta prensa de monedas usa una moneda de 10 céntimos para prensar."
+            "es": "Esta prensa de monedas usa una moneda de 10 céntimos para prensar.",
+            "nl": "Deze muntpers gebruikt een muntstuk van 10 rappen voor het persen."
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         },
@@ -312,7 +327,8 @@
             "en": "This penny press uses a 20 centimes coin for pressing.",
             "ca": "Esta premsa de cèntims utilitza una moneda de 20 cèntims per a premsar.",
             "de": "Der Automat prägt 5 Centime Münzen.",
-            "es": "Esta prensa de monedas usa una moneda de 20 céntimos para prensar."
+            "es": "Esta prensa de monedas usa una moneda de 20 céntimos para prensar.",
+            "nl": "Deze muntpers gebruikt een muntstuk van 20 rappen voor het persen."
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         }
@@ -322,7 +338,8 @@
         "de": "Der Automat prägt {coin:type} Cent Münzen.",
         "es": "Esta prensa de monedas usa una moneda de {coin:type} para prensar.",
         "ca": "Esta premsa de cèntims utilitza una moneda de {coin:type} per a premsar.",
-        "cs": "Tento lis na centy používá k lisování minci {coin:type}."
+        "cs": "Tento lis na centy používá k lisování minci {coin:type}.",
+        "nl": "Deze muntpers gebruikt een muntstuk van {coin:type} voor het persen."
       }
     },
     "website",
@@ -339,7 +356,8 @@
         "de": "Wieviel kostet die Prägung einer Münze?",
         "es": "¿Cuánto cuesta prensar una moneda?",
         "ca": "Quant costa premsar un cèntim?",
-        "cs": "Kolik stojí ražba mince?"
+        "cs": "Kolik stojí ražba mince?",
+        "nl": "Hoe veel kost het om een munt te persen?"
       },
       "freeform": {
         "key": "charge",
@@ -349,7 +367,8 @@
           "fr": "Coût (par ex. 0.50 EUR)",
           "es": "Costo (ej. 0,50 EUR)",
           "ca": "Cost (p. e, 0.50 euros)",
-          "cs": "Cena (např. 0,50 EUR)"
+          "cs": "Cena (např. 0,50 EUR)",
+          "nl": "Kosten (bijv. 0.50 EUR)"
         }
       },
       "mappings": [
@@ -360,7 +379,8 @@
             "de": "Die Prägung einer Münze kostet 1,00 €.",
             "es": "Cuesta 1 euro prensar una moneda.",
             "ca": "Costa 1 euro premsar un cèntim.",
-            "cs": "Ražba mince stojí 1 euro."
+            "cs": "Ražba mince stojí 1 euro.",
+            "nl": "Het kost 1 euro om een munt te persen."
           },
           "hideInAnswer": "_currency!~.*EUR.*"
         },
@@ -371,7 +391,8 @@
             "de": "Die Prägung einer Münze kostet 2,00 €.",
             "es": "Cuesta 2 euros prensar una moneda.",
             "ca": "Costa 2 euros premsar un cèntim.",
-            "cs": "Ražba mince stojí 2 eura."
+            "cs": "Ražba mince stojí 2 eura.",
+            "nl": "Het kost 2 euro om een munt te persen."
           },
           "hideInAnswer": "_currency!~.*EUR.*"
         },
@@ -382,7 +403,8 @@
             "ca": "Costa 2 francs suïssos premsar un cèntim.",
             "de": "Die Prägung einer Münze kostet 2 Schweizer Franken.",
             "cs": "Ražba mince stojí 2 Švýcarské franky.",
-            "es": "Cuesta 2 francos suizos prensar una moneda."
+            "es": "Cuesta 2 francos suizos prensar una moneda.",
+            "nl": "Het kost 2 Zwitserse frank om een munt te persen."
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         },
@@ -393,7 +415,8 @@
             "ca": "Costa 1 franc suís premsar un cèntim.",
             "de": "Die Prägung einer Münze kostet 1 Schweizer Franken.",
             "cs": "Ražba mince stojí 1 Švýcarský frank.",
-            "es": "Cuesta 1 franco suizo prensar una moneda."
+            "es": "Cuesta 1 franco suizo prensar una moneda.",
+            "nl": "Het kost 1 Zwitserse frank om een munt te persen."
           },
           "hideInAnswer": "_currency!~.*CHF.*"
         }
@@ -403,7 +426,8 @@
         "de": "Die Prägung einer Münze kostet {charge}.",
         "es": "Cuesta {charge} prensar una moneda.",
         "ca": "Costa {charge} premsar un cèntim.",
-        "cs": "Ražba mince stojí {charge}."
+        "cs": "Ražba mince stojí {charge}.",
+        "nl": "Het kost {charge} om een munt te persen."
       }
     },
     "denominations-coins",

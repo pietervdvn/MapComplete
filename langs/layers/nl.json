@@ -217,14 +217,20 @@
                         "then": "Dit is een reclamezuil"
                     }
                 },
-                "render": "Dit is een {advertising}",
-                "question": "Wat voor advertentieobject is dit?"
+                "question": "Wat voor advertentieobject is dit?",
+                "render": "Dit is een {advertising}"
             }
         },
         "title": {
             "mappings": {
+                "0": {
+                    "then": "Billboard"
+                },
                 "10": {
                     "then": "Muurschildering"
+                },
+                "2": {
+                    "then": "Afficheframe"
                 },
                 "3": {
                     "then": "Aanplakzuil"
@@ -243,17 +249,12 @@
                 },
                 "9": {
                     "then": "Reclamezuil"
-                },
-                "0": {
-                    "then": "Billboard"
-                },
-                "2": {
-                    "then": "Afficheframe"
                 }
             }
         }
     },
     "aerialway": {
+        "description": "Verschillende vormen van passagiers- en goederentransport die gebruikmaken van kabels, waaronder kabelbanen, gondelbanen, sleepliften en tokkelbanen.",
         "name": "Kabelbanen",
         "pointRendering": {
             "1": {
@@ -264,16 +265,16 @@
         },
         "tagRenderings": {
             "duration": {
+                "question": "Hoe lang duurt een rit met deze lift?",
                 "questionHint": "Dit is exclusief wachttijd.",
-                "render": "Een enkele reis duurt {duration} minuten",
-                "question": "Hoe lang duurt een rit met deze lift?"
+                "render": "Een enkele reis duurt {duration} minuten"
             },
             "length": {
                 "render": "Deze kabelbaan is {_length:km} kilometer lang"
             },
             "occupancy": {
-                "render": "Er kunnen {aerialway:occupancy} mensen in een cabine",
-                "question": "Hoeveel mensen kunnen in één cabine?"
+                "question": "Hoeveel mensen kunnen in één cabine?",
+                "render": "Er kunnen {aerialway:occupancy} mensen in een cabine"
             },
             "oneway": {
                 "mappings": {
@@ -294,8 +295,14 @@
                     "1": {
                         "then": "Dit is een kabellift waar de gondel in een continue circuit gaat"
                     },
+                    "10": {
+                        "then": "Een tokkelbaan. (Ook bekend als deathride; een toeristische attractie waarbij avontuurlijk mensen aan hoge snelheid afdalen)"
+                    },
                     "2": {
                         "then": "Een open stoeltjeslift met zitjes om op te zitten."
+                    },
+                    "3": {
+                        "then": "Een kabelbaan met zowel stoeltjes als gondels in dezelfde baan"
                     },
                     "4": {
                         "then": "Een sleeplift"
@@ -305,12 +312,6 @@
                     },
                     "6": {
                         "then": "Een sleeplift met L-vormige stangen voor één passagier"
-                    },
-                    "10": {
-                        "then": "Een tokkelbaan. (Ook bekend als deathride; een toeristische attractie waarbij avontuurlijk mensen aan hoge snelheid afdalen)"
-                    },
-                    "3": {
-                        "then": "Een kabelbaan met zowel stoeltjes als gondels in dezelfde baan"
                     },
                     "7": {
                         "then": "Een sleeplift met stangen om skiërs naar boven te slepen"
@@ -322,7 +323,6 @@
                 "question": "Wat voor kabelbaan is dit?"
             }
         },
-        "description": "Verschillende vormen van passagiers- en goederentransport die gebruikmaken van kabels, waaronder kabelbanen, gondelbanen, sleepliften en tokkelbanen.",
         "title": {
             "render": "Kabelbaan {name}"
         }
@@ -377,7 +377,18 @@
         }
     },
     "animal_shelter": {
+        "description": "Een dierenasiel is een instelling waar dieren in nood binnengebracht worden en door de medewerkers gevoederd en verzorgd worden, eventueel met het oog op uitzetting. Hieronder vallen asielen voor achtergelaten huisdieren en opvangcentra voor wilde dieren.",
+        "name": "Dierenasielen",
+        "presets": {
+            "0": {
+                "title": "een dierenasiel"
+            }
+        },
         "tagRenderings": {
+            "2": {
+                "question": "Wat is de naam van dit dierenasiel?",
+                "render": "De naam van dit dierenasiel is <b>{name}</b>"
+            },
             "6": {
                 "mappings": {
                     "0": {
@@ -412,10 +423,6 @@
                 },
                 "question": "Welke dieren worden hier opgevangen?",
                 "render": "{animal_shelter} worden hier opgevangen"
-            },
-            "2": {
-                "question": "Wat is de naam van dit dierenasiel?",
-                "render": "De naam van dit dierenasiel is <b>{name}</b>"
             }
         },
         "title": {
@@ -425,13 +432,6 @@
                 }
             },
             "render": "Dierenasiel"
-        },
-        "description": "Een dierenasiel is een instelling waar dieren in nood binnengebracht worden en door de medewerkers gevoederd en verzorgd worden, eventueel met het oog op uitzetting. Hieronder vallen asielen voor achtergelaten huisdieren en opvangcentra voor wilde dieren.",
-        "name": "Dierenasielen",
-        "presets": {
-            "0": {
-                "title": "een dierenasiel"
-            }
         }
     },
     "artwork": {
@@ -544,6 +544,92 @@
                 }
             },
             "render": "Kunstwerk"
+        }
+    },
+    "assembly_point": {
+        "description": "Deze laag bevat verzamelplaatsen en wachtzones waar werknemers, passagiers of menigten verzameld worden in een noodsituatie.",
+        "name": "Noodverzamelplaatsen",
+        "presets": {
+            "0": {
+                "title": "een verzamelplaats"
+            }
+        },
+        "tagRenderings": {
+            "assembly_point_name": {
+                "question": "Wat is de naam van deze verzamelplaats?",
+                "render": "De naam van deze verzamelplaats is <b>{name}</b>"
+            },
+            "assembly_point_operator": {
+                "question": "Welke organisatie beheert dit verzamelpunt?",
+                "render": "Dit verzamelpunt wordt beheerd door <b>{operator}</b>"
+            },
+            "disaster_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Aardbeving"
+                    },
+                    "1": {
+                        "then": "Overstroming"
+                    },
+                    "2": {
+                        "then": "Brand"
+                    },
+                    "3": {
+                        "then": "Aardverschuiving"
+                    }
+                },
+                "question": "Voor welk soort ramp is dit verzamelpunt bedoeld?"
+            }
+        },
+        "title": {
+            "render": "Verzamelpunt voor bij noodsituaties"
+        }
+    },
+    "assisted_repair": {
+        "description": "Een zelfondersteunde werkplaats is een locatie waar mensen hun spullen kunnen komen repareren met hulp van vrijwilligers en met het gereedschap dat op de locatie beschikbaar is. Een repair café is een soort evenement dat regelmatig wordt georganiseerd volgens dezelfde principes.",
+        "name": "Repair cafés en reparatiewerkplaatsen met ondersteuning",
+        "presets": {
+            "0": {
+                "description": "Een locatie met een permanente werkplaats waar mensen naartoe kunnen komen om spullen te repareren met hulp van vrijwilligers.",
+                "title": "een reparatiewerkplaats met ondersteuning"
+            }
+        },
+        "tagRenderings": {
+            "item:repair": {
+                "mappings": {
+                    "0": {
+                        "then": "Mobiele telefoons worden hier gerepareerd"
+                    },
+                    "1": {
+                        "then": "Computers worden hier gerepareerd"
+                    },
+                    "2": {
+                        "then": "Fietsen worden hier gerepareerd"
+                    },
+                    "3": {
+                        "then": "Elektronische apparaten worden hier gerepareerd"
+                    },
+                    "4": {
+                        "then": "Meubels worden hier gerepareerd"
+                    },
+                    "5": {
+                        "then": "Kleding wordt hier gerepareerd"
+                    }
+                },
+                "question": "Wat voor items worden hier gerepareerd?"
+            },
+            "name": {
+                "question": "Wat is de naam van deze reparatiewerkplaats?",
+                "render": "Deze werkplaats heet <b>{name}</b>"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
+            "render": "Werkplaats voor reparatie met ondersteuning"
         }
     },
     "atm": {
@@ -795,6 +881,72 @@
             "render": "Barrière"
         }
     },
+    "bbq": {
+        "description": "Een permanent geïnstalleerde barbecue, meestal toegankelijk voor iedereen.",
+        "name": "Barbecue",
+        "presets": {
+            "0": {
+                "description": "Een permanent geïnstalleerde barbecue, meestal toegankelijk voor iedereen.",
+                "title": "Barbecue"
+            }
+        },
+        "tagRenderings": {
+            "access": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze barbecue mag door iedereen worden gebruikt"
+                    },
+                    "1": {
+                        "then": "Deze barbecue mag door niemand worden gebruikt"
+                    },
+                    "2": {
+                        "then": "Deze barbecue is privé"
+                    },
+                    "3": {
+                        "then": "Deze barbecue mag door iedereen worden gebruikt, maar de eigenaar kan de toegang op elk moment ontzeggen"
+                    },
+                    "4": {
+                        "then": "Deze barbecue mag alleen worden gebruikt door klanten"
+                    },
+                    "5": {
+                        "then": "Deze barbecue mag alleen worden gebruikt door personen met toestemming"
+                    }
+                },
+                "question": "Wie mag deze barbecue gebruiken?"
+            },
+            "covered": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze barbecue is niet overdekt"
+                    },
+                    "1": {
+                        "then": "Deze barbecue is overdekt"
+                    }
+                },
+                "question": "Is deze barbecue overdekt?"
+            },
+            "fuel": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze barbecue gebruikt hout als brandstof"
+                    },
+                    "1": {
+                        "then": "Deze barbecue gebruikt houtskool als brandstof"
+                    },
+                    "2": {
+                        "then": "Deze barbecue werkt op elektriciteit"
+                    },
+                    "3": {
+                        "then": "Deze barbecue gebruikt gas als brandstof"
+                    }
+                },
+                "question": "Wat voor brandstof gebruikt deze barbecue?"
+            }
+        },
+        "title": {
+            "render": "BBQ"
+        }
+    },
     "bench": {
         "description": "Een zitbank is een houten, metalen, stenen, … oppervlak waar een mens kan zitten. Deze laag toont ze en stelt er enkele vragen over.",
         "filter": {
@@ -1019,20 +1171,23 @@
     },
     "bicycle_counter": {
         "description": "Automatische fietstelpunten",
+        "name": "Fietstellers",
+        "presets": {
+            "0": {
+                "title": "een fietsteller"
+            }
+        },
         "tagRenderings": {
-            "start_date": {
-                "question": "Wanneer is deze teller begonnen met tellen?",
-                "freeform": {
-                    "placeholder": "Startdatum van de teller"
+            "clock": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze teller heeft een klok"
+                    },
+                    "1": {
+                        "then": "Deze teller heeft geen klok"
+                    }
                 },
-                "render": "Deze teller is begonnen met teller op {start_date}"
-            },
-            "website": {
-                "render": "Website van de teller <a href='{website}'>{website}</a>",
-                "freeform": {
-                    "placeholder": "Website van de teller"
-                },
-                "question": "Is er een website voor deze fietsteller?"
+                "question": "Heeft deze fietsteller een klok?"
             },
             "display": {
                 "mappings": {
@@ -1049,22 +1204,11 @@
                 "question": "Heeft deze fietsteller een display dat het aantal passerende fietsen toont?"
             },
             "name": {
-                "render": "Naam van de getelde locatie: {name}",
                 "freeform": {
                     "placeholder": "Naam van de getelde locatie"
                 },
-                "question": "Wat is de naam van de getelde locatie?"
-            },
-            "clock": {
-                "mappings": {
-                    "0": {
-                        "then": "Deze teller heeft een klok"
-                    },
-                    "1": {
-                        "then": "Deze teller heeft geen klok"
-                    }
-                },
-                "question": "Heeft deze fietsteller een klok?"
+                "question": "Wat is de naam van de getelde locatie?",
+                "render": "Naam van de getelde locatie: {name}"
             },
             "ref": {
                 "freeform": {
@@ -1077,12 +1221,20 @@
                 },
                 "question": "Wat is het referentienummer van deze teller?",
                 "render": "Referentienummer van de teller: {ref}"
-            }
-        },
-        "name": "Fietstellers",
-        "presets": {
-            "0": {
-                "title": "een fietsteller"
+            },
+            "start_date": {
+                "freeform": {
+                    "placeholder": "Startdatum van de teller"
+                },
+                "question": "Wanneer is deze teller begonnen met tellen?",
+                "render": "Deze teller is begonnen met teller op {start_date}"
+            },
+            "website": {
+                "freeform": {
+                    "placeholder": "Website van de teller"
+                },
+                "question": "Is er een website voor deze fietsteller?",
+                "render": "Website van de teller <a href='{website}'>{website}</a>"
             }
         },
         "title": {
@@ -1884,6 +2036,9 @@
         },
         "title": {
             "mappings": {
+                "0": {
+                    "then": "{name}"
+                },
                 "1": {
                     "then": "Vogelkijkhut {name}"
                 },
@@ -1892,6 +2047,24 @@
                 }
             },
             "render": "Vogelkijkplaats"
+        }
+    },
+    "brothel": {
+        "description": "Een etablissement dat zich specifiek richt op prostitutie.",
+        "name": "Bordelen",
+        "presets": {
+            "0": {
+                "title": "een bordeel"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "question": "Wat is de naam van dit bordeel?",
+                "render": "Dit bordeel heet <b>{name}</b>"
+            }
+        },
+        "title": {
+            "render": "Bordeel"
         }
     },
     "cafe_pub": {
@@ -1956,14 +2129,14 @@
                 "0": {
                     "then": "<i>{name}</i>"
                 },
-                "3": {
-                    "then": "Nachtclub"
+                "1": {
+                    "then": "Bar"
                 },
                 "2": {
                     "then": "Café"
                 },
-                "1": {
-                    "then": "Bar"
+                "3": {
+                    "then": "Nachtclub"
                 }
             },
             "render": "Café"
@@ -2642,6 +2815,26 @@
             "render": "Oplaadpunt"
         }
     },
+    "cinema": {
+        "description": "Een plaats die films toont, meestal open voor het publiek tegen een vergoeding.",
+        "name": "Bioscoop",
+        "tagRenderings": {
+            "cinema_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit is een normale bioscoop met films voor alle leeftijden"
+                    },
+                    "1": {
+                        "then": "Dit is een erotische bioscoop met films voor volwassenen"
+                    }
+                },
+                "question": "Wat voor type bioscoop is dit?"
+            }
+        },
+        "title": {
+            "render": "Bioscoop"
+        }
+    },
     "climbing": {
         "description": "Een dummy-laag die tagrenderings bevat, gedeeld over de verschillende klimsportlagen",
         "tagRenderings": {
@@ -2945,6 +3138,7 @@
     "climbing_opportunity": {
         "description": "Laag met plaatsen waar klimmen _misschien_ mogelijk is. Deze wordt geladen als je ver inzoomt, om te voorkomen dat je per ongeluk dubbels maakt",
         "name": "Klimgelegenheiden?",
+        "snapName": "een muur, klif of rots",
         "tagRenderings": {
             "climbing-opportunity-name": {
                 "render": "<strong>{name}</strong>"
@@ -2966,8 +3160,7 @@
         },
         "title": {
             "render": "Klimgelegenheid?"
-        },
-        "snapName": "een muur, klif of rots"
+        }
     },
     "climbing_route": {
         "description": "Een klimroute en de eigenschappen van deze klimroute. Sommige eigenschappen worden afgeleid van omliggende kaart-objecten",
@@ -3914,6 +4107,17 @@
     "dentist": {
         "description": "Deze laag toont tandartsen",
         "name": "Tandarts",
+        "pointRendering": {
+            "0": {
+                "label": {
+                    "mappings": {
+                        "0": {
+                            "then": "{name}"
+                        }
+                    }
+                }
+            }
+        },
         "presets": {
             "0": {
                 "title": "een tandartspraktijk"
@@ -3927,17 +4131,6 @@
         },
         "title": {
             "render": "Tandartspraktijk {name}"
-        },
-        "pointRendering": {
-            "0": {
-                "label": {
-                    "mappings": {
-                        "0": {
-                            "then": "{name}"
-                        }
-                    }
-                }
-            }
         }
     },
     "direction": {
@@ -4241,6 +4434,21 @@
                 "question": "Wat is de diepte van deze lift?",
                 "render": "Deze lift heeft een diepte van {canonical(length)}"
             },
+            "elevator-diameter": {
+                "question": "Wat is de diameter van deze lift?",
+                "render": "Deze lift heeft een diameter van {canonical(diameter)}"
+            },
+            "elevator-shape": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze lift is rechthoekig"
+                    },
+                    "1": {
+                        "then": "Deze lift is cirkelvormig"
+                    }
+                },
+                "question": "Wat voor vorm heeft deze lift?"
+            },
             "elevator-width": {
                 "question": "Wat is de breedte van deze lift?",
                 "render": "Deze lift heeft een breedte van {canonical(width)}"
@@ -4271,6 +4479,18 @@
                     }
                 }
             },
+            "speech_output_available": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze lift heeft spraakuitvoer"
+                    },
+                    "1": {
+                        "then": "Deze lift heeft geen spraakuitvoer"
+                    }
+                },
+                "question": "Heeft deze lift spraakuitvoer?",
+                "questionHint": "Bijv. een aankondiging van de huidige verdieping"
+            },
             "tactile_writing_language": {
                 "render": {
                     "special": {
@@ -4279,37 +4499,88 @@
                         "render_single_language": "Deze lift heeft voelbaar schrift in het {language()}"
                     }
                 }
-            },
-            "elevator-diameter": {
-                "question": "Wat is de diameter van deze lift?",
-                "render": "Deze lift heeft een diameter van {canonical(diameter)}"
-            },
-            "elevator-shape": {
-                "mappings": {
-                    "0": {
-                        "then": "Deze lift is rechthoekig"
-                    },
-                    "1": {
-                        "then": "Deze lift is cirkelvormig"
-                    }
-                },
-                "question": "Wat voor vorm heeft deze lift?"
-            },
-            "speech_output_available": {
-                "question": "Heeft deze lift spraakuitvoer?",
-                "mappings": {
-                    "1": {
-                        "then": "Deze lift heeft geen spraakuitvoer"
-                    },
-                    "0": {
-                        "then": "Deze lift heeft spraakuitvoer"
-                    }
-                },
-                "questionHint": "Bijv. een aankondiging van de huidige verdieping"
             }
         },
         "title": {
             "render": "Lift"
+        }
+    },
+    "elongated_coin": {
+        "description": "Laag met muntpersen.",
+        "name": "Muntpersen",
+        "presets": {
+            "0": {
+                "title": "een muntpers"
+            }
+        },
+        "tagRenderings": {
+            "charge": {
+                "freeform": {
+                    "placeholder": "Kosten (bijv. 0.50 EUR)"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Het kost 1 euro om een munt te persen."
+                    },
+                    "1": {
+                        "then": "Het kost 2 euro om een munt te persen."
+                    },
+                    "2": {
+                        "then": "Het kost 2 Zwitserse frank om een munt te persen."
+                    },
+                    "3": {
+                        "then": "Het kost 1 Zwitserse frank om een munt te persen."
+                    }
+                },
+                "question": "Hoe veel kost het om een munt te persen?",
+                "render": "Het kost {charge} om een munt te persen."
+            },
+            "coin": {
+                "freeform": {
+                    "placeholder": "Munttype (bijv. 10 cent)"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Deze muntpers gebruikt een muntstuk van 2 cent voor het persen."
+                    },
+                    "1": {
+                        "then": "Deze muntpers gebruikt een muntstuk van 5 cent voor het persen."
+                    },
+                    "2": {
+                        "then": "Deze muntpers gebruikt een muntstuk van 10 cent voor het persen."
+                    },
+                    "3": {
+                        "then": "Deze muntpers gebruikt een muntstuk van 25 cent voor het persen."
+                    },
+                    "4": {
+                        "then": "Deze muntpers gebruikt een muntstuk van 50 cent voor het persen."
+                    },
+                    "5": {
+                        "then": "Deze muntpers gebruikt een muntstuk van 10 rappen voor het persen."
+                    },
+                    "6": {
+                        "then": "Deze muntpers gebruikt een muntstuk van 20 rappen voor het persen."
+                    }
+                },
+                "question": "Welk muntstuk wordt gebruikt voor het persen?",
+                "render": "Deze muntpers gebruikt een muntstuk van {coin:type} voor het persen."
+            },
+            "designs": {
+                "freeform": {
+                    "placeholder": "Aantal ontwerpen (bijv. 5)"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Deze muntpers heeft één ontwerp beschikbaar."
+                    },
+                    "1": {
+                        "then": "Deze muntpers heeft twee ontwerpen beschikbaar."
+                    },
+                    "2": {
+                        "then": "Deze muntpers heeft drie ontwerpen beschikbaar."
+                    }
+                }
+            }
         }
     },
     "entrance": {
@@ -6017,6 +6288,11 @@
             }
         },
         "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
             "render": "Natuurgebied"
         }
     },
@@ -6548,6 +6824,21 @@
             "render": "Picknicktafel"
         }
     },
+    "play_forest": {
+        "description": "Een speelbos is een vrij toegankelijke zone in een bos",
+        "name": "Speelbossen",
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                },
+                "1": {
+                    "then": "Speelbos {name}"
+                }
+            },
+            "render": "Speelbos"
+        }
+    },
     "playground": {
         "deletion": {
             "nonDeleteMappings": {
@@ -6714,6 +7005,9 @@
                     "11": {
                         "then": "Dit is een rekstok"
                     },
+                    "14": {
+                        "then": "Dit is een klimmuur"
+                    },
                     "3": {
                         "then": "Dit is een zandbak"
                     },
@@ -6725,9 +7019,6 @@
                     },
                     "6": {
                         "then": "Dit is een wipwap"
-                    },
-                    "14": {
-                        "then": "Dit is een klimmuur"
                     }
                 },
                 "question": "Wat voor speeltoestel is dit?"
@@ -8085,6 +8376,9 @@
         },
         "title": {
             "mappings": {
+                "0": {
+                    "then": "{name}"
+                },
                 "1": {
                     "then": "Voetpad"
                 },
@@ -8102,6 +8396,125 @@
                 }
             },
             "render": "Trage weg"
+        }
+    },
+    "souvenir_coin": {
+        "description": "Laag die machines toont die souvenirmunten verkopen",
+        "name": "Souvenirmuntmachines",
+        "presets": {
+            "0": {
+                "description": "Voeg een machine toe die souvenirmunten verkoopt",
+                "title": "een souvenirmuntmachine"
+            }
+        },
+        "tagRenderings": {
+            "charge": {
+                "freeform": {
+                    "placeholder": "Kosten (bijv. 2 EUR)"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Een souvenirmunt kost 2 euro"
+                    }
+                },
+                "question": "Hoeveel kost een souvenirmunt?",
+                "render": "Een souvenirmunt kost {charge}"
+            },
+            "designs": {
+                "override": {
+                    "mappings": {
+                        "0": {
+                            "then": "Deze machine heeft één ontwerp beschikbaar"
+                        },
+                        "1": {
+                            "then": "Deze machine heeft twee ontwerpen beschikbaar"
+                        },
+                        "2": {
+                            "then": "Deze machine heeft drie ontwerpen beschikbaar"
+                        },
+                        "3": {
+                            "then": "Deze machine heeft vier ontwerpen beschikbaar"
+                        }
+                    },
+                    "render": "Deze machine heeft {coin:design_count} ontwerpen beschikbaar"
+                }
+            },
+            "indoor": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze machine bevindt zich binnen."
+                    },
+                    "1": {
+                        "then": "Deze machine bevindt zich buiten."
+                    }
+                },
+                "question": "Bevindt deze machine zich binnen?"
+            }
+        },
+        "title": {
+            "render": "Souvenirmuntmachine"
+        }
+    },
+    "souvenir_note": {
+        "description": "Laag die machines toont die souvenirbiljetten verkopen",
+        "name": "Souvenirbiljetmachines",
+        "presets": {
+            "0": {
+                "description": "Voeg een machine toe die souvenirbiljetten verkoopt",
+                "title": "een souvenirbiljetmachine"
+            }
+        },
+        "tagRenderings": {
+            "charge": {
+                "freeform": {
+                    "placeholder": "Kosten (bijv. 2 EUR)"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Een souvenirbiljet kost 2 euro"
+                    },
+                    "1": {
+                        "then": "Een souvenirbiljet kost 3 euro"
+                    }
+                },
+                "question": "Hoeveel kost een souvenirbiljet?",
+                "render": "Een souvenirbiljet kost {charge}"
+            },
+            "designs": {
+                "freeform": {
+                    "placeholder": "Aantal ontwerpen (bijv. 5)"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Deze machine heeft één ontwerp beschikbaar."
+                    },
+                    "1": {
+                        "then": "Deze machine heeft twee ontwerpen beschikbaar."
+                    },
+                    "2": {
+                        "then": "Deze machine heeft drie ontwerpen beschikbaar."
+                    },
+                    "3": {
+                        "then": "Deze machine heeft vier ontwerpen beschikbaar."
+                    }
+                },
+                "question": "Hoeveel ontwerpen heeft deze machine beschikbaar?",
+                "render": "Deze machine heeft {note:design_count} ontwerpen beschikbaar."
+            },
+            "indoor": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze machine bevindt zich binnen."
+                    },
+                    "1": {
+                        "then": "Deze machine bevindt zich buiten."
+                    }
+                },
+                "question": "Bevindt deze machine zich binnen?"
+            }
+        },
+        "title": {
+            "render": "Souvenirbiljetmachine"
         }
     },
     "speed_camera": {
@@ -8292,6 +8705,20 @@
         },
         "title": {
             "render": "Sportterrein"
+        }
+    },
+    "sports_centre": {
+        "tagRenderings": {
+            "sport_centre-sport": {
+                "mappings": {
+                    "26": {
+                        "then": "Klimmen"
+                    },
+                    "27": {
+                        "then": "Hoogteparcours"
+                    }
+                }
+            }
         }
     },
     "stairs": {
@@ -10097,13 +10524,25 @@
         }
     },
     "village_green": {
-        "description": "Een laag die dorpsgroen toont (gemeenschapsgroen, maar niet echt een park)"
+        "description": "Een laag die dorpsgroen toont (gemeenschapsgroen, maar niet echt een park)",
+        "name": "Speelweide",
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
+            "render": "Speelweide"
+        }
     },
     "visitor_information_centre": {
         "description": "Een bezoekerscentrum biedt informatie over een specifieke attractie of bezienswaardigheid waar het is gevestigd.",
         "name": "Bezoekerscentrum",
         "title": {
             "mappings": {
+                "0": {
+                    "then": "{name:nl}"
+                },
                 "1": {
                     "then": "{name}"
                 }
@@ -10331,407 +10770,6 @@
                 }
             },
             "render": "windturbine"
-        }
-    },
-    "assembly_point": {
-        "tagRenderings": {
-            "assembly_point_name": {
-                "render": "De naam van deze verzamelplaats is <b>{name}</b>",
-                "question": "Wat is de naam van deze verzamelplaats?"
-            },
-            "assembly_point_operator": {
-                "question": "Welke organisatie beheert dit verzamelpunt?",
-                "render": "Dit verzamelpunt wordt beheerd door <b>{operator}</b>"
-            },
-            "disaster_type": {
-                "mappings": {
-                    "0": {
-                        "then": "Aardbeving"
-                    },
-                    "1": {
-                        "then": "Overstroming"
-                    },
-                    "2": {
-                        "then": "Brand"
-                    },
-                    "3": {
-                        "then": "Aardverschuiving"
-                    }
-                },
-                "question": "Voor welk soort ramp is dit verzamelpunt bedoeld?"
-            }
-        },
-        "description": "Deze laag bevat verzamelplaatsen en wachtzones waar werknemers, passagiers of menigten verzameld worden in een noodsituatie.",
-        "name": "Noodverzamelplaatsen",
-        "presets": {
-            "0": {
-                "title": "een verzamelplaats"
-            }
-        },
-        "title": {
-            "render": "Verzamelpunt voor bij noodsituaties"
-        }
-    },
-    "sports_centre": {
-        "tagRenderings": {
-            "sport_centre-sport": {
-                "mappings": {
-                    "26": {
-                        "then": "Klimmen"
-                    },
-                    "27": {
-                        "then": "Hoogteparcours"
-                    }
-                }
-            }
-        }
-    },
-    "assisted_repair": {
-        "presets": {
-            "0": {
-                "description": "Een locatie met een permanente werkplaats waar mensen naartoe kunnen komen om spullen te repareren met hulp van vrijwilligers.",
-                "title": "een reparatiewerkplaats met ondersteuning"
-            }
-        },
-        "description": "Een zelfondersteunde werkplaats is een locatie waar mensen hun spullen kunnen komen repareren met hulp van vrijwilligers en met het gereedschap dat op de locatie beschikbaar is. Een repair café is een soort evenement dat regelmatig wordt georganiseerd volgens dezelfde principes.",
-        "tagRenderings": {
-            "item:repair": {
-                "mappings": {
-                    "0": {
-                        "then": "Mobiele telefoons worden hier gerepareerd"
-                    },
-                    "1": {
-                        "then": "Computers worden hier gerepareerd"
-                    },
-                    "2": {
-                        "then": "Fietsen worden hier gerepareerd"
-                    },
-                    "3": {
-                        "then": "Elektronische apparaten worden hier gerepareerd"
-                    },
-                    "5": {
-                        "then": "Kleding wordt hier gerepareerd"
-                    },
-                    "4": {
-                        "then": "Meubels worden hier gerepareerd"
-                    }
-                },
-                "question": "Wat voor items worden hier gerepareerd?"
-            },
-            "name": {
-                "question": "Wat is de naam van deze reparatiewerkplaats?",
-                "render": "Deze werkplaats heet <b>{name}</b>"
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "{name}"
-                }
-            },
-            "render": "Werkplaats voor reparatie met ondersteuning"
-        },
-        "name": "Repair cafés en reparatiewerkplaatsen met ondersteuning"
-    },
-    "bbq": {
-        "tagRenderings": {
-            "fuel": {
-                "mappings": {
-                    "3": {
-                        "then": "Deze barbecue gebruikt gas als brandstof"
-                    },
-                    "0": {
-                        "then": "Deze barbecue gebruikt hout als brandstof"
-                    },
-                    "1": {
-                        "then": "Deze barbecue gebruikt houtskool als brandstof"
-                    },
-                    "2": {
-                        "then": "Deze barbecue werkt op elektriciteit"
-                    }
-                },
-                "question": "Wat voor brandstof gebruikt deze barbecue?"
-            },
-            "covered": {
-                "question": "Is deze barbecue overdekt?",
-                "mappings": {
-                    "0": {
-                        "then": "Deze barbecue is niet overdekt"
-                    },
-                    "1": {
-                        "then": "Deze barbecue is overdekt"
-                    }
-                }
-            },
-            "access": {
-                "mappings": {
-                    "2": {
-                        "then": "Deze barbecue is privé"
-                    },
-                    "3": {
-                        "then": "Deze barbecue mag door iedereen worden gebruikt, maar de eigenaar kan de toegang op elk moment ontzeggen"
-                    },
-                    "5": {
-                        "then": "Deze barbecue mag alleen worden gebruikt door personen met toestemming"
-                    },
-                    "0": {
-                        "then": "Deze barbecue mag door iedereen worden gebruikt"
-                    },
-                    "1": {
-                        "then": "Deze barbecue mag door niemand worden gebruikt"
-                    },
-                    "4": {
-                        "then": "Deze barbecue mag alleen worden gebruikt door klanten"
-                    }
-                },
-                "question": "Wie mag deze barbecue gebruiken?"
-            }
-        },
-        "description": "Een permanent geïnstalleerde barbecue, meestal toegankelijk voor iedereen.",
-        "name": "Barbecue",
-        "presets": {
-            "0": {
-                "description": "Een permanent geïnstalleerde barbecue, meestal toegankelijk voor iedereen.",
-                "title": "Barbecue"
-            }
-        },
-        "title": {
-            "render": "BBQ"
-        }
-    },
-    "cinema": {
-        "description": "Een plaats die films toont, meestal open voor het publiek tegen een vergoeding.",
-        "name": "Bioscoop",
-        "title": {
-            "render": "Bioscoop"
-        },
-        "tagRenderings": {
-            "cinema_type": {
-                "question": "Wat voor type bioscoop is dit?",
-                "mappings": {
-                    "0": {
-                        "then": "Dit is een normale bioscoop met films voor alle leeftijden"
-                    },
-                    "1": {
-                        "then": "Dit is een erotische bioscoop met films voor volwassenen"
-                    }
-                }
-            }
-        }
-    },
-    "souvenir_coin": {
-        "tagRenderings": {
-            "designs": {
-                "override": {
-                    "mappings": {
-                        "3": {
-                            "then": "Deze machine heeft vier ontwerpen beschikbaar"
-                        },
-                        "2": {
-                            "then": "Deze machine heeft drie ontwerpen beschikbaar"
-                        },
-                        "1": {
-                            "then": "Deze machine heeft twee ontwerpen beschikbaar"
-                        },
-                        "0": {
-                            "then": "Deze machine heeft één ontwerp beschikbaar"
-                        }
-                    },
-                    "render": "Deze machine heeft {coin:design_count} ontwerpen beschikbaar"
-                }
-            },
-            "charge": {
-                "freeform": {
-                    "placeholder": "Kosten (bijv. 2 EUR)"
-                },
-                "mappings": {
-                    "0": {
-                        "then": "Een souvenirmunt kost 2 euro"
-                    }
-                },
-                "question": "Hoeveel kost een souvenirmunt?",
-                "render": "Een souvenirmunt kost {charge}"
-            },
-            "indoor": {
-                "mappings": {
-                    "0": {
-                        "then": "Deze machine bevindt zich binnen."
-                    },
-                    "1": {
-                        "then": "Deze machine bevindt zich buiten."
-                    }
-                },
-                "question": "Bevindt deze machine zich binnen?"
-            }
-        },
-        "description": "Laag die machines toont die souvenirmunten verkopen",
-        "presets": {
-            "0": {
-                "description": "Voeg een machine toe die souvenirmunten verkoopt",
-                "title": "een souvenirmuntmachine"
-            }
-        },
-        "name": "Souvenirmuntmachines",
-        "title": {
-            "render": "Souvenirmuntmachine"
-        }
-    },
-    "elongated_coin": {
-        "tagRenderings": {
-            "charge": {
-                "question": "Hoe veel kost het om een munt te persen?",
-                "render": "Het kost {charge} om een munt te persen.",
-                "freeform": {
-                    "placeholder": "Kosten (bijv. 0.50 EUR)"
-                },
-                "mappings": {
-                    "3": {
-                        "then": "Het kost 1 Zwitserse frank om een munt te persen."
-                    },
-                    "1": {
-                        "then": "Het kost 2 euro om een munt te persen."
-                    },
-                    "0": {
-                        "then": "Het kost 1 euro om een munt te persen."
-                    },
-                    "2": {
-                        "then": "Het kost 2 Zwitserse frank om een munt te persen."
-                    }
-                }
-            },
-            "coin": {
-                "freeform": {
-                    "placeholder": "Munttype (bijv. 10 cent)"
-                },
-                "question": "Welk muntstuk wordt gebruikt voor het persen?",
-                "mappings": {
-                    "3": {
-                        "then": "Deze muntpers gebruikt een muntstuk van 25 cent voor het persen."
-                    },
-                    "0": {
-                        "then": "Deze muntpers gebruikt een muntstuk van 2 cent voor het persen."
-                    },
-                    "1": {
-                        "then": "Deze muntpers gebruikt een muntstuk van 5 cent voor het persen."
-                    },
-                    "2": {
-                        "then": "Deze muntpers gebruikt een muntstuk van 10 cent voor het persen."
-                    },
-                    "4": {
-                        "then": "Deze muntpers gebruikt een muntstuk van 50 cent voor het persen."
-                    },
-                    "5": {
-                        "then": "Deze muntpers gebruikt een muntstuk van 10 rappen voor het persen."
-                    },
-                    "6": {
-                        "then": "Deze muntpers gebruikt een muntstuk van 20 rappen voor het persen."
-                    }
-                },
-                "render": "Deze muntpers gebruikt een muntstuk van {coin:type} voor het persen."
-            },
-            "designs": {
-                "mappings": {
-                    "2": {
-                        "then": "Deze muntpers heeft drie ontwerpen beschikbaar."
-                    },
-                    "0": {
-                        "then": "Deze muntpers heeft één ontwerp beschikbaar."
-                    },
-                    "1": {
-                        "then": "Deze muntpers heeft twee ontwerpen beschikbaar."
-                    }
-                },
-                "freeform": {
-                    "placeholder": "Aantal ontwerpen (bijv. 5)"
-                }
-            }
-        },
-        "name": "Muntpersen",
-        "presets": {
-            "0": {
-                "title": "een muntpers"
-            }
-        },
-        "description": "Laag met muntpersen."
-    },
-    "brothel": {
-        "presets": {
-            "0": {
-                "title": "een bordeel"
-            }
-        },
-        "tagRenderings": {
-            "name": {
-                "question": "Wat is de naam van dit bordeel?",
-                "render": "Dit bordeel heet <b>{name}</b>"
-            }
-        },
-        "name": "Bordelen",
-        "description": "Een etablissement dat zich specifiek richt op prostitutie.",
-        "title": {
-            "render": "Bordeel"
-        }
-    },
-    "souvenir_note": {
-        "tagRenderings": {
-            "charge": {
-                "question": "Hoeveel kost een souvenirbiljet?",
-                "freeform": {
-                    "placeholder": "Kosten (bijv. 2 EUR)"
-                },
-                "mappings": {
-                    "0": {
-                        "then": "Een souvenirbiljet kost 2 euro"
-                    },
-                    "1": {
-                        "then": "Een souvenirbiljet kost 3 euro"
-                    }
-                },
-                "render": "Een souvenirbiljet kost {charge}"
-            },
-            "designs": {
-                "mappings": {
-                    "2": {
-                        "then": "Deze machine heeft drie ontwerpen beschikbaar."
-                    },
-                    "3": {
-                        "then": "Deze machine heeft vier ontwerpen beschikbaar."
-                    },
-                    "0": {
-                        "then": "Deze machine heeft één ontwerp beschikbaar."
-                    },
-                    "1": {
-                        "then": "Deze machine heeft twee ontwerpen beschikbaar."
-                    }
-                },
-                "render": "Deze machine heeft {note:design_count} ontwerpen beschikbaar.",
-                "freeform": {
-                    "placeholder": "Aantal ontwerpen (bijv. 5)"
-                },
-                "question": "Hoeveel ontwerpen heeft deze machine beschikbaar?"
-            },
-            "indoor": {
-                "mappings": {
-                    "0": {
-                        "then": "Deze machine bevindt zich binnen."
-                    },
-                    "1": {
-                        "then": "Deze machine bevindt zich buiten."
-                    }
-                },
-                "question": "Bevindt deze machine zich binnen?"
-            }
-        },
-        "description": "Laag die machines toont die souvenirbiljetten verkopen",
-        "name": "Souvenirbiljetmachines",
-        "presets": {
-            "0": {
-                "description": "Voeg een machine toe die souvenirbiljetten verkoopt",
-                "title": "een souvenirbiljetmachine"
-            }
-        },
-        "title": {
-            "render": "Souvenirbiljetmachine"
         }
     }
 }

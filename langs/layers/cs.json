@@ -2318,54 +2318,31 @@
                     "0": {
                         "question": "Všechny konektory"
                     },
+                    "1": {
+                        "question": "Má konektor <div style='display: inline-block'><b><b>nástěnné zástrčky Schuko</b> bez zemnicího kolíku (CEE7/4 typ F)</b> <img style='width:1rem; displej: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div>"
+                    },
+                    "10": {
+                        "question": "Má konektor <div style='display: inline-block'><b><b>Typ 2 s kabelem</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
+                    },
                     "11": {
                         "question": "Má konektor <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (značkový typ2_css)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>"
                     },
                     "12": {
                         "question": "Má konektor <div style='display: inline-block'><b><b>Tesla Supercharger (destinace)</b></b> <img style='width:1rem; displej: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>"
-                    },
-                    "10": {
-                        "question": "Má konektor <div style='display: inline-block'><b><b>Typ 2 s kabelem</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
-                    },
-                    "1": {
-                        "question": "Má konektor <div style='display: inline-block'><b><b>nástěnné zástrčky Schuko</b> bez zemnicího kolíku (CEE7/4 typ F)</b> <img style='width:1rem; displej: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div>"
                     }
                 }
             }
         },
+        "name": "Nabíjecí stanice",
+        "presets": {
+            "0": {
+                "title": "nabíjecí stanice pro elektrokola"
+            },
+            "1": {
+                "title": "nabíjecí stanice pro auta"
+            }
+        },
         "tagRenderings": {
-            "Network": {
-                "mappings": {
-                    "1": {
-                        "then": "Není součástí větší sítě"
-                    },
-                    "0": {
-                        "then": "Není součástí větší sítě, např. protože nabíjecí stanici spravuje místní firma"
-                    }
-                },
-                "question": "Je tato nabíjecí stanice součástí sítě?",
-                "render": "Část sítě <b>{network}</b>"
-            },
-            "rewritten-questions": {
-                "renderings": {
-                    "0": {
-                        "question": "Kolik zástrček typu {{description}} je k dispozici?"
-                    },
-                    "1": {
-                        "mappings": {
-                            "then": "{{description}} výstup {{commonVoltages}} voltů"
-                        },
-                        "question": "Jaké napětí mají zástrčky s {{description}} ?"
-                    }
-                },
-                "rewrite": {
-                    "into": {
-                        "6": {
-                            "2": "<b>Tesla Supercharger</b>"
-                        }
-                    }
-                }
-            },
             "Auth phone": {
                 "question": "Jaké je telefonní číslo pro autentizační hovor nebo SMS?"
             },
@@ -2376,6 +2353,9 @@
                     },
                     "1": {
                         "then": "Autentizace pomocí aplikace"
+                    },
+                    "2": {
+                        "then": "K dispozici je autentizace pomocí telefonního hovoru"
                     },
                     "3": {
                         "then": "K dispozici je autentizace pomocí SMS"
@@ -2391,9 +2371,6 @@
                     },
                     "7": {
                         "then": "Nabíjení je zde (také) možné bez autentizace"
-                    },
-                    "2": {
-                        "then": "K dispozici je autentizace pomocí telefonního hovoru"
                     }
                 },
                 "question": "Jaký druh autentizace je na nabíjecí stanici k dispozici?"
@@ -2407,6 +2384,9 @@
                         "then": "<b>Schuko zásuvka</b> bez zemnícího kolíku (CEE7/4 typ F)"
                     },
                     "10": {
+                        "then": "<b>CCS typu 1</b> (neboli kombinace typu 1)"
+                    },
+                    "11": {
                         "then": "<b>CCS typu 1</b> (neboli kombinace typu 1)"
                     },
                     "12": {
@@ -2433,6 +2413,9 @@
                     "19": {
                         "then": "<b>Typ 2 s kabelem</b> (mennekes)"
                     },
+                    "2": {
+                        "then": "<b>Evropská zásuvka</b> se zemnícím kolíkem (CEE7/4 typ E)"
+                    },
                     "20": {
                         "then": "<b>Tesla Supercharger CCS</b> (značkový typ2_css)"
                     },
@@ -2445,8 +2428,14 @@
                     "23": {
                         "then": "<b>Tesla Supercharger (cíl)</b>"
                     },
+                    "32": {
+                        "then": "<b>BS1363</b> (Typ G)"
+                    },
                     "33": {
                         "then": "<b>BS1363</b> (Typ G)"
+                    },
+                    "34": {
+                        "then": "<b>NEMA 5-15</b> (Typ B)"
                     },
                     "35": {
                         "then": "<b>NEMA 5-15</b> (Typ B)"
@@ -2475,29 +2464,29 @@
                     "6": {
                         "then": "<b>Typ 1 s kabelem</b> (J1772)"
                     },
+                    "7": {
+                        "then": "<b>Typ 1 s kabelem</b> (J1772)"
+                    },
                     "8": {
                         "then": "<b>Typ 1 <i>bez</i> kabelu</b> (J1772)"
                     },
                     "9": {
                         "then": "<b>Typ 1 <i>bez</i> kabelu</b> (J1772)"
-                    },
-                    "2": {
-                        "then": "<b>Evropská zásuvka</b> se zemnícím kolíkem (CEE7/4 typ E)"
-                    },
-                    "11": {
-                        "then": "<b>CCS typu 1</b> (neboli kombinace typu 1)"
-                    },
-                    "32": {
-                        "then": "<b>BS1363</b> (Typ G)"
-                    },
-                    "34": {
-                        "then": "<b>NEMA 5-15</b> (Typ B)"
-                    },
-                    "7": {
-                        "then": "<b>Typ 1 s kabelem</b> (J1772)"
                     }
                 },
                 "question": "Jaké nabíjecí přípojky jsou zde k dispozici?"
+            },
+            "Network": {
+                "mappings": {
+                    "0": {
+                        "then": "Není součástí větší sítě, např. protože nabíjecí stanici spravuje místní firma"
+                    },
+                    "1": {
+                        "then": "Není součástí větší sítě"
+                    }
+                },
+                "question": "Je tato nabíjecí stanice součástí sítě?",
+                "render": "Část sítě <b>{network}</b>"
             },
             "OH": {
                 "override": {
@@ -2525,13 +2514,13 @@
                 "question": "Používá se tento nabíjecí bod?"
             },
             "Operator": {
-                "render": "Tuto nabíjecí stanici provozuje {operator}",
-                "question": "Kdo je provozovatelem této nabíjecí stanice?",
                 "mappings": {
                     "0": {
                         "then": "Síť je ve skutečnosti {operator}"
                     }
-                }
+                },
+                "question": "Kdo je provozovatelem této nabíjecí stanice?",
+                "render": "Tuto nabíjecí stanici provozuje {operator}"
             },
             "Parking:fee": {
                 "mappings": {
@@ -2546,6 +2535,9 @@
             },
             "Type": {
                 "mappings": {
+                    "0": {
+                        "then": "<b>Jízdní kola</b> lze nabíjet zde"
+                    },
                     "1": {
                         "then": "<b>Auta</b> lze nabíjet zde"
                     },
@@ -2557,9 +2549,6 @@
                     },
                     "4": {
                         "then": "<b>Autobusy</b> lze nabíjet zde"
-                    },
-                    "0": {
-                        "then": "<b>Jízdní kola</b> lze nabíjet zde"
                     }
                 },
                 "question": "Která vozidla zde smí nabíjet?"
@@ -2576,15 +2565,26 @@
                         "then": "Tuto nabíjecí stanici mohou používat pouze zákazníci místa, kam tato stanice patří<br/><span class='subtle'>Např. nabíjecí stanice provozovaná hotelem, kterou mohou používat pouze jeho hosté</span>"
                     }
                 }
-            }
-        },
-        "name": "Nabíjecí stanice",
-        "presets": {
-            "0": {
-                "title": "nabíjecí stanice pro elektrokola"
             },
-            "1": {
-                "title": "nabíjecí stanice pro auta"
+            "rewritten-questions": {
+                "renderings": {
+                    "0": {
+                        "question": "Kolik zástrček typu {{description}} je k dispozici?"
+                    },
+                    "1": {
+                        "mappings": {
+                            "then": "{{description}} výstup {{commonVoltages}} voltů"
+                        },
+                        "question": "Jaké napětí mají zástrčky s {{description}} ?"
+                    }
+                },
+                "rewrite": {
+                    "into": {
+                        "6": {
+                            "2": "<b>Tesla Supercharger</b>"
+                        }
+                    }
+                }
             }
         }
     },

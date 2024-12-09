@@ -251,13 +251,15 @@
         {
           "if": "sport=climbing",
           "then": {
-            "en": "Rock climbing"
+            "en": "Climbing",
+            "nl": "Klimmen"
           }
         },
         {
           "if": "sport=climbing_adventure",
           "then": {
-            "en": "Climbing Adventure"
+            "en": "Climbing Adventure",
+            "nl": "Hoogteparcours"
           }
         },
         {
