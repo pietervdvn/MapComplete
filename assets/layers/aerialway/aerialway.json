@@ -9,12 +9,13 @@
     "nl": "Kabelbanen"
   },
   "description": {
-    "en": "Various forms of transport for passengers and goods that use wires, including cable cars, gondolas, chair lifts, drag lifts, and zip lines. ",
+    "en": "Various forms of transport for passengers and goods that use wires, including cable cars, gondolas, chair lifts, drag lifts, and zip lines.",
     "de": "Alle Arten von seil- oder drahtgestütztem Personen- oder Gütertransport, wie Seilbahnen, Gondeln, Sessellifte, Schlepplifte. ",
     "es": "Varias formas de transporte de pasajeros y mercancías que utilizan cables, incluyendo teleféricos, góndolas, telesillas, remontes y tirolinas. ",
     "pl": "Różne formy transportu dla pasażerów i dóbr, które używają lin, w tym kolejki gondolowe, wyciągi krzesełkowe i orczykowe oraz tyrolki. ",
     "cs": "Různé formy přepravy osob a zboží, které využívají dráty, včetně lanovek, gondol, sedačkových lanovek, vleků a lanových drah. ",
-    "ca": "Diverses formes de transport per a passatgers i mercaderies que utilitzen cables, incloent-hi telefèrics, telecabines, telecadires, teleesquís i tiroleses. "
+    "ca": "Diverses formes de transport per a passatgers i mercaderies que utilitzen cables, incloent-hi telefèrics, telecabines, telecadires, teleesquís i tiroleses. ",
+    "nl": "Verschillende vormen van passagiers- en goederentransport die gebruikmaken van kabels, waaronder kabelbanen, gondelbanen, sleepliften en tokkelbanen."
   },
   "source": {
     "osmTags": {
@@ -31,7 +32,8 @@
       "en": "Aerialway {name}",
       "de": "Seilbahn {name}",
       "cs": "Dráha {name}",
-      "es": "Teleférico {name}"
+      "es": "Teleférico {name}",
+      "nl": "Kabelbaan {name}"
     }
   },
   "pointRendering": [
@@ -96,7 +98,8 @@
         "en": "What type of aerialway is this?",
         "de": "Um welchen Seilbahntyp handelt es sich?",
         "cs": "O jaký typ dráhy se jedná?",
-        "es": "¿Qué tipo de teleférico es este?"
+        "es": "¿Qué tipo de teleférico es este?",
+        "nl": "Wat voor kabelbaan is dit?"
       },
       "id": "type",
       "mappings": [
@@ -139,7 +142,8 @@
             "en": "An aerialway which has both chairs and gondolas in the same continuous track",
             "de": "Eine Seilbahn, die sowohl offene Sessel als auch geschlossene Gondeln auf einer durchgehenden Bahn hat",
             "cs": "Lanová dráha, která má sedačky i gondoly na stejné souvislé dráze",
-            "es": "Un teleférico que tiene tanto sillas como góndolas en la misma vía continua"
+            "es": "Un teleférico que tiene tanto sillas como góndolas en la misma vía continua",
+            "nl": "Een kabelbaan met zowel stoeltjes als gondels in dezelfde baan"
           }
         },
         {
@@ -180,16 +184,18 @@
             "en": "A drag lift with a platter to drag a single passenger at a time",
             "de": "Ein Schlepplift mit einem Teller für jeweils einen Passagier",
             "cs": "Vlek s talířem, který táhne jednoho cestujícího",
-            "es": "Un remonte con una plataforma para arrastrar a un solo pasajero a la vez"
+            "es": "Un remonte con una plataforma para arrastrar a un solo pasajero a la vez",
+            "nl": "Een sleeplift met stangen om skiërs naar boven te slepen"
           }
         },
         {
           "if": "aerialway=rope_tow",
           "then": {
-            "en": "A tow line which which drags skieers",
+            "en": "A tow line which skiers hold on to or attach themselves onto",
             "de": "Eine Schleppleine, die Skifahrer mit sich zieht",
             "cs": "Vlečné lano, které táhne lyžaře",
-            "es": "Un cable de remolque que arrastra a los esquiadores"
+            "es": "Un cable de remolque que arrastra a los esquiadores",
+            "nl": "Een sleeplijn waar skiërs zich aan vasthouden of vastmaken"
           }
         },
         {
@@ -204,11 +210,12 @@
         {
           "if": "aerialway=zip_line",
           "then": {
-            "en": "A zip line. (A touristical attraction where adventurous people go down at high speeds) ",
-            "de": "Eine Seilrutsche. (Eine Touristenattraktion, bei der abenteuerlustige Menschen mit hoher Geschwindigkeit hinunterfahren) ",
+            "en": "A zip line. (A touristic attraction where adventurous people go down at high speeds)",
+            "de": "Eine Seilrutsche. (Eine Touristenattraktion, bei der abenteuerlustige Menschen mit hoher Geschwindigkeit hinunterfahren)",
             "pl": "Tyrolka. (Atrakcja turystyczna, która pozwala żądnym przygód zjechać z dużą szybkością) ",
             "cs": "Lano na visuté dráze. (Turistická atrakce, kde se odvážlivci spouštějí vysokou rychlostí) ",
-            "es": "Una tirolina. (Una atracción turística donde la gente aventurera baja a altas velocidades) "
+            "es": "Una tirolina. (Una atracción turística donde la gente aventurera baja a altas velocidades) ",
+            "nl": "Een tokkelbaan. (Ook bekend als deathride; een toeristische attractie waarbij avontuurlijk mensen aan hoge snelheid afdalen)"
           }
         }
       ]
@@ -222,7 +229,8 @@
         "pl": "Jak długo trwa pojedynczy przejazd tą windą?",
         "es": "¿Cuánto dura un viaje sencillo con este ascensor?",
         "cs": "Jak dlouho trvá jedna jízda tímto výtahem?",
-        "ca": "Quant de temps triga un trajecte amb aquest ascensor?"
+        "ca": "Quant de temps triga un trajecte amb aquest ascensor?",
+        "nl": "Hoe lang duurt een rit met deze lift?"
       },
       "questionHint": {
         "en": "This excludes the waiting time.",
@@ -259,7 +267,8 @@
         "pl": "Ile osób może pomieścić jeden wagon?",
         "es": "¿Cuántas personas caben en una sola cabina?",
         "ca": "Quantes persones caben a la cabina?",
-        "cs": "Kolik osob se vejde do jednoho vozu?"
+        "cs": "Kolik osob se vejde do jednoho vozu?",
+        "nl": "Hoeveel mensen kunnen in één cabine?"
       },
       "render": {
         "en": "{aerialway:occupancy} people fit a single carriage",

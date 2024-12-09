@@ -133,7 +133,8 @@
         },
         "special": {
           "type": "nearby_images",
-          "mode": "open"
+          "mode": "open",
+          "readonly": "yes"
         }
       }
     },
@@ -395,7 +396,8 @@
             "cs": "Naposledy upravil přispěvatel {search}",
             "da": "Senest redigeret af bidragsyder {search}",
             "fr": "Dernière modification par {search}",
-            "hu": "Legutóbb {search} felhasználó szerkesztette"
+            "hu": "Legutóbb {search} felhasználó szerkesztette",
+            "uk": "Останнє редагування дописувачем {search}"
           }
         }
       ]
@@ -414,7 +416,8 @@
             "en": "Not edited as last by {search}",
             "de": "Nicht zuletzt bearbeitet von {search}",
             "hu": "Legutóbb nem {search} felhasználó szerkesztette",
-            "es": "No editado por última vez por {search}"
+            "es": "No editado por última vez por {search}",
+            "uk": "Не відредаговано як останнє {search}"
           }
         }
       ]
@@ -480,7 +483,8 @@
             "en": "Last edited before {search}",
             "de": "Zuletzt bearbeitet vor dem {search}",
             "hu": "Legutóbb {search} előtt szerkesztették",
-            "es": "Última edición antes de {search}"
+            "es": "Última edición antes de {search}",
+            "uk": "Останнє редагування зроблено до {search}"
           }
         }
       ]
@@ -500,7 +504,8 @@
             "en": "Last edited after {search}",
             "de": "Zuletzt bearbeitet nach dem {search}",
             "hu": "Legutóbb {search} után szerkesztették",
-            "es": "Última edición después de {search}"
+            "es": "Última edición después de {search}",
+            "uk": "Останнє редагування після {search}"
           }
         }
       ]

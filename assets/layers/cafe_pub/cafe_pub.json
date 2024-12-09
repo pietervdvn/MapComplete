@@ -78,7 +78,8 @@
           "de": "Bar",
           "ca": "Pub",
           "cs": "Bar",
-          "es": "Bar"
+          "es": "Bar",
+          "nl": "Bar"
         }
       },
       {
@@ -88,7 +89,8 @@
           "de": "Café",
           "ca": "CAfè",
           "cs": "Kavárna",
-          "es": "Café"
+          "es": "Café",
+          "nl": "Café"
         }
       },
       {
@@ -97,7 +99,8 @@
           "en": "Nightclub",
           "de": "Nachtclub",
           "cs": "Noční klub",
-          "es": "Discoteca"
+          "es": "Discoteca",
+          "nl": "Nachtclub"
         }
       }
     ]

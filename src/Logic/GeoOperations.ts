@@ -76,10 +76,18 @@ export class GeoOperations {
     }
 
     /**
-     * Returns [lon,lat] coordinates
+     * Returns [lon,lat] coordinates.
      * @param feature
+     *
+     * GeoOperations.centerpointCoordinates(undefined) // => undefined
      */
+    static centerpointCoordinates(feature: undefined | null): undefined ;
+    static centerpointCoordinates(feature: AllGeoJSON | GeoJSON | undefined): [number, number] | undefined;
+    static centerpointCoordinates(feature: NonNullable< AllGeoJSON> | NonNullable<GeoJSON>): NonNullable<[number, number]>;
     static centerpointCoordinates(feature: AllGeoJSON | GeoJSON): [number, number] {
+        if(feature === undefined || feature === null){
+            return undefined
+        }
         return <[number, number]>turf.center(<any>feature).geometry.coordinates
     }
 

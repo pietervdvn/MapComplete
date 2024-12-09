@@ -931,7 +931,18 @@
         }
     },
     "etymology": {
-        "name": "Має етимологію"
+        "name": "Має етимологію",
+        "tagRenderings": {
+            "etymology_multi_apply": {
+                "render": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Автоматичне застосування даних до всіх сегментів з однаковою назвою, true)}"
+            },
+            "street-name-sign-image": {
+                "render": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Додати зображення таблички з назвою вулиці)}"
+            },
+            "wikipedia-etymology": {
+                "question": "На честь якого елемента Вікіданих названо цей об'єкт?"
+            }
+        }
     },
     "fire_station": {
         "presets": {
@@ -1137,6 +1148,38 @@
             "phone": {
                 "question": "За яким номером телефону можна звертатися з питаннями та проблемами, пов'язаними з цим заповідником?",
                 "questionHint": "Поважайте приватність - вказуйте особистий номер телефону лише в тому випадку, якщо він є загальнодоступним"
+            }
+        }
+    },
+    "note": {
+        "filter": {
+            "10": {
+                "options": {
+                    "0": {
+                        "question": "Останнє редагування дописувачем {search}"
+                    }
+                }
+            },
+            "11": {
+                "options": {
+                    "0": {
+                        "question": "Не відредаговано як останнє {search}"
+                    }
+                }
+            },
+            "14": {
+                "options": {
+                    "0": {
+                        "question": "Останнє редагування зроблено до {search}"
+                    }
+                }
+            },
+            "15": {
+                "options": {
+                    "0": {
+                        "question": "Останнє редагування після {search}"
+                    }
+                }
             }
         }
     },
@@ -1417,6 +1460,13 @@
             "internet-ssid": {
                 "render": "Назва мережі: <b>{internet_access:ssid}</b>"
             },
+            "last_edit": {
+                "render": {
+                    "special": {
+                        "text": "Востаннє редаговано {_last_edit:timestamp} користувачем {_last_edit:contributor}"
+                    }
+                }
+            },
             "opening_hours": {
                 "question": "Які години роботи {title()}?",
                 "render": "<h3>Години роботи</h3>{opening_hours_table(opening_hours)}"
@@ -1463,6 +1513,13 @@
             "qr_code": {
                 "render": {
                     "after": "Відскануйте цей код, щоб відкрити це місце на іншому пристрої"
+                }
+            },
+            "share": {
+                "render": {
+                    "special": {
+                        "text": "Поділіться цією локацією"
+                    }
                 }
             },
             "single_level": {

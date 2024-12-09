@@ -112,7 +112,7 @@ class NearbyImageVis implements SpecialVisualization {
         {
             name: "readonly",
             required: false,
-            doc: "If 'readonly', will not show the 'link'-button",
+            doc: "If 'readonly' or 'yes', will not show the 'link'-button",
         },
     ]
     docs =
@@ -128,7 +128,7 @@ class NearbyImageVis implements SpecialVisualization {
         layer: LayerConfig
     ): SvelteUIElement {
         const isOpen = args[0] === "open"
-        const readonly = args[1] === "readonly"
+        const readonly = args[1] === "readonly" || args[1] === "yes"
         const [lon, lat] = GeoOperations.centerpointCoordinates(feature)
         return new SvelteUIElement(isOpen ? NearbyImages : NearbyImagesCollapsed, {
             tags,
@@ -744,13 +744,14 @@ export default class SpecialVisualizations {
                         required: false,
                     },
                 ],
-                constr: (state, tags, args) => {
+                constr: (state, tags, args, feature) => {
                     const targetKey = args[0] === "" ? undefined : args[0]
                     const noBlur = args[3]?.toLowerCase()?.trim()
                     return new SvelteUIElement(UploadImage, {
                         state,
                         tags,
                         targetKey,
+                        feature,
                         labelText: args[1],
                         image: args[2],
                         noBlur: noBlur === "true" || noBlur === "yes",

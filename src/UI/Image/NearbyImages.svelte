@@ -59,12 +59,12 @@
           type: "Feature",
           geometry: {
             type: "Point",
-            coordinates: [p4c.coordinates.lng, p4c.coordinates.lat],
+            coordinates: [p4c.coordinates.lng, p4c.coordinates.lat]
           },
           properties: {
             id: p4c.pictureUrl,
-            rotation: p4c.direction,
-          },
+            rotation: p4c.direction
+          }
         }
     )
   )
@@ -76,14 +76,14 @@
         type: "Feature",
         geometry: {
           type: "Point",
-          coordinates: [s.coordinates.lng, s.coordinates.lat],
+          coordinates: [s.coordinates.lng, s.coordinates.lat]
         },
         properties: {
           id: s.pictureUrl,
           selected: "yes",
-          rotation: s.direction,
-        },
-      },
+          rotation: s.direction
+        }
+      }
     ]
   })
 
@@ -108,7 +108,7 @@
     rotation: state.mapProperties.rotation,
     pitch: state.mapProperties.pitch,
     zoom: new UIEventSource<number>(16),
-    location: new UIEventSource({ lon, lat }),
+    location: new UIEventSource({ lon, lat })
   })
 
   const geocodedImageLayer = new LayerConfig(<LayerConfigJson>geocoded_image)
@@ -118,7 +118,7 @@
     zoomToFeatures: true,
     onClick: (feature) => {
       highlighted.set(feature.properties.id)
-    },
+    }
   })
 
   ShowDataLayer.showMultipleLayers(map, new StaticFeatureSource([feature]), state.theme.layers)
@@ -141,8 +141,14 @@
     layer: geocodedImageLayer,
     onClick: (feature) => {
       highlighted.set(feature.properties.id)
-    },
+    }
   })
+  onDestroy(tags.addCallbackAndRunD(tags => {
+    if (tags.id.startsWith("node/") || tags.id.startsWith("way/") || tags.id.startsWith("relation/")) {
+      return
+    }
+    linkable = false
+  }))
 </script>
 
 <div class="flex flex-col">

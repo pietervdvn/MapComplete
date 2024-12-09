@@ -2926,7 +2926,8 @@
             "nl": "Deel deze locatie",
             "de": "Standort teilen",
             "es": "Compartir esta ubicación",
-            "cs": "Sdílet tuto lokalitu"
+            "cs": "Sdílet tuto lokalitu",
+            "uk": "Поділіться цією локацією"
           }
         }
       }
@@ -2988,7 +2989,8 @@
             "cs": "Naposledy upravil {_last_edit:timestamp} {_last_edit:contributor}",
             "da": "Senest redigeret {_last_edit:timestamp} af {_last_edit:contributor}",
             "hu": "Legutóbb {_last_edit:contributor} szerkesztette ekkor: {_last_edit:timestamp}",
-            "es": "Última edición el {_last_edit:timestamp} por {_last_edit:contributor}"
+            "es": "Última edición el {_last_edit:timestamp} por {_last_edit:contributor}",
+            "uk": "Востаннє редаговано {_last_edit:timestamp} користувачем {_last_edit:contributor}"
           },
           "class": "subtle font-small"
         }

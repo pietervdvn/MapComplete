@@ -606,7 +606,7 @@
       "id": "faces",
       "question": {
         "en": "How many faces does this clock have?",
-        "nl": "Hoeveel klokken heeft deze klok?",
+        "nl": "Hoeveel wijzerplaten heeft deze klok?",
         "de": "Wie viele Zifferblätter hat diese Uhr?",
         "ca": "Quantes cares té aquest rellotge?",
         "fr": "Combien de faces a cette horloge ?",
@@ -619,7 +619,7 @@
         "inline": true,
         "placeholder": {
           "en": "Number of faces",
-          "nl": "Aantal klokken",
+          "nl": "Aantal wijzerplaten",
           "de": "Anzahl der Zifferblätter",
           "ca": "Nombre de cares",
           "fr": "Nombre de faces",
@@ -629,7 +629,7 @@
       },
       "render": {
         "en": "This clock has {faces} faces",
-        "nl": "Deze klok heeft {faces} klokken",
+        "nl": "Deze klok heeft {faces} wijzerplaten",
         "de": "Diese Uhr hat {faces} Zifferblätter",
         "ca": "Aquest rellotge té {faces} cares",
         "fr": "Cette horloge a {faces} faces",
@@ -641,7 +641,7 @@
           "if": "faces=1",
           "then": {
             "en": "This clock has one face",
-            "nl": "Deze klok heeft één klok",
+            "nl": "Deze klok heeft één wijzerplaat",
             "de": "Diese Uhr hat ein Zifferblatt",
             "ca": "Aquest rellotge té una cara",
             "fr": "Cette horloge a une face",
@@ -653,7 +653,7 @@
           "if": "faces=2",
           "then": {
             "en": "This clock has two faces",
-            "nl": "Deze klok heeft twee klokken",
+            "nl": "Deze klok heeft twee wijzerplaten",
             "de": "Diese Uhr hat zwei Zifferblätter",
             "ca": "Aquest rellotge té dues cares",
             "fr": "Cette horloge a deux faces",
@@ -665,7 +665,7 @@
           "if": "faces=4",
           "then": {
             "en": "This clock has four faces",
-            "nl": "Deze klok heeft vier klokken",
+            "nl": "Deze klok heeft vier wijzerplaten",
             "de": "Diese Uhr hat vier Zifferblätter",
             "ca": "Aquest rellotge té quatre cares",
             "fr": "Cette horloge a quatre faces",

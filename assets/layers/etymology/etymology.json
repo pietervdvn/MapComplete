@@ -120,7 +120,8 @@
         "fr": "Quel est l'Item Wikidata auquel l'objet fait référence ?",
         "cs": "Po jaké položce Wikidat je tento objekt pojmenován?",
         "da": "Hvilket Wikidata-emne er dette objekt opkaldt efter?",
-        "es": "¿Cuál es el elemento de Wikidata en honor a  el cual se nombra este objeto?"
+        "es": "¿Cuál es el elemento de Wikidata en honor a  el cual se nombra este objeto?",
+        "uk": "На честь якого елемента Вікіданих названо цей об'єкт?"
       },
       "freeform": {
         "key": "name:etymology:wikidata",
@@ -341,7 +342,8 @@
         "ca": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Afegeix una imatge de la placa amb el nom del carrer)}",
         "cs": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Add image of a street name sign)}",
         "da": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Tilføj foto af gadenavneskilt)}",
-        "es": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Agregar imagen de un letrero de nombre de calle)}"
+        "es": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Agregar imagen de un letrero de nombre de calle)}",
+        "uk": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Додати зображення таблички з назвою вулиці)}"
       }
     },
     {
@@ -360,7 +362,8 @@
         "ca": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etimology, aplicació automàtica de dades a tots els segments amb el mateix nom, vertader)}",
         "cs": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Auto-applying data on all segments with the same name, true)}",
         "da": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Tilføjer automatisk til alle segmenter med samme navn, true)}",
-        "es": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Aplicando datos automáticamente en todos los segmentos con el mismo nombre, true)}"
+        "es": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Aplicando datos automáticamente en todos los segmentos con el mismo nombre, true)}",
+        "uk": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Автоматичне застосування даних до всіх сегментів з однаковою назвою, true)}"
       }
     },
     {

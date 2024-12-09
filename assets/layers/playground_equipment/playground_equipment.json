@@ -298,7 +298,8 @@
           "then": {
             "en": "This is a climbing wall",
             "de": "Das ist eine Kletterwand",
-            "es": "Este es un muro de escalada"
+            "es": "Este es un muro de escalada",
+            "nl": "Dit is een klimmuur"
           },
           "icon": {
             "path": "./assets/layers/playground_equipment/Playground_climbingwall.jpg",
