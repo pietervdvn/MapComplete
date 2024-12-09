@@ -3051,6 +3051,40 @@
                 },
                 "question": "Is there a speed climbing wall?"
             },
+            "auto_belay_lead": {
+                "mappings": {
+                    "0": {
+                        "then": "There are no auto belays for lead climbing"
+                    },
+                    "1": {
+                        "then": "There is a number of auto belays for lead climbing"
+                    },
+                    "2": {
+                        "then": "There is an auto belay for every lead climbing route"
+                    }
+                },
+                "question": "Are there auto belays for lead climbing here?",
+                "render": "There are {climbing:autobelay:sport} auto belays for lead climbing"
+            },
+            "auto_belay_toprope": {
+                "mappings": {
+                    "0": {
+                        "then": "There are no auto belays for top roping"
+                    },
+                    "1": {
+                        "then": "There are a number of auto belays for top roping"
+                    },
+                    "2": {
+                        "then": "There is an auto belay for every top rope route but manual belaying is also possible"
+                    },
+                    "3": {
+                        "then": "Top rope routes can only be climbed on auto belay"
+                    }
+                },
+                "question": "Are there auto belays for top roping here?",
+                "questionHint": "Excluding auto belays that are only for speed climbing",
+                "render": "There are {climbing:autobelay:toprope} auto belay devices for top roping"
+            },
             "belay_device_rental": {
                 "mappings": {
                     "0": {
