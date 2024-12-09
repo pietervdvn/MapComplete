@@ -906,53 +906,53 @@
             "access": {
                 "mappings": {
                     "0": {
-                        "then": "Public"
+                        "then": "This barbecue can be used by anyone"
                     },
                     "1": {
-                        "then": "No access"
+                        "then": "This barbecue can't be used by anyone"
                     },
                     "2": {
-                        "then": "Private"
+                        "then": "This barbecue is private"
                     },
                     "3": {
-                        "then": "Access until revoked"
+                        "then": "This barbecue can be used by anyone, but the owner can revoke access at any time"
                     },
                     "4": {
-                        "then": "Access only for customers"
+                        "then": "This barbecue can only be used by customers"
                     },
                     "5": {
-                        "then": "Access only for authorized persons"
+                        "then": "This barbecue can only be used by authorized persons"
                     }
                 },
-                "question": "What is the permitted access?"
+                "question": "Who is allowed to use this barbecue?"
             },
             "covered": {
                 "mappings": {
                     "0": {
-                        "then": "The grill is not covered"
+                        "then": "This barbecue is not covered"
                     },
                     "1": {
-                        "then": "The grill is covered"
+                        "then": "This barbecue is covered"
                     }
                 },
-                "question": "Is the grill covered?"
+                "question": "Is this barbecue covered?"
             },
             "fuel": {
                 "mappings": {
                     "0": {
-                        "then": "Wood"
+                        "then": "This barbecue uses wood as fuel"
                     },
                     "1": {
-                        "then": "Charcoal"
+                        "then": "This barbecue uses charcoal as fuel"
                     },
                     "2": {
-                        "then": "Electric"
+                        "then": "This barbecue is powered by electricity"
                     },
                     "3": {
-                        "then": "Gas"
+                        "then": "This barbecue uses gas as fuel"
                     }
                 },
-                "question": "How ist the grill fueled?"
+                "question": "How is this barbecue fuelled?"
             }
         },
         "title": {
@@ -2059,7 +2059,7 @@
         }
     },
     "brothel": {
-        "description": "An establishment specifically dedicated to prostitution. ",
+        "description": "An establishment specifically dedicated to prostitution.",
         "name": "Brothels",
         "presets": {
             "0": {
@@ -2825,7 +2825,7 @@
         }
     },
     "cinema": {
-        "description": " A place showing movies (films), generally open to the public for a fee. Commonly referred to as a movie theater in the US",
+        "description": "A place showing movies (films), generally open to the public for a fee. Commonly referred to as a movie theater in the US.",
         "name": "Cinema",
         "tagRenderings": {
             "cinema_type": {
