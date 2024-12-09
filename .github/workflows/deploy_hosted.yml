@@ -32,12 +32,6 @@ jobs:
         run: npm run generate:translations
         shell: bash
 
-
-      - name: Prepare deploy
-        run: npm run prepare-deploy
-        shell: bash
-
-
       - name: Prepare build
         run: npm run generate:service-worker && ./scripts/prepare-build.sh
         shell: bash
