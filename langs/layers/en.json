@@ -12424,7 +12424,7 @@
             "more_privacy": {
                 "mappings": {
                     "0": {
-                        "then": "When making changes to OpenStreetMap, do not indicate how far away you were from the changed objects."
+                        "then": "When making changes to OpenStreetMap, do not indicate how far away I was from the changed objects."
                     },
                     "1": {
                         "then": "When making changes to OpenStreetMap, roughly indicate how far away you were from the changed objects. This helps other contributors to understand how you made the change"
@@ -12508,13 +12508,13 @@
             "sync-visited-locations": {
                 "mappings": {
                     "0": {
-                        "then": "Save the locations you search for and inspect and sync them via openstreetmap.org. OpenStreetMap and all apps you use can see this history"
+                        "then": "Save the locations I search for and inspect and sync them via openstreetmap.org. OpenStreetMap and all apps that I give access to my OSM account can see this history"
                     },
                     "1": {
                         "then": "Save the locations you search for and inspect on my device"
                     },
                     "2": {
-                        "then": "Don't save the locations you search for and inspect "
+                        "then": "Don't save the locations I search for and inspect"
                     }
                 },
                 "question": "Should the locations you search for and inspect be remembered?",
