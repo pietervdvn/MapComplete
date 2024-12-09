@@ -2059,7 +2059,7 @@
         }
     },
     "brothel": {
-        "description": "Zařízení zaměřené speciálně na prostituci. ",
+        "description": "Zařízení zaměřené speciálně na prostituci.",
         "name": "Nevěstince",
         "presets": {
             "0": {
