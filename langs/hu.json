@@ -170,7 +170,7 @@
             "title": "Új objektum felvétele",
             "warnVisibleForEveryone": "A kiegészítésed mindenki számára látható lesz",
             "wrongType": "Ez az elem nem pont vagy vonal, ezért nem importálható",
-            "zoomInFurther": "Objektum felvételéhez közelíts jobban",
+            "zoomInFurther": "Objektum felvételéhez tovább kell közelítened a térképet",
             "zoomInMore": "Nagyíts tovább az elem importálásához"
         },
         "apply_button": {
@@ -327,12 +327,12 @@
         },
         "nameInlineQuestion": "Ezen {category} neve: $$$",
         "next": "Következő",
-        "noMatchingMapping": "Nincs a keresésnek megfelelő találat…",
+        "noMatchingMapping": "Nincs a keresésnek megfelelő találat.",
         "noNameCategory": "Név nélküli {category}",
         "noTagsSelected": "Nincs kijelölt címke",
         "notValid": "A folytatáshoz jelölj ki egy érvényes értéket",
         "number": "szám",
-        "openStreetMapIntro": "<h3>Nyílt térkép</h3><p>Ezt a térképet mindenki szabadon használhatja és szerkesztheti. Ez egy olyan egységes hely, ahol &lt;i&gt;minden&lt;/i&gt; térinformatikai adatot tárolni lehet. Semmi szükség különböző, kicsi, nem kompatibilis és elavult térképekre.</p><p>Az <b><a href=\"https://OpenStreetMap.org\" target=\"_blank\">OpenStreetMap</a> (OSM)</b> nem az ellenség térképe. A térképadatok szabadon felhasználhatók (<a href=\"https://osm.org/copyright\" target=\"_blank\">a tulajdonlással és az adatokban bekövetkezett változások feltüntetésével</a>). Mindenki adhat hozzá új térképadatokat és javíthat hibákat. Ez a weboldal is az OpenStreetMapet használja. Minden adat onnan származik, és a Te válaszaid és javításaid is meg fognak jelenni mindenütt.</p><p>Sok ember és alkalmazás már használja az OpenStreetMapet: például az <a href=\"https://organicmaps.app/\" target=\"_blank\">Organic Maps</a> vagy az <a href=\"https://osmAnd.net\" target=\"_blank\">OsmAnd</a>, de a Facebook, az Instagram, az Apple és a Bing (Microsoft) térképei is (részben) az OpenStreetMap adataira támaszkodnak.</p>",
+        "openStreetMapIntro": "<h3>Egy nyílt térkép</h3><p>Nem lenne klassz, ha lenne egy egységes térkép, amit mindenki szabadon használhatna és szerkeszthetne? Egyetlen hely, ahol az összes geoadatot tárolni lehetne? Akkor nem lenne szükség többé azokra a különböző, kicsi és inkompatibilis térképeket tartalmazó (mindig elavult) weboldalakra.</p><p>Ez a térkép az <b><a href='https://OpenStreetMap.org' target='_blank'>OpenStreetMap</a></b>. A térképadatok szabadon felhasználhatók (<a href=\"https://osm.org/copyright\" target=\"_blank\">a tulajdonlással és az adatokban bekövetkezett változások feltüntetésével</a>). Mindenki adhat hozzá új térképadatokat és javíthat hibákat. Ez a weboldal is az OpenStreetMapet használja. Minden adat onnan származik, és a Te válaszaid és javításaid is meg fognak jelenni mindenütt.</p><p>Sok ember és alkalmazás már használja az OpenStreetMapet: például az <a href=\"https://organicmaps.app/\" target=\"_blank\">Organic Maps</a> vagy az <a href=\"https://osmAnd.net\" target=\"_blank\">OsmAnd</a>, de a Facebook, az Instagram, az Apple és a Bing (Microsoft) térképei is (részben) az OpenStreetMap adataira támaszkodnak.</p>",
         "openTheMap": "Térkép megnyitása",
         "openTheMapAtGeolocation": "Nagyítás a saját helyzetemre",
         "openTheMapReason": "az adatok megtekintéséhez, szerkesztéséhez és kiegészítéséhez",
@@ -413,21 +413,21 @@
             "deleteThemeHistory": "Korábban megtekintett tematikus térképek törlése",
             "editSearchSyncSettings": "Szinkronizálási beállítások törlése",
             "editThemeSync": "Szinkronizálási beállítások szerkesztése",
-            "error": "Hiba történt…",
+            "error": "Hiba történt.",
             "instructions": "Helyek, szűrők vagy más tematikus térképek kereséséhez használja a fenti keresősávot",
             "locations": "Helyek",
             "nMoreFilters": "{n} további",
-            "nothing": "Nincs találat…",
+            "nothing": "Nincs találat.",
             "nothingFor": "Nem található semmi erre a kifejezésre: {term}",
             "otherMaps": "Más térképek",
             "pickFilter": "Szűrő bekapcsolása",
             "recentThemes": "Legutóbb megnézett térképek",
             "recents": "Legutóbb megnézett helyek",
             "search": "Helyszín keresése",
-            "searchShort": "Keresés…",
+            "searchShort": "Keresés",
             "searching": "Keresés…"
         },
-        "searchAnswer": "Beállítás keresése…",
+        "searchAnswer": "Beállítás keresése",
         "seeIndex": "Az összes tematikus térkép áttekintése",
         "share": "Megosztás",
         "sharescreen": {
@@ -642,8 +642,8 @@
             "one": {
                 "done": "Kép sikeresen feltöltve. Köszönjük!",
                 "failed": "Sajnos nem sikerült feltöltenünk a képed",
-                "retrying": "A kép feltöltése újból folyamatban van…",
-                "uploading": "Kép feltöltése…"
+                "retrying": "Kép feltöltésének újbóli megpróbálása…",
+                "uploading": "Kép feltöltése folyamatban…"
             }
         },
         "uploadDone": "A kép hozzá lett adva. Köszönjük a segítséged!",
@@ -811,7 +811,7 @@
         "title_singular": "Egy értékelés",
         "too_long": "Legfeljebb {max} karakter engedélyezett. Az te értékelésed {amount} karakterből áll.",
         "tos": "Ha értékelést írsz, elfogadod a <a href=\"https://mangrove.reviews/terms\" target=\"_blank\">a Mangrove.reviews általános szerződési feltételeit (ászf.) és adatvédelmi irányelveit</a>",
-        "write_a_comment": "Értékelés írása…",
+        "write_a_comment": "Értékelés írása",
         "your_reviews": "Korábbi értékeléseid",
         "your_reviews_empty": "Nem találtunk tőled korábbi értékelést"
     },
