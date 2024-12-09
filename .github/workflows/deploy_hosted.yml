@@ -37,10 +37,13 @@ jobs:
         run: npm run prepare-deploy
         shell: bash
 
-      - name: run tests
+
+      - name: Prepare build
+        run: npm run generate:service-worker && ./scripts/prepare-build.sh
+        shell: bash
+
+      - name: Run tests
         run: |
-          pwd
-          ls
           # This is the same as `npm run test`, but `vitest` doesn't want to run within npm :shrug:
           export NODE_OPTIONS="--max-old-space-size=8192"
           npm run clean:tests
@@ -54,6 +57,10 @@ jobs:
           
           npm run clean:tests
         shell: bash
+
+
+      - name: Build files
+        run: npm run build
 
       - name: Zipping dist file
         run: |
