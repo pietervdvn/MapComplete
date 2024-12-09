@@ -147,8 +147,8 @@
     {
       "id": "shoe_rental",
       "question": {
-        "en": "Can one rent climbing shoes here?",
-        "nl": "Kunnen hier klimschoenen gehuurd worden?",
+        "en": "Can one rent climbing shoes here to use in the gym?",
+        "nl": "Kunnen hier klimschoenen gehuurd worden voor gebruik in de zaal?",
         "fr": "Peut-on louer des chaussures d'escalade ici ?",
         "de": "Kann man hier Kletterschuhe ausleihen?",
         "pl": "Czy można tutaj wypożyczyć buty do wspinaczki?",
@@ -233,8 +233,8 @@
     {
       "id": "harness_rental",
       "question": {
-        "en": "Can one rent a climbing harness here?",
-        "nl": "Kan een klimgordel hier gehuurd worden?",
+        "en": "Can one rent a climbing harness here to use in the gym?",
+        "nl": "Kan hier een klimgordel gehuurd worden voor gebruik in de zaal?",
         "fr": "Peut-on louer un baudrier d'escalade ici ?",
         "de": "Kann man hier einen Klettergurt ausleihen?",
         "cs": "Lze si zde zapůjčit horolezecký postroj?",
@@ -334,8 +334,8 @@
     {
       "id": "belay_device_rental",
       "question": {
-        "en": "Can one rent a belay device here?",
-        "nl": "Kan een zekeringsapparaat hier gehuurd worden?",
+        "en": "Can one rent a belay device here to use in the gym?",
+        "nl": "Kan hier een zekeringsapparaat gehuurd worden voor gebruik in de zaal?",
         "fr": "Peut-on louer un dispositif d'assurage ici ?",
         "de": "Kann man hier ein Sicherungsgerät ausleihen?",
         "cs": "Lze si zde půjčit jištění?",
@@ -448,8 +448,8 @@
     {
       "id": "rope_rental",
       "question": {
-        "en": "Can one rent a climbing rope here?",
-        "nl": "Kan een klimtouw hier gehuurd worden?",
+        "en": "Can one rent a climbing rope here to use in the gym?",
+        "nl": "Kan hier een klimtouw gehuurd worden voor gebruik in de zaal?",
         "fr": "Peut-on louer une corde d'escalade ici ?",
         "de": "Kann man hier ein Kletterseil ausleihen?",
         "cs": "Lze si zde půjčit lezecké lano?",

@@ -3069,7 +3069,7 @@
                         "then": "A belay device can <b>not</b> be rented here"
                     }
                 },
-                "question": "Can one rent a belay device here?"
+                "question": "Can one rent a belay device here to use in the gym?"
             },
             "harness_rental": {
                 "mappings": {
@@ -3086,7 +3086,7 @@
                         "then": "A climbing harness can <b>not</b> be rented here"
                     }
                 },
-                "question": "Can one rent a climbing harness here?"
+                "question": "Can one rent a climbing harness here to use in the gym?"
             },
             "name": {
                 "question": "What is the name of this climbing gym?"
@@ -3106,7 +3106,7 @@
                         "then": "A climbing rope can <b>not</b> be rented here"
                     }
                 },
-                "question": "Can one rent a climbing rope here?"
+                "question": "Can one rent a climbing rope here to use in the gym?"
             },
             "shoe_rental": {
                 "mappings": {
@@ -3123,7 +3123,7 @@
                         "then": "Climbing shoes can <b>not</b> be rented here"
                     }
                 },
-                "question": "Can one rent climbing shoes here?"
+                "question": "Can one rent climbing shoes here to use in the gym?"
             }
         },
         "title": {
