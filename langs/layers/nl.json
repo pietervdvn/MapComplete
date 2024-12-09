@@ -3060,7 +3060,7 @@
                         "then": "Hier kan <b>geen</b> zekeringsapparaat gehuurd worden"
                     }
                 },
-                "question": "Kan een zekeringsapparaat hier gehuurd worden?"
+                "question": "Kan hier een zekeringsapparaat gehuurd worden voor gebruik in de zaal?"
             },
             "harness_rental": {
                 "mappings": {
@@ -3077,7 +3077,7 @@
                         "then": "Hier kunnen <b>geen</b> klimgordels gehuurd worden"
                     }
                 },
-                "question": "Kan een klimgordel hier gehuurd worden?"
+                "question": "Kan hier een klimgordel gehuurd worden voor gebruik in de zaal?"
             },
             "name": {
                 "question": "Wat is de naam van deze klimzaal?"
@@ -3097,7 +3097,7 @@
                         "then": "Hier kan <b>geen</b> klimtouw gehuurd worden"
                     }
                 },
-                "question": "Kan een klimtouw hier gehuurd worden?"
+                "question": "Kan hier een klimtouw gehuurd worden voor gebruik in de zaal?"
             },
             "shoe_rental": {
                 "mappings": {
@@ -3114,7 +3114,7 @@
                         "then": "Hier kunnen <b>geen</b> klimschoenen gehuurd worden"
                     }
                 },
-                "question": "Kunnen hier klimschoenen gehuurd worden?"
+                "question": "Kunnen hier klimschoenen gehuurd worden voor gebruik in de zaal?"
             }
         },
         "title": {
