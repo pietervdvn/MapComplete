@@ -2059,7 +2059,7 @@
         }
     },
     "brothel": {
-        "description": "Eine Einrichtung, die speziell der Prostitution gewidmet ist. ",
+        "description": "Eine Einrichtung, die speziell der Prostitution gewidmet ist.",
         "name": "Bordelle",
         "presets": {
             "0": {
@@ -2825,7 +2825,7 @@
         }
     },
     "cinema": {
-        "description": " Ein Ort, an dem Filme gezeigt werden, die der Öffentlichkeit gegen Gebühr zugänglich sind",
+        "description": "Ein Ort, an dem Filme gezeigt werden, die der Öffentlichkeit gegen Gebühr zugänglich sind.",
         "name": "Kino",
         "tagRenderings": {
             "cinema_type": {
