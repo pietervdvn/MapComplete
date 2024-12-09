@@ -45,7 +45,13 @@ jobs:
           export NODE_OPTIONS="--max-old-space-size=8192"
           npm run clean:tests
           npm run generate:doctests 2>&1 | grep -v "No doctests found in"
-          vitest --run test
+          if which vitest
+          then
+            vitest --run test
+          else
+            npm run test
+          fi
+          
           npm run clean:tests
         shell: bash
 
