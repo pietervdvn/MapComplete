@@ -55,11 +55,14 @@ jobs:
           npm run clean:tests
         shell: bash
 
-      - name: Upload artefact
-        run: |
-          ssh hetzner "mkdir -p /root/staging/${{ github.ref_name }}"
-          scp -r dist/* hetzner:/root/staging/${{ github.ref_name }}/
-          ssh hetzner "rm -rf /root/public/${{ github.ref_name }} && mv /root/staging/${{ github.ref_name }}/ /root/public/"
-          
+      - name: Zipping dist file
+        run: zip ${{ github.ref_name }}.zip -r dist/
+
+      - name: uploading file
+        run: scp ${{ github.ref_name }}.zip hetzner:/root/staging/
+
+      - name: unzipping remote file
+        run: ssh hetzner "cd /root/staging && unzip ${{ github.ref_name }}.zip && rm -rf /root/public/${{ github.ref_name }} && mv /root/staging/${{ github.ref_name }}/ /root/public/"
+
           
 
