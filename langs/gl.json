@@ -6,15 +6,12 @@
         "zoomIn": "Achégate para ollar ou editar os datos"
     },
     "favourite": {
-        "loginNeeded": "<h3>Iniciar a sesión</h3>O deseño personalizado só está dispoñíbel para os usuarios do OpenstreetMap",
-        "panelIntro": "<h3>O teu tema personalizado</h3>Activa as túas capas favoritas de todos os temas oficiais",
         "reload": "Recargar os datos"
     },
     "general": {
         "about": "Editar doadamente e engadir puntos no OpenStreetMap dun eido en concreto",
         "add": {
             "addNew": "Engadir {category} aquí",
-            "confirmButton": "Engadir {category} aquí",
             "intro": "Marcaches un lugar onde non coñecemos os datos.<br/>",
             "layerNotEnabled": "A capa {layer} non está activada. Faino para poder engadir un punto nesta capa",
             "openLayerControl": "Abrir o control de capas",
@@ -37,10 +34,6 @@
         "backgroundMap": "Mapa do fondo",
         "cancel": "Desbotar",
         "customThemeIntro": "<h3>Temas personalizados</h3>Estes son temas xerados por usuarios previamente visitados.",
-        "fewChangesBefore": "Responde unhas cantas preguntas sobre puntos existentes antes de engadir novos.",
-        "getStartedLogin": "Entra no OpenStreetMap para comezar",
-        "getStartedNewAccount": " ou <a href='https://www.openstreetmap.org/user/new' target='_blank'>crea unha nova conta</a>",
-        "goToInbox": "Abrir mensaxes",
         "layerSelection": {
             "title": "Seleccionar capas",
             "zoomInToSeeThisLayer": "Achégate para ver esta capa"
@@ -49,14 +42,10 @@
         "loginWithOpenStreetMap": "Inicia a sesión no OpenStreetMap",
         "morescreen": {
             "createYourOwnTheme": "Crea o teu propio tema completo do MapComplete dende cero.",
-            "requestATheme": "Se queres unha tarefa personalizada, solicítaa no seguimento de problemas.",
             "streetcomplete": "Outra aplicación semellante é <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' class='underline hover:text-blue-800' target='_blank'>StreetComplete</a>."
         },
-        "nameInlineQuestion": "{category}: O teu nome é $$$",
-        "noNameCategory": "{category} sen nome",
         "noTagsSelected": "Non se seleccionaron etiquetas",
         "number": "número",
-        "openStreetMapIntro": "<h3>Un mapa aberto</h3><p></p>Non sería xenial se houbera un só mapa, que todos puideran empregar e editar de xeito libre?Un só lugar para almacenar toda a información xeográfica? Entón, todos eses sitios web con mapas diferentes, pequenos e incompatíbeis (que sempre están desactualizados) xa non serían necesarios.</p><p><b><a href='https://OpenStreetMap.org' target='_blank'>OpenStreetMap</a></b> é ese mapa. Os datos do mapa pódense empregar de balde (con <a href='https://osm.org/copyright' target='_blank'> atribución e publicación de modificacións neses datos</a>). Ademais diso, todos poden engadir de xeito ceibe novos datos e corrixir erros. Este sitio web tamén emprega o OpenStreetMap. Todos os datos proveñen de alí, e as túas respostas e correccións tamén serán engadidas alí.</p><p>Moitas persoas e aplicacións xa empregan o OpenStreetMap: <a href='https://maps.me/' target='_blank'>Maps.me</a>, <a href='https://osmAnd.net' target='_blank'>OsmAnd</a>, pero tamén os mapas do Facebook, Instagram, Apple e Bing son (en parte) impulsados ​​polo OpenStreetMap. Se mudas algo aquí, tamén será reflexado nesas aplicacións, na súa seguinte actualización!</p>",
         "opening_hours": {
             "closed_permanently": "Pechado - sen día de abertura coñecido",
             "closed_until": "Pechado até {date}",
@@ -70,9 +59,7 @@
             "ph_not_known": " ",
             "ph_open": "aberto"
         },
-        "osmLinkTooltip": "Ollar este obxecto no OpenStreetMap para ollar o historial e outras opcións de edición",
         "pickLanguage": "Escoller lingua: ",
-        "readYourMessages": "Le todos a túas mensaxes do OpenStreetMap antes de engadir novos puntos.",
         "returnToTheMap": "Voltar ó mapa",
         "save": "Gardar",
         "search": {
@@ -86,8 +73,7 @@
             "embedIntro": "<h3>Inclúeo na túa páxina web</h3>Inclúe este mapa na túa páxina web. <br/> Animámoche a que o fagas, non fai falla que pidas permiso. <br/> É de balde, e sempre será. Canta máis xente que o empregue máis valioso será.",
             "fsUserbadge": "Activar botón de inicio de sesión",
             "fsWelcomeMessage": "Amosar a xanela emerxente da mensaxe de benvida e as lapelas asociadas",
-            "intro": "<h3>Comparte este mapa</h3> Comparte este mapa copiando a ligazón de embaixo e enviándoa ás amizades e familia:",
-            "thanksForSharing": "Grazas por compartir!"
+            "intro": "<h3>Comparte este mapa</h3> Comparte este mapa copiando a ligazón de embaixo e enviándoa ás amizades e familia:"
         },
         "skip": "Ignorar esta pregunta",
         "weekdays": {
@@ -107,35 +93,26 @@
             "thursday": "Xoves",
             "tuesday": "Martes",
             "wednesday": "Mércores"
-        },
-        "welcomeBack": "Iniciaches a sesión, benvido."
+        }
     },
     "image": {
         "addPicture": "Engadir imaxe",
         "doDelete": "Eliminar imaxe",
-        "dontDelete": "Cancelar",
         "isDeleted": "Eliminada",
         "pleaseLogin": "Inicia a sesión para subir unha imaxe",
         "respectPrivacy": "Respecta a privacidade. Non fotografes xente ou matrículas",
-        "uploadDone": "<span class='thanks'>A túa imaxe foi engadida. Grazas por axudar.</span>",
-        "uploadFailed": "Non foi posíbel subir a imaxe. Tes internet e permites API de terceiros? O navegador Brave ou UMatrix podería bloquealas.",
-        "uploadingMultiple": "Subindo {count} das túas imaxes...",
-        "uploadingPicture": "Subindo a túa imaxe..."
+        "uploadFailed": "Non foi posíbel subir a imaxe. Tes internet e permites API de terceiros? O navegador Brave ou UMatrix podería bloquealas."
     },
     "index": {
         "#": "These texts are shown above the theme buttons when no theme is loaded",
         "intro": "O MapComplete é un visor e editor do OpenStreetMap, que te amosa información sobre un tema específico.",
-        "pickTheme": "Escolle un tema para comezar.",
         "title": "Benvido ao MapComplete"
     },
     "reviews": {
         "affiliated_reviewer_warning": "(Recensión de afiliado)",
-        "name_required": "Requírese un nome para amosar e crear recensións",
         "no_reviews_yet": "Non hai recensións aínda. Se o primeiro en escribir unha e axuda ao negocio e aos datos libres!",
         "saved": "<span class=\"thanks\">Recensión compartida. Grazas por compartir!</span>",
         "saving_review": "Gardando…",
-        "title": "{count} recensións",
-        "title_singular": "Unha recensión",
-        "write_a_comment": "Deixa unha recensión…"
+        "title": "{count} recensións"
     }
 }

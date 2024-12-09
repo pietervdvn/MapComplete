@@ -13,7 +13,6 @@
     "communityIndex": {
         "available": "这个社区说 {native}",
         "intro": "与其他人取得联系，了解他们，向他们学习…",
-        "notAvailable": "这个社区不会说 {native}",
         "title": "与他人取得联系"
     },
     "delete": {
@@ -23,16 +22,11 @@
         "deletedTitle": "已删除的功能",
         "explanations": {
             "hardDelete": "此功能在 OpenStreetMap 中将被删除。它可以由有经验的贡献者进行恢复",
-            "retagNoOtherThemes": "此功能将被重新分类并从此应用中隐藏",
-            "retagOtherThemes": "此功能将在 {otherThemes} 中重新标记和可见",
-            "selectReason": "请选择应删除此功能的原因",
             "softDelete": "此功能将在此应用程序中更新并隐藏。<span class='subtle'>{reason}</span>"
         },
-        "isChanged": "此要素已更改，不再与此图层匹配",
         "isDeleted": "此功能已删除",
         "isntAPoint": "只能删除节点，选择的特征是路径、区域或关系。",
         "loading": "检查属性以检查是否可以删除此功能。",
-        "loginToDelete": "您必须登录才能删除功能",
         "notEnoughExperience": "这个要素由其他人创建。",
         "onlyEditedByLoggedInUser": "这个要素仅被您所编辑，您可以安全的删除它。",
         "partOfOthers": "该节点是某种方式或关系的一部分，不能直接删除。",

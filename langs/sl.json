@@ -8,7 +8,6 @@
         "cancel": "Prekliči",
         "cannotBeDeleted": "Tega elementa ni možno izbrisati",
         "delete": "Izbriši",
-        "loginToDelete": "Za dodajanje novih elemntov morate biti vpisani",
         "partOfOthers": "Ta element je del neke poti ali relacije, zato ga ni mogoče enostavno izbrisati.",
         "useSomethingElse": "Če ga želite izbrisati, uporabite nek drug urejevalnik OpenStreetMap"
     },
@@ -34,7 +33,6 @@
         "download": {
             "title": "Prenos"
         },
-        "getStartedLogin": "Za začetek se vpišite s svojim OpenStreetMap računom",
         "loading": "Nalaganje…",
         "loginFailed": "Vpis v OpenStreetMap ni uspe",
         "loginFailedOfflineMode": "Zaradi vzdrževanja OpenStreetMap.org trenutno ni na voljo. Urejanje bo kmalu spet mogoče",
@@ -46,7 +44,6 @@
         },
         "number": "številka",
         "openTheMap": "Odpri zemljevid",
-        "openTheMapAtGeolocation": "Približaj mojo lokacijo",
         "opening_hours": {
             "all_days_from": "Odrpto vsak dan {ranges}",
             "closed_permanently": "Zaprto do nadaljnega",
@@ -54,7 +51,6 @@
             "friday": "Petki {ranges}",
             "monday": "Ponedeljki {ranges}",
             "on_weekdays": "Odprto ob delovnikih {ranges}",
-            "on_weekends": "Odprto čez vikend {ranges}",
             "openTill": "do",
             "open_24_7": "Odprto ves čas",
             "open_during_ph": "Med prazniki je to",
@@ -83,7 +79,6 @@
             "error": "Nekaj se je zalomilo…",
             "nothing": "Nič ni bilo najdenega…",
             "search": "Poiščite lokacijo",
-            "searchShort": "Išči…",
             "searching": "Iskanje…"
         },
         "sharescreen": {
@@ -122,9 +117,7 @@
     },
     "image": {
         "addPicture": "Dodaj sliko",
-        "currentLicense": "Vaša slika bo objavljena z dovoljenjem {license}",
         "doDelete": "Odstrani sliko",
-        "dontDelete": "Prekliči",
         "isDeleted": "Izbrisana",
         "nearby": {
             "seeNearby": "Prebrskaj in poveži bližnje slike"
@@ -138,7 +131,6 @@
     },
     "index": {
         "intro": "MapComplete je pregledovalnik in urejevalnik zemljevida OpenStreetMap, ki prikazuje in omogoča urejanje informacij na določeno tematiko.",
-        "pickTheme": "Za začetek spodaj izberite tematiko.",
         "title": "Dobrodošli na MapComplete"
     },
     "move": {
@@ -146,7 +138,6 @@
         "inviteToMove": {
             "generic": "Premakni ta element"
         },
-        "partOfRelation": "Ta element je del relacije. Premaknete ga lahko z drugim urejevalnikom.",
-        "whyMove": "Zakaj želite premakniti ta element?"
+        "partOfRelation": "Ta element je del relacije. Premaknete ga lahko z drugim urejevalnikom."
     }
 }
