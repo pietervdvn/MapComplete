@@ -4,7 +4,7 @@ on:
   - pull_request
 
 jobs:
-  build:
+  deploy_on_hosted:
     runs-on: [ubuntu-latest, hetzner-access]
     steps:
       - uses: actions/checkout@v3
