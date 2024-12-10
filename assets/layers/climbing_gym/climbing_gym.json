@@ -28,7 +28,12 @@
     "osmTags": {
       "and": [
         "sport=climbing",
-        "leisure=sports_centre"
+        {
+          "or": [
+            "leisure=sports_centre",
+            "leisure=sports_hall"
+          ]
+        }
       ]
     }
   },
@@ -147,8 +152,8 @@
     {
       "id": "shoe_rental",
       "question": {
-        "en": "Can one rent climbing shoes here?",
-        "nl": "Kunnen hier klimschoenen gehuurd worden?",
+        "en": "Can one rent climbing shoes here to use in the gym?",
+        "nl": "Kunnen hier klimschoenen gehuurd worden voor gebruik in de zaal?",
         "fr": "Peut-on louer des chaussures d'escalade ici ?",
         "de": "Kann man hier Kletterschuhe ausleihen?",
         "pl": "Czy można tutaj wypożyczyć buty do wspinaczki?",
@@ -233,8 +238,8 @@
     {
       "id": "harness_rental",
       "question": {
-        "en": "Can one rent a climbing harness here?",
-        "nl": "Kan een klimgordel hier gehuurd worden?",
+        "en": "Can one rent a climbing harness here to use in the gym?",
+        "nl": "Kan hier een klimgordel gehuurd worden voor gebruik in de zaal?",
         "fr": "Peut-on louer un baudrier d'escalade ici ?",
         "de": "Kann man hier einen Klettergurt ausleihen?",
         "cs": "Lze si zde zapůjčit horolezecký postroj?",
@@ -242,8 +247,24 @@
       },
       "condition": {
         "or": [
-          "climbing:sport!=no",
-          "climbing:toprope!=no"
+          {
+            "and": [
+              "climbing:sport!=",
+              "climbing:sport!=no"
+            ]
+          },
+          {
+            "and": [
+              "climbing:toprope!=",
+              "climbing:toprope!=no"
+            ]
+          },
+          {
+            "and": [
+              "climbing:speed!=",
+              "climbing:speed!=no"
+            ]
+          }
         ]
       },
       "mappings": [
@@ -316,10 +337,109 @@
       ]
     },
     {
+      "id": "auto_belay_toprope",
+      "question": {
+        "en": "Are there auto belays for top roping here?",
+        "nl": "Zijn hier auto belays voor toprope?"
+      },
+      "questionHint": {
+        "en": "Excluding auto belays that are only for speed climbing",
+        "nl": "Autobelays die enkel voor speed zijn, tellen niet mee"
+      },
+      "condition": {
+        "and": [
+          "climbing:toprope!=",
+          "climbing:toprope!=no"
+        ]
+      },
+      "freeform": {
+        "key": "climbing:autobelay:toprope",
+        "type": "nat"
+      },
+      "mappings": [
+        {
+          "if": "climbing:autobelay:toprope=no",
+          "then": {
+            "en": "There are no auto belays for top roping",
+            "nl": "Er zijn geen autobelays voor toprope"
+          }
+        },
+        {
+          "if": "climbing:autobelay:toprope=yes",
+          "then": {
+            "en": "There are a number of auto belays for top roping",
+            "nl": "Er zijn enkele autobelays voor toprope"
+          }
+        },
+        {
+          "if": "climbing:autobelay:toprope=all",
+          "then": {
+            "en": "There is an auto belay for every top rope route but manual belaying is also possible",
+            "nl": "Elke toproperoute kan op autobelay geklommen worden maar handmatig zekeren is ook mogelijk"
+          }
+        },
+        {
+          "if": "climbing:autobelay:toprope=only",
+          "then": {
+            "en": "Top rope routes can only be climbed on auto belay",
+            "nl": "Toproperoutes kunnen enkel op autobelay geklommen worden"
+          }
+        }
+      ],
+      "render": {
+        "en": "There are {climbing:autobelay:toprope} auto belay devices for top roping",
+        "nl": "Er zijn {climbing:autobelay:toprope} autobelaytoestellen voor toprope"
+      }
+    },
+    {
+      "id": "auto_belay_lead",
+      "question": {
+        "en": "Are there auto belays for lead climbing here?",
+        "nl": "Zijn hier autobelays voor voorklimmen?"
+      },
+      "condition": {
+        "and": [
+          "climbing:sport!=",
+          "climbing:sport!=no"
+        ]
+      },
+      "freeform": {
+        "key": "climbing:autobelay:sport",
+        "type": "nat"
+      },
+      "mappings": [
+        {
+          "if": "climbing:autobelay:sport=no",
+          "then": {
+            "en": "There are no auto belays for lead climbing",
+            "nl": "Er zijn geen autobelays voor voorklimmen"
+          }
+        },
+        {
+          "if": "climbing:autobelay:sport=yes",
+          "then": {
+            "en": "There is a number of auto belays for lead climbing",
+            "nl": "Er zijn enkele autobelays voor voorklimmen"
+          }
+        },
+        {
+          "if": "climbing:autobelay:sport=all",
+          "then": {
+            "en": "There is an auto belay for every lead climbing route",
+            "nl": "Elke voorklimroute kan op autobelay geklommen worden"
+          }
+        }
+      ],
+      "render": {
+        "en": "There are {climbing:autobelay:sport} auto belays for lead climbing",
+        "nl": "Er zijn {climbing:autobelay:sport} autobelays voor voorklimmen"
+      }
+    },
+    {
       "id": "belay_device_rental",
       "question": {
-        "en": "Can one rent a belay device here?",
-        "nl": "Kan een zekeringsapparaat hier gehuurd worden?",
+        "en": "Can one rent a belay device here to use in the gym?",
+        "nl": "Kan hier een zekeringsapparaat gehuurd worden voor gebruik in de zaal?",
         "fr": "Peut-on louer un dispositif d'assurage ici ?",
         "de": "Kann man hier ein Sicherungsgerät ausleihen?",
         "cs": "Lze si zde půjčit jištění?",
@@ -327,8 +447,18 @@
       },
       "condition": {
         "or": [
-          "climbing:sport!=no",
-          "climbing:toprope!=no"
+          {
+            "and": [
+              "climbing:sport!=",
+              "climbing:sport!=no"
+            ]
+          },
+          {
+            "and": [
+              "climbing:toprope!=",
+              "climbing:toprope!=no"
+            ]
+          }
         ]
       },
       "mappings": [
@@ -422,8 +552,8 @@
     {
       "id": "rope_rental",
       "question": {
-        "en": "Can one rent a climbing rope here?",
-        "nl": "Kan een klimtouw hier gehuurd worden?",
+        "en": "Can one rent a climbing rope here to use in the gym?",
+        "nl": "Kan hier een klimtouw gehuurd worden voor gebruik in de zaal?",
         "fr": "Peut-on louer une corde d'escalade ici ?",
         "de": "Kann man hier ein Kletterseil ausleihen?",
         "cs": "Lze si zde půjčit lezecké lano?",

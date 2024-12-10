@@ -3042,6 +3042,40 @@
                 },
                 "question": "Is er een snelklimmuur (speed climbing)?"
             },
+            "auto_belay_lead": {
+                "mappings": {
+                    "0": {
+                        "then": "Er zijn geen autobelays voor voorklimmen"
+                    },
+                    "1": {
+                        "then": "Er zijn enkele autobelays voor voorklimmen"
+                    },
+                    "2": {
+                        "then": "Elke voorklimroute kan op autobelay geklommen worden"
+                    }
+                },
+                "question": "Zijn hier autobelays voor voorklimmen?",
+                "render": "Er zijn {climbing:autobelay:sport} autobelays voor voorklimmen"
+            },
+            "auto_belay_toprope": {
+                "mappings": {
+                    "0": {
+                        "then": "Er zijn geen autobelays voor toprope"
+                    },
+                    "1": {
+                        "then": "Er zijn enkele autobelays voor toprope"
+                    },
+                    "2": {
+                        "then": "Elke toproperoute kan op autobelay geklommen worden maar handmatig zekeren is ook mogelijk"
+                    },
+                    "3": {
+                        "then": "Toproperoutes kunnen enkel op autobelay geklommen worden"
+                    }
+                },
+                "question": "Zijn hier auto belays voor toprope?",
+                "questionHint": "Autobelays die enkel voor speed zijn, tellen niet mee",
+                "render": "Er zijn {climbing:autobelay:toprope} autobelaytoestellen voor toprope"
+            },
             "belay_device_rental": {
                 "mappings": {
                     "0": {
@@ -3060,7 +3094,7 @@
                         "then": "Hier kan <b>geen</b> zekeringsapparaat gehuurd worden"
                     }
                 },
-                "question": "Kan een zekeringsapparaat hier gehuurd worden?"
+                "question": "Kan hier een zekeringsapparaat gehuurd worden voor gebruik in de zaal?"
             },
             "harness_rental": {
                 "mappings": {
@@ -3077,7 +3111,7 @@
                         "then": "Hier kunnen <b>geen</b> klimgordels gehuurd worden"
                     }
                 },
-                "question": "Kan een klimgordel hier gehuurd worden?"
+                "question": "Kan hier een klimgordel gehuurd worden voor gebruik in de zaal?"
             },
             "name": {
                 "question": "Wat is de naam van deze klimzaal?"
@@ -3097,7 +3131,7 @@
                         "then": "Hier kan <b>geen</b> klimtouw gehuurd worden"
                     }
                 },
-                "question": "Kan een klimtouw hier gehuurd worden?"
+                "question": "Kan hier een klimtouw gehuurd worden voor gebruik in de zaal?"
             },
             "shoe_rental": {
                 "mappings": {
@@ -3114,7 +3148,7 @@
                         "then": "Hier kunnen <b>geen</b> klimschoenen gehuurd worden"
                     }
                 },
-                "question": "Kunnen hier klimschoenen gehuurd worden?"
+                "question": "Kunnen hier klimschoenen gehuurd worden voor gebruik in de zaal?"
             }
         },
         "title": {
