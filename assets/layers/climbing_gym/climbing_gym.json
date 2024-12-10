@@ -28,7 +28,12 @@
     "osmTags": {
       "and": [
         "sport=climbing",
-        "leisure=sports_centre"
+        {
+          "or": [
+            "leisure=sports_centre",
+            "leisure=sports_hall"
+          ]
+        }
       ]
     }
   },
