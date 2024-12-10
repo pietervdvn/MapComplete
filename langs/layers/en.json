@@ -959,6 +959,30 @@
             "render": "BBQ"
         }
     },
+    "beehive": {
+        "description": "Layer showing beehives",
+        "name": "Beehives",
+        "presets": {
+            "0": {
+                "title": "a beehive"
+            }
+        },
+        "tagRenderings": {
+            "capacity": {
+                "freeform": {
+                    "placeholder": "Number of beehives"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "There is 1 beehive"
+                    }
+                },
+                "question": "How many beehives are there?",
+                "render": "There are {capacity} beehives"
+            }
+        },
+        "title": "Beehive"
+    },
     "bench": {
         "description": "A bench is a wooden, metal, stone, … surface where a human can sit. This layers visualises them and asks a few questions about them.",
         "filter": {
@@ -6358,6 +6382,16 @@
             "render": "Information board"
         }
     },
+    "insect_hotel": {
+        "description": "Layer showing insect hotels",
+        "name": "Insect Hotels",
+        "presets": {
+            "0": {
+                "title": "an insect hotel"
+            }
+        },
+        "title": "Insect Hotel"
+    },
     "item_with_image": {
         "name": "Items with at least one image",
         "title": {
@@ -8681,6 +8715,9 @@
                     "question": "What levels does this elevator go to?",
                     "render": "This elevator goes to floors {level}"
                 }
+            },
+            "name": {
+                "question": "What is the name of this place?"
             },
             "nothing_known": {
                 "render": {

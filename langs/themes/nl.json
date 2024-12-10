@@ -777,6 +777,10 @@
         "description": "Op deze kaart worden publiek toegankelijke binnenruimtes getoond",
         "title": "Binnenruimtes"
     },
+    "insects": {
+        "description": "Insectenhotels bieden onderdak aan insecten.",
+        "title": "Insectenhotels"
+    },
     "items_with_image": {
         "description": "Een kaart die alle items op OSM toont die een afbeelding hebben. Dit thema past heel slecht bij MapComplete omdat het niet mogelijk is een afbeelding toe te voegen. Dit thema is er vooral om alles in de database op te nemen, waardoor het snel afbeeldingen in de buurt kan ophalen voor andere functies",
         "title": "Alle items met afbeeldingen"

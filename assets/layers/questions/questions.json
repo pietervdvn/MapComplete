@@ -3238,7 +3238,7 @@
     },
     {
       "id": "name",
-      "question":{
+      "question": {
         "en": "What is the name of this place?"
       },
       "render": {

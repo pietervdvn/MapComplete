@@ -25,7 +25,8 @@
   import ThemeSearch from "../Logic/Search/ThemeSearch"
   import SearchUtils from "../Logic/Search/SearchUtils"
   import ChevronDoubleRight from "@babeard/svelte-heroicons/mini/ChevronDoubleRight"
-
+  import { AndroidPolyfill } from "../Logic/Web/AndroidPolyfill"
+  new AndroidPolyfill().init().then(() => console.log("Android polyfill setup completed"))
   const featureSwitches = new OsmConnectionFeatureSwitches()
   const osmConnection = new OsmConnection({
     fakeUser: featureSwitches.featureSwitchFakeUser.data,

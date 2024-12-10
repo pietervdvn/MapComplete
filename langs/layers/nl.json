@@ -5322,6 +5322,16 @@
             "render": "Informatiebord"
         }
     },
+    "insect_hotel": {
+        "description": "Laag met insectenhotels",
+        "name": "Insectenhotels",
+        "presets": {
+            "0": {
+                "title": "een insectenhotel"
+            }
+        },
+        "title": "Insectenhotel"
+    },
     "kerbs": {
         "description": "Een laag met stoepranden.",
         "filter": {

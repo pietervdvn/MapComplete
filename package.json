@@ -145,7 +145,10 @@
     "generate:summaryCache": "vite-node scripts/generateSummaryTileCache.ts",
     "create:database": "vite-node scripts/osm2pgsql/createNewDatabase.ts",
     "delete:database:old": "vite-node scripts/osm2pgsql/deleteOldDbs.ts",
-    "upload:panoramax": "vite-node scripts/ImgurToPanoramax.ts # && josm imgur_to_panoramax.osc"
+    "upload:panoramax": "vite-node scripts/ImgurToPanoramax.ts # && josm imgur_to_panoramax.osc",
+
+    "#": "Android development"
+
   },
   "keywords": [
     "OpenStreetMap",
@@ -163,7 +166,6 @@
     "@capacitor/android": "^6.1.2",
     "@capacitor/assets": "^3.0.5",
     "@capacitor/core": "^6.1.2",
-    "@capacitor/geolocation": "^6.0.1",
     "@comunica/core": "^3.0.1",
     "@comunica/query-sparql": "^3.0.1",
     "@comunica/query-sparql-link-traversal": "^0.3.0",

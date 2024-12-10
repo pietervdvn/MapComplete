@@ -488,6 +488,11 @@
                 "override": {
                     "=name": "Sport places without etymology information"
                 }
+            },
+            "8": {
+                "override": {
+                    "=name": "Parks without etymology information"
+                }
             }
         },
         "shortDescription": "What is the origin of a toponym?",
@@ -720,6 +725,10 @@
     "indoors": {
         "description": "On this map, publicly accessible indoor places are shown",
         "title": "Indoors"
+    },
+    "insects": {
+        "description": "Insect hotels provide shelter for insects.",
+        "title": "Insect Hotels"
     },
     "items_with_image": {
         "description": "A map showing all items on OSM which have an image. This theme is a very bad fit for MapComplete as someone is not able to directly add a picture. However, this theme is mostly here to include this all into the database, which'll allow this to quickly fetch images nearby for other features",

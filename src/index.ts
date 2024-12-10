@@ -8,6 +8,7 @@ import { SubtleButton } from "./UI/Base/SubtleButton"
 import { Utils } from "./Utils"
 import Constants from "./Models/Constants"
 import ArrowDownTray from "@babeard/svelte-heroicons/mini/ArrowDownTray"
+import { AndroidPolyfill } from "./Logic/Web/AndroidPolyfill"
 
 function webgl_support() {
     try {
@@ -48,6 +49,7 @@ async function main() {
         if (!webgl_support()) {
             throw "WebGL is not supported or not enabled. This is essential for MapComplete to function, please enable this."
         }
+        new AndroidPolyfill().init().then(() => console.log("Android polyfill setup completed"))
         const [theme, availableLayers] = await Promise.all([
             DetermineTheme.getTheme(),
             await getAvailableLayers(),
