@@ -234,6 +234,12 @@ export class PanoramaxUploader implements ImageUploader {
             ) {
                 lat = exifLat
                 lon = exifLon
+                if(tags?.GPSLatitudeRef?.value?.[0] === "S"){
+                    lat *= -1
+                }
+                if(tags?.GPSLongitudeRef?.value?.[0] === "W"){
+                    lon *= -1
+                }
             }
             const [date, time] =( tags.DateTime.value[0] ?? tags.DateTimeOriginal.value[0] ?? tags.GPSDateStamp ?? tags["Date Created"]).split(" ")
             const exifDatetime = new Date(date.replaceAll(":", "-") + "T" + time)
