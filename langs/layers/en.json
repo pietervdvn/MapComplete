@@ -2897,7 +2897,7 @@
             },
             "max_bolts": {
                 "question": "How many bolts do routes in {title()} have at most?",
-                "render": "The sport climbing routes here have at most {climbing:bolts:max} bolts.<div class='subtle'>This is without relays and indicates how much quickdraws a climber needs</div>"
+                "render": "The sport climbing routes here have at most {climbing:bolts:max} bolts. <div class='subtle'>This is without belay stations and indicates how much quickdraws a climber needs.</div>"
             },
             "max_difficulty": {
                 "question": "What is the highest grade route here, according to the french classification system?",
@@ -3256,7 +3256,7 @@
                     }
                 },
                 "question": "How many bolts does this route have before reaching the anchor?",
-                "render": "This route has {climbing:bolts} bolts <div class='subtle'>This is without relays and indicates how much quickdraws a climber needs</div>"
+                "render": "This route has {climbing:bolts} bolts. <div class='subtle'>This is without belay stations and indicates how much quickdraws a climber needs.</div>"
             }
         },
         "title": {
