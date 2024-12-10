@@ -2864,7 +2864,7 @@
             },
             "max_bolts": {
                 "question": "Wat is het maximum aantal bouten in routes ban {title()}?",
-                "render": "De sportklimroutes hebben maximaal {climbing:bolts:max} bouten. <div class='subtle'>Hierbij worden relays niet meegteld. Dit geeft aan hoeveel klimsetjes een klimmer nodig heeft</div>"
+                "render": "De sportklimroutes hebben maximum {climbing:bolts:max} haken. <div class='subtle'>Hierbij worden standplaatsen niet meegeteld. Dit geeft aan hoeveel setjes een klimmer nodig heeft.</div>"
             },
             "max_difficulty": {
                 "question": "Wat is het niveau van de moeilijkste route, volgens het Franse classificatiesysteem?",
@@ -3223,7 +3223,7 @@
                     }
                 },
                 "question": "Hoeveel bouten heeft deze route voordat je het relay bereikt?",
-                "render": "Deze route heeft {climbing:bolts} klimbouten. <div class='subtle'>Dit is zonder het relay mee te tellen. Een klimmer heeft dus minstens {climbing:bolts} klimsetjes nodig om boven te raken</div>"
+                "render": "Deze route heeft {climbing:bolts} haken. <div class='subtle'>Hierbij wordt de standplaats niet meegeteld. Een klimmer heeft normaal gezien dus minstens {climbing:bolts} setjes nodig.</div>"
             }
         },
         "title": {
