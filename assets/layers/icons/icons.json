@@ -130,7 +130,8 @@
             "de": "Telefon",
             "pl": "telefon",
             "cs": "telefon",
-            "es": "teléfono"
+            "es": "teléfono",
+            "uk": "телефон"
           }
         }
       },
@@ -149,7 +150,8 @@
                 "de": "Telefon",
                 "pl": "telefon",
                 "cs": "telefon",
-                "es": "teléfono"
+                "es": "teléfono",
+                "uk": "телефон"
               }
             }
           }

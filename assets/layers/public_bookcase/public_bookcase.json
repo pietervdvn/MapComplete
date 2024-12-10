@@ -549,7 +549,8 @@
             "hu": "További információ ezen a weboldalon",
             "ca": "Més informació al web",
             "cs": "Více informací na webových stránkách",
-            "es": "Más información en la web"
+            "es": "Más información en la web",
+            "uk": "Більше інформації на сайті"
           }
         }
       },
@@ -563,7 +564,8 @@
         "hu": "Van-e olyan weboldal, ahol további információ található erről a nyilvános könyvespolcról?",
         "ca": "Hi ha algun lloc web amb més informació sobre aquesta prestatgeria pública?",
         "cs": "Existuje webová stránka s dalšími informacemi o této veřejné knihobudce?",
-        "es": "¿Hay un sitio web con más información sobre este librero público?"
+        "es": "¿Hay un sitio web con más información sobre este librero público?",
+        "uk": "Чи є веб-сайт із додатковою інформацією про цю публічну книжкову шафу?"
       },
       "freeform": {
         "key": "website",

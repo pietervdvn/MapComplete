@@ -46,9 +46,9 @@ error_changeset_*
 
 # Built Visual Studio Code Extensions
 *.vsix
-public/*.webmanifest
 public/assets/generated/
 public/assets/langs/*
 android/
 dist-full/
 public/assets/icons/*.webp
+uploaded_images.json

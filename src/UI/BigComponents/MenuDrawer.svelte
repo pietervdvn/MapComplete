@@ -50,6 +50,8 @@
   import Squares2x2 from "@babeard/svelte-heroicons/mini/Squares2x2"
   import EnvelopeOpen from "@babeard/svelte-heroicons/mini/EnvelopeOpen"
   import PanoramaxLink from "./PanoramaxLink.svelte"
+  import { UIEventSource } from "../../Logic/UIEventSource"
+  import MagnifyingGlassCircle from "@babeard/svelte-heroicons/mini/MagnifyingGlassCircle"
 
   export let state: ThemeViewState
   let userdetails = state.osmConnection.userDetails
@@ -63,9 +65,25 @@
   let location = state.mapProperties.location
   export let onlyLink: boolean
   const t = Translations.t.general.menu
+  let shown = new UIEventSource(state.guistate.pageStates.menu.data || !onlyLink)
+  state.guistate.pageStates.menu.addCallback((isShown) => {
+    if (!onlyLink) {
+      return true
+    }
+    if (isShown) {
+      shown.setData(true)
+    } else {
+      Utils.waitFor(250).then(() => {
+        shown.setData(state.guistate.pageStates.menu.data)
+      })
+    }
+  })
 </script>
 
-<div class="low-interaction flex h-screen flex-col gap-y-2 overflow-y-auto p-2 sm:gap-y-3 sm:p-3">
+<div
+  class="low-interaction flex h-screen flex-col gap-y-2 overflow-y-auto p-2 sm:gap-y-3 sm:p-3"
+  class:hidden={!$shown}
+>
   <div class="flex justify-between">
     <h2>
       <Tr t={t.title} />
@@ -262,6 +280,14 @@
       </Page>
     </div>
 
+    <a
+      class="flex"
+      href={window.location.protocol + "//" + window.location.host + "/inspector.html"}
+    >
+      <MagnifyingGlassCircle class="mr-2 h-6 w-6" />
+      <Tr t={Translations.t.inspector.menu} />
+    </a>
+
     <a class="flex" href="https://github.com/pietervdvn/MapComplete/" target="_blank">
       <Github class="h-6 w-6" />
       <Tr t={Translations.t.general.attribution.gotoSourceCode} />
@@ -276,7 +302,7 @@
       <EnvelopeOpen class="h-6 w-6" />
       <Tr t={Translations.t.general.attribution.emailCreators} />
     </a>
-    <a class="flex" href="https://hosted.weblate.org/projects/mapcomplete/" target="_blank">
+    <a class="flex" href={`${Constants.weblate}projects/mapcomplete/`} target="_blank">
       <TranslateIcon class="h-6 w-6" />
       <Tr t={Translations.t.translations.activateButton} />
     </a>

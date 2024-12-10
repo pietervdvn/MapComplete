@@ -63,10 +63,18 @@
         "guidepost",
         "shelter",
         "bbq",
-        "firepit"
+        "firepit",
+        "insect_hotel"
       ],
       "override": {
         "minzoom": 16
+      }
+    },
+    {
+      "builtin": "tree_node",
+      "override": {
+        "minzoom": 18,
+        "shownByDefault": false
       }
     }
   ],

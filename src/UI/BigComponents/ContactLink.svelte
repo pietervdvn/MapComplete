@@ -47,7 +47,7 @@
         {resource.resolved?.description}
         {#if resource.languageCodes?.indexOf($language) >= 0}
           <div class="thanks w-fit">
-            <Tr t={availableTranslation}/>
+            <Tr t={availableTranslation} />
           </div>
         {/if}
       </div>

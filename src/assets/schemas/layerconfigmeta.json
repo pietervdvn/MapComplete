@@ -1709,6 +1709,10 @@
         {
           "if": "value=polygon_centroid",
           "then": "Show an icon at a polygon centroid (but not if it is a way)"
+        },
+        {
+          "if": "value=waypoints",
+          "then": "Show an icon on every intermediate point of a way"
         }
       ],
       "multianswer": "true"
@@ -10561,7 +10565,7 @@
       "title": "value.title"
     },
     "type": "array",
-    "description": "<div class='flex'>\n    <div>\nPresets for this layer.\nA preset consists of one or more attributes (tags), a title and optionally a description and optionally example images.\nWhen the contributor wishes to add a point to OpenStreetMap, they'll:\n1. Press the 'add new point'-button\n2. Choose a preset from the list of all presets\n3. Confirm the choice. In this step, the `description` (if set) and `exampleImages` (if given) will be shown\n4. Confirm the location\n5. A new point will be created with the attributes that were defined in the preset\nIf no presets are defined, the button which invites to add a new preset will not be shown.\n</div>\n<video controls autoplay muted src='./Docs/Screenshots/AddNewItemScreencast.webm' class='w-64'/>\n</div>"
+    "description": "<div class='flex'>\n    <div>\nPresets for this layer.\nA preset consists of one or more attributes (tags), a title and optionally a description and optionally example images.\nWhen the contributor wishes to add a point to OpenStreetMap, they'll:\n1. Press the 'add new point'-button\n2. Choose a preset from the list of all presets\n3. Confirm the choice. In this step, the `description` (if set) and `exampleImages` (if given) will be shown\n4. Confirm the location\n5. A new point will be created with the attributes that were defined in the preset\nIf no presets are defined, the button which invites to add a new preset will not be shown.\n</div>\n<video controls autoplay muted src='https://github.com/pietervdvn/MapComplete/raw/refs/heads/master/Docs/Screenshots/AddNewItemScreencast.webm' class='w-64'/>\n</div>"
   },
   {
     "path": [
@@ -10814,6 +10818,10 @@
         {
           "if": "value=cycleways_and_roads",
           "then": "cycleways_and_roads - All infrastructure that someone can cycle over, accompanied with questions about this infrastructure"
+        },
+        {
+          "if": "value=cyclist_waiting_aid",
+          "then": "cyclist_waiting_aid - Various pieces of infrastructure that aid cyclists while they wait at a traffic light."
         },
         {
           "if": "value=defibrillator",
@@ -11220,6 +11228,14 @@
           "then": "surveillance_camera - This layer shows surveillance cameras and allows a contributor to update information and add new cameras"
         },
         {
+          "if": "value=tactile_map",
+          "then": "tactile_map - Layer showing tactile maps, which can be used by visually impaired people to navigate the city."
+        },
+        {
+          "if": "value=tactile_model",
+          "then": "tactile_model - Layer showing tactile models, three-dimensional models of the surrounding area."
+        },
+        {
           "if": "value=tertiary_education",
           "then": "tertiary_education - Layer with all tertiary education institutes (ISCED:2011 levels 6,7 and 8)"
         },
@@ -11457,7 +11473,14 @@
             ]
           },
           "labels": {
-            "description": "What labels should be applied on this tagRendering?\n\nA list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer\n\nSpecial values:\n- \"hidden\": do not show this tagRendering. Useful in it is used by e.g. an accordion\n- \"description\": this label is a description used in the search",
+            "description": "question: What labels should be applied on this tagRendering?\n\nA list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer\n\nSpecial values:\n- \"hidden\": do not show this tagRendering. Useful in it is used by e.g. an accordion\n- \"description\": this label is a description used in the search",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "onSoftDelete": {
+            "description": "question: What tags should be applied when the object is soft-deleted?",
             "type": "array",
             "items": {
               "type": "string"
@@ -12595,9 +12618,23 @@
       "labels"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "question": "What labels should be applied on this tagRendering?"
+    },
     "type": "array",
-    "description": "What labels should be applied on this tagRendering?\nA list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer\nSpecial values:\n- \"hidden\": do not show this tagRendering. Useful in it is used by e.g. an accordion\n- \"description\": this label is a description used in the search"
+    "description": "A list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer\nSpecial values:\n- \"hidden\": do not show this tagRendering. Useful in it is used by e.g. an accordion\n- \"description\": this label is a description used in the search"
+  },
+  {
+    "path": [
+      "tagRenderings",
+      "onSoftDelete"
+    ],
+    "required": false,
+    "hints": {
+      "question": "What tags should be applied when the object is soft-deleted?"
+    },
+    "type": "array",
+    "description": ""
   },
   {
     "path": [
@@ -13931,9 +13968,24 @@
       "labels"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "question": "What labels should be applied on this tagRendering?"
+    },
     "type": "array",
-    "description": "What labels should be applied on this tagRendering?\nA list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer\nSpecial values:\n- \"hidden\": do not show this tagRendering. Useful in it is used by e.g. an accordion\n- \"description\": this label is a description used in the search"
+    "description": "A list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer\nSpecial values:\n- \"hidden\": do not show this tagRendering. Useful in it is used by e.g. an accordion\n- \"description\": this label is a description used in the search"
+  },
+  {
+    "path": [
+      "tagRenderings",
+      "override",
+      "onSoftDelete"
+    ],
+    "required": false,
+    "hints": {
+      "question": "What tags should be applied when the object is soft-deleted?"
+    },
+    "type": "array",
+    "description": ""
   },
   {
     "path": [
@@ -15301,9 +15353,24 @@
       "labels"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "question": "What labels should be applied on this tagRendering?"
+    },
     "type": "array",
-    "description": "What labels should be applied on this tagRendering?\nA list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer\nSpecial values:\n- \"hidden\": do not show this tagRendering. Useful in it is used by e.g. an accordion\n- \"description\": this label is a description used in the search"
+    "description": "A list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer\nSpecial values:\n- \"hidden\": do not show this tagRendering. Useful in it is used by e.g. an accordion\n- \"description\": this label is a description used in the search"
+  },
+  {
+    "path": [
+      "tagRenderings",
+      "renderings",
+      "onSoftDelete"
+    ],
+    "required": false,
+    "hints": {
+      "question": "What tags should be applied when the object is soft-deleted?"
+    },
+    "type": "array",
+    "description": ""
   },
   {
     "path": [
@@ -16688,9 +16755,25 @@
       "labels"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "question": "What labels should be applied on this tagRendering?"
+    },
     "type": "array",
-    "description": "What labels should be applied on this tagRendering?\nA list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer\nSpecial values:\n- \"hidden\": do not show this tagRendering. Useful in it is used by e.g. an accordion\n- \"description\": this label is a description used in the search"
+    "description": "A list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer\nSpecial values:\n- \"hidden\": do not show this tagRendering. Useful in it is used by e.g. an accordion\n- \"description\": this label is a description used in the search"
+  },
+  {
+    "path": [
+      "tagRenderings",
+      "renderings",
+      "override",
+      "onSoftDelete"
+    ],
+    "required": false,
+    "hints": {
+      "question": "What tags should be applied when the object is soft-deleted?"
+    },
+    "type": "array",
+    "description": ""
   },
   {
     "path": [
@@ -18050,9 +18133,24 @@
       "labels"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "question": "What labels should be applied on this tagRendering?"
+    },
     "type": "array",
-    "description": "What labels should be applied on this tagRendering?\nA list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer\nSpecial values:\n- \"hidden\": do not show this tagRendering. Useful in it is used by e.g. an accordion\n- \"description\": this label is a description used in the search"
+    "description": "A list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer\nSpecial values:\n- \"hidden\": do not show this tagRendering. Useful in it is used by e.g. an accordion\n- \"description\": this label is a description used in the search"
+  },
+  {
+    "path": [
+      "tagRenderings",
+      "renderings",
+      "onSoftDelete"
+    ],
+    "required": false,
+    "hints": {
+      "question": "What tags should be applied when the object is soft-deleted?"
+    },
+    "type": "array",
+    "description": ""
   },
   {
     "path": [
@@ -19437,9 +19535,25 @@
       "labels"
     ],
     "required": false,
-    "hints": {},
+    "hints": {
+      "question": "What labels should be applied on this tagRendering?"
+    },
     "type": "array",
-    "description": "What labels should be applied on this tagRendering?\nA list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer\nSpecial values:\n- \"hidden\": do not show this tagRendering. Useful in it is used by e.g. an accordion\n- \"description\": this label is a description used in the search"
+    "description": "A list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer\nSpecial values:\n- \"hidden\": do not show this tagRendering. Useful in it is used by e.g. an accordion\n- \"description\": this label is a description used in the search"
+  },
+  {
+    "path": [
+      "tagRenderings",
+      "renderings",
+      "override",
+      "onSoftDelete"
+    ],
+    "required": false,
+    "hints": {
+      "question": "What tags should be applied when the object is soft-deleted?"
+    },
+    "type": "array",
+    "description": ""
   },
   {
     "path": [

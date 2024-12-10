@@ -38,7 +38,7 @@
 
   let errors = new UIEventSource<Translation[]>([])
 
-  async function handleFiles(files: FileList) {
+  async function handleFiles(files: FileList, ignoreGps: boolean = false) {
     const errs = []
     for (let i = 0; i < files.length; i++) {
       const file = files.item(i)
@@ -57,7 +57,8 @@
             file,
             "image",
             noBlur,
-            feature
+            feature,
+            ignoreGps
           )
           if (!uploadResult) {
             return
@@ -78,47 +79,72 @@
     }
     errors.setData(errs)
   }
+
+  let maintenanceBusy = false
 </script>
 
 <LoginToggle {state}>
   <LoginButton clss="small w-full" osmConnection={state.osmConnection} slot="not-logged-in">
     <Tr t={Translations.t.image.pleaseLogin} />
   </LoginButton>
-  <div class="my-4 flex flex-col">
-    <UploadingImageCounter {state} {tags} />
-    {#each $errors as error}
-      <Tr t={error} cls="alert" />
-    {/each}
-    <FileSelector
-      accept="image/*"
-      cls="button border-2 flex flex-col"
-      multiple={true}
-      on:submit={(e) => handleFiles(e.detail)}
-    >
-      <div class="flex w-full items-center justify-center text-2xl">
-        {#if image !== undefined}
-          <img src={image} aria-hidden="true" />
-        {:else}
-          <Camera class="h-12 w-12 p-1" aria-hidden="true" />
-        {/if}
-        {#if labelText}
-          {labelText}
-        {:else}
-          <div class="flex flex-col">
-            <Tr t={t.addPicture} />
-            {#if noBlur}
-              <span class="subtle text-sm">
-                <Tr t={t.upload.noBlur} />
-              </span>
-            {/if}
-          </div>
-        {/if}
-      </div>
-    </FileSelector>
-    <div class="subtle text-xs italic">
-      <Tr t={Translations.t.general.attribution.panoramaxLicenseCCBYSA} />
-      <span class="mx-1">—</span>
-      <Tr t={t.respectPrivacy} />
+  {#if maintenanceBusy}
+    <div class="alert">
+      Due to maintenance, uploading images is currently not possible. Sorry about this!
     </div>
-  </div>
+  {:else}
+    <div class="my-4 flex flex-col">
+      <UploadingImageCounter {state} {tags} />
+      {#each $errors as error}
+        <Tr t={error} cls="alert" />
+      {/each}
+      <FileSelector
+        accept="image/*"
+        capture="environment"
+        cls="button border-2 flex flex-col"
+        multiple={true}
+        on:submit={(e) => {
+          handleFiles(e.detail)
+          e.preventDefault()
+          e.stopPropagation()
+        }}
+      >
+        <div class="flex w-full items-center justify-center text-2xl">
+          {#if image !== undefined}
+            <img src={image} aria-hidden="true" />
+          {:else}
+            <Camera class="h-12 w-12 p-1" aria-hidden="true" />
+          {/if}
+          {#if labelText}
+            {labelText}
+          {:else}
+            <div class="flex flex-col">
+              <Tr t={t.addPicture} />
+              {#if noBlur}
+                <span class="subtle text-sm">
+                  <Tr t={t.upload.noBlur} />
+                </span>
+              {/if}
+            </div>
+          {/if}
+        </div>
+      </FileSelector>
+      <FileSelector
+        accept=".jpg, .jpeg"
+        cls="flex justify-center md:hidden button"
+        multiple={true}
+        on:submit={(e) => {
+          return handleFiles(e.detail, true)
+          e.preventDefault()
+          e.stopPropagation()
+        }}
+      >
+        <Tr t={t.selectFile} />
+      </FileSelector>
+      <div class="subtle text-xs italic">
+        <Tr t={Translations.t.general.attribution.panoramaxLicenseCCBYSA} />
+        <span class="mx-1">—</span>
+        <Tr t={t.respectPrivacy} />
+      </div>
+    </div>
+  {/if}
 </LoginToggle>

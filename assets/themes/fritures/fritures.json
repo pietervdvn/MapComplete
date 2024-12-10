@@ -68,7 +68,8 @@
                   "en": "No oil type preference",
                   "de": "Kein Öltyp bevorzugt",
                   "es": "Sin preferencia de tipo de aceite",
-                  "cs": "Žádný preferovaný typ oleje"
+                  "cs": "Žádný preferovaný typ oleje",
+                  "nl": "Geen voorkeur voor een bepaald type frituurolie"
                 }
               },
               {
@@ -77,7 +78,8 @@
                   "de": "Nur Friteusen mit Pflanzenöl anzeigen",
                   "ca": "Només mostra freiduries que utilitzen oli vegetal",
                   "es": "Mostrar solo freidoras que usan aceite vegetal",
-                  "cs": "Zobrazit pouze jídla smažená na rostlinném oleji"
+                  "cs": "Zobrazit pouze jídla smažená na rostlinném oleji",
+                  "nl": "Toon enkel frituren die plantaardige frituurolie gebruiken"
                 },
                 "osmTags": "friture:oil=vegetable"
               },
@@ -87,7 +89,8 @@
                   "de": "Nur Friteusen mit tierischem Öl anzeigen",
                   "ca": "Només mostra freiduries que utilitzen oli animal",
                   "es": "Mostrar solo freidoras que usan aceite animal",
-                  "cs": "Zobrazit pouze jídla smažená na živočišném oleji"
+                  "cs": "Zobrazit pouze jídla smažená na živočišném oleji",
+                  "nl": "Toon enkel frituren die dierlijk frietvet gebruiken"
                 },
                 "osmTags": "friture:oil=animal"
               }

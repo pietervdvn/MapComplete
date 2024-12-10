@@ -16,6 +16,7 @@ import PerLayerFeatureSourceSplitter from "../../Logic/FeatureSource/PerLayerFea
 import FilteredLayer from "../../Models/FilteredLayer"
 import SimpleFeatureSource from "../../Logic/FeatureSource/Sources/SimpleFeatureSource"
 import { TagsFilter } from "../../Logic/Tags/TagsFilter"
+import { featureEach } from "@turf/turf"
 
 class PointRenderingLayer {
     private readonly _config: PointRenderingConfig
@@ -102,6 +103,25 @@ class PointRenderingLayer {
                 }
                 const id = feature.properties.id + "-" + location
                 unseenKeys.delete(id)
+
+                if (location === "waypoints") {
+                    if (feature.geometry.type === "LineString") {
+                        for (const loc of feature.geometry.coordinates) {
+                            this.addPoint(feature, <[number, number]>loc)
+                        }
+                    }
+                    if (
+                        feature.geometry.type === "MultiLineString" ||
+                        feature.geometry.type === "Polygon"
+                    ) {
+                        for (const coors of feature.geometry.coordinates) {
+                            for (const loc of coors) {
+                                this.addPoint(feature, <[number, number]>loc)
+                            }
+                        }
+                    }
+                    continue
+                }
 
                 const loc = GeoOperations.featureToCoordinateWithRenderingType(
                     <any>feature,
@@ -397,11 +417,13 @@ class LineRenderingLayer {
                     )
                 }
 
-                map.on("click", linelayer, (e) => {
-                    // line-layer-listener
-                    e.originalEvent["consumed"] = true
-                    this._onClick(e.features[0])
-                })
+                if (this._onClick) {
+                    map.on("click", linelayer, (e) => {
+                        // line-layer-listener
+                        e.originalEvent["consumed"] = true
+                        this._onClick(e.features[0])
+                    })
+                }
                 const polylayer = this._layername + "_polygon"
 
                 map.addLayer({
@@ -568,7 +590,6 @@ export default class ShowDataLayer {
             return
         }
         const bbox = BBox.bboxAroundAll(features.map(BBox.get))
-        console.debug("Zooming to features", bbox.asGeoJson())
         window.requestAnimationFrame(() => {
             map.resize()
             map.fitBounds(bbox.toLngLat(), {

@@ -10,7 +10,7 @@ import { TagConfigJson } from "../../Models/ThemeConfig/Json/TagConfigJson"
 import key_counts from "../../assets/key_totals.json"
 
 import { ConversionContext } from "../../Models/ThemeConfig/Conversion/ConversionContext"
-import { TagsFilterClosed, UploadableTag } from "./TagTypes"
+import { FlatTag, TagsFilterClosed, UploadableTag } from "./TagTypes"
 
 type Tags = Record<string, string>
 
@@ -102,12 +102,12 @@ export class TagUtils {
         "~i~~": {
             name: "Key and value should match a given regex; value is case-invariant",
             overpassSupport: true,
-            docs: "Similar to ~~, except that the value is case-invariant"
+            docs: "Similar to ~~, except that the value is case-invariant",
         },
         "!~i~~": {
             name: "Key and value should match a given regex; value is case-invariant",
             overpassSupport: true,
-            docs: "Similar to !~~, except that the value is case-invariant"
+            docs: "Similar to !~~, except that the value is case-invariant",
         },
         ":=": {
             name: "Substitute `... {some_key} ...` and match `key`",
@@ -504,6 +504,8 @@ export class TagUtils {
      * regex.matchesProperties({maxspeed: "50 mph"}) // => true
      */
 
+    public static Tag(json: string, context?: string | ConversionContext): FlatTag
+    public static Tag(json: TagConfigJson, context?: string | ConversionContext): TagsFilterClosed
     public static Tag(
         json: TagConfigJson,
         context: string | ConversionContext = ""
@@ -802,7 +804,7 @@ export class TagUtils {
 
         if (tag.indexOf("~~") >= 0 || tag.indexOf("~i~~") >= 0) {
             const caseInvariant = tag.indexOf("~i~~") >= 0
-            const split =  Utils.SplitFirst(tag,  caseInvariant ? "~i~~" : "~~")
+            const split = Utils.SplitFirst(tag, caseInvariant ? "~i~~" : "~~")
             let keyRegex: RegExp
             if (split[0] === "*") {
                 keyRegex = new RegExp(".+", "i")
@@ -813,7 +815,7 @@ export class TagUtils {
             if (split[1] === "*") {
                 valueRegex = new RegExp(".+", "s")
             } else {
-                valueRegex = new RegExp("^(" + split[1] + ")$",caseInvariant ? "si": "s" )
+                valueRegex = new RegExp("^(" + split[1] + ")$", caseInvariant ? "si" : "s")
             }
             return new RegexTag(keyRegex, valueRegex)
         }
@@ -866,7 +868,7 @@ export class TagUtils {
                     tag +
                     ". To indicate a missing tag, use '" +
                     split[0] +
-                    "!=' instead"
+                    "=' instead"
                 )
             }
             if (split[1] === "") {

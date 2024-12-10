@@ -312,7 +312,8 @@
       "question": {
         "en": "What educational theory is applied on this school?",
         "de": "Welche Bildungstheorie wird auf dieser Schule angewendet?",
-        "es": "¿Qué teoría educativa se aplica en esta escuela?"
+        "es": "¿Qué teoría educativa se aplica en esta escuela?",
+        "cs": "Jaká pedagogická teorie je na této škole aplikována?"
       },
       "mappings": [
         {
@@ -320,7 +321,8 @@
           "then": {
             "en": "This school does not use a specific pedagogy",
             "de": "Diese Schule benutzt keine spezifische Pädagogik",
-            "es": "Esta escuela no utiliza una pedagogía específica"
+            "es": "Esta escuela no utiliza una pedagogía específica",
+            "cs": "Tato škola nepoužívá specifickou pedagogiku"
           }
         },
         {
@@ -328,7 +330,8 @@
           "then": {
             "en": "This school uses the Montessori method of education",
             "de": "Diese Schule nutzt die Montessori Methode der Bildung",
-            "es": "Esta escuela utiliza el método Montessori de educación"
+            "es": "Esta escuela utiliza el método Montessori de educación",
+            "cs": "Tato škola využívá Montessori metodu vzdělávání"
           }
         },
         {
@@ -336,7 +339,8 @@
           "then": {
             "en": "This school is associated with the Freinet Modern School Movement",
             "de": "Diese Schule ist mit der Freinet Modern School Movement verbunden",
-            "es": "Esta escuela está asociada con el Movimiento de Escuelas Modernas Freinet"
+            "es": "Esta escuela está asociada con el Movimiento de Escuelas Modernas Freinet",
+            "cs": "Tato škola je spojena s Freinet Modern School Movement"
           }
         },
         {
@@ -344,7 +348,8 @@
           "then": {
             "en": "This school uses the Jenaplan teaching concept",
             "de": "Diese Schule nutzt das Lehrkonzept von Jenaplan",
-            "es": "Esta escuela utiliza el concepto de enseñanza Jenaplan"
+            "es": "Esta escuela utiliza el concepto de enseñanza Jenaplan",
+            "cs": "Tato škola využívá koncept výuky Jenaplan"
           }
         },
         {
@@ -352,7 +357,8 @@
           "then": {
             "en": "This school uses the Steiner/Waldorf educational philosophy",
             "de": "Diese Schule nutzt die Steiner/Waldorfer Bildungsphilosophie",
-            "es": "Esta escuela utiliza la filosofía educativa Waldorf/Steiner"
+            "es": "Esta escuela utiliza la filosofía educativa Waldorf/Steiner",
+            "cs": "Tato škola využívá filozofii vzdělávání Steiner/Waldorf"
           }
         },
         {
@@ -360,7 +366,8 @@
           "then": {
             "en": "This school uses the Dalton plan teaching concept",
             "de": "Diese Schule nutzt das Dalton Plan Lehrkonzept",
-            "es": "Esta escuela utiliza el concepto de enseñanza del plan Dalton"
+            "es": "Esta escuela utiliza el concepto de enseñanza del plan Dalton",
+            "cs": "Tato škola využívá koncept výuky podle Daltonského plánu"
           }
         },
         {
@@ -368,7 +375,8 @@
           "then": {
             "en": "This school uses outdoor learning",
             "de": "Diese Schule nutzt Outdoor-Lernen",
-            "es": "Esta escuela utiliza el aprendizaje al aire libre"
+            "es": "Esta escuela utiliza el aprendizaje al aire libre",
+            "cs": "Tato škola využívá venkovní výuku"
           }
         },
         {
@@ -376,7 +384,8 @@
           "then": {
             "en": "This school uses the Reggio Emilia approach",
             "de": "Diese Schule nutzt den Reggio Emilia-Ansatz",
-            "es": "Esta escuela utiliza el enfoque Reggio Emilia"
+            "es": "Esta escuela utiliza el enfoque Reggio Emilia",
+            "cs": "Tato škola využívá přístup Reggio Emilia"
           }
         },
         {
@@ -384,14 +393,16 @@
           "then": {
             "en": "This school uses the Sudbury system",
             "de": "Diese Schule nutzt das Sudbury-System",
-            "es": "Esta escuela utiliza el sistema Sudbury"
+            "es": "Esta escuela utiliza el sistema Sudbury",
+            "cs": "Tato škola používá systém Sudbury"
           }
         }
       ],
       "render": {
         "en": "This school uses {pedagogy}",
         "de": "Diese Schule benutzt {pedagogy}",
-        "es": "Esta escuela utiliza {pedagogy}"
+        "es": "Esta escuela utiliza {pedagogy}",
+        "cs": "Tato škola používá {pedagogy}"
       },
       "freeform": {
         "key": "pedagogy"
@@ -587,7 +598,8 @@
             "fr": "La langue principale de cette école est inconnue",
             "ca": "La llengua principal d'aquesta escola és desconeguda",
             "cs": "Hlavní jazyk této školy není znám",
-            "es": "Se desconoce el idioma principal de esta escuela"
+            "es": "Se desconoce el idioma principal de esta escuela",
+            "uk": "Основна мова цієї школи невідома"
           }
         }
       }

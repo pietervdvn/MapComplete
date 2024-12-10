@@ -9,7 +9,9 @@
     "ca": "Fars",
     "cs": "Majáky",
     "hu": "Világítótornyok",
-    "uk": "Маяки"
+    "uk": "Маяки",
+    "fr": "Phares",
+    "nl": "Vuurtorens"
   },
   "description": {
     "en": "Lighthouses are tall buildings with a light on top to guide marine traffic.",
@@ -17,7 +19,9 @@
     "it": "I fari sono edifici alti con una luce in cima per guidare il traffico marittimo.",
     "es": "Los faros son edificios altos con una luz en la parte superior para guiar el tráfico marítimo.",
     "cs": "Majáky jsou vysoké budovy se světlem na vrcholu, které slouží k vedení námořní dopravy.",
-    "uk": "Маяки - це високі будівлі зі світлом на вершині, що спрямовують морський рух."
+    "uk": "Маяки - це високі будівлі зі світлом на вершині, що спрямовують морський рух.",
+    "fr": "Les phares sont des hauts bâtiments avec une lumière au sommet pour guider le trafic maritime.",
+    "nl": "Vuurtorens zijn hoge gebouwen met een licht erop om het scheepvaartverkeer te leiden."
   },
   "icon": "./assets/themes/lighthouses/lighthouse.svg",
   "startLat": 51.33884,

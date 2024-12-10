@@ -68,7 +68,8 @@
 
 @font-face {
     font-family: "Source Sans Pro";
-    src: url("/assets/source-sans-pro.regular.ttf") format("woff");
+    /*This path might seem incorrect. However, 'index.css' will be compiled and placed in 'public/css', from where this path _is_ correct*/
+    src: url("../assets/fonts/source-sans-pro.regular.ttf") format("woff");
 }
 
 /***********************************************************************\

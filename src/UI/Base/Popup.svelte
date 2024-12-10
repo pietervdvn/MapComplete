@@ -13,7 +13,7 @@
   /**
    * Default: 50
    */
-  export let zIndex : string = "z-50"
+  export let zIndex: string = "z-50"
 
   const shared =
     "in-page normal-background dark:bg-gray-800 rounded-lg border-gray-200 dark:border-gray-700 border-gray-200 dark:border-gray-700 divide-gray-200 dark:divide-gray-700 shadow-md"
@@ -21,7 +21,7 @@
   if (fullscreen) {
     defaultClass = shared
   }
-  let dialogClass = "fixed top-0 start-0 end-0 h-modal inset-0 w-full p-4 flex "+zIndex
+  let dialogClass = "fixed top-0 start-0 end-0 h-modal inset-0 w-full p-4 flex " + zIndex
   if (fullscreen) {
     dialogClass += " h-full-child"
   }

@@ -4,7 +4,7 @@ import { FeatureSource, UpdatableFeatureSource } from "../FeatureSource"
 import { Or } from "../../Tags/Or"
 import FeatureSwitchState from "../../State/FeatureSwitchState"
 import OverpassFeatureSource from "./OverpassFeatureSource"
-import { Store, UIEventSource } from "../../UIEventSource"
+import { ImmutableStore, Store, UIEventSource } from "../../UIEventSource"
 import OsmFeatureSource from "./OsmFeatureSource"
 import DynamicGeoJsonTileSource from "../TiledFeatureSource/DynamicGeoJsonTileSource"
 import { BBox } from "../../BBox"
@@ -27,6 +27,13 @@ export default class ThemeSource extends FeatureSourceMerger {
     private readonly supportsForceDownload: UpdatableFeatureSource[]
 
     public static readonly fromCacheZoomLevel = 15
+
+    /**
+     * This source is _only_ triggered when the data is downloaded for CSV export
+     * @private
+     */
+    private readonly _downloadAll: OverpassFeatureSource
+    private readonly _mapBounds: Store<BBox>
 
     constructor(
         layers: LayerConfig[],
@@ -103,11 +110,37 @@ export default class ThemeSource extends FeatureSourceMerger {
             ThemeSource.setupGeojsonSource(l, mapProperties, isDisplayed(l.id))
         )
 
-        super(...geojsonSources, ...Array.from(fromCache.values()), ...mvtSources, ...nonMvtSources)
+        const downloadAllBounds: UIEventSource<BBox> = new UIEventSource<BBox>(undefined)
+        const downloadAll = new OverpassFeatureSource(
+            {
+                layers: layers.filter((l) => l.isNormal()),
+                bounds: mapProperties.bounds,
+                zoom: mapProperties.zoom,
+                overpassUrl: featureSwitches.overpassUrl,
+                overpassTimeout: featureSwitches.overpassTimeout,
+                overpassMaxZoom: new ImmutableStore(99),
+                widenFactor: 0,
+            },
+            {
+                ignoreZoom: true,
+            }
+        )
+
+        super(
+            ...geojsonSources,
+            ...Array.from(fromCache.values()),
+            ...mvtSources,
+            ...nonMvtSources,
+            downloadAll
+        )
 
         this.isLoading = isLoading
         supportsForceDownload.push(...geojsonSources)
         supportsForceDownload.push(...mvtSources) // Non-mvt sources are handled by overpass
+
+        this._mapBounds = mapProperties.bounds
+        this._downloadAll = downloadAll
+
         this.supportsForceDownload = supportsForceDownload
     }
 
@@ -211,8 +244,9 @@ export default class ThemeSource extends FeatureSourceMerger {
     }
 
     public async downloadAll() {
-        console.log("Downloading all data")
-        await Promise.all(this.supportsForceDownload.map((i) => i.updateAsync()))
+        console.log("Downloading all data:")
+        await this._downloadAll.updateAsync(this._mapBounds.data)
+        // await Promise.all(this.supportsForceDownload.map((i) => i.updateAsync()))
         console.log("Done")
     }
 }

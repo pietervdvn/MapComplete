@@ -1398,13 +1398,6 @@
             "render": "Zegar"
         }
     },
-    "crossings": {
-        "tagRenderings": {
-            "crossing-is-zebra": {
-                "question": "Czy to jest przejście dla pieszych typu \"zebra\"?"
-            }
-        }
-    },
     "cycle_highways": {
         "name": "ścieżki rowerowe",
         "title": {
@@ -2970,13 +2963,6 @@
             "name": {
                 "question": "Jak nazywa się ta apteka?",
                 "render": "Nazwa tej apteki to {name}"
-            },
-            "wheelchair": {
-                "mappings": {
-                    "0": {
-                        "then": "Ta apteka jest łatwo dostępna na wózku"
-                    }
-                }
             }
         },
         "title": {

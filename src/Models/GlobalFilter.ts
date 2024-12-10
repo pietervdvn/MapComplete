@@ -7,7 +7,7 @@ export interface GlobalFilter {
     /**
      * If set, this object will be shown instead of hidden, even if the layer is not displayed
      */
-    forceShowOnMatch?: boolean,
+    forceShowOnMatch?: boolean
     state: number | string | undefined
     id: string
     onNewPoint: {

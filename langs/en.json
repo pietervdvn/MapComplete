@@ -13,7 +13,6 @@
     "communityIndex": {
         "available": "This community speaks {native}",
         "intro": "Get in touch with other people to get to know them, learn from them, …",
-        "notAvailable": "This community does not speak {native}",
         "title": "Get in touch with others"
     },
     "delete": {
@@ -23,16 +22,11 @@
         "deletedTitle": "Deleted feature",
         "explanations": {
             "hardDelete": "This feature will be deleted in OpenStreetMap. It can be recovered by an experienced contributor",
-            "retagNoOtherThemes": "This feature will be reclassified and hidden from this application",
-            "retagOtherThemes": "This feature will be retagged and visible in {otherThemes}",
-            "selectReason": "Please, select why this feature should be deleted",
             "softDelete": "This feature will be updated and hidden from this application. <span class='subtle'>{reason}</span>"
         },
-        "isChanged": "This feature has been changed and no longer matches this layer",
         "isDeleted": "This feature is deleted",
         "isntAPoint": "Only nodes can be deleted, the selected feature is a way, area or relation.",
         "loading": "Inspecting properties to check if this feature can be deleted.",
-        "loginToDelete": "You must be logged in to delete a feature",
         "notEnoughExperience": "This feature was made by someone else.",
         "onlyEditedByLoggedInUser": "This feature has only been edited by yourself, you can safely delete it.",
         "partOfOthers": "This node is part of some way or relation and can not be deleted directly.",
@@ -70,8 +64,6 @@
         "title": "Structured data loaded from the external website"
     },
     "favourite": {
-        "loginNeeded": "<h3>Log in</h3>A personal layout is only available for OpenStreetMap users",
-        "panelIntro": "<h3>Your personal theme</h3>Activate your favourite layers from all the official themes",
         "reload": "Reload the data"
     },
     "favouritePoi": {
@@ -142,10 +134,8 @@
         "add": {
             "addNew": "Add {category}",
             "backToSelect": "Select a different category",
-            "confirmButton": "Add a {category}<br/><div class='alert'>Your addition is visible for everyone</div>",
             "confirmLocation": "Confirm this location",
             "confirmTitle": "Add a {title}?",
-            "confirmWarning": "The feature you create here will be <b>visible for everyone</b>. Please, only add things on to the map if they truly exist. A lot of applications use this data.",
             "creating": "Creating a new point...",
             "disableFilters": "Disable all filters",
             "disableFiltersExplanation": "Some features might be hidden by a filter",
@@ -168,7 +158,6 @@
             "presetInfo": "The new POI will have {tags}",
             "stillLoading": "The data is still loading. Please wait a bit before you add a new feature.",
             "title": "Add a new feature",
-            "warnVisibleForEveryone": "Your addition will be visible for everyone",
             "wrongType": "This feature is not a node or a way and can not be imported",
             "zoomInFurther": "Zoom in further to add a feature",
             "zoomInMore": "Zoom in more to import this feature"
@@ -197,7 +186,6 @@
             "madeBy": "Made by <b>{author}</b>",
             "mapContributionsBy": "The current visible data has edits made by {contributors}",
             "mapContributionsByAndHidden": "The current visible data has edits made by {contributors} and {hiddenCount} more contributors",
-            "mapDataByOsm": "Map data: OpenStreetMap",
             "mapillaryHelp": "<b>Mapillary</b> is an online service which gathers street-level pictures and offers them under a free license. Contributors are allowed to use these pictures to improve OpenStreetMap",
             "openIssueTracker": "File a bug",
             "openMapillary": "Open Mapillary here",
@@ -214,7 +202,6 @@
         },
         "back": "Back",
         "backToIndex": "See all thematic maps",
-        "backToMap": "Back to the map",
         "backgroundMap": "Select a background layer",
         "backgroundSwitch": "Switch background",
         "cancel": "Cancel",
@@ -264,16 +251,12 @@
         "error": "Something went wrong",
         "example": "Example",
         "examples": "Examples",
-        "fewChangesBefore": "Please, answer a few questions of existing features before adding a new feature.",
         "filterPanel": {
             "allTypes": "All types",
             "disableAll": "Disable all",
             "enableAll": "Enable all"
         },
         "geopermissionDenied": "Location permission was denied",
-        "getStartedLogin": "Log in with OpenStreetMap to get started",
-        "getStartedNewAccount": " or <a href='https://www.openstreetmap.org/user/new' target='_blank'>create a new account</a>",
-        "goToInbox": "Open inbox",
         "histogram": {
             "error_loading": "Could not load the histogram"
         },
@@ -300,7 +283,6 @@
         "loginFailedOfflineMode": "OpenStreetMap.org is currently not available due to maintenance. Making edits will be possible soon",
         "loginFailedReadonlyMode": "OpenStreetMap.org is currently in readonly mode due to maintenance. Making edits will be possible soon",
         "loginFailedUnreachableMode": "OpenStreetMap.org is currently not reachable. Are you connected to the internet or do you block third parties? Try again later",
-        "loginOnlyNeededToEdit": "if you want to make changes",
         "loginToStart": "Log in to answer this question",
         "loginWithOpenStreetMap": "Login with OpenStreetMap",
         "logout": "Log out",
@@ -321,20 +303,13 @@
             "noMatchingThemes": "No themes matched your search criteria",
             "noSearch": "Show all themes",
             "previouslyHiddenTitle": "Previously visited hidden themes",
-            "requestATheme": "If you want a custom-built theme, request it in the issue tracker",
             "searchForATheme": "Search for a theme",
             "streetcomplete": "Another, similar application is <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' class='underline hover:text-blue-800' class='underline hover:text-blue-800' target='_blank'>StreetComplete</a>."
         },
-        "nameInlineQuestion": "The name of this {category} is $$$",
         "next": "Next",
-        "noMatchingMapping": "No entries match your search…",
-        "noNameCategory": "{category} without a name",
         "noTagsSelected": "No tags selected",
-        "notValid": "Select a valid value to continue",
         "number": "number",
-        "openStreetMapIntro": "<h3>An Open Map</h3><p>One that everyone can use and edit freely. A single place to store all geo-info. Different, small, incompatible and outdated maps are not needed anywhere.</p><p><b><a href='https://OpenStreetMap.org' target='_blank'>OpenStreetMap</a></b> is not the enemy map. The map data can be used freely (with <a href='https://osm.org/copyright' target='_blank'>attribution and publication of changes to that data</a>). Everyone can add new data and fix errors. This website uses OpenStreetMap. All the data is from there, and your answers and corrections are used all over.</p><p>Many people and apps already use OpenStreetMap: <a href='https://organicmaps.app/' target='_blank'>Organic Maps</a>, <a href='https://osmAnd.net' target='_blank'>OsmAnd</a>, but also the maps at Facebook, Instagram, Apple-maps and Bing-maps are (partly) powered by OpenStreetMap.</p>",
         "openTheMap": "Open the map",
-        "openTheMapAtGeolocation": "Zoom to your location",
         "openTheMapReason": "to view, edit and add information",
         "opening_hours": {
             "all_days_from": "Opened every day {ranges}",
@@ -347,7 +322,6 @@
             "monday": "On monday {ranges}",
             "not_all_rules_parsed": "These opening hours are complicated. The following rules are ignored in the input element:",
             "on_weekdays": "Opened on weekdays {ranges}",
-            "on_weekends": "Opened on weekends {ranges}",
             "openTill": "till",
             "open_24_7": "Open around the clock",
             "open_during_ph": "During a public holiday, it is",
@@ -365,7 +339,6 @@
             "unknown": "The opening hours are unknown",
             "wednesday": "On wednesday {ranges}"
         },
-        "osmLinkTooltip": "Browse this object on OpenStreetMap for history and more editing options",
         "pdf": {
             "attr": "Map data © OpenStreetMap Contributors, reusable under ODbL",
             "attrBackground": "Background layer: {background}",
@@ -388,14 +361,12 @@
             "skippedOne": "You skipped one question"
         },
         "questions": {
-            "emailIs": "The email address of this {category} is <a href='mailto:{email}' target='_blank'>{email}</a>",
-            "emailOf": "What is the email address of {category}?",
-            "phoneNumberIs": "The phone number of this {category} is <a href='tel:{phone}' target='_blank'>{phone}</a>",
-            "phoneNumberOf": "What is the phone number of {category}?",
-            "websiteIs": "Website: <a href='{website}' target='_blank'>{website}</a>",
-            "websiteOf": "What is the website of {category}?"
+            "disable": "Do not ask this question again",
+            "disabledIntro": "You disabled some type of questions. To enable a question again, click them here",
+            "disabledTitle": "Disabled questions",
+            "enable": "Ask this question for all features",
+            "noneDisabled": "If you are not interested in a specific type of question, disable it. To disable a question, click the three dots in the upper-right corner and select 'disable'"
         },
-        "readYourMessages": "Please, read all your OpenStreetMap-messages before adding a new feature.",
         "removeLocationHistory": "Delete the location history",
         "retry": "Retry",
         "returnToTheMap": "Return to the map",
@@ -419,7 +390,6 @@
             "recentThemes": "Recently visited maps",
             "recents": "Recently seen places",
             "search": "Search a location",
-            "searchShort": "Search…",
             "searching": "Searching…"
         },
         "searchAnswer": "Search an option…",
@@ -435,11 +405,9 @@
             "fsUserbadge": "Enable the login button and thus the possibility to make changes",
             "fsWelcomeMessage": "Show the welcome message popup and associated tabs",
             "intro": "Share this map by copying the link below and sending it to friends and family:",
-            "openInOtherApplications": "Open the current location with another map application",
             "openLayers": "Open the layers and filters menu",
             "options": "Sharing options",
             "stateIsIncluded": "The current state of the layers and filters is included in the shared link and iframe.",
-            "thanksForSharing": "Thanks for sharing!",
             "title": "Share this map"
         },
         "skip": "Skip this question",
@@ -535,28 +503,23 @@
             "tuesday": "Tuesday",
             "wednesday": "Wednesday"
         },
-        "welcomeBack": "Welcome back!",
         "welcomeExplanation": {
             "addNew": "Is an item missing? Use the button on the bottom-left to add a new point of interest.",
             "general": "On this map, you can see, edit and add <i>points of interest</i>. Zoom around to see the POI, tap one to see or edit the information. All data is sourced from and saved to OpenStreetMap, which can be freely reused."
         },
         "wikipedia": {
-            "addEntry": "Add another Wikipedia page",
-            "createNewWikidata": "Create a new Wikidata item",
             "doSearch": "Search above to see results",
             "failed": "Loading the Wikipedia entry failed",
             "fromWikipedia": "From Wikipedia, the free encyclopedia",
             "loading": "Loading Wikipedia…",
             "noResults": "Nothing found for <i>{search}</i>",
-            "noWikipediaPage": "This Wikidata item has no corresponding Wikipedia page yet.",
             "previewbox": {
                 "born": "Born: {value}",
                 "died": "Died: {value}"
             },
             "readMore": "Read the rest of the article",
             "searchToShort": "Your search query is too short, enter a longer text",
-            "searchWikidata": "Search on Wikidata",
-            "wikipediaboxTitle": "Wikipedia"
+            "searchWikidata": "Search on Wikidata"
         }
     },
     "hotkeyDocumentation": {
@@ -575,7 +538,6 @@
         "selectItem3": "Select the POI which is third closest element to the map center (crosshair). Only when in keyboard navigation is used",
         "selectItemI": "Select the POI which is the {i}th closest element to the map center (crosshair). Only when in keyboard navigation is used",
         "selectMap": "Set the background to a map from external sources. Toggles between the two best, available layers",
-        "selectMapnik": "Set the background layer to OpenStreetMap-carto",
         "selectOsmbasedmap": "Set the background layer to on OpenStreetMap-based map (or disable the background raster layer)",
         "selectSearch": "Select the search bar to search locations",
         "shakePhone": "Shaking your phone",
@@ -583,10 +545,8 @@
         "translationMode": "Toggle translation mode on or off"
     },
     "image": {
-        "addPicture": "Add picture",
-        "currentLicense": "Your images will be published under {license}",
+        "addPicture": "Take a picture",
         "doDelete": "Remove image",
-        "dontDelete": "Cancel",
         "isDeleted": "Deleted",
         "nearby": {
             "close": "Collapse panel with nearby images",
@@ -602,13 +562,9 @@
             "otherFreeform": "Please specify why this image should be removed:",
             "placeholder": "Explain why the picture should be deleted",
             "report": {
-                "blur_excess": "To much is blurred, making the picture useless",
-                "blur_missing": "A face or license plate is not blurred in this picture",
                 "copyright": "The picture contains copyrighted content",
                 "inappropriate": "This picture is inappropriate (it contains nudity, calls for hate or is not streetview)",
-                "mislocated": "The picture is from a different location",
                 "other": "Another reason, please specify",
-                "picture_low_quality": "The picture is of low quality",
                 "privacy": "The picture shows a private property"
             },
             "requestDeletion": "Request picture deletion",
@@ -617,6 +573,7 @@
         "pleaseLogin": "Please log in to add a picture",
         "processing": "The server is processing your image",
         "respectPrivacy": "Do not upload from Google Maps, Google Streetview or other copyrighted sources.",
+        "selectFile": "Select a picture from your device",
         "toBig": "Your image is too large as it is {actual_size}. Please use images of at most {max_size}",
         "unlink": {
             "button": "Unlink picture",
@@ -640,34 +597,26 @@
                 "uploading": "Your image is getting uploaded…"
             }
         },
-        "uploadDone": "Your picture has been added. Thanks for helping out!",
-        "uploadFailed": "Could not upload your picture. Are you connected to the Internet, and allow third party API's? The Brave browser or the uMatrix plugin might block them.",
-        "uploadMultipleDone": "{count} pictures have been added. Thanks for helping out!",
-        "uploadingMultiple": "Uploading {count} pictures…",
-        "uploadingPicture": "Uploading your picture…"
+        "uploadFailed": "Could not upload your picture. Are you connected to the Internet, and allow third party API's? The Brave browser or the uMatrix plugin might block them."
     },
     "importInspector": {
         "title": "Inspect and manage import notes"
     },
     "importLayer": {
-        "alreadyMapped": "There already is {title} on the map - this point is a duplicate",
         "description": "A layer which imports entries for {title}",
-        "importButton": "import_button({layerId}, _tags, I have found a {title} here - add it to the map,./assets/svg/addSmall.svg,,,id)",
-        "importHandled": "<div class='thanks'>This feature has been handled! Thanks for your effort</div>",
         "layerName": "Possible {title}",
-        "nearbyImagesIntro": "<h3>Nearby pictures</h3>The following pictures are nearby geotagged pictures from various online services. They might help you to resolve this note.{nearby_images(open)}",
-        "notFound": "I could not find {title} - remove it",
-        "popupTitle": "There might be {title} here"
+        "notFound": "I could not find {title} - remove it"
     },
     "index": {
         "#": "These texts are shown above the theme buttons when no theme is loaded",
         "about": "About MapComplete",
-        "featuredThemeTitle": "Featured this week",
         "intro": "Maps about various topics which you can contribute to",
         "learnMore": "Learn more",
         "logIn": "Log in to see other themes you previously visited",
-        "pickTheme": "Pick a theme below to get started.",
         "title": "MapComplete"
+    },
+    "inspector": {
+        "menu": "Inspect a contributor"
     },
     "move": {
         "cancel": "Select a different reason",
@@ -681,8 +630,6 @@
         "inviteToMoveAgain": "Move this point again",
         "isRelation": "This feature is a relation and can not be moved",
         "isWay": "This feature is a way. Use another OpenStreetMap editor to move it.",
-        "loginToMove": "You must be logged in to move a point",
-        "moveTitle": "Move this point",
         "partOfAWay": "This feature is part of another way. Use another editor to move it.",
         "partOfRelation": "This feature is part of a relation. Use another editor to move it.",
         "pointIsMoved": "The point has been moved",
@@ -691,8 +638,6 @@
             "reasonRelocation": "The object has been relocated to a totally different location",
             "reasonSnapTo": "This should be snapped onto {name}"
         },
-        "selectReason": "Why do you move this object?",
-        "whyMove": "Why do you want to move this point?",
         "zoomInFurther": "Zoom in further to confirm this move"
     },
     "multi_apply": {
@@ -713,13 +658,10 @@
         "isClosed": "This note is resolved",
         "isCreated": "Your note has been created!",
         "loginToAddComment": "Log in to add a comment",
-        "loginToAddPicture": "Log in to add a picture",
         "loginToClose": "Log in to close this note",
-        "noteIsPublic": "This will be visible to everyone",
         "noteLayerDoEnable": "Enable the layer showing notes",
         "noteLayerHasFilters": "Some notes might be hidden by a filter",
         "noteLayerNotEnabled": "The layer showing notes is not enabled. This layer must be enabled to add a new note",
-        "notesLayerMustBeEnabled": "The 'notes'-layer is disabled. Enable it to add a note",
         "reopenNote": "Reopen note",
         "reopenNoteAndComment": "Reopen note and comment",
         "textNeeded": "Enter a descriptive text to create a note",
@@ -747,7 +689,6 @@
         "overviewVerify": "Please verify that correct species and link it to the tree",
         "poweredByPlantnet": "Powered by <a href='https://plantnet.org' target='_blank'>plantnet.org</a>",
         "querying": "Querying plantnet.org with {length} images",
-        "seeInfo": "See more information about the species",
         "takeImages": "Take images of the tree to automatically detect the tree type",
         "tryAgain": "Select a different species"
     },
@@ -785,7 +726,6 @@
         "averageRating": "Average rating of {n} stars",
         "i_am_affiliated": "I am affiliated with this object",
         "i_am_affiliated_explanation": "Check if you are an owner, creator, employee, …",
-        "name_required": "A name is required in order to display and create reviews",
         "no_reviews_yet": "There are no reviews yet. Be the first one!",
         "non_place_review": "One review is not about a place and is not shown here.",
         "non_place_reviews": "{n} reviews are not about a place and are not shown here.",
@@ -802,10 +742,8 @@
         "saving_review": "Saving…",
         "see_all": "See all your reviews on mangrove.reviews",
         "title": "{count} reviews",
-        "title_singular": "One review",
         "too_long": "At most {max} characters are allowed. Your review has {amount} characters.",
         "tos": "If you create a review, you agree to <a href='https://mangrove.reviews/terms' target='_blank'>the TOS and privacy policy of Mangrove.reviews</a>",
-        "write_a_comment": "Leave a review…",
         "your_reviews": "Your previous reviews",
         "your_reviews_empty": "We couldn't find any of your previous reviews"
     },
@@ -815,14 +753,11 @@
         "inviteToSplit": "Split this road in smaller segments. This allows to give different properties to parts of the road.",
         "loginToSplit": "You must be logged in to split a road",
         "split": "Split",
-        "splitAgain": "Split this road again",
-        "splitTitle": "Choose on the map where the properties of this road change"
+        "splitAgain": "Split this road again"
     },
     "translations": {
         "activateButton": "Help translate MapComplete",
-        "allMissing": "No translations yet",
-        "missing": "{count} untranslated strings",
-        "notImmediate": "Translations are not updated directly. This typically takes a few days"
+        "missing": "{count} untranslated strings"
     },
     "unknown": {
         "clear": "Clear answer",
@@ -833,9 +768,6 @@
         "title": "Mark as unknown?"
     },
     "userinfo": {
-        "gotoInbox": "Open your inbox",
-        "gotoSettings": "Go to your settings on OpenStreetMap.org",
-        "noDescription": "You don't have a description on your profile yet",
         "notLoggedIn": "You have logged out"
     },
     "validation": {
@@ -899,8 +831,7 @@
             "description": "a regular expression"
         },
         "slope": {
-            "inputExplanation": "Place your phone on the ground with the top side of your phone pointing towards the top of the slope.",
-            "inputIncorrect": "For correct measurements, make sure the arrow is within the green area."
+            "inputExplanation": "Place your phone on the ground with the top side of your phone pointing towards the top of the slope."
         },
         "string": {
             "description": "a piece of text"

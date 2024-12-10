@@ -18,11 +18,11 @@ export default class FediverseValidator extends Validator {
      */
     public static extractServer(handle: string): { server: string; username: string } {
         const match = handle?.match(this.usernameAtServer)
-        if(!match){
+        if (!match) {
             return undefined
         }
         const [_, username, server] = match
-        return {username, server}
+        return { username, server }
     }
 
     /**
@@ -36,7 +36,7 @@ export default class FediverseValidator extends Validator {
             const url = new URL(s)
             const path = url.pathname
             if (path.match(/^\/@?\w+$/)) {
-                return `${path.substring(1)}@${url.hostname}`;
+                return `${path.substring(1)}@${url.hostname}`
             }
         } catch (e) {
             // Nothing to do here

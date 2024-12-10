@@ -2364,17 +2364,6 @@
                 },
                 "question": "Est-ce que ce passage a un refuge au milieu ?"
             },
-            "crossing-is-zebra": {
-                "mappings": {
-                    "0": {
-                        "then": "C'est un passage piéton"
-                    },
-                    "1": {
-                        "then": "Ce n'est pas un passage piéton"
-                    }
-                },
-                "question": "Est-ce un passage piéton ?"
-            },
             "crossing-right-turn-through-red": {
                 "mappings": {
                     "0": {
@@ -4755,20 +4744,6 @@
                 },
                 "question": "Quel est le nom de cette pharmacie ?",
                 "render": "Cette pharmacie s'appelle {name}"
-            },
-            "wheelchair": {
-                "mappings": {
-                    "0": {
-                        "then": "Cette pharmacie est facile d'accès en chaise roulante"
-                    },
-                    "1": {
-                        "then": "Cette pharmacie est difficilement accessible en chaise roulante"
-                    },
-                    "2": {
-                        "then": "L'accès à cette pharmacie est limité en chaise roulante"
-                    }
-                },
-                "question": "Cette pharmacie est-elle facilement accessible en chaise roulante ?"
             }
         },
         "title": {
@@ -6402,7 +6377,7 @@
                 "question": "Dans quelle direction géographique cette caméra filme-t-elle ?",
                 "render": "Filme dans une direction {camera:direction}"
             },
-            "is_indoor": {
+            "camera_is_indoor": {
                 "mappings": {
                     "0": {
                         "then": "Cette caméra est située à l'intérieur"
@@ -6413,8 +6388,7 @@
                     "2": {
                         "then": "Cette caméra est probablement située à l'extérieur"
                     }
-                },
-                "question": "L'espace public surveillé par cette caméra est-il un espace intérieur ou extérieur ?"
+                }
             }
         },
         "title": {

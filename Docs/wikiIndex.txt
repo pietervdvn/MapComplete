@@ -184,7 +184,7 @@
 {{service_item
 |name= [https://mapcomplete.org/circular_economy circular_economy]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:es|en}}, {{#language:de|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:uk|en}}, {{#language:pl|en}}
+|lang= {{#language:en|en}}, {{#language:es|en}}, {{#language:de|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:uk|en}}, {{#language:pl|en}}, {{#language:nl|en}}
 |descr= A MapComplete theme: Various items which help people to share, reuse or recycle
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -211,7 +211,7 @@
 {{service_item
 |name= [https://mapcomplete.org/bicycle_parkings bicycle_parkings]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:es|en}}, {{#language:zh_Hans|en}}, {{#language:it|en}}, {{#language:fil|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:uk|en}}, {{#language:pl|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:es|en}}, {{#language:zh_Hans|en}}, {{#language:it|en}}, {{#language:fil|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:uk|en}}, {{#language:pl|en}}, {{#language:nl|en}}, {{#language:fr|en}}
 |descr= A MapComplete theme: A map showing all types of bicycle parkings
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -292,7 +292,7 @@
 {{service_item
 |name= [https://mapcomplete.org/disaster_response disaster_response]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:it|en}}, {{#language:de|en}}, {{#language:es|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:uk|en}}
+|lang= {{#language:en|en}}, {{#language:it|en}}, {{#language:de|en}}, {{#language:es|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:uk|en}}, {{#language:nl|en}}
 |descr= A MapComplete theme: This map contains elements meant for disaster preparedness and response
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -310,7 +310,7 @@
 {{service_item
 |name= [https://mapcomplete.org/elongated_coin elongated_coin]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:es|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:pl|en}}, {{#language:uk|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:es|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:pl|en}}, {{#language:uk|en}}, {{#language:nl|en}}
 |descr= A MapComplete theme: Find penny presses to create your own elongated coins
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -328,7 +328,7 @@
 {{service_item
 |name= [https://mapcomplete.org/fireplace fireplace]
 |region= Worldwide
-|lang= {{#language:de|en}}, {{#language:en|en}}, {{#language:es|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:uk|en}}
+|lang= {{#language:de|en}}, {{#language:en|en}}, {{#language:es|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:uk|en}}, {{#language:nl|en}}, {{#language:fr|en}}
 |descr= A MapComplete theme: Outdoor place to make a fire or a fixed barbecue in an official place
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -355,7 +355,7 @@
 {{service_item
 |name= [https://mapcomplete.org/ghostsigns ghostsigns]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:es|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:uk|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:es|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:uk|en}}, {{#language:fr|en}}, {{#language:nl|en}}
 |descr= A MapComplete theme: A map showing disused signs on buildings
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -364,7 +364,7 @@
 {{service_item
 |name= [https://mapcomplete.org/glutenfree glutenfree]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:es|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:uk|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:es|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:uk|en}}, {{#language:nl|en}}
 |descr= A MapComplete theme: A crowdsourced map with glutenfree items
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -373,7 +373,7 @@
 {{service_item
 |name= [https://mapcomplete.org/guideposts guideposts]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:cs|en}}, {{#language:de|en}}, {{#language:es|en}}, {{#language:pl|en}}, {{#language:uk|en}}
+|lang= {{#language:en|en}}, {{#language:cs|en}}, {{#language:de|en}}, {{#language:es|en}}, {{#language:pl|en}}, {{#language:uk|en}}, {{#language:nl|en}}
 |descr= A MapComplete theme: Guideposts (also known as fingerposts or finger posts) are often found along official hiking, cycling, skiing or horseback riding routes to indicate the directions to different destinations
 
 The position of a signpost can be used by a hiker/biker/rider/s…
@@ -411,7 +411,7 @@ The position of a signpost can be used by a hiker/biker/rider/s…
 {{service_item
 |name= [https://mapcomplete.org/icecream icecream]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:cs|en}}, {{#language:ca|en}}, {{#language:es|en}}, {{#language:it|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:cs|en}}, {{#language:ca|en}}, {{#language:es|en}}, {{#language:it|en}}, {{#language:nl|en}}
 |descr= A MapComplete theme: A map showing ice cream parlors and ice cream vending machines
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -438,7 +438,7 @@ The position of a signpost can be used by a hiker/biker/rider/s…
 {{service_item
 |name= [https://mapcomplete.org/lactosefree lactosefree]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:es|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:uk|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:es|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:uk|en}}, {{#language:nl|en}}
 |descr= A MapComplete theme: A crowdsourced map with lactose free shops and restaurants
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -447,7 +447,7 @@ The position of a signpost can be used by a hiker/biker/rider/s…
 {{service_item
 |name= [https://mapcomplete.org/lighthouses lighthouses]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:es|en}}, {{#language:cs|en}}, {{#language:uk|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:es|en}}, {{#language:cs|en}}, {{#language:uk|en}}, {{#language:fr|en}}, {{#language:nl|en}}
 |descr= A MapComplete theme: Lighthouses are tall buildings with a light on top to guide marine traffic
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -573,7 +573,7 @@ The position of a signpost can be used by a hiker/biker/rider/s…
 {{service_item
 |name= [https://mapcomplete.org/ski ski]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:es|en}}, {{#language:cs|en}}, {{#language:uk|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:es|en}}, {{#language:cs|en}}, {{#language:uk|en}}, {{#language:fr|en}}, {{#language:nl|en}}
 |descr= A MapComplete theme: Everything you need to go skiing
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png

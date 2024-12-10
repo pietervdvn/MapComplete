@@ -2,13 +2,13 @@
   "id": "etymology",
   "title": {
     "en": "Etymology - what is a place named after?",
-    "nl": "Etymologie - waarnaar is een straat vernoemd?",
+    "nl": "Etymologie - waarnaar is een plaats naar vernoemd?",
     "de": "Etymologie - Wonach ist ein Ort benannt?",
     "it": "Etimologia - da cosa prende nome un luogo?",
     "ru": "Открытая этимологическая карта",
     "zh_Hant": "開放詞源地圖",
     "hu": "Etimológiai térkép – miről kapta a nevét ez a hely?",
-    "fr": "Étymologie - d'où les rues tirent leur nom ?",
+    "fr": "Étymologie - d'où les lieux tirent leur nom ?",
     "ca": "Etimologia: com rep el nom un lloc?",
     "da": "Etymology - hvad er et sted opkaldt efter?",
     "nb_NO": "Åpent etymologikart",
@@ -295,6 +295,31 @@
                   "leisure=sports_centre",
                   "leisure=stadium",
                   "leisure=swimming_pool"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "builtin": "etymology",
+      "override": {
+        "id": "parks_without_etymology",
+        "=name": {
+          "en": "Parks without etymology information"
+        },
+        "minzoom": 18,
+        "isCounted": false,
+        "source": {
+          "osmTags": {
+            "and": [
+              "name~*",
+              {
+                "or": [
+                  "leisure=park",
+                  "landuse=village_green",
+                  "landuse=recreation_ground"
                 ]
               }
             ]

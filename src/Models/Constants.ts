@@ -40,7 +40,7 @@ export default class Constants {
         "import_candidate",
         "usersettings",
         "icons",
-        "filters",
+        "filters"
     ] as const
     /**
      * Layer IDs of layers which have special properties through built-in hooks
@@ -68,7 +68,6 @@ export default class Constants {
 
         mapCompleteHelpUnlock: 50,
         themeGeneratorReadOnlyUnlock: 50,
-        themeGeneratorFullUnlock: 500,
         addNewPointWithUnreadMessagesUnlock: 500,
 
         importHelperUnlock: 5000,
@@ -138,6 +137,7 @@ export default class Constants {
     public static osmAuthConfig: AuthConfig = Constants.config.oauth_credentials
     public static nominatimEndpoint: string = Constants.config.nominatimEndpoint
     public static photonEndpoint: string = Constants.config.photonEndpoint
+    public static weblate: string = "https://translate.mapcomplete.org/"
 
     public static linkedDataProxy: string = Constants.config["jsonld-proxy"]
     /**

@@ -15,13 +15,11 @@
         "delete": "Hapus",
         "explanations": {
             "hardDelete": "Fitur ini akan dihapus dari OpenStreetMap. Ini dapat dipulihkan oleh kontributor berpengalaman",
-            "selectReason": "Silakan, pilih mengapa fitur ini harus dihapus",
             "softDelete": "Fitur ini akan diperbarui dan disembunyikan dari aplikasi ini. <span class=\"subtle\">{reason}</span>"
         },
         "isDeleted": "Fitur ini telah dihapus",
         "isntAPoint": "Hanya titik yang dapat dihapus, fitur yang dipilih adalah jalan, area, atau relasi.",
         "loading": "Menginspeksi properti untuk memeriksa apa fitur ini dapat dihapus.",
-        "loginToDelete": "Anda harus masuk untuk menghapus fitur",
         "notEnoughExperience": "Fitur ini dibuat oleh orang lain.",
         "onlyEditedByLoggedInUser": "Fitur ini hanya disunting oleh Anda, Anda dapat menghapusnya dengan aman.",
         "readMessages": "Anda memiliki pesan yang belum dibaca. Baca sebelum menghapus sebuah fitur - seseorang mungkin punya masukan",
@@ -41,7 +39,6 @@
     "general": {
         "add": {
             "addNew": "Tambahkan {category}",
-            "confirmButton": "Tambahkan {category}<br><div class=\"alert\">Penambahan Anda akan terlihat oleh semua orang</div>",
             "disableFiltersExplanation": "Beberapa fitur mungkin disembunyikan oleh penyaringan",
             "hasBeenImported": "Fitur ini sudah diimpor",
             "import": {
@@ -52,7 +49,6 @@
             "pleaseLogin": "Harap masuk untuk menambahkan fitur baru",
             "stillLoading": "Data masih dimuat. Harap tunggu sebentar sebelum Anda menambahkan fitur baru.",
             "title": "Tambahkan fitur baru?",
-            "warnVisibleForEveryone": "Penambahan Anda akan terlihat oleh semua orang",
             "zoomInFurther": "Perbesar untuk menambahkan fitur.",
             "zoomInMore": "Perbesar untuk mengimpor fitur ini"
         },
@@ -77,13 +73,9 @@
         },
         "backgroundMap": "Peta latar belakang",
         "cancel": "Batal",
-        "getStartedLogin": "Masuk dengan OpenStreetMap untuk memulai",
-        "getStartedNewAccount": " atau <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">membuat akun baru</a>",
-        "goToInbox": "Buka kotak masuk",
         "layerSelection": {
             "title": "Pilih lapisan"
         },
-        "nameInlineQuestion": "Name {category} ini adalah $$$",
         "noTagsSelected": "Tidak ada tag yang dipilih",
         "opening_hours": {
             "closed_permanently": "Ditutup sampai pemberitahuan lebih lanjut",
@@ -96,19 +88,13 @@
             "ph_open": "buka"
         },
         "pickLanguage": "Pilih bahasa: ",
-        "questions": {
-            "emailOf": "Apa alamat email {category}?",
-            "phoneNumberOf": "Apakah nombor telepon {category} ini?",
-            "websiteIs": "Website: <a href=\"{website}\" target=\"_blank\">{website}</a>"
-        },
         "search": {
             "searching": "Sdg mencari…"
         },
         "sharescreen": {
             "copiedToClipboard": "Tautan disalin ke papan klip",
             "fsUserbadge": "Aktifkan tombol masuk",
-            "fsWelcomeMessage": "Tampilkan popup pesan selamat datang dan tab terkait",
-            "thanksForSharing": "Terima kasih telah berbagi!"
+            "fsWelcomeMessage": "Tampilkan popup pesan selamat datang dan tab terkait"
         },
         "weekdays": {
             "abbreviations": {
@@ -132,15 +118,11 @@
     "image": {
         "addPicture": "Tambahkan foto",
         "doDelete": "Buang gambar",
-        "dontDelete": "Batal",
         "isDeleted": "Dihapus",
-        "pleaseLogin": "Silakan masuk untuk menambah gambar",
-        "uploadingMultiple": "Mengunggah {count} gambar…",
-        "uploadingPicture": "Mengunggah gambar Anda…"
+        "pleaseLogin": "Silakan masuk untuk menambah gambar"
     },
     "index": {
         "intro": "MapComplete adalah penampil dan penyunting OpenStreetMap, yang menunjukkan informasi tentang fitur pada tema tertentu dan memungkinkan Anda untuk memperbaruinya.",
-        "pickTheme": "Pilih tema di bawah ini untuk memulai.",
         "title": "Selamat datang di MapComplete"
     },
     "notes": {
@@ -155,9 +137,7 @@
         "isClosed": "Catatan ini diselesaikan",
         "isCreated": "Catatan Anda telah dibuat!",
         "loginToAddComment": "Masuk untuk menambahkan komentar",
-        "loginToAddPicture": "Masuk untuk menambahkan gambar",
         "loginToClose": "Masuk untuk menutup catatan ini",
-        "noteIsPublic": "Ini akan terlihat oleh semua orang",
         "noteLayerDoEnable": "Aktifkan lapisan yang menunjukkan catatan"
     },
     "reviews": {
@@ -165,18 +145,12 @@
         "saved": "<span class=\"thanks\"> Ulasan disimpan. Terima kasih sudah berbagi! </span>",
         "saving_review": "Menyimpan…",
         "title": "{count} ulasan",
-        "title_singular": "Satu ulasan",
-        "tos": "Jika Anda membuat ulasan, Anda menyetujui <a href=\"https://mangrove.reviews/terms\" target=\"_blank\">TOS dan kebijakan privasi Mangrove.reviews</a>",
-        "write_a_comment": "Beri ulasan…"
+        "tos": "Jika Anda membuat ulasan, Anda menyetujui <a href=\"https://mangrove.reviews/terms\" target=\"_blank\">TOS dan kebijakan privasi Mangrove.reviews</a>"
     },
     "split": {
-        "cancel": "Batal",
-        "splitTitle": "Pilih di peta tempat membelah jalan ini"
+        "cancel": "Batal"
     },
-    "translations": {
-        "allMissing": "Belum ada terjemahan",
-        "notImmediate": "Terjemahan tidak diperbarui secara langsung. Biasanya memakan waktu beberapa hari"
-    },
+    "translations": {},
     "validation": {
         "date": {
             "description": "Tanggal, dimulai dari tahun"

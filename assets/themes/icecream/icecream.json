@@ -10,7 +10,9 @@
     "it": "Gelato",
     "ru": "Мороженое",
     "hu": "Fagylalt",
-    "uk": "Морозиво"
+    "uk": "Морозиво",
+    "fr": "Glace",
+    "nl": "IJs"
   },
   "description": {
     "en": "A map showing ice cream parlors and ice cream vending machines",
@@ -18,7 +20,8 @@
     "cs": "Mapa zobrazující prodej zmrzliny a automaty na zmrzlinu",
     "ca": "Un mapa que mostra les gelateries i les màquines expenedores de gelats",
     "es": "Un mapa que muestra heladerías y máquinas expendedoras de helados",
-    "it": "Una mappa che mostra le gelaterie e i distributori automatici di gelato"
+    "it": "Una mappa che mostra le gelaterie e i distributori automatici di gelato",
+    "nl": "Een kaart met ijssalons en ijsautomaten"
   },
   "icon": "./assets/layers/ice_cream/ice_cream.svg",
   "layers": [

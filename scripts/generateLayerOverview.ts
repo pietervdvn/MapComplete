@@ -643,11 +643,15 @@ class LayerOverviewUtils extends Script {
                     LayerOverviewUtils.layerPath +
                     sharedLayerPath.substring(sharedLayerPath.lastIndexOf("/"))
                 if (!forceReload && !this.shouldBeUpdated(sharedLayerPath, targetPath)) {
-                    const sharedLayer = JSON.parse(readFileSync(targetPath, "utf8"))
-                    sharedLayers.set(sharedLayer.id, sharedLayer)
-                    skippedLayers.push(sharedLayer.id)
-                    ScriptUtils.erasableLog("Loaded " + sharedLayer.id)
-                    continue
+                    try{
+                        const sharedLayer = JSON.parse(readFileSync(targetPath, "utf8"))
+                        sharedLayers.set(sharedLayer.id, sharedLayer)
+                        skippedLayers.push(sharedLayer.id)
+                        ScriptUtils.erasableLog("Loaded " + sharedLayer.id)
+                        continue
+                    }catch (e) {
+                        throw "Could not parse "+targetPath+" : "+e
+                    }
                 }
             }
 

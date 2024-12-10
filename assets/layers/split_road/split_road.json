@@ -17,12 +17,32 @@
           "icon": "bug"
         }
       ]
+    },
+    {
+      "location": [
+        "waypoints"
+      ],
+      "iconSize": "4,4",
+      "anchor": "center",
+      "marker": [
+        {
+          "icon": {
+            "render": "circle",
+            "id": "circle"
+          },
+          "color": "#888888"
+        }
+      ]
     }
   ],
   "lineRendering": [
     {
-      "width": "8",
+      "width": "13",
       "color": "black"
+    },
+    {
+      "width": "8",
+      "color": "white"
     }
   ],
   "allowMove": false

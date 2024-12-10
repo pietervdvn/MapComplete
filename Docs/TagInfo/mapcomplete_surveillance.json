@@ -80,6 +80,11 @@
       "value": "panning"
     },
     {
+      "key": "camera:type",
+      "description": "Layer 'Surveillance camera's' shows camera:type=doorbell with a fixed text, namely 'A doorbell which might be turned on remotely at any time or by motion detection. These are typically <i>Smart</i>, internet-connected doorbells. Typical brands are Ring, Google Nest, Eufy, ...' and allows to pick this as a default answer (in the mapcomplete.org theme 'Surveillance under Surveillance')",
+      "value": "doorbell"
+    },
+    {
       "key": "camera:direction",
       "description": "Layer 'Surveillance camera's' shows and asks freeform values for key 'camera:direction' (in the mapcomplete.org theme 'Surveillance under Surveillance') (This is only shown if camera:direction~.+ | direction~.+ | camera:type!=dome | (camera:type=dome & camera:mount=wall))"
     },
@@ -113,22 +118,22 @@
     },
     {
       "key": "indoor",
-      "description": "Layer 'Surveillance camera's' shows indoor=yes with a fixed text, namely 'This camera is located indoors' and allows to pick this as a default answer (in the mapcomplete.org theme 'Surveillance under Surveillance') (This is only shown if surveillance:type=public)",
+      "description": "Layer 'Surveillance camera's' shows indoor=yes with a fixed text, namely 'This camera is located indoors' and allows to pick this as a default answer (in the mapcomplete.org theme 'Surveillance under Surveillance') (This is only shown if surveillance!=outdoor & surveillance!=indoor)",
       "value": "yes"
     },
     {
       "key": "indoor",
-      "description": "Layer 'Surveillance camera's' shows indoor=no with a fixed text, namely 'This camera is located outdoors' and allows to pick this as a default answer (in the mapcomplete.org theme 'Surveillance under Surveillance') (This is only shown if surveillance:type=public)",
+      "description": "Layer 'Surveillance camera's' shows indoor=no with a fixed text, namely 'This camera is located outdoors' and allows to pick this as a default answer (in the mapcomplete.org theme 'Surveillance under Surveillance') (This is only shown if surveillance!=outdoor & surveillance!=indoor)",
       "value": "no"
     },
     {
       "key": "indoor",
-      "description": "Layer 'Surveillance camera's' shows indoor= with a fixed text, namely 'This camera is probably located outdoors' (in the mapcomplete.org theme 'Surveillance under Surveillance') Picking this answer will delete the key indoor. (This is only shown if surveillance:type=public)",
+      "description": "Layer 'Surveillance camera's' shows indoor= with a fixed text, namely 'This camera is probably located outdoors' (in the mapcomplete.org theme 'Surveillance under Surveillance') Picking this answer will delete the key indoor. (This is only shown if surveillance!=outdoor & surveillance!=indoor)",
       "value": ""
     },
     {
       "key": "level",
-      "description": "Layer 'Surveillance camera's' shows and asks freeform values for key 'level' (in the mapcomplete.org theme 'Surveillance under Surveillance') (This is only shown if indoor=yes | surveillance:type=ye)"
+      "description": "Layer 'Surveillance camera's' shows and asks freeform values for key 'level' (in the mapcomplete.org theme 'Surveillance under Surveillance') (This is only shown if camera:type!=doorbell & (indoor=yes | surveillance=indoor) & (surveillance:type=alpr | surveillance:type=camera))"
     },
     {
       "key": "surveillance:zone",

@@ -97,7 +97,7 @@ export class DeleteFlowState {
                 if (allByMyself.data === null && useTheInternet) {
                     // We kickoff the download here as it hasn't yet been downloaded. Note that this is mapped onto 'all by myself' above
                     const hist = this.objectDownloader
-                        .DownloadHistory(id)
+                        .downloadHistory(id)
                         .map((versions) =>
                             versions.map((version) =>
                                 Number(version.tags["_last_edit:contributor:uid"])

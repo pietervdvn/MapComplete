@@ -823,7 +823,8 @@
         "de": "Man könnte diese Nummer anrufen, wenn es Probleme gibt, z. B. um nicht gewartete Fahrräder zu entfernen",
         "ca": "És possible que es pugui trucar a aquest número en cas de problemes, p. per retirar les bicicletes abandonades",
         "cs": "Na toto číslo je možné volat v případě problémů, např. při odstraňování neudržovaných jízdních kol",
-        "es": "Se puede llamar a este número en caso de problemas, por ejemplo, para retirar bicicletas sin mantenimiento"
+        "es": "Se puede llamar a este número en caso de problemas, por ejemplo, para retirar bicicletas sin mantenimiento",
+        "uk": "За цим номером можна буде зателефонувати у разі виникнення проблем, наприклад, щоб прибрати недоглянуті велосипеди"
       },
       "icon": "./assets/layers/questions/phone.svg",
       "freeform": {

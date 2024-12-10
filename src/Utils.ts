@@ -1292,6 +1292,21 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
     }
 
     /**
+     *
+     * {"a": "b", "c":"d"} // => {"b":"a", "d":"c"}
+     */
+    public static transposeMapSimple<K extends string, V extends string>(
+        d: Record<K, V>
+    ): Record<V, K> {
+        const inv = <Record<V, K>>{}
+        for (const k in d) {
+            const v = d[k]
+            inv[v] = k
+        }
+        return inv
+    }
+
+    /**
      * Utils.colorAsHex({r: 255, g: 128, b: 0}) // => "#ff8000"
      * Utils.colorAsHex(undefined) // => undefined
      */
@@ -1534,10 +1549,10 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         let _: string
         const matchWithFuncName = stackItem.match(regex)
         if (matchWithFuncName) {
-            [_, functionName, path, line, column] = matchWithFuncName
+            ;[_, functionName, path, line, column] = matchWithFuncName
         } else {
-            const regexNoFuncName: RegExp = new RegExp("at ([a-zA-Z0-9-/.]+):([0-9]+):([0-9]+)");
-            [_, path, line, column] = stackItem.match(regexNoFuncName)
+            const regexNoFuncName: RegExp = new RegExp("at ([a-zA-Z0-9-/.]+):([0-9]+):([0-9]+)")
+            ;[_, path, line, column] = stackItem.match(regexNoFuncName)
         }
 
         const markdownLocation = path.substring(path.indexOf("MapComplete/src") + 11) + "#L" + line

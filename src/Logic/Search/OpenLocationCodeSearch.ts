@@ -1,10 +1,5 @@
-import { Store, Stores, UIEventSource } from "../UIEventSource"
-import GeocodingProvider, {
-    GeocodeResult,
-    GeocodingOptions,
-    ReverseGeocodingProvider,
-    ReverseGeocodingResult,
-} from "./GeocodingProvider"
+import { Store, Stores } from "../UIEventSource"
+import GeocodingProvider, { GeocodeResult, GeocodingOptions } from "./GeocodingProvider"
 import { decode as pluscode_decode } from "pluscodes"
 
 export default class OpenLocationCodeSearch implements GeocodingProvider {

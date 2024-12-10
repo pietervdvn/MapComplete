@@ -21,6 +21,7 @@
   import AccordionSingle from "../../Flowbite/AccordionSingle.svelte"
   import Trash from "@babeard/svelte-heroicons/mini/Trash"
   import Invalid from "../../../assets/svg/Invalid.svelte"
+  import { And } from "../../../Logic/Tags/And"
 
   export let state: SpecialVisualizationState
   export let deleteConfig: DeleteConfig
@@ -60,10 +61,18 @@
     const changedProperties = TagUtils.changeAsProperties(selectedTags.asChange(tags?.data ?? {}))
     const deleteReason = changedProperties[DeleteConfig.deleteReasonKey]
     if (deleteReason) {
+      let softDeletionTags: UploadableTag
+      if (hasSoftDeletion) {
+        softDeletionTags = new And([
+          deleteConfig.softDeletionTags,
+          ...layer.tagRenderings.flatMap((tr) => tr.onSoftDelete ?? []),
+        ])
+      }
+
       // This is a proper, hard deletion
       actionToTake = new DeleteAction(
         featureId,
-        deleteConfig.softDeletionTags,
+        softDeletionTags,
         {
           theme: state?.theme?.id ?? "unknown",
           specialMotivation: deleteReason,

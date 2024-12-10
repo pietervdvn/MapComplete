@@ -3,6 +3,7 @@ import Locale from "../i18n/Locale"
 import Link from "./Link"
 import SvelteUIElement from "./SvelteUIElement"
 import Translate from "../../assets/svg/Translate.svelte"
+import Constants from "../../Models/Constants"
 
 /**
  * The little 'translate'-icon next to every icon + some static helper functions
@@ -48,7 +49,7 @@ export default class LinkToWeblate extends VariableUiElement {
     /**
      * Creates the url to Hosted weblate
      *
-     * LinkToWeblate.hrefToWeblate("nl", "category:some.context") // => "https://hosted.weblate.org/translate/mapcomplete/category/nl/?offset=1&q=context%3A%3D%22some.context%22"
+     * LinkToWeblate.hrefToWeblate("nl", "category:some.context") // => "https://translate.mapcomplete.org/translate/mapcomplete/category/nl/?offset=1&q=context%3A%3D%22some.context%22"
      */
     public static hrefToWeblate(language: string, contextKey: string): string {
         if (contextKey === undefined || contextKey.indexOf(":") < 0) {
@@ -57,7 +58,7 @@ export default class LinkToWeblate extends VariableUiElement {
         const [category, ...rest] = contextKey.split(":")
         const key = rest.join(":")
 
-        const baseUrl = "https://hosted.weblate.org/translate/mapcomplete/"
+        const baseUrl = Constants.weblate + "translate/mapcomplete/"
         return baseUrl + category + "/" + language + "/?offset=1&q=context%3A%3D%22" + key + "%22"
     }
 
@@ -66,7 +67,7 @@ export default class LinkToWeblate extends VariableUiElement {
         category: "core" | "themes" | "layers" | "shared-questions" | "glossary" | string,
         searchKey: string
     ): string {
-        const baseUrl = "https://hosted.weblate.org/zen/mapcomplete/"
+        const baseUrl = Constants.weblate + "zen/mapcomplete/"
         // ?offset=1&q=+state%3A%3Ctranslated+context%3Acampersite&sort_by=-priority%2Cposition&checksum=
         return (
             baseUrl +

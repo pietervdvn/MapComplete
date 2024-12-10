@@ -14,14 +14,11 @@
         "delete": "Slett",
         "explanations": {
             "hardDelete": "Dette punktet vil bli slettet i OpenStreetMap. Det kan gjenopprettes av en dreven bidragsyter.",
-            "retagNoOtherThemes": "Denne funksjonen vil bli reklassifisert og skjult fra dette programmet",
-            "selectReason": "Velg hvorfor denne funksjonen skal slettes",
             "softDelete": "Denne funksjonen vil bli oppdatert og skjult fra programmet. <span class=\"subtle\">{reason}</span>"
         },
         "isDeleted": "Denne funksjonen har blitt slettet",
         "isntAPoint": "Kun punkter kan slettes, valgt funksjon er en vei, et område, eller en relasjon.",
         "loading": "Inspiserer egenskaper for å sjekke om denne funksjonen kan slettes.",
-        "loginToDelete": "Du må være innlogget for å slette et punkt",
         "notEnoughExperience": "Dette punktet ble opprettet av noen andre.",
         "onlyEditedByLoggedInUser": "Dette punktet har kun blitt redigert av deg. Du kan trygt slette det.",
         "partOfOthers": "Dette punktet er en del av en vei eller relasjon, og kan derfor ikke slettes direkte.",
@@ -37,8 +34,6 @@
         "whyDelete": "Hvorfor bør dette punktet slettes?"
     },
     "favourite": {
-        "loginNeeded": "<h3>Logg inn</h3>Personlig oppsett er kun tilgjengelig for OpenStreetMap-brukere",
-        "panelIntro": "<h3>Ditt personlige tema</h3>Aktiver dine favorittlag fra de offisielle",
         "reload": "Last inn dataen igjen"
     },
     "flyer": {
@@ -77,7 +72,6 @@
         "add": {
             "addNew": "Legg til {category} her",
             "backToSelect": "Velg en annen kategori",
-            "confirmButton": "Legg til en {category} her.<br/><div class='alert'>Din endring er synlig for alle</div>",
             "disableFilters": "Skru av alle filtre",
             "disableFiltersExplanation": "Det kan hende noen funksjoner er skjult av et filter",
             "hasBeenImported": "Dette punktet har allerede blitt importert",
@@ -97,7 +91,6 @@
             "presetInfo": "Det nye interessepunktet vil få {tags}",
             "stillLoading": "Dataen lastes fremdeles inn. Vent litt før du legger til et nytt punkt.",
             "title": "Legg til et nytt punkt?",
-            "warnVisibleForEveryone": "Din endring vil være synlig for alle",
             "wrongType": "Dette er ikke et punkt eller en vei og kan ikke importeres",
             "zoomInFurther": "Forstørr mer for å legge til et punkt.",
             "zoomInMore": "Forstørr mer for å importere denne funksjonen"
@@ -154,10 +147,6 @@
         "error": "Noe gikk galt",
         "example": "Eksempel",
         "examples": "Eksempler",
-        "fewChangesBefore": "Besvar et par spørsmål for eksisterende punkter før du legger til et nytt.",
-        "getStartedLogin": "Logg inn med OpenStreetMap for å begynne",
-        "getStartedNewAccount": " eller <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">opprett en ny konto</a>",
-        "goToInbox": "Åpne innboks",
         "histogram": {
             "error_loading": "Kunne ikke laste inn histogrammet"
         },
@@ -168,7 +157,6 @@
         "loading": "Laster inn …",
         "loadingTheme": "Laster inn {theme}…",
         "loginFailed": "Kunne ikke logge inn på OpenStreetMap",
-        "loginOnlyNeededToEdit": "hvis du ønsker å redigere kartet",
         "loginToStart": "Logg inn for å besvare dette spørsmålet",
         "loginWithOpenStreetMap": "Logg inn med OpenStreetMap",
         "logout": "Logg ut",
@@ -177,15 +165,11 @@
             "hiddenExplanation": "Disse temaene er kun tilgjengelige hvis du kjenner lenken. Du har oppdaget {hidden_discovered} av {total_hidden} hidden tema.",
             "noSearch": "Vis alle temaer",
             "previouslyHiddenTitle": "Tidligere besøkte skjulte tema",
-            "requestATheme": "Hvis du ønsker et brukerdefinert tema kan du forespørre det i feilsporeren",
             "searchForATheme": "Søk etter et tema",
             "streetcomplete": "Et annet lignende program er <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>."
         },
-        "nameInlineQuestion": "Navnet på {category} er $$$",
         "next": "Neste",
-        "noNameCategory": "{category} uten navn",
         "noTagsSelected": "Ingen etiketter valgt",
-        "notValid": "Velg en gyldig verdi for å fortsette",
         "number": "tall",
         "openTheMap": "Åpne kartet",
         "opening_hours": {
@@ -203,7 +187,6 @@
             "ph_open": "åpen",
             "ph_open_as_usual": "åpen som vanlig"
         },
-        "osmLinkTooltip": "Vis dette objektet på OpenStreetMap for historikk og flere redigeringsvalg",
         "pdf": {
             "attr": "Kartdata © OpenStreetMap-bidragsytere, gjenbrukbart med ODbL-lisens",
             "attrBackground": "Bakgrunnslag: {background}",
@@ -212,15 +195,6 @@
         },
         "pickLanguage": "Velg språk: ",
         "poweredByOsm": "Med data fra OpenStreetMap",
-        "questions": {
-            "emailIs": "E-postadressen til {category} er <a href=\"mailto:{email}\" target=\"_blank\">{email}</a>",
-            "emailOf": "Hva er e-postadressen til {category}?",
-            "phoneNumberIs": "Telefonnummeret til denne {category} er <a href='tel:{phone}' target='_blank'>{phone}</a>",
-            "phoneNumberOf": "Hva er telefonnummeret til {category}?",
-            "websiteIs": "Nettside: <a href=\"{website}\" target=\"_blank\">{website}</a>",
-            "websiteOf": "Hva er nettsiden til {category}?"
-        },
-        "readYourMessages": "Les alle OpenStreetMap-meldingene dine før du legger til et nytt punkt.",
         "removeLocationHistory": "Slett posisjonshistorikken",
         "returnToTheMap": "Gå tilbake til kartet",
         "save": "Lagre",
@@ -236,8 +210,7 @@
             "embedIntro": "<h3>Bygg inn på nettsiden din</h3>Legg til dette kartet på nettsiden din. <br/>Du oppfordres til å gjøre dette, og trenger ikke å spørre om tillatelse. <br/> Det er fritt, og vil alltid være det. Desto flere som bruker dette, desto mer verdifullt blir det.",
             "fsUserbadge": "Skru på innloggingsknappen",
             "fsWelcomeMessage": "Vis velkomst-oppsprettsmeldinger og tilknyttede faner",
-            "intro": "<h3>Del dette kartet</h3> Del dette kartet ved å kopiere lenken nedenfor og sende den til venner og familie:",
-            "thanksForSharing": "Takk for at du bidrar."
+            "intro": "<h3>Del dette kartet</h3> Del dette kartet ved å kopiere lenken nedenfor og sende den til venner og familie:"
         },
         "skip": "Hopp over dette spørsmålet",
         "testing": "Testing. ingen endringer vil bli lagret.",
@@ -269,21 +242,17 @@
             "tuesday": "Tirsdag",
             "wednesday": "Onsdag"
         },
-        "welcomeBack": "Du er innlogget. Velkommen tilbake.",
         "wikipedia": {
-            "createNewWikidata": "Opprett et nytt Wikipedia-element",
             "doSearch": "Søk ovenfor for å se resultater",
             "failed": "Innlasting av Wikipedia-artikkel mislyktes",
             "fromWikipedia": "Fra Wikipedia, det frie leksikonet",
             "loading": "Laster inn Wikipedia …",
             "noResults": "Fant ikke noe for <i>{search}</i>",
-            "noWikipediaPage": "Dette Wikipedia-elementet har ingen tilknyttet Wikipedia-side enda.",
             "previewbox": {
                 "born": "Født: {value}",
                 "died": "Død: {value}"
             },
-            "searchWikidata": "Søk på Wikipedia",
-            "wikipediaboxTitle": "Wikipedia"
+            "searchWikidata": "Søk på Wikipedia"
         }
     },
     "hotkeyDocumentation": {
@@ -295,31 +264,20 @@
     },
     "image": {
         "addPicture": "Legg til bilde",
-        "currentLicense": "Bildet ditt vil bli publisert med {license}-lisens",
         "doDelete": "Fjern bilde",
-        "dontDelete": "Avbryt",
         "isDeleted": "Slettet",
         "pleaseLogin": "Logg inn for å legge til et bilde",
         "respectPrivacy": "Ikke ta bilder av folk eller bilskilt. Ikke last opp Google Maps, Google Streetview eller andre opphavsrettsbeskyttede kilder.",
         "toBig": "Bildet ditt på {actual_size} er for stort. Det kan maksimalt være {max_size}.",
-        "uploadDone": "Bildet ditt ble lagt til. Takk for at du hjelper til.",
-        "uploadFailed": "Kunne ikke laste opp bildet ditt. Er du tilkoblet Internett og tillater tredjeparts-API-er? Brave-nettleseren eller uMatrix-programtillegget kan blokkere dem.",
-        "uploadMultipleDone": "{count} bilder har blitt lagt til. Takk for at du hjelper til.",
-        "uploadingMultiple": "Laster opp {count} bilder …",
-        "uploadingPicture": "Laster opp bildet ditt …"
+        "uploadFailed": "Kunne ikke laste opp bildet ditt. Er du tilkoblet Internett og tillater tredjeparts-API-er? Brave-nettleseren eller uMatrix-programtillegget kan blokkere dem."
     },
     "importInspector": {
         "title": "Inspiser og håndter importnotater"
     },
-    "importLayer": {
-        "importHandled": "<div class='thanks'>Denne funksjonen har blitt håndtert. Takk for din innsats.</div>",
-        "popupTitle": "Det kan være {title} her"
-    },
+    "importLayer": {},
     "index": {
-        "featuredThemeTitle": "Framhevet denne uken",
         "intro": "MapComplete er en OpenStreetMap-viser og redigerer, som viser deg info om funksjoner for et gitt tema og tillater oppdatering av det.",
         "logIn": "Logg inn for å vise tema du har besøkt tidligere",
-        "pickTheme": "Begynn ved å velge et av temaene nedenfor.",
         "title": "Velkommen til MapComplete"
     },
     "move": {
@@ -334,8 +292,6 @@
         "inviteToMoveAgain": "Flytt dette punktet igjen",
         "isRelation": "Denne funksjonen er en relasjon og kan ikke flyttes",
         "isWay": "Denne funksjonen er en vei. Bruk en annen OpenStreetMap-redigerer for å flytte den.",
-        "loginToMove": "Du må være innlogget for å flytte et punkt",
-        "moveTitle": "Flytt dette punktet",
         "partOfAWay": "Denne funksjonen er en del av en annen vei. Bruk en annen redigerer for å flytte den.",
         "partOfRelation": "Denne funksjonen er en del av en relasjon. Bruk en annen redigerer for å flytte den.",
         "pointIsMoved": "Punktet har blitt flyttet",
@@ -343,8 +299,6 @@
             "reasonInaccurate": "Posisjonen til dette objektet er unøyaktig og bør flyttes noen meter",
             "reasonRelocation": "Objektet har blitt flyttet til et helt annet sted"
         },
-        "selectReason": "Hvorfor flytter du dette objektet?",
-        "whyMove": "Hvorfor vil du flytte dette punktet?",
         "zoomInFurther": "Forstørr mer for å bekrefte denne flyttingen"
     },
     "multi_apply": {
@@ -362,8 +316,6 @@
         "disableAllNoteFilters": "Skru av alle filtre",
         "isClosed": "Dette notatet har blitt løst",
         "loginToAddComment": "Logg inn for å legge til en kommentar",
-        "loginToAddPicture": "Logg inn for å legge til et bilde",
-        "noteIsPublic": "Dette vil vises for alle",
         "reopenNote": "Gjenåpne notat",
         "reopenNoteAndComment": "Gjenåpne notat og kommenter",
         "textNeeded": "Skriv inn beskrivende tekst for å opprettet et notat",
@@ -387,7 +339,6 @@
         "overviewVerify": "Bekreft korrekt art og lenke det til treet",
         "poweredByPlantnet": "Drevet av <a href='https://plantnet.org' target='_blank'>plantnet.org</a>",
         "querying": "Sjekker dine {length} bilder på plantnet.org",
-        "seeInfo": "Finn mer info om artene",
         "takeImages": "Ta bilder av treet for å oppdage treslag automatisk"
     },
     "privacy": {
@@ -400,14 +351,11 @@
         "affiliated_reviewer_warning": "(Tilknyttet vurdering)",
         "attribution": "Vurderinger er muliggjort av <a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a> og er tilgjengelige som <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a>.",
         "i_am_affiliated": "<span>Jeg har en tilknytning til dette objektet</span><br/><span class='subtle'>Sjekk om du er eier, skaper, ansatt, …</span>",
-        "name_required": "Et navn kreves for å vise og opprette vurderinger",
         "no_reviews_yet": "Ingen vurderinger enda. Vær først til å skrive en og hjelp åpen data og bevegelsen.",
         "saved": "<span class=\"thanks\">Vurdering lagret. Takk for at du deler din mening.</span>",
         "saving_review": "Lagrer …",
         "title": "{count} vurderinger",
-        "title_singular": "Én vurdering",
-        "tos": "Hvis du lager en vurdering, samtykker du til <a href=\"https://mangrove.reviews/terms\" target=\"_blank\">tjenestevilkårene til Mangrove.reviews</a>",
-        "write_a_comment": "Legg igjen en vurdering …"
+        "tos": "Hvis du lager en vurdering, samtykker du til <a href=\"https://mangrove.reviews/terms\" target=\"_blank\">tjenestevilkårene til Mangrove.reviews</a>"
     },
     "split": {
         "cancel": "Avbryt",
@@ -415,20 +363,13 @@
         "inviteToSplit": "Inndel denne veien i mindre segmenter. Dette lar deg gi den forskjellige egenskaper for forskjellige strekk.",
         "loginToSplit": "Du må være innlogget for å dele en vei",
         "split": "Del",
-        "splitAgain": "Del opp denne veien igjen",
-        "splitTitle": "Velg hvor på kartet veien skal deles"
+        "splitAgain": "Del opp denne veien igjen"
     },
     "translations": {
         "activateButton": "Bistå oversettelsen av MapComplete",
-        "allMissing": "Ingen oversettelser enda",
-        "missing": "{count} uoversatte strenger",
-        "notImmediate": "Oversettelser oppdateres ikke direkte. Dette tar typisk et par dager."
+        "missing": "{count} uoversatte strenger"
     },
-    "userinfo": {
-        "gotoInbox": "Åpne innboksen din",
-        "gotoSettings": "Gå til innstillingene dine på OpenStreetMap.org",
-        "noDescription": "Du har ikke noen profilbeskrivelse enda"
-    },
+    "userinfo": {},
     "validation": {
         "color": {
             "description": "En farge eller heksadesimal kode"

@@ -19,6 +19,7 @@ import { Feature } from "geojson"
 import MarkdownUtils from "../../Utils/MarkdownUtils"
 import { UploadableTag } from "../../Logic/Tags/TagTypes"
 import LayerConfig from "./LayerConfig"
+import ComparingTag from "../../Logic/Tags/ComparingTag"
 
 export interface Mapping {
     readonly if: UploadableTag
@@ -79,6 +80,8 @@ export default class TagRenderingConfig {
     public readonly editButtonAriaLabel?: Translation
     public readonly labels: string[]
     public readonly classes: string[] | undefined
+
+    public readonly onSoftDelete?: ReadonlyArray<UploadableTag>
 
     constructor(
         config:
@@ -142,6 +145,19 @@ export default class TagRenderingConfig {
         this.questionhint = Translations.T(json.questionHint, translationKey + ".questionHint")
         this.questionHintIsMd = json["questionHintIsMd"] ?? false
         this.description = Translations.T(json.description, translationKey + ".description")
+        if (json.onSoftDelete && !Array.isArray(json.onSoftDelete)) {
+            throw context + ".onSoftDelete Not an array: " + typeof json.onSoftDelete
+        }
+        this.onSoftDelete = json.onSoftDelete?.map((t) => {
+            const tag = TagUtils.Tag(t, context)
+            if (tag instanceof RegexTag) {
+                throw context + ".onSoftDelete Invalid onSoftDelete: cannot upload tag " + t
+            }
+            if (tag instanceof ComparingTag) {
+                throw context + ".onSoftDelete Invalid onSoftDelete: cannot upload tag " + t
+            }
+            return tag
+        })
         this.editButtonAriaLabel = Translations.T(
             json.editButtonAriaLabel,
             translationKey + ".editButtonAriaLabel"
@@ -371,8 +387,14 @@ export default class TagRenderingConfig {
             throw `${ctx}.addExtraTags: expected a list, but got a ${typeof mapping.addExtraTags}`
         }
         if (mapping.addExtraTags !== undefined && multiAnswer) {
-            const usedKeys = mapping.addExtraTags?.flatMap((et) => TagUtils.Tag(et).usedKeys())
-            if (usedKeys.some((key) => TagUtils.Tag(mapping.if).usedKeys().indexOf(key) > 0)) {
+            const usedKeys = mapping.addExtraTags?.flatMap((et) =>
+                TagUtils.Tag(et, context).usedKeys()
+            )
+            if (
+                usedKeys.some(
+                    (key) => TagUtils.Tag(mapping.if, context).usedKeys().indexOf(key) > 0
+                )
+            ) {
                 throw `${ctx}: Invalid mapping: got a multi-Answer with addExtraTags which also modifies one of the keys; this is not allowed`
             }
         }

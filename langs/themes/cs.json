@@ -107,7 +107,7 @@
     },
     "bicyclelib": {
         "description": "\"Bicycle library\" je místo, kde si lze půjčit jízdní kola, často za malý roční poplatek. Významným případem použití jsou \"bicycle libraries\" pro děti, které jim umožňují vyměnit kolo za větší, když ze svého stávajícího kola vyrostou",
-        "title": "Bicycle libraries"
+        "title": "Knihovna jízdních kol"
     },
     "binoculars": {
         "description": "Mapa s dalekohledem upevněným na místě pomocí tyče. Obvykle se nachází na turistických místech, rozhlednách, vrcholech panoramatických věží nebo příležitostně v přírodních rezervacích.",
@@ -585,7 +585,7 @@
         "title": "Ohniště a grily"
     },
     "food": {
-        "description": "Restaurace a rychlého občerstvení",
+        "description": "Restaurace a rychlé občerstvení",
         "title": "Restaurace a rychlé občerstvení"
     },
     "fritures": {
@@ -833,6 +833,7 @@
                         }
                     }
                 },
+                "name": "Changeset centra",
                 "tagRenderings": {
                     "contributor": {
                         "question": "Který přispěvatel provedl tuto změnu?",
@@ -850,7 +851,8 @@
                         "render": "Sada změn <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
                     },
                     "theme-id": {
-                        "question": "Jaký motiv byl použit k provedení této změny?"
+                        "question": "Jaký motiv byl použit k provedení této změny?",
+                        "render": "Změna pomocí tématu <a href='https://mapcomplete.org/{theme}'>{theme}</a>"
                     },
                     "version": {
                         "question": "Jaká verze aplikace MapComplete byla použita k provedení této změny?",
@@ -1053,7 +1055,7 @@
                 }
             }
         },
-        "title": "Open Love Map"
+        "title": "Open Love mapa"
     },
     "openwindpowermap": {
         "description": "Mapa pro zobrazení a úpravy větrných turbín.",

@@ -3193,21 +3193,6 @@
       "value": "yes"
     },
     {
-      "key": "wheelchair",
-      "description": "Layer 'Pharmacies' shows wheelchair=yes with a fixed text, namely 'This pharmacy is easy to access on a wheelchair' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
-      "value": "yes"
-    },
-    {
-      "key": "wheelchair",
-      "description": "Layer 'Pharmacies' shows wheelchair=no with a fixed text, namely 'This pharmacy is hard to access on a wheelchair' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
-      "value": "no"
-    },
-    {
-      "key": "wheelchair",
-      "description": "Layer 'Pharmacies' shows wheelchair=limited with a fixed text, namely 'This pharmacy has limited access for wheelchair users' and allows to pick this as a default answer (in the mapcomplete.org theme 'OnWheels')",
-      "value": "limited"
-    },
-    {
       "key": "amenity",
       "description": "The MapComplete theme OnWheels has a layer Doctors showing features with this tag",
       "value": "doctors"

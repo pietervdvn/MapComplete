@@ -51,7 +51,11 @@
   "icon": "./assets/themes/maps/logo.svg",
   "defaultBackgroundId": "protomaps.white",
   "layers": [
-    "map"
+    "map",
+    "tactile_map",
+    "tactile_model"
   ],
-  "widenFactor": 5
+  "overrideAll": {
+    "minzoom": 11
+  }
 }

@@ -141,7 +141,7 @@ class ExpandFilter extends DesugaringStep<LayerConfigJson> {
                 "Found a matching tagRendering to base a filter on, but this tagRendering does not contain any mappings"
             )
         }
-        const qtr = (<QuestionableTagRenderingConfigJson>tr)
+        const qtr = <QuestionableTagRenderingConfigJson>tr
         const options = qtr.mappings.map((mapping) => {
             let icon: string = mapping.icon?.["path"] ?? mapping.icon
             let emoji: string = undefined
@@ -149,12 +149,15 @@ class ExpandFilter extends DesugaringStep<LayerConfigJson> {
                 emoji = icon
                 icon = undefined
             }
-            let osmTags = TagUtils.Tag( mapping.if)
-            if(qtr.multiAnswer && osmTags instanceof Tag){
-                osmTags = new RegexTag(osmTags.key, new RegExp("^(.+;)?"+osmTags.value+"(;.+)$","is"))
+            let osmTags = TagUtils.Tag(mapping.if)
+            if (qtr.multiAnswer && osmTags instanceof Tag) {
+                osmTags = new RegexTag(
+                    osmTags.key,
+                    new RegExp("^(.+;)?" + osmTags.value + "(;.+)$", "is")
+                )
             }
-            if(mapping.alsoShowIf){
-                osmTags= new Or([osmTags, TagUtils.Tag(mapping.alsoShowIf)])
+            if (mapping.alsoShowIf) {
+                osmTags = new Or([osmTags, TagUtils.Tag(mapping.alsoShowIf)])
             }
 
             return <FilterConfigOptionJson>{

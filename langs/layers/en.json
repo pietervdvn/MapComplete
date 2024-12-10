@@ -1492,6 +1492,17 @@
             }
         },
         "tagRenderings": {
+            "automated": {
+                "mappings": {
+                    "0": {
+                        "then": "This is a manual bike washing station"
+                    },
+                    "1": {
+                        "then": "This is an automated bike wash"
+                    }
+                },
+                "question": "Is this bicycle cleaning service automated?"
+            },
             "bike_cleaning-charge": {
                 "mappings": {
                     "0": {
@@ -1515,6 +1526,17 @@
                 },
                 "question": "How much does it cost to use the cleaning service?",
                 "render": "Using the cleaning service costs {service:bicycle:cleaning:charge}"
+            },
+            "self_service": {
+                "mappings": {
+                    "0": {
+                        "then": "This cleaning service is self-service"
+                    },
+                    "1": {
+                        "then": "This cleaning service is operated by an employee"
+                    }
+                },
+                "question": "Is this cleaning service self-service?"
             }
         },
         "title": {
@@ -2669,15 +2691,6 @@
                 },
                 "question": "Does one have to pay to use this charging station?"
             },
-            "maxstay": {
-                "mappings": {
-                    "0": {
-                        "then": "No timelimit on leaving your vehicle here"
-                    }
-                },
-                "question": "What is the maximum amount of time one is allowed to stay here?",
-                "render": "One can stay at most <b>{canonical(maxstay)}</b>"
-            },
             "phone": {
                 "question": "What number can one call if there is a problem with this charging station?",
                 "render": "In case of problems, call <a href='tel:{phone}'>{phone}</a>"
@@ -3208,6 +3221,10 @@
             "1": {
                 "description": "A publicly visible clock mounted on a wall",
                 "title": "a wall-mounted clock"
+            },
+            "2": {
+                "description": "A publicly visible clock mounted directly on a wall",
+                "title": "a wall-mounted clock, mounted directly on a wall"
             }
         },
         "tagRenderings": {
@@ -3287,6 +3304,19 @@
                     }
                 },
                 "question": "Does this clock also display the humidity?"
+            },
+            "indoor": {
+                "override": {
+                    "mappings": {
+                        "0": {
+                            "then": "This clock is indoors"
+                        },
+                        "1": {
+                            "then": "This clock is outdoors"
+                        }
+                    },
+                    "question": "Is this clock indoors?"
+                }
             },
             "support": {
                 "mappings": {
@@ -3413,17 +3443,6 @@
                 },
                 "question": "Does this crossing have an island in the middle?"
             },
-            "crossing-is-zebra": {
-                "mappings": {
-                    "0": {
-                        "then": "This is a zebra crossing"
-                    },
-                    "1": {
-                        "then": "This is not a zebra crossing"
-                    }
-                },
-                "question": "Is this is a zebra crossing?"
-            },
             "crossing-minimap": {
                 "mappings": {
                     "0": {
@@ -3507,6 +3526,57 @@
                     }
                 },
                 "question": "Does this traffic light have vibration signals to aid crossing? (usually located at the bottom of the crossing button)"
+            },
+            "markings": {
+                "mappings": {
+                    "0": {
+                        "then": "This crossing has no markings"
+                    },
+                    "1": {
+                        "then": "This crossing has zebra markings"
+                    },
+                    "10": {
+                        "then": "This crossing has zebra markings in alternating colours"
+                    },
+                    "11": {
+                        "then": "This crossing has double zebra markings"
+                    },
+                    "12": {
+                        "then": "This crossing has pictograms on the road"
+                    },
+                    "13": {
+                        "then": "This crossing has lines on either side of the crossing, along with bars connecting them, with an interruption in every bar"
+                    },
+                    "14": {
+                        "then": "This crossing has double lines on either side of the crossing"
+                    },
+                    "2": {
+                        "then": "This crossing has markings of an unknown type"
+                    },
+                    "3": {
+                        "then": "This crossings has lines on either side of the crossing"
+                    },
+                    "4": {
+                        "then": "This crossing has lines on either side of the crossing, along with bars connecting them"
+                    },
+                    "5": {
+                        "then": "This crossing has dashed lines on either sides of the crossing"
+                    },
+                    "6": {
+                        "then": "This crossing has dotted lines on either sides of the crossing"
+                    },
+                    "7": {
+                        "then": "This crossing is marked by using a different coloured surface"
+                    },
+                    "8": {
+                        "then": "This crossing has lines on either side of the crossing, along with angled bars connecting them"
+                    },
+                    "9": {
+                        "then": "This crossing has zebra markings with an interruption in every bar"
+                    }
+                },
+                "question": "What kind of markings does this crossing have?",
+                "render": "This crossing has {crossing:markings} markings"
             }
         },
         "title": {
@@ -3920,6 +3990,57 @@
                 }
             },
             "render": "Way"
+        }
+    },
+    "cyclist_waiting_aid": {
+        "description": "Various pieces of infrastructure that aid cyclists while they wait at a traffic light.",
+        "name": "Cyclist Waiting Aids",
+        "presets": {
+            "0": {
+                "description": "A footrest, handrail or other aid, to improve comfort while waiting at traffic lights",
+                "title": "a cyclist waiting aid"
+            }
+        },
+        "tagRenderings": {
+            "direction": {
+                "mappings": {
+                    "0": {
+                        "then": "This waiting aid can be used when going forward on this way"
+                    },
+                    "1": {
+                        "then": "This waiting aid can be used when going backward on this way"
+                    }
+                },
+                "render": "This waiting aid can be used when going in {direction} direction"
+            },
+            "side": {
+                "mappings": {
+                    "0": {
+                        "then": "This waiting aid is located on the left side"
+                    },
+                    "1": {
+                        "then": "This waiting aid is located on the right side"
+                    },
+                    "2": {
+                        "then": "There are waiting aids on both sides of the road"
+                    }
+                },
+                "question": "On what side of the road is this located?"
+            },
+            "type": {
+                "mappings": {
+                    "0": {
+                        "then": "There is a board or peg to rest your foot on here"
+                    },
+                    "1": {
+                        "then": "There is a rail or a handle to hold on to here"
+                    }
+                },
+                "question": "What kind of components does this waiting aid have?"
+            }
+        },
+        "title": {
+            "render": "Cyclist Waiting Aid"
         }
     },
     "defibrillator": {
@@ -4833,6 +4954,20 @@
                     }
                 }
             },
+            "16": {
+                "options": {
+                    "0": {
+                        "question": "Has outdoor seating"
+                    }
+                }
+            },
+            "17": {
+                "options": {
+                    "0": {
+                        "question": "Has indoor seating"
+                    }
+                }
+            },
             "2": {
                 "options": {
                     "0": {
@@ -5410,6 +5545,26 @@
                     }
                 },
                 "question": "Does {title()} deliver food to your home?"
+            },
+            "drive-through": {
+                "mappings": {
+                    "0": {
+                        "then": "This fast-food restaurant has a drive-through"
+                    },
+                    "1": {
+                        "then": "This fast-food restaurant does not have a drive-through"
+                    }
+                },
+                "question": "Does this fast-food restaurant have a drive-through?"
+            },
+            "drive-through-opening_hours": {
+                "mappings": {
+                    "0": {
+                        "then": "The opening hours of the drive-through are the same as the restaurant"
+                    }
+                },
+                "question": "What are the opening hours of the drive-through?",
+                "render": "<h3>Drive-through opening hours</h3>{opening_hours_table(opening_hours:drive_through)}"
             },
             "friture-oil": {
                 "mappings": {
@@ -7529,20 +7684,6 @@
                 },
                 "question": "What is the name of the pharmacy?",
                 "render": "This pharmacy is called {name}"
-            },
-            "wheelchair": {
-                "mappings": {
-                    "0": {
-                        "then": "This pharmacy is easy to access on a wheelchair"
-                    },
-                    "1": {
-                        "then": "This pharmacy is hard to access on a wheelchair"
-                    },
-                    "2": {
-                        "then": "This pharmacy has limited access for wheelchair users"
-                    }
-                },
-                "question": "Is this pharmacy easy to access on a wheelchair?"
             }
         },
         "title": {
@@ -7905,6 +8046,15 @@
         "presets": {
             "0": {
                 "title": "a postbox"
+            },
+            "1": {
+                "title": "a postbox on a wall"
+            }
+        },
+        "tagRenderings": {
+            "operator": {
+                "question": "Who operates this postbox?",
+                "render": "This postbox is operated by <b>{operator}</b>"
             }
         },
         "title": {
@@ -8400,6 +8550,17 @@
                 },
                 "question": "Does this shop have a gluten free offering?"
             },
+            "indoor": {
+                "mappings": {
+                    "0": {
+                        "then": "This object is located indoors"
+                    },
+                    "1": {
+                        "then": "This object is located outdoors"
+                    }
+                },
+                "question": "Is this object located indoors?"
+            },
             "induction-loop": {
                 "mappings": {
                     "0": {
@@ -8505,6 +8666,15 @@
             },
             "mastodon": {
                 "question": "What is the Mastodon-handle of {title()}?"
+            },
+            "maxstay": {
+                "mappings": {
+                    "0": {
+                        "then": "There is no limit to the amount of time one can stay here"
+                    }
+                },
+                "question": "What is the maximum amount of time one is allowed to stay here?",
+                "render": "One can stay at most <b>{canonical(maxstay)}</b>"
             },
             "multilevels": {
                 "override": {
@@ -8618,6 +8788,17 @@
                     }
                 },
                 "question": "Is {title()} available all around the year?"
+            },
+            "seating": {
+                "mappings": {
+                    "0": {
+                        "then": "This place has outdoor seating"
+                    },
+                    "1": {
+                        "then": "This place has indoor seating"
+                    }
+                },
+                "question": "What kind of seating does {title()} have?"
             },
             "service:electricity": {
                 "mappings": {
@@ -10077,6 +10258,398 @@
                 "title": "a sports centre"
             }
         },
+        "tagRenderings": {
+            "sport_centre-sport": {
+                "mappings": {
+                    "0": {
+                        "then": "Nine-pin bowling"
+                    },
+                    "1": {
+                        "then": "Ten-pin bowling"
+                    },
+                    "10": {
+                        "then": "BASE jumping"
+                    },
+                    "100": {
+                        "then": "Skateboard"
+                    },
+                    "101": {
+                        "then": "Ski jumping"
+                    },
+                    "102": {
+                        "then": "Snooker"
+                    },
+                    "103": {
+                        "then": "Soccer"
+                    },
+                    "104": {
+                        "then": "Softball"
+                    },
+                    "105": {
+                        "then": "Motorcycle speedway"
+                    },
+                    "106": {
+                        "then": "Squash"
+                    },
+                    "107": {
+                        "then": "Sumo"
+                    },
+                    "108": {
+                        "then": "Surfing"
+                    },
+                    "109": {
+                        "then": "Swimming"
+                    },
+                    "11": {
+                        "then": "Baseball"
+                    },
+                    "110": {
+                        "then": "Table tennis"
+                    },
+                    "111": {
+                        "then": "Table soccer"
+                    },
+                    "112": {
+                        "then": "Taekwondo"
+                    },
+                    "113": {
+                        "then": "Tennis"
+                    },
+                    "114": {
+                        "then": "Teqball"
+                    },
+                    "115": {
+                        "then": "Toboggan"
+                    },
+                    "116": {
+                        "then": "Trampoline"
+                    },
+                    "117": {
+                        "then": "Ultimate frisbee"
+                    },
+                    "118": {
+                        "then": "Ultralight aviation"
+                    },
+                    "119": {
+                        "then": "Volleyball"
+                    },
+                    "12": {
+                        "then": "Basketball"
+                    },
+                    "120": {
+                        "then": "Wakeboarding"
+                    },
+                    "121": {
+                        "then": "Water polo"
+                    },
+                    "122": {
+                        "then": "Waterskiing"
+                    },
+                    "123": {
+                        "then": "Olympic weightlifting"
+                    },
+                    "124": {
+                        "then": "Windsurfing"
+                    },
+                    "125": {
+                        "then": "Wrestling"
+                    },
+                    "126": {
+                        "then": "Yoga"
+                    },
+                    "127": {
+                        "then": "Zurkhaneh sport"
+                    },
+                    "13": {
+                        "then": "Beachvolleyball"
+                    },
+                    "14": {
+                        "then": "Biathlon"
+                    },
+                    "15": {
+                        "then": "Cue sports"
+                    },
+                    "16": {
+                        "then": "BMX"
+                    },
+                    "17": {
+                        "then": "Bobsleigh"
+                    },
+                    "18": {
+                        "then": "Boules"
+                    },
+                    "19": {
+                        "then": "Bowls"
+                    },
+                    "2": {
+                        "then": "Aerobics"
+                    },
+                    "20": {
+                        "then": "Boxing"
+                    },
+                    "21": {
+                        "then": "Bullfighting"
+                    },
+                    "22": {
+                        "then": "Canadian football"
+                    },
+                    "23": {
+                        "then": "Canoe"
+                    },
+                    "24": {
+                        "then": "Chess"
+                    },
+                    "25": {
+                        "then": "Non-competitive diving"
+                    },
+                    "26": {
+                        "then": "Rock climbing"
+                    },
+                    "27": {
+                        "then": "Climbing Adventure"
+                    },
+                    "28": {
+                        "then": "Cockfighting"
+                    },
+                    "29": {
+                        "then": "Cricket"
+                    },
+                    "3": {
+                        "then": "American football"
+                    },
+                    "30": {
+                        "then": "CrossFit"
+                    },
+                    "31": {
+                        "then": "Croquet"
+                    },
+                    "32": {
+                        "then": "Curling"
+                    },
+                    "33": {
+                        "then": "Cycle Polo"
+                    },
+                    "34": {
+                        "then": "Cycling"
+                    },
+                    "35": {
+                        "then": "Dance"
+                    },
+                    "36": {
+                        "then": "Darts"
+                    },
+                    "37": {
+                        "then": "Dog agility"
+                    },
+                    "38": {
+                        "then": "Greyhound racing"
+                    },
+                    "39": {
+                        "then": "Dragon Boat"
+                    },
+                    "4": {
+                        "then": "Aikido"
+                    },
+                    "40": {
+                        "then": "Equestrianism"
+                    },
+                    "41": {
+                        "then": "Fencing"
+                    },
+                    "42": {
+                        "then": "Field hockey"
+                    },
+                    "43": {
+                        "then": "Fitness"
+                    },
+                    "44": {
+                        "then": "5 person soccer"
+                    },
+                    "45": {
+                        "then": "Floorball"
+                    },
+                    "46": {
+                        "then": "Four square"
+                    },
+                    "47": {
+                        "then": "Paragliding"
+                    },
+                    "48": {
+                        "then": "Futsal"
+                    },
+                    "49": {
+                        "then": "Gaelic games"
+                    },
+                    "5": {
+                        "then": "Archery"
+                    },
+                    "50": {
+                        "then": "Gaga ball"
+                    },
+                    "51": {
+                        "then": "Golf"
+                    },
+                    "52": {
+                        "then": "Gymnastics"
+                    },
+                    "53": {
+                        "then": "Handball"
+                    },
+                    "54": {
+                        "then": "Hapkido"
+                    },
+                    "55": {
+                        "then": "Hiking"
+                    },
+                    "56": {
+                        "then": "Horseshoes"
+                    },
+                    "57": {
+                        "then": "Horse racing"
+                    },
+                    "58": {
+                        "then": "Ice Hockey"
+                    },
+                    "59": {
+                        "then": "Ice skating"
+                    },
+                    "6": {
+                        "then": "Athletics"
+                    },
+                    "60": {
+                        "then": "Ice stock sport"
+                    },
+                    "61": {
+                        "then": "Judo"
+                    },
+                    "62": {
+                        "then": "Karate"
+                    },
+                    "63": {
+                        "then": "Kart racing"
+                    },
+                    "64": {
+                        "then": "Kickboxing"
+                    },
+                    "65": {
+                        "then": "Kitesurfing"
+                    },
+                    "66": {
+                        "then": "Korfball"
+                    },
+                    "67": {
+                        "then": "Krachtball"
+                    },
+                    "68": {
+                        "then": "Lacrosse"
+                    },
+                    "69": {
+                        "then": "Laser tag"
+                    },
+                    "7": {
+                        "then": "Australian rules football"
+                    },
+                    "70": {
+                        "then": "Martial arts"
+                    },
+                    "71": {
+                        "then": "Miniature golf"
+                    },
+                    "72": {
+                        "then": "Radio-controlled aircraft"
+                    },
+                    "73": {
+                        "then": "Motocross"
+                    },
+                    "74": {
+                        "then": "Motorsport"
+                    },
+                    "75": {
+                        "then": "Multiple kind of sports"
+                    },
+                    "76": {
+                        "then": "Netball"
+                    },
+                    "77": {
+                        "then": "Obstacle course"
+                    },
+                    "78": {
+                        "then": "Orienteering"
+                    },
+                    "79": {
+                        "then": "Paddle tennis"
+                    },
+                    "8": {
+                        "then": "Badminton"
+                    },
+                    "80": {
+                        "then": "Padel"
+                    },
+                    "81": {
+                        "then": "Paintball"
+                    },
+                    "82": {
+                        "then": "Parachuting"
+                    },
+                    "83": {
+                        "then": "Parkour"
+                    },
+                    "84": {
+                        "then": "Palota"
+                    },
+                    "85": {
+                        "then": "Pesäpallo"
+                    },
+                    "86": {
+                        "then": "Pickleball"
+                    },
+                    "87": {
+                        "then": "Pilates"
+                    },
+                    "88": {
+                        "then": "Pole dance"
+                    },
+                    "89": {
+                        "then": "Racquetball"
+                    },
+                    "9": {
+                        "then": "Bandy"
+                    },
+                    "90": {
+                        "then": "Radio-controlled car"
+                    },
+                    "91": {
+                        "then": "Roller skating"
+                    },
+                    "92": {
+                        "then": "Rowing"
+                    },
+                    "93": {
+                        "then": "Rugby league"
+                    },
+                    "94": {
+                        "then": "Rugby union"
+                    },
+                    "95": {
+                        "then": "Running"
+                    },
+                    "96": {
+                        "then": "Sailing"
+                    },
+                    "97": {
+                        "then": "Scuba diving"
+                    },
+                    "98": {
+                        "then": "Shooting"
+                    },
+                    "99": {
+                        "then": "Shot-put"
+                    }
+                },
+                "question": "What sports are played at this venue?",
+                "render": "Sports played here: {sport}"
+            }
+        },
         "title": {
             "render": "Sports centre"
         }
@@ -10091,12 +10664,19 @@
                         "then": "This is an escalator"
                     },
                     "1": {
-                        "then": "This is not an escalator"
+                        "then": "This is an escalator moving in the direction of the arrows"
                     },
                     "2": {
+                        "then": "This is a reversible escalator"
+                    },
+                    "3": {
+                        "then": "This is not an escalator"
+                    },
+                    "4": {
                         "then": "This is not an escalator"
                     }
-                }
+                },
+                "question": "Is this an escalator?"
             },
             "handrail": {
                 "mappings": {
@@ -10379,6 +10959,9 @@
                     },
                     "2": {
                         "then": "A panning camera"
+                    },
+                    "3": {
+                        "then": "A doorbell which might be turned on remotely at any time or by motion detection. These are typically <i>Smart</i>, internet-connected doorbells. Typical brands are Ring, Google Nest, Eufy, ..."
                     }
                 },
                 "question": "What kind of camera is this?"
@@ -10459,19 +11042,7 @@
                 "question": "In which geographical direction does this camera film?",
                 "render": "Films to a compass heading of {camera:direction}"
             },
-            "has_alpr": {
-                "mappings": {
-                    "0": {
-                        "then": "This is a camera without number plate recognition."
-                    },
-                    "1": {
-                        "then": "This is an ALPR (Automatic License Plate Reader)"
-                    }
-                },
-                "question": "Can this camera automatically detect license plates?",
-                "questionHint": "An <b>ALPR</b> (Automatic License Plate Reader) typically has two lenses and an array of infrared LEDS in between."
-            },
-            "is_indoor": {
+            "camera_is_indoor": {
                 "mappings": {
                     "0": {
                         "then": "This camera is located indoors"
@@ -10483,12 +11054,151 @@
                         "then": "This camera is probably located outdoors"
                     }
                 },
-                "question": "Is the public space surveilled by this camera an indoor or outdoor space?"
+                "question": "Is this camera located inside or outside?"
+            },
+            "has_alpr": {
+                "mappings": {
+                    "0": {
+                        "then": "This is a camera without number plate recognition."
+                    },
+                    "1": {
+                        "then": "This is an ALPR (Automatic License Plate Reader)"
+                    }
+                },
+                "question": "Can this camera automatically detect license plates?",
+                "questionHint": "An <b>ALPR</b> (Automatic License Plate Reader) typically has two lenses and an array of infrared LEDS in between."
             }
         },
         "title": {
             "render": "Surveillance Camera"
         }
+    },
+    "tactile_map": {
+        "description": "Layer showing tactile maps, which can be used by visually impaired people to navigate the city.",
+        "name": "Tactile Maps",
+        "presets": {
+            "0": {
+                "description": "A tactile map that can be read using touch. Unlike a tactile model, this is relatively flat and does not feature three-dimensional buildings and such.",
+                "title": "a tactile map"
+            }
+        },
+        "tagRenderings": {
+            "braille": {
+                "mappings": {
+                    "0": {
+                        "then": "This tactile map has braille text."
+                    },
+                    "1": {
+                        "then": "This tactile map does not have braille text."
+                    }
+                },
+                "question": "Is there braille text on this tactile map?"
+            },
+            "braille_languages": {
+                "render": {
+                    "special": {
+                        "question": "In which languages is the braille text on this tactile map?",
+                        "render_list_item": "This map has braille text in {language}",
+                        "render_single_language": "This map has braille text in {language}"
+                    }
+                }
+            },
+            "description": {
+                "freeform": {
+                    "placeholder": "e.g. Tactile map of the city center"
+                },
+                "question": "What does this tactile map show?",
+                "render": "Description: {blind:description:en}."
+            },
+            "embossed_letters": {
+                "mappings": {
+                    "0": {
+                        "then": "This tactile map has embossed letters."
+                    },
+                    "1": {
+                        "then": "This tactile map does not have embossed letters."
+                    }
+                },
+                "question": "Are there embossed letters on this tactile map?"
+            },
+            "embossed_letters_languages": {
+                "render": {
+                    "special": {
+                        "question": "In which languages are the embossed letters on this tactile map?",
+                        "render_list_item": "This map has embossed letters in {language}",
+                        "render_single_language": "This map has embossed letters in {language}"
+                    }
+                }
+            }
+        },
+        "title": "Tactile Map"
+    },
+    "tactile_model": {
+        "description": "Layer showing tactile models, three-dimensional models of the surrounding area.",
+        "name": "Tactile Models",
+        "presets": {
+            "0": {
+                "description": "A tactile model is a three-dimensional model of an area, allowing people to explore/see an area by touch.",
+                "title": "a tactile model"
+            }
+        },
+        "tagRenderings": {
+            "braille": {
+                "mappings": {
+                    "0": {
+                        "then": "There is a braille description."
+                    },
+                    "1": {
+                        "then": "There is no braille description."
+                    }
+                },
+                "question": "Is there a braille description?"
+            },
+            "braille_languages": {
+                "render": {
+                    "special": {
+                        "question": "In which languages is there a braille description?",
+                        "render_list_item": "This model has a braille description in {language()}",
+                        "render_single_language": "This model has a braille description in {language}"
+                    }
+                }
+            },
+            "description": {
+                "freeform": {
+                    "placeholder": "e.g. Tactile model of the city center"
+                },
+                "question": "What does this tactile model show?",
+                "render": "Description: {blind:description:en}."
+            },
+            "embossed_letters": {
+                "mappings": {
+                    "0": {
+                        "then": "There are embossed letters describing the model."
+                    },
+                    "1": {
+                        "then": "There are no embossed letters describing the model."
+                    }
+                },
+                "question": "Are there embossed letters describing the model?"
+            },
+            "embossed_letters_languages": {
+                "render": {
+                    "special": {
+                        "question": "In which languages are there embossed letters?",
+                        "render_list_item": "This model has embossed letters in {language()}",
+                        "render_single_language": "This model has embossed letters in {language}"
+                    }
+                }
+            },
+            "scale": {
+                "freeform": {
+                    "placeholder": "e.g. 1:1000"
+                },
+                "question": "What scale is the model?",
+                "render": "The scale of this model is {scale}."
+            }
+        },
+        "title": "Tactile Model"
     },
     "tertiary_education": {
         "name": "Colleges and universities",

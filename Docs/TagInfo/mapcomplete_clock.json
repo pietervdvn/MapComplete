@@ -46,8 +46,13 @@
     },
     {
       "key": "support",
-      "description": "Layer 'Clocks' shows support=wall_mounted with a fixed text, namely 'This clock is mounted on a wall' and allows to pick this as a default answer (in the mapcomplete.org theme 'Clocks')",
+      "description": "Layer 'Clocks' shows support=wall_mounted with a fixed text, namely 'This clock is mounted on a wall, usually through a support perpendicular to the wall' and allows to pick this as a default answer (in the mapcomplete.org theme 'Clocks')",
       "value": "wall_mounted"
+    },
+    {
+      "key": "support",
+      "description": "Layer 'Clocks' shows support=wall with a fixed text, namely 'This clock is mounted directly on a wall' and allows to pick this as a default answer (in the mapcomplete.org theme 'Clocks')",
+      "value": "wall"
     },
     {
       "key": "support",
@@ -80,18 +85,28 @@
       "value": "unorthodox"
     },
     {
+      "key": "indoor",
+      "description": "Layer 'Clocks' shows indoor=yes with a fixed text, namely 'This clock is indoors' and allows to pick this as a default answer (in the mapcomplete.org theme 'Clocks')",
+      "value": "yes"
+    },
+    {
+      "key": "indoor",
+      "description": "Layer 'Clocks' shows indoor=no with a fixed text, namely 'This clock is outdoors' and allows to pick this as a default answer (in the mapcomplete.org theme 'Clocks')",
+      "value": "no"
+    },
+    {
       "key": "visibility",
-      "description": "Layer 'Clocks' shows visibility=house with a fixed text, namely 'This clock is visible from about 5 meters away (small wall-mounted clock)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Clocks')",
+      "description": "Layer 'Clocks' shows visibility=house with a fixed text, namely 'This clock is visible from about 5 meters away (small wall-mounted clock)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Clocks') (This is only shown if indoor!=yes)",
       "value": "house"
     },
     {
       "key": "visibility",
-      "description": "Layer 'Clocks' shows visibility=street with a fixed text, namely 'This clock is visible from about 20 meters away (medium size billboard clock)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Clocks')",
+      "description": "Layer 'Clocks' shows visibility=street with a fixed text, namely 'This clock is visible from about 20 meters away (medium size billboard clock)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Clocks') (This is only shown if indoor!=yes)",
       "value": "street"
     },
     {
       "key": "visibility",
-      "description": "Layer 'Clocks' shows visibility=area with a fixed text, namely 'This clock is visible from more than 20 meters away (e.g. a church clock or station clock)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Clocks')",
+      "description": "Layer 'Clocks' shows visibility=area with a fixed text, namely 'This clock is visible from more than 20 meters away (e.g. a church clock or station clock)' and allows to pick this as a default answer (in the mapcomplete.org theme 'Clocks') (This is only shown if indoor!=yes)",
       "value": "area"
     },
     {

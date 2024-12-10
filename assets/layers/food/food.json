@@ -470,7 +470,7 @@
             "en": "Italian restaurant (which serves more than pasta and pizza)",
             "nl": "Italiaans restaurant (dat meer dan enkel pasta of pizza verkoopt)",
             "de": "Dies ist ein italienisches Restaurant (das mehr als nur Pasta und Pizza serviert)",
-            "es": "Restaurante italiano (que sirve más que pasta y pizza)",
+            "es": "Restaurante italiano (que sirve algo más que pasta y pizza)",
             "fr": "C'est un Restaurant Italien (qui sert plus que des pâtes et des pizzas)",
             "ca": "Restaurant italià (que serveix més que pasta i pizza)",
             "cs": "Toto je italská restaurace (která nabízí více než těstoviny a pizzu)"
@@ -625,7 +625,8 @@
         "en": "On what webpage is the menu published?",
         "de": "Auf welcher Webseite wird das Menü veröffentlicht?",
         "ca": "A quina web està publicat el menú?",
-        "es": "¿En qué página web se publica el menú?"
+        "es": "¿En qué página web se publica el menú?",
+        "uk": "На якій веб-сторінці опубліковано меню?"
       },
       "render": {
         "special": {
@@ -634,7 +635,8 @@
           "text": {
             "en": "Consult the menu",
             "de": "Das Menü einsehen",
-            "es": "Consultar el menú"
+            "es": "Consultar el menú",
+            "uk": "Зверніться до меню"
           }
         }
       },
@@ -801,6 +803,55 @@
           }
         }
       ]
+    },
+    {
+      "id": "drive-through",
+      "condition": "amenity=fast_food",
+      "question": {
+        "en": "Does this fast-food restaurant have a drive-through?",
+        "nl": "Heeft dit fastfoodrestaurant een drive-through?"
+      },
+      "mappings": [
+        {
+          "if": "drive_through=yes",
+          "then": {
+            "en": "This fast-food restaurant has a drive-through",
+            "nl": "Dit fastfoodrestaurant heeft een drive-through"
+          }
+        },
+        {
+          "if": "drive_through=no",
+          "then": {
+            "en": "This fast-food restaurant does not have a drive-through",
+            "nl": "Dit fastfoodrestaurant heeft geen drive-through"
+          }
+        }
+      ]
+    },
+    {
+      "id": "drive-through-opening_hours",
+      "condition": "drive_through=yes",
+      "question": {
+        "en": "What are the opening hours of the drive-through?",
+        "nl": "Wat zijn de openingsuren van de drive-through?"
+      },
+      "freeform": {
+        "key": "opening_hours:drive_through",
+        "type": "opening_hours"
+      },
+      "mappings": [
+        {
+          "if": "opening_hours:drive_through=",
+          "then": {
+            "en": "The opening hours of the drive-through are the same as the restaurant",
+            "nl": "De openingsuren van de drive-through zijn dezelfde als die van het restaurant"
+          }
+        }
+      ],
+      "render": {
+        "en": "<h3>Drive-through opening hours</h3>{opening_hours_table(opening_hours:drive_through)}",
+        "nl": "<h3>Openingsuren van de drive-through</h3>{opening_hours_table(opening_hours:drive_through)}"
+      }
     },
     {
       "question": {
@@ -1339,6 +1390,7 @@
     "lactose_free",
     "smoking",
     "service:electricity",
+    "seating",
     "dog-access",
     "internet",
     "internet-fee",
@@ -1486,6 +1538,8 @@
     "filters.sugar_free",
     "filters.gluten_free",
     "filters.lactose_free",
+    "outdoor_seating",
+    "indoor_seating",
     "accepts_cash",
     "accepts_cards",
     "dogs"

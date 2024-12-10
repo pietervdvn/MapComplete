@@ -1,0 +1,16 @@
+{
+  "id": "insects",
+  "title": {
+    "en": "Insect Hotels",
+    "nl": "Insectenhotels"
+  },
+  "description": {
+    "en": "Insect hotels provide shelter for insects.",
+    "nl": "Insectenhotels bieden onderdak aan insecten."
+  },
+  "icon": "./assets/layers/insect_hotel/insect_hotel.svg",
+  "layers": [
+    "insect_hotel",
+    "beehive"
+  ]
+}

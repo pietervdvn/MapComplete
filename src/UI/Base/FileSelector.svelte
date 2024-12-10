@@ -2,7 +2,8 @@
   import { createEventDispatcher, onDestroy } from "svelte"
   import { twMerge } from "tailwind-merge"
 
-  export let accept: string
+  export let accept: string | undefined
+  export let capture: string | undefined = undefined
   export let multiple: boolean = true
 
   const dispatcher = createEventDispatcher<{ submit: FileList }>()
@@ -98,5 +99,6 @@
     {multiple}
     name="file-input"
     type="file"
+    {capture}
   />
 </form>

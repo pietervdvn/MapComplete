@@ -53,10 +53,15 @@
    */
   export let mapProperties: undefined | Partial<MapProperties> = undefined
 
+  /**
+   * Reuse a point if the clicked location is within this amount of meter
+   */
+  export let snapTolerance: number = 5
+
   let map: UIEventSource<MlMap> = new UIEventSource<MlMap>(undefined)
   let adaptor = new MapLibreAdaptor(map, mapProperties)
 
-  const wayGeojson: Feature<LineString> = GeoOperations.forceLineString(osmWay.asGeoJson())
+  let wayGeojson: Feature<LineString> = GeoOperations.forceLineString(osmWay.asGeoJson())
   adaptor.location.setData(GeoOperations.centerpointCoordinatesObj(wayGeojson))
   adaptor.bounds.setData(BBox.get(wayGeojson).pad(2))
   adaptor.maxbounds.setData(BBox.get(wayGeojson).pad(2))
@@ -64,7 +69,7 @@
   state?.showCurrentLocationOn(map)
   new ShowDataLayer(map, {
     features: new StaticFeatureSource([wayGeojson]),
-    drawMarkers: false,
+    drawMarkers: true,
     layer: layer,
   })
 
@@ -85,8 +90,8 @@
     layer: splitpoint_style,
     features: splitPointsFS,
     onClick: (clickedFeature: Feature) => {
-      console.log("Clicked feature is", clickedFeature, splitPoints.data)
-      const i = splitPoints.data.findIndex((f) => f === clickedFeature)
+      // A 'splitpoint' was clicked, so we remove it again
+      const i = splitPoints.data.findIndex((f) => f.properties.id === clickedFeature.properties.id)
       if (i < 0) {
         return
       }
@@ -96,7 +101,48 @@
   })
   let id = 0
   adaptor.lastClickLocation.addCallbackD(({ lon, lat }) => {
-    const projected = GeoOperations.nearestPoint(wayGeojson, [lon, lat])
+    let projected: Feature<Point, { index: number; id?: number; reuse?: string }> =
+      GeoOperations.nearestPoint(wayGeojson, [lon, lat])
+
+    console.log("Added splitpoint", projected, id)
+
+    // We check the next and the previous point. If those are closer then the tolerance, we reuse those instead
+
+    const i = projected.properties.index
+    const p = projected.geometry.coordinates
+    const way = wayGeojson.geometry.coordinates
+    const nextPoint = <[number, number]>way[i + 1]
+    const nextDistance = GeoOperations.distanceBetween(nextPoint, p)
+    const previousPoint = <[number, number]>way[i]
+    const previousDistance = GeoOperations.distanceBetween(previousPoint, p)
+
+    console.log("ND", nextDistance, "PD", previousDistance)
+    if (nextDistance <= snapTolerance && previousDistance >= nextDistance) {
+      projected = {
+        type: "Feature",
+        geometry: {
+          type: "Point",
+          coordinates: nextPoint,
+        },
+        properties: {
+          index: i + 1,
+          reuse: "yes",
+        },
+      }
+    }
+    if (previousDistance <= snapTolerance && previousDistance < nextDistance) {
+      projected = {
+        type: "Feature",
+        geometry: {
+          type: "Point",
+          coordinates: previousPoint,
+        },
+        properties: {
+          index: i,
+          reuse: "yes",
+        },
+      }
+    }
 
     projected.properties["id"] = id
     id++

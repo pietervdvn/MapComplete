@@ -13,7 +13,6 @@
             "hardDelete": "Этот объект будет удалён из OpenStreetMap. Он может быть восстановлен опытным пользователем."
         },
         "isDeleted": "Этот объект удалён",
-        "loginToDelete": "Вы должны войти в профиль чтобы удалить объект",
         "notEnoughExperience": "Этот объект был создан кем-то другим",
         "onlyEditedByLoggedInUser": "Только вы редактировали этот объект – его можно безопасно удалять",
         "reasons": {
@@ -23,8 +22,6 @@
         "whyDelete": "Почему этот объект следует удалить?"
     },
     "favourite": {
-        "loginNeeded": "<h3>Вход</h3>Личная раскладка доступна только пользователям OpenStreetMap",
-        "panelIntro": "<h3>Ваша личная тема</h3>Активируйте свои любимые слои из официальных тем",
         "reload": "Обновить данные"
     },
     "favouritePoi": {
@@ -42,7 +39,6 @@
         },
         "add": {
             "addNew": "Добавить новую {category} здесь",
-            "confirmButton": "Добавить {category} сюда.<br><div class=\"alert\">Ваш вклад будет виден каждому</div>",
             "intro": "Вы нажали туда, где ещё нет данных.<br>",
             "layerNotEnabled": "Слой {layer} не включён. Включите этот слой чтобы добавить точку",
             "openLayerControl": "Открыть панель управления слоями",
@@ -76,14 +72,10 @@
             "title": "Скачать"
         },
         "error": "Что-то пошло не так",
-        "fewChangesBefore": "Пожалуйста, ответьте на несколько вопросов о существующих точках, прежде чем добавить новую точку.",
         "filterPanel": {
             "disableAll": "Отключить все",
             "enableAll": "Включить все"
         },
-        "getStartedLogin": "Войти с помощью OpenStreetMap, чтобы начать работу",
-        "getStartedNewAccount": " или <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">создать новую учетную запись</a>",
-        "goToInbox": "Открыть входящие сообщения",
         "layerSelection": {
             "title": "Выберите слои",
             "zoomInToSeeThisLayer": "Увеличьте масштаб, чтобы увидеть этот слой"
@@ -101,14 +93,10 @@
             "createYourOwnTheme": "Создать собственную тему MapComplete с чистого листа",
             "hiddenExplanation": "Эти темы доступны только тем, у кого есть ссылка. Вы обнаружили {hidden_discovered} из {total_hidden} скрытых тем.",
             "noSearch": "Показать все темы",
-            "requestATheme": "Если вам нужен особенный квест, запросите его в issue-трекере",
             "streetcomplete": "Другое, похожее приложение — <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>."
         },
-        "nameInlineQuestion": "Название {category} — $$$",
-        "noNameCategory": "{category} без имени",
         "noTagsSelected": "Теги не выбраны",
         "number": "номер",
-        "openStreetMapIntro": "<h3>Свободная карта</h3><p>Было бы здорово если бы была одна карта, которую каждый может свободно использовать и редактировать? Использовать как общее хранилище для всей гео-информации? Тогда, все сайты с разной, неполной и несовместимой информацией (которая обычно устарела) будут больше не нужны.</p><p><b><a href=\"https://OpenStreetMap.org\" target=\"_blank\">OpenStreetMap</a></b> такая карта. Данные карты могу быть свободно использованы (с <a href=\"https://osm.org/copyright\" target=\"_blank\">аннотацией и публикацией изменений к данным</a>). Более того, каждый может свободно добавлять информацию и исправлять ошибки. Этот сайт также использует OpenStreetMap. Все данные берутся оттуда, а ваши ответы и исправления отправляются обратно туда.</p><p>Огромное количество людей уже использует OpenStreetMap: <a href=\"https://organicmaps.app//\" target=\"_blank\">Organic Maps</a>, <a href=\"https://osmAnd.net\" target=\"_blank\">OsmAnd</a>, а также карты в Facebook, Instagram, Apple-карты и Bing-карты (частично) используют OpenStreetMap. Если вы что-то измените здесь, это также будет отражено в этих приложениях - после их следующего обновления!</p>",
         "opening_hours": {
             "closed_permanently": "Закрыто на неизвестный срок",
             "closed_until": "Закрыто до {date}",
@@ -122,17 +110,7 @@
             "ph_not_known": " ",
             "ph_open": "открыта"
         },
-        "osmLinkTooltip": "Посмотрите этот объект на OpenStreetMap чтобы увидеть его историю или отредактировать",
         "pickLanguage": "Выберите язык: ",
-        "questions": {
-            "emailIs": "Адрес электронной почты у {category}: <a href=\"mailto:{email}\" target=\"_blank\">{email}</a>",
-            "emailOf": "Какой адрес электронной почты у {category}?",
-            "phoneNumberIs": "Телефонный номер {category}: <a target=\"_blank\">{phone}</a>",
-            "phoneNumberOf": "Какой номер телефона у {category}?",
-            "websiteIs": "Сайт: <a href=\"{website}\" target=\"_blank\">{website}</a>",
-            "websiteOf": "Какой сайт у {category}?"
-        },
-        "readYourMessages": "Пожалуйста, прочитайте все ваши сообщения на сайте OpenStreetMap перед тем как добавлять новую точку.",
         "returnToTheMap": "Вернуться на карту",
         "save": "Сохранить",
         "search": {
@@ -150,7 +128,6 @@
             "fsUserbadge": "Включить кнопку входа в систему",
             "fsWelcomeMessage": "Показать всплывающее окно с приветствием и соответствующие вкладки",
             "intro": "<h3>Поделиться этой картой</h3> Поделитесь этой картой, скопировав ссылку ниже и отправив её друзьям и близким:",
-            "thanksForSharing": "Спасибо, что поделились!",
             "title": "Поделитесь этой картой"
         },
         "skip": "Пропустить вопрос",
@@ -172,7 +149,6 @@
             "tuesday": "Вторник",
             "wednesday": "Среда"
         },
-        "welcomeBack": "Вы вошли, с возвращением!",
         "welcomeExplanation": {
             "addNew": "Какой-то объект отсутствует? Используйте кнопку в левом нижнем углу, чтобы добавить новую точку интереса.",
             "general": "На этой карте вы можете видеть, редактировать и добавлять <i>точки интереса</i>. Увеличьте масштаб, чтобы увидеть POI, нажмите на одну из них, чтобы просмотреть или отредактировать информацию. Все данные получены и сохранены в OpenStreetMap, которые можно свободно использовать повторно."
@@ -186,9 +162,7 @@
     },
     "image": {
         "addPicture": "Добавить изображение",
-        "currentLicense": "Ваши изображения будут опубликованы под лицензией {license}",
         "doDelete": "Удалить изображение",
-        "dontDelete": "Отмена",
         "isDeleted": "Удалено",
         "nearby": {
             "noNearbyImages": "Близлежащих изображений не найдено",
@@ -196,19 +170,13 @@
         },
         "pleaseLogin": "Пожалуйста, войдите в систему, чтобы добавить изображение",
         "respectPrivacy": "Не фотографируйте людей и номерные знаки. Не загружайте снимки из Google Maps, Google Street View или из других источников с закрытой лицензией.",
-        "uploadDone": "Ваше изображение добавлено. Спасибо за помощь!",
-        "uploadFailed": "Не удалось загрузить изображение. Проверьте, есть ли у вас доступ в Интернет и разрешены ли сторонние API? Браузеры Brave и UMatrix могут блокировать их.",
-        "uploadMultipleDone": "{count} изображений добавлено. Спасибо за помощь!",
-        "uploadingMultiple": "Загружаем {count} изображений…",
-        "uploadingPicture": "Загружаем изображение…"
+        "uploadFailed": "Не удалось загрузить изображение. Проверьте, есть ли у вас доступ в Интернет и разрешены ли сторонние API? Браузеры Brave и UMatrix могут блокировать их."
     },
     "index": {
         "#": "Эти надписи отображаются над кнопками тем, когда тема не загружена",
-        "featuredThemeTitle": "Интересное на этой неделе",
         "intro": "MapComplete - это редактор OpenStreetMap, который показывает информацию с разделением по темам.",
         "learnMore": "Узнать больше",
         "logIn": "Войдите чтобы увидеть другие посещённые темы",
-        "pickTheme": "Выберите тему ниже, чтобы начать.",
         "title": "Добро пожаловать в MapComplete"
     },
     "move": {
@@ -219,22 +187,18 @@
         "affiliated_reviewer_warning": "(Отзыв лица, связанного с заведением)",
         "attribution": "Отзывы созданы на основе <a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a> и доступны под лицензией <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a>.",
         "i_am_affiliated": "<span>Я связан с этим объектом</span><br><span class=\"subtle\"> Отметьте если вы создатель, владелец, работник, …</span>",
-        "name_required": "Необходимо название, чтобы просматривать и создавать отзывы",
         "no_reviews_yet": "Пока нет отзывов. Оставьте первый отзыв и помогите открытым данным и бизнесу!",
         "saved": "<span class=\"thanks\"> Отзыв сохранен. Спасибо, что поделились! </span>",
         "saving_review": "Сохранение…",
         "title": "{count} отзыв(-ов)",
-        "title_singular": "Один отзыв",
-        "tos": "Создавая отзыв, вы соглашаетесь с <a href=\"https://mangrove.reviews/terms\" target=\"_blank\"> TOS и политикой конфиденциальности Mangrove.reviews </a>",
-        "write_a_comment": "Оставить отзыв…"
+        "tos": "Создавая отзыв, вы соглашаетесь с <a href=\"https://mangrove.reviews/terms\" target=\"_blank\"> TOS и политикой конфиденциальности Mangrove.reviews </a>"
     },
     "split": {
         "cancel": "Отмена",
         "hasBeenSplit": "Этот путь был разделён",
         "inviteToSplit": "Разделите дорогу на небольшие сегменты. Это позволит придать частям дороги разные свойства.",
         "loginToSplit": "Вы должны войти в профиль, чтобы разделить дорогу",
-        "split": "Разделить",
-        "splitTitle": "Выберите карту на которой хотите разделить дорогу"
+        "split": "Разделить"
     },
     "translations": {
         "activateButton": "Помогите перевести MapComplete"

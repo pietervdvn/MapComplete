@@ -12,6 +12,7 @@ This theme contains the following layers:
  - [barrier](../Layers/barrier.md)
  - [crossings](../Layers/crossings.md)
  - [bicycle_counter](../Layers/bicycle_counter.md)
+ - [cyclist_waiting_aid](../Layers/cyclist_waiting_aid.md)
 
 Available languages:
 

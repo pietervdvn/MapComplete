@@ -25,14 +25,45 @@
         }
     },
     "advertising": {
+        "description": "We vullen de informatie over de advertentie aan met de referentie, de operator en de verlichting",
         "name": "Reclame",
         "presets": {
+            "0": {
+                "description": "Een grote structuur voor reclame, meestal te vinden in gebieden met veel verkeer, zoals langs drukke wegen",
+                "title": "een reclamebord"
+            },
+            "1": {
+                "description": "Een grote structuur voor reclame, meestal te vinden in verkeersrijke gebieden zoals langs drukke wegen, bevestigd op een muur",
+                "title": "een reclamebord bevestigd aan een muur"
+            },
+            "10": {
+                "title": "een scherm gemonteerd op een schuilhokje"
+            },
             "11": {
                 "description": "Een stuk groot, weerbestendig textiel met opgedrukte reclameboodschap die permanent aan de muur hangt",
                 "title": "een spandoek"
             },
+            "12": {
+                "title": "eem reclamezuil"
+            },
+            "13": {
+                "description": "Gebruikt voor reclameborden, neonborden, logo's & toegangsborden voor instellingen",
+                "title": "een bord"
+            },
+            "14": {
+                "title": "een beeldhouwwerk"
+            },
             "15": {
                 "title": "een muurschildering"
+            },
+            "2": {
+                "title": "een vrijstaande posterbak"
+            },
+            "3": {
+                "title": "een aan de muur gemonteerde posterbak"
+            },
+            "4": {
+                "title": "een posterbak die deel uitmaakt van een bushokje"
             },
             "5": {
                 "description": "Een klein uithangbord voor buurtadvertenties, meestal gericht op voetgangers",
@@ -53,6 +84,48 @@
             }
         },
         "tagRenderings": {
+            "Sides": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit object heeft reclame aan een enkele zijde"
+                    },
+                    "1": {
+                        "then": "Dit object heeft reclame aan beide zijdes"
+                    }
+                },
+                "question": "Vanaf hoeveel kanten kun je naar reclame kijken?"
+            },
+            "animated": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Statisch</b>, toont altijd hetzelfde bericht"
+                    },
+                    "1": {
+                        "then": "Dit object heeft een ingebouwd <b>digitaal scherm</b> om prijzen of andere berichten weer te geven"
+                    },
+                    "2": {
+                        "then": "<b>Trivision</b> - het reclamebord bestaat uit verschillende driehoekige prisma's die regelmatig ronddraaien"
+                    },
+                    "3": {
+                        "then": "<b>Roterende</b> posters"
+                    },
+                    "4": {
+                        "then": "<b>Roteert</b> vanzelf"
+                    }
+                },
+                "question": "Doorloopt deze advertentie meerdere berichten?"
+            },
+            "historic": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit is een historisch reclamebord (een advertentie voor een bedrijf dat niet meer bestaat of een heel oud bord met erfgoedwaarde)"
+                    },
+                    "1": {
+                        "then": "Dit reclamebord heeft geen historische waarde (het bedrijf bestaat nog steeds en heeft geen erfgoedwaarde)"
+                    }
+                },
+                "question": "Is dit bord voor een bedrijf dat niet meer bestaat of niet meer wordt onderhouden?"
+            },
             "luminous_or_lit_advertising": {
                 "override": {
                     "+mappings": {
@@ -70,14 +143,26 @@
                     "1": {
                         "then": "Lokale informatie"
                     },
+                    "2": {
+                        "then": "Veiligheidsinformatie"
+                    },
+                    "3": {
+                        "then": "Verkiezingsadvertentie"
+                    },
                     "4": {
                         "then": "Informatie over cultuurevenementen zoals theaters, optredens, …"
                     },
                     "5": {
                         "then": "Boodschap van NGO-organisaties"
                     },
+                    "6": {
+                        "then": "Om je mening te geven"
+                    },
                     "7": {
                         "then": "Religieuze boodschap"
+                    },
+                    "8": {
+                        "then": "Financieringsteken"
                     },
                     "9": {
                         "then": "Een kaart"
@@ -95,11 +180,41 @@
             },
             "type": {
                 "mappings": {
+                    "0": {
+                        "then": "Dit is een reclamebord"
+                    },
+                    "1": {
+                        "then": "Dit is een bord"
+                    },
+                    "10": {
+                        "then": "Dit is een muurschildering"
+                    },
+                    "11": {
+                        "then": "Dit is betegeling - de reclame is op tegels geschilderd"
+                    },
+                    "12": {
+                        "then": "Dit is een reliëf"
+                    },
                     "2": {
                         "then": "Dit is een aanplakzuil"
                     },
                     "3": {
                         "then": "Dit is een vlag"
+                    },
+                    "4": {
+                        "then": "Dit is een posterbak"
+                    },
+                    "5": {
+                        "then": "Dit is een scherm"
+                    },
+                    "6": {
+                        "then": "Dit is een beeldhouwerk"
+                    },
+                    "7": {
+                        "then": "Dit is een teken"
+                    },
+                    "9": {
+                        "then": "Dit is een reclamezuil"
                     }
                 },
                 "render": "Dit is een {advertising}"
@@ -126,7 +241,62 @@
                     "then": "Spandoek"
                 },
                 "9": {
-                    "then": "Aanplakzuil"
+                    "then": "Reclamezuil"
+                }
+            }
+        }
+    },
+    "aerialway": {
+        "name": "Kabelbanen",
+        "pointRendering": {
+            "1": {
+                "label": {
+                    "render": "{name}"
+                }
+            }
+        },
+        "tagRenderings": {
+            "duration": {
+                "questionHint": "Dit is exclusief wachttijd.",
+                "render": "Een enkele reis duurt {duration} minuten"
+            },
+            "length": {
+                "render": "Deze kabelbaan is {_length:km} kilometer lang"
+            },
+            "occupancy": {
+                "render": "Er kunnen {aerialway:occupancy} mensen in een cabine"
+            },
+            "oneway": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze kabelbaan kan alleen naar de top worden genomen"
+                    },
+                    "1": {
+                        "then": "Deze kabelbaan kan in beide richtingen genomen worden"
+                    }
+                },
+                "question": "In welke richting kan deze kabelbaan genomen worden?"
+            },
+            "type": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit is een kabelbaan waar de gondel op dezelfde kabel naar boven en naar beneden gaat."
+                    },
+                    "1": {
+                        "then": "Dit is een kabellift waar de gondel in een continue circuit gaat"
+                    },
+                    "2": {
+                        "then": "Een open stoeltjeslift met zitjes om op te zitten."
+                    },
+                    "4": {
+                        "then": "Een sleeplift"
+                    },
+                    "5": {
+                        "then": "Een sleeplift met T-vormige armen voor twee passagiers"
+                    },
+                    "6": {
+                        "then": "Een sleeplift met L-vormige stangen voor één passagier"
+                    }
                 }
             }
         }
@@ -178,6 +348,53 @@
         },
         "title": {
             "render": "Ambulancestation"
+        }
+    },
+    "animal_shelter": {
+        "tagRenderings": {
+            "6": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieren worden hier gehouden totdat ze geadopteerd worden"
+                    },
+                    "1": {
+                        "then": "Dieren worden hier verzorgd voor de rest van hun leven"
+                    },
+                    "2": {
+                        "then": "Gewonde dieren worden hier gerevalideerd totdat ze terug in het wild vrijgelaten worden "
+                    }
+                },
+                "question": "Wat is het doel van dit dierenasiel?"
+            },
+            "boarded_animals": {
+                "mappings": {
+                    "0": {
+                        "then": "Honden worden hier opgevangen"
+                    },
+                    "1": {
+                        "then": "Katten worden hier opgevangen"
+                    },
+                    "2": {
+                        "then": "Paarden worden hier opgevangen"
+                    },
+                    "3": {
+                        "then": "Vogels worden hier opgevangen"
+                    },
+                    "4": {
+                        "then": "Wilde dieren worden hier opgevangen"
+                    }
+                },
+                "question": "Welke dieren worden hier opgevangen?",
+                "render": "{animal_shelter} worden hier opgevangen"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
+            "render": "Dierenasiel"
         }
     },
     "artwork": {
@@ -270,6 +487,13 @@
                     }
                 },
                 "question": "Is dit kunstwerk ook een zitbank?"
+            },
+            "doubles_as_memorial": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit kunstwerk doet ook dienst als herdenkingsmonument"
+                    }
+                }
             }
         },
         "title": {
@@ -994,6 +1218,17 @@
             }
         },
         "tagRenderings": {
+            "automated": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit is een handmatig fietsschoonmaakpunt"
+                    },
+                    "1": {
+                        "then": "Dit is een automatisch fietsschoonmaakpunt"
+                    }
+                },
+                "question": "Is dit fietsschoonmaakpunt geautomatiseerd?"
+            },
             "bike_cleaning-charge": {
                 "mappings": {
                     "0": {
@@ -1017,6 +1252,17 @@
                 },
                 "question": "Hoeveel kost het gebruik van het fietsschoonmaakpunt?",
                 "render": "Het gebruik van het fietsschoonmaakpunt kost {service:bicycle:cleaning:charge}"
+            },
+            "self_service": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit fietsschoonmaakpunt is zelfbediening"
+                    },
+                    "1": {
+                        "then": "Dit fietsschoonmaakpunt wordt bediend door aanwezig personeel"
+                    }
+                },
+                "question": "Is dit fietsschoonmaakpunt zelfbediening?"
             }
         },
         "title": {
@@ -2147,15 +2393,6 @@
                 },
                 "question": "Moet men betalen om dit oplaadpunt te gebruiken?"
             },
-            "maxstay": {
-                "mappings": {
-                    "0": {
-                        "then": "Geen maximum parkeertijd"
-                    }
-                },
-                "question": "Hoelang mag een voertuig hier blijven staan?",
-                "render": "De maximale parkeertijd hier is <b>{canonical(maxstay)}</b>"
-            },
             "phone": {
                 "question": "Wat is het telefoonnummer van de beheerder van dit oplaadpunt?",
                 "render": "Bij problemen, bel naar <a href='tel:{phone}'>{phone}</a>"
@@ -2662,6 +2899,10 @@
             "1": {
                 "description": "Een publiekelijk zichtbare klok aan een muur",
                 "title": "een klok aan een muur"
+            },
+            "2": {
+                "description": "Een publiekelijk zichtbare klok rechtstreeks bevestigd aan een muur",
+                "title": "een klok aan een muur, rechtstreeks bevestigd aan een muur"
             }
         },
         "tagRenderings": {
@@ -2741,6 +2982,19 @@
                     }
                 },
                 "question": "Toont deze klok ook de luchtvochtigheid?"
+            },
+            "indoor": {
+                "override": {
+                    "mappings": {
+                        "0": {
+                            "then": "Deze klok is binnen"
+                        },
+                        "1": {
+                            "then": "Deze klok is buiten"
+                        }
+                    },
+                    "question": "Is deze klok binnen?"
+                }
             },
             "support": {
                 "mappings": {
@@ -2856,17 +3110,6 @@
                 },
                 "question": "Heeft deze oversteekplaats een verkeerseiland in het midden?"
             },
-            "crossing-is-zebra": {
-                "mappings": {
-                    "0": {
-                        "then": "Dit is een zebrapad"
-                    },
-                    "1": {
-                        "then": "Dit is geen zebrapad"
-                    }
-                },
-                "question": "Is dit een zebrapad?"
-            },
             "crossing-minimap": {
                 "mappings": {
                     "0": {
@@ -2949,6 +3192,57 @@
                     }
                 },
                 "question": "Heeft dit verkeerslicht een element dat trilt om te helpen bij het oversteken? (meestal onderaan de oversteekknop geplaatst)"
+            },
+            "markings": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze oversteekplaats heeft geen markeringen"
+                    },
+                    "1": {
+                        "then": "Deze oversteekplaats heeft een zebramarkering"
+                    },
+                    "10": {
+                        "then": "Deze oversteekplaats heeft een zebramarkering in afwisselende kleuren"
+                    },
+                    "11": {
+                        "then": "Deze oversteekplaats heeft een dubbele zebramarkering"
+                    },
+                    "12": {
+                        "then": "Deze oversteekplaats heeft pictogrammen op de weg"
+                    },
+                    "13": {
+                        "then": "Deze oversteekplaats heeft lijnen aan beide kanten van de oversteekplaats, met strepen die ze verbinden, met een onderbreking van elke streep"
+                    },
+                    "14": {
+                        "then": "Deze oversteekplaats heeft dubbele lijnen aan beide kanten van de oversteekplaats"
+                    },
+                    "2": {
+                        "then": "Deze oversteekplaats heeft markeringen van een onbekend type"
+                    },
+                    "3": {
+                        "then": "Deze oversteekplaats heeft lijnen aan beide kanten van de oversteekplaats"
+                    },
+                    "4": {
+                        "then": "Deze oversteekplaats heeft lijnen aan beide kanten van de oversteekplaats, met strepen die ze verbinden"
+                    },
+                    "5": {
+                        "then": "Deze oversteekplaats heeft onderbroken lijnen aan beide kanten van de oversteekplaats"
+                    },
+                    "6": {
+                        "then": "Deze oversteekplaats heeft stippellijnen aan beide kanten van de oversteekplaats"
+                    },
+                    "7": {
+                        "then": "Deze oversteekplaats is gemarkeerd door een anders gekleurd wegdek"
+                    },
+                    "8": {
+                        "then": "Deze oversteekplaats heeft lijnen aan beide kanten van de oversteekplaats, met schuine strepen die ze verbinden"
+                    },
+                    "9": {
+                        "then": "Deze oversteekplaats heeft zebramarkeringen met een onderbreking van elke streep"
+                    }
+                },
+                "question": "Wat voor markering heeft deze oversteekplaats?",
+                "render": "Deze oversteekplaats heeft {crossing:markings} markeringen"
             }
         },
         "title": {
@@ -4462,6 +4756,26 @@
                 },
                 "question": "Levert {title()} aan huis?"
             },
+            "drive-through": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit fastfoodrestaurant heeft een drive-through"
+                    },
+                    "1": {
+                        "then": "Dit fastfoodrestaurant heeft geen drive-through"
+                    }
+                },
+                "question": "Heeft dit fastfoodrestaurant een drive-through?"
+            },
+            "drive-through-opening_hours": {
+                "mappings": {
+                    "0": {
+                        "then": "De openingsuren van de drive-through zijn dezelfde als die van het restaurant"
+                    }
+                },
+                "question": "Wat zijn de openingsuren van de drive-through?",
+                "render": "<h3>Openingsuren van de drive-through</h3>{opening_hours_table(opening_hours:drive_through)}"
+            },
             "friture-oil": {
                 "mappings": {
                     "0": {
@@ -5847,11 +6161,11 @@
                         "then": "Er zijn geen parkeerplaatsen voor gehandicapten"
                     },
                     "2": {
-                        "then": "Er zijn geen parkeerplaatsen voor gehandicapten"
+                        "then": "Er zijn geen parkeerplaatsen voor personen met een beperking"
                     }
                 },
-                "question": "Hoeveel parkeerplaatsen voor gehandicapten zijn er op deze parking?",
-                "render": "Er zijn {capacity:disabled} parkeerplaatsen voor gehandicapten"
+                "question": "Hoeveel parkeerplaatsen voor personen met een beperking zijn er op deze parking?",
+                "render": "Er zijn {capacity:disabled} parkeerplaatsen voor personen met een beperking"
             },
             "parking-type": {
                 "mappings": {
@@ -6026,20 +6340,6 @@
                 },
                 "question": "Wat is de naam van deze apotheek?",
                 "render": "Deze apotheek heet {name}"
-            },
-            "wheelchair": {
-                "mappings": {
-                    "0": {
-                        "then": "Deze apotheek is makkelijk te bereiken met een rolstoel"
-                    },
-                    "1": {
-                        "then": "Deze apotheek is moeilijk te bereiken met een rolstoel"
-                    },
-                    "2": {
-                        "then": "Deze apotheek is bereikbaar met een rolstoel, maar het is niet makkelijk"
-                    }
-                },
-                "question": "Is het mogelijk om deze apotheek te bereiken met een rolstoel?"
             }
         },
         "title": {
@@ -6305,6 +6605,9 @@
         "presets": {
             "0": {
                 "title": "een brievenbus"
+            },
+            "1": {
+                "title": "een brievenbus tegen een muur"
             }
         },
         "title": {
@@ -6692,6 +6995,17 @@
                 "editButtonAriaLabel": "Pas emailadres aan",
                 "question": "Wat is het e-mailadres van {title()}?"
             },
+            "indoor": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit object bevindt zich binnen"
+                    },
+                    "1": {
+                        "then": "Dit object bevindt zich buiten"
+                    }
+                },
+                "question": "Bevindt dit object zich binnen?"
+            },
             "induction-loop": {
                 "mappings": {
                     "0": {
@@ -6757,6 +7071,15 @@
                         "text": "Laatst gewijzigd op {_last_edit:timestamp} door {_last_edit:contributor} "
                     }
                 }
+            },
+            "maxstay": {
+                "mappings": {
+                    "0": {
+                        "then": "Er is geen limiet aan de tijd die je hier mag blijven"
+                    }
+                },
+                "question": "Wat is de maximale tijd die je hier mag blijven?",
+                "render": "Je mag hier maximaal <b>{canonical(maxstay)}</b> blijven"
             },
             "multilevels": {
                 "override": {
@@ -6870,6 +7193,17 @@
                     }
                 },
                 "question": "Is {title()} heel het jaar beschikbaar?"
+            },
+            "seating": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze plaats heeft zitplaatsen buiten"
+                    },
+                    "1": {
+                        "then": "Deze plaats heeft zitplaatsen binnen"
+                    }
+                },
+                "question": "Wat voor zitplaatsen heeft {title()}?"
             },
             "service:electricity": {
                 "mappings": {
@@ -7858,12 +8192,19 @@
                         "then": "Dit is een roltrap"
                     },
                     "1": {
-                        "then": "Dit is geen roltrap"
+                        "then": "Dit is een roltrap die beweegt in de richting van de pijlen"
                     },
                     "2": {
+                        "then": "Dit is een roltrap die van richting kan veranderen"
+                    },
+                    "3": {
+                        "then": "Dit is geen roltrap"
+                    },
+                    "4": {
                         "then": "Dit is geen roltrap"
                     }
-                }
+                },
+                "question": "Is dit een roltrap?"
             },
             "handrail": {
                 "mappings": {
@@ -8188,7 +8529,7 @@
                 "question": "In welke geografische richting filmt deze camera?",
                 "render": "Filmt in kompasrichting {camera:direction}"
             },
-            "is_indoor": {
+            "camera_is_indoor": {
                 "mappings": {
                     "0": {
                         "then": "Deze camera bevindt zich binnen"
@@ -8200,7 +8541,7 @@
                         "then": "Deze camera bevindt zich waarschijnlijk buiten"
                     }
                 },
-                "question": "Bevindt de bewaakte publieke ruimte camera zich binnen of buiten?"
+                "question": "Bevindt de camera zich binnen of buiten?"
             }
         },
         "title": {

@@ -3,7 +3,7 @@
 (Originally published as diary-entry)
 
 
-In my [little OpenStreetMap-editor](https://mapcomplete.org) translations are provided by contributors on [hosted weblate](https://hosted.weblate.org/projects/mapcomplete/), where thousands of text snippets have been translated already in the past year - which is awesome. 
+In my [little OpenStreetMap-editor](https://mapcomplete.org) translations are provided by contributors on [hosted weblate](https://translate.mapcomplete.org/projects/mapcomplete/), where thousands of text snippets have been translated already in the past year - which is awesome. 
 
 However, the language picker was a bit dry: it used to have codes for every language, e.g. `nl`, `en`, `ja`, 'pt_BR', 'zh_Hant'... Quite boring and not really user-friendly - but easy to implement.
 

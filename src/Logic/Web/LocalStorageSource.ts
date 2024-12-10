@@ -42,7 +42,7 @@ export class LocalStorageSource {
         }
         const source = new UIEventSource<string>(saved ?? defaultValue, "localstorage:" + key)
 
-        if(!Utils.runningFromConsole){
+        if (!Utils.runningFromConsole) {
             source.addCallback((data) => {
                 if (data === undefined || data === "" || data === null) {
                     localStorage.removeItem(key)

@@ -3,7 +3,8 @@
   "name": {
     "en": "Playground equipment",
     "de": "Spielgeräte",
-    "es": "Equipamiento del Parque Infantil"
+    "es": "Equipamiento del Parque Infantil",
+    "uk": "Обладнання для дитячих майданчиків"
   },
   "description": {
     "en": "Layer showing playground equipment",

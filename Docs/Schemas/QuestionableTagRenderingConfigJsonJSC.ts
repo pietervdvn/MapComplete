@@ -114,7 +114,14 @@ export default {
       ]
     },
     "labels": {
-      "description": "What labels should be applied on this tagRendering?\n\nA list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer\n\nSpecial values:\n- \"hidden\": do not show this tagRendering. Useful in it is used by e.g. an accordion\n- \"description\": this label is a description used in the search",
+      "description": "question: What labels should be applied on this tagRendering?\n\nA list of labels. These are strings that are used for various purposes, e.g. to only include a subset of the tagRenderings when reusing a layer\n\nSpecial values:\n- \"hidden\": do not show this tagRendering. Useful in it is used by e.g. an accordion\n- \"description\": this label is a description used in the search",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "onSoftDelete": {
+      "description": "question: What tags should be applied when the object is soft-deleted?",
       "type": "array",
       "items": {
         "type": "string"

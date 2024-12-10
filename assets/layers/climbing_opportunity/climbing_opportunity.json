@@ -160,7 +160,8 @@
   "snapName": {
     "en": "a wall, cliff or rock",
     "de": "eine Wand, eine Klippe oder einen Felsen",
-    "es": "una pared, un acantilado o una roca"
+    "es": "una pared, un acantilado o una roca",
+    "cs": "zeď, útes nebo skála"
   },
   "isCounted": false
 }

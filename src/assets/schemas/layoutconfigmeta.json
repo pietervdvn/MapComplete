@@ -768,6 +768,10 @@
           "then": "<b>cycleways_and_roads</b> (builtin) - All infrastructure that someone can cycle over, accompanied with questions about this infrastructure"
         },
         {
+          "if": "value=cyclist_waiting_aid",
+          "then": "<b>cyclist_waiting_aid</b> (builtin) - Various pieces of infrastructure that aid cyclists while they wait at a traffic light."
+        },
+        {
           "if": "value=defibrillator",
           "then": "<b>defibrillator</b> (builtin) - A layer showing defibrillators which can be used in case of emergency. This contains public defibrillators, but also defibrillators which might need staff to fetch the actual device"
         },
@@ -1170,6 +1174,14 @@
         {
           "if": "value=surveillance_camera",
           "then": "<b>surveillance_camera</b> (builtin) - This layer shows surveillance cameras and allows a contributor to update information and add new cameras"
+        },
+        {
+          "if": "value=tactile_map",
+          "then": "<b>tactile_map</b> (builtin) - Layer showing tactile maps, which can be used by visually impaired people to navigate the city."
+        },
+        {
+          "if": "value=tactile_model",
+          "then": "<b>tactile_model</b> (builtin) - Layer showing tactile models, three-dimensional models of the surrounding area."
         },
         {
           "if": "value=tertiary_education",
@@ -13464,6 +13476,10 @@
           "then": "cycleways_and_roads - All infrastructure that someone can cycle over, accompanied with questions about this infrastructure"
         },
         {
+          "if": "value=cyclist_waiting_aid",
+          "then": "cyclist_waiting_aid - Various pieces of infrastructure that aid cyclists while they wait at a traffic light."
+        },
+        {
           "if": "value=defibrillator",
           "then": "defibrillator - A layer showing defibrillators which can be used in case of emergency. This contains public defibrillators, but also defibrillators which might need staff to fetch the actual device"
         },
@@ -13866,6 +13882,14 @@
         {
           "if": "value=surveillance_camera",
           "then": "surveillance_camera - This layer shows surveillance cameras and allows a contributor to update information and add new cameras"
+        },
+        {
+          "if": "value=tactile_map",
+          "then": "tactile_map - Layer showing tactile maps, which can be used by visually impaired people to navigate the city."
+        },
+        {
+          "if": "value=tactile_model",
+          "then": "tactile_model - Layer showing tactile models, three-dimensional models of the surrounding area."
         },
         {
           "if": "value=tertiary_education",
@@ -35196,6 +35220,10 @@
           "then": "cycleways_and_roads - All infrastructure that someone can cycle over, accompanied with questions about this infrastructure"
         },
         {
+          "if": "value=cyclist_waiting_aid",
+          "then": "cyclist_waiting_aid - Various pieces of infrastructure that aid cyclists while they wait at a traffic light."
+        },
+        {
           "if": "value=defibrillator",
           "then": "defibrillator - A layer showing defibrillators which can be used in case of emergency. This contains public defibrillators, but also defibrillators which might need staff to fetch the actual device"
         },
@@ -35598,6 +35626,14 @@
         {
           "if": "value=surveillance_camera",
           "then": "surveillance_camera - This layer shows surveillance cameras and allows a contributor to update information and add new cameras"
+        },
+        {
+          "if": "value=tactile_map",
+          "then": "tactile_map - Layer showing tactile maps, which can be used by visually impaired people to navigate the city."
+        },
+        {
+          "if": "value=tactile_model",
+          "then": "tactile_model - Layer showing tactile models, three-dimensional models of the surrounding area."
         },
         {
           "if": "value=tertiary_education",

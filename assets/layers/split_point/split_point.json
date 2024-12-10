@@ -16,7 +16,15 @@
       "marker": [
         {
           "icon": "circle",
-          "color": "white"
+          "color": {
+            "render": "white",
+            "mappings": [
+              {
+                "if": "reuse=yes",
+                "then": "#cccccc"
+              }
+            ]
+          }
         },
         {
           "icon": "./assets/svg/scissors.svg"

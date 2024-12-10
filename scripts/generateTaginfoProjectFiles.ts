@@ -206,7 +206,7 @@ function main() {
         if (layout.hideFromOverview) {
             continue
         }
-        if(layout.id === "personal"){
+        if (layout.id === "personal") {
             continue
         }
         files.push(generateTagInfoEntry(layout))

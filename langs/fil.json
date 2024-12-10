@@ -11,13 +11,11 @@
         "delete": "Tanggalin",
         "explanations": {
             "hardDelete": "Ang tampók na ito ay tatanggalin sa OpenStreetMap. Maari itong ibalik ng mga bihasang tiga-ambag",
-            "selectReason": "Pumili ng dahilan kung bakit dapat tanggalin ang tampók na ito.",
             "softDelete": "Ang tampók na ito ay babaguhin at itatago sa application. <span class=\"subtle\">{reason}</span>"
         },
         "isDeleted": "Tinanggal na ang tampók na ito",
         "isntAPoint": "Mga bukó (point) lang ang maaring tanggalin, ang piniling tampók ay isang way, area o relation.",
         "loading": "Sinisiyasat ang mga katangian ng tampók para alamin kung maari itong tanggalin.",
-        "loginToDelete": "Dapat kang naka-logged in para matanggal ang bukó(point)",
         "notEnoughExperience": "Ang tampók na ito ay ginawa ng ibang tao.",
         "onlyEditedByLoggedInUser": "Ikaw ang patnugot ng tampók na ito, at maari mo itong tanggalin.",
         "partOfOthers": "Ang bukó (point) na ito ay bahagi ng ibang way o relation, at hindi maaring tanggalin.",
@@ -33,8 +31,6 @@
         "whyDelete": "Bakit dapat tanggalin ang tampók na 'to?"
     },
     "favourite": {
-        "loginNeeded": "<h3>Mag log-in</h3>Ang personal na pagkakaayos ay para lang sa mga gumagamit ng OpenStreetMap",
-        "panelIntro": "<h3>Pangsariling tikha</h3>Gawing aktibo ang mga paborito galing sa mga tikhang opisyal",
         "reload": "Muling pasanin ang datos"
     },
     "flyer": {
@@ -47,7 +43,6 @@
         "about": "Madaling i-edit at mag-dagdag sa OpenStreetMap gamit ang mga partikular na tikha",
         "add": {
             "addNew": "Dagdagan ng {category}",
-            "confirmButton": "Magdagdag ng {category}<br><div class=\"alert\">Makikita ng lahat ang idinagdag mo</div>",
             "disableFilters": "Huwag paganahin ang lahat ng filter",
             "disableFiltersExplanation": "May mga tampók na maaring nai-tago ng filter",
             "hasBeenImported": "Ang bukóng ito ay nai-angkat na",
@@ -66,12 +61,10 @@
         "attribution": {
             "followOnMastodon": "Subaybayan ang MapComplete sa Mastodon",
             "gotoSourceCode": "Tingnan ang source code",
-            "mapDataByOsm": "Datos ng mapa: OpenStreetMap",
             "openMapillary": "Buksan ang Mapillary dito",
             "seeOnMapillary": "Tingnan ang larawang ito sa Mapillary"
         },
         "back": "Bumalik",
-        "backToMap": "Bumalik sa mapa",
         "cancel": "Kanselahin",
         "confirm": "Kumpirmahin",
         "openTheMap": "Buksan ang mapa",
@@ -92,9 +85,6 @@
         "questionBox": {
             "answeredMultiple": "Sinagutan mo ang {answered} na tanong"
         },
-        "questions": {
-            "emailOf": "Ano ba ang email address ng {category}?"
-        },
         "returnToTheMap": "Bumalik sa mapa",
         "search": {
             "nothing": "Walang nahanap…"
@@ -104,9 +94,7 @@
         "question_opinion": "Kamusta ang iyong karanasan?",
         "reviewPlaceholder": "Ilarawan ang iyong karanasan…"
     },
-    "translations": {
-        "allMissing": "Wala pang pagsasalin"
-    },
+    "translations": {},
     "unknown": {
         "clear": "Tanggalin ang sagot"
     },

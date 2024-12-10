@@ -2,6 +2,77 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.47.11](https://github.com/pietervdvn/mapcomplete/compare/v0.47.10...v0.47.11) (2024-11-28)
+
+
+### Features
+
+* allow to disable questions (and to enable them again), fix [#256](https://github.com/pietervdvn/MapComplete/issues/256) ([93ebdd8](https://github.com/pietervdvn/mapcomplete/commits93ebdd8e1688d2424f0e67d03271d46b4c6640b9))
+
+
+### Bug Fixes
+
+* add prevent-defaults ([afce4cb](https://github.com/pietervdvn/mapcomplete/commitsafce4cb5ba6c77c3e076b5390640eb5ed505cf64))
+* allow to move items more then 50 meter if relocated ([f63f886](https://github.com/pietervdvn/mapcomplete/commitsf63f886ea57d5ca2fca352b455a4d833537422a5))
+* apply refactoring ([140e966](https://github.com/pietervdvn/mapcomplete/commits140e966de12689b374acc1ec7feaf69065bb1250))
+* attempt to fix image upload on stripped coordinates, see [#2202](https://github.com/pietervdvn/MapComplete/issues/2202) ([a94a7ec](https://github.com/pietervdvn/mapcomplete/commitsa94a7ecd7162b5f49f689d77c5e40219ae7fda05))
+* don't show all items if favourites is shown ([3292307](https://github.com/pietervdvn/mapcomplete/commits32923072081961b5ef9b899267be99b354265d59))
+* fix [#2254](https://github.com/pietervdvn/MapComplete/issues/2254); an image carousel with a different key would not show up due to caching ([c0b11a8](https://github.com/pietervdvn/mapcomplete/commitsc0b11a81e91db1c4eb130db1a722e20211f4ba5e))
+* fix [#2272](https://github.com/pietervdvn/MapComplete/issues/2272) : correct link ([44355f5](https://github.com/pietervdvn/mapcomplete/commits44355f566762a234942b678a21b8686341b2087b))
+* fix [#2278](https://github.com/pietervdvn/MapComplete/issues/2278) ([540e2c2](https://github.com/pietervdvn/mapcomplete/commits540e2c227e5327a501c8ab46fc8c56d0d4bc27bc))
+* fix [#2281](https://github.com/pietervdvn/MapComplete/issues/2281) ([8ef7af6](https://github.com/pietervdvn/mapcomplete/commits8ef7af613f20f265386ccb3d301c43ff49108cb1))
+
+
+### Theme improvements
+
+* **maps:** add tactile maps and tactile models to map theme, fix [#2277](https://github.com/pietervdvn/MapComplete/issues/2277) ([12926e1](https://github.com/pietervdvn/mapcomplete/commits12926e1e9cc3fef81811b6df011f83e2013d3ad5))
+* **stairs:** fix [#2248](https://github.com/pietervdvn/MapComplete/issues/2248) ([a0c63b2](https://github.com/pietervdvn/mapcomplete/commitsa0c63b273423bef6a3aba1106880015b135e4542))
+* **surveillance:** fix tagging ([208d7ec](https://github.com/pietervdvn/mapcomplete/commits208d7ecf4e4386ddbd9d58a71a0b6e4fcb26beaa))
+
+### [0.47.10](https://github.com/pietervdvn/mapcomplete/compare/v0.47.9...v0.47.10) (2024-11-14)
+
+
+### Bug Fixes
+
+* actually download all OSM-data when downloading as geojson or CSV ([05298c2](https://github.com/pietervdvn/mapcomplete/commits05298c2498bb908860f49f057b7466f4a8feb5ba))
+* don't show `maxstay=30 days` in velopark, this is actually 'unknown' ([d2237cf](https://github.com/pietervdvn/mapcomplete/commitsd2237cf26c1e3af034f0c3b72bd5ffa878ef1c64))
+* fix image upload ([f1106ad](https://github.com/pietervdvn/mapcomplete/commitsf1106ad4a816c9fb84a92974cb7d88e9aae7633b))
+
+
+### Theme improvements
+
+* **surveillance:** add doorbell as option ([88a4bd5](https://github.com/pietervdvn/mapcomplete/commits88a4bd561952b3d9d0cd8e4ebaab123b739909e8))
+
+### [0.47.9](https://github.com/pietervdvn/mapcomplete/compare/v0.47.8...v0.47.9) (2024-11-07)
+
+
+### Features
+
+* **filters:** show tags that are filtered on, deal with multi-answer tags to allow having this option with auto-filters ([69a6ec6](https://github.com/pietervdvn/mapcomplete/commits69a6ec6b0291bf1a5ec0bdcece605c7cf9f6ea0a))
+
+
+### Bug Fixes
+
+* better support for complicated regex tags ([b4817f7](https://github.com/pietervdvn/mapcomplete/commitsb4817f7a7faafffe716619a4d6908c013d58efd6))
+* build ([70612f1](https://github.com/pietervdvn/mapcomplete/commits70612f1c12ef69209205a29828694c16a9bbc177))
+* build by fixing licenses ([62936b9](https://github.com/pietervdvn/mapcomplete/commits62936b916b238f7ddf4edb841383d4e2cb1bf3da))
+* deal with dashes in the path ([5127609](https://github.com/pietervdvn/mapcomplete/commits51276091203d48cecb154271e69be0ce784ed01d))
+* fix build by having correct regextag.asJson() ([0dd96f4](https://github.com/pietervdvn/mapcomplete/commits0dd96f469b8ed7fd83da4543998b0b473bcc2206))
+* fix fediverse link ([3683780](https://github.com/pietervdvn/mapcomplete/commits3683780f9d19016ee0972cffb6ee55997a0b60c5))
+* hide items if the layer is disabled and favourites is enabled ([7bdd308](https://github.com/pietervdvn/mapcomplete/commits7bdd30879b870406cf5ebf3a23edfc3fbeb52a47))
+* increase timeout when opening a new POI ([e8e4ae1](https://github.com/pietervdvn/mapcomplete/commitse8e4ae1f47514b1b7769e701bdf5a7581c231aa8))
+* show favourites in loaded layers if favourites are enabled ([e65f61d](https://github.com/pietervdvn/mapcomplete/commitse65f61d2962eba8301afa51e27f0e085e8db2ff7))
+* when using Chronic, check the `aslong` condition before actually running instead of using it to reset the clock. ([10e9416](https://github.com/pietervdvn/mapcomplete/commits10e9416f8f1abe4cda334242821157bd7c486986))
+
+
+### Theme improvements
+
+* **education:** add images, move contact information up ([d77bb7e](https://github.com/pietervdvn/mapcomplete/commitsd77bb7e22525aef3b64ce3a9aa57a39351ebb441))
+* **memorial:** add filter on type of memorial, remove obsolete 'memorial:type=stolperstein' ([1415fcd](https://github.com/pietervdvn/mapcomplete/commits1415fcdfecb4be757ea9611b08a1b473e5d50be7))
+* **playgrounds:** don't show counts for small POI, only for playgrounds; make icons smaller ([f3335c9](https://github.com/pietervdvn/mapcomplete/commitsf3335c93711bd224ad3dfa611b95a40039596746))
+* **postboxes:** add contact info, add condition for post partner ([8fcc747](https://github.com/pietervdvn/mapcomplete/commits8fcc747370fab69e93fac2e00c1886261cb6e08f))
+* **postboxes:** add option to snap to wall and rendering, add "operator" to post boxes ([f7b5db9](https://github.com/pietervdvn/mapcomplete/commitsf7b5db9ec34676f834a3b2d8966649f09b34c1b1))
+
 ### [0.47.8](https://github.com/pietervdvn/mapcomplete/compare/v0.47.7...v0.47.8) (2024-11-01)
 
 

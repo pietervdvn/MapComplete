@@ -9,7 +9,7 @@
   export let open = new UIEventSource(false)
   export let dotsSize = `w-6 h-6`
   export let dotsPosition = `top-0 right-0`
-  export let hideBackground = false
+  export let hideBackground: boolean = false
   let menuPosition = ``
   if (dotsPosition.indexOf("left-0") >= 0) {
     menuPosition = "left-0"
@@ -50,7 +50,7 @@
   }
 
   :global(.dots-menu > path) {
-    fill: var(--interactive-background);
+    fill: var(--button-background-hover);
     transition: fill 350ms linear;
     cursor: pointer;
   }

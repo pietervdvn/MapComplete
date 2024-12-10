@@ -2223,11 +2223,6 @@
       "value": "bicycle_wash"
     },
     {
-      "key": "amenity",
-      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bike cleaning service showing features with this tag",
-      "value": "bike_wash"
-    },
-    {
       "key": "id",
       "description": "Layer 'Bike cleaning service' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
     },
@@ -2253,36 +2248,56 @@
     },
     {
       "key": "service:bicycle:cleaning:charge",
-      "description": "Layer 'Bike cleaning service' shows and asks freeform values for key 'service:bicycle:cleaning:charge' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if amenity!=bike_wash & amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)"
+      "description": "Layer 'Bike cleaning service' shows and asks freeform values for key 'service:bicycle:cleaning:charge' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)"
     },
     {
       "key": "service:bicycle:cleaning:fee",
-      "description": "Layer 'Bike cleaning service' shows service:bicycle:cleaning:fee=no with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if amenity!=bike_wash & amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)",
+      "description": "Layer 'Bike cleaning service' shows service:bicycle:cleaning:fee=no with a fixed text, namely 'The cleaning service is free to use' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)",
       "value": "no"
     },
     {
       "key": "service:bicycle:cleaning:fee",
-      "description": "Layer 'Bike cleaning service' shows service:bicycle:cleaning:fee=yes & service:bicycle:cleaning:charge= with a fixed text, namely 'Free to use' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if amenity!=bike_wash & amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)",
+      "description": "Layer 'Bike cleaning service' shows service:bicycle:cleaning:fee=yes & service:bicycle:cleaning:charge= with a fixed text, namely 'Free to use' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)",
       "value": "yes"
     },
     {
       "key": "service:bicycle:cleaning:charge",
-      "description": "Layer 'Bike cleaning service' shows service:bicycle:cleaning:fee=yes & service:bicycle:cleaning:charge= with a fixed text, namely 'Free to use' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') Picking this answer will delete the key service:bicycle:cleaning:charge. (This is only shown if amenity!=bike_wash & amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)",
+      "description": "Layer 'Bike cleaning service' shows service:bicycle:cleaning:fee=yes & service:bicycle:cleaning:charge= with a fixed text, namely 'Free to use' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') Picking this answer will delete the key service:bicycle:cleaning:charge. (This is only shown if amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+)",
       "value": ""
     },
     {
       "key": "charge",
-      "description": "Layer 'Bike cleaning service' shows and asks freeform values for key 'charge' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if amenity=bike_wash | amenity=bicycle_wash)"
+      "description": "Layer 'Bike cleaning service' shows and asks freeform values for key 'charge' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if amenity=bicycle_wash)"
     },
     {
       "key": "fee",
-      "description": "Layer 'Bike cleaning service' shows fee=no with a fixed text, namely 'This cleaning service is free to use' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if amenity=bike_wash | amenity=bicycle_wash)",
+      "description": "Layer 'Bike cleaning service' shows fee=no with a fixed text, namely 'This cleaning service is free to use' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if amenity=bicycle_wash)",
       "value": "no"
     },
     {
       "key": "fee",
-      "description": "Layer 'Bike cleaning service' shows fee=yes with a fixed text, namely 'There is a fee to use this cleaning service' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if amenity=bike_wash | amenity=bicycle_wash)",
+      "description": "Layer 'Bike cleaning service' shows fee=yes with a fixed text, namely 'There is a fee to use this cleaning service' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if amenity=bicycle_wash)",
       "value": "yes"
+    },
+    {
+      "key": "automated",
+      "description": "Layer 'Bike cleaning service' shows automated=no with a fixed text, namely 'This is a manual bike washing station' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if amenity=bicycle_wash)",
+      "value": "no"
+    },
+    {
+      "key": "automated",
+      "description": "Layer 'Bike cleaning service' shows automated=yes with a fixed text, namely 'This is an automated bike wash' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if amenity=bicycle_wash)",
+      "value": "yes"
+    },
+    {
+      "key": "self_service",
+      "description": "Layer 'Bike cleaning service' shows self_service=yes with a fixed text, namely 'This cleaning service is self-service' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if amenity=bicycle_wash)",
+      "value": "yes"
+    },
+    {
+      "key": "self_service",
+      "description": "Layer 'Bike cleaning service' shows self_service=no with a fixed text, namely 'This cleaning service is operated by an employee' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if amenity=bicycle_wash)",
+      "value": "no"
     },
     {
       "key": "amenity",

@@ -178,7 +178,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
         this.map = new UIEventSource<MlMap>(undefined)
         const geolocationState = new GeoLocationState()
         const initial = new InitialMapPositioning(layout, geolocationState)
-        this.mapProperties = new MapLibreAdaptor(this.map, initial)
+        this.mapProperties = new MapLibreAdaptor(this.map, initial, { correctClick: 20 })
 
         this.featureSwitchIsTesting = this.featureSwitches.featureSwitchIsTesting
         this.featureSwitchUserbadge = this.featureSwitches.featureSwitchEnableLogin
@@ -445,10 +445,13 @@ export default class ThemeViewState implements SpecialVisualizationState {
         this.perLayer.forEach((fs, layerName) => {
             const doShowLayer = this.mapProperties.zoom.map(
                 (z) => {
-                    if ((fs.layer.isDisplayed?.data ?? true) && z >= (fs.layer.layerDef?.minzoom ?? 0)){
+                    if (
+                        (fs.layer.isDisplayed?.data ?? true) &&
+                        z >= (fs.layer.layerDef?.minzoom ?? 0)
+                    ) {
                         return true
                     }
-                    if(this.layerState.globalFilters.data.some(f => f.forceShowOnMatch)){
+                    if (this.layerState.globalFilters.data.some((f) => f.forceShowOnMatch)) {
                         return true
                     }
                     return false
@@ -470,7 +473,10 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 fs.layer,
                 fs,
                 (id) => this.featureProperties.getStore(id),
-                this.layerState.globalFilters
+                this.layerState.globalFilters,
+                undefined,
+                this.mapProperties.zoom,
+                this.selectedElement
             )
             filteringFeatureSource.set(layerName, filtered)
 
@@ -551,6 +557,18 @@ export default class ThemeViewState implements SpecialVisualizationState {
         })
     }
 
+    private setSelectedElement(feature: Feature) {
+        const current = this.selectedElement.data
+        if (
+            current?.properties?.id !== undefined &&
+            current.properties.id === feature.properties.id
+        ) {
+            console.log("Not setting selected, same id", current, feature)
+            return // already set
+        }
+        this.selectedElement.setData(feature)
+    }
+
     /**
      * Selects the feature that is 'i' closest to the map center
      */
@@ -567,13 +585,11 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 if (!toSelect) {
                     return
                 }
-                this.selectedElement.setData(undefined)
-                this.selectedElement.setData(toSelect)
+                this.setSelectedElement(toSelect)
             })
             return
         }
-        this.selectedElement.setData(undefined)
-        this.selectedElement.setData(toSelect)
+        this.setSelectedElement(toSelect)
     }
 
     private initHotkeys() {
@@ -989,26 +1005,38 @@ export default class ThemeViewState implements SpecialVisualizationState {
             this.userRelatedState.recentlyVisitedSearch.add(r)
         })
 
+        this.mapProperties.lastClickLocation.addCallbackD((lastClick) => {
+            if (lastClick.mode !== "left" || !lastClick.nearestFeature) {
+                return
+            }
+            const f = lastClick.nearestFeature
+            this.setSelectedElement(f)
+        })
+
         this.userRelatedState.showScale.addCallbackAndRun((showScale) => {
             this.mapProperties.showScale.set(showScale)
         })
 
-
-        this.layerState.filteredLayers.get("favourite")?.isDisplayed?.addCallbackAndRunD(favouritesShown => {
-            const oldGlobal = this.layerState.globalFilters.data
-            const key = "show-favourite"
-            if(favouritesShown){
-                this.layerState.globalFilters.set([...oldGlobal, {
-                    forceShowOnMatch: true,
-                    id:key,
-                    osmTags: new Tag("_favourite","yes"),
-                    state: 0,
-                    onNewPoint: undefined
-                }])
-            }else{
-                this.layerState.globalFilters.set(oldGlobal.filter(gl => gl.id !== key))
-            }
-        })
+        this.layerState.filteredLayers
+            .get("favourite")
+            ?.isDisplayed?.addCallbackAndRunD((favouritesShown) => {
+                const oldGlobal = this.layerState.globalFilters.data
+                const key = "show-favourite"
+                if (favouritesShown) {
+                    this.layerState.globalFilters.set([
+                        ...oldGlobal,
+                        {
+                            forceShowOnMatch: true,
+                            id: key,
+                            osmTags: new Tag("_favourite", "yes"),
+                            state: 0,
+                            onNewPoint: undefined,
+                        },
+                    ])
+                } else {
+                    this.layerState.globalFilters.set(oldGlobal.filter((gl) => gl.id !== key))
+                }
+            })
 
         new ThemeViewStateHashActor(this)
         new MetaTagging(this)
@@ -1033,7 +1061,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
     /**
      * Searches the appropriate layer - will first try if a special layer matches; if not, a normal layer will be used by delegating to the theme
      */
-    public getMatchingLayer(properties: Record<string, string>) {
+    public getMatchingLayer(properties: Record<string, string>): LayerConfig | undefined {
         const id = properties.id
 
         if (id.startsWith("summary_")) {

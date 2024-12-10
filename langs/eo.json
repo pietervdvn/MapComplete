@@ -25,7 +25,6 @@
         },
         "loading": "Ŝargante…",
         "loginWithOpenStreetMap": "Saluti per OpenStreetMap",
-        "noNameCategory": "{category} sen nomo",
         "openTheMap": "Malfermi la mapon",
         "opening_hours": {
             "openTill": "ĝis",
@@ -41,9 +40,6 @@
             "versionInfo": "v{version} - generita je {date}"
         },
         "pickLanguage": "Elektu lingvon: ",
-        "questions": {
-            "websiteIs": "Retejo: <a href=\"{website}\" target=\"_blank\">{website}</a>"
-        },
         "returnToTheMap": "Reen al la mapo",
         "save": "Konservi",
         "search": {
@@ -77,23 +73,18 @@
         "wikipedia": {
             "loading": "Ŝargante Vikipedion…",
             "noResults": "Nenio troviĝis pri <i>{search}</i>",
-            "searchWikidata": "Serĉi Vikidatumojn",
-            "wikipediaboxTitle": "Vikipedio"
+            "searchWikidata": "Serĉi Vikidatumojn"
         }
     },
     "image": {
         "addPicture": "Aldoni bildon",
-        "dontDelete": "Nuligi",
-        "pleaseLogin": "Bonvolu saluti por aldoni bildon",
-        "uploadingMultiple": "Alŝutante {count} bildojn…",
-        "uploadingPicture": "Alŝutante vian bildon…"
+        "pleaseLogin": "Bonvolu saluti por aldoni bildon"
     },
     "index": {
         "title": "Bonvenon al MapComplete"
     },
     "reviews": {
         "saving_review": "Konservante…",
-        "title": "{count} recenzoj",
-        "title_singular": "Unu recenzo"
+        "title": "{count} recenzoj"
     }
 }

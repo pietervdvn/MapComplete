@@ -15,6 +15,8 @@ A layer showing facilities where one can clean their bike
   - [images](#images)
   - [bike_cleaning-service_bicycle_cleaning_charge](#bike_cleaning-service_bicycle_cleaning_charge)
   - [bike_cleaning-charge](#bike_cleaning-charge)
+  - [automated](#automated)
+  - [self_service](#self_service)
   - [leftover-questions](#leftover-questions)
   - [move-button](#move-button)
   - [delete-button](#delete-button)
@@ -36,11 +38,10 @@ The following options to create new points are included:
 Elements must match **any** of the following expressions:
 
  - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbicycle_wash' target='_blank'>bicycle_wash</a>
- - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbike_wash' target='_blank'>bike_wash</a>
  - <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning' target='_blank'>service:bicycle:cleaning</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning%3Dyes' target='_blank'>yes</a>
  - <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning' target='_blank'>service:bicycle:cleaning</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning%3Ddiy' target='_blank'>diy</a>
 
-[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22amenity%22%3D%22bicycle_wash%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22amenity%22%3D%22bike_wash%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22service%3Abicycle%3Acleaning%22%3D%22yes%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22service%3Abicycle%3Acleaning%22%3D%22diy%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28%20%20%20%20nwr%5B%22amenity%22%3D%22bicycle_wash%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22service%3Abicycle%3Acleaning%22%3D%22yes%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%20%20%20%20nwr%5B%22service%3Abicycle%3Acleaning%22%3D%22diy%22%5D%28%7B%7Bbbox%7D%7D%29%3B%0A%29%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
 ## Supported attributes
 
@@ -50,6 +51,8 @@ Elements must match **any** of the following expressions:
 -----|-----|----- |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/service:bicycle:cleaning:charge#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/service%3Abicycle%3Acleaning%3Acharge/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [service:bicycle:cleaning:charge](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning:charge) | [string](../SpecialInputElements.md#string) |  |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/charge#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/charge/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [charge](https://wiki.openstreetmap.org/wiki/Key:charge) | [string](../SpecialInputElements.md#string) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/automated#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/automated/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [automated](https://wiki.openstreetmap.org/wiki/Key:automated) | Multiple choice | [no](https://wiki.openstreetmap.org/wiki/Tag:automated%3Dno) [yes](https://wiki.openstreetmap.org/wiki/Tag:automated%3Dyes) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/self_service#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/self_service/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [self_service](https://wiki.openstreetmap.org/wiki/Key:self_service) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:self_service%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:self_service%3Dno) |
 
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
@@ -64,7 +67,7 @@ The question is `How much does it cost to use the cleaning service?`
  -  *The cleaning service is free to use* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning:fee' target='_blank'>service:bicycle:cleaning:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning:fee%3Dno' target='_blank'>no</a>
  -  *Free to use* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:cleaning:fee' target='_blank'>service:bicycle:cleaning:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:cleaning:fee%3Dyes' target='_blank'>yes</a> & service:bicycle:cleaning:charge=. _This option cannot be chosen as answer_
 
-This tagrendering is only visible in the popup if the following condition is met: amenity!=bike_wash & amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+
+This tagrendering is only visible in the popup if the following condition is met: amenity!=bicycle_wash & service:bicycle:cleaning!=no & service:bicycle:cleaning~.+
 
 ### bike_cleaning-charge
 
@@ -74,7 +77,25 @@ The question is `How much does it cost to use the cleaning service?`
  -  *This cleaning service is free to use* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a>
  -  *There is a fee to use this cleaning service* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>
 
-This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbike_wash' target='_blank'>bike_wash</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbicycle_wash' target='_blank'>bicycle_wash</a>
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbicycle_wash' target='_blank'>bicycle_wash</a>
+
+### automated
+
+The question is `Is this bicycle cleaning service automated?`
+
+ -  *This is a manual bike washing station* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:automated' target='_blank'>automated</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:automated%3Dno' target='_blank'>no</a>
+ -  *This is an automated bike wash* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:automated' target='_blank'>automated</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:automated%3Dyes' target='_blank'>yes</a>
+
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbicycle_wash' target='_blank'>bicycle_wash</a>
+
+### self_service
+
+The question is `Is this cleaning service self-service?`
+
+ -  *This cleaning service is self-service* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:self_service' target='_blank'>self_service</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:self_service%3Dyes' target='_blank'>yes</a>
+ -  *This cleaning service is operated by an employee* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:self_service' target='_blank'>self_service</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:self_service%3Dno' target='_blank'>no</a>
+
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbicycle_wash' target='_blank'>bicycle_wash</a>
 
 ### leftover-questions
 

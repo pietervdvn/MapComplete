@@ -1,6 +1,6 @@
 {
   "name": "mapcomplete",
-  "version": "0.47.8",
+  "version": "0.47.11",
   "repository": "https://github.com/pietervdvn/MapComplete",
   "description": "A small website to edit OSM easily",
   "bugs": "https://github.com/pietervdvn/MapComplete/issues",
@@ -18,6 +18,7 @@
     "oauth_landing": null,
     "oauth_credentials": {
       "#": "This client-id is registered by 'MapComplete' on OpenStreetMap.org",
+      "#fork": "For a fork, you will need to register your own key at https://www.openstreetmap.org/oauth2/applications ; redirect url is `https://<your-domain>/land.html`, permissions: `read_user_preferences`, `modify preferences`, `modify the map`. For GPS-traces: both, `modify-notes` if you want the notes-theme to work.",
       "oauth_client_id": "K93H1d8ve7p-tVLE1ZwsQ4lAFLQk8INx5vfTLMu5DWk",
       "oauth_secret": "NBWGhWDrD3QDB35xtVuxv4aExnmIt4FA_WgeLtwxasg",
       "url": "https://www.openstreetmap.org",
@@ -38,10 +39,12 @@
     "error_server": "https://report.mapcomplete.org/report",
     "api_keys": {
       "#": "Various API-keys for various services. Feel free to reuse those in another MapComplete-hosted version",
+      "#fork": "Not bound to a domain; can be reused",
       "imgur": "7070e7167f0a25a",
       "mapillary_v4": "MLY|4441509239301885|b40ad2d3ea105435bd40c7e76993ae85"
     },
     "panoramax": {
+      "#fork": "Not bound to a domain; can be reused",
       "url": "https://panoramax.mapcomplete.org",
       "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnZW92aXNpbyIsInN1YiI6IjU5ZjgzOGI0LTM4ZjAtNDdjYi04OWYyLTM3NDQ3MWMxNTUxOCJ9.0rBioZS_48NTjnkIyN9497c3fQdTqtGgH1HDqlz1bWs",
       "sequence": "6e702976-580b-419c-8fb3-cf7bd364e6f8",
@@ -62,6 +65,7 @@
     "photonEndpoint": "https://photon.komoot.io/",
     "jsonld-proxy": "https://lod.mapcomplete.org/extractgraph?url={url}",
     "protomaps": {
+      "#fork": "Bound to https://mapcomplete.org; get your own at https://protomaps.com/",
       "api-key": "2af8b969a9e8b692",
       "endpoint": "https://api.protomaps.com/tiles/",
       "styles": [
@@ -74,7 +78,7 @@
     }
   },
   "scripts": {
-    "init": "npm ci && npm run prep:layeroverview && npm run generate && npm run download:editor-layer-index && npm run generate:layouts && npm run clean && npm run weblate:add-upstream",
+    "init": "npm ci && npm run prep:layeroverview && npm run generate && npm run download:editor-layer-index && npm run generate:layouts && npm run clean",
     "start": "npm run generate:layeroverview && npm run strt",
     "strt": "vite --host | sed 's/localhost:/127.0.0.1:/g'",
     "build": "./scripts/build.sh",
@@ -104,7 +108,7 @@
     "generate": "npm run generate:licenses && npm run generate:images && npm run generate:charging-stations && npm run generate:translations && npm run refresh:layeroverview && npm run generate:service-worker",
     "generate:charging-stations": "cd ./assets/layers/charging_station && vite-node csvToJson.ts && cd -",
     "clean:tests": "find . -type f -name \"*.doctest.ts\" | xargs -r rm",
-    "clean": "rm -rf .cache/ && (find *.html | grep -v \"^\\(404\\|index\\|land\\|privacy\\|test\\|studio\\|theme\\|style_test\\|statistics\\|status\\|leaderboard\\).html\" | xargs -r rm) && (ls | grep \"^index_[a-zA-Z_-]\\+\\.ts$\" | xargs -r rm)",
+    "clean": "rm -rf .cache/ && (find *.html | grep -v \"^\\(404\\|index\\|land\\|privacy\\|test\\|studio\\|theme\\|style_test\\|statistics\\|status\\|leaderboard\\|inspector\\).html\" | xargs -r rm) && (ls | grep \"^index_[a-zA-Z_-]\\+\\.ts$\" | xargs -r rm)",
     "generate:dependency-graph": "node_modules/.bin/depcruise --exclude \"^node_modules\" --output-type dot Logic/State/MapState.ts > dependencies.dot && dot dependencies.dot -T svg -o dependencies.svg && rm dependencies.dot",
     "scrapeWebsites": "vite-node scripts/importscripts/compareWebsiteData.ts -- ~/Downloads/ShopsWithWebsiteNodes.csv ~/data/scraped_websites/",
     "### 0": "VELOPARK",
@@ -115,9 +119,8 @@
     "download:editor-layer-index": "vite-node scripts/downloadEli.ts",
     "download:stats": "vite-node scripts/GenerateSeries.ts",
     "download:images": "vite-node scripts/generateImageAnalysis.ts -- ~/data/imgur-image-backup/",
-    "weblate:add-upstream": "git remote add weblate-github git@github.com:weblate/MapComplete.git && git remote add weblate-hosted-core https://hosted.weblate.org/git/mapcomplete/core/ && git remote add weblate-hosted-layers https://hosted.weblate.org/git/mapcomplete/layers/",
-    "weblate:merge": "git remote update weblate-github; git merge weblate-github/weblate-mapcomplete-core weblate-github/weblate-mapcomplete-layers weblate-github/weblate-mapcomplete-layer-translations",
-    "weblate:merge-heavy": "git fetch weblate-hosted-layers; git fetch weblate-hosted-core; git merge weblate-hosted-layers/master weblate-hosted-core/master ",
+    "weblate:add-upstream": "git remote add weblate https://translate.mapcomplete.org/git/mapcomplete/core/ ; git remote update weblate",
+    "weblate:fix": "npm run weblate:add-upstream && git merge weblate/master && git rebase origin/master && git push origin master",
     "lint": "npm run lint:prettier && npm run lint:eslint && npm run lint:themes",
     "lint:eslint": "eslint ./src",
     "lint:prettier": "prettier  --check '**/*.ts' '**/*.svelte'",
@@ -128,7 +131,7 @@
     "optimize-images-scaledown-jpg": "cd assets/ &&  find . -regextype sed -regex \".*/.*.\\(jpg\\|JPG\\|JPEG\\|jpeg\\)\" -exec mogrify -resize 640x640\\> '{}' \\; && echo 'JPGs are optimized'",
     "generate:schemas": "export NODE_OPTIONS=\"--max-old-space-size=8192\" && ts2json-schema -p src/Models/ThemeConfig/Json/ -o Docs/Schemas/ -t tsconfig.json -R . -m \".*ConfigJson\" && echo 'tsjson is done' && vite-node scripts/fixSchemas.ts ",
     "reuse-compliance": "reuse lint",
-    "housekeeping": "export NODE_OPTIONS=\"--max-old-space-size=1200\" && git pull && npx update-browserslist-db@latest && npm run weblate:merge-heavy && npm run generate && npm run generate:docs && npm run generate:schemas && npm run generate:contributor-list && vite-node scripts/fetchLanguages.ts && vite-node scripts/generateSunnyUnlabeled.ts && npm run format && git add assets/ langs/ Docs/ **/*.ts Docs/* src/* && git commit -m 'chore: automated housekeeping...'",
+    "housekeeping": "export NODE_OPTIONS=\"--max-old-space-size=1200\" && git pull && npx update-browserslist-db@latest && npm run generate && npm run generate:docs && npm run generate:schemas && npm run generate:contributor-list && vite-node scripts/fetchLanguages.ts && vite-node scripts/generateSunnyUnlabeled.ts && npm run format && git add assets/ langs/ Docs/ **/*.ts Docs/* src/* && git commit -m 'chore: automated housekeeping...'",
     "###": "MICROSERVICES AND SERVER MAINTAINENCE",
     "release": "standard-version && git push --follow-tags",
     "release:minor": "standard-version --release-as minor",
@@ -142,7 +145,7 @@
     "generate:summaryCache": "vite-node scripts/generateSummaryTileCache.ts",
     "create:database": "vite-node scripts/osm2pgsql/createNewDatabase.ts",
     "delete:database:old": "vite-node scripts/osm2pgsql/deleteOldDbs.ts",
-    "upload:panoramax": "vite-node scripts/ImgurToPanoramax.ts && josm imgur_to_panoramax.osc"
+    "upload:panoramax": "vite-node scripts/ImgurToPanoramax.ts # && josm imgur_to_panoramax.osc"
   },
   "keywords": [
     "OpenStreetMap",
@@ -217,7 +220,7 @@
     "opening_hours": "^3.6.0",
     "osm-auth": "^2.5.0",
     "osmtogeojson": "^3.0.0-beta.5",
-    "panoramax-js": "^0.4.7",
+    "panoramax-js": "^0.4.8",
     "panzoom": "^9.4.3",
     "papaparse": "^5.3.1",
     "pg": "^8.11.3",

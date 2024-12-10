@@ -311,7 +311,8 @@
               "nl": "Fietsverhuurzaak",
               "de": "Fahrradverleih",
               "uk": "Пункт прокату велосипедів",
-              "es": "Tienda de alquiler de bicicletas"
+              "es": "Tienda de alquiler de bicicletas",
+              "cs": "Půjčovna jízdních kol"
             }
           }
         ],
@@ -326,13 +327,15 @@
         "en": "What is the brand of this shop?",
         "de": "Zu welcher Marke gehört dieses Geschäft?",
         "uk": "Яка марка цього магазину?",
-        "es": "¿Cuál es la marca de esta tienda?"
+        "es": "¿Cuál es la marca de esta tienda?",
+        "cs": "Jaká je značka tohoto obchodu?"
       },
       "render": {
         "en": "Part of <b>{brand}</b>",
         "de": "Teil von <b>{brand}</b>",
         "es": "Parte de <b>{brand}</b>",
-        "uk": "Частина <b>{brand}</b>"
+        "uk": "Частина <b>{brand}</b>",
+        "cs": "Část <b>{brand}</b>"
       },
       "freeform": {
         "key": "brand"
@@ -344,7 +347,8 @@
             "en": "This shop does not have a specific brand, it is not part of a bigger chain",
             "de": "Das Geschäft gehört zu keiner Marke oder Handelskette",
             "uk": "Цей магазин не має певного бренду, він не є частиною великої мережі",
-            "es": "Esta tienda no tiene una marca específica, no forma parte de una cadena más grande"
+            "es": "Esta tienda no tiene una marca específica, no forma parte de una cadena más grande",
+            "cs": "Tento obchod nemá konkrétní značku, není součástí většího řetězce"
           }
         }
       ]
@@ -489,12 +493,14 @@
       "question": {
         "en": "Does this shop offer a binding service?",
         "de": "Bietet dieser Laden einen Bindeservice an?",
-        "es": "¿Esta tienda ofrece un servicio de encuadernación?"
+        "es": "¿Esta tienda ofrece un servicio de encuadernación?",
+        "cs": "Nabízí tento obchod službu vazby?"
       },
       "questionHint": {
         "en": "Does this shop bind a bundle of pages into a small book, e.g. with a comb, a spiral, wire or by gluing?",
         "de": "Bindet dieser Laden ein Bündel von Seiten zu einem kleinen Buch, z.B. mit einer Kamm-, Spiral-, Drahtbindung oder durch Kleben?",
-        "es": "¿Esta tienda encuaderna un conjunto de páginas en un pequeño libro, por ejemplo, con un peine, una espiral, alambre o pegamento?"
+        "es": "¿Esta tienda encuaderna un conjunto de páginas en un pequeño libro, por ejemplo, con un peine, una espiral, alambre o pegamento?",
+        "cs": "Váže tento obchod svazek stránek do malé knihy, např. hřebenem, spirálou, drátem nebo lepením?"
       },
       "mappings": [
         {
@@ -502,7 +508,8 @@
           "then": {
             "en": "This shop binds papers into a booklet",
             "de": "Dieser Laden bindet Papiere zu einem Heft",
-            "es": "Esta tienda encuaderna papeles en un folleto"
+            "es": "Esta tienda encuaderna papeles en un folleto",
+            "cs": "Tento obchod váže papíry do brožury"
           }
         },
         {
@@ -510,7 +517,8 @@
           "then": {
             "en": "This shop does bind books",
             "de": "Dieser Laden bindet Bücher",
-            "es": "Esta tienda encuaderna libros"
+            "es": "Esta tienda encuaderna libros",
+            "cs": "Tento obchod váže knihy"
           }
         }
       ]
@@ -520,7 +528,8 @@
       "question": {
         "en": "Does this shop offer key cutting?",
         "de": "Bietet dieser Laden Schlüsselschneiden an?",
-        "es": "¿Esta tienda ofrece el corte de llaves?"
+        "es": "¿Esta tienda ofrece el corte de llaves?",
+        "cs": "Nabízí tento obchod výrobu klíčů?"
       },
       "mappings": [
         {
@@ -531,7 +540,8 @@
           "then": {
             "en": "This shop is also specialized in key cutting",
             "de": "Dieser Laden ist auch auf das Schlüsselschneiden spezialisiert",
-            "es": "Esta tienda también está especializada en el corte de llaves"
+            "es": "Esta tienda también está especializada en el corte de llaves",
+            "cs": "Tento obchod se také specializuje na výrobu klíčů"
           },
           "addExtraTags": [
             "service:key_cutting=yes"
@@ -544,7 +554,8 @@
             "en": "This shop offers key cutting as a service",
             "de": "Dieser Laden bietet Schlüsselschneiden als Dienstleistung an",
             "nl": "Deze winkel kopieert sleutels",
-            "es": "Esta tienda ofrece el corte de llaves como servicio"
+            "es": "Esta tienda ofrece el corte de llaves como servicio",
+            "cs": "Tento obchod nabízí výrobu klíčů jako službu"
           }
         },
         {
@@ -557,7 +568,8 @@
           "then": {
             "en": "This shops does not offer key cutting as a service",
             "de": "Dieser Laden bietet kein Schlüsselschneiden als Dienstleistung an",
-            "es": "Esta tienda no ofrece el corte de llaves como servicio"
+            "es": "Esta tienda no ofrece el corte de llaves como servicio",
+            "cs": "Tyto obchody nenabízejí výrobu klíčů jako službu"
           }
         }
       ],
@@ -613,7 +625,8 @@
             "fr": "Ce magasin vend des vélos nouveaux",
             "de": "Dieses Geschäft verkauft neue Fahrräder",
             "es": "Esta tienda vende bicicletas nuevas",
-            "uk": "У цьому магазині продають нові велосипеди"
+            "uk": "У цьому магазині продають нові велосипеди",
+            "cs": "Tento obchod prodává nová kola"
           }
         },
         {
@@ -624,7 +637,8 @@
             "fr": "Ce magasin ne vend pas de vélo nouveaux",
             "de": "Dieses Geschäft verkauft keine neuen Fahrräder",
             "es": "Esta tienda no vende bicicletas nuevas",
-            "uk": "Цей магазин не продає нові велосипеди"
+            "uk": "Цей магазин не продає нові велосипеди",
+            "cs": "Tento obchod neprodává nová kola"
           }
         }
       ]
@@ -848,7 +862,8 @@
         "en": "This is about rental for e.g. tourists who need a bike. Some bicycle repair shops offer a bicycle to use while your bicycle is being repaired but this is not considered rental for this question.",
         "de": "Es geht um die Vermietung, z.B. an Touristen, die ein Fahrrad benötigen. Einige Fahrradwerkstätten bieten ein Fahrrad an, das man benutzen kann, während das eigene Fahrrad repariert wird, aber dies wird für diese Frage nicht als Vermietung betrachtet.",
         "uk": "Йдеться про прокат для туристів, яким потрібен велосипед. Деякі майстерні з ремонту велосипедів пропонують велосипед на час ремонту, але це не вважається прокатом в даному випадку.",
-        "es": "Esto se refiere al alquiler para, por ejemplo, turistas que necesitan una bicicleta. Algunas tiendas de reparación de bicicletas ofrecen una bicicleta para usar mientras se repara la suya, pero esto no se considera alquiler para esta pregunta."
+        "es": "Esto se refiere al alquiler para, por ejemplo, turistas que necesitan una bicicleta. Algunas tiendas de reparación de bicicletas ofrecen una bicicleta para usar mientras se repara la suya, pero esto no se considera alquiler para esta pregunta.",
+        "cs": "Jedná se o pronájem např. turisté, kteří potřebují kolo. Některé opravny jízdních kol nabízejí jízdní kolo k použití při opravě kola, ale u této otázky se to nepovažuje za pronájem."
       },
       "mappings": [
         {

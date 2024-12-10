@@ -185,7 +185,7 @@ This tagrendering has labels
 | sport_pitch-sport.4 | Tennis is played here | sport=tennis |
 | sport_pitch-sport.5 | Korfball is played here | sport=korfball |
 | sport_pitch-sport.6 | Basketball is played here | sport=basket |
-| sport_pitch-sport.7 | This is a skatepark | sport=skateboard |
+| sport_pitch-sport.7 | This is a skatepark | sport~^(.+;)?skateboard(;.+)$ |
 
 
 

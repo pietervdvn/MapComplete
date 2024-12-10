@@ -1,0 +1,75 @@
+{
+  "id": "beehive",
+  "name": {
+    "en": "Beehives"
+  },
+  "description": {
+    "en": "Layer showing beehives"
+  },
+  "source": {
+    "osmTags": "man_made=beehive"
+  },
+  "minzoom": 11,
+  "title": {
+    "en": "Beehive"
+  },
+  "presets": [
+    {
+      "title": {
+        "en": "a beehive"
+      },
+      "tags": [
+        "man_made=beehive"
+      ]
+    }
+  ],
+  "tagRenderings": [
+    "images",
+    {
+      "id": "capacity",
+      "question": {
+        "en": "How many beehives are there?"
+      },
+      "freeform": {
+        "key": "capacity",
+        "type": "pnat",
+        "placeholder": {
+          "en": "Number of beehives"
+        }
+      },
+      "render": {
+        "en": "There are {capacity} beehives"
+      },
+      "mappings": [
+        {
+          "if": "capacity=1",
+          "then": {
+            "en": "There is 1 beehive"
+          }
+        }
+      ]
+    }
+  ],
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/beehive/beehive.svg"
+        }
+      ]
+    }
+  ],
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": true
+  },
+  "deletion": true
+}

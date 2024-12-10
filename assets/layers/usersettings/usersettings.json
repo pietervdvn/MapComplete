@@ -216,7 +216,8 @@
             "ca": "Has contribuït a traduir MapComplete amb {_translation_contributions} canvis! Això és fantàstic!",
             "hu": "A MapComplete fordításához {_translation_contributions} elemmel járultál hozzá! Fantasztikus!",
             "uk": "Ви зробили внесок у переклад MapComplete за допомогою {_translation_contributions} комітів! Це чудово!",
-            "es": "¡Has contribuido a la traducción de MapComplete con {_translation_contributions} confirmaciones! ¡Eso es increíble!"
+            "es": "¡Has contribuido a la traducción de MapComplete con {_translation_contributions} confirmaciones! ¡Eso es increíble!",
+            "cs": "Přispěli jste k překladu MapComplete pomocí {_translation_contributions} příspěvků! To je úžasné!"
           },
           "icon": "party"
         }
@@ -887,6 +888,14 @@
           }
         }
       ]
+    },
+    {
+      "id": "disabled-questions",
+      "render": {
+        "special": {
+          "type": "disabled_questions"
+        }
+      }
     },
     {
       "id": "title-privacy-legal",

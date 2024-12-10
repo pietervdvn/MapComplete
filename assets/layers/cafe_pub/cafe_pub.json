@@ -401,6 +401,7 @@
     "wheelchair-access",
     "smoking",
     "service:electricity",
+    "seating",
     "dog-access",
     "internet",
     "internet-fee",
@@ -412,7 +413,9 @@
     "accepts_cash",
     "accepts_cards",
     "has_internet",
-    "has_electricity"
+    "has_electricity",
+    "outdoor_seating",
+    "indoor_seating"
   ],
   "deletion": {
     "softDeletionTags": {

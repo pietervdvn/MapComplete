@@ -80,7 +80,10 @@ export default class VeloparkLoader {
                     1,
                     g.maximumParkingDuration.length - 1
                 )
-                properties.maxstay = duration + " days"
+                if (duration !== "30") {
+                    // We don't set maxstay if it is 30, they are the default value that velopark chose for "unknown"
+                    properties.maxstay = duration + " days"
+                }
             }
             properties.access = g.publicAccess ?? "yes" ? "yes" : "no"
             const prefix = "http://schema.org/"

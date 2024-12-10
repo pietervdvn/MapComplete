@@ -706,7 +706,8 @@
         "cs": "Existuje webová stránka s dalšími informacemi o tomto uměleckém díle?",
         "ca": "Hi ha un lloc web amb més informació sobre aquesta obra d'art?",
         "he": "האם יש אתר אינטרנט עם מידע נוסף על היצירה הזו?",
-        "pt_BR": "Há um website com mais informações sobre essa arte?"
+        "pt_BR": "Há um website com mais informações sobre essa arte?",
+        "uk": "Чи є веб-сайт із додатковою інформацією про цей твір мистецтва?"
       },
       "render": {
         "special": {
@@ -730,7 +731,8 @@
             "da": "Yderligere oplysninger på  dette websted",
             "cs": "Více informací na této webové stránce",
             "ca": "Més informació a aquesta pàgina web",
-            "pt_BR": "Mais informações nesse website"
+            "pt_BR": "Mais informações nesse website",
+            "uk": "Більше інформації на цьому сайті"
           }
         }
       },
@@ -824,7 +826,8 @@
             "fr": "Cette œuvre est un mémorial",
             "cs": "Toto dílo slouží také jako památník",
             "es": "Esta obra de arte también sirve como monumento",
-            "uk": "Цей витвір мистецтва також слугує меморіалом"
+            "uk": "Цей витвір мистецтва також слугує меморіалом",
+            "nl": "Dit kunstwerk doet ook dienst als herdenkingsmonument"
           }
         },
         {

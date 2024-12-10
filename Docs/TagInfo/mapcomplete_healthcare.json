@@ -408,21 +408,6 @@
       "value": "yes"
     },
     {
-      "key": "wheelchair",
-      "description": "Layer 'Pharmacies' shows wheelchair=yes with a fixed text, namely 'This pharmacy is easy to access on a wheelchair' and allows to pick this as a default answer (in the mapcomplete.org theme 'Healthcare')",
-      "value": "yes"
-    },
-    {
-      "key": "wheelchair",
-      "description": "Layer 'Pharmacies' shows wheelchair=no with a fixed text, namely 'This pharmacy is hard to access on a wheelchair' and allows to pick this as a default answer (in the mapcomplete.org theme 'Healthcare')",
-      "value": "no"
-    },
-    {
-      "key": "wheelchair",
-      "description": "Layer 'Pharmacies' shows wheelchair=limited with a fixed text, namely 'This pharmacy has limited access for wheelchair users' and allows to pick this as a default answer (in the mapcomplete.org theme 'Healthcare')",
-      "value": "limited"
-    },
-    {
       "key": "shop",
       "description": "The MapComplete theme Healthcare has a layer Shop showing features with this tag"
     },

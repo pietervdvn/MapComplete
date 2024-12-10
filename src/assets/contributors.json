@@ -1,11 +1,11 @@
 {
   "contributors": [
     {
-      "commits": 8533,
+      "commits": 8650,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 483,
+      "commits": 495,
       "contributor": "Robin van der Linde"
     },
     {
@@ -13,7 +13,7 @@
       "contributor": "Tobias"
     },
     {
-      "commits": 40,
+      "commits": 42,
       "contributor": "dependabot[bot]"
     },
     {
@@ -154,6 +154,10 @@
     },
     {
       "commits": 4,
+      "contributor": "Languages add-on"
+    },
+    {
+      "commits": 4,
       "contributor": "Daniele Santini"
     },
     {
@@ -166,10 +170,6 @@
     },
     {
       "commits": 3,
-      "contributor": "Languages add-on"
-    },
-    {
-      "commits": 3,
       "contributor": "Thierry1030"
     },
     {
@@ -179,6 +179,14 @@
     {
       "commits": 3,
       "contributor": "Léo Villeveygoux"
+    },
+    {
+      "commits": 2,
+      "contributor": "Jens Köcke"
+    },
+    {
+      "commits": 2,
+      "contributor": "Jim Kats"
     },
     {
       "commits": 2,

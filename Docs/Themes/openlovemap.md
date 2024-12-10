@@ -26,6 +26,8 @@ Available languages:
  - es
  - cs
  - hu
+ - fr
+ - nl
 
 # Table of contents
 
@@ -801,11 +803,11 @@ This tagrendering has labels
 | id | question | osmTags |
 -----|-----|----- |
 | fetish.0 | *Does this shop offer fetish gear?* (default) |  |
-| fetish.1 | This shop offers <b>soft BDSM-gear</b>, such as fluffy handcuffs, a 'fifty-shade-of-grey'-starterset, ... | fetish:bdsm:soft=yes |
-| fetish.2 | This shop offers <b>specialized BDSM-gear</b>, such as spreader bars, supplies for needle play, medical bondage supplies, impact tools, shackles, metal colors, cuffs, nipple clamps, shibari accessories, ... | fetish:bdsm:specialized=yes |
-| fetish.3 | This shop offers <b>pet play</b> accessories, such as puppy masks, animal masks, pony play, tails, hoof shoes, ... | fetish:pet_play=yes |
-| fetish.4 | This shop offers <b>leather gear</b>, including pants and shirts usable in daily life up till leather harnesses | fetish:leather=yes |
-| fetish.5 | This shop offers <b>uniforms</b> for roleplay, such nurse uniforms, military uniforms, police, school girl, french maid, ... | fetish:uniform=yes |
+| fetish.1 | This shop offers <b>soft BDSM-gear</b>, such as fluffy handcuffs, a 'fifty-shade-of-grey'-starterset, ... | fetish:bdsm:soft~^(.+;)?yes(;.+)$ |
+| fetish.2 | This shop offers <b>specialized BDSM-gear</b>, such as spreader bars, supplies for needle play, medical bondage supplies, impact tools, shackles, metal colors, cuffs, nipple clamps, shibari accessories, ... | fetish:bdsm:specialized~^(.+;)?yes(;.+)$ |
+| fetish.3 | This shop offers <b>pet play</b> accessories, such as puppy masks, animal masks, pony play, tails, hoof shoes, ... | fetish:pet_play~^(.+;)?yes(;.+)$ |
+| fetish.4 | This shop offers <b>leather gear</b>, including pants and shirts usable in daily life up till leather harnesses | fetish:leather~^(.+;)?yes(;.+)$ |
+| fetish.5 | This shop offers <b>uniforms</b> for roleplay, such nurse uniforms, military uniforms, police, school girl, french maid, ... | fetish:uniform~^(.+;)?yes(;.+)$ |
 
 | id | question | osmTags |
 -----|-----|----- |
@@ -818,7 +820,7 @@ This tagrendering has labels
 | id | question | osmTags |
 -----|-----|----- |
 | shop_types.0 | *What kind of shop is this?* (default) |  |
-| shop_types.1 | Bicycle rental shop | shop=bicycle_rental |
+| shop_types.1 | Bicycle rental shop | shop=bicycle_rental | ((shop=rental & amenity=bicycle_rental)) |
 | shop_types.2 | Farm Supply Shop | shop=agrarian |
 | shop_types.3 | Liquor Store | shop=alcohol |
 | shop_types.4 | Anime / Manga Shop | shop=anime |

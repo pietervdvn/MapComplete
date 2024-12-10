@@ -65,7 +65,10 @@
 
     {#if $value.length > 0}
       <Backspace
-        on:click={() => value.set("")}
+        on:click={(e) => {
+          value.set("")
+          e.preventDefault()
+        }}
         color="var(--button-background)"
         class="mr-3 h-6 w-6 cursor-pointer"
       />

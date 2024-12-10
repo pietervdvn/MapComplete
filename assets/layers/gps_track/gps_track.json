@@ -59,7 +59,8 @@
         "fr": "C'est le chemin que vous avez parcouru depuis l'ouverture de ce site. Ne vous inquiétez pas - ceci n'est visible que pour vous et personne d'autre. Vos données de localisation ne sont jamais envoyées hors de l'appareil.",
         "ca": "Aquest és el camí que heu recorregut des que s'ha obert aquest lloc web. No et preocupis: això només és visible per a tu i ningú més. Les vostres dades d'ubicació mai s'envien fora del dispositiu.",
         "cs": "To je cesta, kterou jste urazili od otevření těchto webových stránek. Nemějte obavy - je viditelná pouze pro vás a pro nikoho jiného. Údaje o vaší poloze nejsou nikdy odesílány mimo zařízení.",
-        "es": "Esta es la traza que has recorrido desde que se abrió este sitio web. No te preocupes, solo tú puedes verla y nadie más. Tus datos de ubicación nunca se envían fuera del dispositivo."
+        "es": "Esta es la traza que has recorrido desde que se abrió este sitio web. No te preocupes, solo tú puedes verla y nadie más. Tus datos de ubicación nunca se envían fuera del dispositivo.",
+        "uk": "Це шлях, який ви пройшли з моменту відкриття веб-сайту. Не хвилюйтеся – це видно лише вам і нікому більше. Дані про ваше місцезнаходження ніколи не надсилаються за межі пристрою."
       }
     },
     "export_as_gpx",

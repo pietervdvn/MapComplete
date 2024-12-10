@@ -1154,6 +1154,14 @@ Clears all user preferences
 
 <code>`{clear_all()}`</code>
 
+### disabled_questions
+
+Shows which questions are disabled for every layer. Used in 'settings'
+
+#### Example usage of disabled_questions
+
+<code>`{disabled_questions()}`</code>
+
 ### auto_apply
 
 A button to run many actions for many features at once. To effectively use this button, you'll need some ingredients: 

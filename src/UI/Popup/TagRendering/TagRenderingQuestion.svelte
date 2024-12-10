@@ -36,6 +36,8 @@
   import { Modal } from "flowbite-svelte"
   import Popup from "../../Base/Popup.svelte"
   import If from "../../Base/If.svelte"
+  import DotMenu from "../../Base/DotMenu.svelte"
+  import SidebarUnit from "../../Base/SidebarUnit.svelte"
 
   export let config: TagRenderingConfig
   export let tags: UIEventSource<Record<string, string>>
@@ -338,10 +340,42 @@
       .then((changes) => state.changes.applyChanges(changes))
       .catch(console.error)
   }
+
+  let disabledInTheme = state.userRelatedState.getThemeDisabled(state.theme.id, layer?.id)
+  let menuIsOpened = new UIEventSource(false)
+
+  function disableQuestion() {
+    const newList = Utils.Dedup([config.id, ...disabledInTheme.data])
+    disabledInTheme.set(newList)
+    menuIsOpened.set(false)
+  }
+
+  function enableQuestion() {
+    const newList = disabledInTheme.data?.filter((id) => id !== config.id)
+    disabledInTheme.set(newList)
+    menuIsOpened.set(false)
+  }
 </script>
 
 {#if question !== undefined}
   <div class={clss}>
+    {#if layer.isNormal()}
+      <LoginToggle {state}>
+        <DotMenu hideBackground={true} open={menuIsOpened}>
+          <SidebarUnit>
+            {#if $disabledInTheme.indexOf(config.id) >= 0}
+              <button on:click={() => enableQuestion()}>
+                <Tr t={Translations.t.general.questions.enable} />
+              </button>
+            {:else}
+              <button on:click={() => disableQuestion()}>
+                <Tr t={Translations.t.general.questions.disable} />
+              </button>
+            {/if}
+          </SidebarUnit>
+        </DotMenu>
+      </LoginToggle>
+    {/if}
     <form
       class="relative flex flex-col overflow-y-auto px-4"
       style="max-height: 75vh"
@@ -554,10 +588,7 @@
             </div>
           </Popup>
 
-          <div
-            class="sticky bottom-0 flex flex-wrap justify-between"
-            style="z-index: 11"
-          >
+          <div class="sticky bottom-0 flex flex-wrap justify-between" style="z-index: 11">
             {#if $settableKeys && $isKnown && !matchesEmpty}
               <button class="as-link small text-sm" on:click={() => unknownModal.set(true)}>
                 <Tr t={Translations.t.unknown.markUnknown} />

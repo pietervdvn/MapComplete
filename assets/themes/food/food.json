@@ -2,7 +2,7 @@
   "id": "food",
   "title": {
     "en": "Restaurants and fast food",
-    "nl": "Eetgelegenheden",
+    "nl": "Restaurants en fastfood",
     "de": "Restaurants und Schnellimbisse",
     "it": "Ristoranti e fast food",
     "nb_NO": "Restauranter og søppelmat",
@@ -18,7 +18,7 @@
     "uk": "Ресторани та фаст-фуд"
   },
   "description": {
-    "nl": "Restaurants en fast food",
+    "nl": "Restaurants en fastfood",
     "en": "Restaurants and fast food",
     "de": "Restaurants und Schnellimbisse",
     "es": "Restaurantes y comida rápida",
@@ -26,7 +26,7 @@
     "fr": "Restaurants et restaurants à service rapide",
     "da": "Restauranter og fastfood",
     "ca": "Restaurants i menjar ràpid",
-    "cs": "Restaurace a rychlého občerstvení",
+    "cs": "Restaurace a rychlé občerstvení",
     "pl": "Restauracje i fast foody",
     "it": "Ristoranti e fast food",
     "uk": "Ресторани та фаст-фуд"

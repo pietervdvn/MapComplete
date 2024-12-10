@@ -68,7 +68,7 @@ export default class AllImageProviders {
 
     private static readonly _cachedImageStores: Record<string, Store<ProvidedImage[]>> = {}
     /**
-     * Tries to extract all image data for this image. Cachedon tags?.data?.id
+     * Tries to extract all image data for this image. Cached on tags?.data?.id
      */
     public static LoadImagesFor(
         tags: Store<Record<string, string>>,
@@ -78,8 +78,9 @@ export default class AllImageProviders {
             return undefined
         }
         const id = tags?.data?.id
-        if(this._cachedImageStores[id]){
-            return this._cachedImageStores[id]
+        const cachekey = id + (tagKey?.join(";") ?? "")
+        if (this._cachedImageStores[cachekey]) {
+            return this._cachedImageStores[cachekey]
         }
 
         const source = new UIEventSource([])
@@ -90,6 +91,7 @@ export default class AllImageProviders {
                 However, we override them if a custom image tag is set, e.g. 'image:menu'
                */
             const prefixes = tagKey ?? imageProvider.defaultKeyPrefixes
+            console.log("Prefixes are", tagKey, prefixes)
             const singleSource = tags.bindD((tags) => imageProvider.getRelevantUrls(tags, prefixes))
             allSources.push(singleSource)
             singleSource.addCallbackAndRunD((_) => {
@@ -98,21 +100,19 @@ export default class AllImageProviders {
                 source.set(dedup)
             })
         }
-        this._cachedImageStores[id] = source
+        this._cachedImageStores[cachekey] = source
         return source
     }
 
     /**
      * Given a list of URLs, tries to detect the images. Used in e.g. the comments
-     * @param url
      */
     public static loadImagesFrom(urls: string[]): Store<ProvidedImage[]> {
         const tags = {
-            id: "na",
+            id: urls.join(";"),
         }
         for (let i = 0; i < urls.length; i++) {
-            const url = urls[i]
-            tags["image:" + i] = url
+            tags["image:" + i] = urls[i]
         }
         return this.LoadImagesFor(new ImmutableStore(tags))
     }

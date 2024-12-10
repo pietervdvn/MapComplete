@@ -150,10 +150,10 @@ This tagrendering has labels
 | id | question | osmTags |
 -----|-----|----- |
 | specialty.0 | *What is this doctor specialized in?* (default) |  |
-| specialty.1 | This is a general practitioner | healthcare:speciality=general |
-| specialty.2 | This is a gynaecologist | healthcare:speciality=gynaecology |
-| specialty.3 | This is a psychiatrist | healthcare:speciality=psychiatry |
-| specialty.4 | This is a paediatrician | healthcare:speciality=paediatrics |
+| specialty.1 | This is a general practitioner | healthcare:speciality~^(.+;)?general(;.+)$ |
+| specialty.2 | This is a gynaecologist | healthcare:speciality~^(.+;)?gynaecology(;.+)$ |
+| specialty.3 | This is a psychiatrist | healthcare:speciality~^(.+;)?psychiatry(;.+)$ |
+| specialty.4 | This is a paediatrician | healthcare:speciality~^(.+;)?paediatrics(;.+)$ |
 
 
 
