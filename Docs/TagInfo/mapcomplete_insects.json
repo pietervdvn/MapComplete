@@ -1,0 +1,81 @@
+{
+  "data_format": 1,
+  "project": {
+    "name": "MapComplete Insect Hotels",
+    "description": "Insect hotels provide shelter for insects",
+    "project_url": "https://mapcomplete.org/insects",
+    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "icon_url": "https://mapcomplete.org/assets/layers/insect_hotel/insect_hotel.svg",
+    "contact_name": "Pieter Vander Vennet",
+    "contact_email": "pietervdvn@posteo.net"
+  },
+  "tags": [
+    {
+      "key": "man_made",
+      "description": "The MapComplete theme Insect Hotels has a layer Insect Hotels showing features with this tag",
+      "value": "insect_hotel"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Insect Hotels' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Insect Hotels') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Insect Hotels allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Insect Hotels allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Insect Hotels allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Insect Hotels allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Insect Hotels allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "man_made",
+      "description": "The MapComplete theme Insect Hotels has a layer Beehives showing features with this tag",
+      "value": "beehive"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Beehives' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the mapcomplete.org theme 'Insect Hotels') (This is only shown if _backend~.+ & _last_edit:passed_time<300 & (_version_number= | _version_number=1))"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Beehives allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "panoramax",
+      "description": "The layer 'Beehives allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Beehives allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Beehives allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Beehives allows to upload images and adds them under the 'panoramax'-tag (and panoramax:0, panoramax:1, ... for multiple images). Furthermore, this layer shows images based on the keys panoramax, image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "capacity",
+      "description": "Layer 'Beehives' shows and asks freeform values for key 'capacity' (in the mapcomplete.org theme 'Insect Hotels')"
+    },
+    {
+      "key": "capacity",
+      "description": "Layer 'Beehives' shows capacity=1 with a fixed text, namely 'There is 1 beehive' and allows to pick this as a default answer (in the mapcomplete.org theme 'Insect Hotels')",
+      "value": "1"
+    }
+  ]
+}

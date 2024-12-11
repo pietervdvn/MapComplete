@@ -32,6 +32,7 @@ A layer showing trees
 
 ## Themes using this layer
 
+ - [nature](https://mapcomplete.org/nature)
  - [personal](https://mapcomplete.org/personal)
  - [trees](https://mapcomplete.org/trees)
 

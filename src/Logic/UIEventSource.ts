@@ -951,13 +951,12 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
         g: (j: J, t: T) => T,
         allowUnregister = false
     ): UIEventSource<J> {
-
         const stack = new Error().stack.split("\n")
         const callee = stack[1]
 
         const newSource = new UIEventSource<J>(f(this.data), "map(" + this.tag + ")@" + callee)
 
-        const update =() => {
+        const update = () => {
             newSource.setData(f(this.data))
             return allowUnregister && newSource._callbacks.length() === 0
         }

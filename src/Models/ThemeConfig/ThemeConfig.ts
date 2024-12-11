@@ -306,7 +306,10 @@ export default class ThemeConfig implements ThemeInformation {
         return { untranslated, total }
     }
 
-    public getMatchingLayer(tags: Record<string, string>, blacklistLayers?: Set<string>): LayerConfig | undefined {
+    public getMatchingLayer(
+        tags: Record<string, string>,
+        blacklistLayers?: Set<string>
+    ): LayerConfig | undefined {
         if (tags === undefined) {
             return undefined
         }
@@ -314,7 +317,7 @@ export default class ThemeConfig implements ThemeInformation {
             return this.getLayer("current_view")
         }
         for (const layer of this.layers) {
-            if(blacklistLayers?.has(layer.id)){
+            if (blacklistLayers?.has(layer.id)) {
                 continue
             }
             if (!layer.source) {

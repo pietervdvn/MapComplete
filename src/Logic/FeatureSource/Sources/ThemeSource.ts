@@ -117,7 +117,7 @@ export default class ThemeSource extends FeatureSourceMerger {
             },
             {
                 ignoreZoom: true,
-                isActive: new ImmutableStore(false)
+                isActive: new ImmutableStore(false),
             }
         )
 

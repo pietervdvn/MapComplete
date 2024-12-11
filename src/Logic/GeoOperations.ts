@@ -10,13 +10,13 @@ import {
     MultiPolygon,
     Point,
     Polygon,
-    Position
+    Position,
 } from "geojson"
 import { Tiles } from "../Models/TileRange"
 import { Utils } from "../Utils"
 import { NearestPointOnLine } from "@turf/nearest-point-on-line"
 
-"use strict"
+;("use strict")
 
 export class GeoOperations {
     private static readonly _earthRadius = 6378137
@@ -30,7 +30,7 @@ export class GeoOperations {
         "behind",
         "sharp_left",
         "left",
-        "slight_left"
+        "slight_left",
     ] as const
     private static reverseBearing = {
         N: 0,
@@ -48,17 +48,23 @@ export class GeoOperations {
         W: 270,
         WNW: 292.5,
         NW: 315,
-        NNW: 337.5
+        NNW: 337.5,
     }
 
     /**
      * Create a union between two features
      */
-    public static union(f0: Feature<Polygon | MultiPolygon>, f1: Feature<Polygon | MultiPolygon>): Feature<Polygon | MultiPolygon> | null {
+    public static union(
+        f0: Feature<Polygon | MultiPolygon>,
+        f1: Feature<Polygon | MultiPolygon>
+    ): Feature<Polygon | MultiPolygon> | null {
         return turf.union(f0, f1)
     }
 
-    public static intersect(f0: Feature<Polygon | MultiPolygon>, f1: Feature<Polygon | MultiPolygon>): Feature<Polygon | MultiPolygon> | null {
+    public static intersect(
+        f0: Feature<Polygon | MultiPolygon>,
+        f1: Feature<Polygon | MultiPolygon>
+    ): Feature<Polygon | MultiPolygon> | null {
         return turf.intersect(f0, f1)
     }
 
@@ -83,9 +89,13 @@ export class GeoOperations {
      *
      * GeoOperations.centerpointCoordinates(undefined) // => undefined
      */
-    static centerpointCoordinates(feature: undefined | null): undefined ;
-    static centerpointCoordinates(feature: AllGeoJSON | GeoJSON | undefined): [number, number] | undefined;
-    static centerpointCoordinates(feature: NonNullable<AllGeoJSON> | NonNullable<GeoJSON>): NonNullable<[number, number]>;
+    static centerpointCoordinates(feature: undefined | null): undefined
+    static centerpointCoordinates(
+        feature: AllGeoJSON | GeoJSON | undefined
+    ): [number, number] | undefined
+    static centerpointCoordinates(
+        feature: NonNullable<AllGeoJSON> | NonNullable<GeoJSON>
+    ): NonNullable<[number, number]>
     static centerpointCoordinates(feature: AllGeoJSON | GeoJSON): [number, number] {
         if (feature === undefined || feature === null) {
             return undefined
@@ -142,12 +152,14 @@ export class GeoOperations {
      * const overlap0 = GeoOperations.calculateOverlap(line0, [polygon]);
      * overlap.length // => 1
      */
-    static calculateOverlap(feature: Feature, otherFeatures: Feature[]):
-        { feat: Feature; overlap: number }[] {
+    static calculateOverlap(
+        feature: Feature,
+        otherFeatures: Feature[]
+    ): { feat: Feature; overlap: number }[] {
         const featureBBox = BBox.get(feature)
         const result: { feat: Feature; overlap: number }[] = []
         if (feature.geometry.type === "Point") {
-            const coor = <[number,number]> feature.geometry.coordinates
+            const coor = <[number, number]>feature.geometry.coordinates
             for (const otherFeature of otherFeatures) {
                 if (
                     feature.properties.id !== undefined &&
@@ -200,7 +212,7 @@ export class GeoOperations {
                 }
 
                 if (otherFeature.geometry.type === "Point") {
-                    if (this.inside(<Feature<Point>> otherFeature, feature)) {
+                    if (this.inside(<Feature<Point>>otherFeature, feature)) {
                         result.push({ feat: otherFeature, overlap: undefined })
                     }
                     continue
@@ -266,7 +278,9 @@ export class GeoOperations {
         const y: number = pointCoordinate[1]
 
         if (feature.geometry.type === "MultiPolygon") {
-            const coordinatess: [number, number][][][] = <[number, number][][][]>feature.geometry.coordinates
+            const coordinatess: [number, number][][][] = <[number, number][][][]>(
+                feature.geometry.coordinates
+            )
             for (const coordinates of coordinatess) {
                 const inThisPolygon = GeoOperations.pointInPolygonCoordinates(x, y, coordinates)
                 if (inThisPolygon) {
@@ -277,7 +291,11 @@ export class GeoOperations {
         }
 
         if (feature.geometry.type === "Polygon") {
-            return GeoOperations.pointInPolygonCoordinates(x, y, <[number, number][][]>feature.geometry.coordinates)
+            return GeoOperations.pointInPolygonCoordinates(
+                x,
+                y,
+                <[number, number][][]>feature.geometry.coordinates
+            )
         }
 
         throw "GeoOperations.inside: unsupported geometry type " + feature.geometry.type
@@ -287,9 +305,12 @@ export class GeoOperations {
         return turf.length(feature) * 1000
     }
 
-    static buffer(feature: Feature, bufferSizeInMeter: number): Feature<Polygon | MultiPolygon> | FeatureCollection<Polygon | MultiPolygon> {
+    static buffer(
+        feature: Feature,
+        bufferSizeInMeter: number
+    ): Feature<Polygon | MultiPolygon> | FeatureCollection<Polygon | MultiPolygon> {
         return turf.buffer(feature, bufferSizeInMeter / 1000, {
-            units: "kilometers"
+            units: "kilometers",
         })
     }
 
@@ -305,9 +326,9 @@ export class GeoOperations {
                     [lon0, lat],
                     [lon0, lat0],
                     [lon, lat0],
-                    [lon, lat]
-                ]
-            }
+                    [lon, lat],
+                ],
+            },
         }
     }
 
@@ -347,25 +368,25 @@ export class GeoOperations {
             return <Feature<LineString>>{
                 geometry: {
                     type: "LineString",
-                    coordinates: way.geometry.coordinates[0]
+                    coordinates: way.geometry.coordinates[0],
                 },
-                properties: way.properties
+                properties: way.properties,
             }
         }
         if (way.geometry.type === "MultiPolygon") {
             return <Feature<MultiLineString>>{
                 geometry: {
                     type: "MultiLineString",
-                    coordinates: way.geometry.coordinates[0]
+                    coordinates: way.geometry.coordinates[0],
                 },
-                properties: way.properties
+                properties: way.properties,
             }
         }
         if (way.geometry.type === "LineString") {
-            return <Feature<LineString>> way
+            return <Feature<LineString>>way
         }
         if (way.geometry.type === "MultiLineString") {
-            return <Feature<MultiLineString>> way
+            return <Feature<MultiLineString>>way
         }
         throw "Invalid geometry to create a way from this"
     }
@@ -536,8 +557,8 @@ export class GeoOperations {
                         properties: {},
                         geometry: {
                             type: "Point",
-                            coordinates: p
-                        }
+                            coordinates: p,
+                        },
                     }
             )
         }
@@ -553,7 +574,7 @@ export class GeoOperations {
             trackPoints.push(trkpt)
         }
         const header =
-            "<gpx version=\"1.1\" creator=\"mapcomplete.org\" xmlns=\"http://www.topografix.com/GPX/1/1\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd\">"
+            '<gpx version="1.1" creator="mapcomplete.org" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">'
         return (
             header +
             "\n<name>" +
@@ -592,7 +613,7 @@ export class GeoOperations {
             trackPoints.push(trkpt)
         }
         const header =
-            "<gpx version=\"1.1\" creator=\"mapcomplete.org\" xmlns=\"http://www.topografix.com/GPX/1/1\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd\">"
+            '<gpx version="1.1" creator="mapcomplete.org" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">'
         return (
             header +
             "\n<name>" +
@@ -618,14 +639,14 @@ export class GeoOperations {
 
         const copy = {
             ...feature,
-            geometry: { ...feature.geometry }
+            geometry: { ...feature.geometry },
         }
         let coordinates: [number, number][]
         if (feature.geometry.type === "LineString") {
-            coordinates = <[number,number][]> [...feature.geometry.coordinates]
+            coordinates = <[number, number][]>[...feature.geometry.coordinates]
             copy.geometry.coordinates = coordinates
         } else {
-            coordinates = <[number,number][]> [...feature.geometry.coordinates[0]]
+            coordinates = <[number, number][]>[...feature.geometry.coordinates[0]]
             copy.geometry.coordinates[0] = coordinates
         }
 
@@ -676,8 +697,8 @@ export class GeoOperations {
                 type: "Feature",
                 geometry: {
                     type: "LineString",
-                    coordinates: [a, b]
-                }
+                    coordinates: [a, b],
+                },
             },
             distanceMeter,
             { units: "meters" }
@@ -883,8 +904,8 @@ export class GeoOperations {
             properties: p.properties,
             geometry: {
                 type: "LineString",
-                coordinates: p.geometry.coordinates[0]
-            }
+                coordinates: p.geometry.coordinates[0],
+            },
         }
     }
 
@@ -912,7 +933,7 @@ export class GeoOperations {
                             console.debug("SPlitting way", feature.properties.id)
                             result.push({
                                 ...feature,
-                                geometry: { ...feature.geometry, coordinates: coors.slice(i + 1) }
+                                geometry: { ...feature.geometry, coordinates: coors.slice(i + 1) },
                             })
                             coors = coors.slice(0, i + 1)
                             break
@@ -921,7 +942,7 @@ export class GeoOperations {
                 }
                 result.push({
                     ...feature,
-                    geometry: { ...feature.geometry, coordinates: coors }
+                    geometry: { ...feature.geometry, coordinates: coors },
                 })
             }
         }
@@ -1095,8 +1116,8 @@ export class GeoOperations {
                 properties: multiLineStringFeature.properties,
                 geometry: {
                     type: "LineString",
-                    coordinates: coors[0]
-                }
+                    coordinates: coors[0],
+                },
             }
         }
         return {
@@ -1104,8 +1125,8 @@ export class GeoOperations {
             properties: multiLineStringFeature.properties,
             geometry: {
                 type: "MultiLineString",
-                coordinates: coors
-            }
+                coordinates: coors,
+            },
         }
     }
 

@@ -94,12 +94,6 @@
                     "1": {
                         "then": "Vægmaleri"
                     },
-                    "10": {
-                        "then": "Azulejo (spansk dekorativt flisebeklædning)"
-                    },
-                    "11": {
-                        "then": "flisebeklædning"
-                    },
                     "2": {
                         "then": "Maleri"
                     },
@@ -123,6 +117,12 @@
                     },
                     "9": {
                         "then": "Relief"
+                    },
+                    "10": {
+                        "then": "Azulejo (spansk dekorativt flisebeklædning)"
+                    },
+                    "11": {
+                        "then": "flisebeklædning"
                     }
                 },
                 "question": "Hvilken slags kunstværk er det?",

@@ -130,7 +130,7 @@ export default class PanoramaxImageProvider extends ImageProvider {
     }
 
     public async getInfo(hash: string): Promise<ProvidedImage> {
-      return  await this.getInfoFor(hash).then((r) => this.featureToImage(<any>r))
+        return await this.getInfoFor(hash).then((r) => this.featureToImage(<any>r))
     }
 
     getRelevantUrls(tags: Record<string, string>, prefixes: string[]): Store<ProvidedImage[]> {
@@ -234,14 +234,19 @@ export class PanoramaxUploader implements ImageUploader {
             ) {
                 lat = exifLat
                 lon = exifLon
-                if(tags?.GPSLatitudeRef?.value?.[0] === "S"){
+                if (tags?.GPSLatitudeRef?.value?.[0] === "S") {
                     lat *= -1
                 }
-                if(tags?.GPSLongitudeRef?.value?.[0] === "W"){
+                if (tags?.GPSLongitudeRef?.value?.[0] === "W") {
                     lon *= -1
                 }
             }
-            const [date, time] =( tags.DateTime.value[0] ?? tags.DateTimeOriginal.value[0] ?? tags.GPSDateStamp ?? tags["Date Created"]).split(" ")
+            const [date, time] = (
+                tags.DateTime.value[0] ??
+                tags.DateTimeOriginal.value[0] ??
+                tags.GPSDateStamp ??
+                tags["Date Created"]
+            ).split(" ")
             const exifDatetime = new Date(date.replaceAll(":", "-") + "T" + time)
             if (exifDatetime.getFullYear() === 1970) {
                 // The data probably got reset to the epoch

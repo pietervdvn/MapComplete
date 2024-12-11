@@ -18,26 +18,30 @@
 
   const downloader = new OsmObjectDownloader()
   let allHistories: UIEventSource<OsmObject[][]> = UIEventSource.FromPromise(
-    Promise.all(features.map(f => downloader.downloadHistory(f.properties.id)))
+    Promise.all(features.map((f) => downloader.downloadHistory(f.properties.id)))
   )
-  let allDiffs: Store<{
-    key: string;
-    value?: string;
-    oldValue?: string
-  }[]> = allHistories.mapD(histories => HistoryUtils.fullHistoryDiff(histories, usernames))
+  let allDiffs: Store<
+    {
+      key: string
+      value?: string
+      oldValue?: string
+    }[]
+  > = allHistories.mapD((histories) => HistoryUtils.fullHistoryDiff(histories, usernames))
 
-  const trs = shared_questions.tagRenderings.map(tr => new TagRenderingConfig(tr))
+  const trs = shared_questions.tagRenderings.map((tr) => new TagRenderingConfig(tr))
 
   function detectQuestion(key: string): TagRenderingConfig {
-    return trs.find(tr => tr.freeform?.key === key)
+    return trs.find((tr) => tr.freeform?.key === key)
   }
 
-  const mergedCount: Store<{
-    key: string;
-    tr: TagRenderingConfig;
-    count: number;
-    values: { value: string; count: number }[]
-  }[]> = allDiffs.mapD(allDiffs => {
+  const mergedCount: Store<
+    {
+      key: string
+      tr: TagRenderingConfig
+      count: number
+      values: { value: string; count: number }[]
+    }[]
+  > = allDiffs.mapD((allDiffs) => {
     const keyCounts = new Map<string, Map<string, number>>()
     for (const diff of allDiffs) {
       const k = diff.key
@@ -50,11 +54,13 @@
     }
 
     const perKey: {
-      key: string, tr: TagRenderingConfig, count: number, values:
-        { value: string, count: number }[]
+      key: string
+      tr: TagRenderingConfig
+      count: number
+      values: { value: string; count: number }[]
     }[] = []
     keyCounts.forEach((values, key) => {
-      const keyTotal: { value: string, count: number }[] = []
+      const keyTotal: { value: string; count: number }[] = []
       values.forEach((count, value) => {
         keyTotal.push({ value, count })
       })
@@ -72,7 +78,6 @@
   })
 
   const t = Translations.t.inspector
-
 </script>
 
 {#if allHistories === undefined}
@@ -88,7 +93,7 @@
     </h3>
     <AccordionSingle>
       <span slot="header">
-<Tr t={t.answeredCountTimes.Subs(diff)} />
+        <Tr t={t.answeredCountTimes.Subs(diff)} />
       </span>
       <ul>
         {#each diff.values as value}

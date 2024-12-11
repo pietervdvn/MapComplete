@@ -16,6 +16,7 @@
  - bank
  - barrier
  - bbq
+ - beehive
  - bench
  - bench_at_pt
  - bicycle_counter
@@ -68,6 +69,7 @@
  - ice_cream
  - indoors
  - information_board
+ - insect_hotel
  - item_with_image
  - kerbs
  - lighthouse
@@ -452,6 +454,11 @@
              - cafe_pub
  - food
             
+            ### seating
+
+             - cafe_pub
+ - food
+            
             ### dog-access
 
              - cafe_pub
@@ -489,6 +496,11 @@
  - play_forest
  - playground
  - sport_pitch
+            
+            ### maxstay
+
+             - charging_station
+ - parking
             
             ### climbing.website
 

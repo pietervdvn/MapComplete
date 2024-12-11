@@ -39,12 +39,12 @@
       }
     })
   )
-  if(previewedImage){
-  onDestroy(
-    previewedImage.addCallbackAndRun((previewedImage) => {
-      showBigPreview.set(previewedImage?.id === image.id)
-    })
-  )
+  if (previewedImage) {
+    onDestroy(
+      previewedImage.addCallbackAndRun((previewedImage) => {
+        showBigPreview.set(previewedImage?.id === image.id)
+      })
+    )
   }
 
   function highlight(entered: boolean = true) {

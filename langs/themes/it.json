@@ -488,16 +488,16 @@
     "onwheels": {
         "description": "Su questa mappa sono indicati i luoghi pubblici accessibili con sedia a rotelle e possono essere facilmente aggiunti",
         "layers": {
+            "8": {
+                "override": {
+                    "name": "Parcheggi per disabili"
+                }
+            },
             "19": {
                 "override": {
                     "=title": {
                         "render": "Statistiche"
                     }
-                }
-            },
-            "8": {
-                "override": {
-                    "name": "Parcheggi per disabili"
                 }
             }
         }

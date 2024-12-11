@@ -6,7 +6,7 @@ import osmtogeojson from "osmtogeojson"
 import { FeatureCollection } from "@turf/turf"
 import { Geometry } from "geojson"
 import { OsmTags } from "../../Models/OsmFeature"
-"use strict";
+;("use strict")
 /**
  * Interfaces overpass to get all the latest data
  */
@@ -74,7 +74,7 @@ export class Overpass {
             console.warn("No features for", json)
         }
 
-        const geojson = <FeatureCollection<Geometry, OsmTags>> osmtogeojson(json)
+        const geojson = <FeatureCollection<Geometry, OsmTags>>osmtogeojson(json)
         const osmTime = new Date(json.osm3s.timestamp_osm_base)
         return [geojson, osmTime]
     }

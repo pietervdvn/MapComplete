@@ -142,6 +142,15 @@
       "description": "Layer 'Parking' shows and asks freeform values for key 'capacity' (in the mapcomplete.org theme 'Parking')"
     },
     {
+      "key": "maxstay",
+      "description": "Layer 'Parking' shows and asks freeform values for key 'maxstay' (in the mapcomplete.org theme 'Parking')"
+    },
+    {
+      "key": "maxstay",
+      "description": "Layer 'Parking' shows maxstay=unlimited with a fixed text, namely 'There is no limit to the amount of time one can stay here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking')",
+      "value": "unlimited"
+    },
+    {
       "key": "amenity",
       "description": "The MapComplete theme Parking has a layer Parking Spaces showing features with this tag",
       "value": "parking_space"
@@ -1699,11 +1708,11 @@
     },
     {
       "key": "maxstay",
-      "description": "Layer 'Charging stations' shows and asks freeform values for key 'maxstay' (in the mapcomplete.org theme 'Parking') (This is only shown if maxstay~.+ | motorcar=yes | hgv=yes | bus=yes)"
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'maxstay' (in the mapcomplete.org theme 'Parking') (This is only shown if motorcar=yes | hgv=yes | bus=yes)"
     },
     {
       "key": "maxstay",
-      "description": "Layer 'Charging stations' shows maxstay=unlimited with a fixed text, namely 'No timelimit on leaving your vehicle here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking') (This is only shown if maxstay~.+ | motorcar=yes | hgv=yes | bus=yes)",
+      "description": "Layer 'Charging stations' shows maxstay=unlimited with a fixed text, namely 'There is no limit to the amount of time one can stay here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Parking') (This is only shown if motorcar=yes | hgv=yes | bus=yes)",
       "value": "unlimited"
     },
     {

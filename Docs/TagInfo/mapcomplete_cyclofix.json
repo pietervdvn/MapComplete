@@ -288,6 +288,11 @@
       "value": "yes"
     },
     {
+      "key": "service:bicycle:second_hand",
+      "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bike repair/shop showing features with this tag",
+      "value": "yes"
+    },
+    {
       "key": "shop",
       "description": "The MapComplete theme Cyclofix - a map for cyclists has a layer Bike repair/shop showing features with this tag",
       "value": "sports"
@@ -4123,11 +4128,11 @@
     },
     {
       "key": "maxstay",
-      "description": "Layer 'Charging stations' shows and asks freeform values for key 'maxstay' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if maxstay~.+ | motorcar=yes | hgv=yes | bus=yes)"
+      "description": "Layer 'Charging stations' shows and asks freeform values for key 'maxstay' (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if motorcar=yes | hgv=yes | bus=yes)"
     },
     {
       "key": "maxstay",
-      "description": "Layer 'Charging stations' shows maxstay=unlimited with a fixed text, namely 'No timelimit on leaving your vehicle here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if maxstay~.+ | motorcar=yes | hgv=yes | bus=yes)",
+      "description": "Layer 'Charging stations' shows maxstay=unlimited with a fixed text, namely 'There is no limit to the amount of time one can stay here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Cyclofix - a map for cyclists') (This is only shown if motorcar=yes | hgv=yes | bus=yes)",
       "value": "unlimited"
     },
     {

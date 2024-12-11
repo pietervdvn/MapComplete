@@ -12,25 +12,31 @@
 
   const downloader = new OsmObjectDownloader()
   let allHistories: UIEventSource<OsmObject[][]> = UIEventSource.FromPromise(
-    Promise.all(features.map(f => downloader.downloadHistory(f.properties.id)))
+    Promise.all(features.map((f) => downloader.downloadHistory(f.properties.id)))
   )
-  let imageKeys = new Set(...["panoramax", "image:streetsign", "image:menu"].map(k => {
-    const result: string[] = [k]
-    for (let i = 0; i < 10; i++) {
-      result.push(k + ":" + i)
-    }
-    return result
-  }))
+  let imageKeys = new Set(
+    ...["panoramax", "image:streetsign", "image:menu"].map((k) => {
+      const result: string[] = [k]
+      for (let i = 0; i < 10; i++) {
+        result.push(k + ":" + i)
+      }
+      return result
+    })
+  )
   let usernamesSet = new Set(onlyShowUsername)
-  let allDiffs: Store<{
-    key: string;
-    value?: string;
-    oldValue?: string
-  }[]> = allHistories.mapD(histories => HistoryUtils.fullHistoryDiff(histories, usernamesSet))
+  let allDiffs: Store<
+    {
+      key: string
+      value?: string
+      oldValue?: string
+    }[]
+  > = allHistories.mapD((histories) => HistoryUtils.fullHistoryDiff(histories, usernamesSet))
 
-  let addedImages = allDiffs.mapD(diffs => [].concat(...diffs.filter(({ key }) => imageKeys.has(key))))
-
+  let addedImages = allDiffs.mapD((diffs) =>
+    [].concat(...diffs.filter(({ key }) => imageKeys.has(key)))
+  )
 </script>
+
 {#if $allDiffs === undefined}
   <Loading />
 {:else if $addedImages.length === 0}
@@ -38,7 +44,7 @@
 {:else}
   <div class="flex">
     {#each $addedImages as imgDiff}
-      <div class="w-48 h-48">
+      <div class="h-48 w-48">
         <AttributedPanoramaxImage hash={imgDiff.value} />
       </div>
     {/each}

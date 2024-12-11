@@ -730,7 +730,7 @@
     },
     {
       "key": "sport",
-      "description": "Layer 'Sports centres' shows sport=climbing with a fixed text, namely 'Rock climbing' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
+      "description": "Layer 'Sports centres' shows sport=climbing with a fixed text, namely 'Climbing' and allows to pick this as a default answer (in the mapcomplete.org theme 'Sports')",
       "value": "climbing"
     },
     {
