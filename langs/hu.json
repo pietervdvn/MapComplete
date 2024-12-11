@@ -848,5 +848,8 @@
             "empty": "Adj meg néhány Wikidata-bejegyzést",
             "startsWithQ": "A Wikidata-azonosító Q-val kezdődik, amelyet egy szám követ"
         }
+    },
+    "inspector": {
+        "menu": "Közreműködő megvizsgálása"
     }
 }
