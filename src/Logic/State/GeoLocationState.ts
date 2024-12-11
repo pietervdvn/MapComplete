@@ -3,6 +3,7 @@ import { LocalStorageSource } from "../Web/LocalStorageSource"
 import { QueryParameters } from "../Web/QueryParameters"
 import { Translation } from "../../UI/i18n/Translation"
 import Translations from "../../UI/i18n/Translations"
+import { AndroidPolyfill } from "../Web/AndroidPolyfill"
 
 export type GeolocationPermissionState = "prompt" | "requested" | "granted" | "denied"
 
@@ -157,9 +158,17 @@ export class GeoLocationState {
             this.permission.setData("denied")
             return
         }
+
         if (this.permission.data !== "prompt" && this.permission.data !== "requested") {
             // If the user denies the first prompt, revokes the deny and then tries again, we have to run the flow as well
             // Hence that we continue the flow if it is "requested"
+            return
+        }
+
+        if(AndroidPolyfill.inAndroid.data){
+            this.permission.setData("requested")
+            AndroidPolyfill.geolocationPermission.addCallbackAndRunD(state => this.permission.set(state))
+            this.startWatching()
             return
         }
 

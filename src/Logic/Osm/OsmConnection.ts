@@ -5,6 +5,7 @@ import { Utils } from "../../Utils"
 import { LocalStorageSource } from "../Web/LocalStorageSource"
 import { AuthConfig } from "./AuthConfig"
 import Constants from "../../Models/Constants"
+import { AndroidPolyfill } from "../Web/AndroidPolyfill"
 
 interface OsmUserInfo {
     id: number
@@ -520,6 +521,7 @@ export class OsmConnection {
      * To be called by land.html
      */
     public finishLogin(callback: (previousURL: string) => void) {
+        console.log(">>> authenticating")
         this.auth.authenticate(function () {
             // Fully authed at this point
             console.log("Authentication successful!")
@@ -529,17 +531,22 @@ export class OsmConnection {
     }
 
     private updateAuthObject() {
+        let redirect_uri = Utils.runningFromConsole
+            ? "https://mapcomplete.org/land.html"
+            : window.location.protocol + "//" + window.location.host + "/land.html"
+        if(AndroidPolyfill.inAndroid.data){
+            redirect_uri = "https://app.mapcomplete.org/land.html"
+            AndroidPolyfill.requestLoginCodes(this)
+        }
         this.auth = new osmAuth({
             client_id: this._oauth_config.oauth_client_id,
             url: this._oauth_config.url,
             scope: "read_prefs write_prefs write_api write_gpx write_notes",
-            redirect_uri: Utils.runningFromConsole
-                ? "https://mapcomplete.org/land.html"
-                : window.location.protocol + "//" + window.location.host + "/land.html",
+            redirect_uri,
             /* We use 'singlePage' as much as possible, it is the most stable - including in PWA.
              * However, this breaks in iframes so we open a popup in that case
              */
-            singlepage: !this._iframeMode,
+            singlepage: !this._iframeMode && !AndroidPolyfill.inAndroid.data,
             auto: true,
             apiUrl: this._oauth_config.api_url ?? this._oauth_config.url,
         })

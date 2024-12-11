@@ -52,6 +52,7 @@
   import PanoramaxLink from "./PanoramaxLink.svelte"
   import { UIEventSource } from "../../Logic/UIEventSource"
   import MagnifyingGlassCircle from "@babeard/svelte-heroicons/mini/MagnifyingGlassCircle"
+  import { AndroidPolyfill } from "../../Logic/Web/AndroidPolyfill"
 
   export let state: ThemeViewState
   let userdetails = state.osmConnection.userDetails
@@ -78,6 +79,7 @@
       })
     }
   })
+  let isAndroid = AndroidPolyfill.inAndroid
 </script>
 
 <div
@@ -255,7 +257,8 @@
     </If>
 
     <a class="sidebar-button flex" href="geo:{$location.lat},{$location.lon}">
-      <ShareIcon /><Tr t={t.openHereDifferentApp} />
+      <ShareIcon />
+      <Tr t={t.openHereDifferentApp} />
     </a>
   </SidebarUnit>
 
@@ -343,6 +346,9 @@
 
     <div class="subtle self-end">
       {Constants.vNumber}
+      {#if $isAndroid}
+        Android
+      {/if}
     </div>
   </SidebarUnit>
 </div>

@@ -4,6 +4,7 @@ We are using capacitor. This is a tool which packages some files into an Android
 
 ## Developing
 
+0. `nvm use` to make sure your using the correct android version
 1. Build all the necessary files.
    a. If no layer/theme changes were made, `npm run build` is sufficient
    b. Otherwise, run `npm run prepare-deploy`.
