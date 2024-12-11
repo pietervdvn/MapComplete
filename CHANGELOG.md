@@ -5,11 +5,6 @@ All notable changes to this project will be documented in this file. See [standa
 ### [0.47.12](https://github.com/pietervdvn/mapcomplete/compare/v0.47.11...v0.47.12) (2024-12-11)
 
 
-### Features
-
-* new insect hotels theme ([07a53e9](https://github.com/pietervdvn/mapcomplete/commits07a53e9373f7341fc03f32c2815538f72afa6fdb))
-
-
 ### Bug Fixes
 
 * add ignored file ([a6d07c5](https://github.com/pietervdvn/mapcomplete/commitsa6d07c50a1d11bbe8a2d78201ad85bb5f2e606e5))
@@ -22,8 +17,8 @@ All notable changes to this project will be documented in this file. See [standa
 * don't show walls-and-buildings if the layer is disabled ([130ede8](https://github.com/pietervdvn/mapcomplete/commits130ede896cdeea39bf9ca17d4a451d3d861905af))
 * Enable recycling:waste option  [#2280](https://github.com/pietervdvn/MapComplete/issues/2280) ([673322d](https://github.com/pietervdvn/mapcomplete/commits673322d15bab4789b6d62facbc9d96dce7997480))
 * fix [#2304](https://github.com/pietervdvn/MapComplete/issues/2304) ([0a001d3](https://github.com/pietervdvn/mapcomplete/commits0a001d3c7d337a2838c3f2b7493d4a3b218fe9a5))
-* fix [#2306](https://github.com/pietervdvn/MapComplete/issues/2306) by using a cutof of 150m ([9ab8d99](https://github.com/pietervdvn/mapcomplete/commits9ab8d99e56d8ae9653921c21e2f3559d69cc675f))
-* fix [#2306](https://github.com/pietervdvn/MapComplete/issues/2306) by using a cutof of 150m ([73f0fff](https://github.com/pietervdvn/mapcomplete/commits73f0ffff5d21703bb1e24ba920d65994e3993100))
+* fix [#2306](https://github.com/pietervdvn/MapComplete/issues/2306) by using a cutoff of 150m ([9ab8d99](https://github.com/pietervdvn/mapcomplete/commits9ab8d99e56d8ae9653921c21e2f3559d69cc675f))
+* fix [#2306](https://github.com/pietervdvn/MapComplete/issues/2306) by using a cutoff of 150m ([73f0fff](https://github.com/pietervdvn/mapcomplete/commits73f0ffff5d21703bb1e24ba920d65994e3993100))
 * image upload will now fail less for newly created points ([b91bd78](https://github.com/pietervdvn/mapcomplete/commitsb91bd78762f6eb3bd6555cc0fb3bfb244fe3340b))
 * improve typing and probably fix broken settings (https://source.mapcomplete.org/MapComplete/MapComplete/issues/2281) ([4b121e4](https://github.com/pietervdvn/mapcomplete/commits4b121e474ce6998f03e9743e4b52e2de1288b71a))
 * linking images is not possible for notes or non-openstreetmap elements ([7f9f7e7](https://github.com/pietervdvn/mapcomplete/commits7f9f7e753443e779b16a544bc6312214ae26dab4))
@@ -32,15 +27,13 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Theme improvements
 
+* new [insect hotels theme](https://mapcomplete.org/insects.html) ([07a53e9](https://github.com/pietervdvn/mapcomplete/commits07a53e9373f7341fc03f32c2815538f72afa6fdb))
 * **blind_osm:** Differentiate escalators more ([#2247](https://github.com/pietervdvn/MapComplete/issues/2247)) ([d19b2de](https://github.com/pietervdvn/mapcomplete/commitsd19b2de1cdb32388229d6ae2eb432cd59b58abad))
 * **climbing:** Add auto belay tags ([9b8235e](https://github.com/pietervdvn/mapcomplete/commits9b8235e51f3b115bdd3788dc9dfe3e3e99a4a1e4))
 * **climbing:** Add auto belay tags ([026825a](https://github.com/pietervdvn/mapcomplete/commits026825aa3d37650b8b0121e2a5d39c6d55d42d63))
 * **climbing:** Change conditions for gear rental questions ([a424398](https://github.com/pietervdvn/mapcomplete/commitsa4243986eab087128ab09032319b3f8f699a1f0a))
-* **climbing:** Change conditions for gear rental questions ([6bcdb6d](https://github.com/pietervdvn/mapcomplete/commits6bcdb6d9a01c48e5be083bb9195f65af491c7420))
 * **climbing:** Clarify questions about gear rental ([12f0ec9](https://github.com/pietervdvn/mapcomplete/commits12f0ec98fbcf540626328e97b5c2cf4e87cbd4be))
-* **climbing:** Clarify questions about gear rental ([c54060e](https://github.com/pietervdvn/mapcomplete/commitsc54060e4ab04889cbe40823f8163338141de0311))
 * **climbing:** Recognize leisure=sports_hall ([2a135f9](https://github.com/pietervdvn/mapcomplete/commits2a135f9eef5164c2b2af9ae46bb9608b764d1654))
-* **climbing:** Recognize leisure=sports_hall ([f35bf01](https://github.com/pietervdvn/mapcomplete/commitsf35bf01abbcefe750bb873503dcb7fa10d7fecde))
 * **cyclofix:** don't count shops in overview ([b615c34](https://github.com/pietervdvn/mapcomplete/commitsb615c3487947eafe2a0ce555fe380101323f66ab))
 * **cyclofix:** show shops which sell second-hand bicycles in bicycle layer, see https://source.mapcomplete.org/MapComplete/MapComplete/issues/2279 ([67aba6d](https://github.com/pietervdvn/mapcomplete/commits67aba6d034a6673d8c7efedef0d26d88c723d12b))
 * **etymology:** add parks, fix [#2292](https://github.com/pietervdvn/MapComplete/issues/2292) ([ceadd9f](https://github.com/pietervdvn/mapcomplete/commitsceadd9fdefa9843cf766935368aa01b3c96dbe76))
