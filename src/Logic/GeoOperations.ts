@@ -15,7 +15,6 @@ import {
 import { Tiles } from "../Models/TileRange"
 import { Utils } from "../Utils"
 import { NearestPointOnLine } from "@turf/nearest-point-on-line"
-
 ;("use strict")
 
 export class GeoOperations {
