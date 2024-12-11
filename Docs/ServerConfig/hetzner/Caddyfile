@@ -19,7 +19,7 @@ countrycoder.mapcomplete.org {
 	file_server
 	header {
 		+Permissions-Policy "interest-cohort=()"
-		+Access-Control-Allow-Origin https://hosted.mapcomplete.org https://dev.mapcomplete.org https://mapcomplete.org
+		+Access-Control-Allow-Origin *
 	}
 }
 
