@@ -85,7 +85,7 @@ export class ImageUploadManager {
             uploadFinished: this.getCounterFor(this._uploadFinished, featureId),
             retried: this.getCounterFor(this._uploadRetried, featureId),
             failed: this.getCounterFor(this._uploadFailed, featureId),
-            retrySuccess: this.getCounterFor(this._uploadRetriedSuccess, featureId)
+            retrySuccess: this.getCounterFor(this._uploadRetriedSuccess, featureId),
         }
     }
 
@@ -94,7 +94,7 @@ export class ImageUploadManager {
         if (sizeInBytes > this._uploader.maxFileSizeInMegabytes * 1000000) {
             const error = Translations.t.image.toBig.Subs({
                 actual_size: Math.floor(sizeInBytes / 1000000) + "MB",
-                max_size: this._uploader.maxFileSizeInMegabytes + "MB"
+                max_size: this._uploader.maxFileSizeInMegabytes + "MB",
             })
             return { error }
         }
@@ -144,7 +144,7 @@ export class ImageUploadManager {
             properties,
             {
                 theme: tags?.data?.["_orig_theme"] ?? this._theme.id,
-                changeType: "add-image"
+                changeType: "add-image",
             }
         )
 
@@ -174,16 +174,19 @@ export class ImageUploadManager {
                 throw "ImageUploadManager: no feature given and no feature found in the indexedFeature. Cannot upload this image"
             }
             const featureCenterpoint = GeoOperations.centerpointCoordinates(feature)
-            if (location === undefined || location?.some((l) => l === undefined) ||
-                GeoOperations.distanceBetween(location, featureCenterpoint) > 150) {
+            if (
+                location === undefined ||
+                location?.some((l) => l === undefined) ||
+                GeoOperations.distanceBetween(location, featureCenterpoint) > 150
+            ) {
                 /* GPS location is either unknown or very far away from the photographed location.
-                * Default to the centerpoint
-                */
+                 * Default to the centerpoint
+                 */
                 location = featureCenterpoint
             }
         }
         try {
-            ({ key, value, absoluteUrl } = await this._uploader.uploadImage(
+            ;({ key, value, absoluteUrl } = await this._uploader.uploadImage(
                 blob,
                 location,
                 author,
@@ -193,7 +196,7 @@ export class ImageUploadManager {
             this.increaseCountFor(this._uploadRetried, featureId)
             console.error("Could not upload image, trying again:", e)
             try {
-                ({ key, value, absoluteUrl } = await this._uploader.uploadImage(
+                ;({ key, value, absoluteUrl } = await this._uploader.uploadImage(
                     blob,
                     location,
                     author,
@@ -209,7 +212,7 @@ export class ImageUploadManager {
                         ctx: "While uploading an image in the Image Upload Manager",
                         featureId,
                         author,
-                        targetKey
+                        targetKey,
                     })
                 )
                 return undefined

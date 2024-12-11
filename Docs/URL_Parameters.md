@@ -307,8 +307,6 @@ One can use the [ID of an ELI-layer](./ELI-overview.md) or use one of the global
  - protomaps.black
  - protomaps.sunny_unlabeled
  - americana
- - maptiler
- - maptiler.carto
  - alidade.smooth
  - alidade.smooth_dark
  - stamen.terrain
@@ -412,7 +410,7 @@ The default value is _0_
 
 The mode the application starts in, e.g. 'map', 'dashboard' or 'statistics'
 
-This documentation is defined in the source code at [generateDocs.ts](ervdvn/git/MapComplete/scripts/generateDocs.ts#L436)
+This documentation is defined in the source code at [generateDocs.ts](ervdvn/git2/MapComplete/scripts/generateDocs.ts#L436)
 
 The default value is _map_
 

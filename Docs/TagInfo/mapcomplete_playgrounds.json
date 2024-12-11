@@ -1167,62 +1167,62 @@
     },
     {
       "key": "access",
-      "description": "Layer 'BBQ' shows access=yes with a fixed text, namely 'Public' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
+      "description": "Layer 'BBQ' shows access=yes with a fixed text, namely 'This barbecue can be used by anyone' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "yes"
     },
     {
       "key": "access",
-      "description": "Layer 'BBQ' shows access=no with a fixed text, namely 'No access' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
+      "description": "Layer 'BBQ' shows access=no with a fixed text, namely 'This barbecue can't be used by anyone' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "no"
     },
     {
       "key": "access",
-      "description": "Layer 'BBQ' shows access=private with a fixed text, namely 'Private' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
+      "description": "Layer 'BBQ' shows access=private with a fixed text, namely 'This barbecue is private' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "private"
     },
     {
       "key": "access",
-      "description": "Layer 'BBQ' shows access=permissive with a fixed text, namely 'Access until revoked' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
+      "description": "Layer 'BBQ' shows access=permissive with a fixed text, namely 'This barbecue can be used by anyone, but the owner can revoke access at any time' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "permissive"
     },
     {
       "key": "access",
-      "description": "Layer 'BBQ' shows access=customers with a fixed text, namely 'Access only for customers' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
+      "description": "Layer 'BBQ' shows access=customers with a fixed text, namely 'This barbecue can only be used by customers' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "customers"
     },
     {
       "key": "access",
-      "description": "Layer 'BBQ' shows access=permit with a fixed text, namely 'Access only for authorized persons' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
+      "description": "Layer 'BBQ' shows access=permit with a fixed text, namely 'This barbecue can only be used by authorized persons' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "permit"
     },
     {
       "key": "covered",
-      "description": "Layer 'BBQ' shows covered=no with a fixed text, namely 'The grill is not covered' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
+      "description": "Layer 'BBQ' shows covered=no with a fixed text, namely 'This barbecue is not covered' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "no"
     },
     {
       "key": "covered",
-      "description": "Layer 'BBQ' shows covered=yes with a fixed text, namely 'The grill is covered' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
+      "description": "Layer 'BBQ' shows covered=yes with a fixed text, namely 'This barbecue is covered' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "yes"
     },
     {
       "key": "fuel",
-      "description": "Layer 'BBQ' shows fuel=wood with a fixed text, namely 'Wood' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
+      "description": "Layer 'BBQ' shows fuel=wood with a fixed text, namely 'This barbecue uses wood as fuel' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "wood"
     },
     {
       "key": "fuel",
-      "description": "Layer 'BBQ' shows fuel=charcoal with a fixed text, namely 'Charcoal' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
+      "description": "Layer 'BBQ' shows fuel=charcoal with a fixed text, namely 'This barbecue uses charcoal as fuel' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "charcoal"
     },
     {
       "key": "fuel",
-      "description": "Layer 'BBQ' shows fuel=electric with a fixed text, namely 'Electric' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
+      "description": "Layer 'BBQ' shows fuel=electric with a fixed text, namely 'This barbecue is powered by electricity' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "electric"
     },
     {
       "key": "fuel",
-      "description": "Layer 'BBQ' shows fuel=gas with a fixed text, namely 'Gas' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
+      "description": "Layer 'BBQ' shows fuel=gas with a fixed text, namely 'This barbecue uses gas as fuel' and allows to pick this as a default answer (in the mapcomplete.org theme 'Playgrounds')",
       "value": "gas"
     }
   ]

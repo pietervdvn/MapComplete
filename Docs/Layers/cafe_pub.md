@@ -26,6 +26,7 @@ A layer showing cafés and pubs where one can gather around a drink. The layer a
   - [wheelchair-access](#wheelchair-access)
   - [smoking](#smoking)
   - [service:electricity](#serviceelectricity)
+  - [seating](#seating)
   - [dog-access](#dog-access)
   - [internet](#internet)
   - [internet-fee](#internet-fee)
@@ -202,6 +203,13 @@ The question is `Does this amenity have electrical outlets, available to custome
  -  *There are no sockets available indoors to customers, but charging might be possible if the staff is asked* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:electricity' target='_blank'>service:electricity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:electricity%3Dask' target='_blank'>ask</a>
  -  *There are a no domestic sockets available to customers seated indoors* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:electricity' target='_blank'>service:electricity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:electricity%3Dno' target='_blank'>no</a>
 
+### seating
+
+The question is `What kind of seating does {title()} have?`
+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/outdoor_seating/outdoor_seating.svg' style='width: 3rem; height: 3rem'> *This place has outdoor seating* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:outdoor_seating' target='_blank'>outdoor_seating</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:outdoor_seating%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:outdoor_seating' target='_blank'>outdoor_seating</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:outdoor_seating%3Dno' target='_blank'>no</a>
+ -  *This place has indoor seating* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:indoor_seating' target='_blank'>indoor_seating</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor_seating%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:indoor_seating' target='_blank'>indoor_seating</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor_seating%3Dno' target='_blank'>no</a>
+
 ### dog-access
 
 The question is `Are dogs allowed in this business?`
@@ -298,6 +306,14 @@ This tagrendering has labels
 | id | question | osmTags |
 -----|-----|----- |
 | has_electricity.0 | Offers electricity | service:electricity=yes |
+
+| id | question | osmTags |
+-----|-----|----- |
+| outdoor_seating.0 | Has outdoor seating | outdoor_seating=yes |
+
+| id | question | osmTags |
+-----|-----|----- |
+| indoor_seating.0 | Has indoor seating | indoor_seating=yes |
 
 | id | question | osmTags |
 -----|-----|----- |

@@ -34,6 +34,9 @@ A layer showing restaurants and fast-food amenities (with a special rendering fo
   - [Reservation](#reservation)
   - [Takeaway](#takeaway)
   - [delivery](#delivery)
+  - [drive-through](#drive-through)
+  - [drive-through-opening_hours](#drive-through-opening_hours)
+  - [Drive-through opening hours](#drive-through-opening-hours)
   - [Vegetarian (no friture)](#vegetarian-(no-friture))
   - [Vegan (no friture)](#vegan-(no-friture))
   - [halal (no friture)](#halal-(no-friture))
@@ -47,6 +50,7 @@ A layer showing restaurants and fast-food amenities (with a special rendering fo
   - [gluten_free](#gluten_free)
   - [smoking](#smoking)
   - [service:electricity](#serviceelectricity)
+  - [seating](#seating)
   - [dog-access](#dog-access)
   - [internet](#internet)
   - [internet-fee](#internet-fee)
@@ -91,6 +95,8 @@ Elements must match **all** of the following expressions:
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/reservation#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/reservation/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [reservation](https://wiki.openstreetmap.org/wiki/Key:reservation) | Multiple choice | [required](https://wiki.openstreetmap.org/wiki/Tag:reservation%3Drequired) [recommended](https://wiki.openstreetmap.org/wiki/Tag:reservation%3Drecommended) [yes](https://wiki.openstreetmap.org/wiki/Tag:reservation%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:reservation%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/takeaway#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/takeaway/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [takeaway](https://wiki.openstreetmap.org/wiki/Key:takeaway) | Multiple choice | [only](https://wiki.openstreetmap.org/wiki/Tag:takeaway%3Donly) [yes](https://wiki.openstreetmap.org/wiki/Tag:takeaway%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:takeaway%3Dno) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/delivery#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/delivery/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [delivery](https://wiki.openstreetmap.org/wiki/Key:delivery) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:delivery%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:delivery%3Dno) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/drive_through#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/drive_through/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [drive_through](https://wiki.openstreetmap.org/wiki/Key:drive_through) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:drive_through%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:drive_through%3Dno) |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/opening_hours:drive_through#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/opening_hours%3Adrive_through/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [opening_hours:drive_through](https://wiki.openstreetmap.org/wiki/Key:opening_hours:drive_through) | [opening_hours](../SpecialInputElements.md#opening_hours) | [](https://wiki.openstreetmap.org/wiki/Tag:opening_hours:drive_through%3D) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/diet:vegetarian#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/diet%3Avegetarian/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [diet:vegetarian](https://wiki.openstreetmap.org/wiki/Key:diet:vegetarian) | Multiple choice | [no](https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Dno) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Dlimited) [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Dyes) [only](https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Donly) [on_demand](https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Don_demand) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/diet:vegan#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/diet%3Avegan/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [diet:vegan](https://wiki.openstreetmap.org/wiki/Key:diet:vegan) | Multiple choice | [no](https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dno) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dlimited) [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dyes) [only](https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Donly) [on_demand](https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Don_demand) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/diet:halal#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/diet%3Ahalal/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [diet:halal](https://wiki.openstreetmap.org/wiki/Key:diet:halal) | Multiple choice | [no](https://wiki.openstreetmap.org/wiki/Tag:diet:halal%3Dno) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:halal%3Dlimited) [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:halal%3Dyes) [only](https://wiki.openstreetmap.org/wiki/Tag:diet:halal%3Donly) |
@@ -285,6 +291,24 @@ The question is `Does {title()} deliver food to your home?`
  -  *This business does home delivery (possibly via a third party)* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:delivery' target='_blank'>delivery</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:delivery%3Dyes' target='_blank'>yes</a>
  -  *This business does not deliver at home* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:delivery' target='_blank'>delivery</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:delivery%3Dno' target='_blank'>no</a>
 
+### drive-through
+
+The question is `Does this fast-food restaurant have a drive-through?`
+
+ -  *This fast-food restaurant has a drive-through* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:drive_through' target='_blank'>drive_through</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:drive_through%3Dyes' target='_blank'>yes</a>
+ -  *This fast-food restaurant does not have a drive-through* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:drive_through' target='_blank'>drive_through</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:drive_through%3Dno' target='_blank'>no</a>
+
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dfast_food' target='_blank'>fast_food</a>
+
+### drive-through-opening_hours
+
+The question is `What are the opening hours of the drive-through?`
+*<h3>Drive-through opening hours</h3>{opening_hours_table(opening_hours:drive_through)}* is shown if `opening_hours:drive_through` is set
+
+ -  *The opening hours of the drive-through are the same as the restaurant* is shown if with opening_hours:drive_through=
+
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:drive_through' target='_blank'>drive_through</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:drive_through%3Dyes' target='_blank'>yes</a>
+
 ### Vegetarian (no friture)
 
 The question is `Does this restaurant have a vegetarian option?`
@@ -414,6 +438,13 @@ The question is `Does this amenity have electrical outlets, available to custome
  -  *There are no sockets available indoors to customers, but charging might be possible if the staff is asked* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:electricity' target='_blank'>service:electricity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:electricity%3Dask' target='_blank'>ask</a>
  -  *There are a no domestic sockets available to customers seated indoors* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:service:electricity' target='_blank'>service:electricity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:electricity%3Dno' target='_blank'>no</a>
 
+### seating
+
+The question is `What kind of seating does {title()} have?`
+
+ - <img src='https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/./assets/layers/outdoor_seating/outdoor_seating.svg' style='width: 3rem; height: 3rem'> *This place has outdoor seating* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:outdoor_seating' target='_blank'>outdoor_seating</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:outdoor_seating%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:outdoor_seating' target='_blank'>outdoor_seating</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:outdoor_seating%3Dno' target='_blank'>no</a>
+ -  *This place has indoor seating* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:indoor_seating' target='_blank'>indoor_seating</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor_seating%3Dyes' target='_blank'>yes</a>. Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:indoor_seating' target='_blank'>indoor_seating</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:indoor_seating%3Dno' target='_blank'>no</a>
+
 ### dog-access
 
 The question is `Are dogs allowed in this business?`
@@ -527,6 +558,14 @@ This tagrendering has labels
 | id | question | osmTags |
 -----|-----|----- |
 | lactose_free.0 | Has a lactose free offering | diet:lactose_free=yes | diet:lactose_free=only | diet:lactose_free=limited |
+
+| id | question | osmTags |
+-----|-----|----- |
+| outdoor_seating.0 | Has outdoor seating | outdoor_seating=yes |
+
+| id | question | osmTags |
+-----|-----|----- |
+| indoor_seating.0 | Has indoor seating | indoor_seating=yes |
 
 | id | question | osmTags |
 -----|-----|----- |

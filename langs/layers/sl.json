@@ -152,18 +152,6 @@
                     "1": {
                         "then": "To je plošča"
                     },
-                    "10": {
-                        "then": "To je križ"
-                    },
-                    "12": {
-                        "then": "To je zgodovinski tank, ki je stalno postavljen v spomin na javnem kraju"
-                    },
-                    "13": {
-                        "then": "To je spominsko drevo"
-                    },
-                    "14": {
-                        "then": "To je nagrobni kamen; oseba je pokopana tu"
-                    },
                     "6": {
                         "then": "To je spominski kamen"
                     },
@@ -175,6 +163,18 @@
                     },
                     "9": {
                         "then": "To je obelisk"
+                    },
+                    "10": {
+                        "then": "To je križ"
+                    },
+                    "12": {
+                        "then": "To je zgodovinski tank, ki je stalno postavljen v spomin na javnem kraju"
+                    },
+                    "13": {
+                        "then": "To je spominsko drevo"
+                    },
+                    "14": {
+                        "then": "To je nagrobni kamen; oseba je pokopana tu"
                     }
                 },
                 "question": "Kakšne vrste spomenik je to?",

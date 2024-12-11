@@ -57,30 +57,30 @@ _This tagrendering has no question and is thus read-only_
 
 ### access
 
-The question is `What is the permitted access?`
+The question is `Who is allowed to use this barbecue?`
 
- -  *Public* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
- -  *No access* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dno' target='_blank'>no</a>
- -  *Private* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate' target='_blank'>private</a>
- -  *Access until revoked* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dpermissive' target='_blank'>permissive</a>
- -  *Access only for customers* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers' target='_blank'>customers</a>
- -  *Access only for authorized persons* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dpermit' target='_blank'>permit</a>
+ -  *This barbecue can be used by anyone* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>
+ -  *This barbecue can't be used by anyone* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dno' target='_blank'>no</a>
+ -  *This barbecue is private* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate' target='_blank'>private</a>
+ -  *This barbecue can be used by anyone, but the owner can revoke access at any time* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dpermissive' target='_blank'>permissive</a>
+ -  *This barbecue can only be used by customers* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers' target='_blank'>customers</a>
+ -  *This barbecue can only be used by authorized persons* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dpermit' target='_blank'>permit</a>
 
 ### covered
 
-The question is `Is the grill covered?`
+The question is `Is this barbecue covered?`
 
- -  *The grill is not covered* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:covered' target='_blank'>covered</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:covered%3Dno' target='_blank'>no</a>
- -  *The grill is covered* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:covered' target='_blank'>covered</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:covered%3Dyes' target='_blank'>yes</a>
+ -  *This barbecue is not covered* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:covered' target='_blank'>covered</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:covered%3Dno' target='_blank'>no</a>
+ -  *This barbecue is covered* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:covered' target='_blank'>covered</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:covered%3Dyes' target='_blank'>yes</a>
 
 ### fuel
 
-The question is `How ist the grill fueled?`
+The question is `How is this barbecue fuelled?`
 
- -  *Wood* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fuel' target='_blank'>fuel</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fuel%3Dwood' target='_blank'>wood</a>
- -  *Charcoal* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fuel' target='_blank'>fuel</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fuel%3Dcharcoal' target='_blank'>charcoal</a>
- -  *Electric* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fuel' target='_blank'>fuel</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fuel%3Delectric' target='_blank'>electric</a>
- -  *Gas* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fuel' target='_blank'>fuel</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fuel%3Dgas' target='_blank'>gas</a>
+ -  *This barbecue uses wood as fuel* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fuel' target='_blank'>fuel</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fuel%3Dwood' target='_blank'>wood</a>
+ -  *This barbecue uses charcoal as fuel* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fuel' target='_blank'>fuel</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fuel%3Dcharcoal' target='_blank'>charcoal</a>
+ -  *This barbecue is powered by electricity* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fuel' target='_blank'>fuel</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fuel%3Delectric' target='_blank'>electric</a>
+ -  *This barbecue uses gas as fuel* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:fuel' target='_blank'>fuel</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fuel%3Dgas' target='_blank'>gas</a>
 
 ### leftover-questions
 

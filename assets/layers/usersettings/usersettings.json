@@ -947,7 +947,7 @@
           "if": "mapcomplete-more_privacy=yes",
           "icon": "./assets/svg/eye.svg",
           "then": {
-            "en": "When making changes to OpenStreetMap, do not indicate how far away you were from the changed objects.",
+            "en": "When making changes to OpenStreetMap, do not indicate how far away I was from the changed objects.",
             "de": "Wenn du Änderungen an OpenStreetMap vornimmst, gibst du nicht an, wie weit du von den geänderten Objekten entfernt warst.",
             "nl": "Geef niet aan hoever je je van de gewijzigde objecten bevindt wanneer je wijzigingen maakt met MapComplete.",
             "cs": "Při provádění změn v OpenStreetMap neuvádějte, jak daleko jste byli od změněných objektů.",
@@ -1043,7 +1043,7 @@
           "if": "mapcomplete-preference-search-history=sync",
           "alsoShowIf": "mapcomplete-preference-search-history=",
           "then": {
-            "en": "Save the locations you search for and inspect and sync them via openstreetmap.org. OpenStreetMap and all apps you use can see this history",
+            "en": "Save the locations I search for and inspect and sync them via openstreetmap.org. OpenStreetMap and all apps that I give access to my OSM account can see this history",
             "de": "Gesuchte und überprüfte Orte speichern und über openstreetmap.org synchronisieren. OpenStreetMap und alle verwendeten Programme können diesen Verlauf sehen",
             "hu": "Az openstreetmap.org-on legyenek elmentve az általam megkeresett és szerkesztett helyek. Ezeket az előzményeket az OpenStreetMap és az összes hozzá kapcsolódó alkalmazás láthatja",
             "uk": "Зберігайте місця, які ви шукаєте, переглядайте та синхронізуйте їх через openstreetmap.org. OpenStreetMap та всі програми, якими ви користуєтесь, можуть бачити цю історію",
@@ -1063,7 +1063,7 @@
         {
           "if": "mapcomplete-preference-search-history=no",
           "then": {
-            "en": "Don't save the locations you search for and inspect ",
+            "en": "Don't save the locations I search for and inspect",
             "de": "Gesuchte und überprüfte Orte nicht auf meinem Gerät speichern ",
             "hu": "Ne legyenek elmentve az általam megkeresett és szerkesztett helyek ",
             "uk": "Не зберігайте місця, які ви шукаєте та перевіряєте ",

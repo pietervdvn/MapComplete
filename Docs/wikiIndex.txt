@@ -427,6 +427,15 @@ The position of a signpost can be used by a hiker/biker/rider/s…
 |genre= POI, editor, indoors
 }}
 {{service_item
+|name= [https://mapcomplete.org/insects insects]
+|region= Worldwide
+|lang= {{#language:en|en}}, {{#language:nl|en}}
+|descr= A MapComplete theme: Insect hotels provide shelter for insects
+|material= {{yes|[https://mapcomplete.org/ Yes]}}
+|image= MapComplete_Screenshot.png
+|genre= POI, editor, insects
+}}
+{{service_item
 |name= [https://mapcomplete.org/kerbs_and_crossings kerbs_and_crossings]
 |region= Worldwide
 |lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:nb_NO|en}}, {{#language:es|en}}, {{#language:ca|en}}, {{#language:pl|en}}, {{#language:uk|en}}

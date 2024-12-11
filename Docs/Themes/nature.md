@@ -20,6 +20,8 @@ This theme contains the following layers:
  - [shelter](../Layers/shelter.md)
  - [bbq](../Layers/bbq.md)
  - [firepit](../Layers/firepit.md)
+ - [insect_hotel](../Layers/insect_hotel.md)
+ - [tree_node](../Layers/tree_node.md)
 
 Available languages:
 

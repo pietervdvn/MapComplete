@@ -101,12 +101,6 @@
                     "1": {
                         "then": "Murala"
                     },
-                    "11": {
-                        "then": "Keramika"
-                    },
-                    "12": {
-                        "then": "Egur taila"
-                    },
                     "2": {
                         "then": "Margolana"
                     },
@@ -130,6 +124,12 @@
                     },
                     "9": {
                         "then": "Erliebea"
+                    },
+                    "11": {
+                        "then": "Keramika"
+                    },
+                    "12": {
+                        "then": "Egur taila"
                     }
                 }
             }

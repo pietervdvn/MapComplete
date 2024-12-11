@@ -9,7 +9,7 @@ import { TagsFilter } from "../../Tags/TagsFilter"
 import { BBox } from "../../BBox"
 import { FeatureCollection } from "@turf/turf"
 import { OsmTags } from "../../../Models/OsmFeature"
-"use strict";
+;("use strict")
 
 /**
  * A wrapper around the 'Overpass'-object.
@@ -63,12 +63,9 @@ export default class OverpassFeatureSource implements UpdatableFeatureSource {
             ? new ImmutableStore(state.layers)
             : state.zoom.map((zoom) => this.layersToDownload(zoom))
 
-        state.bounds.mapD(
-            () => {
-                this.updateAsyncIfNeeded()
-            },
-            [this._layersToDownload]
-        )
+        state.bounds.mapD(() => {
+            this.updateAsyncIfNeeded()
+        }, [this._layersToDownload])
     }
 
     private layersToDownload(zoom: number): LayerConfig[] {

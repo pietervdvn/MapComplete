@@ -35,23 +35,6 @@
             "1": {
                 "description": "Duży obiekt reklamowy na zewnątrz, zazwyczaj znajduje się w obszarach z dużym ruchem, np. obok ruchliwych dróg na ścianie"
             },
-            "11": {
-                "description": "Kawałek wodoodpornej tkaniny z nadrukowanym przesłaniem, trwale przymocowany do ściany",
-                "title": "plandeka"
-            },
-            "12": {
-                "title": "totem"
-            },
-            "13": {
-                "description": "Używany do znaków reklamowych, neonów, logo i znaków wejściowych do instytucji",
-                "title": "znak"
-            },
-            "14": {
-                "title": "rzeźba"
-            },
-            "15": {
-                "title": "mural ścienny"
-            },
             "2": {
                 "title": "wolnostojąca skrzynka plakatowa"
             },
@@ -74,6 +57,23 @@
             },
             "9": {
                 "title": "ekran zamontowany na ścianie"
+            },
+            "11": {
+                "description": "Kawałek wodoodpornej tkaniny z nadrukowanym przesłaniem, trwale przymocowany do ściany",
+                "title": "plandeka"
+            },
+            "12": {
+                "title": "totem"
+            },
+            "13": {
+                "description": "Używany do znaków reklamowych, neonów, logo i znaków wejściowych do instytucji",
+                "title": "znak"
+            },
+            "14": {
+                "title": "rzeźba"
+            },
+            "15": {
+                "title": "mural ścienny"
             }
         },
         "tagRenderings": {
@@ -159,9 +159,6 @@
                     "1": {
                         "then": "To jest tablica"
                     },
-                    "10": {
-                        "then": "To jest mural ścienny"
-                    },
                     "2": {
                         "then": "To jest kolumna"
                     },
@@ -185,6 +182,9 @@
                     },
                     "9": {
                         "then": "To jest totem"
+                    },
+                    "10": {
+                        "then": "To jest mural ścienny"
                     }
                 },
                 "question": "Jakiego rodzaju jest to obiekt reklamowy?",
@@ -198,9 +198,6 @@
                 },
                 "1": {
                     "then": "Tablica"
-                },
-                "10": {
-                    "then": "Mural ścienny"
                 },
                 "2": {
                     "then": "Pudełko plakatowe"
@@ -225,6 +222,9 @@
                 },
                 "9": {
                     "then": "Totem"
+                },
+                "10": {
+                    "then": "Mural ścienny"
                 }
             }
         }
@@ -250,11 +250,11 @@
             },
             "type": {
                 "mappings": {
-                    "10": {
-                        "then": "Tyrolka. (Atrakcja turystyczna, która pozwala żądnym przygód zjechać z dużą szybkością) "
-                    },
                     "4": {
                         "then": "Wyciąg orczykowy"
+                    },
+                    "10": {
+                        "then": "Tyrolka. (Atrakcja turystyczna, która pozwala żądnym przygód zjechać z dużą szybkością) "
                     }
                 }
             }
@@ -384,15 +384,6 @@
                     "1": {
                         "then": "Mural"
                     },
-                    "10": {
-                        "then": "Azulejo (hiszpańskie płytka dekoracyjna)"
-                    },
-                    "11": {
-                        "then": "Płyta ceramiczna (fliza)"
-                    },
-                    "12": {
-                        "then": "Rzeźbienie w drewnie"
-                    },
                     "2": {
                         "then": "Obraz"
                     },
@@ -416,6 +407,15 @@
                     },
                     "9": {
                         "then": "Płaskorzeźba"
+                    },
+                    "10": {
+                        "then": "Azulejo (hiszpańskie płytka dekoracyjna)"
+                    },
+                    "11": {
+                        "then": "Płyta ceramiczna (fliza)"
+                    },
+                    "12": {
+                        "then": "Rzeźbienie w drewnie"
                     }
                 },
                 "question": "Jakiego rodzaju jest to dzieło sztuki?",
@@ -2229,38 +2229,8 @@
             },
             "room-type": {
                 "mappings": {
-                    "10": {
-                        "then": "To jest laboratorium"
-                    },
-                    "11": {
-                        "then": "To jest biblioteka"
-                    },
-                    "14": {
-                        "then": "To jest biuro"
-                    },
-                    "16": {
-                        "then": "To jest cela więzienna"
-                    },
-                    "17": {
-                        "then": "To jest restauracja"
-                    },
-                    "18": {
-                        "then": "To jest pomieszczenie do wykonywania kontroli bezpieczeństwa"
-                    },
                     "2": {
                         "then": "To jest sypialnia"
-                    },
-                    "20": {
-                        "then": "To jest magazyn"
-                    },
-                    "21": {
-                        "then": "To jest pomieszczenie techniczne"
-                    },
-                    "22": {
-                        "then": "To są toalety"
-                    },
-                    "23": {
-                        "then": "To jest poczekalnia"
                     },
                     "3": {
                         "then": "To jest kaplica"
@@ -2279,6 +2249,36 @@
                     },
                     "9": {
                         "then": "To jest kuchnia"
+                    },
+                    "10": {
+                        "then": "To jest laboratorium"
+                    },
+                    "11": {
+                        "then": "To jest biblioteka"
+                    },
+                    "14": {
+                        "then": "To jest biuro"
+                    },
+                    "16": {
+                        "then": "To jest cela więzienna"
+                    },
+                    "17": {
+                        "then": "To jest restauracja"
+                    },
+                    "18": {
+                        "then": "To jest pomieszczenie do wykonywania kontroli bezpieczeństwa"
+                    },
+                    "20": {
+                        "then": "To jest magazyn"
+                    },
+                    "21": {
+                        "then": "To jest pomieszczenie techniczne"
+                    },
+                    "22": {
+                        "then": "To są toalety"
+                    },
+                    "23": {
+                        "then": "To jest poczekalnia"
                     }
                 },
                 "question": "Jakiego rodzaju jest to pomieszczenie?"
@@ -2930,12 +2930,6 @@
                     "1": {
                         "then": "To jest zwykłe miejsce parkingowe."
                     },
-                    "10": {
-                        "then": "To jest miejsce parkingowe przeznaczone dla pracowników."
-                    },
-                    "11": {
-                        "then": "To miejsce parkingowe jest przeznaczone dla taksówek."
-                    },
                     "2": {
                         "then": "To jest miejsce parkingowe dla niepełnosprawnych."
                     },
@@ -2953,6 +2947,12 @@
                     },
                     "9": {
                         "then": "To miejsce jest przeznaczone dla rodziców z dziećmi."
+                    },
+                    "10": {
+                        "then": "To jest miejsce parkingowe przeznaczone dla pracowników."
+                    },
+                    "11": {
+                        "then": "To miejsce parkingowe jest przeznaczone dla taksówek."
                     }
                 }
             }
@@ -3057,12 +3057,6 @@
                     "1": {
                         "then": "To jest struktura składająca się z wielu połączonych urządzeń"
                     },
-                    "10": {
-                        "then": "To jest tyrolka"
-                    },
-                    "15": {
-                        "then": "To jest mapa"
-                    },
                     "2": {
                         "then": "To jest zjeżdżalnia"
                     },
@@ -3071,6 +3065,12 @@
                     },
                     "8": {
                         "then": "To jest rondo"
+                    },
+                    "10": {
+                        "then": "To jest tyrolka"
+                    },
+                    "15": {
+                        "then": "To jest mapa"
                     }
                 }
             }

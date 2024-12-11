@@ -46,10 +46,10 @@
       ) {
         lat = exifLat
         lon = exifLon
-        if(tags?.GPSLatitudeRef?.value?.[0] === "S"){
+        if (tags?.GPSLatitudeRef?.value?.[0] === "S") {
           lat *= -1
         }
-        if(tags?.GPSLongitudeRef?.value?.[0] === "W"){
+        if (tags?.GPSLongitudeRef?.value?.[0] === "W") {
           lon *= -1
         }
         l("Using EXIFLAT + EXIFLON")
@@ -57,11 +57,18 @@
         l("NOT using exifLat and exifLon: invalid value detected")
       }
       l("Lat and lon are", lat, lon)
-      l("ref lat is", tags?.GPSLatitudeRef?.description, JSON.stringify(tags?.GPSLatitudeRef?.value))
-      l("ref lon is", tags?.GPSLongitudeRef?.description, JSON.stringify(tags?.GPSLongitudeRef?.value))
+      l(
+        "ref lat is",
+        tags?.GPSLatitudeRef?.description,
+        JSON.stringify(tags?.GPSLatitudeRef?.value)
+      )
+      l(
+        "ref lon is",
+        tags?.GPSLongitudeRef?.description,
+        JSON.stringify(tags?.GPSLongitudeRef?.value)
+      )
 
-
-      l("Direct values are", directValueLat,directValueLon,"corrected:",lat,lon)
+      l("Direct values are", directValueLat, directValueLon, "corrected:", lat, lon)
       l("Datetime value is", JSON.stringify(tags.DateTime))
       const [date, time] = tags.DateTime.value[0].split(" ")
       datetime = new Date(date.replaceAll(":", "-") + "T" + time).toISOString()

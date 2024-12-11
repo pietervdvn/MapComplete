@@ -538,7 +538,7 @@
         "translationMode": "Zapnutí nebo vypnutí režimu překladu"
     },
     "image": {
-        "addPicture": "Přidat fotku",
+        "addPicture": "Udělat fotku",
         "doDelete": "Odebrat obrázek",
         "isDeleted": "Smazáno",
         "nearby": {
@@ -566,6 +566,7 @@
         "pleaseLogin": "Pro přidání fotky se prosím přihlaste",
         "processing": "Server zpracovává váš obrázek",
         "respectPrivacy": "Nenahrávejte z Map Google, Google Streetview ani z jiných zdrojů chráněných autorskými právy.",
+        "selectFile": "Vybrat obrázek ze svého zařízení",
         "toBig": "Váš obrázek je příliš velký, protože má velikost {actual_size}. Používejte prosím obrázky o maximální velikosti {max_size}",
         "unlink": {
             "button": "Odpojit obrázek",

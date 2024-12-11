@@ -159,7 +159,7 @@ export default class TagApplyButton implements AutoAction, SpecialVisualization 
             const maproulette_id = tags.data[maproulette_id_key]
             const maproulette_feature = state.indexedFeatures.featuresById.data.get(maproulette_id)
             const maproulette_task_id = Number(maproulette_feature.properties.mr_taskId)
-            await Maproulette.singleton.closeTask(maproulette_task_id, Maproulette.STATUS_FIXED, {
+            await Maproulette.singleton.closeTask(maproulette_task_id, Maproulette.STATUS_FIXED, state, {
                 comment: "Tags are copied onto " + targetId + " with MapComplete",
             })
             maproulette_feature.properties["mr_taskStatus"] = "Fixed"

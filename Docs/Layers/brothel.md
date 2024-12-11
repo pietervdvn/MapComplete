@@ -2,7 +2,7 @@
 
 # brothel
 
-An establishment specifically dedicated to prostitution. 
+An establishment specifically dedicated to prostitution.
 
  - This layer is shown at zoomlevel **6** and higher
 

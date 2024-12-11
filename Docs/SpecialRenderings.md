@@ -559,7 +559,7 @@ A component showing nearby images loaded from various online services such as Ma
 | name | default | description |
 -----|-----|----- |
 | mode | closed | Either `open` or `closed`. If `open`, then the image carousel will always be shown |
-| readonly | _undefined_ | If 'readonly', will not show the 'link'-button |
+| readonly | _undefined_ | If 'readonly' or 'yes', will not show the 'link'-button |
 
 #### Example usage of nearby_images
 

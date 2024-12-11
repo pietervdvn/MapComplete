@@ -1293,7 +1293,7 @@ This tagrendering has labels
 
 This layer is based on [cinema](../Layers/cinema.md)
 
- A place showing movies (films), generally open to the public for a fee. Commonly referred to as a movie theater in the US
+A place showing movies (films), generally open to the public for a fee. Commonly referred to as a movie theater in the US.
 
  - This layer is shown at zoomlevel **6** and higher
 
