@@ -1,9 +1,12 @@
 import Constants from "../Models/Constants"
+import { SpecialVisualizationState } from "../UI/SpecialVisualization"
+
 export interface MaprouletteTask {
     name: string
     description: string
     instruction: string
 }
+
 export default class Maproulette {
     public static readonly defaultEndpoint = "https://maproulette.org/api/v2"
 
@@ -24,7 +27,7 @@ export default class Maproulette {
         4: "Deleted",
         5: "Already fixed",
         6: "Too_Hard",
-        9: "Disabled",
+        9: "Disabled"
     }
     public static singleton = new Maproulette()
     /*
@@ -78,6 +81,7 @@ export default class Maproulette {
     async closeTask(
         taskId: number,
         status = Maproulette.STATUS_FIXED,
+        state: SpecialVisualizationState,
         options?: {
             comment?: string
             tags?: string
@@ -86,13 +90,16 @@ export default class Maproulette {
         }
     ): Promise<void> {
         console.log("Maproulette: setting", `${this.endpoint}/task/${taskId}/${status}`, options)
+        options ??= {}
+        const userdetails = state.osmConnection.userDetails.data
+        options.tags = `MapComplete MapComplete:${state.theme.id}; userid: ${userdetails?.uid}; username: ${userdetails?.name}`
         const response = await fetch(`${this.endpoint}/task/${taskId}/${status}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
-                apiKey: this.apiKey,
+                apiKey: this.apiKey
             },
-            body: options !== undefined ? JSON.stringify(options) : undefined,
+            body: JSON.stringify(options)
         })
         if (response.status !== 204) {
             console.log(`Failed to close task: ${response.status}`)
