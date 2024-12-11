@@ -275,7 +275,7 @@ export abstract class Store<T> implements Readable<T> {
 
     public bindD<X>(
         f: (t: Exclude<T, undefined | null>) => Store<X>,
-        extraSources: UIEventSource<object>[] = []
+        extraSources: Store<any>[] = []
     ): Store<X> {
         return this.bind((t) => {
             if (t === null) {
