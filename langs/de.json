@@ -718,7 +718,6 @@
         "averageRating": "Mittlere Bewertung von {n} Sternen",
         "i_am_affiliated": "Ich bin mit diesem Objekt vertraut",
         "i_am_affiliated_explanation": "Auswählen, wenn Sie Eigentümer, Ersteller, Angestellter, … sind.",
-        "name_required": "Der Name des Objekts ist erforderlich, um Bewertungen zu erstellen und anzuzeigen",
         "no_reviews_yet": "Bisher gibt es noch keine Bewertungen. Sei der Erste!",
         "non_place_review": "Eine Bewertung geht nicht um einen Ort und wird hier nicht angezeigt.",
         "non_place_reviews": "{n} Bewertungen sind nicht über einen Ort und werden hier nicht angezeigt.",
