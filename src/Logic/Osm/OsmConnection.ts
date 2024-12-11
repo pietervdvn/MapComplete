@@ -532,7 +532,7 @@ export class OsmConnection {
         this.auth = new osmAuth({
             client_id: this._oauth_config.oauth_client_id,
             url: this._oauth_config.url,
-            scope: "read_prefs write_prefs write_api write_gpx write_notes openid",
+            scope: "read_prefs write_prefs write_api write_gpx write_notes",
             redirect_uri: Utils.runningFromConsole
                 ? "https://mapcomplete.org/land.html"
                 : window.location.protocol + "//" + window.location.host + "/land.html",

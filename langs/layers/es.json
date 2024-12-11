@@ -2691,15 +2691,6 @@
                 },
                 "question": "¿Hay que pagar para usar este punto de carga?"
             },
-            "maxstay": {
-                "mappings": {
-                    "0": {
-                        "then": "Sin límite de tiempo para dejar tu vehículo aquí"
-                    }
-                },
-                "question": "¿Cuál es el tiempo máximo que se permite permanecer aquí?",
-                "render": "Se puede permanecer como máximo <b>{canonical(maxstay)}</b>"
-            },
             "phone": {
                 "question": "¿A qué número se puede llamar si hay un problema con este punto de carga?",
                 "render": "En caso de problemas, llama a <a href='tel:{phone}'>{phone}</a>"
@@ -10259,10 +10250,10 @@
                     "0": {
                         "then": "Esta es una escalera mecánica"
                     },
-                    "1": {
+                    "3": {
                         "then": "Esta no es una escalera mecánica"
                     },
-                    "2": {
+                    "4": {
                         "then": "Esta no es una escalera mecánica"
                     }
                 }

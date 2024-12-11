@@ -2691,15 +2691,6 @@
                 },
                 "question": "Muss man für die Nutzung dieser Ladestation bezahlen?"
             },
-            "maxstay": {
-                "mappings": {
-                    "0": {
-                        "then": "Keine Höchstparkdauer"
-                    }
-                },
-                "question": "Wie lange darf man hier maximal parken?",
-                "render": "Die maximale Parkdauer beträgt <b>{canonical(maxstay)}</b>"
-            },
             "phone": {
                 "question": "Welche Nummer kann man anrufen, wenn es ein Problem mit dieser Ladestation gibt?",
                 "render": "Bei Problemen, anrufen unter <a href='tel:{phone}'>{phone}</a>"
@@ -10226,10 +10217,10 @@
                     "0": {
                         "then": "Das ist eine Rolltreppe"
                     },
-                    "1": {
+                    "3": {
                         "then": "Das ist keine Rolltreppe"
                     },
-                    "2": {
+                    "4": {
                         "then": "Das ist keine Rolltreppe"
                     }
                 }

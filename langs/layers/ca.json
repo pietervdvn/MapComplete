@@ -2137,15 +2137,6 @@
                 },
                 "question": "Hi ha que pagar per utilitzar aquest punt de càrrega?"
             },
-            "maxstay": {
-                "mappings": {
-                    "0": {
-                        "then": "No hi ha límit de temps per a deixar el teu vehicle aquí"
-                    }
-                },
-                "question": "Quina és la quantitat màxima de temps que es permet permaneixer aquí?",
-                "render": "Un pot quedar-se com a màxim <b>{canonical(maxstay)}</b>"
-            },
             "phone": {
                 "question": "A quin número es pot cridar si hi ha algun problema amb aquest punt de càrrega?",
                 "render": "En cas de problemes, truqueu a <a href='tel:{phone}'>{phone}</a>"
@@ -7597,10 +7588,10 @@
                     "0": {
                         "then": "Açò és una escala mecànica"
                     },
-                    "1": {
+                    "3": {
                         "then": "Açò no és una escala mecànica"
                     },
-                    "2": {
+                    "4": {
                         "then": "Això no és una escala mecànica"
                     }
                 }

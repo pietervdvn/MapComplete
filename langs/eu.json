@@ -13,7 +13,6 @@
     "communityIndex": {
         "available": "Komunitate honek {native} hitz egiten du",
         "intro": "Jar zaitez harremanetan beste pertsona batzuekin, ezagutu itzazu eta ikasi eurengandik…",
-        "notAvailable": "Komunitate honek ez du {native} hitz egiten",
         "title": "Jarri gurekin harremaneta"
     },
     "delete": {

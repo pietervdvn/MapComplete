@@ -8746,10 +8746,10 @@
                     "0": {
                         "then": "Jedná se o eskalátor"
                     },
-                    "1": {
+                    "3": {
                         "then": "Nejedná se o eskalátor"
                     },
-                    "2": {
+                    "4": {
                         "then": "Nejedná se o eskalátor"
                     }
                 }

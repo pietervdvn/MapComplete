@@ -8,7 +8,6 @@
     "communityIndex": {
         "available": "Esta comunidade fala {native}",
         "intro": "Entre em contato com outras pessoas para conhecê-las, aprender com elas,...",
-        "notAvailable": "Esta comunidade não fala {native}",
         "title": "índice da comunidade"
     },
     "delete": {
@@ -16,13 +15,9 @@
         "cannotBeDeleted": "Este recurso não pode ser excluído",
         "delete": "Excluir",
         "explanations": {
-            "hardDelete": "Este ponto será excluído no OpenStreetMap. Pode ser recuperado por um colaborador experiente",
-            "retagNoOtherThemes": "Este recurso será reclassificado e ocultado deste aplicativo",
-            "retagOtherThemes": "Este recurso será remarcado e ficará visível em {otherThemes}",
-            "selectReason": "Por favor, selecione por que este recurso deve ser excluído"
+            "hardDelete": "Este ponto será excluído no OpenStreetMap. Pode ser recuperado por um colaborador experiente"
         },
         "isDeleted": "Este recurso foi excluído",
-        "loginToDelete": "Você deve estar autenticado para eliminar um recurso",
         "notEnoughExperience": "Este recurso foi feito por outra pessoa.",
         "reasons": {
             "disused": "Este recurso foi removido ou está em desuso",
@@ -30,15 +25,12 @@
         }
     },
     "favourite": {
-        "loginNeeded": "<h3>Entrar</h3> Um layout pessoal está disponível apenas para usuários do OpenStreetMap",
-        "panelIntro": "<h3>Seu tema pessoal</h3>Ative suas camadas favoritas de todos os temas oficiais",
         "reload": "Recarregar dados"
     },
     "general": {
         "about": "Edite e adicione facilmente o OpenStreetMap para um determinado tema",
         "add": {
             "addNew": "Adicione {category} aqui",
-            "confirmButton": "Adicione uma {category} aqui.<br><div class=\"alert\">Sua adição é visível para todos</div>",
             "intro": "Você clicou em algum lugar onde ainda não há dados conhecidos.<br>",
             "layerNotEnabled": "A camada {layer} não está habilitada. Habilite esta camada para adicionar um ponto",
             "openLayerControl": "Abra a caixa de controle da camada",
@@ -51,18 +43,12 @@
         "backgroundMap": "Mapa de fundo",
         "cancel": "Cancelar",
         "customThemeIntro": "<h3>Temas personalizados</h3> Esses são temas gerados pelo usuário visitados anteriormente.",
-        "fewChangesBefore": "Por favor, responda algumas perguntas de pontos existentes antes de adicionar um novo ponto.",
-        "getStartedLogin": "Entrar com OpenStreetMap para começar",
-        "getStartedNewAccount": " ou <a href='https://www.openstreetmap.org/user/new' target='_blank'>crie uma nova conta</a>",
-        "goToInbox": "Abrir mensagens",
         "layerSelection": {
             "title": "Selecionar camadas",
             "zoomInToSeeThisLayer": "Amplie para ver esta camada"
         },
         "loginToStart": "Faça login para responder a esta pergunta",
         "loginWithOpenStreetMap": "Entrar com OpenStreetMap",
-        "nameInlineQuestion": "O nome desta {category} é $$$",
-        "noNameCategory": "{category} sem nome",
         "noTagsSelected": "Nenhuma tag selecionada",
         "number": "número",
         "opening_hours": {
@@ -78,9 +64,7 @@
             "ph_not_known": " ",
             "ph_open": "aberto"
         },
-        "osmLinkTooltip": "Veja este objeto no OpenStreetMap para histórico e mais opções de edição",
         "pickLanguage": "Escolha um idioma: ",
-        "readYourMessages": "Por favor, leia todas as suas mensagens do OpenStreetMap antes de adicionar um novo ponto.",
         "returnToTheMap": "Voltar ao mapa",
         "save": "Salvar",
         "search": {
@@ -94,8 +78,7 @@
             "embedIntro": "<h3>Incorpore em seu site</h3>Por favor, incorpore este mapa em seu site.<br/>Nós o encorajamos a fazer isso - você nem precisa pedir permissão.<br/>É gratuito e sempre será. Quanto mais pessoas usarem isso, mais valioso se tornará.",
             "fsUserbadge": "Habilite o botão de login",
             "fsWelcomeMessage": "Mostra o pop-up da mensagem de boas-vindas e as guias associadas",
-            "intro": "<h3>Compartilhe este mapa</h3> Compartilhe este mapa copiando o link abaixo e enviando-o para amigos e familiares:",
-            "thanksForSharing": "Obrigado por compartilhar!"
+            "intro": "<h3>Compartilhe este mapa</h3> Compartilhe este mapa copiando o link abaixo e enviando-o para amigos e familiares:"
         },
         "skip": "Pule esta pergunta",
         "weekdays": {
@@ -116,13 +99,11 @@
             "tuesday": "Terça",
             "wednesday": "Quanta"
         },
-        "welcomeBack": "Você está logado, seja bem-vindo de volta!",
         "welcomeExplanation": {
             "addNew": "Toque no mapa para adicionar um novo POI.",
             "general": "Neste mapa, você pode ver, editar e adicionar <i>pontos de interesse</i>. Amplie para ver o POI, toque em um para ver ou editar as informações. Todos os dados são originados e salvos no OpenStreetMap, que pode ser reutilizado livremente."
         },
         "wikipedia": {
-            "createNewWikidata": "Criar um novo item Wikidata",
             "doSearch": "Pesquise acima para ver os resultados",
             "noResults": "Nada encontrado para <i>{search}</i>",
             "searchWikidata": "Pesquisar no Wikidata"
@@ -131,19 +112,14 @@
     "image": {
         "addPicture": "Adicionar imagem",
         "doDelete": "Remover imagem",
-        "dontDelete": "Cancelar",
         "isDeleted": "Excluída",
         "pleaseLogin": "Faça login para adicionar uma imagem",
         "respectPrivacy": "Não fotografe pessoas e nem placas de veículos. Não faça upload do Google Maps, Google Streetview ou outras fontes protegidas por direitos autorais.",
-        "uploadDone": "Sua foto foi adicionada. Obrigado por ajudar!",
-        "uploadFailed": "Não foi possível enviar sua foto. Você está conectado à Internet e permite APIs de terceiros? O navegador Brave ou o plugin uMatrix podem bloqueá-los.",
-        "uploadingMultiple": "Fazendo upload de {count} imagens…",
-        "uploadingPicture": "Enviando sua imagem…"
+        "uploadFailed": "Não foi possível enviar sua foto. Você está conectado à Internet e permite APIs de terceiros? O navegador Brave ou o plugin uMatrix podem bloqueá-los."
     },
     "index": {
         "#": "Estes textos são mostrados acima dos botões do tema quando nenhum tema é carregado",
         "intro": "MapComplete é um visualizador e editor do OpenStreetMap, que mostra informações sobre um tema específico.",
-        "pickTheme": "Escolha um tema abaixo para começar.",
         "title": "Bem-vindo(a) ao MapComplete"
     },
     "plantDetection": {
@@ -153,13 +129,10 @@
         "affiliated_reviewer_warning": "(Revisão de afiliados)",
         "attribution": "As resenhas são fornecidas por <a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a> e estão disponíveis em <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a>.",
         "i_am_affiliated": "<span>Eu sou afiliado a este objeto</span><br><span class=\"subtle\"><br><span class=\"subtle\">Verifique se você é proprietário, criador, funcionário, …</span></span>",
-        "name_required": "É necessário um nome para exibir e criar comentários",
         "no_reviews_yet": "Não há comentários ainda. Seja o primeiro a escrever um e ajude a abrir os dados e os negócios!",
         "saved": "<span class=\"thanks\">Comentário salvo. Obrigado por compartilhar!</span>",
         "saving_review": "Salvando…",
         "title": "{count} comentários",
-        "title_singular": "Um comentário",
-        "tos": "Se você criar um comentário, você concorda com <a href=\"https://mangrove.reviews/terms\" target=\"_blank\"> o TOS e a política de privacidade de Mangrove.reviews </a>",
-        "write_a_comment": "Deixe um comentário…"
+        "tos": "Se você criar um comentário, você concorda com <a href=\"https://mangrove.reviews/terms\" target=\"_blank\"> o TOS e a política de privacidade de Mangrove.reviews </a>"
     }
 }

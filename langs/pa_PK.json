@@ -26,7 +26,6 @@
         },
         "example": "مثال",
         "examples": "مثال",
-        "goToInbox": "اینباکس کھُلھو",
         "layerSelection": {
             "title": "کج چݨو"
         },
@@ -54,9 +53,7 @@
             "search": "ستھتیاں وچ کھوجو",
             "searching": "کھوجیا جا رہا اے۔ ۔ ۔"
         },
-        "sharescreen": {
-            "thanksForSharing": "ٹھیک اے، مہربانی۔"
-        },
+        "sharescreen": {},
         "weekdays": {
             "abbreviations": {
                 "friday": "جـ",
@@ -77,14 +74,12 @@
         },
         "wikipedia": {
             "loading": "وِکیپیڈیا لوڈ کیتا جا رہا اے۔ ۔ ۔",
-            "searchWikidata": "وِکیڈیٹے وچ کھوجو",
-            "wikipediaboxTitle": "وِکیپیڈیا"
+            "searchWikidata": "وِکیڈیٹے وچ کھوجو"
         }
     },
     "image": {
         "addPicture": "تصویر پایو",
         "doDelete": "تصویر ہٹاؤ",
-        "dontDelete": "رد کرو",
         "isDeleted": "مٹائی گئی"
     },
     "move": {
@@ -103,8 +98,7 @@
         "split": "دپھیر کرو"
     },
     "translations": {
-        "activateButton": "ترجمہ کریو",
-        "allMissing": "ہݨے کوئی ترجمے نہیں اے"
+        "activateButton": "ترجمہ کریو"
     },
     "validation": {
         "float": {

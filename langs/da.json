@@ -19,15 +19,11 @@
         "delete": "Slet",
         "explanations": {
             "hardDelete": "Denne funktion vil blive slettet i OpenStreetMap. Det kan inddrives af en erfaren bidragyder",
-            "retagNoOtherThemes": "Denne funktion vil blive omklassificeret og skjult fra denne applikation",
-            "retagOtherThemes": "Denne funktion bliver tagget igen og synlig i {otherThemes}",
-            "selectReason": "Angiv venligst hvorfor dette element burde slettes",
             "softDelete": "Dette element vil blive opdateret og skjult for dette program <span class=\"subtle\">{reason}</span>"
         },
         "isDeleted": "Dette element er slettet",
         "isntAPoint": "Kun punkter skal slettes, det valgte element er en vej, et areal eller en relation.",
         "loading": "Undersøger egenskaber for at finde ud af om dette element kan slettes.",
-        "loginToDelete": "Du skal være logget ind for slette et punkt",
         "notEnoughExperience": "Punktet blev lavet af en anden.",
         "onlyEditedByLoggedInUser": "Dette punkt er kun blevet redigeret af dig selv, du kan roligt slette det.",
         "partOfOthers": "Dette punkt er en del af en vej eller relation og kan ikke direkte slettes.",
@@ -43,8 +39,6 @@
         "whyDelete": "Hvorfor skal dette punkt slettes?"
     },
     "favourite": {
-        "loginNeeded": "<h3>Log ind</h3>En personlig opsætning er kun til rådighed for OpenStreetMap-brugere",
-        "panelIntro": "<h3>Dit personlige tema</h3>Aktiver dit favoritlag fra et af alle de officelle temaer",
         "reload": "Genindlæs data"
     },
     "favouritePoi": {
@@ -95,7 +89,6 @@
         "add": {
             "addNew": "Tilføj {category}",
             "backToSelect": "Vælg en anden kategori",
-            "confirmButton": "Tilføj en {category}<br><div class=\"alert\">Din tilføjelse er synlig for alle</div>",
             "confirmLocation": "Bekræft dette sted",
             "confirmTitle": "Tilføj en {title}?",
             "disableFilters": "Slå alle filtre fra",
@@ -118,7 +111,6 @@
             "presetInfo": "Det nye POI vil have {tags}",
             "stillLoading": "Data indlæses stadig. Vent venligt lidt før du tilføjer et nyt punkt.",
             "title": "Tilføj et nyt punkt?",
-            "warnVisibleForEveryone": "Din tilføjelse vil være synlig for alle",
             "wrongType": "Dette element er ikke et punkt eller en vej og kan ikke importeres",
             "zoomInFurther": "Zoom mere ind fore at tilføje et element",
             "zoomInMore": "Zoom mere ind for at importere dette element"
@@ -145,7 +137,6 @@
             "josmOpened": "JOSM er åbnet",
             "mapContributionsBy": "Aktult synligt data har rettelser lavet af {contributors}",
             "mapContributionsByAndHidden": "De aktuelt synlige rettelser er lavet af {contributors} og {hiddenCount} flere bidragsydere",
-            "mapDataByOsm": "Kortdata: OpenStreetMap",
             "mapillaryHelp": "<b>Mapillary</b> er en onlinetjeneste, som samler billeder på gadeplan og tilbyder dem under en gratis licens. Bidragydere har lov til at bruge disse billeder til at forbedre OpenStreetMap",
             "openIssueTracker": "Rapporter en fejl",
             "openMapillary": "Åbn Mapillary her",
@@ -187,11 +178,7 @@
         "error": "Noget gik galt",
         "example": "Eksempel",
         "examples": "Eksempler",
-        "fewChangesBefore": "Besvar venligst nogle få spørgsmål om eksisterende elementer, før du tilføjer et nyt element.",
         "geopermissionDenied": "Brug af geolokalitet var nægtet",
-        "getStartedLogin": "Log in med OpenStreetMap for at komme i gang",
-        "getStartedNewAccount": " eller <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">lav en ny konto</a>",
-        "goToInbox": "Åbn indboks",
         "histogram": {
             "error_loading": "Kunne ikke indlæse histogrammet"
         },
@@ -212,7 +199,6 @@
         "loadingTheme": "Indlæser {theme}...",
         "loginFailed": "Det mislykkedes at logge ind på OpenStreetMap",
         "loginFailedOfflineMode": "OpenStreetMap.org er i øjeblikket ikke tilgængelig på grund af vedligeholdelse. Redigeringer vil snart igen være mulige",
-        "loginOnlyNeededToEdit": "hvis du vil redigere kortet",
         "loginToStart": "Log ind for at besvare dette spørgsmål",
         "loginWithOpenStreetMap": "Logind med OpenStreetMap",
         "logout": "Log ud",
@@ -225,19 +211,13 @@
             "noMatchingThemes": "Ingen temaer matchede dine søgekriterier",
             "noSearch": "Vis alle temaer",
             "previouslyHiddenTitle": "Tidligere besøgte skjulte temaer",
-            "requestATheme": "Hvis de efterspørger et specialfremstillet tema, så bed om det i issue tracker-en",
             "searchForATheme": "Søg efter et tema",
             "streetcomplete": "En anden lignende applikation er <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>."
         },
-        "nameInlineQuestion": "{category} hedder $$$",
         "next": "Næste",
-        "noNameCategory": "{category} uden navn",
         "noTagsSelected": "Ingen tags valgt",
-        "notValid": "Vælg en gyldig værdi for at gå videre",
         "number": "tal",
-        "openStreetMapIntro": "<h3>At Åbent kort</h3><p>Et som alle kan bruge og redigere frit. Eet sted at gemme al geo-information. Forskellige, små, inkompatible og forældede kort er der ikke brug for nogen steder.</p><p><b><a href=\"https://OpenStreetMap.org\" target=\"_blank\">OpenStreetMap</a></b> er ikke fjendens kort. Kortet kan bruges frit (med <a href=\"https://osm.org/copyright\" target=\"_blank\">kreditering og publicering af ændringer af data</a>). Alle kan tilføje mere data og rette fejl. Denne website bruger OpenStreetMap. Al data kommer derfra, og dine svar og rettelser vil blive bruge alle vegne.</p><p>Mange folk og apps bruger allerede OpenStreetMap: <a href=\"https://organicmaps.app/\" target=\"_blank\">Organic Maps</a>, <a href=\"https://osmAnd.net\" target=\"_blank\">OsmAnd</a>, men også kortene på Facebook, Instagram, Apple-maps and Bing-maps er (delvist) drevet af OpenStreetMap.</p>",
         "openTheMap": "Åbn kortet",
-        "openTheMapAtGeolocation": "Zoom til din position",
         "opening_hours": {
             "closed_permanently": "Lukket med en ukendt varighed",
             "closed_until": "Lukket indtil {date}",
@@ -253,7 +233,6 @@
             "ph_open": "åbent",
             "ph_open_as_usual": "åbent som sædvanligt"
         },
-        "osmLinkTooltip": "Læs dette objekt i en browser på OpenStreetMap for historik og flere rettemuligheder",
         "pdf": {
             "attr": "Kortdata © OpenStreetMap Contributors, bearbejdelser under ODbL",
             "attrBackground": "Baggrundslag: {background}",
@@ -274,7 +253,6 @@
             "skippedMultiple": "Du sprang over {skipped} spørgsmål",
             "skippedOne": "Du sprang over ét spørgsmål"
         },
-        "readYourMessages": "Læs venligst alle dine OpenStreetMap beskeder før du tilføjer et nyt punkt.",
         "removeLocationHistory": "Slet placeringshistorikken",
         "returnToTheMap": "Vend tilbage til kortet",
         "save": "Gem",
@@ -283,7 +261,6 @@
             "error": "Noget gik galt…",
             "nothing": "Intet fundet…",
             "search": "Søg efter sted",
-            "searchShort": "Søg …",
             "searching": "Søger…"
         },
         "sharescreen": {
@@ -292,7 +269,6 @@
             "fsUserbadge": "Slå loginknappen til",
             "fsWelcomeMessage": "Vis velkomstbeskeden og tilknyttede faner",
             "intro": "<h3>Del dette kort</h3>Del dette kort ved at kopiere linket nedenunder og send det til venner og familie:",
-            "thanksForSharing": "Tak for at dele!",
             "title": "Del dette kort"
         },
         "skip": "Spring over dette spørgsmål",
@@ -343,28 +319,23 @@
             "tuesday": "Tirsdag",
             "wednesday": "Onsdag"
         },
-        "welcomeBack": "Du er logget ind, velkommen tilbage!",
         "welcomeExplanation": {
             "addNew": "Klik på kortet for at tilføje et nyt POI.",
             "general": "På dette kort kan du se, redigere og tilføje <i> interessepunkter</i>. Zoom rundt for at se POI'et, tryk på et for at se eller redigere oplysningerne. Alle data er hentet fra og gemt i OpenStreetMap, som frit kan genbruges."
         },
         "wikipedia": {
-            "addEntry": "Tilføj endnu en Wikipedia-side",
-            "createNewWikidata": "Opret et nyt Wikidata element",
             "doSearch": "Søg ovenfor for at se resultater",
             "failed": "Indlæsning af Wikipedia-artikel mislykkedes",
             "fromWikipedia": "Fra Wikipedia, den frie encyklopædi",
             "loading": "Indlæser Wikipedia...",
             "noResults": "Intet fundet for <i>{search}</i>",
-            "noWikipediaPage": "Dette Wikidata-element har endnu ingen tilknyttet Wikipedia artikel.",
             "previewbox": {
                 "born": "Født: {value}",
                 "died": "Død: {value}"
             },
             "readMore": "Læs resten af artiklen",
             "searchToShort": "Din søgeforespørgsel er for kort. Indtast en længere tekst",
-            "searchWikidata": "Søg på Wikidata",
-            "wikipediaboxTitle": "Wikipedia"
+            "searchWikidata": "Søg på Wikidata"
         }
     },
     "hotkeyDocumentation": {
@@ -372,43 +343,29 @@
         "closeSidebar": "Luk sidemenuen",
         "intro": "MapComplete understøtter følgende genvejstaster:",
         "key": "Tastekombination",
-        "openLayersPanel": "Åbner panelet for baggrundslag",
-        "selectMapnik": "Sæt baggrundslag til OpenStreetMap-carto"
+        "openLayersPanel": "Åbner panelet for baggrundslag"
     },
     "image": {
         "addPicture": "Tilføj Billede",
-        "currentLicense": "Dine billeder vil blive udgivet under {license}",
         "doDelete": "Fjern billede",
-        "dontDelete": "Afbryd",
         "isDeleted": "Slettet",
         "pleaseLogin": "Log venligst ind for at tilføje et billede",
         "respectPrivacy": "Tag ikke billeder af mennesker eller nummerplader. Upload ikke Google Maps, Google Streetview, eller fra andre ophavsresbeskyttede kilder.",
         "toBig": "Dit billede er for stort da det er {actual_size}. Brug venligst billeder, der er højst {max_size}",
-        "uploadDone": "Dit billede er tilføjet. Tak for hjælpen!",
-        "uploadFailed": "Kunne ikke uploade dit billede. Er du forbundet til Internettet og tillader du tredieparts API'er. Brave browseren eller uMatrix plugin'et kunne blokerer dem.",
-        "uploadMultipleDone": "{count} billeder tilføjet. Tak for at hjælpe til!",
-        "uploadingMultiple": "Uploader {count} billeder…",
-        "uploadingPicture": "Uploading dit billede…"
+        "uploadFailed": "Kunne ikke uploade dit billede. Er du forbundet til Internettet og tillader du tredieparts API'er. Brave browseren eller uMatrix plugin'et kunne blokerer dem."
     },
     "importInspector": {
         "title": "Undersøg og håndter noter"
     },
     "importLayer": {
-        "alreadyMapped": "Der er allerede en anden {title} på kortet - dette punkt er en dublet",
         "description": "Et lag som importerer poster for {title}",
-        "importButton": "import_button({layerId}, _tags, Jeg har fundet en {title} her - tilføj den til kortet,./assets/svg/addSmall.svg,,,id)",
-        "importHandled": "<div class=\"thanks\">Dette element er blevet håndteret! Tak for din indsats</div>",
         "layerName": "Mulig {title}",
-        "nearbyImagesIntro": "<h3>Billeder i nærheden</h3>De følgende billeder er geotaggede billeder i nærheden fra forskellige onlinetjenester. De kan måske hjælpe dig med at løse denne note.{nearby_images(open)}",
-        "notFound": "Jeg kunne ikke finde {title} - fjern det",
-        "popupTitle": "Mulig {title}"
+        "notFound": "Jeg kunne ikke finde {title} - fjern det"
     },
     "index": {
         "#": "Disse tekster vises over tema-knapperne, når der ikke er indlæst noget tema",
-        "featuredThemeTitle": "Fremhævet denne uge",
         "intro": "MapComplete er en OpenStreetMap-viser og editor, som viser dig oplysninger om elementer i et specifikt tema og gør det muligt at opdatere det.",
         "logIn": "Log ind for at se andre temaer, du tidligere har besøgt",
-        "pickTheme": "Vælg et tema nedenfor for at komme i gang.",
         "title": "Velkommen til MapComplete"
     },
     "move": {
@@ -423,8 +380,6 @@
         "inviteToMoveAgain": "Flyt dette punkt igen",
         "isRelation": "Dette element er en relation og kan ikke flyttes",
         "isWay": "Dette element er en vej. Brug en anden OpenStreetMap-editor til at flytte den.",
-        "loginToMove": "Du skal være logget ind for at flytte et punkt",
-        "moveTitle": "Flyt dette punkt",
         "partOfAWay": "Dette element er en del af en anden vej. Brug en anden editor til at flytte den.",
         "partOfRelation": "Dette element er en del af en relation. Brug en anden editor til at flytte den.",
         "pointIsMoved": "Dette punkt er blevet flyttet",
@@ -432,8 +387,6 @@
             "reasonInaccurate": "Placeringen af dette objekt er unøjagtig og bør flyttes et par meter",
             "reasonRelocation": "Objektet er blevet flyttet til et helt andet sted"
         },
-        "selectReason": "Hvorfor flytter du dette objekt?",
-        "whyMove": "Hvorfor vil du flytte dette punkt?",
         "zoomInFurther": "Zoom mere ind for bekræfte denne flytning"
     },
     "multi_apply": {
@@ -453,13 +406,10 @@
         "isClosed": "Denne note er løst",
         "isCreated": "Din note er oprettet!",
         "loginToAddComment": "Log ind for at tilføje en kommentar",
-        "loginToAddPicture": "Log ind for tilføje et billede",
         "loginToClose": "Log ind for at lukke denne note",
-        "noteIsPublic": "Dette vil kunne ses af alle",
         "noteLayerDoEnable": "Slå laget, der viser noter, til",
         "noteLayerHasFilters": "Nogle noter kan være skjult af et filter",
         "noteLayerNotEnabled": "Laget, der viser noter, er ikke slået til. Dette lag skal være slået til for at tilføje en ny note",
-        "notesLayerMustBeEnabled": "'note'-laget er slået fra. Slå det til for at tilføje en note",
         "reopenNote": "Genåbn note",
         "reopenNoteAndComment": "Genåbn note og kommenter",
         "textNeeded": "Indtast en beskrivende tekst for at oprette en note",
@@ -493,33 +443,24 @@
         "affiliated_reviewer_warning": "(Tilknyttet anmeldelse)",
         "attribution": "Anmeldelserne er baseret på <a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a> og er tilgængelige under <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a>.",
         "i_am_affiliated": "<span>Jeg er tilknyttet dette objekt</span><br><span class=\"subtle\">Tjek, om du er ejer, skaber, ansat, ...</span>",
-        "name_required": "Der kræves et navn for at vise og oprette anmeldelser",
         "no_reviews_yet": "Der er ingen anmeldelser endnu. Vær den første til at skrive en og hjælpe åbne data og forretningen!",
         "saved": "<span class=\"thanks\">Anmeldelse gemt. Tak for at bidrage!</span>",
         "saving_review": "Gemmer…",
         "title": "{count} Anmeldelser",
-        "title_singular": "En anmeldelse",
-        "tos": "Hvis du opretter en anmeldelse, accepterer du <a href=\"https://mangrove.reviews/terms\" target=\"_blank\">Mangrove.reviews' servicevilkår og privatlivspolitik</a>",
-        "write_a_comment": "Skriv en anmeldelse…"
+        "tos": "Hvis du opretter en anmeldelse, accepterer du <a href=\"https://mangrove.reviews/terms\" target=\"_blank\">Mangrove.reviews' servicevilkår og privatlivspolitik</a>"
     },
     "split": {
         "cancel": "Afbryd",
         "hasBeenSplit": "Denne vej er blevet opdelt",
         "inviteToSplit": "Opdel denne vej i mindre dele. Det giver mulighed for at give forskellige egenskaber til dele af vejen.",
         "loginToSplit": "Du skal være logget ind for at opdele en vej",
-        "split": "Opdel",
-        "splitTitle": "Vælg på kortet, hvor du vil opdele denne vej"
+        "split": "Opdel"
     },
     "translations": {
         "activateButton": "Hjælp med at oversætte MapComplete",
-        "allMissing": "Ingen oversættelser endnu",
-        "missing": "{count} uoversatte strenge",
-        "notImmediate": "Oversættelser opdateres ikke direkte. Det tager typisk et par dage"
+        "missing": "{count} uoversatte strenge"
     },
-    "userinfo": {
-        "gotoInbox": "Åbn din indbakke",
-        "gotoSettings": "Gå til dine indstillinger på OpenStreetMap.org"
-    },
+    "userinfo": {},
     "validation": {
         "color": {
             "description": "En farve eller hex-kode"

@@ -1833,9 +1833,9 @@
             {
               "en": "<b>Tesla Supercharger</b>",
               "nl": "<b>Tesla Supercharger</b>",
+              "cs": "<b>Tesla Supercharger</b>",
               "de": "<b>Tesla Supercharger</b>",
-              "es": "<b>Tesla Supercharger</b>",
-              "cs": "<b>Tesla Supercharger</b>"
+              "es": "<b>Tesla Supercharger</b>"
             },
             "Tesla-hpwc-model-s.svg",
             [
@@ -2584,43 +2584,15 @@
     },
     {
       "id": "maxstay",
-      "question": {
-        "en": "What is the maximum amount of time one is allowed to stay here?",
-        "nl": "Hoelang mag een voertuig hier blijven staan?",
-        "ca": "Quina és la quantitat màxima de temps que es permet permaneixer aquí?",
-        "de": "Wie lange darf man hier maximal parken?",
-        "es": "¿Cuál es el tiempo máximo que se permite permanecer aquí?"
-      },
-      "freeform": {
-        "key": "maxstay",
-        "type": "pfloat"
-      },
-      "render": {
-        "en": "One can stay at most <b>{canonical(maxstay)}</b>",
-        "nl": "De maximale parkeertijd hier is <b>{canonical(maxstay)}</b>",
-        "ca": "Un pot quedar-se com a màxim <b>{canonical(maxstay)}</b>",
-        "de": "Die maximale Parkdauer beträgt <b>{canonical(maxstay)}</b>",
-        "es": "Se puede permanecer como máximo <b>{canonical(maxstay)}</b>"
-      },
-      "mappings": [
-        {
-          "if": "maxstay=unlimited",
-          "then": {
-            "en": "No timelimit on leaving your vehicle here",
-            "nl": "Geen maximum parkeertijd",
-            "ca": "No hi ha límit de temps per a deixar el teu vehicle aquí",
-            "de": "Keine Höchstparkdauer",
-            "es": "Sin límite de tiempo para dejar tu vehículo aquí"
-          }
+      "builtin": "maxstay",
+      "override": {
+        "condition": {
+          "or": [
+            "motorcar=yes",
+            "hgv=yes",
+            "bus=yes"
+          ]
         }
-      ],
-      "condition": {
-        "or": [
-          "maxstay~*",
-          "motorcar=yes",
-          "hgv=yes",
-          "bus=yes"
-        ]
       }
     },
     {
@@ -2639,11 +2611,11 @@
         "en": "Is this charging station part of a network?",
         "nl": "Is dit oplaadpunt deel van een groter netwerk?",
         "ca": "Aquesta estació de càrrega forma part d'una xarxa?",
+        "cs": "Je tato nabíjecí stanice součástí sítě?",
         "de": "Ist diese Ladestation Teil eines Netzwerks?",
         "es": "¿Este punto de carga forma parte de una red?",
         "pl": "Czy ta stacja ładowania jest częścią sieci?",
-        "uk": "Чи є ця зарядна станція частиною мережі?",
-        "cs": "Je tato nabíjecí stanice součástí sítě?"
+        "uk": "Чи є ця зарядна станція частиною мережі?"
       },
       "freeform": {
         "key": "network"
@@ -2665,11 +2637,11 @@
           "then": {
             "en": "Not part of a bigger network",
             "nl": "Maakt geen deel uit van een groter netwerk",
+            "cs": "Není součástí větší sítě",
             "de": "Nicht Teil eines größeren Netzwerks",
             "es": "No forma parte de una red mayor",
             "pl": "Nie jest częścią większej sieci",
-            "uk": "Не є частиною великої мережі",
-            "cs": "Není součástí větší sítě"
+            "uk": "Не є частиною великої мережі"
           },
           "hideInAnswer": true
         },
@@ -3132,11 +3104,11 @@
             "en": "All vehicle types",
             "nl": "Alle voertuigen",
             "ca": "Tots els tipus de vehicles",
+            "cs": "Všechny typy vozidel",
             "de": "Ladestationen für alle Fahrzeugtypen",
             "es": "Todos los tipos de vehículos",
             "fr": "Tous les types de véhicules",
-            "it": "Tutti i tipi di veicoli",
-            "cs": "Všechny typy vozidel"
+            "it": "Tutti i tipi di veicoli"
           }
         },
         {
@@ -3144,11 +3116,11 @@
             "en": "Charging station for bicycles",
             "nl": "Oplaadpunten voor fietsen",
             "ca": "Punt de recàrrega per a bicicletes",
+            "cs": "Nabíjecí stanice pro kola",
             "de": "Ladestationen für Fahrräder",
             "es": "Punto de carga para bicicletas",
             "fr": "Station de recharge pour vélos",
-            "it": "Stazione di ricarica per biciclette",
-            "cs": "Nabíjecí stanice pro kola"
+            "it": "Stazione di ricarica per biciclette"
           },
           "osmTags": "bicycle=yes"
         },
@@ -3157,11 +3129,11 @@
             "en": "Charging station for cars",
             "nl": "Oplaadpunten voor auto's",
             "ca": "Estació de càrrega per a cotxes",
+            "cs": "Nabíjecí stanice pro auta",
             "de": "Ladestationen für Autos",
             "es": "Punto de carga para coches",
             "fr": "Station de recharge pour voitures",
-            "it": "Stazione di ricarica per auto",
-            "cs": "Nabíjecí stanice pro auta"
+            "it": "Stazione di ricarica per auto"
           },
           "osmTags": {
             "or": [
@@ -3180,11 +3152,11 @@
             "en": "Only working charging stations",
             "nl": "Enkel werkende oplaadpunten",
             "ca": "Només estacions de recàrrega en funcionament",
+            "cs": "Pouze funkční nabíjecí stanice",
             "de": "Nur Ladestationen in Betrieb",
             "es": "Solo puntos de carga en funcionamiento",
             "fr": "Seulement les stations de recharge qui fonctionnent",
-            "it": "Solo stazioni di ricarica funzionanti",
-            "cs": "Pouze funkční nabíjecí stanice"
+            "it": "Solo stazioni di ricarica funzionanti"
           },
           "osmTags": {
             "and": [
@@ -3203,10 +3175,10 @@
             "en": "All connectors",
             "nl": "Alle types",
             "ca": "Tots els connectors",
+            "cs": "Všechny konektory",
             "de": "Alle Anschlüsse",
             "es": "Todos los conectores",
-            "it": "Tutti i connettori",
-            "cs": "Všechny konektory"
+            "it": "Tutti i connettori"
           }
         },
         {

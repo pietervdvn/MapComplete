@@ -13,7 +13,6 @@
     "communityIndex": {
         "available": "Aquesta comunitat parla {native}",
         "intro": "Posa't en contacte amb altres persones per conèixer-los, aprendre d'elles, …",
-        "notAvailable": "Aquesta comunitat no parla {native}",
         "title": "Posa't en contacte amb altres"
     },
     "delete": {
@@ -23,16 +22,11 @@
         "deletedTitle": "Element eliminat",
         "explanations": {
             "hardDelete": "Aquest element s'esborrarà a OpenStreetMap. Es podria recuperar per part d'un contribuïdor experimentat",
-            "retagNoOtherThemes": "Aquest element serà reclasificada i ocultada a aquesta aplicació",
-            "retagOtherThemes": "Aquest element serà reetiquetat i visible a {otherThemes}",
-            "selectReason": "Selecciona per què s'hauria d'esborrar aquest element",
             "softDelete": "Aquest element s'actualitzarà i s'amagarà d'aquesta aplicació. <span class=\"subtle\">{reason}</span>"
         },
-        "isChanged": "Aquest element ha canviat i ja no coincideix amb aquesta capa",
         "isDeleted": "Aquest element s'esborrarà",
         "isntAPoint": "Només es poden esborrar elements, l'element seleccionat és una via, àrea o relació.",
         "loading": "Inspeccionant propietats per si aquest element pot ser esborrat.",
-        "loginToDelete": "Has d'entrar per esborrar un element",
         "notEnoughExperience": "Aquest element l'ha fet una altra persona.",
         "onlyEditedByLoggedInUser": "Aquest element només l'has editat tu, pots esborrar-lo amb seguretat.",
         "partOfOthers": "Aquest element és part d'una via o relació i no es pot esborrar directament.",
@@ -67,8 +61,6 @@
         "noDataLoaded": "El lloc web extern no té dades vinculades que es puguen carregar"
     },
     "favourite": {
-        "loginNeeded": "<h3>Entrar</h3>El disseny personalitzat només està disponible pels usuaris d'OpenstreetMap",
-        "panelIntro": "<h3>La teva interfície personal</h3>Activa les teves capes favorites de totes les interfícies oficials",
         "reload": "Recarregar dades"
     },
     "favouritePoi": {
@@ -132,10 +124,8 @@
         "add": {
             "addNew": "Afegir {category} aquí",
             "backToSelect": "Selecciona una categoria diferent",
-            "confirmButton": "Afegir una {category}<br/><div class='alert'>La teva atribució és visible per a tots</div>",
             "confirmLocation": "Confirma aquesta localització",
             "confirmTitle": "Afegeix un {title}?",
-            "confirmWarning": "L'element que has creat aquí serà <b>visible per a tothom</b>. Per favor, només afegiu coses al mapa si realment existeixen. Moltes aplicacions utilitzen aquestes dades.",
             "disableFilters": "Deshabilitar tots els filtres",
             "disableFiltersExplanation": "Alguns elements s'amagaran en passar un filtre",
             "enableLayer": "Activa la capa {name}",
@@ -157,7 +147,6 @@
             "presetInfo": "El nou PDI tindrà les etiquetes {tags}",
             "stillLoading": "Les dades es segueixen carregant. Espera una mica abans d'afegir cap element.",
             "title": "Afegeix un element nou",
-            "warnVisibleForEveryone": "La teva contribució serà vista per tothom",
             "wrongType": "Aquest element no és un punt o una via i no pot ser importat",
             "zoomInFurther": "Apropa per afegir un element.",
             "zoomInMore": "Ampliar per importar aquest element"
@@ -185,7 +174,6 @@
             "josmOpened": "JOSM és obert",
             "mapContributionsBy": "Les dades mostrades tenen edicions fetes per {contributors}",
             "mapContributionsByAndHidden": "Les dades mostrades tenen edicions fetes per {contributors} i {hiddenCount} col·laboradors més",
-            "mapDataByOsm": "Dades del mapa: OpenStreetMap",
             "mapillaryHelp": "<b>Mapillary</b> és un servei en línea que arreplega imatges a peu de carrer i les ofereix sota una llicència lliure. Els contribuïdors poden utilizar aquestes imatges per a millorar OpenStreetMap",
             "openIssueTracker": "Registrar un error",
             "openMapillary": "Obrir Mapillary aquí",
@@ -227,11 +215,7 @@
         "error": "Algo ha anat mal",
         "example": "Exemple",
         "examples": "Exemples",
-        "fewChangesBefore": "Contesta unes quantes preguntes sobre elements existents abans d'afegir-ne un de nou.",
         "geopermissionDenied": "Es va denegar l'ús de la geolocalització",
-        "getStartedLogin": "Entra a OpenStreetMap per començar",
-        "getStartedNewAccount": " o <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">crea un nou compte</a>",
-        "goToInbox": "Obrir missatges",
         "histogram": {
             "error_loading": "No s'ha pogut carregar l'histograma"
         },
@@ -249,7 +233,6 @@
         "loginFailedOfflineMode": "Actualment OpenStreetMap.org no està disponible a causa d'un manteniment. Prompte serà possible fer edicions",
         "loginFailedReadonlyMode": "OpenStreetMap.org es troba actualment en mode de només lectura a causa del manteniment. Prompte serà possible fer modificacions",
         "loginFailedUnreachableMode": "Actualment no es pot accedir a OpenStreetMap.org. Estàs connectat a Internet o bloqueges tercers? Torna-ho a provar més tard",
-        "loginOnlyNeededToEdit": "Si voleu fer canvis",
         "loginToStart": "Entra per contestar aquesta pregunta",
         "loginWithOpenStreetMap": "Entrar a OpenStreetMap",
         "logout": "Sortir",
@@ -267,20 +250,13 @@
             "noMatchingThemes": "Cap tema coincideix amb els teus criteris de cerca",
             "noSearch": "Mostra tots els temes",
             "previouslyHiddenTitle": "Peticions visitades i amagades",
-            "requestATheme": "Si vols que et fem una petició pròpia , demana-la al registre d'incidències",
             "searchForATheme": "Busca un tema",
             "streetcomplete": "Una altra aplicació similar és <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>."
         },
-        "nameInlineQuestion": "{category}: El seu nom és $$$",
         "next": "Següent",
-        "noMatchingMapping": "No hi ha cap entrada que coincideixi amb la teva cerca…",
-        "noNameCategory": "{category} sense nom",
         "noTagsSelected": "No s'han seleccionat etiquetes",
-        "notValid": "Selecciona un valor vàlid per a continuar",
         "number": "nombre",
-        "openStreetMapIntro": "<h3>Un mapa obert</h3><p>Un que tothom pogués utilitzar i editar lliurement. Un sol lloc on emmagatzemar tota la informació geogràfica. Llavors tots aquests llocs web amb mapes diferents petits i incompatibles (que sempre estaran desactualitzats) ja no serien necessaris.</p><p><b><a href='https://OpenStreetMap.org' target='_blank'>OpenStreetMap</a></b> no és el mapa de l'enemic. Les dades del mapa es poden utilitzar gratuïtament (amb <a href='https://osm.org/copyright' target='_blank'> atribució i publicació de canvis en aquestes dades</a>). A més a més, tothom pot agregar lliurement noves dades i corregir errors. Aquest lloc web també fa servir OpenStreetMap. Totes les dades provenen d'allà i les teves respostes i correccions també s'afegiran allà.</p><p>Moltes persones i aplicacions ja utilitzen OpenStreetMap: <a href='https://organicmaps.app/' target='_blank'>Organic Maps</a>, <a href='https://osmAnd.net' target='_blank'>OsmAnd</a>, però també els mapes de Facebook, Instagram, Apple i Bing són (en part) impulsats per OpenStreetMap .</p>",
         "openTheMap": "Obrir el mapa",
-        "openTheMapAtGeolocation": "Amplieu a la vostra ubicació",
         "openTheMapReason": "per a veure, editar i afegir informació",
         "opening_hours": {
             "closed_permanently": "Tancat - sense dia d'obertura conegut",
@@ -297,7 +273,6 @@
             "ph_open": "obert",
             "ph_open_as_usual": "obert com sempre"
         },
-        "osmLinkTooltip": "Navega a OpenStreetMap sobre aquest objecte per veure historial i altres opcions d'edició",
         "pdf": {
             "attr": "Dades del mapa © Contribuïdors d'OpenStreetMap, reutilitzable sota ODbL",
             "attrBackground": "Capa de fons: {background}",
@@ -318,7 +293,6 @@
             "skippedMultiple": "Heu saltat {skipped} pregutnes",
             "skippedOne": "Heu saltat una pregunta"
         },
-        "readYourMessages": "Per favor, llegeix tots els teus missatges d'OpenStreetMap abans d'afegir nous punts.",
         "removeLocationHistory": "Esborrar l'historial d'ubicació",
         "returnToTheMap": "Tornar al mapa",
         "save": "Desar",
@@ -327,7 +301,6 @@
             "error": "Alguna cosa no ha sortit bé…",
             "nothing": "Res trobat…",
             "search": "Cerca una ubicació",
-            "searchShort": "Cerca…",
             "searching": "Cercant…"
         },
         "sharescreen": {
@@ -337,7 +310,6 @@
             "fsUserbadge": "Activar el botó d'entrada",
             "fsWelcomeMessage": "Mostra el missatge emergent de benvinguda i pestanyes associades",
             "intro": "<h3>Comparteix aquest mapa</h3> Comparteix aquest mapa copiant l'enllaç de sota i enviant-lo a amics i família:",
-            "thanksForSharing": "Gràcies per compartir!",
             "title": "Comparteix aquest mapa"
         },
         "skip": "Saltar aquesta pregunta",
@@ -406,28 +378,23 @@
             "tuesday": "Dimarts",
             "wednesday": "Dimecres"
         },
-        "welcomeBack": "Has entrat, benvingut/da!",
         "welcomeExplanation": {
             "addNew": "Toqueu el mapa per afegir un nou PDI.",
             "general": "A aquest mapa, podeu observar, editar i afegir <i>punt d'interés</i>. Feu zoom pel voltant per veure el PDI, toque una vegada per a veure o editar la informació. Totes les dades s'obtenen i es desen a OpenStreetMap, que es poden reutilitzar lliurement."
         },
         "wikipedia": {
-            "addEntry": "Afegeix una altra pàgina de la Viquipèdia",
-            "createNewWikidata": "Crear un ítem de Wikidata",
             "doSearch": "Cerca adalt per veure els resultats",
             "failed": "Ha fallat la càrrega d'entrada de la Viquipèdia",
             "fromWikipedia": "De Viquipèdia, l'enciclopèdia lliure",
             "loading": "Carregant Viquipèdia…",
             "noResults": "Res trobat per <i>{search}</i>",
-            "noWikipediaPage": "Aquest ítem de Wikidata no té cap pàgina de Viquipèdia corresponent.",
             "previewbox": {
                 "born": "Nascut: {value}",
                 "died": "Mort: {value}"
             },
             "readMore": "Llig la resta de l'article",
             "searchToShort": "La vostra consulta de cerca és massa curta, introduïu un text més llarg",
-            "searchWikidata": "Cercar a Wikidata",
-            "wikipediaboxTitle": "Viquipèdia"
+            "searchWikidata": "Cercar a Wikidata"
         }
     },
     "hotkeyDocumentation": {
@@ -439,16 +406,13 @@
         "openLayersPanel": "Obre el tauler de capes i filtres",
         "selectAerial": "Estableix el fons amb imatges aèries o per satèl·lit. Alterna entre les dues millors capes disponibles",
         "selectMap": "Estableix el fons a un mapa de fonts externes. Alterna entre les dues millors capes disponibles",
-        "selectMapnik": "Estableix la capa de fons a OpenStreetMap-carto",
         "selectOsmbasedmap": "Estableix la capa de fons basat en OpenStreetMap (o desactiva la capa de ràster de fons)",
         "selectSearch": "Seleccioneu la barra de cerca per cercar ubicacions",
         "title": "Dreceres"
     },
     "image": {
         "addPicture": "Afegir foto",
-        "currentLicense": "Les vostres imatges seran publicades sota la {license}",
         "doDelete": "Esborrar imatge",
-        "dontDelete": "Cancel·lar",
         "isDeleted": "Esborrada",
         "nearby": {
             "link": "Aquesta imatge mostra l'objecte",
@@ -474,31 +438,20 @@
                 "uploading": "La teva imatge s'està penjant…"
             }
         },
-        "uploadDone": "La teva imatge ha estat afegida. Gràcies per ajudar!",
-        "uploadFailed": "No s'ha pogut pujar la imatge. Tens Internet i es permeten API de tercers? El navegador Brave o UMatrix podria bloquejar-les.",
-        "uploadMultipleDone": "S'han afegit {count} imatges. Gràcies per ajudar!",
-        "uploadingMultiple": "Pujant {count} imatges…",
-        "uploadingPicture": "Pujant la teva imatge…"
+        "uploadFailed": "No s'ha pogut pujar la imatge. Tens Internet i es permeten API de tercers? El navegador Brave o UMatrix podria bloquejar-les."
     },
     "importInspector": {
         "title": "Inspeccionar i controlar notes d'importació"
     },
     "importLayer": {
-        "alreadyMapped": "Ja hi ha un {title} al mapa - aquest punt és un duplicat",
         "description": "Una capa que importa entrades per a {title}",
-        "importButton": "import_button({layerId}, _tags, he trobat un {title} aquí; afegeix-lo al mapa,./assets/svg/addSmall.svg,,,id)",
-        "importHandled": "<div class=\"thanks\">Aquesta funció s'ha gestionat. Gràcies pel teu esforç.</div>",
         "layerName": "Possible {title}",
-        "nearbyImagesIntro": "<h3>Imatges properes</h3>Les imatges següents són imatges geoetiquetades properes de diversos serveis en línia. Us poden ajudar a resoldre aquesta nota.{nearby_images(open)}",
-        "notFound": "No he pogut trobar {title}: esborra-ho",
-        "popupTitle": "Pot ser que hi hagi {title} aquí"
+        "notFound": "No he pogut trobar {title}: esborra-ho"
     },
     "index": {
         "#": "Aquests textos es mostren sobre els botons de les peticions quan no hi ha petició carregada",
-        "featuredThemeTitle": "Destacades aquesta setmana",
         "intro": "MapComplete és un visor i editor d'OpenStreetMap, que et mostra informació sobre elements d'una petició específica i et permet actualitzar-los.",
         "logIn": "Entra per veure altres temes que has visitat anteriorment",
-        "pickTheme": "Tria una petició a sota per començar.",
         "title": "Benvingut/da a MapComplete"
     },
     "move": {
@@ -513,8 +466,6 @@
         "inviteToMoveAgain": "Moure aquest punt un altre cop",
         "isRelation": "Aquest element és una relació i no es pot moure",
         "isWay": "Aquest element és una via. Fes servir un altre editor d'OpenStreetMap per moure'l.",
-        "loginToMove": "Has d'entrar per moure aquest punt",
-        "moveTitle": "Moure aquest punt",
         "partOfAWay": "Aquest element és part d'una altra via. Fes servir un altre editor per moure'l.",
         "partOfRelation": "Aquest element és part d'una relació. Fes servir un altre editor per moure'l.",
         "pointIsMoved": "Has mogut el punt",
@@ -522,8 +473,6 @@
             "reasonInaccurate": "La localització d'aquest objecte no és ajustada i s'hauria de moure uns metres",
             "reasonRelocation": "L'objecte ha estat recol·locat a una localització totalment diferent"
         },
-        "selectReason": "Per què mous aquest objecte?",
-        "whyMove": "Per què vols moure aquest punt?",
         "zoomInFurther": "Amplia per confirmar aquest moviment"
     },
     "multi_apply": {
@@ -544,13 +493,10 @@
         "isClosed": "Aquesta nota s'ha resolt",
         "isCreated": "La teva nota ha estat creada!",
         "loginToAddComment": "Inicieu sessió per afegir un comentari",
-        "loginToAddPicture": "Inicieu sessió per afegir una imatge",
         "loginToClose": "Inicieu sessió per tancar aquesta nota",
-        "noteIsPublic": "Això serà visible per a tothom",
         "noteLayerDoEnable": "Habilita la capa que mostra notes",
         "noteLayerHasFilters": "Algunes notes poden estar ocultes per un filtre",
         "noteLayerNotEnabled": "La capa que mostra les notes no està activada. Aquesta capa s'ha d'habilitar per afegir una nota nova",
-        "notesLayerMustBeEnabled": "La capa 'notes' està desactivada. Activa-la per afegir una nota",
         "reopenNote": "Reobrir nota",
         "reopenNoteAndComment": "Reobrir nota i comentar",
         "textNeeded": "Introdueix un text descriptiu per crear una nota",
@@ -578,7 +524,6 @@
         "overviewVerify": "Si us plau, comproveu que l'espècie és correcta i vinculeu-la a l'arbre",
         "poweredByPlantnet": "Desenvolupat per <a href='https://plantnet.org' target='_blank'>plantnet.org</a>",
         "querying": "Consultant a plantnet.org amb {length} imatges",
-        "seeInfo": "Veure més informació sobre l'espècie",
         "takeImages": "Feu imatges de l'arbre per detectar automàticament el tipus d'arbre",
         "tryAgain": "Seleccioneu una espècie diferent"
     },
@@ -610,7 +555,6 @@
         "attribution": "Les ressenyes funcionen gràcies a <a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a> i estan disponibles sota <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a>.",
         "i_am_affiliated": "Tinc alguna filiació amb aquest objecte",
         "i_am_affiliated_explanation": "Marqueu si sou propietari, creador, empleat,…",
-        "name_required": "És requerit un nom per mostrar i crear revisions",
         "no_reviews_yet": "No hi ha revisions encara. Sigues el primer a escriure'n una i ajuda al negoci i a les dades lliures!",
         "question": "Com valoraries {title()}?",
         "question_opinion": "Com va ser la vostra experiència?",
@@ -621,9 +565,7 @@
         "saved": "Ressenya compartida. Gràcies per compartir!",
         "saving_review": "Desant…",
         "title": "{count} revisions",
-        "title_singular": "Una revisió",
         "tos": "Si crees una ressenya estàs d'acord amb <a href=\"https://mangrove.reviews/terms\" target=\"_blank\"> els Termes de Servei i política de privacitat de Mangrove.reviews</a>",
-        "write_a_comment": "Deixa una ressenya…",
         "your_reviews": "Les vostres opinions anteriors",
         "your_reviews_empty": "No hem pogut trobar cap de les vostres opinions anteriors"
     },
@@ -633,19 +575,13 @@
         "inviteToSplit": "Talla aquesta carretera en trossos més petits. Això et permetrà afegir informacions diferents a les parts.",
         "loginToSplit": "Has d'entrar per poder dividir una carretera",
         "split": "Dividir",
-        "splitAgain": "Torneu a dividir aquesta carretera",
-        "splitTitle": "Trieu al mapa on canvien les propietats d'aquesta carretera"
+        "splitAgain": "Torneu a dividir aquesta carretera"
     },
     "translations": {
         "activateButton": "Ajuda a traduir MapComplete",
-        "allMissing": "Encara no hi ha traduccions",
-        "missing": "{count} cadenes sense traduir",
-        "notImmediate": "Les traduccions no s'actualitzen directament. Això sol trigar uns quants dies"
+        "missing": "{count} cadenes sense traduir"
     },
     "userinfo": {
-        "gotoInbox": "Obre la teva safata d'entrada",
-        "gotoSettings": "Aneu a la vostra configuració a OpenStreetMap.org",
-        "noDescription": "Encara no tens una descripció al teu perfil",
         "notLoggedIn": "Heu tancat la sessió"
     },
     "validation": {
@@ -705,8 +641,7 @@
             "noZero": "No es permet el zero"
         },
         "slope": {
-            "inputExplanation": "Poseu el telèfon a terra amb la part superior del telèfon apuntant cap a la part superior del pendent.",
-            "inputIncorrect": "Per a les mesures correctes, assegureu-vos que la fletxa està dins de la zona verda."
+            "inputExplanation": "Poseu el telèfon a terra amb la part superior del telèfon apuntant cap a la part superior del pendent."
         },
         "string": {
             "description": "un tros de text"

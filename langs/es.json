@@ -13,7 +13,6 @@
     "communityIndex": {
         "available": "Esta comunidad habla {native}",
         "intro": "Conéctate con otras personas para conocerlas, aprender de ellas,…",
-        "notAvailable": "Esta comunidad no habla {native}",
         "title": "Conéctate con otros"
     },
     "delete": {
@@ -23,16 +22,11 @@
         "deletedTitle": "Elemento eliminado",
         "explanations": {
             "hardDelete": "Este elemento se eliminará en OpenStreetMap. Puede ser recuperado por un colaborador experimentado",
-            "retagNoOtherThemes": "Este elemento se reclasificará y se ocultará en esta aplicación",
-            "retagOtherThemes": "Este elemento se volverá a etiquetar y será visible en {otherThemes}",
-            "selectReason": "Por favor, selecciona por qué este elemento debería eliminarse",
             "softDelete": "Este elemento se actualizará y se ocultará en esta aplicación. <span class='subtle'>{reason}</span>"
         },
-        "isChanged": "Este elemento ha sido modificado y ya no coincide con esta capa",
         "isDeleted": "Este elemento está eliminado",
         "isntAPoint": "Solo se pueden eliminar nodos, el elemento seleccionado es una línea, área o relación.",
         "loading": "Inspeccionando propiedades para verificar si este elemento se puede eliminar.",
-        "loginToDelete": "Debes iniciar sesión para eliminar un elemento",
         "notEnoughExperience": "Este elemento fue creado por otra persona.",
         "onlyEditedByLoggedInUser": "Este elemento solo ha sido editado por ti, puedes eliminarlo sin problemas.",
         "partOfOthers": "Este nodo es parte de alguna línea o relación y no se puede eliminar directamente.",
@@ -70,8 +64,6 @@
         "title": "Datos estructurados cargados desde el sitio web externo"
     },
     "favourite": {
-        "loginNeeded": "<h3>Iniciar sesión</h3>Un diseño personal solo está disponible para usuarios de OpenStreetMap",
-        "panelIntro": "<h3>Tu tema personal</h3>Activa tus capas favoritas de todos los temas oficiales",
         "reload": "Recargar los datos"
     },
     "favouritePoi": {
@@ -142,10 +134,8 @@
         "add": {
             "addNew": "Agregar {category}",
             "backToSelect": "Selecciona una categoría diferente",
-            "confirmButton": "Agregar una {category}<br/><div class='alert'>Tu adición es visible para todos</div>",
             "confirmLocation": "Confirmar esta ubicación",
             "confirmTitle": "¿Agregar un/una {title}?",
-            "confirmWarning": "El elemento que crees aquí será <b>visible para todos</b>. Por favor, solo agrega cosas al mapa si realmente existen. Muchas aplicaciones usan estos datos.",
             "creating": "Creando un nuevo punto...",
             "disableFilters": "Desactivar todos los filtros",
             "disableFiltersExplanation": "Algunos elementos pueden estar ocultos por un filtro",
@@ -168,7 +158,6 @@
             "presetInfo": "El nuevo PDI tendrá {tags}",
             "stillLoading": "Los datos aún se están cargando. Espera un poco antes de agregar un nuevo elemento.",
             "title": "Agregar un nuevo elemento",
-            "warnVisibleForEveryone": "Tu adición será visible para todos",
             "wrongType": "Este elemento no es un nodo o una línea y no se puede importar",
             "zoomInFurther": "Acerca más para agregar un elemento",
             "zoomInMore": "Acerca más para importar este elemento"
@@ -197,7 +186,6 @@
             "madeBy": "Hecho por <b>{author}</b>",
             "mapContributionsBy": "Los datos visibles actuales tienen ediciones realizadas por {contributors}",
             "mapContributionsByAndHidden": "Los datos visibles actuales tienen ediciones realizadas por {contributors} y {hiddenCount} colaboradores más",
-            "mapDataByOsm": "Datos del mapa: OpenStreetMap",
             "mapillaryHelp": "<b>Mapillary</b> es un servicio en línea que recopila imágenes a nivel de calle y las ofrece bajo una licencia gratuita. Los colaboradores pueden usar estas imágenes para mejorar OpenStreetMap",
             "openIssueTracker": "Reportar un error",
             "openMapillary": "Abrir Mapillary aquí",
@@ -214,7 +202,6 @@
         },
         "back": "Atrás",
         "backToIndex": "Ver todos los mapas temáticos",
-        "backToMap": "Volver al mapa",
         "backgroundMap": "Selecciona una capa de fondo",
         "backgroundSwitch": "Cambiar fondo",
         "cancel": "Cancelar",
@@ -264,16 +251,12 @@
         "error": "Algo salió mal",
         "example": "Ejemplo",
         "examples": "Ejemplos",
-        "fewChangesBefore": "Por favor, responde algunas preguntas de elementos existentes antes de agregar un nuevo elemento.",
         "filterPanel": {
             "allTypes": "Todos los tipos",
             "disableAll": "Deshabilitar todos",
             "enableAll": "Habilitar todos"
         },
         "geopermissionDenied": "Se denegó el permiso de ubicación",
-        "getStartedLogin": "Inicia sesión con OpenStreetMap para comenzar",
-        "getStartedNewAccount": " o <a href='https://www.openstreetmap.org/user/new' target='_blank'>crea una nueva cuenta</a>",
-        "goToInbox": "Abrir bandeja de entrada",
         "histogram": {
             "error_loading": "No se pudo cargar el histograma"
         },
@@ -300,7 +283,6 @@
         "loginFailedOfflineMode": "OpenStreetMap.org no está disponible actualmente debido a mantenimiento. Pronto será posible realizar ediciones",
         "loginFailedReadonlyMode": "OpenStreetMap.org está actualmente en modo de solo lectura debido a mantenimiento. Pronto será posible realizar ediciones",
         "loginFailedUnreachableMode": "OpenStreetMap.org no es accesible actualmente. ¿Estás conectado a internet o bloqueas a terceros? Intenta de nuevo más tarde",
-        "loginOnlyNeededToEdit": "si quieres hacer cambios",
         "loginToStart": "Inicia sesión para responder esta pregunta",
         "loginWithOpenStreetMap": "Iniciar sesión con OpenStreetMap",
         "logout": "Cerrar sesión",
@@ -321,20 +303,13 @@
             "noMatchingThemes": "Ningún tema coincide con tus criterios de búsqueda",
             "noSearch": "Mostrar todos los temas",
             "previouslyHiddenTitle": "Temas ocultos visitados anteriormente",
-            "requestATheme": "Si quieres un tema personalizado, solicítalo en el rastreador de incidencias",
             "searchForATheme": "Buscar un tema",
             "streetcomplete": "Otra aplicación similar es <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' class='underline hover:text-blue-800' class='underline hover:text-blue-800' target='_blank'>StreetComplete</a>."
         },
-        "nameInlineQuestion": "El nombre de este/a {category} es $$$",
         "next": "Siguiente",
-        "noMatchingMapping": "Ninguna entrada coincide con tu búsqueda…",
-        "noNameCategory": "{category} sin nombre",
         "noTagsSelected": "No se han seleccionado etiquetas",
-        "notValid": "Selecciona un valor válido para continuar",
         "number": "número",
-        "openStreetMapIntro": "<h3>Un mapa abierto</h3><p>Uno que todos pueden usar y editar libremente. Un solo lugar para almacenar toda la información geográfica. No se necesitan mapas diferentes, pequeños, incompatibles y desactualizados en ninguna parte.</p><p><b><a href='https://OpenStreetMap.org' target='_blank'>OpenStreetMap</a></b> no es el mapa enemigo. Los datos del mapa se pueden usar libremente (con <a href='https://osm.org/copyright' target='_blank'>atribución y publicación de cambios a esos datos</a>). Todos pueden agregar nuevos datos y corregir errores. Este sitio web usa OpenStreetMap. Todos los datos provienen de ahí, y tus respuestas y correcciones se usan en todas partes.</p><p>Muchas personas y aplicaciones ya usan OpenStreetMap: <a href='https://organicmaps.app/' target='_blank'>Organic Maps</a>, <a href='https://osmAnd.net' target='_blank'>OsmAnd</a>, pero también los mapas de Facebook, Instagram, Apple Maps y Bing Maps están (parcialmente) impulsados por OpenStreetMap.</p>",
         "openTheMap": "Abrir el mapa",
-        "openTheMapAtGeolocation": "Acercar a tu ubicación",
         "openTheMapReason": "para ver, editar y agregar información",
         "opening_hours": {
             "all_days_from": "Abierto todos los días {ranges}",
@@ -347,7 +322,6 @@
             "monday": "El lunes {ranges}",
             "not_all_rules_parsed": "Estos horarios de apertura son complicados. Las siguientes reglas se ignoran en el elemento de entrada:",
             "on_weekdays": "Abierto los días de semana {ranges}",
-            "on_weekends": "Abierto los fines de semana {ranges}",
             "openTill": "hasta",
             "open_24_7": "Abierto las 24 horas",
             "open_during_ph": "Durante un feriado, está",
@@ -365,7 +339,6 @@
             "unknown": "Se desconocen los horarios de apertura",
             "wednesday": "El miércoles {ranges}"
         },
-        "osmLinkTooltip": "Explora este objeto en OpenStreetMap para ver el historial y más opciones de edición",
         "pdf": {
             "attr": "Datos del mapa © OpenStreetMap Contributors, reutilizables bajo ODbL",
             "attrBackground": "Capa de fondo: {background}",
@@ -391,16 +364,9 @@
             "disable": "No vuelva a hacer esta pregunta",
             "disabledIntro": "Ha desactivado algún tipo de pregunta. Para volver a activar una pregunta, haga clic aquí",
             "disabledTitle": "Preguntas deshabilitadas",
-            "emailIs": "El correo electrónico de este/a {category} es <a href='mailto:{email}' target='_blank'>{email}</a>",
-            "emailOf": "¿Cuál es el correo electrónico de {category}?",
             "enable": "Haga esta pregunta para todas las prestaciones",
-            "noneDisabled": "Si no le interesa un tipo específico de pregunta, desactívela. Para desactivar una pregunta, haga clic en los tres puntos de la esquina superior derecha y seleccione 'desactivar'.",
-            "phoneNumberIs": "El número de teléfono de este/a {category} es <a href='tel:{phone}' target='_blank'>{phone}</a>",
-            "phoneNumberOf": "¿Cuál es el número de teléfono de {category}?",
-            "websiteIs": "Sitio web: <a href='{website}' target='_blank'>{website}</a>",
-            "websiteOf": "¿Cuál es el sitio web de {category}?"
+            "noneDisabled": "Si no le interesa un tipo específico de pregunta, desactívela. Para desactivar una pregunta, haga clic en los tres puntos de la esquina superior derecha y seleccione 'desactivar'."
         },
-        "readYourMessages": "Por favor, lee todos tus mensajes de OpenStreetMap antes de agregar un nuevo elemento.",
         "removeLocationHistory": "Eliminar el historial de ubicación",
         "retry": "Reintentar",
         "returnToTheMap": "Volver al mapa",
@@ -424,7 +390,6 @@
             "recentThemes": "Mapas visitados recientemente",
             "recents": "Lugares vistos recientemente",
             "search": "Buscar una ubicación",
-            "searchShort": "Buscar…",
             "searching": "Buscando…"
         },
         "searchAnswer": "Buscar una opción…",
@@ -440,11 +405,9 @@
             "fsUserbadge": "Habilitar el botón de inicio de sesión y, por lo tanto, la posibilidad de realizar cambios",
             "fsWelcomeMessage": "Mostrar la ventana emergente del mensaje de bienvenida y las pestañas asociadas",
             "intro": "Comparte este mapa copiando el enlace a continuación y enviándolo a tus amigos y familiares:",
-            "openInOtherApplications": "Abrir la ubicación actual con otra aplicación de mapas",
             "openLayers": "Abrir el menú de capas y filtros",
             "options": "Opciones para compartir",
             "stateIsIncluded": "El estado actual de las capas y los filtros se incluye en el enlace compartido y el iframe.",
-            "thanksForSharing": "¡Gracias por compartir!",
             "title": "Compartir este mapa"
         },
         "skip": "Saltar esta pregunta",
@@ -540,28 +503,23 @@
             "tuesday": "Martes",
             "wednesday": "Miércoles"
         },
-        "welcomeBack": "¡Bienvenido de nuevo!",
         "welcomeExplanation": {
             "addNew": "¿Falta algún elemento? Usa el botón en la parte inferior izquierda para agregar un nuevo punto de interés.",
             "general": "En este mapa, puedes ver, editar y agregar <i>puntos de interés</i>. Navega para ver los PDI, toca uno para ver o editar la información. Todos los datos provienen y se guardan en OpenStreetMap, que se puede reutilizar libremente."
         },
         "wikipedia": {
-            "addEntry": "Agregar otra página de Wikipedia",
-            "createNewWikidata": "Crear un nuevo elemento de Wikidata",
             "doSearch": "Busca arriba para ver los resultados",
             "failed": "Error al cargar la entrada de Wikipedia",
             "fromWikipedia": "De Wikipedia, la enciclopedia libre",
             "loading": "Cargando Wikipedia…",
             "noResults": "Nada encontrado para <i>{search}</i>",
-            "noWikipediaPage": "Este elemento de Wikidata aún no tiene una página de Wikipedia correspondiente.",
             "previewbox": {
                 "born": "Nacimiento: {value}",
                 "died": "Fallecimiento: {value}"
             },
             "readMore": "Leer el resto del artículo",
             "searchToShort": "Tu consulta de búsqueda es demasiado corta, ingresa un texto más largo",
-            "searchWikidata": "Buscar en Wikidata",
-            "wikipediaboxTitle": "Wikipedia"
+            "searchWikidata": "Buscar en Wikidata"
         }
     },
     "hotkeyDocumentation": {
@@ -580,7 +538,6 @@
         "selectItem3": "Seleccionar el tercer elemento más cercano al centro del mapa (cruz). Solo cuando se utiliza la navegación por teclado",
         "selectItemI": "Seleccionar el elemento {i} más cercano al centro del mapa (cruz). Solo cuando se utiliza la navegación por teclado",
         "selectMap": "Establecer el fondo a un mapa de fuentes externas. Alterna entre las dos mejores capas disponibles",
-        "selectMapnik": "Establecer la capa de fondo a OpenStreetMap-carto",
         "selectOsmbasedmap": "Establecer la capa de fondo en un mapa basado en OpenStreetMap (o deshabilitar la capa ráster de fondo)",
         "selectSearch": "Seleccionar la barra de búsqueda para buscar ubicaciones",
         "shakePhone": "Agitando tu teléfono",
@@ -589,9 +546,7 @@
     },
     "image": {
         "addPicture": "Agregar imagen",
-        "currentLicense": "Tus imágenes se publicarán bajo {license}",
         "doDelete": "Eliminar imagen",
-        "dontDelete": "Cancelar",
         "isDeleted": "Eliminado",
         "nearby": {
             "close": "Contraer el panel con imágenes cercanas",
@@ -607,13 +562,9 @@
             "otherFreeform": "Por favor, especifique por qué debe eliminarse esta imagen:",
             "placeholder": "Explicar por qué la imagen debe ser eliminada",
             "report": {
-                "blur_excess": "Demasiado borrosa, haciendo la imagen inútil",
-                "blur_missing": "Una cara o placa de matrícula no está borrosa en esta imagen",
                 "copyright": "La imagen contiene contenido protegido por derechos de autor",
                 "inappropriate": "Esta imagen es inapropiada (contiene desnudez, incita al odio o no es streetview)",
-                "mislocated": "La imagen es de una ubicación diferente",
                 "other": "Otra razón, por favor especifíquese",
-                "picture_low_quality": "La imagen es de baja calidad",
                 "privacy": "La imagen muestra una propiedad privada"
             },
             "requestDeletion": "Solicitar la eliminación de una imagen",
@@ -646,33 +597,22 @@
                 "uploading": "Tu imagen se está subiendo…"
             }
         },
-        "uploadDone": "¡Tu imagen ha sido agregada! ¡Gracias por ayudar!",
-        "uploadFailed": "No se pudo subir tu imagen. ¿Estás conectado a Internet y permites las API de terceros? El navegador Brave o el complemento uMatrix podrían bloquearlas.",
-        "uploadMultipleDone": "{count} imágenes han sido agregadas. ¡Gracias por ayudar!",
-        "uploadingMultiple": "Subiendo {count} imágenes…",
-        "uploadingPicture": "Subiendo tu imagen…"
+        "uploadFailed": "No se pudo subir tu imagen. ¿Estás conectado a Internet y permites las API de terceros? El navegador Brave o el complemento uMatrix podrían bloquearlas."
     },
     "importInspector": {
         "title": "Inspeccionar y gestionar notas de importación"
     },
     "importLayer": {
-        "alreadyMapped": "{title} ya está en el mapa: este punto es un duplicado",
         "description": "Una capa que importa entradas para {title}",
-        "importButton": "import_button({layerId}, _tags, He encontrado un/una {title} aquí: agrégalo al mapa,./assets/svg/addSmall.svg,,,id)",
-        "importHandled": "<div class='thanks'>¡Este elemento ha sido gestionado! Gracias por tu esfuerzo</div>",
         "layerName": "Posible {title}",
-        "nearbyImagesIntro": "<h3>Imágenes cercanas</h3>Las siguientes imágenes son imágenes geoetiquetadas cercanas de varios servicios en línea. Podrían ayudarte a resolver esta nota.{nearby_images(open)}",
-        "notFound": "No pude encontrar {title}: elimínalo",
-        "popupTitle": "Podría haber un/una {title} aquí"
+        "notFound": "No pude encontrar {title}: elimínalo"
     },
     "index": {
         "#": "Estos textos se muestran sobre los botones del tema cuando no hay ningún tema cargado",
         "about": "Acerca de MapComplete",
-        "featuredThemeTitle": "Recomendado esta semana",
         "intro": "Mapas sobre varios temas a los que puedes contribuir",
         "learnMore": "Aprende más",
         "logIn": "Inicia sesión para ver otros temas que has visitado anteriormente",
-        "pickTheme": "Elige un tema a continuación para comenzar.",
         "title": "MapComplete"
     },
     "move": {
@@ -687,8 +627,6 @@
         "inviteToMoveAgain": "Mover este punto de nuevo",
         "isRelation": "Este elemento es una relación y no se puede mover",
         "isWay": "Este elemento es una línea. Usa otro editor de OpenStreetMap para moverlo.",
-        "loginToMove": "Debes iniciar sesión para mover un punto",
-        "moveTitle": "Mover este punto",
         "partOfAWay": "Este elemento es parte de otra línea. Usa otro editor para moverlo.",
         "partOfRelation": "Este elemento es parte de una relación. Usa otro editor para moverlo.",
         "pointIsMoved": "El punto ha sido movido",
@@ -697,8 +635,6 @@
             "reasonRelocation": "El objeto ha sido reubicado a una ubicación totalmente diferente",
             "reasonSnapTo": "Esto debería ajustarse a {name}"
         },
-        "selectReason": "¿Por qué mueves este objeto?",
-        "whyMove": "¿Por qué quieres mover este punto?",
         "zoomInFurther": "Acerca más para confirmar este movimiento"
     },
     "multi_apply": {
@@ -719,13 +655,10 @@
         "isClosed": "Esta nota está resuelta",
         "isCreated": "¡Tu nota ha sido creada!",
         "loginToAddComment": "Inicia sesión para agregar un comentario",
-        "loginToAddPicture": "Inicia sesión para agregar una imagen",
         "loginToClose": "Inicia sesión para cerrar esta nota",
-        "noteIsPublic": "Esto será visible para todos",
         "noteLayerDoEnable": "Habilitar la capa que muestra las notas",
         "noteLayerHasFilters": "Algunas notas pueden estar ocultas por un filtro",
         "noteLayerNotEnabled": "La capa que muestra las notas no está habilitada. Esta capa debe estar habilitada para agregar una nueva nota",
-        "notesLayerMustBeEnabled": "La capa 'notas' está deshabilitada. Habilítala para agregar una nota",
         "reopenNote": "Reabrir nota",
         "reopenNoteAndComment": "Reabrir nota y comentar",
         "textNeeded": "Ingresa un texto descriptivo para crear una nota",
@@ -753,7 +686,6 @@
         "overviewVerify": "Por favor, verifica que la especie sea correcta y enlázala al árbol",
         "poweredByPlantnet": "Impulsado por <a href='https://plantnet.org' target='_blank'>plantnet.org</a>",
         "querying": "Consultando plantnet.org con {length} imágenes",
-        "seeInfo": "Ver más información sobre la especie",
         "takeImages": "Toma imágenes del árbol para detectar automáticamente el tipo de árbol",
         "tryAgain": "Seleccionar una especie diferente"
     },
@@ -791,7 +723,6 @@
         "averageRating": "Calificación promedio de {n} estrellas",
         "i_am_affiliated": "Estoy afiliado con este objeto",
         "i_am_affiliated_explanation": "Verifica si eres propietario, creador, empleado,…",
-        "name_required": "Se requiere un nombre para mostrar y crear reseñas",
         "no_reviews_yet": "Aún no hay reseñas. ¡Sé el primero!",
         "non_place_review": "Una reseña no es sobre un lugar y no se muestra aquí.",
         "non_place_reviews": "{n} reseñas no son sobre un lugar y no se muestran aquí.",
@@ -808,10 +739,8 @@
         "saving_review": "Guardando…",
         "see_all": "Ver todas tus reseñas en mangrove.reviews",
         "title": "{count} reseñas",
-        "title_singular": "Una reseña",
         "too_long": "Se permiten como máximo {max} caracteres. Tu reseña tiene {amount} caracteres.",
         "tos": "Si creas una revisión, aceptas <a href='https://mangrove.reviews/terms' target='_blank'>los TOS y la política de privacidad de Mangrove.reviews</a>",
-        "write_a_comment": "Deja una reseña…",
         "your_reviews": "Tus reseñas anteriores",
         "your_reviews_empty": "No pudimos encontrar ninguna de tus reseñas anteriores"
     },
@@ -821,14 +750,11 @@
         "inviteToSplit": "Divide esta carretera en segmentos más pequeños. Esto permite dar diferentes propiedades a partes de la carretera.",
         "loginToSplit": "Debes iniciar sesión para dividir una carretera",
         "split": "Dividir",
-        "splitAgain": "Dividir esta carretera de nuevo",
-        "splitTitle": "Elige en el mapa dónde cambian las propiedades de esta carretera"
+        "splitAgain": "Dividir esta carretera de nuevo"
     },
     "translations": {
         "activateButton": "Ayuda a traducir MapComplete",
-        "allMissing": "Aún no hay traducciones",
-        "missing": "{count} cadenas sin traducir",
-        "notImmediate": "Las traducciones no se actualizan directamente. Esto normalmente toma unos pocos días"
+        "missing": "{count} cadenas sin traducir"
     },
     "unknown": {
         "clear": "Borrar respuesta",
@@ -839,9 +765,6 @@
         "title": "¿Marcar como desconocido?"
     },
     "userinfo": {
-        "gotoInbox": "Abrir tu bandeja de entrada",
-        "gotoSettings": "Ir a tus ajustes en OpenStreetMap.org",
-        "noDescription": "Aún no tienes una descripción en tu perfil",
         "notLoggedIn": "Has cerrado sesión"
     },
     "validation": {
@@ -905,8 +828,7 @@
             "description": "una expresión regular"
         },
         "slope": {
-            "inputExplanation": "Coloca tu teléfono en el suelo con la parte superior de tu teléfono apuntando hacia la parte superior de la pendiente.",
-            "inputIncorrect": "Para mediciones correctas, asegúrate de que la flecha esté dentro del área verde."
+            "inputExplanation": "Coloca tu teléfono en el suelo con la parte superior de tu teléfono apuntando hacia la parte superior de la pendiente."
         },
         "string": {
             "description": "un fragmento de texto"

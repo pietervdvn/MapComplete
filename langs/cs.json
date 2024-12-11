@@ -13,7 +13,6 @@
     "communityIndex": {
         "available": "Tato komunita mluví {native}",
         "intro": "Navažte kontakt s ostatními lidmi, abyste je poznali, učili se od nich, …",
-        "notAvailable": "Tato komunita nemluví {native}",
         "title": "Spojte se s ostatními"
     },
     "delete": {
@@ -23,16 +22,11 @@
         "deletedTitle": "Smazaná funkce",
         "explanations": {
             "hardDelete": "Tato funkce bude v OpenStreetMap odstraněna. Zkušený přispěvatel ji může obnovit",
-            "retagNoOtherThemes": "Tato funkce bude překlasifikována a skryta z této aplikace",
-            "retagOtherThemes": "Tato funkce bude nově označena a viditelná v {otherThemes}",
-            "selectReason": "Vyberte, proč by tato funkce měla být odstraněna",
             "softDelete": "Tato funkce bude v této aplikaci aktualizována a skryta. <span class='subtle'>{reason}</span>"
         },
-        "isChanged": "Tato funkce byla změněna a již neodpovídá této vrstvě",
         "isDeleted": "Tato funkce je smazána",
         "isntAPoint": "Odstranit lze pouze uzly, vybraným prvkem je cesta, oblast nebo relace.",
         "loading": "Kontrola vlastností, zda lze tuto funkci odstranit.",
-        "loginToDelete": "Chcete-li funkci odstranit, musíte být přihlášeni",
         "notEnoughExperience": "Tuto funkci vytvořil někdo jiný.",
         "onlyEditedByLoggedInUser": "Tuto funkci jste upravovali pouze vy, můžete ji bez obav odstranit.",
         "partOfOthers": "Tento uzel je součástí nějaké cesty nebo relace a nelze jej přímo smazat.",
@@ -70,8 +64,6 @@
         "title": "Strukturovaná data načtená z externí webové stránky"
     },
     "favourite": {
-        "loginNeeded": "<h3>Přihlášení</h3>Osobní rozvržení je k dispozici pouze pro uživatele OpenStreetMap",
-        "panelIntro": "<h3>Vaše osobní téma</h3>Aktivujte si své oblíbené vrstvy ze všech oficiálních témat",
         "reload": "Znovu načíst data"
     },
     "favouritePoi": {
@@ -142,10 +134,8 @@
         "add": {
             "addNew": "Přidat {category}",
             "backToSelect": "Vyberte jinou kategorii",
-            "confirmButton": "Přidat kategorii {category}<br/><div class='alert'>Váš příspěvek je viditelný pro všechny</div>",
             "confirmLocation": "Potvrďte toto umístění",
             "confirmTitle": "Přidat {title}?",
-            "confirmWarning": "Funkce, kterou zde vytvoříte, bude <b>viditelná pro všechny</b>. Prosím, přidávejte věci na mapu pouze tehdy, pokud skutečně existují. Tato data využívá mnoho aplikací.",
             "creating": "Tvorba nového bodu...",
             "disableFilters": "Vypnout všechny filtry",
             "disableFiltersExplanation": "Některé funkce mohou být filtrem skryty",
@@ -168,7 +158,6 @@
             "presetInfo": "Nový bod zájmu bude mít {tags}",
             "stillLoading": "Data se stále načítají. Před přidáním nové funkce prosím chvíli počkejte.",
             "title": "Přidat novou funkci",
-            "warnVisibleForEveryone": "Váš příspěvek bude viditelný pro všechny",
             "wrongType": "Tato funkce není uzel ani cesta a nelze ji importovat",
             "zoomInFurther": "Další přiblížení a přidání funkce",
             "zoomInMore": "Pro import této funkce si ji více přibližte"
@@ -197,7 +186,6 @@
             "madeBy": "Vytvořeno od <b>{author}</b>",
             "mapContributionsBy": "Aktuální viditelná data obsahují úpravy provedené uživateli {contributors}",
             "mapContributionsByAndHidden": "Aktuální viditelná data obsahují úpravy provedené {contributors} a {hiddenCount} dalšími přispěvateli",
-            "mapDataByOsm": "Mapová data: OpenStreetMap",
             "mapillaryHelp": "<b>Mapillary</b> je online služba, která shromažďuje snímky na úrovni ulic a nabízí je pod bezplatnou licencí. Přispěvatelé mohou tyto obrázky používat ke zlepšení OpenStreetMap",
             "openIssueTracker": "Nahlaste chybu",
             "openMapillary": "Zde otevřít Mapillary",
@@ -214,7 +202,6 @@
         },
         "back": "Zpět",
         "backToIndex": "Zobrazit všechny tematické mapy",
-        "backToMap": "Zpět na mapu",
         "backgroundMap": "Vyberte vrstvu pozadí",
         "backgroundSwitch": "Přepnout pozadí",
         "cancel": "Zrušit",
@@ -264,16 +251,12 @@
         "error": "Něco se pokazilo",
         "example": "Příklad",
         "examples": "Příklady",
-        "fewChangesBefore": "Před přidáním nové funkce prosím odpovězte na několik otázek týkajících se stávajících funkcí.",
         "filterPanel": {
             "allTypes": "Všechny typy",
             "disableAll": "Zakázat vše",
             "enableAll": "Povolit vše"
         },
         "geopermissionDenied": "Povolení k poloze bylo zamítnuto",
-        "getStartedLogin": "Přihlaste se pomocí OpenStreetMap a začněte",
-        "getStartedNewAccount": " nebo <a href='https://www.openstreetmap.org/user/new' target='_blank'>vytvořte nový účet</a>",
-        "goToInbox": "Otevřete složku Doručená pošta",
         "histogram": {
             "error_loading": "Nelze načíst histogram"
         },
@@ -300,7 +283,6 @@
         "loginFailedOfflineMode": "OpenStreetMap.org je v současné době z důvodu údržby nedostupný. Provádění úprav bude brzy možné",
         "loginFailedReadonlyMode": "OpenStreetMap.org je v současné době z důvodu údržby v režimu pouze pro čtení. Provádění úprav bude brzy možné",
         "loginFailedUnreachableMode": "OpenStreetMap.org není v současné době dosažitelný. Jste připojeni k internetu nebo blokujete třetí strany? Zkuste to později",
-        "loginOnlyNeededToEdit": "pokud chcete provést změny",
         "loginToStart": "Přihlaste se a odpovězte na tuto otázku",
         "loginWithOpenStreetMap": "Přihlaste se pomocí OpenStreetMap",
         "logout": "Odhlásit se",
@@ -321,20 +303,13 @@
             "noMatchingThemes": "Vašim vyhledávacím kritériím neodpovídají žádná témata",
             "noSearch": "Zobrazit všechna témata",
             "previouslyHiddenTitle": "Dříve navštívená skrytá témata",
-            "requestATheme": "Pokud chcete vlastní téma, požádejte o něj v nástroji pro sledování problémů",
             "searchForATheme": "Hledat téma",
             "streetcomplete": "Další podobnou aplikací je <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' class='underline hover:text-blue-800' class='underline hover:text-blue-800' target='_blank'>StreetComplete</a>."
         },
-        "nameInlineQuestion": "Název této {category} je $$$",
         "next": "Další",
-        "noMatchingMapping": "Žádné záznamy neodpovídají vašemu vyhledávání…",
-        "noNameCategory": "{category} bez názvu",
         "noTagsSelected": "Nejsou vybrány žádné štítky",
-        "notValid": "Pro pokračování vyberte platnou hodnotu",
         "number": "číslo",
-        "openStreetMapIntro": "<h3>Otevřená mapa</h3><p>Takovou, kterou může každý volně používat a upravovat. Jediné místo pro uložení všech geoinformací. Různé, malé, nekompatibilní a zastaralé mapy nejsou nikde potřeba.</p><p><b><a href='https://OpenStreetMap.org' target='_blank'>OpenStreetMap</a></b > není nepřátelská mapa. Mapová data lze volně používat (s <a href='https://osm.org/copyright' target='_blank'>přiřazením a zveřejněním změn těchto dat</a>). Každý může přidávat nová data a opravovat chyby. Tento web používá OpenStreetMap. Všechna data jsou odtud a vaše odpovědi a opravy se používají všude.</p><p>Mnoho lidí a aplikací již OpenStreetMap používá: <a href='https://organicmaps.app/' target='_blank '>Organické mapy</a>, <a href='https://osmAnd.net' target='_blank'>OsmAnd</a>, ale také mapy na Facebooku, Instagramu, Apple-maps a Bing-maps jsou (částečně) poháněny OpenStreetMap.</p>",
         "openTheMap": "Otevřít mapu",
-        "openTheMapAtGeolocation": "Přiblížení k vaší poloze",
         "openTheMapReason": "pro zobrazení, úpravu a přidání informací",
         "opening_hours": {
             "all_days_from": "Otevřeno každý den {ranges}",
@@ -347,7 +322,6 @@
             "monday": "V pondělí {ranges}",
             "not_all_rules_parsed": "Tato otevírací doba je komplikovaná. Následující pravidla jsou ve vstupním prvku ignorována:",
             "on_weekdays": "Otevřeno ve všední dny {ranges}",
-            "on_weekends": "Otevřeno o víkendech {ranges}",
             "openTill": "do",
             "open_24_7": "Otevřeno nepřetržitě",
             "open_during_ph": "Během státního svátku je",
@@ -365,7 +339,6 @@
             "unknown": "Otevírací doba není známa",
             "wednesday": "Ve středu {ranges}"
         },
-        "osmLinkTooltip": "Prohlédněte si tento objekt na OpenStreetMap pro historii a další možnosti úprav",
         "pdf": {
             "attr": "Mapová data © OpenStreetMap Contributors, opakovaně použitelná pod ODbL",
             "attrBackground": "Vrstva pozadí: {background}",
@@ -387,20 +360,6 @@
             "skippedMultiple": "Přeskočili jste {skipped} otázky",
             "skippedOne": "Vynechali jste jednu otázku"
         },
-        "questions": {
-            "disable": "Tuto otázku už nepokládejte",
-            "disabledIntro": "Zakázali jste některé typy otázek. Chcete-li otázku znovu povolit, klikněte na ni zde",
-            "disabledTitle": "Zakázané otázky",
-            "emailIs": "E-mailová adresa této {category} je <a href='mailto:{email}' target='_blank'>{email}</a>",
-            "emailOf": "Jaká je e-mailová adresa {category}?",
-            "enable": "Tuto otázku položte u všech funkcí",
-            "noneDisabled": "Pokud vás určitý typ otázky nezajímá, zakažte ji. Chcete-li otázku zakázat, klikněte na tři tečky v pravém horním rohu a vyberte možnost \"zakázat\"",
-            "phoneNumberIs": "Telefonní číslo této {category} je <a href='tel:{phone}' target='_blank'>{phone}</a>",
-            "phoneNumberOf": "Jaké je telefonní číslo na {category}?",
-            "websiteIs": "Webová strana: <a href='{website}' target='_blank'>{website}</a>",
-            "websiteOf": "Jaká je webová stránka {category}?"
-        },
-        "readYourMessages": "Před přidáním nové funkce si prosím přečtěte všechny zprávy OpenStreetMap.",
         "removeLocationHistory": "Odstranit historii polohy",
         "retry": "Zkusit znovu",
         "returnToTheMap": "Návrat na mapu",
@@ -424,7 +383,6 @@
             "recentThemes": "Nedávno navštívené mapy",
             "recents": "Nedávno navštívená místa",
             "search": "Vyhledat místo",
-            "searchShort": "Vyhledávání…",
             "searching": "Hledání…"
         },
         "searchAnswer": "Vyhledat možnost…",
@@ -440,11 +398,9 @@
             "fsUserbadge": "Povolit přihlašovací tlačítko a tím i možnost provádět změny",
             "fsWelcomeMessage": "Zobrazit vyskakovací okno s uvítací zprávou a související karty",
             "intro": "Sdílejte tuto mapu zkopírováním níže uvedeného odkazu a jeho zasláním přátelům a rodině:",
-            "openInOtherApplications": "Otevřete aktuální polohu pomocí jiné mapové aplikace",
             "openLayers": "Otevřete nabídku vrstev a filtrů",
             "options": "Možnosti sdílení",
             "stateIsIncluded": "Aktuální stav vrstev a filtrů je zahrnut ve sdíleném odkazu a prvku iframe.",
-            "thanksForSharing": "Díky za sdílení!",
             "title": "Sdílet tuto mapu"
         },
         "skip": "Přeskočit tuto otázku",
@@ -540,28 +496,23 @@
             "tuesday": "Úterý",
             "wednesday": "Středa"
         },
-        "welcomeBack": "Vítejte zpět!",
         "welcomeExplanation": {
             "addNew": "Chybí nějaká položka? Pro přidání nového bodu zájmu použijte tlačítko vlevo dole.",
             "general": "Na této mapě si můžete zobrazit, upravovat a přidávat <i>body zájmu</i>. Přibližováním si zobrazte body zájmu a klepnutím na jeden z nich si zobrazte nebo upravte informace. Všechna data pocházejí z OpenStreetMap a jsou v ní uložena, takže je lze volně používat."
         },
         "wikipedia": {
-            "addEntry": "Přidat další stránku Wikipedie",
-            "createNewWikidata": "Vytvořit novou položku Wikidata",
             "doSearch": "Pro zobrazení výsledků vyhledávejte výše",
             "failed": "Načítání záznamu ve Wikipedii se nezdařilo",
             "fromWikipedia": "Z Wikipedie, svobodné encyklopedie",
             "loading": "Načítání Wikipedie…",
             "noResults": "Pro <i>{search}</i> nebylo nic nalezeno",
-            "noWikipediaPage": "Tato položka Wikidat zatím nemá odpovídající stránku na Wikipedii.",
             "previewbox": {
                 "born": "Narozen: {value}",
                 "died": "Zemřel: {value}"
             },
             "readMore": "Přečtěte si zbytek článku",
             "searchToShort": "Váš vyhledávací dotaz je příliš krátký, zadejte delší text",
-            "searchWikidata": "Hledat na Wikidatech",
-            "wikipediaboxTitle": "Wikipedie"
+            "searchWikidata": "Hledat na Wikidatech"
         }
     },
     "hotkeyDocumentation": {
@@ -580,7 +531,6 @@
         "selectItem3": "Vyberte bod zájmu, který je třetím nejbližším prvkem ke středu mapy (křížek). Pouze při použití klávesnicové navigace",
         "selectItemI": "Vyberte bod zájmu, který je {i}tým nejbližším prvkem ke středu mapy (křížek). Pouze při použití klávesnicové navigace",
         "selectMap": "Nastavení pozadí na mapu z externích zdrojů. Přepíná mezi dvěma nejlepšími dostupnými vrstvami",
-        "selectMapnik": "Nastavení vrstvy pozadí na OpenStreetMap-carto",
         "selectOsmbasedmap": "Nastavení vrstvy pozadí na mapu založenou na OpenStreetMap (nebo vypnutí rastrové vrstvy pozadí)",
         "selectSearch": "Vybere vyhledávací řádek pro vyhledávání míst",
         "shakePhone": "Zatřesení telefonem",
@@ -589,9 +539,7 @@
     },
     "image": {
         "addPicture": "Udělat fotku",
-        "currentLicense": "Vaše snímky budou zveřejněny pod {license}",
         "doDelete": "Odebrat obrázek",
-        "dontDelete": "Zrušit",
         "isDeleted": "Smazáno",
         "nearby": {
             "close": "Sbalení panelu s okolními obrázky",
@@ -607,13 +555,9 @@
             "otherFreeform": "Uveďte, proč by měl být tento obrázek odstraněn:",
             "placeholder": "Vysvětlete, proč by měl být obrázek smazán",
             "report": {
-                "blur_excess": "Příliš mnoho je rozmazané, takže obrázek je k ničemu",
-                "blur_missing": "Obličej nebo poznávací značka nejsou na tomto obrázku rozmazané",
                 "copyright": "Na obrázku je obsah chráněný autorským právem",
                 "inappropriate": "Tento obrázek je nevhodný (obsahuje nahotu, vyzývá k nenávisti nebo není streetview)",
-                "mislocated": "Obrázek je z jiného místa",
                 "other": "Jiný důvod, prosím uveďte",
-                "picture_low_quality": "Obraz je nízké kvality",
                 "privacy": "Na obrázku je soukromý pozemek"
             },
             "requestDeletion": "Žádost o smazání obrázku",
@@ -646,33 +590,22 @@
                 "uploading": "Váš obrázek se nahrává…"
             }
         },
-        "uploadDone": "Vaše fotka byla přidána. Děkujeme za pomoc!",
-        "uploadFailed": "Obrázek se nepodařilo nahrát. Jste připojeni k internetu a máte povoleno rozhraní API třetích stran? Prohlížeč Brave nebo zásuvný modul uMatrix je mohou blokovat.",
-        "uploadMultipleDone": "Bylo přidáno {count} fotek. Děkujeme za pomoc!",
-        "uploadingMultiple": "Nahrávání {count} obrázků…",
-        "uploadingPicture": "Nahrávání obrázku…"
+        "uploadFailed": "Obrázek se nepodařilo nahrát. Jste připojeni k internetu a máte povoleno rozhraní API třetích stran? Prohlížeč Brave nebo zásuvný modul uMatrix je mohou blokovat."
     },
     "importInspector": {
         "title": "Kontrola a správa poznámek k importu"
     },
     "importLayer": {
-        "alreadyMapped": "Na mapě se již nachází {title} - tento bod je duplicitní",
         "description": "Vrstva, která importuje položky pro {title}",
-        "importButton": "import_button({layerId}, _tags, Našel jsem {title} zde - přidejte ji do mapy,./assets/svg/addSmall.svg,,,id)",
-        "importHandled": "<div class='thanks'>Tato funkce byla zpracována! Děkujeme za vaši snahu</div>",
         "layerName": "Možný {title}",
-        "nearbyImagesIntro": "<h3>Obrázky z okolí</h3>Následující obrázky jsou geograficky označené obrázky z různých online služeb. Mohly by vám pomoci při řešení této poznámky.{nearby_images(open)}",
-        "notFound": "Nepodařilo se mi najít {title} - odstraňte jej",
-        "popupTitle": "Zde by mohl být {title}"
+        "notFound": "Nepodařilo se mi najít {title} - odstraňte jej"
     },
     "index": {
         "#": "Tyto texty se zobrazují nad tlačítky motivu, pokud není načten žádný motiv",
         "about": "O MapComplete",
-        "featuredThemeTitle": "Tento týden",
         "intro": "Mapy k různým tématům, ke kterým můžete přispět",
         "learnMore": "Více informací",
         "logIn": "Přihlaste se, abyste viděli další témata, která jste dříve navštívili",
-        "pickTheme": "Vyberte si téma níže a začněte.",
         "title": "MapComplete"
     },
     "move": {
@@ -687,8 +620,6 @@
         "inviteToMoveAgain": "Znovu přesunout tento bod",
         "isRelation": "Tato funkce je vztah a nelze ji přesunout",
         "isWay": "Tato funkce je cesta. K přesunutí použijte jiný editor OpenStreetMap.",
-        "loginToMove": "Pro přesun bodu musíte být přihlášeni",
-        "moveTitle": "Přesunout tento bod",
         "partOfAWay": "Tato funkce je součástí jiné cesty. K přesunutí použijte jiný editor.",
         "partOfRelation": "Tato funkce je součástí vztahu. K přesunutí použijte jiný editor.",
         "pointIsMoved": "Bod byl přesunut",
@@ -697,8 +628,6 @@
             "reasonRelocation": "Objekt byl přemístěn na úplně jiné místo",
             "reasonSnapTo": "Toto by mělo být přichyceno k {name}"
         },
-        "selectReason": "Proč přesouváte tento objekt?",
-        "whyMove": "Proč chcete přesunout tento bod?",
         "zoomInFurther": "Chcete-li tento přesun potvrdit, více přibližte mapu"
     },
     "multi_apply": {
@@ -719,13 +648,10 @@
         "isClosed": "Tato poznámka je vyřešena",
         "isCreated": "Vaše poznámka byla vytvořena!",
         "loginToAddComment": "Chcete-li přidat komentář, přihlaste se",
-        "loginToAddPicture": "Chcete-li přidat obrázek, přihlaste se",
         "loginToClose": "Pro uzavření této poznámky se přihlaste",
-        "noteIsPublic": "Toto bude viditelné všem",
         "noteLayerDoEnable": "Povolit vrstvu zobrazující poznámky",
         "noteLayerHasFilters": "Některé poznámky mohou být skryty filtrem",
         "noteLayerNotEnabled": "Vrstva zobrazující poznámky není zapnuta. Chcete-li přidat novou poznámku, musí být tato vrstva povolena",
-        "notesLayerMustBeEnabled": "Vrstva 'poznámky' je zakázána. Chcete-li přidat poznámku, povolte ji",
         "reopenNote": "Znovu otevřít poznámku",
         "reopenNoteAndComment": "Znovu otevřít poznámku a komentovat",
         "textNeeded": "Chcete-li vytvořit poznámku, zadejte popisný text",
@@ -753,7 +679,6 @@
         "overviewVerify": "Ověřte prosím správný druh a propojte jej se stromem",
         "poweredByPlantnet": "Používá technologii <a href='https://plantnet.org' target='_blank'>plantnet.org</a>",
         "querying": "Dotazování na plantnet.org s obrázky {length}",
-        "seeInfo": "Více informací o druhu",
         "takeImages": "Pořizujte snímky stromu, abyste automaticky zjistili typ stromu",
         "tryAgain": "Vyberte jiný druh"
     },
@@ -791,7 +716,6 @@
         "averageRating": "Průměrné hodnocení {n} hvězdiček",
         "i_am_affiliated": "Jsem spojen s tímto objektem",
         "i_am_affiliated_explanation": "Zkontrolujte, zda jste vlastníkem, tvůrcem, zaměstnancem, …",
-        "name_required": "Pro zobrazení a vytváření recenzí je vyžadováno jméno",
         "no_reviews_yet": "Zatím nejsou žádné recenze. Buďte první!",
         "non_place_review": "Jedna recenze se netýká místa a není zde uvedena.",
         "non_place_reviews": "{n} recenzí se netýkají místa a nejsou zde zobrazeny.",
@@ -808,10 +732,8 @@
         "saving_review": "Ukládání…",
         "see_all": "Zobrazit všechny recenze na mangrove.reviews",
         "title": "{count} recenzí",
-        "title_singular": "Jedna recenze",
         "too_long": "Povoleno je maximálně {max} znaků. Vaše recenze má {amount} znaků.",
         "tos": "Zanecháním recenze souhlasíte s <a href='https://mangrove.reviews/terms' target='_blank'>podmínkami a zásadami ochrany osobních údajů služby Mangrove.reviews</a>",
-        "write_a_comment": "Zanechte recenzi…",
         "your_reviews": "Vaše předchozí recenze",
         "your_reviews_empty": "Nenašli jsme žádné z vašich předchozích hodnocení"
     },
@@ -821,14 +743,11 @@
         "inviteToSplit": "Rozdělte tuto silnici na menší úseky. To umožňuje dát částem silnice různé vlastnosti.",
         "loginToSplit": "Pro rozdělení silnice musíte být přihlášeni",
         "split": "Rozdělit",
-        "splitAgain": "Znovu rozdělit tuto cestu",
-        "splitTitle": "Vyberte na mapě, kde se mění vlastnosti této silnice"
+        "splitAgain": "Znovu rozdělit tuto cestu"
     },
     "translations": {
         "activateButton": "Pomozte přeložit MapComplete",
-        "allMissing": "Zatím bez překladů",
-        "missing": "{count} nepřeložených řetězců",
-        "notImmediate": "Překlady nejsou aktualizovány přímo. Obvykle to trvá několik dní"
+        "missing": "{count} nepřeložených řetězců"
     },
     "unknown": {
         "clear": "Vymazat odpověď",
@@ -839,9 +758,6 @@
         "title": "Označit jako neznámé?"
     },
     "userinfo": {
-        "gotoInbox": "Otevřít poštu",
-        "gotoSettings": "Přejít do vašich nastavení na OpenStreetMap.org",
-        "noDescription": "Na svém profilu zatím nemáte popis",
         "notLoggedIn": "Odhlásili jste se"
     },
     "validation": {
@@ -905,8 +821,7 @@
             "description": "regulární výraz"
         },
         "slope": {
-            "inputExplanation": "Položte telefon na zem tak, aby horní strana telefonu směřovala k horní části svahu.",
-            "inputIncorrect": "Pro správné měření se ujistěte, že se šipka nachází v zelené oblasti."
+            "inputExplanation": "Položte telefon na zem tak, aby horní strana telefonu směřovala k horní části svahu."
         },
         "string": {
             "description": "kus textu"

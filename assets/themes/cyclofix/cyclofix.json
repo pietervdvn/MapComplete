@@ -84,7 +84,8 @@
         "minzoom": 17,
         "=filter": {
           "sameAs": "bike_shop"
-        }
+        },
+        "isCounted": false
       }
     },
     {

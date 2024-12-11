@@ -51,6 +51,7 @@
   import EnvelopeOpen from "@babeard/svelte-heroicons/mini/EnvelopeOpen"
   import PanoramaxLink from "./PanoramaxLink.svelte"
   import { UIEventSource } from "../../Logic/UIEventSource"
+  import MagnifyingGlassCircle from "@babeard/svelte-heroicons/mini/MagnifyingGlassCircle"
 
   export let state: ThemeViewState
   let userdetails = state.osmConnection.userDetails
@@ -278,6 +279,14 @@
         <HotkeyTable />
       </Page>
     </div>
+
+    <a
+      class="flex"
+      href={window.location.protocol + "//" + window.location.host + "/inspector.html"}
+    >
+      <MagnifyingGlassCircle class="mr-2 h-6 w-6" />
+      <Tr t={Translations.t.inspector.menu} />
+    </a>
 
     <a class="flex" href="https://github.com/pietervdvn/MapComplete/" target="_blank">
       <Github class="h-6 w-6" />

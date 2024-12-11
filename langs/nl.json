@@ -12,8 +12,7 @@
     },
     "communityIndex": {
         "available": "Op dit communicatiekanaal spreekt men {native}",
-        "intro": "Contacteer anderen om kennis te maken, tips uit te wisselen …",
-        "notAvailable": "Op dit communicatiekanaal spreekt men geen {native}",
+        "intro": "Contacteer anderen om kennis te maken, tips uit te wisselen, …",
         "title": "Kom in contact met anderen"
     },
     "delete": {
@@ -23,16 +22,11 @@
         "deletedTitle": "Verwijderd item",
         "explanations": {
             "hardDelete": "Dit object zal verwijderd worden in OpenStreetMap. Een ervaren bijdrager kan dit ongedaan maken",
-            "retagNoOtherThemes": "Dit object zal anders aangeduid worden en niet meer getoond worden in deze applicatie",
-            "retagOtherThemes": "Dit object zal aangepast worden en zichtbaar zijn in {otherThemes}",
-            "selectReason": "Gelieve aan te duiden waarom dit object verwijderd moet worden",
             "softDelete": "Dit object zal aangepast worden en zal in deze applicatie niet meer getoond worden. <span class=\"subtle\">{reason}</span>"
         },
-        "isChanged": "Deze eigenschap is gewijzigd en komt niet langer overeen met deze laag",
         "isDeleted": "Dit object is verwijderd",
         "isntAPoint": "Enkel punten kunnen verwijderd worden. Het geselecteerde object is een lijn, een oppervlakte of een relatie.",
         "loading": "Aan het bekijken of dit object veilig verwijderd kan worden.",
-        "loginToDelete": "Je moet aangemeld zijn om een object van de kaart te verwijderen",
         "notEnoughExperience": "Dit object is door iemand anders gemaakt.",
         "onlyEditedByLoggedInUser": "Dit object is enkel door jezelf bewerkt, je kan dit veilig verwijderen.",
         "partOfOthers": "Dit punt maakt deel uit van een lijn, oppervlakte of een relatie en kan niet verwijderd worden.",
@@ -70,8 +64,6 @@
         "title": "Gestructureerde gegevens geladen van de externe website"
     },
     "favourite": {
-        "loginNeeded": "<h3>Log in</h3>Je moet je aanmelden met OpenStreetMap om een persoonlijk thema te gebruiken",
-        "panelIntro": "<h3>Jouw persoonlijke thema</h3>Activeer je favorite lagen van alle andere themas",
         "reload": "Herlaad de data"
     },
     "favouritePoi": {
@@ -142,10 +134,8 @@
         "add": {
             "addNew": "Voeg {category} toe",
             "backToSelect": "Selecteer een andere categorie",
-            "confirmButton": "Voeg een {category} toe<br/><div class='alert'>Je toevoeging is voor iedereen zichtbaar</div>",
             "confirmLocation": "Bevestig deze locatie",
             "confirmTitle": "Voeg een {title} toe?",
-            "confirmWarning": "Het object dat je toevoegt, is <b>zichtbaar voor iedereen</b>. Veel applicaties gebruiken deze data, voeg dus enkel punten toe die echt bestaan.",
             "creating": "Een nieuw punt aan het maken...",
             "disableFilters": "Zet alle filters af",
             "disableFiltersExplanation": "Interessepunten kunnen verborgen zijn door een filter",
@@ -168,7 +158,6 @@
             "presetInfo": "Het nieuwe object krijgt de attributen {tags}",
             "stillLoading": "De data worden nog geladen. Nog even geduld en dan kan je een object toevoegen.",
             "title": "Nieuw object toevoegen",
-            "warnVisibleForEveryone": "Je toevoeging is voor iedereen zichtbaar",
             "wrongType": "Dit object is geen punt of lijn en kan daarom niet geïmporteerd worden",
             "zoomInFurther": "U dient eerst verder in te zoomen als u een object wilt toevoegen",
             "zoomInMore": "Zoom meer in om dit object te importeren"
@@ -197,7 +186,6 @@
             "madeBy": "Gemaakt door <b>{author}</b>",
             "mapContributionsBy": "De huidige data is bijgedragen door {contributors}",
             "mapContributionsByAndHidden": "De zichtbare data heeft bijdragen van {contributors} en {hiddenCount} andere bijdragers",
-            "mapDataByOsm": "Kaartgegevens: OpenStreetMap",
             "mapillaryHelp": "<b>Mapillary</b> is een online dienst waar straatbeelden onder een vrije licentie gedeeld worden. Deze beelden mogen gebruikt worden om OpenStreetMap te verbeteren.",
             "openIssueTracker": "Geef een fout in de software door",
             "openMapillary": "Open Mapillary op deze locatie",
@@ -214,7 +202,6 @@
         },
         "back": "Vorige",
         "backToIndex": "Bekijk alle thematische kaarten",
-        "backToMap": "Ga terug naar de kaart",
         "backgroundMap": "Selecteer een achtergrondlaag",
         "backgroundSwitch": "Verander achtergrond",
         "cancel": "Annuleren",
@@ -264,16 +251,12 @@
         "error": "Er ging iets mis",
         "example": "Voorbeeld",
         "examples": "Voorbeelden",
-        "fewChangesBefore": "Gelieve eerst enkele vragen van bestaande objecten te beantwoorden vooraleer zelf objecten toe te voegen.",
         "filterPanel": {
             "allTypes": "Alle types",
             "disableAll": "Alles uitschakelen",
             "enableAll": "Alles inschakelen"
         },
         "geopermissionDenied": "Locatietoestemming werd geweigerd",
-        "getStartedLogin": "Login met OpenStreetMap om te beginnen",
-        "getStartedNewAccount": " of <a href='https://www.openstreetmap.org/user/new' target='_blank'>maak een nieuwe account aan</a>",
-        "goToInbox": "Ga naar de berichten",
         "histogram": {
             "error_loading": "Kan het histogram niet laden"
         },
@@ -301,6 +284,8 @@
         "loginFailedReadonlyMode": "OpenStreetMap.org is op dit moment in alleen-lezen-modus door onderhoud. Kaartwijzigingen maken zal binnenkort weer mogelijk zijn.",
         "loginFailedUnreachableMode": "OpenStreetMap.org kan op dit moment niet bereikt worden. Ben je verbonden met het internet of blokkeer je toegang tot externe websites? Probeer later opnieuw.",
         "loginOnlyNeededToEdit": "als je wijzigingen wilt maken",
+        "loginFailedReadonlyMode": "OpenStreetMap.org is op dit moment in alleen-lezen modus door onderhoud. Kaartwijzigingen maken zal binnenkort weer mogelijk zijn.",
+        "loginFailedUnreachableMode": "OpenStreetMap.org kan op dit moment niet bereikt worden. Ben je verbonden met het internet of blokkeer je toegang tot externe website? Probeer later opnieuw.",
         "loginToStart": "Meld je aan om deze vraag te beantwoorden",
         "loginWithOpenStreetMap": "Aanmelden met OpenStreetMap",
         "logout": "Afmelden",
@@ -321,20 +306,13 @@
             "noMatchingThemes": "Geen enkel thema beantwoordt je zoekopdracht",
             "noSearch": "Toon alle thema's",
             "previouslyHiddenTitle": "Eerder bezochte verborgen themas",
-            "requestATheme": "Als je een eigen kaartthema wil, vraag dit dan aan in de issuetracker.",
             "searchForATheme": "Zoek een thema",
             "streetcomplete": "Een andere, gelijkaardige Android applicatie is <a href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" class=\"underline hover:text-blue-800\" target=\"_blank\">StreetComplete</a>."
         },
-        "nameInlineQuestion": "De naam van dit {category} is $$$",
         "next": "Volgende",
-        "noMatchingMapping": "Geen overeenkomsten gevonden.",
-        "noNameCategory": "{category} zonder naam",
         "noTagsSelected": "Geen tags geselecteerd",
-        "notValid": "Kies een geldige waarde om verder te gaan",
         "number": "getal",
-        "openStreetMapIntro": "<h3>Een open kaart</h3><p>Zou het niet fantastisch zijn als er een open kaart zou zijn die door iedereen aangepast én gebruikt kan worden? Een kaart waar iedereen zijn interesses aan zou kunnen toevoegen? Dan zouden er geen duizend-en-één verschillende kleine kaartjes, websites, ... meer nodig zijn</p><p><b><a href='https://OpenStreetMap.org' target='_blank'>OpenStreetMap</a></b> is deze open kaart. Je mag de kaartdata gratis gebruiken (mits <a href='https://osm.org/copyright' target='_blank'>bronvermelding en herpublicatie van aanpassingen</a>). Daarenboven mag je de kaart ook gratis aanpassen als je een account maakt. Ook deze website is gebaseerd op OpenStreetMap. Als je hier een vraag beantwoordt, gaat het antwoord daar ook naartoe.</p><p>Er zijn reeds vele gebruikers van OpenStreetMap. Denk maar <a href='https://organicmaps.app/' target='_blank'>Organic Maps</a>, <a href='https://osmAnd.net' target='_blank'>OsmAnd</a>, verschillende gespecialiseerde routeplanners, maar ook de kaarten op Facebook, Instagram, Apple Maps en Bing Maps zijn (gedeeltelijk) gebaseerd op OpenStreetMap.</p><p>Kortom, als je hier een punt toevoegt of een vraag beantwoordt, zal dat na een tijdje ook in al díé applicaties te zien zijn.</p>",
         "openTheMap": "Raadpleeg de kaart",
-        "openTheMapAtGeolocation": "Ga naar jouw locatie",
         "openTheMapReason": "om informatie te zien, te wijzigen en toe te voegen",
         "opening_hours": {
             "all_days_from": "Elke dag geopend {ranges}",
@@ -347,7 +325,6 @@
             "monday": "Op maandag {ranges}",
             "not_all_rules_parsed": "De openingsuren zijn ingewikkeld. De volgende regels worden niet getoond bij het ingeven:",
             "on_weekdays": "Op weekdagen {ranges}",
-            "on_weekends": "In het weekend {ranges}",
             "openTill": "tot",
             "open_24_7": "Dag en nacht open",
             "open_during_ph": "Op een feestdag is dit",
@@ -365,7 +342,6 @@
             "unknown": "De openingsuren zijn niet gekend",
             "wednesday": "Op woensdag {ranges}"
         },
-        "osmLinkTooltip": "Bekijk dit object op OpenStreetMap om de geschiedenis te zien en meer te kunnen aanpassen",
         "pdf": {
             "attr": "Kaartgegevens © OpenStreetMap-bijdragers, herbruikbaar volgens ODbL",
             "attrBackground": "Achtergrondlaag: {background}",
@@ -391,16 +367,9 @@
             "disable": "Stel deze vraag niet opnieuw",
             "disabledIntro": "Je hebt sommige typen vragen uitgeschakeld. Klik hier om een vraag weer in te schakelen",
             "disabledTitle": "Uitgeschakelde vragen",
-            "emailIs": "Het e-mailadres van deze {category} is <a href='mailto:{email}' target='_blank'>{email}</a>",
-            "emailOf": "Wat is het e-mailadres van {category}?",
             "enable": "Stel deze vraag voor alle kenmerken",
-            "noneDisabled": "Als je niet geïnteresseerd bent in een bepaald type vraag, kun je deze uitschakelen. Een vraag uitschakelen doe je door op de drie puntjes in de rechterbovenhoek te klikken en 'uitschakelen' te selecteren",
-            "phoneNumberIs": "Het telefoonnummer van deze {category} is <a href='tel:{phone}' target='_blank'>{phone}</a>",
-            "phoneNumberOf": "Wat is het telefoonnummer van {category}?",
-            "websiteIs": "Website: <a href='{website}' target='_blank'>{website}</a>",
-            "websiteOf": "Wat is de website van {category}?"
+            "noneDisabled": "Als je niet geïnteresseerd bent in een bepaald type vraag, kun je deze uitschakelen. Een vraag uitschakelen doe je door op de drie puntjes in de rechterbovenhoek te klikken en 'uitschakelen' te selecteren"
         },
-        "readYourMessages": "Gelieve eerst je berichten op OpenStreetMap te lezen alvorens nieuwe objecten toe te voegen.",
         "removeLocationHistory": "Verwijder de geschiedenis aan locaties",
         "retry": "Opnieuw proberen",
         "returnToTheMap": "Ga terug naar de kaart",
@@ -424,8 +393,8 @@
             "recentThemes": "Recent bezochte kaarten",
             "recents": "Recent bekeken plaatsen",
             "search": "Zoek naar een locatie, filter of kaart",
-            "searchShort": "Zoek",
-            "searching": "Aan het zoeken …"
+            "searchShort": "Zoek…",
+            "searching": "Aan het zoeken…"
         },
         "searchAnswer": "Zoek een optie",
         "seeIndex": "Zie het overzich van alle thematische kaarten",
@@ -440,11 +409,9 @@
             "fsUserbadge": "Activeer de login-knop en dus de mogelijkheid om data aan te passen",
             "fsWelcomeMessage": "Toon het welkomstbericht en de bijhorende tabbladen",
             "intro": "Kopieer onderstaande link om deze kaart naar vrienden en familie door te sturen:",
-            "openInOtherApplications": "De huidige locatie openen met een andere kaarttoepassing",
             "openLayers": "Open het menu met lagen en filters",
             "options": "Opties voor delen",
             "stateIsIncluded": "De huidige status van de lagen en filters is opgenomen in de gedeelde link en iframe.",
-            "thanksForSharing": "Bedankt om te delen!",
             "title": "Deel deze kaart"
         },
         "skip": "Sla deze vraag over",
@@ -540,28 +507,23 @@
             "tuesday": "Dinsdag",
             "wednesday": "Woensdag"
         },
-        "welcomeBack": "Je bent aangemeld. Welkom terug!",
         "welcomeExplanation": {
             "addNew": "Ontbreekt een item? Gebruik de knop links-onderaan om een interesepunt toe te voegen.",
             "general": "Op deze kaart kan je <i>interessepunten</i> bekijken, bewerken en toevoegen. Zoom in om de interessepunten te zien, duid eentje aan om alle informatie te zien en te bewerken. Alle informatie komt van OpenStreetMap die gratis hergebruikt mag worden."
         },
         "wikipedia": {
-            "addEntry": "Voeg een andere Wikipedia-pagina toe",
-            "createNewWikidata": "Maak een nieuw Wikidata-item",
             "doSearch": "Zoek hierboven om resultaten te zien",
             "failed": "Het Wikipedia-artikel inladen is mislukt",
             "fromWikipedia": "Uit Wikipedia, de vrije encyclopedie",
             "loading": "Wikipedia aan het laden …",
             "noResults": "Geen relevante items gevonden voor <i>{search}</i>",
-            "noWikipediaPage": "Dit Wikidata-item heeft nog geen overeenkomstig Wikipedia-artikel.",
             "previewbox": {
                 "born": "Geboren: {value}",
                 "died": "Gestorven: {value}"
             },
             "readMore": "Lees de rest van het artikel",
             "searchToShort": "Je zoekopdracht is te kort, vul een langere tekst in",
-            "searchWikidata": "Zoek op Wikidata",
-            "wikipediaboxTitle": "Wikipedia"
+            "searchWikidata": "Zoek op Wikidata"
         }
     },
     "hotkeyDocumentation": {
@@ -580,7 +542,6 @@
         "selectItem3": "Selecteer het POI het op twee na dichtst bij het midden van de kaart (crosshair). Alleen wanneer toetsenbordnavigatie wordt gebruikt",
         "selectItemI": "Selecteer de POI die het op {i} na dichtst bij het midden van de kaart (crosshair) ligt. Alleen wanneer toetsenbordnavigatie wordt gebruikt",
         "selectMap": "Gebruik een niet-OpenStreetMap-gebaseerde kaart als achtergrond. Wisselt tussen de twee beste, beschikbare lagen",
-        "selectMapnik": "Gebruik OpenStreetMap-carto als achtergrondlaag",
         "selectOsmbasedmap": "Gebruik een OpenStreetMap-gebaseerde achtergrondkaart (of schakel de achtergrond-rasterlaag uit)",
         "selectSearch": "Selecteer de zoekbalk om locaties te zoeken",
         "shakePhone": "Schudden met je telefoon",
@@ -589,9 +550,7 @@
     },
     "image": {
         "addPicture": "Neem een foto",
-        "currentLicense": "Je afbeelding wordt gepubliceerd met de {license}-licentie",
         "doDelete": "Verwijder afbeelding",
-        "dontDelete": "Annuleren",
         "isDeleted": "Verwijderd",
         "nearby": {
             "close": "Paneel met nabije afbeeldingen samenvouwen",
@@ -607,13 +566,9 @@
             "otherFreeform": "Waarom moet deze afbeelding worden verwijderd:",
             "placeholder": "Leg uit waarom de foto verwijderd moet worden",
             "report": {
-                "blur_excess": "Er is te geblurd, waardoor de foto onbruikbaar is",
-                "blur_missing": "Op deze foto is een gezicht of nummerplaat niet geblurd",
                 "copyright": "De foto bevat auteursrechtelijk beschermde inhoud",
                 "inappropriate": "Deze foto is ongepast (bevat naakt, roept op tot haat of is geen straatbeeld)",
-                "mislocated": "De foto is van een andere locatie",
                 "other": "Een andere reden, specificeer",
-                "picture_low_quality": "De foto is van lage kwaliteit",
                 "privacy": "De foto toont een privé-eigendom"
             },
             "requestDeletion": "Verwijdering van foto aanvragen",
@@ -646,33 +601,22 @@
                 "uploading": "Je afbeelding wordt geüpload …"
             }
         },
-        "uploadDone": "Je afbeelding is toegevoegd. Bedankt om te helpen!",
-        "uploadFailed": "Afbeelding uploaden mislukt. Heb je internet? Gebruik je Brave of UMatrix? Dan moet je derde partijen toelaten.",
-        "uploadMultipleDone": "{count} afbeeldingen zijn toegevoegd. Bedankt voor je bijdrage!",
-        "uploadingMultiple": "Bezig met {count} foto's te uploaden …",
-        "uploadingPicture": "Bezig met een foto te uploaden …"
+        "uploadFailed": "Afbeelding uploaden mislukt. Heb je internet? Gebruik je Brave of UMatrix? Dan moet je derde partijen toelaten."
     },
     "importInspector": {
         "title": "Inspecteer en beheer importeer-notas"
     },
     "importLayer": {
-        "alreadyMapped": "Er staat hier reeds {title} op de kaart; dit punt is een duplicaat. Verwijder deze van de kaart",
         "description": "Deze laag toont kaart-nota's die wijzen op een {title}",
-        "importButton": "import_button({layerId}, _tags, Ik heb hier een {title} gevonden - voeg deze toe aan de kaart...,./assets/svg/addSmall.svg,,,id)",
-        "importHandled": "<div class='thanks'>Dit object is afgehandeld. Bedankt om mee te helpen!</div>",
         "layerName": "Hier is misschien een {title}",
-        "nearbyImagesIntro": "<h3>Afbeeldingen in de buurt</h3>De volgende afbeeldingen zijn in de buurt gemaakt en kunnen mogelijks helpen. {nearby_images(open)}",
-        "notFound": "Ik kon hier geen {title} vinden - verwijder deze van de kaart",
-        "popupTitle": "Is hier {title}?"
+        "notFound": "Ik kon hier geen {title} vinden - verwijder deze van de kaart"
     },
     "index": {
         "#": "Deze teksten worden getoond boven de themaknoppen wanneer nog geen thema is ingeladen",
         "about": "Over MapComplete",
-        "featuredThemeTitle": "Thema van de week",
         "intro": "Kaarten over verschillende thema's waar je kan aan bijdragen",
         "learnMore": "Lees meer",
         "logIn": "Log in om andere thema's te zien waar je al in bewerkt hebt",
-        "pickTheme": "Kies hieronder een thema om te beginnen.",
         "title": "Welkom bij MapComplete"
     },
     "move": {
@@ -691,14 +635,12 @@
         "moveTitle": "Verplaats dit punt",
         "partOfAWay": "Dit object is deel van een lijn of een oppervlakte. Gebruik een ander OpenStreetMap-bewerkprogramma om het te verplaatsen.",
         "partOfRelation": "Dit object maakt deel uit van een relatie. Gebruik een ander OpenStreetMap-bewerkprogramma om het te verplaatsen.",
-        "pointIsMoved": "Dit punt is verplaatst",
+         "pointIsMoved": "Dit punt is verplaatst",
         "reasons": {
             "reasonInaccurate": "De locatie van dit object is niet accuraat en moet een paar meter verschoven worden",
             "reasonRelocation": "Dit object is verhuisd naar een andere locatie",
             "reasonSnapTo": "Dit moet vastgeklikt worden aan {name}"
         },
-        "selectReason": "Waarom verplaats je dit object?",
-        "whyMove": "Waarom verplaats je dit punt?",
         "zoomInFurther": "Zoom verder in om de verplaatsing te bevestigen"
     },
     "multi_apply": {
@@ -719,13 +661,10 @@
         "isClosed": "Deze nota is gesloten",
         "isCreated": "Je kaarnota werd gemaakt!",
         "loginToAddComment": "Log in om een commentaar toe te voegen",
-        "loginToAddPicture": "Log in om een afbeelding toe te voegen",
         "loginToClose": "Login om deze kaartnota te sluiten",
-        "noteIsPublic": "Dit zal voor iedereen zichtbaar zijn",
         "noteLayerDoEnable": "Schakel de laag met kaartnota's in",
         "noteLayerHasFilters": "Sommige kaartnota's kunnen verborgen zijn door een filter",
         "noteLayerNotEnabled": "De laat met kaartnota's staat af. Zet deze aan om een nieuwe kaartnota toe te voegen",
-        "notesLayerMustBeEnabled": "De laat met kaartnota's staat af. Zet deze aan om een nieuwe kaartnota toe te voegen",
         "reopenNote": "Heropen de kaartnota",
         "reopenNoteAndComment": "Heropen de kaartnota en voeg commentaar toe",
         "textNeeded": "Geef een beschrijvende tekst om een kaartnota te maken",
@@ -753,7 +692,6 @@
         "overviewVerify": "Verifieer dat het de juiste soort is en link dit aan de boom",
         "poweredByPlantnet": "Met dank aan <a href='https://plantnet.org' target='_blank'>plantnet.org</a>",
         "querying": "Plantnet.org aan het bevragen met {length} afbeeldingen",
-        "seeInfo": "Bekijk meer informatie van deze plantensoort",
         "takeImages": "Neem afbeeldingen van de boom om de soort automatisch te herkennen",
         "tryAgain": "Selecteer een andere soort"
     },
@@ -821,14 +759,11 @@
         "inviteToSplit": "Deel deze weg op in kleinere segmenten (om andere eigenschappen per segment toe te kennen)",
         "loginToSplit": "Je moet aangemeld zijn om een weg te knippen",
         "split": "Bevestig het opdelen",
-        "splitAgain": "Deel deze weg opnieuw op",
-        "splitTitle": "Duid op de kaart aan waar de eigenschappen van de weg veranderen"
+        "splitAgain": "Deel deze weg opnieuw op"
     },
     "translations": {
         "activateButton": "Help met het vertalen van MapComplete",
-        "allMissing": "Nog geen vertalingen",
-        "missing": "{count} niet-vertaalde teksten",
-        "notImmediate": "Vertalingen worden niet onmiddelijk geupdate. Dit duurt gemiddeld enkele dagen"
+        "missing": "{count} niet-vertaalde teksten"
     },
     "unknown": {
         "clear": "Wis antwoord",
@@ -839,9 +774,6 @@
         "title": "Als onbekend markeren?"
     },
     "userinfo": {
-        "gotoInbox": "Open je inbox",
-        "gotoSettings": "Ga naar je instellingen op OpenStreetMap.org",
-        "noDescription": "Je hebt nog geen beschrijving op je profiel",
         "notLoggedIn": "Je bent afgemeld"
     },
     "validation": {
@@ -905,8 +837,7 @@
             "description": "een reguliere expressie"
         },
         "slope": {
-            "inputExplanation": "Leg je telefoon op de grond met de bovenkant naar de top van de helling.",
-            "inputIncorrect": "Voor een juiste meting moet je ervoor zorgen dat de pijl zich binnen het groene gebied bevindt."
+            "inputExplanation": "Leg je telefoon op de grond met de bovenkant naar de top van de helling."
         },
         "string": {
             "description": "een stukje tekst"

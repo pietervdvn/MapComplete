@@ -38,7 +38,8 @@
         "de": "Changeset-Zentren",
         "es": "Centros de conjuntos de cambios",
         "fr": "Centre du groupe de modifications",
-        "nl": "Changeset centra"
+        "nl": "Changeset centra",
+        "cs": "Changeset centra"
       },
       "minzoom": 0,
       "source": {
@@ -110,7 +111,8 @@
             "en": "Change with theme <a href='https://mapcomplete.org/{theme}'>{theme}</a>",
             "de": "Änderung mit Thema <a href='https://mapcomplete.org/{theme}'>{theme}</a>",
             "es": "Cambio con el tema <a href='https://mapcomplete.org/{theme}'>{theme}</a>",
-            "nl": "Verander met thema <a href='https://mapcomplete.org/{theme}'>{theme}</a>"
+            "nl": "Verander met thema <a href='https://mapcomplete.org/{theme}'>{theme}</a>",
+            "cs": "Změna pomocí tématu <a href='https://mapcomplete.org/{theme}'>{theme}</a>"
           }
         },
         {
@@ -374,6 +376,10 @@
                   {
                     "if": "theme=indoors",
                     "then": "./assets/layers/entrance/entrance.svg"
+                  },
+                  {
+                    "if": "theme=insects",
+                    "then": "./assets/layers/insect_hotel/insect_hotel.svg"
                   },
                   {
                     "if": "theme=items_with_image",

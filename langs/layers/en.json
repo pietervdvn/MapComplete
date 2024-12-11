@@ -2691,15 +2691,6 @@
                 },
                 "question": "Does one have to pay to use this charging station?"
             },
-            "maxstay": {
-                "mappings": {
-                    "0": {
-                        "then": "No timelimit on leaving your vehicle here"
-                    }
-                },
-                "question": "What is the maximum amount of time one is allowed to stay here?",
-                "render": "One can stay at most <b>{canonical(maxstay)}</b>"
-            },
             "phone": {
                 "question": "What number can one call if there is a problem with this charging station?",
                 "render": "In case of problems, call <a href='tel:{phone}'>{phone}</a>"
@@ -3060,6 +3051,40 @@
                 },
                 "question": "Is there a speed climbing wall?"
             },
+            "auto_belay_lead": {
+                "mappings": {
+                    "0": {
+                        "then": "There are no auto belays for lead climbing"
+                    },
+                    "1": {
+                        "then": "There is a number of auto belays for lead climbing"
+                    },
+                    "2": {
+                        "then": "There is an auto belay for every lead climbing route"
+                    }
+                },
+                "question": "Are there auto belays for lead climbing here?",
+                "render": "There are {climbing:autobelay:sport} auto belays for lead climbing"
+            },
+            "auto_belay_toprope": {
+                "mappings": {
+                    "0": {
+                        "then": "There are no auto belays for top roping"
+                    },
+                    "1": {
+                        "then": "There are a number of auto belays for top roping"
+                    },
+                    "2": {
+                        "then": "There is an auto belay for every top rope route but manual belaying is also possible"
+                    },
+                    "3": {
+                        "then": "Top rope routes can only be climbed on auto belay"
+                    }
+                },
+                "question": "Are there auto belays for top roping here?",
+                "questionHint": "Excluding auto belays that are only for speed climbing",
+                "render": "There are {climbing:autobelay:toprope} auto belay devices for top roping"
+            },
             "belay_device_rental": {
                 "mappings": {
                     "0": {
@@ -3078,7 +3103,7 @@
                         "then": "A belay device can <b>not</b> be rented here"
                     }
                 },
-                "question": "Can one rent a belay device here?"
+                "question": "Can one rent a belay device here to use in the gym?"
             },
             "harness_rental": {
                 "mappings": {
@@ -3095,7 +3120,7 @@
                         "then": "A climbing harness can <b>not</b> be rented here"
                     }
                 },
-                "question": "Can one rent a climbing harness here?"
+                "question": "Can one rent a climbing harness here to use in the gym?"
             },
             "name": {
                 "question": "What is the name of this climbing gym?"
@@ -3115,7 +3140,7 @@
                         "then": "A climbing rope can <b>not</b> be rented here"
                     }
                 },
-                "question": "Can one rent a climbing rope here?"
+                "question": "Can one rent a climbing rope here to use in the gym?"
             },
             "shoe_rental": {
                 "mappings": {
@@ -3132,7 +3157,7 @@
                         "then": "Climbing shoes can <b>not</b> be rented here"
                     }
                 },
-                "question": "Can one rent climbing shoes here?"
+                "question": "Can one rent climbing shoes here to use in the gym?"
             }
         },
         "title": {
@@ -4963,6 +4988,20 @@
                     }
                 }
             },
+            "16": {
+                "options": {
+                    "0": {
+                        "question": "Has outdoor seating"
+                    }
+                }
+            },
+            "17": {
+                "options": {
+                    "0": {
+                        "question": "Has indoor seating"
+                    }
+                }
+            },
             "2": {
                 "options": {
                     "0": {
@@ -5540,6 +5579,26 @@
                     }
                 },
                 "question": "Does {title()} deliver food to your home?"
+            },
+            "drive-through": {
+                "mappings": {
+                    "0": {
+                        "then": "This fast-food restaurant has a drive-through"
+                    },
+                    "1": {
+                        "then": "This fast-food restaurant does not have a drive-through"
+                    }
+                },
+                "question": "Does this fast-food restaurant have a drive-through?"
+            },
+            "drive-through-opening_hours": {
+                "mappings": {
+                    "0": {
+                        "then": "The opening hours of the drive-through are the same as the restaurant"
+                    }
+                },
+                "question": "What are the opening hours of the drive-through?",
+                "render": "<h3>Drive-through opening hours</h3>{opening_hours_table(opening_hours:drive_through)}"
             },
             "friture-oil": {
                 "mappings": {
@@ -8642,6 +8701,15 @@
             "mastodon": {
                 "question": "What is the Mastodon-handle of {title()}?"
             },
+            "maxstay": {
+                "mappings": {
+                    "0": {
+                        "then": "There is no limit to the amount of time one can stay here"
+                    }
+                },
+                "question": "What is the maximum amount of time one is allowed to stay here?",
+                "render": "One can stay at most <b>{canonical(maxstay)}</b>"
+            },
             "multilevels": {
                 "override": {
                     "question": "What levels does this elevator go to?",
@@ -8754,6 +8822,17 @@
                     }
                 },
                 "question": "Is {title()} available all around the year?"
+            },
+            "seating": {
+                "mappings": {
+                    "0": {
+                        "then": "This place has outdoor seating"
+                    },
+                    "1": {
+                        "then": "This place has indoor seating"
+                    }
+                },
+                "question": "What kind of seating does {title()} have?"
             },
             "service:electricity": {
                 "mappings": {
@@ -10619,12 +10698,19 @@
                         "then": "This is an escalator"
                     },
                     "1": {
-                        "then": "This is not an escalator"
+                        "then": "This is an escalator moving in the direction of the arrows"
                     },
                     "2": {
+                        "then": "This is a reversible escalator"
+                    },
+                    "3": {
+                        "then": "This is not an escalator"
+                    },
+                    "4": {
                         "then": "This is not an escalator"
                     }
-                }
+                },
+                "question": "Is this an escalator?"
             },
             "handrail": {
                 "mappings": {
