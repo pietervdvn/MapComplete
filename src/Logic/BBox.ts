@@ -68,17 +68,16 @@ export class BBox {
      *
      */
     static get(feature: Feature): BBox {
-        if (feature.bbox?.["overlapsWith"] === undefined) {
+        const f = <any>feature
+        if (f.bbox?.overlapsWith === undefined) {
             const [minX, minY, maxX, maxY]: number[] = turf.bbox(feature)
             // Note: x is longitude
-            // @ts-ignore
-            feature["bbox"] = new BBox([
+            f["bbox"] = new BBox([
                 [minX, minY],
                 [maxX, maxY],
             ])
         }
-        // @ts-ignore
-        return feature["bbox"]
+        return f["bbox"]
     }
 
     static bboxAroundAll(bboxes: BBox[]): BBox {
