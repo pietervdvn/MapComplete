@@ -1,4 +1,4 @@
-hosted.mapcomplete.org {
+builds.mapcomplete.org {
 	root * public/
 	file_server
 	header {
@@ -8,6 +8,23 @@ hosted.mapcomplete.org {
 
 dev.mapcomplete.org {
 	root * public/develop/
+	file_server
+	header {
+		+Permissions-Policy "interest-cohort=()"
+	}
+}
+
+single.mapcomplete.org {
+	root * single_theme_builds/
+	file_server
+	header {
+		+Permissions-Policy "interest-cohort=()"
+	}
+}
+
+
+velopark.mapcomplete.org {
+	root * single_theme_builds/velopark/
 	file_server
 	header {
 		+Permissions-Policy "interest-cohort=()"
