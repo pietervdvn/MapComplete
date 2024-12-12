@@ -10,12 +10,13 @@ import {
     MultiPolygon,
     Point,
     Polygon,
-    Position,
+    Position
 } from "geojson"
 import { Tiles } from "../Models/TileRange"
 import { Utils } from "../Utils"
 import { NearestPointOnLine } from "@turf/nearest-point-on-line"
-;("use strict")
+
+("use strict")
 
 export class GeoOperations {
     private static readonly _earthRadius = 6378137
@@ -365,6 +366,7 @@ export class GeoOperations {
     ): Feature<LineString | MultiLineString> {
         if (way.geometry.type === "Polygon") {
             return <Feature<LineString>>{
+                type: "Feature",
                 geometry: {
                     type: "LineString",
                     coordinates: way.geometry.coordinates[0],
@@ -374,6 +376,7 @@ export class GeoOperations {
         }
         if (way.geometry.type === "MultiPolygon") {
             return <Feature<MultiLineString>>{
+                type: "Feature",
                 geometry: {
                     type: "MultiLineString",
                     coordinates: way.geometry.coordinates[0],
