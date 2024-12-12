@@ -2,7 +2,7 @@ name: Deploy develop on theme.mapcomplete.org
 on:
   push:
     branches:
-      - build/*
+      - build/velopark
 
 jobs:
   deploy_on_hetzner_single:
