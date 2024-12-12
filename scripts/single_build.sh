@@ -1,16 +1,20 @@
+#! /bin/bash
+
+# Creates the build for just a single theme
+export NODE_OPTIONS="--max-old-space-size=12000"
 THEME=$1
-npm run generate:layouts
 if [ $# -eq 0 ]
   then
     echo "No arguments given. Expected a themename"
 fi
 
 pwd
+npm run generate:layouts
 if [ -f "$THEME.html" ]
 then
     echo "$THEME.html found."
 else
-  echo "Theme '$THEME' not found. Did you run 'npm run generate:layouts'?"
+  echo "Theme '$THEME' not found. Did you run 'npm run generate:layouts'? Is the theme name correct?"
   exit 1
 fi
 
@@ -33,12 +37,8 @@ sed -i "s/input,/input: {index:\".\/index.html\", land: \".\/land.html\"}/" vite
 sed -i "s/\/\/ LAYOUT.ADD_CONFIG/layout.enableMoreQuests = false/" index_"$THEME".ts
 
 
-
-
 export NODE_OPTIONS=--max-old-space-size=20000
 vite build --sourcemap --config vite_single.config.js || { echo 'Vite build failed' ; exit 1; }
-
-
 
 
 cp -r assets/layers/ dist/assets/layers/
@@ -92,37 +92,8 @@ fi
 npm run clean
 
 echo "BUILD COMPLETED"
-
-if [ $# -eq 2 ]
-then
-  echo "DEPLOY TO $2"
-
-  if [ -f "$2"/CNAME ]
-  then
-    CNAME=$(cat "$2"/CNAME)
-    echo "Found a CNAME"
-  fi
-  echo "Assuming github pages, add \".nojekyll\""
-  touch $2/.nojekyll
-  echo $CNAME > $2/CNAME
-  rm -r "$2/assets/*"
-  echo "  ! Don't forget to add `https://$CNAME/land.html` to the Redirect URIs on https://www.openstreetmap.org/oauth2/applications/"
-  cp -r "dist_$THEME/"* "$2"/
-
-  if [ -d "$2"/.git ]
-  then
-    cd $2
-    git add *
-    git commit -m "Add new version of MapComplete with single-page build of $THEME"
-    git push
-    cd -
-  fi
-  rm -r "dist_$THEME"
-else
-  echo "BUILD COMPLETED"
-  echo "On what domain will you deploy?"
-  echo "  ! Don't forget to add `https://yourdomain.tld/land.html` to the Redirect URIs on https://www.openstreetmap.org/oauth2/applications/"
-  echo "Deploying on github pages?"
-  echo " 1. Don't forget to add a CNAME file (containing your domain name verbatim, without protocol)"
-  echo " 2 .nojekyll file (which is empty)"
-fi
+echo "On what domain will you deploy?"
+echo "  ! Don't forget to add `https://yourdomain.tld/land.html` to the Redirect URIs on https://www.openstreetmap.org/oauth2/applications/"
+echo "Deploying on github pages?"
+echo " 1. Don't forget to add a CNAME file (containing your domain name verbatim, without protocol)"
+echo " 2 .nojekyll file (which is empty)"
