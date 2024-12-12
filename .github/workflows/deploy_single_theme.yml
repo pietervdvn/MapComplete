@@ -1,12 +1,12 @@
-name: Deploy develop on dev.mapcomplete.org
+name: Deploy develop on theme.mapcomplete.org
 on:
   push:
     branches:
-      - build/*
+      - build/.*
 
 jobs:
-  deploy_on_hosted:
-    runs-on: [ hetzner-access ]
+  deploy_on_hetzner_single:
+    runs-on: [ ubuntu-latest, hetzner-access ]
     steps:
       - uses: actions/checkout@v3
 
