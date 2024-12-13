@@ -93,12 +93,14 @@ export default class InitialMapPositioning {
         } else if (layoutToUse.id === "notes" && initialHash?.match(/[0-9]+/)) {
             console.log("Loading note", initialHash)
             const noteId = Number(initialHash)
-            osmConnection.getNote(noteId).then(note => {
-                    const [lon, lat] = note.geometry.coordinates
-                    console.log("Got note:", note)
-                    this.location.set({ lon, lat })
-                }
-            )
+            if (osmConnection.isLoggedIn.data) {
+                osmConnection.getNote(noteId).then(note => {
+                        const [lon, lat] = note.geometry.coordinates
+                        console.log("Got note:", note)
+                        this.location.set({ lon, lat })
+                    }
+                )
+            }
         } else if (
             Constants.GeoIpServer &&
             lat.data === defaultLat &&
