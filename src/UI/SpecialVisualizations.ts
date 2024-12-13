@@ -750,7 +750,7 @@ export default class SpecialVisualizations {
                         feature,
                         labelText: args[1],
                         image: args[2],
-                        noBlur: noBlur === "true" || noBlur === "yes",
+                        noBlur: noBlur === "true" || noBlur === "yes"
                     })
                 },
             },
@@ -1090,7 +1090,7 @@ export default class SpecialVisualizations {
                         tags
                             .map((tags) => tags[args[0]])
                             .map((commentsStr) => {
-                                const comments: any[] = JSON.parse(commentsStr)
+                                const comments: { text: string }[] = JSON.parse(commentsStr)
                                 const startLoc = Number(args[1] ?? 0)
                                 if (!isNaN(startLoc) && startLoc > 0) {
                                     comments.splice(0, startLoc)
