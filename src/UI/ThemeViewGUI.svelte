@@ -42,11 +42,9 @@
   import DrawerLeft from "./Base/DrawerLeft.svelte"
   import DrawerRight from "./Base/DrawerRight.svelte"
   import SearchResults from "./Search/SearchResults.svelte"
-  import { CloseButton } from "flowbite-svelte"
   import Hash from "../Logic/Web/Hash"
   import Searchbar from "./Base/Searchbar.svelte"
   import ChevronRight from "@babeard/svelte-heroicons/mini/ChevronRight"
-  import ChevronLeft from "@babeard/svelte-heroicons/solid/ChevronLeft"
   import { Drawer } from "flowbite-svelte"
   import { linear } from "svelte/easing"
 
@@ -201,8 +199,8 @@
     </div>
   {/if}
 
+  <!-- bottom controls -->
   <div class="pointer-events-none absolute bottom-0 left-0 mb-4 w-screen">
-    <!-- bottom controls -->
     <div class="flex w-full items-end justify-between px-4">
       <div class="flex flex-col">
         <If condition={featureSwitches.featureSwitchEnableLogin}>
@@ -220,7 +218,7 @@
               {:else if state.theme.hasPresets()}
                 ✨ <Tr t={Translations.t.general.add.title} />
               {:else}
-                <Tr t={Translations.t.notes.addAComment} />
+                <Tr t={Translations.t.notes.createNote} />
               {/if}
             </button>
           {/if}
