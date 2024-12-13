@@ -159,7 +159,7 @@
             "stillLoading": "目前仍在載入資料，請稍後再來新增圖徵。",
             "title": "新增新的圖徵",
             "wrongType": "這個圖徵並非節點也不是路徑，因此無法匯入",
-            "zoomInFurther": "放大來新增新的圖徵",
+            "zoomInFurther": "如果你想要新增新的圖徵你需要先放大",
             "zoomInMore": "再放大來匯入這一圖徵"
         },
         "apply_button": {
@@ -193,7 +193,10 @@
             "seeOnMapillary": "在 Mapillary 觀看這張影像",
             "themeBy": "由 {author} 維護主題",
             "title": "版權與署名",
-            "translatedBy": "MapComplete 由 {contributors} 翻譯，而且還有 <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} 更多貢獻者</a>"
+            "translatedBy": "MapComplete 由 {contributors} 翻譯，而且還有 <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} 更多貢獻者</a>",
+            "emailCreators": "寄 email 給創作者",
+            "madeBy": "由<b>{author}</b>製作",
+            "openPanoramax": "在這邊開啟 Panoramax"
         },
         "back": "返回",
         "backToIndex": "回到所有主題地圖的總覽頁面",
