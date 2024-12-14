@@ -8,6 +8,7 @@ if [ $# -eq 0 ]
     echo "No arguments given. Expected a themename"
 fi
 
+npm run prep:layeroverview
 npm run refresh:layeroverview
 npm run generate:layeroverview
 npm run test
