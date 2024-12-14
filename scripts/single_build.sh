@@ -10,12 +10,15 @@ fi
 
 npm run refresh:layeroverview
 npm run generate:layeroverview
- npm run generate:layouts
+npm run test
+npm run generate:layouts
 
 if [[ -f "$THEME.html" ]]
 then
     echo "$THEME.html found."
 else
+  pwd
+  ls
   echo "Theme '$THEME' not found. Did you run 'npm run generate:layouts'? Is the theme name correct?"
   exit 1
 fi
