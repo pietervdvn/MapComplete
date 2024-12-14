@@ -554,6 +554,33 @@
     "onwheels": {
         "description": "På dette kort vises steder, der er offentligt tilgængelige for kørestolsbrugere, og de kan nemt tilføjes",
         "layers": {
+            "19": {
+                "override": {
+                    "=title": {
+                        "render": "Statistikker"
+                    }
+                }
+            },
+            "20": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Importere"
+                                }
+                            }
+                        },
+                        "1": {
+                            "render": {
+                                "special": {
+                                    "message": "Tilføj alle de foreslåede tags"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "4": {
                 "override": {
                     "filter": {
@@ -595,33 +622,6 @@
             "8": {
                 "override": {
                     "name": "Handikapparkeringspladser"
-                }
-            },
-            "19": {
-                "override": {
-                    "=title": {
-                        "render": "Statistikker"
-                    }
-                }
-            },
-            "20": {
-                "override": {
-                    "+tagRenderings": {
-                        "0": {
-                            "render": {
-                                "special": {
-                                    "text": "Importere"
-                                }
-                            }
-                        },
-                        "1": {
-                            "render": {
-                                "special": {
-                                    "message": "Tilføj alle de foreslåede tags"
-                                }
-                            }
-                        }
-                    }
                 }
             }
         }
@@ -734,9 +734,6 @@
     },
     "stations": {
         "layers": {
-            "3": {
-                "name": "Togstationer"
-            },
             "16": {
                 "name": "Afgangstavler",
                 "presets": {
@@ -752,6 +749,9 @@
                 "title": {
                     "render": "Afgangstavle"
                 }
+            },
+            "3": {
+                "name": "Togstationer"
             }
         },
         "title": "Togstationer"

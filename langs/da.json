@@ -460,7 +460,8 @@
         "activateButton": "Hjælp med at oversætte MapComplete",
         "missing": "{count} uoversatte strenge"
     },
-    "userinfo": {},
+    "userinfo": {
+    },
     "validation": {
         "color": {
             "description": "En farve eller hex-kode"
