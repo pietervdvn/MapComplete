@@ -62,6 +62,15 @@
                     "1": {
                         "then": "Veggmaleri"
                     },
+                    "10": {
+                        "then": "Azulejo (Spansk dekorativt flisverk)"
+                    },
+                    "11": {
+                        "then": "Flisarbeid"
+                    },
+                    "12": {
+                        "then": "Treskjæring"
+                    },
                     "2": {
                         "then": "Maleri"
                     },
@@ -85,15 +94,6 @@
                     },
                     "9": {
                         "then": "Relieff"
-                    },
-                    "10": {
-                        "then": "Azulejo (Spansk dekorativt flisverk)"
-                    },
-                    "11": {
-                        "then": "Flisarbeid"
-                    },
-                    "12": {
-                        "then": "Treskjæring"
                     }
                 },
                 "question": "Hvilken type kunstverk er dette?",

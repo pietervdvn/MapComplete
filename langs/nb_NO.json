@@ -274,7 +274,8 @@
     "importInspector": {
         "title": "Inspiser og håndter importnotater"
     },
-    "importLayer": {},
+    "importLayer": {
+    },
     "index": {
         "intro": "MapComplete er en OpenStreetMap-viser og redigerer, som viser deg info om funksjoner for et gitt tema og tillater oppdatering av det.",
         "logIn": "Logg inn for å vise tema du har besøkt tidligere",
@@ -369,7 +370,8 @@
         "activateButton": "Bistå oversettelsen av MapComplete",
         "missing": "{count} uoversatte strenger"
     },
-    "userinfo": {},
+    "userinfo": {
+    },
     "validation": {
         "color": {
             "description": "En farge eller heksadesimal kode"
