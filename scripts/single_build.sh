@@ -8,11 +8,11 @@ if [ $# -eq 0 ]
     echo "No arguments given. Expected a themename"
 fi
 
-pwd
 npm run refresh:layeroverview
 npm run generate:layeroverview
-npm run generate:layouts
-if [ -f "$THEME.html" ]
+ npm run generate:layouts
+
+if [[ -f "$THEME.html" ]]
 then
     echo "$THEME.html found."
 else
