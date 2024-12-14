@@ -615,6 +615,9 @@
         "logIn": "A korábban megnézett tematikus térképek megtekintéséhez be kell jelentkezned",
         "title": "MapComplete"
     },
+    "inspector": {
+        "menu": "Közreműködő megvizsgálása"
+    },
     "move": {
         "cancel": "Válassz másik okot",
         "cannotBeMoved": "Ez az objektum nem mozdítható el.",

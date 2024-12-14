@@ -107,12 +107,15 @@ export class ImageUploadManager {
      * @param file a jpg file to upload
      * @param tagsStore The tags of the feature
      * @param targetKey Use this key to save the attribute under. Default: 'image'
+     * @param noblur if true, then the api call will indicate that the image is already blurred. The server won't apply blurring in this case
+     * @param feature the feature this image is about. Will be used as fallback to get the GPS-coordinates
      */
     public async uploadImageAndApply(
         file: File,
         tagsStore: UIEventSource<OsmTags>,
         targetKey: string,
-        noblur: boolean
+        noblur: boolean,
+        feature: Feature
     ): Promise<void> {
         const canBeUploaded = this.canBeUploaded(file)
         if (canBeUploaded !== true) {
@@ -130,7 +133,8 @@ export class ImageUploadManager {
             author,
             file,
             targetKey,
-            noblur
+            noblur,
+            feature
         )
         if (!uploadResult) {
             return
@@ -157,7 +161,7 @@ export class ImageUploadManager {
         blob: File,
         targetKey: string | undefined,
         noblur: boolean,
-        feature?: Feature,
+        feature: Feature,
         ignoreGps: boolean = false
     ): Promise<UploadResult> {
         this.increaseCountFor(this._uploadStarted, featureId)
@@ -186,7 +190,7 @@ export class ImageUploadManager {
             }
         }
         try {
-            ;({ key, value, absoluteUrl } = await this._uploader.uploadImage(
+            ({ key, value, absoluteUrl } = await this._uploader.uploadImage(
                 blob,
                 location,
                 author,
@@ -196,7 +200,7 @@ export class ImageUploadManager {
             this.increaseCountFor(this._uploadRetried, featureId)
             console.error("Could not upload image, trying again:", e)
             try {
-                ;({ key, value, absoluteUrl } = await this._uploader.uploadImage(
+                ({ key, value, absoluteUrl } = await this._uploader.uploadImage(
                     blob,
                     location,
                     author,

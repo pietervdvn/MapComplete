@@ -13,10 +13,10 @@
   import FileSelector from "../Base/FileSelector.svelte"
   import LoginButton from "../Base/LoginButton.svelte"
   import { Translation } from "../i18n/Translation"
-  import Camera from "@babeard/svelte-heroicons/solid/Camera"
   import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
   import NoteCommentElement from "../Popup/Notes/NoteCommentElement"
   import type { Feature } from "geojson"
+  import Camera from "@babeard/svelte-heroicons/mini/Camera"
 
   export let state: SpecialVisualizationState
 
@@ -24,7 +24,7 @@
   export let targetKey: string = undefined
   export let layer: LayerConfig
   export let noBlur: boolean = false
-  export let feature: Feature = undefined
+  export let feature: Feature
   /**
    * Image to show in the button
    * NOT the image to upload!
@@ -65,13 +65,13 @@
           }
           const url = uploadResult.absoluteUrl
           await state.osmConnection.addCommentToNote(tags.data.id, url)
-          NoteCommentElement.addCommentTo(url, <UIEventSource<any>>tags, {
+          NoteCommentElement.addCommentTo(url, <UIEventSource<OsmTags>>tags, {
             osmConnection: state.osmConnection,
           })
           return
         }
 
-        await state?.imageUploadManager?.uploadImageAndApply(file, tags, targetKey, noBlur)
+        await state?.imageUploadManager?.uploadImageAndApply(file, tags, targetKey, noBlur, feature)
       } catch (e) {
         console.error(e)
         state.reportError(e, "Could not upload image")
@@ -133,9 +133,9 @@
         cls="flex justify-center md:hidden button"
         multiple={true}
         on:submit={(e) => {
-          return handleFiles(e.detail, true)
           e.preventDefault()
           e.stopPropagation()
+          return handleFiles(e.detail, true)
         }}
       >
         <Tr t={t.selectFile} />

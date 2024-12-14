@@ -67,8 +67,10 @@ pg_tileserv can be downloaded here: https://github.com/CrunchyData/pg_tileserv
 
 In the directory where it is downloaded (e.g. `~/data`), run
 
+First, look up the latest suitable database on https://mapcomplete.org/status
+
 ````
-export DATABASE_URL=postgresql://user:password@localhost:5444/osm-poi
+export DATABASE_URL=postgresql://user:password@localhost:5444/osm-poi.{date-of-suitable-database}
 nohup ./pg_tileserv >> pg_tileserv.log &
 ````
 
@@ -84,7 +86,19 @@ map.addSource("drinking_water", {
 
 `npm run summary-server` in the git repo
 
+# Connecting to the database
+
+Setup the SSH-tunnel:
+
+`ssh folky.me
+ssh -L 5444:127.0.0.1:5444 lain`
+
+Open a second terminal:
+
+`ssh -L 5444:127.0.0.1:5444 folky.me` `
+
+Connect pgAdmin
+
 # Rebooting:
 
 -> Restart the docker container
--> 

@@ -36,6 +36,26 @@
                 "description": "Una gran estructura publicitaria exterior, que normalmente se encuentra en áreas de mucho tráfico, como junto a carreteras concurridas, montada en una pared",
                 "title": "una valla publicitaria montada en una pared"
             },
+            "10": {
+                "title": "una pantalla montada en un refugio de transporte público"
+            },
+            "11": {
+                "description": "Un trozo de textil impermeable con un mensaje impreso, anclado permanentemente en una pared",
+                "title": "una lona"
+            },
+            "12": {
+                "title": "un tótem"
+            },
+            "13": {
+                "description": "Se utiliza para carteles publicitarios, letreros de neón, logotipos y letreros de entrada institucionales",
+                "title": "un letrero"
+            },
+            "14": {
+                "title": "una escultura"
+            },
+            "15": {
+                "title": "un mural"
+            },
             "2": {
                 "title": "un expositor de carteles independiente"
             },
@@ -61,26 +81,6 @@
             },
             "9": {
                 "title": "una pantalla montada en una pared"
-            },
-            "10": {
-                "title": "una pantalla montada en un refugio de transporte público"
-            },
-            "11": {
-                "description": "Un trozo de textil impermeable con un mensaje impreso, anclado permanentemente en una pared",
-                "title": "una lona"
-            },
-            "12": {
-                "title": "un tótem"
-            },
-            "13": {
-                "description": "Se utiliza para carteles publicitarios, letreros de neón, logotipos y letreros de entrada institucionales",
-                "title": "un letrero"
-            },
-            "14": {
-                "title": "una escultura"
-            },
-            "15": {
-                "title": "un mural"
             }
         },
         "tagRenderings": {
@@ -186,6 +186,15 @@
                     "1": {
                         "then": "Se trata de un tablero"
                     },
+                    "10": {
+                        "then": "Se trata de un mural"
+                    },
+                    "11": {
+                        "then": "Se trata de un trabajo en azulejo: el anuncio está pintado en azulejos"
+                    },
+                    "12": {
+                        "then": "Se trata de un relieve"
+                    },
                     "2": {
                         "then": "Se trata de una columna"
                     },
@@ -209,15 +218,6 @@
                     },
                     "9": {
                         "then": "Se trata de un tótem"
-                    },
-                    "10": {
-                        "then": "Se trata de un mural"
-                    },
-                    "11": {
-                        "then": "Se trata de un trabajo en azulejo: el anuncio está pintado en azulejos"
-                    },
-                    "12": {
-                        "then": "Se trata de un relieve"
                     }
                 },
                 "question": "¿Qué tipo de elemento publicitario es este?",
@@ -231,6 +231,9 @@
                 },
                 "1": {
                     "then": "Tablero"
+                },
+                "10": {
+                    "then": "Mural"
                 },
                 "2": {
                     "then": "Expositor de carteles"
@@ -255,9 +258,6 @@
                 },
                 "9": {
                     "then": "Tótem"
-                },
-                "10": {
-                    "then": "Mural"
                 }
             }
         }
@@ -304,6 +304,9 @@
                     "1": {
                         "then": "Se trata de una góndola donde las cabinas giran en círculos continuos"
                     },
+                    "10": {
+                        "then": "Una tirolina. (Una atracción turística donde la gente aventurera baja a altas velocidades) "
+                    },
                     "2": {
                         "then": "Un telesilla abierto con asientos para sentarse y abierto al aire libre."
                     },
@@ -327,9 +330,6 @@
                     },
                     "9": {
                         "then": "Una alfombra mágica (una cinta transportadora en el suelo)"
-                    },
-                    "10": {
-                        "then": "Una tirolina. (Una atracción turística donde la gente aventurera baja a altas velocidades) "
                     }
                 },
                 "question": "¿Qué tipo de teleférico es este?"
@@ -474,6 +474,15 @@
                     "1": {
                         "then": "Mural"
                     },
+                    "10": {
+                        "then": "Azulejo (trabajo decorativo en azulejos español)"
+                    },
+                    "11": {
+                        "then": "Trabajo en azulejo"
+                    },
+                    "12": {
+                        "then": "Talla en madera"
+                    },
                     "2": {
                         "then": "Pintura"
                     },
@@ -497,15 +506,6 @@
                     },
                     "9": {
                         "then": "Relieve"
-                    },
-                    "10": {
-                        "then": "Azulejo (trabajo decorativo en azulejos español)"
-                    },
-                    "11": {
-                        "then": "Trabajo en azulejo"
-                    },
-                    "12": {
-                        "then": "Talla en madera"
                     }
                 },
                 "question": "¿Qué tipo de obra de arte es esta?",
@@ -1583,6 +1583,9 @@
                     "1": {
                         "then": "Racks con lazos laterales"
                     },
+                    "10": {
+                        "then": "Un soporte inclinado con posibilidad de usar un candado a través de un ojal. El tubo del sillín puede ser sujetado por el soporte mediante un ancla"
+                    },
                     "2": {
                         "then": "Curvadores de ruedas/rack"
                     },
@@ -1606,9 +1609,6 @@
                     },
                     "9": {
                         "then": "Un casillero: las bicicletas están completamente encerradas individualmente o con unas pocas bicicletas juntas. El casillero es demasiado pequeño para que quepa una persona de pie."
-                    },
-                    "10": {
-                        "then": "Un soporte inclinado con posibilidad de usar un candado a través de un ojal. El tubo del sillín puede ser sujetado por el soporte mediante un ancla"
                     }
                 },
                 "question": "¿Cuál es el tipo de este aparcamiento de bicicletas?",
@@ -2321,30 +2321,6 @@
                     "1": {
                         "question": "Tiene un conector <div style='display: inline-block'><b><b>Enchufe de pared Schuko</b> sin pin de tierra (tipo CEE7/4 F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div>"
                     },
-                    "2": {
-                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Enchufe de pared europeo</b> con pin de tierra (tipo CEE7/4 E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div>"
-                    },
-                    "3": {
-                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div>"
-                    },
-                    "4": {
-                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Tipo 1 con cable</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
-                    },
-                    "5": {
-                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Tipo 1 <i>sin</i> cable</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
-                    },
-                    "6": {
-                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Tipo 1 CCS</b> (también conocido como Tipo 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div>"
-                    },
-                    "7": {
-                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>"
-                    },
-                    "8": {
-                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Tipo 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div>"
-                    },
-                    "9": {
-                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Tipo 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>"
-                    },
                     "10": {
                         "question": "Tiene un conector <div style='display: inline-block'><b><b>Tipo 2 con cable</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
                     },
@@ -2375,11 +2351,35 @@
                     "19": {
                         "question": "Tiene un conector <div style='display: inline-block'><b><b>SEV 1011 T23</b> (Tipo J)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/typej.svg'/></div>"
                     },
+                    "2": {
+                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Enchufe de pared europeo</b> con pin de tierra (tipo CEE7/4 E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div>"
+                    },
                     "20": {
                         "question": "Tiene un conector <div style='display: inline-block'><b><b>AS3112</b> (Tipo I)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/as3112.svg'/></div>"
                     },
                     "21": {
                         "question": "Tiene un conector <div style='display: inline-block'><b><b>NEMA 5-20</b> (Tipo B)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/nema-5-20.svg'/></div>"
+                    },
+                    "3": {
+                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div>"
+                    },
+                    "4": {
+                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Tipo 1 con cable</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
+                    },
+                    "5": {
+                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Tipo 1 <i>sin</i> cable</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
+                    },
+                    "6": {
+                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Tipo 1 CCS</b> (también conocido como Tipo 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div>"
+                    },
+                    "7": {
+                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>"
+                    },
+                    "8": {
+                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Tipo 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div>"
+                    },
+                    "9": {
+                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Tipo 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>"
                     }
                 }
             }
@@ -2435,30 +2435,6 @@
                     "1": {
                         "then": "<b>Enchufe de pared Schuko</b> sin pin de tierra (tipo CEE7/4 F)"
                     },
-                    "2": {
-                        "then": "<b>Enchufe de pared europeo</b> con pin de tierra (tipo CEE7/4 E)"
-                    },
-                    "3": {
-                        "then": "<b>Enchufe de pared europeo</b> con pin de tierra (tipo CEE7/4 E)"
-                    },
-                    "4": {
-                        "then": "<b>Chademo</b>"
-                    },
-                    "5": {
-                        "then": "<b>Chademo</b>"
-                    },
-                    "6": {
-                        "then": "<b>Tipo 1 con cable</b> (J1772)"
-                    },
-                    "7": {
-                        "then": "<b>Tipo 1 con cable</b> (J1772)"
-                    },
-                    "8": {
-                        "then": "<b>Tipo 1 <i>sin</i> cable</b> (J1772)"
-                    },
-                    "9": {
-                        "then": "<b>Tipo 1 <i>sin</i> cable</b> (J1772)"
-                    },
                     "10": {
                         "then": "<b>Tipo 1 CCS</b> (también conocido como Tipo 1 Combo)"
                     },
@@ -2488,6 +2464,9 @@
                     },
                     "19": {
                         "then": "<b>Tipo 2 con cable</b> (mennekes)"
+                    },
+                    "2": {
+                        "then": "<b>Enchufe de pared europeo</b> con pin de tierra (tipo CEE7/4 E)"
                     },
                     "20": {
                         "then": "<b>Tesla Supercharger CCS</b> (un tipo2_css de marca)"
@@ -2519,6 +2498,9 @@
                     "29": {
                         "then": "<b>Bosch Active Connect con 3 pines</b> y cable"
                     },
+                    "3": {
+                        "then": "<b>Enchufe de pared europeo</b> con pin de tierra (tipo CEE7/4 E)"
+                    },
                     "30": {
                         "then": "<b>Bosch Active Connect con 5 pines</b> y cable"
                     },
@@ -2549,11 +2531,29 @@
                     "39": {
                         "then": "<b>AS3112</b> (Tipo I)"
                     },
+                    "4": {
+                        "then": "<b>Chademo</b>"
+                    },
                     "40": {
                         "then": "<b>NEMA 5-20</b> (Tipo B)"
                     },
                     "41": {
                         "then": "<b>NEMA 5-20</b> (Tipo B)"
+                    },
+                    "5": {
+                        "then": "<b>Chademo</b>"
+                    },
+                    "6": {
+                        "then": "<b>Tipo 1 con cable</b> (J1772)"
+                    },
+                    "7": {
+                        "then": "<b>Tipo 1 con cable</b> (J1772)"
+                    },
+                    "8": {
+                        "then": "<b>Tipo 1 <i>sin</i> cable</b> (J1772)"
+                    },
+                    "9": {
+                        "then": "<b>Tipo 1 <i>sin</i> cable</b> (J1772)"
                     }
                 },
                 "question": "¿Qué conexiones de carga están disponibles aquí?"
@@ -2738,30 +2738,6 @@
                         "1": {
                             "2": "<b>Enchufe de pared europeo</b> con pin de tierra (tipo CEE7/4 E)"
                         },
-                        "2": {
-                            "2": "<b>Chademo</b>"
-                        },
-                        "3": {
-                            "2": "<b>Tipo 1 con cable</b> (J1772)"
-                        },
-                        "4": {
-                            "2": "<b>Tipo 1 <i>sin</i> cable</b> (J1772)"
-                        },
-                        "5": {
-                            "2": "<b>Tipo 1 CCS</b> (también conocido como Tipo 1 Combo)"
-                        },
-                        "6": {
-                            "2": "<b>Tesla Supercharger</b>"
-                        },
-                        "7": {
-                            "2": "<b>Tipo 2</b> (mennekes)"
-                        },
-                        "8": {
-                            "2": "<b>Tipo 2 CCS</b> (mennekes)"
-                        },
-                        "9": {
-                            "2": "<b>Tipo 2 con cable</b> (mennekes)"
-                        },
                         "10": {
                             "2": "<b>Tesla Supercharger CCS</b> (un tipo2_css de marca)"
                         },
@@ -2792,8 +2768,32 @@
                         "19": {
                             "2": "<b>AS3112</b> (Tipo I)"
                         },
+                        "2": {
+                            "2": "<b>Chademo</b>"
+                        },
                         "20": {
                             "2": "<b>NEMA 5-20</b> (Tipo B)"
+                        },
+                        "3": {
+                            "2": "<b>Tipo 1 con cable</b> (J1772)"
+                        },
+                        "4": {
+                            "2": "<b>Tipo 1 <i>sin</i> cable</b> (J1772)"
+                        },
+                        "5": {
+                            "2": "<b>Tipo 1 CCS</b> (también conocido como Tipo 1 Combo)"
+                        },
+                        "6": {
+                            "2": "<b>Tesla Supercharger</b>"
+                        },
+                        "7": {
+                            "2": "<b>Tipo 2</b> (mennekes)"
+                        },
+                        "8": {
+                            "2": "<b>Tipo 2 CCS</b> (mennekes)"
+                        },
+                        "9": {
+                            "2": "<b>Tipo 2 con cable</b> (mennekes)"
                         }
                     }
                 }
@@ -3535,6 +3535,21 @@
                     "1": {
                         "then": "Este paso de cebra está señalizado"
                     },
+                    "10": {
+                        "then": "Este paso tiene marcas de cebra en colores alternos"
+                    },
+                    "11": {
+                        "then": "Este paso de cebra tiene doble señalización"
+                    },
+                    "12": {
+                        "then": "Este cruce tiene pictogramas en la calzada"
+                    },
+                    "13": {
+                        "then": "Este cruce tiene líneas a cada lado del cruce, junto con barras que las conectan, con una interrupción en cada barra"
+                    },
+                    "14": {
+                        "then": "Este cruce tiene líneas dobles a cada lado del cruce"
+                    },
                     "2": {
                         "then": "Este cruce tiene marcas de tipo desconocido"
                     },
@@ -3558,21 +3573,6 @@
                     },
                     "9": {
                         "then": "Este paso tiene marcas de cebra con una interrupción en cada barra"
-                    },
-                    "10": {
-                        "then": "Este paso tiene marcas de cebra en colores alternos"
-                    },
-                    "11": {
-                        "then": "Este paso de cebra tiene doble señalización"
-                    },
-                    "12": {
-                        "then": "Este cruce tiene pictogramas en la calzada"
-                    },
-                    "13": {
-                        "then": "Este cruce tiene líneas a cada lado del cruce, junto con barras que las conectan, con una interrupción en cada barra"
-                    },
-                    "14": {
-                        "then": "Este cruce tiene líneas dobles a cada lado del cruce"
                     }
                 },
                 "question": "¿Qué tipo de señalización tiene este cruce?",
@@ -3662,6 +3662,15 @@
                     "1": {
                         "then": "Este carril bici está pavimentado"
                     },
+                    "10": {
+                        "then": "Este carril bici está hecho de grava fina"
+                    },
+                    "11": {
+                        "then": "Este carril bici está hecho de adoquines"
+                    },
+                    "12": {
+                        "then": "Este carril bici está hecho de tierra"
+                    },
                     "2": {
                         "then": "Este carril bici está hecho de asfalto"
                     },
@@ -3685,15 +3694,6 @@
                     },
                     "9": {
                         "then": "Este carril bici está hecho de grava"
-                    },
-                    "10": {
-                        "then": "Este carril bici está hecho de grava fina"
-                    },
-                    "11": {
-                        "then": "Este carril bici está hecho de adoquines"
-                    },
-                    "12": {
-                        "then": "Este carril bici está hecho de tierra"
                     }
                 },
                 "question": "¿De qué material está hecha la superficie del carril bici?",
@@ -3742,6 +3742,15 @@
                     "1": {
                         "then": "Este carril bici está pavimentado"
                     },
+                    "10": {
+                        "then": "Este carril bici está hecho de grava fina"
+                    },
+                    "11": {
+                        "then": "Este carril bici está hecho de adoquines"
+                    },
+                    "12": {
+                        "then": "Este carril bici está hecho de tierra"
+                    },
                     "2": {
                         "then": "Este carril bici está hecho de asfalto"
                     },
@@ -3765,15 +3774,6 @@
                     },
                     "9": {
                         "then": "Este carril bici está hecho de grava"
-                    },
-                    "10": {
-                        "then": "Este carril bici está hecho de grava fina"
-                    },
-                    "11": {
-                        "then": "Este carril bici está hecho de adoquines"
-                    },
-                    "12": {
-                        "then": "Este carril bici está hecho de tierra"
                     }
                 },
                 "question": "¿De qué material está hecha la superficie de la calle?",
@@ -4906,6 +4906,54 @@
                     }
                 }
             },
+            "10": {
+                "options": {
+                    "0": {
+                        "question": "Sin preferencia por los perros"
+                    },
+                    "1": {
+                        "question": "Se permiten perros"
+                    },
+                    "2": {
+                        "question": "No se permiten perros"
+                    }
+                }
+            },
+            "11": {
+                "options": {
+                    "0": {
+                        "question": "Ofrece internet"
+                    }
+                }
+            },
+            "12": {
+                "options": {
+                    "0": {
+                        "question": "Ofrece electricidad"
+                    }
+                }
+            },
+            "13": {
+                "options": {
+                    "0": {
+                        "question": "Tiene una oferta sin azúcar"
+                    }
+                }
+            },
+            "14": {
+                "options": {
+                    "0": {
+                        "question": "Tiene una oferta sin gluten"
+                    }
+                }
+            },
+            "15": {
+                "options": {
+                    "0": {
+                        "question": "Tiene una oferta sin lactosa"
+                    }
+                }
+            },
             "2": {
                 "options": {
                     "0": {
@@ -4974,54 +5022,6 @@
                 "options": {
                     "0": {
                         "question": "De uso gratuito"
-                    }
-                }
-            },
-            "10": {
-                "options": {
-                    "0": {
-                        "question": "Sin preferencia por los perros"
-                    },
-                    "1": {
-                        "question": "Se permiten perros"
-                    },
-                    "2": {
-                        "question": "No se permiten perros"
-                    }
-                }
-            },
-            "11": {
-                "options": {
-                    "0": {
-                        "question": "Ofrece internet"
-                    }
-                }
-            },
-            "12": {
-                "options": {
-                    "0": {
-                        "question": "Ofrece electricidad"
-                    }
-                }
-            },
-            "13": {
-                "options": {
-                    "0": {
-                        "question": "Tiene una oferta sin azúcar"
-                    }
-                }
-            },
-            "14": {
-                "options": {
-                    "0": {
-                        "question": "Tiene una oferta sin gluten"
-                    }
-                }
-            },
-            "15": {
-                "options": {
-                    "0": {
-                        "question": "Tiene una oferta sin lactosa"
                     }
                 }
             }
@@ -5186,30 +5186,6 @@
                     "1": {
                         "then": "Esta estación de fitness tiene un cartel con instrucciones para un ejercicio específico."
                     },
-                    "2": {
-                        "then": "Esta estación de fitness tiene un dispositivo para abdominales."
-                    },
-                    "3": {
-                        "then": "Esta estación de fitness tiene un dispositivo para flexiones. Normalmente consiste en una o más barras horizontales bajas."
-                    },
-                    "4": {
-                        "then": "Esta estación de fitness tiene barras para estirar."
-                    },
-                    "5": {
-                        "then": "Esta estación de fitness tiene una estación para realizar hiperextensiones."
-                    },
-                    "6": {
-                        "then": "Esta estación de fitness tiene anillas para ejercicios de gimnasia."
-                    },
-                    "7": {
-                        "then": "Esta estación de fitness tiene una escalera horizontal, también conocida como barras de mono."
-                    },
-                    "8": {
-                        "then": "Esta estación de fitness tiene barras de pared para escalar."
-                    },
-                    "9": {
-                        "then": "Esta estación de fitness tiene postes para realizar ejercicios de slalom."
-                    },
                     "10": {
                         "then": "Esta estación de fitness tiene piedras para escalar."
                     },
@@ -5240,6 +5216,9 @@
                     "19": {
                         "then": "Esta estación de fitness tiene cuerdas de batalla."
                     },
+                    "2": {
+                        "then": "Esta estación de fitness tiene un dispositivo para abdominales."
+                    },
                     "20": {
                         "then": "Esta estación de fitness tiene una bicicleta estática."
                     },
@@ -5254,6 +5233,27 @@
                     },
                     "24": {
                         "then": "Esta estación de fitness tiene una slackline."
+                    },
+                    "3": {
+                        "then": "Esta estación de fitness tiene un dispositivo para flexiones. Normalmente consiste en una o más barras horizontales bajas."
+                    },
+                    "4": {
+                        "then": "Esta estación de fitness tiene barras para estirar."
+                    },
+                    "5": {
+                        "then": "Esta estación de fitness tiene una estación para realizar hiperextensiones."
+                    },
+                    "6": {
+                        "then": "Esta estación de fitness tiene anillas para ejercicios de gimnasia."
+                    },
+                    "7": {
+                        "then": "Esta estación de fitness tiene una escalera horizontal, también conocida como barras de mono."
+                    },
+                    "8": {
+                        "then": "Esta estación de fitness tiene barras de pared para escalar."
+                    },
+                    "9": {
+                        "then": "Esta estación de fitness tiene postes para realizar ejercicios de slalom."
                     }
                 },
                 "question": "¿Qué tipo de equipo tiene esta estación de fitness?"
@@ -5373,30 +5373,6 @@
                     "1": {
                         "then": "Fritura"
                     },
-                    "2": {
-                        "then": "Sirve principalmente pasta"
-                    },
-                    "3": {
-                        "then": "Kebab"
-                    },
-                    "4": {
-                        "then": "Sandwichería"
-                    },
-                    "5": {
-                        "then": "Hamburguesería"
-                    },
-                    "6": {
-                        "then": "Restaurante de sushi"
-                    },
-                    "7": {
-                        "then": "Cafetería"
-                    },
-                    "8": {
-                        "then": "Restaurante italiano (que sirve algo más que pasta y pizza)"
-                    },
-                    "9": {
-                        "then": "Restaurante francés"
-                    },
                     "10": {
                         "then": "Chino"
                     },
@@ -5423,6 +5399,30 @@
                     },
                     "18": {
                         "then": "Aquí se sirven platillos de mariscos"
+                    },
+                    "2": {
+                        "then": "Sirve principalmente pasta"
+                    },
+                    "3": {
+                        "then": "Kebab"
+                    },
+                    "4": {
+                        "then": "Sandwichería"
+                    },
+                    "5": {
+                        "then": "Hamburguesería"
+                    },
+                    "6": {
+                        "then": "Restaurante de sushi"
+                    },
+                    "7": {
+                        "then": "Cafetería"
+                    },
+                    "8": {
+                        "then": "Restaurante italiano (que sirve algo más que pasta y pizza)"
+                    },
+                    "9": {
+                        "then": "Restaurante francés"
                     }
                 },
                 "question": "¿Qué tipo de comida se sirve aquí?",
@@ -6218,30 +6218,6 @@
                     "1": {
                         "then": "Este es un auditorio"
                     },
-                    "2": {
-                        "then": "Este es un dormitorio"
-                    },
-                    "3": {
-                        "then": "Esta es una capilla"
-                    },
-                    "4": {
-                        "then": "Esta es un aula"
-                    },
-                    "5": {
-                        "then": "Esta es un aula"
-                    },
-                    "6": {
-                        "then": "Esta es una sala de ordenadores"
-                    },
-                    "7": {
-                        "then": "Esta es una sala de conferencias"
-                    },
-                    "8": {
-                        "then": "Esta es una cripta"
-                    },
-                    "9": {
-                        "then": "Esta es una cocina"
-                    },
                     "10": {
                         "then": "Este es un laboratorio"
                     },
@@ -6272,6 +6248,9 @@
                     "19": {
                         "then": "Esta es una sala de deportes"
                     },
+                    "2": {
+                        "then": "Este es un dormitorio"
+                    },
                     "20": {
                         "then": "Esta es una sala de almacenamiento"
                     },
@@ -6283,6 +6262,27 @@
                     },
                     "23": {
                         "then": "Esta es una sala de espera"
+                    },
+                    "3": {
+                        "then": "Esta es una capilla"
+                    },
+                    "4": {
+                        "then": "Esta es un aula"
+                    },
+                    "5": {
+                        "then": "Esta es un aula"
+                    },
+                    "6": {
+                        "then": "Esta es una sala de ordenadores"
+                    },
+                    "7": {
+                        "then": "Esta es una sala de conferencias"
+                    },
+                    "8": {
+                        "then": "Esta es una cripta"
+                    },
+                    "9": {
+                        "then": "Esta es una cocina"
                     }
                 },
                 "question": "¿Qué tipo de habitación es esta?"
@@ -6834,6 +6834,21 @@
                     "1": {
                         "then": "Es una placa"
                     },
+                    "10": {
+                        "then": "Es una cruz"
+                    },
+                    "11": {
+                        "then": "Es una placa azul"
+                    },
+                    "12": {
+                        "then": "Es un tanque histórico, colocado permanentemente en el espacio público como monumento"
+                    },
+                    "13": {
+                        "then": "Es un árbol conmemorativo"
+                    },
+                    "14": {
+                        "then": "Es una lápida; la persona está enterrada aquí"
+                    },
                     "2": {
                         "then": "Es un banco conmemorativo"
                     },
@@ -6857,21 +6872,6 @@
                     },
                     "9": {
                         "then": "Es un obelisco"
-                    },
-                    "10": {
-                        "then": "Es una cruz"
-                    },
-                    "11": {
-                        "then": "Es una placa azul"
-                    },
-                    "12": {
-                        "then": "Es un tanque histórico, colocado permanentemente en el espacio público como monumento"
-                    },
-                    "13": {
-                        "then": "Es un árbol conmemorativo"
-                    },
-                    "14": {
-                        "then": "Es una lápida; la persona está enterrada aquí"
                     }
                 },
                 "question": "¿Qué tipo de monumento es este?",
@@ -7055,6 +7055,48 @@
                     }
                 }
             },
+            "10": {
+                "options": {
+                    "0": {
+                        "question": "Última edición por el colaborador {search}"
+                    }
+                }
+            },
+            "11": {
+                "options": {
+                    "0": {
+                        "question": "No editado por última vez por {search}"
+                    }
+                }
+            },
+            "12": {
+                "options": {
+                    "0": {
+                        "question": "Creado antes de {search}"
+                    }
+                }
+            },
+            "13": {
+                "options": {
+                    "0": {
+                        "question": "Creado después de {search}"
+                    }
+                }
+            },
+            "14": {
+                "options": {
+                    "0": {
+                        "question": "Última edición antes de {search}"
+                    }
+                }
+            },
+            "15": {
+                "options": {
+                    "0": {
+                        "question": "Última edición después de {search}"
+                    }
+                }
+            },
             "2": {
                 "options": {
                     "0": {
@@ -7114,48 +7156,6 @@
                 "options": {
                     "0": {
                         "question": "Editado o comentado por cualquier usuario con el nombre {search}"
-                    }
-                }
-            },
-            "10": {
-                "options": {
-                    "0": {
-                        "question": "Última edición por el colaborador {search}"
-                    }
-                }
-            },
-            "11": {
-                "options": {
-                    "0": {
-                        "question": "No editado por última vez por {search}"
-                    }
-                }
-            },
-            "12": {
-                "options": {
-                    "0": {
-                        "question": "Creado antes de {search}"
-                    }
-                }
-            },
-            "13": {
-                "options": {
-                    "0": {
-                        "question": "Creado después de {search}"
-                    }
-                }
-            },
-            "14": {
-                "options": {
-                    "0": {
-                        "question": "Última edición antes de {search}"
-                    }
-                }
-            },
-            "15": {
-                "options": {
-                    "0": {
-                        "question": "Última edición después de {search}"
                     }
                 }
             }
@@ -7536,6 +7536,18 @@
                     "1": {
                         "then": "Esta es una plaza de aparcamiento normal."
                     },
+                    "10": {
+                        "then": "Esta es una plaza de aparcamiento reservada para el personal."
+                    },
+                    "11": {
+                        "then": "Esta es una plaza de aparcamiento reservada para taxis."
+                    },
+                    "12": {
+                        "then": "Esta es una plaza de aparcamiento reservada para vehículos que remolcan un remolque."
+                    },
+                    "13": {
+                        "then": "Esta es una plaza de aparcamiento reservada para coches compartidos."
+                    },
                     "2": {
                         "then": "Esta es una plaza de aparcamiento para discapacitados."
                     },
@@ -7559,18 +7571,6 @@
                     },
                     "9": {
                         "then": "Esta es una plaza de aparcamiento reservada para padres con niños."
-                    },
-                    "10": {
-                        "then": "Esta es una plaza de aparcamiento reservada para el personal."
-                    },
-                    "11": {
-                        "then": "Esta es una plaza de aparcamiento reservada para taxis."
-                    },
-                    "12": {
-                        "then": "Esta es una plaza de aparcamiento reservada para vehículos que remolcan un remolque."
-                    },
-                    "13": {
-                        "then": "Esta es una plaza de aparcamiento reservada para coches compartidos."
                     }
                 },
                 "question": "¿Qué tipo de plaza de aparcamiento es esta?"
@@ -7825,6 +7825,9 @@
                     "1": {
                         "then": "La superficie es <b>arena</b>"
                     },
+                    "10": {
+                        "then": "La superficie es <b>grava fina</b> (menos de 2 cm por piedra)"
+                    },
                     "2": {
                         "then": "La superficie consta de <b>corteza de madera</b>"
                     },
@@ -7848,9 +7851,6 @@
                     },
                     "9": {
                         "then": "La superficie está hecha de goma, como baldosas de goma, mantillo de goma o una gran área de goma"
-                    },
-                    "10": {
-                        "then": "La superficie es <b>grava fina</b> (menos de 2 cm por piedra)"
                     }
                 },
                 "question": "¿Cuál es la superficie de este parque infantil?",
@@ -7888,30 +7888,6 @@
                     "1": {
                         "then": "Esta es una estructura que consta de varios elementos de parque infantil conectados"
                     },
-                    "2": {
-                        "then": "Este es un tobogán"
-                    },
-                    "3": {
-                        "then": "Este es un arenero"
-                    },
-                    "4": {
-                        "then": "Este es un caballito de muelles"
-                    },
-                    "5": {
-                        "then": "Este es un marco de escalada"
-                    },
-                    "6": {
-                        "then": "Este es un sube y baja"
-                    },
-                    "7": {
-                        "then": "Este es una caseta de juegos"
-                    },
-                    "8": {
-                        "then": "Este es un tiovivo"
-                    },
-                    "9": {
-                        "then": "Este es un columpio de cesta"
-                    },
                     "10": {
                         "then": "Este es una tirolina"
                     },
@@ -7942,11 +7918,35 @@
                     "19": {
                         "then": "Este es un refugio para adolescentes"
                     },
+                    "2": {
+                        "then": "Este es un tobogán"
+                    },
                     "20": {
                         "then": "Este es un embudo que se utiliza para jugar con bolas de embudo"
                     },
                     "21": {
                         "then": "Este es un círculo giratorio"
+                    },
+                    "3": {
+                        "then": "Este es un arenero"
+                    },
+                    "4": {
+                        "then": "Este es un caballito de muelles"
+                    },
+                    "5": {
+                        "then": "Este es un marco de escalada"
+                    },
+                    "6": {
+                        "then": "Este es un sube y baja"
+                    },
+                    "7": {
+                        "then": "Este es una caseta de juegos"
+                    },
+                    "8": {
+                        "then": "Este es un tiovivo"
+                    },
+                    "9": {
+                        "then": "Este es un columpio de cesta"
                     }
                 },
                 "question": "¿Qué tipo de elemento es este?",
@@ -8376,6 +8376,21 @@
                     "1": {
                         "then": "Se aceptan monedas de 2 céntimos"
                     },
+                    "10": {
+                        "then": "Se aceptan monedas de 20 céntimos"
+                    },
+                    "11": {
+                        "then": "Se aceptan monedas de ½ franco"
+                    },
+                    "12": {
+                        "then": "Se aceptan monedas de 1 franco"
+                    },
+                    "13": {
+                        "then": "Se aceptan monedas de 2 francos"
+                    },
+                    "14": {
+                        "then": "Se aceptan monedas de 5 francos"
+                    },
                     "2": {
                         "then": "Se aceptan monedas de 5 céntimos"
                     },
@@ -8399,21 +8414,6 @@
                     },
                     "9": {
                         "then": "Se aceptan monedas de 10 céntimos"
-                    },
-                    "10": {
-                        "then": "Se aceptan monedas de 20 céntimos"
-                    },
-                    "11": {
-                        "then": "Se aceptan monedas de ½ franco"
-                    },
-                    "12": {
-                        "then": "Se aceptan monedas de 1 franco"
-                    },
-                    "13": {
-                        "then": "Se aceptan monedas de 2 francos"
-                    },
-                    "14": {
-                        "then": "Se aceptan monedas de 5 francos"
                     }
                 },
                 "question": "¿Qué monedas se pueden usar para pagar aquí?"
@@ -8425,6 +8425,15 @@
                     },
                     "1": {
                         "then": "Se aceptan billetes de 10 euros"
+                    },
+                    "10": {
+                        "then": "Se aceptan billetes de 100 francos"
+                    },
+                    "11": {
+                        "then": "Se aceptan billetes de 200 francos"
+                    },
+                    "12": {
+                        "then": "Se aceptan billetes de 1000 francos"
                     },
                     "2": {
                         "then": "Se aceptan billetes de 20 euros"
@@ -8449,15 +8458,6 @@
                     },
                     "9": {
                         "then": "Se aceptan billetes de 50 francos"
-                    },
-                    "10": {
-                        "then": "Se aceptan billetes de 100 francos"
-                    },
-                    "11": {
-                        "then": "Se aceptan billetes de 200 francos"
-                    },
-                    "12": {
-                        "then": "Se aceptan billetes de 1000 francos"
                     }
                 },
                 "question": "¿Qué billetes se pueden usar para pagar aquí?"
@@ -8987,30 +8987,6 @@
                     "1": {
                         "question": "Reciclaje de pilas"
                     },
-                    "2": {
-                        "question": "Reciclaje de envases de bebidas"
-                    },
-                    "3": {
-                        "question": "Reciclaje de latas"
-                    },
-                    "4": {
-                        "question": "Reciclaje de ropa"
-                    },
-                    "5": {
-                        "question": "Reciclaje de aceite de cocina"
-                    },
-                    "6": {
-                        "question": "Reciclaje de aceite de motor"
-                    },
-                    "7": {
-                        "question": "Reciclaje de tubos fluorescentes"
-                    },
-                    "8": {
-                        "question": "Reciclaje de residuos verdes"
-                    },
-                    "9": {
-                        "question": "Reciclaje de botellas de vidrio"
-                    },
                     "10": {
                         "question": "Reciclaje de vidrio"
                     },
@@ -9041,6 +9017,9 @@
                     "19": {
                         "question": "Reciclaje de residuos"
                     },
+                    "2": {
+                        "question": "Reciclaje de envases de bebidas"
+                    },
                     "20": {
                         "question": "Reciclaje de cartuchos de impresora"
                     },
@@ -9049,6 +9028,27 @@
                     },
                     "22": {
                         "question": "Reciclaje de envases de plástico, envases metálicos y envases de bebidas (PMD)"
+                    },
+                    "3": {
+                        "question": "Reciclaje de latas"
+                    },
+                    "4": {
+                        "question": "Reciclaje de ropa"
+                    },
+                    "5": {
+                        "question": "Reciclaje de aceite de cocina"
+                    },
+                    "6": {
+                        "question": "Reciclaje de aceite de motor"
+                    },
+                    "7": {
+                        "question": "Reciclaje de tubos fluorescentes"
+                    },
+                    "8": {
+                        "question": "Reciclaje de residuos verdes"
+                    },
+                    "9": {
+                        "question": "Reciclaje de botellas de vidrio"
                     }
                 }
             },
@@ -9116,30 +9116,6 @@
                     "1": {
                         "then": "Los envases de bebidas se pueden reciclar aquí"
                     },
-                    "2": {
-                        "then": "Las latas se pueden reciclar aquí"
-                    },
-                    "3": {
-                        "then": "La ropa se puede reciclar aquí"
-                    },
-                    "4": {
-                        "then": "El aceite de cocina se puede reciclar aquí"
-                    },
-                    "5": {
-                        "then": "El aceite de motor se puede reciclar aquí"
-                    },
-                    "6": {
-                        "then": "Los tubos fluorescentes se pueden reciclar aquí"
-                    },
-                    "7": {
-                        "then": "Los residuos verdes se pueden reciclar aquí"
-                    },
-                    "8": {
-                        "then": "Los residuos orgánicos se pueden reciclar aquí"
-                    },
-                    "9": {
-                        "then": "Las botellas de vidrio se pueden reciclar aquí"
-                    },
                     "10": {
                         "then": "El vidrio se puede reciclar aquí"
                     },
@@ -9170,6 +9146,9 @@
                     "19": {
                         "then": "La chatarra se puede reciclar aquí"
                     },
+                    "2": {
+                        "then": "Las latas se pueden reciclar aquí"
+                    },
                     "20": {
                         "then": "Los zapatos se pueden reciclar aquí"
                     },
@@ -9187,6 +9166,27 @@
                     },
                     "25": {
                         "then": "Las bicicletas se pueden reciclar aquí"
+                    },
+                    "3": {
+                        "then": "La ropa se puede reciclar aquí"
+                    },
+                    "4": {
+                        "then": "El aceite de cocina se puede reciclar aquí"
+                    },
+                    "5": {
+                        "then": "El aceite de motor se puede reciclar aquí"
+                    },
+                    "6": {
+                        "then": "Los tubos fluorescentes se pueden reciclar aquí"
+                    },
+                    "7": {
+                        "then": "Los residuos verdes se pueden reciclar aquí"
+                    },
+                    "8": {
+                        "then": "Los residuos orgánicos se pueden reciclar aquí"
+                    },
+                    "9": {
+                        "then": "Las botellas de vidrio se pueden reciclar aquí"
                     }
                 },
                 "question": "¿Qué se puede reciclar aquí?"
@@ -10413,6 +10413,12 @@
                     "1": {
                         "then": "Esta lámpara utiliza LEDs"
                     },
+                    "10": {
+                        "then": "Esta lámpara utiliza lámparas de sodio a alta presión (naranja con blanco)"
+                    },
+                    "11": {
+                        "then": "Esta lámpara se ilumina con gas"
+                    },
                     "2": {
                         "then": "Esta lámpara utiliza iluminación incandescente"
                     },
@@ -10436,12 +10442,6 @@
                     },
                     "9": {
                         "then": "Esta lámpara utiliza lámparas de sodio a baja presión (naranja monocromática)"
-                    },
-                    "10": {
-                        "then": "Esta lámpara utiliza lámparas de sodio a alta presión (naranja con blanco)"
-                    },
-                    "11": {
-                        "then": "Esta lámpara se ilumina con gas"
                     }
                 },
                 "question": "¿Qué tipo de iluminación utiliza esta lámpara?"
@@ -12110,30 +12110,6 @@
                     "1": {
                         "question": "Venta de bebidas"
                     },
-                    "2": {
-                        "question": "Venta de dulces"
-                    },
-                    "3": {
-                        "question": "Venta de comida"
-                    },
-                    "4": {
-                        "question": "Venta de cigarrillos"
-                    },
-                    "5": {
-                        "question": "Venta de preservativos"
-                    },
-                    "6": {
-                        "question": "Venta de café"
-                    },
-                    "7": {
-                        "question": "Venta de agua"
-                    },
-                    "8": {
-                        "question": "Venta de periódicos"
-                    },
-                    "9": {
-                        "question": "Venta de cámaras de aire para bicicleta"
-                    },
                     "10": {
                         "question": "Venta de leche"
                     },
@@ -12164,6 +12140,9 @@
                     "19": {
                         "question": "Venta de fresas"
                     },
+                    "2": {
+                        "question": "Venta de dulces"
+                    },
                     "20": {
                         "question": "Venta de flores"
                     },
@@ -12190,6 +12169,27 @@
                     },
                     "28": {
                         "question": "Venta de candados para bicicletas"
+                    },
+                    "3": {
+                        "question": "Venta de comida"
+                    },
+                    "4": {
+                        "question": "Venta de cigarrillos"
+                    },
+                    "5": {
+                        "question": "Venta de preservativos"
+                    },
+                    "6": {
+                        "question": "Venta de café"
+                    },
+                    "7": {
+                        "question": "Venta de agua"
+                    },
+                    "8": {
+                        "question": "Venta de periódicos"
+                    },
+                    "9": {
+                        "question": "Venta de cámaras de aire para bicicleta"
                     }
                 }
             }
@@ -12286,30 +12286,6 @@
                     "1": {
                         "then": "Se venden dulces"
                     },
-                    "2": {
-                        "then": "Se vende comida"
-                    },
-                    "3": {
-                        "then": "Se venden cigarrillos"
-                    },
-                    "4": {
-                        "then": "Se venden preservativos"
-                    },
-                    "5": {
-                        "then": "Se vende café"
-                    },
-                    "6": {
-                        "then": "Se vende agua potable"
-                    },
-                    "7": {
-                        "then": "Se venden periódicos"
-                    },
-                    "8": {
-                        "then": "Se venden cámaras de aire para bicicleta"
-                    },
-                    "9": {
-                        "then": "Se vende leche"
-                    },
                     "10": {
                         "then": "Se vende pan"
                     },
@@ -12340,6 +12316,9 @@
                     "19": {
                         "then": "Se venden flores"
                     },
+                    "2": {
+                        "then": "Se vende comida"
+                    },
                     "20": {
                         "then": "Se venden tickets de aparcamiento"
                     },
@@ -12363,6 +12342,27 @@
                     },
                     "27": {
                         "then": "Se venden candados para bicicletas"
+                    },
+                    "3": {
+                        "then": "Se venden cigarrillos"
+                    },
+                    "4": {
+                        "then": "Se venden preservativos"
+                    },
+                    "5": {
+                        "then": "Se vende café"
+                    },
+                    "6": {
+                        "then": "Se vende agua potable"
+                    },
+                    "7": {
+                        "then": "Se venden periódicos"
+                    },
+                    "8": {
+                        "then": "Se venden cámaras de aire para bicicleta"
+                    },
+                    "9": {
+                        "then": "Se vende leche"
                     }
                 },
                 "question": "¿Qué vende esta máquina expendedora?",
