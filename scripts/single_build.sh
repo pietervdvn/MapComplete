@@ -9,6 +9,8 @@ if [ $# -eq 0 ]
 fi
 
 pwd
+npm run refresh:layeroverview
+npm run generate:layeroverview
 npm run generate:layouts
 if [ -f "$THEME.html" ]
 then
@@ -69,7 +71,6 @@ pwd
 ls .
 for f in *
 do
-  # echo ">>>" $f
   case "$f" in
     *$THEME* )
     echo "Keeping $f"
