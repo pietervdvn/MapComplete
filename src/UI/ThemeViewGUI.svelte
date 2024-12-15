@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Store, UIEventSource } from "../Logic/UIEventSource"
+  import { ImmutableStore, Store, UIEventSource } from "../Logic/UIEventSource"
   import { Map as MlMap } from "maplibre-gl"
   import MaplibreMap from "./Map/MaplibreMap.svelte"
   import FeatureSwitchState from "../Logic/State/FeatureSwitchState"
@@ -105,11 +105,11 @@
 
   let canZoomIn = mapproperties.maxzoom.map(
     (mz) => mapproperties.zoom.data < mz,
-    [mapproperties.zoom]
+    [mapproperties.zoom],
   )
   let canZoomOut = mapproperties.minzoom.map(
     (mz) => mapproperties.zoom.data > mz,
-    [mapproperties.zoom]
+    [mapproperties.zoom],
   )
 
   let rasterLayerName =
@@ -118,7 +118,7 @@
   onDestroy(
     rasterLayer.addCallbackAndRunD((l) => {
       rasterLayerName = l.properties.name
-    })
+    }),
   )
 
   debug.addCallbackAndRun((dbg) => {
@@ -165,6 +165,8 @@
     const animation = mlmap.keyboard?.keydown(e)
     animation?.cameraAnimation(mlmap)
   }
+
+  let apiState = state?.osmConnection?.apiIsOnline ?? new ImmutableStore("online")
 </script>
 
 <main>
@@ -173,7 +175,7 @@
     <MaplibreMap map={maplibremap} mapProperties={mapproperties} autorecovery={true} />
   </div>
 
-  <LoginToggle ignoreLoading={true} {state}>
+  <LoginToggle ignoreLoading={true} silentFail {state}>
     {#if ($showCrosshair === "yes" && $currentZoom >= 17) || $showCrosshair === "always" || $visualFeedback}
       <!-- Don't use h-full: h-full does _not_ include the area under the URL-bar, which offsets the crosshair a bit -->
       <div
@@ -216,7 +218,8 @@
               {#if $currentZoom < Constants.minZoomLevelToAddNewPoint}
                 <Tr t={Translations.t.general.add.zoomInFurther} />
               {:else if state.theme.hasPresets()}
-                ✨ <Tr t={Translations.t.general.add.title} />
+                ✨
+                <Tr t={Translations.t.general.add.title} />
               {:else}
                 <Tr t={Translations.t.notes.createNote} />
               {/if}
@@ -417,6 +420,9 @@
       <If condition={state.featureSwitches.featureSwitchFakeUser}>
         <div class="alert w-fit">Faking a user (Testmode)</div>
       </If>
+      {#if $apiState !== "online"}
+        <div class="alert w-fit">API is {$apiState}</div>
+      {/if}
     </div>
 
     <div class="flex w-full flex-col items-center justify-center">
@@ -427,11 +433,13 @@
     </div>
   </div>
 
-  <DrawerLeft shown={state.guistate.pageStates.menu}>
-    <div class="h-screen overflow-y-auto">
-      <MenuDrawer onlyLink={true} {state} />
-    </div>
-  </DrawerLeft>
+  <div class="h-full overflow-hidden">
+    <DrawerLeft shown={state.guistate.pageStates.menu}>
+      <div class="h-screen overflow-y-auto">
+        <MenuDrawer onlyLink={true} {state} />
+      </div>
+    </DrawerLeft>
+  </div>
 
   {#if $selectedElement !== undefined && $selectedLayer !== undefined && !$selectedLayer.popupInFloatover}
     <!-- right modal with the selected element view -->
