@@ -124,7 +124,7 @@
       </svelte:fragment>
 
       <!-- All shown components are set by 'usersettings.json', which happily uses some special visualisations created specifically for it -->
-      <LoginToggle {state}>
+      <LoginToggle {state} silentFail>
         <div class="flex flex-col" slot="not-logged-in">
           <LanguagePicker availableLanguages={theme.language} />
           <Tr cls="alert" t={Translations.t.userinfo.notLoggedIn} />
@@ -144,7 +144,7 @@
       </LoginToggle>
     </Page>
 
-    <LoginToggle {state}>
+    <LoginToggle {state} silentFail>
       <Page {onlyLink} shown={pg.favourites}>
         <svelte:fragment slot="header">
           <HeartIcon />

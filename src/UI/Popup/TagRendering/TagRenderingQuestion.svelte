@@ -355,9 +355,11 @@
     disabledInTheme.set(newList)
     menuIsOpened.set(false)
   }
+
+  let apiState = state.osmConnection.apiIsOnline
 </script>
 
-{#if question !== undefined}
+{#if question !== undefined && $apiState !== "readonly" && $apiState !== "offline"}
   <div class={clss}>
     {#if layer.isNormal()}
       <LoginToggle {state}>

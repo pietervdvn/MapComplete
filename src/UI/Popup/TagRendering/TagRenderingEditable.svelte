@@ -85,6 +85,8 @@
   }
   let answerId = "answer-" + Utils.randomString(5)
   let debug = state?.featureSwitches?.featureSwitchIsDebugging ?? new ImmutableStore(false)
+
+  let apiState: Store<string> = state?.osmConnection?.apiIsOnline ?? new ImmutableStore("online")
 </script>
 
 <div bind:this={htmlElem} class={twMerge(clss, "tr-" + config.id)}>
@@ -126,7 +128,7 @@
           {layer}
           extraClasses="my-2"
         />
-        {#if !editingEnabled || $editingEnabled}
+        {#if (!editingEnabled || $editingEnabled) && $apiState !== "readonly" && $apiState !== "offline"}
           <EditButton
             arialabel={config.editButtonAriaLabel}
             ariaLabelledBy={answerId}
