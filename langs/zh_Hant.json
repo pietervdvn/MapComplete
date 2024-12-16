@@ -283,7 +283,12 @@
         "mappingsAreHidden": "有些選項已經隱藏，搜尋來顯示更多選項。",
         "menu": {
             "aboutMapComplete": "關於 MapComplete",
-            "filter": "篩選資料"
+            "filter": "篩選資料",
+            "aboutCurrentThemeTitle": "關於地圖",
+            "openHereDifferentApp": "在其他應用程式開啟目前位置",
+            "moreUtilsTitle": "探索更多",
+            "showIntroduction": "顯示指引",
+            "title": "選單"
         },
         "morescreen": {
             "createYourOwnTheme": "從零開始建立你的 MapComplete 主題",
@@ -488,6 +493,12 @@
             "readMore": "閱讀剩下的條目內容",
             "searchToShort": "你的搜尋檢索太短了，請輸入長一點的文字",
             "searchWikidata": "在 Wikidata 搜尋"
+        },
+        "questions": {
+            "disable": "不要再問這個問題",
+            "disabledIntro": "你關閉一些類型的問題，要再次啟用問題，請在這邊點一下",
+            "disabledTitle": "關閉問題",
+            "enable": "針對所有問題啟用"
         }
     },
     "hotkeyDocumentation": {
