@@ -150,7 +150,8 @@
     "split": {
         "cancel": "Batal"
     },
-    "translations": {},
+    "translations": {
+    },
     "validation": {
         "date": {
             "description": "Tanggal, dimulai dari tahun"

@@ -1,13 +1,12 @@
-name: Deploy develop on dev.mapcomplete.org
+name: Deploy develop on theme.mapcomplete.org
 on:
   push:
-    branches-ignore:
+    branches:
       - build/*
-  pull_request:
 
 jobs:
-  deploy_on_hosted:
-    runs-on: [ubuntu-latest, hetzner-access]
+  deploy_on_hetzner_single:
+    runs-on: [ ubuntu-latest, hetzner-access ]
     steps:
       - uses: actions/checkout@v3
 
@@ -17,7 +16,7 @@ jobs:
           node-version: "20"
           cache: "npm"
           cache-dependency-path: package-lock.json
-      
+
       - name: install deps
         run: npm ci
         shell: bash
@@ -35,33 +34,24 @@ jobs:
         shell: bash
 
       - name: Prepare build
-        run: npm run generate:service-worker && ./scripts/prepare-build.sh
-        shell: bash
-
-      - name: Run tests
         run: |
-          # This is the same as `npm run test`, but `vitest` doesn't want to run within npm :shrug:
-          export NODE_OPTIONS="--max-old-space-size=8192"
-          npm run clean:tests
-          npm run generate:doctests 2>&1 | grep -v "No doctests found in"
-          vitest --run test
-          npm run clean:tests
+          BRANCH=${{ github.ref_name }}
+          THEME=${BRANCH:6}
+          npm run generate:service-worker && ./scripts/single_build.sh $THEME
         shell: bash
-
-
-      - name: Build files
-        run: npm run build
 
       - name: Zipping dist file
         run: |
-          mv dist ${{ github.ref_name }}
+          BRANCH=${{ github.ref_name }}
+          THEME=${BRANCH:6}
+          mv "dist_$THEME" ${{ github.ref_name }}
           zip ${{ github.ref_name }}.zip -r ${{ github.ref_name }}/*
 
       - name: uploading file
         run: scp ${{ github.ref_name }}.zip hetzner:/root/staging/
 
       - name: unzipping remote file
-        run: ssh hetzner "cd /root/staging && unzip ${{ github.ref_name }}.zip && rm -rf /root/public/${{ github.ref_name }} && mv /root/staging/${{ github.ref_name }}/ /root/public/ && rm ${{ github.ref_name }}.zip"
+        run: ssh hetzner "cd /root/staging && unzip ${{ github.ref_name }}.zip && rm -rf /root/single_theme_builds/${{ github.ref_name }} && mv /root/staging/${{ github.ref_name }}/ /root/single_theme_builds/ && rm ${{ github.ref_name }}.zip"
 
           
 

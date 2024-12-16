@@ -94,7 +94,8 @@
         "question_opinion": "Kamusta ang iyong karanasan?",
         "reviewPlaceholder": "Ilarawan ang iyong karanasan…"
     },
-    "translations": {},
+    "translations": {
+    },
     "unknown": {
         "clear": "Tanggalin ang sagot"
     },

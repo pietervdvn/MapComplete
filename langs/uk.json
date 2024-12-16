@@ -532,7 +532,8 @@
             }
         }
     },
-    "importLayer": {},
+    "importLayer": {
+    },
     "index": {
         "about": "Про MapComplete",
         "intro": "Тематичні мапи, до створення яких ви можете долучитися",
@@ -591,7 +592,8 @@
         "removedKeys": "Наступні ключі будуть видалені:",
         "title": "Позначити як невідомий?"
     },
-    "userinfo": {},
+    "userinfo": {
+    },
     "validation": {
         "opening_hours": {
             "description": "Години роботи"
