@@ -363,9 +363,10 @@
             "error": "有狀況發生了…",
             "nothing": "沒有找到…",
             "search": "搜尋地點",
-            "searching": "搜尋中…"
+            "searching": "搜尋中…",
+            "recents": "最近看到的地方"
         },
-        "searchAnswer": "搜尋選項…",
+        "searchAnswer": "搜尋選項",
         "seeIndex": "查看所有專題地圖的概覽",
         "share": "分享",
         "sharescreen": {
@@ -524,7 +525,7 @@
         "translationMode": "啟用翻譯模組的開關"
     },
     "image": {
-        "addPicture": "新增圖片",
+        "addPicture": "照相",
         "doDelete": "移除圖片",
         "isDeleted": "已刪除",
         "nearby": {
@@ -550,11 +551,33 @@
             "one": {
                 "done": "你的影像已經成功上傳，謝謝你！",
                 "failed": "抱歉，我們無法上傳你的影像",
-                "retrying": "你的影像再次上傳 …",
+                "retrying": "再次上傳你的影像中 …",
                 "uploading": "你的影像已經上傳了…"
-            }
+            },
+            "noBlur": "圖片不會模糊化，請不要照人"
         },
-        "uploadFailed": "無法上傳您的圖片。您是否已連線至網際網路，並允許第三方 API？Brave 瀏覽器或 uMatrix 外掛程式都可能會封鎖它們。"
+        "uploadFailed": "無法上傳您的圖片。您是否已連線至網際網路，並允許第三方 API？Brave 瀏覽器或 uMatrix 外掛程式都可能會封鎖它們。",
+        "panoramax": {
+            "title": "為什麼要永久刪除圖片？",
+            "deletionRequested": "報告已經送出，管理員不久會觀看",
+            "otherFreeform": "請指明為何需要移除這一圖片：",
+            "report": {
+                "copyright": "圖片內含有版權內容",
+                "inappropriate": "這圖片不洽當(有裸露、仇恨內容或是並非街景)",
+                "other": "如果是其他原因請指明",
+                "privacy": "圖片顯示私人產權"
+            },
+            "freeform": "還有其他相關資訊嗎？",
+            "placeholder": "請解釋為何這圖片需要刪除",
+            "requestDeletion": "請求刪除圖片"
+        },
+        "unlink": {
+            "button": "解除連結圖片",
+            "explanation": "圖片解除連結之後，這個圖片不會與這個物件一同顯示。但仍會在附近圖片或其他物件時顯示。",
+            "title": "解除連結這一圖片？"
+        },
+        "processing": "伺服器正在處理你的圖片",
+        "selectFile": "從你的裝置選取圖片"
     },
     "importInspector": {
         "title": "檢視與管理匯入註解"
@@ -589,7 +612,8 @@
         "pointIsMoved": "這個點已經被移動了",
         "reasons": {
             "reasonInaccurate": "位置不準確，誤差幾公尺",
-            "reasonRelocation": "你的物件已經移動到完全不同的位置"
+            "reasonRelocation": "你的物件已經移動到完全不同的位置",
+            "reasonSnapTo": "這應該移到{name}"
         },
         "zoomInFurther": "放更大來確認移動"
     },
@@ -786,5 +810,16 @@
             "empty": "請輸入一些 Wikidata 項目",
             "startsWithQ": "維基數據編號以 Q 開頭後面接數字"
         }
+    },
+    "preset_type": {
+        "typeDescription": "這是 <b>{title}</b>. <div class='subtle'>{description}</div>",
+        "question": "這個物件屬於什麼類型？",
+        "typeTitle": "這是 <b>{title}</b>"
+    },
+    "unknown": {
+        "clear": "清除答案"
+    },
+    "inspector": {
+        "menu": "檢核貢獻者"
     }
 }
