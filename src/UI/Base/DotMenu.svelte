@@ -45,46 +45,48 @@
 </div>
 
 <style>
-  .dots-menu {
-    z-index: 50;
-  }
+    .dots-menu {
+        z-index: 50;
+    }
 
-  :global(.dots-menu > path) {
-    fill: var(--button-background-hover);
-    transition: fill 350ms linear;
-    cursor: pointer;
-  }
+    :global(.dots-menu > path) {
+        fill: var(--button-background-hover);
+        transition: fill 350ms linear;
+        cursor: pointer;
+        stroke-width: 0.8;
+        stroke: white;
+    }
 
-  :global(.dots-menu:hover > path, .dots-menu-opened > path) {
-    fill: var(--interactive-foreground);
-  }
+    :global(.dots-menu:hover > path, .dots-menu-opened > path) {
+        fill: var(--interactive-foreground);
+    }
 
-  .collapsable {
-    max-width: 50rem;
-    max-height: 10rem;
-    transition: max-width 500ms linear, max-height 500ms linear, border 500ms linear;
-    overflow: hidden;
-    flex-wrap: nowrap;
-    text-wrap: none;
-    width: max-content;
-    box-shadow: #ccc;
-    white-space: nowrap;
-    border: 1px solid var(--button-background);
-    background-color: white;
-  }
+    .collapsable {
+        max-width: 50rem;
+        max-height: 10rem;
+        transition: max-width 500ms linear, max-height 500ms linear, border 500ms linear;
+        overflow: hidden;
+        flex-wrap: nowrap;
+        text-wrap: none;
+        width: max-content;
+        box-shadow: #ccc;
+        white-space: nowrap;
+        border: 1px solid var(--button-background);
+        background-color: white;
+    }
 
-  .transition-background {
-    transition: background-color 150ms linear;
-  }
+    .transition-background {
+        transition: background-color 150ms linear;
+    }
 
-  .transition-background.collapsed {
-    background-color: #00000000;
-  }
+    .transition-background.collapsed {
+        background-color: #00000000;
+    }
 
-  .collapsed {
-    max-width: 0;
-    max-height: 0;
-    border: 2px solid #00000000;
-    pointer-events: none;
-  }
+    .collapsed {
+        max-width: 0;
+        max-height: 0;
+        border: 2px solid #00000000;
+        pointer-events: none;
+    }
 </style>

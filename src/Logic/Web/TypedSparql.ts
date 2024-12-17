@@ -67,13 +67,11 @@ export default class TypedSparql {
             bindings.forEach((item) => {
                 const result = <Record<VARS | G, Set<string>>>{}
                 item.forEach((value, key) => {
-                    if (!result[key.value]) {
-                        result[key.value] = new Set()
-                    }
+                    result[key.value] ??= new Set()
                     result[key.value].add(value.value)
                 })
                 if (graphVariable && result[graphVariable]?.size > 0) {
-                    const id = Array.from(result[graphVariable])?.[0] ?? "default"
+                    const id: string = (<string> Array.from(result["id"] ?? [])?.[0] ?? Array.from(result[graphVariable] ?? [])?.[0]) ?? "default"
                     resultAllGraphs[id] = result
                 } else {
                     resultAllGraphs["default"] = result

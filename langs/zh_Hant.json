@@ -175,6 +175,7 @@
             "donate": "財務上支援 MapComplete",
             "editId": "開啟開放街圖線上編輯器",
             "editJosm": "採用 JOSM 編輯",
+            "emailCreators": "寄 email 給創作者",
             "followOnMastodon": "在 Mastodon 追蹤 MapComplete",
             "gotoSourceCode": "檢視原始碼",
             "iconAttribution": {
@@ -182,6 +183,7 @@
             },
             "josmNotOpened": "無法連到 JOSM，請確認 JOSM 已經開啟並且啟用遠端控制選項",
             "josmOpened": "已經開啟 JOSM",
+            "madeBy": "由<b>{author}</b>製作",
             "mapContributionsBy": "目前檢視的資料由 {contributors} 貢獻編輯",
             "mapContributionsByAndHidden": "目前顯到的資料是由 {contributors} 和其他 {hiddenCount} 位貢獻者編輯貢獻",
             "mapillaryHelp": "線上服務 <b>Mapillary</b> 能夠以開放授權提供收集到的街景照片。貢獻者能夠採用 Mapillary 照片來改進開放街圖",
@@ -189,14 +191,12 @@
             "openMapillary": "開啟 Mapillary",
             "openOsmcha": "請見 {theme} 的最新編輯",
             "openOsmchaLastWeek": "檢視最近 7 天的編輯",
+            "openPanoramax": "在這邊開啟 Panoramax",
             "openThemeDocumentation": "開啟專題地圖 {name} 的文件",
             "seeOnMapillary": "在 Mapillary 觀看這張影像",
             "themeBy": "由 {author} 維護主題",
             "title": "版權與署名",
-            "translatedBy": "MapComplete 由 {contributors} 翻譯，而且還有 <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} 更多貢獻者</a>",
-            "emailCreators": "寄 email 給創作者",
-            "madeBy": "由<b>{author}</b>製作",
-            "openPanoramax": "在這邊開啟 Panoramax"
+            "translatedBy": "MapComplete 由 {contributors} 翻譯，而且還有 <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} 更多貢獻者</a>"
         },
         "back": "返回",
         "backToIndex": "回到所有主題地圖的總覽頁面",

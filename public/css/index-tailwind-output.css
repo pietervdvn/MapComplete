@@ -1324,20 +1324,20 @@ input[type="range"].range-lg::-moz-range-thumb {
   margin: 0px;
 }
 
-.m-8 {
-  margin: 2rem;
+.m-1 {
+  margin: 0.25rem;
 }
 
 .m-2 {
   margin: 0.5rem;
 }
 
-.m-0\.5 {
-  margin: 0.125rem;
+.m-8 {
+  margin: 2rem;
 }
 
-.m-1 {
-  margin: 0.25rem;
+.m-0\.5 {
+  margin: 0.125rem;
 }
 
 .m-11 {
@@ -1698,12 +1698,12 @@ input[type="range"].range-lg::-moz-range-thumb {
   height: 6rem;
 }
 
-.h-screen {
-  height: 100vh;
-}
-
 .h-full {
   height: 100%;
+}
+
+.h-screen {
+  height: 100vh;
 }
 
 .h-fit {
@@ -2028,6 +2028,10 @@ input[type="range"].range-lg::-moz-range-thumb {
   width: max-content;
 }
 
+.w-48 {
+  width: 12rem;
+}
+
 .w-auto {
   width: auto;
 }
@@ -2119,10 +2123,6 @@ input[type="range"].range-lg::-moz-range-thumb {
 
 .w-1 {
   width: 0.25rem;
-}
-
-.w-48 {
-  width: 12rem;
 }
 
 .w-9\/12 {
@@ -2244,12 +2244,12 @@ input[type="range"].range-lg::-moz-range-thumb {
   flex: 1 1 0%;
 }
 
-.flex-shrink {
-  flex-shrink: 1;
-}
-
 .flex-shrink-0 {
   flex-shrink: 0;
+}
+
+.flex-shrink {
+  flex-shrink: 1;
 }
 
 .shrink-0 {
@@ -2509,16 +2509,16 @@ input[type="range"].range-lg::-moz-range-thumb {
   row-gap: 0.25rem;
 }
 
+.gap-x-2 {
+  column-gap: 0.5rem;
+}
+
 .gap-y-2 {
   row-gap: 0.5rem;
 }
 
 .gap-y-4 {
   row-gap: 1rem;
-}
-
-.gap-x-2 {
-  column-gap: 0.5rem;
 }
 
 .gap-x-1 {
@@ -3045,11 +3045,6 @@ input[type="range"].range-lg::-moz-range-thumb {
   border-color: rgb(107 114 128 / var(--tw-border-opacity));
 }
 
-.border-subtle {
-  --tw-border-opacity: 1;
-  border-color: rgb(219 234 254 / var(--tw-border-opacity));
-}
-
 .border-black {
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
@@ -3063,6 +3058,11 @@ input[type="range"].range-lg::-moz-range-thumb {
 .border-gray-300 {
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
+}
+
+.border-gray-600 {
+  --tw-border-opacity: 1;
+  border-color: rgb(75 85 99 / var(--tw-border-opacity));
 }
 
 .border-gray-800 {
@@ -4045,16 +4045,12 @@ input[type="range"].range-lg::-moz-range-thumb {
   padding-bottom: 0.75rem;
 }
 
-.pl-4 {
-  padding-left: 1rem;
+.pt-2 {
+  padding-top: 0.5rem;
 }
 
 .pr-4 {
   padding-right: 1rem;
-}
-
-.pt-2 {
-  padding-top: 0.5rem;
 }
 
 .pl-1 {
@@ -5066,6 +5062,8 @@ input[type="range"].range-lg::-moz-range-thumb {
 
 @font-face {
   font-family: "Source Sans Pro";
+
+  /*This path might seem incorrect. However, 'index.css' will be compiled and placed in 'public/css', from where this path _is_ correct*/
 
   src: url("../assets/fonts/source-sans-pro.regular.ttf") format("woff");
 }

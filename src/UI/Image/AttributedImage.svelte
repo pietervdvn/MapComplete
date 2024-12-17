@@ -42,7 +42,7 @@
   if (previewedImage) {
     onDestroy(
       previewedImage.addCallbackAndRun((previewedImage) => {
-        showBigPreview.set(previewedImage?.id === image.id)
+        showBigPreview.set(previewedImage !== undefined && previewedImage?.id === image.id)
       })
     )
   }

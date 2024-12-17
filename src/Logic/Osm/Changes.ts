@@ -600,7 +600,7 @@ export class Changes {
                     " trying again before dropping it from the changes (" +
                     e +
                     ")"
-                this._reportError(msg)
+                // this._reportError(msg) // We don't report this yet, might be a temporary fluke
                 const osmObj = await downloader.DownloadObjectAsync(id, 0)
                 return { id, osmObj }
             }

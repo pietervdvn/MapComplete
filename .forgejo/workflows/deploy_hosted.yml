@@ -1,7 +1,9 @@
 name: Deploy develop on dev.mapcomplete.org
 on:
-  - push
-  - pull_request
+  push:
+    branches-ignore:
+      - build/*
+  pull_request:
 
 jobs:
   deploy_on_hosted:
@@ -15,7 +17,7 @@ jobs:
           node-version: "20"
           cache: "npm"
           cache-dependency-path: package-lock.json
-
+      
       - name: install deps
         run: npm ci
         shell: bash
@@ -42,13 +44,7 @@ jobs:
           export NODE_OPTIONS="--max-old-space-size=8192"
           npm run clean:tests
           npm run generate:doctests 2>&1 | grep -v "No doctests found in"
-          if which vitest
-          then
-            vitest --run test
-          else
-            npm run test
-          fi
-          
+          vitest --run test
           npm run clean:tests
         shell: bash
 
