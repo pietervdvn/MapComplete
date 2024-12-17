@@ -421,6 +421,7 @@ export default class LinkedDataLoader {
         delete output["chargeEnd"]
         delete output["chargeStart"]
         delete output["timeUnit"]
+        delete output["id"]
 
         asBoolean("covered")
         asBoolean("fee", true)
@@ -800,14 +801,19 @@ export default class LinkedDataLoader {
         for (const unpatchedKey in unpatched) {
             // Dirty hack
             const rawData = await Utils.downloadJsonCached<object>(url, 1000*60*60)
-            const images = rawData["photos"].map(ph => <string> ph.image)
-            unpatched[unpatchedKey].images = new Set<string>(images)
+            const images = rawData["photos"]?.map(ph => <string> ph.image)
+            if(images){
+                unpatched[unpatchedKey].images = new Set<string>(images)
+            }
         }
 
         console.log("Got unpatched:", unpatched)
         const patched: Feature[] = []
-        for (const section in unpatched) {
+        for (let section in unpatched) {
             const p = LinkedDataLoader.patchVeloparkProperties(unpatched[section])
+            if(Object.keys(unpatched).length === 1 && section.endsWith("#section1")){
+                section = section.split("#")[0]
+            }
             p["ref:velopark"] = [section]
             patched.push(LinkedDataLoader.asGeojson(p))
         }
