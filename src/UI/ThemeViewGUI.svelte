@@ -105,11 +105,11 @@
 
   let canZoomIn = mapproperties.maxzoom.map(
     (mz) => mapproperties.zoom.data < mz,
-    [mapproperties.zoom],
+    [mapproperties.zoom]
   )
   let canZoomOut = mapproperties.minzoom.map(
     (mz) => mapproperties.zoom.data > mz,
-    [mapproperties.zoom],
+    [mapproperties.zoom]
   )
 
   let rasterLayerName =
@@ -118,7 +118,7 @@
   onDestroy(
     rasterLayer.addCallbackAndRunD((l) => {
       rasterLayerName = l.properties.name
-    }),
+    })
   )
 
   debug.addCallbackAndRun((dbg) => {

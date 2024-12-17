@@ -88,7 +88,11 @@ export class PointImportFlowState extends ImportFlow<PointImportFlowArguments> {
                 )
             } else {
                 console.log("Marking maproulette task as fixed")
-                await Maproulette.singleton.closeTask(Number(maproulette_id), Maproulette.STATUS_FIXED, this.state)
+                await Maproulette.singleton.closeTask(
+                    Number(maproulette_id),
+                    Maproulette.STATUS_FIXED,
+                    this.state
+                )
                 originalFeatureTags.data["mr_taskStatus"] = "Fixed"
                 originalFeatureTags.ping()
             }

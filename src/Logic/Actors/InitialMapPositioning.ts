@@ -9,7 +9,7 @@ import { Utils } from "../../Utils"
 import { GeoLocationState } from "../State/GeoLocationState"
 import { OsmConnection } from "../Osm/OsmConnection"
 
-"use strict"
+;("use strict")
 
 /**
  * This actor is responsible to set the map location.
@@ -27,7 +27,11 @@ export default class InitialMapPositioning {
     public location: UIEventSource<{ lon: number; lat: number }>
     public useTerrain: Store<boolean>
 
-    constructor(layoutToUse: ThemeConfig, geolocationState: GeoLocationState, osmConnection: OsmConnection) {
+    constructor(
+        layoutToUse: ThemeConfig,
+        geolocationState: GeoLocationState,
+        osmConnection: OsmConnection
+    ) {
         function localStorageSynced(
             key: string,
             deflt: number,
@@ -48,7 +52,6 @@ export default class InitialMapPositioning {
 
             return src
         }
-
 
         // -- Location control initialization
         this.zoom = localStorageSynced(
@@ -94,12 +97,11 @@ export default class InitialMapPositioning {
             console.log("Loading note", initialHash)
             const noteId = Number(initialHash)
             if (osmConnection.isLoggedIn.data) {
-                osmConnection.getNote(noteId).then(note => {
-                        const [lon, lat] = note.geometry.coordinates
-                        console.log("Got note:", note)
-                        this.location.set({ lon, lat })
-                    }
-                )
+                osmConnection.getNote(noteId).then((note) => {
+                    const [lon, lat] = note.geometry.coordinates
+                    console.log("Got note:", note)
+                    this.location.set({ lon, lat })
+                })
             }
         } else if (
             Constants.GeoIpServer &&

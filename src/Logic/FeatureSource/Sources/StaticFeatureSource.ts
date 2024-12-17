@@ -2,7 +2,7 @@ import { FeatureSource, WritableFeatureSource } from "../FeatureSource"
 import { ImmutableStore, Store, UIEventSource } from "../../UIEventSource"
 import { Feature } from "geojson"
 
-"use strict"
+;("use strict")
 /**
  * A simple, read only feature store.
  */
@@ -32,7 +32,9 @@ export default class StaticFeatureSource<T extends Feature = Feature> implements
     }
 }
 
-export class WritableStaticFeatureSource<T extends Feature = Feature> implements WritableFeatureSource<T> {
+export class WritableStaticFeatureSource<T extends Feature = Feature>
+    implements WritableFeatureSource<T>
+{
     public readonly features: UIEventSource<T[]> = undefined
 
     constructor(features: UIEventSource<T[]> | T[] | { features: T[] } | { features: Store<T[]> }) {
@@ -53,6 +55,5 @@ export class WritableStaticFeatureSource<T extends Feature = Feature> implements
         } else {
             this.features = feats
         }
-
     }
 }

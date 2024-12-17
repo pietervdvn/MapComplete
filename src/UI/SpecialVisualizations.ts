@@ -2,7 +2,11 @@ import Combine from "./Base/Combine"
 import { FixedUiElement } from "./Base/FixedUiElement"
 import BaseUIElement from "./BaseUIElement"
 import Title from "./Base/Title"
-import { RenderingSpecification, SpecialVisualization, SpecialVisualizationState } from "./SpecialVisualization"
+import {
+    RenderingSpecification,
+    SpecialVisualization,
+    SpecialVisualizationState,
+} from "./SpecialVisualization"
 import { HistogramViz } from "./Popup/HistogramViz"
 import MinimapViz from "./Popup/MinimapViz.svelte"
 import { ShareLinkViz } from "./Popup/ShareLinkViz"
@@ -750,7 +754,7 @@ export default class SpecialVisualizations {
                         feature,
                         labelText: args[1],
                         image: args[2],
-                        noBlur: noBlur === "true" || noBlur === "yes"
+                        noBlur: noBlur === "true" || noBlur === "yes",
                     })
                 },
             },
@@ -1862,7 +1866,7 @@ export default class SpecialVisualizations {
                     })
                     const externalData: Store<{ success: GeoJsonProperties } | { error: any }> =
                         sourceUrl.bindD(
-                            url => {
+                            (url) => {
                                 const country = countryStore.data
                                 if (url.startsWith("https://data.velopark.be/")) {
                                     return Stores.FromPromiseWithErr(

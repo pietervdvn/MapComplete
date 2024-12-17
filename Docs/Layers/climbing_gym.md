@@ -273,7 +273,7 @@ This tagrendering is only visible in the popup if the following condition is met
 ### max_bolts
 
 The question is `How many bolts do routes in {title()} have at most?`
-*The sport climbing routes here have at most {climbing:bolts:max} bolts.<div class='subtle'>This is without relays and indicates how much quickdraws a climber needs</div>* is shown if `climbing:bolts:max` is set
+*The sport climbing routes here have at most {climbing:bolts:max} bolts. <div class='subtle'>This is without belay stations and indicates how much quickdraws a climber needs.</div>* is shown if `climbing:bolts:max` is set
 
 ### Speed climbing?
 

@@ -190,7 +190,7 @@ export class ImageUploadManager {
             }
         }
         try {
-            ({ key, value, absoluteUrl } = await this._uploader.uploadImage(
+            ;({ key, value, absoluteUrl } = await this._uploader.uploadImage(
                 blob,
                 location,
                 author,
@@ -200,7 +200,7 @@ export class ImageUploadManager {
             this.increaseCountFor(this._uploadRetried, featureId)
             console.error("Could not upload image, trying again:", e)
             try {
-                ({ key, value, absoluteUrl } = await this._uploader.uploadImage(
+                ;({ key, value, absoluteUrl } = await this._uploader.uploadImage(
                     blob,
                     location,
                     author,

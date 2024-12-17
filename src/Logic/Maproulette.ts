@@ -6,7 +6,8 @@ export interface MaprouletteTask {
     description: string
     instruction: string
 }
-export const maprouletteStatus = ["Open",
+export const maprouletteStatus = [
+    "Open",
     "Fixed",
     "False_positive",
     "Skipped",
@@ -16,7 +17,7 @@ export const maprouletteStatus = ["Open",
     "Disabled",
 ] as const
 
-export type MaprouletteStatus = typeof maprouletteStatus[number]
+export type MaprouletteStatus = (typeof maprouletteStatus)[number]
 
 export default class Maproulette {
     public static readonly defaultEndpoint = "https://maproulette.org/api/v2"
@@ -29,7 +30,6 @@ export default class Maproulette {
     public static readonly STATUS_ALREADY_FIXED = 5
     public static readonly STATUS_TOO_HARD = 6
     public static readonly STATUS_DISABLED = 9
-
 
     public static singleton = new Maproulette()
     /*
@@ -64,8 +64,8 @@ export default class Maproulette {
         if (code === "Created") {
             return Maproulette.STATUS_OPEN
         }
-        const i = maprouletteStatus.findIndex(<any> code)
-        if(i < 0){
+        const i = maprouletteStatus.findIndex(<any>code)
+        if (i < 0) {
             return undefined
         }
         return i
@@ -88,7 +88,7 @@ export default class Maproulette {
             tags?: string
             requestReview?: boolean
             completionResponses?: Record<string, string>
-        },
+        }
     ): Promise<void> {
         console.log("Maproulette: setting", `${this.endpoint}/task/${taskId}/${status}`, options)
         options ??= {}

@@ -8,11 +8,13 @@ import { FeatureSource, WritableFeatureSource } from "../FeatureSource/FeatureSo
 import { LocalStorageSource } from "../Web/LocalStorageSource"
 import { GeoOperations } from "../GeoOperations"
 import { OsmTags } from "../../Models/OsmFeature"
-import StaticFeatureSource, { WritableStaticFeatureSource } from "../FeatureSource/Sources/StaticFeatureSource"
+import StaticFeatureSource, {
+    WritableStaticFeatureSource,
+} from "../FeatureSource/Sources/StaticFeatureSource"
 import { MapProperties } from "../../Models/MapProperties"
 import { Orientation } from "../../Sensors/Orientation"
 
-"use strict"
+;("use strict")
 /**
  * The geolocation-handler takes a map-location and a geolocation state.
  * It'll move the map as appropriate given the state of the geolocation-API

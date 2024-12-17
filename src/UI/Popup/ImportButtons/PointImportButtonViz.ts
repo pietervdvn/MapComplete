@@ -56,10 +56,9 @@ export class PointImportButtonViz implements SpecialVisualization {
         state: SpecialVisualizationState,
         tagSource: UIEventSource<Record<string, string>>,
         argument: string[],
-        feature: Feature,
+        feature: Feature
     ): BaseUIElement {
-
-        const to_point_index = this.args.findIndex(arg => arg.name === "to_point")
+        const to_point_index = this.args.findIndex((arg) => arg.name === "to_point")
         const summarizePointArg = argument[to_point_index].toLowerCase()
         if (feature.geometry.type !== "Point") {
             if (summarizePointArg !== "no" && summarizePointArg !== "false") {
@@ -75,7 +74,7 @@ export class PointImportButtonViz implements SpecialVisualization {
             <Feature<Point>>feature,
             baseArgs,
             tagsToApply,
-            tagSource,
+            tagSource
         )
 
         return new SvelteUIElement(PointImportFlow, {

@@ -35,10 +35,10 @@ This document gives an overview of which URL-parameters can be used to influence
 26. [background](#background)
     + [Selecting a category](#selecting-a-category)
     + [Selecting a specific layer](#selecting-a-specific-layer)
-27. [z](#z)
-28. [lat](#lat)
-29. [lon](#lon)
-30. [oauth_token](#oauth_token)
+27. [oauth_token](#oauth_token)
+28. [z](#z)
+29. [lat](#lat)
+30. [lon](#lon)
 31. [layer-public_bookcase](#layer-public_bookcase)
 32. [filter-public_bookcase-kid-books](#filter-public_bookcase-kid-books)
 33. [filter-public_bookcase-adult-books](#filter-public_bookcase-adult-books)
@@ -334,11 +334,19 @@ This documentation is defined in the source code at [FeatureSwitchState.ts](/src
 
 No default value set
 
+## oauth_token
+
+Used to complete the login
+
+This documentation is defined in the source code at [ThemeViewState.ts](/src/Models/ThemeViewState.ts#L177)
+
+No default value set
+
 ## z
 
 The initial/current zoom level
 
-This documentation is defined in the source code at [InitialMapPositioning.ts](/src/Logic/Actors/InitialMapPositioning.ts#L37)
+This documentation is defined in the source code at [InitialMapPositioning.ts](/src/Logic/Actors/InitialMapPositioning.ts#L39)
 
 The default value is _1_
 
@@ -346,7 +354,7 @@ The default value is _1_
 
 The initial/current latitude
 
-This documentation is defined in the source code at [InitialMapPositioning.ts](/src/Logic/Actors/InitialMapPositioning.ts#L37)
+This documentation is defined in the source code at [InitialMapPositioning.ts](/src/Logic/Actors/InitialMapPositioning.ts#L39)
 
 The default value is _0_
 
@@ -354,17 +362,9 @@ The default value is _0_
 
 The initial/current longitude of the app
 
-This documentation is defined in the source code at [InitialMapPositioning.ts](/src/Logic/Actors/InitialMapPositioning.ts#L37)
+This documentation is defined in the source code at [InitialMapPositioning.ts](/src/Logic/Actors/InitialMapPositioning.ts#L39)
 
 The default value is _0_
-
-## oauth_token
-
-Used to complete the login
-
-This documentation is defined in the source code at [ThemeViewState.ts](/src/Models/ThemeViewState.ts#L189)
-
-No default value set
 
 ## layer-public_bookcase
 
@@ -410,7 +410,7 @@ The default value is _0_
 
 The mode the application starts in, e.g. 'map', 'dashboard' or 'statistics'
 
-This documentation is defined in the source code at [generateDocs.ts](ervdvn/git2/MapComplete/scripts/generateDocs.ts#L436)
+This documentation is defined in the source code at [generateDocs.ts](ervdvn/git/MapComplete/scripts/generateDocs.ts#L436)
 
 The default value is _map_
 

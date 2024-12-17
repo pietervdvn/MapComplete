@@ -2,7 +2,11 @@ import ThemeConfig from "./ThemeConfig/ThemeConfig"
 import { SpecialVisualizationState } from "../UI/SpecialVisualization"
 import { Changes } from "../Logic/Osm/Changes"
 import { Store, UIEventSource } from "../Logic/UIEventSource"
-import { FeatureSource, IndexedFeatureSource, WritableFeatureSource } from "../Logic/FeatureSource/FeatureSource"
+import {
+    FeatureSource,
+    IndexedFeatureSource,
+    WritableFeatureSource,
+} from "../Logic/FeatureSource/FeatureSource"
 import { OsmConnection } from "../Logic/Osm/OsmConnection"
 import { ExportableMap, MapProperties } from "./MapProperties"
 import LayerState from "../Logic/State/LayerState"
@@ -46,7 +50,9 @@ import BackgroundLayerResetter from "../Logic/Actors/BackgroundLayerResetter"
 import SaveFeatureSourceToLocalStorage from "../Logic/FeatureSource/Actors/SaveFeatureSourceToLocalStorage"
 import BBoxFeatureSource from "../Logic/FeatureSource/Sources/TouchesBboxFeatureSource"
 import ThemeViewStateHashActor from "../Logic/Web/ThemeViewStateHashActor"
-import NoElementsInViewDetector, { FeatureViewState } from "../Logic/Actors/NoElementsInViewDetector"
+import NoElementsInViewDetector, {
+    FeatureViewState,
+} from "../Logic/Actors/NoElementsInViewDetector"
 import FilteredLayer from "./FilteredLayer"
 import { PreferredRasterLayerSelector } from "../Logic/Actors/PreferredRasterLayerSelector"
 import { ImageUploadManager } from "../Logic/ImageProviders/ImageUploadManager"
@@ -57,7 +63,7 @@ import { GeolocationControlState } from "../UI/BigComponents/GeolocationControl"
 import Zoomcontrol from "../UI/Zoomcontrol"
 import {
     SummaryTileSource,
-    SummaryTileSourceRewriter
+    SummaryTileSourceRewriter,
 } from "../Logic/FeatureSource/TiledFeatureSource/SummaryTileSource"
 import summaryLayer from "../assets/generated/layers/summary.json"
 import last_click_layerconfig from "../assets/generated/layers/last_click.json"
@@ -178,14 +184,13 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 "oauth_token",
                 undefined,
                 "Used to complete the login"
-            )
+            ),
         })
         const initial = new InitialMapPositioning(layout, geolocationState, this.osmConnection)
         this.mapProperties = new MapLibreAdaptor(this.map, initial, { correctClick: 20 })
 
         this.featureSwitchIsTesting = this.featureSwitches.featureSwitchIsTesting
         this.featureSwitchUserbadge = this.featureSwitches.featureSwitchEnableLogin
-
 
         this.userRelatedState = new UserRelatedState(
             this.osmConnection,
@@ -783,7 +788,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
 
         const layers = this.theme.layers.filter(
             (l) =>
-                (<string[]><unknown>Constants.priviliged_layers).indexOf(l.id) < 0 &&
+                (<string[]>(<unknown>Constants.priviliged_layers)).indexOf(l.id) < 0 &&
                 l.source.geojsonSource === undefined &&
                 l.doCount
         )

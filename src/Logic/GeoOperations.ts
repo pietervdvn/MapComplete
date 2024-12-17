@@ -10,13 +10,13 @@ import {
     MultiPolygon,
     Point,
     Polygon,
-    Position
+    Position,
 } from "geojson"
 import { Tiles } from "../Models/TileRange"
 import { Utils } from "../Utils"
 import { NearestPointOnLine } from "@turf/nearest-point-on-line"
 
-("use strict")
+;("use strict")
 
 export class GeoOperations {
     private static readonly _earthRadius = 6378137

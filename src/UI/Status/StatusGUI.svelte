@@ -206,13 +206,15 @@
   {
     const summaryTileServer = Constants.VectorTileServer
     // "mvt_layer_server": "https://cache.mapcomplete.org/public.{type}_{layer}/{z}/{x}/{y}.pbf",
-    const status = testDownload(Utils.SubstituteKeys(summaryTileServer, {
-      type: "pois",
-      layer: "food",
-      z: 14,
-      x: 8848,
-      y: 5828
-    }))
+    const status = testDownload(
+      Utils.SubstituteKeys(summaryTileServer, {
+        type: "pois",
+        layer: "food",
+        z: 14,
+        x: 8848,
+        y: 5828,
+      })
+    )
     services.push({
       name: summaryTileServer,
       status: status.mapD((s) => {
@@ -221,10 +223,9 @@
         }
         return "online"
       }),
-      message: new ImmutableStore("See SettingUpPSQL.md to fix")
+      message: new ImmutableStore("See SettingUpPSQL.md to fix"),
     })
   }
-
 
   {
     const s = Constants.countryCoderEndpoint

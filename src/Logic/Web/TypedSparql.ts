@@ -71,7 +71,10 @@ export default class TypedSparql {
                     result[key.value].add(value.value)
                 })
                 if (graphVariable && result[graphVariable]?.size > 0) {
-                    const id: string = (<string> Array.from(result["id"] ?? [])?.[0] ?? Array.from(result[graphVariable] ?? [])?.[0]) ?? "default"
+                    const id: string =
+                        <string>Array.from(result["id"] ?? [])?.[0] ??
+                        Array.from(result[graphVariable] ?? [])?.[0] ??
+                        "default"
                     resultAllGraphs[id] = result
                 } else {
                     resultAllGraphs["default"] = result

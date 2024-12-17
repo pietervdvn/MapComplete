@@ -98,7 +98,7 @@ Maproulette challenge containing velopark data
 
 This layer is loaded from an external source, namely 
 
-`https://maproulette.org/api/v2/challenge/view/43282`
+`https://maproulette.org/api/v2/challenge/view/50552`
 
 No themes use this layer
 
@@ -176,7 +176,7 @@ This tagrendering is only visible in the popup if the following condition is met
 ### import_point
 
 _This tagrendering has no question and is thus read-only_
-*{import_button(bike_parking_with_velopark_ref bike_parking,amenity=bicycle_parking;ref:velopark=$ref:velopark,Create a new bicycle parking in OSM. This parking will have the link&COMMA you'll be able to copy the attributes in the next step,,,,,mr_taskId)}*
+*{import_button(bike_parking_with_velopark_ref bike_parking,amenity=bicycle_parking;ref:velopark=$ref:velopark,Create a new bicycle parking in OSM. This parking will have the link&COMMA you'll be able to copy the attributes in the next step,,,,,mr_taskId,yes)}*
 
 This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus' target='_blank'>mr_taskStatus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DCreated' target='_blank'>Created</a>
 

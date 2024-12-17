@@ -13,7 +13,7 @@
       "contributor": "paunofu"
     },
     {
-      "commits": 150,
+      "commits": 154,
       "contributor": "Anonymous"
     },
     {
@@ -49,16 +49,16 @@
       "contributor": "gallegonovato"
     },
     {
-      "commits": 45,
-      "contributor": "Babos Gábor"
-    },
-    {
-      "commits": 44,
+      "commits": 47,
       "contributor": "Supaplex"
     },
     {
-      "commits": 42,
+      "commits": 46,
       "contributor": "Midgard"
+    },
+    {
+      "commits": 45,
+      "contributor": "Babos Gábor"
     },
     {
       "commits": 38,
@@ -366,6 +366,10 @@
     },
     {
       "commits": 3,
+      "contributor": "Gábor"
+    },
+    {
+      "commits": 3,
       "contributor": "Michal Čermák"
     },
     {
@@ -447,10 +451,6 @@
     {
       "commits": 3,
       "contributor": "SiegbjornSitumeang"
-    },
-    {
-      "commits": 2,
-      "contributor": "Gábor"
     },
     {
       "commits": 2,
