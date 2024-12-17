@@ -15,7 +15,7 @@
   import Translations from "../i18n/Translations"
   import DotMenu from "../Base/DotMenu.svelte"
 
-  export let image: ProvidedImage
+  export let image: Partial<ProvidedImage> & ({ id: string, url: string })
   export let clss: string = undefined
 
   let isLoaded = new UIEventSource(false)

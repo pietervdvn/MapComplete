@@ -8,7 +8,7 @@
   import Zoomcontrol from "../Zoomcontrol"
   import { onDestroy } from "svelte"
 
-  export let image: ProvidedImage
+  export let image: Partial<ProvidedImage>
   let panzoomInstance = undefined
   let panzoomEl: HTMLElement
   export let isLoaded: UIEventSource<boolean> = undefined
