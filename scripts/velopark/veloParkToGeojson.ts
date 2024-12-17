@@ -256,7 +256,7 @@ class VeloParkToGeojson extends Script {
         VeloParkToGeojson.exportExtraAmenities(allVelopark)
         await VeloParkToGeojson.createDiff(allVelopark)
         console.log(
-            "Use vite-node scripts/velopark/compare.ts to compare the results and generate a diff file"
+            "Use \nvite-node scripts/velopark/compare.ts -- velopark_all_.geojson osm_with_velopark_link_.geojson\n to compare the results and generate a diff file"
         )
     }
 }
