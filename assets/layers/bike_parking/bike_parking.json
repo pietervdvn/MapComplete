@@ -365,6 +365,15 @@
           }
         },
         {
+          "if": "bicycle_parking=building",
+          "then": {
+            "en": "The bicycle parking is located in a building or parking garage",
+            "nl": "De fietsenstalling bevindt zich in een gebouw of parkeergarage",
+            "fr": "Le parking à vélos se trouve dans un bâtiment ou un parking",
+            "de": "Der Fahrradparkplatz befindet sich in einem Gebäude oder Parkhaus",
+          }
+        },
+        {
           "if": "bicycle_parking=lockers",
           "then": {
             "en": "A locker - the bicycles are enclosed completely individually or with a few bicycles together. The locker is too small to fit a person standing..",
