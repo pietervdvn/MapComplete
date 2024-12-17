@@ -30,7 +30,7 @@ class Compare extends Script {
             Object.keys(osmParking.properties).concat(Object.keys(veloParking.properties))
         )
         for (const key of allKeys) {
-            if (["name", "numberOfLevels"].indexOf(key) >= 0) {
+            if (["name", "numberOfLevels", "id"].indexOf(key) >= 0) {
                 continue // We don't care about these tags
             }
             if (osmParking.properties[key] === veloParking.properties[key]) {
@@ -108,7 +108,12 @@ class Compare extends Script {
             distanceBins[bin] += 1
         }
 
-        fs.writeFileSync("report_diff.json", JSON.stringify({ diffs, distanceBins }, null, "  "))
+        fs.writeFileSync("report_diff.json", JSON.stringify({
+            diffs,
+            distanceBins,
+            binSize,
+            "#binsize": "Every bin increases with this amount in meter"
+        }, null, "  "))
         console.log("Written report_diff.json")
     }
 
