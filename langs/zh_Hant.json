@@ -196,7 +196,9 @@
             "seeOnMapillary": "在 Mapillary 觀看這張影像",
             "themeBy": "由 {author} 維護主題",
             "title": "版權與署名",
-            "translatedBy": "MapComplete 由 {contributors} 翻譯，而且還有 <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} 更多貢獻者</a>"
+            "translatedBy": "MapComplete 由 {contributors} 翻譯，而且還有 <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} 更多貢獻者</a>",
+            "panoramaxHelp": "<b>Panoramax</b> 是收集街景照片的線上服務，並且以自由授權釋出。貢獻者能夠使用這些照片來改進開放街圖",
+            "panoramaxLicenseCCBYSA": "你的圖片會以 CC-BY-SA 釋出 - 每個人都能夠在提及你名字的情形下再利用你的圖片"
         },
         "back": "返回",
         "backToIndex": "回到所有主題地圖的總覽頁面",
@@ -239,7 +241,8 @@
             },
             "title": "下載",
             "toMuch": "有很多圖徵可以下載了",
-            "uploadGpx": "上傳軌跡到開放街圖"
+            "uploadGpx": "上傳軌跡到開放街圖",
+            "downloadImage": "下載圖片"
         },
         "enableGeolocationForSafari": "你沒有看到要求地理位置權限的跳出視窗？",
         "enableGeolocationForSafariLink": "學習如何在設定當中啟用地理位置權限",
@@ -249,7 +252,8 @@
         "examples": "例子",
         "filterPanel": {
             "disableAll": "關閉所有",
-            "enableAll": "啟用所有"
+            "enableAll": "啟用所有",
+            "allTypes": "所有類型"
         },
         "geopermissionDenied": "使用地理位置要求已經被拒絕",
         "histogram": {
@@ -261,7 +265,8 @@
             "jumpToLocation": "到你目前的位置",
             "menu": "選單",
             "zoomIn": "放大",
-            "zoomOut": "縮小"
+            "zoomOut": "縮小",
+            "locationNotAvailable": "無法取得 GPS 位置，裝置有取得位置資訊還是在隧道內？"
         },
         "layerSelection": {
             "title": "選擇圖層",
@@ -358,7 +363,8 @@
             "disable": "不要再問這個問題",
             "disabledIntro": "你關閉一些類型的問題，要再次啟用問題，請在這邊點一下",
             "disabledTitle": "關閉問題",
-            "enable": "針對所有問題啟用"
+            "enable": "針對所有問題啟用",
+            "noneDisabled": "如果你沒有對特定問題有興趣的話，請關閉。要關閉問題，請按右上角的三個點然後選擇'關閉'"
         },
         "removeLocationHistory": "刪除位置歷史",
         "retry": "重試",
@@ -366,11 +372,24 @@
         "save": "儲存",
         "screenToSmall": "在新視窗中開啟 <i>{theme}</i>",
         "search": {
-            "error": "有狀況發生了…",
-            "nothing": "沒有找到…",
+            "error": "有狀況發生了。",
+            "nothing": "沒有找到。",
             "recents": "最近看到的地方",
             "search": "搜尋地點",
-            "searching": "搜尋中…"
+            "searching": "搜尋中…",
+            "editSearchSyncSettings": "編輯同步設定",
+            "editThemeSync": "編輯同步設定",
+            "instructions": "使用搜尋欄位來搜尋位置、篩選或是其他主題地圖",
+            "locations": "位置",
+            "nMoreFilters": "{n} 更多",
+            "nothingFor": "尋找 {term} 沒有結果",
+            "otherMaps": "其他地圖",
+            "pickFilter": "選擇篩選",
+            "recentThemes": "最近觀看的地圖",
+            "activeFilters": "啟用篩選",
+            "clearFilters": "清除篩選",
+            "deleteSearchHistory": "刪除位置歷史",
+            "deleteThemeHistory": "刪除先前觀看的主題"
         },
         "searchAnswer": "搜尋選項",
         "seeIndex": "查看所有專題地圖的概覽",
@@ -500,7 +519,8 @@
             "readMore": "閱讀剩下的條目內容",
             "searchToShort": "你的搜尋檢索太短了，請輸入長一點的文字",
             "searchWikidata": "在 Wikidata 搜尋"
-        }
+        },
+        "clearPendingChanges": "清除待處理的變動"
     },
     "hotkeyDocumentation": {
         "action": "行動",
@@ -740,7 +760,12 @@
         "missing": "{count} 未翻譯字串"
     },
     "unknown": {
-        "clear": "清除答案"
+        "clear": "清除答案",
+        "keep": "保留答案",
+        "markUnknown": "標示為未知",
+        "removedKeys": "下列鍵會被移除：",
+        "title": "要標記為未知嗎？",
+        "explanation": "如果答案不正確但實際數值不清楚的話，則清除這一些資訊。不會清除其他資訊。"
     },
     "userinfo": {
         "notLoggedIn": "你已經登出了"
@@ -814,12 +839,17 @@
         "tooLong": "文字太長了，最多允許 255 字元，你現在還有 {count} 字元。",
         "url": {
             "description": "連接到網站",
-            "feedback": "這不是有效的網址"
+            "feedback": "這不是有效的網址",
+            "aggregator": "{host} 是第三方網站，如果可能請搜尋官方網站。",
+            "spamSite": "{host} 被視為低品質網站，並不被允許使用。"
         },
         "wikidata": {
             "description": "Wikidata 編號",
             "empty": "請輸入一些 Wikidata 項目",
             "startsWithQ": "維基數據編號以 Q 開頭後面接數字"
+        },
+        "regex": {
+            "description": "正規表示式"
         }
     }
 }
