@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.47.13](https://github.com/pietervdvn/mapcomplete/compare/v0.47.12...v0.47.13) (2024-12-17)
+
+
+### Bug Fixes
+
+* attributed image doesn't open fullscreen if no ID given ([b272c1c](https://github.com/pietervdvn/mapcomplete/commits/b272c1cda7352a4a78e4f61dbd39fe2f80ae204d))
+* don't report an unneeded error ([79314e1](https://github.com/pietervdvn/mapcomplete/commits/79314e1747ee74544975948ba35fb499c203a061))
+* fix [#2309](https://github.com/pietervdvn/MapComplete/issues/2309) ([83a9184](https://github.com/pietervdvn/mapcomplete/commits/83a918477f24fd86bc2783e266ac59a4c687020f))
+* fix [#2309](https://github.com/pietervdvn/MapComplete/issues/2309) ([fe2a6ca](https://github.com/pietervdvn/mapcomplete/commits/fe2a6ca065b8ace2f466a6cac549f6d84ee35044))
+* fix changelog links ([0471fd7](https://github.com/pietervdvn/mapcomplete/commits/0471fd7779329da051400a62d16162bd21dc0324))
+* fix possible failing upload (error report postmortem) ([22c348a](https://github.com/pietervdvn/mapcomplete/commits/22c348af27677cd97f124dc45f63276d91b40152))
+* linked data vis for velopark does no longer rely on country codes ([c26b9ae](https://github.com/pietervdvn/mapcomplete/commits/c26b9ae7f7fa3de69d499451db14be61e4698721))
+* **linkeddata:** velopark deals with sections, fix image loading ([ef1d2c9](https://github.com/pietervdvn/mapcomplete/commits/ef1d2c9f56fc07f87255c557b05daf5e0451fdc5))
+* remove 'id' attribute ([926ea0b](https://github.com/pietervdvn/mapcomplete/commits/926ea0b6e46f9966d1b1b9a4157c6ca6708b82fa))
+* server config (CORS) ([2c877dd](https://github.com/pietervdvn/mapcomplete/commits/2c877dd52532b24066907a5ae9676e26371e48f0))
+* typing ([565e92a](https://github.com/pietervdvn/mapcomplete/commits/565e92a37dde751e21d7f3e2abc69fa57b27d30f))
+
 ### [0.47.12](https://github.com/pietervdvn/mapcomplete/compare/v0.47.11...v0.47.12) (2024-12-11)
 
 
