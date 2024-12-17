@@ -13,7 +13,7 @@ import { MaprouletteStatus } from "../../src/Logic/Maproulette"
 class VeloParkToGeojson extends Script {
     constructor() {
         super(
-            "Downloads the latest Velopark data and converts it to a geojson, which will be saved at the current directory",
+            "Downloads the latest Velopark data and converts it to a geojson, which will be saved at the current directory"
         )
     }
 
@@ -24,13 +24,13 @@ class VeloParkToGeojson extends Script {
             JSON.stringify(
                 extension === ".geojson"
                     ? {
-                        type: "FeatureCollection",
-                        features,
-                    }
+                          type: "FeatureCollection",
+                          features,
+                      }
                     : features,
                 null,
-                "    ",
-            ),
+                "    "
+            )
         )
         console.log("Written", file, "(" + features.length, " features)")
     }
@@ -66,7 +66,7 @@ class VeloParkToGeojson extends Script {
         console.log("Downloading velopark data")
         // Download data for NIS-code 1000. 1000 means: all of belgium
         const url = "https://www.velopark.be/api/parkings/1000"
-        const allVeloparkRaw= (await Utils.downloadJson<{ url: string }[]>(url))
+        const allVeloparkRaw = await Utils.downloadJson<{ url: string }[]>(url)
         // Example multi-entry: https://data.velopark.be/data/Stad-Izegem_IZE_015
         let failed = 0
         console.log("Got", allVeloparkRaw.length, "items")
@@ -86,7 +86,7 @@ class VeloParkToGeojson extends Script {
                         console.error("Loading ", f.url, " failed due to", e)
                         failed++
                     }
-                }),
+                })
             )
             console.log("Batch complete:", i)
         }
@@ -94,7 +94,7 @@ class VeloParkToGeojson extends Script {
             "Fetching data done, got ",
             allVelopark.length + "/" + allVeloparkRaw.length,
             "failed:",
-            failed,
+            failed
         )
         VeloParkToGeojson.exportGeojsonTo("velopark_all", allVelopark)
 
@@ -142,24 +142,34 @@ class VeloParkToGeojson extends Script {
 
     private static async fetchMapRouletteClosedItems() {
         const challenges = ["https://maproulette.org/api/v2/challenge/view/43282"]
-        const solvedRefs: Set<string> = new Set<string>();
+        const solvedRefs: Set<string> = new Set<string>()
         for (const url of challenges) {
-            const data = await Utils.downloadJson<FeatureCollection<Point, {
-                "mr_taskId": string,
-                "ref:velopark": string,
-                mr_taskStatus: MaprouletteStatus,
-                mr_responses: string | undefined
-            }>>(url)
+            const data = await Utils.downloadJson<
+                FeatureCollection<
+                    Point,
+                    {
+                        mr_taskId: string
+                        "ref:velopark": string
+                        mr_taskStatus: MaprouletteStatus
+                        mr_responses: string | undefined
+                    }
+                >
+            >(url)
             for (const challenge of data.features) {
                 const status = challenge.properties.mr_taskStatus
-                const isClosed = status === "Fixed" || status === "False_positive" || status === "Already fixed" || status === "Too_Hard" || status === "Deleted"
-                if(isClosed){
+                const isClosed =
+                    status === "Fixed" ||
+                    status === "False_positive" ||
+                    status === "Already fixed" ||
+                    status === "Too_Hard" ||
+                    status === "Deleted"
+                if (isClosed) {
                     const ref = challenge.properties["ref:velopark"]
-                    solvedRefs .add(ref)
+                    solvedRefs.add(ref)
                 }
             }
         }
-        console.log("Detected", solvedRefs,"as closed on mapRoulette")
+        console.log("Detected", solvedRefs, "as closed on mapRoulette")
         return solvedRefs
     }
 
@@ -181,32 +191,33 @@ class VeloParkToGeojson extends Script {
             [],
             Constants.defaultOverpassUrls[0],
             new ImmutableStore(60 * 5),
-            false,
+            false
         )
         const alreadyLinkedFeatures = (await alreadyLinkedQuery.queryGeoJson(bboxBelgium))[0]
         const seenIds = new Set<string>(
-            alreadyLinkedFeatures.features.map((f) => f.properties?.["ref:velopark"]),
+            alreadyLinkedFeatures.features.map((f) => f.properties?.["ref:velopark"])
         )
         this.exportGeojsonTo("osm_with_velopark_link", <Feature[]>alreadyLinkedFeatures.features)
         console.log("OpenStreetMap contains", seenIds.size, "bicycle parkings with a velopark ref")
 
         const features: Feature[] = allVelopark.filter(
-            (f) => !seenIds.has(f.properties["ref:velopark"]),
+            (f) => !seenIds.has(f.properties["ref:velopark"])
         )
         VeloParkToGeojson.exportGeojsonTo("velopark_nonsynced", features)
 
-        const synced =await this.fetchMapRouletteClosedItems()
+        const synced = await this.fetchMapRouletteClosedItems()
         const featuresMoreFiltered = features.filter(
             (f) => !synced.has(f.properties["ref:velopark"])
         )
         VeloParkToGeojson.exportGeojsonTo("velopark_nonsynced_nonclosed", featuresMoreFiltered)
 
-
-
-        const featuresMoreFilteredFailed = features.filter(
-            (f) => synced.has(f.properties["ref:velopark"])
+        const featuresMoreFilteredFailed = features.filter((f) =>
+            synced.has(f.properties["ref:velopark"])
         )
-        VeloParkToGeojson.exportGeojsonTo("velopark_nonsynced_human_import_failed", featuresMoreFilteredFailed)
+        VeloParkToGeojson.exportGeojsonTo(
+            "velopark_nonsynced_human_import_failed",
+            featuresMoreFilteredFailed
+        )
 
         const allProperties = new Set<string>()
         for (const feature of featuresMoreFiltered) {
@@ -215,7 +226,7 @@ class VeloParkToGeojson extends Script {
         allProperties.delete("ref:velopark")
         for (const feature of featuresMoreFiltered) {
             allProperties.forEach((k) => {
-                if(k === "ref:velopark"){
+                if (k === "ref:velopark") {
                     return
                 }
                 delete feature.properties[k]
@@ -227,10 +238,10 @@ class VeloParkToGeojson extends Script {
 
     public static async findMultiSection(): Promise<string[]> {
         const url = "https://www.velopark.be/api/parkings/1000"
-        const raw = await Utils.downloadJson<{"@graph": {}[], url: string}[]>(url)
+        const raw = await Utils.downloadJson<{ "@graph": {}[]; url: string }[]>(url)
         const multiEntries: string[] = []
         for (const entry of raw) {
-            if(entry["@graph"].length > 1){
+            if (entry["@graph"].length > 1) {
                 multiEntries.push(entry.url)
             }
         }
@@ -245,7 +256,7 @@ class VeloParkToGeojson extends Script {
         VeloParkToGeojson.exportExtraAmenities(allVelopark)
         await VeloParkToGeojson.createDiff(allVelopark)
         console.log(
-            "Use vite-node scripts/velopark/compare.ts to compare the results and generate a diff file",
+            "Use vite-node scripts/velopark/compare.ts to compare the results and generate a diff file"
         )
     }
 }

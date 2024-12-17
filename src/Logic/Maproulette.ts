@@ -64,7 +64,7 @@ export default class Maproulette {
         if (code === "Created") {
             return Maproulette.STATUS_OPEN
         }
-        const i = maprouletteStatus.findIndex(<any>code)
+        const i = maprouletteStatus.indexOf(<any>code)
         if (i < 0) {
             return undefined
         }
