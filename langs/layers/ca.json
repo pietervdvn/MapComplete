@@ -4295,23 +4295,6 @@
                 "question": "Està el desfibril·lador accessible lliurement?",
                 "render": "L'accés és {access}"
             },
-            "defibrillator-defibrillator": {
-                "mappings": {
-                    "0": {
-                        "then": "No hi ha informació sobre el tipus de dispositiu"
-                    },
-                    "1": {
-                        "then": "Aquest és un desfibril·lador manual per a professionals"
-                    },
-                    "2": {
-                        "then": "Aquest és un desfibril·lador automàtic normal"
-                    },
-                    "3": {
-                        "then": "Aquest és un tipus especial de desfibril·lador: {defibrillator}"
-                    }
-                },
-                "question": "És un desfibril·lador automàtic normal o un desfibril·lador manual només per a professionals?"
-            },
             "defibrillator-defibrillator:location": {
                 "question": "Dóna detalls d'on es pot trobar el desfibril·lador",
                 "render": "<i>Informació extra sobre la localització (en la llengua local):</i><br/> {defibrillator:location}"

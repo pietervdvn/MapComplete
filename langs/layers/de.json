@@ -4295,23 +4295,6 @@
                 "question": "Ist der Defibrillator frei zugänglich?",
                 "render": "Zugang ist {access}"
             },
-            "defibrillator-defibrillator": {
-                "mappings": {
-                    "0": {
-                        "then": "Es gibt keine Informationen über den Gerätetyp"
-                    },
-                    "1": {
-                        "then": "Dies ist ein manueller Defibrillator für den professionellen Einsatz"
-                    },
-                    "2": {
-                        "then": "Dies ist ein normaler automatischer Defibrillator"
-                    },
-                    "3": {
-                        "then": "Dies ist eine besondere Art von Defibrillator: {defibrillator}"
-                    }
-                },
-                "question": "Ist dies ein normaler automatischer Defibrillator oder ein manueller Defibrillator nur für Profis?"
-            },
             "defibrillator-defibrillator:location": {
                 "question": "Bitte geben Sie einen Hinweis, wo genau der Defibrillator zu finden ist (in lokaler Sprache)",
                 "render": "<i>Zusätzliche Informationen über den Standort (in der Landessprache):</i><br/>{defibrillator:location}"

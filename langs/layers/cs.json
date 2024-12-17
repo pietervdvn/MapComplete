@@ -3798,23 +3798,6 @@
                 "question": "Je tento defibrilátor volně přístupný?",
                 "render": "Přístup je {access}"
             },
-            "defibrillator-defibrillator": {
-                "mappings": {
-                    "0": {
-                        "then": "Neexistují žádné informace o typu zařízení"
-                    },
-                    "1": {
-                        "then": "Jedná se o ruční defibrilátor pro profesionály"
-                    },
-                    "2": {
-                        "then": "Jedná se o běžný automatický defibrilátor"
-                    },
-                    "3": {
-                        "then": "Toto je speciální typ defibrilátoru: {defibrillator}"
-                    }
-                },
-                "question": "Jedná se o běžný automatický defibrilátor nebo manuální defibrilátor pouze pro profesionály?"
-            },
             "defibrillator-defibrillator:location": {
                 "question": "Uveďte prosím nějaké vysvětlení, kde lze defibrilátor nalézt (v místním jazyce)",
                 "render": "<i>Další informace o místě (v místním jazyce):</i><br/>{defibrillator:location}"

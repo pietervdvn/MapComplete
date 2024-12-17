@@ -1512,23 +1512,6 @@
                 },
                 "question": "Czy ten defibrylator jest swobodnie dostępny?"
             },
-            "defibrillator-defibrillator": {
-                "mappings": {
-                    "0": {
-                        "then": "Nie ma informacji o rodzaju urządzenia"
-                    },
-                    "1": {
-                        "then": "To jest ręczny defibrylator dla profesjonalistów"
-                    },
-                    "2": {
-                        "then": "To jest zwykły automatyczny defibrylator"
-                    },
-                    "3": {
-                        "then": "To jest specjalny rodzaj defibrylatora: {defibrillator}"
-                    }
-                },
-                "question": "Czy to jest zwykły automatyczny defibrylator czy ręczny defibrylator tylko dla profesjonalistów?"
-            },
             "defibrillator-defibrillator:location": {
                 "question": "Proszę podaj opis gdzie znajduje się defibrylator (w lokalnym języku)",
                 "render": "<i>Dodatkowe informacje o lokalizacji (w lokalnym języku):</i><br/>{defibrillator:location}"

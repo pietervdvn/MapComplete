@@ -1372,19 +1372,6 @@
                     }
                 },
                 "question": "Er denne hjertestarter frit tilgængelig?"
-            },
-            "defibrillator-defibrillator": {
-                "mappings": {
-                    "1": {
-                        "then": "Dette er en manuel hjertestarter til professionelle"
-                    },
-                    "2": {
-                        "then": "Dette er en normal automatisk hjertestarter"
-                    },
-                    "3": {
-                        "then": "Dette er en særlig type hjertestarter: {defibrillator}"
-                    }
-                }
             }
         }
     },

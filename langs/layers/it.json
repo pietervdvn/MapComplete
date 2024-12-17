@@ -1336,20 +1336,6 @@
                 "question": "Questo defibrillatore è liberamente accessibile?",
                 "render": "Accesso è {access}"
             },
-            "defibrillator-defibrillator": {
-                "mappings": {
-                    "0": {
-                        "then": "Non vi sono informazioni riguardanti il tipo di questo dispositivo"
-                    },
-                    "1": {
-                        "then": "Questo è un defibrillatore manuale per professionisti"
-                    },
-                    "2": {
-                        "then": "È un normale defibrillatore automatico"
-                    }
-                },
-                "question": "Si tratta di un normale defibrillatore automatico o un defibrillatore manuale riservato ai professionisti?"
-            },
             "defibrillator-defibrillator:location": {
                 "question": "Indica più precisamente dove si trova il defibrillatore (in lingua locale)",
                 "render": "<i>Informazioni supplementari circa la posizione (in lingua locale):</i><br/>{defibrillator:location}"

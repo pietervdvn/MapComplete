@@ -4099,23 +4099,6 @@
                 "question": "Is deze defibrillator vrij toegankelijk?",
                 "render": "Toegankelijkheid is {access}"
             },
-            "defibrillator-defibrillator": {
-                "mappings": {
-                    "0": {
-                        "then": "Er is geen info over het soort toestel"
-                    },
-                    "1": {
-                        "then": "Dit is een manueel toestel enkel voor professionals"
-                    },
-                    "2": {
-                        "then": "Dit is een gewone automatische defibrillator"
-                    },
-                    "3": {
-                        "then": "Dit is een speciaal type defibrillator: {defibrillator}"
-                    }
-                },
-                "question": "Is dit een gewone automatische defibrillator of een manueel toestel enkel voor professionals?"
-            },
             "defibrillator-defibrillator:location": {
                 "question": "Gelieve meer informatie te geven over de exacte locatie van de defibrillator (in de plaatselijke taal)",
                 "render": "<i>Meer informatie over de locatie (in de lokale taal):</i><br/>{defibrillator:location}"

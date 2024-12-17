@@ -828,13 +828,6 @@
                     }
                 }
             },
-            "defibrillator-defibrillator": {
-                "mappings": {
-                    "2": {
-                        "then": "Это обычный автоматический дефибриллятор"
-                    }
-                }
-            },
             "defibrillator-description": {
                 "render": "Дополнительная информация: {description}"
             },
