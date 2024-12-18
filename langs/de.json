@@ -94,7 +94,7 @@
             "intro": "Der Benutzer wird von einer Karte mit Objekten begrüßt. Wenn er eines auswählt, werden Informationen über das Objekt angezeigt.",
             "title": "Wie sieht die Benutzeroberfläche aus?"
         },
-        "examples": "Es gibt viele thematische Karten, von denen hier einige dargestellt sind.\n\nEs gibt noch viele weitere thematische Karten online: über das Gesundheitswesen, Indoor-Navigation, Zugänglichkeit für Rollstuhlfahrer, Abfallentsorgungsanlagen, öffentliche Bücherschränke, Fußgängerüberwege mit Regenbogenmalerei,… Entdecken Sie sie alle auf mapcomplete.org",
+        "examples": "Es gibt viele thematische Karten, von denen hier einige dargestellt sind.\n\nEs gibt noch viele weitere thematische Karten online: über das Gesundheitswesen, Indoor-Navigation, Zugänglichkeit für Rollstuhlfahrer, Abfallentsorgungsanlagen, öffentliche Bücherschränke, Fußgängerüberwege mit Regenbogenmalerei, … Entdecken Sie sie alle auf mapcomplete.org",
         "fakeui": {
             "add_images": "Bilder mit ein paar Klicks hinzufügen",
             "attributes": "Zeigt Attribute in einer freundlichen Art und Weise",
@@ -159,7 +159,7 @@
             "stillLoading": "Die Daten werden noch geladen. Bitte warten Sie, bevor Sie ein neues Objekt hinzufügen.",
             "title": "Neues Objekt hinzufügen",
             "wrongType": "Dieses Objekt ist weder ein Punkt noch ein Weg und kann nicht importiert werden",
-            "zoomInFurther": "Ausschnitt vergrößern, um ein Objekt hinzuzufügen",
+            "zoomInFurther": "Du musst erst weiter heranzoomen, wenn du eine Objekt hinzufügen möchtest",
             "zoomInMore": "Ansicht vergrößern, um dieses Element zu importieren"
         },
         "apply_button": {
@@ -361,7 +361,11 @@
             "skippedOne": "Du hast eine Frage übersprungen"
         },
         "questions": {
-            "disable": "Diese Frage nicht mehr stellen"
+            "disable": "Diese Frage nicht mehr stellen",
+            "disabledTitle": "Deaktivierte Fragen",
+            "enable": "Stelle diese Frage für alle Objekte",
+            "disabledIntro": "Du hast einige Fragen deaktiviert. Um eine Frage wieder zu aktivieren, klicke hier",
+            "noneDisabled": "Wenn du an einer bestimmten Art von Frage nicht interessiert bist, deaktiviere sie. Um eine Frage zu deaktivieren, klicke auf die drei Punkte in der oberen rechten Ecke und wähle „Deaktivieren“ aus."
         },
         "removeLocationHistory": "Standortverlauf löschen",
         "retry": "Wiederholen",
@@ -375,11 +379,11 @@
             "deleteThemeHistory": "Früher besuchte Themen löschen",
             "editSearchSyncSettings": "Synchronisierungseinstellungen bearbeiten",
             "editThemeSync": "Bearbeitung synchronisieren Lagen",
-            "error": "Etwas ist schief gelaufen…",
+            "error": "Etwas ist schief gelaufen.",
             "instructions": "In der oberen Suchleiste kann nach Orten, Filtern oder anderen Themenkarten gesucht werden",
             "locations": "Orte",
             "nMoreFilters": "{n} weitere",
-            "nothing": "Nichts gefunden…",
+            "nothing": "Nichts gefunden.",
             "nothingFor": "Keine Ergebnisse für {term} gefunden",
             "otherMaps": "Andere Karten",
             "pickFilter": "Filter auswählen",
@@ -388,7 +392,7 @@
             "search": "Ortssuche",
             "searching": "Suchen …"
         },
-        "searchAnswer": "Option suchen…",
+        "searchAnswer": "Option suchen.",
         "seeIndex": "Siehe Übersicht mit allen thematischen Karten",
         "share": "Teilen",
         "sharescreen": {
@@ -541,7 +545,7 @@
         "translationMode": "Übersetzungsmodus ein- oder ausschalten"
     },
     "image": {
-        "addPicture": "Bild hinzufügen",
+        "addPicture": "Mach ein Foto",
         "doDelete": "Bild entfernen",
         "isDeleted": "Gelöscht",
         "nearby": {
@@ -588,11 +592,12 @@
             "one": {
                 "done": "Bild erfolgreich hochgeladen. Vielen Dank!",
                 "failed": "Entschuldigung, das Bild konnte nicht hochgeladen werden",
-                "retrying": "Das Bild wird wiederholt hochgeladen…",
+                "retrying": "Es wird erneut versucht, dein Bild hochzuladen …",
                 "uploading": "Das Bild wird hochgeladen…"
             }
         },
-        "uploadFailed": "Das Bild konnte nicht hochladen werden. Haben Sie eine aktive Internetverbindung und sind APIs von Dritten erlaubt? Der Brave Browser oder UMatrix blockieren diese eventuell."
+        "uploadFailed": "Das Bild konnte nicht hochladen werden. Haben Sie eine aktive Internetverbindung und sind APIs von Dritten erlaubt? Der Brave Browser oder UMatrix blockieren diese eventuell.",
+        "selectFile": "Wähle ein Bild von deinem Gerät aus"
     },
     "importInspector": {
         "title": "Importhinweise überprüfen und verwalten"
@@ -843,5 +848,8 @@
             "empty": "Bitte gib einige Wikidata-Einträge ein",
             "startsWithQ": "Ein Wikidata-Identifikator beginnt mit Q und wird von einer Zahl gefolgt"
         }
+    },
+    "inspector": {
+        "menu": "Überprüfe einen Beitragenden"
     }
 }
