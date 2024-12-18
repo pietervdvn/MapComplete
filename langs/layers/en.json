@@ -5221,6 +5221,20 @@
                     }
                 }
             },
+            "18": {
+                "options": {
+                    "0": {
+                        "question": "Open to the public"
+                    }
+                }
+            },
+            "19": {
+                "options": {
+                    "0": {
+                        "question": "Accessible to wheelchair users"
+                    }
+                }
+            },
             "2": {
                 "options": {
                     "0": {

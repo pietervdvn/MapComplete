@@ -4883,6 +4883,20 @@
                     }
                 }
             },
+            "18": {
+                "options": {
+                    "0": {
+                        "question": "Publiek toegankelijk"
+                    }
+                }
+            },
+            "19": {
+                "options": {
+                    "0": {
+                        "question": "Toegankelijk voor rolstoelgebruikers"
+                    }
+                }
+            },
             "2": {
                 "options": {
                     "0": {

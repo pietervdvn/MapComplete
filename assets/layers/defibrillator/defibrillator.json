@@ -671,7 +671,9 @@
   ],
   "filter": [
     "has_image",
-    "open_now"
+    "public_access",
+    "open_now",
+    "wheelchair_accessible"
   ],
   "deletion": {
     "softDeletionTags": {

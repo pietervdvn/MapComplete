@@ -452,6 +452,41 @@
           "osmTags": "indoor_seating=yes"
         }
       ]
+    },
+    {
+      "id": "public_access",
+      "options": [
+        {
+          "question": {
+            "en": "Open to the public",
+            "nl": "Publiek toegankelijk"
+          },
+          "osmTags": {
+            "or": [
+              "access=yes",
+              "access=public",
+              "access=permissive"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "wheelchair_accessible",
+      "options": [
+        {
+          "question": {
+            "en": "Accessible to wheelchair users",
+            "nl": "Toegankelijk voor rolstoelgebruikers"
+          },
+          "osmTags": {
+            "or": [
+              "wheelchair=yes",
+              "wheelchair=designated"
+            ]
+          }
+        }
+      ]
     }
   ],
   "allowMove": false
