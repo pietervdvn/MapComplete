@@ -338,7 +338,7 @@ No default value set
 
 Used to complete the login
 
-This documentation is defined in the source code at [ThemeViewState.ts](/src/Models/ThemeViewState.ts#L177)
+This documentation is defined in the source code at [ThemeViewState.ts](/src/Models/ThemeViewState.ts#L183)
 
 No default value set
 
@@ -346,7 +346,7 @@ No default value set
 
 The initial/current zoom level
 
-This documentation is defined in the source code at [InitialMapPositioning.ts](/src/Logic/Actors/InitialMapPositioning.ts#L39)
+This documentation is defined in the source code at [InitialMapPositioning.ts](/src/Logic/Actors/InitialMapPositioning.ts#L43)
 
 The default value is _1_
 
@@ -354,7 +354,7 @@ The default value is _1_
 
 The initial/current latitude
 
-This documentation is defined in the source code at [InitialMapPositioning.ts](/src/Logic/Actors/InitialMapPositioning.ts#L39)
+This documentation is defined in the source code at [InitialMapPositioning.ts](/src/Logic/Actors/InitialMapPositioning.ts#L43)
 
 The default value is _0_
 
@@ -362,7 +362,7 @@ The default value is _0_
 
 The initial/current longitude of the app
 
-This documentation is defined in the source code at [InitialMapPositioning.ts](/src/Logic/Actors/InitialMapPositioning.ts#L39)
+This documentation is defined in the source code at [InitialMapPositioning.ts](/src/Logic/Actors/InitialMapPositioning.ts#L43)
 
 The default value is _0_
 

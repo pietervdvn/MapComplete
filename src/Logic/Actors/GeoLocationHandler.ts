@@ -13,7 +13,6 @@ import StaticFeatureSource, {
 } from "../FeatureSource/Sources/StaticFeatureSource"
 import { MapProperties } from "../../Models/MapProperties"
 import { Orientation } from "../../Sensors/Orientation"
-
 ;("use strict")
 /**
  * The geolocation-handler takes a map-location and a geolocation state.
