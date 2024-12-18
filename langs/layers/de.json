@@ -263,7 +263,7 @@
         }
     },
     "aerialway": {
-        "description": "Alle Arten von seil- oder drahtgestütztem Personen- oder Gütertransport, wie Seilbahnen, Gondeln, Sessellifte, Schlepplifte. ",
+        "description": "Alle Arten von seil- oder drahtgestütztem Personen- oder Gütertransport, wie Seilbahnen, Gondeln, Sessellifte, Schlepplifte.",
         "name": "Seilbahnen",
         "pointRendering": {
             "1": {
@@ -326,7 +326,7 @@
                         "then": "Ein Schlepplift mit einem Teller für jeweils einen Passagier"
                     },
                     "8": {
-                        "then": "Eine Schleppleine, die Skifahrer mit sich zieht"
+                        "then": "Eine Zugleine, an der sich Skifahrer festhalten oder sich befestigen können"
                     },
                     "9": {
                         "then": "Ein magic carpet (ein Förderband auf dem Boden)"
@@ -906,13 +906,13 @@
             "access": {
                 "mappings": {
                     "0": {
-                        "then": "Öffentlich"
+                        "then": "Dieses Grillgerät kann von jedem benutzt werden"
                     },
                     "1": {
-                        "then": "Kein Zugang"
+                        "then": "Dieses Grillgerät darf von niemandem benutzt werden"
                     },
                     "2": {
-                        "then": "Privat"
+                        "then": "Dieses Grillgerät ist privat"
                     },
                     "3": {
                         "then": "Zugang bis auf Widerruf"
@@ -5024,6 +5024,20 @@
                         "question": "Nutzung kostenlos"
                     }
                 }
+            },
+            "16": {
+                "options": {
+                    "0": {
+                        "question": "Hat Sitzgelegenheiten im Freien"
+                    }
+                }
+            },
+            "17": {
+                "options": {
+                    "0": {
+                        "question": "Hat Sitzplätze im Innenbereich"
+                    }
+                }
             }
         }
     },
@@ -5643,6 +5657,16 @@
                     }
                 },
                 "question": "Bietet das Restaurant biologische Speisen an?"
+            },
+            "drive-through": {
+                "mappings": {
+                    "1": {
+                        "then": "Dieses Fast-Food-Restaurant hat keinen Drive-in"
+                    },
+                    "0": {
+                        "then": "Dieses Fast-Food-Restaurant hat einen Drive-In"
+                    }
+                }
             }
         },
         "title": {
@@ -12760,5 +12784,16 @@
             },
             "render": "Windrad"
         }
+    },
+    "beehive": {
+        "title": "Bienenstock",
+        "tagRenderings": {
+            "capacity": {
+                "question": "Wie viele Bienenstöcke gibt es?"
+            }
+        }
+    },
+    "insect_hotel": {
+        "description": "Ebene mit Insektenhotels"
     }
 }
