@@ -48,6 +48,21 @@
   },
   "pointRendering": [
     {
+      "iconBadges": [
+        {
+          "if": "opening_hours~*",
+          "then": "icons.isOpen"
+        },
+        {
+          "if": {
+            "or": [
+              "wheelchair=yes",
+              "wheelchair=designated"
+            ]
+          },
+          "then": "circle:white;./assets/layers/toilet/wheelchair.svg"
+        }
+      ],
       "iconSize": {
         "render": "20,20",
         "mappings": [
