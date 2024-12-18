@@ -488,6 +488,11 @@
                 "override": {
                     "=name": "Sporteinrichtungen ohne Namensherkunft"
                 }
+            },
+            "8": {
+                "override": {
+                    "=name": "Parks ohne etymologische Angaben"
+                }
             }
         },
         "shortDescription": "Woher stammt der Name einer Straße oder eines Ortes?",
@@ -1414,5 +1419,9 @@
         "description": "Die Karte zeigt Abfalleimer in der Nähe. Wenn ein Abfalleimer fehlt, kannst du ihn selbst hinzufügen.",
         "shortDescription": "Eine Karte mit Abfalleimern",
         "title": "Abfalleimer"
+    },
+    "insects": {
+        "description": "Insektenhotels bieten Insekten Unterschlupf.",
+        "title": "Insektenhotels"
     }
 }
