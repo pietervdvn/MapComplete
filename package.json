@@ -77,7 +77,7 @@
     }
   },
   "scripts": {
-    "init": "npm ci && npm run prep:layeroverview && npm run generate && npm run download:editor-layer-index && npm run generate:layouts && npm run clean",
+    "init": "npm ci && npm run prep:layeroverview && npm run download:editor-layer-index && npm run generate && npm run generate:layouts && npm run clean",
     "start": "npm run generate:layeroverview && npm run strt",
     "strt": "vite --host | sed 's/localhost:/127.0.0.1:/g'",
     "build": "./scripts/build.sh",
