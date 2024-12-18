@@ -48,15 +48,86 @@
   },
   "pointRendering": [
     {
+      "iconSize": {
+        "render": "20,20",
+        "mappings": [
+          {
+            "if": {
+              "and": [
+                {
+                  "#": "Keep these access conditions in sync with those further down in the marker's square icon",
+                  "or": [
+                    "access=yes",
+                    "access=public",
+                    "access=permissive"
+                  ]
+                },
+                "opening_hours!=",
+                "opening_hours!=unknown",
+                "opening_hours!=closed",
+                "opening_hours!=off"
+              ]
+            },
+            "then": "40,40"
+          }
+        ]
+      },
       "marker": [
         {
           "icon": "square",
           "color": {
-            "render": "#008754",
+            "render": "#878787",
             "mappings": [
               {
-                "if": "_recently_surveyed=true",
+                "if": {
+                  "or": [
+                    "access=private",
+                    "access=no",
+                    "opening_hours=closed",
+                    "opening_hours=off"
+                  ]
+                },
+                "then": "#cfc6c6"
+              },
+              {
+                "if": {
+                  "or": [
+                    "access=customers",
+                    "opening_hours=unknown"
+                  ]
+                },
+                "then": "#d8c37f"
+              },
+              {
+                "if": "opening_hours=",
+                "then": "#878787"
+              },
+              {
+                "if": {
+                  "and": [
+                    "_recently_surveyed=true",
+                    {
+                      "or": [
+                        "access=yes",
+                        "access=public",
+                        "access=permissive"
+                      ],
+                      "#": "Keep these access conditions in sync with those below and with those in iconSize"
+                    }
+                  ]
+                },
                 "then": "#28ba3d"
+              },
+              {
+                "if": {
+                  "#": "Keep these access conditions in sync with those above",
+                  "or": [
+                    "access=yes",
+                    "access=public",
+                    "access=permissive"
+                  ]
+                },
+                "then": "#008754"
               }
             ]
           }
