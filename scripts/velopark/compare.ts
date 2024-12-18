@@ -108,12 +108,19 @@ class Compare extends Script {
             distanceBins[bin] += 1
         }
 
-        fs.writeFileSync("report_diff.json", JSON.stringify({
-            diffs,
-            distanceBins,
-            binSize,
-            "#binsize": "Every bin increases with this amount in meter"
-        }, null, "  "))
+        fs.writeFileSync(
+            "report_diff.json",
+            JSON.stringify(
+                {
+                    diffs,
+                    distanceBins,
+                    binSize,
+                    "#binsize": "Every bin increases with this amount in meter",
+                },
+                null,
+                "  "
+            )
+        )
         console.log("Written report_diff.json")
     }
 
