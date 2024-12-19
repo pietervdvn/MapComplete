@@ -24,6 +24,16 @@
                                     "text": "匯入這座 ATM"
                                 }
                             }
+                        },
+                        "1": {
+                            "render": "開放街圖有記載 <a href='#{_closest_osm_poi}'>ATM，距離{_closest_osm_poi_distance}公尺。</a> "
+                        },
+                        "2": {
+                            "render": {
+                                "special": {
+                                    "message": "將所有建議的標籤都加到最近的 ATM"
+                                }
+                            }
                         }
                     }
                 }
@@ -32,6 +42,53 @@
         "title": "自動櫃員機"
     },
     "bag": {
+        "description": "這個主題要感謝來自 BAG 匯入的資料",
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "Reference": {
+                        "mappings": {
+                            "0": {
+                                "then": "這棟建築在 BAG 沒有參考資訊"
+                            }
+                        },
+                        "render": "在 BAG 的參考編號 <b>{ref:bag}</b>"
+                    }
+                }
+            },
+            "2": {
+                "description": "BAG 當中有註冊的建築",
+                "tagRenderings": {
+                    "Build year": {
+                        "mappings": {
+                            "0": {
+                                "then": "這棟建築的啟用時間是 <b>{_bag_obj:start_date}</b>"
+                            }
+                        },
+                        "render": "這棟建築是<b>{_bag_obj:start_date}</b>建造的"
+                    },
+                    "Building type": {
+                        "mappings": {
+                            "0": {
+                                "then": "這棟建築類型將會是<b>{_bag_obj:construction}</b>"
+                            }
+                        },
+                        "render": "這棟建築類型是<b>{_bag_obj:building}</b>"
+                    },
+                    "Import button": {
+                        "mappings": {
+                            "0": {
+                                "then": "先不要計算正確數值，請重新整理這一頁"
+                            }
+                        }
+                    },
+                    "Reference": {
+                        "render": "在 BAG 的參考編號是 <b>{_bag_obj:ref:bag}</b>"
+                    }
+                }
+            }
+        },
+        "shortDescription": "BAG 匯入幫助工具",
         "title": "BAG 匯入助手"
     },
     "benches": {
@@ -39,7 +96,13 @@
         "shortDescription": "長椅的地圖",
         "title": "長椅"
     },
+    "bicycle_parkings": {
+        "description": "顯示所有類型單車停車設施的地圖",
+        "title": "單車停車設施"
+    },
     "bicycle_rental": {
+        "description": "在這份地圖，你會在開放街圖上找到很多共享單車站",
+        "shortDescription": "有共享單車站與單車租借服務的地圖",
         "title": "單車租借站"
     },
     "bicyclelib": {
@@ -50,6 +113,10 @@
         "description": "固定一地的望遠鏡地圖，特別是能夠在旅遊景點、觀景點、城鎮環景點，或是自然保護區找到。",
         "shortDescription": "固定望遠鏡的地圖",
         "title": "望遠鏡"
+    },
+    "blind_osm": {
+        "description": "協助視覺障礙人士所需設施的地圖",
+        "title": "OSM 為了視覺障礙人士"
     },
     "bookcases": {
         "description": "公共書架是街邊箱子、盒子、舊的電話亭或是其他存放書本的物件，每一個人都能放置或拿取書本。這份地圖收集所有類型的書架，你可以探索你附近新的書架，同時也能用免費的開放街圖帳號來快速新增你最愛的書架。",
@@ -66,6 +133,17 @@
                 "0": {
                     "question": "這個地方是誰營運的？",
                     "render": "這個地方由 {operator} 營運的"
+                },
+                "1": {
+                    "mappings": {
+                        "0": {
+                            "then": "這個地方有電源供應設施"
+                        },
+                        "1": {
+                            "then": "這個地方沒有電源供應設施"
+                        }
+                    },
+                    "question": "這個地方有電源供應設施嗎？"
                 }
             }
         },
@@ -77,12 +155,108 @@
         "shortDescription": "全世界的充電站地圖",
         "title": "充電站"
     },
+    "circular_economy": {
+        "description": "多樣物件能夠幫助人們分享、再利用與回收。",
+        "layers": {
+            "5": {
+                "override": {
+                    "=name": "二手商店"
+                }
+            }
+        },
+        "title": "循環經濟"
+    },
     "climbing": {
         "description": "在這份地圖上你會發現能夠攀爬機會，像是攀岩體育館、抱石大廳以及大自然當中的巨石。",
         "descriptionTail": "攀爬地圖最初由 <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a> 製作。如果你有回饋意見或問題請到Please <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>這邊反應</a>。</p><p>這專案使用來自<a href='https://www.openstreetmap.org/' target='_blank'>開放街圖</a>專案的資料。</p>",
+        "layers": {
+            "0": {
+                "override": {
+                    "tagRenderings+": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "<span class='subtle'><a href='#{_embedding_feature:id}'>強調這邊</a>包含</span> 公共可及的圖徵<br/>{_embedding_feature:access:description}"
+                                },
+                                "1": {
+                                    "then": "<span class='subtle'> <a href='#{_embedding_feature:id}'>強調</a>包含 </span> 需要獲得核准才能進入的圖徵<br/>{_embedding_feature:access:description}"
+                                },
+                                "2": {
+                                    "then": "<span class='subtle'><a href='#{_embedding_feature:id}'>強調</a>包含</span>只有顧客才能進入的圖徵<br/>{_embedding_feature:access:description}"
+                                },
+                                "3": {
+                                    "then": "<span class='subtle'><a href='#{_embedding_feature:id}'>強調</a>包含</span>只有會員才能進入的圖徵<br/>{_embedding_feature:access:description}"
+                                }
+                            }
+                        },
+                        "1": {
+                            "mappings": {
+                                "0": {
+                                    "then": "開放給所有人"
+                                },
+                                "1": {
+                                    "then": "你需要獲得核准才能進入這裡"
+                                },
+                                "2": {
+                                    "then": "只有顧客"
+                                },
+                                "3": {
+                                    "then": "只有會員"
+                                }
+                            },
+                            "question": "誰能進入這裡？"
+                        }
+                    }
+                }
+            },
+            "1": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "這家店能夠修理登山鞋"
+                                },
+                                "1": {
+                                    "then": "這家店無法修理登山鞋"
+                                }
+                            },
+                            "question": "這家店能夠修理登山鞋嗎？"
+                        }
+                    }
+                }
+            },
+            "2": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "這家店能夠修理登山鞋"
+                                },
+                                "1": {
+                                    "then": "這家店無法修理登山鞋"
+                                }
+                            },
+                            "question": "這家店也會修理登山鞋嗎？"
+                        }
+                    },
+                    "=presets": {
+                        "0": {
+                            "title": "修鞋店"
+                        }
+                    }
+                }
+            }
+        },
         "title": "攀岩館、俱樂部和場所"
     },
+    "clock": {
+        "description": "顯示所有公共時鐘的地圖",
+        "title": "時鐘"
+    },
     "cycle_highways": {
+        "description": "這份地圖顯示單車道",
         "title": "單車高速公路"
     },
     "cycle_infra": {
@@ -91,9 +265,63 @@
         "title": "單車設施"
     },
     "cyclenodes": {
+        "description": "這份地圖顯示單車節點網路與允許你輕易新增節點",
         "layers": {
+            "0": {
+                "name": "節點到節點的連結",
+                "tagRenderings": {
+                    "node2node-survey:date": {
+                        "override": {
+                            "question": "這個節點到節點連結何時最後一次探察？",
+                            "render": "這個節點到節點連結最後是在 {survey:date} 探察"
+                        }
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "節點到節點連結 <strong>{ref}</strong>"
+                        }
+                    },
+                    "render": "節點到節點連結"
+                }
+            },
             "1": {
-                "name": "節點"
+                "name": "節點",
+                "presets": {
+                    "0": {
+                        "title": "單車節點"
+                    }
+                },
+                "tagRenderings": {
+                    "node-expected_rcn_route_relations": {
+                        "freeform": {
+                            "placeholder": "例如 3"
+                        },
+                        "question": "有多少其他單車節點連結到這一節點連結？",
+                        "render": "這個節點連結到 {expected_rcn_route_relations} 其他單車節點。"
+                    },
+                    "node-rxn_ref": {
+                        "freeform": {
+                            "placeholder": "例如 1"
+                        },
+                        "question": "這個單車節點的參考編號是什麼？",
+                        "render": "這個單車節點有參考編號 {rcn_ref}"
+                    },
+                    "node-survey:date": {
+                        "override": {
+                            "question": "上次這個單車節點是何時探查的？",
+                            "render": "這個單車節點上次探查時間是 {survey:date}"
+                        }
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "單車節點 <strong>{rcn_ref}</strong>"
+                        }
+                    }
+                }
             }
         }
     },

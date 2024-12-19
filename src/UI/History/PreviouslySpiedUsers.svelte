@@ -114,7 +114,6 @@
             }}
           >
             <Tr t={t.allChanges} />
-
           </button>
         </div>
       {/each}

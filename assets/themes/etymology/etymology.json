@@ -307,7 +307,8 @@
       "override": {
         "id": "parks_without_etymology",
         "=name": {
-          "en": "Parks without etymology information"
+          "en": "Parks without etymology information",
+          "de": "Parks ohne etymologische Angaben"
         },
         "minzoom": 18,
         "isCounted": false,

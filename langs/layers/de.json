@@ -263,7 +263,7 @@
         }
     },
     "aerialway": {
-        "description": "Alle Arten von seil- oder drahtgestütztem Personen- oder Gütertransport, wie Seilbahnen, Gondeln, Sessellifte, Schlepplifte. ",
+        "description": "Alle Arten von seil- oder drahtgestütztem Personen- oder Gütertransport, wie Seilbahnen, Gondeln, Sessellifte, Schlepplifte.",
         "name": "Seilbahnen",
         "pointRendering": {
             "1": {
@@ -326,7 +326,7 @@
                         "then": "Ein Schlepplift mit einem Teller für jeweils einen Passagier"
                     },
                     "8": {
-                        "then": "Eine Schleppleine, die Skifahrer mit sich zieht"
+                        "then": "Eine Zugleine, an der sich Skifahrer festhalten oder sich befestigen können"
                     },
                     "9": {
                         "then": "Ein magic carpet (ein Förderband auf dem Boden)"
@@ -906,13 +906,13 @@
             "access": {
                 "mappings": {
                     "0": {
-                        "then": "Öffentlich"
+                        "then": "Dieses Grillgerät kann von jedem benutzt werden"
                     },
                     "1": {
-                        "then": "Kein Zugang"
+                        "then": "Dieses Grillgerät darf von niemandem benutzt werden"
                     },
                     "2": {
-                        "then": "Privat"
+                        "then": "Dieses Grillgerät ist privat"
                     },
                     "3": {
                         "then": "Zugang bis auf Widerruf"
@@ -958,6 +958,14 @@
         "title": {
             "render": "Grillstelle"
         }
+    },
+    "beehive": {
+        "tagRenderings": {
+            "capacity": {
+                "question": "Wie viele Bienenstöcke gibt es?"
+            }
+        },
+        "title": "Bienenstock"
     },
     "bench": {
         "description": "Diese Karte stellt Sitzbänke aus Holz, Metall, Stein, … dar und stellt ein paar Fragen, um weitere Informationen zu ergänzen.",
@@ -4954,6 +4962,20 @@
                     }
                 }
             },
+            "16": {
+                "options": {
+                    "0": {
+                        "question": "Hat Sitzgelegenheiten im Freien"
+                    }
+                }
+            },
+            "17": {
+                "options": {
+                    "0": {
+                        "question": "Hat Sitzplätze im Innenbereich"
+                    }
+                }
+            },
             "2": {
                 "options": {
                     "0": {
@@ -5531,6 +5553,16 @@
                     }
                 },
                 "question": "Liefert {title()} Essen nach Hause?"
+            },
+            "drive-through": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieses Fast-Food-Restaurant hat einen Drive-In"
+                    },
+                    "1": {
+                        "then": "Dieses Fast-Food-Restaurant hat keinen Drive-in"
+                    }
+                }
             },
             "friture-oil": {
                 "mappings": {
@@ -6323,6 +6355,9 @@
         "title": {
             "render": "Informationstafel"
         }
+    },
+    "insect_hotel": {
+        "description": "Ebene mit Insektenhotels"
     },
     "item_with_image": {
         "name": "Element mit mindestens einem Bild",

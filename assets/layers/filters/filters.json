@@ -11,7 +11,7 @@
         {
           "emoji": "⏰",
           "question": {
-            "en": "Open now",
+            "en": "Now open",
             "nl": "Nu open",
             "de": "Jetzt geöffnet",
             "ca": "Obert ara",
@@ -424,7 +424,8 @@
       "options": [
         {
           "question": {
-            "en": "Has outdoor seating"
+            "en": "Has outdoor seating",
+            "de": "Hat Sitzgelegenheiten im Freien"
           },
           "icon": "./assets/layers/outdoor_seating.svg",
           "osmTags": "outdoor_seating=yes"
@@ -436,7 +437,8 @@
       "options": [
         {
           "question": {
-            "en": "Has indoor seating"
+            "en": "Has indoor seating",
+            "de": "Hat Sitzplätze im Innenbereich"
           },
           "osmTags": "indoor_seating=yes"
         }

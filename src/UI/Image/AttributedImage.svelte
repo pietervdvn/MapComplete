@@ -28,7 +28,7 @@
   export let imgClass: string = undefined
   export let state: SpecialVisualizationState = undefined
   export let attributionFormat: "minimal" | "medium" | "large" = "medium"
-  export let previewedImage: UIEventSource<ProvidedImage> = undefined
+  export let previewedImage: UIEventSource<Partial<ProvidedImage>> = undefined
   export let canZoom = previewedImage !== undefined
   let loaded = false
   let showBigPreview = new UIEventSource(false)
@@ -42,7 +42,10 @@
   if (previewedImage) {
     onDestroy(
       previewedImage.addCallbackAndRun((previewedImage) => {
-        showBigPreview.set(previewedImage !== undefined && previewedImage?.id === image.id)
+        showBigPreview.set(
+          previewedImage !== undefined &&
+            (previewedImage?.id ?? previewedImage?.url) === (image.id ?? image.url)
+        )
       })
     )
   }
@@ -89,6 +92,7 @@
     />
   </div>
 </Popup>
+
 {#if image.status !== undefined && image.status !== "ready" && image.status !== "hidden"}
   <div class="flex h-full flex-col justify-center">
     <Loading>
@@ -113,6 +117,7 @@
         class={imgClass ?? ""}
         class:cursor-zoom-in={canZoom}
         on:click={() => {
+          console.log("Setting", image.url)
           previewedImage?.set(image)
         }}
         on:error={() => {

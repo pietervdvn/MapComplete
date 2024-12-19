@@ -93,7 +93,10 @@
       {/if}
       {#if currentStep === "init"}
         {#each $missing as key (key)}
-          <div class:focus={applyAllHovered} class="mx-2 rounded-2xl">
+          <div
+            class:focus={applyAllHovered}
+            class="mx-2 rounded-none border-2 border-gray-300 border-transparent"
+          >
             <ComparisonAction
               {key}
               {state}
@@ -137,7 +140,7 @@
             <AttributedImage
               {state}
               imgClass="h-32 shrink-0"
-              image={{ url: image }}
+              image={{ url: image, id: image }}
               previewedImage={state.previewedImage}
             />
           </div>

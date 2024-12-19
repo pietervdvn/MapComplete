@@ -1,7 +1,6 @@
 import { FeatureSource, WritableFeatureSource } from "../FeatureSource"
 import { ImmutableStore, Store, UIEventSource } from "../../UIEventSource"
 import { Feature } from "geojson"
-
 ;("use strict")
 /**
  * A simple, read only feature store.

@@ -11,7 +11,8 @@
   },
   "minzoom": 11,
   "title": {
-    "en": "Beehive"
+    "en": "Beehive",
+    "de": "Bienenstock"
   },
   "presets": [
     {
@@ -28,7 +29,8 @@
     {
       "id": "capacity",
       "question": {
-        "en": "How many beehives are there?"
+        "en": "How many beehives are there?",
+        "de": "Wie viele Bienenstöcke gibt es?"
       },
       "freeform": {
         "key": "capacity",

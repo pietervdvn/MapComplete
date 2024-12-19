@@ -125,7 +125,8 @@
               "nl": "OpenStreetMap kent <a href='#{_closest_osm_poi}'>een geldautomaat die {_closest_osm_poi_distance} meter weg is</a> ",
               "da": "OpenStreetMap kender <a href='#{_closest_osm_poi}'>en hæveautomatet, som ligger {_closest_osm_poi_distance} meter væk.</a> ",
               "zh_Hans": "OpenStreetMap 知道有一个<a href='#{_closest_osm_poi}'>自动取款机，它距离你 {_closest_osm_poi_distance} 米。</a> ",
-              "uk": "OpenStreetMap знає про <a href='#{_closest_osm_poi}'>банкомат, що знаходиться за {_closest_osm_poi_distance} метрів від нього.</a> "
+              "uk": "OpenStreetMap знає про <a href='#{_closest_osm_poi}'>банкомат, що знаходиться за {_closest_osm_poi_distance} метрів від нього.</a> ",
+              "zh_Hant": "開放街圖有記載 <a href='#{_closest_osm_poi}'>ATM，距離{_closest_osm_poi_distance}公尺。</a> "
             }
           },
           {
@@ -148,7 +149,8 @@
                   "nl": "Voeg alle gesuggereerde tags toe aan de dichtstbijzijnde geldautomaat",
                   "da": "Tilføj alle foreslåede tags til den nærmeste hæveautomat",
                   "zh_Hans": "将所有建议的标签添加到距离最近的自动取款机",
-                  "uk": "Додайте всі запропоновані теги до найближчого банкомату"
+                  "uk": "Додайте всі запропоновані теги до найближчого банкомату",
+                  "zh_Hant": "將所有建議的標籤都加到最近的 ATM"
                 },
                 "image": "./assets/svg/addSmall.svg",
                 "maproulette_id": "mr_taskId"

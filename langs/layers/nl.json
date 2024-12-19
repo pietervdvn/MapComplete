@@ -4068,7 +4068,7 @@
                 "render": "<i>Meer informatie over de locatie (in het Frans):</i><br/>{defibrillator:location:fr}"
             },
             "defibrillator-description": {
-                "question": "Is er nog iets bijzonder aan deze defibrillator dat je nog niet hebt kunnen meegeven? (laat leeg indien niet)",
+                "question": "Is er nog iets bijzonders aan deze defibrillator dat je nog niet hebt kunnen meegeven? (laat leeg indien niet)",
                 "render": "Aanvullende info: {description}"
             },
             "defibrillator-email": {
