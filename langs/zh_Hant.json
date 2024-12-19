@@ -193,18 +193,19 @@
             "openOsmchaLastWeek": "檢視最近 7 天的編輯",
             "openPanoramax": "在這邊開啟 Panoramax",
             "openThemeDocumentation": "開啟專題地圖 {name} 的文件",
+            "panoramaxHelp": "<b>Panoramax</b> 是收集街景照片的線上服務，並且以自由授權釋出。貢獻者能夠使用這些照片來改進開放街圖",
+            "panoramaxLicenseCCBYSA": "你的圖片會以 CC-BY-SA 釋出 - 每個人都能夠在提及你名字的情形下再利用你的圖片",
             "seeOnMapillary": "在 Mapillary 觀看這張影像",
             "themeBy": "由 {author} 維護主題",
             "title": "版權與署名",
-            "translatedBy": "MapComplete 由 {contributors} 翻譯，而且還有 <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} 更多貢獻者</a>",
-            "panoramaxHelp": "<b>Panoramax</b> 是收集街景照片的線上服務，並且以自由授權釋出。貢獻者能夠使用這些照片來改進開放街圖",
-            "panoramaxLicenseCCBYSA": "你的圖片會以 CC-BY-SA 釋出 - 每個人都能夠在提及你名字的情形下再利用你的圖片"
+            "translatedBy": "MapComplete 由 {contributors} 翻譯，而且還有 <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} 更多貢獻者</a>"
         },
         "back": "返回",
         "backToIndex": "回到所有主題地圖的總覽頁面",
         "backgroundMap": "選擇背景圖層",
         "backgroundSwitch": "切換背景",
         "cancel": "取消",
+        "clearPendingChanges": "清除待處理的變動",
         "confirm": "確認",
         "customThemeIntro": "這些是先前使用者創造的主題。",
         "customThemeTitle": "客製化主題",
@@ -232,6 +233,7 @@
             "downloadGeojson": "下載可視資料為 GeoJSON",
             "downloadGpx": "下載為 GPX 檔案",
             "downloadGpxHelper": "GPX 檔案能被大部分導航裝置或 app 使用",
+            "downloadImage": "下載圖片",
             "exporting": "匯出中…",
             "includeMetaData": "包括 metadata (上次編輯者、計算數值等)",
             "licenseInfo": "<h3>著作權聲明</h3>提供的資料採用 ODbL 授權釋出。可以用任何目標再利用資料，但是需<ul><li>標明 <b>© 開放街圖貢獻者</b></li><li>任何變動必須相同方式授權</li></ul> 請閱讀完整的 <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">著作權聲明</a>。",
@@ -241,8 +243,7 @@
             },
             "title": "下載",
             "toMuch": "有很多圖徵可以下載了",
-            "uploadGpx": "上傳軌跡到開放街圖",
-            "downloadImage": "下載圖片"
+            "uploadGpx": "上傳軌跡到開放街圖"
         },
         "enableGeolocationForSafari": "你沒有看到要求地理位置權限的跳出視窗？",
         "enableGeolocationForSafariLink": "學習如何在設定當中啟用地理位置權限",
@@ -251,9 +252,9 @@
         "example": "例子",
         "examples": "例子",
         "filterPanel": {
+            "allTypes": "所有類型",
             "disableAll": "關閉所有",
-            "enableAll": "啟用所有",
-            "allTypes": "所有類型"
+            "enableAll": "啟用所有"
         },
         "geopermissionDenied": "使用地理位置要求已經被拒絕",
         "histogram": {
@@ -263,10 +264,10 @@
             "background": "改變背景",
             "filter": "篩選資料",
             "jumpToLocation": "到你目前的位置",
+            "locationNotAvailable": "無法取得 GPS 位置，裝置有取得位置資訊還是在隧道內？",
             "menu": "選單",
             "zoomIn": "放大",
-            "zoomOut": "縮小",
-            "locationNotAvailable": "無法取得 GPS 位置，裝置有取得位置資訊還是在隧道內？"
+            "zoomOut": "縮小"
         },
         "layerSelection": {
             "title": "選擇圖層",
@@ -372,24 +373,24 @@
         "save": "儲存",
         "screenToSmall": "在新視窗中開啟 <i>{theme}</i>",
         "search": {
-            "error": "有狀況發生了。",
-            "nothing": "沒有找到。",
-            "recents": "最近看到的地方",
-            "search": "搜尋地點",
-            "searching": "搜尋中…",
+            "activeFilters": "啟用篩選",
+            "clearFilters": "清除篩選",
+            "deleteSearchHistory": "刪除位置歷史",
+            "deleteThemeHistory": "刪除先前觀看的主題",
             "editSearchSyncSettings": "編輯同步設定",
             "editThemeSync": "編輯同步設定",
+            "error": "有狀況發生了。",
             "instructions": "使用搜尋欄位來搜尋位置、篩選或是其他主題地圖",
             "locations": "位置",
             "nMoreFilters": "{n} 更多",
+            "nothing": "沒有找到。",
             "nothingFor": "尋找 {term} 沒有結果",
             "otherMaps": "其他地圖",
             "pickFilter": "選擇篩選",
             "recentThemes": "最近觀看的地圖",
-            "activeFilters": "啟用篩選",
-            "clearFilters": "清除篩選",
-            "deleteSearchHistory": "刪除位置歷史",
-            "deleteThemeHistory": "刪除先前觀看的主題"
+            "recents": "最近看到的地方",
+            "search": "搜尋地點",
+            "searching": "搜尋中…"
         },
         "searchAnswer": "搜尋選項",
         "seeIndex": "查看所有專題地圖的概覽",
@@ -519,8 +520,7 @@
             "readMore": "閱讀剩下的條目內容",
             "searchToShort": "你的搜尋檢索太短了，請輸入長一點的文字",
             "searchWikidata": "在 Wikidata 搜尋"
-        },
-        "clearPendingChanges": "清除待處理的變動"
+        }
     },
     "hotkeyDocumentation": {
         "action": "行動",
@@ -761,11 +761,11 @@
     },
     "unknown": {
         "clear": "清除答案",
+        "explanation": "如果答案不正確但實際數值不清楚的話，則清除這一些資訊。不會清除其他資訊。",
         "keep": "保留答案",
         "markUnknown": "標示為未知",
         "removedKeys": "下列鍵會被移除：",
-        "title": "要標記為未知嗎？",
-        "explanation": "如果答案不正確但實際數值不清楚的話，則清除這一些資訊。不會清除其他資訊。"
+        "title": "要標記為未知嗎？"
     },
     "userinfo": {
         "notLoggedIn": "你已經登出了"
@@ -827,6 +827,9 @@
             "description": "正數、整數",
             "noZero": "並不允許零"
         },
+        "regex": {
+            "description": "正規表示式"
+        },
         "slope": {
             "inputExplanation": "將你手機放在地上，並且指向上坡方向。"
         },
@@ -838,18 +841,15 @@
         },
         "tooLong": "文字太長了，最多允許 255 字元，你現在還有 {count} 字元。",
         "url": {
+            "aggregator": "{host} 是第三方網站，如果可能請搜尋官方網站。",
             "description": "連接到網站",
             "feedback": "這不是有效的網址",
-            "aggregator": "{host} 是第三方網站，如果可能請搜尋官方網站。",
             "spamSite": "{host} 被視為低品質網站，並不被允許使用。"
         },
         "wikidata": {
             "description": "Wikidata 編號",
             "empty": "請輸入一些 Wikidata 項目",
             "startsWithQ": "維基數據編號以 Q 開頭後面接數字"
-        },
-        "regex": {
-            "description": "正規表示式"
         }
     }
 }
