@@ -148,7 +148,7 @@
 {{service_item
 |name= [https://mapcomplete.org/clock clock]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:ca|en}}, {{#language:de|en}}, {{#language:es|en}}, {{#language:cs|en}}, {{#language:fr|en}}, {{#language:pl|en}}, {{#language:da|en}}, {{#language:it|en}}, {{#language:uk|en}}
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:ca|en}}, {{#language:de|en}}, {{#language:es|en}}, {{#language:cs|en}}, {{#language:fr|en}}, {{#language:pl|en}}, {{#language:da|en}}, {{#language:it|en}}, {{#language:uk|en}}, {{#language:zh_Hant|en}}
 |descr= A MapComplete theme: Map showing all public clocks
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -184,7 +184,7 @@
 {{service_item
 |name= [https://mapcomplete.org/circular_economy circular_economy]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:es|en}}, {{#language:de|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:uk|en}}, {{#language:pl|en}}, {{#language:nl|en}}
+|lang= {{#language:en|en}}, {{#language:es|en}}, {{#language:de|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:uk|en}}, {{#language:pl|en}}, {{#language:nl|en}}, {{#language:zh_Hant|en}}
 |descr= A MapComplete theme: Various items which help people to share, reuse or recycle
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -211,7 +211,7 @@
 {{service_item
 |name= [https://mapcomplete.org/bicycle_parkings bicycle_parkings]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:es|en}}, {{#language:zh_Hans|en}}, {{#language:it|en}}, {{#language:fil|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:uk|en}}, {{#language:pl|en}}, {{#language:nl|en}}, {{#language:fr|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:es|en}}, {{#language:zh_Hans|en}}, {{#language:it|en}}, {{#language:fil|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:uk|en}}, {{#language:pl|en}}, {{#language:nl|en}}, {{#language:fr|en}}, {{#language:zh_Hant|en}}
 |descr= A MapComplete theme: A map showing all types of bicycle parkings
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -220,7 +220,7 @@
 {{service_item
 |name= [https://mapcomplete.org/bicycle_rental bicycle_rental]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:id|en}}, {{#language:fr|en}}, {{#language:es|en}}, {{#language:nb_NO|en}}, {{#language:ca|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:eu|en}}, {{#language:pl|en}}, {{#language:zh_Hans|en}}, {{#language:it|en}}, {{#language:uk|en}}
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:id|en}}, {{#language:fr|en}}, {{#language:es|en}}, {{#language:nb_NO|en}}, {{#language:ca|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:eu|en}}, {{#language:pl|en}}, {{#language:zh_Hans|en}}, {{#language:it|en}}, {{#language:uk|en}}, {{#language:zh_Hant|en}}
 |descr= A MapComplete theme: A map with bicycle rental stations and bicycle rental shops
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -247,7 +247,7 @@
 {{service_item
 |name= [https://mapcomplete.org/blind_osm blind_osm]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:nl|en}}, {{#language:fr|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:nb_NO|en}}, {{#language:es|en}}, {{#language:eu|en}}, {{#language:it|en}}, {{#language:pl|en}}, {{#language:zh_Hans|en}}, {{#language:uk|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:nl|en}}, {{#language:fr|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:nb_NO|en}}, {{#language:es|en}}, {{#language:eu|en}}, {{#language:it|en}}, {{#language:pl|en}}, {{#language:zh_Hans|en}}, {{#language:uk|en}}, {{#language:zh_Hant|en}}
 |descr= A MapComplete theme: Help to map features relevant for the blind
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -429,7 +429,7 @@ The position of a signpost can be used by a hiker/biker/rider/s…
 {{service_item
 |name= [https://mapcomplete.org/insects insects]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:nl|en}}
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}
 |descr= A MapComplete theme: Insect hotels provide shelter for insects
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png

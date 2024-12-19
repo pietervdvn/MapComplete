@@ -93,7 +93,10 @@
       {/if}
       {#if currentStep === "init"}
         {#each $missing as key (key)}
-          <div class:focus={applyAllHovered} class="mx-2 border-2 border-gray-300 rounded-none border-transparent">
+          <div
+            class:focus={applyAllHovered}
+            class="mx-2 rounded-none border-2 border-gray-300 border-transparent"
+          >
             <ComparisonAction
               {key}
               {state}

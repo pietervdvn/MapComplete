@@ -36,6 +36,7 @@ Available languages:
  - fil
  - uk
  - hu
+ - zh_Hant
 
 # Layers defined in this theme configuration file
 These layers can not be reused in different themes.
