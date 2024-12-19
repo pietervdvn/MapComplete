@@ -123,16 +123,16 @@
                 },
                 "question": "Este aparcadoiro de bicicletas ten espazo para bicicletas de carga?"
             },
-            "Is covered?": {
+            "covered_and_building": {
                 "mappings": {
-                    "0": {
+                    "4": {
                         "then": "Este aparcadoiro está cuberto (ten un teito)"
                     },
-                    "1": {
+                    "5": {
                         "then": "Este aparcadoiro non está cuberto"
                     }
                 },
-                "question": "Este aparcadoiro está cuberto? Tamén escolle \"cuberto\" para aparcadoiros interiores."
+                "question": "Este aparcadoiro está cuberto?"
             }
         },
         "title": {

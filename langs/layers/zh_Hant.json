@@ -430,18 +430,18 @@
                 },
                 "question": "這個單車停車場有地方放裝箱的單車嗎？"
             },
-            "Is covered?": {
+            "covered_and_building": {
                 "mappings": {
-                    "0": {
+                    "4": {
                         "then": "這個停車場有遮蔽 (有屋頂)"
                     },
-                    "1": {
+                    "5": {
                         "then": "這個停車場沒有遮蔽"
                     }
                 },
-                "question": "這個停車場是否有車棚？如果是室內停車場也請選擇\"遮蔽\"。"
+                "question": "這個停車場是否有車棚？"
             },
-            "Underground?": {
+            "location": {
                 "mappings": {
                     "0": {
                         "then": "地下停車場"

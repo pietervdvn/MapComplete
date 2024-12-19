@@ -1636,6 +1636,7 @@
                     }
                 },
                 "question": "What is the type of this bicycle parking?",
+                "questionHint": "This is about the physical device one places their bicycle in and uses to lock",
                 "render": "This is a bicycle parking of the type: {bicycle_parking}"
             },
             "Capacity": {
@@ -1666,18 +1667,46 @@
                 },
                 "question": "Does this bicycle parking have spots for cargo bikes?"
             },
-            "Is covered?": {
+            "charge": {
+                "question": "How much does it cost to park your bike here?",
+                "questionHint": "This is the amount which is charged for a single bike",
+                "render": "Parking your bike costs {charge}"
+            },
+            "covered_and_building": {
                 "mappings": {
                     "0": {
-                        "then": "This parking is covered (it has a roof)"
+                        "then": "This is a bicycle shed (with walls on at least three sides)"
                     },
                     "1": {
+                        "then": "This is a bicycle parking under a roof; the roof only serves the bicycle parking"
+                    },
+                    "2": {
+                        "then": "This bicycle parking is located in a building behind a door or gate"
+                    },
+                    "3": {
+                        "then": "This bicycle parking is under (a part of) a building"
+                    },
+                    "4": {
+                        "then": "This parking is covered (it has a roof)"
+                    },
+                    "5": {
                         "then": "This parking is not covered"
                     }
                 },
-                "question": "Is this parking covered? Also select \"covered\" for indoor parkings."
+                "question": "Is this parking covered?"
             },
-            "Underground?": {
+            "fee": {
+                "mappings": {
+                    "0": {
+                        "then": "One has to <b>pay</b> to use this bicycle parking"
+                    },
+                    "1": {
+                        "then": "Free to use"
+                    }
+                },
+                "question": "Are these bicycle parkings free to use?"
+            },
+            "location": {
                 "mappings": {
                     "0": {
                         "then": "Underground parking"
@@ -1693,22 +1722,6 @@
                     }
                 },
                 "question": "What is the relative location of this bicycle parking?"
-            },
-            "charge": {
-                "question": "How much does it cost to park your bike here?",
-                "questionHint": "This is the amount which is charged for a single bike",
-                "render": "Parking your bike costs {charge}"
-            },
-            "fee": {
-                "mappings": {
-                    "0": {
-                        "then": "One has to <b>pay</b> to use this bicycle parking"
-                    },
-                    "1": {
-                        "then": "Free to use"
-                    }
-                },
-                "question": "Are these bicycle parkings free to use?"
             },
             "maxstay": {
                 "question": "What is the maximum allowed parking duration?",

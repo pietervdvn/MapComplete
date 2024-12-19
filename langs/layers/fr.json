@@ -1184,18 +1184,28 @@
                 },
                 "question": "Est-ce que ce parking à vélo a des emplacements pour des vélos cargo ?"
             },
-            "Is covered?": {
+            "covered_and_building": {
                 "mappings": {
-                    "0": {
+                    "4": {
                         "then": "Ce parking est couvert (il a un toit)"
                     },
-                    "1": {
+                    "5": {
                         "then": "Ce parking n'est pas couvert"
                     }
                 },
-                "question": "Ce parking est-il couvert ? Sélectionnez aussi \"couvert\" pour les parkings en intérieur."
+                "question": "Ce parking est-il couvert ?"
             },
-            "Underground?": {
+            "fee": {
+                "mappings": {
+                    "0": {
+                        "then": "L'utilisation de ce parking à vélo est <b>payant</b>"
+                    },
+                    "1": {
+                        "then": "L'utilisation de ce parking à vélo est <b>gratuit</b>"
+                    }
+                }
+            },
+            "location": {
                 "mappings": {
                     "0": {
                         "then": "Parking souterrain"
@@ -1211,16 +1221,6 @@
                     }
                 },
                 "question": "Quelle est la position relative de ce parking à vélo ?"
-            },
-            "fee": {
-                "mappings": {
-                    "0": {
-                        "then": "L'utilisation de ce parking à vélo est <b>payant</b>"
-                    },
-                    "1": {
-                        "then": "L'utilisation de ce parking à vélo est <b>gratuit</b>"
-                    }
-                }
             },
             "operator": {
                 "question": "Qui entretient ce parking à vélos ?"

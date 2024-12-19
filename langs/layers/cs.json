@@ -1642,18 +1642,34 @@
                 },
                 "question": "Má toto parkoviště místa pro nákladní kola?"
             },
-            "Is covered?": {
+            "charge": {
+                "question": "Kolik stojí zaparkování kola na tomto místě?",
+                "questionHint": "To je částka, která se účtuje za jedno jízdní kolo",
+                "render": "Parkování kola stojí {charge}"
+            },
+            "covered_and_building": {
                 "mappings": {
-                    "0": {
+                    "4": {
                         "then": "Toto parkoviště je zastřešené (má střechu)"
                     },
-                    "1": {
+                    "5": {
                         "then": "Toto parkoviště není zastřešené"
                     }
                 },
-                "question": "Je toto parkoviště zastřešené? U vnitřních parkovišť vyberte také možnost \"kryté\"."
+                "question": "Je toto parkoviště zastřešené?"
             },
-            "Underground?": {
+            "fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Za použití tohoto parkoviště pro kola se musí <b>platit</b>"
+                    },
+                    "1": {
+                        "then": "Bezplatné použití"
+                    }
+                },
+                "question": "Jsou tato parkoviště pro jízdní kola zdarma?"
+            },
+            "location": {
                 "mappings": {
                     "0": {
                         "then": "Podzemní parkoviště"
@@ -1669,22 +1685,6 @@
                     }
                 },
                 "question": "Jaké je relativní umístění tohoto parkoviště pro jízdní kola?"
-            },
-            "charge": {
-                "question": "Kolik stojí zaparkování kola na tomto místě?",
-                "questionHint": "To je částka, která se účtuje za jedno jízdní kolo",
-                "render": "Parkování kola stojí {charge}"
-            },
-            "fee": {
-                "mappings": {
-                    "0": {
-                        "then": "Za použití tohoto parkoviště pro kola se musí <b>platit</b>"
-                    },
-                    "1": {
-                        "then": "Bezplatné použití"
-                    }
-                },
-                "question": "Jsou tato parkoviště pro jízdní kola zdarma?"
             },
             "maxstay": {
                 "question": "Jaká je maximální povolená doba parkování?",

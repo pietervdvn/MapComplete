@@ -1650,18 +1650,34 @@
                 },
                 "question": "Hat der Parkplatz Stellflächen für Lastenfahrräder?"
             },
-            "Is covered?": {
+            "charge": {
+                "question": "Wie viel kostet es, Ihr Fahrrad hier zu parken?",
+                "questionHint": "Das ist der Betrag, der für ein einzelnes Fahrrad berechnet wird",
+                "render": "Das Parken Ihres Fahrrads kostet {charge}"
+            },
+            "covered_and_building": {
                 "mappings": {
-                    "0": {
+                    "4": {
                         "then": "Der Parkplatz ist überdacht"
                     },
-                    "1": {
+                    "5": {
                         "then": "Der Parkplatz ist nicht überdacht"
                     }
                 },
-                "question": "Ist der Parkplatz überdacht? Wählen Sie auch \"überdacht\" für Parkplätze in Innenräumen."
+                "question": "Ist der Parkplatz überdacht?"
             },
-            "Underground?": {
+            "fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Man muss <b>zahlen</b>, um den Fahrradparkplatz zu nutzen"
+                    },
+                    "1": {
+                        "then": "Die Nutzung ist kostenlos"
+                    }
+                },
+                "question": "Sind die Fahrradparkplätze kostenlos zu benutzen?"
+            },
+            "location": {
                 "mappings": {
                     "0": {
                         "then": "In einer Tiefgarage"
@@ -1677,22 +1693,6 @@
                     }
                 },
                 "question": "Wo befinden sich diese Fahrradabstellplätze?"
-            },
-            "charge": {
-                "question": "Wie viel kostet es, Ihr Fahrrad hier zu parken?",
-                "questionHint": "Das ist der Betrag, der für ein einzelnes Fahrrad berechnet wird",
-                "render": "Das Parken Ihres Fahrrads kostet {charge}"
-            },
-            "fee": {
-                "mappings": {
-                    "0": {
-                        "then": "Man muss <b>zahlen</b>, um den Fahrradparkplatz zu nutzen"
-                    },
-                    "1": {
-                        "then": "Die Nutzung ist kostenlos"
-                    }
-                },
-                "question": "Sind die Fahrradparkplätze kostenlos zu benutzen?"
             },
             "maxstay": {
                 "question": "Was ist die maximal erlaubte Parkdauer?",

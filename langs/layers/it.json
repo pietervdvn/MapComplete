@@ -657,18 +657,18 @@
                 },
                 "question": "Questo parcheggio dispone di posti specifici per le bici cargo?"
             },
-            "Is covered?": {
+            "covered_and_building": {
                 "mappings": {
-                    "0": {
+                    "4": {
                         "then": "È un parcheggio coperto (ha un tetto)"
                     },
-                    "1": {
+                    "5": {
                         "then": "Non è un parcheggio coperto"
                     }
                 },
-                "question": "È un parcheggio coperto? Indicare “coperto” per parcheggi all’interno."
+                "question": "È un parcheggio coperto?"
             },
-            "Underground?": {
+            "location": {
                 "mappings": {
                     "0": {
                         "then": "Parcheggio sotterraneo"

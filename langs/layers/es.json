@@ -1642,18 +1642,34 @@
                 },
                 "question": "¿Este aparcamiento de bicicletas tiene plazas para bicicletas de carga?"
             },
-            "Is covered?": {
+            "charge": {
+                "question": "¿Cuánto cuesta aparcar tu bicicleta aquí?",
+                "questionHint": "Esta es la cantidad que se cobra por una sola bicicleta",
+                "render": "Aparcar tu bicicleta cuesta {charge}"
+            },
+            "covered_and_building": {
                 "mappings": {
-                    "0": {
+                    "4": {
                         "then": "Este aparcamiento está cubierto (tiene techo)"
                     },
-                    "1": {
+                    "5": {
                         "then": "Este aparcamiento no está cubierto"
                     }
                 },
-                "question": "¿Está cubierto este aparcamiento? Selecciona también \"cubierto\" para aparcamientos interiores."
+                "question": "¿Está cubierto este aparcamiento?"
             },
-            "Underground?": {
+            "fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Hay que <b>pagar</b> para usar este aparcamiento de bicicletas"
+                    },
+                    "1": {
+                        "then": "Gratuito"
+                    }
+                },
+                "question": "¿Son gratuitos estos aparcamientos de bicicletas?"
+            },
+            "location": {
                 "mappings": {
                     "0": {
                         "then": "Aparcamiento subterráneo"
@@ -1669,22 +1685,6 @@
                     }
                 },
                 "question": "¿Cuál es la ubicación relativa de este aparcamiento de bicicletas?"
-            },
-            "charge": {
-                "question": "¿Cuánto cuesta aparcar tu bicicleta aquí?",
-                "questionHint": "Esta es la cantidad que se cobra por una sola bicicleta",
-                "render": "Aparcar tu bicicleta cuesta {charge}"
-            },
-            "fee": {
-                "mappings": {
-                    "0": {
-                        "then": "Hay que <b>pagar</b> para usar este aparcamiento de bicicletas"
-                    },
-                    "1": {
-                        "then": "Gratuito"
-                    }
-                },
-                "question": "¿Son gratuitos estos aparcamientos de bicicletas?"
             },
             "maxstay": {
                 "question": "¿Cuál es la duración máxima de aparcamiento permitida?",

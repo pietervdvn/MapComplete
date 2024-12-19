@@ -428,17 +428,17 @@
             "Capacity": {
                 "render": "Место для {capacity} велосипеда(ов)"
             },
-            "Is covered?": {
+            "covered_and_building": {
                 "mappings": {
-                    "0": {
+                    "4": {
                         "then": "Это крытая парковка (есть крыша/навес)"
                     },
-                    "1": {
+                    "5": {
                         "then": "Это открытая парковка"
                     }
                 }
             },
-            "Underground?": {
+            "location": {
                 "mappings": {
                     "0": {
                         "then": "Подземная парковка"
