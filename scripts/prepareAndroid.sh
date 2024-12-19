@@ -2,6 +2,14 @@
 
 # Copy all necessary files from the 'dist' directory into dist full
 # To be executed from the `MapComplete` repo root
+nvm use
+if [[ ! -f bookcases.html ]]
+then
+  npm run generate:layeroverview
+  npm run generate:layouts
+fi
+
+npm run build
 echo '''
 import type { CapacitorConfig } from "@capacitor/cli";
 
@@ -47,3 +55,5 @@ cp -r dist/assets/themes dist-full/assets
 npx capacitor-assets generate
 
 npx cap sync
+
+echo "All done! Don't forget to click 'gradly sync files' in Android Studio"

@@ -7,7 +7,7 @@ import { Store, UIEventSource } from "../UIEventSource"
 import { OsmConnection } from "../Osm/OsmConnection"
 
 export interface DatabridgePlugin {
-    request(options: { key: string }): Promise<{ value: string | object }>;
+    request<T extends (string | object) = string | object>(options: { key: string }): Promise<{ value: T }>;
 }
 
 const DatabridgePluginSingleton = registerPlugin<DatabridgePlugin>("Databridge", {
@@ -52,14 +52,12 @@ export class AndroidPolyfill {
     }
 
     public static async requestLoginCodes(osmConnection: OsmConnection) {
-        const result = await DatabridgePluginSingleton.request({ key: "request:login" })
-        const code: string = result["code"]
-        const state: string = result["state"]
-        console.log("AndroidPolyfill: received code and state; trying to pass them to the oauth lib")
-        window.location.search = "?code=" + code + "&state=" + state
-        osmConnection.finishLogin((oldLocation) => {
-            console.log("Login should be completed, oldLocation is", oldLocation)
+        const result = await DatabridgePluginSingleton.request<{oauth_token: string}>({ key: "request:login" })
+        const token: string = result.value.oauth_token
+        console.log("AndroidPolyfill: received code and state; trying to pass them to the oauth lib",token)
+        const auth = osmConnection.auth.bootstrapToken(token, (err, result) => {
+            console.log("AndroidPolyFill: bootstraptoken returned", JSON.stringify({err, result}))
         })
     }
-
 }
+

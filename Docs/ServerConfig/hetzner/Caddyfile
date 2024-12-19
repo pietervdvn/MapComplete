@@ -6,6 +6,14 @@ hosted.mapcomplete.org {
 	}
 }
 
+app.mapcomplete.org {
+	root * app/
+	file_server
+	header {
+		+Permissions-Policy "interest-cohort=()"
+	}
+}
+
 countrycoder.mapcomplete.org {
 	root * tiles/
 	file_server
