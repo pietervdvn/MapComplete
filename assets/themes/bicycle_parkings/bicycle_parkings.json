@@ -15,7 +15,8 @@
     "ru": "Велопарковки",
     "uk": "Велопарковки",
     "hu": "Kerékpártárolók",
-    "nl": "Fietsenstallingen"
+    "nl": "Fietsenstallingen",
+    "zh_Hant": "單車停車設施"
   },
   "description": {
     "en": "A map showing all types of bicycle parkings",
@@ -29,7 +30,8 @@
     "uk": "Мапа, що показує всі типи велосипедних парковок",
     "pl": "Mapa pokazująca wszystkie typy parkingów dla rowerów",
     "nl": "Een kaart met alle soorten fietsenstallingen",
-    "fr": "Une carte qui présente tous les types de parkings vélos"
+    "fr": "Une carte qui présente tous les types de parkings vélos",
+    "zh_Hant": "顯示所有類型單車停車設施的地圖"
   },
   "icon": "./assets/themes/bicycle_parkings/logo.svg",
   "layers": [

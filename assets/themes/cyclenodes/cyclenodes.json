@@ -21,7 +21,8 @@
     "da": "Dette kort viser cykel netværk og giver dig mulighed for nemt at tilføje nye punkter",
     "cs": "Tato mapa zobrazuje sítě uzlů cyklu a umožňuje snadno přidávat nové uzly",
     "pl": "Mapa ta przedstawia sieci węzłów rowerowych i umożliwia łatwe dodawanie nowych węzłów",
-    "uk": "Мапа на якій показуються точки веломережі, ви також можете легко додавати нові"
+    "uk": "Мапа на якій показуються точки веломережі, ви також можете легко додавати нові",
+    "zh_Hant": "這份地圖顯示單車節點網路與允許你輕易新增節點"
   },
   "icon": "./assets/themes/cyclenodes/logo.svg",
   "startZoom": 11,
@@ -43,7 +44,8 @@
         "ca": "Enllaços node a node",
         "cs": "Propojení mezi uzly",
         "pl": "łącza węzeł do węzła",
-        "uk": "Звʼязки між точками"
+        "uk": "Звʼязки між точками",
+        "zh_Hant": "節點到節點的連結"
       },
       "source": {
         "osmTags": {
@@ -65,7 +67,8 @@
           "ca": "Enllaç node a node",
           "cs": "propojení mezi uzly",
           "pl": "połączenie węzła z węzłem",
-          "uk": "Відрізок між точками"
+          "uk": "Відрізок між точками",
+          "zh_Hant": "節點到節點連結"
         },
         "mappings": [
           {
@@ -79,7 +82,8 @@
               "ca": "Enllaç node a node <strong>{ref}</strong>",
               "cs": "propojení mezi uzly <strong>{ref}</strong>",
               "pl": "połączenie węzła z węzłem <strong>{ref}</strong>",
-              "uk": "Відрізок між точками <strong>{ref}</strong>"
+              "uk": "Відрізок між точками <strong>{ref}</strong>",
+              "zh_Hant": "節點到節點連結 <strong>{ref}</strong>"
             }
           }
         ]
@@ -97,7 +101,8 @@
               "ca": "Quan es va comprovar per última vegada aquest enllaç node a node presencialment?",
               "cs": "Kdy bylo toto propojení mezi uzly naposledy zkontrolováno?",
               "pl": "Kiedy ostatnio badano to połączenie węzła z węzłem?",
-              "uk": "Коли цей звʼязок між точками досліджувався востаннє?"
+              "uk": "Коли цей звʼязок між точками досліджувався востаннє?",
+              "zh_Hant": "這個節點到節點連結何時最後一次探察？"
             },
             "render": {
               "en": "This node to node link was last surveyed on {survey:date}",
@@ -108,7 +113,8 @@
               "ca": "Aquest enllaç node a node es va sondejar per última vegada el {survey:date}",
               "cs": "Toto propojení mezi uzly bylo naposledy zkontrolováno dne {survey:date}",
               "pl": "To połączenie węzła z węzłem było ostatnio sprawdzane w dniu {survey:date}",
-              "uk": "Цей зв’язок між точками востаннє досліджувався {survey:date}"
+              "uk": "Цей зв’язок між точками востаннє досліджувався {survey:date}",
+              "zh_Hant": "這個節點到節點連結最後是在 {survey:date} 探察"
             }
           },
           "id": "node2node-survey:date"
@@ -203,7 +209,8 @@
               "fr": "nœud cycliste <strong>{rcn_ref}</strong>",
               "ca": "node ciclista <strong>{rcn_ref}</strong>",
               "cs": "uzel cyklu <strong>{rcn_ref}</strong>",
-              "pl": "węzeł rowerowy <strong>{rcn_ref}</strong>"
+              "pl": "węzeł rowerowy <strong>{rcn_ref}</strong>",
+              "zh_Hant": "單車節點 <strong>{rcn_ref}</strong>"
             }
           },
           {
@@ -228,7 +235,8 @@
             "cs": "Jaké je referenční číslo tohoto cyklistického uzlu?",
             "ca": "Quin és el número de referència d'aquest node ciclista?",
             "es": "¿Cuál es el número de referencia de este nodo ciclista?",
-            "pl": "Jaki jest numer referencyjny tego węzła rowerowego?"
+            "pl": "Jaki jest numer referencyjny tego węzła rowerowego?",
+            "zh_Hant": "這個單車節點的參考編號是什麼？"
           },
           "freeform": {
             "key": "rcn_ref",
@@ -241,7 +249,8 @@
               "es": "ej. 1",
               "pl": "np. 1",
               "da": "fx 1",
-              "ca": "Per exemple, 1"
+              "ca": "Per exemple, 1",
+              "zh_Hant": "例如 1"
             }
           },
           "render": {
@@ -251,7 +260,8 @@
             "cs": "Tento cyklistický uzel má referenční číslo {rcn_ref}",
             "ca": "Aquest node ciclista té la referència número {rcn_ref}",
             "es": "Este nodo ciclista tiene el número de referencia {rcn_ref}",
-            "pl": "Ten węzeł rowerowy ma numer referencyjny {rcn_ref}"
+            "pl": "Ten węzeł rowerowy ma numer referencyjny {rcn_ref}",
+            "zh_Hant": "這個單車節點有參考編號 {rcn_ref}"
           },
           "condition": "rcn_ref~*"
         },
@@ -266,7 +276,8 @@
               "fr": "Quand ce nœud cyclable a-t-il été vérifié sur le terrain pour la dernière fois ?",
               "ca": "Quan va ser sondejat aquest node ciclista per última vegada?",
               "cs": "Kdy byl tento uzel cyklu naposledy zkontrolován?",
-              "pl": "Kiedy ostatni raz badano ten węzeł rowerowy?"
+              "pl": "Kiedy ostatni raz badano ten węzeł rowerowy?",
+              "zh_Hant": "上次這個單車節點是何時探查的？"
             },
             "render": {
               "en": "This cycle node was last surveyed on {survey:date}",
@@ -276,7 +287,8 @@
               "fr": "Ce nœud cycliste a été verifié pour la dernière fois le {survey:date}",
               "ca": "Aquest node ciclista es va sondejar per última vegada el {survey:date}",
               "cs": "Tento uzel cyklu byl naposledy zkontrolován dne {survey:date}",
-              "pl": "Ten węzeł rowerowy był ostatnio badany w dniu {survey:date}"
+              "pl": "Ten węzeł rowerowy był ostatnio badany w dniu {survey:date}",
+              "zh_Hant": "這個單車節點上次探查時間是 {survey:date}"
             }
           },
           "id": "node-survey:date"
@@ -291,7 +303,8 @@
             "ca": "A quants altes nodes ciclistes enllaça aquest node?",
             "cs": "S kolika dalšími uzly cyklu je tento uzel propojen?",
             "pl": "Z iloma innymi węzłami rowerowymi łączy się ten węzeł?",
-            "uk": "З кількома іншими точками повʼязана ця точка?"
+            "uk": "З кількома іншими точками повʼязана ця точка?",
+            "zh_Hant": "有多少其他單車節點連結到這一節點連結？"
           },
           "render": {
             "en": "This node links to {expected_rcn_route_relations} other cycle nodes.",
@@ -301,7 +314,8 @@
             "fr": "Ce noeud est lié à {expected_rcn_route_relations} d'autres noeuds cyclistes.",
             "ca": "Aquest node enllaça a {expected_rcn_route_relations} altres nodes ciclistes.",
             "cs": "Tento uzel je propojen s {expected_rcn_route_relations} dalšími uzly cyklu.",
-            "pl": "Ten węzeł łączy się z innymi węzłami rowerowymi {expected_rcn_route_relations}."
+            "pl": "Ten węzeł łączy się z innymi węzłami rowerowymi {expected_rcn_route_relations}.",
+            "zh_Hant": "這個節點連結到 {expected_rcn_route_relations} 其他單車節點。"
           },
           "freeform": {
             "key": "expected_rcn_route_relations",
@@ -315,7 +329,8 @@
               "pl": "np. 3",
               "da": "fx 3",
               "ca": "Per exemple, 3",
-              "uk": "напр. 3"
+              "uk": "напр. 3",
+              "zh_Hant": "例如 3"
             }
           },
           "id": "node-expected_rcn_route_relations"
@@ -336,7 +351,8 @@
             "es": "un nodo ciclista",
             "cs": "cyklistický uzel",
             "pl": "węzeł rowerowy",
-            "uk": "велоточка"
+            "uk": "велоточка",
+            "zh_Hant": "單車節點"
           },
           "snapToLayer": [
             "cycleways_and_roads"

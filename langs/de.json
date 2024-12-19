@@ -362,9 +362,9 @@
         },
         "questions": {
             "disable": "Diese Frage nicht mehr stellen",
+            "disabledIntro": "Du hast einige Fragen deaktiviert. Um eine Frage wieder zu aktivieren, klicke hier",
             "disabledTitle": "Deaktivierte Fragen",
             "enable": "Stelle diese Frage für alle Objekte",
-            "disabledIntro": "Du hast einige Fragen deaktiviert. Um eine Frage wieder zu aktivieren, klicke hier",
             "noneDisabled": "Wenn du an einer bestimmten Art von Frage nicht interessiert bist, deaktiviere sie. Um eine Frage zu deaktivieren, klicke auf die drei Punkte in der oberen rechten Ecke und wähle „Deaktivieren“ aus."
         },
         "removeLocationHistory": "Standortverlauf löschen",
@@ -573,6 +573,7 @@
         "pleaseLogin": "Bitte anmelden, um ein Bild hinzuzufügen",
         "processing": "Der Server verarbeitet das Bild",
         "respectPrivacy": "Laden Sie keine Bilder von Google Maps, Google Streetview oder anderen urheberrechtlich geschützten Quellen hoch.",
+        "selectFile": "Wähle ein Bild von deinem Gerät aus",
         "toBig": "Ihr Bild ist mit {actual_size} zu groß. Die maximale Bildgröße ist {max_size}",
         "unlink": {
             "button": "Bild entkoppeln",
@@ -596,8 +597,7 @@
                 "uploading": "Das Bild wird hochgeladen…"
             }
         },
-        "uploadFailed": "Das Bild konnte nicht hochladen werden. Haben Sie eine aktive Internetverbindung und sind APIs von Dritten erlaubt? Der Brave Browser oder UMatrix blockieren diese eventuell.",
-        "selectFile": "Wähle ein Bild von deinem Gerät aus"
+        "uploadFailed": "Das Bild konnte nicht hochladen werden. Haben Sie eine aktive Internetverbindung und sind APIs von Dritten erlaubt? Der Brave Browser oder UMatrix blockieren diese eventuell."
     },
     "importInspector": {
         "title": "Importhinweise überprüfen und verwalten"
@@ -614,6 +614,9 @@
         "learnMore": "Mehr erfahren",
         "logIn": "Anmelden, um Themen anzuzeigen, die Sie bereits besucht haben",
         "title": "MapComplete"
+    },
+    "inspector": {
+        "menu": "Überprüfe einen Beitragenden"
     },
     "move": {
         "cancel": "Einen anderen Grund auswählen",
@@ -848,8 +851,5 @@
             "empty": "Bitte gib einige Wikidata-Einträge ein",
             "startsWithQ": "Ein Wikidata-Identifikator beginnt mit Q und wird von einer Zahl gefolgt"
         }
-    },
-    "inspector": {
-        "menu": "Überprüfe einen Beitragenden"
     }
 }

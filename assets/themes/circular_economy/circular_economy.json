@@ -10,7 +10,8 @@
     "hu": "Körforgásos gazdaság",
     "pl": "Gospodarka o obiegu zamkniętym",
     "nl": "Circulaire economie",
-    "fr": "Économie circulaire"
+    "fr": "Économie circulaire",
+    "zh_Hant": "循環經濟"
   },
   "description": {
     "en": "Various items which help people to share, reuse or recycle.",
@@ -20,7 +21,8 @@
     "cs": "Různé předměty, které pomáhají lidem sdílet, znovu používat nebo recyklovat.",
     "uk": "Різноманітні предмети, які допомагають людям ділитися, повторно використовувати або переробляти.",
     "pl": "Różne przedmioty, które pomagają ludziom się dzielić, ponownie używać lub poddawać recyklingowi.",
-    "nl": "Verschillende items die mensen helpen om te delen, te hergebruiken of te recycleren."
+    "nl": "Verschillende items die mensen helpen om te delen, te hergebruiken of te recycleren.",
+    "zh_Hant": "多樣物件能夠幫助人們分享、再利用與回收。"
   },
   "icon": "./assets/themes/circular_economy/circular.svg",
   "layers": [
@@ -55,7 +57,8 @@
           "uk": "Магазини секонд-хенду",
           "pl": "Sklepy second-hand",
           "nl": "Tweedehandswinkels",
-          "fr": "Commerces de produits d'occasion"
+          "fr": "Commerces de produits d'occasion",
+          "zh_Hant": "二手商店"
         },
         "filter": null,
         "source": {

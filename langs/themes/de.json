@@ -726,6 +726,10 @@
         "description": "Eine Karte mit öffentlich zugänglichen Innenräumen",
         "title": "Innenräume"
     },
+    "insects": {
+        "description": "Insektenhotels bieten Insekten Unterschlupf.",
+        "title": "Insektenhotels"
+    },
     "items_with_image": {
         "description": "Eine Karte, die alle Objekte auf OSM zeigt, die ein Bild haben. Dieses Thema ist sehr schlecht für MapComplete geeignet, da man nicht direkt ein Bild hinzufügen kann. Dieses Thema ist jedoch hauptsächlich dazu da, um alles in die Datenbank aufzunehmen, was es ermöglicht, Bilder in der Nähe für andere Funktionen schnell zu finden",
         "title": "Alle Elemente mit Bildern"
@@ -1419,9 +1423,5 @@
         "description": "Die Karte zeigt Abfalleimer in der Nähe. Wenn ein Abfalleimer fehlt, kannst du ihn selbst hinzufügen.",
         "shortDescription": "Eine Karte mit Abfalleimern",
         "title": "Abfalleimer"
-    },
-    "insects": {
-        "description": "Insektenhotels bieten Insekten Unterschlupf.",
-        "title": "Insektenhotels"
     }
 }

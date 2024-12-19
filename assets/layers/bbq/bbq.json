@@ -82,7 +82,7 @@
         {
           "if": "access=yes",
           "then": {
-            "de": "Öffentlich",
+            "de": "Dieses Grillgerät kann von jedem benutzt werden",
             "en": "This barbecue can be used by anyone",
             "cs": "Veřejné",
             "es": "Público",
@@ -92,7 +92,7 @@
         {
           "if": "access=no",
           "then": {
-            "de": "Kein Zugang",
+            "de": "Dieses Grillgerät darf von niemandem benutzt werden",
             "en": "This barbecue can't be used by anyone",
             "cs": "Zákaz vstupu",
             "es": "Sin acceso",
@@ -102,7 +102,7 @@
         {
           "if": "access=private",
           "then": {
-            "de": "Privat",
+            "de": "Dieses Grillgerät ist privat",
             "en": "This barbecue is private",
             "cs": "Soukromé",
             "es": "Privado",

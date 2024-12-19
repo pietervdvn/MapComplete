@@ -959,6 +959,14 @@
             "render": "Grillstelle"
         }
     },
+    "beehive": {
+        "tagRenderings": {
+            "capacity": {
+                "question": "Wie viele Bienenstöcke gibt es?"
+            }
+        },
+        "title": "Bienenstock"
+    },
     "bench": {
         "description": "Diese Karte stellt Sitzbänke aus Holz, Metall, Stein, … dar und stellt ein paar Fragen, um weitere Informationen zu ergänzen.",
         "filter": {
@@ -4954,6 +4962,20 @@
                     }
                 }
             },
+            "16": {
+                "options": {
+                    "0": {
+                        "question": "Hat Sitzgelegenheiten im Freien"
+                    }
+                }
+            },
+            "17": {
+                "options": {
+                    "0": {
+                        "question": "Hat Sitzplätze im Innenbereich"
+                    }
+                }
+            },
             "2": {
                 "options": {
                     "0": {
@@ -5022,20 +5044,6 @@
                 "options": {
                     "0": {
                         "question": "Nutzung kostenlos"
-                    }
-                }
-            },
-            "16": {
-                "options": {
-                    "0": {
-                        "question": "Hat Sitzgelegenheiten im Freien"
-                    }
-                }
-            },
-            "17": {
-                "options": {
-                    "0": {
-                        "question": "Hat Sitzplätze im Innenbereich"
                     }
                 }
             }
@@ -5546,6 +5554,16 @@
                 },
                 "question": "Liefert {title()} Essen nach Hause?"
             },
+            "drive-through": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieses Fast-Food-Restaurant hat einen Drive-In"
+                    },
+                    "1": {
+                        "then": "Dieses Fast-Food-Restaurant hat keinen Drive-in"
+                    }
+                }
+            },
             "friture-oil": {
                 "mappings": {
                     "0": {
@@ -5657,16 +5675,6 @@
                     }
                 },
                 "question": "Bietet das Restaurant biologische Speisen an?"
-            },
-            "drive-through": {
-                "mappings": {
-                    "1": {
-                        "then": "Dieses Fast-Food-Restaurant hat keinen Drive-in"
-                    },
-                    "0": {
-                        "then": "Dieses Fast-Food-Restaurant hat einen Drive-In"
-                    }
-                }
             }
         },
         "title": {
@@ -6347,6 +6355,9 @@
         "title": {
             "render": "Informationstafel"
         }
+    },
+    "insect_hotel": {
+        "description": "Ebene mit Insektenhotels"
     },
     "item_with_image": {
         "name": "Element mit mindestens einem Bild",
@@ -12784,16 +12795,5 @@
             },
             "render": "Windrad"
         }
-    },
-    "beehive": {
-        "title": "Bienenstock",
-        "tagRenderings": {
-            "capacity": {
-                "question": "Wie viele Bienenstöcke gibt es?"
-            }
-        }
-    },
-    "insect_hotel": {
-        "description": "Ebene mit Insektenhotels"
     }
 }

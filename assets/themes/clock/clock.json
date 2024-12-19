@@ -14,7 +14,8 @@
     "it": "Orologi",
     "ru": "Часы",
     "uk": "Годинники",
-    "hu": "Órák"
+    "hu": "Órák",
+    "zh_Hant": "時鐘"
   },
   "description": {
     "en": "Map showing all public clocks",
@@ -27,7 +28,8 @@
     "pl": "Mapa pokazująca wszystkie zegary publiczne",
     "da": "Kort over alle ure i det offentlige rum",
     "it": "Mappa di tutti gli orologi pubblici",
-    "uk": "Мапа годинників в громадських місцях"
+    "uk": "Мапа годинників в громадських місцях",
+    "zh_Hant": "顯示所有公共時鐘的地圖"
   },
   "icon": "./assets/layers/clock/clock.svg",
   "layers": [
