@@ -6,7 +6,8 @@
   },
   "description": {
     "en": "Layer showing insect hotels",
-    "nl": "Laag met insectenhotels"
+    "nl": "Laag met insectenhotels",
+    "de": "Ebene mit Insektenhotels"
   },
   "source": {
     "osmTags": "man_made=insect_hotel"

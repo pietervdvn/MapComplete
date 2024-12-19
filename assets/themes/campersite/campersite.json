@@ -127,7 +127,8 @@
           "ca": "Aquest lloc té subministrament elèctric?",
           "cs": "Má toto místo napájecí zdroj?",
           "pl": "Czy to miejsce ma dostęp do prądu?",
-          "uk": "Чи є тут електропостачання?"
+          "uk": "Чи є тут електропостачання?",
+          "zh_Hant": "這個地方有電源供應設施嗎？"
         },
         "mappings": [
           {
@@ -151,7 +152,8 @@
               "cs": "Toto místo má napájecí zdroj",
               "eu": "Leku honek hornidura elektrikoa du",
               "pl": "To miejsce ma dostęp do prądu",
-              "uk": "У цьому місці є електропостачання"
+              "uk": "У цьому місці є електропостачання",
+              "zh_Hant": "這個地方有電源供應設施"
             }
           },
           {
@@ -174,7 +176,8 @@
               "ca": "Aquest lloc no té subministrament elèctric",
               "cs": "Toto místo nemá napájecí zdroj",
               "pl": "To miejsce nie ma dostępu do prądu",
-              "uk": "Це місце не має електропостачання"
+              "uk": "Це місце не має електропостачання",
+              "zh_Hant": "這個地方沒有電源供應設施"
             }
           }
         ]
