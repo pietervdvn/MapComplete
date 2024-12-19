@@ -524,6 +524,40 @@
       ]
     },
     {
+      "id": "optometrist_service",
+      "condition": {
+        "or": [
+          "shop=optician"
+        ]
+      },
+      "question": {
+        "en": "Is it possible to get an eye exam here by a professional optometrist?",
+        "nl": "Kan men hier een oogtest laten uitvoeren door een professionele optometrist?"
+      },
+      "mappings": [
+        {
+          "if": "healthcare=optometrist",
+          "addExtraTags": [
+            "not:healthcare=optometrist"
+          ],
+          "then": {
+            "en": "Offers eye exams by professional optometrists",
+            "nl": "Hier kan men een oogtest door een professionele optometrist laten uitvoeren"
+          }
+        },
+        {
+          "if": "not:healtcare=optometrist",
+          "addExtraTags": [
+            "healthcare=optometrist"
+          ],
+          "then": {
+            "en": "No certified eye exam possible here",
+            "nl": "Hier kan men geen oog-examen laten uitvoeren door een optometrist"
+          }
+        }
+      ]
+    },
+    {
       "id": "key_cutter",
       "question": {
         "en": "Does this shop offer key cutting?",
