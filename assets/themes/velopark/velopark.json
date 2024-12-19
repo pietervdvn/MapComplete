@@ -431,7 +431,16 @@
         "tagRenderings+": [
           "images"
         ]
-      }
+      },
+      "pointRendering": [
+        {
+          "marker": [
+            {
+              "color": "#2cf200"
+            }
+          ]
+        }
+      ]
     },
     {
       "builtin": [
