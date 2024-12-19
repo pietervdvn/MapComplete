@@ -133,6 +133,9 @@
         "ca": "Quin és el tipus d'aquest aparcament de bicicletes?",
         "uk": "Що це за тип велопарковки?"
       },
+      "questionHint": {
+        "en": "This is about the physical device one places their bicycle in and uses to lock"
+      },
       "render": {
         "en": "This is a bicycle parking of the type: {bicycle_parking}",
         "nl": "Dit is een fietsparking van het type: {bicycle_parking}",
@@ -296,6 +299,7 @@
         },
         {
           "if": "bicycle_parking=shed",
+          "hideInAnswer": true,
           "then": {
             "en": "Shed",
             "nl": "Schuur",
