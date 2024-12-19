@@ -134,7 +134,8 @@
         "uk": "Що це за тип велопарковки?"
       },
       "questionHint": {
-        "en": "This is about the physical device one places their bicycle in and uses to lock"
+        "en": "This is about the physical device one places their bicycle in and uses to lock",
+        "nl": "Dit gaat over het voorwerp waarin je je fiets plaats en mee op slot zet"
       },
       "render": {
         "en": "This is a bicycle parking of the type: {bicycle_parking}",
