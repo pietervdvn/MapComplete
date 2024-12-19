@@ -857,7 +857,7 @@
                 "questionHint": "To obejmuje zwykłe rowery, do transportu dóbr, elektryczne, ...",
                 "render": "Miejsce na {capacity} rowerów"
             },
-            "Underground?": {
+            "location": {
                 "mappings": {
                     "2": {
                         "then": "Parking na dachu"

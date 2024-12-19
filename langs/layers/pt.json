@@ -1191,18 +1191,18 @@
                 },
                 "question": "O estacionamento de bicicletas tem vagas para bicicletas de carga?"
             },
-            "Is covered?": {
+            "covered_and_building": {
                 "mappings": {
-                    "0": {
+                    "4": {
                         "then": "Este estacionamento é coberto (tem um telhado)"
                     },
-                    "1": {
+                    "5": {
                         "then": "Este estacionamento não é coberto"
                     }
                 },
-                "question": "Este estacionamento é coberto? Também selecione \"coberto\" para estacionamentos internos."
+                "question": "Este estacionamento é coberto?"
             },
-            "Underground?": {
+            "location": {
                 "mappings": {
                     "0": {
                         "then": "Estacionamento subterrâneo"
