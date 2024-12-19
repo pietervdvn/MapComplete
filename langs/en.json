@@ -616,7 +616,28 @@
         "title": "MapComplete"
     },
     "inspector": {
-        "menu": "Inspect a contributor"
+        "aggregateView": "Aggregate",
+        "answeredCountTimes": "Answered {count} times",
+        "backToIndex": "Back to the map overview",
+        "createdBy": "Created by {contributor}",
+        "earlierInspected": "See contributors you've inspected before",
+        "images": "Created images",
+        "load": "Inspect changes for map area",
+        "mapView": "Map",
+        "menu": "Inspect a contributor",
+        "onlyGeometry": "Only changes in geometry",
+        "previouslySpied": {
+            "addLabel": "Add a label",
+            "allChanges": "Load all changes for users with this label",
+            "label": "Label",
+            "noLabels": "No labels",
+            "remove": "Remove",
+            "time": "Time of last inspection",
+            "title": "Earlier inspected constributors",
+            "username": "Username"
+        },
+        "tableView": "Overview",
+        "title": "Inspect a contributor"
     },
     "move": {
         "cancel": "Select a different reason",

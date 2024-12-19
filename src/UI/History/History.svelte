@@ -30,10 +30,11 @@
           return true
         }
         console.log(
-          "Checking if ",
+          "Checking if",
           step.tags["_last_edit:contributor"],
           "is contained in",
-          onlyShowChangesBy
+          onlyShowChangesBy,
+          usernames.has(step.tags["_last_edit:contributor"])
         )
         return usernames.has(step.tags["_last_edit:contributor"])
       })
@@ -49,7 +50,7 @@
    * These layers are only shown if there are tag changes as well
    */
   const ignoreLayersIfNoChanges: ReadonlySet<string> = new Set(["walls_and_buildings"])
-  const t = Translations.t.inspector.previousContributors
+  const t = Translations.t.inspector
 </script>
 
 {#if !$allGeometry || !ignoreLayersIfNoChanges.has($lastStep?.layer?.id)}
