@@ -1,2 +1,173 @@
 {
+    "bag": {
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "Reference": {
+                        "render": "BAG의 레퍼런스는 <b>{ref:bag}</b>입니다",
+                        "mappings": {
+                            "0": {
+                                "then": "이 건물은 BAG에 레퍼런스가 존재하지 않습니다"
+                            }
+                        }
+                    }
+                }
+            },
+            "2": {
+                "tagRenderings": {
+                    "Building type": {
+                        "mappings": {
+                            "0": {
+                                "then": "건물 유형은 <b>{_bag_obj:construction}</b>로 계획되어 있습니다"
+                            }
+                        },
+                        "render": "건물 유형은 <b>{_bag_obj:building}</b>입니다"
+                    },
+                    "Build year": {
+                        "mappings": {
+                            "0": {
+                                "then": "이 건물은 <b>{_bag_obj:start_date}</b>에 착공되었습니다"
+                            }
+                        },
+                        "render": "이 건물은 <b>{_bag_obj:start_date}</b>에 지어졌습니다"
+                    },
+                    "Import button": {
+                        "mappings": {
+                            "0": {
+                                "then": "값을 올바르게 계산하지 못했습니다. 페이지를 새로고침 해 주세요"
+                            }
+                        }
+                    },
+                    "Reference": {
+                        "render": "BAG에서 레퍼런스는 <b>{_bag_obj:ref:bag}</b>입니다"
+                    }
+                },
+                "description": "BAG에 등록된 건물"
+            }
+        },
+        "description": "이 테마는 BAG에서 데이터를 가져오는 데 도움을 줍니다",
+        "shortDescription": "BAG 헬퍼 툴 불러오기",
+        "title": "BAG 헬퍼 불러오기"
+    },
+    "benches": {
+        "description": "이 지도는 오픈 스트리트 맵에 기록된 모든 벤치를 보여줍니다: 길거리 벤치뿐만 아니라 대중교통 정류장이나 쉼터에 속한 벤치도 포함됩니다.",
+        "shortDescription": "벤치 지도",
+        "title": "벤치"
+    },
+    "campersite": {
+        "description": "이 사이트에는 공식 캠핑카 휴게소와 오수 및 폐수를 버릴 수 있는 장소가 모두 모여 있습니다. 제공되는 서비스 및 비용에 대한 세부 정보를 추가할 수 있습니다. 사진과 리뷰를 추가하세요.",
+        "overrideAll": {
+            "tagRenderings+": {
+                "0": {
+                    "question": "이 장소의 운영자는 누구인가요?",
+                    "render": "이 장소의 운영자는 {operator} 입니다"
+                },
+                "1": {
+                    "mappings": {
+                        "0": {
+                            "then": "이곳에는 전원 공급 장치가 있습니다"
+                        },
+                        "1": {
+                            "then": "이 장소에는 전원 공급 장치가 없습니다"
+                        }
+                    },
+                    "question": "이곳에 전원 공급 장치가 있나요?"
+                }
+            }
+        },
+        "shortDescription": "캠핑카 숙박이 가능한 캠핑장 찾기",
+        "title": "캠핑장"
+    },
+    "charging_stations": {
+        "shortDescription": "전 세계 충전소 지도",
+        "description": "이 오픈 맵에서 충전소 정보를 찾고 표시할 수 있습니다",
+        "title": "충전소"
+    },
+    "circular_economy": {
+        "description": "사람들이 공유하고 재사용 또는 재활용할 수 있도록 도와주는 다양한 물건.",
+        "layers": {
+            "5": {
+                "override": {
+                    "=name": "중고 물품 상점"
+                }
+            }
+        },
+        "title": "순환 경제"
+    },
+    "bicyclelib": {
+        "description": "자전거 라이브러리는 자전거를 대여할 수 있는 장소로 일반적으로 소액의 연회비를 지불하면 이용가는 합니다. 대표적인 사례로 어린이를 위한 자전거 라이브러리가 있는데, 아이들이 크면서 작은 자전거에서 더 큰 자전거로 교체할 수 있도록 도와줍니다",
+        "title": "자전거 라이브러리"
+    },
+    "climbing": {
+        "description": "이 지도에는 클라이밍 체육관과 볼더링 홀그리고 자연 암벽 등과 같은 다양한 클라이밍 장소가 나와 있습니다.",
+        "descriptionTail": "클라이밍 지도는 <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>크리스티안 노이만(Christian Neumann</a>이 제작했습니다. 피드백이나 질문이 있으면 <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>여기</a>로 연락해 주세요.</p><p>이 프로젝트는 <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a> 프로젝트의 데이터를 사용합니다.</p>"
+    },
+    "binoculars": {
+        "description": "관광 명소, 전망대, 파노라마 타워 옥상, 또는 혹은 자연 보호구역에서 볼 수 있는 망원경이 설치된 장소의 지도를 제공합니다. 망원경은 일반적으로 기둥에 고정되어 있어 특정 장소를 관찰하는 데 사용됩니다.",
+        "title": "망원경",
+        "shortDescription": "망원경 위치 지도"
+    },
+    "advertising": {
+        "description": "길거리와 도로에 얼마나 많은 편의 시설물 있는지 생각해 보신 적 있나요? 우리 지도에서는 거리에서 발견할 수 있는 모든 시설물에 대한 정보를 찾고 추가할 수 있습니다",
+        "shortDescription": "어디서 시설물을 찾을 수 있을까요?",
+        "title": "시설물"
+    },
+    "aed": {
+        "description": "이 지도에서는 주변에 있는 제세동기를 찾아볼 수 있습니다",
+        "title": "제세동기"
+    },
+    "artwork": {
+        "description": "전 세계의 여러 조각상과 예술 작품들 알려주는 오픈 맵 입니다",
+        "title": "예술 작품"
+    },
+    "atm": {
+        "description": "이 지도는 입출금을 위한 ATM 을 보여 줍니다",
+        "layers": {
+            "3": {
+                "override": {
+                    "=tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "ATM 이동"
+                                }
+                            }
+                        },
+                        "1": {
+                            "render": "오픈 스트리트 맵은 <a href='#{_closest_osm_poi}'>가장 가까운 ATM이 {_closest_osm_poi_distance}m 떨어져 있습니다</a> "
+                        },
+                        "2": {
+                            "render": {
+                                "special": {
+                                    "message": "가장 가까운 ATM에 해당되는 모든 정보를 추가하세요"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "title": "ATM 기기"
+    },
+    "bicycle_parkings": {
+        "description": "모든 종류의 자전거 주차장을 보여주는 지도입니다",
+        "title": "자전거 주차장"
+    },
+    "bicycle_rental": {
+        "shortDescription": "자전거 대여소와 상점을 보여주는 지도입니다",
+        "title": "자전거 대여",
+        "description": "이 지도에서는 오픈 스트리트 맵에 등록된 다양한 자전거 대여소를 확인할 수 있습니다"
+    },
+    "blind_osm": {
+        "description": "시각장애인을 위한 주요 시설 지도 도움말",
+        "title": "시각장애인을 위한 오픈 스트리트 맵"
+    },
+    "bookcases": {
+        "description": "공공 책장은 책을 보관할 수 있는 길가의 작은 책장, 상자, 오래된 공중 전화 부스와 같은 공간을 말합니다. 누구나 책을 놓거나 가져갈 수 있습니다. 이 지도는 공공 책장을 모두 수집하는 것을 목표로 두고 있습니다.",
+        "title": "공공 책장"
+    },
+    "cafes_and_pubs": {
+        "description": "커피숍, 펍 그리고 바",
+        "title": "카페 그리고 펍"
+    }
 }
