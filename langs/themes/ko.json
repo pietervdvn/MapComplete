@@ -100,7 +100,22 @@
     },
     "climbing": {
         "description": "이 지도에는 클라이밍 체육관과 볼더링 홀그리고 자연 암벽 등과 같은 다양한 클라이밍 장소가 나와 있습니다.",
-        "descriptionTail": "클라이밍 지도는 <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>크리스티안 노이만(Christian Neumann</a>이 제작했습니다. 피드백이나 질문이 있으면 <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>여기</a>로 연락해 주세요.</p><p>이 프로젝트는 <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a> 프로젝트의 데이터를 사용합니다.</p>"
+        "descriptionTail": "클라이밍 지도는 <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>크리스티안 노이만(Christian Neumann</a>이 제작했습니다. 피드백이나 질문이 있으면 <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>여기</a>로 연락해 주세요.</p><p>이 프로젝트는 <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a> 프로젝트의 데이터를 사용합니다.</p>",
+        "layers": {
+            "0": {
+                "override": {
+                    "tagRenderings+": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "<span class='subtle'>이<a href='#{_embedding_feature:id}'>포함된 요소</a>따르면, 이는</span>공공 접근이 가능합니다<br/>{_embedding_feature:access:description"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     },
     "binoculars": {
         "description": "관광 명소, 전망대, 파노라마 타워 옥상, 또는 혹은 자연 보호구역에서 볼 수 있는 망원경이 설치된 장소의 지도를 제공합니다. 망원경은 일반적으로 기둥에 고정되어 있어 특정 장소를 관찰하는 데 사용됩니다.",
