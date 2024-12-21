@@ -1,5 +1,23 @@
 {
     "artwork": {
         "description": "전 세계의 여러 조각상과 예술 작품들 알려주는 오픈 맵 입니다"
+    },
+    "address": {
+        "description": "주소",
+        "name": "OSM에 등록된 주소들",
+        "tagRenderings": {
+            "housenumber": {
+                "question": "이 집의 번호는 무엇입니까?",
+                "mappings": {
+                    "0": {
+                        "then": "이 빌딩은 건물 번호가 존재하지 않습니다"
+                    }
+                },
+                "render": "이 집의 번호는 <b>{addr:housenumber}</b> 입니다"
+            },
+            "fixme": {
+                "question": "수정할 내용이 있습니까? 설명 부탁드립니다"
+            }
+        }
     }
 }
