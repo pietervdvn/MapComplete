@@ -343,7 +343,8 @@
         "uploadingChanges": "변경사항을 업로드 중…",
         "wikipedia": {
             "searchWikidata": "Wikidata 검색"
-        }
+        },
+        "loginFailedOfflineMode": "OpenStreetMap.org은 현재 유지 보수 중입니다. 편집 기능은 곧 다시 제공될 예정입니다"
     },
     "split": {
         "cancel": "취소",
