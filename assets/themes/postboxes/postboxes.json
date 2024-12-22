@@ -61,7 +61,6 @@
       "builtin": "shops",
       "override": {
         "minzoom": 18,
-        "minzoomVisible": 18,
         "description": {
           "en": "Add a new post partner to the map in an existing shop",
           "de": "Hinzufügen eines neuen Post-Partners auf der Karte in einem bestehenden Geschäft",

@@ -27,11 +27,7 @@
     "cs": "Jedná se o veřejný odpadkový koš, odpadkový koš, kam můžete vyhodit odpadky."
   },
   "source": {
-    "osmTags": {
-      "and": [
-        "amenity=waste_basket"
-      ]
-    }
+    "osmTags": "amenity=waste_basket"
   },
   "minzoom": 17,
   "title": {
