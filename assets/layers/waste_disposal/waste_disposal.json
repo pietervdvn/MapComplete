@@ -27,7 +27,6 @@
     "osmTags": "amenity=waste_disposal"
   },
   "minzoom": 12,
-  "minzoomVisible": 12,
   "title": {
     "render": {
       "en": "Waste Disposal",
