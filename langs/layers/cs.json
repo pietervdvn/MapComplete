@@ -3694,10 +3694,10 @@
                 },
                 "question": "Je tato ulice osvětlená?"
             },
-            "width:carriageway": {
+            "width": {
                 "question": "Jaká je šířka vozovky této silnice (v metrech)?",
                 "questionHint": "Jedná se o měření od krajnice ke krajnici a to včetně šířky paralelních parkovacích pruhů",
-                "render": "Šířka vozovky této silnice je <strong>{width:carriageway}m</strong>"
+                "render": "Šířka vozovky této silnice je <strong>{width}m</strong>"
             }
         },
         "title": {

@@ -3976,10 +3976,10 @@
                 },
                 "question": "Is deze weg verlicht?"
             },
-            "width:carriageway": {
+            "width": {
                 "question": "Hoe breed is de rijbaan in deze straat (in meters)?",
                 "questionHint": "Dit is gemeten van stoepsteen tot stoepsteen, dus inclusief een parallelle parkeerstrook",
-                "render": "De breedte van deze rijbaan in deze straat is <strong>{width:carriageway}m</strong>"
+                "render": "De breedte van deze rijbaan in deze straat is <strong>{width}m</strong>"
             }
         },
         "title": {

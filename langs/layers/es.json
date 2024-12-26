@@ -3950,10 +3950,10 @@
                 },
                 "question": "¿Está iluminada esta calle?"
             },
-            "width:carriageway": {
+            "width": {
                 "question": "¿Cuál es el ancho de la calzada de esta carretera (en metros)?",
                 "questionHint": "Esto se mide de bordillo a bordillo e incluye el ancho de los carriles de aparcamiento paralelos",
-                "render": "El ancho de la calzada de esta carretera es de <strong>{width:carriageway}m</strong>"
+                "render": "El ancho de la calzada de esta carretera es de <strong>{width}m</strong>"
             }
         },
         "title": {

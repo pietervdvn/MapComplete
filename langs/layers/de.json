@@ -3958,10 +3958,10 @@
                 },
                 "question": "Ist diese Straße beleuchtet?"
             },
-            "width:carriageway": {
+            "width": {
                 "question": "Wie groß ist die Fahrbahnbreite dieser Straße (in Metern)?",
                 "questionHint": "Diese wird von Bordstein zu Bordstein gemessen und schließt daher die Breite von parallelen Parkspuren ein",
-                "render": "Die Fahrbahnbreite dieser Straße beträgt <strong>{width:carriageway}m</strong>"
+                "render": "Die Fahrbahnbreite dieser Straße beträgt <strong>{width}m</strong>"
             }
         },
         "title": {

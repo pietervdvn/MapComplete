@@ -2795,10 +2795,10 @@
                 },
                 "question": "Cette rue est-elle éclairée ?"
             },
-            "width:carriageway": {
+            "width": {
                 "question": "Quelle est la largeur de cette chaussée (en mètres) ?",
                 "questionHint": "Elle est mesurée d'une bordure à l'autre et inclut donc la largeur des voies de stationnement parallèles",
-                "render": "La largeur de cette chaussée est de <strong>{width:carriageway}m</strong>"
+                "render": "La largeur de cette chaussée est de <strong>{width}m</strong>"
             }
         },
         "title": {
