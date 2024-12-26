@@ -49,9 +49,13 @@
   function createVisualisation(specpart: Exclude<RenderingSpecification, string>): BaseUIElement {
     {
       try {
-        return specpart.func
+        const uiEl = specpart.func
           .constr(state, tags, specpart.args, feature, layer)
           ?.SetClass(specpart.style)
+        if (uiEl === undefined) {
+          console.error("Invalid special translation")
+        }
+        return uiEl
       } catch (e) {
         console.error(
           "Could not construct a special visualisation with specification",

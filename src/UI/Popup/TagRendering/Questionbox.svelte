@@ -12,7 +12,6 @@
   import Translations from "../../i18n/Translations.js"
   import { Utils } from "../../../Utils"
   import { onDestroy } from "svelte"
-  import TagRenderingQuestion from "./TagRenderingQuestion.svelte"
   import TagRenderingQuestionDynamic from "./TagRenderingQuestionDynamic.svelte"
 
   export let layer: LayerConfig
@@ -54,6 +53,7 @@
   let skippedQuestions = new UIEventSource<Set<string>>(new Set<string>())
   let layerDisabledForTheme = state.userRelatedState.getThemeDisabled(state.theme.id, layer.id)
   layerDisabledForTheme.addCallbackAndRunD((disabled) => {
+    console.log("Disabled questions are ", disabled)
     skippedQuestions.set(new Set(disabled.concat(Array.from(skippedQuestions.data))))
   })
   let questionboxElem: HTMLDivElement
