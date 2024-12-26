@@ -525,34 +525,37 @@
     },
     {
       "id": "optometrist_service",
+x²      "#": "Quite often, opticians also sell hearing aids and vice versa. They often also have a certified optometrist or audiologist",
       "condition": {
         "or": [
-          "shop=optician"
+          "shop=optician",
+          "shop=hearing_aid",
+          "shop=medical_supply"
         ]
       },
       "question": {
-        "en": "Is it possible to get an eye exam here by a professional optometrist?",
-        "nl": "Kan men hier een oogtest laten uitvoeren door een professionele optometrist?"
+        "en": "Are medical services available here?",
+        "nl": "Zijn hier medische services beschikbaar?"
       },
+      "multiAnswer": true,
       "mappings": [
         {
           "if": "healthcare=optometrist",
+          "ifnot": "not:healtcare=optometrist",
           "addExtraTags": [
             "not:healthcare=optometrist"
           ],
           "then": {
-            "en": "Offers eye exams by professional optometrists",
-            "nl": "Hier kan men een oogtest door een professionele optometrist laten uitvoeren"
+            "en": "This shop offers eye exams by certified optometrists",
+            "nl": "Hier kan men een oogtest door een erkende optometrist laten uitvoeren"
           }
         },
         {
-          "if": "not:healtcare=optometrist",
-          "addExtraTags": [
-            "healthcare=optometrist"
-          ],
+          "if": "healthcare=audiologist",
+          "ifnot": "not:healthcare=audiologist",
           "then": {
-            "en": "No certified eye exam possible here",
-            "nl": "Hier kan men geen oog-examen laten uitvoeren door een optometrist"
+            "en": "This shop offers hearing tests by a certified audiologist",
+            "nl": "HIer kan men een hoortest laten uitvoeren door een erkende audioloog"
           }
         }
       ]
