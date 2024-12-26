@@ -525,7 +525,7 @@
     },
     {
       "id": "optometrist_service",
-x²      "#": "Quite often, opticians also sell hearing aids and vice versa. They often also have a certified optometrist or audiologist",
+      "#": "Quite often, opticians also sell hearing aids and vice versa. They often also have a certified optometrist or audiologist",
       "condition": {
         "or": [
           "shop=optician",
