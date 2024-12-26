@@ -29,6 +29,7 @@
     html?.remove()
     uiElement?.Destroy()
   })
+
 </script>
 
 {#if isSvelte}
@@ -42,6 +43,6 @@
   {:else}
     <svelte:component this={svelteElem?._svelteComponent} {...svelteElem._props} />
   {/if}
-{:else}
+{:else if elem !== undefined}
   <span bind:this={elem} />
 {/if}

@@ -312,8 +312,8 @@ export default class NameSuggestionIndex {
             }
 
             const hasSpecial =
-                i.locationSet.include?.some((i) => i.endsWith(".geojson") || Array.isArray(i)) ||
-                i.locationSet.exclude?.some((i) => i.endsWith(".geojson") || Array.isArray(i))
+                i.locationSet.include?.some((i) => Array.isArray(i) || i.endsWith(".geojson")) ||
+                i.locationSet.exclude?.some((i) => Array.isArray(i) || i.endsWith(".geojson"))
             if (!hasSpecial) {
                 return false
             }

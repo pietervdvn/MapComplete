@@ -43,14 +43,13 @@ export class DeleteFlowState {
         console.log("Checking deleteability (internet?", useTheInternet, ")")
         const t = Translations.t.delete
         const id = this._id
-        const self = this
         if (!id.startsWith("node")) {
             this.canBeDeleted.setData(false)
             this.canBeDeletedReason.setData(t.isntAPoint)
             return
         }
 
-        // Does the currently logged in user have enough experience to delete this point?
+        // Does the currently logged-in user have enough experience to delete this point?
         const deletingPointsOfOtherAllowed = this._osmConnection.userDetails.map((ud) => {
             if (ud === undefined) {
                 return undefined
@@ -74,10 +73,10 @@ export class DeleteFlowState {
                     // Not yet downloaded
                     return null
                 }
-                const userId = self._osmConnection.userDetails.data.uid
+                const userId = this._osmConnection.userDetails.data.uid
                 return !previous.some((editor) => editor !== userId)
             },
-            [self._osmConnection.userDetails]
+            [this._osmConnection.userDetails]
         )
 
         // User allowed OR only edited by self?
@@ -96,14 +95,13 @@ export class DeleteFlowState {
 
                 if (allByMyself.data === null && useTheInternet) {
                     // We kickoff the download here as it hasn't yet been downloaded. Note that this is mapped onto 'all by myself' above
-                    const hist = this.objectDownloader
-                        .downloadHistory(id)
-                        .map((versions) =>
+                    UIEventSource.FromPromise(this.objectDownloader
+                        .downloadHistory(id))
+                        .mapD((versions) =>
                             versions.map((version) =>
                                 Number(version.tags["_last_edit:contributor:uid"])
                             )
-                        )
-                    hist.addCallbackAndRunD((hist) => previousEditors.setData(hist))
+                        ).addCallbackAndRunD((hist) => previousEditors.setData(hist))
                 }
 
                 if (allByMyself.data === true) {
