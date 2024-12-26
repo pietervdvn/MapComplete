@@ -9755,6 +9755,17 @@
                 },
                 "question": "Does this shop offer key cutting?"
             },
+            "optometrist_service": {
+                "mappings": {
+                    "0": {
+                        "then": "This shop offers eye exams by certified optometrists"
+                    },
+                    "1": {
+                        "then": "This shop offers hearing tests by a certified audiologist"
+                    }
+                },
+                "question": "Are medical services available here?"
+            },
             "organic": {
                 "mappings": {
                     "0": {

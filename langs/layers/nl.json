@@ -8338,6 +8338,17 @@
                     }
                 }
             },
+            "optometrist_service": {
+                "mappings": {
+                    "0": {
+                        "then": "Hier kan men een oogtest door een erkende optometrist laten uitvoeren"
+                    },
+                    "1": {
+                        "then": "HIer kan men een hoortest laten uitvoeren door een erkende audioloog"
+                    }
+                },
+                "question": "Zijn hier medische services beschikbaar?"
+            },
             "organic": {
                 "mappings": {
                     "0": {
