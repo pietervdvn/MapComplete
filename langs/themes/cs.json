@@ -488,6 +488,11 @@
                 "override": {
                     "=name": "Sportovní místa bez etymologických informací"
                 }
+            },
+            "8": {
+                "override": {
+                    "=name": "Parky bez etymologických informací"
+                }
             }
         },
         "shortDescription": "Jaký je původ toponyma?",
@@ -1414,5 +1419,9 @@
         "description": "Na této mapě najdete koše na odpadky ve vašem okolí. Pokud na této mapě odpadkový koš chybí, můžete jej přidat sami.",
         "shortDescription": "Mapa odpadkových košů",
         "title": "Odpadkové koše"
+    },
+    "insects": {
+        "title": "Hmyzí hotely",
+        "description": "Hmyzí hotely poskytují hmyzu úkryt."
     }
 }
