@@ -273,6 +273,9 @@
       "width": "8"
     }
   ],
+  "calculatedTags": [
+    "width:= ! ! (feat.properties['width:carriageway']) ? feat.properties['width:carriageway'] : feat.properties['width'] "
+  ],
   "tagRenderings": [
     "images",
     {
@@ -1289,16 +1292,16 @@
         ]
       },
       "render": {
-        "en": "The carriage width of this road is <strong>{width:carriageway}m</strong>",
-        "nl": "De breedte van deze rijbaan in deze straat is <strong>{width:carriageway}m</strong>",
-        "de": "Die Fahrbahnbreite dieser Straße beträgt <strong>{width:carriageway}m</strong>",
-        "fr": "La largeur de cette chaussée est de <strong>{width:carriageway}m</strong>",
-        "ca": "L'amplada dels carrils d'aquesta carretera és <strong>{width:carriageway}m</strong>",
-        "cs": "Šířka vozovky této silnice je <strong>{width:carriageway}m</strong>",
-        "es": "El ancho de la calzada de esta carretera es de <strong>{width:carriageway}m</strong>"
+        "en": "The carriage width of this road is <strong>{width}m</strong>",
+        "nl": "De breedte van deze rijbaan in deze straat is <strong>{width}m</strong>",
+        "de": "Die Fahrbahnbreite dieser Straße beträgt <strong>{width}m</strong>",
+        "fr": "La largeur de cette chaussée est de <strong>{width}m</strong>",
+        "ca": "L'amplada dels carrils d'aquesta carretera és <strong>{width}m</strong>",
+        "cs": "Šířka vozovky této silnice je <strong>{width}m</strong>",
+        "es": "El ancho de la calzada de esta carretera es de <strong>{width}m</strong>"
       },
       "freeform": {
-        "key": "width:carriageway",
+        "key": "width",
         "type": "distance",
         "helperArgs": [
           "20",
@@ -1314,7 +1317,7 @@
         "cs": "Jaká je šířka vozovky této silnice (v metrech)?",
         "es": "¿Cuál es el ancho de la calzada de esta carretera (en metros)?"
       },
-      "id": "width:carriageway",
+      "id": "width",
       "questionHint": {
         "en": "This is measured curb to curb and thus includes the width of parallell parking lanes",
         "nl": "Dit is gemeten van stoepsteen tot stoepsteen, dus inclusief een parallelle parkeerstrook",

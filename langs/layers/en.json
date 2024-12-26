@@ -4009,10 +4009,10 @@
                 },
                 "question": "Is this street lit?"
             },
-            "width:carriageway": {
+            "width": {
                 "question": "What is the carriage width of this road (in meters)?",
                 "questionHint": "This is measured curb to curb and thus includes the width of parallell parking lanes",
-                "render": "The carriage width of this road is <strong>{width:carriageway}m</strong>"
+                "render": "The carriage width of this road is <strong>{width}m</strong>"
             }
         },
         "title": {

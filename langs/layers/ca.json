@@ -2889,10 +2889,10 @@
                 },
                 "question": "Aquesta carretera està il·luminada?"
             },
-            "width:carriageway": {
+            "width": {
                 "question": "Quina és l'amplada dels carrils d'aquesta carretera (en metres)?",
                 "questionHint": "Això es mesura de vorera a vorera i, per tant, inclou l'amplada dels aparcaments en línia",
-                "render": "L'amplada dels carrils d'aquesta carretera és <strong>{width:carriageway}m</strong>"
+                "render": "L'amplada dels carrils d'aquesta carretera és <strong>{width}m</strong>"
             }
         },
         "title": {
