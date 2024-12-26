@@ -1600,6 +1600,7 @@
                     }
                 },
                 "question": "Van welk type is deze fietsparking?",
+                "questionHint": "Dit gaat over het voorwerp waarin je je fiets plaats en mee op slot zet",
                 "render": "Dit is een fietsparking van het type: {bicycle_parking}"
             },
             "Capacity": {
@@ -8324,6 +8325,17 @@
                         "then": "Deze winkel kopieert sleutels"
                     }
                 }
+            },
+            "optometrist_service": {
+                "mappings": {
+                    "0": {
+                        "then": "Hier kan men een oogtest door een erkende optometrist laten uitvoeren"
+                    },
+                    "1": {
+                        "then": "HIer kan men een hoortest laten uitvoeren door een erkende audioloog"
+                    }
+                },
+                "question": "Zijn hier medische services beschikbaar?"
             },
             "organic": {
                 "mappings": {

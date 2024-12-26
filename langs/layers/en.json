@@ -1636,6 +1636,7 @@
                     }
                 },
                 "question": "What is the type of this bicycle parking?",
+                "questionHint": "This is about the physical device one places their bicycle in and uses to lock",
                 "render": "This is a bicycle parking of the type: {bicycle_parking}"
             },
             "Capacity": {
@@ -9741,6 +9742,17 @@
                     }
                 },
                 "question": "Does this shop offer key cutting?"
+            },
+            "optometrist_service": {
+                "mappings": {
+                    "0": {
+                        "then": "This shop offers eye exams by certified optometrists"
+                    },
+                    "1": {
+                        "then": "This shop offers hearing tests by a certified audiologist"
+                    }
+                },
+                "question": "Are medical services available here?"
             },
             "organic": {
                 "mappings": {
