@@ -319,11 +319,33 @@
                     "mappings": {
                         "0": {
                             "then": "單車節點 <strong>{rcn_ref}</strong>"
+                        },
+                        "1": {
+                            "then": "計畫中的單車節點<strong>{proposed:rcn_ref}</strong>"
+                        }
+                    },
+                    "render": "單車節點"
+                }
+            },
+            "2": {
+                "override": {
+                    "name": "單車指示牌",
+                    "title": {
+                        "render": "單車指示牌"
+                    }
+                }
+            },
+            "3": {
+                "override": {
+                    "presets": {
+                        "0": {
+                            "title": "節點到節點連結的路徑標示"
                         }
                     }
                 }
             }
-        }
+        },
+        "title": "單車節點網路"
     },
     "cyclestreets": {
         "description": "單車街道是<b>機動車輛受限制，只允許單車通行</b>的道路。通常會有路標顯示特別的交通指標。單車街道通常在荷蘭、比利時看到，但德國與法國也有。 ",
@@ -402,10 +424,11 @@
         "title": "立面花園"
     },
     "food": {
-        "title": "餐廳與快餐店"
+        "title": "餐廳與快餐店",
+        "description": "餐廳與速食餐廳"
     },
     "ghostbikes": {
-        "description": "<b>幽靈單車</b>是用來紀念死於交通事故的單車騎士，在事發地點附近放置白色單車。<br/><br/>在這份地圖上面，你可以看到所有在開放街圖已知的幽靈單車。有缺漏的幽靈單車嗎？所有人都可以在這邊新增或是更新資訊-只有你有(免費)開放街圖帳號。",
+        "description": "<b>幽靈單車</b>是用來紀念死於交通事故的單車騎士，在事發地點附近放置白色單車。<br/><br/>在這份地圖上面，你可以看到所有在開放街圖已知的幽靈單車。有缺漏的幽靈單車嗎？所有人都可以在這邊新增或是更新資訊-只要你有(免費)開放街圖帳號。<p>在 Mastodon 上有 <a href='https://masto.bike/@ghostbikebot' target='_blank'>自動化帳號</a>會每個月貼出全世界的幽靈單車狀態</p>",
         "title": "幽靈單車"
     },
     "hackerspaces": {
@@ -718,5 +741,52 @@
         "description": "在這份地圖當中，你可以找到你附近的垃圾筒。如果地圖有遺漏垃圾筒，你可以自己加上去",
         "shortDescription": "垃圾筒的地圖",
         "title": "垃圾筒"
+    },
+    "fritures": {
+        "layers": {
+            "0": {
+                "override": {
+                    "filter+": {
+                        "0": {
+                            "options": {
+                                "0": {
+                                    "question": "沒有特定的用油偏好"
+                                },
+                                "1": {
+                                    "question": "只顯示採用植物油的店家"
+                                },
+                                "2": {
+                                    "question": "只顯示採用動物油的店家"
+                                }
+                            }
+                        }
+                    },
+                    "name": "薯條店"
+                }
+            }
+        },
+        "title": "薯條店",
+        "description": "在這份地圖，你會找到你最愛的薯條餐廳！"
+    },
+    "ghostsigns": {
+        "description": "在建築上顯示設施停止使用的地圖",
+        "layers": {
+            "2": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "這個藝術品是歷史上的宣傳品"
+                                },
+                                "1": {
+                                    "then": "這個藝術不是歷史上的宣傳品"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
