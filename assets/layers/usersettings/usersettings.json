@@ -935,7 +935,7 @@
         "es": "Al realizar cambios, ¿se debe dar una indicación aproximada de qué tan lejos estabas del objeto?"
       },
       "questionHint": {
-        "en": "If you make a change to one or more objects and you enabled your location, a rough indication of where you made will be saved: it is indicated if you were closer then 25m, 500m, 5km or further away then 5km. This helps mappers understand your context when making changes, but gives an indication of where you were at this time. ",
+        "en": "If you make a change to one or more objects and you enabled your location, a rough indication of where you made will be saved: it is indicated if you were closer then 25m, 500m, 5km or further away than 5km. This helps mappers understand your context when making changes, but gives an indication of where you were at this time.",
         "de": "Wenn du eine Änderung an einem oder mehreren Objekten vornimmst und deinen Standort aktivierst, wird eine ungefähre Angabe darüber gespeichert, wo du dich befunden hast: Es wird angezeigt, ob du näher als 25m, 500m, 5km oder weiter als 5km entfernt warst. Das hilft den Kartierern, deinen Kontext zu verstehen, wenn du Änderungen vornimmst, gibt aber auch einen Hinweis darauf, wo du zu diesem Zeitpunkt warst. ",
         "nl": "Wanneer je een wijziging maakt aan één of meer interessepunten en als MapComplete toont waar je bent, dan kan opgeslaan worden hoever je je ongeveer van deze objecten bevindt. Er wordt aangeduid of je dichter dan 25m, 500m, 5km of verder dan 5km was. Dit helpt om andere bijdragers te begrijpen hoe je je bijdragen deed, maar geeft natuurlijk ook aan waar je op dat moment was. ",
         "hu": "Ha módosítasz egy objektumot, és engedélyezed a helymeghatározást, akkor a rendszer elmenti a körülbelüli helyedet: jelzi, hogy 25 méteren, 500 méteren vagy 5 kilométeren belül vagy 5 km-nél távolabb voltál. A többi térképész így jobban látja, milyen körülmények között szerkesztetted a térképet, de egyúttal azt is jelzi, hogy hol voltál ebben az időpontban. ",
@@ -947,7 +947,7 @@
           "if": "mapcomplete-more_privacy=yes",
           "icon": "./assets/svg/eye.svg",
           "then": {
-            "en": "When making changes to OpenStreetMap, do not indicate how far away you were from the changed objects.",
+            "en": "When making changes to OpenStreetMap, do not indicate how far away I was from the changed objects.",
             "de": "Wenn du Änderungen an OpenStreetMap vornimmst, gibst du nicht an, wie weit du von den geänderten Objekten entfernt warst.",
             "nl": "Geef niet aan hoever je je van de gewijzigde objecten bevindt wanneer je wijzigingen maakt met MapComplete.",
             "cs": "Při provádění změn v OpenStreetMap neuvádějte, jak daleko jste byli od změněných objektů.",
@@ -1043,7 +1043,7 @@
           "if": "mapcomplete-preference-search-history=sync",
           "alsoShowIf": "mapcomplete-preference-search-history=",
           "then": {
-            "en": "Save the locations you search for and inspect and sync them via openstreetmap.org. OpenStreetMap and all apps you use can see this history",
+            "en": "Save the locations I search for and inspect and sync them via openstreetmap.org. OpenStreetMap and all apps that I give access to my OSM account can see this history",
             "de": "Gesuchte und überprüfte Orte speichern und über openstreetmap.org synchronisieren. OpenStreetMap und alle verwendeten Programme können diesen Verlauf sehen",
             "hu": "Az openstreetmap.org-on legyenek elmentve az általam megkeresett és szerkesztett helyek. Ezeket az előzményeket az OpenStreetMap és az összes hozzá kapcsolódó alkalmazás láthatja",
             "uk": "Зберігайте місця, які ви шукаєте, переглядайте та синхронізуйте їх через openstreetmap.org. OpenStreetMap та всі програми, якими ви користуєтесь, можуть бачити цю історію",
@@ -1063,7 +1063,7 @@
         {
           "if": "mapcomplete-preference-search-history=no",
           "then": {
-            "en": "Don't save the locations you search for and inspect ",
+            "en": "Don't save the locations I search for and inspect",
             "de": "Gesuchte und überprüfte Orte nicht auf meinem Gerät speichern ",
             "hu": "Ne legyenek elmentve az általam megkeresett és szerkesztett helyek ",
             "uk": "Не зберігайте місця, які ви шукаєте та перевіряєте ",

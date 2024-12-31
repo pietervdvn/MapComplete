@@ -6,6 +6,7 @@ import { LocalStorageSource } from "../Web/LocalStorageSource"
 import { AuthConfig } from "./AuthConfig"
 import Constants from "../../Models/Constants"
 import { AndroidPolyfill } from "../Web/AndroidPolyfill"
+import { Feature, Point } from "geojson"
 
 interface OsmUserInfo {
     id: number
@@ -40,6 +41,39 @@ export default class UserDetails {
 }
 
 export type OsmServiceState = "online" | "readonly" | "offline" | "unknown" | "unreachable"
+
+interface CapabilityResult {
+    version: "0.6" | string
+    generator: "OpenStreetMap server" | string
+    copyright: "OpenStreetMap and contributors" | string
+    attribution: "http://www.openstreetmap.org/copyright" | string
+    license: "http://opendatacommons.org/licenses/odbl/1-0/" | string
+    api: {
+        version: { minimum: "0.6"; maximum: "0.6" }
+        area: { maximum: 0.25 | number }
+        note_area: { maximum: 25 | number }
+        tracepoints: { per_page: 5000 | number }
+        waynodes: { maximum: 2000 | number }
+        relationmembers: { maximum: 32000 | number }
+        changesets: {
+            maximum_elements: 10000 | number
+            default_query_limit: 100 | number
+            maximum_query_limit: 100 | number
+        }
+        notes: { default_query_limit: 100 | number; maximum_query_limit: 10000 | number }
+        timeout: { seconds: 300 | number }
+        status: {
+            database: OsmServiceState
+            api: OsmServiceState
+            gpx: OsmServiceState
+        }
+    }
+    policy: {
+        imagery: {
+            blacklist: { regex: string }[]
+        }
+    }
+}
 
 export class OsmConnection {
     public auth: osmAuth
@@ -424,6 +458,10 @@ export class OsmConnection {
         return id
     }
 
+    public async getNote(id: number): Promise<Feature<Point>> {
+        return JSON.parse(await this.get("notes/" + id + ".json"))
+    }
+
     public static GpxTrackVisibility = ["private", "public", "trackable", "identifiable"] as const
 
     public async uploadGpxTrack(
@@ -466,7 +504,7 @@ export class OsmConnection {
                 (options.filename ?? "gpx_track_mapcomplete_" + new Date().toISOString()) +
                 "\"\r\nContent-Type: application/gpx+xml",
         }
-
+        user
         const boundary = "987654"
 
         let body = ""
@@ -608,20 +646,26 @@ export class OsmConnection {
         return parsed
     }
 
-    private async FetchCapabilities(): Promise<{ api: OsmServiceState; gpx: OsmServiceState }> {
+    private async FetchCapabilities(): Promise<{
+        api: OsmServiceState
+        gpx: OsmServiceState
+        database: OsmServiceState
+    }> {
         if (Utils.runningFromConsole) {
-            return { api: "online", gpx: "online" }
+            return { api: "online", gpx: "online", database: "online" }
         }
-        const result = await Utils.downloadAdvanced(this.Backend() + "/api/0.6/capabilities")
-        if (result["content"] === undefined) {
-            console.log("Something went wrong:", result)
-            return { api: "unreachable", gpx: "unreachable" }
+        try {
+            const result = await Utils.downloadJson<CapabilityResult>(
+                this.Backend() + "/api/0.6/capabilities.json"
+            )
+            if (result?.api?.status === undefined) {
+                console.log("Something went wrong:", result)
+                return { api: "unreachable", gpx: "unreachable", database: "unreachable" }
+            }
+            return result.api.status
+        } catch (e) {
+            console.error("Could not fetch capabilities")
+            return { api: "offline", gpx: "offline", database: "online" }
         }
-        const xmlRaw = result["content"]
-        const parsed = new DOMParser().parseFromString(xmlRaw, "text/xml")
-        const statusEl = parsed.getElementsByTagName("status")[0]
-        const api = <OsmServiceState>statusEl.getAttribute("api")
-        const gpx = <OsmServiceState>statusEl.getAttribute("gpx")
-        return { api, gpx }
     }
 }

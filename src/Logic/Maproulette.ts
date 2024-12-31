@@ -1,9 +1,24 @@
 import Constants from "../Models/Constants"
+import { SpecialVisualizationState } from "../UI/SpecialVisualization"
+
 export interface MaprouletteTask {
     name: string
     description: string
     instruction: string
 }
+export const maprouletteStatus = [
+    "Open",
+    "Fixed",
+    "False_positive",
+    "Skipped",
+    "Deleted",
+    "Already fixed",
+    "Too_Hard",
+    "Disabled",
+] as const
+
+export type MaprouletteStatus = (typeof maprouletteStatus)[number]
+
 export default class Maproulette {
     public static readonly defaultEndpoint = "https://maproulette.org/api/v2"
 
@@ -16,16 +31,6 @@ export default class Maproulette {
     public static readonly STATUS_TOO_HARD = 6
     public static readonly STATUS_DISABLED = 9
 
-    public static readonly STATUS_MEANING = {
-        0: "Open",
-        1: "Fixed",
-        2: "False_positive",
-        3: "Skipped",
-        4: "Deleted",
-        5: "Already fixed",
-        6: "Too_Hard",
-        9: "Disabled",
-    }
     public static singleton = new Maproulette()
     /*
      * The API endpoint to use
@@ -59,12 +64,11 @@ export default class Maproulette {
         if (code === "Created") {
             return Maproulette.STATUS_OPEN
         }
-        for (let i = 0; i < 9; i++) {
-            if (Maproulette.STATUS_MEANING["" + i] === code) {
-                return i
-            }
+        const i = maprouletteStatus.indexOf(<any>code)
+        if (i < 0) {
+            return undefined
         }
-        return undefined
+        return i
     }
 
     /**
@@ -78,6 +82,7 @@ export default class Maproulette {
     async closeTask(
         taskId: number,
         status = Maproulette.STATUS_FIXED,
+        state: SpecialVisualizationState,
         options?: {
             comment?: string
             tags?: string
@@ -86,13 +91,16 @@ export default class Maproulette {
         }
     ): Promise<void> {
         console.log("Maproulette: setting", `${this.endpoint}/task/${taskId}/${status}`, options)
+        options ??= {}
+        const userdetails = state.osmConnection.userDetails.data
+        options.tags = `MapComplete MapComplete:${state.theme.id}; userid: ${userdetails?.uid}; username: ${userdetails?.name}`
         const response = await fetch(`${this.endpoint}/task/${taskId}/${status}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
                 apiKey: this.apiKey,
             },
-            body: options !== undefined ? JSON.stringify(options) : undefined,
+            body: JSON.stringify(options),
         })
         if (response.status !== 204) {
             console.log(`Failed to close task: ${response.status}`)

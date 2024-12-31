@@ -19,7 +19,6 @@ export interface PointImportFlowArguments extends ImportFlowArguments {
 
 export class PointImportFlowState extends ImportFlow<PointImportFlowArguments> {
     public readonly startCoordinate: [number, number]
-    private readonly _originalFeature: Feature<Point>
 
     constructor(
         state: SpecialVisualizationState,
@@ -29,7 +28,6 @@ export class PointImportFlowState extends ImportFlow<PointImportFlowArguments> {
         originalFeatureTags: UIEventSource<Record<string, string>>
     ) {
         super(state, args, tagsToApply, originalFeatureTags)
-        this._originalFeature = originalFeature
         this.startCoordinate = GeoOperations.centerpointCoordinates(originalFeature)
     }
 
@@ -80,7 +78,7 @@ export class PointImportFlowState extends ImportFlow<PointImportFlowArguments> {
             originalFeatureTags.ping()
         }
 
-        let maproulette_id = originalFeatureTags.data[this.args.maproulette_id]
+        const maproulette_id = originalFeatureTags.data[this.args.maproulette_id]
         if (maproulette_id !== undefined) {
             if (this.state.featureSwitchIsTesting.data) {
                 console.log(
@@ -90,7 +88,11 @@ export class PointImportFlowState extends ImportFlow<PointImportFlowArguments> {
                 )
             } else {
                 console.log("Marking maproulette task as fixed")
-                await Maproulette.singleton.closeTask(Number(maproulette_id))
+                await Maproulette.singleton.closeTask(
+                    Number(maproulette_id),
+                    Maproulette.STATUS_FIXED,
+                    this.state
+                )
                 originalFeatureTags.data["mr_taskStatus"] = "Fixed"
                 originalFeatureTags.ping()
             }

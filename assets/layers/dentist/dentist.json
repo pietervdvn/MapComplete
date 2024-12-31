@@ -61,7 +61,8 @@
               "en": "{name}",
               "de": "{name}",
               "ca": "{name}",
-              "es": "{name}"
+              "es": "{name}",
+              "nl": "{name}"
             }
           }
         ]

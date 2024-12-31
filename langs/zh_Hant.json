@@ -159,7 +159,7 @@
             "stillLoading": "目前仍在載入資料，請稍後再來新增圖徵。",
             "title": "新增新的圖徵",
             "wrongType": "這個圖徵並非節點也不是路徑，因此無法匯入",
-            "zoomInFurther": "放大來新增新的圖徵",
+            "zoomInFurther": "如果你想要新增新的圖徵你需要先放大",
             "zoomInMore": "再放大來匯入這一圖徵"
         },
         "apply_button": {
@@ -175,6 +175,7 @@
             "donate": "財務上支援 MapComplete",
             "editId": "開啟開放街圖線上編輯器",
             "editJosm": "採用 JOSM 編輯",
+            "emailCreators": "寄 email 給創作者",
             "followOnMastodon": "在 Mastodon 追蹤 MapComplete",
             "gotoSourceCode": "檢視原始碼",
             "iconAttribution": {
@@ -182,6 +183,7 @@
             },
             "josmNotOpened": "無法連到 JOSM，請確認 JOSM 已經開啟並且啟用遠端控制選項",
             "josmOpened": "已經開啟 JOSM",
+            "madeBy": "由<b>{author}</b>製作",
             "mapContributionsBy": "目前檢視的資料由 {contributors} 貢獻編輯",
             "mapContributionsByAndHidden": "目前顯到的資料是由 {contributors} 和其他 {hiddenCount} 位貢獻者編輯貢獻",
             "mapillaryHelp": "線上服務 <b>Mapillary</b> 能夠以開放授權提供收集到的街景照片。貢獻者能夠採用 Mapillary 照片來改進開放街圖",
@@ -189,11 +191,14 @@
             "openMapillary": "開啟 Mapillary",
             "openOsmcha": "請見 {theme} 的最新編輯",
             "openOsmchaLastWeek": "檢視最近 7 天的編輯",
+            "openPanoramax": "在這邊開啟 Panoramax",
             "openThemeDocumentation": "開啟專題地圖 {name} 的文件",
             "seeOnMapillary": "在 Mapillary 觀看這張影像",
             "themeBy": "由 {author} 維護主題",
             "title": "版權與署名",
-            "translatedBy": "MapComplete 由 {contributors} 翻譯，而且還有 <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} 更多貢獻者</a>"
+            "translatedBy": "MapComplete 由 {contributors} 翻譯，而且還有 <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} 更多貢獻者</a>",
+            "panoramaxHelp": "<b>Panoramax</b> 是收集街景照片的線上服務，並且以自由授權釋出。貢獻者能夠使用這些照片來改進開放街圖",
+            "panoramaxLicenseCCBYSA": "你的圖片會以 CC-BY-SA 釋出 - 每個人都能夠在提及你名字的情形下再利用你的圖片"
         },
         "back": "返回",
         "backToIndex": "回到所有主題地圖的總覽頁面",
@@ -236,7 +241,8 @@
             },
             "title": "下載",
             "toMuch": "有很多圖徵可以下載了",
-            "uploadGpx": "上傳軌跡到開放街圖"
+            "uploadGpx": "上傳軌跡到開放街圖",
+            "downloadImage": "下載圖片"
         },
         "enableGeolocationForSafari": "你沒有看到要求地理位置權限的跳出視窗？",
         "enableGeolocationForSafariLink": "學習如何在設定當中啟用地理位置權限",
@@ -246,7 +252,8 @@
         "examples": "例子",
         "filterPanel": {
             "disableAll": "關閉所有",
-            "enableAll": "啟用所有"
+            "enableAll": "啟用所有",
+            "allTypes": "所有類型"
         },
         "geopermissionDenied": "使用地理位置要求已經被拒絕",
         "histogram": {
@@ -258,7 +265,8 @@
             "jumpToLocation": "到你目前的位置",
             "menu": "選單",
             "zoomIn": "放大",
-            "zoomOut": "縮小"
+            "zoomOut": "縮小",
+            "locationNotAvailable": "無法取得 GPS 位置，裝置有取得位置資訊還是在隧道內？"
         },
         "layerSelection": {
             "title": "選擇圖層",
@@ -279,8 +287,13 @@
         "logout": "登出",
         "mappingsAreHidden": "有些選項已經隱藏，搜尋來顯示更多選項。",
         "menu": {
+            "aboutCurrentThemeTitle": "關於地圖",
             "aboutMapComplete": "關於 MapComplete",
-            "filter": "篩選資料"
+            "filter": "篩選資料",
+            "moreUtilsTitle": "探索更多",
+            "openHereDifferentApp": "在其他應用程式開啟目前位置",
+            "showIntroduction": "顯示指引",
+            "title": "選單"
         },
         "morescreen": {
             "createYourOwnTheme": "從零開始建立你的 MapComplete 主題",
@@ -346,18 +359,39 @@
             "skippedMultiple": "你跳過 {skipped} 問題",
             "skippedOne": "你跳過一個問題"
         },
+        "questions": {
+            "disable": "不要再問這個問題",
+            "disabledIntro": "你關閉一些類型的問題，要再次啟用問題，請在這邊點一下",
+            "disabledTitle": "關閉問題",
+            "enable": "針對所有問題啟用",
+            "noneDisabled": "如果你沒有對特定問題有興趣的話，請關閉。要關閉問題，請按右上角的三個點然後選擇'關閉'"
+        },
         "removeLocationHistory": "刪除位置歷史",
         "retry": "重試",
         "returnToTheMap": "回到地圖",
         "save": "儲存",
         "screenToSmall": "在新視窗中開啟 <i>{theme}</i>",
         "search": {
-            "error": "有狀況發生了…",
-            "nothing": "沒有找到…",
+            "error": "有狀況發生了。",
+            "nothing": "沒有找到。",
+            "recents": "最近看到的地方",
             "search": "搜尋地點",
-            "searching": "搜尋中…"
+            "searching": "搜尋中…",
+            "editSearchSyncSettings": "編輯同步設定",
+            "editThemeSync": "編輯同步設定",
+            "instructions": "使用搜尋欄位來搜尋位置、篩選或是其他主題地圖",
+            "locations": "位置",
+            "nMoreFilters": "{n} 更多",
+            "nothingFor": "尋找 {term} 沒有結果",
+            "otherMaps": "其他地圖",
+            "pickFilter": "選擇篩選",
+            "recentThemes": "最近觀看的地圖",
+            "activeFilters": "啟用篩選",
+            "clearFilters": "清除篩選",
+            "deleteSearchHistory": "刪除位置歷史",
+            "deleteThemeHistory": "刪除先前觀看的主題"
         },
-        "searchAnswer": "搜尋選項…",
+        "searchAnswer": "搜尋選項",
         "seeIndex": "查看所有專題地圖的概覽",
         "share": "分享",
         "sharescreen": {
@@ -485,7 +519,8 @@
             "readMore": "閱讀剩下的條目內容",
             "searchToShort": "你的搜尋檢索太短了，請輸入長一點的文字",
             "searchWikidata": "在 Wikidata 搜尋"
-        }
+        },
+        "clearPendingChanges": "清除待處理的變動"
     },
     "hotkeyDocumentation": {
         "action": "行動",
@@ -510,7 +545,7 @@
         "translationMode": "啟用翻譯模組的開關"
     },
     "image": {
-        "addPicture": "新增圖片",
+        "addPicture": "照相",
         "doDelete": "移除圖片",
         "isDeleted": "已刪除",
         "nearby": {
@@ -521,9 +556,30 @@
             "seeNearby": "瀏覽與連結附近圖片",
             "title": "附近的街景影像"
         },
+        "panoramax": {
+            "deletionRequested": "報告已經送出，管理員不久會觀看",
+            "freeform": "還有其他相關資訊嗎？",
+            "otherFreeform": "請指明為何需要移除這一圖片：",
+            "placeholder": "請解釋為何這圖片需要刪除",
+            "report": {
+                "copyright": "圖片內含有版權內容",
+                "inappropriate": "這圖片不洽當(有裸露、仇恨內容或是並非街景)",
+                "other": "如果是其他原因請指明",
+                "privacy": "圖片顯示私人產權"
+            },
+            "requestDeletion": "請求刪除圖片",
+            "title": "為什麼要永久刪除圖片？"
+        },
         "pleaseLogin": "請登入以新增圖片",
+        "processing": "伺服器正在處理你的圖片",
         "respectPrivacy": "請別照人像或是車牌，不要上傳 Google 地圖、Google 街景或其他受版權保護的資料來源。",
+        "selectFile": "從你的裝置選取圖片",
         "toBig": "{actual_size} 因此照片太大，請使用最大 {max_size} 的照片",
+        "unlink": {
+            "button": "解除連結圖片",
+            "explanation": "圖片解除連結之後，這個圖片不會與這個物件一同顯示。但仍會在附近圖片或其他物件時顯示。",
+            "title": "解除連結這一圖片？"
+        },
         "upload": {
             "failReasons": "你也許已經失去網路連線",
             "failReasonsAdvanced": "另一個方式，請確認瀏覽器與外掛沒有擋掉第三方 API。",
@@ -533,10 +589,11 @@
                 "someFailed": "抱歉，我們無法上傳 {count} 影像",
                 "uploading": "{count} 影像已經上傳…"
             },
+            "noBlur": "圖片不會模糊化，請不要照人",
             "one": {
                 "done": "你的影像已經成功上傳，謝謝你！",
                 "failed": "抱歉，我們無法上傳你的影像",
-                "retrying": "你的影像再次上傳 …",
+                "retrying": "再次上傳你的影像中 …",
                 "uploading": "你的影像已經上傳了…"
             }
         },
@@ -558,6 +615,9 @@
         "logIn": "登入來看其他你先前查看的主題",
         "title": "MapComplete"
     },
+    "inspector": {
+        "menu": "檢核貢獻者"
+    },
     "move": {
         "cancel": "選擇不同的原因",
         "cannotBeMoved": "這個圖徵無法移動。",
@@ -575,7 +635,8 @@
         "pointIsMoved": "這個點已經被移動了",
         "reasons": {
             "reasonInaccurate": "位置不準確，誤差幾公尺",
-            "reasonRelocation": "你的物件已經移動到完全不同的位置"
+            "reasonRelocation": "你的物件已經移動到完全不同的位置",
+            "reasonSnapTo": "這應該移到{name}"
         },
         "zoomInFurther": "放更大來確認移動"
     },
@@ -630,6 +691,11 @@
         "querying": "檢索 plantnet.org 上的 {length} 圖片",
         "takeImages": "拍攝樹木照片來自動偵測樹木類型",
         "tryAgain": "選擇不同物種"
+    },
+    "preset_type": {
+        "question": "這個物件屬於什麼類型？",
+        "typeDescription": "這是 <b>{title}</b>. <div class='subtle'>{description}</div>",
+        "typeTitle": "這是 <b>{title}</b>"
     },
     "privacy": {
         "editingIntro": "當你對地圖變動時，這些變動會存在開放街圖並且是公開給所有人。採用 MapComplete 的編輯變動包括以下資料：",
@@ -692,6 +758,14 @@
     "translations": {
         "activateButton": "協助翻譯 MapComplete",
         "missing": "{count} 未翻譯字串"
+    },
+    "unknown": {
+        "clear": "清除答案",
+        "keep": "保留答案",
+        "markUnknown": "標示為未知",
+        "removedKeys": "下列鍵會被移除：",
+        "title": "要標記為未知嗎？",
+        "explanation": "如果答案不正確但實際數值不清楚的話，則清除這一些資訊。不會清除其他資訊。"
     },
     "userinfo": {
         "notLoggedIn": "你已經登出了"
@@ -765,12 +839,17 @@
         "tooLong": "文字太長了，最多允許 255 字元，你現在還有 {count} 字元。",
         "url": {
             "description": "連接到網站",
-            "feedback": "這不是有效的網址"
+            "feedback": "這不是有效的網址",
+            "aggregator": "{host} 是第三方網站，如果可能請搜尋官方網站。",
+            "spamSite": "{host} 被視為低品質網站，並不被允許使用。"
         },
         "wikidata": {
             "description": "Wikidata 編號",
             "empty": "請輸入一些 Wikidata 項目",
             "startsWithQ": "維基數據編號以 Q 開頭後面接數字"
+        },
+        "regex": {
+            "description": "正規表示式"
         }
     }
 }

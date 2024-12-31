@@ -159,7 +159,7 @@
             "stillLoading": "Az adatok betöltése folyamatban van. Kérjük, várj egy kicsit mielőtt felviszel egy új objektumot.",
             "title": "Új objektum felvétele",
             "wrongType": "Ez az elem nem pont vagy vonal, ezért nem importálható",
-            "zoomInFurther": "Objektum felvételéhez közelíts jobban",
+            "zoomInFurther": "Objektum felvételéhez tovább kell közelítened a térképet",
             "zoomInMore": "Nagyíts tovább az elem importálásához"
         },
         "apply_button": {
@@ -379,11 +379,11 @@
             "deleteThemeHistory": "Korábban megtekintett tematikus térképek törlése",
             "editSearchSyncSettings": "Szinkronizálási beállítások törlése",
             "editThemeSync": "Szinkronizálási beállítások szerkesztése",
-            "error": "Hiba történt…",
+            "error": "Hiba történt.",
             "instructions": "Helyek, szűrők vagy más tematikus térképek kereséséhez használja a fenti keresősávot",
             "locations": "Helyek",
             "nMoreFilters": "{n} további",
-            "nothing": "Nincs találat…",
+            "nothing": "Nincs találat.",
             "nothingFor": "Nem található semmi erre a kifejezésre: {term}",
             "otherMaps": "Más térképek",
             "pickFilter": "Szűrő bekapcsolása",
@@ -392,7 +392,7 @@
             "search": "Helyszín keresése",
             "searching": "Keresés…"
         },
-        "searchAnswer": "Beállítás keresése…",
+        "searchAnswer": "Beállítás keresése",
         "seeIndex": "Az összes tematikus térkép áttekintése",
         "share": "Megosztás",
         "sharescreen": {
@@ -593,8 +593,8 @@
             "one": {
                 "done": "Kép sikeresen feltöltve. Köszönjük!",
                 "failed": "Sajnos nem sikerült feltöltenünk a képed",
-                "retrying": "A kép feltöltése újból folyamatban van…",
-                "uploading": "Kép feltöltése…"
+                "retrying": "Kép feltöltésének újbóli megpróbálása…",
+                "uploading": "Kép feltöltése folyamatban…"
             }
         },
         "uploadFailed": "Nem sikerült feltölteni a képet. Van-e internetkapcsolatod, és engedélyezted-e a harmadik féltől származó API-kat? A Brave böngésző vagy a uMatrix bővítmény blokkolhatja őket."
@@ -614,6 +614,9 @@
         "learnMore": "További tudnivalók",
         "logIn": "A korábban megnézett tematikus térképek megtekintéséhez be kell jelentkezned",
         "title": "MapComplete"
+    },
+    "inspector": {
+        "menu": "Közreműködő megvizsgálása"
     },
     "move": {
         "cancel": "Válassz másik okot",

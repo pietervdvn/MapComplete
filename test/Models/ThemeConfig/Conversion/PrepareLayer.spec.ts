@@ -128,7 +128,7 @@ describe("RewriteSpecial", function () {
         expect(r).toEqual({
             id: "uk_addresses_import_button",
             render: {
-                "*": "{import_button(address,urpn_count=$urpn_count;ref:GB:uprn=$ref:GB:uprn$,Add this address,./assets/themes/uk_addresses/housenumber_add.svg,,,,)}",
+                "*": "{import_button(address,urpn_count=$urpn_count;ref:GB:uprn=$ref:GB:uprn$,Add this address,./assets/themes/uk_addresses/housenumber_add.svg,,,,,)}",
             },
         })
     })

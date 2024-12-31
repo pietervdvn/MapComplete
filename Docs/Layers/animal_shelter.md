@@ -2,7 +2,7 @@
 
 # animal_shelter
 
-An animal shelter is a facility where animals in trouble are brought and facility's staff (volunteers or not) feeds them and cares of them, rehabilitating and healing them if necessary. This definition includes kennels for abandoned dogs, catteries for abandoned cats, shelters for other abandoned pets and wildlife recovery centres. 
+An animal shelter is a facility where animals in trouble are brought and facility's staff (volunteers or not) feeds them and cares of them, rehabilitating and healing them if necessary. This definition includes kennels for abandoned dogs, catteries for abandoned cats, shelters for other abandoned pets and wildlife recovery centres.
 
  - This layer is shown at zoomlevel **0** and higher
 

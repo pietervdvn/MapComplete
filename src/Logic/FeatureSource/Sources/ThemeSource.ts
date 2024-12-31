@@ -24,8 +24,6 @@ export default class ThemeSource extends FeatureSourceMerger {
      */
     public readonly isLoading: Store<boolean>
 
-    private readonly supportsForceDownload: UpdatableFeatureSource[]
-
     public static readonly fromCacheZoomLevel = 15
 
     /**
@@ -44,8 +42,6 @@ export default class ThemeSource extends FeatureSourceMerger {
         mvtAvailableLayers: Set<string>,
         fullNodeDatabaseSource?: FullNodeDatabaseSource
     ) {
-        const supportsForceDownload: UpdatableFeatureSource[] = []
-
         const { bounds, zoom } = mapProperties
         // remove all 'special' layers
         layers = layers.filter((layer) => layer.source !== null && layer.source !== undefined)
@@ -95,7 +91,6 @@ export default class ThemeSource extends FeatureSourceMerger {
             )
             overpassSource = ThemeSource.setupOverpass(osmLayers, bounds, zoom, featureSwitches)
             nonMvtSources.push(overpassSource)
-            supportsForceDownload.push(overpassSource)
         }
 
         function setIsLoading() {
@@ -110,7 +105,6 @@ export default class ThemeSource extends FeatureSourceMerger {
             ThemeSource.setupGeojsonSource(l, mapProperties, isDisplayed(l.id))
         )
 
-        const downloadAllBounds: UIEventSource<BBox> = new UIEventSource<BBox>(undefined)
         const downloadAll = new OverpassFeatureSource(
             {
                 layers: layers.filter((l) => l.isNormal()),
@@ -123,6 +117,7 @@ export default class ThemeSource extends FeatureSourceMerger {
             },
             {
                 ignoreZoom: true,
+                isActive: new ImmutableStore(false),
             }
         )
 
@@ -135,13 +130,8 @@ export default class ThemeSource extends FeatureSourceMerger {
         )
 
         this.isLoading = isLoading
-        supportsForceDownload.push(...geojsonSources)
-        supportsForceDownload.push(...mvtSources) // Non-mvt sources are handled by overpass
-
-        this._mapBounds = mapProperties.bounds
         this._downloadAll = downloadAll
-
-        this.supportsForceDownload = supportsForceDownload
+        this._mapBounds = mapProperties.bounds
     }
 
     private static setupMvtSource(

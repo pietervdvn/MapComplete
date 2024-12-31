@@ -128,17 +128,20 @@
 
   {#if $unknownImages.length > 0}
     {#if readonly}
-      <div class="w-full overflow-x-auto">
-        <div class="flex h-32 w-max gap-x-2">
-          {#each $unknownImages as image (image)}
+      <div
+        class="flex w-full space-x-2 overflow-x-auto border border-gray-600 p-1"
+        style="scroll-snap-type: x proximity; border: 1px solid black"
+      >
+        {#each $unknownImages as image (image)}
+          <div class="relative flex w-fit items-center bg-gray-200">
             <AttributedImage
               {state}
-              imgClass="h-32 w-max shrink-0"
-              image={{ url: image }}
+              imgClass="h-32 shrink-0"
+              image={{ url: image, id: image }}
               previewedImage={state.previewedImage}
             />
-          {/each}
-        </div>
+          </div>
+        {/each}
       </div>
     {:else}
       {#each $unknownImages as image (image)}

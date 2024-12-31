@@ -41,14 +41,14 @@
     zoom,
     location: new UIEventSource<{ lon: number; lat: number }>({ lat: lat.data, lon: lon.data }),
   })
-  maplibremap.location.stabilized(500).addCallbackAndRunD(l => {
+  maplibremap.location.stabilized(500).addCallbackAndRunD((l) => {
     lat.set(l.lat)
     lon.set(l.lon)
   })
 
   let allLayers = HistoryUtils.personalTheme.layers
-  let layersNoFixme = allLayers.filter(l => l.id !== "fixme")
-  let fixme = allLayers.find(l => l.id === "fixme")
+  let layersNoFixme = allLayers.filter((l) => l.id !== "fixme")
+  let fixme = allLayers.find((l) => l.id === "fixme")
   let featuresStore = new UIEventSource<Feature[]>([])
   let features = new StaticFeatureSource(featuresStore)
   ShowDataLayer.showMultipleLayers(map, features, [...layersNoFixme, fixme], {
@@ -62,19 +62,19 @@
   })
 
   let osmConnection = new OsmConnection()
-  let inspectedContributors: UIEventSource<{
-    name: string,
-    visitedTime: string,
-    label: string
-  }[]> = UIEventSource.asObject(
-    osmConnection.getPreference("spied-upon-users"), [])
+  let inspectedContributors: UIEventSource<
+    {
+      name: string
+      visitedTime: string
+      label: string
+    }[]
+  > = UIEventSource.asObject(osmConnection.getPreference("spied-upon-users"), [])
 
   async function load() {
     const user = username.data
     if (user.indexOf(";") < 0) {
-
       const inspectedData = inspectedContributors.data
-      const previousEntry = inspectedData.find(e => e.name === user)
+      const previousEntry = inspectedData.find((e) => e.name === user)
       if (previousEntry) {
         previousEntry.visitedTime = new Date().toISOString()
       } else {
@@ -89,7 +89,11 @@
 
     step.setData("loading")
     featuresStore.set([])
-    const overpass = new Overpass(undefined, user.split(";").map(user => "nw(user_touched:\"" + user + "\");"), Constants.defaultOverpassUrls[0])
+    const overpass = new Overpass(
+      undefined,
+      user.split(";").map((user) => 'nw(user_touched:"' + user + '");'),
+      Constants.defaultOverpassUrls[0]
+    )
     if (!maplibremap.bounds.data) {
       return
     }
@@ -117,11 +121,10 @@
   const t = Translations.t.inspector
 </script>
 
-<div class="flex flex-col w-full h-full">
-
-  <div class="flex gap-x-2 items-center low-interaction p-2">
-    <MagnifyingGlassCircle class="w-12 h-12" />
-    <h1 class="flex-shrink-0 m-0 mx-2">
+<div class="flex h-full w-full flex-col">
+  <div class="low-interaction flex items-center gap-x-2 p-2">
+    <MagnifyingGlassCircle class="h-12 w-12" />
+    <h1 class="m-0 mx-2 flex-shrink-0">
       <Tr t={t.title} />
     </h1>
     <ValidatedInput type="string" value={username} on:submit={() => load()} />
@@ -141,16 +144,16 @@
   </div>
 
   <div class="flex">
-    <button class:primary={mode === "map"} on:click={() => mode = "map"}>
+    <button class:primary={mode === "map"} on:click={() => (mode = "map")}>
       <Tr t={t.mapView} />
     </button>
-    <button class:primary={mode === "table"} on:click={() => mode = "table"}>
+    <button class:primary={mode === "table"} on:click={() => (mode = "table")}>
       <Tr t={t.tableView} />
     </button>
-    <button class:primary={mode === "aggregate"} on:click={() => mode = "aggregate"}>
+    <button class:primary={mode === "aggregate"} on:click={() => (mode = "aggregate")}>
       <Tr t={t.aggregateView} />
     </button>
-    <button class:primary={mode === "images"} on:click={() => mode = "images"}>
+    <button class:primary={mode === "images"} on:click={() => (mode = "images")}>
       <Tr t={t.images} />
     </button>
   </div>
@@ -167,32 +170,35 @@
         width="w-full md:w-6/12 lg:w-5/12 xl:w-4/12"
         rightOffset="inset-y-0 right-0"
         transitionParams={{
-        x: 640,
-        duration: 0,
-        easing: linear,
-      }}
+          x: 640,
+          duration: 0,
+          easing: linear,
+        }}
         divClass="overflow-y-auto z-50 bg-white"
         hidden={$selectedElement === undefined}
         on:close={() => {
-        selectedElement.setData(undefined)
-      }}
+          selectedElement.setData(undefined)
+        }}
       >
-
         <TitledPanel>
           <div slot="title" class="flex justify-between">
-
-            <a target="_blank" rel="noopener"
-               href={"https://osm.org/"+$selectedElement.properties.id}>{$selectedElement.properties.id}</a>
-            <XCircleIcon class="w-6 h-6" on:click={() => selectedElement.set(undefined)} />
+            <a
+              target="_blank"
+              rel="noopener"
+              href={"https://osm.org/" + $selectedElement.properties.id}
+            >
+              {$selectedElement.properties.id}
+            </a>
+            <XCircleIcon class="h-6 w-6" on:click={() => selectedElement.set(undefined)} />
           </div>
 
-          <History onlyShowChangesBy={$username} id={$selectedElement.properties.id}></History>
+          <History onlyShowChangesBy={$username} id={$selectedElement.properties.id} />
         </TitledPanel>
       </Drawer>
     {/if}
 
-    <div class="flex-grow overflow-hidden m-1 rounded-xl">
-      <MaplibreMap map={map} mapProperties={maplibremap} autorecovery={true} />
+    <div class="m-1 flex-grow overflow-hidden rounded-xl">
+      <MaplibreMap {map} mapProperties={maplibremap} autorecovery={true} />
     </div>
   {:else if mode === "table"}
     <div class="m-2 h-full overflow-y-auto">
@@ -213,7 +219,13 @@
 
 <Page shown={showPreviouslyVisited}>
   <div slot="header">Earlier inspected constributors</div>
-  <PreviouslySpiedUsers {osmConnection} {inspectedContributors} on:selectUser={(e) => {
-    username.set(e.detail); load();showPreviouslyVisited.set(false)
-  }} />
+  <PreviouslySpiedUsers
+    {osmConnection}
+    {inspectedContributors}
+    on:selectUser={(e) => {
+      username.set(e.detail)
+      load()
+      showPreviouslyVisited.set(false)
+    }}
+  />
 </Page>

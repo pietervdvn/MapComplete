@@ -309,6 +309,8 @@ This table gives a summary of ids, names and other metainformation. [See the onl
 | Tours-Orthophoto-2008_2010 | Tours - Orthophotos 2008-2010 | historicphoto |  | Orthophoto Tour(s) Plus 2008 |
 | fr.dpt.84.2010 | Vaucluse 2010 | historicphoto |  | ORTHO 2010 © PACA-04-05-84 |
 | Vercors-Orthophotos-1999 | Vercors (Réserve naturelle des Hauts-Plateaux du Vercors) - Orthophoto - 1999 - 1 m | historicphoto |  | Parc Naturel Régional du Vercors |
+| EA_LIDAR_DSM_1m_2022 | EA LiDAR Digital Surface Model 1m (2022) | elevation |  | Environment Agency |
+| EA_LIDAR_DTM_1m_2022 | EA LiDAR Digital Terrain Model 1m (2022) | elevation |  | Environment Agency |
 | Hampshire-Aerial-FCIR | Hampshire Aerial FCIR | photo |  |  |
 | Hampshire-Aerial-RGB | Hampshire Aerial RGB | photo |  |  |
 | NLS-OS-NatGrid-11250-1940-60 | NLS - OS 1:1,250 National Grid Maps, 1940s-1960s | historicmap |  | National Library of Scotland Historic Maps |
@@ -519,6 +521,7 @@ This table gives a summary of ids, names and other metainformation. [See the onl
 | UkraineVinnytsiaTG2021 | Ukraine - Vinnytsia TG 2021 | photo |  | © Вінницька міська рада |
 | Canvec_French | Canvec - French | map |  |  |
 | Canvec | Canvec - English | map |  |  |
+| Toronto-Imagery-Most-Current-Year | Toronto Latest Orthoimagery | photo |  | Contains information licensed under the Open Government Licence – Toronto |
 | Geobase_Roads_French | Geobase Roads - French | other |  |  |
 | Geobase_Roads | Geobase Roads - English | other |  |  |
 | canaan_drone_red_cross_201712 | Canaan - American Red Cross, Dec-2017 | photo |  | American Red Cross |
@@ -791,7 +794,7 @@ This table gives a summary of ids, names and other metainformation. [See the onl
 | DVRPC_2020_MontgomeryPA | DVRPC Orthoimagery 2020 - Montgomery County (1ft) | photo |  | Delaware Valley Regional Planning Commission |
 | DVRPC_2020_PhiladelphiaPA | DVRPC Orthoimagery 2020 - Philadelphia County (1ft) | photo |  | Delaware Valley Regional Planning Commission |
 | PEMA_Orthoimagery | PEMA Orthoimagery (2018-2020) | historicphoto |  | Pennsylvania Emergency Management Agency |
-| PEMA_Orthoimagery_2022 | PEMA Orthoimagery (Western) [2022] | photo | ⭐ | Pennsylvania Emergency Management Agency |
+| PEMA_Orthoimagery_2023 | PEMA Orthoimagery Cycle 2 (2021-2023) | photo |  | Pennsylvania Emergency Management Agency |
 | Philadelphia_Ortho_2020 | Philadelphia Orthoimagery 2020 (3in) | historicphoto |  | City of Philadelphia |
 | Philadelphia_Ortho_2022 | Philadelphia Orthoimagery 2022 (2in) | historicphoto |  | City of Philadelphia |
 | Philadelphia_Ortho_2023 | Philadelphia Orthoimagery 2023 | photo | ⭐ | City of Philadelphia |

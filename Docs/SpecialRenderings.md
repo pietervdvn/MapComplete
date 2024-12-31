@@ -426,10 +426,11 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
 | max_snap_distance | 5 | The maximum distance that the imported point will be moved to snap onto a way in an already existing layer (in meters). This is previewed to the contributor, similar to the 'add new point'-action of MapComplete |
 | note_id | _undefined_ | If given, this key will be read. The corresponding note on OSM will be closed, stating 'imported' |
 | maproulette_id | _undefined_ | The property name of the maproulette_id - this is probably `mr_taskId`. If given, the maproulette challenge will be marked as fixed. Only use this if part of a maproulette-layer. |
+| to_point | _undefined_ | If set, a feature will be converted to a centerpoint |
 
 #### Example usage of import_button
 
-<code>`{import_button(,,Import this data into OpenStreetMap,./assets/svg/addSmall.svg,,5,,)}`</code>
+<code>`{import_button(,,Import this data into OpenStreetMap,./assets/svg/addSmall.svg,,5,,,)}`</code>
 
 ### import_way_button
 
@@ -559,7 +560,7 @@ A component showing nearby images loaded from various online services such as Ma
 | name | default | description |
 -----|-----|----- |
 | mode | closed | Either `open` or `closed`. If `open`, then the image carousel will always be shown |
-| readonly | _undefined_ | If 'readonly', will not show the 'link'-button |
+| readonly | _undefined_ | If 'readonly' or 'yes', will not show the 'link'-button |
 
 #### Example usage of nearby_images
 

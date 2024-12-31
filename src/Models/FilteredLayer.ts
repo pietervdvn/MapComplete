@@ -232,7 +232,7 @@ export default class FilteredLayer {
             }
         }
         {
-            if(!this.isDisplayed.data){
+            if (!this.isDisplayed.data) {
                 return false
             }
         }

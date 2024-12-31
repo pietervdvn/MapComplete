@@ -65,7 +65,8 @@
           "pt_BR": "Outdoor",
           "zh_Hans": "广告牌",
           "pt": "Outdoor",
-          "uk": "Білборд"
+          "uk": "Білборд",
+          "nl": "Billboard"
         }
       },
       {
@@ -104,7 +105,8 @@
           "pt_BR": "Caixa de pôster",
           "zh_Hans": "海报盒",
           "pt": "Caixa de pôster",
-          "uk": "Поштова скринька"
+          "uk": "Поштова скринька",
+          "nl": "Afficheframe"
         }
       },
       {
@@ -940,7 +942,8 @@
         "pt_BR": "Que tipo de recurso de publicitário é este?",
         "zh_Hans": "这是哪种类型的广告功能？",
         "pt": "Que tipo de recurso de publicitário é este?",
-        "uk": "Який це тип рекламного об'єкту?"
+        "uk": "Який це тип рекламного об'єкту?",
+        "nl": "Wat voor advertentieobject is dit?"
       },
       "freeform": {
         "key": "advertising"

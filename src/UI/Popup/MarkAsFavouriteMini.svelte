@@ -24,7 +24,7 @@
   }
 </script>
 
-<LoginToggle ignoreLoading={true} {state}>
+<LoginToggle ignoreLoading={true} hiddenFail {state}>
   {#if $isFavourite}
     <button
       class="soft no-image-background m-0 h-8 w-8 p-0"

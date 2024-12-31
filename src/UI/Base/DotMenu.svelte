@@ -53,6 +53,8 @@
     fill: var(--button-background-hover);
     transition: fill 350ms linear;
     cursor: pointer;
+    stroke-width: 0.8;
+    stroke: white;
   }
 
   :global(.dots-menu:hover > path, .dots-menu-opened > path) {

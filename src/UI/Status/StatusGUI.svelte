@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Store, Stores, UIEventSource } from "../../Logic/UIEventSource"
+  import { ImmutableStore, Store, Stores, UIEventSource } from "../../Logic/UIEventSource"
   import StatusIcon from "./StatusIcon.svelte"
   import type { MCService } from "./MCService"
   import ServiceIndicator from "./ServiceIndicator.svelte"
@@ -200,6 +200,30 @@
         const json = JSON.stringify(s["success"], null, "  ")
         return "Database is " + Math.floor(timediffDays) + " days out of sync\n\n" + json
       }),
+    })
+  }
+
+  {
+    const summaryTileServer = Constants.VectorTileServer
+    // "mvt_layer_server": "https://cache.mapcomplete.org/public.{type}_{layer}/{z}/{x}/{y}.pbf",
+    const status = testDownload(
+      Utils.SubstituteKeys(summaryTileServer, {
+        type: "pois",
+        layer: "food",
+        z: 14,
+        x: 8848,
+        y: 5828,
+      })
+    )
+    services.push({
+      name: summaryTileServer,
+      status: status.mapD((s) => {
+        if (s["error"]) {
+          return "offline"
+        }
+        return "online"
+      }),
+      message: new ImmutableStore("See SettingUpPSQL.md to fix"),
     })
   }
 

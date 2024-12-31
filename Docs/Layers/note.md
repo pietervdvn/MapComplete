@@ -58,7 +58,7 @@ _This tagrendering has no question and is thus read-only_
 ### nearby-images
 
 _This tagrendering has no question and is thus read-only_
-*<h3>Nearby images</h3>The pictures below are nearby geotagged images and might be helpful to handle this note.{nearby_images(open,)}*
+*<h3>Nearby images</h3>The pictures below are nearby geotagged images and might be helpful to handle this note.{nearby_images(open,yes)}*
 
 ### report-contributor
 

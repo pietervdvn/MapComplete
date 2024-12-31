@@ -814,12 +814,14 @@
       "question": {
         "en": "Does {title()} have an incline?",
         "de": "Hat {title()} eine Steigung?",
-        "es": "¿Tiene {title()} una inclinación?"
+        "es": "¿Tiene {title()} una inclinación?",
+        "nl": "Heeft {title()} een helling?"
       },
       "render": {
         "en": "This road has an slope of {incline}",
         "de": "Die Straße hat {incline} Steigung",
-        "es": "Esta carretera tiene una pendiente de {incline}"
+        "es": "Esta carretera tiene una pendiente de {incline}",
+        "nl": "Deze weg heeft een helling van {incline}"
       },
       "freeform": {
         "key": "incline",
@@ -847,7 +849,8 @@
           "then": {
             "en": "This road has a slope",
             "de": "Die Straße hat eine Steigung",
-            "es": "Esta carretera tiene una pendiente"
+            "es": "Esta carretera tiene una pendiente",
+            "nl": "Deze weg heeft een helling"
           },
           "hideInAnswer": true
         }

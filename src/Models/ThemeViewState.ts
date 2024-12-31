@@ -177,12 +177,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
         )
         this.map = new UIEventSource<MlMap>(undefined)
         const geolocationState = new GeoLocationState()
-        const initial = new InitialMapPositioning(layout, geolocationState)
-        this.mapProperties = new MapLibreAdaptor(this.map, initial, { correctClick: 20 })
-
-        this.featureSwitchIsTesting = this.featureSwitches.featureSwitchIsTesting
-        this.featureSwitchUserbadge = this.featureSwitches.featureSwitchEnableLogin
-
         this.osmConnection = new OsmConnection({
             dryRun: this.featureSwitches.featureSwitchIsTesting,
             fakeUser: this.featureSwitches.featureSwitchFakeUser.data,
@@ -192,6 +186,12 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 "Used to complete the login"
             ),
         })
+        const initial = new InitialMapPositioning(layout, geolocationState, this.osmConnection)
+        this.mapProperties = new MapLibreAdaptor(this.map, initial, { correctClick: 20 })
+
+        this.featureSwitchIsTesting = this.featureSwitches.featureSwitchIsTesting
+        this.featureSwitchUserbadge = this.featureSwitches.featureSwitchEnableLogin
+
         this.userRelatedState = new UserRelatedState(
             this.osmConnection,
             layout,
@@ -788,7 +788,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
 
         const layers = this.theme.layers.filter(
             (l) =>
-                Constants.priviliged_layers.indexOf(<any>l.id) < 0 &&
+                (<string[]>(<unknown>Constants.priviliged_layers)).indexOf(l.id) < 0 &&
                 l.source.geojsonSource === undefined &&
                 l.doCount
         )
@@ -840,7 +840,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
 
         this.closestFeatures.registerSource(specialLayers.favourite, "favourite")
         if (this.theme?.lockLocation) {
-            const bbox = new BBox(<any>this.theme.lockLocation)
+            const bbox = new BBox(<[[number, number], [number, number]]>this.theme.lockLocation)
             this.mapProperties.maxbounds.setData(bbox)
             ShowDataLayer.showRange(
                 this.map,

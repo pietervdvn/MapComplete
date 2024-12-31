@@ -5,7 +5,7 @@
   import Tr from "../Base/Tr.svelte"
   import Translations from "../i18n/Translations"
   import Icon from "../Map/Icon.svelte"
-  import Maproulette from "../../Logic/Maproulette"
+  import Maproulette, { maprouletteStatus } from "../../Logic/Maproulette"
   import LoginToggle from "../Base/LoginToggle.svelte"
 
   /**
@@ -38,11 +38,11 @@
   async function apply() {
     const maproulette_id = tags.data[maproulette_id_key] ?? tags.data.mr_taskId ?? tags.data.id
     try {
-      await Maproulette.singleton.closeTask(Number(maproulette_id), Number(statusToSet), {
-        tags: `MapComplete MapComplete:${state.theme.id}`,
+      const statusIndex = Maproulette.codeToIndex(statusToSet) ?? Number(statusToSet)
+      await Maproulette.singleton.closeTask(Number(maproulette_id), statusIndex, state, {
         comment: feedback,
       })
-      tags.data["mr_taskStatus"] = Maproulette.STATUS_MEANING[Number(statusToSet)]
+      tags.data["mr_taskStatus"] = maprouletteStatus[statusIndex]
       tags.data.status = statusToSet
       tags.ping()
     } catch (e) {

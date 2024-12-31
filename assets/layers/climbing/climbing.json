@@ -2,7 +2,7 @@
   "id": "climbing",
   "description": {
     "en": "A dummy layer which contains tagrenderings, shared among the climbing layers",
-    "nl": "Een dummy-laag die tagrenderings bevat, gedeeld over de verschillende klimsport lagen",
+    "nl": "Een dummy-laag die tagrenderings bevat, gedeeld over de verschillende klimsportlagen",
     "de": "Eine Dummy-Ebene, die Tagrenderings enthält, die von den Kletterebenen gemeinsam genutzt werden",
     "cs": "Falešná vrstva, která obsahuje tagrenderingy sdílené mezi lezeckými vrstvami",
     "ca": "Una capa fictícia que conté renderització d'etiquetes compartides entre les capes d'escalada",
@@ -394,9 +394,9 @@
         "es": "¿Cuántos parabolts tienen como máximo las vías en {title()}?"
       },
       "render": {
-        "en": "The sport climbing routes here have at most {climbing:bolts:max} bolts.<div class='subtle'>This is without relays and indicates how much quickdraws a climber needs</div>",
+        "en": "The sport climbing routes here have at most {climbing:bolts:max} bolts. <div class='subtle'>This is without belay stations and indicates how much quickdraws a climber needs.</div>",
         "de": "Die Sportkletterrouten hier haben maximal {climbing:bolts:max} Haken.<div class='subtle'>Dies ist ohne Relais und gibt an, wie viel Schnellspanner ein Kletterer braucht</div>",
-        "nl": "De sportklimroutes hebben maximaal {climbing:bolts:max} bouten. <div class='subtle'>Hierbij worden relays niet meegteld. Dit geeft aan hoeveel klimsetjes een klimmer nodig heeft</div>",
+        "nl": "De sportklimroutes hebben maximum {climbing:bolts:max} haken. <div class='subtle'>Hierbij worden standplaatsen niet meegeteld. Dit geeft aan hoeveel setjes een klimmer nodig heeft.</div>",
         "es": "Las vías de escalada deportiva aquí tienen como máximo {climbing:bolts:max} parabolts.<div class='subtle'>Esto es sin reuniones e indica cuántos cintas exprés necesita un escalador</div>"
       },
       "freeform": {

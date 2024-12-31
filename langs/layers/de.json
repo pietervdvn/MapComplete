@@ -305,7 +305,7 @@
                         "then": "Es handelt sich um eine Seilbahn, bei der die Kabinen in ständigen Kreisen fahren"
                     },
                     "10": {
-                        "then": "Eine Seilrutsche. (Eine Touristenattraktion, bei der abenteuerlustige Menschen mit hoher Geschwindigkeit hinunterfahren) "
+                        "then": "Eine Seilrutsche. (Eine Touristenattraktion, bei der abenteuerlustige Menschen mit hoher Geschwindigkeit hinunterfahren)"
                     },
                     "2": {
                         "then": "Ein offener Sessellift mit Sitzgelegenheiten und Zugang zur Außenluft."
@@ -389,7 +389,7 @@
         }
     },
     "animal_shelter": {
-        "description": "Ein Tierheim ist eine Einrichtung, in die notleidende Tiere gebracht werden und wo das Personal (ob freiwillig oder nicht) sie füttert und pflegt, sie rehabilitiert und bei Bedarf heilt. Diese Definition umfasst Zwinger für ausgesetzte Hunde, Katzenheime für ausgesetzte Katzen, Unterkünfte für andere ausgesetzte Haustiere und Wildtier-Auffangstationen. ",
+        "description": "Ein Tierheim ist eine Einrichtung, in die notleidende Tiere gebracht werden und wo das Personal (ob freiwillig oder nicht) sie füttert und pflegt, sie rehabilitiert und bei Bedarf heilt. Diese Definition umfasst Zwinger für ausgesetzte Hunde, Katzenheime für ausgesetzte Katzen, Unterkünfte für andere ausgesetzte Haustiere und Wildtier-Auffangstationen.",
         "name": "Tierheime",
         "presets": {
             "0": {
@@ -2059,7 +2059,7 @@
         }
     },
     "brothel": {
-        "description": "Eine Einrichtung, die speziell der Prostitution gewidmet ist. ",
+        "description": "Eine Einrichtung, die speziell der Prostitution gewidmet ist.",
         "name": "Bordelle",
         "presets": {
             "0": {
@@ -2816,7 +2816,7 @@
         }
     },
     "cinema": {
-        "description": " Ein Ort, an dem Filme gezeigt werden, die der Öffentlichkeit gegen Gebühr zugänglich sind",
+        "description": "Ein Ort, an dem Filme gezeigt werden, die der Öffentlichkeit gegen Gebühr zugänglich sind.",
         "name": "Kino",
         "tagRenderings": {
             "cinema_type": {

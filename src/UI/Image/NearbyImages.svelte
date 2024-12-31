@@ -143,6 +143,18 @@
       highlighted.set(feature.properties.id)
     },
   })
+  onDestroy(
+    tags.addCallbackAndRunD((tags) => {
+      if (
+        tags.id.startsWith("node/") ||
+        tags.id.startsWith("way/") ||
+        tags.id.startsWith("relation/")
+      ) {
+        return
+      }
+      linkable = false
+    })
+  )
 </script>
 
 <div class="flex flex-col">

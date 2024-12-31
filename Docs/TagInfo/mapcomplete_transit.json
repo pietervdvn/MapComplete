@@ -576,6 +576,15 @@
       "description": "Layer 'Parking' shows and asks freeform values for key 'capacity' (in the mapcomplete.org theme 'Bus routes')"
     },
     {
+      "key": "maxstay",
+      "description": "Layer 'Parking' shows and asks freeform values for key 'maxstay' (in the mapcomplete.org theme 'Bus routes')"
+    },
+    {
+      "key": "maxstay",
+      "description": "Layer 'Parking' shows maxstay=unlimited with a fixed text, namely 'There is no limit to the amount of time one can stay here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Bus routes')",
+      "value": "unlimited"
+    },
+    {
       "key": "amenity",
       "description": "The MapComplete theme Bus routes has a layer Shelter showing features with this tag",
       "value": "shelter"

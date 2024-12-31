@@ -3,15 +3,17 @@
   import { Stores } from "../../Logic/UIEventSource"
   import Tr from "../Base/Tr.svelte"
   import Translations from "../i18n/Translations"
+  import type { SpecialVisualizationState } from "../SpecialVisualization"
+  import ThemeViewState from "../../Models/ThemeViewState"
 
   /**
    * Shows _all_ disabled questions
    */
-  export let state
-  let layers = state.layout.layers.filter((l) => l.isNormal())
+  export let state: ThemeViewState
+  let layers = state.theme.layers.filter((l) => l.isNormal())
 
   let allDisabled = Stores.concat<string>(
-    layers.map((l) => state.userRelatedState.getThemeDisabled(state.layout.id, l.id))
+    layers.map((l) => state.userRelatedState.getThemeDisabled(state.theme.id, l.id))
   ).map((l) => [].concat(...l))
   const t = Translations.t.general.questions
 </script>

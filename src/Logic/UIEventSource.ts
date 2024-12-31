@@ -1,6 +1,5 @@
 import { Utils } from "../Utils"
 import { Readable, Subscriber, Unsubscriber, Updater, Writable } from "svelte/store"
-
 /**
  * Various static utils
  */
@@ -276,7 +275,7 @@ export abstract class Store<T> implements Readable<T> {
 
     public bindD<X>(
         f: (t: Exclude<T, undefined | null>) => Store<X>,
-        extraSources: UIEventSource<object>[] = []
+        extraSources: Store<any>[] = []
     ): Store<X> {
         return this.bind((t) => {
             if (t === null) {
@@ -952,15 +951,13 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
         g: (j: J, t: T) => T,
         allowUnregister = false
     ): UIEventSource<J> {
-        const self = this
-
         const stack = new Error().stack.split("\n")
         const callee = stack[1]
 
         const newSource = new UIEventSource<J>(f(this.data), "map(" + this.tag + ")@" + callee)
 
-        const update = function () {
-            newSource.setData(f(self.data))
+        const update = () => {
+            newSource.setData(f(this.data))
             return allowUnregister && newSource._callbacks.length() === 0
         }
 
@@ -971,7 +968,7 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
 
         if (g !== undefined) {
             newSource.addCallback((latest) => {
-                self.setData(g(latest, self.data))
+                this.setData(g(latest, this.data))
             })
         }
 
@@ -980,8 +977,7 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
 
     public syncWith(otherSource: UIEventSource<T>, reverseOverride = false): UIEventSource<T> {
         this.addCallback((latest) => otherSource.setData(latest))
-        const self = this
-        otherSource.addCallback((latest) => self.setData(latest))
+        otherSource.addCallback((latest) => this.setData(latest))
         if (reverseOverride) {
             if (otherSource.data !== undefined) {
                 this.setData(otherSource.data)

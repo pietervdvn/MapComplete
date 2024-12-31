@@ -1,5 +1,30 @@
-hosted.mapcomplete.org {
+builds.mapcomplete.org {
 	root * public/
+	file_server
+	header {
+		+Permissions-Policy "interest-cohort=()"
+	}
+}
+
+dev.mapcomplete.org {
+	root * public/develop/
+	file_server
+	header {
+		+Permissions-Policy "interest-cohort=()"
+	}
+}
+
+single.mapcomplete.org {
+	root * single_theme_builds/
+	file_server
+	header {
+		+Permissions-Policy "interest-cohort=()"
+	}
+}
+
+
+velopark.mapcomplete.org {
+	root * single_theme_builds/velopark/
 	file_server
 	header {
 		+Permissions-Policy "interest-cohort=()"
@@ -19,7 +44,7 @@ countrycoder.mapcomplete.org {
 	file_server
 	header {
 		+Permissions-Policy "interest-cohort=()"
-		+Access-Control-Allow-Origin https://hosted.mapcomplete.org https://dev.mapcomplete.org https://mapcomplete.org
+		+Access-Control-Allow-Origin *
 	}
 }
 
@@ -36,5 +61,5 @@ lod.mapcomplete.org {
 }
 
 ipinfo.mapcomplete.org {
-    reverse_proxy 127.0.0.1:2347
+	reverse_proxy 127.0.0.1:2347
 }

@@ -2,12 +2,13 @@ import Script from "../Script"
 import fs from "fs"
 import LinkedDataLoader from "../../src/Logic/Web/LinkedDataLoader"
 import { Utils } from "../../src/Utils"
-import { Feature } from "geojson"
+import { Feature, FeatureCollection, Point } from "geojson"
 import { BBox } from "../../src/Logic/BBox"
 import { Overpass } from "../../src/Logic/Osm/Overpass"
 import { RegexTag } from "../../src/Logic/Tags/RegexTag"
 import { ImmutableStore } from "../../src/Logic/UIEventSource"
 import Constants from "../../src/Models/Constants"
+import { MaprouletteStatus } from "../../src/Logic/Maproulette"
 
 class VeloParkToGeojson extends Script {
     constructor() {
@@ -44,12 +45,15 @@ class VeloParkToGeojson extends Script {
 
         const linkedData = await LinkedDataLoader.fetchVeloparkEntry(url)
         const allVelopark: Feature[] = []
+        if (linkedData.length > 1) {
+            console.log("Detected multiple sections in:", url)
+        }
         for (const sectionId in linkedData) {
             const sectionInfo = linkedData[sectionId]
             if (Object.keys(sectionInfo).length === 0) {
                 console.warn("No result for", url)
             }
-            if (!sectionInfo.geometry?.coordinates) {
+            if (!sectionInfo.geometry?.["coordinates"]) {
                 throw "Invalid properties!"
             }
             allVelopark.push(sectionInfo)
@@ -62,8 +66,8 @@ class VeloParkToGeojson extends Script {
         console.log("Downloading velopark data")
         // Download data for NIS-code 1000. 1000 means: all of belgium
         const url = "https://www.velopark.be/api/parkings/1000"
-        const allVeloparkRaw: { url: string }[] = <{ url: string }[]>await Utils.downloadJson(url)
-
+        const allVeloparkRaw = await Utils.downloadJson<{ url: string }[]>(url)
+        // Example multi-entry: https://data.velopark.be/data/Stad-Izegem_IZE_015
         let failed = 0
         console.log("Got", allVeloparkRaw.length, "items")
         const allVelopark: Feature[] = []
@@ -84,6 +88,7 @@ class VeloParkToGeojson extends Script {
                     }
                 })
             )
+            console.log("Batch complete:", i)
         }
         console.log(
             "Fetching data done, got ",
@@ -135,7 +140,47 @@ class VeloParkToGeojson extends Script {
         }
     }
 
+    private static async fetchMapRouletteClosedItems() {
+        const challenges = ["https://maproulette.org/api/v2/challenge/view/43282"]
+        const solvedRefs: Set<string> = new Set<string>()
+        for (const url of challenges) {
+            const data = await Utils.downloadJson<
+                FeatureCollection<
+                    Point,
+                    {
+                        mr_taskId: string
+                        "ref:velopark": string
+                        mr_taskStatus: MaprouletteStatus
+                        mr_responses: string | undefined
+                    }
+                >
+            >(url)
+            for (const challenge of data.features) {
+                const status = challenge.properties.mr_taskStatus
+                const isClosed =
+                    status === "Fixed" ||
+                    status === "False_positive" ||
+                    status === "Already fixed" ||
+                    status === "Too_Hard" ||
+                    status === "Deleted"
+                if (isClosed) {
+                    const ref = challenge.properties["ref:velopark"]
+                    solvedRefs.add(ref)
+                }
+            }
+        }
+        console.log("Detected", solvedRefs, "as closed on mapRoulette")
+        return solvedRefs
+    }
+
+    /**
+     * Creates an extra version where all bicycle parkings which are already linked are removed.
+     * Fetches the latest OSM-data from overpass
+     * @param allVelopark
+     * @private
+     */
     private static async createDiff(allVelopark: Feature[]) {
+        console.log("Creating diff...")
         const bboxBelgium = new BBox([
             [2.51357303225, 49.5294835476],
             [6.15665815596, 51.4750237087],
@@ -160,21 +205,51 @@ class VeloParkToGeojson extends Script {
         )
         VeloParkToGeojson.exportGeojsonTo("velopark_nonsynced", features)
 
+        const synced = await this.fetchMapRouletteClosedItems()
+        const featuresMoreFiltered = features.filter(
+            (f) => !synced.has(f.properties["ref:velopark"])
+        )
+        VeloParkToGeojson.exportGeojsonTo("velopark_nonsynced_nonclosed", featuresMoreFiltered)
+
+        const featuresMoreFilteredFailed = features.filter((f) =>
+            synced.has(f.properties["ref:velopark"])
+        )
+        VeloParkToGeojson.exportGeojsonTo(
+            "velopark_nonsynced_human_import_failed",
+            featuresMoreFilteredFailed
+        )
+
         const allProperties = new Set<string>()
-        for (const feature of features) {
-            Object.keys(feature).forEach((k) => allProperties.add(k))
+        for (const feature of featuresMoreFiltered) {
+            Object.keys(feature.properties).forEach((k) => allProperties.add(k))
         }
         allProperties.delete("ref:velopark")
-        for (const feature of features) {
+        for (const feature of featuresMoreFiltered) {
             allProperties.forEach((k) => {
-                delete feature[k]
+                if (k === "ref:velopark") {
+                    return
+                }
+                delete feature.properties[k]
             })
         }
 
-        this.exportGeojsonTo("velopark_nonsynced_id_only", features)
+        this.exportGeojsonTo("velopark_nonsynced_nonclosed_id_only", featuresMoreFiltered)
+    }
+
+    public static async findMultiSection(): Promise<string[]> {
+        const url = "https://www.velopark.be/api/parkings/1000"
+        const raw = await Utils.downloadJson<{ "@graph": {}[]; url: string }[]>(url)
+        const multiEntries: string[] = []
+        for (const entry of raw) {
+            if (entry["@graph"].length > 1) {
+                multiEntries.push(entry.url)
+            }
+        }
+        return multiEntries
     }
 
     async main(): Promise<void> {
+        // const multiEntries = new Set(await VeloParkToGeojson.findMultiSection())
         const allVelopark =
             VeloParkToGeojson.loadFromFile() ?? (await VeloParkToGeojson.downloadData())
         console.log("Got", allVelopark.length, " items")

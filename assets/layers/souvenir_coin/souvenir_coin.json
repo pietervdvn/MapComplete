@@ -3,12 +3,14 @@
   "name": {
     "en": "Souvenir Coin Machines",
     "de": "Souvenir-Münzautomaten",
-    "es": "Máquinas de Monedas de Recuerdo"
+    "es": "Máquinas de Monedas de Recuerdo",
+    "nl": "Souvenirmuntmachines"
   },
   "description": {
     "en": "Layer showing machines selling souvenir coins",
     "de": "Ebene mit Automaten, die Souvenir-Münzen verkaufen",
-    "es": "Capa que muestra máquinas expendedoras de monedas de recuerdo"
+    "es": "Capa que muestra máquinas expendedoras de monedas de recuerdo",
+    "nl": "Laag die machines toont die souvenirmunten verkopen"
   },
   "source": {
     "osmTags": {
@@ -22,7 +24,8 @@
     "render": {
       "en": "Souvenir Coin Machine",
       "de": "Souvenir-Münzautomat",
-      "es": "Máquina de Monedas de Recuerdo"
+      "es": "Máquina de Monedas de Recuerdo",
+      "nl": "Souvenirmuntmachine"
     }
   },
   "pointRendering": [
@@ -59,12 +62,14 @@
       "title": {
         "en": "a souvenir coin machine",
         "de": "ein Souvenir-Münzautomaten",
-        "es": "una máquina de monedas de recuerdo"
+        "es": "una máquina de monedas de recuerdo",
+        "nl": "een souvenirmuntmachine"
       },
       "description": {
         "en": "Add a machine selling souvenir coins",
         "de": "Hinzufügen eines Automaten für Souvenirmünzen",
-        "es": "Añadir una máquina expendedora de monedas de recuerdo"
+        "es": "Añadir una máquina expendedora de monedas de recuerdo",
+        "nl": "Voeg een machine toe die souvenirmunten verkoopt"
       },
       "tags": [
         "amenity=vending_machine",
@@ -82,7 +87,8 @@
         "render": {
           "en": "This machine has {coin:design_count} designs available",
           "de": "Diese Maschine hat {coin:design_count} Designs verfügbar",
-          "es": "Esta máquina tiene {coin:design_count} diseños disponibles"
+          "es": "Esta máquina tiene {coin:design_count} diseños disponibles",
+          "nl": "Deze machine heeft {coin:design_count} ontwerpen beschikbaar"
         },
         "mappings": [
           {
@@ -90,7 +96,8 @@
             "then": {
               "en": "This machine has one design available",
               "de": "Diese Maschine hat ein Design zur Verfügung",
-              "es": "Esta máquina tiene un diseño disponible"
+              "es": "Esta máquina tiene un diseño disponible",
+              "nl": "Deze machine heeft één ontwerp beschikbaar"
             }
           },
           {
@@ -98,7 +105,8 @@
             "then": {
               "en": "This machine has two designs available",
               "de": "Diese Maschine hat zwei Designs verfügbar",
-              "es": "Esta máquina tiene dos diseños disponibles"
+              "es": "Esta máquina tiene dos diseños disponibles",
+              "nl": "Deze machine heeft twee ontwerpen beschikbaar"
             }
           },
           {
@@ -106,7 +114,8 @@
             "then": {
               "en": "This machine has three designs available",
               "de": "Diese Maschine hat drei Designs verfügbar",
-              "es": "Esta máquina tiene tres diseños disponibles"
+              "es": "Esta máquina tiene tres diseños disponibles",
+              "nl": "Deze machine heeft drie ontwerpen beschikbaar"
             }
           },
           {
@@ -114,7 +123,8 @@
             "then": {
               "en": "This machine has four designs available",
               "de": "Diese Maschine hat vier Designs verfügbar",
-              "es": "Esta máquina tiene cuatro diseños disponibles"
+              "es": "Esta máquina tiene cuatro diseños disponibles",
+              "nl": "Deze machine heeft vier ontwerpen beschikbaar"
             }
           }
         ]
@@ -126,20 +136,23 @@
       "question": {
         "en": "How much does a souvenir coin cost?",
         "de": "Wie viel kostet eine Souvenirmünze?",
-        "es": "¿Cuánto cuesta una moneda de recuerdo?"
+        "es": "¿Cuánto cuesta una moneda de recuerdo?",
+        "nl": "Hoeveel kost een souvenirmunt?"
       },
       "id": "charge",
       "render": {
         "en": "A souvenir coins costs {charge}",
         "de": "Eine Souvenirmünze kostet {charge}",
-        "es": "Una moneda de recuerdo cuesta {charge}"
+        "es": "Una moneda de recuerdo cuesta {charge}",
+        "nl": "Een souvenirmunt kost {charge}"
       },
       "freeform": {
         "key": "charge",
         "placeholder": {
           "en": "Cost (e.g. 2 EUR)",
           "de": "Kosten (z.B. 2 EUR)",
-          "es": "Coste (ej. 2 EUR)"
+          "es": "Coste (ej. 2 EUR)",
+          "nl": "Kosten (bijv. 2 EUR)"
         }
       },
       "mappings": [
@@ -148,7 +161,8 @@
           "then": {
             "en": "A souvenir coin costs 2 euro",
             "de": "Eine Souvenirmünze kostet 2 Euro",
-            "es": "Una moneda de recuerdo cuesta 2 euros"
+            "es": "Una moneda de recuerdo cuesta 2 euros",
+            "nl": "Een souvenirmunt kost 2 euro"
           },
           "hideInAnswer": "_currency!~.*EUR.*"
         }
@@ -159,7 +173,8 @@
       "question": {
         "en": "Is this machine located indoors?",
         "de": "Ist diese Maschine im Innenbereich?",
-        "es": "¿Está esta máquina ubicada en interiores?"
+        "es": "¿Está esta máquina ubicada en interiores?",
+        "nl": "Bevindt deze machine zich binnen?"
       },
       "id": "indoor",
       "mappings": [
@@ -168,7 +183,8 @@
           "then": {
             "en": "This machine is located indoors.",
             "de": "Diese Maschine befindet sich im Innenbereich.",
-            "es": "Esta máquina está ubicada en interiores."
+            "es": "Esta máquina está ubicada en interiores.",
+            "nl": "Deze machine bevindt zich binnen."
           }
         },
         {
@@ -176,7 +192,8 @@
           "then": {
             "en": "This machine is located outdoors.",
             "de": "Diese Maschine befindet sich im Freien.",
-            "es": "Esta máquina está ubicada en exteriores."
+            "es": "Esta máquina está ubicada en exteriores.",
+            "nl": "Deze machine bevindt zich buiten."
           }
         }
       ]

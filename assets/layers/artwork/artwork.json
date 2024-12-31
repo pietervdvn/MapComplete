@@ -814,7 +814,8 @@
         "fr": "Cet œuvre a-t-elle un rôle de mémorial ?",
         "cs": "Slouží toto dílo jako památník?",
         "es": "¿Esta obra de arte sirve como monumento?",
-        "uk": "Чи слугує ця робота меморіалом?"
+        "uk": "Чи слугує ця робота меморіалом?",
+        "nl": "Dient dit kunstwerk als gedenkteken?"
       },
       "mappings": [
         {
@@ -838,7 +839,8 @@
             "de": "Dieses Kunstwerk dient nicht als Denkmal",
             "uk": "Ця робота не є меморіалом",
             "cs": "Toto umělecké dílo neslouží jako památník",
-            "es": "Esta obra de arte no sirve como monumento"
+            "es": "Esta obra de arte no sirve como monumento",
+            "nl": "Dit kunstwerk fungeert niet als gedenkteken"
           }
         }
       ]

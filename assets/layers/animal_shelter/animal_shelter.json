@@ -10,14 +10,16 @@
     "pl": "Schroniska dla zwierząt",
     "fr": "Abri pour animaux",
     "cs": "Útulky pro zvířata",
-    "ru": "Приюты для животных"
+    "ru": "Приюты для животных",
+    "nl": "Dierenasielen"
   },
   "description": {
-    "en": "An animal shelter is a facility where animals in trouble are brought and facility's staff (volunteers or not) feeds them and cares of them, rehabilitating and healing them if necessary. This definition includes kennels for abandoned dogs, catteries for abandoned cats, shelters for other abandoned pets and wildlife recovery centres. ",
+    "en": "An animal shelter is a facility where animals in trouble are brought and facility's staff (volunteers or not) feeds them and cares of them, rehabilitating and healing them if necessary. This definition includes kennels for abandoned dogs, catteries for abandoned cats, shelters for other abandoned pets and wildlife recovery centres.",
     "es": "Un refugio de animales es una instalación donde se traen animales en problemas y el personal de la instalación (voluntarios o no) los alimenta y cuida, rehabilitándolos y curándolos si es necesario. Esta definición incluye perreras para perros abandonados, gaterías para gatos abandonados, refugios para otras mascotas abandonadas y centros de recuperación de fauna silvestre. ",
     "zh_Hans": "动物收容所是一个设施，将遇到麻烦的动物带到这里，设施的工作人员（志愿者或非志愿者）喂养并照顾它们，并在必要时使它们康复和治愈。该定义包括被遗弃的狗的狗舍、被遗弃的猫的猫舍、其他被遗弃的宠物的庇护所和野生动物恢复中心。 ",
-    "de": "Ein Tierheim ist eine Einrichtung, in die notleidende Tiere gebracht werden und wo das Personal (ob freiwillig oder nicht) sie füttert und pflegt, sie rehabilitiert und bei Bedarf heilt. Diese Definition umfasst Zwinger für ausgesetzte Hunde, Katzenheime für ausgesetzte Katzen, Unterkünfte für andere ausgesetzte Haustiere und Wildtier-Auffangstationen. ",
-    "cs": "Útulek pro zvířata je zařízení, kam se přivážejí zvířata v nesnázích a zaměstnanci zařízení (ať už dobrovolníci, nebo ne) je krmí, starají se o ně a v případě potřeby je rehabilitují a léčí. Tato definice zahrnuje chovné stanice pro opuštěné psy, chovné stanice pro opuštěné kočky, útulky pro jiná opuštěná zvířata a centra pro záchranu volně žijících zvířat. "
+    "de": "Ein Tierheim ist eine Einrichtung, in die notleidende Tiere gebracht werden und wo das Personal (ob freiwillig oder nicht) sie füttert und pflegt, sie rehabilitiert und bei Bedarf heilt. Diese Definition umfasst Zwinger für ausgesetzte Hunde, Katzenheime für ausgesetzte Katzen, Unterkünfte für andere ausgesetzte Haustiere und Wildtier-Auffangstationen.",
+    "cs": "Útulek pro zvířata je zařízení, kam se přivážejí zvířata v nesnázích a zaměstnanci zařízení (ať už dobrovolníci, nebo ne) je krmí, starají se o ně a v případě potřeby je rehabilitují a léčí. Tato definice zahrnuje chovné stanice pro opuštěné psy, chovné stanice pro opuštěné kočky, útulky pro jiná opuštěná zvířata a centra pro záchranu volně žijících zvířat. ",
+    "nl": "Een dierenasiel is een instelling waar dieren in nood binnengebracht worden en door de medewerkers gevoederd en verzorgd worden, eventueel met het oog op uitzetting. Hieronder vallen asielen voor achtergelaten huisdieren en opvangcentra voor wilde dieren."
   },
   "source": {
     "osmTags": "amenity=animal_shelter"
@@ -86,7 +88,8 @@
         "ca": "un refugi d'animals",
         "pl": "schronisko dla zwierząt",
         "fr": "refuge animalier",
-        "cs": "útulek pro zvířata"
+        "cs": "útulek pro zvířata",
+        "nl": "een dierenasiel"
       },
       "tags": [
         "amenity=animal_shelter"
@@ -109,7 +112,8 @@
         "ca": "Quin nom té aquest refugi d'animals?",
         "pl": "Jak nazywa się to schronisko dla zwierząt?",
         "fr": "Quel est le nom de ce refuge animalier ?",
-        "cs": "Jak se jmenuje tento útulek pro zvířata?"
+        "cs": "Jak se jmenuje tento útulek pro zvířata?",
+        "nl": "Wat is de naam van dit dierenasiel?"
       },
       "render": {
         "en": "This animal shelter is named <b>{name}</b>",
@@ -118,7 +122,8 @@
         "zh_Hans": "这个动物收容所叫 <b>{name}</b>",
         "pl": "To schronisko dla zwierząt nazywa się <b>{name}</b>",
         "fr": "Ce refuge s'appelle <b>{name}</b>",
-        "cs": "Tento útulek pro zvířata se jmenuje <b>{name}</b>"
+        "cs": "Tento útulek pro zvířata se jmenuje <b>{name}</b>",
+        "nl": "De naam van dit dierenasiel is <b>{name}</b>"
       }
     },
     "website",

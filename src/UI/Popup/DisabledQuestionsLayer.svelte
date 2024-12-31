@@ -2,7 +2,6 @@
   /**
    * Gives an overview of questions which are disabled for the given theme
    */
-  import UserRelatedState from "../../Logic/State/UserRelatedState"
   import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
   import ThemeViewState from "../../Models/ThemeViewState"
   import Tr from "../Base/Tr.svelte"
@@ -13,7 +12,7 @@
   export let layer: LayerConfig
   export let state: ThemeViewState
 
-  let disabledQuestions = state.userRelatedState.getThemeDisabled(state.layout.id, layer.id)
+  let disabledQuestions = state.userRelatedState.getThemeDisabled(state.theme.id, layer.id)
 
   function getQuestion(id: string): Translation {
     return layer.tagRenderings.find((q) => q.id === id).question.Subs({})

@@ -5,9 +5,11 @@
   import type { ProvidedImage } from "../../Logic/ImageProviders/ImageProvider"
 
   export let hash: string
-  let image: UIEventSource<ProvidedImage> = UIEventSource.FromPromise(PanoramaxImageProvider.singleton.getInfo(hash))
+  let image: UIEventSource<ProvidedImage> = UIEventSource.FromPromise(
+    PanoramaxImageProvider.singleton.getInfo(hash)
+  )
 </script>
 
 {#if $image !== undefined}
-  <AttributedImage image={$image}></AttributedImage>
+  <AttributedImage image={$image} />
 {/if}

@@ -18,6 +18,7 @@ A layer showing car parkings
   - [parking-type](#parking-type)
   - [capacity-disabled](#capacity-disabled)
   - [capacity](#capacity)
+  - [maxstay](#maxstay)
   - [leftover-questions](#leftover-questions)
   - [move-button](#move-button)
   - [delete-button](#delete-button)
@@ -52,6 +53,7 @@ Elements must match the expression **<a href='https://wiki.openstreetmap.org/wik
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/parking#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/parking/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [parking](https://wiki.openstreetmap.org/wiki/Key:parking) | Multiple choice | [surface](https://wiki.openstreetmap.org/wiki/Tag:parking%3Dsurface) [street_side](https://wiki.openstreetmap.org/wiki/Tag:parking%3Dstreet_side) [underground](https://wiki.openstreetmap.org/wiki/Tag:parking%3Dunderground) [multi-storey](https://wiki.openstreetmap.org/wiki/Tag:parking%3Dmulti-storey) [rooftop](https://wiki.openstreetmap.org/wiki/Tag:parking%3Drooftop) [lane](https://wiki.openstreetmap.org/wiki/Tag:parking%3Dlane) [carports](https://wiki.openstreetmap.org/wiki/Tag:parking%3Dcarports) [garage_boxes](https://wiki.openstreetmap.org/wiki/Tag:parking%3Dgarage_boxes) [layby](https://wiki.openstreetmap.org/wiki/Tag:parking%3Dlayby) [sheds](https://wiki.openstreetmap.org/wiki/Tag:parking%3Dsheds) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/capacity:disabled#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/capacity%3Adisabled/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [capacity:disabled](https://wiki.openstreetmap.org/wiki/Key:capacity:disabled) | [pnat](../SpecialInputElements.md#pnat) | [0](https://wiki.openstreetmap.org/wiki/Tag:capacity:disabled%3D0) |
 | <a target="_blank" href='https://taginfo.openstreetmap.org/keys/capacity#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/capacity/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [capacity](https://wiki.openstreetmap.org/wiki/Key:capacity) | [pnat](../SpecialInputElements.md#pnat) |  |
+| <a target="_blank" href='https://taginfo.openstreetmap.org/keys/maxstay#values'><img src='https://mapcomplete.org/assets/svg/search.svg' height='18px'></a> <a target="_blank" href='https://taghistory.raifer.tech/?#***/maxstay/'><img src='https://mapcomplete.org/assets/svg/statistics.svg' height='18px'></a> [maxstay](https://wiki.openstreetmap.org/wiki/Key:maxstay) | [pfloat](../SpecialInputElements.md#pfloat) | [unlimited](https://wiki.openstreetmap.org/wiki/Tag:maxstay%3Dunlimited) |
 
 ### images
 This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata` and shows the button to upload new images
@@ -109,6 +111,13 @@ The question is `How many disabled parking spots are there at this parking?`
 
 The question is `How many parking spots are there at this parking?`
 *There are {capacity} parking spots* is shown if `capacity` is set
+
+### maxstay
+
+The question is `What is the maximum amount of time one is allowed to stay here?`
+*One can stay at most <b>{canonical(maxstay)}</b>* is shown if `maxstay` is set
+
+ -  *There is no limit to the amount of time one can stay here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:maxstay' target='_blank'>maxstay</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:maxstay%3Dunlimited' target='_blank'>unlimited</a>
 
 ### leftover-questions
 

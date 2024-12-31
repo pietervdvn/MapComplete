@@ -263,7 +263,7 @@
         }
     },
     "aerialway": {
-        "description": "Various forms of transport for passengers and goods that use wires, including cable cars, gondolas, chair lifts, drag lifts, and zip lines. ",
+        "description": "Various forms of transport for passengers and goods that use wires, including cable cars, gondolas, chair lifts, drag lifts, and zip lines.",
         "name": "Aerialways",
         "pointRendering": {
             "1": {
@@ -305,7 +305,7 @@
                         "then": "This is a gondola where the cars go around in continuous circles"
                     },
                     "10": {
-                        "then": "A zip line. (A touristical attraction where adventurous people go down at high speeds) "
+                        "then": "A zip line. (A touristic attraction where adventurous people go down at high speeds)"
                     },
                     "2": {
                         "then": "An open chairlift with seats to sit on and open to the outside air."
@@ -326,7 +326,7 @@
                         "then": "A drag lift with a platter to drag a single passenger at a time"
                     },
                     "8": {
-                        "then": "A tow line which which drags skieers"
+                        "then": "A tow line which skiers hold on to or attach themselves onto"
                     },
                     "9": {
                         "then": "A magic carpet (a conveyor belt on the ground)"
@@ -389,7 +389,7 @@
         }
     },
     "animal_shelter": {
-        "description": "An animal shelter is a facility where animals in trouble are brought and facility's staff (volunteers or not) feeds them and cares of them, rehabilitating and healing them if necessary. This definition includes kennels for abandoned dogs, catteries for abandoned cats, shelters for other abandoned pets and wildlife recovery centres. ",
+        "description": "An animal shelter is a facility where animals in trouble are brought and facility's staff (volunteers or not) feeds them and cares of them, rehabilitating and healing them if necessary. This definition includes kennels for abandoned dogs, catteries for abandoned cats, shelters for other abandoned pets and wildlife recovery centres.",
         "name": "Animal shelters",
         "presets": {
             "0": {
@@ -598,7 +598,7 @@
         }
     },
     "assisted_repair": {
-        "description": "A self-assisted workshop is a location where people can come and repair their goods with help of volunteers and with the tools available at the given location.  A repair café is a type of event organized regularly along the same principles.",
+        "description": "A self-assisted workshop is a location where people can come and repair their goods with help of volunteers and with the tools available at the given location. A repair café is a type of event organized regularly along the same principles.",
         "name": "Repair cafés and assisted repair workshops",
         "presets": {
             "0": {
@@ -906,53 +906,53 @@
             "access": {
                 "mappings": {
                     "0": {
-                        "then": "Public"
+                        "then": "This barbecue can be used by anyone"
                     },
                     "1": {
-                        "then": "No access"
+                        "then": "This barbecue can't be used by anyone"
                     },
                     "2": {
-                        "then": "Private"
+                        "then": "This barbecue is private"
                     },
                     "3": {
-                        "then": "Access until revoked"
+                        "then": "This barbecue can be used by anyone, but the owner can revoke access at any time"
                     },
                     "4": {
-                        "then": "Access only for customers"
+                        "then": "This barbecue can only be used by customers"
                     },
                     "5": {
-                        "then": "Access only for authorized persons"
+                        "then": "This barbecue can only be used by authorized persons"
                     }
                 },
-                "question": "What is the permitted access?"
+                "question": "Who is allowed to use this barbecue?"
             },
             "covered": {
                 "mappings": {
                     "0": {
-                        "then": "The grill is not covered"
+                        "then": "This barbecue is not covered"
                     },
                     "1": {
-                        "then": "The grill is covered"
+                        "then": "This barbecue is covered"
                     }
                 },
-                "question": "Is the grill covered?"
+                "question": "Is this barbecue covered?"
             },
             "fuel": {
                 "mappings": {
                     "0": {
-                        "then": "Wood"
+                        "then": "This barbecue uses wood as fuel"
                     },
                     "1": {
-                        "then": "Charcoal"
+                        "then": "This barbecue uses charcoal as fuel"
                     },
                     "2": {
-                        "then": "Electric"
+                        "then": "This barbecue is powered by electricity"
                     },
                     "3": {
-                        "then": "Gas"
+                        "then": "This barbecue uses gas as fuel"
                     }
                 },
-                "question": "How ist the grill fueled?"
+                "question": "How is this barbecue fuelled?"
             }
         },
         "title": {
@@ -2083,7 +2083,7 @@
         }
     },
     "brothel": {
-        "description": "An establishment specifically dedicated to prostitution. ",
+        "description": "An establishment specifically dedicated to prostitution.",
         "name": "Brothels",
         "presets": {
             "0": {
@@ -2840,7 +2840,7 @@
         }
     },
     "cinema": {
-        "description": " A place showing movies (films), generally open to the public for a fee. Commonly referred to as a movie theater in the US",
+        "description": "A place showing movies (films), generally open to the public for a fee. Commonly referred to as a movie theater in the US.",
         "name": "Cinema",
         "tagRenderings": {
             "cinema_type": {
@@ -2897,7 +2897,7 @@
             },
             "max_bolts": {
                 "question": "How many bolts do routes in {title()} have at most?",
-                "render": "The sport climbing routes here have at most {climbing:bolts:max} bolts.<div class='subtle'>This is without relays and indicates how much quickdraws a climber needs</div>"
+                "render": "The sport climbing routes here have at most {climbing:bolts:max} bolts. <div class='subtle'>This is without belay stations and indicates how much quickdraws a climber needs.</div>"
             },
             "max_difficulty": {
                 "question": "What is the highest grade route here, according to the french classification system?",
@@ -3075,6 +3075,40 @@
                 },
                 "question": "Is there a speed climbing wall?"
             },
+            "auto_belay_lead": {
+                "mappings": {
+                    "0": {
+                        "then": "There are no auto belays for lead climbing"
+                    },
+                    "1": {
+                        "then": "There is a number of auto belays for lead climbing"
+                    },
+                    "2": {
+                        "then": "There is an auto belay for every lead climbing route"
+                    }
+                },
+                "question": "Are there auto belays for lead climbing here?",
+                "render": "There are {climbing:autobelay:sport} auto belays for lead climbing"
+            },
+            "auto_belay_toprope": {
+                "mappings": {
+                    "0": {
+                        "then": "There are no auto belays for top roping"
+                    },
+                    "1": {
+                        "then": "There are a number of auto belays for top roping"
+                    },
+                    "2": {
+                        "then": "There is an auto belay for every top rope route but manual belaying is also possible"
+                    },
+                    "3": {
+                        "then": "Top rope routes can only be climbed on auto belay"
+                    }
+                },
+                "question": "Are there auto belays for top roping here?",
+                "questionHint": "Excluding auto belays that are only for speed climbing",
+                "render": "There are {climbing:autobelay:toprope} auto belay devices for top roping"
+            },
             "belay_device_rental": {
                 "mappings": {
                     "0": {
@@ -3093,7 +3127,7 @@
                         "then": "A belay device can <b>not</b> be rented here"
                     }
                 },
-                "question": "Can one rent a belay device here?"
+                "question": "Can one rent a belay device here to use in the gym?"
             },
             "harness_rental": {
                 "mappings": {
@@ -3110,7 +3144,7 @@
                         "then": "A climbing harness can <b>not</b> be rented here"
                     }
                 },
-                "question": "Can one rent a climbing harness here?"
+                "question": "Can one rent a climbing harness here to use in the gym?"
             },
             "name": {
                 "question": "What is the name of this climbing gym?"
@@ -3130,7 +3164,7 @@
                         "then": "A climbing rope can <b>not</b> be rented here"
                     }
                 },
-                "question": "Can one rent a climbing rope here?"
+                "question": "Can one rent a climbing rope here to use in the gym?"
             },
             "shoe_rental": {
                 "mappings": {
@@ -3147,7 +3181,7 @@
                         "then": "Climbing shoes can <b>not</b> be rented here"
                     }
                 },
-                "question": "Can one rent climbing shoes here?"
+                "question": "Can one rent climbing shoes here to use in the gym?"
             }
         },
         "title": {
@@ -3222,7 +3256,7 @@
                     }
                 },
                 "question": "How many bolts does this route have before reaching the anchor?",
-                "render": "This route has {climbing:bolts} bolts <div class='subtle'>This is without relays and indicates how much quickdraws a climber needs</div>"
+                "render": "This route has {climbing:bolts} bolts. <div class='subtle'>This is without belay stations and indicates how much quickdraws a climber needs.</div>"
             }
         },
         "title": {
@@ -10440,7 +10474,7 @@
                         "then": "Non-competitive diving"
                     },
                     "26": {
-                        "then": "Rock climbing"
+                        "then": "Climbing"
                     },
                     "27": {
                         "then": "Climbing Adventure"
@@ -12513,14 +12547,14 @@
             "more_privacy": {
                 "mappings": {
                     "0": {
-                        "then": "When making changes to OpenStreetMap, do not indicate how far away you were from the changed objects."
+                        "then": "When making changes to OpenStreetMap, do not indicate how far away I was from the changed objects."
                     },
                     "1": {
                         "then": "When making changes to OpenStreetMap, roughly indicate how far away you were from the changed objects. This helps other contributors to understand how you made the change"
                     }
                 },
                 "question": "When making changes, should a rough indication be given how far away you were from the object?",
-                "questionHint": "If you make a change to one or more objects and you enabled your location, a rough indication of where you made will be saved: it is indicated if you were closer then 25m, 500m, 5km or further away then 5km. This helps mappers understand your context when making changes, but gives an indication of where you were at this time. "
+                "questionHint": "If you make a change to one or more objects and you enabled your location, a rough indication of where you made will be saved: it is indicated if you were closer then 25m, 500m, 5km or further away than 5km. This helps mappers understand your context when making changes, but gives an indication of where you were at this time."
             },
             "more_privacy_theme_override": {
                 "mappings": {
@@ -12597,13 +12631,13 @@
             "sync-visited-locations": {
                 "mappings": {
                     "0": {
-                        "then": "Save the locations you search for and inspect and sync them via openstreetmap.org. OpenStreetMap and all apps you use can see this history"
+                        "then": "Save the locations I search for and inspect and sync them via openstreetmap.org. OpenStreetMap and all apps that I give access to my OSM account can see this history"
                     },
                     "1": {
                         "then": "Save the locations you search for and inspect on my device"
                     },
                     "2": {
-                        "then": "Don't save the locations you search for and inspect "
+                        "then": "Don't save the locations I search for and inspect"
                     }
                 },
                 "question": "Should the locations you search for and inspect be remembered?",

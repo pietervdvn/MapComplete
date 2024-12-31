@@ -2059,7 +2059,7 @@
         }
     },
     "brothel": {
-        "description": "Un establecimiento dedicado específicamente a la prostitución ",
+        "description": "Un establecimiento dedicado específicamente a la prostitución.",
         "name": "Burdeles",
         "presets": {
             "0": {
@@ -2816,7 +2816,7 @@
         }
     },
     "cinema": {
-        "description": " Un lugar donde se proyectan películas (cine), generalmente abierto al público por una tarifa Comúnmente conocido como cine en Estados Unidos",
+        "description": "Un lugar donde se proyectan películas (cine), generalmente abierto al público por una tarifa Comúnmente conocido como cine en Estados Unidos.",
         "name": "Cine",
         "tagRenderings": {
             "cinema_type": {

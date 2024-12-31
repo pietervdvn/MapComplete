@@ -244,7 +244,7 @@ These layers can not be reused in different themes.
 
 This layer is based on [assisted_repair](../Layers/assisted_repair.md)
 
-A self-assisted workshop is a location where people can come and repair their goods with help of volunteers and with the tools available at the given location.  A repair café is a type of event organized regularly along the same principles.
+A self-assisted workshop is a location where people can come and repair their goods with help of volunteers and with the tools available at the given location. A repair café is a type of event organized regularly along the same principles.
 
  - This layer is shown at zoomlevel **11** and higher
 
@@ -1740,9 +1740,9 @@ This tagrendering is only visible in the popup if the following condition is met
 The question is `What is the maximum amount of time one is allowed to stay here?`
 *One can stay at most <b>{canonical(maxstay)}</b>* is shown if `maxstay` is set
 
- -  *No timelimit on leaving your vehicle here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:maxstay' target='_blank'>maxstay</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:maxstay%3Dunlimited' target='_blank'>unlimited</a>
+ -  *There is no limit to the amount of time one can stay here* is shown if with <a href='https://wiki.openstreetmap.org/wiki/Key:maxstay' target='_blank'>maxstay</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:maxstay%3Dunlimited' target='_blank'>unlimited</a>
 
-This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:bus' target='_blank'>bus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bus%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:hgv' target='_blank'>hgv</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hgv%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:motorcar' target='_blank'>motorcar</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:motorcar%3Dyes' target='_blank'>yes</a> | maxstay~.+
+This tagrendering is only visible in the popup if the following condition is met: <a href='https://wiki.openstreetmap.org/wiki/Key:bus' target='_blank'>bus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bus%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:hgv' target='_blank'>hgv</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hgv%3Dyes' target='_blank'>yes</a> | <a href='https://wiki.openstreetmap.org/wiki/Key:motorcar' target='_blank'>motorcar</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:motorcar%3Dyes' target='_blank'>yes</a>
 
 ### Network
 

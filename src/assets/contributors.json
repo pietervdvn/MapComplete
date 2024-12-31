@@ -1,11 +1,11 @@
 {
   "contributors": [
     {
-      "commits": 8650,
+      "commits": 8779,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 495,
+      "commits": 505,
       "contributor": "Robin van der Linde"
     },
     {
@@ -82,6 +82,10 @@
     },
     {
       "commits": 17,
+      "contributor": "Midgard"
+    },
+    {
+      "commits": 17,
       "contributor": "pgm-chardelv1"
     },
     {
@@ -127,10 +131,6 @@
     {
       "commits": 9,
       "contributor": "Codain"
-    },
-    {
-      "commits": 9,
-      "contributor": "Midgard"
     },
     {
       "commits": 8,

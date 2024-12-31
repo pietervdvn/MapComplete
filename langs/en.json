@@ -94,7 +94,7 @@
             "intro": "The user is greeted by a map with features. Upon selecting one, the information about that feature is shown.",
             "title": "What does the interface look like?"
         },
-        "examples": "There are many thematic maps available of which a few are shown here.\n\nThere are many more thematic maps online: about healthcare, indoor navigation, wheelchair accessibility, waste facilities, public bookcases, pedestrian crossings with a rainbow-painting,… Discover them all on mapcomplete.org",
+        "examples": "There are many thematic maps available of which a few are shown here.\n\nThere are many more thematic maps online: about healthcare, indoor navigation, wheelchair accessibility, waste facilities, public bookcases, pedestrian crossings with a rainbow-painting, … Discover them all on mapcomplete.org",
         "fakeui": {
             "add_images": "Add images with a few clicks",
             "attributes": "Shows attributes in a friendly way",
@@ -106,7 +106,7 @@
         "frontParagraph": "MapComplete is an easy to use web application to collect geodata in OpenStreetMap, enabling collecting and managing relevant data in an open, crowdsourced and reusable way.\n\nNew categories and attributes can be added upon request.",
         "lines_too": "Lines and polygons are shown too. Attributes and images can be added and updated on those objects as well.",
         "mapcomplete": {
-            "customize": "MapComplete can be tailored to your needs, with new map layers, new functionalities or styled with your organisations colours and font.\nWe also have experience with starting campaigns to crowdsource geodata.\nContact pietervdvn@posteo.net for a quote.",
+            "customize": "MapComplete can be tailored to your needs, with new map layers, new functionalities or styled with your organisation's colours and font.\nWe also have experience with starting campaigns to crowdsource geodata.\nContact pietervdvn@posteo.net for a quote.",
             "intro": "MapComplete is a website which has {mapCount} interactive maps. Every single map allows to add or update information. It has many features:",
             "li0": "Show where POI are",
             "li1": "Add new points and update info on existing ones",
@@ -159,7 +159,7 @@
             "stillLoading": "The data is still loading. Please wait a bit before you add a new feature.",
             "title": "Add a new feature",
             "wrongType": "This feature is not a node or a way and can not be imported",
-            "zoomInFurther": "Zoom in further to add a feature",
+            "zoomInFurther": "You need to first zoom in further if you want to add a feature",
             "zoomInMore": "Zoom in more to import this feature"
         },
         "apply_button": {
@@ -317,9 +317,9 @@
             "closed_until": "Opens at {date}",
             "error": "Could not parse the opening hours",
             "error_loading": "Error: could not visualize these opening hours.",
-            "friday": "On friday {ranges}",
+            "friday": "On Friday {ranges}",
             "loadingCountry": "Determining country…",
-            "monday": "On monday {ranges}",
+            "monday": "On Monday {ranges}",
             "not_all_rules_parsed": "These opening hours are complicated. The following rules are ignored in the input element:",
             "on_weekdays": "Opened on weekdays {ranges}",
             "openTill": "till",
@@ -332,12 +332,12 @@
             "ph_open_as_usual": "open, as usual",
             "ranges": "from {starttime} till {endtime}",
             "rangescombined": "{range0} and {range1}",
-            "saturday": "On saturday {ranges}",
-            "sunday": "On sunday {ranges}",
-            "thursday": "On thursday {ranges}",
-            "tuesday": "On tuesday {ranges}",
+            "saturday": "On Saturday {ranges}",
+            "sunday": "On Sunday {ranges}",
+            "thursday": "On Thursday {ranges}",
+            "tuesday": "On Tuesday {ranges}",
             "unknown": "The opening hours are unknown",
-            "wednesday": "On wednesday {ranges}"
+            "wednesday": "On Wednesday {ranges}"
         },
         "pdf": {
             "attr": "Map data © OpenStreetMap Contributors, reusable under ODbL",
@@ -379,11 +379,11 @@
             "deleteThemeHistory": "Delete earlier visited themes",
             "editSearchSyncSettings": "Edit sync settings",
             "editThemeSync": "Edit sync settings",
-            "error": "Something went wrong…",
+            "error": "Something went wrong.",
             "instructions": "Use the search bar above to search for locations, filters or other thematic maps",
             "locations": "Locations",
             "nMoreFilters": "{n} more",
-            "nothing": "Nothing found…",
+            "nothing": "Nothing found.",
             "nothingFor": "No results found for {term}",
             "otherMaps": "Other maps",
             "pickFilter": "Pick a filter",
@@ -392,7 +392,7 @@
             "search": "Search a location",
             "searching": "Searching…"
         },
-        "searchAnswer": "Search an option…",
+        "searchAnswer": "Search an option",
         "seeIndex": "See the overview with all thematic maps",
         "share": "Share",
         "sharescreen": {
@@ -585,16 +585,16 @@
             "failReasonsAdvanced": "Alternatively, make sure your browser and extensions do not block third-party API's.",
             "multiple": {
                 "done": "{count} images are successfully uploaded. Thank you!",
-                "partiallyDone": "{count} images are getting uploaded, {done} images are done…",
+                "partiallyDone": "{count} images are being uploaded, {done} images are done…",
                 "someFailed": "Sorry, we could not upload {count} images",
-                "uploading": "{count} images are getting uploaded…"
+                "uploading": "{count} images are being uploaded…"
             },
             "noBlur": "Images will not be blurred. Do not photograph people",
             "one": {
                 "done": "Your image was successfully uploaded. Thank you!",
                 "failed": "Sorry, we could not upload your image",
-                "retrying": "Your image is getting uploaded again…",
-                "uploading": "Your image is getting uploaded…"
+                "retrying": "Trying again to upload your image…",
+                "uploading": "Your image is being uploaded…"
             }
         },
         "uploadFailed": "Could not upload your picture. Are you connected to the Internet, and allow third party API's? The Brave browser or the uMatrix plugin might block them."

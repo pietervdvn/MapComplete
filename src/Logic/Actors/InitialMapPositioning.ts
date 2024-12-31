@@ -4,10 +4,12 @@ import { LocalStorageSource } from "../Web/LocalStorageSource"
 import { QueryParameters } from "../Web/QueryParameters"
 import Hash from "../Web/Hash"
 import OsmObjectDownloader from "../Osm/OsmObjectDownloader"
-import { OsmObject } from "../Osm/OsmObject"
 import Constants from "../../Models/Constants"
 import { Utils } from "../../Utils"
 import { GeoLocationState } from "../State/GeoLocationState"
+import { OsmConnection } from "../Osm/OsmConnection"
+
+;("use strict")
 
 /**
  * This actor is responsible to set the map location.
@@ -25,7 +27,11 @@ export default class InitialMapPositioning {
     public location: UIEventSource<{ lon: number; lat: number }>
     public useTerrain: Store<boolean>
 
-    constructor(layoutToUse: ThemeConfig, geolocationState: GeoLocationState) {
+    constructor(
+        layoutToUse: ThemeConfig,
+        geolocationState: GeoLocationState,
+        osmConnection: OsmConnection
+    ) {
         function localStorageSynced(
             key: string,
             deflt: number,
@@ -46,8 +52,6 @@ export default class InitialMapPositioning {
 
             return src
         }
-
-        const initialHash = Hash.hash.data
 
         // -- Location control initialization
         this.zoom = localStorageSynced(
@@ -72,6 +76,7 @@ export default class InitialMapPositioning {
         })
         this.useTerrain = new ImmutableStore<boolean>(layoutToUse.enableTerrain)
 
+        const initialHash = Hash.hash.data
         if (initialHash?.match(/^(node|way|relation)\/[0-9]+$/)) {
             // We pan to the selected element
             const [type, id] = initialHash.split("/")
@@ -88,6 +93,16 @@ export default class InitialMapPositioning {
                 const [lat, lon] = osmObject.centerpoint()
                 this.location.setData({ lon, lat })
             })
+        } else if (layoutToUse.id === "notes" && initialHash?.match(/[0-9]+/)) {
+            console.log("Loading note", initialHash)
+            const noteId = Number(initialHash)
+            if (osmConnection.isLoggedIn.data) {
+                osmConnection.getNote(noteId).then((note) => {
+                    const [lon, lat] = note.geometry.coordinates
+                    console.log("Got note:", note)
+                    this.location.set({ lon, lat })
+                })
+            }
         } else if (
             Constants.GeoIpServer &&
             lat.data === defaultLat &&

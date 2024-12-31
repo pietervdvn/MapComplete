@@ -112,7 +112,7 @@ class NearbyImageVis implements SpecialVisualization {
         {
             name: "readonly",
             required: false,
-            doc: "If 'readonly', will not show the 'link'-button",
+            doc: "If 'readonly' or 'yes', will not show the 'link'-button",
         },
     ]
     docs =
@@ -128,7 +128,7 @@ class NearbyImageVis implements SpecialVisualization {
         layer: LayerConfig
     ): SvelteUIElement {
         const isOpen = args[0] === "open"
-        const readonly = args[1] === "readonly"
+        const readonly = args[1] === "readonly" || args[1] === "yes"
         const [lon, lat] = GeoOperations.centerpointCoordinates(feature)
         return new SvelteUIElement(isOpen ? NearbyImages : NearbyImagesCollapsed, {
             tags,
@@ -744,13 +744,14 @@ export default class SpecialVisualizations {
                         required: false,
                     },
                 ],
-                constr: (state, tags, args) => {
+                constr: (state, tags, args, feature) => {
                     const targetKey = args[0] === "" ? undefined : args[0]
                     const noBlur = args[3]?.toLowerCase()?.trim()
                     return new SvelteUIElement(UploadImage, {
                         state,
                         tags,
                         targetKey,
+                        feature,
                         labelText: args[1],
                         image: args[2],
                         noBlur: noBlur === "true" || noBlur === "yes",
@@ -1093,7 +1094,7 @@ export default class SpecialVisualizations {
                         tags
                             .map((tags) => tags[args[0]])
                             .map((commentsStr) => {
-                                const comments: any[] = JSON.parse(commentsStr)
+                                const comments: { text: string }[] = JSON.parse(commentsStr)
                                 const startLoc = Number(args[1] ?? 0)
                                 if (!isNaN(startLoc) && startLoc > 0) {
                                     comments.splice(0, startLoc)
@@ -1852,69 +1853,80 @@ export default class SpecialVisualizations {
                     const key = argument[0] ?? "website"
                     const useProxy = argument[1] !== "no"
                     const readonly = argument[3] === "readonly"
-                    const isClosed = (arguments[4] ?? "yes") === "yes"
+                    const isClosed = (argument[4] ?? "yes") === "yes"
 
-                    const url = tags
-                        .mapD((tags) => {
-                            if (!tags._country || !tags[key] || tags[key] === "undefined") {
-                                return null
-                            }
-                            return JSON.stringify({ url: tags[key], country: tags._country })
-                        })
-                        .mapD((data) => JSON.parse(data))
-                    const sourceUrl: Store<string | undefined> = url.mapD((url) => url.url)
+                    const countryStore: Store<string | undefined> = tags.mapD(
+                        (tags) => tags._country
+                    )
+                    const sourceUrl: Store<string | undefined> = tags.mapD((tags) => {
+                        if (!tags[key] || tags[key] === "undefined") {
+                            return null
+                        }
+                        return tags[key]
+                    })
                     const externalData: Store<{ success: GeoJsonProperties } | { error: any }> =
-                        url.bindD(({ url, country }) => {
-                            if (url.startsWith("https://data.velopark.be/")) {
+                        sourceUrl.bindD(
+                            (url) => {
+                                const country = countryStore.data
+                                if (url.startsWith("https://data.velopark.be/")) {
+                                    return Stores.FromPromiseWithErr(
+                                        (async () => {
+                                            try {
+                                                const loadAll =
+                                                    layer.id.toLowerCase().indexOf("maproulette") >=
+                                                    0 // Dirty hack
+                                                const features =
+                                                    await LinkedDataLoader.fetchVeloparkEntry(
+                                                        url,
+                                                        loadAll
+                                                    )
+                                                const feature =
+                                                    features.find(
+                                                        (f) => f.properties["ref:velopark"] === url
+                                                    ) ?? features[0]
+                                                const properties = feature.properties
+                                                properties["ref:velopark"] = url
+                                                console.log(
+                                                    "Got properties from velopark:",
+                                                    properties
+                                                )
+                                                return properties
+                                            } catch (e) {
+                                                console.error(e)
+                                                throw e
+                                            }
+                                        })()
+                                    )
+                                }
+                                if (country === undefined) {
+                                    return undefined
+                                }
                                 return Stores.FromPromiseWithErr(
                                     (async () => {
                                         try {
-                                            const loadAll =
-                                                layer.id.toLowerCase().indexOf("maproulette") >= 0 // Dirty hack
-                                            const features =
-                                                await LinkedDataLoader.fetchVeloparkEntry(
-                                                    url,
-                                                    loadAll
-                                                )
-                                            const feature =
-                                                features.find(
-                                                    (f) => f.properties["ref:velopark"] === url
-                                                ) ?? features[0]
-                                            const properties = feature.properties
-                                            properties["ref:velopark"] = url
-                                            console.log("Got properties from velopark:", properties)
-                                            return properties
+                                            return await LinkedDataLoader.fetchJsonLd(
+                                                url,
+                                                { country },
+                                                useProxy ? "proxy" : "fetch-lod"
+                                            )
                                         } catch (e) {
-                                            console.error(e)
-                                            throw e
+                                            console.log(
+                                                "Could not get with proxy/download LOD, attempting to download directly. Error for ",
+                                                url,
+                                                "is",
+                                                e
+                                            )
+                                            return await LinkedDataLoader.fetchJsonLd(
+                                                url,
+                                                { country },
+                                                "fetch-raw"
+                                            )
                                         }
                                     })()
                                 )
-                            }
-                            return Stores.FromPromiseWithErr(
-                                (async () => {
-                                    try {
-                                        return await LinkedDataLoader.fetchJsonLd(
-                                            url,
-                                            { country },
-                                            useProxy ? "proxy" : "fetch-lod"
-                                        )
-                                    } catch (e) {
-                                        console.log(
-                                            "Could not get with proxy/download LOD, attempting to download directly. Error for ",
-                                            url,
-                                            "is",
-                                            e
-                                        )
-                                        return await LinkedDataLoader.fetchJsonLd(
-                                            url,
-                                            { country },
-                                            "fetch-raw"
-                                        )
-                                    }
-                                })()
-                            )
-                        })
+                            },
+                            [countryStore]
+                        )
 
                     externalData.addCallbackAndRunD((lod) =>
                         console.log("linked_data_from_website received the following data:", lod)
@@ -1932,7 +1944,7 @@ export default class SpecialVisualizations {
                             collapsed: isClosed,
                         }),
                         undefined,
-                        url.map((url) => !!url)
+                        sourceUrl.map((url) => !!url)
                     )
                 },
             },
@@ -1987,13 +1999,7 @@ export default class SpecialVisualizations {
                 funcName: "pending_changes",
                 docs: "A module showing the pending changes, with the option to clear the pending changes",
                 args: [],
-                constr(
-                    state: SpecialVisualizationState,
-                    tagSource: UIEventSource<Record<string, string>>,
-                    argument: string[],
-                    feature: Feature,
-                    layer: LayerConfig
-                ): BaseUIElement {
+                constr(state: SpecialVisualizationState): BaseUIElement {
                     return new SvelteUIElement(PendingChangesIndicator, { state, compact: false })
                 },
             },
