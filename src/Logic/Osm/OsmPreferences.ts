@@ -32,7 +32,7 @@ export class OsmPreferences {
         this.auth = auth
         this._fakeUser = fakeUser
         this.osmConnection = osmConnection
-        osmConnection.OnLoggedIn(() => {
+        osmConnection.userDetails.addCallbackAndRunD(() => {
             this.loadBulkPreferences()
             return true
         })

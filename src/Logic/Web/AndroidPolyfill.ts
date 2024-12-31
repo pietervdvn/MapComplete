@@ -51,13 +51,11 @@ export class AndroidPolyfill {
         this.backfillGeolocation(this.databridgePlugin)
     }
 
-    public static async requestLoginCodes(osmConnection: OsmConnection) {
+    public static async requestLoginCodes() {
         const result = await DatabridgePluginSingleton.request<{oauth_token: string}>({ key: "request:login" })
         const token: string = result.value.oauth_token
-        console.log("AndroidPolyfill: received code and state; trying to pass them to the oauth lib",token)
-        const auth = osmConnection.auth.bootstrapToken(token, (err, result) => {
-            console.log("AndroidPolyFill: bootstraptoken returned", JSON.stringify({err, result}))
-        })
+        console.log("AndroidPolyfill: received oauth_token; trying to pass them to the oauth lib",token)
+        return token
     }
 }
 

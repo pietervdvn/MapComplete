@@ -1,6 +1,5 @@
 import SvelteUIElement from "./UI/Base/SvelteUIElement"
 import Test from "./UI/Test.svelte"
+import { OsmConnection } from "./Logic/Osm/OsmConnection"
 
-new Test({
-    target: document.getElementById("maindiv"),
-})
+new OsmConnection().interact("user/details.json").then(r => console.log(">>>", r))

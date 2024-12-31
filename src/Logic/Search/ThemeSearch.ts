@@ -7,6 +7,7 @@ import themeOverview from "../../assets/generated/theme_overview.json"
 import LayerSearch from "./LayerSearch"
 import SearchUtils from "./SearchUtils"
 import { OsmConnection } from "../Osm/OsmConnection"
+import { AndroidPolyfill } from "../Web/AndroidPolyfill"
 
 type ThemeSearchScore = {
     theme: MinimalThemeInformation
@@ -82,7 +83,7 @@ export default class ThemeSearch {
         }
 
         let linkPrefix = `${path}/${layout.id.toLowerCase()}.html?`
-        if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
+        if ((location.hostname === "localhost" && !AndroidPolyfill.inAndroid.data) || location.hostname === "127.0.0.1") {
             linkPrefix = `${path}/theme.html?layout=${layout.id}&`
         }
 

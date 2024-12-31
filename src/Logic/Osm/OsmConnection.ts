@@ -5,41 +5,70 @@ import { Utils } from "../../Utils"
 import { LocalStorageSource } from "../Web/LocalStorageSource"
 import { AuthConfig } from "./AuthConfig"
 import Constants from "../../Models/Constants"
-import { AndroidPolyfill } from "../Web/AndroidPolyfill"
 import { Feature, Point } from "geojson"
+import { AndroidPolyfill } from "../Web/AndroidPolyfill"
+import { QueryParameters } from "../Web/QueryParameters"
 
 interface OsmUserInfo {
-    id: number
-    display_name: string
-    account_created: string
-    description: string
-    contributor_terms: { agreed: boolean }
-    roles: []
-    changesets: { count: number }
-    traces: { count: number }
-    blocks: { received: { count: number; active: number } }
-}
 
-export default class UserDetails {
-    public loggedIn = false
-    public name = "Not logged in"
-    public uid: number
-    public csCount = 0
-    public img?: string
-    public unreadMessages = 0
-    public totalMessages: number = 0
-    public home: { lon: number; lat: number }
-    public backend: string
-    public account_created: string
-    public tracesCount: number = 0
-    public description: string
-    public languages: string[]
-
-    constructor(backend: string) {
-        this.backend = backend
+    "id": number,
+    "display_name": string,
+    "account_created": string,
+    "description": string,
+    "contributor_terms": {
+        "agreed": boolean,
+        "pd": boolean
+    },
+    "img": {
+        "href": string,
+    },
+    "roles": string[],
+    "changesets": {
+        "count": number
+    },
+    "traces": {
+        "count": number
+    },
+    "blocks": {
+        "received": {
+            "count": number,
+            "active": number
+        }
+    },
+    "home": {
+        "lat": number,
+        "lon": number,
+        "zoom": number
+    },
+    "languages": string[],
+    "messages": {
+        "received": {
+            "count": number,
+            "unread": number
+        },
+        "sent": {
+            "count": number
+        }
     }
+
 }
 
+export default interface UserDetails {
+    loggedIn: boolean
+    name: string
+    uid: number
+    csCount: number
+    img?: string
+    unreadMessages: number
+    totalMessages: number
+    home?: { lon: number; lat: number }
+    backend: string
+    account_created: string
+    tracesCount: number
+    description?: string
+    languages: string[]
+
+}
 export type OsmServiceState = "online" | "readonly" | "offline" | "unknown" | "unreachable"
 
 interface CapabilityResult {
@@ -77,7 +106,10 @@ interface CapabilityResult {
 
 export class OsmConnection {
     public auth: osmAuth
-    public userDetails: UIEventSource<UserDetails>
+    /**
+     * Details of the currently logged-in user; undefined if not logged in
+     */
+    public userDetails: UIEventSource<UserDetails | undefined>
     public isLoggedIn: Store<boolean>
     public gpxServiceIsOnline: UIEventSource<OsmServiceState> = new UIEventSource<OsmServiceState>(
         "unknown",
@@ -93,7 +125,6 @@ export class OsmConnection {
     public readonly _oauth_config: AuthConfig
     private readonly _dryRun: Store<boolean>
     private readonly fakeUser: boolean
-    private _onLoggedIn: ((userDetails: UserDetails) => void)[] = []
     private readonly _iframeMode: boolean
     private readonly _singlePage: boolean
     private isChecking = false
@@ -129,10 +160,7 @@ export class OsmConnection {
             this._oauth_config.oauth_secret = import.meta.env.VITE_OSM_OAUTH_SECRET
         }
 
-        this.userDetails = new UIEventSource<UserDetails>(
-            new UserDetails(this._oauth_config.url),
-            "userDetails",
-        )
+        this.userDetails = new UIEventSource<UserDetails>(undefined, "userDetails")
         if (options.fakeUser) {
             const ud = this.userDetails.data
             ud.csCount = 5678
@@ -146,25 +174,21 @@ export class OsmConnection {
                 "The 'fake-user' is a URL-parameter which allows to test features without needing an OSM account or even internet connection."
             this.loadingStatus.setData("logged-in")
         }
-        this.UpdateCapabilities()
+        this.updateCapabilities()
 
         this.isLoggedIn = this.userDetails.map(
             (user) =>
-                user.loggedIn &&
+                !!user &&
                 (this.apiIsOnline.data === "unknown" || this.apiIsOnline.data === "online"),
             [this.apiIsOnline],
         )
-        this.isLoggedIn.addCallback((isLoggedIn) => {
-            if (this.userDetails.data.loggedIn == false && isLoggedIn == true) {
-                // We have an inconsistency: the userdetails say we _didn't_ log in, but this actor says we do
-                // This means someone attempted to toggle this; so we attempt to login!
-                this.AttemptLogin()
-            }
-        })
 
         this._dryRun = options.dryRun ?? new UIEventSource<boolean>(false)
 
-        this.updateAuthObject()
+        this.createAuthObject()
+        AndroidPolyfill.inAndroid.addCallback(() => {
+            this.createAuthObject()
+        })
         if (!this.fakeUser) {
             this.CheckForMessagesContinuously()
         }
@@ -209,9 +233,6 @@ export class OsmConnection {
         return <UIEventSource<T>>this.preferencesHandler.getPreference(key, defaultValue, prefix)
     }
 
-    public OnLoggedIn(action: (userDetails: UserDetails) => void) {
-        this._onLoggedIn.push(action)
-    }
 
     public LogOut() {
         this.auth.logout()
@@ -233,7 +254,7 @@ export class OsmConnection {
     }
 
     public AttemptLogin() {
-        this.UpdateCapabilities()
+        this.updateCapabilities()
         if (this.loadingStatus.data !== "logged-in") {
             // Stay 'logged-in' if we are already logged in; this simply means we are checking for messages
             this.loadingStatus.setData("loading")
@@ -245,87 +266,63 @@ export class OsmConnection {
         }
 
         console.log("Trying to log in...")
-        this.updateAuthObject()
-
         LocalStorageSource.get("location_before_login").setData(
             Utils.runningFromConsole ? undefined : window.location.href,
         )
-        this.auth.xhr(
-            {
-                method: "GET",
-                path: "/api/0.6/user/details",
-            },
-            (err, details: XMLDocument) => {
-                if (err != null) {
-                    console.log("Could not login due to:", err)
-                    this.loadingStatus.setData("error")
-                    if (err.status == 401) {
-                        console.log("Clearing tokens...")
-                        // Not authorized - our token probably got revoked
-                        this.auth.logout()
-                        this.LogOut()
-                    } else {
-                        console.log("Other error. Status:", err.status)
-                        this.apiIsOnline.setData("unreachable")
-                    }
-                    return
-                }
 
-                if (details == null) {
-                    this.loadingStatus.setData("error")
-                    return
-                }
+        this.auth.authenticate((err, result) => {
+            if (!err) {
+                this.loadUserInfo()
+            }
+        })
 
-                // details is an XML DOM of user details
-                const userInfo = details.getElementsByTagName("user")[0]
+    }
 
-                const data = this.userDetails.data
-                data.loggedIn = true
-                console.log("Login completed, userinfo is ", userInfo)
-                data.name = userInfo.getAttribute("display_name")
-                data.account_created = userInfo.getAttribute("account_created")
-                data.uid = Number(userInfo.getAttribute("id"))
-                data.languages = Array.from(
-                    userInfo.getElementsByTagName("languages")[0].getElementsByTagName("lang"),
-                ).map((l) => l.textContent)
-                data.csCount = Number.parseInt(
-                    userInfo.getElementsByTagName("changesets")[0].getAttribute("count") ?? "0",
-                )
-                data.tracesCount = Number.parseInt(
-                    userInfo.getElementsByTagName("traces")[0].getAttribute("count") ?? "0",
-                )
+    private async loadUserInfo() {
+        try {
+            const result = await this.interact("user/details.json")
+            if (result === null) {
+                this.loadingStatus.setData("error")
+                return
+            }
+            const data = <{
+                "version": "0.6",
+                "license": "http://opendatacommons.org/licenses/odbl/1-0/",
+                "user": OsmUserInfo
+            }>JSON.parse(result)
+            const user = data.user
+            const userdetails: UserDetails = {
+                uid: user.id,
+                name: user.display_name,
+                csCount: user.changesets.count,
+                description: user.description,
+                loggedIn: true,
+                backend: this.Backend(),
+                home: user.home,
+                languages: user.languages,
+                totalMessages: user.messages.received?.count ?? 0,
+                img: user.img?.href,
+                account_created: user.account_created,
+                tracesCount: user.traces.count,
+                unreadMessages: user.messages.received?.unread ?? 0,
+            }
+            console.log("Login completed, userinfo is ", userdetails)
+            this.userDetails.set(userdetails)
+            this.loadingStatus.setData("logged-in")
 
-                data.img = undefined
-                const imgEl = userInfo.getElementsByTagName("img")
-                if (imgEl !== undefined && imgEl[0] !== undefined) {
-                    data.img = imgEl[0].getAttribute("href")
-                }
-
-                const description = userInfo.getElementsByTagName("description")
-                if (description !== undefined && description[0] !== undefined) {
-                    data.description = description[0]?.innerHTML
-                }
-                const homeEl = userInfo.getElementsByTagName("home")
-                if (homeEl !== undefined && homeEl[0] !== undefined) {
-                    const lat = parseFloat(homeEl[0].getAttribute("lat"))
-                    const lon = parseFloat(homeEl[0].getAttribute("lon"))
-                    data.home = { lat: lat, lon: lon }
-                }
-
-                this.loadingStatus.setData("logged-in")
-                const messages = userInfo
-                    .getElementsByTagName("messages")[0]
-                    .getElementsByTagName("received")[0]
-                data.unreadMessages = parseInt(messages.getAttribute("unread"))
-                data.totalMessages = parseInt(messages.getAttribute("count"))
-
-                this.userDetails.ping()
-                for (const action of this._onLoggedIn) {
-                    action(this.userDetails.data)
-                }
-                this._onLoggedIn = []
-            },
-        )
+        } catch (err) {
+            console.log("Could not login due to:", err)
+            this.loadingStatus.setData("error")
+            if (err.status == 401) {
+                console.log("Clearing tokens...")
+                // Not authorized - our token probably got revoked
+                this.auth.logout()
+                this.LogOut()
+            } else {
+                console.log("Other error. Status:", err.status)
+                this.apiIsOnline.setData("unreachable")
+            }
+        }
     }
 
     /**
@@ -339,7 +336,7 @@ export class OsmConnection {
      */
     public async interact(
         path: string,
-        method: "GET" | "POST" | "PUT" | "DELETE",
+        method: "GET" | "POST" | "PUT" | "DELETE" = "GET",
         header?: Record<string, string>,
         content?: string,
         allowAnonymous: boolean = false,
@@ -357,6 +354,11 @@ export class OsmConnection {
             }
             console.error(possibleResult)
             throw "Could not interact with OSM:" + possibleResult["error"]
+        }
+
+        if (!this.auth.authenticated()) {
+            console.trace("Not authenticated")
+            await Utils.waitFor(10000)
         }
 
         return new Promise((ok, error) => {
@@ -504,7 +506,7 @@ export class OsmConnection {
                 (options.filename ?? "gpx_track_mapcomplete_" + new Date().toISOString()) +
                 "\"\r\nContent-Type: application/gpx+xml",
         }
-        user
+
         const boundary = "987654"
 
         let body = ""
@@ -563,19 +565,29 @@ export class OsmConnection {
         this.auth.authenticate(() => {
             // Fully authed at this point
             console.log("Authentication successful!")
-            const oauth_token = window.localStorage.getItem(this._oauth_config.url + "oauth2_access_token")
+            const oauth_token = QueryParameters.GetQueryParameter("oauth_token", undefined).data ?? window.localStorage.getItem(this._oauth_config.url + "oauth2_access_token")
             const previousLocation = LocalStorageSource.get("location_before_login")
             callback(previousLocation.data, oauth_token)
         })
     }
 
-    private updateAuthObject() {
+    private async loginAndroidPolyfill() {
+        const token = await AndroidPolyfill.requestLoginCodes()
+        console.log("Got login token!", token)
+        localStorage.setItem("https://www.openstreetmap.orgoauth2_access_token", token)
+        if (this.auth.authenticated()) {
+            console.log("Logged in!")
+        }
+        await this.loadUserInfo()
+
+    }
+
+    private createAuthObject() {
         let redirect_uri = Utils.runningFromConsole
             ? "https://mapcomplete.org/land.html"
             : window.location.protocol + "//" + window.location.host + "/land.html"
         if (AndroidPolyfill.inAndroid.data) {
             redirect_uri = "https://app.mapcomplete.org/land.html"
-            AndroidPolyfill.requestLoginCodes(this)
         }
         this.auth = new osmAuth({
             client_id: this._oauth_config.oauth_client_id,
@@ -586,9 +598,12 @@ export class OsmConnection {
              * However, this breaks in iframes so we open a popup in that case
              */
             singlepage: !this._iframeMode && !AndroidPolyfill.inAndroid.data,
-            auto: true,
+            auto: false,
             apiUrl: this._oauth_config.api_url ?? this._oauth_config.url,
         })
+        if (AndroidPolyfill.inAndroid.data) {
+            this.loginAndroidPolyfill() // NO AWAIT!
+        }
     }
 
     private CheckForMessagesContinuously() {
@@ -611,9 +626,10 @@ export class OsmConnection {
             return
         }
         Stores.Chronic(60 * 5 * 1000).addCallback(() => {
+            // Check for new messages every 5 minutes
             if (this.isLoggedIn.data) {
                 try {
-                    this.AttemptLogin()
+                    this.loadUserInfo()
                 } catch (e) {
                     console.log("Could not login due to", e)
                 }
@@ -621,11 +637,11 @@ export class OsmConnection {
         })
     }
 
-    private UpdateCapabilities(): void {
+    private updateCapabilities(): void {
         if (this.fakeUser) {
             return
         }
-        this.FetchCapabilities().then(({ api, gpx }) => {
+        this.fetchCapabilities().then(({ api, gpx }) => {
             this.apiIsOnline.setData(api)
             this.gpxServiceIsOnline.setData(gpx)
         })
@@ -646,7 +662,8 @@ export class OsmConnection {
         return parsed
     }
 
-    private async FetchCapabilities(): Promise<{
+    /**Does not use the OSM-auth object*/
+    private async fetchCapabilities(): Promise<{
         api: OsmServiceState
         gpx: OsmServiceState
         database: OsmServiceState
@@ -656,7 +673,7 @@ export class OsmConnection {
         }
         try {
             const result = await Utils.downloadJson<CapabilityResult>(
-                this.Backend() + "/api/0.6/capabilities.json"
+                this.Backend() + "/api/0.6/capabilities.json",
             )
             if (result?.api?.status === undefined) {
                 console.log("Something went wrong:", result)

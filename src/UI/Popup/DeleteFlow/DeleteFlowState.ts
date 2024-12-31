@@ -55,7 +55,7 @@ export class DeleteFlowState {
             if (ud === undefined) {
                 return undefined
             }
-            if (!ud.loggedIn) {
+            if (!this._osmConnection.isLoggedIn.data) {
                 return false
             }
             return (

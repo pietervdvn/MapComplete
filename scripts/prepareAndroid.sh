@@ -49,6 +49,7 @@ cp -r dist/assets/templates dist-full/assets
 cp -r dist/assets/themes dist-full/assets
 
 # mkdir dist-full/assets/generated
+nvm use
 
 # assets/icon-only.png will be used as the app icon
 # See https://capacitorjs.com/docs/guides/splash-screens-and-icons
@@ -56,4 +57,4 @@ npx capacitor-assets generate
 
 npx cap sync
 
-echo "All done! Don't forget to click 'gradly sync files' in Android Studio"
+echo "All done! Don't forget to click 'gradle sync files' in Android Studio"

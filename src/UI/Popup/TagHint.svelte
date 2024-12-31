@@ -23,7 +23,7 @@
   $: tagsExplanation = tags?.asHumanString(true, false, currentProperties)
 </script>
 
-{#if !userDetails || $userDetails.loggedIn}
+{#if !userDetails}
   <div class="break-words" style="word-break: break-word">
     {#if tags === undefined}
       <slot name="no-tags"><Tr cls="subtle" t={Translations.t.general.noTagsSelected} /></slot>
