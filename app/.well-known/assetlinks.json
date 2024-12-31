@@ -1,0 +1,10 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "org.mapcomplete",
+    "sha256_cert_fingerprints":
+    ["16:76:16:29:FE:F7:61:C1:E8:52:2E:63:89:E9:A2:B2:76:87:16:79:E4:D4:92:17:35:B6:3A:17:90:6D:35:6C"]
+  }
+}]
+
