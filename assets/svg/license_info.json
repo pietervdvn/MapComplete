@@ -1318,5 +1318,15 @@
     "sources": [
       "https://www.wikipedia.org/"
     ]
+  },
+  {
+    "path": "world.svg",
+    "license": "GPL 2.0",
+    "authors": [
+      "https://github.com/hiddewie"
+    ],
+    "sources": [
+      "https://github.com/openstreetmap/openstreetmap-website/blob/d38f6484e1aa201284b7eac19dbcc7fad856b88a/assets/sign-up-illustration.svg"
+    ]
   }
 ]
