@@ -2,14 +2,16 @@
   import Tr from "./Base/Tr.svelte"
   import Translations from "./i18n/Translations.ts"
   import BackButton from "./Base/BackButton.svelte"
+  import Not_found from "../assets/svg/Not_found.svelte"
   console.log("???")
 </script>
 
-<main>
-  <div class="flex flex-col">
+  <div class="flex flex-col items-center justify-center w-full h-full p-8">
+    <Not_found class="h-32"/>
+    <h1>
     <Tr t={Translations.t.general["404"]} />
+    </h1>
     <BackButton
-      clss="m-8"
       on:click={() => {
         window.location = "index.html"
       }}
@@ -19,4 +21,3 @@
       </div>
     </BackButton>
   </div>
-</main>
