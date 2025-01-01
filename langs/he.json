@@ -24,5 +24,11 @@
             "enableLayer": "הפעל שכבה {name}",
             "hasBeenImported": "תכונה זו כבר יובאה"
         }
+    },
+    "inspector": {
+        "previouslySpied": {
+            "username": "שם משתמש"
+        },
+        "tableView": "סקירה כללית"
     }
 }
