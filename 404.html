@@ -1,57 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://gc.zgo.at/; img-src *; connect-src 'self' https://www.openstreetmap.org/ https://api.openstreetmap.org/;">
-    <link href="./css/mobile.css" rel="stylesheet"/>
-    <link href="./css/tagrendering.css" rel="stylesheet"/>
-    <link href="./css/index-tailwind-output.css" rel="stylesheet"/>
-    <meta content="website" property="og:type">
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport">
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' https://gc.zgo.at/; img-src *; connect-src 'self' https://www.openstreetmap.org/ https://api.openstreetmap.org/;">
+  <link href="./css/mobile.css" rel="stylesheet" />
+  <link href="./css/tagrendering.css" rel="stylesheet" />
+  <link href="./css/index-tailwind-output.css" rel="stylesheet" />
+  <meta content="website" property="og:type">
 
-    <title>MapComplete - page not found</title>
-    <link href="./index.manifest" rel="manifest">
-    <link href="./assets/svg/add.svg" rel="icon" sizes="any" type="image/svg+xml">
-    <meta content="MapComplete - Page not found" property="og:title">
-    <meta content="MapComplete is a platform to visualize OpenStreetMap on a specific topic and to easily contribute data back to it."
-          property="og:description">
+  <title>MapComplete - page not found</title>
+  <link href="./index.manifest" rel="manifest">
+  <link href="./assets/svg/add.svg" rel="icon" sizes="any" type="image/svg+xml">
+  <meta content="MapComplete - Page not found" property="og:title">
+  <meta
+    content="MapComplete is a platform to visualize OpenStreetMap on a specific topic and to easily contribute data back to it."
+    property="og:description">
 
-    <link href="./assets/generated/images/assets_svg_mapcomplete_logo512.png" rel="apple-touch-icon" sizes="512x512">
-    <link href="./assets/generated/images/assets_svg_mapcomplete_logo384.png" rel="apple-touch-icon" sizes="384x384">
-    <link href="./assets/generated/images/assets_svg_mapcomplete_logo192.png" rel="apple-touch-icon" sizes="192x192">
-    <link href="./assets/generated/images/assets_svg_mapcomplete_logo180.png" rel="apple-touch-icon" sizes="180x180">
-    <link href="./assets/generated/images/assets_svg_mapcomplete_logo152.png" rel="apple-touch-icon" sizes="152x152">
-    <link href="./assets/generated/images/assets_svg_mapcomplete_logo144.png" rel="apple-touch-icon" sizes="144x144">
-    <link href="./assets/generated/images/assets_svg_mapcomplete_logo128.png" rel="apple-touch-icon" sizes="128x128">
-    <link href="./assets/generated/images/assets_svg_mapcomplete_logo120.png" rel="apple-touch-icon" sizes="120x120">
-    <link href="./assets/generated/images/assets_svg_mapcomplete_logo96.png" rel="apple-touch-icon" sizes="96x96">
-    <link href="./assets/generated/images/assets_svg_mapcomplete_logo72.png" rel="apple-touch-icon" sizes="72x72">
+  <link href="./assets/generated/images/assets_svg_mapcomplete_logo512.png" rel="apple-touch-icon" sizes="512x512">
+  <link href="./assets/generated/images/assets_svg_mapcomplete_logo384.png" rel="apple-touch-icon" sizes="384x384">
+  <link href="./assets/generated/images/assets_svg_mapcomplete_logo192.png" rel="apple-touch-icon" sizes="192x192">
+  <link href="./assets/generated/images/assets_svg_mapcomplete_logo180.png" rel="apple-touch-icon" sizes="180x180">
+  <link href="./assets/generated/images/assets_svg_mapcomplete_logo152.png" rel="apple-touch-icon" sizes="152x152">
+  <link href="./assets/generated/images/assets_svg_mapcomplete_logo144.png" rel="apple-touch-icon" sizes="144x144">
+  <link href="./assets/generated/images/assets_svg_mapcomplete_logo128.png" rel="apple-touch-icon" sizes="128x128">
+  <link href="./assets/generated/images/assets_svg_mapcomplete_logo120.png" rel="apple-touch-icon" sizes="120x120">
+  <link href="./assets/generated/images/assets_svg_mapcomplete_logo96.png" rel="apple-touch-icon" sizes="96x96">
+  <link href="./assets/generated/images/assets_svg_mapcomplete_logo72.png" rel="apple-touch-icon" sizes="72x72">
 
 
-    <style>
-        #decoration-desktop img {
-            width: 100%;
-            height: 100%;
-        }
-    </style>
+  <style>
+      #decoration-desktop img {
+          width: 100%;
+          height: 100%;
+      }
+  </style>
 
 </head>
 <body>
-
-<div id="decoration-desktop" style="position: fixed; left: 1em; bottom: 1em; width:35vh; height:35vh;">
-    <!-- A nice decoration while loading or on errors -->
-    <!-- DECORATION 0 START -->
-    <img src="./assets/svg/add.svg"/>
-    <!-- DECORATION 0 END -->
-</div>
-
-<div class="clutter absolute h-24 left-24 right-24 top-56 text-xl text-center"
-     id="maindiv" style="z-index: 4000">
-    Not found...
-</div>
-
+<div id="maindiv" class="h-screen"></div>
 <script type="module" src="./src/notfound.ts"></script>
-<script async data-goatcounter="https://pietervdvn.goatcounter.com/count" src="//gc.zgo.at/count.js" crossorigin="anonymous" integrity="sha384-QfJMxHNngbaF6IXH2kBwubsLYh7GVSFmJOX1O1YKJBq+zv1VVypB9BysTzyG1D1U"></script>
+<script async data-goatcounter="https://pietervdvn.goatcounter.com/count" src="//gc.zgo.at/count.js"
+        crossorigin="anonymous"
+        integrity="sha384-QfJMxHNngbaF6IXH2kBwubsLYh7GVSFmJOX1O1YKJBq+zv1VVypB9BysTzyG1D1U"></script>
 
 </body>
 </html>
