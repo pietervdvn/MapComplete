@@ -17,7 +17,8 @@
     "it": "Al chiuso",
     "ru": "Внутри помещений",
     "hu": "Beltéri létesítmények",
-    "uk": "Плани приміщень"
+    "uk": "Плани приміщень",
+    "ko": "실내"
   },
   "description": {
     "en": "On this map, publicly accessible indoor places are shown",
@@ -31,7 +32,8 @@
     "ca": "En aquest mapa es mostren els llocs interiors accessibles al públic",
     "pl": "Na tej mapie pokazane są publicznie dostępne miejsca w pomieszczeniach zamkniętych",
     "it": "Su questa mappa sono indicati i luoghi al chiuso accessibili al pubblico",
-    "uk": "На цій мапі показані загальнодоступні плани приміщень"
+    "uk": "На цій мапі показані загальнодоступні плани приміщень",
+    "ko": "이 지도에서는 누구나 접근 가능한 실내 장소가 표시됩니다"
   },
   "icon": "./assets/layers/entrance/entrance.svg",
   "startZoom": 14,

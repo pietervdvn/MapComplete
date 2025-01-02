@@ -8,7 +8,7 @@
   console.log("???")
 </script>
 
-<div class="flex flex-col items-center justify-center w-full h-full p-8">
+<div class="flex h-full w-full flex-col items-center justify-center p-8">
   <div class="flex flex-col items-center">
     <World style="height: 200px" />
     <h1>
@@ -17,8 +17,8 @@
   </div>
   <BackButton
     on:click={() => {
-        window.location = "index.html"
-      }}
+      window.location = "index.html"
+    }}
   >
     <div class="flex w-full justify-center">
       <Tr t={Translations.t.general.backToIndex} />

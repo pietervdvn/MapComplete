@@ -47,6 +47,7 @@ Available languages:
  - da
  - it
  - hu
+ - ko
 
 # Table of contents
 

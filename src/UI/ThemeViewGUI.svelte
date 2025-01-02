@@ -404,7 +404,7 @@
           on:keydown={forwardEventToMap}
         >
           <div class="h-8 w-8 cursor-pointer">
-            <DefaultIcon layer={currentViewLayer}/>
+            <DefaultIcon layer={currentViewLayer} />
           </div>
         </MapControlButton>
       {/if}

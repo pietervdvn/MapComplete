@@ -89,7 +89,9 @@
   }
 
   let officialSearched: Store<MinimalThemeInformation[]> = filtered(
-    osmConnection.isLoggedIn.map(loggedIn => loggedIn ? officialThemes : officialThemes.filter(th => th.id !== "personal"))
+    osmConnection.isLoggedIn.map((loggedIn) =>
+      loggedIn ? officialThemes : officialThemes.filter((th) => th.id !== "personal")
+    )
   )
   let hiddenSearched: Store<MinimalThemeInformation[]> = filtered(visitedHiddenThemes)
   let customSearched: Store<MinimalThemeInformation[]> = filtered(customThemes)

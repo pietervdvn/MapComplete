@@ -10,7 +10,8 @@
     "cs": "Komunitní rejstřík OSM",
     "pl": "Indeks społeczności OSM",
     "hu": "OSM-közösségek jegyzéke",
-    "uk": "Індекс спільноти OSM"
+    "uk": "Індекс спільноти OSM",
+    "ko": "OSM 커뮤니티 인덱스"
   },
   "description": {
     "en": "A list of resources for users of OpenStreetMap. 'Resources' can be links to forums, meetups, Slack groups, IRC channels, mailing lists, and so on. Anything that mappers, especially beginners, might find interesting or helpful.",
@@ -20,7 +21,8 @@
     "cs": "Seznam zdrojů pro uživatele OpenStreetMap. \"Zdroje\" mohou být odkazy na fóra, setkání, Slack skupiny, kanály IRC, poštovní konference atd. Cokoli, co by mohlo být pro mappery, zejména začátečníky, zajímavé nebo užitečné.",
     "es": "Una lista de recursos para usuarios de OpenStreetMap. 'Recursos' pueden ser enlaces a foros, encuentros, grupos de Slack, canales IRC, listas de correo, etc. Cualquier cosa que los mapeadores, especialmente los principiantes, puedan encontrar interesante o útil.",
     "ca": "Una llista de recursos per als usuaris d'OSM. Els recursos poden ser enllaços a fòrums, reunions, grups de treball, canals IRC, llistes de correus, etcètera. Quelcom que els mapejadors, especialment els principiants poden trobar interessant o útil.",
-    "pl": "Lista zasobów dla użytkowników OpenStreetMap. „Zasobami” mogą być odnośniki do forów, spotkań, grup na Slacku, kanałów IRC, list mailingowych i tak dalej. Wszystko, co mapujący, a zwłaszcza początkujący, mogą uznać za interesujące lub pomocne."
+    "pl": "Lista zasobów dla użytkowników OpenStreetMap. „Zasobami” mogą być odnośniki do forów, spotkań, grup na Slacku, kanałów IRC, list mailingowych i tak dalej. Wszystko, co mapujący, a zwłaszcza początkujący, mogą uznać za interesujące lub pomocne.",
+    "ko": "OpenStreetMap 사용자들을 위한 자원 목록입니다. 여기에는 포럼, 모임, 슬랙 그룹, IRC 채널, 메일링 리스트 등 다양한 링크가 포함됩니다. 맵핑을 하는 사람들이, 특히 초보자들이 유용하거나 도움이 될 만한 자료들입니다."
   },
   "shortDescription": {
     "en": "An index of community resources for OpenStreetMap.",
@@ -31,7 +33,8 @@
     "ca": "Un índex de recursos comunitaris per a OpenStreetMap.",
     "cs": "Rejstřík komunitních zdrojů pro OpenStreetMap.",
     "pl": "Indeks zasobów społeczności dotyczących OpenStreetMap.",
-    "uk": "Індекс ресурсів спільноти для OpenStreetMap."
+    "uk": "Індекс ресурсів спільноти для OpenStreetMap.",
+    "ko": "OpenStreetMap 커뮤니티 자원의 목록입니다."
   },
   "icon": "./assets/themes/osm_community_index/osm.svg",
   "startZoom": 16,

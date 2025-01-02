@@ -17,7 +17,8 @@
     "cs": "Obchody",
     "eu": "Denda",
     "pl": "Sklepy",
-    "uk": "Магазини"
+    "uk": "Магазини",
+    "ko": "상점"
   },
   "description": {
     "en": "On this map, one can mark basic information about shops, add opening hours and phone numbers",
@@ -33,7 +34,8 @@
     "ca": "A aquest mapa, es pot marcar informació bàsica sobre botigues, afegir horaris i números de telèfon",
     "cs": "Na této mapě můžete označit základní informace o obchodech, přidat otevírací dobu a telefonní čísla",
     "pl": "Na mapie tej można zaznaczyć podstawowe informacje o sklepach, dodać godziny otwarcia oraz numery telefonów",
-    "uk": "На цій мапі можна позначити основну інформацію про магазини, додати години роботи та номери телефонів"
+    "uk": "На цій мапі можна позначити основну інформацію про магазини, додати години роботи та номери телефонів",
+    "ko": "이 지도에서는 상점에 대한 기본 정보, 영업 시간 및 전화번호를 표시할 수 있습니다"
   },
   "shortDescription": {
     "en": "An editable map with basic shop information",
@@ -50,7 +52,8 @@
     "zh_Hant": "有基本商家資訊的可編輯性的地圖",
     "pl": "Edytowalna mapa z podstawowymi informacjami o sklepach",
     "ru": "Редактируемая карта с основной информацией о магазине",
-    "uk": "Мапа з можливістю редагування з основною інформацією про магазин"
+    "uk": "Мапа з можливістю редагування з основною інформацією про магазин",
+    "ko": "기본 상점 정보가 있는 편집 가능 지도"
   },
   "icon": "./assets/themes/shops/shop.svg",
   "layers": [

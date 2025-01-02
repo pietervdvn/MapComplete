@@ -13,7 +13,8 @@
     "da": "Dette tema er et forsøg på at hjælpe med at automatisere GRB-importen.",
     "ca": "Aquest tema és un intent d'automatitzar la importació GRB.",
     "cs": "Toto téma je pokusem o automatizaci importu GRB.",
-    "pl": "Ten temat jest próbą pomocy w automatyzacji importu GRB."
+    "pl": "Ten temat jest próbą pomocy w automatyzacji importu GRB.",
+    "ko": "GRB 데이터를 효율적으로 가져오도록 돕기 위한 테마입니다."
   },
   "shortDescription": {
     "nl": "Grb import helper tool"
@@ -61,7 +62,8 @@
             "da": "Hvad er det for en bygning?",
             "cs": "Jaký druh budovy je toto?",
             "ca": "Quin tipus d'edifici és aquest?",
-            "pl": "Jaki to rodzaj budynku?"
+            "pl": "Jaki to rodzaj budynku?",
+            "ko": "어떤 종류의 건물입니까?"
           },
           "mappings": [
             {
@@ -164,7 +166,8 @@
             "cs": "Byl importován z GRB, referenční číslo je {source:geometry:ref}",
             "es": "Ha sido importado de GRB, el número de referencia es {source:geometry:ref}",
             "pl": "Został zaimportowany z GRB, numer referencyjny to {source:geometry:ref}",
-            "nl": "Werd geïmporteerd vanuit GRB, het referentienummer is {source:geometry:ref}"
+            "nl": "Werd geïmporteerd vanuit GRB, het referentienummer is {source:geometry:ref}",
+            "ko": "GRB에서 가져왔으며, 조회 번호는 {source:geometry:ref}입니다"
           },
           "condition": "source:geometry:ref~*"
         },
@@ -334,7 +337,8 @@
                 "cs": "Metatags ještě nebyly vypočítány... Znovu otevřete toto vyskakovací okno",
                 "es": "Aún no se calcularon las metaetiquetas... Vuelve a abrir esta ventana emergente",
                 "ca": "Encara no s'han calculat les metaetiquetes... Torneu a obrir aquesta finestra emergent",
-                "pl": "Jeszcze nie obliczono metaznaczników... Otwórz to okienko ponownie"
+                "pl": "Jeszcze nie obliczono metaznaczników... Otwórz to okienko ponownie",
+                "ko": "메타태그를 아직 계산하지 못했습니다..팝업을 다시 실행해 주세요"
               }
             },
             {
@@ -355,7 +359,8 @@
                 "da": "Denne bygning har huller og er modelleret som en relation. Som sådan kan det ikke sammenblandes. Sammensæt det manuelt via <a href='https://buildings.osm.be/#/'>bygningseksportwebstedet</a> {open_in_josm()}",
                 "cs": "Tato budova má otvory a je modelována jako vztah. Jako takovou ji nelze spojovat. Spojte ji ručně pomocí <a href='https://buildings.osm.be/#/'>exportní stránky budovy</a> {open_in_josm()}",
                 "ca": "Aquest edifici té forats i està modelat com una relació. Com a tal, no es pot combinar. Combineu-lo manualment mitjançant <a href='https://buildings.osm.be/#/'>el lloc d'exportació de l'edifici</a> {open_in_josm()}",
-                "pl": "Budynek ten ma dziury i jest modelowany jako relacja. W związku z tym nie można go łączyć. Połącz to ręcznie za pomocą <a href='https://buildings.osm.be/#/'>strony eksportu budynków</a> {open_in_josm()}"
+                "pl": "Budynek ten ma dziury i jest modelowany jako relacja. W związku z tym nie można go łączyć. Połącz to ręcznie za pomocą <a href='https://buildings.osm.be/#/'>strony eksportu budynków</a> {open_in_josm()}",
+                "ko": "이 건물 구조 내에 비어 있는 공간이 있으며 Relation 데이터 구조를 통해 모델링 되었습니다. 따라서 자동 병합이 불가능합니다. <a href='https://buildings.osm.be/#/'>건물 내보내기 사이트를 통해 수동으로 병합하십시오.</a>{open_in_josm()}"
               }
             },
             {

@@ -9,7 +9,8 @@
     "cs": "Sjezdovky a lanové dráhy",
     "hu": "Sípályák és felvonók",
     "uk": "Гірськолижні траси та витяги",
-    "nl": "Skipistes en kabelbanen"
+    "nl": "Skipistes en kabelbanen",
+    "ko": "스키 코스와 리프트"
   },
   "description": {
     "en": "Everything you need to go skiing",
@@ -18,7 +19,8 @@
     "cs": "Vše, co potřebujete k lyžování",
     "uk": "Все необхідне для катання на лижах",
     "fr": "Tout ce dont vous avez besoin pour aller skier",
-    "nl": "Alles om te skiën"
+    "nl": "Alles om te skiën",
+    "ko": "스키를 타기 위해 갖춰야 할 모든 것"
   },
   "icon": "./assets/layers/aerialway/chair_lift.svg",
   "layers": [

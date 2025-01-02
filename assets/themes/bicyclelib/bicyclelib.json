@@ -22,7 +22,8 @@
     "eu": "Bizikleta liburutegia",
     "pt": "Bibliotecas de bicicletas",
     "zh_Hans": "自行车图书馆",
-    "uk": "Велобібліотеки"
+    "uk": "Велобібліотеки",
+    "ko": "자전거 라이브러리"
   },
   "description": {
     "nl": "Een fietsbibliotheek is een plaats waar men een fiets kan lenen, vaak voor een klein bedrag per jaar. Een typisch voorbeeld zijn kinderfietsbibliotheken, waar men een fiets op maat van het kind kan lenen. Is het kind de fiets ontgroeid, dan kan het te kleine fietsje omgeruild worden voor een grotere",
@@ -42,7 +43,8 @@
     "eu": "Bizikletak uzteko lekua da bizikleta-liburutegia, askotan urteko kuota txiki baten truke. Kasu aipagarri bat haurrentzako bizikleta-liburutegiak dira, egungo bizikleta gainditu dutenean bizikleta handiago baterako aldatzeko aukera ematen dietenak",
     "pl": "Biblioteka rowerowa to miejsce, w którym można wypożyczyć rowery, często za niewielką opłatą roczną. Godnym uwagi przypadkiem zastosowania są biblioteki rowerowe dla dzieci, które pozwalają im zmienić rower na większy, gdy wyrosną z obecnego roweru",
     "zh_Hans": "自行车图书馆是一个可以借用自行车的地方，通常需要支付小额的年度费用。一个显著的使用场景是儿童自行车图书馆，这允许孩子们在长大后更换成更大的自行车",
-    "uk": "Велобібліотека - це місце, де можна взяти велосипед напрокат, часто за невелику річну плату. Особливий випадок використання - велосипедні бібліотеки для дітей, які дозволяють їм пересісти на більший велосипед, коли вони виростуть зі свого нинішнього"
+    "uk": "Велобібліотека - це місце, де можна взяти велосипед напрокат, часто за невелику річну плату. Особливий випадок використання - велосипедні бібліотеки для дітей, які дозволяють їм пересісти на більший велосипед, коли вони виростуть зі свого нинішнього",
+    "ko": "자전거 라이브러리는 자전거를 대여할 수 있는 장소로 일반적으로 소액의 연회비를 지불하면 이용 가능 합니다. 대표적인 사례로 어린이를 위한 자전거 라이브러리가 있는데, 아이들이 크면서 작은 자전거에서 더 큰 자전거로 교체할 수 있도록 도와줍니다"
   },
   "icon": "./assets/themes/bicyclelib/logo.svg",
   "layers": [

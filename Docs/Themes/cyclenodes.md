@@ -25,6 +25,8 @@ Available languages:
  - ca
  - cs
  - pl
+ - ko
+ - zh_Hant
 
 # Table of contents
 

@@ -12,7 +12,8 @@
     "cs": "Úkoly MapRoulette",
     "zh_Hant": "MapRoulette 任務",
     "pl": "Zadania MapRoulette",
-    "hu": "MapRoulette-feladatok"
+    "hu": "MapRoulette-feladatok",
+    "ko": "MapRoulette 작업"
   },
   "description": {
     "en": "Theme showing MapRoulette tasks, allowing you to search, filter and fix them.",
@@ -23,7 +24,8 @@
     "es": "Tema que muestra las tareas de MapRoulette, permitiéndote buscarlas, filtrarlas y solucionarlas.",
     "cs": "Téma zobrazující úkoly MapRoulette, které umožňuje vyhledávat, filtrovat a opravovat je.",
     "ca": "Tema que mostra les tasques de MapRoulette, que us permet cercar-les, filtrar-les i solucionar-les.",
-    "pl": "Temat pokazujący zadania MapRoulette, umożliwiający ich wyszukiwanie, filtrowanie i naprawianie."
+    "pl": "Temat pokazujący zadania MapRoulette, umożliwiający ich wyszukiwanie, filtrowanie i naprawianie.",
+    "ko": "MapRoulette 작업을 표시하는 테마로, 작업을 검색, 필터링 허용될 수 있습니다."
   },
   "icon": "./assets/layers/maproulette/logomark.svg",
   "startZoom": 4,

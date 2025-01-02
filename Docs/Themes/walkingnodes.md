@@ -21,6 +21,7 @@ Available languages:
  - de
  - es
  - cs
+ - ko
 
 # Table of contents
 

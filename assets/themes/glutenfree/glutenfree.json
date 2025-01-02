@@ -11,7 +11,8 @@
     "hu": "Gluténmentes helyek",
     "uk": "Без глютену",
     "fr": "Sans gluten",
-    "nl": "Glutenvrij"
+    "nl": "Glutenvrij",
+    "ko": "글루텐프리"
   },
   "description": {
     "en": "A crowdsourced map with glutenfree items",
@@ -21,7 +22,8 @@
     "ca": "Un mapa col·lectiu amb articles sense gluten",
     "cs": "Mapa s bezlepkovými položkami vytvořená pomocí crowdsourcingu",
     "uk": "Колективна мапа з безглютеновими продуктами",
-    "nl": "Een gecrowdsourcete kaart met glutenvrije artikelen"
+    "nl": "Een gecrowdsourcete kaart met glutenvrije artikelen",
+    "ko": "글루텐프리 제품이 있는 크라우드소싱 지도입니다"
   },
   "icon": "./assets/layers/questions/glutenfree.svg",
   "layers": [

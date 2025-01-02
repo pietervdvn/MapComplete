@@ -48,13 +48,17 @@ export class OsmPreferences {
     private setPreferencesAll(key: string, value: string, deferping = false) {
         if (this._allPreferences.data[key] !== value) {
             this._allPreferences.data[key] = value
-            if(!deferping){
+            if (!deferping) {
                 this._allPreferences.ping()
             }
         }
     }
 
-    private initPreference(key: string, value: string = undefined, deferPing = false): UIEventSource<string> {
+    private initPreference(
+        key: string,
+        value: string = undefined,
+        deferPing = false
+    ): UIEventSource<string> {
         if (this.preferences[key] !== undefined) {
             if (value !== undefined) {
                 this.preferences[key].set(value)

@@ -1719,6 +1719,16 @@
       "value": "no"
     },
     {
+      "key": "healthcare",
+      "description": "Layer 'Second hand shops' shows healthcare=optometrist with a fixed text, namely 'This shop offers eye exams by certified optometrists' and allows to pick this as a default answer (in the mapcomplete.org theme 'Circular economy') (This is only shown if shop=optician | shop=hearing_aid | shop=medical_supply)",
+      "value": "optometrist"
+    },
+    {
+      "key": "healthcare",
+      "description": "Layer 'Second hand shops' shows healthcare=audiologist with a fixed text, namely 'This shop offers hearing tests by a certified audiologist' and allows to pick this as a default answer (in the mapcomplete.org theme 'Circular economy') (This is only shown if shop=optician | shop=hearing_aid | shop=medical_supply)",
+      "value": "audiologist"
+    },
+    {
       "key": "craft",
       "description": "Layer 'Second hand shops' shows craft=key_cutter with a fixed text, namely 'This shop is also specialized in key cutting' and allows to pick this as a default answer (in the mapcomplete.org theme 'Circular economy') (This is only shown if shop=shoe_repair | service:key_cutting~.+ | craft=key_cutting | shop=diy | shop=doityourself | shop=home_improvement | shop=hardware | shop=locksmith | shop=repair)",
       "value": "key_cutter"

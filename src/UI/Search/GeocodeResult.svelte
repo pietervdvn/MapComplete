@@ -63,7 +63,7 @@
   <div class="flex w-full items-center gap-y-2 p-2">
     {#if layer}
       <div class="h-6">
-        <DefaultIcon {layer} properties={entry.feature.properties} clss="w-6 h-6"/>
+        <DefaultIcon {layer} properties={entry.feature.properties} clss="w-6 h-6" />
       </div>
     {:else if entry.category}
       <Icon

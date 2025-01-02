@@ -20,7 +20,8 @@
     "pl": "Publiczne regały na książki",
     "da": "Bogbytteskabe",
     "zh_Hans": "公共书柜",
-    "uk": "Публічні книжкові шафи"
+    "uk": "Публічні книжкові шафи",
+    "ko": "공공 책장"
   },
   "description": {
     "en": "A public bookcase is a small streetside cabinet, box, old phone booth or some other objects where books are stored. Everyone can place or take a book. This map aims to collect all these bookcases.",
@@ -39,7 +40,8 @@
     "eu": "Kale-liburutegi publiko bat kale-armairu txiki bat da, kaxa, telefono-kabina zaharra edo liburuak gordetzeko beste objektu batzuk. Guztiek jar edo har dezakete liburu bat. Koaderno horiek guztiak biltzea da mapa honen helburua.",
     "pl": "Publiczny regał na książki to mała przyuliczna szafka, pudełko, stara budka telefoniczna lub inne przedmioty, w których przechowywane są książki. Każdy może w nich zostawić lub zabrać książkę. Celem tej mapy jest zebranie wszystkich tych regałów.",
     "zh_Hans": "公共书柜是一个小型街边橱柜、盒子、旧电话亭或其他储存书籍的物品。任何人都可以放置或取走一本书。这张地图旨在收集所有这些书柜。",
-    "uk": "Публічна книжкова шафа - це невелика вулична шафа, ящик, стара телефонна будка або інший об'єкт, де зберігаються книги. Будь-хто може покласти або взяти книгу. Ця мапа має на меті зібрати всі ці книжкові шафи."
+    "uk": "Публічна книжкова шафа - це невелика вулична шафа, ящик, стара телефонна будка або інший об'єкт, де зберігаються книги. Будь-хто може покласти або взяти книгу. Ця мапа має на меті зібрати всі ці книжкові шафи.",
+    "ko": "공공 책장은 책을 보관할 수 있는 길가의 작은 책장, 상자, 오래된 공중 전화 부스와 같은 공간을 말합니다. 누구나 책을 놓거나 가져갈 수 있습니다. 이 지도는 공공 책장을 모두 수집하는 것을 목표로 두고 있습니다."
   },
   "icon": "./assets/themes/bookcases/bookcase.svg",
   "layers": [

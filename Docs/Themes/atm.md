@@ -35,6 +35,7 @@ Available languages:
  - zh_Hans
  - uk
  - hu
+ - ko
 
 # Table of contents
 

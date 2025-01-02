@@ -45,6 +45,7 @@ Available languages:
  - pl
  - ru
  - uk
+ - ko
 
 # Table of contents
 

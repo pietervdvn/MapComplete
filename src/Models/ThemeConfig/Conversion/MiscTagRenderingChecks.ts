@@ -1,7 +1,10 @@
 import { DesugaringStep } from "./Conversion"
 import { TagRenderingConfigJson } from "../Json/TagRenderingConfigJson"
 import { LayerConfigJson } from "../Json/LayerConfigJson"
-import { MappingConfigJson, QuestionableTagRenderingConfigJson } from "../Json/QuestionableTagRenderingConfigJson"
+import {
+    MappingConfigJson,
+    QuestionableTagRenderingConfigJson,
+} from "../Json/QuestionableTagRenderingConfigJson"
 import { ConversionContext } from "./ConversionContext"
 import { Translation } from "../../../UI/i18n/Translation"
 import { TagUtils } from "../../../Logic/Tags/TagUtils"
@@ -194,10 +197,10 @@ export class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJso
             }
             if (
                 this._layerConfig?.source?.["osmTags"] &&
-                NameSuggestionIndex.supportedTypes.indexOf(<any> json.freeform.key) >= 0
+                NameSuggestionIndex.supportedTypes.indexOf(<any>json.freeform.key) >= 0
             ) {
                 const tags = TagUtils.TagD(this._layerConfig?.source?.["osmTags"])?.usedTags()
-               /* const suggestions = nameSuggestionIndexBundled.getSuggestionsFor(json.freeform.key, tags)
+                /* const suggestions = nameSuggestionIndexBundled.getSuggestionsFor(json.freeform.key, tags)
                 if (suggestions === undefined) {
                     context
                         .enters("freeform", "type")

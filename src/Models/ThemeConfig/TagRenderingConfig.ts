@@ -999,7 +999,7 @@ export class TagRenderingConfigUtils {
         tags: UIEventSource<Record<string, string>>,
         feature?: Feature
     ): Store<TagRenderingConfig> {
-        const isNSI = NameSuggestionIndex.supportedTypes.indexOf(<any> config.freeform?.key) >= 0
+        const isNSI = NameSuggestionIndex.supportedTypes.indexOf(<any>config.freeform?.key) >= 0
         if (!isNSI) {
             return new ImmutableStore(config)
         }

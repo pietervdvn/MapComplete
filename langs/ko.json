@@ -2,97 +2,99 @@
     "advanced": {
         "title": "고급 기능"
     },
+    "centerMessage": {
+        "allFilteredAway": "현재 보기에 표시된 항목이 모든 필터 조건을 만족하지 않습니다",
+        "loadingData": "데이터 로딩중…",
+        "noData": "현재 화면에 관련된 항목이 없습니다",
+        "ready": "완료했습니다!",
+        "retrying": "데이터 로딩 실패. {count} 초 후 다시 시도합니다…",
+        "zoomIn": "확대해서 보기 또는 데이터 편집"
+    },
+    "communityIndex": {
+        "available": "이 커뮤니티는 {native}입니다",
+        "intro": "다른 사람과 협업하여 더 많은 정보를 획득 하세요…",
+        "title": "다른사람과 협업하세요"
+    },
     "delete": {
         "cancel": "취소",
         "cannotBeDeleted": "이 요소는 삭제될 수 없습니다",
         "delete": "삭제",
         "deletedTitle": "요소 삭제",
-        "isDeleted": "이 요소는 삭제 되었습니다",
         "explanations": {
-            "softDelete": "이 요소는 업데이트 될 예정이며 이 애플리케이션에서 숨겨질 것입니다. <span class='subtle'>{reason}</span>",
-            "hardDelete": "이 요소은 OpenStreetMap에서 삭제될 예정입니다. 경험이 많은 기여자에 의해 복구될 수 있습니다"
+            "hardDelete": "이 요소은 OpenStreetMap에서 삭제될 예정입니다. 경험이 많은 기여자에 의해 복구될 수 있습니다",
+            "softDelete": "이 요소는 업데이트 될 예정이며 이 애플리케이션에서 숨겨질 것입니다. <span class='subtle'>{reason}</span>"
         },
-        "readMessages": "읽지 않은 메세지가 존재합니다. 기능을 삭제하기 전에 읽어주세요 - 피드백이 존재할지도 모릅니다",
-        "safeDelete": "이 요소는 안전하게 삭제 되었습니다.",
+        "isDeleted": "이 요소는 삭제 되었습니다",
         "isntAPoint": "삭제 가능한 것은 경로 뿐이며, 선택한 요소는 길 혹은 지역 입니다.",
         "loading": "이 요소를 삭제할 수 있는지 점검 중 입니다.",
         "notEnoughExperience": "이 요소는 누군가에 만들어진 요소입니다.",
         "onlyEditedByLoggedInUser": "아 요소는 사용자 내에서 편집 가능하고, 삭제할 수 있습니다.",
         "partOfOthers": "이 경로는 길과 지역의 일부 이며 직접 삭제가 불가능 합니다.",
+        "readMessages": "읽지 않은 메세지가 존재합니다. 기능을 삭제하기 전에 읽어주세요 - 피드백이 존재할지도 모릅니다",
         "reasons": {
             "disused": "이 요소는 사용 하지 않거나 제거 되었습니다",
             "duplicate": "이 요소는 다른 요소의 복제 입니다",
             "notFound": "이 요소는 발견할 수 없습니다",
             "test": "임시 요소 이며 실제로 존재하지 않았습니다"
         },
+        "safeDelete": "이 요소는 안전하게 삭제 되었습니다.",
         "useSomethingElse": "다른 OpenStreetMap 편집기를 사용하여 삭제하세요",
         "whyDelete": "이 요소가 삭제 되어야 하는 이유는 무엇인가요?"
     },
-    "centerMessage": {
-        "loadingData": "데이터 로딩중…",
-        "noData": "현재 화면에 관련된 항목이 없습니다",
-        "ready": "완료했습니다!",
-        "zoomIn": "확대해서 보기 또는 데이터 편집",
-        "allFilteredAway": "현재 보기에 표시된 항목이 모든 필터 조건을 만족하지 않습니다",
-        "retrying": "데이터 로딩 실패. {count} 초 후 다시 시도합니다…"
-    },
-    "communityIndex": {
-        "available": "이 커뮤니티는 {native}입니다",
-        "title": "다른사람과 협업하세요",
-        "intro": "다른 사람과 협업하여 더 많은 정보를 획득 하세요…"
-    },
     "external": {
-        "done": "완료",
-        "lastModified": "외부 데이터의 마지막 수정 날짜는 {date}입니다",
-        "loadedFrom": "이 데이터는 포함된 JSON-LD를 사용하여 <a href={url}>{source}</a>에서 불러왔습니다",
-        "currentInOsmIs": "현재 OpenStreetMap에 저장된 정보는 다음과 같습니다:",
-        "missing": {
-            "intro": "OpenStreetMap에는 다음 속성에 대한 정보가 포함되어 있지 않습니다",
-            "title": "누락된 값"
-        },
-        "allIncluded": "{source}에서 불러온 데이터가 OpenStreetMap에 저장되어 있습니다",
-        "error": "외부 사이트부터 연결된 데이터 값을 가져올 수 없습니다",
         "allAreApplied": "모든 누락된 외부 데이터 값이 OpenStreetMap으로 복사되었습니다",
+        "allIncluded": "{source}에서 불러온 데이터가 OpenStreetMap에 저장되어 있습니다",
         "apply": "적용",
         "applyAll": "누락된 데이터 값 적용",
         "conflicting": {
             "intro": "OpenStreetMap과 원본 사이트의 값이 다음 항목에서 다르게 표시됩니다.",
             "title": "충돌 항목"
         },
+        "currentInOsmIs": "현재 OpenStreetMap에 저장된 정보는 다음과 같습니다:",
+        "done": "완료",
+        "error": "외부 사이트부터 연결된 데이터 값을 가져올 수 없습니다",
+        "lastModified": "외부 데이터의 마지막 수정 날짜는 {date}입니다",
+        "loadedFrom": "이 데이터는 포함된 JSON-LD를 사용하여 <a href={url}>{source}</a>에서 불러왔습니다",
+        "missing": {
+            "intro": "OpenStreetMap에는 다음 속성에 대한 정보가 포함되어 있지 않습니다",
+            "title": "누락된 값"
+        },
         "noDataLoaded": "외부 사이트에서 불러올 수 있는 연결된 데이터가 존재하지 않습니다",
         "overwrite": "OpenStreetMap에서 데이터 덮어쓰기",
         "title": "외부 사이트로 부터 불러온 구조화된 데이터"
     },
+    "favourite": {
+        "reload": "데이터 다시 불러오기"
+    },
+    "favouritePoi": {
+        "button": {
+            "isFavourite": "이 위치는 현재 즐겨찾기로 지정되어 있으며, MapComplete의 모든 테마 지도에 표시됩니다.",
+            "isMarkedShort": "즐겨찾기로 지정 됨",
+            "isNotMarkedShort": "즐겨찾기로 지정되지 않음",
+            "markAsFavouriteTitle": "이 위치를 즐겨찾기로 지정하세요",
+            "markDescription": "이 장소를 나만의 즐겨찾기 목록에 추가하세요",
+            "unmark": "나만의 즐겨찾기 목록에서 지우기",
+            "unmarkNotDeleted": "이 지점은 삭제되지 않으며, 특정 지도에서 사용자 그리고 다른 사용사에게 여전히 표시될 수 있습니다"
+        },
+        "downloadGeojson": "즐겨찾기를 GeoJSON으로 다운로드하세요",
+        "downloadGpx": "즐겨찾기를 GPX로 다운로드하세요",
+        "intro": "{length}개의 장소를 즐겨찾기로 설정했습니다.",
+        "introPrivacy": "이 목록은 사용자에게만 보입니다",
+        "loginToSeeList": "즐겨찾기 한 목록을 보기 위해서 로그인하세요",
+        "tab": "즐겨찾기와 평점",
+        "title": "사용자의 즐겨찾기 장소"
+    },
     "flyer": {
-        "lines_too": "선과 도형도 지원 되며, 속성과 이미지를 추가하거나 업데이트할 수도 있습니다.",
-        "mapcomplete": {
-            "li0": "POI의 위치를 표시합니다",
-            "intro": "MapComplete는 {mapCount}개의 대화형 지도를 제공하는 웹사이트입니다. 각 지도에서 정보를 추가하거나 업데이트할 수 있습니다. MapComplete는 다음과 같은 다양한 기능을 제공합니다:",
-            "customize": "MapComplete는 새로운 지도 레이어, 새로운 기능, 그리고 사용자 맞춤 색상과 글꼴에 맞춘 스타일 등 필요에 따라 설정 가능합니다.\n또한, 지리 데이터를 크라우드소싱하기 위한 캠페인 경험도 보유하고 있습니다.\n견적 문의는 pietervdvn@posteo.net으로 연락 부탁드립니다.",
-            "li4": "OpenStreetMap 시스템 내에 포함되어 있으며, 많은 도구를 사용할 수 있습니다",
-            "li1": "새로운 지점을 추가하고 기존 지점의 정보를 업데이트하세요",
-            "li2": "연락처 정보와 영업 시간을 쉽게 추가하세요",
-            "li3": "다른 사이트에서 iFrame 형식으로 포함할 수 있습니다",
-            "li5": "기존 데이터 집합을 불러오는 기능",
-            "li6": "나무 감지와 같은 고급 기능",
-            "li7": "GPL 라이선스를 따르는 카피레프트 소프트웨어이며, 무료로 사용할 수 있습니다",
-            "title": "MapComplete는 무엇일까요?"
-        },
         "aerial": "이 지도는 Agentschap Informatie Vlaanderen에서 제공한 항공 이미지를 사용합니다",
-        "frontParagraph": "MapComplete는 OpenStreetMap에서 지리 데이터를 수집할 수 있는 사용하기 쉬운 웹 애플리케이션으로, 데이터를 개방적이고, 크라우드소싱 방식으로, 재사용 가능하게 수집하고 관리할 수 있도록 지원합니다.\n\n새로운 항목과 속성은 요청에 따라 추가할 수 있습니다.",
-        "title": "mapcomplete.org",
-        "editing": {
-            "intro": "사용자는 기능이 포함된 지도를 확인하며, 선택 시 해당 기능에 대한 정보가 나타납니다.",
-            "ex": "자연 보호구역에 대한 간단한 사례는 아래에 나와 있습니다.",
-            "title": "사용자 인터페이스는 어떻게 구성되어있나요?"
-        },
-        "onwheels": "휠체어 사용자를 위한 실내 지도도 제공됩니다.",
-        "osm": "OpenStreetMap은 누구나 편집하고 사용 할 수 있는 온라인 지도입니다. 단, 출처를 명시하고 데이터를 개방된 상태로 유지해야 합니다.\n\n이는 전 세계에서 가장 큰 지리와 공간 데이터베이스로, 수천 개의 애플리케이션과 사이트에서 재사용되고 있습니다.",
-        "examples": "다양한 주제의 지도가 제공되며, 일부는 아래에 표시되어 있습니다.\n\n온라인에서는 더 많은 테마 지도를 확인할 수 있습니다: 의료, 실내 도면, 휠체어 접근성, 쓰레기 시설, 공공 책장, 무지개 색으로 칠해진 횡단보도 등 다양한 주제가 포함되어 있습니다. 모두 mapcomplete.org에서 확인 가능합니다",
-        "toerisme_vlaanderen": "Visit Flanders와의 공동 프로젝트로 'Pin your point'가 만들어졌습니다. 160명 이상의 기여자가 수천 개의 벤치와 피크닉 테이블을 추가했으며, 자전거 충전소 100곳도 발견했습니다.",
         "callToAction": "mapcomplete.org에서 테스트",
         "cyclofix": "CycloFix에서 자전거 펌프, 수리소, 음수대와 자전거 상점 정보를 제공합니다",
         "description": "MapComplete 홍보용 A4 가로형 전단지",
+        "editing": {
+            "ex": "자연 보호구역에 대한 간단한 사례는 아래에 나와 있습니다.",
+            "intro": "사용자는 기능이 포함된 지도를 확인하며, 선택 시 해당 기능에 대한 정보가 나타납니다.",
+            "title": "사용자 인터페이스는 어떻게 구성되어있나요?"
+        },
+        "examples": "다양한 주제의 지도가 제공되며, 일부는 아래에 표시되어 있습니다.\n\n온라인에서는 더 많은 테마 지도를 확인할 수 있습니다: 의료, 실내 도면, 휠체어 접근성, 쓰레기 시설, 공공 책장, 무지개 색으로 칠해진 횡단보도 등 다양한 주제가 포함되어 있습니다. 모두 mapcomplete.org에서 확인 가능합니다",
         "fakeui": {
             "add_images": "몇번의 클릭으로 이미지를 추가 가능합니다",
             "attributes": "사용자 친화적인 방식으로 보여줍니다",
@@ -101,21 +103,35 @@
             "see_images": "이전 기여자, Wikipedia, Mapillary 등의 이미지를 표시합니다 …",
             "wikipedia": "연결된 위키피디아 정보가 보여집니다"
         },
+        "frontParagraph": "MapComplete는 OpenStreetMap에서 지리 데이터를 수집할 수 있는 사용하기 쉬운 웹 애플리케이션으로, 데이터를 개방적이고, 크라우드소싱 방식으로, 재사용 가능하게 수집하고 관리할 수 있도록 지원합니다.\n\n새로운 항목과 속성은 요청에 따라 추가할 수 있습니다.",
+        "lines_too": "선과 도형도 지원 되며, 속성과 이미지를 추가하거나 업데이트할 수도 있습니다.",
+        "mapcomplete": {
+            "customize": "MapComplete는 새로운 지도 레이어, 새로운 기능, 그리고 사용자 맞춤 색상과 글꼴에 맞춘 스타일 등 필요에 따라 설정 가능합니다.\n또한, 지리 데이터를 크라우드소싱하기 위한 캠페인 경험도 보유하고 있습니다.\n견적 문의는 pietervdvn@posteo.net으로 연락 부탁드립니다.",
+            "intro": "MapComplete는 {mapCount}개의 대화형 지도를 제공하는 웹사이트입니다. 각 지도에서 정보를 추가하거나 업데이트할 수 있습니다. MapComplete는 다음과 같은 다양한 기능을 제공합니다:",
+            "li0": "POI의 위치를 표시합니다",
+            "li1": "새로운 지점을 추가하고 기존 지점의 정보를 업데이트하세요",
+            "li2": "연락처 정보와 영업 시간을 쉽게 추가하세요",
+            "li3": "다른 사이트에서 iFrame 형식으로 포함할 수 있습니다",
+            "li4": "OpenStreetMap 시스템 내에 포함되어 있으며, 많은 도구를 사용할 수 있습니다",
+            "li5": "기존 데이터 집합을 불러오는 기능",
+            "li6": "나무 감지와 같은 고급 기능",
+            "li7": "GPL 라이선스를 따르는 카피레프트 소프트웨어이며, 무료로 사용할 수 있습니다",
+            "title": "MapComplete는 무엇일까요?"
+        },
+        "onwheels": "휠체어 사용자를 위한 실내 지도도 제공됩니다.",
+        "osm": "OpenStreetMap은 누구나 편집하고 사용 할 수 있는 온라인 지도입니다. 단, 출처를 명시하고 데이터를 개방된 상태로 유지해야 합니다.\n\n이는 전 세계에서 가장 큰 지리와 공간 데이터베이스로, 수천 개의 애플리케이션과 사이트에서 재사용되고 있습니다.",
         "tagline": "OpenStreetMap의 지리 데이터 모으기",
+        "title": "mapcomplete.org",
+        "toerisme_vlaanderen": "Visit Flanders와의 공동 프로젝트로 'Pin your point'가 만들어졌습니다. 160명 이상의 기여자가 수천 개의 벤치와 피크닉 테이블을 추가했으며, 자전거 충전소 100곳도 발견했습니다.",
         "whatIsOsm": "OpenStreetMap는 무엇인가요?"
     },
     "general": {
+        "404": "이 페이지는 존재하지 않습니다",
+        "about": "특정 테마의 OpenStreetMap 를 쉽게 편집하고 추가할 수 있습니다",
+        "aboutMapComplete": {
+            "intro": "MapComplete를 사용하여 OpenStreetMap 정보를 <b>하나의 테마</b>에 추가하세요. 질문에 답변하면 몇 분 안에 사용자의 기여가 전 세계에 반영됩니다. 대부분의 테마에서는 사진을 추가하거나 리뷰를 남길 수도 있습니다. <b>테마 관리자</b>는 해당 테마의 요소, 질문, 언어를 정의합니다."
+        },
         "add": {
-            "import": {
-                "wrongTypeToConflate": "이 요소는 경로나 길이 아니기 때문에, 통합할 수 없습니다",
-                "wrongType": "이 요소는 경로나 길이 아니기 때문에 추가할 수 없습니다",
-                "officialThemesOnly": "비공식 테마에서는 사고를 방지하기 위해 가져오기 버튼이 비활성화됩니다",
-                "howToTest": "테스트하려면 URL에 <b>test=true</b> 또는 <b>backend=osm-test</b>를 추가하세요. 변경사항은 콘솔에 출력됩니다. 실제로 가져오기 버튼을 활성화하려면 이 테마를 공식화하기 위한 PR을 열어주세요.",
-                "hasBeenImported": "이 객체는 추가되었습니다",
-                "importTags": "이 요소는에 {tag}가 부여됩니다",
-                "zoomInMore": "이 요소를 추가하기 위해서 확대하세요"
-            },
-            "wrongType": "이 요소는 경로나 길이 아니기 때문에 추가할 수 없습니다",
             "addNew": "{category}추가",
             "backToSelect": "다른 범주 선택",
             "confirmLocation": "장소 확정",
@@ -125,6 +141,15 @@
             "disableFiltersExplanation": "몇몇 요소는 필터에 의해 숨겨질 수도 있습니다",
             "enableLayer": "레이어 활성화{name}",
             "hasBeenImported": "이 요소는 이미 추가되었습니다",
+            "import": {
+                "hasBeenImported": "이 객체는 추가되었습니다",
+                "howToTest": "테스트하려면 URL에 <b>test=true</b> 또는 <b>backend=osm-test</b>를 추가하세요. 변경사항은 콘솔에 출력됩니다. 실제로 가져오기 버튼을 활성화하려면 이 테마를 공식화하기 위한 PR을 열어주세요.",
+                "importTags": "이 요소는에 {tag}가 부여됩니다",
+                "officialThemesOnly": "비공식 테마에서는 사고를 방지하기 위해 가져오기 버튼이 비활성화됩니다",
+                "wrongType": "이 요소는 경로나 길이 아니기 때문에 추가할 수 없습니다",
+                "wrongTypeToConflate": "이 요소는 경로나 길이 아니기 때문에, 통합할 수 없습니다",
+                "zoomInMore": "이 요소를 추가하기 위해서 확대하세요"
+            },
             "importTags": "이 요소는에 {tag}가 부여됩니다",
             "intro": "데이터가 없는 영역을 클릭했습니다.<br/>",
             "layerNotEnabled": "기능을 추가하려면 레이어 {layer}를 먼저 활성화해야 합니다",
@@ -133,75 +158,38 @@
             "presetInfo": "새로운 POI에는 {tags}가 추가됩니다",
             "stillLoading": "데이터가 아직 로딩 중입니다. 새로운 기능을 추가하기 전에 잠시만 기다려주세요.",
             "title": "새로운 기능 추가",
+            "wrongType": "이 요소는 경로나 길이 아니기 때문에 추가할 수 없습니다",
             "zoomInFurther": "기능을 추가하려면 먼저 지도를 더 확대해야 합니다",
             "zoomInMore": "이 요소를 추가하기 위해 더 확대하세요"
         },
-        "menu": {
-            "aboutMapComplete": "MapComplete에 대해",
-            "filter": "데이터 필터링",
-            "showIntroduction": "설명서 보기",
-            "title": "메뉴",
-            "moreUtilsTitle": "더 찾아보기",
-            "aboutCurrentThemeTitle": "지도에 대해",
-            "openHereDifferentApp": "현재 위치를 다른 애플리케이션에서 열기"
-        },
-        "logout": "로그아웃",
-        "opening_hours": {
-            "opensAt": "부터",
-            "openTill": "까지",
-            "ph_not_known": " . ",
-            "ph_closed": "영업 전",
-            "ph_open": "영업 중",
-            "loadingCountry": "도시 찾는중…",
-            "open_24_7": "24시간 영업",
-            "sunday": "일요일 {ranges}",
-            "on_weekdays": "평일 운영 시간 {ranges}",
-            "saturday": "토요일 {ranges}",
-            "all_days_from": "매일 운영 중: {ranges}",
-            "closed_permanently": "언제 다시 열릴지 알 수 없습니다",
-            "closed_until": "{date}에 열림",
-            "error": "영업시간을 알 수 없습니다",
-            "error_loading": "오류: 영업 시간을 시각화하는 데 실패했습니다.",
-            "friday": "금요일 {ranges}",
-            "monday": "월요일 {ranges}",
-            "not_all_rules_parsed": "영업 시간이 복잡합니다. 입력 사항에서 다음 규칙이 무시됩니다:",
-            "open_during_ph": "공휴일 동안은:",
-            "ph_open_as_usual": "보통 영업합니다",
-            "ranges": "{starttime} 부터 {endtime}까지",
-            "rangescombined": "{range0} 그리고 {range1}",
-            "thursday": "목요일 {ranges}",
-            "tuesday": "화요일 {ranges}",
-            "unknown": "영업 시간이 확인되지 않았습니다",
-            "wednesday": "수요일 {ranges}"
-        },
-        "aboutMapComplete": {
-            "intro": "MapComplete를 사용하여 OpenStreetMap 정보를 <b>하나의 테마</b>에 추가하세요. 질문에 답변하면 몇 분 안에 사용자의 기여가 전 세계에 반영됩니다. 대부분의 테마에서는 사진을 추가하거나 리뷰를 남길 수도 있습니다. <b>테마 관리자</b>는 해당 테마의 요소, 질문, 언어를 정의합니다."
+        "apply_button": {
+            "appliedOnAnotherObject": "객체 {id}에 {tags}가 부여됩니다",
+            "isApplied": "이 변경사항은 적용 되었습니다"
         },
         "attribution": {
-            "attributionContent": "<p>모든 데이터는 <a href='https://www.openstreetmap.org' target='_blank'>OpenStreetMap</a>에서 제공되며, <a href='https://www.openstreetmap.org/copyright' target='_blank'>Open DataBase License</a>에 따라 자유롭게 재사용할 수 있습니다.</p>",
-            "mapContributionsByAndHidden": "현재 표시된 데이터는 {contributors}와 {hiddenCount}명의 기여자들에 의해 수정되었습니다",
-            "codeContributionsBy": "MapComplete는 {contributors}와<a href='https://github.com/pietervdvn/MapComplete/graphs/contributors' target='_blank'>{hiddenCount}명의 기여자들</a>에 의해 개발되었습니다",
-            "editJosm": "JOSM으로 여기서 편집하기",
-            "openOsmcha": "{theme}에서 수행된 최신 수정 사항 보기",
-            "josmNotOpened": "JOSM에 접근할 수 없습니다. JOSM이 실행 중이고 원격 제어 기능이 켜져 있는지 확인이 필요합니다",
             "attributionBackgroundLayer": "최근 배경 레이어의 이름은 {name} 입니다",
-            "translatedBy": "MapComplete는 {contributors}와 <a href='https://github.com/pietervdvn/MapComplete/graphs/contributors' target='_blank'> {hiddenCount}명의 기여자들에 의해 번역되었습니다</a>",
-            "mapillaryHelp": "<b>Mapillary</b>는 거리별 사진을 수집하고 이를 무료 라이선스로 제공하는 온라인 서비스입니다. 기여자들은 이 사진들을 사용하여 OpenStreetMap을 개선할 수 있습니다",
             "attributionBackgroundLayerWithCopyright": "최근 배경 레이어의 이름은 {name}: {copyright} 입니다",
+            "attributionContent": "<p>모든 데이터는 <a href='https://www.openstreetmap.org' target='_blank'>OpenStreetMap</a>에서 제공되며, <a href='https://www.openstreetmap.org/copyright' target='_blank'>Open DataBase License</a>에 따라 자유롭게 재사용할 수 있습니다.</p>",
             "attributionTitle": "저작권 표시 안내",
+            "codeContributionsBy": "MapComplete는 {contributors}와<a href='https://github.com/pietervdvn/MapComplete/graphs/contributors' target='_blank'>{hiddenCount}명의 기여자들</a>에 의해 개발되었습니다",
             "donate": "MapComplete에 재정적으로 후원하기",
             "editId": "OpenStreetMap 온라인 편집기 열기",
+            "editJosm": "JOSM으로 여기서 편집하기",
             "emailCreators": "창작자에게 이메일 보내기",
             "followOnMastodon": "Mastodon에서 MapComplete를 팔로우하고 소식을 확인하기",
             "gotoSourceCode": "소스 코드 보기",
             "iconAttribution": {
                 "title": "사용된 아이콘"
             },
+            "josmNotOpened": "JOSM에 접근할 수 없습니다. JOSM이 실행 중이고 원격 제어 기능이 켜져 있는지 확인이 필요합니다",
             "josmOpened": "JOSM이 실행중 입니다",
             "madeBy": "<b>{author}</b>에 의해 제작됨",
             "mapContributionsBy": "현재 표시된 데이터는 {contributors}에 의해 수정되었습니다",
+            "mapContributionsByAndHidden": "현재 표시된 데이터는 {contributors}와 {hiddenCount}명의 기여자들에 의해 수정되었습니다",
+            "mapillaryHelp": "<b>Mapillary</b>는 거리별 사진을 수집하고 이를 무료 라이선스로 제공하는 온라인 서비스입니다. 기여자들은 이 사진들을 사용하여 OpenStreetMap을 개선할 수 있습니다",
             "openIssueTracker": "오류 신고",
             "openMapillary": "Mapillary 열기",
+            "openOsmcha": "{theme}에서 수행된 최신 수정 사항 보기",
             "openOsmchaLastWeek": "최근 7일간 수정사항 보기",
             "openPanoramax": "Panoramax 열기",
             "openThemeDocumentation": "테마 지도 {name} 문서를 열기",
@@ -209,138 +197,8 @@
             "panoramaxLicenseCCBYSA": "원작자의 사진은 CC-BY-SA 라이선스로 게시됩니다. 누구나 원작자을 언급하면 이미지를 재사용할 수 있습니다",
             "seeOnMapillary": "Mapillary에서 이미지 보기",
             "themeBy": "테마는 {author}에 의해 유지되었습니다",
-            "title": "저작권 및 기여"
-        },
-        "download": {
-            "custom": {
-                "title": "사용자 지정 너비와 높이로 이미지를 다운로드",
-                "download": "너비 {width}mm, 높이 {height}mm의 PNG 파일 다운로드",
-                "downloadHelper": "이 항목은 인쇄를 목적으로 만들어졌습니다",
-                "height": "이미지 높이(단위: mm):",
-                "width": "이미지 너비(단위: mm): "
-            },
-            "downloadGeoJsonHelper": "QGIS, ArcGIS, ESRI등과 호환 가능 합니다…",
-            "downloadAsSvgHelper": "nkscape 또는 Adobe Illustrator와 호환되며 추가적인 작업이 필요합니다",
-            "downloadGpxHelper": "GPX 파일은 다양한 내비게이션 장치와 앱에서 호환됩니다",
-            "downloadAsPngHelper": "보고서에 포함하기에 적합합니다",
-            "includeMetaData": "메타 데이터 포함 (마지막 편집자, 계산된 값...)",
-            "licenseInfo": "<h3>저작권 고지</h3> \n제공된 데이터는 ODbL 라이선스 하에 제공됩니다. 어떤 목적으로든 무료로 재사용할 수 있지만<ul><li>저작권 표기 <b>© OpenStreetMap 기여자</b>를 표시해야 합니다.</li> \n<li>모든 변경 사항은 동일한 라이선스 하에 공개해야 합니다.</li></ul> 자세한 내용은 전체 <a href='https://www.openstreetmap.org/copyright' target='_blank'>저작권 고지</a>를 참조하세요.",
-            "pdf": {
-                "current_view_generic": "{paper_size} 및 {orientation} 으로 현재 화면을 PDF로 내보내기"
-            },
-            "exporting": "내보내는 중…",
-            "downloadAsSvgLinesOnly": "선만 포함된 현재 지도 SVG 파일 다운로드",
-            "downloadAsPdf": "최근 지도의 PDF 파일 다운로드",
-            "downloadAsPdfHelper": "현재 지도를 인쇄하기에 적합합니다",
-            "downloadAsPng": "이미지로 다운로드",
-            "downloadAsSvg": "최근 지도의 SVG 파일 다운로드",
-            "downloadAsSvgLinesOnlyHelper": "교차하는 선은 분리되며 일부 3D 프로그램에서 사용 가능합니다",
-            "downloadCSV": "화면에 표시된 데이터를 CSV 형식으로 다운로드",
-            "downloadCSVHelper": "LibreOffice Calc, Excel 등과 호환됩니다…",
-            "downloadFeatureAsGeojson": "GeoJSON 파일로 다운로드",
-            "downloadFeatureAsGpx": "GPX-file로 다운로드",
-            "downloadGeojson": "화면에 표시된 데이터를 GeoJSON 형식으로 다운로드",
-            "downloadGpx": "GPX-file로 다운로드",
-            "downloadImage": "이미지 다운로드",
-            "title": "다운로드",
-            "noDataLoaded": "현재 데이터가 로드되지 않았습니다. 다운로드는 곧 가능합니다",
-            "toMuch": "요소가 너무 많아 다운로드 하기 어렵습니다",
-            "uploadGpx": "OpenStreetMap에 사용자 활동 업로드하기"
-        },
-        "retry": "다시 시도",
-        "uploadGpx": {
-            "modes": {
-                "private": {
-                    "name": "익명의"
-                },
-                "public": {
-                    "name": "공공"
-                }
-            },
-            "confirm": "업로드 확정",
-            "choosePermission": "아래에서 활동 공유 방법을 선택하세요:",
-            "gpxServiceOffline": "GPX 서비스가 현재 오프라인 상태입니다 - 업로드가 불가능합니다. 나중에 다시 시도해 주세요.",
-            "intro0": "활동을 업로드하면 OpenStreetMap.org에서 해당 트랙의 전체 사본을 보관합니다.",
-            "intro1": "활동을 다시 다운로드하여 OpenStreetMap 편집 프로그램에 불러올 수 있습니다",
-            "meta": {
-                "descriptionIntro": "선택적으로 활동에 대한 설명을 입력할 수 있습니다:",
-                "descriptionPlaceHolder": "사용자의 활동에 대한 설명 입력",
-                "intro": "사용자의 활동에 대한 제목 추가:",
-                "title": "제목과 설명",
-                "titlePlaceholder": "사용자의 활동에 대한 제목 입력"
-            }
-        },
-        "visualFeedback": {
-            "directionsAbsolute": {
-                "NE": "북동쪽",
-                "W": "서쪽",
-                "E": "동쪽",
-                "N": "북쪽",
-                "NW": "북서쪽",
-                "S": "남쪽",
-                "SE": "남동쪽",
-                "SW": "남서쪽"
-            },
-            "directionsRelative": {
-                "left": "왼쪽",
-                "right": "오른쪽",
-                "behind": "뒤로가기"
-            }
-        },
-        "pickLanguage": "언어 선택",
-        "labels": {
-            "locationNotAvailable": "GPS 신호를 받을 수 없습니다. 기기의 위치 서비스가 활성화되어 있나요, 혹은 터널 안인가요?",
-            "menu": "메뉴",
-            "background": "배경 변경",
-            "filter": "데이터 필터링",
-            "zoomIn": "확대",
-            "zoomOut": "축소",
-            "jumpToLocation": "현재 위치로 이동"
-        },
-        "weekdays": {
-            "saturday": "토요일",
-            "abbreviations": {
-                "friday": "금",
-                "monday": "월",
-                "saturday": "토",
-                "sunday": "일",
-                "tuesday": "화",
-                "wednesday": "수",
-                "thursday": "목"
-            },
-            "friday": "금요일",
-            "monday": "월요일",
-            "sunday": "일요일",
-            "thursday": "목요일",
-            "wednesday": "수요일",
-            "tuesday": "화요일"
-        },
-        "search": {
-            "searching": "검색 중…",
-            "locations": "장소",
-            "activeFilters": "필터 활성화",
-            "clearFilters": "필터 초기화",
-            "nMoreFilters": "{n}개",
-            "nothing": "결과를 찾을 수 없습니다.",
-            "otherMaps": "다른 지도",
-            "error": "문제가 발생했습니다.",
-            "recents": "최근 방문한 장소",
-            "deleteSearchHistory": "위치 정보 삭제하기",
-            "deleteThemeHistory": "최근 방문한 테마 삭제하기",
-            "editSearchSyncSettings": "동기화 설정 편집",
-            "editThemeSync": "동기화 설정 편집",
-            "instructions": "상단의 검색창으로 위치, 필터 또는 다른 테마 지도를 검색하세요",
-            "nothingFor": "{term}에서 결과를 찾을 수 없습니다",
-            "pickFilter": "필터 선택",
-            "recentThemes": "최근 방문한 지도",
-            "search": "위치 검색"
-        },
-        "enableGeolocationForSafariLink": "설정에서 위치 권한을 활성화하는 방법 알아보기",
-        "404": "이 페이지는 존재하지 않습니다",
-        "about": "특정 테마의 OpenStreetMap 를 쉽게 편집하고 추가할 수 있습니다",
-        "apply_button": {
-            "appliedOnAnotherObject": "객체 {id}에 {tags}가 부여됩니다",
-            "isApplied": "이 변경사항은 적용 되었습니다"
+            "title": "저작권 및 기여",
+            "translatedBy": "MapComplete는 {contributors}와 <a href='https://github.com/pietervdvn/MapComplete/graphs/contributors' target='_blank'> {hiddenCount}명의 기여자들에 의해 번역되었습니다</a>"
         },
         "back": "뒤로가기",
         "backToIndex": "모든 테마의 지도 보기",
@@ -351,87 +209,143 @@
         "confirm": "확인",
         "customThemeIntro": "이전 방문한 사용자 생성 테마들입니다.",
         "customThemeTitle": "테마 커스텀",
+        "download": {
+            "custom": {
+                "download": "너비 {width}mm, 높이 {height}mm의 PNG 파일 다운로드",
+                "downloadHelper": "이 항목은 인쇄를 목적으로 만들어졌습니다",
+                "height": "이미지 높이(단위: mm):",
+                "title": "사용자 지정 너비와 높이로 이미지를 다운로드",
+                "width": "이미지 너비(단위: mm): "
+            },
+            "downloadAsPdf": "최근 지도의 PDF 파일 다운로드",
+            "downloadAsPdfHelper": "현재 지도를 인쇄하기에 적합합니다",
+            "downloadAsPng": "이미지로 다운로드",
+            "downloadAsPngHelper": "보고서에 포함하기에 적합합니다",
+            "downloadAsSvg": "최근 지도의 SVG 파일 다운로드",
+            "downloadAsSvgHelper": "nkscape 또는 Adobe Illustrator와 호환되며 추가적인 작업이 필요합니다",
+            "downloadAsSvgLinesOnly": "선만 포함된 현재 지도 SVG 파일 다운로드",
+            "downloadAsSvgLinesOnlyHelper": "교차하는 선은 분리되며 일부 3D 프로그램에서 사용 가능합니다",
+            "downloadCSV": "화면에 표시된 데이터를 CSV 형식으로 다운로드",
+            "downloadCSVHelper": "LibreOffice Calc, Excel 등과 호환됩니다…",
+            "downloadFeatureAsGeojson": "GeoJSON 파일로 다운로드",
+            "downloadFeatureAsGpx": "GPX-file로 다운로드",
+            "downloadGeoJsonHelper": "QGIS, ArcGIS, ESRI등과 호환 가능 합니다…",
+            "downloadGeojson": "화면에 표시된 데이터를 GeoJSON 형식으로 다운로드",
+            "downloadGpx": "GPX-file로 다운로드",
+            "downloadGpxHelper": "GPX 파일은 다양한 내비게이션 장치와 앱에서 호환됩니다",
+            "downloadImage": "이미지 다운로드",
+            "exporting": "내보내는 중…",
+            "includeMetaData": "메타 데이터 포함 (마지막 편집자, 계산된 값...)",
+            "licenseInfo": "<h3>저작권 고지</h3> \n제공된 데이터는 ODbL 라이선스 하에 제공됩니다. 어떤 목적으로든 무료로 재사용할 수 있지만<ul><li>저작권 표기 <b>© OpenStreetMap 기여자</b>를 표시해야 합니다.</li> \n<li>모든 변경 사항은 동일한 라이선스 하에 공개해야 합니다.</li></ul> 자세한 내용은 전체 <a href='https://www.openstreetmap.org/copyright' target='_blank'>저작권 고지</a>를 참조하세요.",
+            "noDataLoaded": "현재 데이터가 로드되지 않았습니다. 다운로드는 곧 가능합니다",
+            "pdf": {
+                "current_view_generic": "{paper_size} 및 {orientation} 으로 현재 화면을 PDF로 내보내기"
+            },
+            "title": "다운로드",
+            "toMuch": "요소가 너무 많아 다운로드 하기 어렵습니다",
+            "uploadGpx": "OpenStreetMap에 사용자 활동 업로드하기"
+        },
+        "enableGeolocationForSafari": "위치 권한 요청 팝업이 나타나지 않았습니까?",
+        "enableGeolocationForSafariLink": "설정에서 위치 권한을 활성화하는 방법 알아보기",
+        "eraseValue": "이 값 지우기",
+        "error": "문제가 발생했습니다",
         "example": "사례",
         "examples": "사례들",
-        "loading": "로딩중…",
         "filterPanel": {
             "allTypes": "모든 종류",
             "disableAll": "전체 비활성화",
             "enableAll": "전체 활성화"
         },
-        "layerSelection": {
-            "title": "레이어 선택",
-            "zoomInToSeeThisLayer": "이 레이어를 표시하려면 화면을 확대하세요"
-        },
-        "loadingTheme": "{theme} 로딩 중…",
-        "enableGeolocationForSafari": "위치 권한 요청 팝업이 나타나지 않았습니까?",
-        "eraseValue": "이 값 지우기",
-        "error": "문제가 발생했습니다",
         "geopermissionDenied": "위치 접근 권한이 거부되었습니다",
         "histogram": {
             "error_loading": "히스토그램을 불러오는 데 실패했습니다"
+        },
+        "labels": {
+            "background": "배경 변경",
+            "filter": "데이터 필터링",
+            "jumpToLocation": "현재 위치로 이동",
+            "locationNotAvailable": "GPS 신호를 받을 수 없습니다. 기기의 위치 서비스가 활성화되어 있나요, 혹은 터널 안인가요?",
+            "menu": "메뉴",
+            "zoomIn": "확대",
+            "zoomOut": "축소"
+        },
+        "layerSelection": {
+            "title": "레이어 선택",
+            "zoomInToSeeThisLayer": "이 레이어를 표시하려면 화면을 확대하세요"
         },
         "levelSelection": {
             "addNewOnLevel": "새로운 지점의 위치가 {level}층에 있습니까?",
             "confirmLevel": "예, {level}층에 {preset}을 추가합니다"
         },
+        "loading": "로딩중…",
+        "loadingTheme": "{theme} 로딩 중…",
         "loginFailed": "OpenStreetMap 로그인에 실패했습니다. 다시 시도해 주세요",
-        "next": "다음",
-        "number": "수",
-        "save": "저장",
-        "share": "공유",
-        "sharescreen": {
-            "fsGeolocation": "위치 정보 활성화",
-            "options": "공유하기",
-            "documentation": "사용 가능한 URL 매개변수에 대한 자세한 내용은 <a href='https://github.com/pietervdvn/MapComplete/blob/develop/Docs/URL_Parameters.md' target='_blank'>문서를 참조하세요</a>",
-            "embedIntro": "<h3>사용자의 사이트 삽입</h3> 이 지도를 사용자의 사이트에 삽입해 주세요<br/>이를 적극 권장 합니다 -별도의 허가는 필요 없습니다<br/> 무료로 제공되며, 사용자가 많을수록 지도의 가치는 올라갑니다.",
-            "copiedToClipboard": "클립보드에 링크 복사",
-            "fsBackground": "배경 전환 활성화",
-            "fsFilter": "레이어와 필터 전환 기능 활성화",
-            "fsUserbadge": "로그인 버튼을 활성화하여 변경할 수 있도록 설정",
-            "fsWelcomeMessage": "환영 메시지 팝업과 관련된 탭 표시",
-            "intro": "아래 링크를 복사하여 친구와 가족에게 보내 이 지도를 공유 가능합니다:",
-            "openLayers": "레이어와 필터 메뉴 열기",
-            "stateIsIncluded": "레이어와 필터의 현재 상태가 공유된 링크와 iframe에 포함됩니다.",
-            "title": "지도 공유하기"
-        },
-        "uploadingChanges": "변경사항을 업로드 중…",
-        "wikipedia": {
-            "searchWikidata": "Wikidata 검색"
-        },
         "loginFailedOfflineMode": "OpenStreetMap.org은 현재 유지 보수 중입니다. 편집 기능은 곧 다시 제공될 예정입니다",
+        "loginFailedReadonlyMode": "OpenStreetMap.org은 현재 유지 보수로 인해 읽기 전용 모드입니다. 곧 편집이 가능해질 예정입니다",
+        "loginFailedUnreachableMode": "현재 OpenStreetMap.org에 접속할 수 없습니다. 인터넷에 연결되어 있거나 제3자 서비스를 차단하고 있지 않습니까? 나중에 다시 시도해 주세요",
+        "loginToStart": "질문에 답변하려면 로그인하십시오",
+        "loginWithOpenStreetMap": "OpenStreetMap로 로그인",
+        "logout": "로그아웃",
         "mappingsAreHidden": "일부 옵션이 숨겨져 있습니다. 검색을 사용하여 더 많은 옵션을 확인하세요.",
+        "menu": {
+            "aboutCurrentThemeTitle": "지도에 대해",
+            "aboutMapComplete": "MapComplete에 대해",
+            "filter": "데이터 필터링",
+            "moreUtilsTitle": "더 찾아보기",
+            "openHereDifferentApp": "현재 위치를 다른 애플리케이션에서 열기",
+            "showIntroduction": "설명서 보기",
+            "title": "메뉴"
+        },
         "morescreen": {
             "createYourOwnTheme": "새로운 MapComplete 테마를 직접 생성하기",
             "enterToOpen": "Enter 키를 누르면 테마가 열립니다",
-            "streetcomplete": "유사한 애플리케이션으로는 <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' class='underline hover:text-blue-800' target='_blank'>StreetComplete</a>가 있습니다.",
             "hiddenExplanation": "이 테마는 링크를 가진 사람만 접근할 수 있습니다. 숨겨진 테마 {total_hidden}개 중 {hidden_discovered}개를 발견했습니다.",
             "noMatchingThemes": "검색 기준과 일치하는 테마가 없습니다",
             "noSearch": "모든 테마 보기",
             "previouslyHiddenTitle": "이전에 방문한 숨겨진 테마",
-            "searchForATheme": "테마 검색"
+            "searchForATheme": "테마 검색",
+            "streetcomplete": "유사한 애플리케이션으로는 <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' class='underline hover:text-blue-800' target='_blank'>StreetComplete</a>가 있습니다."
         },
-        "loginWithOpenStreetMap": "OpenStreetMap로 로그인",
+        "next": "다음",
+        "noTagsSelected": "태그가 선택되지 않았습니다",
+        "number": "수",
+        "openTheMap": "지도 열기",
+        "openTheMapReason": "열람, 수정, 추가",
+        "opening_hours": {
+            "all_days_from": "매일 운영 중: {ranges}",
+            "closed_permanently": "언제 다시 열릴지 알 수 없습니다",
+            "closed_until": "{date}에 열림",
+            "error": "영업시간을 알 수 없습니다",
+            "error_loading": "오류: 영업 시간을 시각화하는 데 실패했습니다.",
+            "friday": "금요일 {ranges}",
+            "loadingCountry": "도시 찾는중…",
+            "monday": "월요일 {ranges}",
+            "not_all_rules_parsed": "영업 시간이 복잡합니다. 입력 사항에서 다음 규칙이 무시됩니다:",
+            "on_weekdays": "평일 운영 시간 {ranges}",
+            "openTill": "까지",
+            "open_24_7": "24시간 영업",
+            "open_during_ph": "공휴일 동안은:",
+            "opensAt": "부터",
+            "ph_closed": "영업 전",
+            "ph_not_known": " . ",
+            "ph_open": "영업 중",
+            "ph_open_as_usual": "보통 영업합니다",
+            "ranges": "{starttime} 부터 {endtime}까지",
+            "rangescombined": "{range0} 그리고 {range1}",
+            "saturday": "토요일 {ranges}",
+            "sunday": "일요일 {ranges}",
+            "thursday": "목요일 {ranges}",
+            "tuesday": "화요일 {ranges}",
+            "unknown": "영업 시간이 확인되지 않았습니다",
+            "wednesday": "수요일 {ranges}"
+        },
         "pdf": {
             "attr": "지도 데이터 © OpenStreetMap 기여자, ODbL에 따라 재사용 가능합니다",
             "attrBackground": "배경 레이어: {background}",
             "generatedWith": "mapcomplete.org/{layoutid}를 사용하여 생성됨",
             "versionInfo": "v{version} - {date} 생성됨"
         },
-        "questions": {
-            "noneDisabled": "특정 유형의 질문에 관심이 없으면 비활성화할 수 있습니다. 질문을 비활성화하려면 오른쪽 상단의 점 세 개를 클릭하고 '비활성화'를 선택하세요",
-            "disable": "이 질문을 다시 묻지 않기",
-            "disabledTitle": "비활성화된 질문",
-            "enable": "모든 요소에 대해 이 질문 묻기",
-            "disabledIntro": "일부 질문 유형을 비활성화했습니다. 다시 활성화하려면 여기를 클릭하세요"
-        },
-        "searchAnswer": "옵션 검색",
-        "loginFailedReadonlyMode": "OpenStreetMap.org은 현재 유지 보수로 인해 읽기 전용 모드입니다. 곧 편집이 가능해질 예정입니다",
-        "loginFailedUnreachableMode": "현재 OpenStreetMap.org에 접속할 수 없습니다. 인터넷에 연결되어 있거나 제3자 서비스를 차단하고 있지 않습니까? 나중에 다시 시도해 주세요",
-        "loginToStart": "질문에 답변하려면 로그인하십시오",
-        "noTagsSelected": "태그가 선택되지 않았습니다",
-        "openTheMap": "지도 열기",
-        "openTheMapReason": "열람, 수정, 추가",
+        "pickLanguage": "언어 선택",
         "poweredByMapComplete": "MapComplete 지원 - OpenStreetMap 기반의 크라우드소싱 테마 지도",
         "poweredByOsm": "OpenStreetMap 기반",
         "questionBox": {
@@ -446,47 +360,133 @@
             "skippedMultiple": "{skipped} 질문 건너 뛰기",
             "skippedOne": "한개의 질문 건너 뛰기"
         },
+        "questions": {
+            "disable": "이 질문을 다시 묻지 않기",
+            "disabledIntro": "일부 질문 유형을 비활성화했습니다. 다시 활성화하려면 여기를 클릭하세요",
+            "disabledTitle": "비활성화된 질문",
+            "enable": "모든 요소에 대해 이 질문 묻기",
+            "noneDisabled": "특정 유형의 질문에 관심이 없으면 비활성화할 수 있습니다. 질문을 비활성화하려면 오른쪽 상단의 점 세 개를 클릭하고 '비활성화'를 선택하세요"
+        },
         "removeLocationHistory": "위치 기록 삭제",
+        "retry": "다시 시도",
         "returnToTheMap": "지도로 돌아가기",
+        "save": "저장",
         "screenToSmall": "새로운 창에서<i>{theme}</i> 열기",
+        "search": {
+            "activeFilters": "필터 활성화",
+            "clearFilters": "필터 초기화",
+            "deleteSearchHistory": "위치 정보 삭제하기",
+            "deleteThemeHistory": "최근 방문한 테마 삭제하기",
+            "editSearchSyncSettings": "동기화 설정 편집",
+            "editThemeSync": "동기화 설정 편집",
+            "error": "문제가 발생했습니다.",
+            "instructions": "상단의 검색창으로 위치, 필터 또는 다른 테마 지도를 검색하세요",
+            "locations": "장소",
+            "nMoreFilters": "{n}개",
+            "nothing": "결과를 찾을 수 없습니다.",
+            "nothingFor": "{term}에서 결과를 찾을 수 없습니다",
+            "otherMaps": "다른 지도",
+            "pickFilter": "필터 선택",
+            "recentThemes": "최근 방문한 지도",
+            "recents": "최근 방문한 장소",
+            "search": "위치 검색",
+            "searching": "검색 중…"
+        },
+        "searchAnswer": "옵션 검색",
         "seeIndex": "모든 테마 지도의 개요 보기",
+        "share": "공유",
+        "sharescreen": {
+            "copiedToClipboard": "클립보드에 링크 복사",
+            "documentation": "사용 가능한 URL 매개변수에 대한 자세한 내용은 <a href='https://github.com/pietervdvn/MapComplete/blob/develop/Docs/URL_Parameters.md' target='_blank'>문서를 참조하세요</a>",
+            "embedIntro": "<h3>사용자의 사이트 삽입</h3> 이 지도를 사용자의 사이트에 삽입해 주세요<br/>이를 적극 권장 합니다 -별도의 허가는 필요 없습니다<br/> 무료로 제공되며, 사용자가 많을수록 지도의 가치는 올라갑니다.",
+            "fsBackground": "배경 전환 활성화",
+            "fsFilter": "레이어와 필터 전환 기능 활성화",
+            "fsGeolocation": "위치 정보 활성화",
+            "fsUserbadge": "로그인 버튼을 활성화하여 변경할 수 있도록 설정",
+            "fsWelcomeMessage": "환영 메시지 팝업과 관련된 탭 표시",
+            "intro": "아래 링크를 복사하여 친구와 가족에게 보내 이 지도를 공유 가능합니다:",
+            "openLayers": "레이어와 필터 메뉴 열기",
+            "options": "공유하기",
+            "stateIsIncluded": "레이어와 필터의 현재 상태가 공유된 링크와 iframe에 포함됩니다.",
+            "title": "지도 공유하기"
+        },
         "skip": "이 질문 건너뛰기",
         "testing": "테스트 중 - 변경 사항은 저장되지 않습니다",
-        "uploadError": "변경 사항 업로드 중 오류 발생: {error}"
-    },
-    "split": {
-        "cancel": "취소",
-        "split": "분할"
-    },
-    "favouritePoi": {
-        "button": {
-            "isFavourite": "이 위치는 현재 즐겨찾기로 지정되어 있으며, MapComplete의 모든 테마 지도에 표시됩니다.",
-            "markDescription": "이 장소를 나만의 즐겨찾기 목록에 추가하세요",
-            "unmarkNotDeleted": "이 지점은 삭제되지 않으며, 특정 지도에서 사용자 그리고 다른 사용사에게 여전히 표시될 수 있습니다",
-            "isNotMarkedShort": "즐겨찾기로 지정되지 않음",
-            "isMarkedShort": "즐겨찾기로 지정 됨",
-            "markAsFavouriteTitle": "이 위치를 즐겨찾기로 지정하세요",
-            "unmark": "나만의 즐겨찾기 목록에서 지우기"
+        "uploadError": "변경 사항 업로드 중 오류 발생: {error}",
+        "uploadGpx": {
+            "choosePermission": "아래에서 활동 공유 방법을 선택하세요:",
+            "confirm": "업로드 확정",
+            "gpxServiceOffline": "GPX 서비스가 현재 오프라인 상태입니다 - 업로드가 불가능합니다. 나중에 다시 시도해 주세요.",
+            "intro0": "활동을 업로드하면 OpenStreetMap.org에서 해당 트랙의 전체 사본을 보관합니다.",
+            "intro1": "활동을 다시 다운로드하여 OpenStreetMap 편집 프로그램에 불러올 수 있습니다",
+            "meta": {
+                "descriptionIntro": "선택적으로 활동에 대한 설명을 입력할 수 있습니다:",
+                "descriptionPlaceHolder": "사용자의 활동에 대한 설명 입력",
+                "intro": "사용자의 활동에 대한 제목 추가:",
+                "title": "제목과 설명",
+                "titlePlaceholder": "사용자의 활동에 대한 제목 입력"
+            },
+            "modes": {
+                "private": {
+                    "name": "익명의"
+                },
+                "public": {
+                    "name": "공공"
+                }
+            }
         },
-        "downloadGeojson": "즐겨찾기를 GeoJSON으로 다운로드하세요",
-        "downloadGpx": "즐겨찾기를 GPX로 다운로드하세요",
-        "intro": "{length}개의 장소를 즐겨찾기로 설정했습니다.",
-        "introPrivacy": "이 목록은 사용자에게만 보입니다",
-        "loginToSeeList": "즐겨찾기 한 목록을 보기 위해서 로그인하세요",
-        "tab": "즐겨찾기와 평점",
-        "title": "사용자의 즐겨찾기 장소"
-    },
-    "index": {
-        "title": "MapComplete"
+        "uploadingChanges": "변경사항을 업로드 중…",
+        "visualFeedback": {
+            "directionsAbsolute": {
+                "E": "동쪽",
+                "N": "북쪽",
+                "NE": "북동쪽",
+                "NW": "북서쪽",
+                "S": "남쪽",
+                "SE": "남동쪽",
+                "SW": "남서쪽",
+                "W": "서쪽"
+            },
+            "directionsRelative": {
+                "behind": "뒤로가기",
+                "left": "왼쪽",
+                "right": "오른쪽"
+            }
+        },
+        "weekdays": {
+            "abbreviations": {
+                "friday": "금",
+                "monday": "월",
+                "saturday": "토",
+                "sunday": "일",
+                "thursday": "목",
+                "tuesday": "화",
+                "wednesday": "수"
+            },
+            "friday": "금요일",
+            "monday": "월요일",
+            "saturday": "토요일",
+            "sunday": "일요일",
+            "thursday": "목요일",
+            "tuesday": "화요일",
+            "wednesday": "수요일"
+        },
+        "wikipedia": {
+            "searchWikidata": "Wikidata 검색"
+        }
     },
     "hotkeyDocumentation": {
         "action": "활동",
-        "title": "단축 명령키",
         "closeSidebar": "사이드 창 닫기",
-        "shakePhone": "핸드폰 흔들기"
+        "shakePhone": "핸드폰 흔들기",
+        "title": "단축 명령키"
     },
-    "reviews": {
-        "saving_review": "저장 중…"
+    "image": {
+        "addPicture": "사진 찍기",
+        "isDeleted": "삭제됨"
+    },
+    "index": {
+        "title": "MapComplete"
     },
     "inspector": {
         "aggregateView": "통합",
@@ -498,11 +498,11 @@
         },
         "tableView": "전체 보기"
     },
-    "favourite": {
-        "reload": "데이터 다시 불러오기"
+    "reviews": {
+        "saving_review": "저장 중…"
     },
-    "image": {
-        "isDeleted": "삭제됨",
-        "addPicture": "사진 찍기"
+    "split": {
+        "cancel": "취소",
+        "split": "분할"
     }
 }

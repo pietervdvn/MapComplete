@@ -35,6 +35,7 @@ Available languages:
  - es
  - pl
  - uk
+ - ko
 
 # Table of contents
 

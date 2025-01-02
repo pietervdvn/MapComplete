@@ -23,7 +23,8 @@
     "pl": "Ławki",
     "pt": "Bancadas",
     "fil": "Mga upuan",
-    "uk": "Лавки"
+    "uk": "Лавки",
+    "ko": "벤치"
   },
   "description": {
     "en": "This map shows all benches that are recorded in OpenStreetMap: Individual benches, and benches belonging to public transport stops or shelters.",
@@ -43,7 +44,8 @@
     "eu": "OpenStreetMap-en erregistratzen diren banku guztiak erakusten ditu mapa honek: garraio publikoko geralekuetako edo babeslekuetako banakako bankuak eta bankuak.",
     "pl": "Mapa ta pokazuje wszystkie ławki zarejestrowane w OpenStreetMap: ławki indywidualne oraz ławki należące do przystanków komunikacji miejskiej lub wiat.",
     "zh_Hans": "这张地图显示了所有记录在 OpenStreetMap 中的长椅：包括独立长椅和属于公共交通站点或候车亭的长椅。",
-    "uk": "На цій мапі показані всі лавки, які зафіксовані в OpenStreetMap: Окремі лавки та лавки, що належать до зупинок громадського транспорту або прихистків."
+    "uk": "На цій мапі показані всі лавки, які зафіксовані в OpenStreetMap: Окремі лавки та лавки, що належать до зупинок громадського транспорту або прихистків.",
+    "ko": "이 지도는 OpenStreetMap에 기록된 모든 벤치를 보여줍니다: 길거리 벤치뿐만 아니라 대중교통 정류장이나 쉼터에 속한 벤치도 포함됩니다."
   },
   "shortDescription": {
     "en": "A map of benches",
@@ -67,7 +69,8 @@
     "pl": "Mapa ławek",
     "pt": "Um mapa de bancadas",
     "fil": "Mapa ng upuan",
-    "uk": "Мапа лавок"
+    "uk": "Мапа лавок",
+    "ko": "벤치 지도"
   },
   "icon": "./assets/themes/benches/bench_poi.svg",
   "credits": [
