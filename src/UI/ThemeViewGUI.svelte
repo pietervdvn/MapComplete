@@ -47,6 +47,7 @@
   import ChevronRight from "@babeard/svelte-heroicons/mini/ChevronRight"
   import { Drawer } from "flowbite-svelte"
   import { linear } from "svelte/easing"
+  import DefaultIcon from "./Map/DefaultIcon.svelte"
 
   export let state: ThemeViewState
 
@@ -395,7 +396,7 @@
 
     <div class="float-left m-1 flex flex-col sm:mt-2">
       <!-- Current view tools -->
-      {#if currentViewLayer?.tagRenderings && currentViewLayer.defaultIcon()}
+      {#if currentViewLayer?.tagRenderings && currentViewLayer.hasDefaultIcon()}
         <MapControlButton
           on:click={() => {
             state.selectCurrentView()
@@ -403,7 +404,7 @@
           on:keydown={forwardEventToMap}
         >
           <div class="h-8 w-8 cursor-pointer">
-            <ToSvelte construct={() => currentViewLayer.defaultIcon()} />
+            <DefaultIcon layer={currentViewLayer}/>
           </div>
         </MapControlButton>
       {/if}

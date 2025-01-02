@@ -143,15 +143,6 @@ export default class PointRenderingConfig extends WithContextLoader {
             "w-full h-full block absolute top-0 left-0"
         )
     }
-
-    public GetBaseIcon(tags?: Record<string, string>): BaseUIElement {
-        return new SvelteUIElement(DynamicMarker, {
-            marker: this.marker,
-            rotation: this.rotation,
-            tags: new ImmutableStore(tags),
-        })
-    }
-
     public RenderIcon(
         tags: Store<Record<string, string>>,
         options?: {

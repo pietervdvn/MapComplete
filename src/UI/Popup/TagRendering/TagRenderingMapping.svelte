@@ -15,6 +15,7 @@
   import SvelteUIElement from "../../Base/SvelteUIElement"
   import Icon from "../../Map/Icon.svelte"
   import { TagsFilter } from "../../../Logic/Tags/TagsFilter"
+  import DefaultIcon from "../../Map/DefaultIcon.svelte"
 
   export let selectedElement: Feature
   export let tags: UIEventSource<Record<string, string>>
@@ -27,6 +28,7 @@
    */
   export let clss: string = "ml-2"
   export let mapping: {
+    readonly if?: TagsFilter
     readonly then: Translation
     readonly searchTerms?: Record<string, string[]>
     readonly icon?: string
@@ -46,13 +48,13 @@
     large: "5rem",
   }
 
-  function getAutoIcon(mapping: { if?: TagsFilter }): BaseUIElement {
+  function getAutoIcon(mapping: { readonly if?: TagsFilter }): Readonly<Record<string, string>> {
     for (const preset of layer.presets) {
       if (!new And(preset.tags).shadows(mapping.if)) {
         continue
       }
 
-      return layer.defaultIcon(TagUtils.asProperties(preset.tags))
+      return TagUtils.asProperties(preset.tags)
     }
     return undefined
   }
@@ -62,7 +64,7 @@
   <div class="inline-flex items-center">
     {#if mapping.icon === "auto"}
       <div class="mr-2 h-8 w-8 shrink-0">
-        <ToSvelte construct={() => getAutoIcon(mapping)} />
+        <DefaultIcon {layer} properties={getAutoIcon(mapping)}/>
       </div>
     {:else}
       <Marker

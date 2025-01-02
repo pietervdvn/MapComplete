@@ -10,6 +10,7 @@
   import ToSvelte from "../Base/ToSvelte.svelte"
   import Tr from "../Base/Tr.svelte"
   import Translations from "../i18n/Translations"
+  import DefaultIcon from "../Map/DefaultIcon.svelte"
 
   export let onlyShowChangesBy: string[]
   export let id: OsmId
@@ -58,7 +59,7 @@
     <a href={"https://openstreetmap.org/" + $lastStep.step.tags.id} target="_blank">
       <h3 class="flex items-center gap-x-2">
         <div class="inline-block h-8 w-8 shrink-0">
-          <ToSvelte construct={$lastStep.layer?.defaultIcon($lastStep.step.tags)} />
+          <DefaultIcon layer={$lastStep.layer} />
         </div>
         <Tr
           t={$lastStep.layer?.title?.GetRenderValue($lastStep.step.tags)?.Subs($lastStep.step.tags)}
