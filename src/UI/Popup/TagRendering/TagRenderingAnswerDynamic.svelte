@@ -7,6 +7,7 @@
   import { UIEventSource } from "../../../Logic/UIEventSource"
   import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
   import TagRenderingAnswer from "./TagRenderingAnswer.svelte"
+  import Loading from "../../Base/Loading.svelte"
 
   export let tags: UIEventSource<Record<string, string> | undefined>
 
@@ -20,12 +21,16 @@
   let dynamicConfig = TagRenderingConfigUtils.withNameSuggestionIndex(config, tags, selectedElement)
 </script>
 
-<TagRenderingAnswer
-  {selectedElement}
-  {layer}
-  config={$dynamicConfig}
-  {extraClasses}
-  {id}
-  {tags}
-  {state}
-/>
+{#if $dynamicConfig === undefined}
+  <Loading />
+{:else}
+  <TagRenderingAnswer
+    {selectedElement}
+    {layer}
+    config={$dynamicConfig}
+    {extraClasses}
+    {id}
+    {tags}
+    {state}
+  />
+{/if}
