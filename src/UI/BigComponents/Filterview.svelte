@@ -14,6 +14,7 @@
   import Translations from "../i18n/Translations"
   import type { SpecialVisualizationState } from "../SpecialVisualization"
   import Constants from "../../Models/Constants"
+  import DefaultIcon from "../Map/DefaultIcon.svelte"
 
   export let state: SpecialVisualizationState
   export let filteredLayer: FilteredLayer
@@ -58,7 +59,7 @@
     {#if showLayerTitle}
       <Checkbox selected={isDisplayed}>
         <div class="no-image-background block h-6 w-6" class:opacity-50={!$isDisplayed}>
-          <ToSvelte construct={() => layer.defaultIcon()} />
+          <DefaultIcon {layer}/>
         </div>
 
         <Tr t={filteredLayer.layerDef.name} />

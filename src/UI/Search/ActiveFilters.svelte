@@ -14,6 +14,7 @@
   import FilterSearch from "../../Logic/Search/FilterSearch"
 
   import Locale from "../i18n/Locale"
+  import DefaultIcon from "../Map/DefaultIcon.svelte"
 
   export let activeFilters: (FilterSearchResult & ActiveFilter)[]
   let language = Locale.language
@@ -72,7 +73,7 @@
         {#if $activeLayers.length === 1}
           <FilterToggle on:click={() => enableAllLayers()}>
             <div class="h-8 w-8 p-1">
-              <ToSvelte construct={$activeLayers[0].layerDef.defaultIcon()} />
+              <DefaultIcon layer={$activeLayers[0].layerDef}/>
             </div>
             <b>
               <Tr t={$activeLayers[0].layerDef.name} />
@@ -82,7 +83,7 @@
           {#each $nonactiveLayers as nonActive (nonActive.layerDef.id)}
             <FilterToggle on:click={() => nonActive.isDisplayed.set(true)}>
               <div class="h-8 w-8 p-1">
-                <ToSvelte construct={nonActive.layerDef.defaultIcon()} />
+                <DefaultIcon layer={nonActive.layerDef}/>
               </div>
               <del class="block-ruby">
                 <Tr t={nonActive.layerDef.name} />
