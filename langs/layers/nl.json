@@ -2049,6 +2049,9 @@
         },
         "title": {
             "mappings": {
+                "0": {
+                    "then": "{name}"
+                },
                 "1": {
                     "then": "Vogelkijkhut {name}"
                 },
@@ -3973,10 +3976,10 @@
                 },
                 "question": "Is deze weg verlicht?"
             },
-            "width:carriageway": {
+            "width": {
                 "question": "Hoe breed is de rijbaan in deze straat (in meters)?",
                 "questionHint": "Dit is gemeten van stoepsteen tot stoepsteen, dus inclusief een parallelle parkeerstrook",
-                "render": "De breedte van deze rijbaan in deze straat is <strong>{width:carriageway}m</strong>"
+                "render": "De breedte van deze rijbaan in deze straat is <strong>{width}m</strong>"
             }
         },
         "title": {
@@ -6353,6 +6356,11 @@
             }
         },
         "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
             "render": "Natuurgebied"
         }
     },
@@ -6882,6 +6890,21 @@
         },
         "title": {
             "render": "Picknicktafel"
+        }
+    },
+    "play_forest": {
+        "description": "Een speelbos is een vrij toegankelijke zone in een bos",
+        "name": "Speelbossen",
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                },
+                "1": {
+                    "then": "Speelbos {name}"
+                }
+            },
+            "render": "Speelbos"
         }
     },
     "playground": {
@@ -8315,6 +8338,17 @@
                     }
                 }
             },
+            "optometrist_service": {
+                "mappings": {
+                    "0": {
+                        "then": "Hier kan men een oogtest door een erkende optometrist laten uitvoeren"
+                    },
+                    "1": {
+                        "then": "HIer kan men een hoortest laten uitvoeren door een erkende audioloog"
+                    }
+                },
+                "question": "Zijn hier medische services beschikbaar?"
+            },
             "organic": {
                 "mappings": {
                     "0": {
@@ -8441,6 +8475,9 @@
         },
         "title": {
             "mappings": {
+                "0": {
+                    "then": "{name}"
+                },
                 "1": {
                     "then": "Voetpad"
                 },
@@ -10593,13 +10630,25 @@
         }
     },
     "village_green": {
-        "description": "Een laag die dorpsgroen toont (gemeenschapsgroen, maar niet echt een park)"
+        "description": "Een laag die dorpsgroen toont (gemeenschapsgroen, maar niet echt een park)",
+        "name": "Speelweide",
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
+            "render": "Speelweide"
+        }
     },
     "visitor_information_centre": {
         "description": "Een bezoekerscentrum biedt informatie over een specifieke attractie of bezienswaardigheid waar het is gevestigd.",
         "name": "Bezoekerscentrum",
         "title": {
             "mappings": {
+                "0": {
+                    "then": "{name:nl}"
+                },
                 "1": {
                     "then": "{name}"
                 }

@@ -6,6 +6,7 @@
   import type { FilterSearchResult } from "../../Logic/Search/FilterSearch"
   import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
   import Loading from "../Base/Loading.svelte"
+  import DefaultIcon from "../Map/DefaultIcon.svelte"
 
   export let entry: FilterSearchResult[] | LayerConfig
   let asFilter: FilterSearchResult[]
@@ -41,7 +42,7 @@
     <div class="flex items-center gap-x-1">
       {#if asLayer}
         <div class="h-8 w-8 p-1">
-          <ToSvelte construct={asLayer.defaultIcon()} />
+          <DefaultIcon layer={asLayer}/>
         </div>
         <b>
           <Tr t={asLayer.name} />

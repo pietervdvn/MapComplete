@@ -503,7 +503,7 @@ export class OsmConnection {
                 (options.filename ?? "gpx_track_mapcomplete_" + new Date().toISOString()) +
                 '"\r\nContent-Type: application/gpx+xml',
         }
-        user
+
         const boundary = "987654"
 
         let body = ""

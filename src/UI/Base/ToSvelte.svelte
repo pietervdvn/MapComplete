@@ -29,6 +29,7 @@
     html?.remove()
     uiElement?.Destroy()
   })
+
 </script>
 
 {#if isSvelte}

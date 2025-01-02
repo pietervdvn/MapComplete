@@ -119,7 +119,7 @@ class AddIconSummary extends DesugaringStep<{ raw: LayerConfigJson; parsed: Laye
         const pointRendering: PointRenderingConfig = layerConfig.mapRendering.find((pr) =>
             pr.location.has("point")
         )
-        const defaultTags = layerConfig.GetBaseTags()
+        const defaultTags = layerConfig.baseTags
         fixed["_layerIcon"] = Utils.NoNull(
             (pointRendering?.marker ?? []).map((i) => {
                 const icon = i.icon?.GetRenderValue(defaultTags)?.txt

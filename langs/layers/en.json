@@ -4021,10 +4021,10 @@
                 },
                 "question": "Is this street lit?"
             },
-            "width:carriageway": {
+            "width": {
                 "question": "What is the carriage width of this road (in meters)?",
                 "questionHint": "This is measured curb to curb and thus includes the width of parallell parking lanes",
-                "render": "The carriage width of this road is <strong>{width:carriageway}m</strong>"
+                "render": "The carriage width of this road is <strong>{width}m</strong>"
             }
         },
         "title": {
@@ -9754,6 +9754,17 @@
                     }
                 },
                 "question": "Does this shop offer key cutting?"
+            },
+            "optometrist_service": {
+                "mappings": {
+                    "0": {
+                        "then": "This shop offers eye exams by certified optometrists"
+                    },
+                    "1": {
+                        "then": "This shop offers hearing tests by a certified audiologist"
+                    }
+                },
+                "question": "Are medical services available here?"
             },
             "organic": {
                 "mappings": {

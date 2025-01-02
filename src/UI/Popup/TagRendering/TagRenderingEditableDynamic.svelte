@@ -7,6 +7,7 @@
   import type { SpecialVisualizationState } from "../../SpecialVisualization"
   import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
   import TagRenderingEditable from "./TagRenderingEditable.svelte"
+  import Loading from "../../Base/Loading.svelte"
 
   export let config: TagRenderingConfig
   export let tags: UIEventSource<Record<string, string>>
@@ -23,14 +24,18 @@
   let dynamicConfig = TagRenderingConfigUtils.withNameSuggestionIndex(config, tags, selectedElement)
 </script>
 
-<TagRenderingEditable
-  config={$dynamicConfig}
-  {editMode}
-  {clss}
-  {highlightedRendering}
-  {editingEnabled}
-  {layer}
-  {state}
-  {selectedElement}
-  {tags}
-/>
+{#if $dynamicConfig}
+  <TagRenderingEditable
+    config={$dynamicConfig}
+    {editMode}
+    {clss}
+    {highlightedRendering}
+    {editingEnabled}
+    {layer}
+    {state}
+    {selectedElement}
+    {tags}
+  />
+{:else}
+  <Loading />
+{/if}

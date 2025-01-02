@@ -57,6 +57,7 @@
       <td>
         <button class="as-link cursor-pointer" on:click={() => sort("visitedTime")}>
           <Tr t={t.time} />
+
         </button>
       </td>
       <td>
@@ -95,6 +96,7 @@
     <div slot="header">Labels</div>
     {#if $labels.length === 0}
       <Tr t={t.noLabels} />
+
     {:else}
       {#each $labels as label}
         <div class="mx-2">
