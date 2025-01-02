@@ -89,7 +89,7 @@
   }
 
   let officialSearched: Store<MinimalThemeInformation[]> = filtered(
-    new ImmutableStore(officialThemes)
+    osmConnection.isLoggedIn.map(loggedIn => loggedIn ? officialThemes : officialThemes.filter(th => th.id !== "personal"))
   )
   let hiddenSearched: Store<MinimalThemeInformation[]> = filtered(visitedHiddenThemes)
   let customSearched: Store<MinimalThemeInformation[]> = filtered(customThemes)
@@ -102,6 +102,9 @@
     }
   })
 
+  /**
+   * Opens the first search candidate
+   */
   function applySearch() {
     const didRedirect = SearchUtils.applySpecialSearch(search.data)
     if (didRedirect) {
