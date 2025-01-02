@@ -95,13 +95,13 @@ export class DeleteFlowState {
 
                 if (allByMyself.data === null && useTheInternet) {
                     // We kickoff the download here as it hasn't yet been downloaded. Note that this is mapped onto 'all by myself' above
-                    UIEventSource.FromPromise(this.objectDownloader
-                        .downloadHistory(id))
+                    UIEventSource.FromPromise(this.objectDownloader.downloadHistory(id))
                         .mapD((versions) =>
                             versions.map((version) =>
                                 Number(version.tags["_last_edit:contributor:uid"])
                             )
-                        ).addCallbackAndRunD((hist) => previousEditors.setData(hist))
+                        )
+                        .addCallbackAndRunD((hist) => previousEditors.setData(hist))
                 }
 
                 if (allByMyself.data === true) {

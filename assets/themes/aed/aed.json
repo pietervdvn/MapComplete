@@ -24,7 +24,8 @@
     "cs": "Defibrilátory",
     "zgh": "ⴽⵛⵎ ⵖⵔ ⵜⴽⴰⵕⴹⴰ ⵏ AED",
     "eu": "Desfibriladoreak",
-    "uk": "Дефібрилятори"
+    "uk": "Дефібрилятори",
+    "ko": "제세동기"
   },
   "description": {
     "en": "On this map, one can find and mark nearby defibrillators",
@@ -51,7 +52,8 @@
     "zgh": "ⴳ ⵜⴽⴰⵕⴹⴰ ⴰⴷ, ⵉⵣⵎⵔⵏ ⵓⴼⴳⴰⵏ ⴰⴷ ⵢⴰⴼ ⵓⵎⵍⴰⵏ ⵅⴼ ⵡⴰⵍⵍⴰⵍⵏ ⵏ ⵜⵓⴽⴽⵙⴰ ⵏ ⵜⵔⴳⴰⴳⴰⵢⵜ",
     "eu": "Mapa honetan, hurbileko desfibriladoreak aurkitu eta marka daitezke",
     "pt": "Neste mapa, pode-se encontrar e marcar desfibriladores próximos",
-    "uk": "На цій мапі можна знайти та позначити дефібрилятори поруч"
+    "uk": "На цій мапі можна знайти та позначити дефібрилятори поруч",
+    "ko": "이 지도에서는 주변에 있는 제세동기를 찾아볼 수 있습니다"
   },
   "icon": "./assets/themes/aed/aed.svg",
   "startZoom": 12,

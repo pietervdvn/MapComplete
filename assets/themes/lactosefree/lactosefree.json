@@ -8,7 +8,8 @@
     "cs": "Bezlaktózové obchody a restaurace",
     "hu": "Laktózmentes boltok és éttermek",
     "uk": "Магазини та ресторани без лактози",
-    "nl": "Lactosevrije winkels en restaurants"
+    "nl": "Lactosevrije winkels en restaurants",
+    "ko": "무유당 제품 상점과 식당"
   },
   "description": {
     "en": "A crowdsourced map with lactose free shops and restaurants",
@@ -17,7 +18,8 @@
     "ca": "Un mapa col·lectiu amb botigues i restaurants sense lactosa",
     "cs": "Mapa bezlaktózových obchodů a restaurací vytvořená crowdsourcingem",
     "uk": "Колективна мапа з магазинами та ресторанами з безлактозними продуктами",
-    "nl": "Een gecrowdsourcete kaart met lactosevrije winkels en restaurants"
+    "nl": "Een gecrowdsourcete kaart met lactosevrije winkels en restaurants",
+    "ko": "무유당 제품을 판매하는 상점과 식당을 표시하는 크라우드소싱 지도입니다"
   },
   "icon": "./assets/layers/questions/lactose_free.svg",
   "layers": [

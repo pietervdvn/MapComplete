@@ -360,6 +360,13 @@
             "skippedMultiple": "Přeskočili jste {skipped} otázky",
             "skippedOne": "Vynechali jste jednu otázku"
         },
+        "questions": {
+            "disable": "Už se na tuto otázku neptejte",
+            "disabledIntro": "Zakázali jste některé typy otázek. Chcete-li otázku znovu povolit, klikněte na ni zde",
+            "disabledTitle": "Vypnuté otázky",
+            "enable": "Ptejte se na tuto otázku u všech prvků",
+            "noneDisabled": "Pokud vás určitý typ otázky nezajímá, zakažte jej. Chcete-li otázku zakázat, klikněte na tři tečky v pravém horním rohu a vyberte možnost \"zakázat\""
+        },
         "removeLocationHistory": "Odstranit historii polohy",
         "retry": "Zkusit znovu",
         "returnToTheMap": "Návrat na mapu",
@@ -513,13 +520,6 @@
             "readMore": "Přečtěte si zbytek článku",
             "searchToShort": "Váš vyhledávací dotaz je příliš krátký, zadejte delší text",
             "searchWikidata": "Hledat na Wikidatech"
-        },
-        "questions": {
-            "disable": "Už se na tuto otázku neptejte",
-            "disabledTitle": "Vypnuté otázky",
-            "disabledIntro": "Zakázali jste některé typy otázek. Chcete-li otázku znovu povolit, klikněte na ni zde",
-            "noneDisabled": "Pokud vás určitý typ otázky nezajímá, zakažte jej. Chcete-li otázku zakázat, klikněte na tři tečky v pravém horním rohu a vyberte možnost \"zakázat\"",
-            "enable": "Ptejte se na tuto otázku u všech prvků"
         }
     },
     "hotkeyDocumentation": {
@@ -614,6 +614,30 @@
         "learnMore": "Více informací",
         "logIn": "Přihlaste se, abyste viděli další témata, která jste dříve navštívili",
         "title": "MapComplete"
+    },
+    "inspector": {
+        "aggregateView": "Sdružit",
+        "answeredCountTimes": "Odpovězeno {count} krát",
+        "backToIndex": "Zpět na přehled map",
+        "createdBy": "Vytvořil {contributor}",
+        "earlierInspected": "Podívejte se na přispěvatele, které jste kontrolovali dříve",
+        "images": "Vytvořené obrázky",
+        "load": "Kontrola změn v oblasti mapy",
+        "mapView": "Mapa",
+        "menu": "Kontrola přispěvatele",
+        "onlyGeometry": "Pouze změny geometrie",
+        "previouslySpied": {
+            "addLabel": "Přidat štítek",
+            "allChanges": "Načíst všechny změny pro uživatele s tímto označením",
+            "label": "Štítek",
+            "noLabels": "Bez štítku",
+            "remove": "Odebrat",
+            "time": "Čas poslední kontroly",
+            "title": "Dříve kontrolovaní přispěvatelé",
+            "username": "Uživatelské jméno"
+        },
+        "tableView": "Přehled",
+        "title": "Kontrola přispěvatele"
     },
     "move": {
         "cancel": "Vyberte jiný důvod",
@@ -848,29 +872,5 @@
             "empty": "Zadejte prosím nějaká wikidata",
             "startsWithQ": "Identifikátor wikidat začíná písmenem Q a následuje za ním číslo"
         }
-    },
-    "inspector": {
-        "previouslySpied": {
-            "time": "Čas poslední kontroly",
-            "addLabel": "Přidat štítek",
-            "allChanges": "Načíst všechny změny pro uživatele s tímto označením",
-            "label": "Štítek",
-            "noLabels": "Bez štítku",
-            "remove": "Odebrat",
-            "title": "Dříve kontrolovaní přispěvatelé",
-            "username": "Uživatelské jméno"
-        },
-        "answeredCountTimes": "Odpovězeno {count} krát",
-        "load": "Kontrola změn v oblasti mapy",
-        "aggregateView": "Sdružit",
-        "backToIndex": "Zpět na přehled map",
-        "createdBy": "Vytvořil {contributor}",
-        "earlierInspected": "Podívejte se na přispěvatele, které jste kontrolovali dříve",
-        "images": "Vytvořené obrázky",
-        "mapView": "Mapa",
-        "menu": "Kontrola přispěvatele",
-        "onlyGeometry": "Pouze změny geometrie",
-        "tableView": "Přehled",
-        "title": "Kontrola přispěvatele"
     }
 }

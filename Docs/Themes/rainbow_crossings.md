@@ -27,6 +27,7 @@ Available languages:
  - pl
  - hu
  - uk
+ - ko
 
 # Table of contents
 

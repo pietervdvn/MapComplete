@@ -14,7 +14,8 @@
     "it": "Veterinari, parchi accessibili ai cani e altri servizi per animali domestici",
     "ru": "Ветеринары, парки для собак и другие удобства для домашних животных",
     "hu": "Állatorvosok, kutyafuttatók és hasonló, kedvtelésből tartott állatoknak szóló létesítmények",
-    "uk": "Ветеринари, собачі парки та інші зручності для домашніх тварин"
+    "uk": "Ветеринари, собачі парки та інші зручності для домашніх тварин",
+    "ko": "동물병원, 반려견 놀이터 그리고 반려동물 편의시설"
   },
   "description": {
     "en": "On this map, you'll find various interesting places for you pets: veterinarians, dog parks, pet shops, dog-friendly restaurants, ...",
@@ -27,7 +28,8 @@
     "cs": "Na této mapě najdete různá zajímavá místa pro vaše domácí mazlíčky: veterináře, psí parky, obchody pro zvířata, restaurace pro psy, ...",
     "pl": "Na tej mapie znajdziesz różne ciekawe miejsca dla swoich zwierząt: weterynarze, wybiegi dla psów, sklepy zoologiczne, restauracje przyjazne psom, ...",
     "ru": "На этой карте вы найдете различные интересные места для ваших питомцев: ветеринарные клиники, парки для собак, зоомагазины, рестораны для собак, ...",
-    "uk": "На цій мапі ви знайдете різні цікаві місця для ваших домашніх улюбленців: ветеринари, парки для собак, зоомагазини, ресторани, дружні до собак, …"
+    "uk": "На цій мапі ви знайдете різні цікаві місця для ваших домашніх улюбленців: ветеринари, парки для собак, зоомагазини, ресторани, дружні до собак, …",
+    "ko": "이 지도에서는 여러분의 반려동물을 위한 다양한 흥미로운 장소를 찾을 수 있습니다: 동물병원,반려견 놀이터, 반려 동물 상점, 반려동물 친화적인 레스토랑 등..."
   },
   "icon": "./assets/layers/dogpark/dog-park.svg",
   "startZoom": 10,
@@ -55,7 +57,8 @@
           "zh_Hant": "寵物友善餐廳",
           "pl": "Restauracje przyjazne psom",
           "it": "Ristoranti che accettano i cani",
-          "ru": "Заведения, где можно поесть с собаками"
+          "ru": "Заведения, где можно поесть с собаками",
+          "ko": "반려견 친화적 식당"
         },
         "pointRendering": [
           {
@@ -111,7 +114,8 @@
           "cs": "Obchody vhodné pro vstup se psy",
           "zh_Hant": "寵物友善商家",
           "pl": "Sklepy przyjazne psom",
-          "it": "Negozi che accettano i cani"
+          "it": "Negozi che accettano i cani",
+          "ko": "반려견 친화적 상점"
         },
         "title": {
           "render": {
@@ -128,7 +132,8 @@
             "zh_Hant": "寵物友善商家",
             "pl": "Sklepy przyjazne psom",
             "it": "Negozi che accettano i cani",
-            "hu": "Kutyabarát üzletek"
+            "hu": "Kutyabarát üzletek",
+            "ko": "반려견 친화적 상점"
           },
           "mappings": [
             {
@@ -226,7 +231,8 @@
               "es": "tienda que admite perros",
               "cs": "obchod vhodný pro vstup se psem",
               "zh_Hant": "寵物友善商家",
-              "pl": "sklep przyjazny psom"
+              "pl": "sklep przyjazny psom",
+              "ko": "반려견 친화적 상점"
             },
             "tags": [
               "dog=yes",
@@ -242,7 +248,8 @@
               "es": "Una tienda donde puedes llevar a un perro casi a todas partes",
               "cs": "Obchod, ve kterém si můžete vzít psa téměř kamkoli",
               "zh_Hant": "你幾乎可以攜帶寵物到處去的商店",
-              "pl": "Sklep, w którym niemal wszędzie można zabrać psa"
+              "pl": "Sklep, w którym niemal wszędzie można zabrać psa",
+              "ko": "반려견과 함께할 수 있는 상점"
             }
           }
         ],

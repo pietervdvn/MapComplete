@@ -9,7 +9,8 @@
     "ca": "Pal guia",
     "ru": "Указатели",
     "uk": "Вказівники",
-    "nl": "Wegwijzers"
+    "nl": "Wegwijzers",
+    "ko": "표지판"
   },
   "description": {
     "en": "Guideposts (also known as fingerposts or finger posts) are often found along official hiking, cycling, skiing or horseback riding routes to indicate the directions to different destinations. Additionally, they are often named after a region or place and show the altitude.\n\nThe position of a signpost can be used by a hiker/biker/rider/skier as a confirmation of the current position, especially if they use a printed map without a GPS receiver. ",
@@ -18,7 +19,8 @@
     "es": "Los postes indicadores (también conocidos como señalización o \"fingerposts\") suelen encontrarse a lo largo de rutas oficiales de senderismo, ciclismo, esquí o equitación para indicar las direcciones a diferentes destinos. Además, a menudo llevan el nombre de una región o lugar y muestran la altitud.\n\nLa posición de un poste indicador puede ser utilizada por un excursionista/ciclista/jinete/esquiador como confirmación de la posición actual, especialmente si utiliza un mapa impreso sin un receptor GPS. ",
     "pl": "Drogowskazy (znane również jako \"palce na słupkach\") często znajdują się wzdłuż oficjalnych szlaków pieszych, rowerowych, narciarskich lub konnych i wskazują drogę do różnych miejsc. Ponadto często noszą nazwy regionu lub miejsca i wskazują wysokość.\n\nPozycja drogowskazu może być wykorzystana przez turystę/rowerzystę/jeźdźca/narciarza jako potwierdzenie aktualnej pozycji, zwłaszcza jeśli korzysta z drukowanej mapy bez odbiornika GPS. ",
     "uk": "Орієнтири (також відомі як вказівні стовпчики) часто зустрічаються вздовж офіційних пішохідних, велосипедних, лижних або кінних маршрутів, щоб вказати напрямок до різних пунктів призначення. Крім того, вони часто названі на честь регіону або місця і показують висоту над рівнем моря.\n\nПоложення вказівника може використовуватися пішоходом/велосипедистом/вершником/лижником як підтвердження поточного положення, особливо якщо він користується друкованою картою без GPS-приймача. ",
-    "nl": "Wegwijzers (ook wel handwijzer genoemd) zijn vaak te vinden langs officiële wandel-, fiets-, ski- of paardrijroutes om de richtingen naar verschillende bestemmingen aan te geven. Vaak zijn ze vernoemd naar een regio of plaats en geven ze de hoogte aan.\n\nDe positie van een wegwijzer kan door een wandelaar/fietser/renner/skiër worden gebruikt als bevestiging van de huidige positie, vooral als ze een gedrukte kaart zonder GPS-ontvanger gebruiken. "
+    "nl": "Wegwijzers (ook wel handwijzer genoemd) zijn vaak te vinden langs officiële wandel-, fiets-, ski- of paardrijroutes om de richtingen naar verschillende bestemmingen aan te geven. Vaak zijn ze vernoemd naar een regio of plaats en geven ze de hoogte aan.\n\nDe positie van een wegwijzer kan door een wandelaar/fietser/renner/skiër worden gebruikt als bevestiging van de huidige positie, vooral als ze een gedrukte kaart zonder GPS-ontvanger gebruiken. ",
+    "ko": "표지판(길 안내 표지 혹은 안내서라고 알려져 있다)은 공식적인 하이킹, 자전거 타기, 스키 또는 승마 경로를 따라 자주 발견되며, 다양한 목적지로 가는 방향을 나타냅니다. 또한, 종종 특정 지역이나 장소의 이름을 따서불리기도 하며 고도를 표시하기도 합니다.\n\n이 표지판의 위치는 하이커, 자전거 이용자, 승마자 또는 스키를 타는 사람의 현재 위치를 확인하는 데 사용됩니다. 특히 GPS 수신기가 없는 상태에서 종이 지도를 사용할 때 매우 유용합니다. "
   },
   "icon": "./assets/layers/guidepost/guidepost.svg",
   "layers": [

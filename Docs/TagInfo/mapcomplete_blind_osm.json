@@ -466,8 +466,8 @@
       "value": "impassable"
     },
     {
-      "key": "width:carriageway",
-      "description": "Layer 'Cycleways and roads' shows and asks freeform values for key 'width:carriageway' (in the mapcomplete.org theme 'OSM for the blind') (This is only shown if highway!=cycleway & highway!=path & highway!=footway)"
+      "key": "width",
+      "description": "Layer 'Cycleways and roads' shows and asks freeform values for key 'width' (in the mapcomplete.org theme 'OSM for the blind') (This is only shown if highway!=cycleway & highway!=path & highway!=footway)"
     },
     {
       "key": "cycleway:traffic_sign",

@@ -13,7 +13,8 @@
     "eu": "Gurpil gainean",
     "pl": "Na kółkach",
     "ru": "Коляски",
-    "uk": "На колесах"
+    "uk": "На колесах",
+    "ko": "휠체어 사용자 전용"
   },
   "description": {
     "en": "On this map, publicly weelchair accessible places are shown and can be easily added",
@@ -26,7 +27,8 @@
     "ca": "En aquest mapa, es mostren llocs públics accessibles per a cadira de rodes i es poden afegir fàcilment",
     "pl": "Na tej mapie pokazane są miejsca publicznie dostępne dla wózków inwalidzkich, które można łatwo dodać",
     "it": "Su questa mappa sono indicati i luoghi pubblici accessibili con sedia a rotelle e possono essere facilmente aggiunti",
-    "uk": "На цій мапі показані громадські місця, доступні для осіб в інвалідних візків, їх також можна легко додати"
+    "uk": "На цій мапі показані громадські місця, доступні для осіб в інвалідних візків, їх також можна легко додати",
+    "ko": "이 지도에서는 공공 장소의 휠체어를 보여주고 쉽게 추가 가능합니다"
   },
   "icon": "./assets/themes/onwheels/crest.svg",
   "startZoom": 17,
@@ -109,7 +111,8 @@
                   "cs": "Jakékoliv/žádné informace o šířce",
                   "es": "Información de ancho/sin información de ancho",
                   "ca": "Qualsevol/Sense informació d'amplada",
-                  "pl": "Dowolna/brak informacji o szerokości"
+                  "pl": "Dowolna/brak informacji o szerokości",
+                  "ko": "폭 정보 있음/없음"
                 }
               },
               {
@@ -124,7 +127,8 @@
                   "nb_NO": "Uten breddeinfo",
                   "ca": "Sense informació de l'amplada",
                   "es": "Sin información de ancho",
-                  "pl": "Bez informacji o szerokości"
+                  "pl": "Bez informacji o szerokości",
+                  "ko": "폭 정보 없음"
                 }
               }
             ]
@@ -178,7 +182,8 @@
                   "cs": "Všechny typy obrubníků",
                   "es": "Todos los tipos de bordillos",
                   "ca": "Tot tipus de vorals",
-                  "pl": "Wszystkie rodzaje kraweżnika"
+                  "pl": "Wszystkie rodzaje kraweżnika",
+                  "ko": "모든 유형의 보도 경계석"
                 }
               },
               {
@@ -192,7 +197,8 @@
                   "cs": "Zvýšený obrubník (>3 cm)",
                   "es": "Bordillo elevado (>3 cm)",
                   "ca": "Voral elevat (>3 cm)",
-                  "pl": "Krawężnik podniesiony (>3 cm)"
+                  "pl": "Krawężnik podniesiony (>3 cm)",
+                  "ko": "높은 경계석 (3cm 이상)"
                 }
               },
               {
@@ -206,7 +212,8 @@
                   "cs": "Snížený obrubník (~3 cm)",
                   "es": "Bordillo rebajado (~3 cm)",
                   "ca": "Voral baix (~3 cm)",
-                  "pl": "Krawężnik obniżony (~3 cm)"
+                  "pl": "Krawężnik obniżony (~3 cm)",
+                  "ko": "낮은 경계석 ( 3cm 미만)"
                 }
               },
               {
@@ -220,7 +227,8 @@
                   "cs": "Zapuštěný obrubník (~0 cm)",
                   "es": "Bordillo a ras (~0cm)",
                   "ca": "Voral ras (~0 cm)",
-                  "pl": "Krawężnik zlicowany (~0cm)"
+                  "pl": "Krawężnik zlicowany (~0cm)",
+                  "ko": "평평한 경계석 (0cm)"
                 }
               }
             ]
@@ -285,7 +293,8 @@
           "ca": "Places d'aparcament per a minusvàlids",
           "pl": "Miejsca parkingowe dla niepełnosprawnych",
           "da": "Handikapparkeringspladser",
-          "it": "Parcheggi per disabili"
+          "it": "Parcheggi per disabili",
+          "ko": "장애인 전용 주차 공간"
         }
       },
       "hideTagRenderingsWithLabels": [
@@ -491,7 +500,8 @@
             "pl": "Statystyki",
             "zh_Hant": "統計數據",
             "it": "Statistiche",
-            "hu": "Statisztika"
+            "hu": "Statisztika",
+            "ko": "통계"
           }
         },
         "tagRenderings+": [
@@ -535,7 +545,8 @@
                   "es": "Importar",
                   "eu": "Inportatu",
                   "pl": "Import",
-                  "zh_Hant": "匯入"
+                  "zh_Hant": "匯入",
+                  "ko": "불러오기"
                 },
                 "icon": "./assets/svg/addSmall.svg",
                 "maproulette_id": "mr_taskId"
@@ -559,7 +570,8 @@
                   "cs": "Přidat všechny navrhované značky",
                   "es": "Agregar todas las etiquetas sugeridas",
                   "ca": "Afegiu totes les etiquetes suggerides",
-                  "pl": "Dodaj wszystkie sugerowane znaczniki"
+                  "pl": "Dodaj wszystkie sugerowane znaczniki",
+                  "ko": "제안된 모든 태그 추가"
                 },
                 "image": "./assets/svg/addSmall.svg",
                 "id_of_object_to_apply_this_one": "_closest_osm_hotel"

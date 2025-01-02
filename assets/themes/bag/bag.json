@@ -12,7 +12,8 @@
     "zh_Hant": "BAG 匯入助手",
     "pl": "Pomocnik importowy BAG",
     "zh_Hans": "BAG 导入助手",
-    "uk": "Помічник з імпорту BAG"
+    "uk": "Помічник з імпорту BAG",
+    "ko": "BAG 헬퍼 불러오기"
   },
   "description": {
     "nl": "Dit thema helpt het importeren van BAG data",
@@ -27,7 +28,8 @@
     "pl": "Motyw ten pomaga w importowaniu danych z BAG",
     "zh_Hans": "这个主题帮助导入来自BAG的数据",
     "uk": "Ця тема допомагає імпортувати дані з BAG",
-    "zh_Hant": "這個主題要感謝來自 BAG 匯入的資料"
+    "zh_Hant": "這個主題要感謝來自 BAG 匯入的資料",
+    "ko": "이 테마는 BAG에서 데이터를 가져오는 데 도움을 줍니다"
   },
   "shortDescription": {
     "nl": "BAG-importeerhulptool",
@@ -41,7 +43,8 @@
     "pl": "Narzędzie wspomagające import BAG",
     "zh_Hans": "BAG 导入辅助工具",
     "uk": "Допоміжний інструмент для імпорту BAG",
-    "zh_Hant": "BAG 匯入幫助工具"
+    "zh_Hant": "BAG 匯入幫助工具",
+    "ko": "BAG 헬퍼 툴 불러오기"
   },
   "icon": "./assets/themes/bag/logo.svg",
   "startZoom": 9,
@@ -81,7 +84,8 @@
             "zh_Hans": "在 BAG 中的参考是 <b>{ref:bag}</b>",
             "fil": "Ang sanggunian sa BAG ay <b>{ref:bag}</b>",
             "uk": "Посилання у BAG має вигляд <b>{ref:bag}</b>",
-            "zh_Hant": "在 BAG 的參考編號 <b>{ref:bag}</b>"
+            "zh_Hant": "在 BAG 的參考編號 <b>{ref:bag}</b>",
+            "ko": "BAG의 레퍼런스는 <b>{ref:bag}</b>입니다"
           },
           "mappings": [
             {
@@ -99,7 +103,8 @@
                 "zh_Hans": "这栋建筑在BAG中没有参考信息",
                 "fil": "Walang sanggunian ang gusaling ito sa BAG",
                 "uk": "Ця будівля не має жодної згадки в Базі даних",
-                "zh_Hant": "這棟建築在 BAG 沒有參考資訊"
+                "zh_Hant": "這棟建築在 BAG 沒有參考資訊",
+                "ko": "이 건물은 BAG에 레퍼런스가 존재하지 않습니다"
               }
             }
           ]
@@ -219,7 +224,8 @@
         "zh_Hans": "BAG 注册中的建筑物",
         "fil": "Mga gusali mula sa rehistro ng BAG",
         "uk": "Будівлі з реєстру BAG",
-        "zh_Hant": "BAG 當中有註冊的建築"
+        "zh_Hant": "BAG 當中有註冊的建築",
+        "ko": "BAG에 등록된 건물"
       },
       "source": {
         "geoJson": "https://service.pdok.nl/lv/bag/wfs/v2_0?request=GetFeature&service=WFS&version=2.0.0&outputFormat=application%2Fjson%3B%20subtype%3Dgeojson&typeName=bag%3Apand&bbox={x_min}%2C{y_min}%2C{x_max}%2C{y_max}%2CCRS84&srsName=EPSG%3A4326",
@@ -277,7 +283,8 @@
                 "pl": "Jeszcze nie obliczono poprawnych wartości. Odśwież tę stronę",
                 "zh_Hans": "尚未计算出正确的值。请刷新此页面",
                 "uk": "Ще не розрахували правильні значення. Оновіть цю сторінку",
-                "zh_Hant": "先不要計算正確數值，請重新整理這一頁"
+                "zh_Hant": "先不要計算正確數值，請重新整理這一頁",
+                "ko": "값을 올바르게 계산하지 못했습니다. 페이지를 새로고침 해 주세요"
               }
             },
             {
@@ -310,7 +317,8 @@
             "zh_Hans": "在 BAG 中的参考文献是 <b>{_bag_obj:ref:bag}</b>",
             "fil": "Ang sanggunian sa BAG ay <b>{_bag_obj:ref:bag}</b>",
             "uk": "Посилання у BAG має вигляд <b>{_bag_obj:ref:bag}</b>",
-            "zh_Hant": "在 BAG 的參考編號是 <b>{_bag_obj:ref:bag}</b>"
+            "zh_Hant": "在 BAG 的參考編號是 <b>{_bag_obj:ref:bag}</b>",
+            "ko": "BAG에서 레퍼런스는 <b>{_bag_obj:ref:bag}</b> 입니다"
           }
         },
         {
@@ -330,7 +338,8 @@
             "zh_Hans": "这座建筑建于 <b>{_bag_obj:start_date}</b>",
             "fil": "Ang gusaling ito ay itinayo noong <b>{_bag_obj:start_date}</b>",
             "uk": "Ця будівля була побудована у <b>{_bag_obj:start_date}</b>",
-            "zh_Hant": "這棟建築是<b>{_bag_obj:start_date}</b>建造的"
+            "zh_Hant": "這棟建築是<b>{_bag_obj:start_date}</b>建造的",
+            "ko": "이 건물은 <b>{_bag_obj:start_date}</b>에 지어졌습니다"
           },
           "mappings": [
             {
@@ -348,7 +357,8 @@
                 "zh_Hans": "该建筑始建于 <b>{_bag_obj:start_date}</b>",
                 "fil": "Sinimulan ang gusali noong <b>{_bag_obj:start_date}</b>",
                 "uk": "Будівництво було розпочато у <b>{_bag_obj:start_date}</b>",
-                "zh_Hant": "這棟建築的啟用時間是 <b>{_bag_obj:start_date}</b>"
+                "zh_Hant": "這棟建築的啟用時間是 <b>{_bag_obj:start_date}</b>",
+                "ko": "이 건물은 <b>{_bag_obj:start_date}</b>에 착공되었습니다"
               }
             }
           ]
@@ -368,7 +378,8 @@
             "zh_Hans": "建筑类型是 <b>{_bag_obj:building}</b>",
             "fil": "Ang uri ng gusali ay <b>{_bag_obj:building}</b>",
             "uk": "Тип будівлі - <b>{_bag_obj:building}</b>",
-            "zh_Hant": "這棟建築類型是<b>{_bag_obj:building}</b>"
+            "zh_Hant": "這棟建築類型是<b>{_bag_obj:building}</b>",
+            "ko": "건물 유형은 <b>{_bag_obj:building}</b> 입니다"
           },
           "mappings": [
             {
@@ -385,7 +396,8 @@
                 "zh_Hans": "建筑类型将是 <b>{_bag_obj:construction}</b>",
                 "fil": "Ang uri ng gusali ay magiging <b>{_bag_obj:construction}</b>",
                 "uk": "Типом будівлі буде <b>{_bag_obj:construction}</b>",
-                "zh_Hant": "這棟建築類型將會是<b>{_bag_obj:construction}</b>"
+                "zh_Hant": "這棟建築類型將會是<b>{_bag_obj:construction}</b>",
+                "ko": "건물 유형은 <b>{_bag_obj:construction}</b>로 계획되어 있습니다"
               }
             }
           ]

@@ -11,7 +11,8 @@
     "ru": "Ликвидация последствий стихийных бедствий и аварийные службы",
     "hu": "Katasztrófaelhárítás és sürgősségi szolgálatok",
     "uk": "Реагування на стихійні лиха та аварійні служби",
-    "nl": "Rampbestrijding en hulpdiensten"
+    "nl": "Rampbestrijding en hulpdiensten",
+    "ko": "재난 대비와 응급 상황 서비스"
   },
   "description": {
     "en": "This map contains elements meant for disaster preparedness and response.",
@@ -21,7 +22,8 @@
     "ca": "Aquest mapa conté elements destinants a la preparació i resposta davant desastres.",
     "cs": "Tato mapa obsahuje prvky určené pro připravenost na katastrofy a reakci na ně.",
     "uk": "Ця мапа містить обʼєкти, призначені для забезпечення готовності до стихійних лих та реагування на них.",
-    "nl": "Deze kaart bevat elementen die bedoeld zijn voor rampbestrijding en -voorbereiding."
+    "nl": "Deze kaart bevat elementen die bedoeld zijn voor rampbestrijding en -voorbereiding.",
+    "ko": "이 지도에는 재난에 대한 대비와 대응을 위한 요소들이 포함되어 있습니다."
   },
   "icon": "./assets/themes/disaster_response/CivilDefence.svg",
   "socialImage": "./assets/themes/disaster_response/social.svg",

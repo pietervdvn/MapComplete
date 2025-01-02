@@ -17,7 +17,8 @@
     "it": "Hotel",
     "ru": "Гостиницы",
     "hu": "Szállodák",
-    "uk": "Готелі"
+    "uk": "Готелі",
+    "ko": "호텔"
   },
   "description": {
     "en": "On this map, you'll find hotels in your area",
@@ -31,7 +32,8 @@
     "ca": "En aquest mapa trobareu hotels a la vostra zona",
     "pl": "Na tej mapie znajdziesz hotele w Twojej okolicy",
     "it": "Su questa mappa, troverai gli hotel della tua zona",
-    "uk": "На цій мапі ви знайдете готелі поруч з вами"
+    "uk": "На цій мапі ви знайдете готелі поруч з вами",
+    "ko": "이 지도에서는 해당 지역의 호텔을 확인할 수 있습니다"
   },
   "icon": "./assets/layers/tourism_accomodation/hotel.svg",
   "startZoom": 13,

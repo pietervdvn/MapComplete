@@ -15,7 +15,8 @@
     "cs": "Fasádní zahrady",
     "pl": "Ogrody fasadowe",
     "ru": "Фасадные сады",
-    "uk": "Фасадні сади"
+    "uk": "Фасадні сади",
+    "ko": "벽면 녹화 정원"
   },
   "description": {
     "nl": "Ontharde voortuintjes, groene gevels en bomen ín de stad brengen naast rust ook een mooiere stad, een grotere biodiversiteit, een verkoelend effect en een betere luchtkwaliteit. <br/> Klimaan VZW en 'Mechelen Klimaatneutraal' willen met het project Klim(t)aan je Gevel bestaande en nieuwe geveltuintjes in kaart brengen als voorbeeld voor mensen zelf een tuintje willen aanleggen of voor stadwandelaars die houden van de natuur. <br/>Meer info over het project op <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
@@ -29,7 +30,8 @@
     "cs": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Fasádní zahrady</a>, zelené fasády a stromy ve městě přinášejí nejen klid a pohodu, ale také krásnější město, větší biodiverzitu, ochlazující efekt a lepší kvalitu ovzduší. <br/> Klimaan VZW a Mechelen Klimaatneutraal chtějí zmapovat stávající i nové fasádní zahrady jako příklad pro lidi, kteří si chtějí vybudovat vlastní zahradu, nebo pro městské chodce, kteří mají rádi přírodu.<br/>Více informací o projektu najdete na <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
     "es": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Jardines de fachada</a>, fachadas verdes y árboles en la ciudad no solo traen paz y tranquilidad, sino también una ciudad más hermosa, una mayor biodiversidad, un efecto de enfriamiento y una mejor calidad del aire. <br/> Klimaan VZW y Mechelen Klimaatneutraal quieren mapear los jardines de fachada existentes y nuevos como un ejemplo para las personas que quieren construir su propio jardín o para los paseantes de la ciudad que aman la naturaleza.<br/>Más información sobre el proyecto en <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
     "ca": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Els Jardins de façana</a>, façanes verdes i arbres de la ciutat no només aporten pau i tranquil·litat, sinó també una ciutat més bella , una major biodiversitat, un efecte de refredament i una millor qualitat de l'aire. <br/> Klimaan VZW i Mechelen Klimaatneutraal volen cartografiar els jardins de façana existents i nous com a exemple per a les persones que volen construir el seu propi jardí o per als excursionistes de la ciutat que estimen la natura.<br/>Més informació sobre el projecte a <a href ='https://klimaan.be/' target=_blank>klimaan.be</a>.",
-    "pl": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Ogrody fasadowe</a>, zielone fasady i drzewa w mieście nie tylko zapewniają ciszę i spokój, ale także piękniejsze miasto, większą różnorodność biologiczną, efekt chłodzący i lepszą jakość powietrza. <br/> Klimaan VZW i Mechelen Klimaatneutraal chcą zmapować istniejące i nowe ogrody fasadowe jako przykład dla osób chcących zbudować własny ogród lub dla spacerowiczów kochających przyrodę.<br/>Więcej informacji o projekcie na <a href ='https://klimaan.be/' target=_blank>klimaan.be</a>."
+    "pl": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Ogrody fasadowe</a>, zielone fasady i drzewa w mieście nie tylko zapewniają ciszę i spokój, ale także piękniejsze miasto, większą różnorodność biologiczną, efekt chłodzący i lepszą jakość powietrza. <br/> Klimaan VZW i Mechelen Klimaatneutraal chcą zmapować istniejące i nowe ogrody fasadowe jako przykład dla osób chcących zbudować własny ogród lub dla spacerowiczów kochających przyrodę.<br/>Więcej informacji o projekcie na <a href ='https://klimaan.be/' target=_blank>klimaan.be</a>.",
+    "ko": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>벽면 녹화 정원</a>, 녹색 벽 및 도시 내 나무는 평화와 고요를 제공할 뿐만 아니라, 더 아름다운 도시, 더 큰 생물다양성, 냉각 효과, 그리고 더 나은 공기 질을 가져옵니다. <br/> Klimaan VZW와 Mechelen Klimaatneutraal은 사람들이 자신만의 정원을 만들고 싶어 하거나 자연을 사랑하는 도시 산책을 하는 사람들를 위해 기존 및 새로운 벽면 녹화 정원을 지도에 표시하려고 합니다.<br/>프로젝트에 대한 자세한 정보는 <a href='https://klimaan.be/' target=_blank>klimaan.be</a>에서 확인할 수 있습니다."
   },
   "shortDescription": {
     "nl": "Deze kaart toont geveltuintjes met foto's en bruikbare info over oriëntatie, zonlicht en planttypes.",
@@ -45,7 +47,8 @@
     "cs": "Tato mapa zobrazuje fasádní zahrady s obrázky a užitečnými informacemi o orientaci, oslunění a druzích rostlin.",
     "ca": "Aquest mapa mostra jardins a façanes amb fotografies i informació útil sobre l'orientació, llum del sol i els tipus de plantes.",
     "pl": "Mapa przedstawia ogrody fasadowe ze zdjęciami i przydatnymi informacjami na temat orientacji, nasłonecznienia i rodzajów roślin.",
-    "uk": "На цій мапі показані фасадні сади з фотографіями та корисною інформацією про орієнтацію, сонячне освітлення та типи рослин."
+    "uk": "На цій мапі показані фасадні сади з фотографіями та корисною інформацією про орієнтацію, сонячне освітлення та типи рослин.",
+    "ko": "이 지도는 벽면 녹화 정원의 사진과 함께 방향, 햇빛 유무, 식물 종류 등 유용한 정보를 제공합니다."
   },
   "icon": "./assets/themes/facadegardens/geveltuin.svg",
   "startZoom": 15,
@@ -70,7 +73,8 @@
         "es": "Jardines de fachada",
         "da": "Facadehaver",
         "cs": "Fasádní zahrady",
-        "pl": "Ogrody fasadowe"
+        "pl": "Ogrody fasadowe",
+        "ko": "벽면 녹화 정원"
       },
       "minzoom": 12,
       "source": {
@@ -95,7 +99,8 @@
           "es": "Jardín de fachada",
           "da": "Facadehave",
           "cs": "Fasádní zahrada",
-          "pl": "Ogród fasadowy"
+          "pl": "Ogród fasadowy",
+          "ko": "벽면 녹화 정원"
         }
       },
       "description": {
@@ -111,7 +116,8 @@
         "es": "Jardines de fachada",
         "da": "Facadehaver",
         "cs": "Fasádní zahrady",
-        "pl": "Ogrody fasadowe"
+        "pl": "Ogrody fasadowe",
+        "ko": "벽면 녹화 정원"
       },
       "tagRenderings": [
         "images",
@@ -128,7 +134,8 @@
             "da": "Orientering: {direction} (hvor 0=N og 90=O)",
             "ca": "Orientació: {direction} (on 0=N y 90=O)",
             "cs": "Orientace: {direction} (kde 0=N a 90=O)",
-            "pl": "Orientacja: {direction} (gdzie 0=N i 90=E)"
+            "pl": "Orientacja: {direction} (gdzie 0=N i 90=E)",
+            "ko": "방향: {direction} (where 0=N and 90=O)"
           },
           "question": {
             "nl": "Hoe is de tuin georiënteerd?",
@@ -142,7 +149,8 @@
             "da": "Hvad er havens orientering?",
             "ca": "Quina és l'orientació del jardí?",
             "cs": "Jaká je orientace zahrady?",
-            "pl": "Jaka jest orientacja ogrodu?"
+            "pl": "Jaka jest orientacja ogrodu?",
+            "ko": "정원의 방향은 어디입니까?"
           },
           "freeform": {
             "type": "direction",
@@ -172,7 +180,8 @@
                 "da": "Haven er i fuld sol",
                 "cs": "Zahrada je na přímém slunci",
                 "ca": "El jardí està completament al sol",
-                "pl": "Ogród jest w pełnym słońcu"
+                "pl": "Ogród jest w pełnym słońcu",
+                "ko": "정원은 햇볕이 잘 드는 곳에 있습니다"
               }
             },
             {
@@ -194,7 +203,8 @@
                 "da": "Haven er i delvis skygge",
                 "cs": "Zahrada je v polostínu",
                 "ca": "El jardí està parcialment a l'ombra",
-                "pl": "Ogród jest częściowo w cieniu"
+                "pl": "Ogród jest częściowo w cieniu",
+                "ko": "정원은 부분적으로 그늘진 곳에 위치해 있습니다"
               }
             },
             {
@@ -216,7 +226,8 @@
                 "da": "Haven ligger i skygge",
                 "cs": "Zahrada je ve stínu",
                 "ca": "El jardí està a l'ombra",
-                "pl": "Ogród jest w cieniu"
+                "pl": "Ogród jest w cieniu",
+                "ko": "정원은 그늘진 곳에 위치해 있습니다"
               }
             }
           ],
@@ -234,7 +245,8 @@
             "da": "Er haven skyggefuld eller solrig?",
             "cs": "Je zahrada zastíněná nebo slunná?",
             "ca": "El jardí està al sol o a l'ombra?",
-            "pl": "Czy ogród jest zacieniony czy słoneczny?"
+            "pl": "Czy ogród jest zacieniony czy słoneczny?",
+            "ko": "정원이 그늘진 곳에 있나요, 아니면 햇볕이 잘 드는 곳에 있나요?"
           }
         },
         {
@@ -253,7 +265,8 @@
             "cs": "Je do zahrady instalován sud na vodu?",
             "ca": "Hi ha un barril d'aigua instal·lat per al jardí?",
             "es": "¿Hay un barril de agua instalado para el jardín?",
-            "pl": "Czy w ogrodzie zainstalowano beczkę na wodę?"
+            "pl": "Czy w ogrodzie zainstalowano beczkę na wodę?",
+            "ko": "정원을 위한 물 저장통이 있습니까?"
           },
           "mappings": [
             {
@@ -277,7 +290,8 @@
                 "cs": "K dispozici je sud na dešťovou vodu",
                 "ca": "Hi ha un barril de pluja",
                 "es": "Hay un barril de lluvia",
-                "pl": "Jest beczka na deszczówkę"
+                "pl": "Jest beczka na deszczówkę",
+                "ko": "빗물 저장통이 있습니다"
               }
             },
             {
@@ -301,7 +315,8 @@
                 "cs": "Sud na dešťovou vodu není k dispozici",
                 "ca": "No hi ha un barril de pluja",
                 "es": "No hay un barril de lluvia",
-                "pl": "Nie ma beczki na deszczówkę"
+                "pl": "Nie ma beczki na deszczówkę",
+                "ko": "빗물 저장통이 없습니다"
               }
             }
           ]
@@ -321,7 +336,8 @@
             "da": "Anlægsdato for haven: {start_date}",
             "cs": "Datum výstavby zahrady: {start_date}",
             "ca": "Data de construcció del jardí: {start_date}",
-            "pl": "Data budowy ogrodu: {start_date}"
+            "pl": "Data budowy ogrodu: {start_date}",
+            "ko": "정원 조성 날짜: {start_date}"
           },
           "question": {
             "nl": "Wanneer werd de tuin aangelegd? (vul gewoon een jaartal in)",
@@ -336,7 +352,8 @@
             "da": "Hvornår blev haven bygget? (et år er nok)",
             "cs": "Kdy byla zahrada postavena? (rok je postačující)",
             "ca": "Quan es va construir el jardí? (l'any és suficient)",
-            "pl": "Kiedy powstał ogród? (rok wystarczy)"
+            "pl": "Kiedy powstał ogród? (rok wystarczy)",
+            "ko": "정원은 언제 조성되었나요? (연도만으로 충분합니다.)"
           },
           "freeform": {
             "key": "start_date",
@@ -366,7 +383,8 @@
                 "da": "Der er spiselige planter",
                 "cs": "Jsou zde jedlé rostliny",
                 "ca": "Hi han plantes comestibles",
-                "pl": "Istnieją rośliny jadalne"
+                "pl": "Istnieją rośliny jadalne",
+                "ko": "식용 식물이 있습니다"
               }
             },
             {
@@ -388,7 +406,8 @@
                 "da": "Der er ikke spiselige planter",
                 "cs": "Nejsou zde jedlé rostliny",
                 "ca": "No hi han plantes comestibles",
-                "pl": "Nie ma roślin jadalnych"
+                "pl": "Nie ma roślin jadalnych",
+                "ko": "식용 식물이 없습니다"
               }
             }
           ],
@@ -405,7 +424,8 @@
             "da": "Er der nogle spiselige planter?",
             "cs": "Jsou zde jedlé rostliny?",
             "ca": "Hi ha alguna planta comestible?",
-            "pl": "Czy są jakieś rośliny jadalne?"
+            "pl": "Czy są jakieś rośliny jadalne?",
+            "ko": "식용 가능 식물이 있습니까?"
           }
         },
         {
@@ -424,7 +444,8 @@
             "da": "Hvilke slags planter vokser her?",
             "cs": "Jaké druhy rostlin zde rostou?",
             "ca": "Quin tipus de plantes creixen aquí?",
-            "pl": "Jakie rośliny tu rosną?"
+            "pl": "Jakie rośliny tu rosną?",
+            "ko": "어떤 종류의 식물이 이곳에서 자랍니까?"
           },
           "mappings": [
             {
@@ -441,7 +462,8 @@
                 "cs": "Zde jsou révy",
                 "es": "Hay vides",
                 "ca": "Hi ha vinyes",
-                "pl": "Są winorośle"
+                "pl": "Są winorośle",
+                "ko": "덩쿨 식물이 있습니다"
               }
             },
             {
@@ -458,7 +480,8 @@
                 "cs": "Jsou zde kvetoucí rostliny",
                 "es": "Hay plantas con flores",
                 "ca": "Hi ha plantes amb flors",
-                "pl": "Są rośliny kwitnące"
+                "pl": "Są rośliny kwitnące",
+                "ko": "꽃이 피는 식물이 있습니다"
               }
             },
             {
@@ -475,7 +498,8 @@
                 "da": "Der er buske",
                 "ca": "Hi ha arbustos",
                 "cs": "Jsou zde keře",
-                "pl": "Są krzewy"
+                "pl": "Są krzewy",
+                "ko": "관목이 있습니다"
               }
             },
             {
@@ -492,7 +516,8 @@
                 "cs": "Jsou zde půdopokryvné rostliny",
                 "es": "Hay plantas tapizantes",
                 "ca": "Hi ha plantes que cobreixen el sòl",
-                "pl": "Istnieją rośliny okrywowe"
+                "pl": "Istnieją rośliny okrywowe",
+                "ko": "땅을 덮는 식물이 있습니다"
               }
             }
           ],
@@ -514,7 +539,8 @@
             "da": "Flere detaljer: {description}",
             "ca": "Més detalls: {description}",
             "cs": "Další podrobnosti: {description}",
-            "pl": "Więcej szczegółów: {description}"
+            "pl": "Więcej szczegółów: {description}",
+            "ko": "세부 정보: {description}"
           },
           "question": {
             "nl": "Aanvullende omschrijving van de tuin (indien nodig, en voor zover nog niet omschreven hierboven)",
@@ -530,7 +556,8 @@
             "da": "Ekstra beskrivende info om haven (hvis nødvendigt og endnu ikke beskrevet ovenfor)",
             "cs": "Další popisné informace o zahradě (pokud jsou potřeba a nejsou popsány výše)",
             "ca": "Informació descriptiva complementària sobre el jardí (si és necesaria y no està encara descrit dalt)",
-            "pl": "Dodatkowe informacje opisujące ogród (jeśli są potrzebne i nie zostały jeszcze opisane powyżej)"
+            "pl": "Dodatkowe informacje opisujące ogród (jeśli są potrzebne i nie zostały jeszcze opisane powyżej)",
+            "ko": "정원에 대한 추가 설명 정보(필요한 경우 혹은 위에서 설명되지 않은 내용)"
           },
           "freeform": {
             "key": "description",
@@ -561,7 +588,8 @@
             "nb_NO": "en fronthage",
             "da": "en facadehave",
             "cs": "fasádní zahrada",
-            "pl": "ogród fasadowy"
+            "pl": "ogród fasadowy",
+            "ko": "벽면 녹화 정원"
           },
           "description": {
             "nl": "Voeg geveltuintje toe",
@@ -576,7 +604,8 @@
             "nb_NO": "Legg til en fronthage",
             "da": "Tilføj en facadehave",
             "cs": "Přidat fasádní zahradu",
-            "pl": "Dodaj ogród fasadowy"
+            "pl": "Dodaj ogród fasadowy",
+            "ko": "벽면 녹화 정원을 추가하십시오"
           }
         }
       ],

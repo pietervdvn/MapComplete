@@ -839,7 +839,8 @@ This table gives a summary of ids, names and other metainformation. [See the onl
 | ACT202305 | ACTmapi Imagery May 2023 | photo |  | Aerial Imagery from ACTMapi ©ACT Government and MetroMap |
 | ACT202309 | ACTmapi Imagery Sep 2023 | photo |  | Aerial Imagery from ACTMapi ©ACT Government and MetroMap |
 | ACT202311 | ACTmapi Imagery Nov 2023 | photo |  | Aerial Imagery from ACTMapi ©ACT Government and MetroMap |
-| ACT202402 | ACTmapi Imagery Feb 2024 | photo | ⭐ | Aerial Imagery from ACTMapi ©ACT Government and MetroMap |
+| ACT202402 | ACTmapi Imagery Feb 2024 | photo |  | Aerial Imagery from ACTMapi ©ACT Government and MetroMap |
+| ACT202409 | ACTmapi Imagery Sep 2024 | photo | ⭐ | Aerial Imagery from ACTMapi ©ACT Government and MetroMap |
 | Maxar_19-20_Australian_Bushfires_PreEvent | Maxar 2019-2020 Australian Bushfires Pre-event | photo |  | ©2020 DigitalGlobe |
 | NSW_LPI_BaseMap | DCS NSW Base Map | map |  | © State of New South Wales (Spatial Services, a business unit of the Department of Customer Service NSW). For current information go to spatial.nsw.gov.au. |
 | DCS_NSW_Floods2021 | DCS NSW Floods 2021 | photo |  | © State of New South Wales (Spatial Services, a business unit of the Department of Customer Service NSW). For current information go to spatial.nsw.gov.au. |

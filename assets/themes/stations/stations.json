@@ -13,7 +13,8 @@
     "pl": "Stacje Kolejowe",
     "da": "Togstationer",
     "it": "Stazioni ferroviarie",
-    "hu": "Vasútállomások"
+    "hu": "Vasútállomások",
+    "ko": "기차역"
   },
   "description": {
     "en": "View, edit and add details to a train station",
@@ -24,7 +25,8 @@
     "es": "Ver, editar y agregar detalles a una estación de tren",
     "cs": "Zobrazení, úprava a přidání podrobností o vlakovém nádraží",
     "pl": "Przeglądaj, edytuj i dodawaj szczegóły do stacji kolejowej",
-    "it": "Visualizza, modifica e aggiungi informazioni su una stazione ferroviaria"
+    "it": "Visualizza, modifica e aggiungi informazioni su una stazione ferroviaria",
+    "ko": "기차역 보기, 세부사항 편집 또는 추가하기"
   },
   "icon": "./assets/themes/stations/rail-light.svg",
   "defaultBackgroundId": "protomaps.white",
@@ -77,7 +79,8 @@
         "it": "Stazioni ferroviarie",
         "pl": "Stacje Kolejowe",
         "zh_Hant": "火車站",
-        "da": "Togstationer"
+        "da": "Togstationer",
+        "ko": "기차역"
       },
       "description": {
         "en": "Layer showing train stations",
@@ -89,7 +92,8 @@
         "es": "Capa que muestra las estaciones de tren",
         "cs": "Vrstva zobrazující vlaková nádraží",
         "zh_Hant": "顯示火車站的圖層",
-        "pl": "Warstwa pokazująca stacje kolejowe"
+        "pl": "Warstwa pokazująca stacje kolejowe",
+        "ko": "기차역을 보여주는 레이어"
       },
       "pointRendering": [
         {
@@ -301,7 +305,8 @@
         "cs": "Odjezdové tabule",
         "pl": "Tablice odjazdów",
         "zh_Hant": "出發板",
-        "da": "Afgangstavler"
+        "da": "Afgangstavler",
+        "ko": "출발 안내 전광판"
       },
       "description": {
         "en": "Displays showing the trains that will leave from this station",
@@ -311,7 +316,8 @@
         "ca": "Pantalles que mostren els trens que sortiran de l'estació",
         "es": "Pantallas que muestran los trenes que saldrán de esta estación",
         "cs": "Zobrazuje vlaky odjíždějící z této stanice",
-        "pl": "Ekrany wyświetlające pokazujące pociągi, które odjadą z tej stacji"
+        "pl": "Ekrany wyświetlające pokazujące pociągi, które odjadą z tej stacji",
+        "ko": "이 역에서 출발하는 기차를 보여주는 안내 전광판"
       },
       "title": {
         "render": {
@@ -324,7 +330,8 @@
           "cs": "Odjezdová tabule",
           "zh_Hant": "時刻表",
           "pl": "Tablica odjazdów",
-          "da": "Afgangstavle"
+          "da": "Afgangstavle",
+          "ko": "출발 안내 전광판"
         }
       },
       "minzoom": 18,
@@ -351,7 +358,8 @@
             "cs": "Co je to za odjezdovou tabuli?",
             "zh_Hant": "這是那種類型的時刻表？",
             "pl": "Co to za tablica odjazdów?",
-            "da": "Hvilken type afgangstavle er dette?"
+            "da": "Hvilken type afgangstavle er dette?",
+            "ko": "어떤 종류의 출발 안내 전광판 입니까?"
           },
           "mappings": [
             {
@@ -364,7 +372,8 @@
                 "ca": "Aquest tauler de sortides és de tipus desconegut",
                 "es": "Este es un tablero de salidas de un tipo desconocido",
                 "cs": "Toto je odjezdová tabule neznámého typu",
-                "pl": "Jest to tablica odjazdów nieznanego typu"
+                "pl": "Jest to tablica odjazdów nieznanego typu",
+                "ko": "이것은 종류가 알려지지 않은 출발 정보판입니다"
               }
             },
             {
@@ -377,7 +386,8 @@
                 "ca": "Aquest és un tauler electrònic que mostra les pròximes sortides en temps real",
                 "es": "Este es un tablero electrónico, que muestra las próximas salidas en tiempo real",
                 "cs": "Jedná se o elektronickou tabuli, která v reálném čase zobrazuje příští odjezdy",
-                "pl": "To elektroniczna tablica, pokazująca w czasie rzeczywistym kolejne odjazdy"
+                "pl": "To elektroniczna tablica, pokazująca w czasie rzeczywistym kolejne odjazdy",
+                "ko": "이것은 실시간 출발 정보를 표시하는 전광판입니다"
               }
             },
             {
@@ -392,7 +402,8 @@
                 "es": "Este es un horario en papel",
                 "cs": "Jedná se o papírový rozvrh",
                 "zh_Hant": "這份是紙本時刻表",
-                "pl": "To jest papierowy rozkład jazdy"
+                "pl": "To jest papierowy rozkład jazdy",
+                "ko": "종이 시간표 입니다"
               }
             },
             {
@@ -405,7 +416,8 @@
                 "es": "Hay un cartel que muestra la frecuencia de los trenes",
                 "cs": "Nachází se zde cedule zobrazující frekvenci odjezdů vlaků",
                 "fr": "Il y a un panneau indiquant la fréquence des trains",
-                "pl": "Jest tu znak informujący częstotliwość jazdy pociągów"
+                "pl": "Jest tu znak informujący częstotliwość jazdy pociągów",
+                "ko": "기차의 빈도 표시를 보여 줍니다"
               }
             }
           ]
@@ -427,7 +439,8 @@
             "cs": "odjezdová tabule",
             "zh_Hant": "時刻表",
             "pl": "tablica odjazdów",
-            "da": "en afgangstavle"
+            "da": "en afgangstavle",
+            "ko": "출발 안내 전광판"
           },
           "description": {
             "en": "Add a board showing departures, either electronic or paper",
@@ -437,7 +450,8 @@
             "ca": "Afegeix un tauler que mostra les sortides, de forma electrònica o en paper",
             "es": "Agregar un tablero que muestre las salidas, ya sea electrónico o en papel",
             "cs": "Přidejte tabuli s odjezdy, ať už v elektronické nebo papírové podobě",
-            "pl": "Dodaj tablicę pokazującą odjazdy, w wersji elektronicznej lub papierowej"
+            "pl": "Dodaj tablicę pokazującą odjazdy, w wersji elektronicznej lub papierowej",
+            "ko": "출발 정보를 표시하는 전광판 또는 안내문을 추가하세요"
           }
         }
       ],

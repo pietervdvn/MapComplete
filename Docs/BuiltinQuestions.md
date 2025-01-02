@@ -583,7 +583,7 @@ The question is `What is the name of this place?`
 
 | id | question | osmTags |
 -----|-----|----- |
-| open_now.0 | Open now | _isOpen=yes |
+| open_now.0 | Now open | _isOpen=yes |
 
 | id | question | osmTags |
 -----|-----|----- |

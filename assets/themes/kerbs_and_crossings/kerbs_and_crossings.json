@@ -13,7 +13,8 @@
     "ca": "Vorals i encreuaments",
     "pl": "Krawężniki i przejścia",
     "hu": "Járdaszegélyek és gyalogosátkelők",
-    "uk": "Бордюри та переходи"
+    "uk": "Бордюри та переходи",
+    "ko": "보도 경계석 그리고 횡단보도"
   },
   "description": {
     "en": "A map showing kerbs and crossings.",
@@ -26,7 +27,8 @@
     "es": "Un mapa que muestra bordillos y cruces.",
     "ca": "Un mapa amb voreres i encreuaments.",
     "pl": "Mapa pokazująca krawężniki i przejścia.",
-    "uk": "Мапа з позначенням бордюрів та пішохідних переходів."
+    "uk": "Мапа з позначенням бордюрів та пішохідних переходів.",
+    "ko": "보도 경계석과 횡단보도를 표시하는 지도입니다."
   },
   "icon": "./assets/layers/kerbs/KerbIcon.svg",
   "startZoom": 19,
@@ -63,7 +65,8 @@
               "eu": "bidegurutze bat",
               "cs": "křížení",
               "pl": "przejście",
-              "it": "un incrocio"
+              "it": "un incrocio",
+              "ko": "횡단보도"
             },
             "tags": [
               "highway=crossing"
@@ -78,7 +81,8 @@
               "ca": "Creuament per vianants i/o ciclistes",
               "pl": "Przejście dla pieszych i/lub przejazd dla rowerów",
               "cs": "Přechod pro chodce a/nebo cyklisty",
-              "it": "Attraversamenti per pedoni e/o ciclisti"
+              "it": "Attraversamenti per pedoni e/o ciclisti",
+              "ko": "보행자 및/또는 자전거 이용자를 위한 횡단보도"
             },
             "snapToLayer": [
               "cycleways_and_roads"

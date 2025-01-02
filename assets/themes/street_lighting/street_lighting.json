@@ -16,7 +16,8 @@
     "cs": "Pouliční osvětlení",
     "it": "Illuminazione stradale",
     "pl": "Oświetlenie uliczne",
-    "uk": "Вуличне освітлення"
+    "uk": "Вуличне освітлення",
+    "ko": "거리 조명"
   },
   "description": {
     "en": "On this map you can find everything about street lighting",
@@ -32,7 +33,8 @@
     "cs": "Na této mapě najdete vše o pouličním osvětlení",
     "pl": "Na tej mapie możesz znaleźć wszystko o oświetleniu ulicznym",
     "it": "Su questa mappa puoi trovare tutto ciò che riguarda l'illuminazione stradale",
-    "uk": "На цій мапі можна знайти все про вуличне освітлення"
+    "uk": "На цій мапі можна знайти все про вуличне освітлення",
+    "ko": "이 지도에서 가로등에 관한 모든 것을 찾을 수 있습니다"
   },
   "icon": "./assets/layers/street_lamps/street_lamp.svg",
   "startZoom": 19,
@@ -59,7 +61,8 @@
         "pa_PK": "روشنی والیاں سڑکاں",
         "cs": "Osvětlené ulice",
         "it": "Strade illuminate",
-        "pl": "Oświetlone ulice"
+        "pl": "Oświetlone ulice",
+        "ko": "조명이 있는 거리"
       },
       "source": {
         "osmTags": {
@@ -87,7 +90,8 @@
           "pa_PK": "روشنی والی سڑک",
           "cs": "Osvětlená ulice",
           "it": "Strada illuminata",
-          "pl": "Ulica oświetlona"
+          "pl": "Ulica oświetlona",
+          "ko": "밝은 거리"
         },
         "mappings": [
           {
@@ -113,7 +117,8 @@
             "ca": "Aquest carrer està il·luminat?",
             "cs": "Je tato ulice osvětlená?",
             "it": "Questa strada è illuminata?",
-            "pl": "Czy ta ulica jest oświetlona?"
+            "pl": "Czy ta ulica jest oświetlona?",
+            "ko": "이 거리는 밝나요?"
           },
           "mappings": [
             {
@@ -131,7 +136,8 @@
                 "ca": "Aquest carrer està il·luminat",
                 "cs": "Tato ulice je osvětlená",
                 "it": "Questa strada è illuminata",
-                "pl": "Ta ulica jest oświetlona"
+                "pl": "Ta ulica jest oświetlona",
+                "ko": "이 길은 밝습니다"
               }
             },
             {
@@ -149,7 +155,8 @@
                 "ca": "Aquest carrer no està il·luminant",
                 "cs": "Tato ulice není osvětlená",
                 "it": "Questa strada non è illuminata",
-                "pl": "Ta ulica nie jest oświetlona"
+                "pl": "Ta ulica nie jest oświetlona",
+                "ko": "이 거리는 어둡습니다"
               }
             },
             {
@@ -167,7 +174,8 @@
                 "ca": "Aquest carrer està il·luminat per la nit",
                 "cs": "Tato ulice je v noci osvětlená",
                 "it": "Questa strada è illuminata di sera",
-                "pl": "Ta ulica się oświetlona w nocy"
+                "pl": "Ta ulica się oświetlona w nocy",
+                "ko": "이 거리는 밤에 밝습니다"
               },
               "hideInAnswer": true
             },
@@ -186,7 +194,8 @@
                 "ca": "Aquest carrer està il·luminat 24/7",
                 "cs": "Tato ulice je osvětlena 24/7",
                 "it": "Questa strada è illuminata 24 ore al giorno",
-                "pl": "Ta ulica jest oświetlona 24/7"
+                "pl": "Ta ulica jest oświetlona 24/7",
+                "ko": "이 거리는 24시간 밝습니다"
               }
             }
           ]
@@ -219,7 +228,8 @@
         "pa_PK": "ساریاں سڑکاں",
         "cs": "Všechny ulice",
         "it": "Tutte le strade",
-        "pl": "Wszystkie ulice"
+        "pl": "Wszystkie ulice",
+        "ko": "모든 거리"
       },
       "source": {
         "osmTags": {
@@ -248,7 +258,8 @@
           "cs": "Ulice",
           "eu": "Kalea",
           "it": "Strada",
-          "pl": "Ulica"
+          "pl": "Ulica",
+          "ko": "거리"
         },
         "mappings": [
           {
@@ -274,7 +285,8 @@
             "es": "¿Está iluminada esta calle?",
             "cs": "Je tato ulice osvětlená?",
             "it": "Questa strada è illuminata?",
-            "pl": "Czy ta ulica jest oświetlona?"
+            "pl": "Czy ta ulica jest oświetlona?",
+            "ko": "이 거리는 밝나요?"
           },
           "mappings": [
             {
@@ -292,7 +304,8 @@
                 "ca": "Aquest carrer està il·luminat",
                 "cs": "Tato ulice je osvětlená",
                 "it": "Questa strada è illuminata",
-                "pl": "Ta ulica jest oświetlona"
+                "pl": "Ta ulica jest oświetlona",
+                "ko": "이 거리는 밝습니다"
               }
             },
             {
@@ -310,7 +323,8 @@
                 "ca": "Aquest carrer no està il·luminat",
                 "cs": "Tato ulice není osvětlená",
                 "it": "Questa strada non è illuminata",
-                "pl": "Ta ulica nie jest oświetlona"
+                "pl": "Ta ulica nie jest oświetlona",
+                "ko": "이 거리는 밝지 않습니다"
               }
             },
             {
@@ -328,7 +342,8 @@
                 "es": "Esta calle está iluminada por la noche",
                 "cs": "Tato ulice je v noci osvětlená",
                 "it": "Questa strada è illuminata di sera",
-                "pl": "Ta ulica jest oświetlona w nocy"
+                "pl": "Ta ulica jest oświetlona w nocy",
+                "ko": "이 거리는 밤에 밝습니다"
               },
               "hideInAnswer": true
             },
@@ -347,7 +362,8 @@
                 "es": "Esta calle está iluminada 24/7",
                 "cs": "Tato ulice je osvětlena 24/7",
                 "it": "Questa strada è illuminata 24 ore su 24",
-                "pl": "Ta ulica jest oświetlona 24/7"
+                "pl": "Ta ulica jest oświetlona 24/7",
+                "ko": "이 거리는 24시간 밝습니다"
               }
             }
           ]

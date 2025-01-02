@@ -29,7 +29,7 @@
   <div class="low-interaction p-2">
     <h4 class="my-2 flex">
       <div class="no-image-background block h-6 w-6">
-        <DefaultIcon {layer}/>
+        <DefaultIcon {layer} />
       </div>
       <Tr t={layer.name} />
     </h4>

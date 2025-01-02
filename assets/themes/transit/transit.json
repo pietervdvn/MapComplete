@@ -15,7 +15,8 @@
     "pl": "Trasy autobusowe",
     "ru": "Автобусные маршруты",
     "hu": "Buszjáratok",
-    "uk": "Автобусні маршрути"
+    "uk": "Автобусні маршрути",
+    "ko": "버스 노선"
   },
   "description": {
     "en": "Plan your trip with the help of the public transport system.",
@@ -28,7 +29,8 @@
     "es": "Planifica tu viaje con la ayuda del sistema de transporte público.",
     "cs": "Naplánujte si cestu pomocí systému veřejné dopravy.",
     "zh_Hant": "藉由大眾運輸系統來計畫你的旅程。",
-    "pl": "Zaplanuj swoją podróż korzystając z systemu transportu publicznego."
+    "pl": "Zaplanuj swoją podróż korzystając z systemu transportu publicznego.",
+    "ko": "대중교통 시스템을 이용한 여행 계획 세우기."
   },
   "icon": "./assets/layers/transit_stops/bus_stop.svg",
   "startZoom": 20,

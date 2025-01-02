@@ -64,7 +64,7 @@
   <div class="inline-flex items-center">
     {#if mapping.icon === "auto"}
       <div class="mr-2 h-8 w-8 shrink-0">
-        <DefaultIcon {layer} properties={getAutoIcon(mapping)}/>
+        <DefaultIcon {layer} properties={getAutoIcon(mapping)} />
       </div>
     {:else}
       <Marker

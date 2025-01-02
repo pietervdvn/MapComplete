@@ -6,7 +6,8 @@
     "es": "Letreros fantasma",
     "cs": "Nápisy na zdech",
     "uk": "Примарні знаки",
-    "nl": "Spookreclames"
+    "nl": "Spookreclames",
+    "ko": "고스트 사인"
   },
   "description": {
     "en": "A map showing disused signs on buildings",
@@ -16,7 +17,9 @@
     "cs": "Mapa zobrazující nepoužívané nápisy na budovách",
     "uk": "Мапа, на якій показані вивіски на будівлях, що не використовуються",
     "fr": "Une carte montrant les enseignes désaffectées sur des bâtiments",
-    "nl": "Een kaart met ongebruikte borden op gebouwen"
+    "nl": "Een kaart met ongebruikte borden op gebouwen",
+    "ko": "건물에 부착된 사용되지 않는 표지판을 보여주는 지도입니다",
+    "zh_Hant": "在建築上顯示設施停止使用的地圖"
   },
   "icon": "./assets/themes/advertising/wall_painting.svg",
   "layers": [
@@ -50,7 +53,8 @@
               "es": "¿Es esta obra de arte un anuncio histórico?",
               "cs": "Je toto dílo historickou reklamou?",
               "fr": "Est-ce que cette œuvre d'art est une publicité historique ?",
-              "nl": "Is dit kunstwerk een historische advertentie?"
+              "nl": "Is dit kunstwerk een historische advertentie?",
+              "ko": "이 예술 작품은 역사적인 상징입니까?"
             },
             "mappings": [
               {
@@ -64,7 +68,9 @@
                   "es": "Esta obra de arte es un anuncio histórico",
                   "cs": "Toto dílo je historickou reklamou",
                   "fr": "Cette œuvre d'art est une publicité historique",
-                  "nl": "Dit kunstwerk is een historische advertentie"
+                  "nl": "Dit kunstwerk is een historische advertentie",
+                  "ko": "이 예술 작품은 역사적인 상징입니다",
+                  "zh_Hant": "這個藝術品是歷史上的宣傳品"
                 }
               },
               {
@@ -78,7 +84,9 @@
                   "es": "Esta obra de arte no es un anuncio histórico",
                   "cs": "Toto dílo není historickou reklamou",
                   "fr": "Cette œuvre d'art n'est pas une publicité historique",
-                  "nl": "Dit kunstwerk is geen historische advertentie"
+                  "nl": "Dit kunstwerk is geen historische advertentie",
+                  "ko": "이 예술 작품은 역사적인 상징이 아닙니다",
+                  "zh_Hant": "這個藝術不是歷史上的宣傳品"
                 }
               }
             ]

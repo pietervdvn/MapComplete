@@ -59,7 +59,7 @@
     {#if showLayerTitle}
       <Checkbox selected={isDisplayed}>
         <div class="no-image-background block h-6 w-6" class:opacity-50={!$isDisplayed}>
-          <DefaultIcon {layer}/>
+          <DefaultIcon {layer} />
         </div>
 
         <Tr t={filteredLayer.layerDef.name} />

@@ -16,7 +16,8 @@
     "da": "Offentlige toiletter",
     "es": "Baños públicos",
     "cs": "Veřejné toalety",
-    "uk": "Громадські туалети"
+    "uk": "Громадські туалети",
+    "ko": "공중 화장실"
   },
   "description": {
     "en": "A map of public toilets",
@@ -34,7 +35,8 @@
     "ca": "Mapa de lavabos públics",
     "es": "Un mapa de baños públicos",
     "cs": "Mapa veřejných toalet",
-    "uk": "Мапа показує розташування громадських туалетів"
+    "uk": "Мапа показує розташування громадських туалетів",
+    "ko": "공중화장실 지도"
   },
   "icon": "./assets/themes/toilets/toilets.svg",
   "startZoom": 12,

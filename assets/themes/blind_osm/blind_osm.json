@@ -18,7 +18,8 @@
     "fil": "OSM para sa mga bulag",
     "uk": "OSM для незрячих",
     "hu": "OSM vakoknak",
-    "zh_Hant": "OSM 為了視覺障礙人士"
+    "zh_Hant": "OSM 為了視覺障礙人士",
+    "ko": "시각장애인을 위한 OpenStreetMap"
   },
   "description": {
     "en": "Help to map features relevant for the blind",
@@ -34,7 +35,8 @@
     "pl": "Pomóż umieszczać na mapie obiekty ważne dla niewidomych",
     "zh_Hans": "帮助绘制与盲人相关的设施",
     "uk": "Допоможіть нанести на мапу обʼєкти, важливі для незрячих",
-    "zh_Hant": "協助視覺障礙人士所需設施的地圖"
+    "zh_Hant": "協助視覺障礙人士所需設施的地圖",
+    "ko": "시각장애인을 위한 주요 시설 지도 도움말"
   },
   "icon": "./assets/themes/blind_osm/Blindicon.svg",
   "startZoom": 20,

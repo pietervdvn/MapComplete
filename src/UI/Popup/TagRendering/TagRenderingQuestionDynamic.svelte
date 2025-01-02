@@ -32,7 +32,7 @@
   let dynamicConfig = TagRenderingConfigUtils.withNameSuggestionIndex(config, tags, selectedElement)
 </script>
 
-{#if $dynamicConfig }
+{#if $dynamicConfig}
   <TagRenderingQuestion
     {tags}
     config={$dynamicConfig}

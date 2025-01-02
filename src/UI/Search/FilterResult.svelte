@@ -42,7 +42,7 @@
     <div class="flex items-center gap-x-1">
       {#if asLayer}
         <div class="h-8 w-8 p-1">
-          <DefaultIcon layer={asLayer}/>
+          <DefaultIcon layer={asLayer} />
         </div>
         <b>
           <Tr t={asLayer.name} />

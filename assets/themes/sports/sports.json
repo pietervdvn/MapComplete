@@ -15,7 +15,8 @@
     "it": "Sport",
     "ru": "Спортивные объекты",
     "hu": "Sporttérkép",
-    "uk": "Спорт"
+    "uk": "Спорт",
+    "ko": "스포츠"
   },
   "description": {
     "en": "All about sports, find sport pitches, fitness centres and more.",
@@ -26,7 +27,8 @@
     "cs": "Vše o sportu, sportovní hřiště, fitness centra a další.",
     "fr": "Tout sur les sports, trouver les terrains de sport, les salles de sport et plus encore.",
     "pl": "Wszystko o sporcie, znajdź boiska sportowe, centra fitness i nie tylko.",
-    "it": "Tutto sullo sport, trova campi sportivi, centri fitness e molto altro."
+    "it": "Tutto sullo sport, trova campi sportivi, centri fitness e molto altro.",
+    "ko": "스포츠에 관한 모든 것, 스포츠 경기장이나 피트니스 센처 등을 찾아보실 수 있습니다."
   },
   "shortDescription": {
     "en": "Map showing sport facilities.",
@@ -39,7 +41,8 @@
     "zh_Hant": "顯示運動設施的地圖。",
     "pl": "Mapa pokazująca obiekty sportowe.",
     "it": "Mappa che mostra gli impianti sportivi.",
-    "uk": "Мапа спортивних обʼєктів."
+    "uk": "Мапа спортивних обʼєктів.",
+    "ko": "스포츠 시설을 보여주는 지도."
   },
   "icon": "./assets/themes/sports/sport.svg",
   "layers": [
@@ -72,7 +75,8 @@
               "cs": "sportovní obchod",
               "zh_Hant": "運動用品店",
               "fr": "une boutique de sport",
-              "pl": "sklep sportowy"
+              "pl": "sklep sportowy",
+              "ko": "스포츠 상점"
             },
             "description": {
               "en": "Add a new shop selling sports goods.",
@@ -82,7 +86,8 @@
               "ca": "Afegeix una nova botiga d'articles esportius.",
               "es": "Agregar una nueva tienda que venda artículos deportivos.",
               "cs": "Přidejte nový obchod se sportovním zbožím.",
-              "pl": "Dodaj nowy sklep sprzedający artykuły sportowe."
+              "pl": "Dodaj nowy sklep sprzedający artykuły sportowe.",
+              "ko": "스포츠 용품을 판매하는 새로운 상점을 추가해 보세요."
             }
           }
         ],

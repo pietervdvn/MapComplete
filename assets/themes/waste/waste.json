@@ -16,7 +16,8 @@
     "eu": "Hondakinak eta birziklapena",
     "pl": "Odpady",
     "hu": "Hulladék",
-    "uk": "Відходи"
+    "uk": "Відходи",
+    "ko": "쓰레기"
   },
   "description": {
     "en": "Map showing waste baskets and recycling facilities.",
@@ -30,7 +31,8 @@
     "cs": "Mapa zobrazující koše na odpadky a recyklační zařízení.",
     "zh_Hant": "顯示垃圾筒與回收設施的地圖。",
     "pl": "Mapa przedstawiająca kosze na śmieci i zakłady recyklingu.",
-    "uk": "Мапа сміттєвих контейнерів та пунктів перероблення вторсировини."
+    "uk": "Мапа сміттєвих контейнерів та пунктів перероблення вторсировини.",
+    "ko": "쓰레기통과 재활용 시설을 보여주는 지도."
   },
   "icon": "./assets/layers/recycling/recycling-14.svg",
   "startZoom": 19,

@@ -340,7 +340,9 @@
       .catch(console.error)
   }
 
-  let disabledInTheme = state.userRelatedState?.getThemeDisabled(state.theme.id, layer?.id) ?? new UIEventSource<string[]>([])
+  let disabledInTheme =
+    state.userRelatedState?.getThemeDisabled(state.theme.id, layer?.id) ??
+    new UIEventSource<string[]>([])
   let menuIsOpened = new UIEventSource(false)
 
   function disableQuestion() {

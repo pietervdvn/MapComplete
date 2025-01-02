@@ -53,10 +53,7 @@ export interface NSIItem {
 }
 
 export default class NameSuggestionIndex {
-    public static readonly supportedTypes = ["brand",
-        "flag",
-        "operator",
-        "transit"] as const
+    public static readonly supportedTypes = ["brand", "flag", "operator", "transit"] as const
     private readonly nsiFile: Readonly<NSIFile>
     private readonly nsiWdFile: Readonly<
         Record<
@@ -71,13 +68,17 @@ export default class NameSuggestionIndex {
 
     private _supportedTypes: string[]
 
-    constructor(nsiFile: Readonly<NSIFile>, nsiWdFile: Readonly<
-        Record<
-            string,
-            {
-                logos: { wikidata?: string; facebook?: string }
-            }
-        >>) {
+    constructor(
+        nsiFile: Readonly<NSIFile>,
+        nsiWdFile: Readonly<
+            Record<
+                string,
+                {
+                    logos: { wikidata?: string; facebook?: string }
+                }
+            >
+        >
+    ) {
         this.nsiFile = nsiFile
         this.nsiWdFile = nsiWdFile
     }
@@ -88,7 +89,11 @@ export default class NameSuggestionIndex {
         if (NameSuggestionIndex.inited) {
             return NameSuggestionIndex.inited
         }
-        const [nsi, nsiWd] = await Promise.all(["assets/data/nsi/nsi.json", "assets/data/nsi/wikidata.min.json"].map(url => Utils.downloadJsonCached(url, 1000 * 60 * 60 * 24 * 30)))
+        const [nsi, nsiWd] = await Promise.all(
+            ["assets/data/nsi/nsi.json", "assets/data/nsi/wikidata.min.json"].map((url) =>
+                Utils.downloadJsonCached(url, 1000 * 60 * 60 * 24 * 30)
+            )
+        )
         NameSuggestionIndex.inited = new NameSuggestionIndex(<any>nsi, <any>nsiWd["wikidata"])
         return NameSuggestionIndex.inited
     }
@@ -98,9 +103,7 @@ export default class NameSuggestionIndex {
             return this._supportedTypes
         }
         const keys = Object.keys(this.nsiFile.nsi)
-        const all = keys.map(
-            (k) => this.nsiFile.nsi[k].properties.path.split("/")[0],
-        )
+        const all = keys.map((k) => this.nsiFile.nsi[k].properties.path.split("/")[0])
         this._supportedTypes = Utils.Dedup(all).map((s) => {
             if (s.endsWith("s")) {
                 s = s.substring(0, s.length - 1)
@@ -122,13 +125,13 @@ export default class NameSuggestionIndex {
                 try {
                     return Utils.downloadJsonCached<Record<string, number>>(
                         `./assets/data/nsi/stats/${type}.${c.toUpperCase()}.json`,
-                        24 * 60 * 60 * 1000,
+                        24 * 60 * 60 * 1000
                     )
                 } catch (e) {
                     console.error("Could not fetch " + type + " statistics due to", e)
                     return undefined
                 }
-            }),
+            })
         )
         stats = Utils.NoNull(stats)
         if (stats.length === 1) {
@@ -148,7 +151,9 @@ export default class NameSuggestionIndex {
 
     public isSvg(nsiItem: NSIItem, type: string): boolean | undefined {
         if (this.nsiWdFile === undefined) {
-            throw "nsiWdi file is not loaded, cannot determine if " + nsiItem.id + " has an SVG image"
+            throw (
+                "nsiWdi file is not loaded, cannot determine if " + nsiItem.id + " has an SVG image"
+            )
         }
         const logos = this.nsiWdFile[nsiItem?.tags?.[type + ":wikidata"]]?.logos
         if (!logos) {
@@ -174,7 +179,7 @@ export default class NameSuggestionIndex {
              * If set, sort by frequency instead of alphabetically
              */
             sortByFrequency: boolean
-        },
+        }
     ): Promise<Mapping[]> {
         const mappings: (Mapping & { frequency: number })[] = []
         const frequencies = await NameSuggestionIndex.fetchFrequenciesFor(type, country)
@@ -188,7 +193,7 @@ export default class NameSuggestionIndex {
                 key,
                 value,
                 country.join(";"),
-                location,
+                location
             )
             if (!actualBrands) {
                 continue
@@ -234,7 +239,7 @@ export default class NameSuggestionIndex {
     }
 
     public supportedTags(
-        type: "operator" | "brand" | "flag" | "transit" | string,
+        type: "operator" | "brand" | "flag" | "transit" | string
     ): Record<string, string[]> {
         const tags: Record<string, string[]> = {}
         const keys = Object.keys(this.nsiFile.nsi)
@@ -279,10 +284,10 @@ export default class NameSuggestionIndex {
         type: string,
         tags: { key: string; value: string }[],
         country: string = undefined,
-        location: [number, number] = undefined,
+        location: [number, number] = undefined
     ): NSIItem[] {
         return tags.flatMap((tag) =>
-            this.getSuggestionsForKV(type, tag.key, tag.value, country, location),
+            this.getSuggestionsForKV(type, tag.key, tag.value, country, location)
         )
     }
 
@@ -305,7 +310,7 @@ export default class NameSuggestionIndex {
         key: string,
         value: string,
         country: string = undefined,
-        location: [number, number] = undefined,
+        location: [number, number] = undefined
     ): NSIItem[] {
         const path = `${type}s/${key}/${value}`
         const entry = this.nsiFile.nsi[path]
@@ -362,9 +367,15 @@ export default class NameSuggestionIndex {
         })
     }
 
-    public static async generateMappings(key: string, tags: Exclude<Record<string, string>, undefined | null>, country: string[], center: [number, number], options: {
-        sortByFrequency: boolean
-    }): Promise<Mapping[]> {
+    public static async generateMappings(
+        key: string,
+        tags: Exclude<Record<string, string>, undefined | null>,
+        country: string[],
+        center: [number, number],
+        options: {
+            sortByFrequency: boolean
+        }
+    ): Promise<Mapping[]> {
         const nsi = await NameSuggestionIndex.getNsiIndex()
         return nsi.generateMappings(key, tags, country, center, options)
     }
