@@ -1474,8 +1474,8 @@ export default class SpecialVisualizations {
                                     state,
                                     feature,
                                     layer,
-                                    clss: classes ?? "",
-                                })
+                                    // clss: classes ?? "",
+                                })  .SetClass(classes)
                                 elements.push(subsTr)
                             }
                             return elements

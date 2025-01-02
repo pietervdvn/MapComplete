@@ -43,6 +43,6 @@
   {:else}
     <svelte:component this={svelteElem?._svelteComponent} {...svelteElem._props} />
   {/if}
-{:else if elem !== undefined}
+{:else}
   <span bind:this={elem} />
 {/if}
