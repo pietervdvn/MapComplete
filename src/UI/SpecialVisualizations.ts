@@ -315,7 +315,7 @@ export class QuestionViz implements SpecialVisualization {
             state,
             onlyForLabels: labels,
             notForLabels: blacklist,
-        }).SetClass("w-full")
+        })
     }
 }
 
@@ -435,7 +435,7 @@ export default class SpecialVisualizations {
                     return new SvelteUIElement(AddNewPoint, {
                         state,
                         coordinate: { lon, lat },
-                    }).SetClass("w-full h-full overflow-auto")
+                    })
                 },
             },
             {
@@ -564,7 +564,7 @@ export default class SpecialVisualizations {
                         state,
                         feature,
                         layer,
-                    }).SetClass("p-0 m-0")
+                    })
                 },
             },
             new ShareLinkViz(),
@@ -1065,7 +1065,7 @@ export default class SpecialVisualizations {
 
                 constr: (state) => {
                     return new SubtleButton(
-                        new SvelteUIElement(Trash).SetClass("h-6"),
+                        new SvelteUIElement(Trash),
                         Translations.t.general.removeLocationHistory
                     ).onClick(() => {
                         state.historicalUserLocations.features.setData([])
@@ -1161,8 +1161,6 @@ export default class SpecialVisualizations {
                                 feature,
                                 layer,
                             })
-                                .SetClass("px-1")
-                                .setSpan()
                         })
                     ),
             },
@@ -1435,11 +1433,7 @@ export default class SpecialVisualizations {
                         name: "tagrendering",
                         doc: "An entire tagRenderingConfig",
                         required: true,
-                    },
-                    {
-                        name: "classes",
-                        doc: "CSS-classes to apply on every individual item. Seperated by `space`",
-                    },
+                    }
                 ],
                 constr(
                     state: SpecialVisualizationState,
@@ -1448,8 +1442,7 @@ export default class SpecialVisualizations {
                     feature: Feature,
                     layer: LayerConfig
                 ) {
-                    const [key, tr, classesRaw] = args
-                    let classes = classesRaw ?? ""
+                    const [key, tr] = args
                     const translation = new Translation({ "*": tr })
                     return new VariableUiElement(
                         featureTags.map((tags) => {
@@ -1476,7 +1469,7 @@ export default class SpecialVisualizations {
                                     state,
                                     feature,
                                     layer,
-                                }).SetClass(classes)
+                                })
                                 elements.push(subsTr)
                             }
                             return elements
@@ -1689,7 +1682,7 @@ export default class SpecialVisualizations {
                         state,
                         layer,
                         feature,
-                    }).SetClass("w-full h-full")
+                    })
                 },
             },
             {
