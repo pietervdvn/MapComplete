@@ -266,7 +266,7 @@
             "type": "pfloat"
           },
           "mappings": {
-            "if": "{{key}}:voltage={{commonVoltages}} V",
+            "if": "{{key}}:voltage={{commonVoltages}}",
             "then": {
               "en": "{{description}} outputs {{commonVoltages}} volt",
               "nl": "{{description}} heeft een spanning van {{commonVoltages}} volt",
@@ -299,7 +299,7 @@
             "type": "pfloat"
           },
           "mappings": {
-            "if": "{{key}}:current={{commonCurrent}} A",
+            "if": "{{key}}:current={{commonCurrent}}",
             "then": {
               "en": "{{description}} outputs at most {{commonCurrent}} A",
               "nl": "{{description}} levert een stroom van maximaal {{commonCurrent}} A"
@@ -332,8 +332,8 @@
           "mappings": {
             "if": "{{key}}:output={{commonOutput}}",
             "then": {
-              "en": "{{description}} outputs at most {{commonOutput}} A",
-              "nl": "{{description}} levert een vermogen van maximaal {{commonOutput}} A"
+              "en": "{{description}} outputs at most {{commonOutput}} kW",
+              "nl": "{{description}} levert een vermogen van maximaal {{commonOutput}} kW"
             }
           },
           "condition": {

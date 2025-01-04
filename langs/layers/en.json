@@ -2761,7 +2761,7 @@
                     },
                     "3": {
                         "mappings": {
-                            "then": "{{description}} outputs at most {{commonOutput}} A"
+                            "then": "{{description}} outputs at most {{commonOutput}}"
                         },
                         "question": "What power output does a single plug of type {{description}} offer?",
                         "render": "{{description}} outputs at most {canonical({{key}}:output)}"

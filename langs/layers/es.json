@@ -2724,7 +2724,7 @@
                     },
                     "3": {
                         "mappings": {
-                            "then": "{{description}} entrega como máximo {{commonOutput}} A"
+                            "then": "{{description}} entrega como máximo {{commonOutput}}"
                         },
                         "question": "¿Qué potencia de salida ofrece un solo enchufe del tipo {{description}}?",
                         "render": "{{description}} entrega como máximo {canonical({{key}}:output)}"
