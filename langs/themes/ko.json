@@ -176,7 +176,7 @@
                         "0": {
                             "mappings": {
                                 "0": {
-                                    "then": "<span class='subtle'>이<a href='#{_embedding_feature:id}'>포함된 요소</a>따르면, 이는</span>접근이 가능합니다<br/>{_embedding_feature:access:description"
+                                    "then": "<span class='subtle'>이<a href='#{_embedding_feature:id}'>포함된 요소</a>따르면, 이는</span>접근이 가능합니다<br/>{_embedding_feature:access:description}"
                                 },
                                 "1": {
                                     "then": "<span class='subtle'>이 <a href='#{_embedding_feature:id}'>포함된 요소</a>에 따르면,</span>접근을 위한 허가가 필요합니다<br/>{_embedding_feature:access:description}"
