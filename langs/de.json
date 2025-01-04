@@ -628,12 +628,16 @@
             "time": "Zeitpunkt der letzten Überprüfung",
             "title": "Zuvor geprüfte Beitragende",
             "username": "Benutzername",
-            "allChanges": "Lade alle Änderungen für Benutzer mit diesem Label"
+            "allChanges": "Lade alle Änderungen für Benutzer mit diesem Label",
+            "addLabel": "Ein Label hinzufügen",
+            "label": "Label",
+            "noLabels": "Keine Labels"
         },
         "tableView": "Übersicht",
         "answeredCountTimes": "{count} mal beantwortet",
         "earlierInspected": "Sieh dir Mitwirkende an, die du bereits überprüft hast",
-        "title": "Überprüfe einen Mitwirkenden"
+        "title": "Überprüfe einen Mitwirkenden",
+        "aggregateView": "Zusammenfassen"
     },
     "move": {
         "cancel": "Einen anderen Grund auswählen",
