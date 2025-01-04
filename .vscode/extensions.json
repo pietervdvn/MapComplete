@@ -2,10 +2,10 @@
   "recommendations": [
     "esbenp.prettier-vscode",
     "eamodio.gitlens",
-    "github.vscode-pull-request-github",
     "svelte.svelte-vscode",
     "bradlc.vscode-tailwindcss",
     "editorconfig.editorconfig",
-    "dbaeumer.vscode-eslint"
+    "dbaeumer.vscode-eslint",
+    "robin-van-der-linde.mapcompletevscode"
   ]
 }
