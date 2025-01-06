@@ -306,6 +306,14 @@
           "hideInAnswer": true
         },
         {
+          "if": "sport=equestrian",
+          "then": {
+            "en": "This is a horse riding arena",
+            "de": "Dies ist ein Reitplatz",
+            "es": "Esta es una pista ecuestre"
+          }
+        },
+        {
           "if": "sport=skateboard",
           "then": {
             "en": "This is a skatepark",
