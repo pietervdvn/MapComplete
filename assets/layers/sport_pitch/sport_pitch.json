@@ -315,6 +315,14 @@
             "cs": "Toto je skatepark",
             "es": "Este es un skatepark"
           }
+        },
+        {
+          "if": "sport=equestrian",
+          "then": {
+            "en": "This is a horse riding arena",
+            "de": "Dies ist ein Reitplatz",
+            "es": "Esta es una pista ecuestre"
+          }
         }
       ],
       "id": "sport_pitch-sport",
