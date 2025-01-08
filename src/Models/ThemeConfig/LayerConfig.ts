@@ -309,12 +309,12 @@ export default class LayerConfig extends WithContextLoader {
                 filter !== undefined &&
                 filter !== null &&
                 filter["sameAs"] !== undefined
-            ) {
+                ) {
                 const targetLayerName = filter["sameAs"]
                 this.filterIsSameAs = targetLayerName
-                const targetLayer = allLayers.find(l => l.id === targetLayerName)
-                if(!targetLayer){
-                    throw "Target layer "+targetLayerName+" not found in this theme"
+                const targetLayer = allLayers?.find(l => l.id === targetLayerName)
+                if (allLayers && !targetLayer) {
+                    throw "Target layer " + targetLayerName + " not found in this theme"
                 }
                 filter = targetLayer?.filter
             }
