@@ -147,7 +147,7 @@
       "freeform": {
         "key": "name"
       },
-      "id": "Name"
+      "id": "name"
     },
     {
       "question": {
@@ -161,7 +161,7 @@
       "freeform": {
         "key": "brand"
       },
-      "id": "Verband"
+      "id": "association"
     },
     "contact",
     "questions",
