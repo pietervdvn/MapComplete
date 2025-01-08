@@ -99,7 +99,7 @@ export default class ThemeConfig implements ThemeInformation {
         options?: {
             definedAtUrl?: string
             definitionRaw?: string
-        }
+        },
     ) {
         if (json === undefined) {
             throw "Cannot construct a layout config, the parameter 'json' is undefined"
@@ -130,7 +130,7 @@ export default class ThemeConfig implements ThemeInformation {
                 throw `The title of a theme should always be a translation, as it sets the corresponding languages (${context}.title). The themenID is ${
                     this.id
                 }; the offending object is ${JSON.stringify(
-                    json.title
+                    json.title,
                 )} which is a ${typeof json.title})`
             }
             if (this.language.length == 0) {
@@ -183,8 +183,9 @@ export default class ThemeConfig implements ThemeInformation {
                 new LayerConfig(
                     <LayerConfigJson>lyrJson,
                     json.id + ".layers." + lyrJson["id"],
-                    official
-                )
+                    official,
+                    <LayerConfigJson[]>json.layers,
+                ),
         )
 
         this.extraLink = new ExtraLinkConfig(
@@ -194,7 +195,7 @@ export default class ThemeConfig implements ThemeInformation {
                 newTab: true,
                 requirements: ["iframe", "no-welcome-message"],
             },
-            context + ".extraLink"
+            context + ".extraLink",
         )
 
         this.hideFromOverview = json.hideFromOverview ?? false
@@ -300,7 +301,7 @@ export default class ThemeConfig implements ThemeInformation {
                     return false
                 }
                 return o instanceof Translation
-            }
+            },
         )
 
         return { untranslated, total }
@@ -308,7 +309,7 @@ export default class ThemeConfig implements ThemeInformation {
 
     public getMatchingLayer(
         tags: Record<string, string>,
-        blacklistLayers?: Set<string>
+        blacklistLayers?: Set<string>,
     ): LayerConfig | undefined {
         if (tags === undefined) {
             return undefined
@@ -337,7 +338,7 @@ export default class ThemeConfig implements ThemeInformation {
             "Fallthrough: could not find the appropriate layer for an object with tags",
             tags,
             "within layout",
-            this
+            this,
         )
         return undefined
     }
