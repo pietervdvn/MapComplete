@@ -26,8 +26,8 @@ class DownloadNsiLogos extends Script {
         let path = basePath + nsiItem.id
 
         const logos = nsiWD["wikidata"][nsiItem?.tags?.[type + ":wikidata"]]?.logos
-
-        if (NameSuggestionIndex.isSvg(nsiItem, type)) {
+        const nsi = await NameSuggestionIndex.getNsiIndex()
+        if (nsi.isSvg(nsiItem, type)) {
             path = path + ".svg"
         }
 
@@ -92,7 +92,8 @@ class DownloadNsiLogos extends Script {
     }
 
     async downloadFor(type: "brand" | "operator"): Promise<void> {
-        const items = NameSuggestionIndex.allPossible(type)
+        const nsi = await NameSuggestionIndex.getNsiIndex()
+        const items = nsi.allPossible(type)
         const basePath = "./public/assets/data/nsi/logos/"
         let downloadCount = 0
         const stepcount = 5

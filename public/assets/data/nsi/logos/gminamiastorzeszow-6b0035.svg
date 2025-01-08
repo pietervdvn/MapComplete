@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.0"
+   id="Warstwa_1"
+   x="0px"
+   y="0px"
+   width="530"
+   height="650"
+   viewBox="0 0 529.99999 650.00002"
+   enable-background="new 0 0 120.245 148.396"
+   xml:space="preserve"
+   sodipodi:docname="POL_Rzeszów_COA.svg"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"><metadata
+   id="metadata11"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+   id="defs9" /><sodipodi:namedview
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="1920"
+   inkscape:window-height="1001"
+   id="namedview7"
+   showgrid="false"
+   inkscape:zoom="0.48821478"
+   inkscape:cx="-51.563412"
+   inkscape:cy="111.73578"
+   inkscape:window-x="-9"
+   inkscape:window-y="-9"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="Warstwa_1" />
+<path
+   fill-rule="evenodd"
+   clip-rule="evenodd"
+   fill="#2f52a0"
+   d="M 368.38404,493.00193 287.06258,304.4656 476.38513,380.9086 476.66281,184.1173 287.61794,260.27974 370.5394,78.494696 169.44838,78.437704 248.66738,260.33234 60.504055,182.8328 v 202.81924 l 188.163325,-81.7432 -81.54185,188.53633 c 67.08647,-0.022 134.17253,0.32879 201.25851,0.55676 z M 267.06993,650 c 25.49122,-18.70739 52.56646,-26.54795 80.87463,-33.87635 32.19299,-8.33406 69.40162,-7.16136 99.18631,-10.96177 48.41537,-6.17765 82.76775,-22.77021 82.76775,-98.67929 L 530,0 H 0.33498274 L 0,506.4782 c 0,68.67004 31.399043,88.44277 75.232596,95.98426 35.397634,6.09015 77.539654,2.67453 114.607764,12.80895 27.24154,7.44786 55.62534,16.428 77.22957,34.72859 z"
+   id="path2"
+   sodipodi:nodetypes="ccccccccccccccasccccsac"
+   style="fill:#314a8c;fill-opacity:1;stroke-width:4.39579" />
+<polygon
+   fill-rule="evenodd"
+   clip-rule="evenodd"
+   fill="#ffffff"
+   points="65.254,59.37 84.067,17.904 38.444,17.891 56.417,59.383 13.728,41.705 13.728,87.969 56.417,69.323 37.918,112.329 46.416,112.329 83.578,112.456 65.128,69.45 108.082,86.887 108.144,41.998 "
+   id="polygon4"
+   transform="scale(4.4076677,4.383954)" />
+</svg>

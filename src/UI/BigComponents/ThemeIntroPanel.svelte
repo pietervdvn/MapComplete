@@ -9,12 +9,15 @@
   import If from "../Base/If.svelte"
   import { ExclamationTriangleIcon } from "@babeard/svelte-heroicons/mini"
   import GeolocationIndicator from "./GeolocationIndicator.svelte"
+  import { DownloadIcon } from "@rgossiaux/svelte-heroicons/solid"
+  import { Utils } from "../../Utils"
+  import ThemeConfig from "../../Models/ThemeConfig/ThemeConfig"
 
   /**
    * The theme introduction panel
    */
   export let state: ThemeViewState
-  let theme = state.theme
+  let theme: ThemeConfig = state.theme
 
   let geolocation = state.geolocation.geolocationState
   let geopermission: Store<GeolocationPermissionState> = geolocation.permission
@@ -52,7 +55,14 @@
     </If>
 
     <Tr t={theme.descriptionTail} />
+    {#if !theme.official}
+      <div class="flex w-full justify-end">
 
+      <button class="flex small w-fit self-end as-link" on:click={() => Utils.offerContentsAsDownloadableFile(JSON.stringify(theme.source, null, "  "), theme.id+".mapcomplete_theme.json")}>
+        Download the theme definition
+      </button>
+        </div>
+    {/if}
     <!-- Buttons: open map, go to location, search -->
     <NextButton
       clss="primary w-full"
@@ -99,6 +109,7 @@
       </a>
     {/if}
   </div>
+
 
   <div class="link-underline mt-8 flex justify-end text-sm">
     <a href="https://mapcomplete.org" target="_blank">

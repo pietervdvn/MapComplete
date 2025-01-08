@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg2"
+   width="1230.9141"
+   height="482.38101"
+   viewBox="0 0 1230.914 482.38101"
+   sodipodi:docname="CSX logo.svg"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs6">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath40">
+      <path
+         d="m 39.24,36 h 95.723 V 73.513 H 39.24 Z"
+         id="path38" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     id="namedview4"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="0.76136364"
+     inkscape:cx="574.62687"
+     inkscape:cy="-0.65671642"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g8" />
+  <g
+     id="g8"
+     inkscape:groupmode="layer"
+     inkscape:label="2022-csx-annual-report"
+     transform="matrix(12.859139,0,0,-12.859139,-504.5939,945.31003)"
+     style="fill:#000080">
+    <g
+       id="g34"
+       style="fill:#171648;fill-opacity:1">
+      <g
+         id="g36"
+         clip-path="url(#clipPath40)"
+         style="fill:#171648;fill-opacity:1">
+        <g
+           id="g42"
+           transform="translate(132.0161,64.9607)"
+           style="fill:#171648;fill-opacity:1">
+          <path
+             d="M 0,0 H 2.947 V 7.761 H -12.935 V 0 h 2.659 l -3.378,-4.24 h -0.143 L -17.175,0 h 2.73 V 7.761 H -30.326 V 0 h 2.946 l 8.121,-10.061 v -0.144 l -8.193,-10.204 h -3.809 c 1.438,5.317 -0.718,10.133 -7.258,13.007 -3.449,1.509 -7.977,2.443 -7.977,5.534 0,1.652 1.294,2.875 2.947,2.875 2.156,0 3.521,-2.085 3.521,-5.103 h 7.977 V 7.761 h -7.114 v -1.58 h -0.144 c -0.719,0.647 -3.018,2.371 -6.324,2.371 -5.246,0 -10.277,-4.384 -10.277,-10.492 0,-5.821 4.528,-9.486 11.067,-12.145 1.941,-0.791 4.24,-1.581 4.24,-4.024 0,-2.013 -1.581,-3.234 -3.305,-3.234 -2.731,0 -4.025,3.09 -4.025,6.395 H -66.33 c -1.437,-3.018 -4.743,-4.887 -8.049,-4.887 -5.246,0 -9.27,4.743 -9.27,9.846 0,5.102 4.024,9.486 9.27,9.486 2.659,0 5.606,-1.15 7.474,-3.593 h 9.27 V 7.761 h -7.258 V 5.893 h -0.144 c -2.946,1.725 -6.108,2.659 -9.486,2.659 -9.845,0 -18.253,-7.976 -18.253,-18.757 0,-10.204 7.474,-18.756 18.828,-18.756 7.905,0 13.726,4.168 16.889,12.217 h 0.143 V -28.17 h 7.761 v 1.437 h 0.144 c 1.222,-1.006 3.665,-2.228 6.684,-2.228 4.168,0 8.48,2.3 10.491,6.827 v -6.036 h 17.391 v 7.761 h -2.73 l 3.378,4.24 h 0.143 l 3.378,-4.24 h -2.659 V -28.17 H 2.947 v 7.761 H 0.072 l -8.264,10.204 v 0.144 z"
+             style="fill:#171648;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="path44" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

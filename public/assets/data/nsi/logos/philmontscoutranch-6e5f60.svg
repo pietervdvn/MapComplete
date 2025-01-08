@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.47pre4 r22446"
+   width="44.949154"
+   height="45.966103"
+   sodipodi:docname="WikiProject_Scouting_Philmont_Scout_Ranch_brand.svg">
+  <metadata
+     id="metadata8">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs6">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       id="perspective10" />
+  </defs>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1280"
+     inkscape:window-height="970"
+     id="namedview4"
+     showgrid="false"
+     inkscape:zoom="9.8333334"
+     inkscape:cx="9.5911508"
+     inkscape:cy="25.393916"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <rect
+     style="fill:#b75129;fill-opacity:1;fill-rule:nonzero;stroke:none"
+     id="rect2829"
+     width="44.949154"
+     height="45.966103"
+     x="0"
+     y="0" />
+  <g
+     style="font-size:19.57748032px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Nimbus Sans L;-inkscape-font-specification:Nimbus Sans L Bold"
+     id="text2818"
+     transform="translate(-3.01695,-0.18644077)">
+    <path
+       d="m 16.146114,27.369984 3.660989,0 c 2.62338,0 4.307045,-1.859864 4.307045,-4.757328 0,-2.858309 -1.624933,-4.42451 -4.600707,-4.42451 l -6.303949,0 0,14.271983 2.936622,0 0,-5.090145 m 0,-2.447185 0,-4.287468 2.740847,0 c 1.566197,0 2.290565,0.685213 2.290565,2.153523 0,1.448732 -0.724368,2.133945 -2.290565,2.133945 l -2.740847,0"
+       id="path2823" />
+    <path
+       d="m 25.934241,22.534346 c 0,-1.31169 0.293663,-2.173101 0.998452,-2.956199 0.959296,-1.057183 2.545074,-1.624931 4.600708,-1.624931 3.426055,0 5.403384,1.605356 5.403384,4.385355 0,2.212254 -1.115919,3.289018 -4.013383,3.837187 l -1.996903,0.391549 c -1.957746,0.371972 -2.682115,0.920143 -2.682115,2.075213 0,1.194225 1.096341,1.918593 2.87789,1.918593 1.996901,0 3.112819,-0.841833 3.210706,-2.368875 l 2.858313,0 c -0.176198,3.054084 -2.270992,4.718173 -5.912399,4.718173 -3.680563,0 -5.853667,-1.722821 -5.853667,-4.620286 0,-2.251408 1.135496,-3.426059 3.778454,-3.935073 l 2.231832,-0.430705 c 2.094789,-0.411126 2.701693,-0.822255 2.701693,-1.85986 0,-1.076761 -0.959298,-1.761973 -2.466763,-1.761973 -1.859859,0 -2.897467,0.7831 -2.995354,2.231832 l -2.740848,0"
+       id="path2825" />
+  </g>
+  <rect
+     style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+     id="rect2827"
+     width="24"
+     height="2.0338984"
+     x="10.101694"
+     y="13.745763" />
+</svg>

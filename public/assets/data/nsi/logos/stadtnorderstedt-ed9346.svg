@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://web.resource.org/cc/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="496.00061"
+   height="531.00018"
+   id="svg2"
+   sodipodi:version="0.32"
+   inkscape:version="0.44.1"
+   version="1.0"
+   sodipodi:docbase="C:\Dokumente und Einstellungen\Claus\Desktop"
+   sodipodi:docname="Norderstedt_Wappen.svg">
+  <defs
+     id="defs4">
+    <style
+       type="text/css"
+       id="style1965">
+    .str1 {stroke:#1F1A17;stroke-width:0.4}
+    .str0 {stroke:#1F1A17;stroke-width:0.4}
+    .black {fill:black}
+    .blue {fill:blue}
+    .red {fill:red}
+    .white {fill:white}
+   </style>
+    <style
+       type="text/css"
+       id="style1913">
+    .str1 {stroke:#1F1A17;stroke-width:0.4}
+    .str0 {stroke:#1F1A17;stroke-width:0.4}
+    .black {fill:black}
+    .blue {fill:blue}
+    .red {fill:red}
+    .white {fill:white}
+   </style>
+    <style
+       id="style2164"
+       type="text/css">
+    .str1 {stroke:#1F1A17;stroke-width:0.4}
+    .str0 {stroke:#1F1A17;stroke-width:0.4}
+    .black {fill:black}
+    .blue {fill:blue}
+    .red {fill:red}
+    .white {fill:white}
+   </style>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35824168"
+     inkscape:cx="372.04724"
+     inkscape:cy="-12.806997"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     inkscape:window-width="925"
+     inkscape:window-height="573"
+     inkscape:window-x="72"
+     inkscape:window-y="72" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-96.90818,-464.3639)">
+    <g
+       transform="matrix(0.355556,0,0,0.366207,398.0284,930.8008)"
+       id="g1898"
+       inkscape:label="Ebene 1">
+      <g
+         inkscape:label="Ebene 1"
+         id="g1893"
+         transform="matrix(9.998688,0,0,9.998515,-3548.954,-4315.788)">
+        <g
+           id="WappenNorderstedt"
+           transform="translate(270.2409,302.6442)">
+          <path
+             d="M 69.1813,146.62971 C 3.4363,146.25538 1.4542,90.775634 1.4542,90.775634 C 1.4542,90.775634 1.4986,9.1350967 1.4986,9.1350967 C 1.5174,7.1332732 2.22044e-016,3.7262157 2.22044e-016,3.7262157 C 2.22044e-016,3.7262157 1.4732,1.6100335 1.4732,1.6100335 C 1.4732,1.6100335 39.3243,4.4338911 69.8256,4.3583131 C 100.3269,4.4338911 138.0451,1.6100335 138.0451,1.6100335 C 138.0451,1.6100335 139.5183,3.7262157 139.5183,3.7262157 C 139.5183,3.7262157 138.0009,7.1332732 138.0197,9.1350967 C 138.0197,9.1350967 137.6705,90.775634 137.6705,90.775634 C 137.6705,90.775634 134.9263,147.00402 69.1813,146.62971 L 69.1813,146.62971 z "
+             class="black"
+             id="WappenBasis"
+             style="fill:black" />
+          <path
+             d="M 5.4075,70.013 C 5.4075,70.013 5.4075,12.5856 5.4075,12.5856 C 5.3776,7.4415 2.4357,2.7812 2.4357,2.7812 C 2.4357,2.7812 35.6023,5.9054 68.6106,5.9054 L 68.6106,70.013 L 68.6106,70.013 L 68.6106,70.013 L 5.4075,70.013 L 5.4075,70.013 z "
+             class="blue"
+             id="BlauLinksOben"
+             style="fill:blue" />
+          <path
+             d="M 68.8024,71.513 L 68.8024,142.2553 C 23.3161,142.8309 5.2422,109.6851 5.4422,88.1091 L 5.4422,71.513 L 69.0024,71.513 L 69.0024,71.513 L 68.8024,71.513 z "
+             class="white"
+             id="WeissLinksUnten"
+             style="fill:white" />
+          <path
+             d="M 133.309,70.013 C 133.309,70.013 133.309,12.5856 133.309,12.5856 C 133.3389,7.4415 136.2808,2.7812 136.2808,2.7812 C 136.2808,2.7812 103.1142,5.9054 70.1059,5.9054 L 70.1059,70.013 L 70.1059,70.013 L 70.1059,70.013 L 133.309,70.013 z "
+             class="white"
+             id="WeissRechtsOben"
+             style="fill:white" />
+          <path
+             d="M 70.3024,71.513 L 70.3024,142.2553 C 115.7887,142.8309 133.8626,109.6851 133.3626,88.1091 L 133.3626,71.513 L 69.8024,71.513 L 69.8024,71.513 L 70.3024,71.513 z "
+             class="blue"
+             id="BlauRechtsUnten"
+             style="fill:blue" />
+          <path
+             d="M 37.829945,35.29756 L 101.46341,35.29756 L 101.46341,80.434539 C 101.46341,80.434539 101.46341,108.67498 70.143782,108.67498 C 38.824162,108.67498 37.829945,78.294257 37.829945,78.294257 L 37.829945,35.414088 L 37.829945,35.29756 z "
+             class="white str0"
+             id="WeissesWappen"
+             style="fill:white;stroke:#1f1a17;stroke-width:0.62382668" />
+          <path
+             d="M 40.410187,38.268061 L 98.883157,38.268061 L 98.883157,79.744632 C 98.883157,79.744632 98.501316,105.69491 70.103402,105.58779 C 41.705642,105.48069 40.410187,77.670754 40.410187,77.670754 L 40.410187,38.268061 L 40.410187,38.268061 z "
+             class="red"
+             id="RotesWappen"
+             style="fill:red" />
+          <polygon
+             points="56.7528,59.4729 67.3237,66.44 69.4863,54.1986 72.0346,66.5997 82.2198,59.4729 75.2527,70.0438 87.4941,72.2064 75.093,74.7548 82.2198,84.9399 71.6489,77.9729 69.4863,90.2142 66.938,77.8132 56.7528,84.9399 63.7199,74.3691 51.4785,72.2064 63.8796,69.6581 56.7528,59.4729 "
+             class="white str1"
+             id="Stern"
+             style="fill:white;stroke:#1f1a17;stroke-width:0.40000001"
+             transform="matrix(1.523706,0,0,1.596272,-36.22992,-41.01604)" />
+          <g
+             id="Sternspitze">
+            <path
+               d="M 67.400959,42.609123 C 67.400959,42.609123 68.235187,39.37396 69.588086,39.373323 C 70.940984,39.372682 71.892233,42.838987 71.892233,42.838987 L 69.705106,48.194798 L 67.400959,42.609123 L 67.400959,42.609123 z "
+               class="white str1"
+               id="OberesEi"
+               style="fill:white;stroke:#1f1a17;stroke-width:0.62382668" />
+            <path
+               d="M 73.200944,47.217401 C 74.466687,46.274961 74.891038,45.970872 74.911152,44.389765 C 74.900941,42.484613 74.196383,42.25108 72.795181,42.230806 C 70.138296,42.230806 69.659089,45.794164 69.668842,47.10151 C 69.659242,48.044109 70.05114,50.896486 71.664592,50.896647 C 72.331517,50.876374 72.597557,50.558398 72.621327,50.106015 C 72.585367,49.849813 72.492269,49.497834 72.273465,49.193904 C 72.273465,49.193904 72.045214,49.706148 71.519688,49.710778 C 70.834325,49.703115 70.411801,49.011929 70.389099,47.673615 C 70.389707,46.522544 71.327244,45.515137 72.070507,45.514658 C 72.801582,45.506837 73.04126,46.625823 73.200944,47.217401 L 73.200944,47.217401 z "
+               class="white str1"
+               id="RechtesBlatt"
+               style="fill:white;stroke:#1f1a17;stroke-width:0.62382668" />
+            <path
+               d="M 66.092248,47.217401 C 64.826659,46.274961 64.402155,45.970872 64.382041,44.389765 C 64.392403,42.484613 65.096963,42.25108 66.498011,42.230806 C 69.155049,42.230806 69.634102,45.794164 69.624502,47.10151 C 69.634102,48.044109 69.242205,50.896486 67.6286,50.896647 C 66.961827,50.876374 66.695635,50.558398 66.672017,50.106015 C 66.707979,49.849813 66.801075,49.497834 67.019881,49.193904 C 67.019881,49.193904 67.24813,49.706148 67.773504,49.710778 C 68.45902,49.703115 68.881544,49.011929 68.904096,47.673615 C 68.903637,46.522544 67.966101,45.515137 67.222837,45.514658 C 66.491612,45.506837 66.251933,46.625823 66.092248,47.217401 L 66.092248,47.217401 z "
+               class="white str1"
+               id="LinkesBlatt"
+               style="fill:white;stroke:#1f1a17;stroke-width:0.62382668" />
+            <path
+               d="M 70.823354,47.775458 L 68.474714,47.775458 C 68.474714,47.775458 68.405689,48.017611 68.405842,48.182347 C 68.405995,48.347083 68.474714,48.614139 68.474714,48.614139 L 70.823354,48.614139 C 70.841334,48.617651 70.885978,48.374539 70.887349,48.202779 C 70.888722,48.03102 70.823354,47.775458 70.823354,47.775458 z "
+               class="white str1"
+               id="Ring"
+               style="fill:white;stroke:#1f1a17;stroke-width:0.62382668" />
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

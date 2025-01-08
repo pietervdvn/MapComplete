@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="127.1" height="127.4" version="1.1" viewBox="0 0 127.1 127.4" xmlns="http://www.w3.org/2000/svg">
+ <g fill="#FF1F2F">
+  <rect class="cls-1" x="21.6" width="84.2" height="17.11"/>
+  <polygon class="cls-1" points="39.1 85.1 21.6 79.9 21.6 31.6 39.1 31.6"/>
+  <polygon class="cls-1" points="72.9 65.4 55.3 71.9 54.9 31.6 72.5 31.6"/>
+  <polygon class="cls-1" points="106.4 77.2 88.9 83.7 88.3 31.6 105.8 31.6"/>
+  <polygon class="cls-1" points="0 101.3 0 127.4 5.4 127.4 5.4 106.7 10.6 106.7 10.6 127.4 16 127.4 16 106.7 21.3 106.7 21.3 127.4 26.7 127.4 26.7 101.3"/>
+  <path class="cls-1" d="M33.6,101.3v26.1H39v-4.5l15.7-5.7v10.2h5.4V101.3ZM39,116.7v-10H54.7V111Z"/>
+  <polygon class="cls-1" points="67.2 101.3 67.2 127.4 94 127.4 94 122 72.6 122 72.6 106.7 94 106.7 94 101.3"/>
+  <polygon class="cls-1" points="121.7 101.3 121.7 122 106 122 106 101.3 100.6 101.3 100.6 127.4 127.1 127.4 127.1 101.3"/>
+ </g>
+</svg>
