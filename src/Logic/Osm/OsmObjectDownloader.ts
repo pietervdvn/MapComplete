@@ -127,7 +127,9 @@ export default class OsmObjectDownloader {
      * Beware: their geometry will be incomplete!
      */
     public async DownloadReferencingWays(id: string): Promise<OsmWay[]> {
-        const data = await Utils.downloadJsonCached(`${this.backend}api/0.6/${id}/ways`, 60 * 1000)
+        const data = await Utils.downloadJsonCached<{
+            elements: { id: number }[]
+        }>(`${this.backend}api/0.6/${id}/ways`, 60 * 1000)
         return data.elements.map((wayInfo) => new OsmWay(wayInfo.id, wayInfo))
     }
 
@@ -136,7 +138,7 @@ export default class OsmObjectDownloader {
      * Beware: their geometry will be incomplete!
      */
     public async DownloadReferencingRelations(id: string): Promise<OsmRelation[]> {
-        const data = await Utils.downloadJsonCached(
+        const data = await Utils.downloadJsonCached<{ elements: { id: number }[] }>(
             `${this.backend}api/0.6/${id}/relations`,
             60 * 1000
         )

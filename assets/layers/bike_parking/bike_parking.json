@@ -133,6 +133,10 @@
         "ca": "Quin és el tipus d'aquest aparcament de bicicletes?",
         "uk": "Що це за тип велопарковки?"
       },
+      "questionHint": {
+        "en": "This is about the physical device one places their bicycle in and uses to lock",
+        "nl": "Dit gaat over het voorwerp waarin je je fiets plaats en mee op slot zet"
+      },
       "render": {
         "en": "This is a bicycle parking of the type: {bicycle_parking}",
         "nl": "Dit is een fietsparking van het type: {bicycle_parking}",
@@ -296,6 +300,7 @@
         },
         {
           "if": "bicycle_parking=shed",
+          "hideInAnswer": true,
           "then": {
             "en": "Shed",
             "nl": "Schuur",
@@ -487,24 +492,24 @@
           "hideInAnswer": true
         }
       ],
-      "id": "Underground?"
+      "id": "location"
     },
     {
       "question": {
-        "en": "Is this parking covered? Also select \"covered\" for indoor parkings.",
-        "nl": "Is deze parking overdekt? Selecteer ook \"overdekt\" voor fietsparkings binnen een gebouw.",
-        "gl": "Este aparcadoiro está cuberto? Tamén escolle \"cuberto\" para aparcadoiros interiores.",
-        "de": "Ist der Parkplatz überdacht? Wählen Sie auch \"überdacht\" für Parkplätze in Innenräumen.",
-        "fr": "Ce parking est-il couvert ? Sélectionnez aussi \"couvert\" pour les parkings en intérieur.",
-        "hu": "Fedett-e ez a parkoló? Beltéri parkolónál is válaszd a „fedett” opciót.",
-        "it": "È un parcheggio coperto? Indicare “coperto” per parcheggi all’interno.",
-        "zh_Hant": "這個停車場是否有車棚？如果是室內停車場也請選擇\"遮蔽\"。",
-        "pt_BR": "Este estacionamento é coberto? Também selecione \"coberto\" para estacionamentos internos.",
-        "pt": "Este estacionamento é coberto? Também selecione \"coberto\" para estacionamentos internos.",
-        "es": "¿Está cubierto este aparcamiento? Selecciona también \"cubierto\" para aparcamientos interiores.",
-        "da": "Er denne parkering overdækket? Vælg også \"overdækket\" for indendørs parkeringspladser.",
-        "cs": "Je toto parkoviště zastřešené? U vnitřních parkovišť vyberte také možnost \"kryté\".",
-        "ca": "Aquest aparcament està cobert? També seleccioneu \"cobert\" per als aparcaments interiors."
+        "en": "Is this parking covered?",
+        "nl": "Is deze parking overdekt?",
+        "gl": "Este aparcadoiro está cuberto?",
+        "de": "Ist der Parkplatz überdacht?",
+        "fr": "Ce parking est-il couvert ?",
+        "hu": "Fedett-e ez a parkoló?",
+        "it": "È un parcheggio coperto?",
+        "zh_Hant": "這個停車場是否有車棚？",
+        "pt_BR": "Este estacionamento é coberto?",
+        "pt": "Este estacionamento é coberto?",
+        "es": "¿Está cubierto este aparcamiento?",
+        "da": "Er denne parkering overdækket?",
+        "cs": "Je toto parkoviště zastřešené?",
+        "ca": "Aquest aparcament està cobert?"
       },
       "condition": {
         "and": [
@@ -513,6 +518,48 @@
         ]
       },
       "mappings": [
+        {
+          "if": "building=bicycle_shed",
+          "addExtraTags": [
+            "covered=yes"
+          ],
+          "then": {
+            "en": "This is a bicycle shed (with walls on at least three sides)",
+            "nl": "Dit is een fietsschuurtje (met minstens 3 muren)"
+          }
+        },
+        {
+          "if": "building=roof",
+          "addExtraTags": [
+            "covered=yes"
+          ],
+          "then": {
+            "en": "This is a bicycle parking under a roof; the roof only serves the bicycle parking",
+            "nl": "Dit is een fietsenstalling met enkel een dak (het dak dient enkel voor de fietsenstalling)"
+          }
+        },
+        {
+          "if": "indoor=yes",
+          "addExtraTags": [
+            "covered=yes"
+          ],
+          "then": {
+            "en": "This bicycle parking is located in a building behind a door or gate",
+            "nl": "Deze fietsenstalling bevindt zich in een gebouw achter een deur of een poort"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "indoor=no",
+              "covered=yes"
+            ]
+          },
+          "then": {
+            "en": "This bicycle parking is under (a part of) a building",
+            "nl": "Deze fietsenstalling bevindt onder (een deel van) een gebouw"
+          }
+        },
         {
           "if": "covered=yes",
           "then": {
@@ -554,7 +601,7 @@
           }
         }
       ],
-      "id": "Is covered?"
+      "id": "covered_and_building"
     },
     {
       "question": {

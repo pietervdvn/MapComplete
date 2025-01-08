@@ -1267,18 +1267,21 @@
                 },
                 "question": "Aquest aparcament de bicicletes té punts per a bicicletes de càrrega?"
             },
-            "Is covered?": {
+            "covered_and_building": {
                 "mappings": {
-                    "0": {
+                    "4": {
                         "then": "Aquest aparcament està cobert (té un sostre)"
                     },
-                    "1": {
+                    "5": {
                         "then": "Aquest aparcament no està cobert"
                     }
                 },
-                "question": "Aquest aparcament està cobert? També seleccioneu \"cobert\" per als aparcaments interiors."
+                "question": "Aquest aparcament està cobert?"
             },
-            "Underground?": {
+            "fee": {
+                "question": "Aquests aparcaments de bicicletes són gratuïts?"
+            },
+            "location": {
                 "mappings": {
                     "0": {
                         "then": "Aparcament subterrani"
@@ -1294,9 +1297,6 @@
                     }
                 },
                 "question": "Quina és la ubicació relativa d'aquest aparcament per a bicicletes?"
-            },
-            "fee": {
-                "question": "Aquests aparcaments de bicicletes són gratuïts?"
             },
             "maxstay": {
                 "question": "Quina és la durada màxima permesa d'estacionament?",
@@ -2889,10 +2889,10 @@
                 },
                 "question": "Aquesta carretera està il·luminada?"
             },
-            "width:carriageway": {
+            "width": {
                 "question": "Quina és l'amplada dels carrils d'aquesta carretera (en metres)?",
                 "questionHint": "Això es mesura de vorera a vorera i, per tant, inclou l'amplada dels aparcaments en línia",
-                "render": "L'amplada dels carrils d'aquesta carretera és <strong>{width:carriageway}m</strong>"
+                "render": "L'amplada dels carrils d'aquesta carretera és <strong>{width}m</strong>"
             }
         },
         "title": {

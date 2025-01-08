@@ -159,7 +159,7 @@
             "stillLoading": "Data se stále načítají. Před přidáním nové funkce prosím chvíli počkejte.",
             "title": "Přidat novou funkci",
             "wrongType": "Tato funkce není uzel ani cesta a nelze ji importovat",
-            "zoomInFurther": "Další přiblížení a přidání funkce",
+            "zoomInFurther": "Pokud chcete přidat prvek do mapy, musíte ji nejprve přiblížit",
             "zoomInMore": "Pro import této funkce si ji více přibližte"
         },
         "apply_button": {
@@ -360,6 +360,13 @@
             "skippedMultiple": "Přeskočili jste {skipped} otázky",
             "skippedOne": "Vynechali jste jednu otázku"
         },
+        "questions": {
+            "disable": "Už se na tuto otázku neptejte",
+            "disabledIntro": "Zakázali jste některé typy otázek. Chcete-li otázku znovu povolit, klikněte na ni zde",
+            "disabledTitle": "Vypnuté otázky",
+            "enable": "Ptejte se na tuto otázku u všech prvků",
+            "noneDisabled": "Pokud vás určitý typ otázky nezajímá, zakažte jej. Chcete-li otázku zakázat, klikněte na tři tečky v pravém horním rohu a vyberte možnost \"zakázat\""
+        },
         "removeLocationHistory": "Odstranit historii polohy",
         "retry": "Zkusit znovu",
         "returnToTheMap": "Návrat na mapu",
@@ -372,11 +379,11 @@
             "deleteThemeHistory": "Odstranění dříve navštívených témat",
             "editSearchSyncSettings": "Úprava nastavení synchronizace",
             "editThemeSync": "Úprava nastavení synchronizace",
-            "error": "Něco se pokazilo…",
+            "error": "Něco se pokazilo.",
             "instructions": "Pro vyhledávání lokalit, filtrů nebo jiných tematických map použijte panel hledání nahoře",
             "locations": "Lokality",
             "nMoreFilters": "{n} další",
-            "nothing": "Nic nenalezeno…",
+            "nothing": "Nic nenalezeno.",
             "nothingFor": "Pro {term} nebyly nalezeny žádné výsledky",
             "otherMaps": "Další mapy",
             "pickFilter": "Vyberte filtr",
@@ -385,7 +392,7 @@
             "search": "Vyhledat místo",
             "searching": "Hledání…"
         },
-        "searchAnswer": "Vyhledat možnost…",
+        "searchAnswer": "Vyhledat možnost",
         "seeIndex": "Podívejte se na přehled se všemi tematickými mapami",
         "share": "Sdílet",
         "sharescreen": {
@@ -578,16 +585,16 @@
             "failReasonsAdvanced": "Případně se ujistěte, že váš prohlížeč a rozšíření neblokují rozhraní API třetích stran.",
             "multiple": {
                 "done": "{count} obrázky jsou úspěšně nahrány. Děkujeme!",
-                "partiallyDone": "Nahrává se {count} obrázků, hotovo: {done}…",
+                "partiallyDone": "{count} obrázky se nahrávají, {done} obrázky jsou hotové…",
                 "someFailed": "Litujeme, nepodařilo se nám nahrát {count} obrázků",
-                "uploading": "Nahrává se {count} obrázků…"
+                "uploading": "{count} obrázky se nahrávají…"
             },
             "noBlur": "Snímky nebudou rozmazané. Nefotografujte lidi",
             "one": {
                 "done": "Váš obrázek byl úspěšně nahrán. Děkuji!",
                 "failed": "Omlouváme se, váš obrázek se nepodařilo nahrát",
-                "retrying": "Váš obrázek se znovu nahrává…",
-                "uploading": "Váš obrázek se nahrává…"
+                "retrying": "Znovu se pokouším nahrát váš obrázek…",
+                "uploading": "Váš obrázek se právě nahrává…"
             }
         },
         "uploadFailed": "Obrázek se nepodařilo nahrát. Jste připojeni k internetu a máte povoleno rozhraní API třetích stran? Prohlížeč Brave nebo zásuvný modul uMatrix je mohou blokovat."
@@ -607,6 +614,30 @@
         "learnMore": "Více informací",
         "logIn": "Přihlaste se, abyste viděli další témata, která jste dříve navštívili",
         "title": "MapComplete"
+    },
+    "inspector": {
+        "aggregateView": "Sdružit",
+        "answeredCountTimes": "Odpovězeno {count} krát",
+        "backToIndex": "Zpět na přehled map",
+        "createdBy": "Vytvořil {contributor}",
+        "earlierInspected": "Podívejte se na přispěvatele, které jste kontrolovali dříve",
+        "images": "Vytvořené obrázky",
+        "load": "Kontrola změn v oblasti mapy",
+        "mapView": "Mapa",
+        "menu": "Kontrola přispěvatele",
+        "onlyGeometry": "Pouze změny geometrie",
+        "previouslySpied": {
+            "addLabel": "Přidat štítek",
+            "allChanges": "Načíst všechny změny pro uživatele s tímto označením",
+            "label": "Štítek",
+            "noLabels": "Bez štítku",
+            "remove": "Odebrat",
+            "time": "Čas poslední kontroly",
+            "title": "Dříve kontrolovaní přispěvatelé",
+            "username": "Uživatelské jméno"
+        },
+        "tableView": "Přehled",
+        "title": "Kontrola přispěvatele"
     },
     "move": {
         "cancel": "Vyberte jiný důvod",

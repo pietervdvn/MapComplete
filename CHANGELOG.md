@@ -2,6 +2,38 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.47.14](https://github.com/pietervdvn/mapcomplete/compare/v0.47.13...v0.47.14) (2025-01-02)
+
+
+### Bug Fixes
+
+* Add velopark link ([23ac962](https://github.com/pietervdvn/mapcomplete/commits/23ac96251cbd67372b9ad8d2cbf75773b8e2bb65))
+* clean up minzoomVisible in some themes (gh[#2279](https://github.com/pietervdvn/MapComplete/issues/2279)) ([2a6e118](https://github.com/pietervdvn/mapcomplete/commits/2a6e118b5ba91ed4e3dfd9737cbf3ab96f937cff))
+* deduplicate .gitignore and reorder ([9d6036b](https://github.com/pietervdvn/mapcomplete/commits/9d6036be8797df4c92b2f0a02fcb349e1877f819))
+* deduplicate .gitignore and reorder ([8c1a73c](https://github.com/pietervdvn/mapcomplete/commits/8c1a73c9d50824b668dd0a31b435bbed2b15ffc1))
+* fix classes argument ([46ac716](https://github.com/pietervdvn/mapcomplete/commits/46ac71639596831926224c05d3f507d99321a5e9))
+* fix inspector ([e0931dc](https://github.com/pietervdvn/mapcomplete/commits/e0931dcebadb1d42b282131c78c9a87cbc486af1))
+* fix inspector ([4830527](https://github.com/pietervdvn/mapcomplete/commits/48305273e52ac85667b85b69ac2f6d13b0de8d19))
+* fix special visualisations ([9c686fe](https://github.com/pietervdvn/mapcomplete/commits/9c686fed89fb3ee8a3de21706aee37fa17ac3205))
+* imagepreview: improve typing; fix comparison tool ([2de8b54](https://github.com/pietervdvn/mapcomplete/commits/2de8b544570f7c983d67d51684ab9b31ddabe44d))
+* imagepreview: improve typing; fix comparison tool ([6cb1687](https://github.com/pietervdvn/mapcomplete/commits/6cb16877e8e27a70c1e1c327d965be1e0ab45788))
+* order of commands in npm run init ([33efe4f](https://github.com/pietervdvn/mapcomplete/commits/33efe4f2c25eda7dc179e572313e02b72de0e96a))
+* order of commands in npm run init ([3759134](https://github.com/pietervdvn/mapcomplete/commits/375913492cf6da22389d27a2458e817fa5c19d37))
+* remove checked-in file that is covered by .gitignore ([bccd744](https://github.com/pietervdvn/mapcomplete/commits/bccd74408659cf2377bbfa98e1d02b8e2b186937))
+* remove checked-in file that is covered by .gitignore ([c88ffda](https://github.com/pietervdvn/mapcomplete/commits/c88ffdae5513e57cdbaf702116714496d6fb3380))
+* remove obsolete "SetClass"-calls which don't work anyway ([4fcdd8b](https://github.com/pietervdvn/mapcomplete/commits/4fcdd8ba5a9cbfb06e160a77f51b59f5ee302914))
+* tests ([5b43316](https://github.com/pietervdvn/mapcomplete/commits/5b43316f10f07383c4bd2f1c5b12373bfd4e52dc))
+* various small fixes ([5284d94](https://github.com/pietervdvn/mapcomplete/commits/5284d94427df74bd8fed85f9d506d147d068cdb3))
+
+
+### Theme improvements
+
+* **bicycle_parking:** add more nuance to ([87cb88d](https://github.com/pietervdvn/mapcomplete/commits/87cb88d7f35558283d8d27eb5fe5e7942b901d6b))
+* **cycleways_and_roads:** use 'width' instead of 'width:carriageway', fix [#2318](https://github.com/pietervdvn/MapComplete/issues/2318) ([90626c6](https://github.com/pietervdvn/mapcomplete/commits/90626c632aee2be3b6d0a5e31d514b92ceccc4ab))
+* **shops:** add optometrist service ([76831c4](https://github.com/pietervdvn/mapcomplete/commits/76831c4e855b98f233ca85320c069226eb107e4a))
+* **shops:** change 'optomotetrist'-service into multiple other services ([4925e21](https://github.com/pietervdvn/mapcomplete/commits/4925e216b8d273868787c7b057391c10ab474267))
+* **shops:** change 'optomotetrist'-service into multiple other services ([80776f5](https://github.com/pietervdvn/mapcomplete/commits/80776f5943704b36dfc7d5047e4b0aa8be6f552d))
+
 ### [0.47.13](https://github.com/pietervdvn/mapcomplete/compare/v0.47.12...v0.47.13) (2024-12-17)
 
 

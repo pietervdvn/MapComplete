@@ -8,7 +8,6 @@ import Constants from "../../Models/Constants"
 import { Utils } from "../../Utils"
 import { GeoLocationState } from "../State/GeoLocationState"
 import { OsmConnection } from "../Osm/OsmConnection"
-
 ;("use strict")
 
 /**

@@ -999,7 +999,7 @@ export class TagRenderingConfigUtils {
         tags: UIEventSource<Record<string, string>>,
         feature?: Feature
     ): Store<TagRenderingConfig> {
-        const isNSI = NameSuggestionIndex.supportedTypes().indexOf(config.freeform?.key) >= 0
+        const isNSI = NameSuggestionIndex.supportedTypes.indexOf(<any>config.freeform?.key) >= 0
         if (!isNSI) {
             return new ImmutableStore(config)
         }
@@ -1019,8 +1019,8 @@ export class TagRenderingConfigUtils {
                 )
             )
         })
-        return extraMappings.map((extraMappings) => {
-            if (!extraMappings || extraMappings.length == 0) {
+        return extraMappings.mapD((extraMappings) => {
+            if (extraMappings.length == 0) {
                 return config
             }
             const clone: TagRenderingConfig = Object.create(config)

@@ -1600,6 +1600,7 @@
                     }
                 },
                 "question": "Van welk type is deze fietsparking?",
+                "questionHint": "Dit gaat over het voorwerp waarin je je fiets plaats en mee op slot zet",
                 "render": "Dit is een fietsparking van het type: {bicycle_parking}"
             },
             "Capacity": {
@@ -1630,18 +1631,46 @@
                 },
                 "question": "Heeft deze fietsparking plaats voor bakfietsen?"
             },
-            "Is covered?": {
+            "charge": {
+                "question": "Hoeveel kost het om een fiets te stallen?",
+                "questionHint": "Dit is de kostprijs voor een enkele fiets",
+                "render": "Je fiets hier parkeren kost {charge}"
+            },
+            "covered_and_building": {
                 "mappings": {
                     "0": {
-                        "then": "Deze parking is overdekt (er is een afdak)"
+                        "then": "Dit is een fietsschuurtje (met minstens 3 muren)"
                     },
                     "1": {
+                        "then": "Dit is een fietsenstalling met enkel een dak (het dak dient enkel voor de fietsenstalling)"
+                    },
+                    "2": {
+                        "then": "Deze fietsenstalling bevindt zich in een gebouw achter een deur of een poort"
+                    },
+                    "3": {
+                        "then": "Deze fietsenstalling bevindt onder (een deel van) een gebouw"
+                    },
+                    "4": {
+                        "then": "Deze parking is overdekt (er is een afdak)"
+                    },
+                    "5": {
                         "then": "Deze parking is niet overdekt"
                     }
                 },
-                "question": "Is deze parking overdekt? Selecteer ook \"overdekt\" voor fietsparkings binnen een gebouw."
+                "question": "Is deze parking overdekt?"
             },
-            "Underground?": {
+            "fee": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Betalende</b> fietsparking"
+                    },
+                    "1": {
+                        "then": "Gratis te gebruiken"
+                    }
+                },
+                "question": "Is deze fietsenstalling gratis te gebruiken?"
+            },
+            "location": {
                 "mappings": {
                     "0": {
                         "then": "Ondergrondse parking"
@@ -1657,22 +1686,6 @@
                     }
                 },
                 "question": "Wat is de relatieve locatie van deze parking??"
-            },
-            "charge": {
-                "question": "Hoeveel kost het om een fiets te stallen?",
-                "questionHint": "Dit is de kostprijs voor een enkele fiets",
-                "render": "Je fiets hier parkeren kost {charge}"
-            },
-            "fee": {
-                "mappings": {
-                    "0": {
-                        "then": "<b>Betalende</b> fietsparking"
-                    },
-                    "1": {
-                        "then": "Gratis te gebruiken"
-                    }
-                },
-                "question": "Is deze fietsenstalling gratis te gebruiken?"
             },
             "maxstay": {
                 "question": "Wat is de toegestane, maximale parkeerduur?",
@@ -2036,6 +2049,9 @@
         },
         "title": {
             "mappings": {
+                "0": {
+                    "then": "{name}"
+                },
                 "1": {
                     "then": "Vogelkijkhut {name}"
                 },
@@ -3960,10 +3976,10 @@
                 },
                 "question": "Is deze weg verlicht?"
             },
-            "width:carriageway": {
+            "width": {
                 "question": "Hoe breed is de rijbaan in deze straat (in meters)?",
                 "questionHint": "Dit is gemeten van stoepsteen tot stoepsteen, dus inclusief een parallelle parkeerstrook",
-                "render": "De breedte van deze rijbaan in deze straat is <strong>{width:carriageway}m</strong>"
+                "render": "De breedte van deze rijbaan in deze straat is <strong>{width}m</strong>"
             }
         },
         "title": {
@@ -4065,7 +4081,7 @@
                 "render": "<i>Meer informatie over de locatie (in het Frans):</i><br/>{defibrillator:location:fr}"
             },
             "defibrillator-description": {
-                "question": "Is er nog iets bijzonder aan deze defibrillator dat je nog niet hebt kunnen meegeven? (laat leeg indien niet)",
+                "question": "Is er nog iets bijzonders aan deze defibrillator dat je nog niet hebt kunnen meegeven? (laat leeg indien niet)",
                 "render": "Aanvullende info: {description}"
             },
             "defibrillator-email": {
@@ -6340,6 +6356,11 @@
             }
         },
         "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
             "render": "Natuurgebied"
         }
     },
@@ -6869,6 +6890,21 @@
         },
         "title": {
             "render": "Picknicktafel"
+        }
+    },
+    "play_forest": {
+        "description": "Een speelbos is een vrij toegankelijke zone in een bos",
+        "name": "Speelbossen",
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                },
+                "1": {
+                    "then": "Speelbos {name}"
+                }
+            },
+            "render": "Speelbos"
         }
     },
     "playground": {
@@ -8302,6 +8338,17 @@
                     }
                 }
             },
+            "optometrist_service": {
+                "mappings": {
+                    "0": {
+                        "then": "Hier kan men een oogtest door een erkende optometrist laten uitvoeren"
+                    },
+                    "1": {
+                        "then": "HIer kan men een hoortest laten uitvoeren door een erkende audioloog"
+                    }
+                },
+                "question": "Zijn hier medische services beschikbaar?"
+            },
             "organic": {
                 "mappings": {
                     "0": {
@@ -8428,6 +8475,9 @@
         },
         "title": {
             "mappings": {
+                "0": {
+                    "then": "{name}"
+                },
                 "1": {
                     "then": "Voetpad"
                 },
@@ -10580,13 +10630,25 @@
         }
     },
     "village_green": {
-        "description": "Een laag die dorpsgroen toont (gemeenschapsgroen, maar niet echt een park)"
+        "description": "Een laag die dorpsgroen toont (gemeenschapsgroen, maar niet echt een park)",
+        "name": "Speelweide",
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
+            "render": "Speelweide"
+        }
     },
     "visitor_information_centre": {
         "description": "Een bezoekerscentrum biedt informatie over een specifieke attractie of bezienswaardigheid waar het is gevestigd.",
         "name": "Bezoekerscentrum",
         "title": {
             "mappings": {
+                "0": {
+                    "then": "{name:nl}"
+                },
                 "1": {
                     "then": "{name}"
                 }

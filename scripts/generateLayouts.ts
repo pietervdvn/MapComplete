@@ -341,7 +341,7 @@ class GenerateLayouts extends Script {
             "https://pietervdvn.goatcounter.com",
             "https://api.panoramax.xyz",
             "https://panoramax.mapcomplete.org",
-            "https://data.velopark.be"
+            "https://data.velopark.be",
         ].concat(...(await this.eliUrls()))
 
         SpecialVisualizations.specialVisualizations.forEach((sv) => {

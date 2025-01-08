@@ -709,18 +709,18 @@
                 },
                 "question": "Har denne cykelparkering plads til ladcykler?"
             },
-            "Is covered?": {
+            "covered_and_building": {
                 "mappings": {
-                    "0": {
+                    "4": {
                         "then": "Denne parkeringsplads er overdækket (den har et tag)"
                     },
-                    "1": {
+                    "5": {
                         "then": "Denne parkeringsplads er ikke overdækket"
                     }
                 },
-                "question": "Er denne parkering overdækket? Vælg også \"overdækket\" for indendørs parkeringspladser."
+                "question": "Er denne parkering overdækket?"
             },
-            "Underground?": {
+            "location": {
                 "mappings": {
                     "0": {
                         "then": "Underjordisk parkering"

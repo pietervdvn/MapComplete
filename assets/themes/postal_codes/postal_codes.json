@@ -15,7 +15,8 @@
     "cs": "Poštovní směrovací čísla",
     "zh_Hant": "郵遞區號",
     "it": "Codici postali",
-    "pl": "Kody pocztowe"
+    "pl": "Kody pocztowe",
+    "ko": "우편번호"
   },
   "description": {
     "en": "Postal codes",
@@ -32,7 +33,8 @@
     "cs": "Poštovní směrovací čísla",
     "zh_Hant": "郵遞區號",
     "pl": "Kody pocztowe",
-    "it": "Codici postali"
+    "it": "Codici postali",
+    "ko": "우편번호"
   },
   "shortDescription": {
     "en": "Postal codes",
@@ -49,7 +51,8 @@
     "cs": "Poštovní směrovací čísla",
     "zh_Hant": "郵遞區號",
     "it": "Codici postali",
-    "pl": "Kody pocztowe"
+    "pl": "Kody pocztowe",
+    "ko": "우편번호"
   },
   "icon": "./assets/themes/postal_codes/townhall.svg",
   "hideFromOverview": true,
@@ -71,7 +74,8 @@
         "cs": "poštovní směrovací čísla",
         "zh_Hant": "郵遞區號",
         "pl": "kody pocztowe",
-        "it": "codici postali"
+        "it": "codici postali",
+        "ko": "우편번호"
       },
       "minzoom": 8,
       "title": {
@@ -89,7 +93,8 @@
           "cs": "Poštovní směrovací číslo {postal_code}",
           "zh_Hant": "郵遞區號 {postal_code}",
           "pl": "Kod pocztowy {postal_code}",
-          "it": "Codice postale {postal_code}"
+          "it": "Codice postale {postal_code}",
+          "ko": "우편번호는 {postal_code}"
         }
       },
       "description": {},
@@ -110,7 +115,8 @@
             "cs": "Poštovní směrovací číslo je {postal_code}",
             "zh_Hant": "郵遞區號是 {postal_code}",
             "pl": "Kod pocztowy to {postal_code}",
-            "it": "Ilcodice postale è {postal_code}"
+            "it": "Ilcodice postale è {postal_code}",
+            "ko": "우편번호는{postal_code}입니다"
           }
         }
       ],
@@ -183,7 +189,8 @@
         "cs": "radnice",
         "zh_Hant": "城鎮",
         "pl": "ratusz",
-        "it": "municipi"
+        "it": "municipi",
+        "ko": "시청"
       },
       "minzoom": 12,
       "title": {
@@ -201,7 +208,8 @@
           "cs": "Radnice {name}",
           "zh_Hant": "城鎮 {name}",
           "pl": "Ratusz {name}",
-          "it": "Municipio {name}"
+          "it": "Municipio {name}",
+          "ko": "시청 {name}"
         }
       },
       "calculatedTags": [

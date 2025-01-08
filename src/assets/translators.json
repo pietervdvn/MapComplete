@@ -17,7 +17,7 @@
       "contributor": "Anonymous"
     },
     {
-      "commits": 107,
+      "commits": 110,
       "contributor": "mcliquid"
     },
     {
@@ -29,7 +29,7 @@
       "contributor": "Robin van der Linde"
     },
     {
-      "commits": 76,
+      "commits": 78,
       "contributor": "mike140"
     },
     {
@@ -37,7 +37,11 @@
       "contributor": "danieldegroot2"
     },
     {
-      "commits": 54,
+      "commits": 59,
+      "contributor": "Midgard"
+    },
+    {
+      "commits": 56,
       "contributor": "Jiří Podhorecký"
     },
     {
@@ -49,12 +53,8 @@
       "contributor": "gallegonovato"
     },
     {
-      "commits": 47,
+      "commits": 50,
       "contributor": "Supaplex"
-    },
-    {
-      "commits": 46,
-      "contributor": "Midgard"
     },
     {
       "commits": 45,
@@ -155,6 +155,10 @@
     {
       "commits": 11,
       "contributor": "Túllio Franca"
+    },
+    {
+      "commits": 10,
+      "contributor": "JiwonShin"
     },
     {
       "commits": 10,
@@ -583,6 +587,10 @@
     {
       "commits": 2,
       "contributor": "Leo Alcaraz"
+    },
+    {
+      "commits": 1,
+      "contributor": "Moimoi Ty"
     },
     {
       "commits": 1,

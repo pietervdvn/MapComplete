@@ -11,7 +11,8 @@
     "cs": "Památníky",
     "ru": "Памятники",
     "hu": "Emlékművek",
-    "uk": "Памʼятники"
+    "uk": "Памʼятники",
+    "ko": "기념물"
   },
   "description": {
     "en": "Memorials are physical objects permantently placed in the public space to remember a person or event. They can be a wide range of objects, such as statues, plaques, paintings, military objects (such as tanks), ...",
@@ -20,7 +21,8 @@
     "nl": "Een gedenkteken is een fysiek object dat permanent in de publieke ruimte aanwezig is om een persoon of gebeurtenis te herdenken. Dit kan in diverse vormen, zoals standbeelden, naamborden, muurschilderingen, militaire objecten,...",
     "es": "Los monumentos conmemorativos son objetos físicos colocados permanentemente en el espacio público para recordar a una persona o un evento. Pueden ser una amplia gama de objetos, como estatuas, placas, pinturas, objetos militares (como tanques),...",
     "cs": "Památníky jsou fyzické předměty trvale umístěné na veřejném prostranství, které připomínají určitou osobu nebo událost. Může se jednat o nejrůznější předměty, jako jsou sochy, pamětní desky, obrazy, vojenské objekty (např. tanky), ...",
-    "uk": "Меморіали — це фізичні обʼєкти, постійно розміщені в публічному просторі на згадку про особу чи подію. Це можуть бути найрізноманітніші обʼєкти, такі як статуї, меморіальні дошки, картини, військові обʼєкти (наприклад, танки), …"
+    "uk": "Меморіали — це фізичні обʼєкти, постійно розміщені в публічному просторі на згадку про особу чи подію. Це можуть бути найрізноманітніші обʼєкти, такі як статуї, меморіальні дошки, картини, військові обʼєкти (наприклад, танки), …",
+    "ko": "기념물은 특정 인물이나 사건을 기억하기 위해 공공장소에 영구적으로 설치된 물리적 요소를 의미합니다. 기념물은 동상, 명판, 그림, 군사 장비(탱크와 같은) 등 다양한 형태일 수 있습니다."
   },
   "icon": "./assets/layers/memorial/memorial.svg",
   "layers": [

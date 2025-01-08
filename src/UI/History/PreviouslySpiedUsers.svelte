@@ -5,7 +5,8 @@
   import { createEventDispatcher } from "svelte"
   import { XCircleIcon } from "@babeard/svelte-heroicons/solid"
   import AccordionSingle from "../Flowbite/AccordionSingle.svelte"
-  import Dropdown from "../Base/Dropdown.svelte"
+  import Translations from "../i18n/Translations"
+  import Tr from "../Base/Tr.svelte"
 
   export let osmConnection: OsmConnection
   export let inspectedContributors: UIEventSource<
@@ -41,23 +42,31 @@
     inspectedContributors.data.sort((a, b) => (a[key] ?? "").localeCompare(b[key] ?? ""))
     inspectedContributors.ping()
   }
+
+  const t = Translations.t.inspector.previouslySpied
 </script>
 
 <LoginToggle ignoreLoading state={{ osmConnection }}>
   <table class="w-full">
     <tr>
       <td>
-        <button class="as-link cursor-pointer" on:click={() => sort("name")}>Contributor</button>
-      </td>
-      <td>
-        <button class="as-link cursor-pointer" on:click={() => sort("visitedTime")}>
-          Visited time
+        <button class="as-link cursor-pointer" on:click={() => sort("name")}>
+          <Tr t={t.username} />
         </button>
       </td>
       <td>
-        <button class="as-link cursor-pointer" on:click={() => sort("label")}>Label</button>
+        <button class="as-link cursor-pointer" on:click={() => sort("visitedTime")}>
+          <Tr t={t.time} />
+        </button>
       </td>
-      <td>Remove</td>
+      <td>
+        <button class="as-link cursor-pointer" on:click={() => sort("label")}>
+          <Tr t={t.label} />
+        </button>
+      </td>
+      <td>
+        <Tr t={t.remove} />
+      </td>
     </tr>
     {#each $inspectedContributors as c}
       <tr>
@@ -85,7 +94,7 @@
   <AccordionSingle>
     <div slot="header">Labels</div>
     {#if $labels.length === 0}
-      No labels
+      <Tr t={t.noLabels} />
     {:else}
       {#each $labels as label}
         <div class="mx-2">
@@ -102,7 +111,8 @@
               )
             }}
           >
-            See all changes for these users
+            <Tr t={t.allChanges} />
+
           </button>
         </div>
       {/each}
@@ -115,7 +125,7 @@
         class:disabled={!(labelField?.length > 0)}
         class="disabled shrink-0"
       >
-        Add label
+        <Tr t={t.addLabel} />
       </button>
     </div>
   </AccordionSingle>

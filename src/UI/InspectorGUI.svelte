@@ -28,6 +28,7 @@
   import Translations from "./i18n/Translations"
   import Tr from "./Base/Tr.svelte"
 
+  console.log("Loading inspector GUI")
   let username = QueryParameters.GetQueryParameter("user", undefined, "Inspect this user")
   let step = new UIEventSource<"waiting" | "loading" | "done">("waiting")
   let map = new UIEventSource<MlMap>(undefined)
@@ -121,7 +122,7 @@
   const t = Translations.t.inspector
 </script>
 
-<div class="flex h-full w-full flex-col">
+<div class="flex h-screen w-full flex-col">
   <div class="low-interaction flex items-center gap-x-2 p-2">
     <MagnifyingGlassCircle class="h-12 w-12" />
     <h1 class="m-0 mx-2 flex-shrink-0">
@@ -192,7 +193,7 @@
             <XCircleIcon class="h-6 w-6" on:click={() => selectedElement.set(undefined)} />
           </div>
 
-          <History onlyShowChangesBy={$username} id={$selectedElement.properties.id} />
+          <History onlyShowChangesBy={$username.split(";")} id={$selectedElement.properties.id} />
         </TitledPanel>
       </Drawer>
     {/if}
@@ -218,7 +219,9 @@
 </div>
 
 <Page shown={showPreviouslyVisited}>
-  <div slot="header">Earlier inspected constributors</div>
+  <div slot="header">
+    <Tr t={t.previouslySpied.title} />
+  </div>
   <PreviouslySpiedUsers
     {osmConnection}
     {inspectedContributors}

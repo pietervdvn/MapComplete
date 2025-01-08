@@ -37,13 +37,16 @@
       if (!shown) {
         previewedImage?.set(undefined)
       }
-    }),
+    })
   )
   if (previewedImage) {
     onDestroy(
       previewedImage.addCallbackAndRun((previewedImage) => {
-        showBigPreview.set(previewedImage !== undefined && (previewedImage?.id ?? previewedImage?.url) === (image.id ?? image.url))
-      }),
+        showBigPreview.set(
+          previewedImage !== undefined &&
+            (previewedImage?.id ?? previewedImage?.url) === (image.id ?? image.url)
+        )
+      })
     )
   }
 
@@ -90,7 +93,6 @@
   </div>
 </Popup>
 
-
 {#if image.status !== undefined && image.status !== "ready" && image.status !== "hidden"}
   <div class="flex h-full flex-col justify-center">
     <Loading>
@@ -115,7 +117,7 @@
         class={imgClass ?? ""}
         class:cursor-zoom-in={canZoom}
         on:click={() => {
-          console.log("Setting",image.url)
+          console.log("Setting", image.url)
           previewedImage?.set(image)
         }}
         on:error={() => {

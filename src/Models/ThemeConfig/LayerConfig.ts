@@ -24,6 +24,9 @@ import { QuestionableTagRenderingConfigJson } from "./Json/QuestionableTagRender
 import MarkdownUtils from "../../Utils/MarkdownUtils"
 import { And } from "../../Logic/Tags/And"
 import Combine from "../../UI/Base/Combine"
+import SvelteUIElement from "../../UI/Base/SvelteUIElement"
+import DynamicMarker from "../../UI/Map/DynamicMarker.svelte"
+import { ImmutableStore } from "../../Logic/UIEventSource"
 
 export default class LayerConfig extends WithContextLoader {
     public static readonly syncSelectionAllowed = ["no", "local", "theme-only", "global"] as const
@@ -66,6 +69,8 @@ export default class LayerConfig extends WithContextLoader {
     public readonly _needsFullNodeDatabase: boolean
     public readonly popupInFloatover: boolean | string
     public readonly enableMorePrivacy: boolean
+
+    public readonly baseTags: Readonly<Record<string, string>>
 
     /**
      * If this layer is based on another layer, this might be indicated here
@@ -352,31 +357,17 @@ export default class LayerConfig extends WithContextLoader {
             )
         }
         this.popupInFloatover = json.popupInFloatover ?? false
-    }
-
-    public defaultIcon(properties?: Record<string, string>): BaseUIElement | undefined {
-        if (this.mapRendering === undefined || this.mapRendering === null) {
-            return undefined
-        }
-        const mapRenderings = this.mapRendering.filter((r) => r.location.has("point"))
-        if (mapRenderings.length === 0) {
-            return undefined
-        }
-        return new Combine(
-            mapRenderings.map((mr) =>
-                mr
-                    .GetBaseIcon(properties ?? this.GetBaseTags())
-                    .SetClass("absolute left-0 top-0 w-full h-full")
-            )
-        ).SetClass("relative block w-full h-full")
-    }
-
-    public GetBaseTags(): Record<string, string> {
-        return TagUtils.changeAsProperties(
+        this.baseTags = TagUtils.changeAsProperties(
             this.source?.osmTags?.asChange({ id: "node/-1" }) ?? [{ k: "id", v: "node/-1" }]
         )
     }
 
+    public hasDefaultIcon() {
+        if (this.mapRendering === undefined || this.mapRendering === null) {
+            return false
+        }
+        return this.mapRendering.some((r) => r.location.has("point"))
+    }
     public GenerateDocumentation(
         usedInThemes: string[],
         layerIsNeededBy?: Map<string, string[]>,

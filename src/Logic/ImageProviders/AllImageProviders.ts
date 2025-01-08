@@ -91,7 +91,6 @@ export default class AllImageProviders {
                 However, we override them if a custom image tag is set, e.g. 'image:menu'
                */
             const prefixes = tagKey ?? imageProvider.defaultKeyPrefixes
-            console.log("Prefixes are", tagKey, prefixes)
             const singleSource = tags.bindD((tags) => imageProvider.getRelevantUrls(tags, prefixes))
             allSources.push(singleSource)
             singleSource.addCallbackAndRunD((_) => {

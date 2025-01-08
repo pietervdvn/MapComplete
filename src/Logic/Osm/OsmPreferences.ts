@@ -38,14 +38,27 @@ export class OsmPreferences {
         })
     }
 
-    private setPreferencesAll(key: string, value: string) {
+    /**
+     * Sets a new preferenceValue in 'allPreferences'
+     * @param key
+     * @param value
+     * @param deferping: the end user will ping '_allPreferences'
+     * @private
+     */
+    private setPreferencesAll(key: string, value: string, deferping = false) {
         if (this._allPreferences.data[key] !== value) {
             this._allPreferences.data[key] = value
-            this._allPreferences.ping()
+            if (!deferping) {
+                this._allPreferences.ping()
+            }
         }
     }
 
-    private initPreference(key: string, value: string = undefined): UIEventSource<string> {
+    private initPreference(
+        key: string,
+        value: string = undefined,
+        deferPing = false
+    ): UIEventSource<string> {
         if (this.preferences[key] !== undefined) {
             if (value !== undefined) {
                 this.preferences[key].set(value)
@@ -54,12 +67,12 @@ export class OsmPreferences {
         }
         const pref = (this.preferences[key] = new UIEventSource(value, "preference: " + key))
         if (value) {
-            this.setPreferencesAll(key, value)
+            this.setPreferencesAll(key, value, deferPing)
         }
         pref.addCallback((v) => {
             console.log("Got an update:", key, "--->", v)
             this.uploadKvSplit(key, v)
-            this.setPreferencesAll(key, v)
+            this.setPreferencesAll(key, v, deferPing)
         })
         return pref
     }
@@ -73,11 +86,12 @@ export class OsmPreferences {
             await this.removeLegacy(legacy)
         }
         for (const key in merged) {
-            this.initPreference(key, prefs[key])
+            this.initPreference(key, prefs[key], true)
         }
         for (const key in legacy) {
-            this.initPreference(key, legacy[key])
+            this.initPreference(key, legacy[key], true)
         }
+        this._allPreferences.ping()
     }
 
     public getPreference(key: string, defaultValue: string = undefined, prefix?: string) {

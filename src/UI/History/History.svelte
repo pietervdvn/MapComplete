@@ -10,6 +10,7 @@
   import ToSvelte from "../Base/ToSvelte.svelte"
   import Tr from "../Base/Tr.svelte"
   import Translations from "../i18n/Translations"
+  import DefaultIcon from "../Map/DefaultIcon.svelte"
 
   export let onlyShowChangesBy: string[]
   export let id: OsmId
@@ -30,10 +31,11 @@
           return true
         }
         console.log(
-          "Checking if ",
+          "Checking if",
           step.tags["_last_edit:contributor"],
           "is contained in",
-          onlyShowChangesBy
+          onlyShowChangesBy,
+          usernames.has(step.tags["_last_edit:contributor"])
         )
         return usernames.has(step.tags["_last_edit:contributor"])
       })
@@ -49,7 +51,7 @@
    * These layers are only shown if there are tag changes as well
    */
   const ignoreLayersIfNoChanges: ReadonlySet<string> = new Set(["walls_and_buildings"])
-  const t = Translations.t.inspector.previousContributors
+  const t = Translations.t.inspector
 </script>
 
 {#if !$allGeometry || !ignoreLayersIfNoChanges.has($lastStep?.layer?.id)}
@@ -57,7 +59,7 @@
     <a href={"https://openstreetmap.org/" + $lastStep.step.tags.id} target="_blank">
       <h3 class="flex items-center gap-x-2">
         <div class="inline-block h-8 w-8 shrink-0">
-          <ToSvelte construct={$lastStep.layer?.defaultIcon($lastStep.step.tags)} />
+          <DefaultIcon layer={$lastStep.layer} />
         </div>
         <Tr
           t={$lastStep.layer?.title?.GetRenderValue($lastStep.step.tags)?.Subs($lastStep.step.tags)}

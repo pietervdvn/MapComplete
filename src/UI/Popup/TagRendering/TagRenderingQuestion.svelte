@@ -33,7 +33,6 @@
   import Markdown from "../../Base/Markdown.svelte"
   import { Utils } from "../../../Utils"
   import type { UploadableTag } from "../../../Logic/Tags/TagTypes"
-  import { Modal } from "flowbite-svelte"
   import Popup from "../../Base/Popup.svelte"
   import If from "../../Base/If.svelte"
   import DotMenu from "../../Base/DotMenu.svelte"
@@ -341,7 +340,9 @@
       .catch(console.error)
   }
 
-  let disabledInTheme = state.userRelatedState.getThemeDisabled(state.theme.id, layer?.id)
+  let disabledInTheme =
+    state.userRelatedState?.getThemeDisabled(state.theme.id, layer?.id) ??
+    new UIEventSource<string[]>([])
   let menuIsOpened = new UIEventSource(false)
 
   function disableQuestion() {
@@ -361,7 +362,7 @@
 
 {#if question !== undefined && $apiState !== "readonly" && $apiState !== "offline"}
   <div class={clss}>
-    {#if layer.isNormal()}
+    {#if layer?.isNormal()}
       <LoginToggle {state}>
         <DotMenu hideBackground={true} open={menuIsOpened}>
           <SidebarUnit>
@@ -559,7 +560,7 @@
             </h2>
             <Tr t={Translations.t.unknown.explanation} />
             <If
-              condition={state.userRelatedState.showTags.map(
+              condition={state.userRelatedState?.showTags?.map(
                 (v) => v === "yes" || v === "full" || v === "always"
               )}
             >

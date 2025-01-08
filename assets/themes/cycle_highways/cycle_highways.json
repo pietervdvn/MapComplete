@@ -14,7 +14,8 @@
     "cs": "Cyklodálnice",
     "pl": "Ścieżki rowerowe",
     "zh_Hant": "單車高速公路",
-    "uk": "Велосипедні доріжки"
+    "uk": "Велосипедні доріжки",
+    "ko": "자전거 도로"
   },
   "description": {
     "en": "This map shows cycle highways",
@@ -28,7 +29,9 @@
     "da": "Dette kort viser cykelmotorveje",
     "cs": "Tato mapa zobrazuje cyklostezky",
     "pl": "Ta mapa pokazuje ścieżki rowerowe",
-    "uk": "Ця мапа показує велодоріжки"
+    "uk": "Ця мапа показує велодоріжки",
+    "zh_Hant": "這份地圖顯示單車道",
+    "ko": "이 지도는 자전거 도로를 보여줍니다"
   },
   "icon": "./assets/themes/cycle_highways/fietssnelwegen-logo.svg",
   "startZoom": 7,

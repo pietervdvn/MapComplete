@@ -1,2 +1,26 @@
 {
+    "address": {
+        "description": "주소",
+        "name": "OSM에 등록된 주소들",
+        "tagRenderings": {
+            "fixme": {
+                "question": "수정할 내용이 있습니까? 설명 부탁드립니다"
+            },
+            "housenumber": {
+                "mappings": {
+                    "0": {
+                        "then": "이 빌딩은 건물 번호가 존재하지 않습니다"
+                    }
+                },
+                "question": "이 집의 번호는 무엇입니까?",
+                "render": "이 집의 번호는 <b>{addr:housenumber}</b> 입니다"
+            }
+        }
+    },
+    "artwork": {
+        "description": "전 세계의 여러 조각상과 예술 작품들 알려주는 오픈 맵 입니다"
+    },
+    "walls_and_buildings": {
+        "description": "모든 벽과 건물을 제공하는 특수 내장 레이어입니다. 이 레이어는 벽에 배치할 수 있는 요소들(예: AED, 우체통, 입구, 주소, 감시 카메라 등)을 위한 프리셋에서 유용하게 사용됩니다. 이 레이어는 기본적으로 보이지 않으며 사용자가 토글할 수 없습니다."
+    }
 }

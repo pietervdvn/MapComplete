@@ -8,6 +8,7 @@
   import { Translation } from "../i18n/Translation"
   import { XMarkIcon } from "@babeard/svelte-heroicons/mini"
   import ToSvelte from "../Base/ToSvelte.svelte"
+  import DefaultIcon from "../Map/DefaultIcon.svelte"
 
   export let layer: LayerConfig
   export let state: ThemeViewState
@@ -28,7 +29,7 @@
   <div class="low-interaction p-2">
     <h4 class="my-2 flex">
       <div class="no-image-background block h-6 w-6">
-        <ToSvelte construct={() => layer.defaultIcon()} />
+        <DefaultIcon {layer} />
       </div>
       <Tr t={layer.name} />
     </h4>

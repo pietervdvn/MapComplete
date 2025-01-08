@@ -816,14 +816,16 @@
           "if": "drive_through=yes",
           "then": {
             "en": "This fast-food restaurant has a drive-through",
-            "nl": "Dit fastfoodrestaurant heeft een drive-through"
+            "nl": "Dit fastfoodrestaurant heeft een drive-through",
+            "de": "Dieses Fast-Food-Restaurant hat einen Drive-In"
           }
         },
         {
           "if": "drive_through=no",
           "then": {
             "en": "This fast-food restaurant does not have a drive-through",
-            "nl": "Dit fastfoodrestaurant heeft geen drive-through"
+            "nl": "Dit fastfoodrestaurant heeft geen drive-through",
+            "de": "Dieses Fast-Food-Restaurant hat keinen Drive-in"
           }
         }
       ]

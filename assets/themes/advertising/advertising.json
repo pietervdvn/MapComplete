@@ -16,7 +16,8 @@
     "zh_Hans": "广告",
     "ru": "Реклама",
     "uk": "Реклама",
-    "hu": "Reklámok"
+    "hu": "Reklámok",
+    "ko": "시설물"
   },
   "description": {
     "ca": "Alguna vegada t'has preguntat quanta publictat hi ha als nostres carrers i carreteres? Amb aquest mapa podràs trobar i afegir informació de tots els elements publictaris que t'hi trobes pel carrer",
@@ -33,7 +34,8 @@
     "pt": "Já se perguntou quantas propagandas existem nas nossas ruas e estradas? Com este mapa pode encontrar e adicionar informações sobre todos os recursos de publicidade que pode encontrar na rua",
     "it": "Vi siete mai chiesti quante pubblicità ci sono nelle nostre strade e strade? Con questa mappa è possibile trovare e aggiungere informazioni su tutte le caratteristiche pubblicitarie che si possono trovare sulla strada",
     "zh_Hans": "你是否曾经想过我们的街道和道路上有多少广告？通过这张地图，你可以查找并添加有关街道上所有广告特征的信息",
-    "uk": "Чи замислювалися ви будь-коли над тим, скільки реклами знаходиться на наших вулицях та дорогах? За допомогою цієї мапи ви можете знайти та додати інформацію про всі рекламні обʼєкти, які ви можете зустріти на вулиці"
+    "uk": "Чи замислювалися ви будь-коли над тим, скільки реклами знаходиться на наших вулицях та дорогах? За допомогою цієї мапи ви можете знайти та додати інформацію про всі рекламні обʼєкти, які ви можете зустріти на вулиці",
+    "ko": "길거리와 도로에 얼마나 많은 편의 시설물 있는지 생각해 보신 적 있나요? 우리 지도에서는 거리에서 발견할 수 있는 모든 시설물에 대한 정보를 찾고 추가할 수 있습니다"
   },
   "shortDescription": {
     "ca": "On puc trobar elements publicitaris?",
@@ -47,7 +49,8 @@
     "eu": "Non aurki ditzaket publizitate ezaugarriak?",
     "pl": "Gdzie mogę znaleźć obiekty reklamowe?",
     "zh_Hans": "我可以在哪里找到广告功能？",
-    "uk": "Де я можу знайти рекламні об'єкти?"
+    "uk": "Де я можу знайти рекламні об'єкти?",
+    "ko": "어디서 시설물을 찾을 수 있을까요?"
   },
   "icon": "./assets/themes/advertising/icon.svg",
   "credits": [
