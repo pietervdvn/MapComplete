@@ -144,13 +144,13 @@
             "import": {
                 "hasBeenImported": "이 객체는 추가되었습니다",
                 "howToTest": "테스트하려면 URL에 <b>test=true</b> 또는 <b>backend=osm-test</b>를 추가하세요. 변경사항은 콘솔에 출력됩니다. 실제로 가져오기 버튼을 활성화하려면 이 테마를 공식화하기 위한 PR을 열어주세요.",
-                "importTags": "이 요소는에 {tag}가 부여됩니다",
+                "importTags": "이 요소는에 {tags}가 부여됩니다",
                 "officialThemesOnly": "비공식 테마에서는 사고를 방지하기 위해 가져오기 버튼이 비활성화됩니다",
                 "wrongType": "이 요소는 경로나 길이 아니기 때문에 추가할 수 없습니다",
                 "wrongTypeToConflate": "이 요소는 경로나 길이 아니기 때문에, 통합할 수 없습니다",
                 "zoomInMore": "이 요소를 추가하기 위해서 확대하세요"
             },
-            "importTags": "이 요소는에 {tag}가 부여됩니다",
+            "importTags": "이 요소는에 {tags}가 부여됩니다",
             "intro": "데이터가 없는 영역을 클릭했습니다.<br/>",
             "layerNotEnabled": "기능을 추가하려면 레이어 {layer}를 먼저 활성화해야 합니다",
             "openLayerControl": "레이어 조정 상자 열기",

@@ -2732,7 +2732,7 @@
                     },
                     "3": {
                         "mappings": {
-                            "then": "{{description}} liefert maximal {{commonOutput}} A"
+                            "then": "{{description}} liefert maximal {{commonOutput}}"
                         },
                         "question": "Welche Leistung liefert ein einzelner Stecker des Typs {{description}}?",
                         "render": "{{description}} liefert maximal {canonical({{key}}:output)}"

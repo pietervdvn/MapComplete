@@ -2728,7 +2728,7 @@
                     },
                     "3": {
                         "mappings": {
-                            "then": "{{description}} levert een vermogen van maximaal {{commonOutput}} A"
+                            "then": "{{description}} levert een vermogen van maximaal {{commonOutput}}"
                         },
                         "question": "Welk vermogen levert een enkele stekker van type {{description}}?",
                         "render": "{{description}} levert een vermogen van maximaal {canonical({{key}}:output)}"

@@ -26,6 +26,7 @@
       ]
     }
   },
+  "minzoom": 13,
   "calculatedTags": [
     "_vending_count=feat.properties.vending.split(';').length"
   ],
