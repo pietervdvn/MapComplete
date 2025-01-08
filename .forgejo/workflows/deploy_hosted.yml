@@ -61,7 +61,7 @@ jobs:
         run: scp ${{ github.ref_name }}.zip hetzner:/root/staging/
 
       - name: unzipping remote file
-        run: ssh hetzner "cd /root/staging && unzip ${{ github.ref_name }}.zip && rm -rf /root/public/${{ github.ref_name }} && mv /root/staging/${{ github.ref_name }}/ /root/public/ && rm ${{ github.ref_name }}.zip"
+        run: ssh hetzner "cd /root/staging && rm -rf ${{ github.ref_name }} && unzip ${{ github.ref_name }}.zip && rm -rf /root/public/${{ github.ref_name }} && mv /root/staging/${{ github.ref_name }}/ /root/public/ && rm ${{ github.ref_name }}.zip"
 
           
 
