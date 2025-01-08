@@ -1,5 +1,6 @@
 import { Utils } from "../../Utils"
 import type { FeatureCollection } from "geojson"
+import ScriptUtils from "../../../scripts/ScriptUtils"
 
 export interface TagInfoStats {
     /**
@@ -39,12 +40,12 @@ export default class TagInfo {
         let url: string
         if (value) {
             url = `${this._backend}api/4/tag/stats?key=${encodeURIComponent(
-                key
+                key,
             )}&value=${encodeURIComponent(value)}`
         } else {
             url = `${this._backend}api/4/key/stats?key=${encodeURIComponent(key)}`
         }
-        return await Utils.downloadJsonCached<TagInfoStats>(url, 1000 * 60 * 60)
+        return await Utils.downloadJsonCached<TagInfoStats>(url, 1000 * 60 * 60 * 24)
     }
 
     /**
@@ -69,10 +70,10 @@ export default class TagInfo {
         }
         const countriesFC: FeatureCollection = await Utils.downloadJsonCached<FeatureCollection>(
             "https://download.geofabrik.de/index-v1-nogeom.json",
-            24 * 1000 * 60 * 60
+            24 * 1000 * 60 * 60,
         )
         TagInfo._geofabrikCountries = countriesFC.features.map(
-            (f) => <GeofabrikCountryProperties>f.properties
+            (f) => <GeofabrikCountryProperties>f.properties,
         )
         return TagInfo._geofabrikCountries
     }
@@ -98,7 +99,7 @@ export default class TagInfo {
     private static async getDistributionsFor(
         countryCode: string,
         key: string,
-        value?: string
+        value?: string,
     ): Promise<TagInfoStats> {
         if (!countryCode) {
             return undefined
@@ -110,30 +111,43 @@ export default class TagInfo {
         try {
             return await ti.getStats(key, value)
         } catch (e) {
-            console.warn("Could not fetch info for", countryCode, key, value, "due to", e)
+            console.warn("Could not fetch info from taginfo for", countryCode, key, value, "due to", e, "Taginfo country specific instance is ", ti._backend)
             return undefined
         }
     }
+
     private static readonly blacklist = ["VI", "GF", "PR"]
 
-    public static async getGlobalDistributionsFor(
+    /**
+     * Get a taginfo object for every supportedCountry. This statistic is handled by 'f' and written into the passed in object
+     * @param writeInto
+     * @param f
+     * @param key
+     * @param value
+     */
+    public static async getGlobalDistributionsFor<T>(
+        writeInto: Record<string, T>,
+        f: ((stats: TagInfoStats) => T),
         key: string,
-        value?: string
-    ): Promise<Record<string, TagInfoStats>> {
+        value?: string,
+    ): Promise<number> {
         const countriesAll = await this.geofabrikCountries()
         const countries = countriesAll
             .map((c) => c["iso3166-1:alpha2"]?.[0])
             .filter((c) => !!c && TagInfo.blacklist.indexOf(c) < 0)
-        const perCountry: Record<string, TagInfoStats> = {}
-        const results = await Promise.all(
-            countries.map((country) => TagInfo.getDistributionsFor(country, key, value))
-        )
-        for (let i = 0; i < countries.length; i++) {
-            const countryCode = countries[i]
-            if (results[i]) {
-                perCountry[countryCode] = results[i]
+
+        let downloaded = 0
+        for (const country of countries) {
+            if(writeInto[country] !== undefined){
+                continue
             }
+            const r = await TagInfo.getDistributionsFor(country, key, value)
+            if(r === undefined){
+                continue
+            }
+            downloaded ++
+            writeInto[country] = f(r)
         }
-        return perCountry
+        return downloaded
     }
 }

@@ -2,7 +2,7 @@ import known_layers from "../src/assets/generated/known_layers.json"
 import { LayerConfigJson } from "../src/Models/ThemeConfig/Json/LayerConfigJson"
 import { TagUtils } from "../src/Logic/Tags/TagUtils"
 import { Utils } from "../src/Utils"
-import { existsSync, readFileSync, writeFileSync } from "fs"
+import { copyFileSync, existsSync, readFileSync, writeFileSync } from "fs"
 import ScriptUtils from "./ScriptUtils"
 import TagRenderingConfig from "../src/Models/ThemeConfig/TagRenderingConfig"
 import { And } from "../src/Logic/Tags/And"
@@ -13,7 +13,7 @@ import TagInfo from "../src/Logic/Web/TagInfo"
 class Utilities {
     static mapValues<X extends string | number, T, TOut>(
         record: Record<X, T>,
-        f: (t: T) => TOut
+        f: (t: T) => TOut,
     ): Record<X, TOut> {
         const newR = <Record<X, TOut>>{}
         for (const x in record) {
@@ -26,7 +26,7 @@ class Utilities {
 class GenerateStats extends Script {
     async createOptimizationFile(includeTags = true) {
         ScriptUtils.fixUtils()
-        const layers = <LayerConfigJson[]>known_layers.layers
+        const layers = <LayerConfigJson[]>known_layers["layers"]
 
         const keysAndTags = new Map<string, Set<string>>()
 
@@ -77,10 +77,10 @@ class GenerateStats extends Script {
                             const count = tagData.data.find((item) => item.type === "all").count
                             tagTotal.get(key).set(value, count)
                             console.log(key + "=" + value, "-->", count)
-                        })
+                        }),
                     )
                 }
-            })
+            }),
         )
         writeFileSync(
             "./src/assets/key_totals.json",
@@ -92,8 +92,8 @@ class GenerateStats extends Script {
                     tags: Utils.MapToObj(tagTotal, (v) => Utils.MapToObj(v, (t) => t)),
                 },
                 null,
-                "  "
-            )
+                "  ",
+            ),
         )
     }
 
@@ -139,7 +139,7 @@ class GenerateStats extends Script {
 
     async createNameSuggestionIndexFile(basepath: string, type: "brand" | "operator" | string) {
         const path = basepath + type + ".json"
-        let allBrands = <Record<string, Record<string, number>>>{}
+        let allBrands: Record<string, Record<string, number>> = {}
         if (existsSync(path)) {
             allBrands = JSON.parse(readFileSync(path, "utf8"))
             console.log(
@@ -147,82 +147,65 @@ class GenerateStats extends Script {
                 Object.keys(allBrands).length,
                 " previously loaded " + type,
                 "from",
-                path
+                path,
             )
         }
-        let skipped = 0
+        const nsi = await NameSuggestionIndex.getNsiIndex()
         const allBrandNames: string[] = Utils.Dedup(
-            NameSuggestionIndex.allPossible(type).map((item) => item.tags[type])
+            nsi.allPossible(<any>type).map((item) => item.tags[type]),
         )
-        const missingBrandNames: string[] = []
-        for (let i = 0; i < allBrandNames.length; i++) {
-            const brand = allBrandNames[i]
-            if (!!allBrands[brand] && Object.keys(allBrands[brand]).length == 0) {
-                delete allBrands[brand]
-                console.log("Deleted", brand, "as no entries at all")
-            }
-            if (allBrands[brand] !== undefined) {
-                const max = Math.max(...Object.values(allBrands[brand]))
-                skipped++
-                if (skipped % 100 == 0) {
-                    console.warn("Busy; ", i + "/" + allBrandNames.length, "; skipped", skipped)
-                }
-                if (max < 0) {
-                    console.log("HMMMM:", allBrands[brand])
-                    delete allBrands[brand]
-                } else {
-                    continue
-                }
-            }
-            missingBrandNames.push(brand)
-        }
-        const batchSize = 101
-        for (let i = 0; i < missingBrandNames.length; i += batchSize) {
+        const batchSize = 50
+        for (let i = 0; i < allBrandNames.length; i += batchSize) {
             console.warn(
                 "Downloading",
                 batchSize,
                 "items: ",
-                i + "/" + missingBrandNames.length,
-                "; skipped",
-                skipped,
-                "total:",
-                allBrandNames.length
+                i + "/" + allBrandNames.length,
             )
-
-            const distributions = await Promise.all(
+            let downloaded = 0
+            await Promise.all(
                 Utils.TimesT(batchSize, async (j) => {
-                    await ScriptUtils.sleep(j * 250)
-                    return TagInfo.getGlobalDistributionsFor(type, missingBrandNames[i + j])
-                })
-            )
-            for (let j = 0; j < distributions.length; j++) {
-                const brand = missingBrandNames[i + j]
-                const distribution: Record<string, number> = Utilities.mapValues(
-                    distributions[j],
-                    (s) => s.data.find((t) => t.type === "all").count
-                )
-                allBrands[brand] = distribution
-            }
+                    const brand = allBrandNames[i + j]
+                    if (!allBrands[brand]) {
+                        allBrands[brand] = {}
+                    }
+                    const writeInto = allBrands[brand]
+                    const dloaded = await TagInfo.getGlobalDistributionsFor(
+                        writeInto, (stats) => stats.data.find((t) => t.type === "all").count,
+                        type, brand)
+                    downloaded += dloaded
+                }))
+            console.log("Downloaded ", downloaded, " values this batch")
             writeFileSync(path, JSON.stringify(allBrands), "utf8")
             console.log("Checkpointed", path)
         }
+        console.log("Written:", path)
         writeFileSync(path, JSON.stringify(allBrands), "utf8")
     }
 
     constructor() {
         super(
-            "Downloads stats on osmSource-tags and keys from tagInfo. There are two usecases with separate outputs:\n 1. To optimize the query before sending it to overpass (generates ./src/assets/key_totals.json) \n 2. To amend the Name Suggestion Index "
+            "Downloads stats on osmSource-tags and keys from tagInfo. There are two usecases with separate outputs:\n 1. To optimize the query before sending it to overpass (generates ./src/assets/key_totals.json) \n 2. To amend the Name Suggestion Index ",
         )
     }
 
     async main(_: string[]) {
-        const basepath = "./src/assets/generated/stats/"
-        await this.createOptimizationFile()
-
+        const target = "./public/assets/data/nsi/"
+        const basepath = target + "stats/"
+        {
+            const src = "./node_modules/name-suggestion-index/dist/"
+            const files = ["featureCollection.min.json", "nsi.min.json", "wikidata.min.json"]
+            console.log(process.cwd())
+            for (const file of files) {
+                console.log("Copying ", src + file, target + "/" + file)
+                copyFileSync(src + file, target + file)
+            }
+        }
         for (const type of ["operator", "brand"]) {
             await this.createNameSuggestionIndexFile(basepath, type)
             this.summarizeNSI(basepath + type + ".json", "./public/assets/data/nsi/stats/" + type)
         }
+        await this.createOptimizationFile()
     }
 }
 

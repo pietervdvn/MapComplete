@@ -1,6 +1,5 @@
-import * as nsiFeatures from "../../../node_modules/name-suggestion-index/dist/featureCollection.json"
 import { LocationConflation } from "@rapideditor/location-conflation"
-import type { Feature, MultiPolygon } from "geojson"
+import type { Feature, FeatureCollection, MultiPolygon } from "geojson"
 import { Utils } from "../../Utils"
 import * as turf from "@turf/turf"
 import { Mapping } from "../../Models/ThemeConfig/TagRenderingConfig"
@@ -64,7 +63,7 @@ export default class NameSuggestionIndex {
         >
     >
 
-    private static loco = new LocationConflation(nsiFeatures) // Some additional boundaries
+    private loco: LocationConflation // Some additional boundaries
 
     private _supportedTypes: string[]
 
@@ -77,10 +76,12 @@ export default class NameSuggestionIndex {
                     logos: { wikidata?: string; facebook?: string }
                 }
             >
-        >
+        >,
+        features: Readonly<FeatureCollection>
     ) {
         this.nsiFile = nsiFile
         this.nsiWdFile = nsiWdFile
+        this.loco = new LocationConflation(features)
     }
 
     private static inited: NameSuggestionIndex = undefined
@@ -89,12 +90,12 @@ export default class NameSuggestionIndex {
         if (NameSuggestionIndex.inited) {
             return NameSuggestionIndex.inited
         }
-        const [nsi, nsiWd] = await Promise.all(
-            ["assets/data/nsi/nsi.json", "assets/data/nsi/wikidata.min.json"].map((url) =>
+        const [nsi, nsiWd, features] = await Promise.all(
+            ["./assets/data/nsi/nsi.min.json", "./assets/data/nsi/wikidata.min.json", "./assets/data/nsi/featureCollection.min.json"].map((url) =>
                 Utils.downloadJsonCached(url, 1000 * 60 * 60 * 24 * 30)
             )
         )
-        NameSuggestionIndex.inited = new NameSuggestionIndex(<any>nsi, <any>nsiWd["wikidata"])
+        NameSuggestionIndex.inited = new NameSuggestionIndex(<any>nsi, <any>nsiWd["wikidata"], <any> features)
         return NameSuggestionIndex.inited
     }
 
@@ -351,7 +352,7 @@ export default class NameSuggestionIndex {
             const key = i.locationSet.include?.join(";") + "-" + i.locationSet.exclude?.join(";")
             const fromCache = NameSuggestionIndex.resolvedSets[key]
             const resolvedSet =
-                fromCache ?? NameSuggestionIndex.loco.resolveLocationSet(i.locationSet)
+                fromCache ?? this.loco.resolveLocationSet(i.locationSet)
             if (!fromCache) {
                 NameSuggestionIndex.resolvedSets[key] = resolvedSet
             }
