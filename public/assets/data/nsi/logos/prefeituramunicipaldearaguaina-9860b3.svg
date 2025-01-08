@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xml="http://www.w3.org/XML/1998/namespace" xml:space="preserve" id="svg559" width="200mm" height="200mm" fill-rule="evenodd" clip-rule="evenodd" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" viewBox="0 0 200 200">
+  <defs id="defs560">
+    <style id="style561" type="text/css">
+      .fil3{fill:white}
+    </style>
+  </defs>
+  <g id="g583">
+    <circle id="_22308416" cx="100" cy="100" r="100" fill="#3f7fe6" stroke="none" font-size="12"/>
+    <path id="_22307744" fill="#000" fill-opacity="1" stroke="none" d="M130.623 116.674v37.387h13.645v-37.387l19.922-20.4671-4.913-5.4579-15.009 12.553V83.1078h-13.645v20.1942l-13.645-12.553-4.912 5.4579z" font-size="12"/>
+    <path id="_22307360" fill="#ffff73" fill-opacity="1" stroke="none" d="M93.0856 116.674v37.387H106.73v-37.387l19.922-20.4671-4.912-5.4579-15.01 12.553V83.1078H93.0856v20.1942L79.4407 90.749l-4.9125 5.4579z" font-size="12"/>
+    <path id="_22306976" fill="#fff" fill-opacity="1" stroke="none" d="M55.4256 116.674v37.387h13.6449v-37.387l19.9216-20.4671-4.9122-5.4579-15.0094 12.553V83.1078H55.4256v20.1942L41.7807 90.749l-4.9124 5.4579z" class="fil3" font-size="12"/>
+    <path id="_22306400" fill="#fff" fill-opacity="1" stroke="none" d="m43.5569 73.8293 56.9891-29.7459 56.99 29.7459z" class="fil3" font-size="12"/>
+  </g>
+</svg>
