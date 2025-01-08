@@ -152,9 +152,6 @@ export default class DetermineTheme {
             json = {
                 id: json.id,
                 description: json.description,
-                descriptionTail: {
-                    en: "<div class='alert'>Layer only mode.</div> The loaded custom theme actually isn't a custom theme, but only contains a layer.",
-                },
                 icon,
                 title: json.name,
                 layers: [json],

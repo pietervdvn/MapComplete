@@ -90,7 +90,7 @@ export default class ThemeConfig implements ThemeInformation {
     public readonly definitionRaw?: string
 
     private readonly layersDict: Map<string, LayerConfig>
-    private readonly source: ThemeConfigJson
+    public readonly source: ThemeConfigJson
     public readonly enableCache: boolean
 
     constructor(
