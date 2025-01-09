@@ -9419,6 +9419,13 @@
                 },
                 "question": "Moet je je eigen toiletpapier meenemen naar deze toilet?"
             },
+            "toilet-reviews": {
+                "render": {
+                    "special": {
+                        "question": "Hoe goed is deze toilet?"
+                    }
+                }
+            },
             "toilets-changing-table": {
                 "mappings": {
                     "0": {

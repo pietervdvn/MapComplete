@@ -10308,6 +10308,9 @@
                     },
                     "6": {
                         "then": "This is a skatepark"
+                    },
+                    "7": {
+                        "then": "This is a horse riding arena"
                     }
                 },
                 "question": "Which sport can be played here?",
@@ -11560,6 +11563,13 @@
                     }
                 },
                 "question": "Does one have to bring their own toilet paper to this toilet?"
+            },
+            "toilet-reviews": {
+                "render": {
+                    "special": {
+                        "question": "How would you rate this toilet?"
+                    }
+                }
             },
             "toilets-changing-table": {
                 "mappings": {

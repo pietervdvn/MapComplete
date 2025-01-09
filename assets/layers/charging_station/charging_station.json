@@ -2277,10 +2277,10 @@
           "mappings": {
             "if": "{{key}}:output={{commonOutput}}",
             "then": {
-              "en": "{{description}} outputs at most {{commonOutput}} A",
-              "nl": "{{description}} levert een vermogen van maximaal {{commonOutput}} A",
-              "de": "{{description}} liefert maximal {{commonOutput}} A",
-              "es": "{{description}} entrega como máximo {{commonOutput}} A"
+              "en": "{{description}} outputs at most {{commonOutput}}",
+              "nl": "{{description}} levert een vermogen van maximaal {{commonOutput}}",
+              "de": "{{description}} liefert maximal {{commonOutput}}",
+              "es": "{{description}} entrega como máximo {{commonOutput}}"
             }
           },
           "condition": {

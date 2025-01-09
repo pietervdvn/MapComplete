@@ -10159,6 +10159,9 @@
                     },
                     "6": {
                         "then": "Este es un skatepark"
+                    },
+                    "7": {
+                        "then": "Esta es una pista ecuestre"
                     }
                 },
                 "question": "¿Qué deporte se puede practicar aquí?",
