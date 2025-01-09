@@ -41,14 +41,14 @@ interface NSIEntry {
  * Represents a single brand/operator/flagpole/...
  */
 export interface NSIItem {
-    displayName: string
-    id: string
+    readonly displayName: string
+    readonly id: string
     locationSet: {
         include: string[]
         exclude: string[]
     }
-    tags: Record<string, string>
-    fromTemplate?: boolean
+    readonly  tags: Readonly<Record<string, string>>
+    readonly  fromTemplate?: boolean
 }
 
 export default class NameSuggestionIndex {
@@ -77,7 +77,7 @@ export default class NameSuggestionIndex {
                 }
             >
         >,
-        features: Readonly<FeatureCollection>
+        features: Readonly<FeatureCollection>,
     ) {
         this.nsiFile = nsiFile
         this.nsiWdFile = nsiWdFile
@@ -92,10 +92,10 @@ export default class NameSuggestionIndex {
         }
         const [nsi, nsiWd, features] = await Promise.all(
             ["./assets/data/nsi/nsi.min.json", "./assets/data/nsi/wikidata.min.json", "./assets/data/nsi/featureCollection.min.json"].map((url) =>
-                Utils.downloadJsonCached(url, 1000 * 60 * 60 * 24 * 30)
-            )
+                Utils.downloadJsonCached(url, 1000 * 60 * 60 * 24 * 30),
+            ),
         )
-        NameSuggestionIndex.inited = new NameSuggestionIndex(<any>nsi, <any>nsiWd["wikidata"], <any> features)
+        NameSuggestionIndex.inited = new NameSuggestionIndex(<any>nsi, <any>nsiWd["wikidata"], <any>features)
         return NameSuggestionIndex.inited
     }
 
@@ -126,13 +126,13 @@ export default class NameSuggestionIndex {
                 try {
                     return Utils.downloadJsonCached<Record<string, number>>(
                         `./assets/data/nsi/stats/${type}.${c.toUpperCase()}.json`,
-                        24 * 60 * 60 * 1000
+                        24 * 60 * 60 * 1000,
                     )
                 } catch (e) {
                     console.error("Could not fetch " + type + " statistics due to", e)
                     return undefined
                 }
-            })
+            }),
         )
         stats = Utils.NoNull(stats)
         if (stats.length === 1) {
@@ -173,17 +173,17 @@ export default class NameSuggestionIndex {
     public async generateMappings(
         type: string,
         tags: Record<string, string>,
-        country: string[],
+        country?: string[],
         location?: [number, number],
         options?: {
             /**
              * If set, sort by frequency instead of alphabetically
              */
             sortByFrequency: boolean
-        }
+        },
     ): Promise<Mapping[]> {
         const mappings: (Mapping & { frequency: number })[] = []
-        const frequencies = await NameSuggestionIndex.fetchFrequenciesFor(type, country)
+        const frequencies = country !== undefined ? await NameSuggestionIndex.fetchFrequenciesFor(type, country) : {}
         for (const key in tags) {
             if (key.startsWith("_")) {
                 continue
@@ -194,7 +194,7 @@ export default class NameSuggestionIndex {
                 key,
                 value,
                 country.join(";"),
-                location
+                location,
             )
             if (!actualBrands) {
                 continue
@@ -202,8 +202,7 @@ export default class NameSuggestionIndex {
             for (const nsiItem of actualBrands) {
                 const tags = nsiItem.tags
                 const frequency = frequencies[nsiItem.displayName]
-                const logos = this.nsiWdFile[nsiItem.tags[type + ":wikidata"]]?.logos
-                const iconUrl = logos?.facebook ?? logos?.wikidata
+                const iconUrl = this.getIconExternalUrl(nsiItem, type)
                 const hasIcon = iconUrl !== undefined
                 let icon = undefined
                 if (hasIcon) {
@@ -240,7 +239,7 @@ export default class NameSuggestionIndex {
     }
 
     public supportedTags(
-        type: "operator" | "brand" | "flag" | "transit" | string
+        type: "operator" | "brand" | "flag" | "transit" | string,
     ): Record<string, string[]> {
         const tags: Record<string, string[]> = {}
         const keys = Object.keys(this.nsiFile.nsi)
@@ -263,7 +262,7 @@ export default class NameSuggestionIndex {
      * Returns a list of all brands/operators
      * @param type
      */
-    public allPossible(type: "brand" | "operator"): NSIItem[] {
+    public allPossible(type: string): NSIItem[] {
         const options: NSIItem[] = []
         const tags = this.supportedTags(type)
         for (const osmKey in tags) {
@@ -285,10 +284,10 @@ export default class NameSuggestionIndex {
         type: string,
         tags: { key: string; value: string }[],
         country: string = undefined,
-        location: [number, number] = undefined
+        location: [number, number] = undefined,
     ): NSIItem[] {
         return tags.flatMap((tag) =>
-            this.getSuggestionsForKV(type, tag.key, tag.value, country, location)
+            this.getSuggestionsForKV(type, tag.key, tag.value, country, location),
         )
     }
 
@@ -311,7 +310,7 @@ export default class NameSuggestionIndex {
         key: string,
         value: string,
         country: string = undefined,
-        location: [number, number] = undefined
+        location: [number, number] = undefined,
     ): NSIItem[] {
         const path = `${type}s/${key}/${value}`
         const entry = this.nsiFile.nsi[path]
@@ -375,9 +374,29 @@ export default class NameSuggestionIndex {
         center: [number, number],
         options: {
             sortByFrequency: boolean
-        }
+        },
     ): Promise<Mapping[]> {
         const nsi = await NameSuggestionIndex.getNsiIndex()
         return nsi.generateMappings(key, tags, country, center, options)
+    }
+
+
+    /**
+     * Where can we find the URL on the world wide web?
+     * Probably facebook! Don't use in the website, might expose people
+     * @param nsiItem
+     * @param type
+     */
+    private getIconExternalUrl(nsiItem: NSIItem, type: string): string {
+        const logos = this.nsiWdFile[nsiItem.tags[type + ":wikidata"]]?.logos
+        return logos?.facebook ?? logos?.wikidata
+    }
+
+    public getIconUrl(nsiItem: NSIItem, type: string) {
+        let icon = "./assets/data/nsi/logos/" + nsiItem.id
+        if (this.isSvg(nsiItem, type)) {
+            icon = icon + ".svg"
+        }
+        return icon
     }
 }

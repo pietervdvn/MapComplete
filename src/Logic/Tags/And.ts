@@ -130,39 +130,38 @@ export class And extends TagsFilter {
      * t1.shadows(t2) // => false
      * t2.shadows(t0) // => false
      * t2.shadows(t1) // => false
+     *
+     *
+     * const t1 = new And([new Tag("shop","clothes"), new Or([new Tag("brand","XYZ"),new Tag("brand:wikidata","Q1234")])])
+     * const t2 = new And([new RegexTag("shop","mall",true), new Or([TagUtils.Tag("shop~*"), new Tag("craft","shoemaker")])])
+     * t1.shadows(t2) // => true
      */
     shadows(other: TagsFilter): boolean {
-        if (!(other instanceof And)) {
-            return false
-        }
-
+        const phrases: TagsFilter[] = other instanceof And ? other.and : [other];
+        // A phrase might be shadowed by a certain subsection. We keep track of this here
+        const shadowedOthers = phrases.map(() => false)
         for (const selfTag of this.and) {
-            let matchFound = false
-            for (const otherTag of other.and) {
-                matchFound = selfTag.shadows(otherTag)
-                if (matchFound) {
-                    break
+            let shadowsSome = false;
+            let shadowsAll = true;
+            for (let i = 0; i < phrases.length; i++){
+                const otherTag = phrases[i]
+                const doesShadow = selfTag.shadows(otherTag)
+                if(doesShadow){
+                    shadowedOthers[i] = true;
                 }
+                shadowsSome ||= doesShadow;
+                shadowsAll &&= doesShadow;
             }
-            if (!matchFound) {
-                return false
+            // If A => X and A => Y, then
+            // A&B implies X&Y. We discovered an A that implies all needed values
+            if (shadowsAll) {
+                return true;
+            }
+            if (!shadowsSome) {
+                return false;
             }
         }
-
-        for (const otherTag of other.and) {
-            let matchFound = false
-            for (const selfTag of this.and) {
-                matchFound = selfTag.shadows(otherTag)
-                if (matchFound) {
-                    break
-                }
-            }
-            if (!matchFound) {
-                return false
-            }
-        }
-
-        return true
+        return !shadowedOthers.some(v => !v);
     }
 
     usedKeys(): string[] {
@@ -182,11 +181,13 @@ export class And extends TagsFilter {
     }
 
     /**
-     * IN some contexts, some expressions can be considered true, e.g.
+     * In some contexts, some expressions can be considered true, e.g.
      * (X=Y | (A=B & X=Y))
      *        ^---------^
      * When the evaluation hits (A=B & X=Y), we know _for sure_ that X=Y does _not_ match, as it would have matched the first clause otherwise.
-     * This means that the entire 'AND' is considered FALSE
+     * This means that the entire 'AND' is considered FALSE in this case; but this is already handled by the first half.
+     * In other words: this long expression is equivalent to (A=B | X=Y).
+     *
      *
      * @return only phrases that should be kept.
      * @param knownExpression The expression which is known in the subexpression and for which calculations can be done
@@ -204,13 +205,14 @@ export class And extends TagsFilter {
      * const expr = <And> TagUtils.Tag({and: ["sport=climbing", {or:["club~*", "office~*"]}]} )
      * expr.removePhraseConsideredKnown(new Tag("club","climbing"), false) // => expr
      */
-    removePhraseConsideredKnown(
+    public removePhraseConsideredKnown(
         knownExpression: TagsFilter,
         value: boolean
     ): (TagsFilterClosed & OptimizedTag) | boolean {
         const newAnds: TagsFilter[] = []
         for (const tag of this.and) {
             if (tag instanceof And) {
+                console.trace("Improper optimization")
                 throw (
                     "Optimize expressions before using removePhraseConsideredKnown. Found an AND in an AND: " +
                     this.asHumanString()

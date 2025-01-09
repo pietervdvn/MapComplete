@@ -4,6 +4,8 @@ import { TagConfigJson } from "../../Models/ThemeConfig/Json/TagConfigJson"
 import { ExpressionSpecification } from "maplibre-gl"
 import { RegexTag } from "./RegexTag"
 import { OptimizedTag } from "./TagTypes"
+import { Or } from "./Or"
+import { And } from "./And"
 
 export class Tag extends TagsFilter {
     public key: string
@@ -147,6 +149,12 @@ export class Tag extends TagsFilter {
             if (other.key === this.key || !other.invert) {
                 return other.matchesProperties({ [this.key]: this.value })
             }
+        }
+        if(other instanceof Or){
+            return other.or.some(other => this.shadows(other))
+        }
+        if(other instanceof And){
+            return !other.and.some(other => !this.shadows(other))
         }
         return false
     }

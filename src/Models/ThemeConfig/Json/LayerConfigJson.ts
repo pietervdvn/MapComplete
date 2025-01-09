@@ -601,4 +601,9 @@ export interface LayerConfigJson {
      * group: hidden
      */
     snapName?: Translatable
+
+    /**
+     * group: hidden
+     */
+    "#dont-translate": "*"
 }

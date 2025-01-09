@@ -1,9 +1,14 @@
 import Script from "./Script"
 import NameSuggestionIndex, { NSIItem } from "../src/Logic/Web/NameSuggestionIndex"
 import * as nsiWD from "../node_modules/name-suggestion-index/dist/wikidata.min.json"
-import { existsSync, readFileSync, unlinkSync, writeFileSync } from "fs"
+import { existsSync, mkdirSync, readFileSync, unlinkSync, writeFileSync } from "fs"
 import ScriptUtils from "./ScriptUtils"
 import { Utils } from "../src/Utils"
+import { LayerConfigJson } from "../src/Models/ThemeConfig/Json/LayerConfigJson"
+import FilterConfigJson, { FilterConfigOptionJson } from "../src/Models/ThemeConfig/Json/FilterConfigJson"
+import { TagConfigJson } from "../src/Models/ThemeConfig/Json/TagConfigJson"
+import { TagUtils } from "../src/Logic/Tags/TagUtils"
+import { And } from "../src/Logic/Tags/And"
 
 class DownloadNsiLogos extends Script {
     constructor() {
@@ -43,7 +48,7 @@ class DownloadNsiLogos extends Script {
             await ScriptUtils.DownloadFileTo(logos.facebook, path)
             // Validate
             const content = readFileSync(path, "utf8")
-            if (content.startsWith('{"error"')) {
+            if (content.startsWith("{\"error\"")) {
                 unlinkSync(path)
                 console.error("Attempted to fetch", logos.facebook, " but this gave an error")
             } else {
@@ -86,12 +91,8 @@ class DownloadNsiLogos extends Script {
         return false
     }
 
-    async main(): Promise<void> {
-        await this.downloadFor("operator")
-        await this.downloadFor("brand")
-    }
 
-    async downloadFor(type: "brand" | "operator"): Promise<void> {
+    async downloadFor(type: string): Promise<void> {
         const nsi = await NameSuggestionIndex.getNsiIndex()
         const items = nsi.allPossible(type)
         const basePath = "./public/assets/data/nsi/logos/"
@@ -109,7 +110,7 @@ class DownloadNsiLogos extends Script {
                         downloadCount++
                     }
                     return downloaded
-                })
+                }),
             )
             for (let j = 0; j < results.length; j++) {
                 let didDownload = results[j]
@@ -124,6 +125,63 @@ class DownloadNsiLogos extends Script {
             }
         }
     }
+
+    private async generateRendering(type: string) {
+        const nsi = await NameSuggestionIndex.getNsiIndex()
+        const items = nsi.allPossible(type)
+        const brandPrefix = [type, "name", "alt_name", "operator","brand"]
+        const filterOptions: FilterConfigOptionJson[] = items.map(item => {
+            let brandDetection: string[] = []
+            let required: string[] = []
+            const tags: Record<string, string> = item.tags
+            for (const k in tags) {
+                if (brandPrefix.some(br => k === br || k.startsWith(br + ":"))) {
+                    brandDetection.push(k + "=" + tags[k])
+                } else {
+                    required.push(k + "=" + tags[k])
+                }
+            }
+            const osmTags = <TagConfigJson>TagUtils.optimzeJson({ and: [...required, { or: brandDetection }] })
+            return ({
+                question: item.displayName,
+                icon: nsi.getIconUrl(item, type),
+                osmTags,
+            })
+        })
+
+        const config: LayerConfigJson = {
+            "#dont-translate": "*",
+            id: "nsi_" + type,
+            source: "special:library",
+            description: {
+                en: "Exposes part of the NSI to reuse in other themes, e.g. for rendering",
+            },
+            pointRendering: null,
+            filter: [
+               <any> {
+                    id: type,
+                    strict: true,
+                    options: [{question: type}, ...filterOptions],
+                },
+            ],
+            allowMove: false,
+        }
+        const path = "./assets/layers/nsi_" + type
+        mkdirSync(path, { recursive: true })
+        writeFileSync(path + "/nsi_" + type + ".json", JSON.stringify(config, null, "  "))
+        console.log("Written", path)
+    }
+
+    async main(): Promise<void> {
+        const nsi = await NameSuggestionIndex.getNsiIndex()
+        const types = ["brand", "operator"]
+        for (const type of types) {
+            await this.generateRendering(type)
+            // await this.downloadFor(type)
+        }
+    }
+
+
 }
 
 new DownloadNsiLogos().run()
