@@ -497,6 +497,8 @@ class LayerOverviewUtils extends Script {
             priviliged.delete(key)
         })
 
+
+
         // These two get a free pass
         priviliged.delete("summary")
         priviliged.delete("last_click")
@@ -527,7 +529,7 @@ class LayerOverviewUtils extends Script {
             writeFileSync(
                 "./src/assets/generated/known_layers.json",
                 JSON.stringify({
-                    layers: Array.from(sharedLayers.values()).filter((l) => l.id !== "favourite"),
+                    layers: Array.from(sharedLayers.values()).filter((l) => !(l["#no-index"] === "yes")),
                 })
             )
         }

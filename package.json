@@ -95,7 +95,7 @@
     "reset:translations": "vite-node scripts/generateTranslations.ts -- --ignore-weblate",
     "generate:layouts": "vite-node scripts/generateLayouts.ts",
     "generate:docs": "rm -rf Docs/Themes/* && rm -rf Docs/Layers/* && rm -rf Docs/TagInfo && mkdir Docs/TagInfo && export NODE_OPTIONS=\"--max-old-space-size=16000\" && vite-node scripts/generateDocs.ts && vite-node scripts/generateTaginfoProjectFiles.ts",
-    "generate:layeroverview": "export NODE_OPTIONS=\"--max-old-space-size=8192\" && vite-node scripts/generateLayerOverview.ts",
+    "generate:layeroverview": "export NODE_OPTIONS=\"--max-old-space-size=16000\" && vite-node scripts/generateLayerOverview.ts",
     "generate:mapcomplete-changes-theme": "export NODE_OPTIONS=\"--max-old-space-size=8192\" && vite-node scripts/generateLayerOverview.ts -- --generate-change-map",
     "refresh:layeroverview": "export NODE_OPTIONS=\"--max-old-space-size=8192\" && vite-node scripts/generateLayerOverview.ts -- --force",
     "generate:licenses": "vite-node scripts/generateLicenseInfo.ts -- --no-fail",

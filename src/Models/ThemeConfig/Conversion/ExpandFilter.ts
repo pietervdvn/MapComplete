@@ -36,11 +36,8 @@ export class PruneFilters extends DesugaringStep<LayerConfigJson>{
             if(!option.osmTags){
                 return option
             }
-            let basetags: TagsFilter = <TagsFilter> And.construct([TagUtils.Tag(option.osmTags)]).optimize()
-            if(basetags instanceof And){
-                basetags = <TagsFilter> basetags.removePhraseConsideredKnown(sourceTags, true)
-            }
-            return {...option, osmTags: basetags.asJson()}
+            let basetags = TagUtils.Tag(option.osmTags)
+            return {...option, osmTags: (<TagsFilter>TagUtils.removeKnownParts(basetags ,sourceTags)).asJson()}
         })
         const countAfter = newOptions.length
         if(countAfter !== countBefore){

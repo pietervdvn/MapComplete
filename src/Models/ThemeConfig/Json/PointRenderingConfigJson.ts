@@ -4,8 +4,16 @@ import { TagConfigJson } from "./TagConfigJson"
 export interface IconConfigJson {
     /**
      * question: What icon should be used?
+     *
+     * To reuse icons from a different layer of a library:
+     * - The library layer has, within tagRenderings one which will output the URL of the image (e.g. mappings: {"if": "shop=xyz", then: "./assets/icons/shop_xyz.png"})
+     * - Use "layer_id.tagrendering_id"
+     *
+     * Note that if you reuse icons from a different icon set, you'll probably want to use `override` to set a default rendering
+     *
+     *
      * types: <span class="text-lg font-bold">Use a different icon depending on the value of some attributes</span> ; icon
-     * suggestions: return Constants.defaultPinIcons.map(i => ({if: "value="+i, then: i, icon: i}))
+     * suggestions: return [ "nsi_brand.icon", "nsi_operator.icon", "id_presets.shop_rendering", ...Constants.defaultPinIcons.map(i => ({if: "value="+i, then: i, icon: i}))]
      */
     icon: string | MinimalTagRenderingConfigJson | { builtin: string; override: any }
     /**

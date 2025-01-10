@@ -6,6 +6,8 @@ import { Mapping } from "../../Models/ThemeConfig/TagRenderingConfig"
 import { Tag } from "../Tags/Tag"
 import { TypedTranslation } from "../../UI/i18n/Translation"
 import { RegexTag } from "../Tags/RegexTag"
+import { TagConfigJson } from "../../Models/ThemeConfig/Json/TagConfigJson"
+import { TagUtils } from "../Tags/TagUtils"
 
 /**
  * Main name suggestion index file
@@ -52,6 +54,7 @@ export interface NSIItem {
 }
 
 export default class NameSuggestionIndex {
+
     public static readonly supportedTypes = ["brand", "flag", "operator", "transit"] as const
     private readonly nsiFile: Readonly<NSIFile>
     private readonly nsiWdFile: Readonly<
@@ -398,5 +401,28 @@ export default class NameSuggestionIndex {
             icon = icon + ".svg"
         }
         return icon
+    }
+    private static readonly brandPrefix = ["name", "alt_name", "operator","brand"] as const
+
+    /**
+     * An NSI-item might have tags such as `name=X`, `alt_name=brand X`,  `brand=X`, `brand:wikidata`, `shop=Y`, `service:abc=yes`
+     * Many of those tags are all added, but having only one of them is a good indication that it should match this item.
+     *
+     * This method is a heuristic which attempts to move all the brand-related tags into an `or` but still requiring the `shop` and other tags
+     *
+     * (More of an extension method on NSIItem)
+     */
+    static asFilterTags(item: NSIItem): string | { and: TagConfigJson[] } | { or: TagConfigJson[] } {
+        let brandDetection: string[] = []
+        let required: string[] = []
+        const tags: Record<string, string> = item.tags
+        for (const k in tags) {
+            if (NameSuggestionIndex.brandPrefix.some(br => k === br || k.startsWith(br + ":"))) {
+                brandDetection.push(k + "=" + tags[k])
+            } else {
+                required.push(k + "=" + tags[k])
+            }
+        }
+        return <TagConfigJson>TagUtils.optimzeJson({ and: [...required, { or: brandDetection }] })
     }
 }

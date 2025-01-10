@@ -109,7 +109,7 @@
         },
         {
           "icon": {
-            "builtin": "id_presets.shop_rendering",
+            "builtin": "nsi_brand.icon",
             "override": {
               "render": "./assets/layers/id_presets/maki-shop.svg",
               "+mappings": [

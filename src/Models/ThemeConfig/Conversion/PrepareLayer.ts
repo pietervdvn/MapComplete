@@ -159,11 +159,15 @@ class ExpandTagRendering extends Conversion<
         ctx: ConversionContext
     ): QuestionableTagRenderingConfigJson[] {
         const trs = this.convertOnce(spec, ctx)
-
         const result = []
+        if(!Array.isArray(trs)){
+            ctx.err("Result of lookup for "+spec+" is not iterable; got "+trs)
+            return undefined
+        }
         for (const tr of trs) {
             if (typeof tr === "string" || tr["builtin"] !== undefined) {
                 const stable = this.convert(tr, ctx.inOperation("recursive_resolve"))
+                    .map(tr => this.pruneMappings(tr, ctx))
                 result.push(...stable)
                 if (this._options?.addToContext) {
                     for (const tr of stable) {
@@ -179,6 +183,40 @@ class ExpandTagRendering extends Conversion<
         }
 
         return result
+    }
+
+    private pruneMappings(tagRendering: QuestionableTagRenderingConfigJson, ctx: ConversionContext): QuestionableTagRenderingConfigJson{
+        if(!tagRendering["strict"]){
+            return tagRendering
+        }
+        const before = tagRendering.mappings?.length ?? 0
+
+        const alwaysTags = TagUtils.Tag(this._self.source["osmTags"])
+        const newMappings = tagRendering.mappings?.filter(mapping => {
+            const condition = TagUtils.Tag( mapping.if)
+            return condition.shadows(alwaysTags);
+
+        }).map(mapping => {
+            const newIf =TagUtils.removeKnownParts(
+                TagUtils.Tag(mapping.if), alwaysTags            )
+            if(typeof  newIf === "boolean"){
+                throw "Invalid removeKnownParts"
+            }
+            return {
+                ...mapping,
+                if: newIf.asJson()
+            }
+        })
+        const after = newMappings?.length ?? 0
+        if(before - after > 0){
+            ctx.info(`Pruned mappings for ${tagRendering.id}, from ${before} to ${after} (removed ${before - after})`)
+        }
+        const tr = {
+            ...tagRendering,
+            mappings: newMappings
+        }
+        delete tr["strict"]
+        return tr
     }
 
     private lookup(name: string, ctx: ConversionContext): TagRenderingConfigJson[] | undefined {
@@ -285,41 +323,40 @@ class ExpandTagRendering extends Conversion<
         const state = this._state
 
         if (typeof tr === "string") {
-            let lookup
             if (this._state.tagRenderings !== null) {
-                lookup = this.lookup(tr, ctx)
+                const lookup = this.lookup(tr, ctx)
+                if(lookup){
+                    return lookup
+                }
             }
-            if (lookup === undefined) {
-                if (
-                    this._state.sharedLayers?.size > 0 &&
-                    ctx.path.at(-1) !== "icon" &&
-                    !ctx.path.find((p) => p === "pointRendering")
-                ) {
-                    ctx.warn(
-                        `A literal rendering was detected: ${tr}
+            if (
+                this._state.sharedLayers?.size > 0 &&
+                ctx.path.at(-1) !== "icon" &&
+                !ctx.path.find((p) => p === "pointRendering")
+            ) {
+                ctx.warn(
+                    `A literal rendering was detected: ${tr}
                       Did you perhaps forgot to add a layer name as 'layername.${tr}'? ` +
-                            Array.from(state.sharedLayers.keys()).join(", ")
-                    )
-                }
-
-                if (this._options?.noHardcodedStrings && this._state?.sharedLayers?.size > 0) {
-                    ctx.err(
-                        "Detected an invocation to a builtin tagRendering, but this tagrendering was not found: " +
-                            tr +
-                            " \n    Did you perhaps forget to add the layer as prefix, such as `icons." +
-                            tr +
-                            "`? "
-                    )
-                }
-
-                return [
-                    <any>{
-                        render: tr,
-                        id: tr.replace(/[^a-zA-Z0-9]/g, ""),
-                    },
-                ]
+                    Array.from(state.sharedLayers.keys()).join(", "),
+                )
             }
-            return lookup
+
+            if (this._options?.noHardcodedStrings && this._state?.sharedLayers?.size > 0) {
+                ctx.err(
+                    "Detected an invocation to a builtin tagRendering, but this tagrendering was not found: " +
+                    tr +
+                    " \n    Did you perhaps forget to add the layer as prefix, such as `icons." +
+                    tr +
+                    "`? ",
+                )
+            }
+
+            return [
+                <any>{
+                    render: tr,
+                    id: tr.replace(/[^a-zA-Z0-9]/g, ""),
+                },
+            ]
         }
 
         if (tr["builtin"] !== undefined) {
@@ -356,6 +393,9 @@ class ExpandTagRendering extends Conversion<
                     let candidates = Array.from(state.tagRenderings.keys())
                     if (name.indexOf(".") > 0) {
                         const [layerName] = name.split(".")
+                        if(layerName === undefined){
+                            ctx.err("Layername is undefined", name)
+                        }
                         let layer = state.sharedLayers.get(layerName)
                         if (layerName === this._self?.id) {
                             layer = this._self
@@ -363,7 +403,7 @@ class ExpandTagRendering extends Conversion<
                         if (layer === undefined) {
                             const candidates = Utils.sortedByLevenshteinDistance(
                                 layerName,
-                                Array.from(state.sharedLayers.keys()),
+                                Utils.NoNull(Array.from(state.sharedLayers.keys())),
                                 (s) => s
                             )
                             if (state.sharedLayers.size === 0) {
@@ -1017,7 +1057,8 @@ class ExpandIconBadges extends DesugaringStep<PointRenderingConfigJson> {
 class PreparePointRendering extends Fuse<PointRenderingConfigJson> {
     constructor(state: DesugaringContext, layer: LayerConfigJson) {
         super(
-            "Prepares point renderings by expanding 'icon' and 'iconBadges'",
+            "Prepares point renderings by expanding 'icon' and 'iconBadges'." +
+            " A tagRendering from the host tagRenderings will be substituted in",
             new On(
                 "marker",
                 new Each(

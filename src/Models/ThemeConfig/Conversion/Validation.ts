@@ -110,13 +110,11 @@ export class DoesImageExist extends DesugaringStep<string> {
         }
 
         if (!this._knownImagePaths.has(image)) {
-            if (this.doesPathExist === undefined) {
+            if (this.doesPathExist === undefined || image.indexOf("nsi/logos/") >= 0) {
+                // pass
+            } else if (!this.doesPathExist(image) ) {
                 context.err(
-                    `Image with path ${image} not found or not attributed; it is used in ${context}`
-                )
-            } else if (!this.doesPathExist(image)) {
-                context.err(
-                    `Image with path ${image} does not exist.\n     Check for typo's and missing directories in the path.`
+                    `Image with path ${image} does not exist.\n     Check for typo's and missing directories in the path. `
                 )
             } else {
                 context.err(

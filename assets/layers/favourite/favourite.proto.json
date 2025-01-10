@@ -1,5 +1,6 @@
 {
   "#":"no-translations",
+  "#no-index": "yes",
   "#dont-translate": "*",
   "#filter": "no-auto",
   "pointRendering": [

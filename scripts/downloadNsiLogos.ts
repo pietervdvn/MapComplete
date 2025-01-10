@@ -5,10 +5,9 @@ import { existsSync, mkdirSync, readFileSync, unlinkSync, writeFileSync } from "
 import ScriptUtils from "./ScriptUtils"
 import { Utils } from "../src/Utils"
 import { LayerConfigJson } from "../src/Models/ThemeConfig/Json/LayerConfigJson"
-import FilterConfigJson, { FilterConfigOptionJson } from "../src/Models/ThemeConfig/Json/FilterConfigJson"
-import { TagConfigJson } from "../src/Models/ThemeConfig/Json/TagConfigJson"
+import { FilterConfigOptionJson } from "../src/Models/ThemeConfig/Json/FilterConfigJson"
 import { TagUtils } from "../src/Logic/Tags/TagUtils"
-import { And } from "../src/Logic/Tags/And"
+import { TagRenderingConfigJson } from "../src/Models/ThemeConfig/Json/TagRenderingConfigJson"
 
 class DownloadNsiLogos extends Script {
     constructor() {
@@ -129,39 +128,61 @@ class DownloadNsiLogos extends Script {
     private async generateRendering(type: string) {
         const nsi = await NameSuggestionIndex.getNsiIndex()
         const items = nsi.allPossible(type)
-        const brandPrefix = [type, "name", "alt_name", "operator","brand"]
         const filterOptions: FilterConfigOptionJson[] = items.map(item => {
-            let brandDetection: string[] = []
-            let required: string[] = []
-            const tags: Record<string, string> = item.tags
-            for (const k in tags) {
-                if (brandPrefix.some(br => k === br || k.startsWith(br + ":"))) {
-                    brandDetection.push(k + "=" + tags[k])
-                } else {
-                    required.push(k + "=" + tags[k])
-                }
-            }
-            const osmTags = <TagConfigJson>TagUtils.optimzeJson({ and: [...required, { or: brandDetection }] })
             return ({
                 question: item.displayName,
                 icon: nsi.getIconUrl(item, type),
-                osmTags,
+                osmTags: NameSuggestionIndex.asFilterTags(item),
             })
         })
+        const mappings = items.map(item => ({
+            if: NameSuggestionIndex.asFilterTags(item),
+            then: nsi.getIconUrl(item, type),
+        }))
+
+        console.log("Checking for shadow-mappings...")
+        for (let i = mappings.length - 1; i >= 0 ; i--) {
+            const condition = TagUtils.Tag(mappings[i].if)
+            if(i % 100 === 0){
+                console.log("Checking for shadow-mappings...",i,"/",mappings.length )
+
+            }
+            const shadowsSomething = mappings.some((m,j)     => {
+                if(i===j ){
+                    return false
+                }
+                return condition.shadows(TagUtils.Tag(m.if))
+            })
+            // If this one matches, the other one will match as well
+            // We can thus remove this one in favour of the other one
+            if(shadowsSomething){
+                mappings.splice(i, 1)
+            }
+        }
+
+        const iconsTr: TagRenderingConfigJson = <any>{
+            strict: true,
+            id: "icon",
+            mappings,
+        }
 
         const config: LayerConfigJson = {
             "#dont-translate": "*",
+            "#no-index": "yes",
             id: "nsi_" + type,
             source: "special:library",
             description: {
                 en: "Exposes part of the NSI to reuse in other themes, e.g. for rendering",
             },
             pointRendering: null,
+            tagRenderings: [
+                iconsTr,
+            ],
             filter: [
-               <any> {
+                <any>{
                     id: type,
                     strict: true,
-                    options: [{question: type}, ...filterOptions],
+                    options: [{ question: type }, ...filterOptions],
                 },
             ],
             allowMove: false,

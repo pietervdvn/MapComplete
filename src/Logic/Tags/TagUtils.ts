@@ -690,6 +690,17 @@ export class TagUtils {
         return result
     }
 
+    public static removeKnownParts(tag: TagsFilter, known: TagsFilter, valueOfKnown = true): TagsFilter | boolean{
+        const tagOrBool = And.construct([tag]).optimize()
+        if(tagOrBool === true || tagOrBool === false){
+            return tagOrBool
+        }
+        if(tagOrBool instanceof And){
+            return tagOrBool.removePhraseConsideredKnown(known, valueOfKnown)
+        }
+        return tagOrBool
+    }
+
     /**
      * Returns `true` if at least one element of the 'guards' shadows one element of the 'listToFilter'.
      *
