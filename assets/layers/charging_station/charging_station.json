@@ -2175,7 +2175,10 @@
               "{{key}}~*",
               "{{key}}!=0"
             ]
-          }
+          },
+          "labels": [
+            "plugs-amount"
+          ]
         },
         {
           "id": "voltage-{{id}}",

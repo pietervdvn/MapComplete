@@ -1,0 +1,76 @@
+{
+  "id": "charge_point",
+  "name": {
+    "en": "Charge points"
+  },
+  "description": {
+    "en": "Layer showing individual charge points within a charging station"
+  },
+  "source": {
+    "osmTags": "man_made=charge_point"
+  },
+  "minzoom": 18,
+  "title": {
+    "render": {
+      "en": "Charge point"
+    }
+  },
+  "tagRenderings": [
+    "images",
+    {
+      "id": "ref",
+      "question": {
+        "en": "What is the reference number of this charge point?"
+      },
+      "freeform": {
+        "key": "ref",
+        "placeholder": {
+          "en": "Reference number of the charge point, e.g. 2126"
+        }
+      },
+      "render": {
+        "en": "The reference of this charge point is {ref}"
+      }
+    },
+    "charging_station.capacity",
+    "charging_station.Available_charging_stations (generated)",
+    "charging_station.plugs-amount",
+    "charging_station.questions-technical",
+    "charging_station.technical"
+  ],
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "lightblue"
+        },
+        {
+          "icon": "./assets/themes/charging_stations/plug.svg"
+        }
+      ],
+      "iconSize": "25,25"
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "a charge point"
+      },
+      "tags": [
+        "man_made=charge_point"
+      ],
+      "description": {
+        "en": "Add an individual charge point within a larger charging station"
+      }
+    }
+  ],
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": false
+  }
+}
