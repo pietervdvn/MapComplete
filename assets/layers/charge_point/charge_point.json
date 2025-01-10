@@ -35,6 +35,7 @@
     "charging_station.capacity",
     "charging_station.Available_charging_stations (generated)",
     "charging_station.plugs-amount",
+    "questions",
     "charging_station.questions-technical",
     "charging_station.technical"
   ],
