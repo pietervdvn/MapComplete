@@ -577,15 +577,6 @@ class LayerOverviewUtils extends Script {
             )
         }
 
-        if (recompiledThemes.length > 0) {
-            writeFileSync(
-                "./src/assets/generated/known_themes.json",
-                JSON.stringify({
-                    themes: Array.from(sharedThemes.values()),
-                })
-            )
-        }
-
         if (AllSharedLayers.getSharedLayersConfigs().size == 0) {
             console.error("This was a bootstrapping-run. Run generate layeroverview again!")
         }
@@ -649,7 +640,6 @@ class LayerOverviewUtils extends Script {
                         const sharedLayer = JSON.parse(readFileSync(targetPath, "utf8"))
                         sharedLayers.set(sharedLayer.id, sharedLayer)
                         skippedLayers.push(sharedLayer.id)
-                        ScriptUtils.erasableLog("Loaded " + sharedLayer.id)
                         continue
                     } catch (e) {
                         throw "Could not parse " + targetPath + " : " + e

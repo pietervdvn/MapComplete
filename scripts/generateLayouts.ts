@@ -2,7 +2,6 @@ import { appendFileSync, existsSync, mkdirSync, readFileSync, writeFile, writeFi
 import Locale from "../src/UI/i18n/Locale"
 import Translations from "../src/UI/i18n/Translations"
 import { Translation } from "../src/UI/i18n/Translation"
-import all_known_layouts from "../src/assets/generated/known_themes.json"
 import { ThemeConfigJson } from "../src/Models/ThemeConfig/Json/ThemeConfigJson"
 import ThemeConfig from "../src/Models/ThemeConfig/ThemeConfig"
 import xml2js from "xml2js"
@@ -12,7 +11,6 @@ import SpecialVisualizations from "../src/UI/SpecialVisualizations"
 import Constants from "../src/Models/Constants"
 import {
     AvailableRasterLayers,
-    EditorLayerIndexProperties,
     RasterLayerPolygon,
 } from "../src/Models/RasterLayers"
 import { ImmutableStore } from "../src/Logic/UIEventSource"
@@ -122,7 +120,7 @@ class GenerateLayouts extends Script {
             return path
         }
         const svg = await ScriptUtils.ReadSvg(layout.icon)
-        let width: string = svg.$.width
+        let width: string = svg["$"].width
         if (width === undefined) {
             throw "The logo at " + layout.icon + " does not have a defined width"
         }
@@ -185,8 +183,8 @@ class GenerateLayouts extends Script {
                 "./public/assets/generated/images/theme_" + layout.id + "_white_background.svg"
             {
                 const svg = await ScriptUtils.ReadSvg(icon)
-                const width: string = svg.$.width
-                const height: string = svg.$.height
+                const width: string = svg["$"].width
+                const height: string = svg["$"].height
 
                 const builder = new xml2js.Builder()
                 const withRect = { rect: { $: { width, height, style: "fill:#ffffff;" } }, ...svg }
@@ -637,15 +635,14 @@ class GenerateLayouts extends Script {
             "custom",
             "theme",
         ]
-        // @ts-ignore
-        const all: ThemeConfigJson[] = all_known_layouts.themes
         const args = process.argv
         const theme = args[2]
         if (theme !== undefined) {
             console.warn("Only generating layout " + theme)
         }
-        for (const i in all) {
-            const layoutConfigJson: ThemeConfigJson = all[i]
+        const paths = ScriptUtils.readDirRecSync("./src/assets/generated/themes/",1)
+        for (const i in paths) {
+            const layoutConfigJson = <ThemeConfigJson> JSON.parse(readFileSync(paths[i], "utf8"))
             if (theme !== undefined && layoutConfigJson.id !== theme) {
                 continue
             }
