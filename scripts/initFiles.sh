@@ -3,6 +3,7 @@
 # Creates various empty (stub) version of files
 
 mkdir -p ./src/assets/generated/layers
+mkdir -p ./public/assets/generated/themes
 echo '{"layers": []}' > ./src/assets/generated/known_layers.json
 rm -f ./src/assets/generated/layers/*.json
 rm -f ./public/assets/generated/themes/*.json
