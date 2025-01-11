@@ -28,7 +28,6 @@ export class AllKnownLayoutsLazy {
                 }
                 const defaultLayer = AllSharedLayers.getSharedLayersConfigs().get(layerId)
                 if (defaultLayer === undefined) {
-                    console.error("Could not find builtin layer", layerId)
                     continue
                 }
                 themeConfigJson.layers.push(defaultLayer)

@@ -1000,4 +1000,11 @@ export class PrepareLayer extends Fuse<LayerConfigJson> {
             new PruneFilters()
         )
     }
+
+    convert(json: LayerConfigJson, context: ConversionContext): LayerConfigJson {
+        if(json === undefined || json === null){
+            throw "Error: prepareLayer got null"
+        }
+        return super.convert(json, context)
+    }
 }

@@ -32,7 +32,7 @@ export abstract class Conversion<TIn, TOut> {
         this.name = name
     }
 
-    public convertStrict(json: TIn, context?: ConversionContext): TOut {
+    public convertStrict(json: NonNullable<TIn>, context?: ConversionContext): TOut {
         context ??= ConversionContext.construct([], [])
         context = context.inOperation(this.name)
 
@@ -276,7 +276,7 @@ export class Fuse<T> extends DesugaringStep<T> {
                 "This fused pipeline of the following steps: " +
                 steps.map((s) => s.name).join(", "),
             Utils.Dedup([].concat(...steps.map((step) => step.modifiedAttributes))),
-            "Fuse(" + steps.map((s) => s.name).join(", ") + ")"
+            "Fuse"
         )
         this.steps = Utils.NoNull(steps)
     }
