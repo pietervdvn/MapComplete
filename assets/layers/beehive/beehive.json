@@ -14,6 +14,23 @@
     "en": "Beehive",
     "de": "Bienenstock"
   },
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "circle",
+          "color": "white"
+        },
+        {
+          "icon": "./assets/layers/beehive/beehive.svg"
+        }
+      ]
+    }
+  ],
   "presets": [
     {
       "title": {
@@ -52,26 +69,9 @@
       ]
     }
   ],
-  "pointRendering": [
-    {
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "marker": [
-        {
-          "icon": "circle",
-          "color": "white"
-        },
-        {
-          "icon": "./assets/layers/beehive/beehive.svg"
-        }
-      ]
-    }
-  ],
+  "deletion": true,
   "allowMove": {
     "enableImproveAccuracy": true,
     "enableRelocation": true
-  },
-  "deletion": true
+  }
 }

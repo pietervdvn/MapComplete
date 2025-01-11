@@ -11,29 +11,11 @@
   "source": {
     "osmTags": "information=tactile_map"
   },
+  "minzoom": 10,
   "title": {
     "en": "Tactile Map",
     "de": "Taktile Karte"
   },
-  "presets": [
-    {
-      "tags": [
-        "tourism=information",
-        "information=tactile_map"
-      ],
-      "title": {
-        "en": "a tactile map",
-        "de": "eine taktile Karte"
-      },
-      "description": {
-        "en": "A tactile map that can be read using touch. Unlike a tactile model, this is relatively flat and does not feature three-dimensional buildings and such.",
-        "de": "Eine taktile Karte, die durch Berühren gelesen werden kann. Im Gegensatz zu einem taktilen Modell ist diese Karte relativ flach und enthält keine dreidimensionalen Gebäude oder ähnliches."
-      }
-    }
-  ],
-  "deletion": true,
-  "allowMove": true,
-  "minzoom": 10,
   "pointRendering": [
     {
       "marker": [
@@ -49,6 +31,22 @@
         "point",
         "centroid"
       ]
+    }
+  ],
+  "presets": [
+    {
+      "tags": [
+        "tourism=information",
+        "information=tactile_map"
+      ],
+      "title": {
+        "en": "a tactile map",
+        "de": "eine taktile Karte"
+      },
+      "description": {
+        "en": "A tactile map that can be read using touch. Unlike a tactile model, this is relatively flat and does not feature three-dimensional buildings and such.",
+        "de": "Eine taktile Karte, die durch Berühren gelesen werden kann. Im Gegensatz zu einem taktilen Modell ist diese Karte relativ flach und enthält keine dreidimensionalen Gebäude oder ähnliches."
+      }
     }
   ],
   "tagRenderings": [
@@ -162,5 +160,7 @@
       }
     },
     "website"
-  ]
+  ],
+  "deletion": true,
+  "allowMove": true
 }

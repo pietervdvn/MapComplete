@@ -1,5 +1,25 @@
 {
-  "credits": "Robin van der Linde",
+  "id": "cyclist_waiting_aid",
+  "name": {
+    "en": "Cyclist Waiting Aids",
+    "de": "Radfahrer-Wartehilfen",
+    "es": "Ayudas a la espera de ciclistas"
+  },
+  "description": {
+    "en": "Various pieces of infrastructure that aid cyclists while they wait at a traffic light.",
+    "de": "Verschiedene Infrastruktureinrichtungen, die Radfahrern helfen, während sie an einer Ampel warten.",
+    "es": "Diversas infraestructuras que ayudan a los ciclistas mientras esperan en un semáforo."
+  },
+  "source": {
+    "osmTags": "highway=cyclist_waiting_aid"
+  },
+  "title": {
+    "render": {
+      "en": "Cyclist Waiting Aid",
+      "de": "Radfahrer-Wartehilfe",
+      "es": "Ayuda para ciclistas en espera"
+    }
+  },
   "pointRendering": [
     {
       "location": [
@@ -16,6 +36,32 @@
         }
       ],
       "anchor": "bottom"
+    }
+  ],
+  "lineRendering": [
+    {
+      "width": 1,
+      "color": "blue"
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "a cyclist waiting aid",
+        "de": "eine Radfahrer-Wartehilfe",
+        "es": "un ciclista espera ayuda"
+      },
+      "tags": [
+        "highway=cyclist_waiting_aid"
+      ],
+      "description": {
+        "en": "A footrest, handrail or other aid, to improve comfort while waiting at traffic lights",
+        "de": "Eine Fußstütze, ein Handlauf oder ein anderes Hilfsmittel zur Verbesserung des Komforts beim Warten an der Ampel",
+        "es": "Reposapiés, pasamanos u otro tipo de ayuda para mejorar la comodidad durante la espera en los semáforos"
+      },
+      "snapToLayer": [
+        "cycleways_and_roads"
+      ]
     }
   ],
   "tagRenderings": [
@@ -111,34 +157,6 @@
       }
     }
   ],
-  "lineRendering": [
-    {
-      "width": 1,
-      "color": "blue"
-    }
-  ],
-  "credits:uid": 5093765,
-  "id": "cyclist_waiting_aid",
-  "description": {
-    "en": "Various pieces of infrastructure that aid cyclists while they wait at a traffic light.",
-    "de": "Verschiedene Infrastruktureinrichtungen, die Radfahrern helfen, während sie an einer Ampel warten.",
-    "es": "Diversas infraestructuras que ayudan a los ciclistas mientras esperan en un semáforo."
-  },
-  "source": {
-    "osmTags": "highway=cyclist_waiting_aid"
-  },
-  "name": {
-    "en": "Cyclist Waiting Aids",
-    "de": "Radfahrer-Wartehilfen",
-    "es": "Ayudas a la espera de ciclistas"
-  },
-  "title": {
-    "render": {
-      "en": "Cyclist Waiting Aid",
-      "de": "Radfahrer-Wartehilfe",
-      "es": "Ayuda para ciclistas en espera"
-    }
-  },
   "deletion": {
     "softDeletionTags": {
       "and": [
@@ -155,24 +173,6 @@
     }
   },
   "allowMove": false,
-  "presets": [
-    {
-      "title": {
-        "en": "a cyclist waiting aid",
-        "de": "eine Radfahrer-Wartehilfe",
-        "es": "un ciclista espera ayuda"
-      },
-      "tags": [
-        "highway=cyclist_waiting_aid"
-      ],
-      "description": {
-        "en": "A footrest, handrail or other aid, to improve comfort while waiting at traffic lights",
-        "de": "Eine Fußstütze, ein Handlauf oder ein anderes Hilfsmittel zur Verbesserung des Komforts beim Warten an der Ampel",
-        "es": "Reposapiés, pasamanos u otro tipo de ayuda para mejorar la comodidad durante la espera en los semáforos"
-      },
-      "snapToLayer": [
-        "cycleways_and_roads"
-      ]
-    }
-  ]
+  "credits": "Robin van der Linde",
+  "credits:uid": 5093765
 }

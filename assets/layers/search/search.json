@@ -8,24 +8,6 @@
   },
   "source": "special",
   "title": "{display_name}",
-  "tagRenderings": [
-    {
-      "id": "intro",
-      "render": {
-        "en": "Search result",
-        "de": "Suchergebnis",
-        "cs": "Výsledek hledání",
-        "es": "Resultado de búsqueda"
-      }
-    },
-    {
-      "id": "osm",
-      "render": {
-        "*": "<a href='https://openstreetmap.org/{osm_type}/{osm_id}'>On OpenStreetMap</a>"
-      }
-    },
-    "all_tags"
-  ],
   "pointRendering": [
     {
       "location": [
@@ -68,5 +50,23 @@
       "label": "{display_name}",
       "labelCssClasses": "bg-white rounded p-2 no-wrap"
     }
+  ],
+  "tagRenderings": [
+    {
+      "id": "intro",
+      "render": {
+        "en": "Search result",
+        "de": "Suchergebnis",
+        "cs": "Výsledek hledání",
+        "es": "Resultado de búsqueda"
+      }
+    },
+    {
+      "id": "osm",
+      "render": {
+        "*": "<a href='https://openstreetmap.org/{osm_type}/{osm_id}'>On OpenStreetMap</a>"
+      }
+    },
+    "all_tags"
   ]
 }

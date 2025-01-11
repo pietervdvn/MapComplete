@@ -15,30 +15,6 @@
       "en": "Charge point"
     }
   },
-  "tagRenderings": [
-    "images",
-    {
-      "id": "ref",
-      "question": {
-        "en": "What is the reference number of this charge point?"
-      },
-      "freeform": {
-        "key": "ref",
-        "placeholder": {
-          "en": "Reference number of the charge point, e.g. 2126"
-        }
-      },
-      "render": {
-        "en": "The reference of this charge point is {ref}"
-      }
-    },
-    "charging_station.capacity",
-    "charging_station.Available_charging_stations (generated)",
-    "charging_station.plugs-amount",
-    "questions",
-    "charging_station.questions-technical",
-    "charging_station.technical"
-  ],
   "pointRendering": [
     {
       "location": [
@@ -69,6 +45,30 @@
         "en": "Add an individual charge point within a larger charging station"
       }
     }
+  ],
+  "tagRenderings": [
+    "images",
+    {
+      "id": "ref",
+      "question": {
+        "en": "What is the reference number of this charge point?"
+      },
+      "freeform": {
+        "key": "ref",
+        "placeholder": {
+          "en": "Reference number of the charge point, e.g. 2126"
+        }
+      },
+      "render": {
+        "en": "The reference of this charge point is {ref}"
+      }
+    },
+    "charging_station.capacity",
+    "charging_station.Available_charging_stations (generated)",
+    "charging_station.plugs-amount",
+    "questions",
+    "charging_station.questions-technical",
+    "charging_station.technical"
   ],
   "allowMove": {
     "enableImproveAccuracy": true,

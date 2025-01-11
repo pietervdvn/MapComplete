@@ -26,10 +26,10 @@
       ]
     }
   },
-  "minzoom": 13,
   "calculatedTags": [
     "_vending_count=feat.properties.vending.split(';').length"
   ],
+  "minzoom": 13,
   "title": {
     "render": {
       "en": "Vending machine",

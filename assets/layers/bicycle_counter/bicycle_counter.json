@@ -22,6 +22,7 @@
       ]
     }
   },
+  "minzoom": 13,
   "title": {
     "render": {
       "en": "Bicycle counter",
@@ -31,6 +32,39 @@
       "nl": "Fietsteller"
     }
   },
+  "pointRendering": [
+    {
+      "marker": [
+        {
+          "icon": "pin",
+          "color": "#538EE8"
+        },
+        {
+          "icon": "./assets/layers/bicycle_counter/bicycle_monitoring_station.svg"
+        }
+      ],
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "anchor": "bottom"
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "a bicycle counter",
+        "cs": "počítadlo jízdních kol",
+        "de": "eine Fahrradzählstelle",
+        "es": "un contador de bicicletas",
+        "nl": "een fietsteller"
+      },
+      "tags": [
+        "man_made=monitoring_station",
+        "monitoring:bicycle=yes"
+      ]
+    }
+  ],
   "tagRenderings": [
     "images",
     {
@@ -237,42 +271,8 @@
       }
     }
   ],
-  "pointRendering": [
-    {
-      "marker": [
-        {
-          "icon": "pin",
-          "color": "#538EE8"
-        },
-        {
-          "icon": "./assets/layers/bicycle_counter/bicycle_monitoring_station.svg"
-        }
-      ],
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "anchor": "bottom"
-    }
-  ],
-  "minzoom": 13,
+  "deletion": true,
   "allowMove": {
     "enableImproveAccuracy": true
-  },
-  "deletion": true,
-  "presets": [
-    {
-      "title": {
-        "en": "a bicycle counter",
-        "cs": "počítadlo jízdních kol",
-        "de": "eine Fahrradzählstelle",
-        "es": "un contador de bicicletas",
-        "nl": "een fietsteller"
-      },
-      "tags": [
-        "man_made=monitoring_station",
-        "monitoring:bicycle=yes"
-      ]
-    }
-  ]
+  }
 }
