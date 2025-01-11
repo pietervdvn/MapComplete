@@ -5,6 +5,7 @@ import { AllSharedLayers } from "./AllSharedLayers"
 import Constants from "../Models/Constants"
 import ScriptUtils from "../../scripts/ScriptUtils"
 import { readFileSync } from "fs"
+import { LayerConfigJson } from "../Models/ThemeConfig/Json/LayerConfigJson"
 
 /**
  * Somewhat of a dictionary, which lazily parses needed themes
@@ -14,14 +15,14 @@ export class AllKnownLayoutsLazy {
     private readonly dict: Map<string, ThemeConfig> = new Map()
 
     constructor(includeFavouriteLayer = true) {
-        const paths = ScriptUtils.readDirRecSync("./src/assets/generated/themes/",1)
+        const paths = ScriptUtils.readDirRecSync("./public/assets/generated/themes/",1)
 
         for (const path of paths) {
            const themeConfigJson = <ThemeConfigJson> JSON.parse(readFileSync(path, "utf8"))
             for (const layerId of Constants.added_by_default) {
                 if (layerId === "favourite" && favourite.id) {
                     if (includeFavouriteLayer) {
-                        themeConfigJson.layers.push(favourite)
+                        themeConfigJson.layers.push(<LayerConfigJson> favourite)
                     }
                     continue
                 }

@@ -180,6 +180,7 @@ class DownloadNsiLogos extends Script {
             ],
             filter: [
                 <any>{
+                    "#":"ignore-possible-duplicate",
                     id: type,
                     strict: true,
                     options: [{ question: type }, ...filterOptions],

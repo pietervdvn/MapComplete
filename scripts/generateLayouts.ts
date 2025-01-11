@@ -298,8 +298,8 @@ class GenerateLayouts extends Script {
                     Origin: "https://mapcomplete.org",
                 })
                 urls.push(...(f.properties["connect-src"] ?? []))
-                for (const key of Object.keys(styleSpec?.sources ?? {})) {
-                    const url = styleSpec.sources[key].url
+                for (const key of Object.keys(styleSpec?.["sources"] ?? {})) {
+                    const url = styleSpec["sources"][key].url
                     if (!url) {
                         continue
                     }
@@ -585,7 +585,7 @@ class GenerateLayouts extends Script {
         const filename = "index_" + theme.id + ".ts"
 
         const imports = [
-            `import layout from "./src/assets/generated/themes/${theme.id}.json"`,
+            `import layout from "./public/assets/generated/themes/${theme.id}.json"`,
             `import { ThemeMetaTagging } from "./src/assets/generated/metatagging/${theme.id}"`,
         ]
         for (const layerName of Constants.added_by_default) {
@@ -640,7 +640,7 @@ class GenerateLayouts extends Script {
         if (theme !== undefined) {
             console.warn("Only generating layout " + theme)
         }
-        const paths = ScriptUtils.readDirRecSync("./src/assets/generated/themes/",1)
+        const paths = ScriptUtils.readDirRecSync("./public/assets/generated/themes/",1)
         for (const i in paths) {
             const layoutConfigJson = <ThemeConfigJson> JSON.parse(readFileSync(paths[i], "utf8"))
             if (theme !== undefined && layoutConfigJson.id !== theme) {

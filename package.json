@@ -205,7 +205,6 @@
     "jspdf": "^2.5.1",
     "latlon2country": "^1.2.6",
     "libphonenumber-js": "^1.10.8",
-    "lz-string": "^1.4.4",
     "mangrove-reviews-typescript": "^1.1.0",
     "maplibre-gl": "^4.1.1",
     "marked": "^12.0.2",

@@ -140,7 +140,7 @@ class AddIconSummary extends DesugaringStep<{ raw: LayerConfigJson; parsed: Laye
 
 class LayerOverviewUtils extends Script {
     public static readonly layerPath = "./src/assets/generated/layers/"
-    public static readonly themePath = "./src/assets/generated/themes/"
+    public static readonly themePath = "./public/assets/generated/themes/"
 
     constructor() {
         super("Reviews and generates the compiled themes")
@@ -319,12 +319,12 @@ class LayerOverviewUtils extends Script {
                 keywords,
                 layers: theme.layers.filter((l) => sharedLayers.has(l["id"])).map((l) => l["id"]),
             }
-            perId.set(theme.id, data)
+            perId.set(data.id, data)
         }
 
         const sorted = Constants.themeOrder.map((id) => {
             if (!perId.has(id)) {
-                throw "Ordered theme id " + id + " not found"
+                throw "Ordered theme '" + id + "' not found"
             }
             return perId.get(id)
         })

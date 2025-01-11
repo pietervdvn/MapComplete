@@ -7,12 +7,9 @@ export class AllSharedLayers {
     public static sharedLayers: Map<string, LayerConfig> = AllSharedLayers.getSharedLayers()
     public static getSharedLayersConfigs(): Map<string, LayerConfigJson> {
         const sharedLayers = new Map<string, LayerConfigJson>()
-        for (const layer of (known_layers).layers) {
+        for (const layer of known_layers["layers"]) {
             if(layer.id === undefined){
-                console.error("Layer without id! "+JSON.stringify(layer).slice(0,80), known_layers.layers.length)
                 continue
-            }else{
-                console.log("Loaded",layer.id)
             }
             sharedLayers.set(layer.id, <any> layer)
         }

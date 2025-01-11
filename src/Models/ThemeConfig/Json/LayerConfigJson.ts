@@ -605,5 +605,5 @@ export interface LayerConfigJson {
     /**
      * group: hidden
      */
-    "#dont-translate": "*"
+    "#dont-translate"?: "*"
 }

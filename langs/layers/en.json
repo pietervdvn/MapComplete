@@ -2327,6 +2327,28 @@
             "render": "Camper site {name}"
         }
     },
+    "charge_point": {
+        "description": "Layer showing individual charge points within a charging station",
+        "name": "Charge points",
+        "presets": {
+            "0": {
+                "description": "Add an individual charge point within a larger charging station",
+                "title": "a charge point"
+            }
+        },
+        "tagRenderings": {
+            "ref": {
+                "freeform": {
+                    "placeholder": "Reference number of the charge point, e.g. 2126"
+                },
+                "question": "What is the reference number of this charge point?",
+                "render": "The reference of this charge point is {ref}"
+            }
+        },
+        "title": {
+            "render": "Charge point"
+        }
+    },
     "charging_station": {
         "description": "A charging station",
         "filter": {
