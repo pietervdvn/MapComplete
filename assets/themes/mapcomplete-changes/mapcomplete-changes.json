@@ -9,15 +9,6 @@
     "nl": "Wijzigingen gemaakt met MapComplete",
     "ko": "MapComplete로 이루어진 변경 사항"
   },
-  "shortDescription": {
-    "en": "Shows changes made by MapComplete",
-    "de": "Zeigt die von MapComplete vorgenommenen Änderungen an",
-    "cs": "Zobrazuje změny provedené nástrojem MapComplete",
-    "es": "Muestra los cambios realizados por MapComplete",
-    "fr": "Afficher les modifications faites avec MapComplete",
-    "nl": "Toont wijzigingen gemaakt met MapComplete",
-    "ko": "MapComplete를 통해 이루어진 변경 사항을 표시합니다"
-  },
   "description": {
     "en": "This maps shows all the changes made with MapComplete",
     "de": "Diese Karte zeigt alle mit MapComplete vorgenommenen Änderungen",
@@ -28,11 +19,17 @@
     "nl": "Deze kaarten tonen alle wijzigingen die zijn gemaakt met MapComplete",
     "ko": "이 지도는 MapComplete를 사용하여 이루어진 모든 변경 사항을 표시합니다"
   },
+  "shortDescription": {
+    "en": "Shows changes made by MapComplete",
+    "de": "Zeigt die von MapComplete vorgenommenen Änderungen an",
+    "cs": "Zobrazuje změny provedené nástrojem MapComplete",
+    "es": "Muestra los cambios realizados por MapComplete",
+    "fr": "Afficher les modifications faites avec MapComplete",
+    "nl": "Toont wijzigingen gemaakt met MapComplete",
+    "ko": "MapComplete를 통해 이루어진 변경 사항을 표시합니다"
+  },
   "icon": "./assets/svg/logo.svg",
   "hideFromOverview": true,
-  "startLat": 0,
-  "startLon": 0,
-  "startZoom": 1,
   "layers": [
     {
       "id": "mapcomplete-changes",
@@ -493,6 +490,10 @@
                   {
                     "if": "theme=rainbow_crossings",
                     "then": "./assets/themes/rainbow_crossings/logo.svg"
+                  },
+                  {
+                    "if": "theme=scouting",
+                    "then": "./assets/layers/scouting_group/scouting.svg"
                   },
                   {
                     "if": "theme=shops",
