@@ -7,7 +7,7 @@
   import { ChangesetsOverview } from "./ChangesetsOverview"
 
   import ThemeConfig from "../../Models/ThemeConfig/ThemeConfig"
-  import mcChanges from "../../assets/generated/themes/mapcomplete-changes.json"
+  import mcChanges from "../../../public/assets/generated/themes/mapcomplete-changes.json"
   import type { ThemeConfigJson } from "../../Models/ThemeConfig/Json/ThemeConfigJson"
   import { Accordion, AccordionItem } from "flowbite-svelte"
   import AccordionSingle from "../Flowbite/AccordionSingle.svelte"
