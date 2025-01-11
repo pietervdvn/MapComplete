@@ -839,6 +839,9 @@ class LayerOverviewUtils extends Script {
             const themeInfo = themeFiles[i]
             const themePath = themeInfo.path
             let themeFile = themeInfo.parsed
+            if(!themeFile){
+                throw "Got an empty file for"+themeInfo.path
+            }
             if (whitelist.size > 0 && !whitelist.has(themeFile.id)) {
                 continue
             }

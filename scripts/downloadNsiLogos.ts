@@ -141,21 +141,21 @@ class DownloadNsiLogos extends Script {
         }))
 
         console.log("Checking for shadow-mappings...")
-        for (let i = mappings.length - 1; i >= 0 ; i--) {
+        for (let i = mappings.length - 1; i >= 0; i--) {
             const condition = TagUtils.Tag(mappings[i].if)
-            if(i % 100 === 0){
-                console.log("Checking for shadow-mappings...",i,"/",mappings.length )
+            if (i % 100 === 0) {
+                console.log("Checking for shadow-mappings...", i, "/", mappings.length)
 
             }
-            const shadowsSomething = mappings.some((m,j)     => {
-                if(i===j ){
+            const shadowsSomething = mappings.some((m, j) => {
+                if (i === j) {
                     return false
                 }
                 return condition.shadows(TagUtils.Tag(m.if))
             })
             // If this one matches, the other one will match as well
             // We can thus remove this one in favour of the other one
-            if(shadowsSomething){
+            if (shadowsSomething) {
                 mappings.splice(i, 1)
             }
         }
@@ -178,7 +178,7 @@ class DownloadNsiLogos extends Script {
             ],
             filter: [
                 <any>{
-                    "#":"ignore-possible-duplicate",
+                    "#": "ignore-possible-duplicate",
                     id: type,
                     strict: true,
                     options: [{ question: type }, ...filterOptions],
@@ -197,8 +197,10 @@ class DownloadNsiLogos extends Script {
         const nsi = await NameSuggestionIndex.getNsiIndex()
         const types = ["brand", "operator"]
         for (const type of types) {
+            await this.downloadFor(type)
+        }
+        for (const type of types) {
             await this.generateRendering(type)
-            // await this.downloadFor(type)
         }
     }
 
