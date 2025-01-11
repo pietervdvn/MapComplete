@@ -167,13 +167,11 @@ class DownloadNsiLogos extends Script {
         }
 
         const config: LayerConfigJson = {
-            "#dont-translate": "*",
-            "#no-index": "yes",
             id: "nsi_" + type,
-            source: "special:library",
             description: {
                 en: "Exposes part of the NSI to reuse in other themes, e.g. for rendering",
             },
+            source: "special:library",
             pointRendering: null,
             tagRenderings: [
                 iconsTr,
@@ -187,6 +185,7 @@ class DownloadNsiLogos extends Script {
                 },
             ],
             allowMove: false,
+            "#dont-translate": "*",
         }
         const path = "./assets/layers/nsi_" + type
         mkdirSync(path, { recursive: true })
