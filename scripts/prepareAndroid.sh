@@ -22,6 +22,7 @@ const config: CapacitorConfig = {
 export default config;
 ''' > capacitor.config.ts
 
+# copy distribution files
 rm -rf dist-full
 mkdir dist-full
 cp dist/*.html dist-full/

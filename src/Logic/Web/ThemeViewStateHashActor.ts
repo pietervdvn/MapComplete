@@ -1,6 +1,7 @@
 import ThemeViewState from "../../Models/ThemeViewState"
 import Hash from "./Hash"
 import { MenuState } from "../../Models/MenuState"
+import { AndroidPolyfill } from "./AndroidPolyfill"
 
 export default class ThemeViewStateHashActor {
     private readonly _state: ThemeViewState
@@ -22,7 +23,7 @@ export default class ThemeViewStateHashActor {
     /**
      * Converts the hash to the appropriate theme-view state and, vice versa, sets the hash.
      *
-     * As the navigator-back-button changes the hash first, this class thus also handles the 'back'-button events.
+     * As the navigator-back-button changes the hash first, this class thus also handles the (browser) 'back'-button events.
      *
      * Note that there is no "real" way to intercept the back button, we can only detect the removal of the hash.
      * As such, we use a change in the hash to close the appropriate windows
@@ -30,6 +31,9 @@ export default class ThemeViewStateHashActor {
      */
     constructor(state: ThemeViewState) {
         this._state = state
+        AndroidPolyfill.onBackButton(() => this.back(), {
+            returnToIndex: state.featureSwitches.featureSwitchBackToThemeOverview
+        })
 
         const hashOnLoad = Hash.hash.data
         const containsMenu = this.loadStateFromHash(hashOnLoad)
@@ -66,6 +70,7 @@ export default class ThemeViewStateHashActor {
 
         // When all is done, set the hash. This must happen last to give the code above correct info
         this.setHash()
+
     }
 
     /**
@@ -137,15 +142,26 @@ export default class ThemeViewStateHashActor {
         }
     }
 
+    /**
+     * Returns 'true' if an action was taken
+     * @private
+     */
     private back() {
+        console.log("Received back!")
         const state = this._state
         if (state.previewedImage.data) {
             state.previewedImage.setData(undefined)
-            return
+            return true
         }
         if (state.guistate.closeAll()) {
-            return
+            return true
         }
-        state.selectedElement.setData(undefined)
+        if (state.selectedElement.data) {
+            state.selectedElement.setData(undefined)
+            return true
+        }
+        return false
+
+
     }
 }

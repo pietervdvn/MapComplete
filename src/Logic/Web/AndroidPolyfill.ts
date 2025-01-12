@@ -14,10 +14,12 @@ const DatabridgePluginSingleton = registerPlugin<DatabridgePlugin>("Databridge",
     web: () => {
         return <DatabridgePlugin>{
             async request(options: { key: string }): Promise<{ value: string | object }> {
-                return { value: "web" }
-            },
+                if (options.key === "meta") {
+                    return { value: "web" }
+                }
+            }
         }
-    },
+    }
 })
 
 export class AndroidPolyfill {
@@ -32,7 +34,6 @@ export class AndroidPolyfill {
      * @private
      */
     private backfillGeolocation(databridgePlugin: DatabridgePlugin) {
-        const origQueryFunc = navigator?.permissions?.query
         const src = UIEventSource.FromPromise(databridgePlugin.request({ key: "location:request-permission" }))
         src.addCallbackAndRunD(permission => {
             AndroidPolyfill._geolocationPermission.set(<"granted" | "denied">permission.value)
@@ -56,6 +57,24 @@ export class AndroidPolyfill {
         const token: string = result.value.oauth_token
         console.log("AndroidPolyfill: received oauth_token; trying to pass them to the oauth lib",token)
         return token
+    }
+
+    public static onBackButton(callback: () => boolean, options: {
+        returnToIndex: Store<boolean>
+    }) {
+        console.log("Registering back button callback", callback)
+        DatabridgePluginSingleton.request({ key: "backbutton" }).then(ev => {
+            console.log("AndroidPolyfill: received backbutton: ", ev)
+            if (callback()) {
+                return
+            }
+            // Nothing more to close - we return (if not a single theme) to the index
+            if (options.returnToIndex) {
+                console.log("Back to the index!")
+                window.location.href = "/"
+            }
+        })
+
     }
 }
 

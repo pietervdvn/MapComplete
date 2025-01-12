@@ -1,9 +1,12 @@
 import { defineConfig } from "vite"
 import { svelte } from "@sveltejs/vite-plugin-svelte"
-import fs from "fs"
 import basicSsl from "@vitejs/plugin-basic-ssl"
 
-const input = { "land": "./app/land.html", passthrough: "./app/passthrough.html" }
+const input = {
+  land: "./app/land.html",
+  index: "./app/index.html",
+  passthrough: "./app/passthrough.html"
+}
 
 
 console.log("Args:", process.argv)
