@@ -1,13 +1,9 @@
 {
   "id": "ghostsign",
-  "title": {
-    "render": {
-      "en": "Ghost Sign",
-      "de": "Geisterzeichen",
-      "es": "Letrero fantasma",
-      "ca": "Rètols fantasma",
-      "cs": "Nápisy na zdech"
-    }
+  "name": {
+    "en": "Ghost Signs",
+    "de": "Geisterzeichen",
+    "es": "Letreros fantasma"
   },
   "description": {
     "en": "Layer showing disused signs on buildings",
@@ -15,11 +11,6 @@
     "es": "Capa que muestra letreros en desuso en edificios",
     "ca": "Capa que mostra rètols en desús dels edificis",
     "cs": "Vrstva zobrazující nepoužívané nápisy na budovách"
-  },
-  "name": {
-    "en": "Ghost Signs",
-    "de": "Geisterzeichen",
-    "es": "Letreros fantasma"
   },
   "source": {
     "osmTags": {
@@ -30,11 +21,53 @@
     }
   },
   "minzoom": 10,
-  "#allowMove": "Normally, a ghost sign is snapped to a wall, so moving won't be possible in most cases, but might still be useful e.g. to snap to a building",
-  "allowMove": {
-    "enableImproveAccuracy": true,
-    "enableRelocation": false
+  "title": {
+    "render": {
+      "en": "Ghost Sign",
+      "de": "Geisterzeichen",
+      "es": "Letrero fantasma",
+      "ca": "Rètols fantasma",
+      "cs": "Nápisy na zdech"
+    }
   },
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "./assets/themes/advertising/wall_painting.svg"
+        }
+      ]
+    }
+  ],
+  "lineRendering": [
+    {
+      "color": "blue",
+      "width": 2
+    }
+  ],
+  "presets": [
+    {
+      "tags": [
+        "historic=advertising",
+        "advertising=wall_painting"
+      ],
+      "title": {
+        "en": "a ghost sign",
+        "de": "ein Geisterzeichen",
+        "es": "un letrero fantasma",
+        "ca": "un rètol fantasma",
+        "cs": "nápis na zdi"
+      },
+      "snapToLayer": [
+        "walls_and_buildings"
+      ],
+      "maxSnapDistance": 5
+    }
+  ],
   "tagRenderings": [
     "images",
     "advertising.historic",
@@ -96,42 +129,9 @@
       }
     }
   ],
-  "lineRendering": [
-    {
-      "color": "blue",
-      "width": 2
-    }
-  ],
-  "pointRendering": [
-    {
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "marker": [
-        {
-          "icon": "./assets/themes/advertising/wall_painting.svg"
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "tags": [
-        "historic=advertising",
-        "advertising=wall_painting"
-      ],
-      "title": {
-        "en": "a ghost sign",
-        "de": "ein Geisterzeichen",
-        "es": "un letrero fantasma",
-        "ca": "un rètol fantasma",
-        "cs": "nápis na zdi"
-      },
-      "snapToLayer": [
-        "walls_and_buildings"
-      ],
-      "maxSnapDistance": 5
-    }
-  ]
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": false
+  },
+  "#allowMove": "Normally, a ghost sign is snapped to a wall, so moving won't be possible in most cases, but might still be useful e.g. to snap to a building"
 }

@@ -184,9 +184,7 @@ export default class LayerState {
                 ", but this layer was not loaded"
             )
         }
-        console.warn(
-            "Linking filter and isDisplayed-states of " + layer.id + " and " + layer.filterIsSameAs
-        )
+        // We make a shallow copy, reusing the same underlying stores
         const copy = new FilteredLayer(layer, toReuse.appliedFilters, toReuse.isDisplayed)
         filteredLayers.set(layer.id, copy)
     }

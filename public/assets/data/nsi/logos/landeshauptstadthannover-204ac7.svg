@@ -1,0 +1,54 @@
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="150" height="200" id="svg2" class="logo-svg" version="1.1" inkscape:version="0.48.4 r9939" enable-background="new" sodipodi:docname="Neues Dokument 1">
+<defs id="defs4">
+  <clipPath id="SVGID_2_">
+    <use xlink:href="#SVGID_1_" overflow="visible" id="use19" style="overflow: visible;" x="0" y="0" width="45" height="60"/>
+  </clipPath>
+  <clipPath id="SVGID_4_">
+    <use xlink:href="#SVGID_3_" overflow="visible" id="use31" style="overflow: visible;" x="0" y="0" width="45" height="60"/>
+  </clipPath>
+</defs>
+<sodipodi:namedview id="base" pagecolor="#000000" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="2.8" inkscape:cx="98.274728" inkscape:cy="72.219658" inkscape:document-units="px" inkscape:current-layer="layer5" showgrid="false" width="2979.92px" showguides="true" inkscape:guide-bbox="true" inkscape:window-width="1920" inkscape:window-height="1017" inkscape:window-x="-8" inkscape:window-y="-8" inkscape:window-maximized="1"/>
+<metadata id="metadata7">
+  <rdf:RDF>
+    <cc:Work rdf:about="">
+      <dc:format>image/svg+xml</dc:format>
+      <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+      <dc:title/>
+    </cc:Work>
+  </rdf:RDF>
+</metadata>
+<g inkscape:groupmode="layer" id="layer5" inkscape:label="SVG-Logo" style="display: inline;" sodipodi:insensitive="true">
+  <text xml:space="preserve" style="       font-size: 18px;       font-style: normal;       font-weight: normal;       line-height: 125%;       letter-spacing: 0px;       word-spacing: 0px;       fill: #000000;       fill-opacity: 1;       stroke: none;       font-family: Sans;     " x="31.25" y="47.321426" id="text3881" sodipodi:linespacing="125%">
+    <tspan sodipodi:role="line" id="tspan3883" x="31.25" y="47.321426"/>
+  </text>
+  <g id="g3" transform="scale(2.9)" style="       fill: #000000;       fill-opacity: 1;       stroke: none;     ">
+    <rect x="31.113001" y="50.403" width="9.5900002" height="9.5970001" id="rect5" style="         fill: #009ee0;         fill-opacity: 1;         stroke: none;       "/>
+    <rect x="34.143002" y="47.373001" width="9.5900002" height="9.5959997" id="rect7" style="         fill: #e2001a;         fill-opacity: 1;         stroke: none;       "/>
+    <rect x="34.143002" y="50.403" width="6.5609999" height="6.5650001" id="rect9" style="         fill: #005798;         fill-opacity: 1;         stroke: none;       "/>
+    <polygon points="12.75,60 12.75,56.508 5.147,56.508 5.147,52.317 12.401,52.317 12.401,48.774 5.147,48.774 5.147,45.084 12.726,45.084 12.726,41.517 1.333,41.517 1.333,60 " id="polygon11" style="         fill: #000000;         fill-opacity: 1;         stroke: none;       "/>
+    <g id="g13" style="         fill: #000000;         fill-opacity: 1;         stroke: none;       ">
+      <defs id="defs15">
+        <rect id="SVGID_1_" x="1.3329999" width="42.398998" height="60" y="0"/>
+      </defs>
+      <clipPath id="clipPath3046">
+        <use xlink:href="#SVGID_1_" overflow="visible" id="use3048" style="overflow: visible;" x="0" y="0" width="45" height="60"/>
+      </clipPath>
+      <path clip-path="url(#SVGID_2_)" d="m 28.199,47.403 c 0,-3.742 -1.645,-5.887 -6.082,-5.887 h -7.055 v 18.482 h 3.839 v -6.186 h 2.443 l 2.642,6.186 h 4.087 l -2.965,-6.734 c 2.218,-0.971 3.091,-3.142 3.091,-5.861 m -3.812,0.275 c 0,1.971 -0.674,2.719 -2.369,2.719 h -3.116 v -5.438 h 3.116 c 1.694,0 2.369,0.724 2.369,2.719" id="path21" inkscape:connector-curvature="0" style="           fill: #000000;           fill-opacity: 1;           stroke: none;         "/>
+    </g>
+    <polygon points="11.105,39.291 11.105,20.808 7.392,20.808 7.392,31.459 1.333,20.808 1.333,28.507 7.516,39.291 " id="polygon23" style="         fill: #000000;         fill-opacity: 1;         stroke: none;       "/>
+    <g id="g25" style="         fill: #000000;         fill-opacity: 1;         stroke: none;       ">
+      <defs id="defs27">
+        <rect id="SVGID_3_" x="1.3329999" width="42.398998" height="60" y="0"/>
+      </defs>
+      <clipPath id="clipPath3055">
+        <use xlink:href="#SVGID_3_" overflow="visible" id="use3057" style="overflow: visible;" x="0" y="0" width="45" height="60"/>
+      </clipPath>
+      <path clip-path="url(#SVGID_4_)" d="m 28.691,30.062 c 0,-5.038 -1.049,-9.479 -7.653,-9.479 -6.607,0 -7.654,4.44 -7.654,9.479 0,5.014 1.047,9.454 7.654,9.454 6.605,0 7.653,-4.441 7.653,-9.454 m -3.964,0.125 c 0,3.492 -0.398,5.861 -3.688,5.861 -3.291,0 -3.69,-2.369 -3.69,-5.861 0,-3.467 0.399,-5.837 3.69,-5.837 3.289,0 3.688,2.37 3.688,5.837" id="path33" inkscape:connector-curvature="0" style="           fill: #000000;           fill-opacity: 1;           stroke: none;         "/>
+    </g>
+    <polygon points="38.566,39.416 43.732,20.808 39.768,20.808 36.549,33.754 32.734,20.808 28.721,20.808 34.381,39.416 " id="polygon35" style="         fill: #000000;         fill-opacity: 1;         stroke: none;       "/>
+    <path d="m 24.167,5.281 2.092,7.001 h -4.232 l 2.14,-7.001 z M 22.126,0 16.375,18.587 h 3.909 l 0.821,-2.866 h 6.102 l 0.846,2.866 h 4.008 L 26.311,0 h -4.185 z" id="path37" inkscape:connector-curvature="0" style="         fill: #000000;         fill-opacity: 1;         stroke: none;       "/>
+    <polygon points="5.243,7.126 5.243,0.125 1.333,0.125 1.333,18.587 5.243,18.587 5.243,10.988 11.268,10.988 11.268,18.587 15.202,18.587 15.202,0.125 11.268,0.125 11.268,7.126 " id="polygon39" style="         fill: #000000;         fill-opacity: 1;         stroke: none;       "/>
+    <polygon points="43.732,10.984 37.557,0.125 33.424,0.125 33.424,18.587 37.135,18.587 37.135,7.076 43.732,18.587 " id="polygon41" style="         fill: #000000;         fill-opacity: 1;         stroke: none;       "/>
+  </g>
+</g>
+</svg>

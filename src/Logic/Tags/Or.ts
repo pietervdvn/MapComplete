@@ -83,6 +83,7 @@ export class Or extends TagsFilter {
         return false
     }
 
+
     shadows(other: TagsFilter): boolean {
         if (other instanceof Or) {
             for (const selfTag of this.or) {

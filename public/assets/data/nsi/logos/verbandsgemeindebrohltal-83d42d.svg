@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="411" height="471" viewBox="0 0 411 471" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <clipPath>
+   <path d="m38 479.75h217.25v-240.87h-217.25v240.87"/>
+  </clipPath>
+ </defs>
+ <path d="m5.5 5.5h400v250c0 130-95 210-200 210-105 0-200-80-200-210z" fill="#fcdd09" fill-rule="evenodd"/>
+ <rect width="200" height="225" x="205.5" y="5.5" fill="#0f47af"/>
+ <g fill="#da121a">
+  <path d="m205.5 275.5h200c-2.821 16.366-5.211 33.882-10 45h-190z"/>
+  <path d="m205.5 365.5h173c-11.667 17.52-23.333 32.3-35 45h-138z"/>
+ </g>
+ <g fill-rule="evenodd">
+  <path d="m5.5 230.5h200v235c-105 0-200-80-200-210z" fill="#fff"/>
+  <g fill="#da121a">
+   <path d="m105.5 230.5v209c23.261 11.478 46.523 20.753 73.9 24l-73.9-123 100 62.7v-62.7h-100l100-65v-45h-40l-60 110-66.1-110z"/>
+   <path d="m4.674 277.49l100.83 63.01-38 70c-9-7.65-15.968-18.348-24.968-29.32l62.968-40.682h-84.58c-8.172-19.499-12.6-42.866-16.245-63.01"/>
+  </g>
+ </g>
+ <g stroke="#000">
+  <g fill="#da121a" stroke-linejoin="round" stroke-linecap="round" stroke-width="2">
+   <circle r="17.5" cy="37.7" cx="84.5"/>
+   <circle cx="126.5" cy="37.7" r="17.5"/>
+   <circle r="17.5" cy="37.7" cx="168.5"/>
+   <circle r="17.5" cy="79.7" cx="42.5"/>
+   <circle cx="84.5" cy="79.7" r="17.5"/>
+   <circle r="17.5" cy="79.7" cx="126.5"/>
+   <circle cx="168.5" cy="79.7" r="17.5"/>
+   <circle r="17.5" cy="119.7" cx="63.5"/>
+   <circle cx="105.5" cy="119.7" r="17.5"/>
+   <circle r="17.5" cy="119.7" cx="147.5"/>
+   <circle r="17.5" cy="159.7" cx="84.5"/>
+   <circle cx="126.5" cy="159.7" r="17.5"/>
+   <circle r="17.5" cy="199.7" cx="105.5"/>
+  </g>
+  <path d="m291.87 94.15l-3.619 7.497" fill="none" fill-rule="evenodd"/>
+ </g>
+ <g transform="matrix(.83675-.54758.54758.83675-151.91 297.87)">
+  <path d="m483 213v-146c8 0 8-10 0-10 0-8 7.461-12.533 18.03-17.222 3.318-1.472 5.84 2.204 9.812-2.241 3.1-6.776-4.782-4.111-4.197-10.75 1.146-10.388-7.938-15.885-4.44-18.866 5.03-4.283 7.407-7.508.459-12.224-4.307-2.923-7 6.129-9.764 3.757-5.965-5.122-12.11-4.672-19.447-.858-3.737 1.943-.295-8.263-8.155-7.406-3.576.39-1 10.742-3.802 13.536-4.844 4.836-8.374 7.104-5.284 11.681 2.062 3.054 1.995 9.374-1.391 12.01-7.846 6.111-1.784 11.53 5.844 7.156 2.85-1.634 9.09 8.989 11.212 1.697 2.185-7.511-2.916-4.066-4.876-9.608-4.862-13.747-.757-16.584 9.947-20.658 4.172-1.588 6.984 3.717 12.754-.692 3.24-2.476.653 6.722 3.532 8.308 4.966 2.735 7.264 13.387 2.435 16.774-4.371 3.067-6.866-.572-7.891 2.124-1.712 4.505-3.98 5.353-7.254 6.564-7.04 6.754-6.526 11.916-6.526 16.916-8 0-8 10 0 10v146z" fill="#fcdd09" fill-rule="evenodd" stroke="#000" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" id="SVGCleanerId_0"/>
+  <path d="m483 57h-9m9 10h-9" fill="#fcdd09" fill-rule="evenodd" stroke="#000" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" id="SVGCleanerId_1"/>
+ </g>
+ <g transform="matrix(-.83675-.54758-.54758.83675 762.79 297.87)">
+  <use xlink:href="#SVGCleanerId_0"/>
+  <use xlink:href="#SVGCleanerId_1"/>
+ </g>
+ <g stroke="#000">
+  <g stroke-width="2">
+   <circle cx="42.5" cy="37.7" r="17.5" fill="#da121a" stroke-linejoin="round" stroke-linecap="round"/>
+   <path d="m205.5 465.5v-460m200 225h-400m200 90h190m-190 45h172m-172 45h138m-138-70h-185m20 42l165-107h200m-400.83 1.988l200.83 125.71m-100-172.7v209m73.9 24l-140-233m126.1 0l-98 180" fill="none" fill-rule="evenodd"/>
+  </g>
+  <path d="m5.5 5.5h400v250c0 130-95 210-200 210-105 0-200-80-200-210z" fill="none" fill-rule="evenodd" stroke-linejoin="round" stroke-linecap="round" stroke-width="5"/>
+ </g>
+</svg>

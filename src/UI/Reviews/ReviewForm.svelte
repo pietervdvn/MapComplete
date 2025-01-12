@@ -20,6 +20,7 @@
   export let tags: UIEventSource<Record<string, string>>
   export let feature: Feature
   export let layer: LayerConfig
+  export let question: string = undefined
   /**
    * The form to create a new review.
    * This is multi-stepped.
@@ -70,7 +71,6 @@
     _state = "done"
   }
 </script>
-
 {#if uploadFailed}
   <div class="alert flex">
     <ExclamationTriangle class="h-6 w-6" />
@@ -86,7 +86,11 @@
 {:else}
   <div class="interactive border-interactive p-1">
     <div class="font-bold">
-      <SpecialTranslation {feature} {layer} {state} t={Translations.t.reviews.question} {tags} />
+      {#if question}
+        {question}
+      {:else}
+        <SpecialTranslation {feature} {layer} {state} t={Translations.t.reviews.question} {tags} />
+      {/if}
     </div>
     <StarsBar
       on:click={(e) => {

@@ -2732,7 +2732,7 @@
                     },
                     "3": {
                         "mappings": {
-                            "then": "{{description}} liefert maximal {{commonOutput}} A"
+                            "then": "{{description}} liefert maximal {{commonOutput}}"
                         },
                         "question": "Welche Leistung liefert ein einzelner Stecker des Typs {{description}}?",
                         "render": "{{description}} liefert maximal {canonical({{key}}:output)}"
@@ -10194,6 +10194,9 @@
                     },
                     "6": {
                         "then": "Dies ist ein Skatepark"
+                    },
+                    "7": {
+                        "then": "Dies ist ein Reitplatz"
                     }
                 },
                 "question": "Welche Sportarten können hier gespielt werden?",

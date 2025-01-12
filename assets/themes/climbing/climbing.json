@@ -164,7 +164,7 @@
                   "pl": "<span class='subtle'><a href='#{_embedding_feature:id}'>Obiekt zawarty</a> stwierdza, że jest on</span> publicznie dostępny<br/>{_embedding_feature:access:description}",
                   "uk": "<span class='subtle'>У <a href='#{_embedding_feature:id}'>що містить об'єкт</a> зазначено, що це</span> загальнодоступне<br/>{_embedding_feature:access:description}",
                   "zh_Hant": "<span class='subtle'><a href='#{_embedding_feature:id}'>強調這邊</a>包含</span> 公共可及的圖徵<br/>{_embedding_feature:access:description}",
-                  "ko": "<span class='subtle'>이<a href='#{_embedding_feature:id}'>포함된 요소</a>따르면, 이는</span>접근이 가능합니다<br/>{_embedding_feature:access:description"
+                  "ko": "<span class='subtle'>이<a href='#{_embedding_feature:id}'>포함된 요소</a>따르면, 이는</span>접근이 가능합니다<br/>{_embedding_feature:access:description}"
                 }
               },
               {

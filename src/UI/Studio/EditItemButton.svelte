@@ -3,7 +3,6 @@
   import { OsmConnection } from "../../Logic/Osm/OsmConnection"
   import Marker from "../Map/Marker.svelte"
   import NextButton from "../Base/NextButton.svelte"
-  import { AllKnownLayouts } from "../../Customizations/AllKnownLayouts"
   import { AllSharedLayers } from "../../Customizations/AllSharedLayers"
   import { createEventDispatcher } from "svelte"
 
@@ -19,7 +18,7 @@
 
   function fetchIconDescription(layerId): any {
     if (category === "themes") {
-      return AllKnownLayouts.allKnownLayouts.get(layerId).icon
+      return undefined
     }
     return AllSharedLayers.getSharedLayersConfigs().get(layerId)?._layerIcon
   }

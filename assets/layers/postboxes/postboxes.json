@@ -48,21 +48,6 @@
       "cs": "Poštovní schránka"
     }
   },
-  "keywords": {
-    "en": [
-      "post",
-      "post box",
-      "letter",
-      "letterbox"
-    ],
-    "nl": [
-      "brieven",
-      "post",
-      "brief",
-      "brievenbus",
-      "pakjes"
-    ]
-  },
   "pointRendering": [
     {
       "iconSize": {
@@ -176,5 +161,20 @@
   "allowMove": {
     "enableImproveAccuracy": true,
     "enableRelocation": false
+  },
+  "keywords": {
+    "en": [
+      "post",
+      "post box",
+      "letter",
+      "letterbox"
+    ],
+    "nl": [
+      "brieven",
+      "post",
+      "brief",
+      "brievenbus",
+      "pakjes"
+    ]
   }
 }

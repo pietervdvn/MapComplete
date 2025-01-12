@@ -2724,7 +2724,7 @@
                     },
                     "3": {
                         "mappings": {
-                            "then": "{{description}} entrega como máximo {{commonOutput}} A"
+                            "then": "{{description}} entrega como máximo {{commonOutput}}"
                         },
                         "question": "¿Qué potencia de salida ofrece un solo enchufe del tipo {{description}}?",
                         "render": "{{description}} entrega como máximo {canonical({{key}}:output)}"
@@ -10159,6 +10159,9 @@
                     },
                     "6": {
                         "then": "Este es un skatepark"
+                    },
+                    "7": {
+                        "then": "Esta es una pista ecuestre"
                     }
                 },
                 "question": "¿Qué deporte se puede practicar aquí?",

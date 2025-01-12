@@ -472,7 +472,7 @@ class PreparePersonalTheme extends DesugaringStep<ThemeConfigJson> {
 class WarnForUnsubstitutedLayersInTheme extends DesugaringStep<ThemeConfigJson> {
     constructor() {
         super(
-            "Generates a warning if a theme uses an unsubstituted layer",
+            "Generates a warning if a theme uses an inline layer; we recommend splitting of all layers in separate files",
             ["layers"],
             "WarnForUnsubstitutedLayersInTheme"
         )

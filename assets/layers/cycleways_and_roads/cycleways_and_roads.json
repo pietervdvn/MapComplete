@@ -47,6 +47,9 @@
       ]
     }
   },
+  "calculatedTags": [
+    "width:= ! ! (feat.properties['width:carriageway']) ? feat.properties['width:carriageway'] : feat.properties['width'] "
+  ],
   "minzoom": 16,
   "title": {
     "render": {

@@ -140,7 +140,7 @@ class AddIconSummary extends DesugaringStep<{ raw: LayerConfigJson; parsed: Laye
 
 class LayerOverviewUtils extends Script {
     public static readonly layerPath = "./src/assets/generated/layers/"
-    public static readonly themePath = "./src/assets/generated/themes/"
+    public static readonly themePath = "./public/assets/generated/themes/"
 
     constructor() {
         super("Reviews and generates the compiled themes")
@@ -319,12 +319,12 @@ class LayerOverviewUtils extends Script {
                 keywords,
                 layers: theme.layers.filter((l) => sharedLayers.has(l["id"])).map((l) => l["id"]),
             }
-            perId.set(theme.id, data)
+            perId.set(data.id, data)
         }
 
         const sorted = Constants.themeOrder.map((id) => {
             if (!perId.has(id)) {
-                throw "Ordered theme id " + id + " not found"
+                throw "Ordered theme '" + id + "' not found"
             }
             return perId.get(id)
         })
@@ -497,6 +497,8 @@ class LayerOverviewUtils extends Script {
             priviliged.delete(key)
         })
 
+
+
         // These two get a free pass
         priviliged.delete("summary")
         priviliged.delete("last_click")
@@ -527,7 +529,7 @@ class LayerOverviewUtils extends Script {
             writeFileSync(
                 "./src/assets/generated/known_layers.json",
                 JSON.stringify({
-                    layers: Array.from(sharedLayers.values()).filter((l) => l.id !== "favourite"),
+                    layers: Array.from(sharedLayers.values()).filter((l) => !(l["#no-index"] === "yes")),
                 })
             )
         }
@@ -572,15 +574,6 @@ class LayerOverviewUtils extends Script {
         for (const [_, theme] of sharedThemes) {
             theme.layers = theme.layers.filter(
                 (l) => Constants.added_by_default.indexOf(l["id"]) < 0
-            )
-        }
-
-        if (recompiledThemes.length > 0) {
-            writeFileSync(
-                "./src/assets/generated/known_themes.json",
-                JSON.stringify({
-                    themes: Array.from(sharedThemes.values()),
-                })
             )
         }
 
@@ -647,7 +640,6 @@ class LayerOverviewUtils extends Script {
                         const sharedLayer = JSON.parse(readFileSync(targetPath, "utf8"))
                         sharedLayers.set(sharedLayer.id, sharedLayer)
                         skippedLayers.push(sharedLayer.id)
-                        ScriptUtils.erasableLog("Loaded " + sharedLayer.id)
                         continue
                     } catch (e) {
                         throw "Could not parse " + targetPath + " : " + e
@@ -847,6 +839,9 @@ class LayerOverviewUtils extends Script {
             const themeInfo = themeFiles[i]
             const themePath = themeInfo.path
             let themeFile = themeInfo.parsed
+            if(!themeFile){
+                throw "Got an empty file for"+themeInfo.path
+            }
             if (whitelist.size > 0 && !whitelist.has(themeFile.id)) {
                 continue
             }

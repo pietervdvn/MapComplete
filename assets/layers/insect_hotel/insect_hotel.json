@@ -17,6 +17,19 @@
     "en": "Insect Hotel",
     "nl": "Insectenhotel"
   },
+  "pointRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "marker": [
+        {
+          "icon": "./assets/layers/insect_hotel/insect_hotel.svg"
+        }
+      ]
+    }
+  ],
   "presets": [
     {
       "title": {
@@ -31,22 +44,9 @@
   "tagRenderings": [
     "images"
   ],
-  "pointRendering": [
-    {
-      "location": [
-        "point",
-        "centroid"
-      ],
-      "marker": [
-        {
-          "icon": "./assets/layers/insect_hotel/insect_hotel.svg"
-        }
-      ]
-    }
-  ],
+  "deletion": true,
   "allowMove": {
     "enableImproveAccuracy": true,
     "enableRelocation": true
-  },
-  "deletion": true
+  }
 }

@@ -340,7 +340,6 @@
   "tagRenderings": [
     "shops.*"
   ],
-  "#filter": "no-auto",
   "filter": [
     {
       "id": "sells_second-hand",
@@ -390,6 +389,7 @@
     },
     "open_now"
   ],
+  "#filter": "no-auto",
   "deletion": true,
   "allowMove": true
 }

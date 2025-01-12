@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="Warstwa_1"
+   data-name="Warstwa 1"
+   viewBox="0 0 947.72999 506.61"
+   version="1.1"
+   sodipodi:docname="Froo.ro.svg"
+   width="947.72998"
+   height="506.60999"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview856"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     fit-margin-left="0"
+     inkscape:zoom="0.75279228"
+     inkscape:cx="460.28634"
+     inkscape:cy="254.38624"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Warstwa_1" />
+  <defs
+     id="defs843">
+    <style
+       id="style841"> .cls-1 { fill: #006420; stroke-width: 0px; } </style>
+  </defs>
+  <path
+     class="cls-1"
+     d="m 449.82,506.61 c 99.21,0 190.91,-32.8 264.81,-88.14 l -10.32,-49.09 c -72.59,44.96 -160.22,71.3 -254.49,71.3 -94.27,0 -181.92,-26.35 -254.51,-71.32 l -10.32,49.09 c 73.91,55.35 165.61,88.16 264.84,88.16"
+     id="path845" />
+  <path
+     class="cls-1"
+     d="M 41.59,159.84 H 0 V 113.57 H 42.53 L 43,90.2 C 43,23.37 78.52,0 128.99,0 c 18.7,0 38.32,3.27 58.89,9.35 l -6.54,46.73 c -12.62,-4.67 -26.64,-6.54 -38.79,-6.54 -21.97,0 -37.39,11.68 -37.39,42.06 v 21.97 h 71.04 v 46.27 H 105.16 V 348.18 H 41.6 V 159.84 Z"
+     id="path847" />
+  <path
+     class="cls-1"
+     d="m 370.52,113.57 c 17.29,-0.47 35.05,4.67 48.14,14.49 l -14.49,54.68 c -13.55,-8.88 -27.58,-12.62 -42.06,-12.15 -28.51,0 -52.81,18.7 -52.81,53.28 V 348.18 H 245.27 V 186.95 c 0,-18.69 -1.83,-27.1 -22.43,-27.1 v -42.82 c 32.71,-7.48 78.51,-5.32 82.25,34.87 9.35,-25.7 37.86,-38.32 65.43,-38.32 z"
+     id="path849" />
+  <path
+     class="cls-1"
+     d="m 558.06,348.18 c -59.82,0 -120.11,-39.26 -120.11,-118.24 0,-78.98 58.89,-115.9 118.24,-116.37 60.29,-0.47 120.58,36.92 120.58,116.37 0,79.45 -59.35,118.24 -118.71,118.24 z m -1.4,-57.02 c 27.57,0.47 55.15,-20.09 55.15,-61.22 0,-41.13 -26.17,-58.89 -53.74,-58.89 -27.57,0 -55.15,18.23 -55.15,58.89 0,40.66 26.64,61.22 53.74,61.22 z"
+     id="path851" />
+  <path
+     class="cls-1"
+     d="m 829.02,348.18 c -59.82,0 -120.11,-39.26 -120.11,-118.24 0,-78.98 58.89,-115.9 118.24,-116.37 60.29,-0.47 120.58,36.92 120.58,116.37 0,79.45 -59.35,118.24 -118.71,118.24 z m -1.4,-57.02 c 27.57,0.47 55.15,-20.09 55.15,-61.22 0,-41.13 -26.17,-58.89 -53.74,-58.89 -27.57,0 -55.15,18.23 -55.15,58.89 0,40.66 26.64,61.22 53.74,61.22 z"
+     id="path853" />
+</svg>

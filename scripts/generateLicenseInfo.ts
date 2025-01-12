@@ -170,7 +170,6 @@ export class GenerateLicenseInfo extends Script {
             const whiteColours = Array.from(colours).map((c) => {
                 const rgb = Utils.color(c)
                 if (!rgb) {
-                    console.log("Could not parse ", c)
                     return false
                 }
                 const { r, g, b } = rgb

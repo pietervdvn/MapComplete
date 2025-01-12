@@ -11,10 +11,24 @@
   "source": {
     "osmTags": "information=tactile_model"
   },
+  "minzoom": 10,
   "title": {
     "en": "Tactile Model",
     "de": "Taktiles Modell"
   },
+  "pointRendering": [
+    {
+      "marker": [
+        {
+          "icon": "./assets/layers/tactile_model/tactile_model.svg"
+        }
+      ],
+      "location": [
+        "point",
+        "centroid"
+      ]
+    }
+  ],
   "presets": [
     {
       "tags": [
@@ -29,22 +43,6 @@
         "en": "A tactile model is a three-dimensional model of an area, allowing people to explore/see an area by touch.",
         "de": "Ein taktiles Modell ist ein dreidimensionales Modell eines Gebiets, das es den Menschen ermöglicht, ein Gebiet durch Berührung zu erkunden/sehen."
       }
-    }
-  ],
-  "deletion": true,
-  "allowMove": true,
-  "minzoom": 10,
-  "pointRendering": [
-    {
-      "marker": [
-        {
-          "icon": "./assets/layers/tactile_model/tactile_model.svg"
-        }
-      ],
-      "location": [
-        "point",
-        "centroid"
-      ]
     }
   ],
   "tagRenderings": [
@@ -176,5 +174,7 @@
       }
     },
     "website"
-  ]
+  ],
+  "deletion": true,
+  "allowMove": true
 }

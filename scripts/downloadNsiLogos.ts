@@ -1,9 +1,13 @@
 import Script from "./Script"
 import NameSuggestionIndex, { NSIItem } from "../src/Logic/Web/NameSuggestionIndex"
 import * as nsiWD from "../node_modules/name-suggestion-index/dist/wikidata.min.json"
-import { existsSync, readFileSync, unlinkSync, writeFileSync } from "fs"
+import { existsSync, mkdirSync, readFileSync, unlinkSync, writeFileSync } from "fs"
 import ScriptUtils from "./ScriptUtils"
 import { Utils } from "../src/Utils"
+import { LayerConfigJson } from "../src/Models/ThemeConfig/Json/LayerConfigJson"
+import { FilterConfigOptionJson } from "../src/Models/ThemeConfig/Json/FilterConfigJson"
+import { TagUtils } from "../src/Logic/Tags/TagUtils"
+import { TagRenderingConfigJson } from "../src/Models/ThemeConfig/Json/TagRenderingConfigJson"
 
 class DownloadNsiLogos extends Script {
     constructor() {
@@ -26,8 +30,8 @@ class DownloadNsiLogos extends Script {
         let path = basePath + nsiItem.id
 
         const logos = nsiWD["wikidata"][nsiItem?.tags?.[type + ":wikidata"]]?.logos
-
-        if (NameSuggestionIndex.isSvg(nsiItem, type)) {
+        const nsi = await NameSuggestionIndex.getNsiIndex()
+        if (nsi.isSvg(nsiItem, type)) {
             path = path + ".svg"
         }
 
@@ -43,7 +47,7 @@ class DownloadNsiLogos extends Script {
             await ScriptUtils.DownloadFileTo(logos.facebook, path)
             // Validate
             const content = readFileSync(path, "utf8")
-            if (content.startsWith('{"error"')) {
+            if (content.startsWith("{\"error\"")) {
                 unlinkSync(path)
                 console.error("Attempted to fetch", logos.facebook, " but this gave an error")
             } else {
@@ -86,13 +90,10 @@ class DownloadNsiLogos extends Script {
         return false
     }
 
-    async main(): Promise<void> {
-        await this.downloadFor("operator")
-        await this.downloadFor("brand")
-    }
 
-    async downloadFor(type: "brand" | "operator"): Promise<void> {
-        const items = NameSuggestionIndex.allPossible(type)
+    async downloadFor(type: string): Promise<void> {
+        const nsi = await NameSuggestionIndex.getNsiIndex()
+        const items = nsi.allPossible(type)
         const basePath = "./public/assets/data/nsi/logos/"
         let downloadCount = 0
         const stepcount = 5
@@ -108,7 +109,7 @@ class DownloadNsiLogos extends Script {
                         downloadCount++
                     }
                     return downloaded
-                })
+                }),
             )
             for (let j = 0; j < results.length; j++) {
                 let didDownload = results[j]
@@ -123,6 +124,87 @@ class DownloadNsiLogos extends Script {
             }
         }
     }
+
+    private async generateRendering(type: string) {
+        const nsi = await NameSuggestionIndex.getNsiIndex()
+        const items = nsi.allPossible(type)
+        const filterOptions: FilterConfigOptionJson[] = items.map(item => {
+            return ({
+                question: item.displayName,
+                icon: nsi.getIconUrl(item, type),
+                osmTags: NameSuggestionIndex.asFilterTags(item),
+            })
+        })
+        const mappings = items.map(item => ({
+            if: NameSuggestionIndex.asFilterTags(item),
+            then: nsi.getIconUrl(item, type),
+        }))
+
+        console.log("Checking for shadow-mappings...")
+        for (let i = mappings.length - 1; i >= 0; i--) {
+            const condition = TagUtils.Tag(mappings[i].if)
+            if (i % 100 === 0) {
+                console.log("Checking for shadow-mappings...", i, "/", mappings.length)
+
+            }
+            const shadowsSomething = mappings.some((m, j) => {
+                if (i === j) {
+                    return false
+                }
+                return condition.shadows(TagUtils.Tag(m.if))
+            })
+            // If this one matches, the other one will match as well
+            // We can thus remove this one in favour of the other one
+            if (shadowsSomething) {
+                mappings.splice(i, 1)
+            }
+        }
+
+        const iconsTr: TagRenderingConfigJson = <any>{
+            strict: true,
+            id: "icon",
+            mappings,
+        }
+
+        const config: LayerConfigJson = {
+            id: "nsi_" + type,
+            description: {
+                en: "Exposes part of the NSI to reuse in other themes, e.g. for rendering",
+            },
+            source: "special:library",
+            pointRendering: null,
+            tagRenderings: [
+                iconsTr,
+            ],
+            filter: [
+                <any>{
+                    "#": "ignore-possible-duplicate",
+                    id: type,
+                    strict: true,
+                    options: [{ question: type }, ...filterOptions],
+                },
+            ],
+            allowMove: false,
+            "#dont-translate": "*",
+        }
+        const path = "./assets/layers/nsi_" + type
+        mkdirSync(path, { recursive: true })
+        writeFileSync(path + "/nsi_" + type + ".json", JSON.stringify(config, null, "  "))
+        console.log("Written", path)
+    }
+
+    async main(): Promise<void> {
+        const nsi = await NameSuggestionIndex.getNsiIndex()
+        const types = ["brand", "operator"]
+        for (const type of types) {
+            await this.downloadFor(type)
+        }
+        for (const type of types) {
+            await this.generateRendering(type)
+        }
+    }
+
+
 }
 
 new DownloadNsiLogos().run()

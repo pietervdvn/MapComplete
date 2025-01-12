@@ -1,7 +1,7 @@
 import { Utils } from "../../../src/Utils"
 import ThemeConfig from "../../../src/Models/ThemeConfig/ThemeConfig"
 
-import * as bookcaseJson from "../../../src/assets/generated/themes/bookcases.json"
+import * as bookcaseJson from "../../../public/assets/generated/themes/bookcases.json"
 import { OsmTags } from "../../../src/Models/OsmFeature"
 import { Feature, Geometry } from "geojson"
 import { expect, it } from "vitest"

@@ -249,6 +249,38 @@
       "id": "Still in use?"
     },
     {
+      "id": "fee",
+      "question": {
+        "en": "Is this drinking water point free to use?",
+        "nl": "Is dit drinkwaterpunt gratis te gebruiken?",
+        "de": "Kann diese Trinkwasserstelle kostenlos genutzt werden?",
+        "ca": "Aquest punt d'aigua potable és d'ús gratuït?",
+        "es": "¿Es de libre uso este punto de agua potable?"
+      },
+      "mappings": [
+        {
+          "if": "fee=no",
+          "then": {
+            "en": "Free to use",
+            "nl": "Gratis te gebruiken",
+            "de": "Die Nutzung ist kostenlos",
+            "ca": "D'us gratuït",
+            "es": "Libre de uso"
+          }
+        },
+        {
+          "if": "fee=yes",
+          "then": {
+            "en": "One needs to pay to use this drinking water point",
+            "nl": "Men moet betalen om dit drinkwaterpunt te gebruiken",
+            "de": "Die Nutzung ist kostenpflichtig",
+            "ca": "Cal pagar per utilitzar aquest punt d'aigua potable",
+            "es": "Hay que pagar para usar este punto de agua potable"
+          }
+        }
+      ]
+    },
+    {
       "id": "type",
       "question": {
         "en": "What type of drinking water point is this?",
@@ -355,33 +387,51 @@
       "id": "Bottle refill"
     },
     {
-      "id": "fee",
+      "id": "temperature-cold",
       "question": {
-        "en": "Is this drinking water point free to use?",
-        "nl": "Is dit drinkwaterpunt gratis te gebruiken?",
-        "de": "Kann diese Trinkwasserstelle kostenlos genutzt werden?",
-        "ca": "Aquest punt d'aigua potable és d'ús gratuït?",
-        "es": "¿Es de libre uso este punto de agua potable?"
+        "en": "Is cold water available here?",
+        "nl": "Is gekoeld water hier beschikbaar?"
       },
+      "multiAnswer": true,
       "mappings": [
         {
-          "if": "fee=no",
+          "if": "iced_water=yes",
+          "ifnot": "iced_water=no",
           "then": {
-            "en": "Free to use",
-            "nl": "Gratis te gebruiken",
-            "de": "Die Nutzung ist kostenlos",
-            "ca": "D'us gratuït",
-            "es": "Libre de uso"
+            "en": "Ice-cold water is provided here",
+            "nl": "Ijskoud water is hier beschikbaar"
           }
         },
         {
-          "if": "fee=yes",
+          "if": "cold_water=yes",
+          "ifnot": "cold_water=no",
           "then": {
-            "en": "One needs to pay to use this drinking water point",
-            "nl": "Men moet betalen om dit drinkwaterpunt te gebruiken",
-            "de": "Die Nutzung ist kostenpflichtig",
-            "ca": "Cal pagar per utilitzar aquest punt d'aigua potable",
-            "es": "Hay que pagar para usar este punto de agua potable"
+            "en": "Actively cooled water is available here",
+            "nl": "Afgekoeld water is hier beschikbaar"
+          }
+        },
+        {
+          "if": "room_temperature_water=yes",
+          "ifnot": "room_temperature_water=no",
+          "then": {
+            "en": "Ambient temperature water (without active cooling or heating) is available here",
+            "nl": "Water aan omgevingstemperatuur (zonder actieve koeling of opwarming) is hier beschikbaar"
+          }
+        },
+        {
+          "if": "warm_water=yes",
+          "ifnot": "warm_water=no",
+          "then": {
+            "en": "Warmed water is provided here; the water is not dangerously hot",
+            "nl": "Warm water is hier beschikbaar; het water is niet gevaarlijk heet"
+          }
+        },
+        {
+          "if": "hot_water=yes",
+          "ifnot": "hot_water=no",
+          "then": {
+            "en": "Hot water is provided here",
+            "nl": "Heet water is hier beschikbaar"
           }
         }
       ]

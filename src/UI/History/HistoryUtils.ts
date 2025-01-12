@@ -1,4 +1,4 @@
-import * as all_layers from "../../assets/generated/themes/personal.json"
+import * as all_layers from "../../../public/assets/generated/themes/personal.json"
 import ThemeConfig from "../../Models/ThemeConfig/ThemeConfig"
 import { OsmObject } from "../../Logic/Osm/OsmObject"
 

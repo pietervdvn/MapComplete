@@ -21,6 +21,15 @@ export default interface FilterConfigJson {
      */
     id: string
     /**
+     * If set, the options will be pruned. Only items for which the filter match the layer source will be kept.
+     *
+     * For example, we import types of brands from the nsi. This contains a ton of items, e.g.
+     * [{question: "Brand X", osmTags: {"and": ["shop=clothes", "brand=Brand X]}, {osmTags: {"and": "shop=convenience", ...} ...} ]
+     * Of course, when making a layer about `shop=clothes`, we'll only want to keep the clothes shops.
+     * If set to strict and the source is `shop=clothes`, only those options which have shop=clothes will be returned
+     */
+    strict?: boolean
+    /**
      * The options for a filter
      * If there are multiple options these will be a list of radio buttons
      * If there is only one option this will be a checkbox

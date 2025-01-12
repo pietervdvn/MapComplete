@@ -41,6 +41,9 @@ export interface AutoAction extends SpecialVisualization {
     ): Promise<void>
 }
 
+/**
+ * @deprecated
+ */
 class ApplyButton extends UIElement {
     private readonly icon: string
     private readonly text: string

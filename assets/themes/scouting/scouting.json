@@ -1,0 +1,14 @@
+{
+  "id": "scouting",
+  "title": {
+    "en": "Scouting groups"
+  },
+  "description": {
+    "en": "A scouting group is a social youth movement with a heavy emphasis on the outdoors. Activities range from camping, hiking, aquatics, backpacking, exploring nature, ..."
+  },
+  "icon": "./assets/layers/scouting_group/scouting.svg",
+  "defaultBackgroundId": "protomaps.dark",
+  "layers": [
+    "scouting_group"
+  ]
+}

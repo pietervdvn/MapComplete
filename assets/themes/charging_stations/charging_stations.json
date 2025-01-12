@@ -62,7 +62,7 @@
   },
   "icon": "./assets/themes/charging_stations/logo.svg",
   "layers": [
-    "charging_station"
-  ],
-  "widenFactor": 1.5
+    "charging_station",
+    "charge_point"
+  ]
 }
