@@ -1,0 +1,20 @@
+{
+  "id": "scouting",
+  "title": {
+    "en": "Scouting",
+    "de": "Pfadfinden"
+  },
+  "description": {
+    "en": "scouting groups"
+  },
+  "icon": "./assets/layers/scouting_groups/WikiProject_Scouting_fleur-de-lis_outline.svg",
+  "credits": "Osmwithspace",
+  "credits:uid": 8770388,
+  "layers": [
+    {
+      "builtin": [
+        "scouting_groups"
+      ]
+    }
+  ]
+}
