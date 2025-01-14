@@ -13,6 +13,7 @@
   import { Utils } from "../../../Utils"
   import { onDestroy } from "svelte"
   import TagRenderingQuestionDynamic from "./TagRenderingQuestionDynamic.svelte"
+  import LoginToggle from "../../Base/LoginToggle.svelte"
 
   export let layer: LayerConfig
   export let tags: UIEventSource<Record<string, string>>
@@ -155,74 +156,78 @@
       </TagRenderingQuestionDynamic>
     {/if}
 
-    {#if $allQuestionsToAsk.length === 0}
-      <div class="thanks">
-        <Tr t={Translations.t.general.questionBox.done} />
-      </div>
-    {/if}
+    <LoginToggle {state}>
+      <span slot="not-logged-in"></span>
+      {#if $allQuestionsToAsk.length === 0}
+        <div class="thanks">
+          <Tr t={Translations.t.general.questionBox.done} />
+        </div>
+      {/if}
 
-    <div class="mt-4 mb-8">
-      {#if skipped + answered > 0}
-        <div class="flex justify-center">
-          {#if answered === 0}
-            {#if skipped === 1}
-              <Tr t={Translations.t.general.questionBox.skippedOne} />
-            {:else}
-              <Tr t={Translations.t.general.questionBox.skippedMultiple.Subs({ skipped })} />
-            {/if}
-          {:else if answered === 1}
-            {#if skipped === 0}
-              <Tr t={Translations.t.general.questionBox.answeredOne} />
+      <div class="mt-4 mb-8">
+        {#if skipped + answered > 0}
+          <div class="flex justify-center">
+            {#if answered === 0}
+              {#if skipped === 1}
+                <Tr t={Translations.t.general.questionBox.skippedOne} />
+              {:else}
+                <Tr t={Translations.t.general.questionBox.skippedMultiple.Subs({ skipped })} />
+              {/if}
+            {:else if answered === 1}
+              {#if skipped === 0}
+                <Tr t={Translations.t.general.questionBox.answeredOne} />
+              {:else if skipped === 1}
+                <Tr t={Translations.t.general.questionBox.answeredOneSkippedOne} />
+              {:else}
+                <Tr
+                  t={Translations.t.general.questionBox.answeredOneSkippedMultiple.Subs({ skipped })}
+                />
+              {/if}
+            {:else if skipped === 0}
+              <Tr t={Translations.t.general.questionBox.answeredMultiple.Subs({ answered })} />
             {:else if skipped === 1}
-              <Tr t={Translations.t.general.questionBox.answeredOneSkippedOne} />
+              <Tr
+                t={Translations.t.general.questionBox.answeredMultipleSkippedOne.Subs({ answered })}
+              />
             {:else}
               <Tr
-                t={Translations.t.general.questionBox.answeredOneSkippedMultiple.Subs({ skipped })}
-              />
-            {/if}
-          {:else if skipped === 0}
-            <Tr t={Translations.t.general.questionBox.answeredMultiple.Subs({ answered })} />
-          {:else if skipped === 1}
-            <Tr
-              t={Translations.t.general.questionBox.answeredMultipleSkippedOne.Subs({ answered })}
-            />
-          {:else}
-            <Tr
-              t={Translations.t.general.questionBox.answeredMultipleSkippedMultiple.Subs({
+                t={Translations.t.general.questionBox.answeredMultipleSkippedMultiple.Subs({
                 answered,
                 skipped,
               })}
-            />
-          {/if}
-        </div>
+              />
+            {/if}
+          </div>
 
-        {#if skipped + $skippedQuestions.size > 0}
-          <button
-            class="w-full"
-            on:click={() => {
+          {#if skipped + $skippedQuestions.size > 0}
+            <button
+              class="w-full"
+              on:click={() => {
               skippedQuestions.setData(new Set())
               skipped = 0
             }}
-          >
-            <Tr t={Translations.t.general.questionBox.reactivate} />
-          </button>
+            >
+              <Tr t={Translations.t.general.questionBox.reactivate} />
+            </button>
+          {/if}
         {/if}
-      {/if}
 
-      {#if $skippedQuestions.size - skipped > 0}
-        <button
-          class="w-full"
-          on:click={() => {
+        {#if $skippedQuestions.size - skipped > 0}
+          <button
+            class="w-full"
+            on:click={() => {
             skippedQuestions.setData(new Set())
             skipped = 0
           }}
-        >
-          Show the disabled questions for this object
-        </button>
-      {/if}
-      {#if $debug}
-        Skipped questions are {Array.from($skippedQuestions).join(", ")}
-      {/if}
-    </div>
+          >
+            Show the disabled questions for this object
+          </button>
+        {/if}
+        {#if $debug}
+          Skipped questions are {Array.from($skippedQuestions).join(", ")}
+        {/if}
+      </div>
+    </LoginToggle>
+
   </div>
 {/if}
