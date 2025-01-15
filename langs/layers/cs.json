@@ -7694,17 +7694,10 @@
     "recycling": {
         "description": "Vrstva s recyklačními kontejnery a středisky",
         "filter": {
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Všechny typy recyklace"
-                    }
-                }
-            },
             "2": {
                 "options": {
                     "0": {
-                        "question": "Pouze veřejný přístup"
+                        "question": "Všechny typy recyklace"
                     },
                     "1": {
                         "question": "Recyklace baterií"

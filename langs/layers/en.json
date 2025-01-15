@@ -9135,14 +9135,14 @@
             "1": {
                 "options": {
                     "0": {
-                        "question": "All recycling types"
+                        "question": "Only recycling centres"
                     }
                 }
             },
             "2": {
                 "options": {
                     "0": {
-                        "question": "Only public access"
+                        "question": "All recycling types"
                     },
                     "1": {
                         "question": "Recycling of batteries"
