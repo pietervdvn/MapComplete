@@ -9007,17 +9007,10 @@
     "recycling": {
         "description": "Eine Ebene mit Recyclingcontainern und -zentren",
         "filter": {
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Alle Recyclingarten"
-                    }
-                }
-            },
             "2": {
                 "options": {
                     "0": {
-                        "question": "Nur öffentliche Recyclingeinrichtungen"
+                        "question": "Alle Recyclingarten"
                     },
                     "1": {
                         "question": "Recycling von Batterien"

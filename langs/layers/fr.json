@@ -5442,17 +5442,10 @@
     "recycling": {
         "description": "Une couche avec des conteneurs de recyclage et des déchèteries",
         "filter": {
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Tout type de recyclage"
-                    }
-                }
-            },
             "2": {
                 "options": {
                     "0": {
-                        "question": "Accès public uniquement"
+                        "question": "Tout type de recyclage"
                     },
                     "1": {
                         "question": "Recyclage de piles et batteries domestiques"
