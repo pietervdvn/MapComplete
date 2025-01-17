@@ -137,31 +137,31 @@ export class And extends TagsFilter {
      * t1.shadows(t2) // => true
      */
     shadows(other: TagsFilter): boolean {
-        const phrases: TagsFilter[] = other instanceof And ? other.and : [other];
+        const phrases: TagsFilter[] = other instanceof And ? other.and : [other]
         // A phrase might be shadowed by a certain subsection. We keep track of this here
         const shadowedOthers = phrases.map(() => false)
         for (const selfTag of this.and) {
-            let shadowsSome = false;
-            let shadowsAll = true;
-            for (let i = 0; i < phrases.length; i++){
+            let shadowsSome = false
+            let shadowsAll = true
+            for (let i = 0; i < phrases.length; i++) {
                 const otherTag = phrases[i]
                 const doesShadow = selfTag.shadows(otherTag)
-                if(doesShadow){
-                    shadowedOthers[i] = true;
+                if (doesShadow) {
+                    shadowedOthers[i] = true
                 }
-                shadowsSome ||= doesShadow;
-                shadowsAll &&= doesShadow;
+                shadowsSome ||= doesShadow
+                shadowsAll &&= doesShadow
             }
             // If A => X and A => Y, then
             // A&B implies X&Y. We discovered an A that implies all needed values
             if (shadowsAll) {
-                return true;
+                return true
             }
             if (!shadowsSome) {
-                return false;
+                return false
             }
         }
-        return !shadowedOthers.some(v => !v);
+        return !shadowedOthers.some((v) => !v)
     }
 
     usedKeys(): string[] {

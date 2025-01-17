@@ -71,6 +71,7 @@
     _state = "done"
   }
 </script>
+
 {#if uploadFailed}
   <div class="alert flex">
     <ExclamationTriangle class="h-6 w-6" />

@@ -1177,6 +1177,10 @@
         "description": "On this map, rainbow-painted pedestrian crossings are shown and can be easily added",
         "title": "Rainbow pedestrian crossings"
     },
+    "scouting": {
+        "description": "A scouting group is a social youth movement with a heavy emphasis on the outdoors. Activities range from camping, hiking, aquatics, backpacking, exploring nature, ...",
+        "title": "Scouting groups"
+    },
     "shops": {
         "description": "On this map, one can mark basic information about shops, add opening hours and phone numbers",
         "shortDescription": "An editable map with basic shop information",

@@ -497,8 +497,6 @@ class LayerOverviewUtils extends Script {
             priviliged.delete(key)
         })
 
-
-
         // These two get a free pass
         priviliged.delete("summary")
         priviliged.delete("last_click")
@@ -529,7 +527,9 @@ class LayerOverviewUtils extends Script {
             writeFileSync(
                 "./src/assets/generated/known_layers.json",
                 JSON.stringify({
-                    layers: Array.from(sharedLayers.values()).filter((l) => !(l["#no-index"] === "yes")),
+                    layers: Array.from(sharedLayers.values()).filter(
+                        (l) => !(l["#no-index"] === "yes")
+                    ),
                 })
             )
         }
@@ -839,8 +839,8 @@ class LayerOverviewUtils extends Script {
             const themeInfo = themeFiles[i]
             const themePath = themeInfo.path
             let themeFile = themeInfo.parsed
-            if(!themeFile){
-                throw "Got an empty file for"+themeInfo.path
+            if (!themeFile) {
+                throw "Got an empty file for" + themeInfo.path
             }
             if (whitelist.size > 0 && !whitelist.has(themeFile.id)) {
                 continue

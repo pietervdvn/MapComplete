@@ -1,6 +1,18 @@
-import { Concat, DesugaringContext, DesugaringStep, Each, FirstOf, Fuse, On, SetDefault } from "./Conversion"
+import {
+    Concat,
+    DesugaringContext,
+    DesugaringStep,
+    Each,
+    FirstOf,
+    Fuse,
+    On,
+    SetDefault,
+} from "./Conversion"
 import { LayerConfigJson } from "../Json/LayerConfigJson"
-import { MinimalTagRenderingConfigJson, TagRenderingConfigJson } from "../Json/TagRenderingConfigJson"
+import {
+    MinimalTagRenderingConfigJson,
+    TagRenderingConfigJson,
+} from "../Json/TagRenderingConfigJson"
 import { Utils } from "../../../Utils"
 import RewritableConfigJson from "../Json/RewritableConfigJson"
 import SpecialVisualizations from "../../../UI/SpecialVisualizations"
@@ -695,7 +707,7 @@ class PreparePointRendering extends Fuse<PointRenderingConfigJson> {
     constructor(state: DesugaringContext, layer: LayerConfigJson) {
         super(
             "Prepares point renderings by expanding 'icon' and 'iconBadges'." +
-            " A tagRendering from the host tagRenderings will be substituted in",
+                " A tagRendering from the host tagRenderings will be substituted in",
             new On(
                 "marker",
                 new Each(
@@ -751,19 +763,21 @@ class ExpandMarkerRenderings extends DesugaringStep<IconConfigJson> {
     }
 
     convert(json: IconConfigJson, context: ConversionContext): IconConfigJson {
-        const expander = new ExpandTagRendering(this._state, this._layer, {applyCondition: false})
+        const expander = new ExpandTagRendering(this._state, this._layer, { applyCondition: false })
         const result: IconConfigJson = { icon: undefined, color: undefined }
         if (json.icon && json.icon["builtin"]) {
-            result.icon = <MinimalTagRenderingConfigJson>(
-                expander.convert(<any>json.icon, context.enter("icon"))[0]
-            ) ?? json.icon
+            result.icon =
+                <MinimalTagRenderingConfigJson>(
+                    expander.convert(<any>json.icon, context.enter("icon"))[0]
+                ) ?? json.icon
         } else {
             result.icon = json.icon
         }
         if (json.color && json.color["builtin"]) {
-            result.color = <MinimalTagRenderingConfigJson>(
-                expander.convert(<any>json.color, context.enter("color"))[0]
-            ) ?? json.color
+            result.color =
+                <MinimalTagRenderingConfigJson>(
+                    expander.convert(<any>json.color, context.enter("color"))[0]
+                ) ?? json.color
         } else {
             result.color = json.color
         }
@@ -1002,7 +1016,7 @@ export class PrepareLayer extends Fuse<LayerConfigJson> {
     }
 
     convert(json: LayerConfigJson, context: ConversionContext): LayerConfigJson {
-        if(json === undefined || json === null){
+        if (json === undefined || json === null) {
             throw "Error: prepareLayer got null"
         }
         return super.convert(json, context)

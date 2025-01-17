@@ -11,9 +11,9 @@ export class ExpandTagRendering extends Conversion<
     | string
     | TagRenderingConfigJson
     | {
-    builtin: string | string[]
-    override: any
-},
+          builtin: string | string[]
+          override: any
+      },
     TagRenderingConfigJson[]
 > {
     private readonly _state: DesugaringContext
@@ -35,12 +35,12 @@ export class ExpandTagRendering extends Conversion<
             noHardcodedStrings?: false | boolean
             // If set, a question will be added to the 'sharedTagRenderings'. Should only be used for 'questions.json'
             addToContext?: false | boolean
-        },
+        }
     ) {
         super(
             "Converts a tagRenderingSpec into the full tagRendering, e.g. by substituting the tagRendering by the shared-question and reusing the builtins",
             [],
-            "ExpandTagRendering",
+            "ExpandTagRendering"
         )
         this._state = state
         this._self = self
@@ -60,10 +60,11 @@ export class ExpandTagRendering extends Conversion<
 
     public convert(
         spec: string | any,
-        ctx: ConversionContext,
+        ctx: ConversionContext
     ): QuestionableTagRenderingConfigJson[] {
-        const trs = this.convertOnce(spec, ctx)
-            ?.map(tr => this.pruneMappings<TagRenderingConfigJson & { id: string }>(tr, ctx))
+        const trs = this.convertOnce(spec, ctx)?.map((tr) =>
+            this.pruneMappings<TagRenderingConfigJson & { id: string }>(tr, ctx)
+        )
         if (!Array.isArray(trs)) {
             ctx.err("Result of lookup for " + spec + " is not iterable; got " + trs)
             return undefined
@@ -71,8 +72,9 @@ export class ExpandTagRendering extends Conversion<
         const result = []
         for (const tr of trs) {
             if (typeof tr === "string" || tr["builtin"] !== undefined) {
-                const stable = this.convert(tr, ctx.inOperation("recursive_resolve"))
-                    .map(tr => this.pruneMappings(tr, ctx))
+                const stable = this.convert(tr, ctx.inOperation("recursive_resolve")).map((tr) =>
+                    this.pruneMappings(tr, ctx)
+                )
                 result.push(...stable)
                 if (this._options?.addToContext) {
                     for (const tr of stable) {
@@ -90,39 +92,47 @@ export class ExpandTagRendering extends Conversion<
         return result
     }
 
-    private pruneMappings<T extends (TagRenderingConfigJson & {
-        id: string
-    })>(tagRendering: T, ctx: ConversionContext): T {
+    private pruneMappings<
+        T extends TagRenderingConfigJson & {
+            id: string
+        }
+    >(tagRendering: T, ctx: ConversionContext): T {
         if (!tagRendering["strict"]) {
             return tagRendering
         }
-        if(!this._self.source["osmTags"]){
+        if (!this._self.source["osmTags"]) {
             return tagRendering
         }
-        ctx.inOperation("expandTagRendering:pruning").enters(tagRendering.id)
-            .info(`PRUNING! Tagrendering to prune: ${tagRendering.id} in the context of layer ${this._self.id} Sourcetags: ${this._self.source["osmTags"]}`)
+        ctx.inOperation("expandTagRendering:pruning")
+            .enters(tagRendering.id)
+            .info(
+                `PRUNING! Tagrendering to prune: ${tagRendering.id} in the context of layer ${this._self.id} Sourcetags: ${this._self.source["osmTags"]}`
+            )
         const before = tagRendering.mappings?.length ?? 0
 
         const alwaysTags = TagUtils.Tag(this._self.source["osmTags"])
-        const newMappings = tagRendering.mappings?.filter(mapping => {
-            const condition = TagUtils.Tag(mapping.if)
-            return condition.shadows(alwaysTags);
-
-
-        }).map(mapping => {
-            const newIf = TagUtils.removeKnownParts(
-                TagUtils.Tag(mapping.if), alwaysTags)
-            if (typeof newIf === "boolean") {
-                throw "Invalid removeKnownParts"
-            }
-            return {
-                ...mapping,
-                if: newIf.asJson(),
-            }
-        })
+        const newMappings = tagRendering.mappings
+            ?.filter((mapping) => {
+                const condition = TagUtils.Tag(mapping.if)
+                return condition.shadows(alwaysTags)
+            })
+            .map((mapping) => {
+                const newIf = TagUtils.removeKnownParts(TagUtils.Tag(mapping.if), alwaysTags)
+                if (typeof newIf === "boolean") {
+                    throw "Invalid removeKnownParts"
+                }
+                return {
+                    ...mapping,
+                    if: newIf.asJson(),
+                }
+            })
         const after = newMappings?.length ?? 0
         if (before - after > 0) {
-            ctx.info(`Pruned mappings for ${tagRendering.id}, from ${before} to ${after} (removed ${before - after})`)
+            ctx.info(
+                `Pruned mappings for ${tagRendering.id}, from ${before} to ${after} (removed ${
+                    before - after
+                })`
+            )
         }
         const tr = {
             ...tagRendering,
@@ -132,7 +142,10 @@ export class ExpandTagRendering extends Conversion<
         return tr
     }
 
-    private lookup(name: string, ctx: ConversionContext): (TagRenderingConfigJson & { id: string })[] | undefined {
+    private lookup(
+        name: string,
+        ctx: ConversionContext
+    ): (TagRenderingConfigJson & { id: string })[] | undefined {
         const direct = this.directLookup(name)
 
         if (direct === undefined) {
@@ -202,9 +215,11 @@ export class ExpandTagRendering extends Conversion<
             matchingTrs = layerTrs.filter((tr) => tr["id"] === id || tr["labels"]?.indexOf(id) >= 0)
         }
 
-        const contextWriter = new AddContextToTranslations<TagRenderingConfigJson & { id: string }>("layers:")
+        const contextWriter = new AddContextToTranslations<TagRenderingConfigJson & { id: string }>(
+            "layers:"
+        )
         for (let i = 0; i < matchingTrs.length; i++) {
-            let found: (TagRenderingConfigJson & { id: string }) = Utils.Clone(matchingTrs[i])
+            let found: TagRenderingConfigJson & { id: string } = Utils.Clone(matchingTrs[i])
             if (this._options?.applyCondition) {
                 // The matched tagRenderings are 'stolen' from another layer. This means that they must match the layer condition before being shown
                 if (typeof layer.source !== "string") {
@@ -220,8 +235,8 @@ export class ExpandTagRendering extends Conversion<
                 found,
                 ConversionContext.construct(
                     [layer.id, "tagRenderings", found["id"]],
-                    ["AddContextToTranslations"],
-                ),
+                    ["AddContextToTranslations"]
+                )
             )
             matchingTrs[i] = found
         }
@@ -232,7 +247,10 @@ export class ExpandTagRendering extends Conversion<
         return undefined
     }
 
-    private convertOnce(tr: string | any, ctx: ConversionContext): (TagRenderingConfigJson & { id: string })[] {
+    private convertOnce(
+        tr: string | any,
+        ctx: ConversionContext
+    ): (TagRenderingConfigJson & { id: string })[] {
         const state = this._state
 
         if (typeof tr === "string") {
@@ -250,17 +268,17 @@ export class ExpandTagRendering extends Conversion<
                 ctx.warn(
                     `A literal rendering was detected: ${tr}
                       Did you perhaps forgot to add a layer name as 'layername.${tr}'? ` +
-                    Array.from(state.sharedLayers.keys()).join(", "),
+                        Array.from(state.sharedLayers.keys()).join(", ")
                 )
             }
 
             if (this._options?.noHardcodedStrings && this._state?.sharedLayers?.size > 0) {
                 ctx.err(
                     "Detected an invocation to a builtin tagRendering, but this tagrendering was not found: " +
-                    tr +
-                    " \n    Did you perhaps forget to add the layer as prefix, such as `icons." +
-                    tr +
-                    "`? ",
+                        tr +
+                        " \n    Did you perhaps forget to add the layer as prefix, such as `icons." +
+                        tr +
+                        "`? "
                 )
             }
 
@@ -293,9 +311,9 @@ export class ExpandTagRendering extends Conversion<
                 }
                 ctx.err(
                     "An object calling a builtin can only have keys `builtin` or `override`, but a key with name `" +
-                    key +
-                    "` was found. This won't be picked up! The full object is: " +
-                    JSON.stringify(tr),
+                        key +
+                        "` was found. This won't be picked up! The full object is: " +
+                        JSON.stringify(tr)
                 )
             }
 
@@ -317,39 +335,39 @@ export class ExpandTagRendering extends Conversion<
                             const candidates = Utils.sortedByLevenshteinDistance(
                                 layerName,
                                 Utils.NoNull(Array.from(state.sharedLayers.keys())),
-                                (s) => s,
+                                (s) => s
                             )
                             if (state.sharedLayers.size === 0) {
                                 ctx.warn(
                                     "BOOTSTRAPPING. Rerun generate layeroverview. While reusing tagrendering: " +
-                                    name +
-                                    ": layer " +
-                                    layerName +
-                                    " not found for now, but ignoring as this is a bootstrapping run. ",
+                                        name +
+                                        ": layer " +
+                                        layerName +
+                                        " not found for now, but ignoring as this is a bootstrapping run. "
                                 )
                             } else {
                                 ctx.err(
                                     ": While reusing tagrendering: " +
-                                    name +
-                                    ": layer " +
-                                    layerName +
-                                    " not found. Maybe you meant one of " +
-                                    candidates.slice(0, 3).join(", "),
+                                        name +
+                                        ": layer " +
+                                        layerName +
+                                        " not found. Maybe you meant one of " +
+                                        candidates.slice(0, 3).join(", ")
                                 )
                             }
                             continue
                         }
                         candidates = Utils.NoNull(layer.tagRenderings.map((tr) => tr["id"])).map(
-                            (id) => layerName + "." + id,
+                            (id) => layerName + "." + id
                         )
                     }
                     candidates = Utils.sortedByLevenshteinDistance(name, candidates, (i) => i)
                     ctx.err(
                         "The tagRendering with identifier " +
-                        name +
-                        " was not found.\n\tDid you mean one of " +
-                        candidates.join(", ") +
-                        "?\n(Hint: did you add a new label and are you trying to use this label at the same time? Run 'reset:layeroverview' first",
+                            name +
+                            " was not found.\n\tDid you mean one of " +
+                            candidates.join(", ") +
+                            "?\n(Hint: did you add a new label and are you trying to use this label at the same time? Run 'reset:layeroverview' first"
                     )
                     continue
                 }

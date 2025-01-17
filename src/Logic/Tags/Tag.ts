@@ -150,11 +150,11 @@ export class Tag extends TagsFilter {
                 return other.matchesProperties({ [this.key]: this.value })
             }
         }
-        if(other instanceof Or){
-            return other.or.some(other => this.shadows(other))
+        if (other instanceof Or) {
+            return other.or.some((other) => this.shadows(other))
         }
-        if(other instanceof And){
-            return !other.and.some(other => !this.shadows(other))
+        if (other instanceof And) {
+            return !other.and.some((other) => !this.shadows(other))
         }
         return false
     }

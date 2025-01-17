@@ -580,6 +580,15 @@ The position of a signpost can be used by a hiker/biker/rider/s…
 |genre= POI, editor, rainbow_crossings
 }}
 {{service_item
+|name= [https://mapcomplete.org/scouting scouting]
+|region= Worldwide
+|lang= {{#language:en|en}}
+|descr= A MapComplete theme: A scouting group is a social youth movement with a heavy emphasis on the outdoors
+|material= {{yes|[https://mapcomplete.org/ Yes]}}
+|image= MapComplete_Screenshot.png
+|genre= POI, editor, scouting
+}}
+{{service_item
 |name= [https://mapcomplete.org/ski ski]
 |region= Worldwide
 |lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:es|en}}, {{#language:cs|en}}, {{#language:uk|en}}, {{#language:fr|en}}, {{#language:nl|en}}, {{#language:ko|en}}
@@ -618,7 +627,7 @@ The position of a signpost can be used by a hiker/biker/rider/s…
 {{service_item
 |name= [https://mapcomplete.org/trees trees]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:fr|en}}, {{#language:it|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:ru|en}}, {{#language:pl|en}}, {{#language:de|en}}, {{#language:nb_NO|en}}, {{#language:hu|en}}, {{#language:ca|en}}, {{#language:es|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:uk|en}}, {{#language:ko|en}}
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:fr|en}}, {{#language:it|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:ru|en}}, {{#language:pl|en}}, {{#language:de|en}}, {{#language:nb_NO|en}}, {{#language:hu|en}}, {{#language:ca|en}}, {{#language:es|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:uk|en}}, {{#language:ko|en}}, {{#language:pt|en}}
 |descr= A MapComplete theme: Map all the trees
 |material= {{yes|[https://mapcomplete.org/ Yes]}}
 |image= MapComplete_Screenshot.png

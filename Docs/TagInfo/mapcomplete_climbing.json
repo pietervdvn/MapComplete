@@ -1636,6 +1636,11 @@
       "value": "wine"
     },
     {
+      "key": "disused:shop",
+      "description": "Layer 'Shop' shows disused:shop= with a fixed text, namely 'This shop is no longer used. It is vacant' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots') Picking this answer will delete the key disused:shop. (This is only shown if craft=)",
+      "value": ""
+    },
+    {
       "key": "brand",
       "description": "Layer 'Shop' shows and asks freeform values for key 'brand' (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')"
     },
@@ -2494,6 +2499,16 @@
       "value": "drinking_water"
     },
     {
+      "key": "fee",
+      "description": "Layer 'Drinking water' shows fee=no with a fixed text, namely 'Free to use' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "value": "no"
+    },
+    {
+      "key": "fee",
+      "description": "Layer 'Drinking water' shows fee=yes with a fixed text, namely 'One needs to pay to use this drinking water point' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "value": "yes"
+    },
+    {
       "key": "fountain",
       "description": "Layer 'Drinking water' shows fountain=bubbler with a fixed text, namely 'This is a bubbler fountain. A water jet to drink from is sent upwards, typically controlled by a push button.' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
       "value": "bubbler"
@@ -2519,13 +2534,28 @@
       "value": "no"
     },
     {
-      "key": "fee",
-      "description": "Layer 'Drinking water' shows fee=no with a fixed text, namely 'Free to use' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
-      "value": "no"
+      "key": "iced_water",
+      "description": "Layer 'Drinking water' shows iced_water=yes with a fixed text, namely 'Ice-cold water is provided here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "value": "yes"
     },
     {
-      "key": "fee",
-      "description": "Layer 'Drinking water' shows fee=yes with a fixed text, namely 'One needs to pay to use this drinking water point' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "key": "cold_water",
+      "description": "Layer 'Drinking water' shows cold_water=yes with a fixed text, namely 'Actively cooled water is available here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "value": "yes"
+    },
+    {
+      "key": "room_temperature_water",
+      "description": "Layer 'Drinking water' shows room_temperature_water=yes with a fixed text, namely 'Ambient temperature water (without active cooling or heating) is available here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "value": "yes"
+    },
+    {
+      "key": "warm_water",
+      "description": "Layer 'Drinking water' shows warm_water=yes with a fixed text, namely 'Warmed water is provided here; the water is not dangerously hot' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
+      "value": "yes"
+    },
+    {
+      "key": "hot_water",
+      "description": "Layer 'Drinking water' shows hot_water=yes with a fixed text, namely 'Hot water is provided here' and allows to pick this as a default answer (in the mapcomplete.org theme 'Climbing gyms, clubs and spots')",
       "value": "yes"
     },
     {

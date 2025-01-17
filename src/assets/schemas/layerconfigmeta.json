@@ -1744,6 +1744,9 @@
       "types": "<span class=\"text-lg font-bold\">Use a different icon depending on the value of some attributes</span> ; icon",
       "question": "What icon should be used?",
       "suggestions": [
+        "nsi_brand.icon",
+        "nsi_operator.icon",
+        "id_presets.shop_rendering",
         {
           "if": "value=addSmall",
           "then": "addSmall",
@@ -2061,7 +2064,7 @@
         "type": "string"
       }
     ],
-    "description": ""
+    "description": "To reuse icons from a different layer of a library:\n- The library layer has, within tagRenderings one which will output the URL of the image (e.g. mappings: {\"if\": \"shop=xyz\", then: \"./assets/icons/shop_xyz.png\"})\n- Use \"layer_id.tagrendering_id\"\nNote that if you reuse icons from a different icon set, you'll probably want to use `override` to set a default rendering"
   },
   {
     "path": [
@@ -10764,6 +10767,10 @@
           "then": "caravansites - camper sites"
         },
         {
+          "if": "value=charge_point",
+          "then": "charge_point - Layer showing individual charge points within a charging station"
+        },
+        {
           "if": "value=charging_station",
           "then": "charging_station - A charging station"
         },
@@ -11052,6 +11059,14 @@
           "then": "note - This layer shows notes on OpenStreetMap. Having this layer in your theme will trigger the 'add new note' functionality in the 'addNewPoint'-popup (or if your theme has no presets, it'll enable adding notes)"
         },
         {
+          "if": "value=nsi_brand",
+          "then": "nsi_brand - Exposes part of the NSI to reuse in other themes, e.g. for rendering"
+        },
+        {
+          "if": "value=nsi_operator",
+          "then": "nsi_operator - Exposes part of the NSI to reuse in other themes, e.g. for rendering"
+        },
+        {
           "if": "value=observation_tower",
           "then": "observation_tower - Towers with a panoramic view"
         },
@@ -11154,6 +11169,10 @@
         {
           "if": "value=school",
           "then": "school - Schools giving primary and secondary education and post-secondary, non-tertiary education. Note that this level of education does not imply an age of the pupiles"
+        },
+        {
+          "if": "value=scouting_group",
+          "then": "scouting_group - A map showing scouting groups."
         },
         {
           "if": "value=search",
@@ -19979,6 +19998,16 @@
   {
     "path": [
       "filter",
+      "strict"
+    ],
+    "required": false,
+    "hints": {},
+    "type": "boolean",
+    "description": "If set, the options will be pruned. Only items for which the filter match the layer source will be kept.\nFor example, we import types of brands from the nsi. This contains a ton of items, e.g.\n[{question: \"Brand X\", osmTags: {\"and\": [\"shop=clothes\", \"brand=Brand X]}, {osmTags: {\"and\": \"shop=convenience\", ...} ...} ]\nOf course, when making a layer about `shop=clothes`, we'll only want to keep the clothes shops.\nIf set to strict and the source is `shop=clothes`, only those options which have shop=clothes will be returned"
+  },
+  {
+    "path": [
+      "filter",
       "options"
     ],
     "required": true,
@@ -20817,5 +20846,16 @@
       }
     ],
     "description": "In the move wizard, the option `snap object onto {snapName}` is shown"
+  },
+  {
+    "path": [
+      "#dont-translate"
+    ],
+    "required": false,
+    "hints": {
+      "group": "hidden"
+    },
+    "type": "string",
+    "description": ""
   }
 ]

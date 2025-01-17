@@ -40,7 +40,7 @@ export default class TagInfo {
         let url: string
         if (value) {
             url = `${this._backend}api/4/tag/stats?key=${encodeURIComponent(
-                key,
+                key
             )}&value=${encodeURIComponent(value)}`
         } else {
             url = `${this._backend}api/4/key/stats?key=${encodeURIComponent(key)}`
@@ -70,10 +70,10 @@ export default class TagInfo {
         }
         const countriesFC: FeatureCollection = await Utils.downloadJsonCached<FeatureCollection>(
             "https://download.geofabrik.de/index-v1-nogeom.json",
-            24 * 1000 * 60 * 60,
+            24 * 1000 * 60 * 60
         )
         TagInfo._geofabrikCountries = countriesFC.features.map(
-            (f) => <GeofabrikCountryProperties>f.properties,
+            (f) => <GeofabrikCountryProperties>f.properties
         )
         return TagInfo._geofabrikCountries
     }
@@ -99,7 +99,7 @@ export default class TagInfo {
     private static async getDistributionsFor(
         countryCode: string,
         key: string,
-        value?: string,
+        value?: string
     ): Promise<TagInfoStats> {
         if (!countryCode) {
             return undefined
@@ -111,7 +111,16 @@ export default class TagInfo {
         try {
             return await ti.getStats(key, value)
         } catch (e) {
-            console.warn("Could not fetch info from taginfo for", countryCode, key, value, "due to", e, "Taginfo country specific instance is ", ti._backend)
+            console.warn(
+                "Could not fetch info from taginfo for",
+                countryCode,
+                key,
+                value,
+                "due to",
+                e,
+                "Taginfo country specific instance is ",
+                ti._backend
+            )
             return undefined
         }
     }
@@ -127,9 +136,9 @@ export default class TagInfo {
      */
     public static async getGlobalDistributionsFor<T>(
         writeInto: Record<string, T>,
-        f: ((stats: TagInfoStats) => T),
+        f: (stats: TagInfoStats) => T,
         key: string,
-        value?: string,
+        value?: string
     ): Promise<number> {
         const countriesAll = await this.geofabrikCountries()
         const countries = countriesAll
@@ -138,14 +147,14 @@ export default class TagInfo {
 
         let downloaded = 0
         for (const country of countries) {
-            if(writeInto[country] !== undefined){
+            if (writeInto[country] !== undefined) {
                 continue
             }
             const r = await TagInfo.getDistributionsFor(country, key, value)
-            if(r === undefined){
+            if (r === undefined) {
                 continue
             }
-            downloaded ++
+            downloaded++
             writeInto[country] = f(r)
         }
         return downloaded

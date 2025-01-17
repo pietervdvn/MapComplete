@@ -2049,6 +2049,9 @@
         },
         "title": {
             "mappings": {
+                "0": {
+                    "then": "{name}"
+                },
                 "1": {
                     "then": "Vogelkijkhut {name}"
                 },
@@ -4344,6 +4347,26 @@
                     "question": "Is dit drinkwaterpunt heel het jaar door beschikbaar?"
                 }
             },
+            "temperature-cold": {
+                "mappings": {
+                    "0": {
+                        "then": "Ijskoud water is hier beschikbaar"
+                    },
+                    "1": {
+                        "then": "Afgekoeld water is hier beschikbaar"
+                    },
+                    "2": {
+                        "then": "Water aan omgevingstemperatuur (zonder actieve koeling of opwarming) is hier beschikbaar"
+                    },
+                    "3": {
+                        "then": "Warm water is hier beschikbaar; het water is niet gevaarlijk heet"
+                    },
+                    "4": {
+                        "then": "Heet water is hier beschikbaar"
+                    }
+                },
+                "question": "Is gekoeld water hier beschikbaar?"
+            },
             "type": {
                 "mappings": {
                     "0": {
@@ -6353,6 +6376,11 @@
             }
         },
         "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
             "render": "Natuurgebied"
         }
     },
@@ -6882,6 +6910,21 @@
         },
         "title": {
             "render": "Picknicktafel"
+        }
+    },
+    "play_forest": {
+        "description": "Een speelbos is een vrij toegankelijke zone in een bos",
+        "name": "Speelbossen",
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                },
+                "1": {
+                    "then": "Speelbos {name}"
+                }
+            },
+            "render": "Speelbos"
         }
     },
     "playground": {
@@ -8297,6 +8340,11 @@
                             "then": "Fietsverhuurzaak"
                         }
                     },
+                    "mappings+": {
+                        "0": {
+                            "then": "Deze winkel staat leeg"
+                        }
+                    },
                     "question": "Wat voor soort winkel is dit?",
                     "render": "Dit is een {shop}"
                 }
@@ -8445,6 +8493,9 @@
         },
         "title": {
             "mappings": {
+                "0": {
+                    "then": "{name}"
+                },
                 "1": {
                     "then": "Voetpad"
                 },
@@ -10604,13 +10655,25 @@
         }
     },
     "village_green": {
-        "description": "Een laag die dorpsgroen toont (gemeenschapsgroen, maar niet echt een park)"
+        "description": "Een laag die dorpsgroen toont (gemeenschapsgroen, maar niet echt een park)",
+        "name": "Speelweide",
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
+            "render": "Speelweide"
+        }
     },
     "visitor_information_centre": {
         "description": "Een bezoekerscentrum biedt informatie over een specifieke attractie of bezienswaardigheid waar het is gevestigd.",
         "name": "Bezoekerscentrum",
         "title": {
             "mappings": {
+                "0": {
+                    "then": "{name:nl}"
+                },
                 "1": {
                     "then": "{name}"
                 }

@@ -13,9 +13,8 @@
   })
 </script>
 
-
 {#if timeoutReached}
   <slot />
-{:else }
-  <Loading cls="h-full w-full flex justify-center items-center low-interaction"/>
+{:else}
+  <Loading cls="h-full w-full flex justify-center items-center low-interaction" />
 {/if}

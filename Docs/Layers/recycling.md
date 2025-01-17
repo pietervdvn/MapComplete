@@ -225,11 +225,11 @@ This tagrendering has labels
 
 | id | question | osmTags |
 -----|-----|----- |
-| centres_only.0 | All recycling types | recycling_type=centre |
+| centres_only.0 | Only recycling centres | recycling_type=centre |
 
 | id | question | osmTags |
 -----|-----|----- |
-| recyclingType.0 | *Only public access* (default) |  |
+| recyclingType.0 | *All recycling types* (default) |  |
 | recyclingType.1 | Recycling of batteries | recycling:batteries=yes |
 | recyclingType.2 | Recycling of beverage cartons | recycling:beverage_cartons=yes |
 | recyclingType.3 | Recycling of cans | recycling:cans=yes |
