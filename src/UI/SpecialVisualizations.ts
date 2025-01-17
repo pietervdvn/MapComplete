@@ -717,7 +717,8 @@ export default class SpecialVisualizations {
                         imagePrefixes = [].concat(...args.map((a) => a.split(",")))
                     }
                     const images = AllImageProviders.loadImagesFor(tags, imagePrefixes)
-                    return new SvelteUIElement(ImageCarousel, { state, tags, images })
+                    const estimated = tags.mapD(tags => AllImageProviders.estimateNumberOfImages(tags, imagePrefixes))
+                    return new SvelteUIElement(ImageCarousel, { state, tags, images, estimated })
                 },
             },
             {
