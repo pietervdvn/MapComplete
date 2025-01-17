@@ -36,7 +36,7 @@
 
   let imagesProvider = state.nearbyImageSearcher
 
-  let loadedImages = AllImageProviders.LoadImagesFor(tags).mapD(
+  let loadedImages = AllImageProviders.loadImagesFor(tags).mapD(
     (loaded) => new Set(loaded.map((img) => img.url))
   )
   let imageState = imagesProvider.getImagesAround(lon, lat)

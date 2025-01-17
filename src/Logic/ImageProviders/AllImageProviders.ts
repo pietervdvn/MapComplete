@@ -70,7 +70,7 @@ export default class AllImageProviders {
     /**
      * Tries to extract all image data for this image. Cached on tags?.data?.id
      */
-    public static LoadImagesFor(
+    public static loadImagesFor(
         tags: Store<Record<string, string>>,
         tagKey?: string[]
     ): Store<ProvidedImage[]> {
@@ -113,6 +113,6 @@ export default class AllImageProviders {
         for (let i = 0; i < urls.length; i++) {
             tags["image:" + i] = urls[i]
         }
-        return this.LoadImagesFor(new ImmutableStore(tags))
+        return this.loadImagesFor(new ImmutableStore(tags))
     }
 }
