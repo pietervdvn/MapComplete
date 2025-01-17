@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.48.0](https://github.com/pietervdvn/mapcomplete/compare/v0.47.14...v0.48.0) (2025-01-17)
+
+
+### Bug Fixes
+
+* add missing data ([bd228a6](https://github.com/pietervdvn/mapcomplete/commits/bd228a6129e5e95feaf58cfbd438ca8011a69a3f))
+* Add question block ([0c5ab25](https://github.com/pietervdvn/mapcomplete/commits/0c5ab259e845f852e30202a196aacd225a70b928))
+* attempt to fix build ([6bc786d](https://github.com/pietervdvn/mapcomplete/commits/6bc786dc783d2b06af94ca1a034c18d3bf1e41f3))
+* build ([a278234](https://github.com/pietervdvn/mapcomplete/commits/a2782348a7a5a65a62056b566cb8ce5e83cf48c7))
+* don't crash if an initial hash is given from a non-matching layer ([551235a](https://github.com/pietervdvn/mapcomplete/commits/551235a185c2f54f561c82b79c34aaf1f171e217))
+* fix https://source.mapcomplete.org/MapComplete/MapComplete/issues/2293 ([b22015e](https://github.com/pietervdvn/mapcomplete/commits/b22015e2c829187b710f0ceddf3ff3754bb7f3c1))
+
+
+### Theme improvements
+
+* **charging_station:** add charge_point layer ([67b3fb3](https://github.com/pietervdvn/mapcomplete/commits/67b3fb3740af55172dba647a5a198902ebd27328))
+* **charging_station:** Remove units for V and A (gh[#2320](https://github.com/pietervdvn/MapComplete/issues/2320)), fix stray A ([5a9c53e](https://github.com/pietervdvn/mapcomplete/commits/5a9c53e4d632dcae58c49c34cd9a5a8e0c0ca293))
+* **drinking_water:** add temperature question ([5617630](https://github.com/pietervdvn/mapcomplete/commits/5617630d690d3a229be13be0104a24316950c0e3))
+* move generated themes into assets, remove known_themes, support pruning of borrowed icons ([ee64d84](https://github.com/pietervdvn/mapcomplete/commits/ee64d84d270f141b0dafb2ac2726899afce5297e))
+* **scouting:** cleanup, use NSI ([1f384e7](https://github.com/pietervdvn/mapcomplete/commits/1f384e754b92bbc3c45b1251222145004b3614b7))
+* **shops:** revert to ID-presets for icons, add "vacant" as shop option ([622049f](https://github.com/pietervdvn/mapcomplete/commits/622049f21f2a43812ff31709dd91cfbe71e9197d))
+* **toilets:** add ratings ([5276442](https://github.com/pietervdvn/mapcomplete/commits/527644220984593b0379b1a17fa8c2a39936bef4))
+* **waste:** Fix broken translations (fj[#2297](https://github.com/pietervdvn/MapComplete/issues/2297)) ([8c6619a](https://github.com/pietervdvn/mapcomplete/commits/8c6619a1722430ce3e4a93770c1af44cffc34a8e))
+
 ### [0.47.14](https://github.com/pietervdvn/mapcomplete/compare/v0.47.13...v0.47.14) (2025-01-02)
 
 
