@@ -108,7 +108,7 @@
         },
         {
           "icon": {
-            "builtin": "nsi_brand.icon",
+            "builtin": "id_presets.shop_rendering",
             "override": {
               "render": "./assets/layers/id_presets/maki-shop.svg",
               "+mappings": [
@@ -313,6 +313,27 @@
               "uk": "Пункт прокату велосипедів",
               "es": "Tienda de alquiler de bicicletas",
               "cs": "Půjčovna jízdních kol"
+            }
+          }
+        ],
+        "mappings+": [
+          {
+            "if": "disused:shop:={shop}",
+            "then": {
+              "en": "This shop is no longer used. It is vacant",
+              "nl": "Deze winkel staat leeg"
+            },
+            "icon": "./assets/layers/shops/shop-disused.svg",
+            "addExtraTags": [
+              "shop="
+            ],
+            "alsoShowIf": {
+              "or": [
+                "shop=disused",
+                "shop=vacant",
+                "disused:shop~*",
+                "abandoned:shop~*"
+              ]
             }
           }
         ],
