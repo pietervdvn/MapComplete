@@ -72,17 +72,18 @@ export default class AllImageProviders {
      * Does a guess on the number of images that are probably there.
      * Will simply count all image tags
      *
-     * AllImageProviders.estimateNumberOfImages({image:"abc", "mapillary": "123", "panoramax:0"}) // => 3
+     * AllImageProviders.estimateNumberOfImages({image:"abc", "mapillary": "123", "panoramax:0": "xyz"}) // => 3
      *
      */
     public static estimateNumberOfImages(tags: Record<string, string>, prefixes: string[] = undefined): number {
         let count = 0
 
-        const allPrefixes = prefixes ?? [].concat(...AllImageProviders.ImageAttributionSource.map(s => s.defaultKeyPrefixes))
-        for (const k in tags) {
-            for (const prefix of allPrefixes) {
+        const allPrefixes = Utils.Dedup(prefixes ?? [].concat(...AllImageProviders.ImageAttributionSource.map(s => s.defaultKeyPrefixes)))
+        for (const prefix of allPrefixes) {
+            for (const k in tags) {
                 if (k === prefix || k.startsWith(prefix + ":")) {
                     count++
+                    continue
                 }
             }
         }
